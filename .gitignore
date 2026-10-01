@@ -1,0 +1,13 @@
+/.lake
+
+# MathCopilot workspace, check records, and caches
+.mathcopilot/
+.agents/
+/lean-checks/
+/proof-logs/
+/cache/
+
+# Build artifacts and logs outside .lake
+*.olean
+*.ilean
+*.log
