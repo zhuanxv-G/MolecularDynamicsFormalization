@@ -11,6 +11,7 @@
 - 报告绑定 12 个源码/版本/验收入口输入。ParticleCoordinates SHA-256：`c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48`。
 - CHECK_REPORT SHA-256：`98b7b40708e2ce6003d1a183f0c162848320b4cd02f134256f3a8be7aaf7f33d`。保存报告、10 个原始日志与独立草稿全定理公理输出；原运行目录保留。
 - 本次运行 HEAD 是 9587329 上的未提交 T1 工作树；验收范围由输入哈希确定。9587329 的 GitHub CI 是此前基线通过，不能替代本次新源码的 CI。
+- 后续完整实现与证据提交为 `c7d9778fe981c24ba7281db730206d1cfefbba4d`，已推送当前工作分支；对应该提交的 GitHub run36894446209/job110477787074 success，完整检查和artifact保存步骤均通过。独立远端证据见 REMOTE_CI_RESULT.json，不把基线CI混作本次CI。
 
 ## 数学对应和待复核
 

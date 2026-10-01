@@ -1,6 +1,6 @@
 # 当前状态与接续检查点
 
-最后更新：2026-10-02 00:45 +08:00（Asia/Shanghai）。实际分支 `chapter01-kinetic-energy-nonneg`，HEAD `9587329cf646889b6ebbab7133ae76dce156450d`。提交前/后的状态须以实际 Git 为准；不能把本文件的历史基准当成永久 HEAD。
+最后更新：2026-10-02 00:56 +08:00（Asia/Shanghai）。实际分支 `chapter01-kinetic-energy-nonneg`，数学实现 HEAD `c7d9778fe981c24ba7281db730206d1cfefbba4d` 已推送且 CI 通过；本次收尾提交仅更新文档/远端证据。恢复时查询实际 Git，不能把本文件的历史基准当成永久 HEAD。
 
 ## 当前任务与已授权范围
 
@@ -13,6 +13,9 @@
 3. **T1 正式实现和本地机器验收已完成。** 新增 `MolecularDynamics/Chapter01/ParticleCoordinates.lean`，13条完整引理覆盖11个规格ID（I2/P3各两条），无占位/新公理；同步顶层导入、Notation坐标数说明、映射/假设/STATUS和关键公理打印。
 4. **T1整套正式检查通过。** `pwsh -NoProfile -File scripts/check.ps1 -ReportDirectory ../deliverables/local-check-20261002-T1-run1`，00:24–00:26，退出0：固定版本、源码扫描、8929jobs、Scratch、60项项目声明公理审计；关键引理只依赖propext/Classical.choice/Quot.sound。12个输入和10份原始日志的哈希复核通过，证据 `docs/verification/2026-10-02-T1/`。CHECK_REPORT SHA256 `98b7b40708e2ce6003d1a183f0c162848320b4cd02f134256f3a8be7aaf7f33d`。该运行检查9587329上的未提交工作树，以源码SHA绑定；基线远端CI不能替代新T1 CI。
 5. **网站T1报告仍待完成。** 已进入 formal math 项目，选择“形式化与蓝图”(/lean-blueprint)。网站可打开项目文件，但上传菜单/上传文件均未返回浏览器文件选择器（60s超时），没有上传成功。没有发送任务。可按已授权范围改用Git输入与项目中已有教材，明确这不是ZIP接收/哈希通过。不能把MathCopilot本批参与写成已完成。负责人最终教材语义签核仍pending。
+
+6. **T1新提交已推送且远端CI通过。** c7d9778 是本批完整证明/本地证据提交。GitHub run36894446209 / job110477787074 的 head_sha 精确匹配，conclusion success；检查步骤及artifact保存步骤均success，artifact11179876157。记录 `docs/verification/2026-10-02-T1/REMOTE_CI_RESULT.json`。原用户 FORMALIZATION_PLAN.md 修改未纳入提交。
+7. **Git输入网站指令已落盘，未发送。** `docs/tasks/T1_MATHCOPILOT_GIT_REVIEW.zh-CN.md` 指向c7d9778，要求Lean Blueprint独立陈述审阅后Lean Proof复核13证明。已尝试在网站编辑器追加全文，显示2.3K计数，但DOM读回只有技能标签，无法确认全文保留，因此没有点击发送。恢复后重新粘贴并目视核对全文再发，不能直接发送这个未确认草稿。用户询问耗时，已说明本地/远端完成，网站配置和上传故障未完成；本次收尾不继续重复慢速浏览器尝试。
 
 ## T1固定材料与数学范围
 
@@ -31,10 +34,10 @@
 - 目标为整本8章、3附录、数学类习题、未编号结论和必要外部依赖；准确性优先，无硬期限。路线 `docs/WHOLE_BOOK_ROADMAP.zh-CN.md`。196目录节点/72符号/21编号候选/首轮72ledger是清点，不是证明进度。首轮抽样不是全书逐页审阅。
 - 用户确认Math Brainstorm、Lean Blueprint、Lean Proof已启用并安装到项目。本轮实际登录会话已检测；技能选择不等于实际调用。托管Lean/mathlib版本仍未知。
 - Git schannel凭据初始化失败；保持TLS校验的openssl后端可用。基线push在沙箱退出1后，经自动审核批准的require_escalated成功；没有审核拒绝或读凭据。
-- 保留用户FORMALIZATION_PLAN.md修改；其余本批源码/报告/交接/知识库/v2文件等待本批提交。上层教材/ZIP/tmp不在正式Git内。没有调用子agent。
+- 保留用户FORMALIZATION_PLAN.md修改；本批源码/本地证据/知识库/v2文件已随c7d9778推送，当前收尾仅同步网站指令与远端成功证据。上层教材/ZIP/tmp不在正式Git内。没有调用子agent。
 
 ## 下一步
 
-先检查实际Git和T1证据，提交/推送本批完整实现并确认新提交CI。随后向 formal math 项目发送明确的Git输入T1审阅批（上传不可用时不要谎称ZIP已收到）。网站任务启动后读取真实返回，逐条验收陈述/假设/依赖；如无法启动，保存可发送指令与错误，继续保持网站状态pending。第四项在服务器连接恢复后保存启用、更新仓库、重建并查询已知动能引理，记录实际HEAD与完整类型。
+恢复首条动作：查询实际Git，确认c7d9778数学实现及远端CI证据；网站连接/上传可用后再进行第四项保存/更新/重建/检索。向formal math发送已落盘的Git输入T1审阅指令前核对编辑器全文，已有授权无须重问；如果服务器仍不可用，保持pending，不盲目循环重试。网站返回后核对实际提交/环境、逐项报告与检查。负责人语义签核仍待完成。
 
 T1闭环后队列：T2时间轨道/局部ODE、T3具体Hamiltonian一致性、T4能量守恒、T5严格极小值屏障、全局延拓/Theorem1.1。不并行铺开未稳定章节。严格极小值不等于Hessian正定；局部解不等于全局流；一般力场不自动守恒总动量。
