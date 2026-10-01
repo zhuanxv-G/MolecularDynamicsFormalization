@@ -39,6 +39,16 @@ noncomputable def nBodyKineticEnergy {n : ℕ} (masses : CoordinateMasses n)
     (velocity : Velocity n) : ℝ :=
   ∑ i, masses i * (velocity i) ^ 2 / 2
 
+/-- The kinetic energy in equation (1.4) is nonnegative when every coordinate
+mass is nonnegative. -/
+theorem nBodyKineticEnergy_nonneg {n : ℕ} (masses : CoordinateMasses n)
+    (velocity : Velocity n) (hm : ∀ i, 0 ≤ masses i) :
+    0 ≤ nBodyKineticEnergy masses velocity := by
+  unfold nBodyKineticEnergy
+  apply Finset.sum_nonneg
+  intro i _
+  exact div_nonneg (mul_nonneg (hm i) (sq_nonneg (velocity i))) (by norm_num)
+
 /-- Equation (1.4): the total mechanical energy `E(q, q̇) = T(q̇) + U(q)`. -/
 noncomputable def nBodyTotalEnergy {n : ℕ} (masses : CoordinateMasses n)
     (potential : PotentialEnergy n) (position : Position n) (velocity : Velocity n) : ℝ :=
