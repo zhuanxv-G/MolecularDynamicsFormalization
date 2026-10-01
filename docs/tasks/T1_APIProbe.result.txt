@@ -1,0 +1,72 @@
+finProdFinEquiv {m n : ℕ} : Fin m × Fin n ≃ Fin (m * n)
+finProdFinEquiv_apply_val {m n : ℕ} (x : Fin m × Fin n) : ↑(finProdFinEquiv x) = ↑x.2 + n * ↑x.1
+WithLp.toLp.{u_1} (p : ENNReal) {V : Type u_1} (ofLp : V) : WithLp p V
+EuclideanSpace.equiv.{u_1, u_3} (ι : Type u_1) (𝕜 : Type u_3) [RCLike 𝕜] : EuclideanSpace 𝕜 ι ≃L[𝕜] ι → 𝕜
+EuclideanSpace.real_norm_sq_eq.{u_7} {n : Type u_7} [Fintype n] (x : EuclideanSpace ℝ n) : ‖x‖ ^ 2 = ∑ i, x.ofLp i ^ 2
+Equiv.sum_comp.{u_1, u_2, u_3} {ι : Type u_1} {κ : Type u_2} {M : Type u_3} [Fintype ι] [Fintype κ] [AddCommMonoid M]
+  (e : ι ≃ κ) (g : κ → M) : ∑ i, g (e i) = ∑ i, g i
+Fintype.sum_prod_type.{u_3, u_4, u_5} {γ : Type u_3} {α₁ : Type u_4} {α₂ : Type u_5} [Fintype α₁] [Fintype α₂]
+  [AddCommMonoid γ] (f : α₁ × α₂ → γ) : ∑ x, f x = ∑ x, ∑ y, f (x, y)
+Matrix.posDef_diagonal_iff.{u_2, u_3} {n : Type u_2} {R : Type u_3} [Ring R] [PartialOrder R] [StarRing R]
+  [StarOrderedRing R] [DecidableEq n] [NoZeroDivisors R] [Nontrivial R] {d : n → R} :
+  (Matrix.diagonal d).PosDef ↔ ∀ (i : n), 0 < d i
+Matrix.PosDef.isUnit.{u_2, u_5} {n : Type u_2} [Fintype n] {K : Type u_5} [Field K] [PartialOrder K] [StarRing K]
+  [DecidableEq n] {M : Matrix n n K} (hM : M.PosDef) : IsUnit M
+Matrix.isUnit_iff_isUnit_det.{u', v} {n : Type u'} {α : Type v} [Fintype n] [DecidableEq n] [CommRing α]
+  (A : Matrix n n α) : IsUnit A ↔ IsUnit A.det
+Matrix.mul_nonsing_inv.{u', v} {n : Type u'} {α : Type v} [Fintype n] [DecidableEq n] [CommRing α] (A : Matrix n n α)
+  (h : IsUnit A.det) : A * A⁻¹ = 1
+Matrix.nonsing_inv_mul.{u', v} {n : Type u'} {α : Type v} [Fintype n] [DecidableEq n] [CommRing α] (A : Matrix n n α)
+  (h : IsUnit A.det) : A⁻¹ * A = 1
+Matrix.inv_diagonal.{u', v} {n : Type u'} {α : Type v} [Fintype n] [DecidableEq n] [CommRing α] (v : n → α) :
+  (Matrix.diagonal v)⁻¹ = Matrix.diagonal (Ring.inverse v)
+Matrix.mulVec_diagonal.{v, u_2} {m : Type u_2} {α : Type v} [NonUnitalNonAssocSemiring α] [Fintype m] [DecidableEq m]
+  (v w : m → α) (x : m) : (Matrix.diagonal v).mulVec w x = v x * w x
+Matrix.mulVec_mulVec.{v, u_2, u_3, u_4} {m : Type u_2} {n : Type u_3} {o : Type u_4} {α : Type v} [NonUnitalSemiring α]
+  [Fintype n] [Fintype o] (v : o → α) (M : Matrix m n α) (N : Matrix n o α) : M.mulVec (N.mulVec v) = (M * N).mulVec v
+Matrix.toEuclideanLin.{u_3, u_7, u_8} {𝕜 : Type u_3} [RCLike 𝕜] {m : Type u_7} {n : Type u_8} [Fintype n]
+  [DecidableEq n] : Matrix m n 𝕜 ≃ₗ[𝕜] EuclideanSpace 𝕜 n →ₗ[𝕜] EuclideanSpace 𝕜 m
+finProdFinEquiv : Fin N × Fin d ≃ Fin (N * d)
+fun m k => m (finProdFinEquiv.symm k).1 : (Fin N → ℝ) → Fin (N * d) → ℝ
+fun v =>
+  WithLp.toLp 2 fun k =>
+    (v (finProdFinEquiv.symm k).1).ofLp
+      (finProdFinEquiv.symm k).2 : (Fin N → EuclideanSpace ℝ (Fin d)) → WithLp 2 ((i : Fin (N * d)) → (fun x => ℝ) i)
+fun w i =>
+  WithLp.toLp 2 fun a =>
+    w.ofLp (finProdFinEquiv (i, a)) : Velocity (N * d) → Fin N → WithLp 2 ((i : Fin d) → (fun x => ℝ) i)
+fun m => Matrix.posDef_diagonal_iff : ∀ (m : CoordinateMasses n), (Matrix.diagonal m).PosDef ↔ ∀ (i : Fin n), 0 < m i
+fun m =>
+  Matrix.PosDef.isUnit : ∀ (m : CoordinateMasses n),
+  Matrix.PosDef (diagonalMassMatrix m) → IsUnit (diagonalMassMatrix m)
+fun m =>
+  Matrix.isUnit_iff_isUnit_det
+    (diagonalMassMatrix
+      m) : ∀ (m : CoordinateMasses n), IsUnit (diagonalMassMatrix m) ↔ IsUnit (Matrix.det (diagonalMassMatrix m))
+fun m =>
+  Matrix.mul_nonsing_inv
+    (diagonalMassMatrix
+      m) : ∀ (m : CoordinateMasses n),
+  IsUnit (Matrix.det (diagonalMassMatrix m)) → diagonalMassMatrix m * (diagonalMassMatrix m)⁻¹ = 1
+fun m =>
+  Matrix.nonsing_inv_mul
+    (diagonalMassMatrix
+      m) : ∀ (m : CoordinateMasses n),
+  IsUnit (Matrix.det (diagonalMassMatrix m)) → (diagonalMassMatrix m)⁻¹ * diagonalMassMatrix m = 1
+fun m =>
+  (∀ (i : Fin n), 0 < m i) → (diagonalMassMatrix m)⁻¹ = Matrix.diagonal fun i => (m i)⁻¹ : CoordinateMasses n → Prop
+fun m v =>
+  (∀ (i : Fin n), 0 < m i) →
+    ∀ (i : Fin n),
+      Matrix.mulVec (diagonalMassMatrix m)⁻¹ (Matrix.mulVec (diagonalMassMatrix m) v.ofLp) i =
+        v.ofLp i : CoordinateMasses n → Velocity n → Prop
+fun m v => (∀ (i : Fin n), 0 < m i) → (nBodyKineticEnergy m v = 0 ↔ v = 0) : CoordinateMasses n → Velocity n → Prop
+fun m v =>
+  let e := finProdFinEquiv;
+  let cm := fun k => m (e.symm k).1;
+  let vf := WithLp.toLp 2 fun k => (v (e.symm k).1).ofLp (e.symm k).2;
+  nBodyKineticEnergy cm vf = ∑ i, m i * ‖v i‖ ^ 2 / 2 : (Fin N → ℝ) → (Fin N → EuclideanSpace ℝ (Fin d)) → Prop
+fun m _hd =>
+  let e := finProdFinEquiv;
+  let cm := fun k => m (e.symm k).1;
+  (∀ (k : Fin (N * d)), 0 < cm k) ↔ ∀ (i : Fin N), 0 < m i : (Fin N → ℝ) → 0 < d → Prop

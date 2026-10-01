@@ -1,0 +1,69 @@
+import Mathlib
+import MolecularDynamicsFormalization
+
+/- API/type inspection only. No new project declaration or proof. -/
+set_option pp.universes false
+
+#check finProdFinEquiv
+#check finProdFinEquiv_apply_val
+#check WithLp.toLp
+#check EuclideanSpace.equiv
+#check EuclideanSpace.real_norm_sq_eq
+#check Equiv.sum_comp
+#check Fintype.sum_prod_type
+#check Matrix.posDef_diagonal_iff
+#check Matrix.PosDef.isUnit
+#check Matrix.isUnit_iff_isUnit_det
+#check Matrix.mul_nonsing_inv
+#check Matrix.nonsing_inv_mul
+#check Matrix.inv_diagonal
+#check Matrix.mulVec_diagonal
+#check Matrix.mulVec_mulVec
+#check Matrix.toEuclideanLin
+
+open MolecularDynamics
+
+variable (N d n : ℕ)
+
+#check (finProdFinEquiv : Fin N × Fin d ≃ Fin (N * d))
+#check (fun (m : Fin N → ℝ) (k : Fin (N * d)) =>
+  m ((finProdFinEquiv.symm k : Fin N × Fin d).1))
+#check (fun (v : Fin N → EuclideanSpace ℝ (Fin d)) =>
+  (WithLp.toLp 2 (fun k : Fin (N * d) =>
+    v (finProdFinEquiv.symm k).1 (finProdFinEquiv.symm k).2) : Velocity (N * d)))
+#check (fun (w : Velocity (N * d)) (i : Fin N) =>
+  (WithLp.toLp 2 (fun a : Fin d =>
+    w (finProdFinEquiv (i, a))) : EuclideanSpace ℝ (Fin d)))
+#check (fun (m : CoordinateMasses n) =>
+  (Matrix.posDef_diagonal_iff (d := m) :
+    (Matrix.diagonal m).PosDef ↔ ∀ i, 0 < m i))
+#check (fun (m : CoordinateMasses n) =>
+  Matrix.PosDef.isUnit (M := diagonalMassMatrix m))
+#check (fun (m : CoordinateMasses n) =>
+  Matrix.isUnit_iff_isUnit_det (diagonalMassMatrix m))
+#check (fun (m : CoordinateMasses n) =>
+  Matrix.mul_nonsing_inv (diagonalMassMatrix m))
+#check (fun (m : CoordinateMasses n) =>
+  Matrix.nonsing_inv_mul (diagonalMassMatrix m))
+
+-- Candidate propositions below are only type checked, never proved here.
+#check (fun (m : CoordinateMasses n) =>
+  ((∀ i, 0 < m i) →
+    (diagonalMassMatrix m)⁻¹ = Matrix.diagonal (fun i => (m i)⁻¹) : Prop))
+#check (fun (m : CoordinateMasses n) (v : Velocity n) =>
+  (((∀ i, 0 < m i) →
+    ∀ i, ((diagonalMassMatrix m)⁻¹).mulVec
+      ((diagonalMassMatrix m).mulVec v) i = v i) : Prop))
+#check (fun (m : CoordinateMasses n) (v : Velocity n) =>
+  (((∀ i, 0 < m i) → (nBodyKineticEnergy m v = 0 ↔ v = 0)) : Prop))
+
+-- The key particle-energy and positivity targets, again only as propositions.
+#check (fun (m : Fin N → ℝ) (v : Fin N → EuclideanSpace ℝ (Fin d)) =>
+  let e : Fin N × Fin d ≃ Fin (N * d) := finProdFinEquiv
+  let cm : CoordinateMasses (N * d) := fun k => m (e.symm k).1
+  let vf : Velocity (N * d) := WithLp.toLp 2 (fun k => v (e.symm k).1 (e.symm k).2)
+  (nBodyKineticEnergy cm vf = ∑ i, m i * ‖v i‖ ^ 2 / 2 : Prop))
+#check (fun (m : Fin N → ℝ) (_hd : 0 < d) =>
+  let e : Fin N × Fin d ≃ Fin (N * d) := finProdFinEquiv
+  let cm : CoordinateMasses (N * d) := fun k => m (e.symm k).1
+  ((∀ k, 0 < cm k) ↔ (∀ i, 0 < m i) : Prop))

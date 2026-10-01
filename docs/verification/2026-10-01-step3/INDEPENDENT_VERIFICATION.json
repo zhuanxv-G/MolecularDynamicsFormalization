@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "report_sha256": "f030e4cb3fd23d234d1719d4ca5f715a977f084735aee70b596c4fa20aa561de",
+  "input_count": 11,
+  "command_count": 10,
+  "all_input_hashes_match": true,
+  "all_logs_present_and_hashes_match": true,
+  "empty_output_log_preserved": true,
+  "negative_cases_passed": 8,
+  "lean_version": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "finished_at": "2026-10-01T23:20:34.2290142+08:00",
+  "remote_new_ci_run": "not_performed",
+  "responsible_semantic_review": "pending"
+}

@@ -12,6 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: leanprover/lean-action@v1
-      - name: Check project sources and scratch file
+        with:
+          auto-config: false
+      - name: Check fixed versions, project sources, scratch, and dependencies
         shell: pwsh
-        run: ./scripts/check.ps1
+        run: ./scripts/check.ps1 -ReportDirectory "$env:RUNNER_TEMP/formal-project-check"
+      - name: Save formal check evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: formal-project-check-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/formal-project-check
+          if-no-files-found: warn
+          retention-days: 30

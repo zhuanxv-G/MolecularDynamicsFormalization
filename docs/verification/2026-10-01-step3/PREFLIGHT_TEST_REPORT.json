@@ -1,0 +1,51 @@
+[
+  {
+    "case": "wrong_toolchain",
+    "expected_failed_phase": "fixed_configuration",
+    "actual_exit_code": 1,
+    "result": "passed",
+    "check_script_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d"
+  },
+  {
+    "case": "wrong_manifest_revision",
+    "expected_failed_phase": "fixed_configuration",
+    "actual_exit_code": 1,
+    "result": "passed",
+    "check_script_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d"
+  },
+  {
+    "case": "wrong_lakefile_revision",
+    "expected_failed_phase": "fixed_configuration",
+    "actual_exit_code": 1,
+    "result": "passed",
+    "check_script_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d"
+  },
+  {
+    "case": "unsafe_source",
+    "expected_failed_phase": "source_scan",
+    "actual_exit_code": 1,
+    "result": "passed",
+    "check_script_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d"
+  },
+  {
+    "case": "placeholder_source",
+    "expected_failed_phase": "source_scan",
+    "actual_exit_code": 1,
+    "result": "passed",
+    "check_script_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d"
+  },
+  {
+    "case": "missing_audit",
+    "expected_failed_phase": "input_inventory",
+    "actual_exit_code": 1,
+    "result": "passed",
+    "check_script_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d"
+  },
+  {
+    "case": "existing_evidence",
+    "expected_failed_phase": null,
+    "actual_exit_code": 1,
+    "result": "passed",
+    "check_script_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d"
+  }
+]

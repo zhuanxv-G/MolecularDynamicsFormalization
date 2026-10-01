@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "packet_id": null,
+  "input_manifest_sha256": null,
+  "stage": "statement_review",
+  "task_id": "T1",
+  "project": {
+    "website_project_id": null,
+    "website_task_id": null,
+    "working_directory": null,
+    "repository_url": null,
+    "actual_branch": null,
+    "actual_head": null,
+    "baseline_matches_packet": null
+  },
+  "received_at": null,
+  "finished_at": null,
+  "skills_used": [],
+  "environment": {
+    "lean_version": null,
+    "lake_version": null,
+    "mathlib_revision": null,
+    "version_evidence": null,
+    "unknown_items": []
+  },
+  "checks": [],
+  "outputs": [],
+  "missing_inputs": [],
+  "unresolved_items": [],
+  "new_textbook_proofs_completed": false,
+  "local_formal_project_acceptance": "not_performed",
+  "responsible_semantic_review": "pending",
+  "instructions": "Fill null/empty entries with observed facts or explicit unknown/not-run explanations. Each check records command, cwd, input files, version, exit_code or managed status, and raw log path. Each output records relative_path, sha256 and purpose. Do not list this metadata file in outputs."
+}

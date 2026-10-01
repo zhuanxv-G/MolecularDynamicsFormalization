@@ -1,0 +1,30 @@
+source_path,bundle_path,purpose
+MolecularDynamics/Notation.lean,project/MolecularDynamics/Notation.lean,existing model aliases
+MolecularDynamics/BasicDefinitions.lean,project/MolecularDynamics/BasicDefinitions.lean,existing separable energy
+MolecularDynamics/Chapter01/NBody.lean,project/MolecularDynamics/Chapter01/NBody.lean,existing mass and energy API
+MolecularDynamicsFormalization.lean,project/MolecularDynamicsFormalization.lean,project import root
+Scratch.lean,project/Scratch.lean,existing scratch checks
+lean-toolchain,project/lean-toolchain,fixed Lean version
+lakefile.toml,project/lakefile.toml,fixed project configuration
+lake-manifest.json,project/lake-manifest.json,locked dependency revisions
+scripts/check.ps1,project/scripts/check.ps1,formal verification entry
+AGENTS.md,project/AGENTS.md,project instructions
+FORMALIZATION_MAP.md,project/FORMALIZATION_MAP.md,existing formalization map
+ASSUMPTIONS.md,project/ASSUMPTIONS.md,existing assumptions
+STATUS.md,project/STATUS.md,historical verification boundary
+docs/tasks/T1_SPEC.zh-CN.md,project/docs/tasks/T1_SPEC.zh-CN.md,precise candidate statements
+docs/tasks/T1_API_CHECK.zh-CN.md,project/docs/tasks/T1_API_CHECK.zh-CN.md,fixed-version API evidence
+docs/tasks/T1_APIProbe.lean.txt,project/docs/tasks/T1_APIProbe.lean.txt,type-only probe text
+docs/tasks/T1_APIProbe.result.txt,project/docs/tasks/T1_APIProbe.result.txt,raw historical probe output
+docs/tasks/T1_MATHCOPILOT_PROMPT.zh-CN.md,project/docs/tasks/T1_MATHCOPILOT_PROMPT.zh-CN.md,user-copyable task instruction
+docs/tasks/T1_INPUTS_AND_ACCEPTANCE.zh-CN.md,project/docs/tasks/T1_INPUTS_AND_ACCEPTANCE.zh-CN.md,input and acceptance procedure
+docs/tasks/T1_INPUT_MANIFEST.csv,project/docs/tasks/T1_INPUT_MANIFEST.csv,reference 19-file input manifest
+docs/tasks/T1_TASK_PACKET.zh-CN.md,project/docs/tasks/T1_TASK_PACKET.zh-CN.md,task entry and delivery contract
+docs/tasks/TASK_PACKET_TEMPLATE.zh-CN.md,project/docs/tasks/TASK_PACKET_TEMPLATE.zh-CN.md,reusable task contract template
+docs/tasks/T1_PACKET_CONFIG.json,project/docs/tasks/T1_PACKET_CONFIG.json,packet configuration
+docs/tasks/T1_PACKET_FILES.csv,project/docs/tasks/T1_PACKET_FILES.csv,explicit input file list
+docs/tasks/templates/RETURN_METADATA.template.json,project/docs/tasks/templates/RETURN_METADATA.template.json,return metadata template
+docs/tasks/templates/T1_REVIEW_LEDGER.template.csv,project/docs/tasks/templates/T1_REVIEW_LEDGER.template.csv,11-item review ledger template
+docs/tasks/templates/STATEMENT_CHANGES.template.csv,project/docs/tasks/templates/STATEMENT_CHANGES.template.csv,statement changes template
+../tmp/t1-preparation/section12-041.png,textbook/section12-041.png,printed page 18 PDF page 41
+../tmp/t1-preparation/section12-042.png,textbook/section12-042.png,printed page 19 PDF page 42

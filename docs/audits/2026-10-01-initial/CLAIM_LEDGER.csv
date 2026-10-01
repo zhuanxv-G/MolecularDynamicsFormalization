@@ -1,0 +1,73 @@
+﻿item_id,textbook_label,chapter_section,printed_page,pdf_page_1based,kind,statement_summary_zh,evidence,review_status,model_dependencies,proof_or_external_gap,existing_lean,notes
+CH01-NUM-001,Theorem 1.1,1.5.3,32,55,theorem,严格局部势能极小值对应 Hamiltonian 平衡点的 Lyapunov 稳定性,rendered_pdf_page,original_page_checked,M 正定；U 光滑；局部解与能量屏障,教材仅给证明思路并指向 [216],,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH02-NUM-001,Theorem 2.1,2.1,56,78,theorem,Euler 方法在有界开域内、解保持域内时的一阶全局误差界,rendered_pdf_page,original_page_checked,f 连续可微；精确解存在且留在域内；固定终时,教材本页无完整证明,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH02-NUM-002,Theorem 2.1,2.5,94,116,reference_only,正文再次引用同编号；此页不是新声明,existing_candidate_table+text_context,reference_only,,,,不计入编号声明数量
+CH03-NUM-001,Theorem 3.1,3.4,114,136,theorem,有限阶修正 Hamiltonian 对数值轨道的能量漂移给出渐近界,rendered_pdf_page,original_page_checked,紧凸域；光滑性；精确及数值轨道留在域内,"教材本页开始证明；参考 [162,164,227]",,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH04-NUM-001,Lemma 4.1,4.3.4,159,181,lemma,标量 C² 约束 γ(q)=0 和余切条件下，P=p-μ∇γ 保持所列微分 2-形式,rendered_pdf_page,original_page_checked,γ C²；约束流形与余切条件；P 的定义,证明续页待核对,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH05-NUM-001,Theorem 5.1,5.6,208,229,theorem,微正则平均在紧能量面受 Hamiltonian 扰动时的一阶校正及 O(ε²) 余项,rendered_pdf_page,original_page_checked,原/扰动能量面紧；w 光滑且 w·∇H≠0；微正则平均可定义,陈述跨 PDF 229–230；证明未核对；引用 [338],,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH06-NUM-001,Proposition 6.1,6.1.5,222,243,proposition,满足有界正平均及 Gibbs 可积条件的 C¹ 向量场 G 给温度平均比值公式,rendered_pdf_page,original_page_checked,G·∇H 与 ∇·G 平均为有限正数；G e^{-βH} 可积,教材给分部积分证明；无穷远边界项需细核,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH06-NUM-002,Proposition 6.2,6.2.2,229,250,proposition,Wiener 增量平方和在分割细化时以均方意义收敛到时间 τ,rendered_pdf_page,original_page_checked,W(0)=0；独立高斯增量；固定 τ；L² 极限,证明延至 PDF 251；四阶矩计算已定位,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH06-NUM-003,Proposition 6.3,6.3,231,252,proposition,确定性光滑被积函数的 Itô 积分为均值零、方差为积分平方的高斯变量,rendered_pdf_page,original_page_checked,Wiener 过程；确定性光滑 g；t≥0,证明标为 Exercise 2，需纳入依赖,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH06-NUM-004,Theorem 6.1,6.4.3,250,271,theorem,周期势 Brownian dynamics 生成元的自伴/非正谱、谱隙与平均指数收敛,rendered_pdf_page,original_page_checked,U 光滑；周期配置域；加权 C² 空间；测试函数光滑紧支,"陈述跨 PDF 271–272；教材指向谱理论文献 [298,360]",,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH06-NUM-005,Theorem 6.2,6.4.4,252,273,theorem,小集/密度与 Lyapunov 漂移假设下的唯一不变测度和几何收敛,rendered_pdf_page,original_page_checked,Assumption 1/2；集合 C；合适测试函数,引用外部结果 [165],,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH06-NUM-006,Lemma 6.1,6.4.4,255,276,lemma,Langevin 解从任意域内初值在任意正时间进入任意开子集的概率严格正,rendered_pdf_page,original_page_checked,开集 C⊆D；t>0；Langevin 解及噪声非退化,"证明跨 PDF 276–277，调用 [257, Lemma 3.4] 与 [349]",,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH06-NUM-007,Proposition 6.4,6.4.5,257,278,proposition,零均值 g 的 Langevin 前向生成元 Poisson 方程在 H¹(μ) 中有解，唯一性模核,rendered_pdf_page,original_page_checked,U C∞；周期配置域；g∈H¹ 且 μ-均值零；算子条件,教材援引 Fredholm alternative，算子紧预解和核需证明,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH07-NUM-001,Proposition 7.1,7.9,297,318,proposition,五段对称算子分裂的 BCH 展开只有偶次修正：Lhat=L0+h²L2+O(h⁴),rendered_pdf_page,original_page_checked,对 X/Y/Z 算子 BCH 可用；交换子与余项定义域,教材给形式表达；需明确无界算子的级数解释,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH07-NUM-002,Proposition 7.1,7.9,298,319,reference_only,正文再次引用同编号；此页不是新声明,existing_candidate_table+text_context,reference_only,,,,不计入编号声明数量
+CH07-NUM-003,Lemma 7.1,7.9,299,320,lemma,ST 与 TS 的唯一不变分布之间的转换关系,rendered_pdf_page,original_page_checked,两算子各有唯一不变分布；额外遍历性,原页已核对；证明后续页待核对,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH08-NUM-001,Proposition 8.1,8.2,338,359,proposition,两个各有平稳扩展密度的 thermostat 组合后有乘积型平稳密度,rendered_pdf_page,original_page_checked,两套扩展变量；各自平稳性；联合生成元可加,证明需核对归一化及耦合依赖,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH08-NUM-002,Proposition 8.2,8.4.1,344,365,proposition,若 F、G 生成的 Lie 代数张成 R^m，则增广 SDE 满足 Hörmander 条件,rendered_pdf_page,original_page_checked,向量场光滑；噪声 σ≠0；在相关域逐点张成,证明跨 PDF 365–366,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH08-NUM-003,Theorem 8.1,8.4.1,346,367,theorem,正定且特征值互异的二次势 NHL 系统满足 Hörmander 条件,rendered_pdf_page,original_page_checked,A 对称正定且谱互异；M=I；无约束,仅陈述页已核对；后续证明待核对,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH08-NUM-004,Lemma 8.1,8.4.1,347,368,lemma,NHL 二次势模型中 Ck、Dk 两列迭代 Lie 括号向量的显式式,rendered_pdf_page,original_page_checked,A 的幂；F/G Lie 代数；k≥1,教材称按 k 归纳直接，指向习题,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH08-NUM-005,Proposition 8.3,8.4.1,347,368,proposition,"A 对称正定且特征值互异时，C1,D1,…,CNc,DNc 在域 D 线性独立",rendered_pdf_page,original_page_checked,A 谱互异；域排除零坐标情形；向量定义,证明始于 PDF 368，结尾 PDF 369 已核,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH03-DEF-001,Definition 3.1,3.6.2,130,152,definition,仿射不变数值方法：非奇异线性变量替换前后产生相应轨道序列,rendered_pdf_page,original_page_checked,ODE 及变量替换；数值方法更新映射,定义后紧接对称性推出时间可逆性的未编号断言,,
+CH05-DEF-001,Definition 5.1,5.4.1,197,218,definition,能量面上几乎所有初始轨道的时间平均等于相空间平均时称遍历,rendered_pdf_page,original_page_checked,能量面测度；可观测量可积性；时间平均极限,书中随后给出不变集合概率零一的替代表述；等价性待审,,
+CH06-ASM-001,Assumption 1,6.4.4,252,273,assumption,小集可达性与转移核密度连续性条件,rendered_pdf_page,original_page_checked,Markov 过程；转移核；集合 C,外部小集/minorization 结果需追踪,,
+CH06-ASM-002,Assumption 2,6.4.4,252,273,assumption,趋于无穷的 Lyapunov 函数满足生成元负漂移加常数界,rendered_pdf_page,original_page_checked,生成元定义域；正系数；非紧状态域,外部 Foster-Lyapunov/几何遍历定理需追踪,,
+CH06-DEF-001,Definition 6.1,6.4.4,254,275,definition,开放域内扩散向量场及与漂移场的迭代 Lie 括号在每点张成全空间,rendered_pdf_page,original_page_checked,C∞ 向量场；Lie 括号；逐点张成,与后续 hypoellipticity/密度结果的连接须单列,,
+CH01-DEP-001,Eq. (1.2),1.1,6,29,model,N 个核的牛顿方程与势能梯度；须补初始位置和速度,rendered_pdf_page,original_page_checked,质量；力-势能关系；初值,,,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-002,Eq. (1.3),1.2,18,41,model,对角质量矩阵形式的 N-body 二阶方程 M q¨=F(q)=-∇U(q),rendered_pdf_page,original_page_checked,坐标/粒子索引；梯度正则性,,MolecularDynamics.NBodyEquationAt,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-003,Eq. (1.4),1.2,18,41,definition,总能量是粒子动能和势能之和；3D 粒子质量在三个坐标重复,rendered_pdf_page,original_page_checked,N、N_d、N_c；质量,,MolecularDynamics.nBodyTotalEnergy,仅本页锚点核对；未表示所在节逐页审完
+CH01-CLM-007,harmonic oscillator solution,1.2,20,43,claim,一维谐振子给出三角函数显式解及二次能量,rendered_pdf_page,original_page_checked,单位质量；初值；频率；三角函数求导,作为 ODE/守恒语义测试例,,仅本页锚点核对；未表示所在节逐页审完
+CH01-CLM-001,unnumbered energy conservation,1.2,19,42,claim,沿满足牛顿方程的充分光滑解，总机械能导数为零并保持常数,rendered_pdf_page,original_page_checked,时间轨道；链式法则；质量常数；U 可微,教材给一行计算；尚无轨道模型,,仅本页锚点核对；未表示所在节逐页审完
+CH01-CLM-002,unnumbered total momentum,1.2,19,42,claim,粒子间力成对相消时，总动量三个分量守恒,rendered_pdf_page,original_page_checked,封闭 N-body；作用-反作用；粒子动量定义,教材给简短推导,,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-004,Lagrangian transformation,1.3,23,46,model,坐标变换诱导速度变换和构型相关质量矩阵,rendered_pdf_page,original_page_checked,变换光滑且满秩；广义质量矩阵可逆,公式原页核对；§1.3 前页尚未细读,,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-011,Lagrangian definition,1.3,22,45,definition,"L(q,q̇)=1/2 q̇ᵀMq̇-U(q)",rendered_pdf_page,original_page_checked,质量矩阵对称；坐标维数；势能,与 §1.4 Legendre 变换相连,MolecularDynamics.Lagrangian,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-005,Hamiltonian via Legendre,1.4,24,47,definition,动量 p=M(q)v，Hamiltonian 为 1/2 pᵀM(q)⁻¹p+U(q),rendered_pdf_page,original_page_checked,M(q) 对称正定而非仅可逆；Legendre 上确界有限,教材只写可逆性；作为凸变换还需正定,MolecularDynamics.SeparableEnergy.hamiltonian,仅本页锚点核对；未表示所在节逐页审完
+CH01-CLM-003,unnumbered global solution criterion,1.5,25,48,claim,能量下界控制动量；势能子水平集有界时轨道被限制在紧集,rendered_pdf_page,original_page_checked,质量正定；U 连续；局部 Lipschitz；域内紧性；延拓定理,教材叙述无完整全局延拓证明,,仅本页锚点核对；未表示所在节逐页审完
+CH01-CLM-004,unnumbered compact confinement,1.5,26,49,claim,势能各相关等值集均匀有界时，固定能量解的位置保持有界,rendered_pdf_page,original_page_checked,子水平集紧性；能量守恒；配置空间域,等值集条件到子水平集有界的推导须审,,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-006,Eq. (1.5) flow map,1.5.1,26,49,definition,初值问题的流映射、组合律、逆映射和 Hamiltonian 不变量,rendered_pdf_page,original_page_checked,唯一且双向全局存在；连续依赖；能量守恒,局部流与全局流需区分,,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-012,first integral,1.5.2,28,51,definition,沿所有初值解恒定的光滑函数 I；光滑自治场情形满足 ∇I·f=0,rendered_pdf_page,original_page_checked,解存在；I 可微；f 连续；链式法则,教材把 ∇I·f=0 作为全空间判据,,仅本页锚点核对；未表示所在节逐页审完
+CH01-CLM-008,Kepler angular momentum,1.5.2,29,52,claim,固定中心的平面 Kepler 势旋转不变，角动量保持常数,rendered_pdf_page,original_page_checked,原点避碰域；势旋转不变；质量归一,教材给极坐标计算,,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-007,Eq. (1.6) equilibrium,1.5.3,31,54,definition,自治 ODE 平衡点满足 f(z*)=0，对应常值解,rendered_pdf_page,original_page_checked,自治向量场；解唯一性用于识别轨道,,,仅本页锚点核对；未表示所在节逐页审完
+CH01-EXT-001,Hartman-Grobman reference,1.5.3,32,55,external_result,双曲平衡附近非线性与线性化系统的拓扑共轭叙述,rendered_pdf_page,original_page_checked,双曲性；局部域；共轭正则性,"引 [177,362]；书中写 smooth invertible，标准结论正则性需另核",,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-008,Lyapunov stability,1.5.3,32,55,definition,任意 ε>0 存在 δ>0，使 δ 内初值的正向全轨道一直留在 ε 邻域,rendered_pdf_page,original_page_checked,正向所有时间的流存在；相空间范数,原文写 sup_{t≥0}；量词需精确转写,,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-009,strong local minimum,1.5.3,32,55,definition,某 ε 邻域内所有其他 q 的势能严格高于 U(q*),rendered_pdf_page,original_page_checked,U 连续/光滑；q* 在域内部,不能与 Hessian 正定混同,,仅本页锚点核对；未表示所在节逐页审完
+CH01-CLM-005,Hessian sufficient condition,1.5.3,33,56,claim,正定 Hessian 给出二次线性化能量的严格极小条件,rendered_pdf_page,original_page_checked,U 为 C²；Hessian 正定；M 正定,这是 Theorem 1.1 的更强特例,,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-013,periodic-boundary potential,1.6,35,58,model,周期镜像下截断的成对势求和模型,rendered_pdf_page,original_page_checked,周期盒；镜像截断规则；距离和势定义域,无限镜像与有限截断须区分,,仅本页锚点核对；未表示所在节逐页审完
+CH01-CLM-010,stationary gradient,1.6.1,36,59,claim,内点势能极小值满足 ∇U(q*)=0,rendered_pdf_page,original_page_checked,U 在点可微；q* 为配置域内点,该必要条件不能反推极小,,仅本页锚点核对；未表示所在节逐页审完
+CH01-RISK-001,Hessian at minimum,1.6,37,60,semantic_risk,正文将势能极小处的 Hessian 描述为正定；一般极小值只保证半正定,rendered_pdf_page,original_page_checked,U C²；严格极小也不保证正定，例如 x⁴,不能以该句作为无条件引理,,仅本页锚点核对；未表示所在节逐页审完
+CH01-CLM-009,central-force angular momentum,1.7,39,62,claim,径向成对势的中心力使总角动量导数为零,rendered_pdf_page,original_page_checked,三维叉积；成对作用力；解可微；边界条件,教材同页注释周期边界保线动量但不保角动量,,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-014,chaotic flow criteria,1.7.1,41,64,definition,以初值敏感性和相空间域上的拓扑传递性描述混沌特征,rendered_pdf_page,original_page_checked,流及正向存在；域与拓扑；敏感性量词,教材用典型条件和数值实验，不是普遍定理,,仅本页锚点核对；未表示所在节逐页审完
+CH01-CLM-006,Eq. (1.10),1.7.2,44,67,claim,流对初值的 Jacobian 满足变分方程 W'=f'(z(t))W,rendered_pdf_page,original_page_checked,流对初值可微；f 正则；导数可交换,教材按链式法则给出,,仅本页锚点核对；未表示所在节逐页审完
+CH01-DEP-010,Lyapunov exponents,1.7.2,45,68,definition,用变分矩阵奇异值增长率的上极限定义 Lyapunov 指数,rendered_pdf_page,original_page_checked,全局流；奇异值排序；极限/上极限,,,仅本页锚点核对；未表示所在节逐页审完
+CH02-CLM-001,Liouville volume preservation,2.3.1,72,94,claim,Hamiltonian 向量场散度为零，光滑流保持相空间体积,rendered_pdf_page,original_page_checked,H 至少 C²；流可逆；Jacobian/体积变换,教材引用 [16] 并给混合偏导相消,,仅本页锚点核对；未表示所在节逐页审完
+CH02-DEP-001,symplectic map,2.3.3,76,98,definition,C¹ 映射的 Jacobian 满足 DΦᵀ J DΦ=J,rendered_pdf_page,original_page_checked,相空间偶数维；标准 J；可微,,,仅本页锚点核对；未表示所在节逐页审完
+CH03-DEP-001,formal modified Hamiltonian,3.1,100,122,model,将修正 Hamiltonian 写成步长 h 的形式幂级数,rendered_pdf_page,original_page_checked,形式级数与收敛函数须区分；辛映射,教材后文说明级数通常不收敛,,仅本页锚点核对；未表示所在节逐页审完
+CH04-CLM-001,constrained cotangent invariance,4.3,153,175,claim,约束反力乘子方程在矩阵可逆时给出切/余切束不变性,rendered_pdf_page,original_page_checked,约束 Jacobian 满秩；广义逆矩阵可逆；局部解,教材在本页推导；全局性未核,,仅本页锚点核对；未表示所在节逐页审完
+CH04-EXT-001,SHAKE/RATTLE equivalence proof,4.3.5,162,184,external_result,SHAKE 与 RATTLE 位置迭代的对应及 RATTLE 辛性论证,rendered_pdf_page,original_page_checked,约束流形和余切束；投影可解性；两方法的初值匹配,教材把关键等价证明放在习题，RATTLE 辛性细节指 [229],,仅本页锚点核对；未表示所在节逐页审完
+CH05-DEP-001,Liouville equation,5.2.2,184,205,model,密度时间变化由概率流出入和散度定理描述,rendered_pdf_page,original_page_checked,ρ 光滑可积；边界通量；微分与积分交换,教材以光滑密度推导；弱解另需审,,仅本页锚点核对；未表示所在节逐页审完
+CH05-DEP-002,stationary generalized distribution,5.3.2,189,210,definition,稳态 Liouville 解可用测试函数积分的弱意义定义,rendered_pdf_page,original_page_checked,分布/测试函数；算子对偶；能量面测度,教材指出 Dirac 分布不能直接微分,,仅本页锚点核对；未表示所在节逐页审完
+CH06-CLM-001,Brownian spectral-gap/ergodicity,6.4.3,251,272,claim,周期配置域的 Brownian dynamics 生成元有谱隙，平滑观测量平均指数收敛,rendered_pdf_page,original_page_checked,周期边界；势能光滑；C² 测试函数；谱分析,本页列性质而无完整证明,,仅本页锚点核对；未表示所在节逐页审完
+CH06-EXT-001,"[257, Theorem 2.5]",6.4.4,251,272,external_result,退化随机扩散的几何遍历结论所依赖的外部定理,rendered_pdf_page,original_page_checked,小集/minorization；Lyapunov 漂移；生成元,教材明说不证明，证明基本见 [257],,仅本页锚点核对；未表示所在节逐页审完
+CH06-DEP-001,Fokker-Planck derivation,6.3.6,241,262,model,从 SDE 生成元及分部积分推导概率密度的前向方程,rendered_pdf_page,original_page_checked,系数多项式增长；ρ 光滑并在无穷远衰减；分部积分,数学条件及弱解需单列,,仅本页锚点核对；未表示所在节逐页审完
+CH06-EXT-002,"[257, Lemma 3.4]",6.4.4,256,277,external_result,Wiener 路径以正概率留在给定连续路径管内的引理，用于 Langevin 小集可达性,rendered_pdf_page,original_page_checked,Wiener 支持性质；解对驱动路径的依赖,教材引用而未证明；所用正概率步骤另引 [349],,仅本页锚点核对；未表示所在节逐页审完
+CH07-DEP-001,weak error and order,7.2,265,286,definition,弱误差以测试函数期望差定义，弱阶 r 由 h^r 界给出,rendered_pdf_page,original_page_checked,可观测量类；矩条件；固定终时；取最大值的网格,与强误差和采样偏差分开,,仅本页锚点核对；未表示所在节逐页审完
+CH07-CLM-001,Gibbs preservation under exact splitting,7.6,282,303,claim,两个各自保持 Gibbs 密度的精确子流组合仍保持它,rendered_pdf_page,original_page_checked,子流不变性；组合定义；密度归一化,教材本页给算子等式；数值近似须分开,,仅本页锚点核对；未表示所在节逐页审完
+CH07-EXT-001,Ge-Marsden [400],7.6,282,303,external_result,有关辛方法与精确能量守恒同时成立的限制性定理,rendered_pdf_page,original_page_checked,辛映射；第一积分；时间重参数化的准确版本,教材引用 [400]，本轮未核原文条件,,仅本页锚点核对；未表示所在节逐页审完
+CH08-DEP-001,extended invariant density,8.1,331,352,model,"扩展变量方法设计联合平稳密度 ρβ(q,p)ρ̂(ξ)",rendered_pdf_page,original_page_checked,平稳性；归一化；边缘化；遍历性,正文强调遍历性可能失败,,仅本页锚点核对；未表示所在节逐页审完
+CH08-EXT-001,NHL accessibility proof,8.4.1,348,369,external_result,Nosé-Hoover-Langevin 的 Assumption 1(i) 可达性证明被教材省略,rendered_pdf_page,original_page_checked,扩散可达性；Hörmander；小集条件,"教材明说省略；细节指 [283]、更一般 SDE 例子 [256,257]",,仅本页锚点核对；未表示所在节逐页审完
+APPA-DEP-001,pair-force accumulation,A,403,423,algorithm,由成对势导数累计粒子 i、j 的相反作用力,rendered_pdf_page,original_page_checked,r>0；势可微；成对索引；避免重复,仅算法原页；长程/PME 未审,,仅本页锚点核对；未表示所在节逐页审完
+APPB-DEP-001,probability-space basics,B,407,426,definition,概率空间三元组及离散/连续密度给出事件概率,rendered_pdf_page,original_page_checked,σ-代数；概率测度归一化；可测性,附录后页未细读,,仅本页锚点核对；未表示所在节逐页审完
+APPC-CLM-001,detailed balance implies invariance,C,414,432,claim,转移密度满足详细平衡时目标密度在一步更新下不变,rendered_pdf_page,original_page_checked,转移核归一化；可测可积；交换积分,本页给积分等式；收敛需另需不可约等条件,,仅本页锚点核对；未表示所在节逐页审完
+APPC-CLM-002,Monte-Carlo CLT,C,413,431,external_result,独立同分布且方差有限时经验均值的归一化误差趋于正态,rendered_pdf_page,original_page_checked,i.i.d.；有限正方差；分布收敛,教材略述；外部 CLT 依赖,,仅本页锚点核对；未表示所在节逐页审完

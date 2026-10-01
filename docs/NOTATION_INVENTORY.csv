@@ -1,0 +1,73 @@
+﻿item_id,symbol_ascii_key,meaning_zh,printed_page,pdf_page_1based,semantic_category,source_status,lean_declaration_or_existing_api,module,semantic_review,formalization_status,verified_commit,notes
+NOT-001,N,原子数,xi,12,Finite index,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-002,N_d,自由度数,xi,12,Dimension,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-003,N_c,构型坐标数,xi,12,Dimension,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-004,R^m,实欧氏空间,xi,12,Euclidean space,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-005,def =,定义等号,xi,12,Lean definition syntax,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-006,:=,赋值,xi,12,Algorithm semantics,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-007,norm,欧氏范数,xi,12,Norm,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-008,C^k,连续可微阶数,xi,12,Regularity,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-009,composition,函数复合,xi,12,Function composition,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-010,q,位置向量,xi,12,Position,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-011,q_j,第 j 个原子位置,xi,12,Particle indexing,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-012,"q_i,x",第 i 个原子的 x 坐标,xi,12,Coordinate indexing,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-013,q_dot,时间导数,xi,12,Derivative of trajectory,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-014,p,动量,xi,12,Momentum,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-015,M,质量矩阵,xi,12,Mass matrix,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-016,I,单位矩阵,xi,12,Identity matrix,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-017,bold 0,零向量或零矩阵,xi,12,Zero,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-018,F,力向量,xi,12,Force,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-019,italic E,能量函数,xi,12,Energy function,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-020,roman E,能量值,xi,12,Energy level,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-021,U,势能函数,xi,12,Potential,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-022,phi,成对或少体势能项,xi,12,Potential contribution,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-023,phi_LJ,Lennard-Jones 势,xi,12,Potential with singular domain,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-024,K,动能,xi,12,Kinetic energy,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-025,L,Lagrangian,xi,12,Lagrangian,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-026,H,Hamiltonian,xi,12,Hamiltonian,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-027,tau,时间区间长度,xii,13,Time interval,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-028,nu,时间步数,xii,13,Finite iteration,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-029,F_t,流映射,xii,13,Flow,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-030,exp(A),矩阵指数,xii,13,Matrix exponential,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-031,U_second,势能 Hessian,xii,13,Second derivative,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-032,f_prime,Jacobian,xii,13,Derivative,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-033,T,温度,xii,13,Temperature,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-034,P,压力,xii,13,Pressure,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-035,V,体积,xii,13,Volume,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-036,k_B,Boltzmann 常数,xii,13,Physical constant,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-037,beta,逆温度参数,xii,13,Inverse temperature with explicit nonzero assumptions,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-038,fcc,面心立方,xii,13,Lattice,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-039,bcc,体心立方,xii,13,Lattice,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-040,h,时间步长,xii,13,Step size,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-041,G_h,数值近似流,xii,13,Numerical method,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-042,div f,散度,xii,13,Divergence,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-043,d_omega,相空间体积测度,xii,13,Measure,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-044,Lebesgue integral,Lebesgue 积分,xii,13,Measure and integrability,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-045,J,典范辛结构矩阵,xii,13,Symplectic matrix,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-046,wedge,微分形式楔积,xii,13,Differential forms,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-047,det(A),行列式,xii,13,Determinant,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-048,tr(A),迹,xii,13,Trace,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-049,G_h_adjoint,数值方法的伴随,xii,13,Method adjoint,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-050,L_f,Lie 导数,xii,13,Lie derivative,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-051,C_ab(tau),相关函数,xii,13,Correlation,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-052,"D,A,S",可测集合,xii,13,Measurability,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-053,Av_H=E(g),微正则平均,xii,13,Energy surface measure,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-054,Av_rho(g),密度平均,xii,13,Density and integrability,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-055,Av_beta(g),正则平均,xii,13,Gibbs measure,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-056,mu_E,微正则测度,xii,13,Surface measure and normalization,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-057,Pr(A),概率,xii,13,Probability measure,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-058,phi_bar(tau),有限时间平均,xii,13,Time integral,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-059,rho_infty,不变分布,xii,13,Invariant measure,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-060,L_adjoint,L2 中算子伴随,xii,13,Operator domain and adjoint,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-061,L2(D),平方可积空间,xii,13,Lp space,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-062,"inner(f,g)",L2 内积,xii,13,Inner product,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-063,angle(f),依上下文定义的平均,xii,13,Context-dependent average,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-064,W(t),Wiener 过程,xiii,14,Stochastic process,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-065,dW,Wiener 增量记法,xiii,14,"Stochastic integral, not ordinary differential",notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-066,"[A,B]",矩阵交换子,xiii,14,Matrix commutator,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-067,"[L,M]",算子交换子,xiii,14,Operator commutator with domains,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-068,[[ABC]],组合数值方法,xiii,14,Ordered composition,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-069,"S{F,G}",向量场生成的 Lie 代数,xiii,14,Lie bracket and span,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-070,clim,依分布收敛,xiii,14,Convergence in distribution,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-071,l.i.m.,均方收敛,xiii,14,L2 convergence,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
+NOT-072,1_S,示性函数,xiii,14,Indicator function,notation_table_visually_checked,,,not_started,not_started,,ASCII key identifies the symbol; confirm exact types and context from the relevant chapter.
