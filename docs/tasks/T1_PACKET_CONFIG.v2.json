@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "packet_id": "T1-preparation-v2",
+  "task_id": "T1",
+  "stage": "statement_review",
+  "stage_summary": "只做陈述、假设和依赖审阅，停在报告交付，不实现新教材证明",
+  "primary_skill": "Lean Blueprint",
+  "return_directory": "docs/tasks/T1_mathcopilot_return_v2/",
+  "required_branch": "chapter01-kinetic-energy-nonneg",
+  "required_head": "9587329cf646889b6ebbab7133ae76dce156450d",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+  "file_list": "docs/tasks/T1_PACKET_FILES.v2.csv",
+  "input_manifest": "docs/tasks/T1_INPUT_MANIFEST.v2.csv",
+  "entry_file": "project/docs/tasks/T1_TASK_PACKET.v2.zh-CN.md",
+  "prompt_file": "project/docs/tasks/T1_MATHCOPILOT_PROMPT.v2.zh-CN.md",
+  "textbook_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "textbook_pages": [
+    {
+      "path": "textbook/section12-041.png",
+      "pdf_page": 41,
+      "printed_page": 18
+    },
+    {
+      "path": "textbook/section12-042.png",
+      "pdf_page": 42,
+      "printed_page": 19
+    }
+  ],
+  "skills_confirmation": {
+    "source": "user_report",
+    "date": "2026-10-01",
+    "skills": [
+      "math-brainstorm",
+      "lean-blueprint",
+      "lean-proof"
+    ],
+    "account_inspected_by_local_agent": false
+  }
+}

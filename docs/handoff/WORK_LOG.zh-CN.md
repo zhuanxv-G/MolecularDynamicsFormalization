@@ -147,7 +147,28 @@
 - 初次 git ls-remote 退出码 1：Windows schannel AcquireCredentialsHandle/SEC_E_NO_CREDENTIALS。该失败尚不代表仓库权限或源码错误；下一步保持 TLS 验证尝试 OpenSSL backend，并读取已连接 GitHub 工具。
 - MathCopilot 操作使用已读取 Browser 技能；目标是现有项目仓库/索引核对及小规模声明检索，不增加 Zotero。T1 先陈述与依赖，再完整证明及固定版本验收；用户本轮授权优先于旧的准备阶段等待文字。
 
-## 后续追加格式
+## 2026-10-02 00:16 +08:00 — 推送/远端 CI 完成，第四项及 T1 进行中
+
+- 用户本轮授权延续：推送已验证改动、核对 MathCopilot Lean 库/索引、发送材料并推进 T1。53 文件提交 `9587329cf646889b6ebbab7133ae76dce156450d`（Strengthen fixed-version verification and preserve task workflow）已标准推送到 chapter01-kinetic-energy-nonneg，没有 force/合并/改 main，保留用户 FORMALIZATION_PLAN.md 修改。
+- 安全传输：schannel 凭据初始化失败后用保持 TLS 校验的 http.sslBackend=openssl；只读查询成功，沙箱 push 退出1无诊断，随后经自动审核批准的 require_escalated push 成功。没有读取或展示凭据，没有自动审核拒绝。
+- GitHub Actions run 36887786627 / job 110455409268 的 head_sha 与新提交一致，conclusion success。实际日志确认 Linux 下 Lean 4.34.0、mathlib 5ed2965、8928 jobs 构建、Scratch、36 项 namespace 依赖检查通过；关键定理仅标准逻辑公理。11 文件 artifact 11175850137 已上传。保存 RESULT.json 与实际日志筛选摘录，负责人语义复核保持 pending。
+- 第四项：创建 docs/knowledge 的已接受引理目录与核对契约。先前未登录，已向用户请求在打开浏览器登录；之后实际检测到登录会话。导航 Lean 库未变，打开账户设置并进入 Git；实际仓库 HEAD、索引 HEAD/状态和检索命中尚未核对，网站任务尚未发送。一次批量浏览器读取超时重建连接，随后设置可用，未读取 cookies/storage/credentials。
+- T1：隔离 ../tmp/t1-implementation/ParticleCoordinates.lean 13 条完整定理草稿覆盖11个规格ID，未使用占位或新公理，尚未集成。首次动能求和简化位置无效，报1个未解目标；先展开 Fintype.sum_prod_type 再简化后编译0。第二次输出捕获写错使日志为空，第三次正确捕获再跑编译0、无诊断。全命名空间公理审计正在执行；不宣称它已通过。
+- 新 T1-preparation-v2 沿用数学规格并同步新 HEAD、验收脚本/CI；原 v1 保持不可变。新ZIP基准9587329，SHA-256 84df8f79ba1e94f7155ce37452925de2d9331983f65bce03d0e677fd5c906d35，37成员/35记录/19核心输入，打包工具退出0且CRC/字节/哈希/版本通过。v2尚未发送；未把完整草稿放入独立陈述审阅输入。
+- 下一动作：完成正确项目仓库/索引核对，poll隔离公理审计，提供v2并发送Lean Blueprint批。网站报告/正式集成/新全工程验收未发生，不能把旧CI通过套到新草稿。
+
+## 2026-10-02 00:45 +08:00 — T1正式实现/本地完整验收完成，网站连接和上传未成功
+
+- 用户授权延续；HEAD 9587329cf646889b6ebbab7133ae76dce156450d，工作分支不变，FORMALIZATION_PLAN.md原修改保留。本批T1尚未提交/推送，不把基线CI套到新源码。
+- 独立草稿公理审计退出0，13条定理均只依赖标准逻辑公理；导入环境60项工程声明通过。实际再次查看印刷18–19/PDF41–42原页，核对质量排列、维数/自由度、动能欧氏范数及后续动态结论边界。
+- 新正式ParticleCoordinates模块包含13完整定理（11规格ID），加入顶层导入，纠正Notation注释，并同步映射、假设、STATUS、公理检查。未改Lean/mathlib固定版本。
+- 正式check.ps1于00:24:14–00:26:40退出0：固定版本、源码扫描、8929jobs、Scratch、60项目声明公理审计。12输入/10日志哈希和退出码独立复核通过。原证据与docs/verification/2026-10-02-T1逐字节副本保存；报告哈希98b7b40708e2ce6003d1a183f0c162848320b4cd02f134256f3a8be7aaf7f33d。
+- 网站实际Git设置语义检索关闭，本地MiniLM-L6已有配置。点击更新未暴露HEAD/完成证据；勾选开启并保存失败，UI显示无法连接MathCopilot服务器/Failed to fetch，立即重建禁用。保存本地截图，未提交含账号页面截图。配置保存/索引检索不标成功。
+- 浏览器重新载入后能进入formal math项目，选中/lean-blueprint；上传菜单及“上传文件”没有返回chooser，各60s超时，DOM无input[type=file]，没有上传。T1任务尚未发送。改用Git已提交输入/已有教材是后续可执行路径；不声称收到ZIP或完整manifest匹配。
+- 提取任务指令的PowerShell反引号模式和Python默认GBK输出失败，改用chr(96)分隔与-X utf8成功；没有影响Lean结果或更改输入包。v1/v2归档仍保持原哈希。
+- 网站独立报告/负责人签核、新T1远端CI仍待完成。下一动作：核对源码输入哈希后提交推送T1，并在网站发送Git输入审阅指令；服务器未恢复则记录真实失败与待发送材料。
+
+## 后续追加格式（模板）
 
 每次在本段之前追加一个实际条目；不要删改历史成功/失败记录。可采用：
 

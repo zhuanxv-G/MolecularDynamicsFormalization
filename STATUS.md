@@ -24,12 +24,20 @@
 - The existing check entry now verifies configured and actual Lean/mathlib v4.34.0, scans sources including unsafe declarations, builds the library, checks Scratch, and audits imported project declarations against the standard logical dependency allowlist.
 - The final local check passed at 23:20 +08:00 (exit 0, 8928 build jobs, 36 audited declarations). The key theorem depends on propext, Classical.choice, and Quot.sound. Eight isolated rejection cases behaved as expected; no formal mathematical source or dependency pin changed.
 - Evidence, exact input hashes, and limitations are in [the step 3 result](docs/verification/2026-10-01-step3/RESULT.zh-CN.md). Machine success leaves responsible textbook semantic review pending; there is no new T1 proof or MathCopilot return in this batch.
-- The existing CI configuration uses the same check and saves evidence artifacts. These workflow edits remain local and have not been committed, pushed, or run remotely.
+- The existing CI configuration uses the same check and saves evidence artifacts. Commit 9587329 was pushed to the working branch and GitHub Actions run 36887786627 passed, including 8928 build jobs and 36 imported project declarations. Evidence is in `docs/verification/2026-10-02-remote-ci/`. This successful baseline CI does not validate later T1 source changes.
+
+### T1 implementation (2026-10-02, in progress)
+
+- Integrated `Chapter01/ParticleCoordinates.lean`: particle masses/vectors, particle-first coordinate equivalence, flatten/unflatten, repeated masses, particle kinetic energy, and 13 complete theorem proofs covering the 11 T1 specification IDs.
+- Corrected the Notation comment to distinguish configuration coordinates from constrained degrees of freedom; included the new module in the project import root and added key axiom prints.
+- Before integration, standalone fixed Lean 4.34.0 compilation passed with no diagnostics. All 13 theorem dependencies were the permitted standard logical axioms; the draft environment audit passed for 60 imported project declarations. The integrated full-project check also passed at 2026-10-02 00:26 +08:00: fixed versions, source scan, 8929 build jobs, Scratch and 60 declaration dependency audits. Evidence is in `docs/verification/2026-10-02-T1/`.
+- Rechecked §1.2 printed18–19/PDF41–42: particle-first mass repetition, Euclidean norm, and coordinate/degrees-of-freedom distinction. The energy identity has no mass-positivity assumption; the reverse positivity bridge requires `0<d`.
+- MathCopilot currently displays semantic search as disabled. Enabling it with the existing local MiniLM-L6 configuration failed to save with `Failed to fetch`; repository/index HEAD is unexposed/unverified. T1 v2 is locally verified but not uploaded or sent. Independent site review and responsible semantic sign-off are pending.
 
 ## Not yet formalized
 
 - A time-dependent trajectory and its first and second derivatives.
 - Regularity of the potential or trajectory.
-- Positivity or invertibility of the mass entries.
+- Hamiltonian consistency under the now-available positive-mass inverse bridges (T3).
 - Energy conservation along solutions of equation (1.3).
 - Chapter 1 §1.3 and later material.

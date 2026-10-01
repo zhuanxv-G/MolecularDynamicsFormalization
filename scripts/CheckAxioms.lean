@@ -4,6 +4,13 @@ import MolecularDynamicsFormalization
 -- Keep explicit dependency evidence for the current key textbook theorem.
 -- Add corresponding commands when new key theorems enter the formal library.
 #print axioms MolecularDynamics.nBodyKineticEnergy_nonneg
+#print axioms MolecularDynamics.unflatten_flatten
+#print axioms MolecularDynamics.flatten_unflatten
+#print axioms MolecularDynamics.coordinateMassesOfParticles_pos_iff
+#print axioms MolecularDynamics.nBodyKineticEnergy_particle_eq
+#print axioms MolecularDynamics.diagonalMassMatrix_posDef_iff
+#print axioms MolecularDynamics.diagonalMassMatrix_inv_eq
+#print axioms MolecularDynamics.diagonalMassMatrix_inv_mulVec
 
 -- Audit all declarations in the imported project namespace, including private
 -- declarations after removing their generated private-name prefix.

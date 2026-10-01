@@ -1,0 +1,23 @@
+{
+  "repository_url": "https://github.com/zhuanxv-G/MolecularDynamicsFormalization",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "expected_head": "9587329cf646889b6ebbab7133ae76dce156450d",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+  "source_file": "MolecularDynamics/Chapter01/NBody.lean",
+  "source_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+  "lookup_declaration": "MolecularDynamics.nBodyKineticEnergy_nonneg",
+  "expected_hypothesis": "hm : ∀ i, 0 ≤ masses i",
+  "expected_conclusion": "0 ≤ nBodyKineticEnergy masses velocity",
+  "expected_import": "MolecularDynamics.Chapter01.NBody",
+  "website_repository_head": null,
+  "website_index_head": null,
+  "website_index_status": "disabled_save_failed_server_unreachable",
+  "semantic_search_result": "not_run_index_disabled",
+  "observed_repository": "zhuanxv-G/MolecularDynamicsFormalization",
+  "observed_repository_state": "仓库已就绪; update attempted; completion/version not confirmed",
+  "observed_embedding_provider": "本地模型",
+  "observed_embedding_model": "MiniLM-L6",
+  "enable_save_result": "无法连接 MathCopilot 服务器：Failed to fetch; TypeError: Failed to fetch",
+  "responsible_semantic_review": "pending"
+}

@@ -3,7 +3,9 @@ import Mathlib.Data.Matrix.Basic
 
 /-!
 Minimal real, finite-dimensional notation for the autonomous mechanical models.
-`n` counts degrees of freedom. Particle and spatial indices can be introduced later.
+`n` counts configuration coordinates (`N_c` in the textbook). It equals the
+degrees of freedom only in an unconstrained coordinate model. Particle and
+spatial indices are introduced in Chapter01.ParticleCoordinates.
 -/
 
 namespace MolecularDynamics

@@ -1,0 +1,11 @@
+Source: GitHub Actions job 110455409268; filtered verification lines, not the full job log.
+2026-10-01T15:53:55.6574304Z Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)
+2026-10-01T15:53:55.6922519Z Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)
+2026-10-01T15:55:58.3405016Z ##[group]Run ./scripts/check.ps1 -ReportDirectory "$env:RUNNER_TEMP/formal-project-check"
+2026-10-01T15:55:58.3405566Z [36;1m./scripts/check.ps1 -ReportDirectory "$env:RUNNER_TEMP/formal-project-check"[0m
+2026-10-01T15:56:04.9584623Z Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)
+2026-10-01T15:56:06.3096443Z Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)
+2026-10-01T15:56:10.1097176Z Build completed successfully (8928 jobs).
+2026-10-01T15:56:24.7411390Z 'MolecularDynamics.nBodyKineticEnergy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-01T15:56:24.7412380Z Dependency audit passed for 36 imported project declarations; allowed: [propext, Classical.choice, Quot.sound].
+2026-10-01T15:56:24.7478764Z Fixed versions, project source scan, lake build, Scratch.lean, and axiom dependency checks passed.
