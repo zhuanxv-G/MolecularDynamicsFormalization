@@ -1,10 +1,10 @@
 # 第四项：现有 Lean 库的最小检索验收
 
-本地准备已完成，网站操作等待登录。此文件不能代表网站索引已经就绪。
+2026-10-02 已成功保存启用并更新/重建，界面显示 ready；但实际私有工具返回无关测试库，完整检索验收未通过。两次网站任务已完成诊断，并直接展开原始工具结果核实。可用的固定 Git 源码检索路径和机器验收声明目录另行提供，不能把它记为语义检索通过。
 
 ## 固定对象
 
-仓库 zhuanxv-G/MolecularDynamicsFormalization，工作分支 chapter01-kinetic-energy-nonneg，提交 9587329cf646889b6ebbab7133ae76dce156450d。Lean/mathlib v4.34.0，mathlib 提交 5ed2965256430c3649e86755f9576b54eca72435。机器可读对象和源文件哈希见 LEAN_LIBRARY_CHECK.json。
+仓库 zhuanxv-G/MolecularDynamicsFormalization，工作分支 chapter01-kinetic-energy-nonneg，远端/API实际提交 54b75a14aaa968522903d82eef947ffdc7bbf165；main仍为旧d5dd572，不能当作当前证明库。Lean/mathlib v4.34.0，mathlib 提交 5ed2965256430c3649e86755f9576b54eca72435。机器可读对象和源文件哈希见 LEAN_LIBRARY_CHECK.json。
 
 ## 已有可复用声明
 
@@ -17,6 +17,8 @@
 | nBodyKineticEnergy | ∑ i, masses i * (velocity i)^2 / 2 | 已定义 |
 | nBodyTotalEnergy | 动能加势能 | 已定义，不是能量守恒定理 |
 | nBodyKineticEnergy_nonneg | 非负坐标质量下动能非负 | 完整证明及固定版本机器验收通过，负责人语义状态另记 |
+| nBodyKineticEnergy_particle_eq | 粒子与坐标的动能一致，对任意实质量成立 | T1完整证明、本地及c7d9778远端CI通过 |
+| diagonalMassMatrix_inv_eq | 正质量下逆矩阵等于逐坐标倒数的对角矩阵 | T1完整证明、本地及c7d9778远端CI通过；不可去掉正性 |
 
 ## 在网站的最小操作
 
@@ -28,4 +30,15 @@
 
 不将 T1 文档里的候选头当作已证明引理。当前 T1/T3 无新增外部论文瓶颈，暂不连接 Zotero。
 
-依据 MathCopilot 公开知识库指南：https://mathcopilot.cn/help#manual-knowledge。2026-10-01 已重新读取公开说明；用户账号实际索引尚未核对。
+## 本轮实际验收结果
+
+- 网站配置：保存成功，语义检索开关开启，更新/重建后仍显示“Lean 语义索引已就绪”。
+- 紧凑 Retrieval / Lean：查询返回 LeanDex 522。
+- Task 私有工具：`mcp__mathcopilot__lean_library_semantic_search` 实际可调用；两条查询及一次定向复测均返回 `mathcopilot-lean-test`。已直接展开第一条复测的参数和原始 structuredContent 核实，内容是 `lakefile.lean` 与 `MathcopilotTest.lean`，不是本工程。
+- 版本：网站任务工作区 HEAD 为 `bdcd1ecd...`，落后于已核对的远端快照；设置中的仓库克隆 HEAD 和查询索引 HEAD 均未暴露，不能把任务工作区 HEAD 当索引 HEAD。
+- 修复边界：网站任务报告当前工具仅支持 query，没有切换/重建索引接口；完成一次定向诊断后停止重复重建。具体配置绑定和发布问题仍需网站侧排查，根因尚未直接核实。
+- 替代路径：见 `LEAN_DECLARATIONS.zh-CN.md` / `LEAN_DECLARATIONS.json`，包含 14 个实际完整定理头、模块和源文件 SHA-256；以指定发布提交读取目录，再以固定源码快照核对原模块。网站首轮任务已读取远端三条目标声明，但目录新增文件的接收仍需另行验收。
+
+完整证据和网站修复要点见 `MATHCOPILOT_INDEX_DIAGNOSTIC.zh-CN.md`。目前不得将第四项标为完全完成，不阻碍 T2 的本地准备和基于固定源码的依赖检索。
+
+依据 [MathCopilot 知识库指南](https://mathcopilot.cn/help#manual-knowledge)与[检索指南](https://mathcopilot.cn/help#manual-retrieval)。本轮于 2026-10-02 在浏览器实际读取公开说明。

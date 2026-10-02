@@ -1,7 +1,10 @@
 {
   "repository_url": "https://github.com/zhuanxv-G/MolecularDynamicsFormalization",
   "branch": "chapter01-kinetic-energy-nonneg",
-  "expected_head": "9587329cf646889b6ebbab7133ae76dce156450d",
+  "expected_head": "54b75a14aaa968522903d82eef947ffdc7bbf165",
+  "last_verified_remote_head": "54b75a14aaa968522903d82eef947ffdc7bbf165",
+  "remote_main_head": "d5dd5722602fba9ff252311b2c93ff85a6801ed0",
+  "remote_check_time": "2026-10-02 14:48 +08:00",
   "lean_toolchain": "leanprover/lean4:v4.34.0",
   "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
   "source_file": "MolecularDynamics/Chapter01/NBody.lean",
@@ -12,12 +15,30 @@
   "expected_import": "MolecularDynamics.Chapter01.NBody",
   "website_repository_head": null,
   "website_index_head": null,
-  "website_index_status": "disabled_save_failed_server_unreachable",
-  "semantic_search_result": "not_run_index_disabled",
+  "website_index_status": "ready_in_settings_UI; private_query_returns_unrelated_mathcopilot_lean_test_corpus",
+  "semantic_search_result": "failed_wrong_corpus_after_two_queries_and_one_targeted_retest; first_raw_tool_result_directly_verified",
   "observed_repository": "zhuanxv-G/MolecularDynamicsFormalization",
-  "observed_repository_state": "仓库已就绪; update attempted; completion/version not confirmed",
+  "observed_repository_state": "仓库已就绪; 更新和立即重建后仍显示索引ready; UI未显示HEAD",
   "observed_embedding_provider": "本地模型",
   "observed_embedding_model": "MiniLM-L6",
-  "enable_save_result": "无法连接 MathCopilot 服务器：Failed to fetch; TypeError: Failed to fetch",
-  "responsible_semantic_review": "pending"
+  "enable_save_result": "success; Lean 语义索引已就绪; switch checked; save disabled after completion",
+  "previous_enable_save_failure": "2026-10-02 00:xx: 无法连接 MathCopilot 服务器：Failed to fetch; TypeError: Failed to fetch",
+  "responsible_semantic_review": "pending",
+  "acceptance_status": "not_passed_requires_website_binding_fix",
+  "website_task_workspace_head": "bdcd1ecd710db5fbd6b8698e9ee3d3e05d535045",
+  "actual_semantic_tool": "mcp__mathcopilot__lean_library_semantic_search",
+  "actual_query_corpus": "mathcopilot-lean-test",
+  "private_tool_reported_parameters": [
+    "query"
+  ],
+  "website_reported_index_management_tools": [],
+  "fallback_catalog": "docs/knowledge/LEAN_DECLARATIONS.json",
+  "fallback_catalog_count": 14,
+  "fallback_status": "14_headers_and_two_source_hashes_checked; website_read_three_frozen_source_declarations; new_catalog_website_receipt_pending",
+  "observed_raw_query": "非负质量的动能非负",
+  "observed_raw_paths": [
+    "lakefile.lean",
+    "MathcopilotTest.lean"
+  ],
+  "last_index_check_time": "2026-10-02 15:48 +08:00"
 }

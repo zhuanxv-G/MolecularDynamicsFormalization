@@ -1,0 +1,152 @@
+{
+  "snapshot_commit": "54b75a14aaa968522903d82eef947ffdc7bbf165",
+  "mathematical_implementation_commit": "c7d9778fe981c24ba7281db730206d1cfefbba4d",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "repository": "zhuanxv-G/MolecularDynamicsFormalization",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+  "declaration_count": 14,
+  "declarations": [
+    {
+      "name": "MolecularDynamics.nBodyKineticEnergy_nonneg",
+      "module": "MolecularDynamics.Chapter01.NBody",
+      "source_file": "MolecularDynamics/Chapter01/NBody.lean",
+      "source_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "header_in_namespace_MolecularDynamics": "theorem nBodyKineticEnergy_nonneg {n : ℕ} (masses : CoordinateMasses n)\n    (velocity : Velocity n) (hm : ∀ i, 0 ≤ masses i) :\n    0 ≤ nBodyKineticEnergy masses velocity",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.flattenParticleVectors_apply",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "@[simp] theorem flattenParticleVectors_apply {N d : ℕ} (v : ParticleVectors N d)\n    (i : Fin N) (a : Fin d) :\n    flattenParticleVectors v (particleCoordinateEquiv N d (i, a)) = v i a",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.unflatten_flatten",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "@[simp] theorem unflatten_flatten {N d : ℕ} (v : ParticleVectors N d) :\n    unflattenParticleVectors (flattenParticleVectors v) = v",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.flatten_unflatten",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "@[simp] theorem flatten_unflatten {N d : ℕ} (w : Velocity (N * d)) :\n    flattenParticleVectors (unflattenParticleVectors w) = w",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.coordinateMassesOfParticles_apply",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "@[simp] theorem coordinateMassesOfParticles_apply {N d : ℕ} (m : ParticleMasses N)\n    (i : Fin N) (a : Fin d) :\n    coordinateMassesOfParticles m (particleCoordinateEquiv N d (i, a)) = m i",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.coordinateMassesOfParticles_pos",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "theorem coordinateMassesOfParticles_pos {N d : ℕ} (m : ParticleMasses N)\n    (hm : ∀ i, 0 < m i) : ∀ k, 0 < coordinateMassesOfParticles (d := d) m k",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.coordinateMassesOfParticles_pos_iff",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "theorem coordinateMassesOfParticles_pos_iff {N d : ℕ} (m : ParticleMasses N)\n    (hd : 0 < d) :\n    (∀ k, 0 < coordinateMassesOfParticles (d := d) m k) ↔ (∀ i, 0 < m i)",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.nBodyKineticEnergy_particle_eq",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "theorem nBodyKineticEnergy_particle_eq {N d : ℕ}\n    (m : ParticleMasses N) (v : ParticleVectors N d) :\n    nBodyKineticEnergy (coordinateMassesOfParticles (d := d) m)\n      (flattenParticleVectors v) = particleKineticEnergy m v",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.diagonalMassMatrix_posDef_iff",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "theorem diagonalMassMatrix_posDef_iff {n : ℕ} (m : CoordinateMasses n) :\n    (diagonalMassMatrix m).PosDef ↔ ∀ i, 0 < m i",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.diagonalMassMatrix_isUnit",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "theorem diagonalMassMatrix_isUnit {n : ℕ} (m : CoordinateMasses n)\n    (hm : ∀ i, 0 < m i) : IsUnit (diagonalMassMatrix m)",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.diagonalMassMatrix_mul_inv",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "theorem diagonalMassMatrix_mul_inv {n : ℕ} (m : CoordinateMasses n)\n    (hm : ∀ i, 0 < m i) :\n    diagonalMassMatrix m * (diagonalMassMatrix m)⁻¹ = 1",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.diagonalMassMatrix_inv_mul",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "theorem diagonalMassMatrix_inv_mul {n : ℕ} (m : CoordinateMasses n)\n    (hm : ∀ i, 0 < m i) :\n    (diagonalMassMatrix m)⁻¹ * diagonalMassMatrix m = 1",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.diagonalMassMatrix_inv_eq",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "theorem diagonalMassMatrix_inv_eq {n : ℕ} (m : CoordinateMasses n)\n    (hm : ∀ i, 0 < m i) :\n    (diagonalMassMatrix m)⁻¹ = Matrix.diagonal (fun i => (m i)⁻¹)",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    },
+    {
+      "name": "MolecularDynamics.diagonalMassMatrix_inv_mulVec",
+      "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+      "source_file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "source_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "header_in_namespace_MolecularDynamics": "theorem diagonalMassMatrix_inv_mulVec {n : ℕ} (m : CoordinateMasses n)\n    (hm : ∀ i, 0 < m i) (w : Velocity n) (i : Fin n) :\n    ((diagonalMassMatrix m)⁻¹).mulVec ((diagonalMassMatrix m).mulVec w) i = w i",
+      "complete_proof_in_source": true,
+      "machine_verification": "passed_at_c7d9778_local_and_remote_CI",
+      "responsible_semantic_review": "pending"
+    }
+  ],
+  "semantic_index_acceptance": "not_passed; website_tool_returned_unrelated_test_corpus"
+}
