@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-10-03T01:36:00+08:00",
+  "repository": "zhuanxv-G/MolecularDynamicsFormalization",
+  "commit": "9baf87f89d07138a95bfbfe1f37d45dd54946cf7",
+  "run_id": 37041343101,
+  "run_url": "https://github.com/zhuanxv-G/MolecularDynamicsFormalization/actions/runs/37041343101",
+  "event": "push",
+  "status": "completed",
+  "conclusion": "success",
+  "job_id": 110951942612,
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Run actions/checkout@v5",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Run leanprover/lean-action@v1",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Check fixed versions, project sources, scratch, and dependencies",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Save formal check evidence",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5
+    },
+    {
+      "name": "Post Run actions/checkout@v5",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 10
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 11
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11242057946,
+      "name": "formal-project-check-37041343101-1",
+      "size_in_bytes": 4666,
+      "url": "https://api.github.com/repos/zhuanxv-G/MolecularDynamicsFormalization/actions/artifacts/11242057946",
+      "archive_download_url": "https://api.github.com/repos/zhuanxv-G/MolecularDynamicsFormalization/actions/artifacts/11242057946/zip",
+      "expired": false,
+      "created_at": "2026-10-02T17:34:24Z",
+      "expires_at": "2026-11-01T17:34:23Z",
+      "updated_at": "2026-10-02T17:34:24Z",
+      "digest": "sha256:c118e62d4eca0cbfe72c7c26c0df152ef1896821fd95f4c9cd4d91fbee0195f0",
+      "workflow_run": {
+        "id": 37041343101,
+        "repository_id": 1399290849,
+        "head_repository_id": 1399290849,
+        "head_branch": "chapter01-kinetic-energy-nonneg",
+        "head_sha": "9baf87f89d07138a95bfbfe1f37d45dd54946cf7"
+      }
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "scope_note": "CI verifies the T2+T5 formal source at this fixed commit. Independent MathCopilot proof review is pending."
+}

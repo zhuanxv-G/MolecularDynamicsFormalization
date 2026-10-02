@@ -1,0 +1,78 @@
+2026-10-02T17:33:40.8400346Z Checking git_branch...
+2026-10-02T17:33:40.8584221Z chapter01-kinetic-energy-nonneg
+2026-10-02T17:33:40.8733338Z Checking git_head...
+2026-10-02T17:33:40.8866812Z 9baf87f89d07138a95bfbfe1f37d45dd54946cf7
+2026-10-02T17:33:40.8892721Z Checking git_status...
+2026-10-02T17:33:40.9306920Z Checking lake_version...
+2026-10-02T17:33:40.9769764Z Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)
+2026-10-02T17:33:40.9801315Z Checking lean_version...
+2026-10-02T17:33:41.9047815Z Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)
+2026-10-02T17:33:41.9137854Z Checking mathlib_revision...
+2026-10-02T17:33:41.9340273Z 5ed2965256430c3649e86755f9576b54eca72435
+2026-10-02T17:33:41.9378190Z Checking mathlib_status...
+2026-10-02T17:33:41.9623965Z Checking lake_build...
+2026-10-02T17:34:11.6279160Z ✔ [8923/8931] Built MolecularDynamics.Notation (3.2s)
+2026-10-02T17:34:11.6279822Z ✔ [8925/8931] Built MolecularDynamics.BasicDefinitions (2.1s)
+2026-10-02T17:34:11.6280765Z ✔ [8926/8931] Built MolecularDynamics.Chapter01.PotentialBarriers (3.1s)
+2026-10-02T17:34:11.6281768Z ✔ [8927/8931] Built MolecularDynamics.Chapter01.NBody (5.2s)
+2026-10-02T17:34:11.6282981Z ✔ [8928/8931] Built MolecularDynamics.Chapter01.ParticleCoordinates (4.4s)
+2026-10-02T17:34:11.6284541Z ✔ [8929/8931] Built MolecularDynamics.Chapter01.LocalTrajectories (8.9s)
+2026-10-02T17:34:11.6285528Z ✔ [8930/8931] Built MolecularDynamicsFormalization (4.0s)
+2026-10-02T17:34:11.6286401Z Build completed successfully (8931 jobs).
+2026-10-02T17:34:11.6308391Z Checking scratch...
+2026-10-02T17:34:16.8153811Z MolecularDynamics.Position (n : ℕ) : Type
+2026-10-02T17:34:16.8155493Z MolecularDynamics.SeparableEnergy.hamiltonian {n : ℕ} (energy : MolecularDynamics.SeparableEnergy n) :
+2026-10-02T17:34:16.8156780Z   MolecularDynamics.Hamiltonian n
+2026-10-02T17:34:16.8359804Z Checking axiom_dependencies...
+2026-10-02T17:34:23.2196258Z 'MolecularDynamics.nBodyKineticEnergy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2197637Z 'MolecularDynamics.unflatten_flatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2214954Z 'MolecularDynamics.flatten_unflatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2234843Z 'MolecularDynamics.coordinateMassesOfParticles_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2236526Z 'MolecularDynamics.nBodyKineticEnergy_particle_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2237903Z 'MolecularDynamics.diagonalMassMatrix_posDef_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2239173Z 'MolecularDynamics.diagonalMassMatrix_inv_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2240409Z 'MolecularDynamics.diagonalMassMatrix_inv_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2241675Z 'MolecularDynamics.massOperator_velocityOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2242987Z 'MolecularDynamics.velocityOperator_massOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2244537Z 'MolecularDynamics.isMechanicalSolutionOn_iff_components' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2245958Z 'MolecularDynamics.momentum_eq_mass_deriv_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2247221Z 'MolecularDynamics.hasDerivAt_deriv_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2252627Z 'MolecularDynamics.solution_nBodyEquationAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2254047Z 'MolecularDynamics.solution_nBodyEquationAt_of_differentiable' depends on axioms: [propext,
+2026-10-02T17:34:23.2254859Z  Classical.choice,
+2026-10-02T17:34:23.2255325Z  Quot.sound]
+2026-10-02T17:34:23.2255885Z 'MolecularDynamics.solution_hasGradientAt_potential' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2256747Z 'MolecularDynamics.newtonTrajectory_to_mechanicalSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2257543Z 'MolecularDynamics.freeParticle_localIVP' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2258311Z 'MolecularDynamics.IsLocalMechanicalIVP.initial_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2259093Z 'MolecularDynamics.strictOn_iff_punctured' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2260007Z 'MolecularDynamics.strictUniv_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2260707Z 'MolecularDynamics.strictOn_isLocalMinOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2261403Z 'MolecularDynamics.compact_positive_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2262098Z 'MolecularDynamics.fixed_sphere_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2262781Z 'MolecularDynamics.open_domain_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2264149Z 'MolecularDynamics.energy_excludes_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2265383Z 'MolecularDynamics.energy_below_barrier_excludes_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2266642Z 'MolecularDynamics.conserved_trajectory_stays_in_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2267904Z 'MolecularDynamics.conserved_trajectory_below_barrier_stays_in_ball' depends on axioms: [propext,
+2026-10-02T17:34:23.2268486Z  Classical.choice,
+2026-10-02T17:34:23.2268712Z  Quot.sound]
+2026-10-02T17:34:23.2269171Z 'MolecularDynamics.conserved_trajectory_center_below_barrier_stays_in_ball' depends on axioms: [propext,
+2026-10-02T17:34:23.2269685Z  Classical.choice,
+2026-10-02T17:34:23.2269907Z  Quot.sound]
+2026-10-02T17:34:23.2270366Z 'MolecularDynamics.open_domain_energy_confinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2271126Z 'MolecularDynamics.zero_dimensional_sphere_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2271874Z 'MolecularDynamics.zero_dimensional_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2272603Z 'MolecularDynamics.zero_dimensional_strict_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2273713Z 'MolecularDynamics.singleton_relative_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2274460Z 'MolecularDynamics.singleton_sphere_not_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2275176Z 'MolecularDynamics.quartic_strict_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2275868Z 'MolecularDynamics.quartic_sphere_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2276560Z 'MolecularDynamics.constant_local_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2277240Z 'MolecularDynamics.constant_not_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2277933Z 'MolecularDynamics.endpoint_strict_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2278942Z 'MolecularDynamics.endpoint_potential_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2279693Z 'MolecularDynamics.endpoint_no_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2280422Z 'MolecularDynamics.quartic_potential_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:34:23.2281193Z Dependency audit passed for 128 imported project declarations; allowed: [propext, Classical.choice, Quot.sound].
+2026-10-02T17:34:23.2297489Z Fixed versions, project source scan, lake build, Scratch.lean, and axiom dependency checks passed.
