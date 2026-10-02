@@ -23,6 +23,32 @@ import MolecularDynamicsFormalization
 #print axioms MolecularDynamics.freeParticle_localIVP
 #print axioms MolecularDynamics.IsLocalMechanicalIVP.initial_mem
 
+#print axioms MolecularDynamics.strictOn_iff_punctured
+#print axioms MolecularDynamics.strictUniv_iff
+#print axioms MolecularDynamics.strictOn_isLocalMinOn
+#print axioms MolecularDynamics.compact_positive_gap
+#print axioms MolecularDynamics.fixed_sphere_barrier
+#print axioms MolecularDynamics.open_domain_barrier
+#print axioms MolecularDynamics.energy_excludes_sphere
+#print axioms MolecularDynamics.energy_below_barrier_excludes_sphere
+#print axioms MolecularDynamics.conserved_trajectory_stays_in_ball
+#print axioms MolecularDynamics.conserved_trajectory_below_barrier_stays_in_ball
+#print axioms MolecularDynamics.conserved_trajectory_center_below_barrier_stays_in_ball
+#print axioms MolecularDynamics.open_domain_energy_confinement
+#print axioms MolecularDynamics.zero_dimensional_sphere_empty
+#print axioms MolecularDynamics.zero_dimensional_barrier
+#print axioms MolecularDynamics.zero_dimensional_strict_min
+#print axioms MolecularDynamics.singleton_relative_strict
+#print axioms MolecularDynamics.singleton_sphere_not_subset
+#print axioms MolecularDynamics.quartic_strict_min
+#print axioms MolecularDynamics.quartic_sphere_barrier
+#print axioms MolecularDynamics.constant_local_min
+#print axioms MolecularDynamics.constant_not_strict
+#print axioms MolecularDynamics.endpoint_strict_radius
+#print axioms MolecularDynamics.endpoint_potential_continuous
+#print axioms MolecularDynamics.endpoint_no_barrier
+#print axioms MolecularDynamics.quartic_potential_continuous
+
 -- Audit all declarations in the imported project namespace, including private
 -- declarations after removing their generated private-name prefix.
 open Lean Elab Command in

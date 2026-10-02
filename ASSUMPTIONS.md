@@ -47,3 +47,13 @@ These are modeling questions to check against each textbook statement, not globa
 - `IsLocalMechanicalIVP` includes ε>0 and γ(t₀)=z₀. The proved `initial_mem` consequence uses the nonempty interval to obtain z₀.1∈Q. General existence/uniqueness is not a field of either solution predicate.
 - `freeParticle_localIVP` constructs an explicit solution for zero force on the full space. It does not establish existence for a general F, a maximal time interval, a global flow, conserved energy or stability.
 - The local ContinuousSMul instances are obtained from existing normed-space results; they add no mathematical hypothesis or logical dependency.
+
+## T5 strict minimum, sphere and trajectory assumptions
+
+- The strict minimum matches the textbook's punctured open-ball inequality. Its relative version requires the center to belong to Q; it does not assume a positive definite Hessian, strong convexity or a quadratic lower bound.
+- Uniform positive separation on a compact set requires continuity on that set. The statement allows an empty compact set and does not claim that a minimizing point exists in every case.
+- The sphere result requires `0<r<R`, inclusion of the full ambient sphere in Q and continuity of U on that sphere. The open-domain result constructs a smaller ball in Q; δ is chosen after r and generally depends on it. No common positive gap for all small radii is asserted.
+- `Position 0` is a singleton, so a positive-radius sphere is empty. The definitions and gap statements still hold vacuously; this is not a nontrivial physical equilibrium. The explicit zero-dimensional examples retain that distinction.
+- The conditional trajectory theorem takes position continuity, nonnegative kinetic energy and constant total energy as inputs on the supplied closed interval. Its initial position may be any point inside the ball. It proves confinement on that interval via the intermediate value theorem; it does not prove conservation, solution existence, uniqueness, momentum control or global continuation.
+- The potential and kinetic terms are general real-valued functions in the conditional lemmas. Relating them to the actual mechanical Hamiltonian and proving conservation are separate T3/T4 results.
+- Theorem1.1 remains pending: position confinement alone is not the full phase-space stability conclusion or its strict supremum bound for all future time.

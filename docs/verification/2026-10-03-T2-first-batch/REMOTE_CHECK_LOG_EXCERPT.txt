@@ -1,0 +1,48 @@
+2026-10-02T17:18:39.2339214Z Checking git_branch...
+2026-10-02T17:18:39.2514336Z chapter01-kinetic-energy-nonneg
+2026-10-02T17:18:39.2665877Z Checking git_head...
+2026-10-02T17:18:39.2790884Z 675fcaedbdef7b6ec57393c1ee99e9ca727da649
+2026-10-02T17:18:39.2813108Z Checking git_status...
+2026-10-02T17:18:39.3126421Z Checking lake_version...
+2026-10-02T17:18:39.3600785Z Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)
+2026-10-02T17:18:39.3632927Z Checking lean_version...
+2026-10-02T17:18:40.3739024Z Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)
+2026-10-02T17:18:40.3822189Z Checking mathlib_revision...
+2026-10-02T17:18:40.3933247Z 5ed2965256430c3649e86755f9576b54eca72435
+2026-10-02T17:18:40.4044483Z Checking mathlib_status...
+2026-10-02T17:18:40.4280895Z Checking lake_build...
+2026-10-02T17:19:07.7043400Z ✔ [8616/8769] Built MolecularDynamics.Notation (2.9s)
+2026-10-02T17:19:07.7046621Z ✔ [8925/8930] Built MolecularDynamics.BasicDefinitions (1.8s)
+2026-10-02T17:19:07.7047611Z ✔ [8926/8930] Built MolecularDynamics.Chapter01.NBody (4.6s)
+2026-10-02T17:19:07.7048821Z ✔ [8927/8930] Built MolecularDynamics.Chapter01.ParticleCoordinates (4.2s)
+2026-10-02T17:19:07.7050415Z ✔ [8928/8930] Built MolecularDynamics.Chapter01.LocalTrajectories (8.3s)
+2026-10-02T17:19:07.7051717Z ✔ [8929/8930] Built MolecularDynamicsFormalization (3.8s)
+2026-10-02T17:19:07.7053193Z Build completed successfully (8930 jobs).
+2026-10-02T17:19:07.7069317Z Checking scratch...
+2026-10-02T17:19:12.5844135Z MolecularDynamics.Position (n : ℕ) : Type
+2026-10-02T17:19:12.5845581Z MolecularDynamics.SeparableEnergy.hamiltonian {n : ℕ} (energy : MolecularDynamics.SeparableEnergy n) :
+2026-10-02T17:19:12.5863188Z   MolecularDynamics.Hamiltonian n
+2026-10-02T17:19:12.5866274Z Checking axiom_dependencies...
+2026-10-02T17:19:18.5181104Z 'MolecularDynamics.nBodyKineticEnergy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5182309Z 'MolecularDynamics.unflatten_flatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5183822Z 'MolecularDynamics.flatten_unflatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5184965Z 'MolecularDynamics.coordinateMassesOfParticles_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5186096Z 'MolecularDynamics.nBodyKineticEnergy_particle_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5187214Z 'MolecularDynamics.diagonalMassMatrix_posDef_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5195031Z 'MolecularDynamics.diagonalMassMatrix_inv_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5196675Z 'MolecularDynamics.diagonalMassMatrix_inv_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5198296Z 'MolecularDynamics.massOperator_velocityOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5199881Z 'MolecularDynamics.velocityOperator_massOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5201621Z 'MolecularDynamics.isMechanicalSolutionOn_iff_components' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5203345Z 'MolecularDynamics.momentum_eq_mass_deriv_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5305262Z 'MolecularDynamics.hasDerivAt_deriv_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5306997Z 'MolecularDynamics.solution_nBodyEquationAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5308335Z 'MolecularDynamics.solution_nBodyEquationAt_of_differentiable' depends on axioms: [propext,
+2026-10-02T17:19:18.5309193Z  Classical.choice,
+2026-10-02T17:19:18.5309554Z  Quot.sound]
+2026-10-02T17:19:18.5310397Z 'MolecularDynamics.solution_hasGradientAt_potential' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5311951Z 'MolecularDynamics.newtonTrajectory_to_mechanicalSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5313396Z 'MolecularDynamics.freeParticle_localIVP' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5315023Z 'MolecularDynamics.IsLocalMechanicalIVP.initial_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-02T17:19:18.5316493Z Dependency audit passed for 93 imported project declarations; allowed: [propext, Classical.choice, Quot.sound].
+2026-10-02T17:19:18.5317807Z Fixed versions, project source scan, lake build, Scratch.lean, and axiom dependency checks passed.

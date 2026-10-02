@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-10-03T01:22:00+08:00",
+  "repository": "zhuanxv-G/MolecularDynamicsFormalization",
+  "commit": "675fcaedbdef7b6ec57393c1ee99e9ca727da649",
+  "run_id": 37039648187,
+  "run_url": "https://github.com/zhuanxv-G/MolecularDynamicsFormalization/actions/runs/37039648187",
+  "event": "push",
+  "status": "completed",
+  "conclusion": "success",
+  "job_id": 110946317955,
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Run actions/checkout@v5",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Run leanprover/lean-action@v1",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Check fixed versions, project sources, scratch, and dependencies",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Save formal check evidence",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5
+    },
+    {
+      "name": "Post Run actions/checkout@v5",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 10
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 11
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11242095896,
+      "name": "formal-project-check-37039648187-1",
+      "size_in_bytes": 4339,
+      "url": "https://api.github.com/repos/zhuanxv-G/MolecularDynamicsFormalization/actions/artifacts/11242095896",
+      "archive_download_url": "https://api.github.com/repos/zhuanxv-G/MolecularDynamicsFormalization/actions/artifacts/11242095896/zip",
+      "expired": false,
+      "created_at": "2026-10-02T17:19:19Z",
+      "expires_at": "2026-11-01T17:19:18Z",
+      "updated_at": "2026-10-02T17:19:19Z",
+      "digest": "sha256:ac665462fb1add2b0765e7f8bbb4a11f5a63ae76a91c3a40ff655bb3ae615752",
+      "workflow_run": {
+        "id": 37039648187,
+        "repository_id": 1399290849,
+        "head_repository_id": 1399290849,
+        "head_branch": "chapter01-kinetic-energy-nonneg",
+        "head_sha": "675fcaedbdef7b6ec57393c1ee99e9ca727da649"
+      }
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "scope_note": "Remote workflow success verifies the fixed T2 commit. Proof website review and T5 integration are separate."
+}
