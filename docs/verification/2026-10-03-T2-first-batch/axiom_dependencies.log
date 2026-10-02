@@ -1,0 +1,22 @@
+'MolecularDynamics.nBodyKineticEnergy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.unflatten_flatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.flatten_unflatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.coordinateMassesOfParticles_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.nBodyKineticEnergy_particle_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.diagonalMassMatrix_posDef_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.diagonalMassMatrix_inv_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.diagonalMassMatrix_inv_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massOperator_velocityOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.velocityOperator_massOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.isMechanicalSolutionOn_iff_components' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.momentum_eq_mass_deriv_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_deriv_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.solution_nBodyEquationAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.solution_nBodyEquationAt_of_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.solution_hasGradientAt_potential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.newtonTrajectory_to_mechanicalSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticle_localIVP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.IsLocalMechanicalIVP.initial_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+Dependency audit passed for 93 imported project declarations; allowed: [propext, Classical.choice, Quot.sound].

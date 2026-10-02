@@ -1,0 +1,3 @@
+MolecularDynamics.Position (n : ℕ) : Type
+MolecularDynamics.SeparableEnergy.hamiltonian {n : ℕ} (energy : MolecularDynamics.SeparableEnergy n) :
+  MolecularDynamics.Hamiltonian n

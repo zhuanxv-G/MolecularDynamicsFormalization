@@ -11,6 +11,17 @@ import MolecularDynamicsFormalization
 #print axioms MolecularDynamics.diagonalMassMatrix_posDef_iff
 #print axioms MolecularDynamics.diagonalMassMatrix_inv_eq
 #print axioms MolecularDynamics.diagonalMassMatrix_inv_mulVec
+#print axioms MolecularDynamics.massOperator_velocityOperator
+#print axioms MolecularDynamics.velocityOperator_massOperator
+#print axioms MolecularDynamics.isMechanicalSolutionOn_iff_components
+#print axioms MolecularDynamics.momentum_eq_mass_deriv_position
+#print axioms MolecularDynamics.hasDerivAt_deriv_position
+#print axioms MolecularDynamics.solution_nBodyEquationAt
+#print axioms MolecularDynamics.solution_nBodyEquationAt_of_differentiable
+#print axioms MolecularDynamics.solution_hasGradientAt_potential
+#print axioms MolecularDynamics.newtonTrajectory_to_mechanicalSolution
+#print axioms MolecularDynamics.freeParticle_localIVP
+#print axioms MolecularDynamics.IsLocalMechanicalIVP.initial_mem
 
 -- Audit all declarations in the imported project namespace, including private
 -- declarations after removing their generated private-name prefix.

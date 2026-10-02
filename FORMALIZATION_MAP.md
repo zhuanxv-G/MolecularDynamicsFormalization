@@ -13,8 +13,9 @@ Record the edition/page, exact textbook statement, Lean declaration, formal assu
 
 The complete proofs below are integrated into `Chapter01/ParticleCoordinates.lean`.
 Their standalone and integrated fixed-version checks passed, including 8929
-build jobs, Scratch, and 60 declaration dependency audits. The MathCopilot T1 review is pending because the
-website reported a server connection failure. Responsible semantic review is
+build jobs, Scratch, and 60 declaration dependency audits. The later MathCopilot
+read-only review accepted all 11 IDs and 13 proofs; its original reports were
+received and checked locally on 2026-10-02. Responsible semantic review is
 recorded separately from machine verification.
 
 | Spec ID | Lean declaration | Textbook correspondence and assumptions |
@@ -30,3 +31,42 @@ recorded separately from machine verification.
 | T1-P3 | `diagonalMassMatrix_mul_inv`, `diagonalMassMatrix_inv_mul` | Both inverse identities under the same strictly positive mass hypothesis. |
 | T1-P4 | `diagonalMassMatrix_inv_eq` | Inverse diagonal is the coordinatewise reciprocal under positive masses; no unconditional singular-matrix claim. |
 | T1-P5 | `diagonalMassMatrix_inv_mulVec` | Coordinatewise recovery of a Euclidean velocity after mass multiplication and inverse; positive masses. |
+
+## T2-L0 integration (2026-10-03)
+
+`Chapter01/LocalTrajectories.lean` now defines continuous linear mass and
+inverse-matrix operators and proves their two coordinate links and two-sided
+recovery under positive coordinate masses. These are the L0 algebraic
+dependencies for later trajectory theorems. The inverse-matrix operator is
+defined for all masses, but its recovery theorems require positivity. The
+trajectory bridges are recorded in the next table; general local existence
+is a later goal.
+
+| Spec ID | Lean declaration | Textbook correspondence and assumptions |
+| --- | --- | --- |
+| T2-L0 definitions | `massOperator`, `velocityOperator` | Fixed diagonal matrix `M` and total matrix inverse, printed24/PDF47. |
+| T2-L0 coordinates | `massOperator_apply`, `velocityOperator_apply` | The continuous linear operators agree coordinatewise with the matrix actions, for arbitrary real masses. |
+| T2-L0 inverse | `massOperator_velocityOperator`, `velocityOperator_massOperator` | Both recovery directions require `∀ i, 0 < μ i` and use T1 matrix inverse results. |
+
+## T2 trajectory integration (2026-10-03)
+
+Complete proofs now cover all seven first-batch specification IDs. The
+standalone draft compiled with fixed Lean 4.34.0 and permitted logical
+dependencies. The integrated full check passed: pinned versions, source scan,
+8930 build jobs, Scratch and 93 imported declaration audits. Evidence is in
+`docs/verification/2026-10-03-T2-first-batch/`. Independent
+MathCopilot review of these proofs and responsible semantic sign-off remain
+pending. These results concern supplied solutions, with an explicit free
+particle example; they do not prove general local existence or uniqueness.
+
+| Spec ID | Lean declaration | Textbook correspondence and assumptions |
+| --- | --- | --- |
+| T2 definitions | `mechanicalVectorField`, `IsMechanicalSolutionOn`, `IsLocalMechanicalIVP` | Fixed-mass first-order equations, printed24/PDF47, and local initial-value formulation, printed26/PDF49. The local predicate includes a positive interval radius and the initial value. |
+| T2-S1 | `isMechanicalSolutionOn_iff_components` | An open time domain converts the within-set ODE into the two ordinary derivative equations. No force regularity or mass positivity is needed for this equivalence. |
+| T2-B1 | `momentum_eq_mass_deriv_position` | `p=M q̇` along an existing solution; positive masses and an open time domain. |
+| T2-B2 | `hasDerivAt_deriv_position` | The actual position derivative has derivative `M⁻¹F(q)` by neighborhood equality and the linear chain rule. This derivative statement alone does not need positive masses. |
+| T2-B3 algebra | `solution_nBodyEquationAt` | Equation (1.3), printed18/PDF41: positive masses recover `M q̈=F(q)`, with the explicit model relation `F=-gradient U` on Q. |
+| T2-B3 semantics | `solution_nBodyEquationAt_of_differentiable`, `solution_hasGradientAt_potential` | The textbook application adds differentiability of U on Q; the separate `HasGradientAt U (-F q) q` result certifies a genuine gradient. |
+| T2-B4 | `newtonTrajectory_to_mechanicalSolution` | A curve with supplied actual velocity/acceleration derivatives and Newton's equation yields the first-order solution with `p=Mv`. No openness of the time set is required because the hypotheses already give two-sided derivatives. |
+| T2-E1 | `freeParticle_localIVP` | Explicit `q=q₀+(t-t₀)v₀`, `p=Mv₀`, zero force on the full space, positive masses and positive radius. |
+| T2 auxiliary | `IsMechanicalSolutionOn.mono`, `IsMechanicalSolutionOn.continuousOn`, `IsLocalMechanicalIVP.initial_mem` | Restriction, continuity on the supplied time domain, and initial-position membership; no added existence or conservation assumption. |

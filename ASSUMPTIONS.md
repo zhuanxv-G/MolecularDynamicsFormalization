@@ -17,7 +17,7 @@ These are modeling questions to check against each textbook statement, not globa
 - The Lean parameter `n` denotes the textbook's `N_c`, the total number of configuration coordinates.
 - `CoordinateMasses n` is `Fin n → ℝ`. `ParticleCoordinates.lean` now maps `Fin N × Fin d` to `Fin (N*d)` in particle-first order, repeating each particle's mass across its `d` directions. The common `d=1` and `d=3` cases match §1.2; arbitrary `d` is an explicit algebraic generalization.
 - Equations (1.3) and (1.4) do not require mass positivity or invertibility merely to be stated, so neither is assumed. Later results that divide by masses must state the appropriate hypotheses.
-- `NBodyEquationAt` is pointwise in a supplied position and acceleration. A time-dependent trajectory and the identification of that acceleration with its second derivative have not yet been introduced.
+- `NBodyEquationAt` is pointwise in a supplied position and acceleration. T2 now proves its connection with the actual second derivative of an existing mechanical solution on an open time domain.
 - The force-potential relation uses the explicit textbook sign: `force position = -gradient potential position`.
 - Mathlib's `gradient` is total and therefore can occur without a differentiability hypothesis. Any later use of gradient differentiation rules must add and expose the required regularity assumptions.
 - `nBodyKineticEnergy_particle_eq` proves that the scalar-coordinate kinetic energy equals `∑_j m_j ‖q̇_j‖² / 2` when masses and velocities are expanded from particles. The equality allows arbitrary real masses; the norm is each particle's Euclidean norm, not the outer function-space norm.
@@ -29,4 +29,21 @@ These are modeling questions to check against each textbook statement, not globa
 - Recovering particle-mass positivity from coordinate-mass positivity explicitly requires `0<d`. If `d=0` and `N>0`, the coordinate premise is vacuous.
 - The positive-definiteness criterion is an equivalence with strictly positive coordinate masses. Inverse identities and the reciprocal-diagonal formula explicitly assume these positive masses. Nonzero masses also suffice for invertibility, but those more general statements are outside this batch.
 - No trajectory, differentiability of potential, ODE existence, conserved energy, or stability result follows from the T1 algebraic bridges. The printed19/PDF42 dynamical assertions remain later tasks.
-- Local textbook checks compared printed18–19/PDF41–42 with the precise statements and final implementation. MathCopilot's independent T1 report and responsible final semantic sign-off are still pending.
+- Local textbook checks compared printed18–19/PDF41–42 with the precise statements and final implementation. MathCopilot's independent T1 read-only review has been received and accepted; responsible final semantic sign-off is still pending.
+
+## T2-L0 operator assumptions
+
+- `massOperator` and `velocityOperator` are continuous linear wrappers of the fixed diagonal mass matrix and mathlib's total inverse matrix. Both coordinate identities hold for arbitrary real masses, including singular matrices.
+- The two theorems interpreting these operators as mutual inverses explicitly assume strictly positive coordinate masses. The matrix inverse's total value at a singular matrix is not interpreted as physical velocity recovery.
+- The initial L0 checkpoint supplies the algebraic operators; the subsequent T2 trajectory batch uses them as described below. The L0/B3 statement revisions remain subject to responsible semantic sign-off.
+
+## T2 trajectory and derivative assumptions
+
+- `IsMechanicalSolutionOn` requires position membership in Q and `HasDerivWithinAt` on the given time set I. The ambient curve is defined on ℝ, but the solution assertion only applies on I. Neither openness of Q nor force continuity is silently included.
+- S1, B1, B2 and B3 explicitly require `IsOpen I` before using ordinary `deriv` and two-sided second derivatives. No closed-interval endpoint result is asserted. B2 uses equality throughout a neighborhood inside I rather than differentiating equality at one point.
+- S1 and B2 allow arbitrary masses because they only use the defined linear operators. B1, B3, B4 and the free-particle example require strictly positive masses when interpreting the total matrix inverse as recovery of physical velocity or momentum.
+- B3 separates the supplied force model `∀ q ∈ Q, F q = -gradient U q` from a genuine gradient. Its algebraic bridge does not differentiate U; the textbook application explicitly assumes `DifferentiableAt ℝ U q` on Q and proves `HasGradientAt U (-F q) q` along the curve.
+- B4 assumes actual derivatives of q and v and the mass-acceleration equation. It does not obtain a curve from isolated pointwise data. Two-sided derivatives are already supplied, so I need not be open for this direction.
+- `IsLocalMechanicalIVP` includes ε>0 and γ(t₀)=z₀. The proved `initial_mem` consequence uses the nonempty interval to obtain z₀.1∈Q. General existence/uniqueness is not a field of either solution predicate.
+- `freeParticle_localIVP` constructs an explicit solution for zero force on the full space. It does not establish existence for a general F, a maximal time interval, a global flow, conserved energy or stability.
+- The local ContinuousSMul instances are obtained from existing normed-space results; they add no mathematical hypothesis or logical dependency.

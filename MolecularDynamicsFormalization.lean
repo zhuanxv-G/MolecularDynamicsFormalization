@@ -1,3 +1,4 @@
 import MolecularDynamics.BasicDefinitions
 import MolecularDynamics.Chapter01.NBody
 import MolecularDynamics.Chapter01.ParticleCoordinates
+import MolecularDynamics.Chapter01.LocalTrajectories
