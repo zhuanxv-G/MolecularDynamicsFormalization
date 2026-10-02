@@ -34,11 +34,17 @@
   "website_reported_index_management_tools": [],
   "fallback_catalog": "docs/knowledge/LEAN_DECLARATIONS.json",
   "fallback_catalog_count": 14,
-  "fallback_status": "14_headers_and_two_source_hashes_checked; website_read_three_frozen_source_declarations; new_catalog_website_receipt_pending",
+  "fallback_status": "passed_at_052eea2; website_git_show_verified_all_14_headers_and_names_three_types_imports_two_raw_source_hashes",
   "observed_raw_query": "非负质量的动能非负",
   "observed_raw_paths": [
     "lakefile.lean",
     "MathcopilotTest.lean"
   ],
-  "last_index_check_time": "2026-10-02 15:48 +08:00"
+  "last_index_check_time": "2026-10-02 15:48 +08:00",
+  "catalog_publication_commit": "052eea2edd51fd806edf6a9dacbb6cc3353fc82f",
+  "catalog_website_verified_commit": "052eea2edd51fd806edf6a9dacbb6cc3353fc82f",
+  "catalog_website_verification_time": "2026-10-02 16:21 +08:00",
+  "catalog_read_method": "git show <fixed-commit>:<path>; preserve divergent website workspace",
+  "website_workspace_relation": "diverged; at catalog commit local unique=1 remote unique=5; ancestor=d5dd5722602fba9ff252311b2c93ff85a6801ed0; no merge/reset/checkout",
+  "website_fetched_catalog_head": "052eea2edd51fd806edf6a9dacbb6cc3353fc82f"
 }

@@ -35,9 +35,9 @@
 - 网站配置：保存成功，语义检索开关开启，更新/重建后仍显示“Lean 语义索引已就绪”。
 - 紧凑 Retrieval / Lean：查询返回 LeanDex 522。
 - Task 私有工具：`mcp__mathcopilot__lean_library_semantic_search` 实际可调用；两条查询及一次定向复测均返回 `mathcopilot-lean-test`。已直接展开第一条复测的参数和原始 structuredContent 核实，内容是 `lakefile.lean` 与 `MathcopilotTest.lean`，不是本工程。
-- 版本：网站任务工作区 HEAD 为 `bdcd1ecd...`，落后于已核对的远端快照；设置中的仓库克隆 HEAD 和查询索引 HEAD 均未暴露，不能把任务工作区 HEAD 当索引 HEAD。
+- 版本：网站任务工作区 HEAD 为 `bdcd1ecd...`；后续实际 fetch 验证与目录发布提交 `052eea2...` 分叉，共同祖先为 main 的 `d5dd572...`，本地独有 1 个提交、远端独有 5 个提交，停止了非快进更新并保留网站提交。设置中的仓库克隆 HEAD 和查询索引 HEAD 均未暴露，不能把任务工作区 HEAD 当索引 HEAD。
 - 修复边界：网站任务报告当前工具仅支持 query，没有切换/重建索引接口；完成一次定向诊断后停止重复重建。具体配置绑定和发布问题仍需网站侧排查，根因尚未直接核实。
-- 替代路径：见 `LEAN_DECLARATIONS.zh-CN.md` / `LEAN_DECLARATIONS.json`，包含 14 个实际完整定理头、模块和源文件 SHA-256；以指定发布提交读取目录，再以固定源码快照核对原模块。网站首轮任务已读取远端三条目标声明，但目录新增文件的接收仍需另行验收。
+- 替代路径：见 `LEAN_DECLARATIONS.zh-CN.md` / `LEAN_DECLARATIONS.json`，包含 14 个实际完整定理头、模块和源文件 SHA-256。目录已在 `052eea2edd51fd806edf6a9dacbb6cc3353fc82f` 推送；网站通过 `git show <指定提交>:<路径>` 实际读取，不要求工作区切换到该提交。全部 14 个名字集合和定理头逐字核对通过，三条指定完整类型/import 和两份原始字节 SHA-256 均一致。目录接收与固定 Git 源码检索验收通过；语义检索仍未通过。
 
 完整证据和网站修复要点见 `MATHCOPILOT_INDEX_DIAGNOSTIC.zh-CN.md`。目前不得将第四项标为完全完成，不阻碍 T2 的本地准备和基于固定源码的依赖检索。
 
