@@ -1,0 +1,7 @@
+'MolecularDynamics.energy_global_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.stability_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.universal_stability_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.textbook_stability_c2_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+docs/verification/2026-10-04-T4-continuation/probes/UniversalStabilityProbe.lean:216:0: error: Invalid `end`: There is no current scope to end
+
+Note: Scopes are introduced using `namespace` and `section`

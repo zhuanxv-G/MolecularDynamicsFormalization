@@ -1,0 +1,7 @@
+'MolecularDynamics.IsFutureMechanicalStable.euclidean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_potential_contDiffAt_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_smooth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

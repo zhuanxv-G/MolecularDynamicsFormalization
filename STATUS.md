@@ -120,3 +120,15 @@
 - Full-check02 passed at01:18:50--01:21:37 +08:00:8941jobs, Scratch,214declaration audits, fixed versions and stable SHA. All five key dependencies use only the permitted three axioms. Evidence lives beside full-check01.
 - The independent next global compact-confinement probe already passed. It constructs the union of all right-extendable local IVPs and excludes a finite supremum using the actual endpoint extension. Formal integration and energy-barrier discharge are in progress; full global textbook stability is not yet marked done.
 - Responsible semantic sign-off remains pending; no new remote CI or publication has been performed.
+
+## Global future stability integration (2026-10-04 05:58 +08:00)
+
+- Same whole-book objective continues under user authorization. The native Goal is currently usageLimited, while a read-only quota query returned ordinaryUsageAllowed=true; the available tool cannot restore that platform status. No duplicate Goal, quota purchase/reset, account change or automation was created.
+- GlobalContinuation, EnergyGlobalExistence, PotentialRegularity and Stability passed independent builds. Stability includes actual all-future existence, all same-IVP solutions, BddAbove and strict sSup bounds. PhaseMetric comparisons passed their independent probe and are being formally built.
+- Euclidean stability transfer is in progress. Full-check03 has not yet run; these candidates are not counted as fully integrated machine acceptance. Final responsible semantic sign-off remains pending; new remote CI is not run under the current local-only instruction.
+
+## Theorem 1.1 local machine acceptance (2026-10-04 06:11 +08:00)
+
+- Six new modules passed full-check03 at06:07:48--06:10:29 +08:00:8947jobs, Scratch,231imported declaration audits, pinned Lean4.34.0/mathlib and stable input SHA. Thirteen newly explicit key theorem dependencies use only propext/Classical.choice/Quot.sound.
+- The Euclidean statement `strictPotentialMin_futureStableEuclidean_of_smooth` proves equilibrium plus future existence and a bounded distance range with strict all-time supremum bound for every same-IVP future solution. It matches Theorem1.1 within the fixed positive diagonal mass model; C2 also suffices.
+- Original printed32/PDF55 and the local proof chain were reviewed; final responsible semantic sign-off is pending, and no new remote CI was run. Entire Chapter1 and the whole book remain unfinished. Next independent work is §1.3 Lagrangian and Euler--Lagrange bridges.

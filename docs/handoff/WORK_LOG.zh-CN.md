@@ -709,3 +709,44 @@
 - 开覆盖相容函数探针通过（仅dif_pos弃用警告，正式候选已改dite_eq_left）。`GlobalContinuationProbe.lean`第一次直接通过，含相容开覆盖机械解拼接、固定初值解的可延拓右端点集合、并集解、有限上确界的紧性延拓矛盾、全未来存在。关键依赖仅三项基础公理。
 - 全局探针的紧性前提是对已经存在的局部解的统一未来留集结论，没有假设全局解存在；正在以已验证能量守恒/势垒/紧能量集补齐这个前提。全书Goal持续active。
 - 正式GlobalContinuation候选由探针重命名生成，正在检查；不把独立探针成功当成整合后全工程通过。下一动作：构建候选、建立能量势垒全未来存在桥，再进行一批完整验收。
+
+## 2026-10-04 01:29 +08:00 — 全局能量势垒桥接与稳定性首探针
+
+- 第二批已本地提交 `d554489b78e145dfaff2e2065e9758786d36d11a`，仍同分支，未推送。某次git add日志批次因无输出的成功候选未生成Tee文件而报pathspec；完整full-check02日志已提交，候选成功的原始stdout确为空，补建空日志，失败及匹配日志在下一本地保存一并纳入，不改写真实诊断。
+- GlobalContinuation生成时重复namespace警告已修复，单模块重新构建退出0且无该警告。EnergyGlobalProbe首试退出0：从真实ODE导出能量守恒/势垒未来留球，再用紧能量子水平集推出全未来存在，没有外供全程留集假设。SmoothPotentialProbe首试退出0：C2势能通过Riesz连续线性同构与fderiv获得C1梯度。
+- 已建立 `EnergyGlobalExistence.lean`、`PotentialRegularity.lean` 正式候选，正在单模块构建。独立稳定性探针从strict minimum和势垒选r<ε，利用能量连续性选择任意近初值，再用全未来存在和相界获得严格sup≤r<ε。
+- 稳定性attempt01仅在ContinuousAt.comp API上失败：固定版本需要显式基点，却直接传入连续性证明，造成错误的OfNat类型推断。已给两个composition补上(q0,0)后启动attempt02。其余数学路线未加结论假设，未把失败探针当作接受证明。
+- 下一动作：检查稳定性attempt02；通过后补齐“所有同初值未来解”的唯一性转移及势能C2特化，集成第三批，正式check与公理审计。最大抽象解定义尚未另建，当前全局证明采用可延拓区间并集与上确界反证。
+
+### 01:31 +08:00 — 稳定性复合API诊断修正
+
+- 稳定性attempt02仍失败；核对固定源码后确认上一条“ContinuousAt.comp需要显式基点”的解释不准确：它接收两个连续性证明，不接收位置参数。真正问题是特定数值0的高阶类型推断把投影函数错推到OfNat。改为先证明动能函数全局连续，再复合snd；势能复合用具名f/x明确类型。已启动attempt03，不在无新条件下重复原失败。
+- GlobalContinuation去掉重复namespace后构建无该警告；EnergyGlobalExistence及PotentialRegularity单模块构建8940jobs成功，尚未第三次全工程验收。
+
+## 2026-10-04 05:56 +08:00 — 额度恢复后同目标接续，稳定性度量审计
+
+- 重读工程约定、当前检查点与最新日志，实查Git和已有session35944：Stability正式模块8942jobs成功，PhaseMetricProbe attempt02退出0，仅允许三项基础公理；无Lean/lake正在运行，未启动重复证明或自动化。
+- 原生Goal返回usageLimited；只读额度接口显示普通使用可用（五小时4%、周49%）。工具仅允许用户/平台恢复该状态，记录差异并继续既有全书授权，不新建替代目标、不购买/重置额度、不切换账号。
+- UniversalStabilityProbe最终attempt02已包含BddAbove距离集合，避免实数条件sSup在无界集合上的默认值歧义；所有同初值未来解通过连通域唯一性获得同一界。正式Stability独立构建通过，尚不算全工程整合验收。
+- 新建PhaseMetric正式模块及EuclideanStabilityProbe：欧氏距离sqrt(dq²+dp²)满足product dist≤欧氏距离≤2*product dist；以ε/2的乘积严格sup界推出欧氏距离集合有界及严格sup<ε。正在独立验证，下一步集成/完整check03和本地保存。
+- 保留原始失败日志：Stability01/02的连续性组合类型推断已在03修复；Universal01只是重复end；PhaseMetric01导入错误，02修复。未把失败探针sorryAx当作正式结果。负责人语义签核pending，未运行新远端CI，未使用MathCopilot。
+
+### 06:04 +08:00 — 欧氏稳定性首轮诊断与修复
+
+- PhaseMetric正式构建2423jobs退出0。EuclideanStabilityProbe attempt01退出1：严格sup比较子目标已自动展开局部D，额外dsimp[D]没有进展使refine失败；其他界的数学路线没有诊断。原始失败日志保存，sorryAx不计接受。
+- 删除冗余dsimp后启动attempt02（session36548）；同文件加入smooth（ContDiffAt ℝ ∞）到C2的直接教材推论，用of_le降低正则性。尚待实际结果，暂不计为通过。
+- 已再次查看印刷23/PDF46，核对§1.3的Euler--Lagrange方程、速度链式法则与广义质量JᵀMJ，准备作为下一独立批次。未开始重复构建或修改已有候选证明链。
+
+### 06:07 +08:00 — 欧氏稳定性独立证明通过，正式整体验收启动
+
+- EuclideanStabilityProbe attempt02暴露隐式中间界推断：未具名的lt_of_le_of_lt令中间界误取sSupD而非2*sSupD；smooth的∞还需open scoped ContDiff。attempt03用明确hsupE/hmargin与作用域修复，实际退出0，三项关键定理仅三项允许基础公理。原始三轮日志全部保留。
+- 集成EuclideanStability正式模块，谓词包含未来存在、每个未来IVP的距离range有界及严格欧氏sup界；smooth推论明确调用C2版本降低正则性。顶层新增六模块，Scratch/CheckAxioms追加13项关键公理依赖。
+- 准备full-check03。检查期间不改扫描到的正式Lean输入；下一步读取实际check报告后更新教材映射/假设/状态并本地保存。负责人语义签核仍pending，没有新远端CI。
+- 下一批草稿LagrangianProbe已落盘，仅待当前稳定性批次验收后单独检查。它对应印刷22--23/PDF45--46的固定质量Lagrangian、真实梯度及Euler--Lagrange/机械轨道双向桥，不计为已验证。
+
+## 2026-10-04 06:11 +08:00 — Theorem 1.1 欧氏全未来稳定性正式本地验收
+
+- full-check03于06:07:48--06:10:29实际退出0：8947jobs、Scratch、231项全部导入项目声明公理审计，Lean4.34.0与固定mathlib，禁止捷径扫描与输入SHA稳定。13项新关键显式依赖仅三项允许基础公理。报告保存原始base HEAD d554489及每件实际输入SHA。
+- GlobalContinuation/EnergyGlobalExistence/PotentialRegularity/Stability/PhaseMetric/EuclideanStability六模块进入正式库；教材smooth势能的strict minimum在固定正对角质量模型下给出机械平衡、任意近初值的真实全未来IVP以及所有同初值未来解的欧氏distance range有界和严格sSup<ε。原页已核对；负责人最终语义签核仍pending，新远端CI未跑。
+- 已更新映射/假设/状态和Theorem1.1候选行，§1.5.3只标partial，不把Hartman--Grobman及其它未证明内容计作完成。全书目标未完成，Goal平台usageLimited状态未人为改写。
+- 现在按已有本地保存授权提交本批明确源码/文档/原始日志；不推送、不合并、不碰无关既有材料。下一步独立运行LagrangianProbe，补§1.3原页固定质量定义、经典梯度与轨道桥接。

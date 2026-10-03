@@ -108,3 +108,16 @@ run_cmd do
       unless allowed.contains dependency do
         throwError "{name} depends on a disallowed logical dependency: {dependency}"
   logInfo m!"Dependency audit passed for {names.size} imported project declarations; allowed: {allowed}."
+#print axioms MolecularDynamics.exists_glued_function_of_compatible
+#print axioms MolecularDynamics.exists_mechanicalSolutionOn_iUnion
+#print axioms MolecularDynamics.exists_globalMechanicalSolution_of_local_compact_confinement
+#print axioms MolecularDynamics.exists_globalMechanicalIVP_of_energy_barrier
+#print axioms MolecularDynamics.gradient_contDiffAt_of_potential_contDiffAt_two
+#print axioms MolecularDynamics.strictPotentialMin_exists_future_bound
+#print axioms MolecularDynamics.strictPotentialMin_futureStable
+#print axioms MolecularDynamics.strictPotentialMin_futureStable_of_potential_contDiffAt_two
+#print axioms MolecularDynamics.product_dist_le_phaseEuclideanDistance
+#print axioms MolecularDynamics.phaseEuclideanDistance_le_two_mul_dist
+#print axioms MolecularDynamics.IsFutureMechanicalStable.euclidean
+#print axioms MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_potential_contDiffAt_two
+#print axioms MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_smooth

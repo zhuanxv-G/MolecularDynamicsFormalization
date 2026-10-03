@@ -1,0 +1,3 @@
+'exists_glued_function_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanical_open_cover_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.global_compact_probe' depends on axioms: [propext, Classical.choice, Quot.sound]

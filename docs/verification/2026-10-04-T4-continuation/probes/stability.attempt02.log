@@ -1,0 +1,15 @@
+'MolecularDynamics.energy_global_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+docs/verification/2026-10-04-T4-continuation/probes/StabilityProbe.lean:108:6: error: Application type mismatch: The argument
+  (q₀, 0)
+has type
+  Position n × Momentum n
+of sort `Type` but is expected to have type
+  ContinuousAt (@OfNat.ofNat (Momentum n) 0) Zero.toOfNat0
+of sort `Prop` in the application
+  ContinuousAt.comp
+    (DifferentiableAt.continuousAt (HasGradientAt.differentiableAt (hasGradientAt_momentumKineticEnergy m 0))) (q₀, 0)
+docs/verification/2026-10-04-T4-continuation/probes/StabilityProbe.lean:107:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  TopologicalSpace (OfNat (Momentum n) 0)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+'MolecularDynamics.stability_probe' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

@@ -1,16 +1,15 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 01:20 +08:00）
+## 当前数学检查点（2026-10-04 06:11 +08:00）
 
-- 数学工作聊天：`01a102b1-a3fe-71e1-a571-347703fc09b8`。原生 Goal 工具已成功返回 `active`，目标为全书本地可核验形式化；未设置时间或 token 上限。不因一个小批次结束而将 Goal 标为完成。
-- 01:14 实查分支 `chapter01-kinetic-energy-nonneg`，最新本地源码提交 HEAD `77a70980ab965754fa8d25f9fdc694b12bb8e049`；未推送，保留现有全部无关未提交/未跟踪材料。Lean 4.34.0、manifest mathlib `5ed2965256430c3649e86755f9576b54eca72435` 未改。
-- 01:12 更新：`Continuation.lean` 七项完整证明已集成：端点极限/闭集成员、导数界与紧集端点、连通域 C1 唯一性、显式重叠拼接；顶层、Scratch、公理审计及映射/假设/状态已更新。
-- 验证：完整 `scripts/check.ps1` 于01:08:40--01:11:13退出0，8939jobs、208声明审计、固定版本及输入哈希稳定；关键定理仅三项允许基础公理。证据 `docs/verification/2026-10-04-T4-continuation/full-check01/`。重看印刷32/PDF55；最终负责人语义签核 pending，新远端CI未跑。
-- 当前进展：FTC 端点导数与C1端点匹配已通过独立探针并集成 `ODEEndpoint.lean`；`MechanicalContinuation.lean` 三项完整候选（端点极限延拓、C1力延拓、紧性延拓）已单文件退出0。重叠相等由证明推出，延拓中Q位置条件实际检查。
-- 第二次正式验收已通过：full-check02于01:18:50--01:21:37退出0，8941jobs、214声明审计、固定版本及输入SHA稳定。新增五项内核/构建通过，最终负责人签核pending。
-- 本地失败记录：机械候选attempt01未解构Ioo成员导致四个linarith错误；显式`rcases ht`后attempt02退出0。端点匹配attempt01成员未转不等式，attempt02退出0。所有原日志保留。
-- 下一动作：保存已验证的有限延拓批次；`GlobalContinuationProbe`首试通过且正规候选单模块构建成功（已修复生成时重复namespace的命名警告）。正在检查`EnergyGlobalProbe.lean`，用机械能量守恒与势垒直接推出紧性前提。整合后全局存在及完整稳定性仍待正式验收。
-- 本聊天只推进本地，不使用或等待 MathCopilot。定时接续由启动聊天配置，本聊天不另建重复自动化。全书 Goal 保持 active。
+- 同一全书目标，聊天 `01a102b1-a3fe-71e1-a571-347703fc09b8`。Goal实查usageLimited（非完成/用户暂停）；只读额度普通使用可用，继续同一授权。工具不能主动恢复该平台状态，没有替代Goal/自动化、购买/重置或切换账号。
+- 分支 `chapter01-kinetic-energy-nonneg`，提交前实际HEAD `d554489b78e145dfaff2e2065e9758786d36d11a`；仅本地保存、未推送。Lean4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`未改，无关既有材料保留。
+- 新六模块全局存在/势垒/正则性/稳定性/欧氏距离已接入。完整full-check03于06:07:48--06:10:29退出0：8947jobs、Scratch、231导入声明审计、禁止捷径扫描、固定版本和输入SHA稳定；13项关键声明只有三项允许基础公理。
+- Theorem1.1机器已验收：`strictPotentialMin_futureStableEuclidean_of_smooth`，固定正对角质量、开Q、smooth势能与strict relative minimum，结论含平衡、近初值未来IVP存在、所有同初值未来解的欧氏距离集合有界和严格sSup<ε。原页印刷32/PDF55已再查看；负责人最终语义签核pending，新远端CI未跑。
+- 原日志/候选/完整验收证据：`docs/verification/2026-10-04-T4-continuation/`。欧氏探针attempt01/02失败诊断已修复，attempt03通过；失败不计验收。
+- 当前独立任务：保存本批Git后，运行已落盘 `probes/LagrangianProbe.lean`。已视觉核对印刷22--23/PDF45--46，拟证明固定质量Lagrangian、真实梯度及Euler--Lagrange/机械轨道双向桥。草稿尚未检查，不将它计作成果。
+- 全书、Chapter1各节仍未完成。独立抽象最大解API未另暴露；全局未来存在采用可延拓区间并集和有限sSup反证。§1.5.3仅partial，Hartman--Grobman/线性化等未证明。
+- 恢复第一动作：实查最新Git提交/工作树，再运行下一批LagrangianProbe。不要重复full-check03或旧证明；发生具体新错误才修复、验证并保存检查点。
 
 ## 启动配置复核（2026-10-04 01:00 +08:00）
 

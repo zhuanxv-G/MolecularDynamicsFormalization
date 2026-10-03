@@ -1,0 +1,4 @@
+'MolecularDynamics.energy_global_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.stability_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.universal_stability_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.textbook_stability_c2_probe' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -184,3 +184,31 @@ passed at01:18:50--01:21:37 +08:00:8941jobs and214declaration audits, fixed inpu
 Global existence and full Theorem1.1 are still separate. A newly passed
 independent global compact-confinement probe is being integrated; it is not
 covered by full-check02. Responsible semantic sign-off and new remote CI remain pending.
+
+## T4 global continuation and Theorem 1.1 integration (2026-10-04)
+
+The six new modules passed integrated full-check03 at 06:07:48--06:10:29 +08:00:
+8947 jobs, Scratch, 231 declaration audits, pinned versions and stable hashes.
+Printed32/PDF55 was viewed again; final responsible semantic sign-off is pending.
+
+| Result | Lean declaration | Exact boundary |
+| --- | --- | --- |
+| Compatible cover | `exists_glued_function_of_compatible`, `exists_mechanicalSolutionOn_iUnion` | Genuine mechanical solutions agree on open overlaps and hence glue on the union. |
+| Future continuation | `exists_globalMechanicalSolution_of_local_compact_confinement` | Local IVP, C1 force on open Q, and common compact confinement of every existing local IVP imply all-future existence. The confinement premise does not assume a global solution. |
+| Energy discharge | `exists_globalMechanicalIVP_of_energy_barrier` | Conservation and a safe closed position ball derive the compact confinement premise; below-barrier initial states have future solutions. |
+| Potential regularity | `gradient_contDiffAt_of_potential_contDiffAt_two` | C2 potential gives C1 gradient by the continuous linear Riesz inverse. |
+| Strict future bound | `strictPotentialMin_exists_future_bound`, `strictPotentialMin_futureStable` | Arbitrarily close initial states admit future solutions, and every same-initial-state future solution has bounded distance range with strict supremum less than epsilon. |
+| C2 equilibrium/stability | `strictPotentialMin_futureStable_of_potential_contDiffAt_two` | Positive fixed coordinate masses, open Q and strict relative potential minimum. Product maximum metric. |
+| Euclidean phase distance | `product_dist_le_phaseEuclideanDistance`, `phaseEuclideanDistance_le_two_mul_dist` | sqrt(dq²+dp²) compares uniformly with the product maximum metric; Euclidean transfer and the smooth-potential theorem passed full-check03. |
+
+The global proof uses the union of all extendable intervals and rules out a
+finite supremum. A separate abstract maximal-solution API is not asserted.
+No subsequent chapter or complete Chapter1 coverage is implied.
+
+| Result | Lean declaration | Exact boundary |
+| --- | --- | --- |
+| Euclidean stability transfer | `IsFutureMechanicalStable.euclidean` | Product stability at epsilon/2 gives explicit boundedness and strict all-future supremum in sqrt(dq²+dp²). |
+| Theorem 1.1 | `strictPotentialMin_futureStableEuclidean_of_smooth` | Smooth U on open Q, strict relative potential minimum, positive fixed diagonal masses; equilibrium plus actual future IVP existence and strict Euclidean supremum bound for every such solution. C2 sufficient version is also proved. |
+
+Full-check03 evidence: `docs/verification/2026-10-04-T4-continuation/full-check03/`.
+Responsible final semantic sign-off is pending; no new remote CI under local-only scope.

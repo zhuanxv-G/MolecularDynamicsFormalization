@@ -1,0 +1,140 @@
+MolecularDynamics/Chapter01/MechanicalContinuation.lean:43:22: error: linarith failed to find a contradiction
+case left.left
+n : ℕ
+m : CoordinateMasses n
+F : Force n
+Q : Set (Position n)
+a b : ℝ
+γ : ℝ → PhaseSpace n
+z : PhaseSpace n
+hab : a < b
+hQ : IsOpen Q
+hγ : IsMechanicalSolutionOn m F Q (Ioo a b) γ
+hz : Tendsto γ (𝓝[<] b) (𝓝 z)
+hzQ : z.1 ∈ Q
+hfield : ContDiffAt ℝ 1 (mechanicalVectorField m F) z
+ε : ℝ
+hε : ε > 0
+η : ℝ → PhaseSpace n
+hη₀ : η b = z
+hη : ∀ t ∈ Ioo (b - ε) (b + ε), HasDerivAt η (mechanicalVectorField m F (η t)) t
+c : ℝ
+hc : c ∈ Ioo a b
+heq : EqOn γ η (Ioo c b)
+hb : b ∈ Ioo (b - ε) (b + ε)
+hcont : ContinuousAt (fun t => (η t).1) b
+ρ : ℝ
+hρ : ρ > 0
+hsub : Metric.ball b ρ ⊆ (fun t => (η t).1) ⁻¹' Q
+δ : ℝ := min ε ρ
+hδ : 0 < δ
+t : ℝ
+ht : t ∈ Ioo (b - min ε ρ) (b + min ε ρ)
+a✝ : t ≤ b - ρ
+⊢ False
+failed
+MolecularDynamics/Chapter01/MechanicalContinuation.lean:43:22: error: linarith failed to find a contradiction
+case left.right
+n : ℕ
+m : CoordinateMasses n
+F : Force n
+Q : Set (Position n)
+a b : ℝ
+γ : ℝ → PhaseSpace n
+z : PhaseSpace n
+hab : a < b
+hQ : IsOpen Q
+hγ : IsMechanicalSolutionOn m F Q (Ioo a b) γ
+hz : Tendsto γ (𝓝[<] b) (𝓝 z)
+hzQ : z.1 ∈ Q
+hfield : ContDiffAt ℝ 1 (mechanicalVectorField m F) z
+ε : ℝ
+hε : ε > 0
+η : ℝ → PhaseSpace n
+hη₀ : η b = z
+hη : ∀ t ∈ Ioo (b - ε) (b + ε), HasDerivAt η (mechanicalVectorField m F (η t)) t
+c : ℝ
+hc : c ∈ Ioo a b
+heq : EqOn γ η (Ioo c b)
+hb : b ∈ Ioo (b - ε) (b + ε)
+hcont : ContinuousAt (fun t => (η t).1) b
+ρ : ℝ
+hρ : ρ > 0
+hsub : Metric.ball b ρ ⊆ (fun t => (η t).1) ⁻¹' Q
+δ : ℝ := min ε ρ
+hδ : 0 < δ
+t : ℝ
+ht : t ∈ Ioo (b - min ε ρ) (b + min ε ρ)
+a✝ : b + ρ ≤ t
+⊢ False
+failed
+MolecularDynamics/Chapter01/MechanicalContinuation.lean:47:22: error: linarith failed to find a contradiction
+case left
+n : ℕ
+m : CoordinateMasses n
+F : Force n
+Q : Set (Position n)
+a b : ℝ
+γ : ℝ → PhaseSpace n
+z : PhaseSpace n
+hab : a < b
+hQ : IsOpen Q
+hγ : IsMechanicalSolutionOn m F Q (Ioo a b) γ
+hz : Tendsto γ (𝓝[<] b) (𝓝 z)
+hzQ : z.1 ∈ Q
+hfield : ContDiffAt ℝ 1 (mechanicalVectorField m F) z
+ε : ℝ
+hε : ε > 0
+η : ℝ → PhaseSpace n
+hη₀ : η b = z
+hη : ∀ t ∈ Ioo (b - ε) (b + ε), HasDerivAt η (mechanicalVectorField m F (η t)) t
+c : ℝ
+hc : c ∈ Ioo a b
+heq : EqOn γ η (Ioo c b)
+hb : b ∈ Ioo (b - ε) (b + ε)
+hcont : ContinuousAt (fun t => (η t).1) b
+ρ : ℝ
+hρ : ρ > 0
+hsub : Metric.ball b ρ ⊆ (fun t => (η t).1) ⁻¹' Q
+δ : ℝ := min ε ρ
+hδ : 0 < δ
+t : ℝ
+ht : t ∈ Ioo (b - min ε ρ) (b + min ε ρ)
+a✝ : t ≤ b - ε
+⊢ False
+failed
+MolecularDynamics/Chapter01/MechanicalContinuation.lean:47:22: error: linarith failed to find a contradiction
+case right
+n : ℕ
+m : CoordinateMasses n
+F : Force n
+Q : Set (Position n)
+a b : ℝ
+γ : ℝ → PhaseSpace n
+z : PhaseSpace n
+hab : a < b
+hQ : IsOpen Q
+hγ : IsMechanicalSolutionOn m F Q (Ioo a b) γ
+hz : Tendsto γ (𝓝[<] b) (𝓝 z)
+hzQ : z.1 ∈ Q
+hfield : ContDiffAt ℝ 1 (mechanicalVectorField m F) z
+ε : ℝ
+hε : ε > 0
+η : ℝ → PhaseSpace n
+hη₀ : η b = z
+hη : ∀ t ∈ Ioo (b - ε) (b + ε), HasDerivAt η (mechanicalVectorField m F (η t)) t
+c : ℝ
+hc : c ∈ Ioo a b
+heq : EqOn γ η (Ioo c b)
+hb : b ∈ Ioo (b - ε) (b + ε)
+hcont : ContinuousAt (fun t => (η t).1) b
+ρ : ℝ
+hρ : ρ > 0
+hsub : Metric.ball b ρ ⊆ (fun t => (η t).1) ⁻¹' Q
+δ : ℝ := min ε ρ
+hδ : 0 < δ
+t : ℝ
+ht : t ∈ Ioo (b - min ε ρ) (b + min ε ρ)
+a✝ : b + ε ≤ t
+⊢ False
+failed

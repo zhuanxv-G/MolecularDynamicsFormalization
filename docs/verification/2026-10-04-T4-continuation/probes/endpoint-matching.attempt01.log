@@ -1,0 +1,10 @@
+'endpoint_derivative_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+docs/verification/2026-10-04-T4-continuation/probes/EndpointMatchingProbe.lean:58:41: error: Application type mismatch: The argument
+  hl
+has type
+  l ∈ Iio b
+but is expected to have type
+  ?m.372 < ?m.373
+in the application
+  exists_between hl
+'endpoint_matching_probe' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

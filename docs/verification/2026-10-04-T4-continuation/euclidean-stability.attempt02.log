@@ -1,0 +1,16 @@
+docs/verification/2026-10-04-T4-continuation/probes/EuclideanStabilityProbe.lean:41:4: error: Type mismatch
+  hpoint t
+has type
+  phaseEuclideanDistance (γ ↑t) zstar ≤ 2 * sSup D
+but is expected to have type
+  (fun t => phaseEuclideanDistance (γ ↑t) zstar) t ≤ sSup (range fun t => dist (γ ↑t) zstar)
+docs/verification/2026-10-04-T4-continuation/probes/EuclideanStabilityProbe.lean:60:32: error: expected token
+'MolecularDynamics.IsFutureMechanicalStable.euclidean' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_potential_contDiffAt_two' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+docs/verification/2026-10-04-T4-continuation/probes/EuclideanStabilityProbe.lean:70:14: error(lean.unknownIdentifier): Unknown constant `strictPotentialMin_futureStableEuclidean_of_smooth`
