@@ -1,0 +1,16 @@
+docs/verification/2026-10-04-LinearFlow/probes/SpectralProbe.lean:42:25: error: Function expected at
+  Basis
+but this term has type
+  ?m.4
+
+Note: Expected a function because this term is being applied to the argument
+  ι
+
+Hint: The identifier `Basis` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+'MolecularDynamics.linearExponentialFlow_realEigenbasis' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.hasDerivAt_realEigenmode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_realEigenmode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_realSpectral_sum' depends on axioms: [propext, Classical.choice, Quot.sound]

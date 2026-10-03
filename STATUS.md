@@ -171,3 +171,8 @@
 - HarmonicOscillator: true unit-mass ODE, Ω≠0, joint time/state continuity, actual Flow, composition/inverse, actual potential gradient and Hamiltonian invariance passed independent probe03. FreeParticleFlow: actual q₀+tM⁻¹p₀/constant p, joint continuity and Flow passed probe02.
 - Integrated full-check02 passed at07:09:12--07:10:36:8955jobs, Scratch,310declaration audits, stable pinned inputs. Failed full-check01 is preserved: module documentation preceded imports; file order was corrected and the oscillator module rebuilt successfully. Failed probe logs are retained without treating error-recovery sorryAx as accepted evidence.
 - Section1.5.1 remains partial; general initial continuity and linear/spectral/matrix examples remain open. Whole book remains ongoing; final responsible semantic sign-off pending, no new remote CI.
+
+### Constant-linear, matrix exponential and real spectral candidates (2026-10-04)
+
+- Three new modules passed independent probes: genuine Banach operator exponential IVP/unique solution/continuous Flow, exact matrix exponential mulVec bridge plus arbitrary initial time, and real eigenmode/finite/eigenbasis spectral formulas with actual repr coefficients.
+- full-check01 passed:8958jobs,348project audits, Scratch, pinned versions/source scan and stable input SHA. Complex spectra/real solution recovery and general nonlinear initial-state continuity remain open. Section1.5.1 and whole book remain ongoing; final responsible sign-off pending, no new remote CI.

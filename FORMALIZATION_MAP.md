@@ -285,3 +285,19 @@ independent probes passed; integrated full-check02 passed at07:09:12--07:10:36 (
 
 General initial-state dependence, spectral decomposition, matrix exponential,
 and all remaining Section1.5.1 claims are separate. Responsible sign-off pending.
+
+## Constant-linear exponential IVPs and real spectral formulas (2026-10-04)
+
+Printed27/PDF50 was viewed. Independent Linear03, Matrix03 and Spectral03 probes passed;
+full-check01 passed:8958jobs,348project audits, Scratch, pinned versions/source scan and stable input SHA.
+
+| Result | Lean declaration | Exact scope |
+| --- | --- | --- |
+| Actual exponential ODE | hasDerivAt_linearExponentialFlow, hasDerivAt_linearExponentialFlow_initial_time, linearExponentialFlow_unique | Real Banach-space continuous-linear A, actual exp((t-t₀)A) derivative/initial value and all-time IVP uniqueness. |
+| Continuous flow/laws | linearExponentialFlow_continuous, linearContinuousFlow, linearExponentialFlow_add, linearExponentialFlow_inverse | Actual joint continuity and Flow, commuting scalar multiples derive the laws. |
+| Genuine matrix formula | matrixExponentialFlow_eq, hasDerivAt_matrixExponentialFlow_initial_time, matrixExponentialFlow_unique, matrixContinuousFlow | Continuous algebra equivalence proves exact exp(tA)mulVec representation, real finite m including0; no diagonalizability/invertibility assumed. |
+| Exponential series | linearExponentialOperator_series, matrixExponential_series | Genuine convergent Banach/matrix exponential series; no new symbolic exp definition. |
+| Real spectral solution | hasDerivAt_realEigenmode, linearExponentialFlow_realEigenmode, linearExponentialFlow_realSpectral_sum, linearExponentialFlow_realEigenbasis | Real eigenvalues/vectors. Eigenbasis coefficients are Basis.repr z, not an assumed initial decomposition. |
+
+Complex spectral decomposition and real recovery, general nonlinear initial-state
+continuity and the rest of the book remain open. Final responsible sign-off pending.

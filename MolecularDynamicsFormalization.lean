@@ -27,3 +27,6 @@ import MolecularDynamics.Chapter01.TimeReversal
 import MolecularDynamics.Chapter01.GlobalFlow
 import MolecularDynamics.Chapter01.HarmonicOscillator
 import MolecularDynamics.Chapter01.FreeParticleFlow
+import MolecularDynamics.Chapter01.LinearFlow
+import MolecularDynamics.Chapter01.MatrixFlow
+import MolecularDynamics.Chapter01.RealSpectralFlow

@@ -1,0 +1,15 @@
+docs/verification/2026-10-04-LinearFlow/probes/LinearFlowProbe.lean:9:6: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.normedField', which is 'noncomputable'
+docs/verification/2026-10-04-LinearFlow/probes/LinearFlowProbe.lean:51:0: warning: automatically included section variable(s) unused in theorem `MolecularDynamics.linearExponentialFlow_initial_time`:
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'MolecularDynamics.hasDerivAt_linearExponentialFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearContinuousFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_linearExponentialFlow_initial_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

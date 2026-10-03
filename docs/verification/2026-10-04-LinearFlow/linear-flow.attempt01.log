@@ -1,0 +1,60 @@
+docs/verification/2026-10-04-LinearFlow/probes/LinearFlowProbe.lean:12:8: warning: automatically included section variable(s) unused in theorem `MolecularDynamics.linearExponentialFlow_zero`:
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+docs/verification/2026-10-04-LinearFlow/probes/LinearFlowProbe.lean:19:13: error(lean.unknownIdentifier): Unknown constant `NormedSpace.hasDerivAt_exp_smul_const'`
+docs/verification/2026-10-04-LinearFlow/probes/LinearFlowProbe.lean:18:45: error: unsolved goals
+E : Type u_1
+inst✝² : NormedAddCommGroup E
+inst✝¹ : NormedSpace ℝ E
+inst✝ : CompleteSpace E
+A : E →L[ℝ] E
+z : E
+t : ℝ
+⊢ HasDerivAt (fun u => linearExponentialFlow A u z) (A (linearExponentialFlow A t z)) t
+docs/verification/2026-10-04-LinearFlow/probes/LinearFlowProbe.lean:27:16: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  NormedAlgebra ℚ (E →L[ℝ] E)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-04-LinearFlow/probes/LinearFlowProbe.lean:25:65: error: unsolved goals
+E : Type u_1
+inst✝² : NormedAddCommGroup E
+inst✝¹ : NormedSpace ℝ E
+inst✝ : CompleteSpace E
+A : E →L[ℝ] E
+z : E
+s t : ℝ
+⊢ (NormedSpace.exp (t • A + s • A)) z = (NormedSpace.exp (t • A)) ((NormedSpace.exp (s • A)) z)
+docs/verification/2026-10-04-LinearFlow/probes/LinearFlowProbe.lean:33:4: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  NormedAlgebra ℚ (E →L[ℝ] E)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-04-LinearFlow/probes/LinearFlowProbe.lean:31:69: error: unsolved goals
+case refine_1
+E : Type u_1
+inst✝² : NormedAddCommGroup E
+inst✝¹ : NormedSpace ℝ E
+inst✝ : CompleteSpace E
+A : E →L[ℝ] E
+⊢ NormedAlgebra ℚ (E →L[ℝ] E)
+docs/verification/2026-10-04-LinearFlow/probes/LinearFlowProbe.lean:56:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField E inst✝².toAddCommGroup inst✝¹.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun x => linearExponentialFlow A (id x - t₀) z)
+    (A (linearExponentialFlow A (t - t₀) z)) t
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField E inst✝².toAddCommGroup inst✝¹.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun u => linearExponentialFlow A (u - t₀) z)
+    (A (linearExponentialFlow A (t - t₀) z)) t
+'MolecularDynamics.hasDerivAt_linearExponentialFlow' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_add' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_continuous' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.linearContinuousFlow' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_inverse' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_linearExponentialFlow_initial_time' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,8 @@
+'MolecularDynamics.hasDerivAt_matrixExponentialFlow_initial_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.matrixExponentialFlow_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.matrixContinuousFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.matrixExponential_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.matrixExponentialFlow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_matrixExponentialFlow' depends on axioms: [propext, Classical.choice, Quot.sound]

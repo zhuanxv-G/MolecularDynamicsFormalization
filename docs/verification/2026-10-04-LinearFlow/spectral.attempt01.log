@@ -1,0 +1,6 @@
+docs/verification/2026-10-04-LinearFlow/probes/SpectralProbe.lean:8:51: error: unexpected token 'λ'; expected '_' or identifier
+docs/verification/2026-10-04-LinearFlow/probes/SpectralProbe.lean:18:61: error: unexpected token 'λ'; expected '_' or identifier
+docs/verification/2026-10-04-LinearFlow/probes/SpectralProbe.lean:27:36: error: unexpected token 'λ'; expected '_' or identifier
+docs/verification/2026-10-04-LinearFlow/probes/SpectralProbe.lean:41:14: error(lean.unknownIdentifier): Unknown constant `hasDerivAt_realEigenmode`
+docs/verification/2026-10-04-LinearFlow/probes/SpectralProbe.lean:42:14: error(lean.unknownIdentifier): Unknown constant `linearExponentialFlow_realEigenmode`
+docs/verification/2026-10-04-LinearFlow/probes/SpectralProbe.lean:43:14: error(lean.unknownIdentifier): Unknown constant `linearExponentialFlow_realSpectral_sum`

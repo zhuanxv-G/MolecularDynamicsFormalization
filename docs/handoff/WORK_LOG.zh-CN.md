@@ -891,3 +891,53 @@
 - §1.5.1仍partial，明确谐振子Ω≠0、单位质量/统一标量频率、任意有限维；Ω=0作为自由粒子另证。两个显式例子的真实联合连续性构造mathlib Flow，不宣称一般势垒族初值连续性已经完成。
 - 原页印刷27/PDF50再视觉核对，负责人的最终教材语义签核pending，新远端CI未运行。准备按既有授权本地保存本批明确文件，无关旧改动保留，不推送/合并。
 - 下一LinearFlowProbe已落盘，首轮session90298进行中，拟证Banach空间连续线性算子指数的真实IVP、联合连续性与Flow；矩阵/特征谱桥接后续单独核实，未计本节或全书完成。
+
+## 2026-10-04 07:13 +08:00 — 显式流已保存、线性首轮失败定位
+
+- 谐振子/自由粒子完整验收批次已本地提交，未推送。完整full-check02实际时间07:09:12--07:10:36（文档已按原始报告更正），8955jobs/310声明。
+- LinearFlowProbe attempt01退出1：导数API在根命名空间而非NormedSpace；非交换CLM代数的ℚ范数代数需显式restrictScalars；平移导数simpa重建类型再次出现Module实例不匹配，改为直接rw one_smul然后exact。首轮仅初值恒等式成功，其余未登记证明。
+- 修复明确API/实例/重写后准备attempt02；不提高默认心跳或调整固定版本。下一矩阵桥接/特征展开仍开放。
+
+### 07:15 +08:00 — 线性指数第二轮数学证明已通过，实例编译修复
+
+- LinearFlowProbe attempt02只有新增ℚ限制标量local instance缺noncomputable导致代码生成错误；全部六项已打印数学声明依赖都仅允许三项基础公理。修正实例为noncomputable，不将该失败退出误计为整文件通过。
+- 同轮补全时间初值唯一性（实际CLM Lipschitz与真实导数）和真实指数幂级数；准备attempt03。矩阵作用/矩阵指数桥接尚未计完成。
+
+## 2026-10-04 07:16 +08:00 — 算子指数真实IVP/唯一性/连续流通过
+
+- LinearFlowProbe attempt03退出0，八项关键声明仅三项允许基础公理：Banach实空间连续线性算子的exp(tA)真导数、任意t₀初值/导数、联合连续性/Flow、复合与逆、全时间初值唯一性、真实幂级数。局部ℚ限制标量实例标为noncomputable消除第二轮代码生成错误。
+- 两处无害警告已整理：CLM.lipschitz换lipschitzWith；幂级数静态声明omit未使用CompleteSpace。正式LinearFlow候选写入，尚未顶层集成或完整验收。
+- MatrixFlowProbe已落盘：toEuclideanCLM与实际矩阵exp(tA)通过连续代数同态映射指数，目标为教材相同mulVec表达。先构建LinearFlow，再检查MatrixFlowProbe；未预先计矩阵/谱展开或全节完成。
+
+### 07:18 +08:00 — 矩阵桥接首轮的bundled映射投影修复
+
+- LinearFlow正式单模块8943jobs成功。MatrixFlowProbe attempt01退出1：toEuclideanCLM的RCLike/索引元变量需显式n:=Fin m、𝕜:=ℝ；StarAlgEquiv无直接toLinearMap字段，改经toAlgEquiv.toLinearEquiv.toLinearMap取真实连续性。不改矩阵/算子数学定义。
+- 修复后准备attempt02。SpectralProbe也已落盘，先做实特征值/实特征向量模式；复特征及实解恢复单独留待后续，不偷换全部原文结论。
+
+### 07:19 +08:00 — 教材真实矩阵指数公式桥接已通过
+
+- MatrixFlowProbe attempt02退出0：连续toEuclideanCLM映射真实矩阵指数，得到exp(tA)mulVec z的书中相同表达，实际HasDerivAt给z'=Az。两项关键依赖仅允许三项基础公理，未用矩阵指数作新的未解释占位定义。
+- 已补任意t₀导数/初值唯一性、矩阵ContinuousFlow以及矩阵幂级数，准备attempt03。实特征模式/有限谱展开另一个探针未运行，复谱还开放。
+
+### 07:21 +08:00 — 完整矩阵候选通过，谱探针解析错误
+
+- MatrixFlowProbe attempt03退出0：真实矩阵指数表达、任意初时真实导数/初值唯一性、矩阵连续Flow和真实幂级数六项关键依赖仅三项允许基础公理。
+- SpectralProbe attempt01因λ为Lean保留lambda token导致绑定解析失败（不是谱证明反例），改用ν；补Basis.repr给系数的实特征基展开，不假设待证初值分解。prepare attempt02。
+- 本批正式完整验收尚未跑。已保存原始失败日志，先完成谱独立验证再集成一次完整验收，避免重复全构建。
+
+### 07:23 +08:00 — 实谱三项证明通过，固定版本Basis命名空间修复
+
+- SpectralProbe attempt02中真实特征模式导数、指数流特征模式和有限谱展开三项仅三项允许基础公理。最后特征基系数桥接因固定mathlib的Basis在Module命名空间失败；改为Module.Basis后准备attempt03，不改变谱假设。
+- 全部正式线性/矩阵/实谱完整验收仍未跑，保持待验收。复谱/真实解恢复下一独立任务，不把本三项当作全页完成。
+
+## 2026-10-04 07:24 +08:00 — 线性/矩阵/实谱正式集成并启动完整验收
+
+- SpectralProbe attempt03退出0，实特征模式/有限谱/特征基系数四项仅三项允许基础公理。LinearFlow、MatrixFlow、RealSpectralFlow正式接入顶层，Scratch/CheckAxioms增18项关键审计，映射/假设/状态已更新。
+- 启动LinearFlow/full-check01，正式源码冻结；此前全部真实失败/成功日志保留。未把复谱、一般非线性初值连续性或整个§1.5.1/全书计完成。
+- 下一独立批次为复特征模式/复系数谱展开与实初值实解恢复；原页印刷27/PDF50已核对。负责人最终教材语义签核pending，不需要等待签字才能继续独立证明。
+
+## 2026-10-04 07:26 +08:00 — 线性/矩阵/实谱完整验收通过
+
+- LinearFlow/full-check01退出0，8958jobs、Scratch、固定版本/扫描/输入SHA稳定；18项新关键显式审计仅三项允许基础公理。实际完整报告与全部原始日志保留，准备本地保存。
+- 下一ComplexSpectralProbe已落盘：实时间的复指数模式真实导数，复线性算子限制实标量后真实IVP唯一性推模式/谱展开，Basis.repr给复系数。拟实际验证，不提前计已证明。
+- 全书/§1.5.1仍未完成，原文实解恢复与其他初值连续性/积分例子尚待。负责人最终语义签核pending，未跑新远端CI，不使用MathCopilot。

@@ -1,0 +1,27 @@
+docs/verification/2026-10-04-LinearFlow/probes/MatrixFlowProbe.lean:15:25: error: Function expected at
+  Matrix.toEuclideanCLM
+but this term has type
+  Matrix ?m.5 ?m.5 ?m.4 ≃⋆ₐ[?m.4] EuclideanSpace ?m.4 ?m.5 →L[?m.4] EuclideanSpace ?m.4 ?m.5
+
+Note: Expected a function because this term is being applied to the argument
+  A
+docs/verification/2026-10-04-LinearFlow/probes/MatrixFlowProbe.lean:21:27: error(lean.invalidField): Invalid field `toLinearMap`: The environment does not contain `StarAlgEquiv.toLinearMap`, so it is not possible to project the field `toLinearMap` from an expression
+  Matrix.toEuclideanCLM
+of type
+  Matrix ?m.36 ?m.36 ?m.35 ≃⋆ₐ[?m.35] EuclideanSpace ?m.35 ?m.36 →L[?m.35] EuclideanSpace ?m.35 ?m.36
+docs/verification/2026-10-04-LinearFlow/probes/MatrixFlowProbe.lean:32:42: error: Function expected at
+  Matrix.toEuclideanCLM
+but this term has type
+  Matrix ?m.27 ?m.27 ?m.26 ≃⋆ₐ[?m.26] EuclideanSpace ?m.26 ?m.27 →L[?m.26] EuclideanSpace ?m.26 ?m.27
+
+Note: Expected a function because this term is being applied to the argument
+  A
+docs/verification/2026-10-04-LinearFlow/probes/MatrixFlowProbe.lean:37:44: error: Function expected at
+  Matrix.toEuclideanCLM
+but this term has type
+  Matrix ?m.13 ?m.13 ?m.12 ≃⋆ₐ[?m.12] EuclideanSpace ?m.12 ?m.13 →L[?m.12] EuclideanSpace ?m.12 ?m.13
+
+Note: Expected a function because this term is being applied to the argument
+  A
+'MolecularDynamics.matrixExponentialFlow_eq' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_matrixExponentialFlow' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

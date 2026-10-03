@@ -1,15 +1,15 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 07:12 +08:00）
+## 当前数学检查点（2026-10-04 07:27 +08:00）
 
-- 同一全书目标，聊天 `01a102b1-a3fe-71e1-a571-347703fc09b8`。Goal实查usageLimited，非完成/用户暂停；只读额度显示普通使用可用，按同一持续授权续做。工具不能恢复平台状态；未另建Goal/自动化，未购买/重置或换账户。
-- 分支 `chapter01-kinetic-energy-nonneg`，实际本地HEAD `84549abca96fe26dce5c902bb71f1155f66fcede`，双向流批次已保存；未推送。Lean4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`固定，无关既有材料保留。
-- Theorem1.1欧氏全未来稳定性已通过T4/full-check03（06:07:48--06:10:29，8947jobs/231声明，源码2081575）。Lagrangian/广义质量静态变换/Legendre真sup与唯一达到点已通过Lagrangian/full-check01（06:29:14--06:31:00，8950jobs/261声明，源码f52945d）。
-- 未来流构造/非负复合/交换/能量与单射已通过Flow/full-check01（06:40:32--06:42:49，8951jobs/268声明，源码eb193c6）。新TimeReversal/GlobalFlow已通过Flow/full-check02（06:52:24--06:54:30，8953jobs/286声明）：真实双向IVP及不变势垒域全时间流，复合/交换/逆/双射、能量守恒。关键声明仅三项允许基础公理，固定输入SHA稳定。
-- 原页印刷22--24/PDF45--47、26/PDF49、32/PDF55已视觉核对。负责人最终独立语义签核仍pending，新远端CI未运行；本聊天不访问或等待MathCopilot。
-- 全书和Chapter1仍未完成。§1.3/1.4/1.5.1/1.5.3仅partial；配置依赖质量动力学、最小作用量、一般初值连续依赖/Dynamics.Flow、Hartman--Grobman/线性化与其它后续内容未证明。新全时间族只在安全能量势垒域，未称无条件整个Q×p全局存在。
-- 当前独立任务：保存双向流批次后检查 `docs/verification/2026-10-04-Harmonic/probes/HarmonicProbe.lean`。印刷27/PDF50已实际查看；Ω≠0单位质量谐振子公式、真实导数/初值、全时间流及(t,z)连续性attempt02完整退出0；attempt03已退出0，连续Flow结构和真实势能梯度/能量不变补齐；full-check01因说明置于import前解析失败，已修复并单模块构建通过；FreeParticleProbe attempt02通过，两模块已正式接入，full-check02退出0（8955jobs/310声明/固定SHA稳定）；准备本地保存，Ω=0的自由粒子需另明示。
-- 恢复第一动作：保存谐振子/自由粒子明确批次，读取LinearFlowProbe首轮session90298结果，继续真实指数IVP；保留失败full-check01，不重复旧证明或完整检查；只有具体新失败才修复并记录。不能将任何一批计为全书完成或终止接续。
+- 同一全书目标，聊天01a102b1-a3fe-71e1-a571-347703fc09b8。Goal实查usageLimited，非完成/用户暂停；之前只读额度ordinaryUsageAllowed=true，按同一持续授权续做。工具不能恢复平台状态；未另建Goal/自动化，未购买/重置或换账户。
+- 分支chapter01-kinetic-energy-nonneg，实际本地HEAD4859306955be633027fc5ea9592ec7769eae8a28，谐振子/自由粒子批次已保存，未推送。Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435固定，无关材料保留。
+- 已完整本地验收：Theorem1.1严格欧氏全未来稳定性T4/check03（8947jobs/231声明，源码2081575）；Lagrangian/静态质量变换/Legendre真sup及唯一达到点（8950jobs/261，源码f52945d）；双向势垒域真实全时间流及复合/逆/能量（8953jobs/286，源码84549ab）。
+- 最近谐振子/自由粒子full-check02于07:09:12--07:10:36退出0，8955jobs/310声明/固定SHA稳定，源码4859306。谐振子Ω≠0单位质量/统一频率，Ω=0自由粒子另证；两个显式模型已构造真正联合连续Flow。保留full-check01的import文件顺序失败证据。
+- 当前新批次LinearFlowProbe attempt03和正式单模块构建通过；MatrixFlowProbe attempt03通过：真实矩阵指数mulVec表达、任意初时真导数/初值唯一性、连续Flow和矩阵幂级数。关键独立依赖仅三项允许基础公理；三模块已顶层集成，full-check01已退出0（8958jobs/348声明/固定SHA稳定），准备本地保存。
+- SpectralProbe attempt01因λ保留token解析失败，已改ν并补Basis.repr实特征基展开。attempt02三项实谱通过，特征基Basis命名空间失败改Module.Basis；attempt03已通过；恢复第一动作保存线性/矩阵/实谱明确批次，读取ComplexSpectralProbe attempt01/session91879实际结果，继续复谱/实解恢复。不重复未变的旧完整检查。
+- 原页印刷27/PDF50已再次视觉核对，语义边界报告在LinearFlow目录。复谱/复系数到实解恢复、一般初值连续依赖、一般强制势全空间存在以及其他整节/整章/全书内容尚未完成；负责人最终语义签核pending，新远端CI未跑，不使用MathCopilot。
+- 每个成功/失败及20--30分钟检查点落盘。全书Goal不标完成，不停自动接续；仅暂存本批明确文件，不覆盖既有AGENTS/FORMALIZATION_PLAN/RESUME/T3材料。
 
 ## 启动配置复核（2026-10-04 01:00 +08:00）
 
