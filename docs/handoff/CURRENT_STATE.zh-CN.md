@@ -1,15 +1,15 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 06:44 +08:00）
+## 当前数学检查点（2026-10-04 06:56 +08:00）
 
-- 同一全书目标，聊天 `01a102b1-a3fe-71e1-a571-347703fc09b8`。Goal实查usageLimited（非完成/用户暂停）；只读额度普通使用可用，继续同一授权。工具不能主动恢复该平台状态，没有替代Goal/自动化、购买/重置或切换账号。
-- 分支 `chapter01-kinetic-energy-nonneg`，实际本地HEAD `f52945db47e465a582162521556785f4ad33818c`；仅本地保存、未推送。Lean4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`未改，无关既有材料保留。
-- 新六模块全局存在/势垒/正则性/稳定性/欧氏距离已接入。完整full-check03于06:07:48--06:10:29退出0：8947jobs、Scratch、231导入声明审计、禁止捷径扫描、固定版本和输入SHA稳定；13项关键声明只有三项允许基础公理。
-- Theorem1.1机器已验收：`strictPotentialMin_futureStableEuclidean_of_smooth`，固定正对角质量、开Q、smooth势能与strict relative minimum，结论含平衡、近初值未来IVP存在、所有同初值未来解的欧氏距离集合有界和严格sSup<ε。原页印刷32/PDF55已再查看；负责人最终语义签核pending，新远端CI未跑。
-- 原日志/候选/完整验收证据：`docs/verification/2026-10-04-T4-continuation/`。欧氏探针attempt01/02失败诊断已修复，attempt03通过；失败不计验收。
-- 当前独立任务：稳定性批次已保存2081575；LagrangianProbe attempt02和正式模块8930jobs已通过；GeneralizedCoordinates attempt04、Legendre attempt03均通过；三模块和16项关键审计已通过Lagrangian/full-check01（06:29:14--06:31:00，8950jobs、261声明、输入稳定），已本地提交f52945d。已视觉核对印刷22--24/PDF45--47，已证明固定质量Lagrangian、真实梯度及Euler--Lagrange/机械轨道双向桥。固定质量Euler--Lagrange双向轨道桥已独立通过；整批完整本地验收已通过；广义配置依赖质量动力学和最小作用量变分仍未证明。
-- 全书、Chapter1各节仍未完成。独立抽象最大解API未另暴露；全局未来存在采用可延拓区间并集和有限sSup反证。§1.5.3仅partial，Hartman--Grobman/线性化等未证明。
-- 恢复第一动作：§1.5.1 FutureFlowProbe attempt01五项已退出0；attempt02六项已通过（含单射），FutureFlow/full-check01已通过（06:40:32--06:42:49，8951jobs、268声明、输入稳定），准备本地提交。下一探针TimeReversal已落盘未运行。双向流需进一步反向存在，不能把未来流称为双向群。不要重复full-check03或旧证明；发生具体新错误才修复、验证并保存检查点。
+- 同一全书目标，聊天 `01a102b1-a3fe-71e1-a571-347703fc09b8`。Goal实查usageLimited，非完成/用户暂停；只读额度显示普通使用可用，按同一持续授权续做。工具不能恢复平台状态；未另建Goal/自动化，未购买/重置或换账户。
+- 分支 `chapter01-kinetic-energy-nonneg`，提交前本地HEAD `eb193c6a40a005a308ba6e74e3f623dc8cc33375`，即将保存双向流批次；未推送。Lean4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`固定，无关既有材料保留。
+- Theorem1.1欧氏全未来稳定性已通过T4/full-check03（06:07:48--06:10:29，8947jobs/231声明，源码2081575）。Lagrangian/广义质量静态变换/Legendre真sup与唯一达到点已通过Lagrangian/full-check01（06:29:14--06:31:00，8950jobs/261声明，源码f52945d）。
+- 未来流构造/非负复合/交换/能量与单射已通过Flow/full-check01（06:40:32--06:42:49，8951jobs/268声明，源码eb193c6）。新TimeReversal/GlobalFlow已通过Flow/full-check02（06:52:24--06:54:30，8953jobs/286声明）：真实双向IVP及不变势垒域全时间流，复合/交换/逆/双射、能量守恒。关键声明仅三项允许基础公理，固定输入SHA稳定。
+- 原页印刷22--24/PDF45--47、26/PDF49、32/PDF55已视觉核对。负责人最终独立语义签核仍pending，新远端CI未运行；本聊天不访问或等待MathCopilot。
+- 全书和Chapter1仍未完成。§1.3/1.4/1.5.1/1.5.3仅partial；配置依赖质量动力学、最小作用量、一般初值连续依赖/Dynamics.Flow、Hartman--Grobman/线性化与其它后续内容未证明。新全时间族只在安全能量势垒域，未称无条件整个Q×p全局存在。
+- 当前独立任务：保存双向流批次后检查 `docs/verification/2026-10-04-Harmonic/probes/HarmonicProbe.lean`。印刷27/PDF50已实际查看；Ω≠0单位质量谐振子公式、真实导数/初值、全时间流及(t,z)连续性草稿已落盘未运行，Ω=0的自由粒子需另明示。
+- 恢复第一动作：实查本地Git保存结果，再独立运行HarmonicProbe，不重复旧证明或完整检查；只有具体新失败才修复并记录。不能将任何一批计为全书完成或终止接续。
 
 ## 启动配置复核（2026-10-04 01:00 +08:00）
 

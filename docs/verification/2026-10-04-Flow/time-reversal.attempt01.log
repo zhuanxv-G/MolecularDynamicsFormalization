@@ -1,0 +1,60 @@
+docs/verification/2026-10-04-Flow/probes/TimeReversalProbe.lean:42:16: error: failed to synthesize
+  ContinuousSMul ℝ (PhaseSpace n)
+(deterministic) timeout at `typeclass`, maximum number of heartbeats (20000) has been reached
+
+Note: Use `set_option synthInstance.maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+docs/verification/2026-10-04-Flow/probes/TimeReversalProbe.lean:71:28: error: unsolved goals
+n : ℕ
+m : CoordinateMasses n
+F : Force n
+U : PotentialEnergy n
+Q : Set (Position n)
+q₀ : Position n
+r δ : ℝ
+z₀ : PhaseSpace n
+hm : ∀ (i : Fin n), 0 < m i
+hQ : IsOpen Q
+hU : ∀ q ∈ Q, DifferentiableAt ℝ U q
+hF : ∀ q ∈ Q, F q = -gradient U q
+hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 F q
+hclosedQ : closedBall q₀ r ⊆ Q
+hstart : z₀.1 ∈ ball q₀ r
+hbelow : massHamiltonian m U z₀ < U q₀ + δ
+hbarrier : HasSpherePotentialBarrier U q₀ r δ
+a : ℝ
+ha : a < 0
+γ : ℝ → PhaseSpace n
+hγ : IsMechanicalSolutionOn m F Q (Ioi a) γ
+hinitγ : γ 0 = z₀
+hposγ : ∀ (t : ℝ), 0 ≤ t → (γ t).1 ∈ ball q₀ r
+hstartR : (momentumReflection z₀).1 ∈ ball q₀ r
+hbelowR : massHamiltonian m U (momentumReflection z₀) < U q₀ + δ
+b : ℝ
+hb : b < 0
+η : ℝ → PhaseSpace n
+hη : IsMechanicalSolutionOn m F Q (Ioi b) η
+hinitη : η 0 = momentumReflection z₀
+hposη : ∀ (t : ℝ), 0 ≤ t → (η t).1 ∈ ball q₀ r
+κ : ℝ → PhaseSpace n := fun t => momentumReflection (η (-t))
+hκ : IsMechanicalSolutionOn m F Q (Iio (-b)) κ
+⊢ ((momentumReflection z₀).1, -(momentumReflection z₀).2) = z₀
+docs/verification/2026-10-04-Flow/probes/TimeReversalProbe.lean:71:71: warning: This simp argument is unused:
+  momentumReflection_twice
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [neg_zero, hinitη]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'MolecularDynamics.massHamiltonian_momentumReflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_time_reverse_on_Iio' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.exists_globalMechanicalIVP_of_energy_barrier_two_sided' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

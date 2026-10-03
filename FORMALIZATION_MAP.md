@@ -251,3 +251,21 @@ independent probe runs and full-check01 at06:40:32--06:42:49:
 
 This is not a claim of a two-sided flow group, a continuous Dynamics.Flow
 structure, or complete Section1.5.1. Backward existence remains next.
+
+## Two-sided flow integration (2026-10-04)
+
+`TimeReversal.lean` and `GlobalFlow.lean` passed independent probes (the latter
+on its first run) and passed Flow/full-check02 at06:52:24--06:54:30:
+8953jobs, Scratch,286declaration audits and stable fixed inputs.
+
+| Result | Lean declaration | Exact boundary |
+| --- | --- | --- |
+| Time reflection | `massHamiltonian_momentumReflection`, `mechanicalSolution_time_reverse_on_Iio` | Momentum and time both flip. Genuine ODE derivative and Q membership are checked, with energy unchanged. |
+| Two-sided IVP | `exists_globalMechanicalIVP_of_energy_barrier_two_sided` | The forward IVPs of z and reflected z are locally equal after reflection; open-cover gluing constructs an actual univ-time IVP below the energy barrier. |
+| All-time laws | `globalMechanicalFlow_add`, `globalMechanicalFlow_inverse`, `globalMechanicalFlow_commute`, `globalMechanicalFlow_bijOn` | Any actual all-time family invariant on S, with C1 force, has real-time composition, inverse, commutation and bijectivity; none are assumed in its predicate. |
+| All-time energy | `mechanicalSolution_energy_on_univ`, `globalMechanicalFlow_energy` | Derived from actual ODE conservation with positive fixed masses, differentiable U and conservative force. |
+| Actual two-sided family | `exists_globalMechanicalFlow_of_energy_barrier` | Constructs the all-real-time family and invariant S={q in safe ball and H below barrier} from proved IVP existence. |
+
+Initial-state continuity, a continuous Dynamics.Flow structure, arbitrary
+coercive-potential global existence and all remaining Section1.5.1 content
+remain separate. Responsible semantic sign-off and new remote CI are pending/not run.

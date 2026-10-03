@@ -154,3 +154,14 @@
 
 - Flow/full-check01 passed at06:40:32--06:42:49:8951jobs, Scratch,268imported project declaration audits, stable pinned inputs and source scan. All six explicit new key dependencies use only the permitted three foundational axioms.
 - Genuine future family existence/invariance, nonnegative-time composition/commutation, energy conservation and injectivity are machine-accepted on the barrier domain. Negative-time inverse laws and joint continuity remain open; Section1.5.1 is partial. Final responsible semantic sign-off is pending; remote CI not run.
+
+## Two-sided mechanical flow integration (2026-10-04 06:52 +08:00)
+
+- Independent TimeReversal and GlobalFlow proofs passed. Momentum/time reflection plus actual local uniqueness/gluing constructs all-real-time energy-barrier IVPs and an invariant all-time flow family. Composition, inverse, commutation, bijectivity and energy invariance follow from actual ODEs, with no such laws assumed.
+- Flow/full-check02 is being started. Initial-state continuity and arbitrary global coercive models remain open. Original printed26/PDF49 checked; responsible final semantic sign-off pending, no new remote CI.
+
+## All-real-time flow local machine acceptance (2026-10-04 06:56 +08:00)
+
+- Flow/full-check02 passed at06:52:24--06:54:30:8953jobs, Scratch,286imported declaration audits, stable pinned Lean/mathlib and input SHA. Eleven new key explicit dependencies use only the permitted three foundational axioms.
+- Time reversal, genuine all-real-time barrier IVPs, concrete invariant all-time families, composition/commutation, inverse maps, bijectivity and energy invariance are locally machine-accepted. Initial-state continuity and a continuous Dynamics.Flow structure remain unproved; other chapter/book content remains open.
+- Original printed26/PDF49 and local statement review completed; final responsible semantic sign-off pending, no new remote CI. Next task is the explicit harmonic-oscillator flow on printed27/PDF50.
