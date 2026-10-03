@@ -1,0 +1,4 @@
+Command: fixed Lean 4.34.0 bin PATH; lake env lean EndpointProbe.lean
+Exit code: 0
+'MolecularDynamics.probe_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.probe_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

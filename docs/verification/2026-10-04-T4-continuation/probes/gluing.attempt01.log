@@ -1,0 +1,10 @@
+Command: fixed Lean 4.34.0 bin PATH; lake env lean GluingProbe.lean
+Exit code: 1
+GluingProbe.lean:18:51: error: unsolved goals
+hs : s ∈ Iio b
+⊢ b ≤ s → η s = γ s
+Cause: simp [ζ, hs] did not reduce membership in Iio to the strict inequality needed by ite.
+Repair: explicitly set hsb : s < b := hs, then simp [ζ, hsb].
+Additional warnings: replace ContinuousOn.restrict by domRestrict and letI by haveI.
+probe_unique completed with only [propext, Classical.choice, Quot.sound].
+Failed probe_glue carried generated sorryAx from the unsolved goal; never accepted or integrated as a validated theorem.

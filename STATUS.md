@@ -40,7 +40,7 @@
 - Maximal extension and global existence for the mechanical ODE. Local existence and local uniqueness under C¹ regularity at the initial state, plus interval uniqueness under a global Lipschitz field, are recorded below.
 - Higher regularity of the force, potential and trajectory beyond the explicit derivative bridges.
 - Time-trajectory Hamiltonian/mechanical equivalence beyond the static T3 identities.
-- A whole-space momentum bound, the global continuation argument, and the full stability theorem. Energy conservation on open intervals for existing conservative solutions is recorded below.
+- The maximal/global continuation argument and the full stability theorem. Energy conservation on open intervals for existing conservative solutions, momentum bounds, and given-interval confinement are recorded below.
 - Chapter 1 §1.3 and later material.
 
 ## T2-L0 checkpoint (2026-10-03)
@@ -64,7 +64,7 @@
 - The independently compiled draft and its original log were rehashed locally and matched the final T5 handoff. All twenty-four printed dependencies were permitted standard logical axioms, with no errors or warnings. The exact initial-ball refinement was reviewed before integration.
 - Formal full-project check passed at01:25–01:28: fixed versions, source scan, 8931 build jobs, Scratch and 128 imported declaration audits. Commit `9baf87f89d07138a95bfbfe1f37d45dd54946cf7` was pushed and GitHub Actions run37041343101/job110951942612 passed the same full check; artifact11242057946 was saved. Exact local and remote evidence is in `docs/verification/2026-10-03-T5-first-batch/`.
 - The textbook's strict local minimum was visually rechecked at printed32/PDF55; printed33/PDF56 treats Hessian positivity as a sufficient condition. This batch does not assume that stronger condition. Website independent proof review and responsible semantic sign-off remain pending.
-- Theorem1.1, actual mechanical energy conservation, momentum bounds, ODE existence/uniqueness and global extension remain later goals.
+- Theorem1.1, maximal/global extension, and the full stability argument remain later goals; actual energy conservation, local existence/uniqueness, momentum bounds, and given-interval confinement are recorded below.
 
 ## T3 fixed-mass Hamiltonian implementation (2026-10-03)
 
@@ -82,17 +82,34 @@
 - A C¹ force at the initial position gives a local solution through a prescribed state on an open configuration domain containing it. C¹ regularity of the mechanical field at a common initial state gives equality of two solutions near the initial time; a separate theorem gives equality on a whole common open interval under a supplied global Lipschitz constant. No maximal flow or global existence is claimed.
 - For particle-first coordinates, each component of total momentum has zero derivative and is constant when the sum of forces in that direction vanishes on the configuration domain. The printed momentum assertion is on printed19/PDF42.
 - Integrated `scripts/check.ps1` passed at 13:56–13:59 +08:00: pinned Lean 4.34.0/mathlib revision, source scan, 8935 build jobs, Scratch and 182 imported declaration dependency audits. The key declarations depend only on `propext`, `Classical.choice` and `Quot.sound`. Evidence is in `docs/verification/2026-10-03-T4-first-batch/`.
-- Independent MathCopilot review, remote CI for this T4 snapshot, and responsible textbook semantic sign-off remain pending.
+- Independent MathCopilot review and responsible textbook semantic sign-off remain pending; remote CI for the later T4 snapshots is recorded below.
 - The C¹ local-uniqueness follow-up was committed as `522f82de4863f9ef64f0a9a2f3cf3dbb8f02b1bc` and pushed. GitHub Actions run `37104591425` / job `111150531699` completed successfully; metadata is in `docs/verification/2026-10-03-T4-third-batch/REMOTE_CI_RESULT.json`. Independent MathCopilot review and responsible textbook semantic sign-off remain pending.
-- `Equilibrium.lean` now connects a strict relative potential minimum in an open domain to the zero-momentum mechanical equilibrium. This is the first equilibrium dependency for Theorem 1.1; it deliberately does not claim Lyapunov stability or global continuation. The new source still needs the next full local/remote check.
+- `Equilibrium.lean` now connects a strict relative potential minimum in an open domain to the zero-momentum mechanical equilibrium. This is the first equilibrium dependency for Theorem 1.1; it deliberately does not claim Lyapunov stability or global continuation. The bridge subsequently passed its local and remote checks.
 - The equilibrium bridge was committed as `4d55e405c665ddfd9fcc5d4d0de1084a3a691b04` and pushed. GitHub Actions run `37105793203` / job `111153920486` completed successfully; metadata is in `docs/verification/2026-10-03-T4-fourth-batch/REMOTE_CI_RESULT.json`.
 
 ## T4 momentum bounds and confinement follow-up (2026-10-03)
 
 - Added `MomentumBounds.lean` and `MechanicalConfinement.lean`: five static energy/norm/compactness lemmas and two existing-solution confinement lemmas. The energy conservation input of the old conditional T5 result is now derived from the mechanical ODE.
 - Newly viewed printed25--26/PDF48--49 and printed32/PDF55. Compact position containment, the explicit mass bound and the product maximum metric remain visible in the statements.
-- The first standalone attempt was terminated without diagnostic output after a long wait; the second returned three proof errors from missing use of the pointwise positive-mass premise. Those were repaired explicitly. The integrated fifth full check is running; it is not yet acceptance evidence.
+- The first standalone attempt was terminated without diagnostic output after a long wait; the second returned three proof errors from missing use of the pointwise positive-mass premise. Those were repaired explicitly. The integrated fifth full check subsequently passed and is recorded below.
 - MathCopilot T2/T5 independent proof review is now actually running. The website acknowledged fixed commit 9baf87f and verified the 73702-byte input packet and all 14 byte/hash/Git-blob entries. Original reports have not yet been collected. Current attempt evidence is in `docs/reviews/2026-10-03-T2-T5-proofs/CURRENT_ATTEMPT.json`.
 - Global/maximal continuation, the complete Theorem 1.1 and responsible human semantic sign-off remain open.
 
-- Fifth full local check passed at 20:16:02--20:20:54 +08:00: 8938 build jobs, Scratch and 201 imported declaration audits, only permitted logical dependencies and stable input hashes. Exact times and SHA values are in the actual CHECK_REPORT.json. Remote CI for this new snapshot is pending.
+- Fifth full local check passed at 20:16:02--20:20:54 +08:00: 8938 build jobs, Scratch and 201 imported declaration audits, only permitted logical dependencies and stable input hashes. Exact times and SHA values are in the actual CHECK_REPORT.json. Remote CI for this new snapshot subsequently passed and is recorded below.
+
+- The fifth-batch source commit 7c61e9d001887066bfa03771343ce91e7ce68ddb was pushed. Exact-head GitHub Actions run37122822014/job111202155182 completed successfully at20:28:11 +08:00. Metadata is in the fifth-batch REMOTE_CI_RESULT.json.
+
+## Current snapshot (2026-10-03 22:09 +08:00)
+
+- The current branch is `chapter01-kinetic-energy-nonneg` at HEAD `80fcbd63cf6b0508dce54ff10e47c4ac01947b6c`; the two commits after `7c61e9d` contain handoff/review documentation only. No Lean source, toolchain, or manifest diff was found between `7c61e9d` and HEAD.
+- Chapter 1 is partially formalized and machine-checked through the T4 momentum/confinement batch, but not complete. The remaining mathematical core is maximal/global ODE continuation and the full Theorem 1.1 stability conclusion with its all-future-time bound; Chapter 1 §1.3 and later material are not formalized.
+- This status query did not rerun `scripts/check.ps1`; the effective evidence remains the fifth-batch local exit-0 check and the exact-head remote CI success recorded above. MathCopilot independent review reports and responsible semantic sign-off remain pending.
+
+## Local long-running Goal and finite endpoints (2026-10-04 01:12 +08:00)
+
+- Native whole-book Goal is active in chat `01a102b1-a3fe-71e1-a571-347703fc09b8`. Only local work is used. The startup chat configured the same-chat 15-minute heartbeat; actual quota-exhaustion recovery has not been tested.
+- Added `Continuation.lean` with seven complete proofs: Lipschitz endpoint limit, closed-set endpoint membership, actual mechanical derivative control, bounded/compact-field endpoint limits, connected-domain uniqueness from C1 regularity along the trajectory, and explicit-overlap gluing.
+- Full `scripts/check.ps1` exited 0 at 01:11:13 +08:00 (started 01:08:40): pinned Lean/mathlib, source scan, 8939 build jobs, Scratch, 208 declaration audits and stable hashes. Each new key theorem uses only propext/Classical.choice/Quot.sound. Evidence: `docs/verification/2026-10-04-T4-continuation/full-check01/`.
+- Newly viewed Theorem 1.1 at printed32/PDF55. Its strict all-time supremum requires a uniform margin, beyond pointwise strict bounds.
+- Still unfinished: deriving the overlap equality from endpoint local IVP, maximal/global continuation, complete Theorem 1.1, later chapters and final responsible semantic sign-off. No new remote CI claim.
+- A separate FTC endpoint-derivative probe passed. It is not yet in the formal library; the next task uses it to recover a one-sided derivative at the filled endpoint and apply local uniqueness.

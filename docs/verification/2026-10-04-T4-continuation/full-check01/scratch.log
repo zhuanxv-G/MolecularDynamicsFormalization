@@ -1,0 +1,113 @@
+MolecularDynamics.Position (n : ℕ) : Type
+MolecularDynamics.SeparableEnergy.hamiltonian {n : ℕ} (energy : MolecularDynamics.SeparableEnergy n) :
+  MolecularDynamics.Hamiltonian n
+MolecularDynamics.massHamiltonian {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (U : MolecularDynamics.PotentialEnergy n) : MolecularDynamics.Hamiltonian n
+MolecularDynamics.hamiltonianVectorField {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (U : MolecularDynamics.PotentialEnergy n) (z : MolecularDynamics.PhaseSpace n) : MolecularDynamics.PhaseSpace n
+MolecularDynamics.mechanical_energy_const_on_Ioo {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (F : MolecularDynamics.Force n) (U : MolecularDynamics.PotentialEnergy n) (Q : Set (MolecularDynamics.Position n))
+  (a b : ℝ) (γ : ℝ → MolecularDynamics.PhaseSpace n) (hm : ∀ (i : Fin n), 0 < m i)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ) (hU : ∀ q ∈ Q, DifferentiableAt ℝ U q)
+  (hF : ∀ q ∈ Q, F q = -gradient U q) (s t : ℝ) (hs : s ∈ Set.Ioo a b) (ht : t ∈ Set.Ioo a b) :
+  MolecularDynamics.massHamiltonian m U (γ s) = MolecularDynamics.massHamiltonian m U (γ t)
+MolecularDynamics.exists_localMechanicalIVP_open_of_force_contDiffAt {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (F : MolecularDynamics.Force n) (Q : Set (MolecularDynamics.Position n)) (hQ : IsOpen Q) (t₀ : ℝ)
+  (z₀ : MolecularDynamics.PhaseSpace n) (hz₀ : z₀.1 ∈ Q) (hF : ContDiffAt ℝ 1 F z₀.1) :
+  ∃ ε γ, MolecularDynamics.IsLocalMechanicalIVP m F Q t₀ z₀ ε γ
+MolecularDynamics.mechanicalSolution_eventually_unique_of_contDiffAt {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (F : MolecularDynamics.Force n) (Q : Set (MolecularDynamics.Position n)) (I : Set ℝ) (t₀ : ℝ)
+  (γ η : ℝ → MolecularDynamics.PhaseSpace n) (z₀ : MolecularDynamics.PhaseSpace n) (hI : IsOpen I) (ht₀ : t₀ ∈ I)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q I γ) (hη : MolecularDynamics.IsMechanicalSolutionOn m F Q I η)
+  (hinitγ : γ t₀ = z₀) (hinitη : η t₀ = z₀) (hfield : ContDiffAt ℝ 1 (MolecularDynamics.mechanicalVectorField m F) z₀) :
+  γ =ᶠ[nhds t₀] η
+MolecularDynamics.totalMomentumCoordinate_const_on_Ioo {N d : ℕ} (m : MolecularDynamics.CoordinateMasses (N * d))
+  (F : MolecularDynamics.Force (N * d)) (Q : Set (MolecularDynamics.Position (N * d))) (a b : ℝ)
+  (γ : ℝ → MolecularDynamics.PhaseSpace (N * d)) (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ)
+  (hFsum : ∀ q ∈ Q, ∀ (c : Fin d), ∑ i, (F q).ofLp ((MolecularDynamics.particleCoordinateEquiv N d) (i, c)) = 0)
+  (c : Fin d) (s t : ℝ) (hs : s ∈ Set.Ioo a b) (ht : t ∈ Set.Ioo a b) :
+  MolecularDynamics.totalMomentumCoordinate (γ s).2 c = MolecularDynamics.totalMomentumCoordinate (γ t).2 c
+MolecularDynamics.strictPotentialMin_mechanicalEquilibrium {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (F : MolecularDynamics.Force n) (U : MolecularDynamics.PotentialEnergy n) (Q : Set (MolecularDynamics.Position n))
+  (q₀ : MolecularDynamics.Position n) (hQ : IsOpen Q) (hstrict : MolecularDynamics.IsStrictPotentialMinOn U Q q₀)
+  (_hU : DifferentiableAt ℝ U q₀) (hF : F q₀ = -gradient U q₀) : MolecularDynamics.IsMechanicalEquilibrium m F (q₀, 0)
+MolecularDynamics.momentum_norm_sq_le {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (p : MolecularDynamics.Momentum n) (M : ℝ) (hm : ∀ (i : Fin n), 0 < m i) (hM : ∀ (i : Fin n), m i ≤ M) :
+  ‖p‖ ^ 2 ≤ 2 * M * MolecularDynamics.momentumKineticEnergy m p
+MolecularDynamics.isCompact_phaseEnergySublevel {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (U : MolecularDynamics.PotentialEnergy n) (K : Set (MolecularDynamics.Position n)) (E : ℝ)
+  (hm : ∀ (i : Fin n), 0 < m i) (hK : IsCompact K) (hU : ContinuousOn U K) :
+  IsCompact {z | z.1 ∈ K ∧ MolecularDynamics.massHamiltonian m U z ≤ E}
+MolecularDynamics.mechanicalSolution_phase_dist_lt {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (F : MolecularDynamics.Force n) (U : MolecularDynamics.PotentialEnergy n) (Q : Set (MolecularDynamics.Position n))
+  (a b t₀ : ℝ) (γ : ℝ → MolecularDynamics.PhaseSpace n) (q₀ : MolecularDynamics.Position n) (M r δ : ℝ)
+  (hm : ∀ (i : Fin n), 0 < m i) (hMpos : 0 < M) (hM : ∀ (i : Fin n), m i ≤ M) (hr : 0 < r)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ) (hU : ∀ q ∈ Q, DifferentiableAt ℝ U q)
+  (hF : ∀ q ∈ Q, F q = -gradient U q) (ht₀ : t₀ ∈ Set.Ioo a b) (hstart : (γ t₀).1 ∈ Metric.ball q₀ r)
+  (hbelow : MolecularDynamics.massHamiltonian m U (γ t₀) < U q₀ + δ)
+  (hbarrier : MolecularDynamics.HasSpherePotentialBarrier U q₀ r δ) (hmin : ∀ q ∈ Metric.ball q₀ r, U q₀ ≤ U q)
+  (hbudget : MolecularDynamics.massHamiltonian m U (γ t₀) < U q₀ + r ^ 2 / (2 * M)) (t : ℝ) (ht : t ∈ Set.Ioo a b)
+  (htime : t₀ ≤ t) : dist (γ t) (q₀, 0) < r
+MolecularDynamics.mechanicalSolution_has_rightEndpointLimit_of_compact {n : ℕ}
+  {m : MolecularDynamics.CoordinateMasses n} {F : MolecularDynamics.Force n} {Q : Set (MolecularDynamics.Position n)}
+  {a b : ℝ} {γ : ℝ → MolecularDynamics.PhaseSpace n} {K : Set (MolecularDynamics.PhaseSpace n)} (hab : a < b)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ) (hK : IsCompact K)
+  (hmem : Set.MapsTo γ (Set.Ioo a b) K) (hfield : ContinuousOn (MolecularDynamics.mechanicalVectorField m F) K) :
+  ∃ z ∈ K, Filter.Tendsto γ (nhdsWithin b (Set.Iio b)) (nhds z)
+MolecularDynamics.mechanicalSolution_unique_on_preconnected_of_contDiffAt {n : ℕ}
+  {m : MolecularDynamics.CoordinateMasses n} {F : MolecularDynamics.Force n} {Q : Set (MolecularDynamics.Position n)}
+  {I : Set ℝ} {γ η : ℝ → MolecularDynamics.PhaseSpace n} {t₀ : ℝ} (hI : IsOpen I) (hconn : IsPreconnected I)
+  (ht₀ : t₀ ∈ I) (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q I γ)
+  (hη : MolecularDynamics.IsMechanicalSolutionOn m F Q I η)
+  (hfield : ∀ t ∈ I, ContDiffAt ℝ 1 (MolecularDynamics.mechanicalVectorField m F) (γ t)) (hinit : γ t₀ = η t₀) :
+  Set.EqOn γ η I
+MolecularDynamics.mechanicalSolution_glue_on_Ioo {n : ℕ} {m : MolecularDynamics.CoordinateMasses n}
+  {F : MolecularDynamics.Force n} {Q : Set (MolecularDynamics.Position n)} {a b c d : ℝ}
+  {γ η : ℝ → MolecularDynamics.PhaseSpace n} (hcb : c < b)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ)
+  (hη : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo c d) η) (heq : Set.EqOn γ η (Set.Ioo c b)) :
+  ∃ ζ, MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a d) ζ ∧ Set.EqOn ζ γ (Set.Ioo a b)
+'MolecularDynamics.exists_rightEndpointLimit_of_lipschitzOnWith' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.exists_rightEndpointLimit_mem_of_lipschitzOnWith' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_lipschitzOnWith_of_field_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_has_rightEndpointLimit_of_field_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_has_rightEndpointLimit_of_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_unique_on_preconnected_of_contDiffAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_glue_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.momentumKineticEnergy_eq_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_massOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_particle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_momentumKineticEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_position_slice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hamiltonianVectorField_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_velocityOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanical_energy_hasDerivAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanical_energy_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_localMechanicalIVP_open_of_force_contDiffAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_unique_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_eventually_unique_of_contDiffAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.totalMomentumCoordinate_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.strictPotentialMin_mechanicalEquilibrium' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.momentum_norm_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.momentum_norm_le_of_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.isCompact_phaseEnergySublevel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_below_barrier_stays_in_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_phase_dist_lt' depends on axioms: [propext, Classical.choice, Quot.sound]

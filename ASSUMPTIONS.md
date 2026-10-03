@@ -84,3 +84,12 @@ These are modeling questions to check against each textbook statement, not globa
 - The mechanical barrier theorem takes an actual solution on a supplied open interval, positive masses, differentiability of U on Q and F=-gradient U on Q. It derives energy conservation and curve continuity rather than assuming them. The initial position is in the ball; future positions are not included in the hypotheses.
 - The phase-distance theorem additionally takes U(q₀)≤U(q) within the ball and an initial energy budget smaller than U(q₀)+r²/(2M). It proves dist(γ(t),(q₀,0))<r for t≥t₀ still inside the supplied interval. The ordinary product norm uses the maximum of the two component distances.
 - These results do not construct a global solution, derive arbitrary-initial-state stability, or prove the strict supremum bound in Theorem 1.1. Compactness is a dependency for a future continuation theorem, not a replacement for that theorem.
+
+## T4 finite endpoint and gluing assumptions (2026-10-04)
+
+- Endpoint limits use a complete metric target and a<b, with Lipschitz control only on Ioo a b. The ambient value at b is arbitrary. A closed-set membership conclusion additionally requires the open-interval image to lie in that set.
+- The mechanical version obtains its Lipschitz estimate from the actual ODE derivative and a uniform field bound. The compact version derives this bound from compact phase K and continuity of the field on K. It does not assume an endpoint limit or phase compactness as a disguised conclusion.
+- Compact K is an explicit input to this dependency. Deriving it from the energy barrier uses the already checked energy sublevel theorem in a later continuation corollary. To apply local existence at the limit one must still prove its position lies in open Q and sufficient field regularity there.
+- Connected-domain uniqueness requires C1 regularity at each point of the first trajectory. It uses the equal-time set's openness from local uniqueness and closedness from continuity. It does not require a global Lipschitz field.
+- Gluing assumes equality on an explicit open overlap. Its piecewise curve agrees locally with one genuine solution even at b, so the ODE and position membership are proved there. This dependency does not yet derive overlap equality from a common endpoint or assert maximal/global existence.
+- The seven formal results passed the integrated local check and dependency audit (208 declarations). Remote CI has not run for this batch; responsible textbook semantic sign-off remains pending.

@@ -10,3 +10,4 @@ import MolecularDynamics.Chapter01.PotentialBarriers
 import MolecularDynamics.Chapter01.Equilibrium
 import MolecularDynamics.Chapter01.MomentumBounds
 import MolecularDynamics.Chapter01.MechanicalConfinement
+import MolecularDynamics.Chapter01.Continuation
