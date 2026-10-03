@@ -7,3 +7,4 @@ import MolecularDynamics.Chapter01.EnergyConservation
 import MolecularDynamics.Chapter01.LocalExistence
 import MolecularDynamics.Chapter01.MomentumConservation
 import MolecularDynamics.Chapter01.PotentialBarriers
+import MolecularDynamics.Chapter01.Equilibrium

@@ -554,3 +554,13 @@
 
 - 将 C¹ 局部唯一性定理、验收报告和交接记录提交为 `522f82de4863f9ef64f0a9a2f3cf3dbb8f02b1bc` 并推送。GitHub Actions run `37104591425` / job `111150531699` 已完成且结论为 success，运行于 14:54:48–14:57:51 +08:00；元数据保存于 `docs/verification/2026-10-03-T4-third-batch/REMOTE_CI_RESULT.json`。
 - 至此 T4 这批的本地和远端机器验收均通过。MathCopilot 完整独立证明审阅仍因页面控制超时未发送；最大/全局解延拓、完整 Theorem 1.1 和负责人语义签核仍是明确剩余项。
+
+## 2026-10-03 15:15 +08:00 — 补充严格极小到机械平衡的桥接
+
+- 新增 `Chapter01/Equilibrium.lean`，证明开配置域中的严格相对势能极小点在负梯度力关系下给出 `(q₀, 0)` 的机械向量场平衡点。证明使用局部极小的 Fermat 导数结论和全梯度的内积表征；不把它扩写成 Lyapunov 稳定性。
+- 已更新顶层导入、Scratch、CheckAxioms、映射、假设、状态和 T4 检查点。该新增源码尚未运行下一次完整本地检查和远端 CI；MathCopilot 页面仍无法读取。
+
+## 2026-10-03 15:25 +08:00 — 平衡点桥接本地验收通过
+
+- 第四次完整检查退出0：固定版本、源码扫描、8936 jobs、Scratch、186项目声明公理审计和输入哈希均通过；`strictPotentialMin_mechanicalEquilibrium` 只依赖标准逻辑公理。结果在 `docs/verification/2026-10-03-T4-fourth-batch/RESULT.zh-CN.md`。
+- 该证明把严格势能极小点接到机械平衡点，明确不等同于 Lyapunov 稳定。接下来需提交并核对远端 CI，再决定是否继续做最大延拓或先处理网站独立审阅。

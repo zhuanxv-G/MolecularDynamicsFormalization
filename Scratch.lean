@@ -10,6 +10,7 @@ import MolecularDynamicsFormalization
 #check MolecularDynamics.exists_localMechanicalIVP_open_of_force_contDiffAt
 #check MolecularDynamics.mechanicalSolution_eventually_unique_of_contDiffAt
 #check MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
+#check MolecularDynamics.strictPotentialMin_mechanicalEquilibrium
 
 #print axioms MolecularDynamics.momentumKineticEnergy_eq_inner
 #print axioms MolecularDynamics.massHamiltonian_massOperator
@@ -24,6 +25,7 @@ import MolecularDynamicsFormalization
 #print axioms MolecularDynamics.mechanicalSolution_unique_on_Ioo
 #print axioms MolecularDynamics.mechanicalSolution_eventually_unique_of_contDiffAt
 #print axioms MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
+#print axioms MolecularDynamics.strictPotentialMin_mechanicalEquilibrium
 
 namespace MolecularDynamics
 

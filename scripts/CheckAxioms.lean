@@ -42,6 +42,7 @@ import MolecularDynamicsFormalization
 #print axioms MolecularDynamics.mechanicalSolution_eventually_unique_of_contDiffAt
 #print axioms MolecularDynamics.totalMomentumCoordinate_hasDerivAt_zero
 #print axioms MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
+#print axioms MolecularDynamics.strictPotentialMin_mechanicalEquilibrium
 
 #print axioms MolecularDynamics.strictOn_iff_punctured
 #print axioms MolecularDynamics.strictUniv_iff
