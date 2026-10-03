@@ -549,3 +549,8 @@
 - 修正 `set_option` 命令位置后，第三次完整检查退出0：固定版本、源码扫描、8935 jobs、Scratch、184项目声明依赖审计和输入哈希均通过。新增定理 `mechanicalSolution_eventually_unique_of_contDiffAt` 的依赖只有标准逻辑公理。第二次失败报告保留在 `docs/verification/2026-10-03-T4-second-batch/`，不与成功结果混淆。
 - T4检查点、映射、假设、状态和交接均改为精确描述：C¹ 初始状态只给出初始时刻邻域唯一性，全局 Lipschitz 才给共同开区间唯一性；最大/全局延拓与 Theorem 1.1 仍未完成。
 - 新增正式验收结果 `docs/verification/2026-10-03-T4-third-batch/RESULT.zh-CN.md`。当前新增文件尚未形成下一次 Git 提交/远端 CI；旧 T4 提交 `9e146e8` 已推送。
+
+## 2026-10-03 15:05 +08:00 — T4 局部唯一性远端 CI 成功
+
+- 将 C¹ 局部唯一性定理、验收报告和交接记录提交为 `522f82de4863f9ef64f0a9a2f3cf3dbb8f02b1bc` 并推送。GitHub Actions run `37104591425` / job `111150531699` 已完成且结论为 success，运行于 14:54:48–14:57:51 +08:00；元数据保存于 `docs/verification/2026-10-03-T4-third-batch/REMOTE_CI_RESULT.json`。
+- 至此 T4 这批的本地和远端机器验收均通过。MathCopilot 完整独立证明审阅仍因页面控制超时未发送；最大/全局解延拓、完整 Theorem 1.1 和负责人语义签核仍是明确剩余项。
