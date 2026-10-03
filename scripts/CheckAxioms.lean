@@ -34,6 +34,14 @@ import MolecularDynamicsFormalization
 #print axioms MolecularDynamics.hasGradientAt_position_slice
 #print axioms MolecularDynamics.hamiltonianVectorField_eq
 
+#print axioms MolecularDynamics.mechanical_energy_hasDerivAt_zero
+#print axioms MolecularDynamics.mechanical_energy_const_on_Ioo
+#print axioms MolecularDynamics.mechanicalVectorField_contDiffAt
+#print axioms MolecularDynamics.exists_localMechanicalIVP_open_of_force_contDiffAt
+#print axioms MolecularDynamics.mechanicalSolution_unique_on_Ioo
+#print axioms MolecularDynamics.totalMomentumCoordinate_hasDerivAt_zero
+#print axioms MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
+
 #print axioms MolecularDynamics.strictOn_iff_punctured
 #print axioms MolecularDynamics.strictUniv_iff
 #print axioms MolecularDynamics.strictOn_isLocalMinOn

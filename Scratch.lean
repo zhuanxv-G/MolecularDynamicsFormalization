@@ -6,6 +6,9 @@ import MolecularDynamicsFormalization
 #check MolecularDynamics.SeparableEnergy.hamiltonian
 #check MolecularDynamics.massHamiltonian
 #check MolecularDynamics.hamiltonianVectorField
+#check MolecularDynamics.mechanical_energy_const_on_Ioo
+#check MolecularDynamics.exists_localMechanicalIVP_open_of_force_contDiffAt
+#check MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
 
 #print axioms MolecularDynamics.momentumKineticEnergy_eq_inner
 #print axioms MolecularDynamics.massHamiltonian_massOperator
@@ -14,6 +17,11 @@ import MolecularDynamicsFormalization
 #print axioms MolecularDynamics.hasGradientAt_position_slice
 #print axioms MolecularDynamics.hamiltonianVectorField_eq
 #print axioms MolecularDynamics.massHamiltonian_velocityOperator
+#print axioms MolecularDynamics.mechanical_energy_hasDerivAt_zero
+#print axioms MolecularDynamics.mechanical_energy_const_on_Ioo
+#print axioms MolecularDynamics.exists_localMechanicalIVP_open_of_force_contDiffAt
+#print axioms MolecularDynamics.mechanicalSolution_unique_on_Ioo
+#print axioms MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
 
 namespace MolecularDynamics
 

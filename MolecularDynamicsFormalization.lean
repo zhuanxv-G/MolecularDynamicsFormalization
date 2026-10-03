@@ -3,4 +3,7 @@ import MolecularDynamics.Chapter01.NBody
 import MolecularDynamics.Chapter01.ParticleCoordinates
 import MolecularDynamics.Chapter01.LocalTrajectories
 import MolecularDynamics.Chapter01.Hamiltonian
+import MolecularDynamics.Chapter01.EnergyConservation
+import MolecularDynamics.Chapter01.LocalExistence
+import MolecularDynamics.Chapter01.MomentumConservation
 import MolecularDynamics.Chapter01.PotentialBarriers

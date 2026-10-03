@@ -37,10 +37,10 @@
 
 ## Not yet formalized
 
-- General local existence, uniqueness and maximal extension for the mechanical ODE.
+- Local uniqueness from merely local C¹ regularity, maximal extension and global existence for the mechanical ODE. A local existence result under C¹ force and uniqueness under a global Lipschitz field are recorded below.
 - Higher regularity of the force, potential and trajectory beyond the explicit derivative bridges.
 - Time-trajectory Hamiltonian/mechanical equivalence beyond the static T3 identities.
-- Energy conservation along solutions of equation (1.3).
+- A whole-space momentum bound, the global continuation argument, and the full stability theorem. Energy conservation on open intervals for existing conservative solutions is recorded below.
 - Chapter 1 §1.3 and later material.
 
 ## T2-L0 checkpoint (2026-10-03)
@@ -74,3 +74,12 @@
 - The preceding three unsuccessful checks are preserved: the elan launcher attempted an unavailable network update, one dependency lacked a process-local Git ownership exception, and the interrupted run compiled Hamiltonian but lost its top-level process with exit1073807364. None is represented as a successful full check; the retry03 actual result is the acceptance evidence.
 - Local original-page review passed for the nine static goals after newly rendering and viewing printed18--19/PDF41--42 and printed24--25/PDF47--48. Responsible or senior reviewer final semantic sign-off remains pending.
 - MathCopilot proof review has not been sent. The user reports that the website quota was updated, but both Browser versions still timed out on page control. External Edge launched; Computer Use then stopped because it could not reliably determine the current browser URL. Website review and remote CI remain separate from the successful local acceptance.
+
+## T4 conservation and local existence checkpoint (2026-10-03)
+
+- Integrated `EnergyConservation.lean`, `LocalExistence.lean` and `MomentumConservation.lean`, with the imports and key axiom checks in the project root, Scratch and `scripts/CheckAxioms.lean`.
+- For an existing solution on an open time interval, strictly positive masses, differentiable potential and `F = -gradient U`, the mechanical Hamiltonian has zero derivative and is constant on that interval. The corresponding printed energy identity is on printed19/PDF42.
+- A C¹ force at the initial position gives a local solution through a prescribed state on an open configuration domain containing it. Two solutions on a common open interval are equal when the mechanical vector field has a supplied global Lipschitz constant. These are different sufficient hypotheses; no maximal flow or global existence is claimed.
+- For particle-first coordinates, each component of total momentum has zero derivative and is constant when the sum of forces in that direction vanishes on the configuration domain. The printed momentum assertion is on printed19/PDF42.
+- Integrated `scripts/check.ps1` passed at 13:56–13:59 +08:00: pinned Lean 4.34.0/mathlib revision, source scan, 8935 build jobs, Scratch and 182 imported declaration dependency audits. The key declarations depend only on `propext`, `Classical.choice` and `Quot.sound`. Evidence is in `docs/verification/2026-10-03-T4-first-batch/`.
+- Independent MathCopilot review, remote CI for this T4 snapshot, and responsible textbook semantic sign-off remain pending.

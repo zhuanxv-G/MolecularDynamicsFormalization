@@ -530,3 +530,10 @@
 - retry03完整check退出0：固定版本、源码扫描、8932 jobs、Scratch、171声明公理审计及输入稳定通过。此前elan更新失败、plausible所有权错误与中断时顶层进程异常退出记录保留，不作为成功证据。正式原九Goal与七边界两次编译均退出0，见continuation-20261003。
 - 实际重看印刷18--19/PDF41--42和24--25/PDF47--48，九目标本地语义复核通过；人工负责人/学长最终签核仍pending。网站用户称已更新额度，但页面控制仍超时；外部Edge启动后Computer Use因网址无法可靠识别停止，未发送本批。
 - 当前Eaae1162，Git/CI待收尾；不触碰旧FORMALIZATION_PLAN或其他T1/T2/T4/T5独立未提交材料。下一步仅具体暂存本批并核对该提交CI。
+
+## 2026-10-03 14:00 +08:00 — 新聊天接续 T4 首批完整验收
+
+- 阅读两个指定聊天的未完成事项与工程交接，确认 T2/T5 正式证明和原 CI 已完成、T3 由并行聊天集成；本聊天推进能量/动量守恒及局部 ODE。未覆盖 T3 独立目录、旧计划和网站状态文件。
+- 实际查看教材印刷19/PDF42的能量导数及总动量结论、印刷24/PDF47的固定质量方程。EnergyDraft 两证明、LocalExistenceDraft 五证明、MomentumDraft 两证明在固定 Lean 中分别完成，公理只含标准逻辑依赖。普通 elan 启动器试图联网更新而失败，改用已安装的固定 Lean 4.34.0 lake 成功。
+- 正式安装 `EnergyConservation.lean`、`LocalExistence.lean`、`MomentumConservation.lean`，更新顶层、Scratch、CheckAxioms。13:56–13:59 的完整 `scripts/check.ps1` 退出0，8935构建任务、182项目声明公理审计及输入稳定均通过；原报告在 `docs/verification/2026-10-03-T4-first-batch/`。证明边界、映射、假设和状态已记录。远端CI、独立网站审阅与负责人语义签核尚未完成。
+- 用户称 MathCopilot 额度更新并在本聊天打开项目页；页面交互读取依旧超时，未能核实额度或提交完整证明审阅，不把本地机器验收当成网站审阅。
