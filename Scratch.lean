@@ -11,6 +11,9 @@ import MolecularDynamicsFormalization
 #check MolecularDynamics.mechanicalSolution_eventually_unique_of_contDiffAt
 #check MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
 #check MolecularDynamics.strictPotentialMin_mechanicalEquilibrium
+#check MolecularDynamics.momentum_norm_sq_le
+#check MolecularDynamics.isCompact_phaseEnergySublevel
+#check MolecularDynamics.mechanicalSolution_phase_dist_lt
 
 #print axioms MolecularDynamics.momentumKineticEnergy_eq_inner
 #print axioms MolecularDynamics.massHamiltonian_massOperator
@@ -26,6 +29,11 @@ import MolecularDynamicsFormalization
 #print axioms MolecularDynamics.mechanicalSolution_eventually_unique_of_contDiffAt
 #print axioms MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
 #print axioms MolecularDynamics.strictPotentialMin_mechanicalEquilibrium
+#print axioms MolecularDynamics.momentum_norm_sq_le
+#print axioms MolecularDynamics.momentum_norm_le_of_energy
+#print axioms MolecularDynamics.isCompact_phaseEnergySublevel
+#print axioms MolecularDynamics.mechanicalSolution_below_barrier_stays_in_ball
+#print axioms MolecularDynamics.mechanicalSolution_phase_dist_lt
 
 namespace MolecularDynamics
 

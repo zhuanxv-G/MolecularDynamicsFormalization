@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-10-03T20:11:27.9862146+08:00",
+  "project_url": "https://mathcopilot.cn/projects/e275fa19-2b16-4592-8433-8b01d11ef422",
+  "fixed_commit": "9baf87f89d07138a95bfbfe1f37d45dd54946cf7",
+  "packet_bytes": 73702,
+  "packet_sha256": "2d7f3fdb096fcb68faabbf0e85426065f3f615ee0a33935cb8e1301ed81c3e4d",
+  "local_input_hash_verified": true,
+  "website_packet_and_14_blocks_verified": true,
+  "t2_t5_review_sent": true,
+  "review_state": "running_installing_fixed_lean",
+  "original_reports_received": false,
+  "browser_plugin_version": "26.930.31730",
+  "visible_attachment_path": "/workspace/.mathcopilot/attachments/fcf5b4dd-3966-4fda-b4b4-0c27bbf52196/01-paste-1.txt",
+  "notes": "Website explicitly acknowledged the new T2/T5 scope and verified all 14 byte/hash/git-blob entries. Old T3 review was interrupted; not claimed complete. No duplicate T2/T5 request sent."
+}

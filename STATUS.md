@@ -86,3 +86,13 @@
 - The C¹ local-uniqueness follow-up was committed as `522f82de4863f9ef64f0a9a2f3cf3dbb8f02b1bc` and pushed. GitHub Actions run `37104591425` / job `111150531699` completed successfully; metadata is in `docs/verification/2026-10-03-T4-third-batch/REMOTE_CI_RESULT.json`. Independent MathCopilot review and responsible textbook semantic sign-off remain pending.
 - `Equilibrium.lean` now connects a strict relative potential minimum in an open domain to the zero-momentum mechanical equilibrium. This is the first equilibrium dependency for Theorem 1.1; it deliberately does not claim Lyapunov stability or global continuation. The new source still needs the next full local/remote check.
 - The equilibrium bridge was committed as `4d55e405c665ddfd9fcc5d4d0de1084a3a691b04` and pushed. GitHub Actions run `37105793203` / job `111153920486` completed successfully; metadata is in `docs/verification/2026-10-03-T4-fourth-batch/REMOTE_CI_RESULT.json`.
+
+## T4 momentum bounds and confinement follow-up (2026-10-03)
+
+- Added `MomentumBounds.lean` and `MechanicalConfinement.lean`: five static energy/norm/compactness lemmas and two existing-solution confinement lemmas. The energy conservation input of the old conditional T5 result is now derived from the mechanical ODE.
+- Newly viewed printed25--26/PDF48--49 and printed32/PDF55. Compact position containment, the explicit mass bound and the product maximum metric remain visible in the statements.
+- The first standalone attempt was terminated without diagnostic output after a long wait; the second returned three proof errors from missing use of the pointwise positive-mass premise. Those were repaired explicitly. The integrated fifth full check is running; it is not yet acceptance evidence.
+- MathCopilot T2/T5 independent proof review is now actually running. The website acknowledged fixed commit 9baf87f and verified the 73702-byte input packet and all 14 byte/hash/Git-blob entries. Original reports have not yet been collected. Current attempt evidence is in `docs/reviews/2026-10-03-T2-T5-proofs/CURRENT_ATTEMPT.json`.
+- Global/maximal continuation, the complete Theorem 1.1 and responsible human semantic sign-off remain open.
+
+- Fifth full local check passed at 20:16:02--20:20:54 +08:00: 8938 build jobs, Scratch and 201 imported declaration audits, only permitted logical dependencies and stable input hashes. Exact times and SHA values are in the actual CHECK_REPORT.json. Remote CI for this new snapshot is pending.

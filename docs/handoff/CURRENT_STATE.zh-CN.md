@@ -1,67 +1,38 @@
 # 当前状态与接续检查点
 
-## 本聊天接续 T4 检查点（2026-10-03 15:30 +08:00）
+最后更新：2026-10-03 20:23 +08:00（Asia/Shanghai）。分支 `chapter01-kinetic-energy-nonneg`，实查 HEAD `c82c163296acf75f33eefca3ea584c476728817a` 已推送；该 HEAD 的远端 run `37106363308` 成功。新 T4 动量界批次已完整本地验证，正在提交/推送与核对 CI。
 
-- 分支 `chapter01-kinetic-energy-nonneg`，T4 代码最新提交 `4d55e405c665ddfd9fcc5d4d0de1084a3a691b04` 已推送，交接文档随后在 `264f1280b041a01c4f973d8e1879b75f194c079b` 更新。三份 T4 正式模块、C¹ 初始状态附近唯一性、平衡点桥接、顶层导入、Scratch、CheckAxioms 已写入提交；原有 `FORMALIZATION_PLAN.md`、网站状态和其他未跟踪文件均保留，不纳入 T4 范围。
-- 已通过完整 `scripts/check.ps1 -ReportDirectory docs/verification/2026-10-03-T4-third-batch`：固定 Lean/mathlib、源码扫描、8935 jobs、Scratch、184项声明公理审计，关键项仅标准逻辑公理；`CHECK_REPORT.json` 的退出码为0且输入 SHA 固定。随后提交 `522f82d` 的远端 GitHub Actions run `37104591425` / job `111150531699` 也成功。教材印刷19/PDF42和24/PDF47已实际看图。负责人最终语义签核仍pending。
-- 已正式证明已有保守机械解的能量守恒、C¹ 力场的局部存在、共同初始状态下由机械场局部 C¹ 得到的初始时刻附近唯一性、全局 Lipschitz 场下共同区间唯一性、合力为零的总动量分量守恒。最大/全局延拓、完整 Theorem1.1 尚未证明。T4 新增唯一性定理后的远端CI尚未完成。
-- 已补充 `Equilibrium.lean`：严格相对势能极小、开配置域和负梯度力关系推出零动量机械平衡点；这只完成 Theorem 1.1 的平衡依赖，不是稳定性结论。第四次完整本地检查已通过（8936 jobs、186 审计），提交 `4d55e40` 的远端 run `37105793203` / job `111153920486` 也成功，证据在 `docs/verification/2026-10-03-T4-fourth-batch/`。
-- 用户报告 MathCopilot 额度已更新且在本聊天打开项目页；Browser 的正文与交互读取仍反复超时，未核实额度、未发送 T2/T5/T3 完整证明审阅，也未收到相应原报告。固定 T2/T5 审阅包保持原 9baf 输入。T4 代码本地与远端机器验收已完成；下一步是最大/全局延拓或页面恢复后的独立审阅，只有页面可读且确认运行状态后才发送。
+## 当前任务与授权
 
-## 本聊天 t2 heartbeat 观察（2026-10-03T13:24:14.7204957+08:00）
+用户在聊天 `01a0ffda-cfb1-7463-84c9-563be032f701` 要求审核并完成 T2 原聊天 `01a0fcdd-009c-76a2-9618-536d0b3396d0`、T5 原聊天 `01a0fd88-8180-74a3-bd70-8094d7722317` 的未完成事项，持续授权 MathCopilot、本地形式化与原工作分支 Git 保存。既有 T2/T5 机器验收完成；核心收尾是固定提交的独立网站完整证明审阅与报告收取。后续数学依赖已承接到 T4。
 
-- 本轮实查HEAD eaae1162f7aa7a30fad50cae6e9ccf8b6278d64d。新承接对话01a0ffda-cfb1-7463-84c9-563be032f701负责T2/T5审阅及其后续范围，01a0ffde-bd33-7c63-96d4-67969e803263负责T3正式集成；应用快照两者notLoaded，最近turn均interrupted。这不代表它们的任务已完成，也不授权本聊天扩展到T3/T4。
-- 当前旧T5验收的14输入有3项已变：MolecularDynamicsFormalization.lean、Scratch.lean、scripts/CheckAxioms.lean，对应T3集成改动；其余11项（包括T2/T5正式证明与固定版本）未变。固定9baf审阅包73702字节、SHA仍匹配manifest。旧T2/T5成功证据只覆盖固定输入，不覆盖当前新增模块。
-- 本轮读取新版Browser技能26.930.31428并连接浏览器2，tabs.list返回空列表。随后使用支持的tabs.new尝试恢复同一项目页面，20秒后超时并重置执行会话，未返回标签ID；是否创建页面不可确认，未得到网站DOM或运行/额度状态。没有发送审阅或使用电脑控制。此恢复尝试已做，后续无新恢复条件不重复创建。完整证明独立审阅和原报告收取仍pending。
-- 本轮仅记录观察，不修改证明、构建、Git或其他聊天；所有未提交/未跟踪材料保留。下一步先核对新承接聊天是否恢复和最新工作树，再在项目标签恢复后确认无重复运行任务，按固定9baf包进行本批审阅。主t2保留ACTIVE，重复操作避让新承接聊天；完成网站收尾后停用。
+T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/证据。其正式 Hamiltonian 提交已集成，不覆盖其专属未跟踪材料。本工作树的原 `FORMALIZATION_PLAN.md`、旧 WEBSITE_STATUS、T1/T2/T3/T5 专属未跟踪材料保留，仅暂存本批明确文件。
 
-## 本轮承接 T3（进行中，2026-10-03 11:49:53 +08:00）
+## 已完成与实际验证
 
-用户在新聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 要求审核并完成“同时进行”窗口遗留的T3事项。开始时已只读确认T2共享owner与T3原聊天均idle；本轮承接正式Hamiltonian模块、顶层/Scratch、共享映射与状态、Git/CI、MathCopilot本批审阅及教材语义复核。保留所有旧未提交材料；范围仅T3固定质量批次。承接聊天工作期间，原T3自动接续只核对状态，不重复发送网站审阅、证明、构建或Git写入。
+- T2 `LocalTrajectories.lean`：五定义、十五完整证明，七规格 ID，真实导数/Newton 双向桥接和 B3 可微语义层。本地完整检查、允许公理审计与远端 CI 已通过。
+- T5 `PotentialBarriers.lean`：五定义、二十五完整证明，严格极小、球面正差、任意球内初值的条件留球和边界。本地完整检查与远端 CI 已通过，固定源为 `9baf87f89d07138a95bfbfe1f37d45dd54946cf7`。
+- T3 `Hamiltonian.lean`：五定义、十八完整证明，固定质量静态 Hamiltonian 关系；正式提交 `21b4d6cbb5121c5f194a4dda9b9d718148b2e1a1` 的本地验收和 CI 已通过。T3 独立网站原报告不在本批范围。
+- T4 已有 `EnergyConservation.lean`、`LocalExistence.lean`、`MomentumConservation.lean`、`Equilibrium.lean`：已有保守机械解的能量守恒、C¹ 局部存在/初始邻域唯一性、全球 Lipschitz 下共同区间唯一性、合力为零时总动量分量守恒、严格极小的零动量平衡桥接；各相应本地与远端检查已通过。
+- 本轮新增 `MomentumBounds.lean`（五完整定理）、`MechanicalConfinement.lean`（两完整定理）：动能控制动量范数；紧位置集与连续势能导出紧相能量子水平集；真实机械ODE导出守恒再应用T5屏障，得到给定开区间内未来位置/相空间界。没有假设全程留球或欲证相集紧性。
+- 第五批完整检查实际运行20:16:02--20:20:54，退出0：固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435、源码扫描、8938 jobs、Scratch、201声明公理审计、输入哈希稳定。关键定理仅 propext/Classical.choice/Quot.sound。证据：`docs/verification/2026-10-03-T4-fifth-batch/`。
+- 本轮实际重新渲染查看教材印刷25--26/PDF48--49、印刷32/PDF55；本地语义复核在第五批目录，负责人/学长最终签核仍 pending。
 
-目标：MolecularDynamics/Chapter01/Hamiltonian.lean、MolecularDynamicsFormalization.lean、Scratch.lean、scripts/CheckAxioms.lean、FORMALIZATION_MAP.md、ASSUMPTIONS.md、STATUS.md及T3验收目录。冻结候选/T2接口哈希已匹配，已正式安装五定义/十八定理，并更新顶层及关键公理打印。原九Goal针对正式模块的逐一兼容证明退出0，七边界验证正在运行；完整retry03已经完成8932 jobs构建与Scratch，正在全命名空间公理审计。恢复先读retry03/CHECK_REPORT.json及continuation-20261003两份探针result.json；不要重做已通过部分。
+## MathCopilot：已发送并在执行，禁止重复发送
 
-本轮重新实际查看印刷18--19/PDF41--42、印刷24--25/PDF47--48，九目标的本地语义复核通过，详见continuation-20261003/SEMANTIC_REVIEW.zh-CN.md；负责人或学长最终签核仍pending。网站用户已更新额度，但本轮两个版本Browser页面控制均超时，未输入或发送T3；外部Edge已启动，Computer Use随后因无法可靠确定浏览器URL停止本次电脑控制。本轮没有自动审批拒绝，也没有进行认证操作。网页/网站原报告仍待连接恢复。
+- 指定项目页 `https://mathcopilot.cn/projects/e275fa19-2b16-4592-8433-8b01d11ef422`，新版 Browser `26.930.31730` 正文和操作已恢复。
+- 本轮已将 REVIEW_SEND_BODY 与固定原字节包填入并发送；大段文本自动转换为附件。网站明确承认本次只处理固定9baf的T2/T5，并确认73702字节、SHA256 `2d7f3fdb096fcb68faabbf0e85426065f3f615ee0a33935cb8e1301ed81c3e4d` 和14/14区块字节/SHA/Git blob均匹配。网站还按公开不可变归档逐字核对输入。
+- 网站已实际安装并报告Lean4.34.0，当前lake build仍在获取固定manifest的mathlib；未得到最终编译或原报告。旧T3两条请求分别遇到model capacity/usage limit，不计完成。
+- 当前尝试证据：`docs/reviews/2026-10-03-T2-T5-proofs/CURRENT_ATTEMPT.json`、`REVIEW_RUNNING.png`。固定输入包保持 `../tmp/t2-t5-proof-review-20261003/T2_T5_REVIEW_INPUT_PACKET.zh-CN.md`。
+- 收尾交付：T2_PROOF_REVIEW.zh-CN.md、T5_PROOF_REVIEW.zh-CN.md、REVIEW_LEDGER.csv、RETURN_METADATA.json、原检查日志；收取后本地核对输入/输出字节与SHA，按逐项结论修订真实问题。
 
-## 2026-10-03 新接续任务（进行中）
+## 尚未完成
 
-用户要求审核聊天 `01a0fcdd-009c-76a2-9618-536d0b3396d0` 与 `01a0fd88-8180-74a3-bd70-8094d7722317` 的未完成事项并接续。已核对两聊天最新答复、实际分支 `chapter01-kinetic-energy-nonneg`、HEAD `eaae1162f7aa7a30fad50cae6e9ccf8b6278d64d` 和工作树。T2/T5 正式集成、本地构建与 CI 已有完成证据；当前首项是核实 MathCopilot 项目页，按固定提交 `9baf87f89d07138a95bfbfe1f37d45dd54946cf7` 的审阅包完成独立审阅与原报告收取。后续按教材依赖推进真实轨道存在唯一性、能量守恒、动量控制与延拓；不覆盖 T3 独立目录现有成果。目标文件先为 `docs/reviews/2026-10-03-T2-T5-proofs/` 和本交接记录；Lean 源码若改动则运行完整检查。现有未提交及未跟踪文件全部保留。负责人最终语义签核需由负责人本人完成，代理只做可复核的原页对照和问题清单。
+1. 第五批新源码提交、推送及远端CI（本地通过不代替CI）。
+2. T2/T5网站完整报告及本地哈希验收；网站仍在运行，不能再发送同一审阅任务。
+3. 新T4独立网站证明审阅，以及负责人/学长最终教材语义签核；代理不能替代本人签署。
+4. 数学后续：最大/全局ODE延拓、从任意足够近初值推出全未来时间的完整Theorem1.1和严格sup上界。当前紧性与区间相界只是依赖，不能计作完整稳定性。
 
-最后更新：2026-10-03 11:37 +08:00（Asia/Shanghai）。实际分支 `chapter01-kinetic-energy-nonneg`，HEAD `eaae1162f7aa7a30fad50cae6e9ccf8b6278d64d`，已推送。下面的正式源码与CI固定于代码提交 `9baf87f89d07138a95bfbfe1f37d45dd54946cf7`；11:36向用户汇报前再次实哈希核对十四个正式受检输入全部不变，保存的两批CI记录均为success；没有重新构建或查询网站。11:33的heartbeat和本次状态咨询记录在本地，未另做文档提交；其他旧改动保留。
+## 恢复第一动作
 
-## 当前授权与批次范围
-
-用户已授权继续T2、创建并完成约2–3小时工作量的独立T5任务，以及本批电脑、MathCopilot和GitHub常规操作与中断后接续。完成范围即停止，不为时长空等或无限扩展全书；旧准备阶段“不发送/不提交”记录是历史范围。
-
-本聊天独占正式源码、顶层/Scratch、共享映射/假设/状态/交接与Git集成。T5新聊天 `01a0fd88-8180-74a3-bd70-8094d7722317` 已完成/idle，只写独立草稿与实施目录，成果已由本聊天集成。另一个已存在的“同时进行”T3聊天 `01a0fc74-b28e-7083-893e-aa05a06652ac` 正在维护其九目标草稿与专属 `docs/tasks/T3_implementation/`；不覆盖其文件或把草稿计为正式库成果。
-
-## 已完成并实际验证
-
-- T2正式 `LocalTrajectories.lean`：五定义/十五完整证明，对应L0/S1/B1–B4/E1；包括显式坐标桥接、真实轨道导数、Newton双向桥接、B3可微势能与HasGradientAt语义、自由粒子、解限制/连续/初始域成员。普通双侧二阶导数仅在开时间域使用；未声称一般存在唯一性。
-- T2完整本地01:08–01:11退出0：固定Lean4.34.0/mathlib5ed2965、源码扫描、8930 build jobs、Scratch、93项目声明公理审计、受检输入SHA稳定。提交675fcaedbdef7b6ec57393c1ee99e9ca727da649已推送，CI run37039648187/job110946317955成功，原日志重核同样结果，artifact11242095896上传成功。
-- T5正式 `PotentialBarriers.lean`：五定义/二十五完整命名证明，六个一般目标、静态屏障排除、任意球内初值的低能连续守恒曲线在给定时间区间留球、开域组合及x⁴/常数/零维/单点域/r=R边界。独立24命名证明草稿与日志原哈希已重核；匿名x⁴连续性样例在正式库命名。
-- T5完整本地01:25–01:28退出0：固定版本、源码扫描、8931 jobs、Scratch、128项目声明公理审计、输入稳定。正式代码提交9baf87f89d07138a95bfbfe1f37d45dd54946cf7已推送，CI run37041343101/job110951942612成功，实际原日志确认同样8931/128，artifact11242057946上传成功。
-- 所有关键显式公理及全命名空间审计均只含propext/Classical.choice/Quot.sound。原报告/输入SHA/命令/日志分别在 `docs/verification/2026-10-03-T2-first-batch/` 与 `T5-first-batch/`。修改受检源码后须重验，不复用成功。
-- 本轮实际重看教材印刷18–19/PDF41–42、24/PDF47、32–33/PDF55–56；符号、固定质量、strictminimum及Hessian边界已核对。最终负责人教材语义签核仍pending。一般ODE适定、T4真实能量守恒、动量控制、最大解延拓、全Theorem1.1和全未来时间严格sup结论仍未完成。
-
-## 当前剩余：MathCopilot独立完整证明审阅
-
-T1/T2之前九份原审阅报告已取回并本地哈希验收；T1接受11ID/13证明，T2要求L0坐标桥接及B3分层，本批已落实。旧T2-S1 `/lean-proof`在17秒后usage limit失败，没有完成草稿，历史页面提示02:48 AM再试；桌面当前账户不等同网站旧账户。
-
-网站最后成功读取仍是01:36的旧失败提示。本轮02:53 heartbeat已在历史02:48重试时间之后触发，但浏览器连接未恢复：只读DOM正文读取超时、页面截图超时、尝试显示页面后再次读取仍超时；均未得到当前网站任务或额度状态。浏览器文档读取和标签列表可用，不代表页面控制可用。没有点击发送或填入审阅正文，不能称网站额度已恢复或完整证明审阅已开始。
-
-已按Browser排障流程检查替代入口，并使用computer-use技能只读列出Windows应用/窗口。外部Edge启动遇到 `Computer Use app approval timed out`，后续窗口列表没有Edge；不是自动审批拒绝，也没有把用户未响应当作许可。禁止借电脑控制操作ChatGPT/Codex界面的技能规则仍适用，没有用该途径操作内置页面。后续无人值守接续不重复等待Edge应用授权；优先尝试恢复已有网站连接，若需人工恢复则保留下面入口。结束前系统时钟与UTC时钟共同确认本地11:27；不把02:53触发时间误写为结束时间。
-
-- 固定源提交：9baf87f89d07138a95bfbfe1f37d45dd54946cf7。
-- 指令/清单/网站状态：`docs/reviews/2026-10-03-T2-T5-proofs/` 中 REVIEW_SEND_BODY.zh-CN.md、INPUT_MANIFEST.json、WEBSITE_STATUS.json。
-- 全包：工作区 `../tmp/t2-t5-proof-review-20261003/T2_T5_REVIEW_INPUT_PACKET.zh-CN.md`，73702字节，SHA256 `2d7f3fdb096fcb68faabbf0e85426065f3f615ee0a33935cb8e1301ed81c3e4d`，LF格式。十四个区块均逐字节验收与固定Git blob一致；frozen-inputs保留原件。跨设备可按manifest固定Git对象重建，不能替换为实时工作树。
-
-## 自动接续与恢复第一动作
-
-11:31:57 heartbeat再次触发。11:32成功确认已有项目标签，但一次有界只读DOM读取于15秒后超时；当前网站任务/额度仍不可知，未发送审阅。按保存的恢复规则停止本次执行，没有重试截图、重置连接、外部应用启动、Lean构建或CI。t2保持ACTIVE等待以后可读连接，无新变化不发送通知。
-
-主heartbeat已于01:53和02:53实际触发；后一轮遇到上述页面控制超时与外部应用授权等待超时，未提交网站请求。11:27重核Git仍50e6e8b、十四个正式受检输入和73702字节固定审阅包SHA全部一致，旧材料保留。普通定时唤醒已有实际证据；额度耗尽后恢复或离线恢复仍未验证。t2保持ACTIVE，接续提示将改为先做一次有限时长的现有页面读取，失败就保存检查点并停止本次运行，不重复已通过证明/构建，不等待新的外部应用授权。
-
-应用工具更新后已实际读TOML确认：主聊天heartbeat `t2` ACTIVE、每小时接续剩余CI/网站审阅并在完成后停用；独立T5 heartbeat `t5` PAUSED，避免重复已完成证明。原T3的heartbeat由它维护。本批自动接续配置已确认，但额度耗尽后真实自动重启、离线恢复未实测，不能保证；不可运行时等待用户人工“继续T2/T5审阅收尾”。
-
-恢复第一动作：核对实际Git HEAD与上述固定代码对象、当前正式输入SHA及最新日志，保留旧FORMALIZATION_PLAN与其他未提交/未跟踪材料。两批正式数学证明/本地/CI无需重做。先用Browser支持的入口对已有MathCopilot标签做一次有界的只读页面检查；若仍超时且无新恢复条件，停止本次运行，保持待恢复，不反复重试同一失败方法。人工入口：用户回来后打开MathCopilot项目并恢复可读连接，再输入“继续T2/T5审阅收尾”。页面可用且确认没有重复运行任务后，发送完整审阅正文与已验包；收取T2/T5原报告、核对提交与输入/输出SHA、处理实际阻断意见（源码变化则重跑全套及CI），保存检查点并停用主heartbeat。负责人最终签核可明确留pending，不新增数学任务。
+先检查实际HEAD与未提交文件；查询本批代码CI（若已提交）。读取网站当前最新短状态，若仍运行就等待且继续独立工作；只有任务结束后收取原报告，不重发审阅。源码若再变化，另建唯一验收目录运行完整scripts/check.ps1。失败方法/历史检查证据见WORK_LOG，首次单文件等待与三项正质量推理错误均不计成功。
