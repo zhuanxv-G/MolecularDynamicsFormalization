@@ -1,6 +1,6 @@
 # 当前状态与接续检查点
 
-最后更新：2026-10-03 20:23 +08:00（Asia/Shanghai）。分支 `chapter01-kinetic-energy-nonneg`，实查 HEAD `c82c163296acf75f33eefca3ea584c476728817a` 已推送；该 HEAD 的远端 run `37106363308` 成功。新 T4 动量界批次已完整本地验证，正在提交/推送与核对 CI。
+最后更新：2026-10-03 21:03 +08:00（Asia/Shanghai）。分支 `chapter01-kinetic-energy-nonneg`，实查 HEAD `7c61e9d001887066bfa03771343ce91e7ce68ddb` 已推送；该 HEAD 的远端 run `37122822014` / job `111202155182` 成功。新 T4 动量界批次已完成本地与远端机器验收。
 
 ## 当前任务与授权
 
@@ -26,18 +26,17 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 - 第五批完整检查实际运行20:16:02--20:20:54，退出0：固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435、源码扫描、8938 jobs、Scratch、201声明公理审计、输入哈希稳定。关键定理仅 propext/Classical.choice/Quot.sound。证据：`docs/verification/2026-10-03-T4-fifth-batch/`。
 - 本轮实际重新渲染查看教材印刷25--26/PDF48--49、印刷32/PDF55；本地语义复核在第五批目录，负责人/学长最终签核仍 pending。
 
-## MathCopilot：已发送并在执行，禁止重复发送
+## MathCopilot：固定包已送达，原报告仍待收取，当前页面不对应该任务
 
-- 指定项目页 `https://mathcopilot.cn/projects/e275fa19-2b16-4592-8433-8b01d11ef422`，新版 Browser `26.930.31730` 正文和操作已恢复。
-- 本轮已将 REVIEW_SEND_BODY 与固定原字节包填入并发送；大段文本自动转换为附件。网站明确承认本次只处理固定9baf的T2/T5，并确认73702字节、SHA256 `2d7f3fdb096fcb68faabbf0e85426065f3f615ee0a33935cb8e1301ed81c3e4d` 和14/14区块字节/SHA/Git blob均匹配。网站还按公开不可变归档逐字核对输入。
-- 网站已实际安装并报告Lean4.34.0，当前lake build仍在获取固定manifest的mathlib；未得到最终编译或原报告。旧T3两条请求分别遇到model capacity/usage limit，不计完成。
-- 当前尝试证据：`docs/reviews/2026-10-03-T2-T5-proofs/CURRENT_ATTEMPT.json`、`REVIEW_RUNNING.png`。固定输入包保持 `../tmp/t2-t5-proof-review-20261003/T2_T5_REVIEW_INPUT_PACKET.zh-CN.md`。
-- 收尾交付：T2_PROOF_REVIEW.zh-CN.md、T5_PROOF_REVIEW.zh-CN.md、REVIEW_LEDGER.csv、RETURN_METADATA.json、原检查日志；收取后本地核对输入/输出字节与SHA，按逐项结论修订真实问题。
+- 指定项目页 `https://mathcopilot.cn/projects/e275fa19-2b16-4592-8433-8b01d11ef422` 已用 Browser `26.930.31730` 实际打开。固定 T2/T5 包仍已发送，网站已确认固定 `9baf87f`、73702 字节、SHA256 `2d7f3fdb096fcb68faabbf0e85426065f3f615ee0a33935cb8e1301ed81c3e4d` 和 14/14 区块字节/SHA/Git blob 匹配。
+- 本次实时页面侧栏只有四个任务；搜索 `T2` 只显示不相关的 T3 任务，没有固定 T2/T5 审阅任务。选中的原始项目任务是较早的 T1/T2/T3 混合对话，当前有一个不相关的运行回复；页面同时显示 usage limit，预计恢复时间为 `2026-10-04 00:45`（网站显示）。没有停止该任务，也没有重复发送 T2/T5。
+- 当前网站状态证据在 `docs/reviews/2026-10-03-T2-T5-proofs/CURRENT_ATTEMPT.json` 和 `WEBSITE_STATUS.json`；固定输入包为 `../tmp/t2-t5-proof-review-20261003/T2_T5_REVIEW_INPUT_PACKET.zh-CN.md`。T2/T5 原始报告仍未收取，不能把旧 T2 陈述报告或 T3 页面状态当成本批完整证明审阅。
+- 网站先前已安装并报告 Lean 4.34.0，固定依赖缓存获取阶段后未返回最终编译或原报告；TLS 截断、线程资源失败和 usage limit 均保留为失败证据。
 
 ## 尚未完成
 
-1. 第五批新源码提交、推送及远端CI（本地通过不代替CI）。
-2. T2/T5网站完整报告及本地哈希验收；网站仍在运行，不能再发送同一审阅任务。
+1. 第五批机器验收已完成；提交 `7c61e9d` 已推送，对应 CI 成功，元数据在第五批目录。
+2. T2/T5网站完整报告及本地哈希验收；当前实时页面不显示该固定任务且额度阻塞，不能再发送同一审阅任务。
 3. 新T4独立网站证明审阅，以及负责人/学长最终教材语义签核；代理不能替代本人签署。
 4. 数学后续：最大/全局ODE延拓、从任意足够近初值推出全未来时间的完整Theorem1.1和严格sup上界。当前紧性与区间相界只是依赖，不能计作完整稳定性。
 

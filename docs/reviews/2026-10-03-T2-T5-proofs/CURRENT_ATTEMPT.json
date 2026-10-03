@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "observed_at": "2026-10-03T20:11:27.9862146+08:00",
+  "observed_at": "2026-10-03T21:03:00+08:00",
   "project_url": "https://mathcopilot.cn/projects/e275fa19-2b16-4592-8433-8b01d11ef422",
   "fixed_commit": "9baf87f89d07138a95bfbfe1f37d45dd54946cf7",
   "packet_bytes": 73702,
@@ -8,9 +8,18 @@
   "local_input_hash_verified": true,
   "website_packet_and_14_blocks_verified": true,
   "t2_t5_review_sent": true,
-  "review_state": "running_installing_fixed_lean",
+  "review_state": "project_page_current_task_mismatch_usage_limit",
   "original_reports_received": false,
   "browser_plugin_version": "26.930.31730",
   "visible_attachment_path": "/workspace/.mathcopilot/attachments/fcf5b4dd-3966-4fda-b4b4-0c27bbf52196/01-paste-1.txt",
-  "notes": "Website explicitly acknowledged the new T2/T5 scope and verified all 14 byte/hash/git-blob entries. Old T3 review was interrupted; not claimed complete. No duplicate T2/T5 request sent."
+  "notes": "Live project page loaded successfully, but the sidebar contains only four tasks and no T2/T5 fixed-commit review task; search for T2 returned only unrelated T3. The selected original project task is an older mixed T1/T2/T3 conversation and currently has an unrelated running reply. The fixed T2/T5 packet remains sent and verified; no duplicate request or interruption performed. Original T2/T5 reports remain unavailable.",
+  "observed_failures": [
+    "importGraph clone TLS truncation exit128",
+    "default Lean child-thread resource failure exit134",
+    "controlled j2 build preparation stopped to use pinned mathlib cache"
+  ],
+  "installed_lean_version": "4.34.0 / commit293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+  "visible_quota_message": "You've hit your usage limit; displayed retry at Oct 4th, 2026 12:45 AM",
+  "visible_task_title": "我准备在这个项目里形式化已上传的 Leimkuhler & Matthews《Molecular Dynamics: With Deterministic and Stochastic Numerical Methods》",
+  "visible_task_state": "running_unrelated_old_task"
 }
