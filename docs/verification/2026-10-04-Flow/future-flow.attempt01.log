@@ -1,0 +1,8 @@
+docs/verification/2026-10-04-Flow/probes/FutureFlowProbe.lean:111:10: warning: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+'MolecularDynamics.mechanicalSolution_translate_on_Ioi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_commute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_futureMechanicalFlow_of_energy_barrier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,8 @@
+'MolecularDynamics.mechanicalSolution_translate_on_Ioi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_commute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_futureMechanicalFlow_of_energy_barrier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -233,3 +233,21 @@ in `docs/verification/2026-10-04-Lagrangian/full-check01/`.
 
 Configuration-dependent generalized dynamics, least-action variation,
 all remaining section content and final responsible sign-off are separate.
+
+## Future flow-map integration (2026-10-04)
+
+Printed26/PDF49 was viewed again. `FutureFlow.lean` candidates passed both
+independent probe runs and full-check01 at06:40:32--06:42:49:
+8951jobs, Scratch,268declaration audits and stable fixed inputs. Evidence in
+`docs/verification/2026-10-04-Flow/full-check01/`.
+
+| Result | Lean declaration | Exact boundary |
+| --- | --- | --- |
+| Actual time translation | `mechanicalSolution_translate_on_Ioi` | An actual solution on Ioi a translates to Ioi(a-s), with the same autonomous field. |
+| Future composition and commutation | `futureMechanicalFlow_add`, `futureMechanicalFlow_commute` | C1 force, actual future family and forward-invariant S; s,t nonnegative, no assumed group law. |
+| Energy invariance | `futureMechanicalFlow_energy` | Derived from actual ODE, positive masses, differentiable U and conservative force. |
+| Forward injectivity | `futureMechanicalFlow_injOn` | Two trajectories meeting at a future time have equal initial states by connected-domain uniqueness; no inverse map assumed. |
+| Family construction | `exists_futureMechanicalFlow_of_energy_barrier` | Safe closed position ball and actual barrier/global existence construct the family on S={position in ball and H below barrier}, including forward invariance. |
+
+This is not a claim of a two-sided flow group, a continuous Dynamics.Flow
+structure, or complete Section1.5.1. Backward existence remains next.

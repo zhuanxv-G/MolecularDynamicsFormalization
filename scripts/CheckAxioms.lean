@@ -137,3 +137,9 @@ run_cmd do
 #print axioms MolecularDynamics.nBodyKineticEnergy_eq_zero_iff
 #print axioms MolecularDynamics.legendre_objective_eq_massHamiltonian_iff
 #print axioms MolecularDynamics.massHamiltonian_eq_legendre_sup
+#print axioms MolecularDynamics.mechanicalSolution_translate_on_Ioi
+#print axioms MolecularDynamics.futureMechanicalFlow_add
+#print axioms MolecularDynamics.futureMechanicalFlow_commute
+#print axioms MolecularDynamics.futureMechanicalFlow_energy
+#print axioms MolecularDynamics.futureMechanicalFlow_injOn
+#print axioms MolecularDynamics.exists_futureMechanicalFlow_of_energy_barrier

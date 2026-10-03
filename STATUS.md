@@ -144,3 +144,13 @@
 - All three modules passed the new full check at06:29:14--06:31:00 +08:00:8950jobs, Scratch,261imported declaration audits, pinned Lean/mathlib, forbidden-source scan and stable input hashes. Sixteen new explicit key dependencies use only the three allowed foundational axioms.
 - Lagrangian gradients, actual Euler--Lagrange/mechanical trajectory equivalence, rectangular coordinate change, generalized mass positivity/invertibility and the true Legendre supremum with its unique maximizing velocity are locally machine-accepted.
 - Sections1.3/1.4 remain partial: generalized configuration-dependent dynamics and variational least action are still open. Final responsible semantic sign-off remains pending; remote CI not run for this local snapshot. Next dependency is Section1.5.1 flow-map construction and composition laws with honest existence domains.
+
+## Genuine future flow integration (2026-10-04 06:40 +08:00)
+
+- Added FutureFlow after successful independent probes: energy barriers construct actual future IVPs on an invariant low-energy position-ball domain; time translation plus uniqueness prove nonnegative-time composition/commutation and injectivity; energy invariance follows from actual ODE conservation.
+- Six key proofs use only the three permitted foundational axioms. Full local verification is being started. Negative-time existence/inverse group laws and continuity in initial states remain open; Chapter1/all-book and responsible sign-off remain incomplete.
+
+## Future flow local machine acceptance (2026-10-04 06:44 +08:00)
+
+- Flow/full-check01 passed at06:40:32--06:42:49:8951jobs, Scratch,268imported project declaration audits, stable pinned inputs and source scan. All six explicit new key dependencies use only the permitted three foundational axioms.
+- Genuine future family existence/invariance, nonnegative-time composition/commutation, energy conservation and injectivity are machine-accepted on the barrier domain. Negative-time inverse laws and joint continuity remain open; Section1.5.1 is partial. Final responsible semantic sign-off is pending; remote CI not run.
