@@ -113,3 +113,10 @@
 - Newly viewed Theorem 1.1 at printed32/PDF55. Its strict all-time supremum requires a uniform margin, beyond pointwise strict bounds.
 - Still unfinished: deriving the overlap equality from endpoint local IVP, maximal/global continuation, complete Theorem 1.1, later chapters and final responsible semantic sign-off. No new remote CI claim.
 - A separate FTC endpoint-derivative probe passed. It is not yet in the formal library; the next task uses it to recover a one-sided derivative at the filled endpoint and apply local uniqueness.
+
+## Actual finite endpoint continuation (2026-10-04 01:23 +08:00)
+
+- `ODEEndpoint.lean` and `MechanicalContinuation.lean` add five fully proved key statements, including C1 endpoint matching and compact mechanical continuation with no assumed overlap equality.
+- Full-check02 passed at01:18:50--01:21:37 +08:00:8941jobs, Scratch,214declaration audits, fixed versions and stable SHA. All five key dependencies use only the permitted three axioms. Evidence lives beside full-check01.
+- The independent next global compact-confinement probe already passed. It constructs the union of all right-extendable local IVPs and excludes a finite supremum using the actual endpoint extension. Formal integration and energy-barrier discharge are in progress; full global textbook stability is not yet marked done.
+- Responsible semantic sign-off remains pending; no new remote CI or publication has been performed.

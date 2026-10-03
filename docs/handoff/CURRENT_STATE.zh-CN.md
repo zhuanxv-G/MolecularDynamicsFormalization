@@ -1,13 +1,15 @@
 # 当前状态与接续检查点
 
-## 全书本地长期 Goal 已启动（2026-10-04 01:00 +08:00）
+## 当前数学检查点（2026-10-04 01:20 +08:00）
 
 - 数学工作聊天：`01a102b1-a3fe-71e1-a571-347703fc09b8`。原生 Goal 工具已成功返回 `active`，目标为全书本地可核验形式化；未设置时间或 token 上限。不因一个小批次结束而将 Goal 标为完成。
-- 实查分支 `chapter01-kinetic-energy-nonneg`，HEAD `80fcbd63cf6b0508dce54ff10e47c4ac01947b6c`；保留现有全部未提交/未跟踪材料。Lean 4.34.0、manifest mathlib `5ed2965256430c3649e86755f9576b54eca72435` 未改。
+- 01:14 实查分支 `chapter01-kinetic-energy-nonneg`，最新本地源码提交 HEAD `77a70980ab965754fa8d25f9fdc694b12bb8e049`；未推送，保留现有全部无关未提交/未跟踪材料。Lean 4.34.0、manifest mathlib `5ed2965256430c3649e86755f9576b54eca72435` 未改。
 - 01:12 更新：`Continuation.lean` 七项完整证明已集成：端点极限/闭集成员、导数界与紧集端点、连通域 C1 唯一性、显式重叠拼接；顶层、Scratch、公理审计及映射/假设/状态已更新。
 - 验证：完整 `scripts/check.ps1` 于01:08:40--01:11:13退出0，8939jobs、208声明审计、固定版本及输入哈希稳定；关键定理仅三项允许基础公理。证据 `docs/verification/2026-10-04-T4-continuation/full-check01/`。重看印刷32/PDF55；最终负责人语义签核 pending，新远端CI未跑。
-- 当前进行中：从端点极限和局部 IVP 推出重叠相等，补齐无外供 EqOn 的延拓。FTC 端点单侧导数独立探针已通过，尚未正式集成。
-- 下一动作：填入端点极限，证明闭区间连续性及场的连续性，应用端点单侧导数引理和固定版 `ODE_solution_unique_of_mem_Icc_left`，再使用已验证拼接。最大/全局延拓及完整稳定性仍未完成。
+- 当前进展：FTC 端点导数与C1端点匹配已通过独立探针并集成 `ODEEndpoint.lean`；`MechanicalContinuation.lean` 三项完整候选（端点极限延拓、C1力延拓、紧性延拓）已单文件退出0。重叠相等由证明推出，延拓中Q位置条件实际检查。
+- 第二次正式验收已通过：full-check02于01:18:50--01:21:37退出0，8941jobs、214声明审计、固定版本及输入SHA稳定。新增五项内核/构建通过，最终负责人签核pending。
+- 本地失败记录：机械候选attempt01未解构Ioo成员导致四个linarith错误；显式`rcases ht`后attempt02退出0。端点匹配attempt01成员未转不等式，attempt02退出0。所有原日志保留。
+- 下一动作：保存已验证的有限延拓批次；`GlobalContinuationProbe`首试通过且正规候选单模块构建成功（已修复生成时重复namespace的命名警告）。正在检查`EnergyGlobalProbe.lean`，用机械能量守恒与势垒直接推出紧性前提。整合后全局存在及完整稳定性仍待正式验收。
 - 本聊天只推进本地，不使用或等待 MathCopilot。定时接续由启动聊天配置，本聊天不另建重复自动化。全书 Goal 保持 active。
 
 ## 启动配置复核（2026-10-04 01:00 +08:00）

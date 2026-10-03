@@ -688,3 +688,24 @@
 - 原页重新查看已有渲染图的印刷32/PDF55，核对 Theorem1.1 的 smooth potential、strict local minimum 与 `sup < ε`。本批为支撑延拓的新增依赖，没有把教材完整稳定性登记为完成。负责人最终语义签核仍 pending，未触发新远端CI。
 - 当前分支/HEAD仍 `chapter01-kinetic-energy-nonneg` / `80fcbd63cf6b0508dce54ff10e47c4ac01947b6c`；保留已有未提交/未跟踪材料。本批将按已授权本地Git保存范围单独保存已验证源码与证据，不合并、不重置、不推送。
 - 后续实做已开始：独立 FTC `EndpointDerivativeProbe.lean` 已通过内核及公理检查，证明连续闭区间轨道、内部真实导数与连续导数场给出右端点单侧导数。下一具体动作：构造填入极限的轨道，在局部 Lipschitz 邻域用 Icc_left 唯一性推出与端点 IVP 的重叠相等，再取消拼接中的外供 EqOn 假设。
+
+## 2026-10-04 01:14 +08:00 — 首批本地Git保存与端点匹配探针
+
+- 已按明确本地保存授权提交首批源码、映射/假设/状态、交接及关键日志：`77a70980ab965754fa8d25f9fdc694b12bb8e049`，分支未变，未推送/合并。现有AGENTS、规划、RESUME及T3等无关材料仍保留未提交。
+- Git默认忽略*.log；对本批确切日志使用git add -f保存。cached diff检查指出原始candidate.log中的Lean风格提示自带尾空白；为保留原始诊断没有改写日志。源码/文档检查无此问题。
+- 继续实施通用C1端点匹配：FTC恢复填入极限后的单侧端点导数，再用局部Lipschitz邻域和 `ODE_solution_unique_of_mem_Icc_left`。第一次实际探针因 `exists_between` 参数 `l∈Iio b` 未自动化简为不等式而失败；显式引入 `hlb : l < b` 后启动attempt02，尚未确认通过。失败日志保留，不将生成的sorryAx诊断计作接受证明。
+
+## 2026-10-04 01:20 +08:00 — 有限右端点真实延拓候选通过，第二次整体验收进行中
+
+- `EndpointMatchingProbe` attempt02内核退出0，FTC端点导数和端点局部IVP匹配仅三项允许公理。集成 `ODEEndpoint.lean` 两项通用定理，固定 `lake build MolecularDynamics.Chapter01.ODEEndpoint` 2779jobs成功。
+- 新增 `MechanicalContinuation.lean` 三项定理：给定端点极限且位置属于开Q时的延拓、C1力特化、紧相集内的有限右端点延拓。没有假设重叠相等，而是从端点匹配推出。缩小局部区间实际证明Q成员；最终曲线延拓到b+δ，δ>0，保留原开区间每个值。
+- 机械候选attempt01四个linarith错误都来自未拆开Ioo成员（不是数学障碍）；显式rcases后attempt02退出0且无诊断。原日志已保存。顶层、Scratch、CheckAxioms接入五项新关键声明。
+- `full-check02`已启动，session68313，固定版本检查已通过、正在lake build；完成前不登记完整通过。当前HEAD仍77a7098，源码/工具链检查输入保持不变。
+- 下一步已开始开覆盖相容函数/解拼接独立探针，用于构造最大右侧解。真正全局存在与完整稳定性仍未完成；原页语义最终人工签核仍pending。不访问MathCopilot、不新建重复自动化。
+
+## 2026-10-04 01:23 +08:00 — 有限延拓正式验收与全局存在探针通过
+
+- full-check02实际退出0：01:18:50--01:21:37，8941jobs、Scratch、214声明审计、固定版本及输入SHA稳定。五项关键声明仅允许三项基础公理，负责人人工语义签核pending；未跑新远端CI。
+- 开覆盖相容函数探针通过（仅dif_pos弃用警告，正式候选已改dite_eq_left）。`GlobalContinuationProbe.lean`第一次直接通过，含相容开覆盖机械解拼接、固定初值解的可延拓右端点集合、并集解、有限上确界的紧性延拓矛盾、全未来存在。关键依赖仅三项基础公理。
+- 全局探针的紧性前提是对已经存在的局部解的统一未来留集结论，没有假设全局解存在；正在以已验证能量守恒/势垒/紧能量集补齐这个前提。全书Goal持续active。
+- 正式GlobalContinuation候选由探针重命名生成，正在检查；不把独立探针成功当成整合后全工程通过。下一动作：构建候选、建立能量势垒全未来存在桥，再进行一批完整验收。

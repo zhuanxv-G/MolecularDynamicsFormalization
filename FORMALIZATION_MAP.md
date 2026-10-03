@@ -167,3 +167,20 @@ maximal/global existence, full stability and responsible semantic sign-off remai
 | Compact mechanical endpoint | `mechanicalSolution_has_rightEndpointLimit_of_compact` | Compact K, image in K and field continuity on K derive the bound and a limit in K. |
 | Connected-domain uniqueness | `mechanicalSolution_unique_on_preconnected_of_contDiffAt` | Open preconnected domain, common state and C1 field along the first solution; no global Lipschitz assumption. |
 | Explicit-overlap gluing | `mechanicalSolution_glue_on_Ioo` | Solutions on (a,b) and (c,d), c<b, equality on (c,b). Equality is explicit, not yet derived from a common endpoint. |
+
+## T4 actual finite endpoint continuation (2026-10-04)
+
+`ODEEndpoint.lean` and `MechanicalContinuation.lean` are integrated. Full-check02
+passed at01:18:50--01:21:37 +08:00:8941jobs and214declaration audits, fixed inputs stable.
+
+| Result | Lean declaration | Exact boundary |
+| --- | --- | --- |
+| Endpoint derivative | `hasDerivWithinAt_rightEndpoint_of_continuousOn` | Continuous curve and derivative data on Icc; genuine derivatives on Ioo recover the right endpoint derivative within Icc by FTC. |
+| Endpoint matching | `exists_localODE_matching_rightEndpoint` | Existing open-interval solution, right limit and C1 field at the limit derive a local IVP and equality on a left tail. |
+| Actual extension | `mechanicalSolution_extend_of_rightEndpointLimit` | Limit position lies in open Q, field C1 at limit; constructs δ>0 and solution on (a,b+δ) agreeing throughout (a,b). |
+| Force specialization | `mechanicalSolution_extend_of_force_contDiffAt` | Field regularity follows from force C1 at the endpoint position. |
+| Compact extension | `mechanicalSolution_extend_of_compact` | Compact phase K contains the trajectory, K projects into open Q, force C1 along that projection; no endpoint limit or overlap equality assumed. |
+
+Global existence and full Theorem1.1 are still separate. A newly passed
+independent global compact-confinement probe is being integrated; it is not
+covered by full-check02. Responsible semantic sign-off and new remote CI remain pending.

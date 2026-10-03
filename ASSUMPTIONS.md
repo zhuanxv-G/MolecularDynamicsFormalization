@@ -93,3 +93,10 @@ These are modeling questions to check against each textbook statement, not globa
 - Connected-domain uniqueness requires C1 regularity at each point of the first trajectory. It uses the equal-time set's openness from local uniqueness and closedness from continuity. It does not require a global Lipschitz field.
 - Gluing assumes equality on an explicit open overlap. Its piecewise curve agrees locally with one genuine solution even at b, so the ODE and position membership are proved there. This dependency does not yet derive overlap equality from a common endpoint or assert maximal/global existence.
 - The seven formal results passed the integrated local check and dependency audit (208 declarations). Remote CI has not run for this batch; responsible textbook semantic sign-off remains pending.
+
+## T4 actual finite endpoint continuation (2026-10-04)
+
+- The FTC endpoint derivative theorem requires continuity of the curve and derivative data on a closed interval, with actual derivatives only on its interior. It handles a degenerate interval algebraically; the matching theorem separately requires a<b.
+- Endpoint matching uses a C1 field at the endpoint limit, obtains a local Lipschitz neighborhood there, fills the original curve's endpoint by its limit, recovers its one-sided derivative, and applies backwards local uniqueness. The curve's original ambient value at b is not used.
+- Mechanical continuation requires the limit position in open Q, shrinks the new local IVP to stay in Q, and proves agreement on the original interval. Compact continuation derives the limit and uses K's position projection in Q plus C1 force there. It does not require global Lipschitzness or positive masses beyond the total mass-operator model.
+- Five new key statements passed full-check02; final responsible textbook semantic sign-off is pending. The uniform confinement-to-global theorem is a later bridge and is not claimed by these finite-endpoint results.
