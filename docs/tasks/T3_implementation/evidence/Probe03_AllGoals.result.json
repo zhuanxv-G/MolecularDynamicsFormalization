@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+    "env",
+    "lean",
+    "C:\\Users\\ustc\\Desktop\\formal math\\tmp\\t3-implementation-20261003\\Probe03_AllGoals.lean"
+  ],
+  "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+  "started_at": "2026-10-03T01:06:54.403450+08:00",
+  "elapsed_seconds": 23.703,
+  "exit_code": 1,
+  "source_sha256": "4d8beac6ee708dbe04b09085274f917de25a88be93d2b1a17a2daf8c0c0e5b98",
+  "output_sha256": "39c13a89d6315bb198721867c75656d692f2cfef0664dedcf4df8dc8bf9d4f32",
+  "runner_sha256": "80047315612112b6a0d1be3af639e5ef431c0f337e77127d9665435028b39353",
+  "pinned_lean": "leanprover/lean4:v4.34.0",
+  "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435"
+}

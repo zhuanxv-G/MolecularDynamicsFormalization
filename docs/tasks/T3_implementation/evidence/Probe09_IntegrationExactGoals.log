@@ -1,0 +1,11 @@
+info: mathlib: URL has changed; you might need to delete 'C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake/packages\mathlib' manually
+info: stderr:
+fatal: detected dubious ownership in repository at 'C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/mathlib'
+'C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/mathlib' is owned by:
+	GRS/lyx (S-1-5-21-3464830932-1712611000-3293238389-1001)
+but the current user is:
+	GRS/CodexSandboxOffline (S-1-5-21-3464830932-1712611000-3293238389-1005)
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory 'C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/mathlib'
+error: external command 'git' exited with code 128

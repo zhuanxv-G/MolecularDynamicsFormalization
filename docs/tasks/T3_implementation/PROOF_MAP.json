@@ -1,0 +1,168 @@
+{
+  "created_at": "2026-10-03T01:30:41.837487+08:00",
+  "scope": "T3 nine complete general goals, isolated delivery",
+  "baseline_head": "121a9d02ad15500c630e505b363d5f04106d617f",
+  "current_head": "675fcaedbdef7b6ec57393c1ee99e9ca727da649",
+  "pinned_mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "goals": [
+    {
+      "id": "T3-K1",
+      "goal": "matrixKineticGoal",
+      "theorem": "momentumKineticEnergy_eq_inner",
+      "assumptions": "各坐标质量严格正"
+    },
+    {
+      "id": "T3-E1",
+      "goal": "velocityEnergyGoal",
+      "theorem": "massHamiltonian_massOperator",
+      "assumptions": "任意实质量、任意势能"
+    },
+    {
+      "id": "T3-P1",
+      "goal": "particleEnergyGoal",
+      "theorem": "massHamiltonian_particle",
+      "assumptions": "任意N,d含0；粒子优先展开"
+    },
+    {
+      "id": "T3-G1",
+      "goal": "coordinateGradientGoal",
+      "theorem": "hasGradientAt_momentumKineticEnergy",
+      "assumptions": "任意实质量；实际HasGradientAt"
+    },
+    {
+      "id": "T3-G1",
+      "goal": "matrixGradientGoal",
+      "theorem": "gradient_momentumKineticEnergy_eq_velocityOperator",
+      "assumptions": "各坐标质量严格正"
+    },
+    {
+      "id": "T3-G2",
+      "goal": "positionGradientGoal",
+      "theorem": "hasGradientAt_position_slice",
+      "assumptions": "U在q处可微；实际HasGradientAt"
+    },
+    {
+      "id": "T3-G2",
+      "goal": "positionTotalGradientGoal",
+      "theorem": "gradient_position_slice",
+      "assumptions": "任意U；只解释为总函数恒等式"
+    },
+    {
+      "id": "T3-V1",
+      "goal": "vectorFieldGoal",
+      "theorem": "hamiltonianVectorField_eq",
+      "assumptions": "正质量；静态切片梯度向量场"
+    },
+    {
+      "id": "T3-R1",
+      "goal": "inverseEnergyGoal",
+      "theorem": "massHamiltonian_velocityOperator",
+      "assumptions": "各坐标质量严格正"
+    }
+  ],
+  "successful_final_probes": {
+    "Probe05_AllGoals": {
+      "command": [
+        "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+        "env",
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\tmp\\t3-implementation-20261003\\Probe05_AllGoals.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "started_at": "2026-10-03T01:11:17.893709+08:00",
+      "elapsed_seconds": 24.891,
+      "exit_code": 0,
+      "source_sha256": "33109e04154f6bc29b96038e4a45a0e36da1b7de2b2d09a5071f7814987a8b4e",
+      "output_sha256": "0e72ddd31a37417b5ca842f764cd84ef299f9af3cb38e5d685b50b3bace75628",
+      "runner_sha256": "80047315612112b6a0d1be3af639e5ef431c0f337e77127d9665435028b39353",
+      "pinned_lean": "leanprover/lean4:v4.34.0",
+      "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435"
+    },
+    "Probe06_ExactSpecProofs": {
+      "command": [
+        "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+        "env",
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\tmp\\t3-implementation-20261003\\Probe06_ExactSpecProofs.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "started_at": "2026-10-03T01:14:00.959655+08:00",
+      "elapsed_seconds": 25.36,
+      "exit_code": 0,
+      "source_sha256": "16145fad8913dec44e98a4ad9689b96f6d258c2b236513a6cc388f419e2b20e9",
+      "output_sha256": "23515dee8ef7195e707a99b213ff9005b7f2396384736d21a0160ac8da2b292e",
+      "runner_sha256": "80047315612112b6a0d1be3af639e5ef431c0f337e77127d9665435028b39353",
+      "pinned_lean": "leanprover/lean4:v4.34.0",
+      "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435"
+    },
+    "Probe07_Boundaries": {
+      "command": [
+        "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+        "env",
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\tmp\\t3-implementation-20261003\\Probe07_Boundaries.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "started_at": "2026-10-03T01:14:01.248570+08:00",
+      "elapsed_seconds": 25.438,
+      "exit_code": 0,
+      "source_sha256": "ecb56fe5bdca24f3cce412b5310dea69e8cb6d22c6171ca05fbaf7e7c700e975",
+      "output_sha256": "d2480cd27541e6c0a6ac13aa8c2b284a0d25bee19b9ae6bb9f611df6ff334709",
+      "runner_sha256": "80047315612112b6a0d1be3af639e5ef431c0f337e77127d9665435028b39353",
+      "pinned_lean": "leanprover/lean4:v4.34.0",
+      "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435"
+    },
+    "Probe08_IntegrationCandidate": {
+      "command": [
+        "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+        "env",
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\tmp\\t3-implementation-20261003\\Probe08_IntegrationCandidate.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "started_at": "2026-10-03T01:16:38.233560+08:00",
+      "elapsed_seconds": 23.297,
+      "exit_code": 0,
+      "source_sha256": "de461733581b0f54f7ba879b8dfbd4c85fb83f8501095314bb037e8bb7b69ad7",
+      "output_sha256": "1588504679ffdc14bb92fa389694b7ba6077aec33456393d1b907e2780f5d8b0",
+      "runner_sha256": "80047315612112b6a0d1be3af639e5ef431c0f337e77127d9665435028b39353",
+      "pinned_lean": "leanprover/lean4:v4.34.0",
+      "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435"
+    },
+    "Probe10_IntegrationExactGoals": {
+      "command": [
+        "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+        "env",
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\tmp\\t3-implementation-20261003\\Probe10_IntegrationExactGoals.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "started_at": "2026-10-03T01:25:43.734998+08:00",
+      "elapsed_seconds": 39.922,
+      "exit_code": 0,
+      "source_sha256": "5ad24dfce71c9fdae6c9b15164abad63fab324dbd43d9151137394cc4bdd1b48",
+      "output_sha256": "dd0acd4a14d33415c5190d08558c6c235a34d901eee0fcf5bb5868d450fd6a6f",
+      "runner_sha256": "9360734901214e31a663f249003d6ff41bacf86ae1f2d910a5b88d29e2711753",
+      "pinned_lean": "leanprover/lean4:v4.34.0",
+      "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+      "process_scoped_git_safe_directories": [
+        "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization",
+        "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/aesop",
+        "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/batteries",
+        "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/Cli",
+        "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/importGraph",
+        "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/LeanSearchClient",
+        "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/mathlib",
+        "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/plausible",
+        "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/proofwidgets",
+        "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/Qq"
+      ]
+    }
+  },
+  "formal_source_integrated": false,
+  "full_project_check_run_for_T3": false,
+  "remote_CI_run_for_T3": false,
+  "mathcopilot_task_sent": false,
+  "semantic_final_signoff": false,
+  "shared_T2_inputs_unchanged": true
+}

@@ -1,0 +1,77 @@
+{
+  "updated_at": "2026-10-03T13:36:31.5154511+08:00",
+  "controller_thread": "01a0ffde-bd33-7c63-96d4-67969e803263",
+  "source_thread": "01a0fc74-b28e-7083-893e-aa05a06652ac",
+  "task": "T3 fixed-mass Hamiltonian continuation only",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "pre_commit_head": "eaae1162f7aa7a30fad50cae6e9ccf8b6278d64d",
+  "formal_integrated": true,
+  "public_definitions": 5,
+  "named_theorems": 18,
+  "specification_ids": 7,
+  "original_general_goals": 9,
+  "frozen_delivery_manifest_files_verified": 56,
+  "installed_source_sha256": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e",
+  "full_project_check": {
+    "report": "docs/verification/2026-10-03-T3-first-batch-retry03/CHECK_REPORT.json",
+    "exit_code": 0,
+    "build_jobs": 8932,
+    "imported_project_declarations_audited": 171,
+    "input_count": 15,
+    "all_input_hashes_still_match": true
+  },
+  "original_nine_goals": {
+    "exit_code": 0,
+    "result": "FormalExactGoals.result.json"
+  },
+  "seven_boundaries": {
+    "exit_code": 0,
+    "result": "FormalBoundaries.result.json"
+  },
+  "local_textbook_semantic_review": "passed for stated static scope; actually rerendered and viewed four original pages",
+  "original_page_images": [
+    {
+      "name": "source-041.png",
+      "bytes": 194939,
+      "sha256": "aea972c051e6829493f77f8a9f0060c19381a4d910eddf9c229b2e1f3fb60225",
+      "printed_page": 18,
+      "pdf_page": 41,
+      "actually_viewed_this_continuation": true
+    },
+    {
+      "name": "source-042.png",
+      "bytes": 180425,
+      "sha256": "f03b0e7bbb37ab09d7930d0c0f553b8b5e50233d629bd727b31db4243e122ee8",
+      "printed_page": 19,
+      "pdf_page": 42,
+      "actually_viewed_this_continuation": true
+    },
+    {
+      "name": "source-047.png",
+      "bytes": 181185,
+      "sha256": "af1a92846eb481d077e006c43a3160e554349dba36f8bf4679e3d1e88ddaf342",
+      "printed_page": 24,
+      "pdf_page": 47,
+      "actually_viewed_this_continuation": true
+    },
+    {
+      "name": "source-048.png",
+      "bytes": 241494,
+      "sha256": "a058d845fbc543c67dce3018cb100f5690e2758929b49c2281d59918eb09a0dd",
+      "printed_page": 25,
+      "pdf_page": 48,
+      "actually_viewed_this_continuation": true
+    }
+  ],
+  "responsible_final_semantic_signoff": "pending human responsible or senior reviewer",
+  "mathcopilot_sent": false,
+  "mathcopilot_review": "pending",
+  "website_quota": "user reports updated; not directly readable",
+  "browser_failure": "Old and new Browser page controls time out; tabs listing works",
+  "computer_use_stop": "External Edge launched; helper then stopped because current URL could not be reliably determined; no further Computer Use actions",
+  "automatic_approval_rejection": false,
+  "git_code_commit": null,
+  "git_pushed": false,
+  "remote_CI": "pending",
+  "next_action": "Save the accepted T3 snapshot to Git and validate its CI. Website review waits for a readable supported browser session, then confirms no duplicate request before sending frozen T3 input. Do not redo accepted proofs."
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+    "env",
+    "lean",
+    "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\docs\\tasks\\T3_implementation\\continuation-20261003\\FormalBoundaries.lean"
+  ],
+  "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+  "started_at": "2026-10-03T13:29:36.557788+08:00",
+  "elapsed_seconds": 24.125,
+  "exit_code": 0,
+  "source_sha256": "3276cc4df704af5766dd87040152675a7ec574d0f14403c4d6de8c3a1184ee21",
+  "output_sha256": "9e81c62759234190cc4a127b385ce5354c7007444cc103756cacb654578de066",
+  "formal_source_sha256": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e",
+  "runner_sha256": "05e16ebfa098c7306c948e7aa840424ea1a3d9176e063bb89eba240dd280f7fc",
+  "purpose": "Original nine goals and seven boundaries against the installed module",
+  "git_safe_directories_scope": "current process and fixed local dependencies"
+}

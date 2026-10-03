@@ -2,4 +2,5 @@ import MolecularDynamics.BasicDefinitions
 import MolecularDynamics.Chapter01.NBody
 import MolecularDynamics.Chapter01.ParticleCoordinates
 import MolecularDynamics.Chapter01.LocalTrajectories
+import MolecularDynamics.Chapter01.Hamiltonian
 import MolecularDynamics.Chapter01.PotentialBarriers

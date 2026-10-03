@@ -23,6 +23,17 @@ import MolecularDynamicsFormalization
 #print axioms MolecularDynamics.freeParticle_localIVP
 #print axioms MolecularDynamics.IsLocalMechanicalIVP.initial_mem
 
+#print axioms MolecularDynamics.momentumKineticEnergy_eq_inner
+#print axioms MolecularDynamics.momentumKineticEnergy_massOperator
+#print axioms MolecularDynamics.massHamiltonian_massOperator
+#print axioms MolecularDynamics.massHamiltonian_particle
+#print axioms MolecularDynamics.massHamiltonian_velocityOperator
+#print axioms MolecularDynamics.hasGradientAt_momentumKineticEnergy
+#print axioms MolecularDynamics.gradient_momentumKineticEnergy_eq_velocityOperator
+#print axioms MolecularDynamics.gradient_position_slice
+#print axioms MolecularDynamics.hasGradientAt_position_slice
+#print axioms MolecularDynamics.hamiltonianVectorField_eq
+
 #print axioms MolecularDynamics.strictOn_iff_punctured
 #print axioms MolecularDynamics.strictUniv_iff
 #print axioms MolecularDynamics.strictOn_isLocalMinOn

@@ -39,7 +39,7 @@
 
 - General local existence, uniqueness and maximal extension for the mechanical ODE.
 - Higher regularity of the force, potential and trajectory beyond the explicit derivative bridges.
-- Hamiltonian consistency under the now-available positive-mass inverse bridges (T3).
+- Time-trajectory Hamiltonian/mechanical equivalence beyond the static T3 identities.
 - Energy conservation along solutions of equation (1.3).
 - Chapter 1 §1.3 and later material.
 
@@ -65,3 +65,12 @@
 - Formal full-project check passed at01:25–01:28: fixed versions, source scan, 8931 build jobs, Scratch and 128 imported declaration audits. Commit `9baf87f89d07138a95bfbfe1f37d45dd54946cf7` was pushed and GitHub Actions run37041343101/job110951942612 passed the same full check; artifact11242057946 was saved. Exact local and remote evidence is in `docs/verification/2026-10-03-T5-first-batch/`.
 - The textbook's strict local minimum was visually rechecked at printed32/PDF55; printed33/PDF56 treats Hessian positivity as a sufficient condition. This batch does not assume that stronger condition. Website independent proof review and responsible semantic sign-off remain pending.
 - Theorem1.1, actual mechanical energy conservation, momentum bounds, ODE existence/uniqueness and global extension remain later goals.
+
+## T3 fixed-mass Hamiltonian implementation (2026-10-03)
+
+- Installed `Chapter01/Hamiltonian.lean`, with five definitions and eighteen complete theorems covering the seven specification IDs and nine general goals. It reuses T2 operators and is imported by the project root.
+- Checked frozen candidate SHA256 `89b808b5f181e6b388023dc25b604043ac1d1868eb2db971ea0e419e5fbba1ac` and unchanged T2 interface SHA256 `2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538` before installation. The installed header describes the formal module; mathematical statements and proofs match the candidate.
+- Added explicit key theorem dependency prints to Scratch and the complete namespace audit. The integrated full check passed in `docs/verification/2026-10-03-T3-first-batch-retry03/`: pinned versions, source scan, 8932 build jobs, Scratch and 171 imported declaration audits. All dependencies are the permitted standard logical dependencies. The original nine goals and seven boundaries also passed against the installed module; their exact sources, logs and result hashes are in the T3 continuation directory.
+- The preceding three unsuccessful checks are preserved: the elan launcher attempted an unavailable network update, one dependency lacked a process-local Git ownership exception, and the interrupted run compiled Hamiltonian but lost its top-level process with exit1073807364. None is represented as a successful full check; the retry03 actual result is the acceptance evidence.
+- Local original-page review passed for the nine static goals after newly rendering and viewing printed18--19/PDF41--42 and printed24--25/PDF47--48. Responsible or senior reviewer final semantic sign-off remains pending.
+- MathCopilot proof review has not been sent. The user reports that the website quota was updated, but both Browser versions still timed out on page control. External Edge launched; Computer Use then stopped because it could not reliably determine the current browser URL. Website review and remote CI remain separate from the successful local acceptance.

@@ -57,3 +57,13 @@ These are modeling questions to check against each textbook statement, not globa
 - The conditional trajectory theorem takes position continuity, nonnegative kinetic energy and constant total energy as inputs on the supplied closed interval. Its initial position may be any point inside the ball. It proves confinement on that interval via the intermediate value theorem; it does not prove conservation, solution existence, uniqueness, momentum control or global continuation.
 - The potential and kinetic terms are general real-valued functions in the conditional lemmas. Relating them to the actual mechanical Hamiltonian and proving conservation are separate T3/T4 results.
 - Theorem1.1 remains pending: position confinement alone is not the full phase-space stability conclusion or its strict supremum bound for all future time.
+
+## T3 fixed-mass Hamiltonian assumptions
+
+- The physical model specializes printed24--25/PDF47--48 to fixed positive diagonal coordinate masses. Position-dependent mass matrices, constrained generalized coordinates and the Legendre supremum argument are outside this batch.
+- The coordinate energy uses real total division. Its substitution identity and genuine coordinate gradient hold for arbitrary real masses, including zero. This algebraic extension does not turn zero or negative masses into a physical model.
+- Equating coordinate division with the whole matrix inverse, and recovering velocity energy from arbitrary momentum, explicitly require strictly positive coordinate masses. For mixed zero/nonzero masses the coordinate formula may differ from mathlib's total singular-matrix inverse.
+- `gradient_position_slice` and `hamiltonianVectorField_eq` are identities of total operations. `hasGradientAt_position_slice` separately assumes `DifferentiableAt ℝ U q` to certify the classical derivative. A relative differentiability premise on Q needs a neighborhood/open-domain condition for a two-sided derivative at q.
+- The vector field uses a momentum slice and a position slice in their existing Euclidean spaces. No inner product on the ordinary product-norm phase space is assumed or introduced.
+- All finite indexing identities allow n=0, N=0 and d=0; no positivity of dimension is needed for these static algebra and gradient statements.
+- This batch does not prove time-trajectory equivalence, energy conservation, existence/uniqueness, maximal extension, stability or Theorem 1.1. Local textbook review, independent website review and final responsible sign-off have separate evidence and statuses.

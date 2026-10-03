@@ -1,0 +1,40 @@
+C:\Users\ustc\Desktop\formal math\tmp\t3-implementation-20261003\Probe03_AllGoals.lean:148:15: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+C:\Users\ustc\Desktop\formal math\tmp\t3-implementation-20261003\Probe03_AllGoals.lean:148:47: warning: `ContinuousLinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+C:\Users\ustc\Desktop\formal math\tmp\t3-implementation-20261003\Probe03_AllGoals.lean:150:32: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (2 * m i)⁻¹ * (p.ofLp i + p.ofLp i)
+in the target expression
+  p.ofLp i / m i * x.ofLp i = (2 * m i)⁻¹ * p.ofLp i * (x.ofLp i + x.ofLp i)
+
+case e'_12
+n : ℕ
+m : CoordinateMasses n
+p : Momentum n
+i : Fin n
+hi : HasFDerivAt (fun x => x.ofLp i) (EuclideanSpace.proj i) p
+hcoeff : (2 * m i)⁻¹ * (p.ofLp i + p.ofLp i) = p.ofLp i / m i
+e_4✝ : WithLp.instAddCommGroup 2 ((i : Fin n) → (fun x => ℝ) i) = (PiLp.normedAddCommGroup 2 fun x => ℝ).toAddCommGroup
+he✝¹ : WithLp.instModule 2 ℝ ((i : Fin n) → (fun x => ℝ) i) = (PiLp.normedSpace 2 ℝ fun x => ℝ).toModule
+e_6✝ : (PiLp.topologicalSpace 2 fun x => ℝ) = PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+e_8✝ : Real.instAddCommGroup = Real.normedCommRing.toCommRing.toAddCommGroup
+he✝ : Semiring.toModule = (NormedAlgebra.toNormedSpace ((fun x => ℝ) i)).toModule
+x : EuclideanSpace ℝ (Fin n)
+⊢ p.ofLp i / m i * x.ofLp i = (2 * m i)⁻¹ * p.ofLp i * (x.ofLp i + x.ofLp i)
+'T3Implementation.momentumKineticEnergy_eq_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_massOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_particle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_velocityOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.hasGradientAt_momentumKineticEnergy' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'T3Implementation.gradient_momentumKineticEnergy_eq_velocityOperator' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'T3Implementation.gradient_position_slice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.hasGradientAt_position_slice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.hamiltonianVectorField_eq' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

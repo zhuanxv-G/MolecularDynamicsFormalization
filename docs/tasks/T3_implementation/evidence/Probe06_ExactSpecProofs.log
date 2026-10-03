@@ -1,0 +1,47 @@
+'T3Implementation.momentumKineticEnergy_eq_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_massOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_particle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_velocityOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.hasGradientAt_momentumKineticEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.gradient_momentumKineticEnergy_eq_velocityOperator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'T3Implementation.gradient_position_slice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.hasGradientAt_position_slice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.hamiltonianVectorField_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+def T3Implementation.matrixKineticGoal : {n : ℕ} → CoordinateMasses n → Momentum n → Prop :=
+fun {n} m p => (∀ (i : Fin n), 0 < m i) → momentumKineticEnergy m p = ⟪p, (velocityOperator m) p⟫_ℝ / 2
+def T3Implementation.velocityEnergyGoal : {n : ℕ} →
+  CoordinateMasses n → PotentialEnergy n → Position n → Velocity n → Prop :=
+fun {n} m U q v => massHamiltonian m U (q, (massOperator m) v) = nBodyTotalEnergy m U q v
+def T3Implementation.particleEnergyGoal : {N d : ℕ} →
+  ParticleMasses N → PotentialEnergy (N * d) → ParticleVectors N d → ParticleVectors N d → Prop :=
+fun {N d} m U q v =>
+  massHamiltonian (coordinateMassesOfParticles m) U
+      (flattenParticleVectors q, (massOperator (coordinateMassesOfParticles m)) (flattenParticleVectors v)) =
+    particleKineticEnergy m v + U (flattenParticleVectors q)
+def T3Implementation.coordinateGradientGoal : {n : ℕ} → CoordinateMasses n → Momentum n → Prop :=
+fun {n} m p => HasGradientAt (momentumKineticEnergy m) (coordinateVelocity m p) p
+def T3Implementation.matrixGradientGoal : {n : ℕ} → CoordinateMasses n → Momentum n → Prop :=
+fun {n} m p => (∀ (i : Fin n), 0 < m i) → gradient (momentumKineticEnergy m) p = (velocityOperator m) p
+def T3Implementation.positionGradientGoal : {n : ℕ} →
+  CoordinateMasses n → PotentialEnergy n → Position n → Momentum n → Prop :=
+fun {n} m U q p => DifferentiableAt ℝ U q → HasGradientAt (fun x => massHamiltonian m U (x, p)) (gradient U q) q
+def T3Implementation.positionTotalGradientGoal : {n : ℕ} →
+  CoordinateMasses n → PotentialEnergy n → Position n → Momentum n → Prop :=
+fun {n} m U q p => gradient (fun x => massHamiltonian m U (x, p)) q = gradient U q
+def T3Implementation.vectorFieldGoal : {n : ℕ} → CoordinateMasses n → PotentialEnergy n → PhaseSpace n → Prop :=
+fun {n} m U z => (∀ (i : Fin n), 0 < m i) → hamiltonianVectorField m U z = ((velocityOperator m) z.2, -gradient U z.1)
+def T3Implementation.inverseEnergyGoal : {n : ℕ} →
+  CoordinateMasses n → PotentialEnergy n → Position n → Momentum n → Prop :=
+fun {n} m U q p =>
+  (∀ (i : Fin n), 0 < m i) → massHamiltonian m U (q, p) = nBodyTotalEnergy m U q ((velocityOperator m) p)
+'T3Implementation.prove_matrixKineticGoal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.prove_velocityEnergyGoal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.prove_particleEnergyGoal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.prove_coordinateGradientGoal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.prove_matrixGradientGoal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.prove_positionGradientGoal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.prove_positionTotalGradientGoal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.prove_vectorFieldGoal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.prove_inverseEnergyGoal' depends on axioms: [propext, Classical.choice, Quot.sound]

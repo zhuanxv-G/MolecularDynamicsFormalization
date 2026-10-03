@@ -1,0 +1,29 @@
+{
+  "command": [
+    "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+    "env",
+    "lean",
+    "C:\\Users\\ustc\\Desktop\\formal math\\tmp\\t3-implementation-20261003\\Probe10_IntegrationExactGoals.lean"
+  ],
+  "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+  "started_at": "2026-10-03T01:25:43.734998+08:00",
+  "elapsed_seconds": 39.922,
+  "exit_code": 0,
+  "source_sha256": "5ad24dfce71c9fdae6c9b15164abad63fab324dbd43d9151137394cc4bdd1b48",
+  "output_sha256": "dd0acd4a14d33415c5190d08558c6c235a34d901eee0fcf5bb5868d450fd6a6f",
+  "runner_sha256": "9360734901214e31a663f249003d6ff41bacf86ae1f2d910a5b88d29e2711753",
+  "pinned_lean": "leanprover/lean4:v4.34.0",
+  "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+  "process_scoped_git_safe_directories": [
+    "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization",
+    "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/aesop",
+    "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/batteries",
+    "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/Cli",
+    "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/importGraph",
+    "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/LeanSearchClient",
+    "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/mathlib",
+    "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/plausible",
+    "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/proofwidgets",
+    "C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/.lake/packages/Qq"
+  ]
+}

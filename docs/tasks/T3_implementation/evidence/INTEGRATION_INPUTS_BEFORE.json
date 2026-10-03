@@ -1,0 +1,35 @@
+{
+  "purpose": "Candidate-only compatibility; no source integration",
+  "files": [
+    {
+      "path": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\MolecularDynamics\\Chapter01\\LocalTrajectories.lean",
+      "bytes": 11335,
+      "sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538"
+    },
+    {
+      "path": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\.lake\\build\\lib\\lean\\MolecularDynamics\\Chapter01\\LocalTrajectories.olean",
+      "bytes": 345152,
+      "sha256": "f32ba29b63c9e47119469b1b291730cfd90bb27b98bb220695fd31e2a4e11606"
+    }
+  ],
+  "all_named_declarations_audited": [
+    "massOperator_coordinate",
+    "coordinateVelocity_apply",
+    "velocityOperator_coordinate",
+    "coordinateVelocity_eq_velocityOperator",
+    "momentumKineticEnergy_eq_inner",
+    "momentumKineticEnergy_massOperator",
+    "massHamiltonian_massOperator",
+    "massHamiltonian_particle",
+    "massHamiltonian_velocityOperator",
+    "coordinateDualRepresentation",
+    "hasFDerivAt_kinetic_term",
+    "hasGradientAt_momentumKineticEnergy",
+    "gradient_momentumKineticEnergy",
+    "gradient_momentumKineticEnergy_eq_velocityOperator",
+    "gradient_position_slice",
+    "gradient_momentum_slice",
+    "hasGradientAt_position_slice",
+    "hamiltonianVectorField_eq"
+  ]
+}

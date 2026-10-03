@@ -1,0 +1,14 @@
+C:\Users\ustc\Desktop\formal math\tmp\t3-implementation-20261003\Probe04_AllGoals.lean:143:6: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'T3Implementation.momentumKineticEnergy_eq_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_massOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_particle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_velocityOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.hasGradientAt_momentumKineticEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.gradient_momentumKineticEnergy_eq_velocityOperator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'T3Implementation.gradient_position_slice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.hasGradientAt_position_slice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.hamiltonianVectorField_eq' depends on axioms: [propext, Classical.choice, Quot.sound]

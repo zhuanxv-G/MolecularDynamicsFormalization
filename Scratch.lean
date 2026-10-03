@@ -4,6 +4,16 @@ import MolecularDynamicsFormalization
 -- Check small MathCopilot drafts here before moving them into the library.
 #check MolecularDynamics.Position
 #check MolecularDynamics.SeparableEnergy.hamiltonian
+#check MolecularDynamics.massHamiltonian
+#check MolecularDynamics.hamiltonianVectorField
+
+#print axioms MolecularDynamics.momentumKineticEnergy_eq_inner
+#print axioms MolecularDynamics.massHamiltonian_massOperator
+#print axioms MolecularDynamics.massHamiltonian_particle
+#print axioms MolecularDynamics.hasGradientAt_momentumKineticEnergy
+#print axioms MolecularDynamics.hasGradientAt_position_slice
+#print axioms MolecularDynamics.hamiltonianVectorField_eq
+#print axioms MolecularDynamics.massHamiltonian_velocityOperator
 
 namespace MolecularDynamics
 

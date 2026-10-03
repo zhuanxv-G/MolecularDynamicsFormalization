@@ -1,0 +1,17 @@
+C:\Users\ustc\Desktop\formal math\tmp\t3-implementation-20261003\Probe01_Algebra.lean:69:49: error: unsolved goals
+n : ℕ
+m : CoordinateMasses n
+hm : ∀ (i : Fin n), 0 < m i
+p : Momentum n
+i : Fin n
+⊢ m i * p.ofLp i / m i = p.ofLp i
+C:\Users\ustc\Desktop\formal math\tmp\t3-implementation-20261003\Probe01_Algebra.lean:97:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+C:\Users\ustc\Desktop\formal math\tmp\t3-implementation-20261003\Probe01_Algebra.lean:97:8: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'T3Implementation.momentumKineticEnergy_eq_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_massOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_particle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3Implementation.massHamiltonian_velocityOperator' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
