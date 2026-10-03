@@ -301,3 +301,19 @@ full-check01 passed:8958jobs,348project audits, Scratch, pinned versions/source 
 
 Complex spectral decomposition and real recovery, general nonlinear initial-state
 continuity and the rest of the book remain open. Final responsible sign-off pending.
+
+## Complex spectrum, real recovery and column-basis matrix (2026-10-04)
+
+Printed27--28/PDF50--51 checked. Independent Complex04, RealRecovery02 and
+BasisMatrix03 passed; integrated ComplexSpectral/full-check01 passed at07:40:13--07:41:57:8961jobs,382project audits, Scratch, pinned versions/scan and stable SHA.
+
+| Result | Lean declaration | Exact boundary |
+| --- | --- | --- |
+| Complex modes and eigenbasis | hasDerivAt_complexEigenmode, complexExponentialFlow_eigenmode, complexExponentialFlow_spectral_sum, complexExponentialFlow_eigenbasis | Real time, complex eigenvalues/vectors/coefficients; actual ODE/uniqueness gives spectral formulas when the corresponding decomposition/eigenbasis exists. |
+| Real-time complex flow | hasDerivAt_complexExponentialFlow, complexContinuousFlow | Real-scalar restriction of complex-linear A yields a genuine continuous Flow with actual ODE. |
+| Unique coefficients | complexEigenbasis_coefficients_unique | repr supplies the unique coefficient family for the supplied complex basis. |
+| Actual real recovery | realMatrix_complexFlow_isReal, realMatrix_complexSpectral_sum_isReal | A real matrix and initial coordinate imaginary parts0 imply all-time imaginary parts0, including the complex spectral sum; individual modes need not be real. |
+| Basis-column matrix | basisColumnMatrix_mulVec, basisColumnMatrix_mulVec_repr, basisColumnMatrix_isUnit, basisColumnMatrix_inverse_coefficients | X columns are basis vectors; actual Xc=z, proved invertibility and c=X⁻¹z for real/complex RCLike coefficients, including dimension0. |
+
+These results complete the checked linear example formulas, not all nonlinear
+claims of Section1.5.1 or the whole book. Responsible sign-off remains pending.

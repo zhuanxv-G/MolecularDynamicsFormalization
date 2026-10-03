@@ -1,13 +1,13 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 07:27 +08:00）
+## 当前数学检查点（2026-10-04 07:43 +08:00）
 
 - 同一全书目标，聊天01a102b1-a3fe-71e1-a571-347703fc09b8。Goal实查usageLimited，非完成/用户暂停；之前只读额度ordinaryUsageAllowed=true，按同一持续授权续做。工具不能恢复平台状态；未另建Goal/自动化，未购买/重置或换账户。
-- 分支chapter01-kinetic-energy-nonneg，实际本地HEAD4859306955be633027fc5ea9592ec7769eae8a28，谐振子/自由粒子批次已保存，未推送。Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435固定，无关材料保留。
+- 分支chapter01-kinetic-energy-nonneg，实际本地HEADeb6d018d04e6413ee036f9de5b1f5314b6dbfce0，谐振子/自由粒子批次已保存，未推送。Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435固定，无关材料保留。
 - 已完整本地验收：Theorem1.1严格欧氏全未来稳定性T4/check03（8947jobs/231声明，源码2081575）；Lagrangian/静态质量变换/Legendre真sup及唯一达到点（8950jobs/261，源码f52945d）；双向势垒域真实全时间流及复合/逆/能量（8953jobs/286，源码84549ab）。
 - 最近谐振子/自由粒子full-check02于07:09:12--07:10:36退出0，8955jobs/310声明/固定SHA稳定，源码4859306。谐振子Ω≠0单位质量/统一频率，Ω=0自由粒子另证；两个显式模型已构造真正联合连续Flow。保留full-check01的import文件顺序失败证据。
-- 当前新批次LinearFlowProbe attempt03和正式单模块构建通过；MatrixFlowProbe attempt03通过：真实矩阵指数mulVec表达、任意初时真导数/初值唯一性、连续Flow和矩阵幂级数。关键独立依赖仅三项允许基础公理；三模块已顶层集成，full-check01已退出0（8958jobs/348声明/固定SHA稳定），准备本地保存。
-- SpectralProbe attempt01因λ保留token解析失败，已改ν并补Basis.repr实特征基展开。attempt02三项实谱通过，特征基Basis命名空间失败改Module.Basis；attempt03已通过；恢复第一动作保存线性/矩阵/实谱明确批次，读取ComplexSpectralProbe attempt01/session91879实际结果，继续复谱/实解恢复。不重复未变的旧完整检查。
+- 当前新批次LinearFlowProbe attempt03和正式单模块构建通过；MatrixFlowProbe attempt03通过：真实矩阵指数mulVec表达、任意初时真导数/初值唯一性、连续Flow和矩阵幂级数。关键独立依赖仅三项允许基础公理；三模块已顶层集成，full-check01已退出0（8958jobs/348声明/固定SHA稳定），已保存eb6d018。
+- SpectralProbe attempt01因λ保留token解析失败，已改ν并补Basis.repr实特征基展开。attempt02三项实谱通过，特征基Basis命名空间失败改Module.Basis；attempt03已通过；ComplexSpectralProbe attempt01已退出0；恢复第一动作RealRecoveryProbe首轮已退出0，真导数/唯一性/共轭交换推出全时间虚部零；ComplexSpectral attempt04已退出0，正式模块候选需验收；Complex模块构建、RealRecovery attempt02成功，完整复谱实值连接已证明；BasisMatrix attempt03已通过；三模块正式接入，full-check01已通过（07:40:13--07:41:57，8961jobs/382声明/SHA稳定）；本地保存本批后运行FirstIntegralProbe继续§1.5.2，随后接复谱实值并正式整批验收。不重复未变的旧完整检查。
 - 原页印刷27/PDF50已再次视觉核对，语义边界报告在LinearFlow目录。复谱/复系数到实解恢复、一般初值连续依赖、一般强制势全空间存在以及其他整节/整章/全书内容尚未完成；负责人最终语义签核pending，新远端CI未跑，不使用MathCopilot。
 - 每个成功/失败及20--30分钟检查点落盘。全书Goal不标完成，不停自动接续；仅暂存本批明确文件，不覆盖既有AGENTS/FORMALIZATION_PLAN/RESUME/T3材料。
 

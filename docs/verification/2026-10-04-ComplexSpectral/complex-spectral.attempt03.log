@@ -1,0 +1,16 @@
+docs/verification/2026-10-04-ComplexSpectral/probes/ComplexSpectralProbe.lean:78:2: error: Type mismatch: After simplification, term
+  Eq.symm h
+ has type
+  ∑ c_1, (fun₀ | c_1 => c c_1) i = (b.repr z) i
+but is expected to have type
+  c i = (b.repr z) i
+'MolecularDynamics.hasDerivAt_complexExponentialFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.complexContinuousFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.complexEigenbasis_coefficients_unique' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.hasDerivAt_complexEigenmode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.complexExponentialFlow_eigenmode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.complexExponentialFlow_spectral_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.complexExponentialFlow_eigenbasis' depends on axioms: [propext, Classical.choice, Quot.sound]

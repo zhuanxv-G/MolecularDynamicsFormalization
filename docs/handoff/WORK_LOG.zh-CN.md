@@ -941,3 +941,49 @@
 - LinearFlow/full-check01退出0，8958jobs、Scratch、固定版本/扫描/输入SHA稳定；18项新关键显式审计仅三项允许基础公理。实际完整报告与全部原始日志保留，准备本地保存。
 - 下一ComplexSpectralProbe已落盘：实时间的复指数模式真实导数，复线性算子限制实标量后真实IVP唯一性推模式/谱展开，Basis.repr给复系数。拟实际验证，不提前计已证明。
 - 全书/§1.5.1仍未完成，原文实解恢复与其他初值连续性/积分例子尚待。负责人最终语义签核pending，未跑新远端CI，不使用MathCopilot。
+
+## 2026-10-04 07:29 +08:00 — 复谱首轮通过与实解恢复启动
+
+- 线性/矩阵/实谱已本地提交eb6d018d04e6413ee036f9de5b1f5314b6dbfce0，未推送。full-check01实际07:24:13--07:25:58，8958jobs/348声明。
+- ComplexSpectralProbe attempt01首次退出0，四项关键仅三项允许基础公理。实时间复指数模式的真实导数与复线性算子限制ℝ后的已证全时间IVP唯一性推出谱公式，Module.Basis.repr给复系数。尚未正式验收。
+- RealRecoveryProbe已落盘：真实CLM与线性流的交织由导数/唯一性推出；实矩阵与复共轭实际交换，实初值共轭固定点沿流保持，拟推出各坐标虚部为0。不是把实值作为全程假设。即将首轮验证。
+
+## 2026-10-04 07:31 +08:00 — 实矩阵复表示解保持实值首轮通过
+
+- RealRecoveryProbe attempt01首次退出0，四项关键仅允许三项基础公理。交织/固定点由真实导数及IVP唯一性推出；实矩阵与共轭CLM交换已逐坐标验证，从初值虚部0推出全时间虚部0，不以实值保持为假设。
+- 复谱探针新增真实全时间导数、复连续Flow和特征基系数∃!，准备attempt02。接着把实值保持接到复特征基公式；矩阵X列基向量的可逆性/线性系统系数桥接随后检查。
+- 尚未正式集成/完整验收，全部候选与日志落盘，全书仍持续。
+
+### 07:32 +08:00 — 复特征基系数唯一性simp展开修复
+
+- ComplexSpectralProbe attempt02新增真导数/连续Flow均通过，仅coefficients_unique留下repr有限单点Finsupp求和的apply，simp没有展开single_apply；补显式Finsupp.single_apply后再attempt03。该失败不是系数唯一性反例，保留原始诊断。
+- BasisMatrixProbe已落盘，目标证明列为基向量的X真可逆、X repr(z)=z，不以可逆性作为待证假设；准备在复谱检查后顺序运行。
+
+### 07:34 +08:00 — 系数证明改用已核实repr_sum_self接口
+
+- ComplexSpectral attempt03仍退出1，补single_apply未能跨Finsupp有限求和应用；其余六项数学证明继续仅三项允许基础公理，不重复原失败simp路线。
+- 已读取固定版本Module.Basis.repr_sum_self，直接重写repr的基向量线性组合坐标，替代展开单点Finsupp。BasisMatrix同类唯一性也使用该接口。准备attempt04，后续BasisMatrix首轮仍未实际运行。
+
+### 07:35 +08:00 — 复谱系数唯一性通过与列矩阵探针整理
+
+- ComplexSpectral attempt04退出0，七项关键仅三项允许基础公理；repr_sum_self路线成功，coefficients_unique无用CompleteSpace警告已omit整理。正式候选已写入，需单模块构建后再检查接通的RealRecovery。
+- BasisMatrix attempt01三项数学证明已仅三项允许基础公理，但simp参数引用不存在PiLp.sum_apply导致非零退出；移除该不存在/无用参数，补真实inverse coefficients公式后attempt02。保留失败日志，不称整文件首轮成功。
+- 复谱实值连接候选已落盘，准备顺序构建ComplexSpectral→检查RealRecovery→检查BasisMatrix，无重复构建或MathCopilot。
+
+## 2026-10-04 07:38 +08:00 — 复谱实值连接通过、列矩阵逆式修复
+
+- ComplexSpectral模块8944jobs构建成功，RealRecovery attempt02退出0，五项关键仅三项允许基础公理；复谱求和的虚部零已真实接通，且不要求每项谱项各自实值。
+- BasisMatrix attempt02三个原始证明通过，新增inverse coefficients因isUnit_iff_isUnit_det需显式矩阵参数失败；补参数后重试。插入脚本字符串前缀也误匹配第二个#print名称造成重复定理，已重建唯一后缀，未留重复定义。失败日志真实保留。
+- 原页印刷28/PDF51、29/PDF52已视觉查看下一§1.5.2，第一积分链式法则/必要充分方向候选已落盘但未运行。当前先完复谱批次完整验收，不启动重复构建。
+
+## 2026-10-04 07:40 +08:00 — 复谱/实恢复/列矩阵全部独立通过并正式验收启动
+
+- BasisMatrix attempt03退出0，四项关键仅三项允许基础公理，真实可逆性和c=X⁻¹ζ已经证明；不存在把X可逆当假设的问题。
+- ComplexSpectralFlow、RealRecoveryFlow、BasisMatrix正式接入顶层，Scratch/CheckAxioms增16关键审计，映射/假设/状态/本地语义报告更新。启动ComplexSpectral/full-check01，冻结正式源码。
+- 下一FirstIntegralProbe已落盘：印刷28/PDF51第一积分链式法则、沿真实曲线充分守恒/必要微分条件/梯度表达；未运行，不提前登记完成。印刷29/PDF52 Kepler极坐标/角动量仍后续。
+
+## 2026-10-04 07:43 +08:00 — 复谱/实恢复/基列矩阵完整验收通过
+
+- ComplexSpectral/full-check01于07:40:13--07:41:57实际退出0：8961jobs、Scratch、382声明依赖审计、固定工具链/mathlib、扫描与正式输入SHA稳定。16项新关键审计仅三项允许基础公理。
+- 真复谱公式、实矩阵/实初值的真实实值恢复、列基矩阵X真可逆及c=X⁻¹ζ全已完整本地验证；原页印刷27--28/PDF50--51核对，负责人最终教材语义签核pending，新远端CI未跑。§1.5.1仍partial，全书持续。
+- 现在本地保存本批明确文件及全部原始失败/成功日志，保留无关既有材料；不推送/合并。随后启动§1.5.2 FirstIntegralProbe，原页印刷28/PDF51已实际查看，真实局部IVP用于必要方向，不把结论藏进存在假设。

@@ -1,0 +1,20 @@
+docs/verification/2026-10-04-ComplexSpectral/probes/BasisMatrixProbe.lean:38:30: error(lean.unknownIdentifier): Unknown constant `Matrix.isUnit_iff_isUnit_det.mp`
+docs/verification/2026-10-04-ComplexSpectral/probes/BasisMatrixProbe.lean:36:65: error: unsolved goals
+m : ℕ
+𝕜 : Type u_1
+inst✝ : RCLike 𝕜
+b : Module.Basis (Fin m) 𝕜 (EuclideanSpace 𝕜 (Fin m))
+z : EuclideanSpace 𝕜 (Fin m)
+⊢ ((basisColumnMatrix b)⁻¹ * basisColumnMatrix b).mulVec ⇑(b.repr z) = ⇑(b.repr z)
+'MolecularDynamics.basisColumnMatrix_inverse_coefficients' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.basisColumnMatrix_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+docs/verification/2026-10-04-ComplexSpectral/probes/BasisMatrixProbe.lean:44:8: error: `MolecularDynamics.basisColumnMatrix_inverse_coefficients` has already been declared
+'MolecularDynamics.basisColumnMatrix_inverse_coefficients' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.basisColumnMatrix_mulVec_repr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.basisColumnMatrix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]

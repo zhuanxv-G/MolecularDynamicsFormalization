@@ -176,3 +176,8 @@
 
 - Three new modules passed independent probes: genuine Banach operator exponential IVP/unique solution/continuous Flow, exact matrix exponential mulVec bridge plus arbitrary initial time, and real eigenmode/finite/eigenbasis spectral formulas with actual repr coefficients.
 - full-check01 passed:8958jobs,348project audits, Scratch, pinned versions/source scan and stable input SHA. Complex spectra/real solution recovery and general nonlinear initial-state continuity remain open. Section1.5.1 and whole book remain ongoing; final responsible sign-off pending, no new remote CI.
+
+### Complex spectra and real matrix recovery (2026-10-04)
+
+- Three formal candidates integrated: real-time complex eigenmodes/finite/eigenbasis formulas and true Flow, real matrix/real initial-state recovery from ODE uniqueness and conjugation, and basis-column matrix invertibility/actual inverse coefficient solution.
+- integrated ComplexSpectral/full-check01 passed at07:40:13--07:41:57:8961jobs,382project audits, Scratch, pinned versions/scan and stable SHA. General nonlinear initial-state continuity and other Section1.5.1/whole-book tasks remain open; final responsible sign-off pending, no new remote CI.

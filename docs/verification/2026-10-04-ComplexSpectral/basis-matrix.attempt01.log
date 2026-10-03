@@ -1,0 +1,11 @@
+docs/verification/2026-10-04-ComplexSpectral/probes/BasisMatrixProbe.lean:12:54: error(lean.unknownIdentifier): Unknown constant `PiLp.sum_apply`
+docs/verification/2026-10-04-ComplexSpectral/probes/BasisMatrixProbe.lean:13:4: warning: This simp argument is unused:
+  PiLp.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [basisColumnMatrix, Matrix.mulVec, dotProduct, PiLp.sum_apply, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'MolecularDynamics.basisColumnMatrix_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.basisColumnMatrix_mulVec_repr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.basisColumnMatrix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -30,3 +30,6 @@ import MolecularDynamics.Chapter01.FreeParticleFlow
 import MolecularDynamics.Chapter01.LinearFlow
 import MolecularDynamics.Chapter01.MatrixFlow
 import MolecularDynamics.Chapter01.RealSpectralFlow
+import MolecularDynamics.Chapter01.ComplexSpectralFlow
+import MolecularDynamics.Chapter01.RealRecoveryFlow
+import MolecularDynamics.Chapter01.BasisMatrix
