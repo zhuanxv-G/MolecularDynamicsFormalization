@@ -1,5 +1,7 @@
 {
   "observed_at": "2026-10-03T01:36:00+08:00",
+  "latest_connection_attempt_finished_at": "2026-10-03T11:28:00+08:00",
+  "latest_heartbeat_triggered_at": "2026-10-03T02:53:49.629+08:00",
   "project_url": "https://mathcopilot.cn/projects/e275fa19-2b16-4592-8433-8b01d11ef422",
   "old_s1_request": "failed_usage_limit",
   "old_s1_elapsed_seconds": 17,
@@ -8,6 +10,12 @@
   "t2_t5_review_sent": false,
   "t2_t5_review": "pending",
   "browser_ax": "repeated_timeout",
-  "browser_dom_body_text": "successful_read_of_visible_page",
-  "notes": "Desktop account quota is distinct from the exhausted website account. No repeated send before the displayed retry time. Prepared fixed-commit packet is verified locally."
+  "browser_dom_body_text": "last_success_01_36_latest_attempt_timeout",
+  "browser_screenshot": "timeout",
+  "browser_show_then_dom_read": "timeout",
+  "external_edge_launch": "Computer Use app approval timed out",
+  "external_edge_window_after_attempt": false,
+  "current_website_task_state": "unobserved",
+  "current_website_quota_state": "unobserved",
+  "notes": "The later heartbeat triggered after the historically displayed retry time, but DOM and screenshot controls timed out. No review message was filled or sent. Follow-up Windows window listing showed no Edge. Do not repeatedly launch an external app while the user is away. Ordinary heartbeat execution is verified; quota recovery is not. All 14 formal check inputs and the fixed 73702-byte packet were rehashed unchanged at 11:27 local time."
 }
