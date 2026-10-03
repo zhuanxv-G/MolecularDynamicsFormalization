@@ -1,9 +1,16 @@
 import MolecularDynamics.Chapter01.LocalTrajectories
 import Mathlib.Analysis.ODE.ExistUnique
 
-open Set
+open Set Filter
+open scoped Topology
+
+set_option maxHeartbeats 100000
 
 namespace MolecularDynamics
+
+local instance (n : ℕ) : ContinuousSMul ℝ (PhaseSpace n) := by
+  have : IsBoundedSMul ℝ (PhaseSpace n) := NormedSpace.toIsBoundedSMul
+  exact IsBoundedSMul.continuousSMul
 
 /-- A differentiable force gives a differentiable fixed-mass mechanical field. -/
 theorem mechanicalVectorField_contDiffAt {n : ℕ}
@@ -107,6 +114,48 @@ theorem exists_localMechanicalIVP_open_of_force_contDiffAt {n : ℕ}
       IsLocalMechanicalIVP m F Q t₀ z₀ ε γ :=
   exists_localMechanicalIVP_open m F Q hQ t₀ z₀ hz₀
     (mechanicalVectorField_contDiffAt m F z₀ hF)
+
+
+/-- A C¹ mechanical field gives local uniqueness for two solutions through the same state. -/
+theorem mechanicalSolution_eventually_unique_of_contDiffAt {n : ℕ}
+    (m : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (I : Set ℝ) (t₀ : ℝ)
+    (γ η : ℝ → PhaseSpace n) (z₀ : PhaseSpace n)
+    (hI : IsOpen I) (ht₀ : t₀ ∈ I)
+    (hγ : IsMechanicalSolutionOn m F Q I γ)
+    (hη : IsMechanicalSolutionOn m F Q I η)
+    (hinitγ : γ t₀ = z₀) (hinitη : η t₀ = z₀)
+    (hfield : ContDiffAt ℝ 1 (mechanicalVectorField m F) z₀) :
+    γ =ᶠ[𝓝 t₀] η := by
+  obtain ⟨K, S, hS, hLip⟩ := hfield.exists_lipschitzOnWith
+  let v : ℝ → PhaseSpace n → PhaseSpace n := fun _ => mechanicalVectorField m F
+  let s : ℝ → Set (PhaseSpace n) := fun _ => S
+  have hL : ∀ᶠ t in 𝓝 t₀, LipschitzOnWith K (v t) (s t) := by
+    filter_upwards [] with t
+    simpa [v, s] using hLip
+  have hpartsγ := ((isMechanicalSolutionOn_iff_components m F Q I γ hI).1 hγ).2 t₀ ht₀
+  have hpartsη := ((isMechanicalSolutionOn_iff_components m F Q I η hI).1 hη).2 t₀ ht₀
+  have hcontγ : ContinuousAt γ t₀ :=
+    (hpartsγ.1.prodMk hpartsγ.2).continuousAt
+  have hcontη : ContinuousAt η t₀ :=
+    (hpartsη.1.prodMk hpartsη.2).continuousAt
+  have hγS : ∀ᶠ t in 𝓝 t₀, γ t ∈ S :=
+    hcontγ.preimage_mem_nhds (by simpa [hinitγ] using hS)
+  have hηS : ∀ᶠ t in 𝓝 t₀, η t ∈ S :=
+    hcontη.preimage_mem_nhds (by simpa [hinitη] using hS)
+  have hγI : ∀ᶠ t in 𝓝 t₀, t ∈ I := hI.mem_nhds ht₀
+  have hderivγ : ∀ᶠ t in 𝓝 t₀,
+      HasDerivAt γ (v t (γ t)) t ∧ γ t ∈ s t := by
+    filter_upwards [hγI, hγS] with t ht hts
+    exact ⟨((isMechanicalSolutionOn_iff_components m F Q I γ hI).1 hγ).2 t ht |>.1.prodMk
+      (((isMechanicalSolutionOn_iff_components m F Q I γ hI).1 hγ).2 t ht |>.2), by simpa [s] using hts⟩
+  have hderivη : ∀ᶠ t in 𝓝 t₀,
+      HasDerivAt η (v t (η t)) t ∧ η t ∈ s t := by
+    filter_upwards [hγI, hηS] with t ht hts
+    exact ⟨((isMechanicalSolutionOn_iff_components m F Q I η hI).1 hη).2 t ht |>.1.prodMk
+      (((isMechanicalSolutionOn_iff_components m F Q I η hI).1 hη).2 t ht |>.2), by simpa [s] using hts⟩
+  exact ODE_solution_unique_of_eventually hL hderivγ hderivη
+    (hinitγ.trans hinitη.symm)
 
 
 end MolecularDynamics

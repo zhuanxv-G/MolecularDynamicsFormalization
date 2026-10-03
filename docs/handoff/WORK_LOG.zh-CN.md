@@ -537,3 +537,15 @@
 - 实际查看教材印刷19/PDF42的能量导数及总动量结论、印刷24/PDF47的固定质量方程。EnergyDraft 两证明、LocalExistenceDraft 五证明、MomentumDraft 两证明在固定 Lean 中分别完成，公理只含标准逻辑依赖。普通 elan 启动器试图联网更新而失败，改用已安装的固定 Lean 4.34.0 lake 成功。
 - 正式安装 `EnergyConservation.lean`、`LocalExistence.lean`、`MomentumConservation.lean`，更新顶层、Scratch、CheckAxioms。13:56–13:59 的完整 `scripts/check.ps1` 退出0，8935构建任务、182项目声明公理审计及输入稳定均通过；原报告在 `docs/verification/2026-10-03-T4-first-batch/`。证明边界、映射、假设和状态已记录。远端CI、独立网站审阅与负责人语义签核尚未完成。
 - 用户称 MathCopilot 额度更新并在本聊天打开项目页；页面交互读取依旧超时，未能核实额度或提交完整证明审阅，不把本地机器验收当成网站审阅。
+
+## 2026-10-03 14:35 +08:00 — 补齐 C¹ 初始状态附近唯一性
+
+- 在固定 Lean 4.34.0 中先编译独立草稿：从 `ContDiffAt` 的局部 Lipschitz 邻域、两条已有机械解在开放时间集上的导数和初值相等，调用 `ODE_solution_unique_of_eventually`，得到 `γ =ᶠ[𝓝 t₀] η`。草稿最终退出0；过程中的命名空间和 ContinuousSMul 缺失已修正，未把失败草稿当正式结果。
+- 将 `mechanicalSolution_eventually_unique_of_contDiffAt` 集成 `LocalExistence.lean`，补充 Scratch/CheckAxioms、映射、假设、状态和验收报告边界。正式文件已通过单文件固定 Lean 编译；新的完整工程检查和远端 CI 尚未运行。
+- MathCopilot 页面绑定再次在约20秒后超时；即使当前环境报告有项目标签，也没有读取到页面内容或执行发送。网站独立审阅和原报告仍pending。
+
+## 2026-10-03 14:55 +08:00 — C¹ 局部唯一性正式验收通过
+
+- 修正 `set_option` 命令位置后，第三次完整检查退出0：固定版本、源码扫描、8935 jobs、Scratch、184项目声明依赖审计和输入哈希均通过。新增定理 `mechanicalSolution_eventually_unique_of_contDiffAt` 的依赖只有标准逻辑公理。第二次失败报告保留在 `docs/verification/2026-10-03-T4-second-batch/`，不与成功结果混淆。
+- T4检查点、映射、假设、状态和交接均改为精确描述：C¹ 初始状态只给出初始时刻邻域唯一性，全局 Lipschitz 才给共同开区间唯一性；最大/全局延拓与 Theorem 1.1 仍未完成。
+- 新增正式验收结果 `docs/verification/2026-10-03-T4-third-batch/RESULT.zh-CN.md`。当前新增文件尚未形成下一次 Git 提交/远端 CI；旧 T4 提交 `9e146e8` 已推送。

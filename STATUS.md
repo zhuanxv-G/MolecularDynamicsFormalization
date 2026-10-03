@@ -37,7 +37,7 @@
 
 ## Not yet formalized
 
-- Local uniqueness from merely local C¹ regularity, maximal extension and global existence for the mechanical ODE. A local existence result under C¹ force and uniqueness under a global Lipschitz field are recorded below.
+- Maximal extension and global existence for the mechanical ODE. Local existence and local uniqueness under C¹ regularity at the initial state, plus interval uniqueness under a global Lipschitz field, are recorded below.
 - Higher regularity of the force, potential and trajectory beyond the explicit derivative bridges.
 - Time-trajectory Hamiltonian/mechanical equivalence beyond the static T3 identities.
 - A whole-space momentum bound, the global continuation argument, and the full stability theorem. Energy conservation on open intervals for existing conservative solutions is recorded below.
@@ -79,7 +79,7 @@
 
 - Integrated `EnergyConservation.lean`, `LocalExistence.lean` and `MomentumConservation.lean`, with the imports and key axiom checks in the project root, Scratch and `scripts/CheckAxioms.lean`.
 - For an existing solution on an open time interval, strictly positive masses, differentiable potential and `F = -gradient U`, the mechanical Hamiltonian has zero derivative and is constant on that interval. The corresponding printed energy identity is on printed19/PDF42.
-- A C¹ force at the initial position gives a local solution through a prescribed state on an open configuration domain containing it. Two solutions on a common open interval are equal when the mechanical vector field has a supplied global Lipschitz constant. These are different sufficient hypotheses; no maximal flow or global existence is claimed.
+- A C¹ force at the initial position gives a local solution through a prescribed state on an open configuration domain containing it. C¹ regularity of the mechanical field at a common initial state gives equality of two solutions near the initial time; a separate theorem gives equality on a whole common open interval under a supplied global Lipschitz constant. No maximal flow or global existence is claimed.
 - For particle-first coordinates, each component of total momentum has zero derivative and is constant when the sum of forces in that direction vanishes on the configuration domain. The printed momentum assertion is on printed19/PDF42.
 - Integrated `scripts/check.ps1` passed at 13:56–13:59 +08:00: pinned Lean 4.34.0/mathlib revision, source scan, 8935 build jobs, Scratch and 182 imported declaration dependency audits. The key declarations depend only on `propext`, `Classical.choice` and `Quot.sound`. Evidence is in `docs/verification/2026-10-03-T4-first-batch/`.
 - Independent MathCopilot review, remote CI for this T4 snapshot, and responsible textbook semantic sign-off remain pending.

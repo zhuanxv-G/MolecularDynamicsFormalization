@@ -2,10 +2,10 @@
 
 ## 本聊天接续 T4 检查点（2026-10-03 14:00 +08:00）
 
-- 分支 `chapter01-kinetic-energy-nonneg`，验收时 HEAD `21b4d6cbb5121c5f194a4dda9b9d718148b2e1a1`。三份 T4 正式模块、顶层导入、Scratch、CheckAxioms 已写入工作树，另更新 `FORMALIZATION_MAP.md`、`ASSUMPTIONS.md`、`STATUS.md` 和 T4 检查点；这些是本聊天待提交文件。原有 `FORMALIZATION_PLAN.md`、网站状态和其他未跟踪文件均保留，不纳入 T4 范围。
-- 已通过完整 `scripts/check.ps1 -ReportDirectory docs/verification/2026-10-03-T4-first-batch`：固定 Lean/mathlib、源码扫描、8935 jobs、Scratch、182项声明公理审计，关键项仅标准逻辑公理；`CHECK_REPORT.json` 的退出码为0且输入 SHA 固定。教材印刷19/PDF42和24/PDF47已实际看图。负责人最终语义签核仍pending。
-- 已正式证明已有保守机械解的能量守恒、C¹ 力场的局部存在、全局 Lipschitz 场下共同区间唯一性、合力为零的总动量分量守恒。局部 C¹ 唯一性、最大/全局延拓、完整 Theorem1.1 尚未证明。T4 此快照的 Git/远端CI尚未完成。
-- 用户报告 MathCopilot 额度已更新且在本聊天打开项目页；Browser 的正文与交互读取仍反复超时，未核实额度、未发送 T2/T5/T3 完整证明审阅，也未收到相应原报告。固定 T2/T5 审阅包保持原 9baf 输入。下一步先具体暂存并保存 T4 结果、核对远端 CI，然后推进尚缺的数学链；只有页面可读且确认运行状态后才发送独立审阅。
+- 分支 `chapter01-kinetic-energy-nonneg`，新增 T4 已推送提交 `9e146e83d1747fb7cc4194b0b67fdbce8cb955eb`。三份 T4 正式模块、C¹ 初始状态附近唯一性、顶层导入、Scratch、CheckAxioms 已写入提交，另更新 `FORMALIZATION_MAP.md`、`ASSUMPTIONS.md`、`STATUS.md` 和 T4 检查点；原有 `FORMALIZATION_PLAN.md`、网站状态和其他未跟踪文件均保留，不纳入 T4 范围。
+- 已通过完整 `scripts/check.ps1 -ReportDirectory docs/verification/2026-10-03-T4-third-batch`：固定 Lean/mathlib、源码扫描、8935 jobs、Scratch、184项声明公理审计，关键项仅标准逻辑公理；`CHECK_REPORT.json` 的退出码为0且输入 SHA 固定。教材印刷19/PDF42和24/PDF47已实际看图。负责人最终语义签核仍pending。
+- 已正式证明已有保守机械解的能量守恒、C¹ 力场的局部存在、共同初始状态下由机械场局部 C¹ 得到的初始时刻附近唯一性、全局 Lipschitz 场下共同区间唯一性、合力为零的总动量分量守恒。最大/全局延拓、完整 Theorem1.1 尚未证明。T4 新增唯一性定理后的远端CI尚未完成。
+- 用户报告 MathCopilot 额度已更新且在本聊天打开项目页；Browser 的正文与交互读取仍反复超时，未核实额度、未发送 T2/T5/T3 完整证明审阅，也未收到相应原报告。固定 T2/T5 审阅包保持原 9baf 输入。下一步先保存新增 T4 结果、核对远端 CI，然后推进尚缺的数学链；只有页面可读且确认运行状态后才发送独立审阅。
 
 ## 本聊天 t2 heartbeat 观察（2026-10-03T13:24:14.7204957+08:00）
 
