@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T13:36:31.5154511+08:00",
+  "updated_at": "2026-10-03T20:34:11.032609+08:00",
   "controller_thread": "01a0ffde-bd33-7c63-96d4-67969e803263",
   "source_thread": "01a0fc74-b28e-7083-893e-aa05a06652ac",
   "task": "T3 fixed-mass Hamiltonian continuation only",
@@ -18,7 +18,14 @@
     "build_jobs": 8932,
     "imported_project_declarations_audited": 171,
     "input_count": 15,
-    "all_input_hashes_still_match": true
+    "input_hashes_match_fixed_t3_commit": true,
+    "all_input_hashes_still_match": false,
+    "later_T4_changed_shared_inputs": [
+      "MolecularDynamicsFormalization.lean",
+      "Scratch.lean",
+      "scripts/CheckAxioms.lean"
+    ],
+    "coverage": "Fixed T3 commit 21b4d6c; current broader T4 branch is covered by its separate checks"
   },
   "original_nine_goals": {
     "exit_code": 0,
@@ -64,14 +71,31 @@
     }
   ],
   "responsible_final_semantic_signoff": "pending human responsible or senior reviewer",
-  "mathcopilot_sent": false,
-  "mathcopilot_review": "pending",
-  "website_quota": "user reports updated; not directly readable",
-  "browser_failure": "Old and new Browser page controls time out; tabs listing works",
+  "mathcopilot_sent": true,
+  "mathcopilot_review": "Independent T3 session running; matching Lean 4.34.0 verified and fixed mathlib dependencies being built; report pending",
+  "mathcopilot_status_file": "MATHCOPILOT_STATUS.json",
+  "website_quota": "Historical T3 error says retry at 7:09 PM; after that time the separate T2/T5 request is observed running",
+  "browser_failure": "Historical timeouts retained. Supported DOM reads and actions now work with bounded calls, with some action timeouts requiring result verification.",
   "computer_use_stop": "External Edge launched; helper then stopped because current URL could not be reliably determined; no further Computer Use actions",
   "automatic_approval_rejection": false,
-  "git_code_commit": null,
-  "git_pushed": false,
-  "remote_CI": "pending",
-  "next_action": "Save the accepted T3 snapshot to Git and validate its CI. Website review waits for a readable supported browser session, then confirms no duplicate request before sending frozen T3 input. Do not redo accepted proofs."
+  "git_code_commit": "21b4d6cbb5121c5f194a4dda9b9d718148b2e1a1",
+  "git_pushed": true,
+  "current_head_at_checkpoint": "7c61e9d001887066bfa03771343ce91e7ce68ddb",
+  "remote_CI": {
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "21b4d6cbb5121c5f194a4dda9b9d718148b2e1a1",
+    "run_id": 37101092891,
+    "job_id": 111140613029,
+    "artifact_id": 11266920446,
+    "artifact_downloaded": true,
+    "artifact_zip_bytes": 5013,
+    "artifact_zip_sha256": "0124589fa611127393b6394e14d282a9fce319d4cc06eb666116347de5d4e0b1",
+    "receipt_verified": true,
+    "zip_members_verified": 11,
+    "fixed_commit_input_hashes_verified": 15,
+    "raw_check_logs_verified": 10,
+    "receipt": "docs/verification/2026-10-03-T3-first-batch-retry03/remote-ci/RECEIPT_VERIFICATION.json"
+  },
+  "next_action": "Verify independent T3 website session and receive its original reports/ZIP. Do not interrupt the T2/T5 session or repeat completed Lean proofs. Preserve active other-chat work and stage only this T3 evidence."
 }

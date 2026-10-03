@@ -8,6 +8,14 @@
 
 T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/证据。其正式 Hamiltonian 提交已集成，不覆盖其专属未跟踪材料。本工作树的原 `FORMALIZATION_PLAN.md`、旧 WEBSITE_STATUS、T1/T2/T3/T5 专属未跟踪材料保留，仅暂存本批明确文件。
 
+## T3 接续独立检查点（2026-10-03 20:27 +08:00）
+
+- 所有者聊天`01a0ffde-bd33-7c63-96d4-67969e803263`仅负责T3收尾。固定代码提交`21b4d6cbb5121c5f194a4dda9b9d718148b2e1a1`已推送；本地8932 jobs/171声明审计、原九Goal、七边界及原页对照均完成，负责人最终语义签核仍pending。
+- 本轮实际下载并核验远端run37101092891/job111140613029的成功ZIP：artifact11266920446，5013字节、SHA`0124589fa611127393b6394e14d282a9fce319d4cc06eb666116347de5d4e0b1`。11件成员/10份原日志/15项固定Git输入/56件冻结交付与两探针SHA全部匹配。证据在`docs/verification/2026-10-03-T3-first-batch-retry03/remote-ci/`；此次是收件复核，没有重新运行本地Lean。
+- 原共享网站T3请求先后因capacity和usage limit中断；另一T2/T5附件随后明确替换范围。已另开独立网站会话，短正文加完整规范启动成功，实际读取Lean Blueprint/Lean Proof流程和固定归档，精确核实Lean4.34.0，当前正在新隔离目录中物化固定mathlib并构建。不要在T2/T5会话发送T3、不要向独立T3重复发送。
+- 新T3源目录`/workspace/.mathcopilot/reviews/T3_21b4d6cbb512_independent_20261003/source/repo`；目标收件ZIP`/workspace/share/T3_READONLY_REVIEW_21b4_20261003.zip`。运行截图/状态/新指令在`docs/tasks/T3_implementation/continuation-20261003/`。网站完整原报告和实际Lean检查结果尚未收齐。
+- 恢复第一动作：观察独立T3网站会话，结束后下载报告及原日志，核对固定提交和输入/输出SHA，处理真实意见；不重做已通过证明，不纳入另一个聊天正在推进的T4源码与未提交材料。
+
 ## 已完成与实际验证
 
 - T2 `LocalTrajectories.lean`：五定义、十五完整证明，七规格 ID，真实导数/Newton 双向桥接和 B3 可微语义层。本地完整检查、允许公理审计与远端 CI 已通过。

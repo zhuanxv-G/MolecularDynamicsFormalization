@@ -1,0 +1,14 @@
+MolecularDynamics.Position (n : ℕ) : Type
+MolecularDynamics.SeparableEnergy.hamiltonian {n : ℕ} (energy : MolecularDynamics.SeparableEnergy n) :
+  MolecularDynamics.Hamiltonian n
+MolecularDynamics.massHamiltonian {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (U : MolecularDynamics.PotentialEnergy n) : MolecularDynamics.Hamiltonian n
+MolecularDynamics.hamiltonianVectorField {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (U : MolecularDynamics.PotentialEnergy n) (z : MolecularDynamics.PhaseSpace n) : MolecularDynamics.PhaseSpace n
+'MolecularDynamics.momentumKineticEnergy_eq_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_massOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_particle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_momentumKineticEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_position_slice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hamiltonianVectorField_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_velocityOperator' depends on axioms: [propext, Classical.choice, Quot.sound]

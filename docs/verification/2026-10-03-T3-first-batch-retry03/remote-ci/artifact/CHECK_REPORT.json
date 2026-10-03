@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0",
+  "started_at": "2026-10-03T13:52:08.2331322+08:00",
+  "finished_at": "2026-10-03T13:52:42.9362515+08:00",
+  "project_root": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "head": "21b4d6cbb5121c5f194a4dda9b9d718148b2e1a1",
+  "git_status": "",
+  "expected_toolchain": "leanprover/lean4:v4.34.0",
+  "expected_mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+  "lean_version": "Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "lake_version": "Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)",
+  "actual_mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+  "source_scan": "passed",
+  "inputs": [
+    {
+      "relative_path": ".github/workflows/lean_action_ci.yml",
+      "sha256": "dedfe9952e8de6eca35ca12c9f34e4d3ded9b214520e5dc216c55f3f0bc30414"
+    },
+    {
+      "relative_path": "lake-manifest.json",
+      "sha256": "5156c987301057f3386cd99b43d5125e87b82bd245e712c60152cc4b5f357aba"
+    },
+    {
+      "relative_path": "lakefile.toml",
+      "sha256": "bdfb6a94cabc34eafe50274555e00374bd976139054b7cf3d69f139d79ff5197"
+    },
+    {
+      "relative_path": "lean-toolchain",
+      "sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632"
+    },
+    {
+      "relative_path": "MolecularDynamics/BasicDefinitions.lean",
+      "sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/Hamiltonian.lean",
+      "sha256": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/NBody.lean",
+      "sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/PotentialBarriers.lean",
+      "sha256": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6"
+    },
+    {
+      "relative_path": "MolecularDynamics/Notation.lean",
+      "sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588"
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "sha256": "9e34ee112be792575bf27ebe11464bb7fee9e6ee9a5568d3c2d4e844a52583ce"
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "sha256": "1d7c3f6106a33cfc9a46ae71fd272ccbb1d4d6fc3e886bb76d2bf4bf11517e55"
+    },
+    {
+      "relative_path": "scripts/check.ps1",
+      "sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d"
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "sha256": "314c54dc210fe2cea76cd87a68e43a673752188a51b9dd76d45b43b69b74e039"
+    }
+  ],
+  "checks": [
+    {
+      "name": "git_branch",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "git_branch.log",
+      "raw_log_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4"
+    },
+    {
+      "name": "git_head",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "git_head.log",
+      "raw_log_sha256": "366a5897e9468791f2bc8b2a19a90ebff9fe6b56218a02a470882b453107b92c"
+    },
+    {
+      "name": "git_status",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+        "status",
+        "--short"
+      ],
+      "cwd": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "git_status.log",
+      "raw_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lake_version",
+      "executable": "/home/runner/.elan/bin/lake",
+      "arguments": [
+        "--version"
+      ],
+      "cwd": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "lake_version.log",
+      "raw_log_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc"
+    },
+    {
+      "name": "lean_version",
+      "executable": "/home/runner/.elan/bin/lake",
+      "arguments": [
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "lean_version.log",
+      "raw_log_sha256": "5bec5021813e7a8f050ed61f86c57cc57c3b5b79d2ca84c19c47406e6a34defc"
+    },
+    {
+      "name": "mathlib_revision",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization/.lake/packages/mathlib",
+        "-C",
+        "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization/.lake/packages/mathlib",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "mathlib_revision.log",
+      "raw_log_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3"
+    },
+    {
+      "name": "mathlib_status",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization/.lake/packages/mathlib",
+        "-C",
+        "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization/.lake/packages/mathlib",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "mathlib_status.log",
+      "raw_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lake_build",
+      "executable": "/home/runner/.elan/bin/lake",
+      "arguments": [
+        "build"
+      ],
+      "cwd": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "lake_build.log",
+      "raw_log_sha256": "a332e0987f8b5e59b9ab25219cbff50691302668fcb3203be2d4f5f68aaaf7c2"
+    },
+    {
+      "name": "scratch",
+      "executable": "/home/runner/.elan/bin/lake",
+      "arguments": [
+        "env",
+        "lean",
+        "Scratch.lean"
+      ],
+      "cwd": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "scratch.log",
+      "raw_log_sha256": "ded65d599569891f6f273f318f9c5c79391dc0581e22ad5eff3a31b3fa8cd05b"
+    },
+    {
+      "name": "axiom_dependencies",
+      "executable": "/home/runner/.elan/bin/lake",
+      "arguments": [
+        "env",
+        "lean",
+        "scripts/CheckAxioms.lean"
+      ],
+      "cwd": "/home/runner/work/MolecularDynamicsFormalization/MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "axiom_dependencies.log",
+      "raw_log_sha256": "165a91d4620aabc6588b01906b133bc3ccfe42ba3c75c6d8e9fac245173c7b58"
+    }
+  ],
+  "machine_check_status": "passed",
+  "exit_code": 0,
+  "responsible_semantic_review": "pending",
+  "failed_phase": null,
+  "error": null
+}
