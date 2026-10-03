@@ -1,0 +1,4 @@
+'MolecularDynamics.isFirstIntegralOn_iff_differential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.firstIntegral_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.firstIntegral_differential_necessary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.firstIntegral_gradient_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]

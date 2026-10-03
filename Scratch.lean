@@ -174,3 +174,17 @@ end MolecularDynamics
 #print axioms MolecularDynamics.basisColumnMatrix_mulVec_repr
 #print axioms MolecularDynamics.basisColumnMatrix_isUnit
 #print axioms MolecularDynamics.basisColumnMatrix_inverse_coefficients
+#print axioms MolecularDynamics.firstIntegral_hasDerivAt_zero
+#print axioms MolecularDynamics.firstIntegral_const_on_Ioo
+#print axioms MolecularDynamics.firstIntegral_differential_necessary
+#print axioms MolecularDynamics.isFirstIntegralOn_iff_differential
+#print axioms MolecularDynamics.firstIntegral_gradient_criterion
+#print axioms MolecularDynamics.planarAngularMomentum_hasDerivAt_zero
+#print axioms MolecularDynamics.planarAngularMomentum_const_on_Ioo
+#print axioms MolecularDynamics.centralForce_planarAngularMomentum_const
+#print axioms MolecularDynamics.polarKinetic_identity
+#print axioms MolecularDynamics.polarAngularMomentum_identity
+#print axioms MolecularDynamics.keplerPolarLagrangian_identity
+#print axioms MolecularDynamics.polarCoordinates_hasDerivAt_components
+#print axioms MolecularDynamics.polarJacobian_det
+#print axioms MolecularDynamics.polarJacobian_isUnit_iff

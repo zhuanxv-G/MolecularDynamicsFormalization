@@ -317,3 +317,19 @@ BasisMatrix03 passed; integrated ComplexSpectral/full-check01 passed at07:40:13-
 
 These results complete the checked linear example formulas, not all nonlinear
 claims of Section1.5.1 or the whole book. Responsible sign-off remains pending.
+
+## First integrals, angular momentum and polar dependencies (2026-10-04)
+
+Printed28--29/PDF51--52 viewed. Independent probes passed;
+FirstIntegrals/full-check01 passed at07:49:56--07:52:08:8964jobs,403project audits, Scratch, pinned versions/scan and stable SHA.
+
+| Result | Lean declaration | Exact boundary |
+| --- | --- | --- |
+| Genuine first-integral criterion | IsFirstIntegralOn, isFirstIntegralOn_iff_differential, firstIntegral_const_on_Ioo, firstIntegral_gradient_criterion | Actual conservation along all Q-valued interval trajectories iff DI·f=0, with open Q/C1 f/local IVPs for necessity, differentiable I. Hilbert gradient bridge separately proved. |
+| Planar conservation | planarAngularMomentum_hasDerivAt_zero, planarAngularMomentum_const_on_Ioo, centralForce_planarAngularMomentum_const | Unit-mass planar actual ODE and zero torque; central-force torque zero is proved. |
+| Polar identities | polarKinetic_identity, polarAngularMomentum_identity, keplerPolarLagrangian_identity | Actual trig/algebraic identities for velocity/kinetic energy/angular momentum and the displayed Kepler L expression. |
+| Actual polar curve derivatives | polarCoordinates_hasDerivAt_components | True HasDerivAt assumptions for r,theta yield actual Cartesian time derivatives. |
+| Coordinate coefficient matrix | polarJacobian_det, polarJacobian_isUnit_iff | det=r and invertibility iff r≠0 for the velocity-transform matrix; a full Frechet Jacobian and general EL covariance remain separate. |
+
+Kepler potential gradient, polar dynamics/radial quadrature, action-angle and
+torus claims remain open. Section1.5.2 stays partial; responsible sign-off pending.

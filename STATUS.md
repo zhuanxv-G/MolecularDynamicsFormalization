@@ -181,3 +181,8 @@
 
 - Three formal candidates integrated: real-time complex eigenmodes/finite/eigenbasis formulas and true Flow, real matrix/real initial-state recovery from ODE uniqueness and conjugation, and basis-column matrix invertibility/actual inverse coefficient solution.
 - integrated ComplexSpectral/full-check01 passed at07:40:13--07:41:57:8961jobs,382project audits, Scratch, pinned versions/scan and stable SHA. General nonlinear initial-state continuity and other Section1.5.1/whole-book tasks remain open; final responsible sign-off pending, no new remote CI.
+
+### First integrals, planar conservation and polar dependencies (2026-10-04)
+
+- Genuine first-integral conservation/differential equivalence with local IVP necessity, true planar central-force angular momentum, actual polar time derivatives and static kinetic/angular/Lagrangian/coefficient determinant formulas passed independent probes and are formally integrated.
+- FirstIntegrals/full-check01 passed at07:49:56--07:52:08:8964jobs,403project audits, Scratch, pinned versions/scan and stable SHA. Kepler gradient/dynamics/quadrature, action-angle/torus and further content remain open; Section1.5.2 and whole book stay ongoing, responsible final sign-off pending, no new remote CI.

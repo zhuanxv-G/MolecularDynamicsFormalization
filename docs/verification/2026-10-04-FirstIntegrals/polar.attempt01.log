@@ -1,0 +1,23 @@
+docs/verification/2026-10-04-FirstIntegrals/probes/PolarProbe.lean:38:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  v * Real.cos (θ t) + r t * (-Real.sin (θ t) * ω)
+in the target expression
+  HasDerivAt (r * Real.cos ∘ θ) (v * (Real.cos ∘ θ) t + r t * (-Real.sin (θ t) * ω)) t
+
+r θ : ℝ → ℝ
+v ω t : ℝ
+hr : HasDerivAt r v t
+hθ : HasDerivAt θ ω t
+hc : HasDerivAt (r * Real.cos ∘ θ) (v * (Real.cos ∘ θ) t + r t * (-Real.sin (θ t) * ω)) t
+hs : HasDerivAt (r * Real.sin ∘ θ) (v * (Real.sin ∘ θ) t + r t * (Real.cos (θ t) * ω)) t
+heqc : v * Real.cos (θ t) + r t * (-Real.sin (θ t) * ω) = v * Real.cos (θ t) - r t * ω * Real.sin (θ t)
+heqs : v * Real.sin (θ t) + r t * (Real.cos (θ t) * ω) = v * Real.sin (θ t) + r t * ω * Real.cos (θ t)
+⊢ HasDerivAt (fun u => r u * Real.cos (θ u)) (v * Real.cos (θ t) - r t * ω * Real.sin (θ t)) t ∧
+    HasDerivAt (fun u => r u * Real.sin (θ u)) (v * Real.sin (θ t) + r t * ω * Real.cos (θ t)) t
+'MolecularDynamics.polarKinetic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarAngularMomentum_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolarLagrangian_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCoordinates_hasDerivAt_components' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.polarJacobian_isUnit_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

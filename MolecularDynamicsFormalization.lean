@@ -33,3 +33,6 @@ import MolecularDynamics.Chapter01.RealSpectralFlow
 import MolecularDynamics.Chapter01.ComplexSpectralFlow
 import MolecularDynamics.Chapter01.RealRecoveryFlow
 import MolecularDynamics.Chapter01.BasisMatrix
+import MolecularDynamics.Chapter01.FirstIntegrals
+import MolecularDynamics.Chapter01.PlanarAngularMomentum
+import MolecularDynamics.Chapter01.PolarCoordinates

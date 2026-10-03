@@ -987,3 +987,31 @@
 - ComplexSpectral/full-check01于07:40:13--07:41:57实际退出0：8961jobs、Scratch、382声明依赖审计、固定工具链/mathlib、扫描与正式输入SHA稳定。16项新关键审计仅三项允许基础公理。
 - 真复谱公式、实矩阵/实初值的真实实值恢复、列基矩阵X真可逆及c=X⁻¹ζ全已完整本地验证；原页印刷27--28/PDF50--51核对，负责人最终教材语义签核pending，新远端CI未跑。§1.5.1仍partial，全书持续。
 - 现在本地保存本批明确文件及全部原始失败/成功日志，保留无关既有材料；不推送/合并。随后启动§1.5.2 FirstIntegralProbe，原页印刷28/PDF51已实际查看，真实局部IVP用于必要方向，不把结论藏进存在假设。
+
+## 2026-10-04 07:45 +08:00 — 第一积分真实等价首轮通过
+
+- FirstIntegralProbe attempt01首次退出0，四项关键仅三项允许基础公理。IsFirstIntegralOn实际量化状态域内所有真实Ioo曲线；DI·f=0充分方向由真链式法则/导数零，必要方向由C1真实局部IVP并缩到开Q推得，未假设想证明的轨迹或微分条件。梯度表达也实际核实。
+- 首轮证明完整落盘，尚未正式集成/全验收。新增AngularMomentumProbe：单位质量平面真ODE+零力矩给真角动量导数0/守恒，再证任意中心力零力矩。印刷29/PDF52已核对，不提前计Kepler梯度/积分解或全§1.5.2完成。
+
+### 07:47 +08:00 — 中心力真实角动量守恒首轮通过
+
+- AngularMomentumProbe attempt01首次退出0，三项关键仅三项允许基础公理；位置/动量真导数逐坐标链式投影、乘积法则消去p₀p₁项，零力矩/中心力给真实角动量导数0和区间守恒。
+- 单位质量平面2维；任意中心力c(q)q及实际轨迹，未假定角动量本来守恒，没有把固定外源Kepler的总线动量也称守恒。Kepler势的实际负梯度和全局碰撞避免还未证明。
+- PolarProbe已落盘：真极坐标时间导数、动能/Lagrangian/角动量恒等式以及Jacobian det=r/非零r的真可逆性。原页印刷29/PDF52实际核对，开始首轮验证。
+
+### 07:49 +08:00 — 极坐标首轮四项通过，真实导数组合展开修复
+
+- PolarProbe attempt01中动能、角动量、Kepler形式Lagrangian恒等式及Jacobian非零r可逆性均仅三项允许基础公理。真实时间导数只因cos∘θ的apply未显式展开，系数rw无匹配失败；dsimp Function.comp_def后再rw，保留原导数类型。
+- 原始失败日志保留；准备attempt02。印刷30/PDF53、31/PDF54已实际查看：Kepler有效径向能量/角积分、谐振子action-angle/环面及线性化依赖登记后续，不提前计完成。
+
+## 2026-10-04 07:50 +08:00 — 第一积分/角动量/极坐标正式集成验收启动
+
+- Polar attempt02退出0，动能/角动量/Lagrangian恒等式、真实极坐标时间导数及det=r可逆边界五项仅三项允许基础公理。
+- 三模块FirstIntegrals/PlanarAngularMomentum/PolarCoordinates正式接入，Scratch/CheckAxioms增14关键审计，映射/假设/状态/本地语义报告同步。开始FirstIntegrals/full-check01，冻结正式Lean输入。
+- 原页印刷28--29/PDF51--52核对；Kepler完整势梯度/极坐标EL、径向有效能量/角积分解、action-angle/环面及一般Jacobian/EL协变均不计本批完成。负责人最终签核pending，继续独立证明无需等待签字。
+
+## 2026-10-04 07:54 +08:00 — 第一积分/平面角动量/极坐标完整验收通过
+
+- FirstIntegrals/full-check01实际07:49:56--07:52:08退出0：8964jobs、Scratch、403声明依赖审计、固定版本/扫描与SHA稳定，14项关键新显式审计仅允许三项基础公理。原失败/成功日志均保留。
+- §1.5.2更新partial；只计真实第一积分等价、中心力真角动量与极坐标时间导数/静态公式/速度系数det=r。一般Frechet Jacobian/EL协变、Kepler势梯度/径向积分、action-angle/环面都不称完成。负责人最终语义签核pending，新远端CI未跑。
+- 按授权本地保存本批明确文件，保留无关材料，未推送/合并。KeplerProbe已开始session36255：真实-1/‖q‖梯度和C1力，显式q≠0，不以总除法隐藏原点奇异。下一动作读诊断，继续独立证明。
