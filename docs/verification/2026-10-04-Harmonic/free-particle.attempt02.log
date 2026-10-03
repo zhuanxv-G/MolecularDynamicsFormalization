@@ -1,0 +1,6 @@
+'MolecularDynamics.freeParticleFlow_isMechanicalSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_isGlobalFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleContinuousFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_energy' depends on axioms: [propext, Classical.choice, Quot.sound]

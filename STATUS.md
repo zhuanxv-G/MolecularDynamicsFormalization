@@ -165,3 +165,9 @@
 - Flow/full-check02 passed at06:52:24--06:54:30:8953jobs, Scratch,286imported declaration audits, stable pinned Lean/mathlib and input SHA. Eleven new key explicit dependencies use only the permitted three foundational axioms.
 - Time reversal, genuine all-real-time barrier IVPs, concrete invariant all-time families, composition/commutation, inverse maps, bijectivity and energy invariance are locally machine-accepted. Initial-state continuity and a continuous Dynamics.Flow structure remain unproved; other chapter/book content remains open.
 - Original printed26/PDF49 and local statement review completed; final responsible semantic sign-off pending, no new remote CI. Next task is the explicit harmonic-oscillator flow on printed27/PDF50.
+
+### Explicit oscillator and zero-frequency flow (2026-10-04)
+
+- HarmonicOscillator: true unit-mass ODE, Ω≠0, joint time/state continuity, actual Flow, composition/inverse, actual potential gradient and Hamiltonian invariance passed independent probe03. FreeParticleFlow: actual q₀+tM⁻¹p₀/constant p, joint continuity and Flow passed probe02.
+- Integrated full-check02 passed at07:09:12--07:10:36:8955jobs, Scratch,310declaration audits, stable pinned inputs. Failed full-check01 is preserved: module documentation preceded imports; file order was corrected and the oscillator module rebuilt successfully. Failed probe logs are retained without treating error-recovery sorryAx as accepted evidence.
+- Section1.5.1 remains partial; general initial continuity and linear/spectral/matrix examples remain open. Whole book remains ongoing; final responsible semantic sign-off pending, no new remote CI.

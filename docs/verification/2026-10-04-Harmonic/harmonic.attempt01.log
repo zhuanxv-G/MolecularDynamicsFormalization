@@ -1,0 +1,34 @@
+docs/verification/2026-10-04-Harmonic/probes/HarmonicProbe.lean:42:4: error: Type mismatch: After simplification, term
+  hq
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Position n)
+    (PiLp.normedAddCommGroup 2 fun x => ℝ).toAddCommGroup (PiLp.normedSpace 2 ℝ fun x => ℝ).toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    ((fun y => (Real.cos ∘ HMul.hMul Ω) y • z.1) + fun y => (Real.sin (Ω * y) / Ω) • z.2)
+    ((-Ω * Real.sin (Ω * t)) • z.1 + Real.cos (Ω * t) • z.2) t
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Position n) (WithLp.instAddCommGroup 2 (Fin n → ℝ))
+    (WithLp.instModule 2 ℝ (Fin n → ℝ)) (PiLp.topologicalSpace 2 fun x => ℝ) ⋯
+    (fun u => Real.cos (Ω * u) • z.1 + (Real.sin (Ω * u) / Ω) • z.2)
+    ((-Ω * Real.sin (Ω * t)) • z.1 + Real.cos (Ω * t) • z.2) t
+docs/verification/2026-10-04-Harmonic/probes/HarmonicProbe.lean:52:4: error: Type mismatch: After simplification, term
+  hp
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Position n)
+    (PiLp.normedAddCommGroup 2 fun x => ℝ).toAddCommGroup (PiLp.normedSpace 2 ℝ fun x => ℝ).toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    ((fun y => (-Ω * (Real.sin ∘ HMul.hMul Ω) y) • z.1) + fun y => (Real.cos ∘ HMul.hMul Ω) y • z.2)
+    (-Ω ^ 2 • (Real.cos (Ω * t) • z.1 + (Real.sin (Ω * t) / Ω) • z.2)) t
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Momentum n) (WithLp.instAddCommGroup 2 (Fin n → ℝ))
+    (WithLp.instModule 2 ℝ (Fin n → ℝ)) (PiLp.topologicalSpace 2 fun x => ℝ) ⋯
+    (fun u => (-Ω * Real.sin (Ω * u)) • z.1 + Real.cos (Ω * u) • z.2)
+    (-Ω ^ 2 • (Real.cos (Ω * t) • z.1 + (Real.sin (Ω * t) / Ω) • z.2)) t
+'MolecularDynamics.harmonicFlow_isMechanicalSolution' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicFlow_isGlobalFlow' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicFlow_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicFlow_add' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicFlow_inverse' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

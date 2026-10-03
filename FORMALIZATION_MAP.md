@@ -269,3 +269,19 @@ on its first run) and passed Flow/full-check02 at06:52:24--06:54:30:
 Initial-state continuity, a continuous Dynamics.Flow structure, arbitrary
 coercive-potential global existence and all remaining Section1.5.1 content
 remain separate. Responsible semantic sign-off and new remote CI are pending/not run.
+
+## Explicit harmonic and free-particle flows (2026-10-04)
+
+Printed27/PDF50 was visually checked. HarmonicOscillator and FreeParticleFlow
+independent probes passed; integrated full-check02 passed at07:09:12--07:10:36 (8955jobs,310declaration audits, stable pinned inputs).
+
+| Result | Lean declarations | Scope |
+| --- | --- | --- |
+| Explicit oscillator | harmonicFlow_isMechanicalSolution, harmonicFlow_isGlobalFlow | Actual q'=p, p'=-Ω²q on all real time, unit masses, nonzero scalar Ω, arbitrary finite n. |
+| Continuous oscillator flow | harmonicFlow_continuous, harmonicContinuousFlow, harmonicFlow_add, harmonicFlow_inverse | Joint time/state continuity and actual mathlib Flow; composition/inverse derive from genuine ODE uniqueness. |
+| Oscillator energy | hasGradientAt_harmonicPotential, harmonicFlow_energy | True gradient of ΣΩ²qᵢ²/2 and actual Hamiltonian conservation. |
+| Free particle | freeParticleFlow_isMechanicalSolution, freeParticleFlow_isGlobalFlow, freeParticleFlow_add | q=q₀+tM⁻¹p₀, constant p, actual all-time total mass-operator ODE. Physical interpretation uses positive masses. |
+| Continuous free flow | freeParticleFlow_continuous, freeParticleContinuousFlow, freeParticleFlow_energy | Joint continuity, genuine Flow and zero-potential energy invariance. |
+
+General initial-state dependence, spectral decomposition, matrix exponential,
+and all remaining Section1.5.1 claims are separate. Responsible sign-off pending.

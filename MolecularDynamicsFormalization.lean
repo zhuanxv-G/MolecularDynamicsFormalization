@@ -25,3 +25,5 @@ import MolecularDynamics.Chapter01.LegendreTransform
 import MolecularDynamics.Chapter01.FutureFlow
 import MolecularDynamics.Chapter01.TimeReversal
 import MolecularDynamics.Chapter01.GlobalFlow
+import MolecularDynamics.Chapter01.HarmonicOscillator
+import MolecularDynamics.Chapter01.FreeParticleFlow

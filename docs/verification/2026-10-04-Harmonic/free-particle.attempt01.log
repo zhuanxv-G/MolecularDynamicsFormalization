@@ -1,0 +1,33 @@
+docs/verification/2026-10-04-Harmonic/probes/FreeParticleProbe.lean:22:9: error: Application type mismatch: The argument
+  HasDerivAt.const_add z.1 (HasDerivAt.smul_const (hasDerivAt_id t) ((velocityOperator m) z.2))
+has type
+  HasDerivAt (fun x => z.1 + id x • (velocityOperator m) z.2) (1 • (velocityOperator m) z.2) t
+but is expected to have type
+  HasDerivAt (fun s => (freeParticleFlow m s z).1) ((velocityOperator m) (freeParticleFlow m t z).2) t
+in the application
+  And.intro (HasDerivAt.const_add z.1 (HasDerivAt.smul_const (hasDerivAt_id t) ((velocityOperator m) z.2)))
+docs/verification/2026-10-04-Harmonic/probes/FreeParticleProbe.lean:50:76: error: unsolved goals
+n : ℕ
+m : CoordinateMasses n
+U : PotentialEnergy n
+hU : ∀ (q : Position n), U q = 0
+z : PhaseSpace n
+t : ℝ
+⊢ (massSeparableEnergy m U).hamiltonian (z.1 + t • (velocityOperator m) z.2, z.2) =
+    (massSeparableEnergy m U).hamiltonian z
+docs/verification/2026-10-04-Harmonic/probes/FreeParticleProbe.lean:51:43: warning: This simp argument is unused:
+  hU
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [massHamiltonian, freeParticleFlow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'MolecularDynamics.freeParticleFlow_isMechanicalSolution' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.freeParticleFlow_isGlobalFlow' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_add' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleContinuousFlow' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_energy' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

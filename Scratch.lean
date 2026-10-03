@@ -126,3 +126,17 @@ end MolecularDynamics
 #print axioms MolecularDynamics.globalMechanicalFlow_bijOn
 #print axioms MolecularDynamics.globalMechanicalFlow_energy
 #print axioms MolecularDynamics.exists_globalMechanicalFlow_of_energy_barrier
+#print axioms MolecularDynamics.harmonicFlow_isMechanicalSolution
+#print axioms MolecularDynamics.harmonicFlow_isGlobalFlow
+#print axioms MolecularDynamics.harmonicFlow_continuous
+#print axioms MolecularDynamics.harmonicFlow_add
+#print axioms MolecularDynamics.harmonicFlow_inverse
+#print axioms MolecularDynamics.harmonicContinuousFlow
+#print axioms MolecularDynamics.hasGradientAt_harmonicPotential
+#print axioms MolecularDynamics.harmonicFlow_energy
+#print axioms MolecularDynamics.freeParticleFlow_isMechanicalSolution
+#print axioms MolecularDynamics.freeParticleFlow_isGlobalFlow
+#print axioms MolecularDynamics.freeParticleFlow_continuous
+#print axioms MolecularDynamics.freeParticleFlow_add
+#print axioms MolecularDynamics.freeParticleContinuousFlow
+#print axioms MolecularDynamics.freeParticleFlow_energy
