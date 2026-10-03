@@ -750,3 +750,52 @@
 - GlobalContinuation/EnergyGlobalExistence/PotentialRegularity/Stability/PhaseMetric/EuclideanStability六模块进入正式库；教材smooth势能的strict minimum在固定正对角质量模型下给出机械平衡、任意近初值的真实全未来IVP以及所有同初值未来解的欧氏distance range有界和严格sSup<ε。原页已核对；负责人最终语义签核仍pending，新远端CI未跑。
 - 已更新映射/假设/状态和Theorem1.1候选行，§1.5.3只标partial，不把Hartman--Grobman及其它未证明内容计作完成。全书目标未完成，Goal平台usageLimited状态未人为改写。
 - 现在按已有本地保存授权提交本批明确源码/文档/原始日志；不推送、不合并、不碰无关既有材料。下一步独立运行LagrangianProbe，补§1.3原页固定质量定义、经典梯度与轨道桥接。
+
+## 2026-10-04 06:15 +08:00 — 稳定性本地提交与§1.3首探针
+
+- 第三批已保存为208157529b624fe174f322b5d6bcd1ab2e0ab83c，未推送/合并。保留整体验收时正式Lean输入字节，没有为无影响的EOF空行改变已验收源码；原始诊断日志也未改写。其他已有材料未暂存。
+- 更新CSV只改Theorem1.1与§1.5.3对应行；核查并去掉写入时的重复BOM，所有无关行内容保留。最终CSV能正确解析。
+- LagrangianProbe attempt01退出1：动能矩阵表达、动能/速度切片真实梯度通过；位置切片的neg.const_add在simpa重建时碰到实空间Module实例不匹配。采用HasFDerivAt.const_sub直接匹配，避免simpa重建；正在attempt02。依赖该引理的两个轨道桥暂不计通过，原失败日志保留。
+- 新任务继续§1.3原页印刷22--23/PDF45--46。固定质量真实Euler--Lagrange与机械轨道双向桥不代替广义坐标变换或配置依赖质量的独立证明。
+
+### 06:18 +08:00 — Lagrangian首批证明通过，广义坐标准备
+
+- LagrangianProbe attempt02退出0，动能矩阵形式、真实速度/位置梯度、机械解到Euler--Lagrange以及反向实际解构造均仅三项允许公理。没有将二阶运动方程或轨道导数当作占位假设；轨道谓词明确实际导数。
+- 集成脚本第一次把-split意外解析成Get-Content参数，未生成Lagrangian.lean，后续build因此报告模块文件不存在；不是Lean数学错误。已将读取与字符串拆分分成两句并设置ErrorActionPreference=Stop，修复后才重跑。无已有正式文件被覆盖为空。
+- 新建GeneralizedCoordinatesProbe：矩阵J下Lagrangian变换公式、真实时间速度链式法则、正质量和J.mulVec单射推出JᵀMJ正定与可逆。允许矩形J以处理n与k不同；广义轨道方程及变量质量动力学仍是后续任务。即将构建Lagrangian模块并验证该探针，尚未完整验收。
+
+### 06:21 +08:00 — 广义坐标首轮诊断及Legendre候选
+
+- Lagrangian正式模块构建8930jobs成功。GeneralizedCoordinatesProbe attempt01中速度链式法则、JᵀMJ正定性及可逆性已内核通过；变换表达式仅因没有打开Matrix命名空间使*ᵥ解析失败。加入open Matrix后启动attempt02，没有改变数学条件。
+- 重看印刷24/PDF47的Legendre上确界原式。新LegendreProbe草稿通过完成平方拟证明固定正对角质量下目标函数的真实上界、达到点及BddAbove伴随的sSup=Hamiltonian。教材仅写可逆的条件不够保证最大值；本候选显式用正质量/正定二次型，与首轮审计一致。
+- 当前顺序session41681先检查GeneralizedCoordinates attempt02，成功才运行Legendre attempt01，不并行重复构建。正式整体验收尚待本批候选全部成功后一次运行。
+
+### 06:24 +08:00 — 广义坐标矩阵API诊断检查点
+
+- attempt02解析修复后暴露EuclideanSpace.inner_eq_star_dotProduct在固定库把内积展开为第二向量的star dot第一向量；原change写了相反顺序。attempt03按实际方向表达两边，再明确使用实数dotProduct对称性。
+- attempt03随后发现Matrix.mulVec_mulVec的正式方向是嵌套作用合成为矩阵乘积，与候选预期拆分相反；查实际诊断后改为两次←方向，从JᵀMJ依次拆出Jᵀ/M/J。attempt04/session32108正在检查，成功才进入Legendre首轮。不在无新诊断下重复原调用。
+- 链式法则、正定性、可逆性在各轮均通过，只完整退出0后才登记模块成功。原失败日志保留，正式库无占位或新增公理。
+
+### 06:26 +08:00 — 广义坐标候选通过，Legendre真实sup证明调试
+
+- GeneralizedCoordinatesProbe attempt04实际退出0：静态JᵀMJ变换、实际时间链式法则、正定与可逆四项均仅允许三项基础公理。已生成正式GeneralizedCoordinates候选，尚待本批完整构建。
+- Legendre attempt01退出1，失败在未先消去U/整理括号就对非相邻sum使用←sum_sub_distrib。内积展开为v dot p也需统一为p dot v。attempt02先用真实内积对称性、逐项完成平方，再在hsum中展开sum_add/sub，最后线性整理，避免错误重写位置。
+- 新加正质量下动能=0 iff速度=0，以及Legendre达到Hamiltonian iff v=M⁻¹p，覆盖原页precisely的唯一达到点。全部尚待attempt02/session94647结果；不把依赖失败引理的sorryAx诊断计作成果。
+
+### 06:27 +08:00 — Legendre求和绑定范围修复
+
+- Legendre attempt02退出1：Lean有限求和记法在加减表达式处结束绑定，缺少括号令后续i离开作用域。逐项完成平方表达加完整括号后启动attempt03/session20250。失败原日志保留。
+- 同次正质量动能=0 iff速度=0独立通过，仅三项允许基础公理；上界/达到点/唯一达到点/sSup依赖尚未通过的gap，仍不登记完成。
+
+## 2026-10-04 06:29 +08:00 — Lagrangian/坐标/Legendre候选通过并正式集成
+
+- LegendreProbe attempt03退出0；六项关键依赖仅允许三項基础公理。已完整证明完成平方、真实上界、实际达到点、正质量动能零值特征、唯一达到点及BddAbove伴随sSup=H。
+- 三正式模块接入顶层，Scratch/CheckAxioms加16项关键依赖。映射/假设/状态同步，原页22--24/PDF45--47再核对。当前仅候选独立成功，正在启动本批full-check01；检查期间固定正式Lean输入。
+- 仍是正固定对角质量物理模型。静态JᵀMJ和其正定/可逆不冒充广义质量动力学；变分最小作用量和其他章仍未证明。负责人最终语义签核pending，未访问MathCopilot或启动新自动化。
+
+## 2026-10-04 06:32 +08:00 — §1.3--1.4完整本地验收检查点
+
+- Lagrangian批次full-check01于06:29:14--06:31:00实际退出0：8950jobs、Scratch、261项导入项目声明公理审计、固定Lean/mathlib、禁止捷径扫描和输入SHA稳定。16项新关键显式依赖仅三项允许基础公理。并不将261声明数当作261个教材定理或全书完成比例。
+- Lagrangian/GeneralizedCoordinates/LegendreTransform全部接入；映射/假设/状态/本地语义审计已更新。§1.3/1.4仅partial，配置依赖质量动力学与最小作用量变分仍未证明。Theorem1.1映射补上已保存代码提交2081575。
+- 按授权本地保存本批明确文件及失败/成功原始日志，不推送、不重置，不暂存既有无关材料。负责人最终语义签核pending，远端新CI未运行。
+- 下一任务§1.5.1：从实际自治ODE证明时间平移和前向流复合律，再从已验证能量势垒全未来存在构造真实未来流族与不变域；双向全时间群律另需补反向存在，不以未来存在冒充双向流。

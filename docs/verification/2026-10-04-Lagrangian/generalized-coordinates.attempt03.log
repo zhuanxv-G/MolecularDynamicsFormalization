@@ -1,0 +1,17 @@
+docs/verification/2026-10-04-Lagrangian/probes/GeneralizedCoordinatesProbe.lean:26:30: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?M *ᵥ ?N *ᵥ ?v
+in the target expression
+  (diagonalMassMatrix m * J) *ᵥ V.ofLp ⬝ᵥ J *ᵥ V.ofLp = V.ofLp ⬝ᵥ (Jᵀ * diagonalMassMatrix m * J) *ᵥ V.ofLp
+
+n k : ℕ
+m : CoordinateMasses n
+U : PotentialEnergy n
+Φ : Position k → Position n
+J : Matrix (Fin n) (Fin k) ℝ
+Q : Position k
+V : Velocity k
+⊢ (diagonalMassMatrix m * J) *ᵥ V.ofLp ⬝ᵥ J *ᵥ V.ofLp = V.ofLp ⬝ᵥ (Jᵀ * diagonalMassMatrix m * J) *ᵥ V.ofLp
+'MolecularDynamics.massLagrangian_coordinateChange' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_coordinateChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.generalizedMassMatrix_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.generalizedMassMatrix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]

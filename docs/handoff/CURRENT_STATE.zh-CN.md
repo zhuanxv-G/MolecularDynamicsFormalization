@@ -1,15 +1,15 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 06:11 +08:00）
+## 当前数学检查点（2026-10-04 06:32 +08:00）
 
 - 同一全书目标，聊天 `01a102b1-a3fe-71e1-a571-347703fc09b8`。Goal实查usageLimited（非完成/用户暂停）；只读额度普通使用可用，继续同一授权。工具不能主动恢复该平台状态，没有替代Goal/自动化、购买/重置或切换账号。
-- 分支 `chapter01-kinetic-energy-nonneg`，提交前实际HEAD `d554489b78e145dfaff2e2065e9758786d36d11a`；仅本地保存、未推送。Lean4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`未改，无关既有材料保留。
+- 分支 `chapter01-kinetic-energy-nonneg`，实际本地HEAD `208157529b624fe174f322b5d6bcd1ab2e0ab83c`；仅本地保存、未推送。Lean4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`未改，无关既有材料保留。
 - 新六模块全局存在/势垒/正则性/稳定性/欧氏距离已接入。完整full-check03于06:07:48--06:10:29退出0：8947jobs、Scratch、231导入声明审计、禁止捷径扫描、固定版本和输入SHA稳定；13项关键声明只有三项允许基础公理。
 - Theorem1.1机器已验收：`strictPotentialMin_futureStableEuclidean_of_smooth`，固定正对角质量、开Q、smooth势能与strict relative minimum，结论含平衡、近初值未来IVP存在、所有同初值未来解的欧氏距离集合有界和严格sSup<ε。原页印刷32/PDF55已再查看；负责人最终语义签核pending，新远端CI未跑。
 - 原日志/候选/完整验收证据：`docs/verification/2026-10-04-T4-continuation/`。欧氏探针attempt01/02失败诊断已修复，attempt03通过；失败不计验收。
-- 当前独立任务：保存本批Git后，运行已落盘 `probes/LagrangianProbe.lean`。已视觉核对印刷22--23/PDF45--46，拟证明固定质量Lagrangian、真实梯度及Euler--Lagrange/机械轨道双向桥。草稿尚未检查，不将它计作成果。
+- 当前独立任务：稳定性批次已保存2081575；LagrangianProbe attempt02和正式模块8930jobs已通过；GeneralizedCoordinates attempt04、Legendre attempt03均通过；三模块和16项关键审计已通过Lagrangian/full-check01（06:29:14--06:31:00，8950jobs、261声明、输入稳定），即将本地保存。已视觉核对印刷22--23/PDF45--46，拟证明固定质量Lagrangian、真实梯度及Euler--Lagrange/机械轨道双向桥。固定质量Euler--Lagrange双向轨道桥已独立通过；整批完整本地验收已通过；广义配置依赖质量动力学和最小作用量变分仍未证明。
 - 全书、Chapter1各节仍未完成。独立抽象最大解API未另暴露；全局未来存在采用可延拓区间并集和有限sSup反证。§1.5.3仅partial，Hartman--Grobman/线性化等未证明。
-- 恢复第一动作：实查最新Git提交/工作树，再运行下一批LagrangianProbe。不要重复full-check03或旧证明；发生具体新错误才修复、验证并保存检查点。
+- 恢复第一动作：先保存Lagrangian本批Git，再推进§1.5.1实际未来流构造/时间平移/前向复合律。双向流需进一步反向存在，不能把未来流称为双向群。不要重复full-check03或旧证明；发生具体新错误才修复、验证并保存检查点。
 
 ## 启动配置复核（2026-10-04 01:00 +08:00）
 

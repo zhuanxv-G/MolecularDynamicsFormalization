@@ -1,0 +1,27 @@
+docs/verification/2026-10-04-T4-continuation/probes/LagrangianProbe.lean:62:2: error: Type mismatch: After simplification, term
+  HasFDerivAt.const_add (nBodyKineticEnergy m v)
+    (HasFDerivAt.neg (HasGradientAt.hasFDerivAt (DifferentiableAt.hasGradientAt hU)))
+ has type
+  @HasFDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Position n)
+    (PiLp.normedAddCommGroup 2 fun x => ℝ).toAddCommGroup (PiLp.normedSpace 2 ℝ fun x => ℝ).toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    (fun x => nBodyKineticEnergy m v + (-U) x) (-(InnerProductSpace.toDual ℝ (Position n)) (gradient U q)) q
+but is expected to have type
+  @HasFDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Position n)
+    (PiLp.normedAddCommGroup 2 fun x => ℝ).toAddCommGroup (PiLp.innerProductSpace fun x => ℝ).toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ℝ Real.instRCLike.toDivisionRing.toAddCommGroup
+    Semiring.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace (fun x => nBodyKineticEnergy m v + -U x)
+    (-(InnerProductSpace.toDual ℝ (Position n)) (gradient U q)) q
+'MolecularDynamics.nBodyKineticEnergy_eq_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_nBodyKineticEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_massLagrangian_velocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_massLagrangian_position' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_eulerLagrange' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.eulerLagrange_to_mechanicalSolution' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

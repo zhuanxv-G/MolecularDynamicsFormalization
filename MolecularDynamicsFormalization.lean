@@ -19,3 +19,6 @@ import MolecularDynamics.Chapter01.PotentialRegularity
 import MolecularDynamics.Chapter01.Stability
 import MolecularDynamics.Chapter01.PhaseMetric
 import MolecularDynamics.Chapter01.EuclideanStability
+import MolecularDynamics.Chapter01.Lagrangian
+import MolecularDynamics.Chapter01.GeneralizedCoordinates
+import MolecularDynamics.Chapter01.LegendreTransform

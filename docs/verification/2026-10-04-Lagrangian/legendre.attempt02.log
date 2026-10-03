@@ -1,0 +1,50 @@
+docs/verification/2026-10-04-Lagrangian/probes/LegendreProbe.lean:18:44: error(lean.unknownIdentifier): Unknown identifier `i`
+docs/verification/2026-10-04-Lagrangian/probes/LegendreProbe.lean:18:50: error(lean.unknownIdentifier): Unknown identifier `i`
+docs/verification/2026-10-04-Lagrangian/probes/LegendreProbe.lean:18:56: error(lean.unknownIdentifier): Unknown identifier `i`
+docs/verification/2026-10-04-Lagrangian/probes/LegendreProbe.lean:18:62: error(lean.unknownIdentifier): Unknown identifier `i`
+docs/verification/2026-10-04-Lagrangian/probes/LegendreProbe.lean:26:2: error: linarith failed to find a contradiction
+case h1
+n : ℕ
+m : CoordinateMasses n
+U : PotentialEnergy n
+q : Position n
+p : Momentum n
+v : Velocity n
+hm : ∀ (i : Fin n), 0 < m i
+hsum :
+  ∑ x, p.ofLp x ^ 2 / (2 * m x) - p.ofLp sorry * v.ofLp sorry + m sorry * v.ofLp sorry ^ 2 / 2 =
+    ∑ x, m x * (v - (velocityOperator m) p).ofLp x ^ 2 / 2
+a✝ :
+  ∑ i, p.ofLp i ^ 2 / (2 * m i) + U q - (∑ x, p.ofLp x * v.ofLp x - (∑ i, m i * v.ofLp i ^ 2 / 2 - U q)) <
+    ∑ i, m i * (v - (velocityOperator m) p).ofLp i ^ 2 / 2
+⊢ False
+failed
+docs/verification/2026-10-04-Lagrangian/probes/LegendreProbe.lean:25:13: warning: This simp argument is unused:
+  Finset.sum_add_distrib
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_sub_distrib] at hsum
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-04-Lagrangian/probes/LegendreProbe.lean:25:37: warning: This simp argument is unused:
+  Finset.sum_sub_distrib
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_add_distrib] at hsum
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'MolecularDynamics.massHamiltonian_legendre_gap' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.legendre_objective_le_massHamiltonian' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.legendre_objective_attains_massHamiltonian' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.nBodyKineticEnergy_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.legendre_objective_eq_massHamiltonian_iff' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.massHamiltonian_eq_legendre_sup' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

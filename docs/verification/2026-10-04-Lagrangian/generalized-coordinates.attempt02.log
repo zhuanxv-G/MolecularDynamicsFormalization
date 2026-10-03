@@ -1,0 +1,9 @@
+docs/verification/2026-10-04-Lagrangian/probes/GeneralizedCoordinatesProbe.lean:23:4: error: 'change' tactic failed, pattern
+  J *ᵥ V.ofLp ⬝ᵥ diagonalMassMatrix m *ᵥ J *ᵥ V.ofLp = V.ofLp ⬝ᵥ (Jᵀ * diagonalMassMatrix m * J) *ᵥ V.ofLp
+is not definitionally equal to target
+  ((massOperator m) ((toEuclideanLin J) V)).ofLp ⬝ᵥ ((toEuclideanLin J) V).ofLp =
+    ((toEuclideanLin (generalizedMassMatrix m J)) V).ofLp ⬝ᵥ V.ofLp
+'MolecularDynamics.massLagrangian_coordinateChange' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_coordinateChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.generalizedMassMatrix_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.generalizedMassMatrix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]

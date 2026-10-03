@@ -1,0 +1,25 @@
+docs/verification/2026-10-04-Lagrangian/probes/LegendreProbe.lean:18:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ x ∈ ?m.65, ?f x - ∑ x ∈ ?m.65, ?g x
+in the target expression
+  ∑ i, p.ofLp i ^ 2 / (2 * m i) + U q - (∑ x, v.ofLp x * p.ofLp x - (∑ i, m i * v.ofLp i ^ 2 / 2 - U q)) =
+    ∑ i, m i * (v - (velocityOperator m) p).ofLp i ^ 2 / 2
+
+n : ℕ
+m : CoordinateMasses n
+U : PotentialEnergy n
+q : Position n
+p : Momentum n
+v : Velocity n
+hm : ∀ (i : Fin n), 0 < m i
+⊢ ∑ i, p.ofLp i ^ 2 / (2 * m i) + U q - (∑ x, v.ofLp x * p.ofLp x - (∑ i, m i * v.ofLp i ^ 2 / 2 - U q)) =
+    ∑ i, m i * (v - (velocityOperator m) p).ofLp i ^ 2 / 2
+'MolecularDynamics.massHamiltonian_legendre_gap' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.legendre_objective_le_massHamiltonian' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.legendre_objective_attains_massHamiltonian' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.massHamiltonian_eq_legendre_sup' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

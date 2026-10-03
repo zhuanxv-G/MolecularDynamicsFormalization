@@ -212,3 +212,24 @@ No subsequent chapter or complete Chapter1 coverage is implied.
 
 Full-check03 evidence: `docs/verification/2026-10-04-T4-continuation/full-check03/`.
 Responsible final semantic sign-off is pending; no new remote CI under local-only scope.
+
+## Section 1.3--1.4 Lagrangian integration (2026-10-04)
+
+Original printed22--24/PDF45--47 was viewed in this run. The following
+modules passed full local acceptance at06:29:14--06:31:00 +08:00:
+8950jobs, Scratch,261declaration audits and stable pinned inputs. Evidence is
+in `docs/verification/2026-10-04-Lagrangian/full-check01/`.
+
+| Result | Lean declaration | Exact boundary |
+| --- | --- | --- |
+| Velocity kinetic form | `nBodyKineticEnergy_eq_inner`, `hasGradientAt_nBodyKineticEnergy` | Fixed real masses; T(v)=vᵀMv/2 and genuine gradient Mv, including zero masses and n=0 algebraically. |
+| Lagrangian partial gradients | `hasGradientAt_massLagrangian_velocity`, `hasGradientAt_massLagrangian_position` | L=T-U; velocity slice always differentiable, position slice assumes U differentiable at q. |
+| Euler--Lagrange trajectories | `mechanicalSolution_eulerLagrange`, `eulerLagrange_to_mechanicalSolution` | Actual time derivative predicate; positive masses and differentiable U. Forward direction requires open time I; reverse direction constructs actual (q,M deriv q). |
+| Coordinate change | `massLagrangian_coordinateChange`, `hasDerivAt_coordinateChange` | Rectangular Jacobian matrix; static quadratic identity separated from genuine chain-rule derivative hypotheses. |
+| Generalized mass | `generalizedMassMatrix_posDef`, `generalizedMassMatrix_isUnit` | Positive masses and injective J.mulVec give positive definite and invertible JᵀMJ. |
+| Legendre quadratic gap | `massHamiltonian_legendre_gap`, `legendre_objective_le_massHamiltonian` | Positive masses prove H minus objective equals nonnegative T(v-M⁻¹p). |
+| Unique maximizing velocity | `legendre_objective_eq_massHamiltonian_iff` | Equality holds precisely when v=M⁻¹p; derived from kinetic-energy zero iff zero velocity. |
+| Actual Legendre supremum | `massHamiltonian_eq_legendre_sup` | BddAbove range and sSup=H; attainment is actually proved, not assumed. U arbitrary in this static result. |
+
+Configuration-dependent generalized dynamics, least-action variation,
+all remaining section content and final responsible sign-off are separate.

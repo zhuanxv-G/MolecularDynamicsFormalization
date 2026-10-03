@@ -132,3 +132,15 @@
 - Six new modules passed full-check03 at06:07:48--06:10:29 +08:00:8947jobs, Scratch,231imported declaration audits, pinned Lean4.34.0/mathlib and stable input SHA. Thirteen newly explicit key theorem dependencies use only propext/Classical.choice/Quot.sound.
 - The Euclidean statement `strictPotentialMin_futureStableEuclidean_of_smooth` proves equilibrium plus future existence and a bounded distance range with strict all-time supremum bound for every same-IVP future solution. It matches Theorem1.1 within the fixed positive diagonal mass model; C2 also suffices.
 - Original printed32/PDF55 and the local proof chain were reviewed; final responsible semantic sign-off is pending, and no new remote CI was run. Entire Chapter1 and the whole book remain unfinished. Next independent work is §1.3 Lagrangian and Euler--Lagrange bridges.
+
+## Lagrangian and Legendre integration (2026-10-04 06:29 +08:00)
+
+- Lagrangian, GeneralizedCoordinates and LegendreTransform candidates were added after independent probe success. Sixteen key statements cover genuine gradients, actual Euler--Lagrange/mechanical trajectory bridges, rectangular coordinate changes, mass positivity/invertibility and the bounded Legendre supremum with its unique maximizer.
+- Printed22--24/PDF45--47 was visually checked. The physical positive-mass condition repairs the original Legendre argument's insufficient mere-invertibility wording. Generalized configuration-dependent dynamics and all other whole-book work remain open.
+- Full local verification is about to run in the Lagrangian batch. Responsible semantic sign-off is pending; new remote CI not run. Native whole-book Goal platform status remains usageLimited; work continues under the same explicit authorization.
+
+## Section 1.3--1.4 local machine acceptance (2026-10-04 06:32 +08:00)
+
+- All three modules passed the new full check at06:29:14--06:31:00 +08:00:8950jobs, Scratch,261imported declaration audits, pinned Lean/mathlib, forbidden-source scan and stable input hashes. Sixteen new explicit key dependencies use only the three allowed foundational axioms.
+- Lagrangian gradients, actual Euler--Lagrange/mechanical trajectory equivalence, rectangular coordinate change, generalized mass positivity/invertibility and the true Legendre supremum with its unique maximizing velocity are locally machine-accepted.
+- Sections1.3/1.4 remain partial: generalized configuration-dependent dynamics and variational least action are still open. Final responsible semantic sign-off remains pending; remote CI not run for this local snapshot. Next dependency is Section1.5.1 flow-map construction and composition laws with honest existence domains.

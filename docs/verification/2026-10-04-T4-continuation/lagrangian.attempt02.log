@@ -1,0 +1,6 @@
+'MolecularDynamics.nBodyKineticEnergy_eq_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_nBodyKineticEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_massLagrangian_velocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_massLagrangian_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_eulerLagrange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.eulerLagrange_to_mechanicalSolution' depends on axioms: [propext, Classical.choice, Quot.sound]

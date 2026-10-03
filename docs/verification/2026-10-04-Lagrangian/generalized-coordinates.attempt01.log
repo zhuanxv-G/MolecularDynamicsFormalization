@@ -1,0 +1,10 @@
+docs/verification/2026-10-04-Lagrangian/probes/GeneralizedCoordinatesProbe.lean:22:15: error: elaboration function for `Mathlib.Tactic.subscriptTerm` has not been implemented
+  ᵥ
+docs/verification/2026-10-04-Lagrangian/probes/GeneralizedCoordinatesProbe.lean:22:46: error: elaboration function for `Mathlib.Tactic.subscriptTerm` has not been implemented
+  ᵥ
+docs/verification/2026-10-04-Lagrangian/probes/GeneralizedCoordinatesProbe.lean:23:54: error: elaboration function for `Mathlib.Tactic.subscriptTerm` has not been implemented
+  ᵥ
+'MolecularDynamics.massLagrangian_coordinateChange' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_coordinateChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.generalizedMassMatrix_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.generalizedMassMatrix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]

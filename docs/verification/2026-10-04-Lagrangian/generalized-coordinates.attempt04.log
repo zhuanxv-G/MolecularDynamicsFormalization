@@ -1,0 +1,4 @@
+'MolecularDynamics.massLagrangian_coordinateChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_coordinateChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.generalizedMassMatrix_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.generalizedMassMatrix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
