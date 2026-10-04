@@ -1513,3 +1513,12 @@
 ## 2026-10-04 13:56 +08:00 — 最近邻链势能完整验收
 
 - `nearestNeighborPotentialEnergy` 已加入 `LatticePairPotential`：在 `Fin (N+1)` 站点上按 `Fin N` 键求相邻差的势能和，并证明平移不变性及二站点化简。full-check23 实际 13:52:19--13:55:44 退出0，8986 jobs、739 项声明，Scratch/固定版本/源码扫描/输入 SHA/公理审计均通过，仅允许基础公理。提交尚待保存；最近邻模型的边界、周期、振动动力学仍 pending。
+
+## 2026-10-04 14:10 +08:00 — §1.6.1 梯度线性化候选
+
+- 原页36--37/PDF59--60已渲染并目视核对：平衡条件是 `∇U(q*)=0`，随后用 Hessian 做梯度一阶近似。`LatticeVibrations` 候选真实定义梯度余项，证明 C² 平衡点下余项为 `o(δq)`，并证明无条件的精确展开恒等式；局部探针退出0、仅基础公理。正定 Hessian、纯虚谱、normal modes 与边界/周期谱仍 pending，准备 full-check24。
+
+## 2026-10-04 14:27 +08:00 — LatticeVibrations 完整验收并保存
+
+- full-check24 实际 14:19:30--14:26:55 退出0，8987 jobs、744 项声明；新增梯度线性化余项、C² 平衡点 `o(δq)` 与精确展开均通过 Scratch、固定 Lean/mathlib、源码扫描、输入 SHA、公理审计，仅允许 `propext`、`Classical.choice`、`Quot.sound`。原页36--37/PDF59--60已渲染目视核对。
+- 正定 Hessian 的纯虚谱、normal modes、边界/周期晶格频谱及全书目标仍 pending，负责人最终语义签核 pending。

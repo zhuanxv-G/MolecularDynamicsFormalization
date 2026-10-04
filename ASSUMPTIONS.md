@@ -238,3 +238,5 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - LatticePairPotential: finite index type `Fin N` and an arbitrary real pair potential `φ`; the uniform energy is the upper-triangular unordered-pair sum, so each pair is counted once. Translation invariance uses only algebra of differences. The two-atom reduction is exact. No nearest-neighbor, boundary-condition, periodic-lattice, stability, or lattice-vibration claim is inferred.
 
 - The nearest-neighbor chain uses `N + 1` ordered sites and `N` bonds, represented by `Fin.castSucc` and `Fin.succ`. Its two-site statement is exact. No force derivative, boundary condition, periodic identification, or vibration spectrum is assumed.
+
+- LatticeVibrations assumes a finite-dimensional `Position n`, a `C²` potential at the candidate equilibrium, and zero gradient there for the little-o theorem. The expansion uses the actual derivative of `gradient U`; it does not assert Hessian positive definiteness or imaginary eigenvalues. Those spectral conclusions require separate positive-definite mass/Hessian hypotheses.

@@ -58,3 +58,4 @@ import MolecularDynamics.Chapter01.LocalContinuousFlow
 import MolecularDynamics.Chapter01.HamiltonianHessian
 import MolecularDynamics.Chapter01.LinearizedHamiltonian
 import MolecularDynamics.Chapter01.LatticePairPotential
+import MolecularDynamics.Chapter01.LatticeVibrations

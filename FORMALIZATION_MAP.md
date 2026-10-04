@@ -435,3 +435,7 @@ Printed33/PDF56: `LatticePairPotential` defines the upper-triangular finite pair
 ### Nearest-neighbor lattice chain (2026-10-04)
 
 Printed33/PDF56: `nearestNeighborPotentialEnergy` sums `φ ‖x_(i+1)-x_i‖` over `Fin N` bonds on `Fin (N+1)` sites. Translation invariance and the exact two-site reduction are proved. Boundary, periodic, and vibration dynamics remain pending.
+
+### Lattice-vibration gradient linearization (2026-10-04)
+
+Printed36--37/PDF59--60: `LatticeVibrations` records the equilibrium first-order expansion `∇U(q₀+h)=D(∇U)(q₀)h+R(h)` and proves `R=o(h)` under `C²` regularity and `∇U(q₀)=0`. Hessian symmetry is inherited from `HamiltonianHessian`; positive definiteness, normal-mode eigenvalue classification, and periodic/boundary spectra remain pending.
