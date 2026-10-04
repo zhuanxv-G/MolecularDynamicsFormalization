@@ -73,3 +73,4 @@ import MolecularDynamics.Chapter02.SplittingError
 import MolecularDynamics.Chapter02.CompositionMethods
 import MolecularDynamics.Chapter02.ProcessedMethods
 import MolecularDynamics.Chapter03.LiePoisson
+import MolecularDynamics.Chapter03.FormalOperatorSeries
