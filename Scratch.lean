@@ -489,3 +489,18 @@ end MolecularDynamics
 #check MolecularDynamics.textbookSymplecticEulerEquiv_apply
 #check MolecularDynamics.textbookSymplecticEulerEquiv_symm_apply
 #check MolecularDynamics.textbookSymplecticEulerEquiv_isSymplectic
+
+-- Section 2.3.7: actual inverse maps and adjoint methods.
+#check MolecularDynamics.textbookAdjointMethod
+#check MolecularDynamics.textbookAdjointMethod_apply_eq_iff
+#check MolecularDynamics.textbookAdjointMethod_involutive
+#check MolecularDynamics.textbookAdjointMethod_isSymplectic
+#check MolecularDynamics.textbookFlowMethod
+#check MolecularDynamics.textbookFlowMethod_isSelfAdjoint
+#check MolecularDynamics.euler_negative_step_iff_backward
+#check MolecularDynamics.euler_adjoint_iff_backward
+#check MolecularDynamics.textbookAdjointSymplecticEuler
+#check MolecularDynamics.textbookAdjointSymplecticEuler_apply
+#check MolecularDynamics.textbookAdjointSymplecticEuler_position
+#check MolecularDynamics.textbookAdjointSymplecticEuler_momentum
+#check MolecularDynamics.textbookAdjointSymplecticEuler_isSymplectic

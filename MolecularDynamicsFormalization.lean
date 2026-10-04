@@ -68,3 +68,4 @@ import MolecularDynamics.Chapter02.SymplecticForm
 import MolecularDynamics.Chapter02.SymplecticMaps
 import MolecularDynamics.Chapter02.HamiltonianVariational
 import MolecularDynamics.Chapter02.SymplecticEuler
+import MolecularDynamics.Chapter02.AdjointMethods

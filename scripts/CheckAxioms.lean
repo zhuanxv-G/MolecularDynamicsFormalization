@@ -515,3 +515,18 @@ run_cmd do
 #print axioms MolecularDynamics.textbookSymplecticEulerEquiv_apply
 #print axioms MolecularDynamics.textbookSymplecticEulerEquiv_symm_apply
 #print axioms MolecularDynamics.textbookSymplecticEulerEquiv_isSymplectic
+
+-- Section 2.3.7: actual inverse maps and adjoint methods.
+#print axioms MolecularDynamics.textbookAdjointMethod
+#print axioms MolecularDynamics.textbookAdjointMethod_apply_eq_iff
+#print axioms MolecularDynamics.textbookAdjointMethod_involutive
+#print axioms MolecularDynamics.textbookAdjointMethod_isSymplectic
+#print axioms MolecularDynamics.textbookFlowMethod
+#print axioms MolecularDynamics.textbookFlowMethod_isSelfAdjoint
+#print axioms MolecularDynamics.euler_negative_step_iff_backward
+#print axioms MolecularDynamics.euler_adjoint_iff_backward
+#print axioms MolecularDynamics.textbookAdjointSymplecticEuler
+#print axioms MolecularDynamics.textbookAdjointSymplecticEuler_apply
+#print axioms MolecularDynamics.textbookAdjointSymplecticEuler_position
+#print axioms MolecularDynamics.textbookAdjointSymplecticEuler_momentum
+#print axioms MolecularDynamics.textbookAdjointSymplecticEuler_isSymplectic
