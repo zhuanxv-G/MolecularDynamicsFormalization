@@ -1,6 +1,6 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 12:35 +08:00）
+## 当前数学检查点（2026-10-04 12:40 +08:00）
 
 - 同一全书目标/聊天01a102b1-a3fe-71e1-a571-347703fc09b8实际get_goal=active；非完成/用户暂停。仅本地，保留GPT-6.1 Sol/High；不另建Goal/自动化、不用MathCopilot、不购买/重置/换账户。
 - 分支chapter01-kinetic-energy-nonneg，12:30本聊天实查本地HEAD7f48c55（一般势能非转向积分逆批次已本地保存），未推送；固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435。所有无关AGENTS/FORMALIZATION_PLAN/RESUME/T3/T2-T5 review等材料保留，仅暂存明确批次文件。
@@ -8,8 +8,8 @@
 - Kepler后续本地保存：polar strict chart9f3c45b，真polar EL/有效能量/角FTC235c03c，真Cartesian↔polar桥接e802090，任意非零Cartesian初值径向IVP+角积分重建93feaee，真实scalar分离积分strict逆20576ce+证据2eaee48，任意非转向点自动符号/窗口真实积分逆da46d1f。各完整验收证据见Kepler/full-check02--07。
 - action-angle本地保存c15fb5f，真印刷公式/能量/实际ODE双向等价/时间公式/任意非零初值表示/谐振子Flow共轭；check08实际11:26:45--11:29:08退出0（8972jobs/589）。真实strict导数/Jacobian det1/局部OpenPartialHomeomorph strict逆2e582c5；check09实际11:35:41--11:37:03退出0（8973jobs/613）。
 - 当前HarmonicTorus candidate07十一关键退出0无警告；真商角有限乘积/连续旋转Flow/精确整数周期条件/固定正action能量面image/真实多振子机械解正式验收check10实际11:48:35--11:49:55退出0（8974jobs/643）。Scratch/固定版本/源码扫描/全部审计/输入SHA稳定，关键仅允许propext/Classical.choice/Quot.sound。本地保存e58430c与七次原日志。
-- TorusDensity attempt01/02失败已修复，candidate03八关键退出0、无警告（两条abel_nf info建议），只允许基础公理。真实homeomorph/二维实时间DenseRange/物理orbit closure/三维共振不稠密正式接入，full-check11实际11:56:21--11:57:42退出0，8975jobs/663声明/Scratch/固定版本/扫描/输入SHA稳定。Density批次本地保存5a15ff0。Period attempt01仅phase转递β重写失败，congrArg修复；candidate02六关键退出0无警告、只允许基础公理。正式TorusPeriod接入，full-check12实际12:02:15--12:03:37退出0，8976jobs/676声明/Scratch/固定版本/扫描/输入SHA稳定。Period已本地保存ed97648。FirstIntegralGraph candidate02三关键退出0无警告、只允许基础公理；真实partial非零推逆/actual implicit graph/沿真first-integral轨迹降维正式接入，full-check13实际12:07:11--12:08:31退出0，8977jobs/679声明/Scratch/固定版本/扫描/输入SHA稳定。Graph本地保存856165b。FirstIntegralQuadrature attempt01投影continuousAt解析失败已改真实连续投影，candidate02三关键退出0无警告、仅基础公理。真实C1图/自动非零速度与时间窗口/实际两分量积分逆正式接入，full-check14实际12:14:32--12:15:53退出0，8978jobs/682声明/Scratch/固定版本/扫描/输入SHA稳定。完整证据与源码本地保存6c364f9；ScalarIntegrability candidate03六关键退出0无警告，仅基础公理；一般C2势能真实energy first-integral/实际partial=v/field C1/非转向积分逆正式接入。full-check15实际12:25:24--12:26:56退出0，8979jobs/691声明/Scratch/固定版本/扫描/输入SHA稳定。ScalarTurning candidate02七关键退出0无警告，仅基础公理：U′≠0真实交换坐标积分逆、平衡真常解/局部唯一性。candidate03八关键退出0无警告/仅基础公理；全过程平衡常解已证明，ScalarTurning正式接入。full-check16实际12:32:51--12:34:28退出0，8980jobs/702声明/Scratch/固定版本/扫描/输入SHA稳定。ScalarLocalIVPProbe已落盘，下一单一attempt01：真实任意初值局部IVP存在+energy+三分支封装。恢复第一动作读scalar-local-ivp.attempt01.log；不并发或重复构建。
-- 原页印刷27--31/PDF50--54视觉核对，30/PDF53本轮复看。高维两两比无理不足，需integer nonresonance；二维与高维限制分开。§1.5.1/1.5.2/1.5.3仍partial；Kepler转向点/global orbit、一般势能任意初值IVP三分支封装/非平衡全局拼接、一般非线性初值连续依赖/一般EL协变、Hartman--Grobman及后续全书未完成。负责人最终语义签核pending，新远端CI未跑；不将单批/单页当全书完成。
+- TorusDensity attempt01/02失败已修复，candidate03八关键退出0、无警告（两条abel_nf info建议），只允许基础公理。真实homeomorph/二维实时间DenseRange/物理orbit closure/三维共振不稠密正式接入，full-check11实际11:56:21--11:57:42退出0，8975jobs/663声明/Scratch/固定版本/扫描/输入SHA稳定。Density批次本地保存5a15ff0。Period attempt01仅phase转递β重写失败，congrArg修复；candidate02六关键退出0无警告、只允许基础公理。正式TorusPeriod接入，full-check12实际12:02:15--12:03:37退出0，8976jobs/676声明/Scratch/固定版本/扫描/输入SHA稳定。Period已本地保存ed97648。FirstIntegralGraph candidate02三关键退出0无警告、只允许基础公理；真实partial非零推逆/actual implicit graph/沿真first-integral轨迹降维正式接入，full-check13实际12:07:11--12:08:31退出0，8977jobs/679声明/Scratch/固定版本/扫描/输入SHA稳定。Graph本地保存856165b。FirstIntegralQuadrature attempt01投影continuousAt解析失败已改真实连续投影，candidate02三关键退出0无警告、仅基础公理。真实C1图/自动非零速度与时间窗口/实际两分量积分逆正式接入，full-check14实际12:14:32--12:15:53退出0，8978jobs/682声明/Scratch/固定版本/扫描/输入SHA稳定。完整证据与源码本地保存6c364f9；ScalarIntegrability candidate03六关键退出0无警告，仅基础公理；一般C2势能真实energy first-integral/实际partial=v/field C1/非转向积分逆正式接入。full-check15实际12:25:24--12:26:56退出0，8979jobs/691声明/Scratch/固定版本/扫描/输入SHA稳定。ScalarTurning candidate02七关键退出0无警告，仅基础公理：U′≠0真实交换坐标积分逆、平衡真常解/局部唯一性。candidate03八关键退出0无警告/仅基础公理；全过程平衡常解已证明，ScalarTurning正式接入。full-check16实际12:32:51--12:34:28退出0，8980jobs/702声明/Scratch/固定版本/扫描/输入SHA稳定。ScalarLocalIVP candidate01三关键退出0无警告/基础公理，真实任意初值局部IVP+energy+三分支正式接入。full-check17实际12:36:50--12:38:11退出0，8981jobs/708声明/Scratch/固定版本/扫描/输入SHA稳定。印刷31/PDF54再次视觉核对；EquilibriumLinearizationProbe已落盘，attempt01单一开始：真平衡常轨迹iff、真正little-o余项、实际perturbation ODE与true linearized IVP、机械block derivative。Hartman--Grobman未完成。恢复第一动作读equilibrium-linearization.attempt01.log；不并发或重复构建。
+- 原页印刷27--31/PDF50--54视觉核对，30/PDF53本轮复看。高维两两比无理不足，需integer nonresonance；二维与高维限制分开。§1.5.1/1.5.2/1.5.3仍partial；Kepler转向点/global orbit、一般势能非平衡全局拼接、一般非线性初值连续依赖/一般EL协变、Hartman--Grobman及后续全书未完成。负责人最终语义签核pending，新远端CI未跑；不将单批/单页当全书完成。
 ## 启动配置复核（2026-10-04 01:00 +08:00）
 
 - 用户已明确说“启动方案”，指定 `gpt-6.1-sol`、推理强度 `high`。此前“先不要开启”已被本次启动授权取代；只做本地、不使用 MathCopilot 的要求持续有效。
@@ -119,3 +119,9 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 - 用户询问第一章有哪些主要任务、分成几个子任务。已核对 T1/T2/T3/T5 规格、T4 检查点/延拓范围、章节清单和最新状态。已有正式基础编号为 T1–T5 五个；其范围不是整章。
 - 新建 `docs/CHAPTER01_TASK_OVERVIEW.zh-CN.md`，将整章范围解释性汇总为十个主题：模型势、N-body、Lagrangian/坐标、Hamiltonian、ODE/流、可积例子、平衡/线性化、晶格、混沌/变分、习题。十行是本次汇总，不声称原来已有十个冻结任务包；全章细分引理/定理任务总数尚未清点完。
 - 仅维护文档与任务说明，没有重跑 Lean、改动源码/构建输入、提交/推送、创建任务、发送消息或调整自动化。数学恢复仍以上方最新检查点为准，负责人语义签核单独登记。
+
+## 后续章节效率预期说明（2026-10-04 12:40 +08:00，本聊天已完成）
+
+- 用户询问第一章较慢、第二章及后续能否因经验而加快。已核对全书依赖范围与效率约定：已有轨迹、ODE、守恒、流和矩阵等基础可以复用，API 调试和批次验收流程也可复用；预期减少重复劳动，但尚未实际实施第二章完整批次，不能给整章加速比例或完成日期。
+- 第二章仍需新增误差、隐式方法和几何性质的证明；第三/四章及第五至八章存在各自的新基础依赖，尤其概率、测度、随机微分方程不能仅凭第一章经验视为已具备。明确区分已有可复用成果与尚未验证的效率预测。
+- 持续采用固定版本、现有库结果优先、小探针先行、批次通过后完整验收、未变输入复用证据的既有流程。此次没有重跑构建或变更数学任务；接续动作仍按当前数学检查点。

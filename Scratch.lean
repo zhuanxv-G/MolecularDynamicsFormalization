@@ -306,3 +306,6 @@ end MolecularDynamics
 #print axioms MolecularDynamics.scalarPotential_equilibrium_constant
 #print axioms MolecularDynamics.scalarPotential_equilibrium_locally_unique
 #print axioms MolecularDynamics.scalarPotential_equilibrium_on_Ioo
+#print axioms MolecularDynamics.scalarPotential_localDescription
+#print axioms MolecularDynamics.scalarPotential_exists_localIVP
+#print axioms MolecularDynamics.scalarPotential_exists_localIVP_integrable

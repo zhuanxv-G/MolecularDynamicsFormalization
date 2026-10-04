@@ -407,3 +407,7 @@ For unit mass and a genuine C2 real potential U, proves actual energy derivative
 ### ScalarTurning — Example1.4 degenerate velocity handling
 
 True coordinate swap derives C1 field/energy, first integral and energy position partial U′. If U′ at the initial position is nonzero, actual velocity is the separating scalar and its strict integral inverse recovers velocity and position even at zero-velocity turning points. If velocity and U′ both vanish, the true constant solution is locally unique by C1 ODE uniqueness and remains constant on the whole connected original solution interval, via open/relative-closed coincidence set. These are local quadratures and interval stationarity, not global nonstationary existence.
+
+### ScalarLocalIVP — genuine arbitrary-data local integrability
+
+C1 derived field gives an actual local IVP for every real initial position/velocity and initial time. Actual energy constancy and exhaustive disjoint alternatives follow: nonzero velocity gives position quadrature; zero velocity/nonzero U′ gives velocity quadrature; both zero give whole-interval stationarity. Each quadrature predicate stores actual two coordinates, strict inverse derivative, both inverse identities and integral-time identity. Local original statement only, not nonstationary global existence.

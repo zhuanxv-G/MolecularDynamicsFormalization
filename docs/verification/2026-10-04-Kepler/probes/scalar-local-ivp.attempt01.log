@@ -1,0 +1,5 @@
+'MolecularDynamics.scalarPotential_localDescription' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotential_exists_localIVP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotential_exists_localIVP_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
