@@ -1491,3 +1491,8 @@
 
 - full-check21实际13:17:26--13:19:36退出0，8985jobs、Scratch、733声明公理审计、固定版本/源码扫描/输入SHA稳定均通过；四关键仅基础公理。LinearizedHamiltonian批次准备本地保存，未推送。
 - 严格正质量+显式Hessian二次型非负推出二次Hamiltonian非负；没有从极小值偷推Hessian正定，也没有宣称Hartman--Grobman。全书目标继续，最终签核pending，无新远端CI。
+
+## 2026-10-04 13:23 +08:00 — 线性化二次 Hamiltonian 批次已提交
+
+- 本地提交 `03575b3` 保存 LinearizedHamiltonian 源码、full-check21 完整证据、三次原日志与映射/假设/状态文档；未推送。当前工作树仅保留既有无关材料改动和未跟踪文件。
+- 全书 Goal 仍 active；下一步按第1章清单继续，不能将本批当成 Hartman--Grobman或全书完成。
