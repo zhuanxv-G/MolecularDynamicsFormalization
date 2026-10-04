@@ -1,0 +1,13 @@
+'MolecularDynamics.scalarPotentialSwappedEnergy_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialSwappedField_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialSwappedEnergy_isFirstIntegral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.scalarPotentialSwappedEnergy_positionPartial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.scalarPotential_regularTurning_quadrature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotential_equilibrium_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotential_equilibrium_locally_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -278,3 +278,5 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 - General scalar potential Example1.6 including turning/stationary cases, higher-dimensional nonresonance/forward density and whole book remain open; final responsible semantic signoff pending, no new remote CI.
 
 - 2026-10-04 ScalarIntegrability candidate03 six keys passed exit0 without warnings; actual C2 potential first integral and nonturning quadrature formally integrated. Full-check15 passed (8979 jobs/691 declarations), fixed versions, Scratch, source scan and stable input SHA verified. Turning/stationary and whole book pending; final human signoff pending, no new remote CI.
+
+- 2026-10-04 ScalarTurning candidate03 eight keys passed exit0 without warnings, allowed base axioms. Actual regular-turning inverse quadrature and stationary initial state whole-Ioo constancy formally integrated. Full-check16 passed (8980jobs/702 declarations), Scratch/fixed versions/source scan/stable SHA verified; whole book and human semantic signoff pending, no new remote CI.

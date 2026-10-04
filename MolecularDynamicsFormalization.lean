@@ -51,3 +51,4 @@ import MolecularDynamics.Chapter01.TorusPeriod
 import MolecularDynamics.Chapter01.FirstIntegralGraph
 import MolecularDynamics.Chapter01.FirstIntegralQuadrature
 import MolecularDynamics.Chapter01.ScalarIntegrability
+import MolecularDynamics.Chapter01.ScalarTurning

@@ -403,3 +403,7 @@ Printed28/PDF51: FirstIntegralQuadrature constructs a true C1 implicit level gra
 ### ScalarIntegrability — printed20/PDF43 Example1.4 and28/PDF51 Example1.6
 
 For unit mass and a genuine C2 real potential U, proves actual energy derivative zero along every true ODE, its first-integral property, true velocity partial v, C1 vector field, and local inverse-quadrature recovery of both coordinates whenever initial velocity is nonzero. No assumed graph/inverse/conservation conclusion. Turning/stationary/global continuation remain separate.
+
+### ScalarTurning — Example1.4 degenerate velocity handling
+
+True coordinate swap derives C1 field/energy, first integral and energy position partial U′. If U′ at the initial position is nonzero, actual velocity is the separating scalar and its strict integral inverse recovers velocity and position even at zero-velocity turning points. If velocity and U′ both vanish, the true constant solution is locally unique by C1 ODE uniqueness and remains constant on the whole connected original solution interval, via open/relative-closed coincidence set. These are local quadratures and interval stationarity, not global nonstationary existence.
