@@ -44,6 +44,15 @@ import MolecularDynamicsFormalization
 #check MolecularDynamics.hasDerivAt_positionPair
 #check MolecularDynamics.hasDerivAt_upperTriangularFlow
 #check MolecularDynamics.matrixExponentialFlow_upperTriangular
+#check MolecularDynamics.twoBodyCenterOfMass
+#check MolecularDynamics.twoBodySeparation
+#check MolecularDynamics.twoBodyCenterVelocity
+#check MolecularDynamics.twoBodyRelativeVelocity
+#check MolecularDynamics.twoBody_reconstruct_first
+#check MolecularDynamics.twoBody_reconstruct_second
+#check MolecularDynamics.twoBody_center_roundtrip
+#check MolecularDynamics.twoBody_separation_roundtrip
+#check MolecularDynamics.twoBody_equalMass_kinetic_decomposition
 #check MolecularDynamics.strictPotentialMin_mechanicalEquilibrium
 #check MolecularDynamics.momentum_norm_sq_le
 #check MolecularDynamics.isCompact_phaseEnergySublevel

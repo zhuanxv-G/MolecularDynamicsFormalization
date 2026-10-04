@@ -1,5 +1,11 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-04 21:13 +08:00）
+
+- 当前分支 `chapter01-kinetic-energy-nonneg`，实际 HEAD 为 `03dedba`；固定 Lean 4.34.0 与锁定 mathlib `5ed2965256430c3649e86755f9576b54eca72435`。无关工作树材料继续保留，不暂存、不覆盖。
+- 原页印刷47/PDF70 已视觉核对。新增模块 `MolecularDynamics/Chapter01/TwoBodyCoordinates.lean` 覆盖习题3(b)的等质量平面二体质心/相对坐标、四个逆变换/重构恒等式及精确动能分解；尚未声称径向势、运动方程或习题3(c)。
+- `full-check36` 已于 21:20:01--21:21:04 +08:00 通过：固定版本、8990 jobs、零构建警告、373 项声明、公理审计、Scratch、源码扫描与输入 SHA 全部通过；新增声明仍只依赖 `propext`、`Classical.choice`、`Quot.sound`。报告在 `docs/verification/2026-10-04-Kepler/full-check36/`。当前批次尚未提交，待保存数学提交后再修正本行 HEAD；Goal 仍 active，负责人最终教材语义签核 pending。
+
 ## 当前数学检查点（2026-10-04 14:49 +08:00）
 
 - 同一全书Goal/聊天01a102b1-a3fe-71e1-a571-347703fc09b8实际active，非完成/用户暂停。仅本地GPT-6.1 Sol/High；不使用MathCopilot、不建重复Goal/自动化、不购买/重置/换账户。heartbeat lean保持ACTIVE；最终负责人语义签核pending，无新远端CI。

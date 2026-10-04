@@ -471,3 +471,7 @@ Printed46/PDF69 exercise 1(c): `matrixExponential_conjugate` proves `exp(X D X�
 ### Upper-triangular matrix exponential exercise (2026-10-04)
 
 Printed46/PDF69 exercise 1(b): `upperTriangularMatrix` is the literal matrix `[[1, α], [0, 1]]`; `upperTriangularFlow` and `matrixExponentialFlow_upperTriangular` prove its exact solution `eᵗ(x₀+α t y₀), eᵗ y₀` by derivative calculation and the existing global linear-ODE uniqueness theorem. The helper records the two-coordinate derivative bridge; no claim about arbitrary Jordan forms is made.
+
+### Two-body center-of-mass coordinates (2026-10-04)
+
+Printed47/PDF70 exercise 3(b): `TwoBodyCoordinates` defines the planar equal-mass center coordinate `q_cm=(q₁+q₂)/2`, relative coordinate `Δ=q₂-q₁`, and their velocity counterparts. It proves both reconstruction identities, both inverse-coordinate round trips, and the equal-mass kinetic decomposition into total-mass center motion and reduced-mass relative motion. The radial potential, reduced equations of motion, polar integration in 3(c), and exercises 4--5 remain separate.

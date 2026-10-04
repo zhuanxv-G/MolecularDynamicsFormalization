@@ -390,3 +390,12 @@ run_cmd do
 #print axioms MolecularDynamics.hasDerivAt_positionPair
 #print axioms MolecularDynamics.hasDerivAt_upperTriangularFlow
 #print axioms MolecularDynamics.matrixExponentialFlow_upperTriangular
+#print axioms MolecularDynamics.twoBodyCenterOfMass
+#print axioms MolecularDynamics.twoBodySeparation
+#print axioms MolecularDynamics.twoBodyCenterVelocity
+#print axioms MolecularDynamics.twoBodyRelativeVelocity
+#print axioms MolecularDynamics.twoBody_reconstruct_first
+#print axioms MolecularDynamics.twoBody_reconstruct_second
+#print axioms MolecularDynamics.twoBody_center_roundtrip
+#print axioms MolecularDynamics.twoBody_separation_roundtrip
+#print axioms MolecularDynamics.twoBody_equalMass_kinetic_decomposition
