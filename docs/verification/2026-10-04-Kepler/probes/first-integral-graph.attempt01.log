@@ -1,0 +1,9 @@
+docs/verification/2026-10-04-Kepler/probes/FirstIntegralGraphProbe.lean:18:8: warning: `ext` did not consume the patterns `y`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+docs/verification/2026-10-04-Kepler/probes/FirstIntegralGraphProbe.lean:21:8: warning: `ext` did not consume the patterns `y`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+'MolecularDynamics.planarScalarPartial_isInvertible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_planarFirstIntegral_localGraph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.planarFirstIntegral_localGraph_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]

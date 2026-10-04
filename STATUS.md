@@ -264,3 +264,10 @@ Kepler/full-check11 passed at11:56:21--11:57:42:8975jobs, Scratch,663 imported p
 - General high-dimensional nonresonance, forward density and remaining whole book pending; final responsible semantic signoff pending, no new remote CI.
 
 Kepler/full-check12 passed at12:02:15--12:03:37:8976jobs, Scratch,676 imported project declaration audits, pinned versions/source scan/stable input SHA. Positive period iff rational ratio/nonperiodicity for angle and genuine mechanical phase accepted locally; final signoff pending.
+
+### True first-integral implicit graph and scalar reduction (2026-10-04)
+
+- Graph candidate02 three key proofs passed without warnings and only permitted foundational axioms. Actual y-partial nonzero gives inverse, true implicit graph and actual conserved trajectory scalar reduction formally integrated; full-check13 starts.
+- Neighborhood regularity/nonturning scalar quadrature connection and remaining whole book open; final responsible semantic signoff pending, no new remote CI.
+
+Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported project declaration audits, pinned versions/source scan/stable input SHA. Actual first-integral implicit graph and trajectory scalar reduction accepted locally; final signoff pending.

@@ -212,3 +212,7 @@ Positive Ωⱼ/Iⱼ for fixed-energy homeomorphism, finite product including dim
 ### Exact two-frequency period classification (2026-10-04)
 
 Ω₀>0 for the angle positive-period iff, Ω₁ arbitrary; physical orbit classification additionally Ω₁>0 and both actions positive, so phase map is injective. Rational frequency ratio is an existential real equality to a rational, and a positive period is explicitly constructed. Zero-action degeneracy can remove a frequency and is not included in physical iff. High-dimensional resonances/general nonresonance remain separate.
+
+### Local first-integral graph reduction (2026-10-04)
+
+Actual real pair state, strict Fréchet differentiable first integral at the base and actual derivative y-component L(0,1)≠0. Trajectory reduction assumes the previously defined genuine first-integral property, actual ODE derivatives on a connected open time interval and base inside it. Graph and reduced trajectory formulas are eventual near the base only. No generic global level graph/zero partial inverse or already solved scalar trajectory is assumed. Stronger C1 graph regularity for quadrature is separate.

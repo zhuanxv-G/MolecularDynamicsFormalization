@@ -314,3 +314,6 @@ run_cmd do
 #print axioms MolecularDynamics.harmonicTorusPhase_periodic_iff_rotation_periodic
 #print axioms MolecularDynamics.harmonicTorusPhase_two_positivePeriod_iff_rational
 #print axioms MolecularDynamics.harmonicTorusPhase_two_irrational_no_positivePeriod
+#print axioms MolecularDynamics.planarScalarPartial_isInvertible
+#print axioms MolecularDynamics.exists_planarFirstIntegral_localGraph
+#print axioms MolecularDynamics.planarFirstIntegral_localGraph_reduction

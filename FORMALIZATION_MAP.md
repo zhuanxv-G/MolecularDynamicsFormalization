@@ -391,3 +391,7 @@ Printed30/PDF53: TorusDensity proves fixed positive coordinate-energy levels are
 ### Exact two-frequency rational/irrational period distinction (2026-10-04)
 
 Printed30/PDF53: TorusPeriod proves existence of a positive real-time period iff Ω₁/Ω₀ is rational for Ω₀>0; the rational witness constructs an actual period using numerator/denominator, and the reverse derives a rational ratio from the true integer angle-period criterion. Irrational ratio gives no positive period. Positive-frequency/action phase injectivity transfers the iff and nonperiodicity to the real mechanical orbit, not only the abstract angle variables.
+
+### Genuine first-integral implicit level graph (2026-10-04)
+
+Printed28/PDF51: FirstIntegralGraph derives actual invertibility of the scalar y-partial from L(0,1)≠0, then the real implicit function theorem constructs ψ with ψ(x₀)=y₀, actual differentiability and exact local equivalence J(x,y)=J(x₀,y₀) iff y=ψ(x). Conservation of the actual first integral along actual trajectories proves the local graph representation and genuine scalar derivative x'=f₁(x,ψ(x)); the graph and reduced ODE are derived rather than assumed. C1 graph-neighborhood speed and separated quadrature remain separate.

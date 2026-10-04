@@ -1311,3 +1311,18 @@
 - full-check12实际12:02:15--12:03:37退出0，8976jobs、Scratch、676项目声明审计、固定版本/扫描/输入SHA稳定；六关键仅三项基础公理。准备本地保存明确源码/两次原日志/完整证据。
 - 再次实际查看印刷28/PDF51原页；FirstIntegralGraphProbe开始单一attempt01，从真实strict导数偏导非零推线性逆，构造实际局部level graph并降真实first-integral轨迹为x'=f₁(x,ψx)。候选未计完成；graph附近连续速度/非转向分离积分仍下一步。
 - 全书继续，最终签核pending，无新远端CI，不用MathCopilot，无关材料保留。
+
+## 2026-10-04 12:05 +08:00 — 周期分类已保存，第一积分graph候选证明通过
+
+- TorusPeriod完整批次ed97648本地保存，未推送。Graph candidate01三关键实际退出0、仅三项基础公理；真实偏导非零推线性逆/implicit level graph/真first-integral轨迹降维完整证明，只有scalar CLM ext y未使用pattern警告（因为一维ext lemma无需任意变量），已改ext并准备attempt02。图附近连续速度与分离积分仍后续独立未完成。
+
+## 2026-10-04 12:07 +08:00 — 第一积分真实implicit图/降维正式接入
+
+- Graph candidate02三关键实际退出0、无警告，只允许基础公理。实际偏导非零→真实线性逆，真implicit局部level图、既有真first-integral轨迹降一维ODE正式接入根/Scratch/CheckAxioms；full-check13开始、冻结正式输入。
+- 已只读核对固定ImplicitContDiff API，下一补C1 graph真实邻域正则性/连续非零scalar速度，再接真实分离积分逆。不能从仅strict基点可微冒称整个邻域速度连续。
+- 最终签核pending、无新远端CI，全书持续、无关材料保留。
+
+## 2026-10-04 12:10 +08:00 — 真实第一积分图/降维完整验收通过
+
+- full-check13实际12:07:11--12:08:31退出0，8977jobs、Scratch、679项目声明审计、固定版本/扫描/输入SHA稳定；三关键仅基础公理。准备保存源码/两次原日志/完整证据，不推送。
+- FirstIntegralQuadratureProbe已落盘并单一attempt01运行中：真实C1 implicit graph，f/J真实C1及非转向速度导出正则性/非零位置窗口和实际轨迹时间窗口，接已验收积分inverse并恢复两实际分量。候选尚未计完成；最终签核pending、全书持续。
