@@ -2389,3 +2389,23 @@
 
 - 唯一full-check01/session48630：2026-10-05T07:28:44.9656552+08:00--2026-10-05T07:29:49.5663795+08:00退出0；9019jobs、零警告、685项审计声明仅基础三公理、102项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；16public（含phase abbrev）接受。真实矩阵场/真实fderiv符号桥接/实际负号闭包见证/生成递推与LieSpan全阶成员完整，347/PDF368目视。ledger/notation/section/映射/假设/状态同步，负责人pending。
 - 本批不需要SPD，后续Prop8.3保留正定谱互异，并按347实际公式修正348交换q/p后的加权因子，完整证明两组系数为零。下一真实Vandermonde/谱坐标独立性，之后Hörmander lift；Theorem8.1/其余正文/整个范围仍pending。先保存本批，无其他构建。
+
+## 2026-10-05 07:37 +0800 — Prop8.3真实谱坐标与Vandermonde开始
+
+- 前批e313cb8保存。347--348/PDF368--369目视，实际canonical eigenvectorUnitary的UT与真实A谱intertwine/矩阵幂坐标候选，实际非零mode与正特征值/互异条件，重算真实(p²+λq²)π=0后证明两组系数零。
+- Chapter08/ThermostatSpan.lean候选落盘，下一唯一local-check01，再接实际有限组合及真正LinearIndependent/张成；原348坐标交换不沿用。整个Theorem8.1/Hörmander lift/其余范围/负责人pending，无重复构建。
+
+## 2026-10-05 07:40 +0800 — Prop8.3谱接口与第二组消元诊断
+
+- local01/session64825退出1：真实乘法结合方向、mulVec_diagonal固定API与保留token λ，已修复。local02退出1零警告，仅第二组消元应使用ν q乘首式而非q乘首式，重算为ν(p²+νq²)β=0；首组权重/真实谱坐标与幂均无其他诊断。
+- 两失败原始日志保留，不计整批通过；下一local03后接actual finite combination与真正独立性。
+
+## 2026-10-05 07:50 +0800 — Prop8.3实际谱独立性与张成局部通过
+
+- local04有限和projection类型桥接失败，LinearMap真实投影后local05退出0零警告；补实际dotProduct与domain开性后local06补集simp改变目标接口，直接change实际preimage补集修复，local07退出0零警告。失败日志全部保留。
+- 14public接根/Scratch/审计，原347--348/PDF368--369目视；actual matrix谱定理构造坐标而非供应对角化结论，SPD正特征值由真实PosDef推出，原互异与非零mode推出两组系数全零，实际C/D族独立/张成与真实LieSpan点值张成。启动唯一full-check01，未决前不改输入，Theorem8.1/Hörmander lift与整个范围/负责人pending。
+
+## 2026-10-05 07:54 +0800 — Prop8.3真实谱独立性完整验收
+
+- 唯一full-check01/session71698：2026-10-05T07:50:48.1727780+08:00--2026-10-05T07:51:56.9744487+08:00退出0；9020jobs、零警告、699项审计声明仅基础三公理、103项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；14public接受。actual spectral theorem/正特征值推导、真实UT/内积对应、D开、两个实际权重消元/Vandermonde、真C/D族独立/张成与生成Lie点值span完整。347--348/PDF368--369目视，348坐标交换与π/σ两组系数处理明确记录；ledger/notation/section/映射/假设/状态同步，负责人pending。
+- 254/PDF275和344--345/PDF365--366已目视；C∞且包括drift b0，Prop8.2 variable coefficients须真实Leibniz闭包及点值span桥接，不能把变系数闭包作为输入。下一HormanderClosure/ThermostatHormander，σ≠0明确。原346零mode不变CH08-CLM-001登记，真全程证明pending；Theorem8.1/其他正文/整范围尚未完成。先保存本批，无其他构建。

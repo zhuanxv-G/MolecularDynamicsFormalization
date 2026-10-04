@@ -590,3 +590,8 @@ Printed299--300/PDF320--321: `Chapter07/InvariantDistributionSwap.lean` fully pr
 ### Actual thermostat linear Lie fields (2026-10-05)
 
 Printed347/PDF368: `Chapter08/ThermostatLieFields.lean` fully proves Lemma8.1 for actual linear F/G/C/D and all matrix powers. True fderiv computations bridge the opposite End commutator sign; real negative closure witnesses actual VectorField bracket closure. Real matrix identities and LieSpan induction derive both field families, with no desired membership supplied. Internal k0 is textbook k1; positive distinct spectrum and Proposition8.3 independence, Hörmander lift and the full Theorem8.1 remain separate.
+
+
+### Actual positive spectral thermostat span (2026-10-05)
+
+Printed347--348/PDF368--369: `Chapter08/ThermostatSpan.lean` fully proves Proposition8.3 from the actual SPD spectral theorem, original distinct-eigenvalue data and the actual nonzero eigenmode domain. Real eigen-coordinates are tied to eigenvector dot products; D is open. Both actual coefficient families vanish by positive modal weights and actual Vandermonde injectivity, yielding true finite-family linear independence, dimension-based spanning and real generated Lie algebra value spanning. The printed348 q/p swap is recorded and recomputed from printed347 definitions. Hörmander lift, Theorem8.1 and the proved unnumbered invariant-mode claim remain separate.

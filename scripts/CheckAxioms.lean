@@ -767,3 +767,19 @@ run_cmd do
 #print axioms MolecularDynamics.textbookThermostatLieSpan
 #print axioms MolecularDynamics.textbookThermostatLieSpan_vectorField_closed
 #print axioms MolecularDynamics.textbookThermostat_C_D_mem_lieSpan
+
+-- Genuine spectral modes, actual vector independence and pointwise spanning.
+#print axioms MolecularDynamics.textbookThermostatEigenCoordinates
+#print axioms MolecularDynamics.textbookThermostatSpectralPhase
+#print axioms MolecularDynamics.textbookThermostatEigenCoordinates_eq_dotProduct
+#print axioms MolecularDynamics.textbookThermostatEigenCoordinates_intertwine
+#print axioms MolecularDynamics.textbookThermostatEigenCoordinates_power
+#print axioms MolecularDynamics.textbookThermostat_C_coordinates
+#print axioms MolecularDynamics.textbookThermostat_D_coordinates
+#print axioms MolecularDynamics.textbookThermostatModeDomain
+#print axioms MolecularDynamics.textbookThermostatModeDomain_isOpen
+#print axioms MolecularDynamics.textbookThermostatModal_coefficients_eq_zero
+#print axioms MolecularDynamics.textbookThermostatFamily
+#print axioms MolecularDynamics.textbookThermostatFamily_linearIndependent
+#print axioms MolecularDynamics.textbookThermostatFamily_span_eq_top
+#print axioms MolecularDynamics.textbookThermostatLieSpan_pointwise_span_eq_top

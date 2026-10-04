@@ -416,3 +416,8 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 
 - 唯一full-check01/session48630：2026-10-05T07:28:44.9656552+08:00--2026-10-05T07:29:49.5663795+08:00退出0；9019jobs、零警告、685项审计声明仅基础三公理、102项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；16public接受，原346--348/PDF367--369目视。
 - 真实F/G/C/D、fderiv符号桥接、真实矩阵递推及生成闭包完整；负责人语义pending。Prop8.3/Hörmander lift、Theorem8.1及整个CORE_SCOPE仍pending，继续正文依赖。
+
+## 2026-10-05 Prop8.3实际谱独立性与张成验收
+
+- 唯一full-check01/session71698：2026-10-05T07:50:48.1727780+08:00--2026-10-05T07:51:56.9744487+08:00退出0；9020jobs、零警告、699项审计声明仅基础三公理、103项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；14public完整接受，原347--348/PDF368--369目视。
+- 实际SPD谱、真实坐标/内积对应、D开性、两组Vandermonde消元与C/D独立/张成、真正LieSpan点张成均接受；负责人语义pending。原348坐标交换已登记；下一Prop8.2真实Hörmander lift，Theorem8.1及整范围pending。

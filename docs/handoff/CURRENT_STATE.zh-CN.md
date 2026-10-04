@@ -1,8 +1,30 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 07:54 +0800）
+
+- 本批前HEAD e313cb809dac9b6c0496e6911cbea4fbd686514b；ThermostatSpan完整接受，待本地保存，固定版本/分支未改，既有材料保留、未推送。
+- 唯一full-check01/session71698：2026-10-05T07:50:48.1727780+08:00--2026-10-05T07:51:56.9744487+08:00退出0；9020jobs、零警告、699项审计声明仅基础三公理、103项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；14public完整接受。真实orthogonal谱坐标/内积、D开、actual C/D两组系数消元/Vandermonde、LinearIndependent/维数张成及实际LieSpan点值张成完整；347--348/PDF368--369目视，348的q/p交换/只论π未论σ缺口已记录，负责人pending。
+- 下一Prop8.2真实Hörmander lift，目标Chapter08/HormanderClosure.lean与ThermostatHormander.lean。254/PDF275及344--345/PDF365--366已目视，Definition6.1是C∞且含b0。必须构造真实迭代bracket点值span，再用真实Leibniz证明平滑系数有限组合闭包并桥接其点值，不能假定variable coefficient Lie闭包。σ≠0需明确。
+- NHL原G符号是负momentum scaling，可从已证正G真实负号闭包转换。原g=μ⁻¹(||p||²-Nc kBT)为真实smooth polynomial；不供应Hörmander结论。
+- 零mode不变正文CH08-CLM-001已如实登记待真正全程证明；Theorem8.1/Hörmander lift、一般Ito/其他正文和整个范围、负责人pending。先保存本批，无其他构建。
+
+## 最新数学检查点（2026-10-05 07:50 +0800）
+
+- HEAD e313cb809dac9b6c0496e6911cbea4fbd686514b，固定版本不变；Prop8.3 local-check07退出0、零警告，14public接根/Scratch/公理审计。
+- 实际orthogonal eigen-coordinates与真实eigenvector dotProduct对应、true A谱intertwine/矩阵幂坐标、实际mode domain及开性、两组系数消元/Vandermonde、真实C/D有限组合LinearIndependent、维数张成及真正LieSpan点值张成全部局部通过。
+- local04有限和projection未化简，改用真正LinearMap投影后local05通过；补dotProduct/domain开性后的local06被simp重写补集IsOpen为IsClosed接口，改成实际preimage补集直接应用，local07通过。所有失败日志保留。
+- 启动唯一full-check01，未决前不改核验输入；347--348/PDF368--369目视并记录348坐标交换。Theorem8.1的Hörmander lift、其他正文/整个范围和负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 07:37 +0800）
+
+- HEAD e313cb809dac9b6c0496e6911cbea4fbd686514b；Lemma8.1完整接受并保存，固定版本不变，无其他构建。
+- 进行中Prop8.3真实谱坐标/实际C/D独立性，目标Chapter08/ThermostatSpan.lean。347--348/PDF368--369目视，canonical真实eigenvectorUnitary提供UT，正定实际特征值正性由mathlib PosDef推出，互异是原明确假设。
+- 348证明坐标交换按347真实定义重算；候选实际谱intertwine与矩阵幂坐标、真实mode domain、两组系数取消及真实Vandermonde推导已落盘，local01/02失败原始日志已保存，真实谱接口已修复，第二组实际消元为ν(p²+νq²)β=0；下一唯一local-check03后接真正实际有限组合的线性独立与张成。
+- 只供原SPD/谱互异/非零mode条件，不能供应独立性或对角化结论作为假设。Hörmander lift、Theorem8.1与整体正文/负责人pending。
+
 ## 最新数学检查点（2026-10-05 07:34 +0800）
 
-- 本批前HEAD947d0dbbef7c95935b8bbbf72c760df2d1163308，固定版本/分支未改；ThermostatLieFields完整接受，待本地保存，原材料保留、未推送。
+- 本批前HEAD947d0dbbef7c95935b8bbbf72c760df2d1163308，固定版本/分支未改；ThermostatLieFields完整接受并保存为e313cb809dac9b6c0496e6911cbea4fbd686514b，原材料保留、未推送。
 - 唯一full-check01/session48630：2026-10-05T07:28:44.9656552+08:00--2026-10-05T07:29:49.5663795+08:00退出0；9019jobs、零警告、685项审计声明仅基础三公理、102项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；16public（含phase abbrev）接受。真实矩阵F/G/C/D、genuine fderiv符号桥接、actual VectorField负号闭包见证、真正递推与LieSpan全阶成员均完整。原346--348/PDF367--369目视，负责人语义pending。
 - 下一Prop8.3：Chapter08/ThermostatSpan.lean，真实SPD谱坐标与互异正特征值，实际C/D有限组合逐分量重算为(p²+λq²)π(λ)=0，用实际Vandermonde推出两组系数零与线性独立/张成。原348坐标交换须明确记录，不照抄错误。
 - 之后Prop8.2真实Hörmander lift；Theorem8.1完整目标、一般Ito/其他正文与整CORE_SCOPE仍pending，无其他构建。先保存本批后继续。
