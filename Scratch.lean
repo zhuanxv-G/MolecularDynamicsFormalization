@@ -317,3 +317,6 @@ end MolecularDynamics
 #print axioms MolecularDynamics.mechanicalLinearization_apply
 #print axioms MolecularDynamics.hasFDerivAt_mechanicalVectorField
 #print axioms MolecularDynamics.conservative_mechanical_linearization
+#print axioms MolecularDynamics.exists_C1_localContinuousSolutionFamily
+#print axioms MolecularDynamics.exists_localContinuousMechanicalFamily
+#print axioms MolecularDynamics.exists_localContinuousMechanicalFamily_open

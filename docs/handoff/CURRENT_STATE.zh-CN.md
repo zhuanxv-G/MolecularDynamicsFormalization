@@ -1,14 +1,14 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 12:45 +08:00）
+## 当前数学检查点（2026-10-04 13:01 +08:00）
 
 - 同一全书Goal/聊天01a102b1-a3fe-71e1-a571-347703fc09b8实际active，非完成/用户暂停。仅本地GPT-6.1 Sol/High；不使用MathCopilot、不建重复Goal/自动化、不购买/重置/换账户。heartbeat lean保持ACTIVE；最终负责人语义签核pending，无新远端CI。
-- 分支chapter01-kinetic-energy-nonneg，当前HEAD6af09fe27229a7e9c41fb0d77ce5c8fd741c9cb4，准备保存已完整验收的EquilibriumLinearization；未推送。固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435。无关AGENTS/FORMALIZATION_PLAN/RESUME/T3/T2-T5材料及CHAPTER01_TASK_OVERVIEW新文件保留。
+- 分支chapter01-kinetic-energy-nonneg，当前HEADb64f14b81587634b461f8a2676d5fbe212b4b348，准备保存已完整验收的LocalContinuousFlow；未推送。固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435。无关AGENTS/FORMALIZATION_PLAN/RESUME/T3/T2-T5材料及CHAPTER01_TASK_OVERVIEW新文件保留。
 - 已验收基础：实际端点/紧性延拓、完整Theorem1.1、Lagrangian/Legendre、双向势垒Flow、谐振子/自由连续Flow、真实矩阵指数/谱/实恢复/列基逆；第一积分、角动量、Kepler真梯度C1/localIVP/守恒、polar chart/EL/Cartesian桥接/任意初值重建/非转向积分逆。源模块与历史证据见WORK_LOG和docs/verification，不重复已通过构建。
 - 后续已本地保存：SeparableQuadrature20576ce+2eaee48；KeplerQuadratureda46d1f；HarmonicActionAnglec15fb5f；ActionAngleChart2e582c5；HarmonicToruse58430c；TorusDensity5a15ff0；TorusPerioded97648；FirstIntegralGraph856165b；FirstIntegralQuadrature6c364f9；ScalarIntegrability7f48c55；ScalarTurning751c666；ScalarLocalIVP6af09fe。所有实际证明/完整检查/原页与公理证据保留。
 - 最近完整检查：Kepler14二维C1图+自动非零窗口+双分量积分逆(8978jobs/682)；15一般C2势能非转向(8979/691)；16实际regular turning速度坐标积分逆+平衡整个Ioo常解(8980/702)；17任意真实初值IVP+energy+全部三分支(8981/708)。均退出0、Scratch/固定版本/扫描/全部公理/输入SHA稳定通过。印刷20/PDF43、28--31/PDF51--54实际视觉核对。
 - 当前EquilibriumLinearization candidate02八关键退出0无警告，仅基础公理；full-check18实际12:42:15--12:43:36退出0，8982jobs/720声明/Scratch/固定版本/扫描/输入SHA稳定。真equilibrium constant iff、真实little-o余项、完整实际扰动ODE、真线性化指数IVP、actual mechanical block derivative/负gradient导数已通过，正在保存。
-- 下一LocalContinuousFlowProbe已落盘，单一attempt01准备：由真实C1场推同一局部family、joint continuity、统一initial Lipschitz与实际ODE；机械场直接桥接。已只读核对固定PicardLindelof/ExistUnique实际API并复看印刷26/PDF49，尚未计完成。恢复第一动作读local-continuous-flow.attempt01.log；不并发/重复构建。正式全检运行时冻结所有正式输入。
+- 下一LocalContinuousFlow candidate04三关键退出0无警告，仅基础公理；full-check19实际12:56:20--13:00:00退出0，8983jobs/724声明/Scratch/固定版本/源码扫描/输入SHA稳定均通过。真实C1局部family、joint continuity、统一initial Lipschitz、机械开放域留域IVP已验收，正在保存。下一印刷32/PDF55已实际生成PNG并视觉核对：linearized Hamiltonian二次势能来自真实Hessian；需从C2导数对称性推真实gradient导数对称，再桥接二次能量/线性化block。尚未证明，恢复先读固定SymmetricFDeriv API，不重复已通过Lean。
 - 未完成：一般非平衡global拼接/全局初值连续依赖、general EL covariance、Kepler转向/global orbit、forward torus density与高维integer nonresonance、Hartman–Grobman及后续全书。高维两两无理比不足以保证全torus稠密；已证明二维density与三维resonance obstruction，不能泛化。§1.5.1/1.5.2/1.5.3仍partial；不能把一批当全书完成。
 
 ## 启动配置复核（2026-10-04 01:00 +08:00）
@@ -126,3 +126,10 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 - 用户询问第一章较慢、第二章及后续能否因经验而加快。已核对全书依赖范围与效率约定：已有轨迹、ODE、守恒、流和矩阵等基础可以复用，API 调试和批次验收流程也可复用；预期减少重复劳动，但尚未实际实施第二章完整批次，不能给整章加速比例或完成日期。
 - 第二章仍需新增误差、隐式方法和几何性质的证明；第三/四章及第五至八章存在各自的新基础依赖，尤其概率、测度、随机微分方程不能仅凭第一章经验视为已具备。明确区分已有可复用成果与尚未验证的效率预测。
 - 持续采用固定版本、现有库结果优先、小探针先行、批次通过后完整验收、未变输入复用证据的既有流程。此次没有重跑构建或变更数学任务；接续动作仍按当前数学检查点。
+
+## 本地 Codex 与 MathCopilot 的综合效率比较（2026-10-04 12:55 +08:00，本聊天已完成）
+
+- 用户询问只用本地 Codex 与加入 MathCopilot 哪种综合效果更好。根据实际工作日志，MathCopilot/浏览器/远端服务曾出现多次约 15–20 秒读取超时、usage limit、任务不可见或错配、依赖克隆/构建等待，以及一次约 29 分 56 秒后 `database operation failed`；本地 Lean 第五批完整检查约 4 分 52 秒。因此对当前工程的总墙钟时间，本地 Codex 主线更有利。
+- 证明可靠性方面，MathCopilot 可提供独立路线或反例审阅，理论上能增加视角；但网站返回不能替代固定版本的本地构建、公理审计和教材语义核对。历史 MathCopilot 报告/失败材料只作辅助证据，网站未验收不计通过。
+- 当前综合策略保持为：本地 Codex 负责原页核对、数学拆分、Lean 实现、固定版本验收和交接；只有遇到局部困难或需要第二个独立视角时，才考虑短提示词、固定提交、单目标的 MathCopilot 辅助，并且不让其成为继续工作的前置条件。当前未重新启用 MathCopilot。
+- 本轮只记录比较结论，没有重跑 Lean、改动源码/工具链/构建输入、提交/推送或发送外部任务。最新数学状态以本文件上方检查点为准。

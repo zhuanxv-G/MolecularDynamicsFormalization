@@ -415,3 +415,7 @@ C1 derived field gives an actual local IVP for every real initial position/veloc
 ### EquilibriumLinearization — printed31/PDF54, actual first-order linearization
 
 Constant trajectory true ODE iff f(z*)=0; actual Frechet derivative gives R(h)=f(z*+h)-Ah=o(h). C1 implies actual A=fderiv; nonlinear perturbation satisfies exactly δ′=Aδ+Rδ. Genuine linearized IVP δ′=Aδ is provided by accepted operator exponential. Mechanical field actual block derivative is (dq,dp)↦(M⁻¹dp,DFdq); conservative C2 potential gives DF=-D(gradient U). No Hartman–Grobman conjugacy claimed.
+
+### LocalContinuousFlow — genuine local flow-map dependence
+
+Fixed Picard–Lindelöf data from a C1 vector field yields one actual family Φ(z,t), joint continuous on a product closed-ball/time interval, uniformly Lipschitz in initial state, and satisfying the true ODE for each initial point. For a mechanical C1 force field, the actual block field is bridged; open configuration domains are handled by shrinking radii from true continuity so every local trajectory stays in Q. This is local only and does not assert a global flow or Hartman–Grobman conjugacy.

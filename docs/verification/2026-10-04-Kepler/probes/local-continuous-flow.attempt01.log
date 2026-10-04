@@ -1,0 +1,39 @@
+docs/verification/2026-10-04-Kepler/probes/LocalContinuousFlowProbe.lean:13:21: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-04-Kepler/probes/LocalContinuousFlowProbe.lean:13:23: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-04-Kepler/probes/LocalContinuousFlowProbe.lean:38:21: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-04-Kepler/probes/LocalContinuousFlowProbe.lean:38:23: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-04-Kepler/probes/LocalContinuousFlowProbe.lean:42:10: error: failed to synthesize
+  ContinuousSMul ℝ (PhaseSpace n)
+(deterministic) timeout at `typeclass`, maximum number of heartbeats (20000) has been reached
+
+Note: Use `set_option synthInstance.maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+'MolecularDynamics.exists_C1_localContinuousSolutionFamily' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.exists_localContinuousMechanicalFamily' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

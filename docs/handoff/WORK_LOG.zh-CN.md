@@ -1400,6 +1400,12 @@
 - 速度改善属于预期，尚无第二章完整实施批次可作比较，不承诺倍数或整章耗时。第二章误差/隐式/几何性质及后续形式级数、约束、概率与随机过程仍可能引入新证明难点。
 - 仅维护说明与交接，没有新 Lean 证明、构建、提交/推送或任务配置变更。原固定版本、小探针与必要完整验收流程继续，数学工作按最新检查点恢复。
 
+## 2026-10-04 12:55 +08:00 — 本聊天比较本地 Codex 与 MathCopilot 的综合效果
+
+- 用户询问只利用本地 Codex，还是加入 MathCopilot 更有效。读取当前 AGENTS、最新 CURRENT_STATE/WORK_LOG、MathCopilot 工作流分析和历史服务记录；按墙钟时间、证明质量、可复现性和阻塞风险比较。
+- 实际证据支持本地 Codex 作为主线：网站/浏览器记录有多次 15–20 秒超时、usage limit、任务错配、依赖等待，以及一次约 29 分 56 秒后的 `database operation failed`；本地 Lean 第五批完整验收约 4 分 52 秒。MathCopilot 的独立视角仍有审阅价值，但不应成为关键路径。
+- 结论：当前工程综合最优是“本地 Codex 主线 + MathCopilot 可选的短、固定提交、单目标独立审阅”，而不是全程依赖 MathCopilot。此结论与当前用户已确定的只本地约定一致；本轮没有恢复网站、发送任务或重跑构建。
+
 ## 2026-10-04 12:33 +08:00 — 转向积分逆与平衡全区间常解候选完整通过
 
 - ScalarTurning candidate03八关键退出0、无警告，仅基础公理。真实regular turning swapped quadrature与equilibrium整个Ioo恒定已证明并正式接入根/Scratch/CheckAxioms。
@@ -1434,3 +1440,26 @@
 - full-check18实际12:42:15--12:43:36退出0，8982jobs、Scratch、720声明审计、固定版本/扫描/输入SHA稳定均通过；八关键仅基础公理。本地保存明确源码/两次尝试原日志/完整证据，未推送。
 - 已复看印刷26/PDF49 flow map原页。LocalContinuousFlowProbe已落盘，单一attempt01准备：同一C1局部family actual IVP、joint continuous与统一initial Lipschitz，由固定PicardLindelof真实条件导出，再桥接mechanical field。尚未完成；未把local依赖泛称全局连续flow；最终签核pending，全书继续。
 - CSTATE顶部压缩为最新可操作检查点，保留其下启动/其他聊天历史；完整数学历史在WORK_LOG/证据和Git。
+
+## 2026-10-04 12:47 +08:00 — LocalContinuousFlow首轮notation/instance修复
+
+- attempt01尚未进入数学证明：ℝ≥0 scoped NNReal未开启被解析成Type上的≥；另mechanical ContDiff复合需已知ContinuousSMul桥接，照已有局部instance建立，未提升heartbeat或切版本。两项实际修复后准备attempt02，失败日志保留、未计完成。
+
+## 2026-10-04 12:49 +08:00 — 局部family两关键通过，补实际开放位置域
+
+- LocalContinuousFlow candidate02两关键退出0、无警告，仅基础公理；真实C1同family joint continuity/统一初值Lipschitz/actual derivative与mechanical桥接已通过。
+- 补开放Q统一缩小初值半径/时间半径，由真实joint continuity导出同一Φ实际全部位置留Q，得到真正IsLocalMechanicalIVP family，不把留域结论放假设。attempt03开始；尚未正式接入/计完成。
+
+## 2026-10-04 12:51 +08:00 — 开域joint family候选补真实prod子集映射
+
+- attempt03前两关键仍完整通过；开放Q候选只缺不存在的prod_subset_prod名字。改显式真实两个分量子集映射，不新增假设/升版本。attempt04开始，失败日志保留，尚未正式完成。
+
+## 2026-10-04 12:56 +08:00 — 局部初值连续依赖候选通过并接入
+
+- LocalContinuousFlow candidate04三关键退出0、无警告，仅基础公理。真实C1解族、联合连续、统一初值Lipschitz、actual ODE 与开放机械位置域共同留域IVP正式接入根/Scratch/CheckAxioms。
+- full-check19开始/正式输入冻结。只完成局部family；全局flow/非平衡全局拼接、Hartman--Grobman和全书剩余仍pending，最终签核pending，无新远端CI。
+
+## 2026-10-04 13:01 +08:00 — 局部初值联合连续完整验收通过
+
+- full-check19实际12:56:20--13:00:00退出0，8983jobs、Scratch、724项目声明公理审计、固定版本/扫描/输入SHA稳定均通过；三关键仅基础公理。保存正式源码/四次原尝试日志/完整证据，未推送。
+- PDF55原图不存在时已用bundled Poppler本地渲染且实际视觉查看印刷32/PDF55。下一教材真实linearized Hamiltonian Hhat=δpᵀM⁻¹δp/2+δqᵀU′′δq/2，需C2实际Hessian对称与二次energy/linearized block联系。待证明，不能用任意假设B对称冒充实际U Hessian。Hartman--Grobman/全局非线性联合连续和后续全书仍pending，最终签核pending。

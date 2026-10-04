@@ -54,3 +54,4 @@ import MolecularDynamics.Chapter01.ScalarIntegrability
 import MolecularDynamics.Chapter01.ScalarTurning
 import MolecularDynamics.Chapter01.ScalarLocalIVP
 import MolecularDynamics.Chapter01.EquilibriumLinearization
+import MolecularDynamics.Chapter01.LocalContinuousFlow
