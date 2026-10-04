@@ -1588,4 +1588,4 @@
 ## 2026-10-04 20:40 +08:00 — 习题1(b) 上三角矩阵指数完整验收
 
 - `full-check35` 实际运行 20:32:41--20:37:31，退出0：固定 Lean 4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、Scratch、源码扫描、输入哈希和公理审计通过；公理日志含 364 项声明，唯一公理集合为 `propext`、`Classical.choice`、`Quot.sound`。报告保存在 `docs/verification/2026-10-04-Kepler/full-check35/`。模块重编译约135秒，未发生失败或联网等待。
-- `matrixExponentialFlow_upperTriangular` 及其显式坐标导数桥接已正式接受。当前 HEAD `dad58c1`，本批次文档与源码提交尚待执行；习题3--5及非线性变分/Lyapunov 仍 pending。
+- `matrixExponentialFlow_upperTriangular` 及其显式坐标导数桥接已正式接受；随后已提交为 HEAD `a06eb9b`（`Formalize upper triangular matrix exponential exercise`）。习题3--5及非线性变分/Lyapunov 仍 pending。

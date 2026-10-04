@@ -186,7 +186,7 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 ## 最新检查点（2026-10-04 20:40 +08:00）
 
 - `full-check35` 已通过（20:32:41--20:37:31 +08:00）：固定 Lean 4.34.0、mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、364 项声明公理审计、Scratch、源码扫描和输入哈希稳定性均通过；唯一公理集合仍为 `propext`、`Classical.choice`、`Quot.sound`。报告在 `docs/verification/2026-10-04-Kepler/full-check35/`。
-- 习题1(b) 的上三角流及导数桥接已正式接受；本批次源码、Scratch、`CheckAxioms`、章节清单、映射/假设/状态文档和报告准备提交。当前数学基线 HEAD 为 `dad58c1`，Goal 仍 active。
+- 习题1(b) 的上三角流及导数桥接已正式接受，并已提交为 `a06eb9b`（`Formalize upper triangular matrix exponential exercise`）；当前 HEAD 为 `a06eb9b`，Goal 仍 active。
 - 下一步逐页处理习题3--5或 §1.7 的非线性时间依赖 Jacobian/初值导数；一般 Jordan 形、Lyapunov 极限和全书完成仍未声称。
 
 ## 最新检查点（2026-10-04 20:05 +08:00）
