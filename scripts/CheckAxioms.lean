@@ -320,3 +320,9 @@ run_cmd do
 #print axioms MolecularDynamics.exists_planarFirstIntegral_C1Graph
 #print axioms MolecularDynamics.exists_planarFirstIntegral_quadratureWindow
 #print axioms MolecularDynamics.planarFirstIntegral_nonturning_quadrature
+#print axioms MolecularDynamics.scalarPotentialEnergy_contDiff
+#print axioms MolecularDynamics.scalarPotentialVectorField_contDiff
+#print axioms MolecularDynamics.scalarPotentialEnergy_hasDerivAt_zero
+#print axioms MolecularDynamics.scalarPotentialEnergy_isFirstIntegral
+#print axioms MolecularDynamics.scalarPotentialEnergy_velocityPartial
+#print axioms MolecularDynamics.scalarPotential_nonturning_quadrature

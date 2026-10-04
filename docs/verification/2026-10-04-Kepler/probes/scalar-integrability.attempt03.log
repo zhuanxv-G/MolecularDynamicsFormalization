@@ -1,0 +1,6 @@
+'MolecularDynamics.scalarPotentialEnergy_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialVectorField_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialEnergy_hasDerivAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialEnergy_isFirstIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialEnergy_velocityPartial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotential_nonturning_quadrature' depends on axioms: [propext, Classical.choice, Quot.sound]

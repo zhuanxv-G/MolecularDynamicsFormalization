@@ -1,14 +1,14 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 12:21 +08:00）
+## 当前数学检查点（2026-10-04 12:29 +08:00）
 
 - 同一全书目标/聊天01a102b1-a3fe-71e1-a571-347703fc09b8实际get_goal=active；非完成/用户暂停。仅本地，保留GPT-6.1 Sol/High；不另建Goal/自动化、不用MathCopilot、不购买/重置/换账户。
-- 分支chapter01-kinetic-energy-nonneg，实际本地HEAD856165b1d46929b382c300d1ca23aa71ced5d597，未推送；固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435。所有无关AGENTS/FORMALIZATION_PLAN/RESUME/T3/T2-T5 review等材料保留，仅暂存明确批次文件。
+- 分支chapter01-kinetic-energy-nonneg，实际本地HEAD6c364f9（刚完成本批本地保存），未推送；固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435。所有无关AGENTS/FORMALIZATION_PLAN/RESUME/T3/T2-T5 review等材料保留，仅暂存明确批次文件。
 - 既有验收：Theorem1.1真欧氏全未来严格sup稳定性2081575；Lagrangian/Legendre f52945d；双向全时间势垒Flow84549ab；谐振子/自由连续Flow4859306；真实矩阵指数/谱/实恢复/列基逆eb6d018+60ee65a；第一积分/中心力角动量/Kepler真梯度C1/局部IVP守恒bb3f40c+e368448。
 - Kepler后续本地保存：polar strict chart9f3c45b，真polar EL/有效能量/角FTC235c03c，真Cartesian↔polar桥接e802090，任意非零Cartesian初值径向IVP+角积分重建93feaee，真实scalar分离积分strict逆20576ce+证据2eaee48，任意非转向点自动符号/窗口真实积分逆da46d1f。各完整验收证据见Kepler/full-check02--07。
 - action-angle本地保存c15fb5f，真印刷公式/能量/实际ODE双向等价/时间公式/任意非零初值表示/谐振子Flow共轭；check08实际11:26:45--11:29:08退出0（8972jobs/589）。真实strict导数/Jacobian det1/局部OpenPartialHomeomorph strict逆2e582c5；check09实际11:35:41--11:37:03退出0（8973jobs/613）。
 - 当前HarmonicTorus candidate07十一关键退出0无警告；真商角有限乘积/连续旋转Flow/精确整数周期条件/固定正action能量面image/真实多振子机械解正式验收check10实际11:48:35--11:49:55退出0（8974jobs/643）。Scratch/固定版本/源码扫描/全部审计/输入SHA稳定，关键仅允许propext/Classical.choice/Quot.sound。本地保存e58430c与七次原日志。
-- TorusDensity attempt01/02失败已修复，candidate03八关键退出0、无警告（两条abel_nf info建议），只允许基础公理。真实homeomorph/二维实时间DenseRange/物理orbit closure/三维共振不稠密正式接入，full-check11实际11:56:21--11:57:42退出0，8975jobs/663声明/Scratch/固定版本/扫描/输入SHA稳定。Density批次本地保存5a15ff0。Period attempt01仅phase转递β重写失败，congrArg修复；candidate02六关键退出0无警告、只允许基础公理。正式TorusPeriod接入，full-check12实际12:02:15--12:03:37退出0，8976jobs/676声明/Scratch/固定版本/扫描/输入SHA稳定。Period已本地保存ed97648。FirstIntegralGraph candidate02三关键退出0无警告、只允许基础公理；真实partial非零推逆/actual implicit graph/沿真first-integral轨迹降维正式接入，full-check13实际12:07:11--12:08:31退出0，8977jobs/679声明/Scratch/固定版本/扫描/输入SHA稳定。Graph本地保存856165b。FirstIntegralQuadrature attempt01投影continuousAt解析失败已改真实连续投影，candidate02三关键退出0无警告、仅基础公理。真实C1图/自动非零速度与时间窗口/实际两分量积分逆正式接入，full-check14实际12:14:32--12:15:53退出0，8978jobs/682声明/Scratch/固定版本/扫描/输入SHA稳定。正在保存本地完整证据；下一ScalarIntegrability一般一自由度势能Example1.4/1.6：原页印刷20/PDF43已视觉核对，明确η≠0局部解；候选准备中。恢复第一动作验证Scalar候选；不并发或重复构建。
+- TorusDensity attempt01/02失败已修复，candidate03八关键退出0、无警告（两条abel_nf info建议），只允许基础公理。真实homeomorph/二维实时间DenseRange/物理orbit closure/三维共振不稠密正式接入，full-check11实际11:56:21--11:57:42退出0，8975jobs/663声明/Scratch/固定版本/扫描/输入SHA稳定。Density批次本地保存5a15ff0。Period attempt01仅phase转递β重写失败，congrArg修复；candidate02六关键退出0无警告、只允许基础公理。正式TorusPeriod接入，full-check12实际12:02:15--12:03:37退出0，8976jobs/676声明/Scratch/固定版本/扫描/输入SHA稳定。Period已本地保存ed97648。FirstIntegralGraph candidate02三关键退出0无警告、只允许基础公理；真实partial非零推逆/actual implicit graph/沿真first-integral轨迹降维正式接入，full-check13实际12:07:11--12:08:31退出0，8977jobs/679声明/Scratch/固定版本/扫描/输入SHA稳定。Graph本地保存856165b。FirstIntegralQuadrature attempt01投影continuousAt解析失败已改真实连续投影，candidate02三关键退出0无警告、仅基础公理。真实C1图/自动非零速度与时间窗口/实际两分量积分逆正式接入，full-check14实际12:14:32--12:15:53退出0，8978jobs/682声明/Scratch/固定版本/扫描/输入SHA稳定。完整证据与源码本地保存6c364f9；ScalarIntegrability candidate03六关键退出0无警告，仅基础公理；一般C2势能真实energy first-integral/实际partial=v/field C1/非转向积分逆正式接入。full-check15实际12:25:24--12:26:56退出0，8979jobs/691声明/Scratch/固定版本/扫描/输入SHA稳定。ScalarTurningProbe已落盘，下一单一attempt01：U′≠0交换坐标真实积分逆、平衡点真实常解与C1唯一性。恢复第一动作读scalar-turning.attempt01.log；不并发或重复构建。
 - 原页印刷27--31/PDF50--54视觉核对，30/PDF53本轮复看。高维两两比无理不足，需integer nonresonance；二维与高维限制分开。§1.5.1/1.5.2/1.5.3仍partial；Kepler转向点/global orbit、一般势能转向/平衡与全局拼接、一般非线性初值连续依赖/一般EL协变、Hartman--Grobman及后续全书未完成。负责人最终语义签核pending，新远端CI未跑；不将单批/单页当全书完成。
 ## 启动配置复核（2026-10-04 01:00 +08:00）
 
@@ -100,3 +100,9 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 - 全书长期聊天01a102b1-a3fe-71e1-a571-347703fc09b8正在推进Kepler分离积分，本聊天不修改其源码/探针/构建输入/Git，不发送重复工作请求，不使用MathCopilot。
 - 四十条命名证明逐项复核，未发现源码阻断问题；两份源码与固定提交一致，两批27件冻结输入及20份原日志SHA全部匹配。完整本地报告/CSV/证据/输出SHA保存在上述目录。本轮未重建Lean、未刷新远端CI，未修改源码或执行Git提交。
 - 负责人最终教材语义签核与网站原报告收件仍单独登记；本报告为本地补充复核。旧t2自动接续保持删除，全书长期聊天继续后续数学任务。
+
+## 工作流程说明核对（2026-10-04 12:26 +08:00，本聊天已完成）
+
+- 用户询问是否为“提取非形式化定理证明 → 手动证明 → 用户交给 MathCopilot 形式化”。已核对最新 AGENTS、当前状态、最新工作日志、实际 Git 状态和本地 Lean 定理声明；当前流程为教材原页核对与陈述提取、补全数学证明、本地 Lean 实现与固定版本验收、教材语义复核、保存检查点。
+- 2026-10-04 最新本地工作约定持续有效：Codex 完成 Lean 形式化，不需要用户转交 MathCopilot；本次询问不视为重新启用网站的指令。较早的手动转交安排已由后续约定取代。
+- 本轮实查分支 chapter01-kinetic-energy-nonneg、HEAD 6c364f9c7ae94eab456c5f997976ab520377529c；工作树已有数学批次与文档改动均保留。本聊天仅维护流程说明，不修改数学源码、工具链、构建输入或任务配置，不提交、不推送、不重跑 Lean；没有新增数学验收结论。数学恢复动作仍以上方当前数学检查点为准，负责人最终语义签核单独登记。

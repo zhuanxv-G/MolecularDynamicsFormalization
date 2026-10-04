@@ -399,3 +399,7 @@ Printed28/PDF51: FirstIntegralGraph derives actual invertibility of the scalar y
 ### Actual planar first-integral quadrature (2026-10-04)
 
 Printed28/PDF51: FirstIntegralQuadrature constructs a true C1 implicit level graph from actual C1 first integral and nonzero y-partial. Actual C1 vector field plus nonzero base x-velocity yields a derived neighborhood with continuous nonzero reduced speed and a derived actual-trajectory time window. The accepted separated integral/inverse theorem gives actual x(t)=g(t-t₀), y(t)=ψ(g(t-t₀)), both local inverse identities, strict derivative g'(0)=f₁(p) and true integral=time formula. Graph/continuous speed/trajectory range and inverse solution are derived, not added as hypotheses.
+
+### ScalarIntegrability — printed20/PDF43 Example1.4 and28/PDF51 Example1.6
+
+For unit mass and a genuine C2 real potential U, proves actual energy derivative zero along every true ODE, its first-integral property, true velocity partial v, C1 vector field, and local inverse-quadrature recovery of both coordinates whenever initial velocity is nonzero. No assumed graph/inverse/conservation conclusion. Turning/stationary/global continuation remain separate.

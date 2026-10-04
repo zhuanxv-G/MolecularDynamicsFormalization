@@ -1342,3 +1342,32 @@
 - full-check14实际12:14:32--12:15:53退出0，8978jobs、Scratch、682项目声明审计、固定Lean/mathlib、源码扫描和输入SHA稳定均通过；三关键仅允许基础公理。保存正式源码、两次尝试日志和完整证据，未推送。
 - 原页印刷20/PDF43已实际视觉复看：Example1.4明确η≠0时局部隐函数+分离变量，degenerate点需case-by-case；印刷28/PDF51 Example1.6调用真实能量第一积分。下一ScalarIntegrability证明一般C2 potential真实能量守恒、偏导=v、C1向量场，接非零初速度局部积分逆。转向/平衡/global拼接仍未计完成。
 - 同一Goal实际active，无并发Lean/重复自动化；最终签核pending，无新远端CI，全书继续。
+
+## 2026-10-04 12:23 +08:00 — 一般一自由度势能积分候选开始
+
+- FirstIntegralQuadrature完整批次本地保存6c364f9，未推送。ScalarIntegrabilityProbe已落盘，单一attempt01运行中：unit-mass U∈C2，真实energy derivative0与first integral、真实velocity partial=v、向量场C1、实际非零初速度积分逆。候选未计正式完成。
+- 日志scalar-integrability.attempt01.log保留；恢复先读实际结果，不并发/重复Lean。转向/平衡及全书剩余、负责人最终签核仍pending。
+
+## 2026-10-04 12:24 +08:00 — Scalar候选首轮API修复
+
+- attempt01正则性两关键通过；失败为real division/deriv定义需noncomputable、pow导数Nat cast与实数2非defeq、line基点(p₁,p₂+0)需显式等式桥接。已按实际日志修复，准备attempt02。失败恢复中的sorryAx不计证明，不进入正式库。
+
+## 2026-10-04 12:24 +08:00 — Scalar候选第二轮剩余表达式桥接
+
+- attempt02真实energy HD0及first-integral均通过。唯一证明失败是id 0需先dsimp，再rw已证明偏导系数；另补noncomputable section end。准备attempt03；原失败日志保留，不计完成。
+
+## 2026-10-04 12:25 +08:00 — 一般势能第一积分与非转向积分逆候选通过
+
+- ScalarIntegrability candidate03六关键退出0、无警告，仅基础公理；真实U∈C2单位质量energy、C1场、真实partial=v、trueODE两分量分离积分逆正式接入根/Scratch/CheckAxioms。
+- full-check15开始、正式输入冻结。下一转向点U′≠0采用swap坐标，平衡点实际常解与C1局部唯一性；未计完成。最终签核pending，无新远端CI，全书继续。
+
+## 2026-10-04 12:26 +08:00 — 本聊天核对并说明当前形式化流程
+
+- 响应用户对“提取非形式化证明、手动证明、再由用户交给 MathCopilot 形式化”的询问。读取工程 AGENTS、CURRENT_STATE、WORK_LOG 最新条目，核对实际 Git 分支/HEAD/工作树及 FirstIntegralQuadrature 本地 Lean 定理声明。
+- 最新工程约定为全书本地推进：教材原页核对与准确陈述、补全数学证明、Codex 本地 Lean 实现、固定版本构建与公理审计、教材语义复核、保存检查点。用户不需要转交 MathCopilot；此次询问没有授权重新启用网站。
+- 实查 HEAD 6c364f9c7ae94eab456c5f997976ab520377529c，已有未提交/未跟踪材料保留。仅追加交接说明；没有改动 Lean 或运行新构建，没有提交/推送或变更长期任务。既有机器验收证据与负责人最终语义签核仍分别登记，数学接续遵循当前数学检查点。
+
+## 2026-10-04 12:29 +08:00 — 一般势能非转向积分逆完整验收通过
+
+- full-check15实际12:25:24--12:26:56退出0，8979jobs、Scratch、691项目声明公理审计、固定版本/扫描/输入SHA稳定均通过；六关键仅允许基础公理。保存明确源码、三次日志和完整证据，未推送。
+- ScalarTurningProbe已落盘，下一单一attempt01：交换真实速度/位置坐标、实际energy partial=U′、真实first integral与U′≠0积分逆；平衡点常解和C1局部唯一性。候选未计完成；最终签核pending，全书继续。

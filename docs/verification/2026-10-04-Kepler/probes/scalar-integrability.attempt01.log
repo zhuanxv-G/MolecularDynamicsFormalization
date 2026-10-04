@@ -1,0 +1,47 @@
+docs/verification/2026-10-04-Kepler/probes/ScalarIntegrabilityProbe.lean:9:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'
+docs/verification/2026-10-04-Kepler/probes/ScalarIntegrabilityProbe.lean:11:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'deriv', which is 'noncomputable'
+docs/verification/2026-10-04-Kepler/probes/ScalarIntegrabilityProbe.lean:36:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  2 * (γ t).2 ^ (2 - 1) * -deriv U (γ t).1 / 2 + deriv U (γ t).1 * (γ t).2
+in the target expression
+  HasDerivAt ((fun x => ((fun u => (γ u).2) ^ 2) x / 2) + U ∘ fun u => (γ u).1)
+    (↑2 * (γ t).2 ^ (2 - 1) * -deriv U (γ t).1 / 2 + deriv U (γ t).1 * (γ t).2) t
+
+U : ℝ → ℝ
+hU : ContDiff ℝ 2 U
+γ : ℝ → ℝ × ℝ
+t : ℝ
+hγ : HasDerivAt γ (scalarPotentialVectorField U (γ t)) t
+hx : HasDerivAt (fun u => (γ u).1) (γ t).2 t
+hv : HasDerivAt (fun u => (γ u).2) (-deriv U (γ t).1) t
+hu : HasDerivAt (U ∘ fun u => (γ u).1) (deriv U (γ t).1 * (γ t).2) t
+he :
+  HasDerivAt ((fun x => ((fun u => (γ u).2) ^ 2) x / 2) + U ∘ fun u => (γ u).1)
+    (↑2 * (γ t).2 ^ (2 - 1) * -deriv U (γ t).1 / 2 + deriv U (γ t).1 * (γ t).2) t
+hc : 2 * (γ t).2 ^ (2 - 1) * -deriv U (γ t).1 / 2 + deriv U (γ t).1 * (γ t).2 = 0
+⊢ HasDerivAt (fun u => scalarPotentialEnergy U (γ u)) 0 t
+docs/verification/2026-10-04-Kepler/probes/ScalarIntegrabilityProbe.lean:53:12: error: Application type mismatch: The argument
+  DifferentiableAt.hasFDerivAt hj
+has type
+  HasFDerivAt (scalarPotentialEnergy U) (fderiv ℝ (scalarPotentialEnergy U) p) p
+but is expected to have type
+  HasFDerivAt ?m.134 ?m.135 (p.1, p.2 + 0)
+in the application
+  HasFDerivAt.comp_hasDerivAt 0 (DifferentiableAt.hasFDerivAt hj)
+'MolecularDynamics.scalarPotentialEnergy_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialVectorField_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialEnergy_hasDerivAt_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.scalarPotentialEnergy_isFirstIntegral' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.scalarPotentialEnergy_velocityPartial' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.scalarPotential_nonturning_quadrature' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

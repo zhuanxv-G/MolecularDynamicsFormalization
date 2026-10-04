@@ -1,0 +1,32 @@
+docs/verification/2026-10-04-Kepler/probes/ScalarIntegrabilityProbe.lean:63:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑2 * (p.2 + 0) ^ (2 - 1) * 1 / 2 + 0
+in the target expression
+  HasDerivAt ((fun x => ((fun x => p.2 + id x) ^ 2) x / 2) + fun x => U p.1) (↑2 * (p.2 + id 0) ^ (2 - 1) * 1 / 2 + 0) 0
+
+U : ℝ → ℝ
+hU : ContDiff ℝ 2 U
+p : ℝ × ℝ
+hj : DifferentiableAt ℝ (scalarPotentialEnergy U) p
+hline : HasDerivAt (fun t => (p.1, p.2 + t)) (0, 1) 0
+hj' : HasFDerivAt (scalarPotentialEnergy U) (fderiv ℝ (scalarPotentialEnergy U) p) (p.1, p.2 + 0)
+h : HasDerivAt (scalarPotentialEnergy U ∘ fun t => (p.1, p.2 + t)) ((fderiv ℝ (scalarPotentialEnergy U) p) (0, 1)) 0
+henergy :
+  HasDerivAt ((fun x => ((fun x => p.2 + id x) ^ 2) x / 2) + fun x => U p.1) (↑2 * (p.2 + id 0) ^ (2 - 1) * 1 / 2 + 0) 0
+hc : ↑2 * (p.2 + 0) ^ (2 - 1) * 1 / 2 + 0 = p.2
+⊢ (fderiv ℝ (scalarPotentialEnergy U) p) (0, 1) = p.2
+docs/verification/2026-10-04-Kepler/probes/ScalarIntegrabilityProbe.lean:87:0: error: Unexpected name `MolecularDynamics` after `end`: The current section is unnamed
+
+Hint: Delete the name `MolecularDynamics` to end the current unnamed scope; outer named scopes can then be closed using additional `end` command(s):
+  end ̵M̵o̵l̵e̵c̵u̵l̵a̵r̵D̵y̵n̵a̵m̵i̵c̵s̵
+'MolecularDynamics.scalarPotentialEnergy_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialVectorField_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialEnergy_hasDerivAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialEnergy_isFirstIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.scalarPotentialEnergy_velocityPartial' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.scalarPotential_nonturning_quadrature' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

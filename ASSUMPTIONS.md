@@ -220,3 +220,5 @@ Actual real pair state, strict Fréchet differentiable first integral at the bas
 ### Planar nonturning first-integral quadrature (2026-10-04)
 
 Actual first-integral property and actual real-pair ODE on a connected open interval, with trajectory in Q and base inside. J and f are genuinely C1 at the base; derivative ∂yJ≠0 and x-component of f at base≠0. C1-at gives required local regularity, all windows and nonzero speed derived. Inverse/solution formulas are local/eventual, not global; zeros of selected partial or selected component require a different chart or independent stationary/turning-point treatment.
+
+- ScalarIntegrability: one real position/velocity pair, unit mass, U globally C2; true HasDerivAt ODE on an open Ioo interval and interior base time, nonzero initial velocity. The velocity graph, nonzero local windows, strict integral inverse and actual trajectory representation are derived. Local statement only; no claim yet for zero initial velocity/global patching.
