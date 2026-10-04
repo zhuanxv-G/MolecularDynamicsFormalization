@@ -2153,3 +2153,36 @@
 
 - 唯一session47454/full-check01：2026-10-05T05:08:50.8411815+08:00--2026-10-05T05:10:11.8761549+08:00退出0；9011jobs、零警告、613项审计声明仅基础三公理、94项输入稳定，固定版本/Scratch/扫描/公理全部通过；94项SHA一致。6项真实初值fderiv/时间ODE导出变分/实际场J Hess/Jacobian方程/闭区间辛性及det=1接受，映射/假设/状态/CH02-CLM-011与旧005缺口/节/notation同步，负责人语义pending。
 - 指定联合C²是明确较强模型，不假称H C²已构造一般C¹/该光滑流或全球解。原W参数记法负责人核对、集合体积运输/约束流保形/初始非线性lam/高阶匹配及整范围仍pending。下一真实ODE唯一性导出单射、真实集合换元体积及实际Hamiltonian散度零，先保存本批/补目视72/PDF94。
+
+## 2026-10-05 05:19 +0800 — 真实流变分保存及真实Lebesgue集合体积接续
+
+- 前批保存713623641ce54b1fe7f016514c97d84f63c5cce6，原材料保留、未推送。72/PDF94已补渲染目视，原散度混合偏导取消/体积流陈述与78/PDF100已核对。
+- HamiltonianVolume候选真实DF=J Hess/trace取消散度，泛型真实连续解族在两紧轨道共同凸紧球上导出C¹场Lipschitz，再用真实ODE后端唯一性得到单射。Hamiltonian体积结论用实际det=1和mathlib真正集合换元，不供应单射/体积结论或全局逆。
+- 下一唯一local-check01，联合C²模型/一般散度零Liouville与较弱流正则性/全局存在限制明确，本批未通过、整个范围pending，无其他构建。
+
+
+## 2026-10-05 05:26 +0800 — 集合体积首轮接口诊断
+
+- local-check01/session73082退出1。NNReal记法scope、紧轨道真实Continuous的image API及CLM.det到LinearMap.det的显式桥接已修复；真实散度零推导及后续换元无独立数学缺口诊断。本批仍未计通过，失败原日志保留。
+- 下一唯一local-check02，固定版本/联合C²模型/一般Liouville及整范围pending保持真实。
+
+
+## 2026-10-05 05:27 +0800 — 集合体积NNReal常数桥接
+
+- local-check02/session73489退出1，仅实际K=max A 1的局部let未在simp only中展开。加入K展开；其他真实ODE单射、散度零、可测像与实际集合换元证明没有诊断。下一唯一local-check03，本批尚未计通过。
+
+
+## 2026-10-05 05:29 +0800 — 集合体积常数实际实数目标
+
+- local-check03/session4204退出1，simp only留下NNReal构造值的coe，改明确change为真实max A 1的距离界；无新数学缺口。下一唯一local-check04；失败证据保留，本批未计通过。
+
+
+## 2026-10-05 05:31 +0800 — Hamiltonian真实集合体积局部通过
+
+- local-check04/session25404退出0、零警告，6项真实Jacobian/trace散度零、真实连续ODE族单射及Hamiltonian单射/可测像/Lebesgue集合体积等式接入根/Scratch/审计。单射与体积结论均推导，无全局逆数据。失败日志保留。
+- 启动唯一full-check01，未决前不改变源码/核验输入。指定联合C²模型与较弱一般正则性/一般Liouville/整范围缺口明确，负责人签核pending。
+
+## 2026-10-05 05:36 +0800 — Hamiltonian真实集合体积完整验收
+
+- 唯一session22970/full-check01：2026-10-05T05:31:57.4854524+08:00--2026-10-05T05:33:03.6431671+08:00退出0；9012jobs、零警告、619项审计声明仅基础三公理、95项输入稳定，固定版本/Scratch/扫描/公理全部通过；6项真实Jacobian/散度、连续真实ODE族单射和Hamiltonian可测像/实际Lebesgue集合体积等式，所有输入与原始日志SHA一致。映射/假设/状态/claim001/节/notation同步，负责人语义pending。
+- 验收证据读取器首次误用build.log名称，已改实际lake_build.log实查，未再构建。一般Liouville/弱流构造/全球存在/其他正文与整范围pending；下一真实行列式微分和一般散度零解族体积，先保存本批。

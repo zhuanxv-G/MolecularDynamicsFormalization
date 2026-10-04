@@ -381,3 +381,8 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 
 - 2026-10-05T05:08:50.8411815+08:00--2026-10-05T05:10:11.8761549+08:00退出0；9011jobs、零警告、613项审计声明仅基础三公理、94项输入稳定，固定版本/Scratch/扫描/公理全部通过；6项真实初值fderiv/从时间ODE导出的变分/Hamiltonian J Hess/实际Jacobian曲线ODE/闭区间辛性/det=1，94项SHA实查一致。
 - 联合C²实际解族是明确模型数据，未冒称已从H C²构造一般C¹/该高正则性流或全局解；集合体积运输、约束流完整形式证明、初始非线性lam/高阶匹配与全范围仍pending，负责人语义单独pending。
+
+## 2026-10-05 Hamiltonian set-volume preservation accepted
+
+- 2026-10-05T05:31:57.4854524+08:00--2026-10-05T05:33:03.6431671+08:00退出0；9012jobs、零警告、619项审计声明仅基础三公理、95项输入稳定，固定版本/Scratch/扫描/公理全部通过；6项实际散度/ODE单射/Hamiltonian可测像与Lebesgue集合体积声明，95项输入SHA实查一致。72/PDF94及78/PDF100目视核对，联合C²指定解族模型明确。
+- 一般散度零Liouville/較弱流正则性构造、全球存在、负责人签核和其余CORE_SCOPE仍pending，继续下一正文依赖。

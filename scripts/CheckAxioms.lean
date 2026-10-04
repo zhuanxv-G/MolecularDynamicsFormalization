@@ -679,3 +679,11 @@ run_cmd do
 #print axioms MolecularDynamics.textbookHamiltonianFlowJacobian_hasDerivAt
 #print axioms MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2
 #print axioms MolecularDynamics.textbookHamiltonianFlowJacobian_det_eq_one_of_jointC2
+
+-- Genuine Hamiltonian divergence, ODE injectivity and Lebesgue image volume.
+#print axioms MolecularDynamics.textbookHamiltonianVectorField_jacobian
+#print axioms MolecularDynamics.textbookHamiltonianVectorField_divergence_zero
+#print axioms MolecularDynamics.textbookC1SolutionFamily_injective
+#print axioms MolecularDynamics.textbookHamiltonianFlow_injective_of_jointC2
+#print axioms MolecularDynamics.textbookHamiltonianFlow_measurable_image_of_jointC2
+#print axioms MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2
