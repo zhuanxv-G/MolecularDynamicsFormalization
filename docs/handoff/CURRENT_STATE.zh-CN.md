@@ -177,6 +177,18 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 - 该候选只使用固定 mathlib 的 `Matrix.exp_conj`，不声称任意矩阵可对角化，也不覆盖习题1(b) 的上三角直接计算。
 - 恢复第一动作：运行唯一的新 full-check 目录并审计新增声明，然后只提交本批次文件和对应文档。
 
+## 正在推进（2026-10-04 20:31 +08:00）
+
+- 在已验收的习题1(a)、1(c)上追加印刷46/PDF69 习题1(b)：`upperTriangularMatrix`、显式 `upperTriangularFlow`、二维坐标导数桥接和 `matrixExponentialFlow_upperTriangular` 已完成局部证明。固定 Lean 4.34.0 单文件编译退出0、零警告；整库 full-check 尚未运行，尚未提交。
+- 该候选严格限定于 `[[1, α], [0, 1]]` 的实二维矩阵，通过 `HasDerivAt` 与线性 ODE 唯一性得出公式；不声称一般 Jordan 形或任意上三角矩阵。
+- 恢复第一动作：运行唯一的新 full-check 目录并审计 5 个新增声明，然后只提交本批次文件与对应文档。
+
+## 最新检查点（2026-10-04 20:40 +08:00）
+
+- `full-check35` 已通过（20:32:41--20:37:31 +08:00）：固定 Lean 4.34.0、mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、364 项声明公理审计、Scratch、源码扫描和输入哈希稳定性均通过；唯一公理集合仍为 `propext`、`Classical.choice`、`Quot.sound`。报告在 `docs/verification/2026-10-04-Kepler/full-check35/`。
+- 习题1(b) 的上三角流及导数桥接已正式接受；本批次源码、Scratch、`CheckAxioms`、章节清单、映射/假设/状态文档和报告准备提交。当前数学基线 HEAD 为 `dad58c1`，Goal 仍 active。
+- 下一步逐页处理习题3--5或 §1.7 的非线性时间依赖 Jacobian/初值导数；一般 Jordan 形、Lyapunov 极限和全书完成仍未声称。
+
 ## 最新检查点（2026-10-04 20:05 +08:00）
 
 - `full-check34` 已通过（20:02:37--20:03:56 +08:00）：固定 Lean 4.34.0、mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、359 项声明公理审计、Scratch、源码扫描和输入哈希稳定性均通过；唯一公理集合仍为 `propext`、`Classical.choice`、`Quot.sound`。报告在 `docs/verification/2026-10-04-Kepler/full-check34/`。

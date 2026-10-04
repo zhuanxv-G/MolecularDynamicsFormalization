@@ -254,3 +254,5 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - The diagonal exercise uses a finite real index type and the literal matrix `Matrix.diagonal d`; its component formula follows from the fixed `Matrix.exp_diagonal` lemma. No diagonalizability assumption is silently extended to arbitrary matrices, and exercises 1(b)--1(c) remain open.
 
 - The similarity exercise assumes `IsUnit X` for the displayed conjugating matrix and uses the literal inverse `X⁻¹`. It proves only the matrix-exponential conjugation identity; existence of an eigenbasis or a diagonalizing `X` is a separate hypothesis.
+
+- The upper-triangular exercise is the literal two-dimensional matrix `[[1, α], [0, 1]]` with real `α`; its explicit solution is verified by `HasDerivAt` and linear-ODE uniqueness. This is a special case, not a general Jordan-form or arbitrary upper-triangular theorem.

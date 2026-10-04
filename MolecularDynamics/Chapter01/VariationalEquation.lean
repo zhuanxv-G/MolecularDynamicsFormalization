@@ -87,6 +87,69 @@ theorem matrixExponential_conjugate {m : ℕ}
       X * NormedSpace.exp D * X⁻¹ := by
   exact Matrix.exp_conj X D hX
 
+noncomputable def upperTriangularMatrix (α : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![1, α; 0, 1]
+
+noncomputable def upperTriangularFlow (α : ℝ) (t : ℝ) (z : Position 2) : Position 2 :=
+  WithLp.toLp 2 ![Real.exp t * ((WithLp.ofLp z) 0 + α * t * (WithLp.ofLp z) 1),
+    Real.exp t * (WithLp.ofLp z) 1]
+
+theorem hasDerivAt_positionPair (f g : ℝ → ℝ) (f' g' t : ℝ)
+    (hf : HasDerivAt f f' t) (hg : HasDerivAt g g' t) :
+    HasDerivAt (fun u => WithLp.toLp 2 ![f u, g u]) (WithLp.toLp 2 ![f', g']) t := by
+  have hp : HasDerivAt (fun u => ![f u, g u]) ![f', g'] t := by
+    apply hasDerivAt_pi.mpr
+    intro i
+    fin_cases i
+    · exact hf
+    · exact hg
+  exact (PiLp.hasFDerivAt_toLp (𝕜 := ℝ) 2 _).comp_hasDerivAt t hp
+
+theorem hasDerivAt_upperTriangularFlow (α : ℝ) (z : Position 2) (t : ℝ) :
+    HasDerivAt (fun u => upperTriangularFlow α u z)
+      (WithLp.toLp 2 ((upperTriangularMatrix α).mulVec
+        (WithLp.ofLp (upperTriangularFlow α t z)))) t := by
+  let z0 : ℝ := (WithLp.ofLp z) 0
+  let z1 : ℝ := (WithLp.ofLp z) 1
+  have hp : HasDerivAt (fun u : ℝ => z0 + α * u * z1) (α * z1) t := by
+    convert (hasDerivAt_const t z0).add (((hasDerivAt_id t).const_mul α).mul_const z1) using 1
+    · funext u
+      simp only [Pi.add_apply, id_eq]
+    · ring
+  have h0 : HasDerivAt (fun u : ℝ => Real.exp u * (z0 + α * u * z1))
+      (Real.exp t * (z0 + α * t * z1) + Real.exp t * (α * z1)) t := by
+    convert (Real.hasDerivAt_exp t).mul hp using 1
+  have h1 : HasDerivAt (fun u : ℝ => Real.exp u * z1) (Real.exp t * z1) t := by
+    simpa using (Real.hasDerivAt_exp t).mul_const z1
+  have hpair := hasDerivAt_positionPair
+    (fun u => Real.exp u * (z0 + α * u * z1))
+    (fun u => Real.exp u * z1)
+    (Real.exp t * (z0 + α * t * z1) + Real.exp t * (α * z1))
+    (Real.exp t * z1) t h0 h1
+  have hvec :
+      (WithLp.toLp 2 ((upperTriangularMatrix α).mulVec
+        (WithLp.ofLp (upperTriangularFlow α t z)))) =
+      WithLp.toLp 2 ![Real.exp t * (z0 + α * t * z1) + Real.exp t * (α * z1),
+        Real.exp t * z1] := by
+    congr 1
+    funext i
+    fin_cases i
+    · simp [upperTriangularMatrix, upperTriangularFlow, z0, z1]
+      ring
+    · simp [upperTriangularMatrix, upperTriangularFlow, z0, z1]
+  rw [hvec]
+  simpa [upperTriangularFlow, z0, z1] using hpair
+
+theorem matrixExponentialFlow_upperTriangular (α : ℝ) (t : ℝ) (z : Position 2) :
+    matrixExponentialFlow (upperTriangularMatrix α) t z = upperTriangularFlow α t z := by
+  have hinit : upperTriangularFlow α 0 z = z := by
+    ext i
+    fin_cases i <;> simp [upperTriangularFlow]
+  have heq := matrixExponentialFlow_unique (upperTriangularMatrix α) z 0
+    (upperTriangularFlow α · z)
+    (fun s => hasDerivAt_upperTriangularFlow α z s) hinit
+  simpa using (congrFun heq t).symm
+
 end Matrix
 
 end MolecularDynamics

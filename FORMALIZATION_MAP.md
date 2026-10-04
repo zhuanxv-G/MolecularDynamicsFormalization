@@ -467,3 +467,7 @@ Printed46/PDF69 exercise 1(a): for a finite real diagonal matrix `diag d`, `matr
 ### Similarity bridge for matrix exponentials (2026-10-04)
 
 Printed46/PDF69 exercise 1(c): `matrixExponential_conjugate` proves `exp(X D X⁻¹) = X exp(D) X⁻¹` for an explicitly `IsUnit` matrix `X`, using the fixed `Matrix.exp_conj` theorem. This is the similarity identity needed after a diagonal computation; it does not assert that an arbitrary matrix has such an `X` or formalize exercise 1(b).
+
+### Upper-triangular matrix exponential exercise (2026-10-04)
+
+Printed46/PDF69 exercise 1(b): `upperTriangularMatrix` is the literal matrix `[[1, α], [0, 1]]`; `upperTriangularFlow` and `matrixExponentialFlow_upperTriangular` prove its exact solution `eᵗ(x₀+α t y₀), eᵗ y₀` by derivative calculation and the existing global linear-ODE uniqueness theorem. The helper records the two-coordinate derivative bridge; no claim about arbitrary Jordan forms is made.
