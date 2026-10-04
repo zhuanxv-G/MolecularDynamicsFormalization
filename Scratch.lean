@@ -573,3 +573,11 @@ end MolecularDynamics
 #check MolecularDynamics.textbookFormalModifiedExponential_coeff_one
 #check MolecularDynamics.textbookFormalModifiedExponential_coeff_two
 #check MolecularDynamics.textbookFormalModifiedExponential_matches_product
+
+-- Uniform finite modified-Hamiltonian bounds: printed114--115/PDF136--137.
+#check MolecularDynamics.textbookTruncatedHamiltonian
+#check MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian
+#check MolecularDynamics.exists_compact_C1_lipschitz_constant
+#check MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder
+#check MolecularDynamics.textbookTruncatedHamiltonian_difference_isBigO
+#check MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz

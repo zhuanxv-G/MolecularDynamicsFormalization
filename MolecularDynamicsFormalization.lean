@@ -74,3 +74,5 @@ import MolecularDynamics.Chapter02.CompositionMethods
 import MolecularDynamics.Chapter02.ProcessedMethods
 import MolecularDynamics.Chapter03.LiePoisson
 import MolecularDynamics.Chapter03.FormalOperatorSeries
+
+import MolecularDynamics.Chapter03.ModifiedHamiltonianBounds

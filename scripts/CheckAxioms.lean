@@ -599,3 +599,11 @@ run_cmd do
 #print axioms MolecularDynamics.textbookFormalModifiedExponential_coeff_one
 #print axioms MolecularDynamics.textbookFormalModifiedExponential_coeff_two
 #print axioms MolecularDynamics.textbookFormalModifiedExponential_matches_product
+
+-- Uniform finite modified-Hamiltonian bounds: printed114--115/PDF136--137.
+#print axioms MolecularDynamics.textbookTruncatedHamiltonian
+#print axioms MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian
+#print axioms MolecularDynamics.exists_compact_C1_lipschitz_constant
+#print axioms MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder
+#print axioms MolecularDynamics.textbookTruncatedHamiltonian_difference_isBigO
+#print axioms MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz
