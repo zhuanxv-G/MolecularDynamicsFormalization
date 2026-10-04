@@ -2343,3 +2343,28 @@
 - 唯一session44908/full-check01：2026-10-05T06:59:24.8042591+08:00--2026-10-05T07:00:30.8144886+08:00退出0；9017jobs、零警告、664项审计声明仅基础三公理、100项输入稳定，固定版本/Scratch/扫描/公理全部通过；14public接受，全部输入和原始日志SHA实查一致。真实有限加权Gaussian law/variance/等距和自身Ito真正L²有限和/候选/望远镜/精确误差/极限及实际存在见证完成。229--231/PDF250--252目视，ledger/notation/节/映射/假设/状态同步，负责人pending。
 - Prop6.3一般smooth g的真正Cauchy/完备化/normality闭合/variance integral仍pending，不把有限law计为整个命题。固定版本无现成Ito API，具体恢复动作是均匀或dyadic细化的真实L²差估计与极限构造，再法则极限；Stratonovich midpoint亦独立待证明。按范围约定保留独立缺口推进其他正文。
 - 下一Lemma7.1原299--300/PDF320--321已目视，Chapter07/InvariantDistributionSwap.lean真正Markov核作用、实际不变性与教材唯一性推出分布换序；非供应换序结论。先保存本批，无其他构建。
+
+## 2026-10-05 07:05 +0800 — Lemma7.1真实Markov不变分布换序开始
+
+- 前批保存140b70f；原299--300/PDF320--321完成渲染目视，Lemma7.1实际概率演化算子ST/TS和教材唯一不变分布；真实Markov核为正性/概率归一化模型，核复合S∘ₖT先T后S，与原density action一致。
+- 目标Chapter07/InvariantDistributionSwap.lean：真实核measure action的结合律给转移不变性，教材已有真正唯一性给两分布换序。原迭代恒等亦由真实作用证明；不额外证明不在该引理要求内的任意S/T遍历性或唯一分布存在。
+- 命题6.3一般确定性积分及midpoint缺口具体恢复路线保持；同一批独立困难不阻塞推进本正文目标，无重复构建/Goal/线程。
+
+## 2026-10-05 07:08 +0800 — Lemma7.1实际迭代方向接口诊断
+
+- local-check01退出1：Function.iterate_succ_apply为f^[n](f x)，正文所需外层f(f^[n]x)是带prime接口。真实Markov作用/转移不变性/概率归一化/教材唯一性两换序关系无其他诊断；已替换实际固定接口，下一唯一local-check02。
+- 未计整批通过，原页299--300/PDF320--321目视，负责人及其余正文pending；无重复构建。
+
+## 2026-10-05 07:09 +0800 — Lemma7.1迭代函数类型桥接
+
+- local-check02退出1、零警告，仅最后congrArg内真实TS作用函数的类型未从iterate_succ_apply_prime占位参数推断；补明确Measure Ω函数、n和实际T作用初值。第一方向迭代与两实际不变分布换序均无其他诊断；下一唯一local-check03。
+
+## 2026-10-05 07:10 +0800 — Lemma7.1实际Markov换序局部通过
+
+- local-check03退出0零警告，5项公开实际数据/真实不变性转移/有限迭代/真正Markov归一化与教材唯一性两换序通过；根/Scratch/审计接入，启动唯一full-check01，未决前不改核验输入。
+- 原299--300/PDF320--321目视；原已要求唯一分布，因此真实Markov模型下可用唯一性证明、额外遍历性不必用于此结论；不冒称一般动力学遍历性/唯一分布存在。负责人及整体范围pending。
+
+## 2026-10-05 07:14 +0800 — Lemma7.1真实Markov换序完整验收
+
+- 唯一session24263/full-check01：2026-10-05T07:10:45.9311449+08:00--2026-10-05T07:11:49.0963178+08:00退出0；9018jobs、零警告、669项审计声明仅基础三公理、101项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入/原始日志SHA一致，5public包括真实Markov作用/转移不变性/实际迭代/唯一性两等式接受。299--300/PDF320--321目视，ledger/notation/section/映射/假设/状态同步，负责人分布/density语义pending。
+- 原唯一性是明确数据，真实核概率归一化已证明，不供应目标关系；不冒称一般核存在唯一不变分布/具体SDEergodicity。下一Theorem8.1必要Lemma8.1实际F/G/Ck/Dk及真实Lie闭包，再谱/Vandermonde与Hörmander lift；347/PDF368渲染待目视。先保存本批，其他已登记缺口/整个范围pending。

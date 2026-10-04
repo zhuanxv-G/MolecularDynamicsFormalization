@@ -742,3 +742,10 @@ run_cmd do
 #print axioms MolecularDynamics.textbookWienerSelfItoSum_meanSquareError
 #print axioms MolecularDynamics.textbookWienerSelfItoSum_meanSquare_tendsto
 #print axioms MolecularDynamics.textbookWienerSelfItoIntegral_exists
+
+-- Real Markov composition and unique invariant distribution swap.
+#print axioms MolecularDynamics.textbookUniqueInvariantProbability
+#print axioms MolecularDynamics.textbookKernelInvariant_swap
+#print axioms MolecularDynamics.textbookKernelComposition_iterate
+#print axioms MolecularDynamics.textbookInvariantDistributionSwap_left
+#print axioms MolecularDynamics.textbookInvariantDistributionSwap

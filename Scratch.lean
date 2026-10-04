@@ -716,3 +716,10 @@ end MolecularDynamics
 #check MolecularDynamics.textbookWienerSelfItoSum_meanSquareError
 #check MolecularDynamics.textbookWienerSelfItoSum_meanSquare_tendsto
 #check MolecularDynamics.textbookWienerSelfItoIntegral_exists
+
+-- Real Markov composition and unique invariant distribution swap.
+#check MolecularDynamics.textbookUniqueInvariantProbability
+#check MolecularDynamics.textbookKernelInvariant_swap
+#check MolecularDynamics.textbookKernelComposition_iterate
+#check MolecularDynamics.textbookInvariantDistributionSwap_left
+#check MolecularDynamics.textbookInvariantDistributionSwap

@@ -1,8 +1,29 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 07:14 +0800）
+
+- 本批前HEAD140b70f18b71361fb1b0d10e0121bc3ded61ccf1，固定版本/分支未改；InvariantDistributionSwap完整接受，待本地保存，既有材料保留、未推送。
+- 唯一session24263/full-check01：2026-10-05T07:10:45.9311449+08:00--2026-10-05T07:11:49.0963178+08:00退出0；9018jobs、零警告、669项审计声明仅基础三公理、101项输入稳定，固定版本/Scratch/扫描/公理全部通过；5项公开真实核不变性转移/迭代恒等/Markov概率归一化与教材唯一性两换序接受，输入及原始日志SHA一致。299--300/PDF320--321目视，负责人语义pending。
+- 实际唯一性足以结论，原额外ergodicity不需用于该Markov probability model；具体数值kernel构造/ergodicity/density正则性未冒称完成。
+- 下一Theorem8.1必要Lemma8.1：347/PDF368已渲染待目视，Chapter08/ThermostatLieFields.lean从真实linear F=(p,-Aq)、G=(0,p)和真实fderiv Lie bracket推导Ck/Dk显式公式及真正Lie闭包成员，之后真实谱/Vandermonde与Hörmander lift。命题6.3/其他正文与整范围pending，先保存本批，无其他构建。
+
+## 最新数学检查点（2026-10-05 07:10 +0800）
+
+- HEAD140b70f18b71361fb1b0d10e0121bc3ded61ccf1，固定版本/分支不变；原材料保留。
+- InvariantDistributionSwap local-check03退出0零警告，5项实际唯一不变概率数据/真实核转移不变性/真实迭代恒等/两条换序关系通过。299--300/PDF320--321已目视，实际核复合S∘ₖT先T后S，真正Markov归一化确保新measure是probability，未供应换序结果。
+- 已接根/Scratch/审计，启动唯一full-check01，未决前不改核验输入。唯一性原文明示；在真实Markov模型下不需额外遍历性即可结论，不声称构造任意S/T唯一分布或具体动力学ergodicity。负责人语义pending。
+- 下一Theorem8.1必要Lemma8.1真实线性场高阶括号：347/PDF368文本已读待目视，先真C/D构造及真实Lie闭包，再实际谱/Vandermonde依赖（Proposition8.3）和Hörmander lift。其他正文/命题6.3等缺口与整个CORE_SCOPE仍pending。
+
+## 最新数学检查点（2026-10-05 07:05 +0800）
+
+- HEAD140b70f18b71361fb1b0d10e0121bc3ded61ccf1，WienerIntegration完整验收已保存，固定版本未改，无其他构建。
+- 进行中：Lemma7.1，299--300/PDF320--321目视，Chapter07/InvariantDistributionSwap.lean。真正Markov核S/T作用概率测度、真实复合结合律推出转移不变性；教材明确唯一不变分布数据推出rhoST=S rhoTS与rhoTS=T rhoST。核复合S∘ₖT对应先T再S，不能颠倒。
+- 顺带落实原证明用真实迭代恒等(ST)^(n+1)rho=S(TS)^nT rho；不供应换序结论或形式恒等作前提。真正唯一性足够推导结论，原额外遍历性无需用于这条较弱假设证明；不声称一般S/T存在唯一分布或构造具体数值ergodicity。
+- 候选已落盘，local01/02的实际迭代方向与函数类型接口已修复；下一唯一local-check03，整批未计通过。一般smooth g Ito积分/Stratonovich midpoint、高阶修正流/数值非线性分支、其他正文和整个CORE_SCOPE仍pending，负责人语义pending。
+
 ## 最新数学检查点（2026-10-05 07:02 +0800）
 
-- 本批前HEADaec03914bd31ff569af191347c5e5d1a755f30e9，固定版本/分支未改；WienerIntegration完整接受，待本地保存，原材料保留、未推送。
+- 本批前HEADaec03914bd31ff569af191347c5e5d1a755f30e9，固定版本/分支未改；WienerIntegration完整接受并保存为140b70f18b71361fb1b0d10e0121bc3ded61ccf1，原材料保留、未推送。
 - 唯一session44908/full-check01：2026-10-05T06:59:24.8042591+08:00--2026-10-05T07:00:30.8144886+08:00退出0；9017jobs、零警告、664项审计声明仅基础三公理、100项输入稳定，固定版本/Scratch/扫描/公理全部通过；14项公开真实有限加权law/实际等距及自身Ito真实L²极限/精确T²/(2K)/存在见证接受，全部输入和原始日志SHA匹配。229--231/PDF250--252已目视，负责人语义pending。
 - 一般命题6.3的真实Cauchy/完备化/正态law极限及variance integral g²仍pending；原Stratonovich midpoint也独立pending。本批不计命题6.3或整范围完成。
 - 下一独立正文Lemma7.1：299--300/PDF320--321已目视，实际Markov核ST/TS的真正不变概率分布，通过真实核作用与结合律推出换序不变性，再用教材明确唯一性推出rhoST=S rhoTS与rhoTS=T rhoST。唯一性与真不变性为原文模型数据，不供应换序结论；无需等负责人签核。先保存本批，目标Chapter07/InvariantDistributionSwap.lean，无其他构建。

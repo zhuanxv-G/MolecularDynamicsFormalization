@@ -406,3 +406,8 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 
 - 2026-10-05T06:59:24.8042591+08:00--2026-10-05T07:00:30.8144886+08:00退出0；9017jobs、零警告、664项审计声明仅基础三公理、100项输入稳定，固定版本/Scratch/扫描/公理全部通过；唯一full01/session44908，14项新公开实际有限加权normal law/等距及自身Ito左和真实L²极限/存在见证接受，全部输入和原始日志SHA匹配。229--231/PDF250--252目视。
 - 自身Ito未编号正文完整接受；Proposition6.3仅必要有限依赖接受，一般smooth g积分存在/极限Gaussian law/真实g²积分仍pending，未冒称完整。Stratonovich midpoint、其余正文/整范围/负责人签核pending，独立缺口登记后推进Lemma7.1。
+
+## 2026-10-05 actual Markov invariant distribution swap accepted
+
+- 2026-10-05T07:10:45.9311449+08:00--2026-10-05T07:11:49.0963178+08:00退出0；9018jobs、零警告、669项审计声明仅基础三公理、101项输入稳定，固定版本/Scratch/扫描/公理全部通过；唯一full01/session24263，5项实际数据/核转移不变性/真实迭代/两条分布换序接受，全部输入和原始日志SHA实查一致。299--300/PDF320--321目视，原唯一性明确，真实Markov归一化已落实。
+- Lemma7.1机器完整接受；负责人分布/密度语义pending。具体数值核/ergodicity、其他正文与整CORE_SCOPE仍pending，继续Theorem8.1必要Lemma8.1。
