@@ -414,3 +414,14 @@ run_cmd do
 #print axioms MolecularDynamics.exists_euler_trajectory_bounds
 #print axioms MolecularDynamics.euler_convergence_on_open
 #print axioms MolecularDynamics.theorem_2_1_euler
+
+#print axioms MolecularDynamics.oneStepIterate
+#print axioms MolecularDynamics.oneStepIterate_zero
+#print axioms MolecularDynamics.oneStepIterate_succ
+#print axioms MolecularDynamics.oneStepMaxError
+#print axioms MolecularDynamics.oneStepMaxError_nonneg
+#print axioms MolecularDynamics.oneStepMaxError_le
+#print axioms MolecularDynamics.oneStep_error_recursion
+#print axioms MolecularDynamics.oneStep_error_bound
+#print axioms MolecularDynamics.oneStepMaxError_order_bound
+#print axioms MolecularDynamics.oneStep_converges_of_consistency_stability

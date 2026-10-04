@@ -386,3 +386,15 @@ end MolecularDynamics
 #check MolecularDynamics.exists_euler_trajectory_bounds
 #check MolecularDynamics.euler_convergence_on_open
 #check MolecularDynamics.theorem_2_1_euler
+
+-- Section 2.2.3: actual one-step error recurrence, bound (2.12), and convergence.
+#check MolecularDynamics.oneStepIterate
+#check MolecularDynamics.oneStepIterate_zero
+#check MolecularDynamics.oneStepIterate_succ
+#check MolecularDynamics.oneStepMaxError
+#check MolecularDynamics.oneStepMaxError_nonneg
+#check MolecularDynamics.oneStepMaxError_le
+#check MolecularDynamics.oneStep_error_recursion
+#check MolecularDynamics.oneStep_error_bound
+#check MolecularDynamics.oneStepMaxError_order_bound
+#check MolecularDynamics.oneStep_converges_of_consistency_stability
