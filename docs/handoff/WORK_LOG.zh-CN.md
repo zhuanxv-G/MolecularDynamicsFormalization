@@ -1182,3 +1182,15 @@
 - Kepler/full-check06实际11:07:37--11:10:48退出0，8970jobs、Scratch、525项目声明审计、固定版本/扫描/输入SHA稳定；不重复构建。SeparableQuadrature五关键只允许基础公理，准备保存本地明确批次。
 - KeplerQuadrature attempt01八关键实际退出0、无警告，仅propext/Classical.choice/Quot.sound。真实径向能量守恒推出速度平方；每个非转向点从真实r/v连续性获得正根号与符号固定的局部窗口，σ自动取±1，实际径向解满足分离积分=时间差及局部逆公式。候选尚未正式接入，不能冒称完整工程通过。
 - 转向点/全轨道积分、action-angle/环面及全书其他依赖仍未完成；最终语义签核pending，无新远端CI。下一接入该候选并固定完整验收，全部无关材料保留。
+
+## 2026-10-04 11:17 +08:00 — 分离积分已保存，Kepler积分逆正式接入
+
+- SeparableQuadrature源码本地提交20576ce，固定原始验收/三次尝试日志提交2eaee48，未推送。首次git add -f误写日志路径在probes，整条暂存失败；按实际Kepler根路径补证据提交，没有覆盖旧原日志。
+- KeplerQuadrature八关键正式接入根/Scratch/CheckAxioms，映射/假设/状态同步；开始full-check07，冻结正式输入。自动局部窗口/符号与真实积分逆已经候选通过，完整工程结果尚待读取。
+- 下一原页核对harmonic action-angle，转向点/global orbit与全书其余内容保留pending；最终语义签核pending，无新远端CI。
+
+## 2026-10-04 11:21 +08:00 — Kepler非转向积分逆完整验收通过
+
+- Kepler/full-check07实际11:17:25--11:20:26退出0，8971jobs、Scratch、536项目声明审计、固定版本/扫描/输入SHA稳定。八关键只允许三项基础公理；准备本地保存明确源码与原始证据。
+- 再次视觉核对印刷30/PDF53，HarmonicActionAngleProbe已落盘并启动attempt01：真实能量E=IΩ、平方根速度身份、实际导数方程双向等价、显式角演化、任意非零初值表示。尚未验证，不能计为正式成果。
+- 转向点/global orbit、环面周期/稠密性及全书仍pending；最终签核pending，无新远端CI，无关材料保留。

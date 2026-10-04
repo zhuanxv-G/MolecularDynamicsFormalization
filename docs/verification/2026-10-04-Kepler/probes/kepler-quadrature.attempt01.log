@@ -1,0 +1,10 @@
+'MolecularDynamics.keplerRadial_energy_speedSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialBranchSpeed_eq_velocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialSpeedSquare_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialEnergy_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadial_signedQuadrature_inverse_on_branch' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.exists_keplerRadial_nonturning_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadial_nonturning_signedQuadrature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadial_nonturning_quadrature' depends on axioms: [propext, Classical.choice, Quot.sound]

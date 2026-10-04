@@ -222,3 +222,10 @@ Kepler/full-check05 passed at08:46:27--08:47:48:8969jobs, Scratch,511imported pr
 - Kepler signed square-root speed branch and local nonturning-point reduction, turning points, action-angle/torus and whole book remain open; final responsible semantic sign-off pending, no new remote CI.
 
 Kepler/full-check06 passed at11:07:37--11:10:48:8970jobs, Scratch,525imported project declaration audits, pinned versions/source scan/stable input SHA. True scalar quadrature and inverse accepted; Kepler square-root branch candidate remains outside the formal library.
+
+### Kepler nonturning signed quadrature (2026-10-04)
+
+- Candidate01 eight key proofs passed without warnings and only permitted foundational axioms. Actual radial energy conservation, positive-radicand/sign window, true signed separated integral and actual trajectory local inverse formally integrated; Kepler/full-check07 starts.
+- Turning points/global orbit classification, harmonic action-angle/torus and whole book remain open; final responsible semantic signoff pending, no new remote CI.
+
+Kepler/full-check07 passed at11:17:25--11:20:26:8971jobs, Scratch,536 imported project declarations, pinned versions/source scan/stable input SHA. Signed nonturning radial quadrature accepted locally; final responsible signoff pending.

@@ -188,3 +188,7 @@ Unit-mass planar Kepler, nonzero Cartesian initial position. No polar representa
 ### Separated scalar quadrature (2026-10-04)
 
 Continuous real scalar w, nonzero throughout the specified open position interval; base and trajectory positions inside it. Actual time-domain solution satisfies HasDerivAt r (w(r(t))) on a connected open interval with real initial value. FTC supplies integrability and actual strict derivative, inverse theorem supplies local inverse, conservation of G(r(t))-t proves the time formula. Local inverse identities/solution hold eventually at the base point only. Zeros of w and turning points are explicitly excluded, not hidden by total division.
+
+### Kepler local nonturning quadrature (2026-10-04)
+
+Actual r'=v and v'=-1/r²+l²/r³ with positive radius on an open time interval; initial point inside the interval and v(t₀)≠0. Energy, velocity sign and local windows are derived rather than assumed by the final theorem. Both signs and l=0 are included. Integral inverse identities are eventual at the base point, and the time formula holds on a derived window. No differentiable inverse at a turning point or global noncollision claim is made.

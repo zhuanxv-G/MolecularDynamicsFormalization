@@ -367,3 +367,7 @@ Printed30/PDF53: KeplerReconstruction proves the true angle-integral derivative 
 ### Actual scalar separated quadrature and inverse (2026-10-04)
 
 Printed28/PDF51 and30/PDF53: SeparableQuadrature proves G(x)=∫x₀..x 1/w has the actual strict derivative 1/w(x) when w is continuous and nonzero on an open position interval. FTC and the inverse function theorem give a true local inverse g with both inverse identities and strict derivative w(x₀). Every actual solution r'=w(r) in that interval satisfies G(r(t))=t-t₀, then locally r(t)=g(t-t₀). Integrability is derived from continuity/nonzero denominator. Kepler square-root branch reduction and turning points are separate.
+
+### Kepler signed radial quadrature (2026-10-04)
+
+Printed30/PDF53: KeplerQuadrature reduces actual positive-radius radial trajectories using true energy conservation, v²=2(E+1/r-l²/(2r²)). At each actual nonturning point v(t₀)≠0, continuity proves a position window with positive radicand and a time window with fixed velocity sign. A derived σ=±1 gives w=σ√(2(E+1/r-l²/(2r²))), true separated integral=time difference and a local inverse g with strict derivative v(t₀) and r(t)=g(t-t₀). Turning points and global orbit classification are separate.
