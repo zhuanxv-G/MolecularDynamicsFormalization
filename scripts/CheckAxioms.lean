@@ -240,3 +240,14 @@ run_cmd do
 #print axioms MolecularDynamics.keplerPolar_angle_integral
 #print axioms MolecularDynamics.keplerPolar_radialEnergy_const_initialAngular
 #print axioms MolecularDynamics.keplerPolar_energy_radial_identity
+#print axioms MolecularDynamics.norm_polarCartesianPosition
+#print axioms MolecularDynamics.polarCartesianState_angular
+#print axioms MolecularDynamics.polarCartesianState_energy
+#print axioms MolecularDynamics.hasDerivAt_planarPair
+#print axioms MolecularDynamics.keplerPolar_angularVelocity_hasDerivAt
+#print axioms MolecularDynamics.polarCartesianState_momentum_hasDerivAt
+#print axioms MolecularDynamics.keplerPolarEL_to_cartesianMechanical
+#print axioms MolecularDynamics.polarCartesianState_force
+#print axioms MolecularDynamics.polarCartesianState_radialVelocity
+#print axioms MolecularDynamics.cartesianMechanical_to_keplerPolarEL
+#print axioms MolecularDynamics.keplerPolarEL_iff_cartesianMechanical

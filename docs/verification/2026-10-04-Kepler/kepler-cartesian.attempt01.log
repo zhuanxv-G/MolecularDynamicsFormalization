@@ -1,0 +1,137 @@
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:35:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ‖(polarCartesianState r θ 0 0).1‖
+in the target expression
+  ∑ i, (polarCartesianState r θ v ω).2.ofLp i ^ 2 / (2 * 1) + -‖(polarCartesianState r θ v ω).1‖⁻¹ =
+    keplerRadialEnergy (r ^ 2 * ω) r v
+
+r θ v ω : ℝ
+hr : 0 < r
+⊢ ∑ i, (polarCartesianState r θ v ω).2.ofLp i ^ 2 / (2 * 1) + -‖(polarCartesianState r θ v ω).1‖⁻¹ =
+    keplerRadialEnergy (r ^ 2 * ω) r v
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:64:2: error: `dsimp` made no progress
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:80:43: error: unsolved goals
+case e'_9
+r θ v ω : ℝ → ℝ
+t : ℝ
+hr0 : 0 < r t
+hr : HasDerivAt r (v t) t
+hθ : HasDerivAt θ (ω t) t
+hv : HasDerivAt v (r t * ω t ^ 2 - (r t ^ 2)⁻¹) t
+hω : HasDerivAt ω (-(2 * v t * ω t) / r t) t
+hc : HasDerivAt (Real.cos ∘ θ) (-Real.sin (θ t) * ω t) t
+hs : HasDerivAt (Real.sin ∘ θ) (Real.cos (θ t) * ω t) t
+hx :
+  HasDerivAt ((v * fun x => Real.cos (θ x)) - r * ω * fun x => Real.sin (θ x))
+    ((r t * ω t ^ 2 - (r t ^ 2)⁻¹) * Real.cos (θ t) + v t * (-Real.sin (θ t) * ω t) -
+      ((v t * ω t + r t * (-(2 * v t * ω t) / r t)) * Real.sin (θ t) + (r * ω) t * (Real.cos (θ t) * ω t)))
+    t
+hy :
+  HasDerivAt ((v * fun x => Real.sin (θ x)) + r * ω * fun x => Real.cos (θ x))
+    ((r t * ω t ^ 2 - (r t ^ 2)⁻¹) * Real.sin (θ t) + v t * (Real.cos (θ t) * ω t) +
+      ((v t * ω t + r t * (-(2 * v t * ω t) / r t)) * Real.cos (θ t) + (r * ω) t * (-Real.sin (θ t) * ω t)))
+    t
+⊢ -Real.cos (θ t) = -Real.cos (θ t) - Real.cos (θ t) * r t ^ 2 * ω t * (r * ω) t + Real.cos (θ t) * r t ^ 3 * ω t ^ 2
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:85:43: error: unsolved goals
+case e'_9
+r θ v ω : ℝ → ℝ
+t : ℝ
+hr0 : 0 < r t
+hr : HasDerivAt r (v t) t
+hθ : HasDerivAt θ (ω t) t
+hv : HasDerivAt v (r t * ω t ^ 2 - (r t ^ 2)⁻¹) t
+hω : HasDerivAt ω (-(2 * v t * ω t) / r t) t
+hc : HasDerivAt (Real.cos ∘ θ) (-Real.sin (θ t) * ω t) t
+hs : HasDerivAt (Real.sin ∘ θ) (Real.cos (θ t) * ω t) t
+hx :
+  HasDerivAt ((v * fun x => Real.cos (θ x)) - r * ω * fun x => Real.sin (θ x))
+    ((r t * ω t ^ 2 - (r t ^ 2)⁻¹) * Real.cos (θ t) + v t * (-Real.sin (θ t) * ω t) -
+      ((v t * ω t + r t * (-(2 * v t * ω t) / r t)) * Real.sin (θ t) + (r * ω) t * (Real.cos (θ t) * ω t)))
+    t
+hy :
+  HasDerivAt ((v * fun x => Real.sin (θ x)) + r * ω * fun x => Real.cos (θ x))
+    ((r t * ω t ^ 2 - (r t ^ 2)⁻¹) * Real.sin (θ t) + v t * (Real.cos (θ t) * ω t) +
+      ((v t * ω t + r t * (-(2 * v t * ω t) / r t)) * Real.cos (θ t) + (r * ω) t * (-Real.sin (θ t) * ω t)))
+    t
+hx' : HasDerivAt (fun u => v u * Real.cos (θ u) - r u * ω u * Real.sin (θ u)) (-(r t ^ 2)⁻¹ * Real.cos (θ t)) t
+⊢ -Real.sin (θ t) = -Real.sin (θ t) - Real.sin (θ t) * r t ^ 2 * ω t * (r * ω) t + Real.sin (θ t) * r t ^ 3 * ω t ^ 2
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:92:21: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ‖(polarCartesianState (r t) ?m.985 0 0).1‖
+in the target expression
+  !₂[-(r t ^ 2)⁻¹ * Real.cos (θ t), -(r t ^ 2)⁻¹ * Real.sin (θ t)] =
+    -(‖(polarCartesianState (r t) (θ t) (v t) (ω t)).1‖ ^ 3)⁻¹ • (polarCartesianState (r t) (θ t) (v t) (ω t)).1
+
+r θ v ω : ℝ → ℝ
+t : ℝ
+hr0 : 0 < r t
+hr : HasDerivAt r (v t) t
+hθ : HasDerivAt θ (ω t) t
+hv : HasDerivAt v (r t * ω t ^ 2 - (r t ^ 2)⁻¹) t
+hω : HasDerivAt ω (-(2 * v t * ω t) / r t) t
+hc : HasDerivAt (Real.cos ∘ θ) (-Real.sin (θ t) * ω t) t
+hs : HasDerivAt (Real.sin ∘ θ) (Real.cos (θ t) * ω t) t
+hx :
+  HasDerivAt ((v * fun x => Real.cos (θ x)) - r * ω * fun x => Real.sin (θ x))
+    ((r t * ω t ^ 2 - (r t ^ 2)⁻¹) * Real.cos (θ t) + v t * (-Real.sin (θ t) * ω t) -
+      ((v t * ω t + r t * (-(2 * v t * ω t) / r t)) * Real.sin (θ t) + (r * ω) t * (Real.cos (θ t) * ω t)))
+    t
+hy :
+  HasDerivAt ((v * fun x => Real.sin (θ x)) + r * ω * fun x => Real.cos (θ x))
+    ((r t * ω t ^ 2 - (r t ^ 2)⁻¹) * Real.sin (θ t) + v t * (Real.cos (θ t) * ω t) +
+      ((v t * ω t + r t * (-(2 * v t * ω t) / r t)) * Real.cos (θ t) + (r * ω) t * (-Real.sin (θ t) * ω t)))
+    t
+hx' : HasDerivAt (fun u => v u * Real.cos (θ u) - r u * ω u * Real.sin (θ u)) (-(r t ^ 2)⁻¹ * Real.cos (θ t)) t
+hy' : HasDerivAt (fun u => v u * Real.sin (θ u) + r u * ω u * Real.cos (θ u)) (-(r t ^ 2)⁻¹ * Real.sin (θ t)) t
+hp :
+  HasDerivAt
+    (fun u => !₂[v u * Real.cos (θ u) - r u * ω u * Real.sin (θ u), v u * Real.sin (θ u) + r u * ω u * Real.cos (θ u)])
+    !₂[-(r t ^ 2)⁻¹ * Real.cos (θ t), -(r t ^ 2)⁻¹ * Real.sin (θ t)] t
+⊢ !₂[-(r t ^ 2)⁻¹ * Real.cos (θ t), -(r t ^ 2)⁻¹ * Real.sin (θ t)] =
+    -(‖(polarCartesianState (r t) (θ t) (v t) (ω t)).1‖ ^ 3)⁻¹ • (polarCartesianState (r t) (θ t) (v t) (ω t)).1
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:107:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ((fun t => polarCartesianState (r t) (θ t) (v t) (ω t)) t).1
+in the target expression
+  ‖(polarCartesianState (r t) (θ t) 0 0).1‖ = r t
+
+case refine_1
+I : Set ℝ
+r θ v ω : ℝ → ℝ
+h : IsKeplerPolarEulerLagrangeOn I r θ v ω
+hEL :
+  ∀ t ∈ I,
+    0 < r t ∧
+      HasDerivAt r (v t) t ∧
+        HasDerivAt θ (ω t) t ∧ HasDerivAt v (r t * ω t ^ 2 - (r t ^ 2)⁻¹) t ∧ HasDerivAt (fun u => r u ^ 2 * ω u) 0 t
+t : ℝ
+ht : t ∈ I
+hn : ‖(polarCartesianState (r t) (θ t) 0 0).1‖ = r t
+hz : ((fun t => polarCartesianState (r t) (θ t) (v t) (ω t)) t).1 = 0
+⊢ False
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:115:8: error: Failed to rewrite using equation theorems for `mechanicalVectorField`
+'MolecularDynamics.norm_polarCartesianPosition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_angular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_energy' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_planarPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angularVelocity_hasDerivAt' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.polarCartesianState_momentum_hasDerivAt' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.keplerPolarEL_to_cartesianMechanical' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

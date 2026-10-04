@@ -176,3 +176,7 @@ Two real Euclidean coordinates, radius q₀≠0 for inverse chart; derivative fo
 ### Kepler polar Euler--Lagrange trajectories (2026-10-04)
 
 Real scalar r,θ,v,ω with r>0 along the declared time set; actual r'=v and θ'=ω. The EL predicate contains time derivatives of actual Lagrangian partials, not radial dynamics as premises. Open connected Ioo gives genuine angular/energy conservation; closed oriented subintervals are inside that Ioo and continuity proves angle integrability. Fixed angular momentum in the low-level energy lemma is supplied from proven conservation in the initial-angular-momentum corollary and the angle formula. No unproved Cartesian covariance or full radial quadrature is inferred.
+
+### Cartesian/polar trajectory bridge (2026-10-04)
+
+Planar Euclidean unit-mass Kepler force; polarCartesianState uses genuine positions and momenta from scalar kinematics. Positive radius implies nonzero Cartesian position. Forward polar EL→Cartesian has no openness requirement; reverse/iff requires open I and actual r'=v,θ'=ω with r>0. Neither v' nor ω' is assumed in reverse: the former follows from Cartesian radial velocity projection, the latter is available from true angular momentum conservation. No global lift across arbitrary branch choices is inferred.

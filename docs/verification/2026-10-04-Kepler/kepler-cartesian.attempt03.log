@@ -1,0 +1,26 @@
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:64:58: error: unsolved goals
+r ω : ℝ → ℝ
+v t : ℝ
+hr0 : r t ≠ 0
+hr : HasDerivAt r v t
+hL : HasDerivAt (fun u => r u ^ 2 * ω u) 0 t
+hd :
+  HasDerivAt ((fun u => r u ^ 2 * ω u) / r ^ 2)
+    ((0 * (r ^ 2) t - r t ^ 2 * ω t * (↑2 * r t ^ (2 - 1) * v)) / (r ^ 2) t ^ 2) t
+u : ℝ
+hu : r u ≠ 0
+⊢ ω u = ((fun u => r u ^ 2 * ω u) / r ^ 2) u
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:70:2: error: No goals to be solved
+'MolecularDynamics.norm_polarCartesianPosition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_angular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_planarPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angularVelocity_hasDerivAt' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.polarCartesianState_momentum_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolarEL_to_cartesianMechanical' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

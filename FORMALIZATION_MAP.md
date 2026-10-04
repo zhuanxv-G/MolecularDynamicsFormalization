@@ -355,3 +355,7 @@ Printed29/PDF52: `PolarCoordinateMap.lean` proves the actual strict Frechet deri
 ### Kepler polar EL, radial energy and angular quadrature (2026-10-04)
 
 Printed29--30/PDF52--53: KeplerPolarDynamics proves four actual scalar partial derivatives of the displayed polar Lagrangian. The true Euler--Lagrange predicate uses these deriv slices and actual time derivatives. Its equivalence to radial acceleration and angular-momentum derivative zero is proved, not assumed. Angular momentum conservation yields the reduced radial force, true radial effective-energy conservation (including initial-angular-momentum version) and genuine angle interval integral via FTC. General coordinate covariance, actual Cartesian Kepler equivalence, solving the radial IVP by quadrature, orbit classification and action-angle/torus remain separate.
+
+### Genuine Cartesian/polar Kepler equivalence (2026-10-04)
+
+Printed29--30/PDF52--53: KeplerCartesianBridge proves norm=positive radius, actual Cartesian angular momentum/energy equal the polar formulas, and polar EL→true Cartesian mechanical solution. Conversely, on open time sets with a positive-radius true kinematic lift r'=v,θ'=ω, the actual Cartesian momentum derivative implies radial acceleration; central-force angular momentum derivative gives the angular EL equation. Hence genuine EL/mechanical equivalence is proved for those lifts without assuming the acceleration conclusions. Local polar lift existence and solving/reconstructing radial IVPs remain separate.

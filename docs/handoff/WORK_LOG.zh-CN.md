@@ -1101,3 +1101,27 @@
 - Kepler/full-check03实际08:27:02--08:28:23退出0：8967jobs、Scratch、454项目声明公理审计、固定Lean/mathlib/扫描及输入SHA稳定。十三关键仅三项允许基础公理，最终签核pending，新远端CI未跑。
 - inventory仍partial，已区分真实标量EL结果与尚未完成的Cartesian桥接/径向积分解/action-angle/环面。正在本地保存明确成果和全部EL失败/成功日志，保留无关材料。
 - 下一KeplerCartesianBridgeProbe已落盘并attempt01检查中，目标从真极坐标EL推真实Cartesian机械Kepler，以及真实范数、总能量和角动量一致，不将静态公式冒充动态桥接。
+
+## 2026-10-04 08:32 +08:00 — 极坐标动力学已保存，Cartesian桥接API修复
+
+- 极坐标EL/能量/角积分及全部明确证据保存235c03cc6316312764556304b92e45e177eeede0，本地未推送；full-check03为8967jobs/454声明。
+- Cartesian attempt01中真实范数r、角动量身份与Euclidean向量HasDerivAt helper独立通过；其余失败为norm定理重写只有v=ω=0的模式、Pi.mul_apply未显式展开、dsimp无进展与ODE目标未显式change，不涉及数学反例。
+- norm定理一般化四参数（位置不依赖速度）、乘积投影规范、去无进展dsimp、机械目标change后准备attempt02。候选不纳入上批验收，原始失败日志保留；最终签核pending，全书持续。
+
+## 2026-10-04 08:36 +08:00 — 极坐标EL推真实Cartesian Kepler候选通过
+
+- Cartesian attempt04七关键退出0，仅coeff关闭后的多余ring警告（已清除）。完整范数/角动量/总能量身份、向量实际导数、由角动量零导数推ω真导数、polar EL→Cartesian机械Kepler均只允许基础公理。
+- attempt02/03失败为未规范Pi商函数应用、convert的函数类型未显式限定及连续数乘实例搜索；已按实际函数类型/change与有界数乘实例修复，不重复模糊推断路线。
+- 新增反向桥接：只给r>0、真实r'=v/θ'=ω的运动学表示与真Cartesian解，从实际Cartesian动量导数/径向投影推v真实加速度，从中心力角动量真导数推(r²ω)'=0，不额外假设二阶加速度结论。attempt05运行中，候选未正式验收。
+
+## 2026-10-04 08:38 +08:00 — Cartesian/极坐标双向桥接通过并正式验收启动
+
+- Cartesian candidate05十一关键退出0，无警告，仅允许三项基础公理。反向只需正半径、真实r'=v/θ'=ω与真Cartesian解，径向加速度由实际p导数导出，角EL由中心力真角动量零导数导出，不把加速度结论放假设。
+- 正式KeplerCartesianBridge接入根/Scratch/CheckAxioms，映射/假设/状态/语义报告同步。开始Kepler/full-check04，冻结正式输入。
+- 随后构造从真实径向IVP及角积分的真Kepler重建，任意初值局部lift/全径向积分求解与action-angle仍独立pending。最终签核pending，新远端CI未跑，全书继续。
+
+## 2026-10-04 08:42 +08:00 — Cartesian/极坐标桥接完整验收通过
+
+- Kepler/full-check04实际08:37:49--08:39:11退出0：8968jobs、Scratch、490项目声明审计、固定版本/扫描与输入SHA稳定。十一新增关键仅三项允许基础公理，最终签核pending，无新远端CI。
+- 状态/inventory/语义报告同步，准备本地保存明确成果与所有桥接失败/成功日志，无关材料保留。
+- 已落盘并开始KeplerReconstructionProbe attempt01：角积分真FTC导数，径向真实轨迹→polar EL/Cartesian真Kepler，正半径域C1有效径向力与实际局部IVP，不假设欲证解存在。后续补参数初值重建存在及任意Cartesian初值表示；全径向分离积分解和action-angle仍独立未完成。

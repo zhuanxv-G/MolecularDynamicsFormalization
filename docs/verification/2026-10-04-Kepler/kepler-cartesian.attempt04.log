@@ -1,0 +1,16 @@
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:69:36: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:69:11: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:69:36: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'MolecularDynamics.norm_polarCartesianPosition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_angular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_planarPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angularVelocity_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_momentum_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolarEL_to_cartesianMechanical' depends on axioms: [propext, Classical.choice, Quot.sound]

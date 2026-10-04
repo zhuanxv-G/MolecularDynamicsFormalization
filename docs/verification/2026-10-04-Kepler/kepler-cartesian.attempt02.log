@@ -1,0 +1,29 @@
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:64:2: error: `field_simp` made no progress on the goal
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:93:81: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:93:81: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+docs/verification/2026-10-04-Kepler/probes/KeplerCartesianBridgeProbe.lean:114:11: error: failed to synthesize
+  ContinuousSMul ℝ (PhaseSpace 2)
+(deterministic) timeout at `typeclass`, maximum number of heartbeats (20000) has been reached
+
+Note: Use `set_option synthInstance.maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+'MolecularDynamics.norm_polarCartesianPosition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_angular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_planarPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angularVelocity_hasDerivAt' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.polarCartesianState_momentum_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolarEL_to_cartesianMechanical' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
