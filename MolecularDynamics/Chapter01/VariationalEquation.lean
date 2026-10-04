@@ -66,6 +66,21 @@ theorem matrixExponentialFlow_realEigenmode {m : ℕ}
   exact linearExponentialFlow_realEigenmode
     (Matrix.toEuclideanCLM (n := Fin m) (𝕜 := ℝ) A) ω v hA t
 
+theorem matrixExponentialFlow_diagonal {m : ℕ}
+    (d : Fin m → ℝ) (t : ℝ) (z : Position m) :
+    matrixExponentialFlow (Matrix.diagonal d) t z =
+      WithLp.toLp 2 (fun i => Real.exp (t * d i) * (WithLp.ofLp z) i) := by
+  rw [matrixExponentialFlow_eq]
+  have hsmul : t • Matrix.diagonal d = Matrix.diagonal (fun i => t * d i) := by
+    ext i j
+    by_cases hij : i = j <;> simp [hij]
+  rw [hsmul, Matrix.exp_diagonal]
+  congr 1
+  funext i
+  rw [Matrix.mulVec_diagonal]
+  rw [Pi.coe_exp]
+  rw [← Real.exp_eq_exp_ℝ]
+
 end Matrix
 
 end MolecularDynamics

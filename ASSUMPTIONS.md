@@ -250,3 +250,5 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - NormalModes takes the generalized eigenpair relations as hypotheses and derives the real mode solution; it does not assert that every positive Hessian supplies a complete eigenbasis or derive the pure-imaginary spectrum. The mechanical bridge uses positive coordinate masses and the explicit mass/stiffness relation.
 
 - VariationalEquation formalizes only the constant-coefficient variational system `W' = A W` on a complete real normed space. It does not identify `A` with a time-dependent Jacobian along a nonlinear trajectory, prove differentiability of a nonlinear flow with respect to initial data, or define/compute Lyapunov exponents. The matrix-exponential exercise lemmas use the fixed mathlib matrix exponential and state the commuting hypothesis explicitly.
+
+- The diagonal exercise uses a finite real index type and the literal matrix `Matrix.diagonal d`; its component formula follows from the fixed `Matrix.exp_diagonal` lemma. No diagonalizability assumption is silently extended to arbitrary matrices, and exercises 1(b)--1(c) remain open.

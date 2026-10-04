@@ -459,3 +459,7 @@ Printed37/PDF60: `NormalModes` defines the real sine/cosine mode expression, pro
 ### Constant-coefficient variational equation and matrix-exponential exercises (2026-10-04)
 
 Printed44--47/PDF67--70: `VariationalEquation` records the exact constant-coefficient specialization of (1.10), `W' = A W`, with an exponential-flow solution and uniqueness from the initial perturbation. It also verifies the exercise-2 identities `exp(0)=1`, `exp(A+B)=exp(A)exp(B)` for commuting matrices, `exp(-A)=(exp A)⁻¹`, and the real matrix-eigenmode formula. The time-dependent Jacobian `f'(z(t))`, nonlinear flow derivative with respect to initial data, singular-value growth, Lyapunov-exponent limits, and the remaining exercises remain pending.
+
+### Diagonal matrix exponential exercise (2026-10-04)
+
+Printed46/PDF69 exercise 1(a): for a finite real diagonal matrix `diag d`, `matrixExponentialFlow_diagonal` proves the componentwise solution `exp(t dᵢ) zᵢ` directly from `Matrix.exp_diagonal` and the matrix-vector product. The theorem does not claim the upper-triangular cases 1(b)--1(c) or a general diagonalization theorem.
