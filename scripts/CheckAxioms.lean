@@ -561,3 +561,23 @@ run_cmd do
 #print axioms MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy
 #print axioms MolecularDynamics.textbookProcessedMaxError
 #print axioms MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy
+
+-- Main-text Lie/Poisson and actual commutator: printed100--105/PDF122--127.
+#print axioms MolecularDynamics.textbookLieDerivative
+#print axioms MolecularDynamics.hasDerivWithinAt_textbookLieDerivative
+#print axioms MolecularDynamics.hasDerivAt_textbookLieDerivative
+#print axioms MolecularDynamics.contDiff_textbookLieDerivative
+#print axioms MolecularDynamics.hasDerivAt_textbookLieDerivative_second
+#print axioms MolecularDynamics.textbookLieDerivative_field_add
+#print axioms MolecularDynamics.textbookPoissonBracket
+#print axioms MolecularDynamics.textbookPoissonBracket_coordinates
+#print axioms MolecularDynamics.textbookPoissonBracket_skew
+#print axioms MolecularDynamics.textbookPoissonBracket_self
+#print axioms MolecularDynamics.textbookPoissonBracket_linear_right
+#print axioms MolecularDynamics.textbookPoissonBracket_jacobi
+#print axioms MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson
+#print axioms MolecularDynamics.hasDerivWithinAt_textbookPoissonBracket
+#print axioms MolecularDynamics.textbookHamiltonian_energy_const_on_Icc
+#print axioms MolecularDynamics.textbookPoissonBracket_linear_left
+#print axioms MolecularDynamics.textbookHamiltonianLieDerivative_add
+#print axioms MolecularDynamics.textbookHamiltonianLieDerivative_commutator

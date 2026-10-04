@@ -535,3 +535,23 @@ end MolecularDynamics
 #check MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy
 #check MolecularDynamics.textbookProcessedMaxError
 #check MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy
+
+-- Main-text Lie/Poisson and actual commutator: printed100--105/PDF122--127.
+#check MolecularDynamics.textbookLieDerivative
+#check MolecularDynamics.hasDerivWithinAt_textbookLieDerivative
+#check MolecularDynamics.hasDerivAt_textbookLieDerivative
+#check MolecularDynamics.contDiff_textbookLieDerivative
+#check MolecularDynamics.hasDerivAt_textbookLieDerivative_second
+#check MolecularDynamics.textbookLieDerivative_field_add
+#check MolecularDynamics.textbookPoissonBracket
+#check MolecularDynamics.textbookPoissonBracket_coordinates
+#check MolecularDynamics.textbookPoissonBracket_skew
+#check MolecularDynamics.textbookPoissonBracket_self
+#check MolecularDynamics.textbookPoissonBracket_linear_right
+#check MolecularDynamics.textbookPoissonBracket_jacobi
+#check MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson
+#check MolecularDynamics.hasDerivWithinAt_textbookPoissonBracket
+#check MolecularDynamics.textbookHamiltonian_energy_const_on_Icc
+#check MolecularDynamics.textbookPoissonBracket_linear_left
+#check MolecularDynamics.textbookHamiltonianLieDerivative_add
+#check MolecularDynamics.textbookHamiltonianLieDerivative_commutator

@@ -72,3 +72,4 @@ import MolecularDynamics.Chapter02.AdjointMethods
 import MolecularDynamics.Chapter02.SplittingError
 import MolecularDynamics.Chapter02.CompositionMethods
 import MolecularDynamics.Chapter02.ProcessedMethods
+import MolecularDynamics.Chapter03.LiePoisson
