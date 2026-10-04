@@ -1,0 +1,24 @@
+docs/verification/2026-10-04-Kepler/probes/TorusPeriodProbe.lean:62:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun t => harmonicTorusRotation Ω t θ) (t + T)
+in the target expression
+  (fun t => harmonicTorusPhase Ω J (harmonicTorusRotation Ω t θ)) (t + T) =
+    (fun t => harmonicTorusPhase Ω J (harmonicTorusRotation Ω t θ)) t
+
+n : ℕ
+Ω J : Fin n → ℝ
+θ : HarmonicTorus n
+T : ℝ
+hp : Function.Periodic (fun t => harmonicTorusRotation Ω t θ) T
+t : ℝ
+⊢ (fun t => harmonicTorusPhase Ω J (harmonicTorusRotation Ω t θ)) (t + T) =
+    (fun t => harmonicTorusPhase Ω J (harmonicTorusRotation Ω t θ)) t
+'MolecularDynamics.harmonicTorusRotation_two_positivePeriod_iff_rational' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_two_irrational_no_positivePeriod' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_periodic_of_rotation_periodic' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

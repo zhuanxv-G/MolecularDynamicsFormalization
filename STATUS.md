@@ -257,3 +257,10 @@ Kepler/full-check10 passed at11:48:35--11:49:55:8974jobs, Scratch,643 imported p
 - General higher-dimensional nonresonance density, forward-time density and rational-period iff remain open; final responsible semantic signoff pending, no new remote CI, whole book ongoing.
 
 Kepler/full-check11 passed at11:56:21--11:57:42:8975jobs, Scratch,663 imported project declaration audits, pinned versions/source scan/stable input SHA. True torus homeomorphism/two-frequency real-time density/physical energy-level closure and three-frequency resonance non-density accepted locally; final signoff pending.
+
+### True rational-period iff and physical nonperiodicity (2026-10-04)
+
+- Period candidate02 six key proofs passed without warnings and only permitted foundational axioms. Exact positive-period iff rational frequency ratio and irrational no-period for both angle and true nondegenerate mechanical phase formally integrated; full-check12 starts.
+- General high-dimensional nonresonance, forward density and remaining whole book pending; final responsible semantic signoff pending, no new remote CI.
+
+Kepler/full-check12 passed at12:02:15--12:03:37:8976jobs, Scratch,676 imported project declaration audits, pinned versions/source scan/stable input SHA. Positive period iff rational ratio/nonperiodicity for angle and genuine mechanical phase accepted locally; final signoff pending.

@@ -1295,3 +1295,19 @@
 - full-check11实际11:56:21--11:57:42退出0，8975jobs、Scratch、663项目声明审计、固定版本/扫描/输入SHA稳定；八关键仅三项基础公理。准备保存明确源码/三次原尝试日志/完整证据，不推送。
 - TorusPeriodProbe开始attempt01：二维正周期存在↔频率比有理、无理比无正周期、真实phase周期传递。候选未计正式完成。另已只读核对固定mathlib最新ProdDomain implicit-function API，为教材印刷28/PDF51真正first-integral level graph准备，不使用网络/MathCopilot。
 - 最终负责人签核pending，无新远端CI，全书持续。
+
+## 2026-10-04 12:00 +08:00 — density已保存，周期候选首轮β桥接修复
+
+- Density完整批次5a15ff0已本地保存，未推送。Period attempt01真正正周期存在↔有理比、无理无正周期两关键已独立通过；phase周期转递rw未β化，改congrArg真实相映射。补正action下phase周期↔rotation周期及实际机械轨道有理/无理周期判据，准备attempt02。失败日志保留、最终签核pending。
+
+## 2026-10-04 12:02 +08:00 — 正周期↔有理比/实际机械无理无周期候选通过并正式接入
+
+- Period candidate02六关键退出0、无警告，仅三项基础公理。真正正周期iff有理比，两方向分别整数周期条件/rational num-den构造实际T；正action真实phase injectivity传到机械轨道，未假设所需周期。
+- 正式TorusPeriod接入根/Scratch/CheckAxioms；full-check12开始、冻结正式输入。下一教材印刷28/PDF51真正第一积分implicit局部graph，再接已证明分离积分；其证明尚未落地/计完成。
+- 最终负责人签核pending，无新远端CI，全书持续，无关材料保留。
+
+## 2026-10-04 12:05 +08:00 — 真正周期/有理比与机械无理无周期完整验收通过
+
+- full-check12实际12:02:15--12:03:37退出0，8976jobs、Scratch、676项目声明审计、固定版本/扫描/输入SHA稳定；六关键仅三项基础公理。准备本地保存明确源码/两次原日志/完整证据。
+- 再次实际查看印刷28/PDF51原页；FirstIntegralGraphProbe开始单一attempt01，从真实strict导数偏导非零推线性逆，构造实际局部level graph并降真实first-integral轨迹为x'=f₁(x,ψx)。候选未计完成；graph附近连续速度/非转向分离积分仍下一步。
+- 全书继续，最终签核pending，无新远端CI，不用MathCopilot，无关材料保留。

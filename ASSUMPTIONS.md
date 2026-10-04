@@ -208,3 +208,7 @@ Finite dimension (including empty product for algebraic Flow/period laws). Quoti
 ### Torus homeomorphism and density (2026-10-04)
 
 Positive Ωⱼ/Iⱼ for fixed-energy homeomorphism, finite product including dimension zero. Two-frequency angle density needs Ω₀≠0 and irrational Ω₁/Ω₀, no sign assumption; physical fixed-energy closure additionally uses positive frequencies/actions. Density is for real-time range (both directions), not yet forward-time density. Three-frequency resonance non-density allows arbitrary frequencies and initial angle. General higher-dimensional rational independence density and rational-period iff remain separate.
+
+### Exact two-frequency period classification (2026-10-04)
+
+Ω₀>0 for the angle positive-period iff, Ω₁ arbitrary; physical orbit classification additionally Ω₁>0 and both actions positive, so phase map is injective. Rational frequency ratio is an existential real equality to a rational, and a positive period is explicitly constructed. Zero-action degeneracy can remove a frequency and is not included in physical iff. High-dimensional resonances/general nonresonance remain separate.

@@ -387,3 +387,7 @@ Printed30/PDF53: HarmonicTorus is the finite product of actual angle quotient ci
 ### Torus topology, two-frequency density and resonance (2026-10-04)
 
 Printed30/PDF53: TorusDensity proves fixed positive coordinate-energy levels are actually homeomorphic to the finite product angle torus, using continuous injectivity and compactness. For two frequencies with Ω₀≠0 and Ω₁/Ω₀ irrational, true real-time rotation is DenseRange for every initial angle; this follows from irrational return-angle integer multiples and continuous closure, without assuming density. The corresponding actual mechanical phase orbit has every fixed-energy phase point in its closure. In three dimensions Ω₂=Ω₀+Ω₁ gives a true conserved angle relation and proves non-density, so higher-dimensional pairwise irrational ratios are not used as a sufficient condition.
+
+### Exact two-frequency rational/irrational period distinction (2026-10-04)
+
+Printed30/PDF53: TorusPeriod proves existence of a positive real-time period iff Ω₁/Ω₀ is rational for Ω₀>0; the rational witness constructs an actual period using numerator/denominator, and the reverse derives a rational ratio from the true integer angle-period criterion. Irrational ratio gives no positive period. Positive-frequency/action phase injectivity transfers the iff and nonperiodicity to the real mechanical orbit, not only the abstract angle variables.
