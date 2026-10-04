@@ -1,0 +1,4 @@
+'MolecularDynamics.separableTimePrimitive_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.separableTimePrimitive_hasStrictDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.separableTimePrimitive_localInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.separableTimePrimitive_along_solution' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,28 @@
+docs/verification/2026-10-04-Kepler/probes/SeparableQuadratureProbe.lean:38:16: error: Application type mismatch: The argument
+  hr
+has type
+  ∀ᶠ (x : ℝ) in 𝓝 0,
+    separableTimePrimitive w x₀ (HasStrictDerivAt.localInverse (separableTimePrimitive w x₀) (w x₀)⁻¹ x₀ ⋯ ⋯ x) = x
+but is expected to have type
+  ∀ᶠ (y : ℝ) in 𝓝 0, separableTimePrimitive w x₀ (g y) = y
+in the application
+  And.intro hr
+docs/verification/2026-10-04-Kepler/probes/SeparableQuadratureProbe.lean:53:4: error: Type mismatch: After simplification, term
+  HasDerivAt.sub hg (hasDerivAt_id u)
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    (separableTimePrimitive w x₀ ∘ r - id) 0 u
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.instAddCommGroup Semiring.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun u => separableTimePrimitive w x₀ (r u) - u) 0 u
+'MolecularDynamics.separableTimePrimitive_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.separableTimePrimitive_hasStrictDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.separableTimePrimitive_localInverse' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.separableTimePrimitive_along_solution' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
