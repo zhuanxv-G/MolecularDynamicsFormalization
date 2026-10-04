@@ -141,7 +141,7 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 
 ## 最新检查点（2026-10-04 16:31 +08:00）
 
-- 当前分支 `chapter01-kinetic-energy-nonneg`；本批次基于 HEAD `7b9c17b` 完成，提交后以新 HEAD 为准。Goal 仍 active，未将本批次误记为全书完成。
+- 当前分支 `chapter01-kinetic-energy-nonneg`；本批次已提交为 HEAD `9b98e59`（`Formalize lattice boundary energies and normal modes`）。Goal 仍 active，未将本批次误记为全书完成。
 - 已完成并固定验收：`LatticePairPotential` 的端墙式(1.7)、含 `L+x₁-x_N` 回绕项的箱周期式(1.8)及其平移不变性；`NormalModes` 的真实正弦/余弦模式导数、线性指数流等式、质量/刚度广义特征对机械桥接。抽象 `ZMod` 环形能量保留为无箱长辅助定义，不再对应式(1.8)。
 - `full-check31` 通过（16:25:43--16:26:32 +08:00）：固定 Lean 4.34.0、锁定 mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8988 jobs、350 项声明公理审计、零构建警告；新增声明只依赖 `propext`、`Classical.choice`、`Quot.sound`。full-check28/29 的 elan 联网失败报告保留，full-check30 作为无警告中间通过证据保留。
 - 未完成：纯虚谱分类、完整 normal-mode 基、周期/边界力导数与动力学、§1.6 后续教材内容、第一章其余章节和全书目标；负责人最终教材语义签核仍 pending。下一恢复动作是从本检查点继续逐页核对并选择下一个独立可验收的小批次。
