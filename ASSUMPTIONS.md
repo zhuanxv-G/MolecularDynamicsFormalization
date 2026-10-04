@@ -232,3 +232,5 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - LocalContinuousFlow: complete normed state space, C1 field at base point, and for mechanical open-domain result an open Q with base position in Q. Picard–Lindelöf supplies the actual family, with a reduced common time/initial ball ensuring domain membership. Joint continuity is only on the stated local product; global continuation, flow group laws, and hyperbolic conjugacy remain separate.
 
 - HamiltonianHessian: real inner-product state position and actual ContDiffAt U 2 at the equilibrium position. Hessian symmetry is derived from fixed mathlib's C2 second-derivative theorem. The mechanical force block uses the actual derivative of gradient U; no claim that it is positive/negative definite, and no nonlinear-to-linear conjugacy.
+
+- LinearizedHamiltonian: strict positive coordinate masses and an explicit nonnegative actual Hessian quadratic form are required for quadratic-energy nonnegativity. The formula itself uses the true `fderiv (gradient U)`; no arbitrary matrix or hidden positivity assumption is substituted.

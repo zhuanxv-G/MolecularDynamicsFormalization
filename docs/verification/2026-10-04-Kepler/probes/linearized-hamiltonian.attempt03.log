@@ -1,0 +1,8 @@
+'MolecularDynamics.linearizedHamiltonianQuadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearizedHamiltonianQuadratic_eq_textbook_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.linearizedHamiltonianQuadratic_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearizedHamiltonianQuadratic_nonneg_of_hessian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,20 @@
+docs/verification/2026-10-04-Kepler/probes/LinearizedHamiltonianProbe.lean:29:47: error: Application type mismatch: The argument
+  hm
+has type
+  ∀ (i : Fin n), 0 ≤ m i
+but is expected to have type
+  ∀ (i : Fin n), 0 < m i
+in the application
+  momentumKineticEnergy_nonneg m δp hm
+'MolecularDynamics.linearizedHamiltonianQuadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearizedHamiltonianQuadratic_eq_textbook_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.linearizedHamiltonianQuadratic_nonneg' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.linearizedHamiltonianQuadratic_nonneg_of_hessian' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

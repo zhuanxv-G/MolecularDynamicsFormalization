@@ -423,3 +423,7 @@ Fixed Picard–Lindelöf data from a C1 vector field yields one actual family Φ
 ### HamiltonianHessian — printed32/PDF55 quadratic linearization data
 
 For every C2 real potential, the actual second Frechet derivative is symmetric. Combined with the previously verified conservative mechanical block derivative, this records the exact force Hessian data behind the textbook quadratic linearized Hamiltonian. No positive-definite Hessian or Hartman–Grobman conjugacy is assumed or claimed.
+
+### LinearizedHamiltonian — displayed quadratic energy
+
+Defines the exact linearized Hamiltonian quadratic form using the actual inverse-mass kinetic energy and `D(gradient U)(q*)`, proves the displayed text expansion by rfl, and proves nonnegativity under explicit positive-mass and Hessian quadratic-form hypotheses. It does not infer Hessian positivity from a minimum or claim Hartman–Grobman.

@@ -56,3 +56,4 @@ import MolecularDynamics.Chapter01.ScalarLocalIVP
 import MolecularDynamics.Chapter01.EquilibriumLinearization
 import MolecularDynamics.Chapter01.LocalContinuousFlow
 import MolecularDynamics.Chapter01.HamiltonianHessian
+import MolecularDynamics.Chapter01.LinearizedHamiltonian

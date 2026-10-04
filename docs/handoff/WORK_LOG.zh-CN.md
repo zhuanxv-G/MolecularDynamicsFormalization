@@ -1473,3 +1473,21 @@
 
 - full-check20实际13:04:31--13:07:20退出0，8984jobs、Scratch、727声明公理审计、固定版本/源码扫描/输入SHA稳定均通过；三关键仅基础公理。HamiltonianHessian批次本地保存，未推送。
 - 印刷32/PDF55原页视觉证据和语义复核已保存。C2 Hessian对称与保守线性化force block完成；坐标矩阵二次型完整等价/正定性/Hartman--Grobman尚未完成。全书目标继续，最终签核pending，无新远端CI。
+
+## 2026-10-04 13:12 +08:00 — 线性化 Hamiltonian 二次型候选首轮修复
+
+- attempt01定义/文本形式等式通过；非负性定理误把现有动能引理所需严格正质量写成非负质量，导致类型错误。按固定API修正为严格正质量，并保留失败日志，准备attempt02。
+
+## 2026-10-04 13:13 +08:00 — 线性化二次型质量假设桥接修复
+
+- attempt02定义/等式/主非负性通过；包装定理把严格正质量错误转换成非负质量，实际类型已改为直接传严格正性。准备attempt03。
+
+## 2026-10-04 13:16 +08:00 — 线性化二次 Hamiltonian 候选通过并接入
+
+- LinearizedHamiltonian candidate03四关键退出0、无警告，仅基础公理；实际 inverse-mass kinetic + Hessian quadratic form、文本公式等式、显式正质量/Hessian非负桥接正式接入根/Scratch/CheckAxioms。
+- full-check21开始、正式输入冻结。Hessian正定性从极小值推出、Hartman--Grobman及余下全书仍pending；最终签核pending，无新远端CI。
+
+## 2026-10-04 13:21 +08:00 — 线性化二次 Hamiltonian 完整验收
+
+- full-check21实际13:17:26--13:19:36退出0，8985jobs、Scratch、733声明公理审计、固定版本/源码扫描/输入SHA稳定均通过；四关键仅基础公理。LinearizedHamiltonian批次准备本地保存，未推送。
+- 严格正质量+显式Hessian二次型非负推出二次Hamiltonian非负；没有从极小值偷推Hessian正定，也没有宣称Hartman--Grobman。全书目标继续，最终签核pending，无新远端CI。

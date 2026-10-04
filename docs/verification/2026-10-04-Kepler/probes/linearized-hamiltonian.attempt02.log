@@ -1,0 +1,15 @@
+docs/verification/2026-10-04-Kepler/probes/LinearizedHamiltonianProbe.lean:41:57: error: Type mismatch
+  LT.lt.le (hm i)
+has type
+  0 ≤ m i
+but is expected to have type
+  0 < m i
+'MolecularDynamics.linearizedHamiltonianQuadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearizedHamiltonianQuadratic_eq_textbook_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.linearizedHamiltonianQuadratic_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearizedHamiltonianQuadratic_nonneg_of_hessian' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

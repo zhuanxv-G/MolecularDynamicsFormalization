@@ -351,3 +351,7 @@ run_cmd do
 #print axioms MolecularDynamics.potential_hessian_symmetric
 #print axioms MolecularDynamics.potential_hessian_symmetric_apply
 #print axioms MolecularDynamics.conservative_linearization_hessian_data
+#print axioms MolecularDynamics.linearizedHamiltonianQuadratic
+#print axioms MolecularDynamics.linearizedHamiltonianQuadratic_eq_textbook_form
+#print axioms MolecularDynamics.linearizedHamiltonianQuadratic_nonneg
+#print axioms MolecularDynamics.linearizedHamiltonianQuadratic_nonneg_of_hessian
