@@ -1,15 +1,15 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 11:38 +08:00）
+## 当前数学检查点（2026-10-04 11:51 +08:00）
 
-- 同一全书目标与聊天01a102b1-a3fe-71e1-a571-347703fc09b8；本轮get_goal实际已恢复active（平台状态），非完成/用户暂停。沿同一全书目标继续，未另建Goal/自动化，未购买/重置/换账户，不使用MathCopilot。
-- 分支chapter01-kinetic-energy-nonneg，当前本地HEADc15fb5fbdfcdee1c9b19d1999aba16af1e9e7438，未推送；Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435固定。既有AGENTS/FORMALIZATION_PLAN/RESUME/T3及其他无关材料保留，只暂存本批明确文件。
-- 已验收：Theorem1.1真欧氏全未来严格sup稳定性2081575；Lagrangian/固定质量/Legendre真sup f52945d；双向势垒域全时间流84549ab；谐振子/自由粒子连续Flow4859306；真矩阵指数/实谱eb6d018；复谱/实恢复/列基矩阵逆60ee65a；真实第一积分↔DI·f=0/中心力角动量/静态极坐标bb3f40c；真实Kepler非零域梯度/C1/局部IVP/守恒e368448。
-- 最近三批正式固定验收：PolarCoordinateMap局部图/strict逆9f3c45b，Kepler02 08:12:32--08:13:53退出0（8966jobs/421）；KeplerPolarDynamics真EL/径向有效能量/角FTC235c03c，Kepler03 08:27:02--08:28:23退出0（8967jobs/454）；KeplerCartesianBridge真Cartesian↔polar EL e802090，Kepler04 08:37:49--08:39:11退出0（8968jobs/490）。均Scratch/固定版本/扫描/全部审计/SHA稳定，关键仅允许基础公理。
-- 当前独立批次KeplerReconstruction：attempt01局部IVP初值β重写失败已显式change修复；attempt02七关键退出0；attempt03证明任意非零Cartesian初值的polar表示与径向IVP+真实角积分重建九关键退出0，无警告/仅基础公理。正式KeplerReconstruction接入根/Scratch/CheckAxioms；Kepler/full-check05真实08:46:27--08:47:48退出0，8969jobs/511声明/Scratch/固定输入SHA稳定，已保存93feaee。
-- 原页印刷27--31/PDF50--54已视觉核对，本轮再核对29--30/PDF52--53。§1.5.1/1.5.2/1.5.3仍partial，径向分离积分/逆与转向点、action-angle/环面、一般非线性初值连续依赖/一般EL协变、Hartman--Grobman及后续全书未完成。负责人最终教材语义签核pending，新远端CI未跑，不能将单批/单页当全书完成。
-- SeparableQuadrature attempt03五关键实际退出0，无警告、仅允许基础公理；真实strict积分导数/局部逆/沿轨迹时间积分及r(t)=g(t-t₀)已证明。正式新模块接入，Kepler/full-check06实际11:07:37--11:10:48退出0，8970jobs/525声明/Scratch/固定版本/扫描/输入SHA稳定。KeplerQuadrature attempt01八关键退出0、无警告，仅三项基础公理；真实守恒推非转向窗口、符号分支/积分逆已通过候选，已正式接入根/Scratch/审计，full-check07实际11:17:25--11:20:26退出0，8971jobs/536声明/Scratch/固定版本/扫描/输入SHA稳定。Separable源码20576ce/证据2eaee48已本地保存；首次暂存日志路径误放probes导致整条git add失败，实际日志在Kepler根，已按真实路径补证据独立提交。KeplerQuadrature本地保存da46d1f；HarmonicActionAngleProbe attempt01/02失败仅tactic多余/函数结合顺序与三角因子整理，已修复；attempt03仅多余dsimp/警告已修复，attempt04十一关键退出0、无警告，仅基础公理。HarmonicActionAngle正式接入根/Scratch/CheckAxioms，full-check08实际11:26:45--11:29:08退出0，8972jobs/589声明/Scratch/固定版本/扫描/输入SHA稳定。HarmonicActionAngle已本地保存c15fb5f。ActionAngleChart attempt01实例/函数规范失败已修复，attempt03五关键退出0、无警告，仅基础公理。正式full-check09实际11:35:41--11:37:03退出0，8973jobs/613声明/Scratch/固定版本/扫描/输入SHA稳定。HarmonicTorusProbe attempt01运行中，真实商角环面/旋转flow/周期条件/固定能量image候选；二维无理比稠密与一般维integer nonresonance区分，高维两两无理比不足。恢复第一动作读torus候选日志、修复；原始日志保留，最终签核pending，不把单批当全书完成。
-
+- 同一全书目标/聊天01a102b1-a3fe-71e1-a571-347703fc09b8实际get_goal=active；非完成/用户暂停。仅本地，保留GPT-6.1 Sol/High；不另建Goal/自动化、不用MathCopilot、不购买/重置/换账户。
+- 分支chapter01-kinetic-energy-nonneg，实际本地HEAD2e582c5cd3ea151b13ad32b05daecc8d4f2e8882，未推送；固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435。所有无关AGENTS/FORMALIZATION_PLAN/RESUME/T3/T2-T5 review等材料保留，仅暂存明确批次文件。
+- 既有验收：Theorem1.1真欧氏全未来严格sup稳定性2081575；Lagrangian/Legendre f52945d；双向全时间势垒Flow84549ab；谐振子/自由连续Flow4859306；真实矩阵指数/谱/实恢复/列基逆eb6d018+60ee65a；第一积分/中心力角动量/Kepler真梯度C1/局部IVP守恒bb3f40c+e368448。
+- Kepler后续本地保存：polar strict chart9f3c45b，真polar EL/有效能量/角FTC235c03c，真Cartesian↔polar桥接e802090，任意非零Cartesian初值径向IVP+角积分重建93feaee，真实scalar分离积分strict逆20576ce+证据2eaee48，任意非转向点自动符号/窗口真实积分逆da46d1f。各完整验收证据见Kepler/full-check02--07。
+- action-angle本地保存c15fb5f，真印刷公式/能量/实际ODE双向等价/时间公式/任意非零初值表示/谐振子Flow共轭；check08实际11:26:45--11:29:08退出0（8972jobs/589）。真实strict导数/Jacobian det1/局部OpenPartialHomeomorph strict逆2e582c5；check09实际11:35:41--11:37:03退出0（8973jobs/613）。
+- 当前HarmonicTorus candidate07十一关键退出0无警告；真商角有限乘积/连续旋转Flow/精确整数周期条件/固定正action能量面image/真实多振子机械解正式验收check10实际11:48:35--11:49:55退出0（8974jobs/643）。Scratch/固定版本/源码扫描/全部审计/输入SHA稳定，关键仅允许propext/Classical.choice/Quot.sound。准备本地保存明确批次与七次原日志。
+- 下一TorusDensityProbe已落盘并attempt01运行中，单一Lean进程：二维无理比真实DenseRange/物理energy-level轨道closure、三维整数共振不稠密、phase injective/closed embedding/真正torus homeomorph。尚未验证，不计完成。恢复第一动作读density日志、修复并验收，不能重复构建正在运行的进程。
+- 原页印刷27--31/PDF50--54视觉核对，30/PDF53本轮复看。高维两两比无理不足，需integer nonresonance；二维与高维限制分开。§1.5.1/1.5.2/1.5.3仍partial；Kepler转向点/global orbit、一般二维implicit first-integral graph、一般非线性初值连续依赖/一般EL协变、Hartman--Grobman及后续全书未完成。负责人最终语义签核pending，新远端CI未跑；不将单批/单页当全书完成。
 ## 启动配置复核（2026-10-04 01:00 +08:00）
 
 - 用户已明确说“启动方案”，指定 `gpt-6.1-sol`、推理强度 `high`。此前“先不要开启”已被本次启动授权取代；只做本地、不使用 MathCopilot 的要求持续有效。

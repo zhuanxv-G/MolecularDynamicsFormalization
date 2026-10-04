@@ -200,3 +200,7 @@ Unit scalar harmonic oscillator; Ω>0. Energy identity permits I≥0; actual ODE
 ### Action-angle local coordinate chart (2026-10-04)
 
 Actual Euclidean two-dimensional action/real-angle input and position/velocity output, Ω>0 and base action I>0. Positive amplitude/nonzero denominators and true Jacobian invertibility are proved. Forward map is globally defined by total sqrt/div, but its accepted strict derivative/chart is restricted to positive action. No zero-action inverse or globally unique real angle is asserted.
+
+### Decoupled harmonic torus (2026-10-04)
+
+Finite dimension (including empty product for algebraic Flow/period laws). Quotient-circle rotation accepts arbitrary real frequencies; positive Ωⱼ and Iⱼ are used for nondegenerate coordinate energy image and actual mechanical bridge. Integer-frequency periodicity assumes nonzero base frequency. A period value in the formal criterion is not automatically positive; positive physical period follows if the base frequency is positive. Density is not inferred merely from irrational pairwise ratios in general dimension.

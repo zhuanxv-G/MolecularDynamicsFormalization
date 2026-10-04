@@ -1239,3 +1239,39 @@
 - full-check09实际11:35:41--11:37:03退出0，8973jobs、Scratch、613项目声明审计、固定版本/扫描/输入SHA稳定；五关键只允许基础公理。准备本地保存明确成果/所有chart尝试日志。
 - HarmonicTorusProbe attempt01运行中，单一Lean进程。原页30/PDF53高维torus稠密陈述必须完整integer nonresonance，不可把两两比无理当充分条件：如Ω=(1,√2,1+√2)存在整数共振。二维无理比/一般维共振条件分开推进，不把登记/教材宽泛措辞当已证稠密结论。
 - 最终签核pending，无新远端CI，全书仍持续。
+
+## 2026-10-04 11:38 +08:00 — 局部chart已保存，torus首轮API修复
+
+- chart完整批次2e582c5本地保存，未推送。Torus attempt01真实商角旋转Flow/周期整数条件/整数频率周期、实角phase身份独立通过；continuous_toLp需实际p/β参数，依赖θj的angle induction未替换目标项，改toReal/cos_toReal/sin_toReal真实代表；去未用simp与push_neg弃用警告。准备attempt02，全部原日志保留。
+
+## 2026-10-04 11:40 +08:00 — torus第二轮定义展开及真实机械桥接补充
+
+- Torus attempt02旋转/周期/连续phase与实角身份已通过，仅能量目标缺harmonicTorusPhase展开，已补。新增商角旋转真实相坐标与真多振子机械解桥接；准备attempt03。候选未正式计完成；原始日志保留，最终签核pending。
+
+## 2026-10-04 11:41 +08:00 — torus第三轮仅商角强制转换修复
+
+- attempt03九基础关键与固定能量level image全部独立通过；新增实际机械桥接因(toReal-Ωt : Angle)使elaboration尝试Angle减ℝ，已显式先算ℝ再coerce Angle，准备attempt04。真实机械proof未计完成，失败日志保留。
+
+## 2026-10-04 11:43 +08:00 — torus商角投影重写顺序修复
+
+- attempt04仍仅rotation_coordinates失败：simp先展开rotation导致ha模式不再出现，改显式change两分量、先rw ha再coercion三角simp。机械桥接的其余API已通过但依赖该失败声明，尚未计成功。准备attempt05；二维density候选已落盘但未运行，最终签核pending。
+
+## 2026-10-04 11:44 +08:00 — torus角代表simp规则缩小
+
+- attempt05仍在商角投影失败，原因rw成功后完整simp又以coe_sub/coe_toReal把代表恢复到原角差，绕过cos_coe/sin_coe模式。改simp only明确两三角coercion及静态位置速度定义，不再通用simp展开角差；准备attempt06。基础九关键仍通过、机械桥接依赖尚未计；日志保留。
+
+## 2026-10-04 11:46 +08:00 — torus投影剩余True合取收束
+
+- attempt06投影代表重写已完全成功，仅simp only留下True∧True；补and_self收束，准备attempt07。此前失败不再重试泛simp/coe_sub归一化路线；日志保留。
+
+## 2026-10-04 11:48 +08:00 — 真环面旋转/机械桥接候选通过并正式接入
+
+- Torus candidate07十一关键实际退出0，无警告、仅三项基础公理。固定正action坐标能量面的真实image、实际商角旋转Flow/精确周期判据与真实多振子机械解完整通过候选。正式HarmonicTorus接入根/Scratch/CheckAxioms；full-check10开始、冻结正式输入。
+- TorusDensityProbe已写二维无理频率比的真正DenseRange及相能量level轨道closure、三维Ω₂=Ω₀+Ω₁共振不稠密；尚未运行。更一般维数的完整nonresonance稠密定理仍pending，不把两两无理比当充分条件。
+- 最终负责人签核pending，无新远端CI，全书仍持续，无关材料保留。
+
+## 2026-10-04 11:51 +08:00 — 真多振子环面完整验收通过
+
+- full-check10实际11:48:35--11:49:55退出0，8974jobs、Scratch、643项目声明审计、固定版本/扫描/输入SHA稳定；十一关键仅三项基础公理。准备保存明确源码/七次失败或成功原日志/完整证据，不推送。
+- TorusDensityProbe已开始单一attempt01：二维无理比真实密度、能量面轨道closure；三维共振Ω₂=Ω₀+Ω₁不稠密；phase injectivity/closed embedding/homeomorph。尚未通过，不计正式成果。
+- 清理当前状态为最新可操作记录，全部失败历史保留WORK_LOG/原日志；最终签核pending，无新远端CI，全书持续。

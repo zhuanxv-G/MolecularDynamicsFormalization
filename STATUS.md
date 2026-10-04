@@ -243,3 +243,10 @@ Kepler/full-check08 passed at11:26:45--11:29:08:8972jobs, Scratch,589 imported p
 - Multi-oscillator torus/period/density and whole book remain open; final responsible semantic signoff pending, no new remote CI.
 
 Kepler/full-check09 passed at11:35:41--11:37:03:8973jobs, Scratch,613 imported project declaration audits, pinned versions/source scan/stable input SHA. Actual local action-angle chart and strict inverse accepted; final signoff pending.
+
+### Genuine decoupled oscillator torus and mechanical bridge (2026-10-04)
+
+- Torus candidate07 eleven key proofs passed without warnings and only permitted foundational axioms. Actual angle torus/continuous rotation Flow/exact period criterion/fixed coordinate-energy image and true mechanical solution bridge formally integrated; full-check10 starts.
+- Two-frequency irrational density and higher-dimensional integer resonance/nonresonance are separate. Final responsible semantic signoff pending, no new remote CI, whole book ongoing.
+
+Kepler/full-check10 passed at11:48:35--11:49:55:8974jobs, Scratch,643 imported project declaration audits, pinned versions/source scan/stable input SHA. Actual torus rotation/period/fixed energy image/true mechanical solution accepted locally; responsible signoff pending.

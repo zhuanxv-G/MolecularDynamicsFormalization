@@ -379,3 +379,7 @@ Printed30/PDF53: HarmonicActionAngle proves x=√(2I/Ω)cosθ and v=√(2IΩ)sin
 ### Genuine harmonic action-angle local chart (2026-10-04)
 
 Printed30/PDF53: ActionAngleChart supplies the actual strict Fréchet derivative of (I,θ)↦(√(2I/Ω)cosθ,√(2IΩ)sinθ), the actual Jacobian det=1, and an OpenPartialHomeomorph around every Ω>0,I>0 point with strict differentiable inverse. This completes local coordinate invertibility for the accepted actual action-angle dynamics; angle periodicity prevents a global real-angle inverse.
+
+### Actual decoupled oscillator angle torus (2026-10-04)
+
+Printed30/PDF53: HarmonicTorus is the finite product of actual angle quotient circles ℝ/(2πℤ); continuous rotation gives a genuine Flow. Its period condition is exactly ΩⱼT∈2πℤ for every j; integer multiples of a common nonzero base frequency give the expected period. The continuous torus phase map has image exactly the fixed positive coordinate-energy levels. Actual angle rotation maps to a true unit-mass decoupled harmonic mechanical solution. Irrational density and high-dimensional integer resonance are separate.

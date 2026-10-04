@@ -1,0 +1,41 @@
+docs/verification/2026-10-04-Kepler/probes/HarmonicTorusProbe.lean:133:45: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HSub Real.Angle ℝ ?m.37
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-04-Kepler/probes/HarmonicTorusProbe.lean:133:85: error: unsolved goals
+n : ℕ
+Ω J : Fin n → ℝ
+θ : HarmonicTorus n
+t : ℝ
+j : Fin n
+⊢ θ j - ↑(Ω j * t) = sorry ()
+docs/verification/2026-10-04-Kepler/probes/HarmonicTorusProbe.lean:132:69: error: unsolved goals
+n : ℕ
+Ω J : Fin n → ℝ
+θ : HarmonicTorus n
+t : ℝ
+j : Fin n
+ha : harmonicTorusRotation Ω t θ j = sorry
+⊢ ((sorry ()).cos = Real.cos ((θ j).toReal - Ω j * t) ∨ harmonicActionAmplitude (Ω j) (J j) = 0) ∧
+    ((sorry ()).sin = Real.sin ((θ j).toReal - Ω j * t) ∨ Ω j = 0 ∨ harmonicActionAmplitude (Ω j) (J j) = 0)
+'MolecularDynamics.harmonicTorusPhase_rotation_coordinates' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_rotation_isMechanical' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_periodic_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_periodic_iff_integer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_integerFrequencies_periodic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_realAngles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_image_fixedEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]

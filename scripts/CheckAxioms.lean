@@ -289,3 +289,14 @@ run_cmd do
 #print axioms MolecularDynamics.hasStrictFDerivAt_harmonicActionMap
 #print axioms MolecularDynamics.fderiv_harmonicActionMap
 #print axioms MolecularDynamics.exists_harmonicActionLocalChart
+#print axioms MolecularDynamics.harmonicTorusPhase_rotation_coordinates
+#print axioms MolecularDynamics.harmonicTorusPhase_rotation_isMechanical
+#print axioms MolecularDynamics.harmonicTorusRotation_continuous
+#print axioms MolecularDynamics.harmonicTorusRotation_add
+#print axioms MolecularDynamics.harmonicTorusRotation_periodic_iff
+#print axioms MolecularDynamics.harmonicTorusRotation_periodic_iff_integer
+#print axioms MolecularDynamics.harmonicTorusRotation_integerFrequencies_periodic
+#print axioms MolecularDynamics.harmonicTorusPhase_continuous
+#print axioms MolecularDynamics.harmonicTorusPhase_realAngles
+#print axioms MolecularDynamics.harmonicTorusPhase_energy
+#print axioms MolecularDynamics.harmonicTorusPhase_image_fixedEnergy

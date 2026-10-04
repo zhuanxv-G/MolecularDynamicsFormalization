@@ -1,0 +1,26 @@
+docs/verification/2026-10-04-Kepler/probes/HarmonicTorusProbe.lean:89:2: error: Type mismatch: After simplification, term
+  he
+ has type
+  @Eq ℝ
+    (harmonicScalarEnergy (Ω j) (harmonicActionAmplitude (Ω j) (J j) * (θ j).cos)
+      (Ω j * harmonicActionAmplitude (Ω j) (J j) * (θ j).sin))
+    (J j * Ω j)
+but is expected to have type
+  @Eq ℝ (harmonicScalarEnergy (Ω j) ((harmonicTorusPhase Ω J θ).1.ofLp j) ((harmonicTorusPhase Ω J θ).2.ofLp j))
+    (J j * Ω j)
+'MolecularDynamics.harmonicTorusRotation_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_periodic_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_periodic_iff_integer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_integerFrequencies_periodic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_realAngles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_energy' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_image_fixedEnergy' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

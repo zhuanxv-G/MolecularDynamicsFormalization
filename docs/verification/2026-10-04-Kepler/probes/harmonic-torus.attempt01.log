@@ -1,0 +1,58 @@
+docs/verification/2026-10-04-Kepler/probes/HarmonicTorusProbe.lean:24:66: warning: This simp argument is unused:
+  add_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [harmonicTorusRotation, mul_add, sub_eq_add_neg, add_comm, add_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-04-Kepler/probes/HarmonicTorusProbe.lean:68:10: error: Application type mismatch: The argument
+  PiLp.continuous_toLp
+has type
+  ∀ (p : ENNReal) {ι : Type ?u.17} (β : ι → Type ?u.16) [inst : (i : ι) → TopologicalSpace (β i)],
+    Continuous (WithLp.toLp p)
+but is expected to have type
+  ∀ (a : ?m.19), Continuous fun x => WithLp.toLp 2 fun j => harmonicActionAmplitude (Ω j) (J j) * (x j).cos
+in the application
+  Function.comp PiLp.continuous_toLp
+docs/verification/2026-10-04-Kepler/probes/HarmonicTorusProbe.lean:72:10: error: Application type mismatch: The argument
+  PiLp.continuous_toLp
+has type
+  ∀ (p : ENNReal) {ι : Type ?u.30} (β : ι → Type ?u.29) [inst : (i : ι) → TopologicalSpace (β i)],
+    Continuous (WithLp.toLp p)
+but is expected to have type
+  ∀ (a : ?m.31), Continuous fun x => WithLp.toLp 2 fun j => Ω j * harmonicActionAmplitude (Ω j) (J j) * (x j).sin
+in the application
+  Function.comp PiLp.continuous_toLp
+docs/verification/2026-10-04-Kepler/probes/HarmonicTorusProbe.lean:90:4: error: Type mismatch: After simplification, term
+  harmonicAction_energy (Ω j) (J j) a (hΩ j) (hJ j)
+ has type
+  harmonicScalarEnergy (Ω j) (harmonicActionAmplitude (Ω j) (J j) * Real.cos a)
+      (Ω j * harmonicActionAmplitude (Ω j) (J j) * Real.sin a) =
+    J j * Ω j
+but is expected to have type
+  harmonicScalarEnergy (Ω j) (harmonicActionAmplitude (Ω j) (J j) * (θ j).cos)
+      (Ω j * harmonicActionAmplitude (Ω j) (J j) * (θ j).sin) =
+    J j * Ω j
+docs/verification/2026-10-04-Kepler/probes/HarmonicTorusProbe.lean:107:8: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+'MolecularDynamics.harmonicTorusRotation_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_periodic_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_periodic_iff_integer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_integerFrequencies_periodic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_continuous' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_realAngles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_energy' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_image_fixedEnergy' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

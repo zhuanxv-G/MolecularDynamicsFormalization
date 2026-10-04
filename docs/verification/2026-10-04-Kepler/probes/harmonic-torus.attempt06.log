@@ -1,0 +1,29 @@
+docs/verification/2026-10-04-Kepler/probes/HarmonicTorusProbe.lean:132:69: error: unsolved goals
+n : ℕ
+Ω J : Fin n → ℝ
+θ : HarmonicTorus n
+t : ℝ
+j : Fin n
+ha : harmonicTorusRotation Ω t θ j = ↑((θ j).toReal - Ω j * t)
+⊢ True ∧ True
+'MolecularDynamics.harmonicTorusPhase_rotation_coordinates' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_rotation_isMechanical' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_periodic_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_periodic_iff_integer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_integerFrequencies_periodic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_realAngles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_image_fixedEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
