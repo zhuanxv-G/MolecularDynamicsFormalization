@@ -1,0 +1,5 @@
+'MolecularDynamics.harmonicActionAmplitude_hasStrictDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicActionJacobian_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasStrictFDerivAt_harmonicActionMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.fderiv_harmonicActionMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_harmonicActionLocalChart' depends on axioms: [propext, Classical.choice, Quot.sound]

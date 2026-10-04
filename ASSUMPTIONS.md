@@ -196,3 +196,7 @@ Actual r'=v and v'=-1/r²+l²/r³ with positive radius on an open time interval;
 ### Harmonic action-angle (2026-10-04)
 
 Unit scalar harmonic oscillator; Ω>0. Energy identity permits I≥0; actual ODE equivalence/time formula uses I>0 and actual differentiability of the chosen real angle/action lift. Nonzero phase representation is proved rather than assumed. Angle evolution is a real lift, not a global unique angle function; zero action is excluded from invertible-angle dynamics. Flow intertwining follows directly for all real I but uses Ω>0; the physically relevant representation has I>0. Local chart/torus topology are not inferred from mere representation.
+
+### Action-angle local coordinate chart (2026-10-04)
+
+Actual Euclidean two-dimensional action/real-angle input and position/velocity output, Ω>0 and base action I>0. Positive amplitude/nonzero denominators and true Jacobian invertibility are proved. Forward map is globally defined by total sqrt/div, but its accepted strict derivative/chart is restricted to positive action. No zero-action inverse or globally unique real angle is asserted.

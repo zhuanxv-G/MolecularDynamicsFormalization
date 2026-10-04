@@ -375,3 +375,7 @@ Printed30/PDF53: KeplerQuadrature reduces actual positive-radius radial trajecto
 ### Harmonic action-angle dynamics (2026-10-04)
 
 Printed30/PDF53: HarmonicActionAngle proves x=√(2I/Ω)cosθ and v=√(2IΩ)sinθ, actual E=IΩ, actual derivative equations equivalent to I'=0/θ'=-Ω for differentiable positive-action lifts, actual interval time formulas, and global explicit θ(t)=θ₀-Ω(t-t₀). Every nonzero scalar initial phase has a proved positive-action representation using complex argument. A true identity intertwines the accepted harmonicFlow with θ↦θ-Ωt. Local invertible coordinate chart and multi-oscillator torus/density are separate.
+
+### Genuine harmonic action-angle local chart (2026-10-04)
+
+Printed30/PDF53: ActionAngleChart supplies the actual strict Fréchet derivative of (I,θ)↦(√(2I/Ω)cosθ,√(2IΩ)sinθ), the actual Jacobian det=1, and an OpenPartialHomeomorph around every Ω>0,I>0 point with strict differentiable inverse. This completes local coordinate invertibility for the accepted actual action-angle dynamics; angle periodicity prevents a global real-angle inverse.

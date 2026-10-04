@@ -1,0 +1,49 @@
+docs/verification/2026-10-04-Kepler/probes/ActionAngleChartProbe.lean:13:94: error: unsolved goals
+case e'_8
+Ω J : ℝ
+hΩ : 0 < Ω
+hJ : 0 < J
+hx : 0 < 2 * J / Ω
+h : HasStrictDerivAt (fun t => √(2 * id t / Ω)) (2 * 1 / Ω / (2 * √(2 * id J / Ω))) J
+⊢ harmonicActionAmplitude Ω = fun t => √(2 * t / Ω)
+
+case e'_9
+Ω J : ℝ
+hΩ : 0 < Ω
+hJ : 0 < J
+hx : 0 < 2 * J / Ω
+h : HasStrictDerivAt (fun t => √(2 * id t / Ω)) (2 * 1 / Ω / (2 * √(2 * id J / Ω))) J
+⊢ 1 / (Ω * √(2 * J / Ω)) = 2 * 1 / Ω / (2 * √(2 * J / Ω))
+docs/verification/2026-10-04-Kepler/probes/ActionAngleChartProbe.lean:29:6: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+docs/verification/2026-10-04-Kepler/probes/ActionAngleChartProbe.lean:81:4: error: Type mismatch: After simplification, term
+  h
+ has type
+  @HasStrictFDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Position 2)
+    (PiLp.normedAddCommGroup 2 fun x => ℝ).toAddCommGroup (PiLp.normedSpace 2 ℝ fun x => ℝ).toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ℝ Real.normedCommRing.toAddCommGroup
+    (NormedAlgebra.toNormedSpace ℝ).toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    (fun y => Ω * ((fun x => harmonicActionAmplitude Ω (x.ofLp 0)) * fun x => Real.sin (x.ofLp 1)) y)
+    (PiLp.proj 2 (fun x => ℝ) 1 ∘SL Matrix.toEuclideanCLM (harmonicActionJacobian Ω (q.ofLp 0) (q.ofLp 1))) q
+but is expected to have type
+  @HasStrictFDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Position 2)
+    (PiLp.normedAddCommGroup 2 fun x => ℝ).toAddCommGroup (PiLp.normedSpace 2 ℝ fun x => ℝ).toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ℝ Real.instRCLike.toDivisionRing.toAddCommGroup
+    Semiring.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    (fun x =>
+      ![harmonicActionPosition Ω (x.ofLp 0) (x.ofLp 1),
+          Ω * (harmonicActionAmplitude Ω (x.ofLp 0) * Real.sin (x.ofLp 1))]
+        ⟨1, ⋯⟩)
+    (PiLp.proj 2 (fun x => ℝ) ⟨1, ⋯⟩ ∘SL Matrix.toEuclideanCLM (harmonicActionJacobian Ω (q.ofLp 0) (q.ofLp 1))) q
+'MolecularDynamics.harmonicActionAmplitude_hasStrictDerivAt' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicActionJacobian_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasStrictFDerivAt_harmonicActionMap' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.fderiv_harmonicActionMap' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_harmonicActionLocalChart' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

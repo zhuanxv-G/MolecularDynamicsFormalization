@@ -236,3 +236,10 @@ Kepler/full-check07 passed at11:17:25--11:20:26:8971jobs, Scratch,536 imported p
 - Coordinate local inverse chart, decoupled oscillator torus, rational periodicity/irrational density and remaining whole book are open; final responsible semantic signoff pending, no new remote CI.
 
 Kepler/full-check08 passed at11:26:45--11:29:08:8972jobs, Scratch,589 imported project declaration audits, pinned versions/source scan/stable input SHA. Actual harmonic action-angle dynamics/flow intertwining accepted locally; final signoff pending.
+
+### Actual action-angle local chart (2026-10-04)
+
+- Chart candidate03 five key proofs passed without warnings and only permitted foundational axioms. Actual strict derivative/Jacobian det1/local OpenPartialHomeomorph strict inverse formally integrated; full-check09 starts.
+- Multi-oscillator torus/period/density and whole book remain open; final responsible semantic signoff pending, no new remote CI.
+
+Kepler/full-check09 passed at11:35:41--11:37:03:8973jobs, Scratch,613 imported project declaration audits, pinned versions/source scan/stable input SHA. Actual local action-angle chart and strict inverse accepted; final signoff pending.

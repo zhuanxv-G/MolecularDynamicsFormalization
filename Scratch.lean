@@ -256,3 +256,8 @@ end MolecularDynamics
 #print axioms MolecularDynamics.harmonicAction_ode_iff
 #print axioms MolecularDynamics.harmonicAction_explicit_solution
 #print axioms MolecularDynamics.exists_harmonicAction_representation
+#print axioms MolecularDynamics.harmonicActionAmplitude_hasStrictDerivAt
+#print axioms MolecularDynamics.harmonicActionJacobian_det
+#print axioms MolecularDynamics.hasStrictFDerivAt_harmonicActionMap
+#print axioms MolecularDynamics.fderiv_harmonicActionMap
+#print axioms MolecularDynamics.exists_harmonicActionLocalChart

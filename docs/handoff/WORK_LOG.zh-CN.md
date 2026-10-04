@@ -1219,3 +1219,23 @@
 - full-check08实际11:26:45--11:29:08退出0，8972jobs、Scratch、589项目声明审计、固定版本/扫描/输入SHA稳定。十一关键只允许基础公理。准备本地保存明确源码/四轮候选原日志/完整证据，不推送。
 - ActionAngleChartProbe已落盘并单一attempt01运行中：真正action-angle映射strict Fréchet导数、实际Jacobian det=1及OpenPartialHomeomorph严格可微逆。Ω>0/I>0明确，未把全局唯一角或零action可逆隐含进去。
 - 多振子torus/period/irrational density、Kepler转向点/global orbit与全书仍pending；最终签核pending，新远端CI未跑。
+
+## 2026-10-04 11:31 +08:00 — action-angle动力学已保存，局部chart首轮修复
+
+- action-angle完整批次本地c15fb5f，未推送。Chart attempt01真实Jacobian det=1已独立通过；strict幅度导数convert的函数相等需显式funext，最终simpa重建HasStrictFDerivAt触发ℝ实例diamond。改保留原导数proof，仅rw真实函数相等后exact；不重复整体simpa路线。原始日志保留，准备attempt02。
+
+## 2026-10-04 11:32 +08:00 — action-angle局部逆chart候选证明通过
+
+- Chart attempt02五关键实际退出0，真实strict Fréchet导数/Jacobian det1/局部OpenPartialHomeomorph严格可微逆均只允许基础公理；仅多余ring不可达警告，已清除并准备attempt03。实例diamond以保留原证明/rw函数相等修复，未使用占位或新公理。
+
+## 2026-10-04 11:35 +08:00 — action-angle局部chart正式接入
+
+- Chart candidate03五关键实际退出0，无警告、仅三项基础公理。真实strict Fréchet导数、Jacobian det1与OpenPartialHomeomorph/strict inverse正式接入根/Scratch/CheckAxioms；full-check09开始，冻结正式输入。
+- HarmonicTorusProbe已落盘，尚未运行：真实有限乘积商角环面、连续旋转Flow、确切整数周期条件、固定正action的真实相空间能量level image。稠密性/真实多振子机械桥接尚待后续，不冒称torus整体完成。
+- 全书持续，最终语义签核pending，无新远端CI，无关材料保留。
+
+## 2026-10-04 11:38 +08:00 — action-angle局部chart完整验收通过
+
+- full-check09实际11:35:41--11:37:03退出0，8973jobs、Scratch、613项目声明审计、固定版本/扫描/输入SHA稳定；五关键只允许基础公理。准备本地保存明确成果/所有chart尝试日志。
+- HarmonicTorusProbe attempt01运行中，单一Lean进程。原页30/PDF53高维torus稠密陈述必须完整integer nonresonance，不可把两两比无理当充分条件：如Ω=(1,√2,1+√2)存在整数共振。二维无理比/一般维共振条件分开推进，不把登记/教材宽泛措辞当已证稠密结论。
+- 最终签核pending，无新远端CI，全书仍持续。
