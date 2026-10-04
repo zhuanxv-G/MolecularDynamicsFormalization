@@ -489,3 +489,29 @@ run_cmd do
 #print axioms MolecularDynamics.hamiltonian_variational_isSymplectic
 #print axioms MolecularDynamics.hamiltonian_hessian_variational_isSymplectic
 #print axioms MolecularDynamics.hamiltonian_flow_isSymplectic_of_variational_equation
+
+-- Section 2.3.6: actual C2 potential, symplectic Euler and its genuine inverse.
+#print axioms MolecularDynamics.textbookPositionProjection
+#print axioms MolecularDynamics.textbookPotentialForce
+#print axioms MolecularDynamics.contDiff_textbookPotentialForce
+#print axioms MolecularDynamics.textbookPotentialForce_matrix_isSymm
+#print axioms MolecularDynamics.textbookMomentumKick
+#print axioms MolecularDynamics.textbookPositionDrift
+#print axioms MolecularDynamics.textbookJacobian_momentumKick
+#print axioms MolecularDynamics.contDiff_textbookMomentumKick
+#print axioms MolecularDynamics.textbookJacobian_positionDrift
+#print axioms MolecularDynamics.textbookPositionDrift_isSymplectic
+#print axioms MolecularDynamics.textbookPotentialKick_isSymplectic
+#print axioms MolecularDynamics.textbookSymplecticEuler
+#print axioms MolecularDynamics.textbookSymplecticEuler_position
+#print axioms MolecularDynamics.textbookSymplecticEuler_momentum
+#print axioms MolecularDynamics.textbookSymplecticEuler_isSymplectic
+#print axioms MolecularDynamics.textbookPositionProjection_momentumKick
+#print axioms MolecularDynamics.textbookMomentumKick_neg_cancel
+#print axioms MolecularDynamics.textbookPositionDrift_neg_cancel
+#print axioms MolecularDynamics.textbookMomentumKickEquiv
+#print axioms MolecularDynamics.textbookPositionDriftEquiv
+#print axioms MolecularDynamics.textbookSymplecticEulerEquiv
+#print axioms MolecularDynamics.textbookSymplecticEulerEquiv_apply
+#print axioms MolecularDynamics.textbookSymplecticEulerEquiv_symm_apply
+#print axioms MolecularDynamics.textbookSymplecticEulerEquiv_isSymplectic
