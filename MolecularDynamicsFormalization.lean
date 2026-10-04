@@ -66,3 +66,4 @@ import MolecularDynamics.Chapter02.EulerConvergence
 import MolecularDynamics.Chapter02.OneStepConvergence
 import MolecularDynamics.Chapter02.SymplecticForm
 import MolecularDynamics.Chapter02.SymplecticMaps
+import MolecularDynamics.Chapter02.HamiltonianVariational

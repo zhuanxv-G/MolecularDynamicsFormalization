@@ -453,3 +453,13 @@ end MolecularDynamics
 #check MolecularDynamics.TextbookSymplecticDiffeomorphism
 #check MolecularDynamics.textbookSymplecticDiffeomorphism_mul_apply
 #synth Group (MolecularDynamics.TextbookSymplecticDiffeomorphism 2)
+
+-- Section 2.3.4: actual time-dependent variational derivatives and Hessian symmetry.
+#check MolecularDynamics.textbookHamiltonianHessian
+#check MolecularDynamics.textbookHamiltonianHessian_isSymm
+#check MolecularDynamics.hamiltonian_variational_matrix_cancellation
+#check MolecularDynamics.hasDerivWithinAt_hamiltonian_variational_form
+#check MolecularDynamics.hamiltonian_variational_form_constant
+#check MolecularDynamics.hamiltonian_variational_isSymplectic
+#check MolecularDynamics.hamiltonian_hessian_variational_isSymplectic
+#check MolecularDynamics.hamiltonian_flow_isSymplectic_of_variational_equation

@@ -479,3 +479,13 @@ run_cmd do
 #print axioms MolecularDynamics.textbookSymplecticDiffeomorphismGroup_mem_iff
 #print axioms MolecularDynamics.TextbookSymplecticDiffeomorphism
 #print axioms MolecularDynamics.textbookSymplecticDiffeomorphism_mul_apply
+
+-- Section 2.3.4: actual time-dependent variational derivatives and Hessian symmetry.
+#print axioms MolecularDynamics.textbookHamiltonianHessian
+#print axioms MolecularDynamics.textbookHamiltonianHessian_isSymm
+#print axioms MolecularDynamics.hamiltonian_variational_matrix_cancellation
+#print axioms MolecularDynamics.hasDerivWithinAt_hamiltonian_variational_form
+#print axioms MolecularDynamics.hamiltonian_variational_form_constant
+#print axioms MolecularDynamics.hamiltonian_variational_isSymplectic
+#print axioms MolecularDynamics.hamiltonian_hessian_variational_isSymplectic
+#print axioms MolecularDynamics.hamiltonian_flow_isSymplectic_of_variational_equation
