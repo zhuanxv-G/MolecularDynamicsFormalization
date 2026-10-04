@@ -2368,3 +2368,24 @@
 
 - 唯一session24263/full-check01：2026-10-05T07:10:45.9311449+08:00--2026-10-05T07:11:49.0963178+08:00退出0；9018jobs、零警告、669项审计声明仅基础三公理、101项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入/原始日志SHA一致，5public包括真实Markov作用/转移不变性/实际迭代/唯一性两等式接受。299--300/PDF320--321目视，ledger/notation/section/映射/假设/状态同步，负责人分布/density语义pending。
 - 原唯一性是明确数据，真实核概率归一化已证明，不供应目标关系；不冒称一般核存在唯一不变分布/具体SDEergodicity。下一Theorem8.1必要Lemma8.1实际F/G/Ck/Dk及真实Lie闭包，再谱/Vandermonde与Hörmander lift；347/PDF368渲染待目视。先保存本批，其他已登记缺口/整个范围pending。
+
+## 2026-10-05 07:18 +0800 — Lemma8.1真实线性场与Lie闭包开始
+
+- 前批947d0db已保存。原346--348/PDF367--369目视，Lemma8.1属于Theorem8.1必要正文链，非独立习题；目标Chapter08/ThermostatLieFields.lean。
+- 真实Matrix A、product phase、实际linear F/G/Ck/Dk，固定mathlib Module.End LieSpan可复用。先真实fderiv/VectorField括号符号桥接，实际End括号生成递推和LieSpan成员，不把代数表示冒称实际光滑向量场。内部k0对应原C1/D1，SPD与distinct eigenvalue证明在后续Prop8.3。
+- 原348证明坐标q/p似有交换，后续Prop8.3必须按347真实定义重算并记录；本C/D代数不使用该误写。整个Theorem8.1/其余范围/负责人语义pending，无重复构建。
+
+## 2026-10-05 07:27 +0800 — Lemma8.1实际接口失败已修复并局部通过
+
+- local-check01退出1：自动End ext选基索引而非实际phase点，连续转换dot notation命名冲突、缺LieRing局部实例与矩阵幂嵌套化简方向；真实固定API修复后local-check02退出0零警告，原始日志均保留。
+- 补实际VectorField括号闭包见证：Z=-[X,Y]仍在真实线性LieSpan，fderiv桥接给逐点相等。下一唯一local-check03；尚未根/Scratch/公理审计接入与完整验收，不能计全批通过。整个Theorem8.1/范围和负责人pending。
+
+## 2026-10-05 07:28 +0800 — Lemma8.1实际导数括号闭包局部通过
+
+- local-check03退出0、零警告，16public（含phase abbrev）接根/Scratch/审计；实际fderiv计算、End符号桥接、真正生成递推/成员与实际VectorField闭包见证完成局部验证。原346--348/PDF367--369目视。
+- 启动唯一full-check01，未决前不改输入；本批仅正文Lemma8.1，整个Theorem8.1的谱独立性/Hörmander lift、其他正文/范围及负责人pending。
+
+## 2026-10-05 07:34 +0800 — Lemma8.1实际Lie闭包完整验收
+
+- 唯一full-check01/session48630：2026-10-05T07:28:44.9656552+08:00--2026-10-05T07:29:49.5663795+08:00退出0；9019jobs、零警告、685项审计声明仅基础三公理、102项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；16public（含phase abbrev）接受。真实矩阵场/真实fderiv符号桥接/实际负号闭包见证/生成递推与LieSpan全阶成员完整，347/PDF368目视。ledger/notation/section/映射/假设/状态同步，负责人pending。
+- 本批不需要SPD，后续Prop8.3保留正定谱互异，并按347实际公式修正348交换q/p后的加权因子，完整证明两组系数为零。下一真实Vandermonde/谱坐标独立性，之后Hörmander lift；Theorem8.1/其余正文/整个范围仍pending。先保存本批，无其他构建。

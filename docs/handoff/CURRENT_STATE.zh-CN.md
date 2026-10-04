@@ -1,8 +1,35 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 07:34 +0800）
+
+- 本批前HEAD947d0dbbef7c95935b8bbbf72c760df2d1163308，固定版本/分支未改；ThermostatLieFields完整接受，待本地保存，原材料保留、未推送。
+- 唯一full-check01/session48630：2026-10-05T07:28:44.9656552+08:00--2026-10-05T07:29:49.5663795+08:00退出0；9019jobs、零警告、685项审计声明仅基础三公理、102项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；16public（含phase abbrev）接受。真实矩阵F/G/C/D、genuine fderiv符号桥接、actual VectorField负号闭包见证、真正递推与LieSpan全阶成员均完整。原346--348/PDF367--369目视，负责人语义pending。
+- 下一Prop8.3：Chapter08/ThermostatSpan.lean，真实SPD谱坐标与互异正特征值，实际C/D有限组合逐分量重算为(p²+λq²)π(λ)=0，用实际Vandermonde推出两组系数零与线性独立/张成。原348坐标交换须明确记录，不照抄错误。
+- 之后Prop8.2真实Hörmander lift；Theorem8.1完整目标、一般Ito/其他正文与整CORE_SCOPE仍pending，无其他构建。先保存本批后继续。
+
+## 最新数学检查点（2026-10-05 07:28 +0800）
+
+- HEAD947d0dbbef7c95935b8bbbf72c760df2d1163308，固定版本不变；Lemma8.1 local-check03退出0、零警告，16公开声明（含phase abbrev）接根/Scratch/公理审计。
+- 真F/G/Ck/Dk矩阵场、fderiv相反符号桥接、生成递推、LieSpan真实成员以及实际VectorField括号闭包见证通过局部验证；启动唯一full-check01，未决前不改核验输入。
+- 346--348/PDF367--369目视。正定/谱互异只用于下一Prop8.3；Theorem8.1谱独立性/Hörmander lift与其他正文/整个范围、负责人语义仍pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 07:27 +0800）
+
+- HEAD947d0dbbef7c95935b8bbbf72c760df2d1163308，固定版本不变；Lemma8.1候选local-check02退出0、零警告。
+- local-check01退出1：End自动ext误选矩阵基向量、LinearMap连续转换命名冲突、缺局部LieRing实例、矩阵嵌套mulVec方向与不存在的Prod投影接口；已按真实固定API修复，失败原始日志保留。不能复用失败输出作为验收。
+- 真F/G/Ck/Dk、真实fderiv与相反End括号、真实生成递推和LieSpan成员已局部通过；现补实际VectorField括号闭包见证（负号仍在同一线性子空间），下一唯一local-check03，尚未全批接受。
+- 原346--348/PDF367--369已目视，内部k0对应原C1/D1；Theorem8.1谱独立性与Hörmander lift未完成，整个CORE_SCOPE与负责人语义pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 07:18 +0800）
+
+- HEAD947d0dbbef7c95935b8bbbf72c760df2d1163308，前批Lemma7.1完整接受，固定版本未改、无其他构建。
+- 进行中Lemma8.1真实线性场Lie闭包，目标Chapter08/ThermostatLieFields.lean；346--348/PDF367--369已渲染目视。实际product phase (q,p)等价教材R^(2Nc)，真实F/G/Ck/Dk由实际Matrix/LinearMap构造。
+- 先真正fderiv计算VectorField.lieBracket，再实际Module.End LieSpan递推生成Ck/Dk。End的XY-YX与真实向量场DW V-DV W相反，必须证明实际符号桥接与负号闭包，不能直接把自由符号Lie当作导数。
+- C_k采用0-based内部k对应原k+1；真实矩阵幂公式与正文相符。原SPD/谱独立性只在后续Proposition8.3使用，Theorem8.1整体spanning/Hörmander lift未完成；负责人/其他正文/整范围pending。下一候选唯一局部核验，不追加独立习题。
+
 ## 最新数学检查点（2026-10-05 07:14 +0800）
 
-- 本批前HEAD140b70f18b71361fb1b0d10e0121bc3ded61ccf1，固定版本/分支未改；InvariantDistributionSwap完整接受，待本地保存，既有材料保留、未推送。
+- 本批前HEAD140b70f18b71361fb1b0d10e0121bc3ded61ccf1，固定版本/分支未改；InvariantDistributionSwap完整接受并保存为947d0dbbef7c95935b8bbbf72c760df2d1163308，既有材料保留、未推送。
 - 唯一session24263/full-check01：2026-10-05T07:10:45.9311449+08:00--2026-10-05T07:11:49.0963178+08:00退出0；9018jobs、零警告、669项审计声明仅基础三公理、101项输入稳定，固定版本/Scratch/扫描/公理全部通过；5项公开真实核不变性转移/迭代恒等/Markov概率归一化与教材唯一性两换序接受，输入及原始日志SHA一致。299--300/PDF320--321目视，负责人语义pending。
 - 实际唯一性足以结论，原额外ergodicity不需用于该Markov probability model；具体数值kernel构造/ergodicity/density正则性未冒称完成。
 - 下一Theorem8.1必要Lemma8.1：347/PDF368已渲染待目视，Chapter08/ThermostatLieFields.lean从真实linear F=(p,-Aq)、G=(0,p)和真实fderiv Lie bracket推导Ck/Dk显式公式及真正Lie闭包成员，之后真实谱/Vandermonde与Hörmander lift。命题6.3/其他正文与整范围pending，先保存本批，无其他构建。

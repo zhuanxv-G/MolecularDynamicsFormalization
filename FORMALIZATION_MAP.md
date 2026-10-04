@@ -585,3 +585,8 @@ Printed229--231/PDF250--252: `Chapter06/WienerIntegration.lean` derives actual d
 ## 2026-10-05 invariant distribution swap
 
 Printed299--300/PDF320--321: `Chapter07/InvariantDistributionSwap.lean` fully proves Lemma7.1 for real Markov kernels and genuinely unique invariant probability measures. Actual kernel action/associativity derive transferred invariance, real Markov normalization keeps the distribution probabilistic, and textbook uniqueness gives both swapped identities. The true finite-iterate identity from the original proof is also derived. No swapped equality or formal symbolic action is supplied. The explicitly assumed uniqueness suffices without using the extra ergodicity hypothesis; concrete numerical kernel construction/ergodicity/density representation and responsible semantic signoff remain separate.
+
+
+### Actual thermostat linear Lie fields (2026-10-05)
+
+Printed347/PDF368: `Chapter08/ThermostatLieFields.lean` fully proves Lemma8.1 for actual linear F/G/C/D and all matrix powers. True fderiv computations bridge the opposite End commutator sign; real negative closure witnesses actual VectorField bracket closure. Real matrix identities and LieSpan induction derive both field families, with no desired membership supplied. Internal k0 is textbook k1; positive distinct spectrum and Proposition8.3 independence, Hörmander lift and the full Theorem8.1 remain separate.

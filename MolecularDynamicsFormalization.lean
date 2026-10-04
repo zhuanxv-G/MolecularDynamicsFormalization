@@ -103,3 +103,4 @@ import MolecularDynamics.Chapter04.ConstrainedFlowSymplectic
 import MolecularDynamics.Chapter06.WienerQuadraticVariation
 import MolecularDynamics.Chapter06.WienerIntegration
 import MolecularDynamics.Chapter07.InvariantDistributionSwap
+import MolecularDynamics.Chapter08.ThermostatLieFields

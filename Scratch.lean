@@ -723,3 +723,21 @@ end MolecularDynamics
 #check MolecularDynamics.textbookKernelComposition_iterate
 #check MolecularDynamics.textbookInvariantDistributionSwap_left
 #check MolecularDynamics.textbookInvariantDistributionSwap
+
+-- Actual linear thermostat fields and derivative bracket closure.
+#check MolecularDynamics.textbookThermostatPhase
+#check MolecularDynamics.textbookThermostatF
+#check MolecularDynamics.textbookThermostatG
+#check MolecularDynamics.textbookThermostatC
+#check MolecularDynamics.textbookThermostatD
+#check MolecularDynamics.textbookThermostatF_apply
+#check MolecularDynamics.textbookThermostatG_apply
+#check MolecularDynamics.textbookThermostatC_apply
+#check MolecularDynamics.textbookThermostatD_apply
+#check MolecularDynamics.textbookThermostatLinearField_lieBracket
+#check MolecularDynamics.textbookThermostat_lie_F_G
+#check MolecularDynamics.textbookThermostat_lie_F_C
+#check MolecularDynamics.textbookThermostat_lie_D_F
+#check MolecularDynamics.textbookThermostatLieSpan
+#check MolecularDynamics.textbookThermostatLieSpan_vectorField_closed
+#check MolecularDynamics.textbookThermostat_C_D_mem_lieSpan

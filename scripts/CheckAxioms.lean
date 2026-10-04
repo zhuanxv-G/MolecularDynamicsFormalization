@@ -749,3 +749,21 @@ run_cmd do
 #print axioms MolecularDynamics.textbookKernelComposition_iterate
 #print axioms MolecularDynamics.textbookInvariantDistributionSwap_left
 #print axioms MolecularDynamics.textbookInvariantDistributionSwap
+
+-- Actual linear thermostat fields and derivative bracket closure.
+#print axioms MolecularDynamics.textbookThermostatPhase
+#print axioms MolecularDynamics.textbookThermostatF
+#print axioms MolecularDynamics.textbookThermostatG
+#print axioms MolecularDynamics.textbookThermostatC
+#print axioms MolecularDynamics.textbookThermostatD
+#print axioms MolecularDynamics.textbookThermostatF_apply
+#print axioms MolecularDynamics.textbookThermostatG_apply
+#print axioms MolecularDynamics.textbookThermostatC_apply
+#print axioms MolecularDynamics.textbookThermostatD_apply
+#print axioms MolecularDynamics.textbookThermostatLinearField_lieBracket
+#print axioms MolecularDynamics.textbookThermostat_lie_F_G
+#print axioms MolecularDynamics.textbookThermostat_lie_F_C
+#print axioms MolecularDynamics.textbookThermostat_lie_D_F
+#print axioms MolecularDynamics.textbookThermostatLieSpan
+#print axioms MolecularDynamics.textbookThermostatLieSpan_vectorField_closed
+#print axioms MolecularDynamics.textbookThermostat_C_D_mem_lieSpan
