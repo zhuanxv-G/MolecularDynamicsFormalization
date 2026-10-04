@@ -1,0 +1,36 @@
+docs/verification/2026-10-04-Kepler/probes/KeplerReconstructionProbe.lean:88:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  γ t₀
+in the target expression
+  (fun t => (γ t).1.ofLp 0) t₀ = r₀
+
+case refine_1
+l t₀ r₀ v₀ : ℝ
+hr₀ : 0 < r₀
+z₀ : PhaseSpace 1 := (!₂[r₀], !₂[v₀])
+hQ : IsOpen {q | 0 < q.ofLp 0}
+ε : ℝ
+γ : ℝ → PhaseSpace 1
+hγ : IsLocalMechanicalIVP (fun x => 1) (keplerRadialForce l) {q | 0 < q.ofLp 0} t₀ z₀ ε γ
+⊢ (fun t => (γ t).1.ofLp 0) t₀ = r₀
+docs/verification/2026-10-04-Kepler/probes/KeplerReconstructionProbe.lean:90:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  γ t₀
+in the target expression
+  (fun t => (γ t).2.ofLp 0) t₀ = v₀
+
+case refine_2
+l t₀ r₀ v₀ : ℝ
+hr₀ : 0 < r₀
+z₀ : PhaseSpace 1 := (!₂[r₀], !₂[v₀])
+hQ : IsOpen {q | 0 < q.ofLp 0}
+ε : ℝ
+γ : ℝ → PhaseSpace 1
+hγ : IsLocalMechanicalIVP (fun x => 1) (keplerRadialForce l) {q | 0 < q.ofLp 0} t₀ z₀ ε γ
+⊢ (fun t => (γ t).2.ofLp 0) t₀ = v₀
+'MolecularDynamics.keplerReconstructedAngle_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerReconstructedAngle_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadial_reconstruction_isEulerLagrange' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.keplerRadial_reconstruction_isMechanical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialForce_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_keplerRadial_localIVP' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

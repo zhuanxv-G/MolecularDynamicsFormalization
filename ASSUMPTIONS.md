@@ -180,3 +180,7 @@ Real scalar r,θ,v,ω with r>0 along the declared time set; actual r'=v and θ'=
 ### Cartesian/polar trajectory bridge (2026-10-04)
 
 Planar Euclidean unit-mass Kepler force; polarCartesianState uses genuine positions and momenta from scalar kinematics. Positive radius implies nonzero Cartesian position. Forward polar EL→Cartesian has no openness requirement; reverse/iff requires open I and actual r'=v,θ'=ω with r>0. Neither v' nor ω' is assumed in reverse: the former follows from Cartesian radial velocity projection, the latter is available from true angular momentum conservation. No global lift across arbitrary branch choices is inferred.
+
+### Kepler radial initial-state reconstruction (2026-10-04)
+
+Unit-mass planar Kepler, nonzero Cartesian initial position. No polar representation or radial solution existence is assumed: the representation follows from complex argument, and positive radial local IVPs follow from proved C1 force on {r>0}. Angle integrability and true derivative follow from positive radius/actual radial derivatives over the prescribed open interval. Arbitrary real angular momentum l (including zero) is supported locally; no global collision avoidance or global radial inverse/branch selection is claimed.

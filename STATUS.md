@@ -209,3 +209,9 @@ Kepler/full-check03 passed at08:27:02--08:28:23:8967jobs, Scratch,454imported pr
 - CartesianBridge candidate05 passed without warnings; eleven key proofs use only permitted foundational axioms. Genuine unit-mass Kepler mechanical↔polar EL equivalence (positive-radius kinematic lift) and actual norm/angular/energy identities formally integrated. Kepler/full-check04 starts.
 - Arbitrary initial-state local polar lifting, radial IVP reconstruction/quadrature and action-angle/torus remain open; Section1.5.2/whole book ongoing, final responsible sign-off pending, new remote CI not run.
 Kepler/full-check04 passed at08:37:49--08:39:11:8968jobs, Scratch,490imported project declaration audits, pinned versions/source scan/stable input SHA. True Cartesian/polar equivalence accepted; reconstruction candidate remains outside the formal library.
+
+### Real radial-IVP Kepler reconstruction (2026-10-04)
+
+- Reconstruction candidate03 passed without warnings; nine key proofs only use permitted foundational axioms. Real positive-radius radial IVPs, true angle integral reconstruction, all nonzero Cartesian initial-state polar representation and reconstructed genuine local Kepler IVP formally integrated. Kepler/full-check05 starts.
+- Radial separated quadrature/inverse with turning-point treatment, action-angle/torus and whole-book continuation remain open; final responsible semantic sign-off pending, new remote CI not run.
+Kepler/full-check05 passed at08:46:27--08:47:48:8969jobs, Scratch,511imported project declaration audits, pinned versions/source scan/stable input SHA. Arbitrary nonzero initial-state radial-IVP reconstruction accepted; separated integral/inverse candidate remains outside the library.

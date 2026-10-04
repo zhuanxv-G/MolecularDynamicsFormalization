@@ -359,3 +359,7 @@ Printed29--30/PDF52--53: KeplerPolarDynamics proves four actual scalar partial d
 ### Genuine Cartesian/polar Kepler equivalence (2026-10-04)
 
 Printed29--30/PDF52--53: KeplerCartesianBridge proves norm=positive radius, actual Cartesian angular momentum/energy equal the polar formulas, and polar EL→true Cartesian mechanical solution. Conversely, on open time sets with a positive-radius true kinematic lift r'=v,θ'=ω, the actual Cartesian momentum derivative implies radial acceleration; central-force angular momentum derivative gives the angular EL equation. Hence genuine EL/mechanical equivalence is proved for those lifts without assuming the acceleration conclusions. Local polar lift existence and solving/reconstructing radial IVPs remain separate.
+
+### Kepler reconstruction from actual radial IVPs (2026-10-04)
+
+Printed30/PDF53: KeplerReconstruction proves the true angle-integral derivative from positive-radius actual curves, then radial mechanical trajectories reconstruct polar EL and Cartesian Kepler solutions. C1 effective radial force gives real local IVPs for arbitrary positive radial initial data. Complex.arg plus proved trigonometric/velocity algebra gives polar representation of every nonzero-position Cartesian state. Thus any such Cartesian initial state has a true Kepler local IVP constructed from a real radial IVP and explicit angle integral. Separating the radial equation by an antiderivative/inverse, turning points and orbit classification remain separate.

@@ -1,0 +1,11 @@
+'MolecularDynamics.keplerReconstructedAngle_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerReconstructedAngle_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadial_reconstruction_isEulerLagrange' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.keplerRadial_reconstruction_isMechanical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialForce_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_keplerRadial_localIVP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_keplerRadial_reconstructed_localIVP' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

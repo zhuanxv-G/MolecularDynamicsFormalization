@@ -1125,3 +1125,21 @@
 - Kepler/full-check04实际08:37:49--08:39:11退出0：8968jobs、Scratch、490项目声明审计、固定版本/扫描与输入SHA稳定。十一新增关键仅三项允许基础公理，最终签核pending，无新远端CI。
 - 状态/inventory/语义报告同步，准备本地保存明确成果与所有桥接失败/成功日志，无关材料保留。
 - 已落盘并开始KeplerReconstructionProbe attempt01：角积分真FTC导数，径向真实轨迹→polar EL/Cartesian真Kepler，正半径域C1有效径向力与实际局部IVP，不假设欲证解存在。后续补参数初值重建存在及任意Cartesian初值表示；全径向分离积分解和action-angle仍独立未完成。
+
+## 2026-10-04 08:45 +08:00 — Cartesian桥接已保存，径向重建首轮修复
+
+- 桥接本地提交e802090，完整check04为8968jobs/490声明，未推送。原始失败/成功日志全部保存，无关材料保留。
+- Reconstruction attempt01五关键FTC初值/真实导数、径向轨迹重建真EL/真Cartesian与有效径向力C1通过。真实径向IVP只在初值函数β应用的rw未显式change失败；完整实际ODE已经获得。
+- 已显式change初值目标，并加入参数初值(l,r₀,θ₀,v₀)构造真Cartesian局部IVP，attempt02运行中；后续用Complex.arg证明任意非零Cartesian初值的polar表示，不能假设该表示存在。
+
+## 2026-10-04 08:46 +08:00 — 任意非零Cartesian初值的真实径向重建通过
+
+- Reconstruction attempt02七关键退出0，无警告；attempt03增加Complex.arg真实极坐标表示（证明全部位置/动量恢复）与任意z₀.1≠0的径向IVP+角积分真Cartesian局部Kepler初值解，九关键退出0、无警告，仅允许基础公理。
+- 正式KeplerReconstruction接入，映射/假设/状态/语义报告同步；Kepler/full-check05启动，冻结正式源码。清理当前状态为最新可操作检查点，所有原失败历史留WORK_LOG/原日志。
+- 下一径向分离积分/局部逆与转向点仍未完成，不把实际局部IVP或角积分当全径向求解；全书继续、最终签核pending、无新远端CI。
+
+## 2026-10-04 08:50 +08:00 — 任意初值径向重建完整验收通过
+
+- Kepler/full-check05实际08:46:27--08:47:48退出0：8969jobs、Scratch、511项目声明审计、固定版本/扫描与输入SHA稳定。九关键只允许基础公理。最终签核pending，无新远端CI。
+- 已同步inventory/状态/语义报告，准备本地保存本批明确文件与全部重建失败/成功日志，无关材料保留。
+- SeparableQuadratureProbe开始首轮：连续非零速度w的真实分离积分strict导数/真可微局部逆、actual r'=w(r)轨迹的积分=时间差。下一接Kepler非转向平方根速度分支，不能把全径向积分求解/转向点或全书计完成。

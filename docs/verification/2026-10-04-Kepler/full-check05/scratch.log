@@ -1,0 +1,322 @@
+MolecularDynamics.Position (n : ℕ) : Type
+MolecularDynamics.SeparableEnergy.hamiltonian {n : ℕ} (energy : MolecularDynamics.SeparableEnergy n) :
+  MolecularDynamics.Hamiltonian n
+MolecularDynamics.massHamiltonian {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (U : MolecularDynamics.PotentialEnergy n) : MolecularDynamics.Hamiltonian n
+MolecularDynamics.hamiltonianVectorField {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (U : MolecularDynamics.PotentialEnergy n) (z : MolecularDynamics.PhaseSpace n) : MolecularDynamics.PhaseSpace n
+MolecularDynamics.mechanical_energy_const_on_Ioo {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (F : MolecularDynamics.Force n) (U : MolecularDynamics.PotentialEnergy n) (Q : Set (MolecularDynamics.Position n))
+  (a b : ℝ) (γ : ℝ → MolecularDynamics.PhaseSpace n) (hm : ∀ (i : Fin n), 0 < m i)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ) (hU : ∀ q ∈ Q, DifferentiableAt ℝ U q)
+  (hF : ∀ q ∈ Q, F q = -gradient U q) (s t : ℝ) (hs : s ∈ Set.Ioo a b) (ht : t ∈ Set.Ioo a b) :
+  MolecularDynamics.massHamiltonian m U (γ s) = MolecularDynamics.massHamiltonian m U (γ t)
+MolecularDynamics.exists_localMechanicalIVP_open_of_force_contDiffAt {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (F : MolecularDynamics.Force n) (Q : Set (MolecularDynamics.Position n)) (hQ : IsOpen Q) (t₀ : ℝ)
+  (z₀ : MolecularDynamics.PhaseSpace n) (hz₀ : z₀.1 ∈ Q) (hF : ContDiffAt ℝ 1 F z₀.1) :
+  ∃ ε γ, MolecularDynamics.IsLocalMechanicalIVP m F Q t₀ z₀ ε γ
+MolecularDynamics.mechanicalSolution_eventually_unique_of_contDiffAt {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (F : MolecularDynamics.Force n) (Q : Set (MolecularDynamics.Position n)) (I : Set ℝ) (t₀ : ℝ)
+  (γ η : ℝ → MolecularDynamics.PhaseSpace n) (z₀ : MolecularDynamics.PhaseSpace n) (hI : IsOpen I) (ht₀ : t₀ ∈ I)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q I γ) (hη : MolecularDynamics.IsMechanicalSolutionOn m F Q I η)
+  (hinitγ : γ t₀ = z₀) (hinitη : η t₀ = z₀) (hfield : ContDiffAt ℝ 1 (MolecularDynamics.mechanicalVectorField m F) z₀) :
+  γ =ᶠ[nhds t₀] η
+MolecularDynamics.totalMomentumCoordinate_const_on_Ioo {N d : ℕ} (m : MolecularDynamics.CoordinateMasses (N * d))
+  (F : MolecularDynamics.Force (N * d)) (Q : Set (MolecularDynamics.Position (N * d))) (a b : ℝ)
+  (γ : ℝ → MolecularDynamics.PhaseSpace (N * d)) (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ)
+  (hFsum : ∀ q ∈ Q, ∀ (c : Fin d), ∑ i, (F q).ofLp ((MolecularDynamics.particleCoordinateEquiv N d) (i, c)) = 0)
+  (c : Fin d) (s t : ℝ) (hs : s ∈ Set.Ioo a b) (ht : t ∈ Set.Ioo a b) :
+  MolecularDynamics.totalMomentumCoordinate (γ s).2 c = MolecularDynamics.totalMomentumCoordinate (γ t).2 c
+MolecularDynamics.strictPotentialMin_mechanicalEquilibrium {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (F : MolecularDynamics.Force n) (U : MolecularDynamics.PotentialEnergy n) (Q : Set (MolecularDynamics.Position n))
+  (q₀ : MolecularDynamics.Position n) (hQ : IsOpen Q) (hstrict : MolecularDynamics.IsStrictPotentialMinOn U Q q₀)
+  (_hU : DifferentiableAt ℝ U q₀) (hF : F q₀ = -gradient U q₀) : MolecularDynamics.IsMechanicalEquilibrium m F (q₀, 0)
+MolecularDynamics.momentum_norm_sq_le {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (p : MolecularDynamics.Momentum n) (M : ℝ) (hm : ∀ (i : Fin n), 0 < m i) (hM : ∀ (i : Fin n), m i ≤ M) :
+  ‖p‖ ^ 2 ≤ 2 * M * MolecularDynamics.momentumKineticEnergy m p
+MolecularDynamics.isCompact_phaseEnergySublevel {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (U : MolecularDynamics.PotentialEnergy n) (K : Set (MolecularDynamics.Position n)) (E : ℝ)
+  (hm : ∀ (i : Fin n), 0 < m i) (hK : IsCompact K) (hU : ContinuousOn U K) :
+  IsCompact {z | z.1 ∈ K ∧ MolecularDynamics.massHamiltonian m U z ≤ E}
+MolecularDynamics.mechanicalSolution_phase_dist_lt {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (F : MolecularDynamics.Force n) (U : MolecularDynamics.PotentialEnergy n) (Q : Set (MolecularDynamics.Position n))
+  (a b t₀ : ℝ) (γ : ℝ → MolecularDynamics.PhaseSpace n) (q₀ : MolecularDynamics.Position n) (M r δ : ℝ)
+  (hm : ∀ (i : Fin n), 0 < m i) (hMpos : 0 < M) (hM : ∀ (i : Fin n), m i ≤ M) (hr : 0 < r)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ) (hU : ∀ q ∈ Q, DifferentiableAt ℝ U q)
+  (hF : ∀ q ∈ Q, F q = -gradient U q) (ht₀ : t₀ ∈ Set.Ioo a b) (hstart : (γ t₀).1 ∈ Metric.ball q₀ r)
+  (hbelow : MolecularDynamics.massHamiltonian m U (γ t₀) < U q₀ + δ)
+  (hbarrier : MolecularDynamics.HasSpherePotentialBarrier U q₀ r δ) (hmin : ∀ q ∈ Metric.ball q₀ r, U q₀ ≤ U q)
+  (hbudget : MolecularDynamics.massHamiltonian m U (γ t₀) < U q₀ + r ^ 2 / (2 * M)) (t : ℝ) (ht : t ∈ Set.Ioo a b)
+  (htime : t₀ ≤ t) : dist (γ t) (q₀, 0) < r
+MolecularDynamics.mechanicalSolution_has_rightEndpointLimit_of_compact {n : ℕ}
+  {m : MolecularDynamics.CoordinateMasses n} {F : MolecularDynamics.Force n} {Q : Set (MolecularDynamics.Position n)}
+  {a b : ℝ} {γ : ℝ → MolecularDynamics.PhaseSpace n} {K : Set (MolecularDynamics.PhaseSpace n)} (hab : a < b)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ) (hK : IsCompact K)
+  (hmem : Set.MapsTo γ (Set.Ioo a b) K) (hfield : ContinuousOn (MolecularDynamics.mechanicalVectorField m F) K) :
+  ∃ z ∈ K, Filter.Tendsto γ (nhdsWithin b (Set.Iio b)) (nhds z)
+MolecularDynamics.mechanicalSolution_unique_on_preconnected_of_contDiffAt {n : ℕ}
+  {m : MolecularDynamics.CoordinateMasses n} {F : MolecularDynamics.Force n} {Q : Set (MolecularDynamics.Position n)}
+  {I : Set ℝ} {γ η : ℝ → MolecularDynamics.PhaseSpace n} {t₀ : ℝ} (hI : IsOpen I) (hconn : IsPreconnected I)
+  (ht₀ : t₀ ∈ I) (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q I γ)
+  (hη : MolecularDynamics.IsMechanicalSolutionOn m F Q I η)
+  (hfield : ∀ t ∈ I, ContDiffAt ℝ 1 (MolecularDynamics.mechanicalVectorField m F) (γ t)) (hinit : γ t₀ = η t₀) :
+  Set.EqOn γ η I
+MolecularDynamics.mechanicalSolution_glue_on_Ioo {n : ℕ} {m : MolecularDynamics.CoordinateMasses n}
+  {F : MolecularDynamics.Force n} {Q : Set (MolecularDynamics.Position n)} {a b c d : ℝ}
+  {γ η : ℝ → MolecularDynamics.PhaseSpace n} (hcb : c < b)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ)
+  (hη : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo c d) η) (heq : Set.EqOn γ η (Set.Ioo c b)) :
+  ∃ ζ, MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a d) ζ ∧ Set.EqOn ζ γ (Set.Ioo a b)
+'MolecularDynamics.exists_rightEndpointLimit_of_lipschitzOnWith' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.exists_rightEndpointLimit_mem_of_lipschitzOnWith' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_lipschitzOnWith_of_field_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_has_rightEndpointLimit_of_field_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_has_rightEndpointLimit_of_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_unique_on_preconnected_of_contDiffAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_glue_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.mechanicalSolution_extend_of_compact {n : ℕ} {m : MolecularDynamics.CoordinateMasses n}
+  {F : MolecularDynamics.Force n} {Q : Set (MolecularDynamics.Position n)} {a b : ℝ}
+  {γ : ℝ → MolecularDynamics.PhaseSpace n} {K : Set (MolecularDynamics.PhaseSpace n)} (hab : a < b) (hQ : IsOpen Q)
+  (hγ : MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a b) γ) (hK : IsCompact K)
+  (hmem : Set.MapsTo γ (Set.Ioo a b) K) (hKQ : ∀ z ∈ K, z.1 ∈ Q) (hF : ∀ z ∈ K, ContDiffAt ℝ 1 F z.1) :
+  ∃ δ > 0, ∃ ζ, MolecularDynamics.IsMechanicalSolutionOn m F Q (Set.Ioo a (b + δ)) ζ ∧ Set.EqOn ζ γ (Set.Ioo a b)
+'MolecularDynamics.hasDerivWithinAt_rightEndpoint_of_continuousOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.exists_localODE_matching_rightEndpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_extend_of_rightEndpointLimit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_extend_of_force_contDiffAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_extend_of_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.momentumKineticEnergy_eq_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_massOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_particle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_momentumKineticEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_position_slice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hamiltonianVectorField_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_velocityOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanical_energy_hasDerivAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanical_energy_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_localMechanicalIVP_open_of_force_contDiffAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_unique_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_eventually_unique_of_contDiffAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.totalMomentumCoordinate_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.strictPotentialMin_mechanicalEquilibrium' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.momentum_norm_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.momentum_norm_le_of_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.isCompact_phaseEnergySublevel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_below_barrier_stays_in_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_phase_dist_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_glued_function_of_compatible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_mechanicalSolutionOn_iUnion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_globalMechanicalSolution_of_local_compact_confinement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.exists_globalMechanicalIVP_of_energy_barrier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.gradient_contDiffAt_of_potential_contDiffAt_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.strictPotentialMin_exists_future_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.strictPotentialMin_futureStable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.strictPotentialMin_futureStable_of_potential_contDiffAt_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.product_dist_le_phaseEuclideanDistance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.phaseEuclideanDistance_le_two_mul_dist' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.IsFutureMechanicalStable.euclidean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_potential_contDiffAt_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_smooth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_smooth {n : ℕ} (m : MolecularDynamics.CoordinateMasses n)
+  (U : MolecularDynamics.PotentialEnergy n) (Q : Set (MolecularDynamics.Position n)) (q₀ : MolecularDynamics.Position n)
+  (hm : ∀ (i : Fin n), 0 < m i) (hQ : IsOpen Q) (hU : ∀ q ∈ Q, ContDiffAt ℝ (↑⊤) U q)
+  (hstrict : MolecularDynamics.IsStrictPotentialMinOn U Q q₀) :
+  MolecularDynamics.IsMechanicalEquilibrium m (fun q => -gradient U q) (q₀, 0) ∧
+    MolecularDynamics.IsFutureMechanicalStableEuclidean m (fun q => -gradient U q) Q (q₀, 0)
+'MolecularDynamics.nBodyKineticEnergy_eq_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_nBodyKineticEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_massLagrangian_velocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_massLagrangian_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_eulerLagrange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.eulerLagrange_to_mechanicalSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massLagrangian_coordinateChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_coordinateChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.generalizedMassMatrix_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.generalizedMassMatrix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_legendre_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.legendre_objective_le_massHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.legendre_objective_attains_massHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.nBodyKineticEnergy_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.legendre_objective_eq_massHamiltonian_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.massHamiltonian_eq_legendre_sup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_translate_on_Ioi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_commute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.futureMechanicalFlow_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_futureMechanicalFlow_of_energy_barrier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.massHamiltonian_momentumReflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_time_reverse_on_Iio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_globalMechanicalIVP_of_energy_barrier_two_sided' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.mechanicalSolution_translate_on_univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalSolution_energy_on_univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.globalMechanicalFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.globalMechanicalFlow_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.globalMechanicalFlow_commute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.globalMechanicalFlow_bijOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.globalMechanicalFlow_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_globalMechanicalFlow_of_energy_barrier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicFlow_isMechanicalSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicFlow_isGlobalFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicFlow_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicFlow_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicContinuousFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_harmonicPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicFlow_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_isMechanicalSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_isGlobalFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleContinuousFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.freeParticleFlow_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_linearExponentialFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearContinuousFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_linearExponentialFlow_initial_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.linearExponentialFlow_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialOperator_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.matrixExponentialFlow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_matrixExponentialFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_matrixExponentialFlow_initial_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.matrixExponentialFlow_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.matrixContinuousFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.matrixExponential_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_realEigenmode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_realEigenmode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_realSpectral_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_realEigenbasis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_complexEigenmode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.complexExponentialFlow_eigenmode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.complexExponentialFlow_spectral_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.complexExponentialFlow_eigenbasis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_complexExponentialFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.complexContinuousFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.complexEigenbasis_coefficients_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_intertwine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.linearExponentialFlow_fixed_clm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.realMatrix_conjugation_commute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.realMatrix_complexFlow_isReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.realMatrix_complexSpectral_sum_isReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.basisColumnMatrix_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.basisColumnMatrix_mulVec_repr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.basisColumnMatrix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.basisColumnMatrix_inverse_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.firstIntegral_hasDerivAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.firstIntegral_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.firstIntegral_differential_necessary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.isFirstIntegralOn_iff_differential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.firstIntegral_gradient_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.planarAngularMomentum_hasDerivAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.planarAngularMomentum_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.centralForce_planarAngularMomentum_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarKinetic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarAngularMomentum_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolarLagrangian_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCoordinates_hasDerivAt_components' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarJacobian_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarJacobian_isUnit_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_keplerPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerForce_eq_neg_gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerForce_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_kepler_localIVP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.kepler_energy_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.kepler_planarAngularMomentum_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasStrictFDerivAt_polarCoordinateMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_polarDerivativeEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.fderiv_polarCoordinateMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_polarLocalChart_strictInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_polarLocalChart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_v' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_ω' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_r' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_θ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_eulerLagrange_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angular_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_radial_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialEnergy_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialEnergy_hasDerivAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_radialEnergy_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angle_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_radialEnergy_const_initialAngular' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.keplerPolar_energy_radial_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.norm_polarCartesianPosition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_angular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasDerivAt_planarPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angularVelocity_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_momentum_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolarEL_to_cartesianMechanical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.polarCartesianState_radialVelocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.cartesianMechanical_to_keplerPolarEL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolarEL_iff_cartesianMechanical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerReconstructedAngle_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerReconstructedAngle_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadial_reconstruction_isEulerLagrange' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.keplerRadial_reconstruction_isMechanical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialForce_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_keplerRadial_localIVP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_keplerRadial_reconstructed_localIVP' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.exists_polarCartesian_initialRepresentation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.exists_kepler_localIVP_radialReconstruction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
