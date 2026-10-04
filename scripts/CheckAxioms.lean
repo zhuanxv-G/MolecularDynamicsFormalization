@@ -726,3 +726,19 @@ run_cmd do
 #print axioms MolecularDynamics.textbookWienerQuadraticSum_variance
 #print axioms MolecularDynamics.textbookWienerQuadraticSum_meanSquareError
 #print axioms MolecularDynamics.textbookWienerQuadraticSum_meanSquare_tendsto
+
+-- Genuine finite Wiener integrals and the self integral limit.
+#print axioms MolecularDynamics.textbookWienerWeightedSum
+#print axioms MolecularDynamics.textbookWienerWeightedVariance
+#print axioms MolecularDynamics.textbookWienerWeightedSum_hasGaussianLaw
+#print axioms MolecularDynamics.textbookWienerWeightedSum_integral
+#print axioms MolecularDynamics.textbookWienerWeightedSum_variance
+#print axioms MolecularDynamics.textbookWienerWeightedSum_hasLaw
+#print axioms MolecularDynamics.textbookWienerWeightedSum_difference_secondMoment
+#print axioms MolecularDynamics.textbookWienerSelfItoSum
+#print axioms MolecularDynamics.textbookWienerSelfItoSum_identity
+#print axioms MolecularDynamics.textbookWienerSelfItoLimit_memLp
+#print axioms MolecularDynamics.textbookWienerSelfItoSum_memLp
+#print axioms MolecularDynamics.textbookWienerSelfItoSum_meanSquareError
+#print axioms MolecularDynamics.textbookWienerSelfItoSum_meanSquare_tendsto
+#print axioms MolecularDynamics.textbookWienerSelfItoIntegral_exists

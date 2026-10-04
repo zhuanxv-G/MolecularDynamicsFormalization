@@ -2312,3 +2312,34 @@
 
 - 唯一session26922/full-check01：2026-10-05T06:42:20.0423835+08:00--2026-10-05T06:43:27.9418150+08:00退出0；9016jobs、零警告、650项审计声明仅基础三公理、99项输入稳定，固定版本/Scratch/扫描/公理全部通过；所有输入与原始日志SHA实查一致，13项公开实际Gaussian矩/平方L²/增量/独立性/期望T/方差MSE2T²/K和极限接受。原229--230/PDF250--251目视；原印刷笔误单独记录；ledger/notation/section/映射/假设/状态同步，负责人语义pending。
 - T=0包括、K=0仅不参与精确误差，最终正K极限真实证明；无需连续路径。不计其他Itô积分或整范围完成。下一Proposition6.3原231/PDF252已目视，确定性加权有限和law/真实等距与积分极限构造，现mathlib无现成stochastic integral；先保存本批，不供应目标Gaussian/矩结论。
+
+## 2026-10-05 06:47 +0800 — Wiener积分正文与命题6.3必要依赖开始
+
+- 前批完整保存aec0391，无MathCopilot/远程；下一Chapter06/WienerIntegration.lean。命题6.3原231/PDF252已目视，正文g为smooth deterministic，实际目标Gaussian均值0/方差积分g²。真实确定性加权有限和及L²依赖先补，不能标整个命题完整。
+- 同一随机积分正文229--230明确证明自身Wiener左和的实际均方极限1/2(W(T)²-T)，可由已证真实平方增量和精确误差/真望远镜完成，按新范围未编号证明纳入。
+- 一般确定性积分的真正均方极限存在和法则闭合需构造，现固定mathlib无现成Ito API。无条件地把极限normality作为前提不允许；缺口如实保留。
+
+## 2026-10-05 06:54 +0800 — Wiener积分有限和与真实Ito候选首次诊断
+
+- local-check01/session7953退出1：NNReal平方方差构造的匿名括号触发Subtype乘法实例，改真实Real.toNNReal；NNReal实商coercion需显式coe_div；Fin有限和与range望远镜需Finset.sum_range转换后匹配。编译器错误恢复产生的依赖警告不计通过，无实际项目占位证明。
+- 已按固定API修复，同批增加真实候选积分和真实左和的L²可积性证明，防止仅形式积分undef导致假均方极限。下一唯一local-check02；命题6.3一般积分构造仍未完成。
+
+## 2026-10-05 06:56 +0800 — Wiener积分L²相等接口诊断
+
+- local-check02/session59613退出1：固定新版MemLp无congr字段，必须用memLp_congr_ae的iff桥接实际a.e.函数等式；两处无用max_eq_left simp参数已移除。实际有限加权normal law/真实等距、有限望远镜/精确自身Ito误差与最终均方极限无其他诊断。
+- 已修复并补真实L²随机变量与mean-square limit的显式存在见证，下一唯一local-check03。命题6.3一般smooth g的真实积分构造与极限normality仍pending，不计有限依赖为该命题完成。
+
+## 2026-10-05 06:58 +0800 — Wiener积分冗余展开诊断
+
+- local-check03/session58972退出1、零警告，仅真实a.e.有限和L²桥接filter_upwards后多余dsimp无进展，已删除。其余真实Gaussian有限和law/等距/实际自身Ito存在/MSE/极限无诊断。下一唯一local-check04，仍未计整批通过。
+
+## 2026-10-05 06:59 +0800 — Wiener积分实际有限law与自身Ito局部通过
+
+- local-check04/session43267退出0零警告，14项公开声明接根/Scratch/公理审计。真实joint Gaussian law和独立增量导出实际有限加权normality/真实variance/差的等距；真实望远镜和已证Proposition6.2误差构造自身Ito真实L²极限1/2(W(T)²-T)，精确MSE=T²/(2K)，补真实可积性及实际存在见证。
+- 启动唯一full-check01，未决前不改核验输入；本批有限和是命题6.3必要依赖，完整一般smooth g积分构造与法则极限仍pending，不计该命题完成。原229--231/PDF250--252目视，负责人及整正文范围pending。
+
+## 2026-10-05 07:02 +0800 — Wiener自身Ito与真实有限law完整验收
+
+- 唯一session44908/full-check01：2026-10-05T06:59:24.8042591+08:00--2026-10-05T07:00:30.8144886+08:00退出0；9017jobs、零警告、664项审计声明仅基础三公理、100项输入稳定，固定版本/Scratch/扫描/公理全部通过；14public接受，全部输入和原始日志SHA实查一致。真实有限加权Gaussian law/variance/等距和自身Ito真正L²有限和/候选/望远镜/精确误差/极限及实际存在见证完成。229--231/PDF250--252目视，ledger/notation/节/映射/假设/状态同步，负责人pending。
+- Prop6.3一般smooth g的真正Cauchy/完备化/normality闭合/variance integral仍pending，不把有限law计为整个命题。固定版本无现成Ito API，具体恢复动作是均匀或dyadic细化的真实L²差估计与极限构造，再法则极限；Stratonovich midpoint亦独立待证明。按范围约定保留独立缺口推进其他正文。
+- 下一Lemma7.1原299--300/PDF320--321已目视，Chapter07/InvariantDistributionSwap.lean真正Markov核作用、实际不变性与教材唯一性推出分布换序；非供应换序结论。先保存本批，无其他构建。

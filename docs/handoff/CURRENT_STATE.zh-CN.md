@@ -1,8 +1,29 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 07:02 +0800）
+
+- 本批前HEADaec03914bd31ff569af191347c5e5d1a755f30e9，固定版本/分支未改；WienerIntegration完整接受，待本地保存，原材料保留、未推送。
+- 唯一session44908/full-check01：2026-10-05T06:59:24.8042591+08:00--2026-10-05T07:00:30.8144886+08:00退出0；9017jobs、零警告、664项审计声明仅基础三公理、100项输入稳定，固定版本/Scratch/扫描/公理全部通过；14项公开真实有限加权law/实际等距及自身Ito真实L²极限/精确T²/(2K)/存在见证接受，全部输入和原始日志SHA匹配。229--231/PDF250--252已目视，负责人语义pending。
+- 一般命题6.3的真实Cauchy/完备化/正态law极限及variance integral g²仍pending；原Stratonovich midpoint也独立pending。本批不计命题6.3或整范围完成。
+- 下一独立正文Lemma7.1：299--300/PDF320--321已目视，实际Markov核ST/TS的真正不变概率分布，通过真实核作用与结合律推出换序不变性，再用教材明确唯一性推出rhoST=S rhoTS与rhoTS=T rhoST。唯一性与真不变性为原文模型数据，不供应换序结论；无需等负责人签核。先保存本批，目标Chapter07/InvariantDistributionSwap.lean，无其他构建。
+
+## 最新数学检查点（2026-10-05 06:59 +0800）
+
+- HEADaec03914bd31ff569af191347c5e5d1a755f30e9，固定Lean/mathlib/分支未改；既有材料保留。
+- WienerIntegration local-check04/session43267退出0、零警告，14项公开实际有限加权sum/variance/Gaussian law/期望/等距及自身Ito有限和/真实望远镜/L²候选与有限和/精确T²/(2K)误差/极限/实际存在见证通过。229--231/PDF250--252原页已目视。
+- 已接根/Scratch/公理审计，启动唯一full-check01，未决前不改核验输入，不开重复构建。本批命题6.3仅真实有限加权依赖，完整smooth deterministic g积分存在及极限Gaussian law没有冒称完成；自身Wiener积分未编号正文完整候选已证明。
+- 负责人语义/一般积分缺口/其他正文/整CORE_SCOPE pending。一般Ito积分构造下一需要真实L²有限和Cauchy、真实完备化与normal-law闭合；若独立困难则保留缺口推进Lemma7.1真正Markov核不变分布换序，已定位原299/PDF320，先补目视。
+
+## 最新数学检查点（2026-10-05 06:47 +0800）
+
+- HEADaec03914bd31ff569af191347c5e5d1a755f30e9；Proposition6.2完整接受，固定版本未改、无其他构建。
+- 下一正文随机积分批进行中：命题6.3（231/PDF252已目视）的真实确定性加权Wiener有限和Gaussian law及矩/等距依赖，并落实229--230/PDF250--251明确证明的自身Wiener左和均方积分公式。目标Chapter06/WienerIntegration.lean。
+- 一般确定性Itô积分需真正均方极限构造；固定mathlib无现成Ito API，不以供给目标Gaussian/误差结论跳过存在问题。实际随机变量有限和从真实joint Gaussian process和实际独立增量推导，不伪造Law。
+- 本批先真实有限加权和与自身Ito公式必要证明；命题6.3的完整平滑g积分存在/极限 law仍pending。原页已目视，负责人语义、其他正文与整个CORE_SCOPEpending；候选已落盘，local-check01/session7953退出1的NNReal/有限和接口已修复并补真实L²；下一唯一local-check02，不能计有限和为命题6.3已完成。
+
 ## 最新数学检查点（2026-10-05 06:45 +0800）
 
-- 本批前HEAD613759a627c65a29813c6d24ecc354b680029aee，固定版本/分支未改；WienerQuadraticVariation完整接受，待本地保存，原材料保留、未推送。
+- 本批前HEAD613759a627c65a29813c6d24ecc354b680029aee，固定版本/分支未改；WienerQuadraticVariation完整接受并保存为aec03914bd31ff569af191347c5e5d1a755f30e9，原材料保留、未推送。
 - 唯一session26922/full-check01：2026-10-05T06:42:20.0423835+08:00--2026-10-05T06:43:27.9418150+08:00退出0；9016jobs、零警告、650项审计声明仅基础三公理、99项输入稳定，固定版本/Scratch/扫描/公理全部通过；13项新公共声明同批接受，99项核验输入和全部原始日志SHA一致。实际Gaussian mgf/有限维Brownian law与真实独立增量推导方差/MSE2T²/K及K趋于无穷均方极限。229--230/PDF250--251已目视，负责人语义pending。
 - 原交叉项负号/末行K趋于0笔误已登记；不需连续样本路径。其他正文、真实Ito积分构造/高阶匹配/数值初始非线性分支和整个CORE_SCOPE仍pending，不能计全书完成。
 - 下一Proposition6.3（231/PDF252已目视）：真实确定性加权Wiener有限和Gaussian law/真实L²等距及均方积分极限构造，只补正文所需依赖；固定mathlib尚无现成Itô积分。先保存本批，再实际高斯过程线性组合和积分极限接口，不把Gaussian或均方误差作为结论前提。无其他构建。

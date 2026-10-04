@@ -101,3 +101,4 @@ import MolecularDynamics.Chapter04.ConstrainedReactionRegularity
 
 import MolecularDynamics.Chapter04.ConstrainedFlowSymplectic
 import MolecularDynamics.Chapter06.WienerQuadraticVariation
+import MolecularDynamics.Chapter06.WienerIntegration

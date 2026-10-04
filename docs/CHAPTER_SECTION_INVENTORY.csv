@@ -106,7 +106,7 @@ section_id,title_en,printed_start_page,toc_pdf_page_1based,content_audit,scope,n
 6.1.5,Calculation of Temperature,220,20,not_started,included,,,,,,TOC skeleton; original section and all mathematical claims still require page-by-page audit.
 6.2,Stochastic Differential Equations for Molecular Models,224,21,not_started,included,,,,,,TOC skeleton; original section and all mathematical claims still require page-by-page audit.
 6.2.1,Random Walks and Wiener Processes,224,21,not_started,included,,,,,,TOC skeleton; original section and all mathematical claims still require page-by-page audit.
-6.2.2,Stochastic Integration,228,21,partial_original_and_proposition6_2_full_local_proof,included,NOT-CH06-001;NOT-CH06-002,,CH06-NUM-002,,full-check01-WienerQuadraticVariation,229--230/PDF250--251目视；真实Brownian平方增量和MSE2T²/K及极限完整；其他积分构造/命题6.3及负责人语义pending
+6.2.2,Stochastic Integration,228,21,proposition6_2_self_ito_full_dependency6_3_partial,included,NOT-CH06-001;NOT-CH06-002;NOT-CH06-003,,CH06-NUM-002;CH06-NUM-003;CH06-CLM-002,CH06-DEP-002,full-check01-WienerIntegration,229--231/PDF250--252目视；Prop6.2和真实自身Ito均方存在完整；命题6.3仅有限依赖，其他随机积分/负责人pending
 6.3,Stochastic Differential Equations,231,21,not_started,included,,,,,,TOC skeleton; original section and all mathematical claims still require page-by-page audit.
 6.3.1,The Ito Formula,233,21,not_started,included,,,,,,TOC skeleton; original section and all mathematical claims still require page-by-page audit.
 6.3.2,Distributional Solution of the Ornstein-Uhlenbeck SDE,234,21,not_started,included,,,,,,TOC skeleton; original section and all mathematical claims still require page-by-page audit.
