@@ -581,3 +581,9 @@ end MolecularDynamics
 #check MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder
 #check MolecularDynamics.textbookTruncatedHamiltonian_difference_isBigO
 #check MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz
+
+-- Genuine ODE conservation and finite energy drift: printed115--116/PDF137--138.
+#check MolecularDynamics.oneStep_energy_telescoping
+#check MolecularDynamics.textbook_energy_drift_le_actual_defects
+#check MolecularDynamics.energy_step_count_power_factor
+#check MolecularDynamics.textbook_energy_drift_rate_of_flow_defect

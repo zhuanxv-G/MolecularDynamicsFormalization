@@ -607,3 +607,9 @@ run_cmd do
 #print axioms MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder
 #print axioms MolecularDynamics.textbookTruncatedHamiltonian_difference_isBigO
 #print axioms MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz
+
+-- Genuine ODE conservation and finite energy drift: printed115--116/PDF137--138.
+#print axioms MolecularDynamics.oneStep_energy_telescoping
+#print axioms MolecularDynamics.textbook_energy_drift_le_actual_defects
+#print axioms MolecularDynamics.energy_step_count_power_factor
+#print axioms MolecularDynamics.textbook_energy_drift_rate_of_flow_defect

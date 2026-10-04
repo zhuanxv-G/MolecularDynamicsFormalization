@@ -529,3 +529,7 @@ Printed103--105/PDF125--127: `Chapter03/FormalOperatorSeries.lean` constructs ac
 ### Section 3.4: uniform finite modified-Hamiltonian bounds (2026-10-05)
 
 Printed114--115/PDF136--137 equation(3.11): `Chapter03/ModifiedHamiltonianBounds.lean` constructs the actual finite truncation, proves C1 regularity, derives a positive compact-set remainder constant uniform over all 0≤h≤1 and its genuine right-hand IsBigO, and derives a single Lipschitz constant from actual C1 derivatives on an open domain containing the compact convex set. No coefficient bound, derivative bound or remainder estimate is supplied. This necessary dependency is fully accepted; actual high-order numerical-flow matching and complete Theorem3.1 remain pending. Responsible semantic signoff remains pending.
+
+### Section 3.4: actual finite energy drift (2026-10-05)
+
+Printed115--116/PDF137--138: `Chapter03/ModifiedEnergyDrift.lean` proves exact finite telescoping for actual oneStepIterate and derives modified-Hamiltonian conservation from the genuine retained ODE solutions. Actual compact C1 uniform constants yield the original energy bound 2C h^r+L times the sum of actual numerical/flow endpoint distances without any local accuracy premise. A separately named conditional corollary derives the long-time uniform energy rate when a genuine uniform endpoint defect A h^(k+1) has been proved. That matching condition is not yet constructed; whole Theorem3.1 and responsible semantic signoff remain pending.
