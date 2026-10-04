@@ -549,3 +549,15 @@ run_cmd do
 #print axioms MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint
 #print axioms MolecularDynamics.textbookComposeMethods_isSymplectic
 #print axioms MolecularDynamics.textbookSymmetricComposition_isSymplectic
+
+-- Main-text conjugacy and processing: printed88/PDF110.
+#print axioms MolecularDynamics.textbookConjugateMap
+#print axioms MolecularDynamics.textbookConjugateMap_iterate
+#print axioms MolecularDynamics.textbook_conjugate_iterates
+#print axioms MolecularDynamics.textbook_conjugate_iterates_tendsto_iff
+#print axioms MolecularDynamics.textbookProcessedMethod
+#print axioms MolecularDynamics.textbookProcessedIterate
+#print axioms MolecularDynamics.textbookProcessedIterate_eq
+#print axioms MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy
+#print axioms MolecularDynamics.textbookProcessedMaxError
+#print axioms MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy

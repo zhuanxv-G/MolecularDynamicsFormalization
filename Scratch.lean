@@ -523,3 +523,15 @@ end MolecularDynamics
 #check MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint
 #check MolecularDynamics.textbookComposeMethods_isSymplectic
 #check MolecularDynamics.textbookSymmetricComposition_isSymplectic
+
+-- Main-text conjugacy and processing: printed88/PDF110.
+#check MolecularDynamics.textbookConjugateMap
+#check MolecularDynamics.textbookConjugateMap_iterate
+#check MolecularDynamics.textbook_conjugate_iterates
+#check MolecularDynamics.textbook_conjugate_iterates_tendsto_iff
+#check MolecularDynamics.textbookProcessedMethod
+#check MolecularDynamics.textbookProcessedIterate
+#check MolecularDynamics.textbookProcessedIterate_eq
+#check MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy
+#check MolecularDynamics.textbookProcessedMaxError
+#check MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy
