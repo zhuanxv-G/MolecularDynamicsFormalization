@@ -96,3 +96,7 @@ import MolecularDynamics.Chapter02.ActualFlowVariations
 import MolecularDynamics.Chapter02.HamiltonianVolume
 
 import MolecularDynamics.Chapter02.LiouvilleVolume
+
+import MolecularDynamics.Chapter04.ConstrainedReactionRegularity
+
+import MolecularDynamics.Chapter04.ConstrainedFlowSymplectic

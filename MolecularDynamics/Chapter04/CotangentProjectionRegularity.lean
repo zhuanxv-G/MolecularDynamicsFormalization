@@ -71,6 +71,16 @@ theorem contDiffAt_textbookConstraintGram {Nc Mc : ℕ} (m : Fin Nc → ℝ)
   exact ContDiffAt.sum fun k _ =>
     (ContDiffAt.sum fun l _ => (hg i l).mul contDiffAt_const).mul (hg j k)
 
+/-- The actual Gram inverse, needed also by the continuous constraint reaction. -/
+theorem contDiffAt_textbookConstraintGram_inverse {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : E → Fin Nc → ℝ) (x : E)
+    (hγ : ∀ j, ContDiff ℝ 2 (γ j)) (hq : ContDiffAt ℝ 1 q x)
+    (hdet : (textbookConstraintGram m γ (q x)).det ≠ 0) :
+    ContDiffAt ℝ 1 (fun y => (textbookConstraintGram m γ (q y))⁻¹) x := by
+  have hA := contDiffAt_textbookConstraintGram m γ q x hγ hq
+  exact entries_contDiffAt_inverse (fun y => textbookConstraintGram m γ (q y)) x
+    (fun i j => contDiffAt_pi.mp (contDiffAt_pi.mp hA i) j) hdet
+
 theorem contDiffAt_textbookCotangentMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : E → Fin Nc → ℝ) (x : E)
     (hγ : ∀ j, ContDiff ℝ 2 (γ j)) (hq : ContDiffAt ℝ 1 q x)
