@@ -1015,3 +1015,26 @@
 - FirstIntegrals/full-check01实际07:49:56--07:52:08退出0：8964jobs、Scratch、403声明依赖审计、固定版本/扫描与SHA稳定，14项关键新显式审计仅允许三项基础公理。原失败/成功日志均保留。
 - §1.5.2更新partial；只计真实第一积分等价、中心力真角动量与极坐标时间导数/静态公式/速度系数det=r。一般Frechet Jacobian/EL协变、Kepler势梯度/径向积分、action-angle/环面都不称完成。负责人最终语义签核pending，新远端CI未跑。
 - 按授权本地保存本批明确文件，保留无关材料，未推送/合并。KeplerProbe已开始session36255：真实-1/‖q‖梯度和C1力，显式q≠0，不以总除法隐藏原点奇异。下一动作读诊断，继续独立证明。
+
+## 2026-10-04 07:55 +08:00 — 第一积分批次保存，Kepler首轮API修复
+
+- 第一积分/角动量/极坐标本地提交bb3f40ca596f7db80d3764d968908cea38abe262，未推送；完整check01为8964jobs/403声明。
+- KeplerProbe attempt01退出1：HasFDerivAt实值函数没有inv字段，用真实标量hasDerivAt_inv经comp_hasFDerivAt接范数Frechet导数。sqrt导数系数按固定API真实写成1/(2‖q‖)。C1 Kepler力已独立通过，仅梯度链尚未计。
+- 下一attempt02，q≠0明确保留。禁止默认值冒充原点势/力物理可微性；未定义新的全局无碰撞解或全书完成。
+
+## 2026-10-04 07:57 +08:00 — Kepler梯度/正则性修复通过并接真实IVP守恒
+
+- KeplerProbe attempt02退出0，真实U=-1/‖q‖梯度、F=-grad U和C1力三项关键仅三项允许基础公理；inv经标量链式复合修复成功，两项弃用名字已换标准neg_apply/smul_apply。
+- 新增非零位置开域真实局部IVP（由已证明力C1）、实际轨迹能量与二维角动量守恒，准备attempt03。Kepler无碰撞全局/积分解仍未计完成，原点q=0不纳入光滑域。
+
+## 2026-10-04 07:59 +08:00 — Kepler真局部IVP/能量/角动量通过并正式验收启动
+
+- KeplerProbe attempt03退出0且无弃用警告，六项关键仅三项允许基础公理。真实非零位置域C1力构造真局部IVP，真实能量/角动量守恒均接通。
+- Kepler正式接入顶层，Scratch/CheckAxioms增六关键审计，映射/假设/状态/本地语义审计同步。启动Kepler/full-check01，冻结正式Lean输入。
+- 下一独立依赖是真极坐标Frechet Jacobian与局部可逆坐标变换，再进极坐标EL/径向有效势；不能把静态速度系数det=r当成已验收的完整Jacobian，不能把局部非零轨迹当作无碰撞全局轨道。
+
+## 2026-10-04 08:03 +08:00 — Kepler完整本地验收通过
+
+- Kepler/full-check01于07:59:01--08:00:56实际退出0：8965jobs、Scratch、412声明依赖审计、固定版本/扫描与SHA稳定；六项新增关键仅允许三项基础公理。
+- 非零位置域真梯度/C1力/真实局部IVP/能量与二维角动量已完整验收；负责人最终语义签核pending，新远端CI未跑。正在本地保存明确批次，保留无关材料与原始失败日志，未推送/合并。
+- 下一独立PolarJacobianProbe已写入，首轮session19436检查中：实际polar映射的strict Frechet导数，拟连接原速度矩阵。候选不计本次Kepler成果，不计径向EL/积分或全节/全书完成。

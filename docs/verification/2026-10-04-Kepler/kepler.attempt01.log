@@ -1,0 +1,15 @@
+docs/verification/2026-10-04-Kepler/probes/KeplerProbe.lean:14:17: error(lean.invalidField): Invalid field `inv`: The environment does not contain `HasFDerivAtFilter.inv`, so it is not possible to project the field `inv` from an expression
+  hs
+of type
+  HasFDerivAtFilter (fun y => ‖y‖) ((1 / (2 * ‖q‖)) • 2 • (innerSL ℝ) q ∘SL ContinuousLinearMap.id ℝ (Position n))
+    (nhds q ×ˢ pure q)
+docs/verification/2026-10-04-Kepler/probes/KeplerProbe.lean:10:57: error: unsolved goals
+n : ℕ
+q : Position n
+hq : q ≠ 0
+hn : ‖q‖ ≠ 0
+hs : HasFDerivAt (fun y => ‖y‖) ((1 / (2 * ‖q‖)) • 2 • (innerSL ℝ) q ∘SL ContinuousLinearMap.id ℝ (Position n)) q
+⊢ HasGradientAt keplerPotential ((‖q‖ ^ 3)⁻¹ • q) q
+'MolecularDynamics.hasGradientAt_keplerPotential' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerForce_eq_neg_gradient' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerForce_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]

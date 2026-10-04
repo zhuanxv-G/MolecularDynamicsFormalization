@@ -1,14 +1,14 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 07:54 +08:00）
+## 当前数学检查点（2026-10-04 08:03 +08:00）
 
 - 同一全书目标与聊天01a102b1-a3fe-71e1-a571-347703fc09b8。Goal最后实查usageLimited，非完成/用户暂停；之前只读额度ordinaryUsageAllowed=true，继续同一授权。工具不能恢复平台状态，未另建Goal/自动化，未购买/重置/换账户，不使用MathCopilot。
-- 分支chapter01-kinetic-energy-nonneg，本地HEAD60ee65a7c3d15615ba38af9f9708e2ac19c0817e，复谱/实恢复/基列矩阵已保存；本轮第一积分批次准备提交，未推送。Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435固定，无关既有材料保留。
+- 分支chapter01-kinetic-energy-nonneg，本地HEADbb3f40ca596f7db80d3764d968908cea38abe262，第一积分/角动量/极坐标已保存，未推送。Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435固定，无关既有材料保留。
 - 既有完整验收：Theorem1.1真欧氏全未来严格sup稳定性2081575；Lagrangian/质量静态变换/Legendre真sup f52945d；双向势垒域全时间流84549ab；谐振子/自由粒子连续Flow4859306（8955jobs/310）；真实矩阵指数IVP/实谱eb6d018（8958jobs/348）。
 - 复谱/实恢复/X可逆及c=X⁻¹ζ于ComplexSpectral/full-check01 07:40:13--07:41:57退出0，8961jobs/382声明/SHA稳定，源码60ee65a。所有关键审计仅三项允许基础公理。
-- 最新FirstIntegrals/PlanarAngularMomentum/PolarCoordinates完整验收于07:49:56--07:52:08退出0，8964jobs/403声明/SHA稳定；14关键显式审计仅允许基础公理。实际轨迹第一积分↔DI·f=0（必要性用真局部IVP）、中心力真角动量守恒、极坐标真实时间导数和静态动能/角动量/Lagrangian及速度矩阵det=r均已验收，准备保存本批。
+- 最新FirstIntegrals/PlanarAngularMomentum/PolarCoordinates完整验收于07:49:56--07:52:08退出0，8964jobs/403声明/SHA稳定；14关键显式审计仅允许基础公理。实际轨迹第一积分↔DI·f=0（必要性用真局部IVP）、中心力真角动量守恒、极坐标真实时间导数和静态动能/角动量/Lagrangian及速度矩阵det=r均已验收，源码bb3f40c已保存。
 - 原页印刷27--31/PDF50--54已实际视觉核对。§1.5.1/1.5.2/1.5.3仍partial；一般初值连续依赖、Kepler真梯度/极坐标EL协变/径向化约与积分解、action-angle/环面及后续全书未完成。负责人最终教材语义签核pending，新远端CI未跑。
-- 当前新独立任务docs/verification/2026-10-04-Kepler/probes/KeplerProbe.lean；首轮session36255进行中。目标在q≠0域证明真实U=-1/‖q‖梯度、F=-grad U与C1力，再接真实IVP及能量/角动量。恢复第一动作读该实际结果并修复，不能将单批/全页算全书完成。
+- 当前新独立任务docs/verification/2026-10-04-Kepler/probes/KeplerProbe.lean；attempt01在HasFDerivAt.inv字段失败，C1力独立通过；已按真实标量inv导数/复合修复，attempt02退出0；局部IVP/实际能量和角动量attempt03已退出0；正式Kepler/full-check01退出0（07:59:01--08:00:56，8965jobs/412/SHA稳定）；准备保存。目标在q≠0域证明真实U=-1/‖q‖梯度、F=-grad U与C1力，再接真实IVP及能量/角动量。恢复第一动作保存Kepler明确批次，读取PolarJacobianProbe attempt01/session19436结果，继续真实Frechet Jacobian/局部可逆，不能将单批/全页算全书完成。
 - 所有原始失败/成功日志保留。只暂存本批明确文件，未触碰既有AGENTS/FORMALIZATION_PLAN/RESUME/T3材料；每成果/失败与20--30分钟保存检查点，不停全书接续。
 
 ## 启动配置复核（2026-10-04 01:00 +08:00）

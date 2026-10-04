@@ -333,3 +333,17 @@ FirstIntegrals/full-check01 passed at07:49:56--07:52:08:8964jobs,403project audi
 
 Kepler potential gradient, polar dynamics/radial quadrature, action-angle and
 torus claims remain open. Section1.5.2 stays partial; responsible sign-off pending.
+
+## Kepler actual potential, force and conserved IVPs (2026-10-04)
+
+Printed29/PDF52 checked. Independent Kepler03 passed;
+Kepler/full-check01 passed at07:59:01--08:00:56:8965jobs,412project audits, Scratch, pinned versions/scan and stable SHA.
+
+| Result | Lean declaration | Scope |
+| --- | --- | --- |
+| Actual inverse-distance gradient | hasGradientAt_keplerPotential, keplerForce_eq_neg_gradient | U=-1/‖q‖, grad U=q/‖q‖³ and F=-grad U at q≠0. |
+| Regular field and actual local IVP | keplerForce_contDiffAt, exists_kepler_localIVP | C1 force on the open nonzero position domain, actual unit-mass local IVP for every nonzero initial position. |
+| True conserved energy and angular momentum | kepler_energy_const_on_Ioo, kepler_planarAngularMomentum_const_on_Ioo | Actual trajectories avoiding0; energy in any finite dimension, planar angular momentum in dimension2. |
+
+Collision-free global continuation, polar radial dynamics/quadrature and complete
+integrability claims remain open; responsible sign-off pending.

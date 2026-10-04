@@ -216,3 +216,9 @@ run_cmd do
 #print axioms MolecularDynamics.polarCoordinates_hasDerivAt_components
 #print axioms MolecularDynamics.polarJacobian_det
 #print axioms MolecularDynamics.polarJacobian_isUnit_iff
+#print axioms MolecularDynamics.hasGradientAt_keplerPotential
+#print axioms MolecularDynamics.keplerForce_eq_neg_gradient
+#print axioms MolecularDynamics.keplerForce_contDiffAt
+#print axioms MolecularDynamics.exists_kepler_localIVP
+#print axioms MolecularDynamics.kepler_energy_const_on_Ioo
+#print axioms MolecularDynamics.kepler_planarAngularMomentum_const_on_Ioo

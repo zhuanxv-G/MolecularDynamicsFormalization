@@ -1,0 +1,6 @@
+'MolecularDynamics.exists_kepler_localIVP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.kepler_energy_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.kepler_planarAngularMomentum_const_on_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasGradientAt_keplerPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerForce_eq_neg_gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerForce_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]

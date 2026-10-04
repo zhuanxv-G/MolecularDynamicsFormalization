@@ -1,0 +1,9 @@
+docs/verification/2026-10-04-Kepler/probes/KeplerProbe.lean:19:15: warning: `ContinuousLinearMap.neg_apply` has been deprecated: Use `neg_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.neg_apply` to `neg_apply x`).
+docs/verification/2026-10-04-Kepler/probes/KeplerProbe.lean:19:46: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+'MolecularDynamics.hasGradientAt_keplerPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerForce_eq_neg_gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerForce_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]

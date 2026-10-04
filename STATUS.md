@@ -186,3 +186,8 @@
 
 - Genuine first-integral conservation/differential equivalence with local IVP necessity, true planar central-force angular momentum, actual polar time derivatives and static kinetic/angular/Lagrangian/coefficient determinant formulas passed independent probes and are formally integrated.
 - FirstIntegrals/full-check01 passed at07:49:56--07:52:08:8964jobs,403project audits, Scratch, pinned versions/scan and stable SHA. Kepler gradient/dynamics/quadrature, action-angle/torus and further content remain open; Section1.5.2 and whole book stay ongoing, responsible final sign-off pending, no new remote CI.
+
+### Kepler actual singular-domain model (2026-10-04)
+
+- Candidate03 passed: true inverse-distance gradient/negative-gradient force, force C1 and real local IVP on q≠0, actual interval energy conservation and planar angular momentum conservation. Kepler/full-check01 passed at07:59:01--08:00:56:8965jobs,412project audits, Scratch, pinned versions/scan and stable SHA.
+- No collision-free global orbit, polar radial quadrature or full integrability claim is inferred. Section1.5.2/whole book remain ongoing, responsible final sign-off pending, no new remote CI.
