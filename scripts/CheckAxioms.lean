@@ -632,3 +632,15 @@ run_cmd do
 #print axioms MolecularDynamics.differentiableAt_textbookProjectedEulerPreMomentum
 #print axioms MolecularDynamics.differentiableAt_textbookProjectedEulerPosition
 #print axioms MolecularDynamics.textbookProjectedEulerChart_preserves_pullback
+
+-- Explicit actual Gram solve and hidden constraint: printed159/PDF181.
+#print axioms MolecularDynamics.textbookConstraintJacobian
+#print axioms MolecularDynamics.textbookConstraintJacobian_mulVec
+#print axioms MolecularDynamics.textbookConstraintJacobian_eq_actualDerivative
+#print axioms MolecularDynamics.textbookInverseMassMatrix
+#print axioms MolecularDynamics.textbookConstraintGram
+#print axioms MolecularDynamics.textbookCotangentMultiplier
+#print axioms MolecularDynamics.textbookCotangentProjection
+#print axioms MolecularDynamics.textbookCotangentProjection_eq_gradient_sum
+#print axioms MolecularDynamics.textbookCotangentProjection_hiddenConstraint
+#print axioms MolecularDynamics.textbookCotangentProjection_constraint_derivative_zero
