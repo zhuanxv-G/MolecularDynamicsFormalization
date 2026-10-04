@@ -587,3 +587,14 @@ end MolecularDynamics
 #check MolecularDynamics.textbook_energy_drift_le_actual_defects
 #check MolecularDynamics.energy_step_count_power_factor
 #check MolecularDynamics.textbook_energy_drift_rate_of_flow_defect
+
+-- Complete Lemma4.1 and the following finite constraint projection: printed159--160/PDF181--182.
+#check MolecularDynamics.textbookConstraintGradient
+#check MolecularDynamics.contDiff_textbookConstraintGradient
+#check MolecularDynamics.textbookConstrainedMomentum
+#check MolecularDynamics.textbookCotangentChart
+#check MolecularDynamics.lemma_4_1_coordinates
+#check MolecularDynamics.lemma_4_1
+#check MolecularDynamics.textbookMultiConstrainedMomentum
+#check MolecularDynamics.differentiableAt_textbookMultiConstrainedMomentum
+#check MolecularDynamics.textbookMultiConstrainedMomentum_preserves_pullback

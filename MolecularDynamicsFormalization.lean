@@ -78,3 +78,5 @@ import MolecularDynamics.Chapter03.FormalOperatorSeries
 import MolecularDynamics.Chapter03.ModifiedHamiltonianBounds
 
 import MolecularDynamics.Chapter03.ModifiedEnergyDrift
+
+import MolecularDynamics.Chapter04.ConstrainedProjection

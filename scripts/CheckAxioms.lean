@@ -613,3 +613,14 @@ run_cmd do
 #print axioms MolecularDynamics.textbook_energy_drift_le_actual_defects
 #print axioms MolecularDynamics.energy_step_count_power_factor
 #print axioms MolecularDynamics.textbook_energy_drift_rate_of_flow_defect
+
+-- Complete Lemma4.1 and the following finite constraint projection: printed159--160/PDF181--182.
+#print axioms MolecularDynamics.textbookConstraintGradient
+#print axioms MolecularDynamics.contDiff_textbookConstraintGradient
+#print axioms MolecularDynamics.textbookConstrainedMomentum
+#print axioms MolecularDynamics.textbookCotangentChart
+#print axioms MolecularDynamics.lemma_4_1_coordinates
+#print axioms MolecularDynamics.lemma_4_1
+#print axioms MolecularDynamics.textbookMultiConstrainedMomentum
+#print axioms MolecularDynamics.differentiableAt_textbookMultiConstrainedMomentum
+#print axioms MolecularDynamics.textbookMultiConstrainedMomentum_preserves_pullback
