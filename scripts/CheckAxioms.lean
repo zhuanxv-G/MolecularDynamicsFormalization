@@ -650,3 +650,14 @@ run_cmd do
 #print axioms MolecularDynamics.textbookConstrainedReactionMultiplier
 #print axioms MolecularDynamics.textbookConstrainedReaction_balance
 #print axioms MolecularDynamics.textbookConstrainedODE_cotangent_invariant
+
+-- Actual Gram projection regularity and constructed final integrator stage.
+#print axioms MolecularDynamics.contDiffAt_textbookConstraintJacobian
+#print axioms MolecularDynamics.contDiffAt_textbookConstraintGram
+#print axioms MolecularDynamics.contDiffAt_textbookCotangentMultiplier
+#print axioms MolecularDynamics.contDiffAt_textbookCotangentProjection
+#print axioms MolecularDynamics.textbookCotangentProjection_preserves_pullback
+#print axioms MolecularDynamics.contDiffAt_textbookProjectedEulerPreMomentum
+#print axioms MolecularDynamics.contDiffAt_textbookProjectedEulerPosition
+#print axioms MolecularDynamics.textbookGramProjectedEulerChart
+#print axioms MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback

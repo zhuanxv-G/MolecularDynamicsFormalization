@@ -549,3 +549,7 @@ Printed159/PDF181 equations(4.23)--(4.24), with the explicit nonsingular-Gram co
 ## 2026-10-05 actual constrained reaction and cotangent invariance
 
 Printed152--153/PDF174--175: `Chapter04/ConstrainedReaction.lean` constructs the actual second-derivative curvature and actual Gram-inverse reaction. The matrix balance is derived, followed by the real hidden-constraint chain rule and constancy on the entire closed solution interval. Initial position and hidden constraints therefore persist at every point, including endpoints. Neither preservation nor derivative-zero conclusions are inputs; all-time existence is separate. Full pinned verification passed; responsible semantic signoff remains pending.
+
+## 2026-10-05 actual Gram multiplier regularity and constructed final stage
+
+Printed159--160/PDF181--182: `Chapter04/CotangentProjectionRegularity.lean` derives actual C1 Jacobian/Gram/inverse/multiplier/projection regularity through the true determinant and adjugate formulas. The constructed projection preserves the actual restricted pullback without a supplied multiplier or its regularity. Actual C1 pre-momentum/position maps give the fully constructed final Gram stage, its genuine hidden constraint and the complete three-stage pullback identity. The initial nonlinear lam branch and its actual position-solving properties remain explicit method data; these are not counted as constructed. Force coefficient a remains explicit. Responsible semantic signoff, initial branch construction and method order remain pending.
