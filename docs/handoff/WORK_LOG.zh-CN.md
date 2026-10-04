@@ -1071,3 +1071,33 @@
 
 - full-check02正式成功与边界已同步inventory/状态/语义报告，正在本地保存明确批次。新EL候选不纳入该正式验收。
 - KeplerPolarDynamics attempt02已修复v偏导，r偏导的剩余函数加法应用需要Pi.add_apply；实际标量公式正确，按funext后该API展开再ring。原始失败日志保留，准备attempt03，不重复仅funext路线。
+
+## 2026-10-04 08:20 +08:00 — 极坐标局部图本地保存，EL显式分项修复
+
+- 正式局部图/验收证据提交9f3c45b6f7d656dea181ee99ab0a264e9d887e80，本地未推送，full-check02公理审计实际421项目声明。
+- EL候选attempt03--04在first策略分支的规范展开仍失败；改显式分项。attempt05中v真实偏导已通过，r偏导最后norm_num已关闭目标却多余ring报错；ω偏导需单独函数外延/系数目标。attempt06逐项显式修复，不重复启发式first路线。
+- 所有候选失败日志保留，未进入正式库，最终语义签核pending；全书长期目标继续，不创建重复构建或自动化。
+
+## 2026-10-04 08:24 +08:00 — 真实极坐标EL与径向化约候选通过
+
+- KeplerPolarDynamics attempt07退出0且无警告，七关键仅允许基础公理：四实际标量偏导、用deriv定义的真实Euler--Lagrange时间导数等价教材两方程、真正r²ω沿轨迹常数、实际径向加速度化约。
+- attempt06错误仅显式分项中的多余ring与系数未ring，已按每项真实目标修正，全部原失败日志保留。
+- 增加有效径向能量真导数0/区间守恒与角度FTC积分；角动量l用既证明常数推出，r>0确保分母无零及连续积分，并不假定结论。准备attempt08；一般坐标EL协变/Cartesian真Kepler桥接仍未完成，最终签核pending。
+
+## 2026-10-04 08:26 +08:00 — 有效径向能量与角度FTC候选通过
+
+- attempt08有效能量公式、真实导数0与区间守恒独立通过，角积分仅ContinuousOn被匿名函数展开后pow字段解析失败；提取命名连续性证明修复，attempt09十一关键退出0且无警告，全部仅允许基础公理。
+- 真实角积分θ(t)=θ(s)+∫s..t l/r(u)²，l从已证明角动量常数推出；分母非零/连续积分来自正半径和真实r导数。没有以积分可积或角速度公式作为额外猜测假设。
+- attempt10增加从初始角动量自动得到有效能量守恒及静态总能量=径向有效能量，随后正式接入/Kepler03。Cartesian真实Kepler与polar EL的桥接仍独立pending。
+
+## 2026-10-04 08:27 +08:00 — 极坐标EL/能量/角积分正式集成与验收启动
+
+- attempt10退出0，无警告，十三关键仅允许三项基础公理。自动初始角动量有效能量守恒与总能量=径向能量补齐。
+- 正式KeplerPolarDynamics接入根/Scratch/CheckAxioms，映射/假设/状态/语义报告同步。启动Kepler/full-check03，冻结正式输入。
+- 下一独立真Cartesian机械↔polar EL桥接；保留所有原始日志和无关材料。全书持续，负责人最终签核pending，无新远端CI。
+
+## 2026-10-04 08:30 +08:00 — 极坐标EL/能量/角积分完整验收通过
+
+- Kepler/full-check03实际08:27:02--08:28:23退出0：8967jobs、Scratch、454项目声明公理审计、固定Lean/mathlib/扫描及输入SHA稳定。十三关键仅三项允许基础公理，最终签核pending，新远端CI未跑。
+- inventory仍partial，已区分真实标量EL结果与尚未完成的Cartesian桥接/径向积分解/action-angle/环面。正在本地保存明确成果和全部EL失败/成功日志，保留无关材料。
+- 下一KeplerCartesianBridgeProbe已落盘并attempt01检查中，目标从真极坐标EL推真实Cartesian机械Kepler，以及真实范数、总能量和角动量一致，不将静态公式冒充动态桥接。

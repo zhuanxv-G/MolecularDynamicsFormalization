@@ -1,0 +1,18 @@
+docs/verification/2026-10-04-Kepler/probes/KeplerPolarDynamicsProbe.lean:25:4: error: No goals to be solved
+docs/verification/2026-10-04-Kepler/probes/KeplerPolarDynamicsProbe.lean:26:2: error: unsolved goals
+case e'_9
+r θ v ω : ℝ
+⊢ r ^ 2 * ω = r ^ 2 * (2 * ω) / 2
+docs/verification/2026-10-04-Kepler/probes/KeplerPolarDynamicsProbe.lean:36:4: error: No goals to be solved
+docs/verification/2026-10-04-Kepler/probes/KeplerPolarDynamicsProbe.lean:37:2: error: unsolved goals
+case e'_9
+r θ v ω : ℝ
+hr : r ≠ 0
+⊢ r * ω ^ 2 - (r ^ 2)⁻¹ = 2 * r * ω ^ 2 / 2 + -(r ^ 2)⁻¹
+'MolecularDynamics.keplerPolar_partial_v' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_ω' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_r' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_θ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_eulerLagrange_iff' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angular_const' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_radial_reduction' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

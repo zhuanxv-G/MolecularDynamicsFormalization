@@ -227,3 +227,16 @@ run_cmd do
 #print axioms MolecularDynamics.fderiv_polarCoordinateMap
 #print axioms MolecularDynamics.exists_polarLocalChart_strictInverse
 #print axioms MolecularDynamics.exists_polarLocalChart
+#print axioms MolecularDynamics.keplerPolar_partial_v
+#print axioms MolecularDynamics.keplerPolar_partial_ω
+#print axioms MolecularDynamics.keplerPolar_partial_r
+#print axioms MolecularDynamics.keplerPolar_partial_θ
+#print axioms MolecularDynamics.keplerPolar_eulerLagrange_iff
+#print axioms MolecularDynamics.keplerPolar_angular_const
+#print axioms MolecularDynamics.keplerPolar_radial_reduction
+#print axioms MolecularDynamics.keplerRadialEnergy_formula
+#print axioms MolecularDynamics.keplerRadialEnergy_hasDerivAt_zero
+#print axioms MolecularDynamics.keplerPolar_radialEnergy_const
+#print axioms MolecularDynamics.keplerPolar_angle_integral
+#print axioms MolecularDynamics.keplerPolar_radialEnergy_const_initialAngular
+#print axioms MolecularDynamics.keplerPolar_energy_radial_identity

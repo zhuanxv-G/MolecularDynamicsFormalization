@@ -1,0 +1,24 @@
+docs/verification/2026-10-04-Kepler/probes/KeplerPolarDynamicsProbe.lean:104:44: warning: This simp argument is unused:
+  mul_inv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [keplerRadialEnergy, div_eq_mul_inv, inv_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-04-Kepler/probes/KeplerPolarDynamicsProbe.lean:149:35: error(lean.invalidField): Invalid field `pow`: The environment does not contain `Function.pow`, so it is not possible to project the field `pow` from an expression
+  fun u hu => ContinuousAt.continuousWithinAt (HasDerivAt.continuousAt (hEL u (hseg hu)).right.left)
+of type
+  ∀ u ∈ uIcc s t, ContinuousWithinAt r (uIcc s t) u
+docs/verification/2026-10-04-Kepler/probes/KeplerPolarDynamicsProbe.lean:149:39: error: numerals are data in Lean, but the expected type is a proposition
+  ∀ x ∈ ?m.212, ?m.210 x ≠ 0 : Prop
+'MolecularDynamics.keplerPolar_partial_v' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_ω' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_r' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_θ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_eulerLagrange_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angular_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_radial_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialEnergy_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialEnergy_hasDerivAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_radialEnergy_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angle_integral' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

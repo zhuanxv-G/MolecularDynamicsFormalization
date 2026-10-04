@@ -1,0 +1,32 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-04-Kepler/probes/KeplerPolarDynamicsProbe.lean:11:69: error: unsolved goals
+case e'_8
+r θ v ω : ℝ
+⊢ (fun w => w ^ 2 * (1 / 2) + r ^ 2 * ω ^ 2 * (1 / 2) + r⁻¹) = fun x => r ^ 2 * ω ^ 2 * (1 / 2) + r⁻¹ + x ^ 2 * (1 / 2)
+docs/verification/2026-10-04-Kepler/probes/KeplerPolarDynamicsProbe.lean:20:39: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-04-Kepler/probes/KeplerPolarDynamicsProbe.lean:24:35: error: unsolved goals
+case e'_8
+r θ v ω : ℝ
+hr : r ≠ 0
+⊢ (fun ρ => v ^ 2 * (1 / 2) + ρ ^ 2 * ω ^ 2 * (1 / 2) + ρ⁻¹) =
+    (fun x => v ^ 2 * (1 / 2) + ω ^ 2 * x ^ 2 * (1 / 2)) + fun y => y⁻¹
+'MolecularDynamics.keplerPolar_partial_v' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_ω' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_r' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_θ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_eulerLagrange_iff' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angular_const' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_radial_reduction' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

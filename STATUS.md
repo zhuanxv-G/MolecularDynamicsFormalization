@@ -197,3 +197,9 @@
 - PolarJacobian candidate05 passed: five key declarations only use the permitted foundational axioms. Actual derivative, fderiv formula, invertible derivative at nonzero radius and genuine local chart with strict differentiable inverse formally integrated.
 - Kepler/full-check02 starts for the new formal module. Section1.5.2/whole book ongoing; final responsible semantic sign-off pending, new remote CI not run.
 Kepler/full-check02 passed at08:12:32--08:13:53:8966jobs, Scratch, full project axiom audit, pinned versions/source scan/stable input SHA. The formal polar local chart is accepted locally; scalar polar EL candidates remain outside the library.
+
+### Kepler polar differential dynamics and angle integral (2026-10-04)
+
+- Candidate10 passed with thirteen key declarations using only the allowed foundational axioms: four true partial derivatives, actual EL equivalence, angular conservation/radial reduction, effective energy and true FTC angle integral. New KeplerPolarDynamics formally integrated; Kepler/full-check03 starts.
+- Cartesian/polar trajectory equivalence, full radial quadrature, action-angle/torus, later chapter and whole book remain open; responsible final semantic sign-off pending, new remote CI not run.
+Kepler/full-check03 passed at08:27:02--08:28:23:8967jobs, Scratch,454imported project declaration audits, pinned versions/source scan/stable input SHA. Polar EL/radial energy/angle integral accepted; Cartesian bridge candidate not included.

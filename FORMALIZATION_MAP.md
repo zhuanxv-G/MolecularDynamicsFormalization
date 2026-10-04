@@ -351,3 +351,7 @@ integrability claims remain open; responsible sign-off pending.
 ### Genuine polar derivative and local chart (2026-10-04)
 
 Printed29/PDF52: `PolarCoordinateMap.lean` proves the actual strict Frechet derivative of (r cosθ,r sinθ), identifies its fderiv with the previously verified matrix, and constructs a genuine OpenPartialHomeomorph at r≠0. The inverse has the strict derivative of the inverse linear equivalence. No global inverse across periodic angles is asserted. Euler--Lagrange covariance, radial reduction and quadrature remain separate tasks.
+
+### Kepler polar EL, radial energy and angular quadrature (2026-10-04)
+
+Printed29--30/PDF52--53: KeplerPolarDynamics proves four actual scalar partial derivatives of the displayed polar Lagrangian. The true Euler--Lagrange predicate uses these deriv slices and actual time derivatives. Its equivalence to radial acceleration and angular-momentum derivative zero is proved, not assumed. Angular momentum conservation yields the reduced radial force, true radial effective-energy conservation (including initial-angular-momentum version) and genuine angle interval integral via FTC. General coordinate covariance, actual Cartesian Kepler equivalence, solving the radial IVP by quadrature, orbit classification and action-angle/torus remain separate.

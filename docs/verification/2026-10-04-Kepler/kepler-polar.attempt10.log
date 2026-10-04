@@ -1,0 +1,15 @@
+'MolecularDynamics.keplerPolar_partial_v' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_ω' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_r' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_partial_θ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_eulerLagrange_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angular_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_radial_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialEnergy_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerRadialEnergy_hasDerivAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_radialEnergy_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_angle_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.keplerPolar_radialEnergy_const_initialAngular' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.keplerPolar_energy_radial_identity' depends on axioms: [propext, Classical.choice, Quot.sound]

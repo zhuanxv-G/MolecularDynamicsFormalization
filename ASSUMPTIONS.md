@@ -172,3 +172,7 @@ These are modeling questions to check against each textbook statement, not globa
 ### Polar local chart (2026-10-04)
 
 Two real Euclidean coordinates, radius q₀≠0 for inverse chart; derivative formula itself holds at every q. Local invertibility is deduced from the proved Jacobian determinant q₀ through the actual inverse function theorem. Inverse is strict differentiable at the image of the base point. Positive radius, physical Kepler trajectories and global angle branch selection are not inferred from this local result.
+
+### Kepler polar Euler--Lagrange trajectories (2026-10-04)
+
+Real scalar r,θ,v,ω with r>0 along the declared time set; actual r'=v and θ'=ω. The EL predicate contains time derivatives of actual Lagrangian partials, not radial dynamics as premises. Open connected Ioo gives genuine angular/energy conservation; closed oriented subintervals are inside that Ioo and continuity proves angle integrability. Fixed angular momentum in the low-level energy lemma is supplied from proven conservation in the initial-angular-momentum corollary and the angle formula. No unproved Cartesian covariance or full radial quadrature is inferred.
