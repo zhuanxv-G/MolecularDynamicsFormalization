@@ -398,3 +398,36 @@ end MolecularDynamics
 #check MolecularDynamics.oneStep_error_bound
 #check MolecularDynamics.oneStepMaxError_order_bound
 #check MolecularDynamics.oneStep_converges_of_consistency_stability
+
+-- Section 2.3.3: actual wedge form, sign convention and matrix pullback.
+#check MolecularDynamics.SymplecticCoordinates
+#check MolecularDynamics.SymplecticCoordinateMatrix
+#check MolecularDynamics.textbookJ
+#check MolecularDynamics.textbookJ_eq_neg_mathlibJ
+#check MolecularDynamics.textbookJ_transpose
+#check MolecularDynamics.textbookJ_squared
+#check MolecularDynamics.textbookDq
+#check MolecularDynamics.textbookDp
+#check MolecularDynamics.textbookDq_apply
+#check MolecularDynamics.textbookDp_apply
+#check MolecularDynamics.textbookWedgeOneForms
+#check MolecularDynamics.textbookWedgeOneForms_apply
+#check MolecularDynamics.textbookSymplecticForm
+#check MolecularDynamics.textbookSymplecticForm_coordinates
+#check MolecularDynamics.textbookSymplecticForm_eq_sum_wedges
+#check MolecularDynamics.textbookSymplecticForm_self
+#check MolecularDynamics.textbookSymplecticForm_skew
+#check MolecularDynamics.textbookSymplecticPullback
+#check MolecularDynamics.textbookSymplecticPullback_apply
+#check MolecularDynamics.textbookSymplecticPullback_matrix
+#check MolecularDynamics.IsTextbookSymplectic
+#check MolecularDynamics.isTextbookSymplectic_iff_pullback
+#check MolecularDynamics.isTextbookSymplectic_iff_preserves_form
+#check MolecularDynamics.isTextbookSymplectic_iff_mathlib
+#check MolecularDynamics.isTextbookSymplectic_one
+#check MolecularDynamics.IsTextbookSymplectic.mul
+#check MolecularDynamics.IsTextbookSymplectic.det_eq_one
+#check MolecularDynamics.IsTextbookSymplectic.det_square
+#check MolecularDynamics.IsTextbookSymplectic.abs_det
+#check MolecularDynamics.IsTextbookSymplectic.inv
+#check MolecularDynamics.IsTextbookSymplectic.inv_formula

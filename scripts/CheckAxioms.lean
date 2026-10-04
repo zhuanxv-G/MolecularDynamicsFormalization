@@ -425,3 +425,36 @@ run_cmd do
 #print axioms MolecularDynamics.oneStep_error_bound
 #print axioms MolecularDynamics.oneStepMaxError_order_bound
 #print axioms MolecularDynamics.oneStep_converges_of_consistency_stability
+
+-- Section 2.3.3: actual wedge form, sign convention and matrix pullback.
+#print axioms MolecularDynamics.SymplecticCoordinates
+#print axioms MolecularDynamics.SymplecticCoordinateMatrix
+#print axioms MolecularDynamics.textbookJ
+#print axioms MolecularDynamics.textbookJ_eq_neg_mathlibJ
+#print axioms MolecularDynamics.textbookJ_transpose
+#print axioms MolecularDynamics.textbookJ_squared
+#print axioms MolecularDynamics.textbookDq
+#print axioms MolecularDynamics.textbookDp
+#print axioms MolecularDynamics.textbookDq_apply
+#print axioms MolecularDynamics.textbookDp_apply
+#print axioms MolecularDynamics.textbookWedgeOneForms
+#print axioms MolecularDynamics.textbookWedgeOneForms_apply
+#print axioms MolecularDynamics.textbookSymplecticForm
+#print axioms MolecularDynamics.textbookSymplecticForm_coordinates
+#print axioms MolecularDynamics.textbookSymplecticForm_eq_sum_wedges
+#print axioms MolecularDynamics.textbookSymplecticForm_self
+#print axioms MolecularDynamics.textbookSymplecticForm_skew
+#print axioms MolecularDynamics.textbookSymplecticPullback
+#print axioms MolecularDynamics.textbookSymplecticPullback_apply
+#print axioms MolecularDynamics.textbookSymplecticPullback_matrix
+#print axioms MolecularDynamics.IsTextbookSymplectic
+#print axioms MolecularDynamics.isTextbookSymplectic_iff_pullback
+#print axioms MolecularDynamics.isTextbookSymplectic_iff_preserves_form
+#print axioms MolecularDynamics.isTextbookSymplectic_iff_mathlib
+#print axioms MolecularDynamics.isTextbookSymplectic_one
+#print axioms MolecularDynamics.IsTextbookSymplectic.mul
+#print axioms MolecularDynamics.IsTextbookSymplectic.det_eq_one
+#print axioms MolecularDynamics.IsTextbookSymplectic.det_square
+#print axioms MolecularDynamics.IsTextbookSymplectic.abs_det
+#print axioms MolecularDynamics.IsTextbookSymplectic.inv
+#print axioms MolecularDynamics.IsTextbookSymplectic.inv_formula
