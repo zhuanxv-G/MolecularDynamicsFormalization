@@ -395,3 +395,7 @@ Printed30/PDF53: TorusPeriod proves existence of a positive real-time period iff
 ### Genuine first-integral implicit level graph (2026-10-04)
 
 Printed28/PDF51: FirstIntegralGraph derives actual invertibility of the scalar y-partial from L(0,1)≠0, then the real implicit function theorem constructs ψ with ψ(x₀)=y₀, actual differentiability and exact local equivalence J(x,y)=J(x₀,y₀) iff y=ψ(x). Conservation of the actual first integral along actual trajectories proves the local graph representation and genuine scalar derivative x'=f₁(x,ψ(x)); the graph and reduced ODE are derived rather than assumed. C1 graph-neighborhood speed and separated quadrature remain separate.
+
+### Actual planar first-integral quadrature (2026-10-04)
+
+Printed28/PDF51: FirstIntegralQuadrature constructs a true C1 implicit level graph from actual C1 first integral and nonzero y-partial. Actual C1 vector field plus nonzero base x-velocity yields a derived neighborhood with continuous nonzero reduced speed and a derived actual-trajectory time window. The accepted separated integral/inverse theorem gives actual x(t)=g(t-t₀), y(t)=ψ(g(t-t₀)), both local inverse identities, strict derivative g'(0)=f₁(p) and true integral=time formula. Graph/continuous speed/trajectory range and inverse solution are derived, not added as hypotheses.

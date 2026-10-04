@@ -1326,3 +1326,19 @@
 
 - full-check13实际12:07:11--12:08:31退出0，8977jobs、Scratch、679项目声明审计、固定版本/扫描/输入SHA稳定；三关键仅基础公理。准备保存源码/两次原日志/完整证据，不推送。
 - FirstIntegralQuadratureProbe已落盘并单一attempt01运行中：真实C1 implicit graph，f/J真实C1及非转向速度导出正则性/非零位置窗口和实际轨迹时间窗口，接已验收积分inverse并恢复两实际分量。候选尚未计完成；最终签核pending、全书持续。
+
+## 2026-10-04 12:11 +08:00 — 第一积分graph已保存，C1 quadrature首轮投影API修复
+
+- Graph完整批次856165b本地保存，未推送。Quadrature attempt01真实C1 implicit graph独立通过，真实邻域速度ContDiff/ContinuousOn/非零窗口均已取得；唯一失败是无目标类型的HasDerivAt.fst被解析为HasFDerivAtFilter.fst且无continuousAt字段。改从真实γ continuousAt投影，避免无目标.deriv投影，准备attempt02。所有失败日志保留，完整分离积分候选未计完成。
+
+## 2026-10-04 12:14 +08:00 — 二维第一积分完整局部积分逆候选通过并正式接入
+
+- FirstIntegralQuadrature candidate02三关键退出0、无警告，仅基础公理。真实C1图/自动连续非零速度窗口与真轨迹时间窗口/两实际分量解=x积分逆与ψ图完全接通；正式模块接入根/Scratch/CheckAxioms，full-check14开始、冻结正式输入。
+- 下一一般一自由度potential Example1.6：实际能量第一积分/偏导及非转向局部分离积分，转向/平衡需另外分支不能忽略；候选尚未计完成。
+- 最终签核pending、无新远端CI，全书持续、无关材料保留。
+
+## 2026-10-04 12:21 +08:00 — 二维第一积分完整积分逆验收通过，接一般势能系统
+
+- full-check14实际12:14:32--12:15:53退出0，8978jobs、Scratch、682项目声明审计、固定Lean/mathlib、源码扫描和输入SHA稳定均通过；三关键仅允许基础公理。保存正式源码、两次尝试日志和完整证据，未推送。
+- 原页印刷20/PDF43已实际视觉复看：Example1.4明确η≠0时局部隐函数+分离变量，degenerate点需case-by-case；印刷28/PDF51 Example1.6调用真实能量第一积分。下一ScalarIntegrability证明一般C2 potential真实能量守恒、偏导=v、C1向量场，接非零初速度局部积分逆。转向/平衡/global拼接仍未计完成。
+- 同一Goal实际active，无并发Lean/重复自动化；最终签核pending，无新远端CI，全书继续。

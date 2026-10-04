@@ -216,3 +216,7 @@ Positive Ωⱼ/Iⱼ for fixed-energy homeomorphism, finite product including dim
 ### Local first-integral graph reduction (2026-10-04)
 
 Actual real pair state, strict Fréchet differentiable first integral at the base and actual derivative y-component L(0,1)≠0. Trajectory reduction assumes the previously defined genuine first-integral property, actual ODE derivatives on a connected open time interval and base inside it. Graph and reduced trajectory formulas are eventual near the base only. No generic global level graph/zero partial inverse or already solved scalar trajectory is assumed. Stronger C1 graph regularity for quadrature is separate.
+
+### Planar nonturning first-integral quadrature (2026-10-04)
+
+Actual first-integral property and actual real-pair ODE on a connected open interval, with trajectory in Q and base inside. J and f are genuinely C1 at the base; derivative ∂yJ≠0 and x-component of f at base≠0. C1-at gives required local regularity, all windows and nonzero speed derived. Inverse/solution formulas are local/eventual, not global; zeros of selected partial or selected component require a different chart or independent stationary/turning-point treatment.

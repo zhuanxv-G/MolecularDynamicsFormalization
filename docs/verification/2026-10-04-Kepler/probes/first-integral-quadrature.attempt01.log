@@ -1,0 +1,55 @@
+docs/verification/2026-10-04-Kepler/probes/FirstIntegralQuadratureProbe.lean:52:33: error(lean.invalidField): Invalid field `continuousAt`: The environment does not contain `HasFDerivAtFilter.continuousAt`, so it is not possible to project the field `continuousAt` from an expression
+  HasFDerivAtFilter.fst (hγ t₀ ht₀)
+of type
+  HasFDerivAtFilter (fun x => (γ x).1)
+    (ContinuousLinearMap.fst ℝ ℝ ℝ ∘SL ContinuousLinearMap.toSpanSingleton ℝ (f (γ t₀))) (𝓝 t₀ ×ˢ pure t₀)
+docs/verification/2026-10-04-Kepler/probes/FirstIntegralQuadratureProbe.lean:31:73: error: unsolved goals
+f : ℝ × ℝ → ℝ × ℝ
+Q : Set (ℝ × ℝ)
+J : ℝ × ℝ → ℝ
+a b t₀ : ℝ
+γ : ℝ → ℝ × ℝ
+hfirst : IsFirstIntegralOn f Q J
+hQ : ∀ t ∈ Ioo a b, γ t ∈ Q
+hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (f (γ t)) t
+ht₀ : t₀ ∈ Ioo a b
+hJ : ContDiffAt ℝ 1 J (γ t₀)
+hf : ContDiffAt ℝ 1 f (γ t₀)
+hpartial : (fderiv ℝ J (γ t₀)) (0, 1) ≠ 0
+hspeed : (f (γ t₀)).1 ≠ 0
+ψ : ℝ → ℝ
+hinit : ψ (γ t₀).1 = (γ t₀).2
+hψ : ContDiffAt ℝ 1 ψ (γ t₀).1
+hgraph : ∀ᶠ (v : ℝ × ℝ) in 𝓝 (γ t₀), J v = J (γ t₀) ↔ ψ v.1 = v.2
+w : ℝ → ℝ := fun x => (f (x, ψ x)).1
+hf' : ContDiffAt ℝ 1 f ((γ t₀).1, ψ (γ t₀).1)
+hw : ContDiffAt ℝ 1 w (γ t₀).1
+hw₀ : w (γ t₀).1 ≠ 0
+hpos : {x | ContinuousAt w x ∧ w x ≠ 0} ∈ 𝓝 (γ t₀).1
+δ : ℝ
+hδ : δ > 0
+hδsub : Metric.ball (γ t₀).1 δ ⊆ {x | ContinuousAt w x ∧ w x ≠ 0}
+hcw : ContinuousOn w (Ioo ((γ t₀).1 - δ) ((γ t₀).1 + δ))
+hnw : ∀ x ∈ Ioo ((γ t₀).1 - δ) ((γ t₀).1 + δ), w x ≠ 0
+hbase : (γ t₀).1 ∈ Ioo ((γ t₀).1 - δ) ((γ t₀).1 + δ)
+⊢ ∃ ψ δ ε,
+    0 < δ ∧
+      0 < ε ∧
+        ψ (γ t₀).1 = (γ t₀).2 ∧
+          ContDiffAt ℝ 1 ψ (γ t₀).1 ∧
+            (∀ᶠ (v : ℝ × ℝ) in 𝓝 (γ t₀), J v = J (γ t₀) ↔ ψ v.1 = v.2) ∧
+              ContinuousOn (fun x => (f (x, ψ x)).1) (Ioo ((γ t₀).1 - δ) ((γ t₀).1 + δ)) ∧
+                (∀ x ∈ Ioo ((γ t₀).1 - δ) ((γ t₀).1 + δ), (f (x, ψ x)).1 ≠ 0) ∧
+                  ∀ t ∈ Ioo (t₀ - ε) (t₀ + ε),
+                    t ∈ Ioo a b ∧
+                      (γ t).1 ∈ Ioo ((γ t₀).1 - δ) ((γ t₀).1 + δ) ∧
+                        (γ t).2 = ψ (γ t).1 ∧ HasDerivAt (fun u => (γ u).1) (f ((γ t).1, ψ (γ t).1)).1 t
+'MolecularDynamics.exists_planarFirstIntegral_C1Graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_planarFirstIntegral_quadratureWindow' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.planarFirstIntegral_nonturning_quadrature' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

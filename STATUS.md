@@ -271,3 +271,8 @@ Kepler/full-check12 passed at12:02:15--12:03:37:8976jobs, Scratch,676 imported p
 - Neighborhood regularity/nonturning scalar quadrature connection and remaining whole book open; final responsible semantic signoff pending, no new remote CI.
 
 Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported project declaration audits, pinned versions/source scan/stable input SHA. Actual first-integral implicit graph and trajectory scalar reduction accepted locally; final signoff pending.
+
+### Genuine planar first-integral local integral solution (2026-10-04)
+
+- Quadrature candidate02 three key proofs passed without warnings and only permitted foundational axioms. True C1 graph/automatic continuous nonzero reduced-speed and time windows/actual two-component inverse integral solution formally integrated; full-check14 starts.
+- General scalar potential Example1.6 including turning/stationary cases, higher-dimensional nonresonance/forward density and whole book remain open; final responsible semantic signoff pending, no new remote CI.

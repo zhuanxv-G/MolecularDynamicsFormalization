@@ -1,0 +1,5 @@
+'MolecularDynamics.exists_planarFirstIntegral_C1Graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_planarFirstIntegral_quadratureWindow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.planarFirstIntegral_nonturning_quadrature' depends on axioms: [propext, Classical.choice, Quot.sound]

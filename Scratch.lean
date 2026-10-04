@@ -289,3 +289,6 @@ end MolecularDynamics
 #print axioms MolecularDynamics.planarScalarPartial_isInvertible
 #print axioms MolecularDynamics.exists_planarFirstIntegral_localGraph
 #print axioms MolecularDynamics.planarFirstIntegral_localGraph_reduction
+#print axioms MolecularDynamics.exists_planarFirstIntegral_C1Graph
+#print axioms MolecularDynamics.exists_planarFirstIntegral_quadratureWindow
+#print axioms MolecularDynamics.planarFirstIntegral_nonturning_quadrature
