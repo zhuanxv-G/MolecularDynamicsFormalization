@@ -88,3 +88,5 @@ import MolecularDynamics.Chapter04.CotangentProjection
 import MolecularDynamics.Chapter04.ConstrainedReaction
 
 import MolecularDynamics.Chapter04.CotangentProjectionRegularity
+
+import MolecularDynamics.Chapter04.ConstrainedGram
