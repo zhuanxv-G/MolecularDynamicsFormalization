@@ -1557,5 +1557,5 @@
 ## 2026-10-04 19:10 +08:00 — 恒系数变分方程与矩阵指数习题完整验收
 
 - `full-check32` 实际运行 19:08:19--19:10:52，退出0。固定 Lean 4.34.0、mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 构建 jobs、零构建警告、Scratch、源码扫描、输入哈希和公理审计均通过；公理日志含 357 项声明，唯一公理集合为 `propext`、`Classical.choice`、`Quot.sound`。报告保存在 `docs/verification/2026-10-04-Kepler/full-check32/`。
-- 本批次已正式接受：`IsConstantVariationalSolution`、恒系数指数流解/初值唯一性，以及矩阵 `exp(0)`、可交换和、负指数、实特征模态四项习题2桥接。当前基线仍为 `e66a43f`，提交尚待执行；负责人最终教材语义签核仍 pending。
+- 本批次已正式接受：`IsConstantVariationalSolution`、恒系数指数流解/初值唯一性，以及矩阵 `exp(0)`、可交换和、负指数、实特征模态四项习题2桥接。随后已提交为 HEAD `6ac0c86`（`Formalize constant variational equation and matrix exercises`）；负责人最终教材语义签核仍 pending。
 - 非线性时间依赖 Jacobian、非线性流初值可微性、Lyapunov 指数极限和习题1、3--5保持未完成；下一批从这些独立目标中选择，不重复本批次。

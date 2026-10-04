@@ -154,8 +154,8 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 
 ## 最新检查点（2026-10-04 19:10 +08:00）
 
-- 当前分支 `chapter01-kinetic-energy-nonneg`，本批次验收前基线 HEAD `e66a43f`；`VariationalEquation.lean`、顶层导入、Scratch、`CheckAxioms`、章节清单、映射/假设/状态文档及验收报告已在工作树，尚未提交。
+- 当前分支 `chapter01-kinetic-energy-nonneg`；本批次已提交为 HEAD `6ac0c86`（`Formalize constant variational equation and matrix exercises`）。提交包含 `VariationalEquation.lean`、顶层导入、Scratch、`CheckAxioms`、章节清单、映射/假设/状态文档及 `full-check32` 报告；其他工作树改动未暂存。
 - `docs/verification/2026-10-04-Kepler/full-check32/CHECK_REPORT.json` 已通过：实际 19:08:19--19:10:52 +08:00，固定 Lean 4.34.0、mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、357 项声明公理审计、Scratch、源码扫描和输入哈希稳定性均通过；所有审计声明只依赖 `propext`、`Classical.choice`、`Quot.sound`。
 - 本批次正式接受恒系数变分方程 `W'=AW` 的指数流存在/唯一性，以及习题2的四项矩阵指数桥接。非线性时间依赖 Jacobian、非线性流对初值的可微性、奇异值/Lyapunov 极限和习题1、3--5仍未声称；负责人最终教材语义签核与全书完成仍 pending。
-- 恢复第一动作：只提交本批次文件与 `full-check32` 报告，随后逐页处理 §1.7 的非线性变分/初值导数或习题1、3--5；不把本批次视为全书完成。
+- 恢复第一动作：从提交 `6ac0c86` 继续逐页处理 §1.7 的非线性变分/初值导数或习题1、3--5；不把本批次视为全书完成。
 
