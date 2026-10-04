@@ -13,6 +13,9 @@ import MolecularDynamicsFormalization
 #check MolecularDynamics.uniformPairPotentialEnergy
 #check MolecularDynamics.uniformPairPotentialEnergy_translate
 #check MolecularDynamics.uniformPairPotentialEnergy_two
+#check MolecularDynamics.nearestNeighborPotentialEnergy
+#check MolecularDynamics.nearestNeighborPotentialEnergy_translate
+#check MolecularDynamics.nearestNeighborPotentialEnergy_two
 #check MolecularDynamics.strictPotentialMin_mechanicalEquilibrium
 #check MolecularDynamics.momentum_norm_sq_le
 #check MolecularDynamics.isCompact_phaseEnergySublevel

@@ -358,3 +358,6 @@ run_cmd do
 #print axioms MolecularDynamics.uniformPairPotentialEnergy
 #print axioms MolecularDynamics.uniformPairPotentialEnergy_translate
 #print axioms MolecularDynamics.uniformPairPotentialEnergy_two
+#print axioms MolecularDynamics.nearestNeighborPotentialEnergy
+#print axioms MolecularDynamics.nearestNeighborPotentialEnergy_translate
+#print axioms MolecularDynamics.nearestNeighborPotentialEnergy_two

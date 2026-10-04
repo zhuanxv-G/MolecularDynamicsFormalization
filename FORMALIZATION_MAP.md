@@ -431,3 +431,7 @@ Defines the exact linearized Hamiltonian quadratic form using the actual inverse
 ### Uniform lattice pair potential (2026-10-04)
 
 Printed33/PDF56: `LatticePairPotential` defines the upper-triangular finite pair sum `∑ i, ∑ j ∈ Ioi i, φ ‖xᵢ-xⱼ‖` for a one-dimensional finite lattice. Translation invariance is proved from the relative-distance expression, and the two-atom case reduces exactly to the single pair term. Nearest-neighbor, boundary, periodic, and vibration claims remain pending.
+
+### Nearest-neighbor lattice chain (2026-10-04)
+
+Printed33/PDF56: `nearestNeighborPotentialEnergy` sums `φ ‖x_(i+1)-x_i‖` over `Fin N` bonds on `Fin (N+1)` sites. Translation invariance and the exact two-site reduction are proved. Boundary, periodic, and vibration dynamics remain pending.

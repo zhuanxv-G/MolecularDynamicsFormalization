@@ -34,4 +34,26 @@ theorem uniformPairPotentialEnergy_two (φ : ℝ → ℝ) (x : Fin 2 → ℝ) :
   rw [Fin.sum_univ_two, h0, h1]
   simp
 
+/-! Nearest-neighbor chain energy on `N + 1` ordered lattice sites. -/
+noncomputable def nearestNeighborPotentialEnergy {N : ℕ}
+    (φ : ℝ → ℝ) (x : Fin (N + 1) → ℝ) : ℝ :=
+  ∑ i : Fin N, φ ‖x i.succ - x i.castSucc‖
+
+theorem nearestNeighborPotentialEnergy_translate {N : ℕ}
+    (φ : ℝ → ℝ) (x : Fin (N + 1) → ℝ) (c : ℝ) :
+    nearestNeighborPotentialEnergy φ (fun i => x i + c) =
+      nearestNeighborPotentialEnergy φ x := by
+  unfold nearestNeighborPotentialEnergy
+  apply Finset.sum_congr rfl
+  intro i hi
+  congr 1
+  congr 1
+  ring
+
+theorem nearestNeighborPotentialEnergy_two (φ : ℝ → ℝ) (x : Fin 2 → ℝ) :
+    nearestNeighborPotentialEnergy φ x = φ ‖x 1 - x 0‖ := by
+  unfold nearestNeighborPotentialEnergy
+  rw [Fin.sum_univ_one]
+  rfl
+
 end MolecularDynamics

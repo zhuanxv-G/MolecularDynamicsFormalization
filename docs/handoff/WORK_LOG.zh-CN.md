@@ -1509,3 +1509,7 @@
 
 - full-check22 实际 13:45:36--13:47:54 退出0，8986 jobs、736 项声明；Scratch、固定 Lean/mathlib、源码扫描、输入 SHA、公理依赖审计均通过，仅允许 `propext`、`Classical.choice`、`Quot.sound`。正式提交 `77f8cff` 保存模块、根导入、Scratch/CheckAxioms、映射/假设/状态与完整报告；未推送。
 - 原页印刷33/PDF56视觉核对对应有限上三角 pair-potential sum。最近邻、边界、周期变体、晶格振动与全书目标仍 pending，负责人最终语义签核 pending。
+
+## 2026-10-04 13:56 +08:00 — 最近邻链势能完整验收
+
+- `nearestNeighborPotentialEnergy` 已加入 `LatticePairPotential`：在 `Fin (N+1)` 站点上按 `Fin N` 键求相邻差的势能和，并证明平移不变性及二站点化简。full-check23 实际 13:52:19--13:55:44 退出0，8986 jobs、739 项声明，Scratch/固定版本/源码扫描/输入 SHA/公理审计均通过，仅允许基础公理。提交尚待保存；最近邻模型的边界、周期、振动动力学仍 pending。
