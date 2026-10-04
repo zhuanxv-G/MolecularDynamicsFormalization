@@ -1,6 +1,6 @@
 ﻿item_id,textbook_label,chapter_section,printed_page,pdf_page_1based,kind,statement_summary_zh,evidence,review_status,model_dependencies,proof_or_external_gap,existing_lean,notes
 CH01-NUM-001,Theorem 1.1,1.5.3,32,55,theorem,严格局部势能极小值对应 Hamiltonian 平衡点的 Lyapunov 稳定性,rendered_pdf_page,original_page_checked,M 正定；U 光滑；局部解与能量屏障,教材仅给证明思路并指向 [216],,只核对定位和概要；公式/量词未必完成逐项语义审阅
-CH02-NUM-001,Theorem 2.1,2.1,56,78,theorem,Euler 方法在有界开域内、解保持域内时的一阶全局误差界,rendered_pdf_page,original_page_checked,f 连续可微；精确解存在且留在域内；固定终时,教材本页无完整证明,,只核对定位和概要；公式/量词未必完成逐项语义审阅
+CH02-NUM-001,Theorem 2.1,2.1,56,78,theorem,Euler 方法在有界开域内、解保持域内时的一阶全局误差界,rendered_pdf_page,local_statement_reviewed_responsible_signoff_pending,f 连续可微；精确解存在且留在域内；固定终时,项目完整证明及固定版本full-check01通过；负责人最终语义签核pending,MolecularDynamics.theorem_2_1_euler,Print56/PDF78 and print66-67/PDF88-89 reviewed. All Euler nodes stay in D and maximum error <= C h are derived from C1 open-domain exact-solution assumptions. 2026-10-04 22:36:28 full-check01 passed.
 CH02-NUM-002,Theorem 2.1,2.5,94,116,reference_only,正文再次引用同编号；此页不是新声明,existing_candidate_table+text_context,reference_only,,,,不计入编号声明数量
 CH03-NUM-001,Theorem 3.1,3.4,114,136,theorem,有限阶修正 Hamiltonian 对数值轨道的能量漂移给出渐近界,rendered_pdf_page,original_page_checked,紧凸域；光滑性；精确及数值轨道留在域内,"教材本页开始证明；参考 [162,164,227]",,只核对定位和概要；公式/量词未必完成逐项语义审阅
 CH04-NUM-001,Lemma 4.1,4.3.4,159,181,lemma,标量 C² 约束 γ(q)=0 和余切条件下，P=p-μ∇γ 保持所列微分 2-形式,rendered_pdf_page,original_page_checked,γ C²；约束流形与余切条件；P 的定义,证明续页待核对,,只核对定位和概要；公式/量词未必完成逐项语义审阅

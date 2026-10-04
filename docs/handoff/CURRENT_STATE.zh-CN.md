@@ -1,5 +1,14 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-04 22:39 +08:00）
+
+- 按用户最新继续授权及 CORE_SCOPE，主线为 notation、正文定理与证明，独立习题停止。实际分支 `chapter01-kinetic-energy-nonneg`，验收前 HEAD `0b9cdd1`。固定 Lean 4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435` 实查一致；恢复窗口的范围改动和历史材料保留。
+- `Chapter02/EulerConvergence.lean` 完整证明印刷56/PDF78 的 `theorem_2_1_euler`：从原 C¹ 开域/精确解条件导出所有节点留域、与步数无关的正统一常数和实际最大误差 `≤ C(τ)h`；包含零终时。没有增加全局 Lipschitz、数值留域或局部误差前提。印刷66--67/PDF88--89 的证明路线也已目视核对。
+- `docs/verification/2026-10-04-Theorem2_1/full-check01/CHECK_REPORT.json` 实际22:30:06--22:36:28退出0：8991 jobs、零构建警告、387项审计声明，Scratch/固定版本/源码扫描/输入SHA/公理审计全部通过，仅 `propext`、`Classical.choice`、`Quot.sound`。数学成果正在保存；负责人最终教材语义签核 pending，主线整体未完成。
+- notation 清单复用30项已有定义/API，新增 Euler `G_h` 对应；不把未映射项或负责人语义签核计为完成。
+- 恢复配置已实读 `CORE_SCOPE_RESUMPTION_20261004.json`：同一 `lean` heartbeat原生更新成功并ACTIVE，未重复配置。原生 Goal 接口仍 paused/旧范围，不能声称已原地修改该元数据；实际工作依用户新的继续授权进行。
+- 下一正文批次：`Chapter02/OneStepConvergence.lean`，落实印刷66--67/PDF88--89 §2.2.3 稳定性/一致性递推及式(2.12)完整估计。只补该正文证明实际依赖，不继续独立习题。恢复先核对Git和最后落盘源码/检查，不重跑未变的本定理验收。
+
 ## 最新数学检查点（2026-10-04 21:13 +08:00）
 
 - 当前分支 `chapter01-kinetic-energy-nonneg`，实际 HEAD 为 `f18c8cc`（数学批次提交为 `556d321`，随后仅更新交接 HEAD）；固定 Lean 4.34.0 与锁定 mathlib `5ed2965256430c3649e86755f9576b54eca72435`。无关工作树材料继续保留，不暂存、不覆盖。

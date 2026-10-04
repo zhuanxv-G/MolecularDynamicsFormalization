@@ -372,3 +372,17 @@ end MolecularDynamics
 #print axioms MolecularDynamics.linearizedHamiltonianQuadratic_eq_textbook_form
 #print axioms MolecularDynamics.linearizedHamiltonianQuadratic_nonneg
 #print axioms MolecularDynamics.linearizedHamiltonianQuadratic_nonneg_of_hessian
+
+-- Theorem 2.1: full C¹ open-domain Euler convergence, not just a scalar recurrence.
+#check MolecularDynamics.eulerStep
+#check MolecularDynamics.eulerIterate
+#check MolecularDynamics.eulerIterate_zero
+#check MolecularDynamics.eulerIterate_succ
+#check MolecularDynamics.eulerIterate_zero_step
+#check MolecularDynamics.eulerMaxError
+#check MolecularDynamics.eulerMaxError_le
+#check MolecularDynamics.eulerStep_norm_sub_le
+#check MolecularDynamics.euler_localDefect_of_derivative_bound
+#check MolecularDynamics.exists_euler_trajectory_bounds
+#check MolecularDynamics.euler_convergence_on_open
+#check MolecularDynamics.theorem_2_1_euler
