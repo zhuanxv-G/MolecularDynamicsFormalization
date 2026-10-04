@@ -1,6 +1,6 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 13:01 +08:00）
+## 当前数学检查点（2026-10-04 13:09 +08:00）
 
 - 同一全书Goal/聊天01a102b1-a3fe-71e1-a571-347703fc09b8实际active，非完成/用户暂停。仅本地GPT-6.1 Sol/High；不使用MathCopilot、不建重复Goal/自动化、不购买/重置/换账户。heartbeat lean保持ACTIVE；最终负责人语义签核pending，无新远端CI。
 - 分支chapter01-kinetic-energy-nonneg，当前HEADb64f14b81587634b461f8a2676d5fbe212b4b348，准备保存已完整验收的LocalContinuousFlow；未推送。固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435。无关AGENTS/FORMALIZATION_PLAN/RESUME/T3/T2-T5材料及CHAPTER01_TASK_OVERVIEW新文件保留。
@@ -8,7 +8,7 @@
 - 后续已本地保存：SeparableQuadrature20576ce+2eaee48；KeplerQuadratureda46d1f；HarmonicActionAnglec15fb5f；ActionAngleChart2e582c5；HarmonicToruse58430c；TorusDensity5a15ff0；TorusPerioded97648；FirstIntegralGraph856165b；FirstIntegralQuadrature6c364f9；ScalarIntegrability7f48c55；ScalarTurning751c666；ScalarLocalIVP6af09fe。所有实际证明/完整检查/原页与公理证据保留。
 - 最近完整检查：Kepler14二维C1图+自动非零窗口+双分量积分逆(8978jobs/682)；15一般C2势能非转向(8979/691)；16实际regular turning速度坐标积分逆+平衡整个Ioo常解(8980/702)；17任意真实初值IVP+energy+全部三分支(8981/708)。均退出0、Scratch/固定版本/扫描/全部公理/输入SHA稳定通过。印刷20/PDF43、28--31/PDF51--54实际视觉核对。
 - 当前EquilibriumLinearization candidate02八关键退出0无警告，仅基础公理；full-check18实际12:42:15--12:43:36退出0，8982jobs/720声明/Scratch/固定版本/扫描/输入SHA稳定。真equilibrium constant iff、真实little-o余项、完整实际扰动ODE、真线性化指数IVP、actual mechanical block derivative/负gradient导数已通过，正在保存。
-- 下一LocalContinuousFlow candidate04三关键退出0无警告，仅基础公理；full-check19实际12:56:20--13:00:00退出0，8983jobs/724声明/Scratch/固定版本/源码扫描/输入SHA稳定均通过。真实C1局部family、joint continuity、统一initial Lipschitz、机械开放域留域IVP已验收，正在保存。下一印刷32/PDF55已实际生成PNG并视觉核对：linearized Hamiltonian二次势能来自真实Hessian；需从C2导数对称性推真实gradient导数对称，再桥接二次能量/线性化block。尚未证明，恢复先读固定SymmetricFDeriv API，不重复已通过Lean。
+- 下一LocalContinuousFlow candidate04三关键退出0无警告，仅基础公理；full-check19实际12:56:20--13:00:00退出0，8983jobs/724声明/Scratch/固定版本/源码扫描/输入SHA稳定均通过。真实C1局部family、joint continuity、统一initial Lipschitz、机械开放域留域IVP已验收，正在保存。HamiltonianHessian candidate01三关键退出0无警告、仅基础公理；full-check20实际13:04:31--13:07:20退出0，8984jobs/727声明/Scratch/固定版本/扫描/输入SHA稳定。印刷32/PDF55实际渲染/视觉核对，真实C2 Hessian对称+保守force block已接入并保存。下一步是质量二次型/正质量桥接或转入尚缺Chapter1 claim；不宣称Hartman--Grobman。
 - 未完成：一般非平衡global拼接/全局初值连续依赖、general EL covariance、Kepler转向/global orbit、forward torus density与高维integer nonresonance、Hartman–Grobman及后续全书。高维两两无理比不足以保证全torus稠密；已证明二维density与三维resonance obstruction，不能泛化。§1.5.1/1.5.2/1.5.3仍partial；不能把一批当全书完成。
 
 ## 启动配置复核（2026-10-04 01:00 +08:00）

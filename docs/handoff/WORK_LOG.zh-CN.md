@@ -1463,3 +1463,13 @@
 
 - full-check19实际12:56:20--13:00:00退出0，8983jobs、Scratch、724项目声明公理审计、固定版本/扫描/输入SHA稳定均通过；三关键仅基础公理。保存正式源码/四次原尝试日志/完整证据，未推送。
 - PDF55原图不存在时已用bundled Poppler本地渲染且实际视觉查看印刷32/PDF55。下一教材真实linearized Hamiltonian Hhat=δpᵀM⁻¹δp/2+δqᵀU′′δq/2，需C2实际Hessian对称与二次energy/linearized block联系。待证明，不能用任意假设B对称冒充实际U Hessian。Hartman--Grobman/全局非线性联合连续和后续全书仍pending，最终签核pending。
+
+## 2026-10-04 13:05 +08:00 — C² Hessian对称与保守线性化力块候选通过
+
+- HamiltonianHessian candidate01三关键退出0、无警告，仅基础公理；真实C2二阶Frechet对称及保守mechanical线性化force block正式接入根/Scratch/CheckAxioms。
+- full-check20开始/正式输入冻结。印刷32/PDF55本地渲染与视觉核对已保存语义复核；坐标矩阵二次型完整等价、正定性、Hartman--Grobman和全书后续仍pending，最终签核pending。
+
+## 2026-10-04 13:09 +08:00 — Hamiltonian Hessian完整验收并保存
+
+- full-check20实际13:04:31--13:07:20退出0，8984jobs、Scratch、727声明公理审计、固定版本/源码扫描/输入SHA稳定均通过；三关键仅基础公理。HamiltonianHessian批次本地保存，未推送。
+- 印刷32/PDF55原页视觉证据和语义复核已保存。C2 Hessian对称与保守线性化force block完成；坐标矩阵二次型完整等价/正定性/Hartman--Grobman尚未完成。全书目标继续，最终签核pending，无新远端CI。

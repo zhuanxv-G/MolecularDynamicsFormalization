@@ -320,3 +320,6 @@ end MolecularDynamics
 #print axioms MolecularDynamics.exists_C1_localContinuousSolutionFamily
 #print axioms MolecularDynamics.exists_localContinuousMechanicalFamily
 #print axioms MolecularDynamics.exists_localContinuousMechanicalFamily_open
+#print axioms MolecularDynamics.potential_hessian_symmetric
+#print axioms MolecularDynamics.potential_hessian_symmetric_apply
+#print axioms MolecularDynamics.conservative_linearization_hessian_data

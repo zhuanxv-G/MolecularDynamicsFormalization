@@ -1,0 +1,3 @@
+'MolecularDynamics.potential_hessian_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.potential_hessian_symmetric_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.conservative_linearization_hessian_data' depends on axioms: [propext, Classical.choice, Quot.sound]
