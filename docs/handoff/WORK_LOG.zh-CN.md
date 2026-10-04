@@ -2186,3 +2186,36 @@
 
 - 唯一session22970/full-check01：2026-10-05T05:31:57.4854524+08:00--2026-10-05T05:33:03.6431671+08:00退出0；9012jobs、零警告、619项审计声明仅基础三公理、95项输入稳定，固定版本/Scratch/扫描/公理全部通过；6项真实Jacobian/散度、连续真实ODE族单射和Hamiltonian可测像/实际Lebesgue集合体积等式，所有输入与原始日志SHA一致。映射/假设/状态/claim001/节/notation同步，负责人语义pending。
 - 验收证据读取器首次误用build.log名称，已改实际lake_build.log实查，未再构建。一般Liouville/弱流构造/全球存在/其他正文与整范围pending；下一真实行列式微分和一般散度零解族体积，先保存本批。
+
+## 2026-10-05 05:40 +0800 — Hamiltonian集合体积保存及一般Liouville接续
+
+- HamiltonianVolume前批保存c3b8f21875d685105b491c0eb29a3e293e907eab，原材料保留、未推送。一般LiouvilleVolume候选已落盘，实际多线性det/真实初值Jacobian变分推出det导数与散度零集合体积，不供应保体积结论。
+- 指定联合C²实际解族条件明确，弱流正则性构造/全球存在、其他正文/整范围和负责人语义pending。原页72/PDF94已目视，下一唯一local-check01，无其他构建。
+
+
+## 2026-10-05 05:42 +0800 — 一般Liouville首轮表达式/API诊断
+
+- local-check01/session10912退出1。真实矩阵行有限和改Finset.sum_apply；多线性真实linearDeriv先重写再exact；实际Jacobian entry用rfl桥接；HasDeriv的区间连续性/CLM id线性映射/C² slice C¹复合接口显式化。未加入逆/det或保体积结论前提。
+- 失败/unusedSimp诊断原日志保留，下一唯一local-check02，不计本批通过，联合C²/弱数据构造与整范围缺口不变。
+
+
+## 2026-10-05 05:44 +0800 — 一般Liouville真实多线性导数桥接
+
+- local-check02/session82920退出1，仅linearDeriv_apply隐式类型rw未匹配，改convert及完整参数实际导数等式；可测像结论省略未用DecidableEq。其余真实初值变分/闭区间det=1/集合体积无诊断。
+- 下一唯一local-check03，本批尚未通过，无重复旧构建，负责人语义/弱流构造与整范围pending。
+
+
+## 2026-10-05 05:46 +0800 — 一般Liouville行列式实际函数等式
+
+- local-check03/session99478退出1，convert的首个目标为实际det函数与多线性det复合的等式，改分支rfl再用真实linearDeriv公式；无其他诊断。下一唯一local-check04，未计通过，弱流正则性构造/全球存在和整体范围pending。
+
+
+## 2026-10-05 05:48 +0800 — 一般Liouville真实集合体积局部通过
+
+- local-check04/session96102退出0、零警告，8项公开声明包含实际任意有限坐标Jacobian、真实多线性矩阵det导数（无需逆/非退化）、实际ODE变分及散度零推出真正det=1/可测像Lebesgue体积。根/Scratch/公理审计已接入，失败日志保留。
+- 启动唯一full-check01，未决前不改核验输入；联合C²模型/弱流构造/全球存在、其他正文与整范围pending，负责人语义pending。
+
+## 2026-10-05 05:53 +0800 — 一般Liouville真实集合体积完整验收及约束原页155
+
+- 唯一session24892/full-check01：2026-10-05T05:48:53.9967372+08:00--2026-10-05T05:50:00.0635697+08:00退出0；9013jobs、零警告、627项审计声明仅基础三公理、96项输入稳定，固定版本/Scratch/扫描/公理全部通过；8项公开声明，所有输入和原始日志SHA实查一致。实际det微分/真实ODE初值变分、一般散度零det=1及真实可测像体积接受；claim001/节/notation/映射/假设/状态同步，负责人语义pending。
+- 较弱C¹流构造/局部域一般性/全球存在/其余正文与整体范围pending。155/PDF177已渲染目视，与154/PDF176完整约束流微分/形式取消证明核对。下一实际C³约束曲率及Gram反力C¹必要依赖，再推进真实约束流形式恒定；先保存本批，不重复旧验收。

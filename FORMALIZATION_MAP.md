@@ -565,3 +565,7 @@ Printed79/PDF101 and154/PDF176: `Chapter02/ActualFlowVariations.lean` defines th
 ## 2026-10-05 actual Hamiltonian Lebesgue set volume
 
 Printed72/PDF94 and78/PDF100: `Chapter02/HamiltonianVolume.lean` derives the actual Jacobian and zero divergence. Actual C1 field regularity on a common compact convex ball for two trajectories and real ODE uniqueness derive injectivity. Explicitly jointly C2 Hamiltonian solution families have measurable images and equal Lebesgue image volume by actual det=1 and the genuine change-of-variables theorem. No injectivity/global inverse/volume premise is supplied. General divergence-free Liouville, weaker flow regularity construction/global existence and responsible semantic signoff remain pending.
+
+## 2026-10-05 actual general divergence-free Liouville volume
+
+Printed72/PDF94: `Chapter02/LiouvilleVolume.lean` derives the actual matrix determinant differential from the genuine continuous multilinear determinant, including singular matrices. The true time ODE for an explicitly jointly C2 family gives its actual initial-Jacobian variational equation. Actual C1-field zero divergence and the initial identity then imply det=1, genuine ODE injectivity and measurable-image Lebesgue volume equality. No Jacobian ODE/determinant/injectivity/volume conclusion is supplied. Construction of weaker C1 initial flow regularity, local-domain generality/all-time existence and responsible semantic signoff remain pending.
