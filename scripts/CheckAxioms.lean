@@ -355,3 +355,6 @@ run_cmd do
 #print axioms MolecularDynamics.linearizedHamiltonianQuadratic_eq_textbook_form
 #print axioms MolecularDynamics.linearizedHamiltonianQuadratic_nonneg
 #print axioms MolecularDynamics.linearizedHamiltonianQuadratic_nonneg_of_hessian
+#print axioms MolecularDynamics.uniformPairPotentialEnergy
+#print axioms MolecularDynamics.uniformPairPotentialEnergy_translate
+#print axioms MolecularDynamics.uniformPairPotentialEnergy_two

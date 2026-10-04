@@ -1496,3 +1496,11 @@
 
 - 本地提交 `03575b3` 保存 LinearizedHamiltonian 源码、full-check21 完整证据、三次原日志与映射/假设/状态文档；未推送。当前工作树仅保留既有无关材料改动和未跟踪文件。
 - 全书 Goal 仍 active；下一步按第1章清单继续，不能将本批当成 Hartman--Grobman或全书完成。
+
+## 2026-10-04 13:27 +08:00 — §1.6 uniform pair potential候选语法修复
+
+- 原页印刷33/PDF56已视觉核对。LatticePairPotential attempt01仅定义的嵌套sum括号语法错误，所有后续sorryAx均为解析恢复产物，不计证明；已修正sum binder，准备attempt02。
+
+## 2026-10-04 13:31 +08:00 — §1.6 pair potential候选局部闭环
+
+- attempt02仍在嵌套 `∑ j in ...` 解析处失败；该失败只影响探针，不计入正式证明。改用显式 `Finset.sum` 后，attempt03解决平移不变性代数目标但二原子有限和仍未化简；attempt04加入 `Fin.sum_univ_two` 与可判定 `Ioi` 等式，三项命题均退出0、无警告、仅基础公理。已生成正式 `LatticePairPotential.lean`，待 full-check22。

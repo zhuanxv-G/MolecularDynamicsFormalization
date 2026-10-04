@@ -234,3 +234,5 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - HamiltonianHessian: real inner-product state position and actual ContDiffAt U 2 at the equilibrium position. Hessian symmetry is derived from fixed mathlib's C2 second-derivative theorem. The mechanical force block uses the actual derivative of gradient U; no claim that it is positive/negative definite, and no nonlinear-to-linear conjugacy.
 
 - LinearizedHamiltonian: strict positive coordinate masses and an explicit nonnegative actual Hessian quadratic form are required for quadratic-energy nonnegativity. The formula itself uses the true `fderiv (gradient U)`; no arbitrary matrix or hidden positivity assumption is substituted.
+
+- LatticePairPotential: finite index type `Fin N` and an arbitrary real pair potential `φ`; the uniform energy is the upper-triangular unordered-pair sum, so each pair is counted once. Translation invariance uses only algebra of differences. The two-atom reduction is exact. No nearest-neighbor, boundary-condition, periodic-lattice, stability, or lattice-vibration claim is inferred.

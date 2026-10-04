@@ -427,3 +427,7 @@ For every C2 real potential, the actual second Frechet derivative is symmetric. 
 ### LinearizedHamiltonian — displayed quadratic energy
 
 Defines the exact linearized Hamiltonian quadratic form using the actual inverse-mass kinetic energy and `D(gradient U)(q*)`, proves the displayed text expansion by rfl, and proves nonnegativity under explicit positive-mass and Hessian quadratic-form hypotheses. It does not infer Hessian positivity from a minimum or claim Hartman–Grobman.
+
+### Uniform lattice pair potential (2026-10-04)
+
+Printed33/PDF56: `LatticePairPotential` defines the upper-triangular finite pair sum `∑ i, ∑ j ∈ Ioi i, φ ‖xᵢ-xⱼ‖` for a one-dimensional finite lattice. Translation invariance is proved from the relative-distance expression, and the two-atom case reduces exactly to the single pair term. Nearest-neighbor, boundary, periodic, and vibration claims remain pending.
