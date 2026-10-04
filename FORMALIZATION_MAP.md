@@ -411,3 +411,7 @@ True coordinate swap derives C1 field/energy, first integral and energy position
 ### ScalarLocalIVP — genuine arbitrary-data local integrability
 
 C1 derived field gives an actual local IVP for every real initial position/velocity and initial time. Actual energy constancy and exhaustive disjoint alternatives follow: nonzero velocity gives position quadrature; zero velocity/nonzero U′ gives velocity quadrature; both zero give whole-interval stationarity. Each quadrature predicate stores actual two coordinates, strict inverse derivative, both inverse identities and integral-time identity. Local original statement only, not nonstationary global existence.
+
+### EquilibriumLinearization — printed31/PDF54, actual first-order linearization
+
+Constant trajectory true ODE iff f(z*)=0; actual Frechet derivative gives R(h)=f(z*+h)-Ah=o(h). C1 implies actual A=fderiv; nonlinear perturbation satisfies exactly δ′=Aδ+Rδ. Genuine linearized IVP δ′=Aδ is provided by accepted operator exponential. Mechanical field actual block derivative is (dq,dp)↦(M⁻¹dp,DFdq); conservative C2 potential gives DF=-D(gradient U). No Hartman–Grobman conjugacy claimed.

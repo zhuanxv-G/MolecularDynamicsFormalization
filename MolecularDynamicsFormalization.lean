@@ -53,3 +53,4 @@ import MolecularDynamics.Chapter01.FirstIntegralQuadrature
 import MolecularDynamics.Chapter01.ScalarIntegrability
 import MolecularDynamics.Chapter01.ScalarTurning
 import MolecularDynamics.Chapter01.ScalarLocalIVP
+import MolecularDynamics.Chapter01.EquilibriumLinearization

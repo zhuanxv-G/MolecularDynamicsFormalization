@@ -1,0 +1,20 @@
+docs/verification/2026-10-04-Kepler/probes/EquilibriumLinearizationProbe.lean:29:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  @IsLittleO E E E inst✝¹.toNorm inst✝¹.toNorm (𝓝 0) (fun h => f (z₀ + h) - A h) fun h => h
+but is expected to have type
+  @IsLittleO E E E inst✝¹.toNorm inst✝¹.toNorm (𝓝 0) (equilibriumLinearizationRemainder f z₀ A) fun h => h
+'MolecularDynamics.equilibrium_constant_ode_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.equilibriumLinearizationRemainder_isLittleO' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.equilibriumLinearizationRemainder_of_C1' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.actual_perturbation_ode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.equilibrium_linearized_IVP' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.mechanicalLinearization_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.hasFDerivAt_mechanicalVectorField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.conservative_mechanical_linearization' depends on axioms: [propext, Classical.choice, Quot.sound]

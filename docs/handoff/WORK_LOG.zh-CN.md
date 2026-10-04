@@ -1419,3 +1419,18 @@
 
 - full-check17实际12:36:50--12:38:11退出0，8981jobs、Scratch、708声明公理审计、固定版本/扫描/输入SHA稳定均通过；三关键仅基础公理。准备本地保存明确源码/candidate原日志/完整证据，未推送。
 - 印刷31/PDF54再次视觉核对。EquilibriumLinearizationProbe已落盘，attempt01单一开始：常轨迹ODEiff平衡、真实little-o余项、完整扰动ODE=Aδ+Rδ、真正指数线性化IVP、实际mechanical block derivative与保守场负gradient导数。不会把非线性轨迹冒充线性化解；Hartman--Grobman未计完成。最终签核pending，全书持续。
+
+## 2026-10-04 12:41 +08:00 — 真实线性化首轮余项函数展开修复
+
+- attempt01真平衡常轨迹iff、完整actual perturbation ODE、真实机械block derivative/负gradient导数均通过。余项little-o仅函数作为参数时simp未展开R的eta函数；改change实际lambda后只化简f(z*)=0。下一attempt02；失败恢复sorryAx不计完成，原日志保留。
+
+## 2026-10-04 12:43 +08:00 — 真实线性化余项/指数IVP/block导数候选通过
+
+- EquilibriumLinearization candidate02八关键退出0、无警告、仅基础公理，实际余项o(h)、完整真实扰动ODE、独立真正线性化指数IVP与机械block导数正式接入根/Scratch/CheckAxioms。
+- full-check18开始、正式输入冻结。下一C1真实局部flow family joint continuity/initial dependence：固定PicardLindelof已含定量初值Lipschitz，准备API依赖；尚未证明。不计Hartman–Grobman完成，最终签核pending，无新远端CI，全书持续。
+
+## 2026-10-04 12:45 +08:00 — 真实线性化完整验收，接局部初值连续依赖
+
+- full-check18实际12:42:15--12:43:36退出0，8982jobs、Scratch、720声明审计、固定版本/扫描/输入SHA稳定均通过；八关键仅基础公理。本地保存明确源码/两次尝试原日志/完整证据，未推送。
+- 已复看印刷26/PDF49 flow map原页。LocalContinuousFlowProbe已落盘，单一attempt01准备：同一C1局部family actual IVP、joint continuous与统一initial Lipschitz，由固定PicardLindelof真实条件导出，再桥接mechanical field。尚未完成；未把local依赖泛称全局连续flow；最终签核pending，全书继续。
+- CSTATE顶部压缩为最新可操作检查点，保留其下启动/其他聊天历史；完整数学历史在WORK_LOG/证据和Git。

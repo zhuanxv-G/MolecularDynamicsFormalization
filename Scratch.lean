@@ -309,3 +309,11 @@ end MolecularDynamics
 #print axioms MolecularDynamics.scalarPotential_localDescription
 #print axioms MolecularDynamics.scalarPotential_exists_localIVP
 #print axioms MolecularDynamics.scalarPotential_exists_localIVP_integrable
+#print axioms MolecularDynamics.equilibrium_constant_ode_iff
+#print axioms MolecularDynamics.equilibriumLinearizationRemainder_isLittleO
+#print axioms MolecularDynamics.equilibriumLinearizationRemainder_of_C1
+#print axioms MolecularDynamics.actual_perturbation_ode
+#print axioms MolecularDynamics.equilibrium_linearized_IVP
+#print axioms MolecularDynamics.mechanicalLinearization_apply
+#print axioms MolecularDynamics.hasFDerivAt_mechanicalVectorField
+#print axioms MolecularDynamics.conservative_mechanical_linearization
