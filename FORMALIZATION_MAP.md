@@ -430,11 +430,11 @@ Defines the exact linearized Hamiltonian quadratic form using the actual inverse
 
 ### Uniform lattice pair potential (2026-10-04)
 
-Printed33/PDF56: `LatticePairPotential` defines the upper-triangular finite pair sum `∑ i, ∑ j ∈ Ioi i, φ ‖xᵢ-xⱼ‖` for a one-dimensional finite lattice. Translation invariance is proved from the relative-distance expression, and the two-atom case reduces exactly to the single pair term. Nearest-neighbor, boundary, periodic, and vibration claims remain pending.
+Printed33/PDF56: `LatticePairPotential` defines the upper-triangular finite pair sum `∑ i, ∑ j ∈ Ioi i, φ ‖xᵢ-xⱼ‖` for a one-dimensional finite lattice. Translation invariance is proved from the relative-distance expression, and the two-atom case reduces exactly to the single pair term.
 
 ### Nearest-neighbor lattice chain (2026-10-04)
 
-Printed33/PDF56: `nearestNeighborPotentialEnergy` sums `φ ‖x_(i+1)-x_i‖` over `Fin N` bonds on `Fin (N+1)` sites. Translation invariance and the exact two-site reduction are proved. Boundary, periodic, and vibration dynamics remain pending.
+Printed33/PDF56: `nearestNeighborPotentialEnergy` sums `φ ‖x_(i+1)-x_i‖` over `Fin N` bonds on `Fin (N+1)` sites. Translation invariance and the exact two-site reduction are proved.
 
 ### Lattice-vibration gradient linearization (2026-10-04)
 
@@ -446,4 +446,12 @@ Printed37/PDF60: under an explicit positive-definite Hessian quadratic-form hypo
 
 ### Periodic nearest-neighbor lattice (2026-10-04)
 
-Printed33/PDF56: `periodicNearestNeighborPotentialEnergy` uses a nonempty cyclic index `ZMod N` and sums the bond `i → i+1`, including the wrap-around bond. Global translation invariance is proved. Periodic Hessian/spectrum and dynamical claims remain pending.
+Printed33/PDF56: `periodicNearestNeighborPotentialEnergy` uses a nonempty cyclic index `ZMod N` and sums the bond `i → i+1`, including the wrap-around bond. Global translation invariance is proved. It is an abstract cyclic helper without the physical box length.
+
+### Actual walled and box-periodic energies (2026-10-04)
+
+Printed33/PDF56: after visual recheck, the finite chain records the end-wall energy (1.7) and the box-periodic seam term `φ ‖L+x₁-x_N‖` in (1.8). The earlier `ZMod` definition is retained explicitly as an abstract cyclic helper and is not identified with (1.8). Translation invariance is proved for the box-periodic expression. Force derivatives, boundary dynamics, and periodic spectra remain pending.
+
+### Real normal modes (2026-10-04)
+
+Printed37/PDF60: `NormalModes` defines the real sine/cosine mode expression, proves its derivative from a supplied pair of generalized eigenvectors `A u = -Ω v`, `A v = Ω u`, and identifies it with the actual exponential linear flow. A mechanical pair bridge uses positive masses and an explicit stiffness relation `K q = Ω² M q`. Pure-imaginary spectral classification and completeness of the mode basis remain pending.

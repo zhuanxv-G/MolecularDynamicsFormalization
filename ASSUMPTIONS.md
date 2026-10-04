@@ -244,3 +244,7 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - The positive-Hessian bridge assumes strict positivity of the actual quadratic form on every nonzero displacement. It derives only nonnegativity, with the kinetic block separately requiring strictly positive masses. Spectral classification and derivation of positive definiteness from a strict minimum remain unproved.
 
 - The periodic nearest-neighbor definition requires `[NeZero N]` so `ZMod N` has a finite index set. The wrap-around bond is represented by modular addition. Only the energy formula and translation invariance are formalized; no periodic force, spectrum, or stability conclusion is inferred.
+
+- The actual box-periodic formula includes a real box length `L` and seam displacement `L + x 0 - x (last N)`; it is distinct from the abstract `ZMod` cyclic helper. The walled formula includes endpoint confinement potentials. No physical ordering, collision avoidance, force derivative, or periodic spectrum is assumed.
+
+- NormalModes takes the generalized eigenpair relations as hypotheses and derives the real mode solution; it does not assert that every positive Hessian supplies a complete eigenbasis or derive the pure-imaginary spectrum. The mechanical bridge uses positive coordinate masses and the explicit mass/stiffness relation.
