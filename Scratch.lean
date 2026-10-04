@@ -504,3 +504,11 @@ end MolecularDynamics
 #check MolecularDynamics.textbookAdjointSymplecticEuler_position
 #check MolecularDynamics.textbookAdjointSymplecticEuler_momentum
 #check MolecularDynamics.textbookAdjointSymplecticEuler_isSymplectic
+
+-- Section 2.4.1: actual local flows and Hamiltonian splitting error.
+#check MolecularDynamics.exists_splitting_localError_bound
+#check MolecularDynamics.exists_flow_splitting_localError_bound
+#check MolecularDynamics.textbookHamiltonianVectorField
+#check MolecularDynamics.contDiffOn_textbookHamiltonianVectorField
+#check MolecularDynamics.textbookHamiltonianVectorField_add
+#check MolecularDynamics.exists_hamiltonian_splitting_localError_bound

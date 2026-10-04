@@ -530,3 +530,11 @@ run_cmd do
 #print axioms MolecularDynamics.textbookAdjointSymplecticEuler_position
 #print axioms MolecularDynamics.textbookAdjointSymplecticEuler_momentum
 #print axioms MolecularDynamics.textbookAdjointSymplecticEuler_isSymplectic
+
+-- Section 2.4.1: actual local flows and Hamiltonian splitting error.
+#print axioms MolecularDynamics.exists_splitting_localError_bound
+#print axioms MolecularDynamics.exists_flow_splitting_localError_bound
+#print axioms MolecularDynamics.textbookHamiltonianVectorField
+#print axioms MolecularDynamics.contDiffOn_textbookHamiltonianVectorField
+#print axioms MolecularDynamics.textbookHamiltonianVectorField_add
+#print axioms MolecularDynamics.exists_hamiltonian_splitting_localError_bound
