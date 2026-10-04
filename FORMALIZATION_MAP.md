@@ -455,3 +455,7 @@ Printed33/PDF56: after visual recheck, the finite chain records the end-wall ene
 ### Real normal modes (2026-10-04)
 
 Printed37/PDF60: `NormalModes` defines the real sine/cosine mode expression, proves its derivative from a supplied pair of generalized eigenvectors `A u = -Ω v`, `A v = Ω u`, and identifies it with the actual exponential linear flow. A mechanical pair bridge uses positive masses and an explicit stiffness relation `K q = Ω² M q`. Pure-imaginary spectral classification and completeness of the mode basis remain pending.
+
+### Constant-coefficient variational equation and matrix-exponential exercises (2026-10-04)
+
+Printed44--47/PDF67--70: `VariationalEquation` records the exact constant-coefficient specialization of (1.10), `W' = A W`, with an exponential-flow solution and uniqueness from the initial perturbation. It also verifies the exercise-2 identities `exp(0)=1`, `exp(A+B)=exp(A)exp(B)` for commuting matrices, `exp(-A)=(exp A)⁻¹`, and the real matrix-eigenmode formula. The time-dependent Jacobian `f'(z(t))`, nonlinear flow derivative with respect to initial data, singular-value growth, Lyapunov-exponent limits, and the remaining exercises remain pending.

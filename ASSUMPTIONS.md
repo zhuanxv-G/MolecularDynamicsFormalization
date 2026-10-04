@@ -248,3 +248,5 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - The actual box-periodic formula includes a real box length `L` and seam displacement `L + x 0 - x (last N)`; it is distinct from the abstract `ZMod` cyclic helper. The walled formula includes endpoint confinement potentials. No physical ordering, collision avoidance, force derivative, or periodic spectrum is assumed.
 
 - NormalModes takes the generalized eigenpair relations as hypotheses and derives the real mode solution; it does not assert that every positive Hessian supplies a complete eigenbasis or derive the pure-imaginary spectrum. The mechanical bridge uses positive coordinate masses and the explicit mass/stiffness relation.
+
+- VariationalEquation formalizes only the constant-coefficient variational system `W' = A W` on a complete real normed space. It does not identify `A` with a time-dependent Jacobian along a nonlinear trajectory, prove differentiability of a nonlinear flow with respect to initial data, or define/compute Lyapunov exponents. The matrix-exponential exercise lemmas use the fixed mathlib matrix exponential and state the commuting hypothesis explicitly.

@@ -146,3 +146,16 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 - `full-check31` 通过（16:25:43--16:26:32 +08:00）：固定 Lean 4.34.0、锁定 mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8988 jobs、350 项声明公理审计、零构建警告；新增声明只依赖 `propext`、`Classical.choice`、`Quot.sound`。full-check28/29 的 elan 联网失败报告保留，full-check30 作为无警告中间通过证据保留。
 - 未完成：纯虚谱分类、完整 normal-mode 基、周期/边界力导数与动力学、§1.6 后续教材内容、第一章其余章节和全书目标；负责人最终教材语义签核仍 pending。下一恢复动作是从本检查点继续逐页核对并选择下一个独立可验收的小批次。
 
+## 正在推进（2026-10-04 18:58 +08:00）
+
+- 当前分支 `chapter01-kinetic-energy-nonneg`，基线 HEAD `e66a43f`；新文件 `MolecularDynamics/Chapter01/VariationalEquation.lean` 已完成单文件固定 Lean 编译，尚未完成整库验收或提交。
+- 原页印刷38--47/PDF61--70 已视觉核对。当前批次覆盖印刷44/PDF67 的恒系数变分方程 `W'=AW`、指数流存在/唯一性，以及习题2的 `exp(0)`、可交换和、负指数和实矩阵特征模态公式。
+- 下一动作：用固定工具链运行唯一 full-check 目录；若通过，提交源码、顶层导入、Scratch/公理审计、章节清单和映射文档，再从非线性时间依赖 Jacobian 与 Lyapunov 量的严格定义继续。
+
+## 最新检查点（2026-10-04 19:10 +08:00）
+
+- 当前分支 `chapter01-kinetic-energy-nonneg`，本批次验收前基线 HEAD `e66a43f`；`VariationalEquation.lean`、顶层导入、Scratch、`CheckAxioms`、章节清单、映射/假设/状态文档及验收报告已在工作树，尚未提交。
+- `docs/verification/2026-10-04-Kepler/full-check32/CHECK_REPORT.json` 已通过：实际 19:08:19--19:10:52 +08:00，固定 Lean 4.34.0、mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、357 项声明公理审计、Scratch、源码扫描和输入哈希稳定性均通过；所有审计声明只依赖 `propext`、`Classical.choice`、`Quot.sound`。
+- 本批次正式接受恒系数变分方程 `W'=AW` 的指数流存在/唯一性，以及习题2的四项矩阵指数桥接。非线性时间依赖 Jacobian、非线性流对初值的可微性、奇异值/Lyapunov 极限和习题1、3--5仍未声称；负责人最终教材语义签核与全书完成仍 pending。
+- 恢复第一动作：只提交本批次文件与 `full-check32` 报告，随后逐页处理 §1.7 的非线性变分/初值导数或习题1、3--5；不把本批次视为全书完成。
+

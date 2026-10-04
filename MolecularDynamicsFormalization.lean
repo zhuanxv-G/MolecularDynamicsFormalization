@@ -60,3 +60,4 @@ import MolecularDynamics.Chapter01.LinearizedHamiltonian
 import MolecularDynamics.Chapter01.LatticePairPotential
 import MolecularDynamics.Chapter01.LatticeVibrations
 import MolecularDynamics.Chapter01.NormalModes
+import MolecularDynamics.Chapter01.VariationalEquation

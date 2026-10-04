@@ -376,3 +376,10 @@ run_cmd do
 #print axioms MolecularDynamics.realNormalMode_eq_linearExponentialFlow
 #print axioms MolecularDynamics.mechanicalNormalMode_pair
 #print axioms MolecularDynamics.hasDerivAt_mechanicalNormalMode
+#print axioms MolecularDynamics.IsConstantVariationalSolution
+#print axioms MolecularDynamics.linearExponentialFlow_isConstantVariationalSolution
+#print axioms MolecularDynamics.constantVariationalSolution_unique
+#print axioms MolecularDynamics.matrixExponential_zero
+#print axioms MolecularDynamics.matrixExponential_add_of_commute
+#print axioms MolecularDynamics.matrixExponential_neg
+#print axioms MolecularDynamics.matrixExponentialFlow_realEigenmode
