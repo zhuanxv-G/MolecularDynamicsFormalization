@@ -1594,4 +1594,4 @@
 
 - 原页印刷47/PDF70 已视觉核对。新增 `TwoBodyCoordinates.lean`：等质量平面二体的 `q_cm=(q₁+q₂)/2`、`Δ=q₂-q₁` 及速度定义；证明物理坐标重构、中心/相对坐标双向 round-trip，以及等质量动能分解。该批次只覆盖习题3(b)的线性代数与动能部分，不扩张到径向势、二体运动方程或习题3(c)。
 - 固定 Lean 4.34.0 下模块编译、`lake build MolecularDynamicsFormalization`、Scratch、`scripts/CheckAxioms.lean` 和 `full-check36` 均退出0；full-check36 实际 21:20:01--21:21:04 +08:00，8990 jobs、零构建警告、373 项声明，固定 mathlib `5ed2965256430c3649e86755f9576b54eca72435`，唯一公理集合仍为 `propext`、`Classical.choice`、`Quot.sound`。报告在 `docs/verification/2026-10-04-Kepler/full-check36/`。
-- 习题3(b)批次已达到机器验收门槛，当前源码尚未提交；下一动作是只提交本批次文件及报告 JSON，并随后从新 HEAD 继续习题3(c)、4--5或非线性变分/Jacobian。负责人教材语义签核和全书目标仍 pending。
+- 习题3(b)批次已达到机器验收门槛并提交为 `556d321`；下一动作是从该 HEAD 继续习题3(c)、4--5或非线性变分/Jacobian。负责人教材语义签核和全书目标仍 pending。
