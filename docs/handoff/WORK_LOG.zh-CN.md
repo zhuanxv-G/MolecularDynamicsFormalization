@@ -1504,3 +1504,8 @@
 ## 2026-10-04 13:31 +08:00 — §1.6 pair potential候选局部闭环
 
 - attempt02仍在嵌套 `∑ j in ...` 解析处失败；该失败只影响探针，不计入正式证明。改用显式 `Finset.sum` 后，attempt03解决平移不变性代数目标但二原子有限和仍未化简；attempt04加入 `Fin.sum_univ_two` 与可判定 `Ioi` 等式，三项命题均退出0、无警告、仅基础公理。已生成正式 `LatticePairPotential.lean`，待 full-check22。
+
+## 2026-10-04 13:48 +08:00 — LatticePairPotential 完整验收并保存
+
+- full-check22 实际 13:45:36--13:47:54 退出0，8986 jobs、736 项声明；Scratch、固定 Lean/mathlib、源码扫描、输入 SHA、公理依赖审计均通过，仅允许 `propext`、`Classical.choice`、`Quot.sound`。正式提交 `77f8cff` 保存模块、根导入、Scratch/CheckAxioms、映射/假设/状态与完整报告；未推送。
+- 原页印刷33/PDF56视觉核对对应有限上三角 pair-potential sum。最近邻、边界、周期变体、晶格振动与全书目标仍 pending，负责人最终语义签核 pending。
