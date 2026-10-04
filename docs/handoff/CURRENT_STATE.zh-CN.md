@@ -168,6 +168,6 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 ## 最新检查点（2026-10-04 19:55 +08:00）
 
 - `full-check33` 已通过（19:51:30--19:54:12 +08:00）：固定 Lean 4.34.0、mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、358 项声明公理审计、Scratch、源码扫描和输入哈希稳定性均通过；公理集合仍只有 `propext`、`Classical.choice`、`Quot.sound`。报告在 `docs/verification/2026-10-04-Kepler/full-check33/`。
-- 习题1(a) 的 `matrixExponentialFlow_diagonal` 已正式接受；候选源码、Scratch、`CheckAxioms`、章节清单、映射/假设/状态文档和报告准备提交。当前数学基线 HEAD 为 `40d55ee`，Goal 仍 active。
+- 习题1(a) 的 `matrixExponentialFlow_diagonal` 已正式接受，并已提交为 `bc2d144`（`Formalize diagonal matrix exponential exercise`）；当前 HEAD 为 `bc2d144`，Goal 仍 active。
 - 下一步保持逐页范围：习题1(b)--1(c) 的上三角/一般相似变换、习题3--5，或非线性时间依赖 Jacobian；不把对角特例扩大解释成一般对角化，也不把本批视为全书完成。
 

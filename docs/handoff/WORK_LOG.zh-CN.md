@@ -1568,4 +1568,4 @@
 ## 2026-10-04 19:55 +08:00 — 习题1(a) 对角矩阵指数完整验收
 
 - `full-check33` 实际运行 19:51:30--19:54:12，退出0：固定 Lean 4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、Scratch、源码扫描、输入哈希和公理审计通过；公理日志含 358 项声明，唯一公理集合为 `propext`、`Classical.choice`、`Quot.sound`。报告保存在 `docs/verification/2026-10-04-Kepler/full-check33/`。
-- `matrixExponentialFlow_diagonal` 已正式接受，给出有限实对角矩阵指数流的逐分量公式。当前 HEAD `40d55ee`，本批次文档与源码提交尚待执行；习题1(b)--1(c)、3--5及非线性变分/Lyapunov 仍 pending。
+- `matrixExponentialFlow_diagonal` 已正式接受，给出有限实对角矩阵指数流的逐分量公式；随后已提交为 HEAD `bc2d144`（`Formalize diagonal matrix exponential exercise`）。习题1(b)--1(c)、3--5及非线性变分/Lyapunov 仍 pending。
