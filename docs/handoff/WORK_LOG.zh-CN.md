@@ -1578,4 +1578,4 @@
 ## 2026-10-04 20:05 +08:00 — 习题1(c) 相似变换完整验收
 
 - `full-check34` 实际运行 20:02:37--20:03:56，退出0：固定 Lean 4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、Scratch、源码扫描、输入哈希和公理审计通过；公理日志含 359 项声明，唯一公理集合为 `propext`、`Classical.choice`、`Quot.sound`。报告保存在 `docs/verification/2026-10-04-Kepler/full-check34/`。
-- `matrixExponential_conjugate` 已正式接受，在 `IsUnit X` 下证明矩阵指数的相似变换恒等式。当前 HEAD `e20683f`，本批次文档与源码提交尚待执行；习题1(b)、3--5及非线性变分/Lyapunov 仍 pending。
+- `matrixExponential_conjugate` 已正式接受，在 `IsUnit X` 下证明矩阵指数的相似变换恒等式；随后已提交为 HEAD `46565bf`（`Formalize matrix exponential similarity exercise`）。习题1(b)、3--5及非线性变分/Lyapunov 仍 pending。
