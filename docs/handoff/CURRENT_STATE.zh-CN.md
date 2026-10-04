@@ -1,8 +1,29 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 06:45 +0800）
+
+- 本批前HEAD613759a627c65a29813c6d24ecc354b680029aee，固定版本/分支未改；WienerQuadraticVariation完整接受，待本地保存，原材料保留、未推送。
+- 唯一session26922/full-check01：2026-10-05T06:42:20.0423835+08:00--2026-10-05T06:43:27.9418150+08:00退出0；9016jobs、零警告、650项审计声明仅基础三公理、99项输入稳定，固定版本/Scratch/扫描/公理全部通过；13项新公共声明同批接受，99项核验输入和全部原始日志SHA一致。实际Gaussian mgf/有限维Brownian law与真实独立增量推导方差/MSE2T²/K及K趋于无穷均方极限。229--230/PDF250--251已目视，负责人语义pending。
+- 原交叉项负号/末行K趋于0笔误已登记；不需连续样本路径。其他正文、真实Ito积分构造/高阶匹配/数值初始非线性分支和整个CORE_SCOPE仍pending，不能计全书完成。
+- 下一Proposition6.3（231/PDF252已目视）：真实确定性加权Wiener有限和Gaussian law/真实L²等距及均方积分极限构造，只补正文所需依赖；固定mathlib尚无现成Itô积分。先保存本批，再实际高斯过程线性组合和积分极限接口，不把Gaussian或均方误差作为结论前提。无其他构建。
+
+## 最新数学检查点（2026-10-05 06:42 +0800）
+
+- HEAD613759a627c65a29813c6d24ecc354b680029aee，固定Lean4.34.0/mathlib未改，其他恢复/范围材料保留。
+- Proposition6.2候选local-check06/session71703退出0、零警告，13项真实Gaussian二/四阶矩/平方L²/方差、实际Wiener时间/增量/平方和、真实独立性/期望/方差/MSE与最终均方极限通过局部检查。原229--230/PDF250--251已目视；真实有限维Gaussian laws只供过程模型，不供矩/交叉取消/误差结论。
+- 已接根/Scratch/公理审计，下一启动唯一full-check01，同批未决前不改核验输入，无其他构建。实际均方误差2T²/K从Brownian law证明，K=0仅不参与最终eventually-positive极限；T=0允许。
+- 原文交叉项负号及末行K趋于0明确笔误已登记；负责人语义、Proposition6.3真实确定性Ito积分构造、其他正文/高阶匹配/数值非线性分支与整个CORE_SCOPE仍pending。
+
+## 最新数学检查点（2026-10-05 06:27 +0800）
+
+- HEAD613759a627c65a29813c6d24ecc354b680029aee，固定Lean4.34.0/mathlib未改，前批637声明完整验收通过；既有材料与未提交恢复/范围变更全部保留，无其他构建。
+- 进行中：Proposition6.2（印刷229--230/PDF250--251）真实Wiener过程平方增量和均方极限。两原页已渲染并目视；真实IsPreBrownianReal提供有限维Gaussian law和独立增量，第四矩必须从真实Gaussian mgf求导，不能作为误差假设。
+- 原页笔误单独记录：229的交叉项符号印为负（真实平方展开是正，零交叉期望不影响最后结果）；230末行nu趋于0应为nu趋于无穷。Lean按命题量词与实际2T²/K证明。
+- 下一在Chapter06/WienerQuadraticVariation.lean建立真实Gaussian二/四阶矩、实际均匀时间增量、由真正独立性推出平方和方差/均方误差2T²/K和极限；local-check01/session97138与02/session16756退出1接口诊断已落盘并修复；最终均方候选已加入，local-check03/session17176、04/session42689的有限和/coercion诊断已修复，下一唯一local-check05，未计通过。负责人语义、较弱流构造/数值非线性分支/高阶匹配与整个CORE_SCOPE仍pending。
+
 ## 最新数学检查点（2026-10-05 06:20 +0800）
 
-- 本批前HEAD1d56f8681ca227b0327113db041283b30b8f4f9b，固定版本/分支未改；ConstrainedFlowSymplectic与ConstrainedReactionRegularity同批完整接受，待本地保存，原材料保留、未推送。
+- 本批前HEAD1d56f8681ca227b0327113db041283b30b8f4f9b，固定版本/分支未改；ConstrainedFlowSymplectic与ConstrainedReactionRegularity同批完整接受并保存为613759a627c65a29813c6d24ecc354b680029aee，原材料保留、未推送。
 - 唯一session63035/full-check01：2026-10-05T06:15:34.5331632+08:00--2026-10-05T06:16:39.9062715+08:00退出0；9015jobs、零警告、637项审计声明仅基础三公理、98项输入稳定，固定版本/Scratch/扫描/公理全部通过；10项新公共声明，所有输入及原始日志SHA实查一致，实际C³曲率/真实Gram反力/真实场C¹、真实初始约束与时间ODE/混合导数推出闭区间标准受限形式恒定、正质量与实际梯度独立消去Gram逆数据均接受。153--155/PDF175--177已目视，负责人语义pending。
 - 结论为真实初始参数图上的拉回，未冒称所有ambient方向/全球流或较弱流正则性已构造。初始数值非线性分支/Theorem3.1高阶匹配、其余正文及整CORE_SCOPE仍pending。
 - 下一正文Proposition6.2（印刷229--230/PDF250--251）：从真实Wiener有限维Gaussian law和独立增量推出均匀划分平方增量和的实际均方误差2T²/K，再证明K→∞的均方收敛；只补真实概率/增量/期望必要依赖，不供应误差/协方差取消结论。固定mathlib存在IsPreBrownianReal与Gaussian law API，先补原页目视及读实际接口。现无其他构建。

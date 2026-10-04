@@ -2272,3 +2272,43 @@
 
 - 唯一session63035/full-check01：2026-10-05T06:15:34.5331632+08:00--2026-10-05T06:16:39.9062715+08:00退出0；9015jobs、零警告、637项审计声明仅基础三公理、98项输入稳定，固定版本/Scratch/扫描/公理全部通过；10项新公共声明同批接受，输入及原始日志SHA一致。原153--155/PDF175--177目视；真实反力C¹/实际场/初始约束→真实ODE保持/真实变分→受限辛形式恒定及物理非退化实例已完整证明。claim007008/节/notation/映射/假设/状态同步，负责人语义pending。
 - 指定联合C²实际参数解族/C³约束为明确模型，全球解/弱流构造/约束图存在未计完成；数值初始非线性分支/高阶匹配、其他正文与整范围pending。下一原Proposition6.2，真实Brownian Gaussian-law/独立增量与第四矩导出2T²/K均方收敛，原页先目视、实际API只本地读取；先保存本批。
+
+## 2026-10-05 06:27 +0800 — Proposition6.2真实Brownian均方极限接续开始
+
+- 前批已本地保存613759a；本次无重复构建、无MathCopilot。原229--230/PDF250--251完成渲染目视，实际目标为真实平方增量和误差2T²/K与K趋于无穷均方收敛。
+- 真实preBrownian Gaussian law/独立增量API可用；固定mathlib尚无直接第四矩目标声明，按真实Gaussian mgf四阶导数补必要依赖。原文交叉项负号及末行nu趋于0是明确笔误，保留说明不照搬错误。
+- 目标Chapter06/WienerQuadraticVariation.lean，尚未创建候选或运行局部核验；先检查有限矩/方差/独立性接口。所有语义签核仍pending，整个正文范围未完成。
+
+## 2026-10-05 06:32 +0800 — Proposition6.2高斯矩首次接口诊断
+
+- local-check01/session97138退出1。实际mgf四次微分链的函数乘法需显式beta展开；iteratedDeriv_one与id函数幂需对应固定接口；HasLaw积分接口是integral_comp而非不存在的integral_fun_comp，方差桥接是正向variance_eq；均匀时间NNReal二次coercion需push_cast。四阶可积证明增加明确Gaussian/id类型消除隐式实例搜索超时。所有失败原始日志保留，没有计为通过。
+- 已按固定声明修复，实际独立增量候选无独立诊断；下一唯一local-check02。均方和误差/最终极限尚未加入，完整批验收未运行。
+
+## 2026-10-05 06:35 +0800 — Proposition6.2矩依赖桥接与最终候选落盘
+
+- local-check02/session16756退出1，仅两处等式重写未匹配：真实id函数幂的积分改显式simpa链桥接，实际nndist参数等式改congrArg到Gaussian measure。真实四次导数链/二阶矩/四阶可积/平方L²/真实时间及独立增量无其他诊断，未整批计为通过。
+- 同一候选加入由真实独立平方增量推出求和方差、真实期望T、MSE=2T²/K与K趋于无穷的教材均方极限；尚未验收。下一唯一local-check03，不运行重复完整构建。
+
+## 2026-10-05 06:36 +0800 — Proposition6.2真实求和候选接口诊断
+
+- local-check03/session17176退出1：HasLaw的convert先要求真实增量函数等式再是measure参数等式；平方独立性comp需分别标注Fin K和实变量，均方桥接不能全局重写T导致右端也变化，AEMeasurable有限和API须sum。已对应修复；真实二/四阶矩链、平方L²、期望和方差代数候选无其他诊断，但未计整批通过。
+- 仅一处不必要tactic序列linter已移除，下一唯一local-check04。原页笔误/负责人pending保持，完整验收未运行。
+
+## 2026-10-05 06:39 +0800 — Proposition6.2函数有限和与测度接口诊断
+
+- local-check04/session42689退出1：高斯第一导数的convert有函数及数值两个目标，需分别rfl和dsimp；真实随机变量函数和需Finset.sum_apply证明函数等式而非仅change；真实aemeasurable和是Finset.aemeasurable_fun_sum（to_additive生成）而非AEMeasurable.sum。均方方差桥接已无原诊断。
+- 已按实际固定接口修复，下一唯一local-check05；无重复完整构建，未计最终命题通过。
+
+## 2026-10-05 06:40 +0800 — Proposition6.2终端多余tactic诊断
+
+- local-check05/session92227退出1、零警告，唯一诊断为方差代数field_simp已关目标后的多余ring。已删除该行；其他真实Gaussian矩/有限和/独立性/方差/MSE/极限无诊断，但退出码未通过，下一唯一local-check06确认终稿。
+
+## 2026-10-05 06:42 +0800 — Proposition6.2完整候选局部通过
+
+- local-check06/session71703退出0、零警告，13项新公共声明已接根/Scratch/公理审计。真实Gaussian mgf四次导数导出第四矩，真实Brownian有限维law导出增量normality与独立性，平方L²及真正独立方差求和导出期望T、variance/MSE=2T²/K和K趋于无穷均方极限。无结论型误差/独立性/矩输入。
+- 原页229--230/PDF250--251已目视；原交叉项负号及K趋于0笔误单独记录。启动唯一full-check01前保存状态，未决前不改核验输入，完整验收尚未计通过；负责人及其他正文范围pending。
+
+## 2026-10-05 06:45 +0800 — Proposition6.2真实Brownian均方极限完整验收
+
+- 唯一session26922/full-check01：2026-10-05T06:42:20.0423835+08:00--2026-10-05T06:43:27.9418150+08:00退出0；9016jobs、零警告、650项审计声明仅基础三公理、99项输入稳定，固定版本/Scratch/扫描/公理全部通过；所有输入与原始日志SHA实查一致，13项公开实际Gaussian矩/平方L²/增量/独立性/期望T/方差MSE2T²/K和极限接受。原229--230/PDF250--251目视；原印刷笔误单独记录；ledger/notation/section/映射/假设/状态同步，负责人语义pending。
+- T=0包括、K=0仅不参与精确误差，最终正K极限真实证明；无需连续路径。不计其他Itô积分或整范围完成。下一Proposition6.3原231/PDF252已目视，确定性加权有限和law/真实等距与积分极限构造，现mathlib无现成stochastic integral；先保存本批，不供应目标Gaussian/矩结论。

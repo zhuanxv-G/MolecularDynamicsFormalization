@@ -711,3 +711,18 @@ run_cmd do
 #print axioms MolecularDynamics.textbookConstrainedAcceleration_pullback_zero
 #print axioms MolecularDynamics.textbookConstrainedFlow_pullback_constant_of_jointC2
 #print axioms MolecularDynamics.textbookConstrainedFlow_pullback_constant_of_mass_and_independence
+
+-- Actual Brownian quadratic variation, textbook Proposition 6.2.
+#print axioms MolecularDynamics.textbookCenteredGaussian_secondMoment
+#print axioms MolecularDynamics.textbookCenteredGaussian_fourthMoment
+#print axioms MolecularDynamics.textbookCenteredGaussian_square_memLp
+#print axioms MolecularDynamics.textbookCenteredGaussian_square_variance
+#print axioms MolecularDynamics.textbookWienerTime
+#print axioms MolecularDynamics.textbookWienerIncrement
+#print axioms MolecularDynamics.textbookWienerQuadraticSum
+#print axioms MolecularDynamics.textbookWienerIncrement_hasLaw
+#print axioms MolecularDynamics.textbookWienerIncrement_independent
+#print axioms MolecularDynamics.textbookWienerQuadraticSum_integral
+#print axioms MolecularDynamics.textbookWienerQuadraticSum_variance
+#print axioms MolecularDynamics.textbookWienerQuadraticSum_meanSquareError
+#print axioms MolecularDynamics.textbookWienerQuadraticSum_meanSquare_tendsto

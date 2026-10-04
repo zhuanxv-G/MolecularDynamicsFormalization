@@ -100,3 +100,4 @@ import MolecularDynamics.Chapter02.LiouvilleVolume
 import MolecularDynamics.Chapter04.ConstrainedReactionRegularity
 
 import MolecularDynamics.Chapter04.ConstrainedFlowSymplectic
+import MolecularDynamics.Chapter06.WienerQuadraticVariation
