@@ -70,3 +70,4 @@ import MolecularDynamics.Chapter02.HamiltonianVariational
 import MolecularDynamics.Chapter02.SymplecticEuler
 import MolecularDynamics.Chapter02.AdjointMethods
 import MolecularDynamics.Chapter02.SplittingError
+import MolecularDynamics.Chapter02.CompositionMethods

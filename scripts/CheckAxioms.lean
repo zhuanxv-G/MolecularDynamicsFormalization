@@ -538,3 +538,14 @@ run_cmd do
 #print axioms MolecularDynamics.contDiffOn_textbookHamiltonianVectorField
 #print axioms MolecularDynamics.textbookHamiltonianVectorField_add
 #print axioms MolecularDynamics.exists_hamiltonian_splitting_localError_bound
+
+-- Main-text composition: printed85/PDF107.
+#print axioms MolecularDynamics.textbookComposeMaps
+#print axioms MolecularDynamics.textbookComposeMaps_isSymplectic
+#print axioms MolecularDynamics.textbookComposeMethods
+#print axioms MolecularDynamics.textbookComposeMethods_toMap
+#print axioms MolecularDynamics.textbookAdjointMethod_comp
+#print axioms MolecularDynamics.textbookSymmetricComposition
+#print axioms MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint
+#print axioms MolecularDynamics.textbookComposeMethods_isSymplectic
+#print axioms MolecularDynamics.textbookSymmetricComposition_isSymplectic

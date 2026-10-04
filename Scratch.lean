@@ -512,3 +512,14 @@ end MolecularDynamics
 #check MolecularDynamics.contDiffOn_textbookHamiltonianVectorField
 #check MolecularDynamics.textbookHamiltonianVectorField_add
 #check MolecularDynamics.exists_hamiltonian_splitting_localError_bound
+
+-- Main-text composition: printed85/PDF107.
+#check MolecularDynamics.textbookComposeMaps
+#check MolecularDynamics.textbookComposeMaps_isSymplectic
+#check MolecularDynamics.textbookComposeMethods
+#check MolecularDynamics.textbookComposeMethods_toMap
+#check MolecularDynamics.textbookAdjointMethod_comp
+#check MolecularDynamics.textbookSymmetricComposition
+#check MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint
+#check MolecularDynamics.textbookComposeMethods_isSymplectic
+#check MolecularDynamics.textbookSymmetricComposition_isSymplectic
