@@ -90,3 +90,5 @@ import MolecularDynamics.Chapter04.ConstrainedReaction
 import MolecularDynamics.Chapter04.CotangentProjectionRegularity
 
 import MolecularDynamics.Chapter04.ConstrainedGram
+
+import MolecularDynamics.Chapter02.ActualFlowVariations
