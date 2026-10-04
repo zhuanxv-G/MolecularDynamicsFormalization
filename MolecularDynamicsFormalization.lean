@@ -84,3 +84,5 @@ import MolecularDynamics.Chapter04.ConstrainedProjection
 import MolecularDynamics.Chapter04.ConstrainedIntegrator
 
 import MolecularDynamics.Chapter04.CotangentProjection
+
+import MolecularDynamics.Chapter04.ConstrainedReaction

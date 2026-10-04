@@ -545,3 +545,7 @@ Printed159--160/PDF181--182: `Chapter04/ConstrainedIntegrator.lean` constructs t
 ### Section 4.3.4: explicit actual Gram projection and hidden constraint (2026-10-05)
 
 Printed159/PDF181 equations(4.23)--(4.24), with the explicit nonsingular-Gram condition on printed153/PDF175: `Chapter04/CotangentProjection.lean` constructs the actual derivative-row Jacobian, diagonal inverse mass, true Gram G M^-1 G^T, inverse-formula multiplier and projected momentum. Actual Jacobian/vector-derivative agreement and the literal finite gradient sum are proved. Actual Gram det≠0 yields the hidden constraint G M^-1 P=0 and each true Dγ_j(q)(M^-1P)=0; neither multiplier nor constraint is supplied as a conclusion premise. C1 parameter-branch regularity, nonlinear initial solving branch and responsible semantic signoff remain pending.
+
+## 2026-10-05 actual constrained reaction and cotangent invariance
+
+Printed152--153/PDF174--175: `Chapter04/ConstrainedReaction.lean` constructs the actual second-derivative curvature and actual Gram-inverse reaction. The matrix balance is derived, followed by the real hidden-constraint chain rule and constancy on the entire closed solution interval. Initial position and hidden constraints therefore persist at every point, including endpoints. Neither preservation nor derivative-zero conclusions are inputs; all-time existence is separate. Full pinned verification passed; responsible semantic signoff remains pending.

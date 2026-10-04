@@ -618,3 +618,9 @@ end MolecularDynamics
 #check MolecularDynamics.textbookCotangentProjection_eq_gradient_sum
 #check MolecularDynamics.textbookCotangentProjection_hiddenConstraint
 #check MolecularDynamics.textbookCotangentProjection_constraint_derivative_zero
+
+-- Actual reaction and solution-interval cotangent invariance: printed152--153/PDF174--175.
+#check MolecularDynamics.textbookConstraintCurvature
+#check MolecularDynamics.textbookConstrainedReactionMultiplier
+#check MolecularDynamics.textbookConstrainedReaction_balance
+#check MolecularDynamics.textbookConstrainedODE_cotangent_invariant

@@ -361,3 +361,8 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 - 2026-10-05 constrained-integrator batch: 6 public declarations fully accepted. 2026-10-05T03:37:12.6736101+08:00--2026-10-05T03:38:17.0707682+08:00退出0；9006jobs、零警告、576项审计声明仅基础三公理、89项输入稳定，固定版本/Scratch/扫描/公理全部通过. Actual stages/differentiability and the complete three-stage restricted-form proof are verified for real differentiable multipliers satisfying the true position constraints. Force sign is explicit. Final hidden-constraint solve, nonlinear solving-branch construction, method order, responsible semantic signoff and remaining CORE_SCOPE are pending.
 
 - 2026-10-05 cotangent-projection batch: 10 public declarations fully accepted. 2026-10-05T03:52:04.7184655+08:00--2026-10-05T03:53:09.0242473+08:00退出0；9007jobs、零警告、586项审计声明仅基础三公理、90项输入稳定，固定版本/Scratch/扫描/公理全部通过. Real Jacobian/actual vector derivative, diagonal inverse mass, true Gram inverse multiplier, literal gradient correction and derived hidden constraint are verified. C1 multiplier branch/nonlinear initial solve, responsible semantic signoff and remaining CORE_SCOPE are pending.
+
+## 2026-10-05 constrained reaction and cotangent invariance accepted
+
+- 2026-10-05T04:18:20.2240225+08:00--2026-10-05T04:24:21.6165953+08:00退出0；9008jobs、零警告、590项审计声明仅基础三公理、91项输入稳定，固定版本/Scratch/扫描/公理全部通过；4项公共声明，91项输入SHA实查一致，真正二阶曲率/实际Gram反力平衡及实际ODE闭解区间余切不变性已证明，原页152--153/PDF174--175目视核对。
+- 负责人最终语义pending；全局解存在、实际数值乘子C¹/非线性初始求解及Theorem3.1高阶匹配/整个CORE_SCOPE仍pending，继续正文。

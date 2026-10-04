@@ -644,3 +644,9 @@ run_cmd do
 #print axioms MolecularDynamics.textbookCotangentProjection_eq_gradient_sum
 #print axioms MolecularDynamics.textbookCotangentProjection_hiddenConstraint
 #print axioms MolecularDynamics.textbookCotangentProjection_constraint_derivative_zero
+
+-- Actual reaction and solution-interval cotangent invariance: printed152--153/PDF174--175.
+#print axioms MolecularDynamics.textbookConstraintCurvature
+#print axioms MolecularDynamics.textbookConstrainedReactionMultiplier
+#print axioms MolecularDynamics.textbookConstrainedReaction_balance
+#print axioms MolecularDynamics.textbookConstrainedODE_cotangent_invariant
