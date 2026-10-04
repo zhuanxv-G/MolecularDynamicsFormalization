@@ -598,3 +598,11 @@ end MolecularDynamics
 #check MolecularDynamics.textbookMultiConstrainedMomentum
 #check MolecularDynamics.differentiableAt_textbookMultiConstrainedMomentum
 #check MolecularDynamics.textbookMultiConstrainedMomentum_preserves_pullback
+
+-- Actual constrained Euler stage pullbacks: printed159--160/PDF181--182.
+#check MolecularDynamics.textbookProjectedEulerPreMomentum
+#check MolecularDynamics.textbookProjectedEulerPosition
+#check MolecularDynamics.textbookProjectedEulerChart
+#check MolecularDynamics.differentiableAt_textbookProjectedEulerPreMomentum
+#check MolecularDynamics.differentiableAt_textbookProjectedEulerPosition
+#check MolecularDynamics.textbookProjectedEulerChart_preserves_pullback

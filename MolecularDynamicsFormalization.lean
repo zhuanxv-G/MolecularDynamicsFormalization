@@ -80,3 +80,5 @@ import MolecularDynamics.Chapter03.ModifiedHamiltonianBounds
 import MolecularDynamics.Chapter03.ModifiedEnergyDrift
 
 import MolecularDynamics.Chapter04.ConstrainedProjection
+
+import MolecularDynamics.Chapter04.ConstrainedIntegrator

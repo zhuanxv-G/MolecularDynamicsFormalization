@@ -624,3 +624,11 @@ run_cmd do
 #print axioms MolecularDynamics.textbookMultiConstrainedMomentum
 #print axioms MolecularDynamics.differentiableAt_textbookMultiConstrainedMomentum
 #print axioms MolecularDynamics.textbookMultiConstrainedMomentum_preserves_pullback
+
+-- Actual constrained Euler stage pullbacks: printed159--160/PDF181--182.
+#print axioms MolecularDynamics.textbookProjectedEulerPreMomentum
+#print axioms MolecularDynamics.textbookProjectedEulerPosition
+#print axioms MolecularDynamics.textbookProjectedEulerChart
+#print axioms MolecularDynamics.differentiableAt_textbookProjectedEulerPreMomentum
+#print axioms MolecularDynamics.differentiableAt_textbookProjectedEulerPosition
+#print axioms MolecularDynamics.textbookProjectedEulerChart_preserves_pullback
