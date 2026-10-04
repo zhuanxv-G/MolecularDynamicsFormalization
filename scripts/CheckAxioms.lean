@@ -399,3 +399,5 @@ run_cmd do
 #print axioms MolecularDynamics.twoBody_center_roundtrip
 #print axioms MolecularDynamics.twoBody_separation_roundtrip
 #print axioms MolecularDynamics.twoBody_equalMass_kinetic_decomposition
+#print axioms MolecularDynamics.twoBodyRadialLagrangian
+#print axioms MolecularDynamics.twoBody_equalMass_lagrangian_center_relative

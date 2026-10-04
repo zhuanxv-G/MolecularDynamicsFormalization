@@ -53,6 +53,8 @@ import MolecularDynamicsFormalization
 #check MolecularDynamics.twoBody_center_roundtrip
 #check MolecularDynamics.twoBody_separation_roundtrip
 #check MolecularDynamics.twoBody_equalMass_kinetic_decomposition
+#check MolecularDynamics.twoBodyRadialLagrangian
+#check MolecularDynamics.twoBody_equalMass_lagrangian_center_relative
 #check MolecularDynamics.strictPotentialMin_mechanicalEquilibrium
 #check MolecularDynamics.momentum_norm_sq_le
 #check MolecularDynamics.isCompact_phaseEnergySublevel

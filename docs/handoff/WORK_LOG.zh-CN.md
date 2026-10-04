@@ -1595,3 +1595,14 @@
 - 原页印刷47/PDF70 已视觉核对。新增 `TwoBodyCoordinates.lean`：等质量平面二体的 `q_cm=(q₁+q₂)/2`、`Δ=q₂-q₁` 及速度定义；证明物理坐标重构、中心/相对坐标双向 round-trip，以及等质量动能分解。该批次只覆盖习题3(b)的线性代数与动能部分，不扩张到径向势、二体运动方程或习题3(c)。
 - 固定 Lean 4.34.0 下模块编译、`lake build MolecularDynamicsFormalization`、Scratch、`scripts/CheckAxioms.lean` 和 `full-check36` 均退出0；full-check36 实际 21:20:01--21:21:04 +08:00，8990 jobs、零构建警告、373 项声明，固定 mathlib `5ed2965256430c3649e86755f9576b54eca72435`，唯一公理集合仍为 `propext`、`Classical.choice`、`Quot.sound`。报告在 `docs/verification/2026-10-04-Kepler/full-check36/`。
 - 习题3(b)批次已达到机器验收门槛并提交为 `556d321`；下一动作是从该 HEAD 继续习题3(c)、4--5或非线性变分/Jacobian。负责人教材语义签核和全书目标仍 pending。
+
+## 2026-10-04 21:34 +08:00 — 习题3(a/b) 径向势 Lagrangian 候选
+
+- 在已验收二体坐标模块上加入 `twoBodyRadialLagrangian` 与 `twoBody_equalMass_lagrangian_center_relative`，把任意实径向势 `φ(‖q₂-q₁‖)` 的 Lagrangian 精确改写为质心/相对速度形式。未加入 `φ` 的可微性、力、约化运动方程或极坐标积分。
+- 固定 Lean 4.34.0 下模块编译、根构建、Scratch 和顺序公理探针均退出0；新增声明的公理集合仍为 `propext`、`Classical.choice`、`Quot.sound`。`full-check37` 尚未运行，源码尚未提交。
+- 恢复第一动作：运行 `full-check37`，通过固定版本、零警告、输入 SHA 和公理审计后保存提交。
+
+## 2026-10-04 21:38 +08:00 — 习题3(a/b) 径向势 Lagrangian 完整验收
+
+- `full-check37` 实际 21:36:07--21:37:58 +08:00 退出0：固定 Lean 4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8990 jobs、零构建警告、373 项声明、公理审计、Scratch、源码扫描和输入 SHA 均通过。
+- 本批接受 `twoBodyRadialLagrangian` 及 `twoBody_equalMass_lagrangian_center_relative` 的代数结论；仍未声称径向势可微力、约化运动方程或习题3(c)。候选源码和同步文档待保存提交。

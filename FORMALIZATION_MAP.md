@@ -475,3 +475,5 @@ Printed46/PDF69 exercise 1(b): `upperTriangularMatrix` is the literal matrix `[[
 ### Two-body center-of-mass coordinates (2026-10-04)
 
 Printed47/PDF70 exercise 3(b): `TwoBodyCoordinates` defines the planar equal-mass center coordinate `q_cm=(q₁+q₂)/2`, relative coordinate `Δ=q₂-q₁`, and their velocity counterparts. It proves both reconstruction identities, both inverse-coordinate round trips, and the equal-mass kinetic decomposition into total-mass center motion and reduced-mass relative motion. The radial potential, reduced equations of motion, polar integration in 3(c), and exercises 4--5 remain separate.
+
+The same module now defines the radial-potential two-body Lagrangian and proves its exact center/relative-coordinate expansion. This is an algebraic form of exercise 3(a/b); no force differentiation or equation-of-motion reduction is included.

@@ -76,5 +76,20 @@ theorem twoBody_equalMass_kinetic_decomposition (m : ℝ) (v₁ v₂ : Velocity 
   rw [real_inner_comm v₂ v₁]
   ring
 
-end MolecularDynamics
+/-- The equal-mass two-body Lagrangian with a radial separation potential. -/
+noncomputable def twoBodyRadialLagrangian (m : ℝ) (φ : ℝ → ℝ)
+    (q₁ q₂ : Position 2) (v₁ v₂ : Velocity 2) : ℝ :=
+  m * ‖v₁‖ ^ 2 / 2 + m * ‖v₂‖ ^ 2 / 2 -
+    φ ‖twoBodySeparation q₁ q₂‖
 
+/-- In center/relative coordinates, the radial two-body Lagrangian separates. -/
+theorem twoBody_equalMass_lagrangian_center_relative (m : ℝ) (φ : ℝ → ℝ)
+    (q₁ q₂ : Position 2) (v₁ v₂ : Velocity 2) :
+    twoBodyRadialLagrangian m φ q₁ q₂ v₁ v₂ =
+      m * ‖twoBodyCenterVelocity v₁ v₂‖ ^ 2 +
+        m / 4 * ‖twoBodyRelativeVelocity v₁ v₂‖ ^ 2 -
+          φ ‖twoBodySeparation q₁ q₂‖ := by
+  unfold twoBodyRadialLagrangian
+  rw [twoBody_equalMass_kinetic_decomposition]
+
+end MolecularDynamics

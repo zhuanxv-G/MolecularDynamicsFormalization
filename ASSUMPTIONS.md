@@ -258,3 +258,5 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - The upper-triangular exercise is the literal two-dimensional matrix `[[1, α], [0, 1]]` with real `α`; its explicit solution is verified by `HasDerivAt` and linear-ODE uniqueness. This is a special case, not a general Jordan-form or arbitrary upper-triangular theorem.
 
 - TwoBodyCoordinates formalizes only the linear coordinate algebra for two planar particles with equal masses and the corresponding kinetic-energy identity. The definitions use `q_cm=(q₁+q₂)/2` and `Δ=q₂-q₁`; no radial potential, force law, reduced equation of motion, polar-coordinate integration, or unequal-mass claim is inferred.
+
+- The radial-potential extension defines `L=T-φ(‖Δ‖)` and rewrites it using the equal-mass center/relative kinetic identity. It still assumes no differentiability of `φ` and makes no claim about the resulting force or reduced equations.
