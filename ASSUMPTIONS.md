@@ -252,3 +252,5 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - VariationalEquation formalizes only the constant-coefficient variational system `W' = A W` on a complete real normed space. It does not identify `A` with a time-dependent Jacobian along a nonlinear trajectory, prove differentiability of a nonlinear flow with respect to initial data, or define/compute Lyapunov exponents. The matrix-exponential exercise lemmas use the fixed mathlib matrix exponential and state the commuting hypothesis explicitly.
 
 - The diagonal exercise uses a finite real index type and the literal matrix `Matrix.diagonal d`; its component formula follows from the fixed `Matrix.exp_diagonal` lemma. No diagonalizability assumption is silently extended to arbitrary matrices, and exercises 1(b)--1(c) remain open.
+
+- The similarity exercise assumes `IsUnit X` for the displayed conjugating matrix and uses the literal inverse `X⁻¹`. It proves only the matrix-exponential conjugation identity; existence of an eigenbasis or a diagonalizing `X` is a separate hypothesis.

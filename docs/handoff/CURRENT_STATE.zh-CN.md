@@ -171,3 +171,15 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 - 习题1(a) 的 `matrixExponentialFlow_diagonal` 已正式接受，并已提交为 `bc2d144`（`Formalize diagonal matrix exponential exercise`）；当前 HEAD 为 `bc2d144`，Goal 仍 active。
 - 下一步保持逐页范围：习题1(b)--1(c) 的上三角/一般相似变换、习题3--5，或非线性时间依赖 Jacobian；不把对角特例扩大解释成一般对角化，也不把本批视为全书完成。
 
+## 正在推进（2026-10-04 20:00 +08:00）
+
+- 在已验收的对角特例上追加印刷46/PDF69 习题1(c) 的 `matrixExponential_conjugate`：对显式 `IsUnit X`，证明 `exp (X*D*X⁻¹) = X*exp D*X⁻¹`。局部固定 Lean 编译已退出0；整库 full-check 尚未运行，尚未提交。
+- 该候选只使用固定 mathlib 的 `Matrix.exp_conj`，不声称任意矩阵可对角化，也不覆盖习题1(b) 的上三角直接计算。
+- 恢复第一动作：运行唯一的新 full-check 目录并审计新增声明，然后只提交本批次文件和对应文档。
+
+## 最新检查点（2026-10-04 20:05 +08:00）
+
+- `full-check34` 已通过（20:02:37--20:03:56 +08:00）：固定 Lean 4.34.0、mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、359 项声明公理审计、Scratch、源码扫描和输入哈希稳定性均通过；唯一公理集合仍为 `propext`、`Classical.choice`、`Quot.sound`。报告在 `docs/verification/2026-10-04-Kepler/full-check34/`。
+- 习题1(c) 的 `matrixExponential_conjugate` 已正式接受；本批次源码、Scratch、`CheckAxioms`、章节清单、映射/假设/状态文档和报告准备提交。当前数学基线 HEAD 为 `e20683f`，Goal 仍 active。
+- 下一步仍逐页处理习题1(b) 的上三角直接公式、习题3--5，或非线性时间依赖 Jacobian；不把显式 `IsUnit` 相似桥接扩大成任意矩阵对角化，也不把本批视为全书完成。
+

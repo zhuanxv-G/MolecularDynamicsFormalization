@@ -81,6 +81,12 @@ theorem matrixExponentialFlow_diagonal {m : ℕ}
   rw [Pi.coe_exp]
   rw [← Real.exp_eq_exp_ℝ]
 
+theorem matrixExponential_conjugate {m : ℕ}
+    (X D : Matrix (Fin m) (Fin m) ℝ) (hX : IsUnit X) :
+    NormedSpace.exp (X * D * X⁻¹) =
+      X * NormedSpace.exp D * X⁻¹ := by
+  exact Matrix.exp_conj X D hX
+
 end Matrix
 
 end MolecularDynamics

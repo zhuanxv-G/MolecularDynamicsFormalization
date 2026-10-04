@@ -463,3 +463,7 @@ Printed44--47/PDF67--70: `VariationalEquation` records the exact constant-coeffi
 ### Diagonal matrix exponential exercise (2026-10-04)
 
 Printed46/PDF69 exercise 1(a): for a finite real diagonal matrix `diag d`, `matrixExponentialFlow_diagonal` proves the componentwise solution `exp(t dᵢ) zᵢ` directly from `Matrix.exp_diagonal` and the matrix-vector product. The theorem does not claim the upper-triangular cases 1(b)--1(c) or a general diagonalization theorem.
+
+### Similarity bridge for matrix exponentials (2026-10-04)
+
+Printed46/PDF69 exercise 1(c): `matrixExponential_conjugate` proves `exp(X D X⁻¹) = X exp(D) X⁻¹` for an explicitly `IsUnit` matrix `X`, using the fixed `Matrix.exp_conj` theorem. This is the similarity identity needed after a diagonal computation; it does not assert that an arbitrary matrix has such an `X` or formalize exercise 1(b).

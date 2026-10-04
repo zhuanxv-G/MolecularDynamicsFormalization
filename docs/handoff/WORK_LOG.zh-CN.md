@@ -1569,3 +1569,13 @@
 
 - `full-check33` 实际运行 19:51:30--19:54:12，退出0：固定 Lean 4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、Scratch、源码扫描、输入哈希和公理审计通过；公理日志含 358 项声明，唯一公理集合为 `propext`、`Classical.choice`、`Quot.sound`。报告保存在 `docs/verification/2026-10-04-Kepler/full-check33/`。
 - `matrixExponentialFlow_diagonal` 已正式接受，给出有限实对角矩阵指数流的逐分量公式；随后已提交为 HEAD `bc2d144`（`Formalize diagonal matrix exponential exercise`）。习题1(b)--1(c)、3--5及非线性变分/Lyapunov 仍 pending。
+
+## 2026-10-04 20:00 +08:00 — 习题1(c) 相似变换候选
+
+- 原页印刷46/PDF69 的习题1(c)使用 `A=XDX⁻¹`。已加入 `matrixExponential_conjugate`，在显式 `IsUnit X` 假设下直接调用固定 `Matrix.exp_conj` 完成矩阵指数相似变换；局部固定 Lean 4.34.0 编译退出0、无警告。
+- 已更新 Scratch、公理审计、章节清单、映射、假设和状态文档；新整库 full-check 尚未运行，候选尚未提交。习题1(b)、3--5及非线性变分/Lyapunov 内容仍 pending。
+
+## 2026-10-04 20:05 +08:00 — 习题1(c) 相似变换完整验收
+
+- `full-check34` 实际运行 20:02:37--20:03:56，退出0：固定 Lean 4.34.0/mathlib `5ed2965256430c3649e86755f9576b54eca72435`、8989 jobs、零构建警告、Scratch、源码扫描、输入哈希和公理审计通过；公理日志含 359 项声明，唯一公理集合为 `propext`、`Classical.choice`、`Quot.sound`。报告保存在 `docs/verification/2026-10-04-Kepler/full-check34/`。
+- `matrixExponential_conjugate` 已正式接受，在 `IsUnit X` 下证明矩阵指数的相似变换恒等式。当前 HEAD `e20683f`，本批次文档与源码提交尚待执行；习题1(b)、3--5及非线性变分/Lyapunov 仍 pending。

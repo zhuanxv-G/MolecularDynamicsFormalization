@@ -38,6 +38,7 @@ import MolecularDynamicsFormalization
 #check MolecularDynamics.matrixExponential_neg
 #check MolecularDynamics.matrixExponentialFlow_realEigenmode
 #check MolecularDynamics.matrixExponentialFlow_diagonal
+#check MolecularDynamics.matrixExponential_conjugate
 #check MolecularDynamics.strictPotentialMin_mechanicalEquilibrium
 #check MolecularDynamics.momentum_norm_sq_le
 #check MolecularDynamics.isCompact_phaseEnergySublevel

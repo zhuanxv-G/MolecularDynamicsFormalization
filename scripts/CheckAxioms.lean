@@ -384,3 +384,4 @@ run_cmd do
 #print axioms MolecularDynamics.matrixExponential_neg
 #print axioms MolecularDynamics.matrixExponentialFlow_realEigenmode
 #print axioms MolecularDynamics.matrixExponentialFlow_diagonal
+#print axioms MolecularDynamics.matrixExponential_conjugate
