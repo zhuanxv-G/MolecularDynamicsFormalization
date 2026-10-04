@@ -1526,3 +1526,7 @@
 ## 2026-10-04 14:37 +08:00 — 正定 Hessian 二次型桥接完整验收
 
 - `potentialHessian_quadratic_nonneg_of_posDef` 与 `linearizedHamiltonianQuadratic_nonneg_of_positive_hessian` 已加入 `LatticeVibrations`。full-check25 实际 14:33:23--14:36:46 退出0，8987 jobs、746 项声明，Scratch/固定版本/源码扫描/输入 SHA/公理审计均通过，仅允许基础公理。正定性保持显式假设，不宣称从严格极小推出或得到纯虚谱。
+
+## 2026-10-04 14:48 +08:00 — 周期最近邻势能完整验收
+
+- `periodicNearestNeighborPotentialEnergy` 在非空 `ZMod N` 上加入环形最近邻（含回绕键），并证明整体平移不变性。full-check26 实际 14:44:40--14:47:07 退出0，8987 jobs、748 项声明，Scratch/固定版本/源码扫描/输入 SHA/公理审计均通过，仅允许基础公理。周期谱、normal modes、周期动力学及全书目标仍 pending。

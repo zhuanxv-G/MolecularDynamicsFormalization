@@ -298,3 +298,5 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 - 2026-10-04 `LatticeVibrations` added the actual gradient first-order expansion and little-o remainder under the stated equilibrium/C² hypotheses. The local probe is clean with only allowed axioms; full-check24 is pending. Positive-definite Hessian spectral modes and periodic/boundary lattice dynamics remain open.
 
 - 2026-10-04 full-check25 passed (8987 jobs, 746 imported declarations): explicit positive-Hessian quadratic-form assumptions now bridge to nonnegative linearized Hamiltonian energy. No minimum-to-Hessian implication or pure-imaginary normal-mode spectrum is claimed; those and the rest of §1.6.1 remain open.
+
+- 2026-10-04 periodic nearest-neighbor energy on `ZMod N` (with `[NeZero N]`) and its translation invariance passed full-check26 (8987 jobs, 748 declarations). Periodic spectra, normal modes, and later chapters remain open.

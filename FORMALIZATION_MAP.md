@@ -443,3 +443,7 @@ Printed36--37/PDF59--60: `LatticeVibrations` records the equilibrium first-order
 ### Positive Hessian quadratic bridge (2026-10-04)
 
 Printed37/PDF60: under an explicit positive-definite Hessian quadratic-form hypothesis, `LatticeVibrations` derives nonnegativity of the potential quadratic form and feeds it into the already defined linearized Hamiltonian, proving its nonnegativity with strictly positive masses. The theorem keeps positive definiteness as a hypothesis; it does not derive it from a minimum or claim the pure-imaginary spectrum.
+
+### Periodic nearest-neighbor lattice (2026-10-04)
+
+Printed33/PDF56: `periodicNearestNeighborPotentialEnergy` uses a nonempty cyclic index `ZMod N` and sums the bond `i → i+1`, including the wrap-around bond. Global translation invariance is proved. Periodic Hessian/spectrum and dynamical claims remain pending.

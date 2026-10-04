@@ -56,4 +56,20 @@ theorem nearestNeighborPotentialEnergy_two (φ : ℝ → ℝ) (x : Fin 2 → ℝ
   rw [Fin.sum_univ_one]
   rfl
 
+/-! Periodic nearest-neighbor energy on a cyclic lattice. -/
+noncomputable def periodicNearestNeighborPotentialEnergy {N : ℕ} [NeZero N]
+    (φ : ℝ → ℝ) (x : ZMod N → ℝ) : ℝ :=
+  ∑ i : ZMod N, φ ‖x (i + 1) - x i‖
+
+theorem periodicNearestNeighborPotentialEnergy_translate {N : ℕ} [NeZero N]
+    (φ : ℝ → ℝ) (x : ZMod N → ℝ) (c : ℝ) :
+    periodicNearestNeighborPotentialEnergy φ (fun i => x i + c) =
+      periodicNearestNeighborPotentialEnergy φ x := by
+  unfold periodicNearestNeighborPotentialEnergy
+  apply Finset.sum_congr rfl
+  intro i hi
+  congr 1
+  congr 1
+  ring
+
 end MolecularDynamics

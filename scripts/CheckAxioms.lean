@@ -361,6 +361,8 @@ run_cmd do
 #print axioms MolecularDynamics.nearestNeighborPotentialEnergy
 #print axioms MolecularDynamics.nearestNeighborPotentialEnergy_translate
 #print axioms MolecularDynamics.nearestNeighborPotentialEnergy_two
+#print axioms MolecularDynamics.periodicNearestNeighborPotentialEnergy
+#print axioms MolecularDynamics.periodicNearestNeighborPotentialEnergy_translate
 #print axioms MolecularDynamics.gradientLinearizationRemainder
 #print axioms MolecularDynamics.gradientLinearizationRemainder_isLittleO
 #print axioms MolecularDynamics.gradientLinearization_expansion

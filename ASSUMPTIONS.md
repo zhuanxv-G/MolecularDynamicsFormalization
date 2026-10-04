@@ -242,3 +242,5 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - LatticeVibrations assumes a finite-dimensional `Position n`, a `C²` potential at the candidate equilibrium, and zero gradient there for the little-o theorem. The expansion uses the actual derivative of `gradient U`; it does not assert Hessian positive definiteness or imaginary eigenvalues. Those spectral conclusions require separate positive-definite mass/Hessian hypotheses.
 
 - The positive-Hessian bridge assumes strict positivity of the actual quadratic form on every nonzero displacement. It derives only nonnegativity, with the kinetic block separately requiring strictly positive masses. Spectral classification and derivation of positive definiteness from a strict minimum remain unproved.
+
+- The periodic nearest-neighbor definition requires `[NeZero N]` so `ZMod N` has a finite index set. The wrap-around bond is represented by modular addition. Only the energy formula and translation invariance are formalized; no periodic force, spectrum, or stability conclusion is inferred.
