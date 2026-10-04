@@ -1,0 +1,110 @@
+Try this:
+  [apply] abel_nf
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:40:39: error: unsolved goals
+Ω₀ Ω₁ : ℝ
+hΩ₀ : Ω₀ ≠ 0
+hirr : Irrational (Ω₁ / Ω₀)
+θ : HarmonicTorus (Nat.succ 0).succ
+x : ℝ := (θ 0).toReal
+a : ℝ := -Ω₁ * (2 * Real.pi) / Ω₀
+hpi : 2 * Real.pi ≠ 0
+ha : a / (2 * Real.pi) = -(Ω₁ / Ω₀)
+hd : DenseRange fun k => k • ↑a
+c : Real.Angle := ↑(Ω₁ * x / Ω₀)
+hsurj : Function.Surjective fun y => c + y
+hcont : Continuous fun y => c + y
+hshift : DenseRange fun k => c + k • ↑a
+hf : Continuous fun y => ![θ 0, y]
+k : ℤ
+⊢ -(-x + ↑k * 2 * Real.pi) = x - ↑k * 2 * Real.pi
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:46:42: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  -Ω₀ * ((-x + ↑k * (2 * Real.pi)) / Ω₀)
+in the target expression
+  ↑(-(Ω₀ * ((-x + ↑k * (2 * Real.pi)) / Ω₀))) = θ 0
+
+case «0»
+Ω₀ Ω₁ : ℝ
+hΩ₀ : Ω₀ ≠ 0
+hirr : Irrational (Ω₁ / Ω₀)
+θ : HarmonicTorus (Nat.succ 0).succ
+x : ℝ := (θ 0).toReal
+a : ℝ := -Ω₁ * (2 * Real.pi) / Ω₀
+hpi : 2 * Real.pi ≠ 0
+ha : a / (2 * Real.pi) = -(Ω₁ / Ω₀)
+hd : DenseRange fun k => k • ↑a
+c : Real.Angle := ↑(Ω₁ * x / Ω₀)
+hsurj : Function.Surjective fun y => c + y
+hcont : Continuous fun y => c + y
+hshift : DenseRange fun k => c + k • ↑a
+hf : Continuous fun y => ![θ 0, y]
+k : ℤ
+hfirst : -Ω₀ * ((-x + ↑k * (2 * Real.pi)) / Ω₀) = x - ↑k * (2 * Real.pi)
+hsecond : -Ω₁ * ((-x + ↑k * (2 * Real.pi)) / Ω₀) = Ω₁ * x / Ω₀ + ↑k * a
+⊢ ↑(-(Ω₀ * ((-x + ↑k * (2 * Real.pi)) / Ω₀))) = θ 0
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:50:42: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  -Ω₁ * ((-x + ↑k * (2 * Real.pi)) / Ω₀)
+in the target expression
+  ↑(-(Ω₁ * ((-x + ↑k * (2 * Real.pi)) / Ω₀))) = c + k • ↑a
+
+case «1»
+Ω₀ Ω₁ : ℝ
+hΩ₀ : Ω₀ ≠ 0
+hirr : Irrational (Ω₁ / Ω₀)
+θ : HarmonicTorus (Nat.succ 0).succ
+x : ℝ := (θ 0).toReal
+a : ℝ := -Ω₁ * (2 * Real.pi) / Ω₀
+hpi : 2 * Real.pi ≠ 0
+ha : a / (2 * Real.pi) = -(Ω₁ / Ω₀)
+hd : DenseRange fun k => k • ↑a
+c : Real.Angle := ↑(Ω₁ * x / Ω₀)
+hsurj : Function.Surjective fun y => c + y
+hcont : Continuous fun y => c + y
+hshift : DenseRange fun k => c + k • ↑a
+hf : Continuous fun y => ![θ 0, y]
+k : ℤ
+hfirst : -Ω₀ * ((-x + ↑k * (2 * Real.pi)) / Ω₀) = x - ↑k * (2 * Real.pi)
+hsecond : -Ω₁ * ((-x + ↑k * (2 * Real.pi)) / Ω₀) = Ω₁ * x / Ω₀ + ↑k * a
+⊢ ↑(-(Ω₁ * ((-x + ↑k * (2 * Real.pi)) / Ω₀))) = c + k • ↑a
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:52:83: error: Application type mismatch: The argument
+  hf
+has type
+  Continuous fun y => ![θ 0, y]
+but is expected to have type
+  Continuous (Matrix.vecCons (θ 0))
+in the application
+  map_mem_closure hf
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:53:13: error: Tactic `rcases` failed: `a✝ : ?m.979 y` is not an inductive datatype
+Try this:
+  [apply] abel_nf
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:138:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:139:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'MolecularDynamics.harmonicTorusPhase_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_isClosedEmbedding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_harmonicTorusPhase_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusThreeResonance_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_three_resonant_not_dense' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_two_dense_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_two_dense' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_two_dense_fixedEnergy' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

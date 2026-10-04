@@ -1,0 +1,71 @@
+Try this:
+  [apply] abel_nf
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:27:29: error: Application type mismatch: The argument
+  Continuous.add continuous_const continuous_id
+has type
+  Continuous[?m.171, ?m.171] ((fun x => ?m.161) + id)
+but is expected to have type
+  Continuous fun y => c + y
+in the application
+  DenseRange.comp (Function.Surjective.denseRange hsurj) hd (Continuous.add continuous_const continuous_id)
+Try this:
+  [apply] abel_nf
+Try this:
+  [apply] abel_nf
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:96:39: error: unsolved goals
+Ω₀ Ω₁ : ℝ
+θ : HarmonicTorus 3
+t : ℝ
+⊢ θ 2 +
+      (-1 • ↑(Matrix.vecHead (Matrix.vecTail ![Ω₁, Ω₀ + Ω₁]) * t) + (-1 • θ 0 + (↑(Ω₀ * t) + (-1 • θ 1 + ↑(Ω₁ * t))))) =
+    θ 2 + (-1 • θ 0 + -1 • θ 1)
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:98:77: warning: This simp argument is unused:
+  add_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Real.Angle.coe_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:98:86: warning: This simp argument is unused:
+  Real.Angle.coe_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, add_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:135:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-04-Kepler/probes/TorusDensityProbe.lean:136:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'MolecularDynamics.harmonicTorusPhase_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_isClosedEmbedding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_harmonicTorusPhase_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusThreeResonance_rotation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_three_resonant_not_dense' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_two_dense_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicTorusRotation_two_dense' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicTorusPhase_two_dense_fixedEnergy' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

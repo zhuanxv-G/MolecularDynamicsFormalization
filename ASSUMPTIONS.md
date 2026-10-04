@@ -204,3 +204,7 @@ Actual Euclidean two-dimensional action/real-angle input and position/velocity o
 ### Decoupled harmonic torus (2026-10-04)
 
 Finite dimension (including empty product for algebraic Flow/period laws). Quotient-circle rotation accepts arbitrary real frequencies; positive Ωⱼ and Iⱼ are used for nondegenerate coordinate energy image and actual mechanical bridge. Integer-frequency periodicity assumes nonzero base frequency. A period value in the formal criterion is not automatically positive; positive physical period follows if the base frequency is positive. Density is not inferred merely from irrational pairwise ratios in general dimension.
+
+### Torus homeomorphism and density (2026-10-04)
+
+Positive Ωⱼ/Iⱼ for fixed-energy homeomorphism, finite product including dimension zero. Two-frequency angle density needs Ω₀≠0 and irrational Ω₁/Ω₀, no sign assumption; physical fixed-energy closure additionally uses positive frequencies/actions. Density is for real-time range (both directions), not yet forward-time density. Three-frequency resonance non-density allows arbitrary frequencies and initial angle. General higher-dimensional rational independence density and rational-period iff remain separate.

@@ -1,14 +1,14 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 11:51 +08:00）
+## 当前数学检查点（2026-10-04 11:59 +08:00）
 
 - 同一全书目标/聊天01a102b1-a3fe-71e1-a571-347703fc09b8实际get_goal=active；非完成/用户暂停。仅本地，保留GPT-6.1 Sol/High；不另建Goal/自动化、不用MathCopilot、不购买/重置/换账户。
-- 分支chapter01-kinetic-energy-nonneg，实际本地HEAD2e582c5cd3ea151b13ad32b05daecc8d4f2e8882，未推送；固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435。所有无关AGENTS/FORMALIZATION_PLAN/RESUME/T3/T2-T5 review等材料保留，仅暂存明确批次文件。
+- 分支chapter01-kinetic-energy-nonneg，实际本地HEADe58430c99b1229e588ddddf2b1a45564d49c4cd8，未推送；固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435。所有无关AGENTS/FORMALIZATION_PLAN/RESUME/T3/T2-T5 review等材料保留，仅暂存明确批次文件。
 - 既有验收：Theorem1.1真欧氏全未来严格sup稳定性2081575；Lagrangian/Legendre f52945d；双向全时间势垒Flow84549ab；谐振子/自由连续Flow4859306；真实矩阵指数/谱/实恢复/列基逆eb6d018+60ee65a；第一积分/中心力角动量/Kepler真梯度C1/局部IVP守恒bb3f40c+e368448。
 - Kepler后续本地保存：polar strict chart9f3c45b，真polar EL/有效能量/角FTC235c03c，真Cartesian↔polar桥接e802090，任意非零Cartesian初值径向IVP+角积分重建93feaee，真实scalar分离积分strict逆20576ce+证据2eaee48，任意非转向点自动符号/窗口真实积分逆da46d1f。各完整验收证据见Kepler/full-check02--07。
 - action-angle本地保存c15fb5f，真印刷公式/能量/实际ODE双向等价/时间公式/任意非零初值表示/谐振子Flow共轭；check08实际11:26:45--11:29:08退出0（8972jobs/589）。真实strict导数/Jacobian det1/局部OpenPartialHomeomorph strict逆2e582c5；check09实际11:35:41--11:37:03退出0（8973jobs/613）。
-- 当前HarmonicTorus candidate07十一关键退出0无警告；真商角有限乘积/连续旋转Flow/精确整数周期条件/固定正action能量面image/真实多振子机械解正式验收check10实际11:48:35--11:49:55退出0（8974jobs/643）。Scratch/固定版本/源码扫描/全部审计/输入SHA稳定，关键仅允许propext/Classical.choice/Quot.sound。准备本地保存明确批次与七次原日志。
-- 下一TorusDensityProbe已落盘并attempt01运行中，单一Lean进程：二维无理比真实DenseRange/物理energy-level轨道closure、三维整数共振不稠密、phase injective/closed embedding/真正torus homeomorph。尚未验证，不计完成。恢复第一动作读density日志、修复并验收，不能重复构建正在运行的进程。
+- 当前HarmonicTorus candidate07十一关键退出0无警告；真商角有限乘积/连续旋转Flow/精确整数周期条件/固定正action能量面image/真实多振子机械解正式验收check10实际11:48:35--11:49:55退出0（8974jobs/643）。Scratch/固定版本/源码扫描/全部审计/输入SHA稳定，关键仅允许propext/Classical.choice/Quot.sound。本地保存e58430c与七次原日志。
+- TorusDensity attempt01/02失败已修复，candidate03八关键退出0、无警告（两条abel_nf info建议），只允许基础公理。真实homeomorph/二维实时间DenseRange/物理orbit closure/三维共振不稠密正式接入，full-check11实际11:56:21--11:57:42退出0，8975jobs/663声明/Scratch/固定版本/扫描/输入SHA稳定。TorusPeriodProbe有理比↔正周期候选attempt01运行中，尚未通过。恢复第一动作读Period日志、修复并验收；不并发或重复构建。
 - 原页印刷27--31/PDF50--54视觉核对，30/PDF53本轮复看。高维两两比无理不足，需integer nonresonance；二维与高维限制分开。§1.5.1/1.5.2/1.5.3仍partial；Kepler转向点/global orbit、一般二维implicit first-integral graph、一般非线性初值连续依赖/一般EL协变、Hartman--Grobman及后续全书未完成。负责人最终语义签核pending，新远端CI未跑；不将单批/单页当全书完成。
 ## 启动配置复核（2026-10-04 01:00 +08:00）
 

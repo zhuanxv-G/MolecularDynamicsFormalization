@@ -300,3 +300,11 @@ run_cmd do
 #print axioms MolecularDynamics.harmonicTorusPhase_realAngles
 #print axioms MolecularDynamics.harmonicTorusPhase_energy
 #print axioms MolecularDynamics.harmonicTorusPhase_image_fixedEnergy
+#print axioms MolecularDynamics.harmonicTorusPhase_injective
+#print axioms MolecularDynamics.harmonicTorusPhase_isClosedEmbedding
+#print axioms MolecularDynamics.exists_harmonicTorusPhase_homeomorph
+#print axioms MolecularDynamics.harmonicTorusThreeResonance_rotation
+#print axioms MolecularDynamics.harmonicTorusRotation_three_resonant_not_dense
+#print axioms MolecularDynamics.harmonicTorusRotation_two_dense_zero
+#print axioms MolecularDynamics.harmonicTorusRotation_two_dense
+#print axioms MolecularDynamics.harmonicTorusPhase_two_dense_fixedEnergy

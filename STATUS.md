@@ -250,3 +250,10 @@ Kepler/full-check09 passed at11:35:41--11:37:03:8973jobs, Scratch,613 imported p
 - Two-frequency irrational density and higher-dimensional integer resonance/nonresonance are separate. Final responsible semantic signoff pending, no new remote CI, whole book ongoing.
 
 Kepler/full-check10 passed at11:48:35--11:49:55:8974jobs, Scratch,643 imported project declaration audits, pinned versions/source scan/stable input SHA. Actual torus rotation/period/fixed energy image/true mechanical solution accepted locally; responsible signoff pending.
+
+### True torus homeomorphism and two-frequency density (2026-10-04)
+
+- Density candidate03 eight key proofs passed without warnings and only permitted foundational axioms. Genuine fixed-energy torus homeomorphism, real-time two-frequency irrational DenseRange/physical orbit closure and three-frequency resonance non-density formally integrated; full-check11 starts.
+- General higher-dimensional nonresonance density, forward-time density and rational-period iff remain open; final responsible semantic signoff pending, no new remote CI, whole book ongoing.
+
+Kepler/full-check11 passed at11:56:21--11:57:42:8975jobs, Scratch,663 imported project declaration audits, pinned versions/source scan/stable input SHA. True torus homeomorphism/two-frequency real-time density/physical energy-level closure and three-frequency resonance non-density accepted locally; final signoff pending.

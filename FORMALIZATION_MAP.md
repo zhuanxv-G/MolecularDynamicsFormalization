@@ -383,3 +383,7 @@ Printed30/PDF53: ActionAngleChart supplies the actual strict Fréchet derivative
 ### Actual decoupled oscillator angle torus (2026-10-04)
 
 Printed30/PDF53: HarmonicTorus is the finite product of actual angle quotient circles ℝ/(2πℤ); continuous rotation gives a genuine Flow. Its period condition is exactly ΩⱼT∈2πℤ for every j; integer multiples of a common nonzero base frequency give the expected period. The continuous torus phase map has image exactly the fixed positive coordinate-energy levels. Actual angle rotation maps to a true unit-mass decoupled harmonic mechanical solution. Irrational density and high-dimensional integer resonance are separate.
+
+### Torus topology, two-frequency density and resonance (2026-10-04)
+
+Printed30/PDF53: TorusDensity proves fixed positive coordinate-energy levels are actually homeomorphic to the finite product angle torus, using continuous injectivity and compactness. For two frequencies with Ω₀≠0 and Ω₁/Ω₀ irrational, true real-time rotation is DenseRange for every initial angle; this follows from irrational return-angle integer multiples and continuous closure, without assuming density. The corresponding actual mechanical phase orbit has every fixed-energy phase point in its closure. In three dimensions Ω₂=Ω₀+Ω₁ gives a true conserved angle relation and proves non-density, so higher-dimensional pairwise irrational ratios are not used as a sufficient condition.

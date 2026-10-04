@@ -1275,3 +1275,23 @@
 - full-check10实际11:48:35--11:49:55退出0，8974jobs、Scratch、643项目声明审计、固定版本/扫描/输入SHA稳定；十一关键仅三项基础公理。准备保存明确源码/七次失败或成功原日志/完整证据，不推送。
 - TorusDensityProbe已开始单一attempt01：二维无理比真实密度、能量面轨道closure；三维共振Ω₂=Ω₀+Ω₁不稠密；phase injectivity/closed embedding/homeomorph。尚未通过，不计正式成果。
 - 清理当前状态为最新可操作记录，全部失败历史保留WORK_LOG/原日志；最终签核pending，无新远端CI，全书持续。
+
+## 2026-10-04 11:52 +08:00 — torus已保存，density首轮类型规范修复
+
+- 真torus完整批次e58430c已本地保存，未推送。Density attempt01相映射injective/closed embedding/真正energy-level homeomorph三关键独立通过；二维density平移连续性需显式类型以避免拓扑实例推断；三维共振vecHead未展开，改显式change三分量再rw add_mul/coe_add。清除letI proof风格警告。准备attempt02，未计density成功。
+
+## 2026-10-04 11:54 +08:00 — density第二轮负乘积与closure函数显式化
+
+- attempt02五关键homeomorph/三维共振不稠密实际通过，仅二维返回时间实代数/closure map推断失败。实际负乘积-(Ωt)与-Ω*t模式改同一函数；第一分量field_simp后ring；map_mem_closure显式f/s/x防目标vecCons推断到错误tail域。局部实例改let按当前linter。准备attempt03；周期有理比候选已另落盘但未跑。
+
+## 2026-10-04 11:56 +08:00 — 真二维稠密/环面同胚与共振候选通过并正式接入
+
+- TorusDensity candidate03八关键退出0、无警告，仅两条abel_nf信息建议；仅允许基础公理。真实二维无理比DenseRange由返回时间/真实无理circle整数轨道密度推得；物理固定能量面的真轨道closure、homeomorph、三维共振不稠密均完整证明。
+- 正式TorusDensity接入根/Scratch/CheckAxioms，full-check11开始、冻结正式输入。全实时间density与forward density不混淆；一般高维nonresonance密度仍未完成。TorusPeriodProbe已落盘但未运行。
+- 最终负责人签核pending，无新远端CI，全书继续，无关材料保留。
+
+## 2026-10-04 11:59 +08:00 — 真环面同胚/二维稠密/共振限制完整验收通过
+
+- full-check11实际11:56:21--11:57:42退出0，8975jobs、Scratch、663项目声明审计、固定版本/扫描/输入SHA稳定；八关键仅三项基础公理。准备保存明确源码/三次原尝试日志/完整证据，不推送。
+- TorusPeriodProbe开始attempt01：二维正周期存在↔频率比有理、无理比无正周期、真实phase周期传递。候选未计正式完成。另已只读核对固定mathlib最新ProdDomain implicit-function API，为教材印刷28/PDF51真正first-integral level graph准备，不使用网络/MathCopilot。
+- 最终负责人签核pending，无新远端CI，全书持续。
