@@ -192,3 +192,7 @@ Continuous real scalar w, nonzero throughout the specified open position interva
 ### Kepler local nonturning quadrature (2026-10-04)
 
 Actual r'=v and v'=-1/r²+l²/r³ with positive radius on an open time interval; initial point inside the interval and v(t₀)≠0. Energy, velocity sign and local windows are derived rather than assumed by the final theorem. Both signs and l=0 are included. Integral inverse identities are eventual at the base point, and the time formula holds on a derived window. No differentiable inverse at a turning point or global noncollision claim is made.
+
+### Harmonic action-angle (2026-10-04)
+
+Unit scalar harmonic oscillator; Ω>0. Energy identity permits I≥0; actual ODE equivalence/time formula uses I>0 and actual differentiability of the chosen real angle/action lift. Nonzero phase representation is proved rather than assumed. Angle evolution is a real lift, not a global unique angle function; zero action is excluded from invertible-angle dynamics. Flow intertwining follows directly for all real I but uses Ω>0; the physically relevant representation has I>0. Local chart/torus topology are not inferred from mere representation.

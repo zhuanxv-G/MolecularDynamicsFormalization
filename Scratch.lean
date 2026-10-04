@@ -245,3 +245,14 @@ end MolecularDynamics
 #print axioms MolecularDynamics.exists_keplerRadial_nonturning_window
 #print axioms MolecularDynamics.keplerRadial_nonturning_signedQuadrature
 #print axioms MolecularDynamics.keplerRadial_nonturning_quadrature
+#print axioms MolecularDynamics.harmonicAction_time_formula
+#print axioms MolecularDynamics.harmonicAction_harmonicFlow
+#print axioms MolecularDynamics.harmonicActionAmplitude_pos
+#print axioms MolecularDynamics.harmonicActionVelocity_formula
+#print axioms MolecularDynamics.harmonicAction_energy
+#print axioms MolecularDynamics.harmonicActionAmplitude_hasDerivAt
+#print axioms MolecularDynamics.harmonicAction_hasDerivAt_components
+#print axioms MolecularDynamics.harmonicAction_derivative_coefficients_iff
+#print axioms MolecularDynamics.harmonicAction_ode_iff
+#print axioms MolecularDynamics.harmonicAction_explicit_solution
+#print axioms MolecularDynamics.exists_harmonicAction_representation

@@ -1,0 +1,30 @@
+docs/verification/2026-10-04-Kepler/probes/HarmonicActionAngleProbe.lean:64:13: error: Application type mismatch: The argument
+  HasDerivAt.const_mul Ω hv
+has type
+  HasDerivAt (fun y => Ω * (harmonicActionAmplitude Ω (J y) * Real.sin (θ y)))
+    (Ω *
+      (d / (Ω * harmonicActionAmplitude Ω (J t)) * Real.sin (θ t) +
+        harmonicActionAmplitude Ω (J t) * Real.cos (θ t) * ω))
+    t
+but is expected to have type
+  HasDerivAt (fun u => harmonicActionVelocity Ω (J u) (θ u))
+    (Ω *
+      (d / (Ω * harmonicActionAmplitude Ω (J t)) * Real.sin (θ t) +
+        harmonicActionAmplitude Ω (J t) * Real.cos (θ t) * ω))
+    t
+in the application
+  ⟨hx, HasDerivAt.const_mul Ω hv⟩
+'MolecularDynamics.harmonicActionAmplitude_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicActionVelocity_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicActionAmplitude_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_hasDerivAt_components' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicAction_derivative_coefficients_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicAction_ode_iff' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_explicit_solution' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_harmonicAction_representation' depends on axioms: [propext, Classical.choice, Quot.sound]

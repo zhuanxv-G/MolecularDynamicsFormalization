@@ -229,3 +229,10 @@ Kepler/full-check06 passed at11:07:37--11:10:48:8970jobs, Scratch,525imported pr
 - Turning points/global orbit classification, harmonic action-angle/torus and whole book remain open; final responsible semantic signoff pending, no new remote CI.
 
 Kepler/full-check07 passed at11:17:25--11:20:26:8971jobs, Scratch,536 imported project declarations, pinned versions/source scan/stable input SHA. Signed nonturning radial quadrature accepted locally; final responsible signoff pending.
+
+### Harmonic action-angle dynamics (2026-10-04)
+
+- Candidate04 eleven key theorems passed without warnings and only permitted foundational axioms. Actual printed formulas/energy, actual ODE equivalence/time solution, every nonzero scalar phase representation and true harmonicFlow intertwining formally integrated; Kepler/full-check08 starts.
+- Coordinate local inverse chart, decoupled oscillator torus, rational periodicity/irrational density and remaining whole book are open; final responsible semantic signoff pending, no new remote CI.
+
+Kepler/full-check08 passed at11:26:45--11:29:08:8972jobs, Scratch,589 imported project declaration audits, pinned versions/source scan/stable input SHA. Actual harmonic action-angle dynamics/flow intertwining accepted locally; final signoff pending.

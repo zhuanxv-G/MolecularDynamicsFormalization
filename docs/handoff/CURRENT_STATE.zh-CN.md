@@ -1,14 +1,14 @@
 # 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 11:21 +08:00）
+## 当前数学检查点（2026-10-04 11:31 +08:00）
 
 - 同一全书目标与聊天01a102b1-a3fe-71e1-a571-347703fc09b8；本轮get_goal实际已恢复active（平台状态），非完成/用户暂停。沿同一全书目标继续，未另建Goal/自动化，未购买/重置/换账户，不使用MathCopilot。
-- 分支chapter01-kinetic-energy-nonneg，当前本地HEAD2eaee482b7f6cc353bfa2433993268db7bcfd021，未推送；Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435固定。既有AGENTS/FORMALIZATION_PLAN/RESUME/T3及其他无关材料保留，只暂存本批明确文件。
+- 分支chapter01-kinetic-energy-nonneg，当前本地HEADda46d1f61fd34c54d3c408e158960df72c4c22f8，未推送；Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435固定。既有AGENTS/FORMALIZATION_PLAN/RESUME/T3及其他无关材料保留，只暂存本批明确文件。
 - 已验收：Theorem1.1真欧氏全未来严格sup稳定性2081575；Lagrangian/固定质量/Legendre真sup f52945d；双向势垒域全时间流84549ab；谐振子/自由粒子连续Flow4859306；真矩阵指数/实谱eb6d018；复谱/实恢复/列基矩阵逆60ee65a；真实第一积分↔DI·f=0/中心力角动量/静态极坐标bb3f40c；真实Kepler非零域梯度/C1/局部IVP/守恒e368448。
 - 最近三批正式固定验收：PolarCoordinateMap局部图/strict逆9f3c45b，Kepler02 08:12:32--08:13:53退出0（8966jobs/421）；KeplerPolarDynamics真EL/径向有效能量/角FTC235c03c，Kepler03 08:27:02--08:28:23退出0（8967jobs/454）；KeplerCartesianBridge真Cartesian↔polar EL e802090，Kepler04 08:37:49--08:39:11退出0（8968jobs/490）。均Scratch/固定版本/扫描/全部审计/SHA稳定，关键仅允许基础公理。
 - 当前独立批次KeplerReconstruction：attempt01局部IVP初值β重写失败已显式change修复；attempt02七关键退出0；attempt03证明任意非零Cartesian初值的polar表示与径向IVP+真实角积分重建九关键退出0，无警告/仅基础公理。正式KeplerReconstruction接入根/Scratch/CheckAxioms；Kepler/full-check05真实08:46:27--08:47:48退出0，8969jobs/511声明/Scratch/固定输入SHA稳定，已保存93feaee。
 - 原页印刷27--31/PDF50--54已视觉核对，本轮再核对29--30/PDF52--53。§1.5.1/1.5.2/1.5.3仍partial，径向分离积分/逆与转向点、action-angle/环面、一般非线性初值连续依赖/一般EL协变、Hartman--Grobman及后续全书未完成。负责人最终教材语义签核pending，新远端CI未跑，不能将单批/单页当全书完成。
-- SeparableQuadrature attempt03五关键实际退出0，无警告、仅允许基础公理；真实strict积分导数/局部逆/沿轨迹时间积分及r(t)=g(t-t₀)已证明。正式新模块接入，Kepler/full-check06实际11:07:37--11:10:48退出0，8970jobs/525声明/Scratch/固定版本/扫描/输入SHA稳定。KeplerQuadrature attempt01八关键退出0、无警告，仅三项基础公理；真实守恒推非转向窗口、符号分支/积分逆已通过候选，已正式接入根/Scratch/审计，full-check07实际11:17:25--11:20:26退出0，8971jobs/536声明/Scratch/固定版本/扫描/输入SHA稳定。Separable源码20576ce/证据2eaee48已本地保存；首次暂存日志路径误放probes导致整条git add失败，实际日志在Kepler根，已按真实路径补证据独立提交。准备保存KeplerQuadrature明确批次；HarmonicActionAngleProbe已落盘，attempt01开始，尚未通过或正式接入。恢复第一动作读该候选日志、按实际诊断修复；原始日志保留，最终签核pending，不把单批当全书完成。
+- SeparableQuadrature attempt03五关键实际退出0，无警告、仅允许基础公理；真实strict积分导数/局部逆/沿轨迹时间积分及r(t)=g(t-t₀)已证明。正式新模块接入，Kepler/full-check06实际11:07:37--11:10:48退出0，8970jobs/525声明/Scratch/固定版本/扫描/输入SHA稳定。KeplerQuadrature attempt01八关键退出0、无警告，仅三项基础公理；真实守恒推非转向窗口、符号分支/积分逆已通过候选，已正式接入根/Scratch/审计，full-check07实际11:17:25--11:20:26退出0，8971jobs/536声明/Scratch/固定版本/扫描/输入SHA稳定。Separable源码20576ce/证据2eaee48已本地保存；首次暂存日志路径误放probes导致整条git add失败，实际日志在Kepler根，已按真实路径补证据独立提交。KeplerQuadrature本地保存da46d1f；HarmonicActionAngleProbe attempt01/02失败仅tactic多余/函数结合顺序与三角因子整理，已修复；attempt03仅多余dsimp/警告已修复，attempt04十一关键退出0、无警告，仅基础公理。HarmonicActionAngle正式接入根/Scratch/CheckAxioms，full-check08实际11:26:45--11:29:08退出0，8972jobs/589声明/Scratch/固定版本/扫描/输入SHA稳定。ActionAngleChartProbe已落盘、attempt01运行中，尚未通过/正式接入。恢复第一动作读chart候选日志、修复并验收，然后多振子torus；原始日志保留，最终签核pending，不把单批当全书完成。
 
 ## 启动配置复核（2026-10-04 01:00 +08:00）
 

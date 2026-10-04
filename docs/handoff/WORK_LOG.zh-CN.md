@@ -1194,3 +1194,28 @@
 - Kepler/full-check07实际11:17:25--11:20:26退出0，8971jobs、Scratch、536项目声明审计、固定版本/扫描/输入SHA稳定。八关键只允许三项基础公理；准备本地保存明确源码与原始证据。
 - 再次视觉核对印刷30/PDF53，HarmonicActionAngleProbe已落盘并启动attempt01：真实能量E=IΩ、平方根速度身份、实际导数方程双向等价、显式角演化、任意非零初值表示。尚未验证，不能计为正式成果。
 - 转向点/global orbit、环面周期/稠密性及全书仍pending；最终签核pending，无新远端CI，无关材料保留。
+
+## 2026-10-04 11:22 +08:00 — action-angle首轮代数/API诊断
+
+- KeplerQuadrature完整成果本地保存da46d1f，未推送。HarmonicActionAngle attempt01失败为field_simp已关闭目标后的多余ring、极坐标乘积导数因子顺序、nlinarith不能自动把三角平方恒等式乘任意高阶系数、角函数convert产生未处理函数等式。已去多余tactic、显式乘法系数重写、ring因式分解再rw三角恒等式、保留const_sub真导数证明；不将失败输出中的sorryAx计为证明。
+- 候选继续attempt02，正式源码不受失败影响；最终签核pending，全书未完成。
+
+## 2026-10-04 11:24 +08:00 — action-angle第二轮单一函数结合顺序修复
+
+- attempt02其余代数/初值表示已独立通过，唯一失败是v定义(Ω*A)*sin和实际导数Ω*(A*sin)函数结合顺序；已用仅mul_assoc规范修复。继续补真实区间内I恒定/θ线性时间公式及与已验收harmonicFlow的真实共轭身份，准备attempt03，未计正式验收。
+
+## 2026-10-04 11:25 +08:00 — action-angle第三轮仅多余tactic修复
+
+- attempt03十关键独立通过，真实harmonicFlow共轭身份已证；时间公式仅dsimp无进展，删除后直接linarith。移除field_simp已关闭目标后的不可达ring警告，准备attempt04。失败日志保留，不计sorryAx输出成功。
+
+## 2026-10-04 11:26 +08:00 — action-angle真实动力学候选通过并正式接入
+
+- HarmonicActionAngle candidate04十一关键实际退出0、无警告，只允许三项基础公理。真实印刷变量公式、能量、导数ODE双向等价、区间I恒定/θ线性公式、任意非零初值表示及harmonicFlow共轭均完整候选通过。
+- 正式模块接入根/Scratch/CheckAxioms，映射/假设/状态同步；full-check08开始、冻结正式输入。局部逆坐标图与多振子torus/rational周期/irrational稠密尚未完成，不把代表公式冒称全局唯一角坐标。
+- Kepler转向点/global orbit及全书其他内容继续pending，最终签核pending，无新远端CI。
+
+## 2026-10-04 11:31 +08:00 — action-angle动力学完整验收通过
+
+- full-check08实际11:26:45--11:29:08退出0，8972jobs、Scratch、589项目声明审计、固定版本/扫描/输入SHA稳定。十一关键只允许基础公理。准备本地保存明确源码/四轮候选原日志/完整证据，不推送。
+- ActionAngleChartProbe已落盘并单一attempt01运行中：真正action-angle映射strict Fréchet导数、实际Jacobian det=1及OpenPartialHomeomorph严格可微逆。Ω>0/I>0明确，未把全局唯一角或零action可逆隐含进去。
+- 多振子torus/period/irrational density、Kepler转向点/global orbit与全书仍pending；最终签核pending，新远端CI未跑。

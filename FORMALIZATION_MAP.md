@@ -371,3 +371,7 @@ Printed28/PDF51 and30/PDF53: SeparableQuadrature proves G(x)=∫x₀..x 1/w has 
 ### Kepler signed radial quadrature (2026-10-04)
 
 Printed30/PDF53: KeplerQuadrature reduces actual positive-radius radial trajectories using true energy conservation, v²=2(E+1/r-l²/(2r²)). At each actual nonturning point v(t₀)≠0, continuity proves a position window with positive radicand and a time window with fixed velocity sign. A derived σ=±1 gives w=σ√(2(E+1/r-l²/(2r²))), true separated integral=time difference and a local inverse g with strict derivative v(t₀) and r(t)=g(t-t₀). Turning points and global orbit classification are separate.
+
+### Harmonic action-angle dynamics (2026-10-04)
+
+Printed30/PDF53: HarmonicActionAngle proves x=√(2I/Ω)cosθ and v=√(2IΩ)sinθ, actual E=IΩ, actual derivative equations equivalent to I'=0/θ'=-Ω for differentiable positive-action lifts, actual interval time formulas, and global explicit θ(t)=θ₀-Ω(t-t₀). Every nonzero scalar initial phase has a proved positive-action representation using complex argument. A true identity intertwines the accepted harmonicFlow with θ↦θ-Ωt. Local invertible coordinate chart and multi-oscillator torus/density are separate.

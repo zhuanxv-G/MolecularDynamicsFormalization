@@ -1,0 +1,93 @@
+docs/verification/2026-10-04-Kepler/probes/HarmonicActionAngleProbe.lean:23:4: error: No goals to be solved
+docs/verification/2026-10-04-Kepler/probes/HarmonicActionAngleProbe.lean:36:65: error: No goals to be solved
+docs/verification/2026-10-04-Kepler/probes/HarmonicActionAngleProbe.lean:46:2: error: No goals to be solved
+docs/verification/2026-10-04-Kepler/probes/HarmonicActionAngleProbe.lean:60:9: error: Application type mismatch: The argument
+  hx
+has type
+  HasDerivAt (fun u => harmonicActionAmplitude Ω (J u) * Real.cos (θ u))
+    (d / (Ω * harmonicActionAmplitude Ω (J t)) * Real.cos (θ t) - harmonicActionAmplitude Ω (J t) * ω * Real.sin (θ t))
+    t
+but is expected to have type
+  HasDerivAt (fun u => harmonicActionPosition Ω (J u) (θ u))
+    (d / (Ω * harmonicActionAmplitude Ω (J t)) * Real.cos (θ t) - harmonicActionAmplitude Ω (J t) * Real.sin (θ t) * ω)
+    t
+in the application
+  And.intro hx
+docs/verification/2026-10-04-Kepler/probes/HarmonicActionAngleProbe.lean:80:14: error: linarith failed to find a contradiction
+case h1
+Ω A d ω θ : ℝ
+hΩ : 0 < Ω
+hA : 0 < A
+hx : d / (Ω * A) * Real.cos θ - A * Real.sin θ * ω = Ω * A * Real.sin θ
+hv : Ω * (d / (Ω * A) * Real.sin θ + A * Real.cos θ * ω) = -Ω ^ 2 * (A * Real.cos θ)
+hv' : d / (Ω * A) * Real.sin θ + A * Real.cos θ * ω = -Ω * A * Real.cos θ
+hc : Real.cos θ ^ 2 + Real.sin θ ^ 2 = 1
+a✝ :
+  d / (Ω * A) <
+    (d / (Ω * A) * Real.cos θ - A * Real.sin θ * ω) * Real.cos θ +
+      (d / (Ω * A) * Real.sin θ + A * Real.cos θ * ω) * Real.sin θ
+⊢ False
+failed
+docs/verification/2026-10-04-Kepler/probes/HarmonicActionAngleProbe.lean:88:14: error: linarith failed to find a contradiction
+case h1
+Ω A d ω θ : ℝ
+hΩ : 0 < Ω
+hA : 0 < A
+hx : d / (Ω * A) * Real.cos θ - A * Real.sin θ * ω = Ω * A * Real.sin θ
+hv : Ω * (d / (Ω * A) * Real.sin θ + A * Real.cos θ * ω) = -Ω ^ 2 * (A * Real.cos θ)
+hv' : d / (Ω * A) * Real.sin θ + A * Real.cos θ * ω = -Ω * A * Real.cos θ
+hc : Real.cos θ ^ 2 + Real.sin θ ^ 2 = 1
+hsum : d / (Ω * A) = 0
+hd : d = 0
+a✝ :
+  A * ω <
+    -(d / (Ω * A) * Real.cos θ - A * Real.sin θ * ω) * Real.sin θ +
+      (d / (Ω * A) * Real.sin θ + A * Real.cos θ * ω) * Real.cos θ
+⊢ False
+failed
+docs/verification/2026-10-04-Kepler/probes/HarmonicActionAngleProbe.lean:89:39: error: linarith failed to find a contradiction
+case h1
+Ω A d ω θ : ℝ
+hΩ : 0 < Ω
+hA : 0 < A
+hx : d / (Ω * A) * Real.cos θ - A * Real.sin θ * ω = Ω * A * Real.sin θ
+hv : Ω * (d / (Ω * A) * Real.sin θ + A * Real.cos θ * ω) = -Ω ^ 2 * (A * Real.cos θ)
+hv' : d / (Ω * A) * Real.sin θ + A * Real.cos θ * ω = -Ω * A * Real.cos θ
+hc : Real.cos θ ^ 2 + Real.sin θ ^ 2 = 1
+hsum : d / (Ω * A) = 0
+hd : d = 0
+a✝ : -(Ω * A * Real.sin θ) * Real.sin θ + -Ω * A * Real.cos θ * Real.cos θ < -Ω * A
+⊢ False
+failed
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-04-Kepler/probes/HarmonicActionAngleProbe.lean:120:62: error: unsolved goals
+case e'_8
+Ω J θ₀ t₀ : ℝ
+hΩ : 0 < Ω
+hJ : 0 < J
+t : ℝ
+⊢ (fun u => θ₀ - Ω * u + Ω * t₀) = (fun x => θ₀) - fun y => -(Ω * t₀) + Ω * id y
+docs/verification/2026-10-04-Kepler/probes/HarmonicActionAngleProbe.lean:143:62: error: No goals to be solved
+'MolecularDynamics.harmonicActionAmplitude_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicActionVelocity_formula' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicActionAmplitude_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_hasDerivAt_components' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicAction_derivative_coefficients_iff' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicAction_ode_iff' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_explicit_solution' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_harmonicAction_representation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

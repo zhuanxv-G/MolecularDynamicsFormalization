@@ -1,0 +1,13 @@
+'MolecularDynamics.harmonicAction_time_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_harmonicFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicActionAmplitude_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicActionVelocity_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicActionAmplitude_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_hasDerivAt_components' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_derivative_coefficients_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MolecularDynamics.harmonicAction_ode_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.harmonicAction_explicit_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MolecularDynamics.exists_harmonicAction_representation' depends on axioms: [propext, Classical.choice, Quot.sound]
