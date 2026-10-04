@@ -431,3 +431,25 @@ end MolecularDynamics
 #check MolecularDynamics.IsTextbookSymplectic.abs_det
 #check MolecularDynamics.IsTextbookSymplectic.inv
 #check MolecularDynamics.IsTextbookSymplectic.inv_formula
+
+-- Sections 2.3.3--2.3.5: actual Jacobians and the genuine diffeomorphism group.
+#check MolecularDynamics.textbookJacobian
+#check MolecularDynamics.textbookJacobian_entry
+#check MolecularDynamics.textbookJacobian_mulVec
+#check MolecularDynamics.textbookJacobian_id
+#check MolecularDynamics.textbookJacobian_comp
+#check MolecularDynamics.IsTextbookSymplecticMap
+#check MolecularDynamics.isTextbookSymplecticMap_iff_preserves_form
+#check MolecularDynamics.isTextbookSymplecticMap_id
+#check MolecularDynamics.IsTextbookSymplecticMap.comp
+#check MolecularDynamics.IsTextbookSymplecticMap.jacobian_det_eq_one
+#check MolecularDynamics.textbookJacobian_equiv_symm
+#check MolecularDynamics.IsTextbookSymplecticEquiv
+#check MolecularDynamics.isTextbookSymplecticEquiv_refl
+#check MolecularDynamics.IsTextbookSymplecticEquiv.mul
+#check MolecularDynamics.IsTextbookSymplecticEquiv.symm
+#check MolecularDynamics.textbookSymplecticDiffeomorphismGroup
+#check MolecularDynamics.textbookSymplecticDiffeomorphismGroup_mem_iff
+#check MolecularDynamics.TextbookSymplecticDiffeomorphism
+#check MolecularDynamics.textbookSymplecticDiffeomorphism_mul_apply
+#synth Group (MolecularDynamics.TextbookSymplecticDiffeomorphism 2)

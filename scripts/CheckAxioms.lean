@@ -458,3 +458,24 @@ run_cmd do
 #print axioms MolecularDynamics.IsTextbookSymplectic.abs_det
 #print axioms MolecularDynamics.IsTextbookSymplectic.inv
 #print axioms MolecularDynamics.IsTextbookSymplectic.inv_formula
+
+-- Sections 2.3.3--2.3.5: actual Jacobians and the genuine diffeomorphism group.
+#print axioms MolecularDynamics.textbookJacobian
+#print axioms MolecularDynamics.textbookJacobian_entry
+#print axioms MolecularDynamics.textbookJacobian_mulVec
+#print axioms MolecularDynamics.textbookJacobian_id
+#print axioms MolecularDynamics.textbookJacobian_comp
+#print axioms MolecularDynamics.IsTextbookSymplecticMap
+#print axioms MolecularDynamics.isTextbookSymplecticMap_iff_preserves_form
+#print axioms MolecularDynamics.isTextbookSymplecticMap_id
+#print axioms MolecularDynamics.IsTextbookSymplecticMap.comp
+#print axioms MolecularDynamics.IsTextbookSymplecticMap.jacobian_det_eq_one
+#print axioms MolecularDynamics.textbookJacobian_equiv_symm
+#print axioms MolecularDynamics.IsTextbookSymplecticEquiv
+#print axioms MolecularDynamics.isTextbookSymplecticEquiv_refl
+#print axioms MolecularDynamics.IsTextbookSymplecticEquiv.mul
+#print axioms MolecularDynamics.IsTextbookSymplecticEquiv.symm
+#print axioms MolecularDynamics.textbookSymplecticDiffeomorphismGroup
+#print axioms MolecularDynamics.textbookSymplecticDiffeomorphismGroup_mem_iff
+#print axioms MolecularDynamics.TextbookSymplecticDiffeomorphism
+#print axioms MolecularDynamics.textbookSymplecticDiffeomorphism_mul_apply
