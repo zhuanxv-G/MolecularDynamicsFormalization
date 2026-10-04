@@ -240,3 +240,5 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 - The nearest-neighbor chain uses `N + 1` ordered sites and `N` bonds, represented by `Fin.castSucc` and `Fin.succ`. Its two-site statement is exact. No force derivative, boundary condition, periodic identification, or vibration spectrum is assumed.
 
 - LatticeVibrations assumes a finite-dimensional `Position n`, a `C²` potential at the candidate equilibrium, and zero gradient there for the little-o theorem. The expansion uses the actual derivative of `gradient U`; it does not assert Hessian positive definiteness or imaginary eigenvalues. Those spectral conclusions require separate positive-definite mass/Hessian hypotheses.
+
+- The positive-Hessian bridge assumes strict positivity of the actual quadratic form on every nonzero displacement. It derives only nonnegativity, with the kinetic block separately requiring strictly positive masses. Spectral classification and derivation of positive definiteness from a strict minimum remain unproved.

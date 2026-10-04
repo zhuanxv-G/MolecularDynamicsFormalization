@@ -364,3 +364,5 @@ run_cmd do
 #print axioms MolecularDynamics.gradientLinearizationRemainder
 #print axioms MolecularDynamics.gradientLinearizationRemainder_isLittleO
 #print axioms MolecularDynamics.gradientLinearization_expansion
+#print axioms MolecularDynamics.potentialHessian_quadratic_nonneg_of_posDef
+#print axioms MolecularDynamics.linearizedHamiltonianQuadratic_nonneg_of_positive_hessian

@@ -1522,3 +1522,7 @@
 
 - full-check24 实际 14:19:30--14:26:55 退出0，8987 jobs、744 项声明；新增梯度线性化余项、C² 平衡点 `o(δq)` 与精确展开均通过 Scratch、固定 Lean/mathlib、源码扫描、输入 SHA、公理审计，仅允许 `propext`、`Classical.choice`、`Quot.sound`。原页36--37/PDF59--60已渲染目视核对。
 - 正定 Hessian 的纯虚谱、normal modes、边界/周期晶格频谱及全书目标仍 pending，负责人最终语义签核 pending。
+
+## 2026-10-04 14:37 +08:00 — 正定 Hessian 二次型桥接完整验收
+
+- `potentialHessian_quadratic_nonneg_of_posDef` 与 `linearizedHamiltonianQuadratic_nonneg_of_positive_hessian` 已加入 `LatticeVibrations`。full-check25 实际 14:33:23--14:36:46 退出0，8987 jobs、746 项声明，Scratch/固定版本/源码扫描/输入 SHA/公理审计均通过，仅允许基础公理。正定性保持显式假设，不宣称从严格极小推出或得到纯虚谱。

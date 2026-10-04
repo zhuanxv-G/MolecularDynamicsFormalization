@@ -439,3 +439,7 @@ Printed33/PDF56: `nearestNeighborPotentialEnergy` sums `φ ‖x_(i+1)-x_i‖` ov
 ### Lattice-vibration gradient linearization (2026-10-04)
 
 Printed36--37/PDF59--60: `LatticeVibrations` records the equilibrium first-order expansion `∇U(q₀+h)=D(∇U)(q₀)h+R(h)` and proves `R=o(h)` under `C²` regularity and `∇U(q₀)=0`. Hessian symmetry is inherited from `HamiltonianHessian`; positive definiteness, normal-mode eigenvalue classification, and periodic/boundary spectra remain pending.
+
+### Positive Hessian quadratic bridge (2026-10-04)
+
+Printed37/PDF60: under an explicit positive-definite Hessian quadratic-form hypothesis, `LatticeVibrations` derives nonnegativity of the potential quadratic form and feeds it into the already defined linearized Hamiltonian, proving its nonnegativity with strictly positive masses. The theorem keeps positive definiteness as a hypothesis; it does not derive it from a minimum or claim the pure-imaginary spectrum.
