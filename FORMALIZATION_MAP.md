@@ -363,3 +363,7 @@ Printed29--30/PDF52--53: KeplerCartesianBridge proves norm=positive radius, actu
 ### Kepler reconstruction from actual radial IVPs (2026-10-04)
 
 Printed30/PDF53: KeplerReconstruction proves the true angle-integral derivative from positive-radius actual curves, then radial mechanical trajectories reconstruct polar EL and Cartesian Kepler solutions. C1 effective radial force gives real local IVPs for arbitrary positive radial initial data. Complex.arg plus proved trigonometric/velocity algebra gives polar representation of every nonzero-position Cartesian state. Thus any such Cartesian initial state has a true Kepler local IVP constructed from a real radial IVP and explicit angle integral. Separating the radial equation by an antiderivative/inverse, turning points and orbit classification remain separate.
+
+### Actual scalar separated quadrature and inverse (2026-10-04)
+
+Printed28/PDF51 and30/PDF53: SeparableQuadrature proves G(x)=∫x₀..x 1/w has the actual strict derivative 1/w(x) when w is continuous and nonzero on an open position interval. FTC and the inverse function theorem give a true local inverse g with both inverse identities and strict derivative w(x₀). Every actual solution r'=w(r) in that interval satisfies G(r(t))=t-t₀, then locally r(t)=g(t-t₀). Integrability is derived from continuity/nonzero denominator. Kepler square-root branch reduction and turning points are separate.

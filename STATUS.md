@@ -215,3 +215,10 @@ Kepler/full-check04 passed at08:37:49--08:39:11:8968jobs, Scratch,490imported pr
 - Reconstruction candidate03 passed without warnings; nine key proofs only use permitted foundational axioms. Real positive-radius radial IVPs, true angle integral reconstruction, all nonzero Cartesian initial-state polar representation and reconstructed genuine local Kepler IVP formally integrated. Kepler/full-check05 starts.
 - Radial separated quadrature/inverse with turning-point treatment, action-angle/torus and whole-book continuation remain open; final responsible semantic sign-off pending, new remote CI not run.
 Kepler/full-check05 passed at08:46:27--08:47:48:8969jobs, Scratch,511imported project declaration audits, pinned versions/source scan/stable input SHA. Arbitrary nonzero initial-state radial-IVP reconstruction accepted; separated integral/inverse candidate remains outside the library.
+
+### Separated scalar quadrature (2026-10-04)
+
+- SeparableQuadrature candidate03 passed without warnings; five key proofs only use permitted foundational axioms. Actual separated integral strict derivative/local inverse/time formula and local inverse solution formally integrated; Kepler/full-check06 starts.
+- Kepler signed square-root speed branch and local nonturning-point reduction, turning points, action-angle/torus and whole book remain open; final responsible semantic sign-off pending, no new remote CI.
+
+Kepler/full-check06 passed at11:07:37--11:10:48:8970jobs, Scratch,525imported project declaration audits, pinned versions/source scan/stable input SHA. True scalar quadrature and inverse accepted; Kepler square-root branch candidate remains outside the formal library.

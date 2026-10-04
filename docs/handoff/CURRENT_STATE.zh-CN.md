@@ -1,14 +1,15 @@
-﻿# 当前状态与接续检查点
+# 当前状态与接续检查点
 
-## 当前数学检查点（2026-10-04 08:50 +08:00）
+## 当前数学检查点（2026-10-04 11:15 +08:00）
 
-- 同一全书目标与聊天01a102b1-a3fe-71e1-a571-347703fc09b8；本轮get_goal实际仍usageLimited，非完成/用户暂停。前次额度只读ordinaryUsageAllowed=true，本轮实际已能持续证明；工具不能恢复平台Goal状态，未另建Goal/自动化，未购买/重置/换账户，不使用MathCopilot。
-- 分支chapter01-kinetic-energy-nonneg，当前本地HEADe802090e049873fe3e85bca8a32e3ff2fdda40c9，未推送；Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435固定。既有AGENTS/FORMALIZATION_PLAN/RESUME/T3及其他无关材料保留，只暂存本批明确文件。
+- 同一全书目标与聊天01a102b1-a3fe-71e1-a571-347703fc09b8；本轮get_goal实际已恢复active（平台状态），非完成/用户暂停。沿同一全书目标继续，未另建Goal/自动化，未购买/重置/换账户，不使用MathCopilot。
+- 分支chapter01-kinetic-energy-nonneg，当前本地HEAD93feaee7d59c5dfca9b35e46bcb8543af09dd38a，未推送；Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435固定。既有AGENTS/FORMALIZATION_PLAN/RESUME/T3及其他无关材料保留，只暂存本批明确文件。
 - 已验收：Theorem1.1真欧氏全未来严格sup稳定性2081575；Lagrangian/固定质量/Legendre真sup f52945d；双向势垒域全时间流84549ab；谐振子/自由粒子连续Flow4859306；真矩阵指数/实谱eb6d018；复谱/实恢复/列基矩阵逆60ee65a；真实第一积分↔DI·f=0/中心力角动量/静态极坐标bb3f40c；真实Kepler非零域梯度/C1/局部IVP/守恒e368448。
 - 最近三批正式固定验收：PolarCoordinateMap局部图/strict逆9f3c45b，Kepler02 08:12:32--08:13:53退出0（8966jobs/421）；KeplerPolarDynamics真EL/径向有效能量/角FTC235c03c，Kepler03 08:27:02--08:28:23退出0（8967jobs/454）；KeplerCartesianBridge真Cartesian↔polar EL e802090，Kepler04 08:37:49--08:39:11退出0（8968jobs/490）。均Scratch/固定版本/扫描/全部审计/SHA稳定，关键仅允许基础公理。
-- 当前独立批次KeplerReconstruction：attempt01局部IVP初值β重写失败已显式change修复；attempt02七关键退出0；attempt03证明任意非零Cartesian初值的polar表示与径向IVP+真实角积分重建九关键退出0，无警告/仅基础公理。正式KeplerReconstruction接入根/Scratch/CheckAxioms；Kepler/full-check05真实08:46:27--08:47:48退出0，8969jobs/511声明/Scratch/固定输入SHA稳定，正在本地保存。
+- 当前独立批次KeplerReconstruction：attempt01局部IVP初值β重写失败已显式change修复；attempt02七关键退出0；attempt03证明任意非零Cartesian初值的polar表示与径向IVP+真实角积分重建九关键退出0，无警告/仅基础公理。正式KeplerReconstruction接入根/Scratch/CheckAxioms；Kepler/full-check05真实08:46:27--08:47:48退出0，8969jobs/511声明/Scratch/固定输入SHA稳定，已保存93feaee。
 - 原页印刷27--31/PDF50--54已视觉核对，本轮再核对29--30/PDF52--53。§1.5.1/1.5.2/1.5.3仍partial，径向分离积分/逆与转向点、action-angle/环面、一般非线性初值连续依赖/一般EL协变、Hartman--Grobman及后续全书未完成。负责人最终教材语义签核pending，新远端CI未跑，不能将单批/单页当全书完成。
-- 下一SeparableQuadratureProbe已落盘，attempt01 session69693运行中；真实分离积分strict导数/可微局部逆与实际r轨迹的时间积分关系。恢复第一动作读该候选诊断，继续非转向点附近径向分离积分/局部逆，显式处理符号、分母/根号与真FTC，不假设欲证可积/解存在。所有原始日志保留，每成果/失败及20--30分钟落盘，不停全书接续。
+- SeparableQuadrature attempt03五关键实际退出0，无警告、仅允许基础公理；真实strict积分导数/局部逆/沿轨迹时间积分及r(t)=g(t-t₀)已证明。正式新模块接入，Kepler/full-check06实际11:07:37--11:10:48退出0，8970jobs/525声明/Scratch/固定版本/扫描/输入SHA稳定。KeplerQuadrature attempt01八关键退出0、无警告，仅三项基础公理；真实守恒推非转向窗口、符号分支/积分逆已通过候选，尚未正式接入。恢复第一动作保存Separable批，然后接入KeplerQuadrature并完整验收；原始日志保留，最终签核pending，不把单批当全书完成。
+
 ## 启动配置复核（2026-10-04 01:00 +08:00）
 
 - 用户已明确说“启动方案”，指定 `gpt-6.1-sol`、推理强度 `high`。此前“先不要开启”已被本次启动授权取代；只做本地、不使用 MathCopilot 的要求持续有效。
@@ -16,6 +17,7 @@
 - 已创建并实读同聊天 heartbeat：ID `lean`，名称“全书 Lean 本地自动接续”，状态 `ACTIVE`，每 15 分钟尝试接续，目标 ID 与上述数学聊天一致。已在保存提示词中要求运行中不打断、用户明确暂停/取消时不重启、额度不可用时等待、未变时安静。真实额度耗尽后的自动恢复尚未实测，不能标为验证成功。
 - 首个数学目标：固定 Lean 4.34.0/mathlib 版本下实现 T4-C1 有限右端点极限，随后做局部 IVP 拼接及紧性条件下延拓，再接完整 Theorem 1.1。正式源码目标由新聊天核对 API 后确定，先使用独立最小探针；本启动窗口只维护任务配置和交接，不并行修改 Lean。
 - 旧 T2 网站 heartbeat 已由原窗口删除：实读自动化目录不再有 `t2`，原窗口最终消息确认删除；其余旧 `t3`、`t5` 均实读为 `PAUSED`。本地新任务不使用 MathCopilot。启动配置与验证边界保存在 `docs/tasks/LOCAL_LONG_RUN_20261004/STARTUP.zh-CN.md`。
+- 2026-10-04 11:03 +08:00 启动窗口响应用户“继续”：紧凑快照确认数学聊天正在执行 turn `01a104da-2bf3-78f1-b828-d9bf83c57ad3`；实读该 turn_context 仍为 `gpt-6.1-sol` / `high`，heartbeat `lean` 仍 ACTIVE、15 分钟周期、目标 ID 正确。当前从分离积分探针接续。没有重复创建任务、Goal 或自动化，没有打断数学聊天或并行修改 Lean；本轮核对运行与配置，没有重跑数学验收，具体证明进度以上方数学检查点为准。
 
 ## 当前用户要求与长期任务方案（2026-10-04 00:50 +08:00）
 
@@ -91,3 +93,10 @@ T3 接续聊天 `01a0ffde-bd33-7c63-96d4-67969e803263` 维护专属 T3 文档/�
 ## 恢复第一动作
 
 当前仅完成长期任务方案，用户要求尚未启动。先等待后续明确启动指令；启动后检查实际 HEAD 与未提交文件，直接在本地固定版本验证 T4-C1 的有限端点极限接口，不访问 MathCopilot。源码若再变化，另建唯一验收目录运行完整 `scripts/check.ps1`。失败方法与历史检查证据见 WORK_LOG；首次单文件等待与三项正质量推理错误均不计成功。
+
+## T2/T5 本地补充复核（2026-10-04，本聊天已完成）
+
+- 原接续聊天收到用户“继续”，仅复核固定9baf87f中的T2/T5证明假设、教材对应与既有验收输入/输出哈希；范围及输出在docs/reviews/2026-10-04-T2-T5-local/。
+- 全书长期聊天01a102b1-a3fe-71e1-a571-347703fc09b8正在推进Kepler分离积分，本聊天不修改其源码/探针/构建输入/Git，不发送重复工作请求，不使用MathCopilot。
+- 四十条命名证明逐项复核，未发现源码阻断问题；两份源码与固定提交一致，两批27件冻结输入及20份原日志SHA全部匹配。完整本地报告/CSV/证据/输出SHA保存在上述目录。本轮未重建Lean、未刷新远端CI，未修改源码或执行Git提交。
+- 负责人最终教材语义签核与网站原报告收件仍单独登记；本报告为本地补充复核。旧t2自动接续保持删除，全书长期聊天继续后续数学任务。
