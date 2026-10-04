@@ -1,0 +1,44 @@
+docs/verification/2026-10-04-Kepler/probes/PolarJacobianProbe.lean:26:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Real.cos (q.ofLp 1) • EuclideanSpace.proj 0 + q.ofLp 0 • -Real.sin (q.ofLp 1) • EuclideanSpace.proj 1
+in the target expression
+  HasStrictFDerivAt (⇑(EuclideanSpace.proj 0) * Real.cos ∘ ⇑(EuclideanSpace.proj 1))
+    ((EuclideanSpace.proj 0) q • -Real.sin (q.ofLp 1) • EuclideanSpace.proj 1 +
+      (Real.cos ∘ ⇑(EuclideanSpace.proj 1)) q • EuclideanSpace.proj 0)
+    q
+
+case «0»
+q : Position 2
+h :
+  HasStrictFDerivAt (⇑(EuclideanSpace.proj 0) * Real.cos ∘ ⇑(EuclideanSpace.proj 1))
+    ((EuclideanSpace.proj 0) q • -Real.sin (q.ofLp 1) • EuclideanSpace.proj 1 +
+      (Real.cos ∘ ⇑(EuclideanSpace.proj 1)) q • EuclideanSpace.proj 0)
+    q
+heq :
+  Real.cos (q.ofLp 1) • EuclideanSpace.proj 0 + q.ofLp 0 • -Real.sin (q.ofLp 1) • EuclideanSpace.proj 1 =
+    PiLp.proj 2 (fun x => ℝ) 0 ∘SL Matrix.toEuclideanCLM (polarJacobian (q.ofLp 0) (q.ofLp 1))
+⊢ HasStrictFDerivAt (fun x => (polarCoordinateMap x).ofLp ((fun i => i) ⟨0, ⋯⟩))
+    (PiLp.proj 2 (fun x => ℝ) ((fun i => i) ⟨0, ⋯⟩) ∘SL Matrix.toEuclideanCLM (polarJacobian (q.ofLp 0) (q.ofLp 1))) q
+docs/verification/2026-10-04-Kepler/probes/PolarJacobianProbe.lean:40:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Real.sin (q.ofLp 1) • EuclideanSpace.proj 0 + q.ofLp 0 • Real.cos (q.ofLp 1) • EuclideanSpace.proj 1
+in the target expression
+  HasStrictFDerivAt (⇑(EuclideanSpace.proj 0) * Real.sin ∘ ⇑(EuclideanSpace.proj 1))
+    ((EuclideanSpace.proj 0) q • Real.cos (q.ofLp 1) • EuclideanSpace.proj 1 +
+      (Real.sin ∘ ⇑(EuclideanSpace.proj 1)) q • EuclideanSpace.proj 0)
+    q
+
+case «1»
+q : Position 2
+h :
+  HasStrictFDerivAt (⇑(EuclideanSpace.proj 0) * Real.sin ∘ ⇑(EuclideanSpace.proj 1))
+    ((EuclideanSpace.proj 0) q • Real.cos (q.ofLp 1) • EuclideanSpace.proj 1 +
+      (Real.sin ∘ ⇑(EuclideanSpace.proj 1)) q • EuclideanSpace.proj 0)
+    q
+heq :
+  Real.sin (q.ofLp 1) • EuclideanSpace.proj 0 + q.ofLp 0 • Real.cos (q.ofLp 1) • EuclideanSpace.proj 1 =
+    PiLp.proj 2 (fun x => ℝ) 1 ∘SL Matrix.toEuclideanCLM (polarJacobian (q.ofLp 0) (q.ofLp 1))
+⊢ HasStrictFDerivAt (fun x => (polarCoordinateMap x).ofLp ((fun i => i) ⟨1, ⋯⟩))
+    (PiLp.proj 2 (fun x => ℝ) ((fun i => i) ⟨1, ⋯⟩) ∘SL Matrix.toEuclideanCLM (polarJacobian (q.ofLp 0) (q.ofLp 1))) q
+'MolecularDynamics.hasStrictFDerivAt_polarCoordinateMap' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

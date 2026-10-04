@@ -168,3 +168,7 @@ These are modeling questions to check against each textbook statement, not globa
 - KeplerPotential and Force are total Lean functions, but actual gradient, C1 field and local IVP theorems explicitly require q≠0 and use the open nonzero position domain. No smoothness or physical value at0 is inferred from total inverse.
 - Unit masses and arbitrary finite configuration dimension are used for the energy/local IVP statement; planar angular momentum is specifically dimension2. Energy and angular momentum follow from the genuine mechanical ODE and proved force-gradient/central-force identities. Existing trajectory avoidance of0 is the model domain, not a new proof of no collisions.
 - Radial/polar dynamics and quadrature, global noncollision conditions and action-angle/torus results remain separate. Candidate03 passed with permitted axioms; Kepler/full-check01 passed at07:59:01--08:00:56:8965jobs,412project audits, Scratch, pinned versions/scan and stable SHA, responsible sign-off pending and new remote CI not run.
+
+### Polar local chart (2026-10-04)
+
+Two real Euclidean coordinates, radius q₀≠0 for inverse chart; derivative formula itself holds at every q. Local invertibility is deduced from the proved Jacobian determinant q₀ through the actual inverse function theorem. Inverse is strict differentiable at the image of the base point. Positive radius, physical Kepler trajectories and global angle branch selection are not inferred from this local result.

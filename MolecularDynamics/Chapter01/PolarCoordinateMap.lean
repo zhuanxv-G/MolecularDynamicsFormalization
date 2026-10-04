@@ -2,6 +2,9 @@ import MolecularDynamics.Chapter01.PolarCoordinates
 import Mathlib.Analysis.CStarAlgebra.Matrix
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FDeriv
 
+/-! Printed29/PDF52: genuine polar Frechet derivative and local inverse chart.
+The chart is local at nonzero radius; angles are not globally identified. -/
+
 namespace MolecularDynamics
 noncomputable def polarCoordinateMap (q : Position 2) : Position 2 :=
   WithLp.toLp 2 ![q 0 * Real.cos (q 1), q 0 * Real.sin (q 1)]
@@ -87,9 +90,4 @@ theorem exists_polarLocalChart (q : Position 2) (hq : q 0 ≠ 0) :
   obtain ⟨L, e, _, hq, he, hd⟩ := exists_polarLocalChart_strictInverse q hq
   exact ⟨e, hq, he, hd.hasFDerivAt.differentiableAt⟩
 
-#print axioms hasStrictFDerivAt_polarCoordinateMap
-#print axioms exists_polarDerivativeEquiv
-#print axioms exists_polarLocalChart
-#print axioms fderiv_polarCoordinateMap
-#print axioms exists_polarLocalChart_strictInverse
 end MolecularDynamics

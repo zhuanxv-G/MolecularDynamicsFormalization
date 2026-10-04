@@ -194,3 +194,8 @@ end MolecularDynamics
 #print axioms MolecularDynamics.exists_kepler_localIVP
 #print axioms MolecularDynamics.kepler_energy_const_on_Ioo
 #print axioms MolecularDynamics.kepler_planarAngularMomentum_const_on_Ioo
+#print axioms MolecularDynamics.hasStrictFDerivAt_polarCoordinateMap
+#print axioms MolecularDynamics.exists_polarDerivativeEquiv
+#print axioms MolecularDynamics.fderiv_polarCoordinateMap
+#print axioms MolecularDynamics.exists_polarLocalChart_strictInverse
+#print axioms MolecularDynamics.exists_polarLocalChart

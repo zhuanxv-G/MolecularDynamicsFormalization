@@ -347,3 +347,7 @@ Kepler/full-check01 passed at07:59:01--08:00:56:8965jobs,412project audits, Scra
 
 Collision-free global continuation, polar radial dynamics/quadrature and complete
 integrability claims remain open; responsible sign-off pending.
+
+### Genuine polar derivative and local chart (2026-10-04)
+
+Printed29/PDF52: `PolarCoordinateMap.lean` proves the actual strict Frechet derivative of (r cosθ,r sinθ), identifies its fderiv with the previously verified matrix, and constructs a genuine OpenPartialHomeomorph at r≠0. The inverse has the strict derivative of the inverse linear equivalence. No global inverse across periodic angles is asserted. Euler--Lagrange covariance, radial reduction and quadrature remain separate tasks.

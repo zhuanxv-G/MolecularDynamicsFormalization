@@ -1038,3 +1038,36 @@
 - Kepler/full-check01于07:59:01--08:00:56实际退出0：8965jobs、Scratch、412声明依赖审计、固定版本/扫描与SHA稳定；六项新增关键仅允许三项基础公理。
 - 非零位置域真梯度/C1力/真实局部IVP/能量与二维角动量已完整验收；负责人最终语义签核pending，新远端CI未跑。正在本地保存明确批次，保留无关材料与原始失败日志，未推送/合并。
 - 下一独立PolarJacobianProbe已写入，首轮session19436检查中：实际polar映射的strict Frechet导数，拟连接原速度矩阵。候选不计本次Kepler成果，不计径向EL/积分或全节/全书完成。
+
+## 2026-10-04 08:04 +08:00 — Kepler已保存，真实Jacobian首轮重排修复
+
+- Kepler验收源码/全部明确证据已本地提交e3684485a6997ff519bda8dbd11b5a140389a0bd，未推送；8965jobs/412声明/固定SHA稳定。
+- PolarJacobian attempt01退出1：真实strict导数的乘积法则排列为r·Dcos+cos·Dr，与候选矩阵展开cos·Dr+r·Dcos相反，同时composition apply未展开。两项CLM矩阵系数等式都已独立核实；按Function.comp_def展开并add_comm重排后再rw，不重复原无匹配路线。
+- 准备attempt02，未把该未完成真实Jacobian放入正式库；负责人最终签核仍pending。
+
+### 08:05 +08:00 — Jacobian投影应用显式API修复
+
+- PolarJacobian attempt02仍在系数rw无匹配：排列已修复，剩余为EuclideanSpace.proj q未规范到q_i。已查固定版本EuclideanSpace.coe_proj，显式simp该函数应用，保留CLM自身与导数类型；不重跑原仅composition/add_comm路线。
+- 两分量CLM矩阵系数等式继续通过，无数学反例，尚无正式Jacobian声明。准备attempt03，失败日志全部保留。
+
+## 2026-10-04 08:12 +08:00 — 极坐标真实Jacobian和局部可逆通过
+
+- attempt03退出0，EuclideanSpace.coe_proj显式规范修复成功，polarCoordinateMap的真实strict Frechet导数就是已核实det=r的矩阵CLM。
+- attempt04退出0：r≠0由矩阵IsUnit经star代数等价得到CLM unit，再通过ContinuousLinearEquiv.unitsEquiv和真实逆函数定理得到OpenPartialHomeomorph，其前向映射是真polarMap，含基点且逆可微。三项关键仅允许propext/Classical.choice/Quot.sound。
+- attempt05补真实fderiv矩阵公式与逆的strict Frechet导数。准备通过后正式新模块PolarCoordinateMap及固定验收；r=0不纳入局部可逆，无全球角分支双射主张。全书未完成，最终语义签核pending。
+
+## 2026-10-04 08:15 +08:00 — 极坐标局部逆strict导数通过，正式验收启动
+
+- PolarJacobian attempt05退出0，五关键仅三项允许基础公理。新PolarCoordinateMap正式接入根/Scratch/CheckAxioms，映射/假设/状态与独立语义报告同步。
+- Kepler/full-check02启动，冻结正式输入；前轮Kepler/full-check01仍保留。随后推进真实极坐标EL/径向化约，不将局部图或一批任务计作全书完成。最终语义签核pending，无新远端CI。
+
+## 2026-10-04 08:16 +08:00 — 极坐标完整验收成功，EL候选函数等式修复
+
+- Kepler/full-check02真实08:12:32--08:13:53退出0，8966jobs，Scratch/项目全部声明审计、固定版本/扫描与正式输入SHA稳定。五关键新增仅允许三项基础公理。此为真正局部图/strict逆导数的正式验证，最终语义签核pending，无远端CI。
+- 原页印刷29--30/PDF52--53再次实际查看。KeplerPolarDynamics候选attempt01失败于两条HasDerivAt的convert生成函数等式尚未funext；角速度与角度偏导独立通过。失败恢复的sorryAx仅在错误输出中，不进入正式库。
+- 对函数等式补funext后ring，准备attempt02；已写真实标量偏导定义的EL谓词/等价、角动量常数与径向化约，尚未称该候选验收成功。
+
+### 08:18 +08:00 — 局部图验收检查点保存与EL第二处规范修复
+
+- full-check02正式成功与边界已同步inventory/状态/语义报告，正在本地保存明确批次。新EL候选不纳入该正式验收。
+- KeplerPolarDynamics attempt02已修复v偏导，r偏导的剩余函数加法应用需要Pi.add_apply；实际标量公式正确，按funext后该API展开再ring。原始失败日志保留，准备attempt03，不重复仅funext路线。

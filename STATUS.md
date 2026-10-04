@@ -191,3 +191,9 @@
 
 - Candidate03 passed: true inverse-distance gradient/negative-gradient force, force C1 and real local IVP on q≠0, actual interval energy conservation and planar angular momentum conservation. Kepler/full-check01 passed at07:59:01--08:00:56:8965jobs,412project audits, Scratch, pinned versions/scan and stable SHA.
 - No collision-free global orbit, polar radial quadrature or full integrability claim is inferred. Section1.5.2/whole book remain ongoing, responsible final sign-off pending, no new remote CI.
+
+### Polar actual derivative and local inverse (2026-10-04)
+
+- PolarJacobian candidate05 passed: five key declarations only use the permitted foundational axioms. Actual derivative, fderiv formula, invertible derivative at nonzero radius and genuine local chart with strict differentiable inverse formally integrated.
+- Kepler/full-check02 starts for the new formal module. Section1.5.2/whole book ongoing; final responsible semantic sign-off pending, new remote CI not run.
+Kepler/full-check02 passed at08:12:32--08:13:53:8966jobs, Scratch, full project axiom audit, pinned versions/source scan/stable input SHA. The formal polar local chart is accepted locally; scalar polar EL candidates remain outside the library.
