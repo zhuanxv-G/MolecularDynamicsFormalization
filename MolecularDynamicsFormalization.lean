@@ -151,3 +151,5 @@ import MolecularDynamics.Chapter06.LangevinFutureLaw
 import MolecularDynamics.Chapter06.LangevinInitialState
 
 import MolecularDynamics.Chapter06.LangevinTransitionKernel
+
+import MolecularDynamics.Chapter06.LangevinTransitionSemigroup

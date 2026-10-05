@@ -1,0 +1,128 @@
+{
+  "started_at": "2026-10-05T20:29:20.8171566+08:00",
+  "finished_at": "2026-10-05T20:32:18.7715566+08:00",
+  "head_at_check": "3e6b0abcae33ada4e5138980ebe57b21f88d411f",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9056,
+  "audit_declarations": 1089,
+  "inputs": 139,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPathEndpoint_initial",
+    "MolecularDynamics.textbookLangevinPeriodicPathEndpoint_initial",
+    "MolecularDynamics.textbookLangevinTransitionKernel_zero",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_zero",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_transition_marginal",
+    "MolecularDynamics.textbookLangevinTransitionKernel_add",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_transition_marginal",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_add",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_semigroup_of_periodic"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPathEndpoint_initial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPathEndpoint_initial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinTransitionKernel_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGlobalRandomPhase_transition_marginal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinTransitionKernel_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_transition_marginal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_semigroup_of_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinTransitionSemigroup.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "b98096c1c096b51b776b9a5282b43844be16bd80d40b517fc43c2737bd930bc4",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "2da89c70c711f86475506f119af0e5b73867a017ec9125e9b2b059b9543ad232",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "2b0da2eeb801a8f73bf01d28e0394c1e9069fa55ec0a62fab7120ca7d4da44de",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "190542ed4eddd3acc0cb9568a5d422b6a8286fb9fda1c0c95f72cd452edb66dd",
+      "staged_equals_working_after_CRLF_to_LF": true
+    }
+  ]
+}

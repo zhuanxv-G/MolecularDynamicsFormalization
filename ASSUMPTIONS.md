@@ -407,3 +407,6 @@ auxiliary real模型需C² U和真实global forceLip，实际periodic主模型�
 
 ## 2026-10-05 真实transition kernel/确定时间条件律
 actual标准finite-dimensional vector Wiener；unit mass、finite Nc、S/T≥0及任意γ/σ。auxiliary real模型为C² U、显式force globalLip；periodic实际unit torus模型为C∞ lattice-periodic U，最后主结论推导globalLip并构造同一个全时间过程的条件律。kernel measurability/probability、actual endpoint law、未来与整个历史独立及条件Markov均证明，不作为输入；condDistrib所需IsProbabilityMeasure P在陈述中由hB局部绑定，并非新增假设。AE量词位于每固定S/T之后；无stopping time/强Markov/所有确定时间共同AE条件律承诺。completed filtration、density/generator/Harris仍待证明。
+
+## 2026-10-05 actual transition semigroup依赖
+与已接受真实Markov模型同一unit-mass/unit-torus/finite Nc、标准vector Wiener、任意γ/σ、S/T非负；real C² U/globalforceLip辅助模型，periodic C∞lattice U最后主结论derived forceLip。actual endpoint初值对所有noise paths，不只AE；概率转移族K0=id与Chapman–Kolmogorov皆derived，不把半群或随机解边缘factorization当输入。无需σ≠0即可成立；transition密度或可达另有条件。completed filtration/适应性/actual generator/Harris仍待证。
