@@ -1,0 +1,15 @@
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:322:8: warning: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.norm_real, Real.norm_eq_abs, mul_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:344:41: error: Application type mismatch: The argument
+  hs
+has type
+  c * ↑(n i) ^ 2 ≤ R
+but is expected to have type
+  ↑(n i) ^ 2 * c ≤ R
+in the application
+  (le_div_iff₀ hc).mpr hs

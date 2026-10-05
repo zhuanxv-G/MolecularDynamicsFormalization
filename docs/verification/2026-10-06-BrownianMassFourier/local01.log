@@ -1,0 +1,47 @@
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:72:9: error: invalid 'by' tactic, expected type has not been provided
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:104:4: warning: `ContinuousLinearMap.zero_apply` has been deprecated: Use `zero_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.zero_apply` to `zero_apply x`).
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:102:79: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+β : ℝ
+f : (Fin Nc → ℝ) → ℝ
+q : Fin Nc → ℝ
+⊢ ∑ i,
+      (m i)⁻¹ *
+        (β⁻¹ * (fderiv ℝ (textbookConfigurationPartial f i) q) (Pi.single i 1) -
+          (fderiv ℝ (fun x => 0) q) (Pi.single i 1) * (fderiv ℝ f q) (Pi.single i 1)) =
+    ∑ i, (m i)⁻¹ * (β⁻¹ * (fderiv ℝ (textbookConfigurationPartial f i) q) (Pi.single i 1))
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:103:70: warning: This simp argument is unused:
+  fderiv_const
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGenerator, textbookConfigurationPartial, ContinuousLinearMap.zero_apply, zero_mul,
+    sub_zero, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:104:4: warning: This simp argument is unused:
+  ContinuousLinearMap.zero_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGenerator, textbookConfigurationPartial, fderiv_const, zero_mul, sub_zero,
+    mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:104:36: warning: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGenerator, textbookConfigurationPartial, fderiv_const,
+    ContinuousLinearMap.zero_apply, sub_zero, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:104:46: warning: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGenerator, textbookConfigurationPartial, fderiv_const,
+    ContinuousLinearMap.zero_apply, zero_mul, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

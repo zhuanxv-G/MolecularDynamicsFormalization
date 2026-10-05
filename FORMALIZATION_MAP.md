@@ -787,3 +787,8 @@ full-check01 passed：9074 jobs/1412公理声明/157exact inputs；10checks退�
 BrownianClosedCoercivity15public local12零诊断：sameµ fullsmooth embedding actualCM与Hilbertvariance桥接、derivedrate core→真实closedgraph domain moduloone/orthogonalcoercivity、normconstantprojection给closedkernel onlyconstant，formal symmetry推出实际nonzero real eigen≤-κ。DEP040/NOT049，fullcheck中；selfadjoint/compactresolvent/full谱existence和semigroup仍缺。
 
 full-check01 passed：9075 jobs/1427公理声明/158exact inputs；10checks退出0、全部input/rawlog SHA匹配、15 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 原质量 Fourier 对角公式
+BrownianMassFourier26public local04零诊断：原mass/β Haar必要auxiliary实际cos/sin generator与Fouriercoeff=-Ωfcoef、实际mass energy/graphsquare Parseval、derived Ω≥cΣni²和onlyzero，以及真正finite sublevel/cofinite frequencydivergence/(1+Ω)inv decay。DEP041/NOT050，fullcheck中；实际Hilbert自伴/compactresolvent/full谱仍未完成。
+
+full-check01 passed：9076 jobs/1453公理声明/159exact inputs；10checks退出0、全部input/rawlog SHA匹配、26 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

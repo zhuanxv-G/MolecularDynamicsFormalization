@@ -463,3 +463,6 @@ Nc任意，原每m_i>0、U C∞integerperiodic，g actualtorus CM且原quotient 
 
 ## 2026-10-06 BrownianClosedCoercivity条件
 真实sameµ fullL²、actualsmoothdomain及其已证明graphclosure。Ncany、originalmass每mi>0、U C∞integerperiodic、β>0给closed强制性/kernel/realpoint-eigen separation。orthogonality由actualconstantzero/formalsymmetry推导（非零real eigen）、closedzero relation/eigenrelation只是被讨论向量定义条件，不供应κ bound/自伴/谱existence假设。κ=(βC)inv已证positive，constantone真实norm1。所有graph/continuous/AE/variance对应都证明；source单一声明800k heartbeat仅资源预算，不禁内核检查/不unsafe。full spectrum selfadjoint compactresolvent未完成，负责人pending。
+
+## 2026-10-06 BrownianMassFourier条件
+Nc任意整数Fourierindices和原finiteunit configurationtorus，必要Haarauxiliary U=0但全部originaldiagonalmass m/β保留。literal eigen公式不要求masspositive/βnonzero；formalDirichlet/coeff/energyParseval β≠0，freqpositivity/derivedlower/finite sublevel/decay每mi>0且β>0。原observables C∞integerperiodic。真实M=1+Σ|mi|和c=βinv4π²Minv derived，不供应freq/Parseval/finiteness/gap/ellipticregularity。未完成实际selfadjoint/resolventcompact，原U Gibbs主模型仍独立保留，负责人pending。

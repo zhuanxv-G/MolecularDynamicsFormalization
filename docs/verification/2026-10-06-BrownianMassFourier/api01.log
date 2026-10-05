@@ -1,0 +1,19 @@
+inv_le_inv₀.{u_3} {G₀ : Type u_3} [GroupWithZero G₀] [PartialOrder G₀] [PosMulReflectLT G₀] [MulPosReflectLT G₀]
+  {a b : G₀} (ha : 0 < a) (hb : 0 < b) : a⁻¹ ≤ b⁻¹ ↔ b ≤ a
+one_div_le_one_div_of_le.{u_1} {α : Type u_1} [Semifield α] [PartialOrder α] [PosMulReflectLT α] {a b : α} (ha : 0 < a)
+  (h : a ≤ b) : 1 / b ≤ 1 / a
+docs/verification/2026-10-06-BrownianMassFourier/ApiProbe.lean:5:7: error(lean.unknownIdentifier): Unknown constant `Set.finite_pi`
+Set.Finite.pi.{u_3, u_4} {ι : Type u_3} [Finite ι] {κ : ι → Type u_4} {t : (i : ι) → Set (κ i)}
+  (ht : ∀ (i : ι), (t i).Finite) : (univ.pi t).Finite
+Set.finite_Icc.{u_1} {α : Type u_1} [Preorder α] [LocallyFiniteOrder α] (a b : α) : (Icc a b).Finite
+exists_nat_gt.{u_1} {R : Type u_1} [Semiring R] [PartialOrder R] [IsStrictOrderedRing R] [Archimedean R] (x : R) :
+  ∃ n, x < ↑n
+Set.mem_pi.{u_1, u_2} {ι : Type u_1} {α : ι → Type u_2} {s : Set ι} {t : (i : ι) → Set (α i)} {f : (i : ι) → α i} :
+  f ∈ s.pi t ↔ ∀ i ∈ s, f i ∈ t i
+HasSum.mul_left.{u_1, u_3} {ι : Type u_1} {α : Type u_3} {L : SummationFilter ι} [NonUnitalNonAssocSemiring α]
+  [TopologicalSpace α] [IsTopologicalSemiring α] {f : ι → α} {a₁ : α} (a₂ : α) (h : HasSum f a₁ L) :
+  HasSum (fun i => a₂ * f i) (a₂ * a₁) L
+tendsto_atTop.mpr : (∀ (b : ?m.2), ∀ᶠ (a : ?m.1) in ?m.5, b ≤ ?m.4 a) → Tendsto ?m.4 ?m.5 atTop
+Filter.mem_cofinite.{u_2} {α : Type u_2} {s : Set α} : s ∈ cofinite ↔ sᶜ.Finite
+Filter.eventually_cofinite.{u_2} {α : Type u_2} {p : α → Prop} : (∀ᶠ (x : α) in cofinite, p x) ↔ {x | ¬p x}.Finite
+docs/verification/2026-10-06-BrownianMassFourier/ApiProbe.lean:14:7: error(lean.unknownIdentifier): Unknown constant `Set.Finite.finite_toSet`

@@ -1,0 +1,30 @@
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:253:4: error: Type mismatch
+  textbookBrownianGenerator_contDiff m (fun x => 0) β f contDiff_const hf
+has type
+  ContDiff ℝ ∞ (textbookBrownianGenerator m (fun x => 0) β f)
+but is expected to have type
+  ContDiff ℝ ∞ g
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:255:4: error: Type mismatch
+  textbookBrownianGenerator_periodic m (fun x => 0) β f contDiff_const hf ?m.106 hPf
+has type
+  textbookUnitPeriodicPotential (textbookBrownianGenerator m (fun x => 0) β f)
+but is expected to have type
+  textbookUnitPeriodicPotential g
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:276:8: error: 'change' tactic failed, pattern
+  ↑(∫ (Q : UnitAddTorus (Fin Nc)),
+        textbookConfigurationTorusObservable f Q *
+          textbookConfigurationTorusObservable (textbookBrownianGenerator m (fun x => 0) β f) Q) =
+    ?m.393
+is not definitionally equal to target
+  ↑(∫ (x : UnitAddTorus (Fin Nc)),
+        textbookConfigurationTorusObservable f x * textbookConfigurationTorusObservable g x) =
+    -↑(textbookTorusHaarMassGradientEnergy m β f)
+MolecularDynamics/Chapter06/BrownianMassFourier.lean:292:6: error: Type mismatch
+  textbookHaarMassLaplace_fourierCoeff m β hβ f hf hPf n
+has type
+  UnitAddTorus.mFourierCoeff
+      (fun Q => ↑(textbookConfigurationTorusObservable (textbookBrownianGenerator m (fun x => 0) β f) Q)) n =
+    -↑(textbookMassFourierFrequency m β n) *
+      UnitAddTorus.mFourierCoeff (fun Q => ↑(textbookConfigurationTorusObservable f Q)) n
+but is expected to have type
+  UnitAddTorus.mFourierCoeff (⇑G) n = -↑(textbookMassFourierFrequency m β n) * UnitAddTorus.mFourierCoeff (⇑F) n

@@ -1,0 +1,280 @@
+{
+  "started_at": "2026-10-06T04:12:36.884913+08:00",
+  "finished_at": "2026-10-06T04:14:35.0142776+08:00",
+  "head_at_check": "e9bcd4ea6c5951f806187770e9bf82987cb780b3",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9076,
+  "audit_declarations": 1453,
+  "inputs": 159,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookMassFourierFrequency",
+    "MolecularDynamics.textbookMassFourierFrequency_zero",
+    "MolecularDynamics.textbookMassFourierFrequency_unit",
+    "MolecularDynamics.textbookMassFourierFrequency_neg",
+    "MolecularDynamics.textbookMassFourierFrequency_nonneg",
+    "MolecularDynamics.textbookConfigurationMassScale_inv_le",
+    "MolecularDynamics.textbookMassFourierFrequency_coercive",
+    "MolecularDynamics.textbookMassFourierFrequency_lower",
+    "MolecularDynamics.textbookMassFourierFrequency_pos",
+    "MolecularDynamics.textbookMassFourierFrequency_eq_zero_iff",
+    "MolecularDynamics.textbookBrownianGenerator_mass_flat",
+    "MolecularDynamics.textbookFourierCosineLift_mass_generator",
+    "MolecularDynamics.textbookFourierSineLift_mass_generator",
+    "MolecularDynamics.textbookHaarMassLaplace_dirichlet",
+    "MolecularDynamics.textbookHaarMassLaplace_symmetric",
+    "MolecularDynamics.textbookHaarMassLaplace_cosine_pairing",
+    "MolecularDynamics.textbookHaarMassLaplace_sine_pairing",
+    "MolecularDynamics.textbookHaarMassLaplace_fourierCoeff",
+    "MolecularDynamics.textbookTorusHaarMassGradientEnergy",
+    "MolecularDynamics.textbookTorusHaarMassGradientEnergy_eq_sum",
+    "MolecularDynamics.textbookTorusHaarMassGradientEnergy_nonneg",
+    "MolecularDynamics.textbookTorusHaarMassFourier_energy_hasSum",
+    "MolecularDynamics.textbookTorusHaarMassFourier_generator_sq_hasSum",
+    "MolecularDynamics.textbookMassFourierFrequency_finite_sublevel",
+    "MolecularDynamics.textbookMassFourierFrequency_tendsto",
+    "MolecularDynamics.textbookMassFourierFrequency_resolvent_decay"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_unit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_neg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationMassScale_inv_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_coercive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_lower",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_eq_zero_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_mass_flat",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierCosineLift_mass_generator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierSineLift_mass_generator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassLaplace_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassLaplace_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassLaplace_cosine_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassLaplace_sine_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassLaplace_fourierCoeff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarMassGradientEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarMassGradientEnergy_eq_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarMassGradientEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarMassFourier_energy_hasSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarMassFourier_generator_sq_hasSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_finite_sublevel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierFrequency_resolvent_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "4279303b1703358543ed1b1ae3343789a691d7b880dea98a0d32d9aec8eca7c0"
+    },
+    {
+      "path": "full-check01-driver.log",
+      "sha256": "9cc4c091e6f32c030e97b59a749aef1348b05140bf89a088c3da51cf22221656"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "b9537dd5631065b85b06dc3a1206c7bb3c1e853f6911d1ac9083e86a01d3e4f6"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "39a6754072a368474eead59d75e45ad85eda6d27130954e355ba369b1cd66aa5"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e9fc23fb06dd79c9ab5ab4f13c4985cee0773022770d1a407cb9240fad6aad99"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

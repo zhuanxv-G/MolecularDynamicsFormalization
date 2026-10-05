@@ -174,3 +174,5 @@ import MolecularDynamics.Chapter06.BrownianFourierCoefficient
 import MolecularDynamics.Chapter06.BrownianHaarPoincare
 import MolecularDynamics.Chapter06.BrownianGibbsPoincare
 import MolecularDynamics.Chapter06.BrownianClosedCoercivity
+
+import MolecularDynamics.Chapter06.BrownianMassFourier
