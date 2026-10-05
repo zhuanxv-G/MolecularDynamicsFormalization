@@ -1,0 +1,119 @@
+{
+  "started_at": "2026-10-06T03:06:16.6538698+08:00",
+  "finished_at": "2026-10-06T03:08:01.4571698+08:00",
+  "head_at_check": "a95566829725cf72ef71279df9bb92486fb8259f",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9073,
+  "audit_declarations": 1394,
+  "inputs": 156,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationPartial_sub_const",
+    "MolecularDynamics.textbookTorusHaarGradientEnergy_sub_const",
+    "MolecularDynamics.textbookTorusHaarFourierCoeff_zero_eq_mean",
+    "MolecularDynamics.textbookTorusHaarPoincare_mean_zero",
+    "MolecularDynamics.textbookTorusHaar_center_mean_zero",
+    "MolecularDynamics.textbookTorusHaarPoincare_centered",
+    "MolecularDynamics.textbookTorusHaarPoincare",
+    "MolecularDynamics.textbookTorusHaarVariance_poincare",
+    "MolecularDynamics.textbookGibbsVariance_le_haarGradientEnergy"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial_sub_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarGradientEnergy_sub_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarFourierCoeff_zero_eq_mean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarPoincare_mean_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaar_center_mean_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarPoincare_centered",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarPoincare",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarVariance_poincare",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance_le_haarGradientEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "full-check01-driver.log",
+      "sha256": "4d29b5c6ccb6ba9f11bbb8105c780e12890bd27e9f426d6f83a31c4002637e0b"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "b816505d548436f8b14f74301a3ecec48ada20c4cd70e8cd2a2b8646c01b2fe2"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

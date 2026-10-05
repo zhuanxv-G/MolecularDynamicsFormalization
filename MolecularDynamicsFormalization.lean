@@ -171,3 +171,4 @@ import MolecularDynamics.Chapter06.BrownianGibbsBounds
 import MolecularDynamics.Chapter06.BrownianVariance
 import MolecularDynamics.Chapter06.BrownianFourierDifferential
 import MolecularDynamics.Chapter06.BrownianFourierCoefficient
+import MolecularDynamics.Chapter06.BrownianHaarPoincare

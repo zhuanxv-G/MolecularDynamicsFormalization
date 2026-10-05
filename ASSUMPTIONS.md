@@ -454,3 +454,6 @@ Nc任意自然数、n为全部整数坐标index、q为完整Euclidean配置空�
 
 ## 2026-10-06 BrownianFourierCoefficient条件
 Nc任意，全smooth integerperiodic真实Euclidean f；实际torus full normalized Haar，辅助原literal generator m1/U0/β1为Poincare依赖。MemLp2/continuous/AE与积分系数恒等式全部推导，不作假设。能量literalΣactualpartial²；无HaarPoincare/gap premise，原一般positive mass/周期势能Gibbs主模型及selfadjoint仍独立未完成，负责人pending。
+
+## 2026-10-06 BrownianHaarPoincare条件
+Nc任意，全C∞ integerperiodic f或actualtorus CM g且原quotient Euclidean lift C∞；真实normalized Haar mean/variance与actualcoordinate gradient，不供应Poincare/frequency/Parseval假设。实际mean0只为中间subspace bound，最终一般方差界无mean0前提；包含Nc0。原Gibbsvariance connection沿同一U C∞periodic/βany actualmeasure，未实现一般mass加权GibbsPoincare或谱gap，负责人pending。

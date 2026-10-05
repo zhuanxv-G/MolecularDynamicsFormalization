@@ -1,0 +1,37 @@
+MolecularDynamics/Chapter06/BrownianHaarPoincare.lean:38:44: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (Q : UnitAddTorus (Fin Nc)), textbookConfigurationTorusObservable f Q
+in the target expression
+  ∫ (Q : UnitAddTorus (Fin Nc)), ↑(textbookConfigurationTorusObservable f Q) = 0
+
+Nc : ℕ
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hPf : textbookUnitPeriodicPotential f
+hmean : ∫ (Q : UnitAddTorus (Fin Nc)), textbookConfigurationTorusObservable f Q = 0
+⊢ ∫ (Q : UnitAddTorus (Fin Nc)), ↑(textbookConfigurationTorusObservable f Q) = 0
+MolecularDynamics/Chapter06/BrownianHaarPoincare.lean:75:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  f (q + fun i => ↑(z i))
+in the target expression
+  (fun q => f q - c) (q + fun i => ↑(z i)) = (fun q => f q - c) q
+
+Nc : ℕ
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hPf : textbookUnitPeriodicPotential f
+c : ℝ := ∫ (R : UnitAddTorus (Fin Nc)), textbookConfigurationTorusObservable f R
+q : Fin Nc → ℝ
+z : Fin Nc → ℤ
+⊢ (fun q => f q - c) (q + fun i => ↑(z i)) = (fun q => f q - c) q
+MolecularDynamics/Chapter06/BrownianHaarPoincare.lean:106:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookConfigurationTorusProjection (?q + fun i => ↑(?n i))
+in the target expression
+  (fun q => g (textbookConfigurationTorusProjection q)) (q + fun i => ↑(z i)) =
+    (fun q => g (textbookConfigurationTorusProjection q)) q
+
+Nc : ℕ
+g : C(UnitAddTorus (Fin Nc), ℝ)
+hg : ContDiff ℝ ∞ fun q => g (textbookConfigurationTorusProjection q)
+q : Fin Nc → ℝ
+z : Fin Nc → ℤ
+⊢ (fun q => g (textbookConfigurationTorusProjection q)) (q + fun i => ↑(z i)) =
+    (fun q => g (textbookConfigurationTorusProjection q)) q
