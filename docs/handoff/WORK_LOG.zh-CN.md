@@ -2510,3 +2510,28 @@
 
 - 唯一full-check01/session89594：2026-10-05T09:16:28.3212997+08:00--2026-10-05T09:17:33.9446263+08:00退出0；9025jobs、零警告、756项审计声明仅基础三公理、108项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；11public接受，真实共同细化/等距/mesh-Lipschitz-MSE/actualLp-Cauchy/complete L²均方存在/C¹实际导数紧界完整。review/ledger/notation/section/映射/假设/状态同步，原231/PDF252目视，负责人pending。
 - 下一WienerDeterministicLaw.lean真实variance Riemann积分及L²→分布→charFun法则极限，Gaussian law/均值/二阶矩构造；完整命题/其他正文/整范围仍pending，先保存本批，无其他构建。
+
+## 2026-10-05 09:23 +0800 — 命题6.3真实Gaussian法则闭合开始
+
+- 前批499b6b5真实Cauchy/complete L²存在保存。WienerDeterministicLaw.lean真实variance Riemann cell积分误差、g²积分非负及finite variance趋于实际积分候选已落盘，下一唯一local01；随后L²→分布→实际charFun唯一性和完整normal law/均值/二阶矩。原231/PDF252目视，完整命题/整范围/负责人仍pending。
+
+## 2026-10-05 09:26 +0800 — 命题6.3真正Gaussian law与完整命题候选
+
+- local01/session52754仅多余rfl失败，真实Riemann cell误差/非负variance积分/finite variance极限无其他诊断，已删。新增实际L²代表norm-square/真实概率和分布收敛/charFun唯一性，final真实均方存在/law/mean0/二阶矩完整Prop6.3候选；下一唯一local02，不计候选通过，不将Gaussian结论供应为前提。
+
+## 2026-10-05 09:28 +0800 — Gaussian闭合法则接口诊断
+
+- local02/session57461退出1仅命名Lp展开及Complex.ofReal_zero/Function.comp_apply，已修复；Riemann真实variance及L²→概率→分布和charFun唯一性其余无诊断，下一唯一local03，失败日志保留。完整命题/其他正文/整范围/负责人pending。
+
+## 2026-10-05 09:30 +0800 — Gaussian特征函数复合展开
+
+- local03/session74533唯一失败为未应用Function.comp外延展开，改comp_def；下一唯一local04，实际原始日志保留，完整Prop6.3候选未计通过。原338--339/PDF359--360 Prop8.1文本核对，尚须目视，下一正文候选实际Liouville密度可加性；整范围/负责人pending。
+
+## 2026-10-05 09:33 +0800 — 命题6.3真实Gaussian积分完整局部通过
+
+- local04/session97196退出0零警告，5public接根/Scratch/公理；真实variance Riemann积分/非负、actual L²→概率→分布→charFun唯一性，真实存在见证/MSE/law/mean0/二阶矩完整候选通过。原231/PDF252目视；启动唯一full-check01，输入锁定；其他正文/整范围/负责人pending，下一Prop8.1原338--339密度可加性须目视核验。
+
+## 2026-10-05 09:37 +0800 — 命题6.3真实Gaussian积分完整验收
+
+- 唯一full-check01/session85659：2026-10-05T09:33:09.0669074+08:00--2026-10-05T09:34:15.3558645+08:00退出0；9026jobs、零警告、761项审计声明仅基础三公理、109项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；5public接受，真实Riemann cell积分/actual variance极限/非负、L²→概率→分布→charFun唯一性，最终真实Y均方构造/law/mean0/二阶矩完成原Proposition6.3。review/ledger/notation/section/映射/假设/状态同步，原231/PDF252目视，负责人pending。
+- 下一Prop8.1真实Liouville密度可加性，338--339/PDF359--360渲染/目视；实际fderiv trace/product lifts/真实Hamiltonian Gibbs密度，不能仅供线性抽象operator。其他正文/整范围pending，先保存本批，无其他构建。

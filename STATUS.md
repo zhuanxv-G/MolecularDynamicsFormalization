@@ -441,3 +441,8 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 
 - 唯一full-check01/session89594：2026-10-05T09:16:28.3212997+08:00--2026-10-05T09:17:33.9446263+08:00退出0；9025jobs、零警告、756项审计声明仅基础三公理、108项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；11public接受，231/PDF252目视。
 - actual KL common refinement/real two-grid L² isometry/mesh error/compact C¹ derivative Lipschitz/Cauchy/complete L²真实积分存在接受；负责人pending。下一补实际Gaussian law与variance积分，完整Prop6.3、其余正文与整范围未完成。
+
+## 2026-10-05 命题6.3真正Gaussian均方积分完整验收
+
+- 唯一full-check01/session85659：2026-10-05T09:33:09.0669074+08:00--2026-10-05T09:34:15.3558645+08:00退出0；9026jobs、零警告、761项审计声明仅基础三公理、109项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；5public接受，原231/PDF252目视。
+- 完整Prop6.3：真Cauchy/complete L²存在、actual variance积分g²/非负、L²→概率→分布→charFun唯一性normal law、mean0/secondMoment完成；负责人pending。下一Prop8.1密度Liouville可加性，原338--339/PDF359--360目视；其他正文和整CORE_SCOPE仍pending。

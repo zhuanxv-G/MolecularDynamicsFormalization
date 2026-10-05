@@ -615,3 +615,8 @@ Printed230/PDF251: `Chapter06/WienerStratonovich.lean` fully proves the explicit
 ### Actual deterministic Wiener integral construction (2026-10-05)
 
 Printed231/PDF252: `Chapter06/WienerRefinement.lean` proves genuine common KL refinements, actual two-grid L2 isometry, true mesh and compact-time Lipschitz error bounds, Cauchy convergence in the actual complete L2 space and existence of a real mean-square integral of the genuine deterministic left sums. Compact C1 derivative bounds derive the Lipschitz condition. This completes the necessary integral construction for Proposition6.3; its variance integral and limiting Gaussian law remain separate and pending.
+
+
+### Full actual Gaussian deterministic Itô integral (2026-10-05)
+
+Printed231/PDF252: `Chapter06/WienerDeterministicLaw.lean` completes Proposition6.3 with accepted actual integral construction. Genuine interval-cell integration and compact-time Lipschitz bounds prove convergence of the actual finite variances to the true integral of g². Actual mean-square convergence implies L2, probability and distribution convergence; finite Gaussian characteristic functions converge with their computed variances, and actual characteristic-function uniqueness identifies the limit law. The final theorem constructs Y and proves its actual mean-square limit, Gaussian law, zero mean and second moment equal to the time integral. C1 suffices for the textbook smooth integrand; T=0 is included. No Gaussian law or moment conclusion is supplied. Owner signoff remains pending.

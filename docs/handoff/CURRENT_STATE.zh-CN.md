@@ -1,8 +1,40 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 09:37 +0800）
+
+- 本批前HEAD 499b6b5d59a11c3d2efd650edbc79a9bccb22bc7；WienerDeterministicLaw完整接受，待本地保存。固定版本/分支未改，原材料保留/未推送。
+- 唯一full-check01/session85659：2026-10-05T09:33:09.0669074+08:00--2026-10-05T09:34:15.3558645+08:00退出0；9026jobs、零警告、761项审计声明仅基础三公理、109项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；5public接受，原231/PDF252目视。完整Prop6.3真实存在/MSE/Gaussian law/mean0/variance积分g²完成；真实Riemann cell余项、L²→概率→分布→actual charFun唯一性，无结论假设。ledger/notation/section/映射/假设/状态同步，负责人pending。
+- 下一Prop8.1 ThermostatAdditivity.lean，原338--339/PDF359--360已渲染/目视。真正divergence=trace(actual fderiv)、真实smulRight/trace产品及Hamiltonian Gibbs密度stationarity，原两个单thermostat实际平稳密度推出产品密度对实际组合field的Liouville stationary equation；不要用抽象线性operator闭合替代真正嵌入/密度导数。其他正文/整CORE_SCOPE仍pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:33 +0800）
+
+- HEAD 499b6b5d59a11c3d2efd650edbc79a9bccb22bc7；WienerDeterministicLaw local04/session97196退出0零警告，5public接根/Scratch/公理。原231/PDF252目视，实际Riemann cell误差→true variance积分、g²非负、actual L²→概率→分布→charFun唯一性Gaussian law，完整Prop6.3从实际存在见证得均方/law/mean0/二阶矩真实积分完整局部通过。
+- 启动唯一full-check01，未决前不改Lean输入；下一正文Prop8.1真正Liouville密度divergence可加性，338--339/PDF359--360文本核对，须目视和真实Hamiltonian Gibbs密度stationarity/嵌入导数。整个CORE_SCOPE和负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:30 +0800）
+
+- HEAD 499b6b5d59a11c3d2efd650edbc79a9bccb22bc7；WienerDeterministicLaw local03/session74533退出1仅未应用的Function.comp须comp_def展开，已按真实函数外延展开修复。下一唯一local04；实际完整Prop6.3均方构造/law/mean0/variance积分候选尚未接受，固定版本未改，无其他构建。
+- 其他正文/整个CORE_SCOPE及负责人仍pending；下一正文可推进Prop8.1真正Liouville密度divergence可加性，原338--339/PDF359--360文本核对，须原页目视与真实Hamiltonian Gibbs density stationarity。
+
+## 最新数学检查点（2026-10-05 09:28 +0800）
+
+- HEAD 499b6b5d59a11c3d2efd650edbc79a9bccb22bc7；WienerDeterministicLaw local02/session57461退出1仅actual named Lp展开及Complex实零强制转换/comp展开，已精确修复。真实Riemann variance积分/分布收敛/charFun唯一性其余无诊断。
+- 下一唯一local03；真实完整Prop6.3构造/law/mean0/二阶矩候选未计通过，固定版本不变，无其他构建，其他正文/整范围/负责人pending。
+
+## 最新数学检查点（2026-10-05 09:26 +0800）
+
+- HEAD 499b6b5d59a11c3d2efd650edbc79a9bccb22bc7；WienerDeterministicLaw local01/session52754退出1仅rw已闭目标后的多余rfl，已删除；真实Riemann cell积分/mesh-Lipschitz C T²/K、积分g²非负、finite variance实际趋于积分无其他诊断。
+- 已新增actual L²代表/mean-square-to-distance桥接、L²→概率→分布→真正charFun Gaussian law闭合，final Prop6.3从已构造的真实均方存在取得Y/law/mean0/二阶矩实际积分；下一唯一local02。候选未计通过，无Gaussian law/矩假设；其他正文/整范围/负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:23 +0800）
+
+- HEAD 499b6b5d59a11c3d2efd650edbc79a9bccb22bc7，真实均方积分存在完整保存，固定版本不变，无其他构建。
+- 进行中WienerDeterministicLaw.lean原231/PDF252：实际uniform left Riemann cell积分/mesh-Lipschitz误差C T²/K、variance integral g²真实非负、finite variance真正趋于time integral候选，下一唯一local01。之后actual L²→概率/分布及charFun唯一性闭合Gaussian law并给完整Prop6.3真实存在/law/均值/二阶矩。
+- 整个命题仍pending；所有旧证据/材料保留，负责人及其他正文/整个CORE_SCOPE pending。
+
 ## 最新数学检查点（2026-10-05 09:20 +0800）
 
-- 本批前HEAD eaba950dd250685ccf76d5a047de725cd2d792b1；WienerRefinement完整接受，待本地保存。固定版本未改，原材料保留/未推送。
+- 本批前HEAD eaba950dd250685ccf76d5a047de725cd2d792b1；WienerRefinement完整接受并保存为499b6b5d59a11c3d2efd650edbc79a9bccb22bc7。固定版本未改，原材料保留/未推送。
 - 唯一full-check01/session89594：2026-10-05T09:16:28.3212997+08:00--2026-10-05T09:17:33.9446263+08:00退出0；9025jobs、零警告、756项审计声明仅基础三公理、108项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；11public接受，原231/PDF252目视。真正KL共同细化/两网格等距/mesh误差M²T(T/K+T/L)²、Lp代表/normsquare/dist/Cauchy、complete L²实际积分见证与C¹紧导数界/Lipschitz完整；ledger/notation/section/映射/假设/状态同步，负责人pending。
 - 下一WienerDeterministicLaw.lean：实际variance均匀左Riemann和/真实积分g²，L²极限→概率/分布→真实charFun唯一性，完整normal law/均值/二阶矩。完整Prop6.3与其他正文/整个CORE_SCOPE仍pending，无其他构建。
 
