@@ -1,0 +1,5 @@
+# 下一目标：实际 Haar Fourier coefficient 与 Dirichlet identity
+先读BrownianTorusGibbs实际torus积分/cube bridge与Dirichlet/formal symmetry、BrownianVariance真实Haarmean；实际UnitAddTorus.mFourierCoeff定义为conj字符乘函数的Haar积分。
+证明辅助U0/β1/m1的同一µ确为Haar或直接以原normalized Haar/cube桥接。把真实mFourier的Re/Im连续函数用本批exp/Re/Im公式识别为cos/sin smoothperiodic lifts；应用已接受literalgenerator的真实周期Dirichlet形式对称性，将Laplace作用移到真实字符，再本批实际eigenvalue，给fhat(Laplace f)=-frequency*fhat(f)。不能把这条等式当假设。
+之后实际Haar连续函数到complex L²真实AE桥、Parseval bilinear与Dirichlet等式，给Σfrequency*coeffnorm²=∫真实Σpartial²。真实zero coefficient=Haarmean与整数frequency≥4π²给HaarPoincare，再derivedGibbsdensity两界和一般mass/β传回原主模型。
+本批仅Haar必要auxiliary计算，不将flat模型代替原Gibbs模型。selfadjoint/compactresolvent仍真实独立缺口；负责人pending不阻塞本地证明。

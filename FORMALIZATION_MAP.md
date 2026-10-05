@@ -762,3 +762,8 @@ BrownianGibbsBounds统一验收：full-check01 passed：9069jobs/1320公理声�
 BrownianVariance20public local02零diagnostic；actualmean/center/variance2moment/最小mean-square/varzeroiffpointconstant与sameµ Hilbertnorm/mean0orthogonality，deriveddensity Haarvariance comparison和shift/center invariance完整。fullcheck中，HaarPoincare/selfadjoint/gap未完成，负责人pending。
 
 BrownianVariance统一验收：full-check01 passed：9070jobs/1340公理声明/153exact inputs；10checks0exit/allinput-rawlogSHA匹配/20public逐名基础三公理/0Leanwarnings；固定Lean4.34.0/mathlib5ed2965；负责人semanticpending。
+
+## 2026-10-06 Fourier 字符真实微分依赖
+BrownianFourierDifferential：26公开声明local04退出0/空日志/零警告。actualmFourier lift=exp(i actualphase)、realimag=literalcos/sin，真实C∞/periodic及一二阶partials；原literal生成元的Haar辅助m=1/U=0/β=1计算给实际特征值-4π²Σn_i²，非零整数frequency≥4π²由整数平方和证明。DEP036/NOT045；full-check进行中，原一般mass/potential主模型未改，HaarPoincare/gap/selfadjoint尚未完成。
+
+full-check01 passed：9071 jobs/1366公理声明/154exact inputs；10checks退出0、全部input/rawlog SHA匹配、26public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，HaarPoincare与Theorem6.1整体未完成。

@@ -1,0 +1,29 @@
+ContinuousLinearMap.proj.{u_1, u_4, u_5} {R : Type u_1} [Semiring R] {ι : Type u_4} {φ : ι → Type u_5}
+  [(i : ι) → TopologicalSpace (φ i)] [(i : ι) → AddCommMonoid (φ i)] [(i : ι) → Module R (φ i)] (i : ι) :
+  ((i : ι) → φ i) →L[R] φ i
+ContinuousLinearMap.hasFDerivAt.{u_1, u_2, u_3} {𝕜 : Type u_1} [NontriviallyNormedField 𝕜] {E : Type u_2}
+  [AddCommGroup E] [Module 𝕜 E] [TopologicalSpace E] {F : Type u_3} [AddCommGroup F] [Module 𝕜 F] [TopologicalSpace F]
+  (f : E →L[𝕜] F) {x : E} : HasFDerivAt (⇑f) f x
+HasDerivAt.comp_hasFDerivAt.{u, w, u_1} {𝕜 : Type u} [NontriviallyNormedField 𝕜] {E : Type w} [NormedAddCommGroup E]
+  [NormedSpace 𝕜 E] {𝕜' : Type u_1} [NontriviallyNormedField 𝕜'] [NormedAlgebra 𝕜 𝕜'] {h₂ : 𝕜' → 𝕜'} {h₂' : 𝕜'}
+  {f : E → 𝕜'} {f' : E →L[𝕜] 𝕜'} (x : E) (hh : HasDerivAt h₂ h₂' (f x)) (hf : HasFDerivAt f f' x) :
+  HasFDerivAt (h₂ ∘ f) (h₂' • f') x
+Real.hasDerivAt_cos (x : ℝ) : HasDerivAt Real.cos (-Real.sin x) x
+Real.hasDerivAt_sin (x : ℝ) : HasDerivAt Real.sin (Real.cos x) x
+Real.contDiff_cos {n : ℕ∞ω} : ContDiff ℝ n Real.cos
+Real.contDiff_sin {n : ℕ∞ω} : ContDiff ℝ n Real.sin
+Complex.exp_sum.{u_1} {α : Type u_1} (s : Finset α) (f : α → ℂ) :
+  Complex.exp (∑ x ∈ s, f x) = ∏ x ∈ s, Complex.exp (f x)
+Complex.exp_mul_I (x : ℂ) : Complex.exp (x * Complex.I) = Complex.cos x + Complex.sin x * Complex.I
+Complex.ofRealCLM : ℝ →L[ℝ] ℂ
+MolecularDynamics.textbookConfigurationPartial {Nc : ℕ} (f : (Fin Nc → ℝ) → ℝ) (i : Fin Nc) (q : Fin Nc → ℝ) : ℝ
+MolecularDynamics.textbookTorusFourier_lift_contDiff {Nc : ℕ} (n : Fin Nc → ℤ) :
+  ContDiff ℝ ∞ fun q => (UnitAddTorus.mFourier n) (MolecularDynamics.textbookConfigurationTorusProjection q)
+MolecularDynamics.textbookConfigurationTorusProjection_integer_translate {Nc : ℕ} (q : Fin Nc → ℝ) (n : Fin Nc → ℤ) :
+  MolecularDynamics.textbookConfigurationTorusProjection (q + fun i => ↑(n i)) =
+    MolecularDynamics.textbookConfigurationTorusProjection q
+UnitAddTorus.hasSum_prod_mFourierCoeff.{u_1} {d : Type u_1} [Fintype d] (f g : ↥(Lp ℂ 2 volume)) :
+  HasSum (fun i => (starRingEnd ℂ) (UnitAddTorus.mFourierCoeff (↑↑f) i) * UnitAddTorus.mFourierCoeff (↑↑g) i)
+    (∫ (t : UnitAddTorus d), (starRingEnd ℂ) (↑↑f t) * ↑↑g t)
+UnitAddTorus.hasSum_sq_mFourierCoeff.{u_1} {d : Type u_1} [Fintype d] (f : ↥(Lp ℂ 2 volume)) :
+  HasSum (fun i => ‖UnitAddTorus.mFourierCoeff (↑↑f) i‖ ^ 2) (∫ (t : UnitAddTorus d), ‖↑↑f t‖ ^ 2)

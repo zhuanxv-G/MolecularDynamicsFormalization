@@ -1,0 +1,280 @@
+{
+  "started_at": "2026-10-06T02:39:57.5330837+08:00",
+  "finished_at": "2026-10-06T02:41:36.3303278+08:00",
+  "head_at_check": "8edf4086022a107055fe5cf022386f2da9c8b465",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9071,
+  "audit_declarations": 1366,
+  "inputs": 154,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookFourierPhase",
+    "MolecularDynamics.textbookFourierPhase_apply",
+    "MolecularDynamics.textbookFourierPhase_single",
+    "MolecularDynamics.textbookFourierCosineLift",
+    "MolecularDynamics.textbookFourierSineLift",
+    "MolecularDynamics.textbookFourierCosineLift_contDiff",
+    "MolecularDynamics.textbookFourierSineLift_contDiff",
+    "MolecularDynamics.textbookFourierCosineLift_hasFDerivAt",
+    "MolecularDynamics.textbookFourierSineLift_hasFDerivAt",
+    "MolecularDynamics.textbookFourierCosineLift_partial",
+    "MolecularDynamics.textbookFourierSineLift_partial",
+    "MolecularDynamics.textbookFourierPhase_integer_apply",
+    "MolecularDynamics.textbookFourierCosineLift_periodic",
+    "MolecularDynamics.textbookFourierSineLift_periodic",
+    "MolecularDynamics.textbookFourierCosineLift_second_partial",
+    "MolecularDynamics.textbookFourierSineLift_second_partial",
+    "MolecularDynamics.textbookTorusFourier_lift_exp",
+    "MolecularDynamics.textbookTorusFourier_lift_re",
+    "MolecularDynamics.textbookTorusFourier_lift_im",
+    "MolecularDynamics.textbookFourierLaplaceFrequency",
+    "MolecularDynamics.textbookFourierLaplaceFrequency_zero",
+    "MolecularDynamics.textbookFourier_integer_sum_sq_lower",
+    "MolecularDynamics.textbookFourierLaplaceFrequency_lower",
+    "MolecularDynamics.textbookBrownianGenerator_flat",
+    "MolecularDynamics.textbookFourierCosineLift_flat_generator",
+    "MolecularDynamics.textbookFourierSineLift_flat_generator"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookFourierPhase",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierPhase_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierPhase_single",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierCosineLift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierSineLift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierCosineLift_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierSineLift_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierCosineLift_hasFDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierSineLift_hasFDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierCosineLift_partial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierSineLift_partial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierPhase_integer_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierCosineLift_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierSineLift_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierCosineLift_second_partial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierSineLift_second_partial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusFourier_lift_exp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusFourier_lift_re",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusFourier_lift_im",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierLaplaceFrequency",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierLaplaceFrequency_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourier_integer_sum_sq_lower",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierLaplaceFrequency_lower",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_flat",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierCosineLift_flat_generator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierSineLift_flat_generator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "8aee67ee3481c6820e90d9416062c628fe68ef8d97306411a56ea0070775470b"
+    },
+    {
+      "path": "full-check01-driver.log",
+      "sha256": "02c9059fb7a65ee7adb9aad0713724b60dc46190511ea380259a219c0562e33b"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "7fa0ad8602e2bd914dd9ac4457b60831fbcd51680cefe377a12de7b325413fa3"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "f8e63491073b50180bbc4f586265b53d9f9a642d3f8b89d24738fc8557103a14"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
