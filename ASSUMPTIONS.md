@@ -410,3 +410,6 @@ actual标准finite-dimensional vector Wiener；unit mass、finite Nc、S/T≥0�
 
 ## 2026-10-05 actual transition semigroup依赖
 与已接受真实Markov模型同一unit-mass/unit-torus/finite Nc、标准vector Wiener、任意γ/σ、S/T非负；real C² U/globalforceLip辅助模型，periodic C∞lattice U最后主结论derived forceLip。actual endpoint初值对所有noise paths，不只AE；概率转移族K0=id与Chapman–Kolmogorov皆derived，不把半群或随机解边缘factorization当输入。无需σ≠0即可成立；transition密度或可达另有条件。completed filtration/适应性/actual generator/Harris仍待证。
+
+## 2026-10-05 actual completed过滤与适应性条件
+finite Nc、unit mass/unit torus、真实标准vector Wiener、任意γ/σ、非负NNReal time。completed ambient为NullMeasurableSpace Ω P；每S过去由actual B(t),t≤S及全部原P-null subsets生成，不假设原Ω/原历史测度已complete。局部trim complete/AE一致、actual Cpath meas与同一全时间real/periodic解Adapted均derived。real auxiliary C² U/global forceLip显式，periodic C∞lattice U主结论derived Lip。未经证明right-continuous usual augmentation、completed-filtration conditional law/strongMarkov、progressive或实际generator；原样本与process不替换。

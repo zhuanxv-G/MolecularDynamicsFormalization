@@ -1,0 +1,146 @@
+{
+  "started_at": "2026-10-05T21:05:07.7047296+08:00",
+  "finished_at": "2026-10-05T21:11:39.3824305+08:00",
+  "head_at_check": "dbf74219dc329d70697a02bcd266c2cc59697453",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9057,
+  "audit_declarations": 1100,
+  "inputs": 140,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookWienerVector_completed_measurable",
+    "MolecularDynamics.textbookWienerVectorCompletedFiltration",
+    "MolecularDynamics.textbookWienerVectorCompletedFiltration_null_measurable",
+    "MolecularDynamics.textbookWienerVectorCompletedFiltration_eval_measurable",
+    "MolecularDynamics.textbookWienerVectorCompletedFiltration_trim_complete",
+    "MolecularDynamics.textbookWienerVectorCompletedFiltration_trim_ae",
+    "MolecularDynamics.textbookWienerVectorContinuousPath_filtration_measurable",
+    "MolecularDynamics.textbookWienerVectorCompletedFiltration_adapted",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_adapted",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_adapted",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_adapted_of_periodic"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookWienerVector_completed_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVectorCompletedFiltration",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVectorCompletedFiltration_null_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVectorCompletedFiltration_eval_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVectorCompletedFiltration_trim_complete",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVectorCompletedFiltration_trim_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVectorContinuousPath_filtration_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVectorCompletedFiltration_adapted",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGlobalRandomPhase_adapted",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_adapted",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_adapted_of_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinFiltration.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "afce9b77e036088e0504290564a764284b9a497a0fe3519df240e466a299c193",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "56406e2118e3ea52f014922f7c972bb78c5413a1303f6dc0e6e975fb56fde8a5",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "cbfe83049a1abc88e18de45c5600a8f0b599dc8b2341b3f904818199246e8271",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "4d07e295d7dacfe5909a596fc4b9646f7e8e4af3fcb1e28c3f51c347493cfaa9",
+      "staged_equals_working_after_CRLF_to_LF": true
+    }
+  ]
+}
