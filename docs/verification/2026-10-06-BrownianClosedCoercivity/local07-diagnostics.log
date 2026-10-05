@@ -1,0 +1,494 @@
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 31, num: 1):
+    [reduction] outParam ↦ 31
+  [kernel] unfolded declarations (max: 50, num: 11):
+    [kernel] Add.add ↦ 50
+    [kernel] HAdd.hAdd ↦ 50
+    [kernel] AddCommMonoid.toAddMonoid ↦ 43
+    [kernel] LE.le ↦ 28
+    [kernel] Neg.neg ↦ 26
+    [kernel] Ring.toNeg ↦ 25
+    [kernel] SubNegMonoid.toAddMonoid ↦ 25
+    [kernel] inferInstance ↦ 24
+    [kernel] HMul.hMul ↦ 24
+    [kernel] Mul.mul ↦ 24
+    [kernel] instHAdd ↦ 21
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 37, num: 1):
+    [reduction] outParam ↦ 37
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 49, num: 1):
+    [reduction] outParam ↦ 49
+  [kernel] unfolded declarations (max: 50, num: 11):
+    [kernel] Add.add ↦ 50
+    [kernel] HAdd.hAdd ↦ 50
+    [kernel] AddCommMonoid.toAddMonoid ↦ 43
+    [kernel] LE.le ↦ 28
+    [kernel] Neg.neg ↦ 26
+    [kernel] Ring.toNeg ↦ 25
+    [kernel] SubNegMonoid.toAddMonoid ↦ 25
+    [kernel] HMul.hMul ↦ 24
+    [kernel] Mul.mul ↦ 24
+    [kernel] inferInstance ↦ 21
+    [kernel] instHAdd ↦ 21
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 43, num: 2):
+    [reduction] outParam ↦ 43
+    [reduction] inferInstance ↦ 22
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 73, num: 4):
+    [reduction] outParam ↦ 73
+    [reduction] UnitAddTorus ↦ 67
+    [reduction] inferInstance ↦ 37
+    [reduction] Subtype.val ↦ 35
+  [kernel] unfolded declarations (max: 140, num: 29):
+    [kernel] Add.add ↦ 140
+    [kernel] HAdd.hAdd ↦ 140
+    [kernel] HSMul.hSMul ↦ 100
+    [kernel] SMul.smul ↦ 100
+    [kernel] AddCommMonoid.toAddMonoid ↦ 79
+    [kernel] AddMonoid.toAdd ↦ 59
+    [kernel] SubNegMonoid.toAddMonoid ↦ 58
+    [kernel] instHAdd ↦ 53
+    [kernel] AddSemigroup.toAdd ↦ 44
+    [kernel] Mul.mul ↦ 44
+    [kernel] HMul.hMul ↦ 42
+    [kernel] NSMul.nsmul ↦ 40
+    [kernel] Neg.neg ↦ 40
+    [kernel] inferInstance ↦ 36
+    [kernel] AddGroup.toSubNegMonoid ↦ 34
+    [kernel] LE.le ↦ 34
+    [kernel] Ring.toNeg ↦ 33
+    [kernel] NormedAddCommGroup.toNorm ↦ 32
+    [kernel] MetricSpace.toPseudoMetricSpace ↦ 31
+    [kernel] instHSMul ↦ 30
+    [kernel] Real.instAdd ↦ 30
+    [kernel] ZSMul.zsmul ↦ 30
+    [kernel] OfNat.ofNat ↦ 29
+    [kernel] norm ↦ 27
+    [kernel] AddCommGroup.toAddGroup ↦ 26
+    [kernel] SubNegMonoid.toNeg ↦ 24
+    [kernel] AddMonoid.toZero ↦ 23
+    [kernel] Membership.mem ↦ 23
+    [kernel] NormedAddCommGroup.toAddCommGroup ↦ 21
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 22, num: 1):
+    [reduction] inferInstance ↦ 22
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 22, num: 1):
+    [reduction] inferInstance ↦ 22
+  [kernel] unfolded declarations (max: 118, num: 26):
+    [kernel] Add.add ↦ 118
+    [kernel] HAdd.hAdd ↦ 118
+    [kernel] AddCommMonoid.toAddMonoid ↦ 76
+    [kernel] HSMul.hSMul ↦ 68
+    [kernel] SMul.smul ↦ 68
+    [kernel] SubNegMonoid.toAddMonoid ↦ 52
+    [kernel] AddMonoid.toAdd ↦ 50
+    [kernel] instHAdd ↦ 46
+    [kernel] Mul.mul ↦ 42
+    [kernel] HMul.hMul ↦ 41
+    [kernel] Neg.neg ↦ 40
+    [kernel] inferInstance ↦ 36
+    [kernel] AddSemigroup.toAdd ↦ 35
+    [kernel] LE.le ↦ 34
+    [kernel] Ring.toNeg ↦ 33
+    [kernel] NormedAddCommGroup.toNorm ↦ 32
+    [kernel] MetricSpace.toPseudoMetricSpace ↦ 31
+    [kernel] AddGroup.toSubNegMonoid ↦ 30
+    [kernel] Real.instAdd ↦ 30
+    [kernel] ZSMul.zsmul ↦ 30
+    [kernel] norm ↦ 29
+    [kernel] OfNat.ofNat ↦ 27
+    [kernel] AddCommGroup.toAddGroup ↦ 26
+    [kernel] SubNegMonoid.toNeg ↦ 24
+    [kernel] NSMul.nsmul ↦ 22
+    [kernel] NormedAddCommGroup.toAddCommGroup ↦ 21
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 28, num: 2):
+    [reduction] outParam ↦ 28
+    [reduction] inferInstance ↦ 26
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded declarations (max: 24, num: 2):
+    [reduction] HSMul.hSMul ↦ 24
+    [reduction] SMul.smul ↦ 24
+  [reduction] unfolded reducible declarations (max: 59, num: 3):
+    [reduction] inferInstance ↦ 59
+    [reduction] outParam ↦ 41
+    [reduction] UnitAddTorus ↦ 34
+  [kernel] unfolded declarations (max: 140, num: 28):
+    [kernel] Add.add ↦ 140
+    [kernel] HAdd.hAdd ↦ 140
+    [kernel] HSMul.hSMul ↦ 100
+    [kernel] SMul.smul ↦ 100
+    [kernel] AddCommMonoid.toAddMonoid ↦ 79
+    [kernel] AddMonoid.toAdd ↦ 59
+    [kernel] SubNegMonoid.toAddMonoid ↦ 58
+    [kernel] instHAdd ↦ 53
+    [kernel] AddSemigroup.toAdd ↦ 44
+    [kernel] Mul.mul ↦ 44
+    [kernel] HMul.hMul ↦ 42
+    [kernel] NSMul.nsmul ↦ 40
+    [kernel] Neg.neg ↦ 40
+    [kernel] inferInstance ↦ 36
+    [kernel] AddGroup.toSubNegMonoid ↦ 34
+    [kernel] LE.le ↦ 34
+    [kernel] Ring.toNeg ↦ 33
+    [kernel] NormedAddCommGroup.toNorm ↦ 32
+    [kernel] instHSMul ↦ 30
+    [kernel] Real.instAdd ↦ 30
+    [kernel] ZSMul.zsmul ↦ 30
+    [kernel] MetricSpace.toPseudoMetricSpace ↦ 29
+    [kernel] OfNat.ofNat ↦ 29
+    [kernel] norm ↦ 27
+    [kernel] AddCommGroup.toAddGroup ↦ 26
+    [kernel] SubNegMonoid.toNeg ↦ 24
+    [kernel] AddMonoid.toZero ↦ 23
+    [kernel] NormedAddCommGroup.toAddCommGroup ↦ 21
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 88, num: 2):
+    [reduction] outParam ↦ 88
+    [reduction] inferInstance ↦ 22
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 101, num: 3):
+    [reduction] outParam ↦ 101
+    [reduction] inferInstance ↦ 40
+    [reduction] UnitAddTorus ↦ 23
+  [kernel] unfolded declarations (max: 140, num: 28):
+    [kernel] Add.add ↦ 140
+    [kernel] HAdd.hAdd ↦ 140
+    [kernel] HSMul.hSMul ↦ 100
+    [kernel] SMul.smul ↦ 100
+    [kernel] AddCommMonoid.toAddMonoid ↦ 79
+    [kernel] AddMonoid.toAdd ↦ 59
+    [kernel] SubNegMonoid.toAddMonoid ↦ 58
+    [kernel] instHAdd ↦ 53
+    [kernel] AddSemigroup.toAdd ↦ 44
+    [kernel] Mul.mul ↦ 44
+    [kernel] HMul.hMul ↦ 42
+    [kernel] NSMul.nsmul ↦ 40
+    [kernel] Neg.neg ↦ 40
+    [kernel] inferInstance ↦ 36
+    [kernel] AddGroup.toSubNegMonoid ↦ 34
+    [kernel] LE.le ↦ 34
+    [kernel] Ring.toNeg ↦ 33
+    [kernel] NormedAddCommGroup.toNorm ↦ 32
+    [kernel] instHSMul ↦ 30
+    [kernel] Real.instAdd ↦ 30
+    [kernel] ZSMul.zsmul ↦ 30
+    [kernel] MetricSpace.toPseudoMetricSpace ↦ 29
+    [kernel] OfNat.ofNat ↦ 29
+    [kernel] norm ↦ 27
+    [kernel] AddCommGroup.toAddGroup ↦ 26
+    [kernel] SubNegMonoid.toNeg ↦ 24
+    [kernel] AddMonoid.toZero ↦ 23
+    [kernel] NormedAddCommGroup.toAddCommGroup ↦ 21
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 38, num: 2):
+    [reduction] inferInstance ↦ 38
+    [reduction] outParam ↦ 34
+  [kernel] unfolded declarations (max: 92, num: 24):
+    [kernel] Add.add ↦ 92
+    [kernel] HAdd.hAdd ↦ 92
+    [kernel] AddCommMonoid.toAddMonoid ↦ 81
+    [kernel] HMul.hMul ↦ 76
+    [kernel] Mul.mul ↦ 76
+    [kernel] instHAdd ↦ 43
+    [kernel] inferInstance ↦ 40
+    [kernel] AddMonoid.toAdd ↦ 38
+    [kernel] SubNegMonoid.toAddMonoid ↦ 38
+    [kernel] OfNat.ofNat ↦ 35
+    [kernel] LE.le ↦ 34
+    [kernel] Neg.neg ↦ 34
+    [kernel] Real.instAdd ↦ 33
+    [kernel] NormedAddCommGroup.toNorm ↦ 32
+    [kernel] Ring.toNeg ↦ 30
+    [kernel] NatCast.natCast ↦ 27
+    [kernel] norm ↦ 27
+    [kernel] Ring.toSemiring ↦ 27
+    [kernel] MetricSpace.toPseudoMetricSpace ↦ 26
+    [kernel] Semiring.toMonoid ↦ 26
+    [kernel] Inv.inv ↦ 24
+    [kernel] SubNegMonoid.toNeg ↦ 24
+    [kernel] AddGroup.toSubNegMonoid ↦ 23
+    [kernel] AddCommGroup.toAddGroup ↦ 21
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 134, num: 2):
+    [reduction] outParam ↦ 134
+    [reduction] inferInstance ↦ 26
+  [type_class] used instances (max: 24, num: 1):
+    [type_class] Lean.Grind.CommRing.OfCommSemiring.instOfNatQ ↦ 24
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded declarations (max: 32, num: 6):
+    [reduction] ContDiff ↦ 32
+    [reduction] Option.rec ↦ 32
+    [reduction] textbookUnitPeriodicPotential ↦ 28
+    [reduction] HSMul.hSMul ↦ 24
+    [reduction] SMul.smul ↦ 24
+    [reduction] LE.le ↦ 23
+  [reduction] unfolded reducible declarations (max: 320, num: 5):
+    [reduction] outParam ↦ 320
+    [reduction] inferInstance ↦ 186
+    [reduction] UnitAddTorus ↦ 65
+    [reduction] Option.casesOn ↦ 32
+    [reduction] FunLike ↦ 28
+  [type_class] used instances (max: 24, num: 1):
+    [type_class] Lean.Grind.CommRing.OfCommSemiring.instOfNatQ ↦ 24
+  [def_eq] heuristic for solving `f a =?= f b` (max: 30, num: 2):
+    [def_eq] AddSubmonoidClass.toAddCommMonoid ↦ 30
+    [def_eq] AEEqFun.instAddCommMonoid ↦ 30
+  [kernel] unfolded declarations (max: 168, num: 35):
+    [kernel] Add.add ↦ 168
+    [kernel] HAdd.hAdd ↦ 168
+    [kernel] HSMul.hSMul ↦ 100
+    [kernel] SMul.smul ↦ 100
+    [kernel] AddCommMonoid.toAddMonoid ↦ 96
+    [kernel] Mul.mul ↦ 95
+    [kernel] HMul.hMul ↦ 94
+    [kernel] AddMonoid.toAdd ↦ 66
+    [kernel] Neg.neg ↦ 66
+    [kernel] instHAdd ↦ 62
+    [kernel] SubNegMonoid.toAddMonoid ↦ 58
+    [kernel] inferInstance ↦ 57
+    [kernel] OfNat.ofNat ↦ 56
+    [kernel] AddSemigroup.toAdd ↦ 44
+    [kernel] LE.le ↦ 40
+    [kernel] NSMul.nsmul ↦ 40
+    [kernel] Real.instAdd ↦ 38
+    [kernel] NatCast.natCast ↦ 37
+    [kernel] AddGroup.toSubNegMonoid ↦ 36
+    [kernel] Ring.toNeg ↦ 35
+    [kernel] AddMonoid.toZero ↦ 33
+    [kernel] NormedAddCommGroup.toNorm ↦ 32
+    [kernel] instHSMul ↦ 30
+    [kernel] DFunLike.coe ↦ 30
+    [kernel] ZSMul.zsmul ↦ 30
+    [kernel] MetricSpace.toPseudoMetricSpace ↦ 29
+    [kernel] norm ↦ 29
+    [kernel] AddCommGroup.toAddGroup ↦ 28
+    [kernel] Ring.toSemiring ↦ 28
+    [kernel] Semiring.toMonoid ↦ 27
+    [kernel] SubNegMonoid.toNeg ↦ 26
+    [kernel] inner ↦ 24
+    [kernel] NormedAddCommGroup.toAddCommGroup ↦ 21
+    [kernel] Real.instNeg ↦ 21
+    [kernel] Semiring.toAddCommMonoid ↦ 21
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 125, num: 3):
+    [reduction] outParam ↦ 125
+    [reduction] inferInstance ↦ 37
+    [reduction] UnitAddTorus ↦ 28
+  [type_class] used instances (max: 24, num: 1):
+    [type_class] Lean.Grind.CommRing.OfCommSemiring.instOfNatQ ↦ 24
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded declarations (max: 339227, num: 37):
+    [reduction] Quotient ↦ 339227
+    [reduction] AEEqFun ↦ 339227
+    [reduction] AEEqFun.cast ↦ 226044
+    [reduction] Set ↦ 21228
+    [reduction] compl ↦ 16142
+    [reduction] LE.le ↦ 3436
+    [reduction] Set.Subset ↦ 3407
+    [reduction] range ↦ 1074
+    [reduction] Zero.zero ↦ 739
+    [reduction] Quotient.mk ↦ 147
+    [reduction] AEEqFun.const ↦ 147
+    [reduction] AEEqFun.mk ↦ 147
+    [reduction] SetLike.coe ↦ 141
+    [reduction] HSMul.hSMul ↦ 140
+    [reduction] SMul.smul ↦ 140
+    [reduction] sInf ↦ 98
+    [reduction] iInf ↦ 92
+    [reduction] ENNReal.instCompleteLinearOrder._aux_4 ↦ 90
+    [reduction] NSMul.nsmul ↦ 68
+    [reduction] Lp ↦ 60
+    [reduction] Mul.mul ↦ 58
+    [reduction] inner ↦ 52
+    [reduction] HMul.hMul ↦ 44
+    [reduction] CoeOTC.coe ↦ 41
+    [reduction] DFunLike.coe ↦ 38
+    [reduction] ContDiff ↦ 30
+    [reduction] textbookUnitPeriodicPotential ↦ 30
+    [reduction] Option.rec ↦ 30
+    [reduction] HPow.hPow ↦ 28
+    [reduction] Pow.pow ↦ 28
+    [reduction] Neg.neg ↦ 27
+    [reduction] NPow.npow ↦ 24
+    [reduction] norm ↦ 24
+    [reduction] CoeHTC.coe ↦ 22
+    [reduction] CoeHTCT.coe ↦ 22
+    [reduction] CoeT.coe ↦ 22
+    [reduction] CoeSort.coe ↦ 21
+  [reduction] unfolded reducible declarations (max: 2373509, num: 20):
+    [reduction] Subtype.val ↦ 2373509
+    [reduction] Prod.fst ↦ 1695345
+    [reduction] Decidable.casesOn ↦ 226582
+    [reduction] UnitAddTorus ↦ 113202
+    [reduction] Function.Injective.addZeroClass ↦ 694
+    [reduction] outParam ↦ 579
+    [reduction] AddSubgroup.toAddSubmonoid ↦ 536
+    [reduction] Function.Injective.addMonoid ↦ 412
+    [reduction] Function.Injective.addGroup ↦ 407
+    [reduction] Function.Injective.subNegMonoid ↦ 406
+    [reduction] AddSubmonoid.toAddSubsemigroup ↦ 362
+    [reduction] semiOutParam ↦ 240
+    [reduction] inferInstance ↦ 200
+    [reduction] Quotient.mk'' ↦ 147
+    [reduction] AddSubsemigroup.carrier ↦ 129
+    [reduction] Function.Injective.addSemigroup ↦ 108
+    [reduction] FunLike ↦ 96
+    [reduction] Function.Injective.addCommMonoid ↦ 92
+    [reduction] Submodule.toAddSubmonoid ↦ 38
+    [reduction] Option.casesOn ↦ 30
+  [type_class] used instances (max: 74, num: 35):
+    [type_class] Lean.Grind.CommRing.OfCommSemiring.instOfNatQ ↦ 74
+    [type_class] Real.instPow ↦ 58
+    [type_class] instHPow ↦ 48
+    [type_class] CStarAlgebra.toNormedRing ↦ 39
+    [type_class] CommCStarAlgebra.toCStarAlgebra ↦ 39
+    [type_class] NormedCommRing.toNormedRing ↦ 39
+    [type_class] Pi.topologicalSpace ↦ 38
+    [type_class] DenselyNormedField.toNontriviallyNormedField ↦ 37
+    [type_class] CommCStarAlgebra.toNormedCommRing ↦ 36
+    [type_class] DenselyNormedField.toNormedField ↦ 36
+    [type_class] NontriviallyNormedField.toNormedField ↦ 36
+    [type_class] NormedCommRing.toSeminormedCommRing ↦ 36
+    [type_class] NormedDivisionRing.toNormedRing ↦ 36
+    [type_class] NormedField.toNormedCommRing ↦ 36
+    [type_class] NormedField.toNormedDivisionRing ↦ 36
+    [type_class] RCLike.toDenselyNormedField ↦ 36
+    [type_class] NormedRing.toSeminormedRing ↦ 35
+    [type_class] SeminormedCommRing.toSeminormedRing ↦ 35
+    [type_class] instCoeOTC ↦ 34
+    [type_class] CStarAlgebra.toNonUnitalCStarAlgebra ↦ 33
+    [type_class] CommCStarAlgebra.toNonUnitalCommCStarAlgebra ↦ 33
+    [type_class] NonUnitalCStarAlgebra.toNonUnitalNormedRing ↦ 33
+    [type_class] NonUnitalCommCStarAlgebra.toNonUnitalCStarAlgebra ↦ 33
+    [type_class] NonUnitalCommCStarAlgebra.toNonUnitalNormedCommRing ↦ 33
+    [type_class] NonUnitalNormedCommRing.toNonUnitalNormedRing ↦ 33
+    [type_class] NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing ↦ 33
+    [type_class] NormedCommRing.toNonUnitalNormedCommRing ↦ 33
+    [type_class] NormedRing.toNonUnitalNormedRing ↦ 33
+    [type_class] SeminormedCommRing.toNonUnitalSeminormedCommRing ↦ 33
+    [type_class] NonUnitalNormedCommRing.toNonUnitalSeminormedCommRing ↦ 32
+    [type_class] NonUnitalNormedRing.toNonUnitalSeminormedRing ↦ 32
+    [type_class] SeminormedRing.toNonUnitalSeminormedRing ↦ 32
+    [type_class] Vector.instHMul ↦ 27
+    [type_class] NonUnitalSeminormedRing.toSeminormedAddCommGroup ↦ 26
+    [type_class] NormedAddCommGroup.toSeminormedAddCommGroup ↦ 25
+  [type_class] max synth pending failures (maxSynthPendingDepth: 1), use `set_option maxSynthPendingDepth <limit>`
+    [type_class] NormedAddCommGroup ℝ
+    [type_class] SeminormedAddCommGroup (UnitAddTorus (Fin Nc) →ₘ[textbookConfigurationTorusGibbsMeasure U β] ℝ)
+  [def_eq] heuristic for solving `f a =?= f b` (max: 339066, num: 25):
+    [def_eq] Subtype.val ↦ 339066
+    [def_eq] Not ↦ 129209
+    [def_eq] AEEqFun.cast ↦ 113040
+    [def_eq] dite ↦ 113022
+    [def_eq] ofPred ↦ 65119
+    [def_eq] Membership.mem ↦ 17853
+    [def_eq] Set.Mem ↦ 17849
+    [def_eq] compl ↦ 8072
+    [def_eq] LE.le ↦ 1704
+    [def_eq] Set.Subset ↦ 1704
+    [def_eq] range ↦ 537
+    [def_eq] SetLike.instMembership ↦ 201
+    [def_eq] AddSubgroup.instSetLike ↦ 64
+    [def_eq] AEEqFun.instAddGroup ↦ 63
+    [def_eq] AEEqFun.instAdd ↦ 53
+    [def_eq] AEEqFun.instZero ↦ 49
+    [def_eq] iInf ↦ 46
+    [def_eq] ite ↦ 46
+    [def_eq] sInf ↦ 46
+    [def_eq] ENNReal.instCompleteLinearOrder._aux_4 ↦ 46
+    [def_eq] AddSubmonoidClass.toAddMonoid ↦ 45
+    [def_eq] AEEqFun.comp ↦ 35
+    [def_eq] AddSubgroup.toAddSubmonoid ↦ 26
+    [def_eq] AddSubmonoid.toAddSubsemigroup ↦ 26
+    [def_eq] AddSubsemigroup.carrier ↦ 26
+  [reduction] Axioms (possibly imported non-exposed defs) that were tried to be unfolded (max: 1130670, num: 1):
+    [reduction] Classical.choice ↦ 1130670
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean:136:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (800000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 71, num: 3):
+    [reduction] outParam ↦ 71
+    [reduction] inferInstance ↦ 31
+    [reduction] UnitAddTorus ↦ 23
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 107, num: 3):
+    [reduction] outParam ↦ 107
+    [reduction] inferInstance ↦ 44
+    [reduction] UnitAddTorus ↦ 31
+  [kernel] unfolded declarations (max: 226, num: 52):
+    [kernel] Add.add ↦ 226
+    [kernel] HAdd.hAdd ↦ 226
+    [kernel] HSMul.hSMul ↦ 222
+    [kernel] SMul.smul ↦ 222
+    [kernel] AddCommMonoid.toAddMonoid ↦ 131
+    [kernel] SubNegMonoid.toAddMonoid ↦ 88
+    [kernel] Mul.mul ↦ 86
+    [kernel] HMul.hMul ↦ 85
+    [kernel] ZSMul.zsmul ↦ 84
+    [kernel] instHAdd ↦ 82
+    [kernel] AddMonoid.toAdd ↦ 82
+    [kernel] Neg.neg ↦ 74
+    [kernel] instHSMul ↦ 69
+    [kernel] NSMul.nsmul ↦ 66
+    [kernel] LE.le ↦ 62
+    [kernel] Ring.toNeg ↦ 60
+    [kernel] inferInstance ↦ 56
+    [kernel] AddSemigroup.toAdd ↦ 56
+    [kernel] NormedAddCommGroup.toNorm ↦ 52
+    [kernel] AddGroup.toSubNegMonoid ↦ 51
+    [kernel] Real.instAdd ↦ 49
+    [kernel] MetricSpace.toPseudoMetricSpace ↦ 45
+    [kernel] norm ↦ 44
+    [kernel] AddCommGroup.toAddGroup ↦ 43
+    [kernel] OfNat.ofNat ↦ 43
+    [kernel] SubNegMonoid.toNeg ↦ 43
+    [kernel] Ring.toSemiring ↦ 34
+    [kernel] AddMonoid.toZero ↦ 33
+    [kernel] NSMul.toSMul ↦ 33
+    [kernel] Real.instNeg ↦ 33
+    [kernel] dist ↦ 32
+    [kernel] NormedAddCommGroup.toAddCommGroup ↦ 32
+    [kernel] PseudoMetricSpace.toDist ↦ 32
+    [kernel] Semiring.toMonoid ↦ 28
+    [kernel] Ring.toSub ↦ 27
+    [kernel] Ring.toZSMul ↦ 27
+    [kernel] Real.instAddCommGroup ↦ 26
+    [kernel] Real.norm ↦ 26
+    [kernel] Ring.toAddCommGroup ↦ 26
+    [kernel] Semiring.toAddCommMonoid ↦ 25
+    [kernel] CommRing.toRing ↦ 24
+    [kernel] max ↦ 24
+    [kernel] min ↦ 24
+    [kernel] NormedAddCommGroup.toMetricSpace ↦ 24
+    [kernel] SeminormedAddGroup.toNorm ↦ 24
+    [kernel] SeminormedAddGroup.toPseudoMetricSpace ↦ 24
+    [kernel] NonUnitalSeminormedRing.toSeminormedAddCommGroup ↦ 23
+    [kernel] Real.normedAddCommGroup ↦ 23
+    [kernel] ZSMul.toSMul ↦ 23
+    [kernel] NonUnitalNonAssocRing.toAddCommGroup ↦ 22
+    [kernel] NatCast.natCast ↦ 21
+    [kernel] NormedAddCommGroup.toSeminormedAddCommGroup ↦ 21
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean:182:8: error: (kernel) unknown constant 'MolecularDynamics.textbookBrownianGibbsClosedOperator_coercive'

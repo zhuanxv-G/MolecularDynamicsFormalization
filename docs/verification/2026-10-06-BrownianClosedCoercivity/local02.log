@@ -1,0 +1,6 @@
+MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean:28:2: error: Type mismatch
+  textbookConfigurationTorusObservable_lift ?m.9 ?m.14 q
+has type
+  textbookConfigurationTorusObservable ?m.9 (textbookConfigurationTorusProjection q) = ?m.9 q
+but is expected to have type
+  (textbookPeriodicSmoothContinuous f) (textbookConfigurationTorusProjection q) = ↑f q

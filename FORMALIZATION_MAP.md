@@ -782,3 +782,8 @@ full-check01 passed：9073 jobs/1394公理声明/156exact inputs；10checks退�
 BrownianGibbsPoincare18public local02零诊断：actualderived massM与densitylower真实积分比较给原sameµ一般positive mass Varµ≤exp4A M/(4π²) weightedenergy，actualDirichlet/energyconstantshift和βpositive rateκ>0给actualmean0 core coercivity。DEP039/NOT048，fullcheck中；closed coercivity/selfadjoint/full谱gap未完成，负责人pending。
 
 full-check01 passed：9074 jobs/1412公理声明/157exact inputs；10checks退出0、全部input/rawlog SHA匹配、18 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 真实closed域强制性、常数零核和实特征值界
+BrownianClosedCoercivity15public local12零诊断：sameµ fullsmooth embedding actualCM与Hilbertvariance桥接、derivedrate core→真实closedgraph domain moduloone/orthogonalcoercivity、normconstantprojection给closedkernel onlyconstant，formal symmetry推出实际nonzero real eigen≤-κ。DEP040/NOT049，fullcheck中；selfadjoint/compactresolvent/full谱existence和semigroup仍缺。
+
+full-check01 passed：9075 jobs/1427公理声明/158exact inputs；10checks退出0、全部input/rawlog SHA匹配、15 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

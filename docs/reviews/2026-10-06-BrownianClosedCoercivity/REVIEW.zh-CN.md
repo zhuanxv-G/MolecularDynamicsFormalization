@@ -1,0 +1,10 @@
+# Theorem6.1：actualclosed-domain强制性、常数零核与实特征值界
+原印刷250–251/PDF271–272已核对。15公开声明在原sameµ actualpositive diagonal m、C∞integerperiodic U、β>0及原真实graphclosure上补必要结论，不改模型。
+前7桥接actualfull smooth lifts的torus CM与actualAE embedding=continuousToLp、constantone norm1/actualmean pairing、真正Hilbertvariance=norm²-innerone²。derivedκ*C=βinv把已证GibbsPoincare和Dirichlet给full smooth domain moduloone强制性。
+对同一actualL² product定义一个真实闭集C，其连续polynomial inequality κ(norm²-innerone²)≤-inner构成closed condition；originalcore graphsubset和actualclosedgraph=topologicalclosure(originalgraph)给整个closed domain同一不等式，再actualorthogonalone给κnorm²≤-inner。未假设closure/coercivity，graph theorem已真正证明。
+真正norm_sub_sq_real+actualone norm1给orthogonal projection residualnorm²=variance expression；actualclosed zero vector由κ>0被迫residual0，故只为actualconstantone的scalar multiple。已有allconstants真实closedkillsconstant/norm1非零继续使用。原formal symmetry测试actualconstantzero vector，非零real eigenvalue推出trueorthogonality，再κnorm²bound及nonzeroactualvector给每个非零实特征值≤-κ。
+local01/02 subtype作为函数及semireducible proof匹配错误，explicit cast+by exact修，local03原7pub零诊断。local04 wholeclosed decl默认200k whnf超时；local05局部800k仍超时和doc/setoption位置错误；local06typed intermediates仍超时，local07diagnostics记录Classical.choice/AEEqFun.cast/Subtype.defeq多次展开；local08stage trace已构造hclosed/hsub/hx定位最终closure_minimal，local09类型aliasδ仍未解。local10改single actualclosed Set C统一goal/hsub/hclosed/hc后11pub退出0空日志；local11新4pub仅裸λ为Lean保留keyword，改ℓ后local12全15pub退出0空日志零警告。所有失败/diagnostics日志原样保留，source已移除临时trace/diagnostics，只保留一个目标声明maxHeartbeats800000资源限制（不更改内核或证明逻辑，不unsafe）。
+root/Scratch/公理/DEP040/NOT049集成，full-check01进行中。
+本批真实closedkernel constant唯一性和条件real point-eigenvalue separation完整；没有证明selfadjointness、compactresolvent或real/discrete full spectrum存在性，也不把条件eigenrelation隐藏为一般谱结论。actualsemigroup、Theorem6.1整体和CORE_SCOPE未完成，负责人教材语义pending。
+
+full-check01 passed：9075 jobs/1427公理声明/158exact inputs；10checks退出0、全部input/rawlog SHA匹配、15 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

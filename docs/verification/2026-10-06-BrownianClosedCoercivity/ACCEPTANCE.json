@@ -1,0 +1,209 @@
+{
+  "started_at": "2026-10-06T03:54:32.249377+08:00",
+  "finished_at": "2026-10-06T03:59:28.8185534+08:00",
+  "head_at_check": "ea1090b3cfd8b41916a5e973e5770fbdc644bdc9",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9075,
+  "audit_declarations": 1427,
+  "inputs": 158,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookPeriodicSmoothContinuous",
+    "MolecularDynamics.textbookPeriodicSmoothContinuous_lift",
+    "MolecularDynamics.textbookPeriodicSmoothContinuous_const",
+    "MolecularDynamics.textbookPeriodicSmoothEmbedding_eq_continuousToLp",
+    "MolecularDynamics.textbookPeriodicSmoothEmbedding_one_norm",
+    "MolecularDynamics.textbookPeriodicSmoothEmbedding_inner_one",
+    "MolecularDynamics.textbookPeriodicSmoothEmbedding_variance",
+    "MolecularDynamics.textbookBrownianGibbsCoercivityRate_mul_constant",
+    "MolecularDynamics.textbookBrownianGibbsDomainOperator_coercive",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_coercive",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_orthogonal_coercive",
+    "MolecularDynamics.textbookGibbsConstantProjection_norm_sq",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_kernel_constant",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_eigenvalue_orthogonal",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_real_eigenvalue_bound"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothContinuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothContinuous_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothContinuous_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothEmbedding_eq_continuousToLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothEmbedding_one_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothEmbedding_inner_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothEmbedding_variance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsCoercivityRate_mul_constant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDomainOperator_coercive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_coercive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_orthogonal_coercive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsConstantProjection_norm_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_kernel_constant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_eigenvalue_orthogonal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_real_eigenvalue_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "full-check01-driver.log",
+      "sha256": "e67d9ae36df9379fbe09b5611e23203ea1e66963783462f3b83233fca6aec483"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "41c53ca4266edf9e4f4810f3c4a5b2cfe79e6b6463cf8668a32c8aa1c5291ef7"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "6faf6a1674dabf962f8274dec029e496e6fdb63aa70a3273a1a8ee32fc85df64"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "b1883746c19b181ded02514a1d646d3ed566071bf5dcec745d7eb794069d7159"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "dc1bd0e9067217840002b3e52ed8eee86bc5700fc5bd5db6b7e74ee1ca0a4068"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "655a1861b1598f8afb9b5dd64d1f8bfc25c3901f0f28d0f3bd78ec6bd166afdc"
+    },
+    {
+      "path": "local07-diagnostics.log",
+      "sha256": "329684248a12acdfb162e67fe57d2241b63d92b5ad99fa2da6abd615e0b5a316"
+    },
+    {
+      "path": "local08-stages.log",
+      "sha256": "381ba271392c2e978f16075d2324636c03e7b49863496d019c7035c6dec21fb0"
+    },
+    {
+      "path": "local09.log",
+      "sha256": "c60a65651746e1dbff20294950efef85abbf7ad7bf4dedb92e9ec192e856bd77"
+    },
+    {
+      "path": "local10.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local11.log",
+      "sha256": "6c720594251c91307cf6983e4afcb79410dd4983a3bccc029e2fc5da7f0e277b"
+    },
+    {
+      "path": "local12.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

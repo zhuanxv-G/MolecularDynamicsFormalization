@@ -1,0 +1,35 @@
+MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean:20:4: error: Application type mismatch: The argument
+  textbookConfigurationTorusObservable_continuous ?m.12 ?m.27 ?m.32
+has type
+  Continuous (textbookConfigurationTorusObservable ?m.12)
+but is expected to have type
+  autoParam (Continuous (textbookConfigurationTorusObservable ↑f)) ContinuousMap.continuous_toFun._autoParam
+in the application
+  { toFun := textbookConfigurationTorusObservable ↑f, continuous_toFun := ⋯ }
+MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean:25:82: error: Function expected at
+  f
+but this term has type
+  ↥(textbookPeriodicSmoothSpace Nc)
+
+Note: Expected a function because this term is being applied to the argument
+  q
+MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean:33:2: error: Tactic `rfl` failed: The left-hand side
+  (textbookPeriodicSmoothContinuous (textbookPeriodicSmoothConstant Nc c)) Q
+is not definitionally equal to the right-hand side
+  (ContinuousMap.const (UnitAddTorus (Fin Nc)) c) Q
+
+Nc : ℕ
+c : ℝ
+Q : UnitAddTorus (Fin Nc)
+⊢ (textbookPeriodicSmoothContinuous (textbookPeriodicSmoothConstant Nc c)) Q =
+    (ContinuousMap.const (UnitAddTorus (Fin Nc)) c) Q
+MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean:46:20: error: Application type mismatch: The argument
+  Eq.symm hContinuous
+has type
+  (textbookPeriodicSmoothContinuous f) Q =
+    ↑↑((textbookGibbsContinuousToLp U hU hPU β) (textbookPeriodicSmoothContinuous f)) Q
+but is expected to have type
+  textbookConfigurationTorusObservable (↑f) Q =
+    ↑↑((textbookGibbsContinuousToLp U hU hPU β) (textbookPeriodicSmoothContinuous f)) Q
+in the application
+  Eq.trans hLift (Eq.symm hContinuous)

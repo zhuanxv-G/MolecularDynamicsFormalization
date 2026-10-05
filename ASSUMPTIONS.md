@@ -460,3 +460,6 @@ Nc任意，全C∞ integerperiodic f或actualtorus CM g且原quotient Euclidean 
 
 ## 2026-10-06 BrownianGibbsPoincare条件
 Nc任意，原每m_i>0、U C∞integerperiodic，g actualtorus CM且原quotient Euclidean lift C∞。同一µ，Poincare βany，originalgenerator coercivity β>0。M=1+Σ|m|、A=|β|实际potential CM norm、C=exp4A M/(4π²)、κ=(βC)inv均derived positive（κ要求β>0）。不假设Poincare/density/mass bound、gradient identity或gap。actualmean0只为最后core meanzero coercivity，完整variance inequality无mean0前提；closed/selfadjoint/spectrum仍独立未完成，负责人pending。
+
+## 2026-10-06 BrownianClosedCoercivity条件
+真实sameµ fullL²、actualsmoothdomain及其已证明graphclosure。Ncany、originalmass每mi>0、U C∞integerperiodic、β>0给closed强制性/kernel/realpoint-eigen separation。orthogonality由actualconstantzero/formalsymmetry推导（非零real eigen）、closedzero relation/eigenrelation只是被讨论向量定义条件，不供应κ bound/自伴/谱existence假设。κ=(βC)inv已证positive，constantone真实norm1。所有graph/continuous/AE/variance对应都证明；source单一声明800k heartbeat仅资源预算，不禁内核检查/不unsafe。full spectrum selfadjoint compactresolvent未完成，负责人pending。

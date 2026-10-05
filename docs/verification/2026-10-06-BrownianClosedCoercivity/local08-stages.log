@@ -1,0 +1,98 @@
+MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean:135:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (800000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+x : ↥(textbookBrownianGibbsClosedOperator m U hU hPU β).domain
+⊢ textbookBrownianGibbsCoercivityRate m U hU hPU β *
+      (‖↑x‖ ^ 2 - ⟪(textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1), ↑x⟫_ℝ ^ 2) ≤
+    -⟪↑x, ↑(textbookBrownianGibbsClosedOperator m U hU hPU β) x⟫_ℝ
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+x : ↥(textbookBrownianGibbsClosedOperator m U hU hPU β).domain
+H : AddSubgroup (UnitAddTorus (Fin Nc) →ₘ[textbookConfigurationTorusGibbsMeasure U β] ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+one : ↥H := (textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1)
+κ : ℝ := textbookBrownianGibbsCoercivityRate m U hU hPU β
+hnorm : Continuous fun z => ‖z.1‖ ^ 2
+hmean : Continuous fun z => ⟪one, z.1⟫_ℝ ^ 2
+hlhs : Continuous fun z => κ * (‖z.1‖ ^ 2 - ⟪one, z.1⟫_ℝ ^ 2)
+hrhs : Continuous fun z => -⟪z.1, z.2⟫_ℝ
+hclosed : IsClosed {z | κ * (‖z.1‖ ^ 2 - ⟪one, z.1⟫_ℝ ^ 2) ≤ -⟪z.1, z.2⟫_ℝ}
+⊢ textbookBrownianGibbsCoercivityRate m U hU hPU β *
+      (‖↑x‖ ^ 2 - ⟪(textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1), ↑x⟫_ℝ ^ 2) ≤
+    -⟪↑x, ↑(textbookBrownianGibbsClosedOperator m U hU hPU β) x⟫_ℝ
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+x : ↥(textbookBrownianGibbsClosedOperator m U hU hPU β).domain
+H : AddSubgroup (UnitAddTorus (Fin Nc) →ₘ[textbookConfigurationTorusGibbsMeasure U β] ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+one : ↥H := (textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1)
+κ : ℝ := textbookBrownianGibbsCoercivityRate m U hU hPU β
+hnorm : Continuous fun z => ‖z.1‖ ^ 2
+hmean : Continuous fun z => ⟪one, z.1⟫_ℝ ^ 2
+hlhs : Continuous fun z => κ * (‖z.1‖ ^ 2 - ⟪one, z.1⟫_ℝ ^ 2)
+hrhs : Continuous fun z => -⟪z.1, z.2⟫_ℝ
+hclosed : IsClosed {z | κ * (‖z.1‖ ^ 2 - ⟪one, z.1⟫_ℝ ^ 2) ≤ -⟪z.1, z.2⟫_ℝ}
+hsub :
+  ↑(textbookBrownianGibbsPartialOperator m U hU hPU β).graph ⊆
+    {z |
+      textbookBrownianGibbsCoercivityRate m U hU hPU β *
+          (‖z.1‖ ^ 2 -
+            ⟪(textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1), z.1⟫_ℝ ^ 2) ≤
+        -⟪z.1, z.2⟫_ℝ}
+⊢ textbookBrownianGibbsCoercivityRate m U hU hPU β *
+      (‖↑x‖ ^ 2 - ⟪(textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1), ↑x⟫_ℝ ^ 2) ≤
+    -⟪↑x, ↑(textbookBrownianGibbsClosedOperator m U hU hPU β) x⟫_ℝ
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+x : ↥(textbookBrownianGibbsClosedOperator m U hU hPU β).domain
+H : AddSubgroup (UnitAddTorus (Fin Nc) →ₘ[textbookConfigurationTorusGibbsMeasure U β] ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+one : ↥H := (textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1)
+κ : ℝ := textbookBrownianGibbsCoercivityRate m U hU hPU β
+hnorm : Continuous fun z => ‖z.1‖ ^ 2
+hmean : Continuous fun z => ⟪one, z.1⟫_ℝ ^ 2
+hlhs : Continuous fun z => κ * (‖z.1‖ ^ 2 - ⟪one, z.1⟫_ℝ ^ 2)
+hrhs : Continuous fun z => -⟪z.1, z.2⟫_ℝ
+hclosed : IsClosed {z | κ * (‖z.1‖ ^ 2 - ⟪one, z.1⟫_ℝ ^ 2) ≤ -⟪z.1, z.2⟫_ℝ}
+hsub :
+  ↑(textbookBrownianGibbsPartialOperator m U hU hPU β).graph ⊆
+    {z |
+      textbookBrownianGibbsCoercivityRate m U hU hPU β *
+          (‖z.1‖ ^ 2 -
+            ⟪(textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1), z.1⟫_ℝ ^ 2) ≤
+        -⟪z.1, z.2⟫_ℝ}
+hx :
+  (↑x, ↑(textbookBrownianGibbsClosedOperator m U hU hPU β) x) ∈
+    closure ↑(textbookBrownianGibbsPartialOperator m U hU hPU β).graph
+⊢ textbookBrownianGibbsCoercivityRate m U hU hPU β *
+      (‖↑x‖ ^ 2 - ⟪(textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1), ↑x⟫_ℝ ^ 2) ≤
+    -⟪↑x, ↑(textbookBrownianGibbsClosedOperator m U hU hPU β) x⟫_ℝ
+MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean:185:8: error: (kernel) unknown constant 'MolecularDynamics.textbookBrownianGibbsClosedOperator_coercive'

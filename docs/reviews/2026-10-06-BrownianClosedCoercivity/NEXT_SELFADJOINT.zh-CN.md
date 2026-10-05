@@ -1,0 +1,7 @@
+# 下一目标：同一模型真正 selfadjoint 与 compactresolvent
+已实际完成closed-domain quantitativecoercivity、constantkernel唯一性及所有nonzero real eigenvalue≤-κ；仍缺full spectrum实/离散/existence、selfadjoint/compactresolvent和原semigroup/expectation，不能从形式对称推自伴。
+下一先BrownianMassFourier.lean：actualm/β下necessary auxiliary U0 literalgenerator的完整cos/sin Fourier multiplier Ω_n=βinv*4π²Σm_i_inv n_i²；复用真实partials、originalperiodicHaar symmetry（zeroU actualµ=Haar）给same actual Fourier coefficient。positiveβ/m推真实Ωpositive下界，供原generalmass Laplace的Hilbert diagonal自伴路线，flat只必要auxiliary不替代主U模型。
+然后固定API检索真实UnitAddTorus.mFourierBasis、ℓ² weight multiplication/LinearPMap adjoint/closedgraph，证明真正diagonal domain/selfadjoint与Fourierpolynomialgraphcore；不得把diagonal selfadjoint/ellipticregularity假设塞回originaltheorem。
+原Gibbs-Haar unitary是actualsqrtρ multiplication；需真实bounded positive density双界、CM/AE/integral norm等式和actualinverse onto，真实原generator conjugation为βinv massweightedLaplace+bounded real potential V=Σm_i_inv((∂iiU)/2-β(∂iU)²/4)。这些对应公式、bounded perturbation adjoint域、actualsmoothcoreclosure identification尚未证。
+compactresolvent需真实diagonal频率finite sublevels/reciprocal decay与normlimit finite-rank，再boundedperturbation/resolvent。若独立分析gap慢，保留真实缺口并按CORE_SCOPE推进其他正文目标，不把ownerpending或困难记blocked。
+恢复先读取本批source/evidence与现有fixedAPI，落盘massFourier必要候选；一次batch完整后统一full。原µ/m/β/U保持，负责人semanticpending。
