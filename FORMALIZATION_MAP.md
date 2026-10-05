@@ -682,3 +682,7 @@ LangevinDrivenExistence.lean 与既有真实field Lipschitz导出：统一Picard
 ## 2026-10-05 实际Cpath解映射与周期可测随机模型
 
 LangevinPathSolution/WienerVectorContinuousPath/LangevinRandomSolution：实际chosen q/p与Gronwall导出endpoint Lipschitz/连续及同噪声唯一性；真实标准Wiener Cpath AEm与AE原noise一致，actual随机积分解/逐timephase AEm；C∞周期势能真实构造模型并得Nonempty-open/physicalNoise概率可达。full9046/977/129，20public零警告。全时域一致/适应性及最终语义签核pending。
+
+## 2026-10-05 实际同一全时域Langevin随机模型
+
+LangevinGlobalRandomSolution.lean：actual restriction/EqOn积分转移与same-noise唯一→integer模型重叠一致；ceil(t)+1定义同一phase，在同一AE sample集上每个real T满足真原积分方程，逐time AEm和Ici全路径连续；true periodic projection和physicalNoise all-time Nonempty-open可达。full9047/985/130，8public零警告；适应性/生成元/遍历性及负责人pending。

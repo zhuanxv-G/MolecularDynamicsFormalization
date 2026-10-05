@@ -506,3 +506,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 引理6.1真实可测随机模型与周期可达验收
 
 真实selected积分解/endpoint Lipschitz与唯一性、标准vector Wiener whole Cpath AEmeas、literal Wiener noise AE全interval相同、actual随机积分解及逐timeendpoint AEm和周期Nonempty-open/physicalNoise可达接受；没有解存在或可测终点结论前提。full-check01 16:41:20--16:46:37 +0800退出0，9046jobs/977audit/129inputs、20public全名覆盖、全部SHA一致、零Lean警告和仅基础三公理。下一统一所有finite horizon的actual单一随机过程；适应性/生成元/遍历性、Nonempty修正负责人和CORE_SCOPE仍pending。
+
+## 2026-10-05 引理6.1同一全时域随机模型验收
+
+实际integer-horizon restriction/唯一性重叠一致→同一ceil(t)+1 global phase，在同一AE sample集上所有real T满足原积分方程，每time AEm且Ici路径连续；真实周期/physicalNoise模型每T>0 Nonempty-open可达接受。full-check01 17:03:22--17:04:30 +0800退出0，9047jobs/985audit/130inputs、8public全名覆盖、全部SHA一致、零Lean警告、仅基础三公理。适应性/生成元/遍历性/原Nonempty最终负责人及全CORE_SCOPEpending。下一原253--254/PDF274--275的H^l Lyapunov实际求导和真实界，先核验原中间系数疑点再推进正确主估计。

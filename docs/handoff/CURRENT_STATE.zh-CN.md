@@ -26,9 +26,29 @@
 
 
 
+## 最新数学检查点（2026-10-05 17:09 +0800）
+
+- LangevinGlobalRandomSolution同一全时域实际随机模型接受，待本地保存。full-check01/session39480：2026-10-05T17:03:22.0667866+08:00--2026-10-05T17:04:30.0562598+08:00退出0；9047jobs、零Lean警告、985audit仅基础三公理、130inputs/全部raw-log SHA256实查一致、8public全名覆盖。真实restriction/EqOn integral转移、same-noise uniqueness→integer重叠一致及ceil(t)+1 global phase；countable AE integer family→同一sample所有real T原模型，逐time AEm和Ici路径连续；actual periodic/physicalNoise全时域模型每正T Nonempty-open null可测/positive。无global存在/不爆炸/一致假设。适应性/强Markov/生成元/遍历性/原Nonempty语义签核及全CORE_SCOPEpending；下一原253--254/PDF274--275已目视，H^l Laplacian界系数疑点先真实求导和counter核验，再正确主Lyapunov estimate（目前疑点未Lean验证）。
+
+## 最新数学检查点（2026-10-05 17:03 +0800）
+
+- GlobalRandomSolution local03/session73844退出0空日志/零警告。真实restriction/EqOn积分转移与same-noise uniqueness→integer horizon重叠一致、ceil(t)+1构造同一actual全非负时间phase、AE integer countable family推出同一sample全部real T积分模型，每global t AEm和Ici连续，真实periodic all-time模型/每T>0 Nonempty-open及physicalNoise概率可达完整局部。8public含既有actual periodicProjection证明导出接root/Scratch/逐名审计；下一唯一full-check01冻结Lean/验收输入。未输入全局存在/不爆炸/一致/endpoint AEm/路径AEm结论假设；适应性/生成元/遍历性/原Nonempty负责人与CORE_SCOPEpending。后续原页253--254/PDF274--275 Lyapunov H^l依赖，已渲染页待逐式视觉核对，疑似Laplacian系数问题未验证前不作结论。
+
+## 最新数学检查点（2026-10-05 17:01 +0800）
+
+- GlobalRandomSolution local02/session88197退出1仅剩一处未覆盖的EqOn隐式点参数；全部integer family restriction/实际唯一→ceil拼接、AE同一sample所有T、每time endpoint AEm及ContinuousOn Ici/periodic主链其余无诊断。补剩余EqOn调用与真实sqrt(2γβ⁻¹)全时域physicalNoise wrapper，下一唯一local03；8public整批full待。
+
+## 最新数学检查点（2026-10-05 16:58 +0800）
+
+- LangevinGlobalRandomSolution local01/session28937退出1：EqOn隐式点参数应只传membership，integer family forall n因先出现(n:ℝ)需显式(n:ℕ)；类型错误导致elaborator临时sorry诊断，实际源码无sorry/admit。真实一致拼接/AE integer family/continuous Ici及periodic主链尚待修复后的完整局部检查；已补明确Nat类型、EqOn接口和积分lambda beta。projection-local01/session50387与projection-build01/session90172零警告退出0（3480jobs）。下一唯一local02，整批full未运行。
+
+## 最新数学检查点（2026-10-05 16:54 +0800）
+
+- 开始LangevinGlobalRandomSolution.lean：真实积分解restriction/phase EqOn转移，actual integer-horizon解同噪声唯一→重叠一致；α_global(t)=α_(ceil(t)+1)(t)不取极限，用每个有界interval的真正EqOn保证allT原积分方程/连续/不爆炸，AE countable integer family推出同一sample上全部real T。每个global t端点AEm从实际selected finite endpoint导出，周期真实projection给actual all-time模型及Nonempty-open可达。HEAD140746fcadc4b3d8ea76e453392d1215e218494a；full9046/977/129已保存；下一export既有periodic projection证明局部与module-build后global-local01。适应性/生成元/遍历性及负责人CORE_SCOPEpending。
+
 ## 最新数学检查点（2026-10-05 16:50 +0800）
 
-- LangevinRandomSolution真实可测随机模型与周期可达接受，待本地保存。full-check01/session15708：2026-10-05T16:41:20.9141743+08:00--2026-10-05T16:46:37.0266424+08:00退出0；9046jobs、零Lean警告、977audit仅基础三公理、129inputs与全部原始日志SHA256实查一致，20public逐项完整名称覆盖。actual Cpath selected解与Gronwall endpoint Lip/连续/同噪声唯一；标准Gaussian/AE连续证明whole Cpath AEm，literal noise AE全interval一致；actual随机q/p积分方程/每timephase AEm，真实周期势能derived Lip构造periodic模型及正T/Nonempty-open/physicalNoise可达，无解存在/end AEm结论假设。下一真实integer-horizon restriction+uniqueness一致拼接同一全非负时间随机过程与global continuous/no explosion；适应性/生成元/遍历性/原Nonempty语义签核及CORE_SCOPEpending。
+- LangevinRandomSolution真实可测随机模型与周期可达接受并保存为 140746fcadc4b3d8ea76e453392d1215e218494a。full-check01/session15708：2026-10-05T16:41:20.9141743+08:00--2026-10-05T16:46:37.0266424+08:00退出0；9046jobs、零Lean警告、977audit仅基础三公理、129inputs与全部原始日志SHA256实查一致，20public逐项完整名称覆盖。actual Cpath selected解与Gronwall endpoint Lip/连续/同噪声唯一；标准Gaussian/AE连续证明whole Cpath AEm，literal noise AE全interval一致；actual随机q/p积分方程/每timephase AEm，真实周期势能derived Lip构造periodic模型及正T/Nonempty-open/physicalNoise可达，无解存在/end AEm结论假设。下一真实integer-horizon restriction+uniqueness一致拼接同一全非负时间随机过程与global continuous/no explosion；适应性/生成元/遍历性/原Nonempty语义签核及CORE_SCOPEpending。
 
 ## 最新数学检查点（2026-10-05 16:41 +0800）
 

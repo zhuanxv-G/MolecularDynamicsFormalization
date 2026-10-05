@@ -109,6 +109,14 @@ private theorem project_actual_solution {Nc : ℕ}
     rw [hint] at he
     exact he
 
+/-- The actual real integral solution projects to the true periodic integral equations. -/
+theorem textbookLangevinIntegralSolution_periodicProjection {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hP : textbookUnitPeriodicPotential U)
+    (γ σ T : ℝ) (x : textbookLangevinPeriodicPhase Nc) (W q p : ℝ → (Fin Nc → ℝ))
+    (hs : textbookLangevinIntegralSolution U γ σ T (textbookLangevinPeriodicRepresentative x.1, x.2) W q p) :
+    textbookLangevinPeriodicIntegralSolution U γ σ T x W (fun t i ↦ (q t i : UnitAddCircle)) p :=
+  project_actual_solution U hU hP γ σ T x W q p hs
+
 /-- Smooth actual periodicity constructs a genuine a.e. Wiener-driven periodic integral solution with every time evaluation a.e.-measurable. -/
 theorem textbookLangevinPeriodicRandomSolution_exists {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
     (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)

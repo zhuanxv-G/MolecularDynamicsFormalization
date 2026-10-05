@@ -137,3 +137,4 @@ import MolecularDynamics.Chapter06.LangevinDrivenExistence
 import MolecularDynamics.Chapter06.LangevinPathSolution
 import MolecularDynamics.Chapter06.WienerVectorContinuousPath
 import MolecularDynamics.Chapter06.LangevinRandomSolution
+import MolecularDynamics.Chapter06.LangevinGlobalRandomSolution

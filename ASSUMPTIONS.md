@@ -386,3 +386,7 @@ The periodic actual integral solution supplies the torus position integral equat
 ## 2026-10-05 实际随机积分解模型条件
 
 只输入真实标准vector Wiener定义、C∞周期势能实际lattice invariance、unit-mass/unit torus/finite Nc、T≥0；真实R^n auxiliary模型force globalLip显式，周期主结论由compact cube证明推导。概率可达需T>0/σ≠0/Nonempty-open，physicalNoise需γ>0/β>0。实际随机解存在和每timeendpoint AEm、路径AEm、唯一/连续依赖及管支持均已证明而非前提；全时域一致/适应性/生成元未计完成。
+
+## 2026-10-05 全时域模型与不爆炸条件
+
+原单位周期C∞势能actual integer-lattice invariance推出global forceLip；auxiliary Rn模型的forceLip显式。实际同一标准Wiener、unit-mass/unit torus/finite Nc和任意γ/σ构造全非负时间模型；open可达需σ≠0/T>0/Nonempty，physicalNoise需γ>0/β>0。不输入global存在/不爆炸/finite-horizon一致或任何可测端点结论；适应性、强Markov、density/generator未计完成。
