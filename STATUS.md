@@ -482,3 +482,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 引理6.1真实smooth噪声局部化验收
 
 - LangevinSmoothCutoff真实一般smooth噪声局部化接受，待本地保存。full-check02/session55133：2026-10-05T13:16:08.3555922+08:00--2026-10-05T13:17:28.4081093+08:00退出0；9034 jobs、零Lean警告、873项审计声明仅基础三公理、117项输入及全部原始日志SHA256实查一致，10public完整名称逐项覆盖。真实C∞紧支撑potential、内球U/actual force一致、真实gradient globalLip、真实连续d首次退出compact最小值、实际积分解缩区间/换势能、真实Gronwall反证推出一般C∞势能噪声端点稳定性完整。无globalLip或轨迹留域假设；Wiener tube正概率、原Nonempty-open修正/负责人及整个CORE_SCOPE仍pending。下一必要Brownian bridge真实joint Gaussian/端点独立性、短区间桥管正概率及有限段拼接支持。
+
+## 2026-10-05 引理6.1真实Brownian bridge短时全路径支持验收
+
+- WienerBridgeSupport真实Brownian bridge短时全路径支持接受，待本地保存。full-check01/session57695：2026-10-05T13:42:59.7135076+08:00--2026-10-05T13:44:54.0130873+08:00退出0；9035 jobs、零Lean警告、890项审计声明仅基础三公理、118项输入及全部原始日志SHA256实查一致，17public逐名完整覆盖。真bridge joint Gaussian/covariance取消/whole-process独立endpoint、真实Gaussian endpoint球positive、真实AE连续样本small-path覆盖→所有充分短时countable桥管positive、dense AE全路径升级及实际概率乘积完整；canonical真实line全路径管null可测与所有充分短时任意真实端点positive。不是任意指定时长/多维完整Wiener支持，原Lemma6.1仍pending。下一必要WienerPathLaw真实可数sample分布一致，再实际有限独立段拼接和连续控制管支持；原Nonempty-open修正/负责人/整个CORE_SCOPEpending。
