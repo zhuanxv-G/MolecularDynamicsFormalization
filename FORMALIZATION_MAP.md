@@ -757,3 +757,8 @@ BrownianClosedOperator统一验收：full-check01 passed：9068jobs/1297公理�
 BrownianGibbsBounds.lean：actualtorus potential CM/supnorm M→A=absβ*M→literalweight/truepartition exp±A bounds→actualdensity exp±2A uniformpositive/finite；真实withDensity integral identity/continuous integral lowerupper/square integrals与sameµ actualHilbert norm²双边Haar比较全部证明。23public local03零诊断，统一验收中。未假设bounds；HaarPoincare/selfadjoint/gap/谱/semigroup及CORE_SCOPE未完成，负责人pending。
 
 BrownianGibbsBounds统一验收：full-check01 passed：9069jobs/1320公理声明/152exact inputs；10checks退出0，全部input/rawlog SHA256匹配，23public逐名只基础三公理，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人semanticpending。
+
+## 2026-10-06 Brownian实际Gibbs mean/variance
+BrownianVariance20public local02零diagnostic；actualmean/center/variance2moment/最小mean-square/varzeroiffpointconstant与sameµ Hilbertnorm/mean0orthogonality，deriveddensity Haarvariance comparison和shift/center invariance完整。fullcheck中，HaarPoincare/selfadjoint/gap未完成，负责人pending。
+
+BrownianVariance统一验收：full-check01 passed：9070jobs/1340公理声明/153exact inputs；10checks0exit/allinput-rawlogSHA匹配/20public逐名基础三公理/0Leanwarnings；固定Lean4.34.0/mathlib5ed2965；负责人semanticpending。

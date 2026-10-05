@@ -1,0 +1,13 @@
+MolecularDynamics/Chapter06/BrownianVariance.lean:75:23: warning: Variable name `Q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _Q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+MolecularDynamics/Chapter06/BrownianVariance.lean:106:4: error: Type mismatch
+  integral_zero
+has type
+  ∀ (α : Type ?u.63) (G : Type ?u.62) [inst : NormedAddCommGroup G] [inst_1 : NormedSpace ℝ G] {m : MeasurableSpace α}
+    {μ : Measure α}, ∫ (x : α), 0 ∂μ = 0
+but is expected to have type
+  ∫ (Q : UnitAddTorus (Fin Nc)), 0 ∂textbookConfigurationTorusGibbsMeasure U β = 0

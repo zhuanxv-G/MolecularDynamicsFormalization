@@ -168,3 +168,4 @@ import MolecularDynamics.Chapter06.BrownianSmoothDomain
 import MolecularDynamics.Chapter06.BrownianSmoothDensity
 import MolecularDynamics.Chapter06.BrownianClosedOperator
 import MolecularDynamics.Chapter06.BrownianGibbsBounds
+import MolecularDynamics.Chapter06.BrownianVariance

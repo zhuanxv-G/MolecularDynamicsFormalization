@@ -1,0 +1,203 @@
+{
+  "started_at": "2026-10-06T02:17:22.5430518+08:00",
+  "finished_at": "2026-10-06T02:18:47.7046650+08:00",
+  "head_at_check": "640f7a7ae6d1ea3011b0ac672e27572a4e4e00f6",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9070,
+  "audit_declarations": 1340,
+  "inputs": 153,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookGibbsMean",
+    "MolecularDynamics.textbookGibbsVariance",
+    "MolecularDynamics.textbookGibbsCenteredContinuous",
+    "MolecularDynamics.textbookGibbsContinuous_memLp_two",
+    "MolecularDynamics.textbookGibbsContinuous_integrable",
+    "MolecularDynamics.textbookGibbsCenteredContinuous_mean_zero",
+    "MolecularDynamics.textbookGibbsVariance_eq_variance",
+    "MolecularDynamics.textbookGibbsVariance_eq_sub",
+    "MolecularDynamics.textbookGibbsVariance_nonneg",
+    "MolecularDynamics.textbookGibbsVariance_le_square_sub_const",
+    "MolecularDynamics.textbookGibbsVariance_eq_zero_iff",
+    "MolecularDynamics.textbookGibbsCenteredContinuous_norm_sq",
+    "MolecularDynamics.textbookGibbsContinuousToLp_inner_one",
+    "MolecularDynamics.textbookGibbsContinuousToLp_orthogonal_one_iff",
+    "MolecularDynamics.textbookGibbsVariance_le_haar_centered_square",
+    "MolecularDynamics.textbookTorusHaarMean",
+    "MolecularDynamics.textbookTorusHaarVariance",
+    "MolecularDynamics.textbookGibbsVariance_le_haar_variance",
+    "MolecularDynamics.textbookGibbsVariance_sub_const",
+    "MolecularDynamics.textbookGibbsCenteredContinuous_variance"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookGibbsMean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsCenteredContinuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuous_memLp_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuous_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsCenteredContinuous_mean_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance_eq_variance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance_eq_sub",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance_le_square_sub_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance_eq_zero_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsCenteredContinuous_norm_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToLp_inner_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToLp_orthogonal_one_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance_le_haar_centered_square",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarMean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarVariance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance_le_haar_variance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance_sub_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsCenteredContinuous_variance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_inputs_sha256_verified": true,
+  "lean_warning_count": 0,
+  "machine_check": "passed",
+  "responsible_semantic_review": "pending",
+  "fixed_lean": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "fixed_mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "report": "docs/verification/2026-10-06-BrownianVariance/full-check01/CHECK_REPORT.json",
+  "remaining": "Actual Haar Poincare/selfadjointness/compact resolvent/spectrum/gap/semigroup; full Theorem6.1 and CORE_SCOPE unfinished."
+}

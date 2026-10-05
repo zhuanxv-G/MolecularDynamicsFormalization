@@ -1,0 +1,7 @@
+# 下一目标：真实Haar Poincare，禁止假设gap
+目标围绕Theorem6.1，β>0/positive diagonal mass主模型不改。当前mean/variance仅必要依赖，HaarPoincare仍未证明。
+固定UnitAddTorus.mFourier/hasSum_prod_mFourierCoeff/hasSum_sq_mFourierCoeff已存在。优先路线：actual Fourier real/imag Euclidean lifts是真smooth periodic。证明cos/sin线性phase=2π Σn_iq_i的坐标partials和flat actualLaplace eigenvalue -4π²Σn_i²；这只是Haar辅助表达式，不能替换原质量势能生成元。
+可复用已接受BrownianDirichlet的同一cube周期真实Dirichlet/formal symmetry，在U=0 β=1 m_i=1这个必要auxiliary计算中，把actual f Laplace Fourier coefficients关联原fcoeff；不用先泛化complex coordinate flux IBP。真实mFourier product-exp sum与real/imag cos/sin对应仍需证明。
+对actual smoothf复化到Haar L²，真正Parseval bilinear+coef identity给Σfrequency²*coeffnorm²等于真实gradient integral。移除真实zero coefficient=actualHaarmean，非零整数frequency sumsq≥1推出Poincare positiveconstant。然后actualGibbsvariance≤exp2A Haarvariance与deriveddensitylower将其传回原sameµ、全positive diagonal masses。必须证明这些等式，不能把HaarPoincare/σgap放进premise。
+若该路线独立困难可选finitecube逐coordinateFTC/CS tensorization真实证明，记录原因不当blocked。closed自伴/compactresolvent仍独立缺口，不等闭形式对称。
+恢复先核对固定Fourier/Real.hasDerivAt_cos/sin和linearphase CLM API，按原目标所需实现小批；不重跑已接受源码。

@@ -1,0 +1,30 @@
+ContinuousMap.memLp.{u_1, u_2, u_5} {α : Type u_1} {E : Type u_2} {m0 : MeasurableSpace α} {p : ENNReal} (μ : Measure α)
+  [TopologicalSpace α] [BorelSpace α] [NormedAddCommGroup E] [SecondCountableTopologyEither α E] [CompactSpace α]
+  [IsFiniteMeasure μ] [Fact (1 ≤ p)] (𝕜' : Type u_5) [NormedField 𝕜'] [NormedSpace 𝕜' E] (f : C(α, E)) : MemLp (⇑f) p μ
+ProbabilityTheory.variance_eq_integral.{u_1} {Ω : Type u_1} {mΩ : MeasurableSpace Ω} {X : Ω → ℝ} {μ : Measure Ω}
+  (hX : AEMeasurable X μ) : ProbabilityTheory.variance X μ = ∫ («ω» : Ω), (X «ω» - ∫ (x : Ω), X x ∂μ) ^ 2 ∂μ
+ProbabilityTheory.variance_eq_sub.{u_1} {Ω : Type u_1} {mΩ : MeasurableSpace Ω} {μ : Measure Ω} [IsProbabilityMeasure μ]
+  {X : Ω → ℝ} (hX : MemLp X 2 μ) : ProbabilityTheory.variance X μ = ∫ (x : Ω), (X ^ 2) x ∂μ - (∫ (x : Ω), X x ∂μ) ^ 2
+ProbabilityTheory.variance_sub_const.{u_1} {Ω : Type u_1} {mΩ : MeasurableSpace Ω} {X : Ω → ℝ} {μ : Measure Ω}
+  [IsProbabilityMeasure μ] (hX : AEStronglyMeasurable X μ) (c : ℝ) :
+  ProbabilityTheory.variance (fun «ω» => X «ω» - c) μ = ProbabilityTheory.variance X μ
+ProbabilityTheory.variance_le_expectation_sq.{u_1} {Ω : Type u_1} {mΩ : MeasurableSpace Ω} {μ : Measure Ω}
+  [IsProbabilityMeasure μ] {X : Ω → ℝ} (hm : AEStronglyMeasurable X μ) :
+  ProbabilityTheory.variance X μ ≤ ∫ (x : Ω), (X ^ 2) x ∂μ
+ProbabilityTheory.variance_nonneg.{u_1} {Ω : Type u_1} {mΩ : MeasurableSpace Ω} (X : Ω → ℝ) (μ : Measure Ω) :
+  0 ≤ ProbabilityTheory.variance X μ
+ProbabilityTheory.ae_eq_integral_of_variance_eq_zero.{u_1} {Ω : Type u_1} {mΩ : MeasurableSpace Ω} {X : Ω → ℝ}
+  {μ : Measure Ω} [IsFiniteMeasure μ] (hX : MemLp X 2 μ) (h : ProbabilityTheory.variance X μ = 0) :
+  ∀ᵐ («ω» : Ω) ∂μ, X «ω» = ∫ (x : Ω), X x ∂μ
+Continuous.ae_eq_iff_eq.{u_1, u_2} {X : Type u_1} {Y : Type u_2} [TopologicalSpace X] {m : MeasurableSpace X}
+  [TopologicalSpace Y] [T2Space Y] (μ : Measure X) [μ.IsOpenPosMeasure] {f g : X → Y} (hf : Continuous f)
+  (hg : Continuous g) : f =ᵐ[μ] g ↔ f = g
+MeasureTheory.MemLp.integrable.{u_1, u_5} {α : Type u_1} {ε : Type u_5} {m : MeasurableSpace α} {μ : Measure α}
+  [TopologicalSpace ε] [ContinuousENorm ε] {q : ENNReal} (hq1 : 1 ≤ q) {f : α → ε} [IsFiniteMeasure μ]
+  (hfq : MemLp f q μ) : Integrable f μ
+MeasureTheory.integral_sub.{u_1, u_5} {α : Type u_1} {G : Type u_5} [NormedAddCommGroup G] [NormedSpace ℝ G]
+  {m : MeasurableSpace α} {μ : Measure α} {f g : α → G} (hf : Integrable f μ) (hg : Integrable g μ) :
+  ∫ (a : α), f a - g a ∂μ = ∫ (a : α), f a ∂μ - ∫ (a : α), g a ∂μ
+MolecularDynamics.textbookGibbsContinuousToLp {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) :
+  C(UnitAddTorus (Fin Nc), ℝ) →L[ℝ] ↥(Lp ℝ 2 (MolecularDynamics.textbookConfigurationTorusGibbsMeasure U β))

@@ -445,3 +445,6 @@ Finite Nc，actual unit torus/同一normalized Gibbs measure，U C∞ integer pe
 
 ## 2026-10-06 BrownianGibbsBounds实际条件
 actualfinite unit torus/normalized Haar与sameµ，原U C∞ integerperiodic；βany，本批无mass限制。M是真原U descended ContinuousMap norm，所有weight/Z/densitybounds与integrability均derived，不带bounds/Poincare/gap/modelreplacement前提。g为torus连续实观测，积分比较时g非负，平方/norm比较自动非负。实际Hilbert norm²与weighted积分由sameµ AE identity证明。
+
+## 2026-10-06 BrownianVariance条件
+samefiniteunit torus/normalized Gibbs µ，U C∞integerperiodic、βany，g actualcontinuousreal。概率/compact/MemLp/fullsupport derived；无variance identity、minmean、varzero常数性或gap前提。actualHaar辅助variance不替换主µ。
