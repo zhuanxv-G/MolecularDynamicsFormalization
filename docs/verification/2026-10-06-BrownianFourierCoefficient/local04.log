@@ -1,0 +1,12 @@
+MolecularDynamics/Chapter06/BrownianFourierCoefficient.lean:297:2: error: Type mismatch: After simplification, term
+  hr
+ has type
+  @HasSum ℝ (Fin Nc → ℤ) Real.instAddCommGroup.toAddCommMonoid PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    (fun b => textbookFourierLaplaceFrequency b * ‖UnitAddTorus.mFourierCoeff (⇑F) b‖ ^ 2)
+    (textbookTorusHaarGradientEnergy f) (SummationFilter.unconditional (Fin Nc → ℤ))
+but is expected to have type
+  @HasSum ℝ (Fin Nc → ℤ) Real.instAddCommMonoid PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    (fun n =>
+      textbookFourierLaplaceFrequency n *
+        ‖UnitAddTorus.mFourierCoeff (fun Q => ↑(textbookConfigurationTorusObservable f Q)) n‖ ^ 2)
+    (textbookTorusHaarGradientEnergy f) (SummationFilter.unconditional (Fin Nc → ℤ))

@@ -1,0 +1,9 @@
+# Theorem6.1：真实 Haar Fourier coefficient 与 Parseval 梯度能量
+原目标印刷250–251/PDF271–272已核对。本批是原一般正对角质量/周期势能Gibbs Poincare路线的必要Haar依赖，不替换原主模型。
+19公开声明：原真实U0 partition=1、同一constructed Gibbsmeasure=normalized Haar；已证明周期Dirichlet/formalsymmetry在literal辅助m1/U0/β1实际调用。字符real/imag从原Euclidean cos/sin按真实representative/projection返回；全smoothperiodic f用formal symmetry把Laplace移到字符，actualcos/sin eigenvalue给真实mFourierCoeff(Laplace f)=-frequency*mFourierCoeff(f)，并且zero coefficient=actual Haar integral。
+actualcomplexification为连续torus函数；compact Haar概率下toLp2及真实AE代表、actualmFourierCoeff_toLp、Parseval square/bilinear全部真实调用。conj coefficient product配literalDirichlet恒等式与Complex.conj_mul'给HasSum frequency*coeffnorm²=真实HaarGradientEnergy f；能量等于∫Σactual coordinatepartial²并非供应gradient premise。
+local01只RCLike.re/im与Complex字段rw匹配失败和2unusedsimp；显式固定re_eq_complex_re/im_eq_complex_im及删除unused修正，local02原14pub零diagnostic。扩5pub后local03 HasSum负极限缺括号语法问题，local04末simpa semireducible实例/CM coercion类型匹配，改先simp at hr再exact默认defeq；local05全19pub退出0空日志零警告。api01的4猜测API/namespace错误保留，api02实际固定所有所用接口退出0。
+已正式集成root/Scratch/公理与DEP037/NOT046，full-check01进行中。
+HaarPoincare不等式尚未实现；原Gibbs Poincare/gap/selfadjoint/compactresolvent/离散谱/actualsemigroup、Theorem6.1整体与CORE_SCOPE未完成。负责人教材语义签核pending。
+
+full-check01 passed：9072 jobs/1385公理声明/155exact inputs；10checks退出0、全部input/rawlog SHA匹配、19 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

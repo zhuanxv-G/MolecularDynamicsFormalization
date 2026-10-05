@@ -1,0 +1,29 @@
+MolecularDynamics/Chapter06/BrownianFourierCoefficient.lean:277:14: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HSub (ℂ → Prop) ℂ ?m.494
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+MolecularDynamics/Chapter06/BrownianFourierCoefficient.lean:243:45: error: unsolved goals
+Nc : ℕ
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hPf : textbookUnitPeriodicPotential f
+g : (Fin Nc → ℝ) → ℝ := textbookBrownianGenerator (fun x => 1) (fun x => 0) 1 f
+hg : ContDiff ℝ ∞ g
+hPg : textbookUnitPeriodicPotential g
+F : C(UnitAddTorus (Fin Nc), ℂ) := textbookTorusHaarComplexObservable f ⋯ hPf
+G : C(UnitAddTorus (Fin Nc), ℂ) := textbookTorusHaarComplexObservable g ⋯ hPg
+haeF : ↑↑((ContinuousMap.toLp 2 volume ℂ) F) =ᵐ[volume] ⇑F
+haeG : ↑↑((ContinuousMap.toLp 2 volume ℂ) G) =ᵐ[volume] ⇑G
+he :
+  ∫ (Q : UnitAddTorus (Fin Nc)),
+      (starRingEnd ℂ) (↑↑((ContinuousMap.toLp 2 volume ℂ) F) Q) * ↑↑((ContinuousMap.toLp 2 volume ℂ) G) Q =
+    -↑(textbookTorusHaarGradientEnergy f)
+hs :
+  HasSum (fun i => (starRingEnd ℂ) (UnitAddTorus.mFourierCoeff (⇑F) i) * UnitAddTorus.mFourierCoeff (⇑G) i)
+    (-↑(textbookTorusHaarGradientEnergy f))
+hsum : sorry
+⊢ HasSum
+    (fun n =>
+      textbookFourierLaplaceFrequency n *
+        ‖UnitAddTorus.mFourierCoeff (fun Q => ↑(textbookConfigurationTorusObservable f Q)) n‖ ^ 2)
+    (textbookTorusHaarGradientEnergy f)

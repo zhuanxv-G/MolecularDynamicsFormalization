@@ -1,0 +1,26 @@
+docs/verification/2026-10-06-BrownianFourierCoefficient/ApiProbe.lean:3:7: error(lean.unknownIdentifier): Unknown constant `MeasureTheory.Measure.withDensity_one`
+Continuous.integrable_of_hasCompactSupport.{u_1, u_6} {X : Type u_1} {E : Type u_6} [MeasurableSpace X]
+  [TopologicalSpace X] [NormedAddCommGroup E] {μ : Measure X} [OpensMeasurableSpace X] {f : X → E}
+  [IsFiniteMeasureOnCompacts μ] (hf : Continuous f) (hcf : HasCompactSupport f) : Integrable f μ
+docs/verification/2026-10-06-BrownianFourierCoefficient/ApiProbe.lean:5:7: error(lean.unknownIdentifier): Unknown constant `Continuous.integrableOn_compact`
+docs/verification/2026-10-06-BrownianFourierCoefficient/ApiProbe.lean:6:7: error(lean.unknownIdentifier): Unknown constant `ContinuousMap.integrable`
+ContinuousMap.memLp.{u_1, u_2, u_5} {α : Type u_1} {E : Type u_2} {m0 : MeasurableSpace α} {p : ENNReal} (μ : Measure α)
+  [TopologicalSpace α] [BorelSpace α] [NormedAddCommGroup E] [SecondCountableTopologyEither α E] [CompactSpace α]
+  [IsFiniteMeasure μ] [Fact (1 ≤ p)] (𝕜' : Type u_5) [NormedField 𝕜'] [NormedSpace 𝕜' E] (f : C(α, E)) : MemLp (⇑f) p μ
+integral_re.{u_1, u_6} {X : Type u_1} [MeasurableSpace X] {μ : Measure X} {𝕜 : Type u_6} [RCLike 𝕜] {f : X → 𝕜}
+  (hf : Integrable f μ) : ∫ (x : X), RCLike.re (f x) ∂μ = RCLike.re (∫ (x : X), f x ∂μ)
+integral_im.{u_1, u_6} {X : Type u_1} [MeasurableSpace X] {μ : Measure X} {𝕜 : Type u_6} [RCLike 𝕜] {f : X → 𝕜}
+  (hf : Integrable f μ) : ∫ (x : X), RCLike.im (f x) ∂μ = RCLike.im (∫ (x : X), f x ∂μ)
+MeasureTheory.integral_const_mul.{u_1, u_6} {α : Type u_1} {m : MeasurableSpace α} {μ : Measure α} {L : Type u_6}
+  [RCLike L] (r : L) (f : α → L) : ∫ (a : α), r * f a ∂μ = r * ∫ (a : α), f a ∂μ
+UnitAddTorus.mFourier_neg.{u_1} {d : Type u_1} [Fintype d] {n : d → ℤ} {x : UnitAddTorus d} :
+  (UnitAddTorus.mFourier (-n)) x = (starRingEnd ℂ) ((UnitAddTorus.mFourier n) x)
+Complex.mul_re (z w : ℂ) : (z * w).re = z.re * w.re - z.im * w.im
+Complex.mul_im (z w : ℂ) : (z * w).im = z.re * w.im + z.im * w.re
+Complex.conj_re (z : ℂ) : ((starRingEnd ℂ) z).re = z.re
+Complex.conj_im (z : ℂ) : ((starRingEnd ℂ) z).im = -z.im
+docs/verification/2026-10-06-BrownianFourierCoefficient/ApiProbe.lean:16:7: error(lean.unknownIdentifier): Unknown identifier `textbookConfigurationTorusGibbsWeight_integral`
+MolecularDynamics.textbookConfigurationTorusGibbsWeight_integral {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ)
+  (hP : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) :
+  ∫ (Q : UnitAddTorus (Fin Nc)), MolecularDynamics.textbookConfigurationTorusGibbsWeight U β Q =
+    MolecularDynamics.textbookConfigurationPartition U β

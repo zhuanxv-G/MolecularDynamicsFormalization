@@ -451,3 +451,6 @@ samefiniteunit torus/normalized Gibbs µ，U C∞integerperiodic、βany，g act
 
 ## 2026-10-06 BrownianFourierDifferential条件
 Nc任意自然数、n为全部整数坐标index、q为完整Euclidean配置空间；实际UnitAddTorus及其quotient projection未改。未假设频率下界；n≠0只用于从整数平方和导出≥1。辅助Haar Laplace只是同一literal生成元m_i=1/U=0/β=1用于真实Haar Poincare依赖计算；主一般正对角质量与势能Gibbs结果不能由此特例宣称完成。真实C∞、periodicity、partials及mFourier对应关系全证明，不添加项目公理或目标结论假设；负责人semantic pending。
+
+## 2026-10-06 BrownianFourierCoefficient条件
+Nc任意，全smooth integerperiodic真实Euclidean f；实际torus full normalized Haar，辅助原literal generator m1/U0/β1为Poincare依赖。MemLp2/continuous/AE与积分系数恒等式全部推导，不作假设。能量literalΣactualpartial²；无HaarPoincare/gap premise，原一般positive mass/周期势能Gibbs主模型及selfadjoint仍独立未完成，负责人pending。

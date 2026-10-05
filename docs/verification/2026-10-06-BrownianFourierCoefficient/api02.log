@@ -1,0 +1,23 @@
+MeasureTheory.withDensity_one.{u_1} {α : Type u_1} {m0 : MeasurableSpace α} {μ : Measure α} : μ.withDensity 1 = μ
+ContinuousMap.memLp.{u_1, u_2, u_5} {α : Type u_1} {E : Type u_2} {m0 : MeasurableSpace α} {p : ENNReal} (μ : Measure α)
+  [TopologicalSpace α] [BorelSpace α] [NormedAddCommGroup E] [SecondCountableTopologyEither α E] [CompactSpace α]
+  [IsFiniteMeasure μ] [Fact (1 ≤ p)] (𝕜' : Type u_5) [NormedField 𝕜'] [NormedSpace 𝕜' E] (f : C(α, E)) : MemLp (⇑f) p μ
+ContinuousMap.coeFn_toLp.{u_1, u_2, u_3} {α : Type u_1} {E : Type u_2} {m0 : MeasurableSpace α} {p : ENNReal}
+  (μ : Measure α) [TopologicalSpace α] [BorelSpace α] [NormedAddCommGroup E] [SecondCountableTopologyEither α E]
+  [CompactSpace α] [IsFiniteMeasure μ] {𝕜 : Type u_3} [Fact (1 ≤ p)] [NormedRing 𝕜] [Module 𝕜 E] [IsBoundedSMul 𝕜 E]
+  (f : C(α, E)) : ↑↑((ContinuousMap.toLp p μ 𝕜) f) =ᵐ[μ] ⇑f
+UnitAddTorus.mFourierCoeff_toLp.{u_1} {d : Type u_1} [Fintype d] (f : C(UnitAddTorus d, ℂ)) (n : d → ℤ) :
+  UnitAddTorus.mFourierCoeff (↑↑((ContinuousMap.toLp 2 volume ℂ) f)) n = UnitAddTorus.mFourierCoeff (⇑f) n
+Complex.conj_mul' (z : ℂ) : (starRingEnd ℂ) z * z = ↑‖z‖ ^ 2
+Complex.norm_real (r : ℝ) : ‖↑r‖ = ‖r‖
+RCLike.hasSum_re.{u_1, u_2} {α : Type u_1} (𝕜 : Type u_2) [RCLike 𝕜] {L : SummationFilter α} {f : α → 𝕜} {x : 𝕜}
+  (h : HasSum f x L) : HasSum (fun x => RCLike.re (f x)) (RCLike.re x) L
+HasSum.neg.{u_1, u_2} {α : Type u_1} {β : Type u_2} {L : SummationFilter β} [AddCommGroup α] [TopologicalSpace α]
+  [IsTopologicalAddGroup α] {f : β → α} {a : α} (h : HasSum f a L) : HasSum (fun b => -f b) (-a) L
+HasSum.congr_fun.{u_1, u_2} {α : Type u_1} {β : Type u_2} [AddCommMonoid α] [TopologicalSpace α] {f g : β → α} {a : α}
+  {L : SummationFilter β} (hf : HasSum f a L) (h : ∀ (x : β), g x = f x) : HasSum g a L
+MeasureTheory.MemLp.integrable.{u_1, u_5} {α : Type u_1} {ε : Type u_5} {m : MeasurableSpace α} {μ : Measure α}
+  [TopologicalSpace ε] [ContinuousENorm ε] {q : ENNReal} (hq1 : 1 ≤ q) {f : α → ε} [IsFiniteMeasure μ]
+  (hfq : MemLp f q μ) : Integrable f μ
+integral_complex_ofReal.{u_1} {X : Type u_1} [MeasurableSpace X] {μ : Measure X} {f : X → ℝ} :
+  ∫ (x : X), ↑(f x) ∂μ = ↑(∫ (x : X), f x ∂μ)

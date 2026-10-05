@@ -1,0 +1,52 @@
+MolecularDynamics/Chapter06/BrownianFourierCoefficient.lean:28:81: warning: This simp argument is unused:
+  withDensity_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [textbookConfigurationTorusGibbsMeasure, textbookConfigurationPartition_zero,
+    textbookConfigurationTorusGibbsWeight, textbookConfigurationTorusObservable]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MolecularDynamics/Chapter06/BrownianFourierCoefficient.lean:134:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RCLike.re
+    (∫ (x : UnitAddTorus (Fin Nc)), (UnitAddTorus.mFourier (-n)) x * ↑(textbookConfigurationTorusObservable f x))
+in the target expression
+  (∫ (t : UnitAddTorus (Fin Nc)), (UnitAddTorus.mFourier (-n)) t * ↑(textbookConfigurationTorusObservable f t)).re =
+    ∫ (Q : UnitAddTorus (Fin Nc)),
+      textbookConfigurationTorusObservable (textbookFourierCosineLift n) Q * textbookConfigurationTorusObservable f Q
+
+Nc : ℕ
+f : (Fin Nc → ℝ) → ℝ
+hf : Continuous f
+hPf : textbookUnitPeriodicPotential f
+n : Fin Nc → ℤ
+hc : Continuous fun Q => (UnitAddTorus.mFourier (-n)) Q * ↑(textbookConfigurationTorusObservable f Q)
+hi : Integrable (fun Q => (UnitAddTorus.mFourier (-n)) Q * ↑(textbookConfigurationTorusObservable f Q)) volume
+⊢ (∫ (t : UnitAddTorus (Fin Nc)), (UnitAddTorus.mFourier (-n)) t * ↑(textbookConfigurationTorusObservable f t)).re =
+    ∫ (Q : UnitAddTorus (Fin Nc)),
+      textbookConfigurationTorusObservable (textbookFourierCosineLift n) Q * textbookConfigurationTorusObservable f Q
+MolecularDynamics/Chapter06/BrownianFourierCoefficient.lean:154:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RCLike.im
+    (∫ (x : UnitAddTorus (Fin Nc)), (UnitAddTorus.mFourier (-n)) x * ↑(textbookConfigurationTorusObservable f x))
+in the target expression
+  (∫ (t : UnitAddTorus (Fin Nc)), (UnitAddTorus.mFourier (-n)) t * ↑(textbookConfigurationTorusObservable f t)).im =
+    -∫ (Q : UnitAddTorus (Fin Nc)),
+        textbookConfigurationTorusObservable (textbookFourierSineLift n) Q * textbookConfigurationTorusObservable f Q
+
+Nc : ℕ
+f : (Fin Nc → ℝ) → ℝ
+hf : Continuous f
+hPf : textbookUnitPeriodicPotential f
+n : Fin Nc → ℤ
+hc : Continuous fun Q => (UnitAddTorus.mFourier (-n)) Q * ↑(textbookConfigurationTorusObservable f Q)
+hi : Integrable (fun Q => (UnitAddTorus.mFourier (-n)) Q * ↑(textbookConfigurationTorusObservable f Q)) volume
+⊢ (∫ (t : UnitAddTorus (Fin Nc)), (UnitAddTorus.mFourier (-n)) t * ↑(textbookConfigurationTorusObservable f t)).im =
+    -∫ (Q : UnitAddTorus (Fin Nc)),
+        textbookConfigurationTorusObservable (textbookFourierSineLift n) Q * textbookConfigurationTorusObservable f Q
+MolecularDynamics/Chapter06/BrownianFourierCoefficient.lean:178:61: warning: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.mul_im, Complex.neg_re, Complex.ofReal_re, Complex.neg_im, Complex.ofReal_im, neg_zero,
+    zero_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

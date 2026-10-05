@@ -1,0 +1,225 @@
+{
+  "started_at": "2026-10-06T02:56:56.4976638+08:00",
+  "finished_at": "2026-10-06T02:59:13.951437+08:00",
+  "head_at_check": "674debeaaade31c648bee26add438ef2e5c1e1cd",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9072,
+  "audit_declarations": 1385,
+  "inputs": 155,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationPartition_zero",
+    "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_zero",
+    "MolecularDynamics.textbookHaarLaplace_dirichlet",
+    "MolecularDynamics.textbookHaarLaplace_symmetric",
+    "MolecularDynamics.textbookTorusFourier_cosine_observable",
+    "MolecularDynamics.textbookTorusFourier_sine_observable",
+    "MolecularDynamics.textbookHaarLaplace_cosine_pairing",
+    "MolecularDynamics.textbookHaarLaplace_sine_pairing",
+    "MolecularDynamics.textbookTorusHaarComplexObservable",
+    "MolecularDynamics.textbookTorusHaarComplexObservable_lift",
+    "MolecularDynamics.textbookTorusHaarFourierCoeff_re",
+    "MolecularDynamics.textbookTorusHaarFourierCoeff_im",
+    "MolecularDynamics.textbookHaarLaplace_fourierCoeff",
+    "MolecularDynamics.textbookTorusHaarFourierCoeff_zero",
+    "MolecularDynamics.textbookTorusHaarGradientEnergy",
+    "MolecularDynamics.textbookTorusHaarGradientEnergy_eq_sum",
+    "MolecularDynamics.textbookTorusHaarGradientEnergy_nonneg",
+    "MolecularDynamics.textbookTorusHaarFourierCoeff_sq_hasSum",
+    "MolecularDynamics.textbookTorusHaarFourier_energy_hasSum"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartition_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarLaplace_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarLaplace_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusFourier_cosine_observable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusFourier_sine_observable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarLaplace_cosine_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarLaplace_sine_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarComplexObservable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarComplexObservable_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarFourierCoeff_re",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarFourierCoeff_im",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarLaplace_fourierCoeff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarFourierCoeff_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarGradientEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarGradientEnergy_eq_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarGradientEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarFourierCoeff_sq_hasSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarFourier_energy_hasSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "4a338e3fa7b5464f5bcc6b8f3205dcd23aeb10036991b20453563d29029523b7"
+    },
+    {
+      "path": "api02.log",
+      "sha256": "b095004695e7c4563a1d9db18e3d1bb7452becb483c12b26659de85482cc6675"
+    },
+    {
+      "path": "full-check01-driver.log",
+      "sha256": "342d5c433fffd16e4c6613ca831d5557027487eb411e262bc7238dbb3e0b8caa"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "0924993ad41c286c5785f6ea375f3a1ed23d712c8b132c79076e5de65a7c386d"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "6b28ee4982d58c3ad92765e259359828ea393a3dc5f1b0e2e438bead8f17bdb2"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "4fd0007f016ad3dea86550a1cfa471418adcf7992c54d6bac3941417ef64505f"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
