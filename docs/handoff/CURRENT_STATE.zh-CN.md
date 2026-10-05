@@ -1,8 +1,29 @@
 # 当前状态与接续检查点
 
+
+## 最新数学检查点（2026-10-05 12:56 +0800）
+
+- LangevinNoiseStability真实积分噪声稳定性接受，待本地保存。full-check01/session34563：2026-10-05T12:47:06.4332314+08:00--2026-10-05T12:48:15.2611682+08:00退出0；9033 jobs、零Lean警告、863项审计声明仅propext/Classical.choice/Quot.sound、116项输入及全部原始日志SHA256实查一致，10项public逐名覆盖。实际连续积分解、p-sigmaW补偿/真实FTC右导数、控制reference积分方程、真实Gronwall compensated与原phase误差界、正tube阈值构造完整。全局Lipschitz force为明确的辅助条件，未计一般C∞或完整Lemma6.1；下一真实C∞紧支撑势能截断/全局梯度Lip与first-exit局部化，再证明Wiener tube正概率。原所有open集合遗漏Nonempty（空集概率0），负责人及整个CORE_SCOPE仍pending。
+
+## 最新数学检查点（2026-10-05 12:47 +0800）
+
+- HEAD d63ab6abfa308e351b8a1f95f45aa0d423462712；LangevinNoiseStability local03/session48688退出0零警告，10public接root/Scratch/逐名审计。真正积分解/rough continuousW补偿轨迹FTC右导数、真实控制reference满足integral equations、actual Gronwall compensated及原phase界、globalLip实际端点tube阈值完整局部。下一唯一full-check01冻结源码；全局Lip只是必要辅助模型，一般C∞局部化/实际Wiener tube正概率/原非空open条件及负责人/整个CORE_SCOPEpending。下一true smooth compact cutoff potential/global forceLip与真正first-exit局部化，不能将轨迹留域或稳定性结论当假设。
+
+## 最新数学检查点（2026-10-05 12:44 +0800）
+
+- LangevinNoiseStability local02/session40953退出0零警告：真实连续积分解、actual p-sigmaW变换与FTC右导数、真实控制reference满足积分方程、actual field Lip/error及真实Gronwall界完整局部。补undo compensation原phase误差界和由真实界ε连续性构造目标球噪声tube阈值，下一唯一local03。当前globalLip force辅助范围明确；一般smooth局部化/Wiener tube概率支持/负责人/整范围pending，不能计完整Lemma6.1。
+
+## 最新数学检查点（2026-10-05 12:42 +0800）
+
+- LangevinNoiseStability local01/session46049退出1零警告：实际prod HasDerivWithinAt实例需convert!、let p初值需typed桥接；add_le_add_right固定库方向与旧用法不同，改真实add_le_add；最后norm投影/标量非负估计改显式calc，参考轨迹dist self须显式0界。真正FTC右导数/积分变换、noise字段差和Gronwall候选落盘，下一唯一local02。全局Lip模型仅辅助，局部化/概率支持和负责人/整范围pending。
+
+## 最新数学检查点（2026-10-05 12:40 +0800）
+
+- HEAD d63ab6abfa308e351b8a1f95f45aa0d423462712，真实光滑控制已完整保存。开始Chapter06/LangevinNoiseStability.lean：实际连续驱动积分解、p-sigma W变换、实际FTC右导数、真实Langevin场/Gronwall噪声扰动；先明确全局Lipschitz force辅助模型，原C1局部化/概率Wiener tube支持仍pending，不假定目标稳定性。原Lemma6.1对所有open C遗漏非空条件（空集概率0），按非空open解释登记该真实语义缺口，负责人pending，不停止独立证明。
+
 ## 最新数学检查点（2026-10-05 12:35 +0800）
 
-- LangevinControlPath真实光滑控制接受，待本地保存。full-check01/session7992：2026-10-05T12:30:21.3586603+08:00--2026-10-05T12:31:28.3847670+08:00退出0；9032 jobs、零Lean警告、853项审计声明仅基础三公理、115项输入及全部原始日志SHA256实查一致，10项public全覆盖。原255--256/PDF276--277已目视；实际三次Hermite q/p端点、真实q/p导数、真实force反解control rate与Bochner积分R0=0/C∞、实际controlled Langevin ODE和任意phase endpoints存在完整。Lemma6.1的Wiener tube概率支持/实际噪声路径连续依赖仍未证明，不能误计完整概率可达；负责人和整个CORE_SCOPEpending。下一必要LangevinNoiseStability.lean，从实际连续噪声积分解推出变换轨迹/真实Gronwall扰动界，先globally Lipschitz force辅助，再明确局部C1扩展缺口。
+- LangevinControlPath真实光滑控制接受并保存为 d63ab6abfa308e351b8a1f95f45aa0d423462712。full-check01/session7992：2026-10-05T12:30:21.3586603+08:00--2026-10-05T12:31:28.3847670+08:00退出0；9032 jobs、零Lean警告、853项审计声明仅基础三公理、115项输入及全部原始日志SHA256实查一致，10项public全覆盖。原255--256/PDF276--277已目视；实际三次Hermite q/p端点、真实q/p导数、真实force反解control rate与Bochner积分R0=0/C∞、实际controlled Langevin ODE和任意phase endpoints存在完整。Lemma6.1的Wiener tube概率支持/实际噪声路径连续依赖仍未证明，不能误计完整概率可达；负责人和整个CORE_SCOPEpending。下一必要LangevinNoiseStability.lean，从实际连续噪声积分解推出变换轨迹/真实Gronwall扰动界，先globally Lipschitz force辅助，再明确局部C1扩展缺口。
 
 ## 最新数学检查点（2026-10-05 12:30 +0800）
 

@@ -474,3 +474,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 引理6.1真实光滑控制构造验收
 
 - LangevinControlPath真实光滑控制接受，待本地保存。full-check01/session7992：2026-10-05T12:30:21.3586603+08:00--2026-10-05T12:31:28.3847670+08:00退出0；9032 jobs、零Lean警告、853项审计声明仅基础三公理、115项输入及全部原始日志SHA256实查一致，10项public全覆盖。原255--256/PDF276--277已目视；实际三次Hermite q/p端点、真实q/p导数、真实force反解control rate与Bochner积分R0=0/C∞、实际controlled Langevin ODE和任意phase endpoints存在完整。Lemma6.1的Wiener tube概率支持/实际噪声路径连续依赖仍未证明，不能误计完整概率可达；负责人和整个CORE_SCOPEpending。下一必要LangevinNoiseStability.lean，从实际连续噪声积分解推出变换轨迹/真实Gronwall扰动界，先globally Lipschitz force辅助，再明确局部C1扩展缺口。
+
+## 2026-10-05 引理6.1实际积分解噪声稳定性验收
+
+- LangevinNoiseStability真实积分噪声稳定性接受，待本地保存。full-check01/session34563：2026-10-05T12:47:06.4332314+08:00--2026-10-05T12:48:15.2611682+08:00退出0；9033 jobs、零Lean警告、863项审计声明仅propext/Classical.choice/Quot.sound、116项输入及全部原始日志SHA256实查一致，10项public逐名覆盖。实际连续积分解、p-sigmaW补偿/真实FTC右导数、控制reference积分方程、真实Gronwall compensated与原phase误差界、正tube阈值构造完整。全局Lipschitz force为明确的辅助条件，未计一般C∞或完整Lemma6.1；下一真实C∞紧支撑势能截断/全局梯度Lip与first-exit局部化，再证明Wiener tube正概率。原所有open集合遗漏Nonempty（空集概率0），负责人及整个CORE_SCOPE仍pending。

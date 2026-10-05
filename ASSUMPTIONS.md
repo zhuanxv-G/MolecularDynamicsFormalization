@@ -348,3 +348,7 @@ LangevinHormander: actual finite-coordinate R^Nc position/momentum and actual co
 ### Actual Langevin smooth endpoint control (2026-10-05)
 
 LangevinControlPath: finite R^Nc coordinate phase, actual globally C infinity U, real friction gamma, nonzero real sigma and positive endpoint time T. The constructed cubic remains a genuine path in this whole coordinate domain; arbitrary singular potential domains and toroidal quotient lifting are not claimed. Actual polynomial derivatives, actual force, Bochner integral, all endpoints, R(0)=0, global smoothness and the controlled equation are derived. Neither stochastic path support, probability accessibility nor solution-stability is a premise or conclusion of this construction batch.
+
+### Actual Langevin integral-noise stability (2026-10-05)
+
+LangevinNoiseStability: finite real coordinate phase, actual C2 U for trajectory estimates and C infinity U for the constructed reference, specified globally Lipschitz actual negative potential gradient, real friction/noise, specified true continuous integral solutions on Icc0T with W0=0. The controlled endpoint uses sigma nonzero,T>0 and delta>0. Actual compensated derivative, Lipschitz estimate, Gronwall bound and positive tube threshold are derived. No solution-continuity or target-ball premise is supplied. Removing the explicit global-Lipschitz condition requires true cutoff/first-exit localization; actual Wiener support/probability and Nonempty-open corrected Lemma6.1 remain separate.
