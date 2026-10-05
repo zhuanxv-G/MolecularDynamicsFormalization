@@ -162,6 +162,13 @@ private theorem driven_field_lipschitz {Nc : ℕ}
               (le_refl ((L : ℝ) * ‖z - w‖ + ‖γ‖ * ‖z - w‖))
           _ = (1 + (L : ℝ) + ‖γ‖) * ‖z - w‖ := by ring
 
+/-- The actual noise-compensated field has a global state Lipschitz constant uniform in time and noise. -/
+theorem textbookLangevinDrivenField_lipschitz {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    (γ σ : ℝ) (W : ℝ → (Fin Nc → ℝ)) (t : ℝ) :
+    LipschitzWith (1 + L + ‖γ‖₊) (textbookLangevinDrivenField U γ σ W t) :=
+  driven_field_lipschitz U L hF γ σ W t
+
 private theorem driven_field_noise_error {Nc : ℕ}
     (U : (Fin Nc → ℝ) → ℝ) (γ σ : ℝ) (W R : ℝ → (Fin Nc → ℝ))
     (t ε : ℝ) (hε : 0 ≤ ε) (hWR : ‖W t - R t‖ ≤ ε) (z : textbookLangevinPhase Nc) :

@@ -674,3 +674,7 @@ Printed255--256/PDF276--277: Chapter06/WienerPathLaw.lean proves genuine countab
 - Chapter06/LangevinPeriodicProjection.lean：真实UnitAddTorus位置商、连续满射、Nonempty-open拉回与given-real-solution projection事件。Chapter06/LangevinPeriodicForce.lean：真实格点periodic U定义，actual fderiv/force/force derivative周期性、compact基本cube全局bound及global forceLip。
 - Chapter06/LangevinPeriodicLift.lean：真实代表/force与任意lift一致、actual周期积分方程、q_real=初始代表+∫p真实构造和Rn积分方程/projection identity、真正periodic Nonempty-open endpoint null可测/positive及physical noise。给定真实periodic解，不输入lift存在。
 - 24public/full-check01-LangevinPeriodicLift固定版本、SHA、零警告及公理接受。原Nonempty修正负责人签核、全局随机过程构造/联合AEmeas/nonexplosion/全遍历单列；不计CORE_SCOPE完成。
+
+## 2026-10-05 连续噪声实际指定区间解存在
+
+LangevinDrivenExistence.lean 与既有真实field Lipschitz导出：统一Picard长度/有限拼接接点真实导数、projIcc连续噪声延拓、FTC还原实际q/p积分方程、真实周期势能derived Lip给periodic积分解存在。full9043/957/126，4public零警告；AE随机模型/适应性及最终语义签核pending。

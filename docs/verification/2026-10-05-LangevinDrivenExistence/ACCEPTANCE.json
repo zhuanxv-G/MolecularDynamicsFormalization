@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-10-05T16:16:30.6860309+08:00",
+  "finished_at": "2026-10-05T16:18:52.3356153+08:00",
+  "jobs": 9043,
+  "audit_declarations": 957,
+  "inputs": 126,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinDrivenField_lipschitz",
+    "MolecularDynamics.textbookLangevinDrivenField_exists",
+    "MolecularDynamics.textbookLangevinIntegralSolution_exists_globalLip",
+    "MolecularDynamics.textbookLangevinPeriodicIntegralSolution_exists"
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "responsible_semantic_review": "pending"
+}

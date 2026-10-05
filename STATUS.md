@@ -498,3 +498,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 引理6.1实际周期积分模型与构造lift可达验收
 
 - LangevinPeriodicLift真实周期模型与构造lift可达接受，待本地保存。full-check01/session94692：2026-10-05T15:48:22.4623155+08:00--2026-10-05T15:51:41.8881008+08:00退出0；9042 jobs、零Lean警告、953项审计仅基础三公理、125项输入及全部原始日志SHA256实查一致，24public逐项完整名称覆盖。真实unit torus projection连续满射/Nonempty-open拉回，真实格点periodic势能链式求导与compact基本cube给force/导数界和globalLip；actual force代表元不变/与每个real lift一致；真正周期积分方程通过初始代表+∫p构造q_real，证明原Rn方程与投回q_torus，不输入lift存在。结合已接受真实Wiener支持和noise稳定性得actual给定周期积分解每个正T/Nonempty-open的null可测与positive，并原物理sqrt(2γβ⁻¹)。只要求实际periodic endpoint AEm，不要求real-lift endpoint AEm。原Nonempty修正最终语义签核/一般全局随机过程构造和整个CORE_SCOPEpending。下一真实globallyLip driven field统一local Picard mesh+finite patch构造连续rough noise全区间解，随机模型AE meas后续单列。
+
+## 2026-10-05 周期Langevin真实连续驱动解存在验收
+
+实际统一local Picard长度与有限拼接证明指定区间解存在；真实ContinuousOn rough noise projIcc延拓/FTC得原q/p Bochner方程，C∞周期势能derived Lip给实际periodic积分解存在。full-check01 2026-10-05T16:16:30.6860309+08:00--16:18:52.3356153+08:00退出0，9043jobs/957audit/126inputs、4public逐名覆盖、零Lean警告、仅基础三公理和全部SHA一致。随机AEmeas/适应性和全CORE_SCOPE/负责人仍pending；下一continuous path→actual selected endpoint连续性及真Wiener随机模型。
