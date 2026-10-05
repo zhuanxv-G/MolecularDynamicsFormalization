@@ -610,3 +610,8 @@ Printed346/PDF367: `Chapter08/ThermostatModeInvariant.lean` proves the explicit 
 ### Actual temporal midpoint self-Stratonovich integral (2026-10-05)
 
 Printed230/PDF251: `Chapter06/WienerStratonovich.lean` fully proves the explicitly derived unnumbered self-integral formula using true temporal midpoint evaluations. Actual coarse/fine time identities and finite telescoping give an alternating sum of squared half-interval increments. Genuine Gaussian fourth moments and actual independence yield mean zero and variance T²/K for that correction, exact midpoint mean-square error T²/(4K), real L2 integrability and the actual limit witness W(T)²/2. This supplies the missing global error justification in the printed per-step O(sqrt dt) replacement. General deterministic Itô Proposition6.3 and owner signoff remain separate.
+
+
+### Actual deterministic Wiener integral construction (2026-10-05)
+
+Printed231/PDF252: `Chapter06/WienerRefinement.lean` proves genuine common KL refinements, actual two-grid L2 isometry, true mesh and compact-time Lipschitz error bounds, Cauchy convergence in the actual complete L2 space and existence of a real mean-square integral of the genuine deterministic left sums. Compact C1 derivative bounds derive the Lipschitz condition. This completes the necessary integral construction for Proposition6.3; its variance integral and limiting Gaussian law remain separate and pending.

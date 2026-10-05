@@ -1,8 +1,45 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 09:20 +0800）
+
+- 本批前HEAD eaba950dd250685ccf76d5a047de725cd2d792b1；WienerRefinement完整接受，待本地保存。固定版本未改，原材料保留/未推送。
+- 唯一full-check01/session89594：2026-10-05T09:16:28.3212997+08:00--2026-10-05T09:17:33.9446263+08:00退出0；9025jobs、零警告、756项审计声明仅基础三公理、108项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；11public接受，原231/PDF252目视。真正KL共同细化/两网格等距/mesh误差M²T(T/K+T/L)²、Lp代表/normsquare/dist/Cauchy、complete L²实际积分见证与C¹紧导数界/Lipschitz完整；ledger/notation/section/映射/假设/状态同步，负责人pending。
+- 下一WienerDeterministicLaw.lean：实际variance均匀左Riemann和/真实积分g²，L²极限→概率/分布→真实charFun唯一性，完整normal law/均值/二阶矩。完整Prop6.3与其他正文/整个CORE_SCOPE仍pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:16 +0800）
+
+- HEAD eaba950dd250685ccf76d5a047de725cd2d792b1；WienerRefinement local06/session23615退出0零警告，11public接根/Scratch/公理。真实KL粗和/fine block恒等、two-grid实际等距、mesh距离/误差M²T(T/K+T/L)²、actual Lp代表/normsquare/dist界/Cauchy、complete L²实际积分见证、C¹真实紧导数界→Lipschitz→存在完整局部通过。
+- 原231/PDF252已目视；启动唯一full-check01，未决前不改Lean输入。完整Prop6.3还须真实variance Riemann积分及Gaussian law极限；下一WienerDeterministicLaw.lean。其他正文/整个范围/负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:15 +0800）
+
+- HEAD eaba950dd250685ccf76d5a047de725cd2d792b1；WienerRefinement local05/session35544退出1仅多余ring及固定版ContDiff.differentiable要求阶数非零，已删ring并给真实1非零；下一唯一local06。
+- 原共同细化/均方界/实际Cauchy/complete L²存在候选无其余诊断，仍须实际local退出0与完整验收，未计失败后的结果。variance积分/normal law另续，其他正文/整范围/负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:13 +0800）
+
+- HEAD eaba950dd250685ccf76d5a047de725cd2d792b1；WienerRefinement local04/session82604退出1仅Lp命名定义展开、protected Lp.memLp、常值limit/compact Icc端点类型推断；均方界/Cauchy/norm-square桥接无其他诊断。已精确unfold与类型注解，下一唯一local05。
+- 真g紧区间导数界/Lipschitz→Cauchy→complete L²存在候选尚未完整接受；命题6.3真实variance积分/normal law仍pending。固定版本与其他材料保留，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:11 +0800）
+
+- HEAD eaba950dd250685ccf76d5a047de725cd2d792b1，固定版本不变；WienerRefinement local03/session37583失败仅Nat.div_add_mod乘积方向使omega视为两项，精确交换已修复；多余field_simp后ring删除。真实two-grid均方界无其余诊断。
+- 已落盘真正Lp norm-square/ae代表桥接、实际两网格dist bound、由真实1/N界导出Cauchy、complete L²构造均方积分、C¹ g真实紧区间导数界→Lipschitz并存在候选；下一唯一local04。完整Prop6.3还须variance积分及Gaussian law极限，不能冒称完成；其他正文/整范围/负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:07 +0800）
+
+- HEAD eaba950dd250685ccf76d5a047de725cd2d792b1，固定版本不变；WienerRefinement local01/session19115失败仅Nat.mul_add_div乘法方向和dependent Fin细网格交换，rw精确改正；local02/session63716退出0但有无用MeasurableSpace警告，已omit对应实例。
+- 真共同细化/two-grid等距和实际sampled g L²局部通过；现补真实grid点属于Icc、floor粗点与细点距离mesh界、由实际LipschitzOnWith导出M²T(T/K+T/L)²真实均方界候选。下一唯一local03；之后构造L² Cauchy/完整空间limit，不能把该bound或Cauchy供应为假设。Prop6.3整体与负责人仍pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:02 +0800）
+
+- HEAD eaba950dd250685ccf76d5a047de725cd2d792b1，Stratonovich已完整保存。固定Lean/mathlib不变，无其他构建。
+- 主线Prop6.3一般smooth deterministic g真正Ito极限构造；必要共同细化源WienerRefinement.lean已落盘：真KL block分组/增量望远镜/时间桥接与two-grid等距，不假定两组coarse和独立。真实sampled g和L²定义已连接，下一唯一local01。
+- 此必要依赖完成后用实际g在紧时间区间的Lipschitz界给真正Cauchy/complete L²极限，再variance积分及Gaussian charFun唯一性；完整命题/其他正文/整个CORE_SCOPE/负责人pending。
+
 ## 最新数学检查点（2026-10-05 08:56 +0800）
 
-- 本批前HEAD 4b030967b52eb1e2c857bad8596081a0518c1026；WienerStratonovich完整接受，待本地保存。固定版本/分支未改，原材料保留、未推送。
+- 本批前HEAD 4b030967b52eb1e2c857bad8596081a0518c1026；WienerStratonovich完整接受并保存为eaba950dd250685ccf76d5a047de725cd2d792b1。固定版本/分支未改，原材料保留、未推送。
 - 唯一full-check01/session6993：2026-10-05T08:52:41.0077022+08:00--2026-10-05T08:53:48.5831459+08:00退出0；9024jobs、零警告、745项审计声明仅基础三公理、107项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；11public接受，原230/PDF251目视。真实midpoint/fine2K有限恒等、Gaussian fourth moments/独立性→correction mean0/variance T²/K、精确MSE T²/(4K)/实际L²与均方存在极限WT²/2。未假定结论，负责人pending；ledger/notation/section/映射/假设/状态同步。
 - 下一Prop6.3真实smooth deterministic Ito构造：从实际有限和/共同细化等距及g统一连续性证明L² Cauchy，完整L²空间构造极限，实际Gaussian law与variance integral g²。优先查固定版本Gaussian law极限与Lp接口，不用有限law冒充完整命题；其他正文及整CORE_SCOPE仍pending，无其他构建。
 
