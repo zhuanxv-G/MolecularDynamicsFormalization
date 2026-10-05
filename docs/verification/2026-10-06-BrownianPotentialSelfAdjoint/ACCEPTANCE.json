@@ -1,0 +1,88 @@
+{
+  "started_at": "2026-10-06T05:40:49.9944136+08:00",
+  "finished_at": "2026-10-06T05:42:51.7873028+08:00",
+  "head_at_check": "2b2b76ced569727f34d12d0511ec00d13c43e8eb",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9084,
+  "audit_declarations": 1594,
+  "inputs": 167,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianHaarPotential_partial_graph",
+    "MolecularDynamics.textbookBrownianHaarPotential_closed_graph",
+    "MolecularDynamics.textbookBrownianHaarPotential_closed_graph_iff",
+    "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_isSelfAdjoint",
+    "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_domain_eq_mass",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_isSelfAdjoint"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotential_partial_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotential_closed_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotential_closed_graph_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_isSelfAdjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_domain_eq_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_isSelfAdjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "local01-draft.log",
+      "sha256": "fe939dbe83c8735705d6d6d8ed2c3eabf05b3e96f88c8355d2be5fa3a86062cb"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

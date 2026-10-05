@@ -190,3 +190,5 @@ import MolecularDynamics.Chapter06.BrownianFourierHilbert
 import MolecularDynamics.Chapter06.BrownianMassSelfAdjoint
 
 import MolecularDynamics.Chapter06.BrownianPotentialOperator
+
+import MolecularDynamics.Chapter06.BrownianPotentialSelfAdjoint

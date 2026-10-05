@@ -827,3 +827,8 @@ full-check01 passed：9082 jobs/1575公理声明/165exact inputs；10checks退�
 BrownianPotentialOperator13public local05零诊断：actualV∞/Holder全HaarLp boundedCLM与derivednormbound/AE/symmetric；truecontinuous/fullsmooth对应与原TH=MassG+SmoothV实际Hilbertimage；actualgraph E(x,y)=(x,y+Bx) continuousLinearEquiv/actualinverse/closure保持。DEP048/NOT057 full中；原一般U图识别与自伴尚缺。
 
 full-check01 passed：9083 jobs/1588公理声明/166exact inputs；10checks退出0、全部input/rawlog SHA匹配、13 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 原一般U同一Gibbs闭包真正自伴
+BrownianPotentialSelfAdjoint6public local03零诊断：actualmass/sameU Haar partial与wholeclosedgraph均actualboundedB shear双向相等，全Haarclosed域=massclosed域；实际伴随定义subtract B和mass已证自伴推得originalgeneralU Haarclosed真正自伴，再actualsameµ I/wholeclosedgraph/injectivity传回originalGibbsclosed真正IsSelfAdjoint。DEP049/NOT058 full中；原C²/core语义签核pending、compact/full谱/semigroup仍未完成。
+
+full-check01 passed：9084 jobs/1594公理声明/167exact inputs；10checks退出0、全部input/rawlog SHA匹配、6 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

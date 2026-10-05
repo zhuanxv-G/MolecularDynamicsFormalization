@@ -487,3 +487,6 @@ Nc任意、原质量m任意、β≠0、U0只为原一般U groundstate后质量�
 
 ## 2026-10-06 BrownianPotentialOperator条件
 Nc任意，原m任意、U C∞整数周期、β任意，真正sameactualHaarLp2。V的真实CMsupbound/actualL∞/HolderLp乘法/全对称与正则周期和图homeomorph均derived，无有界/乘法/图对应/自伴前提。原Gibbs量与同一V literalformula保留。尚未识别原一般U完整closedgraph为boundedperturbation，负责人pending，原正文定理整体未完成。
+
+## 2026-10-06 BrownianPotentialSelfAdjoint条件
+Nc任意、原质量m任意、原U C∞整数周期、β≠0，sameactualoriginalGibbs fullrealLp2。真正boundedV/wholegraph双向identity/闭域相等和actualadjoint均derived，无图域对应/自伴/正则性结论前提。masszero-potential只为必要masspart，其后完整originalU与sameµ传输证明。原教材C²test与C∞core闭包最终语义负责人pending；positive masses/β在原正文与之后compact/coercivity使用。自伴只为原已构造smoothgraphclosure，compact完整谱/semigroup未完成。

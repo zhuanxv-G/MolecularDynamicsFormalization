@@ -1,0 +1,7 @@
+docs/verification/2026-10-06-BrownianPotentialSelfAdjoint/Draft.lean:141:8: error: Type mismatch: After simplification, term
+  LinearPMap.mem_graph A a
+ has type
+  (↑a, ↑A a) ∈ A.graph
+but is expected to have type
+  (↑a, ↑A a + B ↑a - (textbookBrownianHaarPotentialOperator m U hU hPU β) ↑a) ∈
+    (textbookHaarMassClosedOperator m β).graph
