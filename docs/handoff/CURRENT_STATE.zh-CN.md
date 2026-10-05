@@ -1,8 +1,59 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 10:18 +0800）
+
+- ThermostatDensity Liouville链机器接受，待本地保存。full-check02/session50156：2026-10-05T10:15:12.6155527+08:00--2026-10-05T10:15:56.2619028+08:00退出0；9027 jobs、零Lean警告、785项声明审计仅基础三公理、110项输入与全部原始日志SHA256实查一致；固定版本/扫描/build/Scratch/公理全部通过，新增24项public覆盖完整。 原338--339/PDF359--360目视。下一Chapter08/StationaryDensityFlow.lean，先真实ODE推ρ(Phi)detDPhi=ρ(initial)，再真实change of variables与归一化得概率不变；不假定Jacobian/不变性结论。当前命题PDE部分已接受、flow语义依赖仍pending；负责人和整个CORE_SCOPE未完成。
+
+## 最新数学检查点（2026-10-05 10:15 +0800）
+
+- ThermostatDensity local09/session84195退出0零警告；full-check01/session12356退出0，真实新模块已构建，但接入脚本前缀误判使新增24项声明未被Scratch和审计覆盖，不能计为完整接受。现已按整行名字修复并补齐全部声明，下一唯一full-check02；此后不改输入。PDE和真实Hamiltonian底场/归一化常数全部证明；实际flow密度transport/概率解释以及负责人/整范围pending，继续补必要桥接。
+
+## 最新数学检查点（2026-10-05 10:11 +0800）
+
+- local08/session12981唯一诊断为命名乘积density在未应用函数位置不能仅simp展开；改为真实密度函数外延等式a(bρ)=b(aρ)，再rw传递stationarity。其余真实导数/场恒等式/Gibbs归一化候选无诊断、无警告。下一唯一local09；尚未完整验收，global flow/概率不变解释及最终语义签核单独pending。
+
+## 最新数学检查点（2026-10-05 10:09 +0800）
+
+- local07/session52378仅辅助坐标交换后 unapplied Function.comp 需要 comp_def，乘积非负定理多余实例需 omit；已修复。真实场恒等式和其余PDE链无诊断。补实际常数Gibbs归一化因子及其stationarity，不假定配分函数存在或全局概率不变性。下一唯一local08，尚未完整验收。
+
+## 最新数学检查点（2026-10-05 10:07 +0800）
+
+- local06/session62305 退出1，原因是 unapplied Pi 函数需要 smul_def prime/add_def，而 apply 规则只改逐点应用；已按固定源码修复。新增命题8.1真实单/双恒温器场、可逆辅助坐标交换、两次 passive lift、真实乘积密度与减去重复Hamiltonian漂移的恒等式，以及由实际Gibbs平稳性推出的正文结论候选。下一唯一 local07；尚未接受，完整范围及最终语义签核仍 pending。
+
+## 最新数学检查点（2026-10-05 09:57 +0800）
+
+- HEAD c030c2157e2208cd8c76226769da652509105975；ThermostatDensity local05/session6798仅新增三stationary桥接里bundled Pi变系数smul/add与显式lambda rw匹配，已用真实typed DifferentiableAt和Pi.smul_apply prime/同点Pi.add_apply正规化。原div trace/products/conjugacy/Gibbs stationary无诊断。
+- 下一唯一local06；之后实际两thermostat field/aux swap/products flux分解与完整Liouville Prop8.1。全部失败日志保留；338--339/PDF359--360目视，其他正文/整范围/负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:53 +0800）
+
+- HEAD c030c2157e2208cd8c76226769da652509105975；ThermostatDensity local04/session86000失败因猜测fst_apply/snd_apply不存在，实查PiProd固定名coe_fst/coe_snd prime，已按实修复，不能重复该失败接口。
+- 新增真正stationary idle辅助坐标lift、真实invertible conjugacy及actual density flux add-sub候选，减重复Hamiltonian base保持一份真实drift；下一唯一local05，尚未接受。原338--339/PDF359--360目视；完整Prop8.1/其余正文/整范围/负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:50 +0800）
+
+- HEAD c030c2157e2208cd8c76226769da652509105975；ThermostatDensity local03/session81204仅CLM.fst/snd实际apply展开与Matrix命名空间使smul_apply歧义，已明确proj apply与_root_.smul_apply；无其他数学诊断，下一唯一local04。
+- 必要actual density trace/product/conjugacy/Gibbs stationary候选尚未接受。两单thermostat的真实idle lifts/actual aux swap/combined flux=subtract重复Hamiltonian base为下一，338--339/PDF359--360目视，完整Prop8.1/整范围/负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:49 +0800）
+
+- HEAD c030c2157e2208cd8c76226769da652509105975；ThermostatDensity local02/session54722退出1仅实际partial derivative (id.prod0)/(0.prodid)与CLM.inl/inr需函数外延桥接，已给真实ext等式；conjugacy无用FiniteDim实例omit，deprecated smul_apply换固定新名。真实Gibbs density stationarity/trace-conjugacy其余无诊断。
+- 下一唯一local03，之后actual两thermostat idle lifts/coordinate swap/真实product flux分解，原338--339/PDF359--360目视；完整Prop8.1/其他正文/整范围及负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:45 +0800）
+
+- HEAD c030c2157e2208cd8c76226769da652509105975；ThermostatDensity local01/session56503退出1仅CLM/LM.apply桥接、constant fderiv接口、product ext方向、rw同时展开等式两侧、CLM/equiv.hasFDerivAt隐式point及命名Gibbs weight展开；全部按实际接口修正，无新假设。add/sub无用FiniteDim实例已omit。
+- 下一唯一local02，真实trace-smulRight/product diagonal/conjugacy及actualHamiltonianGibbs stationarity候选尚未接受；Prop8.1两thermostat product lift下一，原338--339/PDF359--360目视，其他正文/整范围/负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 09:43 +0800）
+
+- HEAD c030c2157e2208cd8c76226769da652509105975，完整Prop6.3已保存，固定版本未改，无其他构建。
+- 主线Prop8.1原338--339/PDF359--360已渲染/目视；必要真实Liouville density calculus候选ThermostatDensity.lean：actual divergence=trace fderiv、真实scalar density rank-one product trace、actual product partial trace、invertible coordinate conjugacy，以及actual Hamiltonian Gibbs weight正性和真正stationary Liouville PDE由J/Hessian/Poisson self推出。下一唯一local01。
+- 教材本证明用Liouville stationary density方程；当前未声称构造global nonlinear flow或由PDE自动给Markov/invariant probability。之后真正两thermostat lifts和product density field恒等，不能用仅抽象linear operator代替导数。完整Prop8.1/其余正文/整个CORE_SCOPE/负责人pending。
+
 ## 最新数学检查点（2026-10-05 09:37 +0800）
 
-- 本批前HEAD 499b6b5d59a11c3d2efd650edbc79a9bccb22bc7；WienerDeterministicLaw完整接受，待本地保存。固定版本/分支未改，原材料保留/未推送。
+- 本批前HEAD 499b6b5d59a11c3d2efd650edbc79a9bccb22bc7；WienerDeterministicLaw完整接受并保存为 c030c2157e2208cd8c76226769da652509105975。固定版本/分支未改，原材料保留/未推送。
 - 唯一full-check01/session85659：2026-10-05T09:33:09.0669074+08:00--2026-10-05T09:34:15.3558645+08:00退出0；9026jobs、零警告、761项审计声明仅基础三公理、109项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；5public接受，原231/PDF252目视。完整Prop6.3真实存在/MSE/Gaussian law/mean0/variance积分g²完成；真实Riemann cell余项、L²→概率→分布→actual charFun唯一性，无结论假设。ledger/notation/section/映射/假设/状态同步，负责人pending。
 - 下一Prop8.1 ThermostatAdditivity.lean，原338--339/PDF359--360已渲染/目视。真正divergence=trace(actual fderiv)、真实smulRight/trace产品及Hamiltonian Gibbs密度stationarity，原两个单thermostat实际平稳密度推出产品密度对实际组合field的Liouville stationary equation；不要用抽象线性operator闭合替代真正嵌入/密度导数。其他正文/整CORE_SCOPE仍pending，无其他构建。
 

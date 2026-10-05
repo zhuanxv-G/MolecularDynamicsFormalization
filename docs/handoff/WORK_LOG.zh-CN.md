@@ -2535,3 +2535,47 @@
 
 - 唯一full-check01/session85659：2026-10-05T09:33:09.0669074+08:00--2026-10-05T09:34:15.3558645+08:00退出0；9026jobs、零警告、761项审计声明仅基础三公理、109项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；5public接受，真实Riemann cell积分/actual variance极限/非负、L²→概率→分布→charFun唯一性，最终真实Y均方构造/law/mean0/二阶矩完成原Proposition6.3。review/ledger/notation/section/映射/假设/状态同步，原231/PDF252目视，负责人pending。
 - 下一Prop8.1真实Liouville密度可加性，338--339/PDF359--360渲染/目视；实际fderiv trace/product lifts/真实Hamiltonian Gibbs密度，不能仅供线性抽象operator。其他正文/整范围pending，先保存本批，无其他构建。
+
+## 2026-10-05 09:43 +0800 — 命题8.1真实Liouville密度依赖开始
+
+- 完整Prop6.3 c030c21保存；338--339/PDF359--360原页渲染/目视。ThermostatDensity.lean实际trace fderiv/divergence density product/product diagonal partial/conjugacy、actual Gibbs weight正性及真实Hamiltonian stationary flux候选，下一唯一local01。按原Liouville PDE语义证明，不声称global flow/概率测度构造；Prop8.1 lifts及真正产品密度下一，整范围/负责人pending。
+
+## 2026-10-05 09:45 +0800 — 真实密度trace与Fréchet接口诊断
+
+- local01/session56503实际CLM/LM应用、constant fderiv、product ext方向、rw两侧展开、CLM/equiv隐式point、named Gibbs展开失败，已精确修复；无用FiniteDim add/sub实例omit。下一唯一local02，失败日志保留，完整Prop8.1和整范围/负责人pending。
+
+## 2026-10-05 09:49 +0800 — 真实产品partial derivative桥接
+
+- local02/session54722唯一未解为(id.prod0)/(0.prodid)与CLM.inl/inr，用actual函数ext桥接；conjugacy无用FiniteDim omit/deprecated smul_apply更新。实际Hamiltonian Gibbs stationarity、密度乘积trace及conjugacy无其他诊断；下一唯一local03，完整Prop8.1仍pending。
+
+## 2026-10-05 09:50 +0800 — 实际CLM投影与标量apply展开
+
+- local03/session81204仅CLM.fst/snd apply和smul_apply歧义，改proj apply/_root_.smul_apply；下一唯一local04。实际FD density/trace/product/conjugacy/Gibbs逻辑无其余诊断，原日志保留，完整Prop8.1及整范围/负责人pending。
+
+## 2026-10-05 09:53 +0800 — 真stationary密度lift和可加性必要桥接
+
+- local04/session86000仅不存在fst/snd_apply，实查PiProd为coe_fst/coe_snd prime，已修复不重复猜测接口。新增actual idle lift/coordinate conjugacy/density flux add-sub，实际两单thermostat减重复Hamiltonian base路线；下一唯一local05，整个Prop8.1/负责人仍pending。
+
+## 2026-10-05 09:57 +0800 — 密度变系数smul实际函数正规化
+
+- local05/session6798仅三stationary helper bundled Pi.smul/Pi.add与lambda不匹配，给typed真实DifferentiableAt并用Pi.smul_apply prime/Pi.add_apply正规化；基础真实density trace/product/conjugacy/Gibbs全无诊断。下一唯一local06，完整Prop8.1仍pending。
+
+## 2026-10-05 10:07 +0800 — 命题8.1实际双恒温器场与乘积密度
+
+- local06/session62305 退出1，原因是 unapplied Pi 函数需要 smul_def prime/add_def，而 apply 规则只改逐点应用；已按固定源码修复。新增命题8.1真实单/双恒温器场、可逆辅助坐标交换、两次 passive lift、真实乘积密度与减去重复Hamiltonian漂移的恒等式，以及由实际Gibbs平稳性推出的正文结论候选。下一唯一 local07；尚未接受，完整范围及最终语义签核仍 pending。
+
+## 2026-10-05 10:09 +0800 — 实际辅助坐标交换与Gibbs归一化常数
+
+- local07/session52378仅辅助坐标交换后 unapplied Function.comp 需要 comp_def，乘积非负定理多余实例需 omit；已修复。真实场恒等式和其余PDE链无诊断。补实际常数Gibbs归一化因子及其stationarity，不假定配分函数存在或全局概率不变性。下一唯一local08，尚未完整验收。
+
+## 2026-10-05 10:11 +0800 — 实际乘积density函数外延
+
+- local08/session12981唯一诊断为命名乘积density在未应用函数位置不能仅simp展开；改为真实密度函数外延等式a(bρ)=b(aρ)，再rw传递stationarity。其余真实导数/场恒等式/Gibbs归一化候选无诊断、无警告。下一唯一local09；尚未完整验收，global flow/概率不变解释及最终语义签核单独pending。
+
+## 2026-10-05 10:15 +0800 — 新模块构建通过与声明覆盖修正
+
+- ThermostatDensity local09/session84195退出0零警告；full-check01/session12356退出0，真实新模块已构建，但接入脚本前缀误判使新增24项声明未被Scratch和审计覆盖，不能计为完整接受。现已按整行名字修复并补齐全部声明，下一唯一full-check02；此后不改输入。PDE和真实Hamiltonian底场/归一化常数全部证明；实际flow密度transport/概率解释以及负责人/整范围pending，继续补必要桥接。
+
+## 2026-10-05 10:18 +0800 — 命题8.1真实PDE链完整验收
+
+- ThermostatDensity Liouville链机器接受，待本地保存。full-check02/session50156：2026-10-05T10:15:12.6155527+08:00--2026-10-05T10:15:56.2619028+08:00退出0；9027 jobs、零Lean警告、785项声明审计仅基础三公理、110项输入与全部原始日志SHA256实查一致；固定版本/扫描/build/Scratch/公理全部通过，新增24项public覆盖完整。 原338--339/PDF359--360目视。下一Chapter08/StationaryDensityFlow.lean，先真实ODE推ρ(Phi)detDPhi=ρ(initial)，再真实change of variables与归一化得概率不变；不假定Jacobian/不变性结论。当前命题PDE部分已接受、flow语义依赖仍pending；负责人和整个CORE_SCOPE未完成。
