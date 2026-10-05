@@ -783,3 +783,37 @@ run_cmd do
 #print axioms MolecularDynamics.textbookThermostatFamily_linearIndependent
 #print axioms MolecularDynamics.textbookThermostatFamily_span_eq_top
 #print axioms MolecularDynamics.textbookThermostatLieSpan_pointwise_span_eq_top
+
+-- Actual iterated brackets, smooth coefficient closure, thermostat lift and NHL fields.
+#print axioms MolecularDynamics.textbookIteratedBracket
+#print axioms MolecularDynamics.textbookIteratedBracket_contDiff
+#print axioms MolecularDynamics.textbookBracketPointSpan
+#print axioms MolecularDynamics.textbookHormanderAt
+#print axioms MolecularDynamics.textbookSmoothBracketModule
+#print axioms MolecularDynamics.textbookSmoothBracketModule_generator_mem
+#print axioms MolecularDynamics.textbookSmoothBracketModule_contDiff
+#print axioms MolecularDynamics.textbookSmoothBracketModule_smooth_smul_mem
+#print axioms MolecularDynamics.textbookSmoothBracketModule_eval_mem
+#print axioms MolecularDynamics.textbookSmoothBracketModule_bracket_mem
+#print axioms MolecularDynamics.textbookThermostatLift
+#print axioms MolecularDynamics.textbookThermostatDrift
+#print axioms MolecularDynamics.textbookThermostatNoise
+#print axioms MolecularDynamics.textbookThermostatSeed
+#print axioms MolecularDynamics.textbookThermostatSeed_contDiff
+#print axioms MolecularDynamics.textbookThermostatLift_lieBracket
+#print axioms MolecularDynamics.textbookThermostatDrift_noise_bracket
+#print axioms MolecularDynamics.textbookThermostatLift_mem_module
+#print axioms MolecularDynamics.textbookThermostatLift_iterated_mem_module
+#print axioms MolecularDynamics.textbookThermostatHormanderLift
+#print axioms MolecularDynamics.textbookThermostatPhysical_hormander
+#print axioms MolecularDynamics.textbookNHLFeedback
+#print axioms MolecularDynamics.textbookNHLFeedback_contDiff
+#print axioms MolecularDynamics.textbookNHLDrift
+#print axioms MolecularDynamics.textbookNHL_domain_isOpen
+#print axioms MolecularDynamics.textbookNHLSeed_contDiff
+#print axioms MolecularDynamics.textbookNHLDrift_apply
+#print axioms MolecularDynamics.textbookNHL_hormander
+#print axioms MolecularDynamics.textbookNHL_hormander_physicalNoise
+#print axioms MolecularDynamics.textbookIteratedBracket.seed
+#print axioms MolecularDynamics.textbookIteratedBracket.bracket
+#print axioms MolecularDynamics.textbookIteratedBracket.rec

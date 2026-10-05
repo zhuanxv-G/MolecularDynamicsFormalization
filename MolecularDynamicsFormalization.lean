@@ -105,3 +105,5 @@ import MolecularDynamics.Chapter06.WienerIntegration
 import MolecularDynamics.Chapter07.InvariantDistributionSwap
 import MolecularDynamics.Chapter08.ThermostatLieFields
 import MolecularDynamics.Chapter08.ThermostatSpan
+import MolecularDynamics.Chapter08.HormanderClosure
+import MolecularDynamics.Chapter08.ThermostatHormander

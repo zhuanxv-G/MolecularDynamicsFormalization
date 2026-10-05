@@ -421,3 +421,8 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 
 - 唯一full-check01/session71698：2026-10-05T07:50:48.1727780+08:00--2026-10-05T07:51:56.9744487+08:00退出0；9020jobs、零警告、699项审计声明仅基础三公理、103项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；14public完整接受，原347--348/PDF368--369目视。
 - 实际SPD谱、真实坐标/内积对应、D开性、两组Vandermonde消元与C/D独立/张成、真正LieSpan点张成均接受；负责人语义pending。原348坐标交换已登记；下一Prop8.2真实Hörmander lift，Theorem8.1及整范围pending。
+
+## 2026-10-05 Prop8.2/Theorem8.1实际Hörmander验收
+
+- 唯一full-check01/session51933：2026-10-05T08:17:51.9677569+08:00--2026-10-05T08:18:56.9377781+08:00退出0；9022jobs、零警告、731项审计声明仅基础三公理、105项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；29public加2构造器/递归器接受，原254/PDF275与344--348/PDF365--369目视。
+- Definition6.1/Prop8.2/Lemma8.1/Prop8.3/Theorem8.1链机器完整；actual NHL方程/负G/feedback/开域/C∞/原sqrt噪声与Leibniz系数桥接完成。负责人pending，零mode不变/其他正文/全ergodicity和整个CORE_SCOPE仍pending。

@@ -595,3 +595,8 @@ Printed347/PDF368: `Chapter08/ThermostatLieFields.lean` fully proves Lemma8.1 fo
 ### Actual positive spectral thermostat span (2026-10-05)
 
 Printed347--348/PDF368--369: `Chapter08/ThermostatSpan.lean` fully proves Proposition8.3 from the actual SPD spectral theorem, original distinct-eigenvalue data and the actual nonzero eigenmode domain. Real eigen-coordinates are tied to eigenvector dot products; D is open. Both actual coefficient families vanish by positive modal weights and actual Vandermonde injectivity, yielding true finite-family linear independence, dimension-based spanning and real generated Lie algebra value spanning. The printed348 q/p swap is recorded and recomputed from printed347 definitions. Hörmander lift, Theorem8.1 and the proved unnumbered invariant-mode claim remain separate.
+
+
+### Actual Hörmander thermostat chain (2026-10-05)
+
+Printed254/PDF275 and344--348/PDF365--369: `Chapter08/HormanderClosure.lean` formalizes Definition6.1 by actual recursive fderiv brackets and point spans, deriving smooth finite-coefficient module bracket closure and evaluation into the original span. `Chapter08/ThermostatHormander.lean` fully proves Proposition8.2 with explicit nonzero noise, actual drift/noise derivatives, physical lifts and full horizontal/vertical span. True End LieSpan maps into actual negative-G physical brackets. With accepted Lemma8.1/Proposition8.3, actual NHL quadratic feedback, drift equations, open domain, smooth fields and original positive-parameter sqrt noise give the full Theorem8.1. No extended span or coefficient closure is supplied. Responsible signoff and separate ergodicity/accessibility/invariant-mode body claims remain pending.

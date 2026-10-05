@@ -2409,3 +2409,37 @@
 
 - 唯一full-check01/session71698：2026-10-05T07:50:48.1727780+08:00--2026-10-05T07:51:56.9744487+08:00退出0；9020jobs、零警告、699项审计声明仅基础三公理、103项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；14public接受。actual spectral theorem/正特征值推导、真实UT/内积对应、D开、两个实际权重消元/Vandermonde、真C/D族独立/张成与生成Lie点值span完整。347--348/PDF368--369目视，348坐标交换与π/σ两组系数处理明确记录；ledger/notation/section/映射/假设/状态同步，负责人pending。
 - 254/PDF275和344--345/PDF365--366已目视；C∞且包括drift b0，Prop8.2 variable coefficients须真实Leibniz闭包及点值span桥接，不能把变系数闭包作为输入。下一HormanderClosure/ThermostatHormander，σ≠0明确。原346零mode不变CH08-CLM-001登记，真全程证明pending；Theorem8.1/其他正文/整范围尚未完成。先保存本批，无其他构建。
+
+## 2026-10-05 07:57 +0800 — Prop8.2真实Hörmander变系数闭包开始
+
+- 前批ba54e00保存。254/PDF275与344--345/PDF365--366目视，Definition6.1是真C∞且含b0。HormanderClosure.lean实际iterated fderiv bracket/point span与平滑系数finite module候选，真实Leibniz推闭包，eval成员真实回到原bracket点span。
+- 下一唯一local01，之后真实ThermostatHormander b0/b1、非零σ、liftF/G与真实linear LieSpan、全扩展张成；variable coefficients不能直接当constant Lie membership输入。候选未计通过，Theorem8.1/其他正文/负责人pending。
+
+## 2026-10-05 07:59 +0800 — Hörmander闭包实际函数等式接口诊断
+
+- closure-local01退出1：span induction平滑smul分支的simp过度归约zero_mem/函数加法与smul_comm递归；改用逐点真实函数等式，清除两个冗余simp参数。closure-local02退出1零警告，仅零函数0 x与零向量change桥接；已修复。原始日志保留，未计整批通过。
+- 真实Leibniz括号闭包/实际iterated smoothness/点值span不扩大无其他诊断，下一唯一closure-local03再构造真实恒温lift。
+
+## 2026-10-05 08:07 +0800 — Hörmander真实闭包通过与恒温FD接口诊断
+
+- closure-local03退出0零警告，closure-target-build01退出0，2108jobs仅必要模块olean供下一文件导入；尚未整批完整验收。
+- lift-local01/session91869退出1：HasFDerivAt_const值/点参数倒置，补真实值先点后及实标量，删除冗余simp。lift-local02/session57942退出1：FD函数的bundled comp/add/smul形式与正文函数未匹配；展开真实函数。lift-local03/session90810退出1：变系数Pi.smul需smul_apply_prime、零分量0-0非rfl，已按固定API修复。真实lift恢复F/G proof其余无诊断，原始日志保留。
+- 下一唯一lift-local04；之后真正实际iterated lift/point span与NHL物理域，不供Hörmander结论；整批/Theorem8.1/负责人pending。
+
+## 2026-10-05 08:15 +0800 — 真实恒温lift通过与完整Hörmander候选接口诊断
+
+- lift-local04/session71808退出1零警告，仅lift第二分量未展开真实定义，change实际0-0修复后lift-local05退出0零警告；真实[b0,b1]和actual smooth module恢复F/G全部通过。
+- 已加入真正iterated lift/point span、Prop8.2、实际End LieSpan到物理真实iterated bracket桥接、真实NHL quadratic反馈/方程/完整Hörmander与物理sqrt噪声。lift-local06/session52957退出1零警告，seed分支rfl消去F/G名称、Real.inv需要noncomputable与未打开Matrix mulVec notation；已修复，其他真实大定理无诊断。
+- 下一唯一lift-local07，候选未计整批通过，无结论假设；Theorem8.1/Prop8.2完整验收与负责人pending。
+
+## 2026-10-05 08:17 +0800 — Prop8.2与Theorem8.1完整真实Hörmander局部通过
+
+- lift-local07/session77182退出0零警告；补D×R开性与实际NHL seed C∞后local08/session36541退出0零警告。HormanderClosure local03亦退出0零警告，29public加实际iterated的2构造器/递归器接根/Scratch/审计，启动唯一full-check01，未决前不改核验输入。
+- 真recursive derivative bracket point span、真Leibniz变系数闭包/eval、真[b0,b1]/liftF/G/所有iterated lift/全扩展张成、实际End LieSpan与负G桥接、true NHL feedback/equations/开域/C∞与原正参数sqrt噪声全部候选通过，不供应Hörmander结论。
+- 原254/PDF275和344--348/PDF365--369目视，σ≠0明示；整批尚未机器完整接受，负责人语义/其他正文与全范围pending，无其他构建。
+
+## 2026-10-05 08:25 +0800 — Definition6.1与Prop8.2/Theorem8.1真实Hörmander完整验收
+
+- 唯一full-check01/session51933：2026-10-05T08:17:51.9677569+08:00--2026-10-05T08:18:56.9377781+08:00退出0；9022jobs、零警告、731项审计声明仅基础三公理、105项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；29public加实际iterated构造器2/递归器接受，正文真实Hörmander链完整，原254/PDF275与344--348/PDF365--369目视；负责人pending。验收记录脚本literal braces错误已修复，不改变Lean输入或重跑已通过构建。
+- ledger纠正Prop8.2属8.4；Definition6.1 C∞含b0，原NHL真实negative G/Σp²/positive physical sqrt noise明示，相关notation/section/映射/假设/状态同步。Hörmander不独自等于全部ergodicity，整范围未完成。
+- 下一原346未编号零mode不变CH08-CLM-001：真实q/p方程+连续ξ，经谱坐标时变linear ODE/compact bound/真实ODE uniqueness得全程不变；目标ThermostatModeInvariant.lean。先保存本批，无其他构建。

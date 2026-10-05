@@ -1,8 +1,41 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 08:25 +0800）
+
+- 本批前HEAD ba54e0019518d525321830d9c1e98d4fa3f59b7d；ThermostatHormander完整接受，待本地保存，固定版本/分支未改，原材料保留、未推送。
+- 唯一full-check01/session51933：2026-10-05T08:17:51.9677569+08:00--2026-10-05T08:18:56.9377781+08:00退出0；9022jobs、零警告、731项审计声明仅基础三公理、105项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；29public及2构造器/递归器接受。Definition6.1/Prop8.2/Lemma8.1/Prop8.3/Theorem8.1真实Hörmander链机器完整：actual recursive fderiv/point span、真Leibniz smooth module/eval、真lift与全扩展张成、真实NHL negative G/二次feedback/方程/开域/C∞/原正参数sqrt噪声完成。原254/PDF275、344--348/PDF365--369目视，负责人pending。
+- 下一CH08-CLM-001（346/PDF367）：Chapter08/ThermostatModeInvariant.lean，从actual q'=p、p'=-Aq-ξp与continuous ξ路径，真实谱坐标Q'=P、P'=-λQ-ξP；compact ξ有界使真实时变linear mode ODE Lipschitz，ODE_solution_unique_of_mem_Icc推出零mode全程不变，不能仅初始导数零。
+- 不冒称构造SDE解或由Hörmander单独得到全部ergodicity。其他正文、一般Ito/高阶匹配及整个范围仍pending。先保存本批，无其他构建。
+
+## 最新数学检查点（2026-10-05 08:17 +0800）
+
+- HEAD ba54e0019518d525321830d9c1e98d4fa3f59b7d，固定版本不变；HormanderClosure local03与ThermostatHormander local08退出0零警告，29public加实际iterated构造器/递归器接根/Scratch/公理审计。
+- Prop8.2与Theorem8.1完整候选：实际iterated derivative brackets及点span、真实Leibniz平滑系数有限组合闭包/eval桥接、真[b0,b1]与liftF/G、真实iterated lift、全扩展点span；物理负G由实际End LieSpan桥接，真实NHL feedback/drift/equations、D×R开与C∞fields、σ非零和正参数原sqrt噪声均局部通过。
+- local04零分量真实定义未展开、local06名称消去/noncomputability/notation失败均已保存并修复，local05/07/08分别通过；不复用失败输出。启动唯一full-check01，未决前不改核验输入。
+- 254/PDF275与344--348/PDF365--369目视；负责人语义及其他正文/零mode不变/一般Ito等独立缺口和整个CORE_SCOPE仍pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 08:15 +0800）
+
+- HEAD ba54e0019518d525321830d9c1e98d4fa3f59b7d，固定版本不变；closure-local03/必要目标olean与lift-local05退出0零警告，尚未全批验收。
+- 完整Prop8.2与Theorem8.1候选已落盘Chapter08/ThermostatHormander.lean：实际iterated physical bracket lift、真实smooth module闭包/eval到真实span、实际End LieSpan到负G物理bracket桥接、真quadratic feedback/NHL方程/完整Hörmander及原sqrt物理噪声。
+- lift-local06/session52957失败仅rfl消去F/G名称、Real.inv computability与Matrix notation接口，已修复，下一唯一lift-local07；不计失败后placeholder为证明。原254/PDF275、344--348/PDF365--369目视，负责人语义与整范围pending。
+
+## 最新数学检查点（2026-10-05 08:07 +0800）
+
+- HEAD ba54e0019518d525321830d9c1e98d4fa3f59b7d，固定版本未改；closure-local03/仅目标olean build01退出0零警告，真实Leibniz闭包与eval point span依赖局部通过，尚未全批验收。
+- 进行中Chapter08/ThermostatHormander.lean真实general drift/noise/Lift，local01--03固定FD参数/函数bundled展开/变系数Pi smul与零分量桥接失败已保存并修复，下一唯一lift-local04。
+- 真σ≠0、C∞ F/G/g，真实[b0,b1]及变系数恢复F/G；之后iterated lift生成/实际point span与原NHL真实g polynomial及G负号。254/PDF275、344--348/PDF365--369已目视。Theorem8.1/整范围及负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 07:57 +0800）
+
+- HEAD ba54e0019518d525321830d9c1e98d4fa3f59b7d；Prop8.3完整保存，固定版本不变，无其他构建。
+- 进行中Prop8.2/Theorem8.1必要真实Hörmander闭包，目标Chapter08/HormanderClosure.lean。254/PDF275及344--345/PDF365--366目视；实际iterated derivative bracket递归与point span、平滑系数有限组合span已构造候选，真实Leibniz推出括号闭包及eval回到真实point span。
+- closure-local01/02函数零/加法/交换smul接口失败日志已保存，改为真实逐点等式及零函数change；下一唯一closure-local03；后续ThermostatHormander.lean从真实b0/b1恢复liftF/G、线性LieSpan和全部扩展点张成。σ≠0明确，真实NHL G=-momentum scaling，g是真quadratic polynomial。
+- 不供应变系数闭包或最终Hörmander作假设；未计候选通过，Theorem8.1整体/其他正文/负责人pending。
+
 ## 最新数学检查点（2026-10-05 07:54 +0800）
 
-- 本批前HEAD e313cb809dac9b6c0496e6911cbea4fbd686514b；ThermostatSpan完整接受，待本地保存，固定版本/分支未改，既有材料保留、未推送。
+- 本批前HEAD e313cb809dac9b6c0496e6911cbea4fbd686514b；ThermostatSpan完整接受并保存为ba54e0019518d525321830d9c1e98d4fa3f59b7d，固定版本/分支未改，既有材料保留、未推送。
 - 唯一full-check01/session71698：2026-10-05T07:50:48.1727780+08:00--2026-10-05T07:51:56.9744487+08:00退出0；9020jobs、零警告、699项审计声明仅基础三公理、103项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；14public完整接受。真实orthogonal谱坐标/内积、D开、actual C/D两组系数消元/Vandermonde、LinearIndependent/维数张成及实际LieSpan点值张成完整；347--348/PDF368--369目视，348的q/p交换/只论π未论σ缺口已记录，负责人pending。
 - 下一Prop8.2真实Hörmander lift，目标Chapter08/HormanderClosure.lean与ThermostatHormander.lean。254/PDF275及344--345/PDF365--366已目视，Definition6.1是C∞且含b0。必须构造真实迭代bracket点值span，再用真实Leibniz证明平滑系数有限组合闭包并桥接其点值，不能假定variable coefficient Lie闭包。σ≠0需明确。
 - NHL原G符号是负momentum scaling，可从已证正G真实负号闭包转换。原g=μ⁻¹(||p||²-Nc kBT)为真实smooth polynomial；不供应Hörmander结论。
