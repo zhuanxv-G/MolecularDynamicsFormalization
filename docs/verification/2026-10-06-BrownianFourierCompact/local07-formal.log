@@ -1,0 +1,31 @@
+MolecularDynamics/Chapter06/BrownianFourierCompact.lean:267:2: error: Type mismatch
+  (textbookHaarL2RealPart Nc ∘SL ?m.96) (textbookHaarL2Complexify Nc)
+has type
+  ↥(Lp ℝ 2 volume)
+but is expected to have type
+  ↥(Lp ℝ 2 volume) →L[ℝ] ↥(Lp ℝ 2 volume)
+MolecularDynamics/Chapter06/BrownianFourierCompact.lean:268:4: error: Application type mismatch: The argument
+  (ContinuousLinearMap.restrictScalars ℝ (textbookHaarMassComplexFourierOperator m hm β hβ)).comp
+has type
+  (?m.83 →SL[?m.80] ↥(Lp ℂ 2 volume)) → ?m.83 →SL[?m.82] ↥(Lp ℂ 2 volume)
+but is expected to have type
+  (↥(Lp ℝ 2 volume) →L[ℝ] ↥(Lp ℂ 2 volume)) →SL[?m.43] ↥(Lp ℂ 2 volume)
+in the application
+  textbookHaarL2RealPart Nc ∘SL
+    (ContinuousLinearMap.restrictScalars ℝ (textbookHaarMassComplexFourierOperator m hm β hβ)).comp
+MolecularDynamics/Chapter06/BrownianFourierCompact.lean:271:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+MolecularDynamics/Chapter06/BrownianFourierCompact.lean:284:2: error: Type mismatch
+  IsCompactOperator.clm_comp
+    (IsCompactOperator.comp_clm (textbookHaarMassComplexFourierOperator_isCompact m hm β hβ)
+      (textbookHaarL2Complexify Nc))
+    (textbookHaarL2RealPart Nc)
+has type
+  IsCompactOperator
+    (⇑(textbookHaarL2RealPart Nc) ∘
+      ⇑(textbookHaarMassComplexFourierOperator m hm β hβ) ∘ ⇑(textbookHaarL2Complexify Nc))
+but is expected to have type
+  IsCompactOperator ⇑(textbookHaarMassFourierOperator m hm β hβ)

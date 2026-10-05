@@ -1,0 +1,49 @@
+lp.singleContinuousLinearMap.{u_1, u_3, u_4} (𝕜 : Type u_1) {α : Type u_3} (E : α → Type u_4) (p : ENNReal)
+  [(i : α) → NormedAddCommGroup (E i)] [NormedRing 𝕜] [(i : α) → Module 𝕜 (E i)] [∀ (i : α), IsBoundedSMul 𝕜 (E i)]
+  [DecidableEq α] [Fact (1 ≤ p)] (i : α) : E i →L[𝕜] ↥(lp E p)
+lp.evalCLM.{u_1, u_3, u_4} (𝕜 : Type u_1) {α : Type u_3} (E : α → Type u_4) [(i : α) → NormedAddCommGroup (E i)]
+  [NormedRing 𝕜] [(i : α) → Module 𝕜 (E i)] [∀ (i : α), IsBoundedSMul 𝕜 (E i)] (p : ENNReal) [Fact (1 ≤ p)] (i : α) :
+  ↥(lp E p) →L[𝕜] E i
+lp.memℓp.{u_3, u_4} {α : Type u_3} {E : α → Type u_4} {p : ENNReal} [(i : α) → NormedAddCommGroup (E i)]
+  (f : ↥(lp E p)) : Memℓp (↑f) p
+lp.coeFn_sub.{u_3, u_4} {α : Type u_3} {E : α → Type u_4} {p : ENNReal} [(i : α) → NormedAddCommGroup (E i)]
+  (f g : ↥(lp E p)) : ↑(f - g) = ↑f - ↑g
+lp.single_apply.{u_3, u_4} {α : Type u_3} {E : α → Type u_4} [(i : α) → NormedAddCommGroup (E i)] [DecidableEq α]
+  (p : ENNReal) (i : α) (a : E i) (j : α) : ↑(lp.single p i a) j = Pi.single i a j
+IsCompactOperator.comp_clm.{u_1, u_2, u_4, u_5, u_6} {R₁ : Type u_1} {R₂ : Type u_2} [Semiring R₁] [Semiring R₂]
+  {σ₁₂ : R₁ →+* R₂} {M₁ : Type u_4} {M₂ : Type u_5} {M₃ : Type u_6} [TopologicalSpace M₁] [TopologicalSpace M₂]
+  [TopologicalSpace M₃] [AddCommMonoid M₁] [Module R₁ M₁] [AddCommMonoid M₂] [Module R₂ M₂] {f : M₂ → M₃}
+  (hf : IsCompactOperator f) (g : M₁ →SL[σ₁₂] M₂) : IsCompactOperator (f ∘ ⇑g)
+IsCompactOperator.clm_comp.{u_2, u_3, u_4, u_5, u_6} {R₂ : Type u_2} {R₃ : Type u_3} [Semiring R₂] [Semiring R₃]
+  {σ₂₃ : R₂ →+* R₃} {M₁ : Type u_4} {M₂ : Type u_5} {M₃ : Type u_6} [TopologicalSpace M₁] [TopologicalSpace M₂]
+  [TopologicalSpace M₃] [AddCommMonoid M₁] [AddCommMonoid M₂] [Module R₂ M₂] [AddCommMonoid M₃] [Module R₃ M₃]
+  {f : M₁ → M₂} (hf : IsCompactOperator f) (g : M₂ →SL[σ₂₃] M₃) : IsCompactOperator (⇑g ∘ f)
+Submodule.sum_mem.{u, v, w} {R : Type u} {M : Type v} {ι : Type w} [Semiring R] [AddCommMonoid M]
+  {module_M : Module R M} (p : Submodule R M) {t : Finset ι} {f : ι → M} : (∀ c ∈ t, f c ∈ p) → ∑ i ∈ t, f i ∈ p
+isCompactOperator_of_locallyCompactSpace_dom.{u_1, u_2, u_4, u_5} {R₁ : Type u_1} {R₂ : Type u_2} [Semiring R₁]
+  [Semiring R₂] {σ₁₂ : R₁ →+* R₂} {M₁ : Type u_4} {M₂ : Type u_5} [TopologicalSpace M₁] [TopologicalSpace M₂]
+  [AddCommMonoid M₁] [Module R₁ M₁] [AddCommGroup M₂] [Module R₂ M₂] [IsTopologicalAddGroup M₂] [LocallyCompactSpace M₂]
+  (T : M₁ →SL[σ₁₂] M₂) : IsCompactOperator ⇑T
+isCompactOperator_of_tendsto.{u_1, u_2, u_3, u_4, u_5} {ι : Type u_1} {𝕜₁ : Type u_2} {𝕜₂ : Type u_3}
+  [NontriviallyNormedField 𝕜₁] [NormedField 𝕜₂] {σ₁₂ : 𝕜₁ →+* 𝕜₂} {M₁ : Type u_4} {M₂ : Type u_5}
+  [SeminormedAddCommGroup M₁] [AddCommGroup M₂] [NormedSpace 𝕜₁ M₁] [Module 𝕜₂ M₂] [UniformSpace M₂]
+  [IsUniformAddGroup M₂] [ContinuousConstSMul 𝕜₂ M₂] [T2Space M₂] [CompleteSpace M₂] {l : Filter ι} [l.NeBot]
+  {F : ι → M₁ →SL[σ₁₂] M₂} {f : M₁ →SL[σ₁₂] M₂} (hf : Filter.Tendsto F l (nhds f))
+  (hF : ∀ᶠ (i : ι) in l, IsCompactOperator ⇑(F i)) : IsCompactOperator ⇑f
+Complex.abs_re_le_norm (z : ℂ) : |z.re| ≤ ‖z‖
+ContinuousLinearMap.opNorm_le_bound.{u_1, u_2, u_4, u_5} {𝕜 : Type u_1} {𝕜₂ : Type u_2} {E : Type u_4} {F : Type u_5}
+  [SeminormedAddCommGroup E] [SeminormedAddCommGroup F] [NontriviallyNormedField 𝕜] [NontriviallyNormedField 𝕜₂]
+  [NormedSpace 𝕜 E] [NormedSpace 𝕜₂ F] {σ₁₂ : 𝕜 →+* 𝕜₂} (f : E →SL[σ₁₂] F) {M : ℝ} (hMp : 0 ≤ M)
+  (hM : ∀ (x : E), ‖f x‖ ≤ M * ‖x‖) : ‖f‖ ≤ M
+Metric.tendsto_atTop.{u, v} {α : Type u} {β : Type v} [PseudoMetricSpace α] [Nonempty β] [SemilatticeSup β] {u : β → α}
+  {a : α} : Filter.Tendsto u Filter.atTop (nhds a) ↔ ∀ ε > 0, ∃ N, ∀ n ≥ N, dist (u n) a < ε
+ContinuousLinearMap.restrictScalars.{u_1, u_2, u_3, u_4} {A : Type u_1} {M₁ : Type u_2} {M₂ : Type u_3} (R : Type u_4)
+  [Semiring A] [Semiring R] [AddCommMonoid M₁] [Module A M₁] [Module R M₁] [TopologicalSpace M₁] [AddCommMonoid M₂]
+  [Module A M₂] [Module R M₂] [TopologicalSpace M₂] [LinearMap.CompatibleSMul M₁ M₂ R A] (f : M₁ →L[A] M₂) : M₁ →L[R] M₂
+compactOperator.{u_1, u_2, u_3, u_5} {R₁ : Type u_1} {R₄ : Type u_2} [Semiring R₁] [CommSemiring R₄] (σ₁₄ : R₁ →+* R₄)
+  (M₁ : Type u_3) (M₄ : Type u_5) [TopologicalSpace M₁] [AddCommMonoid M₁] [TopologicalSpace M₄] [AddCommGroup M₄]
+  [Module R₁ M₁] [Module R₄ M₄] [ContinuousConstSMul R₄ M₄] [IsTopologicalAddGroup M₄] : Submodule R₄ (M₁ →SL[σ₁₄] M₄)
+isCompactOperator_of_locallyCompactSpace_rng.{u_2, u_3, u_5, u_6} {R₂ : Type u_2} {R₃ : Type u_3} [Semiring R₂]
+  [Semiring R₃] {σ₂₃ : R₂ →+* R₃} {M₂ : Type u_5} {M₃ : Type u_6} [TopologicalSpace M₂] [TopologicalSpace M₃]
+  [AddCommGroup M₂] [Module R₂ M₂] [IsTopologicalAddGroup M₂] [LocallyCompactSpace M₂] [AddCommMonoid M₃] [Module R₃ M₃]
+  (T : M₂ →SL[σ₂₃] M₃) : IsCompactOperator ⇑T

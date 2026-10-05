@@ -1,0 +1,242 @@
+{
+  "started_at": "2026-10-06T07:19:02.2530704+08:00",
+  "finished_at": "2026-10-06T07:21:50.5105486+08:00",
+  "head_at_check": "2d024b6b131d1a6ac1aea38aac4bbc67de83ce7f",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9085,
+  "audit_declarations": 1614,
+  "inputs": 168,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookMassFourierInverseWeight",
+    "MolecularDynamics.textbookMassFourierInverseWeight_pos",
+    "MolecularDynamics.textbookMassFourierInverseWeight_le_one",
+    "MolecularDynamics.textbookMassFourierInverseWeight_neg",
+    "MolecularDynamics.textbookMassFourierCoefficientOperator",
+    "MolecularDynamics.textbookMassFourierCoefficientOperator_apply",
+    "MolecularDynamics.textbookMassFourierCoefficientOperator_norm",
+    "MolecularDynamics.textbookMassFourierCoefficientFinite",
+    "MolecularDynamics.textbookMassFourierCoefficientFinite_apply",
+    "MolecularDynamics.textbookMassFourierCoefficientFinite_isCompact",
+    "MolecularDynamics.textbookMassFourierCoefficientFinite_tendsto",
+    "MolecularDynamics.textbookMassFourierCoefficientOperator_isCompact",
+    "MolecularDynamics.textbookHaarMassComplexFourierOperator",
+    "MolecularDynamics.textbookHaarMassComplexFourierOperator_coeff",
+    "MolecularDynamics.textbookHaarMassComplexFourierOperator_norm",
+    "MolecularDynamics.textbookHaarMassComplexFourierOperator_isCompact",
+    "MolecularDynamics.textbookHaarL2RealPart_norm",
+    "MolecularDynamics.textbookHaarMassFourierOperator",
+    "MolecularDynamics.textbookHaarMassFourierOperator_norm",
+    "MolecularDynamics.textbookHaarMassFourierOperator_isCompact"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookMassFourierInverseWeight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierInverseWeight_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierInverseWeight_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierInverseWeight_neg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierCoefficientOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierCoefficientOperator_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierCoefficientOperator_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierCoefficientFinite",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierCoefficientFinite_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierCoefficientFinite_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierCoefficientFinite_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookMassFourierCoefficientOperator_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassComplexFourierOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassComplexFourierOperator_coeff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassComplexFourierOperator_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassComplexFourierOperator_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2RealPart_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassFourierOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassFourierOperator_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassFourierOperator_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "de7e9c612e10471bdbcb71b41cd826808f644c7623157179e9a4cfa3c73ae0b7"
+    },
+    {
+      "path": "api02.log",
+      "sha256": "9628d35ed78a8d1bfbeb461abbd87432af06dd3f5ba99f7e68b561c5f61f3d7d"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "4e2e1d1df4b582fa8c70a48c2117511a485e6647e583bad12fef5ceb5d48e22e"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03-draft.log",
+      "sha256": "42bb147771cdc38ec2d3b67bf6f6cef6e3904cab520f1a72e2c1dae137d8ada7"
+    },
+    {
+      "path": "local04-draft.log",
+      "sha256": "61bac6b51d2f24c7d5336c52c62de88238c76bb8938a0e940634e0aa542097e1"
+    },
+    {
+      "path": "local05-draft.log",
+      "sha256": "c8ae1a1021bb880e9975277bf7bdebfd13eb44d8c461d8aac1a772fcad185603"
+    },
+    {
+      "path": "local06-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local07-formal.log",
+      "sha256": "67f4d3d262789c6ca02008d8d4e0e86d24e49c9682ad9a19d3a066762f17b09d"
+    },
+    {
+      "path": "local08-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

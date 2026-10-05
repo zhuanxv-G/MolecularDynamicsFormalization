@@ -832,3 +832,8 @@ full-check01 passed：9083 jobs/1588公理声明/166exact inputs；10checks退�
 BrownianPotentialSelfAdjoint6public local03零诊断：actualmass/sameU Haar partial与wholeclosedgraph均actualboundedB shear双向相等，全Haarclosed域=massclosed域；实际伴随定义subtract B和mass已证自伴推得originalgeneralU Haarclosed真正自伴，再actualsameµ I/wholeclosedgraph/injectivity传回originalGibbsclosed真正IsSelfAdjoint。DEP049/NOT058 full中；原C²/core语义签核pending、compact/full谱/semigroup仍未完成。
 
 full-check01 passed：9084 jobs/1594公理声明/167exact inputs；10checks退出0、全部input/rawlog SHA匹配、6 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 实际全Haar Fourier紧算子
+BrownianFourierCompact20public local08空日志：actualinverseweights/真实lpCLM/每个finiteCLM坐标及compact/wholeopnormlimitderivedfrom原frequencies，实际HilbertBasis onto传到全complexHaar并证明coeff/norm/compact；actualJ/R构成整个realHaar compactCLM。DEP050/NOT059 full中。尚未实际识别massClosed双向resolvent，原一般U compact/full谱仍未完成。
+
+full-check01 passed：9085 jobs/1614公理声明/168exact inputs；10checks退出0、全部input/rawlog SHA匹配、20 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

@@ -1,0 +1,21 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianFourierCompact/Draft.lean",
+  "source_sha256": "290a5ea5515cea52964a477b2e3f20f2b4d5ec7d9a197b6f35ebe898eaddda5a",
+  "public_declarations": [
+    "MolecularDynamics.textbookMassFourierInverseWeight",
+    "MolecularDynamics.textbookMassFourierInverseWeight_pos",
+    "MolecularDynamics.textbookMassFourierInverseWeight_le_one",
+    "MolecularDynamics.textbookMassFourierInverseWeight_neg",
+    "MolecularDynamics.textbookMassFourierCoefficientOperator",
+    "MolecularDynamics.textbookMassFourierCoefficientOperator_apply",
+    "MolecularDynamics.textbookMassFourierCoefficientOperator_norm"
+  ],
+  "log": "docs/verification/2026-10-06-BrownianFourierCompact/local02-draft.log",
+  "raw_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "local_exit_code": 0,
+  "lean_warnings": 0,
+  "integrated_into_formal_root": false,
+  "whole_compact_operator_proof": "incomplete",
+  "actual_resolvent_identification": "incomplete",
+  "responsible_semantic_review": "pending"
+}

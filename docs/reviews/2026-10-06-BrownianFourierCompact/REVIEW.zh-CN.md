@@ -1,0 +1,8 @@
+# Theorem6.1：实际全Haar Fourier紧算子
+印刷250–251/PDF271–272，20public；原Nc任意、所有原质量m_i>0、β>0。真实r_n=(1+Ω_n)inv，Ω_n是已从原mass differential operator导出的真实频率。没有紧性、谱、Fourier对角或预解算子前提。
+完整证明了实际complex coefficient lp2 CLM D与每个真实有限CLM D_s：D_s由真正singleContinuousLinearMap.comp(evalCLM)有限和构成，坐标恰为选中索引乘r_n。single真实域ℂ局部紧，composition和有限sum给每个D_s紧。private tail_bound只用实际outside tail bound，实际lp.norm_mono与ε•a推导全opnormbound；主tendsto从已验收原frequency cofinite decay推导有限bad-index，所有大finite sets实际‖D−D_s‖→0。因此真正D紧，不是只scalar decay或pointwise convergence。
+实际UnitAddTorus.mFourierBasis.repr全Hilbert等距onto将D转为整个complex HaarLp CLM，证明真实每个Fouriercoeff乘r_n/actualnormcontraction/compact。真正Complex.reCLM与compLpL原normbound证明全R contraction；actualR.comp(D_H.restrictScalars).comp(J)得到整个realHaar CLM normcontraction和紧性。
+local03 finite sum coercion change失败、tailzero需norm_nonneg以及deprecated if_neg警告，raw证据保留；local04修复因CRLF与LF混合替换未命中，相同两个错误但deprecated已消除；local05显式sum_apply已解决coercion，Pi.single不同索引展开及deprecated CLM.sum/smul警告修为actualroot sum/smul与Function.update；local06草稿全12退出0空日志。formal local07 allcomplex/R正常，realCLM comp括号错误引发类型及whnf超时；correct括号后local08全20退出0空日志零警告，没有调高heartbeat/linter绕过。
+额度自动审批曾拒绝未执行的local04修复命令（review无法完成，非代码安全判断），只读核对额度恢复后同一正常审批通过才接续，没有绕过/购买/重置/换账户。正式private local instances使用独有名字，保留历史dirty/untracked。
+DEP050/NOT059；真正massClosed的双向inverse/graph尚未识别，因此本批不计compactresolvent。下一由actualfinite smooth Fourierpolynomials及同时graphlimit识别R(D(Jx))为真实massresolvent，再原有界V与sameGibbs传输。C²test/C∞core最终负责人语义pending，Theorem6.1整体/CORE_SCOPE仍未完成。
+full-check01 passed：9085 jobs/1614公理声明/168exact inputs；10checks退出0、全部input/rawlog SHA匹配、20 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

@@ -490,3 +490,6 @@ Nc任意，原m任意、U C∞整数周期、β任意，真正sameactualHaarLp2�
 
 ## 2026-10-06 BrownianPotentialSelfAdjoint条件
 Nc任意、原质量m任意、原U C∞整数周期、β≠0，sameactualoriginalGibbs fullrealLp2。真正boundedV/wholegraph双向identity/闭域相等和actualadjoint均derived，无图域对应/自伴/正则性结论前提。masszero-potential只为必要masspart，其后完整originalU与sameµ传输证明。原教材C²test与C∞core闭包最终语义负责人pending；positive masses/β在原正文与之后compact/coercivity使用。自伴只为原已构造smoothgraphclosure，compact完整谱/semigroup未完成。
+
+## 2026-10-06 BrownianFourierCompact条件
+Nc任意、所有原质量m_i>0、β>0；actualsamewholecomplex/realHaarLp2。真实frequency来自原massdifferential，real/complex HilbertBasis、权重bounds、cofinite decay、每个finiteCLM compact与norm convergence均derived。private条件tailbound在主limit中实际由finite bad-index推导，不供给compactness或resolvent前提。U0质量部分是一般原U compactresolvent必要依赖；本批仅actualcompactCLM，未称actualclosedmassresolvent。负责人pending，wholeTheorem6.1未完成。
