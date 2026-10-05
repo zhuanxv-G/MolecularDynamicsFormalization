@@ -138,3 +138,6 @@ import MolecularDynamics.Chapter06.LangevinPathSolution
 import MolecularDynamics.Chapter06.WienerVectorContinuousPath
 import MolecularDynamics.Chapter06.LangevinRandomSolution
 import MolecularDynamics.Chapter06.LangevinGlobalRandomSolution
+
+import MolecularDynamics.Chapter06.LangevinLyapunov
+import MolecularDynamics.Chapter06.LangevinPeriodicLyapunov

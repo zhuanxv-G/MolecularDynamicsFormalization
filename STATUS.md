@@ -510,3 +510,9 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 引理6.1同一全时域随机模型验收
 
 实际integer-horizon restriction/唯一性重叠一致→同一ceil(t)+1 global phase，在同一AE sample集上所有real T满足原积分方程，每time AEm且Ici路径连续；真实周期/physicalNoise模型每T>0 Nonempty-open可达接受。full-check01 17:03:22--17:04:30 +0800退出0，9047jobs/985audit/130inputs、8public全名覆盖、全部SHA一致、零Lean警告、仅基础三公理。适应性/生成元/遍历性/原Nonempty最终负责人及全CORE_SCOPEpending。下一原253--254/PDF274--275的H^l Lyapunov实际求导和真实界，先核验原中间系数疑点再推进正确主估计。
+
+## 2026-10-05 实际周期Hamiltonian-power Lyapunov完整接受
+
+- full-check01-LangevinLyapunov：2026-10-05T18:00:20.0624216+08:00--2026-10-05T18:07:24.8927420+08:00退出0；9049jobs、零Lean警告、1015audit基础三公理、132inputs/全部raw日志SHA256一致；30public全名覆盖。
+- actual H^l drift/Laplacian/正确factor2界与thermal、真正U upper/growth absorption→α=γl>0和δ>0实际构造；torus候选lift独立/连续/正性/动量coercivity/紧sublevel/逃逸atTop完整。原打印错误52>40 actual second derivative counter已验证，修正语义签核pending。
+- CH06-CLM-005/DEP-016/NOT-CH06-024--025接受实际analytical dependency；不计Markov generator识别、Harris Theorem6.2或全CORE_SCOPE完成。下一实际解causal history/restart，为后续Markov性补必要证明，负责人最终pending。

@@ -390,3 +390,7 @@ The periodic actual integral solution supplies the torus position integral equat
 ## 2026-10-05 全时域模型与不爆炸条件
 
 原单位周期C∞势能actual integer-lattice invariance推出global forceLip；auxiliary Rn模型的forceLip显式。实际同一标准Wiener、unit-mass/unit torus/finite Nc和任意γ/σ构造全非负时间模型；open可达需σ≠0/T>0/Nonempty，physicalNoise需γ>0/β>0。不输入global存在/不爆炸/finite-horizon一致或任何可测端点结论；适应性、强Markov、density/generator未计完成。
+
+## 2026-10-05 实际periodic Lyapunov条件
+
+单位质量/单位周期torus/finite Nc，实际C∞ integer-lattice periodic U，1≤U(q)，γ>0，positive integer l；physical σ=√(2γβ⁻¹)需β>0。U全局上界、H^l真实各阶导数、动量coercivity、torus紧sublevel/properness与δ漂移界均推导，不作为待证结论前提。generic σ²/2保留；原错误l(l+Nc−1)界用已核验的2l(l−1)+Nc*l替换并保持owner correction pending。literal smooth-lift differential expression与真实Markov generator的识别、适应性/密度及Harris遍历定理未计完成。

@@ -44,6 +44,12 @@ private theorem periodic_bound {Nc : ℕ} {E : Type*} [NormedAddCommGroup E]
   rw [hh]
   exact hM a ha
 
+/-- The genuine compact fundamental cube gives an actual global bound for the periodic potential. -/
+theorem textbookUnitPeriodicPotential_bound {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : Continuous U) (hP : textbookUnitPeriodicPotential U) :
+    ∃ M : ℝ, 0 ≤ M ∧ ∀ q, ‖U q‖ ≤ M :=
+  periodic_bound U hU hP
+
 /-- Actual Frechet differentiation preserves the true lattice invariance of a smooth potential. -/
 theorem textbookUnitPeriodicPotential_fderiv {Nc : ℕ}
     (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hP : textbookUnitPeriodicPotential U)

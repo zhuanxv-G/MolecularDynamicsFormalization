@@ -1,0 +1,92 @@
+{
+  "started_at": "2026-10-05T18:00:20.0624216+08:00",
+  "finished_at": "2026-10-05T18:07:24.8927420+08:00",
+  "jobs": 9049,
+  "audit_declarations": 1015,
+  "inputs": 132,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookUnitPeriodicPotential_bound",
+    "MolecularDynamics.textbookLangevinHamiltonian",
+    "MolecularDynamics.textbookLangevinHamiltonianPower",
+    "MolecularDynamics.textbookLangevinDifferentialOperator",
+    "MolecularDynamics.textbookLangevinLyapunov_printed_laplacian_bound_counterexample",
+    "MolecularDynamics.textbookLangevinHamiltonian_momentum_shift",
+    "MolecularDynamics.textbookLangevinHamiltonian_lower",
+    "MolecularDynamics.textbookLangevinHamiltonianPower_pos",
+    "MolecularDynamics.textbookLangevinHamiltonianPower_momentum_second",
+    "MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian",
+    "MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian_bound",
+    "MolecularDynamics.textbookLangevinHamiltonian_drift_hasDerivAt",
+    "MolecularDynamics.textbookLangevinHamiltonianPower_drift_hasDerivAt",
+    "MolecularDynamics.textbookLangevinHamiltonianPower_differentialOperator",
+    "MolecularDynamics.textbookLangevinHamiltonianPower_periodic_lyapunov",
+    "MolecularDynamics.textbookLangevinHamiltonianPower_contDiff",
+    "MolecularDynamics.textbookLangevinHamiltonianPower_momentum_coercive",
+    "MolecularDynamics.textbookLangevinPeriodicProjection_isOpenQuotientMap",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_lift",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_pos",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_momentum_coercive",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_isCompact_sublevel",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_tendsto_atTop",
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_lyapunov",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_operator_lift",
+    "MolecularDynamics.textbookLangevinLyapunov_physical_diffusion_coefficient",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_physical_lyapunov"
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinLyapunov.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "fea9ca3db4656bf7036afdafb59c86d6609573f3f2dc9e8641dc5b0b737533e1",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "4b9c7d6499abd7ef9aa9fed8170029aa3a3581e2493b79cdde7761672bffbe1a",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinPeriodicLyapunov.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "cd3301541f24332879fffcf538fb0ea371196bf2402f701d10c1260f9b87edc3",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "82e4ba89219b6bf46779a834a0f4d5a00eea59372decb131e017bcdd11728b6a",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "7f981a7eb52b3d778625261940ac3af56ae2a11376aa3822cda80a0ef65b5eff",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "e20b219e9e7f9e58c78148ae6967cc6156c0a77415d9ac3fb850dd16d466474a",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    }
+  ],
+  "hash_scope_note": "CHECK_REPORT uses exact working-tree bytes. Git staged blobs normalize CRLF to LF; all staged Lean/check text verified identical after that normalization."
+}
