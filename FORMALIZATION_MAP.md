@@ -742,3 +742,8 @@ BrownianHilbertCore统一验收：full-check01 passed：9065 jobs/1237公理声�
 BrownianSmoothDomain.lean：真实coordinate partial与literal generator线性，全smooth periodic Submodule及generator endomorphism；同一Gibbs L² LinearMap/injective/range/unique lift→实际domain operator，其原generator一致、Dirichlet、domain全pair对称/nonpositive/常数zero norm-one均证明。local04零诊断，统一验收进行中。density/closed selfadjoint/discrete spectrum/gap/actual semigroup未完成，负责人pending。
 
 BrownianSmoothDomain统一验收：full-check01 passed：9066 jobs/1259公理声明/149exact输入；10checks退出0，全部input/rawlog SHA256匹配，22public逐名仅基础三公理，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人semanticpending。
+
+## 2026-10-06 Brownian实际smooth periodic Gibbs L² domain稠密性
+BrownianSmoothDensity.lean：actual Fourier Euclidean lift C∞、complex fullspan dense与real-part onto→real smooth torus连续函数dense；integer quotient translation及original representative给full smooth periodic lift/descent；sameµ continuous-to-L² actualCLM/denseRange与AE bridge推出原actual domain dense/closure=top。local03零诊断，统一验收进行中。不是finite Fourier模型；closed selfadjoint/spectrum/gap/semigroup仍未完成；负责人pending。
+
+BrownianSmoothDensity统一验收：full-check01 passed：9067jobs/1275公理声明/150exact inputs；10checks退出0，全部input/rawlog SHA256匹配，16public逐名只基础三公理，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人semanticpending。

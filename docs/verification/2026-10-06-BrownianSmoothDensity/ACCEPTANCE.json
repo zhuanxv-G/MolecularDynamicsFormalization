@@ -1,0 +1,167 @@
+{
+  "started_at": "2026-10-06T01:30:37.1863425+08:00",
+  "finished_at": "2026-10-06T01:33:07.3058300+08:00",
+  "head_at_check": "18aaa1113e9e65269517362a2546cc67ef4c37cd",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9067,
+  "audit_declarations": 1275,
+  "inputs": 150,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookTorusFourier_lift_contDiff",
+    "MolecularDynamics.textbookSmoothTorusComplexSpace",
+    "MolecularDynamics.textbookFourierSpan_le_smoothTorusComplex",
+    "MolecularDynamics.textbookSmoothTorusComplexSpace_dense",
+    "MolecularDynamics.textbookTorusContinuousRealPart",
+    "MolecularDynamics.textbookTorusContinuousRealPart_surjective",
+    "MolecularDynamics.textbookSmoothTorusReal_dense",
+    "MolecularDynamics.textbookConfigurationTorusProjection_integer_translate",
+    "MolecularDynamics.textbookSmoothTorusRealLift",
+    "MolecularDynamics.textbookSmoothTorusRealLift_observable",
+    "MolecularDynamics.textbookGibbsContinuousToLp",
+    "MolecularDynamics.textbookGibbsContinuousToLp_ae_eq",
+    "MolecularDynamics.textbookGibbsContinuousToLp_denseRange",
+    "MolecularDynamics.textbookSmoothTorusRealLift_toLp",
+    "MolecularDynamics.textbookBrownianGibbsSmoothDomain_dense",
+    "MolecularDynamics.textbookBrownianGibbsSmoothDomain_closure_eq_top"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookTorusFourier_lift_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookSmoothTorusComplexSpace",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierSpan_le_smoothTorusComplex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookSmoothTorusComplexSpace_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusContinuousRealPart",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusContinuousRealPart_surjective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookSmoothTorusReal_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusProjection_integer_translate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookSmoothTorusRealLift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookSmoothTorusRealLift_observable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToLp_ae_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToLp_denseRange",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookSmoothTorusRealLift_toLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSmoothDomain_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSmoothDomain_closure_eq_top",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_inputs_sha256_verified": true,
+  "lean_warning_count": 0,
+  "machine_check": "passed",
+  "responsible_semantic_review": "pending",
+  "fixed_lean": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "fixed_mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "report": "docs/verification/2026-10-06-BrownianSmoothDensity/full-check01/CHECK_REPORT.json",
+  "remaining": "Closed selfadjoint realization, compact resolvent/discrete spectrum, Poincare gap and actual semigroup expectation; full Theorem6.1 and CORE_SCOPE unfinished."
+}

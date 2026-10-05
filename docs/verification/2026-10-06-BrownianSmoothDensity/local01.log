@@ -1,0 +1,56 @@
+MolecularDynamics/Chapter06/BrownianSmoothDensity.lean:18:30: error: `simp` made no progress
+MolecularDynamics/Chapter06/BrownianSmoothDensity.lean:29:15: error: Type mismatch
+  contDiff_const
+has type
+  ContDiff ?m.25 ?m.33 fun x => ?m.34
+but is expected to have type
+  0 ∈ {f | ContDiff ℝ ∞ fun q => f (textbookConfigurationTorusProjection q)}
+MolecularDynamics/Chapter06/BrownianSmoothDensity.lean:32:10: error: Application type mismatch: The argument
+  hf
+has type
+  f ∈ {f | ContDiff ℝ ∞ fun q => f (textbookConfigurationTorusProjection q)}
+but is expected to have type
+  ContDiff ?m.44 ?m.52 ?m.53
+in the application
+  ContDiff.add hf
+MolecularDynamics/Chapter06/BrownianSmoothDensity.lean:35:10: error: Application type mismatch: The argument
+  hf
+has type
+  f ∈ {f | ContDiff ℝ ∞ fun q => f (textbookConfigurationTorusProjection q)}
+but is expected to have type
+  ContDiff ?m.61 ?m.69 ?m.74
+in the application
+  ContDiff.const_smul c hf
+MolecularDynamics/Chapter06/BrownianSmoothDensity.lean:59:2: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Semiring (UnitAddTorus (Fin Nc))
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+MolecularDynamics/Chapter06/BrownianSmoothDensity.lean:59:2: error: Application type mismatch: The argument
+  Complex.reCLM
+has type
+  ℂ →L[ℝ] ℝ
+but is expected to have type
+  ?m.16 →L[UnitAddTorus (Fin Nc)] ?m.18
+in the application
+  ContinuousLinearMap.compLeftContinuous (UnitAddTorus (Fin Nc)) α✝ Complex.reCLM
+MolecularDynamics/Chapter06/BrownianSmoothDensity.lean:65:71: error: Application type mismatch: The argument
+  f
+has type
+  C(UnitAddTorus (Fin Nc), ℝ)
+of sort `Type` but is expected to have type
+  Type ?u.7
+of sort `Type (?u.7 + 1)` in the application
+  @ContinuousLinearMap.compLeftContinuous (UnitAddTorus (Fin Nc)) ?m.9 ?m.10 ?m.11 ?m.12 ?m.13 ?m.14 ?m.15 ?m.16 ?m.17
+    ?m.18 ?m.19 ?m.20 ?m.21 f
+MolecularDynamics/Chapter06/BrownianSmoothDensity.lean:65:10: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Semiring (UnitAddTorus (Fin Nc))
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+MolecularDynamics/Chapter06/BrownianSmoothDensity.lean:78:36: error: Application type mismatch: The argument
+  hf
+has type
+  f ∈ ↑(textbookSmoothTorusComplexSpace Nc)
+but is expected to have type
+  ContDiff ℝ ?m.67 ?m.69
+in the application
+  ContDiff.comp (ContinuousLinearMap.contDiff Complex.reCLM) hf

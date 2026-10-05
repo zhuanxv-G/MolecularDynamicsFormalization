@@ -436,3 +436,6 @@ same finite unit torus/actual Gibbs probability，real periodic continuous obs�
 
 ## 2026-10-06 BrownianSmoothDomain实际条件
 实际有限unit torus与同一Gibbs Hilbert L²，U C∞/整数periodic；domain是所有C∞周期实lift的真embedding.range，单射已推导。任意diagonal m；β≠0给Dirichlet/symmetry，β>0/各m_i>0给nonpositive。没有假设domain density、operator closure/selfadjointness、gap或任意谱结论。C∞ core不冒充原C²闭算子。
+
+## 2026-10-06 BrownianSmoothDensity实际条件
+Finite Nc，actual unit torus/同一normalized Gibbs measure，U C∞ integer periodic，β任意；所有C∞ periodic real lifts的genuine domain。actual compactness/概率性/weak regular和Fourier span dense来自已证明结果；没有附加density/谱/closure/selfadjoint/gap前提。质量不参与density。实际CM满射/AE身份及original quotient/lift都推导。
