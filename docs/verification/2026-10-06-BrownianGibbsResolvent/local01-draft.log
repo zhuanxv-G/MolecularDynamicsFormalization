@@ -1,0 +1,21 @@
+docs/verification/2026-10-06-BrownianGibbsResolvent/Draft.lean:52:24: error: unexpected token '('; expected ')', ',' or ':'
+docs/verification/2026-10-06-BrownianGibbsResolvent/Draft.lean:52:6: error: typeclass instance problem is stuck
+  InnerProductSpace ?m.173 ?m.174
+
+Note: Lean will not try to resolve this typeclass instance problem because the first, second, third, and fourth type arguments to `InnerProductSpace` are metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+docs/verification/2026-10-06-BrownianGibbsResolvent/Draft.lean:44:74: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+hβ : 0 < β
+z : ↥(textbookBrownianGibbsClosedOperator m U hU hPU β).graph
+hnonpos : ⟪(↑z).1, (↑z).2⟫_ℝ ≤ 0
+hinner : ‖(↑z).1‖ ^ 2 ≤ ⟪(↑z).1, (↑z).1 - (↑z).2⟫_ℝ
+hcs : ⟪(↑z).1, (↑z).1 - (↑z).2⟫_ℝ ≤ ‖(↑z).1‖ * ‖(↑z).1 - (↑z).2‖
+⊢ ‖(↑z).1‖ ≤ ‖(↑z).1 - (↑z).2‖

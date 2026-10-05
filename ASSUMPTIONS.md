@@ -499,3 +499,6 @@ Nc任意、原每个m_i>0、β>0、samewholeactualHaarLp2。原freqnonneg、真�
 
 ## 2026-10-06 BrownianGraphCompact条件
 Nc任意、原每m_i>0、U C∞整数周期、β>0，sameactualwholemass/HaarU/originalGibbsclosedgraphsubtype，productnorm inherited。actualboundedB/sameµ isometry/wholeclosedgraphiff/actualMasscompacttwo-sidedresolvent均由已验收原数据derived，不供给compact embedding或graph/domain/resolvent结论前提。真实generalU graph投影紧不等于一般U预解存在，后者仍需真实onto inverse证明。负责人C²core pending，完整正文定理未完成。
+
+## 2026-10-06 BrownianGibbsResolvent条件
+Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs measure/fullrealLp与actualfullsmoothgraphclosure。真实GibbsA nonpos/selfadj/closed及wholegraph compactprojection来自原已验收链；Srangeclosed、onto、inverse与Ractualcompact/norm均derived，没有graphnormbound/rangedensity/rangeorthogonal/onto/resolvent结论前提，没有模型替换或新regularity假设。C²test/C∞core负责人pending，原whole谱与evolution仍未完成。

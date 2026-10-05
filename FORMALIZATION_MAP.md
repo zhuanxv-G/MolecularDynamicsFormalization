@@ -847,3 +847,8 @@ full-check01 passed：9086 jobs/1619公理声明/169exact inputs；10checks退�
 BrownianGraphCompact9public local05空日志：actualmasswholegraph firstprojection=R.comp(fst−snd)；原generalU actualgraphiff与boundedB给Haarwholegraphprojection=R.comp(fst−snd+Bfst)紧；sameµ I×I真实整closedgraph传输和actualIinverse.comp(R.compT)给整个originalGibbs graphprojection紧。actualproductnorm inherited，未换成closed域L²norm。DEP052/NOT061 full中；actualgeneralU boundedinverse存在仍缺，不计generalU compactresolvent。
 
 full-check01 passed：9087 jobs/1628公理声明/170exact inputs；10checks退出0、全部input/rawlog SHA匹配、9 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 原一般U sameGibbs真正compactresolvent
+BrownianGibbsResolvent12public local05空日志：actualwholeclosedgraph shiftS=x−y，原nonpos→normcoercivity→Antilipschitz/closedrange；真实adjoint domain test和原sameµ selfadj/nonpos给rangeorthogbot，再actualrangeclosed/orthogonalprojection得真正onto。actualBanach inverse与真compactgraphprojection构造全sameGibbs boundedcompactR，真实全部x rightinversegraph/全closedgraphleftinverse/norm≤1，明确actualoriginalGibbscompacttwo-sidedresolvent。DEP053/NOT062 full中；完整谱/本征基/evolution与C²core签核仍缺。
+
+full-check01 passed：9088 jobs/1640公理声明/171exact inputs；10checks退出0、全部input/rawlog SHA匹配、12 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

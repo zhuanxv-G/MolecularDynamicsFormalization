@@ -1,0 +1,158 @@
+{
+  "started_at": "2026-10-06T07:53:37.3432186+08:00",
+  "finished_at": "2026-10-06T07:54:53.7166114+08:00",
+  "head_at_check": "7f137c6ae262b2962ee6bb002fc7aeeb67a7b982",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9088,
+  "audit_declarations": 1640,
+  "inputs": 171,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsClosedGraphShift",
+    "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_apply",
+    "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_norm_first",
+    "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_norm_graph",
+    "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_injective",
+    "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_range_eq_top",
+    "MolecularDynamics.textbookBrownianGibbsResolvent",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_mem_graph",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_inverse_graph",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_norm",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_isCompact",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_hasCompactResolvent"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedGraphShift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_norm_first",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_norm_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_range_eq_top",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_mem_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_inverse_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_hasCompactResolvent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "b1932f186c5e8d92d9490245da586e53925b0565a537487f00363e99be17d0a8"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "9612fbe8fd8c58ea7e2a6685d10e525711d6834c971e246618907f3be995a1db"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "6bf171dbb0441a679e8c437704a6a9dad52fcc47a0b55fa7d6f4d6fa0ccae577"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03-draft.log",
+      "sha256": "ded6e30b57455b1842cfd26ee94d6b55e875da62e51c86b057090ea61f36587a"
+    },
+    {
+      "path": "local04-formal.log",
+      "sha256": "b07bee55cd7b5e837e18ce2cc8f213911ac430d0cf88e71b7495852875dc0efb"
+    },
+    {
+      "path": "local05-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

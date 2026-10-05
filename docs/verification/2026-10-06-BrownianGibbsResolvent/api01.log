@@ -1,0 +1,36 @@
+IsClosed.completeSpace_coe.{u} {α : Type u} [UniformSpace α] [CompleteSpace α] {s : Set α} [hs : IsClosed s] :
+  CompleteSpace ↑s
+AntilipschitzWith.of_le_mul_dist.{u_1, u_2} {α : Type u_1} {β : Type u_2} [PseudoMetricSpace α] [PseudoMetricSpace β]
+  {K : NNReal} {f : α → β} : (∀ (x y : α), dist x y ≤ ↑K * dist (f x) (f y)) → AntilipschitzWith K f
+AntilipschitzWith.isClosed_range.{u_4, u_5} {α : Type u_4} {β : Type u_5} [PseudoEMetricSpace α] [EMetricSpace β]
+  [CompleteSpace α] {f : α → β} {K : NNReal} (hf : AntilipschitzWith K f) (hfc : UniformContinuous f) :
+  IsClosed (Set.range f)
+Submodule.orthogonal_eq_bot_iff.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] {K : Submodule 𝕜 E} [K.HasOrthogonalProjection] : Kᗮ = ⊥ ↔ K = ⊤
+Submodule.topologicalClosure_eq_self.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] (K : Submodule 𝕜 E) [FiniteDimensional 𝕜 ↥K] : K.topologicalClosure = K
+Submodule.mem_orthogonal.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] (K : Submodule 𝕜 E) (v : E) : v ∈ Kᗮ ↔ ∀ u ∈ K, inner 𝕜 u v = 0
+ContinuousLinearEquiv.ofBijective.{u_1, u_2, u_3, u_4} {𝕜 : Type u_1} {𝕜' : Type u_2} [NontriviallyNormedField 𝕜]
+  [NontriviallyNormedField 𝕜'] {σ : 𝕜 →+* 𝕜'} {E : Type u_3} [NormedAddCommGroup E] [NormedSpace 𝕜 E] {F : Type u_4}
+  [NormedAddCommGroup F] [NormedSpace 𝕜' F] {σ' : 𝕜' →+* 𝕜} [RingHomInvPair σ σ'] [RingHomIsometric σ]
+  [RingHomIsometric σ'] [CompleteSpace F] [CompleteSpace E] [RingHomInvPair σ' σ] (f : E →SL[σ] F) (hinj : (↑f).ker = ⊥)
+  (hsurj : (↑f).range = ⊤) : E ≃SL[σ] F
+LinearPMap.mem_adjoint_domain_of_exists.{u_1, u_2, u_3} {𝕜 : Type u_1} {E : Type u_2} {F : Type u_3} [RCLike 𝕜]
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] [NormedAddCommGroup F] [InnerProductSpace 𝕜 F] {T : E →ₗ.[𝕜] F}
+  [CompleteSpace E] (y : F) (h : ∃ w, ∀ (x : ↥T.domain), inner 𝕜 w ↑x = inner 𝕜 y (↑T x)) : y ∈ T.adjoint.domain
+LinearPMap.adjoint_apply_eq.{u_1, u_2, u_3} {𝕜 : Type u_1} {E : Type u_2} {F : Type u_3} [RCLike 𝕜]
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] [NormedAddCommGroup F] [InnerProductSpace 𝕜 F] {T : E →ₗ.[𝕜] F}
+  [CompleteSpace E] (hT : Dense ↑T.domain) (y : ↥T.adjoint.domain) {x₀ : E}
+  (hx₀ : ∀ (x : ↥T.domain), inner 𝕜 x₀ ↑x = inner 𝕜 (↑y) (↑T x)) : ↑T.adjoint y = x₀
+norm_inner_le_norm.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [SeminormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] (x y : E) : ‖inner 𝕜 x y‖ ≤ ‖x‖ * ‖y‖
+real_inner_self_eq_norm_sq.{u_3} {F : Type u_3} [SeminormedAddCommGroup F] [InnerProductSpace ℝ F] (x : F) :
+  inner ℝ x x = ‖x‖ ^ 2
+Prod.norm_def.{u_2, u_3} {E : Type u_2} {F : Type u_3} [Norm E] [Norm F] (x : E × F) : ‖x‖ = max ‖x.1‖ ‖x.2‖
+LinearMap.ker_eq_bot.{u_1, u_2, u_5, u_6} {R : Type u_1} {R₂ : Type u_2} {M : Type u_5} {M₂ : Type u_6} [Ring R]
+  [Ring R₂] [AddCommGroup M] [AddCommGroup M₂] [Module R M] [Module R₂ M₂] {τ₁₂ : R →+* R₂} {f : M →ₛₗ[τ₁₂] M₂} :
+  f.ker = ⊥ ↔ Function.Injective ⇑f
+LinearMap.range_eq_top.{u_1, u_2, u_5, u_6} {R : Type u_1} {R₂ : Type u_2} {M : Type u_5} {M₂ : Type u_6} [Semiring R]
+  [Semiring R₂] [AddCommMonoid M] [AddCommMonoid M₂] [Module R M] [Module R₂ M₂] {τ₁₂ : R →+* R₂}
+  [RingHomSurjective τ₁₂] {f : M →ₛₗ[τ₁₂] M₂} : f.range = ⊤ ↔ Function.Surjective ⇑f
