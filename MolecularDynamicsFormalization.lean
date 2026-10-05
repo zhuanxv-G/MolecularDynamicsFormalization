@@ -147,3 +147,5 @@ import MolecularDynamics.Chapter06.LangevinPeriodicCausalFlow
 
 import MolecularDynamics.Chapter06.WienerVectorFuture
 import MolecularDynamics.Chapter06.LangevinFutureLaw
+
+import MolecularDynamics.Chapter06.LangevinInitialState

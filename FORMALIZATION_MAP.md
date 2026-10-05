@@ -697,3 +697,6 @@ LangevinCausalFlow/PeriodicCausalFlow：actual Cpath history restriction与真�
 
 ## 2026-10-05 Theorem6.2 actual future Wiener law dependency（机器验收通过，语义pending）
 WienerVectorFuture/LangevinFutureLaw：实际future B(S+t)-B(S) Gaussian/isotropic covariance/连续、endpoint Gaussian pi、任意可数samples law、真正Cpath Borel law、整段future与整个Wiener和实际global Langevin/periodic历史独立、共同AE所有S/T真实segment/future restart、实际noise-history乘积law。17public完整验收9053/1054/136、零Lean警告与exact输入/日志SHA核验通过；负责人pending。joint初值/filtration/条件Markov/generator/density/Harris和CORE_SCOPE仍pending。
+
+## 2026-10-05 Theorem6.2 actual joint initial/path measurability（机器验收通过，语义pending）
+LangevinInitialState：从真正积分解推导同noise不同initial指数Gronwall、chosen endpoint初值uniform Lip和initial×Cpath joint连续可测；actual periodic initial/path联合连续经open quotient×id下降、无需代表可测性；random real/periodic initial endpoint AEm完整局部。9public完整验收9054/1063/137零警告及exact输入/日志SHA核验通过；conditional Markov/filtration/density/generator/Harris及负责人与CORE_SCOPEpending。

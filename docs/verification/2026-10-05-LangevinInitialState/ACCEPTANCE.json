@@ -1,0 +1,128 @@
+{
+  "started_at": "2026-10-05T19:46:26.8720478+08:00",
+  "finished_at": "2026-10-05T19:49:17.8418311+08:00",
+  "head_at_check": "472d496400d3d60fad19ba9ddbe42c5c9e65a775",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9054,
+  "audit_declarations": 1063,
+  "inputs": 137,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinNoiseCompensated_initial_dist_le",
+    "MolecularDynamics.textbookLangevinIntegralSolution_initial_dist_le",
+    "MolecularDynamics.textbookLangevinPathEndpoint_initial_lipschitz",
+    "MolecularDynamics.textbookLangevinPathEndpoint_joint_continuous",
+    "MolecularDynamics.textbookLangevinPathEndpoint_joint_measurable",
+    "MolecularDynamics.textbookLangevinRandomInitial_endpoint_aemeasurable",
+    "MolecularDynamics.textbookLangevinPeriodicPathEndpoint_joint_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicPathEndpoint_joint_measurable",
+    "MolecularDynamics.textbookLangevinPeriodicRandomInitial_endpoint_aemeasurable"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinNoiseCompensated_initial_dist_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinIntegralSolution_initial_dist_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPathEndpoint_initial_lipschitz",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPathEndpoint_joint_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPathEndpoint_joint_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinRandomInitial_endpoint_aemeasurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPathEndpoint_joint_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPathEndpoint_joint_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRandomInitial_endpoint_aemeasurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinInitialState.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "611abd5a2097b4137a199a9b81e4832cdd005b42ce2f461bb2b36653e196df7a",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "34f34d734905f64ed204a83e9ef77f57d4ba017e8c7d32e2b7e820f6db524fda",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "4c59f39df9d7ee17ea357b4b70089b3943c94aed3ffcefd77dfeecc1b59bfd68",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "6455d375155fcf8d903dfb943256d8dc7cf8be7139b1ac0ad105e3ff92d428df",
+      "staged_equals_working_after_CRLF_to_LF": true
+    }
+  ]
+}

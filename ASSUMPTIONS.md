@@ -401,3 +401,6 @@ auxiliary real模型需C² U和真实global forceLip，实际periodic主模型�
 
 ## 2026-10-05 actual future Wiener law/历史独立依赖
 标准有限Nc vector Wiener定义的Gaussian/mean/covariance/AE连续；任意确定S≥0，真实continuous-path law horizon T≥0；auxiliary real Langevin需C² U/global forceLip/unit mass，任意γ/σ。实际future Gaussian law、与整个过去独立和history joint AEm均derived，不作假设；实际periodic全历史用同一投影模型，代表独立主模型沿用C∞lattice-periodic U。无stopping-time或strongMarkov陈述；completed filtration/适应性/随机初值joint连续、transition密度/actual generator/Harris未计完成。
+
+## 2026-10-05 actual initial/path联合可测依赖
+真正同一W积分解可用不同初值x/y，C² U与actual force globalLip、unit-mass finite Nc、T≥0/t∈[0,T]，任意γ/σ。periodic endpoint descent需实际C∞ lattice-periodic U及已接受任意rep独立，无需chosen rep连续/可测假设。随机初值AEm是明确必要输入，endpoint AEm/joint map均derived；可测性无需初值/noise独立假设。conditional Markov/filtration/generator/Harris未计完成。
