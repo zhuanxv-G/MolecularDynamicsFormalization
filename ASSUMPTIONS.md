@@ -340,3 +340,7 @@ SymmetricOperatorBCH: arbitrary possibly noncommuting real algebra R with Ring R
 ### Full actual noncommuting formal functional calculus (2026-10-05)
 
 FormalOperatorFunctionalCalculus uses arbitrary Ring R with Algebra real R, without commuting operators, nilpotence or analytic convergence. Actual zero-constant series provide the locally finite scalar functional calculus. Scalar exp/log inverse results are applied only over the commutative real source and transported by a genuinely proved noncommuting-target algebra homomorphism. True time reversal preserves the original multiplication order; actual opposite exponentials and palindrome products give full parity, without assuming an inverse or all-order evenness. This supersedes the prior full-inverse/parity gaps in the formal BCH batch. No scalar-stepsize convergence or analytic O(h4) bound is claimed.
+
+### Actual Langevin Hörmander computation (2026-10-05)
+
+LangevinHormander: actual finite-coordinate R^Nc position/momentum and actual coordinate negative derivative force of U, with identity mass as in (6.47). C2 U suffices for the actual bracket/span calculation; C infinity U proves smooth original seeds. Nonzero sigma is necessary for the full-rank family and is derived for sqrt(2 gamma theta) at positive gamma/theta. The proof uses no Hessian rank, bracket result or spanning assumption. Toroidal charts, SDE existence, hypoelliptic density regularity and Wiener-support accessibility are separate.

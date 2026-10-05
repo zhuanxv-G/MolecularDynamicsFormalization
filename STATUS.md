@@ -466,3 +466,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 命题7.1全阶形式互逆与偶性验收
 
 - FormalOperatorFunctionalCalculus全阶形式链接受，待本地保存。full-check01/session92168：2026-10-05T12:03:40.4808961+08:00--2026-10-05T12:08:18.5773208+08:00退出0；9030 jobs、零Lean警告、832项审计声明仅propext/Classical.choice/Quot.sound、113项输入及全部原始日志SHA256实查一致，14项public全覆盖。原297/PDF318真实非交换两全阶exp/log逆、actual S5=exp(XG)、palindrome inverse、log时间奇性和全部odd generator修正消失机器完整；结合e3197ea原L2/X4余项，Prop7.1形式解释完整。无界算子的analytic BCH可用/余项及负责人语义仍pending，整个CORE_SCOPE未完成。下一原255/PDF276已目视的Langevin真实Hörmander括号/有限族独立与point span；正概率可达Lemma6.1另行pending。
+
+## 2026-10-05 Langevin正文实际Hörmander验收
+
+- LangevinHormander真实括号张成接受，待本地保存。full-check01/session14192：2026-10-05T12:18:35.9362802+08:00--2026-10-05T12:20:19.9437651+08:00退出0；9031 jobs、零Lean警告、843项审计声明仅基础三公理、114项输入和全部原始日志SHA256实查一致，11项public全覆盖。原255/PDF276目视，actual negative partial gradient/真正C∞ seed/真实fderiv bracket/原2Nc有限族独立/全pointspan与sqrt物理噪声条件全部接受。负责人及整个CORE_SCOPEpending；Lemma6.1正概率可达和Wiener支持/解路径连续依赖未证明。原续256/PDF277已目视，下一必要LangevinControlPath.lean构造实际光滑控制路径与端点，不以噪声支持或可达性作为前提。
