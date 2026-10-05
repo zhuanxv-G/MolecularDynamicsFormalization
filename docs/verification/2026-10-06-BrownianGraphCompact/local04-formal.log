@@ -1,0 +1,72 @@
+MolecularDynamics/Chapter06/BrownianGraphCompact.lean:80:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a - ?b - ?c
+in the target expression
+  (textbookHaarMassFourierOperator m hm β hβ)
+      ((↑z).1 - ((↑z).2 - (textbookBrownianHaarPotentialOperator m U hU hPU β) (↑z).1)) =
+    (↑z).1
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+P : Submodule ℝ (↥(Lp ℝ 2 volume) × ↥(Lp ℝ 2 volume)) :=
+  (textbookBrownianHaarGroundStateClosedOperator m U hU hPU β).graph
+F : ↥P →L[ℝ] ↥(Haar Nc) := ContinuousLinearMap.fst ℝ ↥(Haar Nc) ↥(Haar Nc) ∘SL P.subtypeL
+G : ↥P →L[ℝ] ↥(Haar Nc) := ContinuousLinearMap.snd ℝ ↥(Haar Nc) ↥(Haar Nc) ∘SL P.subtypeL
+T : ↥P →L[ℝ] ↥(Haar Nc) := F - G + textbookBrownianHaarPotentialOperator m U hU hPU β ∘SL F
+z : ↥(textbookBrownianHaarGroundStateClosedOperator m U hU hPU β).graph
+hg :
+  ((↑z).1, (↑z).2 - (textbookBrownianHaarPotentialOperator m U hU hPU β) (↑z).1) ∈
+    (textbookHaarMassClosedOperator m β).graph
+hi :
+  (textbookHaarMassFourierOperator m hm β hβ)
+      ((↑z).1 - ((↑z).2 - (textbookBrownianHaarPotentialOperator m U hU hPU β) (↑z).1)) =
+    (↑z).1
+⊢ (↑z).1 =
+    (textbookHaarMassFourierOperator m hm β hβ)
+      ((↑z).1 - (↑z).2 + (textbookBrownianHaarPotentialOperator m U hU hPU β) (↑z).1)
+MolecularDynamics/Chapter06/BrownianGraphCompact.lean:137:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a - ?b - ?c
+in the target expression
+  (textbookHaarMassFourierOperator m hm β hβ)
+      (I (↑z).1 - (I (↑z).2 - (textbookBrownianHaarPotentialOperator m U hU hPU β) (I (↑z).1))) =
+    I (↑z).1
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+I : ↥(Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)) ≃ₗᵢ[ℝ] ↥(Lp ℝ 2 volume) :=
+  textbookGibbsHaarGroundStateIsometry U hU hPU β
+P : Submodule ℝ
+  (↥(Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)) × ↥(Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β))) :=
+  (textbookBrownianGibbsClosedOperator m U hU hPU β).graph
+F : ↥P →L[ℝ] ↥(Lp ℝ 2 volume) :=
+  ↑↑I ∘SL
+    ContinuousLinearMap.fst ℝ ↥(Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β))
+        ↥(Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)) ∘SL
+      P.subtypeL
+G : ↥P →L[ℝ] ↥(Lp ℝ 2 volume) :=
+  ↑↑I ∘SL
+    ContinuousLinearMap.snd ℝ ↥(Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β))
+        ↥(Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)) ∘SL
+      P.subtypeL
+T : ↥P →L[ℝ] ↥(Lp ℝ 2 volume) := F - G + textbookBrownianHaarPotentialOperator m U hU hPU β ∘SL F
+z : ↥(textbookBrownianGibbsClosedOperator m U hU hPU β).graph
+hg :
+  (I (↑z).1, I (↑z).2 - (textbookBrownianHaarPotentialOperator m U hU hPU β) (I (↑z).1)) ∈
+    (textbookHaarMassClosedOperator m β).graph
+hi :
+  (textbookHaarMassFourierOperator m hm β hβ)
+      (I (↑z).1 - (I (↑z).2 - (textbookBrownianHaarPotentialOperator m U hU hPU β) (I (↑z).1))) =
+    I (↑z).1
+⊢ (textbookBrownianGibbsClosedGraphProjection m U hU hPU β) z =
+    (↑↑I.symm ∘SL textbookHaarMassFourierOperator m hm β hβ ∘SL T) z

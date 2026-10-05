@@ -496,3 +496,6 @@ Nc任意、所有原质量m_i>0、β>0；actualsamewholecomplex/realHaarLp2。�
 
 ## 2026-10-06 BrownianMassResolvent条件
 Nc任意、原每个m_i>0、β>0、samewholeactualHaarLp2。原freqnonneg、真实r代数/closedness/fullsmoothgraph/frequencycoef关系与actualRcompact均来自原算子已证链。没有实值保持、resolvent、domain对应、graphlimit、inverse结论前提；任意x与整个原closedgraph双向对应真derived。U0质量部分只为原generalU必要依赖；generalU compact/full谱未完成。C²/core最终负责人pending。
+
+## 2026-10-06 BrownianGraphCompact条件
+Nc任意、原每m_i>0、U C∞整数周期、β>0，sameactualwholemass/HaarU/originalGibbsclosedgraphsubtype，productnorm inherited。actualboundedB/sameµ isometry/wholeclosedgraphiff/actualMasscompacttwo-sidedresolvent均由已验收原数据derived，不供给compact embedding或graph/domain/resolvent结论前提。真实generalU graph投影紧不等于一般U预解存在，后者仍需真实onto inverse证明。负责人C²core pending，完整正文定理未完成。

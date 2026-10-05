@@ -842,3 +842,8 @@ full-check01 passed：9085 jobs/1614公理声明/168exact inputs；10checks退�
 BrownianMassResolvent5public local03空日志：truecomplex Fourier series的realpart smoothpoly同时graphlimit证明全x (Rx,Rx−x)∈实际MassClosed.graph；再真closedgraphcoef推导actualJRxcoef，再证明全部closedgraph R(x−y)=x/真实range=整个closeddomain，真实compactCLM由此identified为原质量双向resolvent。DEP051/NOT060 full中；generalU compact/full谱/semigroup仍缺。
 
 full-check01 passed：9086 jobs/1619公理声明/169exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 原sameGibbs wholeclosedgraph紧嵌入
+BrownianGraphCompact9public local05空日志：actualmasswholegraph firstprojection=R.comp(fst−snd)；原generalU actualgraphiff与boundedB给Haarwholegraphprojection=R.comp(fst−snd+Bfst)紧；sameµ I×I真实整closedgraph传输和actualIinverse.comp(R.compT)给整个originalGibbs graphprojection紧。actualproductnorm inherited，未换成closed域L²norm。DEP052/NOT061 full中；actualgeneralU boundedinverse存在仍缺，不计generalU compactresolvent。
+
+full-check01 passed：9087 jobs/1628公理声明/170exact inputs；10checks退出0、全部input/rawlog SHA匹配、9 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

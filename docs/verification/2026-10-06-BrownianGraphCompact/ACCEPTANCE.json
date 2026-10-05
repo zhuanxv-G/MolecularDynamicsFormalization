@@ -1,0 +1,127 @@
+{
+  "started_at": "2026-10-06T07:42:50.3595577+08:00",
+  "finished_at": "2026-10-06T07:48:59.6934861+08:00",
+  "head_at_check": "33c662ab1c34c16c2fde984c1e39b7cd185ee007",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9087,
+  "audit_declarations": 1628,
+  "inputs": 170,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookHaarMassClosedGraphProjection",
+    "MolecularDynamics.textbookHaarMassClosedGraphProjection_apply",
+    "MolecularDynamics.textbookHaarMassClosedGraphProjection_isCompact",
+    "MolecularDynamics.textbookBrownianHaarClosedGraphProjection",
+    "MolecularDynamics.textbookBrownianHaarClosedGraphProjection_apply",
+    "MolecularDynamics.textbookBrownianHaarClosedGraphProjection_isCompact",
+    "MolecularDynamics.textbookBrownianGibbsClosedGraphProjection",
+    "MolecularDynamics.textbookBrownianGibbsClosedGraphProjection_apply",
+    "MolecularDynamics.textbookBrownianGibbsClosedGraphProjection_isCompact"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedGraphProjection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedGraphProjection_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedGraphProjection_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarClosedGraphProjection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarClosedGraphProjection_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarClosedGraphProjection_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedGraphProjection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedGraphProjection_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedGraphProjection_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "e4d91ad9459cb021c0ca8770006a4c5234af7617f8a0a6ffbcd0a8809feca908"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "22a433ac31df4990da0e6edb67a14fb74f1c98ae9af53b036b5f58630e4f5277"
+    },
+    {
+      "path": "local02-formal.log",
+      "sha256": "06fad6297de0d4b284652f990f6963cd13114276b62c595f4f7d920abb612ee3"
+    },
+    {
+      "path": "local03-formal.log",
+      "sha256": "76b5ca88681af019a6063552f368617d012a22c442ef8eb835b636c9d8b17754"
+    },
+    {
+      "path": "local04-formal.log",
+      "sha256": "dc54c7627ab08681dc0d53ff2287b6ad0f241f496cb5acf49b75cbd4aaa45a93"
+    },
+    {
+      "path": "local05-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

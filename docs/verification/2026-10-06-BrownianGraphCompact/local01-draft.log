@@ -1,0 +1,11 @@
+docs/verification/2026-10-06-BrownianGraphCompact/Draft.lean:41:4: error: 'change' tactic failed, pattern
+  (↑z).1 = (textbookHaarMassFourierOperator m hm β hβ) ((↑z).1 - (↑z).2)
+is not definitionally equal to target
+  ↑↑((textbookHaarMassClosedGraphProjection m β) z) =ᵐ[volume] ↑↑((textbookHaarMassFourierOperator m hm β hβ ∘SL S) z)
+docs/verification/2026-10-06-BrownianGraphCompact/Draft.lean:73:8: error: (kernel) deterministic timeout
+docs/verification/2026-10-06-BrownianGraphCompact/Draft.lean:127:4: error: 'change' tactic failed, pattern
+  (↑z).1 = I.symm (I (↑z).1)
+is not definitionally equal to target
+  ↑↑((textbookBrownianGibbsClosedGraphProjection m U hU hPU β) z) =ᵐ[textbookConfigurationTorusGibbsMeasure U β]
+    ↑↑((↑↑I.symm ∘SL textbookBrownianHaarClosedGraphProjection m U hU hPU β ∘SL gibbsGraph_to_haar m U hU hPU β ⋯) z)
+docs/verification/2026-10-06-BrownianGraphCompact/Draft.lean:117:8: error: (kernel) unknown constant 'MolecularDynamics.textbookBrownianHaarClosedGraphProjection_isCompact'
