@@ -382,3 +382,7 @@ The periodic actual integral solution supplies the torus position integral equat
 ## 2026-10-05 指定区间实际Langevin存在模型
 
 全局forceLip辅助模型的力场条件显式；周期主结论由C∞势能实际integer-lattice invariance推出globalLip。只需W ContinuousOn(Icc0T)、W0=0、T≥0；无需W导数、给定解、延拓或有界轨迹前提。unit mass/unit torus/finite Nc；随机模型AEmeas和适应性未计完成。
+
+## 2026-10-05 实际随机积分解模型条件
+
+只输入真实标准vector Wiener定义、C∞周期势能实际lattice invariance、unit-mass/unit torus/finite Nc、T≥0；真实R^n auxiliary模型force globalLip显式，周期主结论由compact cube证明推导。概率可达需T>0/σ≠0/Nonempty-open，physicalNoise需γ>0/β>0。实际随机解存在和每timeendpoint AEm、路径AEm、唯一/连续依赖及管支持均已证明而非前提；全时域一致/适应性/生成元未计完成。

@@ -502,3 +502,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 周期Langevin真实连续驱动解存在验收
 
 实际统一local Picard长度与有限拼接证明指定区间解存在；真实ContinuousOn rough noise projIcc延拓/FTC得原q/p Bochner方程，C∞周期势能derived Lip给实际periodic积分解存在。full-check01 2026-10-05T16:16:30.6860309+08:00--16:18:52.3356153+08:00退出0，9043jobs/957audit/126inputs、4public逐名覆盖、零Lean警告、仅基础三公理和全部SHA一致。随机AEmeas/适应性和全CORE_SCOPE/负责人仍pending；下一continuous path→actual selected endpoint连续性及真Wiener随机模型。
+
+## 2026-10-05 引理6.1真实可测随机模型与周期可达验收
+
+真实selected积分解/endpoint Lipschitz与唯一性、标准vector Wiener whole Cpath AEmeas、literal Wiener noise AE全interval相同、actual随机积分解及逐timeendpoint AEm和周期Nonempty-open/physicalNoise可达接受；没有解存在或可测终点结论前提。full-check01 16:41:20--16:46:37 +0800退出0，9046jobs/977audit/129inputs、20public全名覆盖、全部SHA一致、零Lean警告和仅基础三公理。下一统一所有finite horizon的actual单一随机过程；适应性/生成元/遍历性、Nonempty修正负责人和CORE_SCOPE仍pending。

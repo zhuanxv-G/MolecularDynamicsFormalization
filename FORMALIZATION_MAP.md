@@ -678,3 +678,7 @@ Printed255--256/PDF276--277: Chapter06/WienerPathLaw.lean proves genuine countab
 ## 2026-10-05 连续噪声实际指定区间解存在
 
 LangevinDrivenExistence.lean 与既有真实field Lipschitz导出：统一Picard长度/有限拼接接点真实导数、projIcc连续噪声延拓、FTC还原实际q/p积分方程、真实周期势能derived Lip给periodic积分解存在。full9043/957/126，4public零警告；AE随机模型/适应性及最终语义签核pending。
+
+## 2026-10-05 实际Cpath解映射与周期可测随机模型
+
+LangevinPathSolution/WienerVectorContinuousPath/LangevinRandomSolution：实际chosen q/p与Gronwall导出endpoint Lipschitz/连续及同噪声唯一性；真实标准Wiener Cpath AEm与AE原noise一致，actual随机积分解/逐timephase AEm；C∞周期势能真实构造模型并得Nonempty-open/physicalNoise概率可达。full9046/977/129，20public零警告。全时域一致/适应性及最终语义签核pending。

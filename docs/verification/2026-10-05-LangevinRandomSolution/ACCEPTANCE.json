@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-10-05T16:41:20.9141743+08:00",
+  "finished_at": "2026-10-05T16:46:37.0266424+08:00",
+  "jobs": 9046,
+  "audit_declarations": 977,
+  "inputs": 129,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPathNoise",
+    "MolecularDynamics.textbookLangevinPathNoise_continuous",
+    "MolecularDynamics.textbookLangevinPathNoise_zero",
+    "MolecularDynamics.textbookLangevinPathSolution",
+    "MolecularDynamics.textbookLangevinPathSolution_integralSolution",
+    "MolecularDynamics.textbookLangevinPathEndpoint",
+    "MolecularDynamics.textbookLangevinPathEndpoint_lipschitz",
+    "MolecularDynamics.textbookLangevinPathEndpoint_continuous",
+    "MolecularDynamics.textbookLangevinIntegralSolution_unique_globalLip",
+    "MolecularDynamics.textbookWienerVectorContinuousPath",
+    "MolecularDynamics.textbookWienerVectorContinuousPath_eval",
+    "MolecularDynamics.textbookWienerVectorContinuousPath_aemeasurable",
+    "MolecularDynamics.textbookWienerVectorContinuousPath_noise_ae",
+    "MolecularDynamics.textbookLangevinRandomSolution",
+    "MolecularDynamics.textbookLangevinRandomSolution_integralSolution_ae",
+    "MolecularDynamics.textbookLangevinRandomSolution_endpoint_aemeasurable",
+    "MolecularDynamics.textbookLangevinRandomSolution_open_pos",
+    "MolecularDynamics.textbookLangevinPeriodicRandomSolution_exists",
+    "MolecularDynamics.textbookLangevinPeriodicRandomSolution_exists_open_pos",
+    "MolecularDynamics.textbookLangevinPeriodicRandomSolution_physicalNoise_exists_open_pos"
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "responsible_semantic_review": "pending"
+}
