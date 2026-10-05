@@ -430,3 +430,6 @@ CanonicalIntegrationByParts derives the full-space Gibbs integration-by-parts id
 
 ## 2026-10-06 BrownianTorusGibbs真实模型
 unit torus=UnitAddTorus(FinNc)，normalized circle Haar=AddCircle.haarAddCircle且Pi product；projection fromfull realcube不是替换域。可测代表由actual measurableEquivPiIoc，不是随意quotient choice。U C∞且integer-lattice invariant推实际ρ integrability/normalization，βany的Gibbs概率性真正已证；periodic smooth f/g actualBrownian same generaldiagonal masses；β≠0/β,m正条件沿用原真实Dirichlet/nonpositive。Haar default mass T与normalized convention在T1由definition true equality处理。无compact support real-lift特例，无actualsemigroup invariance/closed selfadjoint conclusion。
+
+## 2026-10-06 BrownianHilbertCore实际条件
+same finite unit torus/actual Gibbs probability，real periodic continuous obs真continuous quotient，chosen representative只measurable；actual MemLp2与sameµ AE解释已推导。U C∞/integer periodic，f/g连续嵌入在Continuous+periodicity，generator在C∞；all diagonal masses。真正HilbertL2 inner/norm回到same canonical cube integral，actualdensity/fullsupport与embedding injectivity推导。L² eigen要求same实际image=ℓactualvector/nonzerovector，非谱结论作假设。β/m正及β≠0只在对应结论；实际unbounded domain/closed谱/gap/semigroup未证。

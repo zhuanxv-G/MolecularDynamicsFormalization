@@ -1,0 +1,220 @@
+{
+  "started_at": "2026-10-06T00:42:34.2024632+08:00",
+  "finished_at": "2026-10-06T00:45:50.4126603+08:00",
+  "head_at_check": "46b9b86a1047aa490e7ccd1981add5a973c28745",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9065,
+  "audit_declarations": 1237,
+  "inputs": 148,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationTorusProjection_isOpenQuotientMap",
+    "MolecularDynamics.textbookConfigurationTorusObservable_continuous",
+    "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_memLp_two",
+    "MolecularDynamics.textbookConfigurationGibbsL2Observable",
+    "MolecularDynamics.textbookConfigurationGibbsL2Observable_ae_eq",
+    "MolecularDynamics.textbookConfigurationGibbsL2Observable_inner",
+    "MolecularDynamics.textbookConfigurationGibbsL2Observable_norm_sq",
+    "MolecularDynamics.textbookBrownianGibbsL2Image",
+    "MolecularDynamics.textbookBrownianGibbsL2Image_ae_eq",
+    "MolecularDynamics.textbookBrownianGibbsL2Image_dirichlet",
+    "MolecularDynamics.textbookBrownianGibbsL2Image_symmetric",
+    "MolecularDynamics.textbookBrownianGibbsL2Image_quadratic_nonpos",
+    "MolecularDynamics.textbookBrownianGibbsL2Image_real_eigenvalue_nonpos",
+    "MolecularDynamics.textbookBrownianGibbsL2Image_const",
+    "MolecularDynamics.textbookConfigurationGibbsL2Observable_one_norm",
+    "MolecularDynamics.textbookConfigurationGibbsL2Observable_one_ne_zero",
+    "MolecularDynamics.textbookConfigurationTorusHaar_absolutelyContinuous_gibbs",
+    "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_isOpenPosMeasure",
+    "MolecularDynamics.textbookConfigurationGibbsL2Observable_injective"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusProjection_isOpenQuotientMap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusObservable_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_memLp_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsL2Observable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsL2Observable_ae_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsL2Observable_inner",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsL2Observable_norm_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Image",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Image_ae_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Image_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Image_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Image_quadratic_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Image_real_eigenvalue_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Image_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsL2Observable_one_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsL2Observable_one_ne_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusHaar_absolutelyContinuous_gibbs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_isOpenPosMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsL2Observable_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_input_hashes_rechecked": true,
+  "all_check_log_hashes_rechecked": true,
+  "all_check_exit_codes_zero": true,
+  "lean_warning_count": 0,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/BrownianHilbertCore.lean",
+      "working_sha256": "e8678b044ca0c10694fb70809618938e59b8f0f77c863c88caf2797d71310c9f",
+      "staged_sha256": "bae2cc93e1568add84fc31e0c0a93b34447d098794220c5644c4865b2e38e9ed",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256": "5169916c4e34d3f4ba7009ee92245c47641f6a57b83617dd0cc6002e11bab07d",
+      "staged_sha256": "5c14c78778dd06fa94a199330daee39f66f210a40dafd41a997313c91b609b43",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256": "edf46c657b5ce7f4e30e6323002888fd0fb89f2587715bd8815f880bf9614de0",
+      "staged_sha256": "0d82fdf9d1e959eb8482fc62c7fb417fff537f98f88825856a9c6ee1917ca05e",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256": "4ea137ea981908ac39b8bd8fd5c17098cbe626f0ed9c967f5839d189fcf85b3e",
+      "staged_sha256": "0f266624068c2975ac967ba263401a1e2cb62329f5ab42d07226abcc1c956452",
+      "content_matches_after_crlf_normalization": true
+    }
+  ]
+}

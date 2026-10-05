@@ -732,3 +732,8 @@ BrownianDirichlet统一验收：full-check01 passed：9063 jobs/1193公理声明
 MolecularDynamics/Chapter06/BrownianTorusGibbs.lean，25public local05零诊断。真实full cube→normalized Haar measure-preserving map，实际可测representative及lattice descent，same partition positive finite，withDensity actual Gibbs probability/normalized weighted integral。原同一Brownian全质量Dirichlet/对称与nonpositive/weak stationarity已在actual Gibbs measure证明；formal closed selfadjoint/spectrum/gap/expectation未完成；统一验收进行中，负责人语义pending。
 
 BrownianTorusGibbs统一验收：full-check01 passed：9064 jobs/1218公理声明/147exact输入；10checks退出0，全部input/rawlog SHA256匹配，25public逐名审计仅propext/Classical.choice/Quot.sound，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人语义pending。
+
+## 2026-10-06 Brownian真实weighted Hilbert L2依赖
+MolecularDynamics/Chapter06/BrownianHilbertCore.lean，19public local05零诊断；same quotient continuity→actual MemLp2/toLp+AE→sameµ Hilbert inner/norm/generator image Dirichlet与nonpositive，actualL² real eigenvalue非正、constant zero/norm-one nonzero，positive density→fullsupport→injectivity。actual dense domain/closed selfadjoint/spectrum/gap/期望未完成；负责人语义pending，统一验收进行中。
+
+BrownianHilbertCore统一验收：full-check01 passed：9065 jobs/1237公理声明/148exact输入；10checks退出0，全部input/rawlog SHA256匹配，19public逐名审计仅propext/Classical.choice/Quot.sound，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人语义pending。
