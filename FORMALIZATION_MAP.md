@@ -694,3 +694,6 @@ LangevinGlobalRandomSolution.lean：actual restriction/EqOn积分转移与same-n
 ## 2026-10-05 实际因果历史与周期restart
 
 LangevinCausalFlow/PeriodicCausalFlow：actual Cpath history restriction与真实integral time shift/increment segment，解唯一→common AE全部real-time history/restart；实际periodic real lift唯一、endpoint任意代表独立、明确同一global periodic过程/原AE全T模型/逐time AEm。22public/full9051/1037/134。尚待future increments law/历史独立、joint初值可测/条件Markov、generator/transition密度及Harris正文定理；不按pathwise cocycle称Markov已完整。
+
+## 2026-10-05 Theorem6.2 actual future Wiener law dependency（机器验收通过，语义pending）
+WienerVectorFuture/LangevinFutureLaw：实际future B(S+t)-B(S) Gaussian/isotropic covariance/连续、endpoint Gaussian pi、任意可数samples law、真正Cpath Borel law、整段future与整个Wiener和实际global Langevin/periodic历史独立、共同AE所有S/T真实segment/future restart、实际noise-history乘积law。17public完整验收9053/1054/136、零Lean警告与exact输入/日志SHA核验通过；负责人pending。joint初值/filtration/条件Markov/generator/density/Harris和CORE_SCOPE仍pending。

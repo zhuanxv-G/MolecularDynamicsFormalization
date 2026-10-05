@@ -398,3 +398,6 @@ The periodic actual integral solution supplies the torus position integral equat
 ## 2026-10-05 actual causal/restart模型条件
 
 auxiliary real模型需C² U和真实global forceLip，实际periodic主模型是C∞整数格点周期U，周期唯一性由compact-cube bound导出Lip；unit-mass/unit-torus/finite Nc。actual标准vector Wiener、任意γ/σ、real horizons非负，noise history/segment是实际连续路径。不存在causal/restart/解唯一性结论前提；common AE全real参数证明来自同一连续zero-start样本与已接受all-time integral解。exceptional版本全路径事件不自动给逐点适应；Markov条件律/filtration/joint初值可测/密度/generator仍pending。
+
+## 2026-10-05 actual future Wiener law/历史独立依赖
+标准有限Nc vector Wiener定义的Gaussian/mean/covariance/AE连续；任意确定S≥0，真实continuous-path law horizon T≥0；auxiliary real Langevin需C² U/global forceLip/unit mass，任意γ/σ。实际future Gaussian law、与整个过去独立和history joint AEm均derived，不作假设；实际periodic全历史用同一投影模型，代表独立主模型沿用C∞lattice-periodic U。无stopping-time或strongMarkov陈述；completed filtration/适应性/随机初值joint连续、transition密度/actual generator/Harris未计完成。
