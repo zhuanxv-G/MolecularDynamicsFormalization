@@ -194,3 +194,5 @@ import MolecularDynamics.Chapter06.BrownianPotentialOperator
 import MolecularDynamics.Chapter06.BrownianPotentialSelfAdjoint
 
 import MolecularDynamics.Chapter06.BrownianFourierCompact
+
+import MolecularDynamics.Chapter06.BrownianMassResolvent

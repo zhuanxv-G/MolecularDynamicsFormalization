@@ -493,3 +493,6 @@ Nc任意、原质量m任意、原U C∞整数周期、β≠0，sameactualorigina
 
 ## 2026-10-06 BrownianFourierCompact条件
 Nc任意、所有原质量m_i>0、β>0；actualsamewholecomplex/realHaarLp2。真实frequency来自原massdifferential，real/complex HilbertBasis、权重bounds、cofinite decay、每个finiteCLM compact与norm convergence均derived。private条件tailbound在主limit中实际由finite bad-index推导，不供给compactness或resolvent前提。U0质量部分是一般原U compactresolvent必要依赖；本批仅actualcompactCLM，未称actualclosedmassresolvent。负责人pending，wholeTheorem6.1未完成。
+
+## 2026-10-06 BrownianMassResolvent条件
+Nc任意、原每个m_i>0、β>0、samewholeactualHaarLp2。原freqnonneg、真实r代数/closedness/fullsmoothgraph/frequencycoef关系与actualRcompact均来自原算子已证链。没有实值保持、resolvent、domain对应、graphlimit、inverse结论前提；任意x与整个原closedgraph双向对应真derived。U0质量部分只为原generalU必要依赖；generalU compact/full谱未完成。C²/core最终负责人pending。

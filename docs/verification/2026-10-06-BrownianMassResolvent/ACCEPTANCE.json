@@ -1,0 +1,83 @@
+{
+  "started_at": "2026-10-06T07:27:07.417771+08:00",
+  "finished_at": "2026-10-06T07:28:50.2189569+08:00",
+  "head_at_check": "041bab64dac76176d23adfb215d4cc0c49636769",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9086,
+  "audit_declarations": 1619,
+  "inputs": 169,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookHaarMassFourierOperator_mem_graph",
+    "MolecularDynamics.textbookHaarMassFourierOperator_coeff",
+    "MolecularDynamics.textbookHaarMassFourierOperator_inverse_graph",
+    "MolecularDynamics.textbookHaarMassFourierOperator_range",
+    "MolecularDynamics.textbookHaarMassClosedOperator_hasCompactResolvent"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookHaarMassFourierOperator_mem_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassFourierOperator_coeff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassFourierOperator_inverse_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassFourierOperator_range",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedOperator_hasCompactResolvent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "16705f18dbf06e98c6890b66da705ea9e18a812d8b933f792ac2c33260a8873f"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "242ddcde0e55db3a84df93c512aea594c4571fee03992cad93eb46c2cf8f1c7f"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "a9a2bda4b48479a71a0d9ce0c38b33b6ab8b8a352984515f4be228080ff48db3"
+    },
+    {
+      "path": "local03-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

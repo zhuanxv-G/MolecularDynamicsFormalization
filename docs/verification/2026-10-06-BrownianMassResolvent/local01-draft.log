@@ -1,0 +1,24 @@
+docs/verification/2026-10-06-BrownianMassResolvent/Draft.lean:47:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+docs/verification/2026-10-06-BrownianMassResolvent/Draft.lean:73:21: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑?r * ↑?s
+in the target expression
+  -↑(textbookMassFourierFrequency m β n) * ↑(textbookMassFourierInverseWeight m β n) *
+      UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) n =
+    ↑(textbookMassFourierInverseWeight m β n) * UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) n -
+      UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) n
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+β : ℝ
+hβ : 0 < β
+x : ↥(Lp ℝ 2 volume)
+z : ↥(Lp ℂ 2 volume) := (textbookHaarMassComplexFourierOperator m hm β hβ) ((textbookHaarL2Complexify Nc) x)
+w : ↥(Lp ℂ 2 volume) := z - (textbookHaarL2Complexify Nc) x
+n : Fin Nc → ℤ
+⊢ -↑(textbookMassFourierFrequency m β n) * ↑(textbookMassFourierInverseWeight m β n) *
+      UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) n =
+    ↑(textbookMassFourierInverseWeight m β n) * UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) n -
+      UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) n

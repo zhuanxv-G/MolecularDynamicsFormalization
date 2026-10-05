@@ -1719,3 +1719,9 @@ run_cmd do
 #print axioms MolecularDynamics.textbookHaarMassFourierOperator
 #print axioms MolecularDynamics.textbookHaarMassFourierOperator_norm
 #print axioms MolecularDynamics.textbookHaarMassFourierOperator_isCompact
+
+#print axioms MolecularDynamics.textbookHaarMassFourierOperator_mem_graph
+#print axioms MolecularDynamics.textbookHaarMassFourierOperator_coeff
+#print axioms MolecularDynamics.textbookHaarMassFourierOperator_inverse_graph
+#print axioms MolecularDynamics.textbookHaarMassFourierOperator_range
+#print axioms MolecularDynamics.textbookHaarMassClosedOperator_hasCompactResolvent

@@ -837,3 +837,8 @@ full-check01 passed：9084 jobs/1594公理声明/167exact inputs；10checks退�
 BrownianFourierCompact20public local08空日志：actualinverseweights/真实lpCLM/每个finiteCLM坐标及compact/wholeopnormlimitderivedfrom原frequencies，实际HilbertBasis onto传到全complexHaar并证明coeff/norm/compact；actualJ/R构成整个realHaar compactCLM。DEP050/NOT059 full中。尚未实际识别massClosed双向resolvent，原一般U compact/full谱仍未完成。
 
 full-check01 passed：9085 jobs/1614公理声明/168exact inputs；10checks退出0、全部input/rawlog SHA匹配、20 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 原质量闭包真实紧双向预解算子
+BrownianMassResolvent5public local03空日志：truecomplex Fourier series的realpart smoothpoly同时graphlimit证明全x (Rx,Rx−x)∈实际MassClosed.graph；再真closedgraphcoef推导actualJRxcoef，再证明全部closedgraph R(x−y)=x/真实range=整个closeddomain，真实compactCLM由此identified为原质量双向resolvent。DEP051/NOT060 full中；generalU compact/full谱/semigroup仍缺。
+
+full-check01 passed：9086 jobs/1619公理声明/169exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
