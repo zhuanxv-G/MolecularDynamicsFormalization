@@ -413,3 +413,6 @@ actual标准finite-dimensional vector Wiener；unit mass、finite Nc、S/T≥0�
 
 ## 2026-10-05 actual completed过滤与适应性条件
 finite Nc、unit mass/unit torus、真实标准vector Wiener、任意γ/σ、非负NNReal time。completed ambient为NullMeasurableSpace Ω P；每S过去由actual B(t),t≤S及全部原P-null subsets生成，不假设原Ω/原历史测度已complete。局部trim complete/AE一致、actual Cpath meas与同一全时间real/periodic解Adapted均derived。real auxiliary C² U/global forceLip显式，periodic C∞lattice U主结论derived Lip。未经证明right-continuous usual augmentation、completed-filtration conditional law/strongMarkov、progressive或实际generator；原样本与process不替换。
+
+## 2026-10-05 actual completed过去独立性依赖
+与真实completed Wiener过滤同一原P及actual B，不新增完成化独立性/联合law/可测性假设。原B为标准有限Nc vector Wiener、Cpath有原AE连续样本identity；F_S含所有原null subsets，其任一事件与actual Cpath history事件原P-AE相等。P.completion每集合概率与原P一致，真实未来独立从已接受Cpath law/history独立导出。actual real/periodic current state为已接受Adapted的同一过程；real C²/globalLip auxiliary，periodic original C∞lattice模型derivedLip。任意γ/σ、S≥0、T≥0 product law（Indep statement任意real T）；unit mass/torus/finite Nc。未宣称completed条件Markov/strongMarkov/progressive/generator/Harris。

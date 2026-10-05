@@ -1,0 +1,119 @@
+{
+  "started_at": "2026-10-05T21:26:21.8226687+08:00",
+  "finished_at": "2026-10-05T21:30:02.9447291+08:00",
+  "head_at_check": "af6a16e8520f03b12611bb1ba09f4983985db41d",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9058,
+  "audit_declarations": 1108,
+  "inputs": 141,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookWienerVectorCompletedFiltration_le_eventual_path",
+    "MolecularDynamics.textbookWienerVectorCompletedFiltration_event_ae_path",
+    "MolecularDynamics.textbookWienerVectorFuture_independent_completed_filtration",
+    "MolecularDynamics.textbookWienerVectorContinuousPath_completion_law",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_future_independent_current_completed",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_future_independent_current_completed",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_future_current_product_law_completed",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_future_current_product_law_completed"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookWienerVectorCompletedFiltration_le_eventual_path",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVectorCompletedFiltration_event_ae_path",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVectorFuture_independent_completed_filtration",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVectorContinuousPath_completion_law",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGlobalRandomPhase_future_independent_current_completed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_future_independent_current_completed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGlobalRandomPhase_future_current_product_law_completed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_future_current_product_law_completed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinCompletedHistory.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "2541c025c35623ff3b22b3619f444802d2a3dc37a7d42a22e3c2a2bb89c8f213",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "ef8c66829f87444f40e13ba281e00f3dd5f1bc32849d04597a616039e3e48d5c",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "463b6fe733d86e7d6ecb69ce79181e3a46cb6541ab766fc55baf722757d16336",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "de547b14f2ab22f69a2b35af34ce395eec0dabd28fa98b1f9202cff4f84da406",
+      "staged_equals_working_after_CRLF_to_LF": true
+    }
+  ]
+}

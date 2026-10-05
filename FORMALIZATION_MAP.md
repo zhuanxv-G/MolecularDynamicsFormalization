@@ -709,3 +709,6 @@ LangevinTransitionSemigroup：真正积分方程导出real/periodic endpoint零�
 
 ## 2026-10-05 Theorem6.2 actual completed Wiener filtration/适应性（机器验收通过，语义pending）
 LangevinFiltration：在原P的completion ambient上构造截至S的actual vector Wiener eval σ代数加全部原P-null sets；derived filtration单调/ambient le、past eval可测、local trim complete及与原P的整个AE filter一致。实际Cpath在local history可测经各evaluation/commonAE一致及complete trim的congr_ae、真实ContinuousMap Borel evaluation API推导；actual同一real/periodic global process Adapted，原C∞lattice U主结论derived forceLip。full-check01 2026-10-05T21:05:07.7047296+08:00--2026-10-05T21:11:39.3824305+08:00退出0；9057 jobs/零Lean警告/1100audit基础三公理/140inputs及全部raw SHA复核一致；11public逐名覆盖。无right-continuity或strongMarkov声明；completed-filter条件Markov/密度/actual generator/Harris及全CORE_SCOPE/负责人pending。
+
+## 2026-10-05 Theorem6.2 actual future独立于completed Wiener过去（机器验收通过，语义pending）
+LangevinCompletedHistory：F_S≤eventuallyMeasurableSpace(actual Cpath history comap)(ae P)，每完成化历史事件AE等于actual Cpath历史事件；实际future Cpath与全部completed F_S在P.completion下真正Indep。真实Cpath law completion=原P law；actual real/periodic current state来自Adapted，future/current独立及joint product law噪声边缘等于原Wiener Cpath law。full-check01退出0；9058 jobs/零Lean警告/1108audit基础三公理/141inputs及全部raw SHA复核一致；8public逐名覆盖。completed-filtration condDistrib恒等式/progressive/density/actual generator/Harris与全CORE_SCOPE/负责人仍pending；不声称strongMarkov/right-continuity。

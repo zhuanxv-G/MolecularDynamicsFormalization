@@ -155,3 +155,5 @@ import MolecularDynamics.Chapter06.LangevinTransitionKernel
 import MolecularDynamics.Chapter06.LangevinTransitionSemigroup
 
 import MolecularDynamics.Chapter06.LangevinFiltration
+
+import MolecularDynamics.Chapter06.LangevinCompletedHistory
