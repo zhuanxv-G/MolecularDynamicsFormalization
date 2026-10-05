@@ -442,3 +442,6 @@ Finite Nc，actual unit torus/同一normalized Gibbs measure，U C∞ integer pe
 
 ## 2026-10-06 BrownianClosedOperator实际条件
 实际finite unit torus/同一normalized Gibbs L²；U C∞ integerperiodic；arbitrary diagonal m，β≠0用于symmetry/closability/genuineclosed realization，β>0/各m_i>0用于nonpositive。actualdense/fullsupport/operatorinjectivity已证明；没有把closed extension、可闭性、graphclosure、closed-domain对称非正/selfadjoint/gap作为模型假设。最小closed-extension定理的S.IsClosed和T≤S是该最小性关系的正常量词前提，不参与原算子可闭性证明。闭包选择就是原smooth operator graph closure；selfadjoint仍缺独立证明。
+
+## 2026-10-06 BrownianGibbsBounds实际条件
+actualfinite unit torus/normalized Haar与sameµ，原U C∞ integerperiodic；βany，本批无mass限制。M是真原U descended ContinuousMap norm，所有weight/Z/densitybounds与integrability均derived，不带bounds/Poincare/gap/modelreplacement前提。g为torus连续实观测，积分比较时g非负，平方/norm比较自动非负。实际Hilbert norm²与weighted积分由sameµ AE identity证明。

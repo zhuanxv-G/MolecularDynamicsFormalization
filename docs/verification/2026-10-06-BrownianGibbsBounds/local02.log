@@ -1,0 +1,31 @@
+MolecularDynamics/Chapter06/BrownianGibbsBounds.lean:122:75: error(lean.invalidField): Invalid field `exp`: The environment does not contain `Continuous.exp`, so it is not possible to project the field `exp` from an expression
+  Continuous.mul continuous_const (textbookConfigurationTorusObservable_continuous U (ContDiff.continuous hU) hPU)
+of type
+  Continuous ((fun x => ?m.33) * textbookConfigurationTorusObservable U)
+MolecularDynamics/Chapter06/BrownianGibbsBounds.lean:174:2: error: Type mismatch: After simplification, term
+  textbookTorusGibbsIntegral_lower U hU hPU β (g ^ 2) fun Q => sq_nonneg (g Q)
+ has type
+  @LE.le ℝ Real.instLE
+    (Real.exp (-2 * textbookTorusPotentialScale U hU hPU β) * ∫ (Q : UnitAddTorus (Fin Nc)), (g ^ 2) Q)
+    (∫ (Q : UnitAddTorus (Fin Nc)), (g ^ 2) Q ∂textbookConfigurationTorusGibbsMeasure U β)
+but is expected to have type
+  @LE.le ℝ Real.instLE (Real.exp (-2 * textbookTorusPotentialScale U hU hPU β) * ∫ (Q : UnitAddTorus (Fin Nc)), g Q ^ 2)
+    (∫ (Q : UnitAddTorus (Fin Nc)), g Q ^ 2 ∂textbookConfigurationTorusGibbsMeasure U β)
+MolecularDynamics/Chapter06/BrownianGibbsBounds.lean:181:2: error: Type mismatch: After simplification, term
+  textbookTorusGibbsIntegral_upper U hU hPU β (g ^ 2) fun Q => sq_nonneg (g Q)
+ has type
+  @LE.le ℝ Real.instLE (∫ (Q : UnitAddTorus (Fin Nc)), (g ^ 2) Q ∂textbookConfigurationTorusGibbsMeasure U β)
+    (Real.exp (2 * textbookTorusPotentialScale U hU hPU β) * ∫ (Q : UnitAddTorus (Fin Nc)), (g ^ 2) Q)
+but is expected to have type
+  @LE.le ℝ Real.instLE (∫ (Q : UnitAddTorus (Fin Nc)), g Q ^ 2 ∂textbookConfigurationTorusGibbsMeasure U β)
+    (Real.exp (2 * textbookTorusPotentialScale U hU hPU β) * ∫ (Q : UnitAddTorus (Fin Nc)), g Q ^ 2)
+MolecularDynamics/Chapter06/BrownianGibbsBounds.lean:189:6: error(lean.unknownIdentifier): Unknown identifier `norm_sq_eq_real_inner`
+MolecularDynamics/Chapter06/BrownianGibbsBounds.lean:188:68: error: unsolved goals
+Nc : ℕ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+g : C(UnitAddTorus (Fin Nc), ℝ)
+⊢ ‖(textbookGibbsContinuousToLp U hU hPU β) g‖ ^ 2 =
+    ∫ (Q : UnitAddTorus (Fin Nc)), g Q ^ 2 ∂textbookConfigurationTorusGibbsMeasure U β

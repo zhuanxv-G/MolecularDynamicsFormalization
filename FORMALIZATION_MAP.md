@@ -752,3 +752,8 @@ BrownianSmoothDensity统一验收：full-check01 passed：9067jobs/1275公理声
 BrownianClosedOperator.lean：actualsameµ LinearPMap/dense/formal→T≤actualclosedadjoint→IsClosable；真实图closure/closed/dense/core、原domain/literalgenerator/constant值保持与最小closedextension；两次actualgraph closed-inner-condition证明闭包全domain formal symmetry，closed inner≤0推全closure非正。local02零诊断，统一验收中。selfadjoint/compactresolvent/谱/gap/semigroup未完成；负责人pending。
 
 BrownianClosedOperator统一验收：full-check01 passed：9068jobs/1297公理声明/151exact inputs；10checks退出0，全部input/rawlog SHA256匹配，22public逐名只基础三公理，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人semanticpending。
+
+## 2026-10-06 Brownian actual Gibbs density双边界与weighted norm比较
+BrownianGibbsBounds.lean：actualtorus potential CM/supnorm M→A=absβ*M→literalweight/truepartition exp±A bounds→actualdensity exp±2A uniformpositive/finite；真实withDensity integral identity/continuous integral lowerupper/square integrals与sameµ actualHilbert norm²双边Haar比较全部证明。23public local03零诊断，统一验收中。未假设bounds；HaarPoincare/selfadjoint/gap/谱/semigroup及CORE_SCOPE未完成，负责人pending。
+
+BrownianGibbsBounds统一验收：full-check01 passed：9069jobs/1320公理声明/152exact inputs；10checks退出0，全部input/rawlog SHA256匹配，23public逐名只基础三公理，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人semanticpending。
