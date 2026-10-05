@@ -1,0 +1,274 @@
+{
+  "started_at": "2026-10-06T00:17:12.2995123+08:00",
+  "finished_at": "2026-10-06T00:19:46.138582+08:00",
+  "head_at_check": "629a782c7e4844c26f95deb77611cad7f14476ec",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9064,
+  "audit_declarations": 1218,
+  "inputs": 147,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationTorusProjection",
+    "MolecularDynamics.textbookConfigurationTorusRepresentative",
+    "MolecularDynamics.textbookConfigurationTorusRepresentative_measurable",
+    "MolecularDynamics.textbookConfigurationTorusRepresentative_projects",
+    "MolecularDynamics.textbookConfigurationTorusProjection_measurePreserving",
+    "MolecularDynamics.textbookConfigurationTorusObservable",
+    "MolecularDynamics.textbookConfigurationTorusObservable_measurable",
+    "MolecularDynamics.textbookConfigurationTorusObservable_lift",
+    "MolecularDynamics.textbookConfigurationTorusObservable_integral",
+    "MolecularDynamics.textbookConfigurationTorusObservable_integrable",
+    "MolecularDynamics.textbookConfigurationTorusGibbsWeight",
+    "MolecularDynamics.textbookConfigurationTorusGibbsWeight_lift",
+    "MolecularDynamics.textbookConfigurationTorusGibbsWeight_integral",
+    "MolecularDynamics.textbookConfigurationTorusGibbsWeight_integrable",
+    "MolecularDynamics.textbookConfigurationTorusGibbsMeasure",
+    "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_isProbabilityMeasure",
+    "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_integral_observable",
+    "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_inner",
+    "MolecularDynamics.textbookBrownianGenerator_periodic",
+    "MolecularDynamics.textbookBrownianGenerator_contDiff",
+    "MolecularDynamics.textbookConfigurationGradientPair_periodic",
+    "MolecularDynamics.textbookBrownianTorusGibbsMeasure_dirichlet",
+    "MolecularDynamics.textbookBrownianTorusGibbsMeasure_symmetric",
+    "MolecularDynamics.textbookBrownianTorusGibbsMeasure_quadratic_nonpos",
+    "MolecularDynamics.textbookBrownianTorusGibbsMeasure_weak_stationary"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusProjection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusRepresentative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusRepresentative_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusRepresentative_projects",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusProjection_measurePreserving",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusObservable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusObservable_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusObservable_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusObservable_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusObservable_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsWeight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsWeight_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsWeight_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsWeight_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_isProbabilityMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_integral_observable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_inner",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGradientPair_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusGibbsMeasure_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusGibbsMeasure_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusGibbsMeasure_quadratic_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusGibbsMeasure_weak_stationary",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_input_hashes_rechecked": true,
+  "all_check_log_hashes_rechecked": true,
+  "all_check_exit_codes_zero": true,
+  "lean_warning_count": 0,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "working_sha256": "cce68c15d7182aad88224481c2b078405e675e713263de29502bd000b05cfae8",
+      "staged_sha256": "13e5d5e3bebee349e5a0be34c18909339bd59ded2151308d66cbccab148c08d9",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256": "b1f0ea45659c11bab1f24843bc85b8f8bb7692e6f07f8de691d8295fe9dfa1f7",
+      "staged_sha256": "516ed3823d104b57c6ee46a22dc188a58ad186655075c6608ca31c420f26087f",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256": "9cb8669ed270d27ebf349b5cca42c047ace08c1487e1c028b7d1bdea8dd21531",
+      "staged_sha256": "d3f06e2bf3502ae5df2bebf4404d981092bc5ee80ad0202f7ec15435ec4bf8dc",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256": "7f670cf95bb4db0e4698472529ab9ce02f4ce014f04fb4e086a1dc734cbeb259",
+      "staged_sha256": "6b009165f1e3c9dafa37319f51b8b79a6033f73ec7e2cac846d65bed27adc44d",
+      "content_matches_after_crlf_normalization": true
+    }
+  ]
+}

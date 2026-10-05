@@ -162,3 +162,4 @@ import MolecularDynamics.Chapter06.LangevinProgressive
 import MolecularDynamics.Chapter06.CanonicalTemperature
 import MolecularDynamics.Chapter06.CanonicalIntegrationByParts
 import MolecularDynamics.Chapter06.BrownianDirichlet
+import MolecularDynamics.Chapter06.BrownianTorusGibbs

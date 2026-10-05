@@ -427,3 +427,6 @@ CanonicalIntegrationByParts derives the full-space Gibbs integration-by-parts id
 
 ## 2026-10-05 BrownianDirichlet实际假设
 有限Nc，config=FinNc→R，full Icc0 1 Lebesgue基本cube，真实所有整数格点periodicity，U/f/g C∞；β≠0为IBP与normalized identity；positive β与每个m_i>0为nonpositive及real eigenvalue结论；real eigenfunction满足actual generator equation ∀q，真实restricted-volume AE非zero，weighted norm正性已推导而非假设。arbitrary positive diagonal masses，无单位质量限制。正式quotient Haar/Gibbs概率测度对接、C²/closed-domain self-adjoint realization、compact resolvent/gap/semigroup期望仍后续。原(5.6)印刷190/PDF211目视已确认time t演化分布平均，非(5.9)轨道长期平均。
+
+## 2026-10-06 BrownianTorusGibbs真实模型
+unit torus=UnitAddTorus(FinNc)，normalized circle Haar=AddCircle.haarAddCircle且Pi product；projection fromfull realcube不是替换域。可测代表由actual measurableEquivPiIoc，不是随意quotient choice。U C∞且integer-lattice invariant推实际ρ integrability/normalization，βany的Gibbs概率性真正已证；periodic smooth f/g actualBrownian same generaldiagonal masses；β≠0/β,m正条件沿用原真实Dirichlet/nonpositive。Haar default mass T与normalized convention在T1由definition true equality处理。无compact support real-lift特例，无actualsemigroup invariance/closed selfadjoint conclusion。

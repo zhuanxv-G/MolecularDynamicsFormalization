@@ -1,0 +1,13 @@
+# 同一真实unit torus上的Haar/Gibbs概率与Brownian Dirichlet证明
+
+原目标Theorem6.1印刷250–251/PDF271–272已经前批目视；原平均(5.6)印刷190/PDF211已核对time t distribution average。此批formal模型是同一finite unit torus/整数周期lift，任意diagonal质量，C∞ U与测试。βany在probability，β≠0在Dirichlet，β>0与m_i>0在nonpositive。Nc0 cube mass=1真证明空维，也不是替代非零维定理的vacuous前提。
+
+actual normalized Haar用AddCircle.haarAddCircle并明确实例，与Mathlib Fourier/AddCircleMulti相同。AddCircle.measurePreserving_mk default measure为total T的volume，T1与normalized Haar真实simp等同；由coordinate measurePreserving_pi和Pi-Ioc/Icc AE boundary得到π把full cube Lebesgue推送actual torus Haar，而非假设pushforward。measurableEquivPiIoc选真实可测代表，原lattice periodicity与AddCircle.coe_eq_zero_iff给与任何lift相等，不用任意Quotient.out的未证measurable。actual integral_preimage→wholecube积分，measure-preserving实际transfer cube smooth integral，得到真实torus partition与此前positive finite Z相同。
+
+actual Gibbs measure =normalized Haar.withDensity ENNReal.ofReal(Z^-1 exp(-βUtorus))；density真实可积/非负且积分1，由withDensity_apply与ofReal_integral_eq_lintegral_ofReal证明IsProbabilityMeasure。没有normalize/probability/IBP结论作假设。integral_withDensity_eq_integral_toReal_smul +actual Haar/cube integral让原真实weighted normalized pairing一致；full scalar Brownian generator二阶partial真实periodic/ContDiff；actual Dirichlet/形式对称/正质量下nonpositive/weak stationary在同一true Gibbs measure上完整落实。
+
+尚未完成：连续torus tests/actual L2 core/closed selfadjoint realization、compact resolvent/discrete spectrum、Poincare/gap、actual semigroup/distribution expectation convergence。weak stationarity不是actual semigroup invariance证明；formal symmetry不是closed selfadjoint证明。最终负责人教材语义pending。
+
+api01部分名称/namespace未知：lintegral_ofReal/integral_one/Measure.withDensity_apply/Pi.continuous_addMonoidHom，不复试错误名称；实际ofReal_integral_eq_lintegral_ofReal/integral_const/MeasureTheory.withDensity_apply等已读源码。local01缺noncomputable marks、coordinate mk target需要explicit f/zero_add、Pi-one/measure/Integrable function syntactic inference；local02修正后仅normalized Haar/default total T volume区别及unnamed section end；local03真实simp volume/haarAddCircle与section end修复后16public退出0空日志。local04再实际Gibbs积分/同一Brownian Dirichlet连接仅Measurable.const_mul未提供；local05明确measurable_const.mul后全部候选退出0空日志/零Lean警告。full-check01待验证。
+
+full-check01 passed：9064 jobs/1218公理声明/147exact输入；10checks退出0，全部input/rawlog SHA256匹配，25public逐名审计仅propext/Classical.choice/Quot.sound，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人语义pending。

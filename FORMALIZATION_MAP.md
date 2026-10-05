@@ -727,3 +727,8 @@ CanonicalIntegrationByParts统一验收：full-check01 passed：9062 jobs、1164
 MolecularDynamics/Chapter06/BrownianDirichlet.lean，29public；完整unit周期cube divergence由actual相对face整数平移抵消；一般diagonal质量的literal Brownian generator，真实weighted Gibbs Dirichlet与normalized form，正质量/β下formal symmetry及quadratic nonpositive，derived nonzero L2 norm positive→real eigenvalue非正，常数zero mode与Gibbs weak stationarity。local07退出0零诊断，统一验收进行中。C∞tests；正式Hilbert self-adjoint closure/compact resolvent/discrete spectrum/gap/实际expectation exponential convergence仍未证，最终负责人语义pending。
 
 BrownianDirichlet统一验收：full-check01 passed：9063 jobs/1193公理声明/146exact输入；10checks退出0，全部input/rawlog SHA256复核匹配，29public逐名审计仅propext/Classical.choice/Quot.sound，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人语义pending。
+
+## 2026-10-06 Brownian真实torus Gibbs概率对接
+MolecularDynamics/Chapter06/BrownianTorusGibbs.lean，25public local05零诊断。真实full cube→normalized Haar measure-preserving map，实际可测representative及lattice descent，same partition positive finite，withDensity actual Gibbs probability/normalized weighted integral。原同一Brownian全质量Dirichlet/对称与nonpositive/weak stationarity已在actual Gibbs measure证明；formal closed selfadjoint/spectrum/gap/expectation未完成；统一验收进行中，负责人语义pending。
+
+BrownianTorusGibbs统一验收：full-check01 passed：9064 jobs/1218公理声明/147exact输入；10checks退出0，全部input/rawlog SHA256匹配，25public逐名审计仅propext/Classical.choice/Quot.sound，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人语义pending。
