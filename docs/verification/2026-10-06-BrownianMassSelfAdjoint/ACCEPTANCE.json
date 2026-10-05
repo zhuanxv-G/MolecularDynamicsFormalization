@@ -1,0 +1,138 @@
+{
+  "started_at": "2026-10-06T05:21:43.6658573+08:00",
+  "finished_at": "2026-10-06T05:22:53.4097197+08:00",
+  "head_at_check": "f1187dd966ce8ed25076409c455ee7382b6308fa",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9082,
+  "audit_declarations": 1575,
+  "inputs": 165,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGroundStatePotential_zero",
+    "MolecularDynamics.textbookBrownianHaarGroundStateSmoothGenerator_zero",
+    "MolecularDynamics.textbookHaarMassPartialOperator",
+    "MolecularDynamics.textbookHaarMassClosedOperator",
+    "MolecularDynamics.textbookHaarMassPartialOperator_graph_smooth",
+    "MolecularDynamics.textbookHaarMassClosedOperator_isClosed",
+    "MolecularDynamics.textbookHaarMassClosedOperator_dense",
+    "MolecularDynamics.textbookHaarMassClosedOperator_formalAdjoint",
+    "MolecularDynamics.textbookHaarMassClosedOperator_mem_graph_of_coeff",
+    "MolecularDynamics.textbookHaarMassClosedOperator_graph_iff_coeff",
+    "MolecularDynamics.textbookHaarMassClosedOperator_isSelfAdjoint",
+    "MolecularDynamics.textbookHaarMassPartialOperator_adjoint_eq_closed"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGroundStatePotential_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateSmoothGenerator_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassPartialOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassPartialOperator_graph_smooth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedOperator_isClosed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedOperator_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedOperator_formalAdjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedOperator_mem_graph_of_coeff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedOperator_graph_iff_coeff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassClosedOperator_isSelfAdjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassPartialOperator_adjoint_eq_closed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "local01-draft.log",
+      "sha256": "a58198ffdd2ec3812d692e6852ff3c4952ac4331e58db99687f9c02a224068f4"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

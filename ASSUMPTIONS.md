@@ -481,3 +481,6 @@ Nc任意、原m任意、U C∞整数周期、sameoriginalµ/actualHaar全L²。�
 
 ## 2026-10-06 BrownianFourierHilbert条件
 Nc任意，sameactualfullreal/complexHaarLp2；m/β任意，U0仅masspart必要依赖。trueJ/R/左逆/norm/基底重构/模式与实际partial微分均derived，不供应orthogonality或diagonal假设。最后graph_tendsto的x/y真实coeff关系显式作为条件性逼近引理前提；将从adjoint测试推导后才计selfadjoint，不把它当原定理前提。无新axiom/占位/unsafe/linter绕过。原Gibbs自伴compact/full谱仍未完成，负责人pending。
+
+## 2026-10-06 BrownianMassSelfAdjoint条件
+Nc任意、原质量m任意、β≠0、U0只为原一般U groundstate后质量部分必要依赖。实际全realHaarLp及完整C∞periodicdomain；密性/形式对称/闭性与trueFourier加权图关系均derived。主selfadjoint和essentialselfadjoint中所有伴随域coef关系从actualadjoint定义与真实smooth测试推导，不供给coef/regularity/自伴前提。每masspositive与βpositive将在compactresolvent/原正文模型使用；本批不需要它们。负责人pending，原Gibbs一般U定理整体未完成。

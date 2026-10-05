@@ -1,0 +1,92 @@
+docs/verification/2026-10-06-BrownianMassSelfAdjoint/Draft.lean:21:64: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+β : ℝ
+q : Fin Nc → ℝ
+⊢ ∑ x, (m x)⁻¹ * ((fderiv ℝ (textbookConfigurationPartial (fun x => 0) x) q) (Pi.single x 1) / 2) = 0
+docs/verification/2026-10-06-BrownianMassSelfAdjoint/Draft.lean:31:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑((textbookBrownianHaarGroundStateSmoothGenerator ?m ?U ?hU ?hPU ?β) ?f) ?q
+in the target expression
+  ↑((textbookBrownianHaarGroundStateSmoothGenerator m (fun x => 0) ⋯ ⋯ β) f) q =
+    ↑((textbookHaarMassSmoothGenerator m β) f) q
+
+Nc : ℕ
+m : Fin Nc → ℝ
+β : ℝ
+f : ↥(textbookPeriodicSmoothSpace Nc)
+q : Fin Nc → ℝ
+⊢ ↑((textbookBrownianHaarGroundStateSmoothGenerator m (fun x => 0) ⋯ ⋯ β) f) q =
+    ↑((textbookHaarMassSmoothGenerator m β) f) q
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    fun q n => Eq.refl ((fun x => 0) (q + fun i => ↑(n i)))
+  has type
+    ∀ (q : Fin Nc → ℝ) (n : Fin Nc → ℤ), (fun x => 0) (q + fun i => ↑(n i)) = (fun x => 0) (q + fun i => ↑(n i))
+  but is expected to have type
+    textbookUnitPeriodicPotential fun x => 0
+  in the application
+    textbookBrownianHaarGroundStateSmoothGenerator m (fun x => 0) ⋯ ⋯
+docs/verification/2026-10-06-BrownianMassSelfAdjoint/Draft.lean:62:4: error: Type mismatch: After simplification, term
+  hx
+ has type
+  ((textbookPeriodicSmoothHaarEmbedding Nc) f,
+      ↑(textbookBrownianHaarGroundStatePartialOperator m (fun x => 0) ⋯ ⋯ β)
+        ((textbookPeriodicSmoothHaarEmbeddingEquiv Nc) f)) =
+    z
+but is expected to have type
+  ((textbookPeriodicSmoothHaarEmbedding Nc) f,
+      (textbookPeriodicSmoothHaarEmbedding Nc) ((textbookHaarMassSmoothGenerator m β) f)) =
+    z
+docs/verification/2026-10-06-BrownianMassSelfAdjoint/Draft.lean:68:4: error: Type mismatch: After simplification, term
+  hf
+ has type
+  ((textbookPeriodicSmoothHaarEmbedding Nc) f,
+      (textbookPeriodicSmoothHaarEmbedding Nc) ((textbookHaarMassSmoothGenerator m β) f)) =
+    z
+but is expected to have type
+  ((textbookPeriodicSmoothHaarEmbedding Nc) f,
+      ↑(textbookBrownianHaarGroundStatePartialOperator m (fun x => 0) ⋯ ⋯ β)
+        ((textbookPeriodicSmoothHaarEmbeddingEquiv Nc) f)) =
+    z
+docs/verification/2026-10-06-BrownianMassSelfAdjoint/Draft.lean:113:32: error: Type mismatch
+  this
+has type
+  ?m.90 = ?m.91
+but is expected to have type
+  ↑a = ↑b
+docs/verification/2026-10-06-BrownianMassSelfAdjoint/Draft.lean:137:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (textbookBrownianHaarGroundStateDomainOperator ?m ?U ?hU ?hPU ?β)
+    ((textbookPeriodicSmoothHaarEmbeddingEquiv ?m.201) ?f)
+in the target expression
+  (textbookBrownianHaarGroundStateDomainOperator m (fun x => 0) ⋯ ⋯ β) a =
+    -textbookMassFourierFrequency m β n • (textbookPeriodicSmoothHaarEmbedding Nc) f
+
+Nc : ℕ
+m : Fin Nc → ℝ
+β : ℝ
+S : ↥(Lp ℝ 2 volume) →ₗ.[ℝ] ↥(Lp ℝ 2 volume)
+hS : S.IsFormalAdjoint (textbookHaarMassPartialOperator m β)
+x y : ↥(Lp ℝ 2 volume)
+hxy : (x, y) ∈ S.graph
+u : ↥S.domain
+hu : ↑u = (x, y).1
+hSu : ↑S u = (x, y).2
+c : ℂ
+n : Fin Nc → ℤ
+f : ↥(textbookPeriodicSmoothSpace Nc) := textbookFourierRealMode c n
+a : ↥(textbookBrownianHaarSmoothDomain Nc) := (textbookPeriodicSmoothHaarEmbeddingEquiv Nc) f
+⊢ (textbookBrownianHaarGroundStateDomainOperator m (fun x => 0) ⋯ ⋯ β) a =
+    -textbookMassFourierFrequency m β n • (textbookPeriodicSmoothHaarEmbedding Nc) f
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    fun q n => Eq.refl ((fun x => 0) (q + fun i => ↑(n i)))
+  has type
+    ∀ (q : Fin Nc → ℝ) (n : Fin Nc → ℤ), (fun x => 0) (q + fun i => ↑(n i)) = (fun x => 0) (q + fun i => ↑(n i))
+  but is expected to have type
+    textbookUnitPeriodicPotential fun x => 0
+  in the application
+    textbookBrownianHaarGroundStateDomainOperator m (fun x => 0) ⋯ ⋯

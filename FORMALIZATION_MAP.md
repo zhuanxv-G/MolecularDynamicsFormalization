@@ -817,3 +817,8 @@ full-check01 passed：9080 jobs/1535公理声明/163exact inputs；10checks退�
 BrownianFourierHilbert28public local06零诊断：actualJ/R全Lp AE/左逆/norm/injective、真正FourierBasis全L²重构；原smooth Re(c e_n)及literalmassfreq/有限polynomial generator；actualinner-coefficient桥接及全coeff单射；真实coef关系给实际smoothgraph同时逼近。DEP046/NOT055 full中；actualadjoint全部coef关系及自伴尚缺。
 
 full-check02 passed：9081 jobs/1563公理声明/164exact inputs；10checks退出0、全部input/rawlog SHA匹配、28 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 真正原质量Laplace闭包自伴
+BrownianMassSelfAdjoint12public local02零诊断：真实V0zero/actualtransformedmassoperator equality/完整smoothpartialgraph；整个真实closedgraph iff Fouriercoef加权关系，伴随全域由实际测试推导coef，再actualpolynomial graph逼近证明真正H†=H及P†=H。本质自伴无diagonal/selfadjoint/椭圆正则性前提，原m和β保持。DEP047/NOT056 full中；原一般U boundedV扰动、自伴compact/full谱未完成。
+
+full-check01 passed：9082 jobs/1575公理声明/165exact inputs；10checks退出0、全部input/rawlog SHA匹配、12 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
