@@ -1,0 +1,209 @@
+{
+  "started_at": "2026-10-05T22:40:54.1848185+08:00",
+  "finished_at": "2026-10-05T22:43:09.0075861+08:00",
+  "head_at_check": "94b1d945e4dda06d92f74c3ad63f3965a324610e",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9061,
+  "audit_declarations": 1145,
+  "inputs": 144,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookCanonicalPartition",
+    "MolecularDynamics.textbookCanonicalAverage",
+    "MolecularDynamics.textbookCanonicalPartition_pos",
+    "MolecularDynamics.textbookCanonicalAverage_one",
+    "MolecularDynamics.textbookHamiltonianGibbsWeight_hasFDerivAt",
+    "MolecularDynamics.textbookCanonicalWeightedFlux_divergence",
+    "MolecularDynamics.textbookCanonicalWeightedFlux_divergence_integrable",
+    "MolecularDynamics.textbookCompactPhaseField_integral_fderiv_eq_zero",
+    "MolecularDynamics.textbookPhaseField_divergence_coordinates",
+    "MolecularDynamics.textbookCompactPhaseField_integral_divergence_eq_zero",
+    "MolecularDynamics.textbookCanonicalDensityCutoff",
+    "MolecularDynamics.textbookCanonicalDensityCutoff_mem_Icc",
+    "MolecularDynamics.textbookCanonicalDensityCutoff_contDiff",
+    "MolecularDynamics.textbookCanonicalDensityCutoff_hasFDerivAt",
+    "MolecularDynamics.textbookCanonicalDensityCutoff_gibbs_lower",
+    "MolecularDynamics.textbookCanonicalDensityCutoff_flux_integrable",
+    "MolecularDynamics.textbookCanonicalDensityCutoff_eventually_one",
+    "MolecularDynamics.textbookCanonicalDensityCutoff_flux_divergence"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookCanonicalPartition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalAverage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalPartition_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalAverage_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHamiltonianGibbsWeight_hasFDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalWeightedFlux_divergence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalWeightedFlux_divergence_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCompactPhaseField_integral_fderiv_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseField_divergence_coordinates",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCompactPhaseField_integral_divergence_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalDensityCutoff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalDensityCutoff_mem_Icc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalDensityCutoff_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalDensityCutoff_hasFDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalDensityCutoff_gibbs_lower",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalDensityCutoff_flux_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalDensityCutoff_eventually_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalDensityCutoff_flux_divergence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/CanonicalTemperature.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "5eaea001fa56cb4942bb9e2f94a12639e04a698a8e364185bba26036c0f2bd65",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "38841c5c659d847ca034a9cb67e9c9143aac42efce0936a47b903c0bb86ef6ed",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "6e0c9def8c84f5b733ce650ae790ae2295842a7c5f9637e381bc955dc74c3ca9",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "70e69bc0c2890053278b6500cee0de71a4c0f791a306f9c60e0a9d77430e6d5f",
+      "staged_equals_working_after_CRLF_to_LF": true
+    }
+  ]
+}
