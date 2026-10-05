@@ -1,0 +1,220 @@
+{
+  "started_at": "2026-10-05T23:20:10.3791854+08:00",
+  "finished_at": "2026-10-05T23:23:06.5983469+08:00",
+  "head_at_check": "f660c243c669938d415b79a4b5ac68bb17dfaca6",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9062,
+  "audit_declarations": 1164,
+  "inputs": 145,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookPhaseSpaceBump",
+    "MolecularDynamics.textbookPhaseSpaceCutoff",
+    "MolecularDynamics.textbookPhaseSpaceCutoff_contDiff",
+    "MolecularDynamics.textbookPhaseSpaceCutoff_compact",
+    "MolecularDynamics.textbookPhaseSpaceCutoff_mem_Icc",
+    "MolecularDynamics.textbookPhaseSpaceCutoff_eventually_one",
+    "MolecularDynamics.textbookPhaseSpaceCutoff_fderiv",
+    "MolecularDynamics.textbookPhaseSpaceCutoff_fderiv_bound",
+    "MolecularDynamics.textbookPhaseField_divergence_continuous",
+    "MolecularDynamics.textbookPhaseField_integral_divergence_eq_zero",
+    "MolecularDynamics.textbookCanonicalTransition_deriv_compact",
+    "MolecularDynamics.textbookCanonicalTransition_deriv_bound",
+    "MolecularDynamics.textbookCanonicalDensityCutoff_flux_divergence_integrable",
+    "MolecularDynamics.textbookCanonicalWeightedFlux_integral_divergence_eq_zero",
+    "MolecularDynamics.textbookCanonicalAverage_divergence_eq_beta_lieDerivative",
+    "MolecularDynamics.textbookCanonicalAverage_temperature_ratio",
+    "MolecularDynamics.proposition_6_1",
+    "MolecularDynamics.textbookPhaseLieDerivative_coordinates",
+    "MolecularDynamics.textbookCanonicalAverage_lieDerivative_pos"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookPhaseSpaceBump",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseSpaceCutoff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseSpaceCutoff_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseSpaceCutoff_compact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseSpaceCutoff_mem_Icc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseSpaceCutoff_eventually_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseSpaceCutoff_fderiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseSpaceCutoff_fderiv_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseField_divergence_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseField_integral_divergence_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalTransition_deriv_compact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalTransition_deriv_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalDensityCutoff_flux_divergence_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalWeightedFlux_integral_divergence_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalAverage_divergence_eq_beta_lieDerivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalAverage_temperature_ratio",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.proposition_6_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPhaseLieDerivative_coordinates",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookCanonicalAverage_lieDerivative_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_input_hashes_rechecked": true,
+  "all_check_log_hashes_rechecked": true,
+  "all_check_exit_codes_zero": true,
+  "lean_warning_count": 0,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/CanonicalIntegrationByParts.lean",
+      "working_sha256": "d6ea1b7b4be51b26f0aa1252d1ba2d94aefceca562fb2ba5634e95045cb05439",
+      "staged_sha256": "94012fa238323afcc2d345cd48d32b732bddd53604d9ea5ab2ff2498ef10bde7",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256": "b6257bda490b8cbbd956c3b41aec879c7c658ace1727d499fb347a65beade7d0",
+      "staged_sha256": "1c7a7b1e562f563c24055cc59f12b0bc1b6f8c6ffd192e34f8c3b7520b90d73e",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256": "69cfe0c1916d848a02dd4a3bcecb36eec06aa6dba0c640b32c75e9ce8008184c",
+      "staged_sha256": "4503990eddd0d5419a42606ecb798891c1a12aeb17832a2c4e1c35c0d7be5694",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256": "72fd7aeb5ebbeddf4cd4ab62e9b2428ad60487c1ee2e2e74d0b5ec2d8c2c8e57",
+      "staged_sha256": "bf11d1288c6a07e874b49b1979194975c878d4565d1eaa2bcac73354a16ffc64",
+      "content_matches_after_crlf_normalization": true
+    }
+  ]
+}

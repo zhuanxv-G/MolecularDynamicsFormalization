@@ -160,3 +160,4 @@ import MolecularDynamics.Chapter06.LangevinCompletedHistory
 import MolecularDynamics.Chapter06.LangevinCompletedMarkov
 import MolecularDynamics.Chapter06.LangevinProgressive
 import MolecularDynamics.Chapter06.CanonicalTemperature
+import MolecularDynamics.Chapter06.CanonicalIntegrationByParts
