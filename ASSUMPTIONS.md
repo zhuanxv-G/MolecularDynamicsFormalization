@@ -336,3 +336,7 @@ Actual first-integral property and actual real-pair ODE on a connected open inte
 ### Actual noncommuting symmetric formal BCH (2026-10-05)
 
 SymmetricOperatorBCH: arbitrary possibly noncommuting real algebra R with Ring R and Algebra real R. Three actual operators X/Y/Z have no commutation hypothesis. Locally finite logarithm stabilization uses the genuine constant coefficient one, which the actual five-factor composition supplies. The remainder is exact formal X4 divisibility, not an analytic O(h4) bound. Actual exp(log S) is proved through degree four in this batch; full inversion/parity and unbounded-operator convergence are not yet claimed.
+
+### Full actual noncommuting formal functional calculus (2026-10-05)
+
+FormalOperatorFunctionalCalculus uses arbitrary Ring R with Algebra real R, without commuting operators, nilpotence or analytic convergence. Actual zero-constant series provide the locally finite scalar functional calculus. Scalar exp/log inverse results are applied only over the commutative real source and transported by a genuinely proved noncommuting-target algebra homomorphism. True time reversal preserves the original multiplication order; actual opposite exponentials and palindrome products give full parity, without assuming an inverse or all-order evenness. This supersedes the prior full-inverse/parity gaps in the formal BCH batch. No scalar-stepsize convergence or analytic O(h4) bound is claimed.

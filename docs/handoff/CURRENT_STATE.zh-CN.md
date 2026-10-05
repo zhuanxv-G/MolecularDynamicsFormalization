@@ -1,8 +1,40 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 12:11 +0800）
+
+- FormalOperatorFunctionalCalculus全阶形式链接受，待本地保存。full-check01/session92168：2026-10-05T12:03:40.4808961+08:00--2026-10-05T12:08:18.5773208+08:00退出0；9030 jobs、零Lean警告、832项审计声明仅propext/Classical.choice/Quot.sound、113项输入及全部原始日志SHA256实查一致，14项public全覆盖。原297/PDF318真实非交换两全阶exp/log逆、actual S5=exp(XG)、palindrome inverse、log时间奇性和全部odd generator修正消失机器完整；结合e3197ea原L2/X4余项，Prop7.1形式解释完整。无界算子的analytic BCH可用/余项及负责人语义仍pending，整个CORE_SCOPE未完成。下一原255/PDF276已目视的Langevin真实Hörmander括号/有限族独立与point span；正概率可达Lemma6.1另行pending。
+
+## 最新数学检查点（2026-10-05 12:03 +0800）
+
+- HEAD e3197ea060ab2e0ed1586224c9e271dbbd407c74；FunctionalCalculus local06/session77363退出0零警告，14public接root/Scratch/完整逐名公理审计。全阶真实非交换exp/log互逆、actual S5=exp(XG)、真实time-neg AlgHom/palindrome inverse/log奇性/全部odd generator修正消失已局部完整。下一唯一full-check01，冻结Lean和验收输入。analytic无界算子BCH/O(h4)解释和最终语义/整个CORE_SCOPE仍pending，不能误记全书完成。
+
+## 最新数学检查点（2026-10-05 12:02 +0800）
+
+- FunctionalCalculus local05/session95535实际退出0，仅最后convert已闭合后omega多余警告，现删除。两全阶真实exp/log逆、actual S5=exp(XG)、actual palindrome inverse、全log时间奇性、所有odd generator系数消失均局部通过。下一唯一local06零警告后接root/审计并统一full；analytic无界余项/负责人/整个范围pending。
+
+## 最新数学检查点（2026-10-05 12:01 +0800）
+
+- FunctionalCalculus local04/session4808退出1：time-neg乘法真实smul顺序使标量指数为k2+k1，需Nat.add_comm后antidiagonal等式；coeff_mk非rfl需真实coeff_mk接口，去两个unused simp。其余opposite exp逆和operator exponentials桥接无诊断。新增实际palindrome inverse、全log时间奇性和所有odd generator coeff=0候选，下一唯一local05；未接受本次新增，analytic及负责人/整范围pending。
+
+## 最新数学检查点（2026-10-05 12:00 +0800）
+
+- FunctionalCalculus local03/session95959实际退出0零警告：真实非交换scalar AlgHom/代入、两全阶exp-log逆及S5=exp(XG)均局部通过。接原正文全阶对称性所需真实time-neg AlgHom、opposite exponential逆和linear exponentials桥接；下一唯一local04。整批未完整验收，analytic余项/负责人/整个范围pending。
+
+## 最新数学检查点（2026-10-05 11:56 +0800）
+
+- FunctionalCalculus local02/session31631退出1零警告，唯一未闭合是scalar log有理数负1幂转实数；新增norm_cast桥接。真正全阶代入、两逆及S5等式其余无诊断；下一唯一local03，尚未全批接受，全部奇数修正/analytic解释及负责人/整个范围pending。
+
+## 最新数学检查点（2026-10-05 11:55 +0800）
+
+- FunctionalCalculus local01原始日志实际退出1，非交换乘法/截断/AlgHom已通过，但scalar subst support分支beta-redex需先change，再rw零系数；另if_pos已弃用改ite_eq_left。先前空终端输出未足以认定通过，原始日志核实后纠正。新增全阶scalar exp/log识别、两真实逆和S5全阶等式候选，下一唯一local02；未接受新增结论，形式/analytic及整范围/负责人pending。
+
+## 最新数学检查点（2026-10-05 11:53 +0800）
+
+- HEAD e3197ea060ab2e0ed1586224c9e271dbbd407c74；命题7.1形式jet已验收保存。开始Chapter07/FormalOperatorFunctionalCalculus.lean：用实际零常数级数的有限截断/真实多项式aeval构造非交换实代数的scalar functional calculus，传递固定mathlib scalar exp-log互逆，不强加算子交换性。先局部验证必要截断/乘法/代入，再接真实S5全阶逆；全阶互逆/全部偶性/analytic解释及负责人/整个范围pending。
+
 ## 最新数学检查点（2026-10-05 11:50 +0800）
 
-- SymmetricOperatorBCH形式BCH链接受，待本地保存。full-check01/session10932：2026-10-05T11:31:13.8848441+08:00--2026-10-05T11:40:31.0092507+08:00退出0；9029 jobs、零Lean警告、818项审计声明仅propext/Classical.choice/Quot.sound、112项输入及全部原始日志SHA256实查一致，25项public全部覆盖。原297/PDF318目视；真实非交换S5 degree0--4、实际locally finite稳定log、原L2交换子公式、generator四低阶系数/真实X4余项、完整log=X*G与actual exp(G)五低阶匹配机器接受。全阶exp/log逆、全部奇数修正消失以及无界算子analytic解释/余项仍pending，负责人及整个CORE_SCOPE未完成。下一必要非交换全阶形式functional calculus。
+- SymmetricOperatorBCH形式BCH链接受并保存为 e3197ea060ab2e0ed1586224c9e271dbbd407c74。full-check01/session10932：2026-10-05T11:31:13.8848441+08:00--2026-10-05T11:40:31.0092507+08:00退出0；9029 jobs、零Lean警告、818项审计声明仅propext/Classical.choice/Quot.sound、112项输入及全部原始日志SHA256实查一致，25项public全部覆盖。原297/PDF318目视；真实非交换S5 degree0--4、实际locally finite稳定log、原L2交换子公式、generator四低阶系数/真实X4余项、完整log=X*G与actual exp(G)五低阶匹配机器接受。全阶exp/log逆、全部奇数修正消失以及无界算子analytic解释/余项仍pending，负责人及整个CORE_SCOPE未完成。下一必要非交换全阶形式functional calculus。
 
 ## 最新数学检查点（2026-10-05 11:31 +0800）
 

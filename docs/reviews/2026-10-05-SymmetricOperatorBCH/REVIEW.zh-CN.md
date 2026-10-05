@@ -5,3 +5,7 @@
 - 真形式log由log(1+P)有限系数定义，P常数为0使每个系数只受有限项影响，任意更长部分和稳定。真generator是整个log的实际移位，低阶给L0、0、L2、0，真实X4整除余项。
 - 全阶log=X*G已证明；实际指数/对数互逆目前只核对degree0--4。形式余项不等同分析余项，更强全阶逆和全部偶性继续补。
 - local01/02常数系数simp順序及module原子诊断；local03零警告通过；local04 factorial归约/pow_one/多余tactic失败，local05仅多余module，local06/session80040零警告通过。失败原始日志均保留。固定版本full-check01通过后全部输入和原始日志hash重新实查。
+
+## 后续全阶形式依赖已验收
+
+- FormalOperatorFunctionalCalculus/full-check01已补两全阶逆、actual S5=exp(XG)、完整log奇性及所有odd修正消失；此处旧有限逆/parity缺口已被真实证明补齐。analytic无界BCH与负责人签核仍pending。

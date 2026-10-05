@@ -462,3 +462,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 命题7.1真实非交换形式BCH验收
 
 - SymmetricOperatorBCH形式BCH链接受，待本地保存。full-check01/session10932：2026-10-05T11:31:13.8848441+08:00--2026-10-05T11:40:31.0092507+08:00退出0；9029 jobs、零Lean警告、818项审计声明仅propext/Classical.choice/Quot.sound、112项输入及全部原始日志SHA256实查一致，25项public全部覆盖。原297/PDF318目视；真实非交换S5 degree0--4、实际locally finite稳定log、原L2交换子公式、generator四低阶系数/真实X4余项、完整log=X*G与actual exp(G)五低阶匹配机器接受。全阶exp/log逆、全部奇数修正消失以及无界算子analytic解释/余项仍pending，负责人及整个CORE_SCOPE未完成。下一必要非交换全阶形式functional calculus。
+
+## 2026-10-05 命题7.1全阶形式互逆与偶性验收
+
+- FormalOperatorFunctionalCalculus全阶形式链接受，待本地保存。full-check01/session92168：2026-10-05T12:03:40.4808961+08:00--2026-10-05T12:08:18.5773208+08:00退出0；9030 jobs、零Lean警告、832项审计声明仅propext/Classical.choice/Quot.sound、113项输入及全部原始日志SHA256实查一致，14项public全覆盖。原297/PDF318真实非交换两全阶exp/log逆、actual S5=exp(XG)、palindrome inverse、log时间奇性和全部odd generator修正消失机器完整；结合e3197ea原L2/X4余项，Prop7.1形式解释完整。无界算子的analytic BCH可用/余项及负责人语义仍pending，整个CORE_SCOPE未完成。下一原255/PDF276已目视的Langevin真实Hörmander括号/有限族独立与point span；正概率可达Lemma6.1另行pending。
