@@ -2797,3 +2797,35 @@
 ## 2026-10-05 13:47 +0800 — 真Brownian短时全路径支持整批完整验收
 
 - WienerBridgeSupport真实Brownian bridge短时全路径支持接受，待本地保存。full-check01/session57695：2026-10-05T13:42:59.7135076+08:00--2026-10-05T13:44:54.0130873+08:00退出0；9035 jobs、零Lean警告、890项审计声明仅基础三公理、118项输入及全部原始日志SHA256实查一致，17public逐名完整覆盖。真bridge joint Gaussian/covariance取消/whole-process独立endpoint、真实Gaussian endpoint球positive、真实AE连续样本small-path覆盖→所有充分短时countable桥管positive、dense AE全路径升级及实际概率乘积完整；canonical真实line全路径管null可测与所有充分短时任意真实端点positive。不是任意指定时长/多维完整Wiener支持，原Lemma6.1仍pending。下一必要WienerPathLaw真实可数sample分布一致，再实际有限独立段拼接和连续控制管支持；原Nonempty-open修正/负责人/整个CORE_SCOPEpending。
+
+## 2026-10-05 13:50 +0800 — 任意时间Wiener支持所需可数样本law开始
+
+- HEAD bb5d1a5513930594eae4851fdff789c01ba20eb8；真实scalar Brownian短时全路径linear tube支持完整接受，无运行构建。开始Chapter06/WienerPathLaw.lean：由实际有限Brownian law+真实projective measure uniqueness推出可数样本law相同、转移各shift过程路径管概率，再实际不同时间段whole-process独立性/有限拼接。保留所有现有证据，不假定tube law或任意时长支持。原255--256/PDF276--277目视；多维/完整Lemma6.1与Nonempty-open修正/负责人/CORE_SCOPEpending。
+
+## 2026-10-05 13:52 +0800 — 真可数law有限投影索引修正与shift概率桥接
+
+- WienerPathLaw local01/session43587退出1唯一restrict projection的index须i.1而非subtype i；真实finite samples law和整个countable projective uniqueness无其他诊断。已修复，新增实际whole-line-tube AE sampled equality/不同Brownian空间tube概率相等/所有shift段统一短时支持阈值，避免段数与阈值循环。下一唯一local02；真实有限段独立拼接/任意时长/向量tube/Lemma6.1负责人CORE_SCOPEpending。
+
+## 2026-10-05 13:55 +0800 — 全路径tube概率命名空间修正与真独立段候选
+
+- WienerPathLaw local02/session65515退出1仅map_apply_of_aemeasurable须Measure命名空间，已更正；真finite/countable law uniqueness、whole-line tube AE与measure law桥及uniform shift短支持无其他诊断。加入actual whole Brownian segment过程joint Gaussian与covariance零→真正segment全路径独立（不是仅有限增量）。下一唯一local03；实际bridge/endpoint joint支持统一shift及有限拼接/任意时长/多维与完整Lemma6.1负责人CORE_SCOPEpending。
+
+## 2026-10-05 13:58 +0800 — 真独立段序界修正与联合支持统一shift阈值
+
+- WienerPathLaw local03/session76602退出1仅两次一般正性tactic不是目标x<=x+y，改实际le_add_of_nonneg_right；joint Gaussian的Sigma dummy i改匿名避免无用变量。真实countable law/line tube probability等式/shift阈值、实际segment Gaussian/covariance独立其余无诊断。补真joint bridge-endpoint probability law与所有shift统一桥半径短time支持，阈值独立endpoint-ball宽度，避免最终分段数量循环。下一唯一local04；有限事件乘积/任意时长/multidimensional smooth管及完整Lemma6.1/负责人/CORE_SCOPEpending。
+
+## 2026-10-05 14:03 +0800 — 实际whole segment独立与law局部完整补有限联合positive
+
+- WienerPathLaw local04/session33260退出0空日志/零警告：actual finite/countable law、whole line probability transfer/uniform shift、actual whole segment Gaussian及全路径独立、joint bridge-endpoint measure law/endpoint误差独立的统一shift短阈值完整局部。补真实有限segment joint event/null可测/独立真乘积与所有充分短h、任意有限K/端点/positive各δ的联合positive，下一唯一local05；尚未确定时间控制管拼接、多维或完整Lemma6.1，负责人CORE_SCOPEpending。
+
+## 2026-10-05 14:05 +0800 — 真可数law独立段有限支持全链局部完整
+
+- WienerPathLaw local05/session80626退出0，仅mem_setOf_eq弃用警告改mem_ofPred_eq。真实14public包含finite/countable Brownian laws、全路径管概率law、统一shift支持、whole段高斯/独立、真joint事件null可测与有限乘积、充分短h的任意有限K/任意端点及各positiveδ联合positive完整局部。下一唯一local06零警告后统一full；任意指定T与continuous/smooth控制拼接、多维Wiener支持与完整Lemma6.1/负责人/CORE_SCOPEpending。
+
+## 2026-10-05 14:07 +0800 — 实际可数law独立段有限联合支持零警告接审计
+
+- HEAD bb5d1a5513930594eae4851fdff789c01ba20eb8；WienerPathLaw local06/session68187退出0空日志/零警告，14public接root/Scratch/逐项审计。真实finite/countable laws、全路径tube概率一致/uniform shifts、actual whole段Gaussian/独立、joint bridge-endpoint law转移及不依赖δ的短时阈值、真实finite joint event null可测/独立乘积/充分短h任意有限K各正δ joint positive全链局部完整。下一唯一full-check01冻结输入。下一必要WienerPathSupport.lean：actual uniform网格与连续控制一致逼近/真实端点误差telescoping给任意指定T控制tube positive，再多维噪声；完整Lemma6.1/原Nonempty-open修正/负责人及CORE_SCOPEpending。
+
+## 2026-10-05 14:14 +0800 — 真可数law独立段有限支持完整验收
+
+- WienerPathLaw真实可数law与独立段有限支持接受，待本地保存。full-check01/session95429：2026-10-05T14:07:48.5943671+08:00--2026-10-05T14:11:52.5541818+08:00退出0；9036 jobs、零Lean警告、904项审计声明仅基础三公理、119项输入及全部原始日志SHA256实查一致，14public完整名称逐项覆盖。真实finite samples law含重复time、projective uniqueness推出整个countable law、true AE dense tube/跨空间概率相等与uniform shift短支持；真实不同时间段whole-process Gaussian/covariance→独立；真实joint桥管/端点概率law转移、δ独立的统一短阈值、actual finite joint event null可测/独立乘积以及充分短h任意有限K/端点/positive各δ joint positive完整。未假定路径law、全段独立或支持结论。下一WienerPathSupport.lean，实际uniform grid/continuous控制一致逼近与真endpoint误差telescoping→任意指定T控制管positive，再多维Wiener与Lemma6.1；原Nonempty-open修正/负责人及CORE_SCOPEpending。

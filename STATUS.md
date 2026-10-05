@@ -486,3 +486,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 引理6.1真实Brownian bridge短时全路径支持验收
 
 - WienerBridgeSupport真实Brownian bridge短时全路径支持接受，待本地保存。full-check01/session57695：2026-10-05T13:42:59.7135076+08:00--2026-10-05T13:44:54.0130873+08:00退出0；9035 jobs、零Lean警告、890项审计声明仅基础三公理、118项输入及全部原始日志SHA256实查一致，17public逐名完整覆盖。真bridge joint Gaussian/covariance取消/whole-process独立endpoint、真实Gaussian endpoint球positive、真实AE连续样本small-path覆盖→所有充分短时countable桥管positive、dense AE全路径升级及实际概率乘积完整；canonical真实line全路径管null可测与所有充分短时任意真实端点positive。不是任意指定时长/多维完整Wiener支持，原Lemma6.1仍pending。下一必要WienerPathLaw真实可数sample分布一致，再实际有限独立段拼接和连续控制管支持；原Nonempty-open修正/负责人/整个CORE_SCOPEpending。
+
+## 2026-10-05 引理6.1真实可数law独立段有限支持验收
+
+- WienerPathLaw真实可数law与独立段有限支持接受，待本地保存。full-check01/session95429：2026-10-05T14:07:48.5943671+08:00--2026-10-05T14:11:52.5541818+08:00退出0；9036 jobs、零Lean警告、904项审计声明仅基础三公理、119项输入及全部原始日志SHA256实查一致，14public完整名称逐项覆盖。真实finite samples law含重复time、projective uniqueness推出整个countable law、true AE dense tube/跨空间概率相等与uniform shift短支持；真实不同时间段whole-process Gaussian/covariance→独立；真实joint桥管/端点概率law转移、δ独立的统一短阈值、actual finite joint event null可测/独立乘积以及充分短h任意有限K/端点/positive各δ joint positive完整。未假定路径law、全段独立或支持结论。下一WienerPathSupport.lean，实际uniform grid/continuous控制一致逼近与真endpoint误差telescoping→任意指定T控制管positive，再多维Wiener与Lemma6.1；原Nonempty-open修正/负责人及CORE_SCOPEpending。
