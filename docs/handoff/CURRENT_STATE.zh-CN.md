@@ -1,8 +1,27 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 08:38 +0800）
+
+- 本批前HEAD 0babf45417ac0916299f7a368d84e7c46c760bf8；ThermostatModeInvariant完整接受，待本地保存，固定版本/分支未改，既有材料保留、未推送。
+- 唯一full-check01/session71619：2026-10-05T08:35:23.5266747+08:00--2026-10-05T08:36:28.7818372+08:00退出0；9023jobs、零警告、734项审计声明仅基础三公理、106项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；3public接受。346/PDF367目视，真实Vi及D补集、genuine q/p右侧ODE→实际谱mode方程、真实compact operator norm界/Lipschitz/ODE uniqueness推出零mode整个Icc不变，初始端点允许，非假定全程零；负责人pending。
+- 下一230/PDF251未编号真实Stratonovich自身积分：Chapter06/WienerStratonovich.lean，真实时间中点W((2k+1)T/(2K))乘真实coarse增量。按actual fine2K increments恒等2S=WT²+ΣsignedΔfine²，真实Gaussian fourth moments/独立性导出误差MSE=T²/(4K)与均方极限WT²/2。
+- 必须证明真实fine/coarse时间关系和有限望远镜，再真实奇偶signed平方和均值/方差；不能把时间中点换成endpoint均值，也不能直接忽略每步O(sqrt δt)。原页已目视，现有WienerQuadraticVariation/WienerIntegration依赖可复用。Prop6.3一般smooth g等独立缺口、其余正文/整范围及负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 08:35 +0800）
+
+- HEAD 0babf45417ac0916299f7a368d84e7c46c760bf8，固定版本未改；ThermostatModeInvariant local03退出0、零警告，3public接根/Scratch/公理审计。
+- 346/PDF367真实Vi及D补集、actual q/p右侧ODE→真谱mode系统、continuous ξ真实compact operator bound/Lipschitz与genuine ODE uniqueness推出零mode整个Icc不变。初始端点right-within derivative允许，非假定全程零；未构造SDE解。
+- 启动唯一full-check01，未决前不改输入，无其他构建。原页已目视，负责人及其他正文/整个CORE_SCOPE仍pending；下一补230/PDF251真正Stratonovich midpoint未编号正文均方极限，不推进独立习题。
+
+## 最新数学检查点（2026-10-05 08:31 +0800）
+
+- HEAD 0babf45417ac0916299f7a368d84e7c46c760bf8，Hörmander正文链完整保存；固定版本未改，无其他构建。
+- 进行中CH08-CLM-001原346/PDF367零mode全程不变，目标Chapter08/ThermostatModeInvariant.lean，原页已目视。真实q/p路径在Icc连续、actual右侧ODE导数在Ico、continuous ξ；实际谱坐标导出二模式方程，真实时变CLM compact界给Lipschitz、ODE uniqueness与零解比较。
+- 采用右侧within derivative支持初始端点，不供应全程零或genuine SDE解存在；已构造actual Vi及D等于补集各Vi并的候选。local01/02实际within constant/逻辑simp/负积和CLM展开、zero function诊断已修复，失败日志保留；下一唯一local03，尚未计通过；全范围/其他正文与负责人pending。
+
 ## 最新数学检查点（2026-10-05 08:25 +0800）
 
-- 本批前HEAD ba54e0019518d525321830d9c1e98d4fa3f59b7d；ThermostatHormander完整接受，待本地保存，固定版本/分支未改，原材料保留、未推送。
+- 本批前HEAD ba54e0019518d525321830d9c1e98d4fa3f59b7d；ThermostatHormander完整接受并保存为0babf45417ac0916299f7a368d84e7c46c760bf8，固定版本/分支未改，原材料保留、未推送。
 - 唯一full-check01/session51933：2026-10-05T08:17:51.9677569+08:00--2026-10-05T08:18:56.9377781+08:00退出0；9022jobs、零警告、731项审计声明仅基础三公理、105项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；29public及2构造器/递归器接受。Definition6.1/Prop8.2/Lemma8.1/Prop8.3/Theorem8.1真实Hörmander链机器完整：actual recursive fderiv/point span、真Leibniz smooth module/eval、真lift与全扩展张成、真实NHL negative G/二次feedback/方程/开域/C∞/原正参数sqrt噪声完成。原254/PDF275、344--348/PDF365--369目视，负责人pending。
 - 下一CH08-CLM-001（346/PDF367）：Chapter08/ThermostatModeInvariant.lean，从actual q'=p、p'=-Aq-ξp与continuous ξ路径，真实谱坐标Q'=P、P'=-λQ-ξP；compact ξ有界使真实时变linear mode ODE Lipschitz，ODE_solution_unique_of_mem_Icc推出零mode全程不变，不能仅初始导数零。
 - 不冒称构造SDE解或由Hörmander单独得到全部ergodicity。其他正文、一般Ito/高阶匹配及整个范围仍pending。先保存本批，无其他构建。

@@ -2443,3 +2443,23 @@
 - 唯一full-check01/session51933：2026-10-05T08:17:51.9677569+08:00--2026-10-05T08:18:56.9377781+08:00退出0；9022jobs、零警告、731项审计声明仅基础三公理、105项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；29public加实际iterated构造器2/递归器接受，正文真实Hörmander链完整，原254/PDF275与344--348/PDF365--369目视；负责人pending。验收记录脚本literal braces错误已修复，不改变Lean输入或重跑已通过构建。
 - ledger纠正Prop8.2属8.4；Definition6.1 C∞含b0，原NHL真实negative G/Σp²/positive physical sqrt noise明示，相关notation/section/映射/假设/状态同步。Hörmander不独自等于全部ergodicity，整范围未完成。
 - 下一原346未编号零mode不变CH08-CLM-001：真实q/p方程+连续ξ，经谱坐标时变linear ODE/compact bound/真实ODE uniqueness得全程不变；目标ThermostatModeInvariant.lean。先保存本批，无其他构建。
+
+## 2026-10-05 08:31 +0800 — NHL零特征模式实际路径不变开始
+
+- 前批0babf45保存。原346/PDF367已目视，ThermostatModeInvariant.lean实际Vi、D补集、genuine q/p右侧ODE与continuous ξ，经真谱坐标二模式时变CLM、真实compact operator bound/Lipschitz/ODE uniqueness候选，支持初始端点within derivative。
+- 下一唯一local01；不供应全程零/ODE uniqueness结论或SDE解存在。整个CORE_SCOPE和负责人pending，无重复构建。
+
+## 2026-10-05 08:34 +0800 — 零模式实际ODE接口诊断
+
+- local01/session16987退出1：HasDerivWithinAt_const参数、D补集逻辑simp、scalar负积非rfl、CLM mode operator未展开，已按真实接口修复。local02/session76646退出1：zero function 0与fun _=>0 simp归约不一致，改直接change真实零解ODE并map_zero；旧mem_setOf_eq替换固定新名mem_ofPred_eq。
+- 真compact operator norm/Lipschitz与genuine谱坐标时变方程无其他诊断；下一唯一local03，不计失败后结果为接受，原始日志保留。
+
+## 2026-10-05 08:35 +0800 — NHL真实零mode路径不变局部通过
+
+- local03/session60224退出0零警告，3public接根/Scratch/审计，真实Vi/D补集、actual q/p右侧ODE/真实谱模式与compact时变operator界、Lipschitz/ODE uniqueness完整局部通过；不假定全程零或构造SDE解，346/PDF367目视。
+- 启动唯一full-check01，未决前不改输入。其他正文/整个范围/负责人pending；下一230/PDF251真实Stratonovich midpoint均方正文，不追加独立习题。
+
+## 2026-10-05 08:38 +0800 — NHL真实零mode路径全区间不变完整验收
+
+- 唯一full-check01/session71619：2026-10-05T08:35:23.5266747+08:00--2026-10-05T08:36:28.7818372+08:00退出0；9023jobs、零警告、734项审计声明仅基础三公理、106项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；3public接受。actual Vi/D complement、genuine q/p right ODE/real spectral mode chain、true compact operator bound/Lipschitz/ODE uniqueness完成全Icc不变，非仅初始导数零，346/PDF367目视。ledger/notation/section/映射/假设/状态同步，负责人pending。
+- 下一230/PDF251真实Stratonovich时间中点自身积分：actual fine2K signed squared increments恒等/real Gaussian fourth moments和独立性推出MSE T²/(4K)，真实有限和/均方limit；不能替换trapezoid或忽略每步符号余项。目标WienerStratonovich.lean。其他正文/整范围仍pending；先保存本批，无其他构建。

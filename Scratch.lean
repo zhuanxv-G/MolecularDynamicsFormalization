@@ -791,3 +791,8 @@ end MolecularDynamics
 #check MolecularDynamics.textbookIteratedBracket.seed
 #check MolecularDynamics.textbookIteratedBracket.bracket
 #check MolecularDynamics.textbookIteratedBracket.rec
+
+-- Actual zero eigenmode domain and pathwise invariance.
+#check MolecularDynamics.textbookNHLZeroMode
+#check MolecularDynamics.textbookThermostatModeDomain_eq_compl_zeroModes
+#check MolecularDynamics.textbookNHL_zeroMode_invariant

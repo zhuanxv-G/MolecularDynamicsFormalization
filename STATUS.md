@@ -426,3 +426,8 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 
 - 唯一full-check01/session51933：2026-10-05T08:17:51.9677569+08:00--2026-10-05T08:18:56.9377781+08:00退出0；9022jobs、零警告、731项审计声明仅基础三公理、105项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；29public加2构造器/递归器接受，原254/PDF275与344--348/PDF365--369目视。
 - Definition6.1/Prop8.2/Lemma8.1/Prop8.3/Theorem8.1链机器完整；actual NHL方程/负G/feedback/开域/C∞/原sqrt噪声与Leibniz系数桥接完成。负责人pending，零mode不变/其他正文/全ergodicity和整个CORE_SCOPE仍pending。
+
+## 2026-10-05 NHL零mode全区间不变验收
+
+- 唯一full-check01/session71619：2026-10-05T08:35:23.5266747+08:00--2026-10-05T08:36:28.7818372+08:00退出0；9023jobs、零警告、734项审计声明仅基础三公理、106项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；3public接受，原346/PDF367目视。
+- 实际Vi/D补集、真实q/p路径谱模式方程、compact operator/Lipschitz/ODE uniqueness得全Icc零mode不变；负责人pending。其他正文/整CORE_SCOPE仍pending，继续真实Stratonovich midpoint。

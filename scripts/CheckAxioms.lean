@@ -817,3 +817,8 @@ run_cmd do
 #print axioms MolecularDynamics.textbookIteratedBracket.seed
 #print axioms MolecularDynamics.textbookIteratedBracket.bracket
 #print axioms MolecularDynamics.textbookIteratedBracket.rec
+
+-- Actual zero eigenmode domain and pathwise invariance.
+#print axioms MolecularDynamics.textbookNHLZeroMode
+#print axioms MolecularDynamics.textbookThermostatModeDomain_eq_compl_zeroModes
+#print axioms MolecularDynamics.textbookNHL_zeroMode_invariant

@@ -107,3 +107,4 @@ import MolecularDynamics.Chapter08.ThermostatLieFields
 import MolecularDynamics.Chapter08.ThermostatSpan
 import MolecularDynamics.Chapter08.HormanderClosure
 import MolecularDynamics.Chapter08.ThermostatHormander
+import MolecularDynamics.Chapter08.ThermostatModeInvariant

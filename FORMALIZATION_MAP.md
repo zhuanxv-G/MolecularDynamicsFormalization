@@ -600,3 +600,8 @@ Printed347--348/PDF368--369: `Chapter08/ThermostatSpan.lean` fully proves Propos
 ### Actual Hörmander thermostat chain (2026-10-05)
 
 Printed254/PDF275 and344--348/PDF365--369: `Chapter08/HormanderClosure.lean` formalizes Definition6.1 by actual recursive fderiv brackets and point spans, deriving smooth finite-coefficient module bracket closure and evaluation into the original span. `Chapter08/ThermostatHormander.lean` fully proves Proposition8.2 with explicit nonzero noise, actual drift/noise derivatives, physical lifts and full horizontal/vertical span. True End LieSpan maps into actual negative-G physical brackets. With accepted Lemma8.1/Proposition8.3, actual NHL quadratic feedback, drift equations, open domain, smooth fields and original positive-parameter sqrt noise give the full Theorem8.1. No extended span or coefficient closure is supplied. Responsible signoff and separate ergodicity/accessibility/invariant-mode body claims remain pending.
+
+
+### Actual NHL zero-mode path invariance (2026-10-05)
+
+Printed346/PDF367: `Chapter08/ThermostatModeInvariant.lean` proves the explicit unnumbered zero-eigenmode claim. Actual spectral linear coordinate chain rules derive the true time-dependent two-mode ODE from actual q/p equations and continuous auxiliary paths. Compact operator-norm bounds derive uniform Lipschitz continuity; real ODE uniqueness against the zero solution yields invariance throughout a closed interval, supporting right derivatives at the initial endpoint. Actual Vi and D as complement of their union are mapped. No whole-time zero or uniqueness conclusion is supplied. SDE solution construction and independent atlas/codimension structure are separate.
