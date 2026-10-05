@@ -475,3 +475,6 @@ Nc任意、U C∞integerperiodic、β任意，同一originalµ/normalizedHaar fu
 
 ## 2026-10-06 BrownianGroundStateCore条件
 Nc任意、originalm任意、U C∞integerperiodic，真实normalizedfactor/inverse/smoothEquiv及range/Hilbertembeddings β任意；generatorconjugation β≠0。所有实际sqrtZ正性/逆/域互映/线性和sameHilbertcore公式derived，不供给domain/elliptic/selfadjoint/compact前提。真正全部smoothdomain保留，wholeclosedgraph尚未识别，负责人semanticpending。
+
+## 2026-10-06 BrownianGroundStateGraph条件
+Nc任意、原m任意、U C∞整数周期、sameoriginalµ/actualHaar全L²。实际域/embedding/密性构造β任意；partial/closed graph共轭与formaladjoint/closable闭性需β≠0；整个Haarclosednonpos每mi>0且β>0。所有域唯一lift/图两个方向/图closure保持/伴随和可闭性均证明，不提供这些结论或ellipticregularity为前提。自伴/实际compact/full谱存在仍未证明，负责人pending。

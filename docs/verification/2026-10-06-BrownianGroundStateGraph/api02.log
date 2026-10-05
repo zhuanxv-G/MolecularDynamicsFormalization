@@ -1,0 +1,37 @@
+ContinuousLinearEquiv.prodCongr.{u_1, u_4, u_5, u_6, u_7} {R₁ : Type u_1} [Semiring R₁] {M₁ : Type u_4}
+  [TopologicalSpace M₁] [AddCommMonoid M₁] {M₂ : Type u_5} [TopologicalSpace M₂] [AddCommMonoid M₂] {M₃ : Type u_6}
+  [TopologicalSpace M₃] [AddCommMonoid M₃] {M₄ : Type u_7} [TopologicalSpace M₄] [AddCommMonoid M₄] [Module R₁ M₁]
+  [Module R₁ M₂] [Module R₁ M₃] [Module R₁ M₄] (e : M₁ ≃L[R₁] M₂) (e' : M₃ ≃L[R₁] M₄) : (M₁ × M₃) ≃L[R₁] M₂ × M₄
+LinearEquiv.prodCongr.{u, v, w, y, z} {R : Type u} {M : Type v} {M₂ : Type w} {M₃ : Type y} {M₄ : Type z} [Semiring R]
+  [AddCommMonoid M] [AddCommMonoid M₂] [AddCommMonoid M₃] [AddCommMonoid M₄] {module_M : Module R M}
+  {module_M₂ : Module R M₂} {module_M₃ : Module R M₃} {module_M₄ : Module R M₄} (e₁ : M ≃ₗ[R] M₂) (e₂ : M₃ ≃ₗ[R] M₄) :
+  (M × M₃) ≃ₗ[R] M₂ × M₄
+Submodule.mem_map.{u_1, u_2, u_4, u_5} {R : Type u_1} {R₂ : Type u_2} {M : Type u_4} {M₂ : Type u_5} [Semiring R]
+  [Semiring R₂] [AddCommMonoid M] [AddCommMonoid M₂] [Module R M] [Module R₂ M₂] {σ₁₂ : R →+* R₂}
+  [RingHomSurjective σ₁₂] {f : M →ₛₗ[σ₁₂] M₂} {p : Submodule R M} {x : M₂} : x ∈ Submodule.map f p ↔ ∃ y ∈ p, f y = x
+LinearPMap.mem_graph_iff.{u_1, u_4, u_5} {R : Type u_1} [Ring R] {E : Type u_4} [AddCommGroup E] [Module R E]
+  {F : Type u_5} [AddCommGroup F] [Module R F] (f : E →ₗ.[R] F) {x : E × F} : x ∈ f.graph ↔ ∃ y, ↑y = x.1 ∧ ↑f y = x.2
+LinearPMap.mem_graph_iff'.{u_1, u_4, u_5} {R : Type u_1} [Ring R] {E : Type u_4} [AddCommGroup E] [Module R E]
+  {F : Type u_5} [AddCommGroup F] [Module R F] (f : E →ₗ.[R] F) {x : E × F} : x ∈ f.graph ↔ ∃ y, (↑y, ↑f y) = x
+LinearMap.mem_range.{u_1, u_2, u_5, u_6} {R : Type u_1} {R₂ : Type u_2} {M : Type u_5} {M₂ : Type u_6} [Semiring R]
+  [Semiring R₂] [AddCommMonoid M] [AddCommMonoid M₂] [Module R M] [Module R₂ M₂] {τ₁₂ : R →+* R₂}
+  [RingHomSurjective τ₁₂] {f : M →ₛₗ[τ₁₂] M₂} {x : M₂} : x ∈ f.range ↔ ∃ y, f y = x
+Homeomorph.image_closure.{u_1, u_2} {X : Type u_1} {Y : Type u_2} [TopologicalSpace X] [TopologicalSpace Y] (h : X ≃ₜ Y)
+  (s : Set X) : ⇑h '' closure s = closure (⇑h '' s)
+ContinuousLinearEquiv.toHomeomorph.{u_1, u_2, u_4, u_5} {R₁ : Type u_1} {R₂ : Type u_2} [Semiring R₁] [Semiring R₂]
+  {σ₁₂ : R₁ →+* R₂} {σ₂₁ : R₂ →+* R₁} [RingHomInvPair σ₁₂ σ₂₁] [RingHomInvPair σ₂₁ σ₁₂] {M₁ : Type u_4}
+  [TopologicalSpace M₁] [AddCommMonoid M₁] {M₂ : Type u_5} [TopologicalSpace M₂] [AddCommMonoid M₂] [Module R₁ M₁]
+  [Module R₂ M₂] (e : M₁ ≃SL[σ₁₂] M₂) : M₁ ≃ₜ M₂
+LinearIsometryEquiv.toContinuousLinearEquiv.{u_1, u_2, u_4, u_5} {R : Type u_1} {R₂ : Type u_2} {E : Type u_4}
+  {E₂ : Type u_5} [Semiring R] [Semiring R₂] {σ₁₂ : R →+* R₂} {σ₂₁ : R₂ →+* R} [RingHomInvPair σ₁₂ σ₂₁]
+  [RingHomInvPair σ₂₁ σ₁₂] [SeminormedAddCommGroup E] [SeminormedAddCommGroup E₂] [Module R E] [Module R₂ E₂]
+  (e : E ≃ₛₗᵢ[σ₁₂] E₂) : E ≃SL[σ₁₂] E₂
+ContinuousLinearEquiv.isClosed_image.{u_1, u_2, u_4, u_5} {R₁ : Type u_1} {R₂ : Type u_2} [Semiring R₁] [Semiring R₂]
+  {σ₁₂ : R₁ →+* R₂} {σ₂₁ : R₂ →+* R₁} [RingHomInvPair σ₁₂ σ₂₁] [RingHomInvPair σ₂₁ σ₁₂] {M₁ : Type u_4}
+  [TopologicalSpace M₁] [AddCommMonoid M₁] {M₂ : Type u_5} [TopologicalSpace M₂] [AddCommMonoid M₂] [Module R₁ M₁]
+  [Module R₂ M₂] (e : M₁ ≃SL[σ₁₂] M₂) {s : Set M₁} : IsClosed (⇑e '' s) ↔ IsClosed s
+Submodule.map_coe.{u_1, u_2, u_4, u_5} {R : Type u_1} {R₂ : Type u_2} {M : Type u_4} {M₂ : Type u_5} [Semiring R]
+  [Semiring R₂] [AddCommMonoid M] [AddCommMonoid M₂] [Module R M] [Module R₂ M₂] {σ₁₂ : R →+* R₂}
+  [RingHomSurjective σ₁₂] (f : M →ₛₗ[σ₁₂] M₂) (p : Submodule R M) : ↑(Submodule.map f p) = ⇑f '' ↑p
+Submodule.topologicalClosure_coe.{u, v} {R : Type u} {M : Type v} [Semiring R] [TopologicalSpace M] [AddCommMonoid M]
+  [Module R M] [ContinuousConstSMul R M] [ContinuousAdd M] (s : Submodule R M) : ↑s.topologicalClosure = closure ↑s

@@ -1,0 +1,16 @@
+MolecularDynamics/Chapter06/BrownianGroundStateGraph.lean:269:4: error: Application type mismatch: The argument
+  (textbookGibbsGroundStateSmoothEquiv U hU hPU β).symm f
+has type
+  ↥(textbookPeriodicSmoothSpace Nc)
+of sort `Type` but is expected to have type
+  β ≠ 0
+of sort `Prop` in the application
+  textbookBrownianGibbsL2Image_symmetric m U hU hPU β ((textbookGibbsGroundStateSmoothEquiv U hU hPU β).symm f)
+MolecularDynamics/Chapter06/BrownianGroundStateGraph.lean:396:53: error: Application type mismatch: The argument
+  hm
+has type
+  ∀ (i : Fin Nc), 0 < m i
+of sort `Prop` but is expected to have type
+  (Fin Nc → ℝ) → ℝ
+of sort `Type` in the application
+  textbookBrownianGibbsClosedOperator_nonpos m hm

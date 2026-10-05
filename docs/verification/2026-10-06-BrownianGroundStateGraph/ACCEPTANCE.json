@@ -1,0 +1,257 @@
+{
+  "started_at": "2026-10-06T05:02:38.5585305+08:00",
+  "finished_at": "2026-10-06T05:04:50.2264991+08:00",
+  "head_at_check": "37b7ef69c5f8fadb7d39a02c4b98ce620c22650b",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9080,
+  "audit_declarations": 1535,
+  "inputs": 163,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookPeriodicSmoothHaarEmbedding_injective",
+    "MolecularDynamics.textbookBrownianHaarSmoothDomain",
+    "MolecularDynamics.textbookPeriodicSmoothHaarEmbeddingEquiv",
+    "MolecularDynamics.textbookPeriodicSmoothHaarEmbeddingEquiv_coe",
+    "MolecularDynamics.textbookBrownianHaarGroundStateDomainOperator",
+    "MolecularDynamics.textbookBrownianHaarGroundStateDomainOperator_apply_equiv",
+    "MolecularDynamics.textbookBrownianHaarGroundStatePartialOperator",
+    "MolecularDynamics.textbookGibbsHaarGroundStateGraphEquiv",
+    "MolecularDynamics.textbookGibbsHaarGroundStateGraphEquiv_closure",
+    "MolecularDynamics.textbookGibbsHaarGroundState_partial_graph",
+    "MolecularDynamics.textbookBrownianHaarSmoothDomain_dense",
+    "MolecularDynamics.textbookBrownianHaarGroundStatePartialOperator_dense",
+    "MolecularDynamics.textbookBrownianHaarGroundStatePartialOperator_formalAdjoint",
+    "MolecularDynamics.textbookBrownianHaarGroundStatePartialOperator_isClosable",
+    "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator",
+    "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_isClosed",
+    "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_graph",
+    "MolecularDynamics.textbookGibbsHaarGroundState_closed_graph",
+    "MolecularDynamics.textbookBrownianHaarGroundStatePartialOperator_le_closed",
+    "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_hasCore",
+    "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_dense",
+    "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_formalAdjoint",
+    "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_nonpos"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothHaarEmbedding_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarSmoothDomain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothHaarEmbeddingEquiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothHaarEmbeddingEquiv_coe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateDomainOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateDomainOperator_apply_equiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStatePartialOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsHaarGroundStateGraphEquiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsHaarGroundStateGraphEquiv_closure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsHaarGroundState_partial_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarSmoothDomain_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStatePartialOperator_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStatePartialOperator_formalAdjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStatePartialOperator_isClosable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_isClosed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsHaarGroundState_closed_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStatePartialOperator_le_closed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_hasCore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_formalAdjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateClosedOperator_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "4978637a279a0f9f579ef21883d1c8e47c80d5e3f99453d0536f7271e6d24406"
+    },
+    {
+      "path": "api02.log",
+      "sha256": "2f99fe0c7334c1cd1a2dd3302440e043175a8b92eafaea80b2b7225a834d9532"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "1be4a616517fa499e8c0811aac9d63b2233993911f56fb9341dad8fcafd6e886"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -807,3 +807,8 @@ full-check01 passed：9078 jobs/1497公理声明/161exact inputs；10checks退�
 BrownianGroundStateCore15public local04零诊断：actualnormalizedinverse互逆及entirefullsmoothEquiv，actualHaar linearembedding和fullLpI maps entire smoothrange onto；actualnormalizedliteralgenerator公式、直接massLaplace+V smoothLinearMap与originalSmoothGenerator真正共轭，再actualHilbertcore和GibbsL2image共轭。DEP044/NOT053，fullcheck中；wholeclosedgraph/diagonal selfadjoint/compact仍未完成。
 
 full-check01 passed：9079 jobs/1512公理声明/162exact inputs；10checks退出0、全部input/rawlog SHA匹配、15 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 实际整个 Gibbs–Haar 闭图共轭
+BrownianGroundStateGraph23public local05零诊断：actualfullsmoothHaar embedding单射/唯一lift及真实partialoperator；原partial graph实际I×I.map双向等于Haar graph、稠密/形式伴随/可闭；真正Haarclosure闭/稠密/光滑core及原整个Gibbsclosedgraph unitarymap=Haarclosedgraph，全Haar闭域形式对称和非正。DEP045/NOT054，统一fullcheck中；自伴/compactresolvent/full谱/semigroup未完成。
+
+full-check01 passed：9080 jobs/1535公理声明/163exact inputs；10checks退出0、全部input/rawlog SHA匹配、23 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
