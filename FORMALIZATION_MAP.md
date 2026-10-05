@@ -797,3 +797,8 @@ full-check01 passed：9076 jobs/1453公理声明/159exact inputs；10checks退�
 BrownianGroundState29public local06零诊断：actualpartialproduct/secondproduct/weightsecond、exp s/h互逆，literal originalm/U/β生成元sL(hf)=massLaplacef+Vf及真实V C∞periodic/CMnormbound；同一partition normalizedfactor²=originalsameµdensity、actualHaar square integral=Gibbs square integral。DEP042/NOT051，fullcheck中；尚未构造actualfullLpunitary/selfadjoint/compactresolvent。
 
 full-check01 passed：9077 jobs/1482公理声明/160exact inputs；10checks退出0、全部input/rawlog SHA匹配、29 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 实际全 Gibbs-Haar Hilbert 等距同构
+BrownianGroundStateIsometry15public exactbyte draft局部零诊断：actualnormalizedfactor reciprocal和CM multiplication LinearEquiv，actualdense embeddings与derived normeq扩张至整个sameµ GibbsLp≃ₗᵢHaarLp，实际onto/inverse/norm/inner及全CMformula。DEP043/NOT052，fullcheck中；actualsmoothdomain/operatorgraph共轭和diagonal selfadjoint仍未完成。
+
+full-check01 passed：9078 jobs/1497公理声明/161exact inputs；10checks退出0、全部input/rawlog SHA匹配、15 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

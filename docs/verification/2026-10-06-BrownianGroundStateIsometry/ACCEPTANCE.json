@@ -1,0 +1,169 @@
+{
+  "started_at": "2026-10-06T04:28:41.6099363+08:00",
+  "finished_at": "2026-10-06T04:30:18.7301629+08:00",
+  "head_at_check": "3a3bf335a928e483c5d6242cc2015c029472cc6f",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9078,
+  "audit_declarations": 1497,
+  "inputs": 161,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookTorusGibbsNormalizedGroundStateFactor_pos",
+    "MolecularDynamics.textbookTorusGibbsNormalizedGroundStateInverse",
+    "MolecularDynamics.textbookGibbsGroundStateContinuousEquiv",
+    "MolecularDynamics.textbookGibbsGroundStateContinuousEquiv_apply",
+    "MolecularDynamics.textbookGibbsGroundStateContinuousEquiv_symm_apply",
+    "MolecularDynamics.textbookHaarContinuousToLp",
+    "MolecularDynamics.textbookHaarContinuousToLp_denseRange",
+    "MolecularDynamics.textbookHaarContinuousToLp_norm_sq",
+    "MolecularDynamics.textbookGibbsGroundStateContinuousEquiv_norm",
+    "MolecularDynamics.textbookGibbsHaarGroundStateIsometry",
+    "MolecularDynamics.textbookGibbsHaarGroundStateIsometry_apply_continuous",
+    "MolecularDynamics.textbookGibbsHaarGroundStateIsometry_symm_continuous",
+    "MolecularDynamics.textbookGibbsHaarGroundStateIsometry_norm",
+    "MolecularDynamics.textbookGibbsHaarGroundStateIsometry_surjective",
+    "MolecularDynamics.textbookGibbsHaarGroundStateIsometry_inner"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsNormalizedGroundStateFactor_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsNormalizedGroundStateInverse",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateContinuousEquiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateContinuousEquiv_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateContinuousEquiv_symm_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarContinuousToLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarContinuousToLp_denseRange",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarContinuousToLp_norm_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateContinuousEquiv_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsHaarGroundStateIsometry",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsHaarGroundStateIsometry_apply_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsHaarGroundStateIsometry_symm_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsHaarGroundStateIsometry_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsHaarGroundStateIsometry_surjective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsHaarGroundStateIsometry_inner",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "b30cf369675b0e1c90975ad957421520db70a5b64dd08a7ae21984308e4af000"
+    },
+    {
+      "path": "full-check01-driver.log",
+      "sha256": "785904381b32f3dc01766043646b282dbf42c1168e8a10e48d86f5186c67ba42"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

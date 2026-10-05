@@ -1,0 +1,7 @@
+# Theorem6.1：真实全 Gibbs–Haar Hilbert 等距同构
+印刷250–251/PDF271–272对应原µ/U/Nc/β；15public必要声明。actualsamepartition normalizedCMfactor由前批证明平方=density；从真正everywhere positivity给actualcontinuous reciprocal。CM乘factor/reciprocal是真正两个方向的LinearEquiv，全连续函数的left/rightinverse和线性已证明，未供应逆/onto假设。
+真实Haar ContinuousMap.toLp有denseRange和实际AE norm²=平方积分，原sameµ GibbsContinuousToLp_denseRange和normsq已证明；真实sameµnormalizedsquareintegral给两个actualembedded norm相等。固定Mathlib.Analysis.Normed.Operator.Extend的LinearEquiv.extendOfIsometry提供实际整个Lpℝ2µ≃ₗᵢ[ℝ]Lpℝ2Haar，inverse/surjectivity/norm/inner preservation真实全Hilbertvectors成立，非仅smoothimage或有限Fouriermode。原fullisometry及inverse对所有CM确为factor和reciprocal乘法，使用扩张eq/symmeq完整证明。
+api01所有fixedAPI退出0；local01-draft全15pub退出0空日志零警告。正式输入冻结时只在docs草稿区进行，新formal source按原始bytes复制，SOURCE_TRANSFER.json核对两个SHA相同，复用同一字节已验收局部证据；完整构建另验证canonical sourcepath。无新axiom/placeholder/unsafe或目标前提。
+root/Scratch/每public公理/DEP043/NOT052集成，full-check01进行中。实际sameHilbert fullisometry完整，但smoothdomain/closedgraph operator共轭识别尚缺，diagonal selfadjoint/resolventcompact/full谱existence/semigroup、Theorem6.1整体及CORE_SCOPE未完成，负责人pending，仅本地。
+
+full-check01 passed：9078 jobs/1497公理声明/161exact inputs；10checks退出0、全部input/rawlog SHA匹配、15 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

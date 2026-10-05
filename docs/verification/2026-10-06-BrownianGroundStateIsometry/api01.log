@@ -1,0 +1,45 @@
+Continuous.inv₀.{u_1, u_3} {α : Type u_1} {G₀ : Type u_3} [Zero G₀] [Inv G₀] [TopologicalSpace G₀] [ContinuousInv₀ G₀]
+  {f : α → G₀} [TopologicalSpace α] (hf : Continuous f) (h0 : ∀ (x : α), f x ≠ 0) : Continuous f⁻¹
+LinearEquiv.extendOfIsometry.{u_1, u_2, u_3, u_4, u_5, u_6} {𝕜 : Type u_1} {𝕜₂ : Type u_2} {E : Type u_3}
+  {Eₗ : Type u_4} {F : Type u_5} {Fₗ : Type u_6} [NormedField 𝕜] [NormedField 𝕜₂] [AddCommGroup E] [Module 𝕜 E]
+  [AddCommGroup F] [Module 𝕜₂ F] [NormedAddCommGroup Eₗ] [NormedSpace 𝕜 Eₗ] [CompleteSpace Eₗ] [NormedAddCommGroup Fₗ]
+  [NormedSpace 𝕜₂ Fₗ] [CompleteSpace Fₗ] {σ₁₂ : 𝕜 →+* 𝕜₂} {σ₂₁ : 𝕜₂ →+* 𝕜} [RingHomInvPair σ₁₂ σ₂₁]
+  [RingHomInvPair σ₂₁ σ₁₂] (f : E ≃ₛₗ[σ₁₂] F) (e₁ : E →ₗ[𝕜] Eₗ) (e₂ : F →ₗ[𝕜₂] Fₗ) (h_dense₁ : DenseRange ⇑e₁)
+  (h_dense₂ : DenseRange ⇑e₂) (h_norm : ∀ (x : E), ‖e₂ (f x)‖ = ‖e₁ x‖) : Eₗ ≃ₛₗᵢ[σ₁₂] Fₗ
+LinearEquiv.extendOfIsometry_eq.{u_1, u_2, u_3, u_4, u_5, u_6} {𝕜 : Type u_1} {𝕜₂ : Type u_2} {E : Type u_3}
+  {Eₗ : Type u_4} {F : Type u_5} {Fₗ : Type u_6} [NormedField 𝕜] [NormedField 𝕜₂] [AddCommGroup E] [Module 𝕜 E]
+  [AddCommGroup F] [Module 𝕜₂ F] [NormedAddCommGroup Eₗ] [NormedSpace 𝕜 Eₗ] [CompleteSpace Eₗ] [NormedAddCommGroup Fₗ]
+  [NormedSpace 𝕜₂ Fₗ] [CompleteSpace Fₗ] {σ₁₂ : 𝕜 →+* 𝕜₂} {σ₂₁ : 𝕜₂ →+* 𝕜} [RingHomInvPair σ₁₂ σ₂₁]
+  [RingHomInvPair σ₂₁ σ₁₂] (f : E ≃ₛₗ[σ₁₂] F) (e₁ : E →ₗ[𝕜] Eₗ) (e₂ : F →ₗ[𝕜₂] Fₗ) (h_dense₁ : DenseRange ⇑e₁)
+  (h_dense₂ : DenseRange ⇑e₂) (h_norm : ∀ (x : E), ‖e₂ (f x)‖ = ‖e₁ x‖) (x : E) :
+  (f.extendOfIsometry e₁ e₂ h_dense₁ h_dense₂ h_norm) (e₁ x) = e₂ (f x)
+LinearEquiv.extendOfIsometry_symm_eq.{u_1, u_2, u_3, u_4, u_5, u_6} {𝕜 : Type u_1} {𝕜₂ : Type u_2} {E : Type u_3}
+  {Eₗ : Type u_4} {F : Type u_5} {Fₗ : Type u_6} [NormedField 𝕜] [NormedField 𝕜₂] [AddCommGroup E] [Module 𝕜 E]
+  [AddCommGroup F] [Module 𝕜₂ F] [NormedAddCommGroup Eₗ] [NormedSpace 𝕜 Eₗ] [CompleteSpace Eₗ] [NormedAddCommGroup Fₗ]
+  [NormedSpace 𝕜₂ Fₗ] [CompleteSpace Fₗ] {σ₁₂ : 𝕜 →+* 𝕜₂} {σ₂₁ : 𝕜₂ →+* 𝕜} [RingHomInvPair σ₁₂ σ₂₁]
+  [RingHomInvPair σ₂₁ σ₁₂] (f : E ≃ₛₗ[σ₁₂] F) (e₁ : E →ₗ[𝕜] Eₗ) (e₂ : F →ₗ[𝕜₂] Fₗ) (h_dense₁ : DenseRange ⇑e₁)
+  (h_dense₂ : DenseRange ⇑e₂) (h_norm : ∀ (x : E), ‖e₂ (f x)‖ = ‖e₁ x‖) (x : F) :
+  (f.extendOfIsometry e₁ e₂ h_dense₁ h_dense₂ h_norm).symm (e₂ x) = e₁ (f.symm x)
+sq_eq_sq₀.{u_2} {M₀ : Type u_2} [MonoidWithZero M₀] [LinearOrder M₀] [PosMulStrictMono M₀] {a b : M₀} [MulPosMono M₀]
+  (ha : 0 ≤ a) (hb : 0 ≤ b) : a ^ 2 = b ^ 2 ↔ a = b
+ContinuousMap.toLp.{u_1, u_2, u_3} {α : Type u_1} {E : Type u_2} {m0 : MeasurableSpace α} (p : ENNReal) (μ : Measure α)
+  [TopologicalSpace α] [BorelSpace α] [NormedAddCommGroup E] [SecondCountableTopologyEither α E] [CompactSpace α]
+  [IsFiniteMeasure μ] (𝕜 : Type u_3) [Fact (1 ≤ p)] [NormedRing 𝕜] [Module 𝕜 E] [IsBoundedSMul 𝕜 E] :
+  C(α, E) →L[𝕜] ↥(Lp E p μ)
+ContinuousMap.toLp_denseRange.{u_1, u_2, u_3} {α : Type u_1} [TopologicalSpace α] [NormalSpace α] [MeasurableSpace α]
+  [BorelSpace α] (E : Type u_2) [NormedAddCommGroup E] (μ : Measure α) {p : ENNReal} [SecondCountableTopologyEither α E]
+  [_i : Fact (1 ≤ p)] (𝕜 : Type u_3) [NormedRing 𝕜] [Module 𝕜 E] [IsBoundedSMul 𝕜 E] [NormedSpace ℝ E] [CompactSpace α]
+  [μ.WeaklyRegular] [IsFiniteMeasure μ] (hp : p ≠ ⊤) : DenseRange ⇑(ContinuousMap.toLp p μ 𝕜)
+ContinuousMap.coeFn_toLp.{u_1, u_2, u_3} {α : Type u_1} {E : Type u_2} {m0 : MeasurableSpace α} {p : ENNReal}
+  (μ : Measure α) [TopologicalSpace α] [BorelSpace α] [NormedAddCommGroup E] [SecondCountableTopologyEither α E]
+  [CompactSpace α] [IsFiniteMeasure μ] {𝕜 : Type u_3} [Fact (1 ≤ p)] [NormedRing 𝕜] [Module 𝕜 E] [IsBoundedSMul 𝕜 E]
+  (f : C(α, E)) : ↑↑((ContinuousMap.toLp p μ 𝕜) f) =ᵐ[μ] ⇑f
+ContinuousMap.smul_apply.{u_1, u_3, u_5} {α : Type u_1} [TopologicalSpace α] {R : Type u_3} {M : Type u_5}
+  [TopologicalSpace M] [SMul R M] [ContinuousConstSMul R M] (c : R) (f : C(α, M)) (a : α) : (c • f) a = c • f a
+LinearIsometryEquiv.surjective.{u_1, u_2, u_4, u_5} {R : Type u_1} {R₂ : Type u_2} {E : Type u_4} {E₂ : Type u_5}
+  [Semiring R] [Semiring R₂] {σ₁₂ : R →+* R₂} {σ₂₁ : R₂ →+* R} [RingHomInvPair σ₁₂ σ₂₁] [RingHomInvPair σ₂₁ σ₁₂]
+  [SeminormedAddCommGroup E] [SeminormedAddCommGroup E₂] [Module R E] [Module R₂ E₂] (e : E ≃ₛₗᵢ[σ₁₂] E₂) :
+  Function.Surjective ⇑e
+LinearIsometryEquiv.inner_map_map.{u_1, u_2, u_4} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [SeminormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] {E' : Type u_4} [SeminormedAddCommGroup E'] [InnerProductSpace 𝕜 E'] (f : E ≃ₗᵢ[𝕜] E')
+  (x y : E) : inner 𝕜 (f x) (f y) = inner 𝕜 x y

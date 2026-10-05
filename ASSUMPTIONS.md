@@ -469,3 +469,6 @@ Nc任意整数Fourierindices和原finiteunit configurationtorus，必要Haarauxi
 
 ## 2026-10-06 BrownianGroundState条件
 Nc任意、所有原质量m任意；实际U C∞，周期性/actualCMnormbounds需要originalintegerperiodic，literalconjugation β≠0，因子/normalizeddensity/integralidentity β任意。全部actualpartials/真实exp/samepartition和sameµ未改；不供应conjugation/derivative/boundedpotential/isometry或selfadjoint前提。标准fixedkernel no新axiom，actualfullLponto与域共轭尚缺，负责人semanticpending。
+
+## 2026-10-06 BrownianGroundStateIsometry条件
+Nc任意、U C∞integerperiodic、β任意，同一originalµ/normalizedHaar fullrealLp2。normalizedfactorpos、inverseCM、CMLinearEquiv、normidentity与denseRange全部derived；固定extendOfIsometry产生真正全空间等距满射，不供应measureequivalence/onto/isometry或结论假设。尚未识别operator/smoothdomain/closedgraph、自伴/compact，负责人semanticpending。
