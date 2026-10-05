@@ -478,3 +478,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 引理6.1实际积分解噪声稳定性验收
 
 - LangevinNoiseStability真实积分噪声稳定性接受，待本地保存。full-check01/session34563：2026-10-05T12:47:06.4332314+08:00--2026-10-05T12:48:15.2611682+08:00退出0；9033 jobs、零Lean警告、863项审计声明仅propext/Classical.choice/Quot.sound、116项输入及全部原始日志SHA256实查一致，10项public逐名覆盖。实际连续积分解、p-sigmaW补偿/真实FTC右导数、控制reference积分方程、真实Gronwall compensated与原phase误差界、正tube阈值构造完整。全局Lipschitz force为明确的辅助条件，未计一般C∞或完整Lemma6.1；下一真实C∞紧支撑势能截断/全局梯度Lip与first-exit局部化，再证明Wiener tube正概率。原所有open集合遗漏Nonempty（空集概率0），负责人及整个CORE_SCOPE仍pending。
+
+## 2026-10-05 引理6.1真实smooth噪声局部化验收
+
+- LangevinSmoothCutoff真实一般smooth噪声局部化接受，待本地保存。full-check02/session55133：2026-10-05T13:16:08.3555922+08:00--2026-10-05T13:17:28.4081093+08:00退出0；9034 jobs、零Lean警告、873项审计声明仅基础三公理、117项输入及全部原始日志SHA256实查一致，10public完整名称逐项覆盖。真实C∞紧支撑potential、内球U/actual force一致、真实gradient globalLip、真实连续d首次退出compact最小值、实际积分解缩区间/换势能、真实Gronwall反证推出一般C∞势能噪声端点稳定性完整。无globalLip或轨迹留域假设；Wiener tube正概率、原Nonempty-open修正/负责人及整个CORE_SCOPE仍pending。下一必要Brownian bridge真实joint Gaussian/端点独立性、短区间桥管正概率及有限段拼接支持。

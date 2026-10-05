@@ -352,3 +352,7 @@ LangevinControlPath: finite R^Nc coordinate phase, actual globally C infinity U,
 ### Actual Langevin integral-noise stability (2026-10-05)
 
 LangevinNoiseStability: finite real coordinate phase, actual C2 U for trajectory estimates and C infinity U for the constructed reference, specified globally Lipschitz actual negative potential gradient, real friction/noise, specified true continuous integral solutions on Icc0T with W0=0. The controlled endpoint uses sigma nonzero,T>0 and delta>0. Actual compensated derivative, Lipschitz estimate, Gronwall bound and positive tube threshold are derived. No solution-continuity or target-ball premise is supplied. Removing the explicit global-Lipschitz condition requires true cutoff/first-exit localization; actual Wiener support/probability and Nonempty-open corrected Lemma6.1 remain separate.
+
+### Actual smooth-potential noise localization (2026-10-05)
+
+LangevinSmoothCutoff: finite R^Nc coordinate phase, genuine globally C infinity U, real gamma, nonzero sigma, positive T/delta, actual continuous Langevin integral solution on Icc0T with W0=0. Actual potential/force equality, compact gradient support, global cut-force Lipschitz constant, first hitting time and pre-exit confinement are all derived. The final endpoint stability theorem has no global original-force Lipschitz or stay-in-ball premise, superseding that qualification in the prior auxiliary batch. SDE existence on this interval, singular domains/toroidal lifting, Wiener support/probability and Nonempty-open semantic correction remain separate.

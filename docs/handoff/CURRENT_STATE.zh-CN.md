@@ -1,9 +1,39 @@
 # 当前状态与接续检查点
 
 
+
+
+
+
+
+
+## 最新数学检查点（2026-10-05 13:19 +0800）
+
+- LangevinSmoothCutoff真实一般smooth噪声局部化接受，待本地保存。full-check02/session55133：2026-10-05T13:16:08.3555922+08:00--2026-10-05T13:17:28.4081093+08:00退出0；9034 jobs、零Lean警告、873项审计声明仅基础三公理、117项输入及全部原始日志SHA256实查一致，10public完整名称逐项覆盖。真实C∞紧支撑potential、内球U/actual force一致、真实gradient globalLip、真实连续d首次退出compact最小值、实际积分解缩区间/换势能、真实Gronwall反证推出一般C∞势能噪声端点稳定性完整。无globalLip或轨迹留域假设；Wiener tube正概率、原Nonempty-open修正/负责人及整个CORE_SCOPE仍pending。下一必要Brownian bridge真实joint Gaussian/端点独立性、短区间桥管正概率及有限段拼接支持。
+
+## 最新数学检查点（2026-10-05 13:16 +0800）
+
+- LangevinSmoothCutoff local04/session87107为零警告真证明。接入脚本的子串重复断言将新stable误认为旧stable_globalLip，导致仅root先写入而Scratch/审计未接；PowerShell继续启动full01/session92167（退出0）故10public覆盖未完整，不计整批接受。已改逐完整行检查并真实接入10public；下一唯一full-check02冻结输入，复核全部输入/hash/审计。数学证明无变化；概率tube支持/负责人/CORE_SCOPEpending。
+
+## 最新数学检查点（2026-10-05 13:11 +0800）
+
+- LangevinSmoothCutoff local03/session18417退出0，仅换势能辅助函数无用hS参数警告，已移除。真实compact cutoff、真正gradient globalLip、实际first-hit紧集最小值与Gronwall反证、一般C∞原噪声积分解目标球阈值完整局部；不再要求globalLip或留域前提。下一唯一local04清零警告后接root/full。概率tube支持/原Nonempty-open语义修正/负责人/整个CORE_SCOPEpending。
+
+## 最新数学检查点（2026-10-05 13:08 +0800）
+
+- LangevinSmoothCutoff local02/session76265退出1：真实首次退出/势能截断/真实globalLip与最终Gronwall反证均无其他诊断；intervalIntegral.congr的函数beta-redex先change显式force项，ContinuousOn.dist改逐点真实ContinuousWithinAt.dist，deprecated push_neg改push Not。无新增结论假设。下一唯一local03；整批尚未接受，Wiener support/负责人/CORE_SCOPEpending。
+
+## 最新数学检查点（2026-10-05 13:00 +0800）
+
+- LangevinSmoothCutoff local01/session38697退出0空原始日志/零警告：真实bump势能C∞/紧支撑、内球potential与actual force一致、真实梯度紧支撑及真正globalLip常数存在完整局部。尚未整批接root/full；继续同文件加入真实首次退出与一般C∞噪声稳定性，不能把轨迹留域作为前提。Wiener support概率/负责人/CORE_SCOPEpending。
+
+## 最新数学检查点（2026-10-05 12:57 +0800）
+
+- HEAD 48722956b0ee6db77a28dba3b50f981c43067167；噪声积分globalLip辅助稳定性完整验收保存，无运行构建。开始Chapter06/LangevinSmoothCutoff.lean：真实C∞紧支撑bump乘实际U，在任意指定内球真实势能/force一致，紧支撑真导数推出实际gradient全局Lip；随后first-exit局部化，不能把留域/稳定性当假设。原255--256/PDF276--277已目视；Wiener tube正概率、Nonempty-open修正/负责人/CORE_SCOPE仍pending。
+
 ## 最新数学检查点（2026-10-05 12:56 +0800）
 
-- LangevinNoiseStability真实积分噪声稳定性接受，待本地保存。full-check01/session34563：2026-10-05T12:47:06.4332314+08:00--2026-10-05T12:48:15.2611682+08:00退出0；9033 jobs、零Lean警告、863项审计声明仅propext/Classical.choice/Quot.sound、116项输入及全部原始日志SHA256实查一致，10项public逐名覆盖。实际连续积分解、p-sigmaW补偿/真实FTC右导数、控制reference积分方程、真实Gronwall compensated与原phase误差界、正tube阈值构造完整。全局Lipschitz force为明确的辅助条件，未计一般C∞或完整Lemma6.1；下一真实C∞紧支撑势能截断/全局梯度Lip与first-exit局部化，再证明Wiener tube正概率。原所有open集合遗漏Nonempty（空集概率0），负责人及整个CORE_SCOPE仍pending。
+- LangevinNoiseStability真实积分噪声稳定性接受并保存为 48722956b0ee6db77a28dba3b50f981c43067167。full-check01/session34563：2026-10-05T12:47:06.4332314+08:00--2026-10-05T12:48:15.2611682+08:00退出0；9033 jobs、零Lean警告、863项审计声明仅propext/Classical.choice/Quot.sound、116项输入及全部原始日志SHA256实查一致，10项public逐名覆盖。实际连续积分解、p-sigmaW补偿/真实FTC右导数、控制reference积分方程、真实Gronwall compensated与原phase误差界、正tube阈值构造完整。全局Lipschitz force为明确的辅助条件，未计一般C∞或完整Lemma6.1；下一真实C∞紧支撑势能截断/全局梯度Lip与first-exit局部化，再证明Wiener tube正概率。原所有open集合遗漏Nonempty（空集概率0），负责人及整个CORE_SCOPE仍pending。
 
 ## 最新数学检查点（2026-10-05 12:47 +0800）
 
