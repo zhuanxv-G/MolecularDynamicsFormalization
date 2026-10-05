@@ -1,0 +1,43 @@
+LinearPMap.mk.{u_1, u_2, u_3, u_4} {R : Type u_1} {S : Type u_2} [Ring R] [Ring S] {σ : R →+* S} {E : Type u_3}
+  [AddCommGroup E] [Module R E] {F : Type u_4} [AddCommGroup F] [Module S F] (domain : Submodule R E)
+  (toFun : ↥domain →ₛₗ[σ] F) : E →ₛₗ.[σ] F
+LinearPMap.IsFormalAdjoint.le_adjoint.{u_1, u_2, u_3} {𝕜 : Type u_1} {E : Type u_2} {F : Type u_3} [RCLike 𝕜]
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] [NormedAddCommGroup F] [InnerProductSpace 𝕜 F] {T : E →ₗ.[𝕜] F}
+  {S : F →ₗ.[𝕜] E} [CompleteSpace E] (hT : Dense ↑T.domain) (h : T.IsFormalAdjoint S) : S ≤ T†
+LinearPMap.adjoint_isClosed.{u_1, u_2, u_3} {𝕜 : Type u_1} {E : Type u_2} {F : Type u_3} [RCLike 𝕜]
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] [NormedAddCommGroup F] [InnerProductSpace 𝕜 F] {T : E →ₗ.[𝕜] F}
+  [CompleteSpace E] (hT : Dense ↑T.domain) : T†.IsClosed
+LinearPMap.adjoint_isFormalAdjoint.{u_1, u_2, u_3} {𝕜 : Type u_1} {E : Type u_2} {F : Type u_3} [RCLike 𝕜]
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] [NormedAddCommGroup F] [InnerProductSpace 𝕜 F] {T : E →ₗ.[𝕜] F}
+  [CompleteSpace E] (hT : Dense ↑T.domain) : T†.IsFormalAdjoint T
+LinearPMap.IsClosed.isClosable.{u_1, u_2, u_3} {R : Type u_1} {E : Type u_2} {F : Type u_3} [CommRing R]
+  [AddCommGroup E] [AddCommGroup F] [Module R E] [Module R F] [TopologicalSpace E] [TopologicalSpace F]
+  [ContinuousAdd E] [ContinuousAdd F] [TopologicalSpace R] [ContinuousSMul R E] [ContinuousSMul R F] {f : E →ₗ.[R] F}
+  (hf : f.IsClosed) : f.IsClosable
+LinearPMap.IsClosable.leIsClosable.{u_1, u_2, u_3} {R : Type u_1} {E : Type u_2} {F : Type u_3} [CommRing R]
+  [AddCommGroup E] [AddCommGroup F] [Module R E] [Module R F] [TopologicalSpace E] [TopologicalSpace F]
+  [ContinuousAdd E] [ContinuousAdd F] [TopologicalSpace R] [ContinuousSMul R E] [ContinuousSMul R F] {f g : E →ₗ.[R] F}
+  (hf : f.IsClosable) (hfg : g ≤ f) : g.IsClosable
+LinearPMap.le_closure.{u_1, u_2, u_3} {R : Type u_1} {E : Type u_2} {F : Type u_3} [CommRing R] [AddCommGroup E]
+  [AddCommGroup F] [Module R E] [Module R F] [TopologicalSpace E] [TopologicalSpace F] [ContinuousAdd E]
+  [ContinuousAdd F] [TopologicalSpace R] [ContinuousSMul R E] [ContinuousSMul R F] (f : E →ₗ.[R] F) : f ≤ f.closure
+LinearPMap.IsClosable.closure_isClosed.{u_1, u_2, u_3} {R : Type u_1} {E : Type u_2} {F : Type u_3} [CommRing R]
+  [AddCommGroup E] [AddCommGroup F] [Module R E] [Module R F] [TopologicalSpace E] [TopologicalSpace F]
+  [ContinuousAdd E] [ContinuousAdd F] [TopologicalSpace R] [ContinuousSMul R E] [ContinuousSMul R F] {f : E →ₗ.[R] F}
+  (hf : f.IsClosable) : f.closure.IsClosed
+LinearPMap.IsClosable.graph_closure_eq_closure_graph.{u_1, u_2, u_3} {R : Type u_1} {E : Type u_2} {F : Type u_3}
+  [CommRing R] [AddCommGroup E] [AddCommGroup F] [Module R E] [Module R F] [TopologicalSpace E] [TopologicalSpace F]
+  [ContinuousAdd E] [ContinuousAdd F] [TopologicalSpace R] [ContinuousSMul R E] [ContinuousSMul R F] {f : E →ₗ.[R] F}
+  (hf : f.IsClosable) : f.graph.topologicalClosure = f.closure.graph
+LinearPMap.closureHasCore.{u_1, u_2, u_3} {R : Type u_1} {E : Type u_2} {F : Type u_3} [CommRing R] [AddCommGroup E]
+  [AddCommGroup F] [Module R E] [Module R F] [TopologicalSpace E] [TopologicalSpace F] [ContinuousAdd E]
+  [ContinuousAdd F] [TopologicalSpace R] [ContinuousSMul R E] [ContinuousSMul R F] (f : E →ₗ.[R] F) :
+  f.closure.HasCore f.domain
+LinearPMap.IsClosable.existsUnique.{u_1, u_2, u_3} {R : Type u_1} {E : Type u_2} {F : Type u_3} [CommRing R]
+  [AddCommGroup E] [AddCommGroup F] [Module R E] [Module R F] [TopologicalSpace E] [TopologicalSpace F]
+  [ContinuousAdd E] [ContinuousAdd F] [TopologicalSpace R] [ContinuousSMul R E] [ContinuousSMul R F] {f : E →ₗ.[R] F}
+  (hf : f.IsClosable) : ∃! f', f.graph.topologicalClosure = f'.graph
+LinearPMap.IsClosable.closure_mono.{u_1, u_2, u_3} {R : Type u_1} {E : Type u_2} {F : Type u_3} [CommRing R]
+  [AddCommGroup E] [AddCommGroup F] [Module R E] [Module R F] [TopologicalSpace E] [TopologicalSpace F]
+  [ContinuousAdd E] [ContinuousAdd F] [TopologicalSpace R] [ContinuousSMul R E] [ContinuousSMul R F] {f g : E →ₗ.[R] F}
+  (hg : g.IsClosable) (h : f ≤ g) : f.closure ≤ g.closure

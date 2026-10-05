@@ -747,3 +747,8 @@ BrownianSmoothDomain统一验收：full-check01 passed：9066 jobs/1259公理声
 BrownianSmoothDensity.lean：actual Fourier Euclidean lift C∞、complex fullspan dense与real-part onto→real smooth torus连续函数dense；integer quotient translation及original representative给full smooth periodic lift/descent；sameµ continuous-to-L² actualCLM/denseRange与AE bridge推出原actual domain dense/closure=top。local03零诊断，统一验收进行中。不是finite Fourier模型；closed selfadjoint/spectrum/gap/semigroup仍未完成；负责人pending。
 
 BrownianSmoothDensity统一验收：full-check01 passed：9067jobs/1275公理声明/150exact inputs；10checks退出0，全部input/rawlog SHA256匹配，16public逐名只基础三公理，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人semanticpending。
+
+## 2026-10-06 Brownian actual dense partial operator/可闭图闭包
+BrownianClosedOperator.lean：actualsameµ LinearPMap/dense/formal→T≤actualclosedadjoint→IsClosable；真实图closure/closed/dense/core、原domain/literalgenerator/constant值保持与最小closedextension；两次actualgraph closed-inner-condition证明闭包全domain formal symmetry，closed inner≤0推全closure非正。local02零诊断，统一验收中。selfadjoint/compactresolvent/谱/gap/semigroup未完成；负责人pending。
+
+BrownianClosedOperator统一验收：full-check01 passed：9068jobs/1297公理声明/151exact inputs；10checks退出0，全部input/rawlog SHA256匹配，22public逐名只基础三公理，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人semanticpending。

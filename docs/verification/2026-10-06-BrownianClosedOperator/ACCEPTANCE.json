@@ -1,0 +1,221 @@
+{
+  "started_at": "2026-10-06T01:46:09.3924170+08:00",
+  "finished_at": "2026-10-06T01:47:58.3407038+08:00",
+  "head_at_check": "8462573a5135e26e86b4624ded34872e5d92b049",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9068,
+  "audit_declarations": 1297,
+  "inputs": 151,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsPartialOperator",
+    "MolecularDynamics.textbookBrownianGibbsPartialOperator_domain",
+    "MolecularDynamics.textbookBrownianGibbsPartialOperator_apply",
+    "MolecularDynamics.textbookBrownianGibbsPartialOperator_dense",
+    "MolecularDynamics.textbookBrownianGibbsPartialOperator_formalAdjoint",
+    "MolecularDynamics.textbookBrownianGibbsPartialOperator_le_adjoint",
+    "MolecularDynamics.textbookBrownianGibbsPartialOperator_adjoint_isClosed",
+    "MolecularDynamics.textbookBrownianGibbsPartialOperator_adjoint_dense",
+    "MolecularDynamics.textbookBrownianGibbsPartialOperator_isClosable",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator",
+    "MolecularDynamics.textbookBrownianGibbsPartialOperator_le_closed",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_isClosed",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_graph",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_dense",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_hasCore",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_apply_domain",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_apply_lift",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_const",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_le_extension",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_formalAdjoint_partial",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_formalAdjoint",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_nonpos"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsPartialOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsPartialOperator_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsPartialOperator_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsPartialOperator_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsPartialOperator_formalAdjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsPartialOperator_le_adjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsPartialOperator_adjoint_isClosed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsPartialOperator_adjoint_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsPartialOperator_isClosable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsPartialOperator_le_closed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_isClosed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_hasCore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_apply_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_apply_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_le_extension",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_formalAdjoint_partial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_formalAdjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_inputs_sha256_verified": true,
+  "lean_warning_count": 0,
+  "machine_check": "passed",
+  "responsible_semantic_review": "pending",
+  "fixed_lean": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "fixed_mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "report": "docs/verification/2026-10-06-BrownianClosedOperator/full-check01/CHECK_REPORT.json",
+  "remaining": "Selfadjointness, compact resolvent/discrete spectrum, Poincare gap and actual semigroup expectation; Theorem6.1 and CORE_SCOPE unfinished."
+}

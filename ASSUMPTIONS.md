@@ -439,3 +439,6 @@ same finite unit torus/actual Gibbs probability，real periodic continuous obs�
 
 ## 2026-10-06 BrownianSmoothDensity实际条件
 Finite Nc，actual unit torus/同一normalized Gibbs measure，U C∞ integer periodic，β任意；所有C∞ periodic real lifts的genuine domain。actual compactness/概率性/weak regular和Fourier span dense来自已证明结果；没有附加density/谱/closure/selfadjoint/gap前提。质量不参与density。实际CM满射/AE身份及original quotient/lift都推导。
+
+## 2026-10-06 BrownianClosedOperator实际条件
+实际finite unit torus/同一normalized Gibbs L²；U C∞ integerperiodic；arbitrary diagonal m，β≠0用于symmetry/closability/genuineclosed realization，β>0/各m_i>0用于nonpositive。actualdense/fullsupport/operatorinjectivity已证明；没有把closed extension、可闭性、graphclosure、closed-domain对称非正/selfadjoint/gap作为模型假设。最小closed-extension定理的S.IsClosed和T≤S是该最小性关系的正常量词前提，不参与原算子可闭性证明。闭包选择就是原smooth operator graph closure；selfadjoint仍缺独立证明。

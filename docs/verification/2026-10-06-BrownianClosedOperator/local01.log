@@ -1,0 +1,9 @@
+MolecularDynamics/Chapter06/BrownianClosedOperator.lean:118:64: error(lean.invalidField): Invalid field `apply_comp_inclusion`: The environment does not contain `And.apply_comp_inclusion`, so it is not possible to project the field `apply_comp_inclusion` from an expression
+  textbookBrownianGibbsPartialOperator_le_closed m U hU hPU β
+of type
+  (textbookBrownianGibbsPartialOperator m U hU hPU β).domain ≤
+      (textbookBrownianGibbsClosedOperator m U hU hPU β).domain ∧
+    ∀ ⦃x : ↥(textbookBrownianGibbsPartialOperator m U hU hPU β).domain⦄
+      ⦃y : ↥(textbookBrownianGibbsClosedOperator m U hU hPU β).domain⦄,
+      ↑x = ↑y →
+        ↑(textbookBrownianGibbsPartialOperator m U hU hPU β) x = ↑(textbookBrownianGibbsClosedOperator m U hU hPU β) y
