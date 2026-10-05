@@ -452,3 +452,9 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 - full-check02/session50156：2026-10-05T10:15:12.6155527+08:00--2026-10-05T10:15:56.2619028+08:00退出0；9027 jobs、零Lean警告、785项声明审计仅基础三公理、110项输入与全部原始日志SHA256实查一致；固定版本/扫描/build/Scratch/公理全部通过，新增24项public覆盖完整。
 - 原338--339/PDF359--360目视；真实div/密度规则、可逆坐标交换、两恒温器真实field分解、Hamiltonian Gibbs底场及固定归一化常数、乘积密度PDE可加性均接受。负责人语义pending。
 - 命题的真实flow下加权Jacobian/密度transport与概率不变桥接仍待补，不能把PDE接受直接计为无条件全局概率结论；其余正文及整个CORE_SCOPE未完成，继续必要桥接。
+
+## 2026-10-05 命题8.1真实flow概率不变验收
+
+- full-check01/session10233：2026-10-05T11:08:11.6616372+08:00--2026-10-05T11:09:19.0920373+08:00退出0；9028 jobs、零Lean警告、793项审计声明仅基础三公理、111项输入与全部原始日志SHA256实查一致；固定版本/扫描/build/Scratch/公理全部通过，新增8项public全部覆盖。
+- 原338--339/PDF359--360目视；实际weighted/abs Jacobian、Haar密度换元、range conull/真实map不变、三factor真实density product与概率归一化、指定实际共同C2解族上Proposition8.1的概率结论完整接受。
+- 真实flow/初值/联合C2正则性为显式模型数据；不构造任意feedback全局flow或较弱C1-family。更弱正则性衔接和负责人语义签核保持pending，其他正文/整个CORE_SCOPE未完成。下一Prop7.1原297/PDF318已目视，推进真实非交换五段组合/对数系数，不把形式级数误称analytic余项。

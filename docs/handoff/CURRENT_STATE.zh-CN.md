@@ -1,8 +1,36 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 11:12 +0800）
+
+- StationaryDensityFlow实际flow概率链接受，待本地保存。full-check01/session10233：2026-10-05T11:08:11.6616372+08:00--2026-10-05T11:09:19.0920373+08:00退出0；9028 jobs、零Lean警告、793项审计声明仅基础三公理、111项输入与全部原始日志SHA256实查一致；固定版本/扫描/build/Scratch/公理全部通过，新增8项public全部覆盖。 原338--339/PDF359--360目视，真实joint C2解族上Proposition8.1概率不变结论已接受；弱C1-flow/全局存在未构造，负责人及整个CORE_SCOPEpending。下一Chapter07/SymmetricOperatorBCH.lean，Prop7.1原297/PDF318已目视：五段实际非交换组合与真正formal logarithm finite系数/偶性；实际无界算子analytic余项必须保持区别。
+
+## 最新数学检查点（2026-10-05 11:08 +0800）
+
+- HEAD 3751f2055f1818f5499a90a17e3c1b009c16cabc；StationaryDensityFlow local05/session44613退出0零警告，8项public已接root/Scratch/逐项公理审计。真实weighted/abs Jacobian、generic Haar density image/map不变、真正product withDensity/概率归一化以及正文Prop8.1指定实际解族下不变概率测度均局部通过。下一唯一full-check01，冻结Lean/验收输入。真正联合C2解族和原ODE/初值为显式数据，未假定Jacobian/不变性或surjectivity；不构造任意feedback全局flow/配分函数/弱正则性，负责人和整CORE_SCOPE仍pending。
+
+## 最新数学检查点（2026-10-05 11:06 +0800）
+
+- StationaryDensityFlow local04/session66243退出1：双product Haar实例自动搜索失败，另有不必要的hρ非负helper前提和haveI style警告。固定API haar-api01确实复现；haar-api02显式两次prod.instIsAddHaarMeasure完整证明成功，已用于最终正文实例，不添加product Haar假设。两辅助非负足以证明实际density measure product；去掉不必要物理非负helper前提，最终flow非负仍从真Gibbs正性推出。下一唯一local05；真实flow/measure通用链已局部通过，整批尚未完整验收。
+
+## 最新数学检查点（2026-10-05 11:01 +0800）
+
+- StationaryDensityFlow local03/session90786退出0，仅convert的多余<;> linter，已改普通顺序tactic。真正generic weighted Jacobian、绝对Jacobian、Haar换元/image相等、由概率normalization得真实map不变已局部通过。补三factor真实withDensity product等式/概率归一化及正文Proposition8.1实际combined flow invariant probability候选；最终只需指定联合C2解族/真实ODE/初值，不把Jacobian、surjectivity或不变性藏进前提。下一唯一local04，整批未验收、负责人/整个CORE_SCOPE仍pending。
+
+## 最新数学检查点（2026-10-05 10:57 +0800）
+
+- HEAD 3751f2055f1818f5499a90a17e3c1b009c16cabc。local02/session44974退出1：actual equiv/CLM coe桥接、doc注释放在omit后、withDensity_apply属于MeasureTheory而非Measure；按固定源码修复，下一唯一local03。中途额度导致自动审批检索未执行；只读额度现ordinaryUsageAllowed=true，直接从落盘源码和日志恢复。无构建在运行，不新建Goal/自动化；旧Goal paused且旧全PDF范围，不伪称已恢复Goal状态，按用户持续CORE_SCOPE授权独立推进；真正flow/probability和整范围/负责人仍pending。
+
+## 最新数学检查点（2026-10-05 10:24 +0800）
+
+- StationaryDensityFlow local01/session37213退出1：实际basis坐标HasDerivAt的Pi实例diamond，复合导数必须在e.symm(ez)求值，以及Haar类需打开Measure命名空间；已精确修复，实际weighted Jacobian coordinate证明无诊断。densityMeasure定义omit无关正则性实例，下一唯一local02。仍未接受flow/probability结论，原PDF核对和固定版本保持。
+
+## 最新数学检查点（2026-10-05 10:22 +0800）
+
+- HEAD 3751f2055f1818f5499a90a17e3c1b009c16cabc；命题8.1必要实际流桥接已开始：StationaryDensityFlow.lean候选从实际ODE/Jacobian ODE和PDE推出ρ(Phi)detDPhi恒等，真实有限basis坐标传回任意有限维E；绝对Jacobian与真正change of variables推出image密度测度相等，再由概率归一化推出真map不变。无需假定surjectivity或不变性；指定joint C2解族为显式强正则性/存在数据。下一唯一local01，未验证。
+
 ## 最新数学检查点（2026-10-05 10:18 +0800）
 
-- ThermostatDensity Liouville链机器接受，待本地保存。full-check02/session50156：2026-10-05T10:15:12.6155527+08:00--2026-10-05T10:15:56.2619028+08:00退出0；9027 jobs、零Lean警告、785项声明审计仅基础三公理、110项输入与全部原始日志SHA256实查一致；固定版本/扫描/build/Scratch/公理全部通过，新增24项public覆盖完整。 原338--339/PDF359--360目视。下一Chapter08/StationaryDensityFlow.lean，先真实ODE推ρ(Phi)detDPhi=ρ(initial)，再真实change of variables与归一化得概率不变；不假定Jacobian/不变性结论。当前命题PDE部分已接受、flow语义依赖仍pending；负责人和整个CORE_SCOPE未完成。
+- ThermostatDensity Liouville链机器接受并保存为 3751f2055f1818f5499a90a17e3c1b009c16cabc。full-check02/session50156：2026-10-05T10:15:12.6155527+08:00--2026-10-05T10:15:56.2619028+08:00退出0；9027 jobs、零Lean警告、785项声明审计仅基础三公理、110项输入与全部原始日志SHA256实查一致；固定版本/扫描/build/Scratch/公理全部通过，新增24项public覆盖完整。 原338--339/PDF359--360目视。下一Chapter08/StationaryDensityFlow.lean，先真实ODE推ρ(Phi)detDPhi=ρ(initial)，再真实change of variables与归一化得概率不变；不假定Jacobian/不变性结论。当前命题PDE部分已接受、flow语义依赖仍pending；负责人和整个CORE_SCOPE未完成。
 
 ## 最新数学检查点（2026-10-05 10:15 +0800）
 

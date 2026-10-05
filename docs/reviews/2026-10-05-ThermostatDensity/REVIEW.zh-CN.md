@@ -6,3 +6,5 @@
 - 实际J/Hessian散度零及Poisson self消去导出Hamiltonian Gibbs weight平稳性。常数c可表示已有配分函数的倒数；不假设或声称构造配分函数。最终正文PDE结论不以Hamiltonian底场平稳性为额外假设。非负density由原非负因素推出。
 - local01--08实际接口失败均保留，local09/session84195退出0零警告。full-check01虽build通过，新增审计覆盖未完成；前缀误判脚本已修复，只有full-check02作为完整接受。
 - 已验证部分：原证明的stationary Liouville PDE可加性。仍待验证：由PDE导出指定真实解族下density transport，以及实际归一化概率测度的不变性；后续继续补，不能仅凭PDE宣称全局flow/概率存在。C1场和联合C2解族的强度差异需要显式记录，负责人最终语义签核pending。
+
+- 后续2026-10-05 StationaryDensityFlow/full-check01已补真实specified joint C2解族下weighted Jacobian/换元/概率不变与真实三factor归一化；此项supersedes上面的PDE-to-flow pending状态。更弱正则性构造及负责人语义仍pending。

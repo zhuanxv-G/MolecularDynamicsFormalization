@@ -112,3 +112,4 @@ import MolecularDynamics.Chapter06.WienerStratonovich
 import MolecularDynamics.Chapter06.WienerRefinement
 import MolecularDynamics.Chapter06.WienerDeterministicLaw
 import MolecularDynamics.Chapter08.ThermostatDensity
+import MolecularDynamics.Chapter08.StationaryDensityFlow
