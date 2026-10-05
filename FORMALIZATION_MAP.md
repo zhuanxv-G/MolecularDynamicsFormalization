@@ -690,3 +690,7 @@ LangevinGlobalRandomSolution.lean：actual restriction/EqOn积分转移与same-n
 ## 2026-10-05 实际Hamiltonian-power Lyapunov及周期properness
 
 印刷253--254/PDF274--275：LangevinLyapunov.lean真实drift/二阶导数/正确2l(l−1)+Nc*l Laplacian界、compact cube potential bound与低阶幂吸收→Lφ≤−γlφ+δ。LangevinPeriodicLyapunov.lean实际torus代表独立/连续/正性/动量coercivity/真正紧sublevel与cocompact逃逸atTop；physical thermal γβ⁻¹保留。30public/full9049/1015/132，源码与raw-log SHA和基础三公理完整核对。原打印中间界52>40真实counter，修正负责人pending；Markov实际generator识别/Harris与全CORE_SCOPE仍pending。
+
+## 2026-10-05 实际因果历史与周期restart
+
+LangevinCausalFlow/PeriodicCausalFlow：actual Cpath history restriction与真实integral time shift/increment segment，解唯一→common AE全部real-time history/restart；实际periodic real lift唯一、endpoint任意代表独立、明确同一global periodic过程/原AE全T模型/逐time AEm。22public/full9051/1037/134。尚待future increments law/历史独立、joint初值可测/条件Markov、generator/transition密度及Harris正文定理；不按pathwise cocycle称Markov已完整。

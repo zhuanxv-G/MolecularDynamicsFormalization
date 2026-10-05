@@ -516,3 +516,9 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 - full-check01-LangevinLyapunov：2026-10-05T18:00:20.0624216+08:00--2026-10-05T18:07:24.8927420+08:00退出0；9049jobs、零Lean警告、1015audit基础三公理、132inputs/全部raw日志SHA256一致；30public全名覆盖。
 - actual H^l drift/Laplacian/正确factor2界与thermal、真正U upper/growth absorption→α=γl>0和δ>0实际构造；torus候选lift独立/连续/正性/动量coercivity/紧sublevel/逃逸atTop完整。原打印错误52>40 actual second derivative counter已验证，修正语义签核pending。
 - CH06-CLM-005/DEP-016/NOT-CH06-024--025接受实际analytical dependency；不计Markov generator识别、Harris Theorem6.2或全CORE_SCOPE完成。下一实际解causal history/restart，为后续Markov性补必要证明，负责人最终pending。
+
+## 2026-10-05 实际周期因果历史与restart完整接受
+
+- full-check01-LangevinCausalFlow 2026-10-05T18:44:02.8608590+08:00--2026-10-05T18:45:10.9005763+08:00退出0；9051jobs/零警告/1037audit基础三公理/134inputs和所有raw SHA一致，22public全名覆盖。
+- 真实history restriction/interval integral split/time shift/noise increment与chosen endpoint restart；common AE全部real-time interval/history/restart；periodic解actual lifts唯一/任意rep独立，明确同一global periodic原模型与每time AEm完整。
+- CH06-DEP-017/NOT-CH06-026已登记。pathwise cocycle不等于Markov条件律；下一实际future Wiener increment law/历史独立，completed filtration/joint初值可测/密度/generator/Harris与负责人和CORE_SCOPE仍pending。

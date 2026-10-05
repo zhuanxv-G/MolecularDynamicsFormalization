@@ -394,3 +394,7 @@ The periodic actual integral solution supplies the torus position integral equat
 ## 2026-10-05 实际periodic Lyapunov条件
 
 单位质量/单位周期torus/finite Nc，实际C∞ integer-lattice periodic U，1≤U(q)，γ>0，positive integer l；physical σ=√(2γβ⁻¹)需β>0。U全局上界、H^l真实各阶导数、动量coercivity、torus紧sublevel/properness与δ漂移界均推导，不作为待证结论前提。generic σ²/2保留；原错误l(l+Nc−1)界用已核验的2l(l−1)+Nc*l替换并保持owner correction pending。literal smooth-lift differential expression与真实Markov generator的识别、适应性/密度及Harris遍历定理未计完成。
+
+## 2026-10-05 actual causal/restart模型条件
+
+auxiliary real模型需C² U和真实global forceLip，实际periodic主模型是C∞整数格点周期U，周期唯一性由compact-cube bound导出Lip；unit-mass/unit-torus/finite Nc。actual标准vector Wiener、任意γ/σ、real horizons非负，noise history/segment是实际连续路径。不存在causal/restart/解唯一性结论前提；common AE全real参数证明来自同一连续zero-start样本与已接受all-time integral解。exceptional版本全路径事件不自动给逐点适应；Markov条件律/filtration/joint初值可测/密度/generator仍pending。

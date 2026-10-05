@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-05T18:44:02.8608590+08:00",
+  "finished_at": "2026-10-05T18:45:10.9005763+08:00",
+  "jobs": 9051,
+  "audit_declarations": 1037,
+  "inputs": 134,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinIntegralSolution_noise_congr",
+    "MolecularDynamics.textbookLangevinPathRestriction",
+    "MolecularDynamics.textbookLangevinPathRestriction_lipschitz",
+    "MolecularDynamics.textbookLangevinPathEndpoint_restrict",
+    "MolecularDynamics.textbookLangevinRandomSolution_integralSolution_of_cont",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_history_endpoint_ae",
+    "MolecularDynamics.textbookLangevinIntegralSolution_shift",
+    "MolecularDynamics.textbookLangevinPathSegment",
+    "MolecularDynamics.textbookLangevinPathSegment_zero",
+    "MolecularDynamics.textbookLangevinPathEndpoint_restart",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_history_path_ae",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_restart_ae",
+    "MolecularDynamics.textbookLangevinIntegralSolution_project",
+    "MolecularDynamics.textbookLangevinPeriodicIntegralSolution_unique",
+    "MolecularDynamics.textbookLangevinPeriodicPathEndpoint",
+    "MolecularDynamics.textbookLangevinPeriodicPathEndpoint_lift",
+    "MolecularDynamics.textbookLangevinPeriodicPathEndpoint_restart",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_integralSolution_ae",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_endpoint_aemeasurable",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_history_endpoint_ae",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_restart_ae"
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinCausalFlow.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "ffd21a0cf2a231518403aea32fbbebdf22eea5d312bfe2d70e56bcc16e0cd2da",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinPeriodicCausalFlow.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "a28c6daae0d90f7567b1cb55a308d022dd8dad32e404871b9551f4e4cdee3e48",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "b8cb1a74e79c18327a3cf8d54c03f5db3490615768987c7ac7026961dd09b976",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "ba7e576ebb6d648b12a58c788c710af43f1457c6cdfd3d6184d9caa7d37f4f67",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "62ebf2200373a4061b9e567c58403cce0869efced883f27cd7bc1596515bf6f2",
+      "staged_equals_working_after_CRLF_to_LF": true,
+      "raw_bytes_equal": false
+    }
+  ],
+  "hash_scope_note": "CHECK_REPORT uses exact working-tree bytes; staged Lean/check text is identical after Git CRLF-to-LF normalization."
+}

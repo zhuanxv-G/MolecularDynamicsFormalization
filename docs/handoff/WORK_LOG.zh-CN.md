@@ -3080,3 +3080,43 @@
 ## 2026-10-05 18:11 +0800 — 实际Lyapunov/torus properness完整接受
 
 - LangevinLyapunov实际周期H^l主估计/properness接受，待本地保存。full-check01/session94864：2026-10-05T18:00:20.0624216+08:00--18:07:24.8927420+08:00退出0；9049jobs/零警告/1015audit基础三公理/132inputs及全部raw SHA实查一致；30public全名覆盖。真实drift耗散/链式求导/二阶Laplacian/正确factor2界与compact Ubound/growth吸收→α=γl>0/δ>0漂移；actual torus φ代表独立/连续/正性/momentum增长、紧sublevel和cocompact逃逸atTop、physical γβ⁻¹完整。CH06-CLM-005/DEP-016/NOT024--025已登记；印刷错误52>40反例/修正签核pending，generator实际识别/Harris及CORE_SCOPE未完成。下一真实causal历史噪声限制与restart，先本地保存本批，不重复未变full。
+
+## 2026-10-05 18:17 +0800 — Lyapunov本地保存与Git换行核验
+
+- Lyapunov30public接受保存为4db920d1100e1637647601cf51216e5ccf28d51d；18项显式暂存，保留其他用户材料。Git索引补丁初次因文本模式换行转换失败，改raw UTF8 patch成功；额外Gitblob/work原始hash相同的更严格断言因标准CRLF→LF归一化拒绝commit，已确认132工作树输入exact SHA未变、6项暂存Lean/check文本只有标准换行差异并记入ACCEPTANCE后保存。非Lean证明失败，未重跑纯文档build。下一actual因果历史限制/真实restart为Theorem6.2 Markov模型依赖，整体pending。
+
+## 2026-10-05 18:21 +0800 — Theorem6.2真实历史噪声因果依赖开始
+
+- Lyapunov实际30public已保存4db920d1100e1637647601cf51216e5ccf28d51d，full9049/1015/132继续可exact工作树hash复核。开始LangevinCausalFlow：实际noise EqOn转移、Cpath历史restriction/Lipschitz、实际解restriction一致、连续zero-start样本literal随机积分模型及同一AE sample全部real t历史endpoint一致候选。原printed252/PDF273已重新渲染目视，为Theorem6.2 Markov模型必要依赖；不声称adapted/Markov/generator/Harris已完整。下一唯一causal-local01，再actual时间shift/restart；本批full尚待。
+
+## 2026-10-05 18:26 +0800 — 真实因果历史局部通过，actual restart候选
+
+- CausalFlow local01/session51239退出0：实际noise-congr、Cpath历史restriction/Lipschitz、chosen endpoint历史一致与连续zero-start样本literal模型及同一AE sample全部real t历史endpoint完整局部；仅projIcc_left unused warning已删。新增真正Bochner区间split/change-variable、真实积分方程time shift+noise increment、Cpath later segment及chosen solution restart候选。下一local02，整批full与Markov/generator/Harris/负责人pending。
+
+## 2026-10-05 18:28 +0800 — actual restart的segment区间加法修复
+
+- CausalFlow local02/session73068退出1：Cmap segment inclusion的add_le_add_left实际给右加S，改显式add_le_add le_rfl；定义错误产生elaborator synthetic sorry诊断，源码无sorry/admit。真实integral split/shift其余无诊断，新增同一AE sample全部real A/整个interval历史一致与所有real S,T actual increment restart候选。下一local03；整批full、completed-filtration/Markov/transition density/generator/Harris及负责人pending。
+
+## 2026-10-05 18:30 +0800 — 实际全时域noise-increment restart局部通过
+
+- CausalFlow local03/session80944退出0：真实time shift/Bochner积分拆分与change-variable、later increment Cpath和chosen restart、同一AE sample全部real A whole-interval历史一致及所有real S,T restart完整局部；两unused simp已删。12public整批待，下一local04和module-build后actual periodic integral uniqueness/representative-independent restart连接；Markov条件律/适应性/generator/Harris/负责人仍pending。
+
+## 2026-10-05 18:36 +0800 — actual周期唯一与代表独立restart候选
+
+- CausalFlow local04/session68916退出0/零警告（只有module tactic的abel_nf优化建议info），12public实际历史/interval split/shift/restart/common AE所有real时刻已局部完整。新增PeriodicCausalFlow候选：actual任意real initial投影、derived periodic globalLip+真正constructed real lifts推出周期解唯一、periodic endpoint任意rep独立与restart；明确同一actual periodic global process/原模型AE全部T/每time AEm/common AE历史及real-time restart。等待causal-build01后periodic-local01，22public整批统一full待，不能把因果cocycle当Markov条件律/密度或Harris证明。
+
+## 2026-10-05 18:39 +0800 — actual周期投影/唯一性beta与phase类型修复
+
+- causal-build01/session10825退出0/3482jobs/零警告，实际12public可引用。PeriodicCausalFlow periodic-local01/session70480退出1仅projection/force lambda beta、constructed lift equality Prod.fst beta和Prod.snd须显式real-phase域避免预期torus域推断；已分别typed change/simp only[]和显式函数类型。周期rep独立/restart/global model wrappers其余无诊断，下一periodic-local02；22public full尚待，不把路径restart当Markov条件律。
+
+## 2026-10-05 18:41 +0800 — 实际周期投影最后coercion参数归约
+
+- PeriodicCausalFlow periodic-local02/session45493退出1仅general projection位置式AddCircle.coe_add泛型显式应用的period/group推断，改target-driven simp；周期真实唯一/代表独立/restart、明确同一periodic global模型AE全部T/AEm/同一AE历史与restart其余无诊断。下一periodic-local03；整批full、Markov条件律/生成元/Harris及负责人pending。
+
+## 2026-10-05 18:44 +0800 — 实际周期因果/restart整批22public局部完整
+
+- PeriodicCausalFlow periodic-local03/session23826退出0空日志/零警告；CausalFlow12/PeriodicCausalFlow10共22public真实history/restriction/integral split/time-shift/noise segment/restart与derived周期唯一/代表独立、同一actual periodic global model/原AE积分方程/AEm/common AE全部real history+restart完整局部。已接root/Scratch/逐名公理，下一唯一full-check01冻结Lean/验收输入。Markov条件律/未来increments独立/completed filtration/transition density/真实generator/Harris及负责人仍pending；不会按小批次称全CORE_SCOPE完成。
+
+## 2026-10-05 18:49 +0800 — actual causal/periodic restart完整接受
+
+- LangevinCausalFlow实际history/周期restart接受，待本地保存。full-check01/session60181：2026-10-05T18:44:02.8608590+08:00--18:45:10.9005763+08:00退出0；9051jobs/零警告/1037audit基础三公理/134inputs及全部raw SHA实查一致，22public全名覆盖。actual history restriction/integral split/time shift/increment chosen restart；common AE所有real A/S/T whole-path一致，periodic actual lifted唯一/任意代表独立与明确同一global periodic过程/AE原全T模型/逐time AEm完整。DEP017/NOT026已登记；下一实际future Wiener increment law/历史独立。不能把pathwise cocycle当条件Markov/适应性/generator/密度/Harris或CORE_SCOPE已完成，负责人pending。
