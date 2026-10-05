@@ -1,0 +1,315 @@
+{
+  "started_at": "2026-10-06T04:23:40.0036132+08:00",
+  "finished_at": "2026-10-06T04:25:04.997213+08:00",
+  "head_at_check": "dba704d51e3ad1c418f70d5b911429e01cbc14ec",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9077,
+  "audit_declarations": 1482,
+  "inputs": 160,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationPartial_mul",
+    "MolecularDynamics.textbookConfigurationPartial_second_mul",
+    "MolecularDynamics.textbookConfigurationGibbsWeight_second_partial",
+    "MolecularDynamics.textbookGibbsGroundStateFactor",
+    "MolecularDynamics.textbookGibbsGroundStateInverse",
+    "MolecularDynamics.textbookGibbsGroundStateFactor_contDiff",
+    "MolecularDynamics.textbookGibbsGroundStateInverse_contDiff",
+    "MolecularDynamics.textbookGibbsGroundStateFactor_periodic",
+    "MolecularDynamics.textbookGibbsGroundStateInverse_periodic",
+    "MolecularDynamics.textbookGibbsGroundStateFactor_pos",
+    "MolecularDynamics.textbookGibbsGroundStateFactor_mul_inverse",
+    "MolecularDynamics.textbookGibbsGroundStateFactor_sq",
+    "MolecularDynamics.textbookBrownianGroundStatePotential",
+    "MolecularDynamics.textbookBrownianGroundStatePotential_contDiff",
+    "MolecularDynamics.textbookBrownianGroundStatePotential_periodic",
+    "MolecularDynamics.textbookBrownianTorusGroundStatePotential",
+    "MolecularDynamics.textbookBrownianTorusGroundStatePotential_lift",
+    "MolecularDynamics.textbookBrownianGroundStatePotential_abs_le_norm",
+    "MolecularDynamics.textbookBrownianGenerator_groundState_inverse",
+    "MolecularDynamics.textbookBrownianGenerator_groundState_conjugation",
+    "MolecularDynamics.textbookGibbsNormalizedGroundStateFactor",
+    "MolecularDynamics.textbookGibbsNormalizedGroundStateFactor_contDiff",
+    "MolecularDynamics.textbookGibbsNormalizedGroundStateFactor_periodic",
+    "MolecularDynamics.textbookGibbsNormalizedGroundStateFactor_pos",
+    "MolecularDynamics.textbookGibbsNormalizedGroundStateFactor_sq",
+    "MolecularDynamics.textbookTorusGibbsNormalizedGroundStateFactor",
+    "MolecularDynamics.textbookTorusGibbsNormalizedGroundStateFactor_lift",
+    "MolecularDynamics.textbookTorusGibbsNormalizedGroundStateFactor_sq",
+    "MolecularDynamics.textbookTorusGibbsGroundState_square_integral"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial_second_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsWeight_second_partial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateFactor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateInverse",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateFactor_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateInverse_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateFactor_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateInverse_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateFactor_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateFactor_mul_inverse",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsGroundStateFactor_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGroundStatePotential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGroundStatePotential_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGroundStatePotential_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusGroundStatePotential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusGroundStatePotential_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGroundStatePotential_abs_le_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_groundState_inverse",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_groundState_conjugation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsNormalizedGroundStateFactor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsNormalizedGroundStateFactor_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsNormalizedGroundStateFactor_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsNormalizedGroundStateFactor_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsNormalizedGroundStateFactor_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsNormalizedGroundStateFactor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsNormalizedGroundStateFactor_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsNormalizedGroundStateFactor_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsGroundState_square_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "3e8bcb2d28ad27d52ff789fa78744ab0898ecd027eb813510597c790979ccce7"
+    },
+    {
+      "path": "full-check01-driver.log",
+      "sha256": "2830e8552160e14b9787fbc77210df340d83b2e6325af41a7000b9c0ca0b8899"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "08ccc5cca5a26855e1eb9d5178722ad0eb3bb565c1b0d0deb0bb114ec4970c4c"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "f3cb98ee36f947ea8f88267f641c1c40fe87e57aaeccbb17beaab96068499233"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "4738a8096c2d4ea2f3afe34da2d29ab216d81f548fbb7e3250e03d9e9a118e26"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

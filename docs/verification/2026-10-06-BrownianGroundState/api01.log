@@ -1,0 +1,12 @@
+Real.sq_sqrt {x : ℝ} (h : 0 ≤ x) : √x ^ 2 = x
+Real.sqrt_pos.mpr : 0 < ?m.1 → 0 < √?m.1
+Real.sqrt_ne_zero'.mpr : 0 < ?m.1 → √?m.1 ≠ 0
+inv_pow.{u_1} {α : Type u_1} [DivisionMonoid α] (a : α) (n : ℕ) : a⁻¹ ^ n = (a ^ n)⁻¹
+docs/verification/2026-10-06-BrownianGroundState/ApiProbe.lean:6:7: error(lean.unknownIdentifier): Unknown constant `ContinuousMap.mul`
+ContinuousMap.mul_apply.{u_1, u_2} {α : Type u_1} {β : Type u_2} [TopologicalSpace α] [TopologicalSpace β] [Mul β]
+  [ContinuousMul β] (f g : C(α, β)) (x : α) : (f * g) x = f x * g x
+Real.continuous_sqrt : Continuous fun x => √x
+Real.sqrt_sq {x : ℝ} (h : 0 ≤ x) : √(x ^ 2) = x
+Real.sqrt_sq_eq_abs (x : ℝ) : √(x ^ 2) = |x|
+inv_mul_cancel₀.{u_3} {G₀ : Type u_3} [GroupWithZero G₀] {a : G₀} (h : a ≠ 0) : a⁻¹ * a = 1
+mul_inv_cancel₀.{u} {G₀ : Type u} [GroupWithZero G₀] {a : G₀} (h : a ≠ 0) : a * a⁻¹ = 1

@@ -792,3 +792,8 @@ full-check01 passed：9075 jobs/1427公理声明/158exact inputs；10checks退�
 BrownianMassFourier26public local04零诊断：原mass/β Haar必要auxiliary实际cos/sin generator与Fouriercoeff=-Ωfcoef、实际mass energy/graphsquare Parseval、derived Ω≥cΣni²和onlyzero，以及真正finite sublevel/cofinite frequencydivergence/(1+Ω)inv decay。DEP041/NOT050，fullcheck中；实际Hilbert自伴/compactresolvent/full谱仍未完成。
 
 full-check01 passed：9076 jobs/1453公理声明/159exact inputs；10checks退出0、全部input/rawlog SHA匹配、26 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 原 Gibbs ground-state 共轭
+BrownianGroundState29public local06零诊断：actualpartialproduct/secondproduct/weightsecond、exp s/h互逆，literal originalm/U/β生成元sL(hf)=massLaplacef+Vf及真实V C∞periodic/CMnormbound；同一partition normalizedfactor²=originalsameµdensity、actualHaar square integral=Gibbs square integral。DEP042/NOT051，fullcheck中；尚未构造actualfullLpunitary/selfadjoint/compactresolvent。
+
+full-check01 passed：9077 jobs/1482公理声明/160exact inputs；10checks退出0、全部input/rawlog SHA匹配、29 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

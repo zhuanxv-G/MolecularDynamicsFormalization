@@ -176,3 +176,5 @@ import MolecularDynamics.Chapter06.BrownianGibbsPoincare
 import MolecularDynamics.Chapter06.BrownianClosedCoercivity
 
 import MolecularDynamics.Chapter06.BrownianMassFourier
+
+import MolecularDynamics.Chapter06.BrownianGroundState

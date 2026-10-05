@@ -466,3 +466,6 @@ Nc任意，原每m_i>0、U C∞integerperiodic，g actualtorus CM且原quotient 
 
 ## 2026-10-06 BrownianMassFourier条件
 Nc任意整数Fourierindices和原finiteunit configurationtorus，必要Haarauxiliary U=0但全部originaldiagonalmass m/β保留。literal eigen公式不要求masspositive/βnonzero；formalDirichlet/coeff/energyParseval β≠0，freqpositivity/derivedlower/finite sublevel/decay每mi>0且β>0。原observables C∞integerperiodic。真实M=1+Σ|mi|和c=βinv4π²Minv derived，不供应freq/Parseval/finiteness/gap/ellipticregularity。未完成实际selfadjoint/resolventcompact，原U Gibbs主模型仍独立保留，负责人pending。
+
+## 2026-10-06 BrownianGroundState条件
+Nc任意、所有原质量m任意；实际U C∞，周期性/actualCMnormbounds需要originalintegerperiodic，literalconjugation β≠0，因子/normalizeddensity/integralidentity β任意。全部actualpartials/真实exp/samepartition和sameµ未改；不供应conjugation/derivative/boundedpotential/isometry或selfadjoint前提。标准fixedkernel no新axiom，actualfullLponto与域共轭尚缺，负责人semanticpending。

@@ -1,0 +1,14 @@
+MolecularDynamics/Chapter06/BrownianGroundState.lean:313:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (Q : UnitAddTorus (Fin Nc)), (g ^ 2) Q ∂textbookConfigurationTorusGibbsMeasure U β
+in the target expression
+  ∫ (Q : UnitAddTorus (Fin Nc)), ((textbookTorusGibbsNormalizedGroundStateFactor U hU hPU β) Q * g Q) ^ 2 =
+    ∫ (Q : UnitAddTorus (Fin Nc)), g Q ^ 2 ∂textbookConfigurationTorusGibbsMeasure U β
+
+Nc : ℕ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+g : C(UnitAddTorus (Fin Nc), ℝ)
+⊢ ∫ (Q : UnitAddTorus (Fin Nc)), ((textbookTorusGibbsNormalizedGroundStateFactor U hU hPU β) Q * g Q) ^ 2 =
+    ∫ (Q : UnitAddTorus (Fin Nc)), g Q ^ 2 ∂textbookConfigurationTorusGibbsMeasure U β

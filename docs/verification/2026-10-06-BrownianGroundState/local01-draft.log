@@ -1,0 +1,71 @@
+docs/verification/2026-10-06-BrownianGroundState/Draft.lean:25:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fderiv ℝ (f * g) q
+in the target expression
+  (fderiv ℝ (fun x => f x * g x) q) (Pi.single i 1) =
+    (fderiv ℝ f q) (Pi.single i 1) * g q + f q * (fderiv ℝ g q) (Pi.single i 1)
+
+Nc : ℕ
+f g : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hg : ContDiff ℝ ∞ g
+i : Fin Nc
+q : Fin Nc → ℝ
+h : HasFDerivAt (f * g) (f q • fderiv ℝ g q + g q • fderiv ℝ f q) q
+⊢ (fderiv ℝ (fun x => f x * g x) q) (Pi.single i 1) =
+    (fderiv ℝ f q) (Pi.single i 1) * g q + f q * (fderiv ℝ g q) (Pi.single i 1)
+docs/verification/2026-10-06-BrownianGroundState/Draft.lean:40:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookConfigurationPartial
+    ((fun x => textbookConfigurationPartial f i x * g x) + fun x => f x * textbookConfigurationPartial g i x) i
+in the target expression
+  textbookConfigurationPartial (textbookConfigurationPartial f i * g + f * textbookConfigurationPartial g i) i q =
+    textbookConfigurationPartial (textbookConfigurationPartial f i) i q * g q +
+        2 * textbookConfigurationPartial f i q * textbookConfigurationPartial g i q +
+      f q * textbookConfigurationPartial (textbookConfigurationPartial g i) i q
+
+Nc : ℕ
+f g : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hg : ContDiff ℝ ∞ g
+i : Fin Nc
+q : Fin Nc → ℝ
+he :
+  textbookConfigurationPartial (fun x => f x * g x) i =
+    textbookConfigurationPartial f i * g + f * textbookConfigurationPartial g i
+⊢ textbookConfigurationPartial (textbookConfigurationPartial f i * g + f * textbookConfigurationPartial g i) i q =
+    textbookConfigurationPartial (textbookConfigurationPartial f i) i q * g q +
+        2 * textbookConfigurationPartial f i q * textbookConfigurationPartial g i q +
+      f q * textbookConfigurationPartial (textbookConfigurationPartial g i) i q
+docs/verification/2026-10-06-BrownianGroundState/Draft.lean:58:90: error: unsolved goals
+case hU
+Nc : ℕ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+θ : ℝ
+i : Fin Nc
+q : Fin Nc → ℝ
+hW : ContDiff ℝ ∞ (textbookConfigurationGibbsWeight U θ)
+x : Fin Nc → ℝ
+⊢ ContDiff ℝ ∞ U
+docs/verification/2026-10-06-BrownianGroundState/Draft.lean:64:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookConfigurationPartial
+    (?c • fun x => textbookConfigurationPartial U i x * textbookConfigurationGibbsWeight U θ x) ?i
+in the target expression
+  textbookConfigurationPartial (-θ • (textbookConfigurationPartial U i * textbookConfigurationGibbsWeight U θ)) i q =
+    (-θ * textbookConfigurationPartial (textbookConfigurationPartial U i) i q +
+        θ ^ 2 * textbookConfigurationPartial U i q ^ 2) *
+      textbookConfigurationGibbsWeight U θ q
+
+Nc : ℕ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+θ : ℝ
+i : Fin Nc
+q : Fin Nc → ℝ
+hW : ContDiff ℝ ∞ (textbookConfigurationGibbsWeight U θ)
+he :
+  textbookConfigurationPartial (textbookConfigurationGibbsWeight U θ) i =
+    -θ • (textbookConfigurationPartial U i * textbookConfigurationGibbsWeight U θ)
+⊢ textbookConfigurationPartial (-θ • (textbookConfigurationPartial U i * textbookConfigurationGibbsWeight U θ)) i q =
+    (-θ * textbookConfigurationPartial (textbookConfigurationPartial U i) i q +
+        θ ^ 2 * textbookConfigurationPartial U i q ^ 2) *
+      textbookConfigurationGibbsWeight U θ q
