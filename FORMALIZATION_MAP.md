@@ -802,3 +802,8 @@ full-check01 passed：9077 jobs/1482公理声明/160exact inputs；10checks退�
 BrownianGroundStateIsometry15public exactbyte draft局部零诊断：actualnormalizedfactor reciprocal和CM multiplication LinearEquiv，actualdense embeddings与derived normeq扩张至整个sameµ GibbsLp≃ₗᵢHaarLp，实际onto/inverse/norm/inner及全CMformula。DEP043/NOT052，fullcheck中；actualsmoothdomain/operatorgraph共轭和diagonal selfadjoint仍未完成。
 
 full-check01 passed：9078 jobs/1497公理声明/161exact inputs；10checks退出0、全部input/rawlog SHA匹配、15 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 实际全smooth域和Hilbert core共轭
+BrownianGroundStateCore15public local04零诊断：actualnormalizedinverse互逆及entirefullsmoothEquiv，actualHaar linearembedding和fullLpI maps entire smoothrange onto；actualnormalizedliteralgenerator公式、直接massLaplace+V smoothLinearMap与originalSmoothGenerator真正共轭，再actualHilbertcore和GibbsL2image共轭。DEP044/NOT053，fullcheck中；wholeclosedgraph/diagonal selfadjoint/compact仍未完成。
+
+full-check01 passed：9079 jobs/1512公理声明/162exact inputs；10checks退出0、全部input/rawlog SHA匹配、15 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

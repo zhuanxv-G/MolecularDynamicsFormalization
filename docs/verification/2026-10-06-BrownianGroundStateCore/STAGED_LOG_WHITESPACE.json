@@ -1,0 +1,14 @@
+{
+  "raw_log": "docs/verification/2026-10-06-BrownianGroundStateCore/local03.log",
+  "raw_sha256": "6b24d11adb0b5d69def81a8247fc2e284398dc37b61f7d55fbc0540d27f9ba7b",
+  "observed_failed_check": "git diff --cached --check",
+  "trailing_whitespace_lines": [
+    3,
+    5,
+    26,
+    28
+  ],
+  "reason": "Preserve exact original Lean diagnostic bytes; only this raw log is excluded from whitespace lint.",
+  "all_other_staged_files_check": "passed",
+  "formal_input_hashes_unchanged": true
+}

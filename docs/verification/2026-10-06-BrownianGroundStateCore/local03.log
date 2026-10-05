@@ -1,0 +1,43 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+MolecularDynamics/Chapter06/BrownianGroundStateCore.lean:183:18: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+f g : ↥(textbookPeriodicSmoothSpace Nc)
+q : Fin Nc → ℝ
+⊢ textbookBrownianGenerator m (fun x => 0) β (↑f) q + textbookBrownianGenerator m (fun x => 0) β (↑g) q +
+        textbookBrownianGroundStatePotential m U β q * ↑f q +
+      textbookBrownianGroundStatePotential m U β q * ↑g q =
+    ↑(⟨fun q => textbookBrownianGenerator m (fun x => 0) β (↑f) q + textbookBrownianGroundStatePotential m U β q * ↑f q,
+            ⋯⟩ +
+          ⟨fun q =>
+            textbookBrownianGenerator m (fun x => 0) β (↑g) q + textbookBrownianGroundStatePotential m U β q * ↑g q, ⋯⟩)
+      q
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+MolecularDynamics/Chapter06/BrownianGroundStateCore.lean:192:19: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β c : ℝ
+f : ↥(textbookPeriodicSmoothSpace Nc)
+q : Fin Nc → ℝ
+⊢ c * textbookBrownianGenerator m (fun x => 0) β (↑f) q + c * textbookBrownianGroundStatePotential m U β q * ↑f q =
+    ↑((RingHom.id ℝ) c •
+          ⟨fun q =>
+            textbookBrownianGenerator m (fun x => 0) β (↑f) q + textbookBrownianGroundStatePotential m U β q * ↑f q, ⋯⟩)
+      q

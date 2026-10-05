@@ -472,3 +472,6 @@ Nc任意、所有原质量m任意；实际U C∞，周期性/actualCMnormbounds�
 
 ## 2026-10-06 BrownianGroundStateIsometry条件
 Nc任意、U C∞integerperiodic、β任意，同一originalµ/normalizedHaar fullrealLp2。normalizedfactorpos、inverseCM、CMLinearEquiv、normidentity与denseRange全部derived；固定extendOfIsometry产生真正全空间等距满射，不供应measureequivalence/onto/isometry或结论假设。尚未识别operator/smoothdomain/closedgraph、自伴/compact，负责人semanticpending。
+
+## 2026-10-06 BrownianGroundStateCore条件
+Nc任意、originalm任意、U C∞integerperiodic，真实normalizedfactor/inverse/smoothEquiv及range/Hilbertembeddings β任意；generatorconjugation β≠0。所有实际sqrtZ正性/逆/域互映/线性和sameHilbertcore公式derived，不供给domain/elliptic/selfadjoint/compact前提。真正全部smoothdomain保留，wholeclosedgraph尚未识别，负责人semanticpending。

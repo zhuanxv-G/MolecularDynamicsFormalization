@@ -180,3 +180,5 @@ import MolecularDynamics.Chapter06.BrownianMassFourier
 import MolecularDynamics.Chapter06.BrownianGroundState
 
 import MolecularDynamics.Chapter06.BrownianGroundStateIsometry
+
+import MolecularDynamics.Chapter06.BrownianGroundStateCore
