@@ -7,3 +7,5 @@
 定理整体仍未完成：正式Hilbert L²(ρ) unbounded operator realization/self-adjoint closed extension、compact resolvent/discrete spectrum、实际Poincare/spectral gap、actual stochastic/semigroup convergence。积分对称identity只给formal symmetry，不能冒称已经证明closed operator self-adjointness。原书第三点一面写time-dependent distribution averages，一面明确引用5.6的轨道time average；需要原5.6与两种average逐项语义核对，不能静默替换指数不等式量词。此次仅记录尚待分析的语义问题，没有证明反例或结论错误。
 
 Proposition6.1本批完整候选机器验收已完成，负责人uniform weighted flux bound/替代证明语义签核继续pending，不阻塞此独立正文目标。
+
+后续原页澄清：实际(5.6)印刷190/PDF211已经目视，确为time t的演化分布期望；轨道无限时间平均另见(5.9)。此前average语义疑虑已解析，后续按真实期望收敛推进。

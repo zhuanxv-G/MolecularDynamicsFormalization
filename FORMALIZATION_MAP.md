@@ -722,3 +722,8 @@ CanonicalTemperature：实际SymplecticCoordinates Nc为2Nc相空间；复用act
 CanonicalIntegrationByParts：actual fixed finiteDim ContDiffBump空间缩放η_R C1/紧支/0..1/每point最终exact1和derived derivative C/R；actual compact div0经真实DCT得到F/divF均L1时全域div积分0，仅要求divsum L1不偷增每partial L1。真实smoothTransition derivative locally constant outside[0,1]→compact/global bound；原bounded weighted G条件下density-cutoff flux/div均L1，再第二次DCT得原ρG totaldiv积分0，未增加ρG L1。真实Av divG=β Av LieG H、Avdiv正与β>0给实际温度比值，proposition_6_1接β=(kBT)^-1；原坐标G·∇H桥接和原分子正性也真正推导。19public local09退出0空日志/零Lean警告；full-check01待验证。原print222/PDF243修正证明路线；第三条明确uniform weighted bound、真实canonical Z正有限及weighted观测Lebesgue可积、Nc有限和kB/T正；负责人原第三条含义与修正证明签核pending。Theorem6.2 generator/density/Harris和CORE_SCOPE未完成。
 
 CanonicalIntegrationByParts统一验收：full-check01 passed：9062 jobs、1164 audited declarations、145 exact inputs；10 checks退出0，全部输入/原始日志SHA256复核匹配，新增19项逐名公理审计仅propext/Classical.choice/Quot.sound，Lean警告0。固定Lean4.34.0/mathlib5ed2965。负责人第三条统一有界解释、替代证明与教材语义仍pending。
+
+## 2026-10-05 Theorem6.1真实周期Brownian Dirichlet依赖
+MolecularDynamics/Chapter06/BrownianDirichlet.lean，29public；完整unit周期cube divergence由actual相对face整数平移抵消；一般diagonal质量的literal Brownian generator，真实weighted Gibbs Dirichlet与normalized form，正质量/β下formal symmetry及quadratic nonpositive，derived nonzero L2 norm positive→real eigenvalue非正，常数zero mode与Gibbs weak stationarity。local07退出0零诊断，统一验收进行中。C∞tests；正式Hilbert self-adjoint closure/compact resolvent/discrete spectrum/gap/实际expectation exponential convergence仍未证，最终负责人语义pending。
+
+BrownianDirichlet统一验收：full-check01 passed：9063 jobs/1193公理声明/146exact输入；10checks退出0，全部input/rawlog SHA256复核匹配，29public逐名审计仅propext/Classical.choice/Quot.sound，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人语义pending。

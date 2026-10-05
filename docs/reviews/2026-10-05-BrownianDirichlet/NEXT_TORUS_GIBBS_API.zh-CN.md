@@ -1,0 +1,11 @@
+# 下一批：真实torus Haar与Gibbs概率测度对接
+
+当前BrownianDirichlet.lean证明在真实周期lift的full基本cube，C∞tests；不是完整closed selfadjoint/discrete spectrum/gap。
+
+固定mathlib Analysis/Fourier/AddCircleMulti.lean实际已有 UnitAddTorus.integral_preimage/lintegral_preimage，可将真实normalized Haar integral换为所有坐标Ioc(a_i,a_i+1)的lift integral。其local MeasureSpace UnitAddCircle=AddCircle.haarAddCircle，UnitAddTorus函数Pi产品measure；实现时必须明确同一Haar实例，不默认另一instance。Measure.univ_pi_Ioc_ae_eq_Icc/MeasureTheory.setIntegral_congr_set连接现Icc cube；边界是zero-volume，不改变Lebesgue model。
+
+推荐实际proof链：用measurableEquivPiIoc 0选真实measurable representative，逐coordinate AddCircle.coe_eq_zero_iff证明与任意lift差integer lattice，originalperiodicity推导scalar potential/test/generator independent of representatives；不是假设independence。复用LangevinPeriodicLift中同一真实格点argument，measurable代表避免Quotient.out未证measurable。真实partial periodic已在BrownianDirichlet证明，可再真实secondpartial/generator periodic。
+
+由真实代表构造torus U/f，quotient integral identity转前批actual positive partition；ρbar=Z^-1exp(-βU)；Measure.withDensity (ENNReal.ofReal ρbar) normalized Haar，实际withDensity_apply/lintegral_ofReal与partition identity证明IsProbabilityMeasure，不将normalization概率性作假设。MeasureTheory.integral_withDensity_eq_integral_toReal_smul实API在Integral/Bochner/ContinuousLinearMap.lean，真实ENNR density finite以及measurable需显式。把前批literal cube Dirichlet搬到same torus Gibbs probabilities。先局部检查再一个full batch。
+
+后续正式加权L² closed operator realization、self-adjoint closure、compact resolvent/discrete spectrum/gap、真实semigroup/distribution expected平均仍独立缺口。固定Mathlib文件名检索发现Fourier/AddCircleMulti与FunctionalSpaces/SobolevInequality等，未找到以Poincare/Unbounded命名所需operator实现文件；只是文件名检索，不能据此断言Mathlib不具备或数学目标不可能。原5.6印刷190/PDF211已目视为time t distribution average，后续期望明确按此推进。

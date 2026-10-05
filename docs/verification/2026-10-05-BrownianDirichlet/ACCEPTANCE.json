@@ -1,0 +1,310 @@
+{
+  "started_at": "2026-10-05T23:53:08.5854869+08:00",
+  "finished_at": "2026-10-05T23:59:57.2496+08:00",
+  "head_at_check": "f5071a3d5979d508e3cb55e91b56287e5675e4cd",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9063,
+  "audit_declarations": 1193,
+  "inputs": 146,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationPartial",
+    "MolecularDynamics.textbookConfigurationCube",
+    "MolecularDynamics.textbookConfigurationGibbsWeight",
+    "MolecularDynamics.textbookConfigurationGradientPair",
+    "MolecularDynamics.textbookBrownianGenerator",
+    "MolecularDynamics.textbookConfigurationPartial_contDiff",
+    "MolecularDynamics.textbookConfigurationPartial_periodic",
+    "MolecularDynamics.textbookConfigurationCube_opposite_faces",
+    "MolecularDynamics.textbookConfigurationCube_integral_divergence_eq_zero",
+    "MolecularDynamics.textbookConfigurationGibbsWeight_contDiff",
+    "MolecularDynamics.textbookConfigurationGibbsWeight_periodic",
+    "MolecularDynamics.textbookConfigurationGibbsWeight_partial",
+    "MolecularDynamics.textbookBrownianWeightedFlux",
+    "MolecularDynamics.textbookBrownianWeightedFlux_contDiff",
+    "MolecularDynamics.textbookBrownianWeightedFlux_periodic",
+    "MolecularDynamics.textbookBrownianWeightedFlux_partial",
+    "MolecularDynamics.textbookBrownianWeightedFlux_divergence",
+    "MolecularDynamics.textbookBrownianGenerator_integral_dirichlet",
+    "MolecularDynamics.textbookConfigurationPartition",
+    "MolecularDynamics.textbookConfigurationInner",
+    "MolecularDynamics.textbookConfigurationCube_volume",
+    "MolecularDynamics.textbookConfigurationPartition_pos",
+    "MolecularDynamics.textbookBrownianGenerator_inner_dirichlet",
+    "MolecularDynamics.textbookBrownianGenerator_inner_symmetric",
+    "MolecularDynamics.textbookBrownianGenerator_inner_nonpos",
+    "MolecularDynamics.textbookConfigurationInner_self_pos",
+    "MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos",
+    "MolecularDynamics.textbookBrownianGenerator_const",
+    "MolecularDynamics.textbookBrownianGenerator_gibbs_weak_stationary"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationCube",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsWeight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGradientPair",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationCube_opposite_faces",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationCube_integral_divergence_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsWeight_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsWeight_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGibbsWeight_partial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianWeightedFlux",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianWeightedFlux_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianWeightedFlux_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianWeightedFlux_partial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianWeightedFlux_divergence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_integral_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationInner",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationCube_volume",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartition_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_inner_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_inner_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_inner_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationInner_self_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_gibbs_weak_stationary",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_input_hashes_rechecked": true,
+  "all_check_log_hashes_rechecked": true,
+  "all_check_exit_codes_zero": true,
+  "lean_warning_count": 0,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "working_sha256": "a806d94a68002f7ef43349c85ae6797ac2df1b83bf4b1ad7f37496fc901cf9a5",
+      "staged_sha256": "fa94cc42811ba609f1d46bcff6245154f268dd5380c18f40ad70096c29e8e1d2",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256": "0316626bdec70f8f41b22489d613d1514fb642d7f736140ee26a8d0c900b0204",
+      "staged_sha256": "a7c37a8eb7397d24e3494cf6ae82dd6838c31d373201fc60ead212ee884e011c",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256": "ef3a02de9c8030576056a955c3280b314d36a239f33c4f1bccf2a3c9a5bc6e71",
+      "staged_sha256": "f303898471215c9a56cb217bbc5c8268cc13596940b93782100d74f2e8166df2",
+      "content_matches_after_crlf_normalization": true
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256": "6e96bdf97263938360fc3f032d8a489f56ae95075e65ffe74db8122f68aa3847",
+      "staged_sha256": "80785bd57b800bfdc6fb06e5908b136829d6793a64a1ff213cbd5cfc41f5dc3d",
+      "content_matches_after_crlf_normalization": true
+    }
+  ]
+}
