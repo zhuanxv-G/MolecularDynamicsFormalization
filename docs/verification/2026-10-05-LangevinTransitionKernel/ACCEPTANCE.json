@@ -1,0 +1,200 @@
+{
+  "started_at": "2026-10-05T20:15:02.4380876+08:00",
+  "finished_at": "2026-10-05T20:17:24.7030669+08:00",
+  "head_at_check": "4b57d26c5179ade9a85f380d74357989b615b83e",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9055,
+  "audit_declarations": 1080,
+  "inputs": 138,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinTransitionKernel",
+    "MolecularDynamics.textbookLangevinTransitionKernel_isMarkov",
+    "MolecularDynamics.textbookLangevinTransitionKernel_apply",
+    "MolecularDynamics.textbookLangevinTransitionKernel_global_law",
+    "MolecularDynamics.textbookLangevinTransitionKernel_wiener_law_invariant",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_history_transition_joint_law",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_condDistrib_history",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_isMarkov",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_apply",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_global_law",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_wiener_law_invariant",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_history_aemeasurable",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_future_restart_ae",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_history_transition_joint_law",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_condDistrib_history",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_condDistrib_history_of_periodic"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinTransitionKernel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinTransitionKernel_isMarkov",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinTransitionKernel_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinTransitionKernel_global_law",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinTransitionKernel_wiener_law_invariant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGlobalRandomPhase_history_transition_joint_law",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGlobalRandomPhase_condDistrib_history",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_isMarkov",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_global_law",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_wiener_law_invariant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_history_aemeasurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_future_restart_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_history_transition_joint_law",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_condDistrib_history",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_condDistrib_history_of_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "responsible_semantic_review": "pending",
+  "git_staged_lean_input_checks": [
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinTransitionKernel.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "a12bace3aff10bcdc5e1ddcd8aaba88dd1a0d370ebd23afa2afa2aae0bddfcd6",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "9927867a28bbe3e5503dee29897125c72c16c5311fc332f3d647a72184cc68aa",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "018e461187c003684f4537459a2495c9c34d8948e967c197b0d4db0edeaca0df",
+      "staged_equals_working_after_CRLF_to_LF": true
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "working_sha256_matches_report": true,
+      "staged_sha256": "399992b65885db211ccdf082f038ce95e99e189bedae03ae6246de19335ffd6c",
+      "staged_equals_working_after_CRLF_to_LF": true
+    }
+  ]
+}

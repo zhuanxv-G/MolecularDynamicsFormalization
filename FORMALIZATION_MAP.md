@@ -700,3 +700,6 @@ WienerVectorFuture/LangevinFutureLaw：实际future B(S+t)-B(S) Gaussian/isotrop
 
 ## 2026-10-05 Theorem6.2 actual joint initial/path measurability（机器验收通过，语义pending）
 LangevinInitialState：从真正积分解推导同noise不同initial指数Gronwall、chosen endpoint初值uniform Lip和initial×Cpath joint连续可测；actual periodic initial/path联合连续经open quotient×id下降、无需代表可测性；random real/periodic initial endpoint AEm完整局部。9public完整验收9054/1063/137零警告及exact输入/日志SHA核验通过；conditional Markov/filtration/density/generator/Harris及负责人与CORE_SCOPEpending。
+
+## 2026-10-05 Theorem6.2 真实转移核与确定时间条件Markov（机器验收通过，语义pending）
+LangevinTransitionKernel：真实Wiener Cpath law与joint endpoint deterministic kernel组合构造actual real/periodic probability transition kernel，逐状态等于actual endpoint pushforward并识别同一global process law，Wiener实现无关。whole history×future真实乘积law及commonAE restart经端点联合可测映射导出joint compProd disintegration，再由condDistrib唯一性证明实际全部past history条件律只依赖当前actual state；原C∞ lattice periodic势能推导forceLip主结论，无kernel/Markov结论假设。full-check01 2026-10-05T20:15:02.4380876+08:00--2026-10-05T20:17:24.7030669+08:00退出0；9055 jobs/零Lean警告/1080audit基础三公理/138inputs及全部raw SHA复核一致；17public逐名覆盖。确定S/T的AE结论不声称跨所有S/T的共同异常集或stopping-time strongMarkov；completed filtration/semigroup/density/actual generator/Harris与负责人语义pending。

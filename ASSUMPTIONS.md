@@ -404,3 +404,6 @@ auxiliary real模型需C² U和真实global forceLip，实际periodic主模型�
 
 ## 2026-10-05 actual initial/path联合可测依赖
 真正同一W积分解可用不同初值x/y，C² U与actual force globalLip、unit-mass finite Nc、T≥0/t∈[0,T]，任意γ/σ。periodic endpoint descent需实际C∞ lattice-periodic U及已接受任意rep独立，无需chosen rep连续/可测假设。随机初值AEm是明确必要输入，endpoint AEm/joint map均derived；可测性无需初值/noise独立假设。conditional Markov/filtration/generator/Harris未计完成。
+
+## 2026-10-05 真实transition kernel/确定时间条件律
+actual标准finite-dimensional vector Wiener；unit mass、finite Nc、S/T≥0及任意γ/σ。auxiliary real模型为C² U、显式force globalLip；periodic实际unit torus模型为C∞ lattice-periodic U，最后主结论推导globalLip并构造同一个全时间过程的条件律。kernel measurability/probability、actual endpoint law、未来与整个历史独立及条件Markov均证明，不作为输入；condDistrib所需IsProbabilityMeasure P在陈述中由hB局部绑定，并非新增假设。AE量词位于每固定S/T之后；无stopping time/强Markov/所有确定时间共同AE条件律承诺。completed filtration、density/generator/Harris仍待证明。
