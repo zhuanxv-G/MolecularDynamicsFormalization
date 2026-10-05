@@ -667,3 +667,10 @@ Printed255--256/PDF276--277: Chapter06/WienerPathLaw.lean proves genuine countab
 - 印刷255--256/PDF276--277：Chapter06/WienerPathSupport.lean实际uniform cells、endpoint telescoping/bounds、ContinuousOn-control entire tube AE/null可测及任意指定T正概率。Chapter06/WienerVectorSupport.lean标准vector Wiener定义与真实scalar coordinate law/whole independence/finite tube product、NNReal与real time转换及全vector管支持。
 - Chapter06/LangevinAccessibility.lean：textbookLangevinEndpoint_ball_pos、_open_pos及_physicalNoise_open_pos接已接受C∞控制、真实smooth局部化和本批实际Wiener支持。真实单位质量全Rn/指定区间AE积分解和end可测下的球与Nonempty-open positive及null可测完整。
 - 本批25项public/full-check01-LangevinAccessibility，源码/原始日志SHA及公理覆盖逐项核验；负责人pending。原[257,Lemma3.4]用于噪声稳定性，[349]用于Wiener正概率，两条必要外部依赖已本地证明。原all-open缺Nonempty、全局随机解构造、periodic实际lift/Thm6.2全遍历仍单独记录，不计CORE_SCOPE完成。
+
+
+## 2026-10-05 引理6.1真实周期积分解及构造lift
+
+- Chapter06/LangevinPeriodicProjection.lean：真实UnitAddTorus位置商、连续满射、Nonempty-open拉回与given-real-solution projection事件。Chapter06/LangevinPeriodicForce.lean：真实格点periodic U定义，actual fderiv/force/force derivative周期性、compact基本cube全局bound及global forceLip。
+- Chapter06/LangevinPeriodicLift.lean：真实代表/force与任意lift一致、actual周期积分方程、q_real=初始代表+∫p真实构造和Rn积分方程/projection identity、真正periodic Nonempty-open endpoint null可测/positive及physical noise。给定真实periodic解，不输入lift存在。
+- 24public/full-check01-LangevinPeriodicLift固定版本、SHA、零警告及公理接受。原Nonempty修正负责人签核、全局随机过程构造/联合AEmeas/nonexplosion/全遍历单列；不计CORE_SCOPE完成。

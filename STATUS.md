@@ -494,3 +494,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 引理6.1任意时长控制支持与真实终点可达验收
 
 - LangevinAccessibility任意时长控制支持与真实终点可达接受，待本地保存。full-check01/session94502：2026-10-05T15:04:57.1230061+08:00--2026-10-05T15:12:26.3446047+08:00退出0；9039 jobs、零Lean警告、929项审计声明仅基础三公理、122项输入及全部原始日志SHA256实查一致，25public完整名称逐项覆盖。实际uniform grid/端点累积/连续control插值+真实独立段joint给每个T标量管positive/null可测；标准Gaussian/zero mean/isotropic covariance/AE连续模型推出真whole坐标独立、向量管actual有限概率乘积与任意real T控制支持。已接受C∞control/真实cutoff稳定性与actualAE积分解组合得到球和Nonempty-open及sqrt(2γβ⁻¹)物理噪声的正概率/事件可测，未输入支持或连续依赖结论。指定Rn unit-mass/给定区间实际解+end可测条件显式。原Nonempty遗漏/一般全局存在/periodic lift及负责人和整个CORE_SCOPE未完成。下一真实T^Nc位置商映射连续满射/开集拉回，接实际投影解可达性。
+
+## 2026-10-05 引理6.1实际周期积分模型与构造lift可达验收
+
+- LangevinPeriodicLift真实周期模型与构造lift可达接受，待本地保存。full-check01/session94692：2026-10-05T15:48:22.4623155+08:00--2026-10-05T15:51:41.8881008+08:00退出0；9042 jobs、零Lean警告、953项审计仅基础三公理、125项输入及全部原始日志SHA256实查一致，24public逐项完整名称覆盖。真实unit torus projection连续满射/Nonempty-open拉回，真实格点periodic势能链式求导与compact基本cube给force/导数界和globalLip；actual force代表元不变/与每个real lift一致；真正周期积分方程通过初始代表+∫p构造q_real，证明原Rn方程与投回q_torus，不输入lift存在。结合已接受真实Wiener支持和noise稳定性得actual给定周期积分解每个正T/Nonempty-open的null可测与positive，并原物理sqrt(2γβ⁻¹)。只要求实际periodic endpoint AEm，不要求real-lift endpoint AEm。原Nonempty修正最终语义签核/一般全局随机过程构造和整个CORE_SCOPEpending。下一真实globallyLip driven field统一local Picard mesh+finite patch构造连续rough noise全区间解，随机模型AE meas后续单列。

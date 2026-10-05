@@ -1,0 +1,660 @@
+{
+  "schema_version": "1.0",
+  "started_at": "2026-10-05T15:48:22.4623155+08:00",
+  "finished_at": "2026-10-05T15:51:41.8881008+08:00",
+  "project_root": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "head": "8f4d15a9570428326d9fb24022207080fcb155ca",
+  "git_status": " M AGENTS.md\n M FORMALIZATION_PLAN.md\n M MolecularDynamicsFormalization.lean\n M STATUS.md\n M Scratch.lean\n M docs/WHOLE_BOOK_ROADMAP.zh-CN.md\n M docs/handoff/CURRENT_STATE.zh-CN.md\n M docs/handoff/PROGRESS_OVERVIEW.zh-CN.md\n M docs/handoff/RESUME_PROMPT.zh-CN.md\n M docs/handoff/WORK_LOG.zh-CN.md\n M docs/tasks/T3_implementation/continuation-20261003/CONTINUATION_STATUS.json\n M docs/tasks/T3_implementation/continuation-20261003/MATHCOPILOT_STATUS.json\n M scripts/CheckAxioms.lean\n?? MolecularDynamics/Chapter06/LangevinPeriodicForce.lean\n?? MolecularDynamics/Chapter06/LangevinPeriodicLift.lean\n?? MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean\n?? docs/CHAPTER01_TASK_OVERVIEW.zh-CN.md\n?? docs/CORE_SCOPE.zh-CN.md\n?? docs/handoff/T2_HEARTBEAT_STATUS.json\n?? docs/reviews/2026-10-02-T1-T2/\n?? docs/reviews/2026-10-03-T2-T5-proofs/SENT_REQUEST.png\n?? docs/reviews/2026-10-04-T2-T5-local/\n?? docs/tasks/LOCAL_LONG_RUN_20261004/\n?? docs/tasks/T1_mathcopilot_return_git/\n?? docs/tasks/T2_API_CHECK.zh-CN.md\n?? docs/tasks/T2_INPUTS_AND_ACCEPTANCE.zh-CN.md\n?? docs/tasks/T2_MATHCOPILOT_PROMPT.zh-CN.md\n?? docs/tasks/T2_SPEC.zh-CN.md\n?? docs/tasks/T2_START_PROMPT.zh-CN.md\n?? docs/tasks/T2_mathcopilot_statement_return/\n?? docs/tasks/T3_API_CHECK.zh-CN.md\n?? docs/tasks/T3_INPUTS_AND_ACCEPTANCE.zh-CN.md\n?? docs/tasks/T3_MATHCOPILOT_PROMPT.zh-CN.md\n?? docs/tasks/T3_SPEC.zh-CN.md\n?? docs/tasks/T3_implementation/continuation-20261003/MATHCOPILOT_STOPPED_TASK_CONTEXT.txt\n?? docs/tasks/T4_continuation_20261003/\n?? docs/tasks/T5_API_CHECK.zh-CN.md\n?? docs/tasks/T5_INPUTS_AND_ACCEPTANCE.zh-CN.md\n?? docs/tasks/T5_MATHCOPILOT_PROMPT.zh-CN.md\n?? docs/tasks/T5_SPEC.zh-CN.md\n?? docs/verification/2026-10-03-T2-L0/\n?? docs/verification/2026-10-03-T4-fifth-batch/REMOTE_CI_RESULT.json\n?? docs/verification/2026-10-05-LangevinPeriodicLift/\n?? docs/verification/2026-10-05-StationaryDensityFlow/HaarApiProbe.lean",
+  "expected_toolchain": "leanprover/lean4:v4.34.0",
+  "expected_mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+  "lean_version": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "lake_version": "Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)",
+  "actual_mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+  "source_scan": "passed",
+  "inputs": [
+    {
+      "relative_path": ".github/workflows/lean_action_ci.yml",
+      "sha256": "dedfe9952e8de6eca35ca12c9f34e4d3ded9b214520e5dc216c55f3f0bc30414"
+    },
+    {
+      "relative_path": "lake-manifest.json",
+      "sha256": "5156c987301057f3386cd99b43d5125e87b82bd245e712c60152cc4b5f357aba"
+    },
+    {
+      "relative_path": "lakefile.toml",
+      "sha256": "bdfb6a94cabc34eafe50274555e00374bd976139054b7cf3d69f139d79ff5197"
+    },
+    {
+      "relative_path": "lean-toolchain",
+      "sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632"
+    },
+    {
+      "relative_path": "MolecularDynamics/BasicDefinitions.lean",
+      "sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/ActionAngleChart.lean",
+      "sha256": "77af2e1b58a314cf61ef0cf0ef8ed9148fd2c2d5dea5807876f5d47cf5d7ad37"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/BasisMatrix.lean",
+      "sha256": "3bdf3d414cb4196cfe87b644786e2b1f29166952ea61ab8bd28f7ebd44a1c4df"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/ComplexSpectralFlow.lean",
+      "sha256": "f8d1952fa9cebf6c100c24a6595a8edadc9a932e3a53f905132eb297a0fd552e"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/Continuation.lean",
+      "sha256": "e77c1e1886b52ae50d0a0cde07cf5fd5237679e058c5c0f517bf3493e315746b"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/EnergyConservation.lean",
+      "sha256": "95e0a1323f35ac2c2dca0d5c07ba33310eea0870364a968cde57d72cb5b04d88"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/EnergyGlobalExistence.lean",
+      "sha256": "80b6d0500bef523dc65036b200927879b614a350b2af255c0086a8d7fcfc03bf"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/Equilibrium.lean",
+      "sha256": "24f99ee513b0e23a57ec918fdb3d4948e999947dfc7f3c873d5a0cb44c48bbe6"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/EquilibriumLinearization.lean",
+      "sha256": "71f700c3ab2a83b2aa7a1ea0500453101b092c904b73ce10c4dd43155ff6c436"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/EuclideanStability.lean",
+      "sha256": "35c34eba90fc5a23e998d92ccfa16037b0caed6a198e5951d63830af84e4ee66"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/FirstIntegralGraph.lean",
+      "sha256": "5a23f002003d8dfa34febe3f2d0ab8de9db2cb63465c063bf92bea542b25da10"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/FirstIntegralQuadrature.lean",
+      "sha256": "5f78b45fdf25e5024107e909f509aebac2a85393a229d7621efc46ef34d7da50"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/FirstIntegrals.lean",
+      "sha256": "51838782e66b7ee38209ca095e4a79b786581293a7499ceb66d3a4b6b9189720"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/FreeParticleFlow.lean",
+      "sha256": "8851e3490f5decb43946c352e3fd9e02461c9d57799213c52808d0a5bf1f512b"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/FutureFlow.lean",
+      "sha256": "69203bd44898fae5db15f2834aa2d20beeafdc906989cea81b39f1f3b17a75de"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/GeneralizedCoordinates.lean",
+      "sha256": "6652226b2dcd4f973be3aa0c1b3b880d9605838b5282aa1672356204f1aef955"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/GlobalContinuation.lean",
+      "sha256": "d840d419f43908c3958671d18eb3adb76c117d8f342cf15053c5e12ea5cbd053"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/GlobalFlow.lean",
+      "sha256": "77b9456080da8eeda8ab9a4fae1460823c479daddedcb63097275857fafee3c4"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/Hamiltonian.lean",
+      "sha256": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/HamiltonianHessian.lean",
+      "sha256": "b4e252327d8478735239654571cf820f0eeb5cb47480722d9b0390bbbc9c8d6d"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/HarmonicActionAngle.lean",
+      "sha256": "7625ca1bcc62ea12e2214aea7df958fcd7d32e61715ba54661e26896ec4e0720"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/HarmonicOscillator.lean",
+      "sha256": "8f44fa0990ed793c190029b16ee2c64a3e51f91f579db1382b4f59938d830573"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/HarmonicTorus.lean",
+      "sha256": "fc68cda8e36d3a7d4c3cbbba67252f7cf5b7f0f8a7615a1d33ea32f567c42189"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/Kepler.lean",
+      "sha256": "9c98710e9118f810927240ba2b0887872bf9e88641418471bbc13b5ae1c424cf"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/KeplerCartesianBridge.lean",
+      "sha256": "3d66c113e908f96ebf4d9d6a40f53a19ca415297382e2fba7a275d4bc16edd1d"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/KeplerPolarDynamics.lean",
+      "sha256": "cf75bbe5342875a5cac3f8496edc68883cedf65fbebcff33953c5479886c2ecb"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/KeplerQuadrature.lean",
+      "sha256": "501d859be46cee064f7304bc5d92b2a6cdc241607b337dd16cd663a857183dd7"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/KeplerReconstruction.lean",
+      "sha256": "9c90148c71f9cdf4edb625524f51b0bc9feb96199838645b1733cef486c5d85d"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/Lagrangian.lean",
+      "sha256": "3be1e4d92e1f85a7c24250e72d01e7491620d988de32e513fa3f557a3f24be78"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/LatticePairPotential.lean",
+      "sha256": "fe3d94e8c07979e08da619c1866823e34bbe7f1ce732d92ff5f2c4a002df972a"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/LatticeVibrations.lean",
+      "sha256": "3fe58acf7a8a3646aa9cd7fcac5f210a5ae9b27e6bd39648504f65d3d6049cc3"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/LegendreTransform.lean",
+      "sha256": "6702be49a397aa1ac21e8bd2ab1121c2b69033b14f4f3d22779e178d52719b98"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/LinearFlow.lean",
+      "sha256": "fb2fa6db4936e40275468b34e871212c1423e55e532ad3afb715aa360e192228"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/LinearizedHamiltonian.lean",
+      "sha256": "bf7062ce2ff7c2e2910c3fcf0ba4184cd25b6d5432167f1c7a870b298a594af8"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/LocalContinuousFlow.lean",
+      "sha256": "07c5536e28328798a6acaefd58ea4de1f81bc8013d22d62b3fee2fad6d843058"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/LocalExistence.lean",
+      "sha256": "de29ed4ddf8dcd0f6abf162916bf643df7e47257d84486dc3cb6c4b1b1a32c53"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/MatrixFlow.lean",
+      "sha256": "055b277396664fe170dc6b1494af832809a64c4fd7a4814b3e2e0adb753a65d6"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/MechanicalConfinement.lean",
+      "sha256": "b375c6a6275e8bda4d88d038a8f52cb0df81be6f4d134c9ec469a4b33b881d44"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/MechanicalContinuation.lean",
+      "sha256": "31d426139c3afaeb0a8fb82198d4500f9cdfe5441e2f675c5a7d49467dcf270c"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/MomentumBounds.lean",
+      "sha256": "1e01cc57467dd072a7b57c70daf08529fb7bed8556dd76b31dd407428887c11e"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/MomentumConservation.lean",
+      "sha256": "e190b6d01baa041c67970c535da2777c0985150f0fe8ca8fb520a8139e785c59"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/NBody.lean",
+      "sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/NormalModes.lean",
+      "sha256": "4bef7628ccd8043acf84b69e40ba962f6450431ab9f082c230318a89e8d24357"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/ODEEndpoint.lean",
+      "sha256": "384580bf781bfdcc3da367a07cdad4525552a69cb944ac80066639092b74f93c"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/PhaseMetric.lean",
+      "sha256": "de5439ee38dcb0df840dbbecc2e0b917ab08f0d475ff6fc020569c1987c180fc"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/PlanarAngularMomentum.lean",
+      "sha256": "676f52823522352f343d770cb24d079824d0b927216ff33e03cb85578019ea4c"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/PolarCoordinateMap.lean",
+      "sha256": "07903aa1752d63444b62cf59916e7e8eab7f46ee998aff976cca6c33ee07de4a"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/PolarCoordinates.lean",
+      "sha256": "9628a7dde3e1a4f3f8536a707fe64d14866ab6de118718aad0adb03f7864920c"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/PotentialBarriers.lean",
+      "sha256": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/PotentialRegularity.lean",
+      "sha256": "b526985cb33afb585a5c40f33e6490c6529a1676c9cb6bf94e75cfae50c3a6ea"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/RealRecoveryFlow.lean",
+      "sha256": "98789fa0a6028f59ff631309fa90a33c1582183f38c691e73f6fb0fe35ede643"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/RealSpectralFlow.lean",
+      "sha256": "0443a23771e1fa62d48deb2952d950d42f89e878daa57cbdb67e087956b28009"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/ScalarIntegrability.lean",
+      "sha256": "a907c5c009a4ac717222d52524244b11c7faf4b0401a6a8171f492bd8741893a"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/ScalarLocalIVP.lean",
+      "sha256": "779a4bb9f543fc0c897a034c4dff93dfed153561738ee3db5819c3c9ce7338b5"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/ScalarTurning.lean",
+      "sha256": "e332bd5d3ac6f16874c5e0dae5b524899ec16ef68d816fa1e4829b115c940150"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/SeparableQuadrature.lean",
+      "sha256": "435e218a6dacc6ee234f5c1b9caf154d96a125c182c57ed8227355b4a0586923"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/Stability.lean",
+      "sha256": "dda14927a9232180b580f882d122db6752c5df8c6d4ec4a481c97972a2e58122"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/TimeReversal.lean",
+      "sha256": "0c6d7ddb4f767278d51b62a0eba9676bfa0ef7894ac50019617bdf70d3222556"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/TorusDensity.lean",
+      "sha256": "4a47faac193e849a14d70745e3c1d88fedf44d69d95ce6c598f4c60ac0dbee7d"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/TorusPeriod.lean",
+      "sha256": "b77384851f7d6c00af75ec295dd7fe345b0f82efe26e28d5930cefa55f164bdf"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/TwoBodyCoordinates.lean",
+      "sha256": "a35c85beab83f765aa6b6f29e11836f22a9281b2fe61dee0362c3789d0a0031c"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter01/VariationalEquation.lean",
+      "sha256": "55f990dde34738e0b03c093bd81680d3427e688c8d5912f78ff3584bd664db4e"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/ActualFlowVariations.lean",
+      "sha256": "3c2cf8687cd56a5a902355abc56a4ec15f59ed7706b338cad57ece295f20a375"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/AdjointMethods.lean",
+      "sha256": "4d2ac087bf5067c7ebc61b95e4cf1e90f553b51fc1bba92ca8814b141541647e"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/CompositionMethods.lean",
+      "sha256": "67847f5aa9eed9e165aed3b2da9419c282482b805e9b65f12224da07b5cfde5c"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/EulerConvergence.lean",
+      "sha256": "447a79181bac89b59bf7eff5fa2898dec1a49e50b6210b81fd19ec0ef2e4fe81"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/HamiltonianVariational.lean",
+      "sha256": "9fba63cd8daf0760a30589902b20c53c76a44eae0a349dfa6c5383be62a144af"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/HamiltonianVolume.lean",
+      "sha256": "f03d4a0b57764b642ae01c6563032132d2f47cf0a7e566940bf7519536309aa7"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/LiouvilleVolume.lean",
+      "sha256": "cc895f16f329a6dd4943c5ab8d72d7d98dd7d683c006aad395c36ed3be5bf37f"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "sha256": "c9bc53727962c962a9420dbfa305ede46e90b38fdded8952b400381f474e3385"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/ProcessedMethods.lean",
+      "sha256": "789126e91c8dc6b98160f2cb3fda025efacb1be31c6842e3784a0b6e2325fcdb"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "sha256": "bc9f7688e08676874bd5c50502a5e27fa659e7ff10f116045a4605a42ccfa703"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "sha256": "065943598d7c44b43b135c1c8edee04970b20305a15fdd2ff8d4d46cf6ee18f2"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter03/LiePoisson.lean",
+      "sha256": "96135836f1210e42939e9991ee711f8b454d4c415a8aa209933630a3ac7a16e2"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter03/ModifiedEnergyDrift.lean",
+      "sha256": "52f3ff781cde7dd83fbe29e53576375715c630a2e6bd107002c111f260ac4213"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter03/ModifiedHamiltonianBounds.lean",
+      "sha256": "a4bc3858fbd3e46ff382425fe9d10db2c805ac01dd27f09199a4aefab2cb54d0"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter04/ConstrainedFlowSymplectic.lean",
+      "sha256": "8ecf6b8fe318cede45304fcbb6a66ce1fb0d62ece3ca913c7564adea650a80d5"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter04/ConstrainedGram.lean",
+      "sha256": "166047c583103676b112b8310f0c345c0f9637ee080dfce8feb38e8035403ff2"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter04/ConstrainedIntegrator.lean",
+      "sha256": "b456ff77ddbc5b3d9bf0044dca033c924639a21b2556f8be52b22760a9a6644e"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "sha256": "890274c6144406ad066b0a624cf08e3b95995c17b495545de8c3c05f260d4e44"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter04/ConstrainedReaction.lean",
+      "sha256": "0c6b2231827c5d5493751eea65c67f7aeaed5dd511e5bca2f1bb533598e53789"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter04/ConstrainedReactionRegularity.lean",
+      "sha256": "a552a5d4469975d129720c14ec90bdf14743ae3494440952f0d1a79c8ba212ac"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter04/CotangentProjectionRegularity.lean",
+      "sha256": "2b41c9c607218b81288881bf724d097cedc15e315fe6a5d1ce3e764bee1dc7a1"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinAccessibility.lean",
+      "sha256": "c77c549383756364f7d9566d9875f731c4af2515fcbb27b42af362db4085202a"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinControlPath.lean",
+      "sha256": "73bd1fb60ef81c4a387b432e25da066daac4b259698ddc05a97bb36d941d5df0"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "sha256": "68b6e0d07e25d143ef7b454d9fae6715858463e54c5638347304ed68d0d80962"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinNoiseStability.lean",
+      "sha256": "b52bad7499709d55bc3f61ec737483aed5b16301ac1648e785ad2e5ea52ad919"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "sha256": "4a1cac9df5f4a8ba6b38e4925ea5edadf333d555c53127faa4cd0b0f6e909bff"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinPeriodicLift.lean",
+      "sha256": "80cc450e2cd1bae9c53cdbe39d272bc11592ee4d826659414aee3b02d9e923dd"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "sha256": "4772eb5d780fada452c18a45e5f4a44dcf7caf3b4d12a8ac688ca69616ece6bc"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/LangevinSmoothCutoff.lean",
+      "sha256": "f2c0799b18e4a69befb0037c8bf4725c58f39ae9a59650b141013d3f3067556c"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/WienerBridgeSupport.lean",
+      "sha256": "2e269ee7eb3d65ba9943ebe4fbe73221afa08a0338a27ec8b0fb4ba707adb068"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/WienerDeterministicLaw.lean",
+      "sha256": "a69fa3d1ef8c9362aaa24f2436f38fa59f52395fd8d8dec005738c1f87913e80"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/WienerIntegration.lean",
+      "sha256": "bbdd9cfebfa375a07e3c4b89ce93b756a9470239517f5ed2c5af01c7d5038073"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/WienerPathLaw.lean",
+      "sha256": "93ba269124c6d198f35ec4a1aeacce94211f6be0f5d6573b1d7a5ac880fedf3a"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/WienerPathSupport.lean",
+      "sha256": "96c065ae397166943cff9db8eea547bb50a559ddf43daa8ff465b6b595505f68"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "sha256": "e694d4fe064171d329e2d498a4d2b952cd1da0fe023cd9bcb9a3485031cb20b4"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/WienerRefinement.lean",
+      "sha256": "9887a3e2ad954d83c4fb6ecb0ea3b3085050e2c73bc3a4cd5cbe965aa697e969"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/WienerStratonovich.lean",
+      "sha256": "0b7829e61d4dc9ed960795cd567ce4fde333754953c3a3dd112316959e9e4a19"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "sha256": "ee772659c05bba1976bd966ff8538e7f7090a1ad6b3fed2003b75b3baec074d0"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter07/FormalOperatorFunctionalCalculus.lean",
+      "sha256": "4cbfb1e12e4d0e1528c5398a75c79d189f7446dea3b03250cf23ef2dccd4fe27"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter07/InvariantDistributionSwap.lean",
+      "sha256": "187d8f7ceceec50b6d8db0c439babe4bc5bf54d067c5a2f759068eeac4458775"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter07/SymmetricOperatorBCH.lean",
+      "sha256": "f351cefd0b108cc683bade936fc9f344cd629a3ffe5c6a1713988c0fa8616b9d"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter08/HormanderClosure.lean",
+      "sha256": "0258503728b2e4ba02c1019bb2dc71462d8bce6db4c0c7979337234a3ef67e44"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter08/StationaryDensityFlow.lean",
+      "sha256": "d88fe9abe980d66dba8fcf8c78d803b499b3acbba96263635c85aef62f3b7aef"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "sha256": "8741d41129d08b86838823e4a08e385f67b6aa5927f48a47a7abb0d3d9854271"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter08/ThermostatHormander.lean",
+      "sha256": "71af1a8141a5a99a07490d576001b1ffdf19ca361f02a521f72cedcf11bb6c8a"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter08/ThermostatLieFields.lean",
+      "sha256": "1e004421b567524fc02a05b93035c7e75d9727f40f4922c658268b3e09172eea"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter08/ThermostatModeInvariant.lean",
+      "sha256": "8b8c87da68a974c0d822a3abb2235ec7538c191d860531f8e2ca6642f4b82eb1"
+    },
+    {
+      "relative_path": "MolecularDynamics/Chapter08/ThermostatSpan.lean",
+      "sha256": "07da233932208682ed8c72019777b689c8736b7b8645b88b5d9a48c044ff0dde"
+    },
+    {
+      "relative_path": "MolecularDynamics/Notation.lean",
+      "sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588"
+    },
+    {
+      "relative_path": "MolecularDynamicsFormalization.lean",
+      "sha256": "d177097eec8d6b79e33323800840f37f707182d4d97c7b7d5a7d895e25aa2b11"
+    },
+    {
+      "relative_path": "Scratch.lean",
+      "sha256": "c63f41ebb5c6f97152a089759caace73164a825945db504e8a8f8af4d781bc20"
+    },
+    {
+      "relative_path": "scripts/check.ps1",
+      "sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d"
+    },
+    {
+      "relative_path": "scripts/CheckAxioms.lean",
+      "sha256": "4aedd84b8bd89dfc522c67d769e6baaab065a27dd765adfeddbaa434bb96a1f8"
+    }
+  ],
+  "checks": [
+    {
+      "name": "git_branch",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "git_branch.log",
+      "raw_log_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4"
+    },
+    {
+      "name": "git_head",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "git_head.log",
+      "raw_log_sha256": "91b8e6b42a50ee7917f169b4f40fa6e92680d34e16489535388351a87d9b9d3d"
+    },
+    {
+      "name": "git_status",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+        "status",
+        "--short"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "git_status.log",
+      "raw_log_sha256": "af66fe3d116d718102f62cb4ab070a188742c0d11447a05e91b97f01113de802"
+    },
+    {
+      "name": "lake_version",
+      "executable": "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+      "arguments": [
+        "--version"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "lake_version.log",
+      "raw_log_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc"
+    },
+    {
+      "name": "lean_version",
+      "executable": "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "lean_version.log",
+      "raw_log_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25"
+    },
+    {
+      "name": "mathlib_revision",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\.lake\\packages\\mathlib",
+        "-C",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\.lake\\packages\\mathlib",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "mathlib_revision.log",
+      "raw_log_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3"
+    },
+    {
+      "name": "mathlib_status",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\.lake\\packages\\mathlib",
+        "-C",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\.lake\\packages\\mathlib",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "mathlib_status.log",
+      "raw_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lake_build",
+      "executable": "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+      "arguments": [
+        "build"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "lake_build.log",
+      "raw_log_sha256": "6bfb6e46beb939c99c93e86a48621d30b9c127c787a9719511bcec421b8b8baa"
+    },
+    {
+      "name": "scratch",
+      "executable": "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "Scratch.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "scratch.log",
+      "raw_log_sha256": "a4f18882dcaa453c7f334c67a7188864a10bdcdba11bbba6564ceb6c651b6f10"
+    },
+    {
+      "name": "axiom_dependencies",
+      "executable": "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "scripts/CheckAxioms.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "axiom_dependencies.log",
+      "raw_log_sha256": "858a101620da7c1ac652a1e60fa9c07764611fc7ab3c1e5797ac6df87a7068e3"
+    }
+  ],
+  "machine_check_status": "passed",
+  "exit_code": 0,
+  "responsible_semantic_review": "pending",
+  "failed_phase": null,
+  "error": null
+}
