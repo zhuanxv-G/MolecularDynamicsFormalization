@@ -737,3 +737,8 @@ BrownianTorusGibbs统一验收：full-check01 passed：9064 jobs/1218公理声�
 MolecularDynamics/Chapter06/BrownianHilbertCore.lean，19public local05零诊断；same quotient continuity→actual MemLp2/toLp+AE→sameµ Hilbert inner/norm/generator image Dirichlet与nonpositive，actualL² real eigenvalue非正、constant zero/norm-one nonzero，positive density→fullsupport→injectivity。actual dense domain/closed selfadjoint/spectrum/gap/期望未完成；负责人语义pending，统一验收进行中。
 
 BrownianHilbertCore统一验收：full-check01 passed：9065 jobs/1237公理声明/148exact输入；10checks退出0，全部input/rawlog SHA256匹配，19public逐名审计仅propext/Classical.choice/Quot.sound，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人语义pending。
+
+## 2026-10-06 Brownian实际光滑周期Hilbert定义域
+BrownianSmoothDomain.lean：真实coordinate partial与literal generator线性，全smooth periodic Submodule及generator endomorphism；同一Gibbs L² LinearMap/injective/range/unique lift→实际domain operator，其原generator一致、Dirichlet、domain全pair对称/nonpositive/常数zero norm-one均证明。local04零诊断，统一验收进行中。density/closed selfadjoint/discrete spectrum/gap/actual semigroup未完成，负责人pending。
+
+BrownianSmoothDomain统一验收：full-check01 passed：9066 jobs/1259公理声明/149exact输入；10checks退出0，全部input/rawlog SHA256匹配，22public逐名仅基础三公理，Lean警告0；Lean4.34.0/mathlib5ed2965；负责人semanticpending。

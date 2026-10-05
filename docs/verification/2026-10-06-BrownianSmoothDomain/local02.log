@@ -1,0 +1,74 @@
+MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:135:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β (↑f + ↑g) ⋯ ⋯) Q
+in the target expression
+  ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑(f + g) ⋯ ⋯) Q =
+    (↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) +
+        ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑g ⋯ ⋯))
+      Q
+
+Nc : ℕ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+f g : ↥(textbookPeriodicSmoothSpace Nc)
+Q : UnitAddTorus (Fin Nc)
+hfg :
+  ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β (↑f + ↑g) ⋯ ⋯) Q =
+    textbookConfigurationTorusObservable (↑f + ↑g) Q
+hf : ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) Q = textbookConfigurationTorusObservable (↑f) Q
+hg : ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑g ⋯ ⋯) Q = textbookConfigurationTorusObservable (↑g) Q
+hs :
+  ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯ +
+            textbookConfigurationGibbsL2Observable U hU hPU β ↑g ⋯ ⋯)
+      Q =
+    (↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) +
+        ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑g ⋯ ⋯))
+      Q
+⊢ ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑(f + g) ⋯ ⋯) Q =
+    (↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) +
+        ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑g ⋯ ⋯))
+      Q
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    Subtype.prop (f + g)
+  has type
+    ↑(f + g) ∈ textbookPeriodicSmoothSpace Nc
+  but is expected to have type
+    ContDiff ℝ ∞ ↑(f + g) ∧ textbookUnitPeriodicPotential ↑(f + g)
+  in the application
+    (Subtype.prop (f + g)).left
+MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:145:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑↑(c • textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) Q
+in the target expression
+  ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑(c • f) ⋯ ⋯) Q =
+    ↑↑((RingHom.id ℝ) c • textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) Q
+
+Nc : ℕ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β c : ℝ
+f : ↥(textbookPeriodicSmoothSpace Nc)
+Q : UnitAddTorus (Fin Nc)
+hcf :
+  ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β (c • ↑f) ⋯ ⋯) Q = textbookConfigurationTorusObservable (c • ↑f) Q
+hf : ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) Q = textbookConfigurationTorusObservable (↑f) Q
+hs :
+  ↑↑(c • textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) Q =
+    (c • ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯)) Q
+⊢ ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑(c • f) ⋯ ⋯) Q =
+    ↑↑((RingHom.id ℝ) c • textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) Q
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    Subtype.prop (c • f)
+  has type
+    ↑(c • f) ∈ textbookPeriodicSmoothSpace Nc
+  but is expected to have type
+    ContDiff ℝ ∞ ↑(c • f) ∧ textbookUnitPeriodicPotential ↑(c • f)
+  in the application
+    (Subtype.prop (c • f)).left

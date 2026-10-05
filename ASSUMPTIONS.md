@@ -433,3 +433,6 @@ unit torus=UnitAddTorus(FinNc)，normalized circle Haar=AddCircle.haarAddCircle�
 
 ## 2026-10-06 BrownianHilbertCore实际条件
 same finite unit torus/actual Gibbs probability，real periodic continuous obs真continuous quotient，chosen representative只measurable；actual MemLp2与sameµ AE解释已推导。U C∞/integer periodic，f/g连续嵌入在Continuous+periodicity，generator在C∞；all diagonal masses。真正HilbertL2 inner/norm回到same canonical cube integral，actualdensity/fullsupport与embedding injectivity推导。L² eigen要求same实际image=ℓactualvector/nonzerovector，非谱结论作假设。β/m正及β≠0只在对应结论；实际unbounded domain/closed谱/gap/semigroup未证。
+
+## 2026-10-06 BrownianSmoothDomain实际条件
+实际有限unit torus与同一Gibbs Hilbert L²，U C∞/整数periodic；domain是所有C∞周期实lift的真embedding.range，单射已推导。任意diagonal m；β≠0给Dirichlet/symmetry，β>0/各m_i>0给nonpositive。没有假设domain density、operator closure/selfadjointness、gap或任意谱结论。C∞ core不冒充原C²闭算子。

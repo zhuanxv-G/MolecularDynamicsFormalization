@@ -1,0 +1,49 @@
+HasFDerivAt.add.{u_1, u_2, u_3} {𝕜 : Type u_1} [NontriviallyNormedField 𝕜] {E : Type u_2} [NormedAddCommGroup E]
+  [NormedSpace 𝕜 E] {F : Type u_3} [NormedAddCommGroup F] [NormedSpace 𝕜 F] {f g : E → F} {f' g' : E →L[𝕜] F} {x : E}
+  (hf : HasFDerivAt f f' x) (hg : HasFDerivAt g g' x) : HasFDerivAt (f + g) (f' + g') x
+HasFDerivAt.const_smul.{u_1, u_2, u_3, u_4} {𝕜 : Type u_1} [NontriviallyNormedField 𝕜] {E : Type u_2}
+  [NormedAddCommGroup E] [NormedSpace 𝕜 E] {F : Type u_3} [NormedAddCommGroup F] [NormedSpace 𝕜 F] {f : E → F}
+  {f' : E →L[𝕜] F} {x : E} {R : Type u_4} [Monoid R] [DistribMulAction R F] [SMulCommClass 𝕜 R F]
+  [ContinuousConstSMul R F] (h : HasFDerivAt f f' x) (c : R) : HasFDerivAt (c • f) (c • f') x
+ContDiff.const_smul.{uE, uF, u_1, u_3} {𝕜 : Type u_1} [NontriviallyNormedField 𝕜] {E : Type uE} [NormedAddCommGroup E]
+  [NormedSpace 𝕜 E] {F : Type uF} [NormedAddCommGroup F] [NormedSpace 𝕜 F] {n : ℕ∞ω} {R : Type u_3} [DistribSMul R F]
+  [SMulCommClass 𝕜 R F] [ContinuousConstSMul R F] {f : E → F} (c : R) (hf : ContDiff 𝕜 n f) :
+  ContDiff 𝕜 n fun y => c • f y
+LinearEquiv.ofInjective.{u_1, u_2, u_4, u_6} {R : Type u_1} {R₂ : Type u_2} {M : Type u_4} {M₂ : Type u_6} [Semiring R]
+  [Semiring R₂] [AddCommMonoid M] [AddCommMonoid M₂] {module_M : Module R M} {module_M₂ : Module R₂ M₂} {σ₁₂ : R →+* R₂}
+  {σ₂₁ : R₂ →+* R} (f : M →ₛₗ[σ₁₂] M₂) [RingHomInvPair σ₁₂ σ₂₁] [RingHomInvPair σ₂₁ σ₁₂] (h : Function.Injective ⇑f) :
+  M ≃ₛₗ[σ₁₂] ↥f.range
+LinearEquiv.ofInjective_apply.{u_1, u_2, u_4, u_6} {R : Type u_1} {R₂ : Type u_2} {M : Type u_4} {M₂ : Type u_6}
+  [Semiring R] [Semiring R₂] [AddCommMonoid M] [AddCommMonoid M₂] {module_M : Module R M} {module_M₂ : Module R₂ M₂}
+  {σ₁₂ : R →+* R₂} {σ₂₁ : R₂ →+* R} (f : M →ₛₗ[σ₁₂] M₂) [RingHomInvPair σ₁₂ σ₂₁] [RingHomInvPair σ₂₁ σ₁₂]
+  {h : Function.Injective ⇑f} (x : M) : ↑((LinearEquiv.ofInjective f h) x) = f x
+LinearEquiv.ofInjective_symm_apply.{u_1, u_2, u_4, u_6} {R : Type u_1} {R₂ : Type u_2} {M : Type u_4} {M₂ : Type u_6}
+  [Semiring R] [Semiring R₂] [AddCommMonoid M] [AddCommMonoid M₂] {module_M : Module R M} {module_M₂ : Module R₂ M₂}
+  {σ₁₂ : R →+* R₂} {σ₂₁ : R₂ →+* R} (f : M →ₛₗ[σ₁₂] M₂) [RingHomInvPair σ₁₂ σ₂₁] [RingHomInvPair σ₂₁ σ₁₂]
+  {h : Function.Injective ⇑f} (x : ↥f.range) : f ((LinearEquiv.ofInjective f h).symm x) = ↑x
+LinearMap.rangeRestrict.{u_1, u_2, u_5, u_6} {R : Type u_1} {R₂ : Type u_2} {M : Type u_5} {M₂ : Type u_6} [Semiring R]
+  [Semiring R₂] [AddCommMonoid M] [AddCommMonoid M₂] [Module R M] [Module R₂ M₂] {τ₁₂ : R →+* R₂}
+  [RingHomSurjective τ₁₂] (f : M →ₛₗ[τ₁₂] M₂) : M →ₛₗ[τ₁₂] ↥f.range
+LinearMap.mem_range_self.{u_1, u_2, u_5, u_6} {R : Type u_1} {R₂ : Type u_2} {M : Type u_5} {M₂ : Type u_6} [Semiring R]
+  [Semiring R₂] [AddCommMonoid M] [AddCommMonoid M₂] [Module R M] [Module R₂ M₂] {τ₁₂ : R →+* R₂}
+  [RingHomSurjective τ₁₂] (f : M →ₛₗ[τ₁₂] M₂) (x : M) : f x ∈ f.range
+MeasureTheory.MemLp.toLp_add.{u_1, u_4} {α : Type u_1} {E : Type u_4} {m : MeasurableSpace α} {p : ENNReal}
+  {μ : Measure α} [NormedAddCommGroup E] {f g : α → E} (hf : MemLp f p μ) (hg : MemLp g p μ) :
+  MemLp.toLp (f + g) ⋯ = MemLp.toLp f hf + MemLp.toLp g hg
+MeasureTheory.MemLp.toLp_const_smul.{u_1, u_4, u_6} {α : Type u_1} {E : Type u_4} {m : MeasurableSpace α} {p : ENNReal}
+  {μ : Measure α} [NormedAddCommGroup E] {𝕜 : Type u_6} [NormedRing 𝕜] [Module 𝕜 E] [IsBoundedSMul 𝕜 E] {f : α → E}
+  (c : 𝕜) (hf : MemLp f p μ) : MemLp.toLp (c • f) ⋯ = c • MemLp.toLp f hf
+MeasureTheory.Lp.coeFn_add.{u_1, u_4} {α : Type u_1} {E : Type u_4} {m : MeasurableSpace α} {p : ENNReal}
+  {μ : Measure α} [NormedAddCommGroup E] (f g : ↥(Lp E p μ)) : ↑↑(f + g) =ᵐ[μ] ↑↑f + ↑↑g
+MeasureTheory.Lp.coeFn_smul.{u_1, u_2, u_4} {α : Type u_1} {𝕜 : Type u_2} {E : Type u_4} {m : MeasurableSpace α}
+  {p : ENNReal} {μ : Measure α} [NormedAddCommGroup E] [NormedRing 𝕜] [Module 𝕜 E] [IsBoundedSMul 𝕜 E] (c : 𝕜)
+  (f : ↥(Lp E p μ)) : ↑↑(c • f) =ᵐ[μ] c • ↑↑f
+Submodule.mk.{u, v} {R : Type u} {M : Type v} [Semiring R] [AddCommMonoid M] [Module R M]
+  (toAddSubmonoid : AddSubmonoid M)
+  (smul_mem' : ∀ (c : R) {x : M}, x ∈ toAddSubmonoid.carrier → c • x ∈ toAddSubmonoid.carrier) : Submodule R M
+ContinuousMap.toLp_denseRange.{u_1, u_2, u_3} {α : Type u_1} [TopologicalSpace α] [NormalSpace α] [MeasurableSpace α]
+  [BorelSpace α] (E : Type u_2) [NormedAddCommGroup E] (μ : Measure α) {p : ENNReal} [SecondCountableTopologyEither α E]
+  [_i : Fact (1 ≤ p)] (𝕜 : Type u_3) [NormedRing 𝕜] [Module 𝕜 E] [IsBoundedSMul 𝕜 E] [NormedSpace ℝ E] [CompactSpace α]
+  [μ.WeaklyRegular] [IsFiniteMeasure μ] (hp : p ≠ ⊤) : DenseRange ⇑(ContinuousMap.toLp p μ 𝕜)
+UnitAddTorus.span_mFourier_closure_eq_top.{u_1} {d : Type u_1} [Fintype d] :
+  (Submodule.span ℂ (range UnitAddTorus.mFourier)).topologicalClosure = ⊤

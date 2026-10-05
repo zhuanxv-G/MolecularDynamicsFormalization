@@ -1,0 +1,221 @@
+{
+  "started_at": "2026-10-06T01:09:58.2056073+08:00",
+  "finished_at": "2026-10-06T01:16:32.7803707+08:00",
+  "head_at_check": "b824c11f27e00c3c03e8cb949e84a214aa4a3b75",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9066,
+  "audit_declarations": 1259,
+  "inputs": 149,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationPartial_add",
+    "MolecularDynamics.textbookConfigurationPartial_smul",
+    "MolecularDynamics.textbookBrownianGenerator_add",
+    "MolecularDynamics.textbookBrownianGenerator_smul",
+    "MolecularDynamics.textbookPeriodicSmoothSpace",
+    "MolecularDynamics.textbookPeriodicSmoothSpace_mem",
+    "MolecularDynamics.textbookBrownianSmoothGenerator",
+    "MolecularDynamics.textbookBrownianSmoothGenerator_apply",
+    "MolecularDynamics.textbookPeriodicSmoothEmbedding",
+    "MolecularDynamics.textbookPeriodicSmoothEmbedding_injective",
+    "MolecularDynamics.textbookBrownianGibbsSmoothDomain",
+    "MolecularDynamics.textbookPeriodicSmoothEmbeddingEquiv",
+    "MolecularDynamics.textbookPeriodicSmoothEmbeddingEquiv_coe",
+    "MolecularDynamics.textbookPeriodicSmoothEmbeddingEquiv_symm_coe",
+    "MolecularDynamics.textbookBrownianGibbsDomainOperator",
+    "MolecularDynamics.textbookBrownianGibbsDomainOperator_apply_equiv",
+    "MolecularDynamics.textbookBrownianGibbsDomainOperator_dirichlet",
+    "MolecularDynamics.textbookBrownianGibbsDomainOperator_symmetric",
+    "MolecularDynamics.textbookBrownianGibbsDomainOperator_nonpos",
+    "MolecularDynamics.textbookPeriodicSmoothConstant",
+    "MolecularDynamics.textbookBrownianGibbsDomainOperator_const",
+    "MolecularDynamics.textbookBrownianGibbsSmoothDomain_one_norm"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial_smul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_smul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothSpace",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothSpace_mem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSmoothGenerator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSmoothGenerator_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothEmbedding",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothEmbedding_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSmoothDomain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothEmbeddingEquiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothEmbeddingEquiv_coe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothEmbeddingEquiv_symm_coe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDomainOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDomainOperator_apply_equiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDomainOperator_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDomainOperator_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDomainOperator_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothConstant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDomainOperator_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSmoothDomain_one_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_inputs_sha256_verified": true,
+  "lean_warning_count": 0,
+  "machine_check": "passed",
+  "responsible_semantic_review": "pending",
+  "fixed_lean": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "fixed_mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "report": "docs/verification/2026-10-06-BrownianSmoothDomain/full-check01/CHECK_REPORT.json",
+  "remaining": "Dense smooth core, closed selfadjoint realization, compact resolvent/discrete spectrum, gap and actual semigroup expectation; Theorem6.1 and CORE_SCOPE unfinished."
+}
