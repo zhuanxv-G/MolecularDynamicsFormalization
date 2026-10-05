@@ -777,3 +777,8 @@ full-check01 passed：9072 jobs/1385公理声明/155exact inputs；10checks退�
 BrownianHaarPoincare9public local03零诊断：完整Haarmean0 HasSum comparison/真实constant centering与gradient不变给VarHaar≤(4π²)inv trueHaarGradientEnergy，actualtorus CM与原Gibbsvariance到Haarenergy连接。DEP038/NOT047，fullcheck中；原一般mass Gibbsweighted Poincare/gap/selfadjoint仍未完成。
 
 full-check01 passed：9073 jobs/1394公理声明/156exact inputs；10checks退出0、全部input/rawlog SHA匹配、9 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 原Gibbs weighted Poincare和实际core强制性
+BrownianGibbsPoincare18public local02零诊断：actualderived massM与densitylower真实积分比较给原sameµ一般positive mass Varµ≤exp4A M/(4π²) weightedenergy，actualDirichlet/energyconstantshift和βpositive rateκ>0给actualmean0 core coercivity。DEP039/NOT048，fullcheck中；closed coercivity/selfadjoint/full谱gap未完成，负责人pending。
+
+full-check01 passed：9074 jobs/1412公理声明/157exact inputs；10checks退出0、全部input/rawlog SHA匹配、18 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

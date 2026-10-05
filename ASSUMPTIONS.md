@@ -457,3 +457,6 @@ Nc任意，全smooth integerperiodic真实Euclidean f；实际torus full normali
 
 ## 2026-10-06 BrownianHaarPoincare条件
 Nc任意，全C∞ integerperiodic f或actualtorus CM g且原quotient Euclidean lift C∞；真实normalized Haar mean/variance与actualcoordinate gradient，不供应Poincare/frequency/Parseval假设。实际mean0只为中间subspace bound，最终一般方差界无mean0前提；包含Nc0。原Gibbsvariance connection沿同一U C∞periodic/βany actualmeasure，未实现一般mass加权GibbsPoincare或谱gap，负责人pending。
+
+## 2026-10-06 BrownianGibbsPoincare条件
+Nc任意，原每m_i>0、U C∞integerperiodic，g actualtorus CM且原quotient Euclidean lift C∞。同一µ，Poincare βany，originalgenerator coercivity β>0。M=1+Σ|m|、A=|β|实际potential CM norm、C=exp4A M/(4π²)、κ=(βC)inv均derived positive（κ要求β>0）。不假设Poincare/density/mass bound、gradient identity或gap。actualmean0只为最后core meanzero coercivity，完整variance inequality无mean0前提；closed/selfadjoint/spectrum仍独立未完成，负责人pending。

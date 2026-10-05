@@ -1,0 +1,11 @@
+{
+  "path": "docs/verification/2026-10-06-BrownianGibbsPoincare/local01.log",
+  "raw_sha256": "a3c28e3ae837ececbfecfcacfb737406a6fbbe58e1a00d7b12d8223b4f5bc1de",
+  "detected_lines": [
+    3,
+    5
+  ],
+  "exception": "Preserve verbatim diagnostic whitespace in the original Lean stdout log. All remaining staged files must pass git diff --cached --check.",
+  "source_and_formal_inputs_unchanged": true,
+  "previous_staged_check_exit_code": 2
+}

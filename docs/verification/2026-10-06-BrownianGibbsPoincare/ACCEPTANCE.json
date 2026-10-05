@@ -1,0 +1,196 @@
+{
+  "started_at": "2026-10-06T03:15:12.2941602+08:00",
+  "finished_at": "2026-10-06T03:16:39.1262698+08:00",
+  "head_at_check": "5a8695e679cc7dae57f19999d7ada364585dc8b1",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9074,
+  "audit_declarations": 1412,
+  "inputs": 157,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationMassScale",
+    "MolecularDynamics.textbookConfigurationMassScale_pos",
+    "MolecularDynamics.textbookConfigurationMass_le_scale",
+    "MolecularDynamics.textbookConfigurationGradientPair_contDiff",
+    "MolecularDynamics.textbookConfigurationGradientPair_self_nonneg",
+    "MolecularDynamics.textbookConfigurationGradientPair_unit_le_mass",
+    "MolecularDynamics.textbookTorusGibbsGradientEnergy",
+    "MolecularDynamics.textbookTorusGibbsGradientEnergy_nonneg",
+    "MolecularDynamics.textbookTorusHaarGradientEnergy_le_gibbs",
+    "MolecularDynamics.textbookTorusGibbsGradientEnergy_unit_le_mass",
+    "MolecularDynamics.textbookGibbsPoincareConstant",
+    "MolecularDynamics.textbookGibbsPoincareConstant_pos",
+    "MolecularDynamics.textbookGibbsVariance_poincare",
+    "MolecularDynamics.textbookTorusGibbsGradientEnergy_sub_const",
+    "MolecularDynamics.textbookTorusGibbsGradientEnergy_dirichlet",
+    "MolecularDynamics.textbookBrownianGibbsCoercivityRate",
+    "MolecularDynamics.textbookBrownianGibbsCoercivityRate_pos",
+    "MolecularDynamics.textbookBrownianGibbs_mean_zero_coercive"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationMassScale",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationMassScale_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationMass_le_scale",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGradientPair_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGradientPair_self_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationGradientPair_unit_le_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsGradientEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsGradientEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusHaarGradientEnergy_le_gibbs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsGradientEnergy_unit_le_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsPoincareConstant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsPoincareConstant_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsVariance_poincare",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsGradientEnergy_sub_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookTorusGibbsGradientEnergy_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsCoercivityRate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsCoercivityRate_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbs_mean_zero_coercive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "full-check01-driver.log",
+      "sha256": "92a980acf4669dae76904198108b3faf8115f35222dc278f09e29a9df0e4870e"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "a3c28e3ae837ececbfecfcacfb737406a6fbbe58e1a00d7b12d8223b4f5bc1de"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
