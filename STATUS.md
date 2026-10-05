@@ -458,3 +458,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 - full-check01/session10233：2026-10-05T11:08:11.6616372+08:00--2026-10-05T11:09:19.0920373+08:00退出0；9028 jobs、零Lean警告、793项审计声明仅基础三公理、111项输入与全部原始日志SHA256实查一致；固定版本/扫描/build/Scratch/公理全部通过，新增8项public全部覆盖。
 - 原338--339/PDF359--360目视；实际weighted/abs Jacobian、Haar密度换元、range conull/真实map不变、三factor真实density product与概率归一化、指定实际共同C2解族上Proposition8.1的概率结论完整接受。
 - 真实flow/初值/联合C2正则性为显式模型数据；不构造任意feedback全局flow或较弱C1-family。更弱正则性衔接和负责人语义签核保持pending，其他正文/整个CORE_SCOPE未完成。下一Prop7.1原297/PDF318已目视，推进真实非交换五段组合/对数系数，不把形式级数误称analytic余项。
+
+## 2026-10-05 命题7.1真实非交换形式BCH验收
+
+- SymmetricOperatorBCH形式BCH链接受，待本地保存。full-check01/session10932：2026-10-05T11:31:13.8848441+08:00--2026-10-05T11:40:31.0092507+08:00退出0；9029 jobs、零Lean警告、818项审计声明仅propext/Classical.choice/Quot.sound、112项输入及全部原始日志SHA256实查一致，25项public全部覆盖。原297/PDF318目视；真实非交换S5 degree0--4、实际locally finite稳定log、原L2交换子公式、generator四低阶系数/真实X4余项、完整log=X*G与actual exp(G)五低阶匹配机器接受。全阶exp/log逆、全部奇数修正消失以及无界算子analytic解释/余项仍pending，负责人及整个CORE_SCOPE未完成。下一必要非交换全阶形式functional calculus。
