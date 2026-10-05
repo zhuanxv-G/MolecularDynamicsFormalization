@@ -812,3 +812,8 @@ full-check01 passed：9079 jobs/1512公理声明/162exact inputs；10checks退�
 BrownianGroundStateGraph23public local05零诊断：actualfullsmoothHaar embedding单射/唯一lift及真实partialoperator；原partial graph实际I×I.map双向等于Haar graph、稠密/形式伴随/可闭；真正Haarclosure闭/稠密/光滑core及原整个Gibbsclosedgraph unitarymap=Haarclosedgraph，全Haar闭域形式对称和非正。DEP045/NOT054，统一fullcheck中；自伴/compactresolvent/full谱/semigroup未完成。
 
 full-check01 passed：9080 jobs/1535公理声明/163exact inputs；10checks退出0、全部input/rawlog SHA匹配、23 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 实际全实值Haar Fourier重构及原质量光滑图逼近
+BrownianFourierHilbert28public local06零诊断：actualJ/R全Lp AE/左逆/norm/injective、真正FourierBasis全L²重构；原smooth Re(c e_n)及literalmassfreq/有限polynomial generator；actualinner-coefficient桥接及全coeff单射；真实coef关系给实际smoothgraph同时逼近。DEP046/NOT055 full中；actualadjoint全部coef关系及自伴尚缺。
+
+full-check02 passed：9081 jobs/1563公理声明/164exact inputs；10checks退出0、全部input/rawlog SHA匹配、28 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

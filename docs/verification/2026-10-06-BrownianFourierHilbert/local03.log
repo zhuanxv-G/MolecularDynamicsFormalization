@@ -1,0 +1,16 @@
+MolecularDynamics/Chapter06/BrownianFourierHilbert.lean:197:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  @Tendsto (Finset (Fin Nc → ℤ)) (↥(Lp ℝ 2 volume))
+    (fun s =>
+      ∑ x_1 ∈ s,
+        (textbookPeriodicSmoothHaarEmbedding Nc)
+          (textbookFourierRealMode (UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) x_1) x_1))
+    (SummationFilter.unconditional (Fin Nc → ℤ)).filter (𝓝 x)
+but is expected to have type
+  @Tendsto (Finset (Fin Nc → ℤ)) (↥(Lp ℝ 2 volume))
+    (fun s =>
+      ∑ x_1 ∈ s,
+        (textbookPeriodicSmoothHaarEmbedding Nc)
+          (textbookFourierRealMode (UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) x_1) x_1))
+    atTop (𝓝 x)

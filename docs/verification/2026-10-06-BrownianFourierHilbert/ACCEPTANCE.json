@@ -1,0 +1,302 @@
+{
+  "started_at": "2026-10-06T05:16:09.2606783+08:00",
+  "finished_at": "2026-10-06T05:17:20.7785588+08:00",
+  "head_at_check": "cacccd343c19cba1ed66bab29423091240c8bb09",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9081,
+  "audit_declarations": 1563,
+  "inputs": 164,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookHaarL2Complexify",
+    "MolecularDynamics.textbookHaarL2RealPart",
+    "MolecularDynamics.textbookHaarL2Complexify_ae",
+    "MolecularDynamics.textbookHaarL2RealPart_ae",
+    "MolecularDynamics.textbookHaarL2RealPart_complexify",
+    "MolecularDynamics.textbookHaarL2Complexify_norm",
+    "MolecularDynamics.textbookHaarL2Complexify_injective",
+    "MolecularDynamics.textbookHaarL2RealPart_fourier_hasSum",
+    "MolecularDynamics.textbookFourierCosineSmooth",
+    "MolecularDynamics.textbookFourierSineSmooth",
+    "MolecularDynamics.textbookFourierRealMode",
+    "MolecularDynamics.textbookFourierRealMode_apply",
+    "MolecularDynamics.textbookFourierRealMode_observable",
+    "MolecularDynamics.textbookFourierRealMode_haarEmbedding",
+    "MolecularDynamics.textbookHaarMassSmoothGenerator",
+    "MolecularDynamics.textbookHaarMassSmoothGenerator_apply",
+    "MolecularDynamics.textbookHaarMassSmoothGenerator_realMode",
+    "MolecularDynamics.textbookHaarL2Fourier_smooth_hasSum",
+    "MolecularDynamics.textbookHaarFourierPolynomial",
+    "MolecularDynamics.textbookHaarFourierPolynomial_embedding",
+    "MolecularDynamics.textbookHaarFourierPolynomial_generator",
+    "MolecularDynamics.textbookHaarFourierPolynomial_tendsto",
+    "MolecularDynamics.textbookHaarL2RealPart_inner",
+    "MolecularDynamics.textbookFourierRealMode_inner",
+    "MolecularDynamics.textbookFourierRealMode_real_mul",
+    "MolecularDynamics.textbookHaarFourierPolynomial_generator_coeff",
+    "MolecularDynamics.textbookHaarL2Fourier_coeff_injective",
+    "MolecularDynamics.textbookHaarFourierPolynomial_graph_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookHaarL2Complexify",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2RealPart",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2Complexify_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2RealPart_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2RealPart_complexify",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2Complexify_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2Complexify_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2RealPart_fourier_hasSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierCosineSmooth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierSineSmooth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierRealMode",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierRealMode_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierRealMode_observable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierRealMode_haarEmbedding",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassSmoothGenerator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassSmoothGenerator_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarMassSmoothGenerator_realMode",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2Fourier_smooth_hasSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarFourierPolynomial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarFourierPolynomial_embedding",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarFourierPolynomial_generator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarFourierPolynomial_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2RealPart_inner",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierRealMode_inner",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookFourierRealMode_real_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarFourierPolynomial_generator_coeff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarL2Fourier_coeff_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookHaarFourierPolynomial_graph_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "local01-draft.log",
+      "sha256": "96588a19f2988797f05916a6ad5b3c862a6d76075242e9b2dfd420a42b4adce2"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "744f4f98ca887f2b631ebbc55414e5e343cfd3a9d393059690af05c019eec489"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "7258fd8e7a226df3803ac441610a05661d9e3ba4f3f888538277fc3a34b04990"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "78142d9b468d1ce4521c2d3833ad0435c0f4fd50e5a4487a2e735625e130bda8"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "163972bc9dfd2bfa117c47c8d16d8fa776678d4a502918d9b716cefaee732c56"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local07.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

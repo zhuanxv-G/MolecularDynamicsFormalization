@@ -478,3 +478,6 @@ Nc任意、originalm任意、U C∞integerperiodic，真实normalizedfactor/inve
 
 ## 2026-10-06 BrownianGroundStateGraph条件
 Nc任意、原m任意、U C∞整数周期、sameoriginalµ/actualHaar全L²。实际域/embedding/密性构造β任意；partial/closed graph共轭与formaladjoint/closable闭性需β≠0；整个Haarclosednonpos每mi>0且β>0。所有域唯一lift/图两个方向/图closure保持/伴随和可闭性均证明，不提供这些结论或ellipticregularity为前提。自伴/实际compact/full谱存在仍未证明，负责人pending。
+
+## 2026-10-06 BrownianFourierHilbert条件
+Nc任意，sameactualfullreal/complexHaarLp2；m/β任意，U0仅masspart必要依赖。trueJ/R/左逆/norm/基底重构/模式与实际partial微分均derived，不供应orthogonality或diagonal假设。最后graph_tendsto的x/y真实coeff关系显式作为条件性逼近引理前提；将从adjoint测试推导后才计selfadjoint，不把它当原定理前提。无新axiom/占位/unsafe/linter绕过。原Gibbs自伴compact/full谱仍未完成，负责人pending。

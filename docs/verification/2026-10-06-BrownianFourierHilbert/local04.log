@@ -1,0 +1,43 @@
+MolecularDynamics/Chapter06/BrownianFourierHilbert.lean:206:4: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RCLike.re (∫ (x_1 : UnitAddTorus (Fin Nc)), ⟪↑↑z x_1, ↑↑((textbookHaarL2Complexify Nc) x) x_1⟫_ℂ)
+in the target expression
+  ∫ (a : UnitAddTorus (Fin Nc)), ⟪↑↑((textbookHaarL2RealPart Nc) z) a, ↑↑x a⟫_ℝ =
+    (∫ (a : UnitAddTorus (Fin Nc)), ⟪↑↑z a, ↑↑((textbookHaarL2Complexify Nc) x) a⟫_ℂ).re
+
+Nc : ℕ
+z : ↥(Lp ℂ 2 volume)
+x : ↥(Lp ℝ 2 volume)
+⊢ ∫ (a : UnitAddTorus (Fin Nc)), ⟪↑↑((textbookHaarL2RealPart Nc) z) a, ↑↑x a⟫_ℝ =
+    (∫ (a : UnitAddTorus (Fin Nc)), ⟪↑↑z a, ↑↑((textbookHaarL2Complexify Nc) x) a⟫_ℂ).re
+MolecularDynamics/Chapter06/BrownianFourierHilbert.lean:216:84: error: unsolved goals
+Nc : ℕ
+c : ℂ
+n : Fin Nc → ℤ
+x : ↥(Lp ℝ 2 volume)
+hcoef :
+  ⟪UnitAddTorus.mFourierLp 2 n, (textbookHaarL2Complexify Nc) x⟫_ℂ =
+    UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) n
+⊢ ((starRingEnd ℂ) c * UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) n).re =
+    (star c * UnitAddTorus.mFourierCoeff (↑↑((textbookHaarL2Complexify Nc) x)) n).re
+MolecularDynamics/Chapter06/BrownianFourierHilbert.lean:229:24: warning: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.mul_re, Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im, zero_mul, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MolecularDynamics/Chapter06/BrownianFourierHilbert.lean:237:71: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+β : ℝ
+a : (Fin Nc → ℤ) → ℂ
+s : Finset (Fin Nc → ℤ)
+⊢ ∑ n ∈ s, -textbookMassFourierFrequency m β n • textbookFourierRealMode (a n) n =
+    ∑ x ∈ s, textbookFourierRealMode (-↑(textbookMassFourierFrequency m β x) * a x) x
+MolecularDynamics/Chapter06/BrownianFourierHilbert.lean:240:44: warning: This simp argument is unused:
+  textbookFourierRealMode_real_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookHaarFourierPolynomial]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
