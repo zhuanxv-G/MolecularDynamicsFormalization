@@ -1,0 +1,159 @@
+{
+  "started_at": "2026-10-06T05:33:35.5528913+08:00",
+  "finished_at": "2026-10-06T05:35:24.5300342+08:00",
+  "head_at_check": "d6cf77f91b6ffa75819c7312ebec2e535e821940",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9083,
+  "audit_declarations": 1588,
+  "inputs": 166,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianHaarPotentialOperator",
+    "MolecularDynamics.textbookBrownianHaarPotentialOperator_ae",
+    "MolecularDynamics.textbookBrownianHaarPotentialOperator_norm_bound",
+    "MolecularDynamics.textbookBrownianHaarPotentialOperator_symmetric",
+    "MolecularDynamics.textbookBrownianHaarPotentialOperator_continuous",
+    "MolecularDynamics.textbookBrownianGroundStateSmoothMultiply",
+    "MolecularDynamics.textbookBrownianGroundStateSmoothMultiply_haarEmbedding",
+    "MolecularDynamics.textbookBrownianHaarGroundStateSmoothGenerator_split",
+    "MolecularDynamics.textbookBrownianHaarGroundStateSmoothGenerator_embedding_split",
+    "MolecularDynamics.textbookBrownianHaarPotentialGraphEquiv",
+    "MolecularDynamics.textbookBrownianHaarPotentialGraphEquiv_apply",
+    "MolecularDynamics.textbookBrownianHaarPotentialGraphEquiv_symm_apply",
+    "MolecularDynamics.textbookBrownianHaarPotentialGraphEquiv_closure"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotentialOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotentialOperator_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotentialOperator_norm_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotentialOperator_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotentialOperator_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGroundStateSmoothMultiply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGroundStateSmoothMultiply_haarEmbedding",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateSmoothGenerator_split",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarGroundStateSmoothGenerator_embedding_split",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotentialGraphEquiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotentialGraphEquiv_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotentialGraphEquiv_symm_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianHaarPotentialGraphEquiv_closure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "local01-draft.log",
+      "sha256": "7339591af867620406214fe78a7164db2615841b07d242e4c8483ba949c22f93"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "a49301b704f3be94b60746c5bc4f95f2de22b7c07383bdd245abcb779377f869"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "0665e3a32673e8511070866cfa9d52bab849b6c863359db1c12b03aaca9e9a57"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "7b8e6b06029729d029eb7ea20f67822e4201b7bef5655c6852dd2cb22c12367d"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,37 @@
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:31:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑↑((ContinuousMap.toLp ⊤ volume ℝ) (textbookBrownianTorusGroundStatePotential m U hU hPU β)) Q
+in the target expression
+  ‖↑↑(potentialLinf m U hU hPU β) Q‖ ≤ ‖textbookBrownianTorusGroundStatePotential m U hU hPU β‖
+
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+Q : UnitAddTorus (Fin Nc)
+hQ :
+  ↑↑((ContinuousMap.toLp ⊤ volume ℝ) (textbookBrownianTorusGroundStatePotential m U hU hPU β)) Q =
+    (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q
+⊢ ‖↑↑(potentialLinf m U hU hPU β) Q‖ ≤ ‖textbookBrownianTorusGroundStatePotential m U hU hPU β‖
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:45:28: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (?c • ?f) • ?g
+in the target expression
+  c • potentialLinf m U hU hPU β • x = (RingHom.id ℝ) c • potentialLinf m U hU hPU β • x
+
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β c : ℝ
+x : ↥(Lp ℝ 2 volume)
+⊢ c • potentialLinf m U hU hPU β • x = (RingHom.id ℝ) c • potentialLinf m U hU hPU β • x
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:55:18: error: typeclass instance problem is stuck, it is often due to metavariables
+  ⊤.HolderTriple 2 ?m.80
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:85:2: error: 'change' tactic failed, pattern
+  (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑x Q * ↑↑y Q =
+    ↑↑x Q * ((textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑y Q)
+is not definitionally equal to target
+  ⟪(textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑x Q, ↑↑y Q⟫_ℝ =
+    ⟪↑↑x Q, (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑y Q⟫_ℝ

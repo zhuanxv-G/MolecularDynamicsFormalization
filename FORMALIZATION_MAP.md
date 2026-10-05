@@ -822,3 +822,8 @@ full-check02 passed：9081 jobs/1563公理声明/164exact inputs；10checks退�
 BrownianMassSelfAdjoint12public local02零诊断：真实V0zero/actualtransformedmassoperator equality/完整smoothpartialgraph；整个真实closedgraph iff Fouriercoef加权关系，伴随全域由实际测试推导coef，再actualpolynomial graph逼近证明真正H†=H及P†=H。本质自伴无diagonal/selfadjoint/椭圆正则性前提，原m和β保持。DEP047/NOT056 full中；原一般U boundedV扰动、自伴compact/full谱未完成。
 
 full-check01 passed：9082 jobs/1575公理声明/165exact inputs；10checks退出0、全部input/rawlog SHA匹配、12 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## 2026-10-06 原有界势的实际整个Hilbert乘法及闭图变换
+BrownianPotentialOperator13public local05零诊断：actualV∞/Holder全HaarLp boundedCLM与derivednormbound/AE/symmetric；truecontinuous/fullsmooth对应与原TH=MassG+SmoothV实际Hilbertimage；actualgraph E(x,y)=(x,y+Bx) continuousLinearEquiv/actualinverse/closure保持。DEP048/NOT057 full中；原一般U图识别与自伴尚缺。
+
+full-check01 passed：9083 jobs/1588公理声明/166exact inputs；10checks退出0、全部input/rawlog SHA匹配、13 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

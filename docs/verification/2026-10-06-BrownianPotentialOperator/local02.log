@@ -1,0 +1,107 @@
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:21:17: error: unexpected token '∞'; expected ')'
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:29:61: error: unexpected token '∞'; expected ')'
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:26:5: error: Function expected at
+  potentialLinf
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `potentialLinf` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:27:41: error: Function expected at
+  potentialLinf
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  m
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:29:6: error: Unexpected syntax
+  failed to pretty print term (use 'set_option pp.rawOnError true' for raw representation)
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:26:95: error: unsolved goals
+x✝ : Sort u_1
+potentialLinf : x✝
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+⊢ ‖sorry‖ ≤ ‖textbookBrownianTorusGroundStatePotential m U hU hPU β‖
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:42:23: error(lean.unknownIdentifier): Unknown identifier `potentialLinf`
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:46:5: error(lean.unknownIdentifier): Unknown identifier `potentialLinf`
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:56:43: error: unexpected token '∞'; expected ')'
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:70:20: error(lean.unknownIdentifier): Unknown identifier `potentialLinf`
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:63:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:79:69: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+x y : ↥(Lp ℝ 2 volume)
+Q : UnitAddTorus (Fin Nc)
+hx :
+  ↑↑((textbookBrownianHaarPotentialOperator m U hU hPU β) x) Q =
+    (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑x Q
+hy :
+  ↑↑((textbookBrownianHaarPotentialOperator m U hU hPU β) y) Q =
+    (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑y Q
+⊢ ↑↑y Q * (starRingEnd ℝ) ((textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑x Q) =
+    ↑↑y Q * (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * (starRingEnd ℝ) (↑↑x Q)
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:85:33: warning: This simp argument is unused:
+  star_trivial
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [RCLike.inner_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:104:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑↑((ContinuousMap.toLp 2 volume ℝ) g) Q
+in the target expression
+  (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑((textbookHaarContinuousToLp Nc) g) Q =
+    ↑↑((ContinuousMap.toLp 2 volume ℝ) (textbookBrownianTorusGroundStatePotential m U hU hPU β * g)) Q
+
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+g : C(UnitAddTorus (Fin Nc), ℝ)
+Q : UnitAddTorus (Fin Nc)
+hB :
+  ↑↑((textbookBrownianHaarPotentialOperator m U hU hPU β) ((textbookHaarContinuousToLp Nc) g)) Q =
+    (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑((textbookHaarContinuousToLp Nc) g) Q
+hg : ↑↑((ContinuousMap.toLp 2 volume ℝ) g) Q = g Q
+hVg :
+  ↑↑((ContinuousMap.toLp 2 volume ℝ) (textbookBrownianTorusGroundStatePotential m U hU hPU β * g)) Q =
+    (textbookBrownianTorusGroundStatePotential m U hU hPU β * g) Q
+⊢ (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑((textbookHaarContinuousToLp Nc) g) Q =
+    ↑↑((ContinuousMap.toLp 2 volume ℝ) (textbookBrownianTorusGroundStatePotential m U hU hPU β * g)) Q
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:136:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (textbookBrownianHaarPotentialOperator ?m ?U ?hU ?hPU ?β) ((textbookHaarContinuousToLp ?m.20) ?g)
+in the target expression
+  (textbookPeriodicSmoothHaarEmbedding Nc) ((textbookBrownianGroundStateSmoothMultiply m U hU hPU β) f) =
+    (textbookBrownianHaarPotentialOperator m U hU hPU β) ((textbookPeriodicSmoothHaarEmbedding Nc) f)
+
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+f : ↥(textbookPeriodicSmoothSpace Nc)
+⊢ (textbookPeriodicSmoothHaarEmbedding Nc) ((textbookBrownianGroundStateSmoothMultiply m U hU hPU β) f) =
+    (textbookBrownianHaarPotentialOperator m U hU hPU β) ((textbookPeriodicSmoothHaarEmbedding Nc) f)

@@ -1,0 +1,18 @@
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean:62:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑↑((ContinuousMap.toLp ⊤ volume ℝ) (textbookBrownianTorusGroundStatePotential m U hU hPU β)) Q
+in the target expression
+  ↑↑(potentialLinf m U hU hPU β) Q * ↑↑x Q = (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑x Q
+
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+x : ↥(Lp ℝ 2 volume)
+Q : UnitAddTorus (Fin Nc)
+hM : ↑↑(potentialLinf m U hU hPU β • x) Q = (↑↑(potentialLinf m U hU hPU β) • ↑↑x) Q
+hV :
+  ↑↑((ContinuousMap.toLp ⊤ volume ℝ) (textbookBrownianTorusGroundStatePotential m U hU hPU β)) Q =
+    (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q
+⊢ ↑↑(potentialLinf m U hU hPU β) Q * ↑↑x Q = (textbookBrownianTorusGroundStatePotential m U hU hPU β) Q * ↑↑x Q

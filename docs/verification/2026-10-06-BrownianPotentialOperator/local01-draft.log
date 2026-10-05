@@ -1,0 +1,240 @@
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:21:9: error: Application type mismatch: The argument
+  ∞
+has type
+  ℕ∞ω
+but is expected to have type
+  ENNReal
+in the application
+  @Lp ?m.11 ℝ ?m.12 ?m.13 ∞
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:22:64: error: Application type mismatch: The argument
+  ∞
+has type
+  ℕ∞ω
+but is expected to have type
+  ENNReal
+in the application
+  ContinuousMap.toLp ∞
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:29:53: error: Application type mismatch: The argument
+  ∞
+has type
+  ℕ∞ω
+but is expected to have type
+  ENNReal
+in the application
+  @ContinuousMap.coeFn_toLp ?m.43 ?m.44 ?m.45 ∞
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:33:14: error(lean.unknownIdentifier): Unknown constant `ENNReal.top_toReal`
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:33:2: warning: declaration uses `sorry`
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:46:42: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:53:4: error: Function expected at
+  textbookBrownianHaarPotentialOperator
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `textbookBrownianHaarPotentialOperator` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:56:35: error: Application type mismatch: The argument
+  ∞
+has type
+  ℕ∞ω
+but is expected to have type
+  ENNReal
+in the application
+  @ContinuousMap.coeFn_toLp ?m.50 ?m.51 ?m.52 ∞
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:68:5: error: Function expected at
+  textbookBrownianHaarPotentialOperator
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `textbookBrownianHaarPotentialOperator` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:78:5: error: Function expected at
+  textbookBrownianHaarPotentialOperator
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `textbookBrownianHaarPotentialOperator` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:79:10: error: Function expected at
+  textbookBrownianHaarPotentialOperator
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `textbookBrownianHaarPotentialOperator` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:92:4: error: Function expected at
+  textbookBrownianHaarPotentialOperator
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `textbookBrownianHaarPotentialOperator` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:101:10: error: Function expected at
+  textbookBrownianHaarPotentialOperator
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  m
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:115:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookBrownianGroundStatePotential m U β (q + fun i => ↑(n i))
+in the target expression
+  (fun q => textbookBrownianGroundStatePotential m U β q * ↑f q) (q + fun i => ↑(n i)) =
+    (fun q => textbookBrownianGroundStatePotential m U β q * ↑f q) q
+
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+f : ↥(textbookPeriodicSmoothSpace Nc)
+q : Fin Nc → ℝ
+n : Fin Nc → ℤ
+⊢ (fun q => textbookBrownianGroundStatePotential m U β q * ↑f q) (q + fun i => ↑(n i)) =
+    (fun q => textbookBrownianGroundStatePotential m U β q * ↑f q) q
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:134:6: error: Function expected at
+  textbookBrownianHaarPotentialOperator
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `textbookBrownianHaarPotentialOperator` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:136:2: error: Tactic `rfl` failed: The left-hand side
+  (textbookPeriodicSmoothHaarEmbedding Nc) ((textbookBrownianGroundStateSmoothMultiply m U hU hPU β) f)
+is not definitionally equal to the right-hand side
+  (textbookHaarContinuousToLp Nc) (textbookBrownianTorusGroundStatePotential ?m ?U ?hU ?hPU ?β * ?g)
+
+x✝ : Sort u_1
+textbookBrownianHaarPotentialOperator : x✝
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+f : ↥(textbookPeriodicSmoothSpace Nc)
+⊢ (textbookPeriodicSmoothHaarEmbedding Nc) ((textbookBrownianGroundStateSmoothMultiply m U hU hPU β) f) =
+    (textbookHaarContinuousToLp Nc) (textbookBrownianTorusGroundStatePotential ?m ?U ?hU ?hPU ?β * ?g)
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:155:8: error: Function expected at
+  textbookBrownianHaarPotentialOperator
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `textbookBrownianHaarPotentialOperator` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:155:105: error: unsolved goals
+x✝ : Sort u_1
+textbookBrownianHaarPotentialOperator : x✝
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+f : ↥(textbookPeriodicSmoothSpace Nc)
+⊢ Sort ?u.46
+
+x✝ : Sort u_1
+textbookBrownianHaarPotentialOperator : x✝
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+f : ↥(textbookPeriodicSmoothSpace Nc)
+⊢ ?m.59
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:168:25: error(lean.unknownIdentifier): Unknown identifier `textbookBrownianHaarPotentialOperator`
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:169:26: error(lean.unknownIdentifier): Unknown identifier `textbookBrownianHaarPotentialOperator`
+Try this:
+  [apply] abel_nf
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:172:18: error: unsolved goals
+case fst
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+z w : ↥(Lp ℝ 2 volume) × ↥(Lp ℝ 2 volume)
+⊢ ↑↑(z.1 + w.1) =ᵐ[volume] ↑↑(z.1 + w.1)
+
+case snd
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+z w : ↥(Lp ℝ 2 volume) × ↥(Lp ℝ 2 volume)
+⊢ ↑↑(z.2 + w.2 + sorry) =ᵐ[volume] ↑↑(z.2 + sorry + (w.2 + sorry))
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:175:19: error: unsolved goals
+case fst
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β c : ℝ
+z : ↥(Lp ℝ 2 volume) × ↥(Lp ℝ 2 volume)
+⊢ ↑↑(c • z.1) =ᵐ[volume] ↑↑(c • z.1)
+
+case snd
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β c : ℝ
+z : ↥(Lp ℝ 2 volume) × ↥(Lp ℝ 2 volume)
+⊢ ↑↑(c • z.2 + sorry) =ᵐ[volume] ↑↑(c • z.2 + c • sorry)
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:173:51: warning: This simp argument is unused:
+  map_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.fst_add, Prod.snd_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:176:53: warning: This simp argument is unused:
+  map_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.smul_fst, Prod.smul_snd, smul_add, RingHom.id_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:187:18: error: Function expected at
+  textbookBrownianHaarPotentialOperator
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `textbookBrownianHaarPotentialOperator` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean:196:18: error: Function expected at
+  textbookBrownianHaarPotentialOperator
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `textbookBrownianHaarPotentialOperator` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.

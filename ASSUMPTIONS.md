@@ -484,3 +484,6 @@ Nc任意，sameactualfullreal/complexHaarLp2；m/β任意，U0仅masspart必要�
 
 ## 2026-10-06 BrownianMassSelfAdjoint条件
 Nc任意、原质量m任意、β≠0、U0只为原一般U groundstate后质量部分必要依赖。实际全realHaarLp及完整C∞periodicdomain；密性/形式对称/闭性与trueFourier加权图关系均derived。主selfadjoint和essentialselfadjoint中所有伴随域coef关系从actualadjoint定义与真实smooth测试推导，不供给coef/regularity/自伴前提。每masspositive与βpositive将在compactresolvent/原正文模型使用；本批不需要它们。负责人pending，原Gibbs一般U定理整体未完成。
+
+## 2026-10-06 BrownianPotentialOperator条件
+Nc任意，原m任意、U C∞整数周期、β任意，真正sameactualHaarLp2。V的真实CMsupbound/actualL∞/HolderLp乘法/全对称与正则周期和图homeomorph均derived，无有界/乘法/图对应/自伴前提。原Gibbs量与同一V literalformula保留。尚未识别原一般U完整closedgraph为boundedperturbation，负责人pending，原正文定理整体未完成。
