@@ -660,3 +660,10 @@ Printed255--256/PDF276--277: Chapter06/WienerBridgeSupport.lean supplies a neces
 ### Actual countable Brownian laws and independent segment support (2026-10-05)
 
 Printed255--256/PDF276--277: Chapter06/WienerPathLaw.lean proves genuine countable Brownian sample-law equality through finite projective laws, including repeated times, and true projective-measure uniqueness. Real dense-sample/path-continuity equivalence transports entire linear-tube probabilities across spaces and all shifted processes. Actual finite linear transforms and covariance cancellation prove independence of the entire nonoverlapping segment processes. Countable joint bridge/endpoint events have equal laws, giving a common shift threshold independent of endpoint tolerance. True measurable segment-event intersections have actual marginal-product probability; computed positive marginals yield every finite joint event positive. No support, path-law equality or whole-process independence is assumed. Arbitrary prescribed-time continuous-control assembly and vector Wiener support remain necessary next dependencies.
+
+
+## 2026-10-05 引理6.1实际任意时长控制支持与终点可达
+
+- 印刷255--256/PDF276--277：Chapter06/WienerPathSupport.lean实际uniform cells、endpoint telescoping/bounds、ContinuousOn-control entire tube AE/null可测及任意指定T正概率。Chapter06/WienerVectorSupport.lean标准vector Wiener定义与真实scalar coordinate law/whole independence/finite tube product、NNReal与real time转换及全vector管支持。
+- Chapter06/LangevinAccessibility.lean：textbookLangevinEndpoint_ball_pos、_open_pos及_physicalNoise_open_pos接已接受C∞控制、真实smooth局部化和本批实际Wiener支持。真实单位质量全Rn/指定区间AE积分解和end可测下的球与Nonempty-open positive及null可测完整。
+- 本批25项public/full-check01-LangevinAccessibility，源码/原始日志SHA及公理覆盖逐项核验；负责人pending。原[257,Lemma3.4]用于噪声稳定性，[349]用于Wiener正概率，两条必要外部依赖已本地证明。原all-open缺Nonempty、全局随机解构造、periodic实际lift/Thm6.2全遍历仍单独记录，不计CORE_SCOPE完成。

@@ -1,0 +1,10 @@
+# 引理6.1任意时长Wiener支持与实际Langevin终点可达验收
+
+- LangevinAccessibility任意时长控制支持与真实终点可达接受，待本地保存。full-check01/session94502：2026-10-05T15:04:57.1230061+08:00--2026-10-05T15:12:26.3446047+08:00退出0；9039 jobs、零Lean警告、929项审计声明仅基础三公理、122项输入及全部原始日志SHA256实查一致，25public完整名称逐项覆盖。实际uniform grid/端点累积/连续control插值+真实独立段joint给每个T标量管positive/null可测；标准Gaussian/zero mean/isotropic covariance/AE连续模型推出真whole坐标独立、向量管actual有限概率乘积与任意real T控制支持。已接受C∞control/真实cutoff稳定性与actualAE积分解组合得到球和Nonempty-open及sqrt(2γβ⁻¹)物理噪声的正概率/事件可测，未输入支持或连续依赖结论。指定Rn unit-mass/给定区间实际解+end可测条件显式。原Nonempty遗漏/一般全局存在/periodic lift及负责人和整个CORE_SCOPE未完成。下一真实T^Nc位置商映射连续满射/开集拉回，接实际投影解可达性。
+
+- 原印刷255--256/PDF276--277已渲染目视，本批重核原页文本：原漂移qdot=p为单位质量；[257, Lemma3.4]用于noise-path端点连续依赖，真正Wiener tube positive另引[349]。本地完整证明两步，不以外部结论作为项目公理。
+- WienerPathSupport：截断floor实际定位每个cell包括最终端点，真有限望远镜和控制累计误差。用compact interval的真正一致连续选择网格；桥半径ε/8固定且短时阈值独立段数N，端点容差ε/(8N)。桥/端点/插值误差真实相加≤5ε/8，实际独立有限段事件正概率经AE单调性给整个control tube。Dense samples与实际ContinuousOn R/B路径给null可测，无全局control连续的额外条件。
+- WienerVectorSupport：标准模型的joint Gaussian、zero-mean、cov(i,j;s,t)=delta(i,j)min(s,t)和AE向量连续为明示定义。真实有限Gaussian/covariance定理推出whole coordinate independence，而不是输入坐标独立或joint tube positive。有限坐标sup范数的真实管等于coordinate tubes intersection，AE countable samples使事件可测，真实独立乘积给任意T正概率。范数与原Euclidean范数拓扑等价；本模型使用已接受有限坐标norm。真实NNReal/非负实数time管literal等式完整。
+- LangevinAccessibility：全Rn C∞ U、σ≠0、T>0、实际AE满足原Bochner积分解及终点随机变量AE可测。真正构造的C∞R从0出发；已接受smooth cutoff/first-exit稳定性给真实ε，再用本批vector support得终点球positive。每个Nonempty open C含目标球，实际measure单调性得C positive并 separately null可测。物理σ=sqrt(2γβ⁻¹)、γβ正由真sqrt positivity推出非零。给定实际解条件不是终点可达或stay假设；尚不构造全局随机解或证明nonexplosion。
+- 原“all open C”包括空集，P(empty)=0，故Nonempty为必要修订，负责人最终语义签核真实pending。一般奇异域/周期位置域与其actual lift、全局存在、Thm6.2小集/漂移/遍历性不能由本批直接冒充已完成。下一必要周期商映射/投影解。
+- 保存全部失败：scalar local02仅序界/范数参数/cast；local03仅field_simp完成后多余ring与NNReal abs接口，local04零警告。vector local01真实comp beta、AE Eq/Iff与弃用if接口，local02零警告。accessibility local01 ContDiff scope的ω binder冲突，local02唯一stable参数δ位置，local03零警告。本批完整full-check01全部接受，无二次全构建。

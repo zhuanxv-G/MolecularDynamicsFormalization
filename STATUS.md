@@ -490,3 +490,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 引理6.1真实可数law独立段有限支持验收
 
 - WienerPathLaw真实可数law与独立段有限支持接受，待本地保存。full-check01/session95429：2026-10-05T14:07:48.5943671+08:00--2026-10-05T14:11:52.5541818+08:00退出0；9036 jobs、零Lean警告、904项审计声明仅基础三公理、119项输入及全部原始日志SHA256实查一致，14public完整名称逐项覆盖。真实finite samples law含重复time、projective uniqueness推出整个countable law、true AE dense tube/跨空间概率相等与uniform shift短支持；真实不同时间段whole-process Gaussian/covariance→独立；真实joint桥管/端点概率law转移、δ独立的统一短阈值、actual finite joint event null可测/独立乘积以及充分短h任意有限K/端点/positive各δ joint positive完整。未假定路径law、全段独立或支持结论。下一WienerPathSupport.lean，实际uniform grid/continuous控制一致逼近与真endpoint误差telescoping→任意指定T控制管positive，再多维Wiener与Lemma6.1；原Nonempty-open修正/负责人及CORE_SCOPEpending。
+
+## 2026-10-05 引理6.1任意时长控制支持与真实终点可达验收
+
+- LangevinAccessibility任意时长控制支持与真实终点可达接受，待本地保存。full-check01/session94502：2026-10-05T15:04:57.1230061+08:00--2026-10-05T15:12:26.3446047+08:00退出0；9039 jobs、零Lean警告、929项审计声明仅基础三公理、122项输入及全部原始日志SHA256实查一致，25public完整名称逐项覆盖。实际uniform grid/端点累积/连续control插值+真实独立段joint给每个T标量管positive/null可测；标准Gaussian/zero mean/isotropic covariance/AE连续模型推出真whole坐标独立、向量管actual有限概率乘积与任意real T控制支持。已接受C∞control/真实cutoff稳定性与actualAE积分解组合得到球和Nonempty-open及sqrt(2γβ⁻¹)物理噪声的正概率/事件可测，未输入支持或连续依赖结论。指定Rn unit-mass/给定区间实际解+end可测条件显式。原Nonempty遗漏/一般全局存在/periodic lift及负责人和整个CORE_SCOPE未完成。下一真实T^Nc位置商映射连续满射/开集拉回，接实际投影解可达性。

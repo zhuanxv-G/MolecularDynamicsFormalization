@@ -1,0 +1,42 @@
+{
+  "started_at": "2026-10-05T15:04:57.1230061+08:00",
+  "finished_at": "2026-10-05T15:12:26.3446047+08:00",
+  "jobs": 9039,
+  "audit_declarations": 929,
+  "inputs": 122,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookWienerUniformGrid_cell",
+    "MolecularDynamics.textbookWienerEndpointError_telescope",
+    "MolecularDynamics.textbookWienerUniformGrid_exists",
+    "MolecularDynamics.textbookWienerEndpointError_bound",
+    "MolecularDynamics.textbookWienerGridTube_bound",
+    "MolecularDynamics.textbookWienerControlTube",
+    "MolecularDynamics.textbookWienerControlTube_ae_samples",
+    "MolecularDynamics.textbookWienerControlTube_nullMeasurable",
+    "MolecularDynamics.textbookWienerControlTube_pos",
+    "MolecularDynamics.textbookIsWienerVector",
+    "MolecularDynamics.textbookWienerVector_coordinate",
+    "MolecularDynamics.textbookWienerVector_coordinates_independent",
+    "MolecularDynamics.textbookWienerVector_zero_ae",
+    "MolecularDynamics.textbookWienerVectorControlTube",
+    "MolecularDynamics.textbookWienerVectorControlTube_eq_iInter",
+    "MolecularDynamics.textbookWienerVectorControlTube_nullMeasurable",
+    "MolecularDynamics.textbookWienerVectorControlTube_measure_prod",
+    "MolecularDynamics.textbookWienerVectorControlTube_pos",
+    "MolecularDynamics.textbookWienerVectorRealControlTube",
+    "MolecularDynamics.textbookWienerVectorRealControlTube_eq",
+    "MolecularDynamics.textbookWienerVectorRealControlTube_nullMeasurable",
+    "MolecularDynamics.textbookWienerVectorRealControlTube_pos",
+    "MolecularDynamics.textbookLangevinEndpoint_ball_pos",
+    "MolecularDynamics.textbookLangevinEndpoint_open_pos",
+    "MolecularDynamics.textbookLangevinEndpoint_physicalNoise_open_pos"
+  ],
+  "source_and_log_sha256_checked": true,
+  "zero_lean_warnings": true,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "responsible_semantic_review": "pending"
+}
