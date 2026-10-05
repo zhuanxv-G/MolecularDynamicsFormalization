@@ -431,3 +431,8 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 
 - 唯一full-check01/session71619：2026-10-05T08:35:23.5266747+08:00--2026-10-05T08:36:28.7818372+08:00退出0；9023jobs、零警告、734项审计声明仅基础三公理、106项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；3public接受，原346/PDF367目视。
 - 实际Vi/D补集、真实q/p路径谱模式方程、compact operator/Lipschitz/ODE uniqueness得全Icc零mode不变；负责人pending。其他正文/整CORE_SCOPE仍pending，继续真实Stratonovich midpoint。
+
+## 2026-10-05 真实时间中点Stratonovich自身积分验收
+
+- 唯一full-check01/session6993：2026-10-05T08:52:41.0077022+08:00--2026-10-05T08:53:48.5831459+08:00退出0；9024jobs、零警告、745项审计声明仅基础三公理、107项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；11public接受，原230/PDF251目视。
+- 真midpoint finite sum、fine/coarse时间恒等、Gaussian signed correction variance T²/K、精确MSE T²/(4K)/真实L²与均方存在极限WT²/2接受；负责人pending。一般smooth g Prop6.3、其他正文和整个CORE_SCOPE仍pending，下一推进真正确定性积分构造。

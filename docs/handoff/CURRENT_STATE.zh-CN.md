@@ -1,8 +1,30 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 08:56 +0800）
+
+- 本批前HEAD 4b030967b52eb1e2c857bad8596081a0518c1026；WienerStratonovich完整接受，待本地保存。固定版本/分支未改，原材料保留、未推送。
+- 唯一full-check01/session6993：2026-10-05T08:52:41.0077022+08:00--2026-10-05T08:53:48.5831459+08:00退出0；9024jobs、零警告、745项审计声明仅基础三公理、107项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；11public接受，原230/PDF251目视。真实midpoint/fine2K有限恒等、Gaussian fourth moments/独立性→correction mean0/variance T²/K、精确MSE T²/(4K)/实际L²与均方存在极限WT²/2。未假定结论，负责人pending；ledger/notation/section/映射/假设/状态同步。
+- 下一Prop6.3真实smooth deterministic Ito构造：从实际有限和/共同细化等距及g统一连续性证明L² Cauchy，完整L²空间构造极限，实际Gaussian law与variance integral g²。优先查固定版本Gaussian law极限与Lp接口，不用有限law冒充完整命题；其他正文及整CORE_SCOPE仍pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 08:52 +0800）
+
+- HEAD 4b030967b52eb1e2c857bad8596081a0518c1026；WienerStratonovich local02/session61162退出0零警告，11public接根/Scratch/公理审计。原230/PDF251已目视，真实时间midpoint/fine2K恒等、Gaussian fourth moments/真实independence→signed correction mean0/variance T²/K→真实MSE T²/(4K)、L²与limit完整局部通过。
+- 启动唯一full-check01，未决前不改输入；一般smooth g Ito与其他正文/整个CORE_SCOPE/负责人pending，无其他构建。
+
+## 最新数学检查点（2026-10-05 08:50 +0800）
+
+- HEAD 4b030967b52eb1e2c857bad8596081a0518c1026；WienerStratonovich local01/session52453退出1，日志保留。失败仅field_simp已闭目标后多余ring、integrable所需真实概率测度实例、NNReal自然数乘积强制转换；已从hW取得实际概率测度实例并统一fine2K自然数转换，删unused simp。
+- 下一唯一local02；实际midpoint有限恒等/独立Gaussian correction/MSE与L²均方极限候选尚未接受。固定版本未改，无其他构建，其他正文/整范围/负责人pending。
+
+## 最新数学检查点（2026-10-05 08:44 +0800）
+
+- HEAD 4b030967b52eb1e2c857bad8596081a0518c1026；NHL零mode完整保存，固定版本未改，无其他构建。
+- 进行中230/PDF251未编号真实Stratonovich自身积分，原页已目视；目标Chapter06/WienerStratonovich.lean。真time-midpoint sum、actual fine2K signed squared correction及真正finite telescoping identity候选已落盘，真实Gaussian fourth moments/独立性导出correction mean0/variance T²/K，再MSE T²/(4K)/真实L²与极限。
+- 下一唯一local01，候选未计通过；原粗略每步O(sqrtδt)不足以直接忽略，使用真实independent finite law估计。一般smooth g Ito/其余正文和整范围/负责人pending。
+
 ## 最新数学检查点（2026-10-05 08:38 +0800）
 
-- 本批前HEAD 0babf45417ac0916299f7a368d84e7c46c760bf8；ThermostatModeInvariant完整接受，待本地保存，固定版本/分支未改，既有材料保留、未推送。
+- 本批前HEAD 0babf45417ac0916299f7a368d84e7c46c760bf8；ThermostatModeInvariant完整接受并保存为4b030967b52eb1e2c857bad8596081a0518c1026，固定版本/分支未改，既有材料保留、未推送。
 - 唯一full-check01/session71619：2026-10-05T08:35:23.5266747+08:00--2026-10-05T08:36:28.7818372+08:00退出0；9023jobs、零警告、734项审计声明仅基础三公理、106项输入稳定，固定版本/Scratch/扫描/公理全部通过，全部输入和原始日志SHA256实查一致；3public接受。346/PDF367目视，真实Vi及D补集、genuine q/p右侧ODE→实际谱mode方程、真实compact operator norm界/Lipschitz/ODE uniqueness推出零mode整个Icc不变，初始端点允许，非假定全程零；负责人pending。
 - 下一230/PDF251未编号真实Stratonovich自身积分：Chapter06/WienerStratonovich.lean，真实时间中点W((2k+1)T/(2K))乘真实coarse增量。按actual fine2K increments恒等2S=WT²+ΣsignedΔfine²，真实Gaussian fourth moments/独立性导出误差MSE=T²/(4K)与均方极限WT²/2。
 - 必须证明真实fine/coarse时间关系和有限望远镜，再真实奇偶signed平方和均值/方差；不能把时间中点换成endpoint均值，也不能直接忽略每步O(sqrt δt)。原页已目视，现有WienerQuadraticVariation/WienerIntegration依赖可复用。Prop6.3一般smooth g等独立缺口、其余正文/整范围及负责人pending，无其他构建。

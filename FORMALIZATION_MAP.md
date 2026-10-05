@@ -605,3 +605,8 @@ Printed254/PDF275 and344--348/PDF365--369: `Chapter08/HormanderClosure.lean` for
 ### Actual NHL zero-mode path invariance (2026-10-05)
 
 Printed346/PDF367: `Chapter08/ThermostatModeInvariant.lean` proves the explicit unnumbered zero-eigenmode claim. Actual spectral linear coordinate chain rules derive the true time-dependent two-mode ODE from actual q/p equations and continuous auxiliary paths. Compact operator-norm bounds derive uniform Lipschitz continuity; real ODE uniqueness against the zero solution yields invariance throughout a closed interval, supporting right derivatives at the initial endpoint. Actual Vi and D as complement of their union are mapped. No whole-time zero or uniqueness conclusion is supplied. SDE solution construction and independent atlas/codimension structure are separate.
+
+
+### Actual temporal midpoint self-Stratonovich integral (2026-10-05)
+
+Printed230/PDF251: `Chapter06/WienerStratonovich.lean` fully proves the explicitly derived unnumbered self-integral formula using true temporal midpoint evaluations. Actual coarse/fine time identities and finite telescoping give an alternating sum of squared half-interval increments. Genuine Gaussian fourth moments and actual independence yield mean zero and variance T²/K for that correction, exact midpoint mean-square error T²/(4K), real L2 integrability and the actual limit witness W(T)²/2. This supplies the missing global error justification in the printed per-step O(sqrt dt) replacement. General deterministic Itô Proposition6.3 and owner signoff remain separate.
