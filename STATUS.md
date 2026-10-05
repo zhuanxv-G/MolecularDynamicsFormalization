@@ -470,3 +470,7 @@ Kepler/full-check13 passed at12:07:11--12:08:31:8977jobs, Scratch,679 imported p
 ## 2026-10-05 Langevin正文实际Hörmander验收
 
 - LangevinHormander真实括号张成接受，待本地保存。full-check01/session14192：2026-10-05T12:18:35.9362802+08:00--2026-10-05T12:20:19.9437651+08:00退出0；9031 jobs、零Lean警告、843项审计声明仅基础三公理、114项输入和全部原始日志SHA256实查一致，11项public全覆盖。原255/PDF276目视，actual negative partial gradient/真正C∞ seed/真实fderiv bracket/原2Nc有限族独立/全pointspan与sqrt物理噪声条件全部接受。负责人及整个CORE_SCOPEpending；Lemma6.1正概率可达和Wiener支持/解路径连续依赖未证明。原续256/PDF277已目视，下一必要LangevinControlPath.lean构造实际光滑控制路径与端点，不以噪声支持或可达性作为前提。
+
+## 2026-10-05 引理6.1真实光滑控制构造验收
+
+- LangevinControlPath真实光滑控制接受，待本地保存。full-check01/session7992：2026-10-05T12:30:21.3586603+08:00--2026-10-05T12:31:28.3847670+08:00退出0；9032 jobs、零Lean警告、853项审计声明仅基础三公理、115项输入及全部原始日志SHA256实查一致，10项public全覆盖。原255--256/PDF276--277已目视；实际三次Hermite q/p端点、真实q/p导数、真实force反解control rate与Bochner积分R0=0/C∞、实际controlled Langevin ODE和任意phase endpoints存在完整。Lemma6.1的Wiener tube概率支持/实际噪声路径连续依赖仍未证明，不能误计完整概率可达；负责人和整个CORE_SCOPEpending。下一必要LangevinNoiseStability.lean，从实际连续噪声积分解推出变换轨迹/真实Gronwall扰动界，先globally Lipschitz force辅助，再明确局部C1扩展缺口。

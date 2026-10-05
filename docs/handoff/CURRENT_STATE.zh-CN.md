@@ -1,8 +1,24 @@
 # 当前状态与接续检查点
 
+## 最新数学检查点（2026-10-05 12:35 +0800）
+
+- LangevinControlPath真实光滑控制接受，待本地保存。full-check01/session7992：2026-10-05T12:30:21.3586603+08:00--2026-10-05T12:31:28.3847670+08:00退出0；9032 jobs、零Lean警告、853项审计声明仅基础三公理、115项输入及全部原始日志SHA256实查一致，10项public全覆盖。原255--256/PDF276--277已目视；实际三次Hermite q/p端点、真实q/p导数、真实force反解control rate与Bochner积分R0=0/C∞、实际controlled Langevin ODE和任意phase endpoints存在完整。Lemma6.1的Wiener tube概率支持/实际噪声路径连续依赖仍未证明，不能误计完整概率可达；负责人和整个CORE_SCOPEpending。下一必要LangevinNoiseStability.lean，从实际连续噪声积分解推出变换轨迹/真实Gronwall扰动界，先globally Lipschitz force辅助，再明确局部C1扩展缺口。
+
+## 最新数学检查点（2026-10-05 12:30 +0800）
+
+- HEAD 174cef9ea5062aca8f69e715e45254b6a7ee4c5d；LangevinControlPath local02/session28671退出0仅unused simp，去除后local03实查退出0空日志/零警告，10public接root/Scratch/逐名审计。实际Hermite q/p全部端点与真导数、由实际force构造R'/真正Bochner积分R0=0/C∞/真实controlled Langevin ODE及任意phase endpoints存在全链局部接受。下一唯一full-check01冻结输入；Lemma6.1概率tube支持与actual noise路径连续依赖/负责人/整范围仍pending。
+
+## 最新数学检查点（2026-10-05 12:28 +0800）
+
+- LangevinControlPath local01/session17584退出1零警告，仅q/p HasDerivAt的Pi normed/module/topology实例diamond需convert!而非simpa；p derivative convert已自动解决函数目标，首rfl错落到实际系数化简，改只剩真实系数simp。实际四端点、true Bochner积分/C∞/受控ODE/最终存在候选其余无诊断。下一唯一local02，尚未接受整批；概率支持/路径连续依赖/负责人/整个范围pending。
+
+## 最新数学检查点（2026-10-05 12:27 +0800）
+
+- HEAD 174cef9ea5062aca8f69e715e45254b6a7ee4c5d；LangevinHormander完整保存。开始Chapter06/LangevinControlPath.lean，Lemma6.1原255--256/PDF276--277目视：实际三次Hermite q/p端点、真实q/p导数和由实际force构造R'=sigma^-1*(q''+gradU+gamma*q')，R为真实Bochner时间积分且R0=0/C∞，满足实际受控Langevin ODE。概率tube支持及解噪声连续依赖仍pending，不把控制存在当成完整正概率引理。下一唯一local01。
+
 ## 最新数学检查点（2026-10-05 12:24 +0800）
 
-- LangevinHormander真实括号张成接受，待本地保存。full-check01/session14192：2026-10-05T12:18:35.9362802+08:00--2026-10-05T12:20:19.9437651+08:00退出0；9031 jobs、零Lean警告、843项审计声明仅基础三公理、114项输入和全部原始日志SHA256实查一致，11项public全覆盖。原255/PDF276目视，actual negative partial gradient/真正C∞ seed/真实fderiv bracket/原2Nc有限族独立/全pointspan与sqrt物理噪声条件全部接受。负责人及整个CORE_SCOPEpending；Lemma6.1正概率可达和Wiener支持/解路径连续依赖未证明。原续256/PDF277已目视，下一必要LangevinControlPath.lean构造实际光滑控制路径与端点，不以噪声支持或可达性作为前提。
+- LangevinHormander真实括号张成接受并保存为 174cef9ea5062aca8f69e715e45254b6a7ee4c5d。full-check01/session14192：2026-10-05T12:18:35.9362802+08:00--2026-10-05T12:20:19.9437651+08:00退出0；9031 jobs、零Lean警告、843项审计声明仅基础三公理、114项输入和全部原始日志SHA256实查一致，11项public全覆盖。原255/PDF276目视，actual negative partial gradient/真正C∞ seed/真实fderiv bracket/原2Nc有限族独立/全pointspan与sqrt物理噪声条件全部接受。负责人及整个CORE_SCOPEpending；Lemma6.1正概率可达和Wiener支持/解路径连续依赖未证明。原续256/PDF277已目视，下一必要LangevinControlPath.lean构造实际光滑控制路径与端点，不以噪声支持或可达性作为前提。
 
 ## 最新数学检查点（2026-10-05 12:18 +0800）
 

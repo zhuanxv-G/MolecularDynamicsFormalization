@@ -939,3 +939,14 @@ run_cmd do
 #print axioms MolecularDynamics.textbookLangevinBracketFamily_linearIndependent
 #print axioms MolecularDynamics.textbookLangevin_hormander
 #print axioms MolecularDynamics.textbookLangevin_hormander_physicalNoise
+
+#print axioms MolecularDynamics.textbookLangevinControlPosition
+#print axioms MolecularDynamics.textbookLangevinControlMomentum
+#print axioms MolecularDynamics.textbookLangevinControlRate
+#print axioms MolecularDynamics.textbookLangevinControlPath
+#print axioms MolecularDynamics.textbookLangevinControlPosition_hasDerivAt
+#print axioms MolecularDynamics.textbookLangevinControl_endpoints
+#print axioms MolecularDynamics.textbookLangevinControlPath_hasDerivAt
+#print axioms MolecularDynamics.textbookLangevinControlPath_contDiff
+#print axioms MolecularDynamics.textbookLangevinControlMomentum_hasDerivAt
+#print axioms MolecularDynamics.textbookLangevinControlledEndpoint

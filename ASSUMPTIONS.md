@@ -344,3 +344,7 @@ FormalOperatorFunctionalCalculus uses arbitrary Ring R with Algebra real R, with
 ### Actual Langevin Hörmander computation (2026-10-05)
 
 LangevinHormander: actual finite-coordinate R^Nc position/momentum and actual coordinate negative derivative force of U, with identity mass as in (6.47). C2 U suffices for the actual bracket/span calculation; C infinity U proves smooth original seeds. Nonzero sigma is necessary for the full-rank family and is derived for sqrt(2 gamma theta) at positive gamma/theta. The proof uses no Hessian rank, bracket result or spanning assumption. Toroidal charts, SDE existence, hypoelliptic density regularity and Wiener-support accessibility are separate.
+
+### Actual Langevin smooth endpoint control (2026-10-05)
+
+LangevinControlPath: finite R^Nc coordinate phase, actual globally C infinity U, real friction gamma, nonzero real sigma and positive endpoint time T. The constructed cubic remains a genuine path in this whole coordinate domain; arbitrary singular potential domains and toroidal quotient lifting are not claimed. Actual polynomial derivatives, actual force, Bochner integral, all endpoints, R(0)=0, global smoothness and the controlled equation are derived. Neither stochastic path support, probability accessibility nor solution-stability is a premise or conclusion of this construction batch.
