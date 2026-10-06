@@ -1,0 +1,27 @@
+{
+  "original_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "printed_pages": [
+    251,
+    252,
+    253
+  ],
+  "pdf_pages": [
+    272,
+    273,
+    274
+  ],
+  "visual_checked_prior_exact_unchanged_pages": [
+    272,
+    273
+  ],
+  "reference": "equation6.47 actual unit-mass Langevin SDE and Theorem6.2 process Lyapunov proof dependencies",
+  "not_a_separate_textbook_numbered_statement": true,
+  "necessary_proof_dependency": "actual momentum damped initial term bounded force convolution and actual Wiener noise convolution",
+  "same_actual_original_Wiener_process": true,
+  "positive_friction_explicit_for_uniform_bound": true,
+  "noise_convolution_moment_or_Gaussian_law_not_assumed": true,
+  "actual_process_Lyapunov_not_claimed": true,
+  "norm_is_Lean_Fin_function_sup_not_physical_kinetic_energy": true,
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete"
+}

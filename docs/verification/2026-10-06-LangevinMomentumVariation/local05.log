@@ -1,0 +1,20 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-06-LangevinMomentumVariation/Draft.lean:159:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern in the current goal
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ 2 U
+γ t M : ℝ
+hγ : 0 < γ
+ht : 0 ≤ t
+hM : ∀ (z : Fin N → ℝ), ‖textbookPotentialForce U z‖ ≤ M
+q : ℝ → Fin N → ℝ
+hq : ContinuousOn q (Icc 0 t)
+he : Continuous fun s => Real.exp (-γ * (t - s))
+hb : IntervalIntegrable (fun s => Real.exp (-γ * (t - s)) * M) ℙ 0 t
+⊢ IntervalIntegrable (fun s => Real.exp (-γ * (t - s)) • textbookPotentialForce U (q s)) ℙ 0 t

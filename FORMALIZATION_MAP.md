@@ -1078,3 +1078,9 @@ full-check01 passed：9138 jobs/2336公理声明/221exact inputs；10checks退�
 LangevinDensityMinorization / CH06-DEP-104 / NOT-CH06-113：原Assumption1ii同actualκ真实densityclause定义及positive-timejointspatial连续；实际openaccess+真densityintegral>0导出interiorpositivepoint→productballlowerdensity→allmeasurablelocalminorization；sameκ ChapmanKolmogorov+compactuniformopenhit→wholecompactt2commonProbabilityMeasure ν和真实0<η≤1/finite、physicalenergyC版本。8public local03统一验收中，全部明确conditional原densityclause；actualdensityexists/processLyapunov/Harris/owner/wholepending。
 
 full-check02 passed：9139 jobs/2344公理声明/222exact inputs；10checks退出0、全部input/rawlog SHA匹配、8 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.2整体未完成。
+
+LangevinMomentumVariation / CH06-DEP-105 / NOT-CH06-114：原(6.47)同actual积分解的连续roughnoise补偿动量右导数、真FTC指数积分因子/变常数/Duhamel；same实际noise路径卷积定义、真force阻尼核mass及M/γuniform bound，periodicity给实际force常数。same全时Wiener过程单一满测集上的所有时间identity/periodic动量supnorm界。11public local06退出0零Leanwarning（含普通tactic info），统一验收中；真实noise矩/processLyapunov/Harris/owner/wholepending。
+
+full-check01 passed：9140 jobs/2355公理声明/223exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.2整体未完成。
+
+full-check02 passed：9140 jobs/2355公理声明/223exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.2整体未完成。

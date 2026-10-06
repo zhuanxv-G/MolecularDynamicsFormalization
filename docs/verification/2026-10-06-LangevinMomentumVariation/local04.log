@@ -1,0 +1,71 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-06-LangevinMomentumVariation/Draft.lean:113:6: error: Type mismatch: After simplification, term
+  IntervalIntegrable.smul hWint (γ * σ)
+ has type
+  @IntervalIntegrable (Fin N → ℝ) PseudoMetricSpace.toUniformSpace.toTopologicalSpace NormedAddGroup.toENormedAddMonoid
+    ((γ * σ) • fun s => Real.exp (γ * s) • W s) ℙ 0 t
+but is expected to have type
+  @IntervalIntegrable (Fin N → ℝ) Pi.topologicalSpace NormedAddGroup.toENormedAddMonoid
+    (fun s => (γ * σ) • Real.exp (γ * s) • W s) ℙ 0 t
+docs/verification/2026-10-06-LangevinMomentumVariation/Draft.lean:123:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'intervalIntegral', which is 'noncomputable'
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-06-LangevinMomentumVariation/Draft.lean:132:59: error: unsolved goals
+case e'_8
+γ t : ℝ
+hγ : 0 < γ
+hc : Continuous fun s => Real.exp (-γ * (t - s))
+s : ℝ
+⊢ (fun r => -(γ * t) + γ * r) = fun y => -(γ * ((fun x => t) - id) y)
+
+case e'_9
+γ t : ℝ
+hγ : 0 < γ
+hc : Continuous fun s => Real.exp (-γ * (t - s))
+s : ℝ
+⊢ γ = -γ * (0 - 1)
+docs/verification/2026-10-06-LangevinMomentumVariation/Draft.lean:152:13: error: typeclass instance problem is stuck
+  IsLocallyFiniteMeasure ?m.143
+
+Note: Lean will not try to resolve this typeclass instance problem because the fourth type argument to `IsLocallyFiniteMeasure` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+docs/verification/2026-10-06-LangevinMomentumVariation/Draft.lean:195:6: error: Type mismatch
+  add_le_add_right
+    (add_le_add_left
+      (textbookLangevinMomentum_force_convolution_uniform_bound U hU γ t M hγ ht.left hM0 hM q
+        (ContinuousOn.mono h.left (Icc_subset_Icc le_rfl ht.right)))
+      ?m.281)
+    ?m.282
+has type
+  ?m.282 + (‖∫ (s : ℝ) in 0..t, Real.exp (-γ * (t - s)) • textbookPotentialForce U (q s)‖ + ?m.281) ≤
+    ?m.282 + (M / γ + ?m.281)
+but is expected to have type
+  Real.exp (-γ * t) * ‖x.2‖ + ‖∫ (s : ℝ) in 0..t, Real.exp (-γ * (t - s)) • textbookPotentialForce U (q s)‖ +
+      ‖textbookLangevinDampedNoise γ σ W t‖ ≤
+    Real.exp (-γ * t) * ‖x.2‖ + M / γ + ‖textbookLangevinDampedNoise γ σ W t‖
+docs/verification/2026-10-06-LangevinMomentumVariation/Draft.lean:192:30: error: Application type mismatch: The argument
+  add_le_add_right (norm_add_le ?m.191 ?m.192) ?m.193
+has type
+  ?m.193 + ‖?m.191 + ?m.192‖ ≤ ?m.193 + (‖?m.191‖ + ‖?m.192‖)
+but is expected to have type
+  ‖Real.exp (-γ * t) • x.2 + ∫ (s : ℝ) in 0..t, Real.exp (-γ * (t - s)) • textbookPotentialForce U (q s)‖ +
+      ‖textbookLangevinDampedNoise γ σ W t‖ ≤
+    ‖Real.exp (-γ * t) • x.2‖ + ‖∫ (s : ℝ) in 0..t, Real.exp (-γ * (t - s)) • textbookPotentialForce U (q s)‖ +
+      ‖textbookLangevinDampedNoise γ σ W t‖
+in the application
+  LE.le.trans
+    (norm_add_le (Real.exp (-γ * t) • x.2 + ∫ (s : ℝ) in 0..t, Real.exp (-γ * (t - s)) • textbookPotentialForce U (q s))
+      (textbookLangevinDampedNoise γ σ W t))
+    (add_le_add_right (norm_add_le ?m.191 ?m.192) ?m.193)
+docs/verification/2026-10-06-LangevinMomentumVariation/Draft.lean:215:6: error: unexpected token 'ω'; expected ',' or '∂'
+docs/verification/2026-10-06-LangevinMomentumVariation/Draft.lean:231:62: error: unexpected token 'ω'; expected ',' or '∂'

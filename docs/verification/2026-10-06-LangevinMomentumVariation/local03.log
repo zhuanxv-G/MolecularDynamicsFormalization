@@ -1,0 +1,12 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-06-LangevinMomentumVariation/Draft.lean:114:96: error: Type mismatch
+  IntervalIntegrable.smul hWint ?m.532
+has type
+  IntervalIntegrable (?m.532 • fun s => Real.exp (γ * s) • W s) ℙ 0 t
+but is expected to have type
+  IntervalIntegrable (fun s => (γ * σ) • Real.exp (γ * s) • W s) ℙ 0 t

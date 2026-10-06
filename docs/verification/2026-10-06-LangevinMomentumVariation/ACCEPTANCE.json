@@ -1,0 +1,157 @@
+{
+  "started_at": "2026-10-06T23:32:55.293989+08:00",
+  "finished_at": "2026-10-06T23:35:59.1207658+08:00",
+  "head_at_check": "8696e722d746b2d7ab7967b16735dc5ca2657f38",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9140,
+  "audit_declarations": 2355,
+  "inputs": 223,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinMomentum_weighted_hasDerivWithinAt",
+    "MolecularDynamics.textbookLangevinMomentum_weighted_integral",
+    "MolecularDynamics.textbookLangevinMomentum_variation_of_constants",
+    "MolecularDynamics.textbookLangevinMomentum_duhamel",
+    "MolecularDynamics.textbookLangevinDampedNoise",
+    "MolecularDynamics.textbookLangevinMomentum_force_convolution_bound",
+    "MolecularDynamics.textbookLangevinMomentum_force_convolution_uniform_bound",
+    "MolecularDynamics.textbookLangevinMomentum_norm_le",
+    "MolecularDynamics.textbookLangevinMomentum_periodic_norm_bound",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_momentum_duhamel_ae",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_bound_ae"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinMomentum_weighted_hasDerivWithinAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinMomentum_weighted_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinMomentum_variation_of_constants",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinMomentum_duhamel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinMomentum_force_convolution_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinMomentum_force_convolution_uniform_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinMomentum_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinMomentum_periodic_norm_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGlobalRandomPhase_momentum_duhamel_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_bound_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "d013cf0f35a3395cabdace1cdd5167627ff47e29f2eb1322e2c9e1729df16ff0"
+    },
+    {
+      "path": "FULL_DRIVER02.log",
+      "sha256": "a7b5c97a072e9d28880fb3c6341ca1f160e030938b4b379f16f9311a9258a8ce"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "8ab293e96bd362d62871b48d923687927d5a831495e1c396e68fd4ff4a95191f"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "fe18be3fae5fdda5f49cfbe7280ceff0930cab280a57fe82f2446b6a63534e20"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "ed1160252b10a3c3bd896c5ab0d0120dc0c735f275b149e9dfbdf7144b5128ea"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "dd4a30e33358499a8fa837b4e25349c15ca393c069a7554bce6e5a804a683fce"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "6bdc639d13a0cc047a447f0fa27a88b2147c20da6cc212f352c709f5c893b27e"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "9a14007a37f6f538ceeee90a9c1b8efc9ede74cde84ac24621e05021a31474e5"
+    },
+    {
+      "path": "local07.log",
+      "sha256": "9a14007a37f6f538ceeee90a9c1b8efc9ede74cde84ac24621e05021a31474e5"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

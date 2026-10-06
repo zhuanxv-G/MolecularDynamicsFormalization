@@ -302,3 +302,5 @@ import MolecularDynamics.Chapter06.BrownianContinuousHaarDensity
 import MolecularDynamics.Chapter06.LangevinWeakFeller
 
 import MolecularDynamics.Chapter06.LangevinDensityMinorization
+
+import MolecularDynamics.Chapter06.LangevinMomentumVariation
