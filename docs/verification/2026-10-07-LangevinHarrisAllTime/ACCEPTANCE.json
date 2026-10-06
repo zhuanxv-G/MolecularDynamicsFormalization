@@ -1,0 +1,75 @@
+{
+  "started_at": "2026-10-07T05:50:39.5607832+08:00",
+  "finished_at": "2026-10-07T05:51:54.8111662+08:00",
+  "head_at_check": "2b6a446e2798714b5c5c6a3d8d2b5a96e7e9e4bb",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9155,
+  "audit_declarations": 2462,
+  "inputs": 238,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_original_observable_exponential_bound",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_invariant_exists_with_original_exponential_bound",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_original_exponential_bound_unrestricted_potential"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_original_observable_exponential_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_invariant_exists_with_original_exponential_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_original_exponential_bound_unrestricted_potential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "23894bd8fa694d7bcb6f8213b45432040584a9306af3ef371faaabb88586440b"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "1d498049d5e1ccff51ead0a01a3787f9622442fc2d6939f2706aa60383a93535"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "true_actual_kernel_real_time_decomposition_and_CK": true,
+  "original_unbounded_f_and_outer_expectation_integrability": "derived_not_assumed",
+  "actual_remainder_uniform_moment": "previously_derived_true_noise_Hl_bound",
+  "true_floor_log_exponential_proof": "rate_minus_log_a_over_tau_positive",
+  "original_continuous_6_48": "M_exp_minus_rateT_Hl_uniform_measurable_f_all_T_ge_zero_initial_phase",
+  "genuine_invariant_exists_with_bound": "proved_using_true_previous_existence",
+  "arbitrary_original_smooth_periodic_U": "true_c_normalization_same_original_kernel_weight_H_U_plus_c_l_explicit",
+  "target_exponential_or_uniform_moment_or_composition_or_existence_premise": "none",
+  "density_clause_scope": "conditional_original_clause_on_derived_C_R",
+  "actual_joint_density_existence": "not_proved",
+  "continuous_generator_identity": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

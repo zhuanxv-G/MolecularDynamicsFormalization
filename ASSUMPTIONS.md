@@ -656,3 +656,5 @@ LangevinHarrisOscillation：原actualκ/Wiener/unitmass/C∞periodicU/正原Hl(U
 LangevinHarrisSkeleton：原actualκ/Wiener/unitmass/C∞periodicU/正原Hl(U>=1)/γ>0/σ≠0。实际commonτ/derivedR由此前证明；原densityclause在同derivedC_R明确条件。pointκ及targetµ矩、measurable无界f/Fn可积与CK积分、严格a^n/唯一不变律真实derive，无目标矩/迭代composition/唯一或存在premise。存在唯一版本只条件density，不假设µ；原f≤Hl版M统一f/n/x。未声称全连续时间6.48、L*ρ=0、actualdensity或Gibbs。
 
 LangevinUniformMoments：同actualWiener/原unitmass/C∞周期U/正Hl(U≥1)/γ>0/σ任意/l≥1/cap>0，时间0≤T≤cap，维数任意含0。Gaussian endpoint及cap时间evenpower可积、实际noise及Euclidean sum平方幂和同κT Hl的统一矩由真实数学证明derive；未假设uniformmoment/连续generator/density/不变律，未声称continuous6.48或Gibbs身份。
+
+LangevinHarrisAllTime：同originalκ/Wiener/unitmass/C∞周期势/γ>0/σ≠0、l≥1、densityclause在实际derivedCR明确条件。正U版V=Hl(U)需U≥1，任意原U版真实derivec与U+c≥1且sameoriginalκ，weight明确Hl(U+c)。第一声明µ为真实∀T invariantprob，目标µmoment已derive；后两声明µ存在不预设。无目标uniformmoment/无界积分composition/continuous指数premise；M,rate统一measurablef absf≤V/allT≥0/allx。未证actualdensity存在/generator-adjoint/Gibbs/一般SDE完整6.2。

@@ -1,0 +1,154 @@
+docs/verification/2026-10-07-LangevinHarrisAllTime/Draft.lean:95:26: error(lean.unknownIdentifier): Unknown identifier `tsub_add_cancel`
+docs/verification/2026-10-07-LangevinHarrisAllTime/Draft.lean:115:31: error(lean.unknownIdentifier): Unknown identifier `measureReal_univ_eq_one`
+docs/verification/2026-10-07-LangevinHarrisAllTime/Draft.lean:113:60: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF✝ : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hLower : ∀ (q : Fin N → ℝ), 1 ≤ U q
+hγ : 0 < γ
+hσ : σ ≠ 0
+τ : ℝ≥0
+hτ : 0 < τ
+h :
+  ∀ (l : ℕ),
+    1 ≤ l →
+      ∃ D R,
+        0 < D ∧
+          4 * D < R ∧
+            ∀ (ρ : textbookLangevinPeriodicPhase N → textbookLangevinPeriodicPhase N → ℝ → ℝ),
+              textbookLangevinPeriodicDensityClause B P U hU hp L hF✝ γ σ
+                  {z | textbookLangevinPeriodicHamiltonianPower U l z ≤ R} ρ →
+                ∃ a,
+                  0 < a ∧
+                    a < 1 ∧
+                      ∀ (μ : ProbabilityMeasure (textbookLangevinPeriodicPhase N)),
+                        (∀ (T : ℝ≥0), ⇑(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF✝ γ σ T) ∘ₘ ↑μ = ↑μ) →
+                          ∃ M,
+                            0 < M ∧
+                              ∀ (f : textbookLangevinPeriodicPhase N → ℝ),
+                                Measurable f →
+                                  (∀ (x : textbookLangevinPeriodicPhase N),
+                                      |f x| ≤ textbookLangevinPeriodicHamiltonianPower U l x) →
+                                    ∀ (n : ℕ) (x : textbookLangevinPeriodicPhase N),
+                                      ‖∫ (y : textbookLangevinPeriodicPhase N),
+                                              f
+                                                y ∂(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF✝ γ σ
+                                                  (↑n * τ))
+                                                x -
+                                            ∫ (y : textbookLangevinPeriodicPhase N), f y ∂↑μ‖ ≤
+                                        M * a ^ n * textbookLangevinPeriodicHamiltonianPower U l x
+htau : 0 < ↑τ
+l : ℕ
+hl : 1 ≤ l
+D R : ℝ
+hD : 0 < D
+hR : 4 * D < R
+hd :
+  ∀ (ρ : textbookLangevinPeriodicPhase N → textbookLangevinPeriodicPhase N → ℝ → ℝ),
+    textbookLangevinPeriodicDensityClause B P U hU hp L hF✝ γ σ {z | textbookLangevinPeriodicHamiltonianPower U l z ≤ R}
+        ρ →
+      ∃ a,
+        0 < a ∧
+          a < 1 ∧
+            ∀ (μ : ProbabilityMeasure (textbookLangevinPeriodicPhase N)),
+              (∀ (T : ℝ≥0), ⇑(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF✝ γ σ T) ∘ₘ ↑μ = ↑μ) →
+                ∃ M,
+                  0 < M ∧
+                    ∀ (f : textbookLangevinPeriodicPhase N → ℝ),
+                      Measurable f →
+                        (∀ (x : textbookLangevinPeriodicPhase N),
+                            |f x| ≤ textbookLangevinPeriodicHamiltonianPower U l x) →
+                          ∀ (n : ℕ) (x : textbookLangevinPeriodicPhase N),
+                            ‖∫ (y : textbookLangevinPeriodicPhase N),
+                                    f y ∂(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF✝ γ σ (↑n * τ)) x -
+                                  ∫ (y : textbookLangevinPeriodicPhase N), f y ∂↑μ‖ ≤
+                              M * a ^ n * textbookLangevinPeriodicHamiltonianPower U l x
+A Q : ℝ
+hA : 0 < A
+hQ : 0 < Q
+hmoment :
+  ∀ T ≤ τ,
+    ∀ (x : textbookLangevinPeriodicPhase N),
+      ∫ (y : textbookLangevinPeriodicPhase N),
+          textbookLangevinPeriodicHamiltonianPower U l
+            y ∂(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF✝ γ σ T) x ≤
+        A * textbookLangevinPeriodicHamiltonianPower U l x + Q
+ρ : textbookLangevinPeriodicPhase N → textbookLangevinPeriodicPhase N → ℝ → ℝ
+hρ :
+  textbookLangevinPeriodicDensityClause B P U hU hp L hF✝ γ σ {z | textbookLangevinPeriodicHamiltonianPower U l z ≤ R} ρ
+μ : ProbabilityMeasure (textbookLangevinPeriodicPhase N)
+hμ : ∀ (T : ℝ≥0), ⇑(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF✝ γ σ T) ∘ₘ ↑μ = ↑μ
+a : ℝ
+ha : 0 < a
+ha1 : a < 1
+hsk :
+  ∀ (μ : ProbabilityMeasure (textbookLangevinPeriodicPhase N)),
+    (∀ (T : ℝ≥0), ⇑(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF✝ γ σ T) ∘ₘ ↑μ = ↑μ) →
+      ∃ M,
+        0 < M ∧
+          ∀ (f : textbookLangevinPeriodicPhase N → ℝ),
+            Measurable f →
+              (∀ (x : textbookLangevinPeriodicPhase N), |f x| ≤ textbookLangevinPeriodicHamiltonianPower U l x) →
+                ∀ (n : ℕ) (x : textbookLangevinPeriodicPhase N),
+                  ‖∫ (y : textbookLangevinPeriodicPhase N),
+                          f y ∂(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF✝ γ σ (↑n * τ)) x -
+                        ∫ (y : textbookLangevinPeriodicPhase N), f y ∂↑μ‖ ≤
+                    M * a ^ n * textbookLangevinPeriodicHamiltonianPower U l x
+C : ℝ
+hC : 0 < C
+hbound :
+  ∀ (f : textbookLangevinPeriodicPhase N → ℝ),
+    Measurable f →
+      (∀ (x : textbookLangevinPeriodicPhase N), |f x| ≤ textbookLangevinPeriodicHamiltonianPower U l x) →
+        ∀ (n : ℕ) (x : textbookLangevinPeriodicPhase N),
+          ‖∫ (y : textbookLangevinPeriodicPhase N),
+                  f y ∂(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF✝ γ σ (↑n * τ)) x -
+                ∫ (y : textbookLangevinPeriodicPhase N), f y ∂↑μ‖ ≤
+            C * a ^ n * textbookLangevinPeriodicHamiltonianPower U l x
+rate : ℝ
+hrate : 0 < rate
+hexp : ∀ (t : ℝ), 0 ≤ t → a ^ ⌊t / ↑τ⌋₊ ≤ a⁻¹ * Real.exp (-rate * t)
+M : ℝ := C * (A + Q) * a⁻¹
+hM : 0 < M
+f : textbookLangevinPeriodicPhase N → ℝ
+hf : Measurable f
+hdom : ∀ (x : textbookLangevinPeriodicPhase N), |f x| ≤ textbookLangevinPeriodicHamiltonianPower U l x
+T : ℝ≥0
+x : textbookLangevinPeriodicPhase N
+K : ℝ≥0 → Kernel (textbookLangevinPeriodicPhase N) (textbookLangevinPeriodicPhase N) :=
+  textbookLangevinPeriodicTransitionKernel B P U hU hp L hF✝ γ σ
+V : textbookLangevinPeriodicPhase N → ℝ := textbookLangevinPeriodicHamiltonianPower U l
+hVi : ∀ (s : ℝ≥0) (z : textbookLangevinPeriodicPhase N), Integrable V ((K s) z)
+hfi : ∀ (s : ℝ≥0) (z : textbookLangevinPeriodicPhase N), Integrable f ((K s) z)
+n : ℕ := ⌊↑T / ↑τ⌋₊
+S : ℝ≥0 := ↑n * τ
+hST : S ≤ T
+r : ℝ≥0 := T - S
+hrS : r + S = T
+hrτ : r ≤ τ
+this✝ : IsMarkovKernel (K r)
+this : IsMarkovKernel (K S)
+hCK : K T = K S ∘ₖ K r
+hi : Integrable f ((K S ∘ₖ K r) x)
+F : textbookLangevinPeriodicPhase N → ℝ := fun z => ∫ (y : textbookLangevinPeriodicPhase N), f y ∂(K S) z
+m : ℝ := ∫ (y : textbookLangevinPeriodicPhase N), f y ∂↑μ
+hF : Integrable F ((K r) x)
+hdiff : Integrable (fun z => F z - m) ((K r) x)
+⊢ ∫ (x : textbookLangevinPeriodicPhase N), ∫ (y : textbookLangevinPeriodicPhase N), f y ∂(K S) x ∂(K r) x - m =
+    ∫ (a : textbookLangevinPeriodicPhase N), F a ∂(K r) x - ((K r) x).real univ • m
+docs/verification/2026-10-07-LangevinHarrisAllTime/Draft.lean:115:56: warning: This simp argument is unused:
+  one_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [integral_const, measureReal_univ_eq_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
