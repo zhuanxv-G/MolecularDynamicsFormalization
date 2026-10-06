@@ -1,0 +1,106 @@
+{
+  "started_at": "2026-10-07T01:20:52.2540607+08:00",
+  "finished_at": "2026-10-07T01:29:11.1646251+08:00",
+  "head_at_check": "6b5050adab4ecad3120423c44c0dc16568129270",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9144,
+  "audit_declarations": 2393,
+  "inputs": 227,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_path_bound_ae",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_expectation_bound",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_actual_expectation",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_expectation_bound",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_large_time_drift",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_common_skeleton_drift",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_lyapunov"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_path_bound_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_expectation_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_actual_expectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_expectation_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_large_time_drift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_common_skeleton_drift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_lyapunov",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "abe67a2c64f62ec4fb13345eaf827af5bb03d2192b38d0e7bfb82608a42c1e0f"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "8295832312c0e37e9dd6570c4c4803a630bd3f8db72b084087d73d74ef8cf4ac"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_original_Hamiltonian_power_kernel_drift": true,
+  "Hamiltonian_power_l": "all_integers_l_at_least_one",
+  "common_positive_time_threshold_for_all_l": true,
+  "all_T_at_least_threshold_half_drift": true,
+  "positive_remainder_uniform_initial_state_may_depend_l_T": true,
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

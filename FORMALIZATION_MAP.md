@@ -1096,3 +1096,7 @@ full-check01 passed：9142 jobs/2377公理声明/225exact inputs；10checks退�
 LangevinNoiseHigherMoments / CH06-DEP-108 / NOT-CH06-117：same真实Wiener coordinate2l norm-time-energy实际Gaussian√time/Fubini可积、真实Jensen及已验ξ平方界→actualnoise coordinate/vector2l及literal physicalsquare sum^l可积；sameactualprocess momentum2l、physicalsquare sum^l与originalH^l process/κ可积。9public local03零warning空日志，统一验收中；高次漂移/continuousgenerator/density/Harris/ownerpending。
 
 full-check01 passed：9143 jobs/2386公理声明/226exact inputs；10checks退出0、全部input/rawlog SHA匹配、9public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。same实际ξ的2l矩/物理square sum^l及originalH^l对actualprocess与κ可积已机器验证，owner semanticpending，Theorem6.2整体未完成。
+
+LangevinHamiltonianPowerDrift / CH06-DEP-109 / NOT-CH06-118：sameactual H path界与真实高次noise矩积分→原P及κ H^l期待界；同一τ=log6/γ对所有l>=1及T>=τ得到halfdrift，余项对x统一且允许依赖l/T；samepositiveproperH^l skeleton包。7public local02零warning空日志，统一验收中；continuousgenerator/densityexists/Harris/ownerpending。
+
+full-check01 passed：9144 jobs/2393公理声明/227exact inputs；10checks退出0、全部input/rawlog SHA匹配、7public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。same实际原H^l路径界/同P及κ期待界/共同正τ对所有l>=1和T>=τ halfdrift及samepositiveproperHl已机器验证；D允许依赖l/T，continuousgenerator/densityexists/Harris未证，owner semanticpending，Theorem6.2整体未完成。

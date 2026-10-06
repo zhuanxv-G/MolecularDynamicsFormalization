@@ -1,0 +1,62 @@
+docs/verification/2026-10-07-LangevinHamiltonianPowerDrift/Draft.lean:143:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : Ω), A ^ l + (3 / 2) ^ l * J a ∂P
+in the target expression
+  C * a ^ l * ∫ (a : Ω), textbookLangevinPeriodicHamiltonianPower U l x ∂P +
+      ∫ (a : Ω), C ^ 2 * (A ^ l + (3 / 2) ^ l * J a) ∂P =
+    C * a ^ l * textbookLangevinPeriodicHamiltonianPower U l x +
+      C ^ 2 * (A ^ l + (3 / 2) ^ l * ∫ (sample : Ω), J sample ∂P)
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+hLower : ∀ (q : Fin N → ℝ), 1 ≤ U q
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ T : ℝ
+hγ : 0 < γ
+hT : 0 ≤ T
+l : ℕ
+hl : 1 ≤ l
+this : IsProbabilityMeasure P
+A : ℝ
+hA0 : 0 ≤ A
+hA :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (T : ℝ),
+        0 ≤ T →
+          textbookLangevinPeriodicHamiltonianPower U 1
+              (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample) ≤
+            3 * Real.exp (-γ * T) ^ 2 * textbookLangevinPeriodicHamiltonianPower U 1 x + A +
+              3 / 2 * ∑ i, textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T i ^ 2
+C : ℝ := 2 ^ (l - 1)
+a : ℝ := 3 * Real.exp (-γ * T) ^ 2
+S : Ω → ℝ := fun sample => ∑ i, textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T i ^ 2
+J : Ω → ℝ := fun sample => S sample ^ l
+hJ : Integrable J P
+hJ0 : 0 ≤ ∫ (sample : Ω), J sample ∂P
+D : ℝ := C ^ 2 * (A ^ l + (3 / 2) ^ l * ∫ (sample : Ω), J sample ∂P) + 1
+hD : 0 < D
+x : textbookLangevinPeriodicPhase N
+Y : Ω → textbookLangevinPeriodicPhase N := textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T
+hE : Integrable (fun sample => textbookLangevinPeriodicHamiltonianPower U l (Y sample)) P
+hR : Integrable (fun sample => A ^ l + (3 / 2) ^ l * J sample) P
+hd :
+  Integrable
+    (fun sample =>
+      C * a ^ l * textbookLangevinPeriodicHamiltonianPower U l x + C ^ 2 * (A ^ l + (3 / 2) ^ l * J sample))
+    P
+hb :
+  ∀ᵐ (sample : Ω) ∂P,
+    textbookLangevinPeriodicHamiltonianPower U l (Y sample) ≤
+      C * a ^ l * textbookLangevinPeriodicHamiltonianPower U l x + C ^ 2 * (A ^ l + (3 / 2) ^ l * J sample)
+⊢ C * a ^ l * ∫ (a : Ω), textbookLangevinPeriodicHamiltonianPower U l x ∂P +
+      ∫ (a : Ω), C ^ 2 * (A ^ l + (3 / 2) ^ l * J a) ∂P =
+    C * a ^ l * textbookLangevinPeriodicHamiltonianPower U l x +
+      C ^ 2 * (A ^ l + (3 / 2) ^ l * ∫ (sample : Ω), J sample ∂P)

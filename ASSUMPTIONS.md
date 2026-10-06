@@ -634,3 +634,5 @@ LangevinNoiseMoments：sameactualWiener过程，γ≥0/T≥0给真noise coordina
 LangevinHamiltonianDrift：原unitmass/currentC∞periodic U/same实际Wiener及真实periodicprocessκ，γ>0/T≥0、原U≥1用于初能量吸收及positiveproper。force/potential/noise/processmoments均真实导出，无目标漂移hypothesis。literal物理sum而非supnorm身份，l1固定正时间κ漂移，不宣称高次H^l/continuousgeneratorAssumption2/Harris或密度存在。
 
 LangevinNoiseHigherMoments：原真实Wiener/同ξ路径卷积，γ≥0/T≥0给所需2l矩，l≥1；actualprocessγ>0、当前C∞periodicU/真实forceLip；H^l实际可积还用原U≥1和真实势能界。目标矩/Gaussian卷积law未作假设，supnorm仅支配literal物理平方和power，未宣称timeuniform矩或高次drift/continuousgenerator/Harris。仅原H^l所需有限偶次空间，不独立拓展任意Lp。
+
+LangevinHamiltonianPowerDrift：单位质量、原U>=1/C∞periodicU/forceLip、γ>0、σ任意及sameactualWiener/process/κ。由真实pathwise物理H界及已验actual2l噪声矩推原Hl期待halfdrift，τ共同所有l>=1和所有T>=τ；D_l(T)>0对初值统一但未声称时间uniform。目标moment/drift不作前提；连续generator身份与literalAssumption2、density存在及Harris仍待。
