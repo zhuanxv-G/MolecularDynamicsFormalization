@@ -1,0 +1,64 @@
+docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean:26:42: error: typeclass instance problem is stuck
+  NormedSpace ?m.48 ℝ
+
+Note: Lean will not try to resolve this typeclass instance problem because the first and third type arguments to `NormedSpace` contain metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean:32:52: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean:32:55: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean:33:62: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean:33:65: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean:59:45: error: Function expected at
+  f
+but this term has type
+  ↥(textbookPeriodicSmoothSpace Nc)
+
+Note: Expected a function because this term is being applied to the argument
+  q
+docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean:128:46: error: Function expected at
+  f
+but this term has type
+  ↥(textbookPeriodicSmoothSpace Nc)
+
+Note: Expected a function because this term is being applied to the argument
+  q
+docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean:142:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) Q
+in the target expression
+  ↑↑((textbookPeriodicSmoothEmbedding U hU hPU β) f) Q *
+      ↑↑((textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) ρ) Q =
+    textbookConfigurationTorusObservable (↑f) Q * ↑↑((textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) ρ) Q
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+ρ : ↥(Gibbs U β)
+hρ : ∫ (Q : UnitAddTorus (Fin Nc)), ↑↑ρ Q ∂textbookConfigurationTorusGibbsMeasure U β = 1
+t : NNReal
+f : ↥(textbookPeriodicSmoothSpace Nc)
+h :
+  |∫ (Q : UnitAddTorus (Fin Nc)),
+          ↑↑((textbookPeriodicSmoothEmbedding U hU hPU β) f) Q *
+            ↑↑((textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) ρ)
+              Q ∂textbookConfigurationTorusGibbsMeasure U β -
+        ∫ (Q : UnitAddTorus (Fin Nc)),
+          ↑↑((textbookPeriodicSmoothEmbedding U hU hPU β) f) Q ∂textbookConfigurationTorusGibbsMeasure U β| ≤
+    (‖ρ - oneVector U hU hPU β‖ + 1) * ‖(textbookPeriodicSmoothEmbedding U hU hPU β) f‖ *
+      Real.exp (-textbookBrownianGibbsCoercivityRate m U hU hPU β * ↑t)
+Q : UnitAddTorus (Fin Nc)
+hQ : ↑↑(textbookConfigurationGibbsL2Observable U hU hPU β ↑f ⋯ ⋯) Q = textbookConfigurationTorusObservable (↑f) Q
+⊢ ↑↑((textbookPeriodicSmoothEmbedding U hU hPU β) f) Q *
+      ↑↑((textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) ρ) Q =
+    textbookConfigurationTorusObservable (↑f) Q * ↑↑((textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) ρ) Q
+docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean:154:48: error: Function expected at
+  f
+but this term has type
+  ↥(textbookPeriodicSmoothSpace Nc)
+
+Note: Expected a function because this term is being applied to the argument
+  q

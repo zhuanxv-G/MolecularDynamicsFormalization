@@ -1,0 +1,20 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean",
+  "source_sha256": "2ec8cf1b0062de4f6649f51b1d03fa3c2cfb0d8685b618650f877983066e1a24",
+  "log": "docs/verification/2026-10-06-BrownianSpectralAverage/local02-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public_declarations": 12,
+  "whole_actual_Gibbs_Lp_representatives_integrable": "proved_locally",
+  "true_integral_mass_duality_decay": "proved_locally",
+  "actual_full_cube_canonical_limit": "proved_locally",
+  "strictly_positive_K_alpha_for_all_smooth_tests_nonnegative_times": "proved_locally",
+  "input_normalization": "actual input integral equals one; no initial sign needed for analytic estimate",
+  "actual_SDE_law_or_Markov_probability_identification": "not_proved",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete",
+  "responsible_semantic_review": "pending",
+  "integrated": false,
+  "full_check": "not_run"
+}

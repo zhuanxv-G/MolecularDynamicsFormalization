@@ -1,0 +1,154 @@
+{
+  "started_at": "2026-10-06T10:07:56.4062093+08:00",
+  "finished_at": "2026-10-06T10:09:35.3325235+08:00",
+  "head_at_check": "8ac0e8ece4111683b4248559f8c40627deea3c6a",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9099,
+  "audit_declarations": 1766,
+  "inputs": 182,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookPeriodicSmoothEmbedding_one_ae_eq",
+    "MolecularDynamics.textbookBrownianGibbsL2_integrable",
+    "MolecularDynamics.textbookBrownianGibbsL2_integrable_product",
+    "MolecularDynamics.textbookBrownianGibbsL2_inner_eq_integral_product",
+    "MolecularDynamics.textbookBrownianGibbsL2_one_inner_eq_integral",
+    "MolecularDynamics.textbookBrownianGibbsL2_smooth_integral_eq_cube_average",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_integral_mass",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_integral_duality",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_integral_decay",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_normalized_integral_decay",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_smooth_average_decay",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_smooth_average_exponential"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookPeriodicSmoothEmbedding_one_ae_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2_integrable_product",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2_inner_eq_integral_product",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2_one_inner_eq_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2_smooth_integral_eq_cube_average",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_integral_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_integral_duality",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_integral_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_normalized_integral_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_smooth_average_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_smooth_average_exponential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "3a00e8b3e1f2cfa0f4071153ce2022756486b405bbeef7adc687af3e3987a449"
+    },
+    {
+      "path": "api02.log",
+      "sha256": "1850ee9e7a60cf1bc4c9818893812460e72d8f5bcc5db2ba7f88822d10aab911"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "b28c35969ecf7956d4049b2d7b2a5e7cbb9ebcb78b00e3667225ac041db53ae7"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "d5554beedab0c92436aef0fe0580e79ab3004339c6913ab88ef204e81255e656"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

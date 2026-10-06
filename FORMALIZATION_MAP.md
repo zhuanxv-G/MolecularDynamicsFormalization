@@ -902,3 +902,8 @@ full-check01 passed：9097 jobs/1737公理声明/180exact inputs；10checks退�
 17 public；实际Lex降序特征值/升序重数索引由真实有限Iic、bot、无限性noMax构造ℕ有序同构，覆盖全部actualIndex。λ0=0、反单调、n≠0时λn≤−κ、λn→−∞、整个原实谱=range；实际K0=span常数且finrank1。完整整个Gibbs有序HilbertBasis、每个φn真实Agraph、所有x HasSum及同一真实T的有序HasSum/tsum指数展开。MolecularDynamics/Chapter06/BrownianEigenOrdering.lean；docs/reviews/2026-10-06-BrownianEigenOrdering/REVIEW.zh-CN.md。Nc>0用于无限ℕ序列；K0简单含Nc0。首向量相位/复谱/实际SDE概率识别/core最终语义pending。
 
 full-check01 passed：9098 jobs/1754公理声明/181exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1(3) — actual integral averages and original canonical exponential estimate (BrownianSpectralAverage)
+12public；原e真实AE1→所有整个Gibbs Lp代表可积、两代表乘积可积、实际inner=product integral、e pairing=实际integral。原T保真integral mass且integral duality；全ρ/g真实积分指数收敛至g integral*ρ真实mass。真实初始mass1时K=norm(ρ-e)+1>0及α=实际κ>0；所有原smooth periodic f/非负t左侧真实torus积分收敛至原Z^-1 cube weighted average，右侧原Gibbs test norm。MolecularDynamics/Chapter06/BrownianSpectralAverage.lean；docs/reviews/2026-10-06-BrownianSpectralAverage/REVIEW.zh-CN.md。解析平均完整；实际T positivity/SDElaw expectation(5.6)识别/复谱/coresemanticpending，未冒称Theorem6.1(3)概率部分完成。
+
+full-check01 passed：9099 jobs/1766公理声明/182exact inputs；10checks退出0、全部input/rawlog SHA匹配、12 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

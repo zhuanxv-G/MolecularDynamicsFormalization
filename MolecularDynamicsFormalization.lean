@@ -220,3 +220,5 @@ import MolecularDynamics.Chapter06.BrownianEigenDiscreteness
 import MolecularDynamics.Chapter06.BrownianEigenEnumeration
 
 import MolecularDynamics.Chapter06.BrownianEigenOrdering
+
+import MolecularDynamics.Chapter06.BrownianSpectralAverage

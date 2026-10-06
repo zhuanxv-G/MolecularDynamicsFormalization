@@ -532,3 +532,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianEigenOrdering: proved ordering and simple zero eigenvalue
 仅原hm>0、原C∞整数周期U、β>0和无限序列适用的Nc>0。真实有限谱层、Infinite、OrderBot、NoMax、排序、zero-simple、λn非零和谱隙全部推导，不藏入假设。ℕ实际双射覆盖全部模式及重数；同一整个Lp真实T对所有x,t提供有序展开，未假定SDE期望等于T。零空间=span实际归一化常数及finrank1允许Nc0。φ0相位未选定，未声称φ0=e；复谱/Markov/SDElaw概率识别及C²/core最终semanticpending。无placeholder/newaxiom/unsafe/限制绕过。
+
+## BrownianSpectralAverage: actual analytic integral averages, probability identification kept separate
+原sameGibbs entireLp、原正质量/C∞整数周期U/β>0不变；无Nc>0要求，解析平均包含Nc0。初始ρ的实际integral=1仅真实初始质量条件；一般质量结果不需要此条件。ρ与Tρ非负、Markov核、SDElaw/PDE识别均未假设或声称。本批真正积分可积性、原T质量守恒、对偶、真实canonical积分极限、严格正K/α和全部tests/t的指数估计已直接推导，无结论作前提。原文(5.6)真实时变概率law仍独立pending，复谱与C²/core语义pending；无placeholder/newaxiom/unsafe/资源或linter绕过。

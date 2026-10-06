@@ -1,0 +1,40 @@
+MeasureTheory.L2.integrable_inner.{u_1, u_2, u_4} {α : Type u_1} {E : Type u_2} {𝕜 : Type u_4} [RCLike 𝕜]
+  {m : MeasurableSpace α} {μ : Measure α} [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] (f g : ↥(Lp E 2 μ)) :
+  Integrable (fun x => ⟪↑↑f x, ↑↑g x⟫_𝕜) μ
+MeasureTheory.Integrable.congr.{u_1, u_5} {α : Type u_1} {ε : Type u_5} {m : MeasurableSpace α} {μ : Measure α}
+  [TopologicalSpace ε] [ContinuousENorm ε] {f g : α → ε} (hf : Integrable f μ) (h : f =ᵐ[μ] g) : Integrable g μ
+MeasureTheory.L2.inner_def.{u_1, u_2, u_4} {α : Type u_1} {E : Type u_2} {𝕜 : Type u_4} [RCLike 𝕜]
+  {m : MeasurableSpace α} {μ : Measure α} [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] (f g : ↥(Lp E 2 μ)) :
+  ⟪f, g⟫_𝕜 = ∫ (a : α), ⟪↑↑f a, ↑↑g a⟫_𝕜 ∂μ
+Real.inner_apply (x y : ℝ) : ⟪x, y⟫_ℝ = x * y
+docs/verification/2026-10-06-BrownianSpectralAverage/ApiProbe.lean:8:7: error(lean.unknownIdentifier): Unknown identifier `textbookPeriodicSmoothEmbedding`
+MolecularDynamics.textbookPeriodicSmoothEmbedding {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) :
+  ↥(MolecularDynamics.textbookPeriodicSmoothSpace Nc) →ₗ[ℝ]
+    ↥(Lp ℝ 2 (MolecularDynamics.textbookConfigurationTorusGibbsMeasure U β))
+MolecularDynamics.textbookConfigurationGibbsL2Observable_ae_eq {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (f : (Fin Nc → ℝ) → ℝ) (hf : Continuous f)
+  (hPf : MolecularDynamics.textbookUnitPeriodicPotential f) :
+  ↑↑(MolecularDynamics.textbookConfigurationGibbsL2Observable U hU hPU β f hf
+          hPf) =ᵐ[MolecularDynamics.textbookConfigurationTorusGibbsMeasure U β]
+    MolecularDynamics.textbookConfigurationTorusObservable f
+docs/verification/2026-10-06-BrownianSpectralAverage/ApiProbe.lean:11:7: error(lean.unknownIdentifier): Unknown identifier `MolecularDynamics.textbookConfigurationAverage`
+MolecularDynamics.textbookBrownianGibbsCoercivityRate_pos {Nc : ℕ} (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ (↑⊤) U) (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  0 < MolecularDynamics.textbookBrownianGibbsCoercivityRate m U hU hPU β
+MolecularDynamics.textbookBrownianGibbsSpectralEvolution_correlation_decay {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) (t : NNReal)
+  (x g : ↥(MolecularDynamics.Gibbs✝ U β)) :
+  |⟪g, (MolecularDynamics.textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) x⟫_ℝ -
+        ⟪g, MolecularDynamics.oneVector✝ U hU hPU β⟫_ℝ * ⟪MolecularDynamics.oneVector✝ U hU hPU β, x⟫_ℝ| ≤
+    Real.exp (-MolecularDynamics.textbookBrownianGibbsCoercivityRate m U hU hPU β * ↑t) * ‖g‖ *
+      ‖x - ⟪MolecularDynamics.oneVector✝ U hU hPU β, x⟫_ℝ • MolecularDynamics.oneVector✝ U hU hPU β‖
+MeasureTheory.integral_congr_ae.{u_1, u_5} {α : Type u_1} {G : Type u_5} [NormedAddCommGroup G] [NormedSpace ℝ G]
+  {m : MeasurableSpace α} {μ : Measure α} {f g : α → G} (h : f =ᵐ[μ] g) : ∫ (a : α), f a ∂μ = ∫ (a : α), g a ∂μ
+MeasureTheory.integral_const_mul.{u_1, u_6} {α : Type u_1} {m : MeasurableSpace α} {μ : Measure α} {L : Type u_6}
+  [RCLike L] (r : L) (f : α → L) : ∫ (a : α), r * f a ∂μ = r * ∫ (a : α), f a ∂μ
+mul_le_mul_of_nonneg_left.{u_1} {α : Type u_1} [Mul α] [Zero α] [Preorder α] {a b c : α} [PosMulMono α] (hbc : b ≤ c)
+  (ha : 0 ≤ a) : a * b ≤ a * c
+mul_le_mul_of_nonneg_right.{u_1} {α : Type u_1} [Mul α] [Zero α] [Preorder α] {a b c : α} [MulPosMono α] (hbc : b ≤ c)
+  (ha : 0 ≤ a) : b * a ≤ c * a
