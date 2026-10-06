@@ -947,3 +947,8 @@ full-check01 passed：9106 jobs/1866公理声明/189exact inputs；10checks退�
 5public；actualcompensatedfield原b(z+Σ(Wt−W0)) deriveduniformLip/timecontinuous/true everyfiniteinterval ODE α与其真正所有点导数、原q ContinuousOn/q0=x/allt原Bochner integral equation及originalpositive cov/square。无需Brownian noise differentiable，不加solution exists前提，保留wholeoriginal masses gamma1。MolecularDynamics/Chapter06/BrownianDrivenExistence.lean；docs/reviews/2026-10-06-BrownianDrivenExistence/REVIEW.zh-CN.md。下一trueuniqueness/horizon一致与pathmap连续measurable；SDEactual概率识别/core/wholepending。
 
 full-check01 passed：9107 jobs/1871公理声明/190exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — actual Brownian integral path uniqueness, initial/noise stability and joint measurable endpoints (BrownianPathSolution)
+27public合并批次，原mass b/Σ、literal实际积分模型从真存在到右导数/initial/restrict、deriveddriftL、actualincrement误差/commonfield Gronwall与原q扰动、wholeintervalunique/horizonagreement、实际CPath选解与selectedunique、初值及joint初值+uniformpath Lipschitz/continuous/measurable。MolecularDynamics/Chapter06/BrownianPathSolution.lean；docs/reviews/2026-10-06-BrownianPathSolution/REVIEW.zh-CN.md。只复用已验收genericnoisecarrier，不用Langevin物理解替Brownian。下一真实randommodel；SDElaw=T/Markov/5.6/core/wholepending。
+
+full-check01 passed：9108 jobs/1898公理声明/191exact inputs；10checks退出0、全部input/rawlog SHA匹配、27 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

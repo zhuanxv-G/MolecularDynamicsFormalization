@@ -559,3 +559,6 @@ complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模�
 
 ## BrownianDrivenExistence: actual specified-interval continuous-noise existence constructed
 原positive masses/原C∞integerperiodic U/β>0、gamma1，T≥0及W ContinuousOn实际[0,T]，任意original lift初值x，不假定roughW可微或路径解存在。privateuniform-local/finiteODE拼接已真实证明（复用原验收source），actualdriftLip由原potential推出，positive physical covariance由hm/hβ导出。低层field存在本身对任何固定系数成立；主integral theorem随原positive covariance明确physical模型条件。每个specifiedT构造真实α/q，不假定globalhorizoncoherence/measurability/Markov。所有这些以及law=T/式5.6/C²core负责人继续pending。无sorry/admit/newaxiom/unsafe/资源或linter绕过。
+
+## BrownianPathSolution: true original-mass integral solutions and jointly measurable selected endpoints
+主selectedpath/endpoint保持原positive masses、U C∞integerperiodic、β>0、gamma1、T≥0、Nc含0，W是真C(Icc0T,Vec)。低层uniqueness/estimates不需covariance正性：固定Σ即可，driftLip由真实U原条件推出；无需W可微或W0=0，实际noiseincrement中心化。q存在/唯一性/右导数/endpoint连续可测均已推导，未作前提。privateFTC复制原已验收actualintegral右导数；genericCPathcarrier复用，不混两种equation。关键GronwallK=1+derivedL>0，constantpotential情形有效。未称randomlaw/Markov/5.6/stochasticgenerator、wholeTheorem6.1或C²core完成；负责人pending。

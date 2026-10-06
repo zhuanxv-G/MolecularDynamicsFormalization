@@ -238,3 +238,5 @@ import MolecularDynamics.Chapter06.BrownianComplexKernel
 import MolecularDynamics.Chapter06.BrownianSDECoefficients
 
 import MolecularDynamics.Chapter06.BrownianDrivenExistence
+
+import MolecularDynamics.Chapter06.BrownianPathSolution

@@ -1,0 +1,23 @@
+docs/verification/2026-10-06-BrownianPathSolution/Draft.lean:154:4: error: Type mismatch: After simplification, term
+  mul_le_mul_of_nonneg_left (textbookBrownianNoiseIncrement_dist_le m β W R t ε hWR)
+    (textbookBrownianDriftLipschitzConstant m U hU hPU).property
+ has type
+  @LE.le ℝ Real.instPreorder.toLE
+    (↑(textbookBrownianDriftLipschitzConstant m U hU hPU) *
+      ‖(textbookBrownianSDENoise m β) (W t - W 0) - (textbookBrownianSDENoise m β) (R t - R 0)‖)
+    (↑(textbookBrownianDriftLipschitzConstant m U hU hPU) * (‖textbookBrownianSDENoise m β‖ * ε))
+but is expected to have type
+  @LE.le ℝ Real.instPreorder.toLE
+    (↑(textbookBrownianDriftLipschitzConstant m U hU hPU) *
+      dist ((textbookBrownianSDENoise m β) (W t - W 0)) ((textbookBrownianSDENoise m β) (R t - R 0)))
+    (↑(textbookBrownianDriftLipschitzConstant m U hU hPU) * (‖textbookBrownianSDENoise m β‖ * ε))
+docs/verification/2026-10-06-BrownianPathSolution/Draft.lean:186:2: error: Type mismatch: After simplification, term
+  hh
+ has type
+  dist (textbookBrownianNoiseCompensated m β W q t) (textbookBrownianNoiseCompensated m β R r t) ≤
+    gronwallBound (dist x y) (1 + ↑(textbookBrownianDriftLipschitzConstant m U hU hPU))
+      (↑(textbookBrownianDriftLipschitzConstant m U hU hPU) * ‖textbookBrownianSDENoise m β‖ * ε) (t - 0)
+but is expected to have type
+  dist (textbookBrownianNoiseCompensated m β W q t) (textbookBrownianNoiseCompensated m β R r t) ≤
+    gronwallBound (dist x y) (1 + ↑(textbookBrownianDriftLipschitzConstant m U hU hPU))
+      (↑(textbookBrownianDriftLipschitzConstant m U hU hPU) * ‖textbookBrownianSDENoise m β‖ * ε) t

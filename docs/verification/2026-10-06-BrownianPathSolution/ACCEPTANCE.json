@@ -1,0 +1,281 @@
+{
+  "started_at": "2026-10-06T13:32:05.0638394+08:00",
+  "finished_at": "2026-10-06T13:33:16.3349104+08:00",
+  "head_at_check": "3b8ee05df9452eb579f9d046adad76608b72de23",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9108,
+  "audit_declarations": 1898,
+  "inputs": 191,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianIntegralSolution",
+    "MolecularDynamics.textbookBrownianIntegralSolution_exists_model",
+    "MolecularDynamics.textbookBrownianNoiseCompensated",
+    "MolecularDynamics.textbookBrownianNoiseCompensated_continuousOn",
+    "MolecularDynamics.textbookBrownianNoiseCompensated_hasDerivWithinAt",
+    "MolecularDynamics.textbookBrownianIntegralSolution_initial",
+    "MolecularDynamics.textbookBrownianNoiseCompensated_initial",
+    "MolecularDynamics.textbookBrownianIntegralSolution_restrict",
+    "MolecularDynamics.textbookBrownianDriftLipschitzConstant",
+    "MolecularDynamics.textbookBrownianDriftLipschitzConstant_spec",
+    "MolecularDynamics.textbookBrownianNoiseIncrement_dist_le",
+    "MolecularDynamics.textbookBrownianDrivenField_noise_dist_le",
+    "MolecularDynamics.textbookBrownianNoiseCompensated_dist_le",
+    "MolecularDynamics.textbookBrownianIntegralSolution_dist_le",
+    "MolecularDynamics.textbookBrownianIntegralSolution_unique",
+    "MolecularDynamics.textbookBrownianIntegralSolution_horizon_agreement",
+    "MolecularDynamics.textbookBrownianPathSolution",
+    "MolecularDynamics.textbookBrownianPathSolution_integralSolution",
+    "MolecularDynamics.textbookBrownianPathEndpoint",
+    "MolecularDynamics.textbookBrownianPathEndpoint_initial",
+    "MolecularDynamics.textbookBrownianPathSolution_eq_of_integralSolution",
+    "MolecularDynamics.textbookBrownianPathEndpoint_joint_lipschitz",
+    "MolecularDynamics.textbookBrownianPathEndpoint_joint_continuous",
+    "MolecularDynamics.textbookBrownianPathEndpoint_joint_measurable",
+    "MolecularDynamics.textbookBrownianPathEndpoint_continuous",
+    "MolecularDynamics.textbookBrownianPathEndpoint_measurable",
+    "MolecularDynamics.textbookBrownianPathEndpoint_initialState_continuous"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_exists_model",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianNoiseCompensated",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianNoiseCompensated_continuousOn",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianNoiseCompensated_hasDerivWithinAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_initial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianNoiseCompensated_initial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_restrict",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDriftLipschitzConstant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDriftLipschitzConstant_spec",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianNoiseIncrement_dist_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDrivenField_noise_dist_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianNoiseCompensated_dist_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_dist_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_horizon_agreement",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathSolution",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathSolution_integralSolution",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_initial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathSolution_eq_of_integralSolution",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_joint_lipschitz",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_joint_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_joint_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_initialState_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "34d73664af895ab4a87274b0aa133f488222f78cfdfd27a8a949a0f750f7a1d6"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "d3a73cbd2b7982dda4b3d89e50f07ddc1ceb680af78dc089be44f9c91cf1a0c2"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "54ae7e721cb14f3a95099b8ee2a880c2608485cc539434b2aa8464a96ee81538"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
