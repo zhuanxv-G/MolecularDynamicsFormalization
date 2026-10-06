@@ -1,0 +1,64 @@
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:334:62: error(lean.invalidField): Invalid field `clm_apply`: The environment does not contain `Function.clm_apply`, so it is not possible to project the field `clm_apply` from an expression
+  fun s hs => ContinuousAt.continuousWithinAt (HasDerivAt.continuousAt (hJ s hs))
+of type
+  ∀ (s : ℝ) (hs : s ∈ Icc 0 T),
+    ContinuousWithinAt (textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W) (?m.397 s hs) s
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:342:4: error: Type mismatch: After simplification, term
+  hh
+ has type
+  HasDerivWithinAt
+    (fun i i_1 =>
+      r i i_1 -
+            (textbookBrownianSDENoise m β)
+              (fun i_2 => textbookLangevinPathNoise T hT W i i_2 - textbookLangevinPathNoise T hT W 0 i_2) i_1 -
+          (q i i_1 -
+            (textbookBrownianSDENoise m β)
+              (fun i_2 => textbookLangevinPathNoise T hT W i i_2 - textbookLangevinPathNoise T hT W 0 i_2) i_1) -
+        (textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W i) v i_1)
+    (fun i =>
+      textbookBrownianSDEDrift m U
+            ((fun i =>
+                r s i -
+                  (textbookBrownianSDENoise m β)
+                    (fun i => textbookLangevinPathNoise T hT W s i - textbookLangevinPathNoise T hT W 0 i) i) +
+              (textbookBrownianSDENoise m β) fun i =>
+                textbookLangevinPathNoise T hT W s i - textbookLangevinPathNoise T hT W 0 i)
+            i -
+          textbookBrownianSDEDrift m U
+            ((fun i =>
+                q s i -
+                  (textbookBrownianSDENoise m β)
+                    (fun i => textbookLangevinPathNoise T hT W s i - textbookLangevinPathNoise T hT W 0 i) i) +
+              (textbookBrownianSDENoise m β) fun i =>
+                textbookLangevinPathNoise T hT W s i - textbookLangevinPathNoise T hT W 0 i)
+            i -
+        (fderiv ℝ (textbookBrownianSDEDrift m U) (textbookBrownianPathSolution m hm U hU hp β hβ T hT x W s))
+          ((textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W s) v) i)
+    (Ici s) s
+but is expected to have type
+  HasDerivWithinAt
+    (fun s i =>
+      r s i -
+            (textbookBrownianSDENoise m β)
+              (fun i => textbookLangevinPathNoise T hT W s i - textbookLangevinPathNoise T hT W 0 i) i -
+          (q s i -
+            (textbookBrownianSDENoise m β)
+              (fun i => textbookLangevinPathNoise T hT W s i - textbookLangevinPathNoise T hT W 0 i) i) -
+        (J s) v i)
+    (fun i =>
+      textbookBrownianSDEDrift m U (r s) i - textbookBrownianSDEDrift m U (q s) i -
+        (fderiv ℝ (textbookBrownianSDEDrift m U) (q s)) ((J s) v) i)
+    (Ici s) s
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:350:47: error: Function expected at
+  dist_nonneg
+but this term has type
+  0 ≤ dist ?m.586 ?m.587
+
+Note: Expected a function because this term is being applied to the argument
+  (x + v)
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:401:4: error: Type mismatch: After simplification, term
+  Continuous.tendsto (Continuous.mul continuous_const continuous_norm) 0
+ has type
+  Tendsto ((fun x => ?m.168) * fun a => ‖a‖) (𝓝 0) (𝓝 (((fun x => ?m.168) * fun a => ‖a‖) 0))
+but is expected to have type
+  Tendsto (fun v => (C + 1) * ‖v‖) (𝓝 0) (𝓝 0)

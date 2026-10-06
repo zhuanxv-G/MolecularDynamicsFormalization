@@ -600,3 +600,5 @@ BrownianC2Generator：原positive masses/β>0/γ1/任意Nc、U当前C∞整数�
 BrownianC2DynkinFormula：原positive masses/β>0/γ1/任意Nc、U当前C∞periodic但f只原C²periodic、same真实Wiener/P/q/actualtorus概率C0operator。alltime CMap/sameGibbsL2右导数与Dynkin由trueC²stronggenerator/实际semigroup/真实timecontinuous+Banach右FTC/CLM真积分交换推导；Lf只continuousperiodic，不假设Lf C²/evolvedf C²、Gibbsinvariance/wholeL2input概率operator/谱T等同。C²closedcore/owner/fullscope未完。
 
 BrownianC2ClosedOperator：原observable f/g仅C²整数周期；真实flux仅C¹；U当前C∞整数周期/β≠0用于实际closed自伴域，实际概率stronglimit仍原positive masses/β>0/γ1/allNc/same真正WienerPq。原C²域成员、Lf值和wholeC² HasCore由真实IBP/graphclosure/selfadjoint及leastclosedextension推导，不预设域关系/核心。真C²完整Gibbscore数学缩窄缺口补齐；wholeCMap graphcore/wholeGibbsL2-input概率bound/谱T/invariance/5.6/负责人未完。
+
+BrownianFirstVariation：原positive masses/β>0/γ1/allNc/currentU C∞整数周期、真实既有finiteinterval连续noise解；噪声只continuous，选择解空间可微/variationmatrix存在或导数身份均未作前提，真实finiteODE/meanvalue/Gronwall/littleO推导实际spaceC¹及Juniformbounds/initialLip。未假设第二变分/空间C²/期待求导、Gibbs概率不变性或谱T等同。所有noise统一界真实证明，负责人语义仍pending。

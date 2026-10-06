@@ -1,0 +1,185 @@
+{
+  "started_at": "2026-10-06T18:51:46.4158007+08:00",
+  "finished_at": "2026-10-06T18:57:46.3368034+08:00",
+  "head_at_check": "bf2690d14497ba08b892dc39bb152a15152a18a6",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9127,
+  "audit_declarations": 2167,
+  "inputs": 210,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianSDEDrift_contDiff",
+    "MolecularDynamics.textbookBrownianSDEDrift_fderiv_periodic",
+    "MolecularDynamics.textbookBrownianSDEDrift_fderiv_lipschitz",
+    "MolecularDynamics.textbookBrownianSDEDrift_first_taylor_bound",
+    "MolecularDynamics.textbookBrownianPathEndpoint_same_noise_dist_le",
+    "MolecularDynamics.textbookBrownianPathJacobian_exists",
+    "MolecularDynamics.textbookBrownianPathJacobian",
+    "MolecularDynamics.textbookBrownianPathJacobian_spec",
+    "MolecularDynamics.textbookBrownianPathJacobian_norm_le",
+    "MolecularDynamics.textbookBrownianPathEndpoint_jacobian_error_bound",
+    "MolecularDynamics.textbookBrownianPathEndpoint_hasFDerivAt_initial",
+    "MolecularDynamics.textbookBrownianPathJacobian_initial_norm_sub_bound",
+    "MolecularDynamics.textbookBrownianPathJacobian_initial_continuous",
+    "MolecularDynamics.textbookBrownianPathEndpoint_fderiv_initial_eq",
+    "MolecularDynamics.textbookBrownianPathEndpoint_contDiff_one_initial"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianSDEDrift_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDEDrift_fderiv_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDEDrift_fderiv_lipschitz",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDEDrift_first_taylor_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_same_noise_dist_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathJacobian_exists",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathJacobian",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathJacobian_spec",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathJacobian_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_jacobian_error_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_hasFDerivAt_initial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathJacobian_initial_norm_sub_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathJacobian_initial_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_fderiv_initial_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathEndpoint_contDiff_one_initial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "fab8a725ca3adf077f6cbe963688481caf76f90d4297bec7b15d13c717398089"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "97b6036110ef7aac22b6836fe597d4202c0e0cab376e70e39ea3347d1df24cf5"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "0e4943b97c50353c259d56578d967b910975fd48ae73b402bbe9a7b1bcc7d8a5"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "aaf7ef3d6628853292f367c84cd73114f9a2d7e57ad429270adb7d58d4aac457"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "7c9ce786c0c06a599c861dfb68be7d2981cb794919dd80050cd80dbac87889e8"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

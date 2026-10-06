@@ -1,0 +1,45 @@
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:36:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  g a
+in the target expression
+  ‖g x‖ ≤ M
+
+N : ℕ
+E : Type u_1
+inst✝ : NormedAddCommGroup E
+g : (Fin N → ℝ) → E
+hc : Continuous[_, PseudoMetricSpace.toUniformSpace.toTopologicalSpace] g
+hp : ∀ (x : Fin N → ℝ) (n : Fin N → ℤ), g (x + fun i => ↑(n i)) = g x
+M : ℝ
+hb : ∀ x ∈ Icc 0 1, ‖g x‖ ≤ M
+h0 : 0 ∈ Icc 0 1
+x : Fin N → ℝ
+a : Fin N → ℝ := fun i => Int.fract (x i)
+n : Fin N → ℤ := fun i => ⌊x i⌋
+ha : a ∈ Icc 0 1
+he : (a + fun i => ↑(n i)) = x
+hh : g x = g a
+⊢ ‖g x‖ ≤ M
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:84:4: error: Type mismatch: After simplification, term
+  h
+ has type
+  @HasFDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Fin N → ℝ) Pi.normedAddCommGroup.toAddCommGroup
+    Pi.normedSpace.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace (Fin N → ℝ)
+    Pi.normedAddCommGroup.toAddCommGroup Pi.normedSpace.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    ((fun x_1 => textbookBrownianSDEDrift m U x_1 - b x) - ⇑(fderiv ℝ b x) ∘ fun x_1 => id x_1 - x)
+    (fderiv ℝ (textbookBrownianSDEDrift m U) z - fderiv ℝ b x) z
+but is expected to have type
+  @HasFDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Fin N → ℝ) Pi.addCommGroup
+    (Pi.Function.module (Fin N) ℝ ℝ) Pi.topologicalSpace (Fin N → ℝ) Pi.addCommGroup (Pi.Function.module (Fin N) ℝ ℝ)
+    Pi.topologicalSpace (fun z => b z - b x - (fderiv ℝ b x) (z - x)) (fderiv ℝ b z - fderiv ℝ b x) z
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:109:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  @LE.le ℝ Real.instLE
+    (dist (textbookBrownianPathSolution m hm U hU hp β hβ T hT x W t)
+      (textbookBrownianPathSolution m hm U hU hp β hβ T hT y W t))
+    (dist x y * Real.exp ((1 + ↑(textbookBrownianDriftLipschitzConstant m U hU hp)) * t))
+but is expected to have type
+  @LE.le ℝ Real.instLE
+    (dist (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x t W)
+      (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT y t W))
+    (dist x y * Real.exp ((1 + ↑(textbookBrownianDriftLipschitzConstant m U hU hp)) * t))

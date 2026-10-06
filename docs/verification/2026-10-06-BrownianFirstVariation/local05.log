@@ -1,0 +1,27 @@
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:465:8: error: Type mismatch: After simplification, term
+  mul_le_mul_of_nonneg_left (hqdiff s hsT) M.property
+ has type
+  @LE.le ℝ Real.instPreorder.toLE (↑M * ‖qx s - qy s‖) (↑M * (E * ‖x - y‖))
+but is expected to have type
+  @LE.le ℝ Real.instPreorder.toLE (↑M * ‖qx s - qy s‖) (↑M * (E * ‖x - y‖))
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:493:6: error: Type mismatch: After simplification, term
+  hh
+ has type
+  @LE.le ℝ Real.instLE ‖(Jx - Jy) t‖ (↑M * E ^ 2 * ‖x - y‖ / K * (Real.exp (K * t) - 1))
+but is expected to have type
+  @LE.le ℝ Real.instLE
+    ‖textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W t -
+        textbookBrownianPathJacobian m hm U hU hp β hβ T hT y W t‖
+    (↑M * E ^ 2 * ‖x - y‖ / K * (Real.exp (K * t) - 1))
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:504:47: error: Type mismatch: After simplification, term
+  hb x y W t ht
+ has type
+  @LE.le ℝ Real.instLE
+    ‖textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W t -
+        textbookBrownianPathJacobian m hm U hU hp β hβ T hT y W t‖
+    (C * ‖x - y‖)
+but is expected to have type
+  @LE.le ℝ Real.instLE
+    ‖textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W t -
+        textbookBrownianPathJacobian m hm U hU hp β hβ T hT y W t‖
+    (↑⟨C, hC⟩ * ‖x - y‖)

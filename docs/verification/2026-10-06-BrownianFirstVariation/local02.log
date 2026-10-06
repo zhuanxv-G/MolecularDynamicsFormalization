@@ -1,0 +1,22 @@
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:196:4: error: Type mismatch: After simplification, term
+  h
+ has type
+  @HasFDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Fin N → ℝ) Pi.normedAddCommGroup.toAddCommGroup
+    Pi.normedSpace.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace (Fin N → ℝ)
+    Pi.normedAddCommGroup.toAddCommGroup Pi.normedSpace.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    ((fun x_1 => textbookBrownianSDEDrift m U x_1 - textbookBrownianSDEDrift m U x) - fun x_1 =>
+      (fderiv ℝ (textbookBrownianSDEDrift m U) x) (x_1 - x))
+    (fderiv ℝ (textbookBrownianSDEDrift m U) z - fderiv ℝ (textbookBrownianSDEDrift m U) x) z
+but is expected to have type
+  @HasFDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Fin N → ℝ) Pi.addCommGroup
+    (Pi.Function.module (Fin N) ℝ ℝ) Pi.topologicalSpace (Fin N → ℝ) Pi.addCommGroup (Pi.Function.module (Fin N) ℝ ℝ)
+    Pi.topologicalSpace
+    (fun z =>
+      textbookBrownianSDEDrift m U z - textbookBrownianSDEDrift m U x -
+        (fderiv ℝ (textbookBrownianSDEDrift m U) x) (z - x))
+    (fderiv ℝ (textbookBrownianSDEDrift m U) z - fderiv ℝ (textbookBrownianSDEDrift m U) x) z
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:247:4: error: 'change' tactic failed, pattern
+  ‖A t ∘SL J - A t ∘SL K‖ ≤ ↑L * ‖J - K‖
+is not definitionally equal to target
+  dist (F t J) (F t K) ≤ ↑L * dist J K
+docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean:290:6: error: `dsimp` made no progress
