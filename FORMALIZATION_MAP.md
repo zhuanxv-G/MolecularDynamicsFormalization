@@ -852,3 +852,8 @@ full-check01 passed：9087 jobs/1628公理声明/170exact inputs；10checks退�
 BrownianGibbsResolvent12public local05空日志：actualwholeclosedgraph shiftS=x−y，原nonpos→normcoercivity→Antilipschitz/closedrange；真实adjoint domain test和原sameµ selfadj/nonpos给rangeorthogbot，再actualrangeclosed/orthogonalprojection得真正onto。actualBanach inverse与真compactgraphprojection构造全sameGibbs boundedcompactR，真实全部x rightinversegraph/全closedgraphleftinverse/norm≤1，明确actualoriginalGibbscompacttwo-sidedresolvent。DEP053/NOT062 full中；完整谱/本征基/evolution与C²core签核仍缺。
 
 full-check01 passed：9088 jobs/1640公理声明/171exact inputs；10checks退出0、全部input/rawlog SHA匹配、12 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem6.1 — original Gibbs whole Hilbert eigenbasis (BrownianResolventSpectrum)
+25public原actualA closedgraph定义eigenspace与truecompactR双向eigencorrespondence；全eigenspace有限dim/相互正交/closuretop；Sigma有限基组合成实际整个sameGibbs HilbertBasis，每基向量trueAdomain/graph，非正及非零≤−κ，所有x HasSum与Parseval。MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean；docs/reviews/2026-10-06-BrownianResolventSpectrum/REVIEW.zh-CN.md。统一验收中；谱枚举/整谱/evolution与core最终语义pending。
+
+full-check01 passed：9089 jobs/1665公理声明/172exact inputs；10checks退出0、全部input/rawlog SHA匹配、25 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

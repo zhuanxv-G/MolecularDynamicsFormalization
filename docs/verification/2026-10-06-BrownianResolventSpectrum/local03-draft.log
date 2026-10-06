@@ -1,0 +1,47 @@
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:105:68: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:105:71: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:107:9: error(lean.unknownIdentifier): Unknown identifier `mul_nonpos_iff_of_pos_right`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:116:22: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?r • ?y - ?s • ?y
+in the target expression
+  (textbookBrownianGibbsResolvent m U hU hPU β hm hβ) (1 • x - ℓ • 1 • x) = 1 • x
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+ℓ : ℝ
+hℓ : ℓ ≠ 1
+x : ↥(Gibbs U β)
+hg : (x, ℓ • x) ∈ (textbookBrownianGibbsClosedOperator m U hU hPU β).graph
+h : (textbookBrownianGibbsResolvent m U hU hPU β hm hβ) (1 • x - ℓ • 1 • x) = 1 • x
+hd : 1 - ℓ ≠ 0
+⊢ (textbookBrownianGibbsResolvent m U hU hPU β hm hβ) x = (1 - ℓ)⁻¹ • x
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:139:71: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:139:85: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:174:63: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:176:61: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:176:75: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:199:51: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:199:54: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:204:63: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:204:77: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:210:61: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:210:75: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:213:59: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:213:73: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:197:94: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hle :
+  ⨆ r, Module.End.eigenspace (↑(textbookBrownianGibbsResolvent m U hU hPU β ⋯ ⋯)) r ≤
+    ⨆ ℓ, textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ
+⊢ ⊤ ≤ (⨆ ℓ, textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ).topologicalClosure

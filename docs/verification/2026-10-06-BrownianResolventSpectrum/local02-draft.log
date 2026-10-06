@@ -1,0 +1,28 @@
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:86:54: error(lean.invalidField): Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression
+  mul_le_mul_right ?m.161
+of type
+  ∀ (a : ?m.150), a * ?m.151 ≤ a * ?m.152
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:86:31: error: Application type mismatch: The argument
+  norm_pos_iff.mpr hx
+has type
+  0 < ‖x‖
+but is expected to have type
+  ?m.151 ≤ ?m.152
+in the application
+  mul_le_mul_right (norm_pos_iff.mpr hx)
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:101:5: error: unexpected token 'λ'; expected '_' or identifier
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:111:5: error: unexpected token 'λ'; expected '_' or identifier
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:121:43: error: unexpected token 'λ'; expected '_' or identifier
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:127:55: error: unexpected token 'λ'; expected '_' or identifier
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:133:4: error: Function expected at
+  textbookBrownianGibbsClosedEigenspace
+but this term has type
+  ?m.20
+
+Note: Expected a function because this term is being applied to the argument
+  m
+
+Hint: The identifier `textbookBrownianGibbsClosedEigenspace` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:145:5: error: unexpected token 'λ'; expected '_' or identifier
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:171:65: error: unexpected token 'λ'; expected '_' or identifier
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:197:6: error: unexpected token 'λ'; expected ','

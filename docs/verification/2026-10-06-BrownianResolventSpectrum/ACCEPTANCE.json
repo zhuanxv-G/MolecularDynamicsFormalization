@@ -1,0 +1,295 @@
+{
+  "started_at": "2026-10-06T08:15:00.3282472+08:00",
+  "finished_at": "2026-10-06T08:16:15.3138393+08:00",
+  "head_at_check": "ef0971f2b67502f654054e856c375524f566f516",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9089,
+  "audit_declarations": 1665,
+  "inputs": 172,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsResolvent_isSymmetric",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_isSelfAdjoint",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_injective",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_quadratic_lower",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_strict_positive",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_eigenvalue_bounds",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_eigen_mem_graph",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_eigen_graph_nonpos",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_eigen_graph_resolvent",
+    "MolecularDynamics.textbookBrownianGibbsClosedEigenspace",
+    "MolecularDynamics.textbookBrownianGibbsClosedEigenspace_mem_iff",
+    "MolecularDynamics.textbookBrownianGibbsClosedEigenspace_one_eq_bot",
+    "MolecularDynamics.textbookBrownianGibbsClosedEigenspace_eq_resolvent",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_eigenspace_zero",
+    "MolecularDynamics.textbookBrownianGibbsClosedEigenspace_finiteDimensional",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_eigenspaces_dense",
+    "MolecularDynamics.textbookBrownianGibbsClosedEigenspaces_dense",
+    "MolecularDynamics.textbookBrownianGibbsClosedEigenspaces_orthogonal",
+    "MolecularDynamics.textbookBrownianGibbsEigenIndex",
+    "MolecularDynamics.textbookBrownianGibbsEigenbasis",
+    "MolecularDynamics.textbookBrownianGibbsEigenbasis_mem_graph",
+    "MolecularDynamics.textbookBrownianGibbsEigenbasis_eigenvalue_nonpos",
+    "MolecularDynamics.textbookBrownianGibbsEigenbasis_eigenvalue_gap",
+    "MolecularDynamics.textbookBrownianGibbsEigenbasis_hasSum",
+    "MolecularDynamics.textbookBrownianGibbsEigenbasis_parseval"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_isSymmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_isSelfAdjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_quadratic_lower",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_strict_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_eigenvalue_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_eigen_mem_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_eigen_graph_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_eigen_graph_resolvent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedEigenspace",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedEigenspace_mem_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedEigenspace_one_eq_bot",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedEigenspace_eq_resolvent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_eigenspace_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedEigenspace_finiteDimensional",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_eigenspaces_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedEigenspaces_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedEigenspaces_orthogonal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEigenIndex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEigenbasis",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEigenbasis_mem_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEigenbasis_eigenvalue_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEigenbasis_eigenvalue_gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEigenbasis_hasSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEigenbasis_parseval",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "7f21e4973089d57008e6c3c6687acab0cc46131773c2f61de7ae0c2a59262b6e"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "127da11dfd04072335fe54b6eec7132338baaac2fe7546386d8dc655197b5072"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "ca49d4710dd9a5473057b5f58b318aaa1fda9875ff8b750a9ed13c0b7fd30755"
+    },
+    {
+      "path": "local03-draft.log",
+      "sha256": "3b30ec707f1c43d387e0ad0b3ecfa6f6599d26f3c9b9b4e332196ec6c541f4c1"
+    },
+    {
+      "path": "local04-draft.log",
+      "sha256": "9f1a08b1ce7956e320845a65c83019b69f9d594b41c5d1e3e3a5b28a3dba5184"
+    },
+    {
+      "path": "local05-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local06-draft.log",
+      "sha256": "2c947ef0a4a7acc2339390cbde0b2c329457b6560b9fbd75859b88496096e023"
+    },
+    {
+      "path": "local07-draft.log",
+      "sha256": "5793203183b4dbf40de8de29d1e9f280cdc917cf34a8dbdd36acbb280cb0b077"
+    },
+    {
+      "path": "local08-draft.log",
+      "sha256": "ff808258ed97810c2875748e76c96de193c07dc0ba11fb184cb312969f56b991"
+    },
+    {
+      "path": "local09-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local10-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

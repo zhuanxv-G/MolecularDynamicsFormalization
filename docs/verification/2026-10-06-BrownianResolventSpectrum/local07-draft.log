@@ -1,0 +1,14 @@
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:225:0: warning: automatically included section variable(s) unused in theorem `MolecularDynamics.textbookBrownianGibbsClosedEigenspaces_orthogonal`:
+  hm
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hm in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:255:55: error: Application type mismatch: The argument
+  U
+has type
+  (Fin Nc → ℝ) → ℝ
+of sort `Type` but is expected to have type
+  ∀ (i : Fin Nc), 0 < m i
+of sort `Prop` in the application
+  textbookBrownianGibbsClosedEigenspaces_orthogonal m U

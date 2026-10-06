@@ -1,0 +1,22 @@
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:256:2: error: Tactic `apply` failed: could not unify the conclusion of `@OrthogonalFamily.orthonormal_sigma_orthonormal`
+  Orthonormal ?𝕜 fun a => (?V a.fst) (?v_family a.fst a.snd)
+with the goal
+  Orthonormal ℝ (eigenfamily m hm U hU hPU β hβ)
+
+Note: The full type of `@OrthogonalFamily.orthonormal_sigma_orthonormal` is
+  ∀ {𝕜 : Type ?u.38} {E : Type ?u.37} [inst : RCLike 𝕜] [inst_1 : SeminormedAddCommGroup E]
+    [inst_2 : InnerProductSpace 𝕜 E] {ι : Type ?u.36} {G : ι → Type ?u.35} [inst_3 : (i : ι) → NormedAddCommGroup (G i)]
+    [inst_4 : (i : ι) → InnerProductSpace 𝕜 (G i)] {V : (i : ι) → G i →ₗᵢ[𝕜] E},
+    OrthogonalFamily 𝕜 G V →
+      ∀ {α : ι → Type ?u.34} {v_family : (i : ι) → α i → G i},
+        (∀ (i : ι), Orthonormal 𝕜 (v_family i)) → Orthonormal 𝕜 fun a => (V a.fst) (v_family a.fst a.snd)
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+⊢ Orthonormal ℝ (eigenfamily m hm U hU hPU β hβ)

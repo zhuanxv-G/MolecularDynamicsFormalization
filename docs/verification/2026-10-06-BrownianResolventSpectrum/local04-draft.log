@@ -1,0 +1,7 @@
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:99:81: error: unexpected token 'include'; expected 'lemma'
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:134:74: error: unexpected token 'include'; expected 'lemma'
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:174:79: error: unexpected token 'include'; expected 'lemma'
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:184:49: error(lean.invalidField): Invalid field `symm`: The environment does not contain `Function.symm`, so it is not possible to project the field `symm` from an expression
+  hℓ
+of type `ℓ = 1 → False`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:200:110: error: unexpected token 'include'; expected 'lemma'

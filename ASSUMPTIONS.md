@@ -502,3 +502,6 @@ Nc任意、原每m_i>0、U C∞整数周期、β>0，sameactualwholemass/HaarU/o
 
 ## 2026-10-06 BrownianGibbsResolvent条件
 Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs measure/fullrealLp与actualfullsmoothgraphclosure。真实GibbsA nonpos/selfadj/closed及wholegraph compactprojection来自原已验收链；Srangeclosed、onto、inverse与Ractualcompact/norm均derived，没有graphnormbound/rangedensity/rangeorthogonal/onto/resolvent结论前提，没有模型替换或新regularity假设。C²test/C∞core负责人pending，原whole谱与evolution仍未完成。
+
+## BrownianResolventSpectrum: original whole Gibbs Hilbert eigenbasis
+保留原m_i>0、U C∞整数周期、β>0、原sameGibbs fullrealLp与actualwholeAgraph；R实际compacttwo-sided inverse已证明而非前提。本批所有whole eigenspaces/finite multiplicity/dense complete Hilbert eigenbasis从actualcompactR/selfadj/nonpos推出，不假设basis/domain/eigenvalues/谱complete。Nc任意包含Nc0，使用Sigma(ℓ;Fin actualfinrank)不伪造永远无限的ℕ序列。完整展开与Parseval真实；全谱枚举及unbounded spectrum/evolution尚缺。原C²test与C∞fullcore语义负责人pending；无sorry/admit/newaxiom/unsafe/资源或linter绕过。

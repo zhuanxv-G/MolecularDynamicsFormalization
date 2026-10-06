@@ -1,0 +1,46 @@
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:225:0: warning: automatically included section variable(s) unused in theorem `MolecularDynamics.textbookBrownianGibbsClosedEigenspaces_orthogonal`:
+  hm
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hm in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:253:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:270:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  V
+in the target expression
+  textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ ≤ Submodule.span ℝ (Set.range (eigenfamily m hm U hU hPU β hβ))
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+ℓ : ℝ
+V : Submodule ℝ ↥(Gibbs U β) := textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ
+b : OrthonormalBasis (Fin (Module.finrank ℝ ↥(textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ))) ℝ
+  ↥(textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ) :=
+  local_eigenbasis m hm U hU hPU β hβ ℓ
+hb : Submodule.span ℝ (Set.range fun k => ↑(b k)) = V
+⊢ textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ ≤ Submodule.span ℝ (Set.range (eigenfamily m hm U hU hPU β hβ))
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:279:4: error: (kernel) unknown constant '_private.docs.verification.«2026-10-06-BrownianResolventSpectrum».Draft.0.MolecularDynamics.eigenfamily_orthonormal'
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:291:14: error: (kernel) unknown constant '_private.docs.verification.«2026-10-06-BrownianResolventSpectrum».Draft.0.MolecularDynamics.eigenfamily_orthonormal'
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:285:8: error: (kernel) unknown constant '_private.docs.verification.«2026-10-06-BrownianResolventSpectrum».Draft.0.MolecularDynamics.eigenfamily_orthonormal'
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:304:59: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:304:73: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:305:32: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:305:46: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:306:49: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:306:63: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:313:49: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:313:63: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:314:68: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:314:82: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:316:31: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean:316:45: error(lean.unknownIdentifier): Unknown identifier `hβ`

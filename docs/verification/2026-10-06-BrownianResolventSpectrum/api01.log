@@ -1,0 +1,22 @@
+LinearPMap.graph_fst_eq_zero_snd.{u_1, u_4, u_5} {R : Type u_1} [Ring R] {E : Type u_4} [AddCommGroup E] [Module R E]
+  {F : Type u_5} [AddCommGroup F] [Module R F] (f : E →ₗ.[R] F) {x : E} {x' : F} (h : (x, x') ∈ f.graph) (hx : x = 0) :
+  x' = 0
+ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜]
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] [CompleteSpace E] {A : E →L[𝕜] E} : IsSelfAdjoint A ↔ (↑A).IsSymmetric
+ContinuousLinearMap.orthogonalComplement_iSup_eigenspaces_eq_bot.{u_1, u_2} {𝕜 : Type u_1} [RCLike 𝕜] {E : Type u_2}
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] [CompleteSpace E] {T : E →L[𝕜] E} (hT : IsCompactOperator ⇑T)
+  (hT' : (↑T).IsSymmetric) : (⨆ μ, Module.End.eigenspace (↑T) μ)ᗮ = ⊥
+ContinuousLinearMap.finite_dimensional_eigenspace.{u_1, u_2} {𝕜 : Type u_1} [RCLike 𝕜] {E : Type u_2}
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] [CompleteSpace E] {T : E →L[𝕜] E} (hT : IsCompactOperator ⇑T) (μ : 𝕜)
+  (hμ : μ ≠ 0) : FiniteDimensional 𝕜 ↥(Module.End.eigenspace (↑T) μ)
+Submodule.orthogonal_closure.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] (K : Submodule 𝕜 E) : K.topologicalClosureᗮ = Kᗮ
+Submodule.isClosed_topologicalClosure.{u, v} {R : Type u} {M : Type v} [Semiring R] [TopologicalSpace M]
+  [AddCommMonoid M] [Module R M] [ContinuousConstSMul R M] [ContinuousAdd M] (s : Submodule R M) :
+  IsClosed ↑s.topologicalClosure
+Module.End.mem_eigenspace_iff.{v, w} {R : Type v} {M : Type w} [CommRing R] [AddCommGroup M] [Module R M]
+  {f : Module.End R M} {μ : R} {x : M} : x ∈ f.eigenspace μ ↔ f x = μ • x
+Module.End.hasEigenvalue_iff.{v, w} {R : Type v} {M : Type w} [CommRing R] [AddCommGroup M] [Module R M]
+  {f : Module.End R M} {μ : R} : f.HasEigenvalue μ ↔ f.eigenspace μ ≠ ⊥
+IsSelfAdjoint.isSymmetric.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] [CompleteSpace E] {A : E →L[𝕜] E} (hA : IsSelfAdjoint A) : (↑A).IsSymmetric
