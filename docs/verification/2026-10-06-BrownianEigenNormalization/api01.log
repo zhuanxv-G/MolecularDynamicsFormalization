@@ -1,0 +1,49 @@
+MolecularDynamics.textbookBrownianGibbsClosedOperator_kernel_constant {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+  (x : ↥(MolecularDynamics.textbookBrownianGibbsClosedOperator m U hU hPU β).domain)
+  (hx : ↑(MolecularDynamics.textbookBrownianGibbsClosedOperator m U hU hPU β) x = 0) :
+  ↑x =
+    inner ℝ
+        ((MolecularDynamics.textbookPeriodicSmoothEmbedding U hU hPU β)
+          (MolecularDynamics.textbookPeriodicSmoothConstant Nc 1))
+        ↑x •
+      (MolecularDynamics.textbookPeriodicSmoothEmbedding U hU hPU β)
+        (MolecularDynamics.textbookPeriodicSmoothConstant Nc 1)
+MolecularDynamics.textbookPeriodicSmoothEmbedding_one_ae_eq {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) :
+  ↑↑(MolecularDynamics.oneVector✝ U hU hPU β) =ᵐ[MolecularDynamics.textbookConfigurationTorusGibbsMeasure U β] fun x =>
+    1
+MolecularDynamics.textbookBrownianGibbsOrderedNatEigenbasis_mem_graph {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) (hNc : 0 < Nc) (n : ℕ) :
+  ((MolecularDynamics.textbookBrownianGibbsOrderedNatEigenbasis m hm U hU hPU β hβ hNc) n,
+      ((MolecularDynamics.textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) n).fst •
+        (MolecularDynamics.textbookBrownianGibbsOrderedNatEigenbasis m hm U hU hPU β hβ hNc) n) ∈
+    (MolecularDynamics.textbookBrownianGibbsClosedOperator m U hU hPU β).graph
+MolecularDynamics.textbookBrownianGibbsOrderedEigenEnumeration_zero {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) (hNc : 0 < Nc) :
+  ((MolecularDynamics.textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) 0).fst = 0
+HilbertBasis.mk.{u_1, u_2, u_3} {ι : Type u_1} {𝕜 : Type u_2} [RCLike 𝕜] {E : Type u_3} [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] [CompleteSpace E] {v : ι → E} (hv : Orthonormal 𝕜 v)
+  (hsp : ⊤ ≤ (Submodule.span 𝕜 (Set.range v)).topologicalClosure) : HilbertBasis ι 𝕜 E
+HilbertBasis.coe_mk.{u_1, u_2, u_3} {ι : Type u_1} {𝕜 : Type u_2} [RCLike 𝕜] {E : Type u_3} [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] [CompleteSpace E] {v : ι → E} (hv : Orthonormal 𝕜 v)
+  (hsp : ⊤ ≤ (Submodule.span 𝕜 (Set.range v)).topologicalClosure) : ⇑(HilbertBasis.mk hv hsp) = v
+HilbertBasis.dense_span.{u_1, u_2, u_3} {ι : Type u_1} {𝕜 : Type u_2} [RCLike 𝕜] {E : Type u_3} [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] (b : HilbertBasis ι 𝕜 E) : (Submodule.span 𝕜 (Set.range ⇑b)).topologicalClosure = ⊤
+Submodule.topologicalClosure_mono.{u, v} {R : Type u} {M : Type v} [Semiring R] [TopologicalSpace M] [AddCommMonoid M]
+  [Module R M] [ContinuousConstSMul R M] [ContinuousAdd M] {s t : Submodule R M} (h : s ≤ t) :
+  s.topologicalClosure ≤ t.topologicalClosure
+algebraMap_smul.{u_1, u_2, u_3} {R : Type u_1} [CommSemiring R] (A : Type u_2) [Semiring A] [Algebra R A] {M : Type u_3}
+  [AddCommMonoid M] [Module A M] [Module R M] [IsScalarTower R A M] (r : R) (m : M) : (algebraMap R A) r • m = r • m
+SMulCommClass.smul_comm.{u_9, u_10, u_11} {M : Type u_9} {N : Type u_10} {α : Type u_11} {inst✝ : SMul M α}
+  {inst✝¹ : SMul N α} [self : SMulCommClass M N α] (m : M) (n : N) (a : α) : m • n • a = n • m • a
+MolecularDynamics.textbookBrownianGibbsComplexEigenbasis_mem_graph {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+  (j : MolecularDynamics.textbookBrownianGibbsEigenIndex m U hU hPU β) :
+  ((MolecularDynamics.cb✝ m hm U hU hPU β hβ) j, ↑j.fst • (MolecularDynamics.cb✝ m hm U hU hPU β hβ) j) ∈
+    (MolecularDynamics.textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ).graph
+docs/verification/2026-10-06-BrownianEigenNormalization/ApiProbe.lean:14:7: error(lean.unknownIdentifier): Unknown constant `Set.image_range`

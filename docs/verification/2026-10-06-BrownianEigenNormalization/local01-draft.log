@@ -1,0 +1,73 @@
+docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean:120:2: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean:146:2: error: 'change' tactic failed, pattern
+  a * c = a * (r * c) * r
+is not definitionally equal to target
+  Real.exp (((enumeration m hm U hU hPU β hβ hNc) n).fst * ↑t) *
+        (textbookBrownianGibbsOrderedEigenPhase m hm U hU hPU β hβ hNc * ⟪(oldBasis m hm U hU hPU β hβ hNc) n, x⟫_ℝ) *
+      textbookBrownianGibbsOrderedEigenPhase m hm U hU hPU β hβ hNc =
+    Real.exp (((textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) n).fst * ↑t) *
+      ⟪(textbookBrownianGibbsOrderedNatEigenbasis m hm U hU hPU β hβ hNc) n, x⟫_ℝ
+docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean:181:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  r • v n
+in the target expression
+  ↑r • v n = b (e n)
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+hNc : 0 < Nc
+b : HilbertBasis (textbookBrownianGibbsEigenIndex m U hU hPU β) ℂ ↥(MolecularDynamics.GibbsComplex✝ U β) :=
+  textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
+e : ℕ ≃ textbookBrownianGibbsEigenIndex m U hU hPU β := enumeration m hm U hU hPU β hβ hNc
+J : ↥(MolecularDynamics.Gibbs✝ U β) →L[ℝ] ↥(MolecularDynamics.GibbsComplex✝ U β) :=
+  textbookBrownianGibbsL2Complexify U β
+r : ℝ := textbookBrownianGibbsOrderedEigenPhase m hm U hU hPU β hβ hNc
+v : ℕ → ↥(MolecularDynamics.GibbsComplex✝ U β) :=
+  fun n => J ((textbookBrownianGibbsNormalizedOrderedEigenbasis m hm U hU hPU β hβ hNc) n)
+hr : r * r = 1
+n : ℕ
+⊢ ↑r • v n = b (e n)
+docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean:200:13: warning: declaration uses `sorry`
+docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean:196:8: warning: declaration uses `sorry`
+docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean:224:52: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+hNc : 0 < Nc
+n : ℕ
+⊢ (algebraMap ℝ ℂ) (textbookBrownianGibbsOrderedEigenPhase m hm U hU hPU β hβ hNc) •
+      (textbookBrownianGibbsL2Complexify U β)
+        ((textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ)
+          ((textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) n)) =
+    ↑(textbookBrownianGibbsOrderedEigenPhase m hm U hU hPU β hβ hNc) •
+      (textbookBrownianGibbsL2Complexify U β)
+        ((textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) ((enumeration m hm U hU hPU β hβ hNc) n))
+docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean:241:2: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean:254:80: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+hNc : 0 < Nc
+⊢ Set.range (Complex.ofReal ∘ fun n => ((textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) n).fst) =
+    Set.range fun n => ↑((enumeration m hm U hU hPU β hβ hNc) n).fst

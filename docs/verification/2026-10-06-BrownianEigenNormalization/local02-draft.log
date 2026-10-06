@@ -1,0 +1,8 @@
+docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean:234:2: error: No goals to be solved
+docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean:269:45: warning: This simp argument is unused:
+  Complex.coe_algebraMap
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Function.comp_def, enumeration]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

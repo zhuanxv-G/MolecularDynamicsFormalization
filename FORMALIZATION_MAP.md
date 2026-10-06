@@ -927,3 +927,8 @@ full-check01 passed：9102 jobs/1809公理声明/185exact inputs；10checks退�
 21public；真实双边闭图resolventSet⇔unit(id+(z−1)R_C)，非零1−z真实谱变换与紧Fredholm完整识别；整个complex谱恰原真实real模式集合且=ofReal整个real谱。真Im0/nonpos/非零gap/0spec/countable/finitelevels/closed/isolated，以及任何actualboundedgraphinverse真compact。MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean；docs/reviews/2026-10-06-BrownianGibbsComplexSpectrum/REVIEW.zh-CN.md。原有序基首常数相位待正文规范化；SDE概率识别/core最终语义及整范围pending。
 
 full-check02 passed：9103 jobs/1830公理声明/186exact inputs；10checks退出0、全部input/rawlog SHA匹配、21 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — literal constant-one first vector of complete ordered original eigenbases (BrownianEigenNormalization)
+17public；真实kernel projection与unitnorm推出原首mode phase r*r=1，整个orderedreal basis common sign normalization真实complete/首φ0=e与AE1/所有actualA graph/HasSum/原T normalizedordered HasSum及tsum。实际J嵌入给整个原complex normalizedordered HilbertBasis真实complete/φ0=J e与AEcomplex1/全部actualA_C graph/全输入HasSum及wholecomplex谱orderedλrange。正维是实际ℕ无限完整枚举必要条件，保留全部真实重数。MolecularDynamics/Chapter06/BrownianEigenNormalization.lean；docs/reviews/2026-10-06-BrownianEigenNormalization/REVIEW.zh-CN.md。SDE概率识别/core最终语义及全范围pending。
+
+full-check01 passed：9104 jobs/1847公理声明/187exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

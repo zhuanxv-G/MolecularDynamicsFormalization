@@ -547,3 +547,6 @@ complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模�
 
 ## BrownianGibbsComplexSpectrum: genuine entire complex spectrum proved
 同一原Gibbs wholecomplexLp、原positive masses/原C∞periodic U/β>0，不要求Nc>0。双边closedgraphinverse定义、unit等价、真实非零谱变换、compact Fredholm及全部模式完整性均证明，没有假定整谱=point spectrum，没有用某模型特例替原U。任何actualinverse紧性结论仅使用该B真inverse图条件。全部real谱、负κgap、有限层与closed来源是先前真实证明。SDElaw/Markov正性/式5.6概率识别及C²/C∞ core负责人签核继续pending；默认资源/linters，无占位、新公理或unsafe。
+
+## BrownianEigenNormalization: entire ordered bases with genuine phi-zero equals one
+同一原Gibbs measure/whole real-complex Lp、原positive masses/原C∞periodic U/β>0。0<Nc仅用于实际无限ℕ全mode枚举；r*r=1/首mode是constant/新real与complex基完整性全部证明，不新增sign/unit phase/完整性假设。实际原A/A_C graph与T均不换模型；旧truebasis/真实kernel/coefficient/API结论复用。概率law/Markov正性/式5.6识别及C²/C∞ core负责人签核独立pending。无sorry/admit/newaxiom/unsafe/资源或linter关闭。

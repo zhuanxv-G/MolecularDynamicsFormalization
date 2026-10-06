@@ -230,3 +230,5 @@ import MolecularDynamics.Chapter06.BrownianGibbsComplexOperator
 import MolecularDynamics.Chapter06.BrownianGibbsComplexResolvent
 
 import MolecularDynamics.Chapter06.BrownianGibbsComplexSpectrum
+
+import MolecularDynamics.Chapter06.BrownianEigenNormalization
