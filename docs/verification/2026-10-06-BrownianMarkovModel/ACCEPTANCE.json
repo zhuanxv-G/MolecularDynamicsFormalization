@@ -1,0 +1,132 @@
+{
+  "started_at": "2026-10-06T13:51:14.6832561+08:00",
+  "finished_at": "2026-10-06T13:52:30.1852801+08:00",
+  "head_at_check": "28df9a7fed2dbe83c0c12b1fc3f85204d5816315",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9110,
+  "audit_declarations": 1925,
+  "inputs": 193,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianIntegralSolution_shift",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_future_restart_ae",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_adapted",
+    "MolecularDynamics.textbookBrownianTransitionKernel",
+    "MolecularDynamics.textbookBrownianTransitionKernel_isMarkov",
+    "MolecularDynamics.textbookBrownianTransitionKernel_apply",
+    "MolecularDynamics.textbookBrownianTransitionKernel_global_law",
+    "MolecularDynamics.textbookBrownianTransitionKernel_wiener_law_invariant",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_completed_history_transition_joint_law",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_condDistrib_completed_history"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_shift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_future_restart_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_adapted",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTransitionKernel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTransitionKernel_isMarkov",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTransitionKernel_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTransitionKernel_global_law",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTransitionKernel_wiener_law_invariant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_completed_history_transition_joint_law",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_condDistrib_completed_history",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "827cb54aca840601e1152481570ea57008e30d83b45df1f89ae3ccab3c5b5217"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "d207c2b0478933003b00da3c4879a65c838e98685479e73825e2a0cc4fdffa6b"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "8569c5dc27127d7fbe841114691b8534c9c5a53a9239cbe90978f0866103fb46"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "cf3039db73afa82670fd227ea46040624695e60f88a1f3f109d1911b6f4a098c"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

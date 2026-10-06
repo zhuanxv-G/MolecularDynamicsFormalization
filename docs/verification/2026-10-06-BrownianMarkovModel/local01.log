@@ -1,0 +1,154 @@
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:83:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (↑S + r).toNNReal
+in the target expression
+  B (S + r.toNNReal) sample - B S sample = B (↑S + r).toNNReal sample - B (↑S).toNNReal sample
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+sample : Ω
+hg :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      textbookBrownianIntegralSolution m U β T x (fun t => B t.toNNReal sample) fun t =>
+        textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample
+hc : Continuous fun t => B t sample
+S : ℝ≥0
+T : ℝ
+hT : 0 ≤ T
+t : ℝ
+ht : t ∈ Icc 0 T
+q : ℝ → Fin Nc → ℝ := fun r => textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B r sample
+hs :
+  textbookBrownianIntegralSolution m U β T (q ↑S) (fun t => B (↑S + t).toNNReal sample - B (↑S).toNNReal sample)
+    fun t => q (↑S + t)
+r : ℝ
+hr : r ∈ Icc 0 T
+⊢ B (S + r.toNNReal) sample - B S sample = B (↑S + r).toNNReal sample - B (↑S).toNNReal sample
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:105:8: error(lean.unknownIdentifier): Unknown identifier `textbookWienerVectorCompletedFiltration_measurable_congr`
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:106:2: error: No goals to be solved
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:257:58: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianGlobalRandomConfiguration m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:260:46: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianTransitionKernel m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:261:58: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianGlobalRandomConfiguration m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:264:65: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianTransitionKernel m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:264:68: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:265:53: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianTransitionKernel_isMarkov m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:265:56: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:267:71: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianGlobalRandomConfiguration_adapted m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:267:74: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:270:45: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianTransitionKernel m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:270:48: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:272:57: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianGlobalRandomConfiguration m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:272:60: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:273:64: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianGlobalRandomConfiguration_adapted m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:273:67: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:276:52: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianTransitionKernel m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:276:55: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:277:56: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianGlobalRandomConfiguration m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:277:59: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:281:57: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianGlobalRandomConfiguration m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:281:60: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:284:92: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ 2 U
+but is expected to have type
+  ContDiff ℝ ∞ U
+in the application
+  textbookBrownianGlobalRandomConfiguration_completed_history_transition_joint_law m hm U hU
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:284:95: error(lean.unknownIdentifier): Unknown identifier `hPU`

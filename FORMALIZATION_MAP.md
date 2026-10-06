@@ -957,3 +957,8 @@ full-check01 passed：9108 jobs/1898公理声明/191exact inputs；10checks退�
 17public：真WienerCPath与原Brownianselectedq给finiteAE originalintegral和literalnoiseeq/endpointAEmeasurable/horizonagreement；actualintegerunique拼接单一alltimeprocess，同一fullmeasure全部realT积分方程/initial/evaluationAEmeasurable/wholecontinuous/historyendpoint/literalphysicaleq；actualpushforwardprobability law及event概率。MolecularDynamics/Chapter06/BrownianRandomModel.lean；docs/reviews/2026-10-06-BrownianRandomModel/REVIEW.zh-CN.md。下一actualMarkov/Torus；尚未actualSDElaw=谱T/5.6/core/whole。
 
 full-check01 passed：9109 jobs/1915公理声明/192exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — actual completed-history conditional Markov laws of the same original-mass Brownian configuration process (BrownianMarkovModel)
+10public：actualroughnoise shift/truefutureWienerrestart/sameglobalq Adapted；actualtransitionKernel Markov/endpointpushforward/globaltimeLaw/standardWiener realizationinvariant；真completedhistory jointlaw和actualcondDistrib=kernel(currentconfiguration)，用已证truefuturelaw/independence和原jointendpoint。MolecularDynamics/Chapter06/BrownianMarkovModel.lean；docs/reviews/2026-10-06-BrownianMarkovModel/REVIEW.zh-CN.md。下一真实torusdescent；law=谱T/式5.6/core/wholepending。
+
+full-check01 passed：9110 jobs/1925公理声明/193exact inputs；10checks退出0、全部input/rawlog SHA匹配、10 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

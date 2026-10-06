@@ -1,0 +1,38 @@
+docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean:96:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (↑S + r).toNNReal
+in the target expression
+  B (S + r.toNNReal) sample - B S sample = B (↑S + r).toNNReal sample - B (↑S).toNNReal sample
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+sample : Ω
+hg :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      textbookBrownianIntegralSolution m U β T x (fun t => B t.toNNReal sample) fun t =>
+        textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample
+hc : Continuous fun t => B t sample
+S : ℝ≥0
+T : ℝ
+hT : 0 ≤ T
+t : ℝ
+ht : t ∈ Icc 0 T
+q : ℝ → Fin Nc → ℝ := fun r => textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B r sample
+hs :
+  textbookBrownianIntegralSolution m U β T (q ↑S) (fun t => B (↑S + t).toNNReal sample - B (↑S).toNNReal sample)
+    fun t => q (↑S + t)
+r : ℝ
+hr : r ∈ Icc 0 T
+⊢ B (S + r.toNNReal) sample - B S sample = B (↑S + r).toNNReal sample - B (↑S).toNNReal sample

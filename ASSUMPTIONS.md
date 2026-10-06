@@ -565,3 +565,6 @@ complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模�
 
 ## BrownianRandomModel: actual same global Wiener-driven path and genuine time law
 原positivegeneral masses/C∞integerperiodic U/β>0/gamma1，Nc含0，actualvectorWiener B与其jointGaussian/covariance/cont性质 hB。given真实标准Wiener是原随机方程输入，不是q解假设；实际randomq、uniquehorizon/global拼接、samefullmeasure allrealT、jointderivedendpointAEmeasurable、continuous与physicalnoiseeq全部推导。Probability主结论明确t≥0，并使用actualmap_apply与derivedAEMeasurable证明质量1，避免fallback误认。没有law=T/Markov/torus或stochasticgenerator输入；这些仍未证，C²core负责人和全定理/范围pending。finitecompensatedconstruction所有continuous样本支持Wienerincrements，不错误假定noise可微。
+
+## BrownianMarkovModel: true deterministic-time completed-history Markov assertion
+原positive masses/C∞integerperiodic U/β>0/gamma1/Nc含0和actualstandardvectorWiener B/hB，S,T非负确定时间。actualsameglobalq是已构造真实积分解；shift/restart/Adapted、jointendpointmeasurable、standardfutureWienerlaw与completedpast independence均来自完整证明，不作新前提。主conditional law是给整个actualcompletedWienerpast的condDistrib，明确P.completion及真正completehistory measurable space，不把仅路径restart称Markov、不扩大到stoppingtime或strongMarkov。privategeneric依赖原proof复制仅用于actualendpoint。仍未torusquotient、stochgenerator/SDElaw=谱T、C²core或全定理/范围；负责人pending。
