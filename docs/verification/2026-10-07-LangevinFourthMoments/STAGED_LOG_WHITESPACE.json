@@ -1,0 +1,33 @@
+[
+  {
+    "path": "docs/verification/2026-10-07-LangevinFourthMoments/FULL_DRIVER.log",
+    "sha256": "f09d8970ca0f14a29de0bca8395cf91931f9ede3b8147eaf14f08fddc985327d",
+    "line_numbers": [
+      251,
+      253,
+      258,
+      260
+    ],
+    "reason": "Original diagnostic output preserved byte for byte"
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinFourthMoments/local03.log",
+    "sha256": "711f34b8f53f7724863d73ab82e16af9de56ee3fa1e9f9e0452547607f1f0fab",
+    "line_numbers": [
+      5,
+      207
+    ],
+    "reason": "Original diagnostic output preserved byte for byte"
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinFourthMoments/full-check01/lake_build.log",
+    "sha256": "9e4658aff7e1abfc82db249c5a4395766c51c95b9b7da65fc33bcfc8df914502",
+    "line_numbers": [
+      7,
+      9,
+      14,
+      16
+    ],
+    "reason": "Original diagnostic output preserved byte for byte"
+  }
+]

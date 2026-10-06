@@ -1,0 +1,163 @@
+{
+  "started_at": "2026-10-07T07:19:59.5987068+08:00",
+  "finished_at": "2026-10-07T07:21:21.2027334+08:00",
+  "head_at_check": "90ea4ac760fd0adb9472bf88fe2a758edb8d5c89",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9162,
+  "audit_declarations": 2522,
+  "inputs": 245,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookWienerVector_coordinate_fourth_moment",
+    "MolecularDynamics.textbookWienerVector_coordinate_unit_time_energy_square_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_increment_fourth_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_fourth_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicRealIncrements_coordinate_fourth_moment_bound",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_increment_fourth_div_time_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_fourth_div_time_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement",
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_fourth_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_fourth_moment_bound",
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_fourth_div_time_tendsto_zero"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookWienerVector_coordinate_fourth_moment",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVector_coordinate_unit_time_energy_square_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_increment_fourth_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_fourth_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealIncrements_coordinate_fourth_moment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_increment_fourth_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_fourth_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_fourth_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_fourth_moment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_fourth_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "f09d8970ca0f14a29de0bca8395cf91931f9ede3b8147eaf14f08fddc985327d"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "c14ab9bbd8cfc2089e8d864f1e2a19fe5dfc298a177d4a7eb775e2cb608115c6"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "711f34b8f53f7724863d73ab82e16af9de56ee3fa1e9f9e0452547607f1f0fab"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "f346c251c402ffc2cf0c7dd6e44b8b14ebddb12789a9b9a5c8c7ec21502004ad"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "true_original_Wiener_coordinate_fourth_time_scaling": "t_square_times_standard_Gaussian_fourth_moment",
+  "actual_unit_time_energy_square_integrable": "true_continuous_path_Jensen_dominated_by_original_fourth_power_time_integral",
+  "genuine_actual_p_and_q_residual_common_ae_alltime_path_bounds": true,
+  "actual_p_fourth_integrability": "same_actual_process_memLp_four",
+  "actual_q_fourth_integrability": "genuine_energy_square_domination_and_actual_endpoint_measurability",
+  "actual_p_q_coordinate_fourth_moment_bound": "derived_C_x_i_times_t_square_on_zero_to_one",
+  "actual_p_q_coordinate_fourth_moment_div_time_zero": true,
+  "actual_full_real_phase_increment": "same_global_real_phase_minus_initial_original_representative_and_p0",
+  "actual_phase_fourth_norm_integrable_and_C_x_times_t_square": "true_finite_coordinate_and_product_max_norm_domination",
+  "actual_phase_fourth_norm_moment_div_time_zero": true,
+  "target_moment_limit_or_generator_hypothesis": "none",
+  "model": "same_actual_unitmass_periodic_Cinfty_U_original_B_P_gamma_positive_sigma_arbitrary_no_U_lower_no_density_or_stationarity",
+  "full_C2_actual_generator_identity": "not_proved_actual_Hamiltonian_expected_drift_and_Taylor_expectation_remainder_required",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

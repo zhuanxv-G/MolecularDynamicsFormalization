@@ -1,0 +1,124 @@
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:84:62: error: unsolved goals
+a : ℝ
+⊢ (a ^ 2) ^ 2 = a ^ (2 * 2)
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:88:5: warning: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:88:18: warning: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:88:31: warning: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:133:2: error: Type mismatch: After simplification, term
+  hh
+ has type
+  (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 ≤ ∫ (s : ℝ) in 0..1, (B s.toNNReal sample i ^ 2) ^ 2
+but is expected to have type
+  (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 ≤ ∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 4
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:190:6: error: linarith failed to find a contradiction
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+M1 : ℝ
+_hM1 : 0 ≤ M1
+hpr✝ :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          ∀ (i : Fin N),
+            ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i -
+                  σ * B t.toNNReal sample i) ^
+                2 ≤
+              3 * γ ^ 2 * t ^ 2 * x.2 i ^ 2 + 3 * M1 ^ 2 * t ^ 2 +
+                3 * (textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t i - σ * B t.toNNReal sample i) ^ 2
+M2 : ℝ
+_hM2 : 0 ≤ M2
+hqr✝ :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          ∀ (i : Fin N),
+            (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+                    textbookLangevinPeriodicRepresentative x.1 i -
+                  t * x.2 i) ^
+                2 ≤
+              6 * (γ ^ 2 * x.2 i ^ 2 + M2 ^ 2) * t ^ 4 +
+                (6 * σ ^ 2 * γ ^ 2 * t ^ 3 + 2 * σ ^ 2 * t) * ∫ (s : ℝ) in 0..t, B s.toNNReal sample i ^ 2
+S : ℝ := M1 ^ 2 + M2 ^ 2
+x : textbookLangevinPeriodicPhase N
+sample : Ω
+hpr :
+  ∀ (t : ℝ),
+    0 ≤ t →
+      ∀ (i : Fin N),
+        ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i - σ * B t.toNNReal sample i) ^
+            2 ≤
+          3 * γ ^ 2 * t ^ 2 * x.2 i ^ 2 + 3 * M1 ^ 2 * t ^ 2 +
+            3 * (textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t i - σ * B t.toNNReal sample i) ^ 2
+hqr :
+  ∀ (t : ℝ),
+    0 ≤ t →
+      ∀ (i : Fin N),
+        (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+                textbookLangevinPeriodicRepresentative x.1 i -
+              t * x.2 i) ^
+            2 ≤
+          6 * (γ ^ 2 * x.2 i ^ 2 + M2 ^ 2) * t ^ 4 +
+            (6 * σ ^ 2 * γ ^ 2 * t ^ 3 + 2 * σ ^ 2 * t) * ∫ (s : ℝ) in 0..t, B s.toNNReal sample i ^ 2
+hc : Continuous fun t => B t sample
+t : ℝ
+ht : 0 ≤ t
+ht1 : t ≤ 1
+i : Fin N
+W : ℝ → Fin N → ℝ := fun s => B s.toNNReal sample
+J : ℝ → ℝ := fun s => ∫ (r : ℝ) in 0..s, W r i ^ 2
+A : ℝ := 6 * (γ ^ 2 * x.2 i ^ 2 + S)
+D : ℝ := 6 * σ ^ 2 * γ ^ 2
+C : ℝ := 6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2
+hW : Continuous W
+hWi : Continuous fun s => W s i ^ 2
+hJ0 : 0 ≤ J t
+hJ1 : 0 ≤ J 1
+hJle : J t ≤ J 1
+hpbase :
+  ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i - σ * B t.toNNReal sample i) ^ 2 ≤
+    3 * γ ^ 2 * t ^ 2 * x.2 i ^ 2 + 3 * M1 ^ 2 * t ^ 2 +
+      3 * (textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t i - σ * B t.toNNReal sample i) ^ 2
+hn : (textbookLangevinDampedNoise γ σ W t i - σ * W t i) ^ 2 ≤ σ ^ 2 * γ ^ 2 * t * ∫ (s : ℝ) in 0..t, W s i ^ 2
+hn' : σ ^ 2 * γ ^ 2 * t * J t ≤ σ ^ 2 * γ ^ 2 * t * J 1
+hM : M1 ^ 2 * t ^ 2 ≤ S * t ^ 2
+hp2 :
+  ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i) ^ 2 ≤
+    A * t ^ 2 + D * t * J 1 + 2 * σ ^ 2 * W t i ^ 2
+hqbase :
+  (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i - textbookLangevinPeriodicRepresentative x.1 i -
+        t * x.2 i) ^
+      2 ≤
+    6 * (γ ^ 2 * x.2 i ^ 2 + M2 ^ 2) * t ^ 4 +
+      (6 * σ ^ 2 * γ ^ 2 * t ^ 3 + 2 * σ ^ 2 * t) * ∫ (s : ℝ) in 0..t, B s.toNNReal sample i ^ 2
+ht3 : t ^ 3 ≤ t
+a✝ : (6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2) * t < 6 * σ ^ 2 * γ ^ 2 * t ^ 3 + 2 * σ ^ 2 * t
+⊢ False
+failed

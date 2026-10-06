@@ -1,0 +1,264 @@
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:254:92: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:254:65: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+x : textbookLangevinPeriodicPhase N
+i : Fin N
+this : IsProbabilityMeasure P
+hv : MemLp (fun sample => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2) 4 P
+hm : AEMeasurable (fun x_1 => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T x_1).2 i) P
+hi : MemLp (fun sample => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i) 4 P
+⊢ ¬4 = sorry ()
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:273:13: error: don't know how to synthesize implicit argument `g`
+  @AEMeasurable.sub ℝ Ω Real.measurableSpace Real.instSub inst✝
+    (fun x_1 =>
+      (textbookLangevinGlobalRandomPhase U L hF γ σ (textbookLangevinPeriodicRepresentative x.1, x.2) B T x_1).1 i)
+    (fun _a => ?m.545) P ContinuousSub.measurableSub₂
+    (AEMeasurable.eval
+      (AEMeasurable.fst
+        (textbookLangevinGlobalRandomPhase_endpoint_aemeasurable B P hB U
+          (ContDiff.of_le hU
+            (of_eq_true
+              (Eq.trans WithTop.le_coe_top._simp_1
+                (Eq.trans (congrArg Not (WithTop.ofNat_ne_top._simp_1 2)) not_false_eq_true))))
+          L hF γ σ (textbookLangevinPeriodicRepresentative x.1, x.2) T hT))
+      i)
+    aemeasurable_const
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+i : Fin N
+this : IsProbabilityMeasure P
+S : ℝ
+_hS : 0 ≤ S
+hb :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          t ≤ 1 →
+            ∀ (i : Fin N),
+              ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i) ^ 4 ≤
+                  3 * (6 * (γ ^ 2 * x.2 i ^ 2 + S)) ^ 2 * t ^ 4 +
+                      3 * (6 * σ ^ 2 * γ ^ 2) ^ 2 * t ^ 2 * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+                    3 * (2 * σ ^ 2) ^ 2 * B t.toNNReal sample i ^ 4 ∧
+                (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+                      textbookLangevinPeriodicRepresentative x.1 i) ^
+                    4 ≤
+                  12 * (6 * (γ ^ 2 * x.2 i ^ 2 + S)) ^ 2 * t ^ 8 +
+                      12 * (6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2) ^ 2 * t ^ 2 *
+                        (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+                    12 * t ^ 4 * x.2 i ^ 4
+hj : Integrable (fun sample => (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2) P
+A : ℝ := ⋯
+C : ℝ := ⋯
+hu :
+  Integrable
+    (fun sample =>
+      12 * A ^ 2 * T ^ 8 + 12 * C ^ 2 * T ^ 2 * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+        12 * T ^ 4 * x.2 i ^ 4)
+    P
+⊢ Ω → ℝ
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:275:4: error: don't know how to synthesize implicit argument `b`
+  @aemeasurable_const Ω ℝ inst✝ Real.measurableSpace P ?m.545
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+i : Fin N
+this : IsProbabilityMeasure P
+S : ℝ
+_hS : 0 ≤ S
+hb :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          t ≤ 1 →
+            ∀ (i : Fin N),
+              ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i) ^ 4 ≤
+                  3 * (6 * (γ ^ 2 * x.2 i ^ 2 + S)) ^ 2 * t ^ 4 +
+                      3 * (6 * σ ^ 2 * γ ^ 2) ^ 2 * t ^ 2 * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+                    3 * (2 * σ ^ 2) ^ 2 * B t.toNNReal sample i ^ 4 ∧
+                (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+                      textbookLangevinPeriodicRepresentative x.1 i) ^
+                    4 ≤
+                  12 * (6 * (γ ^ 2 * x.2 i ^ 2 + S)) ^ 2 * t ^ 8 +
+                      12 * (6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2) ^ 2 * t ^ 2 *
+                        (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+                    12 * t ^ 4 * x.2 i ^ 4
+hj : Integrable (fun sample => (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2) P
+A : ℝ := ⋯
+C : ℝ := ⋯
+hu :
+  Integrable
+    (fun sample =>
+      12 * A ^ 2 * T ^ 8 + 12 * C ^ 2 * T ^ 2 * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+        12 * T ^ 4 * x.2 i ^ 4)
+    P
+⊢ ℝ
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:273:7: error: failed to infer `have` declaration type
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:263:62: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+i : Fin N
+this : IsProbabilityMeasure P
+S : ℝ
+_hS : 0 ≤ S
+hb :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          t ≤ 1 →
+            ∀ (i : Fin N),
+              ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i) ^ 4 ≤
+                  3 * (6 * (γ ^ 2 * x.2 i ^ 2 + S)) ^ 2 * t ^ 4 +
+                      3 * (6 * σ ^ 2 * γ ^ 2) ^ 2 * t ^ 2 * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+                    3 * (2 * σ ^ 2) ^ 2 * B t.toNNReal sample i ^ 4 ∧
+                (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+                      textbookLangevinPeriodicRepresentative x.1 i) ^
+                    4 ≤
+                  12 * (6 * (γ ^ 2 * x.2 i ^ 2 + S)) ^ 2 * t ^ 8 +
+                      12 * (6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2) ^ 2 * t ^ 2 *
+                        (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+                    12 * t ^ 4 * x.2 i ^ 4
+hj : Integrable (fun sample => (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2) P
+A : ℝ := 6 * (γ ^ 2 * x.2 i ^ 2 + S)
+C : ℝ := 6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2
+hu :
+  Integrable
+    (fun sample =>
+      12 * A ^ 2 * T ^ 8 + 12 * C ^ 2 * T ^ 2 * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+        12 * T ^ 4 * x.2 i ^ 4)
+    P
+⊢ Integrable
+    (fun sample =>
+      (textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+          textbookLangevinPeriodicRepresentative x.1 i) ^
+        4)
+    P
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:310:92: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω
+docs/verification/2026-10-07-LangevinFourthMoments/Draft.lean:310:65: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+x : textbookLangevinPeriodicPhase N
+i : Fin N
+this : IsProbabilityMeasure P
+S : ℝ
+_hS : 0 ≤ S
+hb :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          t ≤ 1 →
+            ∀ (i : Fin N),
+              ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i) ^ 4 ≤
+                  3 * (6 * (γ ^ 2 * x.2 i ^ 2 + S)) ^ 2 * t ^ 4 +
+                      3 * (6 * σ ^ 2 * γ ^ 2) ^ 2 * t ^ 2 * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+                    3 * (2 * σ ^ 2) ^ 2 * B t.toNNReal sample i ^ 4 ∧
+                (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+                      textbookLangevinPeriodicRepresentative x.1 i) ^
+                    4 ≤
+                  12 * (6 * (γ ^ 2 * x.2 i ^ 2 + S)) ^ 2 * t ^ 8 +
+                      12 * (6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2) ^ 2 * t ^ 2 *
+                        (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2 +
+                    12 * t ^ 4 * x.2 i ^ 4
+A : ℝ := 6 * (γ ^ 2 * x.2 i ^ 2 + S)
+D : ℝ := 6 * σ ^ 2 * γ ^ 2
+E : ℝ := 2 * σ ^ 2
+F : ℝ := 6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2
+J : Ω → ℝ := fun sample => (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ 2
+j : ℝ := ∫ (sample : Ω), J sample ∂P
+m : ℝ := textbookBrownianStandardGaussianFourthMoment
+Cp : ℝ := 3 * A ^ 2 + 3 * D ^ 2 * j + 3 * E ^ 2 * m
+Cq : ℝ := 12 * A ^ 2 + 12 * F ^ 2 * j + 12 * x.2 i ^ 4
+hj : Integrable J P
+hj0 : 0 ≤ j
+hm0 : 0 ≤ m
+hp0 : 0 ≤ Cp
+hq0 : 0 ≤ Cq
+t : ℝ
+ht : 0 ≤ t
+ht1 : t ≤ 1
+hlp : MemLp (fun sample => B t.toNNReal sample i) 4 P
+⊢ ¬4 = sorry ()
