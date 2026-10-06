@@ -222,3 +222,5 @@ import MolecularDynamics.Chapter06.BrownianEigenEnumeration
 import MolecularDynamics.Chapter06.BrownianEigenOrdering
 
 import MolecularDynamics.Chapter06.BrownianSpectralAverage
+
+import MolecularDynamics.Chapter06.BrownianGibbsComplexification

@@ -535,3 +535,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianSpectralAverage: actual analytic integral averages, probability identification kept separate
 原sameGibbs entireLp、原正质量/C∞整数周期U/β>0不变；无Nc>0要求，解析平均包含Nc0。初始ρ的实际integral=1仅真实初始质量条件；一般质量结果不需要此条件。ρ与Tρ非负、Markov核、SDElaw/PDE识别均未假设或声称。本批真正积分可积性、原T质量守恒、对偶、真实canonical积分极限、严格正K/α和全部tests/t的指数估计已直接推导，无结论作前提。原文(5.6)真实时变概率law仍独立pending，复谱与C²/core语义pending；无placeholder/newaxiom/unsafe/资源或linter绕过。
+
+## BrownianGibbsComplexification: genuine same-measure entire complex L2 and complete mode basis
+complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模型假设；使用相同原Gibbs measure，不替换为Haar。完整complex基依赖原hm>0/U C∞periodic/β>0已接受全real本征基；dense complex span真正由全real HasSum和actual complex decomposition推导，未假定完备性/密度/谱完整。Nc0合法。尚未定义复原A graph或证明其complex spectra、也未假定SDElaw、Markov正性或期望识别，原C²core负责人语义pending。无placeholder/newaxiom/unsafe/资源或linter绕过。

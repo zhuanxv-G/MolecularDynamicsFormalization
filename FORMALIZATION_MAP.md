@@ -907,3 +907,8 @@ full-check01 passed：9098 jobs/1754公理声明/181exact inputs；10checks退�
 12public；原e真实AE1→所有整个Gibbs Lp代表可积、两代表乘积可积、实际inner=product integral、e pairing=实际integral。原T保真integral mass且integral duality；全ρ/g真实积分指数收敛至g integral*ρ真实mass。真实初始mass1时K=norm(ρ-e)+1>0及α=实际κ>0；所有原smooth periodic f/非负t左侧真实torus积分收敛至原Z^-1 cube weighted average，右侧原Gibbs test norm。MolecularDynamics/Chapter06/BrownianSpectralAverage.lean；docs/reviews/2026-10-06-BrownianSpectralAverage/REVIEW.zh-CN.md。解析平均完整；实际T positivity/SDElaw expectation(5.6)识别/复谱/coresemanticpending，未冒称Theorem6.1(3)概率部分完成。
 
 full-check01 passed：9099 jobs/1766公理声明/182exact inputs；10checks退出0、全部input/rawlog SHA匹配、12 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — actual whole same-Gibbs complexification and complete complex basis of original real eigenmodes (BrownianGibbsComplexification)
+16public；同一actual原Gibbs measure全Lpℝ/ℂ的真实ofReal/re/im CLM及AE、双向整个空间分解、真norm/inner保存/injective；由原real Hilbert HasSum映射和实际complex closed-span证明完整同索引complex HilbertBasis，保留全部实际模式及重数并给所有complex z HasSum。MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean；docs/reviews/2026-10-06-BrownianGibbsComplexification/REVIEW.zh-CN.md。复杂基为原real模式实际复化；complex original A graph/entire complex spectrum下一未完成，不冒称定义未构造的operator已具备此基。SDE概率识别/core语义/整范围pending。
+
+full-check01 passed：9100 jobs/1782公理声明/183exact inputs；10checks退出0、全部input/rawlog SHA匹配、16 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

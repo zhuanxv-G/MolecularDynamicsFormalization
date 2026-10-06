@@ -1,0 +1,194 @@
+{
+  "started_at": "2026-10-06T10:16:36.4725117+08:00",
+  "finished_at": "2026-10-06T10:17:53.4035878+08:00",
+  "head_at_check": "42f0f1201d1827fa242dd920856fe6d3ba0abc2e",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9100,
+  "audit_declarations": 1782,
+  "inputs": 183,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsL2Complexify",
+    "MolecularDynamics.textbookBrownianGibbsL2RealPart",
+    "MolecularDynamics.textbookBrownianGibbsL2ImagPart",
+    "MolecularDynamics.textbookBrownianGibbsL2Complexify_ae",
+    "MolecularDynamics.textbookBrownianGibbsL2RealPart_ae",
+    "MolecularDynamics.textbookBrownianGibbsL2ImagPart_ae",
+    "MolecularDynamics.textbookBrownianGibbsL2RealPart_complexify",
+    "MolecularDynamics.textbookBrownianGibbsL2ImagPart_complexify",
+    "MolecularDynamics.textbookBrownianGibbsL2Complexify_decomposition",
+    "MolecularDynamics.textbookBrownianGibbsL2Complexify_norm",
+    "MolecularDynamics.textbookBrownianGibbsL2Complexify_injective",
+    "MolecularDynamics.textbookBrownianGibbsL2Complexify_inner",
+    "MolecularDynamics.textbookBrownianGibbsComplexEigenmodes_orthonormal",
+    "MolecularDynamics.textbookBrownianGibbsComplexEigenbasis",
+    "MolecularDynamics.textbookBrownianGibbsComplexEigenbasis_apply",
+    "MolecularDynamics.textbookBrownianGibbsComplexEigenbasis_hasSum"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Complexify",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2RealPart",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2ImagPart",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Complexify_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2RealPart_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2ImagPart_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2RealPart_complexify",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2ImagPart_complexify",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Complexify_decomposition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Complexify_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Complexify_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL2Complexify_inner",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexEigenmodes_orthonormal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexEigenbasis",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexEigenbasis_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexEigenbasis_hasSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "61de1d072a3ff8f5a6a6a54469a7f8199d225444c1cbc9b5bb0292fbdd1d1b5c"
+    },
+    {
+      "path": "api02.log",
+      "sha256": "ec136561b753079a8ab34adcfe7c887c29da2cd13dc573785f41d711e151e675"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "41ff57fc46a2e3438bfba179863a9f84ead5f3ef76e5552f93efecb51c183ce8"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "ab39b9682048e7d3847405fe7df7b1fcaf11a8f185d673de3a10e9abfcb6568f"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "af2f54f0256a521c8ac03bbe8eeb2fc2da121fc9561a4a7443328131c9b5673b"
+    },
+    {
+      "path": "local03-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

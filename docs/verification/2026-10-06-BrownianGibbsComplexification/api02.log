@@ -1,0 +1,43 @@
+ContinuousLinearMap.compLpL 2 volume Complex.ofRealCLM : ↥(Lp ℝ 2 volume) →L[ℝ] ↥(Lp ℂ 2 volume)
+ContinuousLinearMap.coeFn_compLpL
+  Complex.ofRealCLM : ∀ (f : ↥(Lp ℝ ?m.5 ?m.6)),
+  ↑↑((ContinuousLinearMap.compLpL ?m.5 ?m.6 Complex.ofRealCLM) f) =ᵐ[?m.6] fun a => Complex.ofRealCLM (↑↑f a)
+ContinuousLinearMap.compLpL 2 volume Complex.reCLM : ↥(Lp ℂ 2 volume) →L[ℝ] ↥(Lp ℝ 2 volume)
+ContinuousLinearMap.compLpL 2 volume Complex.imCLM : ↥(Lp ℂ 2 volume) →L[ℝ] ↥(Lp ℝ 2 volume)
+Complex.re_add_im (z : ℂ) : ↑z.re + ↑z.im * Complex.I = z
+MeasureTheory.Lp.norm_def.{u_1, u_4} {α : Type u_1} {E : Type u_4} {m : MeasurableSpace α} {p : ENNReal} {μ : Measure α}
+  [NormedAddCommGroup E] (f : ↥(Lp E p μ)) : ‖f‖ = (eLpNorm (↑↑f) p μ).toReal
+MeasureTheory.eLpNorm_congr_norm_ae.{u_1, u_6, u_7} {α : Type u_1} {F : Type u_6} {G : Type u_7}
+  {m0 : MeasurableSpace α} {p : ENNReal} {μ : Measure α} [NormedAddCommGroup F] [NormedAddCommGroup G] {f : α → F}
+  {g : α → G} (hf : AEStronglyMeasurable f μ) (hg : AEStronglyMeasurable g μ) (hfg : ∀ᵐ (x : α) ∂μ, ‖f x‖ = ‖g x‖) :
+  eLpNorm f p μ = eLpNorm g p μ
+MeasureTheory.L2.inner_def.{u_1, u_2, u_4} {α : Type u_1} {E : Type u_2} {𝕜 : Type u_4} [RCLike 𝕜]
+  {m : MeasurableSpace α} {μ : Measure α} [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] (f g : ↥(Lp E 2 μ)) :
+  ⟪f, g⟫_𝕜 = ∫ (a : α), ⟪↑↑f a, ↑↑g a⟫_𝕜 ∂μ
+RCLike.inner_apply.{u_1} {𝕜 : Type u_1} [RCLike 𝕜] (x y : 𝕜) : ⟪x, y⟫_𝕜 = y * (starRingEnd 𝕜) x
+ContinuousLinearMap.integral_comp_comm.{u_1, u_3, u_5, u_6} {X : Type u_1} {E : Type u_3} {Fₗ : Type u_5}
+  [MeasurableSpace X] {μ : Measure X} {𝕜 : Type u_6} [RCLike 𝕜] [NormedAddCommGroup E] [NormedSpace 𝕜 E]
+  [NormedAddCommGroup Fₗ] [NormedSpace 𝕜 Fₗ] [NormedSpace ℝ Fₗ] [CompleteSpace Fₗ] [NormedSpace ℝ E] [CompleteSpace E]
+  (L : E →L[𝕜] Fₗ) {φ : X → E} (φ_int : Integrable φ μ) : ∫ (x : X), L (φ x) ∂μ = L (∫ (x : X), φ x ∂μ)
+ContinuousLinearMap.hasSum.{u_4, u_6, u_7, u_8, u_9} {ι : Type u_4} {R : Type u_6} {R₂ : Type u_7} {M : Type u_8}
+  {M₂ : Type u_9} [Semiring R] [Semiring R₂] [AddCommMonoid M] [Module R M] [AddCommMonoid M₂] [Module R₂ M₂]
+  [TopologicalSpace M] [TopologicalSpace M₂] {σ : R →+* R₂} {L : SummationFilter ι} {f : ι → M} (φ : M →SL[σ] M₂)
+  {x : M} (hf : HasSum f x L) : HasSum (fun b => φ (f b)) (φ x) L
+Submodule.isClosed_topologicalClosure.{u, v} {R : Type u} {M : Type v} [Semiring R] [TopologicalSpace M]
+  [AddCommMonoid M] [Module R M] [ContinuousConstSMul R M] [ContinuousAdd M] (s : Submodule R M) :
+  IsClosed ↑s.topologicalClosure
+IsClosed.mem_of_tendsto.{u, u_1} {X : Type u} [TopologicalSpace X] {α : Type u_1} {x : X} {s : Set X} {f : α → X}
+  {b : Filter α} [b.NeBot] (hs : IsClosed s) (hf : Tendsto f b (𝓝 x)) (h : ∀ᶠ (x : α) in b, f x ∈ s) : x ∈ s
+Submodule.sum_mem.{u, v, w} {R : Type u} {M : Type v} {ι : Type w} [Semiring R] [AddCommMonoid M]
+  {module_M : Module R M} (p : Submodule R M) {t : Finset ι} {f : ι → M} : (∀ c ∈ t, f c ∈ p) → ∑ i ∈ t, f i ∈ p
+Submodule.le_topologicalClosure.{u, v} {R : Type u} {M : Type v} [Semiring R] [TopologicalSpace M] [AddCommMonoid M]
+  [Module R M] [ContinuousConstSMul R M] [ContinuousAdd M] (s : Submodule R M) : s ≤ s.topologicalClosure
+Submodule.subset_span.{u_1, u_2} {R : Type u_1} {M : Type u_2} [Semiring R] [AddCommMonoid M] [Module R M] {s : Set M} :
+  s ⊆ ↑(Submodule.span R s)
+Submodule.eq_top_iff'.{u_1, u_3} {R : Type u_1} {M : Type u_3} [Semiring R] [AddCommMonoid M] [Module R M]
+  {p : Submodule R M} : p = ⊤ ↔ ∀ (x : M), x ∈ p
+orthonormal_iff_ite.{u_1, u_2, u_4} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [SeminormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] {ι : Type u_4} [DecidableEq ι] {v : ι → E} :
+  Orthonormal 𝕜 v ↔ ∀ (i j : ι), ⟪v i, v j⟫_𝕜 = if i = j then 1 else 0
+algebraMap_smul.{u_1, u_2, u_3} {R : Type u_1} [CommSemiring R] (A : Type u_2) [Semiring A] [Algebra R A] {M : Type u_3}
+  [AddCommMonoid M] [Module A M] [Module R M] [IsScalarTower R A M] (r : R) (m : M) : (algebraMap R A) r • m = r • m

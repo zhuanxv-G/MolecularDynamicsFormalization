@@ -1,0 +1,21 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianGibbsComplexification/Draft.lean",
+  "source_sha256": "9604b788796b445c8c5f1ff759085dbdfc162a677c30a6e36cd4e1f6259bc9cd",
+  "log": "docs/verification/2026-10-06-BrownianGibbsComplexification/local03-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public_declarations": 16,
+  "same_original_entire_complex_Gibbs_Lp": "proved_locally",
+  "actual_real_imaginary_decomposition": "proved_locally",
+  "norm_inner_preservation": "proved_locally",
+  "whole_complete_complex_Hilbert_eigenbasis_with_all_original_multiplicities": "proved_locally",
+  "complex_original_generator_graph": "next_dependency_not_yet_constructed",
+  "entire_complex_spectrum": "not_proved",
+  "actual_SDE_law_Markov_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete",
+  "integrated": false,
+  "full_check": "not_run"
+}

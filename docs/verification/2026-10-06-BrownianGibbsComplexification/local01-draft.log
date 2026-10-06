@@ -1,0 +1,32 @@
+docs/verification/2026-10-06-BrownianGibbsComplexification/Draft.lean:59:89: error: unsolved goals
+Nc : ℕ
+U : (Fin Nc → ℝ) → ℝ
+β : ℝ
+x : ↥(Gibbs U β)
+Q : UnitAddTorus (Fin Nc)
+hI :
+  ↑↑((textbookBrownianGibbsL2ImagPart U β) ((textbookBrownianGibbsL2Complexify U β) x)) Q =
+    (↑↑((textbookBrownianGibbsL2Complexify U β) x) Q).im
+hJ : ↑↑((textbookBrownianGibbsL2Complexify U β) x) Q = ↑(↑↑x Q)
+h0 : ↑↑0 Q = 0 Q
+⊢ 0 = 0 Q
+docs/verification/2026-10-06-BrownianGibbsComplexification/Draft.lean:108:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Complex.ofRealCLM (∫ (x_1 : UnitAddTorus (Fin Nc)), ⟪↑↑x x_1, ↑↑y x_1⟫_ℝ ∂textbookConfigurationTorusGibbsMeasure U β)
+in the target expression
+  ∫ (a : UnitAddTorus (Fin Nc)),
+      ⟪↑↑((textbookBrownianGibbsL2Complexify U β) x) a,
+        ↑↑((textbookBrownianGibbsL2Complexify U β) y) a⟫_ℂ ∂textbookConfigurationTorusGibbsMeasure U β =
+    ↑(∫ (a : UnitAddTorus (Fin Nc)), ⟪↑↑x a, ↑↑y a⟫_ℝ ∂textbookConfigurationTorusGibbsMeasure U β)
+
+Nc : ℕ
+U : (Fin Nc → ℝ) → ℝ
+β : ℝ
+x y : ↥(Gibbs U β)
+⊢ ∫ (a : UnitAddTorus (Fin Nc)),
+      ⟪↑↑((textbookBrownianGibbsL2Complexify U β) x) a,
+        ↑↑((textbookBrownianGibbsL2Complexify U β) y) a⟫_ℂ ∂textbookConfigurationTorusGibbsMeasure U β =
+    ↑(∫ (a : UnitAddTorus (Fin Nc)), ⟪↑↑x a, ↑↑y a⟫_ℝ ∂textbookConfigurationTorusGibbsMeasure U β)
+docs/verification/2026-10-06-BrownianGibbsComplexification/Draft.lean:162:62: error(lean.invalidField): Invalid field `hasSum_inner_mul`: The environment does not contain `HilbertBasis.hasSum_inner_mul`, so it is not possible to project the field `hasSum_inner_mul` from an expression
+  textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
+of type
+  HilbertBasis (textbookBrownianGibbsEigenIndex m U hU hPU β) ℂ ↥(GibbsComplex U β)
