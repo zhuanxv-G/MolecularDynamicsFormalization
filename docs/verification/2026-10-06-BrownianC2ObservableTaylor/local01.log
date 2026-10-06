@@ -1,0 +1,11 @@
+docs/verification/2026-10-06-BrownianC2ObservableTaylor/Draft.lean:98:40: error: Application type mismatch: The argument
+  Continuous.intervalIntegrable continuous_const
+has type
+  ∀ (a b : ℝ), IntervalIntegrable (fun x => ?m.453) ?m.456 a b
+but is expected to have type
+  IntervalIntegrable ?m.446 ?m.448 ?m.444 ?m.445
+in the application
+  intervalIntegral.integral_sub (Continuous.intervalIntegrable continuous_const)
+docs/verification/2026-10-06-BrownianC2ObservableTaylor/Draft.lean:101:13: warning: `ContinuousMultilinearMap.sub_apply` has been deprecated: Use `sub_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sub_apply` to `sub_apply x`).

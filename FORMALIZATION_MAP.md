@@ -1010,3 +1010,7 @@ full-check01 passed：9121 jobs/2087公理声明/204exact inputs；10checks退�
 BrownianProbabilityGibbsImage / CH06-DEP-087 / NOT-CH06-096：复用同原Gibbs ContinuousToLp；真实originalobservable/generatorimage嵌入身份、CMap输入actual概率GibbsL2 image及sameq期待AE代表/norm。真实sameGibbs强coregeneratorlimit/alltime连续右导数/Dynkin和closed原核心值识别。11public local03通过统一验收中；wholeL2-input概率operator延拓/实际谱T/Gibbsinvariance/Lp/5.6/CMapgraphcore/C²core负责人/wholepending。
 
 full-check01 passed：9122 jobs/2098公理声明/205exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianC2ObservableTaylor / CH06-DEP-088 / NOT-CH06-097：原observable只C²periodic；真正Hessianuniformmodulus/globaljets、二阶Taylor Hessian差积分余项、uniformPeano/globalquadratic+quarticbound。sameactualq trueintegrability/二四矩导出∀ε实际期待εt+Cεt²与norm/t全初值uniform0及signed逐点限。11public local04通过统一验收中；原C²实际uniformgenerator下一批，C²closedcore/谱T/L2input概率延拓/invariance/Lp/5.6/owner/wholepending。
+
+full-check01 passed：9123 jobs/2109公理声明/206exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

@@ -1,0 +1,15 @@
+docs/verification/2026-10-06-BrownianC2ObservableTaylor/Draft.lean:98:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (x : ℝ) in 0..1, ?m.453 - id x ∂?m.467
+in the target expression
+  ∫ (s : ℝ) in 0..1, 1 - s = 2⁻¹
+
+Nc : ℕ
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ 2 f
+x y : Fin Nc → ℝ
+he :
+  f (x + y) = f x + (fderiv ℝ f x) y + ∫ (t : ℝ) in 0..1, (1 - t) * (iteratedFDeriv ℝ (1 + 1) f (x + t • y)) fun x => y
+hH : Continuous (iteratedFDeriv ℝ 2 f)
+hc : Continuous fun s => (1 - s) * (iteratedFDeriv ℝ 2 f (x + s • y)) fun x => y
+hk : Continuous fun s => (1 - s) * (iteratedFDeriv ℝ 2 f x) fun x => y
+⊢ ∫ (s : ℝ) in 0..1, 1 - s = 2⁻¹
