@@ -998,3 +998,7 @@ full-check01 passed：9118 jobs/2063公理声明/201exact inputs；10checks退�
 BrownianGeneratorExpectation / CH06-DEP-084 / NOT-CH06-093：真Frechet/原coord partial一二阶/Hessian展开和literal原mass generatorcoeff identity；sameactualq f(q)/quadratic真可积及真实概率期待Taylor展开，truefirstmean/crosssecond/rem quotient实际极限推出全初值原smoothperiodic f的actual(Ef(q_t)-f(x))/t→literal原生成元。8public local03通过统一验收中；uniformCMap generator/actualprobability=Gibbs谱T/5.6/Gibbsinvariance/Lp/core负责人/wholepending。
 
 full-check01 passed：9119 jobs/2071公理声明/202exact inputs；10checks退出0、全部input/rawlog SHA匹配、8 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianUniformGenerator / CH06-DEP-085 / NOT-CH06-094：原Df/Hessian总和共同bound，actualFrozenError期待=真实meanerror及全初值均值error；真actualcovariance/Taylor期待uniform误差→原generator全初值商error≤C(t+sqrt t)。同一realq期待=实际CMap概率operator，whole C(Torus,R) supnorm differencequotient强趋literal原smoothperiodiccore generatorimage。10public local03通过统一验收中；完整CMapgraphcore/actual概率=Gibbs谱T/Gibbsinvariance/Lp/5.6/core负责人/wholepending。
+
+full-check01 passed：9120 jobs/2081公理声明/203exact inputs；10checks退出0、全部input/rawlog SHA匹配、10 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

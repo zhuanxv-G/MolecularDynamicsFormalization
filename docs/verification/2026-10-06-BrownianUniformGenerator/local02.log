@@ -1,0 +1,110 @@
+docs/verification/2026-10-06-BrownianUniformGenerator/Draft.lean:110:41: error: failed to prove positivity/nonnegativity/nonzeroness
+docs/verification/2026-10-06-BrownianUniformGenerator/Draft.lean:129:44: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hpf : textbookUnitPeriodicPotential f
+M1 : ℝ
+hM1 : 0 ≤ M1
+hmean :
+  ∀ (x : Fin Nc → ℝ) (t : ℝ),
+    0 ≤ t →
+      ‖∫ (sample : Ω), textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x ∂P -
+            t • textbookBrownianSDEDrift m U x‖ ≤
+        ↑(textbookBrownianDriftLipschitzConstant m U hU hPU) * (M1 * t + (∑ i, √(2 * β⁻¹ * (m i)⁻¹)) * √t) * t
+M2 : ℝ
+hM2 : 0 ≤ M2
+hsecond :
+  ∀ (x : Fin Nc → ℝ) (t : ℝ),
+    0 ≤ t →
+      ∀ (i j : Fin Nc),
+        |∫ (sample : Ω),
+                (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) i *
+                  (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) j ∂P -
+              textbookBrownianSDENoiseAmplitude m β i * textbookBrownianSDENoiseAmplitude m β j *
+                if i = j then t else 0| ≤
+          M2 * t * (M2 * t + (2 * ∑ k, √(2 * β⁻¹ * (m k)⁻¹)) * √t)
+K1 K2 : ℝ
+hK1 : 0 ≤ K1
+hK2 : 0 ≤ K2
+hjet :
+  ∀ (x : Fin Nc → ℝ),
+    ‖fderiv ℝ f x‖ ≤ K1 ∧ ∑ i, ∑ j, |textbookConfigurationPartial (textbookConfigurationPartial f j) i x| ≤ K2
+Cr : ℝ
+hCr : 0 ≤ Cr
+hrem :
+  ∀ (x : Fin Nc → ℝ),
+    ∀ t ∈ Icc 0 1,
+      ∫ (sample : Ω), ‖textbookBrownianGlobalObservableTaylorRemainder m hm U hU hPU β hβ B f x t sample‖ ∂P ≤
+        Cr * t * √t
+N : ℝ := ∑ i, √(2 * β⁻¹ * (m i)⁻¹)
+L : ℝ := ↑(textbookBrownianDriftLipschitzConstant m U hU hPU)
+hN : 0 ≤ N
+hL : 0 ≤ L
+A : ℝ := K1 * L * M1 + 2⁻¹ * K2 * M2 ^ 2
+D0 : ℝ := K1 * L * N + K2 * M2 * N + Cr
+hA : 0 ≤ A
+hD0 : 0 ≤ D0
+x : Fin Nc → ℝ
+t : ℝ
+ht : t ∈ Icc 0 1
+X : Ω → Fin Nc → ℝ := fun sample => textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x
+H : Fin Nc → Fin Nc → ℝ := fun i j => textbookConfigurationPartial (textbookConfigurationPartial f j) i x
+E : Fin Nc → Fin Nc → ℝ := fun i j => ∫ (sample : Ω), X sample i * X sample j ∂P
+V : Fin Nc → Fin Nc → ℝ :=
+  fun i j => textbookBrownianSDENoiseAmplitude m β i * textbookBrownianSDENoiseAmplitude m β j * if i = j then t else 0
+Q : ℝ := ∑ i, ∑ j, H i j * (E i j - V i j)
+R : ℝ := ∫ (sample : Ω), textbookBrownianGlobalObservableTaylorRemainder m hm U hU hPU β hβ B f x t sample ∂P
+D : Fin Nc → ℝ := ∫ (sample : Ω), X sample ∂P - t • textbookBrownianSDEDrift m U x
+err : ℝ := M2 * t * (M2 * t + 2 * N * √t)
+herr : 0 ≤ err
+hv : ∑ i, ∑ j, H i j * V i j = t * ∑ i, textbookBrownianSDENoiseAmplitude m β i ^ 2 * H i i
+hQeq : Q = ∑ i, ∑ j, H i j * E i j - t * ∑ i, textbookBrownianSDENoiseAmplitude m β i ^ 2 * H i i
+⊢ (fderiv ℝ f x) (∫ (sample : Ω), textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x ∂P) +
+            (∑ x_1,
+                ∑ x_2,
+                  textbookConfigurationPartial (textbookConfigurationPartial f x_2) x_1 x *
+                    ∫ (sample : Ω),
+                      textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample x_1 *
+                              textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample x_2 -
+                            textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample x_1 * x x_2 -
+                          x x_1 * textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample x_2 +
+                        x x_1 * x x_2 ∂P) *
+              (1 / 2) +
+          ∫ (sample : Ω), textbookBrownianGlobalObservableTaylorRemainder m hm U hU hPU β hβ B f x t sample ∂P -
+        t * (fderiv ℝ f x) (textbookBrownianSDEDrift m U x) +
+      (t *
+          ∑ x_1,
+            textbookBrownianSDENoiseAmplitude m β x_1 ^ 2 *
+              textbookConfigurationPartial (textbookConfigurationPartial f x_1) x_1 x) *
+        (-1 / 2) =
+    (∑ x_1,
+                ∑ x_2,
+                  textbookConfigurationPartial (textbookConfigurationPartial f x_2) x_1 x *
+                    ∫ (sample : Ω),
+                      textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample x_1 *
+                              textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample x_2 -
+                            textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample x_1 * x x_2 -
+                          x x_1 * textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample x_2 +
+                        x x_1 * x x_2 ∂P) *
+              (1 / 2) +
+            ∫ (sample : Ω), textbookBrownianGlobalObservableTaylorRemainder m hm U hU hPU β hβ B f x t sample ∂P -
+          t * (fderiv ℝ f x) (textbookBrownianSDEDrift m U x) +
+        (t *
+            ∑ x_1,
+              textbookBrownianSDENoiseAmplitude m β x_1 ^ 2 *
+                textbookConfigurationPartial (textbookConfigurationPartial f x_1) x_1 x) *
+          (-1 / 2) +
+      (fderiv ℝ f x) (∫ (sample : Ω), -x + textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample ∂P)

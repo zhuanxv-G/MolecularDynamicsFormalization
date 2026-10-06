@@ -1,0 +1,128 @@
+{
+  "started_at": "2026-10-06T16:54:04.3880019+08:00",
+  "finished_at": "2026-10-06T16:55:19.0194022+08:00",
+  "head_at_check": "d182a0b54d811cd928ed71fb675d55eb86927ae7",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9120,
+  "audit_declarations": 2081,
+  "inputs": 203,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianObservable_Taylor_coefficients_bound",
+    "MolecularDynamics.textbookBrownianGlobalFrozenDriftError_expectation",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_mean_error_bound",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_uniform_generator_error",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_uniform_generator_quotient_error",
+    "MolecularDynamics.textbookConfigurationContinuousObservable",
+    "MolecularDynamics.textbookBrownianContinuousGeneratorImage",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_original_observable_expectation",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_uniform_generator_error",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_original_generator_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianObservable_Taylor_coefficients_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalFrozenDriftError_expectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_mean_error_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_uniform_generator_error",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_uniform_generator_quotient_error",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationContinuousObservable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianContinuousGeneratorImage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_original_observable_expectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_uniform_generator_error",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_original_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "42ac98481072dbe91b604ef46425593cc353caa73a14b019dd61fa2d1f18db9f"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "c29bd6610181a463b2946856deb830a788088d5c44dc6414879b727d2dfd9110"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

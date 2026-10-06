@@ -586,3 +586,5 @@ BrownianFourthMomentEstimates：原m正性/β正性/γ1/任意Nc、U C∞integer
 BrownianObservableTaylor：原m正性/β正性/γ1/任意Nc、U和observable f C∞ integerperiodic、trueWiener B/P及sameglobalq。真实jets周期和compactcube导出全阶bound，真实多元Taylor积分和multilinear norm推cubicbound；truefiniteLp3/AEmeas/moment rate导出实际余项可积/期待及商极限。全阶bound/余项界及极限不作为模型前提；原C²vsC∞core、wholeactualgenerator/谱T/5.6/Gibbsinvariance负责人pending。
 
 BrownianGeneratorExpectation：原正质量/β>0/γ1/任意Nc、U与f C∞整数周期、sameglobalq及真实Wiener/P。原partial/Hessian实际微分和finitecoord identity推导，actualf(q)/quadratic/Taylor项可积显式证明，再使用真正first/crosssecond/rem概率极限导出originalgenerator逐初值期待商。无generator/law/目标前提。wholeuniform CMap generator、概率operator=Gibbs谱T及5.6/Gibbsinvariance/Lp、C²core负责人签核未完成。
+
+BrownianUniformGenerator：原m正性/β正性/γ1/任意Nc、U与f C∞整数周期、真实Wiener/P/sameq/UnitAddTorus actual概率C0 semigroup。原Df/Hessian共同bound、实际均值error/二阶covarianceerror/Taylorerror和sameq积分身份均推导。全初值uniformgeneratorerror及actualsupnorm generator极限是真结论，无目标/不变性/谱T识别假设。未声称wholeCMapgraphcore/actualprobability=Gibbs谱T或Gibbsinvariance/Lp extension。C²vsC∞负责人签核仍pending。
