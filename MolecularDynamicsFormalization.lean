@@ -342,3 +342,5 @@ import MolecularDynamics.Chapter06.LangevinPositiveTimeDensity
 import MolecularDynamics.Chapter06.LangevinPositiveTimeHarris
 
 import MolecularDynamics.Chapter06.LangevinSmallTimeMomentum
+
+import MolecularDynamics.Chapter06.LangevinMomentumFirstMean

@@ -1,0 +1,127 @@
+{
+  "started_at": "2026-10-07T06:50:33.503817+08:00",
+  "finished_at": "2026-10-07T06:51:49.2103162+08:00",
+  "head_at_check": "a1204495029986bb05cbb36a8cbe3364b509bb1f",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9160,
+  "audit_declarations": 2498,
+  "inputs": 243,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinDampedNoise_coordinate_Brownian_remainder_mean_div_time_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicForceConvolution",
+    "MolecularDynamics.textbookLangevinPeriodicForceConvolution_aemeasurable",
+    "MolecularDynamics.textbookLangevinPeriodicForceConvolution_norm_bound_ae",
+    "MolecularDynamics.textbookLangevinPeriodicForceConvolution_coordinate_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicForceConvolution_coordinate_average_tendsto_ae",
+    "MolecularDynamics.textbookLangevinPeriodicForceConvolution_coordinate_mean_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_increment_mean_div_time_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_coordinate_Brownian_remainder_mean_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicForceConvolution",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicForceConvolution_aemeasurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicForceConvolution_norm_bound_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicForceConvolution_coordinate_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicForceConvolution_coordinate_average_tendsto_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicForceConvolution_coordinate_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_increment_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "4b28884665107d36aa7b05a6ab7e857722fe4981cca6105acd39142d9cbcb2c9"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "85ccb2d705e3509be50baac8206f74574bb185666ac9e6e52a43c5e520bde89e"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "f61d1dac46ee47dfc3ebf59b325550b7b3e180e2cfaf72fd3ec1284c89b5ecfb"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "9a14007a37f6f538ceeee90a9c1b8efc9ede74cde84ac24621e05021a31474e5"
+    }
+  ],
+  "genuine_actual_force_convolution_clamped_ordinary_FTC_path_average_limit": true,
+  "actual_convolution_AEM_derived_from_true_Duhamel_endpoint_noise": true,
+  "genuine_periodic_force_M_times_T_bound_coordinate_integrability": true,
+  "true_fixed_M_dominator_and_original_P_DCT_force_average_mean_limit": true,
+  "actual_noise_remainder_mean_div_time_zero": "true_variance_and_previously_derived_O_T_cube_secondMoment",
+  "actual_original_Wiener_mean_zero_and_true_exp_minus_gammaT_derivative": true,
+  "actual_momentum_Duhamel_expected_decomposition": true,
+  "original_momentum_increment_mean_div_time_limit": "true_force_q0_minus_gamma_p0",
+  "infinitesimal_mean_or_generator_premise": "none",
+  "local_and_build_output": "ring_nf_informational_hint_preserved_no_Lean_error_or_warning_not_empty",
+  "original_model": "same_actual_unitmass_periodic_Cinfty_U_original_B_P_gamma_positive_sigma_arbitrary_no_U_lower_no_density_stationarity",
+  "full_C2_actual_generator_identity": "not_proved_position_moments_Taylor_required",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

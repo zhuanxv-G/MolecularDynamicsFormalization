@@ -1,0 +1,163 @@
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:17:51: warning: `ContinuousOn.restrict` has been deprecated: Use `ContinuousOn.domRestrict` instead
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:20:26: error: unsolved goals
+f : ℝ → ℝ
+hf : ContinuousOn f (Icc 0 1)
+γ : ℝ
+fc : C(↑(Icc 0 1), ℝ) := { toFun := fun s => f ↑s, continuous_toFun := ⋯ }
+g : ℝ → ℝ := fun s => Real.exp (γ * s) * fc (projIcc 0 1 ⋯ s)
+hg : Continuous g
+⊢ { toFun := fun s => f ↑s, continuous_toFun := ⋯ } ⟨0, ⋯⟩ = f 0
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:27:4: error: Type mismatch: After simplification, term
+  HasDerivAt.comp 0 (Real.hasDerivAt_exp (-γ * 0)) (HasDerivAt.const_mul (-γ) (hasDerivAt_id 0))
+ has type
+  HasDerivAt (Real.exp ∘ HMul.hMul (-γ)) (-γ) 0
+but is expected to have type
+  HasDerivAt (fun t => Real.exp (-(γ * t))) (-γ) 0
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:29:4: error: Type mismatch: After simplification, term
+  HasDerivAt.mul he hd
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.normedCommRing.toAddCommGroup
+    (NormedAlgebra.toNormedSpace ℝ).toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    ((fun t => Real.exp (-γ * t)) * fun u => ∫ (x : ℝ) in 0..u, g x) (f 0) 0
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.instAddCommGroup Semiring.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun t => Real.exp (-γ * t) * ∫ (s : ℝ) in 0..t, g s) (f 0) 0
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:39:58: error: Application type mismatch: The argument
+  ht
+has type
+  t ∈ Ioi 0
+but is expected to have type
+  ?m.520 < ?m.521
+in the application
+  LT.lt.le ht
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:39:35: error: Type mismatch: After simplification, term
+  hs
+ has type
+  s ∈ uIcc 0 t
+but is expected to have type
+  s ∈ Icc 0 t
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:23:53: warning: This simp argument is unused:
+  ContinuousMap.coe_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mul_zero, Real.exp_zero, one_mul, fc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:60:91: error: typeclass instance problem is stuck
+  IsLocallyFiniteMeasure ?m.221
+
+Note: Lean will not try to resolve this typeclass instance problem because the fourth type argument to `IsLocallyFiniteMeasure` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:90:51: error(lean.invalidField): Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression
+  mul_le_mul_right ?m.397
+of type
+  ∀ (a : ?m.386), a * ?m.387 ≤ a * ?m.388
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:90:30: error: Application type mismatch: The argument
+  sq_pos_of_pos ht0
+has type
+  0 < t ^ 2
+but is expected to have type
+  ?m.387 ≤ ?m.388
+in the application
+  mul_le_mul_right (sq_pos_of_pos ht0)
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:135:13: error: don't know how to synthesize implicit argument `f`
+  @AEMeasurable.sub (Fin N → ℝ) Ω MeasurableSpace.pi Pi.instSub inst✝
+    ((fun x_1 => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T x_1).2) - fun _a => ?m.103)
+    (fun sample => textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T) P Pi.measurableSub₂
+    (AEMeasurable.sub hp aemeasurable_const) hn
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+x : textbookLangevinPeriodicPhase N
+hp : AEMeasurable (fun x_1 => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T x_1).2) P
+hn : AEMeasurable (fun sample => textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T) P
+⊢ Ω → Fin N → ℝ
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:135:14: error: don't know how to synthesize implicit argument `g`
+  @AEMeasurable.sub (Fin N → ℝ) Ω MeasurableSpace.pi Pi.instSub inst✝
+    (fun x_1 => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T x_1).2) (fun _a => ?m.103) P
+    Pi.measurableSub₂ hp aemeasurable_const
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+x : textbookLangevinPeriodicPhase N
+hp : AEMeasurable (fun x_1 => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T x_1).2) P
+hn : AEMeasurable (fun sample => textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T) P
+⊢ Ω → Fin N → ℝ
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:135:21: error: don't know how to synthesize implicit argument `b`
+  @aemeasurable_const Ω (Fin N → ℝ) inst✝ MeasurableSpace.pi P ?m.103
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+x : textbookLangevinPeriodicPhase N
+hp : AEMeasurable (fun x_1 => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T x_1).2) P
+hn : AEMeasurable (fun sample => textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T) P
+⊢ Fin N → ℝ
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:135:7: error: failed to infer `have` declaration type
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:131:82: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+x : textbookLangevinPeriodicPhase N
+hp : AEMeasurable (fun x_1 => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T x_1).2) P
+hn : AEMeasurable (fun sample => textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T) P
+⊢ AEMeasurable (textbookLangevinPeriodicForceConvolution B U L hF γ σ T x) P
+docs/verification/2026-10-07-LangevinMomentumFirstMean/Draft.lean:234:4: error: Type mismatch: After simplification, term
+  HasDerivAt.comp 0 (Real.hasDerivAt_exp (-γ * 0)) (HasDerivAt.const_mul (-γ) (hasDerivAt_id 0))
+ has type
+  HasDerivAt (Real.exp ∘ HMul.hMul (-γ)) (-γ) 0
+but is expected to have type
+  HasDerivAt (fun T => Real.exp (-(γ * T))) (-γ) 0
