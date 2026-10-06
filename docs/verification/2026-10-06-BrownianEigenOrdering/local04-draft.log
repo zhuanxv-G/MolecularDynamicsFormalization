@@ -1,0 +1,23 @@
+docs/verification/2026-10-06-BrownianEigenOrdering/Draft.lean:116:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) n
+in the target expression
+  (fun n => ((textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) n).fst) n ≤
+    (fun n => ((textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) n).fst) 0
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+hNc : 0 < Nc
+j : textbookBrownianGibbsEigenIndex m U hU hPU β
+n : ℕ
+hn : (textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) n = j
+hp :
+  (fun n => ((textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) n).fst) n ≤
+    (fun n => ((textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) n).fst) 0
+hj : j.fst = 0
+⊢ ((textbookBrownianGibbsOrderedEigenEnumeration m hm U hU hPU β hβ hNc) 0).fst = 0

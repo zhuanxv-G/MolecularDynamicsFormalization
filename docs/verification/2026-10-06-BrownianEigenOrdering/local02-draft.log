@@ -1,0 +1,10 @@
+docs/verification/2026-10-06-BrownianEigenOrdering/Draft.lean:61:9: error: Invalid `⟨...⟩` notation: The expected type
+  ∀ (a : Ord m U hU hPU β), ⊥ ≤ a
+is not an inductive type
+
+Note: This notation can only be used when the expected type is an inductive type with a single constructor
+docs/verification/2026-10-06-BrownianEigenOrdering/Draft.lean:61:9: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Bot (Ord m U hU hPU β)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianEigenOrdering/Draft.lean:62:8: error: No goals to be solved

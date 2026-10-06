@@ -529,3 +529,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianEigenEnumeration: proved positive-dimensional infinitude and genuine complete sequence
 仅将 0<Nc 作为无限维结论真实适用维数条件；正质量/原 U C∞periodic/β>0 与原 entireGibbs 不变。Infinite/Denumerable/整个谱无限/λ_n escape 均由实际 Haar实虚满射、真实 Fourier 独立、wholeGibbsHaar unitary、实际完整本征基和既有有限谱层推导，无结论入假设。ℕ 双射覆盖全部索引及重数；未假定或声称排序与首模式。Nc0此前 finite/cofinite statement保留，未强行无限化。复化Hilbert空间用于无限维依赖，不等于证明A复谱。真正 Markov/SDElaw expectation及原C²/core最终semanticpending；无placeholder/newaxiom/unsafe/限制绕过。
+
+## BrownianEigenOrdering: proved ordering and simple zero eigenvalue
+仅原hm>0、原C∞整数周期U、β>0和无限序列适用的Nc>0。真实有限谱层、Infinite、OrderBot、NoMax、排序、zero-simple、λn非零和谱隙全部推导，不藏入假设。ℕ实际双射覆盖全部模式及重数；同一整个Lp真实T对所有x,t提供有序展开，未假定SDE期望等于T。零空间=span实际归一化常数及finrank1允许Nc0。φ0相位未选定，未声称φ0=e；复谱/Markov/SDElaw概率识别及C²/core最终semanticpending。无placeholder/newaxiom/unsafe/限制绕过。

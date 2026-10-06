@@ -897,3 +897,8 @@ full-check01 passed：9096 jobs/1726公理声明/179exact inputs；10checks退�
 11 public：真实实 Haar L² 无限维由实际实虚部满射与 Fourier 独立证明，再 actual whole Gibbs unitary 推原 Gibbs 无限维、实际 eigenIndex Infinite。与既有 Countable 合成真正 ℕ≃actualIndex，保留所有模式和重数；complete ℕ HilbertBasis、逐向量真图、所有 x HasSum、λ_n→−∞、整个实谱=sequence range 及实际全谱无限。MolecularDynamics/Chapter06/BrownianEigenEnumeration.lean；docs/reviews/2026-10-06-BrownianEigenEnumeration/REVIEW.zh-CN.md。严格 Nc>0；未排序，未声称首项常数。有序谱列/复谱/概率识别/core最终语义继续。
 
 full-check01 passed：9097 jobs/1737公理声明/180exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — actual complete ordered eigenvalues, simple zero mode and ordered evolution (BrownianEigenOrdering)
+17 public；实际Lex降序特征值/升序重数索引由真实有限Iic、bot、无限性noMax构造ℕ有序同构，覆盖全部actualIndex。λ0=0、反单调、n≠0时λn≤−κ、λn→−∞、整个原实谱=range；实际K0=span常数且finrank1。完整整个Gibbs有序HilbertBasis、每个φn真实Agraph、所有x HasSum及同一真实T的有序HasSum/tsum指数展开。MolecularDynamics/Chapter06/BrownianEigenOrdering.lean；docs/reviews/2026-10-06-BrownianEigenOrdering/REVIEW.zh-CN.md。Nc>0用于无限ℕ序列；K0简单含Nc0。首向量相位/复谱/实际SDE概率识别/core最终语义pending。
+
+full-check01 passed：9098 jobs/1754公理声明/181exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

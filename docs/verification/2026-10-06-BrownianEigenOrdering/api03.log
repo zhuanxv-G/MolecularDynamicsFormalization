@@ -1,0 +1,6 @@
+Submodule.mem_span_singleton.{u_1, u_2} {R : Type u_1} {M : Type u_2} [Semiring R] [AddCommMonoid M] [Module R M]
+  {x y : M} : x ∈ R ∙ y ↔ ∃ a, a • y = x
+finrank_span_singleton.{u, v} {K : Type u} {V : Type v} [DivisionRing K] [AddCommGroup V] [Module K V] {v : V}
+  (hv : v ≠ 0) : Module.finrank K ↥(K ∙ v) = 1
+Prod.smul_mk.{u_7, u_8, u_9} {E : Type u_7} {α : Type u_8} {β : Type u_9} [SMul E α] [SMul E β] (c : E) (a : α)
+  (b : β) : c • (a, b) = (c • a, c • b)

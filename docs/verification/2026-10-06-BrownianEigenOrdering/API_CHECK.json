@@ -1,0 +1,27 @@
+{
+  "fixed_lean": "4.34.0",
+  "fixed_mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "successful_api_checks": 17.0,
+  "checks": [
+    {
+      "source": "docs/verification/2026-10-06-BrownianEigenOrdering/ApiProbe2.lean",
+      "source_sha256": "37ee0d6ec08a284f3088ce1272ba719faf91b5d1a3c16a8ce65ea0c2b69def09",
+      "log": "docs/verification/2026-10-06-BrownianEigenOrdering/api02.log",
+      "log_sha256": "c1f4a70b856f9d6c656c001e5afd7de07194785ff20d41c21288082ebcdea575",
+      "api_checks": 14,
+      "exit_code": 0,
+      "lean_warnings": 0
+    },
+    {
+      "source": "docs/verification/2026-10-06-BrownianEigenOrdering/ApiProbe3.lean",
+      "source_sha256": "10821a7e83b9922b5652e332e939040069435be90225133b77d48bb3eb71b249",
+      "log": "docs/verification/2026-10-06-BrownianEigenOrdering/api03.log",
+      "log_sha256": "a2eb2c457af731b4d6162e2dd03a65fa6c037b773e47c1fe76eaea0c83573356",
+      "api_checks": 3,
+      "exit_code": 0,
+      "lean_warnings": 0
+    }
+  ],
+  "previous_failed_probe": "api01 used namespace OrderIso for a section; actual orderIsoNatOfLinearSuccPredArch is global",
+  "failed_log_preserved": true
+}

@@ -1,0 +1,19 @@
+Sigma.Lex.le_def.{u_1, u_2} {ι : Type u_1} {α : ι → Type u_2} [LT ι] [(i : ι) → LE (α i)] {a b : Σₗ (i : ι), α i} :
+  a ≤ b ↔ a.fst < b.fst ∨ ∃ (h : a.fst = b.fst), h ▸ a.snd ≤ b.snd
+ofLex.{u_1} {α : Type u_1} : Lex α ≃ α
+toLex.{u_1} {α : Type u_1} : α ≃ Lex α
+OrderDual.ofDual.{u_1} {α : Type u_1} : αᵒᵈ ≃ α
+LocallyFiniteOrder.ofFiniteIcc.{u_1} {α : Type u_1} [Preorder α] (h : ∀ (a b : α), (Set.Icc a b).Finite) :
+  LocallyFiniteOrder α
+LinearLocallyFiniteOrder.succOrder.{u_1} (ι : Type u_1) [LinearOrder ι] [LocallyFiniteOrder ι] : SuccOrder ι
+LinearLocallyFiniteOrder.predOrder.{u_1} (ι : Type u_1) [LinearOrder ι] [LocallyFiniteOrder ι] : PredOrder ι
+orderIsoNatOfLinearSuccPredArch.{u_1} {ι : Type u_1} [LinearOrder ι] [SuccOrder ι] [PredOrder ι] [IsSuccArchimedean ι]
+  [NoMaxOrder ι] [OrderBot ι] : ι ≃o ℕ
+Set.Finite.of_injOn.{u, v} {α : Type u} {β : Type v} {f : α → β} {s : Set α} {t : Set β} (hm : Set.MapsTo f s t)
+  (hi : Set.InjOn f s) (ht : t.Finite) : s.Finite
+Finset.min'_mem.{u_1} {α : Type u_1} [LinearOrder α] (s : Finset α) (H : s.Nonempty) : s.min' H ∈ s
+Finset.min'_le.{u_1} {α : Type u_1} [LinearOrder α] (s : Finset α) (x : α) (H2 : x ∈ s) : s.min' ⋯ ≤ x
+Infinite.of_injective.{u_3, u_4} {α : Sort u_3} {β : Sort u_4} [Infinite β] (f : β → α) (hf : Function.Injective f) :
+  Infinite α
+Set.Finite.mem_toFinset.{u} {α : Type u} {s : Set α} {a : α} (hs : s.Finite) : a ∈ hs.toFinset ↔ a ∈ s
+NoMaxOrder.{u_3} (α : Type u_3) [LT α] : Prop

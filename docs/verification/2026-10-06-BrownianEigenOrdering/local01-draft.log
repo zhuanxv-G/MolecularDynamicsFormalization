@@ -1,0 +1,23 @@
+docs/verification/2026-10-06-BrownianEigenOrdering/Draft.lean:56:41: error: Application type mismatch: The argument
+  le_rfl
+has type
+  ?m.61 ≤ ?m.61
+but is expected to have type
+  a ∈ Set.Iic a
+in the application
+  (Set.Finite.mem_toFinset hf).mpr le_rfl
+docs/verification/2026-10-06-BrownianEigenOrdering/Draft.lean:50:0: warning: Definition `_private.docs.verification.«2026-10-06-BrownianEigenOrdering».Draft.0.MolecularDynamics.ordered_bot` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+docs/verification/2026-10-06-BrownianEigenOrdering/Draft.lean:66:0: warning: Definition `_private.docs.verification.«2026-10-06-BrownianEigenOrdering».Draft.0.MolecularDynamics.ordered_noMax` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+docs/verification/2026-10-06-BrownianEigenOrdering/Draft.lean:66:0: warning: Definition `ordered_noMax` is a proposition; use `theorem` instead of `def`
+
+Note: This linter can be disabled with `set_option linter.defProp false`
+docs/verification/2026-10-06-BrownianEigenOrdering/Draft.lean:84:53: error: Application type mismatch: The argument
+  hm
+has type
+  ∀ (i : Fin Nc), 0 < m i
+of sort `Prop` but is expected to have type
+  (Fin Nc → ℝ) → ℝ
+of sort `Type` in the application
+  ordered_bot m hm

@@ -218,3 +218,5 @@ import MolecularDynamics.Chapter06.BrownianGeneratorRealSpectrum
 import MolecularDynamics.Chapter06.BrownianEigenDiscreteness
 
 import MolecularDynamics.Chapter06.BrownianEigenEnumeration
+
+import MolecularDynamics.Chapter06.BrownianEigenOrdering
