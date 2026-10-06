@@ -1,0 +1,226 @@
+{
+  "started_at": "2026-10-06T18:29:22.3765312+08:00",
+  "finished_at": "2026-10-06T18:30:36.0465087+08:00",
+  "head_at_check": "e2c274aaec8793ca09f901c204c852f20f91c3cb",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9126,
+  "audit_declarations": 2152,
+  "inputs": 209,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationCube_C1integral_divergence_eq_zero",
+    "MolecularDynamics.textbookBrownianC2WeightedFlux_contDiff_one",
+    "MolecularDynamics.textbookBrownianC2WeightedFlux_periodic",
+    "MolecularDynamics.textbookBrownianC2WeightedFlux_partial",
+    "MolecularDynamics.textbookBrownianC2WeightedFlux_divergence",
+    "MolecularDynamics.textbookBrownianC2Generator_integral_dirichlet",
+    "MolecularDynamics.textbookBrownianC2Generator_inner_dirichlet",
+    "MolecularDynamics.textbookBrownianC2Generator_inner_symmetric",
+    "MolecularDynamics.textbookBrownianC2GibbsL2GeneratorImage_symmetric",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_C2graph",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_C2mem_domain",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_C2apply",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2closed_original_generator_tendsto",
+    "MolecularDynamics.textbookC2TorusRealSpace",
+    "MolecularDynamics.textbookBrownianGibbsC2Domain",
+    "MolecularDynamics.textbookBrownianGibbsC2Domain_original_observable_mem",
+    "MolecularDynamics.textbookBrownianGibbsC2Domain_le_closed_domain",
+    "MolecularDynamics.textbookBrownianGibbsSmoothDomain_le_C2Domain",
+    "MolecularDynamics.textbookBrownianGibbsC2Domain_dense",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_hasCore_C2"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationCube_C1integral_divergence_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2WeightedFlux_contDiff_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2WeightedFlux_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2WeightedFlux_partial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2WeightedFlux_divergence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2Generator_integral_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2Generator_inner_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2Generator_inner_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2GibbsL2GeneratorImage_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_C2graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_C2mem_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_C2apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2closed_original_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookC2TorusRealSpace",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsC2Domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsC2Domain_original_observable_mem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsC2Domain_le_closed_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSmoothDomain_le_C2Domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsC2Domain_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_hasCore_C2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "5c4be5e68160bb873b80a7d0b816c17541c14bf249d1e026962d13f64d318f73"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "84ad823652812ed11a1906a1ac9f588ff717486947da56765dda5b9fccae1577"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "1b68a7a758ac77d78476f8569c3bc685e93a78c06e42b05769269929149370f7"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "d6e6d0b9b8183439853d3c9189e0a5c85f6605e03252ffb8195455ddcca707dd"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

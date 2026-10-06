@@ -1,0 +1,47 @@
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:273:70: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:287:65: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:289:18: error: Type mismatch: After simplification, term
+  hpa
+ has type
+  (↑a, ↑A a) ∈ T.graph.topologicalClosure
+but is expected to have type
+  (↑a, ↑A a) ∈ closure ↑T.graph
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:297:68: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:307:63: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:313:70: error: Application type mismatch: The argument
+  hβ
+has type
+  β ≠ 0
+of sort `Prop` but is expected to have type
+  (Fin Nc → ℝ) → ℝ
+of sort `Type` in the application
+  textbookBrownianGibbsClosedOperator_C2mem_domain m U hU hPU β hβ
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:316:62: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:318:68: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:325:9: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:325:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:332:72: error: Application type mismatch: The argument
+  LT.lt.ne' hβpos
+has type
+  β ≠ 0
+of sort `Prop` but is expected to have type
+  (Fin Nc → ℝ) → ℝ
+of sort `Type` in the application
+  textbookBrownianGibbsClosedOperator_C2mem_domain m U hU hPU β (LT.lt.ne' hβpos)
+docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean:327:73: error: Application type mismatch: The argument
+  hB
+has type
+  textbookIsWienerVector ?m.42 P
+but is expected to have type
+  textbookIsWienerVector ?m.51 P
+in the application
+  textbookBrownianProbabilityGibbsL2Image U hU hPU β m hm hβpos ?m.51 P hB

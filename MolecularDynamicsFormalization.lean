@@ -274,3 +274,5 @@ import MolecularDynamics.Chapter06.BrownianC2ObservableTaylor
 import MolecularDynamics.Chapter06.BrownianC2Generator
 
 import MolecularDynamics.Chapter06.BrownianC2DynkinFormula
+
+import MolecularDynamics.Chapter06.BrownianC2ClosedOperator

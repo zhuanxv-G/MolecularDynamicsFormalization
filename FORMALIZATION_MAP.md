@@ -1022,3 +1022,7 @@ full-check01 passed：9124 jobs/2125公理声明/207exact inputs；10checks退�
 BrownianC2DynkinFormula / CH06-DEP-090 / NOT-CH06-099：原f只C²periodic，实际semigroup运C²stronggenerator至alltime、真CMap右导数/真实BanachDynkin与sameq实际期待积分，Lf只continuousperiodic正确使用actualidentity；真evolvedCMap generator domain/image及sameGibbs L2真实右导数Dynkin。7public local01通过统一验收中；C²closedcore/wholeLpinput概率延拓/谱T/invariance/Lp/5.6/graphcore/owner/fullpending。
 
 full-check01 passed：9125 jobs/2132公理声明/208exact inputs；10checks退出0、全部input/rawlog SHA匹配、7 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianC2ClosedOperator / CH06-DEP-091 / NOT-CH06-100：原C²真正Gibbs积分分部/对称性经真实smooth graphclosure和实际自伴性给全C²observables的actualclosed-domain/value；同actualq概率强generator限等于该真实closedvalue。真正所有C²torus submodule及同Gibbs domain稠密且restriction闭包=实际closedA，原C²完整graphcore已局部证明。20public local05零警告统一验收中；wholeL2输入概率延拓/谱T等同/invariance/Lp/5.6/CMapgraphcore/负责人/wholepending。
+
+full-check01 passed：9126 jobs/2152公理声明/209exact inputs；10checks退出0、全部input/rawlog SHA匹配、20 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
