@@ -1,0 +1,137 @@
+{
+  "started_at": "2026-10-07T00:41:13.9072016+08:00",
+  "finished_at": "2026-10-07T00:47:47.797336+08:00",
+  "head_at_check": "29c089b0bd0a6df10ebf56f968e00e1a3989e1b6",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9142,
+  "audit_declarations": 2377,
+  "inputs": 225,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinMomentum_sum_squares_le",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_sum_squares_bound_ae",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_sum_squares_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_sum_secondMoment_bound",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_expectation_bound",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_actual_expectation",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_expectation_bound",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_skeleton_drift",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_skeleton_lyapunov"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinMomentum_sum_squares_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_sum_squares_bound_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_sum_squares_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_sum_secondMoment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_expectation_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_actual_expectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_expectation_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_skeleton_drift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_skeleton_lyapunov",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "ce2a16f4dbe1cca5111b121415a6183edb9d4e54b62ea406a6a1576d7c8814ef"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "432e8deacb9b9838ed791651dc073a883e6fc983dc35078e3a66e058538fdbbd"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_fixed_positive_time_physical_Hamiltonian_skeleton_half_drift": true,
+  "Hamiltonian_power_l": 1,
+  "higher_Hamiltonian_powers_and_continuous_generator_identity": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

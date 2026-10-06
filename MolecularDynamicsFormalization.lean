@@ -306,3 +306,5 @@ import MolecularDynamics.Chapter06.LangevinDensityMinorization
 import MolecularDynamics.Chapter06.LangevinMomentumVariation
 
 import MolecularDynamics.Chapter06.LangevinNoiseMoments
+
+import MolecularDynamics.Chapter06.LangevinHamiltonianDrift

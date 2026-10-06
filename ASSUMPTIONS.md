@@ -630,3 +630,5 @@ LangevinDensityMinorization：sameactualoriginalunitmass unitperiodtorus×Rn/cur
 LangevinMomentumVariation：原unitmass/currentperiodicpotential/globalactualWiener过程；路径恒等式只需原真实IntegralSolution与U C²，timeuniformforce界γ>0，force常数由当前C∞ periodic U导出。W只连续且W0=0，未假设可微或noise moment；真实noise路径convolution定义不宣称Gaussian law/随机积分身份。动量norm为Lean Fin函数sup norm而非原欧氏kineticenergy；过程Lyapunov与Harris尚未证。
 
 LangevinNoiseMoments：sameactualWiener过程，γ≥0/T≥0给真noise coordinate有限二阶矩；实际periodicprocess momentum L²使用原U C∞ integerperiodic/真实force Lipschitz/γ>0，无过程矩假设。有限时刻bound growsT，未证明精确OUvariance或timeuniformmoment；物理kinetic coordinate sum单独真实积分，无supnorm²身份。wholeTheorem6.2及actualgenerator/Lyapunov/Harris/ownerpending。
+
+LangevinHamiltonianDrift：原unitmass/currentC∞periodic U/same实际Wiener及真实periodicprocessκ，γ>0/T≥0、原U≥1用于初能量吸收及positiveproper。force/potential/noise/processmoments均真实导出，无目标漂移hypothesis。literal物理sum而非supnorm身份，l1固定正时间κ漂移，不宣称高次H^l/continuousgeneratorAssumption2/Harris或密度存在。
