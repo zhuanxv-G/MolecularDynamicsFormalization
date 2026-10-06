@@ -1,0 +1,10 @@
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:196:12: error: Application type mismatch: The argument
+  fun z => (z.2, z.1)
+has type
+  C(↑(Icc 0 T), Fin N → ℝ) × (Fin N → ℝ) → (Fin N → ℝ) × C(↑(Icc 0 T), Fin N → ℝ)
+but is expected to have type
+  ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) → (Fin N → ℝ) × C(↑(Icc 0 T), Fin N → ℝ)
+in the application
+  @Continuous.comp ((Fin N → ℝ) × C(↑(Icc 0 T), Fin N → ℝ)) ((Fin N → ℝ) →L[ℝ] Fin N → ℝ)
+    ((Fin N → ℝ) × C(↑(Icc 0 T), Fin N → ℝ)) ?m.184 ?m.185 ?m.186
+    (fun z => textbookBrownianPathJacobian m hm U hU hp β hβ T hT z.1 z.2 t) fun z => (z.2, z.1)

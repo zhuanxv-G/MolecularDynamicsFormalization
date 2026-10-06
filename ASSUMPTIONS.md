@@ -604,3 +604,5 @@ BrownianC2ClosedOperator：原observable f/g仅C²整数周期；真实flux仅C�
 BrownianFirstVariation：原positive masses/β>0/γ1/allNc/currentU C∞整数周期、真实既有finiteinterval连续noise解；噪声只continuous，选择解空间可微/variationmatrix存在或导数身份均未作前提，真实finiteODE/meanvalue/Gronwall/littleO推导实际spaceC¹及Juniformbounds/initialLip。未假设第二变分/空间C²/期待求导、Gibbs概率不变性或谱T等同。所有noise统一界真实证明，负责人语义仍pending。
 
 BrownianSecondVariation：原positive masses/β>0/γ1/allNc/currentU C∞integerperiodic、同原已构造finiteinterval连续noise解；真实二阶variationalODE存在与全initial/noise统一界、Jacobian二次error与初值导数、实际K初值uniformLip/continuous全由原drift导数和真正ODE comparison证明，未将选解空间C²/噪声可微/期待导数/谱T等同作为前提。嵌套CLM只逐层明确固定版标准实例，无资源/透明度/linter改变；owner语义pending。
+
+BrownianC2Expectation：original observable f只C²integerperiodic，U同原C∞integerperiodic，actualpositive masses/β>0/γ1/allNc及trueWienervector/hB。实际J/K来自已证变分ODE，noise只continuous；可测性/导数uniformbound/真实期待C²保留由trueequation compactperiodicity chainrule/dominated求导证明，未将正则性/概率谱T等同/Gibbs不变性藏入前提。全部有限dim含Nc0，t0保留。ownersemanticpending，wholeL2input概率bound未证明。

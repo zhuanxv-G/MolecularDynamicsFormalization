@@ -280,3 +280,5 @@ import MolecularDynamics.Chapter06.BrownianC2ClosedOperator
 import MolecularDynamics.Chapter06.BrownianFirstVariation
 
 import MolecularDynamics.Chapter06.BrownianSecondVariation
+
+import MolecularDynamics.Chapter06.BrownianC2Expectation

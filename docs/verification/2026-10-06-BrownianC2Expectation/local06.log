@@ -1,0 +1,49 @@
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:472:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookBrownianTorusContinuousTransition m hm U hU hp β hβ B P hB ⟨↑⟨↑t, ⋯⟩, ⋯⟩ F
+in the target expression
+  (textbookBrownianTorusContinuousTransition m hm U hU hp β hβ B P hB t F) (textbookConfigurationTorusProjection x) =
+    ∫ (W : C(↑(Icc 0 ↑t), Fin N → ℝ)),
+      f
+        (textbookBrownianPathEndpoint m hm U hU hp β hβ ↑t ⋯ x (↑t)
+          W) ∂Measure.map (textbookWienerVectorContinuousPath B ↑t) P
+
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : (Fin N → ℝ) → ℝ
+hf : ContDiff ℝ 2 f
+hpf : textbookUnitPeriodicPotential f
+t : ℝ≥0
+F : C(UnitAddTorus (Fin N), ℝ) := textbookConfigurationContinuousObservable f ⋯ hpf
+ht :
+  textbookBrownianTorusContinuousTransition m hm U hU hp β hβ B P hB ⟨↑⟨↑t, ⋯⟩, ⋯⟩ F =
+    ∫ (W : C(↑(Icc 0 ↑t), Fin N → ℝ)),
+      textbookBrownianTorusObservablePathFlow m hm U hU hp β hβ ↑t ⋯ F ⟨↑t, ⋯⟩
+        W ∂Measure.map (textbookWienerVectorContinuousPath B ↑t) P
+x : Fin N → ℝ
+⊢ (textbookBrownianTorusContinuousTransition m hm U hU hp β hβ B P hB t F) (textbookConfigurationTorusProjection x) =
+    ∫ (W : C(↑(Icc 0 ↑t), Fin N → ℝ)),
+      f
+        (textbookBrownianPathEndpoint m hm U hU hp β hβ ↑t ⋯ x (↑t)
+          W) ∂Measure.map (textbookWienerVectorContinuousPath B ↑t) P
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    t
+  has type
+    ℝ≥0
+  but is expected to have type
+    { r // 0 ≤ r }
+  in the application
+    t.property

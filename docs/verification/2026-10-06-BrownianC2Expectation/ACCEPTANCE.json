@@ -1,0 +1,211 @@
+{
+  "started_at": "2026-10-06T20:17:11.9434721+08:00",
+  "finished_at": "2026-10-06T20:20:39.7126331+08:00",
+  "head_at_check": "ab7ed77a41388d6ab3a5cf21bfbf186a4cea0e4e",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9129,
+  "audit_declarations": 2203,
+  "inputs": 212,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianPathJacobian_joint_norm_sub_bound",
+    "MolecularDynamics.textbookBrownianPathJacobian_joint_continuous",
+    "MolecularDynamics.textbookBrownianPathJacobian_joint_measurable",
+    "MolecularDynamics.textbookBrownianPathSecondVariation_joint_measurable",
+    "MolecularDynamics.textbookBrownianC2PathFirstDerivative",
+    "MolecularDynamics.textbookBrownianC2PathSecondDerivative",
+    "MolecularDynamics.textbookBrownianC2PathObservable_hasFDerivAt",
+    "MolecularDynamics.textbookBrownianC2PathFirstDerivative_hasFDerivAt",
+    "MolecularDynamics.textbookBrownianC2PathFirstDerivative_joint_continuous",
+    "MolecularDynamics.textbookBrownianC2PathSecondDerivative_initial_continuous",
+    "MolecularDynamics.textbookBrownianC2PathSecondDerivative_joint_measurable",
+    "MolecularDynamics.textbookUnitPeriodicC2Observable_curried_derivative_bounds",
+    "MolecularDynamics.textbookBrownianC2PathDerivative_uniform_bounds",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2expectation_contDiff_two",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_preserves_C2",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_preserves_C2_space",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2evolved_mem_closed_domain"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianPathJacobian_joint_norm_sub_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathJacobian_joint_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathJacobian_joint_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPathSecondVariation_joint_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2PathFirstDerivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2PathSecondDerivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2PathObservable_hasFDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2PathFirstDerivative_hasFDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2PathFirstDerivative_joint_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2PathSecondDerivative_initial_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2PathSecondDerivative_joint_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookUnitPeriodicC2Observable_curried_derivative_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2PathDerivative_uniform_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2expectation_contDiff_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_preserves_C2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_preserves_C2_space",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2evolved_mem_closed_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "8f82f12fd7c96062d0877f15062392f2da8ac179bcec8290424219f090150eea"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "c3ec4d501a1901ea7f6a3e9ded7fda6165ee9ef1adac0cb8f12828ae31766111"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "5200ab583ace9d0f6ba96b78fee17d9afb6fd557c6f34aab73ff723fab505a09"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "81477d738d1f38e4513950ccef168d53c4e14ed444ef020012551312e7457651"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "18b45bd845aa78efa3f8cce58ed8657ca03428f61e47cd35e8cd89b6ef74c6fa"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "a5ee995bc995de77b77964b26b16a3c7095874f8e3def93b6479c03c88d99385"
+    },
+    {
+      "path": "local07.log",
+      "sha256": "e0d6bf640c1df731dc96059e3250a5276926894f2896f41d436417c7ad3012a7"
+    },
+    {
+      "path": "local08.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

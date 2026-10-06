@@ -1,0 +1,47 @@
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:482:59: error: unexpected token 'at'; expected ')', ',' or ':'
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:477:7: error: Function expected at
+  textbookBrownianTorusObservablePathFlow_integrable m hm U hU hp β hβ B P hB (↑t) t.property F
+    ⟨↑t, ⟨t.property, le_rfl⟩⟩
+but this term has type
+  Integrable (textbookBrownianTorusObservablePathFlow m hm U hU hp β hβ ↑t ⋯ F ⟨↑t, ⋯⟩)
+    (Measure.map (textbookWienerVectorContinuousPath B ↑t) P)
+
+Note: Expected a function because this term is being applied to the argument
+  change
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:460:53: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : (Fin N → ℝ) → ℝ
+hf : ContDiff ℝ 2 f
+hpf : textbookUnitPeriodicPotential f
+t : ℝ≥0
+F : C(UnitAddTorus (Fin N), ℝ) := textbookConfigurationContinuousObservable f ⋯ hpf
+ht :
+  textbookBrownianTorusContinuousTransition m hm U hU hp β hβ B P hB t F =
+    ∫ (W : C(↑(Icc 0 ↑t), Fin N → ℝ)),
+      textbookBrownianTorusObservablePathFlow m hm U hU hp β hβ ↑t ⋯ F ⟨↑t, ⋯⟩
+        W ∂Measure.map (textbookWienerVectorContinuousPath B ↑t) P
+he :
+  (fun x =>
+      ((textbookBrownianTorusProbabilityOperator m hm U hU hp β hβ B P hB t) F)
+        (textbookConfigurationTorusProjection x)) =
+    fun x =>
+    ∫ (W : C(↑(Icc 0 ↑t), Fin N → ℝ)),
+      f
+        (textbookBrownianPathEndpoint m hm U hU hp β hβ ↑t ⋯ x (↑t)
+          W) ∂Measure.map (textbookWienerVectorContinuousPath B ↑t) P
+⊢ ContDiff ℝ 2 fun x =>
+    ((textbookBrownianTorusProbabilityOperator m hm U hU hp β hβ B P hB t)
+        (textbookConfigurationContinuousObservable f ⋯ hpf))
+      (textbookConfigurationTorusProjection x)

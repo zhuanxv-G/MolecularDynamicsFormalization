@@ -1034,3 +1034,7 @@ full-check01 passed：9127 jobs/2167公理声明/210exact inputs；10checks退�
 BrownianSecondVariation / CH06-DEP-093 / NOT-CH06-102：sameactualq/J真实DDb globalLip与Db Taylor、actualforcing/K存在/spec/全noiseinitial统一范数、真正J初值二次error→HasFDerivAt J=K、forcing/K真实初值uniformLip/continuous→actual原endpoint空间C²与secondfderiv=K。19public local07统一验收中。actual概率期待C²保留/wholeL2input概率/谱T/invariance/Lp/5.6/CMapgraphcore/owner/全scopepending。
 
 full-check01 passed：9128 jobs/2186公理声明/211exact inputs；10checks退出0、全部input/rawlog SHA匹配、19 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianC2Expectation / CH06-DEP-094 / NOT-CH06-103：actualJ initial/noise jointLip/continuous和trueKjointmeasurable；原C²f实际G/H链式导数/可测与统一bound，两次dominated积分求导/二阶continuous；sameglobalq真实期待C²、sameoriginalP_t保留全C²torusspace及evolvedsameGibbsimage属真closedA.domain。17public local08通过统一验收中。actualprobability谱T识别/wholeL2input概率bound/invariance/Lp/5.6/CMapgraphcore/owner/wholepending。
+
+full-check01 passed：9129 jobs/2203公理声明/212exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

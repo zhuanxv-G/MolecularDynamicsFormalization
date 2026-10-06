@@ -1,0 +1,14 @@
+# Theorem6.1 必要桥接：same actual probability P_t 保持原 C²
+原印刷240/PDF261式6.36及249–251/PDF270–272 Theorem6.1。原positive masses/β>0/γ1/allNc/currentU C∞integerperiodic，真正原Wiener向量及同globalq，同一已构造torus概率operator。f只假设原C²整数周期，不要求f C³或C∞，不预设P_t=f的正则性或谱T。
+
+真实q全initial/noise有限时段uniformLip复用已验私有证明，仅供同actual变分依赖。真正J方程比较给J全initial/noise联合Lip与连续；固定版measurable_fderiv_with_param对真正连续J及已验J初值真实HasFDerivAt识别actualK，导出KjointBorel，无噪声可微前提。
+
+literal G=Df(q)∘J、H=(left Df(q))∘K+(right J)∘(DDf(q)∘J)。真正chainrule识别沿原q的初值一阶/二阶导数，Gjointcontinuous，Hnoise可测及initialcontinuous。原f/Df/DDf周期compactcube给真实全空间界，再actualJuniformnorm/actualKuniformbound给G/H全initial/noise/time共同有限常数，导出真实Bochnerintegrability。
+
+内部必要finitepathlaw lemma对真实firstderivative和secondderivative各调用一次固定版dominated求导；真正Hinitialcontinuous与统一integrable bound给integralH continuous，由实际导数得到真实积分C²。不是将期待可微或P_t保持C²当作输入。同actualglobalq历史身份与真正Wienerpathlaw integral_map给sameglobalq期待C²；sameactualtorus fixedhorizon probability identity及真实lift给原P_t保留C²。原wholeC²torus子空间被sameP_t保持，因此同actualGibbsimage在已验wholeC²closedA.domain。
+
+local01/02 implicit swap连续函数定式超时及无进展dsimp，明确same标准normstructure和typed函数字段不增资源；local03固定版Continuous.comp f为内层/g为外层实参顺序，明确修正；local04原点differentiable需要point、rootbilinearcomp名、periodicbound重写方向、compL高层norminstance，改truepointwiseopnormbound；local05全13退出0空日志零警告。local06真实期待两次求导及globalqC²通过片段，唯一sameP_t fixedhorizon NNReal/intervalSubtype时间包装需typedchange；local07 typed身份成功但脚本重复插入误入integrablecall语法连带，删重复插入；local08最终17public退出0空日志零警告，final exactcopy SHA复用。
+
+DEP094/NOT103。无项目新公理/sorry/admit/unsafe、结论前提、资源/透明度增长或关闭linter。t=0/Nc=0保留，真正randomprocess实例质量/温度/势能/噪声未替换。ownersemanticpending。下一actual closed graph=evolved derivative及真实演化唯一性识别probabilityP_t=Gibbs谱T。wholeGibbsL2input概率extension/bound、Gibbs不变性/Lp/5.6/CMapgraphcore及Theorem6.1/CORE_SCOPE整体未完成。
+
+full-check01 passed：9129 jobs/2203公理声明/212exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

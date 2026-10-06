@@ -1,0 +1,105 @@
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:233:37: error(lean.invalidField): Invalid field `hasFDerivAt`: The environment does not contain `Function.hasFDerivAt`, so it is not possible to project the field `hasFDerivAt` from an expression
+  ContDiff.differentiable hf ?m.70
+of type
+  ∀ (x : Fin N → ℝ), DifferentiableAt ℝ f x
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:242:49: error(lean.invalidField): Invalid field `hasFDerivAt`: The environment does not contain `Function.hasFDerivAt`, so it is not possible to project the field `hasFDerivAt` from an expression
+  ContDiff.differentiable hf1 ?m.107
+of type
+  ∀ (x : Fin N → ℝ), DifferentiableAt ℝ (fderiv ℝ f) x
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:240:83: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+T : ℝ
+hT : 0 ≤ T
+f : (Fin N → ℝ) → ℝ
+hf : ContDiff ℝ 2 f
+x : Fin N → ℝ
+W : C(↑(Icc 0 T), Fin N → ℝ)
+t : ℝ
+ht : t ∈ Icc 0 T
+hf1 : ContDiff ℝ 1 (fderiv ℝ f)
+⊢ HasFDerivAt (fun y => textbookBrownianC2PathFirstDerivative m hm U hU hp β hβ T hT f y W t)
+    (textbookBrownianC2PathSecondDerivative m hm U hU hp β hβ T hT f x W t) x
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:282:17: error(lean.unknownIdentifier): Unknown constant `ContinuousLinearMap.isBoundedBilinearMap_comp.continuous.measurable.comp`
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:272:84: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+T : ℝ
+hT : 0 ≤ T
+f : (Fin N → ℝ) → ℝ
+hf : ContDiff ℝ 2 f
+t : ℝ
+ht : t ∈ Icc 0 T
+hq : Continuous fun z => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT z.1 t z.2
+hj : Continuous fun z => textbookBrownianPathJacobian m hm U hU hp β hβ T hT z.1 z.2 t
+hk : Measurable fun z => textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT z.1 z.2 t
+hd : Continuous (fderiv ℝ f ∘ fun z => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT z.1 t z.2)
+hf1 : ContDiff ℝ 1 (fderiv ℝ f)
+hdd : Continuous (fderiv ℝ (fderiv ℝ f) ∘ fun z => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT z.1 t z.2)
+ha :
+  Continuous
+    (⇑(ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) ℝ) ∘
+      fderiv ℝ f ∘ fun z => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT z.1 t z.2)
+hb :
+  Continuous fun x =>
+    (⇑(ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) ℝ).flip ∘ fun z =>
+          textbookBrownianPathJacobian m hm U hU hp β hβ T hT z.1 z.2 t)
+        x ∘SL
+      (fderiv ℝ (fderiv ℝ f) ∘ fun z => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT z.1 t z.2) x ∘SL
+        textbookBrownianPathJacobian m hm U hU hp β hβ T hT x.1 x.2 t
+⊢ Measurable fun z => textbookBrownianC2PathSecondDerivative m hm U hU hp β hβ T hT f z.1 z.2 t
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:310:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  g a
+in the target expression
+  ‖g x‖ ≤ M
+
+N : ℕ
+E : Type u_1
+inst✝ : NormedAddCommGroup E
+g : (Fin N → ℝ) → E
+hc : Continuous[_, PseudoMetricSpace.toUniformSpace.toTopologicalSpace] g
+hg : ∀ (x : Fin N → ℝ) (n : Fin N → ℤ), g (x + fun i => ↑(n i)) = g x
+M : ℝ
+hb : ∀ x ∈ Icc 0 1, ‖g x‖ ≤ M
+h0 : 0 ∈ Icc 0 1
+x : Fin N → ℝ
+a : Fin N → ℝ := fun i => Int.fract (x i)
+n : Fin N → ℤ := fun i => ⌊x i⌋
+ha : a ∈ Icc 0 1
+he : (a + fun i => ↑(n i)) = x
+hh : g x = g a
+⊢ ‖g x‖ ≤ M
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:349:15: error: Application type mismatch: The argument
+  ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) ℝ
+has type
+  @ContinuousLinearMap ℝ ℝ Field.toSemifield.toSemiring Field.toSemifield.toSemiring (RingHom.id ℝ)
+    ((Fin N → ℝ) →L[ℝ] ℝ) ContinuousLinearMap.topologicalSpace ContinuousLinearMap.addCommMonoid
+    (((Fin N → ℝ) →L[ℝ] Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] ℝ) ContinuousLinearMap.topologicalSpace
+    ContinuousLinearMap.addCommMonoid ContinuousLinearMap.module ContinuousLinearMap.module
+but is expected to have type
+  @ContinuousLinearMap ?m.343 ?m.344 Field.toSemifield.toSemiring Field.toSemifield.toSemiring ?m.353
+    ((Fin N → ℝ) →L[ℝ] ℝ) PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    ContinuousLinearMap.toSeminormedAddCommGroup.toAddCommMonoid ?m.346
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace SeminormedAddCommGroup.toAddCommGroup.toAddCommMonoid
+    NormedSpace.toModule NormedSpace.toModule
+in the application
+  ContinuousLinearMap.le_opNorm (ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) ℝ)
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:357:76: error: No goals to be solved
+docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean:358:12: error: Type mismatch: After simplification, term
+  hj
+ has type
+  ‖j‖ ≤ J
+but is expected to have type
+  ‖ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) ℝ‖ * ‖j‖ ≤ J
