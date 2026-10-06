@@ -638,3 +638,5 @@ LangevinNoiseHigherMoments：原真实Wiener/同ξ路径卷积，γ≥0/T≥0给
 LangevinHamiltonianPowerDrift：单位质量、原U>=1/C∞periodicU/forceLip、γ>0、σ任意及sameactualWiener/process/κ。由真实pathwise物理H界及已验actual2l噪声矩推原Hl期待halfdrift，τ共同所有l>=1和所有T>=τ；D_l(T)>0对初值统一但未声称时间uniform。目标moment/drift不作前提；连续generator身份与literalAssumption2、density存在及Harris仍待。
 
 LangevinSkeletonInputs：原densityclause与compact非空interior/σ非零对指定T>0给actualsmallset，physicalγβ>0推出sqrtnoise非零。sameκτ inputs还用原U>=1/C∞periodic/forceLip/γ>0；Hl目标drift和moments从实际过程推，D/R导出。conditionaldensity必须覆盖新derivedC_R，未从原固定C推出这种更大集density；未声称density存在或Harris整体，原time0 jointcontinuous语义pending。
+
+LangevinSkeletonMoments：same实际Wiener/κ/CK/κ0Dirac、单位质量、原U>=1/C∞periodic/forceLip、γ>0、σ任意、l>=1；目标moment/drift内部derive。共同τ，actualnτ几何矩与tail右侧依赖x，各fixedx laws tight；未声称allinitialstates联合一致紧或allrealT统一矩，未使用density或stationarity前提。

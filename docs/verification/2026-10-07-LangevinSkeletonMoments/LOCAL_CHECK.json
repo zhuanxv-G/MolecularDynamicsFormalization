@@ -1,0 +1,32 @@
+{
+  "draft_path": "docs/verification/2026-10-07-LangevinSkeletonMoments/Draft.lean",
+  "source_path": "MolecularDynamics/Chapter06/LangevinSkeletonMoments.lean",
+  "draft_sha256": "40df13d5a82fc95191cbcde7aec87d1527c165b77c8e87b300cbed7eb4856920",
+  "source_sha256": "40df13d5a82fc95191cbcde7aec87d1527c165b77c8e87b300cbed7eb4856920",
+  "local_check_log": "local02.log",
+  "local_check_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "local_exit_code": 0,
+  "local_lean_warnings": 0,
+  "local_log_empty": true,
+  "exact_source_copy_verified": true,
+  "public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_moment_bound",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_tail_bound",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_isTight"
+  ],
+  "actual_original_Hamiltonian_power_skeleton_geometric_moment_bound": "derived_locally_from_true_CK_actual_Hpower_integrability_and_accepted_drift",
+  "actual_original_Hamiltonian_power_uniform_skeleton_tail_bound": "proved_locally_true_Markov_inequality",
+  "actual_skeleton_laws_isTight": "proved_locally_from_original_H1_proper_sublevels",
+  "common_time_independent_l": true,
+  "tail_and_tightness_scope": "all_n_each_fixed_initial_phase_not_joint_uniform_all_initial_states",
+  "density_or_moment_or_drift_premise": "none",
+  "integrated": true,
+  "full_check": "passed_full_check01",
+  "actual_original_skeleton_geometric_moments_and_tightness": "proved_locally",
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

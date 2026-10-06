@@ -1,0 +1,14 @@
+docs/verification/2026-10-07-LangevinSkeletonMoments/Draft.lean:104:75: error: Application type mismatch: The argument
+  hy
+has type
+  y ∈ {y | V y ≤ R}ᶜ
+but is expected to have type
+  ¬?m.429 ≤ ?m.428
+in the application
+  lt_of_not_ge hy
+docs/verification/2026-10-07-LangevinSkeletonMoments/Draft.lean:140:19: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+docs/verification/2026-10-07-LangevinSkeletonMoments/Draft.lean:140:19: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`

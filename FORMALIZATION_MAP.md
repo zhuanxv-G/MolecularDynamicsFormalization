@@ -1104,3 +1104,7 @@ full-check01 passed：9144 jobs/2393公理声明/227exact inputs；10checks退�
 LangevinSkeletonInputs / CH06-DEP-110 / NOT-CH06-119：原densityclause两半positive时间真实CK给指定T compact/physicalenergy minorization；真实Hl drift导出R>4D和outside 3/4收缩；sameκτ原Hl可积/indicator漂移及在derivedC_R的conditional小集包。4public local02零warning，统一验收中；更大C_R上的density不从原固定C推出，实际densityexists/continuousgenerator/Harris/ownerpending。
 
 full-check01 passed：9145 jobs/2397公理声明/228exact inputs；10checks退出0、全部input/rawlog SHA匹配、4public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。原densityclause→指定positiveT小集、实际Hl漂移→derivedR/outside收缩和同κτ的moments/indicator漂移及conditional小集已机器验证；derivedC_R的density未从原fixedC推出，continuousgenerator/densityexists/Harris未证，owner semanticpending，Theorem6.2整体未完成。
+
+LangevinSkeletonMoments / CH06-DEP-111 / NOT-CH06-120：sameactual CK积分与真实Hl可积/halfdrift→κ_(nτ)Hl几何矩界；true物理Hl Markov tail及proper原H1→eachfixedx actualskeleton lawfamily tight。3public local02零warning，统一验收中；无density/目标矩/drift假设，不将紧性或weaksubseq视作不变律。
+
+full-check01 passed：9146 jobs/2400公理声明/229exact inputs；10checks退出0、全部input/rawlog SHA匹配、3public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。same实际原Hl的nτ几何期待界、物理energy Markov尾界和eachfixedx actualskeleton law tight已机器验证；无density/目标矩漂移/stationarity前提，tight未当作invariantlaw，continuousgenerator/densityexists/Harris未证，owner semanticpending，Theorem6.2整体未完成。

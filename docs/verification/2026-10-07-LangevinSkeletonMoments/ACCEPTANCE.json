@@ -1,0 +1,70 @@
+{
+  "started_at": "2026-10-07T01:52:21.7734301+08:00",
+  "finished_at": "2026-10-07T02:00:36.1461449+08:00",
+  "head_at_check": "bb4aa323a3df15b34cadbd729672db7c51d00b4a",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9146,
+  "audit_declarations": 2400,
+  "inputs": 229,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_moment_bound",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_tail_bound",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_isTight"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_moment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_tail_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_isTight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "824fc9f935dde3fe7f4493e976a9a71ed3d6edf77a5aa9972a08e8bb141d0acd"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "2be78a440a67d5b9738844edfbbfbcc41b54d3391f69fb122266ca70e6371b8a"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_original_Hamiltonian_power_geometric_skeleton_moments": true,
+  "actual_physical_Hpower_uniform_skeleton_tail_bound": true,
+  "actual_fixed_initial_state_skeleton_laws_isTight": true,
+  "density_moment_drift_stationarity_premise": "none",
+  "invariant_law_not_proved": true,
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
