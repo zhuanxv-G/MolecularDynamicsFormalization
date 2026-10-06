@@ -1,0 +1,207 @@
+{
+  "started_at": "2026-10-06T08:33:28.8123586+08:00",
+  "finished_at": "2026-10-06T08:34:40.4693284+08:00",
+  "head_at_check": "04080a20762140d10cf2428d5ee1abbd67257750",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9091,
+  "audit_declarations": 1687,
+  "inputs": 174,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsEvolutionWeight",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionWeight_pos",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionWeight_le_one",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionWeight_add",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator_apply",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator_norm",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_repr",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_coefficient",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_norm",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_zero",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_add",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_hasSum",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_preserves_graph",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator_continuous",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_continuous"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEvolutionWeight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEvolutionWeight_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEvolutionWeight_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEvolutionWeight_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_repr",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_coefficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_hasSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_preserves_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "812c3aabeea4f73fd851d24c295f6095e7983a1622ad383e0e22781b21d11b65"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "62210c1371d74ba68bf105bcc64fadf88d86c715f009947c1cfd0b720652ec07"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "04b9d6412e8fcd8a671167ddf414504b2a698824d7a7d94fd0d728684f0f8422"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "dfa94d49c86dfd433d6845302f711a85854d7cfab460b6f4271db46144833c1f"
+    },
+    {
+      "path": "local03-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04-draft.log",
+      "sha256": "7a05c97cc61cc25d4a8917ae786fe181717ea6dc27a484e63f93288e53240f37"
+    },
+    {
+      "path": "local05-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local06-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

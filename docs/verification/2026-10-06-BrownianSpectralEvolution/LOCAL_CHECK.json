@@ -1,0 +1,33 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean",
+  "source_sha256": "7ae80f86828aa1e00a1e0e0c16da895cfafca1c8c5ebf3c64b46bd06d69677ca",
+  "log": "docs/verification/2026-10-06-BrownianSpectralEvolution/local05-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public": [
+    "MolecularDynamics.textbookBrownianGibbsEvolutionWeight",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionWeight_pos",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionWeight_le_one",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionWeight_add",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator_apply",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator_norm",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_repr",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_coefficient",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_norm",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_zero",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_add",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_hasSum",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_preserves_graph",
+    "MolecularDynamics.textbookBrownianGibbsEvolutionCoefficientOperator_continuous",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_continuous"
+  ],
+  "actual_whole_original_Gibbs_strongly_continuous_contraction_semigroup": "proved_locally",
+  "integrated": false,
+  "full_check": "not_run",
+  "actual_strong_generator_identification": "incomplete",
+  "actual_SDE_expectation_identification": "incomplete",
+  "responsible_semantic_review": "pending"
+}

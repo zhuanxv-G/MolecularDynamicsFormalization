@@ -508,3 +508,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianEigenGraph: genuine whole graph/domain coefficient characterization
 原positive m/U C∞整数周期/β>0/sameGibbs entireLp保留。fullbasis和实际Agraph已从truecompactresolvent推导，graph/domain充分性由fullseries+closedgraph+逆isometry证明，不额外假设domain、完整展开或加权operator模型。weightedMemℓp为等价条件非隐藏domain结论；原Nc任意。actualMarkov positivity/SDE law识别与evolution及谱枚举/整谱仍缺，C²/C∞core最终语义pending；无占位/axiom/unsafe/资源绕过。
+
+## BrownianSpectralEvolution: actual whole Gibbs C0 contraction semigroup
+原m_i>0/U C∞整数周期/β>0/sameactualGibbs fullrealLp，timeNNReal实际≥0。exp eigenweights界、wholeC0normcontinuity、actualsemigroup/graphpreservation从已验收真实fullbasis与wholeAgraph刻画推导，不以semigroup/C0/weightbound/Adomain/生成元结论为假设。此阶段actualstronginfgen identity及Markovpositivity/SDEprobabilityexpectation未验证，不称已完成真实随机轨道定理；谱枚举/whole-spectrum/core语义pending。Nc0兼容，不伪造无限index；无newaxiom/unsafe/占位或资源限制修改。

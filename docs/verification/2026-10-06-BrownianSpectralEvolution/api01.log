@@ -1,0 +1,14 @@
+tendsto_iff_norm_sub_tendsto_zero.{u_1, u_4} {α : Type u_1} {E : Type u_4} [SeminormedAddCommGroup E] {f : α → E}
+  {a : Filter α} {b : E} : Filter.Tendsto f a (nhds b) ↔ Filter.Tendsto (fun e => ‖f e - b‖) a (nhds 0)
+Real.sqrt_sq_eq_abs (x : ℝ) : √(x ^ 2) = |x|
+NNReal.continuous_coe : Continuous NNReal.toReal
+lp.norm_rpow_eq_tsum.{u_3, u_4} {α : Type u_3} {E : α → Type u_4} {p : ENNReal} [(i : α) → NormedAddCommGroup (E i)]
+  (hp : 0 < p.toReal) (f : ↥(lp E p)) : ‖f‖ ^ p.toReal = ∑' (i : α), ‖↑f i‖ ^ p.toReal
+tendsto_tsum_of_dominated_convergence.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {G : Type u_3} {𝓕 : Filter α}
+  [NormedAddCommGroup G] [CompleteSpace G] {f : α → β → G} {g : β → G} {bound : β → ℝ} (h_sum : Summable bound)
+  (hab : ∀ (k : β), Filter.Tendsto (fun x => f x k) 𝓕 (nhds (g k)))
+  (h_bound : ∀ᶠ (n : α) in 𝓕, ∀ (k : β), ‖f n k‖ ≤ bound k) :
+  Filter.Tendsto (fun x => ∑' (k : β), f x k) 𝓕 (nhds (∑' (k : β), g k))
+Memℓp.summable.{u_3, u_4} {α : Type u_3} {E : α → Type u_4} {p : ENNReal} [(i : α) → NormedAddCommGroup (E i)]
+  (hp : 0 < p.toReal) {f : (i : α) → E i} (hf : Memℓp f p) : Summable fun i => ‖f i‖ ^ p.toReal
+Real.rpow_two (x : ℝ) : x ^ 2 = x ^ 2

@@ -1,0 +1,264 @@
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:21:46: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:21:48: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:26:54: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:26:56: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:33:57: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:33:59: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:40:56: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:40:56: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:40:58: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:40:58: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:44:65: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+s : sorry
+t : sorry
+j : textbookBrownianGibbsEigenIndex m U hU hPU β
+⊢ Real.exp (j.fst * sorry) = Real.exp (j.fst * sorry) * Real.exp (j.fst * sorry)
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:45:13: warning: declaration uses `sorry`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:45:51: warning: This simp argument is unused:
+  NNReal.coe_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGibbsEvolutionWeight, mul_add, Real.exp_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:45:67: warning: This simp argument is unused:
+  mul_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGibbsEvolutionWeight, NNReal.coe_add, Real.exp_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:45:76: warning: This simp argument is unused:
+  Real.exp_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGibbsEvolutionWeight, NNReal.coe_add, mul_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:48:37: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:48:39: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:58:59: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:58:61: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:82:6: error: Type mismatch: After simplification, term
+  h
+ has type
+  @LE.le ℝ Real.instLE ‖⟨fun j => textbookBrownianGibbsEvolutionWeight m U hU hPU β t j * ↑a j, ⋯⟩‖ ‖a‖
+but is expected to have type
+  @LE.le ℝ Real.instLE
+    ‖{ toFun := fun a => ⟨fun j => textbookBrownianGibbsEvolutionWeight m U hU hPU β t j * ↑a j, ⋯⟩, map_add' := ⋯,
+          map_smul' := ⋯ }
+        a‖
+    ‖a‖
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:85:69: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:85:71: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:91:68: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:91:70: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:98:48: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:98:50: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:106:57: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:106:59: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:116:64: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:116:66: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:127:57: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:127:59: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:147:13: warning: declaration uses `sorry`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:137:8: warning: declaration uses `sorry`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:147:51: warning: This simp argument is unused:
+  NNReal.coe_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGibbsEvolutionWeight, mul_zero, Real.exp_zero, one_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:147:68: warning: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGibbsEvolutionWeight, NNReal.coe_zero, Real.exp_zero, one_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:147:78: warning: This simp argument is unused:
+  Real.exp_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGibbsEvolutionWeight, NNReal.coe_zero, mul_zero, one_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:147:93: warning: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookBrownianGibbsEvolutionWeight, NNReal.coe_zero, mul_zero, Real.exp_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:148:2: warning: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:151:58: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:151:58: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:151:60: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:151:60: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:173:59: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:173:61: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:178:2: warning: declaration uses `sorry`
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:183:68: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean:183:70: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.

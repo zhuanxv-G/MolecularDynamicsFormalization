@@ -862,3 +862,8 @@ full-check01 passed：9089 jobs/1665公理声明/172exact inputs；10checks退�
 5public actualA graph iff真实wholebasis λweightedcoeff；actualwholeAdomain iff weightedMemℓp；actualAapply与trueR coefficient完整。MolecularDynamics/Chapter06/BrownianEigenGraph.lean；docs/reviews/2026-10-06-BrownianEigenGraph/REVIEW.zh-CN.md。下一真正spectralheat contractive evolution与stronggeneration、概率transition识别/整谱/core最终语义仍缺。
 
 full-check01 passed：9090 jobs/1670公理声明/173exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem6.1 — actual original Gibbs strongly continuous contractive spectral evolution (BrownianSpectralEvolution)
+17public实际原wholebasis exp eigenweights/actualℓ² CLM与trueunitary传回sameGibbs entireLp；T0identity、timeadd semigroup、norm≤1、所有x真正HasSum；actualwholeAgraph保持；summableTannery norm² DCT与sqrt证明全space alltime强连续。MolecularDynamics/Chapter06/BrownianSpectralEvolution.lean；docs/reviews/2026-10-06-BrownianSpectralEvolution/REVIEW.zh-CN.md。stronginfgen identification/Markovpositivity/actualSDE expectation及整谱/core语义仍缺。
+
+full-check01 passed：9091 jobs/1687公理声明/174exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
