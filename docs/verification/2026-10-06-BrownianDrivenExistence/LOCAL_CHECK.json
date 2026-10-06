@@ -1,0 +1,19 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianDrivenExistence/Draft.lean",
+  "source_sha256": "9d1a90eccef80e511b59a82edf525a679cd9887cc639ccbe3a00c6c47cd1d594",
+  "log": "docs/verification/2026-10-06-BrownianDrivenExistence/local02-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public_declarations": 5,
+  "actual_original_mass_finite_interval_compensated_ODE_existence": "proved_locally",
+  "actual_original_additive_noise_integral_solution": "proved_locally",
+  "original_positive_covariance": "proved_locally",
+  "actual_random_model_measurability_and_Markov": "not_proved",
+  "actual_SDE_probability_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete",
+  "integrated": false,
+  "full_check": "not_run"
+}

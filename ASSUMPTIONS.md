@@ -556,3 +556,6 @@ complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模�
 
 ## BrownianSDECoefficients: actual model coefficients at original gamma-one generator
 原positive masses/beta>0/C∞integerperiodic U，Theorem6.1的gamma1原generator，非6.46的M=I特例。inverse-mass mobility与noise定义原全部coordinates；positivity/covariance/原sqrtmass因子实际证明，Lipschitz从真实periodic force得出无额外driftLip前提。基础Lip和factor identity允许更一般totalinverse参数是必要helper，不据此主张无positive-mass的物理模型。纯sum differentialexpression恒等不等于actualSDElaw的stochasticgenerator识别；未来noisePath/measurableFlow/概率识别及C²core负责人仍pending。无placeholder/newaxiom/unsafe/资源/linter绕过。
+
+## BrownianDrivenExistence: actual specified-interval continuous-noise existence constructed
+原positive masses/原C∞integerperiodic U/β>0、gamma1，T≥0及W ContinuousOn实际[0,T]，任意original lift初值x，不假定roughW可微或路径解存在。privateuniform-local/finiteODE拼接已真实证明（复用原验收source），actualdriftLip由原potential推出，positive physical covariance由hm/hβ导出。低层field存在本身对任何固定系数成立；主integral theorem随原positive covariance明确physical模型条件。每个specifiedT构造真实α/q，不假定globalhorizoncoherence/measurability/Markov。所有这些以及law=T/式5.6/C²core负责人继续pending。无sorry/admit/newaxiom/unsafe/资源或linter绕过。

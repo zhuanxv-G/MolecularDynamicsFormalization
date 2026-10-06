@@ -1992,3 +1992,9 @@ run_cmd do
 #print axioms MolecularDynamics.textbookBrownianSDENoise
 #print axioms MolecularDynamics.textbookBrownianSDENoise_apply
 #print axioms MolecularDynamics.textbookBrownianGenerator_eq_sde_coefficients
+
+#print axioms MolecularDynamics.textbookBrownianDrivenField
+#print axioms MolecularDynamics.textbookBrownianDrivenField_lipschitz
+#print axioms MolecularDynamics.textbookBrownianDrivenField_time_continuous
+#print axioms MolecularDynamics.textbookBrownianDrivenField_exists
+#print axioms MolecularDynamics.textbookBrownianIntegralSolution_exists

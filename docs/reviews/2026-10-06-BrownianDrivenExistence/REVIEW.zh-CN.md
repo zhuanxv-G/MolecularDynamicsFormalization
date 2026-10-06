@@ -1,0 +1,7 @@
+# Theorem 6.1实际概率识别的依赖：原质量加性噪声方程的真实指定区间积分解
+原240/PDF261式6.36 gamma1、249–251/PDF270–272；同一original positive masses/原C∞integerperiodic U/β>0，全部配置coordinates，允许Nc0。原physical diagnoise/原massdrift保持，不换M=I。
+实际compensatedfield(t,z)=原b(z+原Σ(Wt−W0))。真实driftLip给全time uniformstate Lipschitz（无新driftLip前提），actualcontinuous drivingpath给fieldtimecontinuous。三private泛型ODE局部半径与finite拼接依赖是原LangevinDrivenExistence已验收原文复制，仅此actualfirstorder模型使用，不作独立一般理论交付。
+真正构造每个指定有限interval [0,T]上的α，α0=原x且每个实际t含endpoint的HasDerivAt α=field(t,αt)。只假定W在实际interval continuous，用projIcc实际延拓；定义原q=α+Σ(W'−W'0)，真实ContinuousOn与q0=x以及vectorBochnerFTC推出对所有t∈[0,T] literal原q_t=x+∫0t原b(q_s)+原Σ(Wt−W0)。全originalpositive noise covariance/σsquare随实际解同时证明。粗糙Brownian noise不假定differentiable，只有compensatedα可导。
+api01固定7项0零警告；local01只FTC integral field(t,αt)与原drift(qt)rw不能匹配，显式change为真实同一定义后local02五项0空日志，正式local03同样0空日志。默认资源/linters，无placeholder/newaxiom/unsafe或把解存在藏假设。
+DEP072/NOT081统一验收中。这是真deterministic continuous additive-noise pathsolution，不是实际Wiener-driven randomflow的measurability/conditionalMarkov/law或stochasticgenerator识别。下一actual积分解唯一性/finite-horizon一致性，再证明pathendpoint连续和randommodel。原式5.6概率识别/C²core负责人及整个Theorem6.1/CORE_SCOPE未完。
+full-check01 passed：9107 jobs/1871公理声明/190exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

@@ -1966,3 +1966,9 @@ end MolecularDynamics
 #check MolecularDynamics.textbookBrownianSDENoise
 #check MolecularDynamics.textbookBrownianSDENoise_apply
 #check MolecularDynamics.textbookBrownianGenerator_eq_sde_coefficients
+
+#check MolecularDynamics.textbookBrownianDrivenField
+#check MolecularDynamics.textbookBrownianDrivenField_lipschitz
+#check MolecularDynamics.textbookBrownianDrivenField_time_continuous
+#check MolecularDynamics.textbookBrownianDrivenField_exists
+#check MolecularDynamics.textbookBrownianIntegralSolution_exists

@@ -1,0 +1,17 @@
+MolecularDynamics.textbookBrownianSDEDrift_lipschitz {Nc : ℕ} (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ (↑⊤) U) (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) :
+  ∃ L, LipschitzWith L (MolecularDynamics.textbookBrownianSDEDrift m U)
+LipschitzWith.dist_le_mul.{u, v} {α : Type u} {β : Type v} [PseudoMetricSpace α] [PseudoMetricSpace β] {K : NNReal}
+  {f : α → β} : LipschitzWith K f → ∀ (x y : α), dist (f x) (f y) ≤ ↑K * dist x y
+dist_add_right.{u} {M : Type u} [Add M] [PseudoMetricSpace M] [IsIsometricVAdd Mᵃᵒᵖ M] (a b c : M) :
+  dist (a + c) (b + c) = dist a b
+ContinuousOn.comp_continuous.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {γ : Type u_3} [TopologicalSpace α]
+  [TopologicalSpace β] [TopologicalSpace γ] {g : β → γ} {f : α → β} {s : Set β} (hg : ContinuousOn g s)
+  (hf : Continuous f) (hs : ∀ (x : α), f x ∈ s) : Continuous (g ∘ f)
+intervalIntegral.integral_eq_sub_of_hasDerivAt.{u_3} {E : Type u_3} [NormedAddCommGroup E] [NormedSpace ℝ E] {a b : ℝ}
+  [CompleteSpace E] {f f' : ℝ → E} (hderiv : ∀ x ∈ Set.uIcc a b, HasDerivAt f (f' x) x)
+  (hint : IntervalIntegrable f' MeasureTheory.volume a b) : ∫ (y : ℝ) in a..b, f' y = f b - f a
+MolecularDynamics.textbookBrownianSDENoiseAmplitude_pos {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ (i : Fin Nc), 0 < m i) (β : ℝ)
+  (hβ : 0 < β) (i : Fin Nc) : 0 < MolecularDynamics.textbookBrownianSDENoiseAmplitude m β i
+MolecularDynamics.textbookBrownianSDENoiseAmplitude_sq {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ (i : Fin Nc), 0 < m i) (β : ℝ)
+  (hβ : 0 < β) (i : Fin Nc) : MolecularDynamics.textbookBrownianSDENoiseAmplitude m β i ^ 2 = 2 * β⁻¹ * (m i)⁻¹

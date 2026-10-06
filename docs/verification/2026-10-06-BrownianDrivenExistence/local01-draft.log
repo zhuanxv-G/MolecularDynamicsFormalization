@@ -1,0 +1,36 @@
+docs/verification/2026-10-06-BrownianDrivenExistence/Draft.lean:204:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (y : ℝ) in 0..t, textbookBrownianDrivenField m U β W' y (α y)
+in the target expression
+  q t = (x + ∫ (s : ℝ) in 0..t, textbookBrownianSDEDrift m U (q s)) + (textbookBrownianSDENoise m β) (W t - W 0)
+
+case refine_2
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+T : ℝ
+hT : 0 ≤ T
+x : Fin Nc → ℝ
+W : ℝ → Fin Nc → ℝ
+hW : ContinuousOn W (Icc 0 T)
+W' : ℝ → Fin Nc → ℝ := fun t => W ↑(projIcc 0 T hT t)
+hWc : Continuous W'
+hWe : ∀ t ∈ Icc 0 T, W' t = W t
+α : ℝ → Fin Nc → ℝ
+hα0 : α 0 = x
+hα : ∀ t ∈ Icc 0 T, HasDerivAt α (textbookBrownianDrivenField m U β W' t (α t)) t
+q : ℝ → Fin Nc → ℝ := fun t => α t + (textbookBrownianSDENoise m β) (W' t - W' 0)
+hαc : ContinuousOn α (Icc 0 T)
+hqc : ContinuousOn q (Icc 0 T)
+L : ℝ≥0
+hL : LipschitzWith L (textbookBrownianSDEDrift m U)
+hbc : ContinuousOn (fun t => textbookBrownianSDEDrift m U (q t)) (Icc 0 T)
+t : ℝ
+ht : t ∈ Icc 0 T
+hseg : uIcc 0 t ⊆ Icc 0 T
+he : ∫ (y : ℝ) in 0..t, textbookBrownianDrivenField m U β W' y (α y) = α t - α 0
+⊢ q t = (x + ∫ (s : ℝ) in 0..t, textbookBrownianSDEDrift m U (q s)) + (textbookBrownianSDENoise m β) (W t - W 0)

@@ -942,3 +942,8 @@ full-check01 passed：9105 jobs/1853公理声明/188exact inputs；10checks退�
 13public；原gamma1/generalmasses mobilityCLM、actualdrift/literalpartial、真derivedglobalLipschitz与periodic、actualsqrtcov amp square/strictpositive/literal inverse sqrtmass factor、noiseCLM全coordinate及纯differentialexpression原BrownianGenerator恒等。240/PDF261式6.36与249/PDF2706.46已视觉核对，原Mass未换M=I。MolecularDynamics/Chapter06/BrownianSDECoefficients.lean；docs/reviews/2026-10-06-BrownianSDECoefficients/REVIEW.zh-CN.md。不是actualSDE stochasticgenerator/law识别；下一真实指定区间additive-noise integral solution，SDE/core/wholepending。
 
 full-check01 passed：9106 jobs/1866公理声明/189exact inputs；10checks退出0、全部input/rawlog SHA匹配、13 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — genuine original-mass Brownian additive-noise integral solution on every specified finite interval (BrownianDrivenExistence)
+5public；actualcompensatedfield原b(z+Σ(Wt−W0)) deriveduniformLip/timecontinuous/true everyfiniteinterval ODE α与其真正所有点导数、原q ContinuousOn/q0=x/allt原Bochner integral equation及originalpositive cov/square。无需Brownian noise differentiable，不加solution exists前提，保留wholeoriginal masses gamma1。MolecularDynamics/Chapter06/BrownianDrivenExistence.lean；docs/reviews/2026-10-06-BrownianDrivenExistence/REVIEW.zh-CN.md。下一trueuniqueness/horizon一致与pathmap连续measurable；SDEactual概率识别/core/wholepending。
+
+full-check01 passed：9107 jobs/1871公理声明/190exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

@@ -1,0 +1,87 @@
+{
+  "started_at": "2026-10-06T13:20:03.7363468+08:00",
+  "finished_at": "2026-10-06T13:21:14.6295055+08:00",
+  "head_at_check": "17d80ac2ec3d350754d0dd55ab99a1a959952c59",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9107,
+  "audit_declarations": 1871,
+  "inputs": 190,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianDrivenField",
+    "MolecularDynamics.textbookBrownianDrivenField_lipschitz",
+    "MolecularDynamics.textbookBrownianDrivenField_time_continuous",
+    "MolecularDynamics.textbookBrownianDrivenField_exists",
+    "MolecularDynamics.textbookBrownianIntegralSolution_exists"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianDrivenField",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDrivenField_lipschitz",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDrivenField_time_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDrivenField_exists",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_exists",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "8ac1005b74439bbba72e31f20d07c2697e8d0f67b3dcee1691b00b1c7894d67c"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "1f8efbc2640d426000165614907a024feb58c4b3416d853a1e888e8d9eadcb47"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "cae42c55b93796c1ce0ab41674822e143053b75079d63a72b4060ea4c8f76876"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
