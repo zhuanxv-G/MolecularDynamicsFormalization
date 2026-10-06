@@ -1018,3 +1018,7 @@ full-check01 passed：9123 jobs/2109公理声明/206exact inputs；10checks退�
 BrownianC2Generator / CH06-DEP-089 / NOT-CH06-098：f仅原C²periodic，真partial/Hessian身份和generator连续周期、sameq可积/真实Taylor期待/逐初值generator限；deriveduniform真实ε+C(t+sqrt t)误差→实际wholeCMap一致范数强generator及sameGibbsL2强limit。实际期待身份整理为仅continuousperiodic供Lf。16public local04通过统一验收中；C²closedcore/wholeLpinput概率延拓/谱T/invariance/Lp/5.6/graphcore/owner/fullpending。
 
 full-check01 passed：9124 jobs/2125公理声明/207exact inputs；10checks退出0、全部input/rawlog SHA匹配、16 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianC2DynkinFormula / CH06-DEP-090 / NOT-CH06-099：原f只C²periodic，实际semigroup运C²stronggenerator至alltime、真CMap右导数/真实BanachDynkin与sameq实际期待积分，Lf只continuousperiodic正确使用actualidentity；真evolvedCMap generator domain/image及sameGibbs L2真实右导数Dynkin。7public local01通过统一验收中；C²closedcore/wholeLpinput概率延拓/谱T/invariance/Lp/5.6/graphcore/owner/fullpending。
+
+full-check01 passed：9125 jobs/2132公理声明/208exact inputs；10checks退出0、全部input/rawlog SHA匹配、7 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

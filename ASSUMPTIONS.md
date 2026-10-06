@@ -596,3 +596,5 @@ BrownianProbabilityGibbsImage：原positive masses/β>0/γ1/任意Nc、U/f C∞�
 BrownianC2ObservableTaylor：原positive masses/β>0/γ1/任意Nc、U当前C∞整数周期但observable f只C²integerperiodic、same真实Wiener/P/q。Hessianuniformmodulus/Peano remainder/quadratic+quarticbounds、同实际q可积与εt+Cεt²/uniformnorm/t及signedlimit全真推导，不供余项或概率limit假设。原C²实际generator和C²closed核心身份尚下一批/待证；wholeL2-input概率延拓/谱T/invariance/Lp/5.6/owner/fullpending。
 
 BrownianC2Generator：原positive masses/β>0/γ1/任意Nc、U当前C∞整数周期、observable f只原C²integerperiodic、same真实Wiener/P/q/actualtorus概率C0operator。真实C²generator连续周期、Taylor实际期待与pointwise/uniformCMap/GibbsL2强limit全推导；actual期待身份只需continuousperiodic观测。C²closedGibbscore identity/wholeLp-input概率operator extension/谱T/invariance/5.6/Lp/负责人签核/fullscope未证。
+
+BrownianC2DynkinFormula：原positive masses/β>0/γ1/任意Nc、U当前C∞periodic但f只原C²periodic、same真实Wiener/P/q/actualtorus概率C0operator。alltime CMap/sameGibbsL2右导数与Dynkin由trueC²stronggenerator/实际semigroup/真实timecontinuous+Banach右FTC/CLM真积分交换推导；Lf只continuousperiodic，不假设Lf C²/evolvedf C²、Gibbsinvariance/wholeL2input概率operator/谱T等同。C²closedcore/owner/fullscope未完。

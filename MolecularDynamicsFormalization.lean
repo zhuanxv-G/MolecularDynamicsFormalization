@@ -272,3 +272,5 @@ import MolecularDynamics.Chapter06.BrownianProbabilityGibbsImage
 import MolecularDynamics.Chapter06.BrownianC2ObservableTaylor
 
 import MolecularDynamics.Chapter06.BrownianC2Generator
+
+import MolecularDynamics.Chapter06.BrownianC2DynkinFormula

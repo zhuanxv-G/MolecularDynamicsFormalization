@@ -1,0 +1,93 @@
+{
+  "started_at": "2026-10-06T18:05:30.9895933+08:00",
+  "finished_at": "2026-10-06T18:06:43.0466223+08:00",
+  "head_at_check": "561620cc8d659c76130843ed072fa28d7d98db0b",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9125,
+  "audit_declarations": 2132,
+  "inputs": 208,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2shifted_generator_tendsto",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2hasDeriv_right",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2Dynkin",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2observable_Dynkin",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2evolved_generator_tendsto",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2hasDeriv_right",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2Dynkin"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2shifted_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2hasDeriv_right",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2Dynkin",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2observable_Dynkin",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2evolved_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2hasDeriv_right",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2Dynkin",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "50f3d189e3e558c4e1534a0a4fc922e36eacf3feb4e3eaf601cc1e8f3471b1b3"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
