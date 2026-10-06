@@ -912,3 +912,8 @@ full-check01 passed：9099 jobs/1766公理声明/182exact inputs；10checks退�
 16public；同一actual原Gibbs measure全Lpℝ/ℂ的真实ofReal/re/im CLM及AE、双向整个空间分解、真norm/inner保存/injective；由原real Hilbert HasSum映射和实际complex closed-span证明完整同索引complex HilbertBasis，保留全部实际模式及重数并给所有complex z HasSum。MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean；docs/reviews/2026-10-06-BrownianGibbsComplexification/REVIEW.zh-CN.md。复杂基为原real模式实际复化；complex original A graph/entire complex spectrum下一未完成，不冒称定义未构造的operator已具备此基。SDE概率识别/core语义/整范围pending。
 
 full-check01 passed：9100 jobs/1782公理声明/183exact inputs；10checks退出0、全部input/rawlog SHA匹配、16 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — actual whole complex Gibbs original generator graph and full self-adjointness (BrownianGibbsComplexOperator)
+17public；真complex coordinates=re/im原real coordinates；complex-linear graph实际等价于原real A的真实re/im两图。由true vertical uniqueness构造actual LinearPMap并证graph相等，完整坐标graph iff/整个weightedℓ²domain/逐mode真本征图/closed/dense/fullformalAdjoint以及全adjoint domain equality的IsSelfAdjoint均证明。MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean；docs/reviews/2026-10-06-BrownianGibbsComplexOperator/REVIEW.zh-CN.md。整个复原A已真实复化；complex compact resolvent/整复谱与SDElaw概率识别/core负责人语义pending。
+
+full-check01 passed：9101 jobs/1799公理声明/184exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

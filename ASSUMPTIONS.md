@@ -538,3 +538,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianGibbsComplexification: genuine same-measure entire complex L2 and complete mode basis
 complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模型假设；使用相同原Gibbs measure，不替换为Haar。完整complex基依赖原hm>0/U C∞periodic/β>0已接受全real本征基；dense complex span真正由全real HasSum和actual complex decomposition推导，未假定完备性/密度/谱完整。Nc0合法。尚未定义复原A graph或证明其complex spectra、也未假定SDElaw、Markov正性或期望识别，原C²core负责人语义pending。无placeholder/newaxiom/unsafe/资源或linter绕过。
+
+## BrownianGibbsComplexOperator: proved actual complex graph equivalence and full-domain self-adjointness
+原hm>0、原U C∞integerperiodic、β>0及actual sameGibbs entirecomplexLp，无正维假设。全模式coeff graph确切等于原real A的re/im两图；verticalzero、complex-linearity、closed、dense、weightedℓ²domain、所有mode真图、全形式伴随和真实IsSelfAdjoint均由已接受真实原real graph与完整complex基推导，不作前提。Submodule.toLinearPMap真实非junk图由唯一性证明。没有把IsSelfAdjoint当整复谱及compact resolvent证据，后者仍下一；真实Markov/SDE概率识别与原C²core负责人语义pending。无placeholder/newaxiom/unsafe/资源或linter绕过。

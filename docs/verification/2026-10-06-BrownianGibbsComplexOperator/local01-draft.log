@@ -1,0 +1,23 @@
+docs/verification/2026-10-06-BrownianGibbsComplexOperator/Draft.lean:28:94: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+j : textbookBrownianGibbsEigenIndex m U hU hPU β
+z : ↥(GibbsComplex U β)
+⊢ ↑⟪(textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j, (textbookBrownianGibbsL2RealPart U β) z⟫_ℝ +
+      Complex.I * ↑⟪(textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j, (textbookBrownianGibbsL2ImagPart U β) z⟫_ℝ =
+    ↑⟪(rb m hm U hU hPU β hβ) j,
+          (textbookBrownianGibbsL2RealPart U β)
+            ((textbookBrownianGibbsL2Complexify U β) ((textbookBrownianGibbsL2RealPart U β) z) +
+              Complex.I • (textbookBrownianGibbsL2Complexify U β) ((textbookBrownianGibbsL2ImagPart U β) z))⟫_ℝ +
+      Complex.I *
+        ↑⟪(rb m hm U hU hPU β hβ) j,
+            (textbookBrownianGibbsL2ImagPart U β)
+              ((textbookBrownianGibbsL2Complexify U β) ((textbookBrownianGibbsL2RealPart U β) z) +
+                Complex.I • (textbookBrownianGibbsL2Complexify U β) ((textbookBrownianGibbsL2ImagPart U β) z))⟫_ℝ
+docs/verification/2026-10-06-BrownianGibbsComplexOperator/Draft.lean:138:13: warning: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead

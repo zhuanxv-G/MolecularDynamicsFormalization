@@ -1,0 +1,21 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianGibbsComplexOperator/Draft.lean",
+  "source_sha256": "c912c3db102f927c6ec08ccfeb6e69b19d232ad85f637414c951a349b316ff9f",
+  "log": "docs/verification/2026-10-06-BrownianGibbsComplexOperator/local02-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public_declarations": 17,
+  "same_original_complex_Gibbs_operator_graph_equiv_actual_real_imaginary_graphs": "proved_locally",
+  "whole_complex_weighted_l2_domain": "proved_locally",
+  "actual_complex_closed_dense_domain": "proved_locally",
+  "actual_full_domain_selfAdjoint": "proved_locally",
+  "actual_all_mode_eigen_graphs": "proved_locally",
+  "entire_complex_spectrum": "next_dependency_not_yet_proved",
+  "actual_SDE_probability_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete",
+  "integrated": false,
+  "full_check": "not_run"
+}

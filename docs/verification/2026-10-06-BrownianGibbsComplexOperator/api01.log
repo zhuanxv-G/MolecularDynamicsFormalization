@@ -1,0 +1,31 @@
+Submodule.toLinearPMap.{u_1, u_4, u_5} {R : Type u_1} [Ring R] {E : Type u_4} [AddCommGroup E] [Module R E]
+  {F : Type u_5} [AddCommGroup F] [Module R F] (g : Submodule R (E × F)) : E →ₗ.[R] F
+Submodule.toLinearPMap_graph_eq.{u_1, u_4, u_5} {R : Type u_1} [Ring R] {E : Type u_4} [AddCommGroup E] [Module R E]
+  {F : Type u_5} [AddCommGroup F] [Module R F] (g : Submodule R (E × F)) (hg : ∀ x ∈ g, x.1 = 0 → x.2 = 0) :
+  g.toLinearPMap.graph = g
+LinearPMap.mem_graph_iff.{u_1, u_4, u_5} {R : Type u_1} [Ring R] {E : Type u_4} [AddCommGroup E] [Module R E]
+  {F : Type u_5} [AddCommGroup F] [Module R F] (f : E →ₗ.[R] F) {x : E × F} : x ∈ f.graph ↔ ∃ y, ↑y = x.1 ∧ ↑f y = x.2
+LinearPMap.mem_domain_of_mem_graph.{u_1, u_4, u_5} {R : Type u_1} [Ring R] {E : Type u_4} [AddCommGroup E] [Module R E]
+  {F : Type u_5} [AddCommGroup F] [Module R F] {f : E →ₗ.[R] F} {x : E} {y : F} (h : (x, y) ∈ f.graph) : x ∈ f.domain
+LinearPMap.mem_graph.{u_1, u_4, u_5} {R : Type u_1} [Ring R] {E : Type u_4} [AddCommGroup E] [Module R E] {F : Type u_5}
+  [AddCommGroup F] [Module R F] (f : E →ₗ.[R] F) (x : ↥f.domain) : (↑x, ↑f x) ∈ f.graph
+LinearPMap.IsClosed.{u_1, u_2, u_3} {R : Type u_1} {E : Type u_2} {F : Type u_3} [CommRing R] [AddCommGroup E]
+  [AddCommGroup F] [Module R E] [Module R F] [TopologicalSpace E] [TopologicalSpace F] (f : E →ₗ.[R] F) : Prop
+HilbertBasis.repr_apply_apply.{u_1, u_2, u_3} {ι : Type u_1} {𝕜 : Type u_2} [RCLike 𝕜] {E : Type u_3}
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] (b : HilbertBasis ι 𝕜 E) (v : E) (i : ι) : ↑(b.repr v) i = ⟪b i, v⟫_𝕜
+HilbertBasis.hasSum_repr.{u_1, u_2, u_3} {ι : Type u_1} {𝕜 : Type u_2} [RCLike 𝕜] {E : Type u_3} [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] (b : HilbertBasis ι 𝕜 E) (x : E) : HasSum (fun i => ↑(b.repr x) i • b i) x
+lp.memℓp.{u_3, u_4} {α : Type u_3} {E : α → Type u_4} {p : ENNReal} [(i : α) → NormedAddCommGroup (E i)]
+  (f : ↥(lp E p)) : Memℓp (↑f) p
+inner_add_right.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [SeminormedAddCommGroup E] [InnerProductSpace 𝕜 E]
+  (x y z : E) : ⟪x, y + z⟫_𝕜 = ⟪x, y⟫_𝕜 + ⟪x, z⟫_𝕜
+inner_smul_right.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [SeminormedAddCommGroup E] [InnerProductSpace 𝕜 E]
+  (x y : E) (r : 𝕜) : ⟪x, r • y⟫_𝕜 = r * ⟪x, y⟫_𝕜
+inner_zero_right.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [SeminormedAddCommGroup E] [InnerProductSpace 𝕜 E]
+  (x : E) : ⟪x, 0⟫_𝕜 = 0
+Complex.mul_re (z w : ℂ) : (z * w).re = z.re * w.re - z.im * w.im
+Complex.mul_im (z w : ℂ) : (z * w).im = z.re * w.im + z.im * w.re
+isClosed_iInter.{u, v} {X : Type u} {ι : Sort v} [TopologicalSpace X] {f : ι → Set X} (h : ∀ (i : ι), IsClosed (f i)) :
+  IsClosed (⋂ i, f i)
+isClosed_eq.{u_1, u_2} {X : Type u_1} {Y : Type u_2} [TopologicalSpace X] [TopologicalSpace Y] [T2Space X] {f g : Y → X}
+  (hf : Continuous f) (hg : Continuous g) : IsClosed {y | f y = g y}

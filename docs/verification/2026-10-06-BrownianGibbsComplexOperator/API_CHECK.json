@@ -1,0 +1,13 @@
+{
+  "fixed_lean": "4.34.0",
+  "fixed_mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "successful_api_checks": 16,
+  "source": "docs/verification/2026-10-06-BrownianGibbsComplexOperator/ApiProbe.lean",
+  "source_sha256": "c29b4e3b331c92e79fc38700dc28401ae3066fd91618fac92f7b034c19a486e9",
+  "log": "docs/verification/2026-10-06-BrownianGibbsComplexOperator/api01.log",
+  "log_sha256": "ccb3c84f098136b5654aebe4fe09e1e5cba38023a17588d2399bb404384de8ca",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "additional_fixed_source_read": "Submodule.dense_iff_topologicalClosure_eq_top; LinearPMap.adjoint_isFormalAdjoint; IsFormalAdjoint.le_adjoint; inner_conj_symm; candidate verifies their concrete uses",
+  "failed_logs_preserved": true
+}
