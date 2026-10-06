@@ -1,0 +1,239 @@
+{
+  "started_at": "2026-10-06T12:39:51.8669591+08:00",
+  "finished_at": "2026-10-06T12:41:42.6262401+08:00",
+  "head_at_check": "7609f23dfda68b742292af31f6c3fe552c6c001b",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9103,
+  "audit_declarations": 1830,
+  "inputs": 186,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolventSet",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolventSet_one",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolventSet_iff_isUnit",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolventSet_iff_resolventSet",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_iff_resolventSpectrum",
+    "MolecularDynamics.textbookBrownianGibbsComplexResolvent_eigenvalue_iff_spectrum",
+    "MolecularDynamics.textbookBrownianGibbsComplexOperator_eigenvalue_iff_mode",
+    "MolecularDynamics.textbookBrownianGibbsComplexResolvent_eigenvalue_iff_mode",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_iff_mode",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_iff_eigen_graph",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_eq_real_image",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_im_zero",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_nonpos",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_gap",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_zero",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_countable",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_finite_levels",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_isClosed",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_isolated",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolvent_isCompact"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolventSet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolventSet_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolventSet_iff_isUnit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolventSet_iff_resolventSet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_iff_resolventSpectrum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolvent_eigenvalue_iff_spectrum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexOperator_eigenvalue_iff_mode",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolvent_eigenvalue_iff_mode",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_iff_mode",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_iff_eigen_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_eq_real_image",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_im_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_countable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_finite_levels",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_isClosed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_isolated",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolvent_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "62690e0f607770f747451eefccac1d023e4deeca9e7cf3536616c610956ff7b3"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "37bbb3b08efaa8061f035dbc893f2cef99b2838dbc080332a0b190371a7c2804"
+    },
+    {
+      "path": "FULL_DRIVER02.log",
+      "sha256": "e196c890294fbfe828879f803a2fa85e3fcd753b7a5f5e2ac76434c3eda73ba1"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "35015d138696465c30db541d7c489eae9ea7a888c57b6bb64861d1775e0789d4"
+    },
+    {
+      "path": "local03-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,32 @@
+IsCompactOperator.hasEigenvalue_iff_mem_spectrum.{u_1, u_2} {𝕜 : Type u_1} {X : Type u_2} [NontriviallyNormedField 𝕜]
+  [NormedAddCommGroup X] [NormedSpace 𝕜 X] {T : X →L[𝕜] X} {μ : 𝕜} [CompleteSpace X] (hT : IsCompactOperator ⇑T)
+  (hμ : μ ≠ 0) : Module.End.HasEigenvalue (↑T) μ ↔ μ ∈ spectrum 𝕜 T
+Module.End.HasEigenvalue.exists_hasEigenvector.{v, w} {R : Type v} {M : Type w} [CommRing R] [AddCommGroup M]
+  [Module R M] {f : Module.End R M} {μ : R} (hμ : f.HasEigenvalue μ) : ∃ v, f.HasEigenvector μ v
+Module.End.hasEigenvalue_of_hasEigenvector.{v, w} {R : Type v} {M : Type w} [CommRing R] [AddCommGroup M] [Module R M]
+  {f : Module.End R M} {μ : R} {x : M} (h : f.HasEigenvector μ x) : f.HasEigenvalue μ
+Module.End.mem_genEigenspace_one.{v, w} {R : Type v} {M : Type w} [CommRing R] [AddCommGroup M] [Module R M]
+  {f : Module.End R M} {μ : R} {x : M} : x ∈ (f.genEigenspace μ) 1 ↔ f x = μ • x
+Module.End.hasEigenvector_iff.{v, w} {R : Type v} {M : Type w} [CommRing R] [AddCommGroup M] [Module R M]
+  {f : Module.End R M} {μ : R} {x : M} : f.HasEigenvector μ x ↔ x ∈ f.eigenspace μ ∧ x ≠ 0
+Module.End.hasEigenvalue_iff.{v, w} {R : Type v} {M : Type w} [CommRing R] [AddCommGroup M] [Module R M]
+  {f : Module.End R M} {μ : R} : f.HasEigenvalue μ ↔ f.eigenspace μ ≠ ⊥
+inv_injective.{u_3} {G : Type u_3} [InvolutiveInv G] : Function.Injective Inv.inv
+mul_right_cancel₀.{u_1} {M₀ : Type u_1} [Mul M₀] [Zero M₀] [IsRightCancelMulZero M₀] {a b c : M₀} (hb : b ≠ 0)
+  (h : a * b = c * b) : a = c
+Set.mem_image.{u, v} {α : Type u} {β : Type v} (f : α → β) (s : Set α) (y : β) : y ∈ f '' s ↔ ∃ x ∈ s, f x = y
+MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_eq_eigenbasis_range {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum m U hU hPU β = Set.range fun j => j.fst
+MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_countable {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  (MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum m U hU hPU β).Countable
+isUnit_iff_exists.{u_1} {M : Type u_1} [Monoid M] {x : M} : IsUnit x ↔ ∃ b, x * b = 1 ∧ b * x = 1
+spectrum.mem_resolventSet_iff.{u, v} {R : Type u} {A : Type v} [CommSemiring R] [Ring A] [Algebra R A] {r : R} {a : A} :
+  r ∈ resolventSet R a ↔ IsUnit ((algebraMap R A) r - a)
+IsUnit.mul_left_iff.{u_1} {M : Type u_1} [Monoid M] {a b : M} (ha : IsUnit a) : IsUnit (a * b) ↔ IsUnit b
+Complex.ofReal_inj {z w : ℝ} : ↑z = ↑w ↔ z = w
+Complex.ofReal_inv (r : ℝ) : ↑r⁻¹ = (↑r)⁻¹
+Complex.ofReal_sub (r s : ℝ) : ↑(r - s) = ↑r - ↑s

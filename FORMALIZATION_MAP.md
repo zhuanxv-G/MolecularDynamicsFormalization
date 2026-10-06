@@ -922,3 +922,8 @@ full-check01 passed：9101 jobs/1799公理声明/184exact inputs；10checks退�
 10public；C=J actualR Re+iJ actualR Im由真全部坐标推complex-linearity，真实ℝopnorm界给samefunction complexCLM。真正原Rcompact经pre/postcompose/scalar/add推出actualcomplex R紧；所有wholecomplex input真A_C图preimage及任何truegraph(z,w)给R_C(z−w)=z，实际complex A_C compact two-sided inverse at1完整。MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean；docs/reviews/2026-10-06-BrownianGibbsComplexResolvent/REVIEW.zh-CN.md。下一真正entirecomplex spectrum transform/Fredholm；SDE概率识别/core语义/整范围pending。
 
 full-check01 passed：9102 jobs/1809公理声明/185exact inputs；10checks退出0、全部input/rawlog SHA匹配、10 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — entire complex spectrum of actual original Gibbs closed generator (BrownianGibbsComplexSpectrum)
+21public；真实双边闭图resolventSet⇔unit(id+(z−1)R_C)，非零1−z真实谱变换与紧Fredholm完整识别；整个complex谱恰原真实real模式集合且=ofReal整个real谱。真Im0/nonpos/非零gap/0spec/countable/finitelevels/closed/isolated，以及任何actualboundedgraphinverse真compact。MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean；docs/reviews/2026-10-06-BrownianGibbsComplexSpectrum/REVIEW.zh-CN.md。原有序基首常数相位待正文规范化；SDE概率识别/core最终语义及整范围pending。
+
+full-check02 passed：9103 jobs/1830公理声明/186exact inputs；10checks退出0、全部input/rawlog SHA匹配、21 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

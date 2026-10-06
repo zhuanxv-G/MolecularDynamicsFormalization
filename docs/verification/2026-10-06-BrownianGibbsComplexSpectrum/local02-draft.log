@@ -1,0 +1,40 @@
+docs/verification/2026-10-06-BrownianGibbsComplexSpectrum/Draft.lean:194:6: error: Type mismatch: After simplification, term
+  hx
+ has type
+  @Eq (↥(MolecularDynamics.GibbsComplex✝ U β)) (↑(textbookBrownianGibbsComplexResolvent m hm U hU hPU β hβ) x) (r • x)
+but is expected to have type
+  @Eq (↥(MolecularDynamics.GibbsComplex✝ U β)) (R x) (r • x)
+docs/verification/2026-10-06-BrownianGibbsComplexSpectrum/Draft.lean:214:4: error: Type mismatch: After simplification, term
+  hR
+ has type
+  @Eq (↥(MolecularDynamics.GibbsComplex✝ U β)) (R (b j)) (r • b j)
+but is expected to have type
+  @Eq (↥(MolecularDynamics.GibbsComplex✝ U β)) (↑(textbookBrownianGibbsComplexResolvent m hm U hU hPU β hβ) (b j))
+    (r • b j)
+docs/verification/2026-10-06-BrownianGibbsComplexSpectrum/Draft.lean:329:13: error: typeclass instance problem is stuck
+  Membership ℝ ?m.82
+
+Note: Lean will not try to resolve this typeclass instance problem because the second type argument to `Membership` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+docs/verification/2026-10-06-BrownianGibbsComplexSpectrum/Draft.lean:337:6: error: unsolved goals
+case mpr.a
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+z : ℂ
+hI : z ∈ {z | z.im = 0}
+hR : z ∈ Complex.re ⁻¹' textbookBrownianGibbsGeneratorRealSpectrum m U hU hPU β
+⊢ 0 = z.im
+docs/verification/2026-10-06-BrownianGibbsComplexSpectrum/Draft.lean:337:14: warning: This simp argument is unused:
+  hI
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

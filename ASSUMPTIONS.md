@@ -544,3 +544,6 @@ complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模�
 
 ## BrownianGibbsComplexResolvent: actual entire compact two-sided inverse proved
 同一actual original Gibbs measure/wholecomplexLp、原正质量/原C∞整数周期U/β>0，无Nc>0。actualrealR作为已接受真实原生成元inverse使用，不引入外部inverse假设；C complex-linearity、连续、紧性、两方向whole graphinverse全部构造/推导。1−λ nonzero由实际λ≤0推出，不添加条件。没有把compact或point spectrum当整复谱已证明，整complex spectrum仍下一；SDE概率law及原core负责人语义pending。无placeholder/newaxiom/unsafe/资源或linter绕过。
+
+## BrownianGibbsComplexSpectrum: genuine entire complex spectrum proved
+同一原Gibbs wholecomplexLp、原positive masses/原C∞periodic U/β>0，不要求Nc>0。双边closedgraphinverse定义、unit等价、真实非零谱变换、compact Fredholm及全部模式完整性均证明，没有假定整谱=point spectrum，没有用某模型特例替原U。任何actualinverse紧性结论仅使用该B真inverse图条件。全部real谱、负κgap、有限层与closed来源是先前真实证明。SDElaw/Markov正性/式5.6概率识别及C²/C∞ core负责人签核继续pending；默认资源/linters，无占位、新公理或unsafe。
