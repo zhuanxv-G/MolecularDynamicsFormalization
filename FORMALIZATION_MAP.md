@@ -962,3 +962,7 @@ full-check01 passed：9109 jobs/1915公理声明/192exact inputs；10checks退�
 10public：actualroughnoise shift/truefutureWienerrestart/sameglobalq Adapted；actualtransitionKernel Markov/endpointpushforward/globaltimeLaw/standardWiener realizationinvariant；真completedhistory jointlaw和actualcondDistrib=kernel(currentconfiguration)，用已证truefuturelaw/independence和原jointendpoint。MolecularDynamics/Chapter06/BrownianMarkovModel.lean；docs/reviews/2026-10-06-BrownianMarkovModel/REVIEW.zh-CN.md。下一真实torusdescent；law=谱T/式5.6/core/wholepending。
 
 full-check01 passed：9110 jobs/1925公理声明/193exact inputs；10checks退出0、全部input/rawlog SHA匹配、10 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianTorusModel / CH06-DEP-076 / NOT-CH06-085：原gamma1/general positive masses/C∞periodic模型的真实整数等变、liftindependent连续torusendpoint、sameglobaltorusprocess原积分方程、实际概率timelaw及Markovkernel、真实projectedliftlaw和completedhistory conditional Markov。32public，local03通过，统一验收中。stochasticgenerator/actualSDElaw=谱T及5.6概率识别/C²core负责人/整个Theorem6.1未完成。
+
+full-check01 passed：9111 jobs/1957公理声明/194exact inputs；10checks退出0、全部input/rawlog SHA匹配、32 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

@@ -568,3 +568,5 @@ complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模�
 
 ## BrownianMarkovModel: true deterministic-time completed-history Markov assertion
 原positive masses/C∞integerperiodic U/β>0/gamma1/Nc含0和actualstandardvectorWiener B/hB，S,T非负确定时间。actualsameglobalq是已构造真实积分解；shift/restart/Adapted、jointendpointmeasurable、standardfutureWienerlaw与completedpast independence均来自完整证明，不作新前提。主conditional law是给整个actualcompletedWienerpast的condDistrib，明确P.completion及真正completehistory measurable space，不把仅路径restart称Markov、不扩大到stoppingtime或strongMarkov。privategeneric依赖原proof复制仅用于actualendpoint。仍未torusquotient、stochgenerator/SDElaw=谱T、C²core或全定理/范围；负责人pending。
+
+BrownianTorusModel：同一UnitAddTorus配置空间，原positive general masses、U C∞及integerperiodic、β>0、γ=1，Nc含0；实际jointGaussian vectorWiener law及AE连续性已定义并使用真正证明的futureindependence，deterministicnonneg S/T。代表只可测，端点continuous由整数等变/openquotient推导。存在/唯一/Adapted/Markov/condDistrib不作输入假设。原C²与C∞核心差异及负责人的语义签核仍pending；actualstochasticgenerator/SDElaw与spectral T识别未证明。

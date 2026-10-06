@@ -244,3 +244,5 @@ import MolecularDynamics.Chapter06.BrownianPathSolution
 import MolecularDynamics.Chapter06.BrownianRandomModel
 
 import MolecularDynamics.Chapter06.BrownianMarkovModel
+
+import MolecularDynamics.Chapter06.BrownianTorusModel

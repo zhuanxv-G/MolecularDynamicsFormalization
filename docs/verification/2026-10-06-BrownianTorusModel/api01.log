@@ -1,0 +1,12 @@
+@Continuous.measurable : ∀ {α : Type u_1} {γ : Type u_2} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α]
+  [OpensMeasurableSpace α] [inst_3 : TopologicalSpace γ] [inst_4 : MeasurableSpace γ] [BorelSpace γ] {f : α → γ},
+  Continuous f → Measurable f
+@AddCircle.coe_add : ∀ {𝕜 : Type u_1} [inst : AddCommGroup 𝕜] (p x y : 𝕜), ↑(x + y) = ↑x + ↑y
+@Measurable.comp : ∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {x : MeasurableSpace α} {x_1 : MeasurableSpace β}
+  {x_2 : MeasurableSpace γ} {g : β → γ} {f : α → β}, Measurable g → Measurable f → Measurable (g ∘ f)
+@ContinuousMap.measurable_iff_eval : ∀ {X : Type u_1} {Y : Type u_2} [inst : TopologicalSpace X]
+  [inst_1 : TopologicalSpace Y] [SecondCountableTopology X] [SecondCountableTopology Y] [LocallyCompactSpace X]
+  [RegularSpace Y] [mY : MeasurableSpace Y] [BorelSpace Y] {Z : Type u_3} [inst_7 : MeasurableSpace Z]
+  {g : Z → C(X, Y)}, Measurable g ↔ ∀ (x : X), Measurable fun a => (g a) x
+Pi.borelSpace
+Prod.borelSpace
