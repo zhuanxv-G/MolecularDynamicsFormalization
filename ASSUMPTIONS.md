@@ -616,3 +616,5 @@ BrownianProbabilityDensityAverage：一般正质量/β>0/γ1/allNc/currentU C∞
 BrownianSpectralDensityLaw：同原正质量/β>0/γ1/allNc/currentU C∞periodic/trueWiener、初始整个GibbsL2 AE非负/原质量1。谱density非负及densitymeasure=actuallaw均从真实continuous期待和finite regular正负measure唯一性/互奇异导出，绝非假设。原Haar local实例明确沿用AddCircle.haarAddCircle，真positive Gibbsweight给Haar≪Gibbs，两次withDensity乘积连接physicaldensity w*Tρ和actualsameκlaw；真实flatHaar5.6ratio。初始L2限制/ownersemantic/超L2/全scope待补。
 
 BrownianL1ProbabilitySemigroup：同原一般正质量/β>0/γ1/allNc/U C∞integerperiodic/trueWiener。L1input真实整个原Gibbs空间，无smooth密度输入限制；真实κ积分norm界和已证Gibbs积分不变性推出inputcontraction，actual原P经真denseJ1有界扩张，whole零/add/C0由原CMap行为和均匀收缩推出而不作前提。其他p/完整CMapgraphcore/ownerpending；不将其误作任意初始密度指数界，既有5.6指数范围仍为L2relativeGibbs。
+
+BrownianL1DensityLaw：同原Theorem6.1一般正质量M/β>0/γ1/allNc/currentU C∞periodic/trueWiener，原250/PDF271明确一般M恢复于Theorem6.1标题，前249/PDF270 M=I是6.46说明例。初始ρ原整个GibbsL1 AE非负/原积分1是物理输入；wholeactualL1density对偶/mass/非负及densitymeasure=同originalκlaw均从真实boundedcontinuous pairing+已验谱symmetry+真denseextension+kernelcomposition+regularmeasure唯一性/互奇异推出。原Haar density5.6ratio真实。指数界只保留已验初始GibbsL2，不将L1/Dirac指数结论暗作前提；251原初始类owner歧义/全scopepending，其他p/完整CMapcore不作独立交付。

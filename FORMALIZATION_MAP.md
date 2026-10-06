@@ -1058,3 +1058,7 @@ full-check01 passed：9133 jobs/2246公理声明/216exact inputs；10checks退�
 BrownianL1ProbabilitySemigroup / CH06-DEP-099 / NOT-CH06-108：同真实J1AE/dense/L1integralnorm、actualkernel normexpectation及已证Gibbsinvariance给真正GibbsL1inputcontraction；固定extendOfNorm整原L1 actualP extension/spec/norm_apply，真实denseequalizer零/add及denseε4+uniformcontraction+原CMapC0给整个原L1强C0。14public local03统一验收中；p其他范围/完整CMapgraphcore/owner/whole未完。
 
 full-check01 passed：9134 jobs/2260公理声明/217exact inputs；10checks退出0、全部input/rawlog SHA匹配、14 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianL1DensityLaw / CH06-DEP-100 / NOT-CH06-109：wholeactualGibbsL1真boundedcontinuous pairing/积分对偶/mass，真实初始L1densityprobability及sameκlaw，wholeL1evolution真AE非负/densitymeasure=actuallaw，真实原Haar physicaldensity可测可积非负质量1/actuallaw与literal5.6ratio。24public local03统一验收中。原250/PDF271正式Theorem6.1一般M，前页M=I为6.46例子；指数界初始L2限制和Dirac/原初始类owner歧义保留，下一L1/L2兼容，非一般p独立扩展。
+
+full-check01 passed：9135 jobs/2284公理声明/218exact inputs；10checks退出0、全部input/rawlog SHA匹配、24 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

@@ -1,0 +1,15 @@
+# Theorem6.1：原真实可积初始density law、整L1实际密度及Haar参考(5.6)
+
+原印刷249/PDF270初始macroscopic density举Gaussian/indicator/Dirac；印刷250/PDF271末尾明确Theorem6.1一般质量M生成元，印刷251/PDF272列性质(1)(2)(3)；(5.6)印刷190/PDF211是时间t分布平均。此前同页M=I是(6.46)介绍性例子，正式Theorem6.1恢复一般M，故本证明同原positive masses/β>0/γ1/allNc/U C∞integerperiodic/actualWiener/globalq/κ保持原定理参数，不能把正文定理降成仅M=I。
+
+24public，实际初始ρ整个原GibbsL1，AE非负、真实积分1作为物理probability输入。private真boundedcontinuous F与wholeL1积分pairing用实际Lp代表AE加法/标乘、Bochner积分线性和真实integralnorm界构造CLM。所有actualCMap概率期待对同原Gibbs integral symmetric/duality由已验实际probability=真实谱T、JAE、whole谱self-adjointness推导，沿真denseJ1和连续pairing transport至全部actualwholeL1densityinput。原κP_t1=1得真integralmass保持，非将duality或mass当输入。
+
+整L1真实初始µ.withDensity(ofRealρ)为probability，同originalκ_t推动law每t也是probability；真正kernel composition/withDensity积分给actual期待。wholeL1对偶连接同actualL1evolved density，与实际κlaw所有continuous期待相等。有限正负densitymeasure、compact regularmeasure唯一性和互奇异已验private必要证明复用至trueL1 integrable reps，实际推出actualL1evolved density非负及其densitymeasure就是同originalκlaw。
+
+原localHaar实例明确重用AddCircle.haarAddCircle。真实strictpositiveGibbsweight w=Z⁻¹exp(-βU)，整L1physicaldensity w*x原Haar可测/可积、AE非负转移、带密度measure乘积和Bochnerintegralidentity均真正证明。actualκlaw是真Haar.withDensity(ofReal(w*A1_tρ))，原physicaldensity真实质量1；(5.6) actuallaw归一平均字面等于原flatHaar observable-density积分/密度积分。覆盖所有integrable Gibbs-relative初始probabilitydensity的densitylaw识别，不要求L2。
+
+local03全24退出0空日志/零Leanwarning；exactformalcopySHA复用。local01只privateL1加法Pi.add_apply及lambda beta展开诊断，local02首12空日志真实整L1law身份通过，local03追加12原Haar及literal5.6空日志。无sorry/admit/newprojectaxiom/unsafe/结论假设/resource或透明度增长/linter关闭；Nc0/t0保留。DEP100/NOT109。
+
+密度law识别扩至L1不代表指数prefactor扩至L1或Dirac。已验Theorem6.1(3)正指数界初始relativeGibbsL2条件继续真实登记；原249举Dirac而251(3)未显式初始类，该语义边界需要负责人签核。任意初始measure全t≥0的统一L2testnorm指数界尚未证明，不宣称全定理完成。其他p与完整CMapcore非独立正文交付路线，已有代码保留。下一证明samewholeL1/L2自然包含与真实densitylaw一致性，将既有canonical界接至同L1/原Haar5.6平均；Theorem6.1/CORE_SCOPE整体和负责人未完。
+
+full-check01 passed：9135 jobs/2284公理声明/218exact inputs；10checks退出0、全部input/rawlog SHA匹配、24 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

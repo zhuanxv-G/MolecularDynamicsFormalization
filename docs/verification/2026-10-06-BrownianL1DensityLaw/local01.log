@@ -1,0 +1,37 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-06-BrownianL1DensityLaw/Draft.lean:29:84: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+F : C(UnitAddTorus (Fin N), ℝ)
+x y : ↥(Lp ℝ 1 (textbookConfigurationTorusGibbsMeasure U β))
+Q : UnitAddTorus (Fin N)
+hQ : ↑↑(x + y) Q = (↑↑x + ↑↑y) Q
+⊢ F Q * (↑↑x + ↑↑y) Q = F Q * ↑↑x Q + F Q * ↑↑y Q
+docs/verification/2026-10-06-BrownianL1DensityLaw/Draft.lean:56:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ‖?a * ?b‖
+in the target expression
+  (fun a => ‖F a * ↑↑x a‖) Q ≤ (fun x_1 => ‖F‖ * ‖↑↑x x_1‖) Q
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+β : ℝ
+F : C(UnitAddTorus (Fin N), ℝ)
+x : ↥(Lp ℝ 1 (textbookConfigurationTorusGibbsMeasure U β))
+Q : UnitAddTorus (Fin N)
+⊢ (fun a => ‖F a * ↑↑x a‖) Q ≤ (fun x_1 => ‖F‖ * ‖↑↑x x_1‖) Q
