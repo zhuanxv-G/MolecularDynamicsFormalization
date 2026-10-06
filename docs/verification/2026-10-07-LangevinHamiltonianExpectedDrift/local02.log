@@ -1,0 +1,23 @@
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:42:38: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  |2⁻¹|
+in the target expression
+  |textbookBrownianObservableTaylorRemainder f x y| + ‖2⁻¹‖ * ‖(iteratedFDeriv ℝ 2 f x) fun x => y‖ ≤
+    K * ‖y‖ ^ 2 + 2⁻¹ * (M * ‖y‖ ^ 2)
+
+N : ℕ
+f : (Fin N → ℝ) → ℝ
+hf : ContDiff ℝ 2 f
+hp : textbookUnitPeriodicPotential f
+K : ℝ
+hK : 0 ≤ K
+hb : ∀ (x y : Fin N → ℝ), ‖textbookBrownianObservableTaylorRemainder f x y‖ ≤ K * ‖y‖ ^ 2
+M : ℝ
+hM : 0 ≤ M
+hMbound : ∀ (x : Fin N → ℝ), ‖iteratedFDeriv ℝ 2 f x‖ ≤ M
+x y : Fin N → ℝ
+hh : ‖(iteratedFDeriv ℝ 2 f x) fun x => y‖ ≤ M * ‖y‖ ^ 2
+he :
+  f (x + y) - f x - (fderiv ℝ f x) y =
+    textbookBrownianObservableTaylorRemainder f x y + 2⁻¹ * (iteratedFDeriv ℝ 2 f x) fun x => y
+⊢ |textbookBrownianObservableTaylorRemainder f x y| + ‖2⁻¹‖ * ‖(iteratedFDeriv ℝ 2 f x) fun x => y‖ ≤
+    K * ‖y‖ ^ 2 + 2⁻¹ * (M * ‖y‖ ^ 2)

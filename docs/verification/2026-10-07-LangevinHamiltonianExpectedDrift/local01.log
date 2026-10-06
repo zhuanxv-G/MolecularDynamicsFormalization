@@ -1,0 +1,48 @@
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:25:24: error(lean.unknownIdentifier): Unknown identifier `textbookBrownianC2ObservableTaylorRemainder_quadratic_bound`
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:25:9: error: Tactic `rcases` failed: `x✝ : ?m.77` is not an inductive datatype
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:194:8: error(lean.unknownIdentifier): Unknown identifier `textbookConfigurationPartial_fderiv_coordinate_sum`
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:207:5: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  IsFiniteMeasure P
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:214:10: error(lean.unknownIdentifier): Unknown identifier `textbookConfigurationPartial_fderiv_coordinate_sum`
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:187:84: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+x : textbookLangevinPeriodicPhase N
+q0 : Fin N → ℝ := textbookLangevinPeriodicRepresentative x.1
+Δ : ℝ → Ω → Fin N → ℝ := fun t sample => textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample - q0
+c : Fin N → ℝ := fun i => textbookConfigurationPartial U i q0
+R : ℝ → textbookLangevinPeriodicPhase N → Ω → ℝ := textbookLangevinPeriodicPotentialFirstRemainder B U L hF γ σ
+hl : Tendsto (fun t => ∑ i, c i * ((∫ (sample : Ω), Δ t sample i ∂P) / t)) (𝓝[>] 0) (𝓝 ((fderiv ℝ U q0) x.2))
+hr :
+  Tendsto (fun T => (∫ (sample : Ω), textbookLangevinPeriodicPotentialFirstRemainder B U L hF γ σ T x sample ∂P) / T)
+    (𝓝[>] 0) (𝓝 0)
+hh :
+  Tendsto
+    (fun x_1 =>
+      ∑ i, c i * ((∫ (sample : Ω), Δ x_1 sample i ∂P) / x_1) +
+        (∫ (sample : Ω), textbookLangevinPeriodicPotentialFirstRemainder B U L hF γ σ x_1 x sample ∂P) / x_1)
+    (𝓝[>] 0) (𝓝 ((fderiv ℝ U q0) x.2))
+t : ℝ
+ht : t ∈ Ioi 0
+ht0 : 0 < t
+hterm : ∀ (i : Fin N), Integrable (fun sample => c i * Δ t sample i) P
+hR : Integrable (textbookLangevinPeriodicPotentialFirstRemainder B U L hF γ σ t x) P
+he :
+  (fun sample => U (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample) - U q0) = fun sample =>
+    ∑ i, c i * Δ t sample i + R t x sample
+⊢ ∑ i, c i * ((∫ (sample : Ω), Δ t sample i ∂P) / t) +
+      (∫ (sample : Ω), textbookLangevinPeriodicPotentialFirstRemainder B U L hF γ σ t x sample ∂P) / t =
+    ∑ x, c x * ((∫ (a : Ω), Δ t a x ∂P) / t) + (∫ (a : Ω), R t x a ∂P) / t

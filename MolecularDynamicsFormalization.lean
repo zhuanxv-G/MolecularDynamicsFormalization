@@ -348,3 +348,5 @@ import MolecularDynamics.Chapter06.LangevinMomentumFirstMean
 import MolecularDynamics.Chapter06.LangevinSmallTimePosition
 
 import MolecularDynamics.Chapter06.LangevinFourthMoments
+
+import MolecularDynamics.Chapter06.LangevinHamiltonianExpectedDrift

@@ -1,0 +1,126 @@
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:318:2: error: 'change' tactic failed, pattern
+  (∑ i, (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i ^ 2) / 2 +
+        U (textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample) -
+      ((∑ i, x.2 i ^ 2) / 2 + U (textbookLangevinPeriodicRepresentative x.1)) =
+    ?m.188
+is not definitionally equal to target
+  ∑ i,
+          (textbookLangevinGlobalRandomPhase U L hF γ σ (textbookLangevinPeriodicRepresentative x.1, x.2) B T sample).2
+                i ^
+              2 /
+            2 +
+        U
+          (textbookLangevinGlobalRandomPhase U L hF γ σ (textbookLangevinPeriodicRepresentative x.1, x.2) B T
+              sample).1 -
+      (∑ i, x.2 i ^ 2 / 2 + U (textbookLangevinPeriodicRepresentative x.1)) =
+    ∑ i, ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i ^ 2 - x.2 i ^ 2) / 2 +
+      (U (textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample) -
+        U (textbookLangevinPeriodicRepresentative x.1))
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:317:58: warning: This simp argument is unused:
+  Finset.sum_sub_distrib
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [textbookLangevinPeriodicHamiltonianPower, textbookLangevinHamiltonianPower, pow_one,
+    textbookLangevinHamiltonian, Finset.sum_div]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:352:4: error: Tactic `apply` failed: could not unify the conclusion of `@tendsto_finsetSum`
+  Tendsto (fun b => ∑ c ∈ ?s, ?f c b) ?x (𝓝 (∑ c ∈ ?s, ?a c))
+with the goal
+  Tendsto (fun t => ∑ i, (∫ (sample : Ω), K t i sample ∂P) / t) (𝓝[>] 0)
+    (𝓝 (∑ i, x.2 i * (textbookPotentialForce U q0 i - γ * x.2 i) + σ ^ 2 / 2))
+
+Note: The full type of `@tendsto_finsetSum` is
+  ∀ {ι : Type ?u.203} {α : Type ?u.202} {M : Type ?u.201} [inst : TopologicalSpace M] [inst_1 : AddCommMonoid M]
+    [ContinuousAdd M] {f : ι → α → M} {x : Filter α} {a : ι → M} (s : Finset ι),
+    (∀ i ∈ s, Tendsto (f i) x (𝓝 (a i))) → Tendsto (fun b => ∑ c ∈ s, f c b) x (𝓝 (∑ c ∈ s, a c))
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+x : textbookLangevinPeriodicPhase N
+q0 : Fin N → ℝ := textbookLangevinPeriodicRepresentative x.1
+K : ℝ → Fin N → Ω → ℝ :=
+  fun t i sample => ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i ^ 2 - x.2 i ^ 2) / 2
+V : ℝ → Ω → ℝ := fun t sample => U (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample) - U q0
+⊢ Tendsto (fun t => ∑ i, (∫ (sample : Ω), K t i sample ∂P) / t) (𝓝[>] 0)
+    (𝓝 (∑ i, x.2 i * (textbookPotentialForce U q0 i - γ * x.2 i) + σ ^ 2 / 2))
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:361:60: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ x ∈ ?m.433, ?m.435 x + ∑ x ∈ ?m.433, ?m.436 x
+in the target expression
+  ∑ i, x.2 i * (textbookPotentialForce U q0 i - γ * x.2 i) + σ ^ 2 / 2 +
+      ∑ i, textbookConfigurationPartial U i q0 * x.2 i =
+    -γ * ∑ i, x.2 i ^ 2 + ↑N * σ ^ 2 / 2
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+x : textbookLangevinPeriodicPhase N
+q0 : Fin N → ℝ := textbookLangevinPeriodicRepresentative x.1
+K : ℝ → Fin N → Ω → ℝ :=
+  fun t i sample => ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i ^ 2 - x.2 i ^ 2) / 2
+V : ℝ → Ω → ℝ := fun t sample => U (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample) - U q0
+hk :
+  Tendsto (fun t => ∑ i, (∫ (sample : Ω), K t i sample ∂P) / t) (𝓝[>] 0)
+    (𝓝 (∑ i, x.2 i * (textbookPotentialForce U q0 i - γ * x.2 i) + σ ^ 2 / 2))
+hv :
+  Tendsto
+    (fun T =>
+      (∫ (sample : Ω),
+          U (textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample) -
+            U (textbookLangevinPeriodicRepresentative x.1) ∂P) /
+        T)
+    (𝓝[>] 0) (𝓝 ((fderiv ℝ U (textbookLangevinPeriodicRepresentative x.1)) x.2))
+hh :
+  Tendsto
+    (fun x_1 =>
+      ∑ i, (∫ (sample : Ω), K x_1 i sample ∂P) / x_1 +
+        (∫ (sample : Ω),
+            U (textbookLangevinPeriodicConfigurationLift B U L hF γ σ x_1 x sample) -
+              U (textbookLangevinPeriodicRepresentative x.1) ∂P) /
+          x_1)
+    (𝓝[>] 0)
+    (𝓝
+      (∑ i, x.2 i * (textbookPotentialForce U q0 i - γ * x.2 i) + σ ^ 2 / 2 +
+        (fderiv ℝ U (textbookLangevinPeriodicRepresentative x.1)) x.2))
+⊢ ∑ i, x.2 i * (textbookPotentialForce U q0 i - γ * x.2 i) + σ ^ 2 / 2 +
+      ∑ i, textbookConfigurationPartial U i q0 * x.2 i =
+    -γ * ∑ i, x.2 i ^ 2 + ↑N * σ ^ 2 / 2
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:407:41: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-07-LangevinHamiltonianExpectedDrift/Draft.lean:421:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

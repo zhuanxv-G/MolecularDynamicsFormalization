@@ -1,0 +1,167 @@
+{
+  "started_at": "2026-10-07T07:34:57.899174+08:00",
+  "finished_at": "2026-10-07T07:36:12.4998617+08:00",
+  "head_at_check": "f11f8241ff4f93bdabc95c37ee88437609c94b7d",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9163,
+  "audit_declarations": 2533,
+  "inputs": 246,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_norm_square_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_norm_square_div_time_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicPotentialFirstRemainder",
+    "MolecularDynamics.textbookLangevinPeriodicPotentialFirstRemainder_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicPotentialFirstRemainder_mean_div_time_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_potential_increment_mean_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_kinetic_coordinate_increment_mean_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_increment_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_increment_mean_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_actual_differentialOperator_limit",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_physical_increment_mean_div_time_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_norm_square_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_norm_square_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPotentialFirstRemainder",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPotentialFirstRemainder_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPotentialFirstRemainder_mean_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_potential_increment_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_kinetic_coordinate_increment_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_increment_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_increment_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_actual_differentialOperator_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_physical_increment_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "b6d6993b23834aad54e64c2dbf5789c85b1e0dcef438eb0405b62664c345254a"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "34a663f1990563ce2478dfcd9aa8146bce0ed8d68ad842cf3cf5297ad88b1bf3"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "5d327cce02ebcb0d3c8ad8537bb99950c8d6f0bff43df67016586b042a3349a1"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "8a835bda4c44b6a362a57dc8dee0fb6a910df8d5c2e1187265e38a08dfd19f28"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "8005717464407a485d841aa71441b6e9e9db35cdf652c6e7d59082b5b2cb0a8c"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "8bac43db93d5db4838b60b39241e15fddcdd33b774f0749bab9bd0345e6dea74"
+    }
+  ],
+  "actual_configuration_norm_square_integrable_and_mean_div_time_zero": "true_finite_coordinate_L2_and_derived_actual_second_moments",
+  "original_periodic_C2_first_order_quadratic_remainder": "derived_from_true_C2_Taylor_remainder_and_actual_bounded_Hessian",
+  "actual_potential_first_remainder_AEM_integrable_mean_div_time_zero": true,
+  "actual_potential_mean_derivative": "fderiv_U_q0_applied_to_original_p0",
+  "actual_kinetic_coordinate_mean_derivative": "p0_times_true_force_minus_friction_plus_sigma_square_over_two",
+  "actual_Hamiltonian_increment_integrable": "same_periodic_process_true_Hamiltonian_lift_no_U_lower_required",
+  "actual_Hamiltonian_mean_derivative": "minus_gamma_sum_p0_square_plus_N_sigma_square_over_two",
+  "actual_H_differentialOperator_identification": "proved_only_for_H_equal_H_power_one_no_generator_identity_hypothesis",
+  "actual_physical_Hamiltonian_mean_derivative": "gamma_times_N_beta_inverse_minus_sum_p0_square",
+  "target_remainder_moment_limit_or_generator_hypothesis": "none",
+  "local_output": "local06_exit0_two_ring_nf_informational_hints_no_Lean_error_or_warning_not_empty",
+  "model": "same_actual_unitmass_periodic_Cinfty_U_original_B_P_gamma_positive_sigma_arbitrary_no_U_lower_no_density_or_stationarity",
+  "full_C2_actual_generator_identity": "not_proved_actual_H_power_one_identified_full_H_power_l_and_general_C2_required",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
