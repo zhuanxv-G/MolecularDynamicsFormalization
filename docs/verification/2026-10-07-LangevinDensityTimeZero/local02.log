@@ -1,0 +1,10 @@
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:55:4: error: 'change' tactic failed, pattern
+  |↑t| < r
+is not definitionally equal to target
+  dist (↑t) 0 < r
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:67:38: error: failed to prove strict positivity, but it would be possible to prove nonnegativity if desired
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:69:4: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  ℙ.OuterRegular
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:68:9: error: Tactic `rcases` failed: `x✝ : ?m.544` is not an inductive datatype

@@ -1,0 +1,86 @@
+{
+  "started_at": "2026-10-07T06:08:55.25339+08:00",
+  "finished_at": "2026-10-07T06:10:09.7423931+08:00",
+  "head_at_check": "3c578a5af9b243c94ce6cad6d44c56658b1b54d1",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9156,
+  "audit_declarations": 2463,
+  "inputs": 239,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_printed_time_zero_impossible"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_printed_time_zero_impossible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "1fb56abf09ee29a0fa381f40b613ed66890a2164dca0be51c77107a6d2d85081"
+    },
+    {
+      "path": "FULL_DRIVER02.log",
+      "sha256": "9c33fa33f3d721a868d53c11df91bd70fb920d9bd8aaecaa25b0e36cfeb9ce8c"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "224f6e61edd2edf7b5a92cf10ec79cf4db72c53f65a400fbcaa17c91f4e8c34f"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "4d8537a5463d65a92032f3ca9e2a1a56bcc23e5689571aabaf3d0a8552fd09f5"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "8eb944ed3f15a0ec3bd2f1b0e3d0c9f7bb9cbe9332fd5d213b31c9161c446dfa"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "95717df300e29fd6c35da356830a902cdc53bf8f41ad606962be38f7f504304a"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "c7ac951b738848952d5b1242b70546b7911f3b311727ee168ff0af2349906941"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "12deb9df961f4281379e7f21b638d799a9887545d4ad1cfdae54e1695617b227"
+    },
+    {
+      "path": "local07.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local08.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "original_printed_closed_time_density_condition": "impossible_for_N_positive_and_C_interior_nonempty",
+  "same_actual_kernel_probability_weak_time_continuity_zero_Dirac": true,
+  "actual_flat_phase_volume_null_singletons_and_regularity": "derived_not_assumed",
+  "true_local_time_zero_density_uniform_upper_and_small_open_volume": true,
+  "genuine_Portmanteau_open_mass_liminf_contradiction": true,
+  "original_density_definition": "preserved_unchanged",
+  "old_literal_density_conditional_Harris_chain": "logical_implications_valid_but_no_actual_literal_premise_witness_in_positive_dimension_nonempty_interior",
+  "positive_time_only_density": "not_ruled_out_not_yet_proved_to_exist",
+  "dimension_zero": "impossibility_not_claimed",
+  "prior_full01_failure": "root_anonymous_local_Haar_generated_proof_name_collision_saved_raw_report_and_logs",
+  "actual_repair": "three_unique_explicit_local_instance_names_local08_zero_diagnostics_no_math_premise_or_resource_change",
+  "responsible_original_printed_semantic_correction": "pending",
+  "continuous_generator_identity": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

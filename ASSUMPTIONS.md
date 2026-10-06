@@ -658,3 +658,5 @@ LangevinHarrisSkeleton：原actualκ/Wiener/unitmass/C∞periodicU/正原Hl(U>=1
 LangevinUniformMoments：同actualWiener/原unitmass/C∞周期U/正Hl(U≥1)/γ>0/σ任意/l≥1/cap>0，时间0≤T≤cap，维数任意含0。Gaussian endpoint及cap时间evenpower可积、实际noise及Euclidean sum平方幂和同κT Hl的统一矩由真实数学证明derive；未假设uniformmoment/连续generator/density/不变律，未声称continuous6.48或Gibbs身份。
 
 LangevinHarrisAllTime：同originalκ/Wiener/unitmass/C∞周期势/γ>0/σ≠0、l≥1、densityclause在实际derivedCR明确条件。正U版V=Hl(U)需U≥1，任意原U版真实derivec与U+c≥1且sameoriginalκ，weight明确Hl(U+c)。第一声明µ为真实∀T invariantprob，目标µmoment已derive；后两声明µ存在不预设。无目标uniformmoment/无界积分composition/continuous指数premise；M,rate统一measurablef absf≤V/allT≥0/allx。未证actualdensity存在/generator-adjoint/Gibbs/一般SDE完整6.2。
+
+LangevinDensityTimeZero：N>0、C有内部点、同真实κ及原Wiener/C∞周期U/forceLip，γσ任意，不假设测度无原子/regular/目标密度upper或Diraclimit，均真实derive。字面原C×C×[0,∞)联合连续densityclause被反证；这不否定正时间密度或实际遍历性。所有旧literal-density conditional链在正维非空interior应用无可用该前提见证；不能以conditional6.48冒称实际无条件收敛。原定义未改，positiveTime明确版本另证且实际density仍未derive，owner语义修订待签核。

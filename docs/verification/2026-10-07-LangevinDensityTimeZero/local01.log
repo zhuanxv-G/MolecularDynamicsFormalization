@@ -1,0 +1,32 @@
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:28:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:29:85: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  NullSingletonClass ℙ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:29:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:52:4: error: Type mismatch: After simplification, term
+  ht
+ has type
+  ↑t < r
+but is expected to have type
+  |↑t| < r
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:61:19: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω

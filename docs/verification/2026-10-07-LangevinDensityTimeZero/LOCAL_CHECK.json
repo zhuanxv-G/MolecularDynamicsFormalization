@@ -1,0 +1,33 @@
+{
+  "draft_path": "docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean",
+  "source_path": "MolecularDynamics/Chapter06/LangevinDensityTimeZero.lean",
+  "draft_sha256": "4ff329114e220ffa38ffa212ef1eeec5436b74b7e6712a437beb9609e151187b",
+  "source_sha256": "4ff329114e220ffa38ffa212ef1eeec5436b74b7e6712a437beb9609e151187b",
+  "local_check_log": "local08.log",
+  "local_check_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "local_exit_code": 0,
+  "local_lean_warnings": 0,
+  "local_log_empty": true,
+  "exact_source_copy_verified": true,
+  "public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_printed_time_zero_impossible"
+  ],
+  "original_closed_time_density_clause": "kept_unchanged_and_shown_impossible_for_N_positive_C_interior_nonempty",
+  "true_actual_probability_time_continuity_and_zero_Dirac": true,
+  "true_flat_volume_N_positive_null_singletons_and_regular": true,
+  "true_local_density_uniform_upper_bound_and_small_open_volume": true,
+  "genuine_Portmanteau_open_probability_liminf_contradiction": true,
+  "dimension_zero": "not_claimed_impossible",
+  "positive_time_density_existence": "not_ruled_out_and_not_proved",
+  "old_original_conditional_Harris_chain": "logically_valid_but_literal_condition_unwitnessable_in_positive_dimension_nonempty_interior",
+  "integrated": true,
+  "full_check": "passed_full_check02",
+  "original_printed_semantic_correction": "responsible_review_pending",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "continuous_generator_identity": "not_proved",
+  "Gibbs_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete",
+  "prior_full_check_failure": "full-check01 lake_build root anonymous local Haar generated proof name collision; original report and rawlogs preserved; repaired three explicit unique instance names"
+}

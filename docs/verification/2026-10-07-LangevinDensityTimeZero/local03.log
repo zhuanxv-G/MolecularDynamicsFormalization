@@ -1,0 +1,140 @@
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:56:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  |↑t|
+in the target expression
+  |↑t| < r
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF✝ : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hN : 0 < N
+C : Set (textbookLangevinPeriodicPhase N)
+x : textbookLangevinPeriodicPhase N
+hx : x ∈ interior C
+ρ : textbookLangevinPeriodicPhase N → textbookLangevinPeriodicPhase N → ℝ → ℝ
+hρ : textbookLangevinPeriodicDensityClause B P U hU hp L hF✝ γ σ C ρ
+this✝² : NeZero N
+this✝¹ : Nonempty (Fin N)
+this✝ : NullSingletonClass ℙ
+this : NullSingletonClass ℙ
+F : textbookLangevinPeriodicPhase N × ℝ≥0 → ℝ := fun w => ρ x w.1 ↑w.2
+hemb : Continuous fun w => ((x, w.1), ↑w.2)
+hF : ContinuousOn F (C ×ˢ univ)
+hCS : C ×ˢ univ ∈ 𝓝 (x, 0)
+hFc : ContinuousAt F (x, 0)
+M : ℝ := |ρ x x 0| + 1
+hM : 0 < M
+hval : {w | F w < M} ∈ 𝓝 (x, 0)
+r : ℝ
+hr : r > 0
+hb : Metric.ball (x, 0) r ⊆ C ×ˢ univ ∩ {w | F w < M}
+y : textbookLangevinPeriodicPhase N
+hy : y ∈ Metric.ball x r
+t : ℝ≥0
+ht : ↑t < r
+⊢ |↑t| < r
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:85:91: error: Application type mismatch: The argument
+  hF
+has type
+  ContinuousOn F (C ×ˢ univ)
+but is expected to have type
+  LipschitzWith L (textbookPotentialForce U)
+in the application
+  textbookLangevinPeriodicTransitionProbability B P hB U hU hp L hF
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:87:84: error: Application type mismatch: The argument
+  hF
+has type
+  ContinuousOn F (C ×ˢ univ)
+but is expected to have type
+  LipschitzWith L (textbookPotentialForce U)
+in the application
+  textbookLangevinPeriodicTransitionProbability_time_continuous B P hB U hU hp L hF
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:90:66: error: Application type mismatch: The argument
+  hF
+has type
+  ContinuousOn F (C ×ˢ univ)
+but is expected to have type
+  LipschitzWith L (textbookPotentialForce U)
+in the application
+  textbookLangevinPeriodicTransitionKernel B P U hU hp L hF
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:91:71: error: Application type mismatch: The argument
+  hF
+has type
+  ContinuousOn F (C ×ˢ univ)
+but is expected to have type
+  LipschitzWith L (textbookPotentialForce U)
+in the application
+  textbookLangevinPeriodicTransitionKernel_zero B P hB U hU hp L hF
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:92:54: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:92:54: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  if x ∈ G then ?m.829 else ?m.830
+in the target expression
+  G.indicator 1 x ≤ liminf (fun i => ↑(laws i) G) J
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF✝ : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hN : 0 < N
+C : Set (textbookLangevinPeriodicPhase N)
+x : textbookLangevinPeriodicPhase N
+hx : x ∈ interior C
+ρ : textbookLangevinPeriodicPhase N → textbookLangevinPeriodicPhase N → ℝ → ℝ
+hρ : textbookLangevinPeriodicDensityClause B P U hU hp L hF✝ γ σ C ρ
+this✝⁴ : NeZero N
+this✝³ : Nonempty (Fin N)
+this✝² : NullSingletonClass ℙ
+this✝¹ : NullSingletonClass ℙ
+F : textbookLangevinPeriodicPhase N × ℝ≥0 → ℝ := fun w => ρ x w.1 ↑w.2
+hemb : Continuous fun w => ((x, w.1), ↑w.2)
+hF : ContinuousOn F (C ×ˢ univ)
+hCS : C ×ˢ univ ∈ 𝓝 (x, 0)
+hFc : ContinuousAt F (x, 0)
+M : ℝ := |ρ x x 0| + 1
+hM : 0 < M
+hval : {w | F w < M} ∈ 𝓝 (x, 0)
+r : ℝ
+hr : r > 0
+hb : Metric.ball (x, 0) r ⊆ C ×ˢ univ ∩ {w | F w < M}
+hpair : ∀ y ∈ Metric.ball x r, ∀ (t : ℝ≥0), ↑t < r → (y, t) ∈ Metric.ball (x, 0) r
+hball : Metric.ball x r ⊆ C
+hbd : ∀ y ∈ Metric.ball x r, ∀ (t : ℝ≥0), ↑t < r → ρ x y ↑t ≤ M
+c : ℝ≥0∞ := ENNReal.ofReal M
+hc0 : c ≠ 0
+hctop : c ≠ ∞
+hcinv : 0 < c⁻¹
+this✝ : IsLocallyFiniteMeasure ℙ
+O : Set (textbookLangevinPeriodicPhase N)
+hxO : O ⊇ {x}
+hO : IsOpen O
+hvolO : ℙ O < c⁻¹
+G : Set (textbookLangevinPeriodicPhase N) := O ∩ Metric.ball x r
+hG : IsOpen G
+hxG : x ∈ G
+hGc : G ⊆ C
+hvol : ℙ G < c⁻¹
+hsmall : c * ℙ G < 1
+J : Filter ℝ≥0 := 𝓝[>] 0
+this : J.NeBot
+laws : ℝ≥0 → ProbabilityMeasure (textbookLangevinPeriodicPhase N) :=
+  fun t => textbookLangevinPeriodicTransitionProbability B P hB U hU hp L ⋯ γ σ t x
+hweak : Tendsto laws J (𝓝 (laws 0))
+hport : G.indicator 1 x ≤ liminf (fun i => ↑(laws i) G) J
+hzero : ↑(laws 0) = Measure.dirac x
+⊢ False

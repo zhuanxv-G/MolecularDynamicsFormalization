@@ -1,0 +1,59 @@
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:57:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  |↑t|
+in the target expression
+  |↑t| < r
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hN : 0 < N
+C : Set (textbookLangevinPeriodicPhase N)
+x : textbookLangevinPeriodicPhase N
+hx : x ∈ interior C
+ρ : textbookLangevinPeriodicPhase N → textbookLangevinPeriodicPhase N → ℝ → ℝ
+hρ : textbookLangevinPeriodicDensityClause B P U hU hp L hF γ σ C ρ
+this✝² : NeZero N
+this✝¹ : Nonempty (Fin N)
+this✝ : NullSingletonClass ℙ
+this : NullSingletonClass ℙ
+F : textbookLangevinPeriodicPhase N × ℝ≥0 → ℝ := fun w => ρ x w.1 ↑w.2
+hemb : Continuous fun w => ((x, w.1), ↑w.2)
+hCont : ContinuousOn F (C ×ˢ univ)
+hCS : C ×ˢ univ ∈ 𝓝 (x, 0)
+hFc : ContinuousAt F (x, 0)
+M : ℝ := |ρ x x 0| + 1
+hM : 0 < M
+hval : {w | F w < M} ∈ 𝓝 (x, 0)
+r : ℝ
+hr : r > 0
+hb : Metric.ball (x, 0) r ⊆ C ×ˢ univ ∩ {w | F w < M}
+y : textbookLangevinPeriodicPhase N
+hy : y ∈ Metric.ball x r
+t : ℝ≥0
+ht : ↑t < r
+⊢ |↑t| < r
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:94:23: error: Application type mismatch: The argument
+  J
+has type
+  Filter ℝ≥0
+but is expected to have type
+  Filter ℝ
+in the application
+  ∀ᶠ (t : ℝ) in J, t < r
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:95:104: error: Application type mismatch: The argument
+  hr
+has type
+  r > 0
+but is expected to have type
+  ↑?m.842 < ?m.854
+in the application
+  Iio_mem_nhds hr

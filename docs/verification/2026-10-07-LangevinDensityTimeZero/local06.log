@@ -1,0 +1,3 @@
+docs/verification/2026-10-07-LangevinDensityTimeZero/Draft.lean:56:4: warning: Unused tactic linter: `change |(t : ℝ)| < r` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
