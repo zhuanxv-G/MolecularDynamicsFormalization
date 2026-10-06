@@ -550,3 +550,6 @@ complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模�
 
 ## BrownianEigenNormalization: entire ordered bases with genuine phi-zero equals one
 同一原Gibbs measure/whole real-complex Lp、原positive masses/原C∞periodic U/β>0。0<Nc仅用于实际无限ℕ全mode枚举；r*r=1/首mode是constant/新real与complex基完整性全部证明，不新增sign/unit phase/完整性假设。实际原A/A_C graph与T均不换模型；旧truebasis/真实kernel/coefficient/API结论复用。概率law/Markov正性/式5.6识别及C²/C∞ core负责人签核独立pending。无sorry/admit/newaxiom/unsafe/资源或linter关闭。
+
+## BrownianComplexKernel: actual entire complex constant kernel and explicit smooth-model spectral conclusion
+同一原m/positive masses、原C∞integerperiodic U/β>0，真实原Gibbs整个complexLp；kernel不要求positiveNc，完整ℕ谱汇总显式positiveNc且依赖真实无限性。complexkernel/span/finiteDimensional/finrank1全推导，κpositive从真实Gibbs coercivityrate证明使用，无新核或谱假设。光滑正则性C∞比教材C²的语义依赖继续待负责人最终签核，不把smooth parts当全正文Theorem6.1完成；真实SDElaw/Markov positivity/式5.6概率识别独立未证。无placeholder/新公理/unsafe/资源或linter关闭。

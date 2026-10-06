@@ -932,3 +932,8 @@ full-check02 passed：9103 jobs/1830公理声明/186exact inputs；10checks退�
 17public；真实kernel projection与unitnorm推出原首mode phase r*r=1，整个orderedreal basis common sign normalization真实complete/首φ0=e与AE1/所有actualA graph/HasSum/原T normalizedordered HasSum及tsum。实际J嵌入给整个原complex normalizedordered HilbertBasis真实complete/φ0=J e与AEcomplex1/全部actualA_C graph/全输入HasSum及wholecomplex谱orderedλrange。正维是实际ℕ无限完整枚举必要条件，保留全部真实重数。MolecularDynamics/Chapter06/BrownianEigenNormalization.lean；docs/reviews/2026-10-06-BrownianEigenNormalization/REVIEW.zh-CN.md。SDE概率识别/core最终语义及全范围pending。
 
 full-check01 passed：9104 jobs/1847公理声明/187exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — actual complex zero eigenspace and smooth-model spectral parts (BrownianComplexKernel)
+6public；actual A_C.ker真等于complex span J originalone，true finrank1以及FiniteDimensional（Nc0允许），actualzero graph iff actualconstant。smooth_spectral_parts完整汇总原wholecomplex A真实IsSelfAdjoint/单重零/κpositive及原ordered completecomplex basis/λ0=0/antitone/趋−∞/非零gap/literalφ0one/所有trueeigen graphs/entirecomplexSpec exactorderedrange/allHasSum，完整ℕ需positiveNc。MolecularDynamics/Chapter06/BrownianComplexKernel.lean；docs/reviews/2026-10-06-BrownianComplexKernel/REVIEW.zh-CN.md。不计实际SDE概率识别或教材C²core签核完成；整范围pending。
+
+full-check01 passed：9105 jobs/1853公理声明/188exact inputs；10checks退出0、全部input/rawlog SHA匹配、6 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

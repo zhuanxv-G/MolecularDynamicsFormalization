@@ -232,3 +232,5 @@ import MolecularDynamics.Chapter06.BrownianGibbsComplexResolvent
 import MolecularDynamics.Chapter06.BrownianGibbsComplexSpectrum
 
 import MolecularDynamics.Chapter06.BrownianEigenNormalization
+
+import MolecularDynamics.Chapter06.BrownianComplexKernel

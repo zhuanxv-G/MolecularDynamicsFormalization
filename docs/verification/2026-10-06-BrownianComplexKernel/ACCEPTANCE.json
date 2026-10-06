@@ -1,0 +1,92 @@
+{
+  "started_at": "2026-10-06T12:56:52.3060816+08:00",
+  "finished_at": "2026-10-06T12:58:03.5698506+08:00",
+  "head_at_check": "a4ff89179613dd224ec74a621a7786dc7079dacc",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9105,
+  "audit_declarations": 1853,
+  "inputs": 188,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsComplexOperator_kernel_iff_graph",
+    "MolecularDynamics.textbookBrownianGibbsComplexOperator_kernel_eq_span",
+    "MolecularDynamics.textbookBrownianGibbsComplexOperator_kernel_finrank",
+    "MolecularDynamics.textbookBrownianGibbsComplexOperator_kernel_finiteDimensional",
+    "MolecularDynamics.textbookBrownianGibbsComplexOperator_graph_zero_iff_constant",
+    "MolecularDynamics.textbookBrownianTheorem6_1_smooth_spectral_parts"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexOperator_kernel_iff_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexOperator_kernel_eq_span",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexOperator_kernel_finrank",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexOperator_kernel_finiteDimensional",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexOperator_graph_zero_iff_constant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTheorem6_1_smooth_spectral_parts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "4607631199c8145f1226a6f43691c71df3492be8d369a22580adad73541772db"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "e246bf914bfc80a030a9951010704302786589968fa43a602dedc357694bbf67"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local02-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,36 @@
+LinearPMap.mem_ker_iff.{u_1, u_2, u_4, u_5} {R : Type u_1} {S : Type u_2} [Ring R] [Ring S] {σ : R →+* S} {E : Type u_4}
+  [AddCommGroup E] [Module R E] {F : Type u_5} [AddCommGroup F] [Module S F] {f : E →ₛₗ.[σ] F} {x : E} :
+  x ∈ f.ker ↔ ∃ y, x = ↑y ∧ ↑f y = 0
+LinearPMap.mem_graph_iff.{u_1, u_4, u_5} {R : Type u_1} [Ring R] {E : Type u_4} [AddCommGroup E] [Module R E]
+  {F : Type u_5} [AddCommGroup F] [Module R F] (f : E →ₗ.[R] F) {x : E × F} : x ∈ f.graph ↔ ∃ y, ↑y = x.1 ∧ ↑f y = x.2
+Submodule.mem_span_singleton.{u_1, u_2} {R : Type u_1} {M : Type u_2} [Semiring R] [AddCommMonoid M] [Module R M]
+  {x y : M} : x ∈ R ∙ y ↔ ∃ a, a • y = x
+finrank_span_singleton.{u, v} {K : Type u} {V : Type v} [DivisionRing K] [AddCommGroup V] [Module K V] {v : V}
+  (hv : v ≠ 0) : Module.finrank K ↥(K ∙ v) = 1
+MolecularDynamics.textbookBrownianGibbsComplexOperator_graph_iff_real_imag {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+  (z w : ↥(MolecularDynamics.GibbsComplex✝ U β)) :
+  (z, w) ∈ (MolecularDynamics.textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ).graph ↔
+    ((MolecularDynamics.textbookBrownianGibbsL2RealPart U β) z,
+          (MolecularDynamics.textbookBrownianGibbsL2RealPart U β) w) ∈
+        (MolecularDynamics.textbookBrownianGibbsClosedOperator m U hU hPU β).graph ∧
+      ((MolecularDynamics.textbookBrownianGibbsL2ImagPart U β) z,
+          (MolecularDynamics.textbookBrownianGibbsL2ImagPart U β) w) ∈
+        (MolecularDynamics.textbookBrownianGibbsClosedOperator m U hU hPU β).graph
+MolecularDynamics.textbookBrownianGibbsComplexOperator_isSelfAdjoint {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  IsSelfAdjoint (MolecularDynamics.textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ)
+MolecularDynamics.textbookBrownianGibbsCoercivityRate_pos {Nc : ℕ} (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ (↑⊤) U) (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  0 < MolecularDynamics.textbookBrownianGibbsCoercivityRate m U hU hPU β
+MolecularDynamics.textbookBrownianGibbsNormalizedComplexOrderedEigenbasis_hasSum {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) (hNc : 0 < Nc)
+  (z : ↥(MolecularDynamics.GibbsComplex✝ U β)) :
+  HasSum
+    (fun n =>
+      inner ℂ ((MolecularDynamics.textbookBrownianGibbsNormalizedComplexOrderedEigenbasis m hm U hU hPU β hβ hNc) n) z •
+        (MolecularDynamics.textbookBrownianGibbsNormalizedComplexOrderedEigenbasis m hm U hU hPU β hβ hNc) n)
+    z
