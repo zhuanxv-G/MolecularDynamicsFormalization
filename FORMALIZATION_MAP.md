@@ -877,3 +877,8 @@ full-check01 passed：9092 jobs/1694公理声明/175exact inputs；10checks退�
 6public trueT symmetric/constantone fixed/actualGibbsmean preserved；wholezeroeigspaces来自truekernelconstant，fullnonzero eigenbasis gap→lp norm_mono得全orthogonalLp真实指数normbound→wholecenteredx/correlation指数bound。MolecularDynamics/Chapter06/BrownianSpectralDecay.lean；docs/reviews/2026-10-06-BrownianSpectralDecay/REVIEW.zh-CN.md。实际SDElaw/probabilityexpectation识别、整谱与枚举及core最终语义pending。
 
 full-check01 passed：9093 jobs/1700公理声明/176exact inputs；10checks退出0、全部input/rawlog SHA匹配、6 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem6.1 — true original compact Gibbs resolvent whole real spectrum (BrownianResolventRealSpectrum)
+5public realFredholm nonzeroR spectrum iffgenuineeigen、whole spectrum nonnegative≤1、r≠1≤(1+actualκ)inv<1；actualconstant e证明1真实属于wholeRreal spectrum，fullstrictseparation。MolecularDynamics/Chapter06/BrownianResolventRealSpectrum.lean；docs/reviews/2026-10-06-BrownianResolventRealSpectrum/REVIEW.zh-CN.md。原unboundedA whole-real-spectrum correspondence/finitecofinite-countable枚举与SDE probability识别/core最终语义仍缺。
+
+full-check01 passed：9094 jobs/1705公理声明/177exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

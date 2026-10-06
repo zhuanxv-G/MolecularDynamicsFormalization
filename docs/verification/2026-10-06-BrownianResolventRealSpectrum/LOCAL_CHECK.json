@@ -1,0 +1,20 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianResolventRealSpectrum/Draft.lean",
+  "source_sha256": "3b92de4cd9a241e4c38eabc9bc8e592fa4dc2c420176ef755128f4552190122c",
+  "log": "docs/verification/2026-10-06-BrownianResolventRealSpectrum/local04-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public": [
+    "MolecularDynamics.textbookBrownianGibbsResolvent_eigenvalue_iff_real_spectrum",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_real_spectrum_bounds",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_real_spectrum_gap",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_real_spectrum_separation",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_one_mem_real_spectrum"
+  ],
+  "actual_compact_resolvent_entire_real_spectrum_separation_and_one_membership": "proved_locally",
+  "actual_unbounded_generator_whole_real_spectrum": "incomplete",
+  "integrated": false,
+  "full_check": "not_run",
+  "responsible_semantic_review": "pending"
+}

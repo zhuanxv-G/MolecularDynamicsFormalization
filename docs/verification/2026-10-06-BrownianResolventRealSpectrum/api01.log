@@ -1,0 +1,11 @@
+IsCompactOperator.hasEigenvalue_iff_mem_spectrum.{u_1, u_2} {𝕜 : Type u_1} {X : Type u_2} [NontriviallyNormedField 𝕜]
+  [NormedAddCommGroup X] [NormedSpace 𝕜 X] {T : X →L[𝕜] X} {μ : 𝕜} [CompleteSpace X] (hT : IsCompactOperator ⇑T)
+  (hμ : μ ≠ 0) : Module.End.HasEigenvalue (↑T) μ ↔ μ ∈ spectrum 𝕜 T
+Module.End.HasEigenvalue.exists_hasEigenvector.{v, w} {R : Type v} {M : Type w} [CommRing R] [AddCommGroup M]
+  [Module R M] {f : Module.End R M} {μ : R} (hμ : f.HasEigenvalue μ) : ∃ v, f.HasEigenvector μ v
+Module.End.mem_genEigenspace_one.{v, w} {R : Type v} {M : Type w} [CommRing R] [AddCommGroup M] [Module R M]
+  {f : Module.End R M} {μ : R} {x : M} : x ∈ (f.genEigenspace μ) 1 ↔ f x = μ • x
+le_div_iff₀.{u_3} {G₀ : Type u_3} [GroupWithZero G₀] [PartialOrder G₀] [MulPosReflectLT G₀] {a b c : G₀} (hc : 0 < c) :
+  a ≤ b / c ↔ a * c ≤ b
+div_lt_one.{u_1} {α : Type u_1} [Semifield α] [PartialOrder α] [PosMulReflectLT α] {a b : α} (hb : 0 < b) :
+  a / b < 1 ↔ a < b

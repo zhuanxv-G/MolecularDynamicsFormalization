@@ -1,0 +1,7 @@
+# Theorem6.1：真正原Gibbs紧预解算子的整个实谱及常数模严格分离
+印刷250–251/PDF271–272，5public；保留原m_i>0/U C∞整数周期/β>0/actualsameGibbs fullLp、原actualwholeA紧双向预解算子R。fixedFredholm theorem applied truecompactR gives every nonzero real spectrum value r exactlytrueR eigenvalue，没有point-spectrum/full-spectrum替换假设。
+wholeRreal spectrum全部r=0或0<r≤1，由nonzero实际eigenvalue的actualstrictpositive/normcontraction推导。r≠1若r0直接满足bound；若r≠0actualspectral-eigenvector从trueRmemgraph缩放入originalwholeAgraph(x,(1−r⁻¹)x)，r≠1保证真实generator ℓ≠0，调用原κactualA eigenbound得r≤(1+κ)inv。实际κ>0给0<c=(1+κ)inv<1，整个realSpectrum⊆{1}∪[0,c]；因此是真全R谱严格分离，不只pointvalues。
+原actualconstant e norm=1真非零、Ae=0的wholegraph与trueRinversegraph给Re=e；wholeoriginalR1 eigenspace非bot，真正1属于realSpectrum。这补齐常数模实际存在，不只给条件谱分离。
+api01五fixedAPI全部0零warnings。local01仅CLM/Endcoercion的simpa mismatch，以及one_div不是defeqinv导致change失败；simp at hx后exact、rw one_div代替change后local02前4全0空日志，formal03亦0。加1真实谱存在后local04全5 0空日志，正式local05同样0，默认资源/linters，无sorry/admit/newaxiom/unsafe。
+DEP059/NOT068 full中。本批完整对象是actualboundedcompactR的整个realSpectrum，尚未原unboundedwholeA fullrealresolvent/spectrum correspondence/finite-cofinite离散与可数有序谱枚举，不能把R谱界直接称原A整谱完成。actualMarkovpositivity/SDEprobabilityexpectation(5.6)识别与原C²/C∞core负责人最终语义pending；Theorem6.1整体/CORE_SCOPE未完，nativeGoalusageLimited但ordinaryquota可用，仅本地。
+full-check01 passed：9094 jobs/1705公理声明/177exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

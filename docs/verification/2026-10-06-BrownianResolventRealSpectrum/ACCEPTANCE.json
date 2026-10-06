@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-06T08:57:05.2697698+08:00",
+  "finished_at": "2026-10-06T08:58:15.2081767+08:00",
+  "head_at_check": "3f887b61fb91ab0ead1c69bfd57824924f0d15a5",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9094,
+  "audit_declarations": 1705,
+  "inputs": 177,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsResolvent_eigenvalue_iff_real_spectrum",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_real_spectrum_bounds",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_real_spectrum_gap",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_real_spectrum_separation",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_one_mem_real_spectrum"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_eigenvalue_iff_real_spectrum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_real_spectrum_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_real_spectrum_gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_real_spectrum_separation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_one_mem_real_spectrum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "43bd17fbf618708380a25200c77f770c922f51a79974be092b867242f4ce2e7a"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "01ac8aea87c977852157b8f4cccdedfc2897e4f745720ca14e9fe415456be36b"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "d1d304f442225cd85529f9f5e71ba676d24a4239ad42f87f1596347a01c36487"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local05-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -517,3 +517,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianSpectralDecay: actual whole-space exponential equilibrium decay
 保留原m_i>0/U C∞整数周期/β>0/actualsameGibbs fullLp/NNRealnonnegtime；T actualstronggenerator=A整个closedgraph已证明。e真正normalizedconstant/Ae0，wholekernel1dim、fullbasis/gap均已derived；指数rate实际κ来源originalGibbsPoincare，未给任意rate或convergence/orthogonalcomplete/kernelconstant结论假设。范数结论全Lp，相关函数结论真Hilbertinner products；actualSDE probabilityexpectation/Markovpositivity尚未识别，不给density-law结论。谱枚举/整谱和C²test/C∞core最终owner语义仍pending；无占位/axiom/unsafe/资源更改。
+
+## BrownianResolventRealSpectrum: entire actual compact R real spectrum
+原positive m/U C∞整数周期/β>0/actualsameGibbs entireLp。realSpectrum是真Mathlib Banach CLM spectrum；nonzero spectral point iff actualeigenvalue由provedcompactR+fixedFredholm得到，不以purepoint或谱complete假设。actualAgraph与真实κeigenbound推derivedR wholegap，actualconstantnorm1/trueRinverse证明真实spectral1。对象是boundedR整个realSpectrum，unboundedA realresolvent identification/复杂谱枚举与Markovpositivity/SDEprobabilityexpectation尚缺，C²/core语义pending；无placeholder/newaxiom/unsafe/资源绕过。
