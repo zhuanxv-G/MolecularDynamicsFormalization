@@ -1,0 +1,167 @@
+{
+  "started_at": "2026-10-06T13:10:55.4548863+08:00",
+  "finished_at": "2026-10-06T13:12:05.0750877+08:00",
+  "head_at_check": "676eee440b619031070ca00a78f83c79c8ae3617",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9106,
+  "audit_declarations": 1866,
+  "inputs": 189,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianMassMobility",
+    "MolecularDynamics.textbookBrownianMassMobility_apply",
+    "MolecularDynamics.textbookBrownianSDEDrift",
+    "MolecularDynamics.textbookBrownianSDEDrift_apply",
+    "MolecularDynamics.textbookBrownianSDEDrift_lipschitz",
+    "MolecularDynamics.textbookBrownianSDEDrift_periodic",
+    "MolecularDynamics.textbookBrownianSDENoiseAmplitude",
+    "MolecularDynamics.textbookBrownianSDENoiseAmplitude_sq",
+    "MolecularDynamics.textbookBrownianSDENoiseAmplitude_pos",
+    "MolecularDynamics.textbookBrownianSDENoiseAmplitude_eq_original",
+    "MolecularDynamics.textbookBrownianSDENoise",
+    "MolecularDynamics.textbookBrownianSDENoise_apply",
+    "MolecularDynamics.textbookBrownianGenerator_eq_sde_coefficients"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianMassMobility",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianMassMobility_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDEDrift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDEDrift_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDEDrift_lipschitz",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDEDrift_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDENoiseAmplitude",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDENoiseAmplitude_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDENoiseAmplitude_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDENoiseAmplitude_eq_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDENoise",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDENoise_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_eq_sde_coefficients",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "2a1a83913ca154f499c8468cdc2cafbe46c21825d8ce34ef9f68e75cb5bb730c"
+    },
+    {
+      "path": "api02.log",
+      "sha256": "bec9fabcf463e7c136b7f97faa351363ab3dc2f4e6b663db8329e99836869978"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "e4df588aa75a09b2406188858066b0d4f84b5a4a703026eeb874b9ecd7786ee9"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "5701ae022755203cc9eb78cbdd674c074ec548de7fd254f5ad3e84b2fdaaf836"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "30a7d62c024b1be29b82520ef964d0295cae983cc090e122a6712bd43935400b"
+    },
+    {
+      "path": "local03-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

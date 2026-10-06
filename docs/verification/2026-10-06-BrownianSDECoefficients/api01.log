@@ -1,0 +1,21 @@
+ContinuousLinearMap.pi.{u_1, u_2, u_4, u_5} {R : Type u_1} [Semiring R] {M : Type u_2} [TopologicalSpace M]
+  [AddCommMonoid M] [Module R M] {ι : Type u_4} {φ : ι → Type u_5} [(i : ι) → TopologicalSpace (φ i)]
+  [(i : ι) → AddCommMonoid (φ i)] [(i : ι) → Module R (φ i)] (f : (i : ι) → M →L[R] φ i) : M →L[R] (i : ι) → φ i
+ContinuousLinearMap.pi_apply.{u_1, u_2, u_4, u_5} {R : Type u_1} [Semiring R] {M : Type u_2} [TopologicalSpace M]
+  [AddCommMonoid M] [Module R M] {ι : Type u_4} {φ : ι → Type u_5} [(i : ι) → TopologicalSpace (φ i)]
+  [(i : ι) → AddCommMonoid (φ i)] [(i : ι) → Module R (φ i)] (f : (i : ι) → M →L[R] φ i) (c : M) (i : ι) :
+  (ContinuousLinearMap.pi f) c i = (f i) c
+ContinuousLinearMap.proj_apply.{u_1, u_4, u_5} {R : Type u_1} [Semiring R] {ι : Type u_4} {φ : ι → Type u_5}
+  [(i : ι) → TopologicalSpace (φ i)] [(i : ι) → AddCommMonoid (φ i)] [(i : ι) → Module R (φ i)] (i : ι)
+  (b : (i : ι) → φ i) : (ContinuousLinearMap.proj i) b = b i
+ContinuousLinearMap.lipschitz.{u_1, u_2, u_4, u_5} {𝕜 : Type u_1} {𝕜₂ : Type u_2} {E : Type u_4} {F : Type u_5}
+  [NontriviallyNormedField 𝕜] [NontriviallyNormedField 𝕜₂] [SeminormedAddCommGroup E] [SeminormedAddCommGroup F]
+  [NormedSpace 𝕜 E] [NormedSpace 𝕜₂ F] {σ₁₂ : 𝕜 →+* 𝕜₂} [RingHomIsometric σ₁₂] (f : E →SL[σ₁₂] F) :
+  LipschitzWith ‖f‖₊ ⇑f
+Real.sq_sqrt {x : ℝ} (h : 0 ≤ x) : √x ^ 2 = x
+Real.sqrt_pos {x : ℝ} : 0 < √x ↔ 0 < x
+Real.sqrt_mul {x : ℝ} (hx : 0 ≤ x) (y : ℝ) : √(x * y) = √x * √y
+Real.sqrt_inv (x : ℝ) : √x⁻¹ = (√x)⁻¹
+MolecularDynamics.textbookUnitPeriodicPotential_force_lipschitz {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hP : MolecularDynamics.textbookUnitPeriodicPotential U) :
+  ∃ L, LipschitzWith L (MolecularDynamics.textbookPotentialForce U)

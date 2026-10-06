@@ -1,0 +1,50 @@
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:24:4: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:41:68: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:41:71: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:43:41: warning: `ContinuousLinearMap.lipschitz` has been deprecated: Use `ContinuousLinearMap.lipschitzWith` instead
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:48:83: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:48:86: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:58:51: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:58:70: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:63:69: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:63:88: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:69:52: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:67:91: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+β : ℝ
+i : Fin Nc
+⊢ √(2 * β⁻¹ * (m i)⁻¹) = √(2 * β⁻¹) * (√(m i))⁻¹
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:79:4: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean:90:2: error: Tactic `apply` failed: could not unify the conclusion of `Finset.sum_congr rfl`
+  Finset.sum ?m.79 ?m.76 = Finset.sum ?m.79 ?m.77
+with the goal
+  ∑ i,
+      (m i)⁻¹ *
+        (β⁻¹ * textbookConfigurationPartial (textbookConfigurationPartial f i) i q -
+          textbookConfigurationPartial U i q * textbookConfigurationPartial f i q) =
+    ∑ i, textbookBrownianSDEDrift m U q i * textbookConfigurationPartial f i q +
+      1 / 2 * textbookBrownianSDENoiseAmplitude m β i ^ 2 *
+        textbookConfigurationPartial (textbookConfigurationPartial f i) i q
+
+Note: The full type of `Finset.sum_congr rfl` is
+  (∀ x ∈ ?m.79, ?m.76 x = ?m.77 x) → Finset.sum ?m.79 ?m.76 = Finset.sum ?m.79 ?m.77
+
+Nc : ℕ
+m : Fin Nc → ℝ
+U : (Fin Nc → ℝ) → ℝ
+β : ℝ
+i : Fin Nc
+f : (Fin Nc → ℝ) → ℝ
+q : Fin Nc → ℝ
+⊢ ∑ i,
+      (m i)⁻¹ *
+        (β⁻¹ * textbookConfigurationPartial (textbookConfigurationPartial f i) i q -
+          textbookConfigurationPartial U i q * textbookConfigurationPartial f i q) =
+    ∑ i, textbookBrownianSDEDrift m U q i * textbookConfigurationPartial f i q +
+      1 / 2 * textbookBrownianSDENoiseAmplitude m β i ^ 2 *
+        textbookConfigurationPartial (textbookConfigurationPartial f i) i q

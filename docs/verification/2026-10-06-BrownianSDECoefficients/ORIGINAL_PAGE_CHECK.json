@@ -1,0 +1,33 @@
+{
+  "pdf": "C:\\Users\\ustc\\Desktop\\formal math\\Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+  "pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "page_checks": [
+    {
+      "printed_page": 240,
+      "pdf_page": 261,
+      "formula": "6.36",
+      "visual_checked": true,
+      "content": "actual gamma inverse mass drift and square root temperature times inverse square root mass noise"
+    },
+    {
+      "printed_page": 249,
+      "pdf_page": 270,
+      "formula": "6.46",
+      "visual_checked": true,
+      "content": "only this earlier example sets M=I gamma=1; Theorem6.1 original mass generator retained"
+    }
+  ],
+  "images": [
+    {
+      "path": "C:\\Users\\ustc\\Desktop\\formal math\\tmp\\pdfs\\brownian-original-261.png",
+      "sha256": "6c1fe20a4432af0234c844ee333bbc3f14017d04a9dede56912c785b1fd16f07"
+    },
+    {
+      "path": "C:\\Users\\ustc\\Desktop\\formal math\\tmp\\pdfs\\brownian-original-270.png",
+      "sha256": "8efa7e9d7e1986bd48e07b9846ac76453a1812766b36a3f108dcd19354275b8b"
+    }
+  ],
+  "target": "actual Theorem6.1 original mass model at gamma=1",
+  "stochastic_law_identification": "not_proved",
+  "semantic_owner": "pending"
+}

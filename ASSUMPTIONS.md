@@ -553,3 +553,6 @@ complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模�
 
 ## BrownianComplexKernel: actual entire complex constant kernel and explicit smooth-model spectral conclusion
 同一原m/positive masses、原C∞integerperiodic U/β>0，真实原Gibbs整个complexLp；kernel不要求positiveNc，完整ℕ谱汇总显式positiveNc且依赖真实无限性。complexkernel/span/finiteDimensional/finrank1全推导，κpositive从真实Gibbs coercivityrate证明使用，无新核或谱假设。光滑正则性C∞比教材C²的语义依赖继续待负责人最终签核，不把smooth parts当全正文Theorem6.1完成；真实SDElaw/Markov positivity/式5.6概率识别独立未证。无placeholder/新公理/unsafe/资源或linter关闭。
+
+## BrownianSDECoefficients: actual model coefficients at original gamma-one generator
+原positive masses/beta>0/C∞integerperiodic U，Theorem6.1的gamma1原generator，非6.46的M=I特例。inverse-mass mobility与noise定义原全部coordinates；positivity/covariance/原sqrtmass因子实际证明，Lipschitz从真实periodic force得出无额外driftLip前提。基础Lip和factor identity允许更一般totalinverse参数是必要helper，不据此主张无positive-mass的物理模型。纯sum differentialexpression恒等不等于actualSDElaw的stochasticgenerator识别；未来noisePath/measurableFlow/概率识别及C²core负责人仍pending。无placeholder/newaxiom/unsafe/资源/linter绕过。

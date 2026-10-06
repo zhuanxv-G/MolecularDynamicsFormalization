@@ -937,3 +937,8 @@ full-check01 passed：9104 jobs/1847公理声明/187exact inputs；10checks退�
 6public；actual A_C.ker真等于complex span J originalone，true finrank1以及FiniteDimensional（Nc0允许），actualzero graph iff actualconstant。smooth_spectral_parts完整汇总原wholecomplex A真实IsSelfAdjoint/单重零/κpositive及原ordered completecomplex basis/λ0=0/antitone/趋−∞/非零gap/literalφ0one/所有trueeigen graphs/entirecomplexSpec exactorderedrange/allHasSum，完整ℕ需positiveNc。MolecularDynamics/Chapter06/BrownianComplexKernel.lean；docs/reviews/2026-10-06-BrownianComplexKernel/REVIEW.zh-CN.md。不计实际SDE概率识别或教材C²core签核完成；整范围pending。
 
 full-check01 passed：9105 jobs/1853公理声明/188exact inputs；10checks退出0、全部input/rawlog SHA匹配、6 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — actual original-mass overdamped Brownian drift and diagonal noise coefficients (BrownianSDECoefficients)
+13public；原gamma1/generalmasses mobilityCLM、actualdrift/literalpartial、真derivedglobalLipschitz与periodic、actualsqrtcov amp square/strictpositive/literal inverse sqrtmass factor、noiseCLM全coordinate及纯differentialexpression原BrownianGenerator恒等。240/PDF261式6.36与249/PDF2706.46已视觉核对，原Mass未换M=I。MolecularDynamics/Chapter06/BrownianSDECoefficients.lean；docs/reviews/2026-10-06-BrownianSDECoefficients/REVIEW.zh-CN.md。不是actualSDE stochasticgenerator/law识别；下一真实指定区间additive-noise integral solution，SDE/core/wholepending。
+
+full-check01 passed：9106 jobs/1866公理声明/189exact inputs；10checks退出0、全部input/rawlog SHA匹配、13 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
