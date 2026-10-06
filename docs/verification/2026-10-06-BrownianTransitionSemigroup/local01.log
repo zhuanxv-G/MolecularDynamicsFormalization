@@ -1,0 +1,25 @@
+docs/verification/2026-10-06-BrownianTransitionSemigroup/Draft.lean:73:63: error: failed to synthesize
+  IsSFiniteKernel
+    ((textbookBrownianTorusTransitionKernel m hm U hU hPU β hβ B P T).comap
+      (fun sample => textbookBrownianTorusGlobalRandomConfiguration m hm U hU hPU β hβ x B (↑S) sample) ⋯)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    textbookBrownianTorusGlobalRandomConfiguration m hm U hU hPU β hβ x B (↑S + ↑T)
+  has type
+    Ω → UnitAddTorus (Fin Nc)
+  but is expected to have type
+    NullMeasurableSpace Ω P → UnitAddTorus (Fin Nc)
+  in the application
+    Measure.map (textbookBrownianTorusGlobalRandomConfiguration m hm U hU hPU β hβ x B (↑S + ↑T))
+docs/verification/2026-10-06-BrownianTransitionSemigroup/Draft.lean:192:8: error(lean.unknownIdentifier): Unknown identifier `ProbabilityTheory.integral_comp`
+docs/verification/2026-10-06-BrownianTransitionSemigroup/Draft.lean:193:2: error: No goals to be solved
+docs/verification/2026-10-06-BrownianTransitionSemigroup/Draft.lean:205:14: error: typeclass instance problem is stuck
+  IsFiniteMeasure ?m.86
+
+Note: Lean will not try to resolve this typeclass instance problem because the second and third type arguments to `IsFiniteMeasure` are metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.

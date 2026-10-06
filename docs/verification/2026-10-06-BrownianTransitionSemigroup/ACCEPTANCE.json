@@ -1,0 +1,191 @@
+{
+  "started_at": "2026-10-06T14:22:56.3475315+08:00",
+  "finished_at": "2026-10-06T14:26:24.5204105+08:00",
+  "head_at_check": "53403709038ca321f40223c6d7fe6fcb92ff7807",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9112,
+  "audit_declarations": 1974,
+  "inputs": 195,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianTorusPathEndpoint_initial",
+    "MolecularDynamics.textbookBrownianTorusTransitionKernel_zero",
+    "MolecularDynamics.textbookBrownianTorusGlobalRandomConfiguration_transition_marginal",
+    "MolecularDynamics.textbookBrownianTorusTransitionKernel_add",
+    "MolecularDynamics.textbookBrownianTorusTransitionKernel_semigroup",
+    "MolecularDynamics.textbookBrownianTorusTransitionExpectation",
+    "MolecularDynamics.textbookBrownianTorusTransitionExpectation_wiener_path",
+    "MolecularDynamics.textbookBrownianTorusTransitionExpectation_actual_probability",
+    "MolecularDynamics.textbookBrownianTorusTransitionExpectation_continuous",
+    "MolecularDynamics.textbookBrownianTorusContinuousTransition",
+    "MolecularDynamics.textbookBrownianTorusContinuousTransition_zero",
+    "MolecularDynamics.textbookBrownianTorusContinuousTransition_add",
+    "MolecularDynamics.textbookBrownianTorusContinuousTransition_norm_le",
+    "MolecularDynamics.textbookBrownianTorusContinuousTransition_nonneg",
+    "MolecularDynamics.textbookBrownianTorusContinuousTransition_const",
+    "MolecularDynamics.textbookBrownianTorusContinuousTransition_map_add",
+    "MolecularDynamics.textbookBrownianTorusContinuousTransition_map_smul"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusPathEndpoint_initial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusTransitionKernel_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusGlobalRandomConfiguration_transition_marginal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusTransitionKernel_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusTransitionKernel_semigroup",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusTransitionExpectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusTransitionExpectation_wiener_path",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusTransitionExpectation_actual_probability",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusTransitionExpectation_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusContinuousTransition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusContinuousTransition_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusContinuousTransition_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusContinuousTransition_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusContinuousTransition_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusContinuousTransition_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusContinuousTransition_map_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusContinuousTransition_map_smul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "0f7bca30c99111c70d931ecebceada6416e89c1267c0d1f91b5a17a1bfff2a72"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "153802ca4d8bbb2b6da7ed9b1d79dd36c6df9884d085d7e5a56582ad190f8332"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "7a26413b66796e1efced7f37479af61814ca1d906ad491c49b8d75eebb6d438d"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

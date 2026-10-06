@@ -966,3 +966,7 @@ full-check01 passed：9110 jobs/1925公理声明/193exact inputs；10checks退�
 BrownianTorusModel / CH06-DEP-076 / NOT-CH06-085：原gamma1/general positive masses/C∞periodic模型的真实整数等变、liftindependent连续torusendpoint、sameglobaltorusprocess原积分方程、实际概率timelaw及Markovkernel、真实projectedliftlaw和completedhistory conditional Markov。32public，local03通过，统一验收中。stochasticgenerator/actualSDElaw=谱T及5.6概率识别/C²core负责人/整个Theorem6.1未完成。
 
 full-check01 passed：9111 jobs/1957公理声明/194exact inputs；10checks退出0、全部input/rawlog SHA匹配、32 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianTransitionSemigroup / CH06-DEP-077 / NOT-CH06-086：原torus Brownian真实endpoint初值/kernelzero/completedhistory truefuture marginal及Chapman–Kolmogorov；实际continuous observableprobabilityexpectation=同一globalprocess期待/实际Wienerpath积分、Feller状态连续与CMap转移、真实expectationsemigroup/positivity/constant/线性及supnormcontraction，17public局部local03通过统一验收中。uniformnorm timeC0/actualstochasticgenerator/law=谱T与式5.6算子识别/C²core负责人/全6.1未完。
+
+full-check01 passed：9112 jobs/1974公理声明/195exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

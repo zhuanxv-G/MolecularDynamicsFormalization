@@ -246,3 +246,5 @@ import MolecularDynamics.Chapter06.BrownianRandomModel
 import MolecularDynamics.Chapter06.BrownianMarkovModel
 
 import MolecularDynamics.Chapter06.BrownianTorusModel
+
+import MolecularDynamics.Chapter06.BrownianTransitionSemigroup
