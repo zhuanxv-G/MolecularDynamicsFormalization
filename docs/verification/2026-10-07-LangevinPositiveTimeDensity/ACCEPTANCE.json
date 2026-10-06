@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-07T06:15:55.1212245+08:00",
+  "finished_at": "2026-10-07T06:17:08.88243+08:00",
+  "head_at_check": "70822ffbab9084aeb317c4b6e6c998142af6d845",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9157,
+  "audit_declarations": 2468,
+  "inputs": 240,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_fixed_time_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_positive_time_part",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_compact_minorization_at_time",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_physical_energy_minorization_at_time"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_fixed_time_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_positive_time_part",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_compact_minorization_at_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_physical_energy_minorization_at_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "4c38180259d6dc10614477be84a10dab73d3879426e075bb40a50162baabb261"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "fd0a0246f01b7154744936aca76f1612bb155e5c30123780c8fb71460109afca"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "explicit_positive_time_clause_separate_from_literal_original": true,
+  "positive_time_joint_domain": "C_times_C_times_open_time_zero_infinity",
+  "fixed_time_spatial_continuity_requires_positive_time": true,
+  "literal_original_implies_positive_part": "one_way_no_converse_no_actual_witness_claim",
+  "genuine_actual_accessibility_density_integral_and_local_positive_lower": true,
+  "genuine_CK_and_compact_uniform_accessibility": true,
+  "original_actual_prescribed_positive_T_common_probability_minorization": true,
+  "physical_actual_energy_sublevel_and_noise_sigma_minorization": true,
+  "strict_density_positivity_or_target_minorization_premise": "none",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "original_literal_definition": "unchanged_time_zero_impossibility_proof_preserved",
+  "owner_printed_semantic_correction": "pending",
+  "continuous_generator_identity": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

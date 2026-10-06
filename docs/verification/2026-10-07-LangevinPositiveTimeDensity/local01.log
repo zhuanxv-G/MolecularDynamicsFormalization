@@ -1,0 +1,8 @@
+docs/verification/2026-10-07-LangevinPositiveTimeDensity/Draft.lean:180:15: error: Application type mismatch: The argument
+  LT.lt.le ?m.55
+has type
+  ?m.53 ≤ ?m.54
+but is expected to have type
+  w.2 ∈ Ici 0
+in the application
+  ⟨hw.left, LT.lt.le ?m.55⟩
