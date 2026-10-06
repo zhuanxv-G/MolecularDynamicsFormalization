@@ -1,0 +1,186 @@
+{
+  "started_at": "2026-10-06T17:58:33.9403896+08:00",
+  "finished_at": "2026-10-06T17:59:48.7351233+08:00",
+  "head_at_check": "16020d99419832d16c2a451784aed546d42219aa",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9124,
+  "audit_declarations": 2125,
+  "inputs": 207,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationC2Partial_second_fderiv_entry",
+    "MolecularDynamics.textbookConfigurationC2Partial_second_coordinate_sum",
+    "MolecularDynamics.textbookBrownianC2Generator_continuous",
+    "MolecularDynamics.textbookBrownianC2Generator_periodic",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2observable_integrable",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2observable_expectation_Taylor",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2observable_generator_tendsto",
+    "MolecularDynamics.textbookBrownianC2Observable_Taylor_coefficients_bound",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2uniform_generator_error",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2uniform_generator_quotient_error",
+    "MolecularDynamics.textbookBrownianC2ContinuousGeneratorImage",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_continuous_observable_expectation",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2uniform_generator_error",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2original_generator_tendsto",
+    "MolecularDynamics.textbookBrownianC2GibbsL2GeneratorImage",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2original_generator_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationC2Partial_second_fderiv_entry",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationC2Partial_second_coordinate_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2Generator_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2Generator_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2observable_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2observable_expectation_Taylor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2observable_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2Observable_Taylor_coefficients_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2uniform_generator_error",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_C2uniform_generator_quotient_error",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2ContinuousGeneratorImage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_continuous_observable_expectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2uniform_generator_error",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_C2original_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianC2GibbsL2GeneratorImage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2original_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "a36d47090b74abe9fa376899a2950858524ac6f48db35c50dd2669fd2f730872"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "48f6ac2c71166c22a0a616736cf75df5225b085dbf7009c8cef38e0554b419fc"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,9 @@
+docs/verification/2026-10-06-BrownianC2Generator/Draft.lean:327:9: error: Tactic `rcases` failed: `x✝ : ∀ (ε : ℝ),
+  0 < ε →
+    ∃ C,
+      0 ≤ C ∧
+        ∀ (x : Fin Nc → ℝ),
+          ∀ t ∈ Icc 0 1,
+            ‖∫ (sample : Ω), f (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample) ∂P - f x -
+                  t * textbookBrownianGenerator m U β f x‖ ≤
+              (ε + C * (t + √t)) * t` is not an inductive datatype
