@@ -1,0 +1,87 @@
+{
+  "started_at": "2026-10-06T08:21:27.2990316+08:00",
+  "finished_at": "2026-10-06T08:22:38.475952+08:00",
+  "head_at_check": "b6d1e0396bc72c14a52cf0df3e355787a05b7409",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9090,
+  "audit_declarations": 1670,
+  "inputs": 173,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_graph_coefficient",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_graph_iff_coefficients",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_domain_iff_coefficients",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_apply_coefficient",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_coefficient"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_graph_coefficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_graph_iff_coefficients",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_domain_iff_coefficients",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_apply_coefficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsResolvent_coefficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "67e01e49df644849729b79ee9dd34dadeef7fb6ea1a63e6711d19ad7e3b4c547"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "2c02233ac6fc35028966c41ff9ae1ef5e8ed9c0fe1d0c52142582696777db13e"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "0eb73a33ad21f0e653ae65fae84edf150cfa45a08b66dd00616d55c6e46a8805"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

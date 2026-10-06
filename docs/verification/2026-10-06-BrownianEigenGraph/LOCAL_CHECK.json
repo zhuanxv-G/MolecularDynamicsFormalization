@@ -1,0 +1,19 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianEigenGraph/Draft.lean",
+  "source_sha256": "721a9ca24d9b8deffe3a00dd22408d6813ab485c16a2f157561fb86263cc7868",
+  "log": "docs/verification/2026-10-06-BrownianEigenGraph/local02-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public": [
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_graph_coefficient",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_graph_iff_coefficients",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_domain_iff_coefficients",
+    "MolecularDynamics.textbookBrownianGibbsClosedOperator_apply_coefficient",
+    "MolecularDynamics.textbookBrownianGibbsResolvent_coefficient"
+  ],
+  "actual_whole_original_Gibbs_graph_and_domain_iff": "proved_locally",
+  "integrated": false,
+  "full_check": "not_run",
+  "responsible_semantic_review": "pending"
+}

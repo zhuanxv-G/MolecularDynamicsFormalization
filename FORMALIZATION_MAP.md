@@ -857,3 +857,8 @@ full-check01 passed：9088 jobs/1640公理声明/171exact inputs；10checks退�
 25public原actualA closedgraph定义eigenspace与truecompactR双向eigencorrespondence；全eigenspace有限dim/相互正交/closuretop；Sigma有限基组合成实际整个sameGibbs HilbertBasis，每基向量trueAdomain/graph，非正及非零≤−κ，所有x HasSum与Parseval。MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean；docs/reviews/2026-10-06-BrownianResolventSpectrum/REVIEW.zh-CN.md。统一验收中；谱枚举/整谱/evolution与core最终语义pending。
 
 full-check01 passed：9089 jobs/1665公理声明/172exact inputs；10checks退出0、全部input/rawlog SHA匹配、25 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem6.1 — original Gibbs entire closed graph and domain coefficients (BrownianEigenGraph)
+5public actualA graph iff真实wholebasis λweightedcoeff；actualwholeAdomain iff weightedMemℓp；actualAapply与trueR coefficient完整。MolecularDynamics/Chapter06/BrownianEigenGraph.lean；docs/reviews/2026-10-06-BrownianEigenGraph/REVIEW.zh-CN.md。下一真正spectralheat contractive evolution与stronggeneration、概率transition识别/整谱/core最终语义仍缺。
+
+full-check01 passed：9090 jobs/1670公理声明/173exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

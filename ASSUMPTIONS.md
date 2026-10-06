@@ -505,3 +505,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianResolventSpectrum: original whole Gibbs Hilbert eigenbasis
 保留原m_i>0、U C∞整数周期、β>0、原sameGibbs fullrealLp与actualwholeAgraph；R实际compacttwo-sided inverse已证明而非前提。本批所有whole eigenspaces/finite multiplicity/dense complete Hilbert eigenbasis从actualcompactR/selfadj/nonpos推出，不假设basis/domain/eigenvalues/谱complete。Nc任意包含Nc0，使用Sigma(ℓ;Fin actualfinrank)不伪造永远无限的ℕ序列。完整展开与Parseval真实；全谱枚举及unbounded spectrum/evolution尚缺。原C²test与C∞fullcore语义负责人pending；无sorry/admit/newaxiom/unsafe/资源或linter绕过。
+
+## BrownianEigenGraph: genuine whole graph/domain coefficient characterization
+原positive m/U C∞整数周期/β>0/sameGibbs entireLp保留。fullbasis和实际Agraph已从truecompactresolvent推导，graph/domain充分性由fullseries+closedgraph+逆isometry证明，不额外假设domain、完整展开或加权operator模型。weightedMemℓp为等价条件非隐藏domain结论；原Nc任意。actualMarkov positivity/SDE law识别与evolution及谱枚举/整谱仍缺，C²/C∞core最终语义pending；无占位/axiom/unsafe/资源绕过。

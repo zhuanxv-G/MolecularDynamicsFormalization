@@ -202,3 +202,5 @@ import MolecularDynamics.Chapter06.BrownianGraphCompact
 import MolecularDynamics.Chapter06.BrownianGibbsResolvent
 
 import MolecularDynamics.Chapter06.BrownianResolventSpectrum
+
+import MolecularDynamics.Chapter06.BrownianEigenGraph

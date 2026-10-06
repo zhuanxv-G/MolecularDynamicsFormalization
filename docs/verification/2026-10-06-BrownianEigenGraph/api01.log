@@ -1,0 +1,13 @@
+HasSum.prodMk.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {γ : Type u_3} {L : SummationFilter β} [AddCommMonoid α]
+  [TopologicalSpace α] [AddCommMonoid γ] [TopologicalSpace γ] {f : β → α} {g : β → γ} {a : α} {b : γ}
+  (hf : HasSum f a L) (hg : HasSum g b L) : HasSum (fun x => (f x, g x)) (a, b) L
+IsClosed.mem_of_tendsto.{u, u_1} {X : Type u} [TopologicalSpace X] {α : Type u_1} {x : X} {s : Set X} {f : α → X}
+  {b : Filter α} [b.NeBot] (hs : IsClosed s) (hf : Filter.Tendsto f b (nhds x)) (h : ∀ᶠ (x : α) in b, f x ∈ s) : x ∈ s
+lp.memℓp.{u_3, u_4} {α : Type u_3} {E : α → Type u_4} {p : ENNReal} [(i : α) → NormedAddCommGroup (E i)]
+  (f : ↥(lp E p)) : Memℓp (↑f) p
+HilbertBasis.repr_apply_apply.{u_1, u_2, u_3} {ι : Type u_1} {𝕜 : Type u_2} [RCLike 𝕜] {E : Type u_3}
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] (b : HilbertBasis ι 𝕜 E) (v : E) (i : ι) :
+  ↑(b.repr v) i = inner 𝕜 (b i) v
+Submodule.sum_mem.{u, v, w} {R : Type u} {M : Type v} {ι : Type w} [Semiring R] [AddCommMonoid M]
+  {module_M : Module R M} (p : Submodule R M) {t : Finset ι} {f : ι → M} : (∀ c ∈ t, f c ∈ p) → ∑ i ∈ t, f i ∈ p
+eq_div_iff.{u_3} {G₀ : Type u_3} [GroupWithZero G₀] {a b c : G₀} (hb : b ≠ 0) : c = a / b ↔ c * b = a

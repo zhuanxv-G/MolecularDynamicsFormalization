@@ -1,0 +1,7 @@
+# Theorem6.1：原Gibbs整个闭图及定义域的真实本征系数刻画
+印刷250–251/PDF271–272，5public，原m_i>0/U C∞整数周期/β>0/actualsameµ entireLp保留；actualwholeA graph和已接受真实wholeHilbert eigenbasis。每basisvector actualAgraph与formalAdjoint给wholeactualgraph(x,y)⇒y coefficient=jvalue*x coefficient。
+充分性不假设domain或图正则性：对任意x,y属于wholeLp且满足truecoeffrelation，两侧真实basis HasSum给actualfinitepair series→(x,y)；每项由真实basisgraph的originalA graph子空间smul保持及derivedcoefficient关系入图，finite sums入graph；actualwholeA graph closed给最终(x,y)∈graph。故wholeoriginalgraph iff完全证明。
+domain必要性对actualA(x)真实Lp使用basis.repr的Memℓp；充分性任意x加权coeff为Memℓp时，以真实basis.repr.inverse构造y，实际repr双向与coefficient给wholegraph，从wholegraph抽取actualAdomain。domain iff λweighted coefficients真ℓ²不是把domain结论放前提。所有actualdomain向量的Aapply coefficient，以及wholeactualcompactR的(1−jvalue)inv coefficient完整证明。
+api01六fixedAPI全部0零warnings。local01只有rewrite完成目标后的多余rfl和hv等式右边(x,y).fst未显式change；删rfl/change(hv)后local02全5退出0空日志零warnings，正式local03同样0空日志。未更改资源或linter，无sorry/admit/newaxiom/unsafe。
+DEP055/NOT064 full中。下一真正contractive spectralheat evolution/semigroup/stronggeneration，未识别实际SDE transition law或Markov positivity，不计(5.6)真实probability expectation完成。谱有序枚举/whole-spectrum及原C²test/C∞core负责人最终语义pending，Theorem6.1整体与CORE_SCOPE未完成，nativeGoalusageLimited但ordinaryquota可用，仅本地。
+full-check01 passed：9090 jobs/1670公理声明/173exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
