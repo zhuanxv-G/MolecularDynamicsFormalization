@@ -1108,3 +1108,7 @@ full-check01 passed：9145 jobs/2397公理声明/228exact inputs；10checks退�
 LangevinSkeletonMoments / CH06-DEP-111 / NOT-CH06-120：sameactual CK积分与真实Hl可积/halfdrift→κ_(nτ)Hl几何矩界；true物理Hl Markov tail及proper原H1→eachfixedx actualskeleton lawfamily tight。3public local02零warning，统一验收中；无density/目标矩/drift假设，不将紧性或weaksubseq视作不变律。
 
 full-check01 passed：9146 jobs/2400公理声明/229exact inputs；10checks退出0、全部input/rawlog SHA匹配、3public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。same实际原Hl的nτ几何期待界、物理energy Markov尾界和eachfixedx actualskeleton law tight已机器验证；无density/目标矩漂移/stationarity前提，tight未当作invariantlaw，continuousgenerator/densityexists/Harris未证，owner semanticpending，Theorem6.2整体未完成。
+
+LangevinCesaroLaw / CH06-DEP-112 / NOT-CH06-121：trueactualκ前n+1 measure mean非零finite归一化及genuineprobability/BCF期待finite均值；sameτ fixedx actualaverages tight、trueProkhorov compactclosure及真实weaksubseq。7public local01零warning，统一验收中；不将weaklimit视为invariantlaw，mean非trajectoryaverage，density/continuousgenerator/Harris/ownerpending。
+
+full-check01 passed：9147 jobs/2407公理声明/230exact inputs；10checks退出0、全部input/rawlog SHA匹配、7public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。actualκ前n+1真实finite/nonzero归一化Cesaro probability、BCF有限期待均值、eachfixedx averagedlaws tight及真实Prokhorov weakcompact/strict weaksubseq已机器验证；weaklimit未当invariantlaw，无density/stationarity前提，continuousgenerator/densityexists/Harris未证，owner semanticpending，Theorem6.2整体未完成。

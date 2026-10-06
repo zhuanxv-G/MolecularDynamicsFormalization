@@ -1,0 +1,103 @@
+{
+  "started_at": "2026-10-07T02:06:27.7409451+08:00",
+  "finished_at": "2026-10-07T02:13:44.6448172+08:00",
+  "head_at_check": "1089929a74068ca85db8d53bcf7f04f4df44f213",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9147,
+  "audit_declarations": 2407,
+  "inputs": 230,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicCesaroMeasure",
+    "MolecularDynamics.textbookLangevinPeriodicCesaroMeasure_isProbability",
+    "MolecularDynamics.textbookLangevinPeriodicCesaroProbability",
+    "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_integral",
+    "MolecularDynamics.textbookLangevinPeriodicCesaroMeasure_isTight",
+    "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_isCompact_closure",
+    "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_weak_subsequence"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroMeasure_isProbability",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroProbability",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroMeasure_isTight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_isCompact_closure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_weak_subsequence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "88eb31cd95a8cc7b8c3850cd857e97d4211b55d91cb404168a77d7071e07cf71"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_n_plus_one_finite_nonzero_normalized_Cesaro_probability": true,
+  "actual_Cesaro_BCF_finite_expectation_average": true,
+  "actual_Cesaro_laws_isTight": true,
+  "actual_Prokhorov_compact_closure_and_weak_subsequence": true,
+  "density_moment_drift_stationarity_premise": "none",
+  "weak_subsequence_not_asserted_invariant": true,
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
