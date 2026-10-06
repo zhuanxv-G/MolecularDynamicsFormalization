@@ -1,0 +1,11 @@
+{
+  "path": "MolecularDynamics/Chapter06/BrownianExpectationEstimates.lean",
+  "line": 427,
+  "blank_line_count": 2,
+  "finding": "MolecularDynamics/Chapter06/BrownianExpectationEstimates.lean:427: new blank line at EOF.",
+  "source_sha256": "5f0beef983fba80454c90dc9c2e4f3d401422b8f834ebc8cd4226fe78f32ac07",
+  "reason": "Preserve exact already-verified Lean input; only two blank lines after final namespace end, no proof or semantics change. All other non-log staged whitespace checks remain enforced.",
+  "proof_input_unchanged": true,
+  "lean_warnings": 0,
+  "raw_diagnostic_logs_preserved": true
+}

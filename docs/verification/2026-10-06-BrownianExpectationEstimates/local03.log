@@ -1,0 +1,163 @@
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:157:16: error: don't know how to synthesize implicit argument `f`
+  @Measurable.comp_aemeasurable Ω (Fin Nc → ℝ) (Fin Nc → ℝ) inst✝ MeasurableSpace.pi P MeasurableSpace.pi
+    (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B (max 0 ?m.109)) (textbookBrownianSDEDrift m U)
+    (Continuous.measurable (LipschitzWith.continuous (textbookBrownianDriftLipschitzConstant_spec m U hU hPU)))
+    (textbookBrownianGlobalRandomConfiguration_endpoint_aemeasurable m hm U hU hPU β hβ B P hB x (max 0 ?m.109)
+      (le_max_left 0 ?m.109))
+context:
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+t : ℝ
+this : IsProbabilityMeasure P
+M : ℝ
+left✝ : 0 ≤ M
+hM : ∀ (q : Fin Nc → ℝ), ‖textbookBrownianSDEDrift m U q‖ ≤ M
+⊢ Ω → Fin Nc → ℝ
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:158:114: error: don't know how to synthesize placeholder for argument `b`
+context:
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+t : ℝ
+this : IsProbabilityMeasure P
+M : ℝ
+left✝ : 0 ≤ M
+hM : ∀ (q : Fin Nc → ℝ), ‖textbookBrownianSDEDrift m U q‖ ≤ M
+⊢ ℝ
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:158:97: error: don't know how to synthesize placeholder for argument `t`
+context:
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+t : ℝ
+this : IsProbabilityMeasure P
+M : ℝ
+left✝ : 0 ≤ M
+hM : ∀ (q : Fin Nc → ℝ), ‖textbookBrownianSDEDrift m U q‖ ≤ M
+⊢ ℝ
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:157:7: error: failed to infer `have` declaration type
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:154:96: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+t : ℝ
+this : IsProbabilityMeasure P
+M : ℝ
+left✝ : 0 ≤ M
+hM : ∀ (q : Fin Nc → ℝ), ‖textbookBrownianSDEDrift m U q‖ ≤ M
+⊢ Integrable
+    (fun sample =>
+      textbookBrownianSDEDrift m U (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B (max 0 t) sample))
+    P
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:208:17: error(lean.unknownIdentifier): Unknown identifier `quasiMeasurePreserving_snd`
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:194:47: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+T : ℝ
+hT : 0 ≤ T
+ν : Measure ℝ := ⋯
+hW : AEMeasurable (textbookWienerVectorContinuousPath B T) P
+hc :
+  Continuous fun z =>
+    textbookBrownianSDEDrift m U (textbookBrownianPathEndpoint m hm U hU hPU β hβ T hT z.1.1 (↑z.2) z.1.2)
+hmz : Measurable fun z => ((x, AEMeasurable.mk (textbookWienerVectorContinuousPath B T) hW z.2), projIcc 0 T hT z.1)
+hmodel :
+  StronglyMeasurable
+    ((fun z => textbookBrownianSDEDrift m U (textbookBrownianPathEndpoint m hm U hU hPU β hβ T hT z.1.1 (↑z.2) z.1.2)) ∘
+      fun z => ((x, AEMeasurable.mk (textbookWienerVectorContinuousPath B T) hW z.2), projIcc 0 T hT z.1))
+⊢ ((fun z => textbookBrownianSDEDrift m U (textbookBrownianPathEndpoint m hm U hU hPU β hβ T hT z.1.1 (↑z.2) z.1.2)) ∘
+      fun z =>
+      ((x, AEMeasurable.mk (textbookWienerVectorContinuousPath B T) hW z.2),
+        projIcc 0 T hT z.1)) =ᵐ[(ℙ.restrict (uIoc 0 T)).prod P]
+    fun z => textbookBrownianSDEDrift m U (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B z.1 z.2)
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:235:9: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  IsFiniteMeasure ((ℙ.restrict (uIoc 0 T)).prod P)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:232:47: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+T : ℝ
+hT : 0 ≤ T
+this : IsProbabilityMeasure P
+M : ℝ
+left✝ : 0 ≤ M
+hM : ∀ (q : Fin Nc → ℝ), ‖textbookBrownianSDEDrift m U q‖ ≤ M
+⊢ Integrable
+    (fun z => textbookBrownianSDEDrift m U (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B z.1 z.2))
+    ((ℙ.restrict (uIoc 0 T)).prod P)
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:282:31: error: Type mismatch
+  le_rfl
+has type
+  ?m.171 ≤ ?m.171
+but is expected to have type
+  0 ∈ Ici 0

@@ -1,0 +1,239 @@
+{
+  "started_at": "2026-10-06T15:16:21.849275+08:00",
+  "finished_at": "2026-10-06T15:25:28.7449905+08:00",
+  "head_at_check": "a987204cfc8231d6c11ca5a75842980c60b0f66e",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9115,
+  "audit_declarations": 2030,
+  "inputs": 198,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_expectation_bound",
+    "MolecularDynamics.textbookBrownianGlobalDriftIntegral",
+    "MolecularDynamics.textbookBrownianGlobalDriftIntegral_ae_eq",
+    "MolecularDynamics.textbookBrownianGlobalDriftIntegral_integrable_bound",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_mean_eq",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_mean_bound",
+    "MolecularDynamics.textbookBrownianGlobalDriftExpectation",
+    "MolecularDynamics.textbookBrownianGlobalDriftExpectation_integrable",
+    "MolecularDynamics.textbookBrownianGlobalDriftExpectation_continuous",
+    "MolecularDynamics.textbookBrownianGlobalDriftExpectation_zero",
+    "MolecularDynamics.textbookBrownianGlobalDriftIntegral_joint_aestronglyMeasurable",
+    "MolecularDynamics.textbookBrownianGlobalDriftIntegral_joint_integrable",
+    "MolecularDynamics.textbookBrownianGlobalDriftIntegral_expectation_fubini",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_mean_integral",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_mean_right_deriv",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_mean_div_tendsto",
+    "MolecularDynamics.textbookBrownianGlobalDriftExpectation_difference_norm_bound",
+    "MolecularDynamics.textbookBrownianGlobalFrozenDriftError",
+    "MolecularDynamics.textbookBrownianGlobalFrozenDriftError_integrable",
+    "MolecularDynamics.textbookBrownianGlobalFrozenDriftError_ae_eq_integral",
+    "MolecularDynamics.textbookBrownianGlobalFrozenDriftError_norm_expectation_bound"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_expectation_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftIntegral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftIntegral_ae_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftIntegral_integrable_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_mean_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_mean_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftExpectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftExpectation_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftExpectation_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftExpectation_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftIntegral_joint_aestronglyMeasurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftIntegral_joint_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftIntegral_expectation_fubini",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_mean_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_mean_right_deriv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_mean_div_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftExpectation_difference_norm_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalFrozenDriftError",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalFrozenDriftError_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalFrozenDriftError_ae_eq_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalFrozenDriftError_norm_expectation_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "4517e8f96234fa67500ff0e0414e358994a79dceee25a87a53fb7d793b359684"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "c7ea51681e011b7c63cf0163ff45fd000f91e7e02d2a48cc1dc2ec8e7bc263fa"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "5bbec04922b07228613a7f2c2dcc2c05f6fda3dcd85f1499e970c1ca9c09a092"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "6b5e8cd9daca7a05a0179c3e990f819b132c7e8fc14cd915735fe3b94596ba26"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "91a5775199ede610ce65dc7f9b01f05bd97fed19a4049f4473be81185340252c"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "9b6772cc765187a43dafa3355d0519dafd2f7888f89d0f655d32c03b5efbcc58"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

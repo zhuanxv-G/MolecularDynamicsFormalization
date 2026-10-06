@@ -1,0 +1,36 @@
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:208:17: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  SFinite P
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:194:47: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+T : ℝ
+hT : 0 ≤ T
+ν : Measure ℝ := ⋯
+hW : AEMeasurable (textbookWienerVectorContinuousPath B T) P
+hc :
+  Continuous fun z =>
+    textbookBrownianSDEDrift m U (textbookBrownianPathEndpoint m hm U hU hPU β hβ T hT z.1.1 (↑z.2) z.1.2)
+hmz : Measurable fun z => ((x, AEMeasurable.mk (textbookWienerVectorContinuousPath B T) hW z.2), projIcc 0 T hT z.1)
+hmodel :
+  StronglyMeasurable
+    ((fun z => textbookBrownianSDEDrift m U (textbookBrownianPathEndpoint m hm U hU hPU β hβ T hT z.1.1 (↑z.2) z.1.2)) ∘
+      fun z => ((x, AEMeasurable.mk (textbookWienerVectorContinuousPath B T) hW z.2), projIcc 0 T hT z.1))
+⊢ ((fun z => textbookBrownianSDEDrift m U (textbookBrownianPathEndpoint m hm U hU hPU β hβ T hT z.1.1 (↑z.2) z.1.2)) ∘
+      fun z =>
+      ((x, AEMeasurable.mk (textbookWienerVectorContinuousPath B T) hW z.2),
+        projIcc 0 T hT z.1)) =ᵐ[(ℙ.restrict (uIoc 0 T)).prod P]
+    fun z => textbookBrownianSDEDrift m U (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B z.1 z.2)

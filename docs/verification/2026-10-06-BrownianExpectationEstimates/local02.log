@@ -1,0 +1,26 @@
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:157:17: error(lean.unknownIdentifier): Unknown identifier `textbookBrownianSDEDrift_continuous`
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:154:96: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+t : ℝ
+this : IsProbabilityMeasure P
+M : ℝ
+left✝ : 0 ≤ M
+hM : ∀ (q : Fin Nc → ℝ), ‖textbookBrownianSDEDrift m U q‖ ≤ M
+⊢ Integrable
+    (fun sample =>
+      textbookBrownianSDEDrift m U (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B (max 0 t) sample))
+    P
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:175:11: error(lean.unknownIdentifier): Unknown identifier `textbookBrownianSDEDrift_continuous`

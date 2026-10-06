@@ -1,0 +1,12 @@
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:61:6: error: Type mismatch
+  add_le_add_left
+    (Eq.mp
+      (congrArg (LE.le (∫ (sample : Ω), ‖(textbookBrownianSDENoise m β) (B t.toNNReal sample)‖ ∂P))
+        (congrArg (HMul.hMul (∑ i, √(2 * β⁻¹ * (m i)⁻¹))) (congrArg Real.sqrt (Real.coe_toNNReal t ht))))
+      (textbookBrownianPhysicalNoise_norm_mean_le m hm β hβ B P hB t.toNNReal))
+    (M * t)
+has type
+  ∫ (sample : Ω), ‖(textbookBrownianSDENoise m β) (B t.toNNReal sample)‖ ∂P + M * t ≤
+    (∑ i, √(2 * β⁻¹ * (m i)⁻¹)) * √t + M * t
+but is expected to have type
+  M * t + ∫ (sample : Ω), ‖N sample‖ ∂P ≤ M * t + (∑ i, √(2 * β⁻¹ * (m i)⁻¹)) * √t

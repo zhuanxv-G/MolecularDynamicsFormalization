@@ -1,0 +1,57 @@
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:326:4: error: Type mismatch: After simplification, term
+  Integrable.sub hi (integrable_const (textbookBrownianSDEDrift m U x))
+ has type
+  @Integrable (Fin Nc → ℝ) PseudoMetricSpace.toUniformSpace.toTopologicalSpace SeminormedAddGroup.toContinuousENorm Ω
+    inst✝
+    ((fun sample =>
+        textbookBrownianSDEDrift m U (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample)) -
+      fun x_1 => textbookBrownianSDEDrift m U x)
+    P
+but is expected to have type
+  @Integrable (Fin Nc → ℝ) Pi.topologicalSpace SeminormedAddGroup.toContinuousENorm Ω inst✝
+    (fun sample =>
+      textbookBrownianSDEDrift m U (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample) -
+        textbookBrownianSDEDrift m U x)
+    P
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:397:4: error: Type mismatch: After simplification, term
+  Integrable.integral_prod_right hp
+ has type
+  @Integrable ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace SeminormedAddGroup.toContinuousENorm Ω inst✝
+    (fun y => ∫ (x : ℝ) in Ioc 0 t, Function.uncurry H (x, y)) P
+but is expected to have type
+  @Integrable ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace SeminormedAddGroup.toContinuousENorm Ω inst✝
+    (fun sample => ∫ (s : ℝ) in Ioc 0 t, H s sample ∂ℙ) P
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:400:4: error: Type mismatch: After simplification, term
+  Integrable.integral_prod_left hp
+ has type
+  Integrable (fun x => ∫ (y : Ω), Function.uncurry H (x, y) ∂P) (ℙ.restrict (Ioc 0 t))
+but is expected to have type
+  IntegrableOn (fun s => ∫ (sample : Ω), H s sample ∂P) (Ioc 0 t) ℙ
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:408:43: error: Application type mismatch: The argument
+  P
+has type
+  Measure.{u_1} Ω
+of sort `Type u_1` but is expected to have type
+  Measure.{0} ℝ
+of sort `Type` in the application
+  ∫ (s : ℝ) in 0..t, H s sample ∂P
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:408:8: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  MeasureSpace Ω
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:412:56: error: Function expected at
+  intervalIntegrable_const
+but this term has type
+  IntervalIntegrable (fun x => ?m.542) ?m.540 ?m.538 ?m.539
+
+Note: Expected a function because this term is being applied to the argument
+  _
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:419:6: error: No goals to be solved
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:408:4: error: invalid 'calc' step, left-hand side is
+  ∫ (x : Ω), ?m.448 x : ℝ
+but is expected to be
+  ∫ (sample : Ω), ‖textbookBrownianGlobalFrozenDriftError m hm U hU hPU β hβ B x t sample‖ ∂P : ℝ
+docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean:417:4: error: invalid 'calc' step, right-hand side is
+  t • (L * (M * t + C * √t)) : ℝ
+but is expected to be
+  ↑(textbookBrownianDriftLipschitzConstant m U hU hPU) * (M * t + (∑ i, √(2 * β⁻¹ * (m i)⁻¹)) * √t) * t : ℝ
