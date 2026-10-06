@@ -636,3 +636,5 @@ LangevinHamiltonianDrift：原unitmass/currentC∞periodic U/same实际Wiener及
 LangevinNoiseHigherMoments：原真实Wiener/同ξ路径卷积，γ≥0/T≥0给所需2l矩，l≥1；actualprocessγ>0、当前C∞periodicU/真实forceLip；H^l实际可积还用原U≥1和真实势能界。目标矩/Gaussian卷积law未作假设，supnorm仅支配literal物理平方和power，未宣称timeuniform矩或高次drift/continuousgenerator/Harris。仅原H^l所需有限偶次空间，不独立拓展任意Lp。
 
 LangevinHamiltonianPowerDrift：单位质量、原U>=1/C∞periodicU/forceLip、γ>0、σ任意及sameactualWiener/process/κ。由真实pathwise物理H界及已验actual2l噪声矩推原Hl期待halfdrift，τ共同所有l>=1和所有T>=τ；D_l(T)>0对初值统一但未声称时间uniform。目标moment/drift不作前提；连续generator身份与literalAssumption2、density存在及Harris仍待。
+
+LangevinSkeletonInputs：原densityclause与compact非空interior/σ非零对指定T>0给actualsmallset，physicalγβ>0推出sqrtnoise非零。sameκτ inputs还用原U>=1/C∞periodic/forceLip/γ>0；Hl目标drift和moments从实际过程推，D/R导出。conditionaldensity必须覆盖新derivedC_R，未从原固定C推出这种更大集density；未声称density存在或Harris整体，原time0 jointcontinuous语义pending。

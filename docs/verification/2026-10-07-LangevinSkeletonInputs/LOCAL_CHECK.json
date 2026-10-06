@@ -1,0 +1,33 @@
+{
+  "draft_path": "docs/verification/2026-10-07-LangevinSkeletonInputs/Draft.lean",
+  "source_path": "MolecularDynamics/Chapter06/LangevinSkeletonInputs.lean",
+  "draft_sha256": "eb963391189bb99bf7bff351734afc07a0286c4751da5367e5d0edab98d99009",
+  "source_sha256": "eb963391189bb99bf7bff351734afc07a0286c4751da5367e5d0edab98d99009",
+  "local_check_log": "local02.log",
+  "local_check_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "local_exit_code": 0,
+  "local_lean_warnings": 0,
+  "local_log_empty": true,
+  "exact_source_copy_verified": true,
+  "public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_compact_minorization_at_time",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_physical_energy_minorization_at_time",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_large_sublevel_drift",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_inputs"
+  ],
+  "actual_prescribed_positive_time_compact_minorization": "proved_locally_using_original_density_clause_actual_two_half_step_CK",
+  "actual_original_physical_energy_minorization_at_prescribed_time": "proved_locally_conditional_density_on_same_energy_set",
+  "actual_Hamiltonian_power_derived_large_sublevel_and_outside_drift": "proved_locally_from_accepted_actual_power_drift_no_drift_premise",
+  "actual_same_kernel_same_time_Hpower_moment_indicator_drift_and_conditional_smallset": "proved_locally",
+  "density_scope": "must_hold_on_derived_C_R_not_deduced_from_original_fixed_C",
+  "common_time_independent_l": true,
+  "integrated": true,
+  "full_check": "passed_full_check01",
+  "actual_same_time_skeleton_inputs": "proved_locally",
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

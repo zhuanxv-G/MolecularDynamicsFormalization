@@ -1,0 +1,79 @@
+{
+  "started_at": "2026-10-07T01:36:26.0705773+08:00",
+  "finished_at": "2026-10-07T01:44:04.2968518+08:00",
+  "head_at_check": "372667a5d9ff8de909a9122fd6a7ed93f0ca63c1",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9145,
+  "audit_declarations": 2397,
+  "inputs": 228,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_compact_minorization_at_time",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_physical_energy_minorization_at_time",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_large_sublevel_drift",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_inputs"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_compact_minorization_at_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_physical_energy_minorization_at_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_large_sublevel_drift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_skeleton_inputs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "f51bc961b6ca2e3faa75f437904f873aba0ea67cb0ff3b7f8a14876eb2c7675a"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "a88082abc9f8850f8e1a0e216dc56c279a1c922ed591b94fb6a6a998e75a30ae"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_prescribed_time_compact_physical_minorization_from_original_density_clause": true,
+  "actual_Hamiltonian_power_large_sublevel_outside_drift": true,
+  "actual_same_kernel_same_time_derived_Hpower_indicator_drift_and_conditional_smallset": true,
+  "density_scope": "original_clause_must_hold_on_derived_C_R_not_deduced_from_original_fixed_C",
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "original_closed_time_density_continuity_semantics": "pending",
+  "Harris": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

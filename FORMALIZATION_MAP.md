@@ -1100,3 +1100,7 @@ full-check01 passed：9143 jobs/2386公理声明/226exact inputs；10checks退�
 LangevinHamiltonianPowerDrift / CH06-DEP-109 / NOT-CH06-118：sameactual H path界与真实高次noise矩积分→原P及κ H^l期待界；同一τ=log6/γ对所有l>=1及T>=τ得到halfdrift，余项对x统一且允许依赖l/T；samepositiveproperH^l skeleton包。7public local02零warning空日志，统一验收中；continuousgenerator/densityexists/Harris/ownerpending。
 
 full-check01 passed：9144 jobs/2393公理声明/227exact inputs；10checks退出0、全部input/rawlog SHA匹配、7public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。same实际原H^l路径界/同P及κ期待界/共同正τ对所有l>=1和T>=τ halfdrift及samepositiveproperHl已机器验证；D允许依赖l/T，continuousgenerator/densityexists/Harris未证，owner semanticpending，Theorem6.2整体未完成。
+
+LangevinSkeletonInputs / CH06-DEP-110 / NOT-CH06-119：原densityclause两半positive时间真实CK给指定T compact/physicalenergy minorization；真实Hl drift导出R>4D和outside 3/4收缩；sameκτ原Hl可积/indicator漂移及在derivedC_R的conditional小集包。4public local02零warning，统一验收中；更大C_R上的density不从原固定C推出，实际densityexists/continuousgenerator/Harris/ownerpending。
+
+full-check01 passed：9145 jobs/2397公理声明/228exact inputs；10checks退出0、全部input/rawlog SHA匹配、4public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。原densityclause→指定positiveT小集、实际Hl漂移→derivedR/outside收缩和同κτ的moments/indicator漂移及conditional小集已机器验证；derivedC_R的density未从原fixedC推出，continuousgenerator/densityexists/Harris未证，owner semanticpending，Theorem6.2整体未完成。
