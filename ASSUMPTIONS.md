@@ -662,3 +662,5 @@ LangevinHarrisAllTime：同originalκ/Wiener/unitmass/C∞周期势/γ>0/σ≠0�
 LangevinDensityTimeZero：N>0、C有内部点、同真实κ及原Wiener/C∞周期U/forceLip，γσ任意，不假设测度无原子/regular/目标密度upper或Diraclimit，均真实derive。字面原C×C×[0,∞)联合连续densityclause被反证；这不否定正时间密度或实际遍历性。所有旧literal-density conditional链在正维非空interior应用无可用该前提见证；不能以conditional6.48冒称实际无条件收敛。原定义未改，positiveTime明确版本另证且实际density仍未derive，owner语义修订待签核。
 
 LangevinPositiveTimeDensity：新明确命名的PositiveTimeDensityClause仅联合连续C×C×(0,∞)及同κ/flatvolume positive-time表示，与字面closedtime定义分开；literal→positive单方向，无converse或密度见证。compact C/非空interior/σneq0/positiveT下真实minorization由actualaccessibility、ρ积分和空间连续、trueCK derive，严格ρpositive和目标smallset非premise。physicalHl版compact/interior与σnonzero derive。actual密度存在未证，原文修订负责人待签核，不以此登记无条件实际6.48。
+
+LangevinPositiveTimeHarris：hB actual Wiener、原C∞periodicU/forceLip、γ>0 σneq0，初始U≥1后trueU+c回迁arbitraryU；唯一新链density前提是explicit PositiveTimeDensityClause落在实际derive大Hl sublevelCR。actualdrift/moments/compactinterior/共同probminorization/严格contraction/不变律存在与其Hl可积/CKunbounded外层可积/目标指数界均真实derive不作为结论假设。原literal闭timeclause不调用/不更改，新正time版本未构成负责人印刷修订批准或actualdensity存在证明。独立generator/Gibbs/一般SDE/CORE仍pending。

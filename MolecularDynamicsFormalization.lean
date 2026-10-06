@@ -338,3 +338,5 @@ import MolecularDynamics.Chapter06.LangevinHarrisAllTime
 import MolecularDynamics.Chapter06.LangevinDensityTimeZero
 
 import MolecularDynamics.Chapter06.LangevinPositiveTimeDensity
+
+import MolecularDynamics.Chapter06.LangevinPositiveTimeHarris

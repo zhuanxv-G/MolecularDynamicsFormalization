@@ -1,0 +1,139 @@
+{
+  "started_at": "2026-10-07T06:21:26.0170705+08:00",
+  "finished_at": "2026-10-07T06:22:43.2425781+08:00",
+  "head_at_check": "1deb903d4d90c2025a0479379d6a13820ca93252",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9158,
+  "audit_declarations": 2478,
+  "inputs": 241,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_hamiltonian_power_skeleton_inputs",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_hamiltonian_weighted_one_step_contraction",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_hamiltonian_weighted_skeleton_contraction",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_hamiltonian_weighted_skeleton_geometric_bound",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_original_observable_skeleton_geometric_bound",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_invariant_unique",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_invariant_existsUnique",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_original_observable_exponential_bound",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_invariant_exists_with_original_exponential_bound",
+    "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_original_exponential_bound_unrestricted_potential"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_hamiltonian_power_skeleton_inputs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_hamiltonian_weighted_one_step_contraction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_hamiltonian_weighted_skeleton_contraction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_hamiltonian_weighted_skeleton_geometric_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_original_observable_skeleton_geometric_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_invariant_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_invariant_existsUnique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_original_observable_exponential_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_invariant_exists_with_original_exponential_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPositiveTimeDensityClause_original_exponential_bound_unrestricted_potential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "09fd7edc8cc15de1bcca1f0a7cfc642f20cdb3c6f58c5d589369cbfa55e9ef8b"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "explicit_positive_time_clause_on_actual_derived_C_R": true,
+  "literal_original_definition": "unchanged_not_invoked_in_new_chain",
+  "genuine_actual_half_drift_moments_compact_sublevel_interior": "previously_derived_no_target_premises",
+  "actual_prescribed_tau_true_minorization": "proved_using_explicit_positiveTime_clause",
+  "true_residual_probability_weighted_one_step_strict_contraction": true,
+  "genuine_actual_skeleton_CK_unbounded_integrability_a_pow_n": true,
+  "actual_invariant_Hl_integrability": "derived_not_assumed",
+  "original_measurable_absf_le_Hl_skeleton_uniform_bound": true,
+  "actual_invariant_probability_unique_and_existsUnique": true,
+  "genuine_continuous_actual_kernel_T_n_tau_plus_r_and_CK": true,
+  "true_remainder_uniform_moments_floor_log_positive_rate_original_continuous6_48": true,
+  "original_arbitrary_potential": "true_U_plus_c_normalization_and_same_actual_kernel_weight_Hl_U_plus_c",
+  "target_contraction_moments_convergence_invariant_existence_premise": "none",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "continuous_generator_identity": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
