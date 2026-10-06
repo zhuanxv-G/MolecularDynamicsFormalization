@@ -1,0 +1,105 @@
+{
+  "started_at": "2026-10-06T08:40:39.8852482+08:00",
+  "finished_at": "2026-10-06T08:41:51.3135398+08:00",
+  "head_at_check": "0035e12ef0e22c80ffaa8c50e5fe9662675e7316",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9092,
+  "audit_declarations": 1694,
+  "inputs": 175,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsDifferenceWeight",
+    "MolecularDynamics.textbookBrownianGibbsDifferenceWeight_norm_le",
+    "MolecularDynamics.textbookBrownianGibbsDifferenceWeight_error_le",
+    "MolecularDynamics.textbookBrownianGibbsDifferenceWeight_tendsto",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_right_derivative_of_graph",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_graph_of_right_derivative",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_generator_graph_iff"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDifferenceWeight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDifferenceWeight_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDifferenceWeight_error_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsDifferenceWeight_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_right_derivative_of_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_graph_of_right_derivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_generator_graph_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "06c6989572dbca2315b318b03bd4b2a6add013430b01e546d763195d741c7260"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "eebe46d8f3c93cbeac1d7f1d3fb03127875717f8920fd98d4ef9b6f155a707f7"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "5bc5f4b097ef00ab3baf9e2afbcc111f9de32f4fe2f616bfffdc9528d9d61f6e"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

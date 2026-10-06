@@ -1,0 +1,6 @@
+docs/verification/2026-10-06-BrownianSpectralGenerator/Draft.lean:53:24: error: Type mismatch
+  add_le_add_right (textbookBrownianGibbsDifferenceWeight_norm_le m hm U hU hPU β hβ t ht j) ?m.89
+has type
+  ?m.89 + ‖textbookBrownianGibbsDifferenceWeight m U hU hPU β t j‖ ≤ ?m.89 + -j.fst
+but is expected to have type
+  ‖textbookBrownianGibbsDifferenceWeight m U hU hPU β t j‖ + ‖j.fst‖ ≤ -j.fst + ‖j.fst‖

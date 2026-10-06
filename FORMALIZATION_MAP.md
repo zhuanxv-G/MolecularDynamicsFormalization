@@ -867,3 +867,8 @@ full-check01 passed：9090 jobs/1670公理声明/173exact inputs；10checks退�
 17public实际原wholebasis exp eigenweights/actualℓ² CLM与trueunitary传回sameGibbs entireLp；T0identity、timeadd semigroup、norm≤1、所有x真正HasSum；actualwholeAgraph保持；summableTannery norm² DCT与sqrt证明全space alltime强连续。MolecularDynamics/Chapter06/BrownianSpectralEvolution.lean；docs/reviews/2026-10-06-BrownianSpectralEvolution/REVIEW.zh-CN.md。stronginfgen identification/Markovpositivity/actualSDE expectation及整谱/core语义仍缺。
 
 full-check01 passed：9091 jobs/1687公理声明/174exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem6.1 — exact entire actual Gibbs semigroup infinitesimal generator (BrownianSpectralGenerator)
+7public actualpositive differenceweights/exponentialscalar derivative bound与pointlimit，wholeactualAgraph ⇒ genuineHilbertstrong rightderivative via实际y coefficients squaredsumDCT/unitary；reverse viainnerCLM与unique limits/wholegraphiff；原Agraph iffactualT strongrightderivative全空间完整。MolecularDynamics/Chapter06/BrownianSpectralGenerator.lean；docs/reviews/2026-10-06-BrownianSpectralGenerator/REVIEW.zh-CN.md。下一constantmode exponentialdecay/真实expectation识别；谱枚举/整谱/core最终语义pending。
+
+full-check01 passed：9092 jobs/1694公理声明/175exact inputs；10checks退出0、全部input/rawlog SHA匹配、7 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

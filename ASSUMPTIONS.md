@@ -511,3 +511,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianSpectralEvolution: actual whole Gibbs C0 contraction semigroup
 原m_i>0/U C∞整数周期/β>0/sameactualGibbs fullrealLp，timeNNReal实际≥0。exp eigenweights界、wholeC0normcontinuity、actualsemigroup/graphpreservation从已验收真实fullbasis与wholeAgraph刻画推导，不以semigroup/C0/weightbound/Adomain/生成元结论为假设。此阶段actualstronginfgen identity及Markovpositivity/SDEprobabilityexpectation未验证，不称已完成真实随机轨道定理；谱枚举/whole-spectrum/core语义pending。Nc0兼容，不伪造无限index；无newaxiom/unsafe/占位或资源限制修改。
+
+## BrownianSpectralGenerator: full actual generator identification
+保留原m_i>0/U C∞整数周期/β>0/actualsameGibbs fullrealLp/NNRealpositive righttime。actualT由真实A整个Hilbert本征基构造并已证C0contraction，现全originalAgraph⇔actualstrongdifferencequotient limit：allx y不加domain/eigenassumptions，domain在⇐方向从truewholegraph刻画推导，⇒只用originalactualgraph是完整生成元定义而非藏结论。scalarpointlimit/DCTbound/stronglimit完整证明，不假设generatoridentity或derivlimit；Markovpositivity/SDEprobabilitylaw与expectation/谱枚举整谱及C²/core语义仍pending；无占位/axiom/unsafe/资源绕过。

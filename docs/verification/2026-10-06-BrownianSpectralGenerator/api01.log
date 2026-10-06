@@ -1,0 +1,19 @@
+HasDerivAt.tendsto_slope_zero_right.{u, v} {𝕜 : Type u} [NontriviallyNormedField 𝕜] {F : Type v} [NormedAddCommGroup F]
+  [NormedSpace 𝕜 F] {f : 𝕜 → F} {f' : F} {x : 𝕜} [Preorder 𝕜] (h : HasDerivAt f f' x) :
+  Filter.Tendsto (fun t => t⁻¹ • (f (x + t) - f x)) (nhdsWithin 0 (Set.Ioi 0)) (nhds f')
+Real.add_one_le_exp (x : ℝ) : x + 1 ≤ Real.exp x
+tendsto_nhdsWithin_iff.{u_1, u_2} {α : Type u_1} {β : Type u_2} [TopologicalSpace α] {a : α} {l : Filter β} {s : Set α}
+  {f : β → α} : Filter.Tendsto f l (nhdsWithin a s) ↔ Filter.Tendsto f l (nhds a) ∧ ∀ᶠ (n : β) in l, f n ∈ s
+self_mem_nhdsWithin.{u_1} {α : Type u_1} [TopologicalSpace α] {a : α} {s : Set α} : s ∈ nhdsWithin a s
+Real.hasDerivAt_exp (x : ℝ) : HasDerivAt Real.exp (Real.exp x) x
+HasDerivAt.exp {f : ℝ → ℝ} {f' x : ℝ} (hf : HasDerivAt f f' x) :
+  HasDerivAt (fun x => Real.exp (f x)) (Real.exp (f x) * f') x
+Summable.mul_left.{u_1, u_3} {ι : Type u_1} {α : Type u_3} {L : SummationFilter ι} [NonUnitalNonAssocSemiring α]
+  [TopologicalSpace α] [IsTopologicalSemiring α] {f : ι → α} (a : α) (hf : Summable f L) : Summable (fun i => a * f i) L
+Filter.Tendsto.pow.{u_2, u_3} {α : Type u_2} {M : Type u_3} [TopologicalSpace M] [Monoid M] [ContinuousMul M]
+  {l : Filter α} {f : α → M} {x : M} (hf : Filter.Tendsto f l (nhds x)) (n : ℕ) :
+  Filter.Tendsto (fun x => f x ^ n) l (nhds (x ^ n))
+innerSL_apply_apply.{u_1, u_2} (𝕜 : Type u_1) {E : Type u_2} [RCLike 𝕜] [SeminormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] (v w : E) : ((innerSL 𝕜) v) w = inner 𝕜 v w
+tendsto_nhds_unique.{u_1, u_2} {X : Type u_1} {Y : Type u_2} [TopologicalSpace X] [T2Space X] {f : Y → X} {l : Filter Y}
+  {a b : X} [l.NeBot] (ha : Filter.Tendsto f l (nhds a)) (hb : Filter.Tendsto f l (nhds b)) : a = b
