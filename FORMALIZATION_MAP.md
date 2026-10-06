@@ -1070,3 +1070,7 @@ full-check01 passed：9136 jobs/2296公理声明/219exact inputs；10checks退�
 BrownianContinuousHaarDensity / CH06-DEP-102 / NOT-CH06-111：真正continuousphysicalHaarR除真实positiveGibbsweight得到trueLp²，双向AC/J₂AE给sameinitialphysicalmeasure/非负质量；sameactualκlaw及真实evolvedHaar density/5.6 ratio；原exp(-βU)未规范化testnorm精确sqrtZ因子与真正原norm positiveKαuniformtestbound。18public local03统一验收中，Dirac/allL¹指数及owner/wholepending。
 
 full-check01 passed：9137 jobs/2314公理声明/220exact inputs；10checks退出0、全部input/rawlog SHA匹配、18 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+LangevinWeakFeller / CH06-DEP-103 / NOT-CH06-112：sameactual原unitmass Langevinκ/Wienerpath/globalprocess Cb真实期待、noncompactphase weakFeller/ProbabilityMeasure弱连续与sameCb contraction/zero/add/positive/const；sameκopenpositive/Portmanteau下半连续/compactuniformε/原H^lsublevels；originalAssumption1(i)完整共同点δt0allx及physical√(2γβ⁻¹) energyC版本。22public local08统一验收中。jointdensityii、measureminorization/actualgeneratorLyapunov/Harris/owner/wholepending；openuniform非小集。
+
+full-check01 passed：9138 jobs/2336公理声明/221exact inputs；10checks退出0、全部input/rawlog SHA匹配、22 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.2整体未完成。

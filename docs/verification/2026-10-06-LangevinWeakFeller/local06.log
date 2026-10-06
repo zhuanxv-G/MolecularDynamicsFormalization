@@ -1,0 +1,16 @@
+docs/verification/2026-10-06-LangevinWeakFeller/Draft.lean:260:69: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-LangevinWeakFeller/Draft.lean:260:72: error(lean.unknownIdentifier): Unknown identifier `hp`
+docs/verification/2026-10-06-LangevinWeakFeller/Draft.lean:261:59: error: Type mismatch
+  LT.lt.le ?m.90
+has type
+  ?m.88 ≤ ?m.89
+but is expected to have type
+  z ∈ {z | textbookLangevinPeriodicHamiltonianPower U l z ≤ R}
+docs/verification/2026-10-06-LangevinWeakFeller/Draft.lean:278:80: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ ∞ U
+of sort `Prop` but is expected to have type
+  ℕ
+of sort `Type` in the application
+  textbookLangevinPeriodicHamiltonianPower_sublevel_interior_nonempty U hU

@@ -1,0 +1,14 @@
+docs/verification/2026-10-06-LangevinWeakFeller/Draft.lean:212:6: error: Application type mismatch: The argument
+  Semicontinuous.semicontinuousOn
+    (textbookLangevinPeriodicTransitionKernel_open_lowerSemicontinuous B P hB U hU hp L hF γ σ T C hC)
+has type
+  ∀ (s : Set (textbookLangevinPeriodicPhase N)),
+    SemicontinuousOn
+      (fun x1 x2 => (fun x => ((textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ T) x) C) x1 > x2) s
+but is expected to have type
+  LowerSemicontinuousOn ?m.74 K
+in the application
+  LowerSemicontinuousOn.exists_isMinOn hKN hK
+    (Semicontinuous.semicontinuousOn
+      (textbookLangevinPeriodicTransitionKernel_open_lowerSemicontinuous B P hB U hU hp L hF γ σ T C hC))
+docs/verification/2026-10-06-LangevinWeakFeller/Draft.lean:211:11: error: Tactic `rcases` failed: `x✝ : ?m.85` is not an inductive datatype

@@ -1,0 +1,256 @@
+{
+  "started_at": "2026-10-06T22:37:42.1912459+08:00",
+  "finished_at": "2026-10-06T22:39:00.7793551+08:00",
+  "head_at_check": "bf9a9be882e8f9b44286ed1d103f96a10d909678",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9138,
+  "audit_declarations": 2336,
+  "inputs": 221,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_wiener_path",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_actual_process",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_norm_le",
+    "MolecularDynamics.textbookLangevinPeriodicBoundedTransition",
+    "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_apply",
+    "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_norm_le",
+    "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_zero",
+    "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_add",
+    "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_nonnegative",
+    "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_const",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionProbability",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionProbability_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionProbability_weakFeller_of_periodic",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_open_pos",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_open_lowerSemicontinuous",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_compact_open_uniform_pos",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_energy_sublevel_open_uniform_pos",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_assumption1i",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_sublevel_interior_nonempty",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_physical_energy_assumption1i"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_wiener_path",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_actual_process",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicBoundedTransition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_nonnegative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicBoundedTransition_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionProbability",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionProbability_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionProbability_weakFeller_of_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_open_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_open_lowerSemicontinuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_compact_open_uniform_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_energy_sublevel_open_uniform_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_assumption1i",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_sublevel_interior_nonempty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_physical_energy_assumption1i",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "e38a79caf05525e2b8c0e81ed7b3db1a19b439f82dcde7e3f7a534f097660b70"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "4c7254bf2a40c6998e361404570fcf37b9a40f97ccc1996970fc7e9839097451"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "198bf74170d7d1cc93b40d8b9c744de0d73cd0e51f8dd122e989a890d8766dfc"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "127941869c4f011c53bab1c33adcbee4bfd7bac5077b1e110b360957cfb229f0"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "49899876f7720e394b3b54328daadb9d4073016aae5a9eea8294a92c4fca1dcf"
+    },
+    {
+      "path": "local07.log",
+      "sha256": "9cb092d0f8af70e36386b784527070e4bbc2ea86d81898c632e74e90a47d4e7a"
+    },
+    {
+      "path": "local08.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
