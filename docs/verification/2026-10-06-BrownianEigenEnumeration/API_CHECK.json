@@ -1,0 +1,30 @@
+{
+  "fixed_lean": "4.34.0",
+  "fixed_mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "successful_api_checks": 21.0,
+  "checks": [
+    {
+      "source": "docs/verification/2026-10-06-BrownianEigenEnumeration/ApiProbe3.lean",
+      "source_sha256": "811493af7f66cd1ee9d160fc92a6b8135c628a8a32a1e172a179fe7685b74a3b",
+      "log": "docs/verification/2026-10-06-BrownianEigenEnumeration/api03.log",
+      "log_sha256": "00a324a05e3f298537c54a716a5c924868594b5f87480916aca8b4d2c24a3c1c",
+      "api_checks": 18,
+      "exit_code": 0,
+      "lean_warnings": 0
+    },
+    {
+      "source": "docs/verification/2026-10-06-BrownianEigenEnumeration/ApiProbe4.lean",
+      "source_sha256": "bb465d8b1132fd85c99f632069f09e2efaea4e73d07378d1ace5321166fc918f",
+      "log": "docs/verification/2026-10-06-BrownianEigenEnumeration/api04.log",
+      "log_sha256": "047ce27ec1552547a6b26cdf021d0cdb029990581ec951c4ae81addbcfe1ab09",
+      "api_checks": 3,
+      "exit_code": 0,
+      "lean_warnings": 0
+    }
+  ],
+  "previous_failed_probes": {
+    "api01": "Infinite.of_not_finite and HilbertBasis.reindex absent",
+    "api02": "Set.range_comp_of_surjective absent"
+  },
+  "failed_logs_preserved": true
+}

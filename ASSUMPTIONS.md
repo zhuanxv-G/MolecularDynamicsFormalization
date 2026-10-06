@@ -526,3 +526,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianEigenDiscreteness: genuine finite spectral levels and closed discrete whole real spectrum
 保留 original positive masses/U C∞periodic/β>0/actual sameGibbs whole realLp。所有有限层、基索引与实谱可数性、cofinite趋零和趋负无穷、closed/discrete 谱由真正 compact R、实际 graph/basis/spectrum 证明，不加入 finite/Countable/Infinite 结论前提。每谱值重数来自既有真实 finiteDimensional eigenspace。Nc0允许有限索引和可能底cofinite，不声称自然数无限枚举或其真实逃逸。尚未复化全复谱/正维有序枚举/Markov正性/SDElaw expectation，C²/core最终负责人语义pending；无placeholder/newaxiom/unsafe/限制绕过。
+
+## BrownianEigenEnumeration: proved positive-dimensional infinitude and genuine complete sequence
+仅将 0<Nc 作为无限维结论真实适用维数条件；正质量/原 U C∞periodic/β>0 与原 entireGibbs 不变。Infinite/Denumerable/整个谱无限/λ_n escape 均由实际 Haar实虚满射、真实 Fourier 独立、wholeGibbsHaar unitary、实际完整本征基和既有有限谱层推导，无结论入假设。ℕ 双射覆盖全部索引及重数；未假定或声称排序与首模式。Nc0此前 finite/cofinite statement保留，未强行无限化。复化Hilbert空间用于无限维依赖，不等于证明A复谱。真正 Markov/SDElaw expectation及原C²/core最终semanticpending；无placeholder/newaxiom/unsafe/限制绕过。

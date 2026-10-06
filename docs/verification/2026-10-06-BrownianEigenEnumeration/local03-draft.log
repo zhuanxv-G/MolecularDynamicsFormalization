@@ -1,0 +1,8 @@
+docs/verification/2026-10-06-BrownianEigenEnumeration/Draft.lean:127:2: error: Type mismatch: After simplification, term
+  Tendsto.comp (textbookBrownianGibbsEigenbasis_eigenvalues_tendsto_atBot m hm U hU hPU β hβ)
+    (Function.Injective.tendsto_cofinite
+      (Equiv.injective (textbookBrownianGibbsEigenEnumeration m hm U hU hPU β hβ hNc)))
+ has type
+  @Tendsto ℕ ℝ ((fun j => j.fst) ∘ ⇑(textbookBrownianGibbsEigenEnumeration m hm U hU hPU β hβ hNc)) atTop atBot
+but is expected to have type
+  @Tendsto ℕ ℝ (fun n => ((textbookBrownianGibbsEigenEnumeration m hm U hU hPU β hβ hNc) n).fst) atTop atBot

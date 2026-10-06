@@ -1,0 +1,27 @@
+Complex.imCLM : ℂ →L[ℝ] ℝ
+ContinuousLinearMap.coeFn_compLpL.{u_1, u_4, u_5, u_6, u_7} {α : Type u_1} {E : Type u_4} {F : Type u_5}
+  {m : MeasurableSpace α} {p : ENNReal} {μ : MeasureTheory.Measure α} [NormedAddCommGroup E] [NormedAddCommGroup F]
+  {𝕜 : Type u_6} {𝕜' : Type u_7} [NontriviallyNormedField 𝕜] [NontriviallyNormedField 𝕜'] [NormedSpace 𝕜 E]
+  [NormedSpace 𝕜' F] {σ : 𝕜 →+* 𝕜'} [RingHomIsometric σ] [Fact (1 ≤ p)] (L : E →SL[σ] F)
+  (f : ↥(MeasureTheory.Lp E p μ)) : ↑↑((ContinuousLinearMap.compLpL p μ L) f) =ᵐ[μ] fun a => L (↑↑f a)
+Complex.re_add_im (z : ℂ) : ↑z.re + ↑z.im * Complex.I = z
+FiniteDimensional.of_surjective.{u, v, v'} {K : Type u} {V : Type v} [DivisionRing K] [AddCommGroup V] [Module K V]
+  {V₂ : Type v'} [AddCommGroup V₂] [Module K V₂] (f : V →ₗ[K] V₂) (w : Function.Surjective ⇑f) [FiniteDimensional K V] :
+  FiniteDimensional K V₂
+LinearEquiv.finiteDimensional.{u, v, v'} {K : Type u} {V : Type v} [DivisionRing K] [AddCommGroup V] [Module K V]
+  {V₂ : Type v'} [AddCommGroup V₂] [Module K V₂] (f : V ≃ₗ[K] V₂) [FiniteDimensional K V] : FiniteDimensional K V₂
+LinearIndependent.restrict_scalars'.{u', u_2, u_3, u_4} {ι : Type u'} (R : Type u_2) {K : Type u_3} {M : Type u_4}
+  [Semiring R] [AddCommMonoid M] [Module R M] [Semiring K] [SMulWithZero R K] [Module K M] [IsScalarTower R K M]
+  [FaithfulSMul R K] [IsScalarTower R K K] {v : ι → M} (li : LinearIndependent K v) : LinearIndependent R v
+LinearIndependent.lt_aleph0_of_finiteDimensional.{u, v, w} {K : Type u} {V : Type v} [DivisionRing K] [AddCommGroup V]
+  [Module K V] {ι : Type w} [FiniteDimensional K V] {v : ι → V} (h : LinearIndependent K v) :
+  Cardinal.mk ι < Cardinal.aleph0
+Cardinal.lt_aleph0_iff_finite.{u} {α : Type u} : Cardinal.mk α < Cardinal.aleph0 ↔ Finite α
+HilbertBasis.toOrthonormalBasis.{u_1, u_2, u_3} {ι : Type u_1} {𝕜 : Type u_2} [RCLike 𝕜] {E : Type u_3}
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] [Fintype ι] (b : HilbertBasis ι 𝕜 E) : OrthonormalBasis ι 𝕜 E
+Module.Basis.finiteDimensional_of_finite.{u, v, w} {K : Type u} {V : Type v} [DivisionRing K] [AddCommGroup V]
+  [Module K V] {ι : Type w} [Finite ι] (h : Module.Basis ι K V) : FiniteDimensional K V
+docs/verification/2026-10-06-BrownianEigenEnumeration/ApiProbe.lean:12:7: error(lean.unknownIdentifier): Unknown constant `Infinite.of_not_finite`
+nonempty_denumerable.{u_3} (α : Type u_3) [Countable α] [Infinite α] : Nonempty (Denumerable α)
+Denumerable.eqv.{u_3} (α : Type u_3) [Denumerable α] : α ≃ ℕ
+docs/verification/2026-10-06-BrownianEigenEnumeration/ApiProbe.lean:15:7: error(lean.unknownIdentifier): Unknown constant `HilbertBasis.reindex`

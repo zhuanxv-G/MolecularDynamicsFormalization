@@ -1,0 +1,9 @@
+# Theorem 6.1：正维原 Gibbs 空间的真实无限维与完整序列本征基
+印刷 250–251 / PDF 271–272；固定原正质量、原 C∞ 整数周期 U、β>0、actual sameGibbs entire real Hilbert Lp。本批十一项只在 0<Nc 条件下提供无限性和真正自然数序列，保留之前 Nc=0 的有限情形。
+无限维不是新假设。私有实际两份实 Haar L²→复 Haar L² 线性满射，通过已证明真实 complexify/re/im 的 AE 值以及每个复数的实虚分解构造。若实 Haar 空间有限维，则这张真正满射使复 Haar 空间作为实向量空间有限维；真正多维 Fourier Hilbert 基在复数上线性独立，限制到实数后仍独立，而 Nc>0 使整数频率类型真实无限，产生矛盾。
+已接受的实际整个 Gibbs↔Haar ground-state unitary 转移无限维。完整原生成元 Hilbert 基若索引有限，就转为真正有限 OrthonormalBasis/Hamel Basis，从而原 Gibbs 空间有限维，矛盾。因此 actual eigenIndex 在正维下确实 Infinite，不假设这一结论。
+既有 actual finite spectral levels 给 Countable，与新证明 Infinite 合成真正 Denumerable bijection ℕ≃actualIndex，覆盖每一个 eigenspace 中的每个基向量并保留重数。重索引 Orthonormal+完整 dense span 构造整个 actual Gibbs 的 ℕ HilbertBasis；每向量进入真实 original A 闭图，所有 x 有真正 HasSum 重建。旧 cofinite eigenvalue→−∞ 经真正 injective enumeration 转为 n→∞ 的实际序列趋−∞；整实谱恰为这一序列的 range。最后由真实序列逃逸及 finite real set boundedBelow 证明整个实际实谱确实无限。
+这个实际 bijection 和序列没有排序主张，不声称首项为常数模或 λ₀≥λ₁≥⋯。有序枚举是下一依赖，不能用任意 enumeration 偷换原文有序谱列。
+原诊断保留：api01 不存在 Infinite.of_not_finite/HilbertBasis.reindex；api02 不存在 Set.range_comp_of_surjective。固定源码改 finite_or_infinite、HilbertBasis.mk 和 Set.range_comp，api03 十八项与 api04 三项全退出0零警告。local01 AE 右侧 Pi.add/smul 未展开、not_finite 需要实例、hU/hPU proof-only 绑定；显式 Pi.apply/Finite instance/include 后 local02 初四项0空日志。local03 仅 compose lambda 需 Function.comp_def；修正并加全实谱无限后 local04 全十一项0空日志，正式 local05 同样零警告退出0。默认资源和 linters，无 sorry/admit、新项目公理、unsafe 或限制绕过。
+DEP062 / NOT071 统一验收中。正维无限性与完整未排序序列及真正 escape 已证明；有序谱列、复谱、Markov 正性/SDE 概率期望式 (5.6) 识别、C²/C∞ core 负责人最终教材语义仍待完成，Theorem6.1/CORE_SCOPE整体未完。nativeGoal usageLimited/ordinary quota可用，仅本地继续。
+full-check01 passed：9097 jobs/1737公理声明/180exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

@@ -1,0 +1,30 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianEigenEnumeration/Draft.lean",
+  "source_sha256": "53e5af586bf058e7dee096e6327cd7848bded07a14584741a6a64951be3e2024",
+  "log": "docs/verification/2026-10-06-BrownianEigenEnumeration/local04-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public": [
+    "MolecularDynamics.textbookHaarL2_not_finiteDimensional",
+    "MolecularDynamics.textbookBrownianGibbsLp_not_finiteDimensional",
+    "MolecularDynamics.textbookBrownianGibbsEigenIndex_infinite",
+    "MolecularDynamics.textbookBrownianGibbsEigenEnumeration",
+    "MolecularDynamics.textbookBrownianGibbsNatEigenbasis",
+    "MolecularDynamics.textbookBrownianGibbsNatEigenbasis_apply",
+    "MolecularDynamics.textbookBrownianGibbsNatEigenbasis_mem_graph",
+    "MolecularDynamics.textbookBrownianGibbsEigenEnumeration_tendsto_atBot",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_eq_sequence_range",
+    "MolecularDynamics.textbookBrownianGibbsNatEigenbasis_hasSum",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_infinite"
+  ],
+  "actual_positive_dimension_Haar_Gibbs_infiniteDimensional_and_index_infinite": "proved_locally",
+  "actual_complete_natural_sequence_basis_and_escape": "proved_locally",
+  "sequence_ordering": "not_claimed_incomplete",
+  "Nc_zero": "not_subject_to_infinite_sequence_conclusions",
+  "complex_spectrum": "not_claimed",
+  "actual_SDE_probability_expectation": "incomplete",
+  "integrated": false,
+  "full_check": "not_run",
+  "responsible_semantic_review": "pending"
+}

@@ -892,3 +892,8 @@ full-check01 passed：9095 jobs/1716公理声明/178exact inputs；10checks退�
 10 public：真实紧 R 图像有限覆盖及正交系数证明有限 ε 权重层；权重 cofinite→0；真实 A 模式任意下界层有限（计重数）与 eigenvalue cofinite→−∞；无假设推索引可数；整实谱=真正 basis eigenvalue range、谱有限下界层/可数/闭/每点孤立。MolecularDynamics/Chapter06/BrownianEigenDiscreteness.lean；docs/reviews/2026-10-06-BrownianEigenDiscreteness/REVIEW.zh-CN.md。Nc=0 有限情形保留，正维无限性/有序 ℕ 谱枚举、复谱及概率识别/core 最终语义未完成。
 
 full-check01 passed：9096 jobs/1726公理声明/179exact inputs；10checks退出0、全部input/rawlog SHA匹配、10 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — positive-dimensional genuine infinite Gibbs eigenbasis and complete natural sequence (BrownianEigenEnumeration)
+11 public：真实实 Haar L² 无限维由实际实虚部满射与 Fourier 独立证明，再 actual whole Gibbs unitary 推原 Gibbs 无限维、实际 eigenIndex Infinite。与既有 Countable 合成真正 ℕ≃actualIndex，保留所有模式和重数；complete ℕ HilbertBasis、逐向量真图、所有 x HasSum、λ_n→−∞、整个实谱=sequence range 及实际全谱无限。MolecularDynamics/Chapter06/BrownianEigenEnumeration.lean；docs/reviews/2026-10-06-BrownianEigenEnumeration/REVIEW.zh-CN.md。严格 Nc>0；未排序，未声称首项常数。有序谱列/复谱/概率识别/core最终语义继续。
+
+full-check01 passed：9097 jobs/1737公理声明/180exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

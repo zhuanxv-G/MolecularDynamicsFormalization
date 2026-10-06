@@ -1,0 +1,4 @@
+Set.Finite.bddBelow.{u} {α : Type u} [Preorder α] [IsCodirectedOrder α] [Nonempty α] {s : Set α} (hs : s.Finite) :
+  BddBelow s
+Filter.Eventually.exists.{u} {α : Type u} {p : α → Prop} {f : Filter α} [f.NeBot] (hp : ∀ᶠ (x : α) in f, p x) : ∃ x, p x
+not_finite.{u_3} (α : Sort u_3) [Infinite α] [Finite α] : False

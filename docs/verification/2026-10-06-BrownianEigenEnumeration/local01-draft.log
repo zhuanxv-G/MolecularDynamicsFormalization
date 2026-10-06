@@ -1,0 +1,36 @@
+docs/verification/2026-10-06-BrownianEigenEnumeration/Draft.lean:40:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑↑(Complex.I • (textbookHaarL2Complexify Nc) b) Q
+in the target expression
+  (↑↑((textbookHaarL2Complexify Nc) a) + ↑↑(Complex.I • (textbookHaarL2Complexify Nc) b)) Q = ↑↑x Q
+
+Nc : ℕ
+x : ↥(HaarComplex Nc)
+a : ↥(Lp ℝ 2 volume) := (textbookHaarL2RealPart Nc) x
+b : ↥(Lp ℝ 2 volume) := (ContinuousLinearMap.compLpL 2 volume Complex.imCLM) x
+Q : UnitAddTorus (Fin Nc)
+hsum :
+  ↑↑((textbookHaarL2Complexify Nc) a + Complex.I • (textbookHaarL2Complexify Nc) b) Q =
+    (↑↑((textbookHaarL2Complexify Nc) a) + ↑↑(Complex.I • (textbookHaarL2Complexify Nc) b)) Q
+hsmul : ↑↑(Complex.I • (textbookHaarL2Complexify Nc) b) Q = (Complex.I • ↑↑((textbookHaarL2Complexify Nc) b)) Q
+ha : ↑↑((textbookHaarL2Complexify Nc) a) Q = ↑(↑↑a Q)
+hb : ↑↑((textbookHaarL2Complexify Nc) b) Q = ↑(↑↑b Q)
+hre : ↑↑((textbookHaarL2RealPart Nc) x) Q = (↑↑x Q).re
+him : ↑↑((ContinuousLinearMap.compLpL 2 volume Complex.imCLM) x) Q = Complex.imCLM (↑↑x Q)
+⊢ (↑↑((textbookHaarL2Complexify Nc) a) + ↑↑(Complex.I • (textbookHaarL2Complexify Nc) b)) Q = ↑↑x Q
+docs/verification/2026-10-06-BrownianEigenEnumeration/Draft.lean:58:8: error: Function expected at
+  not_finite (Fin Nc → ℤ)
+but this term has type
+  False
+
+Note: Expected a function because this term is being applied to the argument
+  hf
+docs/verification/2026-10-06-BrownianEigenEnumeration/Draft.lean:68:53: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-BrownianEigenEnumeration/Draft.lean:68:56: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianEigenEnumeration/Draft.lean:80:70: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ ∞ U
+of sort `Prop` but is expected to have type
+  ℝ
+of sort `Type` in the application
+  textbookBrownianGibbsLp_not_finiteDimensional U hU
