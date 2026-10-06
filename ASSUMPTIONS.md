@@ -646,3 +646,5 @@ LangevinCesaroLaw：sameactualκ/Wiener unitmass/原C∞periodicU/forceLip；平
 LangevinCesaroInvariant：sameactual原κ/Wiener/unitmass/C∞periodicU/forceLip；概率演化、Cesaro误差及weaklimit→skeleton invariance使用已验真实weakFeller/CK。最终exists另用已验U≥1/γ>0真实紧性/Prokhorov，σ任意。定理中weaklimit是前批实际导出的中间输入，最终exists不假设stationarity/density/目标收敛；未宣称alltime invariance/Harris。
 
 LangevinTimeLawKernel：sameactual原κ/Wiener/unitmass/C∞periodicU/forceLip，时间连续性由真path连续+实际law+DCT推，time meas用原Borel pi-system而非未验weakBorel/Giry等同。原μ和正τperiodaverage是真prob，skeleton premise由前批实际exists推出最终∀Texists，不假设fulltime stationarity/density。最终exists明确U≥1/γ>0，σ任意；去掉U归一化需证明actual核addconstantidentity，尚未完成。未宣称唯一性/Gibbs身份/weighted指数/Harris。
+
+LangevinPotentialNormalization：sameactual原κ/Wiener/unitmass/C∞periodicU，真实fderiv_addconst给sameforce，原积分解iff+actualuniqueness证明endpoint、kernelidentity；对周期势真实normbound取c=M+1。最终∀T实际invariantprobexists无Ulower前提，γ>0/σ任意；forceLip由原periodicC∞自动derive（或任意给定合法L版本）。未假设density/目标moment/drift/stationarity，未识别Gibbs/证明唯一或指数收敛。

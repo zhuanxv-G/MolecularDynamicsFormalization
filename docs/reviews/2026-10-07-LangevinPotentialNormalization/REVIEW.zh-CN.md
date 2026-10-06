@@ -1,0 +1,13 @@
+# Theorem 6.2 依赖：真实势能归一化与任意光滑周期势的不变律存在
+
+对应印刷251–254/PDF272–275原单位质量periodic Langevin不变律存在链的必要归一化依赖。原PDF SHA重新核对一致，复用同一PDF272、273既有视觉核对，未新增274、275视觉检查。前一已验∀T不变律exists路线显式U≥1；本批9公开声明真实消去这个限制，不以口头WLOG替代实际核等式。
+
+固定版本fderiv_add_const证明原coordinate negativegradient完全相同，原integerlattice periodicity仍成立。原additive-noise integral equations逐项完全相同。分别使用原U和U+c选定的实际pathsolution都满足原同一积分方程，真正globalLip uniqueness推出两种finite-history endpoints在原非负区间同值；任意合法forceLip witness允许不同L，因此不假设不同choice选择本身defeq。真实torus投影给actualperiodic endpoint同值。
+
+同一Wiener的原finite-history pathlaw及真实kernel_apply将endpoint同值提升到每个T≥0整个actualKernel相等。没有新增“动力学不变”的模型假设，也不将C∞势函数和force符号混同。该核是之前真实constructed/globalprocess-law已验的原核。
+
+原periodicpotential在真实compact fundamental cube上的norm bound给M≥0和∀q |Uq|≤M；取c=M+1直接证明原全space上U+c≥1。加常数保持C∞、periodicity和sameactualforce；将前批正势完整∀T invariant existence应用到这个实际shifted模型，再通过已证sameactualKernel identity迁回原U。最终exists只需真Wiener/unitmass/C∞periodicU/γ>0，σ任意；无U≥1、密度、目标moment、目标drift或stationarity premise，另一个公开版本自动derive forceLip。
+
+local01全9退出0、零error/Leanwarning空日志；Draft和正式源码exactSHA一致，DEP115/NOT124待唯一full-check01。此批不处理原Hamiltonian高次矩在stationarylaw上的可积性、不识别canonical Gibbs、不证唯一性/weighted-test指数收敛、actualcontinuousgenerator身份或density存在。Theorem6.2全结论与负责人最终语义仍未完成。
+
+full-check01 passed：9150 jobs/2441公理声明/233exact inputs；10checks退出0、全部input/rawlog SHA匹配、9public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。sameactual原force加常数/periodicity/积分解iff、真pathuniqueness推real/torus endpoints及同Wiener kernelidentity，实际periodicbound给U+c>=1，再迁回任意原smoothperiodicU的∀T同κ不变prob exists已机器验证；γ>0/σ任意，最终无Ulower/density/目标moment/drift/stationaritypremise。未识别Gibbs/未证唯一weighted指数/continuousgenerator/densityexists/Harris/ownersemanticpending，Theorem6.2整体未完成。

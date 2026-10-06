@@ -1,0 +1,125 @@
+{
+  "started_at": "2026-10-07T03:00:47.3490169+08:00",
+  "finished_at": "2026-10-07T03:02:00.8568188+08:00",
+  "head_at_check": "4846928424cf30e9e68a398e495a4fd47ed88062",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9150,
+  "audit_declarations": 2441,
+  "inputs": 233,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookPotentialForce_add_const",
+    "MolecularDynamics.textbookUnitPeriodicPotential_add_const",
+    "MolecularDynamics.textbookLangevinIntegralSolution_add_const_iff",
+    "MolecularDynamics.textbookLangevinPathEndpoint_add_const",
+    "MolecularDynamics.textbookLangevinPeriodicPathEndpoint_add_const",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_add_const",
+    "MolecularDynamics.textbookUnitPeriodicPotential_normalization",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists_unrestricted_potential",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists_unrestricted_potential_of_periodic"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookPotentialForce_add_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookUnitPeriodicPotential_add_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinIntegralSolution_add_const_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPathEndpoint_add_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPathEndpoint_add_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_add_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookUnitPeriodicPotential_normalization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists_unrestricted_potential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists_unrestricted_potential_of_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "35f49ce9f6ec8adaa07dd34dcd9d592c299e283b53f8220db82843937a9f4bab"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_force_periodicity_and_integral_equations_add_constant_identity": true,
+  "actual_real_torus_endpoint_equality_derived_from_true_uniqueness": true,
+  "actual_same_Wiener_kernel_add_constant_identity_all_nonnegative_times": true,
+  "actual_periodic_positive_potential_normalization": true,
+  "actual_all_time_invariant_probability_exists_for_arbitrary_original_smooth_periodic_potential": true,
+  "U_ge_one_premise_not_required": true,
+  "gamma_positive": true,
+  "sigma_arbitrary": true,
+  "density_or_target_moment_drift_or_stationarity_premise": "none",
+  "Gibbs_law_identification_or_uniqueness_or_weighted_convergence": "not_proved",
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

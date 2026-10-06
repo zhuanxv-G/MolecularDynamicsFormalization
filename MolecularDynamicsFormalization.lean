@@ -322,3 +322,5 @@ import MolecularDynamics.Chapter06.LangevinCesaroLaw
 import MolecularDynamics.Chapter06.LangevinCesaroInvariant
 
 import MolecularDynamics.Chapter06.LangevinTimeLawKernel
+
+import MolecularDynamics.Chapter06.LangevinPotentialNormalization
