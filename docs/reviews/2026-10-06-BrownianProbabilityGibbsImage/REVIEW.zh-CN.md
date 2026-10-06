@@ -1,0 +1,12 @@
+# Theorem6.1 必要依赖：same actual 概率期待的原Gibbs L2 image/强生成元/Dynkin
+原印刷240/PDF261式6.36、249–251/PDF270–272 Theorem6.1；gamma1、一般正质量、β>0、任意Nc、原U及observable f C∞整数周期、same真实Wiener/P/globalq/UnitAddTorus概率C0 operator。原C²vs当前C∞core负责人pending。11public只补真实概率与已接受Gibbs closed generator必要的同空间核心像桥接。
+
+直接复用BrownianSmoothDensity已验同原normalizedGibbs textbookGibbsContinuousToLp及AE代表身份，避免重复定义。原Gibbs normalization证明给真实连续嵌入norm≤1，其原lift值等于已验GibbsL2Observable、原generator连续像等于已验GibbsL2Image。定义实际概率operator后该嵌入的comp，输入明确整个C(Torus,R)，输出同原Gibbs L2；真实代表µAE为同原过程 E f(q_t(repX))，norm≤1是uniform输入范数界，不能解释为整个GibbsL2-input概率operator的界。
+
+同原强uniform生成元极限经真实有界嵌入得到sameGibbs L2强极限为literal原generator image，未将limit作为输入。真正Real时间strongcontinuous及actualCMap右导数与continuouslinearmap链式法则给all s≥0真实GibbsL2右导数为同概率image_s Lf。实际continuousCLM与Bochner时间积分交换、已验actualCMap Dynkin给真实GibbsL2积分公式，积分可积基于实际CMap时间连续。closed原smoothcore值已验身份给同概率L2生成元极限恰是已构造closedGibbs operator在原核心的值，非仅形式系数。
+
+local01首7仅norm_nonneg implicit无法推断真实CLM opnorm，显式operator及两步mulbound；local02全13候选退出0空日志零警告，随后核对并复用已有嵌入删2重复def/AE。local03最终11退出0空日志零警告；formalexactcopySHA复用局部。无新公理/占位/unsafe/结论假设/资源与透明度增长/linter关闭。
+
+DEP087/NOT096。实际概率operator的wholeGibbsL2-input有界延拓、实际概率=已验Gibbs谱T、Gibbs概率不变性、wholeLp延拓/5.6算子识别/完整CMap graphcore/C²core负责人及wholeTheorem6.1、CORE_SCOPE仍未完成。不能由本批CMap→L2 norm界或原core limit直接宣称整个概率半群和谱半群相同。下一独立必要目标：原文C² periodic observable的真Taylor Peano remainder/actualuniformgenerator限度（当前C∞候选不覆盖全部C²）；并继续登记wholeprobability-spectral bridge，困难不阻塞其他正文依赖。
+
+full-check01 passed：9122 jobs/2098公理声明/205exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

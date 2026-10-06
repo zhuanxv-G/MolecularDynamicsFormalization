@@ -1,0 +1,11 @@
+docs/verification/2026-10-06-BrownianProbabilityGibbsImage/Draft.lean:74:4: error: Application type mismatch: The argument
+  norm_nonneg ?m.79
+has type
+  0 ≤ @norm ?m.77 SeminormedAddGroup.toNorm ?m.79
+but is expected to have type
+  0 ≤
+    @norm (C(UnitAddTorus (Fin Nc), ℝ) →L[ℝ] C(UnitAddTorus (Fin Nc), ℝ)) ContinuousLinearMap.hasOpNorm
+      (textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB t)
+in the application
+  mul_le_mul (textbookBrownianGibbsContinuousEmbedding_norm_le_one U hU hPU β)
+    (textbookBrownianTorusProbabilityOperator_norm_le_one m hm U hU hPU β hβ B P hB t) (norm_nonneg ?m.79)

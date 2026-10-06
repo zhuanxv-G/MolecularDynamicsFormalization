@@ -1,0 +1,137 @@
+{
+  "started_at": "2026-10-06T17:31:44.1036831+08:00",
+  "finished_at": "2026-10-06T17:32:56.8992317+08:00",
+  "head_at_check": "ec0da67f2fa9f435796b07723d85bf91578ebbe0",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9122,
+  "audit_declarations": 2098,
+  "inputs": 205,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookGibbsContinuousToLp_norm_le_one",
+    "MolecularDynamics.textbookGibbsContinuousToLp_original_observable",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_original_observable_ae_expectation",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_norm_le_one",
+    "MolecularDynamics.textbookGibbsContinuousToLp_original_generator_image",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_original_generator_tendsto",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_real_time_continuous",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_hasDeriv_right",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_Dynkin",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_closed_original_core_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToLp_norm_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToLp_original_observable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_original_observable_ae_expectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_norm_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToLp_original_generator_image",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_original_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_real_time_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_hasDeriv_right",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_Dynkin",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_closed_original_core_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "fcaf3a1895a4842b7033c065c1dc16265828bc495f2ad1c284e3423b70b4e9a0"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "ed94139570b89e5cfec7cd464eb8bcaca39890060facbf526597bdb93e663b30"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

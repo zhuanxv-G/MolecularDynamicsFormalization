@@ -590,3 +590,5 @@ BrownianGeneratorExpectation：原正质量/β>0/γ1/任意Nc、U与f C∞整数
 BrownianUniformGenerator：原m正性/β正性/γ1/任意Nc、U与f C∞整数周期、真实Wiener/P/sameq/UnitAddTorus actual概率C0 semigroup。原Df/Hessian共同bound、实际均值error/二阶covarianceerror/Taylorerror和sameq积分身份均推导。全初值uniformgeneratorerror及actualsupnorm generator极限是真结论，无目标/不变性/谱T识别假设。未声称wholeCMapgraphcore/actualprobability=Gibbs谱T或Gibbsinvariance/Lp extension。C²vsC∞负责人签核仍pending。
 
 BrownianDynkinFormula：原positive masses/β>0/γ1/任意Nc、U/f C∞整数周期、truevectorWiener/sameP/q/UnitAddTorus/actual概率C0 operator。真实alltime rightderivative和Dynkin由强generator/实际semigroup/真实timecontinuous及Banach右FTC推导；积分可积及continuous evaluation明确真证明。evolveddomain只actualgenerator关系，不把evolvedf C∞、Gibbsinvariance/wholeLp operator/谱T等同作输入；C²core负责人及fullscope未完。
+
+BrownianProbabilityGibbsImage：原positive masses/β>0/γ1/任意Nc、U/f C∞整数周期、same真实Wiener/P/q/actualtorus概率operator。同一Gibbsnormalized概率与真实ContinuousToLp复用，输入CMap，norm界是uniform输入。真实L2强generatorlimit、alltime右导数/Dynkin及closed原smoothcore值全部推导；不假设wholeL2-input概率operatorboundedness、谱T等同、Gibbsinvariance或evolvedf光滑。C²core负责人/fullscope未完。

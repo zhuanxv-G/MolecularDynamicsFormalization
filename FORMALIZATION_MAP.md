@@ -1006,3 +1006,7 @@ full-check01 passed：9120 jobs/2081公理声明/203exact inputs；10checks退�
 BrownianDynkinFormula / CH06-DEP-086 / NOT-CH06-095：actual真实alltime强连续/真半群运输原core generator limit至任意time、实际右导数P_sLf；真正Banach右侧FTC得CMap Dynkin和sameq原期待时间积分公式。真半群交换给actualevolvedobservable生成元domain/image=P_sLf，不假设evolvedC∞。6public local04通过统一验收中；actualprobability=Gibbs谱T/CMapgraphcore/Gibbsinvariance/wholeLp/5.6/core负责人/wholepending。
 
 full-check01 passed：9121 jobs/2087公理声明/204exact inputs；10checks退出0、全部input/rawlog SHA匹配、6 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianProbabilityGibbsImage / CH06-DEP-087 / NOT-CH06-096：复用同原Gibbs ContinuousToLp；真实originalobservable/generatorimage嵌入身份、CMap输入actual概率GibbsL2 image及sameq期待AE代表/norm。真实sameGibbs强coregeneratorlimit/alltime连续右导数/Dynkin和closed原核心值识别。11public local03通过统一验收中；wholeL2-input概率operator延拓/实际谱T/Gibbsinvariance/Lp/5.6/CMapgraphcore/C²core负责人/wholepending。
+
+full-check01 passed：9122 jobs/2098公理声明/205exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
