@@ -212,3 +212,5 @@ import MolecularDynamics.Chapter06.BrownianSpectralGenerator
 import MolecularDynamics.Chapter06.BrownianSpectralDecay
 
 import MolecularDynamics.Chapter06.BrownianResolventRealSpectrum
+
+import MolecularDynamics.Chapter06.BrownianGeneratorRealSpectrum

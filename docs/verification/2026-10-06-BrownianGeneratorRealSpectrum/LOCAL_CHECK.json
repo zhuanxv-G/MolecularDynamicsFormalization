@@ -1,0 +1,28 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean",
+  "source_sha256": "1038735631f05c5e03cd7066a8df5210fd1bd80fbd28666b62182179ab57e0a7",
+  "log": "docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/local06-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public": [
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet_one",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet_iff_isUnit",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet_iff_resolventSet",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_iff_resolventSpectrum",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_iff_eigenspace",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_nonpos",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_gap",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_zero",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolvent_isCompact"
+  ],
+  "actual_whole_original_unbounded_generator_real_spectrum": "proved_locally",
+  "complex_spectrum": "not_claimed",
+  "finite_cofinite_spectral_enumeration": "incomplete",
+  "actual_SDE_probability_expectation": "incomplete",
+  "integrated": false,
+  "full_check": "not_run",
+  "responsible_semantic_review": "pending"
+}

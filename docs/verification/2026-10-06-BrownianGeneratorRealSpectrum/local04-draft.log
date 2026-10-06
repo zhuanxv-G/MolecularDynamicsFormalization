@@ -1,0 +1,21 @@
+docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean:116:4: error: ring failed, ring expressions not equal
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+ℓ : ℝ
+hℓ : ℓ ≠ 1
+R : ↥(MolecularDynamics.Gibbs✝ U β) →L[ℝ] ↥(MolecularDynamics.Gibbs✝ U β) := ⋯
+hd : 1 - ℓ ≠ 0
+u : ℝˣ := ⋯
+x : ↥(Gibbs U β)
+⊢ 1 = -1
+docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean:122:8: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  SMulCommClass ℝˣ (↥(MolecularDynamics.Gibbs✝ U β) →L[ℝ] ↥(MolecularDynamics.Gibbs✝ U β))
+    (↥(MolecularDynamics.Gibbs✝ U β) →L[ℝ] ↥(MolecularDynamics.Gibbs✝ U β))
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.

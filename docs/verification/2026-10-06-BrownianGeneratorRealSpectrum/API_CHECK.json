@@ -1,0 +1,23 @@
+{
+  "fixed_lean": "4.34.0",
+  "fixed_mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "api_checks": 15,
+  "checks": [
+    {
+      "source": "docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/ApiProbe.lean",
+      "source_sha256": "3c9da43f98d6d37ede7cee2e9c19b5e48b407ddf8925834cb06ed260259d4aad",
+      "log": "docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/api01.log",
+      "log_sha256": "c64a9790d26a63a092d76f8263ca9b28d43593657a2606a7a619f91a20d91d3e",
+      "exit_code": 0,
+      "lean_warnings": 0
+    },
+    {
+      "source": "docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/ApiProbe2.lean",
+      "source_sha256": "b9708714b533b70e3217a19939bf5c2c9354bc5a5dfc73e0133370abda426559",
+      "log": "docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/api02.log",
+      "log_sha256": "d6c427b9871136d6a78fdebab3f065011f4e4bf4e0d1279e6dabe8a0ce2cf1d9",
+      "exit_code": 0,
+      "lean_warnings": 0
+    }
+  ]
+}

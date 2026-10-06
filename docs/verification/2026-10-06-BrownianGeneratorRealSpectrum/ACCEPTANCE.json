@@ -1,0 +1,161 @@
+{
+  "started_at": "2026-10-06T09:13:28.360117+08:00",
+  "finished_at": "2026-10-06T09:15:21.3733003+08:00",
+  "head_at_check": "a6be36a2504588239fd6eb3c74a69b6d84e95f56",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9095,
+  "audit_declarations": 1716,
+  "inputs": 178,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet_one",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet_iff_isUnit",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet_iff_resolventSet",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_iff_resolventSpectrum",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_iff_eigenspace",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_nonpos",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_gap",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_zero",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolvent_isCompact"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet_iff_isUnit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolventSet_iff_resolventSet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_iff_resolventSpectrum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_iff_eigenspace",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsGeneratorRealResolvent_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "c64a9790d26a63a092d76f8263ca9b28d43593657a2606a7a619f91a20d91d3e"
+    },
+    {
+      "path": "api02.log",
+      "sha256": "d6c427b9871136d6a78fdebab3f065011f4e4bf4e0d1279e6dabe8a0ce2cf1d9"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "88979b2aea1962caad59452e7e2a7190029829fbd95342a24ec22ed512f140eb"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "0d22714dbd9de92b2b956ead8b1b8a4af3781a95e717a8c1a64f46816f3b6b57"
+    },
+    {
+      "path": "local03-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04-draft.log",
+      "sha256": "273243e31072fad86ee23dfdd98b8cca1ec46294ef731f4d3a14810760236d76"
+    },
+    {
+      "path": "local05-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local06-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local07-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -882,3 +882,8 @@ full-check01 passed：9093 jobs/1700公理声明/176exact inputs；10checks退�
 5public realFredholm nonzeroR spectrum iffgenuineeigen、whole spectrum nonnegative≤1、r≠1≤(1+actualκ)inv<1；actualconstant e证明1真实属于wholeRreal spectrum，fullstrictseparation。MolecularDynamics/Chapter06/BrownianResolventRealSpectrum.lean；docs/reviews/2026-10-06-BrownianResolventRealSpectrum/REVIEW.zh-CN.md。原unboundedA whole-real-spectrum correspondence/finitecofinite-countable枚举与SDE probability识别/core最终语义仍缺。
 
 full-check01 passed：9094 jobs/1705公理声明/177exact inputs；10checks退出0、全部input/rawlog SHA匹配、5 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — actual original unbounded Gibbs generator whole real spectrum (BrownianGeneratorRealSpectrum)
+11 public：真正有界两侧图预解集与 id+(ℓ−1)R unit 双向等价；通过正确非零因子 (1−ℓ) 精确转到 Mathlib R 实谱；原整个 A 实谱 iff 真特征空间非零，非正性、所有非零谱值≤−κ及零实际存在；全部真实有界移位图逆紧。MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean；docs/reviews/2026-10-06-BrownianGeneratorRealSpectrum/REVIEW.zh-CN.md。有限/余有限离散与可数有序枚举、复谱及概率识别/core 最终语义未完成。
+
+full-check01 passed：9095 jobs/1716公理声明/178exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

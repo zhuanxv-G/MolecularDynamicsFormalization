@@ -1,0 +1,14 @@
+ContinuousLinearMap.isUnit_iff_bijective.{u_1, u_3} {𝕜 : Type u_1} [NontriviallyNormedField 𝕜] {E : Type u_3}
+  [NormedAddCommGroup E] [NormedSpace 𝕜 E] [CompleteSpace E] {f : E →L[𝕜] E} : IsUnit f ↔ Function.Bijective ⇑f
+ContinuousLinearMap.mul_def.{u_1, u_4} {R₁ : Type u_1} [Semiring R₁] {M₁ : Type u_4} [TopologicalSpace M₁]
+  [AddCommMonoid M₁] [Module R₁ M₁] (f g : M₁ →L[R₁] M₁) : f * g = f ∘SL g
+mul_apply_eq_comp.{u_1, u_2} {F : Type u_1} {α : outParam (Type u_2)} {inst✝ : FunLike F α α} {inst✝¹ : Mul F}
+  [self : IsMulApplyEqComp F α] (f g : F) (x : α) : (f * g) x = f (g x)
+IsUnit.unit_spec.{u_1} {M : Type u_1} [Monoid M] {a : M} (h : IsUnit a) : ↑h.unit = a
+IsUnit.val_inv_mul.{u_1} {M : Type u_1} [Monoid M] {a : M} (h : IsUnit a) : ↑h.unit⁻¹ * a = 1
+IsUnit.mul_val_inv.{u_1} {M : Type u_1} [Monoid M] {a : M} (h : IsUnit a) : a * ↑h.unit⁻¹ = 1
+isUnit_iff_exists.{u_1} {M : Type u_1} [Monoid M] {x : M} : IsUnit x ↔ ∃ b, x * b = 1 ∧ b * x = 1
+isUnit_smul_iff.{u_5, u_6} {α : Type u_5} {β : Type u_6} [Group α] [Monoid β] [MulAction α β] [SMulCommClass α β β]
+  [IsScalarTower α β β] (g : α) (m : β) : IsUnit (g • m) ↔ IsUnit m
+Algebra.algebraMap_eq_smul_one.{u, w} {R : Type u} {A : Type w} [CommSemiring R] [Semiring A] [Algebra R A] (r : R) :
+  (algebraMap R A) r = r • 1

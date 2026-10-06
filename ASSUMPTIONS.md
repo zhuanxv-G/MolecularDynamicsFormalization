@@ -520,3 +520,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianResolventRealSpectrum: entire actual compact R real spectrum
 原positive m/U C∞整数周期/β>0/actualsameGibbs entireLp。realSpectrum是真Mathlib Banach CLM spectrum；nonzero spectral point iff actualeigenvalue由provedcompactR+fixedFredholm得到，不以purepoint或谱complete假设。actualAgraph与真实κeigenbound推derivedR wholegap，actualconstantnorm1/trueRinverse证明真实spectral1。对象是boundedR整个realSpectrum，unboundedA realresolvent identification/复杂谱枚举与Markovpositivity/SDEprobabilityexpectation尚缺，C²/core语义pending；无placeholder/newaxiom/unsafe/资源绕过。
+
+## BrownianGeneratorRealSpectrum: actual whole unbounded-generator real spectrum
+原 m_i>0、U C∞ 整数周期、β>0、同一 Gibbs entire real Lp。实预解集仅以实际 bounded two-sided closed-graph inverse 定义；其存在性通过真正 R 和 bounded bridge unit 推导，不是假设 generator domain、谱离散或结论。使用两側逆的 isUnit_iff_exists，不使用无限维 CLM 上未经证明的单侧逆性质。非零标量 (1−ℓ) 的 algebraMap unit 给真正全实谱对应；Fredholm 与实际 eigenspace 构造推真实纯点实谱、整个非正/谱隙/零存在和任意实际移位逆紧性。未声称复谱或 actual SDE probability identification；枚举和原 C²/core 最终语义 pending，无 placeholder/newaxiom/unsafe/限制绕过。

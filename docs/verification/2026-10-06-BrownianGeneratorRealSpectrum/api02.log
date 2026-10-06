@@ -1,0 +1,12 @@
+IsUnit.map.{u_1, u_3, u_4} {F : Type u_1} {M : Type u_3} {N : Type u_4} [FunLike F M N] [Monoid M] [Monoid N]
+  [MonoidHomClass F M N] (f : F) {x : M} (h : IsUnit x) : IsUnit (f x)
+IsUnit.mk0.{u_3} {G₀ : Type u_3} [GroupWithZero G₀] (x : G₀) (hx : x ≠ 0) : IsUnit x
+IsUnit.mul_left_iff.{u_1} {M : Type u_1} [Monoid M] {a b : M} (ha : IsUnit a) : IsUnit (a * b) ↔ IsUnit b
+spectrum.mem_resolventSet_iff.{u, v} {R : Type u} {A : Type v} [CommSemiring R] [Ring A] [Algebra R A] {r : R} {a : A} :
+  r ∈ resolventSet R a ↔ IsUnit ((algebraMap R A) r - a)
+Submodule.exists_mem_ne_zero_of_ne_bot.{u_1, u_3} {R : Type u_1} {M : Type u_3} [Semiring R] [AddCommMonoid M]
+  [Module R M] {p : Submodule R M} (h : p ≠ ⊥) : ∃ b ∈ p, b ≠ 0
+IsCompactOperator.comp_clm.{u_1, u_2, u_4, u_5, u_6} {R₁ : Type u_1} {R₂ : Type u_2} [Semiring R₁] [Semiring R₂]
+  {σ₁₂ : R₁ →+* R₂} {M₁ : Type u_4} {M₂ : Type u_5} {M₃ : Type u_6} [TopologicalSpace M₁] [TopologicalSpace M₂]
+  [TopologicalSpace M₃] [AddCommMonoid M₁] [Module R₁ M₁] [AddCommMonoid M₂] [Module R₂ M₂] {f : M₂ → M₃}
+  (hf : IsCompactOperator f) (g : M₁ →SL[σ₁₂] M₂) : IsCompactOperator (f ∘ ⇑g)

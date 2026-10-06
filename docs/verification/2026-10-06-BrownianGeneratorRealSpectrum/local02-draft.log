@@ -1,0 +1,24 @@
+docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean:27:54: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean:27:57: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean:29:86: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean:29:89: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean:31:90: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean:31:93: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean:86:8: error: ring failed, ring expressions not equal
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+ℓ : ℝ
+R : ↥(MolecularDynamics.Gibbs✝ U β) →L[ℝ] ↥(MolecularDynamics.Gibbs✝ U β) := ⋯
+F : ↥(Gibbs U β) →L[ℝ] ↥(Gibbs U β) := ⋯
+hF : IsUnit (1 + (ℓ - 1) • textbookBrownianGibbsResolvent m U hU hPU β hm hβ)
+K : ↥(Gibbs U β) →L[ℝ] ↥(Gibbs U β) := ⋯
+hFK : ∀ (x : ↥(Gibbs U β)), K x + (ℓ - 1) • R (K x) = x
+hKF : ∀ (x : ↥(Gibbs U β)), K (x + (ℓ - 1) • R x) = x
+x : ↥(Gibbs U β)
+⊢ ℓ = 1
