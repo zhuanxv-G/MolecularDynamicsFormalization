@@ -952,3 +952,8 @@ full-check01 passed：9107 jobs/1871公理声明/190exact inputs；10checks退�
 27public合并批次，原mass b/Σ、literal实际积分模型从真存在到右导数/initial/restrict、deriveddriftL、actualincrement误差/commonfield Gronwall与原q扰动、wholeintervalunique/horizonagreement、实际CPath选解与selectedunique、初值及joint初值+uniformpath Lipschitz/continuous/measurable。MolecularDynamics/Chapter06/BrownianPathSolution.lean；docs/reviews/2026-10-06-BrownianPathSolution/REVIEW.zh-CN.md。只复用已验收genericnoisecarrier，不用Langevin物理解替Brownian。下一真实randommodel；SDElaw=T/Markov/5.6/core/wholepending。
 
 full-check01 passed：9108 jobs/1898公理声明/191exact inputs；10checks退出0、全部input/rawlog SHA匹配、27 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — actual original-mass Wiener-driven coherent global Brownian process and its probability time law (BrownianRandomModel)
+17public：真WienerCPath与原Brownianselectedq给finiteAE originalintegral和literalnoiseeq/endpointAEmeasurable/horizonagreement；actualintegerunique拼接单一alltimeprocess，同一fullmeasure全部realT积分方程/initial/evaluationAEmeasurable/wholecontinuous/historyendpoint/literalphysicaleq；actualpushforwardprobability law及event概率。MolecularDynamics/Chapter06/BrownianRandomModel.lean；docs/reviews/2026-10-06-BrownianRandomModel/REVIEW.zh-CN.md。下一actualMarkov/Torus；尚未actualSDElaw=谱T/5.6/core/whole。
+
+full-check01 passed：9109 jobs/1915公理声明/192exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

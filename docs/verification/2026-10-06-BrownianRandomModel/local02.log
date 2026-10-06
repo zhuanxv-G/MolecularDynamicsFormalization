@@ -1,0 +1,41 @@
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:62:2: error: Type mismatch
+  hq
+has type
+  textbookBrownianRandomSolution m hm U hU hPU β hβ T hT x B sample t =
+    (x +
+        ∫ (s : ℝ) in 0..t,
+          textbookBrownianSDEDrift m U (textbookBrownianRandomSolution m hm U hU hPU β hβ T hT x B sample s)) +
+      (textbookBrownianSDENoise m β) (B t.toNNReal sample - B 0 sample)
+but is expected to have type
+  textbookBrownianRandomSolution m hm U hU hPU β hβ T hT x B sample t =
+    (x +
+        ∫ (s : ℝ) in 0..t,
+          textbookBrownianSDEDrift m U (textbookBrownianRandomSolution m hm U hU hPU β hβ T hT x B sample s)) +
+      (textbookBrownianSDENoise m β) ((fun t => B t.toNNReal sample) t - (fun t => B t.toNNReal sample) 0)
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:135:13: warning: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:246:74: error(lean.unknownIdentifier): Unknown identifier `measurableSet_univ`
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:242:87: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+t : ℝ
+ht : 0 ≤ t
+this : IsProbabilityMeasure P
+hf : AEMeasurable (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t) P
+⊢ (Measure.map (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t) P) univ = 1

@@ -1,0 +1,64 @@
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:44:81: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+T : ℝ
+hT : 0 ≤ T
+x : Fin Nc → ℝ
+sample : Ω
+hc : Continuous fun t => B t sample
+W : ℝ → Fin Nc → ℝ := textbookLangevinPathNoise T hT (textbookWienerVectorContinuousPath B T sample)
+hs :
+  textbookBrownianIntegralSolution m U β T x
+    (textbookLangevinPathNoise T hT (textbookWienerVectorContinuousPath B T sample))
+    (textbookBrownianPathSolution m hm U hU hPU β hβ T hT x (textbookWienerVectorContinuousPath B T sample))
+t : ℝ
+ht : t ∈ Icc 0 T
+hn : ⟨t, ⋯⟩ = t.toNNReal
+⊢ B t.toNNReal sample - B ⟨↑⟨0, ⋯⟩, ⋯⟩ sample = B t.toNNReal sample - B 0 sample
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:51:70: error(lean.unknownIdentifier): Unknown constant `Real.continuous_toNNReal`
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:59:2: error: Type mismatch: After simplification, term
+  hq
+ has type
+  @Eq (Fin Nc → ℝ)
+    (textbookBrownianPathSolution m hm U hU hPU β hβ T hT x (textbookWienerVectorContinuousPath B T sample) t)
+    ((x +
+        ∫ (s : ℝ) in 0..t,
+          textbookBrownianSDEDrift m U (textbookBrownianRandomSolution m hm U hU hPU β hβ T hT x B sample s)) +
+      (textbookBrownianSDENoise m β) (B t.toNNReal sample - B 0 sample))
+but is expected to have type
+  @Eq (Fin Nc → ℝ) (textbookBrownianRandomSolution m hm U hU hPU β hβ T hT x B sample t)
+    ((x +
+        ∫ (s : ℝ) in 0..t,
+          textbookBrownianSDEDrift m U (textbookBrownianRandomSolution m hm U hU hPU β hβ T hT x B sample s)) +
+      (textbookBrownianSDENoise m β) (B t.toNNReal sample - B 0 sample))
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:124:52: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:124:55: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:140:25: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:140:28: error(lean.unknownIdentifier): Unknown identifier `hPU`
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:161:31: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ ∞ U
+of sort `Prop` but is expected to have type
+  ℝ
+of sort `Type` in the application
+  global_from_family m U hU
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:161:55: error(lean.invalidField): Invalid field `toNNReal`: The environment does not contain `Nat.toNNReal`, so it is not possible to project the field `toNNReal` from an expression
+  t
+of type `ℕ`
+docs/verification/2026-10-06-BrownianRandomModel/Draft.lean:162:88: error: Application type mismatch: The argument
+  n
+has type
+  ℝ
+but is expected to have type
+  ℕ
+in the application
+  Nat.cast_nonneg n

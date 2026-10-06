@@ -240,3 +240,5 @@ import MolecularDynamics.Chapter06.BrownianSDECoefficients
 import MolecularDynamics.Chapter06.BrownianDrivenExistence
 
 import MolecularDynamics.Chapter06.BrownianPathSolution
+
+import MolecularDynamics.Chapter06.BrownianRandomModel

@@ -562,3 +562,6 @@ complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模�
 
 ## BrownianPathSolution: true original-mass integral solutions and jointly measurable selected endpoints
 主selectedpath/endpoint保持原positive masses、U C∞integerperiodic、β>0、gamma1、T≥0、Nc含0，W是真C(Icc0T,Vec)。低层uniqueness/estimates不需covariance正性：固定Σ即可，driftLip由真实U原条件推出；无需W可微或W0=0，实际noiseincrement中心化。q存在/唯一性/右导数/endpoint连续可测均已推导，未作前提。privateFTC复制原已验收actualintegral右导数；genericCPathcarrier复用，不混两种equation。关键GronwallK=1+derivedL>0，constantpotential情形有效。未称randomlaw/Markov/5.6/stochasticgenerator、wholeTheorem6.1或C²core完成；负责人pending。
+
+## BrownianRandomModel: actual same global Wiener-driven path and genuine time law
+原positivegeneral masses/C∞integerperiodic U/β>0/gamma1，Nc含0，actualvectorWiener B与其jointGaussian/covariance/cont性质 hB。given真实标准Wiener是原随机方程输入，不是q解假设；实际randomq、uniquehorizon/global拼接、samefullmeasure allrealT、jointderivedendpointAEmeasurable、continuous与physicalnoiseeq全部推导。Probability主结论明确t≥0，并使用actualmap_apply与derivedAEMeasurable证明质量1，避免fallback误认。没有law=T/Markov/torus或stochasticgenerator输入；这些仍未证，C²core负责人和全定理/范围pending。finitecompensatedconstruction所有continuous样本支持Wienerincrements，不错误假定noise可微。

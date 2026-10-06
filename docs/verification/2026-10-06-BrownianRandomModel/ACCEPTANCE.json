@@ -1,0 +1,191 @@
+{
+  "started_at": "2026-10-06T13:40:15.0263475+08:00",
+  "finished_at": "2026-10-06T13:41:27.1000401+08:00",
+  "head_at_check": "90d4b5b4eef618ae9cb60efbd0452077adcc8572",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9109,
+  "audit_declarations": 1915,
+  "inputs": 192,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianIntegralSolution_noise_congr",
+    "MolecularDynamics.textbookBrownianRandomSolution",
+    "MolecularDynamics.textbookBrownianRandomSolution_integralSolution_of_cont",
+    "MolecularDynamics.textbookBrownianRandomSolution_integralSolution_ae",
+    "MolecularDynamics.textbookBrownianRandomSolution_original_equation_ae",
+    "MolecularDynamics.textbookBrownianRandomSolution_endpoint_aemeasurable",
+    "MolecularDynamics.textbookBrownianRandomSolution_horizon_agreement_ae",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_integralSolution_ae",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_initial",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_endpoint_aemeasurable",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_continuousOn_ae",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_history_path_ae",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_original_equation_ae",
+    "MolecularDynamics.textbookBrownianGlobalTimeLaw",
+    "MolecularDynamics.textbookBrownianGlobalTimeLaw_isProbabilityMeasure",
+    "MolecularDynamics.textbookBrownianGlobalTimeLaw_apply"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_noise_congr",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianRandomSolution",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianRandomSolution_integralSolution_of_cont",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianRandomSolution_integralSolution_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianRandomSolution_original_equation_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianRandomSolution_endpoint_aemeasurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianRandomSolution_horizon_agreement_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_integralSolution_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_initial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_endpoint_aemeasurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_continuousOn_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_history_path_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_original_equation_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalTimeLaw",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalTimeLaw_isProbabilityMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalTimeLaw_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "67f9796f6462ff1771a1bb06ec46b12dcb1f4484e3487ce16a24056de12f1ae1"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "7d720533e5d3b290d077458973252cc777dbaedf110f05ba1e6af16ca36c61c8"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "c8228b18a922ed2626d15c37ff9578c49cf007ee3effaa5c4bfb934010d176d9"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
