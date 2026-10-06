@@ -1,0 +1,118 @@
+{
+  "started_at": "2026-10-07T02:25:13.867274+08:00",
+  "finished_at": "2026-10-07T02:32:51.493387+08:00",
+  "head_at_check": "fc30abcae7d998681ef14ff08db0b0ad35286c5d",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9148,
+  "audit_declarations": 2415,
+  "inputs": 231,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution",
+    "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_integral",
+    "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_transition_defect",
+    "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_transition_defect_norm_le",
+    "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_transition_defect_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_weak_limit_invariant",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_skeleton_invariant_exists"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_transition_defect",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_transition_defect_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_transition_defect_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCesaroProbability_weak_limit_invariant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_skeleton_invariant_exists",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "b6cfe5575c71310cad040f6d68f4c1cfa2523fb9dc7fb8b4bcded0dac8f9f632"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "3844b8add468c532140809e04e89cb8c85740e617f987633f20911f4ed4babe5"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_probability_law_evolution_and_true_BCF_integral": true,
+  "actual_probability_law_evolution_weak_continuity": true,
+  "actual_Cesaro_transition_defect_identity_bound_and_limit": true,
+  "actual_weak_limit_invariant_same_skeleton_kernel": true,
+  "actual_skeleton_invariant_probability_exists": true,
+  "density_or_invariant_law_premise_in_exists": "none",
+  "only_skeleton_invariance_all_time_invariance": "not_proved",
+  "first_local_failure": "missing_explicit_accepted_WeakFeller_import_only_import_fixed",
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

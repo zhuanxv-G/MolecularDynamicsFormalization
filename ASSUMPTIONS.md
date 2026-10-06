@@ -642,3 +642,5 @@ LangevinSkeletonInputs：原densityclause与compact非空interior/σ非零对指
 LangevinSkeletonMoments：same实际Wiener/κ/CK/κ0Dirac、单位质量、原U>=1/C∞periodic/forceLip、γ>0、σ任意、l>=1；目标moment/drift内部derive。共同τ，actualnτ几何矩与tail右侧依赖x，各fixedx laws tight；未声称allinitialstates联合一致紧或allrealT统一矩，未使用density或stationarity前提。
 
 LangevinCesaroLaw：sameactualκ/Wiener unitmass/原C∞periodicU/forceLip；平均n+1≥1 finite，actualMarkov核给真probability/finite期待。tight/weaksubseq还用已derive原U>=1/γ>0/真实skeleton几何矩，σ任意。目标moments/drift/tight/weaklimit/stationarity无新假设，未将kernel law mean作trajectory平均或weaksubseq作不变律。
+
+LangevinCesaroInvariant：sameactual原κ/Wiener/unitmass/C∞periodicU/forceLip；概率演化、Cesaro误差及weaklimit→skeleton invariance使用已验真实weakFeller/CK。最终exists另用已验U≥1/γ>0真实紧性/Prokhorov，σ任意。定理中weaklimit是前批实际导出的中间输入，最终exists不假设stationarity/density/目标收敛；未宣称alltime invariance/Harris。

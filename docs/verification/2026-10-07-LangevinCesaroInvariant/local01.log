@@ -1,0 +1,147 @@
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:30:11: error: Function expected at
+  textbookLangevinPeriodicBoundedTransition
+but this term has type
+  ?m.20
+
+Note: Expected a function because this term is being applied to the argument
+  B
+
+Hint: The identifier `textbookLangevinPeriodicBoundedTransition` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:39:34: error(lean.unknownIdentifier): Unknown identifier `textbookLangevinPeriodicBoundedTransition_apply`
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:50:13: error(lean.unknownIdentifier): Unknown identifier `textbookLangevinPeriodicBoundedTransition`
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:43:91: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+T : ℝ≥0
+f : BoundedContinuousFunction (textbookLangevinPeriodicPhase N) ℝ
+⊢ Continuous fun x =>
+    ∫ («ω» : textbookLangevinPeriodicPhase N),
+      f «ω» ∂↑(textbookLangevinPeriodicProbabilityEvolution B P hB U hU hp L hF γ σ T x)
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:60:10: error: Function expected at
+  textbookLangevinPeriodicBoundedTransition
+but this term has type
+  ?m.20
+
+Note: Expected a function because this term is being applied to the argument
+  B
+
+Hint: The identifier `textbookLangevinPeriodicBoundedTransition` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:71:12: error: Function expected at
+  textbookLangevinPeriodicBoundedTransition
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:74:11: error: Function expected at
+  textbookLangevinPeriodicBoundedTransition
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:76:6: error: Function expected at
+  textbookLangevinPeriodicBoundedTransition
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:94:11: error: Function expected at
+  textbookLangevinPeriodicBoundedTransition
+but this term has type
+  ?m.20
+
+Note: Expected a function because this term is being applied to the argument
+  B
+
+Hint: The identifier `textbookLangevinPeriodicBoundedTransition` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:103:4: error(lean.unknownIdentifier): Unknown identifier `textbookLangevinPeriodicTransitionExpectation_norm_le`
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:99:37: error: unsolved goals
+case x
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+x✝ : Sort u_2
+textbookLangevinPeriodicBoundedTransition : x✝
+τ : ℝ≥0
+x : textbookLangevinPeriodicPhase N
+n : ℕ
+f : BoundedContinuousFunction (textbookLangevinPeriodicPhase N) ℝ
+⊢ Sort ?u.79
+
+case textbookLangevinPeriodicBoundedTransition
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+x✝ : Sort u_2
+textbookLangevinPeriodicBoundedTransition : x✝
+τ : ℝ≥0
+x : textbookLangevinPeriodicPhase N
+n : ℕ
+f : BoundedContinuousFunction (textbookLangevinPeriodicPhase N) ℝ
+⊢ ?x✝
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:116:12: error: Function expected at
+  textbookLangevinPeriodicBoundedTransition
+but this term has type
+  ?m.20
+
+Note: Expected a function because this term is being applied to the argument
+  B
+
+Hint: The identifier `textbookLangevinPeriodicBoundedTransition` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:120:70: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+x✝ : Sort u_2
+textbookLangevinPeriodicBoundedTransition : x✝
+τ : ℝ≥0
+x : textbookLangevinPeriodicPhase N
+f : BoundedContinuousFunction (textbookLangevinPeriodicPhase N) ℝ
+hr : Tendsto (fun n => 2 * ‖f‖ / ↑(n + 1)) atTop (𝓝 0)
+⊢ Tendsto
+    (fun n =>
+      ∫ (y : textbookLangevinPeriodicPhase N),
+          sorry ∂↑(textbookLangevinPeriodicCesaroProbability B P hB U hU hp L hF γ σ τ x n) -
+        ∫ (y : textbookLangevinPeriodicPhase N),
+          f y ∂↑(textbookLangevinPeriodicCesaroProbability B P hB U hU hp L hF γ σ τ x n))
+    atTop (𝓝 0)
+docs/verification/2026-10-07-LangevinCesaroInvariant/Draft.lean:140:7: error(lean.unknownIdentifier): Unknown identifier `textbookLangevinPeriodicBoundedTransition`
