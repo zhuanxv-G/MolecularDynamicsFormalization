@@ -1,0 +1,120 @@
+docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean:35:4: error: Type mismatch: After simplification, term
+  gaussianReal_map_const_mul √↑t
+ has type
+  @Eq (Measure ℝ) (Measure.map (fun x => √↑t * x) (gaussianReal 0 1)) (gaussianReal 0 (NNReal.mk (√↑t ^ 2) ⋯))
+but is expected to have type
+  @Eq (Measure ℝ) (Measure.map (fun z => √↑t * z) (gaussianReal 0 1)) (gaussianReal 0 ⟨√↑t ^ 2, ⋯⟩)
+docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean:281:38: error(lean.unknownIdentifier): Unknown constant `ENNReal.reduceDiv`
+docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean:281:4: error: Type mismatch: After simplification, term
+  MemLp.norm_rpow_div hx4 2
+ has type
+  MemLp (fun x_1 => ‖textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t x_1 - x‖ ^ 2) (4 / 2) P
+but is expected to have type
+  MemLp (fun sample => ‖X sample‖ ^ 2) 2 P
+docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean:282:103: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Inv ℕ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean:282:109: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Inv ℕ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean:282:75: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+t : ℝ
+ht : 0 ≤ t
+X : Ω → Fin Nc → ℝ := fun sample => textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x
+hx2 : MemLp (fun sample => textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) 2 P
+hx4 : MemLp (fun sample => textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) 4 P
+hf : MemLp (fun sample => ‖X sample‖) (ENNReal.ofReal 2) P
+hg : MemLp (fun sample => ‖X sample‖ ^ 2) (ENNReal.ofReal 2) P
+⊢ 2⁻¹ + 2⁻¹ = 1
+docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean:317:41: error(lean.invalidField): Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression
+  Iio_mem_nhds
+    (have this := ?m.178;
+    this)
+has type `(𝓝 0).1 (Iio 1)` which does not have the necessary form.
+docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean:320:66: error(lean.invalidField): Invalid field notation: Type of
+  ht1
+is not known; cannot resolve field `le`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AntisymmRel.le`
+  • `Char.le`
+  • `CovBy.le`
+  • `Eq.le`
+  • `Equiv.le`
+  • `Float.le`
+  • `Float32.le`
+  • `ISize.le`
+  • `Int.le`
+  • `Int16.le`
+  • `Int32.le`
+  • `Int64.le`
+  • `Int8.le`
+  • `LE.le`
+  • `LinearPMap.le`
+  • `List.le`
+  • `Maximal.le`
+  • `MaximalFor.le`
+  • `Measurable.le`
+  • `Minimal.le`
+  • `MinimalFor.le`
+  • `Nat.le`
+  • `Option.le`
+  • `PUnit.le`
+  • `«Prop».le`
+  • `String.le`
+  • `StrongLT.le`
+  • `Subsingleton.le`
+  • `UInt16.le`
+  • `UInt32.le`
+  • `UInt64.le`
+  • `UInt8.le`
+  • `USize.le`
+  • `WCovBy.le`
+  • `WithZero.le`
+  • `Aesop.ForwardRuleMatch.le`
+  • `ENNReal.HolderTriple.le`
+  • `EventuallyEq.le`
+  • `Float.Model.le`
+  • `Float32.Model.le`
+  • `GE.ge.le`
+  • `HasSubset.Subset.le`
+  • `Ideal.IsMinimalPrime.le`
+  • `LT.lt.le`
+  • `List.IsPrefix.le`
+  • `Mathlib.Ineq.le`
+  • `Filtration.le`
+  • `Option.SomeLtNone.le`
+  • `Quiver.Hom.le`
+  • `Submodule.IsOrtho.le`
+  • `Aesop.BestFirstQueue.ActiveGoal.le`
+  • `Float.Model.UnpackedFloat.le`
+  • `Mathlib.Ineq.WithStrictness.le`
+  • `Module.End.HasUnifEigenvalue.le`
+  • `Std.Do.PredTrans.le`
+  • `Std.Packages.LinearPreorderOfOrdArgs.le`
+  • `Std.Packages.PreorderOfLEArgs.le`
+  • `Lean.Meta.Grind.CheckResult.le`
+  • `Mathlib.Tactic.IntervalCases.Bound.le`
+  • `Mathlib.Tactic.Order.AtomicFact.le`
+  • `Lean.Elab.WF.GuessLex.GuessLexRel.le`
+  • `String.Slice.Pattern.Model.IsLongestMatchAt.le`
+  • `String.Slice.Pattern.Model.IsLongestMatchAtChain.le`
+  • `String.Slice.Pattern.Model.IsLongestRevMatchAt.le`
+  • `String.Slice.Pattern.Model.IsLongestRevMatchAtChain.le`
+  • `Lean.Meta.Grind.Arith.Cutsat.UnsatProof.le`

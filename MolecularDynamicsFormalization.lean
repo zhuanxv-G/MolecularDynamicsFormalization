@@ -256,3 +256,5 @@ import MolecularDynamics.Chapter06.BrownianSmallTimeEstimates
 import MolecularDynamics.Chapter06.BrownianExpectationEstimates
 
 import MolecularDynamics.Chapter06.BrownianSecondMomentEstimates
+
+import MolecularDynamics.Chapter06.BrownianFourthMomentEstimates

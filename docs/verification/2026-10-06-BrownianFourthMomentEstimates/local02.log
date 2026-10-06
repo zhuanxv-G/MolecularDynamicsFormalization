@@ -1,0 +1,10 @@
+docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean:35:9: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HMul { r // 0 ≤ r } ℝ≥0 ?m.67
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean:136:6: error: Type mismatch: After simplification, term
+  add_pow_le (mul_nonneg hM ht) (norm_nonneg (N sample)) 4
+ has type
+  (M * t + ‖N sample‖) ^ 4 ≤ 2 ^ 3 * ((M * t) ^ 4 + ‖N sample‖ ^ 4)
+but is expected to have type
+  (M * t + ‖N sample‖) ^ 4 ≤ 8 * ((M * t) ^ 4 + ‖N sample‖ ^ 4)

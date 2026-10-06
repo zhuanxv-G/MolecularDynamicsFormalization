@@ -986,3 +986,7 @@ full-check01 passed：9115 jobs/2030公理声明/198exact inputs；10checks退�
 BrownianSecondMomentEstimates / CH06-DEP-081 / NOT-CH06-090：same actual driftIntegral AE全初值时间uniform bound/全部Lp含∞，actualq increment及coordinate allfiniteLp/真实crosssecond integrability；actualdelta=D+Noise推出真实secondmoment误差≤Mt(Mt+2C√t)，真secondproduct/t极限actualnoise covariance及diagonal/t原质量2β^-1m_i^-1。8public local04通过整批验收中；whole概率generator/高阶Taylor/谱T及5.6/C²core负责人/wholepending。
 
 full-check01 passed：9116 jobs/2038公理声明/199exact inputs；10checks退出0、全部input/rawlog SHA匹配、8 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianFourthMomentEstimates / CH06-DEP-082 / NOT-CH06-091：真实standard Gaussian第四矩可积/非负、sqrt-time真正law推前及原noise坐标fourth精确t²，finitePi noise第二/第四范数界；sameactualq真second/fourth bounds和uniformshorttime O(t)/O(t²)，真实Holder第三范数矩 O(t sqrt t)及third/t→0。14public local05通过统一验收中；完整实际generator/谱T/5.6/core负责人/wholepending。
+
+full-check01 passed：9117 jobs/2052公理声明/200exact inputs；10checks退出0、全部input/rawlog SHA匹配、14 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

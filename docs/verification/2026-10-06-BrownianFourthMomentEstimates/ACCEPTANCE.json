@@ -1,0 +1,172 @@
+{
+  "started_at": "2026-10-06T16:12:34.6458302+08:00",
+  "finished_at": "2026-10-06T16:14:26.6454025+08:00",
+  "head_at_check": "e14362aa4268f246d75b6c54cb40673a6394c219",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9117,
+  "audit_declarations": 2052,
+  "inputs": 200,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianStandardGaussianFourthMoment",
+    "MolecularDynamics.textbookBrownianStandardGaussianFourthMoment_integrable",
+    "MolecularDynamics.textbookBrownianStandardGaussianFourthMoment_nonneg",
+    "MolecularDynamics.textbookBrownianGaussian_time_sqrt_map",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_coordinate_fourth_moment",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_norm_fourth_moment_bound",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_fourth_moment_bound",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_norm_second_moment_bound",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_second_moment_bound",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_fourth_moment_small_time",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_second_moment_small_time",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_third_moment_holder",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_third_moment_small_time",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_third_moment_div_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianStandardGaussianFourthMoment",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianStandardGaussianFourthMoment_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianStandardGaussianFourthMoment_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGaussian_time_sqrt_map",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_coordinate_fourth_moment",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_norm_fourth_moment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_fourth_moment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_norm_second_moment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_second_moment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_fourth_moment_small_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_second_moment_small_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_third_moment_holder",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_third_moment_small_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_norm_third_moment_div_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "4429749a72b2fd22d728122cab7f6ee2e911a0d6cd1504a6b6788bb5d324f46d"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "61acaf0f3ca8f19af40e21a3f1f26d2d37b120f3316e0f8f0e29d07d64046bb0"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "a2b963488e63be1dcafb5059c06dd1ab37e657c9d1a90f046ad9b435499dd46b"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "8185161bb9aaf604e9c5ce83053cd9dd34cdd7fdf26d31427dc078ad92623374"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "4fdeb8a5c53b045d87b6fe41700ce915d9d7c7c9eec4031004cab312a116dd61"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
