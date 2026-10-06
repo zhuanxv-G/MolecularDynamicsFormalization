@@ -1,0 +1,164 @@
+{
+  "started_at": "2026-10-06T21:24:07.5794744+08:00",
+  "finished_at": "2026-10-06T21:28:23.6315918+08:00",
+  "head_at_check": "690f665a9c2a1711bf8e4f6d37d3ce4b9673b9ad",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9134,
+  "audit_declarations": 2260,
+  "inputs": 217,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookGibbsContinuousToL1",
+    "MolecularDynamics.textbookGibbsContinuousToL1_ae_eq",
+    "MolecularDynamics.textbookGibbsContinuousToL1_denseRange",
+    "MolecularDynamics.textbookGibbsContinuousToL1_norm",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_norm_expectation",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_L1_integral_le",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL1_input_norm_le",
+    "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator",
+    "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_spec",
+    "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_norm_le_one",
+    "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_norm_apply_le",
+    "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_zero",
+    "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_add",
+    "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_c0"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToL1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToL1_ae_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToL1_denseRange",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsContinuousToL1_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_norm_expectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_L1_integral_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL1_input_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_spec",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_norm_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_norm_apply_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_c0",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "3fb839ea302f16a9d89df448c791c02506b3c238fe2724e378aaefe34444ed9d"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "06015768963bf9a0150751fa339cee5d0e67e64847ff097e481e6217abe5bb77"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "deb7a0d994120c5c655eb5d11b0c1efa9af68d988b9a81d1194899d1b949eceb"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

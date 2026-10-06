@@ -290,3 +290,5 @@ import MolecularDynamics.Chapter06.BrownianProbabilityGibbsInvariance
 import MolecularDynamics.Chapter06.BrownianProbabilityDensityAverage
 
 import MolecularDynamics.Chapter06.BrownianSpectralDensityLaw
+
+import MolecularDynamics.Chapter06.BrownianL1ProbabilitySemigroup
