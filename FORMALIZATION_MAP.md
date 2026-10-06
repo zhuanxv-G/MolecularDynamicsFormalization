@@ -1042,3 +1042,7 @@ full-check01 passed：9129 jobs/2203公理声明/212exact inputs；10checks退�
 BrownianProbabilitySpectralIdentification / CH06-DEP-095 / NOT-CH06-104：sameactualP_t原C²evolvedclosedgraph/time值真身份，wholeactualeigen系数右ODE及exp解→C²range actualprobability=原谱T；真实uniformdensity→allCMap同谱身份及真正Gibbsinputnormbound，wholeL2 actual概率boundedextensionexists/selected/spec/dense唯一识别T，actualwhole zero/add/C0/symmetry。14public local04全通过统一验收中。Gibbs lawinvariance/Lp beyondL2/5.6 density真实概率law/CMapgraphcore/owner/全scopepending。
 
 full-check01 passed：9130 jobs/2217公理声明/213exact inputs；10checks退出0、全部input/rawlog SHA匹配、14 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianProbabilityGibbsInvariance / CH06-DEP-096 / NOT-CH06-105：sameactualwholeGibbsoperator真实integralmass，sameactualCMapP_tF原Gibbs真实积分保持，realoriginalMarkovkernel∘ₘsameGibbs=Gibbs由actualkernelcomposition integral及regularmeasure唯一性证明。3public local01统一验收中，不以不变性作前提；5.6densitylaw期望/Lp beyondL2/CMapgraphcore/owner/wholepending。
+
+full-check01 passed：9131 jobs/2220公理声明/214exact inputs；10checks退出0、全部input/rawlog SHA匹配、3 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

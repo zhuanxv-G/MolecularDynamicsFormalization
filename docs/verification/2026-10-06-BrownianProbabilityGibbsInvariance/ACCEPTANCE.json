@@ -1,0 +1,57 @@
+{
+  "started_at": "2026-10-06T20:37:58.0870682+08:00",
+  "finished_at": "2026-10-06T20:39:39.9683901+08:00",
+  "head_at_check": "eeceab0d17b60b0318bdef8313120c376cb8d5de",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9131,
+  "audit_declarations": 2220,
+  "inputs": 214,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_integral_mass",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_Gibbs_integral",
+    "MolecularDynamics.textbookBrownianTorusTransitionKernel_Gibbs_invariant"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_integral_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_Gibbs_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusTransitionKernel_Gibbs_invariant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "d1ee6ea3281872d8be8cb0f98bcf868dc969af25458db2d330a55b3a81b7c2b0"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,29 @@
+{
+  "draft_path": "docs/verification/2026-10-06-BrownianProbabilityGibbsInvariance/Draft.lean",
+  "source_path": "MolecularDynamics/Chapter06/BrownianProbabilityGibbsInvariance.lean",
+  "draft_sha256": "609503ba492f5e1545cdbc6599636cba7f07ebc2824844d963d6dc7503336fab",
+  "source_sha256": "609503ba492f5e1545cdbc6599636cba7f07ebc2824844d963d6dc7503336fab",
+  "local_check_log": "local01.log",
+  "local_check_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "local_exit_code": 0,
+  "local_lean_warnings": 0,
+  "public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_integral_mass",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_Gibbs_integral",
+    "MolecularDynamics.textbookBrownianTorusTransitionKernel_Gibbs_invariant"
+  ],
+  "exact_source_copy_verified": true,
+  "local_check_reused_for_exact_formal_copy": true,
+  "actual_original_Gibbs_whole_L2_probability_integral_preservation": "proved_locally",
+  "same_actual_continuous_probability_expectation_original_Gibbs_integral_preservation": "proved_locally",
+  "actual_original_Markov_transition_kernel_composition_preserves_same_original_Gibbs_probability_measure": "proved_locally",
+  "invariance_not_assumed_as_input": true,
+  "original5_6_density_probability_expectation_identification": "not_proved",
+  "Lp_extensions_beyond_L2": "not_proved",
+  "complete_CMap_graph_core": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete",
+  "integrated": true,
+  "full_check": "pending"
+}
