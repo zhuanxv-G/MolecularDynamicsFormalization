@@ -1,0 +1,96 @@
+{
+  "started_at": "2026-10-06T17:12:17.488903+08:00",
+  "finished_at": "2026-10-06T17:18:12.5499251+08:00",
+  "head_at_check": "afec4f3b9c065d92c6b6597c4a1112d0cdb8de40",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9121,
+  "audit_declarations": 2087,
+  "inputs": 204,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_real_time_continuous",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_shifted_generator_tendsto",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_hasDeriv_right",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_Dynkin",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_Dynkin",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_evolved_generator_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_real_time_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_shifted_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_hasDeriv_right",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_Dynkin",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_Dynkin",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianTorusProbabilityOperator_evolved_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "a1140004a44199eeac2607542e7a6f05cfd71bbdedbb1d5589c27d72b86608a9"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "c8186a5fe17978309083f295927f80fbb1ef98ac8b8a7eb97a17e1b6cef86092"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "c08e117e4878ac3fc50eba4af5e7f9494fe63aea16931ddfb0f057f2d5282134"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "d47659d2ebf785ed6f4bdeafb751d3ebe6bafa9e349470451153a67d7aa68e3a"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

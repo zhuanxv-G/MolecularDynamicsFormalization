@@ -264,3 +264,5 @@ import MolecularDynamics.Chapter06.BrownianObservableTaylor
 import MolecularDynamics.Chapter06.BrownianGeneratorExpectation
 
 import MolecularDynamics.Chapter06.BrownianUniformGenerator
+
+import MolecularDynamics.Chapter06.BrownianDynkinFormula

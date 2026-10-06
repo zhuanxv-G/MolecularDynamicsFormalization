@@ -1,0 +1,153 @@
+docs/verification/2026-10-06-BrownianDynkinFormula/Draft.lean:24:95: error(lean.unknownIdentifier): Unknown constant `Real.continuous_toNNReal`
+docs/verification/2026-10-06-BrownianDynkinFormula/Draft.lean:58:6: error: Type mismatch: After simplification, term
+  Tendsto.mono_left (Continuous.tendsto (Continuous.sub continuous_id continuous_const) s) nhdsWithin_le_nhds
+ has type
+  Tendsto (id - fun x => ?m.136) (𝓝[?m.151] s) (𝓝 ((id - fun x => ?m.136) s))
+but is expected to have type
+  Tendsto (fun t => t - s) (𝓝[>] s) (𝓝 0)
+docs/verification/2026-10-06-BrownianDynkinFormula/Draft.lean:61:24: error: Application type mismatch: The argument
+  ht
+has type
+  t ∈ Ioi s
+but is expected to have type
+  ?m.182 < ?m.181
+in the application
+  sub_pos.mpr ht
+docs/verification/2026-10-06-BrownianDynkinFormula/Draft.lean:53:87: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hpf : textbookUnitPeriodicPotential f
+s : ℝ
+hs : 0 ≤ s
+hshift : Tendsto (fun t => t - s) (𝓝[>] s) (𝓝[>] 0)
+hh :
+  Tendsto
+    ((fun h =>
+        h⁻¹ •
+          ((textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB (s + h).toNNReal)
+              (textbookConfigurationContinuousObservable f ⋯ hpf) -
+            (textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB s.toNNReal)
+              (textbookConfigurationContinuousObservable f ⋯ hpf))) ∘
+      fun t => t - s)
+    (𝓝[>] s)
+    (𝓝
+      ((textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB s.toNNReal)
+        (textbookBrownianContinuousGeneratorImage m U hU hPU β f hf hpf)))
+t : ℝ
+ht : t ∈ Ioi s
+he : s + (t - s) = t
+⊢ (t - s)⁻¹ •
+      ((textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB t.toNNReal)
+          (textbookConfigurationContinuousObservable f ⋯ hpf) -
+        (textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB s.toNNReal)
+          (textbookConfigurationContinuousObservable f ⋯ hpf)) =
+    (t - s)⁻¹ •
+      ((textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB t.toNNReal)
+          (textbookConfigurationContinuousObservable f ⋯ hpf) -ᵥ
+        (textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB s.toNNReal)
+          (textbookConfigurationContinuousObservable f ⋯ hpf))
+docs/verification/2026-10-06-BrownianDynkinFormula/Draft.lean:104:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ((textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB ?t)
+      (textbookConfigurationContinuousObservable f ⋯ hpf))
+    ?X
+in the target expression
+  ∫ (sample : Ω),
+        f
+          (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ (textbookConfigurationTorusRepresentative X) B T
+            sample) ∂P -
+      f (textbookConfigurationTorusRepresentative X) =
+    ((textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB T.toNNReal) F - F) X
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hpf : textbookUnitPeriodicPotential f
+T : ℝ
+hT : 0 ≤ T
+X : UnitAddTorus (Fin Nc)
+F : C(UnitAddTorus (Fin Nc), ℝ) := textbookConfigurationContinuousObservable f ⋯ hpf
+G : C(UnitAddTorus (Fin Nc), ℝ) := textbookBrownianContinuousGeneratorImage m U hU hPU β f hf hpf
+ev : C(UnitAddTorus (Fin Nc), ℝ) →L[ℝ] ℝ := ContinuousMap.evalCLM ℝ X
+hi :
+  IntervalIntegrable (fun t => (textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB t.toNNReal) G) ℙ 0 T
+hg : ContDiff ℝ ∞ (textbookBrownianGenerator m U β f)
+hpg : textbookUnitPeriodicPotential (textbookBrownianGenerator m U β f)
+⊢ ∫ (sample : Ω),
+        f
+          (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ (textbookConfigurationTorusRepresentative X) B T
+            sample) ∂P -
+      f (textbookConfigurationTorusRepresentative X) =
+    ((textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB T.toNNReal) F - F) X
+docs/verification/2026-10-06-BrownianDynkinFormula/Draft.lean:116:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ((textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB ?t)
+      (textbookConfigurationContinuousObservable (textbookBrownianGenerator m U β f) ⋯ hpg))
+    ?X
+in the target expression
+  (fun x => ((textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB x.toNNReal) G) X) s =
+    (fun x =>
+        ∫ (sample : Ω),
+          textbookBrownianGenerator m U β f
+            (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ (textbookConfigurationTorusRepresentative X) B
+              x sample) ∂P)
+      s
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hpf : textbookUnitPeriodicPotential f
+T : ℝ
+hT : 0 ≤ T
+X : UnitAddTorus (Fin Nc)
+F : C(UnitAddTorus (Fin Nc), ℝ) := textbookConfigurationContinuousObservable f ⋯ hpf
+G : C(UnitAddTorus (Fin Nc), ℝ) := textbookBrownianContinuousGeneratorImage m U hU hPU β f hf hpf
+ev : C(UnitAddTorus (Fin Nc), ℝ) →L[ℝ] ℝ := ContinuousMap.evalCLM ℝ X
+hi :
+  IntervalIntegrable (fun t => (textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB t.toNNReal) G) ℙ 0 T
+hg : ContDiff ℝ ∞ (textbookBrownianGenerator m U β f)
+hpg : textbookUnitPeriodicPotential (textbookBrownianGenerator m U β f)
+s : ℝ
+hs : s ∈ Icc 0 T
+⊢ (fun x => ((textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB x.toNNReal) G) X) s =
+    (fun x =>
+        ∫ (sample : Ω),
+          textbookBrownianGenerator m U β f
+            (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ (textbookConfigurationTorusRepresentative X) B
+              x sample) ∂P)
+      s

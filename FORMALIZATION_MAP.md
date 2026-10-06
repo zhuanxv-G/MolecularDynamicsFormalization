@@ -1002,3 +1002,7 @@ full-check01 passed：9119 jobs/2071公理声明/202exact inputs；10checks退�
 BrownianUniformGenerator / CH06-DEP-085 / NOT-CH06-094：原Df/Hessian总和共同bound，actualFrozenError期待=真实meanerror及全初值均值error；真actualcovariance/Taylor期待uniform误差→原generator全初值商error≤C(t+sqrt t)。同一realq期待=实际CMap概率operator，whole C(Torus,R) supnorm differencequotient强趋literal原smoothperiodiccore generatorimage。10public local03通过统一验收中；完整CMapgraphcore/actual概率=Gibbs谱T/Gibbsinvariance/Lp/5.6/core负责人/wholepending。
 
 full-check01 passed：9120 jobs/2081公理声明/203exact inputs；10checks退出0、全部input/rawlog SHA匹配、10 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianDynkinFormula / CH06-DEP-086 / NOT-CH06-095：actual真实alltime强连续/真半群运输原core generator limit至任意time、实际右导数P_sLf；真正Banach右侧FTC得CMap Dynkin和sameq原期待时间积分公式。真半群交换给actualevolvedobservable生成元domain/image=P_sLf，不假设evolvedC∞。6public local04通过统一验收中；actualprobability=Gibbs谱T/CMapgraphcore/Gibbsinvariance/wholeLp/5.6/core负责人/wholepending。
+
+full-check01 passed：9121 jobs/2087公理声明/204exact inputs；10checks退出0、全部input/rawlog SHA匹配、6 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

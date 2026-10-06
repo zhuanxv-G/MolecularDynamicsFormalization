@@ -1,0 +1,32 @@
+{
+  "draft_path": "docs/verification/2026-10-06-BrownianDynkinFormula/Draft.lean",
+  "source_path": "MolecularDynamics/Chapter06/BrownianDynkinFormula.lean",
+  "draft_sha256": "22370f281336b8e778f9d6c4cdf8b88c12d1a213d8d4ed24f02195ca03009c53",
+  "source_sha256": "22370f281336b8e778f9d6c4cdf8b88c12d1a213d8d4ed24f02195ca03009c53",
+  "local_check_log": "local04.log",
+  "local_check_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "local_exit_code": 0,
+  "local_lean_warnings": 0,
+  "public_declarations": [
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_real_time_continuous",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_shifted_generator_tendsto",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_hasDeriv_right",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_Dynkin",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_Dynkin",
+    "MolecularDynamics.textbookBrownianTorusProbabilityOperator_evolved_generator_tendsto"
+  ],
+  "exact_source_copy_verified": true,
+  "local_check_reused_for_exact_formal_copy": true,
+  "same_actual_probability_all_time_right_generator_derivative": "proved_locally",
+  "true_Banach_CMap_and_actual_original_q_expectation_Dynkin": "proved_locally",
+  "same_actual_semigroup_evolved_generator_domain_and_image": "proved_locally",
+  "uniform_CMap_generator": "original_smooth_periodic_core_identity_proved_locally",
+  "complete_CMap_graph_core": "not_proved",
+  "stochastic_generator": "actual_probability_strong_uniform_core_identity_proved_locally",
+  "sde_law_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete",
+  "integrated": true,
+  "full_check": "pending"
+}
