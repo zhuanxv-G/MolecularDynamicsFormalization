@@ -330,3 +330,5 @@ import MolecularDynamics.Chapter06.LangevinInvariantMoments
 import MolecularDynamics.Chapter06.LangevinHarrisOscillation
 
 import MolecularDynamics.Chapter06.LangevinHarrisSkeleton
+
+import MolecularDynamics.Chapter06.LangevinUniformMoments

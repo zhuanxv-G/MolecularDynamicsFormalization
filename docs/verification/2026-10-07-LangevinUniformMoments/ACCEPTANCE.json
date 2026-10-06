@@ -1,0 +1,86 @@
+{
+  "started_at": "2026-10-07T05:43:30.0778432+08:00",
+  "finished_at": "2026-10-07T05:44:44.3600107+08:00",
+  "head_at_check": "fe528fd90b08da0fca627f128478d95c83c698bf",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9154,
+  "audit_declarations": 2459,
+  "inputs": 237,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookWienerVector_coordinate_even_norm_power_bounded_time",
+    "MolecularDynamics.textbookLangevinDampedNoise_coordinate_even_norm_power_bounded_time",
+    "MolecularDynamics.textbookLangevinDampedNoise_physical_energy_power_bounded_time",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_bounded_time"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookWienerVector_coordinate_even_norm_power_bounded_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_coordinate_even_norm_power_bounded_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_physical_energy_power_bounded_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_bounded_time",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "2f9654a09554f006eafdec24bc456a882c2a3da52c08bc951e0cd47072519e1b"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "1f7d4f68c25a4ff0d893b301912c792548ad881b6f72f2f2f9b134e4c35a1e18"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "3a11c20029583734c9b9c07f5957382e2842de04eba5bade0f67b8e64bedd612"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "true_Gaussian_time_law_bounded_endpoint_moment": true,
+  "true_continuous_path_interval_mono_fixed_cap_Jensen": true,
+  "actual_noise_even_coordinate_and_physical_energy_uniform_moments": "derived_not_assumed",
+  "actual_original_kernel_Hl_bounded_time": "A_Hl_plus_D_uniform_all_T_le_cap_all_initial_phase_A_D_positive",
+  "dimension_zero_included": true,
+  "time_zero_included": true,
+  "uniform_moment_or_drift_or_density_or_invariant_hypothesis": "none",
+  "continuous_time_exponential_6_48": "not_proved_yet",
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

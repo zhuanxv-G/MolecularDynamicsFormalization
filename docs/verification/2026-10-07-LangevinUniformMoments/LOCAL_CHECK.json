@@ -1,0 +1,33 @@
+{
+  "draft_path": "docs/verification/2026-10-07-LangevinUniformMoments/Draft.lean",
+  "source_path": "MolecularDynamics/Chapter06/LangevinUniformMoments.lean",
+  "draft_sha256": "b1ed15e93fa850ce6b784caef28e1fed031f7227684992674364b7863328a2c4",
+  "source_sha256": "b1ed15e93fa850ce6b784caef28e1fed031f7227684992674364b7863328a2c4",
+  "local_check_log": "local03.log",
+  "local_check_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "local_exit_code": 0,
+  "local_lean_warnings": 0,
+  "local_log_empty": true,
+  "exact_source_copy_verified": true,
+  "public_declarations": [
+    "MolecularDynamics.textbookWienerVector_coordinate_even_norm_power_bounded_time",
+    "MolecularDynamics.textbookLangevinDampedNoise_coordinate_even_norm_power_bounded_time",
+    "MolecularDynamics.textbookLangevinDampedNoise_physical_energy_power_bounded_time",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_bounded_time"
+  ],
+  "actual_Gaussian_time_law_endpoint_even_moment_uniform": true,
+  "actual_continuous_path_interval_monotonicity_and_fixed_cap_Jensen": true,
+  "actual_noise_coordinate_even_moment_uniform": "derived_from_true_Gaussian_law_and_previously_proved_time_integrability",
+  "physical_square_sum_power": "original_Euclidean_coordinate_energy_including_zero_dimension",
+  "actual_kernel_Hl_uniform_bounded_time": "forall_T_le_cap_and_all_initial_phase_A_Hl_plus_D_A_D_positive",
+  "uniform_moment_hypothesis": "none",
+  "integrated": true,
+  "full_check": "passed_full_check01",
+  "continuous_time_exponential_convergence": "not_proved_yet",
+  "actual_joint_density_existence": "not_proved",
+  "continuous_generator_identity": "not_proved",
+  "Gibbs_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

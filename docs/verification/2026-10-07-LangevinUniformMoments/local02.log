@@ -1,0 +1,64 @@
+docs/verification/2026-10-07-LangevinUniformMoments/Draft.lean:277:73: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+hLower : ∀ (q : Fin N → ℝ), 1 ≤ U q
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+cap : ℝ≥0
+hcap : 0 < cap
+l : ℕ
+hl : 1 ≤ l
+this : IsProbabilityMeasure P
+Q : ℝ
+hQ0 : 0 ≤ Q
+hQ :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (T : ℝ),
+        0 ≤ T →
+          textbookLangevinPeriodicHamiltonianPower U 1
+              (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample) ≤
+            3 * Real.exp (-γ * T) ^ 2 * textbookLangevinPeriodicHamiltonianPower U 1 x + Q +
+              3 / 2 * ∑ i, textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T i ^ 2
+C : ℝ
+hC0 : 0 ≤ C
+hC :
+  ∀ (t : ℝ),
+    0 ≤ t →
+      t ≤ ↑cap →
+        ∫ (sample : Ω), (∑ i, textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t i ^ 2) ^ l ∂P ≤ C
+c : ℝ := 2 ^ (l - 1)
+A : ℝ := c * 3 ^ l
+D : ℝ := c ^ 2 * (Q ^ l + (3 / 2) ^ l * C) + 1
+hc : 0 ≤ c
+hA : 0 < A
+hD : 0 < D
+he :
+  ∀ (z : textbookLangevinPeriodicPhase N),
+    textbookLangevinPeriodicHamiltonianPower U l z = textbookLangevinPeriodicHamiltonianPower U 1 z ^ l
+T : ℝ≥0
+hTc : T ≤ cap
+x : textbookLangevinPeriodicPhase N
+Y : Ω → textbookLangevinPeriodicPhase N := textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B ↑T
+S : Ω → ℝ := fun sample => ∑ i, textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) (↑T) i ^ 2
+hS : Integrable (fun sample => S sample ^ l) P
+hE : Integrable (fun sample => textbookLangevinPeriodicHamiltonianPower U l (Y sample)) P
+hR : Integrable (fun sample => Q ^ l + (3 / 2) ^ l * S sample ^ l) P
+hdom :
+  Integrable
+    (fun sample => A * textbookLangevinPeriodicHamiltonianPower U l x + c ^ 2 * (Q ^ l + (3 / 2) ^ l * S sample ^ l)) P
+hexp : Real.exp (-γ * ↑T) ^ 2 ≤ 1
+hb :
+  ∀ᵐ (sample : Ω) ∂P,
+    textbookLangevinPeriodicHamiltonianPower U l (Y sample) ≤
+      A * textbookLangevinPeriodicHamiltonianPower U l x + c ^ 2 * (Q ^ l + (3 / 2) ^ l * S sample ^ l)
+⊢ ∫ (a : Ω), (3 / 2) ^ l * S a ^ l ∂P = (3 / 2) ^ l * ∫ (sample : Ω), S sample ^ l ∂P ∨ c = 0

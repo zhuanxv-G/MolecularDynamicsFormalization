@@ -1,0 +1,97 @@
+docs/verification/2026-10-07-LangevinUniformMoments/Draft.lean:45:49: error: Type mismatch
+  sq_nonneg (f s)
+has type
+  0 ≤ f s ^ 2
+but is expected to have type
+  s ∈ Icc 0 t → 0 ≤ f s ^ 2
+docs/verification/2026-10-07-LangevinUniformMoments/Draft.lean:111:15: error: Type mismatch
+  pow_nonneg (norm_nonneg ?m.166) ?m.167
+has type
+  0 ≤ ‖?m.166‖ ^ ?m.167
+but is expected to have type
+  s ∈ Icc 0 cap → 0 ≤ ‖B s.toNNReal sample i‖ ^ (2 * l)
+docs/verification/2026-10-07-LangevinUniformMoments/Draft.lean:134:68: error: Type mismatch
+  sq_nonneg ?m.595
+has type
+  0 ≤ ?m.595 ^ 2
+but is expected to have type
+  s ∈ Icc 0 t → 0 ≤ B s.toNNReal sample i ^ 2
+docs/verification/2026-10-07-LangevinUniformMoments/Draft.lean:178:8: error(lean.unknownIdentifier): Unknown constant `Finset.pow_sum_le_card_mul_sum_pow`
+docs/verification/2026-10-07-LangevinUniformMoments/Draft.lean:255:34: error: Type mismatch
+  neg_nonpos.mpr (mul_nonneg (LT.lt.le hγ) T.property)
+has type
+  -(γ * ↑T) ≤ 0
+but is expected to have type
+  -γ * ↑T ≤ 0
+docs/verification/2026-10-07-LangevinUniformMoments/Draft.lean:277:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : Ω), ?m.1175 + ?m.1182 * S a ^ l ∂P
+in the target expression
+  A * ∫ (a : Ω), textbookLangevinPeriodicHamiltonianPower U l x ∂P +
+      ∫ (a : Ω), c ^ 2 * (Q ^ l + (3 / 2) ^ l * S a ^ l) ∂P =
+    A * textbookLangevinPeriodicHamiltonianPower U l x + c ^ 2 * (Q ^ l + (3 / 2) ^ l * ∫ (sample : Ω), S sample ^ l ∂P)
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+hLower : ∀ (q : Fin N → ℝ), 1 ≤ U q
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+cap : ℝ≥0
+hcap : 0 < cap
+l : ℕ
+hl : 1 ≤ l
+this : IsProbabilityMeasure P
+Q : ℝ
+hQ0 : 0 ≤ Q
+hQ :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (T : ℝ),
+        0 ≤ T →
+          textbookLangevinPeriodicHamiltonianPower U 1
+              (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample) ≤
+            3 * Real.exp (-γ * T) ^ 2 * textbookLangevinPeriodicHamiltonianPower U 1 x + Q +
+              3 / 2 * ∑ i, textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T i ^ 2
+C : ℝ
+hC0 : 0 ≤ C
+hC :
+  ∀ (t : ℝ),
+    0 ≤ t →
+      t ≤ ↑cap →
+        ∫ (sample : Ω), (∑ i, textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t i ^ 2) ^ l ∂P ≤ C
+c : ℝ := 2 ^ (l - 1)
+A : ℝ := c * 3 ^ l
+D : ℝ := c ^ 2 * (Q ^ l + (3 / 2) ^ l * C) + 1
+hc : 0 ≤ c
+hA : 0 < A
+hD : 0 < D
+he :
+  ∀ (z : textbookLangevinPeriodicPhase N),
+    textbookLangevinPeriodicHamiltonianPower U l z = textbookLangevinPeriodicHamiltonianPower U 1 z ^ l
+T : ℝ≥0
+hTc : T ≤ cap
+x : textbookLangevinPeriodicPhase N
+Y : Ω → textbookLangevinPeriodicPhase N := textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B ↑T
+S : Ω → ℝ := fun sample => ∑ i, textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) (↑T) i ^ 2
+hS : Integrable (fun sample => S sample ^ l) P
+hE : Integrable (fun sample => textbookLangevinPeriodicHamiltonianPower U l (Y sample)) P
+hR : Integrable (fun sample => Q ^ l + (3 / 2) ^ l * S sample ^ l) P
+hdom :
+  Integrable
+    (fun sample => A * textbookLangevinPeriodicHamiltonianPower U l x + c ^ 2 * (Q ^ l + (3 / 2) ^ l * S sample ^ l)) P
+hexp : Real.exp (-γ * ↑T) ^ 2 ≤ 1
+hb :
+  ∀ᵐ (sample : Ω) ∂P,
+    textbookLangevinPeriodicHamiltonianPower U l (Y sample) ≤
+      A * textbookLangevinPeriodicHamiltonianPower U l x + c ^ 2 * (Q ^ l + (3 / 2) ^ l * S sample ^ l)
+⊢ A * ∫ (a : Ω), textbookLangevinPeriodicHamiltonianPower U l x ∂P +
+      ∫ (a : Ω), c ^ 2 * (Q ^ l + (3 / 2) ^ l * S a ^ l) ∂P =
+    A * textbookLangevinPeriodicHamiltonianPower U l x + c ^ 2 * (Q ^ l + (3 / 2) ^ l * ∫ (sample : Ω), S sample ^ l ∂P)

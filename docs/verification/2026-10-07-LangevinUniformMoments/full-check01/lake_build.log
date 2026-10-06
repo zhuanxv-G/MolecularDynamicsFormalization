@@ -1,0 +1,18 @@
+ℹ [8988/9154] Replayed MolecularDynamics.Chapter06.LangevinCausalFlow
+info: MolecularDynamics/Chapter06/LangevinCausalFlow.lean:179:2: Try this:
+  [apply] abel_nf
+ℹ [9078/9154] Replayed MolecularDynamics.Chapter06.LangevinMomentumVariation
+info: MolecularDynamics/Chapter06/LangevinMomentumVariation.lean:76:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9144/9154] Replayed MolecularDynamics.Chapter01.TorusDensity
+info: MolecularDynamics/Chapter01/TorusDensity.lean:25:21: Try this:
+  [apply] abel_nf
+info: MolecularDynamics/Chapter01/TorusDensity.lean:68:21: Try this:
+  [apply] abel_nf
+✔ [9152/9154] Built MolecularDynamics.Chapter06.LangevinUniformMoments (10s)
+✔ [9153/9154] Built MolecularDynamicsFormalization (14s)
+Build completed successfully (9154 jobs).
