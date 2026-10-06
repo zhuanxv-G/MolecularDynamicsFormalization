@@ -1,0 +1,96 @@
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:299:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : Ω), (Z * W + Z * S + R * W) a + (R * S) a ∂P
+in the target expression
+  ‖∫ (sample : Ω), Z sample * W sample + Z sample * S sample + R sample * W sample + R sample * S sample ∂P -
+        ∫ (sample : Ω), Z sample * W sample ∂P‖ ≤
+    √(∫ (sample : Ω), Z sample ^ 2 ∂P) * √(∫ (sample : Ω), S sample ^ 2 ∂P) +
+        √(∫ (sample : Ω), R sample ^ 2 ∂P) * √(∫ (sample : Ω), W sample ^ 2 ∂P) +
+      √(∫ (sample : Ω), R sample ^ 2 ∂P) * √(∫ (sample : Ω), S sample ^ 2 ∂P)
+
+Ω : Type u_2
+inst✝ : MeasurableSpace Ω
+P : Measure Ω
+Z W R S : Ω → ℝ
+hZ : MemLp Z 2 P
+hW : MemLp W 2 P
+hR : MemLp R 2 P
+hS : MemLp S 2 P
+he :
+  (fun sample => (Z sample + R sample) * (W sample + S sample)) = fun sample =>
+    Z sample * W sample + Z sample * S sample + R sample * W sample + R sample * S sample
+⊢ ‖∫ (sample : Ω), Z sample * W sample + Z sample * S sample + R sample * W sample + R sample * S sample ∂P -
+        ∫ (sample : Ω), Z sample * W sample ∂P‖ ≤
+    √(∫ (sample : Ω), Z sample ^ 2 ∂P) * √(∫ (sample : Ω), S sample ^ 2 ∂P) +
+        √(∫ (sample : Ω), R sample ^ 2 ∂P) * √(∫ (sample : Ω), W sample ^ 2 ∂P) +
+      √(∫ (sample : Ω), R sample ^ 2 ∂P) * √(∫ (sample : Ω), S sample ^ 2 ∂P)
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:332:2: error: Type mismatch: After simplification, term
+  MemLp.add hr hn
+ has type
+  MemLp
+    ((fun sample =>
+        (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i - σ * B T.toNNReal sample i) +
+      fun x => σ * B T.toNNReal x i)
+    2 P
+but is expected to have type
+  MemLp (fun sample => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i) 2 P
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:369:87: error: unsolved goals
+case neg
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+x : textbookLangevinPeriodicPhase N
+i j : Fin N
+Δ : ℝ → Fin N → Ω → ℝ :=
+  fun t k sample => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 k - x.2 k
+R : ℝ → Fin N → Ω → ℝ := fun t k sample => (Δ t k sample - σ * B t.toNNReal sample k) / √t
+Z : ℝ → Fin N → Ω → ℝ := fun t k sample => σ * B t.toNNReal sample k / √t
+E : ℝ → Fin N → ℝ := fun t k => (∫ (sample : Ω), (Δ t k sample - σ * B t.toNNReal sample k) ^ 2 ∂P) / t
+c : ℝ := σ ^ 2 * if i = j then 1 else 0
+hE : ∀ (k : Fin N), Tendsto (fun t => E t k) (𝓝[>] 0) (𝓝 0)
+hR : ∀ (t : ℝ), 0 < t → ∀ (k : Fin N), ∫ (sample : Ω), R t k sample ^ 2 ∂P = E t k
+t : ℝ
+ht : 0 < t
+a b : Fin N
+he :
+  (fun sample => Z t a sample * Z t b sample) = fun sample =>
+    σ ^ 2 / t * (B t.toNNReal sample a * B t.toNNReal sample b)
+h✝ : ¬a = b
+⊢ σ ^ 2 * 0 = σ ^ 2 * t * 0
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:381:46: error(lean.invalidField): Invalid field `div_const`: The environment does not contain `WithTop.LT.div_const`, so it is not possible to project the field `div_const` from an expression
+  textbookLangevinPeriodicGlobalRandomPhase_momentum_Brownian_remainder_memLp B P hB U hU hp L hF γ σ hγ t (LT.lt.le ht)
+    x k
+of type
+  WithTop.LT
+    (eLpNorm
+      (fun sample =>
+        (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 k - x.2 k - σ * B t.toNNReal sample k)
+      2 P)
+    ∞
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:383:78: error(lean.invalidField): Invalid field `div_const`: The environment does not contain `WithTop.LT.div_const`, so it is not possible to project the field `div_const` from an expression
+  MemLp.const_mul (HasGaussianLaw.memLp_two (IsGaussianProcess.hasGaussianLaw_eval hB.gaussian ⟨k, t.toNNReal⟩)) σ
+of type
+  WithTop.LT (eLpNorm (fun x => σ * B ⟨k, t.toNNReal⟩.snd x ⟨k, t.toNNReal⟩.fst) 2 P) ∞
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:401:27: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:401:6: error: Type mismatch: After simplification, term
+  hZ t ht0 i i
+ has type
+  ∫ (sample : Ω), Z t i sample * Z t i sample ∂P = σ * σ * if True then 1 else 0
+but is expected to have type
+  ∫ (sample : Ω), Z t i sample * Z t i sample ∂P = σ * σ
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:403:27: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:403:6: error: Type mismatch: After simplification, term
+  hZ t ht0 j j
+ has type
+  ∫ (sample : Ω), Z t j sample * Z t j sample ∂P = σ * σ * if True then 1 else 0
+but is expected to have type
+  ∫ (sample : Ω), Z t j sample * Z t j sample ∂P = σ * σ

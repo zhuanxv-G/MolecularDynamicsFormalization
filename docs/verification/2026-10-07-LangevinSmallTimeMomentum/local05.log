@@ -1,0 +1,13 @@
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:340:2: error: Type mismatch: After simplification, term
+  MemLp.add hr hn
+ has type
+  MemLp
+    ((fun sample =>
+        (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i - σ * B T.toNNReal sample i) +
+      fun x => σ * B T.toNNReal x i)
+    2 P
+but is expected to have type
+  MemLp (fun sample => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i) 2 P
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:386:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

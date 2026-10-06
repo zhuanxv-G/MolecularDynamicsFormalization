@@ -1,0 +1,7 @@
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:260:4: error: Type mismatch: After simplification, term
+  Tendsto.mono_left (ContinuousAt.tendsto (Continuous.continuousAt hc)) nhdsWithin_le_nhds
+ has type
+  Tendsto (fun t => A * t + D * t ^ 2) (𝓝[?m.383] ?m.382) (𝓝 (A * ?m.382 + D * ?m.382 ^ 2))
+but is expected to have type
+  Tendsto (fun t => A * t + D * t ^ 2) (𝓝[>] 0) (𝓝 0)
+docs/verification/2026-10-07-LangevinSmallTimeMomentum/Draft.lean:268:46: error: No goals to be solved
