@@ -1084,3 +1084,7 @@ LangevinMomentumVariation / CH06-DEP-105 / NOT-CH06-114：原(6.47)同actual积�
 full-check01 passed：9140 jobs/2355公理声明/223exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.2整体未完成。
 
 full-check02 passed：9140 jobs/2355公理声明/223exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.2整体未完成。
+
+LangevinNoiseMoments / CH06-DEP-106 / NOT-CH06-115：同原真实Wiener连续路径/Gaussian coordinate/Fubini推E时间平方积分=T²/2；真noise卷积coordinate可测/平方可积/finite-time矩界、wholevector L²和物理坐标square sum期待；same实际periodic全时process momentum L²。11public local06退出0零warning/空日志，统一full-check01待验。非精确OU方差/时间一致矩界，actualprocessLyapunov/Harris/owner/wholepending。
+
+full-check01 passed：9141 jobs/2366公理声明/224exact inputs；10checks退出0、全部input/rawlog SHA匹配、11public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。真实有限时刻noise矩及sameprocess momentum L²已机器验证，owner semanticpending，Theorem6.2整体未完成。

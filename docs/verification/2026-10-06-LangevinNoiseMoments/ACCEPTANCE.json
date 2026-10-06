@@ -1,0 +1,152 @@
+{
+  "started_at": "2026-10-07T00:24:30.4418387+08:00",
+  "finished_at": "2026-10-07T00:30:55.9961272+08:00",
+  "head_at_check": "d4cc4d105ece594f05f6757d4ed33120363f2f72",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9141,
+  "audit_declarations": 2366,
+  "inputs": 224,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookWienerVector_coordinate_time_square_integrable",
+    "MolecularDynamics.textbookWienerVector_coordinate_time_square_mean",
+    "MolecularDynamics.textbookLangevinDampedNoise_coordinate_aemeasurable",
+    "MolecularDynamics.textbookLangevinDampedNoise_coordinate_square_bound_ae",
+    "MolecularDynamics.textbookLangevinDampedNoise_coordinate_square_integrable",
+    "MolecularDynamics.textbookLangevinDampedNoise_coordinate_memLp",
+    "MolecularDynamics.textbookLangevinDampedNoise_coordinate_secondMoment_bound",
+    "MolecularDynamics.textbookLangevinDampedNoise_memLp",
+    "MolecularDynamics.textbookLangevinDampedNoise_sum_square_integrable",
+    "MolecularDynamics.textbookLangevinDampedNoise_sum_secondMoment_bound",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_memLp"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookWienerVector_coordinate_time_square_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookWienerVector_coordinate_time_square_mean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_coordinate_aemeasurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_coordinate_square_bound_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_coordinate_square_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_coordinate_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_coordinate_secondMoment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_sum_square_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_sum_secondMoment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "7730fed86f74d3033bf8ce2957ed72dd9a4dc6663b29dd6dff7cfe649f081915"
+    },
+    {
+      "path": "LOCAL_DRIVER06.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "de01a1f285f7e7d4f68a6b3a98d2e43b01b40049a81af330a57f4746f965a0ce"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "78e16dc0146644f65be2c5bb5c14ad35024bf69c227dbdd7a73d97e3ea635e25"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "8531d3b921df3bb1812aeebc1b5b7eb72537bd3c3b30e8d9223ee7a0e4f41233"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "20ca4c879fa4125c6c6e6d903bdcaba58389d79fb0502bf6cd1ae49cfdac42d8"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "7bac75c56e7712e5d7587760a9d0cb142e4019981810aa5ac3d6945c49d6f1f4"
+    }
+  ],
+  "finite_fixed_time_noise_moments_only": true,
+  "actual_periodic_process_momentum_L2": true,
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

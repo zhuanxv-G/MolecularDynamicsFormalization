@@ -1,0 +1,62 @@
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:34:13: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  IsGaussian (gaussianReal 0 ⟨↑(projIcc 0 T hT s), ⋯⟩)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:33:64: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+i : Fin N
+s : ℝ
+⊢ MemLp (fun sample => clippedWiener B T hT sample s i) 2 P
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:56:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:82:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  clippedWiener B T hT sample s
+in the target expression
+  (fun x => clippedWiener B T hT sample x i ^ 2) s = (fun x => B x.toNNReal sample i ^ 2) s
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+i : Fin N
+sample : Ω
+hc : Continuous fun t => B t sample
+s : ℝ
+hs : s ∈ Ioc 0 T
+⊢ (fun x => clippedWiener B T hT sample x i ^ 2) s = (fun x => B x.toNNReal sample i ^ 2) s
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:92:2: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  SFinite P
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:101:8: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  SFinite P
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:99:75: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+i : Fin N
+⊢ SFinite P

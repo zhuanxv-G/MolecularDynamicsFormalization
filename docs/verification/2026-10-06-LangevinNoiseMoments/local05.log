@@ -1,0 +1,18 @@
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:324:8: warning: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:334:6: warning: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:339:13: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+γ σ T : ℝ
+hγ : 0 ≤ γ
+hT : 0 ≤ T
+⊢ ↑N * (2 * σ ^ 2 * T) + ↑N * (σ ^ 2 * γ ^ 2 * T ^ 3) = ↑N * (2 * σ ^ 2 * T + σ ^ 2 * γ ^ 2 * T ^ 3)
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:341:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.

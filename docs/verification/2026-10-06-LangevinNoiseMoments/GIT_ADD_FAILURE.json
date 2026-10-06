@@ -1,0 +1,8 @@
+{
+  "phase": "allowlisted_git_add",
+  "exit_code": 1,
+  "reason": "Original diagnostic .log paths ignored by repository .gitignore",
+  "formal_input_sha_unchanged": true,
+  "full_check_reused_for_exact_unchanged_source": true,
+  "resolution": "Force-add only the already enumerated batch allowlist; no repository-wide staging"
+}

@@ -1,0 +1,35 @@
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:36:11: error(lean.invalidField): Invalid field `congr`: The environment does not contain `WithTop.LT.congr`, so it is not possible to project the field `congr` from an expression
+  hb
+of type
+  WithTop.LT (eLpNorm (fun «ω» => B ⟨↑(projIcc 0 T hT s), ⋯⟩ «ω» i) 2 P) ∞
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:37:2: error: No goals to be solved
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:84:62: error: Type mismatch
+  projIcc_of_mem ?m.165
+has type
+  ∀ (hx : ?m.166 ∈ Icc ?m.158 ?m.159), projIcc ?m.158 ?m.159 ?m.165 ?m.166 = ⟨?m.166, hx⟩
+but is expected to have type
+  projIcc 0 T hT s = ⟨s, ⋯⟩
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:84:77: error: Application type mismatch: The argument
+  Ioc_subset_Icc_self hs
+has type
+  s ∈ Icc 0 T
+but is expected to have type
+  ?m.158 ≤ ?m.159
+in the application
+  @projIcc_of_mem ?m.156 ?m.157 ?m.158 ?m.159 (Ioc_subset_Icc_self hs)
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:114:31: error: Application type mismatch: The argument
+  projIcc_of_mem ?m.192
+has type
+  ∀ (hx : ?m.193 ∈ Icc ?m.185 ?m.186), projIcc ?m.185 ?m.186 ?m.192 ?m.193 = ⟨?m.193, hx⟩
+but is expected to have type
+  ?m.179 = ?m.180
+in the application
+  congrArg Subtype.val (projIcc_of_mem ?m.192)
+docs/verification/2026-10-06-LangevinNoiseMoments/Draft.lean:114:47: error: Application type mismatch: The argument
+  Ioc_subset_Icc_self hs
+has type
+  s ∈ Icc 0 T
+but is expected to have type
+  ?m.185 ≤ ?m.186
+in the application
+  @projIcc_of_mem ?m.183 ?m.184 ?m.185 ?m.186 (Ioc_subset_Icc_self hs)
