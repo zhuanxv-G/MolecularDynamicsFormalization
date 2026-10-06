@@ -296,3 +296,5 @@ import MolecularDynamics.Chapter06.BrownianL1ProbabilitySemigroup
 import MolecularDynamics.Chapter06.BrownianL1DensityLaw
 
 import MolecularDynamics.Chapter06.BrownianL1L2Compatibility
+
+import MolecularDynamics.Chapter06.BrownianContinuousHaarDensity

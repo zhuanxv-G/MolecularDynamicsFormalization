@@ -1,0 +1,59 @@
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:29:61: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:33:55: error(lean.unknownIdentifier): Unknown identifier `hU.continuous`
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:33:69: error(lean.unknownIdentifier): Unknown identifier `hp`
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:39:29: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:41:46: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:47:46: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ ∞ U
+of sort `Prop` but is expected to have type
+  ℝ
+of sort `Type` in the application
+  haarWeight_continuous U hU
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:47:82: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ ∞ U
+of sort `Prop` but is expected to have type
+  ℝ
+of sort `Type` in the application
+  haarWeight_pos U hU
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:52:89: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ ∞ U
+of sort `Prop` but is expected to have type
+  ℝ
+of sort `Type` in the application
+  textbookBrownianHaarRelativeContinuousDensity U hU
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:54:0: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:64:74: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ ∞ U
+of sort `Prop` but is expected to have type
+  ℝ
+of sort `Type` in the application
+  haar_ac_gibbs U hU
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:63:76: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+R : C(UnitAddTorus (Fin N), ℝ)
+⊢ textbookBrownianGibbsToHaarDensity U β (textbookBrownianHaarInitialGibbsDensity U hU hp β R) =ᵐ[ℙ] ⇑R
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:90:40: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ ∞ U
+of sort `Prop` but is expected to have type
+  ℝ
+of sort `Type` in the application
+  haarWeight_pos U hU
+docs/verification/2026-10-06-BrownianContinuousHaarDensity/Draft.lean:81:8: error: (kernel) unknown constant 'MolecularDynamics.textbookBrownianHaarInitialGibbsDensity_ae_eq'

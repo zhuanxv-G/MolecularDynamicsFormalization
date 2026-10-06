@@ -1066,3 +1066,7 @@ full-check01 passed：9135 jobs/2284公理声明/218exact inputs；10checks退�
 BrownianL1L2Compatibility / CH06-DEP-101 / NOT-CH06-110：同原Gibbs代表函数L²→L¹真连续包含及J₂/J₁相容；真实wholeA₁ I=I原closed谱T由dense连续等化证明；同初始physicalmeasure、同κlaw/5.6average、pointwise同Haar密度及真正L¹/Haar平均正canonical指数界（仅initialrelativeGibbsL²概率密度）。12public local02待fullcheck；全L¹/Dirac指数界及owner/wholepending，任意Lp不独立扩张范围。
 
 full-check01 passed：9136 jobs/2296公理声明/219exact inputs；10checks退出0、全部input/rawlog SHA匹配、12 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianContinuousHaarDensity / CH06-DEP-102 / NOT-CH06-111：真正continuousphysicalHaarR除真实positiveGibbsweight得到trueLp²，双向AC/J₂AE给sameinitialphysicalmeasure/非负质量；sameactualκlaw及真实evolvedHaar density/5.6 ratio；原exp(-βU)未规范化testnorm精确sqrtZ因子与真正原norm positiveKαuniformtestbound。18public local03统一验收中，Dirac/allL¹指数及owner/wholepending。
+
+full-check01 passed：9137 jobs/2314公理声明/220exact inputs；10checks退出0、全部input/rawlog SHA匹配、18 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

@@ -620,3 +620,5 @@ BrownianL1ProbabilitySemigroup：同原一般正质量/β>0/γ1/allNc/U C∞inte
 BrownianL1DensityLaw：同原Theorem6.1一般正质量M/β>0/γ1/allNc/currentU C∞periodic/trueWiener，原250/PDF271明确一般M恢复于Theorem6.1标题，前249/PDF270 M=I是6.46说明例。初始ρ原整个GibbsL1 AE非负/原积分1是物理输入；wholeactualL1density对偶/mass/非负及densitymeasure=同originalκlaw均从真实boundedcontinuous pairing+已验谱symmetry+真denseextension+kernelcomposition+regularmeasure唯一性/互奇异推出。原Haar density5.6ratio真实。指数界只保留已验初始GibbsL2，不将L1/Dirac指数结论暗作前提；251原初始类owner歧义/全scopepending，其他p/完整CMapcore不作独立交付。
 
 BrownianL1L2Compatibility：真probabilityGibbs measure下L²⊂L¹且同代表函数，范数≤1由真实eLpNorm指数单调得到；全演化兼容由实际CMap probability=同谱T与denseCLM连续性推出，不新增operator/law身份假设。L¹/Haar实际平均的指数界仍显式要求初始相对GibbsL²非负质量1，未将全L¹或Dirac藏入假设。一般positive masses/allNc/β>0/γ1/currentC∞periodicU和原kernel保持；owner语义及原φnorm归一化因素pending。
+
+BrownianContinuousHaarDensity：输入真实continuousHaarR AE非负/积分1，relativeGibbsL² membership由compactcontinuousR/w得出，不藏入假设；strictpositive normalized真实weight确保Haar/Gibbs双向AC，trueJ₂ AE带回原physicaldensitymeasure。原printed249 exp(-βU)weightednorm未含Z，精确inverse sqrtZ显式证明，K吸收真实因子且严格正。所有positive masses/allNc/currentC∞U及sameWiener/kernel不变。Dirac/allL¹统一指数尚未证，ownerfinal语义及C²closure解释pending。

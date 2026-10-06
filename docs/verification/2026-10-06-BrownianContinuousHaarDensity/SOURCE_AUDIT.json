@@ -1,0 +1,33 @@
+{
+  "original_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pages": [
+    {
+      "pdf_page": 270,
+      "printed_page": 249,
+      "image_sha256": "3ffa7198b974229ff4c29c31bedb6760b0b4567cb11551d5f4e15f63dd66d885",
+      "visual_checked": true
+    },
+    {
+      "pdf_page": 271,
+      "printed_page": 250,
+      "image_sha256": "9133b696bd7e98ffed31c1e371408d1f146c785eec58604f51cab286ce817de7",
+      "visual_checked": true
+    },
+    {
+      "pdf_page": 272,
+      "printed_page": 251,
+      "image_sha256": "b4211063417c2aede8c311e2d1e04780a063c67c398423acc0e66be15c4a0d5e",
+      "visual_checked": true
+    }
+  ],
+  "original_theorem_header_general_M_printed250_PDF271": true,
+  "initial_density_examples_printed249_PDF270": "Gaussian indicator Dirac",
+  "original_inner_weight_printed249_PDF270": "exp(-beta U) without inverse partition Z",
+  "original_test_norm": "sqrt full cube integral f^2 exp(-beta U)",
+  "actual_Gibbs_norm_exact_factor": "inverse sqrt Z times original test norm",
+  "original_pages_rechecked_current_batch_via_pdfplumber": true,
+  "proved_initial_class": "actual continuous physical Haar probability densities converted to genuine original Gibbs L2",
+  "same_actual_kernel_law_and_5_6": "proved_locally",
+  "all_L1_Dirac_uniform_exponential_bound": "not_proved",
+  "responsible_semantic_review": "pending"
+}
