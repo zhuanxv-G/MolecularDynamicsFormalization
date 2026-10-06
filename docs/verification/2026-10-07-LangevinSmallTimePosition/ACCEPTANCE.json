@@ -1,0 +1,181 @@
+{
+  "started_at": "2026-10-07T07:05:26.2326145+08:00",
+  "finished_at": "2026-10-07T07:06:43.6989305+08:00",
+  "head_at_check": "ecf3c5f98cbfc9a777aa627dee3b36606e1b2413",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9161,
+  "audit_declarations": 2511,
+  "inputs": 244,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_residual_square_bound_ae",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_residual_square_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_residual_memLp",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_residual_secondMoment_bound",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_residual_secondMoment_div_time_sq_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_coordinate_memLp",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_mean_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_secondMoment_div_time_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_second_product_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_second_product_div_time_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_momentum_increment_product_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_momentum_increment_product_div_time_tendsto_zero"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_residual_square_bound_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_residual_square_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_residual_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_residual_secondMoment_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_residual_secondMoment_div_time_sq_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_coordinate_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_secondMoment_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_second_product_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_increment_second_product_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_momentum_increment_product_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_momentum_increment_product_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "c58188290d3257e119d7ed2600345dbbcae22144502863da42a224388e4adbd8"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "684adbd37826914c7339e5705894c33a8156778abc8d36bac349145822cabd7d"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "d50e83e44092c5114aa64773f32a57c727749bb51f28f3aaa70a3b49d0ae24bf"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "2bf7cc50d13cb2808d2857ccb1a11f70be5d89163d2106de2ca0009df52c8962"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "8f78b8dad079c59bf4da196a1a31b23f8f02a2f5f85d55ebe8800c7eaa74d09d"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_configuration_lift": "same_actual_global_real_phase_initial_fixed_periodic_representative",
+  "true_integral_solution_q_increment_is_integrated_actual_p": true,
+  "genuine_common_ae_alltime_path_Jensen_and_Wiener_time_energy_monotonicity": true,
+  "actual_residual_square_bound": "6A_t_fourth_plus_6sigma2gamma2_t_cube_Jt_plus_2sigma2_t_Jt",
+  "actual_Wiener_time_energy_expectation": "t_square_over_two",
+  "actual_configuration_residual_memLp_two_and_secondMoment_bound": "6A_t_fourth_plus_sigma2_t_cube_plus_3sigma2gamma2_t_fifth",
+  "actual_configuration_residual_secondMoment_div_time_square_zero": true,
+  "actual_configuration_mean_div_time_limit": "original_p0_via_true_variance",
+  "actual_configuration_increment_memLp_two_and_qq_qp_products_integrable": true,
+  "actual_qq_and_qp_second_product_div_time_zero": "true_Holder_sqrt_time_normalization_and_derived_actual_diagonal_moments",
+  "target_moment_or_limit_or_generator_premise": "none",
+  "model": "same_actual_unitmass_periodic_Cinfty_U_original_B_P_gamma_positive_sigma_arbitrary_no_U_lower_no_density_or_stationarity",
+  "full_C2_actual_generator_identity": "not_proved_actual_Taylor_expectation_remainder_required",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

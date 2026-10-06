@@ -1,0 +1,16 @@
+docs/verification/2026-10-07-LangevinSmallTimePosition/Draft.lean:570:20: error: Application type mismatch: The argument
+  hp
+has type
+  Tendsto Ep (𝓝[>] 0) (𝓝 (σ ^ 2))
+but is expected to have type
+  textbookUnitPeriodicPotential U
+in the application
+  textbookLangevinPeriodicConfigurationLift_increment_coordinate_memLp B P hB U hU hp
+docs/verification/2026-10-07-LangevinSmallTimePosition/Draft.lean:572:20: error: Application type mismatch: The argument
+  hp
+has type
+  Tendsto Ep (𝓝[>] 0) (𝓝 (σ ^ 2))
+but is expected to have type
+  textbookUnitPeriodicPotential U
+in the application
+  textbookLangevinPeriodicGlobalRandomPhase_momentum_increment_coordinate_memLp B P hB U hU hp

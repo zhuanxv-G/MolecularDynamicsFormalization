@@ -1,0 +1,156 @@
+docs/verification/2026-10-07-LangevinSmallTimePosition/Draft.lean:188:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (x : ℝ) in 0..t, ((fun p => p i) ∘ p) x - ?m.1865
+in the target expression
+  textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i - textbookLangevinPeriodicRepresentative x.1 i -
+      t * x.2 i =
+    ∫ (s : ℝ) in 0..t, p s i - x.2 i
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+M : ℝ
+hM0 : 0 ≤ M
+hb :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          ∀ (i : Fin N),
+            ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i -
+                  σ * B t.toNNReal sample i) ^
+                2 ≤
+              3 * γ ^ 2 * t ^ 2 * x.2 i ^ 2 + 3 * M ^ 2 * t ^ 2 +
+                3 * (textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t i - σ * B t.toNNReal sample i) ^ 2
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := (textbookLangevinPeriodicRepresentative x.1, x.2)
+sample : Ω
+hres :
+  ∀ (t : ℝ),
+    0 ≤ t →
+      ∀ (i : Fin N),
+        ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i - σ * B t.toNNReal sample i) ^
+            2 ≤
+          3 * γ ^ 2 * t ^ 2 * x.2 i ^ 2 + 3 * M ^ 2 * t ^ 2 +
+            3 * (textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t i - σ * B t.toNNReal sample i) ^ 2
+hcont : Continuous fun t => B t sample
+hsol :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      textbookLangevinIntegralSolution U γ σ T z (fun t => B t.toNNReal sample)
+        (fun t => (textbookLangevinGlobalRandomPhase U L hF γ σ z B t sample).1) fun t =>
+        (textbookLangevinGlobalRandomPhase U L hF γ σ z B t sample).2
+t : ℝ
+ht : 0 ≤ t
+i : Fin N
+p : ℝ → Fin N → ℝ := fun s => (textbookLangevinGlobalRandomPhase U L hF γ σ z B s sample).2
+W : ℝ → Fin N → ℝ := fun s => B s.toNNReal sample
+J : ℝ → ℝ := fun s => ∫ (r : ℝ) in 0..s, W r i ^ 2
+A : ℝ := γ ^ 2 * x.2 i ^ 2 + M ^ 2
+hW : Continuous W
+hWi : Continuous fun s => W s i ^ 2
+hJ : ∀ (s : ℝ), 0 ≤ s → 0 ≤ J s
+hJmono : ∀ s ∈ Icc 0 t, J s ≤ J t
+hpcont : ContinuousOn p (Icc 0 t)
+hdcont : ContinuousOn (fun s => p s i - x.2 i) (Icc 0 t)
+hdelta : ∀ s ∈ Icc 0 t, (p s i - x.2 i) ^ 2 ≤ 6 * A * t ^ 2 + 6 * σ ^ 2 * γ ^ 2 * t * J t + 2 * σ ^ 2 * W s i ^ 2
+hpc : ContinuousOn p (uIcc 0 t)
+hproj : ∫ (x : ℝ) in 0..t, p x i = (∫ (x : ℝ) in 0..t, p x) i
+hq :
+  (textbookLangevinGlobalRandomPhase U L hF γ σ z B t sample).1 i =
+    z.1 i + (∫ (s : ℝ) in 0..t, (textbookLangevinGlobalRandomPhase U L hF γ σ z B s sample).2) i
+⊢ textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i - textbookLangevinPeriodicRepresentative x.1 i -
+      t * x.2 i =
+    ∫ (s : ℝ) in 0..t, p s i - x.2 i
+docs/verification/2026-10-07-LangevinSmallTimePosition/Draft.lean:201:6: error: Type mismatch: After simplification, term
+  ContinuousOn.pow hdcont 2
+ has type
+  @ContinuousOn ℝ ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ((fun s => p s i - x.2 i) ^ 2) (Icc 0 t)
+but is expected to have type
+  @ContinuousOn ℝ ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace (fun s => (p s i - x.2 i) ^ 2) (Icc 0 t)
+docs/verification/2026-10-07-LangevinSmallTimePosition/Draft.lean:278:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : Ω), 6 * (γ ^ 2 * x.2 i ^ 2 + M ^ 2) * T ^ 4 + ?m.810 * ∫ (s : ℝ) in 0..T, B s.toNNReal a i ^ 2 ∂P
+in the target expression
+  ∫ (x_1 : Ω),
+      (textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x x_1 i - textbookLangevinPeriodicRepresentative x.1 i -
+          T * x.2 i) ^
+        2 ∂P ≤
+    ∫ (x_1 : Ω),
+      ((fun _sample => 6 * (γ ^ 2 * x.2 i ^ 2 + M ^ 2) * T ^ 4) + fun x =>
+          (6 * σ ^ 2 * γ ^ 2 * T ^ 3 + 2 * σ ^ 2 * T) * ∫ (s : ℝ) in 0..T, B s.toNNReal x i ^ 2)
+        x_1 ∂P
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+this : IsProbabilityMeasure P
+M : ℝ
+hM0 : 0 ≤ M
+hb :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          ∀ (i : Fin N),
+            (textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+                    textbookLangevinPeriodicRepresentative x.1 i -
+                  t * x.2 i) ^
+                2 ≤
+              6 * (γ ^ 2 * x.2 i ^ 2 + M ^ 2) * t ^ 4 +
+                (6 * σ ^ 2 * γ ^ 2 * t ^ 3 + 2 * σ ^ 2 * t) * ∫ (s : ℝ) in 0..t, B s.toNNReal sample i ^ 2
+T : ℝ
+hT : 0 ≤ T
+x : textbookLangevinPeriodicPhase N
+i : Fin N
+hr :
+  Integrable
+    (fun sample =>
+      (textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+            textbookLangevinPeriodicRepresentative x.1 i -
+          T * x.2 i) ^
+        2)
+    P
+hj : Integrable (fun sample => ∫ (s : ℝ) in 0..T, B s.toNNReal sample i ^ 2) P
+hc : Integrable (fun _sample => 6 * (γ ^ 2 * x.2 i ^ 2 + M ^ 2) * T ^ 4) P
+hu :
+  Integrable
+    ((fun _sample => 6 * (γ ^ 2 * x.2 i ^ 2 + M ^ 2) * T ^ 4) + fun x =>
+      (6 * σ ^ 2 * γ ^ 2 * T ^ 3 + 2 * σ ^ 2 * T) * ∫ (s : ℝ) in 0..T, B s.toNNReal x i ^ 2)
+    P
+hh :
+  ∫ (x_1 : Ω),
+      (textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x x_1 i - textbookLangevinPeriodicRepresentative x.1 i -
+          T * x.2 i) ^
+        2 ∂P ≤
+    ∫ (x_1 : Ω),
+      ((fun _sample => 6 * (γ ^ 2 * x.2 i ^ 2 + M ^ 2) * T ^ 4) + fun x =>
+          (6 * σ ^ 2 * γ ^ 2 * T ^ 3 + 2 * σ ^ 2 * T) * ∫ (s : ℝ) in 0..T, B s.toNNReal x i ^ 2)
+        x_1 ∂P
+⊢ ∫ (sample : Ω),
+      (textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+            textbookLangevinPeriodicRepresentative x.1 i -
+          T * x.2 i) ^
+        2 ∂P ≤
+    6 * (γ ^ 2 * x.2 i ^ 2 + M ^ 2) * T ^ 4 + σ ^ 2 * T ^ 3 + 3 * σ ^ 2 * γ ^ 2 * T ^ 5
+docs/verification/2026-10-07-LangevinSmallTimePosition/Draft.lean:378:2: error: No goals to be solved
