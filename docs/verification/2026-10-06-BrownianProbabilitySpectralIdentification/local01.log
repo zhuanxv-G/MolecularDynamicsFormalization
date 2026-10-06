@@ -1,0 +1,34 @@
+docs/verification/2026-10-06-BrownianProbabilitySpectralIdentification/Draft.lean:15:65: error: unexpected token 'λ'; expected '_' or identifier
+docs/verification/2026-10-06-BrownianProbabilitySpectralIdentification/Draft.lean:123:13: error(lean.unknownIdentifier): Unknown identifier `actual_coefficient_right_ODE_eq_exp`
+docs/verification/2026-10-06-BrownianProbabilitySpectralIdentification/Draft.lean:113:83: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : (Fin N → ℝ) → ℝ
+hf : ContDiff ℝ 2 f
+hpf : textbookUnitPeriodicPotential f
+t : ℝ≥0
+j : textbookBrownianGibbsEigenIndex m U hU hp β
+F : C(UnitAddTorus (Fin N), ℝ) := textbookConfigurationContinuousObservable f ⋯ hpf
+u : ℝ → ↥(Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)) :=
+  fun s => (textbookBrownianProbabilityGibbsL2Image U hU hp β m hm hβ B P hB s.toNNReal) F
+a : ℝ → ℝ := fun s => ⟪(textbookBrownianGibbsEigenbasis m hm U hU hp β hβ) j, u s⟫_ℝ
+hu : Continuous u
+ha : Continuous a
+hd : ∀ s ∈ Ico 0 ↑t, HasDerivWithinAt a (j.fst * a s) (Ici s) s
+⊢ ⟪(textbookBrownianGibbsEigenbasis m hm U hU hp β hβ) j,
+      (textbookBrownianProbabilityGibbsL2Image U hU hp β m hm hβ B P hB t)
+        (textbookConfigurationContinuousObservable f ⋯ hpf)⟫_ℝ =
+    textbookBrownianGibbsEvolutionWeight m U hU hp β t j *
+      ⟪(textbookBrownianGibbsEigenbasis m hm U hU hp β hβ) j,
+        textbookConfigurationGibbsL2Observable U hU hp β f ⋯ hpf⟫_ℝ

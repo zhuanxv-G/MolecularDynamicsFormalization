@@ -1,0 +1,36 @@
+docs/verification/2026-10-06-BrownianProbabilitySpectralIdentification/Draft.lean:23:37: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+docs/verification/2026-10-06-BrownianProbabilitySpectralIdentification/Draft.lean:129:2: error: Type mismatch: After simplification, term
+  hh
+ has type
+  ⟪(textbookBrownianGibbsEigenbasis m hm U hU hp β hβ) j,
+      (textbookBrownianProbabilityGibbsL2Image U hU hp β m hm hβ B P hB (↑t).toNNReal)
+        (textbookConfigurationContinuousObservable f ⋯ hpf)⟫_ℝ =
+    Real.exp (j.fst * ↑t) *
+      ⟪(textbookBrownianGibbsEigenbasis m hm U hU hp β hβ) j,
+        textbookConfigurationGibbsL2Observable U hU hp β f ⋯ hpf⟫_ℝ
+but is expected to have type
+  ⟪(textbookBrownianGibbsEigenbasis m hm U hU hp β hβ) j,
+      (textbookBrownianProbabilityGibbsL2Image U hU hp β m hm hβ B P hB t)
+        (textbookConfigurationContinuousObservable f ⋯ hpf)⟫_ℝ =
+    Real.exp (j.fst * ↑t) *
+      ⟪(textbookBrownianGibbsEigenbasis m hm U hU hp β hβ) j,
+        textbookConfigurationGibbsL2Observable U hU hp β f ⋯ hpf⟫_ℝ
+docs/verification/2026-10-06-BrownianProbabilitySpectralIdentification/Draft.lean:161:32: error: Application type mismatch: The argument
+  hG
+has type
+  G ∈ {G | ContDiff ℝ ∞ fun q => G (textbookConfigurationTorusProjection q)}
+but is expected to have type
+  ContDiff ?m.165 ?m.175 ?m.173
+in the application
+  ContDiff.of_le hG
+docs/verification/2026-10-06-BrownianProbabilitySpectralIdentification/Draft.lean:161:45: error: `simp` made no progress
+docs/verification/2026-10-06-BrownianProbabilitySpectralIdentification/Draft.lean:227:2: error: Type mismatch
+  closure_minimal hs hc (textbookGibbsContinuousToLp_denseRange U hU hp β x)
+has type
+  x ∈ {x | A x = T x}
+but is expected to have type
+  ↑↑((textbookBrownianGibbsProbabilityOperator m hm U hU hp β hβ B P hB t)
+          x) =ᵐ[textbookConfigurationTorusGibbsMeasure U β]
+    ↑↑((textbookBrownianGibbsSpectralEvolution m hm U hU hp β hβ t) x)

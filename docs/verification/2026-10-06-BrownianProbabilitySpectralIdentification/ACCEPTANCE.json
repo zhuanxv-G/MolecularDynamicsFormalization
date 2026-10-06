@@ -1,0 +1,168 @@
+{
+  "started_at": "2026-10-06T20:31:01.2881253+08:00",
+  "finished_at": "2026-10-06T20:33:41.5776192+08:00",
+  "head_at_check": "d121e051dd395ce0e162cf7c2133debd7550d1ce",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9130,
+  "audit_declarations": 2217,
+  "inputs": 213,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2evolved_closed_graph",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2coefficient_hasDeriv_right",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2coefficient_eq_spectral",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2eq_spectral",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_eq_spectral",
+    "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_Gibbs_input_norm_le",
+    "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_exists",
+    "MolecularDynamics.textbookBrownianGibbsProbabilityOperator",
+    "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_spec",
+    "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_eq_spectral",
+    "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_zero",
+    "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_add",
+    "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_continuous",
+    "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_isSymmetric"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2evolved_closed_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2coefficient_hasDeriv_right",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2coefficient_eq_spectral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_C2eq_spectral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_eq_spectral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianProbabilityGibbsL2Image_Gibbs_input_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_exists",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsProbabilityOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_spec",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_eq_spectral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsProbabilityOperator_isSymmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "32661388c69bd30ff6039c83fe5ba593d72e7b521437d55487248cd8b7c30dca"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "4d787a305ac3370292267061b71498378bc64ce2c98cff4941937dad2d0d7764"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "d2075b95afc08ae2754596c5fef8e3e5ffcdfe0e3ef4537f09d448c55311d201"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e46ee7be5ba3a873553bb693fd7d3924bf253526e62f3b13d729f0f10f4d0646"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

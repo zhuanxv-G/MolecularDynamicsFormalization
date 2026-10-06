@@ -1038,3 +1038,7 @@ full-check01 passed：9128 jobs/2186公理声明/211exact inputs；10checks退�
 BrownianC2Expectation / CH06-DEP-094 / NOT-CH06-103：actualJ initial/noise jointLip/continuous和trueKjointmeasurable；原C²f实际G/H链式导数/可测与统一bound，两次dominated积分求导/二阶continuous；sameglobalq真实期待C²、sameoriginalP_t保留全C²torusspace及evolvedsameGibbsimage属真closedA.domain。17public local08通过统一验收中。actualprobability谱T识别/wholeL2input概率bound/invariance/Lp/5.6/CMapgraphcore/owner/wholepending。
 
 full-check01 passed：9129 jobs/2203公理声明/212exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianProbabilitySpectralIdentification / CH06-DEP-095 / NOT-CH06-104：sameactualP_t原C²evolvedclosedgraph/time值真身份，wholeactualeigen系数右ODE及exp解→C²range actualprobability=原谱T；真实uniformdensity→allCMap同谱身份及真正Gibbsinputnormbound，wholeL2 actual概率boundedextensionexists/selected/spec/dense唯一识别T，actualwhole zero/add/C0/symmetry。14public local04全通过统一验收中。Gibbs lawinvariance/Lp beyondL2/5.6 density真实概率law/CMapgraphcore/owner/全scopepending。
+
+full-check01 passed：9130 jobs/2217公理声明/213exact inputs；10checks退出0、全部input/rawlog SHA匹配、14 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

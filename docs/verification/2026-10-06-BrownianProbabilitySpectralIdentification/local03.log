@@ -1,0 +1,18 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-06-BrownianProbabilitySpectralIdentification/Draft.lean:21:49: error: unsolved goals
+case e'_9
+a : ℝ → ℝ
+r T : ℝ
+hT : 0 ≤ T
+hc : ContinuousOn a (Icc 0 T)
+hd : ∀ s ∈ Ico 0 T, HasDerivWithinAt a (r * a s) (Ici s) s
+v : ℝ → ℝ := fun s => Real.exp (r * s) * a 0
+hv : Continuous v
+s : ℝ
+hh : HasDerivAt (fun y => Real.exp (r * id y) * a 0) (Real.exp (r * id s) * (r * 1) * a 0) s
+⊢ r * v s = r * Real.exp (r * id s) * a 0
