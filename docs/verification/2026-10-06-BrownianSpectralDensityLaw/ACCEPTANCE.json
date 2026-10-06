@@ -1,0 +1,172 @@
+{
+  "started_at": "2026-10-06T21:08:14.9589938+08:00",
+  "finished_at": "2026-10-06T21:09:26.9262987+08:00",
+  "head_at_check": "55894f1db211fa7f39c1988b49c178bb98878d37",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9133,
+  "audit_declarations": 2246,
+  "inputs": 216,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianDensityLaw_eq_spectralDensityMeasure",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_density_nonnegative",
+    "MolecularDynamics.textbookBrownianSpectralDensityMeasure_isProbabilityMeasure",
+    "MolecularDynamics.textbookBrownianDensityAverage_eq_spectralDensityRatio",
+    "MolecularDynamics.textbookBrownianGibbsToHaarDensity",
+    "MolecularDynamics.textbookBrownianGibbsToHaarDensity_measurable",
+    "MolecularDynamics.textbookBrownianGibbsToHaarDensity_nonnegative",
+    "MolecularDynamics.textbookBrownianGibbsToHaarDensity_measure",
+    "MolecularDynamics.textbookBrownianGibbsToHaarDensity_integral",
+    "MolecularDynamics.textbookBrownianGibbsToHaarDensity_integrable",
+    "MolecularDynamics.textbookBrownianDensityLaw_eq_HaarDensityMeasure",
+    "MolecularDynamics.textbookBrownianDensityLaw_HaarDensity_nonnegative",
+    "MolecularDynamics.textbookBrownianDensityLaw_HaarDensity_mass",
+    "MolecularDynamics.textbookBrownianDensityAverage_eq_HaarDensityRatio"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityLaw_eq_spectralDensityMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_density_nonnegative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSpectralDensityMeasure_isProbabilityMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityAverage_eq_spectralDensityRatio",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsToHaarDensity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsToHaarDensity_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsToHaarDensity_nonnegative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsToHaarDensity_measure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsToHaarDensity_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsToHaarDensity_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityLaw_eq_HaarDensityMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityLaw_HaarDensity_nonnegative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityLaw_HaarDensity_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityAverage_eq_HaarDensityRatio",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "3424061b36324edb4fd9f1dfecd088c3f158559baaa9913f294d325dc776dbfe"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "761c065fe52bbe1eafc6eb5962227746f0fc81ccb961f9f144ea41065005dc3c"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "c32d82c135adf7e06e8a7dd047343d44eab7b8fc926b31834f1c9cf09e4545c7"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "b259081a7acb74ecc970079fb18140d6433d2c7c9244eb6a635ef507cae25f72"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "f44c9cdbd756c38efa13a928d67d136ae517c32503f54cd08448f7434cb45c35"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

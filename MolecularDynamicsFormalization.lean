@@ -288,3 +288,5 @@ import MolecularDynamics.Chapter06.BrownianProbabilitySpectralIdentification
 import MolecularDynamics.Chapter06.BrownianProbabilityGibbsInvariance
 
 import MolecularDynamics.Chapter06.BrownianProbabilityDensityAverage
+
+import MolecularDynamics.Chapter06.BrownianSpectralDensityLaw

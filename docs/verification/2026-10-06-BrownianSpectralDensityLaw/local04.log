@@ -1,0 +1,27 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-06-BrownianSpectralDensityLaw/Draft.lean:166:2: error: 'change' tactic failed, pattern
+  ℙ ≪ ℙ.withDensity fun Q => ENNReal.ofReal (gibbsHaarWeight U β Q)
+is not definitionally equal to target
+  ℙ ≪ textbookConfigurationTorusGibbsMeasure U β
+docs/verification/2026-10-06-BrownianSpectralDensityLaw/Draft.lean:191:5: error(lean.unknownIdentifier): Unknown identifier `ae_le_iff_absolutelyContinuous.mpr`
+docs/verification/2026-10-06-BrownianSpectralDensityLaw/Draft.lean:202:2: error: 'change' tactic failed, pattern
+  ((ℙ.withDensity fun Q => ENNReal.ofReal (gibbsHaarWeight U β Q)).withDensity fun Q => ENNReal.ofReal (↑↑x Q)) =
+    ℙ.withDensity fun Q => ENNReal.ofReal (gibbsHaarWeight U β Q * ↑↑x Q)
+is not definitionally equal to target
+  textbookBrownianInitialDensityMeasure U β x =
+    ℙ.withDensity fun Q => ENNReal.ofReal (textbookBrownianGibbsToHaarDensity U β x Q)
+docs/verification/2026-10-06-BrownianSpectralDensityLaw/Draft.lean:218:2: error: 'change' tactic failed, pattern
+  (∫ (Q : UnitAddTorus (Fin N)), F Q * ↑↑x Q ∂ℙ.withDensity fun Q => ENNReal.ofReal (gibbsHaarWeight U β Q)) =
+    ∫ (Q : UnitAddTorus (Fin N)), F Q * (gibbsHaarWeight U β Q * ↑↑x Q)
+is not definitionally equal to target
+  ∫ (Q : UnitAddTorus (Fin N)), F Q * ↑↑x Q ∂textbookConfigurationTorusGibbsMeasure U β =
+    ∫ (Q : UnitAddTorus (Fin N)), F Q * textbookBrownianGibbsToHaarDensity U β x Q
+docs/verification/2026-10-06-BrownianSpectralDensityLaw/Draft.lean:234:2: error: 'change' tactic failed, pattern
+  Integrable (↑↑x) (ℙ.withDensity fun Q => ENNReal.ofReal (gibbsHaarWeight U β Q))
+is not definitionally equal to target
+  Integrable (↑↑x) (textbookConfigurationTorusGibbsMeasure U β)

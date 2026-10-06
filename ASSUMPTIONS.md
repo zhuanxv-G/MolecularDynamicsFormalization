@@ -612,3 +612,5 @@ BrownianProbabilitySpectralIdentification：同原positive masses/β>0/γ1/allNc
 BrownianProbabilityGibbsInvariance：同原positive masses/β>0/γ1/allNc/U currentC∞periodic/actualWienervector，actualkernelIsMarkov与originalGibbs probability均已证，不变性由真正概率谱身份/JAE/原compacttorus积分measure唯一性推导；不新增stationarylaw假设。真实kernel推动完整测度，非仅spectral常数mode。ownersemanticpending，5.6initialdensity law期待桥接仍未证明。
 
 BrownianProbabilityDensityAverage：一般正质量/β>0/γ1/allNc/currentU C∞periodic/trueWiener。初始ρ整个原GibbsL2且AE非负、∫ρdµ=1为明确物理输入，不把evolvedlaw=spectral或指数结论藏作前提。原(5.6)为时变分布归一平均、真实law为sameκ∘ₘµ.withDensity(ofRealρ)；真实期待由kernel/Bochner/JAE/已验概率谱身份及T对偶推导。初始L2relativeGibbs限制真实登记，尚非任意初始measure版；谱density positivity/measure身份、ownersemantic及全scope待补。
+
+BrownianSpectralDensityLaw：同原正质量/β>0/γ1/allNc/currentU C∞periodic/trueWiener、初始整个GibbsL2 AE非负/原质量1。谱density非负及densitymeasure=actuallaw均从真实continuous期待和finite regular正负measure唯一性/互奇异导出，绝非假设。原Haar local实例明确沿用AddCircle.haarAddCircle，真positive Gibbsweight给Haar≪Gibbs，两次withDensity乘积连接physicaldensity w*Tρ和actualsameκlaw；真实flatHaar5.6ratio。初始L2限制/ownersemantic/超L2/全scope待补。

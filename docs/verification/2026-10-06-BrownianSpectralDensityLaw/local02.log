@@ -1,0 +1,41 @@
+docs/verification/2026-10-06-BrownianSpectralDensityLaw/Draft.lean:53:6: error: Type mismatch: After simplification, term
+  (integrable_withDensity_iff_integrable_smul' (Measurable.ennreal_ofReal (Measurable.neg hxm))
+        (Eventually.of_forall fun x_1 => ENNReal.ofReal_lt_top)).mp
+    (have this := CompactlySupportedContinuousMap.integrable F;
+    this)
+ has type
+  Integrable (fun x_1 => F x_1 * (ENNReal.ofReal ((-↑↑x) x_1)).toReal) μ
+but is expected to have type
+  Integrable (fun Q => (ENNReal.ofReal (-↑↑x Q)).toReal * F Q) μ
+docs/verification/2026-10-06-BrownianSpectralDensityLaw/Draft.lean:62:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (x : UnitAddTorus (Fin N)), ?g x ∂Measure.withDensity ?m.406 fun x_1 => ENNReal.ofReal ((-↑↑x) x_1)
+in the target expression
+  (∫ (Q : UnitAddTorus (Fin N)), F Q * ↑↑x Q ∂μ +
+      ∫ (Q : UnitAddTorus (Fin N)), F Q ∂μ.withDensity fun Q => ENNReal.ofReal (-↑↑x Q)) =
+    ∫ (Q : UnitAddTorus (Fin N)), F Q ∂μ.withDensity fun Q => ENNReal.ofReal (↑↑x Q)
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+x : ↥(Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β))
+ν : Measure (UnitAddTorus (Fin N))
+inst✝ : IsFiniteMeasure ν
+he :
+  ∀ (F : C(UnitAddTorus (Fin N), ℝ)),
+    ∫ (Q : UnitAddTorus (Fin N)), F Q ∂ν =
+      ∫ (Q : UnitAddTorus (Fin N)), F Q * ↑↑x Q ∂textbookConfigurationTorusGibbsMeasure U β
+μ : Measure (UnitAddTorus (Fin N)) := textbookConfigurationTorusGibbsMeasure U β
+νp : Measure (UnitAddTorus (Fin N)) := μ.withDensity fun Q => ENNReal.ofReal (↑↑x Q)
+νn : Measure (UnitAddTorus (Fin N)) := μ.withDensity fun Q => ENNReal.ofReal (-↑↑x Q)
+hx : Integrable (↑↑x) μ
+hxm : Measurable ↑↑x
+this✝ : IsFiniteMeasure νp
+this : IsFiniteMeasure νn
+F : CompactlySupportedContinuousMap (UnitAddTorus (Fin N)) ℝ
+hneg : Integrable (fun Q => F Q * (ENNReal.ofReal (-↑↑x Q)).toReal) μ
+hprod : Integrable (fun Q => F Q * ↑↑x Q) μ
+⊢ (∫ (Q : UnitAddTorus (Fin N)), F Q * ↑↑x Q ∂μ +
+      ∫ (Q : UnitAddTorus (Fin N)), F Q ∂μ.withDensity fun Q => ENNReal.ofReal (-↑↑x Q)) =
+    ∫ (Q : UnitAddTorus (Fin N)), F Q ∂μ.withDensity fun Q => ENNReal.ofReal (↑↑x Q)

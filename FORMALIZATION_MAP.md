@@ -1050,3 +1050,7 @@ full-check01 passed：9131 jobs/2220公理声明/214exact inputs；10checks退�
 BrownianProbabilityDensityAverage / CH06-DEP-097 / NOT-CH06-106：真实L2 Gibbs-relative初始ρ AE非负/积分1定义初始probability，其sameactualκ_t law是probability，actuallaw连续期待等于actualP_t原初始density期待/原globalq期待/真实T_tρ配对，actual5.6 law平均分母1与同原canonical正Kα指数界。12public local03统一验收中；谱density非负/measure身份及超L2/owner/whole仍pending。
 
 full-check01 passed：9132 jobs/2232公理声明/215exact inputs；10checks退出0、全部input/rawlog SHA匹配、12 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianSpectralDensityLaw / CH06-DEP-098 / NOT-CH06-107：真实actuallaw期待 via finite regular positive/negativepart measure唯一性推出Tρ AE非负、sameµ.withDensity(Tρ)=同原κlaw；真实原Haar weight/x密度可测可积非负/measure及integral identity，actualκlaw真实Haar density/质量1与literal5.6flatHaar积分ratio。14public local05统一验收中；初始L2限制保留，超L2/完整CMapgraphcore/owner/whole仍pending。
+
+full-check01 passed：9133 jobs/2246公理声明/216exact inputs；10checks退出0、全部input/rawlog SHA匹配、14 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
