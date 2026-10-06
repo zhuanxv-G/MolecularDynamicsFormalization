@@ -1,0 +1,20 @@
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:35:96: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+i : Fin N
+l : ℕ
+s : ℝ
+this : IsProbabilityMeasure P
+⊢ ¬2 * ↑l = ∞
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:116:33: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω

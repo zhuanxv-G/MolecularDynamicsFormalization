@@ -1,0 +1,103 @@
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:35:125: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+i : Fin N
+l : ℕ
+s : ℝ
+this : IsProbabilityMeasure P
+⊢ ¬?m.110 = ∞
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:35:139: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+i : Fin N
+l : ℕ
+s : ℝ
+this : IsProbabilityMeasure P
+⊢ ¬?m.111 = ∞
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:140:33: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  |?x ^ 2|
+in the target expression
+  (a ^ 2) ^ l = (|a| ^ 2) ^ l
+
+a : ℝ
+l : ℕ
+⊢ (a ^ 2) ^ l = (|a| ^ 2) ^ l
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:172:36: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+γ σ T : ℝ
+hγ : 0 ≤ γ
+hT : 0 ≤ T
+i : Fin N
+l : ℕ
+this : IsProbabilityMeasure P
+⊢ ¬?m.98 = ∞
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:172:50: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+γ σ T : ℝ
+hγ : 0 ≤ γ
+hT : 0 ≤ T
+i : Fin N
+l : ℕ
+this : IsProbabilityMeasure P
+⊢ ¬?m.99 = ∞
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:190:40: error(lean.unknownIdentifier): Unknown constant `Real.continuous_toNNReal`
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:211:34: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+γ σ T : ℝ
+hγ : 0 ≤ γ
+hT : 0 ≤ T
+i : Fin N
+l : ℕ
+hl : 1 ≤ l
+hm : AEStronglyMeasurable (fun sample => textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T i) P
+hn : 2 * l ≠ 0
+⊢ ¬?m.76 = ∞
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:211:48: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+γ σ T : ℝ
+hγ : 0 ≤ γ
+hT : 0 ≤ T
+i : Fin N
+l : ℕ
+hl : 1 ≤ l
+hm : AEStronglyMeasurable (fun sample => textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T i) P
+hn : 2 * l ≠ 0
+⊢ ¬?m.77 = ∞
+docs/verification/2026-10-07-LangevinNoiseHigherMoments/Draft.lean:255:8: error: Type mismatch: After simplification, term
+  h
+ has type
+  |f sample i| ^ 2 ≤ ‖f sample‖ ^ 2
+but is expected to have type
+  f sample i ^ 2 ≤ ‖f sample‖ ^ 2

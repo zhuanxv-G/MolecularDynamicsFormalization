@@ -1092,3 +1092,7 @@ full-check01 passed：9141 jobs/2366公理声明/224exact inputs；10checks退�
 LangevinHamiltonianDrift / CH06-DEP-107 / NOT-CH06-116：same真实Duhamel物理square sum保留初值sum、实际P动量/Hamiltonian可积及真期待漂移；sameactualκ map可积/期待identity；t=log6/γ>0真实l1 skeleton H/2+D及samepositiveproperH。11public local02退出0零warning空日志，统一验收中；higherH^l/连续generator/实际density/Harris/owner/wholepending。
 
 full-check01 passed：9142 jobs/2377公理声明/225exact inputs；10checks退出0、全部input/rawlog SHA匹配、11public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。same实际κ在真正正时间l1物理Hamiltonian期待H/2+D及positiveproperH已机器验证，owner semanticpending，Theorem6.2整体未完成。
+
+LangevinNoiseHigherMoments / CH06-DEP-108 / NOT-CH06-117：same真实Wiener coordinate2l norm-time-energy实际Gaussian√time/Fubini可积、真实Jensen及已验ξ平方界→actualnoise coordinate/vector2l及literal physicalsquare sum^l可积；sameactualprocess momentum2l、physicalsquare sum^l与originalH^l process/κ可积。9public local03零warning空日志，统一验收中；高次漂移/continuousgenerator/density/Harris/ownerpending。
+
+full-check01 passed：9143 jobs/2386公理声明/226exact inputs；10checks退出0、全部input/rawlog SHA匹配、9public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。same实际ξ的2l矩/物理square sum^l及originalH^l对actualprocess与κ可积已机器验证，owner semanticpending，Theorem6.2整体未完成。

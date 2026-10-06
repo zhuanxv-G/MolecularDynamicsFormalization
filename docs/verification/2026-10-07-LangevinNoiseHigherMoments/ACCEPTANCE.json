@@ -1,0 +1,123 @@
+{
+  "started_at": "2026-10-07T01:03:58.8902418+08:00",
+  "finished_at": "2026-10-07T01:11:15.058182+08:00",
+  "head_at_check": "e60763934fe77b1d0373ca1b1cc5ead139c6da10",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9143,
+  "audit_declarations": 2386,
+  "inputs": 226,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookWienerVector_coordinate_time_even_norm_power_integrable",
+    "MolecularDynamics.textbookLangevinDampedNoise_coordinate_even_norm_power_integrable",
+    "MolecularDynamics.textbookLangevinDampedNoise_coordinate_memLp_even",
+    "MolecularDynamics.textbookLangevinDampedNoise_memLp_even",
+    "MolecularDynamics.textbookLangevinDampedNoise_physical_energy_power_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_memLp_even",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_square_sum_power_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_integrable"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookWienerVector_coordinate_time_even_norm_power_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_coordinate_even_norm_power_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_coordinate_memLp_even",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_memLp_even",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_physical_energy_power_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_memLp_even",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_square_sum_power_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "8480dc74acc9cc3524f2285fe7e1e2d6509db36445b05c9c83539978a99cb965"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "c9fde8e0fda3df2bc30b0f8139f8c1e1c4b7f73005b2d3e50261c2e30586bec1"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "57b2f8f89ecf0590701a0004a145176ca1fff220fc8f8d08a98ce5c72dd22c90"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_even_noise_moments_and_same_process_kernel_original_Hamiltonian_power_integrability": true,
+  "Hamiltonian_power_l": "all_integers_l_at_least_one",
+  "higher_Hamiltonian_kernel_drift_and_continuous_generator_identity": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
