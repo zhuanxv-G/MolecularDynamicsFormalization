@@ -584,3 +584,5 @@ BrownianSecondMomentEstimates：原m正性/β正性/γ1/任意Nc、U C∞integer
 BrownianFourthMomentEstimates：原m正性/β正性/γ1/任意Nc、U C∞integerperiodic及真实Wiener B/P与sameglobalq。标准Gaussian和actualnoise第四矩可积、真实time sqrt pushforward、actualD bound与sameq Lp及原noisevariance均证明/已接受依赖；真正有限Pi norm和Holder推出所有highmoment rates，不引入highmoment/Taylor目标前提。原C²vs当前C∞core负责人及完整概率generator/spectralT/5.6/Gibbsinvariance仍pending。
 
 BrownianObservableTaylor：原m正性/β正性/γ1/任意Nc、U和observable f C∞ integerperiodic、trueWiener B/P及sameglobalq。真实jets周期和compactcube导出全阶bound，真实多元Taylor积分和multilinear norm推cubicbound；truefiniteLp3/AEmeas/moment rate导出实际余项可积/期待及商极限。全阶bound/余项界及极限不作为模型前提；原C²vsC∞core、wholeactualgenerator/谱T/5.6/Gibbsinvariance负责人pending。
+
+BrownianGeneratorExpectation：原正质量/β>0/γ1/任意Nc、U与f C∞整数周期、sameglobalq及真实Wiener/P。原partial/Hessian实际微分和finitecoord identity推导，actualf(q)/quadratic/Taylor项可积显式证明，再使用真正first/crosssecond/rem概率极限导出originalgenerator逐初值期待商。无generator/law/目标前提。wholeuniform CMap generator、概率operator=Gibbs谱T及5.6/Gibbsinvariance/Lp、C²core负责人签核未完成。

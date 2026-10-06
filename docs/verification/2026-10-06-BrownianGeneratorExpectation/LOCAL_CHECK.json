@@ -1,0 +1,33 @@
+{
+  "draft_path": "docs/verification/2026-10-06-BrownianGeneratorExpectation/Draft.lean",
+  "source_path": "MolecularDynamics/Chapter06/BrownianGeneratorExpectation.lean",
+  "draft_sha256": "fe2f111a1edbc25e19f11e9fe29e325fd5322d4f1f53450a63fcc94e5c8ab4f4",
+  "source_sha256": "fe2f111a1edbc25e19f11e9fe29e325fd5322d4f1f53450a63fcc94e5c8ab4f4",
+  "local_check_log": "local03.log",
+  "local_check_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "local_exit_code": 0,
+  "local_lean_warnings": 0,
+  "public_declarations": [
+    "MolecularDynamics.textbookConfigurationPartial_fderiv_coordinate_sum",
+    "MolecularDynamics.textbookConfigurationPartial_second_fderiv_entry",
+    "MolecularDynamics.textbookConfigurationPartial_second_coordinate_sum",
+    "MolecularDynamics.textbookBrownianGenerator_original_Taylor_coefficients",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_integrable",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_quadratic_observable_integrable",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_expectation_Taylor",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_generator_tendsto"
+  ],
+  "exact_source_copy_verified": true,
+  "local_check_reused_for_exact_formal_copy": true,
+  "actual_coordinate_Hessian_and_original_mass_generator_coefficients": "proved_locally",
+  "actual_observable_integrability_and_true_Taylor_expectation_expansion": "proved_locally",
+  "same_actual_probability_pointwise_original_generator_limit": "proved_locally",
+  "uniform_CMap_generator": "not_proved",
+  "stochastic_generator": "pointwise_actual_probability_limit_proved_locally",
+  "sde_law_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete",
+  "integrated": true,
+  "full_check": "pending"
+}

@@ -994,3 +994,7 @@ full-check01 passed：9117 jobs/2052公理声明/200exact inputs；10checks退�
 BrownianObservableTaylor / CH06-DEP-083 / NOT-CH06-092：原周期observable全部actualjets周期/globalbound，literal二阶TaylorRemainder真多元积分及derivedcubicbound/continuity；sameactualq literal remainder真实可积/uniform E norm≤C t sqrt t，expectednorm/t与signed expectation/t→0。11public local04通过统一验收中；完整actualgenerator/谱T/5.6/Gibbsinvariance/core负责人/wholepending。
 
 full-check01 passed：9118 jobs/2063公理声明/201exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianGeneratorExpectation / CH06-DEP-084 / NOT-CH06-093：真Frechet/原coord partial一二阶/Hessian展开和literal原mass generatorcoeff identity；sameactualq f(q)/quadratic真可积及真实概率期待Taylor展开，truefirstmean/crosssecond/rem quotient实际极限推出全初值原smoothperiodic f的actual(Ef(q_t)-f(x))/t→literal原生成元。8public local03通过统一验收中；uniformCMap generator/actualprobability=Gibbs谱T/5.6/Gibbsinvariance/Lp/core负责人/wholepending。
+
+full-check01 passed：9119 jobs/2071公理声明/202exact inputs；10checks退出0、全部input/rawlog SHA匹配、8 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

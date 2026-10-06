@@ -1,0 +1,59 @@
+docs/verification/2026-10-06-BrownianGeneratorExpectation/Draft.lean:167:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : Ω), ((fun a => (fderiv ℝ f x) (X a)) + fun x => 2⁻¹ * Q x) a + R a ∂P
+in the target expression
+  ∫ (sample : Ω), (fderiv ℝ f x) (X sample) + 2⁻¹ * Q sample + R sample ∂P =
+    (fderiv ℝ f x) (∫ (sample : Ω), textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x ∂P) +
+        2⁻¹ *
+          ∑ i,
+            ∑ j,
+              textbookConfigurationPartial (textbookConfigurationPartial f j) i x *
+                ∫ (sample : Ω),
+                  (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) i *
+                    (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) j ∂P +
+      ∫ (sample : Ω), textbookBrownianGlobalObservableTaylorRemainder m hm U hU hPU β hβ B f x t sample ∂P
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hpf : textbookUnitPeriodicPotential f
+x : Fin Nc → ℝ
+t : ℝ
+ht : 0 ≤ t
+this : IsProbabilityMeasure P
+X : Ω → Fin Nc → ℝ := fun sample => textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x
+H : Fin Nc → Fin Nc → ℝ := fun i j => textbookConfigurationPartial (textbookConfigurationPartial f j) i x
+Q : Ω → ℝ := fun sample => ∑ i, ∑ j, H i j * (X sample i * X sample j)
+R : Ω → ℝ := textbookBrownianGlobalObservableTaylorRemainder m hm U hU hPU β hβ B f x t
+hiX : Integrable X P
+hiL : Integrable (fun a => (fderiv ℝ f x) (X a)) P
+hiQ : Integrable Q P
+hiR : Integrable R P
+hiF : Integrable (fun sample => f (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample)) P
+hiTerm : ∀ (i j : Fin Nc), Integrable (fun sample => H i j * (X sample i * X sample j)) P
+he :
+  ∀ (sample : Ω),
+    f (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample) - f x =
+      (fderiv ℝ f x) (X sample) + 2⁻¹ * Q sample + R sample
+hQint : ∫ (sample : Ω), Q sample ∂P = ∑ i, ∑ j, H i j * ∫ (sample : Ω), X sample i * X sample j ∂P
+⊢ ∫ (sample : Ω), (fderiv ℝ f x) (X sample) + 2⁻¹ * Q sample + R sample ∂P =
+    (fderiv ℝ f x) (∫ (sample : Ω), textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x ∂P) +
+        2⁻¹ *
+          ∑ i,
+            ∑ j,
+              textbookConfigurationPartial (textbookConfigurationPartial f j) i x *
+                ∫ (sample : Ω),
+                  (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) i *
+                    (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) j ∂P +
+      ∫ (sample : Ω), textbookBrownianGlobalObservableTaylorRemainder m hm U hU hPU β hβ B f x t sample ∂P

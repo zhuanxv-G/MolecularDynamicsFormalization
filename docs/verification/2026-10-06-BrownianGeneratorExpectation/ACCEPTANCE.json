@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-10-06T16:37:39.7120248+08:00",
+  "finished_at": "2026-10-06T16:38:51.9387435+08:00",
+  "head_at_check": "9f233c14d834a346ff2e1fc55e5ee00a1ae9884a",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9119,
+  "audit_declarations": 2071,
+  "inputs": 202,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationPartial_fderiv_coordinate_sum",
+    "MolecularDynamics.textbookConfigurationPartial_second_fderiv_entry",
+    "MolecularDynamics.textbookConfigurationPartial_second_coordinate_sum",
+    "MolecularDynamics.textbookBrownianGenerator_original_Taylor_coefficients",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_integrable",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_quadratic_observable_integrable",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_expectation_Taylor",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_generator_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial_fderiv_coordinate_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial_second_fderiv_entry",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationPartial_second_coordinate_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGenerator_original_Taylor_coefficients",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_quadratic_observable_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_expectation_Taylor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_observable_generator_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "90fd2b0452ce110241a6250208385ae87e8150c1e2387a34e26f6e99b77e12b4"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "57c9cab70710646853e32a0a94be7c2642269131ae9f54f30576e7e02fa365d5"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e0bf5b37d2ccb6d71dc5e8b1656d236bd5c8b8d546c4d2043a750c8fc2888b94"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
