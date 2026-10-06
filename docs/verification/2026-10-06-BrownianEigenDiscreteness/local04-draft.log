@@ -1,0 +1,20 @@
+docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean:171:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun j => j.fst) j
+in the target expression
+  a ≤ j.fst
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+a : ℝ
+hf : {j | a ≤ j.fst}.Finite
+ℓ : ℝ
+hℓ : ℓ ∈ {ℓ | ℓ ∈ textbookBrownianGibbsGeneratorRealSpectrum m U hU hPU β ∧ a ≤ ℓ}
+j : textbookBrownianGibbsEigenIndex m U hU hPU β
+hj : (fun j => j.fst) j = ℓ
+⊢ a ≤ j.fst

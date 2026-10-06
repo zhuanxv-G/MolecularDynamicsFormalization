@@ -1,0 +1,45 @@
+docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean:45:15: error: typeclass instance problem is stuck
+  InnerProductSpace ?m.316 ↥(MolecularDynamics.Gibbs✝ U β)
+
+Note: Lean will not try to resolve this typeclass instance problem because the first and third type arguments to `InnerProductSpace` are metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean:63:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  dist (center j) ?y
+in the target expression
+  dist (R (b ↑j)) (R (b ↑k)) ≤ dist (R (b ↑j)) ↑(center j) + dist (↑(center j)) (R (b ↑k))
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+ε : ℝ
+hε : 0 < ε
+b : HilbertBasis (textbookBrownianGibbsEigenIndex m U hU hPU β) ℝ ↥(MolecularDynamics.Gibbs✝ U β) :=
+  textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ
+R : ↥(MolecularDynamics.Gibbs✝ U β) →L[ℝ] ↥(MolecularDynamics.Gibbs✝ U β) :=
+  textbookBrownianGibbsResolvent m U hU hPU β hm hβ
+S : Set (textbookBrownianGibbsEigenIndex m U hU hPU β) := {j | ε ≤ (1 - j.fst)⁻¹}
+K : Set ↥(MolecularDynamics.Gibbs✝ U β)
+hK : IsCompact K
+hRK : ⇑↑(textbookBrownianGibbsResolvent m U hU hPU β hm hβ) '' Metric.closedBall 0 1 ⊆ K
+hmem : ∀ (j : textbookBrownianGibbsEigenIndex m U hU hPU β), R (b j) ∈ K
+hsep : ∀ (j k : ↑S), j ≠ k → ε ≤ dist (R (b ↑j)) (R (b ↑k))
+t : Set ↥(MolecularDynamics.Gibbs✝ U β)
+left✝ : t ⊆ K
+ht : t.Finite
+hcover : K ⊆ ⋃ y ∈ t, Metric.ball y (ε / 3)
+center : ↑S → ↑t
+hcenter : ∀ (j : ↑S), dist (R (b ↑j)) ↑(center j) < ε / 3
+j k : ↑S
+h : center j = center k
+hne : ¬j = k
+hj : dist (R (b ↑j)) ↑(center j) < ε / 3
+hk : dist (R (b ↑k)) ↑(center j) < ε / 3
+hd : dist (R (b ↑j)) (R (b ↑k)) ≤ dist (R (b ↑j)) ↑(center j) + dist (↑(center j)) (R (b ↑k))
+⊢ False
+docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean:82:4: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead

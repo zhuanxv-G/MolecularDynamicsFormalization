@@ -1,0 +1,7 @@
+isDiscrete_iff_forall_mem_exists_isOpen.{u_2} {Y : Type u_2} [TopologicalSpace Y] {s : Set Y} :
+  IsDiscrete s ↔ ∀ y ∈ s, ∃ u, IsOpen u ∧ u ∩ s = {y}
+Set.Finite.diff.{u} {α : Type u} {s t : Set α} (hs : s.Finite) : (s \ t).Finite
+Set.Finite.isClosed.{u_1} {X : Type u_1} [TopologicalSpace X] [T1Space X] {s : Set X} (hs : s.Finite) : IsClosed s
+isOpen_compl_iff.{u} {X : Type u} {s : Set X} [TopologicalSpace X] : IsOpen sᶜ ↔ IsClosed s
+isOpen_iff_mem_nhds.{u} {X : Type u} [TopologicalSpace X] {s : Set X} : IsOpen s ↔ ∀ x ∈ s, s ∈ nhds x
+IsOpen.mem_nhds.{u} {X : Type u} [TopologicalSpace X] {x : X} {s : Set X} (hs : IsOpen s) (hx : x ∈ s) : s ∈ nhds x

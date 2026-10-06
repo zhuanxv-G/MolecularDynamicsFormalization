@@ -1,0 +1,11 @@
+docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean:195:25: warning: `Set.Finite.diff` has been deprecated: Use `Set.Finite.sdiff` instead
+docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean:195:22: error: Function expected at
+  Set.Finite.diff hf
+but this term has type
+  (F \ ?m.97).Finite
+
+Note: Expected a function because this term is being applied to the argument
+  { ℓ }
+docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean:206:23: error(lean.unknownIdentifier): Unknown identifier `ℓ`
+docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean:206:31: error(lean.unknownIdentifier): Unknown identifier `ℓ`
+docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean:208:32: error(lean.unknownIdentifier): Unknown identifier `ℓ`

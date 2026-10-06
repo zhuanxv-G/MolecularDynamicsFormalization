@@ -1,0 +1,29 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean",
+  "source_sha256": "4c12f4d8efbcb92b7588a1a5d0de82a29e4a638ae1e1a8155a4a3141ac11d0d0",
+  "log": "docs/verification/2026-10-06-BrownianEigenDiscreteness/local07-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public": [
+    "MolecularDynamics.textbookBrownianGibbsEigenbasis_finite_resolvent_levels",
+    "MolecularDynamics.textbookBrownianGibbsEigenbasis_resolvent_weights_tendsto",
+    "MolecularDynamics.textbookBrownianGibbsEigenbasis_finite_generator_levels",
+    "MolecularDynamics.textbookBrownianGibbsEigenbasis_eigenvalues_tendsto_atBot",
+    "MolecularDynamics.textbookBrownianGibbsEigenIndex_countable",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_eq_eigenbasis_range",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_finite_levels",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_countable",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_isDiscrete",
+    "MolecularDynamics.textbookBrownianGibbsGeneratorRealSpectrum_isClosed"
+  ],
+  "actual_whole_generator_real_spectrum_closed_discrete_countable": "proved_locally",
+  "actual_basis_cofinite_escape_and_finite_multiplicity_levels": "proved_locally",
+  "ordered_natural_index_enumeration": "incomplete",
+  "Nc_zero": "finite_case_permitted_cofinite_limit_may_be_vacuous",
+  "complex_spectrum": "not_claimed",
+  "actual_SDE_probability_expectation": "incomplete",
+  "integrated": false,
+  "full_check": "not_run",
+  "responsible_semantic_review": "pending"
+}

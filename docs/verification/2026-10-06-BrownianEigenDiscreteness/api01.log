@@ -1,0 +1,21 @@
+IsCompactOperator.image_closedBall_subset_compact.{u_1, u_2, u_3, u_4} {𝕜₁ : Type u_1} {𝕜₂ : Type u_2}
+  [NontriviallyNormedField 𝕜₁] [SeminormedRing 𝕜₂] {σ₁₂ : 𝕜₁ →+* 𝕜₂} {M₁ : Type u_3} {M₂ : Type u_4}
+  [SeminormedAddCommGroup M₁] [TopologicalSpace M₂] [AddCommMonoid M₂] [NormedSpace 𝕜₁ M₁] [Module 𝕜₂ M₂]
+  [ContinuousConstSMul 𝕜₂ M₂] {f : M₁ →ₛₗ[σ₁₂] M₂} (hf : IsCompactOperator ⇑f) (r : ℝ) :
+  ∃ K, IsCompact K ∧ ⇑f '' Metric.closedBall 0 r ⊆ K
+Metric.finite_approx_of_totallyBounded.{u} {α : Type u} [PseudoMetricSpace α] {s : Set α} (hs : TotallyBounded s)
+  (ε : ℝ) : ε > 0 → ∃ t ⊆ s, t.Finite ∧ s ⊆ ⋃ y ∈ t, Metric.ball y ε
+Orthonormal.inner_eq_zero.{u_1, u_2, u_4} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [SeminormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] {ι : Type u_4} {v : ι → E} {i j : ι} (h : Orthonormal 𝕜 v) (hij : i ≠ j) :
+  inner 𝕜 (v i) (v j) = 0
+norm_inner_le_norm.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [SeminormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] (x y : E) : ‖inner 𝕜 x y‖ ≤ ‖x‖ * ‖y‖
+Finite.of_injective.{u_3, u_4} {α : Sort u_3} {β : Sort u_4} [Finite β] (f : α → β) (H : Function.Injective f) :
+  Finite α
+Set.Finite.to_subtype.{u} {α : Type u} {s : Set α} (h : s.Finite) : Finite ↑s
+Set.Finite.compl_mem_cofinite.{u_2} {α : Type u_2} {s : Set α} (hs : s.Finite) : sᶜ ∈ Filter.cofinite
+Metric.tendsto_nhds.{u, v} {α : Type u} {β : Type v} [PseudoMetricSpace α] {f : Filter β} {u : β → α} {a : α} :
+  Filter.Tendsto u f (nhds a) ↔ ∀ ε > 0, ∀ᶠ (x : β) in f, dist (u x) a < ε
+lp.ext.{u_3, u_4} {α : Type u_3} {E : α → Type u_4} {p : ENNReal} [(i : α) → NormedAddCommGroup (E i)] {f g : ↥(lp E p)}
+  (h : ↑f = ↑g) : f = g
+Set.finite_coe_iff.{u} {α : Type u} {s : Set α} : Finite ↑s ↔ s.Finite

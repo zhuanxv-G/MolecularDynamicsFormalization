@@ -1,0 +1,39 @@
+{
+  "fixed_lean": "4.34.0",
+  "fixed_mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "api_checks": 25,
+  "checks": [
+    {
+      "source": "docs/verification/2026-10-06-BrownianEigenDiscreteness/ApiProbe.lean",
+      "source_sha256": "e9c68e360aa248499c56bbdc29a5f3d3bd0da153322f4cc7c9c40fa9db287f37",
+      "log": "docs/verification/2026-10-06-BrownianEigenDiscreteness/api01.log",
+      "log_sha256": "028463a8946961c9dbde9501093505fc3d9ea16cc611e5e157b7558109abe651",
+      "exit_code": 0,
+      "lean_warnings": 0
+    },
+    {
+      "source": "docs/verification/2026-10-06-BrownianEigenDiscreteness/ApiProbe2.lean",
+      "source_sha256": "8528d726f8291dfc44e1553ecc6fd18818c27934d4262f696afa73d479890ba5",
+      "log": "docs/verification/2026-10-06-BrownianEigenDiscreteness/api02.log",
+      "log_sha256": "156429d861d76fd3297d8658888e0b8264bf43f7f524657b6ae4fc4a0591238d",
+      "exit_code": 0,
+      "lean_warnings": 0
+    },
+    {
+      "source": "docs/verification/2026-10-06-BrownianEigenDiscreteness/ApiProbe3.lean",
+      "source_sha256": "2d6eff0d1697e81d0620aa3b8d471a236699954ccd058795fa842443bf7349b4",
+      "log": "docs/verification/2026-10-06-BrownianEigenDiscreteness/api03.log",
+      "log_sha256": "a6d328b0ed0d916114b76e834432576cf3a4cfdc2c25dd3b78ab6e072c080419",
+      "exit_code": 0,
+      "lean_warnings": 0
+    },
+    {
+      "source": "docs/verification/2026-10-06-BrownianEigenDiscreteness/ApiProbe4.lean",
+      "source_sha256": "b7b5bffa04f4b938d4885745b6e9380193f819579bffdaa0fdb490cf0aad5c4c",
+      "log": "docs/verification/2026-10-06-BrownianEigenDiscreteness/api04.log",
+      "log_sha256": "0d927f4d7b950b163671f91129de754ff2c5f9c6bcdfea5344ffc46d31a2102c",
+      "exit_code": 0,
+      "lean_warnings": 0
+    }
+  ]
+}

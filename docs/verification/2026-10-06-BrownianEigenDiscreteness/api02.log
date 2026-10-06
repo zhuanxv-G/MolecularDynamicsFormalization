@@ -1,0 +1,13 @@
+inv_le_inv₀.{u_3} {G₀ : Type u_3} [GroupWithZero G₀] [PartialOrder G₀] [PosMulReflectLT G₀] [MulPosReflectLT G₀]
+  {a b : G₀} (ha : 0 < a) (hb : 0 < b) : a⁻¹ ≤ b⁻¹ ↔ b ≤ a
+Filter.tendsto_atBot.{u_3, u_4} {α : Type u_3} {β : Type u_4} [Preorder β] {m : α → β} {f : Filter α} :
+  Filter.Tendsto m f Filter.atBot ↔ ∀ (b : β), ∀ᶠ (a : α) in f, m a ≤ b
+exists_nat_gt.{u_1} {R : Type u_1} [Semiring R] [PartialOrder R] [IsStrictOrderedRing R] [Archimedean R] (x : R) :
+  ∃ n, x < ↑n
+Set.countable_univ_iff.{u} {α : Type u} : Set.univ.Countable ↔ Countable α
+Set.countable_iUnion.{u, x} {α : Type u} {ι : Sort x} {t : ι → Set α} [Countable ι] (ht : ∀ (i : ι), (t i).Countable) :
+  (⋃ i, t i).Countable
+Set.Finite.countable.{u} {α : Type u} {s : Set α} (hs : s.Finite) : s.Countable
+Set.countable_range.{v, x} {β : Type v} {ι : Sort x} [Countable ι] (f : ι → β) : (Set.range f).Countable
+Submodule.ne_bot_iff.{u_1, u_3} {R : Type u_1} {M : Type u_3} [Semiring R] [AddCommMonoid M] [Module R M]
+  (p : Submodule R M) : p ≠ ⊥ ↔ ∃ x ∈ p, x ≠ 0

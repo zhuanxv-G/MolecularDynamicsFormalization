@@ -523,3 +523,6 @@ Nc任意、每个原m_i>0、原U C∞整数周期、β>0，sameoriginalGibbs mea
 
 ## BrownianGeneratorRealSpectrum: actual whole unbounded-generator real spectrum
 原 m_i>0、U C∞ 整数周期、β>0、同一 Gibbs entire real Lp。实预解集仅以实际 bounded two-sided closed-graph inverse 定义；其存在性通过真正 R 和 bounded bridge unit 推导，不是假设 generator domain、谱离散或结论。使用两側逆的 isUnit_iff_exists，不使用无限维 CLM 上未经证明的单侧逆性质。非零标量 (1−ℓ) 的 algebraMap unit 给真正全实谱对应；Fredholm 与实际 eigenspace 构造推真实纯点实谱、整个非正/谱隙/零存在和任意实际移位逆紧性。未声称复谱或 actual SDE probability identification；枚举和原 C²/core 最终语义 pending，无 placeholder/newaxiom/unsafe/限制绕过。
+
+## BrownianEigenDiscreteness: genuine finite spectral levels and closed discrete whole real spectrum
+保留 original positive masses/U C∞periodic/β>0/actual sameGibbs whole realLp。所有有限层、基索引与实谱可数性、cofinite趋零和趋负无穷、closed/discrete 谱由真正 compact R、实际 graph/basis/spectrum 证明，不加入 finite/Countable/Infinite 结论前提。每谱值重数来自既有真实 finiteDimensional eigenspace。Nc0允许有限索引和可能底cofinite，不声称自然数无限枚举或其真实逃逸。尚未复化全复谱/正维有序枚举/Markov正性/SDElaw expectation，C²/core最终负责人语义pending；无placeholder/newaxiom/unsafe/限制绕过。
