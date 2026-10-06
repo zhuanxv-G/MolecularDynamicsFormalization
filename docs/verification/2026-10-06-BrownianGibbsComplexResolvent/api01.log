@@ -1,0 +1,45 @@
+IsCompactOperator.{u_1, u_2} {M₁ : Type u_1} {M₂ : Type u_2} [Zero M₁] [TopologicalSpace M₁] [TopologicalSpace M₂]
+  (f : M₁ → M₂) : Prop
+IsCompactOperator.comp_clm.{u_1, u_2, u_4, u_5, u_6} {R₁ : Type u_1} {R₂ : Type u_2} [Semiring R₁] [Semiring R₂]
+  {σ₁₂ : R₁ →+* R₂} {M₁ : Type u_4} {M₂ : Type u_5} {M₃ : Type u_6} [TopologicalSpace M₁] [TopologicalSpace M₂]
+  [TopologicalSpace M₃] [AddCommMonoid M₁] [Module R₁ M₁] [AddCommMonoid M₂] [Module R₂ M₂] {f : M₂ → M₃}
+  (hf : IsCompactOperator f) (g : M₁ →SL[σ₁₂] M₂) : IsCompactOperator (f ∘ ⇑g)
+IsCompactOperator.clm_comp.{u_2, u_3, u_4, u_5, u_6} {R₂ : Type u_2} {R₃ : Type u_3} [Semiring R₂] [Semiring R₃]
+  {σ₂₃ : R₂ →+* R₃} {M₁ : Type u_4} {M₂ : Type u_5} {M₃ : Type u_6} [TopologicalSpace M₁] [TopologicalSpace M₂]
+  [TopologicalSpace M₃] [AddCommMonoid M₁] [AddCommMonoid M₂] [Module R₂ M₂] [AddCommMonoid M₃] [Module R₃ M₃]
+  {f : M₁ → M₂} (hf : IsCompactOperator f) (g : M₂ →SL[σ₂₃] M₃) : IsCompactOperator (⇑g ∘ f)
+IsCompactOperator.add.{u_3, u_4} {M₁ : Type u_3} {M₂ : Type u_4} [TopologicalSpace M₁] [AddCommMonoid M₁]
+  [TopologicalSpace M₂] [AddCommMonoid M₂] [ContinuousAdd M₂] {f g : M₁ → M₂} (hf : IsCompactOperator f)
+  (hg : IsCompactOperator g) : IsCompactOperator (f + g)
+IsCompactOperator.smul.{u_3, u_4, u_6} {M₁ : Type u_3} {M₂ : Type u_4} [TopologicalSpace M₁] [AddCommMonoid M₁]
+  [TopologicalSpace M₂] [AddCommMonoid M₂] {S : Type u_6} [Monoid S] [DistribMulAction S M₂] [ContinuousConstSMul S M₂]
+  {f : M₁ → M₂} (hf : IsCompactOperator f) (c : S) : IsCompactOperator (c • f)
+LinearMap.mkContinuous.{u_1, u_2, u_3, u_4} {𝕜 : Type u_1} {𝕜₂ : Type u_2} {E : Type u_3} {F : Type u_4} [Ring 𝕜]
+  [Ring 𝕜₂] [SeminormedAddCommGroup E] [SeminormedAddCommGroup F] [Module 𝕜 E] [Module 𝕜₂ F] {σ : 𝕜 →+* 𝕜₂}
+  (f : E →ₛₗ[σ] F) (C : ℝ) (h : ∀ (x : E), ‖f x‖ ≤ C * ‖x‖) : E →SL[σ] F
+ContinuousLinearMap.le_opNorm.{u_1, u_2, u_4, u_5} {𝕜 : Type u_1} {𝕜₂ : Type u_2} {E : Type u_4} {F : Type u_5}
+  [SeminormedAddCommGroup E] [SeminormedAddCommGroup F] [NontriviallyNormedField 𝕜] [NontriviallyNormedField 𝕜₂]
+  [NormedSpace 𝕜 E] [NormedSpace 𝕜₂ F] {σ₁₂ : 𝕜 →+* 𝕜₂} [RingHomIsometric σ₁₂] (f : E →SL[σ₁₂] F) (x : E) :
+  ‖f x‖ ≤ ‖f‖ * ‖x‖
+MolecularDynamics.textbookBrownianGibbsResolvent_coefficient {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ (i : Fin Nc), 0 < m i)
+  (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U) (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ)
+  (hβ : 0 < β) (x : ↥(MolecularDynamics.Gibbs✝ U β))
+  (j : MolecularDynamics.textbookBrownianGibbsEigenIndex m U hU hPU β) :
+  inner ℝ ((MolecularDynamics.textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j)
+      ((MolecularDynamics.textbookBrownianGibbsResolvent m U hU hPU β hm hβ) x) =
+    (1 - j.fst)⁻¹ * inner ℝ ((MolecularDynamics.textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j) x
+MolecularDynamics.textbookBrownianGibbsResolvent_isCompact {Nc : ℕ} (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ (↑⊤) U) (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (hβ : 0 < β) :
+  IsCompactOperator ⇑(MolecularDynamics.textbookBrownianGibbsResolvent m U hU hPU β hm hβ)
+MolecularDynamics.textbookBrownianGibbsComplexEigenbasis_coefficient_re_im {Nc : ℕ} (m : Fin Nc → ℝ)
+  (hm : ∀ (i : Fin Nc), 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ (↑⊤) U)
+  (hPU : MolecularDynamics.textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+  (j : MolecularDynamics.textbookBrownianGibbsEigenIndex m U hU hPU β) (z : ↥(MolecularDynamics.GibbsComplex✝ U β)) :
+  inner ℂ ((MolecularDynamics.cb✝ m hm U hU hPU β hβ) j) z =
+    ↑(inner ℝ ((MolecularDynamics.rb✝ m hm U hU hPU β hβ) j)
+          ((MolecularDynamics.textbookBrownianGibbsL2RealPart U β) z)) +
+      Complex.I *
+        ↑(inner ℝ ((MolecularDynamics.rb✝ m hm U hU hPU β hβ) j)
+            ((MolecularDynamics.textbookBrownianGibbsL2ImagPart U β) z))
+inv_mul_cancel₀.{u_3} {G₀ : Type u_3} [GroupWithZero G₀] {a : G₀} (h : a ≠ 0) : a⁻¹ * a = 1

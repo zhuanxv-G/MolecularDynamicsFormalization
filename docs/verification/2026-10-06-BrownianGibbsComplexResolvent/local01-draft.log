@@ -1,0 +1,39 @@
+docs/verification/2026-10-06-BrownianGibbsComplexResolvent/Draft.lean:56:4: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ⟪(cb ?m ?hm ?U ?hU ?hPU ?β ?hβ) ?j, (textbookBrownianGibbsComplexResolventReal ?m ?hm ?U ?hU ?hPU ?β ?hβ) ?z⟫_ℂ
+in the target expression
+  ↑(1 - j.fst)⁻¹ * (c * ⟪(cb m hm U hU hPU β hβ) j, z⟫_ℂ) =
+    ⟪b j, c • (textbookBrownianGibbsComplexResolventReal m hm U hU hPU β hβ) z⟫_ℂ
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+c : ℂ
+z : ↥(GibbsComplex U β)
+b : HilbertBasis (textbookBrownianGibbsEigenIndex m U hU hPU β) ℂ ↥(MolecularDynamics.GibbsComplex✝ U β) :=
+  cb m hm U hU hPU β hβ
+j : textbookBrownianGibbsEigenIndex m U hU hPU β
+⊢ ↑(1 - j.fst)⁻¹ * (c * ⟪(cb m hm U hU hPU β hβ) j, z⟫_ℂ) =
+    ⟪b j, c • (textbookBrownianGibbsComplexResolventReal m hm U hU hPU β hβ) z⟫_ℂ
+docs/verification/2026-10-06-BrownianGibbsComplexResolvent/Draft.lean:92:65: error(lean.unknownIdentifier): Unknown identifier `hm`
+docs/verification/2026-10-06-BrownianGibbsComplexResolvent/Draft.lean:92:79: error(lean.unknownIdentifier): Unknown identifier `hβ`
+docs/verification/2026-10-06-BrownianGibbsComplexResolvent/Draft.lean:106:55: error: Application type mismatch: The argument
+  hm
+has type
+  ∀ (i : Fin Nc), 0 < m i
+of sort `Prop` but is expected to have type
+  (Fin Nc → ℝ) → ℝ
+of sort `Type` in the application
+  weight_cancel m hm
+docs/verification/2026-10-06-BrownianGibbsComplexResolvent/Draft.lean:125:55: error: Application type mismatch: The argument
+  hm
+has type
+  ∀ (i : Fin Nc), 0 < m i
+of sort `Prop` but is expected to have type
+  (Fin Nc → ℝ) → ℝ
+of sort `Type` in the application
+  weight_cancel m hm

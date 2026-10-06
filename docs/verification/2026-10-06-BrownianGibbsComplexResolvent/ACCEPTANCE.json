@@ -1,0 +1,132 @@
+{
+  "started_at": "2026-10-06T10:35:36.4745862+08:00",
+  "finished_at": "2026-10-06T10:37:09.0402547+08:00",
+  "head_at_check": "8f5cff7ad8b60c8df2689e82f62934cda1935dfc",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9102,
+  "audit_declarations": 1809,
+  "inputs": 185,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsComplexResolventReal",
+    "MolecularDynamics.textbookBrownianGibbsComplexResolventReal_coefficient",
+    "MolecularDynamics.textbookBrownianGibbsComplexResolventReal_complex_smul",
+    "MolecularDynamics.textbookBrownianGibbsComplexResolvent",
+    "MolecularDynamics.textbookBrownianGibbsComplexResolvent_apply",
+    "MolecularDynamics.textbookBrownianGibbsComplexResolvent_coefficient",
+    "MolecularDynamics.textbookBrownianGibbsComplexResolvent_isCompact",
+    "MolecularDynamics.textbookBrownianGibbsComplexResolvent_mem_graph",
+    "MolecularDynamics.textbookBrownianGibbsComplexResolvent_inverse_graph",
+    "MolecularDynamics.textbookBrownianGibbsComplexOperator_hasCompactResolvent"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolventReal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolventReal_coefficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolventReal_complex_smul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolvent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolvent_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolvent_coefficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolvent_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolvent_mem_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexResolvent_inverse_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsComplexOperator_hasCompactResolvent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "api01.log",
+      "sha256": "df19d818afa9fd94693265f526b2d4e0ac0de5374ec7af915d408f66307e55fb"
+    },
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "694c51826d5ace9c2c3321609f84b3cb405c90db5173cfca4fdc8e02b037f48d"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "09186c91ca7d9584079c22287cffe611e9e425d79f57a3fad4178c93a1792848"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

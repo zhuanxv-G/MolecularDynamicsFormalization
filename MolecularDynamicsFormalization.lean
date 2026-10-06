@@ -226,3 +226,5 @@ import MolecularDynamics.Chapter06.BrownianSpectralAverage
 import MolecularDynamics.Chapter06.BrownianGibbsComplexification
 
 import MolecularDynamics.Chapter06.BrownianGibbsComplexOperator
+
+import MolecularDynamics.Chapter06.BrownianGibbsComplexResolvent

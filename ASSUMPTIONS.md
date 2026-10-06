@@ -541,3 +541,6 @@ complexify/re/im/AE/whole decomposition/norm及inner保存无需正维或新模�
 
 ## BrownianGibbsComplexOperator: proved actual complex graph equivalence and full-domain self-adjointness
 原hm>0、原U C∞integerperiodic、β>0及actual sameGibbs entirecomplexLp，无正维假设。全模式coeff graph确切等于原real A的re/im两图；verticalzero、complex-linearity、closed、dense、weightedℓ²domain、所有mode真图、全形式伴随和真实IsSelfAdjoint均由已接受真实原real graph与完整complex基推导，不作前提。Submodule.toLinearPMap真实非junk图由唯一性证明。没有把IsSelfAdjoint当整复谱及compact resolvent证据，后者仍下一；真实Markov/SDE概率识别与原C²core负责人语义pending。无placeholder/newaxiom/unsafe/资源或linter绕过。
+
+## BrownianGibbsComplexResolvent: actual entire compact two-sided inverse proved
+同一actual original Gibbs measure/wholecomplexLp、原正质量/原C∞整数周期U/β>0，无Nc>0。actualrealR作为已接受真实原生成元inverse使用，不引入外部inverse假设；C complex-linearity、连续、紧性、两方向whole graphinverse全部构造/推导。1−λ nonzero由实际λ≤0推出，不添加条件。没有把compact或point spectrum当整复谱已证明，整complex spectrum仍下一；SDE概率law及原core负责人语义pending。无placeholder/newaxiom/unsafe/资源或linter绕过。

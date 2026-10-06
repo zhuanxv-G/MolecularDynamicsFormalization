@@ -917,3 +917,8 @@ full-check01 passed：9100 jobs/1782公理声明/183exact inputs；10checks退�
 17public；真complex coordinates=re/im原real coordinates；complex-linear graph实际等价于原real A的真实re/im两图。由true vertical uniqueness构造actual LinearPMap并证graph相等，完整坐标graph iff/整个weightedℓ²domain/逐mode真本征图/closed/dense/fullformalAdjoint以及全adjoint domain equality的IsSelfAdjoint均证明。MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean；docs/reviews/2026-10-06-BrownianGibbsComplexOperator/REVIEW.zh-CN.md。整个复原A已真实复化；complex compact resolvent/整复谱与SDElaw概率识别/core负责人语义pending。
 
 full-check01 passed：9101 jobs/1799公理声明/184exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem 6.1 — genuine bounded compact two-sided resolvent of actual complex Gibbs generator (BrownianGibbsComplexResolvent)
+10public；C=J actualR Re+iJ actualR Im由真全部坐标推complex-linearity，真实ℝopnorm界给samefunction complexCLM。真正原Rcompact经pre/postcompose/scalar/add推出actualcomplex R紧；所有wholecomplex input真A_C图preimage及任何truegraph(z,w)给R_C(z−w)=z，实际complex A_C compact two-sided inverse at1完整。MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean；docs/reviews/2026-10-06-BrownianGibbsComplexResolvent/REVIEW.zh-CN.md。下一真正entirecomplex spectrum transform/Fredholm；SDE概率识别/core语义/整范围pending。
+
+full-check01 passed：9102 jobs/1809公理声明/185exact inputs；10checks退出0、全部input/rawlog SHA匹配、10 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
