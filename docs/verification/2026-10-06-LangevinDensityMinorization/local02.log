@@ -1,0 +1,16 @@
+docs/verification/2026-10-06-LangevinDensityMinorization/Draft.lean:153:6: error(lean.unknownIdentifier): Unknown identifier `mul_le_mul_left'`
+docs/verification/2026-10-06-LangevinDensityMinorization/Draft.lean:203:30: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  PosMulStrictMono ℝ≥0∞
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-LangevinDensityMinorization/Draft.lean:203:21: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  PosMulStrictMono ℝ≥0∞
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-LangevinDensityMinorization/Draft.lean:216:2: error: Type mismatch
+  hb x hx A hA
+has type
+  ENNReal.ofReal ε * ENNReal.ofReal a * ℙ (A ∩ Metric.ball z r) ≤
+    ((textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ (1 + 1)) x) A
+but is expected to have type
+  θ * ℙ (A ∩ V) ≤ ((textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ 2) x) A

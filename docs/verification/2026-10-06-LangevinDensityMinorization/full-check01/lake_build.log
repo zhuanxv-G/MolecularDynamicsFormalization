@@ -1,0 +1,15 @@
+ℹ [8988/9139] Replayed MolecularDynamics.Chapter06.LangevinCausalFlow
+info: MolecularDynamics/Chapter06/LangevinCausalFlow.lean:179:2: Try this:
+  [apply] abel_nf
+ℹ [9122/9139] Replayed MolecularDynamics.Chapter01.TorusDensity
+info: MolecularDynamics/Chapter01/TorusDensity.lean:25:21: Try this:
+  [apply] abel_nf
+info: MolecularDynamics/Chapter01/TorusDensity.lean:68:21: Try this:
+  [apply] abel_nf
+✔ [9137/9139] Built MolecularDynamics.Chapter06.LangevinDensityMinorization (9.6s)
+✖ [9138/9139] Building MolecularDynamicsFormalization (4.5s)
+trace: .> LEAN_PATH=C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\build\lib\lean c:\Users\ustc\.elan\toolchains\leanprover--lean4---v4.34.0\bin\lean.exe C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\MolecularDynamicsFormalization.lean -o C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\build\lib\lean\MolecularDynamicsFormalization.olean -i C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\build\lib\lean\MolecularDynamicsFormalization.ilean -c C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\build\ir\MolecularDynamicsFormalization.c --setup C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\build\ir\MolecularDynamicsFormalization.setup.json --json
+error: MolecularDynamicsFormalization.lean:1:0: import MolecularDynamics.Chapter06.LangevinDensityMinorization failed, environment already contains 'MolecularDynamics.instMeasureSpaceUnitAddCircle_molecularDynamics' from MolecularDynamics.Chapter06.BrownianTorusGibbs
+Some required targets logged failures:
+- MolecularDynamicsFormalization
+error: build failed

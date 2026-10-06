@@ -1,0 +1,118 @@
+{
+  "started_at": "2026-10-06T23:04:57.8748341+08:00",
+  "finished_at": "2026-10-06T23:06:18.3355565+08:00",
+  "head_at_check": "800b7e308f65e072012a1abed9573f906a08aac7",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9139,
+  "audit_declarations": 2344,
+  "inputs": 222,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_fixed_time_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_positive_interior_point",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_local_lower_bound",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_local_minorization",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_two_step_lower_bound",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_compact_minorization",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_physical_energy_minorization"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_fixed_time_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_positive_interior_point",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_local_lower_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_local_minorization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_two_step_lower_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_compact_minorization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_physical_energy_minorization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "a24901e238521f1ef06d60a54b17154d63869114446ccd48f213f290171fc724"
+    },
+    {
+      "path": "FULL_DRIVER02.log",
+      "sha256": "a90415b234dc47feb4f984db0f9a0145c86f979659954d33c2738f14a17d4931"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "57a816b32bb624e2617bb11eacce8840b137d19a29b3bbf831c0b053629eccb2"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "b1b156fd9bd358ce0862b3fe7b5638fac9935affa52aa0880f94049cad49e4e5"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

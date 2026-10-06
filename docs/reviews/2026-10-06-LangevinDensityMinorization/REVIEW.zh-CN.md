@@ -1,0 +1,15 @@
+# Theorem6.2：原明确密度条件推出同实际核的小集测度下界
+8public，原printed252/PDF273 Assumption1(ii)及紧集/小集段，复用刚核验SHA未变的原页视觉证据。只补原Theorem6.2证明需要的桥接，保持sameactualoriginalunitmass/unitperiodtorus×Rn/allNc/currentC∞periodicU/vectorWiener/真实全时解/actualMarkovκ；原physicalσ=√(2γβ⁻¹)版本显式γβ正。平坦参考测度是真unit-torusHaar×真实momentumLebesgue，未替换κ或概率模型。
+
+densityclause严格对应原明确假设：正时间同actualκ在C上的所有可测A⊂C由真实ρ积分表示，原C×C×[0,∞)joint连续原样定义。此clause作为原定理的明确条件，不是已经证明原Langevin SDE存在这种density。当前不承担actualdensityexistence，也未把小集结论作为输入。
+
+先由真实sameκnonemptyopenaccessibility+ball⊂C给原densityintegral>0，反证integral0导出真正interiorpositiveρ(y,z,t)，无需待证positivepoint假设。原spatialjointcontinuity和两点真实interior给productballs内ρ≥a>0；所有measurableevent A用真实densityrepresentation/lintegralmono及measuremono得到actuallocalminorization。再sameκ真实Chapman–Kolmogorov和compactuniformopenhit把此下界运输到整个compactC，固定两段1合为t2，适用于所有可测事件而非仅open hit。真实targetballHaar×Lebesgue measure正且由包含于compactC而有限，将其restrictmeasure严格归一化为commonProbabilityMeasureν。构造真实η>0/finite并由actualkernel probabilitytotalmass进一步证明η≤1，∀x∈C，ην≤κ₂(x)。physicalnoise原真实HamiltonianpowerenergyC版本保留同原densityclause。
+
+local01首5退出0但push_neg deprecated警告，改固定版push Not；无macro/linter抑制。local02唯一旧乘法单调API、ENNReal∞无PosMulStrictMono而须真实mul_pos_iff，以及NNReal1+1和2规范化；均明确修类型不改变数学。local03最终8退出0空日志零警告，formal exactSHA复制复用该证据。无newaxiom/sorry/admit/unsafe/hiddenconclusionhypothesis，无资源/透明度提高。DEP104/NOT113。统一222inputs单流程。
+
+原jointclosedtime0端点语义仍pending负责人，无静默修书。本批真“原明确densitycondition ⇒ actualmeasureminorization”机器证明；不能计作实际SDEdensity存在、小集条件已无条件成立、actualsemigroupgenerator=differentialLyapunov、真正过程Lyapunov漂移或Harris存在唯一不变分布/几何界。ownersemanticpending，wholeTheorem6.2/CORE_SCOPE未完。下一真实momentum variation-of-constants及实际moment/过程Lyapunov依赖独立于density缺口推进。
+
+full-check01真实root import失败：独立Brownian模块同自动生成local instance名。仅明确三个Haar实例的唯一名称，无数学条件改变；local04最终8退出0空日志/零警告，exact formal SHA重新核对。旧失败证据保留；整批验收以full-check02为准，当前仍pending。
+
+
+full-check02 passed：9139 jobs/2344公理声明/222exact inputs；10checks退出0、全部input/rawlog SHA匹配、8 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.2整体未完成。

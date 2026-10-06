@@ -1074,3 +1074,7 @@ full-check01 passed：9137 jobs/2314公理声明/220exact inputs；10checks退�
 LangevinWeakFeller / CH06-DEP-103 / NOT-CH06-112：sameactual原unitmass Langevinκ/Wienerpath/globalprocess Cb真实期待、noncompactphase weakFeller/ProbabilityMeasure弱连续与sameCb contraction/zero/add/positive/const；sameκopenpositive/Portmanteau下半连续/compactuniformε/原H^lsublevels；originalAssumption1(i)完整共同点δt0allx及physical√(2γβ⁻¹) energyC版本。22public local08统一验收中。jointdensityii、measureminorization/actualgeneratorLyapunov/Harris/owner/wholepending；openuniform非小集。
 
 full-check01 passed：9138 jobs/2336公理声明/221exact inputs；10checks退出0、全部input/rawlog SHA匹配、22 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.2整体未完成。
+
+LangevinDensityMinorization / CH06-DEP-104 / NOT-CH06-113：原Assumption1ii同actualκ真实densityclause定义及positive-timejointspatial连续；实际openaccess+真densityintegral>0导出interiorpositivepoint→productballlowerdensity→allmeasurablelocalminorization；sameκ ChapmanKolmogorov+compactuniformopenhit→wholecompactt2commonProbabilityMeasure ν和真实0<η≤1/finite、physicalenergyC版本。8public local03统一验收中，全部明确conditional原densityclause；actualdensityexists/processLyapunov/Harris/owner/wholepending。
+
+full-check02 passed：9139 jobs/2344公理声明/222exact inputs；10checks退出0、全部input/rawlog SHA匹配、8 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.2整体未完成。

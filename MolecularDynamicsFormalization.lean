@@ -300,3 +300,5 @@ import MolecularDynamics.Chapter06.BrownianL1L2Compatibility
 import MolecularDynamics.Chapter06.BrownianContinuousHaarDensity
 
 import MolecularDynamics.Chapter06.LangevinWeakFeller
+
+import MolecularDynamics.Chapter06.LangevinDensityMinorization
