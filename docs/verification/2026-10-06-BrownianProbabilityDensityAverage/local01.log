@@ -1,0 +1,39 @@
+docs/verification/2026-10-06-BrownianProbabilityDensityAverage/Draft.lean:70:55: error: Application type mismatch: The argument
+  hm
+has type
+  ∀ (i : Fin N), 0 < m i
+but is expected to have type
+  ContDiff ℝ ∞ ?m.59
+in the application
+  textbookBrownianDensityLaw ?m.59 hm
+docs/verification/2026-10-06-BrownianProbabilityDensityAverage/Draft.lean:70:75: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+docs/verification/2026-10-06-BrownianProbabilityDensityAverage/Draft.lean:83:44: error: Application type mismatch: The argument
+  hm
+has type
+  ∀ (i : Fin N), 0 < m i
+but is expected to have type
+  ContDiff ℝ ∞ ?m.64
+in the application
+  textbookBrownianDensityLaw ?m.64 hm
+docs/verification/2026-10-06-BrownianProbabilityDensityAverage/Draft.lean:83:64: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+docs/verification/2026-10-06-BrownianProbabilityDensityAverage/Draft.lean:105:44: error: Application type mismatch: The argument
+  hm
+has type
+  ∀ (i : Fin N), 0 < m i
+but is expected to have type
+  ContDiff ℝ ∞ ?m.64
+in the application
+  textbookBrownianDensityLaw ?m.64 hm
+docs/verification/2026-10-06-BrownianProbabilityDensityAverage/Draft.lean:105:64: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.

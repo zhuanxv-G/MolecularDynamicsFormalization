@@ -1046,3 +1046,7 @@ full-check01 passed：9130 jobs/2217公理声明/213exact inputs；10checks退�
 BrownianProbabilityGibbsInvariance / CH06-DEP-096 / NOT-CH06-105：sameactualwholeGibbsoperator真实integralmass，sameactualCMapP_tF原Gibbs真实积分保持，realoriginalMarkovkernel∘ₘsameGibbs=Gibbs由actualkernelcomposition integral及regularmeasure唯一性证明。3public local01统一验收中，不以不变性作前提；5.6densitylaw期望/Lp beyondL2/CMapgraphcore/owner/wholepending。
 
 full-check01 passed：9131 jobs/2220公理声明/214exact inputs；10checks退出0、全部input/rawlog SHA匹配、3 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianProbabilityDensityAverage / CH06-DEP-097 / NOT-CH06-106：真实L2 Gibbs-relative初始ρ AE非负/积分1定义初始probability，其sameactualκ_t law是probability，actuallaw连续期待等于actualP_t原初始density期待/原globalq期待/真实T_tρ配对，actual5.6 law平均分母1与同原canonical正Kα指数界。12public local03统一验收中；谱density非负/measure身份及超L2/owner/whole仍pending。
+
+full-check01 passed：9132 jobs/2232公理声明/215exact inputs；10checks退出0、全部input/rawlog SHA匹配、12 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

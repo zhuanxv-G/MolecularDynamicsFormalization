@@ -1,0 +1,45 @@
+docs/verification/2026-10-06-BrownianProbabilityDensityAverage/Draft.lean:77:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+docs/verification/2026-10-06-BrownianProbabilityDensityAverage/Draft.lean:100:8: error: (kernel) unknown constant 'MolecularDynamics.textbookBrownianDensityLaw_integral_probability'
+docs/verification/2026-10-06-BrownianProbabilityDensityAverage/Draft.lean:142:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (Q : UnitAddTorus (Fin N)),
+    (textbookConfigurationContinuousObservable ↑f ⋯ ⋯) Q ∂textbookBrownianDensityLaw m hm U hU hp β hβ B P ρ t
+in the target expression
+  ∫ (Q : UnitAddTorus (Fin N)),
+      textbookConfigurationTorusObservable (↑f) Q ∂textbookBrownianDensityLaw m hm U hU hp β hβ B P ρ t =
+    ∫ (Q : UnitAddTorus (Fin N)),
+      (∫ (sample : Ω),
+          ↑f
+            (textbookBrownianGlobalRandomConfiguration m hm U hU hp β hβ (textbookConfigurationTorusRepresentative Q) B
+              (↑t) sample) ∂P) *
+        ↑↑ρ Q ∂textbookConfigurationTorusGibbsMeasure U β
+
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+ρ : ↥(Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β))
+hρpos : 0 ≤ᵐ[textbookConfigurationTorusGibbsMeasure U β] ↑↑ρ
+hρmass : ∫ (Q : UnitAddTorus (Fin N)), ↑↑ρ Q ∂textbookConfigurationTorusGibbsMeasure U β = 1
+t : ℝ≥0
+f : ↥(textbookPeriodicSmoothSpace N)
+⊢ ∫ (Q : UnitAddTorus (Fin N)),
+      textbookConfigurationTorusObservable (↑f) Q ∂textbookBrownianDensityLaw m hm U hU hp β hβ B P ρ t =
+    ∫ (Q : UnitAddTorus (Fin N)),
+      (∫ (sample : Ω),
+          ↑f
+            (textbookBrownianGlobalRandomConfiguration m hm U hU hp β hβ (textbookConfigurationTorusRepresentative Q) B
+              (↑t) sample) ∂P) *
+        ↑↑ρ Q ∂textbookConfigurationTorusGibbsMeasure U β

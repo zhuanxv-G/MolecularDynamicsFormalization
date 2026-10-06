@@ -1,0 +1,170 @@
+ M AGENTS.md
+ M ASSUMPTIONS.md
+ M FORMALIZATION_MAP.md
+ M FORMALIZATION_PLAN.md
+ M MolecularDynamicsFormalization.lean
+ M STATUS.md
+ M Scratch.lean
+ M docs/NOTATION_INVENTORY.csv
+ M docs/WHOLE_BOOK_ROADMAP.zh-CN.md
+ M docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv
+ M docs/handoff/CURRENT_STATE.zh-CN.md
+ M docs/handoff/PROGRESS_OVERVIEW.zh-CN.md
+ M docs/handoff/RESUME_PROMPT.zh-CN.md
+ M docs/handoff/WORK_LOG.zh-CN.md
+ M docs/tasks/T3_implementation/continuation-20261003/CONTINUATION_STATUS.json
+ M docs/tasks/T3_implementation/continuation-20261003/MATHCOPILOT_STATUS.json
+ M scripts/CheckAxioms.lean
+?? MolecularDynamics/Chapter06/BrownianProbabilityDensityAverage.lean
+?? docs/CHAPTER01_TASK_OVERVIEW.zh-CN.md
+?? docs/CORE_SCOPE.zh-CN.md
+?? docs/handoff/T2_HEARTBEAT_STATUS.json
+?? docs/handoff/THREAD_HANDOFF_20261005.json
+?? docs/reviews/2026-10-02-T1-T2/
+?? docs/reviews/2026-10-03-T2-T5-proofs/SENT_REQUEST.png
+?? docs/reviews/2026-10-04-T2-T5-local/
+?? docs/reviews/2026-10-06-BrownianProbabilityDensityAverage/
+?? docs/tasks/LOCAL_LONG_RUN_20261004/
+?? docs/tasks/T1_mathcopilot_return_git/
+?? docs/tasks/T2_API_CHECK.zh-CN.md
+?? docs/tasks/T2_INPUTS_AND_ACCEPTANCE.zh-CN.md
+?? docs/tasks/T2_MATHCOPILOT_PROMPT.zh-CN.md
+?? docs/tasks/T2_SPEC.zh-CN.md
+?? docs/tasks/T2_START_PROMPT.zh-CN.md
+?? docs/tasks/T2_mathcopilot_statement_return/
+?? docs/tasks/T3_API_CHECK.zh-CN.md
+?? docs/tasks/T3_INPUTS_AND_ACCEPTANCE.zh-CN.md
+?? docs/tasks/T3_MATHCOPILOT_PROMPT.zh-CN.md
+?? docs/tasks/T3_SPEC.zh-CN.md
+?? docs/tasks/T3_implementation/continuation-20261003/MATHCOPILOT_STOPPED_TASK_CONTEXT.txt
+?? docs/tasks/T4_continuation_20261003/
+?? docs/tasks/T5_API_CHECK.zh-CN.md
+?? docs/tasks/T5_INPUTS_AND_ACCEPTANCE.zh-CN.md
+?? docs/tasks/T5_MATHCOPILOT_PROMPT.zh-CN.md
+?? docs/tasks/T5_SPEC.zh-CN.md
+?? docs/verification/2026-10-03-T2-L0/
+?? docs/verification/2026-10-03-T4-fifth-batch/REMOTE_CI_RESULT.json
+?? docs/verification/2026-10-05-BrownianDirichlet/ApiProbe.lean
+?? docs/verification/2026-10-05-CanonicalIntegrationByParts/ApiProbe.lean
+?? docs/verification/2026-10-05-CanonicalTemperature/ApiProbe.lean
+?? docs/verification/2026-10-05-LangevinCompletedHistory/ApiProbe.lean
+?? docs/verification/2026-10-05-LangevinCompletedMarkov/ApiProbe.lean
+?? docs/verification/2026-10-05-LangevinFiltration/ApiProbe.lean
+?? docs/verification/2026-10-05-StationaryDensityFlow/HaarApiProbe.lean
+?? docs/verification/2026-10-06-BrownianC2ClosedOperator/Draft.lean
+?? docs/verification/2026-10-06-BrownianC2DynkinFormula/Draft.lean
+?? docs/verification/2026-10-06-BrownianC2Expectation/Draft.lean
+?? docs/verification/2026-10-06-BrownianC2Generator/Draft.lean
+?? docs/verification/2026-10-06-BrownianC2ObservableTaylor/Draft.lean
+?? docs/verification/2026-10-06-BrownianClosedOperator/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianComplexKernel/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianComplexKernel/Draft.lean
+?? docs/verification/2026-10-06-BrownianDrivenExistence/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianDrivenExistence/Draft.lean
+?? docs/verification/2026-10-06-BrownianDynkinFormula/Draft.lean
+?? docs/verification/2026-10-06-BrownianEigenDiscreteness/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianEigenDiscreteness/ApiProbe2.lean
+?? docs/verification/2026-10-06-BrownianEigenDiscreteness/ApiProbe3.lean
+?? docs/verification/2026-10-06-BrownianEigenDiscreteness/ApiProbe4.lean
+?? docs/verification/2026-10-06-BrownianEigenDiscreteness/Draft.lean
+?? docs/verification/2026-10-06-BrownianEigenEnumeration/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianEigenEnumeration/ApiProbe2.lean
+?? docs/verification/2026-10-06-BrownianEigenEnumeration/ApiProbe3.lean
+?? docs/verification/2026-10-06-BrownianEigenEnumeration/ApiProbe4.lean
+?? docs/verification/2026-10-06-BrownianEigenEnumeration/Draft.lean
+?? docs/verification/2026-10-06-BrownianEigenGraph/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianEigenGraph/Draft.lean
+?? docs/verification/2026-10-06-BrownianEigenGraph/NEXT_EIGEN_GRAPH.zh-CN.md
+?? docs/verification/2026-10-06-BrownianEigenNormalization/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianEigenNormalization/ApiProbe2.lean
+?? docs/verification/2026-10-06-BrownianEigenNormalization/Draft.lean
+?? docs/verification/2026-10-06-BrownianEigenNormalization/NEXT_NORMALIZATION.zh-CN.md
+?? docs/verification/2026-10-06-BrownianEigenOrdering/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianEigenOrdering/ApiProbe2.lean
+?? docs/verification/2026-10-06-BrownianEigenOrdering/ApiProbe3.lean
+?? docs/verification/2026-10-06-BrownianEigenOrdering/Draft.lean
+?? docs/verification/2026-10-06-BrownianExpectationEstimates/Draft.lean
+?? docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean
+?? docs/verification/2026-10-06-BrownianFirstVariation/Draft.lean
+?? docs/verification/2026-10-06-BrownianFourierCoefficient/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianFourierCompact/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianFourierCompact/Draft.lean
+?? docs/verification/2026-10-06-BrownianFourierCompact/NEXT_COMPACT.zh-CN.md
+?? docs/verification/2026-10-06-BrownianFourierDifferential/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianFourierHilbert/Draft.lean
+?? docs/verification/2026-10-06-BrownianFourthMomentEstimates/Draft.lean
+?? docs/verification/2026-10-06-BrownianFourthMomentEstimates/NEXT_FOURTH_MOMENT.zh-CN.md
+?? docs/verification/2026-10-06-BrownianGeneratorExpectation/Draft.lean
+?? docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/ApiProbe2.lean
+?? docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/Draft.lean
+?? docs/verification/2026-10-06-BrownianGeneratorRealSpectrum/NEXT_GENERATOR_SPECTRUM.zh-CN.md
+?? docs/verification/2026-10-06-BrownianGibbsComplexOperator/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianGibbsComplexOperator/Draft.lean
+?? docs/verification/2026-10-06-BrownianGibbsComplexResolvent/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianGibbsComplexResolvent/Draft.lean
+?? docs/verification/2026-10-06-BrownianGibbsComplexResolvent/NEXT_COMPLEX_RESOLVENT.zh-CN.md
+?? docs/verification/2026-10-06-BrownianGibbsComplexSpectrum/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianGibbsComplexSpectrum/Draft.lean
+?? docs/verification/2026-10-06-BrownianGibbsComplexification/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianGibbsComplexification/ApiProbe2.lean
+?? docs/verification/2026-10-06-BrownianGibbsComplexification/Draft.lean
+?? docs/verification/2026-10-06-BrownianGibbsResolvent/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianGibbsResolvent/Draft.lean
+?? docs/verification/2026-10-06-BrownianGibbsResolvent/NEXT_GIBBS_RESOLVENT.zh-CN.md
+?? docs/verification/2026-10-06-BrownianGraphCompact/Draft.lean
+?? docs/verification/2026-10-06-BrownianGroundState/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianGroundState/Draft.lean
+?? docs/verification/2026-10-06-BrownianGroundStateCore/Draft.lean
+?? docs/verification/2026-10-06-BrownianGroundStateGraph/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianGroundStateGraph/Draft.lean
+?? docs/verification/2026-10-06-BrownianGroundStateIsometry/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianGroundStateIsometry/Draft.lean
+?? docs/verification/2026-10-06-BrownianHilbertCore/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianMarkovModel/Draft.lean
+?? docs/verification/2026-10-06-BrownianMarkovModel/NEXT_TORUS.zh-CN.md
+?? docs/verification/2026-10-06-BrownianMassFourier/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianMassResolvent/Draft.lean
+?? docs/verification/2026-10-06-BrownianMassResolvent/NEXT_MASS_RESOLVENT.zh-CN.md
+?? docs/verification/2026-10-06-BrownianMassSelfAdjoint/Draft.lean
+?? docs/verification/2026-10-06-BrownianObservableTaylor/Draft.lean
+?? docs/verification/2026-10-06-BrownianPathSolution/Draft.lean
+?? docs/verification/2026-10-06-BrownianPotentialOperator/Draft.lean
+?? docs/verification/2026-10-06-BrownianPotentialSelfAdjoint/Draft.lean
+?? docs/verification/2026-10-06-BrownianProbabilityDensityAverage/
+?? docs/verification/2026-10-06-BrownianProbabilityGibbsImage/Draft.lean
+?? docs/verification/2026-10-06-BrownianProbabilityGibbsInvariance/Draft.lean
+?? docs/verification/2026-10-06-BrownianProbabilitySpectralIdentification/Draft.lean
+?? docs/verification/2026-10-06-BrownianRandomModel/Draft.lean
+?? docs/verification/2026-10-06-BrownianResolventRealSpectrum/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianResolventRealSpectrum/Draft.lean
+?? docs/verification/2026-10-06-BrownianResolventRealSpectrum/NEXT_REAL_SPECTRUM.zh-CN.md
+?? docs/verification/2026-10-06-BrownianResolventSpectrum/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianResolventSpectrum/Draft.lean
+?? docs/verification/2026-10-06-BrownianResolventSpectrum/NEXT_SPECTRUM.zh-CN.md
+?? docs/verification/2026-10-06-BrownianSDECoefficients/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianSDECoefficients/ApiProbe2.lean
+?? docs/verification/2026-10-06-BrownianSDECoefficients/Draft.lean
+?? docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean
+?? docs/verification/2026-10-06-BrownianSecondMomentEstimates/NEXT_SECOND_MOMENT.zh-CN.md
+?? docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean
+?? docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean
+?? docs/verification/2026-10-06-BrownianSmallTimeEstimates/NEXT_EXPECTATION.zh-CN.md
+?? docs/verification/2026-10-06-BrownianSmoothDomain/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianSpectralAverage/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianSpectralAverage/ApiProbe2.lean
+?? docs/verification/2026-10-06-BrownianSpectralAverage/Draft.lean
+?? docs/verification/2026-10-06-BrownianSpectralDecay/Draft.lean
+?? docs/verification/2026-10-06-BrownianSpectralDecay/NEXT_DECAY.zh-CN.md
+?? docs/verification/2026-10-06-BrownianSpectralEvolution/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianSpectralEvolution/Draft.lean
+?? docs/verification/2026-10-06-BrownianSpectralEvolution/NEXT_EVOLUTION.zh-CN.md
+?? docs/verification/2026-10-06-BrownianSpectralGenerator/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianSpectralGenerator/Draft.lean
+?? docs/verification/2026-10-06-BrownianSpectralGenerator/NEXT_GENERATOR.zh-CN.md
+?? docs/verification/2026-10-06-BrownianTorusGibbs/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianTorusModel/ApiProbe.lean
+?? docs/verification/2026-10-06-BrownianTorusModel/Draft.lean
+?? docs/verification/2026-10-06-BrownianTransitionSemigroup/Draft.lean
+?? docs/verification/2026-10-06-BrownianUniformGenerator/Draft.lean
+?? docs/verification/2026-10-06-BrownianVariance/ApiProbe.lean

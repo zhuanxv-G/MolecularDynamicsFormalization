@@ -1,0 +1,146 @@
+{
+  "started_at": "2026-10-06T20:54:10.8317814+08:00",
+  "finished_at": "2026-10-06T20:55:28.7736363+08:00",
+  "head_at_check": "e3e048827006085476e82fc2fe55f19ed22e0cb0",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9132,
+  "audit_declarations": 2232,
+  "inputs": 215,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianInitialDensityMeasure",
+    "MolecularDynamics.textbookBrownianInitialDensityMeasure_isProbabilityMeasure",
+    "MolecularDynamics.textbookBrownianInitialDensityMeasure_integral",
+    "MolecularDynamics.textbookBrownianDensityLaw",
+    "MolecularDynamics.textbookBrownianDensityLaw_isProbabilityMeasure",
+    "MolecularDynamics.textbookBrownianDensityLaw_integral_probability",
+    "MolecularDynamics.textbookBrownianDensityLaw_integral_spectral",
+    "MolecularDynamics.textbookBrownianDensityLaw_integral_globalExpectation",
+    "MolecularDynamics.textbookBrownianDensityAverage",
+    "MolecularDynamics.textbookBrownianDensityAverage_eq_spectral",
+    "MolecularDynamics.textbookBrownianDensityAverage_smooth_decay",
+    "MolecularDynamics.textbookBrownianDensityAverage_smooth_exponential"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianInitialDensityMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianInitialDensityMeasure_isProbabilityMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianInitialDensityMeasure_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityLaw",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityLaw_isProbabilityMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityLaw_integral_probability",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityLaw_integral_spectral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityLaw_integral_globalExpectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityAverage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityAverage_eq_spectral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityAverage_smooth_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianDensityAverage_smooth_exponential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "8ab6d305b4c265d32657b40b0bc6c2ecd8f28e9b1a7b0488b441bda6047fd90a"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "f388a92ea885fcc72f13d13c3c2d7c85ecd365376cf92e2110371c1e9c89a979"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "6dcbaa5d8d6c1d589725a6f9841a3263614769ef0ede1c78477eb5170ba4e394"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
