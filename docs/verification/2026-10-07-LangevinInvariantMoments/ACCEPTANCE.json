@@ -1,0 +1,84 @@
+{
+  "started_at": "2026-10-07T03:14:22.360362+08:00",
+  "finished_at": "2026-10-07T03:15:36.8891762+08:00",
+  "head_at_check": "abfdf2fcee9f9e291e3b563c4b76f333cd0c008a",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9151,
+  "audit_declarations": 2445,
+  "inputs": 234,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicInvariant_hamiltonian_power_moment_of_half_drift",
+    "MolecularDynamics.textbookLangevinPeriodicInvariant_all_hamiltonian_power_moments",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists_with_hamiltonian_power_moments",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists_with_normalized_energy_moments"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicInvariant_hamiltonian_power_moment_of_half_drift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicInvariant_all_hamiltonian_power_moments",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists_with_hamiltonian_power_moments",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists_with_normalized_energy_moments",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "287c5f0cbc38056baad181a81b203671399c72c5021d184c44bdf4864c8c2857"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e0244e189f7618cb65457ecb640a11b7c22363470a3ea252ab5461b29bedc16c"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_stationary_law_Hamiltonian_power_integrability_derived_by_true_Fatou": true,
+  "target_law_Hl_integrability_premise": "none",
+  "actual_stationary_Hl_expectation_bound": "two_D",
+  "all_required_l_ge_one_from_actual_common_skeleton_drift": true,
+  "actual_all_time_invariant_exists_with_Hl_moments_under_positive_normalized_potential": true,
+  "arbitrary_original_potential_has_original_kernel_invariant_with_all_explicit_normalized_energy_moments": true,
+  "gamma_positive": true,
+  "sigma_arbitrary": true,
+  "final_exists_target_stationarity_or_moment_or_density_premise": "none",
+  "Gibbs_law_identification_or_uniqueness_or_weighted_convergence": "not_proved",
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

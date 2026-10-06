@@ -648,3 +648,5 @@ LangevinCesaroInvariant：sameactual原κ/Wiener/unitmass/C∞periodicU/forceLip
 LangevinTimeLawKernel：sameactual原κ/Wiener/unitmass/C∞periodicU/forceLip，时间连续性由真path连续+实际law+DCT推，time meas用原Borel pi-system而非未验weakBorel/Giry等同。原μ和正τperiodaverage是真prob，skeleton premise由前批实际exists推出最终∀Texists，不假设fulltime stationarity/density。最终exists明确U≥1/γ>0，σ任意；去掉U归一化需证明actual核addconstantidentity，尚未完成。未宣称唯一性/Gibbs身份/weighted指数/Harris。
 
 LangevinPotentialNormalization：sameactual原κ/Wiener/unitmass/C∞periodicU，真实fderiv_addconst给sameforce，原积分解iff+actualuniqueness证明endpoint、kernelidentity；对周期势真实normbound取c=M+1。最终∀T实际invariantprobexists无Ulower前提，γ>0/σ任意；forceLip由原periodicC∞自动derive（或任意给定合法L版本）。未假设density/目标moment/drift/stationarity，未识别Gibbs/证明唯一或指数收敛。
+
+LangevinInvariantMoments：真Wiener/unitmass/C∞periodicU/γ>0/σ任意；原正能量U>=1版本推目标µ原Hl矩可积与2D界。首lemma明确actualhalfdrift及skeletonstationarity中间前提，allmoments由已验commonhalfdriftderive，无前提exists直接由已验∀T真invariant existence构造。任意原U版本明确c和normalizedHl(U+c)，不假设目标µ矩、jointdensity或generator identity；Fatou用实际非负truncation，未识别Gibbs/唯一Harris。

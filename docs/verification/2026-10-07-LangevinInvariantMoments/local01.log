@@ -1,0 +1,57 @@
+docs/verification/2026-10-07-LangevinInvariantMoments/Draft.lean:48:81: error: failed to prove positivity/nonnegativity/nonzeroness
+docs/verification/2026-10-07-LangevinInvariantMoments/Draft.lean:99:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : textbookLangevinPeriodicPhase N), (⇑(f n) - ⇑(w n)) a + D ∂↑μ
+in the target expression
+  ∫ (x : textbookLangevinPeriodicPhase N), (f n) x - (w n) x + D ∂↑μ =
+    ∫ (x : textbookLangevinPeriodicPhase N), (f n) x ∂↑μ - ∫ (x : textbookLangevinPeriodicPhase N), (w n) x ∂↑μ + D
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+τ : ℝ≥0
+V : textbookLangevinPeriodicPhase N → ℝ
+hV : Continuous V
+hV0 : ∀ (x : textbookLangevinPeriodicPhase N), 0 ≤ V x
+hVK :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    Integrable V ((textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ τ) x)
+D : ℝ
+hD : 0 < D
+hd :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∫ (y : textbookLangevinPeriodicPhase N), V y ∂(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ τ) x ≤
+      1 / 2 * V x + D
+μ : ProbabilityMeasure (textbookLangevinPeriodicPhase N)
+hInv : ⇑(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ τ) ∘ₘ ↑μ = ↑μ
+K : Kernel (textbookLangevinPeriodicPhase N) (textbookLangevinPeriodicPhase N) :=
+  textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ τ
+this : IsMarkovKernel K
+W : textbookLangevinPeriodicPhase N → ℝ := fun x => 1 / 2 * V x + D
+hW : Continuous W
+hW0 : ∀ (x : textbookLangevinPeriodicPhase N), 0 ≤ W x
+f : ℕ → BoundedContinuousFunction (textbookLangevinPeriodicPhase N) ℝ := fun n => langevinMomentTruncation V hV hV0 n
+w : ℕ → BoundedContinuousFunction (textbookLangevinPeriodicPhase N) ℝ := fun n => langevinMomentTruncation W hW hW0 n
+hf : ∀ (n : ℕ), Integrable ⇑(f n) ↑μ
+hw : ∀ (n : ℕ), Integrable ⇑(w n) ↑μ
+hfK : ∀ (n : ℕ) (x : textbookLangevinPeriodicPhase N), Integrable (⇑(f n)) (K x)
+hstep :
+  ∀ (n : ℕ) (x : textbookLangevinPeriodicPhase N),
+    (textbookLangevinPeriodicBoundedTransition B P hB U hU hp L hF γ σ τ (f n)) x ≤ (w n) x
+hmean :
+  ∀ (n : ℕ), ∫ (x : textbookLangevinPeriodicPhase N), (f n) x ∂↑μ ≤ ∫ (x : textbookLangevinPeriodicPhase N), (w n) x ∂↑μ
+G : ℕ → textbookLangevinPeriodicPhase N → ℝ := fun n x => (f n) x - (w n) x + D
+hG0 : ∀ (n : ℕ) (x : textbookLangevinPeriodicPhase N), 0 ≤ G n x
+hGc : ∀ (n : ℕ), Continuous (G n)
+hGi : ∀ (n : ℕ), Integrable (G n) ↑μ
+n : ℕ
+⊢ ∫ (x : textbookLangevinPeriodicPhase N), (f n) x - (w n) x + D ∂↑μ =
+    ∫ (x : textbookLangevinPeriodicPhase N), (f n) x ∂↑μ - ∫ (x : textbookLangevinPeriodicPhase N), (w n) x ∂↑μ + D
