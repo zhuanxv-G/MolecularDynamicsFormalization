@@ -1,0 +1,33 @@
+{
+  "draft_path": "docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean",
+  "source_path": "MolecularDynamics/Chapter06/BrownianSecondMomentEstimates.lean",
+  "draft_sha256": "5d66c8dcf165a2a3219c49660cd286a5494ed823a94392e0dbdb9a273e61edda",
+  "source_sha256": "5d66c8dcf165a2a3219c49660cd286a5494ed823a94392e0dbdb9a273e61edda",
+  "local_check_log": "local04.log",
+  "local_check_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "local_exit_code": 0,
+  "local_lean_warnings": 0,
+  "public_declarations": [
+    "MolecularDynamics.textbookBrownianGlobalDriftIntegral_norm_bound_ae",
+    "MolecularDynamics.textbookBrownianGlobalDriftIntegral_memLp",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_memLp",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_coordinate_memLp",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_product_integrable",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_product_error_bound",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_product_div_tendsto",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_moment_div_tendsto"
+  ],
+  "exact_source_copy_verified": true,
+  "local_check_reused_for_exact_formal_copy": true,
+  "no_redundant_formal_local_check": true,
+  "actual_q_finite_order_Lp_and_mixed_second_integrability": "proved_locally",
+  "actual_uniform_second_product_error_rate": "proved_locally",
+  "actual_second_product_div_time_original_covariance_limit": "proved_locally",
+  "stochastic_generator": "not_proved",
+  "sde_law_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete",
+  "integrated": false,
+  "full_check": "not_run"
+}

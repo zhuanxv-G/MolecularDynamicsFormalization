@@ -1,0 +1,63 @@
+docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean:49:20: error(lean.invalidField): Invalid field `congr`: The environment does not contain `WithTop.LT.congr`, so it is not possible to project the field `congr` from an expression
+  MemLp.add hd hn
+of type
+  WithTop.LT
+    (eLpNorm
+      (textbookBrownianGlobalDriftIntegral m hm U hU hPU β hβ B x t + fun sample =>
+        (textbookBrownianSDENoise m β) (B t.toNNReal sample))
+      p P)
+    ∞
+docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean:50:2: error: No goals to be solved
+docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean:138:12: error: typeclass instance problem is stuck
+  NormedSpace ℝ ?m.1062
+
+Note: Lean will not try to resolve this typeclass instance problem because the second and fourth type arguments to `NormedSpace` contain metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean:176:30: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  S t / t - c * t / t
+in the target expression
+  |S t / t - c| = |S t - c * t| / t
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+x : Fin Nc → ℝ
+i j : Fin Nc
+M : ℝ
+left✝ : 0 ≤ M
+hM :
+  ∀ (x : Fin Nc → ℝ) (t : ℝ),
+    0 ≤ t →
+      ∀ (i j : Fin Nc),
+        |∫ (sample : Ω),
+                (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) i *
+                  (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) j ∂P -
+              textbookBrownianSDENoiseAmplitude m β i * textbookBrownianSDENoiseAmplitude m β j *
+                if i = j then t else 0| ≤
+          M * t * (M * t + (2 * ∑ k, √(2 * β⁻¹ * (m k)⁻¹)) * √t)
+C : ℝ := ∑ k, √(2 * β⁻¹ * (m k)⁻¹)
+c : ℝ := textbookBrownianSDENoiseAmplitude m β i * textbookBrownianSDENoiseAmplitude m β j * if i = j then 1 else 0
+S : ℝ → ℝ :=
+  fun t =>
+    ∫ (sample : Ω),
+      (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) i *
+        (textbookBrownianGlobalRandomConfiguration m hm U hU hPU β hβ x B t sample - x) j ∂P
+t : ℝ
+ht : t ∈ Ioi 0
+ht0 : 0 < t
+hcov :
+  (textbookBrownianSDENoiseAmplitude m β i * textbookBrownianSDENoiseAmplitude m β j * if i = j then t else 0) = c * t
+herr : |S t - c * t| ≤ M * t * (M * t + 2 * C * √t)
+⊢ |S t / t - c| = |S t - c * t| / t
+docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean:179:62: error: No goals to be solved

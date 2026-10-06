@@ -1,0 +1,18 @@
+docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean:35:50: error: unexpected token '∞'; expected ')'
+docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean:45:50: error: unexpected token '∞'; expected ')'
+docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean:61:12: error: unexpected token '∞'; expected ')'
+docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean:73:74: error: Application type mismatch: The argument
+  hm
+has type
+  ∀ (i : Fin Nc), 0 < m i
+of sort `Prop` but is expected to have type
+  Measure ?m.52
+of sort `Type ?u.70` in the application
+  textbookBrownianGlobalRandomConfiguration_increment_coordinate_memLp ?m.55 hm
+docs/verification/2026-10-06-BrownianSecondMomentEstimates/Draft.lean:137:76: error: Type mismatch
+  norm_integral_le_integral_norm ?m.874
+has type
+  ‖∫ (a : ?m.868), ?m.874 a ∂?m.873‖ ≤ ∫ (a : ?m.868), ‖?m.874 a‖ ∂?m.873
+but is expected to have type
+  |∫ (sample : Ω), X sample i * X sample j - N sample i * N sample j ∂P| ≤
+    ∫ (sample : Ω), |X sample i * X sample j - N sample i * N sample j| ∂P

@@ -982,3 +982,7 @@ full-check01 passed：9114 jobs/2009公理声明/197exact inputs；10checks退�
 BrownianExpectationEstimates / CH06-DEP-080 / NOT-CH06-089：same actual globalq increment trueintegrability/norm expectation sqrt-time bound、literalactual driftIntegral AE identity/integrability/mean expectations/linear meanbound；clamped originaldrift expectation truecontinuous/zero；genuine time-sample joint AEstrong meas/product integrability/Fubini。actual original b(x) true mean right derivative/first quotient；derivedLipschitz true expectednormdriftdifference/literal sameprocess FrozenError trueintegrability/AEintegral/expectednorm O(t²+t^(3/2))。21public local06退出0统一验收中；whole stochasticgenerator/谱T/5.6/core负责人/wholepending。
 
 full-check01 passed：9115 jobs/2030公理声明/198exact inputs；10checks退出0、全部input/rawlog SHA匹配、21 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianSecondMomentEstimates / CH06-DEP-081 / NOT-CH06-090：same actual driftIntegral AE全初值时间uniform bound/全部Lp含∞，actualq increment及coordinate allfiniteLp/真实crosssecond integrability；actualdelta=D+Noise推出真实secondmoment误差≤Mt(Mt+2C√t)，真secondproduct/t极限actualnoise covariance及diagonal/t原质量2β^-1m_i^-1。8public local04通过整批验收中；whole概率generator/高阶Taylor/谱T及5.6/C²core负责人/wholepending。
+
+full-check01 passed：9116 jobs/2038公理声明/199exact inputs；10checks退出0、全部input/rawlog SHA匹配、8 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

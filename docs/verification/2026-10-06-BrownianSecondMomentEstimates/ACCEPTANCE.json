@@ -1,0 +1,114 @@
+{
+  "started_at": "2026-10-06T15:40:44.9535622+08:00",
+  "finished_at": "2026-10-06T15:50:20.4423341+08:00",
+  "head_at_check": "69278a65722a99e51eec637296c92dff49502ca6",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9116,
+  "audit_declarations": 2038,
+  "inputs": 199,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGlobalDriftIntegral_norm_bound_ae",
+    "MolecularDynamics.textbookBrownianGlobalDriftIntegral_memLp",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_memLp",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_coordinate_memLp",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_product_integrable",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_product_error_bound",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_product_div_tendsto",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_moment_div_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftIntegral_norm_bound_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalDriftIntegral_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_increment_coordinate_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_product_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_product_error_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_product_div_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_second_moment_div_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "6513e2e3c5d67896e1ffacc734f47ba0c6f9f67d6a4ef39388e331f3d3f93863"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "f9fa35758b914178253ff99b2b68dba6b04f088748494ec79478a29cb3344819"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "bedf3ca36a6dbd746919e1c360069b8ac6491af0645400d053b5d16e6dc00d16"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "784fa0126660e6ed3ccec4e309c85890a1c8cd9ee9d07e1ffc87909d04363757"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}
