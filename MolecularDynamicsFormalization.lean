@@ -250,3 +250,5 @@ import MolecularDynamics.Chapter06.BrownianTorusModel
 import MolecularDynamics.Chapter06.BrownianTransitionSemigroup
 
 import MolecularDynamics.Chapter06.BrownianFellerContinuity
+
+import MolecularDynamics.Chapter06.BrownianSmallTimeEstimates

@@ -1,0 +1,29 @@
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:106:32: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (sample : Ω), ‖(textbookBrownianSDENoise m β) (B t sample) i‖ ^ 2 ∂P
+in the target expression
+  0 ≤
+    ∫ (x : Ω), ((fun x => ‖(textbookBrownianSDENoise m β) (B t x) i‖) ^ 2) x ∂P -
+      (∫ (x : Ω), ‖(textbookBrownianSDENoise m β) (B t x) i‖ ∂P) ^ 2
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+t : ℝ≥0
+i : Fin Nc
+this : IsProbabilityMeasure P
+hLp : MemLp (fun sample => (textbookBrownianSDENoise m β) (B t sample) i) 2 P
+hsq : ∫ (sample : Ω), ‖(textbookBrownianSDENoise m β) (B t sample) i‖ ^ 2 ∂P = 2 * β⁻¹ * (m i)⁻¹ * ↑t
+hv :
+  0 ≤
+    ∫ (x : Ω), ((fun x => ‖(textbookBrownianSDENoise m β) (B t x) i‖) ^ 2) x ∂P -
+      (∫ (x : Ω), ‖(textbookBrownianSDENoise m β) (B t x) i‖ ∂P) ^ 2
+⊢ ∫ (sample : Ω), ‖(textbookBrownianSDENoise m β) (B t sample) i‖ ∂P ≤ √(2 * β⁻¹ * (m i)⁻¹ * ↑t)
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:136:33: error: failed to prove positivity/nonnegativity/nonzeroness
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:136:15: error: `simp` made no progress

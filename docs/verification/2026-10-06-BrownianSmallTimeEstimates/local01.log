@@ -1,0 +1,88 @@
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:22:25: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:33:25: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:41:2: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  IsFiniteMeasure P
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:41:68: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+β : ℝ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+t : ℝ≥0
+i : Fin Nc
+⊢ ¬1 = sorry ()
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:71:78: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+β : ℝ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+t : ℝ≥0
+i j : Fin Nc
+this : IsProbabilityMeasure P
+⊢ ¬2 = sorry ()
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:72:78: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+β : ℝ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+t : ℝ≥0
+i j : Fin Nc
+this : IsProbabilityMeasure P
+hi : MemLp (fun sample => (textbookBrownianSDENoise m β) (B t sample) i) 2 P
+⊢ ¬2 = sorry ()
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:81:2: error: Type mismatch: After simplification, term
+  Eq.trans (Eq.symm hc) hc'
+ has type
+  @Eq ℝ
+    (∫ (x : Ω),
+      ((fun sample => (textbookBrownianSDENoise m β) (B t sample) i) * fun sample =>
+          (textbookBrownianSDENoise m β) (B t sample) j)
+        x ∂P)
+    (textbookBrownianSDENoiseAmplitude m β i * textbookBrownianSDENoiseAmplitude m β j * if i = j then ↑t else 0)
+but is expected to have type
+  @Eq ℝ
+    (∫ (sample : Ω), (textbookBrownianSDENoise m β) (B t sample) i * (textbookBrownianSDENoise m β) (B t sample) j ∂P)
+    (textbookBrownianSDENoiseAmplitude m β i * textbookBrownianSDENoiseAmplitude m β j * if i = j then ↑t else 0)
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:90:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:90:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  @Eq ℝ (∫ (sample : Ω), (textbookBrownianSDENoise m β) (B t sample) i ^ 2 ∂P)
+    (2 * β⁻¹ * (m i)⁻¹ * if True then ↑t else 0)
+but is expected to have type
+  @Eq ℝ (∫ (sample : Ω), (textbookBrownianSDENoise m β) (B t sample) i ^ 2 ∂P) (2 * β⁻¹ * (m i)⁻¹ * ↑t)
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:169:13: error: typeclass instance problem is stuck
+  IsLocallyFiniteMeasure ?m.105
+
+Note: Lean will not try to resolve this typeclass instance problem because the fourth type argument to `IsLocallyFiniteMeasure` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+docs/verification/2026-10-06-BrownianSmallTimeEstimates/Draft.lean:194:5: error: typeclass instance problem is stuck
+  IsLocallyFiniteMeasure ?m.176
+
+Note: Lean will not try to resolve this typeclass instance problem because the fourth type argument to `IsLocallyFiniteMeasure` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.

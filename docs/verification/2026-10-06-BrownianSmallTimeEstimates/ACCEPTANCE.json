@@ -1,0 +1,212 @@
+{
+  "started_at": "2026-10-06T14:53:46.4982151+08:00",
+  "finished_at": "2026-10-06T14:57:33.4460304+08:00",
+  "head_at_check": "20f4a596861f0d410efc79c6da16cd7e1a7844c9",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9114,
+  "audit_declarations": 2009,
+  "inputs": 197,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianPhysicalNoise_coordinate_memLp",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_memLp",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_coordinate_integrable",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_integrable",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_coordinate_mean",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_mean",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_second_product",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_second_moment",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_coordinate_norm_mean_le",
+    "MolecularDynamics.textbookBrownianPhysicalNoise_norm_mean_le",
+    "MolecularDynamics.textbookBrownianSDEDrift_bounded",
+    "MolecularDynamics.textbookBrownianIntegralSolution_drift_integral_bound",
+    "MolecularDynamics.textbookBrownianIntegralSolution_displacement_bound",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_displacement_bound_ae",
+    "MolecularDynamics.textbookBrownianFrozenDriftError",
+    "MolecularDynamics.textbookBrownianFrozenDriftError_eq_integral",
+    "MolecularDynamics.textbookBrownianFrozenDriftError_norm_le",
+    "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_frozenDriftError_ae"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_coordinate_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_coordinate_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_coordinate_mean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_mean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_second_product",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_second_moment",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_coordinate_norm_mean_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianPhysicalNoise_norm_mean_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianSDEDrift_bounded",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_drift_integral_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianIntegralSolution_displacement_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_displacement_bound_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianFrozenDriftError",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianFrozenDriftError_eq_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianFrozenDriftError_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration_frozenDriftError_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "d4cf855bc80ffeb13fc03879230d899c17f36334a900486ff5659f935447dbc9"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "a99af845b927d1eff9086dbd7020fd5d6ac1d7c06828ac9f1ae4a730f6a40808"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "80fd9e8a32fdab2d0a2f98045ed03d71eda371e66454126aebf60e83073b124d"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "ccedac22a144cd1a5c222a2fcaed48c632b9c152fe1284eab7c2577faf9742e4"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "b093cd3b0880ae623df6dd3f8362175d62e19b856dbc97476aa6496da58b6dad"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

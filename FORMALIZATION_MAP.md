@@ -974,3 +974,7 @@ full-check01 passed：9112 jobs/1974公理声明/195exact inputs；10checks退�
 BrownianFellerContinuity / CH06-DEP-078 / NOT-CH06-087：原realendpoint真正uniformhorizon初值/pathLipschitz与jointtime连续，same原torus下降；真实CMap observablepathflow uniformnorm联合连续/有界/Bochnerintegrable，actual期待固定horizon Bochneridentity与allNNReal uniformnorm强连续、真C0；实际wholeC(Torus,ℝ)有界概率算子 norm≤1/id/semigroup/C0。17public local04通过，统一验收中；actualgenerator/SDElaw=Gibbs谱T及5.6算子识别/C²core负责人/wholepending。
 
 full-check01 passed：9113 jobs/1991公理声明/196exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianSmallTimeEstimates / CH06-DEP-079 / NOT-CH06-088：原actualSigmaB各coordinate/wholevector allfiniteorderLp与真integrability/mean0/实际cross secondmoment与原mass diagonal secondmoment；variance推出真正sqrt-time firstmoment、finite-norm求和actualnoiseNorm期待界。实际boundeddrift/真IntervalIntegrable drift/norm界和sameglobalq alltime位移AE；冻结literaldriftError真实积分差/derivedL errorbound及singleactualglobalq alltimeAE。18public local06通过统一验收中；actualgenerator/谱T及5.6算子识别/core负责人/wholepending。
+
+full-check01 passed：9114 jobs/2009公理声明/197exact inputs；10checks退出0、全部input/rawlog SHA匹配、18 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
