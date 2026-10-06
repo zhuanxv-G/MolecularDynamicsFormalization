@@ -1,0 +1,142 @@
+{
+  "started_at": "2026-10-06T22:01:08.2484471+08:00",
+  "finished_at": "2026-10-06T22:02:21.634751+08:00",
+  "head_at_check": "a0ae78e710c35df9c7c3db85a201e8ee11daa22d",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9136,
+  "audit_declarations": 2296,
+  "inputs": 219,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookGibbsL2ToL1",
+    "MolecularDynamics.textbookGibbsL2ToL1_apply",
+    "MolecularDynamics.textbookGibbsL2ToL1_norm_le_one",
+    "MolecularDynamics.textbookGibbsL2ToL1_continuous_inclusion",
+    "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_L2_compatibility",
+    "MolecularDynamics.textbookBrownianInitialL1DensityMeasure_L2_compatibility",
+    "MolecularDynamics.textbookBrownianL1DensityLaw_L2_compatibility",
+    "MolecularDynamics.textbookBrownianL1DensityAverage_L2_compatibility",
+    "MolecularDynamics.textbookBrownianGibbsL1ToHaarDensity_L2_compatibility",
+    "MolecularDynamics.textbookBrownianL1DensityAverage_L2_smooth_decay",
+    "MolecularDynamics.textbookBrownianL1DensityAverage_L2_smooth_exponential",
+    "MolecularDynamics.textbookBrownianL1HaarDensityRatio_L2_smooth_decay"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookGibbsL2ToL1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsL2ToL1_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsL2ToL1_norm_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookGibbsL2ToL1_continuous_inclusion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL1ProbabilityOperator_L2_compatibility",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianInitialL1DensityMeasure_L2_compatibility",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianL1DensityLaw_L2_compatibility",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianL1DensityAverage_L2_compatibility",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsL1ToHaarDensity_L2_compatibility",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianL1DensityAverage_L2_smooth_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianL1DensityAverage_L2_smooth_exponential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianL1HaarDensityRatio_L2_smooth_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "e5258100e81fd17953dd3438f4e5795e2a64a174e892a31e68e8a9d8e6f15836"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "46677984f5bd6257fd83d0709153b51025ec3d0f928dd1ffaf0685fca9d69233"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1062,3 +1062,7 @@ full-check01 passed：9134 jobs/2260公理声明/217exact inputs；10checks退�
 BrownianL1DensityLaw / CH06-DEP-100 / NOT-CH06-109：wholeactualGibbsL1真boundedcontinuous pairing/积分对偶/mass，真实初始L1densityprobability及sameκlaw，wholeL1evolution真AE非负/densitymeasure=actuallaw，真实原Haar physicaldensity可测可积非负质量1/actuallaw与literal5.6ratio。24public local03统一验收中。原250/PDF271正式Theorem6.1一般M，前页M=I为6.46例子；指数界初始L2限制和Dirac/原初始类owner歧义保留，下一L1/L2兼容，非一般p独立扩展。
 
 full-check01 passed：9135 jobs/2284公理声明/218exact inputs；10checks退出0、全部input/rawlog SHA匹配、24 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianL1L2Compatibility / CH06-DEP-101 / NOT-CH06-110：同原Gibbs代表函数L²→L¹真连续包含及J₂/J₁相容；真实wholeA₁ I=I原closed谱T由dense连续等化证明；同初始physicalmeasure、同κlaw/5.6average、pointwise同Haar密度及真正L¹/Haar平均正canonical指数界（仅initialrelativeGibbsL²概率密度）。12public local02待fullcheck；全L¹/Dirac指数界及owner/wholepending，任意Lp不独立扩张范围。
+
+full-check01 passed：9136 jobs/2296公理声明/219exact inputs；10checks退出0、全部input/rawlog SHA匹配、12 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

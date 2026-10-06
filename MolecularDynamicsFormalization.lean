@@ -294,3 +294,5 @@ import MolecularDynamics.Chapter06.BrownianSpectralDensityLaw
 import MolecularDynamics.Chapter06.BrownianL1ProbabilitySemigroup
 
 import MolecularDynamics.Chapter06.BrownianL1DensityLaw
+
+import MolecularDynamics.Chapter06.BrownianL1L2Compatibility
