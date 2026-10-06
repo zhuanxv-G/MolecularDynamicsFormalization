@@ -1,0 +1,17 @@
+# Theorem 6.2 依赖：同一实际核的全时间不变概率律存在
+
+对应印刷251–254/PDF272–275原Theorem6.2不变律存在证明链。原PDF SHA重新核对一致，复用同一PDF272、273既有视觉核对；未新增274、275视觉检查。17公开声明和一个必要private实变引理为同一原κ构造∀T:NNReal的不变probability，不宣称唯一性或weighted-test指数收敛。
+
+实际选定全time过程在每个sample（包括定义正则化的exceptional sample）具有NNReal连续路径；同一κ的原过程期待身份及真P probability给normf支配，真正DCT证明原BCF期待在整个非负time（含0）连续。ProbabilityMeasure真正weak BCFintegral topology给pointlaw及任意初始prob law的weak time continuity。对open目标真Portmanteau lowersemicont，原phase的Borel opens pi-system给实际measurecurve Giry measurable；未额外假设ProbabilityMeasure weak Borel等于Giry。将该完全相同law curve包装为真正Markov timekernel。
+
+真实κ0与原CK给law zero/add。给定已经由前批真实Cesaro+weakFeller导出的skeleton invariant，原law orbit的NNReal periodτ身份由semigroup推得；这不把原initiallaw直接认作alltime invariant。
+
+正τ真实Lebesgue (0,τ]经Real.toNNReal pushforward及finite/nonzero τ⁻¹归一化成为真正probability clock。真实timekernel与该clock组合成actual orbit mean probability；Kernel.integral_comp与real interval integral准确给任意原BCF f的normalized period expectation。private real lemma只服务该必要构造：g∘toNNReal连续，FTC与真实periodicity使t↦∫0^(t+τ)g-∫0^t g在t≥0导数0，固定版本mean value theorem和interval translation证明非负time period均值真平移不变。
+
+由sameactual semigroup和period期待平移身份，原f及真κ_Tf的平均law积分相同；真正FiniteMeasure BCF extensionality给每个T≥0的测度等式κ_T∘ν=ν。最终从已验真实正τ skeleton law存在推出同一actual核∀T不变law存在，另一个公开版本自动derive原forceLip。exists没有density或目标stationarity premise，σ任意、γ>0；目前明确U≥1，只是已验存在路线的显式势能归一化条件，下一批去掉它需要证明加常数不改变actualprocess/kernel，不能只口头WLOG。
+
+前10局部local03通过记录exact prefix SHA；17最终local08退出0、0error/Leanwarning空日志。local01/02及04–07原始失败诊断保存：Giry curve显式参数/全局instance、periodλ展开、privateFTC语法和标准表示等式、toNNReal正部及原integral coerces；修复不抬资源/透明度，不抑制linter，不新增假设、公理或占位。最终Draft与正式源exactSHA一致，DEP114/NOT123等唯一full-check01。
+
+actualjointdensity存在/原time0密度连续性语义、actualcontinuousgenerator身份及literalAssumption2、Harris唯一性与weighted exponential convergence、Theorem6.2完整陈述与负责人最终语义仍未完成。该真实∀T不变律只建立存在性，不自动识别为canonical Gibbs law或证明trajectory ergodicity。
+
+full-check01 passed：9149 jobs/2432公理声明/232exact inputs；10checks退出0、全部input/rawlog SHA匹配、17public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。sameactual原κ的NNReal期待和概率law弱timecontinuous、openpi-system真正Girytimekernel/Markov、原semigroup periodiclaw、finite/nonzero正period probability clock/orbitmean/BCF积分和真FTC平移等式，实际∀T同κ不变prob exists已机器验证；明确U>=1/γ>0/σ任意，最终exists无density或stationarity目标premise。未识别Gibbs/未证唯一性或weighted指数、continuousgenerator/densityexists/Harris/ownersemanticpending，Theorem6.2整体未完成。

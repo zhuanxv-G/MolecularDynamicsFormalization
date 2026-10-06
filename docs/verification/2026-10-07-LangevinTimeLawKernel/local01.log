@@ -1,0 +1,53 @@
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:75:2: error: Tactic `apply` failed: could not unify the conclusion of `Measurable.measure_of_isPiSystem_of_isProbabilityMeasure
+  (have this := BorelSpace.measurable_eq;
+  this)
+  isPiSystem_isOpen`
+  Measurable ?m.34
+with the goal
+  Measurable fun T => ↑(textbookLangevinPeriodicProbabilityEvolution B P hB U hU hp L hF γ σ T μ)
+
+Note: The full type of `Measurable.measure_of_isPiSystem_of_isProbabilityMeasure
+  (have this := BorelSpace.measurable_eq;
+  this)
+  isPiSystem_isOpen` is
+  (∀ s ∈ {C | IsOpen C}, Measurable fun a => (?m.34 a) s) → Measurable ?m.34
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+μ : ProbabilityMeasure (textbookLangevinPeriodicPhase N)
+⊢ Measurable fun T => ↑(textbookLangevinPeriodicProbabilityEvolution B P hB U hU hp L hF γ σ T μ)
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:145:20: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookLangevinPeriodicProbabilityEvolution ?B ?P ?hB ?U ?hU ?hp ?L ?hF ?γ ?σ (?S + ?T) ?μ
+in the target expression
+  (fun T => textbookLangevinPeriodicProbabilityEvolution B P hB U hU hp L hF γ σ T μ) (τ + T) =
+    (fun T => textbookLangevinPeriodicProbabilityEvolution B P hB U hU hp L hF γ σ T μ) T
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+τ : ℝ≥0
+μ : ProbabilityMeasure (textbookLangevinPeriodicPhase N)
+hInv : ⇑(textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ τ) ∘ₘ ↑μ = ↑μ
+hm : textbookLangevinPeriodicProbabilityEvolution B P hB U hU hp L hF γ σ τ μ = μ
+T : ℝ≥0
+⊢ (fun T => textbookLangevinPeriodicProbabilityEvolution B P hB U hU hp L hF γ σ T μ) (τ + T) =
+    (fun T => textbookLangevinPeriodicProbabilityEvolution B P hB U hU hp L hF γ σ T μ) T

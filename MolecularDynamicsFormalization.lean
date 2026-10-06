@@ -320,3 +320,5 @@ import MolecularDynamics.Chapter06.LangevinSkeletonMoments
 import MolecularDynamics.Chapter06.LangevinCesaroLaw
 
 import MolecularDynamics.Chapter06.LangevinCesaroInvariant
+
+import MolecularDynamics.Chapter06.LangevinTimeLawKernel

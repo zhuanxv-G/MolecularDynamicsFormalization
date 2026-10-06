@@ -1,0 +1,35 @@
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:163:26: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  max (s + ↑τ) 0
+in the target expression
+  max (s + ↑τ) 0 = s + ↑τ
+
+τ T : ℝ≥0
+g : ℝ≥0 → ℝ
+hg : Continuous g
+hper : Function.Periodic g τ
+gr : ℝ → ℝ := fun s => g s.toNNReal
+hgr : Continuous gr
+s : ℝ
+hs : 0 ≤ s
+⊢ max (s + ↑τ) 0 = s + ↑τ
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:188:27: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  max (s + ↑T) 0
+in the target expression
+  max (s + ↑T) 0 = s + ↑T
+
+τ T : ℝ≥0
+g : ℝ≥0 → ℝ
+hg : Continuous g
+hper : Function.Periodic g τ
+gr : ℝ → ℝ := fun s => g s.toNNReal
+hgr : Continuous gr
+hperiod : ∀ (s : ℝ), 0 ≤ s → gr (s + ↑τ) = gr s
+F : ℝ → ℝ := fun t => (∫ (s : ℝ) in 0..t + ↑τ, gr s) - ∫ (s : ℝ) in 0..t, gr s
+hd : ∀ (t : ℝ), HasDerivAt F (gr (t + ↑τ) - gr t) t
+hcont : Continuous F
+hzero : ∀ t ∈ Ico 0 ↑T, HasDerivWithinAt F 0 (Ici t) t
+he : F ↑T = F 0
+s : ℝ
+hs : s ∈ uIcc 0 ↑τ
+hs0 : 0 ≤ s
+⊢ max (s + ↑T) 0 = s + ↑T

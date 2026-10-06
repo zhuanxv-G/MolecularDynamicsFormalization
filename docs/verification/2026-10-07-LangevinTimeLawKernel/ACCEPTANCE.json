@@ -1,0 +1,226 @@
+{
+  "started_at": "2026-10-07T02:50:19.1866058+08:00",
+  "finished_at": "2026-10-07T02:51:57.5223904+08:00",
+  "head_at_check": "fca487119072be4b88de5467244f116a4bafd947",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9149,
+  "audit_declarations": 2432,
+  "inputs": 232,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_time_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionProbability_time_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_time_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_time_measurable",
+    "MolecularDynamics.textbookLangevinPeriodicEvolutionTimeKernel",
+    "MolecularDynamics.textbookLangevinPeriodicEvolutionTimeKernel_apply",
+    "MolecularDynamics.textbookLangevinPeriodicEvolutionTimeKernel_isMarkov",
+    "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_zero",
+    "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_add",
+    "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_periodic_of_skeleton_invariant",
+    "MolecularDynamics.textbookLangevinInvariantAveragingClock",
+    "MolecularDynamics.textbookLangevinInvariantAveragingClock_integral",
+    "MolecularDynamics.textbookLangevinPeriodicOrbitAverage",
+    "MolecularDynamics.textbookLangevinPeriodicOrbitAverage_integral",
+    "MolecularDynamics.textbookLangevinPeriodicOrbitAverage_invariant",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists_of_periodic"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_time_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionProbability_time_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_time_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_time_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicEvolutionTimeKernel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicEvolutionTimeKernel_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicEvolutionTimeKernel_isMarkov",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicProbabilityEvolution_periodic_of_skeleton_invariant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinInvariantAveragingClock",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinInvariantAveragingClock_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicOrbitAverage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicOrbitAverage_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicOrbitAverage_invariant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_invariant_exists_of_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "707c26f6b3c0ed94d82c36afb739e4df56c80dfe5ca55d67c7a79c6a33339614"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "170c1ca4d99000d146ebe0c18cb8472e40cc5ac2510b63951072a4d2dd937c3f"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "7ebefd24fbb28847d35cb61651595dd158f9fb64d94b26f6da33c7633a15e68a"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "a5f6df23669dc8767fbdf8fdec7001e6e652c7d0691f81c7f88b74a76301076d"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "ea5749d6f26ea086f8f3ea44df56c19cb6865f7c2f98072f9dd515f292e9bde0"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "dafa3d3f0b6e6388a29e251f45e9aac00e6b43945d6d310bfd4dafbd435d602d"
+    },
+    {
+      "path": "local07.log",
+      "sha256": "92345ad4669422b6b022b012c4af63c0cc39f59a1b1c06edb0ed0f76b1b78f48"
+    },
+    {
+      "path": "local08.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_NNReal_time_expectation_and_probability_law_weak_continuity": true,
+  "genuine_Giry_measurable_time_kernel_Markov": true,
+  "actual_probability_law_zero_add_and_skeleton_orbit_periodicity": true,
+  "actual_positive_finite_normalized_period_clock_and_orbit_average": true,
+  "actual_period_test_integral_and_true_shift_invariance": true,
+  "actual_all_time_same_kernel_invariant_probability_exists": true,
+  "explicit_U_ge_one": true,
+  "gamma_positive": true,
+  "sigma_arbitrary": true,
+  "density_or_invariant_law_premise_in_final_exists": "none",
+  "Gibbs_law_identification_or_uniqueness_or_weighted_convergence": "not_proved",
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

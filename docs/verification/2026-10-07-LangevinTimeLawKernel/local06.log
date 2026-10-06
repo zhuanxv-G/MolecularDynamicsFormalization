@@ -1,0 +1,63 @@
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:160:68: error: unsolved goals
+τ T : ℝ≥0
+g : ℝ≥0 → ℝ
+hg : Continuous g
+hper : Function.Periodic g τ
+gr : ℝ → ℝ := fun s => g s.toNNReal
+hgr : Continuous gr
+s : ℝ
+hs : 0 ≤ s
+⊢ ↑(s + ↑τ).toNNReal = s + ↑τ
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:165:58: error: unsolved goals
+case e'_8
+τ T : ℝ≥0
+g : ℝ≥0 → ℝ
+hg : Continuous g
+hper : Function.Periodic g τ
+gr : ℝ → ℝ := fun s => g s.toNNReal
+hgr : Continuous gr
+hperiod : ∀ (s : ℝ), 0 ≤ s → gr (s + ↑τ) = gr s
+F : ℝ → ℝ := fun t => (∫ (s : ℝ) in 0..t + ↑τ, gr s) - ∫ (s : ℝ) in 0..t, gr s
+t : ℝ
+hA : HasDerivAt (fun u => ∫ (x : ℝ) in 0..u, gr x) (gr (t + ↑τ)) (t + ↑τ)
+hshiftDeriv : HasDerivAt ((fun u => ∫ (x : ℝ) in 0..u, gr x) ∘ fun x => id x + ↑τ) (gr (t + ↑τ) * 1) t
+⊢ (fun t => (∫ (s : ℝ) in 0..t + ↑τ, gr s) - ∫ (s : ℝ) in 0..t, gr s) =
+    (fun x => ∫ (s : ℝ) in 0..x + ↑τ, gr s) - fun u => ∫ (s : ℝ) in 0..u, gr s
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:182:68: error: unsolved goals
+τ T : ℝ≥0
+g : ℝ≥0 → ℝ
+hg : Continuous g
+hper : Function.Periodic g τ
+gr : ℝ → ℝ := fun s => g s.toNNReal
+hgr : Continuous gr
+hperiod : ∀ (s : ℝ), 0 ≤ s → gr (s + ↑τ) = gr s
+F : ℝ → ℝ := fun t => (∫ (s : ℝ) in 0..t + ↑τ, gr s) - ∫ (s : ℝ) in 0..t, gr s
+hd : ∀ (t : ℝ), HasDerivAt F (gr (t + ↑τ) - gr t) t
+hcont : Continuous F
+hzero : ∀ t ∈ Ico 0 ↑T, HasDerivWithinAt F 0 (Ici t) t
+he : F ↑T = F 0
+s : ℝ
+hs : s ∈ uIcc 0 ↑τ
+hs0 : 0 ≤ s
+⊢ ↑(s + ↑T).toNNReal = s + ↑T
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:162:33: warning: This simp argument is unused:
+  Real.coe_toNNReal _ (add_nonneg hs τ.property)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [NNReal.coe_add, Real.coe_toNNReal _ hs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:169:39: warning: This simp argument is unused:
+  Pi.sub_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [F, Function.comp_def, id_eq, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:184:33: warning: This simp argument is unused:
+  Real.coe_toNNReal _ (add_nonneg hs0 T.property)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [NNReal.coe_add, Real.coe_toNNReal _ hs0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

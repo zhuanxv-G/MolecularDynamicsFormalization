@@ -1,0 +1,87 @@
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:167:97: error: unexpected token 'using'; expected ')', ',' or ':'
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:161:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (s + ↑τ).toNNReal
+in the target expression
+  g (s + ↑τ).toNNReal = g s.toNNReal
+
+τ T : ℝ≥0
+g : ℝ≥0 → ℝ
+hg : Continuous g
+hper : Function.Periodic g τ
+gr : ℝ → ℝ := fun s => g s.toNNReal
+hgr : Continuous gr
+s : ℝ
+hs : 0 ≤ s
+⊢ g (s + ↑τ).toNNReal = g s.toNNReal
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:164:58: error: unsolved goals
+case e'_8
+τ T : ℝ≥0
+g : ℝ≥0 → ℝ
+hg : Continuous g
+hper : Function.Periodic g τ
+gr : ℝ → ℝ := fun s => g s.toNNReal
+hgr : Continuous gr
+hperiod : ∀ (s : ℝ), 0 ≤ s → gr (s + ↑τ) = gr s
+F : ℝ → ℝ := fun t => (∫ (s : ℝ) in 0..t + ↑τ, gr s) - ∫ (s : ℝ) in 0..t, gr s
+t x✝ : ℝ
+⊢ (∫ (s : ℝ) in 0..x✝ + ↑τ, gr s) - ∫ (s : ℝ) in 0..x✝, gr s =
+    (((fun u => ∫ (x : ℝ) in 0..u, gr x) ∘ fun x => id x + ↑τ) - fun u => ∫ (x : ℝ) in 0..u, gr x) x✝
+
+case e'_9
+τ T : ℝ≥0
+g : ℝ≥0 → ℝ
+hg : Continuous g
+hper : Function.Periodic g τ
+gr : ℝ → ℝ := fun s => g s.toNNReal
+hgr : Continuous gr
+hperiod : ∀ (s : ℝ), 0 ≤ s → gr (s + ↑τ) = gr s
+F : ℝ → ℝ := fun t => (∫ (s : ℝ) in 0..t + ↑τ, gr s) - ∫ (s : ℝ) in 0..t, gr s
+t : ℝ
+⊢ gr (t + ↑τ) = gr (t + ↑τ) * 1
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:156:54: error: unsolved goals
+τ T : ℝ≥0
+g : ℝ≥0 → ℝ
+hg : Continuous g
+hper : Function.Periodic g τ
+gr : ℝ → ℝ := fun s => g s.toNNReal
+hgr : Continuous gr
+hperiod : ∀ (s : ℝ), 0 ≤ s → gr (s + ↑τ) = gr s
+F : ℝ → ℝ := fun t => (∫ (s : ℝ) in 0..t + ↑τ, gr s) - ∫ (s : ℝ) in 0..t, gr s
+hd : ∀ (t : ℝ), HasDerivAt F (gr (t + ↑τ) - gr t) t
+⊢ ∫ (s : ℝ) in 0..↑τ, g (s.toNNReal + T) = ∫ (s : ℝ) in 0..↑τ, g s.toNNReal
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:212:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (x : ℝ) in 0..↑τ, ?m.121 x ∂?m.122
+in the target expression
+  (↑τ)⁻¹ * ∫ (x : ℝ) in Ioc 0 ↑τ, g x.toNNReal ∂ℙ = (↑τ)⁻¹ * ∫ (x : ℝ) in 0..↑τ, g x.toNNReal
+
+τ : ℝ≥0
+hτ : 0 < τ
+g : ℝ≥0 → ℝ
+hg : Continuous g
+⊢ (↑τ)⁻¹ * ∫ (x : ℝ) in Ioc 0 ↑τ, g x.toNNReal ∂ℙ = (↑τ)⁻¹ * ∫ (x : ℝ) in 0..↑τ, g x.toNNReal
+docs/verification/2026-10-07-LangevinTimeLawKernel/Draft.lean:247:4: error: Type mismatch: After simplification, term
+  Kernel.integral_comp hi
+ has type
+  @Eq ℝ
+    (∫ (z : textbookLangevinPeriodicPhase N),
+      f
+        z ∂(textbookLangevinPeriodicEvolutionTimeKernel B P hB U hU hp L hF γ σ μ ∘ₖ
+          Kernel.const Unit ↑(textbookLangevinInvariantAveragingClock τ hτ))
+        ())
+    (∫ (x : ℝ≥0),
+      ∫ (z : textbookLangevinPeriodicPhase N),
+        f
+          z ∂(textbookLangevinPeriodicEvolutionTimeKernel B P hB U hU hp L hF γ σ μ)
+          x ∂↑(textbookLangevinInvariantAveragingClock τ hτ))
+but is expected to have type
+  @Eq ℝ
+    (∫ (y : textbookLangevinPeriodicPhase N),
+      f
+        y ∂(textbookLangevinPeriodicEvolutionTimeKernel B P hB U hU hp L hF γ σ μ ∘ₖ
+          Kernel.const Unit ↑(textbookLangevinInvariantAveragingClock τ hτ))
+        ())
+    (∫ (T : ℝ≥0),
+      ∫ (y : textbookLangevinPeriodicPhase N),
+        f
+          y ∂↑(textbookLangevinPeriodicProbabilityEvolution B P hB U hU hp L hF γ σ T
+            μ) ∂↑(textbookLangevinInvariantAveragingClock τ hτ))
