@@ -1,0 +1,99 @@
+{
+  "started_at": "2026-10-07T03:30:17.5386265+08:00",
+  "finished_at": "2026-10-07T03:31:33.388278+08:00",
+  "head_at_check": "c75cd1b3ccc3902a1f58053f61b107f72c1b5d71",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9152,
+  "audit_declarations": 2450,
+  "inputs": 235,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinWeightedOscillationBound",
+    "MolecularDynamics.textbookLangevinWeightedOscillationBound_integrable",
+    "MolecularDynamics.textbookLangevinWeightedOscillationBound_integral_difference",
+    "MolecularDynamics.textbookLangevinWeightedOscillationBound_minorized_integral_difference",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_hamiltonian_weighted_one_step_contraction"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinWeightedOscillationBound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinWeightedOscillationBound_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinWeightedOscillationBound_integral_difference",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinWeightedOscillationBound_minorized_integral_difference",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_hamiltonian_weighted_one_step_contraction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "b126144550c5ea6b2f5ecaf2d6be467355e5c7bc5c264540d8b036178263a138"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "4d750afd8d8633558c0a6820f26ac53048353b9e7917f75580542225c715f247"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e5b976d64c3533b3eea3009906bce420f7c9be8c5c693822b61cde12d4a78251"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_weighted_oscillation_unbounded_test_integrability_derived": true,
+  "actual_two_probability_weighted_expectation_difference": true,
+  "actual_shared_measure_subtraction_normalized_residual_probability_derived": true,
+  "genuine_shared_probability_part_cancellation": true,
+  "same_actual_original_kernel_half_drift": "previously_derived",
+  "actual_one_step_Hamiltonian_weighted_contraction_strict_alpha_between_zero_and_one": true,
+  "beta_positive_and_alpha_not_assumed": true,
+  "density_clause_scope": "conditional_original_clause_on_actual_derived_C_R",
+  "final_drift_or_target_contraction_or_residual_law_existence_premise": "none",
+  "skeleton_iteration_and_full_time_exponential_convergence": "not_proved_yet",
+  "invariant_uniqueness": "not_proved_yet",
+  "Gibbs_law_identification": "not_proved",
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "one_step_only",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

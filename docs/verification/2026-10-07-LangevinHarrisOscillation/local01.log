@@ -1,0 +1,22 @@
+docs/verification/2026-10-07-LangevinHarrisOscillation/Draft.lean:37:13: error: Type mismatch
+  add_le_add_right (h x z) ?m.195
+has type
+  ?m.195 + ‖f x - f z‖ ≤ ?m.195 + C * (2 + β * (V x + V z))
+but is expected to have type
+  ‖f x - f z‖ + ‖f z‖ ≤ C * (2 + β * (V x + V z)) + ‖f z‖
+docs/verification/2026-10-07-LangevinHarrisOscillation/Draft.lean:209:6: error: Type mismatch
+  add_le_add_left (mul_le_mul_of_nonneg_left hsum (mul_nonneg hC hβ)) ?m.606
+has type
+  C * β *
+        ((1 - ε) *
+          (∫ (x : textbookLangevinPeriodicPhase N), V x ∂↑Q + ∫ (x : textbookLangevinPeriodicPhase N), V x ∂↑S)) +
+      ?m.606 ≤
+    C * β * (∫ (x : textbookLangevinPeriodicPhase N), V x ∂↑μ + ∫ (x : textbookLangevinPeriodicPhase N), V x ∂↑ν) +
+      ?m.606
+but is expected to have type
+  2 * C * (1 - ε) +
+      C * β *
+        ((1 - ε) *
+          (∫ (x : textbookLangevinPeriodicPhase N), V x ∂↑Q + ∫ (x : textbookLangevinPeriodicPhase N), V x ∂↑S)) ≤
+    2 * C * (1 - ε) +
+      C * β * (∫ (x : textbookLangevinPeriodicPhase N), V x ∂↑μ + ∫ (x : textbookLangevinPeriodicPhase N), V x ∂↑ν)

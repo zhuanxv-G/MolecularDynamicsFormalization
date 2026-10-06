@@ -650,3 +650,5 @@ LangevinTimeLawKernel：sameactual原κ/Wiener/unitmass/C∞periodicU/forceLip�
 LangevinPotentialNormalization：sameactual原κ/Wiener/unitmass/C∞periodicU，真实fderiv_addconst给sameforce，原积分解iff+actualuniqueness证明endpoint、kernelidentity；对周期势真实normbound取c=M+1。最终∀T实际invariantprobexists无Ulower前提，γ>0/σ任意；forceLip由原periodicC∞自动derive（或任意给定合法L版本）。未假设density/目标moment/drift/stationarity，未识别Gibbs/证明唯一或指数收敛。
 
 LangevinInvariantMoments：真Wiener/unitmass/C∞periodicU/γ>0/σ任意；原正能量U>=1版本推目标µ原Hl矩可积与2D界。首lemma明确actualhalfdrift及skeletonstationarity中间前提，allmoments由已验commonhalfdriftderive，无前提exists直接由已验∀T真invariant existence构造。任意原U版本明确c和normalizedHl(U+c)，不假设目标µ矩、jointdensity或generator identity；Fatou用实际非负truncation，未识别Gibbs/唯一Harris。
+
+LangevinHarrisOscillation：原actualκ/Wiener/unitmass/C∞periodicU/正原Hl(U>=1)/γ>0/σ≠0。genericphase辅助只为该Harris证明，明确真实V矩及sharedmeasureminorization中间前提；actualpublic从已验commonτ/Hl moments/halfdrift/derivedR>4D和在同derivedC_R的原densityclause供输入，严格β/a和residuallaw真实derive。measurable无界f允许weightedoscillation，f可积不额外假设；原densityonC_R存在没有derive或偷换，未证全time6.48或唯一性/generator身份。
