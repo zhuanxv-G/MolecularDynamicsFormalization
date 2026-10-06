@@ -990,3 +990,7 @@ full-check01 passed：9116 jobs/2038公理声明/199exact inputs；10checks退�
 BrownianFourthMomentEstimates / CH06-DEP-082 / NOT-CH06-091：真实standard Gaussian第四矩可积/非负、sqrt-time真正law推前及原noise坐标fourth精确t²，finitePi noise第二/第四范数界；sameactualq真second/fourth bounds和uniformshorttime O(t)/O(t²)，真实Holder第三范数矩 O(t sqrt t)及third/t→0。14public local05通过统一验收中；完整实际generator/谱T/5.6/core负责人/wholepending。
 
 full-check01 passed：9117 jobs/2052公理声明/200exact inputs；10checks退出0、全部input/rawlog SHA匹配、14 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianObservableTaylor / CH06-DEP-083 / NOT-CH06-092：原周期observable全部actualjets周期/globalbound，literal二阶TaylorRemainder真多元积分及derivedcubicbound/continuity；sameactualq literal remainder真实可积/uniform E norm≤C t sqrt t，expectednorm/t与signed expectation/t→0。11public local04通过统一验收中；完整actualgenerator/谱T/5.6/Gibbsinvariance/core负责人/wholepending。
+
+full-check01 passed：9118 jobs/2063公理声明/201exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

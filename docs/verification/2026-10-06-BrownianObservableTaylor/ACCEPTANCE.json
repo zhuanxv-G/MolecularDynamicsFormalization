@@ -1,0 +1,141 @@
+{
+  "started_at": "2026-10-06T16:27:58.3132829+08:00",
+  "finished_at": "2026-10-06T16:29:10.2136926+08:00",
+  "head_at_check": "87f1c71225ee5a1a584356b0157175613cb0cf94",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9118,
+  "audit_declarations": 2063,
+  "inputs": 201,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookUnitPeriodicObservable_iteratedFDeriv_periodic",
+    "MolecularDynamics.textbookUnitPeriodicObservable_iteratedFDeriv_bound",
+    "MolecularDynamics.textbookBrownianObservableTaylorRemainder",
+    "MolecularDynamics.textbookBrownianObservableTaylorRemainder_eq_integral",
+    "MolecularDynamics.textbookBrownianObservableTaylorRemainder_bound",
+    "MolecularDynamics.textbookBrownianObservableTaylorRemainder_continuous",
+    "MolecularDynamics.textbookBrownianGlobalObservableTaylorRemainder",
+    "MolecularDynamics.textbookBrownianGlobalObservableTaylorRemainder_integrable",
+    "MolecularDynamics.textbookBrownianGlobalObservableTaylorRemainder_norm_expectation_bound",
+    "MolecularDynamics.textbookBrownianGlobalObservableTaylorRemainder_norm_div_tendsto",
+    "MolecularDynamics.textbookBrownianGlobalObservableTaylorRemainder_expectation_div_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookUnitPeriodicObservable_iteratedFDeriv_periodic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookUnitPeriodicObservable_iteratedFDeriv_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianObservableTaylorRemainder",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianObservableTaylorRemainder_eq_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianObservableTaylorRemainder_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianObservableTaylorRemainder_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalObservableTaylorRemainder",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalObservableTaylorRemainder_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalObservableTaylorRemainder_norm_expectation_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalObservableTaylorRemainder_norm_div_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGlobalObservableTaylorRemainder_expectation_div_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "88aa61b1c4ef2dd6d160e9fb1b51ca261d86c29de26ec2945d70118e544e886e"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "b72da334c0462f2bd3dddf799f269603f5d1d94ac87c3ad73a3b310e4cee55e3"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "58ad417790fb007725ced174c22bd8221d504f410b3c32910451bc765a79790d"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "9a14007a37f6f538ceeee90a9c1b8efc9ede74cde84ac24621e05021a31474e5"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

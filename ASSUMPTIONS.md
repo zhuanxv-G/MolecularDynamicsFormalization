@@ -582,3 +582,5 @@ BrownianExpectationEstimates：m_i>0/β>0/γ1/generalNc，U C∞ integerperiodic
 BrownianSecondMomentEstimates：原m正性/β正性/γ1/任意Nc、U C∞integerperiodic、genuinevectorWiener B/P及已构造sameglobalq。boundedDrift/allhorizon actual解和trueSigma moments已验依赖；D AEbound及Lp和actualdelta finiteLp/mixedsecond trueintegrability均证明，不当模型假设；secondproducterror和quotientlimit来自真实概率积分及derived M、C，全初值时间坐标统一。无whole stochasticgenerator或Gibbs谱T等同前提；实际高阶moment rate/Taylor余项仍待、C²vsC∞core负责人pending。
 
 BrownianFourthMomentEstimates：原m正性/β正性/γ1/任意Nc、U C∞integerperiodic及真实Wiener B/P与sameglobalq。标准Gaussian和actualnoise第四矩可积、真实time sqrt pushforward、actualD bound与sameq Lp及原noisevariance均证明/已接受依赖；真正有限Pi norm和Holder推出所有highmoment rates，不引入highmoment/Taylor目标前提。原C²vs当前C∞core负责人及完整概率generator/spectralT/5.6/Gibbsinvariance仍pending。
+
+BrownianObservableTaylor：原m正性/β正性/γ1/任意Nc、U和observable f C∞ integerperiodic、trueWiener B/P及sameglobalq。真实jets周期和compactcube导出全阶bound，真实多元Taylor积分和multilinear norm推cubicbound；truefiniteLp3/AEmeas/moment rate导出实际余项可积/期待及商极限。全阶bound/余项界及极限不作为模型前提；原C²vsC∞core、wholeactualgenerator/谱T/5.6/Gibbsinvariance负责人pending。

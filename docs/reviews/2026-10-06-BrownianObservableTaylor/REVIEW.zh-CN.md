@@ -1,0 +1,12 @@
+# Theorem6.1 必要依赖：原周期 observable 真 Taylor 余项
+原印刷240/PDF261式6.36、249–251/PDF270–272 Theorem6.1；gamma1、一般正质量、β>0、任意Nc、原C∞整数周期U及observable f、同一trueWiener/globalq。原C²和当前C∞core差异继续负责人pending。11public只补实际随机生成元必要Taylor依赖。
+
+iteratedFDeriv真正平移公式与原f周期推出全部实际jets整数周期，不用目标当假设。真实全阶导数连续性和compact fundamentalcube通过Int.fract/floor给任意阶actualjet全局bound，含Nc=0。literal二阶TaylorRemainder使用f本身及实际Frechet第一/第二导数；mathlib真正多元Taylor积分公式识别为第三导数实际积分。真实第三jetbound和multilinear opnorm推出共同K的全初值位移cubic remainder estimate。
+
+literal GlobalObservableTaylorRemainder是同一已构造globalq的delta=q_t-x代入。真实delta finiteLp3与actualendpoint AE强可测、实际remainder continuous推出真integrability；真实第三normmoment时间界与integralmono给全初值uniform期待norm≤C t sqrt(t)。正时间除t及sqrt continuity得到真正expectednorm/t→0，再真实norm integral inequality给signed expectation/t→0。全部余项界/矩/可积和期待极限均derived，不作为模型输入。
+
+local01 norm interval bound未显式类型导致metavariable；local02已补actualsameq余项期待仅Real.norm_eq_abs误匹配numerator，改明确只重写时间norm；local03全11退出0/0warnings但有ring_nf建议，local04按建议替换全11退出0空日志零警告。无新公理/sorry/admit/unsafe/资源增长/linter关闭/目标假设。formalexactcopySHA一致复用局部，完整check正式源。
+
+DEP083/NOT092。完整actual随机generator需把真正一二阶矩极限放入actualobservable期待Taylor展开；本批余项消失不冒充wholegenerator。actual概率operator=Gibbs谱T/式5.6识别/真正Gibbs不变性和Lp扩展/C²core负责人/wholeTheorem6.1/CORE_SCOPE仍未完成。下一BrownianGeneratorExpectation原coord Hessian展开及actualgenerator短时间极限。
+
+full-check01 passed：9118 jobs/2063公理声明/201exact inputs；10checks退出0、全部input/rawlog SHA匹配、11 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

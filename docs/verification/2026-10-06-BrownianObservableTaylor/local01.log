@@ -1,0 +1,37 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-06-BrownianObservableTaylor/Draft.lean:73:4: error: unsolved goals
+Nc : ℕ
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hp : textbookUnitPeriodicPotential f
+M : ℝ
+hM : 0 ≤ M
+hb : ∀ (x : Fin Nc → ℝ), ‖iteratedFDeriv ℝ 3 f x‖ ≤ M
+x y : Fin Nc → ℝ
+⊢ ?m.193 ≤ M * ‖y‖ ^ 3
+docs/verification/2026-10-06-BrownianObservableTaylor/Draft.lean:74:12: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+Nc : ℕ
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hp : textbookUnitPeriodicPotential f
+M : ℝ
+hM : 0 ≤ M
+hb : ∀ (x : Fin Nc → ℝ), ‖iteratedFDeriv ℝ 3 f x‖ ≤ M
+x y : Fin Nc → ℝ
+⊢ ℝ
+docs/verification/2026-10-06-BrownianObservableTaylor/Draft.lean:71:79: error: unsolved goals
+Nc : ℕ
+f : (Fin Nc → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hp : textbookUnitPeriodicPotential f
+M : ℝ
+hM : 0 ≤ M
+hb : ∀ (x : Fin Nc → ℝ), ‖iteratedFDeriv ℝ 3 f x‖ ≤ M
+x y : Fin Nc → ℝ
+⊢ ∀ x_1 ∈ uIoc 0 1, ‖(1 - x_1) ^ 2 • (iteratedFDeriv ℝ 3 f (x + x_1 • y)) fun x => y‖ ≤ sorry

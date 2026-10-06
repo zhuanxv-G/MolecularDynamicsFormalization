@@ -258,3 +258,5 @@ import MolecularDynamics.Chapter06.BrownianExpectationEstimates
 import MolecularDynamics.Chapter06.BrownianSecondMomentEstimates
 
 import MolecularDynamics.Chapter06.BrownianFourthMomentEstimates
+
+import MolecularDynamics.Chapter06.BrownianObservableTaylor
