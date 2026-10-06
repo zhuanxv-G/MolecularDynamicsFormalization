@@ -1,0 +1,42 @@
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:241:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  projIcc 0 T hT ↑s
+in the target expression
+  ↑(projIcc 0 T hT ↑s) = ↑s
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : C(UnitAddTorus (Fin Nc), ℝ)
+t : ℝ≥0
+T : ℝ := ↑t + 1
+hT : 0 ≤ T
+htT : ↑t < T
+hc :
+  Continuous
+    ((fun t => textbookBrownianTorusContinuousTransition m hm U hU hPU β hβ B P hB ⟨↑t, ⋯⟩ f) ∘
+      projIcc 0 T hT ∘ NNReal.toReal)
+s : ℝ≥0
+hs : ↑s < T
+⊢ ↑(projIcc 0 T hT ↑s) = ↑s
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:266:6: error: Type mismatch: After simplification, term
+  textbookBrownianTorusContinuousTransition_norm_le m hm U hU hPU β hβ B P hB T f
+ has type
+  @LE.le ℝ Real.instLE ‖textbookBrownianTorusContinuousTransition m hm U hU hPU β hβ B P hB T f‖ ‖f‖
+but is expected to have type
+  @LE.le ℝ Real.instLE ‖(probabilityTransitionLinear m hm U hU hPU β hβ B P hB T) f‖ ‖f‖
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:280:2: error: Type mismatch: After simplification, term
+  textbookBrownianTorusContinuousTransition_norm_le m hm U hU hPU β hβ B P hB T f
+ has type
+  @LE.le ℝ Real.instLE ‖textbookBrownianTorusContinuousTransition m hm U hU hPU β hβ B P hB T f‖ ‖f‖
+but is expected to have type
+  @LE.le ℝ Real.instLE ‖(textbookBrownianTorusProbabilityOperator m hm U hU hPU β hβ B P hB T) f‖ ‖f‖

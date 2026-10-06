@@ -970,3 +970,7 @@ full-check01 passed：9111 jobs/1957公理声明/194exact inputs；10checks退�
 BrownianTransitionSemigroup / CH06-DEP-077 / NOT-CH06-086：原torus Brownian真实endpoint初值/kernelzero/completedhistory truefuture marginal及Chapman–Kolmogorov；实际continuous observableprobabilityexpectation=同一globalprocess期待/实际Wienerpath积分、Feller状态连续与CMap转移、真实expectationsemigroup/positivity/constant/线性及supnormcontraction，17public局部local03通过统一验收中。uniformnorm timeC0/actualstochasticgenerator/law=谱T与式5.6算子识别/C²core负责人/全6.1未完。
 
 full-check01 passed：9112 jobs/1974公理声明/195exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianFellerContinuity / CH06-DEP-078 / NOT-CH06-087：原realendpoint真正uniformhorizon初值/pathLipschitz与jointtime连续，same原torus下降；真实CMap observablepathflow uniformnorm联合连续/有界/Bochnerintegrable，actual期待固定horizon Bochneridentity与allNNReal uniformnorm强连续、真C0；实际wholeC(Torus,ℝ)有界概率算子 norm≤1/id/semigroup/C0。17public local04通过，统一验收中；actualgenerator/SDElaw=Gibbs谱T及5.6算子识别/C²core负责人/wholepending。
+
+full-check01 passed：9113 jobs/1991公理声明/196exact inputs；10checks退出0、全部input/rawlog SHA匹配、17 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

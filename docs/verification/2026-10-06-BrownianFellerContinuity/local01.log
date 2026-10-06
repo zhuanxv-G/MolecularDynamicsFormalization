@@ -1,0 +1,241 @@
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:67:6: error: Application type mismatch: The argument
+  add_le_add_right (mul_le_mul_of_nonneg_left (sub_le_sub_right hxt 1) (le_of_lt hβ)) N
+has type
+  N + β * (Real.exp (K * t) - 1) ≤ N + β * (Real.exp (K * T) - 1)
+but is expected to have type
+  L * N / K * (Real.exp (K * t) - 1) + N ≤ L * N / K * (Real.exp (K * T) - 1) + N
+in the application
+  mul_le_mul_of_nonneg_left (add_le_add_right (mul_le_mul_of_nonneg_left (sub_le_sub_right hxt 1) (le_of_lt hβ)) N)
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:89:92: error(lean.invalidField): Invalid field `continuous_restrict`: The environment does not contain `Function.continuous_restrict`, so it is not possible to project the field `continuous_restrict` from an expression
+  (textbookBrownianPathSolution_integralSolution m hm U hU hPU β hβ T hT z.1 z.2).left
+of type
+  ∀ x ∈ Icc 0 T, ContinuousWithinAt (textbookBrownianPathSolution m hm U hU hPU β hβ T hT z.1 z.2) (Icc 0 T) x
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:160:13: error: don't know how to synthesize implicit argument `f`
+  @Continuous.comp C(↑(Icc 0 T), Fin Nc → ℝ) (↑(Icc 0 T) × C(↑(Icc 0 T), Fin Nc → ℝ)) C(UnitAddTorus (Fin Nc), ℝ)
+    ContinuousMap.compactOpen instTopologicalSpaceProd ContinuousMap.compactOpen (fun x => (?m.81, id x))
+    (fun z => textbookBrownianTorusObservablePathFlow m hm U hU hPU β hβ T hT f z.1 z.2)
+    (textbookBrownianTorusObservablePathFlow_joint_continuous m hm U hU hPU β hβ T hT f)
+    (Continuous.prodMk continuous_const continuous_id)
+context:
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+f : C(UnitAddTorus (Fin Nc), ℝ)
+t : ↑(Icc 0 T)
+this : IsProbabilityMeasure P
+⊢ C(↑(Icc 0 T), Fin Nc → ℝ) → ↑(Icc 0 T) × C(↑(Icc 0 T), Fin Nc → ℝ)
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:161:5: error: don't know how to synthesize implicit argument `f`
+  @Continuous.prodMk ↑(Icc 0 T) C(↑(Icc 0 T), Fin Nc → ℝ) C(↑(Icc 0 T), Fin Nc → ℝ) instTopologicalSpaceSubtype
+    ContinuousMap.compactOpen ContinuousMap.compactOpen (fun x => ?m.81) id continuous_const continuous_id
+context:
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+f : C(UnitAddTorus (Fin Nc), ℝ)
+t : ↑(Icc 0 T)
+this : IsProbabilityMeasure P
+⊢ C(↑(Icc 0 T), Fin Nc → ℝ) → ↑(Icc 0 T)
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:161:22: error: don't know how to synthesize placeholder
+context:
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+f : C(UnitAddTorus (Fin Nc), ℝ)
+t : ↑(Icc 0 T)
+this : IsProbabilityMeasure P
+⊢ ↑(Icc 0 T)
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:160:7: error: failed to infer `have` declaration type
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:158:58: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+f : C(UnitAddTorus (Fin Nc), ℝ)
+t : ↑(Icc 0 T)
+this : IsProbabilityMeasure P
+⊢ Integrable (textbookBrownianTorusObservablePathFlow m hm U hU hPU β hβ T hT f t)
+    (Measure.map (textbookWienerVectorContinuousPath B T) P)
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:178:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookBrownianTorusTransitionExpectation m hm U hU hPU β hβ B P ?T ?f ?x
+in the target expression
+  textbookBrownianTorusTransitionExpectation m hm U hU hPU β hβ B P ⟨↑t, ⋯⟩ f x =
+    ∫ (W : C(↑(Icc 0 T), Fin Nc → ℝ)),
+      f
+        (textbookBrownianTorusPathEndpoint m hm U hU hPU β hβ T hT x (↑t)
+          W) ∂Measure.map (textbookWienerVectorContinuousPath B T) P
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+T : ℝ
+hT : 0 ≤ T
+f : C(UnitAddTorus (Fin Nc), ℝ)
+t : ↑(Icc 0 T)
+hi :
+  Integrable (textbookBrownianTorusObservablePathFlow m hm U hU hPU β hβ T hT f t)
+    (Measure.map (textbookWienerVectorContinuousPath B T) P)
+x : UnitAddTorus (Fin Nc)
+⊢ textbookBrownianTorusTransitionExpectation m hm U hU hPU β hβ B P ⟨↑t, ⋯⟩ f x =
+    ∫ (W : C(↑(Icc 0 T), Fin Nc → ℝ)),
+      f
+        (textbookBrownianTorusPathEndpoint m hm U hU hPU β hβ T hT x (↑t)
+          W) ∂Measure.map (textbookWienerVectorContinuousPath B T) P
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    t.property
+  has type
+    ↑t ∈ Icc 0 T
+  but is expected to have type
+    0 ≤ ↑t ∧ ↑t ≤ T
+  in the application
+    t.property.left
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:221:13: error: don't know how to synthesize implicit argument `f`
+  @Continuous.comp ℝ≥0 ↑(Icc 0 T) C(UnitAddTorus (Fin Nc), ℝ) NNReal.instTopologicalSpace instTopologicalSpaceSubtype
+    ContinuousMap.compactOpen (projIcc 0 T ?m.102 ∘ NNReal.toReal)
+    (fun t => textbookBrownianTorusContinuousTransition m hm U hU hPU β hβ B P hB ⟨↑t, t.property.left⟩ f)
+    (textbookBrownianTorusContinuousTransition_horizon_continuous m hm U hU hPU β hβ B P hB T hT f)
+    (Continuous.comp continuous_projIcc NNReal.continuous_coe)
+context:
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : C(UnitAddTorus (Fin Nc), ℝ)
+t : ℝ≥0
+T : ℝ := ⋯
+hT : 0 ≤ T
+htT : ↑t < T
+⊢ ℝ≥0 → ↑(Icc 0 T)
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:223:7: error: don't know how to synthesize implicit argument `g`
+  @Continuous.comp ℝ≥0 ℝ (↑(Icc 0 T)) NNReal.instTopologicalSpace PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    instTopologicalSpaceSubtype NNReal.toReal (projIcc 0 T ?m.102) continuous_projIcc NNReal.continuous_coe
+context:
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : C(UnitAddTorus (Fin Nc), ℝ)
+t : ℝ≥0
+T : ℝ := ⋯
+hT : 0 ≤ T
+htT : ↑t < T
+⊢ ℝ → ↑(Icc 0 T)
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:223:26: error: don't know how to synthesize placeholder
+context:
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : C(UnitAddTorus (Fin Nc), ℝ)
+t : ℝ≥0
+T : ℝ := ⋯
+hT : 0 ≤ T
+htT : ↑t < T
+⊢ 0 ≤ T
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:221:7: error: failed to infer `have` declaration type
+docs/verification/2026-10-06-BrownianFellerContinuity/Draft.lean:215:106: error: unsolved goals
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin Nc → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+f : C(UnitAddTorus (Fin Nc), ℝ)
+t : ℝ≥0
+T : ℝ := ↑t + 1
+hT : 0 ≤ T
+htT : ↑t < T
+⊢ ContinuousAt (fun t => textbookBrownianTorusContinuousTransition m hm U hU hPU β hβ B P hB t f) t
