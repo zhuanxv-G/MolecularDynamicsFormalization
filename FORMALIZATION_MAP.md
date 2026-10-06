@@ -1030,3 +1030,7 @@ full-check01 passed：9126 jobs/2152公理声明/209exact inputs；10checks退�
 BrownianFirstVariation / CH06-DEP-092 / NOT-CH06-101：真实原drift Db周期globalLip/Taylor与same-noise初值扰动；actual finiteinterval变分CLM exists/spec/一致exp bound，真实初值quadraticerror→原pathendpoint HasFDerivAt，实际J初值uniformLip/continuous和真fderiv=J→actualendpoint C¹。15public local06通过统一验收中；第二变分/actualC²空间与期望保留/wholeL2input概率/谱T/invariance/Lp/5.6/CMapgraphcore/owner整体pending。
 
 full-check01 passed：9127 jobs/2167公理声明/210exact inputs；10checks退出0、全部input/rawlog SHA匹配、15 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+BrownianSecondVariation / CH06-DEP-093 / NOT-CH06-102：sameactualq/J真实DDb globalLip与Db Taylor、actualforcing/K存在/spec/全noiseinitial统一范数、真正J初值二次error→HasFDerivAt J=K、forcing/K真实初值uniformLip/continuous→actual原endpoint空间C²与secondfderiv=K。19public local07统一验收中。actual概率期待C²保留/wholeL2input概率/谱T/invariance/Lp/5.6/CMapgraphcore/owner/全scopepending。
+
+full-check01 passed：9128 jobs/2186公理声明/211exact inputs；10checks退出0、全部input/rawlog SHA匹配、19 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

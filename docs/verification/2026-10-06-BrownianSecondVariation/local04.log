@@ -1,0 +1,113 @@
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:401:9: error: invalid 'by' tactic, expected type has not been provided
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:440:23: warning: `ContinuousLinearMap.zero_apply` has been deprecated: Use `zero_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.zero_apply` to `zero_apply x`).
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:448:6: warning: `ContinuousLinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+Try this:
+  [apply] abel_nf
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:482:70: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+T : ℝ
+hT : 0 ≤ T
+M : ℝ≥0
+hM : LipschitzWith M (fderiv ℝ (textbookBrownianSDEDrift m U))
+D : ℝ
+hD : 0 ≤ D
+hTaylor :
+  ∀ (x y : Fin N → ℝ),
+    ‖fderiv ℝ (textbookBrownianSDEDrift m U) (x + y) - fderiv ℝ (textbookBrownianSDEDrift m U) x -
+          (fderiv ℝ (fderiv ℝ (textbookBrownianSDEDrift m U)) x) y‖ ≤
+      D * ‖y‖ ^ 2
+Cq : ℝ
+hCq : 0 ≤ Cq
+hEq :
+  ∀ (x v : Fin N → ℝ) (W : C(↑(Icc 0 T), Fin N → ℝ)),
+    ∀ t ∈ Icc 0 T,
+      ‖textbookBrownianPathEndpoint m hm U hU hp β hβ T hT (x + v) t W -
+              textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x t W -
+            (textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W t) v‖ ≤
+        Cq * ‖v‖ ^ 2
+Cj : ℝ
+hCj : 0 ≤ Cj
+hEj :
+  ∀ (x y : Fin N → ℝ) (W : C(↑(Icc 0 T), Fin N → ℝ)),
+    ∀ t ∈ Icc 0 T,
+      ‖textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W t -
+            textbookBrownianPathJacobian m hm U hU hp β hβ T hT y W t‖ ≤
+        Cj * ‖x - y‖
+L : ℝ := ↑(textbookBrownianDriftLipschitzConstant m U hU hp)
+G : ℝ := 1 + L
+hL : 0 ≤ L
+hG : 0 < G
+Q : ℝ := Real.exp (G * T)
+B : ℝ := (D * Q ^ 2 + ↑M * Cq) * Q + ↑M * Q * Cj
+hB : 0 ≤ B
+C : ℝ := B / G * Q
+x v : Fin N → ℝ
+W : C(↑(Icc 0 T), Fin N → ℝ)
+t : ℝ
+ht : t ∈ Icc 0 T
+q : ℝ → Fin N → ℝ := fun s => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x s W
+r : ℝ → Fin N → ℝ := fun s => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT (x + v) s W
+J : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W
+R : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := textbookBrownianPathJacobian m hm U hU hp β hβ T hT (x + v) W
+K : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ := textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W
+A : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => fderiv ℝ (textbookBrownianSDEDrift m U) (q s)
+Ar : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => fderiv ℝ (textbookBrownianSDEDrift m U) (r s)
+H : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  fun s => fderiv ℝ (fderiv ℝ (textbookBrownianSDEDrift m U)) (q s)
+hJ0 : textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W 0 = ContinuousLinearMap.id ℝ (Fin N → ℝ)
+hJ :
+  ∀ t ∈ Icc 0 T,
+    HasDerivAt (textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W)
+      (fderiv ℝ (textbookBrownianSDEDrift m U) (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x t W) ∘SL
+        textbookBrownianPathJacobian m hm U hU hp β hβ T hT x W t)
+      t
+hR0 : textbookBrownianPathJacobian m hm U hU hp β hβ T hT (x + v) W 0 = ContinuousLinearMap.id ℝ (Fin N → ℝ)
+hR :
+  ∀ t ∈ Icc 0 T,
+    HasDerivAt (textbookBrownianPathJacobian m hm U hU hp β hβ T hT (x + v) W)
+      (fderiv ℝ (textbookBrownianSDEDrift m U) (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT (x + v) t W) ∘SL
+        textbookBrownianPathJacobian m hm U hU hp β hβ T hT (x + v) W t)
+      t
+hK0 : textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W 0 = 0
+hK :
+  ∀ t ∈ Icc 0 T,
+    HasDerivAt (textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W)
+      ((ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ))
+            (fderiv ℝ (textbookBrownianSDEDrift m U) (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x t W)) ∘SL
+          textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W t +
+        textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT x W t)
+      t
+e : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => R s - J s - (K s) v
+e' : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  fun s => Ar s ∘SL R s - A s ∘SL J s - (A s ∘SL (K s) v + (H s) ((J s) v) ∘SL J s)
+he0 : e 0 = 0
+hJc : ContinuousOn J (Icc 0 T)
+hRc : ContinuousOn R (Icc 0 T)
+hKv : ∀ s ∈ Icc 0 T, HasDerivAt (fun u => (K u) v) (A s ∘SL (K s) v + (H s) ((J s) v) ∘SL J s) s
+hKvc : ContinuousOn (fun s => (K s) v) (Icc 0 T)
+hc : ContinuousOn e (Icc 0 T)
+hd : ∀ s ∈ Ico 0 T, HasDerivWithinAt e (e' s) (Ici s) s
+hqb : ∀ s ∈ Icc 0 T, ‖r s - q s‖ ≤ Q * ‖v‖
+hJb : ∀ s ∈ Icc 0 T, ‖J s‖ ≤ Q
+s : ℝ
+hs : s ∈ Ico 0 T
+hsT : s ∈ Icc 0 T
+hAb : ‖A s‖ ≤ L
+hHb : ‖H s‖ ≤ ↑M
+hAdiff : ‖Ar s - A s‖ ≤ ↑M * Q * ‖v‖
+hJdiff : ‖R s - J s‖ ≤ Cj * ‖v‖
+hTay : ‖Ar s - A s - (H s) (r s - q s)‖ ≤ D * ‖r s - q s‖ ^ 2
+hqe : ‖r s - q s - (J s) v‖ ≤ Cq * ‖v‖ ^ 2
+⊢ Ar s + (-1 • A s + -1 • (H s) ((J s) v)) =
+    Ar s + (-1 • A s + (-1 • (H s) (r s) + ((H s) (q s) + (H s) (r s + (-1 • q s + -1 • (J s) v)))))

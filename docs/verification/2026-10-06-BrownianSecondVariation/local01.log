@@ -1,0 +1,29 @@
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:57:24: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  NormedAddCommGroup ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:59:4: error: Application type mismatch: The argument
+  ContDiff.continuous_fderiv hdd
+    (of_eq_true
+      (Eq.trans (congrArg Not (Eq.trans WithTop.coe_eq_zero._simp_1 ENat.top_ne_zero._simp_1)) not_false_eq_true))
+has type
+  @Continuous (Fin N → ℝ) ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ)
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ContinuousLinearMap.topologicalSpace
+    (fderiv ℝ (fderiv ℝ (fderiv ℝ (textbookBrownianSDEDrift m U))))
+but is expected to have type
+  @Continuous (Fin N → ℝ) ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ) Pi.topologicalSpace
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace (fderiv ℝ (fderiv ℝ (fderiv ℝ (textbookBrownianSDEDrift m U))))
+in the application
+  periodic_bound (fderiv ℝ (fderiv ℝ (fderiv ℝ (textbookBrownianSDEDrift m U))))
+    (ContDiff.continuous_fderiv hdd
+      (of_eq_true
+        (Eq.trans (congrArg Not (Eq.trans WithTop.coe_eq_zero._simp_1 ENat.top_ne_zero._simp_1)) not_false_eq_true)))
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:136:6: error: Application type mismatch: The argument
+  norm_nonneg ?m.455
+has type
+  0 ≤ @norm ?m.453 SeminormedAddGroup.toNorm ?m.455
+but is expected to have type
+  0 ≤ @norm ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ) ContinuousLinearMap.hasOpNorm (H ∘SL J)
+in the application
+  mul_le_mul hR (LE.le.trans (ContinuousLinearMap.opNorm_comp_le H J) (mul_le_mul_of_nonneg_right hH (norm_nonneg J)))
+    (norm_nonneg ?m.455)

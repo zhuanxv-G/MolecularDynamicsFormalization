@@ -1,0 +1,262 @@
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:682:36: error: unexpected token '('; expected ')', ',' or ':'
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:682:10: error: typeclass instance problem is stuck
+  MulPosMono ?m.872
+
+Note: Lean will not try to resolve this typeclass instance problem because the first, second, third, and fourth type arguments to `MulPosMono` are metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:679:62: error: unsolved goals
+case calc.step
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+T : ℝ
+hT : 0 ≤ T
+this✝² : NormedAddCommGroup ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedAddCommGroup
+this✝¹ : NormedSpace ℝ ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedSpace
+this✝ : NormedAddCommGroup ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedAddCommGroup
+this : NormedSpace ℝ ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedSpace
+M : ℝ≥0
+hM : LipschitzWith M (fderiv ℝ (textbookBrownianSDEDrift m U))
+Ck : ℝ
+hCk : 0 ≤ Ck
+hk :
+  ∀ (x : Fin N → ℝ) (W : C(↑(Icc 0 T), Fin N → ℝ)),
+    ∀ t ∈ Icc 0 T, ‖textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W t‖ ≤ Ck
+Cr : ℝ
+hCr : 0 ≤ Cr
+hr :
+  ∀ (x y : Fin N → ℝ) (W : C(↑(Icc 0 T), Fin N → ℝ)),
+    ∀ t ∈ Icc 0 T,
+      ‖textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT x W t -
+            textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT y W t‖ ≤
+        Cr * ‖x - y‖
+L : ℝ := ↑(textbookBrownianDriftLipschitzConstant m U hU hp)
+G : ℝ := 1 + L
+hL : 0 ≤ L
+hG : 0 < G
+Q : ℝ := Real.exp (G * T)
+B : ℝ := ↑M * Q * Ck + Cr
+hB : 0 ≤ B
+C : ℝ := B / G * Q
+x y : Fin N → ℝ
+W : C(↑(Icc 0 T), Fin N → ℝ)
+t : ℝ
+ht : t ∈ Icc 0 T
+qx : ℝ → Fin N → ℝ := fun s => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x s W
+qy : ℝ → Fin N → ℝ := fun s => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT y s W
+Kx : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ := textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W
+Ky : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ := textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W
+Rx : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT x W
+Ry : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT y W
+A : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => fderiv ℝ (textbookBrownianSDEDrift m U) (qx s)
+Ay : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => fderiv ℝ (textbookBrownianSDEDrift m U) (qy s)
+comp : ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) →L[ℝ] ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ)
+hKx0 : textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W 0 = 0
+hKx :
+  ∀ t ∈ Icc 0 T,
+    HasDerivAt (textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W)
+      ((ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ))
+            (fderiv ℝ (textbookBrownianSDEDrift m U) (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x t W)) ∘SL
+          textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W t +
+        textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT x W t)
+      t
+hKy0 : textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W 0 = 0
+hKy :
+  ∀ t ∈ Icc 0 T,
+    HasDerivAt (textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W)
+      ((ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ))
+            (fderiv ℝ (textbookBrownianSDEDrift m U) (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT y t W)) ∘SL
+          textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W t +
+        textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT y W t)
+      t
+e : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => Kx s - Ky s
+e' : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  fun s => comp (A s) ∘SL Kx s + Rx s - (comp (Ay s) ∘SL Ky s + Ry s)
+he0 : e 0 = 0
+hxc : ContinuousOn Kx (Icc 0 T)
+hyc : ContinuousOn Ky (Icc 0 T)
+hd : ∀ s ∈ Ico 0 T, HasDerivWithinAt e (e' s) (Ici s) s
+s : ℝ
+hs : s ∈ Ico 0 T
+hsT : s ∈ Icc 0 T
+hq : ‖qx s - qy s‖ ≤ Q * ‖x - y‖
+hA : ‖comp (A s)‖ ≤ L
+⊢ ‖A s - Ay s‖ ≤ ↑M * Q * ‖x - y‖
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:667:75: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+T : ℝ
+hT : 0 ≤ T
+this✝² : NormedAddCommGroup ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedAddCommGroup
+this✝¹ : NormedSpace ℝ ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedSpace
+this✝ : NormedAddCommGroup ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedAddCommGroup
+this : NormedSpace ℝ ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedSpace
+M : ℝ≥0
+hM : LipschitzWith M (fderiv ℝ (textbookBrownianSDEDrift m U))
+Ck : ℝ
+hCk : 0 ≤ Ck
+hk :
+  ∀ (x : Fin N → ℝ) (W : C(↑(Icc 0 T), Fin N → ℝ)),
+    ∀ t ∈ Icc 0 T, ‖textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W t‖ ≤ Ck
+Cr : ℝ
+hCr : 0 ≤ Cr
+hr :
+  ∀ (x y : Fin N → ℝ) (W : C(↑(Icc 0 T), Fin N → ℝ)),
+    ∀ t ∈ Icc 0 T,
+      ‖textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT x W t -
+            textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT y W t‖ ≤
+        Cr * ‖x - y‖
+L : ℝ := ↑(textbookBrownianDriftLipschitzConstant m U hU hp)
+G : ℝ := 1 + L
+hL : 0 ≤ L
+hG : 0 < G
+Q : ℝ := Real.exp (G * T)
+B : ℝ := ↑M * Q * Ck + Cr
+hB : 0 ≤ B
+C : ℝ := B / G * Q
+x y : Fin N → ℝ
+W : C(↑(Icc 0 T), Fin N → ℝ)
+t : ℝ
+ht : t ∈ Icc 0 T
+qx : ℝ → Fin N → ℝ := fun s => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x s W
+qy : ℝ → Fin N → ℝ := fun s => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT y s W
+Kx : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ := textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W
+Ky : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ := textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W
+Rx : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT x W
+Ry : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT y W
+A : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => fderiv ℝ (textbookBrownianSDEDrift m U) (qx s)
+Ay : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => fderiv ℝ (textbookBrownianSDEDrift m U) (qy s)
+comp : ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) →L[ℝ] ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ)
+hKx0 : textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W 0 = 0
+hKx :
+  ∀ t ∈ Icc 0 T,
+    HasDerivAt (textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W)
+      ((ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ))
+            (fderiv ℝ (textbookBrownianSDEDrift m U) (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x t W)) ∘SL
+          textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W t +
+        textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT x W t)
+      t
+hKy0 : textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W 0 = 0
+hKy :
+  ∀ t ∈ Icc 0 T,
+    HasDerivAt (textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W)
+      ((ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ))
+            (fderiv ℝ (textbookBrownianSDEDrift m U) (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT y t W)) ∘SL
+          textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W t +
+        textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT y W t)
+      t
+e : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => Kx s - Ky s
+e' : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  fun s => comp (A s) ∘SL Kx s + Rx s - (comp (Ay s) ∘SL Ky s + Ry s)
+he0 : e 0 = 0
+hxc : ContinuousOn Kx (Icc 0 T)
+hyc : ContinuousOn Ky (Icc 0 T)
+hd : ∀ s ∈ Ico 0 T, HasDerivWithinAt e (e' s) (Ici s) s
+s : ℝ
+hs : s ∈ Ico 0 T
+hsT : s ∈ Icc 0 T
+hq : ‖qx s - qy s‖ ≤ Q * ‖x - y‖
+hA : ‖comp (A s)‖ ≤ L
+hAd : ‖comp (A s - Ay s)‖ ≤ ↑M * Q * ‖x - y‖
+⊢ ‖e' s‖ ≤ G * ‖e s‖ + B * ‖x - y‖
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:631:91: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+hm : ∀ (i : Fin N), 0 < m i
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+T : ℝ
+hT : 0 ≤ T
+this✝² : NormedAddCommGroup ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedAddCommGroup
+this✝¹ : NormedSpace ℝ ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedSpace
+this✝ : NormedAddCommGroup ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedAddCommGroup
+this : NormedSpace ℝ ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ) := ContinuousLinearMap.toNormedSpace
+M : ℝ≥0
+hM : LipschitzWith M (fderiv ℝ (textbookBrownianSDEDrift m U))
+Ck : ℝ
+hCk : 0 ≤ Ck
+hk :
+  ∀ (x : Fin N → ℝ) (W : C(↑(Icc 0 T), Fin N → ℝ)),
+    ∀ t ∈ Icc 0 T, ‖textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W t‖ ≤ Ck
+Cr : ℝ
+hCr : 0 ≤ Cr
+hr :
+  ∀ (x y : Fin N → ℝ) (W : C(↑(Icc 0 T), Fin N → ℝ)),
+    ∀ t ∈ Icc 0 T,
+      ‖textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT x W t -
+            textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT y W t‖ ≤
+        Cr * ‖x - y‖
+L : ℝ := ↑(textbookBrownianDriftLipschitzConstant m U hU hp)
+G : ℝ := 1 + L
+hL : 0 ≤ L
+hG : 0 < G
+Q : ℝ := Real.exp (G * T)
+B : ℝ := ↑M * Q * Ck + Cr
+hB : 0 ≤ B
+C : ℝ := B / G * Q
+x y : Fin N → ℝ
+W : C(↑(Icc 0 T), Fin N → ℝ)
+t : ℝ
+ht : t ∈ Icc 0 T
+qx : ℝ → Fin N → ℝ := fun s => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x s W
+qy : ℝ → Fin N → ℝ := fun s => textbookBrownianPathEndpoint m hm U hU hp β hβ T hT y s W
+Kx : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ := textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W
+Ky : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ := textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W
+Rx : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT x W
+Ry : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT y W
+A : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => fderiv ℝ (textbookBrownianSDEDrift m U) (qx s)
+Ay : ℝ → (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => fderiv ℝ (textbookBrownianSDEDrift m U) (qy s)
+comp : ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) →L[ℝ] ((Fin N → ℝ) →L[ℝ] Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ)
+hKx0 : textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W 0 = 0
+hKx :
+  ∀ t ∈ Icc 0 T,
+    HasDerivAt (textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W)
+      ((ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ))
+            (fderiv ℝ (textbookBrownianSDEDrift m U) (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT x t W)) ∘SL
+          textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W t +
+        textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT x W t)
+      t
+hKy0 : textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W 0 = 0
+hKy :
+  ∀ t ∈ Icc 0 T,
+    HasDerivAt (textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W)
+      ((ContinuousLinearMap.compL ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ))
+            (fderiv ℝ (textbookBrownianSDEDrift m U) (textbookBrownianPathEndpoint m hm U hU hp β hβ T hT y t W)) ∘SL
+          textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W t +
+        textbookBrownianPathSecondVariationForcing m hm U hU hp β hβ T hT y W t)
+      t
+e : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ := fun s => Kx s - Ky s
+e' : ℝ → (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ :=
+  fun s => comp (A s) ∘SL Kx s + Rx s - (comp (Ay s) ∘SL Ky s + Ry s)
+he0 : e 0 = 0
+hxc : ContinuousOn Kx (Icc 0 T)
+hyc : ContinuousOn Ky (Icc 0 T)
+hd : ∀ s ∈ Ico 0 T, HasDerivWithinAt e (e' s) (Ici s) s
+hb : ∀ s ∈ Ico 0 T, ‖e' s‖ ≤ G * ‖e s‖ + B * ‖x - y‖
+⊢ ‖textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT x W t -
+        textbookBrownianPathSecondVariation m hm U hU hp β hβ T hT y W t‖ ≤
+    C * ‖x - y‖

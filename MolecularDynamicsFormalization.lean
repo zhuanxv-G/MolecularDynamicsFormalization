@@ -278,3 +278,5 @@ import MolecularDynamics.Chapter06.BrownianC2DynkinFormula
 import MolecularDynamics.Chapter06.BrownianC2ClosedOperator
 
 import MolecularDynamics.Chapter06.BrownianFirstVariation
+
+import MolecularDynamics.Chapter06.BrownianSecondVariation

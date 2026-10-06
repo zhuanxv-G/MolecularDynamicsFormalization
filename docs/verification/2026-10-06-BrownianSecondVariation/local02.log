@@ -1,0 +1,48 @@
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:166:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:168:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:170:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:172:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:174:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-06-BrownianSecondVariation/Draft.lean:361:51: error: Type mismatch
+  ContinuousAt.continuousWithinAt (HasDerivAt.continuousAt ?m.184)
+has type
+  @ContinuousWithinAt ?m.185 ?m.186 PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ?m.189 ?m.190 ?m.191
+but is expected to have type
+  @ContinuousWithinAt ℝ ((Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] Fin N → ℝ)
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ContinuousLinearMap.topologicalSpace K (Icc 0 T) s
