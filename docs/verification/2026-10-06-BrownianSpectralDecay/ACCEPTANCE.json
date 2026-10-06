@@ -1,0 +1,92 @@
+{
+  "started_at": "2026-10-06T08:48:46.9382971+08:00",
+  "finished_at": "2026-10-06T08:49:56.9356323+08:00",
+  "head_at_check": "aa158bb89e790a62be07b9669a5440e4a578e4d7",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9093,
+  "audit_declarations": 1700,
+  "inputs": 176,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_isSymmetric",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_one",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_mean",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_orthogonal_decay",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_centered_decay",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_correlation_decay"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_isSymmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_mean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_orthogonal_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_centered_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_correlation_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "c30a668c7068f31f301fd70a3f72a5866684b93dfac5b984488071f79790ccf2"
+    },
+    {
+      "path": "local01-draft.log",
+      "sha256": "65d20391ade08e00eee643773725699bfa58e5f30fb70dc1ba649bbae500d2dc"
+    },
+    {
+      "path": "local02-draft.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03-formal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_1": "incomplete",
+  "core_scope": "incomplete"
+}

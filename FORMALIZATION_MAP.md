@@ -872,3 +872,8 @@ full-check01 passed：9091 jobs/1687公理声明/174exact inputs；10checks退�
 7public actualpositive differenceweights/exponentialscalar derivative bound与pointlimit，wholeactualAgraph ⇒ genuineHilbertstrong rightderivative via实际y coefficients squaredsumDCT/unitary；reverse viainnerCLM与unique limits/wholegraphiff；原Agraph iffactualT strongrightderivative全空间完整。MolecularDynamics/Chapter06/BrownianSpectralGenerator.lean；docs/reviews/2026-10-06-BrownianSpectralGenerator/REVIEW.zh-CN.md。下一constantmode exponentialdecay/真实expectation识别；谱枚举/整谱/core最终语义pending。
 
 full-check01 passed：9092 jobs/1694公理声明/175exact inputs；10checks退出0、全部input/rawlog SHA匹配、7 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。
+
+## Theorem6.1 — actual entire Gibbs equilibrium mode exponential decay (BrownianSpectralDecay)
+6public trueT symmetric/constantone fixed/actualGibbsmean preserved；wholezeroeigspaces来自truekernelconstant，fullnonzero eigenbasis gap→lp norm_mono得全orthogonalLp真实指数normbound→wholecenteredx/correlation指数bound。MolecularDynamics/Chapter06/BrownianSpectralDecay.lean；docs/reviews/2026-10-06-BrownianSpectralDecay/REVIEW.zh-CN.md。实际SDElaw/probabilityexpectation识别、整谱与枚举及core最终语义pending。
+
+full-check01 passed：9093 jobs/1700公理声明/176exact inputs；10checks退出0、全部input/rawlog SHA匹配、6 public逐名仅propext Classical.choice Quot.sound、0Leanwarnings；固定Lean4.34.0/mathlib5ed2965。负责人semanticpending，Theorem6.1整体未完成。

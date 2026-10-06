@@ -1,0 +1,125 @@
+docs/verification/2026-10-06-BrownianSpectralDecay/Draft.lean:39:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ⟪b j, (textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) x⟫_ℝ
+in the target expression
+  ⟪(textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) x, b j⟫_ℝ * ⟪b j, y⟫_ℝ =
+    ⟪x, b j⟫_ℝ * ⟪b j, (textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) y⟫_ℝ
+
+case e_f
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+t : NNReal
+x y : ↥(MolecularDynamics.Gibbs✝ U β)
+b : HilbertBasis (textbookBrownianGibbsEigenIndex m U hU hPU β) ℝ ↥(MolecularDynamics.Gibbs✝ U β) :=
+  textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ
+hx :
+  ∑' (i : textbookBrownianGibbsEigenIndex m U hU hPU β),
+      ⟪(textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) x, b i⟫_ℝ * ⟪b i, y⟫_ℝ =
+    ⟪(textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) x, y⟫_ℝ
+hy :
+  ∑' (i : textbookBrownianGibbsEigenIndex m U hU hPU β),
+      ⟪x, b i⟫_ℝ * ⟪b i, (textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) y⟫_ℝ =
+    ⟪x, (textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) y⟫_ℝ
+j : textbookBrownianGibbsEigenIndex m U hU hPU β
+⊢ ⟪(textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) x, b j⟫_ℝ * ⟪b j, y⟫_ℝ =
+    ⟪x, b j⟫_ℝ * ⟪b j, (textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) y⟫_ℝ
+docs/verification/2026-10-06-BrownianSpectralDecay/Draft.lean:54:2: error: unsolved goals
+case pos
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+t : NNReal
+b : HilbertBasis (textbookBrownianGibbsEigenIndex m U hU hPU β) ℝ ↥(MolecularDynamics.Gibbs✝ U β) :=
+  textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ
+j : textbookBrownianGibbsEigenIndex m U hU hPU β
+hj : j.fst = 0
+⊢ ⟪(textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j, oneVector U hU hPU β⟫_ℝ = ⟪b j, oneVector U hU hPU β⟫_ℝ
+docs/verification/2026-10-06-BrownianSpectralDecay/Draft.lean:67:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (textbookBrownianGibbsSpectralEvolution ?m ?hm ?U ?hU ?hPU ?β ?hβ ?t) (oneVector ?U ?hU ?hPU ?β)
+in the target expression
+  ⟪↑(textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) (oneVector U hU hPU β), x⟫_ℝ =
+    ⟪oneVector U hU hPU β, ↑(textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) x⟫_ℝ
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+t : NNReal
+x : ↥(Gibbs U β)
+h :
+  ⟪↑(textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) (oneVector U hU hPU β), x⟫_ℝ =
+    ⟪oneVector U hU hPU β, ↑(textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) x⟫_ℝ
+⊢ ⟪oneVector U hU hPU β, (textbookBrownianGibbsSpectralEvolution m hm U hU hPU β hβ t) x⟫_ℝ =
+    ⟪oneVector U hU hPU β, x⟫_ℝ
+docs/verification/2026-10-06-BrownianSpectralDecay/Draft.lean:79:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ((textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j,
+      j.fst • (textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j).1
+in the target expression
+  ⟪(textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j, x⟫_ℝ = 0
+
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+x : ↥(Gibbs U β)
+hx : ⟪oneVector U hU hPU β, x⟫_ℝ = 0
+j : textbookBrownianGibbsEigenIndex m U hU hPU β
+hj : j.fst = 0
+a : ↥(textbookBrownianGibbsClosedOperator m U hU hPU β).domain
+ha :
+  ↑a =
+    ((textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j,
+        j.fst • (textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j).1
+hAa :
+  ↑(textbookBrownianGibbsClosedOperator m U hU hPU β) a = ((textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j, 0).2
+h :
+  ((textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j,
+        j.fst • (textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j).1 =
+    ⟪(textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1),
+        ((textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j,
+            j.fst • (textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j).1⟫_ℝ •
+      (textbookPeriodicSmoothEmbedding U hU hPU β) (textbookPeriodicSmoothConstant Nc 1)
+⊢ ⟪(textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ) j, x⟫_ℝ = 0
+docs/verification/2026-10-06-BrownianSpectralDecay/Draft.lean:102:80: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  |c|
+in the target expression
+  textbookBrownianGibbsEvolutionWeight m U hU hPU β t j * |⟪b j, x⟫_ℝ| ≤ ‖c‖ * |⟪b j, x⟫_ℝ|
+
+case neg
+Nc : ℕ
+m : Fin Nc → ℝ
+hm : ∀ (i : Fin Nc), 0 < m i
+U : (Fin Nc → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hPU : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+t : NNReal
+x : ↥(Gibbs U β)
+hx : ⟪oneVector U hU hPU β, x⟫_ℝ = 0
+b : HilbertBasis (textbookBrownianGibbsEigenIndex m U hU hPU β) ℝ ↥(MolecularDynamics.Gibbs✝ U β) :=
+  textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ
+c : ℝ := Real.exp (-textbookBrownianGibbsCoercivityRate m U hU hPU β * ↑t)
+hc : 0 < c
+j : textbookBrownianGibbsEigenIndex m U hU hPU β
+hj : ¬j.fst = 0
+hw : textbookBrownianGibbsEvolutionWeight m U hU hPU β t j ≤ c
+⊢ textbookBrownianGibbsEvolutionWeight m U hU hPU β t j * |⟪b j, x⟫_ℝ| ≤ ‖c‖ * |⟪b j, x⟫_ℝ|

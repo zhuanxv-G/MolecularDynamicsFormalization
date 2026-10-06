@@ -1,0 +1,21 @@
+{
+  "source": "docs/verification/2026-10-06-BrownianSpectralDecay/Draft.lean",
+  "source_sha256": "167c8a955e2b4e4dbaf8de8ad5e9b42322483e4cac43c7b83c2018a1aa29730a",
+  "log": "docs/verification/2026-10-06-BrownianSpectralDecay/local02-draft.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "lean_warnings": 0,
+  "public": [
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_isSymmetric",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_one",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_mean",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_orthogonal_decay",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_centered_decay",
+    "MolecularDynamics.textbookBrownianGibbsSpectralEvolution_correlation_decay"
+  ],
+  "actual_whole_original_Gibbs_equilibrium_centered_norm_and_correlation_exponential_decay": "proved_locally",
+  "integrated": false,
+  "full_check": "not_run",
+  "actual_SDE_probability_expectation_identification": "incomplete",
+  "responsible_semantic_review": "pending"
+}
