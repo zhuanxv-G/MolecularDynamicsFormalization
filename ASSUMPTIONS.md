@@ -652,3 +652,5 @@ LangevinPotentialNormalization：sameactual原κ/Wiener/unitmass/C∞periodicU�
 LangevinInvariantMoments：真Wiener/unitmass/C∞periodicU/γ>0/σ任意；原正能量U>=1版本推目标µ原Hl矩可积与2D界。首lemma明确actualhalfdrift及skeletonstationarity中间前提，allmoments由已验commonhalfdriftderive，无前提exists直接由已验∀T真invariant existence构造。任意原U版本明确c和normalizedHl(U+c)，不假设目标µ矩、jointdensity或generator identity；Fatou用实际非负truncation，未识别Gibbs/唯一Harris。
 
 LangevinHarrisOscillation：原actualκ/Wiener/unitmass/C∞periodicU/正原Hl(U>=1)/γ>0/σ≠0。genericphase辅助只为该Harris证明，明确真实V矩及sharedmeasureminorization中间前提；actualpublic从已验commonτ/Hl moments/halfdrift/derivedR>4D和在同derivedC_R的原densityclause供输入，严格β/a和residuallaw真实derive。measurable无界f允许weightedoscillation，f可积不额外假设；原densityonC_R存在没有derive或偷换，未证全time6.48或唯一性/generator身份。
+
+LangevinHarrisSkeleton：原actualκ/Wiener/unitmass/C∞periodicU/正原Hl(U>=1)/γ>0/σ≠0。实际commonτ/derivedR由此前证明；原densityclause在同derivedC_R明确条件。pointκ及targetµ矩、measurable无界f/Fn可积与CK积分、严格a^n/唯一不变律真实derive，无目标矩/迭代composition/唯一或存在premise。存在唯一版本只条件density，不假设µ；原f≤Hl版M统一f/n/x。未声称全连续时间6.48、L*ρ=0、actualdensity或Gibbs。

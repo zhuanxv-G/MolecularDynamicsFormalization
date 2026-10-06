@@ -1,0 +1,4 @@
+docs/verification/2026-10-07-LangevinHarrisSkeleton/Draft.lean:69:4: error: 'change' tactic failed, pattern
+  ∫ (y : textbookLangevinPeriodicPhase N), f y ∂(K (0 * τ)) x = f x
+is not definitionally equal to target
+  F 0 x = f x

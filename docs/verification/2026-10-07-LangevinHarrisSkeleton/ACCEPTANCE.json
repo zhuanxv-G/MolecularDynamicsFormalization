@@ -1,0 +1,102 @@
+{
+  "started_at": "2026-10-07T05:29:58.2527305+08:00",
+  "finished_at": "2026-10-07T05:31:15.6866803+08:00",
+  "head_at_check": "082e3275ecc32513ffd17324925830d93e702824",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9153,
+  "audit_declarations": 2455,
+  "inputs": 236,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_hamiltonian_weighted_skeleton_contraction",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_hamiltonian_weighted_skeleton_geometric_bound",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_original_observable_skeleton_geometric_bound",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_invariant_unique",
+    "MolecularDynamics.textbookLangevinPeriodicDensityClause_invariant_existsUnique"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_hamiltonian_weighted_skeleton_contraction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_hamiltonian_weighted_skeleton_geometric_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_original_observable_skeleton_geometric_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_invariant_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDensityClause_invariant_existsUnique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "09d14b1543d17f7af514a7916cb81a7802495037493ea17cb130304750c42362"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "2161f7d44f9f79d047c839c3262e5dd8174374681a698f15319be9e12cd8e955"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "b4d5bbabd836dcd19cd513531c2b49385d2fb65bd09c6caf3fc29517e447ae9d"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e1ad1747deb0596c3d4ddd2518c74099081d052bbfd0f57321096686e99f4584"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_unbounded_weighted_skeleton_integrability_and_CK_integral": true,
+  "genuine_strict_oscillation_factor": "a_pow_n_times_C",
+  "target_invariant_Hl_moment": "previously_derived_not_assumed",
+  "true_unbounded_integral_stationarity": true,
+  "actual_original_abs_f_le_Hl_skeleton_geometric_bound": "M_times_a_pow_n_times_Hl_uniform_in_f_n_x",
+  "actual_all_time_invariant_probability_uniqueness": "proved_from_BCF_difference_forced_zero_and_true_FiniteMeasure_ext",
+  "actual_invariant_existsUnique": "true_previous_exists_and_derived_uniqueness",
+  "final_uniqueness_or_stationarity_exists_or_target_moment_premise": "none",
+  "density_clause_scope": "conditional_original_clause_on_actual_derived_C_R",
+  "full_continuous_time_exponential_convergence": "not_proved_yet",
+  "Gibbs_law_identification": "not_proved",
+  "continuous_generator_identity": "not_proved",
+  "actual_joint_density_existence": "not_proved",
+  "Harris": "skeleton_geometric_and_unique_only",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
