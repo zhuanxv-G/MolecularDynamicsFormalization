@@ -1,0 +1,51 @@
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:31:4: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fderiv ℝ (f + g) z
+in the target expression
+  ((fderiv ℝ (fun x => f x + g x) z) (textbookLangevinDrift U γ z) +
+      σ ^ 2 / 2 * ∑ i, (iteratedFDeriv ℝ 2 (fun x => f x + g x) z) fun x => (0, Pi.single i 1)) =
+    ((fderiv ℝ f z) (textbookLangevinDrift U γ z) +
+        σ ^ 2 / 2 * ∑ i, (iteratedFDeriv ℝ 2 f z) fun x => (0, Pi.single i 1)) +
+      ((fderiv ℝ g z) (textbookLangevinDrift U γ z) +
+        σ ^ 2 / 2 * ∑ i, (iteratedFDeriv ℝ 2 g z) fun x => (0, Pi.single i 1))
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ : ℝ
+F G : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := (textbookLangevinPeriodicRepresentative x.1, x.2)
+f : textbookLangevinPhase N → ℝ := F ∘ textbookLangevinPeriodicProjection
+g : textbookLangevinPhase N → ℝ := G ∘ textbookLangevinPeriodicProjection
+hf : ContDiff ℝ 2 f
+hg : ContDiff ℝ 2 g
+⊢ ((fderiv ℝ (fun x => f x + g x) z) (textbookLangevinDrift U γ z) +
+      σ ^ 2 / 2 * ∑ i, (iteratedFDeriv ℝ 2 (fun x => f x + g x) z) fun x => (0, Pi.single i 1)) =
+    ((fderiv ℝ f z) (textbookLangevinDrift U γ z) +
+        σ ^ 2 / 2 * ∑ i, (iteratedFDeriv ℝ 2 f z) fun x => (0, Pi.single i 1)) +
+      ((fderiv ℝ g z) (textbookLangevinDrift U γ z) +
+        σ ^ 2 / 2 * ∑ i, (iteratedFDeriv ℝ 2 g z) fun x => (0, Pi.single i 1))
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:50:4: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fderiv ℝ (c • f) z
+in the target expression
+  ((fderiv ℝ (fun y => c • f y) z) (textbookLangevinDrift U γ z) +
+      σ ^ 2 / 2 * ∑ i, (iteratedFDeriv ℝ 2 (fun y => c • f y) z) fun x => (0, Pi.single i 1)) =
+    c *
+      ((fderiv ℝ f z) (textbookLangevinDrift U γ z) +
+        σ ^ 2 / 2 * ∑ i, (iteratedFDeriv ℝ 2 f z) fun x => (0, Pi.single i 1))
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ c : ℝ
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := (textbookLangevinPeriodicRepresentative x.1, x.2)
+f : textbookLangevinPhase N → ℝ := F ∘ textbookLangevinPeriodicProjection
+hf : ContDiff ℝ 2 f
+⊢ ((fderiv ℝ (fun y => c • f y) z) (textbookLangevinDrift U γ z) +
+      σ ^ 2 / 2 * ∑ i, (iteratedFDeriv ℝ 2 (fun y => c • f y) z) fun x => (0, Pi.single i 1)) =
+    c *
+      ((fderiv ℝ f z) (textbookLangevinDrift U γ z) +
+        σ ^ 2 / 2 * ∑ i, (iteratedFDeriv ℝ 2 f z) fun x => (0, Pi.single i 1))

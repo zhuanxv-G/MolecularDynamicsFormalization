@@ -1,0 +1,178 @@
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:28:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookLangevinDifferentialOperator U γ σ (fun x => f x + g x) ?z
+in the target expression
+  textbookLangevinDifferentialOperator U γ σ (f + g) z =
+    textbookLangevinDifferentialOperator U γ σ f z + textbookLangevinDifferentialOperator U γ σ g z
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ : ℝ
+F G : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := (textbookLangevinPeriodicRepresentative x.1, x.2)
+f : textbookLangevinPhase N → ℝ := F ∘ textbookLangevinPeriodicProjection
+g : textbookLangevinPhase N → ℝ := G ∘ textbookLangevinPeriodicProjection
+hf : ContDiff ℝ 2 f
+hg : ContDiff ℝ 2 g
+⊢ textbookLangevinDifferentialOperator U γ σ (f + g) z =
+    textbookLangevinDifferentialOperator U γ σ f z + textbookLangevinDifferentialOperator U γ σ g z
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:48:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookLangevinDifferentialOperator U γ σ (fun y => c • f y) ?z
+in the target expression
+  textbookLangevinDifferentialOperator U γ σ (c • f) z = c * textbookLangevinDifferentialOperator U γ σ f z
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ c : ℝ
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := (textbookLangevinPeriodicRepresentative x.1, x.2)
+f : textbookLangevinPhase N → ℝ := F ∘ textbookLangevinPeriodicProjection
+hf : ContDiff ℝ 2 f
+⊢ textbookLangevinDifferentialOperator U γ σ (c • f) z = c * textbookLangevinDifferentialOperator U γ σ f z
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:64:2: error: Type mismatch: After simplification, term
+  textbookLangevinPeriodicDifferentialOperator_smooth_smul U γ σ 0 (fun x => 0) hF x
+ has type
+  @Eq ℝ (textbookLangevinPeriodicDifferentialOperator U γ σ 0 x) 0
+but is expected to have type
+  @Eq ℝ (textbookLangevinPeriodicDifferentialOperator U γ σ (fun x => 0) x) 0
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:93:4: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+β γ σ : ℝ
+hβ : 0 < β
+c : ℝ
+p : ↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) × ↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))
+F : textbookLangevinPeriodicPhase N → ℝ
+hsF : HasCompactSupport F
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hf1 : ↑↑p.1 =ᵐ[textbookLangevinCanonicalMeasure U β hβ] F
+hf2 : ↑↑p.2 =ᵐ[textbookLangevinCanonicalMeasure U β hβ] textbookLangevinPeriodicDifferentialOperator U γ σ F
+hcF : ContDiff ℝ ∞ ((c • F) ∘ textbookLangevinPeriodicProjection)
+hcs : HasCompactSupport (c • F)
+x : textbookLangevinPeriodicPhase N
+hx : ↑↑(c • p.1) x = (c • ↑↑p.1) x
+hy : ↑↑p.1 x = F x
+⊢ ↑↑(c • p).1 x = c • F x
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:95:4: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+β γ σ : ℝ
+hβ : 0 < β
+c : ℝ
+p : ↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) × ↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))
+F : textbookLangevinPeriodicPhase N → ℝ
+hsF : HasCompactSupport F
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hf1 : ↑↑p.1 =ᵐ[textbookLangevinCanonicalMeasure U β hβ] F
+hf2 : ↑↑p.2 =ᵐ[textbookLangevinCanonicalMeasure U β hβ] textbookLangevinPeriodicDifferentialOperator U γ σ F
+hcF : ContDiff ℝ ∞ ((c • F) ∘ textbookLangevinPeriodicProjection)
+hcs : HasCompactSupport (c • F)
+x : textbookLangevinPeriodicPhase N
+hx : ↑↑(c • p.2) x = (c • ↑↑p.2) x
+hy : ↑↑p.2 x = textbookLangevinPeriodicDifferentialOperator U γ σ F x
+⊢ ↑↑(c • p).2 x = c * textbookLangevinPeriodicDifferentialOperator U γ σ F x
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:94:17: warning: This simp argument is unused:
+  Prod.fst_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hx, Pi.smul_apply, hy]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:94:32: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.fst_smul, Pi.smul_apply, hy]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:94:51: warning: This simp argument is unused:
+  hy
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.fst_smul, hx, Pi.smul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:96:17: warning: This simp argument is unused:
+  Prod.snd_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hx, Pi.smul_apply, smul_eq_mul, hy,
+    textbookLangevinPeriodicDifferentialOperator_smooth_smul U γ σ c F hF]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:96:32: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.snd_smul, Pi.smul_apply, smul_eq_mul, hy,
+    textbookLangevinPeriodicDifferentialOperator_smooth_smul U γ σ c F hF]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:96:36: warning: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.snd_smul, hx, smul_eq_mul, hy,
+    textbookLangevinPeriodicDifferentialOperator_smooth_smul U γ σ c F hF]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:96:51: warning: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.snd_smul, hx, Pi.smul_apply, hy,
+    textbookLangevinPeriodicDifferentialOperator_smooth_smul U γ σ c F hF]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:96:64: warning: This simp argument is unused:
+  hy
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.snd_smul, hx, Pi.smul_apply, smul_eq_mul,
+    textbookLangevinPeriodicDifferentialOperator_smooth_smul U γ σ c F hF]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:153:21: error: don't know how to synthesize placeholder for argument `hf`
+context:
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+hβ : 0 < β
+hσ : σ ^ 2 = 2 * γ / β
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hs : HasCompactSupport F
+⊢ MemLp (textbookLangevinPeriodicDifferentialOperator U γ σ F) 2 (textbookLangevinCanonicalMeasure U β hβ)
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:152:86: error: don't know how to synthesize placeholder for argument `hF`
+context:
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+hβ : 0 < β
+hσ : σ ^ 2 = 2 * γ / β
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hs : HasCompactSupport F
+⊢ Continuous F
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:149:75: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+hβ : 0 < β
+hσ : σ ^ 2 = 2 * γ / β
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hs : HasCompactSupport F
+⊢ (textbookLangevinCanonicalL2CompactObservable U hU hp β hβ F ⋯ hs,
+      MemLp.toLp (textbookLangevinPeriodicDifferentialOperator U γ σ F) ⋯) ∈
+    ↑(textbookLangevinCanonicalHilbertTestGraphSubmodule U β γ σ hβ).toAddSubmonoid

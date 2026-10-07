@@ -1,0 +1,153 @@
+{
+  "started_at": "2026-10-07T19:50:12.4809717+08:00",
+  "finished_at": "2026-10-07T19:53:18.6439208+08:00",
+  "head_at_check": "52319058b3e150f6ec12ddfefe18a472bdd0af79",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9195,
+  "audit_declarations": 2767,
+  "inputs": 278,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_smooth_add",
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_smooth_smul",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraphSubmodule",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_graph",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_isClosed",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_dense",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_smooth_graph",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_smooth_mem_adjoint_domain",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_adjoint_smooth_apply"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_smooth_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_smooth_smul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraphSubmodule",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_isClosed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_smooth_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_smooth_mem_adjoint_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_adjoint_smooth_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "3bbe0c16dcbaae449f32fb6ce7584f9e3ab55b83fe602a9ca029596d16b72749"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "159fc70dd011be764f7798f537a92f70125240853b021841eedafe681ac8835f"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "b1ac46efbd6663404fc2add68b36902a2972600fcdd5a64aa2f8847c5668b866"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "ef5bc789be196d5510f26cb10c1562f9210c644b4b310b1abb172ee405de1752"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "405616a556be0499c82e7b93a8c1782ade8d46df0ec403e1dfc8dbeffc7c4b61"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_same_canonical_measure_Nzero_true_sigma_squared_FD",
+  "actual_differential_linearity": "proved_actual_real_lift_first_and_second_Frechet_add_and_scalar_rules",
+  "actual_test_graph_submodule": "constructed_from_same_compact_smooth_F_LF_AE_graph_using_actual_linearity_and_Lp_AE_operations",
+  "actual_Hilbert_closed_realization": "constructed_from_true_test_graph_topologicalClosure_toLinearPMap_graph_proved_functional_no_junk",
+  "actual_closed_operator_graph": "proved_exact_actual_smooth_test_graph_closure",
+  "actual_closed_operator_domain_dense": "proved_by_actual_test_graph_domain_density_and_true_graph_inclusion",
+  "actual_smooth_test_closed_graph_membership": "proved_same_F_and_literal_LF_actual_Lp_classes",
+  "actual_Hilbert_adjoint_smooth_test_domain": "proved_actual_compact_smooth_classes_belong_to_constructed_closed_operator_adjoint_domain",
+  "actual_Hilbert_adjoint_smooth_test_value": "proved_literal_original_canonical_weighted_minus_H_plus_O_L2_image_using_actual_domain_density",
+  "no_operator_domain_or_graph_core_or_InvLaw_hypotheses": true,
+  "full_closed_Hilbert_adjoint_domain_characterization": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "weighted_H1_derivative_closure": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,20 @@
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:36:24: warning: `ContinuousMultilinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:36:24: warning: This simp argument is unused:
+  ContinuousMultilinearMap.add_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [add_apply, Finset.sum_add_distrib]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:56:32: warning: `ContinuousMultilinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:56:32: warning: This simp argument is unused:
+  ContinuousMultilinearMap.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [_root_.smul_apply, smul_eq_mul, ← Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

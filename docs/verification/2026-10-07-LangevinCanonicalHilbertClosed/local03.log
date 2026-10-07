@@ -1,0 +1,117 @@
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:30:13: error: don't know how to synthesize implicit argument `x`
+  @iteratedFDeriv_add_apply ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPhase N)
+    Prod.normedAddCommGroup Prod.normedSpace ℝ Real.normedAddCommGroup RCLike.toInnerProductSpaceReal.toNormedSpace
+    ?m.247 2 f g (ContDiff.contDiffAt hf) (ContDiff.contDiffAt hg)
+context:
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ : ℝ
+F G : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := ⋯
+f : textbookLangevinPhase N → ℝ := ⋯
+g : textbookLangevinPhase N → ℝ := ⋯
+hf : ContDiff ℝ 2 f
+hg : ContDiff ℝ 2 g
+hd : fderiv ℝ (fun y => f y + g y) z = fderiv ℝ f z + fderiv ℝ g z
+⊢ textbookLangevinPhase N
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:30:52: error: don't know how to synthesize implicit argument `x`
+  @ContDiff.contDiffAt ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPhase N) Prod.normedAddCommGroup
+    Prod.normedSpace ℝ Real.normedAddCommGroup RCLike.toInnerProductSpaceReal.toNormedSpace g ?m.247 2 hg
+context:
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ : ℝ
+F G : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := ⋯
+f : textbookLangevinPhase N → ℝ := ⋯
+g : textbookLangevinPhase N → ℝ := ⋯
+hf : ContDiff ℝ 2 f
+hg : ContDiff ℝ 2 g
+hd : fderiv ℝ (fun y => f y + g y) z = fderiv ℝ f z + fderiv ℝ g z
+⊢ textbookLangevinPhase N
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:30:38: error: don't know how to synthesize implicit argument `x`
+  @ContDiff.contDiffAt ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPhase N) Prod.normedAddCommGroup
+    Prod.normedSpace ℝ Real.normedAddCommGroup RCLike.toInnerProductSpaceReal.toNormedSpace f ?m.247 2 hf
+context:
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ : ℝ
+F G : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := ⋯
+f : textbookLangevinPhase N → ℝ := ⋯
+g : textbookLangevinPhase N → ℝ := ⋯
+hf : ContDiff ℝ 2 f
+hg : ContDiff ℝ 2 g
+hd : fderiv ℝ (fun y => f y + g y) z = fderiv ℝ f z + fderiv ℝ g z
+⊢ textbookLangevinPhase N
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:30:7: error: failed to infer `have` declaration type
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:20:64: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ : ℝ
+F G : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := (textbookLangevinPeriodicRepresentative x.1, x.2)
+f : textbookLangevinPhase N → ℝ := F ∘ textbookLangevinPeriodicProjection
+g : textbookLangevinPhase N → ℝ := G ∘ textbookLangevinPeriodicProjection
+hf : ContDiff ℝ 2 f
+hg : ContDiff ℝ 2 g
+hd : fderiv ℝ (fun y => f y + g y) z = fderiv ℝ f z + fderiv ℝ g z
+⊢ textbookLangevinDifferentialOperator U γ σ (fun y => f y + g y) z =
+    textbookLangevinDifferentialOperator U γ σ f z + textbookLangevinDifferentialOperator U γ σ g z
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:53:13: error: don't know how to synthesize implicit argument `x`
+  @iteratedFDeriv_const_smul_apply' ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPhase N)
+    Prod.normedAddCommGroup Prod.normedSpace ℝ Real.normedAddCommGroup RCLike.toInnerProductSpaceReal.toNormedSpace f
+    ?m.171 ℝ NonUnitalNonAssocSemiring.toDistribSMul Algebra.to_smulCommClass SeparatelyContinuousMul.to_continuousSMul
+    2 c (ContDiff.contDiffAt hf)
+context:
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ c : ℝ
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := ⋯
+f : textbookLangevinPhase N → ℝ := ⋯
+hf : ContDiff ℝ 2 f
+hd : fderiv ℝ (fun y => c • f y) z = c • fderiv ℝ f z
+⊢ textbookLangevinPhase N
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:53:55: error: don't know how to synthesize implicit argument `x`
+  @ContDiff.contDiffAt ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPhase N) Prod.normedAddCommGroup
+    Prod.normedSpace ℝ Real.normedAddCommGroup RCLike.toInnerProductSpaceReal.toNormedSpace f ?m.171 2 hf
+context:
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ c : ℝ
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := ⋯
+f : textbookLangevinPhase N → ℝ := ⋯
+hf : ContDiff ℝ 2 f
+hd : fderiv ℝ (fun y => c • f y) z = c • fderiv ℝ f z
+⊢ textbookLangevinPhase N
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:53:7: error: failed to infer `have` declaration type
+docs/verification/2026-10-07-LangevinCanonicalHilbertClosed/Draft.lean:45:68: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ c : ℝ
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+z : textbookLangevinPhase N := (textbookLangevinPeriodicRepresentative x.1, x.2)
+f : textbookLangevinPhase N → ℝ := F ∘ textbookLangevinPeriodicProjection
+hf : ContDiff ℝ 2 f
+hd : fderiv ℝ (fun y => c • f y) z = c • fderiv ℝ f z
+⊢ textbookLangevinDifferentialOperator U γ σ (fun y => c • f y) z = c * textbookLangevinDifferentialOperator U γ σ f z
