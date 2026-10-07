@@ -1,0 +1,58 @@
+docs/verification/2026-10-07-LangevinCanonicalH1MeanZero/Draft.lean:81:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : textbookLangevinPeriodicPhase N), (-D) a + s a * G a ∂textbookLangevinCanonicalMeasure U β hβ
+in the target expression
+  ∫ (x : textbookLangevinPeriodicPhase N), -D x + s x * G x ∂textbookLangevinCanonicalMeasure U β hβ = 0
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+j : Fin N ⊕ Fin N
+G : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+hsG : HasCompactSupport G
+this : IsProbabilityMeasure (textbookLangevinCanonicalMeasure U β hβ)
+D : textbookLangevinPeriodicPhase N → ℝ :=
+  textbookLangevinPeriodicDirectionalDerivative G (textbookLangevinCanonicalCoordinateDirection j)
+s : textbookLangevinPeriodicPhase N → ℝ := textbookLangevinCanonicalCoordinateLogSlope U β j
+hD : Integrable D (textbookLangevinCanonicalMeasure U β hβ)
+hA :
+  Integrable (textbookLangevinCanonicalCoordinateAdjointTestExpression U β j G)
+    (textbookLangevinCanonicalMeasure U β hβ)
+hS : Integrable (fun x => s x * G x) (textbookLangevinCanonicalMeasure U β hβ)
+he :
+  ∫ (x : textbookLangevinPeriodicPhase N), D x ∂textbookLangevinCanonicalMeasure U β hβ =
+    ∫ (x : textbookLangevinPeriodicPhase N), s x * G x ∂textbookLangevinCanonicalMeasure U β hβ
+⊢ ∫ (x : textbookLangevinPeriodicPhase N), -D x + s x * G x ∂textbookLangevinCanonicalMeasure U β hβ = 0
+docs/verification/2026-10-07-LangevinCanonicalH1MeanZero/Draft.lean:149:93: error(lean.invalidField): Invalid field `memLp`: The environment does not contain `Subtype.memLp`, so it is not possible to project the field `memLp` from an expression
+  (textbookLangevinCanonicalWeakH1Value U hU hp β hβ) f
+of type
+  ↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))
+docs/verification/2026-10-07-LangevinCanonicalH1MeanZero/Draft.lean:149:26: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+f : textbookLangevinCanonicalWeakH1 U hU hp β hβ
+this : IsProbabilityMeasure (textbookLangevinCanonicalMeasure U β hβ)
+⊢ 1 ≤ ?m.38
+docs/verification/2026-10-07-LangevinCanonicalH1MeanZero/Draft.lean:146:51: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+f : textbookLangevinCanonicalWeakH1 U hU hp β hβ
+this : IsProbabilityMeasure (textbookLangevinCanonicalMeasure U β hβ)
+⊢ Integrable (↑↑((textbookLangevinCanonicalWeakH1Value U hU hp β hβ) f)) (textbookLangevinCanonicalMeasure U β hβ)
+docs/verification/2026-10-07-LangevinCanonicalH1MeanZero/Draft.lean:196:13: error: typeclass instance problem is stuck
+  InnerProductSpace ?m.40 ↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))
+
+Note: Lean will not try to resolve this typeclass instance problem because the first and third type arguments to `InnerProductSpace` are metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.

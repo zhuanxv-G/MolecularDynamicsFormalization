@@ -1,0 +1,7 @@
+十六声明服务原PDF277/printed256 H1及278/printed257 Proposition6.4 ∫g dµβ=0的原条件。由真实coordinate IBP ∫DG=∫sG，实际可积性给literaladjointTest的积分0，所以值为原constant L2类、全部derivative为0的jet真正满足weakH1测试等式；没有假设constantH1 membership或closedL kernel。value AE=c、所有q/p弱导数0、canonicalµ真实probability与原square-sum norm给‖constant c‖H1=|c|。
+
+每actualH1函数值是同µL2，实际有限probability下mono exponent导L1可积。原constant1与value的actualHilbert pairing构造mean continuouslinearfunctional，真实AE1和L2.inner_def导它正好等于原canonical integral。mean(c)=c，Cauchy–Schwarz/真实constant1 norm及PiLp函数projectionbound导|mean f|≤‖f‖H1。这个真实CLM核是closed complete H1子空间，其membership严格等价原∫g dµβ=0。真实centering f−mean f•1为CLM，均值0且固定原mean-zero函数。
+
+未证明closedL或其完整adjoint的全kernel=constants，未证明H1范数光滑密度或closedL H1全能量；实际semigroupgenerator身份/core、κGibbsInv、完整Fredholm/Poisson/compactresolvent/Prop6.4/CORE未证，负责人语义签核pending。local01 integral_add的Pi.neg与lambda写法重写不匹配，Lp.memLp误作Subtype字段，norm_inner_le_norm缺𝕜=ℝ；分别显式hDN、Lp.memLp/q=2、实数scalar修复。local02全16/public/private空log0，无资源/透明性/linter选项或statement弱化。raw01–02按字节保留。原277278已读，复用同SHA原文本与既有visual278，无新render。冻结正式源码后唯一full01。
+
+full01通过：9199 jobs/2814standardaxioms/282exactinputs/all10checks0/0Leanwarnings/allinput/rawSHA，新十六声明唯一标准公理。实际H1常数由trueIBP构造、constantAE/弱导数0/norm|c|，actualH1value L1及canonical mean CLM=原integral/constant/normbound1，true原mean-zero closedCompleteSpace与实际centering已证。raw01–02按字节保留。closedL全kernel=constants、H1范数光滑密度/完整域能量、actualsemigroupgenerator身份/core/κInv/Prop6.4/CORE未证。

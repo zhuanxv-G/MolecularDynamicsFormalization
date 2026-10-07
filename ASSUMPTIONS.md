@@ -744,3 +744,5 @@ LangevinCanonicalHilbertDissipativity：同一原canonical µ，N允许0，unitm
 LangevinCanonicalCoordinateWeakDerivative：同一原canonical µ，N允许0，unitmass、U∞且unitperiodic、β>0；所有测试函数真实phase compact及real lift∞。坐标IBP、weighted配对及其图可闭性不需要γ/σ或FD，因为它们是同测度坐标导数的事实。actualq无p权IBP直接由原Gibbs切片/Fubini，未用p除法。actualcoordinate graph由F/DjF两同µAE类构成，测试density和Hilbert连续性导zerovertical，不假设weak域/可闭性/core/InvLaw。完整H1空间构造、H1范数密度及一般Poisson仍未完。
 
 LangevinCanonicalWeakH1：同一原canonical µ，N允许0，unitmass、U∞且unitperiodic、β>0，不需γ/σ/FD。H1定义用实际函数L2类与坐标弱导数L2类满足原canonical IBP的所有真实compact∞测试配对；配对是弱导数的定义，不是Poisson/closedL/core结论。weak图closed、导数唯一、CompleteSpace、函数投影injective和原平方和范数均从实际连续测试与L2密度证明，没有假设这些性质；compact∞F真实属于此空间由已证IBP推出，不把membership藏为假设。与其他Sobolev实现的等价、H1范数下smooth密度及closedL H1能量/kernel/Poisson未完。
+
+LangevinCanonicalH1MeanZero：同一原canonical normalized概率、N允许0、unitmass、U∞unitperiodic、β>0；使用上一批真实weakH1定义，不需γ/σ/FD。actualconstantH1由真实coordinate IBP紧支测试构造，非C0函数/closedL核假设。均值的Bochner积分身份另证明actual H1value属于L1，避免以不可积积分总化代替原mean。norm constant和mean bound使用已证canonicalµ概率总质量1，mean-zero是这个真实CLM核；closed/complete和centering从实际构造导出。未假设closedL核全常数、Fredholm可解性、H1范数密度/core/InvLaw。
