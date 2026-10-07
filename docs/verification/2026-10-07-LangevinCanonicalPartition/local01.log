@@ -1,0 +1,4 @@
+docs/verification/2026-10-07-LangevinCanonicalPartition/Draft.lean:104:48: error(lean.invalidField): Invalid field `const_mul`: The environment does not contain `Exists.const_mul`, so it is not possible to project the field `const_mul` from an expression
+  textbookLangevinGibbsWeight_contDiff U hU β
+of type
+  ∃ p, HasFTaylorSeriesUpTo ∞ (textbookLangevinGibbsWeight U β) p

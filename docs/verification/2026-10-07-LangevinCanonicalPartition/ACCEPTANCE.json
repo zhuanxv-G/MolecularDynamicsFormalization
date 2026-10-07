@@ -1,0 +1,152 @@
+{
+  "started_at": "2026-10-07T16:57:14.7473194+08:00",
+  "finished_at": "2026-10-07T17:00:42.727975+08:00",
+  "head_at_check": "fccbaf2dceaf9e53156fe764257c94a0ba601e41",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9186,
+  "audit_declarations": 2692,
+  "inputs": 269,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalPartition",
+    "MolecularDynamics.textbookLangevinPeriodicGibbsWeight_integrable",
+    "MolecularDynamics.textbookLangevinCanonicalPartition_formula",
+    "MolecularDynamics.textbookLangevinCanonicalPartition_pos",
+    "MolecularDynamics.textbookLangevinCanonicalDensity_partition",
+    "MolecularDynamics.textbookLangevinCanonicalDensityReal",
+    "MolecularDynamics.textbookLangevinCanonicalDensityReal_contDiff",
+    "MolecularDynamics.textbookLangevinCanonicalDensity_lift",
+    "MolecularDynamics.textbookLangevinForwardDifferentialOperator_const_mul",
+    "MolecularDynamics.textbookLangevinForwardDifferentialOperator_canonical_eq_zero",
+    "MolecularDynamics.textbookLangevinForwardDifferentialOperator_physical_canonical_eq_zero"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalPartition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGibbsWeight_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalPartition_formula",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalPartition_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity_partition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensityReal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensityReal_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinForwardDifferentialOperator_const_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinForwardDifferentialOperator_canonical_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinForwardDifferentialOperator_physical_canonical_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "f732cb649a9d3cae7f47085287f958528083f0dc00acc6918ffc2bb5c4c05eee"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "23ce5a658a19c5359850fdc4b355131f263924c0c9d1796a9f6de65363f17fd8"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_periodic_smooth_potential_positive_beta_Nzero",
+  "canonical_partition": "literal_full_phase_integral_of_same_exp_minus_beta_H_against_actual_position_Haar_product_momentum_Lebesgue",
+  "unnormalized_full_weight_integrability": "proved_from_actual_density_integrability_and_true_strict_positive_normalization_coefficient",
+  "actual_partition_formula": "proved_original_q_partition_times_sqrt_2pi_beta_inverse_to_dimension_from_actual_density_integral_one",
+  "strict_positive_partition": "proved_actual_integral_formula_true_q_partition_and_Gaussian_factor",
+  "canonical_density_partition_identity": "proved_actual_probability_density_exact_true_full_partition_inverse_times_original_weight",
+  "same_real_canonical_density": "literal_true_partition_inverse_times_same_real_Gibbs_weight_Cinfty",
+  "representative_lift": "proved_all_real_representatives_same_actual_normalized_torus_probability_density",
+  "literal_forward_const_mul": "proved_true_first_and_second_momentum_derivatives_without_target_linearity_hypothesis",
+  "physical_classical_forward_identity": "proved_actual_normalized_torus_probability_density_lift_original_sigma_sqrt_relation_not_kernel_invariance",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "weak_Gibbs_generator_balance": "not_proved",
+  "functional_adjoint_domain_flux_integration_by_parts": "not_proved",
+  "graph_core": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved",
+  "mass_matrix_scope": "unit_mass_original_Langevin6_47_only_general_mass_not_claimed",
+  "printed_forward_phi_vs_density_rho": "prior_PDF268_visual_typo_correction_owner_pending",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

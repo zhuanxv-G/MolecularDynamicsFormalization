@@ -1,0 +1,58 @@
+{
+  "original_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "printed_pages": [
+    218,
+    247,
+    251,
+    252,
+    253,
+    254
+  ],
+  "pdf_pages": [
+    239,
+    268,
+    272,
+    273,
+    274,
+    275
+  ],
+  "visual_checked_prior_exact_unchanged_pages": [
+    239,
+    268,
+    273
+  ],
+  "original_text_prior_rechecked_exact_unchanged_pages": [
+    239,
+    268,
+    272,
+    273,
+    274,
+    275
+  ],
+  "visual_checked_current_pages": [],
+  "reference": "original_Canonical6_3_full_partition_and_same_actual_normalized_density_Langevin6_47_classical_forward_dependency",
+  "prior_render_path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/original-PDF239.png",
+  "prior_render_sha256": "6fbc2f641228a78f32795e8c951907eecc894d0685d6485401163349429129b6",
+  "original_pdf_hash_reverified_current": true,
+  "actual_model": "original_unit_mass_periodic_smooth_potential_positive_beta_Nzero",
+  "canonical_partition": "literal_full_phase_integral_of_same_exp_minus_beta_H_against_actual_position_Haar_product_momentum_Lebesgue",
+  "unnormalized_full_weight_integrability": "proved_from_actual_density_integrability_and_true_strict_positive_normalization_coefficient",
+  "actual_partition_formula": "proved_original_q_partition_times_sqrt_2pi_beta_inverse_to_dimension_from_actual_density_integral_one",
+  "strict_positive_partition": "proved_actual_integral_formula_true_q_partition_and_Gaussian_factor",
+  "canonical_density_partition_identity": "proved_actual_probability_density_exact_true_full_partition_inverse_times_original_weight",
+  "same_real_canonical_density": "literal_true_partition_inverse_times_same_real_Gibbs_weight_Cinfty",
+  "representative_lift": "proved_all_real_representatives_same_actual_normalized_torus_probability_density",
+  "literal_forward_const_mul": "proved_true_first_and_second_momentum_derivatives_without_target_linearity_hypothesis",
+  "physical_classical_forward_identity": "proved_actual_normalized_torus_probability_density_lift_original_sigma_sqrt_relation_not_kernel_invariance",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "weak_Gibbs_generator_balance": "not_proved",
+  "functional_adjoint_domain_flux_integration_by_parts": "not_proved",
+  "graph_core": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved",
+  "mass_matrix_scope": "unit_mass_original_Langevin6_47_only_general_mass_not_claimed",
+  "printed_forward_phi_vs_density_rho": "prior_PDF268_visual_typo_correction_owner_pending",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

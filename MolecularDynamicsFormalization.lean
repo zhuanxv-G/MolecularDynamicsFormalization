@@ -394,3 +394,5 @@ import MolecularDynamics.Chapter06.LangevinC0ConservedObservable
 import MolecularDynamics.Chapter06.LangevinGibbsStationaryExpression
 
 import MolecularDynamics.Chapter06.LangevinCanonicalMeasure
+
+import MolecularDynamics.Chapter06.LangevinCanonicalPartition
