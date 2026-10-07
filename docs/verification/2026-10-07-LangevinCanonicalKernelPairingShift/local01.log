@@ -1,0 +1,24 @@
+docs/verification/2026-10-07-LangevinCanonicalKernelPairingShift/Draft.lean:80:44: error: elaboration function for `Mathlib.Tactic.superscriptTerm` has not been implemented
+  ᵇ
+docs/verification/2026-10-07-LangevinCanonicalKernelPairingShift/Draft.lean:80:51: error(lean.unknownIdentifier): Unknown constant `BoundedContinuousFunction.ofCompactSupport`
+docs/verification/2026-10-07-LangevinCanonicalKernelPairingShift/Draft.lean:94:6: error: Type mismatch
+  BoundedContinuousFunction.norm_coe_le_norm ?m.233 ?m.234
+has type
+  ‖?m.233 ?m.234‖ ≤ ‖?m.233‖
+but is expected to have type
+  ‖D (x + textbookLangevinPeriodicProjection (t • v))‖ ≤ C
+docs/verification/2026-10-07-LangevinCanonicalKernelPairingShift/Draft.lean:131:4: error: Type mismatch: After simplification, term
+  LocallyIntegrable.integrable_smul_left_of_hasCompactSupport hl (hGt t0)
+    (textbookLangevinPeriodicTest_shift_hasCompactSupport G hsG (textbookLangevinPeriodicProjection (t0 • v)))
+ has type
+  Integrable (fun x => G (x + textbookLangevinPeriodicProjection (t0 • v)) * ↑↑↑f x) (volume.prod volume)
+but is expected to have type
+  Integrable (F t0) (volume.prod volume)
+docs/verification/2026-10-07-LangevinCanonicalKernelPairingShift/Draft.lean:180:2: error: Type mismatch: After simplification, term
+  he
+ has type
+  ∫ (x : UnitAddTorus (Fin N) × (Fin N → ℝ)), ↑↑↑f x * G (x + (fun i => ↑(v.1 i), v.2)) ∂volume.prod volume =
+    ∫ (x : UnitAddTorus (Fin N) × (Fin N → ℝ)), ↑↑↑f x * G (x + (fun i => ↑(0.1 i), 0.2)) ∂volume.prod volume
+but is expected to have type
+  ∫ (x : UnitAddTorus (Fin N) × (Fin N → ℝ)), ↑↑↑f x * G (x + (fun i => ↑(v.1 i), v.2)) ∂volume.prod volume =
+    ∫ (x : UnitAddTorus (Fin N) × (Fin N → ℝ)), ↑↑↑f x * G x ∂volume.prod volume

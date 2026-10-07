@@ -1,0 +1,102 @@
+{
+  "started_at": "2026-10-07T23:39:28.5604138+08:00",
+  "finished_at": "2026-10-07T23:43:17.883049+08:00",
+  "head_at_check": "81f6a9c0a5957258da97fda2338c1d796df4f89e",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9206,
+  "audit_declarations": 2872,
+  "inputs": 289,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicTestShiftSupportRegion",
+    "MolecularDynamics.textbookLangevinPeriodicTestShiftSupportRegion_isCompact",
+    "MolecularDynamics.textbookLangevinPeriodicTestShiftSupportRegion_outside",
+    "MolecularDynamics.textbookLangevinCanonicalL2_test_shift_derivative_dominator",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_pairing_shift_hasDerivAt",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_pairing_shift_invariant"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTestShiftSupportRegion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTestShiftSupportRegion_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTestShiftSupportRegion_outside",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalL2_test_shift_derivative_dominator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_pairing_shift_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_pairing_shift_invariant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "359c9af220d397789bd114ce38b1f96ed35392a7ad8a39454be94c599fabad58"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "5497212eb5c02052f94229207585407c70fd49e9a987bfb49337ba724eb9f9af"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_uniform_shift_test_and_directional_support_region": "proved_true_compact_image_of_original_support_union_times_real_interval",
+  "actual_reference_L2_test_shift_derivative_dominator": "proved_actual_f_locally_L1_indicator_compact_times_true_test_uniform_norm",
+  "actual_pairing_curve_hasDerivAt_zero": "proved_genuine_dominated_integral_derivative_from_actual_all_direction_weak_testing",
+  "actual_kernel_smooth_compact_test_functional_phase_shift_invariance": "proved_actual_zero_derivatives_of_pairing_curves_all_real_times",
+  "no_assumed_pairing_shift_invariance_integral_differentiability_kernel_constancy_or_invLaw": true,
+  "weak_zero_gradient_implies_actual_canonical_constant": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

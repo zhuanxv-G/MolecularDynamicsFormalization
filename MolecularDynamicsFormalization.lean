@@ -434,3 +434,5 @@ import MolecularDynamics.Chapter06.LangevinCanonicalKernelWeakH1
 import MolecularDynamics.Chapter06.LangevinCanonicalKernelUnweighted
 
 import MolecularDynamics.Chapter06.LangevinCanonicalKernelShift
+
+import MolecularDynamics.Chapter06.LangevinCanonicalKernelPairingShift
