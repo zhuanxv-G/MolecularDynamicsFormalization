@@ -1,0 +1,164 @@
+{
+  "started_at": "2026-10-07T15:10:47.3378384+08:00",
+  "finished_at": "2026-10-07T15:14:17.8747869+08:00",
+  "head_at_check": "606d6c02ea056de28c7750a8147e0f88db838c7f",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9184,
+  "audit_declarations": 2667,
+  "inputs": 267,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPhaseDivergence",
+    "MolecularDynamics.textbookLangevinDrift_divergence",
+    "MolecularDynamics.textbookLangevinForwardDifferentialOperator",
+    "MolecularDynamics.textbookLangevinGibbsWeight",
+    "MolecularDynamics.textbookLangevinGibbsWeight_contDiff",
+    "MolecularDynamics.textbookLangevinGibbsWeight_momentum_hasDerivAt",
+    "MolecularDynamics.textbookLangevinGibbsWeight_momentum_second",
+    "MolecularDynamics.textbookLangevinGibbsWeight_drift_hasDerivAt",
+    "MolecularDynamics.textbookLangevinForwardDifferentialOperator_gibbs_eq_zero",
+    "MolecularDynamics.textbookLangevinForwardDifferentialOperator_physical_gibbs_eq_zero",
+    "MolecularDynamics.textbookLangevinPeriodicGibbsWeight",
+    "MolecularDynamics.textbookLangevinPeriodicGibbsWeight_lift"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPhaseDivergence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDrift_divergence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinForwardDifferentialOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGibbsWeight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGibbsWeight_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGibbsWeight_momentum_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGibbsWeight_momentum_second",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGibbsWeight_drift_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinForwardDifferentialOperator_gibbs_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinForwardDifferentialOperator_physical_gibbs_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGibbsWeight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGibbsWeight_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "f60578e721dbb5af2fedfc226808189c8acc78379aa1e4ee2c46b85dc9ee0870"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "9158aad5cb4dfd0ca6c17cc5d813579e21885d5b1901e2c60759714c7e184b8d"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "a25f7468e382c69d4b42cca6ed6283fa38c08cd06a404192ca0a75510114c47b"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unitmass6_47_H_kinetic_half_square_plus_U_actual_drift_original_sigma_p_noise_Nzero",
+  "true_phase_divergence": "proved_from_actual_q_p_coordinate_derivatives_minus_gamma_N_no_divergence_premise",
+  "classical_forward_expression": "defined_true_minus_b_directional_derivative_minus_computed_divb_times_f_plus_original_sigma_squared_half_momentum_second_derivatives",
+  "original_Gibbs_weight": "literal_exp_minus_beta_same_actual_mechanical_H_no_target_stationarity_premise",
+  "momentum_first_second": "derived_same_true_H_momentum_shift_quadratic_and_real_exp_chain_all_real_shifts",
+  "drift_Gibbs_derivative": "derived_previously_proved_actual_H_friction_dissipation_and_true_exp_chain",
+  "classical_stationary_identity": "proved_fluctuation_dissipation_sigma_squared_2gamma_over_beta_beta_positive",
+  "physical_noise_stationarity": "proved_sigma_actual_sqrt_2gamma_beta_inverse_using_true_real_sq_sqrt_gamma_positive",
+  "periodic_Gibbs_weight": "defined_same_original_periodic_H1_exp_and_proved_all_real_representatives_lift",
+  "printed_forward_phi_second_vs_density_rho_second": "PDF268_visual_confirms_printed_phi_second_in_Ldagger_rho_formula_correct_density_derivatives_explicitly_used_owner_signoff_pending",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "Gibbs_probability_normalization_in_this_batch": "not_proved_unnormalized_weight",
+  "functional_adjoint_domain_flux_integration_by_parts": "not_proved_classical_expanded_expression_only",
+  "weak_Gibbs_generator_balance": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "graph_core": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,57 @@
+{
+  "original_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "printed_pages": [
+    247,
+    251,
+    252,
+    253,
+    254
+  ],
+  "pdf_pages": [
+    268,
+    272,
+    273,
+    274,
+    275
+  ],
+  "visual_checked_prior_exact_unchanged_pages": [
+    273
+  ],
+  "original_text_prior_rechecked_exact_unchanged_pages": [
+    272,
+    273,
+    274,
+    275
+  ],
+  "original_pdf_hash_reverified_current": true,
+  "visual_checked_current_pages": [
+    268
+  ],
+  "original_text_rechecked_current_pages": [
+    268,
+    272,
+    273
+  ],
+  "current_render_sha256": "daad40a0447c7eb4bd9bcbdd979b2da3f4baece2fefa556ddbf434ec96aa9139",
+  "reference": "original_Langevin6_47_Physical_Gibbs_classical_forward_expression_stationary_Theorem6_2_necessary_dependency",
+  "actual_model": "original_unitmass6_47_H_kinetic_half_square_plus_U_actual_drift_original_sigma_p_noise_Nzero",
+  "true_phase_divergence": "proved_from_actual_q_p_coordinate_derivatives_minus_gamma_N_no_divergence_premise",
+  "classical_forward_expression": "defined_true_minus_b_directional_derivative_minus_computed_divb_times_f_plus_original_sigma_squared_half_momentum_second_derivatives",
+  "original_Gibbs_weight": "literal_exp_minus_beta_same_actual_mechanical_H_no_target_stationarity_premise",
+  "momentum_first_second": "derived_same_true_H_momentum_shift_quadratic_and_real_exp_chain_all_real_shifts",
+  "drift_Gibbs_derivative": "derived_previously_proved_actual_H_friction_dissipation_and_true_exp_chain",
+  "classical_stationary_identity": "proved_fluctuation_dissipation_sigma_squared_2gamma_over_beta_beta_positive",
+  "physical_noise_stationarity": "proved_sigma_actual_sqrt_2gamma_beta_inverse_using_true_real_sq_sqrt_gamma_positive",
+  "periodic_Gibbs_weight": "defined_same_original_periodic_H1_exp_and_proved_all_real_representatives_lift",
+  "printed_forward_phi_second_vs_density_rho_second": "PDF268_visual_confirms_printed_phi_second_in_Ldagger_rho_formula_correct_density_derivatives_explicitly_used_owner_signoff_pending",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "Gibbs_probability_normalization_in_this_batch": "not_proved_unnormalized_weight",
+  "functional_adjoint_domain_flux_integration_by_parts": "not_proved_classical_expanded_expression_only",
+  "weak_Gibbs_generator_balance": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "graph_core": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

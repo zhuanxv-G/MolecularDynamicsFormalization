@@ -1,0 +1,7 @@
+docs/verification/2026-10-07-LangevinGibbsStationaryExpression/Draft.lean:26:33: warning: This simp argument is unused:
+  mul_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [textbookLangevinDrift]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

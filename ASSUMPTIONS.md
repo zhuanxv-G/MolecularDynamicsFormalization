@@ -714,3 +714,5 @@ LangevinCompactC2Domain：原unitmass6.47/Wiener B P/C∞periodicU/forceLip γ>0
 LangevinGeneratorOrbit：原unitmass6.47实际Wiener B P/C∞periodicU/forceLip γ>0σ任意N0，actualclosedgenerator真正domain f。graph经真实CLM/CK保持导domain invariance/uniqueness commutation，integratediff+vectorFTC导正时间双侧norm导数。compactF真实C²lift与phasecompact support只作已验原domain初值；没有假设目标invariance/commutation/derivative、Ulower/density/Gibbs，也没有声称STf后续经典C²或existingLF(STf)及graphcore。
 
 LangevinC0ConservedObservable：原unitmass6.47/Wiener B P/C∞periodicU/forceLip γ>0，stationaryiff sigma任意，constancy sigma非零N0。真C0 tail/极值存在与actualopen-accessibility导fullsupport，概率gap零⇒continuous AEeq全eq；无density/Gibbs/InvLaw或目标stationarity/constancy。compactC²原LFnull经actualnormgraph。Prop6.4原加权H¹空间核及前向Poisson/Fredholm未证。
+
+LangevinGibbsStationaryExpression：原unitmass6.47 H与drift/noise，N0 β>0 γ>0 physicalsigma=sqrt(2γβ^-1)。true divb=-γN与真实Gibbs exp(-βH) drift/p一二阶导数⇒classicalforward0；same periodicweight lift字面一致。没有目标PDE/invariant law、normalizedcanonicalmeasure、functionaladjointdomain或weakbalance前提，也尚未证明它们。原PDF268 L†ρ公式printedφ二阶不一致按ρ正确导数实现，负责人排印修订签核pending。

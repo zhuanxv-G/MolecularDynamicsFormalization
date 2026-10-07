@@ -1254,3 +1254,5 @@ full-check01 passed：9181 jobs/2642公理声明/264exactinputs；10checks退出
 LangevinGeneratorOrbit / CH06-DEP-147 / NOT-CH06-156：8public actualnormgraph transition/真domain invariance与A STf=STAf；原C0integratedidentity+vectorFTC给正时间双侧norm导数，compactC²实际域初值推论。γ>0σ任意N0不假设后续STf C²或目标交换/导数。local01零warning exactfull01待验，graphcore/经典后续regularity/Gibbs未完。
 
 LangevinC0ConservedObservable / CH06-DEP-148 / NOT-CH06-157：5public truegraph/domain zeroiff原stationary；actualκ fullsupport和真实C0 tail/maxattainment/概率gap给one-positive-time fixedconstant、actualgenerator/domain与compactC² LFnull常数。σ非零N0，无density/Gibbs/目标constancy；local03零warning exactfull01中，原Prop6.4加权H¹核和Poisson另行。
+
+LangevinGibbsStationaryExpression / CH06-DEP-149 / NOT-CH06-158：12public原phase坐标div及真实drift div=-γN/classicforward表达、same H exp-Gibbs真实一阶p Hessian与drift导数/physicalFD取消及periodicweight allrepresentative lift。N0 βγ正无目标PDE/Gibbs不变性假设。原PDF268 forward公式φ二阶vsρ排印不一致明确记录并按density真实导数，owner pending。local03零warning exactfull01中，概率Gibbs/functionaladjoint/weakbalance/CORE未完。
