@@ -1,0 +1,132 @@
+{
+  "started_at": "2026-10-07T14:08:02.7521401+08:00",
+  "finished_at": "2026-10-07T14:09:17.7453251+08:00",
+  "head_at_check": "e35ea64e270a6099b395b60e57263e65dc803dc9",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9181,
+  "audit_declarations": 2642,
+  "inputs": 264,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_momentum_norm_square_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicCompactC2Observable",
+    "MolecularDynamics.textbookLangevinPeriodicCompactC2DifferentialImage",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_compactC2_orbit_right_derivative",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_compactC2_integrated_identity",
+    "MolecularDynamics.textbookLangevinPeriodicCompactC2_mem_generator_graph",
+    "MolecularDynamics.textbookLangevinPeriodicCompactC2_mem_generator_domain",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator_compactC2_apply"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_momentum_norm_square_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCompactC2Observable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCompactC2DifferentialImage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_compactC2_orbit_right_derivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_compactC2_integrated_identity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCompactC2_mem_generator_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCompactC2_mem_generator_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator_compactC2_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "112d6dca58930570d44f5ff6a6bda82a18a23354da75435126ee73961f0d0949"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "3746eae48ff1d1d734083c598517f50582b25dd65306bbaab6774c03336c322f"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "6e6c1d85cbaebe88dc2690eac980afe25c895374f379bf04b1ecaef0942304be"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_original_process": "same_original_unitmass6_47_Wiener_B_P_same_original_kappa_same_actual_closed_dense_C0_generator",
+  "original_transition_momentum_second_moment": "derived_every_actual_kappa_T_x_from_actual_endpoint_momentum_L2_map_law_no_invariance_moment_premise",
+  "actual_C0_test": "bundled_original_F_from_true_C2_lift_open_projection_continuity_and_actual_compact_support_tail",
+  "actual_C0_differential_image": "bundled_existing_textbook_periodic_differential_expression_from_proved_continuity_and_support",
+  "true_pointwise_orbit_derivative": "actual_kappa_T_x_p2_integrable_original_uniform_quotient_dominator_filterDCT_same_CK_scalar_right_derivative_all_t_nonnegative",
+  "actual_C0_integrated_identity": "derived_true_scalar_right_FTC_and_bounded_C0_eval_CLM_Bochner_integral_comm_all_points",
+  "actual_norm_generator_graph": "proved_existing_actual_graph_integrated_iff_no_norm_limit_premise",
+  "actual_generator_domain": "proved_compact_periodic_C2_test_member_true_closed_dense_LinearPMap_domain",
+  "actual_generator_action": "proved_actual_LinearPMap_value_exact_existing_textbook_differential_C0_image",
+  "model": "original_WienerB_P_Cinfty_periodic_U_forceLip_unitmass_gamma_positive_sigma_arbitrary_Nzero_all_NNReal_time_tests_C2_lift_and_compact_phase_support",
+  "target_norm_limit_domain_generator_identity_hypothesis": "none",
+  "U_lower_density_stationarity_Gibbs_C3_hypothesis": "none",
+  "Nzero": "included",
+  "graph_core": "not_proved",
+  "local_output": "local03_all8_private_exit0_empty_log_zero_Leanwarning",
+  "local_failures": "01_MemLp_dot_syntax_eval_toBCF_defeq_real_instance_diamond_eval_FTC_time_A_notation_field_02_true_FTC_endpoint_time_coercion_transparency_03_explicit_change_final8_pass_allraw_preserved_no_resource_linter_changes",
+  "necessary_dependency": "original_Theorem6_2_actual_closed_C0_generator_domain_and_existing_textbook_differential_expression_identification",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

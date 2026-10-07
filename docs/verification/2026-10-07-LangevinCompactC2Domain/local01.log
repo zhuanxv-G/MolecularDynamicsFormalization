@@ -1,0 +1,54 @@
+docs/verification/2026-10-07-LangevinCompactC2Domain/Draft.lean:27:105: error: Invalid field notation: Identifier or numeral expected
+docs/verification/2026-10-07-LangevinCompactC2Domain/Draft.lean:58:8: error: Type mismatch: After simplification, term
+  BoundedContinuousFunction.norm_coe_le_norm f.toBCF x
+ has type
+  @LE.le ℝ Real.instLE ‖f.toBCF x‖ ‖f‖
+but is expected to have type
+  @LE.le ℝ Real.instLE ‖f x‖ ‖f‖
+docs/verification/2026-10-07-LangevinCompactC2Domain/Draft.lean:116:4: error: Type mismatch: After simplification, term
+  hshift
+ has type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    ((fun t_1 => ((S t.toNNReal) ((S t_1.toNNReal) f)) x) ∘ fun x => x - t) (((S t.toNNReal) g) x) (Ioi t) t
+but is expected to have type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.instAddCommGroup Semiring.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun s => ((S t.toNNReal) ((S (s - t).toNNReal) f)) x)
+    (((S t.toNNReal) g) x) (Ioi t) t
+docs/verification/2026-10-07-LangevinCompactC2Domain/Draft.lean:148:2: error: Type mismatch: After simplification, term
+  he
+ has type
+  ∫ (y : ℝ) in 0..↑T, ((S y.toNNReal) g) x = ((S (↑T).toNNReal) f) x - f x
+but is expected to have type
+  ∫ (x_1 : ℝ) in 0..↑T, (domainC2_eval x) ((S x_1.toNNReal) g) = (domainC2_eval x) ((S T) f) - (domainC2_eval x) f
+docs/verification/2026-10-07-LangevinCompactC2Domain/Draft.lean:161:69: error(lean.unknownIdentifier): Unknown identifier `«A».domain`
+docs/verification/2026-10-07-LangevinCompactC2Domain/Draft.lean:170:10: error: Function expected at
+  textbookLangevinPeriodicCompactC2_mem_generator_domain
+but this term has type
+  ?m.41
+
+Note: Expected a function because this term is being applied to the argument
+  B
+
+Hint: The identifier `textbookLangevinPeriodicCompactC2_mem_generator_domain` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-07-LangevinCompactC2Domain/Draft.lean:171:13: error(lean.unknownIdentifier): Unknown identifier `«A».mem_graph`
+docs/verification/2026-10-07-LangevinCompactC2Domain/Draft.lean:170:109: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ 2 (F ∘ textbookLangevinPeriodicProjection)
+hcs : HasCompactSupport F
+x✝ : Sort u_2
+textbookLangevinPeriodicCompactC2_mem_generator_domain : x✝
+⊢ ↑A ⟨f, ⋯⟩ = g

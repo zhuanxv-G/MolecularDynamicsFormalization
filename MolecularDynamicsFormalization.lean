@@ -384,3 +384,5 @@ import MolecularDynamics.Chapter06.LangevinC0Preservation
 import MolecularDynamics.Chapter06.LangevinC0StrongContinuity
 
 import MolecularDynamics.Chapter06.LangevinC0GeneratorGraph
+
+import MolecularDynamics.Chapter06.LangevinCompactC2Domain
