@@ -1,0 +1,7 @@
+八声明服务原PDF278/printed257 Proposition6.4的真实核常数性证明链。实际H=原Uγ0σ0 differential，原realFrechet给Hlift∞，ptranspose由真实DpG∞及p_i∞乘G构成。真实noise/drift Lie bracket的符号在固定VectorField.fderiv_apply_lieBracket中核对，导DpHG−HDpG=DqG；真正H(p_i)=−DqUi与原H线性/乘积律导AqG=ApHG−HApG。公式无需compact和β正，原canonical核测试需β>0/γ>0/FD。
+
+实际HG/ApG真实∞compact可作已证ptranspose/H测试，各实际同µL2产品integrable，原积分按真commutator拆成两项0，得到qtranspose testing0。把原actualkernel fclass和全部0derivative放入真H1Jet时，WeakGraph全部pairing由真q/p测试0证出；value身份及所有q/p导数0是实际projection，而非把H1或weakgradient0放进假设。N0仍有效。
+
+local01首段const_mul不存在，local02实际函数形状/CLM.snd/Hadd元变量3处错误，local03修固定API及显式函数后全部8public和private clean emptylog0。未用资源/透明性/linter选项。全部raw保留。前批ACCEPT.ps1仅终端2853误印改2843，285formalinput完全未变，复用原验收。weak梯度0⇒canonical常数、完整kernel常数性、H1normdensity、actualgeneratorcore/κInv、compactresolvent/Fredholm/Poisson/Prop6.4/CORE仍未证，负责人semantic pending。原277278复读复用exactraw及priorvisual278，无newrender。
+
+full01通过：9203 jobs/2851standardaxioms/286exactinputs/all10checks0/0Leanwarnings/allinput/rawSHA，新8public唯一标准公理。actualkernel真实qtranspose0/weakH1/value/全q/pweak导数0，未假设fullH1core或kernel常数性。local01–03 raw保留；weakgradient0⇒constant/fullkernel常数性/actualgeneratorcore/κInv/完整Prop6.4/CORE未证。

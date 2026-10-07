@@ -1,0 +1,129 @@
+{
+  "started_at": "2026-10-07T22:44:43.4660113+08:00",
+  "finished_at": "2026-10-07T22:50:07.7823352+08:00",
+  "head_at_check": "0b86ab31802ebe011444ba88c9a600a0a128264c",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9203,
+  "audit_declarations": 2851,
+  "inputs": 286,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianTransportExpression_lift",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianTransportExpression_lift_contDiff",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumAdjointTest_lift_contDiff",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression_hamiltonian_commutator",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_position_testing",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperatorKernelWeakH1",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperatorKernelWeakH1_value",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperatorKernelWeakH1_derivative"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicHamiltonianTransportExpression_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicHamiltonianTransportExpression_lift_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumAdjointTest_lift_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression_hamiltonian_commutator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_position_testing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperatorKernelWeakH1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperatorKernelWeakH1_value",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperatorKernelWeakH1_derivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "7f0ffb01b79d9cf0ec6624ca5a47ae8f6bbee60257d923fb3ec9cffdaec7705c"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "094791c715374e728799cb615a1d5b6850148dd55fb8020d799438f6d045701e"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "81a877202e75bec1707623210c5817e63e3372c39dfdc1e7dcde107961789209"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_Hamiltonian_Frechet_lift_and_smoothness": "proved",
+  "actual_momentum_transpose_test_lift_smoothness": "proved",
+  "genuine_unweighted_noise_Hamiltonian_commutator": "proved_using_actual_fixed_mathlib_Lie_derivative_formula",
+  "genuine_weighted_commutator": "proved_literal_AqG_equals_ApHG_minus_HApG",
+  "actual_closed_L_kernel_position_transpose_testing": "proved_on_genuine_compact_smooth_tests_with_actual_L2_product_integrability",
+  "actual_closed_L_kernel_weak_H1": "constructed_from_proved_true_q_and_p_transpose_testing",
+  "actual_closed_L_kernel_H1_value_identity": "proved_same_original_L2_class",
+  "actual_closed_L_kernel_all_q_and_p_weak_derivatives_zero": "proved",
+  "no_a_priori_kernel_H1_membership_or_full_H1_core_hypothesis": true,
+  "weak_zero_gradient_implies_actual_canonical_constant": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "actual_closed_L_domain_full_q_and_p_H1_inclusion": "not_proved_or_assumed",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

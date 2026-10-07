@@ -1,0 +1,36 @@
+docs/verification/2026-10-07-LangevinCanonicalKernelWeakH1/Draft.lean:72:2: error: Type mismatch: After simplification, term
+  ContDiff.add (ContDiff.neg (textbookLangevinPeriodicDirectionalDerivative_lift_contDiff G hG (0, Pi.single i 1)))
+    (ContDiff.mul (ContDiff.const_smul β (kernelH1_p_smooth i)) hG)
+ has type
+  @ContDiff ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPhase N) Prod.normedAddCommGroup
+    Prod.normedSpace ℝ Real.normedAddCommGroup RCLike.toInnerProductSpaceReal.toNormedSpace ∞ fun x =>
+    -textbookLangevinPeriodicDirectionalDerivative G (0, Pi.single i 1) (textbookLangevinPeriodicProjection x) +
+      β * (textbookLangevinPeriodicProjection x).2 i * G (textbookLangevinPeriodicProjection x)
+but is expected to have type
+  @ContDiff ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPhase N) Prod.normedAddCommGroup
+    Prod.normedSpace ℝ Real.normedAddCommGroup RCLike.toInnerProductSpaceReal.toNormedSpace ∞
+    (textbookLangevinCanonicalCoordinateAdjointTestExpression U β (Sum.inr i) G ∘ textbookLangevinPeriodicProjection)
+docs/verification/2026-10-07-LangevinCanonicalKernelWeakH1/Draft.lean:178:4: error(lean.unknownIdentifier): Unknown constant `ContinuousLinearMap.snd_apply`
+docs/verification/2026-10-07-LangevinCanonicalKernelWeakH1/Draft.lean:179:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookConfigurationTorusObservable (textbookConfigurationPartial U i) (textbookConfigurationTorusProjection ?q)
+in the target expression
+  (ContinuousLinearMap.snd ℝ (Fin N → ℝ) (Fin N → ℝ)) (z.2, textbookPotentialForce U z.1) i =
+    -textbookConfigurationTorusObservable (textbookConfigurationPartial U i) (textbookLangevinPeriodicProjection z).1
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+i : Fin N
+z : textbookLangevinPhase N
+he : HasFDerivAt (fun y => y.2 i) (ContinuousLinearMap.proj i ∘SL ContinuousLinearMap.snd ℝ (Fin N → ℝ) (Fin N → ℝ)) z
+⊢ (ContinuousLinearMap.snd ℝ (Fin N → ℝ) (Fin N → ℝ)) (z.2, textbookPotentialForce U z.1) i =
+    -textbookConfigurationTorusObservable (textbookConfigurationPartial U i) (textbookLangevinPeriodicProjection z).1
+docs/verification/2026-10-07-LangevinCanonicalKernelWeakH1/Draft.lean:211:39: error: Application type mismatch: The argument
+  ContDiff.const_smul (-1) hD
+has type
+  ContDiff ℝ ∞ fun y => -1 • (D ∘ textbookLangevinPeriodicProjection) y
+but is expected to have type
+  ContDiff ℝ ∞ (?m.198 ∘ textbookLangevinPeriodicProjection)
+in the application
+  kernelH1_H_add U hU hp ?m.198 ?m.199 (ContDiff.const_smul (-1) hD)

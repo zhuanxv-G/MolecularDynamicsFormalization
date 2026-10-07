@@ -752,3 +752,5 @@ LangevinCanonicalCoordinateClosed：同原canonicalµ，N允许0、unitmass、U�
 LangevinCanonicalMomentumClosedEnergy：同一原canonicalµ，N允许0、unitmass、U∞且unitperiodic、β>0，并明确γ>0、真实FD σ²=2γ/β；新γ>0用于graphnormgradient控制和kernelmomentum0，没有隐入早前γ=0结论。真实testgraph及actualcoordinate闭图提供各p导数，原energy/Cauchy–Schwarz实证graphbound，denseUniformEmbedding实证CLM.extend有效，非零junk分支已排除。actualclosedL完整域p正则和能量实证，不假设全q/pH1域包含、fullweak=minimal域、H1范数密度、generator身份/core或InvLaw。完整核常数性及Poisson未完。
 
 LangevinCanonicalKernelTransport：原samecanonicalµ，N允许0、unitmass、U∞unitperiodic、β>0、γ>0和实际FD σ²=2γ/β；前两puretest公式不额外要求kernel或fullH1。后3kernel测试从actualclosedLdomain且Af=0及已证全域energy/actualcoordinateclosedgraph/原weightedtranspose导出；每真compact∞测试及DpG实际同µL2、所有乘积integrable、literalOU因子是−γ/β。p独立/q弱导数0/完整核常数性未当假设或结果；全qH1域包含、H1smoothcore、generator身份或InvLaw均未用。
+
+LangevinCanonicalKernelWeakH1：原samecanonicalµ及unitmass、N允许0、U∞unitperiodic、β>0、γ>0及实际FD σ²=2γ/β。truecommutator公式本身β任意且无kernel假设；qtesting/actualkernelH1仅actualclosedLdomain和Af=0，真正weakH1 membership由已有p测试0及本批q测试0导出。HG/ApG真实∞compact，真µL2产品可积后才拆积分。没有假设前提H1membership、weakgradientzero⇒constant、fullH1core、actualsemigroupgenerator身份或InvLaw。

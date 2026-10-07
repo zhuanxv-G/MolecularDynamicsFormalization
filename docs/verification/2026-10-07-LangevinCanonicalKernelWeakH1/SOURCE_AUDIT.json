@@ -1,0 +1,43 @@
+{
+  "original_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "printed_pages": [
+    256,
+    257
+  ],
+  "pdf_pages": [
+    277,
+    278
+  ],
+  "original_text_read_current_reused_exact_path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/ORIGINAL_PDF277_278.log",
+  "original_text_sha256": "2e61d88b5f401a122ef2fce7f30e76cadfd7f4c0bda798eec882e0e3229dacac",
+  "visual_checked_current_pages": [],
+  "visual_checked_prior_exact_unchanged_pages": [
+    278
+  ],
+  "prior_render_path": "docs/verification/2026-10-07-LangevinC0ConservedObservable/original-PDF278.png",
+  "prior_render_sha256": "c7c839b7ec2b02c7b52288a986d4bfa3bffa992bd0239ea07878b59e5d6d863c",
+  "reference": "Prop6_4_genuine_weighted_commutator_actual_closed_L_kernel_weakH1_all_derivatives_zero",
+  "actual_kernel_weakH1_all_derivatives_zero_distinct_from_full_constancy_or_Poisson": true,
+  "no_new_original_page_render": true,
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_Hamiltonian_Frechet_lift_and_smoothness": "proved",
+  "actual_momentum_transpose_test_lift_smoothness": "proved",
+  "genuine_unweighted_noise_Hamiltonian_commutator": "proved_using_actual_fixed_mathlib_Lie_derivative_formula",
+  "genuine_weighted_commutator": "proved_literal_AqG_equals_ApHG_minus_HApG",
+  "actual_closed_L_kernel_position_transpose_testing": "proved_on_genuine_compact_smooth_tests_with_actual_L2_product_integrability",
+  "actual_closed_L_kernel_weak_H1": "constructed_from_proved_true_q_and_p_transpose_testing",
+  "actual_closed_L_kernel_H1_value_identity": "proved_same_original_L2_class",
+  "actual_closed_L_kernel_all_q_and_p_weak_derivatives_zero": "proved",
+  "no_a_priori_kernel_H1_membership_or_full_H1_core_hypothesis": true,
+  "weak_zero_gradient_implies_actual_canonical_constant": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "actual_closed_L_domain_full_q_and_p_H1_inclusion": "not_proved_or_assumed",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

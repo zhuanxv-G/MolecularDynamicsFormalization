@@ -1,0 +1,4 @@
+docs/verification/2026-10-07-LangevinCanonicalKernelWeakH1/Draft.lean:75:30: error(lean.invalidField): Invalid field `const_mul`: The environment does not contain `Exists.const_mul`, so it is not possible to project the field `const_mul` from an expression
+  kernelH1_p_smooth i
+of type
+  ∃ p, HasFTaylorSeriesUpTo ∞ ((fun x => x.2 i) ∘ textbookLangevinPeriodicProjection) p
