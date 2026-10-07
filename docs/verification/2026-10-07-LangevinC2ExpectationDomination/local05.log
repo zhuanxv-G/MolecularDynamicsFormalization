@@ -1,0 +1,4 @@
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:320:4: error: `fun_prop` was unable to prove `Continuous fun y => g (z + y) - g z - A y`
+
+Issues:
+  No theorems found for `g` in order to prove `Continuous fun i0 => g i0`

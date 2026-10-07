@@ -1,0 +1,355 @@
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:139:27: error: unsolved goals
+case inl
+N : ℕ
+val✝ : Fin N
+⊢ ‖Pi.single val✝ 1‖ ≤ 1
+
+case inr
+N : ℕ
+val✝ : Fin N
+⊢ ‖Pi.single val✝ 1‖ ≤ 1
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:206:17: error: don't know how to synthesize implicit argument `c`
+  @mul_le_mul_of_nonneg_right ℝ Real.instMul instMulZeroClassOfSemiring.toZero Real.instPreorder (T ^ 2) (?m.495 * S)
+    ((Cp + ?m.495) * S) Real.instIsOrderedRing.toMulPosMono
+    (mul_le_mul_of_nonneg_right (le_add_of_nonneg_left hCp)
+      (have this :=
+        le_of_lt
+          (add_pos_of_pos_of_nonneg
+            (Mathlib.Meta.Positivity.pos_of_isNat (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one)
+              (Eq.refl (Nat.ble 1 1)))
+            (Even.pow_nonneg (even_two_mul 1) ‖x.2‖));
+      this))
+    (sq_nonneg T)
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+this : IsProbabilityMeasure P
+Cp : ℝ
+hCp : 0 ≤ Cp
+hpB :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+          (∫ (sample : Ω), (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i ∂P) ^ 2 ≤
+            Cp * (1 + x.2 i ^ 2) * T ^ 2
+Cq : ℝ
+hCq : 0 ≤ Cq
+hqB :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+          (∫ (sample : Ω),
+                textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+                  textbookLangevinPeriodicRepresentative x.1 i ∂P) ^
+              2 ≤
+            Cq * (1 + x.2 i ^ 2) * T ^ 2
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+D : ℝ
+hD : 0 ≤ D
+A : textbookLangevinPhase N →L[ℝ] ℝ
+hA : ‖A‖ ≤ D
+S : ℝ := ⋯
+hS : 1 ≤ S
+hn : ∀ (i : Fin N), 1 + x.2 i ^ 2 ≤ S
+i : Fin N
+hb :
+  (∫ (sample : Ω),
+        textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+          textbookLangevinPeriodicRepresentative x.1 i ∂P) ^
+      2 ≤
+    Cq * (1 + x.2 i ^ 2) * T ^ 2
+hm : Cq * (1 + x.2 i ^ 2) * T ^ 2 ≤ Cq * S * T ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:206:17: error: don't know how to synthesize implicit argument `b`
+  @mul_le_mul_of_nonneg_right ℝ Real.instMul instMulZeroClassOfSemiring.toZero Real.instPreorder (T ^ 2) (?m.495 * S)
+    ((Cp + ?m.495) * S) Real.instIsOrderedRing.toMulPosMono
+    (mul_le_mul_of_nonneg_right (le_add_of_nonneg_left hCp)
+      (have this :=
+        le_of_lt
+          (add_pos_of_pos_of_nonneg
+            (Mathlib.Meta.Positivity.pos_of_isNat (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one)
+              (Eq.refl (Nat.ble 1 1)))
+            (Even.pow_nonneg (even_two_mul 1) ‖x.2‖));
+      this))
+    (sq_nonneg T)
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+this : IsProbabilityMeasure P
+Cp : ℝ
+hCp : 0 ≤ Cp
+hpB :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+          (∫ (sample : Ω), (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i ∂P) ^ 2 ≤
+            Cp * (1 + x.2 i ^ 2) * T ^ 2
+Cq : ℝ
+hCq : 0 ≤ Cq
+hqB :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+          (∫ (sample : Ω),
+                textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+                  textbookLangevinPeriodicRepresentative x.1 i ∂P) ^
+              2 ≤
+            Cq * (1 + x.2 i ^ 2) * T ^ 2
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+D : ℝ
+hD : 0 ≤ D
+A : textbookLangevinPhase N →L[ℝ] ℝ
+hA : ‖A‖ ≤ D
+S : ℝ := ⋯
+hS : 1 ≤ S
+hn : ∀ (i : Fin N), 1 + x.2 i ^ 2 ≤ S
+i : Fin N
+hb :
+  (∫ (sample : Ω),
+        textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+          textbookLangevinPeriodicRepresentative x.1 i ∂P) ^
+      2 ≤
+    Cq * (1 + x.2 i ^ 2) * T ^ 2
+hm : Cq * (1 + x.2 i ^ 2) * T ^ 2 ≤ Cq * S * T ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:207:9: error: don't know how to synthesize implicit argument `c`
+  @mul_le_mul_of_nonneg_right ℝ Real.instMul Real.instZero Real.instPreorder S ?m.495 (Cp + ?m.495)
+    Real.instIsOrderedRing.toMulPosMono (le_add_of_nonneg_left hCp)
+    (have this :=
+      le_of_lt
+        (add_pos_of_pos_of_nonneg
+          (Mathlib.Meta.Positivity.pos_of_isNat (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one)
+            (Eq.refl (Nat.ble 1 1)))
+          (Even.pow_nonneg (even_two_mul 1) ‖x.2‖));
+    this)
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+this : IsProbabilityMeasure P
+Cp : ℝ
+hCp : 0 ≤ Cp
+hpB :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+          (∫ (sample : Ω), (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i ∂P) ^ 2 ≤
+            Cp * (1 + x.2 i ^ 2) * T ^ 2
+Cq : ℝ
+hCq : 0 ≤ Cq
+hqB :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+          (∫ (sample : Ω),
+                textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+                  textbookLangevinPeriodicRepresentative x.1 i ∂P) ^
+              2 ≤
+            Cq * (1 + x.2 i ^ 2) * T ^ 2
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+D : ℝ
+hD : 0 ≤ D
+A : textbookLangevinPhase N →L[ℝ] ℝ
+hA : ‖A‖ ≤ D
+S : ℝ := ⋯
+hS : 1 ≤ S
+hn : ∀ (i : Fin N), 1 + x.2 i ^ 2 ≤ S
+i : Fin N
+hb :
+  (∫ (sample : Ω),
+        textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+          textbookLangevinPeriodicRepresentative x.1 i ∂P) ^
+      2 ≤
+    Cq * (1 + x.2 i ^ 2) * T ^ 2
+hm : Cq * (1 + x.2 i ^ 2) * T ^ 2 ≤ Cq * S * T ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:207:9: error: don't know how to synthesize implicit argument `b`
+  @mul_le_mul_of_nonneg_right ℝ Real.instMul Real.instZero Real.instPreorder S ?m.495 (Cp + ?m.495)
+    Real.instIsOrderedRing.toMulPosMono (le_add_of_nonneg_left hCp)
+    (have this :=
+      le_of_lt
+        (add_pos_of_pos_of_nonneg
+          (Mathlib.Meta.Positivity.pos_of_isNat (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one)
+            (Eq.refl (Nat.ble 1 1)))
+          (Even.pow_nonneg (even_two_mul 1) ‖x.2‖));
+    this)
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+this : IsProbabilityMeasure P
+Cp : ℝ
+hCp : 0 ≤ Cp
+hpB :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+          (∫ (sample : Ω), (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i ∂P) ^ 2 ≤
+            Cp * (1 + x.2 i ^ 2) * T ^ 2
+Cq : ℝ
+hCq : 0 ≤ Cq
+hqB :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+          (∫ (sample : Ω),
+                textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+                  textbookLangevinPeriodicRepresentative x.1 i ∂P) ^
+              2 ≤
+            Cq * (1 + x.2 i ^ 2) * T ^ 2
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+D : ℝ
+hD : 0 ≤ D
+A : textbookLangevinPhase N →L[ℝ] ℝ
+hA : ‖A‖ ≤ D
+S : ℝ := ⋯
+hS : 1 ≤ S
+hn : ∀ (i : Fin N), 1 + x.2 i ^ 2 ≤ S
+i : Fin N
+hb :
+  (∫ (sample : Ω),
+        textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+          textbookLangevinPeriodicRepresentative x.1 i ∂P) ^
+      2 ≤
+    Cq * (1 + x.2 i ^ 2) * T ^ 2
+hm : Cq * (1 + x.2 i ^ 2) * T ^ 2 ≤ Cq * S * T ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:207:37: error: don't know how to synthesize implicit argument `a`
+  @le_add_of_nonneg_left ℝ ?m.495 Cp Real.instAddMonoid.toAddZeroClass Real.instPreorder.toLE
+    IsOrderedAddMonoid.toAddRightMono hCp
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+this : IsProbabilityMeasure P
+Cp : ℝ
+hCp : 0 ≤ Cp
+hpB :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+          (∫ (sample : Ω), (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i ∂P) ^ 2 ≤
+            Cp * (1 + x.2 i ^ 2) * T ^ 2
+Cq : ℝ
+hCq : 0 ≤ Cq
+hqB :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+          (∫ (sample : Ω),
+                textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+                  textbookLangevinPeriodicRepresentative x.1 i ∂P) ^
+              2 ≤
+            Cq * (1 + x.2 i ^ 2) * T ^ 2
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+D : ℝ
+hD : 0 ≤ D
+A : textbookLangevinPhase N →L[ℝ] ℝ
+hA : ‖A‖ ≤ D
+S : ℝ := ⋯
+hS : 1 ≤ S
+hn : ∀ (i : Fin N), 1 + x.2 i ^ 2 ≤ S
+i : Fin N
+hb :
+  (∫ (sample : Ω),
+        textbookLangevinPeriodicConfigurationLift B U L hF γ σ T x sample i -
+          textbookLangevinPeriodicRepresentative x.1 i ∂P) ^
+      2 ≤
+    Cq * (1 + x.2 i ^ 2) * T ^ 2
+hm : Cq * (1 + x.2 i ^ 2) * T ^ 2 ≤ Cq * S * T ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:206:11: error: failed to infer `have` declaration type
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:178:0: warning: automatically included section variable(s) unused in theorem `MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_linear_mean_growth_bound`:
+  hU
+  hp
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hU hp in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`

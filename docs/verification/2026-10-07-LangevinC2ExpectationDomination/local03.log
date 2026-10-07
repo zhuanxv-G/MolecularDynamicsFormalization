@@ -1,0 +1,23 @@
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:149:4: error: Type mismatch: After simplification, term
+  have this := ⟨hs i, zero_le_one⟩;
+  this
+ has type
+  ‖Pi.single i 1‖ ≤ 1 ∧ 0 ≤ 1
+but is expected to have type
+  ‖(Sum.elim (fun i => (Pi.single i 1, 0)) (fun i => (0, Pi.single i 1)) (Sum.inl i)).1‖ ≤ 1 ∧
+    ‖(Sum.elim (fun i => (Pi.single i 1, 0)) (fun i => (0, Pi.single i 1)) (Sum.inl i)).2‖ ≤ 1
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:152:4: error: Type mismatch: After simplification, term
+  have this := ⟨zero_le_one, hs i⟩;
+  this
+ has type
+  0 ≤ 1 ∧ ‖Pi.single i 1‖ ≤ 1
+but is expected to have type
+  ‖(Sum.elim (fun i => (Pi.single i 1, 0)) (fun i => (0, Pi.single i 1)) (Sum.inr i)).1‖ ≤ 1 ∧
+    ‖(Sum.elim (fun i => (Pi.single i 1, 0)) (fun i => (0, Pi.single i 1)) (Sum.inr i)).2‖ ≤ 1
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:146:12: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

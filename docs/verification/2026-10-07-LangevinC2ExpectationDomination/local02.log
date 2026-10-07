@@ -1,0 +1,8 @@
+docs/verification/2026-10-07-LangevinC2ExpectationDomination/Draft.lean:140:37: error: Application type mismatch: The argument
+  1
+has type
+  ℝ
+but is expected to have type
+  ?m.23 i i
+in the application
+  Pi.single i 1

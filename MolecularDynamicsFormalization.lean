@@ -374,3 +374,5 @@ import MolecularDynamics.Chapter06.LangevinCompactC2Generator
 import MolecularDynamics.Chapter06.LangevinC2OperatorSupport
 
 import MolecularDynamics.Chapter06.LangevinSmallTimeGrowth
+
+import MolecularDynamics.Chapter06.LangevinC2ExpectationDomination
