@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-07T11:55:03.3351711+08:00",
+  "finished_at": "2026-10-07T11:56:17.468017+08:00",
+  "head_at_check": "16e7f37696a05927dc8e20b0fe614b517d4201d8",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9172,
+  "audit_declarations": 2591,
+  "inputs": 255,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_C2_observable_local_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_C2_observable_local_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_C2_observable_actual_increment_expectation",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_C2_actual_differentialOperator_limit",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_C2_actual_differentialOperator_limit"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_C2_observable_local_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_C2_observable_local_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_C2_observable_actual_increment_expectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_C2_actual_differentialOperator_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_C2_actual_differentialOperator_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "fc032f5b449d95fc21119175a16be77bb870ced39888523e31b56a0f81952eb0"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "existing_periodic_operator": "same_existing_textbookLangevinPeriodicDifferentialOperator_no_replacement_definition",
+  "periodic_testclass": "continuous_F_true_C2_lift_F_comp_original_projection_with_explicit_global_Hessian_bound_not_arbitrary_C2",
+  "actual_initial_projection": "proved_original_periodic_representative_projects_exactly_to_x",
+  "actual_periodic_F_endpoint_local_integrability": "true_real_lift_increment_plus_Pprob_finite_initial_constant",
+  "actual_periodic_kernel_F_local_integrability": "derived_same_original_kernel_endpoint_law_integrable_map_true_F_measurability",
+  "actual_unbounded_F_increment_expectation": "true_integral_map_and_integrable_initial_subtract_on_zero_to_one",
+  "actual_periodic_process_C2_generator": "proved_existing_periodic_operator_from_true_real_lift_expectation_generator",
+  "actual_periodic_kernel_C2_generator": "proved_pointwise_same_original_kappa_expectation_quotient_to_existing_periodic_operator_positive_toNNReal_bridge",
+  "target_moment_limit_or_generator_hypothesis": "none",
+  "higher_C3_observable_regularity": "not_required",
+  "closed_semigroup_generator_domain": "not_proved",
+  "full_arbitrary_C2_actual_generator_identity": "not_proved",
+  "model": "same_original_unitmass_periodic_Cinfty_U_forceLip_original_B_P_Wiener_gamma_positive_sigma_arbitrary_Nzero_no_Ulower_density_stationarity_explicit_continuous_F_C2_lift_global_Hessian_bound",
+  "local_output": "local01_first_pass_exit0_empty_log_no_Lean_error_or_warning",
+  "necessary_dependency": "original_Langevin6_47_periodic_C2_actual_generator_same_original_kernel",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

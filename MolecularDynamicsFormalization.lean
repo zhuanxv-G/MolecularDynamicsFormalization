@@ -366,3 +366,5 @@ import MolecularDynamics.Chapter06.LangevinHamiltonianPowerKernelGenerator
 import MolecularDynamics.Chapter06.LangevinC2ObservableTaylor
 
 import MolecularDynamics.Chapter06.LangevinC2Generator
+
+import MolecularDynamics.Chapter06.LangevinC2KernelGenerator

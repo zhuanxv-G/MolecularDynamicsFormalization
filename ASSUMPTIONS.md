@@ -690,3 +690,5 @@ LangevinHamiltonianPowerKernelGenerator：原unitmass6.47 sameactualκ同B P Wie
 LangevinC2ObservableTaylor：原sameunitmass6.47 WienerB P/C∞periodicU/forceLip、γpositiveσ任意、N0包括，无Ulower/density/stationarity。测试f是真C²，explicit∀z normactualHessian≤M（hM非负用Peano组合）；不需C³。不将actualremainderbound或期待极限作为假设；trueHessian积分/continuouslocalPeano、原实际secondCt/fourthCt²derive所有R可积/norm与signedquotient0。仅必要依赖，不冒称all arbitraryC²/fullclosedgenerator或whole6.2。
 
 LangevinC2Generator：原sameunitmass6.47 WienerB P/C∞periodicU/forceLip、γpositiveσ任意，N0包括，无Ulower/density/stationarity。测试f C²，explicit∀z actualHessian norm≤M，hM非负；实际first/second/remainder所有limit derive既有真实矩而非前提，任意bilinear有序展开不假设symmetry。pure方向算子Frechet表达仅需f C²。5public证明realphasepointwise期待生成元，不冒称任意unboundedC²/full closed domain或当前testclassperiodicκ/Gibbs/whole6.2。
+
+LangevinC2KernelGenerator：原sameunitmass6.47 existingκ WienerB P/C∞periodicU/forceLip、γpositiveσ任意、N0包括，无Ulower/density/stationarity。F连续周期相空间观测可无界，realF∘projection C²，explicit∀z actualHessian norm≤M，hM非负；trueprojectionactualinitial和realprocess C²真limit derive同κ actualPeriodicDifferentialOperator。没有目标limitgenerator前提/C³，本批不声称compactcoreHessian自动导出或closed/arbitraryC²/whole6.2。
