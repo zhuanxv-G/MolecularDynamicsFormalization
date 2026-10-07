@@ -1,0 +1,198 @@
+[
+  {
+    "path": "MolecularDynamics/Chapter06/LangevinCanonicalCoordinateClosed.lean",
+    "raw_work_sha256": "67484d88547b99e38c1d513d28070005a4918f120aa5bc167445d8322d23d095",
+    "staged_sha256": "67484d88547b99e38c1d513d28070005a4918f120aa5bc167445d8322d23d095",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "MolecularDynamicsFormalization.lean",
+    "raw_work_sha256": "b1ae305ea6f8f0c4bc000c3964669affb85a37be95f57b4dac915e4f8cf84406",
+    "staged_sha256": "424a27d2ef3fe10e892be76925e0b8b473423ced90f0d176faa395f3f670c595",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "Scratch.lean",
+    "raw_work_sha256": "7f25a7a744a9d3d26905842e38856b0aff275e4a27769790e106a2e7784c8d84",
+    "staged_sha256": "d152ca5be8b89dd0fb015afb1743274c20d2cb51caa5ceb0c2a3c728c7b89c91",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "scripts/CheckAxioms.lean",
+    "raw_work_sha256": "ecfce8f30e3a0432f7f635039fb95bdb4f59d57d997d4953d8f52afc4fb95a8c",
+    "staged_sha256": "191458170aee5c4a4fc88a642442d6312cb388a8974002ba6c2df8b3cd07beba",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "FORMALIZATION_MAP.md",
+    "raw_work_sha256": "b36e5e5cca1257e13e5042c97554b152a9a435e86a9febde9260ffcca83001d8",
+    "staged_sha256": "d22566b4d7342020ea4129548adc798f0678b4ecb54b6c27daba109bc48d029b",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "ASSUMPTIONS.md",
+    "raw_work_sha256": "f02eec47d23aab3c59fdd608c90b5f48f69b68f11daacf5f5adc64febad42b00",
+    "staged_sha256": "b7620c6ae51808887b3f6e63979e00883bae93d6f319985f9733548eeb0432e6",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv",
+    "raw_work_sha256": "27e9ef8f2087a4c94b4d42315f3304de33ded9675d6771d8769dd7b6b95549ec",
+    "staged_sha256": "10915290058fcf0af9d4349c75f40c308b09fde7164359b56bc088fcda7a0078",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/NOTATION_INVENTORY.csv",
+    "raw_work_sha256": "d3f8318769e902f37ace869b90cd51957ecbcdce159780f27ff35fcda5352177",
+    "staged_sha256": "b25bc4c69bec01468dea225322401ecfcd91418eb9fe4b14a89ebd057cc07654",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/reviews/2026-10-07-LangevinCanonicalCoordinateClosed/REVIEW.zh-CN.md",
+    "raw_work_sha256": "ad5f6a86a367039ab60648529fe3f5349ca401c696485c2a692e96afb19aabd5",
+    "staged_sha256": "ad5f6a86a367039ab60648529fe3f5349ca401c696485c2a692e96afb19aabd5",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/ACCEPT.ps1",
+    "raw_work_sha256": "49cb039a1e829af7f7323cddddaccfb9c10be23def431a170d95ccbc6e26953c",
+    "staged_sha256": "49cb039a1e829af7f7323cddddaccfb9c10be23def431a170d95ccbc6e26953c",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/ACCEPTANCE.json",
+    "raw_work_sha256": "575d69437e9d8ad5915616ae1b4310751b299600ba6c767c7b5fa4307f0d9ead",
+    "staged_sha256": "a68aa8e123920eee1ea9a31858a84276114cf6958252735690cb8ddbb85a6665",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/FULL_DRIVER.log",
+    "raw_work_sha256": "bf4975bcc16f292ba3112d9656e31f5e53ddab23cb5aae874654a3e16eae137b",
+    "staged_sha256": "bf4975bcc16f292ba3112d9656e31f5e53ddab23cb5aae874654a3e16eae137b",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/INTEGRATE.ps1",
+    "raw_work_sha256": "41c3c52942296b97c4c19ca32c0e03f42a645a115f40abc094ffba2d238e69e2",
+    "staged_sha256": "41c3c52942296b97c4c19ca32c0e03f42a645a115f40abc094ffba2d238e69e2",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/LOCAL_CHECK.json",
+    "raw_work_sha256": "d422d69010361e5e87d6e9307ae50776b6dd1c9e27db66929a22739fc8f19f2c",
+    "staged_sha256": "9eaadf7759bbdc8df1112d77b26c1daecf955df58bce8b15833cb021b5bdc9d0",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/local01.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/PUBLIC_DECLARATIONS.json",
+    "raw_work_sha256": "271adaddfdd4739db6ea7def62c7fb18d2f022a9aea5e24b2948e8298b01f8d0",
+    "staged_sha256": "28184295de7668957a9540b027e9b1893d3a908b60cc17de000e178312fadc05",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/SOURCE_AUDIT.json",
+    "raw_work_sha256": "9d711821416978ae2a378fee3fad2fdefaf4bece92380fd601c4d9816c283f9c",
+    "staged_sha256": "a8b64f0610c84745b3880ce2aff52bdafc40ce3c272b6d987e7c4d79f586685e",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/axiom_dependencies.log",
+    "raw_work_sha256": "94a6d653ccabfe81922a910e3f67c1d31b729be4b402a27cf88088966969e1ed",
+    "staged_sha256": "94a6d653ccabfe81922a910e3f67c1d31b729be4b402a27cf88088966969e1ed",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/CHECK_REPORT.json",
+    "raw_work_sha256": "58c034c9d2134cca4794520b3578da335a97a6175904b0b059ec3e8ca65dfbf3",
+    "staged_sha256": "947ec9c79798ff1c792bdcb6e7af2e70db09d60c7789980e50a5e9cb10daa0f9",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/git_branch.log",
+    "raw_work_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "staged_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/git_head.log",
+    "raw_work_sha256": "7d29e206cb96e4f1e328d35bac8b93083ef75eef538473580f236aec4e2f8881",
+    "staged_sha256": "7d29e206cb96e4f1e328d35bac8b93083ef75eef538473580f236aec4e2f8881",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/git_status.log",
+    "raw_work_sha256": "a4caab58a452a1e4bcef0d785e87b1adc2fe47873231b536fd7bdd47a2c4981b",
+    "staged_sha256": "a4caab58a452a1e4bcef0d785e87b1adc2fe47873231b536fd7bdd47a2c4981b",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/lake_build.log",
+    "raw_work_sha256": "f441b45281872364a3048df5853b46ff0ac0883b4c2a0f8f3d5cc994fafe0190",
+    "staged_sha256": "f441b45281872364a3048df5853b46ff0ac0883b4c2a0f8f3d5cc994fafe0190",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/lake_version.log",
+    "raw_work_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "staged_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/lean_version.log",
+    "raw_work_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "staged_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/mathlib_revision.log",
+    "raw_work_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "staged_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/mathlib_status.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateClosed/full-check01/scratch.log",
+    "raw_work_sha256": "64650776a373db6c814394500a2e494ddbde36f4425ad42d3c0f0604d02aa9b9",
+    "staged_sha256": "64650776a373db6c814394500a2e494ddbde36f4425ad42d3c0f0604d02aa9b9",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  }
+]

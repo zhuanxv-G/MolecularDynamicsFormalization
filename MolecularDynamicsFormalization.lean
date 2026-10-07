@@ -422,3 +422,5 @@ import MolecularDynamics.Chapter06.LangevinCanonicalCoordinateWeakDerivative
 import MolecularDynamics.Chapter06.LangevinCanonicalWeakH1
 
 import MolecularDynamics.Chapter06.LangevinCanonicalH1MeanZero
+
+import MolecularDynamics.Chapter06.LangevinCanonicalCoordinateClosed

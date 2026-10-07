@@ -1,0 +1,153 @@
+{
+  "started_at": "2026-10-07T21:06:09.3549302+08:00",
+  "finished_at": "2026-10-07T21:12:46.6567009+08:00",
+  "head_at_check": "e8c745ffde5c11f14dc22a1bdbcdb2a71a0a9cbd",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9200,
+  "audit_declarations": 2825,
+  "inputs": 283,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_smooth_add",
+    "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_smooth_smul",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateTestGraphSubmodule",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_graph",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_isClosed",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_dense",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_smooth_graph",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_smooth_mem_adjoint_domain",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_adjoint_smooth_apply",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_weakH1_apply"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_smooth_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_smooth_smul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateTestGraphSubmodule",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_isClosed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_smooth_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_smooth_mem_adjoint_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_adjoint_smooth_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateClosedOperator_weakH1_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "bf4975bcc16f292ba3112d9656e31f5e53ddab23cb5aae874654a3e16eae137b"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_same_canonical_measure_Nzero_coordinates_independent_of_gamma_sigma",
+  "actual_coordinate_Frechet_add_and_scalar_linearity": "proved_on_original_periodic_real_lift",
+  "actual_coordinate_test_graph_submodule": "proved_from_true_F_DjF_AE_representatives_and_actual_linearity",
+  "actual_minimal_closed_coordinate_operator": "constructed_from_actual_original_test_graph_topological_closure_toLinearPMap",
+  "actual_minimal_coordinate_graph_functionality": "proved_using_actual_dense_test_zero_vertical",
+  "actual_minimal_coordinate_operator_graph": "proved_equal_to_true_test_graph_topological_closure",
+  "actual_minimal_coordinate_operator_isClosed": "proved_from_actual_graph_closure",
+  "actual_minimal_coordinate_operator_dense_domain": "proved_contains_true_dense_original_smooth_test_domain",
+  "actual_smooth_coordinate_closed_graph_membership": "proved_for_genuine_F_and_DjF_same_measure_L2_classes",
+  "actual_smooth_coordinate_adjoint_domain_membership": "proved_from_actual_original_weighted_transpose_pairing",
+  "actual_smooth_coordinate_adjoint_value": "proved_literal_minus_DjG_plus_logSlope_j_G_in_same_canonical_L2",
+  "actual_weakH1_coordinate_compatibility": "proved_on_actual_minimal_closed_coordinate_domain_by_dense_tests_and_weak_derivative_uniqueness",
+  "weakH1_minimal_domain_membership_hypothesis": "explicit_actual_domain_intersection_for_compatibility_only_not_full_domain_identity",
+  "actual_weighted_weak_H1_complete_space_and_norm": "already_proved_in_accepted_previous_batch",
+  "minimal_coordinate_domain_equals_full_weak_derivative_domain": "not_proved",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "full_closed_L_momentum_energy_extension": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "full_closed_Hilbert_adjoint_domain_characterization": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
