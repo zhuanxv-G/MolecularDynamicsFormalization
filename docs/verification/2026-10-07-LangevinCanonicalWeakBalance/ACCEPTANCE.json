@@ -1,0 +1,185 @@
+{
+  "started_at": "2026-10-07T18:00:26.8734396+08:00",
+  "finished_at": "2026-10-07T18:10:50.26242+08:00",
+  "head_at_check": "132964f2c40f5200fe559af9ad966c1b116e46c3",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9189,
+  "audit_declarations": 2716,
+  "inputs": 272,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative",
+    "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_lift",
+    "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_lift_contDiff",
+    "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_tsupport_subset",
+    "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_hasCompactSupport",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_position_integrationByParts",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_integrationByParts",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_ou_weak_balance",
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_canonical_split",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_weak_balance",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_physical_weak_balance",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_C0_generator_weak_balance"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_lift_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_tsupport_subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_hasCompactSupport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_position_integrationByParts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_integrationByParts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_ou_weak_balance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_canonical_split",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_weak_balance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_physical_weak_balance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_C0_generator_weak_balance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "5c5bf4f547c528cdd62d6f8a6b4fb40dfd1081ce7a630a8a2d4b519eb67ba622"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "cf7f610a83616cfc3734e3a3a079df0bc6967c21d9165f3ce37e3f314dc9c49d"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "fd3e5c1994c0ffc677b3f34b2ec02d4ce35ad15d5498e4893ea0f36d584a3381"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "7873fca01641d970ed96782794dd28515f897a10153c0a35df6bebd9180cc5b7"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "0e645fdc1334896132fedff8b92f18d0bc559cc35d58b92c6aec9b59f443c15b"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "dc44d9f8184e57eb4bdfcebd055f50ad3e511a8dbcdf988e9e6e27640cf2928a"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "397dd5367305d945ff64caec0bf081e50e0cecf743434d62c60faf9b4f4776f6"
+    },
+    {
+      "path": "local07.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_smooth_unit_periodic_potential_actual_full_torus_Gibbs_times_true_Gaussian_probability_beta_positive_Nzero",
+  "actual_phase_tests": "all_genuinely_compact_actual_phase_tests_with_Cinfty_real_lift_no_separability_assumption",
+  "true_directional_descent": "proved_all_real_representatives_true_periodicity_no_continuous_representative_assumption",
+  "true_joint_integrability_and_Fubini": "proved_all_terms_from_actual_continuity_support_compactness_and_actual_probability",
+  "whole_Langevin_phase_weak_balance": "proved_actual_canonical_expectation_original_LF_zero_with_sigma_squared_2gamma_over_beta",
+  "physical_noise_weak_balance": "proved_true_sqrt_coefficient_positive_gamma_beta",
+  "actual_C0_generator_weak_balance": "proved_same_closed_actual_generator_on_genuine_compact_smooth_tests_in_proved_domain",
+  "no_target_IBP_balance_InvLaw_or_integrability_hypotheses": "proved_all_needed_measures_derivatives_support_integrability_and_cancellations",
+  "actual_probability_Gibbs_invariance": "not_proved_requires_semigroup_core_or_stationary_law_argument",
+  "functional_adjoint_domain": "not_proved",
+  "graph_core": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

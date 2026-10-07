@@ -1,0 +1,46 @@
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:433:42: error: unsolved goals
+N : ℕ
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+v z : textbookLangevinPhase N
+he :
+  textbookLangevinPeriodicDirectionalDerivative F v ∘ textbookLangevinPeriodicProjection = fun y =>
+    (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) y) v
+⊢ ¬?m.116 = ω
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:433:68: error: unsolved goals
+N : ℕ
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+v z : textbookLangevinPhase N
+he :
+  textbookLangevinPeriodicDirectionalDerivative F v ∘ textbookLangevinPeriodicProjection = fun y =>
+    (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) y) v
+⊢ ¬?m.116 = 0
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:427:83: error: unsolved goals
+N : ℕ
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+v z : textbookLangevinPhase N
+he :
+  textbookLangevinPeriodicDirectionalDerivative F v ∘ textbookLangevinPeriodicProjection = fun y =>
+    (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) y) v
+⊢ ℕ∞ω
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:441:17: warning: Variable name `hβ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hβ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:575:9: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:577:9: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:584:10: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.

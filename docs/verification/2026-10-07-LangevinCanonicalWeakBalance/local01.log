@@ -1,0 +1,21 @@
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:148:4: error: Application type mismatch: The argument
+  HasFDerivAt.prodMk (hasFDerivAt_id q) (hasFDerivAt_const p q)
+has type
+  HasFDerivAt (fun x => (id x, p)) ((ContinuousLinearMap.id ?m.105 (Fin N → ℝ)).prod 0) q
+but is expected to have type
+  HasFDerivAt ?m.78 ?m.79 q
+in the application
+  HasFDerivAt.comp q ?m.82 (HasFDerivAt.prodMk (hasFDerivAt_id q) (hasFDerivAt_const p q))
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:158:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fderiv ℝ (g ∘ Prod.mk q) p
+in the target expression
+  (fderiv ℝ (fun y => g (q, y)) p) v = (fderiv ℝ g (q, p)) (0, v)
+
+N : ℕ
+g : textbookLangevinPhase N → ℝ
+hg : ContDiff ℝ ∞ g
+q p v : Fin N → ℝ
+h :
+  HasFDerivAt (g ∘ Prod.mk q) (fderiv ℝ g (q, p) ∘SL ContinuousLinearMap.prod 0 (ContinuousLinearMap.id ℝ (Fin N → ℝ)))
+    p
+⊢ (fderiv ℝ (fun y => g (q, y)) p) v = (fderiv ℝ g (q, p)) (0, v)

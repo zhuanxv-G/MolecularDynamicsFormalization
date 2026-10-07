@@ -1,0 +1,8 @@
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:239:23: error: Application type mismatch: The argument
+  weak_projection_shift (q, p) n
+has type
+  textbookLangevinPeriodicProjection ((q, p) + (fun i => ↑(n i), 0)) = textbookLangevinPeriodicProjection (q, p)
+but is expected to have type
+  textbookLangevinPeriodicProjection (q + fun i => ↑(n i), p) = textbookLangevinPeriodicProjection (q, p)
+in the application
+  congrArg F (weak_projection_shift (q, p) n)

@@ -1,0 +1,156 @@
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:454:101: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:452:89: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+_hβ : 0 < β
+hσ : σ ^ 2 = 2 * γ / β
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+z : textbookLangevinPhase N
+⊢ textbookLangevinPeriodicDifferentialOperator U γ σ F (textbookLangevinPeriodicProjection z) =
+    ∑ i,
+        ((textbookLangevinPeriodicProjection z).2 i *
+            textbookLangevinPeriodicDirectionalDerivative F (Pi.single i 1, 0) (textbookLangevinPeriodicProjection z) -
+          textbookConfigurationTorusObservable (textbookConfigurationPartial U i)
+              (textbookLangevinPeriodicProjection z).1 *
+            textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) (textbookLangevinPeriodicProjection z)) +
+      γ *
+        ∑ i,
+          (β⁻¹ *
+              textbookLangevinPeriodicDirectionalDerivative
+                (textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1)) (0, Pi.single i 1)
+                (textbookLangevinPeriodicProjection z) -
+            (textbookLangevinPeriodicProjection z).2 i *
+              textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) (textbookLangevinPeriodicProjection z))
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:537:106: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:538:116: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:537:89: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+hβ : 0 < β
+hσ : σ ^ 2 = 2 * γ / β
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hs : HasCompactSupport F
+this : IsProbabilityMeasure (textbookLangevinCanonicalMeasure U β hβ)
+H : Fin N → textbookLangevinPeriodicPhase N → ℝ :=
+  fun i x =>
+    x.2 i * textbookLangevinPeriodicDirectionalDerivative F (Pi.single i 1, 0) x -
+      textbookConfigurationTorusObservable (textbookConfigurationPartial U i) x.1 *
+        textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x
+O : textbookLangevinPeriodicPhase N → ℝ :=
+  fun x =>
+    γ *
+      ∑ i,
+        (β⁻¹ *
+            textbookLangevinPeriodicDirectionalDerivative
+              (textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1)) (0, Pi.single i 1) x -
+          x.2 i * textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x)
+hiH : ∀ (i : Fin N), Integrable (H i) (textbookLangevinCanonicalMeasure U β hβ)
+hzH : ∀ (i : Fin N), ∫ (x : textbookLangevinPeriodicPhase N), H i x ∂textbookLangevinCanonicalMeasure U β hβ = 0
+hiHS : Integrable (fun x => ∑ i, H i x) (textbookLangevinCanonicalMeasure U β hβ)
+⊢ 2 ≤ sorry ()
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:538:99: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+hβ : 0 < β
+hσ : σ ^ 2 = 2 * γ / β
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hs : HasCompactSupport F
+this : IsProbabilityMeasure (textbookLangevinCanonicalMeasure U β hβ)
+H : Fin N → textbookLangevinPeriodicPhase N → ℝ :=
+  fun i x =>
+    x.2 i * textbookLangevinPeriodicDirectionalDerivative F (Pi.single i 1, 0) x -
+      textbookConfigurationTorusObservable (textbookConfigurationPartial U i) x.1 *
+        textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x
+O : textbookLangevinPeriodicPhase N → ℝ :=
+  fun x =>
+    γ *
+      ∑ i,
+        (β⁻¹ *
+            textbookLangevinPeriodicDirectionalDerivative
+              (textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1)) (0, Pi.single i 1) x -
+          x.2 i * textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x)
+hiH : ∀ (i : Fin N), Integrable (H i) (textbookLangevinCanonicalMeasure U β hβ)
+hzH : ∀ (i : Fin N), ∫ (x : textbookLangevinPeriodicPhase N), H i x ∂textbookLangevinCanonicalMeasure U β hβ = 0
+hiHS : Integrable (fun x => ∑ i, H i x) (textbookLangevinCanonicalMeasure U β hβ)
+⊢ 2 ≤ sorry ()
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:584:83: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:586:40: error: Ambiguous term
+  ∞
+Possible interpretations:
+  ∞ : ℝ≥0∞
+  
+  ∞ : ℕ∞ω
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:584:66: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+β γ σ : ℝ
+hβ : 0 < β
+hγ : 0 < γ
+hσ : σ ^ 2 = 2 * γ / β
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hs : HasCompactSupport F
+x : textbookLangevinPeriodicPhase N
+⊢ 2 ≤ sorry ()
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:586:23: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+β γ σ : ℝ
+hβ : 0 < β
+hγ : 0 < γ
+hσ : σ ^ 2 = 2 * γ / β
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hs : HasCompactSupport F
+x : textbookLangevinPeriodicPhase N
+⊢ 2 ≤ sorry ()

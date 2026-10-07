@@ -400,3 +400,5 @@ import MolecularDynamics.Chapter06.LangevinCanonicalPartition
 import MolecularDynamics.Chapter06.LangevinCanonicalMomentumIBP
 
 import MolecularDynamics.Chapter06.LangevinCanonicalPositionIBP
+
+import MolecularDynamics.Chapter06.LangevinCanonicalWeakBalance

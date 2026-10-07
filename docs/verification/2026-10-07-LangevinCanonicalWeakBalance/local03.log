@@ -1,0 +1,183 @@
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:239:6: error: Type mismatch: After simplification, term
+  congrArg F (weak_projection_shift (q, p) n)
+ has type
+  @Eq ℝ (F (textbookLangevinPeriodicProjection (q + fun i => ↑(n i), p)))
+    (F (textbookLangevinPeriodicProjection (q, p)))
+but is expected to have type
+  @Eq ℝ (f (q + fun i => ↑(n i))) (f q)
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:403:4: error: unsolved goals
+case fst
+N : ℕ
+A : textbookLangevinPhase N →L[ℝ] ℝ
+q p : Fin N → ℝ
+j : Fin N
+⊢ (∑ x, (q x • Pi.single x 1, 0)).1 j = q j
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:405:4: error: unsolved goals
+case snd
+N : ℕ
+A : textbookLangevinPhase N →L[ℝ] ℝ
+q p : Fin N → ℝ
+⊢ (∑ x, (q x • Pi.single x 1, 0)).2 = 0
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:408:4: error: unsolved goals
+case fst
+N : ℕ
+A : textbookLangevinPhase N →L[ℝ] ℝ
+q p : Fin N → ℝ
+hq : ∑ i, q i • (Pi.single i 1, 0) = (q, 0)
+⊢ (∑ x, (0, p x • Pi.single x 1)).1 = 0
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:409:4: error: unsolved goals
+case snd
+N : ℕ
+A : textbookLangevinPhase N →L[ℝ] ℝ
+q p : Fin N → ℝ
+hq : ∑ i, q i • (Pi.single i 1, 0) = (q, 0)
+j : Fin N
+⊢ (∑ x, (0, p x • Pi.single x 1)).2 j = p j
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:414:4: error: Tactic `rfl` failed: The left-hand side
+  (q, p)
+is not definitionally equal to the right-hand side
+  (q, 0) + (0, p)
+
+N : ℕ
+A : textbookLangevinPhase N →L[ℝ] ℝ
+q p : Fin N → ℝ
+hq : ∑ i, q i • (Pi.single i 1, 0) = (q, 0)
+hp : ∑ i, p i • (0, Pi.single i 1) = (0, p)
+⊢ (q, p) = (q, 0) + (0, p)
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:404:12: warning: This simp argument is unused:
+  Finset.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:404:30: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.sum_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:410:12: warning: This simp argument is unused:
+  Finset.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:410:30: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.sum_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:429:80: error: Application type mismatch: The argument
+  differentiableAt_const
+has type
+  ∀ (c : ?m.124), DifferentiableAt ?m.118 (fun x => c) ?m.128
+but is expected to have type
+  DifferentiableAt ℝ ?m.94 z
+in the application
+  fderiv_clm_apply (ContDiff.differentiable (ContDiff.fderiv_right hG ?m.106) ?m.117 z) differentiableAt_const
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:423:83: error: unsolved goals
+N : ℕ
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+v z : textbookLangevinPhase N
+he :
+  textbookLangevinPeriodicDirectionalDerivative F v ∘ textbookLangevinPeriodicProjection = fun y =>
+    (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) y) v
+⊢ (fderiv ℝ (fun y => (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) y) v) z) v =
+    ((fderiv ℝ (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection)) z) v) v
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:447:89: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+hβ : 0 < β
+hσ : σ ^ 2 = 2 * γ / β
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+z : textbookLangevinPhase N
+heU :
+  ∀ (i : Fin N),
+    textbookConfigurationTorusObservable (textbookConfigurationPartial U i) (textbookLangevinPeriodicProjection z).1 =
+      textbookConfigurationPartial U i z.1
+heσ : σ ^ 2 / 2 = γ * β⁻¹
+⊢ (∑ x, z.2 x * (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) z) (Pi.single x 1, 0) -
+          ∑ x,
+            (fderiv ℝ U z.1) (Pi.single x 1) *
+              (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) z) (0, Pi.single x 1) -
+        γ * ∑ x, z.2 x * (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) z) (0, Pi.single x 1) +
+      γ * β⁻¹ * ∑ x, (iteratedFDeriv ℝ 2 (F ∘ textbookLangevinPeriodicProjection) z) fun x_1 => (0, Pi.single x 1)) =
+    (-∑ x, (fderiv ℝ U z.1) (Pi.single x 1) * (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) z) (0, Pi.single x 1) +
+          γ * β⁻¹ *
+            ∑ x, (iteratedFDeriv ℝ 2 (F ∘ textbookLangevinPeriodicProjection) z) fun x_1 => (0, Pi.single x 1)) -
+        γ *
+          ∑ x,
+            (textbookLangevinPeriodicProjection z).2 x *
+              (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) z) (0, Pi.single x 1) +
+      ∑ x,
+        (textbookLangevinPeriodicProjection z).2 x *
+          (fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) z) (Pi.single x 1, 0)
+docs/verification/2026-10-07-LangevinCanonicalWeakBalance/Draft.lean:511:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : UnitAddTorus (Fin N) × (Fin N → ℝ)),
+    ((fun p => p i) ∘ Prod.snd * textbookLangevinPeriodicDirectionalDerivative F (Pi.single i 1, 0)) a -
+      ((fun x => textbookConfigurationTorusObservable (textbookConfigurationPartial U i) x.1) *
+          textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1))
+        a ∂?m.470
+in the target expression
+  ∫ (x : textbookLangevinPeriodicPhase N),
+      (fun x =>
+          x.2 i * textbookLangevinPeriodicDirectionalDerivative F (Pi.single i 1, 0) x -
+            textbookConfigurationTorusObservable (textbookConfigurationPartial U i) x.1 *
+              textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x)
+        x ∂textbookLangevinCanonicalMeasure U β hβ =
+    0
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+hβ : 0 < β
+hσ : σ ^ 2 = 2 * γ / β
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hs : HasCompactSupport F
+this : IsProbabilityMeasure (textbookLangevinCanonicalMeasure U β hβ)
+H : Fin N → textbookLangevinPeriodicPhase N → ℝ :=
+  fun i x =>
+    x.2 i * textbookLangevinPeriodicDirectionalDerivative F (Pi.single i 1, 0) x -
+      textbookConfigurationTorusObservable (textbookConfigurationPartial U i) x.1 *
+        textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x
+O : textbookLangevinPeriodicPhase N → ℝ :=
+  fun x =>
+    γ *
+      ∑ i,
+        (β⁻¹ *
+            textbookLangevinPeriodicDirectionalDerivative
+              (textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1)) (0, Pi.single i 1) x -
+          x.2 i * textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x)
+hiH : ∀ (i : Fin N), Integrable (H i) (textbookLangevinCanonicalMeasure U β hβ)
+i : Fin N
+hc1 : Continuous ((fun p => p i) ∘ Prod.snd * textbookLangevinPeriodicDirectionalDerivative F (Pi.single i 1, 0))
+hc2 :
+  Continuous
+    ((fun x => textbookConfigurationTorusObservable (textbookConfigurationPartial U i) x.1) *
+      textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1))
+⊢ ∫ (x : textbookLangevinPeriodicPhase N),
+      (fun x =>
+          x.2 i * textbookLangevinPeriodicDirectionalDerivative F (Pi.single i 1, 0) x -
+            textbookConfigurationTorusObservable (textbookConfigurationPartial U i) x.1 *
+              textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x)
+        x ∂textbookLangevinCanonicalMeasure U β hβ =
+    0
