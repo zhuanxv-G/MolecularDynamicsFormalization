@@ -712,3 +712,5 @@ LangevinC0GeneratorGraph：原unitmass6.47/Wiener B P/C∞periodicU/forceLip γ>
 LangevinCompactC2Domain：原unitmass6.47/Wiener B P/C∞periodicU/forceLip γ>0σ任意N0，F真实C²lift且compactphase support；原κT x momentumL² map-law导p² integrability，已验uniformquotientdominator filterDCT/CK导actualscalar rightorbitderivative，scalarFTC+actualevalCLM integralcomm给C0 identity，再truegraph integratediff导原closedgenerator真实norm域及existingLF作用。无normlimit/domain/目标image前提，无C³/Ulower/density/stationarity/Gibbs；graphcore尚未完。
 
 LangevinGeneratorOrbit：原unitmass6.47实际Wiener B P/C∞periodicU/forceLip γ>0σ任意N0，actualclosedgenerator真正domain f。graph经真实CLM/CK保持导domain invariance/uniqueness commutation，integratediff+vectorFTC导正时间双侧norm导数。compactF真实C²lift与phasecompact support只作已验原domain初值；没有假设目标invariance/commutation/derivative、Ulower/density/Gibbs，也没有声称STf后续经典C²或existingLF(STf)及graphcore。
+
+LangevinC0ConservedObservable：原unitmass6.47/Wiener B P/C∞periodicU/forceLip γ>0，stationaryiff sigma任意，constancy sigma非零N0。真C0 tail/极值存在与actualopen-accessibility导fullsupport，概率gap零⇒continuous AEeq全eq；无density/Gibbs/InvLaw或目标stationarity/constancy。compactC²原LFnull经actualnormgraph。Prop6.4原加权H¹空间核及前向Poisson/Fredholm未证。

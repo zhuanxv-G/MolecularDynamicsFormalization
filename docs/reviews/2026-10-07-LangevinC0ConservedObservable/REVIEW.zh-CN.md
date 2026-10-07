@@ -1,0 +1,15 @@
+# 原实际C0守恒量与零模
+
+5公开声明证明原6.47实际C0半群/closedgenerator的零模与stationary orbit等价；非零噪声时任意一个正时间原transition固定的C0观测量都是常数，实际generator/domain零模及compactC²原LF零函数常数性随之得到。N=0包含，真实C∞periodicU/forceLip γ>0；stationaryiff不需σ非零，constancy明确σ≠0。
+
+C0趋于零在任一正值之下给真实cocompact upper tail，极值定理导真实globalmaximum。最大点的actualκ probability expectation固定等于max，gap非负可积且积分为零给AE gap0。fullsupport由真实Wiener开集可达性导原κ IsOpenPosMeasure，没有density或InvLaw假设；连续AE等号因此是全域等号。无正值但有负值用原CLM map_neg和负观测量，全部零则字面结束。未假设最大值存在或目标constancy。
+
+原graph integratediff证(f,0)在实际normgraph iff所有原orbit固定；actualLinearPMap graph和unique给actualdomain generator value0 iffstationary。compactC² LF零先前已验F进入真实normdomain及existing LF作为image，本批由actualkernel路径常数性得到实际原F常数。
+
+PDF278/印刷257已新做文本与视觉核对，原Proposition6.4使用加权H¹(μ)和前向L†。文本提取H1最初推测H∞已在WORK_LOG后续明确纠正；本批仅原C0及compactC²，不以C0核冒充加权H¹核，不声称前向Poisson解存在/唯一、紧预解/Fredholm或Gibbs身份。图核心、实际positive-time density、原Prop6.4、一般Theorem6.2、负责人语义与CORE未完。
+
+local01 genuine实例构造where语法/最后目标section参数自动省略与Prop实例style；02底层Measure AE notation、Prop实例haveI应have、doc注释和include顺序；修真实代码后local03完整5/private空log0零warning。所有raw保存，不改linter/resources。原PDF SHA保持，既有272–275文本/priorvisual273复用，本次visual278新增；无新增274/275视觉。唯一full01待验。
+
+保存可复核ACCEPT_DRIVER脚本首次外层here-string含内层终止符，在命令解析阶段退出1，无文件写入、stage或commit；本次改正确PowerShell单引号文字转义并预先Parser ParseInput无错误，再执行同一已通过验收的审计提交。没有重复Lean或改formal inputs。
+
+full-check01通过：9183jobs/2655标准公理/266exactinputs/all10checks0/0Leanwarning/allinput与原rawlog SHA一致、新5public唯一标准axioms。actualnormgraph/domain0iffstationary；真实C0 max/tail与actualWiener fullsupport/概率gap积分0给one-positive-time fixedconstant，原actualzero modes及compactC² LFnull常数。σ非零N0无density/Gibbs/目标constancy前提。raw01-03真实失败与最终局部通过完整保留，原PDF278 visual/text H¹原空间核未完，未冒称Prop6.4 forwardPoisson/Fredholm、graphcore、Gibbs、全CORE已完。

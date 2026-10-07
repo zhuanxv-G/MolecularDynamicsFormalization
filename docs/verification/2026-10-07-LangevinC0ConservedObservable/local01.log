@@ -1,0 +1,61 @@
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:55:81: error: unexpected token 'where'; expected ':=' or '|'
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:55:7: error: Missing cases:
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:55:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:50:58: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+hσ : σ ≠ 0
+T : ℝ≥0
+hT : 0 < ↑T
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+hf : (S T) f = f
+y : textbookLangevinPeriodicPhase N
+hy : 0 < f y
+htail : ∀ᶠ (z : textbookLangevinPeriodicPhase N) in cocompact (textbookLangevinPeriodicPhase N), f z ≤ f y
+x : textbookLangevinPeriodicPhase N
+hmax : ∀ (y : textbookLangevinPeriodicPhase N), f.toContinuousMap y ≤ f.toContinuousMap x
+μ : ProbabilityMeasure (textbookLangevinPeriodicPhase N) :=
+  textbookLangevinPeriodicTransitionProbability B P hB U hU hp L hF γ σ T x
+this : (↑μ).IsOpenPosMeasure := nomatch
+⊢ ∀ (a b : textbookLangevinPeriodicPhase N), f a = f b
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:121:64: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:121:67: error(lean.unknownIdentifier): Unknown identifier `hp`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:125:68: error(lean.unknownIdentifier): Unknown identifier `B`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:125:70: error(lean.unknownIdentifier): Unknown identifier `P`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:125:72: error(lean.unknownIdentifier): Unknown identifier `hB`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:125:77: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:125:80: error(lean.unknownIdentifier): Unknown identifier `hp`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:125:83: error(lean.unknownIdentifier): Unknown identifier `L`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:125:85: error(lean.unknownIdentifier): Unknown identifier `hF`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:125:92: error(lean.unknownIdentifier): Unknown identifier `hγ`
+docs/verification/2026-10-07-LangevinC0ConservedObservable/Draft.lean:119:58: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ : ℝ
+hσ : σ ≠ 0
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ 2 (F ∘ textbookLangevinPeriodicProjection)
+hcs : HasCompactSupport F
+hz : ∀ (x : textbookLangevinPeriodicPhase N), textbookLangevinPeriodicDifferentialOperator U γ σ F x = 0
+f : textbookLangevinPeriodicPhase N →C₀ ℝ := textbookLangevinPeriodicCompactC2Observable F hG hcs
+g : textbookLangevinPeriodicPhase N →C₀ ℝ := textbookLangevinPeriodicCompactC2DifferentialImage U ⋯ ⋯ γ σ F hG hcs
+hg : g = 0
+⊢ ∀ (x y : textbookLangevinPeriodicPhase N), F x = F y

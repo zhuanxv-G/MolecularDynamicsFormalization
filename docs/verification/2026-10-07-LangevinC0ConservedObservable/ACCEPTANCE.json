@@ -1,0 +1,98 @@
+{
+  "started_at": "2026-10-07T14:52:52.2937481+08:00",
+  "finished_at": "2026-10-07T14:57:01.1213352+08:00",
+  "head_at_check": "5d76f09713fd30ceb2a3c0a86c66e32daeeacc3a",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9183,
+  "audit_declarations": 2655,
+  "inputs": 266,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_zero_iff_stationary",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator_zero_iff_stationary",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_fixed_is_constant",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator_zero_is_constant",
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_compactC2_zero_is_constant"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_zero_iff_stationary",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator_zero_iff_stationary",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_fixed_is_constant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator_zero_is_constant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_compactC2_zero_is_constant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "de9fdc6cb262ccdedce10fd4860c2d3b3261574a0d1d1621948061b199f00d06"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "af8b0295d53321b4c48e63d8b0df5b49b227c7ad7c3efd0c801657bab25d3058"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "c78458346a4ccaf61c24e64a20b5cb0bb7dcd15acbdf7bb92852368a9bda408d"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_original_process": "same_original_unitmass6_47_Wiener_B_P_same_kappa_same_actual_C0_generator",
+  "model": "Cinfty_periodic_U_forceLip_gamma_positive_sigma_nonzero_for_constancy_Nzero_included",
+  "actual_zero_graph": "proved_zero_right_norm_derivative_iff_stationary_same_original_orbit_all_NNReal_times",
+  "actual_generator_zero": "proved_actual_domain_zero_image_iff_stationarity_no_invariance_premise",
+  "one_time_fixed_C0_constancy": "derived_actual_C0_tail_extreme_value_global_max_probability_gap_zero_fullsupport_from_actual_Wiener_open_accessibility",
+  "actual_zero_modes": "proved_constant_functions_for_same_original_C0_generator_domain",
+  "compact_C2_differential_null_functions": "proved_constant_from_existing_LF_zero_actual_norm_domain_no_target_stationarity_premise",
+  "target_constancy_stationarity_fullsupport_hypothesis": "none",
+  "transition_density_Gibbs_invariant_law_premise": "none",
+  "weighted_H1_kernel_Proposition6_4": "not_proved_C0_space_separate",
+  "forward_operator_Poisson_Fredholm_Proposition6_4": "not_proved",
+  "graph_core": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
