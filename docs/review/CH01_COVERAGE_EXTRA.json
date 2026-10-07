@@ -1,0 +1,12 @@
+[
+  {"section":"1.1.1","page":11,"kind":"未编号结论","text":"Finite conserved energy and a repulsive Lennard-Jones singularity prevent particle collisions.","key":"ljCollisionAvoidance","note":"有限粒子，每对势有统一下界；只陈述能量子水平集上正距离界"},
+  {"section":"1.2","page":21,"kind":"未编号结论","text":"The normalized coordinates Q_i=q_i/sigma have qdot_i=sigma Qdot_i and qddot_i=sigma Qddot_i.","key":"ljCoordinateScaling","note":"只保留正文链式法则推导，排除argon数值参数"},
+  {"section":"1.2","page":22,"kind":"未编号结论","text":"With tau=alpha t and alpha^2=epsilon/(m sigma^2), normalized LJ dynamics have unit mass and parameter-independent potential.","key":"ljTimeScaling","note":"正epsilon,m,sigma；不登记数值时间单位"},
+  {"section":"1.5.2","page":29,"kind":"未编号结论","text":"In the fixed-center Kepler problem linear momentum is generally not conserved.","key":"keplerMomentumNotConserved","note":"非零引力给真实动量导数非零，不声称所有轨迹所有坐标导数非零"},
+  {"section":"1.5.2","page":30,"kind":"定义","text":"The harmonic action-angle coordinate pair is (I,theta).","key":"actionAnglePair","note":"原文随后写(I,Omega)疑似笔误；独立登记正确对象与原文差异"},
+  {"section":"1.7","page":38,"kind":"未编号结论","text":"For the unit LJ trimer an equilateral triangle minimizes U=3 phi_LJ(r), at r=2^(1/6).","key":"trimerMinimum","note":"正文分析结论，排除图/模拟；全局势下界-3及等边实现"},
+  {"section":"1.7","page":40,"kind":"未编号结论","text":"The unit LJ trimer cannot attain E<-3.","key":"trimerLowerBound","note":"动能非负，每对势最低-1"},
+  {"section":"1.7","page":40,"kind":"定义","text":"The collinear trimer potential is Uhat(x)=2 phi_LJ(x)+phi_LJ(2x).","key":"collinearTrimer","note":"x>0"},
+  {"section":"1.7","page":40,"kind":"未编号结论","text":"The minimum in the collinear configuration is a saddle: U increases along x and decreases along y.","key":"trimerSaddle","note":"明确局部严格不等式；原文无完整证明，不开展符号高阶计算"},
+  {"section":"1.7","page":40,"kind":"未编号结论","text":"When E>0 the trimer bodies eventually escape to infinity.","key":"trimerEscapeLiteral","note":"原文无一般逃逸证明；字面所有正能量轨道断言待人工判断"}
+]
