@@ -1,0 +1,127 @@
+{
+  "started_at": "2026-10-07T11:38:07.469368+08:00",
+  "finished_at": "2026-10-07T11:39:24.4771558+08:00",
+  "head_at_check": "2977d92110a43efb0f1e1885ef37d7cdbcfafa0c",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9170,
+  "audit_declarations": 2581,
+  "inputs": 253,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinC2ObservableTaylorRemainder",
+    "MolecularDynamics.textbookLangevinC2ObservableTaylorRemainder_eq_integral",
+    "MolecularDynamics.textbookLangevinC2ObservableTaylorRemainder_quadratic_bound",
+    "MolecularDynamics.textbookLangevinC2ObservableTaylorRemainder_quartic_pointwise_bound",
+    "MolecularDynamics.textbookLangevinPeriodicC2ObservableTaylorRemainder",
+    "MolecularDynamics.textbookLangevinPeriodicC2ObservableTaylorRemainder_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicC2ObservableTaylorRemainder_norm_div_time_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicC2ObservableTaylorRemainder_mean_div_time_tendsto_zero"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinC2ObservableTaylorRemainder",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinC2ObservableTaylorRemainder_eq_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinC2ObservableTaylorRemainder_quadratic_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinC2ObservableTaylorRemainder_quartic_pointwise_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC2ObservableTaylorRemainder",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC2ObservableTaylorRemainder_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC2ObservableTaylorRemainder_norm_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC2ObservableTaylorRemainder_mean_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "0192e5218b6880e574abcb6e5ed25856a9529e0a0a530cf9996650de0c74e56f"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "3edf71fe6531da8414135b59d885cdee83230cecba84e3513eebb49329d0c6b3"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "literal_real_phase_C2_remainder": "actual_second_order_frechet_remainder_not_abstract_assumed_error",
+  "true_C2_integral_remainder": "derived_multivariate_Taylor_integral_Hessian_difference_on_original_product_phase",
+  "explicit_testclass_Hessian_bound": "forall_real_phase_norm_actual_iteratedFDeriv_two_le_M_not_arbitrary_unbounded_C2",
+  "true_pointwise_Peano_quartic_bound": "fixed_initial_phase_Hessian_continuity_plus_true_global_quadratic_bound",
+  "actual_periodic_phase_remainder": "same_original_real_phase_increment_and_fixed_periodic_initial_representative",
+  "actual_C2_remainder_integrability": "derived_actual_second_norm_moment_and_true_quadratic_bound",
+  "actual_C2_remainder_expected_norm_divtimezero": "derived_original_second_Ct_fourth_Ct2_and_true_C2_local_Peano",
+  "actual_C2_remainder_signed_divtimezero": "proved_from_expected_norm_no_target_limit_premise",
+  "higher_C3_observable_regulariy": "not_required",
+  "target_remainder_moment_limit_or_generator_hypothesis": "none",
+  "actual_C2_test_generator": "not_yet_proved_this_batch_Taylor_remainder_dependency_only",
+  "closed_semigroup_generator_domain": "not_proved",
+  "full_arbitrary_C2_actual_generator_identity": "not_proved",
+  "model": "same_unitmass_actual_periodic_Cinfty_U_forceLip_original_B_P_Wiener_gamma_positive_sigma_arbitrary_no_U_lower_density_stationarity_Nzero_included_explicit_C2_global_Hessian_bound",
+  "local_output": "local02_exit0_empty_log_no_Lean_error_or_warning_local01_actual_failure_preserved",
+  "necessary_dependency": "original_Langevin_generator6_47_C2_testclass_derivation_not_independent_generalization",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

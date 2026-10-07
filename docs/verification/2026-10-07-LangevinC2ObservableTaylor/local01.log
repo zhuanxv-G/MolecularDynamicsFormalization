@@ -1,0 +1,97 @@
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:149:13: error: don't know how to synthesize implicit argument `g`
+  @AEMeasurable.sub (textbookLangevinPhase N) Ω Prod.instMeasurableSpace Prod.instSub inst✝
+    (textbookLangevinGlobalRandomPhase U L hF γ σ (textbookLangevinPeriodicRepresentative x.1, x.2) B T)
+    (fun _a => ?m.299) P ContinuousSub.measurableSub₂
+    (textbookLangevinGlobalRandomPhase_endpoint_aemeasurable B P hB U
+      (ContDiff.of_le hU
+        (of_eq_true
+          (Eq.trans WithTop.le_coe_top._simp_1
+            (Eq.trans (congrArg Not (WithTop.ofNat_ne_top._simp_1 2)) not_false_eq_true))))
+      L hF γ σ (textbookLangevinPeriodicRepresentative x.1, x.2) T hT)
+    aemeasurable_const
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+f : textbookLangevinPhase N → ℝ
+hf : ContDiff ℝ 2 f
+M : ℝ
+hH : ∀ (z : textbookLangevinPhase N), ‖iteratedFDeriv ℝ 2 f z‖ ≤ M
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+hi : Integrable (fun sample => ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2) P
+hc : Continuous (textbookLangevinC2ObservableTaylorRemainder f (textbookLangevinPeriodicRepresentative x.1, x.2))
+⊢ Ω → textbookLangevinPhase N
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:151:6: error: don't know how to synthesize implicit argument `b`
+  @aemeasurable_const Ω (textbookLangevinPhase N) inst✝ Prod.instMeasurableSpace P ?m.299
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+f : textbookLangevinPhase N → ℝ
+hf : ContDiff ℝ 2 f
+M : ℝ
+hH : ∀ (z : textbookLangevinPhase N), ‖iteratedFDeriv ℝ 2 f z‖ ≤ M
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+hi : Integrable (fun sample => ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2) P
+hc : Continuous (textbookLangevinC2ObservableTaylorRemainder f (textbookLangevinPeriodicRepresentative x.1, x.2))
+⊢ textbookLangevinPhase N
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:149:7: error: failed to infer `have` declaration type
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:140:93: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+f : textbookLangevinPhase N → ℝ
+hf : ContDiff ℝ 2 f
+M : ℝ
+hH : ∀ (z : textbookLangevinPhase N), ‖iteratedFDeriv ℝ 2 f z‖ ≤ M
+hγ : 0 < γ
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+hi : Integrable (fun sample => ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2) P
+hc : Continuous (textbookLangevinC2ObservableTaylorRemainder f (textbookLangevinPeriodicRepresentative x.1, x.2))
+⊢ Integrable (textbookLangevinPeriodicC2ObservableTaylorRemainder B U L hF γ σ f T x) P
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:209:46: error: No goals to be solved
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:234:10: error(lean.unknownIdentifier): Unknown identifier `hB`
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:234:15: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:234:18: error(lean.unknownIdentifier): Unknown identifier `hp`
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:234:32: error(lean.unknownIdentifier): Unknown identifier `hf`
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:234:35: error(lean.unknownIdentifier): Unknown identifier `M`
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:234:37: error(lean.unknownIdentifier): Unknown identifier `hM`
+docs/verification/2026-10-07-LangevinC2ObservableTaylor/Draft.lean:234:40: error(lean.unknownIdentifier): Unknown identifier `hH`

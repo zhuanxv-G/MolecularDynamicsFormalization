@@ -362,3 +362,5 @@ import MolecularDynamics.Chapter06.LangevinHamiltonianIncrementVariance
 import MolecularDynamics.Chapter06.LangevinHamiltonianPowerExpectedDrift
 
 import MolecularDynamics.Chapter06.LangevinHamiltonianPowerKernelGenerator
+
+import MolecularDynamics.Chapter06.LangevinC2ObservableTaylor
