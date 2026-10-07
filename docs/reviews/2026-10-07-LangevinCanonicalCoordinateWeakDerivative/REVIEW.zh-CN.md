@@ -1,0 +1,7 @@
+十一公开声明是原PDF277/printed256 weightedH1及278/printed257 Proposition6.4所需坐标导数依赖。q坐标无p权联合IBP直接使用真实configuration Gibbs切片分部积分和joint Fubini，所有可积性来自同µ概率与原连续compact测试；没有从p加权等式除以p或假设separable测试。真实q/p坐标方向和负log权斜率βDU_i/βp_i把此结果与已证Gaussian momentum联合IBP统一。
+
+实际F/G product Frechet导数及原联合IBP给∫DjF·G=∫F·(−DjG+logSlope_j G)。这个literal转置测试像连续且compact，真正属于同canonical L2。actualcoordinateTestGraph由真实F及DjF的两个同µAE类组成，原smoothcompact L2密度给actualdomainDense。Hilbert配对连续、等值集合closed，真实配对扩到actualgraphclosure；若(0,g)属于它，g与每个真实dense smooth test配对为0，因此g=0。这是实际坐标导数的zerovertical可闭性证明，未把可闭性或weak Sobolev域藏入假设。
+
+γ/σ/FD不参与这些同µ坐标导数事实。尚未构造完整weightedH1空间、证明H1范数下smooth density、刻画所有weak导数域或closedL的完整H1能量；actualsemigroupgenerator身份/core、κGibbsInv、完整Poisson/Fredholm/Prop6.4/CORE未证，负责人语义签核pending。local01全部11/public及private首次空log0，未改变资源/透明性/linter选项。原277278已读，复用同SHA原文本与既有visual278，无新render。冻结正式源码后唯一full01。
+
+full01通过：9197 jobs/2783standardaxioms/280exactinputs/all10checks0/0Leanwarnings/allinput/rawSHA，新11public唯一标准公理。真实q/p坐标联合IBP、实际weighted transpose配对及同µL2像，actualcoordinate graph domainDense/closurepairing/zerovertical可闭性已证。local01按字节保留。完整H1空间及范数密度、actualsemigroupgenerator身份/core/κInv/Prop6.4/CORE未证。

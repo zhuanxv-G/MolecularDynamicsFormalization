@@ -1,0 +1,150 @@
+{
+  "started_at": "2026-10-07T20:28:18.45976+08:00",
+  "finished_at": "2026-10-07T20:32:09.7869404+08:00",
+  "head_at_check": "18635920ccfc406eea164dbc2ad6475e769a6576",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9197,
+  "audit_declarations": 2783,
+  "inputs": 280,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateDirection",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateLogSlope",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_unweighted_position_integrationByParts",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_coordinate_integrationByParts",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_coordinate_weighted_pairing",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateHilbertTestGraph",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateHilbertTestGraph_domain_dense",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateHilbertTestGraph_closure_pairing",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateHilbertTestGraph_closure_zero_vertical"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateDirection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateLogSlope",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_unweighted_position_integrationByParts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_coordinate_integrationByParts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_coordinate_weighted_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateHilbertTestGraph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateHilbertTestGraph_domain_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateHilbertTestGraph_closure_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateHilbertTestGraph_closure_zero_vertical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "42ec3c161ba5efa852e2e3bbba0faf6b7eaae4898be89ab6c32e40ed224c8164"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_same_canonical_measure_Nzero_coordinates_independent_of_gamma_sigma",
+  "actual_coordinate_directions": "original_q_and_p_coordinate_directions_on_true_periodic_real_lift",
+  "actual_coordinate_log_weight_slopes": "beta_Dq_U_and_beta_p_for_same_original_canonical_weight",
+  "actual_full_phase_unweighted_position_IBP": "proved_by_true_configurational_Gibbs_slices_and_joint_Fubini_without_p_division",
+  "actual_q_p_coordinate_IBP": "proved_by_original_q_and_Gaussian_p_joint_IBP",
+  "actual_coordinate_weighted_transpose_pairing": "proved_by_true_product_derivative_and_actual_joint_IBP",
+  "actual_coordinate_transpose_test_L2": "proved_continuous_compact_expression_in_same_canonical_Hilbert_space",
+  "actual_coordinate_test_graph": "defined_using_true_F_DjF_AE_representatives_on_same_canonical_mu",
+  "actual_coordinate_test_domain_dense": "proved_using_true_same_measure_smooth_compact_L2_density",
+  "actual_coordinate_graph_closure_pairing": "proved_by_continuity_of_true_Hilbert_pairings",
+  "actual_coordinate_graph_zero_vertical": "proved_by_actual_dense_smooth_tests",
+  "actual_coordinate_derivative_closability": "proved_on_genuine_original_test_graph_not_assumed_as_Sobolev_domain",
+  "no_extra_derivative_domain_core_InvLaw_or_closability_hypotheses": true,
+  "full_weighted_H1_space_or_domain_characterization": "not_constructed_or_proved",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "full_closed_Hilbert_adjoint_domain_characterization": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

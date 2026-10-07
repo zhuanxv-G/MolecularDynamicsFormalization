@@ -1,0 +1,198 @@
+[
+  {
+    "path": "MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean",
+    "raw_work_sha256": "bb1392656124a0b4070c6433535849c729e9a2ba4739693509a4ecd29bd07efd",
+    "staged_sha256": "bb1392656124a0b4070c6433535849c729e9a2ba4739693509a4ecd29bd07efd",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "MolecularDynamicsFormalization.lean",
+    "raw_work_sha256": "7e10ce89fbe66b2de2b7b33195beb3e89b07de0a97e8a1a1ab9aa1fafd1e88e5",
+    "staged_sha256": "e8c9ec840e52c572ea4dbc16ab0f1ea74b94bf8e4177b07d5f050b4cf9771250",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "Scratch.lean",
+    "raw_work_sha256": "db421a9d8f0236404f59f017bf92beb9f853bd00a3b52a61f7eb9d92d6d718f4",
+    "staged_sha256": "c2a15adc20cf270afc31c24dfdde333510bcb8c44c3847cd250ffe055b9e9af1",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "scripts/CheckAxioms.lean",
+    "raw_work_sha256": "e88145739e4d13a42c4bfd42ef955bd7bd7769a4b68c27223d957dc640749393",
+    "staged_sha256": "4fe4118c11b3a6249a25236f689f62a698f85e9689ba4d37142f20dad84e9aa5",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "FORMALIZATION_MAP.md",
+    "raw_work_sha256": "8088010e735097443066dc408eb8fd392cf0a8040566ad1c08859a50a2c838c5",
+    "staged_sha256": "6b60389cd2c79799bc69ce8d89778d771c3989d74549e800927d4497e0cd45a8",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "ASSUMPTIONS.md",
+    "raw_work_sha256": "b9f7fec8b6281bdb06e4b2d0a0762d545a9055caa54c958e555d49dd7ea6e5f5",
+    "staged_sha256": "0016c05ed17768e39c6291d4971c517514c2d614b1601afd1129c2d5ce08b239",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv",
+    "raw_work_sha256": "ff8c236ccfc2da57ff0007aad24e6751e4fffb73c37c28e91c755a5525b431b4",
+    "staged_sha256": "85834acf84387cb4602e61296119122d56cc221ca1748f343ed94aa46e38b34e",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/NOTATION_INVENTORY.csv",
+    "raw_work_sha256": "5a58e8ecbd8617d5345b6a7d67afbd6aa8eec1d3bb52fb5d0334de19c2102d09",
+    "staged_sha256": "51a142cd09033d01fb85bf1300d0f3d271fa22e9cf692e127ef2220601ea166a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/reviews/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/REVIEW.zh-CN.md",
+    "raw_work_sha256": "4920618237640a3a4c5c321a0c7107ff7dc9cfa3ea1f81fa5ea88a943d7116c0",
+    "staged_sha256": "4920618237640a3a4c5c321a0c7107ff7dc9cfa3ea1f81fa5ea88a943d7116c0",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/ACCEPT.ps1",
+    "raw_work_sha256": "75575d8e2df47b15b17da1b0037bd6985dbd745e44cdad8bac0669c32f107856",
+    "staged_sha256": "75575d8e2df47b15b17da1b0037bd6985dbd745e44cdad8bac0669c32f107856",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/ACCEPTANCE.json",
+    "raw_work_sha256": "8657a30e378c4e663b1410428883e180d60c8bd4b0cf74b3d96ad4ac57fb0e84",
+    "staged_sha256": "bdbacd9363eb6ba0b72d4d697bcce96044a4dc0e19c0985d0856a7a66ad16c34",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/FULL_DRIVER.log",
+    "raw_work_sha256": "42ec3c161ba5efa852e2e3bbba0faf6b7eaae4898be89ab6c32e40ed224c8164",
+    "staged_sha256": "42ec3c161ba5efa852e2e3bbba0faf6b7eaae4898be89ab6c32e40ed224c8164",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/INTEGRATE.ps1",
+    "raw_work_sha256": "90c5b6465f06be1af7cb117d0493e900c2e7c93afe25b725dfc0701b170efca8",
+    "staged_sha256": "90c5b6465f06be1af7cb117d0493e900c2e7c93afe25b725dfc0701b170efca8",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/LOCAL_CHECK.json",
+    "raw_work_sha256": "694e59aa86783a55097304bb880117b2ff0d94bb7c816d98b7651b24dfd5d309",
+    "staged_sha256": "ed9b9ccbc9ffca336957330ff0a1ca1b7abc2e85821a5f20d9ac5ed4003d839a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/local01.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/PUBLIC_DECLARATIONS.json",
+    "raw_work_sha256": "b8e8cec79b6532660363d143c43e506e6178c3ce5729c3b0859614cd0ed3531e",
+    "staged_sha256": "2f9c7045cea7f1120543535837b02d99b4260e833734c13299da8d9c2868b42e",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/SOURCE_AUDIT.json",
+    "raw_work_sha256": "664f800f98e620e016945938d51ae4fb98ceb047be2b8ab7fc9636f4fe603492",
+    "staged_sha256": "e33ba05c8d6c0f8ac69887ec029021d456f4f540cc06b1275405cbb9530c452f",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/axiom_dependencies.log",
+    "raw_work_sha256": "db28386dc509dcc605e7e86b445f79f6d9f54d3fa11cc3317d7f4846f2da7a8a",
+    "staged_sha256": "db28386dc509dcc605e7e86b445f79f6d9f54d3fa11cc3317d7f4846f2da7a8a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/CHECK_REPORT.json",
+    "raw_work_sha256": "ccc6f8b2a60a00773063a6568af8897d7226244e3f96cee068dfd85f5b12e7d7",
+    "staged_sha256": "bf7c6a1f9bc89cac8e078d8fec8a28a22aae8566c2529e21f15b7895d9a60f20",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/git_branch.log",
+    "raw_work_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "staged_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/git_head.log",
+    "raw_work_sha256": "ea2aa57dc646eafc1e605726e7a4d909dbf1d686446b8df0bda66f6c323026b2",
+    "staged_sha256": "ea2aa57dc646eafc1e605726e7a4d909dbf1d686446b8df0bda66f6c323026b2",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/git_status.log",
+    "raw_work_sha256": "afdc6a8a37f1618b55d657d41e143e226ffcf22a68777beaa6d0efb53ed06a03",
+    "staged_sha256": "afdc6a8a37f1618b55d657d41e143e226ffcf22a68777beaa6d0efb53ed06a03",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/lake_build.log",
+    "raw_work_sha256": "ec44e0d4d6e1f163136a9e06ffe3de3c8e4e2a6649074f3034e8dbb3c3c4951b",
+    "staged_sha256": "ec44e0d4d6e1f163136a9e06ffe3de3c8e4e2a6649074f3034e8dbb3c3c4951b",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/lake_version.log",
+    "raw_work_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "staged_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/lean_version.log",
+    "raw_work_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "staged_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/mathlib_revision.log",
+    "raw_work_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "staged_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/mathlib_status.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalCoordinateWeakDerivative/full-check01/scratch.log",
+    "raw_work_sha256": "8300cdcc236045267b91516ff60e3188c70efa2890c50eb3f59ece4dc37958d5",
+    "staged_sha256": "8300cdcc236045267b91516ff60e3188c70efa2890c50eb3f59ece4dc37958d5",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  }
+]
