@@ -1,0 +1,6 @@
+docs/verification/2026-10-07-LangevinCanonicalKernelShift/Draft.lean:25:4: error: Type mismatch
+  AddCircle.coe_add (z.1 i) (w.1 i)
+has type
+  ∀ (y : ℝ), ↑(w.1 i + y) = ↑(w.1 i) + ↑y
+but is expected to have type
+  ↑(z.1 i + w.1 i) = ↑(z.1 i) + ↑(w.1 i)

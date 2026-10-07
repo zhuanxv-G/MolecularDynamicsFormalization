@@ -1,0 +1,119 @@
+{
+  "started_at": "2026-10-07T23:23:42.1323491+08:00",
+  "finished_at": "2026-10-07T23:30:39.4485995+08:00",
+  "head_at_check": "34a32792b55cf2ea679dc949ffcd66fe38b623f4",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9205,
+  "audit_declarations": 2866,
+  "inputs": 288,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicProjection_add",
+    "MolecularDynamics.textbookLangevinPeriodicTest_shift_lift_contDiff",
+    "MolecularDynamics.textbookLangevinPeriodicTest_shift_hasCompactSupport",
+    "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_shift",
+    "MolecularDynamics.textbookLangevinPeriodicTest_shift_curve_hasDerivAt",
+    "MolecularDynamics.textbookLangevinPeriodicReferenceMeasure_shift_measurePreserving",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_unweighted_shift_direction_testing"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicProjection_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTest_shift_lift_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTest_shift_hasCompactSupport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_shift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTest_shift_curve_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicReferenceMeasure_shift_measurePreserving",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_unweighted_shift_direction_testing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "8a8c0a8cc64d7595bf2658342c0b899c14574563acbb3bcfb71e9afded493a3d"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "c2701ee752fb3d9eac216de9390e9ca0d00ded66cdd73b467588ca4e47006896"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "6bf3370b96924daedad09ffac365c560f42a7428f39c2ac838ecfc1c71619608"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_periodic_projection_add": "proved_literal_real_to_unit_torus_phase_projection",
+  "actual_shifted_smooth_test_lift": "proved_actual_real_translation_and_smooth_composition",
+  "actual_shifted_test_compact_support": "proved_actual_phase_translation_homeomorphism",
+  "actual_directional_derivative_shift": "proved_fixed_fderiv_comp_add_right_of_true_real_lifts",
+  "actual_phase_shift_curve_hasDerivAt": "proved_all_real_times_and_real_phase_directions",
+  "actual_reference_Haar_times_Lebesgue_shift_measurePreserving": "proved_actual_product_translation_preservation",
+  "actual_closed_L_kernel_shifted_test_all_direction_testing": "proved_true_finite_coordinate_basis_actual_integrable_products_and_original_kernel_weak_testing",
+  "actual_pairing_curve_integral_differentiability_and_shift_invariance": "not_proved",
+  "no_kernel_pairing_shift_invariance_constancy_or_canonical_probability_shift_hypotheses": true,
+  "weak_zero_gradient_implies_actual_canonical_constant": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
