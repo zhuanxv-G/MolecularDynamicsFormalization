@@ -354,3 +354,5 @@ import MolecularDynamics.Chapter06.LangevinHamiltonianExpectedDrift
 import MolecularDynamics.Chapter06.LangevinHigherIncrementMoments
 
 import MolecularDynamics.Chapter06.LangevinTaylorMomentControl
+
+import MolecularDynamics.Chapter06.LangevinHamiltonianIncrementMoments

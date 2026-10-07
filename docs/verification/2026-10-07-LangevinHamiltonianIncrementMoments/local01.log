@@ -1,0 +1,20 @@
+docs/verification/2026-10-07-LangevinHamiltonianIncrementMoments/Draft.lean:35:46: error(lean.invalidField): Invalid field `norm_image_sub_le`: The environment does not contain `Function.norm_image_sub_le`, so it is not possible to project the field `norm_image_sub_le` from an expression
+  hU
+of type
+  ∀ (x y : Fin N → ℝ), edist (U x) (U y) ≤ ↑M * edist x y
+docs/verification/2026-10-07-LangevinHamiltonianIncrementMoments/Draft.lean:54:30: error: Application type mismatch: The argument
+  add_le_add_right (norm_add_le ?m.874 ?m.875) ?m.876
+has type
+  ?m.876 + ‖?m.874 + ?m.875‖ ≤ ?m.876 + (‖?m.874‖ + ‖?m.875‖)
+but is expected to have type
+  ‖∑ i, z.2 i * y.2 i + (∑ i, y.2 i ^ 2) / 2‖ + ‖U (z.1 + y.1) - U z.1‖ ≤
+    ‖∑ i, z.2 i * y.2 i‖ + ‖(∑ i, y.2 i ^ 2) / 2‖ + ‖U (z.1 + y.1) - U z.1‖
+in the application
+  LE.le.trans (norm_add_le (∑ i, z.2 i * y.2 i + (∑ i, y.2 i ^ 2) / 2) (U (z.1 + y.1) - U z.1))
+    (add_le_add_right (norm_add_le ?m.874 ?m.875) ?m.876)
+docs/verification/2026-10-07-LangevinHamiltonianIncrementMoments/Draft.lean:112:12: error: typeclass instance problem is stuck
+  AddCommGroup ?m.316
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `AddCommGroup` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
