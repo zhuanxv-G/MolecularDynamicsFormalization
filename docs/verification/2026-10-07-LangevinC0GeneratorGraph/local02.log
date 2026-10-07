@@ -1,0 +1,59 @@
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:50:18: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  |↑T|
+in the target expression
+  ‖∫ (x : ℝ) in 0..↑T, (S x.toNNReal) f‖ ≤ ‖f‖ * |↑T|
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ≥0
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+hh : ‖∫ (x : ℝ) in 0..↑T, (S x.toNNReal) f‖ ≤ ‖f‖ * |↑T|
+⊢ ‖∫ (s : ℝ) in 0..↑T, (S s.toNNReal) f‖ ≤ ↑T * ‖f‖
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:61:4: error: Type mismatch: After simplification, term
+  HasDerivWithinAt.add ha hb
+ has type
+  HasDerivWithinAt ((fun t => (S t.toNNReal) a.1) + fun t => (S t.toNNReal) b.1) (a.2 + b.2) (Ici 0) 0
+but is expected to have type
+  a + b ∈ {fg | HasDerivWithinAt (fun t => (S t.toNNReal) fg.1) fg.2 (Ici 0) 0}
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:58:4: error: Type mismatch: After simplification, term
+  hasDerivWithinAt_const 0 (Ici 0) 0
+ has type
+  HasDerivWithinAt (fun x => 0) 0 (Ici 0) 0
+but is expected to have type
+  0 ∈ {fg | HasDerivWithinAt (fun t => (S t.toNNReal) fg.1) fg.2 (Ici 0) 0}
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:63:4: error: Type mismatch: After simplification, term
+  HasDerivWithinAt.const_smul r ha
+ has type
+  HasDerivWithinAt (r • fun t => (S t.toNNReal) a.1) (r • a.2) (Ici 0) 0
+but is expected to have type
+  r • a ∈ {fg | HasDerivWithinAt (fun t => (S t.toNNReal) fg.1) fg.2 (Ici 0) 0}
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:84:17: error: Type mismatch
+  sub_nonneg.mpr ?m.173
+has type
+  0 ≤ ?m.169 - ?m.170
+but is expected to have type
+  (fun s => s - t) s ∈ Ici 0
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:111:4: error: Type mismatch: After simplification, term
+  he
+ has type
+  ∫ (y : ℝ) in 0..↑T, (S y.toNNReal) g = (S (↑T).toNNReal) f - f
+but is expected to have type
+  ∫ (s : ℝ) in 0..↑T, (S s.toNNReal) g = (S T) f - f
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:127:4: error: Type mismatch
+  Eq.symm (eq_add_of_sub_eq (Eq.symm he))
+has type
+  (∫ (s : ℝ) in 0..↑(NNReal.mk t ht), (S s.toNNReal) g) + f = (S (NNReal.mk t ht)) f
+but is expected to have type
+  (S t.toNNReal) f = (∫ (s : ℝ) in 0..t, (S s.toNNReal) g) + f
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:135:27: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead

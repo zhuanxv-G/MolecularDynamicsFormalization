@@ -1,0 +1,40 @@
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:195:7: error: typeclass instance problem is stuck
+  IsLocallyFiniteMeasure ?m.293
+
+Note: Lean will not try to resolve this typeclass instance problem because the fourth type argument to `IsLocallyFiniteMeasure` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:208:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  uIoo 0 ↑T
+in the target expression
+  v ∈ uIoo 0 ↑T
+
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+T : ℝ≥0
+c : ℝ → textbookLangevinPeriodicPhase N →C₀ ℝ := fun s => (S s.toNNReal) f
+hc : Continuous c
+hTop : HasDerivAt ((fun u => ∫ (x : ℝ) in 0..u, c x) ∘ fun x => id x + ↑T) (1 • c ↑T) 0
+hBottom : HasDerivAt (fun u => ∫ (x : ℝ) in 0..u, c x) (c 0) 0
+hd : HasDerivWithinAt (fun s => (∫ (v : ℝ) in 0..s + ↑T, c v) - ∫ (v : ℝ) in 0..s, c v) ((S T) f - f) (Ici 0) 0
+hd' : HasDerivWithinAt (fun s => ∫ (v : ℝ) in s..s + ↑T, c v) ((S T) f - f) (Ici 0) 0
+s : ℝ
+hs : s ∈ Ici 0
+v : ℝ
+hv : v ∈ uIoo 0 ↑T
+⊢ (fun x => (S s.toNNReal) ((S x.toNNReal) f)) v = (fun x => c (x + s)) v
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:235:24: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

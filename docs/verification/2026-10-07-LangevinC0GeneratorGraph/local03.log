@@ -1,0 +1,34 @@
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:62:4: error: Type mismatch: After simplification, term
+  HasDerivWithinAt.add ha hb
+ has type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPeriodicPhase N →C₀ ℝ)
+    ZeroAtInftyContinuousMap.instNormedAddCommGroup.toAddCommGroup ZeroAtInftyContinuousMap.instNormedSpace.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ ((fun t => (S t.toNNReal) a.1) + fun t => (S t.toNNReal) b.1)
+    (a.2 + b.2) (Ici 0) 0
+but is expected to have type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPeriodicPhase N →C₀ ℝ)
+    ZeroAtInftyContinuousMap.instAddCommGroup ZeroAtInftyContinuousMap.instModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun t => (S t.toNNReal) a.1 + (S t.toNNReal) b.1) (a.2 + b.2)
+    (Ici 0) 0
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:65:4: error: Type mismatch: After simplification, term
+  HasDerivWithinAt.const_smul r ha
+ has type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPeriodicPhase N →C₀ ℝ)
+    ZeroAtInftyContinuousMap.instNormedAddCommGroup.toAddCommGroup ZeroAtInftyContinuousMap.instNormedSpace.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (r • fun t => (S t.toNNReal) a.1) (r • a.2) (Ici 0) 0
+but is expected to have type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPeriodicPhase N →C₀ ℝ)
+    ZeroAtInftyContinuousMap.instAddCommGroup ZeroAtInftyContinuousMap.instModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun t => r • (S t.toNNReal) a.1) (r • a.2) (Ici 0) 0
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:91:4: error: Type mismatch: After simplification, term
+  hshift
+ has type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPeriodicPhase N →C₀ ℝ)
+    ZeroAtInftyContinuousMap.instNormedAddCommGroup.toAddCommGroup ZeroAtInftyContinuousMap.instNormedSpace.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    ((⇑(S t.toNNReal) ∘ fun s => (S s.toNNReal) f) ∘ fun x => id x - t) ((S t.toNNReal) g) (Ici t) t
+but is expected to have type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField (textbookLangevinPeriodicPhase N →C₀ ℝ)
+    ZeroAtInftyContinuousMap.instAddCommGroup ZeroAtInftyContinuousMap.instModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun s => (S t.toNNReal) ((S (s - t).toNNReal) f))
+    ((S t.toNNReal) g) (Ici t) t

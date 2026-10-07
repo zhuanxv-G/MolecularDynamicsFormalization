@@ -1,0 +1,9 @@
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:181:15: error: Application type mismatch: The argument
+  HasStrictDerivAt.hasDerivAt (Continuous.integral_hasStrictDerivAt hc 0 (0 + ↑T))
+has type
+  HasDerivAt (fun u => ∫ (x : ℝ) in 0..u, c x) (c (0 + ↑T)) (0 + ↑T)
+but is expected to have type
+  HasDerivAt ?m.104 ?m.106 (id 0 + ↑T)
+in the application
+  HasDerivAt.comp 0 (HasStrictDerivAt.hasDerivAt (Continuous.integral_hasStrictDerivAt hc 0 (0 + ↑T)))
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:235:28: error: `simp` made no progress

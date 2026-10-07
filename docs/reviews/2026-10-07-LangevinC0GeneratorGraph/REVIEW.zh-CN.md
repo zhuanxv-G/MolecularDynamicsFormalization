@@ -1,0 +1,13 @@
+# 原实际Langevin C0半群的稠密定义闭生成元
+
+10公开声明落实原6.47/Theorem6.2 actualgenerator必要闭算子基础：以原实际sameκ强C0半群右supnorm导数定义真实graph Submodule，唯一性、任意右时间orbit导数、真实integratedorbit identity等价、graph closed；由真实唯一graph定义LinearPMap生成元/graph相等/实际closedness；实际timeintegral在graph及由shortorbitaverage推出真实dense domain。原Wiener B P/C∞periodicU/forceLip γ>0σ任意N0，不假设目标closedness/dense domain/generator identity或graphcore，也不假设Ulower/density/stationarity/Gibbs/C²compacttest。
+
+graph谓词字面HasDerivWithinAt(fun realt→originalS_t.toNNReal f) g (Ici0)0，在真实C0 supnorm空间；真实右导数UniqueDiffWithinAt_Ici给graph唯一。CK平移原轨道，加continuouslinear真实向量链式法则推出所有t≥0右derivative S_tg。真实单侧FTC给∀T integral0T S_sg=S_Tf-f；反向由continuous primitive的真实导数和同积分恒等式推出原right normderivative。contract bound给真实Bochner timeintegral boundedlinear map continuity，integrated等式对应连续closedsets之交，证明原graph closed。使用graph.toLinearPMap时证明垂直graph唯一且graph确为原导数graph，没有选任意closure或把closedness隐藏在graph定义中。
+
+actual CK与CLM intervalintegral commute/时间平移给S_s integral0T S_uf=integral_s_(s+T) S_vf。continuous vectorFTC导数给timeintegral graph pair (integral0T S_sf,S_Tf-f)，所有NNRealT。shortaverage t^-1 integral0t真实primitive slope→f，是supnorm极限；实际graph scalarclosure与mapfst domain证明平均确在实际域，再closure limit给该domain真正Dense。未以点态generator limit替代normdomain识别。
+
+local01 Submodule.add_mem隐式binder与积分abs化简；02集合membership/Pi归约、截断时间端点与eq_add方向；03 C0旧AddCommGroup/Module与Normed路径instance diamond用mathlib真实using!转换展开，04基础8/private空log0。新增平均05 vector复合/旧slope API、06误用仅scalarcomp，固定library明确vector用scomp_of_eq；07 integraladjacent隐mu明确volume/uIoo真实nonnegative代数/linter顺序tactic修复，08完整10/private空log0零warning。所有raw保持，无set_option/resource/linter禁用或模型修改。DEP145/NOT154，固定Lean4.34.0/mathlib5ed2965，唯一full01。
+
+原PDF SHA未变，272–275本段文本已核/priorvisual273复用，无新增视觉274/275。本批是正文actualgenerator必要依赖。compactC²真正norm域识别、graphcore、actualdensity/Gibbs身份、general6.2/owner/CORE仍未完；下一原compactC²test域识别或其他独立正文缺口。
+
+full-check01 passed：9180 jobs/2634公理声明/263exactinputs；10checks退出0/allinput原rawlogs SHA一致、新10public标准axioms、0Leanwarnings，固定Lean4.34.0/mathlib5ed2965，local08全10/private空log0。原实际sameκ强C0semigroup右supnorm derivativegraph Submodule、unique/rightorbitderiv、真单侧FTC integratedidentity等价；实际timeintegral boundedlinearcontinuity给closedset交集closedgraph，原uniquegraph LinearPMap generator及真closed。actualCK/CLM积分comm/平移/向量FTC给timeIntegralgraph，true短timeorbitaverage supnormlimit→f及actualdomain mapfst元素给Dense。γ>0σ任意N0，无目标closedness/dense domain/generator graphcore/Ulower/density/stationarity/Gibbs/C²compacttest前提。raw01-08保持，04foundation8及08final10空log0，binder/set归约/instance diamonds/vector scomp/volume/uIoo等真实失败修复，无resource/linter改动。compactC²域识别/graphcore/Gibbs/positive-time density/owner/general6.2/CORE仍未完。

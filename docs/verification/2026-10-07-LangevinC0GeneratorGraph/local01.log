@@ -1,0 +1,453 @@
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:50:4: error: Type mismatch: After simplification, term
+  hh
+ has type
+  ‖∫ (x : ℝ) in 0..↑T, (S x.toNNReal) f‖ ≤ |↑T| * ‖f‖
+but is expected to have type
+  ‖∫ (s : ℝ) in 0..↑T, (S s.toNNReal) f‖ ≤ ↑T * ‖f‖
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:59:2: error: Type mismatch
+  fun a b ha hb => ?m.66
+has type
+  (a : a✝ ∈ {fg | HasDerivWithinAt (fun t => (S t.toNNReal) fg.1) fg.2 (Ici 0) 0}) →
+    (b : b✝ ∈ {fg | HasDerivWithinAt (fun t => (S t.toNNReal) fg.1) fg.2 (Ici 0) 0}) →
+      (ha : ?m.67 a b) → (hb : ?m.68 a b ha) → ?m.69 a b ha hb
+but is expected to have type
+  a✝ ∈ {fg | HasDerivWithinAt (fun t => (S t.toNNReal) fg.1) fg.2 (Ici 0) 0} →
+    b✝ ∈ {fg | HasDerivWithinAt (fun t => (S t.toNNReal) fg.1) fg.2 (Ici 0) 0} →
+      a✝ + b✝ ∈ {fg | HasDerivWithinAt (fun t => (S t.toNNReal) fg.1) fg.2 (Ici 0) 0}
+the following variables have been introduced by the implicit lambda feature
+  a✝ : (textbookLangevinPeriodicPhase N →C₀ ℝ) × textbookLangevinPeriodicPhase N →C₀ ℝ
+  b✝ : (textbookLangevinPeriodicPhase N →C₀ ℝ) × textbookLangevinPeriodicPhase N →C₀ ℝ
+you can disable implicit lambdas using `@` or writing a lambda expression with `{}` or `[]` binder annotations.
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:60:59: error(lean.invalidField): Invalid field notation: Type of
+  ha
+is not known; cannot resolve field `add`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.add`
+  • `AbsolutelyContinuousOnInterval.add`
+  • `Absorbs.add`
+  • `Add.add`
+  • `AddCon.add`
+  • `AddGroupFilterBasis.add`
+  • `AddLECancellable.add`
+  • `AddMemClass.add`
+  • `AddMonoidHom.add`
+  • `AddSubgroup.add`
+  • `AddSubmonoid.add`
+  • `Additive.add`
+  • `AnalyticAt.add`
+  • `AnalyticOn.add`
+  • `AnalyticOnNhd.add`
+  • `AnalyticWithinAt.add`
+  • `Antitone.add`
+  • `AntitoneOn.add`
+  • `Balanced.add`
+  • `BddAbove.add`
+  • `BddBelow.add`
+  • `BitVec.add`
+  • `CPolynomialAt.add`
+  • `CPolynomialOn.add`
+  • `CauchySeq.add`
+  • `CircleIntegrable.add`
+  • `ConcaveOn.add`
+  • `ContDiff.add`
+  • `ContDiffAt.add`
+  • `ContDiffOn.add`
+  • `ContDiffWithinAt.add`
+  • `Continuous.add`
+  • `ContinuousAddMonoidHom.add`
+  • `ContinuousAt.add`
+  • `ContinuousLinearMap.add`
+  • `ContinuousOn.add`
+  • `ContinuousWithinAt.add`
+  • `Convex.add`
+  • `ConvexOn.add`
+  • `DiffContOnCl.add`
+  • `Differentiable.add`
+  • `DifferentiableAt.add`
+  • `DifferentiableOn.add`
+  • `DifferentiableWithinAt.add`
+  • `Dyadic.add`
+  • `Equiv.add`
+  • `Even.add`
+  • `Fin.add`
+  • `Finset.add`
+  • `Float.add`
+  • `Float32.add`
+  • `HasCompactSupport.add`
+  • `HasDerivAt.add`
+  • `HasDerivAtFilter.add`
+  • `HasDerivWithinAt.add`
+  • `HasFDerivAt.add`
+  • `HasFDerivAtFilter.add`
+  • `HasFDerivWithinAt.add`
+  • `HasFPowerSeriesAt.add`
+  • `HasFPowerSeriesOnBall.add`
+  • `HasFPowerSeriesWithinAt.add`
+  • `HasFPowerSeriesWithinOnBall.add`
+  • `HasFTaylorSeriesUpToOn.add`
+  • `HasFiniteFPowerSeriesAt.add`
+  • `HasFiniteFPowerSeriesOnBall.add`
+  • `HasStrictDerivAt.add`
+  • `HasStrictFDerivAt.add`
+  • `HasSum.add`
+  • `ISize.add`
+  • `Inseparable.add`
+  • `Int.add`
+  • `Int16.add`
+  • `Int32.add`
+  • `Int64.add`
+  • `Int8.add`
+  • `IntervalIntegrable.add`
+  • `IsAddLeftRegular.add`
+  • `IsAddRegular.add`
+  • `IsAddRightRegular.add`
+  • `IsAddUnit.add`
+  • `IsAlgebraic.add`
+  • `IsBoundedLinearMap.add`
+  • `IsCauSeq.add`
+  • `IsCompact.add`
+  • `IsCompactOperator.add`
+  • `IsGLB.add`
+  • `IsIdempotentElem.add`
+  • `IsIntegral.add`
+  • `IsLUB.add`
+  • `IsLocalMax.add`
+  • `IsLocalMaxOn.add`
+  • `IsLocalMin.add`
+  • `IsLocalMinOn.add`
+  • `IsLocallyConstant.add`
+  • `IsMaxFilter.add`
+  • `IsMaxOn.add`
+  • `IsMinFilter.add`
+  • `IsMinOn.add`
+  • `IsOfFinAddOrder.add`
+  • `IsPathConnected.add`
+  • `IsSelfAdjoint.add`
+  • `IsSelfNeg.add`
+  • `IsStarProjection.add`
+  • `IsVAddRegular.add`
+  • `Joined.add`
+  • `JoinedIn.add`
+  • `LipschitzOnWith.add`
+  • `LipschitzWith.add`
+  • `LocallyLipschitz.add`
+  • `LocallyLipschitzOn.add`
+  • `LowerSemicontinuous.add`
+  • `LowerSemicontinuousAt.add`
+  • `LowerSemicontinuousOn.add`
+  • `LowerSemicontinuousWithinAt.add`
+  • `Matrix.add`
+  • `Measurable.add`
+  • `Memℓp.add`
+  • `Monotone.add`
+  • `MonotoneOn.add`
+  • `Multiset.add`
+  • `Nat.add`
+  • `Nonneg.add`
+  • `NormedAddGroupHom.add`
+  • `Ordinal.add`
+  • `Path.add`
+  • `Rat.add`
+  • `RingCon.add`
+  • `SModEq.add`
+  • `Set.add`
+  • `Specializes.add`
+  • `StarConvex.add`
+  • `StieltjesFunction.add`
+  • `StrictAnti.add`
+  • `StrictAntiOn.add`
+  • `StrictConcaveOn.add`
+  • `StrictConvex.add`
+  • `StrictConvexOn.add`
+  • `StrictMono.add`
+  • `StrictMonoOn.add`
+  • `Submodule.add`
+  • `Summable.add`
+  • `Sym2.add`
+  • `TendstoLocallyUniformly.add`
+  • `TendstoLocallyUniformlyOn.add`
+  • `TendstoUniformly.add`
+  • `TendstoUniformlyOn.add`
+  • `TendstoUniformlyOnFilter.add`
+  • `UInt16.add`
+  • `UInt32.add`
+  • `UInt64.add`
+  • `UInt8.add`
+  • `ULift.add`
+  • `USize.add`
+  • `UniformCauchySeqOn.add`
+  • `UniformContinuous.add`
+  • `Units.add`
+  • `UpperSemicontinuous.add`
+  • `UpperSemicontinuousAt.add`
+  • `UpperSemicontinuousOn.add`
+  • `UpperSemicontinuousWithinAt.add`
+  • `Vector.add`
+  • `WithBot.add`
+  • `WithTop.add`
+  • `fourierCoeff.add`
+  • `variationOnFromTo.add`
+  • `AddCommGroup.ModEq.add`
+  • `AddConGen.Rel.add`
+  • `Aesop.BaseRuleSet.add`
+  • `Aesop.Index.add`
+  • `Aesop.LocalRuleSet.add`
+  • `Aesop.RulePatternIndex.add`
+  • `Aesop.UnionFind.add`
+  • `Asymptotics.IsBigO.add`
+  • `Asymptotics.IsBigOTVS.add`
+  • `Asymptotics.IsBigOWith.add`
+  • `Asymptotics.IsLittleO.add`
+  • `Asymptotics.IsLittleOTVS.add`
+  • `Bornology.IsBounded.add`
+  • `Bornology.IsVonNBounded.add`
+  • `BoxIntegral.HasIntegral.add`
+  • `BoxIntegral.Integrable.add`
+  • `ContinuousLinearMap.IsPositive.add`
+  • `Convexity.IsAffineMap.add`
+  • `Convexity.IsStarConvexSet.add`
+  • `Dvd.dvd.add`
+  • `EventuallyConst.add`
+  • `EventuallyEq.add`
+  • `HasBasis.add`
+  • `NeBot.add`
+  • `Tendsto.add`
+  • `Finset.Nonempty.add`
+  • `Finset.Nontrivial.add`
+  • `Float.Model.add`
+  • `Float32.Model.add`
+  • `FreeAlgebra.Pre.add`
+  • `Function.Antiperiodic.add`
+  • `Function.Even.add`
+  • `Function.HasFiniteSupport.add`
+  • `Function.IsPeriodicPt.add`
+  • `Function.Odd.add`
+  • `Function.Periodic.add`
+  • `Int.ModEq.add`
+  • `Int.Nonneg.add`
+  • `IsTopologicalAddGroup.addNegClosureNhd.add`
+  • `Lean.AddErrorMessageContext.add`
+  • `Lean.Attribute.add`
+  • `Lean.AttributeImpl.add`
+  • `Lean.MessageLog.add`
+  • `Lean.NameMapAttributeImpl.add`
+  • `Lean.NameMapExtension.add`
+  • `Lean.ScopedEnvExtension.add`
+  • `Lean.VersoModuleDocs.add`
+  • `LinearMap.IsAdjointPair.add`
+  • `LinearMap.IsNonneg.add`
+  • `LinearMap.IsPosSemidef.add`
+  • `LinearMap.IsPositive.add`
+  • `LinearMap.IsSymm.add`
+  • `LinearMap.IsSymmetric.add`
+  • `Matrix.BlockTriangular.add`
+  • `Matrix.IsHermitian.add`
+  • `Matrix.IsSymm.add`
+  • `Matrix.PosDef.add`
+  • `Matrix.PosSemidef.add`
+  • `Matrix.Represents.add`
+  • `AEFinStronglyMeasurable.add`
+  • `AEStronglyMeasurable.add`
+  • `Adapted.add`
+  • `DominatedFinMeasAdditive.add`
+  • `FinMeasAdditive.add`
+  • `FinStronglyMeasurable.add`
+  • `Integrable.add`
+  • `IntegrableAtFilter.add`
+  • `IntegrableOn.add`
+  • `IsProgressive.add`
+  • `IsStoppingTime.add`
+  • `IsStronglyProgressive.add`
+  • `LocallyIntegrable.add`
+  • `LocallyIntegrableOn.add`
+  • `Martingale.add`
+  • `MemLp.add`
+  • `ProgMeasurable.add`
+  • `SMulInvariantMeasure.add`
+  • `StronglyAdapted.add`
+  • `StronglyMeasurable.add`
+  • `Submartingale.add`
+  • `Supermartingale.add`
+  • `UnifIntegrable.add`
+  • `VAddInvariantMeasure.add`
+  • `VectorMeasure.add`
+  • `Multiset.Rel.add`
+  • `MvPolynomial.IsSymmetric.add`
+  • `Nat.ModEq.add`
+  • `HasGaussianLaw.add`
+  • `IsFiniteKernel.add`
+  • `QuadraticMap.PosDef.add`
+  • `RingConGen.Rel.add`
+  • `RingHom.IsIntegralElem.add`
+  • `Set.BddAbove.add`
+  • `Finite.add`
+  • `MapsTo.add`
+  • `Nonempty.add`
+  • `Nontrivial.add`
+  • `Simps.ProjectionRule.add`
+  • `AddConGen.Rel.below.add`
+  • `CommRingCat.Colimits.Prequotient.add`
+  • `CommRingCat.Colimits.Relation.add`
+  • `Float.Model.UnpackedFloat.add`
+  • `Lean.CollectFVars.State.add`
+  • `Lean.Compiler.CSimp.add`
+  • `Lean.Meta.Grind.add`
+  • `Lean.Meta.SimpTheorems.add`
+  • `Lean.Omega.Coeffs.add`
+  • `Lean.Omega.Constraint.add`
+  • `Lean.Omega.IntList.add`
+  • `Lean.Omega.LinearCombo.add`
+  • `LinearMap.BilinForm.IsAlt.add`
+  • `LinearMap.BilinForm.IsNonneg.add`
+  • `LinearMap.BilinForm.IsPosSemidef.add`
+  • `LinearMap.BilinForm.IsSymm.add`
+  • `AEEqFun.Integrable.add`
+  • `Measure.AbsolutelyContinuous.add`
+  • `SimpleFunc.FinMeasSupp.add`
+  • `VectorMeasure.AbsolutelyContinuous.add`
+  • `Kernel.IsSFiniteKernel.add`
+  • `RingCat.Colimits.Prequotient.add`
+  • `RingCat.Colimits.Relation.add`
+  • `RingConGen.Rel.below.add`
+  • `Std.Time.Duration.add`
+  • `CommRingCat.Colimits.Relation.below.add`
+  • `Int.Internal.Linear.Expr.add`
+  • `Int.Internal.Linear.Poly.add`
+  • `Lean.Grind.CommRing.Expr.add`
+  • `Lean.Grind.CommRing.Poly.add`
+  • `Lean.Grind.IntModule.OfNatModule.add`
+  • `Lean.Grind.Linarith.Expr.add`
+  • `Lean.Grind.Linarith.Poly.add`
+  • `Lean.Grind.Ring.OfSemiring.add`
+  • `Lean.Meta.Simp.Simprocs.add`
+  • `Lean.Meta.Simp.SimprocsArray.add`
+  • `Lean.Meta.Sym.Offset.add`
+  • `Lean.Parser.Command.simpsRule.add`
+  • `Mathlib.Meta.NormNum.Result.add`
+  • `Mathlib.Tactic.Algebra.RingCompute.add`
+  • `Mathlib.Tactic.Linarith.Comp.add`
+  • `Mathlib.Tactic.Linarith.Linexp.add`
+  • `Mathlib.Tactic.Module.qNF.add`
+  • `Mathlib.Tactic.Ring.RingCompute.add`
+  • `Nat.Internal.Linear.Expr.add`
+  • `Nat.Internal.SOM.Expr.add`
+  • `Nat.Internal.SOM.Poly.add`
+  • `RingCat.Colimits.Relation.below.add`
+  • `Std.Time.Internal.UnitVal.add`
+  • `Lean.Grind.CommRing.Poly.NonnegCoeffs.add`
+  • `Lean.Grind.Linarith.Poly.NonnegCoeffs.add`
+  • `Mathlib.Tactic.Ring.Common.ExSum.add`
+  • `Mathlib.Tactic.Ring.Common.ExSumNat.add`
+  • `Mathlib.Tactic.Ring.Common.RingCompute.add`
+  • `Std.Time.Internal.Bounded.LE.add`
+  • `Lean.Grind.CommRing.Poly.NonnegCoeffs.below.add`
+  • `Lean.Grind.Linarith.Poly.NonnegCoeffs.below.add`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:66:19: error: Function expected at
+  textbookLangevinPeriodicC0GeneratorGraph
+but this term has type
+  Submodule ℝ ((textbookLangevinPeriodicPhase ?m.36 →C₀ ℝ) × textbookLangevinPeriodicPhase ?m.36 →C₀ ℝ)
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:67:19: error: Function expected at
+  textbookLangevinPeriodicC0GeneratorGraph
+but this term has type
+  Submodule ℝ ((textbookLangevinPeriodicPhase ?m.43 →C₀ ℝ) × textbookLangevinPeriodicPhase ?m.43 →C₀ ℝ)
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:69:9: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  NontriviallyNormedField ℕ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:76:19: error: Function expected at
+  textbookLangevinPeriodicC0GeneratorGraph
+but this term has type
+  Submodule ℝ ((textbookLangevinPeriodicPhase ?m.33 →C₀ ℝ) × textbookLangevinPeriodicPhase ?m.33 →C₀ ℝ)
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:100:13: error: Function expected at
+  textbookLangevinPeriodicC0GeneratorGraph
+but this term has type
+  Submodule ℝ ((textbookLangevinPeriodicPhase ?m.33 →C₀ ℝ) × textbookLangevinPeriodicPhase ?m.33 →C₀ ℝ)
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:107:19: error(lean.unknownIdentifier): Unknown identifier `textbookLangevinPeriodicC0GeneratorGraph_orbit_right_derivative`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:110:4: error: Type mismatch: After simplification, term
+  he
+ has type
+  ∫ (y : ℝ) in 0..↑T, (S y.toNNReal) g = (S (↑T).toNNReal) f - f
+but is expected to have type
+  ∫ (s : ℝ) in 0..↑T, (S s.toNNReal) g = (S T) f - f
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:130:14: error: Function expected at
+  textbookLangevinPeriodicC0GeneratorGraph
+but this term has type
+  Submodule ℝ ((textbookLangevinPeriodicPhase ?m.32 →C₀ ℝ) × textbookLangevinPeriodicPhase ?m.32 →C₀ ℝ)
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:131:13: error: Function expected at
+  textbookLangevinPeriodicC0GeneratorGraph
+but this term has type
+  Submodule ℝ ((textbookLangevinPeriodicPhase ?m.41 →C₀ ℝ) × textbookLangevinPeriodicPhase ?m.41 →C₀ ℝ)
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:46: error(lean.unknownIdentifier): Unknown identifier `B`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:48: error(lean.unknownIdentifier): Unknown identifier `P`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:50: error(lean.unknownIdentifier): Unknown identifier `hB`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:53: error(lean.unknownIdentifier): Unknown identifier `U`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:55: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:58: error(lean.unknownIdentifier): Unknown identifier `hp`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:61: error(lean.unknownIdentifier): Unknown identifier `L`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:63: error(lean.unknownIdentifier): Unknown identifier `hF`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:66: error(lean.unknownIdentifier): Unknown identifier `γ`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:68: error(lean.unknownIdentifier): Unknown identifier `σ`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:70: error(lean.unknownIdentifier): Unknown identifier `hγ`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.44482`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.44490`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.44552`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.44558`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.45392`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.45400`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.45402`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.45530`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.45532`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.45534`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:132:82: error: unknown free variable `_fvar.45595`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:130:100: error: unsolved goals
+N : ℕ
+⊢ IsClosed sorry
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:146:3: error: Function expected at
+  textbookLangevinPeriodicC0GeneratorGraph
+but this term has type
+  Submodule ℝ ((textbookLangevinPeriodicPhase ?m.40 →C₀ ℝ) × textbookLangevinPeriodicPhase ?m.40 →C₀ ℝ)
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:151:6: error: Function expected at
+  textbookLangevinPeriodicC0GeneratorGraph
+but this term has type
+  Submodule ℝ ((textbookLangevinPeriodicPhase ?m.26 →C₀ ℝ) × textbookLangevinPeriodicPhase ?m.26 →C₀ ℝ)
+
+Note: Expected a function because this term is being applied to the argument
+  B
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:150:41: error: Application type mismatch: The argument
+  B
+has type
+  ℝ≥0 → Ω → Fin N → ℝ
+of sort `Type u_1` but is expected to have type
+  ↥textbookLangevinPeriodicC0Generator.domain
+of sort `Type` in the application
+  ↑textbookLangevinPeriodicC0Generator B
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:162:41: error: Application type mismatch: The argument
+  B
+has type
+  ℝ≥0 → Ω → Fin N → ℝ
+of sort `Type u_1` but is expected to have type
+  ↥textbookLangevinPeriodicC0Generator.domain
+of sort `Type` in the application
+  ↑textbookLangevinPeriodicC0Generator B

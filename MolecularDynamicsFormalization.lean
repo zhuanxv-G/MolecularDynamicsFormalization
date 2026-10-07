@@ -382,3 +382,5 @@ import MolecularDynamics.Chapter06.LangevinWeakGeneratorBalance
 import MolecularDynamics.Chapter06.LangevinC0Preservation
 
 import MolecularDynamics.Chapter06.LangevinC0StrongContinuity
+
+import MolecularDynamics.Chapter06.LangevinC0GeneratorGraph

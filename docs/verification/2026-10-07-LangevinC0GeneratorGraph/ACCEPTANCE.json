@@ -1,0 +1,173 @@
+{
+  "started_at": "2026-10-07T13:56:37.6945891+08:00",
+  "finished_at": "2026-10-07T13:58:31.5480763+08:00",
+  "head_at_check": "b6315a9ec24c2d2c994d3b8d16ebae1518f376d4",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9180,
+  "audit_declarations": 2634,
+  "inputs": 263,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph",
+    "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_unique",
+    "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_orbit_right_derivative",
+    "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_integrated_iff",
+    "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_isClosed",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator_graph",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator_isClosed",
+    "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_time_integral",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator_domain_dense"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_orbit_right_derivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_integrated_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_isClosed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator_isClosed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_time_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator_domain_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "a3fb345f98279c938b9e9e169cfe25422f4b15ab32ad1045328304f4a331ba1d"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "d96c33304396cc1931e6aa029e36e378a3bb8cdf42c98476b94b46f50042b0d5"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "d98a415afca43a2c69cf36ebd6eaf3d9aa691c66a8f64e4bb4be67a13b07ee12"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "a881fa912b728c32673824d387750020c10918e0bee5a43ac050d02c41a512ee"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "7c4ba04ae34df78c6f2da684245c594e48193deda4025d5989a73be0314039fd"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "a555b1d8ed5a604012720ac290b67b0ed3b4549df57cef86b0b1cd22ed12f63e"
+    },
+    {
+      "path": "local07.log",
+      "sha256": "a994518025873eb10cb4cdd8e68877b2c37c7e4fa442dc71251b46ebc643bde3"
+    },
+    {
+      "path": "local08.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_original_process": "same_original_unitmass6_47_Wiener_B_P_same_original_kappa_same_strong_C0_CLM",
+  "graph_definition": "literal_HasDerivWithinAt_real_time_toNNReal_original_orbit_at0_within_Ici0_in_C0_supnorm_submodule",
+  "graph_uniqueness": "true_uniqueDiffWithinAt_Ici_actual_derivative_uniqueness",
+  "actual_orbit_right_derivative": "derived_same_original_CK_translation_and_continuous_linear_chain_rule_all_t_nonnegative",
+  "integrated_characterization": "proved_iff_actual_intervalIntegral_0_T_original_Ss_g_equals_STf_minus_f_true_right_FTC_and_continuous_primitive",
+  "integrated_operator": "true_Bochner_intervalIntegral_bounded_linear_operator_norm_bound_T_derived_original_contraction",
+  "closed_graph": "proved_actual_derivative_graph_equal_intersection_continuous_integrated_equation_closedsets_no_closure_extension",
+  "generator_operator": "actual_derivative_graph_toLinearPMap_with_unique_graph_true_domain",
+  "generator_closed": "proved_actual_LinearPMap_IsClosed",
+  "time_integral_graph": "derived_actual_CK_CLM_integral_comm_shift_integral_vector_FTC_graph_STf_minus_f",
+  "domain_dense": "proved_true_shorttime_orbit_average_domain_members_tendsto_every_C0_function_in_supnorm",
+  "model": "original_WienerB_P_Cinfty_periodic_U_forceLip_unitmass_gamma_positive_sigma_arbitrary_Nzero",
+  "target_closedness_dense_domain_generator_hypothesis": "none",
+  "U_lower_density_stationarity_Gibbs_C2_compacttest_hypothesis": "none",
+  "compact_C2_domain_identification": "not_proved",
+  "graph_core": "not_proved",
+  "Nzero": "included",
+  "local_output": "local08_all10_private_exit0_empty_log_zero_Leanwarning",
+  "local_failures": "01_submodule_implicit_add_binders_norm_abs_type_02_set_membership_Pi_time_truncation_03_actual_C0_instance_diamonds_04_foundation8_pass_05_vector_FTC_comp_and_slope_06_scalarcomp_instead_scomp_07_volume_uIoo_unnecessarySeq_08_final10_pass_allraw_preserved_no_resource_linter_changes",
+  "necessary_dependency": "original_Theorem6_2_actual_closed_densely_defined_C0_generator_needed_dependency",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,15 @@
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:181:15: error: Application type mismatch: The argument
+  HasStrictDerivAt.hasDerivAt (Continuous.integral_hasStrictDerivAt hc 0 ↑T)
+has type
+  HasDerivAt (fun u => ∫ (x : ℝ) in 0..u, c x) (c ↑T) ↑T
+but is expected to have type
+  HasDerivAt ?m.98 ?m.100 (id 0 + ↑T)
+in the application
+  HasDerivAt.comp 0 (HasStrictDerivAt.hasDerivAt (Continuous.integral_hasStrictDerivAt hc 0 ↑T))
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:234:35: error(lean.unknownIdentifier): Unknown identifier `not_mem_Ioi_self`
+docs/verification/2026-10-07-LangevinC0GeneratorGraph/Draft.lean:235:4: error: Type mismatch: After simplification, term
+  hh
+ has type
+  Tendsto (slope (fun t => ∫ (s : ℝ) in 0..t, (S s.toNNReal) f) 0) (𝓝[>] 0) (𝓝 f)
+but is expected to have type
+  Tendsto (fun t => t⁻¹ • ∫ (s : ℝ) in 0..t, (S s.toNNReal) f) (𝓝[>] 0) (𝓝 f)
