@@ -1,0 +1,85 @@
+docs/verification/2026-10-07-LangevinSmallTimeGrowth/Draft.lean:24:43: error: linarith failed to find a contradiction
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+P : Measure Ω
+f g : Ω → ℝ
+hf : MemLp f 2 P
+hg : MemLp g 2 P
+hu : Integrable ((fun x => 2 * f x ^ 2) + fun x => 2 * g x ^ 2) P
+sample : Ω
+a✝ : ((fun x => 2 * f x ^ 2) + fun x => 2 * g x ^ 2) sample < (fun x => (f + g) x ^ 2) sample
+⊢ False
+failed
+docs/verification/2026-10-07-LangevinSmallTimeGrowth/Draft.lean:25:2: error: Type mismatch: After simplification, term
+  he
+ has type
+  ∫ (x : Ω), (f + g) x ^ 2 ∂P ≤ ∫ (x : Ω), ((fun x => 2 * f x ^ 2) + fun x => 2 * g x ^ 2) x ∂P
+but is expected to have type
+  ∫ (sample : Ω), (f sample + g sample) ^ 2 ∂P ≤
+    2 * ∫ (sample : Ω), f sample ^ 2 ∂P + 2 * ∫ (sample : Ω), g sample ^ 2 ∂P
+docs/verification/2026-10-07-LangevinSmallTimeGrowth/Draft.lean:65:57: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+docs/verification/2026-10-07-LangevinSmallTimeGrowth/Draft.lean:65:2: error: Type mismatch: After simplification, term
+  hc
+ has type
+  @Eq ℝ (∫ (x : Ω), B T.toNNReal x i * B T.toNNReal x i ∂P) (if True then T else 0)
+but is expected to have type
+  @Eq ℝ (∫ (sample : Ω), B T.toNNReal sample i * B T.toNNReal sample i ∂P) T
+docs/verification/2026-10-07-LangevinSmallTimeGrowth/Draft.lean:93:23: error: Application type mismatch: The argument
+  fun hq1 => MemLp.integrable hq1 hr
+has type
+  1 ≤ 2 →
+    Integrable
+      (fun sample =>
+        (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i - σ * B T.toNNReal sample i)
+      P
+but is expected to have type
+  Integrable ?m.448 ?m.447
+in the application
+  integral_add fun hq1 => MemLp.integrable hq1 hr
+docs/verification/2026-10-07-LangevinSmallTimeGrowth/Draft.lean:76:55: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+this : IsProbabilityMeasure P
+M : ℝ
+left✝ : 0 ≤ M
+hb :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+        ∫ (sample : Ω),
+            ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i -
+                σ * B T.toNNReal sample i) ^
+              2 ∂P ≤
+          3 * (γ ^ 2 * x.2 i ^ 2 + M ^ 2) * T ^ 2 + 3 / 2 * σ ^ 2 * γ ^ 2 * T ^ 3
+C : ℝ := 3 * γ ^ 2 + 3 * M ^ 2 + 3 / 2 * σ ^ 2 * γ ^ 2
+hC : 0 ≤ C
+T : ℝ
+hT : 0 ≤ T
+hT1 : T ≤ 1
+x : textbookLangevinPeriodicPhase N
+i : Fin N
+R : Ω → ℝ :=
+  fun sample =>
+    (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i - σ * B T.toNNReal sample i
+W : Ω → ℝ := fun sample => σ * B T.toNNReal sample i
+hr :
+  MemLp
+    (fun sample =>
+      (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i - σ * B T.toNNReal sample i)
+    2 P
+hw : MemLp (fun x => σ * B ⟨i, T.toNNReal⟩.snd x ⟨i, T.toNNReal⟩.fst) 2 P
+he :
+  (fun sample => (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T sample).2 i - x.2 i) = fun sample =>
+    R sample + W sample
+⊢ (∫ (sample : Ω), R sample + W sample ∂P) ^ 2 ≤ C * (1 + x.2 i ^ 2) * T ^ 2

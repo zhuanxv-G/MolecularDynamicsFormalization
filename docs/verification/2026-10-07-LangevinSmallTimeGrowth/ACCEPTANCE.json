@@ -1,0 +1,104 @@
+{
+  "started_at": "2026-10-07T12:27:31.6379363+08:00",
+  "finished_at": "2026-10-07T12:28:50.023107+08:00",
+  "head_at_check": "2a38bcdc8eac7934fbc6ea3584801553d917fe51",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9175,
+  "audit_declarations": 2603,
+  "inputs": 258,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_mean_square_growth_bound",
+    "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_mean_square_growth_bound",
+    "MolecularDynamics.textbookLangevinPeriodicRealIncrements_coordinate_second_growth_bound",
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_second_growth_bound"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_mean_square_growth_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicConfigurationLift_mean_square_growth_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealIncrements_coordinate_second_growth_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_second_growth_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "707dd3608bdf3d6a0d8ec802997fe78d50e53ef975423fd7bca7608d7005b6c0"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "5bc226c1e67ade21b272c5ee0322fdb653ac1a1915def17870b5c630312e2f33"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "758213379a9a7cfb409959eacdefd1028584a230446641701edf93cee17818f7"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "1b8516f7908625019d3dbc4bdb4e491f564b4613f2eabd343191989bd95a4bad"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_original_process": "same_existing_unitmass_periodic6_47_original_B_P_Wiener",
+  "uniform_constants": "existence_of_nonnegative_C_before_all_initial_phases_times_and_coordinates",
+  "momentum_mean_square_growth": "proved_actual_Brownian_remainder_L2_secondmoment_and_true_Wiener_mean_zero_gives_C_one_plus_pi_square_t_square",
+  "configuration_mean_square_growth": "proved_actual_q_residual_L2_secondmoment_and_finite_initial_t_p_gives_C_one_plus_pi_square_t_square",
+  "coordinate_second_growth": "proved_actual_square_add_integrability_Wiener_covariance_secondmoment_t_and_uniform_residual_bounds_gives_C_one_plus_pi_square_t",
+  "full_phase_second_growth": "proved_finite_coordinate_norm_square_and_true_integral_sum_gives_C_one_plus_initial_p_norm_square_t",
+  "Nzero": "included_empty_coordinate_sum_C_zero",
+  "target_moment_limit_or_growth_bound_hypothesis": "none",
+  "U_lower_density_stationarity_hypothesis": "none",
+  "model": "original_Wiener_B_P_Cinfty_periodic_U_forceLip_gamma_positive_sigma_arbitrary_time_zero_to_one_Nzero",
+  "local_output": "local05_all4_private_exit0_empty_log_zero_Leanwarning_local01_02_actual_errors_local03_unusedSimp_warning_preserved",
+  "local_failure_audit": "initial_tail_only_checkpoint_omitted_helper_errors_corrected_using_full_log_scan_no_false_acceptance",
+  "invariant_integral_limit_exchange": "not_proved",
+  "weak_generator_stationarity": "next_step_not_proved",
+  "closed_generator_domain": "not_proved",
+  "Gibbs_invariance": "not_proved",
+  "necessary_dependency": "original_Theorem6_2_Lstar_invariant_law_zero_true_initial_growth_domination_inputs",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

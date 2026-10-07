@@ -696,3 +696,5 @@ LangevinC2KernelGenerator：原sameunitmass6.47 existingκ WienerB P/C∞periodi
 LangevinCompactC2Generator：原sameunitmass6.47 WienerB P/C∞periodicU/forceLip、γpositiveσ任意N0无Ulower/density/stationarity；F连续、真正periodicphase上支撑紧，realF∘projection C²；Hessian全局界由真实compact与periodicjets导，不作前提、不假设real lift紧支撑、不需C³。maxC0处理F0/N0，actualsameκ pointwise operator非closed/graphcore/full任意C²。
 
 LangevinC2OperatorSupport：actualsameperiodicoperator F真C²lift，C²不需C³或FContinuous额外假设；gammaσ任意N0包括，support U任意，lift/continuous用原C∞periodicU/force周期性；compactF只用于operatorcompact/C0。没有suppliedliftcontinuoussupport/closedgenerator/domain/Gibbs或density前提，chosenrep不假设连续；unifexpectation derivative/graphcore未完。
+
+LangevinSmallTimeGrowth：sameoriginalunitmass6.47 originalWienerB P/C∞periodicU/forceLip、γ>0σ任意N0、T∈[0,1]，无Ulower/density/stationarity/目标mean/moment/growth前提。统一C先∀initialx，真quadraticp²growth不可冒称已合法交换generator极限与invariantlaw积分；compactC²expectationquotientdominator/weakbalance/closed/Gibbs仍未完。

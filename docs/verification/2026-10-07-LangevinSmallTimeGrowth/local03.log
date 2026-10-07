@@ -1,0 +1,7 @@
+docs/verification/2026-10-07-LangevinSmallTimeGrowth/Draft.lean:96:13: warning: This simp argument is unused:
+  W
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [integral_const_mul, hB.mean, mul_zero, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
