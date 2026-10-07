@@ -1,0 +1,32 @@
+docs/verification/2026-10-08-LangevinCanonicalKernelConstant/Draft.lean:73:6: error: Type mismatch: After simplification, term
+  hm
+ has type
+  @Tendsto ℕ ℝ (fun x_1 => f x * (NNReal.toReal ∘ fun i => (thickenedIndicator ⋯ K) x) x_1) atTop (𝓝 (f x))
+but is expected to have type
+  @Tendsto ℕ ℝ (fun n => f x * ↑((thickenedIndicator ⋯ K) x)) atTop (𝓝 (f x))
+docs/verification/2026-10-08-LangevinCanonicalKernelConstant/Draft.lean:74:6: error: Type mismatch: After simplification, term
+  hm
+ has type
+  @Tendsto ℕ ℝ (fun x_1 => f x * (NNReal.toReal ∘ fun i => (thickenedIndicator ⋯ K) x) x_1) atTop (𝓝 0)
+but is expected to have type
+  @Tendsto ℕ ℝ (fun n => f x * ↑((thickenedIndicator ⋯ K) x)) atTop (𝓝 0)
+docs/verification/2026-10-08-LangevinCanonicalKernelConstant/Draft.lean:129:13: error: `simp` made no progress
+docs/verification/2026-10-08-LangevinCanonicalKernelConstant/Draft.lean:153:4: error: Function expected at
+  measurableSet_eq
+but this term has type
+  MeasurableSet {x | x = ?m.222}
+
+Note: Expected a function because this term is being applied to the argument
+  (hgm.comp (measurable_snd.add measurable_fst))
+docs/verification/2026-10-08-LangevinCanonicalKernelConstant/Draft.lean:154:14: error(lean.unknownIdentifier): Unknown identifier `ae_ae_comm`
+docs/verification/2026-10-08-LangevinCanonicalKernelConstant/Draft.lean:141:112: error: unsolved goals
+N : ℕ
+f : textbookLangevinPeriodicPhase N → ℝ
+hf : AEStronglyMeasurable f (volume.prod volume)
+hinv : ∀ (a : textbookLangevinPeriodicPhase N), (fun x => f (x + a)) =ᵐ[volume.prod volume] f
+g : textbookLangevinPeriodicPhase N → ℝ := AEStronglyMeasurable.mk f hf
+hgm : Measurable g
+hfg : f =ᵐ[volume.prod volume] g
+hgi : ∀ (a : textbookLangevinPeriodicPhase N), (fun x => g (x + a)) =ᵐ[volume.prod volume] g
+hmeas : MeasurableSet {p | g (p.2 + p.1) = g p.2}
+⊢ ∃ c, f =ᵐ[volume.prod volume] fun x => c

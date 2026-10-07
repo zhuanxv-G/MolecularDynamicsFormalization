@@ -2,6 +2,8 @@
 from pathlib import Path
 import csv, json
 root=Path(__file__).resolve().parents[1]
+if (root/'docs/review/CH01_CLAIMS.csv').exists():
+    raise RuntimeError('Historical initial inventory script: do not overwrite the maintained claim CSV.')
 decls=json.loads((root.parent/'tmp/ch01-review/declarations.json').read_text(encoding='utf-8'))
 byname={r['name']:r for r in decls}
 # Section | printed page | kind | faithful English paraphrase | existing declaration or new key | status | scope note.

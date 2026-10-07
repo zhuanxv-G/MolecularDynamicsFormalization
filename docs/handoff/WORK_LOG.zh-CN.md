@@ -56,3 +56,7 @@ trueDCT compactcontinuous testdual、actualreference每phase AEshift、真实joi
 ## 2026-10-08 第6章封存
 CanonicalKernelConstant完整报告失败；源码/证据原样移至docs/parked/chapter06-20261008，正式库已撤去其检查。
 下一步：顶层验证与commit/push，然后只做第1章。
+
+## 2026-10-08 第1章局部验收
+207条已映射；三模块单文件/构建通过，7条新增关键完整证明；两份材料生成，全检尚未运行。
+下一步：成批完整检查、公理/材料审计后commit与push。

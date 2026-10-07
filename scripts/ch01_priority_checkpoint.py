@@ -2,6 +2,8 @@ from pathlib import Path
 import re
 
 root = Path(__file__).resolve().parents[1]
+if (root/'docs/handoff/archive/WORK_LOG_until_20261007.zh-CN.md').exists():
+    raise RuntimeError('One-time priority migration already performed; read CURRENT_STATE instead.')
 handoff = root / 'docs/handoff'
 priority = '当前任务：第1章完成与审阅交付（见 docs/review/CH01_CLAIMS.csv）。第6章已暂停，未经用户明确指令不得恢复。'
 agents = root / 'AGENTS.md'

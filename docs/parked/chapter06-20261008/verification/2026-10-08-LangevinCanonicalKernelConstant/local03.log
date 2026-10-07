@@ -1,0 +1,6 @@
+docs/verification/2026-10-08-LangevinCanonicalKernelConstant/Draft.lean:162:4: error: Type mismatch: After simplification, term
+  hx
+ has type
+  ((fun x => g (x + x0)) ∘ fun x => x + -x0) x = ((fun x => g x0) ∘ fun x => x + -x0) x
+but is expected to have type
+  g x = g x0
