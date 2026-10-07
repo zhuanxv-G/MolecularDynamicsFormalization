@@ -1,0 +1,141 @@
+{
+  "started_at": "2026-10-07T19:35:45.7543421+08:00",
+  "finished_at": "2026-10-07T19:40:55.0587902+08:00",
+  "head_at_check": "7e7d3c40605909ac2f91f52f62d7fa56b2d1c5d9",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9194,
+  "audit_declarations": 2757,
+  "inputs": 277,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_compact_memLp_two",
+    "MolecularDynamics.textbookLangevinCanonicalL2CompactObservable",
+    "MolecularDynamics.textbookLangevinCanonicalL2CompactObservable_ae_eq",
+    "MolecularDynamics.textbookLangevinCanonicalL2CompactObservable_inner",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_differential_memLp_two",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_formalAdjoint_memLp_two",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_domain_dense",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_closure_pairing",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_closure_zero_vertical"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_compact_memLp_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalL2CompactObservable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalL2CompactObservable_ae_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalL2CompactObservable_inner",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_differential_memLp_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_formalAdjoint_memLp_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_domain_dense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_closure_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_closure_zero_vertical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "3ffecbf806d218c653c75616e458a6ac79cd12c620e56e9c368e08b1b2f13191"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "229caebdfac873bf5013925003731202767690c17fda71cdf13c75bb3b9830af"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_same_canonical_measure_Nzero",
+  "actual_L2_embedding": "proved_continuous_compact_original_phase_MemLp_toLp_AE_and_true_integral_inner",
+  "actual_differential_image_L2": "proved_literal_L_F_and_weighted_formal_transpose_Lsharp_F_actual_compact_smooth_tests",
+  "actual_Hilbert_test_graph": "defined_by_actual_compact_smooth_F_and_AE_representatives_of_F_and_literal_LF",
+  "actual_test_graph_domain_dense": "proved_using_accepted_actual_canonical_L2_smooth_compact_density",
+  "graph_closure_weighted_transpose_testing": "proved_same_Hilbert_pairing_from_true_weighted_IBP_and_continuous_closed_equations",
+  "graph_closure_zero_vertical": "proved_no_nonzero_vertical_limit_by_actual_dense_test_class",
+  "no_graph_core_or_adjoint_domain_or_InvLaw_hypotheses": true,
+  "closed_partial_operator_construction": "not_yet_defined_graph_linearity_and_functionality_remaining",
+  "functional_Lebesgue_forward_adjoint_domain": "not_proved",
+  "full_closed_Hilbert_weighted_adjoint_domain": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "weighted_H1_derivative_closure": "not_proved",
+  "graph_core_for_actual_semigroup_generator": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
