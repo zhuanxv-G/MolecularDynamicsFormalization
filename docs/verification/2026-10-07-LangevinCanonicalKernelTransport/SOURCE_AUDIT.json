@@ -1,0 +1,42 @@
+{
+  "original_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "printed_pages": [
+    256,
+    257
+  ],
+  "pdf_pages": [
+    277,
+    278
+  ],
+  "original_text_read_current_reused_exact_path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/ORIGINAL_PDF277_278.log",
+  "original_text_sha256": "2e61d88b5f401a122ef2fce7f30e76cadfd7f4c0bda798eec882e0e3229dacac",
+  "visual_checked_current_pages": [],
+  "visual_checked_prior_exact_unchanged_pages": [
+    278
+  ],
+  "prior_render_path": "docs/verification/2026-10-07-LangevinC0ConservedObservable/original-PDF278.png",
+  "prior_render_sha256": "c7c839b7ec2b02c7b52288a986d4bfa3bffa992bd0239ea07878b59e5d6d863c",
+  "reference": "Prop6_4_actual_closed_L_kernel_momentum_OU_Hamiltonian_weak_testing_necessary_dependency",
+  "actual_kernel_weak_transport_distinct_from_p_independence_q_derivative_zero_full_constancy_or_Poisson": true,
+  "no_new_original_page_render": true,
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_Hamiltonian_test_L2": "proved_from_actual_original_H_equals_original_zero_friction_zero_noise_differential_expression",
+  "actual_OU_coordinate_transpose_identity": "proved_literal_original_OU_equals_minus_gamma_over_beta_sum_p_transpose_of_DpG",
+  "actual_closed_L_kernel_momentum_transpose_testing": "proved_from_entire_closed_domain_momentum_energy_and_true_coordinate_graph_pairing",
+  "actual_closed_L_kernel_OU_testing": "proved_using_true_smooth_DpG_tests_literal_OU_identity_and_actual_L2_product_integrability",
+  "actual_closed_L_kernel_Hamiltonian_testing": "proved_from_original_closed_graph_weighted_transpose_pairing_minus_H_plus_OU_and_actual_vanishing_OU_pairing",
+  "all_actual_L2_test_products_integrable": "proved_in_original_canonical_measure",
+  "no_momentum_independence_H1_domain_or_kernel_constancy_hypotheses": true,
+  "full_closed_L_kernel_momentum_independence": "not_proved",
+  "full_closed_L_kernel_q_weak_derivative_zero": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "actual_closed_L_domain_full_q_and_p_H1_inclusion": "not_proved_or_assumed",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

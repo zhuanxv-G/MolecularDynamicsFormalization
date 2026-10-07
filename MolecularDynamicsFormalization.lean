@@ -426,3 +426,5 @@ import MolecularDynamics.Chapter06.LangevinCanonicalH1MeanZero
 import MolecularDynamics.Chapter06.LangevinCanonicalCoordinateClosed
 
 import MolecularDynamics.Chapter06.LangevinCanonicalMomentumClosedEnergy
+
+import MolecularDynamics.Chapter06.LangevinCanonicalKernelTransport

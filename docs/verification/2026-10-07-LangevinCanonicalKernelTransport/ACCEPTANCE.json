@@ -1,0 +1,93 @@
+{
+  "started_at": "2026-10-07T22:21:05.792252+08:00",
+  "finished_at": "2026-10-07T22:22:21.8924087+08:00",
+  "head_at_check": "5b5e9eda61c823acdf27d2dd01cd8f47123895ee",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9202,
+  "audit_declarations": 2843,
+  "inputs": 285,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_hamiltonianTest_memLp_two",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumOUExpression_coordinate_transpose",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_momentum_testing",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_OU_testing",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_hamiltonian_testing"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_hamiltonianTest_memLp_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumOUExpression_coordinate_transpose",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_momentum_testing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_OU_testing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_hamiltonian_testing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "2d12053f9988d7f76e8892087e3cfffd69bd1a5b5851b1d364d15a7386c5c887"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_Hamiltonian_test_L2": "proved_from_actual_original_H_equals_original_zero_friction_zero_noise_differential_expression",
+  "actual_OU_coordinate_transpose_identity": "proved_literal_original_OU_equals_minus_gamma_over_beta_sum_p_transpose_of_DpG",
+  "actual_closed_L_kernel_momentum_transpose_testing": "proved_from_entire_closed_domain_momentum_energy_and_true_coordinate_graph_pairing",
+  "actual_closed_L_kernel_OU_testing": "proved_using_true_smooth_DpG_tests_literal_OU_identity_and_actual_L2_product_integrability",
+  "actual_closed_L_kernel_Hamiltonian_testing": "proved_from_original_closed_graph_weighted_transpose_pairing_minus_H_plus_OU_and_actual_vanishing_OU_pairing",
+  "all_actual_L2_test_products_integrable": "proved_in_original_canonical_measure",
+  "no_momentum_independence_H1_domain_or_kernel_constancy_hypotheses": true,
+  "full_closed_L_kernel_momentum_independence": "not_proved",
+  "full_closed_L_kernel_q_weak_derivative_zero": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "actual_closed_L_domain_full_q_and_p_H1_inclusion": "not_proved_or_assumed",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,7 @@
+五声明服务原PDF278/printed257 Proposition6.4完整核常数性必要的弱传输步骤。原Hamiltonian测试严格等于原differential operator Uγ0σ0，已有真实compact∞ differentialmemLp导其同canonical L2。直接真实定义逐项代数证明literalOU=−γ/β∑Adj_p(DpG)，位置势没有参与这个p表达式，β>0仅用于真实非零β消去。
+
+actualclosedLkernel的full-domainenergy已证momentumvector0；真正coordinateclosedgraph与原closurepairing导任意compact∞ G的ptranspose积分配对0。DpG真实lift∞且compact，actualadjointTest类是真同µL2，实际f L2与每测试L2的乘积integrable，原OU finiteSumidentity给OU积分配对0。actualclosedL truegraphclosure的原weightedtranspose(−H+OU)配对0，H/O真实同µL2与产品可积允许原积分真实拆开；由OU0得原Hamiltonian弱测试0。没有假设kernel常数、p独立、fullH1core或新增stationarylaw。
+
+保持γ>0原FD范围及N0。仍未证actualkernel的p独立/q弱导数0/全kernel常数性，H1范数smoothdensity、actualgenerator身份/core、κGibbsInv、compactresolvent/Fredholm/完整Poisson/Prop6.4/CORE；负责人语义签核pending。local01全5/public/private首次emptylog0，无资源/透明性/linter选项。原277278复读并复用同SHA raw及既有visual278，无新render。冻结正式源码后唯一full01。
+
+full01通过：9202 jobs/2843standardaxioms/285exactinputs/all10checks0/0Leanwarnings/allinput/rawSHA，新5public唯一标准公理。actualkernel ptranspose/OU/Hamiltonian弱测试0已证，所有积分真实可积、没有p独立或全kernel常数性假设。local01按字节保留。p独立/q弱导数0/fullkernel常数性/actualgeneratorcore/κInv/完整Prop6.4/CORE未证。
