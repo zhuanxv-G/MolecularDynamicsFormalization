@@ -1,0 +1,222 @@
+docs/verification/2026-10-07-LangevinHigherIncrementMoments/Draft.lean:420:69: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+x : textbookLangevinPeriodicPhase N
+i : Fin N
+r : ℕ
+this : IsProbabilityMeasure P
+S : ℝ
+hS : 0 ≤ S
+hb :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          t ≤ 1 →
+            ∀ (i : Fin N),
+              ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i‖ ^ (2 * r) ≤
+                  3 ^ r *
+                    ((6 * (γ ^ 2 * x.2 i ^ 2 + S)) ^ r * t ^ (2 * r) +
+                        (6 * σ ^ 2 * γ ^ 2) ^ r * t ^ r * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ r +
+                      (2 * σ ^ 2) ^ r * ‖B t.toNNReal sample i‖ ^ (2 * r)) ∧
+                ‖textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+                        textbookLangevinPeriodicRepresentative x.1 i‖ ^
+                    (2 * r) ≤
+                  3 ^ r *
+                    ((2 * (6 * (γ ^ 2 * x.2 i ^ 2 + S))) ^ r * t ^ (4 * r) +
+                        (2 * (6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2)) ^ r * t ^ r *
+                          (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ r +
+                      (2 * x.2 i ^ 2) ^ r * t ^ (2 * r))
+A : ℝ := 6 * (γ ^ 2 * x.2 i ^ 2 + S)
+D : ℝ := 6 * σ ^ 2 * γ ^ 2
+E : ℝ := 2 * σ ^ 2
+F : ℝ := 6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2
+J : Ω → ℝ := fun sample => (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ r
+j : ℝ := ∫ (sample : Ω), J sample ∂P
+m : ℝ := ∫ (z : ℝ), ‖z‖ ^ (2 * r) ∂gaussianReal 0 1
+Cp : ℝ := 3 ^ r * (A ^ r + D ^ r * j + E ^ r * m)
+Cq : ℝ := 3 ^ r * ((2 * A) ^ r + (2 * F) ^ r * j + (2 * x.2 i ^ 2) ^ r)
+hj : Integrable J P
+hj0 : 0 ≤ j
+hm0 : 0 ≤ m
+hA : 0 ≤ A
+hD : 0 ≤ D
+hE : 0 ≤ E
+hF0 : 0 ≤ F
+hp0 : 0 ≤ Cp
+hq0 : 0 ≤ Cq
+t : ℝ
+ht : 0 ≤ t
+ht1 : t ≤ 1
+hw : Integrable (fun sample => ‖B t.toNNReal sample i‖ ^ (2 * r)) P
+hi :
+  Integrable (fun sample => ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i‖ ^ (2 * r))
+      P ∧
+    Integrable
+      (fun sample =>
+        ‖textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+              textbookLangevinPeriodicRepresentative x.1 i‖ ^
+          (2 * r))
+      P
+hpC : Integrable (fun _sample => A ^ r * t ^ (2 * r)) P
+hpJ : Integrable (fun sample => D ^ r * t ^ r * J sample) P
+hpB : Integrable (fun sample => E ^ r * ‖B t.toNNReal sample i‖ ^ (2 * r)) P
+hpu :
+  Integrable
+    (fun x =>
+      3 ^ r *
+        (((fun _sample => A ^ r * t ^ (2 * r)) + fun sample => D ^ r * t ^ r * J sample) + fun sample =>
+            E ^ r * ‖B t.toNNReal sample i‖ ^ (2 * r))
+          x)
+    P
+hpp :
+  ∫ (x_1 : Ω), ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t x_1).2 i - x.2 i‖ ^ (2 * r) ∂P ≤
+    3 ^ r *
+      (A ^ r * t ^ (2 * r) + D ^ r * t ^ r * ∫ (a : Ω), J a ∂P +
+        E ^ r * (t ^ r * ∫ (z : ℝ), ‖z‖ ^ (2 * r) ∂gaussianReal 0 1))
+hqC : Integrable (fun _sample => (2 * A) ^ r * t ^ (4 * r)) P
+hqJ : Integrable (fun sample => (2 * F) ^ r * t ^ r * J sample) P
+hqP : Integrable (fun _sample => (2 * x.2 i ^ 2) ^ r * t ^ (2 * r)) P
+hqu :
+  Integrable
+    (fun x_1 =>
+      3 ^ r *
+        (((fun _sample => (2 * A) ^ r * t ^ (4 * r)) + fun sample => (2 * F) ^ r * t ^ r * J sample) + fun _sample =>
+            (2 * x.2 i ^ 2) ^ r * t ^ (2 * r))
+          x_1)
+    P
+hqq :
+  ∫ (x_1 : Ω),
+      ‖textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x x_1 i -
+            textbookLangevinPeriodicRepresentative x.1 i‖ ^
+        (2 * r) ∂P ≤
+    3 ^ r * ((2 * A) ^ r * t ^ (4 * r) + (2 * F) ^ r * t ^ r * ∫ (a : Ω), J a ∂P + (2 * x.2 i ^ 2) ^ r * t ^ (2 * r))
+ht2 : t ^ (2 * r) ≤ t ^ r
+ht4 : t ^ (4 * r) ≤ t ^ r
+hpa : A ^ r * t ^ (2 * r) ≤ A ^ r * t ^ r
+⊢ 0 ≤ ?m.1616
+docs/verification/2026-10-07-LangevinHigherIncrementMoments/Draft.lean:361:83: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+x : textbookLangevinPeriodicPhase N
+i : Fin N
+r : ℕ
+this : IsProbabilityMeasure P
+S : ℝ
+hS : 0 ≤ S
+hb :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          t ≤ 1 →
+            ∀ (i : Fin N),
+              ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i‖ ^ (2 * r) ≤
+                  3 ^ r *
+                    ((6 * (γ ^ 2 * x.2 i ^ 2 + S)) ^ r * t ^ (2 * r) +
+                        (6 * σ ^ 2 * γ ^ 2) ^ r * t ^ r * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ r +
+                      (2 * σ ^ 2) ^ r * ‖B t.toNNReal sample i‖ ^ (2 * r)) ∧
+                ‖textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+                        textbookLangevinPeriodicRepresentative x.1 i‖ ^
+                    (2 * r) ≤
+                  3 ^ r *
+                    ((2 * (6 * (γ ^ 2 * x.2 i ^ 2 + S))) ^ r * t ^ (4 * r) +
+                        (2 * (6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2)) ^ r * t ^ r *
+                          (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ r +
+                      (2 * x.2 i ^ 2) ^ r * t ^ (2 * r))
+A : ℝ := 6 * (γ ^ 2 * x.2 i ^ 2 + S)
+D : ℝ := 6 * σ ^ 2 * γ ^ 2
+E : ℝ := 2 * σ ^ 2
+F : ℝ := 6 * σ ^ 2 * γ ^ 2 + 2 * σ ^ 2
+J : Ω → ℝ := fun sample => (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ r
+j : ℝ := ∫ (sample : Ω), J sample ∂P
+m : ℝ := ∫ (z : ℝ), ‖z‖ ^ (2 * r) ∂gaussianReal 0 1
+Cp : ℝ := 3 ^ r * (A ^ r + D ^ r * j + E ^ r * m)
+Cq : ℝ := 3 ^ r * ((2 * A) ^ r + (2 * F) ^ r * j + (2 * x.2 i ^ 2) ^ r)
+hj : Integrable J P
+hj0 : 0 ≤ j
+hm0 : 0 ≤ m
+hA : 0 ≤ A
+hD : 0 ≤ D
+hE : 0 ≤ E
+hF0 : 0 ≤ F
+hp0 : 0 ≤ Cp
+hq0 : 0 ≤ Cq
+t : ℝ
+ht : 0 ≤ t
+ht1 : t ≤ 1
+hw : Integrable (fun sample => ‖B t.toNNReal sample i‖ ^ (2 * r)) P
+hi :
+  Integrable (fun sample => ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i‖ ^ (2 * r))
+      P ∧
+    Integrable
+      (fun sample =>
+        ‖textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+              textbookLangevinPeriodicRepresentative x.1 i‖ ^
+          (2 * r))
+      P
+hpC : Integrable (fun _sample => A ^ r * t ^ (2 * r)) P
+hpJ : Integrable (fun sample => D ^ r * t ^ r * J sample) P
+hpB : Integrable (fun sample => E ^ r * ‖B t.toNNReal sample i‖ ^ (2 * r)) P
+hpu :
+  Integrable
+    (fun x =>
+      3 ^ r *
+        (((fun _sample => A ^ r * t ^ (2 * r)) + fun sample => D ^ r * t ^ r * J sample) + fun sample =>
+            E ^ r * ‖B t.toNNReal sample i‖ ^ (2 * r))
+          x)
+    P
+hpp :
+  ∫ (x_1 : Ω), ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t x_1).2 i - x.2 i‖ ^ (2 * r) ∂P ≤
+    3 ^ r *
+      (A ^ r * t ^ (2 * r) + D ^ r * t ^ r * ∫ (a : Ω), J a ∂P +
+        E ^ r * (t ^ r * ∫ (z : ℝ), ‖z‖ ^ (2 * r) ∂gaussianReal 0 1))
+hqC : Integrable (fun _sample => (2 * A) ^ r * t ^ (4 * r)) P
+hqJ : Integrable (fun sample => (2 * F) ^ r * t ^ r * J sample) P
+hqP : Integrable (fun _sample => (2 * x.2 i ^ 2) ^ r * t ^ (2 * r)) P
+hqu :
+  Integrable
+    (fun x_1 =>
+      3 ^ r *
+        (((fun _sample => (2 * A) ^ r * t ^ (4 * r)) + fun sample => (2 * F) ^ r * t ^ r * J sample) + fun _sample =>
+            (2 * x.2 i ^ 2) ^ r * t ^ (2 * r))
+          x_1)
+    P
+hqq :
+  ∫ (x_1 : Ω),
+      ‖textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x x_1 i -
+            textbookLangevinPeriodicRepresentative x.1 i‖ ^
+        (2 * r) ∂P ≤
+    3 ^ r * ((2 * A) ^ r * t ^ (4 * r) + (2 * F) ^ r * t ^ r * ∫ (a : Ω), J a ∂P + (2 * x.2 i ^ 2) ^ r * t ^ (2 * r))
+ht2 : t ^ (2 * r) ≤ t ^ r
+ht4 : t ^ (4 * r) ≤ t ^ r
+hpa : A ^ r * t ^ (2 * r) ≤ A ^ r * t ^ r
+⊢ ∫ (sample : Ω), ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i‖ ^ (2 * r) ∂P ≤
+      (Cp + Cq) * t ^ r ∧
+    ∫ (sample : Ω),
+        ‖textbookLangevinPeriodicConfigurationLift B U L hF γ σ t x sample i -
+              textbookLangevinPeriodicRepresentative x.1 i‖ ^
+          (2 * r) ∂P ≤
+      (Cp + Cq) * t ^ r

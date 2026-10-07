@@ -350,3 +350,5 @@ import MolecularDynamics.Chapter06.LangevinSmallTimePosition
 import MolecularDynamics.Chapter06.LangevinFourthMoments
 
 import MolecularDynamics.Chapter06.LangevinHamiltonianExpectedDrift
+
+import MolecularDynamics.Chapter06.LangevinHigherIncrementMoments

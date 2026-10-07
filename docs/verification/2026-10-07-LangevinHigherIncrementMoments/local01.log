@@ -1,0 +1,14 @@
+docs/verification/2026-10-07-LangevinHigherIncrementMoments/Draft.lean:293:4: error: Type mismatch: After simplification, term
+  he
+ has type
+  |(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i| ^ (2 * r) ≤
+    3 ^ r *
+      (6 ^ r * (γ ^ 2 * x.2 i ^ 2 + S) ^ r * t ^ (2 * r) +
+          6 ^ r * σ ^ (2 * r) * γ ^ (2 * r) * t ^ r * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ r +
+        2 ^ r * σ ^ (2 * r) * B t.toNNReal sample i ^ (2 * r))
+but is expected to have type
+  |(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2 i - x.2 i| ^ (2 * r) ≤
+    3 ^ r *
+      (6 ^ r * (γ ^ 2 * x.2 i ^ 2 + S) ^ r * t ^ (2 * r) +
+          6 ^ r * σ ^ (2 * r) * γ ^ (2 * r) * t ^ r * (∫ (s : ℝ) in 0..1, B s.toNNReal sample i ^ 2) ^ r +
+        2 ^ r * σ ^ (2 * r) * |B t.toNNReal sample i| ^ (2 * r))
