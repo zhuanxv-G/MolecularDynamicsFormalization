@@ -1,0 +1,119 @@
+{
+  "started_at": "2026-10-07T14:33:03.1053806+08:00",
+  "finished_at": "2026-10-07T14:41:24.379655+08:00",
+  "head_at_check": "8ca8f743bd11f598ec3d3f3263d4f271eba0e93c",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9182,
+  "audit_declarations": 2650,
+  "inputs": 265,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_transition",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator_transition_mem_domain",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator_transition_apply",
+    "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_orbit_hasDerivAt",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator_orbit_hasDerivAt",
+    "MolecularDynamics.textbookLangevinPeriodicCompactC2_transition_mem_generator_domain",
+    "MolecularDynamics.textbookLangevinPeriodicC0Generator_compactC2_transition_apply",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_compactC2_orbit_hasDerivAt"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_transition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator_transition_mem_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator_transition_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0GeneratorGraph_orbit_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator_orbit_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCompactC2_transition_mem_generator_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Generator_compactC2_transition_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_compactC2_orbit_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "c2e1c7668bdc84e46248dde786b797f08a5651101bbd4b17ff3b5c03bc647658"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_original_process": "same_original_unitmass6_47_Wiener_B_P_same_kappa_same_original_closed_dense_C0_generator",
+  "model": "Cinfty_periodic_U_forceLip_gamma_positive_sigma_arbitrary_Nzero_all_nonnegative_times_original_C0_domain",
+  "true_graph_transition": "actual_CK_commuting_bounded_transition_composes_right_norm_derivative_no_domain_invariance_premise",
+  "actual_domain_invariance": "derived_actual_LinearPMap_graph_propagation",
+  "actual_generator_commutation": "derived_graph_uniqueness_A_STf_equals_ST_Af",
+  "full_positive_time_norm_derivative": "derived_actual_C0_integrated_identity_vector_FTC_on_positive_time_neighborhood",
+  "compact_C2_orbit": "proved_same_original_compact_C2_test_domain_invariance_generator_action_ST_existingLF_and_positive_norm_derivative",
+  "later_time_classical_C2_regularity": "not_proved",
+  "later_time_classical_differential_expression": "not_asserted_without_classical_regularity",
+  "target_domain_invariance_commutation_norm_derivative_hypothesis": "none",
+  "U_lower_density_stationarity_Gibbs_C3_hypothesis": "none",
+  "graph_core": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "responsible_semantic_review": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
