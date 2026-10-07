@@ -1,0 +1,40 @@
+{
+  "original_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "printed_pages": [
+    256,
+    257
+  ],
+  "pdf_pages": [
+    277,
+    278
+  ],
+  "original_text_read_current_reused_exact_path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/ORIGINAL_PDF277_278.log",
+  "original_text_sha256": "2e61d88b5f401a122ef2fce7f30e76cadfd7f4c0bda798eec882e0e3229dacac",
+  "visual_checked_current_pages": [],
+  "visual_checked_prior_exact_unchanged_pages": [
+    278
+  ],
+  "prior_render_path": "docs/verification/2026-10-07-LangevinC0ConservedObservable/original-PDF278.png",
+  "prior_render_sha256": "c7c839b7ec2b02c7b52288a986d4bfa3bffa992bd0239ea07878b59e5d6d863c",
+  "reference": "Prop6_4_forward_Poisson_Gibbs_density_kernel_necessary_true_canonical_density_conjugation_all_smooth_periodic_observables",
+  "weighted_formal_expression_distinct_from_Lebesgue_forward_expression": true,
+  "no_new_original_page_render": true,
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_actual_normalized_canonical_density_Nzero",
+  "tests": "all_actual_smooth_periodic_phase_observables_no_compact_support_required",
+  "true_normalized_density_conjugation": "proved_original_Lebesgue_forward_rhoF_equals_same_normalized_rho_times_canonical_weighted_minus_H_plus_O_expression_every_real_representative",
+  "actual_derivative_dependencies": "true_actual_Dp_rho_Frechet_drift_split_L_and_D_product_true_classical_forward_rho0",
+  "physical_sqrt_noise": "proved_real_square_root_actual_fluctuation_dissipation",
+  "smooth_expression_zero_equivalence": "proved_by_actual_strict_positive_density_and_true_projection_surjectivity_not_closed_domain",
+  "no_target_conjugation_forwardIBP_adjoint_core_InvLaw_hypotheses": "true_all_actual_calculus_dependencies_proved",
+  "functional_Lebesgue_forward_adjoint_domain": "not_proved",
+  "closed_Hilbert_weighted_adjoint_domain": "not_proved",
+  "weighted_H1_extension": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved_complete",
+  "graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

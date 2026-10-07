@@ -1,0 +1,212 @@
+[
+  {
+    "path": "MolecularDynamics/Chapter06/LangevinCanonicalConjugation.lean",
+    "raw_work_sha256": "ca60b61cb191d2131d2c7b7bdeb933c2dc14df3f6bee718c05f3f3b080335f5f",
+    "staged_sha256": "ca60b61cb191d2131d2c7b7bdeb933c2dc14df3f6bee718c05f3f3b080335f5f",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "MolecularDynamicsFormalization.lean",
+    "raw_work_sha256": "1bfcfb83ddc2cf9ef6cc38259562a326f4ab2ffdd434b496b3d5f553b82d807d",
+    "staged_sha256": "2a765309f6f8fb209af3e977871674ef81975d1fe00ee35f9ab469f51f9743ce",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "Scratch.lean",
+    "raw_work_sha256": "6c9e268998ffc0c7801c44287550c3defda7fa988e2c2d076c7c6450585d2ba6",
+    "staged_sha256": "b28fd41efea0ca82d4a93cdef011d7ad1ca40e3063a633486efefa9210d4dc68",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "scripts/CheckAxioms.lean",
+    "raw_work_sha256": "f834342f442733e8d1aa4070f6175377988ce04eb4f38453121f1fba2e30abf4",
+    "staged_sha256": "ac1b97ff3499db15b87b4e9da8a8ee6359be0870c2cb6edd7d5439458055c8e0",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "FORMALIZATION_MAP.md",
+    "raw_work_sha256": "fb99c0ebb1a11a7d5044932140e38cf4bfa15a864f4386ff5d416846f0530399",
+    "staged_sha256": "5f0f20d0be3c8a0a26b70e0ff7a02ecd33132ab39734461ff56241ff331ed6fd",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "ASSUMPTIONS.md",
+    "raw_work_sha256": "04b8297d2c52ff4ac4145ecf9a1bee2f49540d7306504128e908bc25be956355",
+    "staged_sha256": "70aa1583c5912ce54c033e38d0fe1aabfc3b3d7f2e3ab669b1de3ba3f637b683",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv",
+    "raw_work_sha256": "7e20ca0f480ad92f46774724e41047e0416948603ae50e10a3bf3ecd74ce1b58",
+    "staged_sha256": "51c7909bfce4884290bda88aaf600bf890aac1d786e5abdd84fc68ee03126b9f",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/NOTATION_INVENTORY.csv",
+    "raw_work_sha256": "2d899e4ce14bd09fab51b65770e6f21ea3081410b763c05772cdb14958cfd5b8",
+    "staged_sha256": "44bd2654b266801b345b3e538254da8d8f93bd2f3884399c84893a0d2653eb29",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/reviews/2026-10-07-LangevinCanonicalConjugation/REVIEW.zh-CN.md",
+    "raw_work_sha256": "ab6248f0f6704d5b46e085efc3325ec00cb8f0123decdd0e43d69c8f5f300936",
+    "staged_sha256": "ab6248f0f6704d5b46e085efc3325ec00cb8f0123decdd0e43d69c8f5f300936",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/ACCEPT_DRIVER.ps1",
+    "raw_work_sha256": "6fa9ec7171321ea503dfdddafba443ec316e8b3475abba4d321b4cb3a571462a",
+    "staged_sha256": "6fa9ec7171321ea503dfdddafba443ec316e8b3475abba4d321b4cb3a571462a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/ACCEPTANCE.json",
+    "raw_work_sha256": "28ce30c0725894f400a18dd2ac3a480f7a60adac2412dd370443cd7136e5da8e",
+    "staged_sha256": "887a64e6a164889d1d9ffe4585c08ecab3a4e0722d62d4b482280bae4461f689",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/FULL_DRIVER.log",
+    "raw_work_sha256": "0b7ddd7ecf63c6f4022d5b64b1695b4f36a29ac11b3ab77dd71d7d488ceadb8d",
+    "staged_sha256": "0b7ddd7ecf63c6f4022d5b64b1695b4f36a29ac11b3ab77dd71d7d488ceadb8d",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/INTEGRATE_DRIVER.ps1",
+    "raw_work_sha256": "c483c49b74f6d54574ff82efd051432a131d98864916e9ef89989231880968ed",
+    "staged_sha256": "c483c49b74f6d54574ff82efd051432a131d98864916e9ef89989231880968ed",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/LOCAL_CHECK.json",
+    "raw_work_sha256": "af3fb0a4e935892e6490e0fb870b55663c658fa7df06c259a01d168ef4b9df27",
+    "staged_sha256": "3ddf6b57301ced307cb0094145e69bd40d2e82e9f6a4d039c420c88ad6f10f5c",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/local01.log",
+    "raw_work_sha256": "88ab3233ba616b4cbadad3049824d6ce9d18118c4e27c3e7c0fda001174ae2c9",
+    "staged_sha256": "88ab3233ba616b4cbadad3049824d6ce9d18118c4e27c3e7c0fda001174ae2c9",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/local02.log",
+    "raw_work_sha256": "3e6890a6f44813a311b94e08ce9794cab0a1c5c6f34d57388c26c0297f0e8e8e",
+    "staged_sha256": "3e6890a6f44813a311b94e08ce9794cab0a1c5c6f34d57388c26c0297f0e8e8e",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/local03.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/PUBLIC_DECLARATIONS.json",
+    "raw_work_sha256": "b591fe5c049071117e8a314313908a55cd45b8099eb8d020f7ce82bb625296f2",
+    "staged_sha256": "6945d53223973e2a74b56567831f4f55e5a7857ba4e98956947c58ebef4983c9",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/SOURCE_AUDIT.json",
+    "raw_work_sha256": "9eab45e01118a638a06047128b1a1a2970632e7bc146d6b80e4ca6e6034e6110",
+    "staged_sha256": "23e34df7195a2814d299de2022824b34e06104574b1d1141b04aa4523525cae4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/axiom_dependencies.log",
+    "raw_work_sha256": "13feada98b1b22be8411e5ec3a7d639594848987f22459db2e76eb9b9984271a",
+    "staged_sha256": "13feada98b1b22be8411e5ec3a7d639594848987f22459db2e76eb9b9984271a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/CHECK_REPORT.json",
+    "raw_work_sha256": "0d0f882b52e2ff718f504857585d20b4a402bf2d138017d68776c5f4d7fa0555",
+    "staged_sha256": "8d2956e3156b5303b3f8049db166fac0cd34d74198c9d5f37b3c94bfc2bf1634",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/git_branch.log",
+    "raw_work_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "staged_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/git_head.log",
+    "raw_work_sha256": "782e77a38394339be87b7e0c08901506eebac8994e20e65135d2b6cb20d94080",
+    "staged_sha256": "782e77a38394339be87b7e0c08901506eebac8994e20e65135d2b6cb20d94080",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/git_status.log",
+    "raw_work_sha256": "206af9ed1a4d231a241b55cbaf96ff58d357f7dbaf0cc83c13640d8aa7fdb2f2",
+    "staged_sha256": "206af9ed1a4d231a241b55cbaf96ff58d357f7dbaf0cc83c13640d8aa7fdb2f2",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/lake_build.log",
+    "raw_work_sha256": "f87048623282acb74c11ad0110c3333d4d92de2e3d821fe0bf2bd89d2449887f",
+    "staged_sha256": "f87048623282acb74c11ad0110c3333d4d92de2e3d821fe0bf2bd89d2449887f",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/lake_version.log",
+    "raw_work_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "staged_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/lean_version.log",
+    "raw_work_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "staged_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/mathlib_revision.log",
+    "raw_work_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "staged_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/mathlib_status.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalConjugation/full-check01/scratch.log",
+    "raw_work_sha256": "ccf07728e5d29e1e07f2384ee5fb246e55461d9dade063aa705cd7afb7d5eeaf",
+    "staged_sha256": "ccf07728e5d29e1e07f2384ee5fb246e55461d9dade063aa705cd7afb7d5eeaf",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  }
+]

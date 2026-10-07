@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-10-07T19:01:25.8102174+08:00",
+  "finished_at": "2026-10-07T19:04:39.1021987+08:00",
+  "head_at_check": "00f856053fbfc03f342f686cf00f7d3cbfafd752",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9192,
+  "audit_declarations": 2740,
+  "inputs": 275,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinForwardDifferentialOperator_canonical_conjugation",
+    "MolecularDynamics.textbookLangevinForwardDifferentialOperator_physical_canonical_conjugation",
+    "MolecularDynamics.textbookLangevinCanonicalWeightedFormalAdjointExpression_zero_iff_forward"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinForwardDifferentialOperator_canonical_conjugation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinForwardDifferentialOperator_physical_canonical_conjugation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeightedFormalAdjointExpression_zero_iff_forward",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "0b7ddd7ecf63c6f4022d5b64b1695b4f36a29ac11b3ab77dd71d7d488ceadb8d"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "88ab3233ba616b4cbadad3049824d6ce9d18118c4e27c3e7c0fda001174ae2c9"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "3e6890a6f44813a311b94e08ce9794cab0a1c5c6f34d57388c26c0297f0e8e8e"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_actual_normalized_canonical_density_Nzero",
+  "tests": "all_actual_smooth_periodic_phase_observables_no_compact_support_required",
+  "true_normalized_density_conjugation": "proved_original_Lebesgue_forward_rhoF_equals_same_normalized_rho_times_canonical_weighted_minus_H_plus_O_expression_every_real_representative",
+  "actual_derivative_dependencies": "true_actual_Dp_rho_Frechet_drift_split_L_and_D_product_true_classical_forward_rho0",
+  "physical_sqrt_noise": "proved_real_square_root_actual_fluctuation_dissipation",
+  "smooth_expression_zero_equivalence": "proved_by_actual_strict_positive_density_and_true_projection_surjectivity_not_closed_domain",
+  "no_target_conjugation_forwardIBP_adjoint_core_InvLaw_hypotheses": "true_all_actual_calculus_dependencies_proved",
+  "functional_Lebesgue_forward_adjoint_domain": "not_proved",
+  "closed_Hilbert_weighted_adjoint_domain": "not_proved",
+  "weighted_H1_extension": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved_complete",
+  "graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

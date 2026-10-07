@@ -1,0 +1,41 @@
+docs/verification/2026-10-07-LangevinCanonicalConjugation/Draft.lean:152:4: error: 'change' tactic failed, pattern
+  ?m.291 =
+    F x *
+        (textbookLangevinPeriodicDifferentialOperator U γ σ R x -
+            2 * textbookLangevinPeriodicDirectionalDerivative R (textbookLangevinDrift U γ z) x -
+          textbookLangevinPhaseDivergence (textbookLangevinDrift U γ) z * R x) +
+      ?m.300
+is not definitionally equal to target
+  F (textbookLangevinPeriodicProjection z) *
+              textbookLangevinPeriodicDifferentialOperator U γ σ R (textbookLangevinPeriodicProjection z) +
+            R (textbookLangevinPeriodicProjection z) *
+              textbookLangevinPeriodicDifferentialOperator U γ σ F (textbookLangevinPeriodicProjection z) +
+          σ ^ 2 *
+            ∑ i,
+              textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1)
+                  (textbookLangevinPeriodicProjection z) *
+                textbookLangevinPeriodicDirectionalDerivative R (0, Pi.single i 1)
+                  (textbookLangevinPeriodicProjection z) -
+        2 *
+          (F (textbookLangevinPeriodicProjection z) *
+              textbookLangevinPeriodicDirectionalDerivative R (textbookLangevinDrift U γ z)
+                (textbookLangevinPeriodicProjection z) +
+            R (textbookLangevinPeriodicProjection z) *
+              textbookLangevinPeriodicDirectionalDerivative F (textbookLangevinDrift U γ z)
+                (textbookLangevinPeriodicProjection z)) -
+      textbookLangevinPhaseDivergence (textbookLangevinDrift U γ) z *
+        (F (textbookLangevinPeriodicProjection z) * R (textbookLangevinPeriodicProjection z)) =
+    F x *
+            (textbookLangevinPeriodicDifferentialOperator U γ σ R (textbookLangevinPeriodicProjection z) -
+                2 *
+                  textbookLangevinPeriodicDirectionalDerivative R (textbookLangevinDrift U γ z)
+                    (textbookLangevinPeriodicProjection z) -
+              textbookLangevinPhaseDivergence (textbookLangevinDrift U γ) z *
+                R (textbookLangevinPeriodicProjection z)) +
+          R x * textbookLangevinPeriodicDifferentialOperator U γ σ F x -
+        2 * R x * textbookLangevinPeriodicDirectionalDerivative F (textbookLangevinDrift U γ z) x +
+      σ ^ 2 *
+        ∑ i,
+          textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x *
+            textbookLangevinPeriodicDirectionalDerivative R (0, Pi.single i 1) x
+docs/verification/2026-10-07-LangevinCanonicalConjugation/Draft.lean:159:13: error: `simp` made no progress

@@ -1,0 +1,7 @@
+3公开声明围绕原PDF277/printed256真实加权H1和278/printed257 Proposition6.4 forward Poisson/kernel Gibbsdensity所需共轭。same实际canonical归一化ρReal由真实fullpartition normalization和originalGibbsWeight组成，lift每real代表一致。真实forward A与backward L满足A f=L f−2Db f−divb f；actualL/D product、Dpρ=−βpρ和既有trueAρ0、σ²FD消项，有限coordinatebasis实际drift分解使剩余正好ρ(−H+O)F，得到每realrepresentative L†(ρF)=ρLsharpF。physical sqrt参数真实系数由Real.sq_sqrt证明。实际ρstrictpositive和真实projection满射给全phase LsharpF0iff全real forwardρF0，这是smooth expression级别，不是先假设kernel结论。
+
+scope unitmass U∞unitperiodic β正 N0，实际F real lift∞，不要求compact/separable或integration premise；γ任意FD下形式等式，physical γ正。L†为原Lebesgue forward真实expression，Lsharp为canonical加权形式transpose，现由真实rho连接但未定义/证明functionalclosed adjoint domain、H1extension、graphcore、实际κGibbsInv、完整Prop6.4 Poisson/Fredholm/compactresolvent或CORE。负责人semanticpending。原277278 currentread复用同已验收raw，priorvisual278同PNG hash，无新render。
+
+local01 heForward的change括号形状不匹配真实左结合表达式、heSum R/x别名未展开，改直接dsimp truex后ring及dsimp R/x后真实densitypartial rewrite；02全3/private成立，field_simp已完成coef使后继ring unreachable/unused，删除冗余ring后03全3/private空log0。raw01–03原样保留，未改statement、假设、版本或options/linter/resources。exactinputs冻结后唯一full01。
+
+full01通过：9192jobs/2740standardaxioms/275exactinputs/all10checks0/0Leanwarnings/allinput/rawSHA，新3public唯一标准公理。same真实normalizeddensity conj L†ρF=ρLsharpF、physicalsqrt与smooth zeroexpression equivalence已证，allactualsmoothF不要求compact。raw01–03保持byteexact，functionalclosedadjoint/H1/core/actualκInv/PoissonFredholm/CORE未证。
