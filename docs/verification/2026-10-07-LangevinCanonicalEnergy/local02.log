@@ -1,0 +1,7 @@
+docs/verification/2026-10-07-LangevinCanonicalEnergy/Draft.lean:248:17: error: invalid `▸` notation, expected result type of cast is 
+  textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x ^ 2 ≤ 0
+however, the equality 
+  hx
+of type 
+  textbookLangevinPeriodicMomentumGradientSquare F x = 0 x
+does not contain the expected result type on either the left or the right hand side

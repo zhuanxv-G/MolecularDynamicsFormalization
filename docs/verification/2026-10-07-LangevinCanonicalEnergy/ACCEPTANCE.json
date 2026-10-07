@@ -1,0 +1,176 @@
+{
+  "started_at": "2026-10-07T18:27:50.7814308+08:00",
+  "finished_at": "2026-10-07T18:31:11.4891116+08:00",
+  "head_at_check": "0fb6e42c0b1988366572718c6e4e101f1fa74e7e",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9190,
+  "audit_declarations": 2728,
+  "inputs": 273,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_mul",
+    "MolecularDynamics.textbookLangevinPeriodicMomentumGradientSquare",
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_product",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_bilinear_energy",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_energy",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_physical_energy",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_zero_mode_momentum_gradient_ae",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_C0_generator_energy",
+    "MolecularDynamics.textbookLangevinCanonicalDensity_continuous",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_isOpenPosMeasure",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_gradient_ae_zero_pointwise",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_gradient_ae_zero_independent"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicMomentumGradientSquare",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_product",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_bilinear_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_physical_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_zero_mode_momentum_gradient_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_C0_generator_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_isOpenPosMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_gradient_ae_zero_pointwise",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_gradient_ae_zero_independent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "1562fa5a45f95c219322214aa91b9569623a7b045efe2e92f7aec4714e6c9ae8"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "720c8a584442e3a518f6dfaa668f929bf5ccf1611b3e926863a906322bcbe8e6"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "607802641a8533307f20af83d6127a2b9f499ff02b3160089001918807849d3a"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "fc47cf0a31d7a07df79c733606f9dbda7eae4bf807322c4098075fdde5a76401"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "a01ff59b889871c147066011f7795a1a33fb7f73278f9bb466772787c48c3e7e"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ORIGINAL_PDF277_278.log",
+      "sha256": "2e61d88b5f401a122ef2fce7f30e76cadfd7f4c0bda798eec882e0e3229dacac"
+    }
+  ],
+  "actual_model": "original_unit_mass_smooth_unit_periodic_potential_actual_full_canonical_probability_beta_positive_Nzero",
+  "energy_tests": "genuinely_compact_actual_phase_F_G_with_Cinfty_real_lifts",
+  "actual_directional_and_operator_product_rule": "proved_true_first_and_second_derivative_product_calculus_same_L_with_physical_coefficient",
+  "actual_canonical_bilinear_and_energy": "proved_from_actual_full_phase_weak_balance_true_all_product_integrability",
+  "actual_closed_C0_generator_energy": "proved_same_actual_generator_on_genuine_compact_smooth_tests_in_proved_domain",
+  "actual_canonical_density_continuous_full_support": "proved_from_true_smooth_real_density_lift_actual_strict_positive_density_true_Haar_times_Lebesgue_and_reverse_absolute_continuity",
+  "compact_smooth_zero_mode_momentum_gradient": "proved_mu_almost_everywhere_zero_from_true_nonnegative_energy_integral_and_positive_gamma",
+  "smooth_gradient_AE_to_pointwise_and_momentum_independent": "proved_true_full_support_continuity_actual_Frechet_slice_coordinate_basis_and_mean_value",
+  "noncompact_smooth_gradient_implication_premise": "actual_momentum_gradient_zero_mu_AE_genuine_intermediate_not_assumed_kernel_or_invariance_conclusion",
+  "no_target_IBP_balance_InvLaw_integrability_hypotheses": "proved_all_analytic_integrability_and_weak_balance_dependencies",
+  "weighted_H1_extension": "not_proved_only_smooth_test_stage",
+  "weighted_H1_kernel_Proposition6_4": "not_proved_complete",
+  "functional_adjoint_domain": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "graph_core": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

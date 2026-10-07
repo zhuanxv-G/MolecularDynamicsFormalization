@@ -402,3 +402,5 @@ import MolecularDynamics.Chapter06.LangevinCanonicalMomentumIBP
 import MolecularDynamics.Chapter06.LangevinCanonicalPositionIBP
 
 import MolecularDynamics.Chapter06.LangevinCanonicalWeakBalance
+
+import MolecularDynamics.Chapter06.LangevinCanonicalEnergy

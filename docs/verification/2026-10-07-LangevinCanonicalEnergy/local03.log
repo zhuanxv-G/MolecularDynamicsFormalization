@@ -1,0 +1,24 @@
+docs/verification/2026-10-07-LangevinCanonicalEnergy/Draft.lean:297:4: error: Function expected at
+  IsOpenPosMeasure
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (textbookLangevinCanonicalMeasure U β hβ)
+
+Hint: The identifier `IsOpenPosMeasure` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+docs/verification/2026-10-07-LangevinCanonicalEnergy/Draft.lean:316:9: error(lean.unknownIdentifier): Unknown identifier `IsOpenPosMeasure`
+docs/verification/2026-10-07-LangevinCanonicalEnergy/Draft.lean:315:98: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hae :
+  ∀ᵐ (x : textbookLangevinPeriodicPhase N) ∂textbookLangevinCanonicalMeasure U β hβ,
+    ∀ (i : Fin N), textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x = 0
+⊢ ∀ (x : textbookLangevinPeriodicPhase N) (i : Fin N),
+    textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x = 0

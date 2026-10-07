@@ -1,0 +1,13 @@
+docs/verification/2026-10-07-LangevinCanonicalEnergy/Draft.lean:43:2: warning: Unused tactic linter: `change
+  (F ∘ textbookLangevinPeriodicProjection) z * fderiv ℝ (G ∘ textbookLangevinPeriodicProjection) z v +
+      (G ∘ textbookLangevinPeriodicProjection) z * fderiv ℝ (F ∘ textbookLangevinPeriodicProjection) z v =
+    _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+docs/verification/2026-10-07-LangevinCanonicalEnergy/Draft.lean:250:4: error: Type mismatch
+  Finset.single_le_sum (fun x x_1 => sq_nonneg (?m.361 x)) (Finset.mem_univ i)
+has type
+  ?m.361 i ^ 2 ≤ ∑ x, ?m.361 x ^ 2
+but is expected to have type
+  textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x ^ 2 ≤
+    textbookLangevinPeriodicMomentumGradientSquare F x

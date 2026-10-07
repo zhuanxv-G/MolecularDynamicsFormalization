@@ -1,0 +1,233 @@
+[
+  {
+    "path": "MolecularDynamics/Chapter06/LangevinCanonicalEnergy.lean",
+    "raw_work_sha256": "8a93e8c7e0647c5bd071c432b406fbf6d765b4af79d327ff5a173b5d07a623cf",
+    "staged_sha256": "8a93e8c7e0647c5bd071c432b406fbf6d765b4af79d327ff5a173b5d07a623cf",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "MolecularDynamicsFormalization.lean",
+    "raw_work_sha256": "ea38c319ba413c9c67fc76b7672b3965dfe352f62348da18fe7663568c8173a1",
+    "staged_sha256": "f6c4d35c28c70a46c6e90f97e32a4843fd0549deedca6e354360ce18d9c595e7",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "Scratch.lean",
+    "raw_work_sha256": "62a2407828821f4dea975764639f6be38025f43b2b86ace6b2b684eda4c01efd",
+    "staged_sha256": "558b2f80103d63f04be2373ab037f77b1b0a7f78d6bd7dec6e48db107e985f99",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "scripts/CheckAxioms.lean",
+    "raw_work_sha256": "108dd9d75d01c2cdd41876fb387696b2369422aac2fbbbfa4c519c4ff8e8e4a6",
+    "staged_sha256": "80d64a3472c056a4767b0e200f944b1735be94234bf76c71af3f3e2901f3a1f6",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "FORMALIZATION_MAP.md",
+    "raw_work_sha256": "e2841687f209dc70fb50083bbc95c273753698b569ea9d7dff9924f905a301d4",
+    "staged_sha256": "d30c2a71605439cbc3457c402fcad86417cbb3d5b792b9faf7dc86895fcb3b28",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "ASSUMPTIONS.md",
+    "raw_work_sha256": "126fcca5888f448294ae88642c85083782174974abb7659fa383ae18ce630309",
+    "staged_sha256": "8d0b78c86b1c9bda4f502acf095adfcf3a5fc6f811b4bd2a153a46f05e0f9182",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv",
+    "raw_work_sha256": "10a3180826d733ee4e63cfcf12e77aa38e5c0934fa012e4890dbd121fb03f523",
+    "staged_sha256": "d7e23ab6ca7c1dd9af3a321c916df1a2d0742228ba70b2208465731c5baab06c",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/NOTATION_INVENTORY.csv",
+    "raw_work_sha256": "a467f8ebb46e947f5e60431d02ff4a0af20f13ca1c9029d0601233597865f9eb",
+    "staged_sha256": "802dc76c6e00d7c8ebe4a8e362192f7a1669dbcc9709114ed02f1de86566d34b",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/reviews/2026-10-07-LangevinCanonicalEnergy/REVIEW.zh-CN.md",
+    "raw_work_sha256": "35ce25bd258c0030d3e86e9d99140d4ed36fc575e152174b7e5c2bae743da431",
+    "staged_sha256": "35ce25bd258c0030d3e86e9d99140d4ed36fc575e152174b7e5c2bae743da431",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/ACCEPT_DRIVER.ps1",
+    "raw_work_sha256": "c77ef537c5fec7068a2a65fae874cd17da670d40209220b885762875ce2df773",
+    "staged_sha256": "c77ef537c5fec7068a2a65fae874cd17da670d40209220b885762875ce2df773",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/ACCEPTANCE.json",
+    "raw_work_sha256": "45144cf42bb43ae6c1fedfef4c8ad00c5f7150ac3a6f9587e11e2731b852e8dc",
+    "staged_sha256": "06bfa1b1385c83cc5a5473c22cbc84f74508d7543e17464c4b5cceb2b7ffdc8e",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/FULL_DRIVER.log",
+    "raw_work_sha256": "1562fa5a45f95c219322214aa91b9569623a7b045efe2e92f7aec4714e6c9ae8",
+    "staged_sha256": "1562fa5a45f95c219322214aa91b9569623a7b045efe2e92f7aec4714e6c9ae8",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/INTEGRATE_DRIVER.ps1",
+    "raw_work_sha256": "0f4270a19f277872567351a2c8d39bd69a4d1f71b1f8fc1cd989b3c8f93dd6c9",
+    "staged_sha256": "0f4270a19f277872567351a2c8d39bd69a4d1f71b1f8fc1cd989b3c8f93dd6c9",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/LOCAL_CHECK.json",
+    "raw_work_sha256": "b3e95f64f50164aedcfe2f78bb20a88f5c850e7cad52dc1370c7add05d5ef586",
+    "staged_sha256": "058e0e383e159509268449783bac5546bed69c52d6eaa38c2fc89821b9311656",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/local01.log",
+    "raw_work_sha256": "720c8a584442e3a518f6dfaa668f929bf5ccf1611b3e926863a906322bcbe8e6",
+    "staged_sha256": "720c8a584442e3a518f6dfaa668f929bf5ccf1611b3e926863a906322bcbe8e6",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/local02.log",
+    "raw_work_sha256": "607802641a8533307f20af83d6127a2b9f499ff02b3160089001918807849d3a",
+    "staged_sha256": "607802641a8533307f20af83d6127a2b9f499ff02b3160089001918807849d3a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/local03.log",
+    "raw_work_sha256": "fc47cf0a31d7a07df79c733606f9dbda7eae4bf807322c4098075fdde5a76401",
+    "staged_sha256": "fc47cf0a31d7a07df79c733606f9dbda7eae4bf807322c4098075fdde5a76401",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/local04.log",
+    "raw_work_sha256": "a01ff59b889871c147066011f7795a1a33fb7f73278f9bb466772787c48c3e7e",
+    "staged_sha256": "a01ff59b889871c147066011f7795a1a33fb7f73278f9bb466772787c48c3e7e",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/local05.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/ORIGINAL_PDF277_278.log",
+    "raw_work_sha256": "2e61d88b5f401a122ef2fce7f30e76cadfd7f4c0bda798eec882e0e3229dacac",
+    "staged_sha256": "2e61d88b5f401a122ef2fce7f30e76cadfd7f4c0bda798eec882e0e3229dacac",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/PUBLIC_DECLARATIONS.json",
+    "raw_work_sha256": "3099e24d2d2fd72c89e4c13fec3475e85f0f004e9f9c78a1e71bff445d7dbfb0",
+    "staged_sha256": "8efa7ecf3224d62b66aefe64509bd556f50c7cae5f10674e56aca8b6e2ba43b2",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/SOURCE_AUDIT.json",
+    "raw_work_sha256": "9a843838689be0911fee41df814de6ee0af5b14f416fc116d71b1db546a2fc23",
+    "staged_sha256": "e006b4bdb7df71fdeb99fd9a5d601b17246b75f0fcee4563d7e52e22182e05d2",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/axiom_dependencies.log",
+    "raw_work_sha256": "09f49449181d669fb3194ce8f0a61509d6acbd12ce3c9ffdb930750992577e7c",
+    "staged_sha256": "09f49449181d669fb3194ce8f0a61509d6acbd12ce3c9ffdb930750992577e7c",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/CHECK_REPORT.json",
+    "raw_work_sha256": "a131018eec5aae34d12517c49f27dbcc37f4f716e52aaf9d64c8fa789e3afa29",
+    "staged_sha256": "56f59c9f4f16d32d923b0f644a9210993eb07355bca41a1033a11d1959560b99",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/git_branch.log",
+    "raw_work_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "staged_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/git_head.log",
+    "raw_work_sha256": "645484a2b806e81923173807da557ef9aea32d705667ca1c5fda4d437619f00e",
+    "staged_sha256": "645484a2b806e81923173807da557ef9aea32d705667ca1c5fda4d437619f00e",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/git_status.log",
+    "raw_work_sha256": "0fa0b1a4598175b45c347923baae432d4a83fcbbe29bbf4ad4fbe47f2f730a69",
+    "staged_sha256": "0fa0b1a4598175b45c347923baae432d4a83fcbbe29bbf4ad4fbe47f2f730a69",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/lake_build.log",
+    "raw_work_sha256": "3f897ea8d2252b4bb8a0e403a0a79d91964c440866e1efdf57e77f1f1a5268b1",
+    "staged_sha256": "3f897ea8d2252b4bb8a0e403a0a79d91964c440866e1efdf57e77f1f1a5268b1",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/lake_version.log",
+    "raw_work_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "staged_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/lean_version.log",
+    "raw_work_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "staged_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/mathlib_revision.log",
+    "raw_work_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "staged_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/mathlib_status.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/full-check01/scratch.log",
+    "raw_work_sha256": "b5d8a02bb2a35e59335124989f6dbc66e3d0663fa723093bd64cd140ea7159d1",
+    "staged_sha256": "b5d8a02bb2a35e59335124989f6dbc66e3d0663fa723093bd64cd140ea7159d1",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  }
+]

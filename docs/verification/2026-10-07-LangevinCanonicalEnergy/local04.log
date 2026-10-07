@@ -1,0 +1,18 @@
+docs/verification/2026-10-07-LangevinCanonicalEnergy/Draft.lean:321:13: error(lean.unknownIdentifier): Unknown identifier `eq_of_ae_eq`
+docs/verification/2026-10-07-LangevinCanonicalEnergy/Draft.lean:315:98: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hae :
+  ∀ᵐ (x : textbookLangevinPeriodicPhase N) ∂textbookLangevinCanonicalMeasure U β hβ,
+    ∀ (i : Fin N), textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x = 0
+this : (textbookLangevinCanonicalMeasure U β hβ).IsOpenPosMeasure
+x : textbookLangevinPeriodicPhase N
+i : Fin N
+hi : textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) =ᵐ[textbookLangevinCanonicalMeasure U β hβ] 0
+⊢ textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x = 0

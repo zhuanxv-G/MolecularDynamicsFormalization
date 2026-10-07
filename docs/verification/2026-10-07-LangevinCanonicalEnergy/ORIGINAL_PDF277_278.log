@@ -1,0 +1,102 @@
+256                       6 The Canonical Distribution and Stochastic Differential Equations
+
+
+   Using the results of [257, Lemma 3.4], we can deduce that for any ı > 0, there
+exists a sufficiently small " > 0 such that if a realization of the Wiener process W
+remains close to our solution R
+
+                                  sup kW.s/  R.s/k            ";                    (6.50)
+                                  0st
+
+
+then X.t/ 2 Bı .y/. That is, if the realized Wiener process stays within a tube of
+radius " centered on our derived solution R (for some sufficiently small "), then our
+solution at time t is at most ı from the point y.
+   The event (6.50) is shown in [349] to have positive probability for any " > 0, and
+hence the required property is shown for any open set.
+As Lemma 6.1 holds for all open subsets C, Assumption 1(i) holds as a corollary.
+Thus we have demonstrated that all of the necessary assumptions hold for The-
+orem 6.2. Hence Langevin dynamics is geometrically ergodic with respect to the
+canonical distribution
+
+                             ˇ .q; p/ D exp.ˇH.q; p//;
+
+where it is easily checked that
+                                           
+                                          LLD ˇ D 0:
+
+Hence averages along solutions to (6.47) will converge to the spatial average with
+respect to ˇ . Thus, Langevin dynamics is a useful tool for sampling the canonical
+distribution, as we may sample ˇ by computing solutions to the SDE. This remains
+non-trivial, as the problem usually exists in a very high dimensional space (we may
+consider millions of particles) with complicated non-linear potential energy function
+U.q/. Many algorithms have been proposed for computing solutions to Langevin
+dynamics [46, 55, 62, 265, 311]. We shall compare the sampling accuracy of some of
+these schemes, and address strategies for the development of discretization methods
+for Langevin dynamics in the following chapter.
+   We may also investigate the properties of the operator LLD , just as we did
+for Brownian dynamics. However for Langevin dynamics, the lack of coupling
+between the noise process and all phase variables makes it relatively difficult to
+prove ergodicity. We denote by H1 ./ the space of functions f .q; p/ defined on
+D D T Nc  RNc with bounded norm
+
+                 kf k2H1 ./ D kf k2L2 ./ C krq f k2L2 ./ C krp f k2L2 ./ ;
+                            def
+
+
+
+where
+                                                  Z
+                                  kf k2L2 ./ D       f 2 .d!/;
+                                                  D
+6.4 Ergodicity of Stochastic Differential Equations                               257
+
+
+and, for a vector function w W D ! RNc , we have
+
+                                                X
+                                                Nc
+                                kwk2L2 ./ D          kwi k2L2 ./ :
+                                                iD1
+
+   With this in mind, we state a useful property that we will need in the next chapter
+in order to clarify results on the error in invariant measures.
+Proposition 6.4 Let U be C1 on the position domain Q D T Nc and suppose g 2
+H1 ./ satisfies
+                                       Z
+                                            gdˇ D 0;
+                                       D
+
+where ˇ is the canonical measure, then the Poisson equation
+
+                                            
+                                           LLD ' D g
+
+has a solution ' 2 H1 ./ which is unique up to addition of a constant multiple of
+the Gibbs density.
+   The condition is a consequence of the Fredholm Alternative which says that,
+for a linear operator A with compact resolvent, we have one of the following two
+conditions:
+• A' D g has a solution.
+• There is a function y with A y D 0 and hy; gi ¤ 0.
+                       
+In our case, A D LLD . The only solutions of LLD y D 0 (conserved quantities of
+Langevin dynamics) are the constants. So the condition of the proposition eliminates
+the second alternative, leaving only the first.
+                                         
+   If we have two solutions '1 , '2 of LLD ' D g, then their difference w must be a
+             
+solution of LLD w D 0 and the only such solution is a constant multiple of the Gibbs
+density ˇ .
+   More properties of the operator LLD are collected in [223].
+
+
+
+6.4.5 Convergence of Averages
+
+Given a collection of phase space points distributed according to the density
+0 .q; p/, we know that its evolution (under Langevin dynamics) after a time t will
+be described by
+                                                  
+                                .q; p; t/ D etLLD 0 .q; p/:
+
