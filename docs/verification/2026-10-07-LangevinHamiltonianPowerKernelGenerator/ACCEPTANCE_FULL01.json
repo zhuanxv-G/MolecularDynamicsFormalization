@@ -1,0 +1,103 @@
+{
+  "started_at": "2026-10-07T11:27:22.7623383+08:00",
+  "finished_at": "2026-10-07T11:28:36.1226882+08:00",
+  "head_at_check": "b917ec170e9531c05033a72713e87e97228018a8",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9169,
+  "audit_declarations": 2573,
+  "inputs": 252,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_local_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_local_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_actual_increment_expectation",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_actual_differentialOperator_limit",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_physical_increment_mean_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_actual_infinitesimal_lyapunov"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_local_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_local_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_actual_increment_expectation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_actual_differentialOperator_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_physical_increment_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_hamiltonian_power_actual_infinitesimal_lyapunov",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "f10e8968761d0c1b80b0e0df36ad3cbdf011a94df3ea50cdb1419b9cc7d5e32c"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_endpoint_H_power_local_integrability": "all_natural_l_increment_integrability_plus_Pprob_initial_constant_no_U_lower",
+  "actual_kernel_H_power_local_integrability": "same_original_kernel_endpoint_law_integrable_map_all_natural_l",
+  "unbounded_H_power_actual_increment_expectation": "existing_actual_expectation_plus_true_integral_subtract_initial_value_on_zero_to_one",
+  "actual_realtime_toNNReal_bridge": "eventually_positive_t_equals_its_toNNReal_coe_no_negative_time_claim",
+  "actual_kernel_H_power_differentialOperator_limit": "proved_all_l_ge_one_from_true_actual_process_limit_no_identity_assumption",
+  "actual_kernel_physical_H_power_limit": "true_FD_sqrt_coefficient_same_original_kernel_all_l_ge_one",
+  "actual_kernel_infinitesimal_Lyapunov": "proved_U_ge_one_true_corrected_factor_two_previous_bound",
+  "closed_semigroup_generator_domain_on_H_power": "not_proved_from_pointwise_expectation_limit_alone",
+  "full_C2_actual_generator_identity": "not_proved",
+  "target_moment_limit_or_generator_hypothesis": "none",
+  "model": "same_actual_unitmass_periodic_Cinfty_U_original_B_P_gamma_positive_sigma_arbitrary_no_U_lower_except_Lyapunov_no_density_or_stationarity_Nzero_included_physical_beta_positive",
+  "local_output": "local01_exit0_empty_log_no_Lean_error_or_warning",
+  "necessary_dependency": "same_original_transition_kernel_H_power_Lyapunov_Assumption2_infinitesimal_generator_printed253_254",
+  "actual_all_Hamiltonian_powers_kernel_generator_identity": "proved_pointwise_expectation_limit_all_l_ge_one",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
