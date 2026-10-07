@@ -418,3 +418,5 @@ import MolecularDynamics.Chapter06.LangevinCanonicalHilbertClosed
 import MolecularDynamics.Chapter06.LangevinCanonicalHilbertDissipativity
 
 import MolecularDynamics.Chapter06.LangevinCanonicalCoordinateWeakDerivative
+
+import MolecularDynamics.Chapter06.LangevinCanonicalWeakH1

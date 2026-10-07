@@ -742,3 +742,5 @@ LangevinCanonicalHilbertClosed：actualL线性和测试图Submodule不需U regul
 LangevinCanonicalHilbertDissipativity：同一原canonical µ，N允许0，unitmass、U∞且unitperiodic、β>0、σ²=2γ/β；正移位另需真实r>0。未额外假设γ≥0或耗散性，它们的所需符号从实际FD及σ²≥0推出。真正使用既有同µ实际compact∞F/LF AE图、真实图闭包和已证明无竖直分量的闭算子；差的图元素来自实际Submodule。r>0用于除法及单射结论，未将移位满射、完整H1梯度域、semigroupgenerator身份或GibbsInv隐藏为假设。
 
 LangevinCanonicalCoordinateWeakDerivative：同一原canonical µ，N允许0，unitmass、U∞且unitperiodic、β>0；所有测试函数真实phase compact及real lift∞。坐标IBP、weighted配对及其图可闭性不需要γ/σ或FD，因为它们是同测度坐标导数的事实。actualq无p权IBP直接由原Gibbs切片/Fubini，未用p除法。actualcoordinate graph由F/DjF两同µAE类构成，测试density和Hilbert连续性导zerovertical，不假设weak域/可闭性/core/InvLaw。完整H1空间构造、H1范数密度及一般Poisson仍未完。
+
+LangevinCanonicalWeakH1：同一原canonical µ，N允许0，unitmass、U∞且unitperiodic、β>0，不需γ/σ/FD。H1定义用实际函数L2类与坐标弱导数L2类满足原canonical IBP的所有真实compact∞测试配对；配对是弱导数的定义，不是Poisson/closedL/core结论。weak图closed、导数唯一、CompleteSpace、函数投影injective和原平方和范数均从实际连续测试与L2密度证明，没有假设这些性质；compact∞F真实属于此空间由已证IBP推出，不把membership藏为假设。与其他Sobolev实现的等价、H1范数下smooth密度及closedL H1能量/kernel/Poisson未完。

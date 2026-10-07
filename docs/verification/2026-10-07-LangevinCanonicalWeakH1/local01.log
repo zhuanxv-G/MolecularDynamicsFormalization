@@ -1,0 +1,43 @@
+docs/verification/2026-10-07-LangevinCanonicalWeakH1/Draft.lean:56:11: warning: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+docs/verification/2026-10-07-LangevinCanonicalWeakH1/Draft.lean:188:86: error: don't know how to synthesize placeholder for argument `hF`
+context:
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hs : HasCompactSupport F
+j : Fin N ⊕ Fin N
+G : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+hsG : HasCompactSupport G
+⊢ Continuous F
+docs/verification/2026-10-07-LangevinCanonicalWeakH1/Draft.lean:183:56: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+F : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hs : HasCompactSupport F
+j : Fin N ⊕ Fin N
+G : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+hsG : HasCompactSupport G
+⊢ ⟪(WithLp.toLp 2 fun j =>
+            match j with
+            | none => textbookLangevinCanonicalL2CompactObservable U hU hp β hβ F ⋯ hs
+            | some j => weakH1_D_class U hU hp β hβ F hF hs j).ofLp
+        (some j),
+      textbookLangevinCanonicalL2CompactObservable U hU hp β hβ G ⋯ hsG⟫_ℝ =
+    ⟪(WithLp.toLp 2 fun j =>
+            match j with
+            | none => textbookLangevinCanonicalL2CompactObservable U hU hp β hβ F ⋯ hs
+            | some j => weakH1_D_class U hU hp β hβ F hF hs j).ofLp
+        none,
+      MemLp.toLp (textbookLangevinCanonicalCoordinateAdjointTestExpression U β j G) ⋯⟫_ℝ

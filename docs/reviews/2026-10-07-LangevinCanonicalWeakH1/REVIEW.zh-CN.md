@@ -1,0 +1,7 @@
+十五公开声明（含两个类型abbrev与命名CompleteSpace instance）落实原PDF277/printed256、278/printed257 H1必要定义。Jet在同原canonical L2的finite PiLp2中以none记录函数类、some(q/p)记录坐标导数类，避免使用sup范数代替教材的平方和范数。actual weakH1Graph要求每个真实compact∞测试满足已证原weighted坐标IBP的转置配对；这是弱坐标导数定义，不是把目标closedL/Poisson性质写入假设。
+
+配对真实线性给Submodule，连续实际L2配对的任意交证明图closed。同µactualsmoothcompact L2密度说明函数类为0时全部导数类为0，弱导数真正唯一；闭有限Hilbert乘积图由此构成complete Hilbert H1空间，函数与每坐标导数为实际CLM，函数投影injective。PiLp2 norm²分解Option/Sum两个有限指标严格给原函数/q梯度/p梯度三项L2平方和。实际compact∞F的测试jet用真实F与DjF同µtoLp类构造，membership由上一批actualcoordinategraph配对导出，没有假设H1 membership；函数值、导数AE及原∫F²和各∫DjF²的norm公式已证。
+
+没有证明H1范数下smooth密度，未与其他Sobolev实现作域等价；未把minimal smooth graph closure偷换为整个weak域。closedL全部H1能量、核/全adjoint域、actualsemigroupgenerator身份/core、κGibbsInv、完整Poisson/Fredholm/Prop6.4/CORE仍未证，负责人语义签核pending。local01闭性/唯一性/CompleteSpace/CLM/范数已处理，但smooth membership内F连续性_未能推断，改显式已证weakH1_F_continuous；弃用Set.setOf_forall改固定Set.ofPred_forall。local02全部十五/public与private空log0，无资源/透明性/linter选项或数学假设变动。raw01–02按字节保留。原277278已读，复用同SHA原文本与既有visual278，无新render。冻结正式源码后唯一full01。
+
+full01通过：9198 jobs/2798standardaxioms/281exactinputs/all10checks0/0Leanwarnings/allinput/rawSHA，新十五声明唯一标准公理。真实canonical weakH1 closedSubmodule/导数唯一/completeHilbert空间、函数及导数CLM/函数投影injective/原平方和norm、真实compact∞membership和原积分norm均已证。raw01–02按字节保留。H1范数光滑密度、closedL H1能量/完整kernel、actualsemigroupgenerator身份/core/κInv/Prop6.4/CORE未证。

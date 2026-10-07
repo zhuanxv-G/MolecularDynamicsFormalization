@@ -1,0 +1,192 @@
+{
+  "started_at": "2026-10-07T20:40:27.2993447+08:00",
+  "finished_at": "2026-10-07T20:45:13.772812+08:00",
+  "head_at_check": "7248fcca1fdfd2bd1abffe0f70869f8afd831c2b",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9198,
+  "audit_declarations": 2798,
+  "inputs": 281,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalH1Jet",
+    "MolecularDynamics.textbookLangevinCanonicalH1WeakGraph",
+    "MolecularDynamics.textbookLangevinCanonicalH1WeakGraph_isClosed",
+    "MolecularDynamics.textbookLangevinCanonicalH1WeakGraph_zero_value",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1_completeSpace",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1Value",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1Derivative",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1_pairing",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1Value_injective",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1_norm_sq",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1SmoothTest",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1SmoothTest_value",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1SmoothTest_derivative_ae",
+    "MolecularDynamics.textbookLangevinCanonicalWeakH1SmoothTest_norm_sq"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalH1Jet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalH1WeakGraph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalH1WeakGraph_isClosed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalH1WeakGraph_zero_value",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1_completeSpace",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1Value",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1Derivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1Value_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1_norm_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1SmoothTest",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1SmoothTest_value",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1SmoothTest_derivative_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeakH1SmoothTest_norm_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "b72eae41c5eaf682cf172a65bf621676ebca9c362363be3d08e1e8282c91bb60"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "33100a1ad04c14cc92be5fb307048f4e89e9c1a4046b8d077d8ab358bdcc6cec"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_same_canonical_measure_Nzero_coordinate_weak_derivatives",
+  "actual_H1_jet": "finite_PiLp_two_of_original_function_and_all_true_q_p_coordinate_L2_classes",
+  "actual_weighted_H1_definition": "all_same_measure_coordinate_weak_test_equations_for_actual_original_IBP_transpose",
+  "actual_weak_H1_graph_linear": "proved_actual_submodule_by_true_pairing_linearity",
+  "actual_weak_H1_graph_closed": "proved_intersection_of_continuous_actual_test_pairing_equalities",
+  "actual_weak_derivative_uniqueness": "proved_zero_value_implies_zero_jet_using_actual_L2_dense_smooth_tests",
+  "actual_weak_H1_complete_Hilbert_space": "constructed_as_true_closed_submodule_of_finite_real_Hilbert_L2_product",
+  "actual_function_projection": "continuous_linear_and_injective_by_proved_weak_derivative_uniqueness",
+  "actual_coordinate_derivative_maps": "continuous_linear_maps_into_same_original_canonical_L2",
+  "actual_H1_norm_square": "proved_exact_function_plus_q_gradient_plus_p_gradient_L2_square_sum",
+  "actual_compact_smooth_H1_membership": "proved_from_actual_same_measure_coordinate_IBP_graph_pairings",
+  "actual_smooth_H1_function_and_derivative_representatives": "proved_original_F_and_true_DjF_AE_classes",
+  "actual_smooth_H1_norm_square_integrals": "proved_original_integral_F_squared_plus_all_q_and_p_derivative_squared_integrals",
+  "no_extra_H1_closedness_completeness_or_smooth_membership_hypotheses": true,
+  "H1_characterization_against_other_implementations": "not_proved",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "full_closed_Hilbert_operator_H1_energy_or_kernel_characterization": "not_proved",
+  "full_closed_Hilbert_adjoint_domain_characterization": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,205 @@
+[
+  {
+    "path": "MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean",
+    "raw_work_sha256": "660788cee2d5988c44625cb1dcfd6f4db093d3d2682cfc5ee605dec706e5ab77",
+    "staged_sha256": "660788cee2d5988c44625cb1dcfd6f4db093d3d2682cfc5ee605dec706e5ab77",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "MolecularDynamicsFormalization.lean",
+    "raw_work_sha256": "a46a2d3bde33ba8a42eba0b4d5355a1ff640af5db27bb89f51202eb5fb71c92d",
+    "staged_sha256": "5b8029d4d9a57a8b30dcc86bbe1ed23b84f3c2e86ab28ed6ccaab0d9f7357a43",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "Scratch.lean",
+    "raw_work_sha256": "86c089edfd610646862162fe47b62c46f00f7ae54cffb17ad2227935e39b9210",
+    "staged_sha256": "c96f00ebcde578994752675eab89cc3410702d2ef34c03a0ff5f713361c388fa",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "scripts/CheckAxioms.lean",
+    "raw_work_sha256": "b9d16a6837881bdd45cd79e4b8c3e70098a0e03ea542d1356b7ebdcc7d02642b",
+    "staged_sha256": "cb6fc4a0de125dde492413dddfdaad3e428139d3327c8e531f907ccd7b25bcea",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "FORMALIZATION_MAP.md",
+    "raw_work_sha256": "2486920cbc20a1f62f9407233f84722682080ebc92b5ec1871eb3167bc0f8502",
+    "staged_sha256": "72ee12d9e4f67b91b8007ad687952327de20ded900eaf9df4c864924f15549af",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "ASSUMPTIONS.md",
+    "raw_work_sha256": "617f97dd4f8d8bd691ee998c58d0b474223c6bb66422adbc1339146726325373",
+    "staged_sha256": "7f63606af002f290e2a1a462e810098bbd5cc2067243e7ad05f72211ba74a3ab",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv",
+    "raw_work_sha256": "aea6e69a6fa869c54036f7a3732de32b7633f763102e0f8848995d30eba45e2e",
+    "staged_sha256": "34aece9c68df5e85ef8f6c33718901173d8178a57eaa0338d164236fe90e5faf",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/NOTATION_INVENTORY.csv",
+    "raw_work_sha256": "abda043821dacaa53460d92a38c55b39471c24579badfd7ed0a870f076d0d52a",
+    "staged_sha256": "e632493e2d60b624216171f02b5ba87c9598555c9d0929b1538fff63b14b1a97",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/reviews/2026-10-07-LangevinCanonicalWeakH1/REVIEW.zh-CN.md",
+    "raw_work_sha256": "58696b9643cd2085ea22bf0bd41d12e80519ef43048f582595460de4f900bf61",
+    "staged_sha256": "58696b9643cd2085ea22bf0bd41d12e80519ef43048f582595460de4f900bf61",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/ACCEPT.ps1",
+    "raw_work_sha256": "d9505189cfc01670cc26494e406b766ce50c05cfa3c6804f23f943cc2e7d25a8",
+    "staged_sha256": "d9505189cfc01670cc26494e406b766ce50c05cfa3c6804f23f943cc2e7d25a8",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/ACCEPTANCE.json",
+    "raw_work_sha256": "065ee5f1adc44bdbe6d40f195109b6592986bf75b957b05b199c983fc2daee75",
+    "staged_sha256": "4f1f1e25919802f501b159e18e32f3e00aa88f5c53c6344e5f4cf690cca1d26f",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/FULL_DRIVER.log",
+    "raw_work_sha256": "b72eae41c5eaf682cf172a65bf621676ebca9c362363be3d08e1e8282c91bb60",
+    "staged_sha256": "b72eae41c5eaf682cf172a65bf621676ebca9c362363be3d08e1e8282c91bb60",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/INTEGRATE.ps1",
+    "raw_work_sha256": "7f8c8fd6986ca740a19b12dcc0184585ce46af16d864af8867f351143e102b71",
+    "staged_sha256": "7f8c8fd6986ca740a19b12dcc0184585ce46af16d864af8867f351143e102b71",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/LOCAL_CHECK.json",
+    "raw_work_sha256": "697ef42989abaed90aa38dfcfe7ff8fce0c025222d7e5f0ba11ddd4137155afc",
+    "staged_sha256": "340a8fe171790848519303e2f9ab4e99b72b6491c42ab2ad6455c4f6f9a738d0",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/local01.log",
+    "raw_work_sha256": "33100a1ad04c14cc92be5fb307048f4e89e9c1a4046b8d077d8ab358bdcc6cec",
+    "staged_sha256": "33100a1ad04c14cc92be5fb307048f4e89e9c1a4046b8d077d8ab358bdcc6cec",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/local02.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/PUBLIC_DECLARATIONS.json",
+    "raw_work_sha256": "ca1358c1324ded19602502eee293abc7ce1c0f9446198c66afedb430fd101c87",
+    "staged_sha256": "03a600d53942b14cdfec5e9a88a1833eb9682a5ddda52845a4695f04c115e211",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/SOURCE_AUDIT.json",
+    "raw_work_sha256": "8ad717599ff20ba7b886d65294ce965bbc6154eb34bc4e3daa51fcc132949f03",
+    "staged_sha256": "182c37df5ae706f0a3287edfcfbf25229a056e8bdd2a0d03ed24997c3286859f",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/axiom_dependencies.log",
+    "raw_work_sha256": "584457f9d0eb76b2f4446fad63dec64d460493994ccfc8600c6ba3449a18e8f6",
+    "staged_sha256": "584457f9d0eb76b2f4446fad63dec64d460493994ccfc8600c6ba3449a18e8f6",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/CHECK_REPORT.json",
+    "raw_work_sha256": "7e20f7d7a007582ba249f28b6fa650d6472318ca3a168bf2fb262014ac82c65f",
+    "staged_sha256": "e82a5c8c8b74285d6b3643370767893e0f52772e658681814b97d535a41eea3b",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/git_branch.log",
+    "raw_work_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "staged_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/git_head.log",
+    "raw_work_sha256": "74473ab7d83f74c5ab254356d718764796b8f743a4e20b879518680e512bef1a",
+    "staged_sha256": "74473ab7d83f74c5ab254356d718764796b8f743a4e20b879518680e512bef1a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/git_status.log",
+    "raw_work_sha256": "6509c523e846fa0eb054d7995fb8d0cff0eb6f6af91ad419b7caadc0f6a41a53",
+    "staged_sha256": "6509c523e846fa0eb054d7995fb8d0cff0eb6f6af91ad419b7caadc0f6a41a53",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/lake_build.log",
+    "raw_work_sha256": "1cf58054194b4457adf5c5422bd5700e5dc20c54170ef0ed6ca1bc7391c3b33d",
+    "staged_sha256": "1cf58054194b4457adf5c5422bd5700e5dc20c54170ef0ed6ca1bc7391c3b33d",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/lake_version.log",
+    "raw_work_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "staged_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/lean_version.log",
+    "raw_work_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "staged_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/mathlib_revision.log",
+    "raw_work_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "staged_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/mathlib_status.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalWeakH1/full-check01/scratch.log",
+    "raw_work_sha256": "c31396e53a5c39dc2fd8a07b89fc610d000077ee1f5bef1e7933f09adec786d8",
+    "staged_sha256": "c31396e53a5c39dc2fd8a07b89fc610d000077ee1f5bef1e7933f09adec786d8",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  }
+]
