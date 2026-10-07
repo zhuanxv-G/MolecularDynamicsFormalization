@@ -1,0 +1,205 @@
+[
+  {
+    "path": "MolecularDynamics/Chapter06/LangevinCanonicalSmoothDensity.lean",
+    "raw_work_sha256": "b493465833dce3be11b790302eaadd168bdf96452ae9752629f419c743247646",
+    "staged_sha256": "b493465833dce3be11b790302eaadd168bdf96452ae9752629f419c743247646",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "MolecularDynamicsFormalization.lean",
+    "raw_work_sha256": "ceff51b03b36f75f5f6b152ab5f9391dc17b8e4e57ce265b47fb1455b1a9872f",
+    "staged_sha256": "610a6224c0e42c49aaaa4e8278b2e81c829c3beaf0ee53ddb6e680b27b218888",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "Scratch.lean",
+    "raw_work_sha256": "09ee9f204405c91e3545252fa929c8fa0cb6b140768e1b027070a3b7b33d6715",
+    "staged_sha256": "7310d9178dbdd93fc6e5cd6484626636568fa4cf8a5a29350bfe85491d7b17ff",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "scripts/CheckAxioms.lean",
+    "raw_work_sha256": "caf8a440a670dc2e5d8b975a69ed99671e172e2f869a15366ad14092e6f15075",
+    "staged_sha256": "845417858186350ee4e668afb33fafdc7b6f2b6ac2a6c5e1acb42e48ff49ccb6",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "FORMALIZATION_MAP.md",
+    "raw_work_sha256": "4d2e7b6dba88e8996aa424563f2cba1d57e8b865570bbaf46823bf0f7198901b",
+    "staged_sha256": "44f1ef08c4f8aa0d8d3660797fd9d11f85e38d143c3cc7e07d06f35bcd5e68cb",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "ASSUMPTIONS.md",
+    "raw_work_sha256": "1838603d2077a1279654a02d7cfabf8e178e4c746bb88ae933e25d0102f70323",
+    "staged_sha256": "88b80c37120882f8b3c66b458747189650e636180cd4546f3e46724bd984edd9",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv",
+    "raw_work_sha256": "6fa036efde364c4a2675e467a68f45e3caa9c0a435645cc5d7a5339c224828d0",
+    "staged_sha256": "ecfcf3ce3c8d922ef407b4748c128ad7ff426b4d99b4222fd488254a7ce7509a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/NOTATION_INVENTORY.csv",
+    "raw_work_sha256": "5ba226be9dc12e1c74a1999bb03947cdbc958ba83ee1bd3217736137dec87194",
+    "staged_sha256": "3ee4990d9073f2704bba14212cb89d95dab699d7161f365bbdbb349d304d2065",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/reviews/2026-10-07-LangevinCanonicalSmoothDensity/REVIEW.zh-CN.md",
+    "raw_work_sha256": "f2f6d7ec33c35118110f1780b3a332fb8eb4d381b11d7a277e09a6dd57ece5cd",
+    "staged_sha256": "f2f6d7ec33c35118110f1780b3a332fb8eb4d381b11d7a277e09a6dd57ece5cd",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/ACCEPT.ps1",
+    "raw_work_sha256": "b33da7c4815ce5ff585ef327da7ef6461bfd4678c539f941ade7bf5c76852323",
+    "staged_sha256": "b33da7c4815ce5ff585ef327da7ef6461bfd4678c539f941ade7bf5c76852323",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/ACCEPTANCE.json",
+    "raw_work_sha256": "b73cc0f82a39c8544f5bf59d57542b84e0accc54087c49bf33c0ceba98558175",
+    "staged_sha256": "d928c30f92b308da55914b45d0600bd6d9fe323ba368f878c43c3b24377c3fab",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/FULL_DRIVER.log",
+    "raw_work_sha256": "1dcedd453d98d983e111884bcaa2db353b9bf2948373d4dede5349a505d5484b",
+    "staged_sha256": "1dcedd453d98d983e111884bcaa2db353b9bf2948373d4dede5349a505d5484b",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/INTEGRATE_AND_CHECK.ps1",
+    "raw_work_sha256": "d9e40716a8e4b43d6870daf707dd82cc8cc23284f90b658445cc639379a62fbb",
+    "staged_sha256": "d9e40716a8e4b43d6870daf707dd82cc8cc23284f90b658445cc639379a62fbb",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/LOCAL_CHECK.json",
+    "raw_work_sha256": "a20f08a5b743e25c2be570ddea789e225656357543bb95b231d40ca289b1f1c7",
+    "staged_sha256": "a06e82bae8fad5c017eb2988b8ffc169f4166ab5cb0ffc9ecde7f9cb6fa648e4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/local01.log",
+    "raw_work_sha256": "173e47cdcb1ffdd47f2bd394b532554a3188661e6fa0c45db5794ed5b70c4bc7",
+    "staged_sha256": "173e47cdcb1ffdd47f2bd394b532554a3188661e6fa0c45db5794ed5b70c4bc7",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/local02.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/PUBLIC_DECLARATIONS.json",
+    "raw_work_sha256": "8559b9748681541080bb823e291a9b1f7b718a391304677c37a6a22f12de408f",
+    "staged_sha256": "2f29a39c97916728339422742ab132eeda5bbc6af0ef43b5c0451d0298e10048",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/SOURCE_AUDIT.json",
+    "raw_work_sha256": "5c204a556bbbb7b1faa7521a2cc8eceac34152885b1ace10bb330b25463d3146",
+    "staged_sha256": "94f457b98fea682cfe1c4328cc16393f853f8ff9af9c5c746137f37e8be766a5",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/axiom_dependencies.log",
+    "raw_work_sha256": "110e32a6e4107f56c502f15cc88acf26907e404b56825ea4df7f72e99ec56d63",
+    "staged_sha256": "110e32a6e4107f56c502f15cc88acf26907e404b56825ea4df7f72e99ec56d63",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/CHECK_REPORT.json",
+    "raw_work_sha256": "51fa7d8855be71e210690b994d99b7950e6dabea7f2e8d100fb3d76fb4f42e66",
+    "staged_sha256": "4bb90ad45be506380bec311e90b012073cbe3a393674f55c7cf1eeb416bcb231",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/git_branch.log",
+    "raw_work_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "staged_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/git_head.log",
+    "raw_work_sha256": "5f370870bbaa78b6fafb77581c675b3e0359ac1feac0b3d74821ffb94de6b5fb",
+    "staged_sha256": "5f370870bbaa78b6fafb77581c675b3e0359ac1feac0b3d74821ffb94de6b5fb",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/git_status.log",
+    "raw_work_sha256": "169f00374751362251f53f39e8d29da22f3e5222b8b5c238043fee9cc68fbe9d",
+    "staged_sha256": "169f00374751362251f53f39e8d29da22f3e5222b8b5c238043fee9cc68fbe9d",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/lake_build.log",
+    "raw_work_sha256": "2b25bf483575ef19235d404b30e116ba84aac4a3b977978f57675471cc29cd32",
+    "staged_sha256": "2b25bf483575ef19235d404b30e116ba84aac4a3b977978f57675471cc29cd32",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/lake_version.log",
+    "raw_work_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "staged_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/lean_version.log",
+    "raw_work_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "staged_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/mathlib_revision.log",
+    "raw_work_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "staged_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/mathlib_status.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/full-check01/scratch.log",
+    "raw_work_sha256": "7cebe3801ea74f90b71d32dc482b625e94d2c4af8378d24d3164c4cd5aea08ed",
+    "staged_sha256": "7cebe3801ea74f90b71d32dc482b625e94d2c4af8378d24d3164c4cd5aea08ed",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  }
+]

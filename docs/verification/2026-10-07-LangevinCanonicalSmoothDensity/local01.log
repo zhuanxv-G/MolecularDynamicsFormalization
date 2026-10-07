@@ -1,0 +1,49 @@
+docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/Draft.lean:20:2: error: Type mismatch
+  ContDiffBump.hasCompactSupport_normed ?m.15 ?m.23
+has type
+  ∃ x ∈ tsupport (ContDiffBump.normed ?m.15 ?m.16), ClusterPt x ?m.21
+but is expected to have type
+  HasCompactSupport (phase_smooth_kernel δ hδ)
+docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/Draft.lean:24:2: error: Function expected at
+  ContDiffBump.contDiff_normed ?m.20
+but this term has type
+  ContDiff ℝ (↑?m.22) (ContDiffBump.normed ?m.20 ?m.21)
+
+Note: Expected a function because this term is being applied to the argument
+  _
+docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/Draft.lean:44:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (?m.49 ⋆[?L, ?μ] ?m.50) ?m.51
+in the target expression
+  (fun q => (k ⋆[lsmul ℝ ℝ, volume] F ∘ textbookLangevinPeriodicProjection) (q, p)) (q + fun i => ↑(n i)) =
+    (fun q => (k ⋆[lsmul ℝ ℝ, volume] F ∘ textbookLangevinPeriodicProjection) (q, p)) q
+
+N : ℕ
+F : textbookLangevinPeriodicPhase N → ℝ
+k : textbookLangevinPhase N → ℝ
+p q : Fin N → ℝ
+n : Fin N → ℤ
+⊢ (fun q => (k ⋆[lsmul ℝ ℝ, volume] F ∘ textbookLangevinPeriodicProjection) (q, p)) (q + fun i => ↑(n i)) =
+    (fun q => (k ⋆[lsmul ℝ ℝ, volume] F ∘ textbookLangevinPeriodicProjection) (q, p)) q
+docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/Draft.lean:86:8: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  volume.IsAddLeftInvariant
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/Draft.lean:105:16: error(lean.unknownIdentifier): Unknown identifier `support`
+docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/Draft.lean:94:78: error: unsolved goals
+N : ℕ
+F : textbookLangevinPeriodicPhase N → ℝ
+hs : HasCompactSupport F
+δ : ℝ
+hδ : 0 < δ
+A : Set (Fin N → ℝ) := Prod.snd '' tsupport F
+B : Set (Fin N → ℝ) := Prod.snd '' tsupport (phase_smooth_kernel δ hδ)
+hA : IsCompact A
+hB : IsCompact B
+hK : IsCompact (univ ×ˢ (A + B))
+z : textbookLangevinPhase N
+hx : textbookLangevinPeriodicProjection z ∈ Function.support (textbookLangevinPeriodicSmoothApproximation F δ hδ)
+⊢ textbookLangevinPeriodicProjection z ∈ univ ×ˢ (A + B)
+docs/verification/2026-10-07-LangevinCanonicalSmoothDensity/Draft.lean:142:4: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  volume.IsAddHaarMeasure
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
