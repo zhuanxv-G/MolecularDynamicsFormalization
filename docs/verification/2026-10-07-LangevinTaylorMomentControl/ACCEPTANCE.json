@@ -1,0 +1,82 @@
+{
+  "started_at": "2026-10-07T10:39:21.3844711+08:00",
+  "finished_at": "2026-10-07T10:40:35.6475358+08:00",
+  "head_at_check": "494a949eee71794fc6380dc95de8bfafc151b9ac",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9165,
+  "audit_declarations": 2546,
+  "inputs": 248,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_integer_power_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_third_norm_moment_square_bound",
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_third_div_time_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_integer_div_time_tendsto_zero"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_integer_power_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_third_norm_moment_square_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_third_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_norm_integer_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "5310fb0e4d2ece1a276c5b722c8b0d1ff1f91f55d60da7761854e8ba057d7ace"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_integer_norm_powers_integrable": "all_nonnegative_integer_k_true_actual_even_moment_domination",
+  "actual_third_norm_moment_square_bound": "derived_actual_L2_Holder_and_original_second_fourth_moments_C_x_t_cubed",
+  "actual_third_norm_moment_div_time_zero": "derived_square_quotient_sqrt_Ct_squeeze",
+  "actual_integer_norm_moment_div_time_zero": "derived_every_k_at_least_three_by_third_plus_2k_even_power",
+  "actual_full_real_phase": "same_original_continuous_real_lift_increment_from_periodic_representative_and_p0",
+  "target_remainder_moment_limit_or_generator_hypothesis": "none",
+  "local_output": "local01_exit0_empty_log_no_Lean_error_or_warning",
+  "model": "same_actual_unitmass_periodic_Cinfty_U_original_B_P_gamma_positive_sigma_arbitrary_no_U_lower_no_density_or_stationarity",
+  "necessary_dependency": "all_H_power_l_actual_Taylor_expectation_remainder_not_independent_generalization",
+  "full_C2_actual_generator_identity": "not_proved_actual_H_power_one_identified_full_H_power_l_Taylor_required",
+  "actual_all_Hamiltonian_powers_generator_identity": "not_proved_integer_high_moments_are_necessary_dependency_only",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
