@@ -1,0 +1,12 @@
+docs/verification/2026-10-07-LangevinHamiltonianIncrementVariance/Draft.lean:28:2: error: Type mismatch: After simplification, term
+  memLp_finsetSum Finset.univ fun i x_1 =>
+    MemLp.const_mul
+      (textbookLangevinPeriodicGlobalRandomPhase_momentum_increment_coordinate_memLp B P hB U hU hp L hF γ σ hγ T hT x
+        i)
+      (x.2 i)
+ has type
+  @MemLp Ω ℝ inst✝ NormedAddCommGroup.toENormedAddCommMonoid.toENorm PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    (fun a => ∑ i, x.2 i * ((textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B T a).2 i - x.2 i)) 2 P
+but is expected to have type
+  @MemLp Ω ℝ inst✝ SeminormedAddGroup.toContinuousENorm.toENorm PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    (textbookLangevinPeriodicMomentumLinearIncrement B U L hF γ σ T x) 2 P

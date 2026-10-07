@@ -1,0 +1,145 @@
+{
+  "started_at": "2026-10-07T11:03:09.7701198+08:00",
+  "finished_at": "2026-10-07T11:04:23.9956666+08:00",
+  "head_at_check": "098bab8e63bb19cb1cbed06fbfc9336adcc50a71",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9167,
+  "audit_declarations": 2561,
+  "inputs": 250,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicMomentumLinearIncrement",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrementResidual",
+    "MolecularDynamics.textbookLangevinPeriodicMomentumLinearIncrement_memLp",
+    "MolecularDynamics.textbookLangevinPeriodicMomentumLinearIncrement_second_moment_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrementResidual_square_bound",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrementResidual_memLp",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrementResidual_square_div_time_tendsto_zero",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrement_second_moment_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrement_physical_second_moment_div_time_tendsto"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicMomentumLinearIncrement",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrementResidual",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicMomentumLinearIncrement_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicMomentumLinearIncrement_second_moment_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrementResidual_square_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrementResidual_memLp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrementResidual_square_div_time_tendsto_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrement_second_moment_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicHamiltonianIncrement_physical_second_moment_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "f9a5b84311fe6d6300da3535348471c45436bc2f994a8647902f2da9f3539b79"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "bc108e861fbdf24456e351cc7ea5fc69d36b70b4ef75830cdf6757999c5de3fe"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_momentum_linear_increment": "same_original_sum_p0_i_times_actual_momentum_increment",
+  "actual_momentum_linear_L2": "derived_actual_coordinate_MemLp_two_and_true_finite_sum",
+  "actual_momentum_linear_second_moment_limit": "actual_original_covariance_finite_double_sum_sigma_square_sum_p0_square",
+  "actual_H_residual": "literal_actual_Hincrement_minus_actual_momentum_linear_part",
+  "true_residual_square_path_bound": "derived_periodic_firstjet_U_globalLip_Hlift_energy_quadratic_2M2_qnorm2_N2half_phaseNorm4",
+  "actual_residual_L2_and_square_mean_divtimezero": "derived_actual_H_L2_and_linear_L2_true_q_second_phase_fourth_limits",
+  "actual_linear_residual_cross_divtimezero": "true_normalized_L2_Holder_no_limit_premise",
+  "actual_H_second_moment_limit": "sigma_square_sum_p0_square_proved_same_actual_process",
+  "actual_physical_H_second_moment_limit": "2gamma_beta_inverse_sum_p0_square_from_true_sqrt_FD",
+  "centered_variance_statement": "not_separately_proved_this_batch_literal_second_moment_is_proved",
+  "target_remainder_moment_limit_or_generator_hypothesis": "none",
+  "local_output": "local04_exit0_empty_log_no_Lean_error_or_warning",
+  "model": "same_actual_unitmass_periodic_Cinfty_U_original_B_P_gamma_positive_sigma_arbitrary_no_U_lower_no_density_or_stationarity_physical_beta_positive",
+  "necessary_dependency": "all_H_power_l_actual_binomial_second_coefficient_not_independent_generalization",
+  "actual_H_increment_second_moment_limit": "proved_sigma_square_sum_p0_square",
+  "full_C2_actual_generator_identity": "not_proved_actual_H_power_one_identified_full_H_power_l_binomial_required",
+  "actual_all_Hamiltonian_powers_generator_identity": "not_proved_H_second_and_high_moments_are_necessary_dependencies_only",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
