@@ -700,3 +700,5 @@ LangevinC2OperatorSupport：actualsameperiodicoperator F真C²lift，C²不需C�
 LangevinSmallTimeGrowth：sameoriginalunitmass6.47 originalWienerB P/C∞periodicU/forceLip、γ>0σ任意N0、T∈[0,1]，无Ulower/density/stationarity/目标mean/moment/growth前提。统一C先∀initialx，真quadraticp²growth不可冒称已合法交换generator极限与invariantlaw积分；compactC²expectationquotientdominator/weakbalance/closed/Gibbs仍未完。
 
 LangevinC2ExpectationDomination：sameoriginalunitmass6.47 originalWienerB P/C∞periodicU/forceLip、γ>0σ任意N0，F periodicphase紧支集及real lift C²，无Ulower/density/stationarity/外部Hessian或firstjet界/目标期待dominator/limit前提，无lift紧支集或C³假设。C真正先所有initialx/t；真实支配尚不代表与invariant μ交换积分，weakLstar/closed/Gibbs未完。
+
+LangevinWeakGeneratorBalance：原unitmass6.47 originalWienerB P/C∞periodicU/forceLip γ>0σ任意N0，compactperiodicC²test真实lift。任意Inv真实sameκ所有T不变，p²可积真normalization/sameκ/actualHmomentcoercivityderive，无原Ulower/目标weakstationarity/密度/Gibbs前提；一般integratedlimit只假设μ p²可积，actualexistence无Inv/moment前提。weak∫LFμ=0非densityPDE/closed/Gibbs身份。
