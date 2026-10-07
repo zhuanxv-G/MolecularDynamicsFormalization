@@ -1,0 +1,41 @@
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:157:8: warning: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:230:6: error: expected token
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:230:6: error: Missing cases:
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:229:50: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ : ℝ
+hβ : 0 < β
+F G : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+hsF : HasCompactSupport F
+⊢ ∫ (x : textbookLangevinPeriodicPhase N),
+      F x * textbookLangevinPeriodicMomentumOUExpression β γ G x ∂textbookLangevinCanonicalMeasure U β hβ =
+    -(γ * β⁻¹) *
+      ∫ (x : textbookLangevinPeriodicPhase N),
+        ∑ i,
+          textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x *
+            textbookLangevinPeriodicDirectionalDerivative G (0, Pi.single i 1)
+              x ∂textbookLangevinCanonicalMeasure U β hβ
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:325:6: error: expected token
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:325:6: error: Missing cases:
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:324:52: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+hβ : 0 < β
+hσ : σ ^ 2 = 2 * γ / β
+F G : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+hsF : HasCompactSupport F
+hsG : HasCompactSupport G
+⊢ ∫ (x : textbookLangevinPeriodicPhase N),
+      F x * textbookLangevinPeriodicDifferentialOperator U γ σ G x ∂textbookLangevinCanonicalMeasure U β hβ =
+    ∫ (x : textbookLangevinPeriodicPhase N),
+      textbookLangevinCanonicalWeightedFormalAdjointExpression U β γ F x * G x ∂textbookLangevinCanonicalMeasure U β hβ

@@ -1,0 +1,32 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:248:113: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ : ℝ
+hβ : 0 < β
+F G : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+hsF : HasCompactSupport F
+canonicalLaw : Measure (textbookLangevinPeriodicPhase N) := textbookLangevinCanonicalMeasure U β hβ
+v : Fin N → textbookLangevinPhase N := fun i => (0, Pi.single i 1)
+D : Fin N → textbookLangevinPeriodicPhase N → ℝ := fun i => textbookLangevinPeriodicDirectionalDerivative G (v i)
+hD : ∀ (i : Fin N), ContDiff ℝ ∞ (D i ∘ textbookLangevinPeriodicProjection)
+hDc : ∀ (i : Fin N), Continuous (D i)
+hDDc : ∀ (i : Fin N), Continuous (textbookLangevinPeriodicDirectionalDerivative (D i) (v i))
+hiA : ∀ (i : Fin N), Integrable (fun x => textbookLangevinPeriodicDirectionalDerivative F (v i) x * D i x) canonicalLaw
+hiB :
+  ∀ (i : Fin N), Integrable (fun x => F x * textbookLangevinPeriodicDirectionalDerivative (D i) (v i) x) canonicalLaw
+hiC : ∀ (i : Fin N), Integrable (fun x => F x * (x.2 i * D i x)) canonicalLaw
+i : Fin N
+x : textbookLangevinPeriodicPhase N
+⊢ F x * β⁻¹ * textbookLangevinPeriodicDirectionalDerivative (D i) (v i) x - F x * x.2 i * D i x =
+    ((fun x => β⁻¹ * F x * textbookLangevinPeriodicDirectionalDerivative (D i) (v i) x) - fun x => F x * x.2 i * D i x)
+      x

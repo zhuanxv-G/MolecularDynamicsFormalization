@@ -1,0 +1,7 @@
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:251:29: warning: This simp argument is unused:
+  Pi.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.sub_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

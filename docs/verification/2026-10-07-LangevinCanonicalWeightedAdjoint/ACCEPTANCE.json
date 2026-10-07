@@ -1,0 +1,145 @@
+{
+  "started_at": "2026-10-07T18:48:40.3452085+08:00",
+  "finished_at": "2026-10-07T18:51:54.83698+08:00",
+  "head_at_check": "3b23a309995561d277ca5b467039e1ab968aacd4",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9191,
+  "audit_declarations": 2737,
+  "inputs": 274,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_unweighted_momentum_integrationByParts",
+    "MolecularDynamics.textbookLangevinPeriodicHamiltonianTransportExpression",
+    "MolecularDynamics.textbookLangevinPeriodicMomentumOUExpression",
+    "MolecularDynamics.textbookLangevinCanonicalWeightedFormalAdjointExpression",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_hamiltonian_antisymmetry",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_ou_dirichlet",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_ou_symmetry",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_weighted_formal_adjoint",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_C0_generator_weighted_formal_adjoint"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_unweighted_momentum_integrationByParts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicHamiltonianTransportExpression",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicMomentumOUExpression",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalWeightedFormalAdjointExpression",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_hamiltonian_antisymmetry",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_ou_dirichlet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_ou_symmetry",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_weighted_formal_adjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_C0_generator_weighted_formal_adjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "1d97a6073884ccd39eef0e8d348ee0fc7d9c22c92be3f78e03c75630aead9239"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "79187965b5e943833093d0cc0b4f64d1f2bbb1b4285125d6e8a2131da626e622"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "56d3639325f63a7d0ae7b09e9562d83fd3c3c17c9a84fa2bc831bfead2999370"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "fd7f36a6b8fdcfe33d73c9bd7e12b2c2e762eba149cff5896e9bc24e2013a505"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "02889fcb3b3954cb6fd607ffd61b511849b4fa171ea9cbae5659f7c4191f176b"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_actual_fullcanonical_probability_Nzero",
+  "tests": "arbitrary_actual_phase_F_G_compact_Cinfty_real_lifts",
+  "actual_unweighted_fullphase_momentum_IBP": "proved_true_Gaussian_slice_and_actual_joint_Fubini",
+  "actual_Hamiltonian_antisymmetry": "proved_true_product_rule_and_zero_friction_zero_noise_classical_weak_balance_no_zero_friction_process_assumption",
+  "actual_momentum_OU_dirichlet": "proved_full_joint_IBP_F_times_true_DpG_all_actual_integrability_Fcompact_Gsmooth",
+  "actual_momentum_OU_symmetry": "proved_by_true_actual_Dirichlet_identity",
+  "weighted_formal_transpose": "proved_expression_minus_H_plus_O_same_actual_mu_sigma2_equals_2gamma_over_beta",
+  "actual_closed_C0_generator_test_transpose": "proved_same_actual_generator_proved_compact_smooth_domain_and_action",
+  "Lebesgue_forward_adjoint_identification": "not_claimed_weighted_expression_is_distinct",
+  "no_target_IBP_balance_InvLaw_adjoint_core_integrability_hypotheses": "true_all_analytic_dependencies_proved",
+  "closed_Hilbert_adjoint_domain": "not_proved",
+  "weighted_H1_extension": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved_complete",
+  "graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

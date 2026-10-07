@@ -1,0 +1,61 @@
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:231:57: error: Application type mismatch: The argument
+  1
+has type
+  ℝ
+but is expected to have type
+  ?m.127 i i
+in the application
+  Pi.single i 1
+docs/verification/2026-10-07-LangevinCanonicalWeightedAdjoint/Draft.lean:348:40: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : textbookLangevinPeriodicPhase N),
+    (-fun x => G x * textbookLangevinPeriodicHamiltonianTransportExpression U F x) a +
+      G a * textbookLangevinPeriodicMomentumOUExpression β γ F a ∂textbookLangevinCanonicalMeasure U β hβ
+in the target expression
+  ∫ (a : textbookLangevinPeriodicPhase N),
+        F a * textbookLangevinPeriodicHamiltonianTransportExpression U G a ∂textbookLangevinCanonicalMeasure U β hβ +
+      ∫ (a : textbookLangevinPeriodicPhase N),
+        F a * textbookLangevinPeriodicMomentumOUExpression β γ G a ∂textbookLangevinCanonicalMeasure U β hβ =
+    ∫ (x : textbookLangevinPeriodicPhase N),
+      -(G x * textbookLangevinPeriodicHamiltonianTransportExpression U F x) +
+        G x * textbookLangevinPeriodicMomentumOUExpression β γ F x ∂textbookLangevinCanonicalMeasure U β hβ
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+hβ : 0 < β
+hσ : σ ^ 2 = 2 * γ / β
+F G : textbookLangevinPeriodicPhase N → ℝ
+hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+hsF : HasCompactSupport F
+hsG : HasCompactSupport G
+canonicalLaw : Measure (textbookLangevinPeriodicPhase N) := textbookLangevinCanonicalMeasure U β hβ
+hiH1 :
+  Integrable (fun x => F x * textbookLangevinPeriodicHamiltonianTransportExpression U G x)
+    (textbookLangevinCanonicalMeasure U β hβ)
+hiO1 :
+  Integrable (fun x => F x * textbookLangevinPeriodicMomentumOUExpression β γ G x)
+    (textbookLangevinCanonicalMeasure U β hβ)
+hiH2 :
+  Integrable (fun x => G x * textbookLangevinPeriodicHamiltonianTransportExpression U F x)
+    (textbookLangevinCanonicalMeasure U β hβ)
+hiO2 :
+  Integrable (fun x => G x * textbookLangevinPeriodicMomentumOUExpression β γ F x)
+    (textbookLangevinCanonicalMeasure U β hβ)
+heL :
+  (fun x => F x * textbookLangevinPeriodicDifferentialOperator U γ σ G x) = fun x =>
+    F x * textbookLangevinPeriodicHamiltonianTransportExpression U G x +
+      F x * textbookLangevinPeriodicMomentumOUExpression β γ G x
+heR :
+  (fun x => textbookLangevinCanonicalWeightedFormalAdjointExpression U β γ F x * G x) = fun x =>
+    -(G x * textbookLangevinPeriodicHamiltonianTransportExpression U F x) +
+      G x * textbookLangevinPeriodicMomentumOUExpression β γ F x
+⊢ ∫ (a : textbookLangevinPeriodicPhase N),
+        F a * textbookLangevinPeriodicHamiltonianTransportExpression U G a ∂textbookLangevinCanonicalMeasure U β hβ +
+      ∫ (a : textbookLangevinPeriodicPhase N),
+        F a * textbookLangevinPeriodicMomentumOUExpression β γ G a ∂textbookLangevinCanonicalMeasure U β hβ =
+    ∫ (x : textbookLangevinPeriodicPhase N),
+      -(G x * textbookLangevinPeriodicHamiltonianTransportExpression U F x) +
+        G x * textbookLangevinPeriodicMomentumOUExpression β γ F x ∂textbookLangevinCanonicalMeasure U β hβ
