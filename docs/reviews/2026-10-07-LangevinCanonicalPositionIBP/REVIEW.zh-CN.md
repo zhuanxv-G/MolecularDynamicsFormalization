@@ -1,0 +1,11 @@
+# 原周期位置Gibbs测度真实分部积分
+
+3公开声明落实fullLangevin canonical弱平衡的position部分。原cube divergence定理用只有第i坐标为f、其余零的实际field，真实periodicity给oppositefaces匹配，因此单coordinate∫Di f=0；不提供边界消去作为假设。对原exp(-βU)，真实product derivative与原已验weightpartial=-βDiUρ，两个weightedcube真实integrable由连续与compactcube，推导∫Di fρ=β∫DiU fρ。原normalizedpositiontorusGibbs真概率的既有真实integral转换与真正partialperiodicity给同actualµq IBP，未换模型或假设IBP结论。
+
+scope原U/f C∞unitperiodic、beta任意、positionHaar、N0/i:FinN；不冒称全部C1/C2positiontest或完整phase弱平衡。与已验Gaussian momentumIBP组合的qHamiltonian/force项及实际kernelGibbsInv仍待证。原PDF239与271–275文字、239/273视觉按同PDF SHA/priorrender复用；当前复核原PDF及239 PNG SHA，未新render。
+
+local01 constantlambda fderiv simp不匹配（旧CLM.zero_apply deprecated），Pi.mul vs pointwise产品HadFDerivAt不匹配，两periodicλ应用rw不展开；明确真实constantHasFDerivAt、exactλproduct using!、periodicity simp only后02仅hasFDerivAt_const实际c在前x在后，改显式0q；03全3/private空log0零warning。raw01–03保留，无resource/linter/newaxiom。exact集成唯一full01待验；完整phase弱平衡/functionaladjoint域、actualGibbsInv/graphcore/density/weightedH1kernel/CORE和负责人语义签核未完。
+
+full-check01通过：9188jobs/2703标准公理/271exactinputs/all10checks0/0Leanwarning/allinput及全部原rawlog SHA一致，新3public唯一标准axioms。原smoothperiodic cube单坐标边界消去、Gibbs真实weight/product partial及compact可积、same actualnormalizedtorus Gibbs位置IBP已证。完整phase Hamiltonianforce+momentum弱平衡及actualGibbsInv未证。raw01–03保留，无option变化。
+
+full-check01通过：9188jobs/2703标准公理/271exactinputs/all10checks0/0Leanwarning/allinput及全部原rawlog SHA一致，新3public唯一标准axioms。原smoothperiodic cube单坐标边界消去、Gibbs真实weight/product partial及compact可积、same actualnormalizedtorus Gibbs位置IBP已证。完整phase Hamiltonianforce+momentum弱平衡及actualGibbsInv未证。raw01–03保留，无option变化。

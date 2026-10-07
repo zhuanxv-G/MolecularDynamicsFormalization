@@ -398,3 +398,5 @@ import MolecularDynamics.Chapter06.LangevinCanonicalMeasure
 import MolecularDynamics.Chapter06.LangevinCanonicalPartition
 
 import MolecularDynamics.Chapter06.LangevinCanonicalMomentumIBP
+
+import MolecularDynamics.Chapter06.LangevinCanonicalPositionIBP

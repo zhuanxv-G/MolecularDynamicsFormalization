@@ -1,0 +1,5 @@
+{
+  "failure": "acceptance stdout log enumerated inside own evidence directory while still open; ReadAllBytes sharing violation before commit",
+  "recovery": "closed failed raw retained; retry only own allowlist stage audit, no Lean rerun or unrelated index reset",
+  "log_sha256": "6f4a884ba67fad9db2e1731002de97718fe9cb8bb9962893dee19cf237167986"
+}

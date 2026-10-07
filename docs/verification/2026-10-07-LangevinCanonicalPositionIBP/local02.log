@@ -1,0 +1,10 @@
+docs/verification/2026-10-07-LangevinCanonicalPositionIBP/Draft.lean:39:41: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  AddCommGroup ℕ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/verification/2026-10-07-LangevinCanonicalPositionIBP/Draft.lean:39:41: error: Type mismatch
+  hasFDerivAt_const q 0
+has type
+  HasFDerivAt (fun (x : ℕ) => q) 0 0
+but is expected to have type
+  HasFDerivAt (fun (x : Fin N → ℝ) => 0) 0 q

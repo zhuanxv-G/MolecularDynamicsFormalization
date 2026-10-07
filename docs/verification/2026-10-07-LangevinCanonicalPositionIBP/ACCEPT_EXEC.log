@@ -1,0 +1,18 @@
+warning: in the working copy of 'MolecularDynamics/Chapter06/LangevinCanonicalPositionIBP.lean', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'MolecularDynamicsFormalization.lean', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Scratch.lean', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/CheckAxioms.lean', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'FORMALIZATION_MAP.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ASSUMPTIONS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/NOTATION_INVENTORY.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/reviews/2026-10-07-LangevinCanonicalPositionIBP/REVIEW.zh-CN.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/verification/2026-10-07-LangevinCanonicalPositionIBP/ACCEPT_DRIVER.ps1', LF will be replaced by CRLF the next time Git touches it
+ParentContainsErrorRecordException: C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\docs\verification\2026-10-07-LangevinCanonicalPositionIBP\ACCEPT_DRIVER.ps1:128
+Line |
+ 128 |   $wb=[IO.File]::ReadAllBytes((Join-Path (Get-Location) $path))
+     |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Exception calling "ReadAllBytes" with "1" argument(s): "The process cannot access the file
+     | 'C:\Users\ustc\Desktop\formal
+     | math\MolecularDynamicsFormalization\docs\verification\2026-10-07-LangevinCanonicalPositionIBP\ACCEPT_EXEC.log'
+     | because it is being used by another process."

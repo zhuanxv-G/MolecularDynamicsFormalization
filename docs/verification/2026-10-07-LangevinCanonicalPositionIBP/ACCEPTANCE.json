@@ -1,0 +1,78 @@
+{
+  "started_at": "2026-10-07T17:26:08.0016368+08:00",
+  "finished_at": "2026-10-07T17:29:16.9530546+08:00",
+  "head_at_check": "cd96e6363d40f859e8aaced55053b657f4896bc0",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9188,
+  "audit_declarations": 2703,
+  "inputs": 271,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookConfigurationCube_partial_integral_eq_zero",
+    "MolecularDynamics.textbookConfigurationCube_gibbs_integrationByParts",
+    "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_integrationByParts"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookConfigurationCube_partial_integral_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationCube_gibbs_integrationByParts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_integrationByParts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "4a6813f9ea72cd1dbea1d3558e69a1b255511c26c78d5aebf97a4da3d6200f9d"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "c4b39dd5b87e5c0c61a63a84d885f7a86368c35f78449ac4520014694ee20d64"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "b692a75a2c361af220cb7f51a64d11f9cbc2f70286d5a323af2c554d2e04fb35"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_smooth_unit_periodic_configuration_torus_Gibbs_beta_any_Nzero",
+  "coordinate_boundary_cancellation": "proved_true_full_cube_divergence_with_single_nonzero_coordinate_field_actual_opposite_faces_periodicity",
+  "weighted_configuration_IBP": "derived_actual_weight_partial_and_true_product_derivative_all_cube_integrability_from_compactness",
+  "actual_torus_Gibbs_IBP": "proved_same_normalized_probability_true_cube_integral_conversion_and_actual_partition",
+  "test_regularities": "C_infty_original_smooth_periodic_tests_not_all_C1_or_C2_claimed",
+  "no_target_IBP_balance_hypothesis": "proved_all_identities_from_true_derivatives_measures_and_boundary_cancellation",
+  "whole_Langevin_phase_weak_balance": "not_proved_position_and_momentum_identities_to_be_combined",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "functional_adjoint_domain_flux_integration_by_parts": "not_proved_complete_phase",
+  "graph_core": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

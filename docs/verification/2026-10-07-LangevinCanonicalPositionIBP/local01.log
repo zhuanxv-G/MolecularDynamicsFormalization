@@ -1,0 +1,86 @@
+docs/verification/2026-10-07-LangevinCanonicalPositionIBP/Draft.lean:37:78: warning: `ContinuousLinearMap.zero_apply` has been deprecated: Use `zero_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.zero_apply` to `zero_apply x`).
+docs/verification/2026-10-07-LangevinCanonicalPositionIBP/Draft.lean:37:4: error: unsolved goals
+case neg
+N : ℕ
+f : (Fin N → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hp : textbookUnitPeriodicPotential f
+i : Fin N
+V : Fin N → (Fin N → ℝ) → ℝ := fun j => if j = i then f else fun x => 0
+hV : ∀ (j : Fin N), ContDiff ℝ ∞ (V j)
+hpV : ∀ (j : Fin N), textbookUnitPeriodicPotential (V j)
+j : Fin N
+q : Fin N → ℝ
+h : ¬j = i
+⊢ (fderiv ℝ (fun x => 0) q) (Pi.single j 1) = 0
+docs/verification/2026-10-07-LangevinCanonicalPositionIBP/Draft.lean:37:64: warning: This simp argument is unused:
+  fderiv_const
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [V, h, ite_false, textbookConfigurationPartial, ContinuousLinearMap.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalPositionIBP/Draft.lean:37:78: warning: This simp argument is unused:
+  ContinuousLinearMap.zero_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [V, h, ite_false, textbookConfigurationPartial, fderiv_const]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalPositionIBP/Draft.lean:50:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fderiv ℝ (f * g) q
+in the target expression
+  (fderiv ℝ (fun y => f y * g y) q) (Pi.single i 1) =
+    (fderiv ℝ f q) (Pi.single i 1) * g q + f q * (fderiv ℝ g q) (Pi.single i 1)
+
+N : ℕ
+f g : (Fin N → ℝ) → ℝ
+hf : ContDiff ℝ ∞ f
+hg : ContDiff ℝ ∞ g
+i : Fin N
+q : Fin N → ℝ
+h : HasFDerivAt (f * g) (f q • fderiv ℝ g q + g q • fderiv ℝ f q) q
+⊢ (fderiv ℝ (fun y => f y * g y) q) (Pi.single i 1) =
+    (fderiv ℝ f q) (Pi.single i 1) * g q + f q * (fderiv ℝ g q) (Pi.single i 1)
+docs/verification/2026-10-07-LangevinCanonicalPositionIBP/Draft.lean:70:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  f (q + fun i => ↑(n i))
+in the target expression
+  (fun q => f q * ρ q) (q + fun i => ↑(n i)) = (fun q => f q * ρ q) q
+
+N : ℕ
+U f : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hf : ContDiff ℝ ∞ f
+hPU : textbookUnitPeriodicPotential U
+hPf : textbookUnitPeriodicPotential f
+β : ℝ
+i : Fin N
+ρ : (Fin N → ℝ) → ℝ := textbookConfigurationGibbsWeight U β
+hρ : ContDiff ℝ ∞ ρ
+hpρ : textbookUnitPeriodicPotential ρ
+hφ : ContDiff ℝ ∞ fun q => f q * ρ q
+q : Fin N → ℝ
+n : Fin N → ℤ
+⊢ (fun q => f q * ρ q) (q + fun i => ↑(n i)) = (fun q => f q * ρ q) q
+docs/verification/2026-10-07-LangevinCanonicalPositionIBP/Draft.lean:112:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookConfigurationPartial U i (q + fun i => ↑(n i))
+in the target expression
+  (fun q => textbookConfigurationPartial U i q * f q) (q + fun i => ↑(n i)) =
+    (fun q => textbookConfigurationPartial U i q * f q) q
+
+N : ℕ
+U f : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hf : ContDiff ℝ ∞ f
+hPU : textbookUnitPeriodicPotential U
+hPf : textbookUnitPeriodicPotential f
+β : ℝ
+i : Fin N
+hpf : textbookUnitPeriodicPotential (textbookConfigurationPartial f i)
+hpU : textbookUnitPeriodicPotential (textbookConfigurationPartial U i)
+q : Fin N → ℝ
+n : Fin N → ℤ
+⊢ (fun q => textbookConfigurationPartial U i q * f q) (q + fun i => ↑(n i)) =
+    (fun q => textbookConfigurationPartial U i q * f q) q
