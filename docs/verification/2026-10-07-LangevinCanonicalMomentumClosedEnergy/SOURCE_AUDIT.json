@@ -1,0 +1,49 @@
+{
+  "original_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "printed_pages": [
+    256,
+    257
+  ],
+  "pdf_pages": [
+    277,
+    278
+  ],
+  "original_text_read_current_reused_exact_path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/ORIGINAL_PDF277_278.log",
+  "original_text_sha256": "2e61d88b5f401a122ef2fce7f30e76cadfd7f4c0bda798eec882e0e3229dacac",
+  "visual_checked_current_pages": [],
+  "visual_checked_prior_exact_unchanged_pages": [
+    278
+  ],
+  "prior_render_path": "docs/verification/2026-10-07-LangevinC0ConservedObservable/original-PDF278.png",
+  "prior_render_sha256": "c7c839b7ec2b02c7b52288a986d4bfa3bffa992bd0239ea07878b59e5d6d863c",
+  "reference": "Prop6_4_entire_actual_closed_L_momentum_energy_and_kernel_derivative_necessary_dependency",
+  "actual_closed_L_momentum_derivative_domain_distinct_from_full_q_p_H1_regular_or_generator_identity": true,
+  "no_new_original_page_render": true,
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_momentum_jet": "true_PiLp2_vector_of_same_original_canonical_L2_classes",
+  "actual_test_graph_momentum_domain_membership": "proved_from_true_F_and_DpF_AE_classes_and_coordinate_graph_closure",
+  "actual_test_momentum_derivative_linearity": "proved_from_true_minimal_closed_coordinate_linear_operators",
+  "actual_test_momentum_energy": "proved_exact_original_energy_equals_minus_gamma_over_beta_times_true_gradient_norm_squared",
+  "actual_test_momentum_graph_norm_bound": "proved_sqrt_beta_over_gamma_bound_from_true_energy_and_Cauchy_Schwarz",
+  "actual_test_to_closed_graph_embedding": "proved_dense_and_uniform_inducing_in_actual_graph_topological_closure",
+  "actual_closed_graph_momentum_derivative": "true_continuous_linear_extension_from_actual_test_graph_with_proved_embedding_and_bound",
+  "actual_closed_graph_momentum_coordinate_graph_membership": "proved_by_dense_induction_and_actual_closed_coordinate_graph",
+  "actual_closed_graph_momentum_energy": "proved_on_entire_actual_graph_closure_by_continuity_and_true_test_energy",
+  "actual_closed_L_domain_minimal_p_derivative_inclusion": "proved_for_every_actual_closed_operator_domain_element_and_every_momentum_coordinate",
+  "actual_closed_L_momentum_derivative_vector": "constructed_from_genuine_continuous_closed_graph_momentum_extension",
+  "actual_closed_L_full_domain_momentum_energy": "proved_exact_original_minus_gamma_over_beta_identity",
+  "actual_closed_L_weakH1_momentum_compatibility": "proved_for_actual_weakH1_functions_in_actual_closed_L_domain",
+  "actual_closed_L_kernel_momentum_derivative_zero": "proved_from_actual_full_domain_energy_with_gamma_strictly_positive",
+  "actual_closed_L_domain_full_q_and_p_H1_inclusion": "not_proved_or_assumed",
+  "minimal_coordinate_domain_equals_full_weak_derivative_domain": "not_proved",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "full_closed_Hilbert_adjoint_domain_characterization": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

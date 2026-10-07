@@ -1,0 +1,205 @@
+[
+  {
+    "path": "MolecularDynamics/Chapter06/LangevinCanonicalMomentumClosedEnergy.lean",
+    "raw_work_sha256": "2ff665921e3b097237f72509032cea0ed4886b6027bdebffa426185d056532f5",
+    "staged_sha256": "2ff665921e3b097237f72509032cea0ed4886b6027bdebffa426185d056532f5",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "MolecularDynamicsFormalization.lean",
+    "raw_work_sha256": "22570cf778c32274fe39cd4f80d196d0fb980cf33d3e8d350b2fd9e8210ab3b5",
+    "staged_sha256": "2c2a3d18e3a38812916b1ac5849bc5c97429ec8efc4342e914aa16d79e31258f",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "Scratch.lean",
+    "raw_work_sha256": "b15d9d392c138534c432061a32beef085fe2b75d9d6c043a513d3e796a3a0bae",
+    "staged_sha256": "5259d532af41bd10bbe08df29dbff884de7ebf42f9da99c621073a821d5dd358",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "scripts/CheckAxioms.lean",
+    "raw_work_sha256": "da495894fb813535b5205b11322b521952368311f620dd33537bb1f1a7b6aaa5",
+    "staged_sha256": "28bceecd443fa2513b8ffddae90098f3494c59023df91e05bbc8e3a1ea840efd",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "FORMALIZATION_MAP.md",
+    "raw_work_sha256": "5753d8aa5a3b7f6ff533212d086b85e46ddc7b2a7c3dba8df509e3da11b4cec6",
+    "staged_sha256": "7f672bb189705356a9a4c3f00fa2ef7be95582b3981e2925adc7ef3485bd3ecd",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "ASSUMPTIONS.md",
+    "raw_work_sha256": "f470f0156a61ac56adab3b0409827a8698c7e2f8054a89d07b226f47a4116513",
+    "staged_sha256": "a879e4d840941a1c87b0feb96e12114a6bdc58efd5fb6cc839c68f2f23624044",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv",
+    "raw_work_sha256": "120c5570adfae6d3b391249d247062fc4496a8be613aa1995687f8a302dc234a",
+    "staged_sha256": "9c56155ddd915e639e80244705d16f5f9c1523b2868895fc4af8568bad2284f8",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/NOTATION_INVENTORY.csv",
+    "raw_work_sha256": "a8ee3ef36a981e677734c7a49cb450d2800de3d0838dfe70ecba5c6e8af1457f",
+    "staged_sha256": "c7dbb2686ef461d7a366beb7cdd79da246cf7f20106e158f95bcfbe3c13e075e",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/reviews/2026-10-07-LangevinCanonicalMomentumClosedEnergy/REVIEW.zh-CN.md",
+    "raw_work_sha256": "11f2d234f1b325c93e8fc906cdaf614d21acf18231a1dbc89e2b2a5d38ad0c26",
+    "staged_sha256": "11f2d234f1b325c93e8fc906cdaf614d21acf18231a1dbc89e2b2a5d38ad0c26",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/ACCEPT.ps1",
+    "raw_work_sha256": "ee50d1e8a0359b79225585581260ed913115da0a8e589fa1251173ca75241621",
+    "staged_sha256": "ee50d1e8a0359b79225585581260ed913115da0a8e589fa1251173ca75241621",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/ACCEPTANCE.json",
+    "raw_work_sha256": "a7b408c69d97fcb298db64495e694ddc8606d2e7711ed91d493dea4d4881e80d",
+    "staged_sha256": "388f0e2bc3a46c48db02063a110a5807cf9e8a13525efcdd0ac60a93bb96907a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/FULL_DRIVER.log",
+    "raw_work_sha256": "851770a04bcab5126c30824a3b5622939aa9e0c957b318bfa8337b96b81d3dd4",
+    "staged_sha256": "851770a04bcab5126c30824a3b5622939aa9e0c957b318bfa8337b96b81d3dd4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/INTEGRATE.ps1",
+    "raw_work_sha256": "400636e39fc88c5590c4eaa658dcd61710fde19e0a8087fdb96be4fbfb2744c5",
+    "staged_sha256": "400636e39fc88c5590c4eaa658dcd61710fde19e0a8087fdb96be4fbfb2744c5",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/LOCAL_CHECK.json",
+    "raw_work_sha256": "78f6e4e1e4be24aa391ece6da93678c15f370a7f7b86a7bcce6a6dcfec97c21c",
+    "staged_sha256": "c6b0ecd36b70c3d3cd84c78b4c7884bb2ff6d237e23322b3da2d33980da8e9ce",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/local01.log",
+    "raw_work_sha256": "b07cb4562bbb6e994747fb68f9e3839062ba2df169ace7a6ac652b8c32ee6090",
+    "staged_sha256": "b07cb4562bbb6e994747fb68f9e3839062ba2df169ace7a6ac652b8c32ee6090",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/local02.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/PUBLIC_DECLARATIONS.json",
+    "raw_work_sha256": "346710d227fb616867be1f4fbb0aa1670f0bb35f9a760c51f685ea4f1d477635",
+    "staged_sha256": "d0f83382b1b29ca91205bc055520939bd3d41c61f50afa6b68c0ae2205e0f692",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/SOURCE_AUDIT.json",
+    "raw_work_sha256": "6f1f57c01f74dfe5acb9b78605a77c0f8c0bc11754beb82b38c056dfaa3c9f9d",
+    "staged_sha256": "b97ef89ab857956821e06b730bc1cb3afdc6b1a9e42c77a16c807dd412f792eb",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/axiom_dependencies.log",
+    "raw_work_sha256": "944bd30a1f19f4e88093b84c7630eded2000526cc3dca2c7842ecd76dc794d8e",
+    "staged_sha256": "944bd30a1f19f4e88093b84c7630eded2000526cc3dca2c7842ecd76dc794d8e",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/CHECK_REPORT.json",
+    "raw_work_sha256": "4bc63c6045832e33e7c4bae528fd69fb8a8b2a80839ccdc830f3d962c4428951",
+    "staged_sha256": "fa3cedcc4d790a10f0ea7e0948695e1725c7646399993e8aa50e8e13023f0a54",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/git_branch.log",
+    "raw_work_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "staged_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/git_head.log",
+    "raw_work_sha256": "47ac4c517083ce26817ef26ed2fa69bf1fb4c5ff5a9f273daffebc1e0db03cfd",
+    "staged_sha256": "47ac4c517083ce26817ef26ed2fa69bf1fb4c5ff5a9f273daffebc1e0db03cfd",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/git_status.log",
+    "raw_work_sha256": "dd4c888d17dd97d76bbc03411a444e51dbc4d065037d7ce1bbe3c233639a73eb",
+    "staged_sha256": "dd4c888d17dd97d76bbc03411a444e51dbc4d065037d7ce1bbe3c233639a73eb",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/lake_build.log",
+    "raw_work_sha256": "ad7a07d83cd840b56fa79b8ca357069bb15b4906f3a98a5a3afa90e305df4f17",
+    "staged_sha256": "ad7a07d83cd840b56fa79b8ca357069bb15b4906f3a98a5a3afa90e305df4f17",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/lake_version.log",
+    "raw_work_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "staged_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/lean_version.log",
+    "raw_work_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "staged_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/mathlib_revision.log",
+    "raw_work_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "staged_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/mathlib_status.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/full-check01/scratch.log",
+    "raw_work_sha256": "ad346a3f6a8ad94304a409b326058a67497bf13ea511abee0d5413d57b3cd165",
+    "staged_sha256": "ad346a3f6a8ad94304a409b326058a67497bf13ea511abee0d5413d57b3cd165",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  }
+]

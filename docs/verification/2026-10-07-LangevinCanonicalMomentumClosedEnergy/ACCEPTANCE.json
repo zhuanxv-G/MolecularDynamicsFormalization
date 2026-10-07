@@ -1,0 +1,176 @@
+{
+  "started_at": "2026-10-07T22:09:38.7337549+08:00",
+  "finished_at": "2026-10-07T22:13:23.5927008+08:00",
+  "head_at_check": "946b26ebe2d8f6b693f67f2b052082260e8f7741",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9201,
+  "audit_declarations": 2838,
+  "inputs": 284,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalMomentumJet",
+    "MolecularDynamics.textbookLangevinCanonicalTestMomentumDerivative",
+    "MolecularDynamics.textbookLangevinCanonicalTestMomentumDerivative_energy",
+    "MolecularDynamics.textbookLangevinCanonicalTestMomentumDerivative_graph_norm_bound",
+    "MolecularDynamics.textbookLangevinCanonicalClosedGraphMomentumDerivative",
+    "MolecularDynamics.textbookLangevinCanonicalClosedGraphMomentumDerivative_test",
+    "MolecularDynamics.textbookLangevinCanonicalClosedGraphMomentumDerivative_coordinate_graph",
+    "MolecularDynamics.textbookLangevinCanonicalClosedGraphMomentumDerivative_energy",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_momentum_domain",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperatorMomentumDerivative",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_energy",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperatorMomentumDerivative_weakH1",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_momentum_zero"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumJet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalTestMomentumDerivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalTestMomentumDerivative_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalTestMomentumDerivative_graph_norm_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalClosedGraphMomentumDerivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalClosedGraphMomentumDerivative_test",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalClosedGraphMomentumDerivative_coordinate_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalClosedGraphMomentumDerivative_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_momentum_domain",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperatorMomentumDerivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperatorMomentumDerivative_weakH1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_momentum_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "851770a04bcab5126c30824a3b5622939aa9e0c957b318bfa8337b96b81d3dd4"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "b07cb4562bbb6e994747fb68f9e3839062ba2df169ace7a6ac652b8c32ee6090"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_momentum_jet": "true_PiLp2_vector_of_same_original_canonical_L2_classes",
+  "actual_test_graph_momentum_domain_membership": "proved_from_true_F_and_DpF_AE_classes_and_coordinate_graph_closure",
+  "actual_test_momentum_derivative_linearity": "proved_from_true_minimal_closed_coordinate_linear_operators",
+  "actual_test_momentum_energy": "proved_exact_original_energy_equals_minus_gamma_over_beta_times_true_gradient_norm_squared",
+  "actual_test_momentum_graph_norm_bound": "proved_sqrt_beta_over_gamma_bound_from_true_energy_and_Cauchy_Schwarz",
+  "actual_test_to_closed_graph_embedding": "proved_dense_and_uniform_inducing_in_actual_graph_topological_closure",
+  "actual_closed_graph_momentum_derivative": "true_continuous_linear_extension_from_actual_test_graph_with_proved_embedding_and_bound",
+  "actual_closed_graph_momentum_coordinate_graph_membership": "proved_by_dense_induction_and_actual_closed_coordinate_graph",
+  "actual_closed_graph_momentum_energy": "proved_on_entire_actual_graph_closure_by_continuity_and_true_test_energy",
+  "actual_closed_L_domain_minimal_p_derivative_inclusion": "proved_for_every_actual_closed_operator_domain_element_and_every_momentum_coordinate",
+  "actual_closed_L_momentum_derivative_vector": "constructed_from_genuine_continuous_closed_graph_momentum_extension",
+  "actual_closed_L_full_domain_momentum_energy": "proved_exact_original_minus_gamma_over_beta_identity",
+  "actual_closed_L_weakH1_momentum_compatibility": "proved_for_actual_weakH1_functions_in_actual_closed_L_domain",
+  "actual_closed_L_kernel_momentum_derivative_zero": "proved_from_actual_full_domain_energy_with_gamma_strictly_positive",
+  "actual_closed_L_domain_full_q_and_p_H1_inclusion": "not_proved_or_assumed",
+  "minimal_coordinate_domain_equals_full_weak_derivative_domain": "not_proved",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "full_closed_Hilbert_adjoint_domain_characterization": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

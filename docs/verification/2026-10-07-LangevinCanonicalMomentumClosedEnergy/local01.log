@@ -1,0 +1,82 @@
+docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/Draft.lean:66:4: error: Type mismatch
+  LinearPMap.map_add (textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) ?m.124 ?m.125
+has type
+  @LinearPMap.toFun' ℝ ℝ Real.instRing Real.instRing (RingHom.id ℝ)
+      (↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))) Lp.instAddCommGroup Lp.instModule
+      (↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))) Lp.instAddCommGroup Lp.instModule
+      (textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) (?m.124 + ?m.125) =
+    ↑(textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) ?m.124 +
+      ↑(textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) ?m.125
+but is expected to have type
+  @LinearPMap.toFun' ℝ ℝ Real.instRing Real.instRing (RingHom.id ℝ)
+      (↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))) Lp.instAddCommGroup Lp.instModule
+      (↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))) Lp.instAddCommGroup Lp.instModule
+      (textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) ⟨(↑(p + q)).1, ⋯⟩ =
+    ((WithLp.toLp 2 fun i => ↑(textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) ⟨(↑p).1, ⋯⟩) +
+          WithLp.toLp 2 fun i =>
+            ↑(textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) ⟨(↑q).1, ⋯⟩).ofLp
+      i
+docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/Draft.lean:74:4: error: Type mismatch
+  LinearPMap.map_smul (textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) c ?m.176
+has type
+  @LinearPMap.toFun' ℝ ℝ Real.instRing Real.instRing (RingHom.id ℝ)
+      (↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))) Lp.instAddCommGroup Lp.instModule
+      (↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))) Lp.instAddCommGroup Lp.instModule
+      (textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) (c • ?m.176) =
+    c • ↑(textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) ?m.176
+but is expected to have type
+  @LinearPMap.toFun' ℝ ℝ Real.instRing Real.instRing (RingHom.id ℝ)
+      (↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))) Lp.instAddCommGroup Lp.instModule
+      (↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))) Lp.instAddCommGroup Lp.instModule
+      (textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) ⟨(↑(c • p)).1, ⋯⟩ =
+    ((RingHom.id ℝ) c •
+          WithLp.toLp 2 fun i =>
+            ↑(textbookLangevinCanonicalCoordinateClosedOperator U β hβ (Sum.inr i)) ⟨(↑p).1, ⋯⟩).ofLp
+      i
+docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/Draft.lean:124:10: warning: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/Draft.lean:128:6: error: Type mismatch: After simplification, term
+  MemLp.integrable_mul hi hi
+ has type
+  @Integrable ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace SeminormedAddGroup.toContinuousENorm
+    (textbookLangevinPeriodicPhase N) Prod.instMeasurableSpace
+    (textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) *
+      textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1))
+    (textbookLangevinCanonicalMeasure U β hβ)
+but is expected to have type
+  @Integrable ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace SeminormedAddGroup.toContinuousENorm
+    (textbookLangevinPeriodicPhase N) Prod.instMeasurableSpace
+    (fun x =>
+      textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x *
+        textbookLangevinPeriodicDirectionalDerivative F (0, Pi.single i 1) x)
+    (textbookLangevinCanonicalMeasure U β hβ)
+docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/Draft.lean:216:8: error: failed to elaborate eliminator, expected type is not available
+docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/Draft.lean:217:2: error: No goals to be solved
+docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/Draft.lean:236:8: error: failed to elaborate eliminator, expected type is not available
+docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/Draft.lean:237:2: error: No goals to be solved
+docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/Draft.lean:279:2: error: Type mismatch
+  textbookLangevinCanonicalClosedGraphMomentumDerivative_energy U hU hp β γ σ hβ hγ hσ ?m.88
+has type
+  @inner ℝ (↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))) L2.instInnerSubtypeAEEqFunMemAddSubgroupLpOfNatENNReal
+      (↑?m.88).1 (↑?m.88).2 =
+    -(γ * β⁻¹) * ‖(textbookLangevinCanonicalClosedGraphMomentumDerivative U hU hp β γ σ hβ hγ hσ) ?m.88‖ ^ 2
+but is expected to have type
+  @inner ℝ (↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))) L2.instInnerSubtypeAEEqFunMemAddSubgroupLpOfNatENNReal
+      (↑f) (↑(textbookLangevinCanonicalHilbertClosedOperator U β γ σ hβ) f) =
+    -(γ * β⁻¹) * ‖textbookLangevinCanonicalHilbertClosedOperatorMomentumDerivative U hU hp β γ σ hβ hγ hσ f‖ ^ 2
+docs/verification/2026-10-07-LangevinCanonicalMomentumClosedEnergy/Draft.lean:317:2: error: linarith failed to find a contradiction
+case h2
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β γ σ : ℝ
+hβ : 0 < β
+hγ : 0 < γ
+hσ : σ ^ 2 = 2 * γ / β
+f : ↥(textbookLangevinCanonicalHilbertClosedOperator U β γ σ hβ).domain
+hf : ↑(textbookLangevinCanonicalHilbertClosedOperator U β γ σ hβ) f = 0
+he : 0 = -(γ * β⁻¹) * ‖textbookLangevinCanonicalHilbertClosedOperatorMomentumDerivative U hU hp β γ σ hβ hγ hσ f‖ ^ 2
+hc : 0 < γ * β⁻¹
+a✝ : 0 < ‖textbookLangevinCanonicalHilbertClosedOperatorMomentumDerivative U hU hp β γ σ hβ hγ hσ f‖
+⊢ False
+failed
