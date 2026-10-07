@@ -1,0 +1,12 @@
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:208:16: error: Type mismatch: After simplification, term
+  c0Lgv_transition_bound B P hB U hU hp L hF γ σ hγ T f
+ has type
+  @LE.le ℝ Real.instLE ‖c0Lgv_transition B P hB U hU hp L hF γ σ hγ T f‖ ‖f‖
+but is expected to have type
+  @LE.le ℝ Real.instLE ‖(c0Lgv_linear B P hB U hU hp L hF γ σ hγ T) f‖ ‖f‖
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:221:2: error: Type mismatch: After simplification, term
+  c0Lgv_transition_bound B P hB U hU hp L hF γ σ hγ T f
+ has type
+  @LE.le ℝ Real.instLE ‖c0Lgv_transition B P hB U hU hp L hF γ σ hγ T f‖ ‖f‖
+but is expected to have type
+  @LE.le ℝ Real.instLE ‖(textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f‖ ‖f‖

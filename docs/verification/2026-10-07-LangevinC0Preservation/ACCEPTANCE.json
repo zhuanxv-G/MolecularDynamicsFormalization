@@ -1,0 +1,143 @@
+{
+  "started_at": "2026-10-07T13:09:55.8158046+08:00",
+  "finished_at": "2026-10-07T13:11:10.1613749+08:00",
+  "head_at_check": "ef152ae732a172e6bf0614c1a13e5bb543f48ac2",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9178,
+  "audit_declarations": 2619,
+  "inputs": 261,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_initial_bound_ae",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_escaping_sequence_ae",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_zero_at_infty",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_apply",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_norm_le",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_zero",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_add"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_momentum_initial_bound_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_escaping_sequence_ae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionExpectation_zero_at_infty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "ff01b98667840ecdfe6fd9fcb03d474aaa98713ae46e10dfc31cd9d96ec6a886"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "8f6b09af05e6b0cc854da1dad34bb7c9aa17eb0eccc75237e76185e16def2f60"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "27ff466fc99a961883469e366c86e608441fb32fb51bd330d7a5fd1efaa5eebe"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "9181b001f1f48d8788366d2433a1d57d62c8c233784ce3b18afb3cc04821a6d1"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_original_process": "same_existing_unitmass_periodic6_47_original_B_P_Wiener_same_original_kappa",
+  "reverse_momentum_bound": "derived_true_actual_Duhamel_force_convolution_uniform_M_exp_minus_gamma_t_normp0_le_normpt_plus_M_div_gamma_plus_norm_same_noise_uniform_initialphase_time",
+  "initial_compact_escape": "proved_true_compacttorus_times_momentum_closedballs_and_actual_momentum_norm_atTop",
+  "actual_endpoint_escape": "derived_countable_common_AE_for_initial_escaping_sequence_fixed_T_nonnegative_same_damped_noise_uniform_M",
+  "actual_C0_preservation": "proved_initial_filter_countability_true_compact_phase_basis_and_endpoint_escape_boundedtest_DCTsequence_true_original_expectation",
+  "actual_C0_operator": "defined_genuine_ContinuousLinearMap_from_true_C0_preservation_actual_probability_integrable_add_smul_and_norm_contraction",
+  "original_kernel_identity": "operator_apply_exact_original_kappa_integral",
+  "operator_norm": "proved_le_one",
+  "time_zero": "proved_original_kappa0Dirac_genuine_CLM_identity",
+  "semigroup": "proved_true_original_Chapman_Kolmogorov_bounded_transition_same_C0_CLM_composition",
+  "model": "original_WienerB_P_Cinfty_periodic_U_forceLip_unitmass_gamma_positive_sigma_arbitrary_Nzero_time_all_NNReal",
+  "target_C0_properness_linear_semigroup_hypothesis": "none",
+  "U_lower_density_stationarity_Gibbs_hypothesis": "none",
+  "Nzero": "included_no_Nonempty_assumption",
+  "local_output": "local05_all8_private_exit0_empty_log_zero_Leanwarning",
+  "local_failures": "01_regular_hU_hp_include_filter_Tendsto_comap_conversion_02_composition_norm_algebra_atom_03_foundation3_passed_04_private_linear_publicCLM_norm_transparency_change_05_final_passed_raw_preserved",
+  "strong_norm_continuity": "not_proved",
+  "closed_generator_domain": "not_proved",
+  "graph_core": "not_proved",
+  "necessary_dependency": "original_Theorem6_2_actual_generator_C0_semigroup_underlying_needed_dependency",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

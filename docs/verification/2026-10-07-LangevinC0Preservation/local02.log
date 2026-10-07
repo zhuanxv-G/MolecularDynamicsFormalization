@@ -1,0 +1,54 @@
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:123:2: error: linarith failed to find a contradiction
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ≥0
+x : ℕ → textbookLangevinPeriodicPhase N
+hx : Tendsto x atTop (cocompact (textbookLangevinPeriodicPhase N))
+M : ℝ
+left✝ : 0 ≤ M
+hb :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+hAll :
+  ∀ᵐ (sample : Ω) ∂P,
+    ∀ (n : ℕ) (t : ℝ),
+      0 ≤ t →
+        Real.exp (-γ * t) * ‖(x n).2‖ ≤
+          ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ (x n) B t sample).2‖ + M / γ +
+            ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+hInitial : Tendsto ((fun x => ‖x.2‖) ∘ x) atTop atTop
+sample : Ω
+hs :
+  ∀ (n : ℕ) (t : ℝ),
+    0 ≤ t →
+      Real.exp (-γ * t) * ‖(x n).2‖ ≤
+        ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ (x n) B t sample).2‖ + M / γ +
+          ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+he : 0 < Real.exp (-γ * ↑T)
+Z : ℝ := ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) ↑T‖
+n : ℕ
+hn : (R + M / γ + Z) / Real.exp (-γ * ↑T) ≤ ((fun x => ‖x.2‖) ∘ x) n
+hn' : R + M / γ + Z ≤ ((fun x => ‖x.2‖) ∘ x) n * Real.exp (-γ * ↑T)
+hm :
+  Real.exp (-γ * ↑T) * ‖(x n).2‖ ≤
+    ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ (x n) B (↑T) sample).2‖ + M / γ + Z
+a✝ : ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ (x n) B (↑T) sample).2‖ < R
+⊢ False
+failed

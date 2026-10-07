@@ -1,0 +1,43 @@
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:66:6: error: Type mismatch
+  c0Lgv_initial_momentum_escape N
+has type
+  Tendsto (fun x => ‖x.2‖) (cocompact (textbookLangevinPeriodicPhase N)) atTop
+but is expected to have type
+  cocompact (textbookLangevinPeriodicPhase N) ≤ comap (fun x => ‖x.2‖) atTop
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:86:69: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:86:72: error(lean.unknownIdentifier): Unknown identifier `hp`
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:89:5: error(lean.unknownIdentifier): Unknown identifier `hU.of_le`
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:91:40: error(lean.unknownIdentifier): Unknown identifier `hU.of_le`
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:105:13: error(lean.unknownIdentifier): Unknown identifier `hU`
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:105:16: error(lean.unknownIdentifier): Unknown identifier `hp`
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:104:9: error: Tactic `rcases` failed: `x✝ : ?m.49` is not an inductive datatype
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:140:13: error: Application type mismatch: The argument
+  hU
+has type
+  ContDiff ℝ ∞ U
+of sort `Prop` but is expected to have type
+  ℝ≥0
+of sort `Type` in the application
+  textbookLangevinPeriodicGlobalRandomPhase_escaping_sequence_ae B P hB U hU
+docs/verification/2026-10-07-LangevinC0Preservation/Draft.lean:134:61: error: unsolved goals
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+T : ℝ≥0
+f : BoundedContinuousFunction (textbookLangevinPeriodicPhase N) ℝ
+hf : Tendsto (⇑f) (cocompact (textbookLangevinPeriodicPhase N)) (𝓝 0)
+this✝ : IsProbabilityMeasure P
+this : (cocompact (textbookLangevinPeriodicPhase N)).IsCountablyGenerated
+x : ℕ → textbookLangevinPeriodicPhase N
+hx : Tendsto x atTop (cocompact (textbookLangevinPeriodicPhase N))
+⊢ Tendsto (textbookLangevinPeriodicTransitionExpectation B P U hU hp L hF γ σ T f ∘ x) atTop (𝓝 0)
