@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-10-07T12:05:14.6106236+08:00",
+  "finished_at": "2026-10-07T12:06:28.6739632+08:00",
+  "head_at_check": "8844ae18610784db88ea47f86b2b5f42ed9dd96c",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9173,
+  "audit_declarations": 2594,
+  "inputs": 256,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicCompactC2_lift_hessian_bound",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_compactC2_local_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_compactC2_actual_differentialOperator_limit"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicCompactC2_lift_hessian_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_compactC2_local_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicTransitionKernel_compactC2_actual_differentialOperator_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "1573d33de5519c70a16b76eca2efa39a708b9c8c8efcb6a35756f2add134c578"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "7191884bd5683bd99d14f8419112c9d173577772f994b74a84c72c57516274ac"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "existing_periodic_operator": "same_existing_textbookLangevinPeriodicDifferentialOperator_no_replacement_definition",
+  "periodic_testclass": "continuous_F_compact_support_on_periodic_phase_true_C2_real_lift_no_supplied_Hessian_bound",
+  "actual_hessian_bound": "derived_compact_momentum_tsupport_image_times_fundamental_q_cell_continuous_Hessian_integer_jet_periodicity_and_zero_off_lift_tsupport",
+  "real_lift_compact_support": "not_assumed_periodic_real_lift_generally_not_compactly_supported",
+  "empty_support_or_Nzero": "included_max_C_zero_no_nonempty_compact_set_assumption",
+  "actual_periodic_kernel_F_local_integrability": "same_original_C2_integrable_map_theorem_with_true_derived_Hessian_bound",
+  "actual_periodic_kernel_C2_generator": "same_original_kappa_pointwise_expectation_quotient_existing_PeriodicDifferentialOperator_with_derived_bound",
+  "target_Hessian_bound_or_moment_limit_or_generator_hypothesis": "none",
+  "higher_C3_observable_regularity": "not_required",
+  "closed_semigroup_generator_domain": "not_proved",
+  "graph_core_theorem": "not_proved",
+  "full_arbitrary_C2_actual_generator_identity": "not_proved",
+  "model": "same_original_unitmass_periodic_Cinfty_U_forceLip_original_B_P_Wiener_gamma_positive_sigma_arbitrary_Nzero_no_Ulower_density_stationarity_continuous_F_compact_support_C2_lift",
+  "local_output": "local02_all3_private_exit0_empty_log_no_Lean_error_or_warning_local01_let_target_rewrite_failure_preserved",
+  "necessary_dependency": "original_Langevin6_47_periodic_compact_C2_actual_generator_same_original_kernel",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

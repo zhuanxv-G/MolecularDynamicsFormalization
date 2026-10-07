@@ -1,0 +1,11 @@
+# 原周期κ紧支撑C²测试函数实际生成元
+
+3公开声明证明真实periodicphase上的compact support F且真实lift F∘originalprojection C²自动有globalHessian bound，并用于sameoriginalκ局部可积与期待quotient→既有PeriodicDifferentialOperator。没有替代κ/operator，没有suppliedHessianbound/目标momentlimitgenerator/C³前提。F连续、支撑紧、real lift C²的测试类明确；只识别pointwise expectation generator，不声称closed semigroupdomain或graph-core定理/所有任意C²。
+
+具体bound证明：K为tsupportF的momentum投影，hcs给Kcompact；D=位置fundamentalcell Icc01×Kcompact，C²的Hessian连续给D上界C。任意动量在K的realphase，q=fractq+floorq；真integerprojection shift不变和iteratedFDeriv真平移式给Hessian periodic，将任意q归约D。K外由support_comp continuousprojection及iteratedderivative support继承给Hessian0。取M=maxC0，无D非空假设，F=0及N0都包含。real lift一般不compact support，未假设这一错误性质。再从8844ae1已有sameoriginalκ C²test integrability/actualoperator用derivedM真正接合。
+
+local01只有末尾let g缩写目标未改写错误，所有integerjet/compact/frac/support及桥接未报错；明确change真实g后rw真实hzero，local02全3/private空log0零warning。没有调linter/resource或更改模型假设，raw失败log byte保留。原unitmass6.47 WienerB P/C∞periodicU/forceLip/γpositive/σ任意/N0，无Ulower/density/stationarity前提。固定Lean4.34.0/mathlib5ed2965，唯一full-check01。PDF SHA未变，271–275原text/priorvisual273复用，无新增视觉。DEP138/NOT147。
+
+实际positive-time密度存在/Gibbs身份、负责人印刷时间零density及旧Hl Laplacian修订、closed任意C²domain/graphcore、一般6.2/CORE未完；既有literaldensity时间零反证与printed旧Laplacian反例保持，不因compacttest generator推全局结论。
+
+full-check01 passed：9173 jobs/2594公理声明/256exactinputs；10checks退出0/allinput原rawlogs SHA一致、新3public逐名仅标准axioms、0Leanwarnings，固定Lean4.34.0/mathlib5ed2965，local02全3/private空log0。真实compactperiodicphase F+C²lift由momentumcompact×fundamentalq与Hessian连续、integerjets/fract、support外Hessian0导globalbound，F0/N0/maxC0包含。用真正derivedM接sameoriginalκ局部可积/既有PeriodicDifferentialOperator实际期待quotient，无suppliedHessianbound/C³/目标generator或density前提，不假设real lift紧支撑。local01 let目标缩写改写失败raw保留；closed domain/graphcore/任意C²/actualdensity/Gibbs/owner/general6.2/CORE仍未完。

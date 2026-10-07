@@ -368,3 +368,5 @@ import MolecularDynamics.Chapter06.LangevinC2ObservableTaylor
 import MolecularDynamics.Chapter06.LangevinC2Generator
 
 import MolecularDynamics.Chapter06.LangevinC2KernelGenerator
+
+import MolecularDynamics.Chapter06.LangevinCompactC2Generator
