@@ -1,0 +1,62 @@
+docs/verification/2026-10-07-LangevinC2Generator/Draft.lean:17:64: error: unsolved goals
+case fst
+N : ℕ
+v : textbookLangevinPhase N
+i : Fin N
+⊢ v.1 i = (∑ a₁, (v.1 a₁ • Pi.single a₁ 1, 0)).1 i + (∑ a₂, (0, v.2 a₂ • Pi.single a₂ 1)).1 i
+
+case snd
+N : ℕ
+v : textbookLangevinPhase N
+i : Fin N
+⊢ v.2 i = (∑ a₁, (v.1 a₁ • Pi.single a₁ 1, 0)).2 i + (∑ a₂, (0, v.2 a₂ • Pi.single a₂ 1)).2 i
+docs/verification/2026-10-07-LangevinC2Generator/Draft.lean:20:66: warning: This simp argument is unused:
+  Finset.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.sum_sum_type, c2Gen_coord, c2Gen_basis, Pi.single_apply, Pi.smul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinC2Generator/Draft.lean:21:4: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.sum_sum_type, c2Gen_coord, c2Gen_basis, Finset.sum_apply, Pi.smul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinC2Generator/Draft.lean:21:21: warning: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.sum_sum_type, c2Gen_coord, c2Gen_basis, Finset.sum_apply, Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinC2Generator/Draft.lean:25:70: error: unsolved goals
+N : ℕ
+A : textbookLangevinPhase N →L[ℝ] ℝ
+v : textbookLangevinPhase N
+⊢ ∑ x, c2Gen_coord v x * A (c2Gen_basis x) =
+    ∑ x, c2Gen_coord (∑ a, c2Gen_coord v a • c2Gen_basis a) x * A (c2Gen_basis x)
+docs/verification/2026-10-07-LangevinC2Generator/Draft.lean:39:36: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `sum_apply x`).
+docs/verification/2026-10-07-LangevinC2Generator/Draft.lean:39:67: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-07-LangevinC2Generator/Draft.lean:38:13: error: unsolved goals
+N : ℕ
+H : textbookLangevinPhase N →L[ℝ] textbookLangevinPhase N →L[ℝ] ℝ
+v : textbookLangevinPhase N
+he : v = ∑ a, c2Gen_coord v a • c2Gen_basis a
+a : Fin N ⊕ Fin N
+a✝¹ : a ∈ Finset.univ
+b : Fin N ⊕ Fin N
+a✝ : b ∈ Finset.univ
+⊢ c2Gen_coord v a * c2Gen_coord v b * (H (c2Gen_basis b)) (c2Gen_basis a) =
+    c2Gen_coord v a * c2Gen_coord v b * (H (c2Gen_basis a)) (c2Gen_basis b)

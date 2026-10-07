@@ -1,0 +1,49 @@
+[
+  {
+    "path": "docs/verification/2026-10-07-LangevinC2Generator/FULL_DRIVER.log",
+    "sha256": "f7402636d61ab8dc1e26fdc3c58256c8156f1b0f35368b8af40f199bcc10c36b",
+    "line_numbers": [
+      289,
+      291,
+      296,
+      298,
+      303,
+      305,
+      309,
+      311,
+      316,
+      318,
+      322,
+      324
+    ],
+    "reason": "Original diagnostic output preserved byte for byte"
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinC2Generator/local02.log",
+    "sha256": "bcec346f22534eb87e5f1ca893172d5a1c1d06b1c1ec611cce16bc9bd0dd5c11",
+    "line_numbers": [
+      48,
+      50
+    ],
+    "reason": "Original diagnostic output preserved byte for byte"
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinC2Generator/full-check01/lake_build.log",
+    "sha256": "e332d2fb5d1e3060597a32112304d9812a96495c8d4d511b3fb9d699a14b91ef",
+    "line_numbers": [
+      7,
+      9,
+      14,
+      16,
+      21,
+      23,
+      27,
+      29,
+      34,
+      36,
+      40,
+      42
+    ],
+    "reason": "Original diagnostic output preserved byte for byte"
+  }
+]

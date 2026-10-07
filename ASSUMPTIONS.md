@@ -688,3 +688,5 @@ LangevinHamiltonianPowerExpectedDrift：原actualunitmass6.47同B P Wiener/C∞p
 LangevinHamiltonianPowerKernelGenerator：原unitmass6.47 sameactualκ同B P Wiener/C∞periodicU/forceLip、γpositiveσ任意；所有naturall含0且N0 originalendpoint/kernel局部可积0≤t≤1不需Ulower，实际点态期待生成元l≥1；physicalβpositive原sqrtFD，Lyapunov额外U≥1真实correctedfactor2。无density/stationarity/目标moment或actualgeneratorpremise；仅pointwiseexpectationoperator而非closedBanach/Fellerdomain/fullC²/Gibbs/一般6.2。
 
 LangevinC2ObservableTaylor：原sameunitmass6.47 WienerB P/C∞periodicU/forceLip、γpositiveσ任意、N0包括，无Ulower/density/stationarity。测试f是真C²，explicit∀z normactualHessian≤M（hM非负用Peano组合）；不需C³。不将actualremainderbound或期待极限作为假设；trueHessian积分/continuouslocalPeano、原实际secondCt/fourthCt²derive所有R可积/norm与signedquotient0。仅必要依赖，不冒称all arbitraryC²/fullclosedgenerator或whole6.2。
+
+LangevinC2Generator：原sameunitmass6.47 WienerB P/C∞periodicU/forceLip、γpositiveσ任意，N0包括，无Ulower/density/stationarity。测试f C²，explicit∀z actualHessian norm≤M，hM非负；实际first/second/remainder所有limit derive既有真实矩而非前提，任意bilinear有序展开不假设symmetry。pure方向算子Frechet表达仅需f C²。5public证明realphasepointwise期待生成元，不冒称任意unboundedC²/full closed domain或当前testclassperiodicκ/Gibbs/whole6.2。

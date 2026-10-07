@@ -1,0 +1,106 @@
+{
+  "started_at": "2026-10-07T11:49:00.6784036+08:00",
+  "finished_at": "2026-10-07T11:50:16.2015463+08:00",
+  "head_at_check": "636a92059b591dba6c401a99f1d4f5d4cea0402d",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9171,
+  "audit_declarations": 2586,
+  "inputs": 254,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_linear_mean_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_bilinear_mean_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinDifferentialOperator_C2_frechet",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_C2_observable_increment_integrable",
+    "MolecularDynamics.textbookLangevinGlobalRandomPhase_C2_actual_differentialOperator_limit"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_linear_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicRealPhaseIncrement_bilinear_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDifferentialOperator_C2_frechet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGlobalRandomPhase_C2_observable_increment_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinGlobalRandomPhase_C2_actual_differentialOperator_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "f7402636d61ab8dc1e26fdc3c58256c8156f1b0f35368b8af40f199bcc10c36b"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "a6ef2281ee307ecc7f502dab2ea4ea4edda10a340093393f3fe6feb15390d065"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "bcec346f22534eb87e5f1ca893172d5a1c1d06b1c1ec611cce16bc9bd0dd5c11"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_original_linear_expectation_coefficient": "true_ordered_phase_coordinate_finite_sum_original_q_p_first_means_give_CLM_drift",
+  "actual_original_bilinear_expectation_coefficient": "true_ordered_double_finite_sum_original_qq_qp_pp_covariances_give_sigma2_momentum_trace_no_Hsymmetry_assumption",
+  "true_C2_directional_operator_expression": "derived_directional_deriv_comp_add_smul_and_true_second_iteratedFDeriv_no_generator_premise",
+  "actual_C2_increment_integrability": "true_linear_bilinear_MemLp_products_and_previously_accepted_Taylor_remainder",
+  "actual_C2_expectation_generator": "proved_pointwise_same_original_realphase_expectation_quotient_to_differentialOperator_on_explicit_C2_global_Hessian_bound_testclass",
+  "explicit_testclass_Hessian_bound": "C2_and_forall_real_phase_norm_actual_iteratedFDeriv_two_le_M_not_all_unbounded_C2",
+  "higher_C3_observable_regularity": "not_required",
+  "target_mean_covariance_remainder_limit_or_generator_hypothesis": "none",
+  "actual_C2_periodic_kernel_bridge": "not_yet_proved_for_this_testclass_real_phase_result_only",
+  "closed_semigroup_generator_domain": "not_proved",
+  "full_arbitrary_C2_actual_generator_identity": "not_proved",
+  "model": "same_unitmass_actual_periodic_Cinfty_U_forceLip_original_B_P_Wiener_gamma_positive_sigma_arbitrary_no_Ulower_density_stationarity_Nzero_included_explicit_testclass_C2_global_Hessian_bound",
+  "local_output": "local04_exit0_empty_log_no_Lean_error_or_warning_local01_02_real_failures_and_local03_base_success_preserved",
+  "necessary_dependency": "original_Langevin6_47_actual_C2_testing_generator_not_independent_generalization",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
