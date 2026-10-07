@@ -1,0 +1,12 @@
+docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/Draft.lean:232:2: error: Type mismatch: After simplification, term
+  Integrable.neg hi
+ has type
+  Integrable
+    (-fun x =>
+      -(↑↑f x * textbookLangevinPeriodicDirectionalDerivative G (textbookLangevinCanonicalCoordinateDirection j) x))
+    (volume.prod volume)
+but is expected to have type
+  Integrable
+    (fun x =>
+      ↑↑f x * textbookLangevinPeriodicDirectionalDerivative G (textbookLangevinCanonicalCoordinateDirection j) x)
+    (volume.prod volume)

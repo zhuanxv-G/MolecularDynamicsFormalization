@@ -1,0 +1,28 @@
+docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/Draft.lean:47:4: error: Type mismatch: After simplification, term
+  huc
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    (U ∘ fun t => z.1 + t • Pi.single i 1) ((fderiv ℝ U z.1) (Pi.single i 1)) 0
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.instAddCommGroup Semiring.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun t => U (z.1 + t • Pi.single i 1))
+    ((fderiv ℝ U z.1) (Pi.single i 1)) 0
+docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/Draft.lean:232:2: error: Type mismatch: After simplification, term
+  Integrable.neg hi
+ has type
+  Integrable
+    (-fun x =>
+      -(↑↑f x * textbookLangevinPeriodicDirectionalDerivative G (textbookLangevinCanonicalCoordinateDirection j) x))
+    (volume.prod volume)
+but is expected to have type
+  Integrable
+    (fun x =>
+      ↑↑f x * textbookLangevinPeriodicDirectionalDerivative G (textbookLangevinCanonicalCoordinateDirection j) x)
+    (volume.prod volume)
+docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/Draft.lean:272:81: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/Draft.lean:272:81: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

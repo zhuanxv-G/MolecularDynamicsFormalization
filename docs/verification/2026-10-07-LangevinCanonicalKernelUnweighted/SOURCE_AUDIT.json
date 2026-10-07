@@ -1,0 +1,41 @@
+{
+  "original_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "printed_pages": [
+    256,
+    257
+  ],
+  "pdf_pages": [
+    277,
+    278
+  ],
+  "original_text_read_current_reused_exact_path": "docs/verification/2026-10-07-LangevinCanonicalEnergy/ORIGINAL_PDF277_278.log",
+  "original_text_sha256": "2e61d88b5f401a122ef2fce7f30e76cadfd7f4c0bda798eec882e0e3229dacac",
+  "visual_checked_current_pages": [],
+  "visual_checked_prior_exact_unchanged_pages": [
+    278
+  ],
+  "prior_render_path": "docs/verification/2026-10-07-LangevinC0ConservedObservable/original-PDF278.png",
+  "prior_render_sha256": "c7c839b7ec2b02c7b52288a986d4bfa3bffa992bd0239ea07878b59e5d6d863c",
+  "reference": "Prop6_4_actual_closed_L_kernel_true_unweighted_coordinate_testing_and_local_integrability",
+  "actual_kernel_true_unweighted_testing_distinct_from_full_constancy_or_Poisson": true,
+  "no_new_original_page_render": true,
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_density_and_reciprocal_real_lift_smoothness": "proved_from_same_true_normalized_density_and_everywhere_positivity",
+  "actual_density_coordinate_derivatives": "proved_literal_DR_equals_minus_coordinateLogSlope_times_R",
+  "actual_reciprocal_coordinate_derivatives": "proved_true_product_rule_and_positivity",
+  "actual_density_removed_coordinate_transpose": "proved_literal_AdjGoverR_equals_minus_DGoverR",
+  "actual_canonical_L2_unweighted_locallyIntegrable": "proved_from_true_Rf_integrability_and_continuous_Rinverse_local_multiplier",
+  "actual_canonical_L2_unweighted_DG_product_integrable": "proved_actual_withDensity_integrability_and_true_compact_smooth_GoverR_tests",
+  "actual_closed_L_kernel_unweighted_coordinate_testing": "proved_true_Haar_times_Lebesgue_integral_zero",
+  "no_global_reciprocal_bound_or_constant_kernel_hypothesis": true,
+  "weak_zero_gradient_implies_actual_canonical_constant": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

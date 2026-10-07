@@ -3,15 +3,15 @@ function Save-LocalCheckpoint([string]$Title,[string]$Details,[string]$Next) {
  $stamp=[DateTimeOffset]::Now.ToOffset([TimeSpan]::FromHours(8)).ToString('yyyy-MM-dd HH:mm:ss zzz')
  $head=(git rev-parse HEAD).Trim()
  $branch=(git branch --show-current).Trim()
- $latest=Get-Content -LiteralPath 'docs/verification/2026-10-07-LangevinCanonicalKernelTransport/ACCEPTANCE.json' -Raw | ConvertFrom-Json
+ $latest=Get-Content -LiteralPath 'docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/ACCEPTANCE.json' -Raw | ConvertFrom-Json
  $lines=@(
  '# 当前可操作状态'
  "最后更新时间（Asia/Shanghai）：$stamp"
  '当前聊天01a10bc0-bc8d-7043-8df9-21a6b0bde09a；handoff ready/new_thread_id正确。'
  "工程C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization；branch $branch；HEAD $head。"
  '固定Lean4.34.0/mathlib5ed2965256430c3649e86755f9576b54eca72435，只本地。'
- "既有最新正式验收基线LangevinCanonicalKernelTransport五声明：$head，$($latest.jobs)jobs/2843公理/285exactinputs，full01全部10checks0/0Leanwarning/input/raw/index/postcommit SHA。local01五声明首次空log0。samecanonical原HtestL2及literalOUcoordtranspose、actualclosedLkernel的ptranspose/OU/Hamiltonian弱测试0已证；q弱导数0/p独立/全kernel常数性/H1密度/actualgeneratorcore/κInv/Poisson未证。"
- '本轮Orbit8、C0ConservedObservable5、GibbsStationaryExpression12、CanonicalMeasure14、CanonicalPartition11、CanonicalMomentumIBP8、CanonicalPositionIBP3、CanonicalWeakBalance13、CanonicalEnergy12、CanonicalWeightedAdjoint9、CanonicalConjugation3、CanonicalSmoothDensity7、CanonicalHilbertGraph10、CanonicalHilbertClosed10、CanonicalHilbertDissipativity5、CanonicalCoordinateWeakDerivative11、CanonicalWeakH1十五声明、CanonicalH1MeanZero十六声明、CanonicalCoordinateClosed十一声明、CanonicalMomentumClosedEnergy十三声明、CanonicalKernelTransport五声明二十一批共201public已正式验收；不代表整本教材完成。'
+ "既有最新正式验收基线LangevinCanonicalKernelUnweighted八声明：$head，$($latest.jobs)jobs/2859公理/287exactinputs，full01全部10checks0/0Leanwarning/input/raw/index/postcommit SHA。local05八声明空log0。真实density/reciprocal∞和coordinate求导、literal去权重transpose、原canonicalL2 reference局部可积/fDG可积及actualkernel Haar×Leb ordinaryweak测试0已证；ordinaryweak0至constants/全kernel常数性/H1密度/actualgeneratorcore/κInv/Poisson未证。"
+ '本轮Orbit8、C0ConservedObservable5、GibbsStationaryExpression12、CanonicalMeasure14、CanonicalPartition11、CanonicalMomentumIBP8、CanonicalPositionIBP3、CanonicalWeakBalance13、CanonicalEnergy12、CanonicalWeightedAdjoint9、CanonicalConjugation3、CanonicalSmoothDensity7、CanonicalHilbertGraph10、CanonicalHilbertClosed10、CanonicalHilbertDissipativity5、CanonicalCoordinateWeakDerivative11、CanonicalWeakH1十五声明、CanonicalH1MeanZero十六声明、CanonicalCoordinateClosed十一声明、CanonicalMomentumClosedEnergy十三声明、CanonicalKernelTransport五声明、CanonicalKernelWeakH1八声明、CanonicalKernelUnweighted八声明二十三批共217public已正式验收；不代表整本教材完成。'
  "当前：$Title"
  $Details
  "恢复第一动作：$Next"
@@ -25,10 +25,10 @@ function Save-LocalCheckpoint([string]$Title,[string]$Details,[string]$Next) {
  [IO.File]::AppendAllText((Join-Path (Get-Location) 'docs/handoff/WORK_LOG.zh-CN.md'),$entry,[Text.UTF8Encoding]::new($false))
 }
 $ErrorActionPreference='Stop'
-$base='docs/verification/2026-10-07-LangevinCanonicalKernelTransport'
+$base='docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted'
 $r=Get-Content -LiteralPath "$base/full-check01/CHECK_REPORT.json" -Raw | ConvertFrom-Json
 if($r.machine_check_status -ne 'passed' -or $r.exit_code -ne 0 -or $r.checks.Count -ne 10 -or @($r.checks | Where-Object exit_code -ne 0).Count -ne 0){throw 'Full01 incomplete or failed'}
-if($r.inputs.Count -ne 285 -or $r.actual_mathlib_revision -cne '5ed2965256430c3649e86755f9576b54eca72435' -or $r.lean_version -notmatch 'version 4.34.0,'){throw 'Config/count mismatch'}
+if($r.inputs.Count -ne 287 -or $r.actual_mathlib_revision -cne '5ed2965256430c3649e86755f9576b54eca72435' -or $r.lean_version -notmatch 'version 4.34.0,'){throw 'Config/count mismatch'}
 foreach($i in $r.inputs){if((Get-FileHash -LiteralPath $i.relative_path).Hash.ToLowerInvariant() -cne $i.sha256){throw "Input changed $($i.relative_path)"}}
 foreach($c in $r.checks){if((Get-FileHash -LiteralPath "$base/full-check01/$($c.raw_log)").Hash.ToLowerInvariant() -cne $c.raw_log_sha256){throw "Raw changed $($c.raw_log)"}}
 $warnings=@()
@@ -39,7 +39,7 @@ foreach($n in @('lake_build','scratch','axiom_dependencies')){
 if($warnings.Count -gt 0){throw 'Lean warning found'}
 $alog=[IO.File]::ReadAllText((Join-Path (Get-Location) "$base/full-check01/axiom_dependencies.log"))
 $axiomRecords=[regex]::Matches($alog,"(?s)'([^']+)' depends on axioms:\s*\[([^\]]*)\]|'([^']+)' does not depend on any axioms")
-if($axiomRecords.Count -ne 2843){throw "Audit declaration count $($axiomRecords.Count)"}
+if($axiomRecords.Count -ne 2859){throw "Audit declaration count $($axiomRecords.Count)"}
 $all=@($axiomRecords | ForEach-Object {
  $name=if($_.Groups[1].Success){$_.Groups[1].Value}else{$_.Groups[3].Value}
  $axs=@(($_.Groups[2].Value -split ',') | ForEach-Object {$_.Trim()} | Where-Object {$_})
@@ -47,7 +47,7 @@ $all=@($axiomRecords | ForEach-Object {
  [ordered]@{name=$name;axioms=$axs}
 })
 $pub=@(Get-Content -LiteralPath "$base/PUBLIC_DECLARATIONS.json" -Raw | ConvertFrom-Json)
-if($pub.Count -ne 5){throw 'Public count'}
+if($pub.Count -ne 8){throw 'Public count'}
 $new=@(foreach($name in $pub){
  $found=@($all | Where-Object {$_.name -ceq $name})
  if($found.Count -ne 1){throw "Public audit count $name"}
@@ -55,20 +55,19 @@ $new=@(foreach($name in $pub){
 })
 $btxt=[IO.File]::ReadAllText((Join-Path (Get-Location) "$base/full-check01/lake_build.log"))
 if($btxt -notmatch 'Build completed successfully \((\d+) jobs\)'){throw 'Missing build jobs'}
-$jobs=[int]$Matches[1];if($jobs -lt 9202){throw 'Job count mismatch'}
+$jobs=[int]$Matches[1];if($jobs -lt 9204){throw 'Job count mismatch'}
 $flags='{
   "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
-  "actual_Hamiltonian_test_L2": "proved_from_actual_original_H_equals_original_zero_friction_zero_noise_differential_expression",
-  "actual_OU_coordinate_transpose_identity": "proved_literal_original_OU_equals_minus_gamma_over_beta_sum_p_transpose_of_DpG",
-  "actual_closed_L_kernel_momentum_transpose_testing": "proved_from_entire_closed_domain_momentum_energy_and_true_coordinate_graph_pairing",
-  "actual_closed_L_kernel_OU_testing": "proved_using_true_smooth_DpG_tests_literal_OU_identity_and_actual_L2_product_integrability",
-  "actual_closed_L_kernel_Hamiltonian_testing": "proved_from_original_closed_graph_weighted_transpose_pairing_minus_H_plus_OU_and_actual_vanishing_OU_pairing",
-  "all_actual_L2_test_products_integrable": "proved_in_original_canonical_measure",
-  "no_momentum_independence_H1_domain_or_kernel_constancy_hypotheses": true,
-  "full_closed_L_kernel_momentum_independence": "not_proved",
-  "full_closed_L_kernel_q_weak_derivative_zero": "not_proved",
+  "actual_density_and_reciprocal_real_lift_smoothness": "proved_from_same_true_normalized_density_and_everywhere_positivity",
+  "actual_density_coordinate_derivatives": "proved_literal_DR_equals_minus_coordinateLogSlope_times_R",
+  "actual_reciprocal_coordinate_derivatives": "proved_true_product_rule_and_positivity",
+  "actual_density_removed_coordinate_transpose": "proved_literal_AdjGoverR_equals_minus_DGoverR",
+  "actual_canonical_L2_unweighted_locallyIntegrable": "proved_from_true_Rf_integrability_and_continuous_Rinverse_local_multiplier",
+  "actual_canonical_L2_unweighted_DG_product_integrable": "proved_actual_withDensity_integrability_and_true_compact_smooth_GoverR_tests",
+  "actual_closed_L_kernel_unweighted_coordinate_testing": "proved_true_Haar_times_Lebesgue_integral_zero",
+  "no_global_reciprocal_bound_or_constant_kernel_hypothesis": true,
+  "weak_zero_gradient_implies_actual_canonical_constant": "not_proved",
   "full_closed_L_kernel_constancy": "not_proved",
-  "actual_closed_L_domain_full_q_and_p_H1_inclusion": "not_proved_or_assumed",
   "weighted_H1_norm_smooth_density": "not_proved",
   "actual_L2_semigroup_generator_identification": "not_proved",
   "actual_semigroup_generator_graph_core": "not_proved",
@@ -79,7 +78,7 @@ $flags='{
   "core_scope": "incomplete"
 }' | ConvertFrom-Json -AsHashtable
 $a=[ordered]@{started_at=$r.started_at;finished_at=$r.finished_at;head_at_check=$r.head;branch=$r.branch;jobs=$jobs;audit_declarations=$axiomRecords.Count;inputs=$r.inputs.Count;new_public_declarations=$pub;new_public_axiom_audit=$new;all_checks_exit_zero=$true;all_inputs_sha256_verified=$true;all_raw_logs_sha256_verified=$true;all_public_axioms_standard=$true;lean_warnings=0}
-$a['local_logs']=@('FULL_DRIVER.log','local01.log') | ForEach-Object {[ordered]@{path=$_;sha256=(Get-FileHash -LiteralPath "$base/$_").Hash.ToLowerInvariant()}}
+$a['local_logs']=@('FULL_DRIVER.log','local01.log','local02.log','local03.log','local04.log','local05.log') | ForEach-Object {[ordered]@{path=$_;sha256=(Get-FileHash -LiteralPath "$base/$_").Hash.ToLowerInvariant()}}
 foreach($k in $flags.Keys){$a[$k]=$flags[$k]}
 $a | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath "$base/ACCEPTANCE.json" -Encoding utf8
 $local=Get-Content -LiteralPath "$base/LOCAL_CHECK.json" -Raw | ConvertFrom-Json -AsHashtable
@@ -89,11 +88,11 @@ $utf=[Text.UTF8Encoding]::new($false)
 
 
 
-foreach($spec in @(@{path='docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv';id='CH06-DEP-167'},@{path='docs/NOTATION_INVENTORY.csv';id='NOT-CH06-176'})){
+foreach($spec in @(@{path='docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv';id='CH06-DEP-169'},@{path='docs/NOTATION_INVENTORY.csv';id='NOT-CH06-178'})){
  $text=[IO.File]::ReadAllText((Join-Path (Get-Location) $spec.path))
  $records=[regex]::Matches($text,'(?m)^'+[regex]::Escape($spec.id)+',[^\r\n]*')
  if($records.Count -ne 1){throw 'Own ledger identity mismatch'}
- $newRow=$records[0].Value.Replace('local01_passed_full_check01_pending','true_canonical_actual_kernel_momentum_OU_Hamiltonian_testing_passed_full_check01_semantic_pending')
+ $newRow=$records[0].Value.Replace('local05_passed_full_check01_pending','true_canonical_actual_kernel_unweighted_coordinate_testing_and_local_integrability_passed_full_check01_semantic_pending')
  $text=$text.Replace($records[0].Value,$newRow)
  [IO.File]::WriteAllText((Join-Path (Get-Location) $spec.path),$text,$utf)
 }
@@ -105,14 +104,14 @@ foreach($spec in @(@{path='docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv';id='
 
 
 
-[IO.File]::AppendAllText((Join-Path (Get-Location) 'docs/reviews/2026-10-07-LangevinCanonicalKernelTransport/REVIEW.zh-CN.md'),[char]10+"full01通过：$jobs jobs/2843standardaxioms/285exactinputs/all10checks0/0Leanwarnings/allinput/rawSHA，新5public唯一标准公理。actualkernel ptranspose/OU/Hamiltonian弱测试0已证，所有积分真实可积、没有p独立或全kernel常数性假设。local01按字节保留。p独立/q弱导数0/fullkernel常数性/actualgeneratorcore/κInv/完整Prop6.4/CORE未证。"+[char]10,$utf)
+[IO.File]::AppendAllText((Join-Path (Get-Location) 'docs/reviews/2026-10-07-LangevinCanonicalKernelUnweighted/REVIEW.zh-CN.md'),[char]10+"full01通过：$jobs jobs/2859standardaxioms/287exactinputs/all10checks0/0Leanwarnings/allinput/rawSHA，新8public唯一标准公理。真实reference LocallyIntegrable/fDGintegrable及actualkernel ordinaryweak coordinate testing0；无globalRinv界或fullkernelconstancy假设。local01–05 raw保留；ordinaryweak0⇒constant/fullkernelconstancy/actualgeneratorcore/κInv/完整Prop6.4/CORE未证。"+[char]10,$utf)
 foreach($path in @('FORMALIZATION_MAP.md','STATUS.md')){
  $text=[IO.File]::ReadAllText((Join-Path (Get-Location) $path))
- if($path -eq 'FORMALIZATION_MAP.md'){$text=$text.Replace('local01 clean；exactfull01待验。γ>0及原FD', "local01 clean及exactfull01通过$jobs/2843/285。γ>0及原FD")}
- else{$text=$text.Replace('LangevinCanonicalKernelTransport5 local01通过，唯一full01待验；',"LangevinCanonicalKernelTransport5 local01及唯一full01通过$jobs/2843/285；")}
+ if($path -eq 'FORMALIZATION_MAP.md'){$text=$text.Replace('local05 clean；exactfull01待验。无需全局Rinv界', "local05 clean及exactfull01通过$jobs/2859/287。无需全局Rinv界")}
+ else{$text=$text.Replace('LangevinCanonicalKernelUnweighted 8public local05通过，唯一full01待验；',"LangevinCanonicalKernelUnweighted 8public local05及唯一full01通过$jobs/2859/287；")}
  [IO.File]::WriteAllText((Join-Path (Get-Location) $path),$text,$utf)
 }
-$allow=@('MolecularDynamics/Chapter06/LangevinCanonicalKernelTransport.lean','MolecularDynamicsFormalization.lean','Scratch.lean','scripts/CheckAxioms.lean','FORMALIZATION_MAP.md','ASSUMPTIONS.md','docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv','docs/NOTATION_INVENTORY.csv','docs/reviews/2026-10-07-LangevinCanonicalKernelTransport/REVIEW.zh-CN.md')
+$allow=@('MolecularDynamics/Chapter06/LangevinCanonicalKernelUnweighted.lean','MolecularDynamicsFormalization.lean','Scratch.lean','scripts/CheckAxioms.lean','FORMALIZATION_MAP.md','ASSUMPTIONS.md','docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv','docs/NOTATION_INVENTORY.csv','docs/reviews/2026-10-07-LangevinCanonicalKernelUnweighted/REVIEW.zh-CN.md','docs/verification/2026-10-07-LangevinCanonicalKernelTransport/ACCEPT.ps1')
 $evidence=@(Get-ChildItem -LiteralPath $base -File -Recurse | Where-Object {$_.Extension -in @('.json','.log','.png','.ps1')} | ForEach-Object {[IO.Path]::GetRelativePath((Get-Location).Path,$_.FullName).Replace('\','/')})
 $allow+= $evidence
 $staged=@(git diff --cached --name-only)
@@ -156,7 +155,7 @@ $ws=@(git diff --cached --check 2>&1 | ForEach-Object {"$_"})
 [ordered]@{raw_logs_and_original_PDF_render_preserved_byte_exact=$true;raw_log_whitespace_only=$ws;non_log_whitespace_errors=0;non_log_check_command='git diff --cached --check -- . :(glob,exclude)**/*.log'} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath "$base/STAGED_LOG_WHITESPACE.json" -Encoding utf8
 git add -- "$base/STAGED_LOG_WHITESPACE.json"
 if($LASTEXITCODE -ne 0){throw 'Stage raw whitespace audit'}
-git commit -m 'Prove actual closed Langevin kernel momentum OU and Hamiltonian weak testing'
+git commit -m 'Prove genuine unweighted testing and local integrability for closed Langevin kernel'
 if($LASTEXITCODE -ne 0){throw 'Commit failed'}
 $commit=(git rev-parse HEAD).Trim()
 foreach($i in $r.inputs){if((Get-FileHash -LiteralPath $i.relative_path).Hash.ToLowerInvariant() -cne $i.sha256){throw "Postcommit input mismatch $($i.relative_path)"}}
@@ -167,5 +166,5 @@ if(@(git diff --name-only -- '*.lean').Count -ne 0){throw 'Tracked Lean diff aft
 
 
 
-Save-LocalCheckpoint 'CanonicalKernelTransport5正式验收提交' "最新$commit；$jobs jobs/2843standardaxioms/285exactinputs/all10checks0/0Leanwarning/allinput/raw/index/postcommit SHA，local01五声明首次空log0。原H测试L2、literalOU=−γ/β∑Adj_p(DpG)、actualclosedLkernel ptranspose/OU/Hamiltonian弱测试0已证，所有真积分产品实际可积。γ>0原FD范围，未假设p独立或全kernel常数性/fullH1core。qweak导数0/p独立/全kernel常数性、actualgenerator身份/core/κInv/完整Prop6.4/CORE未证。" '下一原weighted ptranspose/Hamiltonian测试commutator真实公式及smoothcompact条件导q弱导数0，构造actualkernel的真H1jet；全weak梯度0至constants另行证明。'
-Write-Output "Accepted $commit; $jobs/2843/285 all 10 zero, 0 Lean warnings; raw logs exact."
+Save-LocalCheckpoint 'CanonicalKernelUnweighted八声明正式验收提交' "最新$commit；$jobs jobs/2859standardaxioms/287exactinputs/all10checks0/0Leanwarning/allinput/raw/index/postcommit SHA，local05八声明空log0。真实density/Rinv lift∞及全部coordinate微分、literal Adj(G/R)=−DG/R；原canonical L2类在Haar×Leb真LocallyIntegrable/fDGintegrable，actualclosedLkernel ordinaryweak coordinate testing0。未假设globalRinv界或fullkernelconstancy。前批终端误印显示修正2853→2843纯文档一并allowlist。ordinaryweak0⇒constant/全kernelconstancy、actualgenerator身份/core/κInv/完整Prop6.4/CORE未证。" '下一实际phase平移∞compact测试及curve微分/reference测度保持，原ordinaryweak零导数导测试平移不变，再局部平滑化推进常数性。'
+Write-Output "Accepted $commit; $jobs/2859/287 all 10 zero, 0 Lean warnings; raw logs exact."

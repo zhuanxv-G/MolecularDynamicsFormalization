@@ -1,0 +1,7 @@
+八声明是PDF278/printed257原核常数性所需消权重步骤。原density R实际partitionnormalized且处处positive；trueRlift∞及positive inverse∞。真实qcurve从原U Frechet和exp求导，pcurve复用实际原GibbsGaussian求导给DR=−slopeR；RRinv=1真product导Dinv=slopeRinv，原transpose真乘积律导Adj(G/R)=−DG/R。无需noncompactphase全局inversebound。
+
+canonical actualL2 f在实际probability下L1，通过原withDensity integrability iff得到Rf在真正Haar×Leb可积，再continuousRinv局部乘积给f真LocallyIntegrable。G/R真实∞compact，actualadjointtest同µL2给fAdj(G/R)实际可积，原withDensity等价和pointwisepositivity消R导reference fDG真正可积。actualclosedLkernel q/ptranspose0应用到这个真测试，原density integral identity与literaltransposeformula导每普通coordinate DG积分0。没有以totalized integral替代可积。
+
+local01 vector/module shape、derivative点及依赖µ重写失败；local02修真实闭函数/using!，补LocallyIntegrable，仍负函数形状及unused ring；local03剩负函数形状，local04用integrable_neg_iff编译通过但仍有unused ring，local05删除确切多余tactic。8public/private clean emptylog0，raw01–05全保留，未用资源/透明性/linter选项。ordinaryweak0⇒constant/完整kernelconstancy/H1normdensity/actualgeneratorcore/κInv/Poisson/Prop6.4/CORE未证，负责人semantic pending。原277278复读复用exactraw/priorvisual278，无newrender。
+
+full01通过：9204 jobs/2859standardaxioms/287exactinputs/all10checks0/0Leanwarnings/allinput/rawSHA，新8public唯一标准公理。真实reference LocallyIntegrable/fDGintegrable及actualkernel ordinaryweak coordinate testing0；无globalRinv界或fullkernelconstancy假设。local01–05 raw保留；ordinaryweak0⇒constant/fullkernelconstancy/actualgeneratorcore/κInv/完整Prop6.4/CORE未证。

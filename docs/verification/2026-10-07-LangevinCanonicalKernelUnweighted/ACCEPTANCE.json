@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-10-07T23:07:56.0446585+08:00",
+  "finished_at": "2026-10-07T23:15:57.0939992+08:00",
+  "head_at_check": "9dd5d08adba1beda1e3e837dcd6425c460348a44",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9204,
+  "audit_declarations": 2859,
+  "inputs": 287,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalDensity_lift_contDiff",
+    "MolecularDynamics.textbookLangevinCanonicalDensity_reciprocal_lift_contDiff",
+    "MolecularDynamics.textbookLangevinCanonicalDensity_coordinate_derivative",
+    "MolecularDynamics.textbookLangevinCanonicalDensity_reciprocal_coordinate_derivative",
+    "MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression_reciprocal_density",
+    "MolecularDynamics.textbookLangevinCanonicalL2_unweighted_locallyIntegrable",
+    "MolecularDynamics.textbookLangevinCanonicalL2_unweighted_derivative_test_integrable",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_unweighted_coordinate_testing"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity_lift_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity_reciprocal_lift_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity_coordinate_derivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity_reciprocal_coordinate_derivative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression_reciprocal_density",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalL2_unweighted_locallyIntegrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalL2_unweighted_derivative_test_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_unweighted_coordinate_testing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "def8d6adad5d3385bb70b034e0c0852cccbfe24d4d95d0c769c3ad4896c84ef7"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "1d125890fda1b0190bdde2b66825c67d1c97e09e51840595af57c07c1e295c91"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "cd783c666dc9583b8de229975a5902f746ccd7292c3737df751b17fdb62dff92"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "59f4253a5d0a541556a299cf6f337b76e4dab9127de87873f915e6886c2ac560"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "7f4f89e6ee90563d72e11ade4ceb0b23e8034fe46fe43ca2581f6d2c0b7ccb5b"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_density_and_reciprocal_real_lift_smoothness": "proved_from_same_true_normalized_density_and_everywhere_positivity",
+  "actual_density_coordinate_derivatives": "proved_literal_DR_equals_minus_coordinateLogSlope_times_R",
+  "actual_reciprocal_coordinate_derivatives": "proved_true_product_rule_and_positivity",
+  "actual_density_removed_coordinate_transpose": "proved_literal_AdjGoverR_equals_minus_DGoverR",
+  "actual_canonical_L2_unweighted_locallyIntegrable": "proved_from_true_Rf_integrability_and_continuous_Rinverse_local_multiplier",
+  "actual_canonical_L2_unweighted_DG_product_integrable": "proved_actual_withDensity_integrability_and_true_compact_smooth_GoverR_tests",
+  "actual_closed_L_kernel_unweighted_coordinate_testing": "proved_true_Haar_times_Lebesgue_integral_zero",
+  "no_global_reciprocal_bound_or_constant_kernel_hypothesis": true,
+  "weak_zero_gradient_implies_actual_canonical_constant": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

@@ -1,0 +1,102 @@
+docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/Draft.lean:43:4: error: Type mismatch: After simplification, term
+  HasDerivAt.const_add z.1 (HasDerivAt.smul_const (hasDerivAt_id 0) (Pi.single i 1))
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Fin N → ℝ) Pi.normedAddCommGroup.toAddCommGroup
+    Pi.normedSpace.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun x => z.1 + id x • Pi.single i 1)
+    (Pi.single i 1) 0
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Fin N → ℝ) Pi.addCommGroup
+    (Pi.Function.module (Fin N) ℝ ℝ) Pi.topologicalSpace ⋯ (fun t => z.1 + t • Pi.single i 1) (Pi.single i 1) 0
+docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/Draft.lean:44:14: error: Application type mismatch: The argument
+  DifferentiableAt.hasFDerivAt
+    (ContDiff.differentiable hU
+      (of_eq_true
+        (Eq.trans (congrArg Not (Eq.trans WithTop.coe_eq_zero._simp_1 ENat.top_ne_zero._simp_1)) not_false_eq_true))
+      z.1)
+has type
+  HasFDerivAt U (fderiv ℝ U z.1) z.1
+but is expected to have type
+  HasFDerivAt ?m.200 ?m.201 (z.1 + 0 • Pi.single i 1)
+in the application
+  HasFDerivAt.comp_hasDerivAt 0
+    (DifferentiableAt.hasFDerivAt
+      (ContDiff.differentiable hU
+        (of_eq_true
+          (Eq.trans (congrArg Not (Eq.trans WithTop.coe_eq_zero._simp_1 ENat.top_ne_zero._simp_1)) not_false_eq_true))
+        z.1))
+docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/Draft.lean:84:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookConfigurationTorusObservable (textbookConfigurationPartial U i) (textbookConfigurationTorusProjection ?q)
+in the target expression
+  -(β * textbookConfigurationPartial U i z.1 * textbookLangevinCanonicalDensityReal U β z) =
+    -(β *
+          textbookConfigurationTorusObservable (textbookConfigurationPartial U i)
+            (textbookLangevinPeriodicProjection z).1 *
+        textbookLangevinCanonicalDensityReal U β z)
+
+case inl
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+z : textbookLangevinPhase N
+he :
+  textbookLangevinCanonicalDensity U β ∘ textbookLangevinPeriodicProjection = textbookLangevinCanonicalDensityReal U β
+i : Fin N
+hd :
+  deriv
+      (fun t =>
+        textbookLangevinCanonicalDensityReal U β (z + t • textbookLangevinCanonicalCoordinateDirection (Sum.inl i)))
+      0 =
+    (fderiv ℝ (textbookLangevinCanonicalDensityReal U β) z) (textbookLangevinCanonicalCoordinateDirection (Sum.inl i))
+⊢ -(β * textbookConfigurationPartial U i z.1 * textbookLangevinCanonicalDensityReal U β z) =
+    -(β *
+          textbookConfigurationTorusObservable (textbookConfigurationPartial U i)
+            (textbookLangevinPeriodicProjection z).1 *
+        textbookLangevinCanonicalDensityReal U β z)
+docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/Draft.lean:183:6: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a =>
+    Integrable
+      (fun x =>
+        ↑↑f x *
+          textbookLangevinCanonicalCoordinateAdjointTestExpression U β j
+            (fun y => (textbookLangevinCanonicalDensity U β y)⁻¹ * G y) x)
+      _a
+Error: Application type mismatch: The argument
+  f
+has type
+  { x : textbookLangevinPeriodicPhase N →ₘ[textbookLangevinCanonicalMeasure U β hβ] ℝ //
+    x ∈ Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ) }
+but is expected to have type
+  { x : textbookLangevinPeriodicPhase N →ₘ[_a] ℝ // x ∈ Lp ℝ 2 _a }
+in the application
+  ↑f
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+f : ↥(Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))
+j : Fin N ⊕ Fin N
+G : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)
+hsG : HasCompactSupport G
+hi :
+  Integrable
+    (fun x =>
+      ↑↑f x *
+        textbookLangevinCanonicalCoordinateAdjointTestExpression U β j
+          (fun y => (textbookLangevinCanonicalDensity U β y)⁻¹ * G y) x)
+    (textbookLangevinCanonicalMeasure U β hβ)
+⊢ Integrable
+    (fun x =>
+      ↑↑f x * textbookLangevinPeriodicDirectionalDerivative G (textbookLangevinCanonicalCoordinateDirection j) x)
+    (volume.prod volume)
+docs/verification/2026-10-07-LangevinCanonicalKernelUnweighted/Draft.lean:240:4: error: No goals to be solved

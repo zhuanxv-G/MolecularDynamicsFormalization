@@ -430,3 +430,5 @@ import MolecularDynamics.Chapter06.LangevinCanonicalMomentumClosedEnergy
 import MolecularDynamics.Chapter06.LangevinCanonicalKernelTransport
 
 import MolecularDynamics.Chapter06.LangevinCanonicalKernelWeakH1
+
+import MolecularDynamics.Chapter06.LangevinCanonicalKernelUnweighted
