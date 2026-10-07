@@ -1,0 +1,13 @@
+# 原实际Langevin C0转移收缩半群的强连续性
+
+5公开声明完成原6.47/Theorem6.2实际生成元所需真正C0强连续性：真实projection additiveHom continuity推出UC，同实际dampednoise的norm平方期待Ct，任意真实C0函数全初值supnorm epsilon+Ct小时间界，实际零时刻strongnorm极限及所有NNReal时间orbit强连续。原Wiener B P/C∞periodicU/forceLip γ>0σ任意N0，不假设Ulower/density/stationarity/Gibbs/C²或compacttest，也不假设目标UC/一致normbound/strongcontinuity。
+
+真实C0函数是uniformcontinuous，compose实际projectionUC得到real liftUC，不假定该lift有compact support。ε尺度给真实global quadratic modulus epsilon+K normincrement²；actual phase2增长在bounded初始p区域给uniform Ct。大初始p区域以真实C0 tail和原actualDuhamel reverse momentum bound：若endpointp仍小，则同dampednoise norm≥1，真实pointwise expectation以epsilon+A normnoise²控制，真L²/Ct压缩尾部。两区域合成所有initialphase的supnorm epsilon+Ct界。dampinghalf是有限时间有效估计条件，并由真实exp连续自动eventual于0，不是强连续性或目标supnorm结论前提。
+
+epsilonaffine界真实推出零时刻C0 supnorm极限。CK+收缩给任意S T轨道差范数≤norm(T(maxS T-minS T)f-f)，NNReal真实max/min/tsub连续使任意T两侧轨道强连续。使用此前已验同原κ C0 CLM，没有新核/模型/目标limit假设；这证明实际stronglycontinuous contractionsemigroup，但closedgenerator/domain/graphcore仍未证明。
+
+local01 additiveHom mapzero函数ext/coeadd显式period参数；02foundation2空log0。03实际可积辅助目标字段不含proof hB hU，真实include且删除不需hp；04期待add次序及BCF/localy不同atom显式change；05inlineproof无期望类型显式hh；06nested真实标量常数1类型需完整hh；07foundation3空log0。08 min_pos不存在与ContinuousAt.tendsto基点未定，改真实lt_min/Continuous.tendsto T；09最终5/private空log0无warning。raw全保留，无资源/linter/模型改变。DEP144/NOT153，固定Lean4.34.0/mathlib5ed2965，唯一full01。
+
+原PDF SHA不变，272–275本段文本已核/priorvisual273复用，无新增视觉274/275。本批是正文actualgenerator必要依赖。actualdensity/Gibbs身份/closed域/general6.2/owner/CORE未完；下一actualclosedgenerator及compactC²domain必要证明。
+
+full-check01 passed：9179 jobs/2624公理声明/262exactinputs；10checks退出0/allinput原rawlogs SHA一致、新5public标准axioms、0Leanwarnings，固定Lean4.34.0/mathlib5ed2965，local09全5/private空log0。真实projection additiveUC/同dampednoise norm²Ct/任意trueC0 liftUC尾部，inside实际phase2增长与outside实际reversebound noise²Ct合成全初值supnorm epsilon+Ct，trueexp连续自动dampinghalf near0，实际C0CLM真正strongzero及CK收缩max-minus-min给所有NNReal时间orbit强连续。γ>0σ任意N0，无目标UC/normbound/strongcontinuity/Ulower/density/stationarity/Gibbs/C²compacttest。raw01-09保留：02foundation2及07foundation3成功，08两处名字基点修复09最终5成功，其余type/include/add代数失败真实记录无资源修改。closedgenerator graphcore/Gibbs/positive-time density/owner/general6.2/CORE仍未完。

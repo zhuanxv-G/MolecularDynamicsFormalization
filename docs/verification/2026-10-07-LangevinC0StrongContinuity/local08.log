@@ -1,0 +1,7 @@
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:295:21: error(lean.unknownIdentifier): Unknown identifier `min_pos`
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:341:4: error: Type mismatch: After simplification, term
+  ContinuousAt.tendsto (Continuous.continuousAt hδ)
+ has type
+  Tendsto (fun S => max S T - min S T) (𝓝 ?m.128) (𝓝 (max ?m.128 T - min ?m.128 T))
+but is expected to have type
+  Tendsto (fun S => max S T - min S T) (𝓝 T) (𝓝 0)

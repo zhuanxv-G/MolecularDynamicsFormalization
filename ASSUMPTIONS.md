@@ -704,3 +704,5 @@ LangevinC2ExpectationDomination：sameoriginalunitmass6.47 originalWienerB P/C�
 LangevinWeakGeneratorBalance：原unitmass6.47 originalWienerB P/C∞periodicU/forceLip γ>0σ任意N0，compactperiodicC²test真实lift。任意Inv真实sameκ所有T不变，p²可积真normalization/sameκ/actualHmomentcoercivityderive，无原Ulower/目标weakstationarity/密度/Gibbs前提；一般integratedlimit只假设μ p²可积，actualexistence无Inv/moment前提。weak∫LFμ=0非densityPDE/closed/Gibbs身份。
 
 LangevinC0Preservation：原unitmass6.47/Wiener B P/C∞periodicU/forceLip γ>0σ任意N0所有NNRealT；reversebound统一M、actualendpointescape真实common countableAE、原C0expectation DCT，no Ulower/density/stationarity/Gibbs/目标properness C0preservation linearsemigroup premise。原C0CLM exactκ expectation contraction≤1/time0identity/真CK；尚未strongnormcontinuous/closedgenerator graphcore。
+
+LangevinC0StrongContinuity：原unitmass6.47/Wiener B P/C∞periodicU/forceLip γ>0σ任意N0；真实任意C0函数liftUC/尾部，inside actualincrement2与outside actualreversebound/noise²Ct给allinitialphase normbound，trueexp continuity使dampinghalf eventual0，真CK收缩与time difference continuity给strongalltime。无Ulower/density/stationarity/Gibbs/C²compacttest/目标strongcontinuity前提，closed域graphcore尚未完。

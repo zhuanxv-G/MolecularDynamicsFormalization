@@ -1,0 +1,104 @@
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:215:8: error: Type mismatch
+  add_le_add_left (mul_le_mul_of_nonneg_left (hPhase (↑T) T.property ht1 x) hK) e
+has type
+  K * ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ (↑T) x sample‖ ^ 2 ∂P + e ≤
+    K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T) + e
+but is expected to have type
+  e + K * ∫ (sample : Ω), ‖δ sample‖ ^ 2 ∂P ≤ e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:240:8: error: linarith failed to find a contradiction
+case neg
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+ε : ℝ
+hε : 0 < ε
+this : IsProbabilityMeasure P
+A : ℝ := ‖f.toBCF‖
+hA : 0 ≤ A
+e : ℝ := ε / 4
+he : 0 < e
+g : textbookLangevinPhase N → ℝ := ⇑f ∘ textbookLangevinPeriodicProjection
+hg : UniformContinuous g
+K : ℝ
+hK : 0 ≤ K
+hMod : ∀ (z y : textbookLangevinPhase N), ‖g (z + y) - g z‖ ≤ e + K * ‖y‖ ^ 2
+Cs : ℝ
+hCs : 0 ≤ Cs
+hPhase :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N),
+          ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2 ∂P ≤
+            Cs * (1 + ‖x.2‖ ^ 2) * T
+Cn : ℝ
+hCn : 0 ≤ Cn
+hNoise :
+  ∀ (T : ℝ),
+    0 ≤ T → T ≤ 1 → ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T‖ ^ 2 ∂P ≤ Cn * T
+M : ℝ
+hM : 0 ≤ M
+hRev :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+hR : 0 ≤ R
+hTail : ∀ (x : textbookLangevinPeriodicPhase N), R ≤ ‖x.2‖ → ‖f x‖ ≤ e
+D : ℝ := 2 * (M / γ + R + 1)
+hD : 0 ≤ D
+hRD : R ≤ D
+C : ℝ := K * Cs * (1 + D ^ 2) + A * Cn
+hC : 0 ≤ C
+T : ℝ≥0
+hT1 : T ≤ 1
+hDamping : 1 / 2 ≤ Real.exp (-γ * ↑T)
+ht1 : ↑T ≤ 1
+hNear :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤
+      e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+x : textbookLangevinPeriodicPhase N
+hx : D ≤ ‖x.2‖
+ξ : Ω → Fin N → ℝ := fun sample => textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) ↑T
+hiSq : Integrable (fun sample => ‖ξ sample‖ ^ 2) P
+hiF : Integrable (fun sample => f (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B (↑T) sample)) P
+hInitial : M / γ + R + 1 ≤ Real.exp (-γ * ↑T) * ‖x.2‖
+sample : Ω
+hs :
+  ∀ (t : ℝ),
+    0 ≤ t →
+      Real.exp (-γ * t) * ‖x.2‖ ≤
+        ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+          ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+y : textbookLangevinPeriodicPhase N := textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B (↑T) sample
+hy : ¬R ≤ ‖y.2‖
+hm : Real.exp (-γ * ↑T) * ‖x.2‖ ≤ ‖y.2‖ + M / γ + ‖ξ sample‖
+hξ : 1 ≤ ‖ξ sample‖
+hξs : 1 ≤ ‖ξ sample‖ ^ 2
+hb : ‖f.toBCF y‖ ≤ ‖f.toBCF‖
+hh : ‖f.toBCF‖ * 1 ≤ ‖f.toBCF‖ * ‖ξ sample‖ ^ 2
+a✝ : e + ‖f.toBCF‖ * ‖ξ sample‖ ^ 2 < ‖f (textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B (↑T) sample)‖
+⊢ False
+failed
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:254:10: error: Type mismatch
+  add_le_add_left (mul_le_mul_of_nonneg_left (hNoise (↑T) T.property ht1) hA) e
+has type
+  A * ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) ↑T‖ ^ 2 ∂P + e ≤ A * (Cn * ↑T) + e
+but is expected to have type
+  e + A * ∫ (sample : Ω), ‖ξ sample‖ ^ 2 ∂P ≤ e + A * (Cn * ↑T)

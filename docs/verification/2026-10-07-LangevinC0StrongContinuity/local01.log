@@ -1,0 +1,9 @@
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:16:15: error: unsolved goals
+N : ℕ
+⊢ (fun i => 0) = 0
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:22:6: error: Type mismatch
+  AddCircle.coe_add ?m.47 ?m.48
+has type
+  ∀ (y : ?m.45), ↑(?m.48 + y) = ↑?m.48 + ↑y
+but is expected to have type
+  ↑(z.1 i + w.1 i) = ↑(z.1 i) + ↑(w.1 i)

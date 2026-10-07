@@ -1,0 +1,706 @@
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:265:15: error: don't know how to synthesize implicit argument `c`
+  @mul_le_mul_of_nonneg_left ℝ Real.instMul Real.instZero Real.instPreorder K (Cs * (?m.1823 + ‖x.2‖ ^ 2) * ↑T)
+    (Cs * (?m.1823 + D ^ 2) * ↑T) Real.instIsOrderedRing.toPosMulMono
+    (mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left (add_le_add le_rfl hp2) hCs) T.property) hK
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+ε : ℝ
+hε : 0 < ε
+this : IsProbabilityMeasure P
+A : ℝ := ⋯
+hA : 0 ≤ A
+e : ℝ := ⋯
+he : 0 < e
+g : textbookLangevinPhase N → ℝ := ⋯
+hg : UniformContinuous g
+K : ℝ
+hK : 0 ≤ K
+hMod : ∀ (z y : textbookLangevinPhase N), ‖g (z + y) - g z‖ ≤ e + K * ‖y‖ ^ 2
+Cs : ℝ
+hCs : 0 ≤ Cs
+hPhase :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N),
+          ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2 ∂P ≤
+            Cs * (1 + ‖x.2‖ ^ 2) * T
+Cn : ℝ
+hCn : 0 ≤ Cn
+hNoise :
+  ∀ (T : ℝ),
+    0 ≤ T → T ≤ 1 → ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T‖ ^ 2 ∂P ≤ Cn * T
+M : ℝ
+hM : 0 ≤ M
+hRev :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+hR : 0 ≤ R
+hTail : ∀ (x : textbookLangevinPeriodicPhase N), R ≤ ‖x.2‖ → ‖f x‖ ≤ e
+D : ℝ := ⋯
+hD : 0 ≤ D
+hRD : R ≤ D
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ≥0
+hT1 : T ≤ 1
+hDamping : 1 / 2 ≤ Real.exp (-γ * ↑T)
+ht1 : ↑T ≤ 1
+hNear :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤
+      e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+hFar :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    D ≤ ‖x.2‖ →
+      ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤ 2 * e + A * (Cn * ↑T)
+x : textbookLangevinPeriodicPhase N
+hx : ‖x.2‖ ≤ D
+hp2 : ‖x.2‖ ^ 2 ≤ D ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:265:15: error: don't know how to synthesize implicit argument `b`
+  @mul_le_mul_of_nonneg_left ℝ Real.instMul Real.instZero Real.instPreorder K (Cs * (?m.1823 + ‖x.2‖ ^ 2) * ↑T)
+    (Cs * (?m.1823 + D ^ 2) * ↑T) Real.instIsOrderedRing.toPosMulMono
+    (mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left (add_le_add le_rfl hp2) hCs) T.property) hK
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+ε : ℝ
+hε : 0 < ε
+this : IsProbabilityMeasure P
+A : ℝ := ⋯
+hA : 0 ≤ A
+e : ℝ := ⋯
+he : 0 < e
+g : textbookLangevinPhase N → ℝ := ⋯
+hg : UniformContinuous g
+K : ℝ
+hK : 0 ≤ K
+hMod : ∀ (z y : textbookLangevinPhase N), ‖g (z + y) - g z‖ ≤ e + K * ‖y‖ ^ 2
+Cs : ℝ
+hCs : 0 ≤ Cs
+hPhase :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N),
+          ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2 ∂P ≤
+            Cs * (1 + ‖x.2‖ ^ 2) * T
+Cn : ℝ
+hCn : 0 ≤ Cn
+hNoise :
+  ∀ (T : ℝ),
+    0 ≤ T → T ≤ 1 → ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T‖ ^ 2 ∂P ≤ Cn * T
+M : ℝ
+hM : 0 ≤ M
+hRev :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+hR : 0 ≤ R
+hTail : ∀ (x : textbookLangevinPeriodicPhase N), R ≤ ‖x.2‖ → ‖f x‖ ≤ e
+D : ℝ := ⋯
+hD : 0 ≤ D
+hRD : R ≤ D
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ≥0
+hT1 : T ≤ 1
+hDamping : 1 / 2 ≤ Real.exp (-γ * ↑T)
+ht1 : ↑T ≤ 1
+hNear :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤
+      e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+hFar :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    D ≤ ‖x.2‖ →
+      ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤ 2 * e + A * (Cn * ↑T)
+x : textbookLangevinPeriodicPhase N
+hx : ‖x.2‖ ≤ D
+hp2 : ‖x.2‖ ^ 2 ≤ D ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:266:7: error: don't know how to synthesize implicit argument `c`
+  @mul_le_mul_of_nonneg_right ℝ Real.instMul Real.instZero Real.instPreorder (↑T) (Cs * (?m.1823 + ‖x.2‖ ^ 2))
+    (Cs * (?m.1823 + D ^ 2)) Real.instIsOrderedRing.toMulPosMono (mul_le_mul_of_nonneg_left (add_le_add le_rfl hp2) hCs)
+    T.property
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+ε : ℝ
+hε : 0 < ε
+this : IsProbabilityMeasure P
+A : ℝ := ⋯
+hA : 0 ≤ A
+e : ℝ := ⋯
+he : 0 < e
+g : textbookLangevinPhase N → ℝ := ⋯
+hg : UniformContinuous g
+K : ℝ
+hK : 0 ≤ K
+hMod : ∀ (z y : textbookLangevinPhase N), ‖g (z + y) - g z‖ ≤ e + K * ‖y‖ ^ 2
+Cs : ℝ
+hCs : 0 ≤ Cs
+hPhase :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N),
+          ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2 ∂P ≤
+            Cs * (1 + ‖x.2‖ ^ 2) * T
+Cn : ℝ
+hCn : 0 ≤ Cn
+hNoise :
+  ∀ (T : ℝ),
+    0 ≤ T → T ≤ 1 → ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T‖ ^ 2 ∂P ≤ Cn * T
+M : ℝ
+hM : 0 ≤ M
+hRev :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+hR : 0 ≤ R
+hTail : ∀ (x : textbookLangevinPeriodicPhase N), R ≤ ‖x.2‖ → ‖f x‖ ≤ e
+D : ℝ := ⋯
+hD : 0 ≤ D
+hRD : R ≤ D
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ≥0
+hT1 : T ≤ 1
+hDamping : 1 / 2 ≤ Real.exp (-γ * ↑T)
+ht1 : ↑T ≤ 1
+hNear :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤
+      e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+hFar :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    D ≤ ‖x.2‖ →
+      ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤ 2 * e + A * (Cn * ↑T)
+x : textbookLangevinPeriodicPhase N
+hx : ‖x.2‖ ≤ D
+hp2 : ‖x.2‖ ^ 2 ≤ D ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:266:7: error: don't know how to synthesize implicit argument `b`
+  @mul_le_mul_of_nonneg_right ℝ Real.instMul Real.instZero Real.instPreorder (↑T) (Cs * (?m.1823 + ‖x.2‖ ^ 2))
+    (Cs * (?m.1823 + D ^ 2)) Real.instIsOrderedRing.toMulPosMono (mul_le_mul_of_nonneg_left (add_le_add le_rfl hp2) hCs)
+    T.property
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+ε : ℝ
+hε : 0 < ε
+this : IsProbabilityMeasure P
+A : ℝ := ⋯
+hA : 0 ≤ A
+e : ℝ := ⋯
+he : 0 < e
+g : textbookLangevinPhase N → ℝ := ⋯
+hg : UniformContinuous g
+K : ℝ
+hK : 0 ≤ K
+hMod : ∀ (z y : textbookLangevinPhase N), ‖g (z + y) - g z‖ ≤ e + K * ‖y‖ ^ 2
+Cs : ℝ
+hCs : 0 ≤ Cs
+hPhase :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N),
+          ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2 ∂P ≤
+            Cs * (1 + ‖x.2‖ ^ 2) * T
+Cn : ℝ
+hCn : 0 ≤ Cn
+hNoise :
+  ∀ (T : ℝ),
+    0 ≤ T → T ≤ 1 → ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T‖ ^ 2 ∂P ≤ Cn * T
+M : ℝ
+hM : 0 ≤ M
+hRev :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+hR : 0 ≤ R
+hTail : ∀ (x : textbookLangevinPeriodicPhase N), R ≤ ‖x.2‖ → ‖f x‖ ≤ e
+D : ℝ := ⋯
+hD : 0 ≤ D
+hRD : R ≤ D
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ≥0
+hT1 : T ≤ 1
+hDamping : 1 / 2 ≤ Real.exp (-γ * ↑T)
+ht1 : ↑T ≤ 1
+hNear :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤
+      e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+hFar :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    D ≤ ‖x.2‖ →
+      ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤ 2 * e + A * (Cn * ↑T)
+x : textbookLangevinPeriodicPhase N
+hx : ‖x.2‖ ≤ D
+hp2 : ‖x.2‖ ^ 2 ≤ D ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:266:35: error: don't know how to synthesize implicit argument `c`
+  @mul_le_mul_of_nonneg_left ℝ Real.instMul Real.instZero Real.instPreorder Cs (?m.1823 + ‖x.2‖ ^ 2) (?m.1823 + D ^ 2)
+    Real.instIsOrderedRing.toPosMulMono (add_le_add le_rfl hp2) hCs
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+ε : ℝ
+hε : 0 < ε
+this : IsProbabilityMeasure P
+A : ℝ := ⋯
+hA : 0 ≤ A
+e : ℝ := ⋯
+he : 0 < e
+g : textbookLangevinPhase N → ℝ := ⋯
+hg : UniformContinuous g
+K : ℝ
+hK : 0 ≤ K
+hMod : ∀ (z y : textbookLangevinPhase N), ‖g (z + y) - g z‖ ≤ e + K * ‖y‖ ^ 2
+Cs : ℝ
+hCs : 0 ≤ Cs
+hPhase :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N),
+          ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2 ∂P ≤
+            Cs * (1 + ‖x.2‖ ^ 2) * T
+Cn : ℝ
+hCn : 0 ≤ Cn
+hNoise :
+  ∀ (T : ℝ),
+    0 ≤ T → T ≤ 1 → ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T‖ ^ 2 ∂P ≤ Cn * T
+M : ℝ
+hM : 0 ≤ M
+hRev :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+hR : 0 ≤ R
+hTail : ∀ (x : textbookLangevinPeriodicPhase N), R ≤ ‖x.2‖ → ‖f x‖ ≤ e
+D : ℝ := ⋯
+hD : 0 ≤ D
+hRD : R ≤ D
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ≥0
+hT1 : T ≤ 1
+hDamping : 1 / 2 ≤ Real.exp (-γ * ↑T)
+ht1 : ↑T ≤ 1
+hNear :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤
+      e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+hFar :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    D ≤ ‖x.2‖ →
+      ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤ 2 * e + A * (Cn * ↑T)
+x : textbookLangevinPeriodicPhase N
+hx : ‖x.2‖ ≤ D
+hp2 : ‖x.2‖ ^ 2 ≤ D ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:266:35: error: don't know how to synthesize implicit argument `b`
+  @mul_le_mul_of_nonneg_left ℝ Real.instMul Real.instZero Real.instPreorder Cs (?m.1823 + ‖x.2‖ ^ 2) (?m.1823 + D ^ 2)
+    Real.instIsOrderedRing.toPosMulMono (add_le_add le_rfl hp2) hCs
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+ε : ℝ
+hε : 0 < ε
+this : IsProbabilityMeasure P
+A : ℝ := ⋯
+hA : 0 ≤ A
+e : ℝ := ⋯
+he : 0 < e
+g : textbookLangevinPhase N → ℝ := ⋯
+hg : UniformContinuous g
+K : ℝ
+hK : 0 ≤ K
+hMod : ∀ (z y : textbookLangevinPhase N), ‖g (z + y) - g z‖ ≤ e + K * ‖y‖ ^ 2
+Cs : ℝ
+hCs : 0 ≤ Cs
+hPhase :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N),
+          ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2 ∂P ≤
+            Cs * (1 + ‖x.2‖ ^ 2) * T
+Cn : ℝ
+hCn : 0 ≤ Cn
+hNoise :
+  ∀ (T : ℝ),
+    0 ≤ T → T ≤ 1 → ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T‖ ^ 2 ∂P ≤ Cn * T
+M : ℝ
+hM : 0 ≤ M
+hRev :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+hR : 0 ≤ R
+hTail : ∀ (x : textbookLangevinPeriodicPhase N), R ≤ ‖x.2‖ → ‖f x‖ ≤ e
+D : ℝ := ⋯
+hD : 0 ≤ D
+hRD : R ≤ D
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ≥0
+hT1 : T ≤ 1
+hDamping : 1 / 2 ≤ Real.exp (-γ * ↑T)
+ht1 : ↑T ≤ 1
+hNear :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤
+      e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+hFar :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    D ≤ ‖x.2‖ →
+      ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤ 2 * e + A * (Cn * ↑T)
+x : textbookLangevinPeriodicPhase N
+hx : ‖x.2‖ ≤ D
+hp2 : ‖x.2‖ ^ 2 ≤ D ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:266:62: error: don't know how to synthesize implicit argument `b`
+  @add_le_add ℝ ?m.1823 ?m.1823 (‖x.2‖ ^ 2) (D ^ 2) Real.instAdd Real.instPreorder IsOrderedAddMonoid.toAddLeftMono
+    IsOrderedAddMonoid.toAddRightMono le_rfl hp2
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+ε : ℝ
+hε : 0 < ε
+this : IsProbabilityMeasure P
+A : ℝ := ⋯
+hA : 0 ≤ A
+e : ℝ := ⋯
+he : 0 < e
+g : textbookLangevinPhase N → ℝ := ⋯
+hg : UniformContinuous g
+K : ℝ
+hK : 0 ≤ K
+hMod : ∀ (z y : textbookLangevinPhase N), ‖g (z + y) - g z‖ ≤ e + K * ‖y‖ ^ 2
+Cs : ℝ
+hCs : 0 ≤ Cs
+hPhase :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N),
+          ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2 ∂P ≤
+            Cs * (1 + ‖x.2‖ ^ 2) * T
+Cn : ℝ
+hCn : 0 ≤ Cn
+hNoise :
+  ∀ (T : ℝ),
+    0 ≤ T → T ≤ 1 → ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T‖ ^ 2 ∂P ≤ Cn * T
+M : ℝ
+hM : 0 ≤ M
+hRev :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+hR : 0 ≤ R
+hTail : ∀ (x : textbookLangevinPeriodicPhase N), R ≤ ‖x.2‖ → ‖f x‖ ≤ e
+D : ℝ := ⋯
+hD : 0 ≤ D
+hRD : R ≤ D
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ≥0
+hT1 : T ≤ 1
+hDamping : 1 / 2 ≤ Real.exp (-γ * ↑T)
+ht1 : ↑T ≤ 1
+hNear :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤
+      e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+hFar :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    D ≤ ‖x.2‖ →
+      ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤ 2 * e + A * (Cn * ↑T)
+x : textbookLangevinPeriodicPhase N
+hx : ‖x.2‖ ≤ D
+hp2 : ‖x.2‖ ^ 2 ≤ D ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:266:62: error: don't know how to synthesize implicit argument `a`
+  @add_le_add ℝ ?m.1823 ?m.1823 (‖x.2‖ ^ 2) (D ^ 2) Real.instAdd Real.instPreorder IsOrderedAddMonoid.toAddLeftMono
+    IsOrderedAddMonoid.toAddRightMono le_rfl hp2
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+ε : ℝ
+hε : 0 < ε
+this : IsProbabilityMeasure P
+A : ℝ := ⋯
+hA : 0 ≤ A
+e : ℝ := ⋯
+he : 0 < e
+g : textbookLangevinPhase N → ℝ := ⋯
+hg : UniformContinuous g
+K : ℝ
+hK : 0 ≤ K
+hMod : ∀ (z y : textbookLangevinPhase N), ‖g (z + y) - g z‖ ≤ e + K * ‖y‖ ^ 2
+Cs : ℝ
+hCs : 0 ≤ Cs
+hPhase :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N),
+          ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2 ∂P ≤
+            Cs * (1 + ‖x.2‖ ^ 2) * T
+Cn : ℝ
+hCn : 0 ≤ Cn
+hNoise :
+  ∀ (T : ℝ),
+    0 ≤ T → T ≤ 1 → ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T‖ ^ 2 ∂P ≤ Cn * T
+M : ℝ
+hM : 0 ≤ M
+hRev :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+hR : 0 ≤ R
+hTail : ∀ (x : textbookLangevinPeriodicPhase N), R ≤ ‖x.2‖ → ‖f x‖ ≤ e
+D : ℝ := ⋯
+hD : 0 ≤ D
+hRD : R ≤ D
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ≥0
+hT1 : T ≤ 1
+hDamping : 1 / 2 ≤ Real.exp (-γ * ↑T)
+ht1 : ↑T ≤ 1
+hNear :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤
+      e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+hFar :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    D ≤ ‖x.2‖ →
+      ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤ 2 * e + A * (Cn * ↑T)
+x : textbookLangevinPeriodicPhase N
+hx : ‖x.2‖ ≤ D
+hp2 : ‖x.2‖ ^ 2 ≤ D ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:266:73: error: don't know how to synthesize implicit argument `a`
+  @le_rfl ℝ Real.instPreorder ?m.1823
+context:
+N : ℕ
+Ω : Type u_1
+inst✝ : MeasurableSpace Ω
+B : ℝ≥0 → Ω → Fin N → ℝ
+P : Measure Ω
+hB : textbookIsWienerVector B P
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+L : ℝ≥0
+hF : LipschitzWith L (textbookPotentialForce U)
+γ σ : ℝ
+hγ : 0 < γ
+f : textbookLangevinPeriodicPhase N →C₀ ℝ
+ε : ℝ
+hε : 0 < ε
+this : IsProbabilityMeasure P
+A : ℝ := ⋯
+hA : 0 ≤ A
+e : ℝ := ⋯
+he : 0 < e
+g : textbookLangevinPhase N → ℝ := ⋯
+hg : UniformContinuous g
+K : ℝ
+hK : 0 ≤ K
+hMod : ∀ (z y : textbookLangevinPhase N), ‖g (z + y) - g z‖ ≤ e + K * ‖y‖ ^ 2
+Cs : ℝ
+hCs : 0 ≤ Cs
+hPhase :
+  ∀ (T : ℝ),
+    0 ≤ T →
+      T ≤ 1 →
+        ∀ (x : textbookLangevinPeriodicPhase N),
+          ∫ (sample : Ω), ‖textbookLangevinPeriodicRealPhaseIncrement B U L hF γ σ T x sample‖ ^ 2 ∂P ≤
+            Cs * (1 + ‖x.2‖ ^ 2) * T
+Cn : ℝ
+hCn : 0 ≤ Cn
+hNoise :
+  ∀ (T : ℝ),
+    0 ≤ T → T ≤ 1 → ∫ (sample : Ω), ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) T‖ ^ 2 ∂P ≤ Cn * T
+M : ℝ
+hM : 0 ≤ M
+hRev :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ∀ᵐ (sample : Ω) ∂P,
+      ∀ (t : ℝ),
+        0 ≤ t →
+          Real.exp (-γ * t) * ‖x.2‖ ≤
+            ‖(textbookLangevinPeriodicGlobalRandomPhase U L hF γ σ x B t sample).2‖ + M / γ +
+              ‖textbookLangevinDampedNoise γ σ (fun s => B s.toNNReal sample) t‖
+R : ℝ
+hR : 0 ≤ R
+hTail : ∀ (x : textbookLangevinPeriodicPhase N), R ≤ ‖x.2‖ → ‖f x‖ ≤ e
+D : ℝ := ⋯
+hD : 0 ≤ D
+hRD : R ≤ D
+C : ℝ := ⋯
+hC : 0 ≤ C
+T : ℝ≥0
+hT1 : T ≤ 1
+hDamping : 1 / 2 ≤ Real.exp (-γ * ↑T)
+ht1 : ↑T ≤ 1
+hNear :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤
+      e + K * (Cs * (1 + ‖x.2‖ ^ 2) * ↑T)
+hFar :
+  ∀ (x : textbookLangevinPeriodicPhase N),
+    D ≤ ‖x.2‖ →
+      ‖((textbookLangevinPeriodicC0Transition B P hB U hU hp L hF γ σ hγ T) f) x - f x‖ ≤ 2 * e + A * (Cn * ↑T)
+x : textbookLangevinPeriodicPhase N
+hx : ‖x.2‖ ≤ D
+hp2 : ‖x.2‖ ^ 2 ≤ D ^ 2
+⊢ ℝ
+docs/verification/2026-10-07-LangevinC0StrongContinuity/Draft.lean:265:9: error: failed to infer `have` declaration type

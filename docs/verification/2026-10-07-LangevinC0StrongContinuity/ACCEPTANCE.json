@@ -1,0 +1,132 @@
+{
+  "started_at": "2026-10-07T13:36:23.2958029+08:00",
+  "finished_at": "2026-10-07T13:38:08.9233768+08:00",
+  "head_at_check": "f4a9c8fb5e224d87cb4d69ec7d4e3c6ca1fa1b7b",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9179,
+  "audit_declarations": 2624,
+  "inputs": 262,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicProjection_uniformContinuous",
+    "MolecularDynamics.textbookLangevinDampedNoise_norm_second_small_time_bound",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_small_time_norm_bound",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_strong_continuous_zero",
+    "MolecularDynamics.textbookLangevinPeriodicC0Transition_strong_continuous"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicProjection_uniformContinuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinDampedNoise_norm_second_small_time_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_small_time_norm_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_strong_continuous_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicC0Transition_strong_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "94c5f1009afa3277a8acebe5d41451af9562f432635933473bd92cd116d66fb7"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "6b1288c771ffe1f44f648c32fb53fc40d7676f72ca0081b6cc79bd45be2f8c11"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "d4664acc9d46b848b134d8f3837964aa5a78de0f3045d7cb4878611fb5838572"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "abc678d01fe7f562a07b500066e8bdcc3f7434a04264cc9e1f4991d06c31f99c"
+    },
+    {
+      "path": "local05.log",
+      "sha256": "966df6ac89656595400a4746f5bf1ecf88b44bfde3a31157a4761ec70428431d"
+    },
+    {
+      "path": "local06.log",
+      "sha256": "479fb3890504a61d3ade1c4111c8fe967eb8100baf97d0600ecbf08cc61e89d2"
+    },
+    {
+      "path": "local07.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local08.log",
+      "sha256": "ab1b9c92a5ecb491bd632fa3f0113cc1660664bbe3f9cf478fdc3566990e348a"
+    },
+    {
+      "path": "local09.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_original_process": "same_existing_unitmass_periodic6_47_original_B_P_Wiener_same_original_kappa_same_C0_CLM",
+  "projection_uniform_continuity": "proved_true_additive_projection_hom_and_actual_continuity",
+  "damped_noise_norm_square": "derived_actual_same_noise_L2_second_norm_Ct_uniform_t_in_zero_one",
+  "real_lift": "true_C0_function_composed_true_uniform_continuous_projection_no_compact_support_lift_assumption",
+  "actual_uniform_norm_bound": "derived_all_initialphases_epsilon_plus_Ct_inside_UC_quadratic_actual_increment_secondmoment_and_outside_C0_tail_reverse_momentum_noise_squared_bound",
+  "strong_norm_zero": "proved_true_supnorm_Tendsto_zero_from_epsilon_affine_bound_and_actual_damping_half_eventually",
+  "strong_norm_all_time": "proved_true_all_NNReal_orbits_Continuous_from_actual_CK_contraction_variation_max_minus_min",
+  "original_kernel_identity": "same_accepted_C0_CLM_original_kappa",
+  "operator_norm": "accepted_le_one",
+  "semigroup": "accepted_true_original_CK",
+  "model": "original_WienerB_P_Cinfty_periodic_U_forceLip_unitmass_gamma_positive_sigma_arbitrary_Nzero_all_NNReal_time",
+  "target_norm_bound_strong_continuity_hypothesis": "none",
+  "U_lower_density_stationarity_Gibbs_C2_compacttest_hypothesis": "none",
+  "Nzero": "included",
+  "local_output": "local09_all5_private_exit0_empty_log_zero_Leanwarning",
+  "local_failures": "01_projectionHom_mapzero_coeadd_arguments_02_foundation2_pass_03_private_include_hB_hU_04_add_order_BCF_localy_atom_05_inline_proof_expectedtype_06_nested_scalar_one_type_07_foundation3_pass_08_min_pos_missing_continuousAt_base_09_final5_pass_raw_preserved",
+  "strong_norm_continuity": "proved_true_same_C0_CLM_supnorm_zero_and_all_time",
+  "closed_generator_domain": "not_proved",
+  "graph_core": "not_proved",
+  "necessary_dependency": "original_Theorem6_2_actual_C0_strongly_continuous_contraction_semigroup_generator_underlying_dependency",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
