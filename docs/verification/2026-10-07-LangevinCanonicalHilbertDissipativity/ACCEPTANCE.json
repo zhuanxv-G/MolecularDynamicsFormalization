@@ -1,0 +1,100 @@
+{
+  "started_at": "2026-10-07T20:17:18.6046377+08:00",
+  "finished_at": "2026-10-07T20:22:59.5199041+08:00",
+  "head_at_check": "fe54a5f20934b41bfc0166bdec8553a9c40bc521",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9196,
+  "audit_declarations": 2772,
+  "inputs": 279,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_nonpos",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_closure_nonpos",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_nonpos",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_closure_shift_norm_bound",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_shift_injective"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_closure_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph_closure_shift_norm_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_shift_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "281655536375bd6efca6d6b230748ddac68c608a337e2f53d05763ecd5969e13"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "95784a0922433b5876f2de436e0ea3b790ac7eba10dda5fba9e5f0a467946554"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "cc4234e5417c6aac651c0162455d85dd9dcb4e0e8d51a5b545c6ebd40febc0b7"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_same_canonical_measure_Nzero_true_sigma_squared_FD",
+  "actual_test_graph_energy_nonpositive": "proved_from_original_canonical_energy_and_true_AE_L2_classes",
+  "actual_graph_closure_pairing_nonpositive": "proved_by_continuity_on_true_smooth_test_graph_closure",
+  "actual_closed_operator_dissipativity": "proved_on_every_element_of_true_closed_operator_domain",
+  "positive_shift_norm_bound": "proved_norm_f_le_norm_r_f_minus_g_div_r_for_r_positive_on_true_graph_closure",
+  "actual_closed_operator_positive_shift_injective": "proved_on_actual_domain_by_true_graph_difference_and_norm_bound",
+  "gamma_beta_inverse_nonnegative": "derived_from_actual_sigma_squared_fluctuation_dissipation_identity",
+  "no_extra_operator_domain_core_InvLaw_or_dissipativity_hypotheses": true,
+  "full_graph_domain_energy_identity_or_weighted_H1_estimate": "not_proved",
+  "positive_shift_surjectivity_or_resolvent_existence": "not_proved",
+  "full_closed_Hilbert_adjoint_domain_characterization": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "weighted_H1_derivative_closure": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

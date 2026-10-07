@@ -1,0 +1,212 @@
+[
+  {
+    "path": "MolecularDynamics/Chapter06/LangevinCanonicalHilbertDissipativity.lean",
+    "raw_work_sha256": "29065cf986f7ff12e90cb9d272d70b16d50efcb66936081f2837d42cf0249f22",
+    "staged_sha256": "29065cf986f7ff12e90cb9d272d70b16d50efcb66936081f2837d42cf0249f22",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "MolecularDynamicsFormalization.lean",
+    "raw_work_sha256": "d0aaee21e5d9efe40111163c74ac760529687dd2d7ae4147026735a89a23dec3",
+    "staged_sha256": "e4379f5a5108367f87f6307a33962895c90d59675e8d46f33fbb8d0af92b159e",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "Scratch.lean",
+    "raw_work_sha256": "00186c64bcc4b54afe357de23167909ace69aee130fbce83ebca13c6ba426d88",
+    "staged_sha256": "e8f409e0e540658bb37f6f6a31e95a6c4e10d5a3a547f458b93bbd1957ab2724",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "scripts/CheckAxioms.lean",
+    "raw_work_sha256": "6f06fb95c999e191bcf0413fb1e73afdee65d02791140fa1f34b8af62b642268",
+    "staged_sha256": "e53fbdef7b0f79e0af7bee8b239e7efa32688589419d562e8cde59ab6cbf3cd3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "FORMALIZATION_MAP.md",
+    "raw_work_sha256": "14fd48009dcc6f603f8979f9d2db1a29ca390885f85d5988c6b7f91c994ef606",
+    "staged_sha256": "0d2ed817d5b54a75f6df4090d95df7621f3099276112eaa7768a9ef0f7b58ecc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "ASSUMPTIONS.md",
+    "raw_work_sha256": "88d07d8e414343100b24458220463a4601f2e5f106537340967b94090b50afea",
+    "staged_sha256": "42248c7085a4aa0bd17c665cadf5756760198f9b2af9e50b92f373fd5f110e43",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv",
+    "raw_work_sha256": "ff73beb8d7efb6fec256be952dd08d125c8fc6e681ac4e8fe144e79a17ee57d1",
+    "staged_sha256": "7c6e7f2d04575b35bbb14ad031c3e50f1b48f477e52df3de3cb92900e0e7bb73",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/NOTATION_INVENTORY.csv",
+    "raw_work_sha256": "b48577c32c2335c964f2268e4c918531e4407e8dbc25e67f0de5a09c8571a277",
+    "staged_sha256": "bc6448dfae1befbb28cace276065d2c0745b82cde20d01f3335f030245c847d5",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/reviews/2026-10-07-LangevinCanonicalHilbertDissipativity/REVIEW.zh-CN.md",
+    "raw_work_sha256": "23a80909f931e31af3664b60917662557ee7171562abc8940389bd1e56411771",
+    "staged_sha256": "23a80909f931e31af3664b60917662557ee7171562abc8940389bd1e56411771",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/ACCEPT.ps1",
+    "raw_work_sha256": "b4aca218fdf9aa2fc01075e02fa685ff6cd57a2650ab3e224a627313cd4a40ff",
+    "staged_sha256": "b4aca218fdf9aa2fc01075e02fa685ff6cd57a2650ab3e224a627313cd4a40ff",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/ACCEPTANCE.json",
+    "raw_work_sha256": "916da73d85769ca13d10e32a7ce169959c70fea6aa8a1e182b1bb07784e670eb",
+    "staged_sha256": "d088ca50ac1fab58e6198c18b701fa0151cf02a20fea6110fcef7d9ff74d1385",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/FULL_DRIVER.log",
+    "raw_work_sha256": "281655536375bd6efca6d6b230748ddac68c608a337e2f53d05763ecd5969e13",
+    "staged_sha256": "281655536375bd6efca6d6b230748ddac68c608a337e2f53d05763ecd5969e13",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/INTEGRATE.ps1",
+    "raw_work_sha256": "76f94e7261878648b9012c459c1507f6ebb46a0ff2738956b0850f7948f875bc",
+    "staged_sha256": "76f94e7261878648b9012c459c1507f6ebb46a0ff2738956b0850f7948f875bc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/LOCAL_CHECK.json",
+    "raw_work_sha256": "4e996af5e806457a07cb18ca0fd444bb4e01f810909e9899e0e36a3f92b84018",
+    "staged_sha256": "3a5ebf179d7b1e89b4083c646e71b8489c6c7e065638d68ceda297cd61a1c28a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/local01.log",
+    "raw_work_sha256": "95784a0922433b5876f2de436e0ea3b790ac7eba10dda5fba9e5f0a467946554",
+    "staged_sha256": "95784a0922433b5876f2de436e0ea3b790ac7eba10dda5fba9e5f0a467946554",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/local02.log",
+    "raw_work_sha256": "cc4234e5417c6aac651c0162455d85dd9dcb4e0e8d51a5b545c6ebd40febc0b7",
+    "staged_sha256": "cc4234e5417c6aac651c0162455d85dd9dcb4e0e8d51a5b545c6ebd40febc0b7",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/local03.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/PUBLIC_DECLARATIONS.json",
+    "raw_work_sha256": "b07a87c391f2e8cd2017ff73d38e46cd905358dfa8611b00dda37cc73a1e0e40",
+    "staged_sha256": "adbc2e0f877463bb9369102c39dde7d9fa589dde5f58548e2239c5d6a3c6feb5",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/SOURCE_AUDIT.json",
+    "raw_work_sha256": "f2a386cd35e780e58590af1406231192d6dcd913ad4df6d48edbdfe2fe381852",
+    "staged_sha256": "e5b17840ec9fdbe17fef4731c3a045c3f447fe12e8487ab78fcc2fa04f22c699",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/axiom_dependencies.log",
+    "raw_work_sha256": "a836ac279f0bf08bb24892fc7797c3b59031fffa2e9bd78981b55a67c8fc87ba",
+    "staged_sha256": "a836ac279f0bf08bb24892fc7797c3b59031fffa2e9bd78981b55a67c8fc87ba",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/CHECK_REPORT.json",
+    "raw_work_sha256": "12381730ceb2da5f33f70a04a2cb84d3539f284c5a08f76e3afaef7078c0a886",
+    "staged_sha256": "4edef6e27a0fc55f968211d8ea218a0a3fd57af84e404f10e241ae52f760a73f",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/git_branch.log",
+    "raw_work_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "staged_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/git_head.log",
+    "raw_work_sha256": "bf393917339dfd53be08c0e6cd9d0a4c67d71e3143abf792aa8465556bbeea2d",
+    "staged_sha256": "bf393917339dfd53be08c0e6cd9d0a4c67d71e3143abf792aa8465556bbeea2d",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/git_status.log",
+    "raw_work_sha256": "335237f6f4b37a5addabbc83e0d29766895299163999a389ef1bc8d6015a19c7",
+    "staged_sha256": "335237f6f4b37a5addabbc83e0d29766895299163999a389ef1bc8d6015a19c7",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/lake_build.log",
+    "raw_work_sha256": "63c95c43d36e99ac78697abd69a8fc93086b61d7903c4a6073d7a772a9c9454f",
+    "staged_sha256": "63c95c43d36e99ac78697abd69a8fc93086b61d7903c4a6073d7a772a9c9454f",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/lake_version.log",
+    "raw_work_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "staged_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/lean_version.log",
+    "raw_work_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "staged_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/mathlib_revision.log",
+    "raw_work_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "staged_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/mathlib_status.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/full-check01/scratch.log",
+    "raw_work_sha256": "c1170cc25fda6521e51ef57987cc25f4ee93f7dcd5285768e936adeae541ab18",
+    "staged_sha256": "c1170cc25fda6521e51ef57987cc25f4ee93f7dcd5285768e936adeae541ab18",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  }
+]

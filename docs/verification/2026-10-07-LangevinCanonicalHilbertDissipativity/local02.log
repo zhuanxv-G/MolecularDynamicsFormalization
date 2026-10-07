@@ -1,0 +1,12 @@
+docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/Draft.lean:81:33: error(lean.invalidField): Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression
+  mul_le_mul_left ?m.266
+of type
+  ∀ (a : ?m.260), ?m.261 * a ≤ ?m.262 * a
+docs/verification/2026-10-07-LangevinCanonicalHilbertDissipativity/Draft.lean:81:29: error: Application type mismatch: The argument
+  hn
+has type
+  0 < ‖f‖
+but is expected to have type
+  ?m.261 ≤ ?m.262
+in the application
+  mul_le_mul_left hn

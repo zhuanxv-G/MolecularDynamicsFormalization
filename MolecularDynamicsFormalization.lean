@@ -414,3 +414,5 @@ import MolecularDynamics.Chapter06.LangevinCanonicalSmoothDensity
 import MolecularDynamics.Chapter06.LangevinCanonicalHilbertGraph
 
 import MolecularDynamics.Chapter06.LangevinCanonicalHilbertClosed
+
+import MolecularDynamics.Chapter06.LangevinCanonicalHilbertDissipativity
