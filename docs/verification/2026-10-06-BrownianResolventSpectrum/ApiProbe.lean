@@ -1,0 +1,11 @@
+import MolecularDynamics.Chapter06.BrownianGibbsResolvent
+import Mathlib.Analysis.InnerProductSpace.Spectrum
+#check LinearPMap.graph_fst_eq_zero_snd
+#check ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric
+#check ContinuousLinearMap.orthogonalComplement_iSup_eigenspaces_eq_bot
+#check ContinuousLinearMap.finite_dimensional_eigenspace
+#check Submodule.orthogonal_closure
+#check Submodule.isClosed_topologicalClosure
+#check Module.End.mem_eigenspace_iff
+#check Module.End.hasEigenvalue_iff
+#check IsSelfAdjoint.isSymmetric

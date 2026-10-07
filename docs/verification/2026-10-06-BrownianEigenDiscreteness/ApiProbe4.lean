@@ -1,0 +1,2 @@
+import MolecularDynamics.Chapter06.BrownianGeneratorRealSpectrum
+#check Set.Finite.sdiff

@@ -1,0 +1,15 @@
+import MolecularDynamics.Chapter06.BrownianEigenDiscreteness
+#check Complex.imCLM
+#check ContinuousLinearMap.coeFn_compLpL
+#check Complex.re_add_im
+#check FiniteDimensional.of_surjective
+#check LinearEquiv.finiteDimensional
+#check LinearIndependent.restrict_scalars'
+#check LinearIndependent.lt_aleph0_of_finiteDimensional
+#check Cardinal.lt_aleph0_iff_finite
+#check HilbertBasis.toOrthonormalBasis
+#check Module.Basis.finiteDimensional_of_finite
+#check Infinite.of_not_finite
+#check nonempty_denumerable
+#check Denumerable.eqv
+#check HilbertBasis.reindex

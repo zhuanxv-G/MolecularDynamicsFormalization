@@ -1,0 +1,9 @@
+import MolecularDynamics.Chapter06.BrownianGeneratorRealSpectrum
+#check inv_le_inv₀
+#check Filter.tendsto_atBot
+#check exists_nat_gt
+#check Set.countable_univ_iff
+#check Set.countable_iUnion
+#check Set.Finite.countable
+#check Set.countable_range
+#check Submodule.ne_bot_iff

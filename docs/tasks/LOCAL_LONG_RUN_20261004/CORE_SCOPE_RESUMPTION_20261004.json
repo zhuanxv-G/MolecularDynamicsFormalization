@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "checked_at_utc": "2026-10-04 14:18:57 UTC",
+  "checked_timezone": "Asia/Shanghai",
+  "user_authorization_thread": "01a1072d-0131-7992-b3f1-b1f3a9ba1356",
+  "authorization": "User revised scope to textbook notation, main-text theorems and proofs, explicitly authorized continuation and then said continue again.",
+  "mathematics_thread_id": "01a102b1-a3fe-71e1-a571-347703fc09b8",
+  "mathematics_thread_title": "全书本地 Lean 形式化长期推进",
+  "observed_status": "active",
+  "observed_turn": "01a10744-6f11-7c30-9234-40def9a92a7b",
+  "observed_cursor": "ce9ff36b-f104-4488-9f20-9f7143f23378:2",
+  "observed_progress": "Theorem 2.1 original statement reviewed; C1 vector field on open domain, eventual Euler confinement and uniform O(h) error. Complete proof not yet accepted.",
+  "automation": {
+    "id": "lean",
+    "status": "ACTIVE",
+    "target_thread_id": "01a102b1-a3fe-71e1-a571-347703fc09b8",
+    "rrule_preserved": true,
+    "prompt_scope": "CORE_SCOPE.zh-CN.md",
+    "tool_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Updated automation in the app."
+        },
+        {
+          "type": "text",
+          "text": "{\"automationId\":\"lean\",\"mode\":\"update\",\"status\":\"ACTIVE\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "dispatch": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"threadId\":\"01a102b1-a3fe-71e1-a571-347703fc09b8\"}"
+      }
+    ],
+    "isError": false
+  },
+  "historical_failures": [
+    {
+      "action": "Mathematics thread first resumption",
+      "status": "failed",
+      "reason": "Usage limit; try again at 11:50 PM. Later active turn observed."
+    },
+    {
+      "action": "Automation scope update and resumption first attempt",
+      "status": "not_executed",
+      "reason": "Automatic approval review could not complete because of usage limit; no unsafe determination. Later native-tool update succeeded and ACTIVE read back."
+    }
+  ],
+  "readonly_review": {
+    "pdf_pages_1based": [
+      77,
+      78,
+      79
+    ],
+    "theorem_printed_page": 56,
+    "theorem_pdf_page_1based": 78,
+    "rendered_page_visual_review": "passed",
+    "no_formal_lean_source_modified_by_resumption_window": true,
+    "no_new_lean_build_in_resumption_window": true,
+    "responsible_semantic_signoff": "pending",
+    "earlier_source_version_hash_match": {
+      "checked_inputs": 71,
+      "report": "docs/verification/2026-10-04-Kepler/full-check37/CHECK_REPORT.json",
+      "scope": "before resumption; not a check of future source edits"
+    },
+    "renderer_first_attempt": "fitz unavailable; used bundled pypdf/pypdfium2 successfully",
+    "discrete_gronwall": "Pinned Mathlib.Analysis.ODE.DiscreteGronwall inspected; reusable discrete_gronwall result available."
+  },
+  "whole_scope_complete": false,
+  "automatic_resume_after_future_usage_exhaustion": "not_tested"
+}

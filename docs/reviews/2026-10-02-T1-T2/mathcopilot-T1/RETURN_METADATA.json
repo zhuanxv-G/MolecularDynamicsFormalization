@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0",
+  "batch": "T1-review-20261002-readonly",
+  "reviewDate": "2026-10-02",
+  "mode": "read-only review of existing statements, dependencies, and proofs",
+  "attachment": {
+    "path": "/workspace/.mathcopilot/attachments/fcf5b4dd-3966-4fda-b4b4-0c27bbf52196/01-paste-1.txt",
+    "sizeBytes": 4267,
+    "sha256": "5c20fdac86b5d708d012ffbf09fb1f805162672291ba6ce45d824bc41fa71adf",
+    "hashMatched": true
+  },
+  "repository": {
+    "workdir": "/workspace/MolecularDynamicsFormalization",
+    "remote": "https://github.com/zhuanxv-G/MolecularDynamicsFormalization.git",
+    "actualBranch": "chapter01-kinetic-energy-nonneg",
+    "actualHead": "bdcd1ecd710db5fbd6b8698e9ee3d3e05d535045",
+    "worktreeStatusAtStart": "clean",
+    "declaredLaterLocalHead": "121a9d02ad15500c630e505b363d5f04106d617f",
+    "declaredLaterLocalHeadAvailable": false,
+    "mathImplementationCommit": "c7d9778fe981c24ba7281db730206d1cfefbba4d",
+    "reviewSourceCommit": "052eea2edd51fd806edf6a9dacbb6cc3353fc82f",
+    "reviewSourceCommitAvailable": true,
+    "leanSourceChangesBetweenMathAndReviewCommit": []
+  },
+  "skills": [
+    {
+      "name": "lean-blueprint",
+      "actuallyUsed": true,
+      "use": "Read-only audit of the frozen T1 statement contract, notation mapping, API choices, assumptions, and rooted dependency DAG.",
+      "omittedByAuthorization": [
+        "new Lean skeleton",
+        "semantic alignment script",
+        "project build or check",
+        "index or declaration search"
+      ]
+    },
+    {
+      "name": "lean-proof",
+      "actuallyUsed": true,
+      "use": "Read-only audit of all 13 existing T1 proof terms and their fixed evidence; no theorem was reproved or edited.",
+      "omittedByAuthorization": [
+        "new proof construction",
+        "Lean goal query",
+        "project build or check",
+        "external theorem search"
+      ]
+    }
+  ],
+  "fixedVersionsFromReviewedEvidence": {
+    "leanRelease": "v4.34.0",
+    "leanCommit": "293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+    "mathlibRelease": "v4.34.0",
+    "mathlibCommit": "5ed2965256430c3649e86755f9576b54eca72435",
+    "freshRuntimeQueryThisReview": false
+  },
+  "textbook": {
+    "path": "/workspace/Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+    "sizeBytes": 11701675,
+    "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+    "pages": "printed 18-19 / PDF 41-42",
+    "directTextExtractionThisReview": true,
+    "visualPageReviewThisReview": false,
+    "visualLimitation": "The previously documented PNG renderings were absent; no new images were created under the read-only authorization."
+  },
+  "inputSha256AtReviewSourceCommit": {
+    "AGENTS.md": "3efa78f2d6bf433c4e6576c80b5b22a1e71d6f1d90c077497ce054bbc7fbffdd",
+    "docs/tasks/T1_SPEC.zh-CN.md": "204d03d5512d28116795d93d7617f023e849fb9d46d975bab4afce6372d3c4da",
+    "docs/tasks/T1_API_CHECK.zh-CN.md": "a4ac4a1fcf1ac9327540464ac3c926dcbcd61b8bf84ecb0e67b18188e37959d6",
+    "MolecularDynamics/Notation.lean": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+    "MolecularDynamics/BasicDefinitions.lean": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+    "MolecularDynamics/Chapter01/NBody.lean": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+    "MolecularDynamics/Chapter01/ParticleCoordinates.lean": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+    "MolecularDynamicsFormalization.lean": "9dce488d4266985bc56e2df9d6ca133a924d814c3c2758bd335031e8b93e66ce",
+    "scripts/CheckAxioms.lean": "465b20649d073f6e9bdd796aa09a7322228f29debbdfb64c2ed49fe54c8c5446",
+    "FORMALIZATION_MAP.md": "8dc82f6fd11f150189489a34668f61569466feebe546bdb305607b168562ae6e",
+    "ASSUMPTIONS.md": "16b6c18defc16724e3063846da1a9f2ad102f4e7f5d9d19fd1e3ade600b73cd0",
+    "STATUS.md": "95734d49a4c2c4abceff1dedf67a12ed1f89b7818974215b16c6e4a82cf81fc6",
+    "docs/verification/2026-10-02-T1/CHECK_REPORT.json": "973e1aec076c9c6cc2ef4a2a7979c96dc0b4be1803c963160e4f7e3b06f4756c",
+    "docs/verification/2026-10-02-T1/ISOLATED_AXIOM_AUDIT.txt": "17b323cef69dbcc0ea9239422101173153e6179eebf9a51b6e551ed716bf6a48",
+    "docs/verification/2026-10-02-T1/REMOTE_CI_RESULT.json": "17f96cce6af1a4eefbb7aef5dfd0df2359aee8dac892e740b066d5f954cfb7f8",
+    "docs/verification/2026-10-02-T1/RESULT.zh-CN.md": "f717ba8b436c9fc24b1f0517431960b44b026c67b14fe6e2261a45d50984c1c1",
+    "docs/verification/2026-10-02-T1/axiom_dependencies.log": "88164b98e4cd9105c5ab102ea5e6c96b1ce0d607e3c73f988b922d105b221034",
+    "docs/verification/2026-10-02-T1/git_branch.log": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "docs/verification/2026-10-02-T1/git_head.log": "5e4b01d53a3112b64c9b3a4a70df8ab2f98db6fc72d3a7cb0ea8ac4cf94c36ad",
+    "docs/verification/2026-10-02-T1/git_status.log": "35b5ca2fec18da22c6120270a981a98902d044b90693cf8f2a9b54eaa01b2122",
+    "docs/verification/2026-10-02-T1/lake_build.log": "bab7a04ed4c2a6bc7352f4634a5e0ff28515aab82e5f96f9db0c8c0562d8abef",
+    "docs/verification/2026-10-02-T1/lake_version.log": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "docs/verification/2026-10-02-T1/lean_version.log": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "docs/verification/2026-10-02-T1/mathlib_revision.log": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "docs/verification/2026-10-02-T1/mathlib_status.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/verification/2026-10-02-T1/scratch.log": "3e8c87ca8f4b90033b576fb1b4578d3e9d31078f1d7f3371cd1d9656a1855b8b"
+  },
+  "reviewVerdict": {
+    "statements": "accepted for all 11 T1 IDs",
+    "proofs": "accepted for all 13 existing T1 theorems",
+    "blockingFinding": null,
+    "responsibleSemanticSignoff": "pending"
+  },
+  "notPerformed": [
+    "new theorem or proof",
+    "T2 drafting",
+    "Lean build or fresh project check",
+    "semantic index access, rebuild, configuration, or repair",
+    "Git checkout, pull, merge, reset, rebase, add, commit, or push",
+    "modification of formal Lean sources or pre-existing documentation"
+  ],
+  "outputs": [
+    "docs/tasks/T1_mathcopilot_return_git/RETURN_METADATA.json",
+    "docs/tasks/T1_mathcopilot_return_git/T1_STATEMENTS_REVIEW.zh-CN.md",
+    "docs/tasks/T1_mathcopilot_return_git/T1_DEPENDENCY_BLUEPRINT.zh-CN.md",
+    "docs/tasks/T1_mathcopilot_return_git/T1_PROOF_REVIEW.zh-CN.md",
+    "docs/tasks/T1_mathcopilot_return_git/T1_ENVIRONMENT_AND_CHECKS.zh-CN.md",
+    "docs/tasks/T1_mathcopilot_return_git/T1_REVIEW_LEDGER.csv",
+    "docs/tasks/T1_mathcopilot_return_git/T1_STATEMENT_CHANGES.csv"
+  ]
+}

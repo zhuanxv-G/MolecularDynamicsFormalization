@@ -1,0 +1,85 @@
+{
+  "seed": 20261007,
+  "population": [
+    "Theorem 1.1",
+    "Theorem 2.1",
+    "Lemma 4.1",
+    "Proposition 6.1",
+    "Proposition 6.2",
+    "Proposition 6.3",
+    "Lemma 6.1",
+    "Lemma 7.1",
+    "Proposition 8.1",
+    "Proposition 8.2",
+    "Theorem 8.1",
+    "Lemma 8.1",
+    "Proposition 8.3"
+  ],
+  "sample": [
+    {
+      "chapter": 6,
+      "file": "MolecularDynamics/Chapter06/CanonicalIntegrationByParts.lean",
+      "line": 376,
+      "kind": "theorem",
+      "name": "proposition_6_1",
+      "private": false,
+      "label": "Proposition 6.1",
+      "pdf_page": 243,
+      "printed_page": 222,
+      "lean_statement": "theorem proposition_6_1 {Nc : ℕ}\n    (H : SymplecticCoordinates Nc → ℝ) (G : SymplecticCoordinates Nc → SymplecticCoordinates Nc)\n    (kB T : ℝ) (hkB : 0 < kB) (hT : 0 < T) (hH : ContDiff ℝ 1 H) (hG : ContDiff ℝ 1 G)\n    (hρI : Integrable (textbookHamiltonianGibbsWeight H (kB * T)⁻¹))\n    (hdivI : Integrable (fun z ↦ textbookDivergence G z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))\n    (henergyI : Integrable (fun z ↦ textbookLieDerivative G H z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))\n    (C : ℝ) (hC : 0 ≤ C)\n    (hbound : ∀ z, ‖textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z • G z‖ ≤ C)\n    (hpos : 0 < textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)) :\n    kB * T =\n      textbookCanonicalAverage H (kB * T)⁻¹ (textbookLieDerivative G H) /\n        textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)",
+      "page_text": "222 6 The Canonical Distribution and Stochastic Differential Equations\nthe canonical measure, we can ﬁnd many functions that have the same average. For\nexample, Rugh [319] suggested the formula\nAvˇ .krUk2/\nAvˇ ./c129U/ D kBT: (6.5)\nWe can see this as a consequence of the following proposition (see [193, 211]).\nProposition 6.1 Let H be a Hamiltonian deﬁned on the phase space R2Nc and\nsuppose G W R2Nc ! R2Nc i sas m o o t h( C1) vector ﬁeld with the following\nproperties:\n• 0< jAvˇ .G/SOHrH/j<1,\n• 0< Avˇ .r/SOHG/< 1,\n• jGe/NULˇ Hj<1\nThen\nkBTD Avˇ .G/SOHrH/\nAvˇ .r/SOHG/ :\nProof The proof relies on a 2Nc-dimensional version of integration by parts. Let\nBR be the 2Nc-dimensional ball centered at the origin, of radius R,a n dl e t/NULR be\nits boundary, the 2Nc/NUL1-dimensional sphere. Then, for any smooth scalar ﬁeld g\ndeﬁned on BR,w eh a v e\nZ\nBR\nG/SOHrgd!D\nZ\n/NULR\n.Gg//SOHOnd/NUL/NUL\nZ\nBR\n.r/SOHG/gd!; (6.6)\nwhere d!D dq1::: dpNc is the standard measure of Lebesgue integration in R2Nc\nand d/NULis the surface area element of the hypersphere, and On represents the unit\noutward normal to the sphere. Replace g by/SUBˇ D exp./NULˇ H/, then it follows that\nˇˇˇ\nˇ\nˇ\nˇ\nZ\n/NULR\n.G/SUBˇ //SOHOnd/NUL\nˇˇˇ\nˇ\nˇ\nˇ\n/DC4max\n/NULRjG/SUBˇj/ESCR;\nwhere/ESCR is the surface area of the hypersphere. Divide ( 6.6)b yt h ev o l u m e/ETBR of\nBR. Then, for large R, since the ratio of surface area to volume is proportional to\nR/NUL1,w eh a v e\nR\nBR\nG/SOHr/SUBˇ d!\n/ETBR\n/EM/NUL\nR\nBR\n.r/SOHG//SUBˇ d!\n/ETBR\n:\nSincer/SUBˇ D/NULˇrH/SUBˇ , we obtain, in the limit R!1 , the desired result. /ETX"
+    },
+    {
+      "chapter": 6,
+      "file": "MolecularDynamics/Chapter06/WienerDeterministicLaw.lean",
+      "line": 164,
+      "kind": "theorem",
+      "name": "textbookWienerDeterministicIto_proposition63",
+      "private": false,
+      "label": "Proposition 6.3",
+      "pdf_page": 252,
+      "printed_page": 231,
+      "lean_statement": "theorem textbookWienerDeterministicIto_proposition63 {W : ℝ≥0 → Ω → ℝ}\n    (hW : IsPreBrownianReal W P) {g : ℝ → ℝ} (hg : ContDiff ℝ 1 g) (T : ℝ≥0) :\n    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧\n      Tendsto (fun K : ℕ ↦ ∫ ω, (textbookWienerDeterministicSum W g T K ω - Y ω) ^ 2 ∂P)\n        atTop (𝓝 0) ∧\n      HasLaw Y (gaussianReal 0 (textbookWienerDeterministicVariance g T)) P ∧\n      (∫ ω, Y ω ∂P) = 0 ∧ (∫ ω, Y ω ^ 2 ∂P) = ∫ x in (0 : ℝ)..T, g x ^ 2",
+      "page_text": "6.3 Stochastic Differential Equations 231\nPlainly this is different than the It ¯o version of the integral, but in the cases we\nconsider it is possible to reformulate Stratonovich integrals as It ¯o integrals. In the\nremainder of this book we will adopt the It¯o form of stochastic integration.\nDeﬁned by It ¯o integration, Y.t/\ndef\nD\nR t\n0 g.s/dW.s/ can be thought of as a random\nprocess. In the case thatg indicated here is a deterministic function, Y.t/ is Gaussian\nin the sense that it is normally distributed for all time, as summarized in the\nfollowing proposition.\nProposition 6.3 Let g be a smooth deterministic function and W.t/ aW i e n e r\nprocess. The stochastic integral Y.t/ D\nR\nt\n0 g.s/dW.s/ is, for all times t /NAK0,a\nnormally distributed random variable such that\nE.Y.t//D0;\nE\n/NUL\nY2.t/\n/SOH\nD/ESC2.t/D\ntZ\n0\ng.s/2ds:\nProof S e eE x e r c i s e2 .\nFinally, we observe that by calculating/ESC2.tn/ and generating random increments\nRn /CANN.0;/ESC.tn// we have a discrete representation of the continuous time\nstochastic process Y.t/, effectively an exact stroboscopic representation. Also it is\nnatural to view the stochastic integral as the solution of the stochastic differential\nequation (SDE) with zero initial condition:\ndY.t/D g.t/dW.t/; Y.0/D0: (6.8)\nThis notion of stochastic integration carries over to stochastic integration with\nrespect to more general categories of stochastic processes. Importantly, with\nappropriate regularity we have the familiar relation from calculus:\ntZ\n0\ndY.s/D Y.t//NULY.0/:\n6.3 Stochastic Differential Equations\nIn this section we brieﬂy derive a more general stochastic differential equation as\nthe limit of a biased random walk. The treatment here is intuitive, based on the\nconcepts of limiting processes and stochas tic integration introduced above. For a\nrigorous treatment of the material presented here, it is recommended to consult a\nreference such as the excellent book of Nelson [ 279] (which also contains a very\nlively historical discussion)."
+    },
+    {
+      "chapter": 2,
+      "file": "MolecularDynamics/Chapter02/EulerConvergence.lean",
+      "line": 328,
+      "kind": "theorem",
+      "name": "theorem_2_1_euler",
+      "private": false,
+      "label": "Theorem 2.1",
+      "pdf_page": 78,
+      "printed_page": 56,
+      "lean_statement": "theorem theorem_2_1_euler {m : ℕ} (D : Set (Position m))\n    (_hDbounded : Bornology.IsBounded D) (hD : IsOpen D)\n    (f : Position m → Position m) (hf : ContDiffOn ℝ 1 f D)\n    (γ : ℝ → Position m) {τ : ℝ} (hτ : 0 ≤ τ)\n    (hγD : MapsTo γ (Icc 0 τ) D)\n    (hγ : ∀ t ∈ Icc 0 τ, HasDerivWithinAt γ (f (γ t)) (Icc 0 τ) t) :\n    ∃ C : ℝ, 0 < C ∧ ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,\n      (∀ n ≤ ν, eulerIterate f (τ / (ν : ℝ)) (γ 0) n ∈ D) ∧\n        eulerMaxError f (τ / (ν : ℝ)) γ ν ≤ C * (τ / (ν : ℝ))",
+      "page_text": "56 2 Numerical Integrators\nGh.z/D zC hf.z/;\nand we have\nznC1D Gh.zn/; nD0;1;2;::: (2.2)\nwith z0D/DLE. The pointsfzng are intended to be approximations to the values of the\nsolution. The obvious question is this: how good an approximation is zn of z.nh/?\nLet the approximate solution vectors at successive timesteps be z0; z1;:::; z/ETB\nwhere/ETBhD/FS. We assume that/FS, the length of the time interval, is ﬁxed, and/ETBis an\ninteger parameter representing the total number of timesteps. In order to improve the\nquality of the approximation, the parameter /ETBmay be increased, as the stepsize is\nproportionately decreased. The error at stepn is deﬁned by e\nnDk zn/NULz.tn/k,w h e r e\ntnD nh; it clearly depends on h. With these deﬁnitions one can prove the following\nresult, which is typical of the sorts of results that are available for numerical methods\nfor initial value problems:\nTheorem 2.1 Let D be a bounded, open region in R\nm such that f W D! Rm is\ncontinuously differentiable. Let/DLEbe an interior point of D and suppose the initial\nvalue problem ( 2.1) has a unique solution that remains in D for t 2 Œ0;/FS/c141.T h e n\nthere exists a constant C./FS/>0 such that for sufﬁciently large/ETB2 N the numerical\nsolution zn remains in D for n D 0;1;:::;/ETB ,w h e r eh/ETBD /FS, and, moreover, the\nmaximum global error in Euler’s method satisﬁes\nNeWD max\n0/DC4n/DC4/ETB\nen/DC4C./FS/h:\nIn short, the error in the approximation obtained on Œ0;/FS/c141is reduced in direct\nproportion to the number of steps taken to cover this interval. Another way to say\nthis is thatNe/ h, or, using the order notation,NeD O.h/. Because the global error is\nof order h\nr,w h e r erD1, we say that Euler’s method is a ﬁrst order method, or that\nit converges with order rD1.\n2.1.1 Example: The Trimer\nLet us test Euler’s method on the trimer model (formulated as a system in R4).\nFixing initial values (q0 D.0:5;1:0/I p0 D.0:1;0:1/ )w es o l v et h et r i m e ro nŒ0;4/c141\nusing the Euler method ﬁrst with 40 time-steps of length 0:1,n e x tu s i n g80 time-\nsteps of length 0:05 and then with 160 steps of size 0:025, etc. Each calculation\nresults in a different “discrete trajectory.” The solutions are graphed in the xy\nprojection in the left panel of Fig. 2.2 with line segments connecting the points;\nthese piecewise linear paths take on the appearance of smooth curves as the stepsize\nis reduced."
+    },
+    {
+      "chapter": 6,
+      "file": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "line": 200,
+      "kind": "theorem",
+      "name": "textbookWienerQuadraticSum_meanSquare_tendsto",
+      "private": false,
+      "label": "Proposition 6.2",
+      "pdf_page": 250,
+      "printed_page": 229,
+      "lean_statement": "theorem textbookWienerQuadraticSum_meanSquare_tendsto {W : ℝ≥0 → Ω → ℝ}\n    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :\n    Tendsto (fun K : ℕ ↦ ∫ ω,\n      (textbookWienerQuadraticSum W T K ω - (T : ℝ)) ^ 2 ∂P) atTop (𝓝 0)",
+      "page_text": "6.2 Stochastic Differential Equations for Molecular Models 229\nBreaking this into two parts, we see that the ﬁrst sum telescopes to give W ./FS/2 (as\nW.0/D0). On the other hand, from (6.7), we have\nlim/ETB!1E\n/ETB/NUL1X\nkD0\nh\n.W..kC1/ı t//NULW.kı t//2\ni\nD/FS;\nbut an even stronger statement is possible. Since we are summing a large collection\nof random variables/c129Wk whose means are ı t, the Central Limit Theorem tells us\nthat, if we assume it to be well deﬁned, the variance of the sum of squares from /FS\nmust tend to zero as a function of/ETB. Thus we may understand the convergence in a\nsomewhat stronger sense than convergence in expectation. We make this precise in\nthe following proposition\nProposition 6.2 Let/ETBıtD/FSthen\nl:i:m:\n/ETB!1\n/ETB/NUL1X\nkD0\nh\n.W..kC1/ı t//NULW.kı t//2\ni\nD/FS;\nwhere, for a sequence of random variables, A/ETBand a random variable B, we have\nl:i:m:/ETB!1A/ETBD B, lim/ETB!1E.A/ETB/NULB/2D0:\n(This is referred to as convergence in the mean square sense.)\nProof With/FS;/ETBﬁxed, we haveı tD/FS=/ETB.\nLet/c129W/ETB;kD W..kC1/ı t//NULW.kı t/D W..kC1//FS=/ETB//NULW.k/FS=/ETB/and observe\nthat\n/ETB/NUL1X\nkD0\n/c129W2\n/ETB;k/NUL/FSD\n/ETB/NUL1X\nkD0\nh\n/c129W2\n/ETB;k/NUL/FS\n/ETB\ni\n:\nThen\nI/ETB\ndef\nD E\n /ETB/NUL1X\nkD0\n/c129W2\n/ETB;k/NUL/FS\n!2\nD E\n /ETB/NUL1X\nkD0\nh\n/c129W2\n/ETB;k/NUL/FS\n/ETB\ni!2\n:\nTerms of the formZ/ETB;k\ndef\nD/c129W2\n/ETB;k/NUL/FS\n/ETBare independent and have mean zero. Therefore\nE\n /ETB/NUL1X\nkD0\nZ/ETB;k\n!2\nD E\n/ETB/NUL1X\nkD0\nZ2\n/ETB;k/NUL2E\nX\nk¤ l\nZ/ETB;kZ/ETB;lD E\n/ETB/NUL1X\nkD0\nZ2\n/ETB;k;"
+    },
+    {
+      "chapter": 8,
+      "file": "MolecularDynamics/Chapter08/ThermostatHormander.lean",
+      "line": 274,
+      "kind": "theorem",
+      "name": "textbookNHL_hormander_physicalNoise",
+      "private": false,
+      "label": "Theorem 8.1",
+      "pdf_page": 367,
+      "printed_page": 346,
+      "lean_statement": "theorem textbookNHL_hormander_physicalNoise {Nc : ℕ}\n    (A : Matrix (Fin Nc) (Fin Nc) ℝ) (hA : A.PosDef)\n    (hdist : Function.Injective hA.1.eigenvalues) (μ θ γ : ℝ)\n    (hμ : 0 < μ) (hθ : 0 < θ) (hγ : 0 < γ)\n    (w : textbookThermostatPhase Nc × ℝ) (hw : w.1 ∈ textbookThermostatModeDomain hA.1) :\n    textbookHormanderAt\n      {textbookNHLDrift A μ θ γ, textbookThermostatNoise (Real.sqrt (2 * θ * γ * μ⁻¹))} w",
+      "page_text": "346 8 Extended Variable Methods\npreserves O/SUB./CAN/D exp./NULˇ/SYN/CAN2=2/. However, this is obvious from our earlier\ninvestigations of Ornstein-Uhlenbeck equations.\nIn order to show that this thermostat is ergodic, we need to demonstrate that\nthe assumptions presented in Sect. 6.4.4 are valid. Assumption 1(ii) requires us to\nverify that a Hörmander condition (see Deﬁnition 6.1) holds for the Nosé-Hoover-\nLangevin system. Because of the complex ity of the high order commutators, we\nwill work here with the assumption of a quadratic potential in the physical model.\nIn some sense this is the most difﬁcult case for a thermostat, but paradoxically, the\nassumption facilitates the mathematical analysis. We will assume throughout the\nfollowing that N\ndD Nc, i.e. that there are no constraints in the system. Our potential\nwill therefore be assumed to be\nU.q/D 1\n2qT Aq;\nfor A a symmetric, positive deﬁnite Nc/STXNc matrix, with\nrU.q/D Aq:\nWe will further assume MD I. If this is not the case, then one may introduce the\nrescalingQqD M/NUL1=2q;QpD M1=2p in order to rewrite the system in a form that does\nnot involve M. Thus the system under study is\ndqD pdt; (8.30)\ndpD/NULAqdt/NUL/CANpdt; (8.31)\nd/CAND/SYN/NUL1Œkpk2/NULNdkBT/c141dt/NUL/CR/CANdtC/ESCdW: (8.32)\nLet u1; u2;:::; uNc be the eigenvectors of A with/NAK1;:::;/NAK Nc the corresponding\neigenvalues. Observe that ifq0/SOHukD p0/SOHukD0, then, using (8.30)–(8.31), we have\nat this point\nuk/SOHpD0; uk/SOHŒ/NULAq/NUL/CANp/c141D/NUL/NAKkuk/SOHqD0;\nwhich implies that VkDf.q; p/juk/SOHqD0; uk/SOHpD0g is an invariant submanifold.\nTherefore we must require that uk/SOHq and uk/SOHp do not simultaneously vanish, that\nis,.q; p/2 DD R2Nc nSNc\nkD1 Vk.\nTheorem 8.1 If A is symmetric positive deﬁnite and has distinct eigenvalues, then\n(8.30)–(8.32) satisﬁes the Hörmander condition on D/STXR."
+    }
+  ]
+}

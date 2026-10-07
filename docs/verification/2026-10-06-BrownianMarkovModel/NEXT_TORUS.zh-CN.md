@@ -1,0 +1,13 @@
+# 下一正文目标：原Brownian torus实际随机模型
+最近已接受 BrownianPathSolution/BrownianRandomModel/BrownianMarkovModel，同一原positive masses/U C∞integerperiodic/beta>0/gamma1，真实globalq及completedhistory conditional Markov law均只在configuration lift。
+正式下一模块 MolecularDynamics/Chapter06/BrownianTorusModel.lean 尚未创建，不计已完成。
+先读 BrownianHilbertCore.lean 的已有 textbookConfigurationTorusProjection_isOpenQuotientMap 和 BrownianTorusGibbs.lean 的 Projection/Representative/Observable_lift，复用原same UnitAddTorus 与真实Gibbs measure，勿重证已有quotientmap。
+1. 原drift_periodic推出实际积分解整数平移，再trueunique给selectedendpoint整数等变。
+2. Representative_projects与AddCircle.coe_eq_zero_iff给真实rep(proj x)=x+整数，推原periodicendpoint对每个real lift无关；不要假定商上的解唯一。
+3. 真projection openquotient与原jointendpointcontinuous推出periodicendpoint jointcontinuous/measurable；代表函数本身只可测，不能当连续。
+4. 定义实际torusdrift=原drift(rep Q)，用原每coordinate periodic observable_lift证torusdrift(proj q)=原drift(q)，及其真正toruscontinuous。
+5. 定义原torus积分模型：ContinuousOn Q/noise和Qt=X+proj(∫torusdrift(Qt)+原Sigma increments)；实际realq投影给这个方程，保留general masses。
+6. sameglobalq从rep X起始的真实torusprojection、initial/globalAE originalperiodiceq/ContinuousOn/AEmeasurable/Adapted；actualperiodicendpoint truefuture restart来自realrestart+liftindependent，不以restart冒充条件Markov。
+7. 原periodicjointendpoint和真实Wienerpathlaw构造torusKernel并证actualglobaltorusLaw、与lift kernel真推前一致，再使用已验收private genericcompleted endpointdisintegration证明同一torusprocess completedhistory jointlaw/condDistrib。
+完整批次先局部再唯一scripts/check.ps1及各项公理/全部输入与rawlog哈希审计；纯本文档变化不重跑Lean。上一193exact输入验收仍有效。
+尚未：actualstochasticgenerator/law=已构造spectral T、正文5.6真实概率期望识别、C²/C∞core负责人最终语义签核、整个Theorem6.1和CORE_SCOPE。nativeGoalusageLimited未修改，普通额度最近可用，配置自动启动测试标志不擅改。不唤醒旧聊天、MathCopilot或新建任务/Goal/自动化。

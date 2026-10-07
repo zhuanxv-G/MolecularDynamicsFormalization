@@ -1,0 +1,1 @@
+17项候选已准备但未编译。先等待BrownianGibbsComplexSpectrum full-check02结束验收/commit，确认无在跑build后再api01/local01。实际零空间projection=向量，first_eq_phase_one取symm；同组r²=1 sign保持fullbasis。首AE1及complex整个基/whole谱orderedrange同时落实。SDElaw识别/core负责人签核仍独立未完；本候选不是验收成果。

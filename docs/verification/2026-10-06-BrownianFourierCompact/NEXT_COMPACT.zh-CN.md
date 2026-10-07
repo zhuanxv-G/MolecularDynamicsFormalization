@@ -1,0 +1,10 @@
+# 下一真实Fourier紧算子批次
+当前正式HEAD2d024b6b131d1a6ac1aea38aac4bbc67de83ce7f：一般原m/U/β同一Gibbs光滑周期图闭包已证明真正IsSelfAdjoint。最新full167正式输入SHA重新逐一核对未变；不重跑旧full。全Theorem6.1、CORE_SCOPE仍未完成，负责人C²/core语义签核独立pending。
+本目录Draft.lean7public必要候选local02-draft退出0空日志零警告，LOCAL_CHECK记录exact源码/logSHA。真实r_n=(1+Ω_n)inv正/≤1/even，真正actualcoefficient lpCLM乘r_n，完整pointwise与norm contraction证明；仅docs草稿，未正式root/axiom/full，不当实际Hilbert compact或真正resolvent。
+api02全部固定API退出0、零警告，API_CHECK记录SHA。api01旧Compact umbrella已deprecated，IsCompactOperator.sum/Complex.norm_reCLM不存在；正确Compact.Basic、compactOperator Submodule.sum_mem、Complex.abs_re_le_norm和isCompactOperator_of_locallyCompactSpace_rng（其名字rng实际指从局部紧空间出发），不可重猜错误API。
+恢复第一动作：读取Draft/LOCAL_CHECK/api02，补 actual finite CLM D_s=Σ_{n∈s} (r_n:ℂ)•(lp.singleContinuousLinearMap ℂ (fun _=>ℂ) 2 n).comp(lp.evalCLM ℂ (fun _=>ℂ) 2 n)。证明真实坐标是if n∈s then r_n*a_n else0；用compactOperator.sum_mem与scalar-smul、singleCLM从ℂ出发的真实compact再comp eval构造每个D_s紧。
+接 actual ‖D−D_s‖≤ε：outside s derived r_n≤ε，用lp.norm_mono比较真正差向量与ε•a；不是把normcompactness放入假设。已接受原frequency_resolvent_decay给cofinite ε/2小，有限bad-index.toFinset之后所有大Finset均控制tail，Metric.tendsto_atTop得真实opnorm D_s→D，isCompactOperator_of_tendsto得真实coefficientCLM紧。
+再实际UnitAddTorus.mFourierBasis.repr的两个真实ContinuousLinearEquiv与D组成整个complexHaar Lp的CLM，actualFouriercoeff公式及norm/compact；实际R.comp(D_Haar.restrictScalars ℝ).comp J给全realHaar紧CLM。reCLM norm若需要，用已验API abs_re_le_norm + compLpL_normbound推导，不引用不存在norm_reCLM。
+必须进一步证明实际complex Fourier conjugate/reflected系数关系与频率even给D_Haar(Jx)仍真实实值，即J(R(D_Haar(Jx)))=D_Haar(Jx)。由真正coef关系和已接受MassClosed.graph_iff_coeff得实际resolvent域/graph，再两侧真正inverse identities，才称actualMassClosed紧预解算子。
+一般U还需实际λ>‖V‖的massresolvent norm bound、derivedNeumann逆和boundedV graph identity，或另实际compact embedding路线，再truefullsameµ isometry转回originalGibbs。可扩展λinverse weights作为原一般U确需依赖，不独立一般化。离散完整谱/本征基/整谱gap、真实evolution/expectation仍缺，既有realpoint eigen bound不能当全谱完成。
+local01-draft仅两处simp transparency不展开weight/LinearMap record norm，改为explicit unfold和exact后7项通过；raw失败完整保留，源码无占位/新公理/unsafe。完成整个compact operator目标后统一一次root/Scratch/全pubaxioms/CSV/full验收，再精确本地commit，保留历史dirty/untracked。

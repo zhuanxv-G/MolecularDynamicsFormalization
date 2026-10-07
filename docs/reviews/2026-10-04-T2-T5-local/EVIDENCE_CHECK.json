@@ -1,0 +1,735 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-10-04T11:06:54.6105589+08:00",
+  "scope": "T2/T5 local supplementary evidence review; no rebuild, no website, no remote CI refresh",
+  "fixed_review_commit": "9baf87f89d07138a95bfbfe1f37d45dd54946cf7",
+  "textbook_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "batches": [
+    {
+      "batch": "T2",
+      "frozen_commit": "675fcaedbdef7b6ec57393c1ee99e9ca727da649",
+      "check_report_sha256": "db20dd9028014dd6b30e97c621f62b403944dbc5e8ecd3c9eb97e27f32d77205",
+      "recorded_check_start": "2026-10-03T01:08:19.6784403+08:00",
+      "recorded_check_finish": "2026-10-03T01:11:13.2176014+08:00",
+      "recorded_machine_status": "passed",
+      "recorded_exit_code": 0,
+      "recorded_lean_version": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+      "recorded_mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+      "inputs": [
+        {
+          "path": ".github/workflows/lean_action_ci.yml",
+          "report_sha256": "dedfe9952e8de6eca35ca12c9f34e4d3ded9b214520e5dc216c55f3f0bc30414",
+          "committed_sha256": "dedfe9952e8de6eca35ca12c9f34e4d3ded9b214520e5dc216c55f3f0bc30414",
+          "committed_bytes_match_report": true,
+          "current_sha256": "dedfe9952e8de6eca35ca12c9f34e4d3ded9b214520e5dc216c55f3f0bc30414",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "lake-manifest.json",
+          "report_sha256": "5156c987301057f3386cd99b43d5125e87b82bd245e712c60152cc4b5f357aba",
+          "committed_sha256": "5156c987301057f3386cd99b43d5125e87b82bd245e712c60152cc4b5f357aba",
+          "committed_bytes_match_report": true,
+          "current_sha256": "5156c987301057f3386cd99b43d5125e87b82bd245e712c60152cc4b5f357aba",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "lakefile.toml",
+          "report_sha256": "bdfb6a94cabc34eafe50274555e00374bd976139054b7cf3d69f139d79ff5197",
+          "committed_sha256": "bdfb6a94cabc34eafe50274555e00374bd976139054b7cf3d69f139d79ff5197",
+          "committed_bytes_match_report": true,
+          "current_sha256": "bdfb6a94cabc34eafe50274555e00374bd976139054b7cf3d69f139d79ff5197",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "lean-toolchain",
+          "report_sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+          "committed_sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+          "committed_bytes_match_report": true,
+          "current_sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/BasicDefinitions.lean",
+          "report_sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+          "committed_sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+          "committed_bytes_match_report": true,
+          "current_sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+          "report_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+          "committed_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+          "committed_bytes_match_report": true,
+          "current_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/Chapter01/NBody.lean",
+          "report_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+          "committed_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+          "committed_bytes_match_report": true,
+          "current_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+          "report_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+          "committed_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+          "committed_bytes_match_report": true,
+          "current_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/Notation.lean",
+          "report_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+          "committed_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+          "committed_bytes_match_report": true,
+          "current_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamicsFormalization.lean",
+          "report_sha256": "c8d6fad5688036ab0f5f8b80036ee73bcb59cbad0ed074dc6bcb46ccd80680d8",
+          "committed_sha256": "c8d6fad5688036ab0f5f8b80036ee73bcb59cbad0ed074dc6bcb46ccd80680d8",
+          "committed_bytes_match_report": true,
+          "current_sha256": "a19639554e1b3de8abbec9f0040201ca9858eb1cf2f7617df12c462ca68e82a1",
+          "current_bytes_match_report": false
+        },
+        {
+          "path": "Scratch.lean",
+          "report_sha256": "1afda0d6af671f0eb88a25250d3b0a2ee5c3733d72f3bf1ca745a00f250d16cd",
+          "committed_sha256": "1afda0d6af671f0eb88a25250d3b0a2ee5c3733d72f3bf1ca745a00f250d16cd",
+          "committed_bytes_match_report": true,
+          "current_sha256": "12538bc8367865bc748361b5a9599276be2c1538e2c4ea1217125655e5552825",
+          "current_bytes_match_report": false
+        },
+        {
+          "path": "scripts/check.ps1",
+          "report_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d",
+          "committed_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d",
+          "committed_bytes_match_report": true,
+          "current_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "scripts/CheckAxioms.lean",
+          "report_sha256": "d429708379aad54c448cab6984673de955ca70faeca37db51d2e224323d0250d",
+          "committed_sha256": "d429708379aad54c448cab6984673de955ca70faeca37db51d2e224323d0250d",
+          "committed_bytes_match_report": true,
+          "current_sha256": "2535459af758dd1f1ef98c0db6490e1343eaef3e28147126f284a6342d45e762",
+          "current_bytes_match_report": false
+        }
+      ],
+      "logs": [
+        {
+          "check": "git_branch",
+          "recorded_exit_code": 0,
+          "raw_log": "git_branch.log",
+          "recorded_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+          "actual_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "git_head",
+          "recorded_exit_code": 0,
+          "raw_log": "git_head.log",
+          "recorded_sha256": "f30a0ae4ae017ec9fa9eff38202f31b239238c9c096a9839a3430ee25c5d731a",
+          "actual_sha256": "f30a0ae4ae017ec9fa9eff38202f31b239238c9c096a9839a3430ee25c5d731a",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "git_status",
+          "recorded_exit_code": 0,
+          "raw_log": "git_status.log",
+          "recorded_sha256": "1bdf866f61ca5ae1a13671e949752b623b6b8771eaa0a7dea88f9630ce470bc7",
+          "actual_sha256": "1bdf866f61ca5ae1a13671e949752b623b6b8771eaa0a7dea88f9630ce470bc7",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "lake_version",
+          "recorded_exit_code": 0,
+          "raw_log": "lake_version.log",
+          "recorded_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+          "actual_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "lean_version",
+          "recorded_exit_code": 0,
+          "raw_log": "lean_version.log",
+          "recorded_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+          "actual_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "mathlib_revision",
+          "recorded_exit_code": 0,
+          "raw_log": "mathlib_revision.log",
+          "recorded_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+          "actual_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "mathlib_status",
+          "recorded_exit_code": 0,
+          "raw_log": "mathlib_status.log",
+          "recorded_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "lake_build",
+          "recorded_exit_code": 0,
+          "raw_log": "lake_build.log",
+          "recorded_sha256": "89aeb4613adf9ab5df11933534b0c49d809ce68991353f30609423651faf6359",
+          "actual_sha256": "89aeb4613adf9ab5df11933534b0c49d809ce68991353f30609423651faf6359",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "scratch",
+          "recorded_exit_code": 0,
+          "raw_log": "scratch.log",
+          "recorded_sha256": "52530710bae871f6c859eff95131df961acf3c6a14f142f517da77ff6969eb22",
+          "actual_sha256": "52530710bae871f6c859eff95131df961acf3c6a14f142f517da77ff6969eb22",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "axiom_dependencies",
+          "recorded_exit_code": 0,
+          "raw_log": "axiom_dependencies.log",
+          "recorded_sha256": "4c15933d00d4d540448d16b4cbd0c29b13b4a094e367e381261d6445b071ff5e",
+          "actual_sha256": "4c15933d00d4d540448d16b4cbd0c29b13b4a094e367e381261d6445b071ff5e",
+          "log_bytes_match_report": true
+        }
+      ],
+      "saved_ci": {
+        "record_sha256": "f6da98498f4e21cf8c789308cbc440b0e6c30265889d309e9e76a0765f08c272",
+        "commit": "675fcaedbdef7b6ec57393c1ee99e9ca727da649",
+        "expected_commit_matches": true,
+        "run_id": 37039648187,
+        "conclusion": "success",
+        "fetched_live_this_review": false,
+        "original_remote_archive_downloaded_this_review": false
+      }
+    },
+    {
+      "batch": "T5",
+      "frozen_commit": "9baf87f89d07138a95bfbfe1f37d45dd54946cf7",
+      "check_report_sha256": "39b4214b88142009e478d4439ec6b141441a4038f2128c535f0f26218192bedf",
+      "recorded_check_start": "2026-10-03T01:25:07.4366741+08:00",
+      "recorded_check_finish": "2026-10-03T01:28:24.1535591+08:00",
+      "recorded_machine_status": "passed",
+      "recorded_exit_code": 0,
+      "recorded_lean_version": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+      "recorded_mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+      "inputs": [
+        {
+          "path": ".github/workflows/lean_action_ci.yml",
+          "report_sha256": "dedfe9952e8de6eca35ca12c9f34e4d3ded9b214520e5dc216c55f3f0bc30414",
+          "committed_sha256": "dedfe9952e8de6eca35ca12c9f34e4d3ded9b214520e5dc216c55f3f0bc30414",
+          "committed_bytes_match_report": true,
+          "current_sha256": "dedfe9952e8de6eca35ca12c9f34e4d3ded9b214520e5dc216c55f3f0bc30414",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "lake-manifest.json",
+          "report_sha256": "5156c987301057f3386cd99b43d5125e87b82bd245e712c60152cc4b5f357aba",
+          "committed_sha256": "5156c987301057f3386cd99b43d5125e87b82bd245e712c60152cc4b5f357aba",
+          "committed_bytes_match_report": true,
+          "current_sha256": "5156c987301057f3386cd99b43d5125e87b82bd245e712c60152cc4b5f357aba",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "lakefile.toml",
+          "report_sha256": "bdfb6a94cabc34eafe50274555e00374bd976139054b7cf3d69f139d79ff5197",
+          "committed_sha256": "bdfb6a94cabc34eafe50274555e00374bd976139054b7cf3d69f139d79ff5197",
+          "committed_bytes_match_report": true,
+          "current_sha256": "bdfb6a94cabc34eafe50274555e00374bd976139054b7cf3d69f139d79ff5197",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "lean-toolchain",
+          "report_sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+          "committed_sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+          "committed_bytes_match_report": true,
+          "current_sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/BasicDefinitions.lean",
+          "report_sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+          "committed_sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+          "committed_bytes_match_report": true,
+          "current_sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+          "report_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+          "committed_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+          "committed_bytes_match_report": true,
+          "current_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/Chapter01/NBody.lean",
+          "report_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+          "committed_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+          "committed_bytes_match_report": true,
+          "current_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+          "report_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+          "committed_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+          "committed_bytes_match_report": true,
+          "current_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/Chapter01/PotentialBarriers.lean",
+          "report_sha256": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6",
+          "committed_sha256": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6",
+          "committed_bytes_match_report": true,
+          "current_sha256": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamics/Notation.lean",
+          "report_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+          "committed_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+          "committed_bytes_match_report": true,
+          "current_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "MolecularDynamicsFormalization.lean",
+          "report_sha256": "a4f99c7cf5064bd1fdca42895069906cc23c69a1fd27a7a2f154899a60f07771",
+          "committed_sha256": "a4f99c7cf5064bd1fdca42895069906cc23c69a1fd27a7a2f154899a60f07771",
+          "committed_bytes_match_report": true,
+          "current_sha256": "a19639554e1b3de8abbec9f0040201ca9858eb1cf2f7617df12c462ca68e82a1",
+          "current_bytes_match_report": false
+        },
+        {
+          "path": "Scratch.lean",
+          "report_sha256": "1afda0d6af671f0eb88a25250d3b0a2ee5c3733d72f3bf1ca745a00f250d16cd",
+          "committed_sha256": "1afda0d6af671f0eb88a25250d3b0a2ee5c3733d72f3bf1ca745a00f250d16cd",
+          "committed_bytes_match_report": true,
+          "current_sha256": "12538bc8367865bc748361b5a9599276be2c1538e2c4ea1217125655e5552825",
+          "current_bytes_match_report": false
+        },
+        {
+          "path": "scripts/check.ps1",
+          "report_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d",
+          "committed_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d",
+          "committed_bytes_match_report": true,
+          "current_sha256": "5724bbc34fa4bc83356521154e7efb6e4c02f3db82663caf5de4d1efd39bda5d",
+          "current_bytes_match_report": true
+        },
+        {
+          "path": "scripts/CheckAxioms.lean",
+          "report_sha256": "a2b671df05709e233b0de08a81d0c6246695b8018fd790a32b7ee27ce0001e0e",
+          "committed_sha256": "a2b671df05709e233b0de08a81d0c6246695b8018fd790a32b7ee27ce0001e0e",
+          "committed_bytes_match_report": true,
+          "current_sha256": "2535459af758dd1f1ef98c0db6490e1343eaef3e28147126f284a6342d45e762",
+          "current_bytes_match_report": false
+        }
+      ],
+      "logs": [
+        {
+          "check": "git_branch",
+          "recorded_exit_code": 0,
+          "raw_log": "git_branch.log",
+          "recorded_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+          "actual_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "git_head",
+          "recorded_exit_code": 0,
+          "raw_log": "git_head.log",
+          "recorded_sha256": "69302e3d2ba2375244443292cd24eeba2b027310fa775492a1f68bb2032f33ac",
+          "actual_sha256": "69302e3d2ba2375244443292cd24eeba2b027310fa775492a1f68bb2032f33ac",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "git_status",
+          "recorded_exit_code": 0,
+          "raw_log": "git_status.log",
+          "recorded_sha256": "08eb420eff91bcbfe31b1cdff8834846947a90e717a590adc171df7e21fe2103",
+          "actual_sha256": "08eb420eff91bcbfe31b1cdff8834846947a90e717a590adc171df7e21fe2103",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "lake_version",
+          "recorded_exit_code": 0,
+          "raw_log": "lake_version.log",
+          "recorded_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+          "actual_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "lean_version",
+          "recorded_exit_code": 0,
+          "raw_log": "lean_version.log",
+          "recorded_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+          "actual_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "mathlib_revision",
+          "recorded_exit_code": 0,
+          "raw_log": "mathlib_revision.log",
+          "recorded_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+          "actual_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "mathlib_status",
+          "recorded_exit_code": 0,
+          "raw_log": "mathlib_status.log",
+          "recorded_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "lake_build",
+          "recorded_exit_code": 0,
+          "raw_log": "lake_build.log",
+          "recorded_sha256": "6073aeae0d610e3659fe6e86102a93f0d9818ac08ef95fd928dacd7c4336679a",
+          "actual_sha256": "6073aeae0d610e3659fe6e86102a93f0d9818ac08ef95fd928dacd7c4336679a",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "scratch",
+          "recorded_exit_code": 0,
+          "raw_log": "scratch.log",
+          "recorded_sha256": "52530710bae871f6c859eff95131df961acf3c6a14f142f517da77ff6969eb22",
+          "actual_sha256": "52530710bae871f6c859eff95131df961acf3c6a14f142f517da77ff6969eb22",
+          "log_bytes_match_report": true
+        },
+        {
+          "check": "axiom_dependencies",
+          "recorded_exit_code": 0,
+          "raw_log": "axiom_dependencies.log",
+          "recorded_sha256": "e347170e074a3990d52bf75e6667a37aa9c983f244e55ab56e1bbb833edcd775",
+          "actual_sha256": "e347170e074a3990d52bf75e6667a37aa9c983f244e55ab56e1bbb833edcd775",
+          "log_bytes_match_report": true
+        }
+      ],
+      "saved_ci": {
+        "record_sha256": "af01877b22e147981e39eb18317e397e0f6429e8a689d346c97748664db3817b",
+        "commit": "9baf87f89d07138a95bfbfe1f37d45dd54946cf7",
+        "expected_commit_matches": true,
+        "run_id": 37041343101,
+        "conclusion": "success",
+        "fetched_live_this_review": false,
+        "original_remote_archive_downloaded_this_review": false
+      }
+    }
+  ],
+  "reviewed_proofs": [
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "current_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+      "frozen_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+      "current_bytes_match_frozen_commit": true,
+      "named_theorem_count": 15,
+      "audit": [
+        {
+          "declaration": "MolecularDynamics.massOperator_apply",
+          "individually_printed_in_old_log": false,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "No individual print; verified namespace-wide audit covers this declaration"
+        },
+        {
+          "declaration": "MolecularDynamics.velocityOperator_apply",
+          "individually_printed_in_old_log": false,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "No individual print; verified namespace-wide audit covers this declaration"
+        },
+        {
+          "declaration": "MolecularDynamics.massOperator_velocityOperator",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.velocityOperator_massOperator",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.IsMechanicalSolutionOn.mono",
+          "individually_printed_in_old_log": false,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "No individual print; verified namespace-wide audit covers this declaration"
+        },
+        {
+          "declaration": "MolecularDynamics.IsMechanicalSolutionOn.continuousOn",
+          "individually_printed_in_old_log": false,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "No individual print; verified namespace-wide audit covers this declaration"
+        },
+        {
+          "declaration": "MolecularDynamics.IsLocalMechanicalIVP.initial_mem",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.isMechanicalSolutionOn_iff_components",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.momentum_eq_mass_deriv_position",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.hasDerivAt_deriv_position",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.solution_nBodyEquationAt",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.solution_nBodyEquationAt_of_differentiable",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.solution_hasGradientAt_potential",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.newtonTrajectory_to_mechanicalSolution",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.freeParticle_localIVP",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        }
+      ]
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/PotentialBarriers.lean",
+      "current_sha256": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6",
+      "frozen_sha256": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6",
+      "current_bytes_match_frozen_commit": true,
+      "named_theorem_count": 25,
+      "audit": [
+        {
+          "declaration": "MolecularDynamics.strictOn_iff_punctured",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.strictUniv_iff",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.strictOn_isLocalMinOn",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.compact_positive_gap",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.fixed_sphere_barrier",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.open_domain_barrier",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.energy_excludes_sphere",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.energy_below_barrier_excludes_sphere",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.conserved_trajectory_stays_in_ball",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.conserved_trajectory_below_barrier_stays_in_ball",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.conserved_trajectory_center_below_barrier_stays_in_ball",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.open_domain_energy_confinement",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.zero_dimensional_sphere_empty",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.zero_dimensional_barrier",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.zero_dimensional_strict_min",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.singleton_relative_strict",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.singleton_sphere_not_subset",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.quartic_strict_min",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.quartic_sphere_barrier",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.constant_local_min",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.constant_not_strict",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.quartic_potential_continuous",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.endpoint_potential_continuous",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.endpoint_strict_radius",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        },
+        {
+          "declaration": "MolecularDynamics.endpoint_no_barrier",
+          "individually_printed_in_old_log": true,
+          "covered_by_verified_namespace_audit": true,
+          "only_allowed_axioms": true,
+          "coverage_note": "Individual axiom print plus namespace-wide audit"
+        }
+      ]
+    }
+  ],
+  "responsible_final_semantic_signoff": "pending",
+  "mathcopilot_original_review_reports_received": false
+}

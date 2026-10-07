@@ -1,0 +1,14 @@
+import MolecularDynamics.Chapter06.BrownianGibbsComplexOperator
+import Mathlib.Analysis.Normed.Operator.Compact.Basic
+open MeasureTheory
+#check IsCompactOperator
+#check IsCompactOperator.comp_clm
+#check IsCompactOperator.clm_comp
+#check IsCompactOperator.add
+#check IsCompactOperator.smul
+#check LinearMap.mkContinuous
+#check ContinuousLinearMap.le_opNorm
+#check MolecularDynamics.textbookBrownianGibbsResolvent_coefficient
+#check MolecularDynamics.textbookBrownianGibbsResolvent_isCompact
+#check MolecularDynamics.textbookBrownianGibbsComplexEigenbasis_coefficient_re_im
+#check inv_mul_cancel₀

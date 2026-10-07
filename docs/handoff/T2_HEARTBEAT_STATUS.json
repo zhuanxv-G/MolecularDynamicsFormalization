@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.1",
+  "observed_at": "2026-10-04T00:56:46.3576532+08:00",
+  "heartbeat_triggered_at": "2026-10-04T00:46:48.231+08:00",
+  "scope": "T2/T5固定批次历史验收与旧自动接续退役检查点",
+  "git_head_observed": "80fcbd63cf6b0508dce54ff10e47c4ac01947b6c",
+  "fixed_input_commit": "9baf87f89d07138a95bfbfe1f37d45dd54946cf7",
+  "latest_user_instruction": {
+    "source_chat": "01a102a8-f930-7cb0-8785-95b7f301ac5b",
+    "local_only_request_turn": "01a102a9-0ef4-7832-b9bf-e6e00a2ddecc",
+    "launch_authorization_turn": "01a102af-f8a1-7601-a5b4-8d4e0e32636f",
+    "instruction_verified_from_actual_user_messages": true,
+    "mathcopilot_use": "用户明确要求不使用MathCopilot",
+    "local_long_task": "用户随后已在该聊天授权启动本地长期方案；该聊天正在执行，不在本聊天重复创建或接管",
+    "requested_model": "GPT-6.1 Sol high；本聊天未验证新任务设置结果"
+  },
+  "t2_t5_machine_acceptance": "固定批次既有本地验收和对应CI通过；本轮未重新构建，证据不扩展到新增数学范围",
+  "last_verified_inputs": {
+    "checked_at": "2026-10-03T19:47:07.233563+08:00",
+    "t2_source_sha_matches": true,
+    "t5_source_sha_matches": true,
+    "packet_bytes": 73702,
+    "packet_sha256": "2d7f3fdb096fcb68faabbf0e85426065f3f615ee0a33935cb8e1301ed81c3e4d",
+    "packet_sha_matches": true,
+    "rehashed_this_heartbeat": false
+  },
+  "saved_review_attempt": {
+    "observed_at": "2026-10-03T21:03:00+08:00",
+    "record": "docs/reviews/2026-10-03-T2-T5-proofs/CURRENT_ATTEMPT.json",
+    "sent": true,
+    "original_reports_received": false,
+    "current_website_state": "未检查；旧页面与额度记录不能视为当前事实",
+    "local_review_folder_checked_this_heartbeat": true,
+    "required_original_report_files_present": false,
+    "acceptance": "独立网站原报告及输入/输出SHA收件验收未完成；保留历史记录，不再自动推进网站步骤"
+  },
+  "automation": {
+    "id": "t2",
+    "action": "delete",
+    "app_result": "deleted",
+    "reason": "最新用户改为只做本地工作、不使用MathCopilot，旧网站审阅自动接续已过时；避免重复新聊天的本地任务"
+  },
+  "website_checked_this_heartbeat": false,
+  "lean_source_modified": false,
+  "build_or_git_write_this_heartbeat": false,
+  "shared_handoff_modified": false,
+  "notes": "当前负责新方案的聊天正在执行；本轮仅更新此独立检查点，保留共享CURRENT_STATE、WORK_LOG、源码及其他聊天材料，未启动新的数学批次。旧T2自动接续删除不代表网站审阅完成。",
+  "next_action": "本聊天T2/T5本地补充复核已完成；保持旧t2自动接续删除状态，不使用MathCopilot。全书本地长期聊天继续Kepler等后续证明；本报告不替代网站返回或负责人最终签核，不创建重复数学任务。",
+  "local_supplementary_review": {
+    "completed_at": "2026-10-04T11:10:29.4471981+08:00",
+    "report": "docs/reviews/2026-10-04-T2-T5-local/LOCAL_REVIEW.zh-CN.md",
+    "metadata": "docs/reviews/2026-10-04-T2-T5-local/LOCAL_RETURN_METADATA.json",
+    "fixed_commit": "9baf87f89d07138a95bfbfe1f37d45dd54946cf7",
+    "proofs_reviewed": 40,
+    "blocking_findings": 0,
+    "frozen_input_hash_matches": 27,
+    "original_log_hash_matches": 20,
+    "responsible_final_semantic_signoff": "pending",
+    "website_review_still_unreceived": true
+  }
+}

@@ -1,0 +1,21 @@
+T3 固定质量 Hamiltonian 独立只读复核。请完整读取本消息附加的审阅规范，固定提交 21b4d6cbb5121c5f194a4d…
+导出为 Markdown
+⬡ gpt-5.6-sol · Full Access
+TOKENS
+4.13M
+上下文
+121K / 258K (47%)
+会话文件
+809B
+T3 固定质量 Hamiltonian 独立只读复核。请完整读取本消息附加的审阅规范，固定提交 21b4d6cbb5121c5f194a4dda9b9d718148b2e1a1；仅在 T3 独立目录检查与生成原报告和 ZIP，保留另一会话的 T2/T5 工作。
+已处理 13m 10s
+
+根因已定位到 Lean 4.34.0 运行时：64 位默认每线程预留 1 GiB 栈，而本隔离环境虚拟内存上限 16 GiB；并发依赖任务因此在约十余线程后失败。该版本官方运行时支持只通过 LEAN_STACK_SIZE_KB 调整线程栈。我将以 8192 KiB 重试，保持工具链和源码不变，并把此环境恢复措施写入报告。
+
+You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Oct 4th, 2026 12:45 AM.
+
+目标
+Full Access
+Codex
+gpt-5.6-sol
+高

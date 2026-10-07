@@ -1,0 +1,13 @@
+import MolecularDynamics.Chapter06.BrownianFourierDifferential
+open MeasureTheory
+#check withDensity_one
+#check ContinuousMap.memLp
+#check ContinuousMap.coeFn_toLp
+#check UnitAddTorus.mFourierCoeff_toLp
+#check Complex.conj_mul'
+#check Complex.norm_real
+#check RCLike.hasSum_re
+#check HasSum.neg
+#check HasSum.congr_fun
+#check MemLp.integrable
+#check integral_complex_ofReal

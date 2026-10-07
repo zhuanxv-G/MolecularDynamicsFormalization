@@ -1,0 +1,9 @@
+import MolecularDynamics.Chapter06.BrownianEigenGraph
+import Mathlib.Analysis.Normed.Group.Tannery
+#check tendsto_iff_norm_sub_tendsto_zero
+#check Real.sqrt_sq_eq_abs
+#check NNReal.continuous_coe
+#check lp.norm_rpow_eq_tsum
+#check tendsto_tsum_of_dominated_convergence
+#check Memℓp.summable
+#check Real.rpow_two

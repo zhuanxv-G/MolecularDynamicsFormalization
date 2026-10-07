@@ -1,0 +1,12 @@
+import MolecularDynamics.Chapter06.BrownianSpectralEvolution
+import Mathlib.Analysis.Calculus.Deriv.Slope
+#check HasDerivAt.tendsto_slope_zero_right
+#check Real.add_one_le_exp
+#check tendsto_nhdsWithin_iff
+#check self_mem_nhdsWithin
+#check Real.hasDerivAt_exp
+#check HasDerivAt.exp
+#check Summable.mul_left
+#check Filter.Tendsto.pow
+#check innerSL_apply_apply
+#check tendsto_nhds_unique

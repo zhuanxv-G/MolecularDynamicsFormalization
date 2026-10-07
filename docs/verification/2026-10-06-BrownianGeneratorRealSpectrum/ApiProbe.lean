@@ -1,0 +1,10 @@
+import MolecularDynamics.Chapter06.BrownianResolventRealSpectrum
+#check ContinuousLinearMap.isUnit_iff_bijective
+#check ContinuousLinearMap.mul_def
+#check mul_apply_eq_comp
+#check IsUnit.unit_spec
+#check IsUnit.val_inv_mul
+#check IsUnit.mul_val_inv
+#check isUnit_iff_exists
+#check isUnit_smul_iff
+#check Algebra.algebraMap_eq_smul_one

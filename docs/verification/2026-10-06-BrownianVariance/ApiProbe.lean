@@ -1,0 +1,15 @@
+import MolecularDynamics.Chapter06.BrownianGibbsBounds
+import Mathlib.Probability.Moments.Variance
+open Set MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace
+#check ContinuousMap.memLp
+#check ProbabilityTheory.variance_eq_integral
+#check ProbabilityTheory.variance_eq_sub
+#check ProbabilityTheory.variance_sub_const
+#check ProbabilityTheory.variance_le_expectation_sq
+#check ProbabilityTheory.variance_nonneg
+#check ProbabilityTheory.ae_eq_integral_of_variance_eq_zero
+#check Continuous.ae_eq_iff_eq
+#check MeasureTheory.MemLp.integrable
+#check integral_sub
+#check MolecularDynamics.textbookGibbsContinuousToLp

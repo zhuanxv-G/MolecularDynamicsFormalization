@@ -1,0 +1,10 @@
+import MolecularDynamics.Chapter06.BrownianEigenNormalization
+open MeasureTheory
+#check LinearPMap.mem_ker_iff
+#check LinearPMap.mem_graph_iff
+#check Submodule.mem_span_singleton
+#check finrank_span_singleton
+#check MolecularDynamics.textbookBrownianGibbsComplexOperator_graph_iff_real_imag
+#check MolecularDynamics.textbookBrownianGibbsComplexOperator_isSelfAdjoint
+#check MolecularDynamics.textbookBrownianGibbsCoercivityRate_pos
+#check MolecularDynamics.textbookBrownianGibbsNormalizedComplexOrderedEigenbasis_hasSum

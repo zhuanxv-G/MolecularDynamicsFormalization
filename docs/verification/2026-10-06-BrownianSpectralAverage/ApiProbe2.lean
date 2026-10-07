@@ -1,0 +1,16 @@
+import MolecularDynamics.Chapter06.BrownianEigenOrdering
+open MeasureTheory
+open scoped InnerProductSpace
+#check L2.integrable_inner
+#check Integrable.congr
+#check L2.inner_def
+#check Real.inner_apply
+#check MolecularDynamics.textbookPeriodicSmoothEmbedding
+#check MolecularDynamics.textbookConfigurationGibbsL2Observable_ae_eq
+#check MolecularDynamics.textbookConfigurationTorusGibbsMeasure_integral_observable
+#check MolecularDynamics.textbookBrownianGibbsCoercivityRate_pos
+#check MolecularDynamics.textbookBrownianGibbsSpectralEvolution_correlation_decay
+#check integral_congr_ae
+#check integral_const_mul
+#check mul_le_mul_of_nonneg_left
+#check mul_le_mul_of_nonneg_right

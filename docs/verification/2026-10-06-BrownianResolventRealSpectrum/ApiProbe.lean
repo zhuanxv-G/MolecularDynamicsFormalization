@@ -1,0 +1,6 @@
+import MolecularDynamics.Chapter06.BrownianSpectralDecay
+#check IsCompactOperator.hasEigenvalue_iff_mem_spectrum
+#check Module.End.HasEigenvalue.exists_hasEigenvector
+#check Module.End.mem_genEigenspace_one
+#check le_div_iff₀
+#check div_lt_one

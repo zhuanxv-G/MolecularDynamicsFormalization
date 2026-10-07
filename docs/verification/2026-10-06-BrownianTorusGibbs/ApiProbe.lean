@@ -1,0 +1,23 @@
+import MolecularDynamics.Chapter06.BrownianDirichlet
+import Mathlib.Analysis.Fourier.AddCircleMulti
+import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+open MeasureTheory Set
+#check UnitAddTorus.measurableEquivPiIoc
+#check UnitAddTorus.coe_symm_measurableEquivPiIoc_apply
+#check UnitAddTorus.integral_preimage
+#check UnitAddTorus.measurePreserving_equivPiIoc
+#check AddCircle.measurePreserving_mk
+#check MeasureTheory.measurePreserving_pi
+#check Measure.restrict_pi_pi
+#check Measure.univ_pi_Ioc_ae_eq_Icc
+#check MeasurePreserving.integrable_comp
+#check integral_withDensity_eq_integral_toReal_smul
+#check integral_map
+#check lintegral_ofReal
+#check integral_one
+#check Measure.withDensity_apply
+#check MeasureTheory.isProbabilityMeasure_iff
+#check MeasurableEquiv.measurable
+#check Measurable.subtype_val
+#check Measurable.ennreal_ofReal
+#check Pi.continuous_addMonoidHom

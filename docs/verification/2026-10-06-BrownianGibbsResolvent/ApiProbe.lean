@@ -1,0 +1,17 @@
+import MolecularDynamics.Chapter06.BrownianMassResolvent
+import Mathlib.Analysis.Normed.Operator.Banach
+import Mathlib.Topology.MetricSpace.Antilipschitz
+#check IsClosed.completeSpace_coe
+#check AntilipschitzWith.of_le_mul_dist
+#check AntilipschitzWith.isClosed_range
+#check Submodule.orthogonal_eq_bot_iff
+#check Submodule.topologicalClosure_eq_self
+#check Submodule.mem_orthogonal
+#check ContinuousLinearEquiv.ofBijective
+#check LinearPMap.mem_adjoint_domain_of_exists
+#check LinearPMap.adjoint_apply_eq
+#check norm_inner_le_norm
+#check real_inner_self_eq_norm_sq
+#check Prod.norm_def
+#check LinearMap.ker_eq_bot
+#check LinearMap.range_eq_top

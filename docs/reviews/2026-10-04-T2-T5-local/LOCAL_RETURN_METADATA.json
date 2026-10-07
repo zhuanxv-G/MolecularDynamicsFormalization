@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "review_origin": "Codex local supplementary review; not a MathCopilot return",
+  "completed_at": "2026-10-04T11:10:29.4471981+08:00",
+  "fixed_input_commit": "9baf87f89d07138a95bfbfe1f37d45dd54946cf7",
+  "working_head_at_initial_read": "93feaee7d59c5dfca9b35e46bcb8543af09dd38a",
+  "working_head_at_save": "93feaee7d59c5dfca9b35e46bcb8543af09dd38a",
+  "reviewed_inputs": [
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+      "bytes_match_fixed_commit": true
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/PotentialBarriers.lean",
+      "sha256": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6",
+      "bytes_match_fixed_commit": true
+    }
+  ],
+  "outputs": [
+    {
+      "path": "README.zh-CN.md",
+      "bytes": 1236,
+      "sha256": "9d7e5afe54b3e8ff0391500d372dc860e6acacd20f9065f3a7f86e0384c55517"
+    },
+    {
+      "path": "LOCAL_REVIEW.zh-CN.md",
+      "bytes": 8734,
+      "sha256": "6d075fd15721912fb0fbe568cd91db819554c3955a9ba8110d7c8967f6bdb82f"
+    },
+    {
+      "path": "REVIEW_LEDGER.csv",
+      "bytes": 9345,
+      "sha256": "25f89b366b8bb86ddbbbd513361bb2635f95d1e5a8ebe7f868e0f333b2cee81c"
+    },
+    {
+      "path": "EVIDENCE_CHECK.json",
+      "bytes": 36525,
+      "sha256": "3dcee72ea6a1210beb996e8c6e521c53224e62d1c06d7fead207cd843b45e49c"
+    },
+    {
+      "path": "VerifyEvidence.ps1",
+      "bytes": 8352,
+      "sha256": "9c9076ab17cc73d7c5e60d67e90fd20dfcee4681159e902ff883efe260f082dc"
+    }
+  ],
+  "semantic_blocking_findings": 0,
+  "local_proof_ledger_rows": 40,
+  "frozen_input_checks": 27,
+  "verified_original_local_logs": 20,
+  "lean_build_rerun_this_review": false,
+  "live_remote_ci_query_this_review": false,
+  "mathcopilot_used_this_review": false,
+  "mathcopilot_original_review_received": false,
+  "responsible_final_semantic_signoff": "pending",
+  "git_commit_or_push_this_review": false,
+  "audit_parser_note": "Initial summary marked four absent individual prints as missing coverage. After inspecting the fixed namespace-wide collectAxioms audit and its hash-verified success log, coverage was correctly recorded as namespace-wide; no proof or audit source changed."
+}

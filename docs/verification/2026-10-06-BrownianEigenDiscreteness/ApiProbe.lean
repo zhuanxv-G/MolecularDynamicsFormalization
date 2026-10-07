@@ -1,0 +1,11 @@
+import MolecularDynamics.Chapter06.BrownianGeneratorRealSpectrum
+#check IsCompactOperator.image_closedBall_subset_compact
+#check Metric.finite_approx_of_totallyBounded
+#check Orthonormal.inner_eq_zero
+#check norm_inner_le_norm
+#check Finite.of_injective
+#check Set.Finite.to_subtype
+#check Set.Finite.compl_mem_cofinite
+#check Metric.tendsto_nhds
+#check lp.ext
+#check Set.finite_coe_iff

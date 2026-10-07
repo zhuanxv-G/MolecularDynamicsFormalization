@@ -1,0 +1,153 @@
+{
+  "checkpoint_at": "2026-10-02T21:23:22+08:00",
+  "scope": "T1 existing statements/proofs review and T2 statements/dependencies review only",
+  "project_url": "https://mathcopilot.cn/projects/e275fa19-2b16-4592-8433-8b01d11ef422",
+  "local_branch": "chapter01-kinetic-energy-nonneg",
+  "local_head": "121a9d02ad15500c630e505b363d5f04106d617f",
+  "t1_task_sent": true,
+  "t2_task_sent": true,
+  "website_reports_received": true,
+  "skills_actual_participation": "T1: Lean Blueprint and Lean Proof skill files actually read for existing statement/proof static review; T2: Lean Blueprint statement-only review in progress, final skill/report ledger pending",
+  "responsible_semantic_signoff": "pending",
+  "browser_attempts": [
+    {
+      "operation": "create tab, navigate to project, read DOM in one call",
+      "result": "js execution timed out; kernel reset, rerun your request",
+      "failure_stage": "not_identified"
+    },
+    {
+      "operation": "read project tab DOM after reconnect",
+      "timeout_ms": 15000,
+      "result": "js execution timed out; kernel reset, rerun your request"
+    },
+    {
+      "operation": "capture project tab screenshot",
+      "timeout_ms": 15000,
+      "result": "js execution timed out; kernel reset, rerun your request"
+    },
+    {
+      "operation": "open project in native Codex panel",
+      "result": "queued"
+    },
+    {
+      "operation": "read new native project tab DOM",
+      "timeout_ms": 15000,
+      "result": "js execution timed out; kernel reset, rerun your request"
+    },
+    {
+      "operation": "T1 Send button first click",
+      "result": "Auto-review timed out without an approval decision; not a determination of unsafe action; one retry allowed",
+      "at": "2026-10-02T20:45+08:00"
+    },
+    {
+      "operation": "T1 Send button retry after confirming composer unchanged",
+      "result": "success; website attachment bytes and SHA matched",
+      "at": "2026-10-02T20:46:28+08:00"
+    },
+    {
+      "operation": "T1 seven generated reports batch downloadMedia",
+      "timeout_ms": 60000,
+      "result": "timed out and reset execution session; original reports not fully downloaded; UI previews being read"
+    },
+    {
+      "operation": "T2 v2 Send after confirming statement-only instruction and 20-block attachment",
+      "at": "2026-10-02T21:15:15+08:00",
+      "result": "success; website calculated exact original and LF-normalized bytes/SHA; individual block verification and final seven-ID review pending"
+    }
+  ],
+  "root_cause": "prior DOM timeout resolved; first send auto-review timed out, one permitted retry succeeded",
+  "pending_user_action": null,
+  "local_t1_review": "T1_LOCAL_REVIEW.zh-CN.md",
+  "local_t2_review": "T2_LOCAL_STATEMENT_REVIEW.zh-CN.md",
+  "frozen_input_count": 21,
+  "evidence_workspace_relative_path": "tmp/t1-t2-review-20261002",
+  "next_action": "Continue reading T1 original reports through UI previews, preserve retrieved evidence; collect T2 20-block verification and seven-ID statement-only report; reconcile B3/B4/E1 and T1 dependencies without proof drafting or integration",
+  "t2_proof_drafting_started": false,
+  "formal_lean_edits": false,
+  "git_commit_push_merge_reset": false,
+  "t1_sent_at": "2026-10-02T20:46:28+08:00",
+  "t1_attachment_verified": {
+    "bytes": 4267,
+    "sha256": "5c20fdac86b5d708d012ffbf09fb1f805162672291ba6ce45d824bc41fa71adf",
+    "evidence": "../tmp/t1-t2-review-20261002/T1_WEBSITE_SENT.snapshot.txt"
+  },
+  "t2_current_send_version": {
+    "body": "T2_SEND_BODY.v2.txt",
+    "provided_input_count": 20,
+    "bytes": 93795,
+    "sha256": "00dd541e8dfd87e318a4115679fe954dc91917e24cb6806ab82671ecc794ec5c",
+    "sent": true
+  },
+  "checkpoint_history": [
+    {
+      "checkpoint_at": "2026-10-02T20:47:28+08:00",
+      "t1_task_sent": true,
+      "next_action": "Collect T1 actual skills and per-ID report; check dependencies before sending T2_SEND_BODY.v2.txt with 20 provided input blocks",
+      "website_reports_received": false,
+      "skills_actual_participation": "lean-blueprint UI selection sent; actual skill reads and complete conclusions pending",
+      "t2_task_sent": false
+    }
+  ],
+  "website_reports_received_scope": "T1 final website conclusion received; seven original report downloads not complete; T2 report not yet received",
+  "reports_received_by_batch": {
+    "t1_seven_original_reports_downloaded": false,
+    "t1_final_conclusion": true,
+    "t2_seven_id_review": false,
+    "t2_conclusion": false
+  },
+  "t1_website_review": {
+    "original_report_download_status": "batch downloadMedia timed out after 60000ms and reset execution session; original reports not fully downloaded; UI previews being read",
+    "new_machine_acceptance": false,
+    "sent_at": "2026-10-02T20:46:28+08:00",
+    "statement_and_existing_proof_static_reviews": "all accepted",
+    "image_level_pdf_review": false,
+    "actual_skills_read": [
+      "Lean Blueprint",
+      "Lean Proof"
+    ],
+    "displayed_processing_duration": "16m 30s",
+    "existing_theorems_reviewed": 13,
+    "ids_reviewed": 11,
+    "website_output_directory": "/workspace/MolecularDynamicsFormalization/docs/tasks/T1_mathcopilot_return_git/",
+    "new_lean_build": false,
+    "local_final_receipt": [
+      "tmp/t1-t2-review-20261002/T1_WEBSITE_RETURN.snapshot.txt",
+      "tmp/t1-t2-review-20261002/T1_WEBSITE_RETURN.png"
+    ],
+    "blocking_t2_dependencies": "none reported",
+    "responsible_semantic_signoff": "pending",
+    "reports_generated_count": 7,
+    "status": "static_review_completed_final_receipt_received"
+  },
+  "website_worktree_head": "bdcd1ecd710db5fbd6b8698e9ee3d3e05d535045",
+  "t1_fixed_git_input": {
+    "website_reported_sha_match": true,
+    "local_head_object_on_website": "121a9d02ad15500c630e505b363d5f04106d617f unavailable",
+    "pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+    "source_object": "052eea2edd51fd806edf6a9dacbb6cc3353fc82f",
+    "local_head_unavailability_blocks_fixed_source_review": false,
+    "particle_coordinates_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+    "mathematical_implementation": "c7d9778fe981c24ba7281db730206d1cfefbba4d",
+    "nbody_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696"
+  },
+  "t2_sent_at": "2026-10-02T21:15:15+08:00",
+  "t2_transmission_verified": {
+    "original_matches": true,
+    "local_sent_receipt": [
+      "tmp/t1-t2-review-20261002/T2_WEBSITE_SENT.snapshot.txt",
+      "tmp/t1-t2-review-20261002/T2_WEBSITE_SENT.png"
+    ],
+    "seven_id_report": "pending",
+    "crlf_affected_input_blocks": 15,
+    "normalization_is_original_file_sha_verification": false,
+    "input_blocks_provided": 20,
+    "lf_normalized_sha256": "166744dc5db793392f29f541d903778f93ed3ac013e1951203b07fb67c94a1e9",
+    "original_bytes": 93795,
+    "lf_normalized_matches": true,
+    "original_sha256": "00dd541e8dfd87e318a4115679fe954dc91917e24cb6806ab82671ecc794ec5c",
+    "crlf_count": 948,
+    "per_input_block_verification": "pending",
+    "verification_actor": "MathCopilot website actually calculated both forms",
+    "lf_normalized_bytes": 92847
+  }
+}

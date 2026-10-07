@@ -1,0 +1,149 @@
+[
+  {
+    "kind": "Theorem",
+    "chapter": 1,
+    "number": 1,
+    "pdf_page": 55,
+    "context": "Theorem 1.1 If q/ETXis a strong local minimum of smooth potential U then z/ETXD\n.q/ETX;0/ is stable.\nThe proof of this theorem relies on showing that if trajectories are started from a\npoint sufﬁciently close toz/ETXthey cannot wander away to inﬁnity. Although the result\nholds in greater generality, it is easy to show under assumptions of local smoothness\nof U (which we are normally happy to make in molecular dynamics). For more\ndiscussion see the text [ 216]. If the potential is C2, the linearized version of this\nsystem has “kinetic plus potential” form with Hamiltonian\nNHD ı pT M/NUL1ı p\n2 Cı qT U00.q/ETX/ı q\n2 :"
+  },
+  {
+    "kind": "Theorem",
+    "chapter": 2,
+    "number": 1,
+    "pdf_page": 78,
+    "context": "Theorem 2.1 Let D be a bounded, open region in R\nm such that f W D! Rm is\ncontinuously differentiable. Let/DLEbe an interior point of D and suppose the initial\nvalue problem ( 2.1) has a unique solution that remains in D for t 2 Œ0;/FS/c141.T h e n\nthere exists a constant C./FS/>0 such that for sufﬁciently large/ETB2 N the numerical\nsolution zn remains in D for n D 0;1;:::;/ETB ,w h e r eh/ETBD /FS, and, moreover, the\nmaximum global error in Euler’s method satisﬁes\nNeWD max\n0/DC4n/DC4/ETB\nen/DC4C./FS/h:\nIn short, the error in the approximation obtained on Œ0;/FS/c141is reduced in direct\nproportion to the number of steps taken to cover this in"
+  },
+  {
+    "kind": "Theorem",
+    "chapter": 2,
+    "number": 1,
+    "pdf_page": 116,
+    "context": "Theorem 2.1."
+  },
+  {
+    "kind": "Theorem",
+    "chapter": 3,
+    "number": 1,
+    "pdf_page": 136,
+    "context": "Theorem 3.1 Suppose the Hamiltonian H and modiﬁed Hamiltonian NHk are\nsmooth functions globally deﬁned on a convex, compact subset B of R2Nc and\nsuppose that the exact solution and numerical approximations (for h sufﬁciently\nsmall) are conﬁned to B. Then, we have asymptotically for h!0 that\nH.z\nn/D H.z0/C O.hr/;\nfor nD0;1;:::;/ETB where/FSD/ETBhD O.h/NULkCr/.\nProof First observe that due to smoothness and the assumptions on B,w eh a v ea\nglobal Lipschitz constant\njH.u//NULH.v/j/DC4Lku/NULvk\nfor all u;v2 B."
+  },
+  {
+    "kind": "Lemma",
+    "chapter": 4,
+    "number": 1,
+    "pdf_page": 181,
+    "context": "Lemma 4.1 Let/CRW RNc ! R be C2.L e tq; p2 RNc be constrained to the manifold\ndeﬁned by\n/CR.q/D0; p/SOHr/CR.q/D0;\nand suppose P;/SYNsatisfy\nPD p/NUL/SYNr/CR.q/:\nThen\nNcX\njD1\ndqj^ dPjD\nNcX\njD1\ndqj^ dpj:"
+  },
+  {
+    "kind": "Theorem",
+    "chapter": 5,
+    "number": 1,
+    "pdf_page": 229,
+    "context": "Theorem 5.1 Let H.q; p/ and QH.q; p/D H.q; p/C\"/DC1.q; p/ be two Hamiltonian\nfunctions. Suppose the energy surface ˙ E Df .q; p/jH.q; p/D Eg to be compact\nand deﬁne the perturbed energy surface by Q˙ E Df .q; p/jQH.q; p/ D Eg,a l s o\nassumed compact."
+  },
+  {
+    "kind": "Proposition",
+    "chapter": 6,
+    "number": 1,
+    "pdf_page": 243,
+    "context": "Proposition 6.1 Let H be a Hamiltonian deﬁned on the phase space R2Nc and\nsuppose G W R2Nc ! R2Nc i sas m o o t h( C1) vector ﬁeld with the following\nproperties:\n• 0< jAvˇ .G/SOHrH/j<1,\n• 0< Avˇ .r/SOHG/< 1,\n• jGe/NULˇ Hj<1\nThen\nkBTD Avˇ .G/SOHrH/\nAvˇ .r/SOHG/ :\nProof The proof relies on a 2Nc-dimensional version of integration by parts. Let\nBR be the 2Nc-dimensional ball centered at the origin, of radius R,a n dl e t/NULR be\nits boundary, the 2Nc/NUL1-dimensional sphere. Then, for any smooth scalar ﬁeld g\ndeﬁned on BR,w eh a v e\nZ\nBR\nG/SOHrgd!D\nZ\n/NULR\n.Gg//SOHOnd/NUL/NUL\nZ\nBR\n.r/SOHG/gd!; (6.6)\nwhere d!D dq1::: dpNc is the standard measure "
+  },
+  {
+    "kind": "Proposition",
+    "chapter": 6,
+    "number": 2,
+    "pdf_page": 250,
+    "context": "Proposition 6.2 Let/ETBıtD/FSthen\nl:i:m:\n/ETB!1\n/ETB/NUL1X\nkD0\nh\n.W..kC1/ı t//NULW.kı t//2\ni\nD/FS;\nwhere, for a sequence of random variables, A/ETBand a random variable B, we have\nl:i:m:/ETB!1A/ETBD B, lim/ETB!1E.A/ETB/NULB/2D0:\n(This is referred to as convergence in the mean square sense.)\nProof With/FS;/ETBﬁxed, we haveı tD/FS=/ETB.\nLet/c129W/ETB;kD W..kC1/ı t//NULW.kı t/D W..kC1//FS=/ETB//NULW.k/FS=/ETB/and observe\nthat\n/ETB/NUL1X\nkD0\n/c129W2\n/ETB;k/NUL/FSD\n/ETB/NUL1X\nkD0\nh\n/c129W2\n/ETB;k/NUL/FS\n/ETB\ni\n:\nThen\nI/ETB\ndef\nD E\n /ETB/NUL1X\nkD0\n/c129W2\n/ETB;k/NUL/FS\n!2\nD E\n /ETB/NUL1X\nkD0\nh\n/c129W2\n/ETB;k/NUL/FS\n/ETB\ni!2\n:\nTerms of the formZ/ETB"
+  },
+  {
+    "kind": "Proposition",
+    "chapter": 6,
+    "number": 3,
+    "pdf_page": 252,
+    "context": "Proposition 6.3 Let g be a smooth deterministic function and W.t/ aW i e n e r\nprocess. The stochastic integral Y.t/ D\nR\nt\n0 g.s/dW.s/ is, for all times t /NAK0,a\nnormally distributed random variable such that\nE.Y.t//D0;\nE\n/NUL\nY2.t/\n/SOH\nD/ESC2.t/D\ntZ\n0\ng.s/2ds:\nProof S e eE x e r c i s e2 .\nFinally, we observe that by calculating/ESC2.tn/ and generating random increments\nRn /CANN.0;/ESC.tn// we have a discrete representation of the continuous time\nstochastic process Y.t/, effectively an exact stroboscopic representation. Also it is\nnatural to view the stochastic integral as the solution of the stochastic differential\nequation (SDE) with zer"
+  },
+  {
+    "kind": "Theorem",
+    "chapter": 6,
+    "number": 1,
+    "pdf_page": 271,
+    "context": "Theorem 6.1 Deﬁne the generator of Brownian dynamics by\nLf\ndef\nD/NULM/NUL1rUTrfCˇ /NUL1/c129Mf:"
+  },
+  {
+    "kind": "Theorem",
+    "chapter": 6,
+    "number": 2,
+    "pdf_page": 273,
+    "context": "Theorem 6.2 (Geometric Ergodicity) Let the solution to (6.43) be denoted X.t/.\nIf Assumption 1 and Assumption 2 are satisﬁed for\nCDfX\n2 Dj/RS.X//DC4K˛;ı g;\nwhere K˛;ı is a particular positive value depending on˛ andı ,t h e n\n(i) there exists a unique invariant measure /SUB/ETX, with L/c142/SUB/ETXD0, and\n(ii) there exist positive constants /DC4and/NAKsuch that for all suitable functions f with\njfj/DC4/RS,\nˇˇ/NUL\netLf\n/SOH\n.X0//NULAv.f/\nˇˇ/DC4/DC4e/NUL/NAKt/RS.X0/; (6.48)\nwhere Av.f/D\nR\nD f.z//SUB/ETX.z/ dz is the spatial average.\nIt is easily shown that both the Ornstein-Uhlenbeck equation and Brownian\ndynamics satisfy the assumptions and he"
+  },
+  {
+    "kind": "Lemma",
+    "chapter": 6,
+    "number": 1,
+    "pdf_page": 276,
+    "context": "Lemma 6.1 For all t>0 and all open C/SUBD, we have that\nPr.X.t/2 Cj X.0/D X0/>0; 8X02 D;\nwhere X.t/D.q.t/; p.t//T is a solution to Langevin dynamics (6.47).\nProof It is sufﬁcient to show that the open ball of radiusı centered on a pointy2 D,\ndenoted Bı.y//SUBD, has positive probability at any t >0 . To show this, the goal\nis to demonstrate that we have a positive probability of the realization of the noise\nprocess taking our initial condition inside the ball.\nConsider the ODE\nd\n2q\ndt2 Cr U.q/C/CRdq\ndtD/ESCdR\ndt; (6.49)\nfor some positive constants /CRand/ESC. This is precisely Langevin dynamics ( 6.47),\nsubstituting a process R.t/ in place of "
+  },
+  {
+    "kind": "Proposition",
+    "chapter": 6,
+    "number": 4,
+    "pdf_page": 278,
+    "context": "Proposition 6.4 Let U be C 1 on the position domain QD TNc and suppose g2\nH1./SYN/satisﬁes\nZ\nD\ngd/SYNˇ D0;\nwhere/SYNˇ is the canonical measure, then the Poisson equation\nL/c142\nLD' D g\nhas a solution' 2 H1./SYN/which is unique up to addition of a constant multiple of\nthe Gibbs density.\nThe condition is a consequence of the Fr edholm Alternative which says that,\nfor a linear operator A with compact resolvent, we have one of the following two\nconditions:\n• A' D g has a solution.\n• There is a function y with A/c142yD0 andhy; gi¤ 0.\nIn our case, AD L/c142\nLD. The only solutions of LLDyD 0 (conserved quantities of\nLangevin dynamics) are the consta"
+  },
+  {
+    "kind": "Proposition",
+    "chapter": 7,
+    "number": 1,
+    "pdf_page": 318,
+    "context": "Proposition 7.1 Let L\n/c142\nX, L/c142\nY and L/c142\nZ be general operators to which BCH can be\napplied, then deﬁning\neh OL/c142\nD e\nh\n2 L/c142\nX e\nh\n2 L/c142\nY\nehL/c142\nZ e\nh\n2 L/c142\nY\ne\nh\n2 L/c142\nX\n; (7.26)\ngives\nOL/c142D L/c142\n0C h2L/c142\n2C O.h4/;\nwhere\nL/c142\n0DL/c142\nXC L/c142\nYC L/c142\nZ;\nL/c142\n2D 1\n12\n/DLE\nŒL/c142\nZ; L/c142\nZ; L/c142\nY/c141CŒL/c142\nYC L/c142\nZ; L/c142\nYC L/c142\nZ; L/c142\nX/c141\n/DC1\n/NUL1\n24\n/DLE\nŒL/c142\nY; L/c142\nY; L/c142\nZ/c141CŒL/c142\nX; L/c142\nX; L/c142\nYC L/c142\nZ/c141\n/DC1\n:"
+  },
+  {
+    "kind": "Proposition",
+    "chapter": 7,
+    "number": 1,
+    "pdf_page": 319,
+    "context": "Proposition 7.1, we can see that our life is made considerably easier if we initially\nconsider methods /llbracketOYZYO/rrbracket, which substitutes\nL/c142\nX D L/c142\nO; L/c142\nYC L/c142\nZ D L/c142\nAC L/c142\nBD L/c142\nH;"
+  },
+  {
+    "kind": "Lemma",
+    "chapter": 7,
+    "number": 1,
+    "pdf_page": 320,
+    "context": "Lemma 7.1 Consider two numerical schemes with associated operators governing\nthe evolution of measureST and TS , with unique associated invariant distributions\nO/SUB\nST andO/SUBTS respectively, such that\nSTO/SUBST DO/SUBST; TSO/SUBTSDO/SUBTS:\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distribu-\ntions converge to the invariant distribution), we have\nO/SUBST D SO/SUBTS; and O/SUBTSD TO/SUBST:"
+  },
+  {
+    "kind": "Proposition",
+    "chapter": 8,
+    "number": 1,
+    "pdf_page": 359,
+    "context": "Proposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPzD JrHC˚\n1./CAN; z/; P/CAND g1./CAN; z/;\nwith stationary densityO/SUB1./CAN//SUBˇ , and another\nPzD JrHC˚ 2./DC1; z/; P/DC1D g2./DC1; z/;\nwith stationary densityO/SUB2./DC1//SUBˇ ,t h e n\nPzD JrHC˚ 1./CAN; z/C˚ 2./DC1; z/;\nP/CAND g1./CAN; z/;\nP/DC1D g2./DC1; z/\nis another thermostat and has stationary densityQ/SUBDO/SUB1./CAN/O/SUB2./DC1//SUBˇ ."
+  },
+  {
+    "kind": "Proposition",
+    "chapter": 8,
+    "number": 2,
+    "pdf_page": 365,
+    "context": "Proposition 8.2 If the Lie algebra generated by F and G in (8.25) spans Rm,t h e n\nthe Hörmander condition holds for the system (8.25)–(8.26).\nProof First observe that the premise holds if and only if the Lie algebra of the\nvectors in RmC1 deﬁned by\nQFD\n/DC4F\n0\n/NAK\n; QGD\n/DC4G\n0\n/NAK\n;\ntogether with emC1 spans RmC1. Thus the problem is to show that we can generate\nQF andQG from the vector ﬁelds that deﬁne (8.25)–(8.26), which are\nb0D\n/DC4FC/CANG\ng/NUL/CR/CAN\n/NAK\n; b1D\n/DC40\n/ESC\n/NAK\n:\nComputing the commutator gives\ncDŒb0; b1/c141D\n/DC4/NUL/ESCG\n/ESC/CR\n/NAK\n;\nhence\nQGD/NUL1\n/ESCŒc/NUL/CRb1/c141:"
+  },
+  {
+    "kind": "Theorem",
+    "chapter": 8,
+    "number": 1,
+    "pdf_page": 367,
+    "context": "Theorem 8.1 If A is symmetric positive deﬁnite and has distinct eigenvalues, then\n(8.30)–(8.32) satisﬁes the Hörmander condition on D/STXR."
+  },
+  {
+    "kind": "Lemma",
+    "chapter": 8,
+    "number": 1,
+    "pdf_page": 368,
+    "context": "Lemma 8.1 For kD1;2;::: ,\nCkD\n/DC4Ak/NUL1p\nAkq\n/NAK\n2 SfF; Gg;\nand\nDkD\n/DC4Akq\n/NULAkp\n/NAK\n2 SfF; Gg:\nThe proof of this is straightforward by induction on k.( S e ee x e r c i s e s . )\nThe conclusion of the proof of the theorem is based on the following proposition:\nProposition 8.3 Assume A to be a symmetric positive deﬁnite matrix with distinct\neigenvalues, and let Ck, Dk be deﬁned as in Lemma 8.1, then the 2Nc vectors\nC1; D1; C2; D2;:::; CNc; DNc form a linearly independent set on D.\nProof A, being symmetric positive deﬁnite is unitarily similar to a diagonal matrix\n/ETX,s o AD U/ETXUT .D e ﬁ n eOpD UT p,OqD UT q. The domain D is deﬁned b"
+  },
+  {
+    "kind": "Proposition",
+    "chapter": 8,
+    "number": 3,
+    "pdf_page": 368,
+    "context": "Proposition 8.3 Assume A to be a symmetric positive deﬁnite matrix with distinct\neigenvalues, and let Ck, Dk be deﬁned as in Lemma 8.1, then the 2Nc vectors\nC1; D1; C2; D2;:::; CNc; DNc form a linearly independent set on D.\nProof A, being symmetric positive deﬁnite is unitarily similar to a diagonal matrix\n/ETX,s o AD U/ETXUT .D e ﬁ n eOpD UT p,OqD UT q. The domain D is deﬁned by the\ncondition thatOpi andOqi are not simultaneously zero.\nWith the change of variables, the problem is to show that OC1;OD1;:::; OCNc;ODNc\nare linearly independent, where\nOCkD\n/DC4/ETXk/NUL1Op\n/ETXkOq\n/NAK\n; ODkD\n/DC4/ETXkOq\n/NUL/ETXkOp\n/NAK\n:\nSuppose the vectors are"
+  }
+]

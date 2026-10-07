@@ -1,0 +1,191 @@
+[
+  {
+    "chapter": 1,
+    "file": "MolecularDynamics/Chapter01/EuclideanStability.lean",
+    "line": 72,
+    "kind": "theorem",
+    "name": "strictPotentialMin_futureStableEuclidean_of_smooth",
+    "private": false,
+    "qualified_name": "MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_smooth"
+  },
+  {
+    "chapter": 1,
+    "file": "MolecularDynamics/Chapter01/EnergyConservation.lean",
+    "line": 47,
+    "kind": "theorem",
+    "name": "mechanical_energy_const_on_Ioo",
+    "private": false,
+    "qualified_name": "MolecularDynamics.mechanical_energy_const_on_Ioo"
+  },
+  {
+    "chapter": 1,
+    "file": "MolecularDynamics/Chapter01/EnergyGlobalExistence.lean",
+    "line": 19,
+    "kind": "theorem",
+    "name": "exists_globalMechanicalIVP_of_energy_barrier",
+    "private": false,
+    "qualified_name": "MolecularDynamics.exists_globalMechanicalIVP_of_energy_barrier"
+  },
+  {
+    "chapter": 2,
+    "file": "MolecularDynamics/Chapter02/EulerConvergence.lean",
+    "line": 328,
+    "kind": "theorem",
+    "name": "theorem_2_1_euler",
+    "private": false,
+    "qualified_name": "MolecularDynamics.theorem_2_1_euler"
+  },
+  {
+    "chapter": 2,
+    "file": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+    "line": 146,
+    "kind": "theorem",
+    "name": "oneStepMaxError_order_bound",
+    "private": false,
+    "qualified_name": "MolecularDynamics.oneStepMaxError_order_bound"
+  },
+  {
+    "chapter": 2,
+    "file": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+    "line": 268,
+    "kind": "theorem",
+    "name": "textbookSymplecticEulerEquiv_isSymplectic",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookSymplecticEulerEquiv_isSymplectic"
+  },
+  {
+    "chapter": 3,
+    "file": "MolecularDynamics/Chapter03/LiePoisson.lean",
+    "line": 189,
+    "kind": "theorem",
+    "name": "textbookPoissonBracket_jacobi",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookPoissonBracket_jacobi"
+  },
+  {
+    "chapter": 3,
+    "file": "MolecularDynamics/Chapter03/ModifiedHamiltonianBounds.lean",
+    "line": 69,
+    "kind": "theorem",
+    "name": "exists_uniform_textbookTruncatedHamiltonian_remainder",
+    "private": false,
+    "qualified_name": "MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder"
+  },
+  {
+    "chapter": 3,
+    "file": "MolecularDynamics/Chapter03/ModifiedEnergyDrift.lean",
+    "line": 129,
+    "kind": "theorem",
+    "name": "textbook_energy_drift_rate_of_flow_defect",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbook_energy_drift_rate_of_flow_defect"
+  },
+  {
+    "chapter": 4,
+    "file": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+    "line": 162,
+    "kind": "theorem",
+    "name": "lemma_4_1",
+    "private": false,
+    "qualified_name": "MolecularDynamics.lemma_4_1"
+  },
+  {
+    "chapter": 4,
+    "file": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+    "line": 76,
+    "kind": "theorem",
+    "name": "textbookCotangentProjection_hiddenConstraint",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookCotangentProjection_hiddenConstraint"
+  },
+  {
+    "chapter": 4,
+    "file": "MolecularDynamics/Chapter04/ConstrainedFlowSymplectic.lean",
+    "line": 258,
+    "kind": "theorem",
+    "name": "textbookConstrainedFlow_pullback_constant_of_mass_and_independence",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookConstrainedFlow_pullback_constant_of_mass_and_independence"
+  },
+  {
+    "chapter": 6,
+    "file": "MolecularDynamics/Chapter06/CanonicalIntegrationByParts.lean",
+    "line": 376,
+    "kind": "theorem",
+    "name": "proposition_6_1",
+    "private": false,
+    "qualified_name": "MolecularDynamics.proposition_6_1"
+  },
+  {
+    "chapter": 6,
+    "file": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+    "line": 200,
+    "kind": "theorem",
+    "name": "textbookWienerQuadraticSum_meanSquare_tendsto",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookWienerQuadraticSum_meanSquare_tendsto"
+  },
+  {
+    "chapter": 6,
+    "file": "MolecularDynamics/Chapter06/WienerDeterministicLaw.lean",
+    "line": 164,
+    "kind": "theorem",
+    "name": "textbookWienerDeterministicIto_proposition63",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookWienerDeterministicIto_proposition63"
+  },
+  {
+    "chapter": 7,
+    "file": "MolecularDynamics/Chapter07/InvariantDistributionSwap.lean",
+    "line": 64,
+    "kind": "theorem",
+    "name": "textbookInvariantDistributionSwap",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookInvariantDistributionSwap"
+  },
+  {
+    "chapter": 7,
+    "file": "MolecularDynamics/Chapter07/SymmetricOperatorBCH.lean",
+    "line": 288,
+    "kind": "theorem",
+    "name": "textbookSymmetricModifiedGenerator_logarithm",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookSymmetricModifiedGenerator_logarithm"
+  },
+  {
+    "chapter": 7,
+    "file": "MolecularDynamics/Chapter07/FormalOperatorFunctionalCalculus.lean",
+    "line": 476,
+    "kind": "theorem",
+    "name": "textbookSymmetricModifiedGenerator_odd_coeff_zero",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookSymmetricModifiedGenerator_odd_coeff_zero"
+  },
+  {
+    "chapter": 8,
+    "file": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+    "line": 358,
+    "kind": "theorem",
+    "name": "textbookThermostats_additive_proposition81",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookThermostats_additive_proposition81"
+  },
+  {
+    "chapter": 8,
+    "file": "MolecularDynamics/Chapter08/ThermostatSpan.lean",
+    "line": 162,
+    "kind": "theorem",
+    "name": "textbookThermostatFamily_linearIndependent",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookThermostatFamily_linearIndependent"
+  },
+  {
+    "chapter": 8,
+    "file": "MolecularDynamics/Chapter08/ThermostatHormander.lean",
+    "line": 274,
+    "kind": "theorem",
+    "name": "textbookNHL_hormander_physicalNoise",
+    "private": false,
+    "qualified_name": "MolecularDynamics.textbookNHL_hormander_physicalNoise"
+  }
+]

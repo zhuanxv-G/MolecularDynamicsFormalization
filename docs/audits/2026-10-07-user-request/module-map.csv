@@ -1,0 +1,281 @@
+﻿file,chapter,sections_from_inventory,header_page_evidence,root_import,public_theorems,definitions,sections_from_ledger,mapping_status
+MolecularDynamics/BasicDefinitions.lean,0,,,True,0,2,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter01/ActionAngleChart.lean,1,1.5.2,,True,5,2,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/BasisMatrix.lean,1,1.5.1,/-! Printed27/PDF50: real recovery of complex spectral solutions and,True,4,1,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/ComplexSpectralFlow.lean,1,1.5.1,/-! Printed27/PDF50: complex eigenmodes over real time.,True,5,2,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/Continuation.lean,1,1.5.1,"Supporting dependencies for Leimkuhler--Matthews Theorem 1.1, printed page 32; (PDF page 55). These results do not yet assert maximal or global existence.",True,7,0,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/EnergyConservation.lean,1,,,True,2,0,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter01/EnergyGlobalExistence.lean,1,1.5.1;1.5.3,"Theorem 1.1 dependency, printed page 32 / PDF page 55. Conservation, a",True,1,0,1.5.1;1.5.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/Equilibrium.lean,1,,,True,1,1,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter01/EquilibriumLinearization.lean,1,1.5.3,noncomputable section; section Banach,True,8,2,1.5.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/EuclideanStability.lean,1,1.5.3,"Leimkuhler--Matthews, printed page 32 / PDF page 55. Future existence and",True,3,1,1.5.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/FirstIntegralGraph.lean,1,1.5.2,,True,3,0,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/FirstIntegralQuadrature.lean,1,1.5.2,,True,3,0,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/FirstIntegrals.lean,1,1.5.2,/-! Printed28--29/PDF51--52: first integrals and planar/polar dependencies.,True,5,1,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/FreeParticleFlow.lean,1,1.5.1,,True,5,2,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/FutureFlow.lean,1,1.5.1,"Leimkuhler--Matthews Section 1.5.1, printed page 26 / PDF page 49.",True,6,1,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/GeneralizedCoordinates.lean,1,1.3;1.4,"Leimkuhler--Matthews Section 1.3, printed page 23 / PDF page 46.",True,4,1,1.3;1.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/GlobalContinuation.lean,1,1.5.3,Supporting Theorem 1.1 (printed page 32 / PDF page 55). Compatible solutions,True,3,0,1.5.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/GlobalFlow.lean,1,1.5.1,"Leimkuhler--Matthews Section 1.5.1, printed page 26 / PDF page 49.",True,8,1,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/Hamiltonian.lean,1,,"Printed pages 18--19 and 24--25, PDF pages 41--42 and 47--48.",True,16,5,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/HamiltonianHessian.lean,1,1.5.3,,True,3,0,1.5.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/HarmonicActionAngle.lean,1,1.5.2,"/-! Printed30/PDF53: actual harmonic action-angle representation, ODE equivalence and flow conjugacy.",True,11,5,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/HarmonicOscillator.lean,1,1.5.1,"/-! Explicit unit-mass harmonic oscillator: printed page 27, PDF page 50.",True,8,3,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/HarmonicTorus.lean,1,1.5.2,,True,11,5,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/Kepler.lean,1,1.5.2,/-! Printed29/PDF52: inverse-distance Kepler potential on q≠0.,True,6,2,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/KeplerCartesianBridge.lean,1,1.5.2,/-! Printed29--30/PDF52--53: actual Cartesian/polar Kepler equivalence.,True,11,1,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/KeplerPolarDynamics.lean,1,1.5.2,"/-! Printed29--30/PDF52--53: actual polar Kepler Euler--Lagrange equations,",True,13,3,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/KeplerQuadrature.lean,1,1.5.2,,True,8,2,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/KeplerReconstruction.lean,1,1.5.2,/-! Printed29--30/PDF52--53: actual radial IVPs and Kepler reconstruction.,True,9,2,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/Lagrangian.lean,1,1.3;1.4,"Leimkuhler--Matthews, Section 1.3, printed pages 22--23 / PDF pages 45--46.",True,7,2,1.3;1.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/LatticePairPotential.lean,1,1.6,uniform interaction formula on printed page 33/PDF56 of the textbook.,True,6,5,1.6,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/LatticeVibrations.lean,1,1.6.1,printed pages 36--37/PDF59--60. -/,True,4,1,1.6.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/LegendreTransform.lean,1,1.3;1.4,"Leimkuhler--Matthews Section 1.4, printed page 24 / PDF page 47.",True,6,0,1.3;1.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/LinearFlow.lean,1,1.5.1,/-! Printed27/PDF50: the constant-linear ODE has an actual exponential IVP.,True,6,2,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/LinearizedHamiltonian.lean,1,1.5.3,,True,3,1,1.5.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/LocalContinuousFlow.lean,1,1.5.1,section Banach,True,3,0,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/LocalExistence.lean,1,,,True,6,0,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter01/LocalTrajectories.lean,1,,"Leimkuhler--Matthews, printed pages 18--19 and 24--26 (PDF pages 41--42 and; the coordinate matrices of Section 1.2. Positive masses are needed only when",True,15,5,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/MatrixFlow.lean,1,1.5.1,/-! Printed27/PDF50: actual finite matrix exponential IVPs.,True,6,2,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/MechanicalConfinement.lean,1,,"Printed page 32 (PDF page 55), dependencies of Theorem 1.1.",True,2,0,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/MechanicalContinuation.lean,1,,"Supporting Theorem 1.1, printed page 32 (PDF page 55). A limit in an open",True,3,0,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/MomentumBounds.lean,1,,"Leimkuhler--Matthews, printed pages 25--26 (PDF pages 48--49).",True,5,0,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/MomentumConservation.lean,1,,,True,2,1,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter01/NBody.lean,1,,"Foundational definitions for Leimkuhler--Matthews, Chapter 1, Section 1.2,",True,1,5,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/NormalModes.lean,1,,noncomputable section; /-! Real normal-mode formulas on printed37/PDF60. -/,True,4,1,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/ODEEndpoint.lean,1,,(printed page 32 / PDF page 55). The fundamental theorem of calculus recovers,True,2,0,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/ParticleCoordinates.lean,1,,"Leimkuhler--Matthews, Section 1.2, printed page 18 (PDF page 41).",True,9,7,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/PhaseMetric.lean,1,,,True,2,1,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter01/PlanarAngularMomentum.lean,1,1.5.2,/-! Printed28--29/PDF51--52: first integrals and planar/polar dependencies.,True,4,1,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/PolarCoordinateMap.lean,1,1.5.2,/-! Printed29/PDF52: genuine polar Frechet derivative and local inverse chart.,True,5,1,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/PolarCoordinates.lean,1,1.5.2,/-! Printed28--29/PDF51--52: first integrals and planar/polar dependencies.,True,6,1,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/PotentialBarriers.lean,1,,"Leimkuhler--Matthews, printed page 32 (PDF page 55), the strict minimum",True,25,5,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/PotentialRegularity.lean,1,,"by local existence and continuation (Theorem 1.1, printed32/PDF55). -/",True,1,0,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter01/RealRecoveryFlow.lean,1,1.5.1,/-! Printed27/PDF50: real recovery of complex spectral solutions and,True,6,1,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/RealSpectralFlow.lean,1,1.5.1,/-! Printed27/PDF50: actual modes and finite real spectral expansion.,True,4,0,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/ScalarIntegrability.lean,1,1.5.2,"noncomputable section; /-- Unit-mass scalar mechanical energy, printed20/PDF43 and28/PDF51. -/",True,6,2,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/ScalarLocalIVP.lean,1,1.5.2,,True,3,2,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/ScalarTurning.lean,1,1.5.2,noncomputable section,True,8,2,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/SeparableQuadrature.lean,1,1.5.2,/-! Printed28--30/PDF51--53: genuine scalar separated quadrature.,True,5,1,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/Stability.lean,1,1.5.3,"Leimkuhler--Matthews Theorem 1.1, printed page 32 / PDF page 55.",True,3,1,1.5.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/TimeReversal.lean,1,1.5.1,"Section 1.5.1, printed page 26 / PDF page 49. Time reversal flips momentum",True,3,1,1.5.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/TorusDensity.lean,1,1.5.2,,True,8,1,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/TorusPeriod.lean,1,1.5.2,,True,6,0,1.5.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/TwoBodyCoordinates.lean,1,1.EX,"Printed page 47/PDF page 70, exercise 3(b), asks for the center-of-mass and",True,6,5,1.EX,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter01/VariationalEquation.lean,1,1.7;1.7.2;1.EX,Printed pages 44--47/PDF pages 67--70 introduce the variational equation,True,11,3,1.7;1.7.2;1.EX,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter02/ActualFlowVariations.lean,2,,Printed79/PDF101 and154/PDF176.  The variation is the actual initial-parameter,True,5,1,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/AdjointMethods.lean,2,,"Printed81--82/PDF103--104, §2.3.7.  Inverse maps are genuine equivalences.",True,10,3,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/CompositionMethods.lean,2,,"Printed85/PDF107, §2.4.1--2.4.2.  General C¹ symplectic maps need not be",True,6,3,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/EulerConvergence.lean,2,,"Leimkuhler--Matthews, Theorem 2.1, printed page 56 / PDF page 78.; The supporting stability/consistency argument is on printed pages 66--67 /; PDF pages 88--89. Constants will be derived from the C¹ field on a compact",True,6,4,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/HamiltonianVariational.lean,2,,"Printed79/PDF101, §2.3.4.  All derivatives below are actual derivatives of",True,7,1,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/HamiltonianVolume.lean,2,,Printed72/PDF94 and78/PDF100.  True C¹ field bounds on a compact convex,True,6,0,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/LiouvilleVolume.lean,2,,Printed72/PDF94.  Actual differentiation of the multilinear determinant,True,7,2,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/OneStepConvergence.lean,2,,"Leimkuhler--Matthews, §2.2.3, printed pages 66--67 / PDF pages 88--89.",True,6,2,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/ProcessedMethods.lean,2,,"Printed88/PDF110, §2.4.5.  A genuine homeomorphism supplies both the actual",True,6,4,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/SplittingError.lean,2,,"/-! §2.4.1, printed83/PDF105: the quadratic local error of a true splitting.",True,5,1,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/SymplecticEuler.lean,2,,"Printed80--81/PDF102--103, equations (2.18)--(2.21).",True,16,10,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/SymplecticForm.lean,2,,"Leimkuhler--Matthews, §2.3.3, printed pages 76--78 / PDF pages 98--100,; and the matrix algebra used in §2.3.5, printed page 79 / PDF page 101.",True,19,9,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter02/SymplecticMaps.lean,2,,"Leimkuhler--Matthews, §2.3.3 and §2.3.5, printed pages 76--79 / PDF 98--101.",True,14,5,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter03/FormalOperatorSeries.lean,3,,"Printed103--105/PDF125--127, §3.3.  The coefficient algebra is associative",True,13,4,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter03/LiePoisson.lean,3,,"Printed100--102/PDF122--124, §3.2.  All derivatives below are actual Fréchet",True,16,4,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter03/ModifiedEnergyDrift.lean,3,,Printed115--116/PDF137--138: the actual numerical iterates telescope.,True,4,0,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter03/ModifiedHamiltonianBounds.lean,3,,"Printed114--115/PDF136--137, equation (3.11) and Theorem3.1's proof.",True,5,1,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter04/ConstrainedFlowSymplectic.lean,4,,"Printed154--155/PDF176--177.  The true initial constraints, actual reduced",True,3,0,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter04/ConstrainedGram.lean,4,,Necessary model dependency for printed153/PDF175 and159/PDF181.,True,8,0,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter04/ConstrainedIntegrator.lean,4,,"Printed159--160/PDF181--182, equations (4.20)--(4.23) and the following proof.",True,3,3,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter04/ConstrainedProjection.lean,4,,Printed159--160/PDF181--182.  The scalar constraint gradient is made,True,5,4,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter04/ConstrainedReaction.lean,4,,"Printed152--153/PDF174--175, equations (4.7)--(4.10).",True,2,2,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter04/ConstrainedReactionRegularity.lean,4,,Necessary dependencies for printed153--155/PDF175--177.  Real C³ scalar,True,5,1,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter04/CotangentProjection.lean,4,,"Printed159/PDF181, equations (4.23)--(4.24), with the explicit Gram; nonsingularity condition already discussed on printed153/PDF175.",True,5,5,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter04/CotangentProjectionRegularity.lean,4,,Printed159--160/PDF181--182.  The C¹ multiplier is derived from the,True,9,1,,源码页码锚点，节映射待补
+MolecularDynamics/Chapter06/BrownianC2ClosedOperator.lean,6,,,True,18,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianC2DynkinFormula.lean,6,,,True,7,0,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianC2Expectation.lean,6,,,True,15,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianC2Generator.lean,6,,,True,14,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianC2ObservableTaylor.lean,6,,,True,11,0,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean,6,,,True,14,1,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianClosedOperator.lean,6,,,True,20,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianComplexKernel.lean,6,,,True,6,6,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianContinuousHaarDensity.lean,6,,,True,13,6,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianDirichlet.lean,6,,printed 250–251 / PDF 271–272. Formal symmetry is distinct from self-adjoint closure. -/,True,21,8,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianDrivenExistence.lean,6,,,True,4,1,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianDynkinFormula.lean,6,,,True,6,0,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianEigenDiscreteness.lean,6,,,True,10,1,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianEigenEnumeration.lean,6,,,True,9,6,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianEigenGraph.lean,6,,,True,5,1,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianEigenNormalization.lean,6,,,True,14,8,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianEigenOrdering.lean,6,,,True,13,8,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianExpectationEstimates.lean,6,,,True,18,3,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianFellerContinuity.lean,6,,,True,15,3,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianFirstVariation.lean,6,,,True,14,1,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianFourierCoefficient.lean,6,,,True,17,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianFourierCompact.lean,6,,,True,15,5,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianFourierDifferential.lean,6,,,True,22,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianFourierHilbert.lean,6,,,True,21,7,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianFourthMomentEstimates.lean,6,,,True,13,1,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGeneratorExpectation.lean,6,,,True,8,0,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean,6,,,True,9,3,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGibbsBounds.lean,6,,,True,20,3,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean,6,,,True,12,6,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean,6,,,True,15,6,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean,6,,,True,8,5,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean,6,,,True,19,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGibbsPoincare.lean,6,,,True,14,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean,6,,,True,10,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGraphCompact.lean,6,,,True,6,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGroundState.lean,6,,,True,23,6,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGroundStateCore.lean,6,,,True,11,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGroundStateGraph.lean,6,,,True,17,6,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianGroundStateIsometry.lean,6,,,True,11,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianHaarPoincare.lean,6,,,True,9,0,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianHilbertCore.lean,6,,"needed for Theorem 6.1, printed 250–251 / PDF 271–272.",True,17,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianL1DensityLaw.lean,6,,,True,20,7,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianL1L2Compatibility.lean,6,,,True,11,3,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianL1ProbabilitySemigroup.lean,6,,,True,12,2,6.3;6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianMarkovModel.lean,6,,,True,9,1,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianMassFourier.lean,6,,,True,24,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianMassResolvent.lean,6,,,True,5,0,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianMassSelfAdjoint.lean,6,,,True,10,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianObservableTaylor.lean,6,,,True,9,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianPathSolution.lean,6,,,True,22,5,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianPotentialOperator.lean,6,,,True,10,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianPotentialSelfAdjoint.lean,6,,,True,6,0,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianProbabilityDensityAverage.lean,6,,,True,9,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianProbabilityGibbsImage.lean,6,,,True,10,1,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianProbabilityGibbsInvariance.lean,6,,,True,3,0,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianProbabilitySpectralIdentification.lean,6,,,True,13,1,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianRandomModel.lean,6,,,True,14,3,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianResolventRealSpectrum.lean,6,,,True,5,0,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean,6,,,True,22,6,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSDECoefficients.lean,6,,,True,9,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSecondMomentEstimates.lean,6,,,True,8,0,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSecondVariation.lean,6,,,True,17,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSmallTimeEstimates.lean,6,,,True,17,1,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSmoothDensity.lean,6,,,True,12,4,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSmoothDomain.lean,6,,,True,15,7,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSpectralAverage.lean,6,,,True,12,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSpectralDecay.lean,6,,,True,6,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSpectralDensityLaw.lean,6,,,True,13,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSpectralEvolution.lean,6,,,True,14,5,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianSpectralGenerator.lean,6,,,True,6,3,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianTorusGibbs.lean,6,,,True,20,5,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianTorusModel.lean,6,,,True,26,6,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianTransitionSemigroup.lean,6,,,True,15,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianUniformGenerator.lean,6,,,True,8,2,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/BrownianVariance.lean,6,,,True,15,5,6.4.3,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/CanonicalIntegrationByParts.lean,6,,printed 222 / PDF 243. -/,True,17,2,6.1.5,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/CanonicalTemperature.lean,6,,printed 222 / PDF 243. The full-space integration-by-parts step is separate. -/,True,15,3,6.1.5,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinAccessibility.lean,6,,,True,3,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinC0ConservedObservable.lean,6,,,True,5,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinC0GeneratorGraph.lean,6,,,True,8,4,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinC0Preservation.lean,6,,,True,7,3,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinC0StrongContinuity.lean,6,,,True,5,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinC2ExpectationDomination.lean,6,,,True,4,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinC2Generator.lean,6,,,True,5,3,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinC2KernelGenerator.lean,6,,,True,5,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinC2ObservableTaylor.lean,6,,,True,6,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinC2OperatorSupport.lean,6,,,True,5,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCanonicalConjugation.lean,6,,,True,3,0,6.4.4;Proposition6.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCanonicalCoordinateClosed.lean,6,,,True,9,2,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean,6,,,True,7,4,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalEnergy.lean,6,,,True,11,1,6.1.3;6.4.4;Proposition6.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCanonicalH1MeanZero.lean,6,,,True,11,5,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalHilbertClosed.lean,6,,,True,8,2,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalHilbertDissipativity.lean,6,,,True,5,0,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalHilbertGraph.lean,6,,,True,8,2,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalKernelShift.lean,6,,,True,7,0,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalKernelTransport.lean,6,,,True,5,0,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalKernelUnweighted.lean,6,,,True,8,0,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalKernelWeakH1.lean,6,,,True,7,1,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean,6,,,True,10,6,6.1.3;6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCanonicalMomentumClosedEnergy.lean,6,,,True,9,5,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalMomentumIBP.lean,6,,,True,6,2,6.1.3;6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCanonicalPartition.lean,6,,,True,9,3,6.1.3;6.4.2;6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCanonicalPositionIBP.lean,6,,,True,3,0,6.1.3;6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCanonicalSmoothDensity.lean,6,,,True,6,2,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalWeakBalance.lean,6,,,True,12,1,6.1.3;6.2;6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean,6,,,True,8,7,,目录章节可知，精确节/依赖映射未登记
+MolecularDynamics/Chapter06/LangevinCanonicalWeightedAdjoint.lean,6,,,True,6,3,6.4.4;Proposition6.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCausalFlow.lean,6,,,True,10,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCesaroInvariant.lean,6,,,True,7,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCesaroLaw.lean,6,,,True,5,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCompactC2Domain.lean,6,,,True,6,3,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCompactC2Generator.lean,6,,,True,3,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCompletedHistory.lean,6,,"Necessary completed-Markov-model dependencies of Theorem 6.2, printed 252 / PDF 273. -/",True,8,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinCompletedMarkov.lean,6,,printed 252 / PDF 273. -/,True,8,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinControlPath.lean,6,,"/-! The actual smooth control-path construction in Lemma6.1, printed255--256/PDF276--277. -/",True,6,7,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinDensityMinorization.lean,6,,,True,7,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinDensityTimeZero.lean,6,,/-! Necessary nonvacuity audit of the literal printed closed-time density clause in Assumption 1(ii). -/,True,1,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinDrivenExistence.lean,6,,,True,3,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinFiltration.lean,6,,"Necessary adapted-model dependencies of Theorem 6.2, printed 252 / PDF 273. -/",True,10,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinFourthMoments.lean,6,,,True,10,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinFutureLaw.lean,6,,Necessary dependencies for Theorem 6.2 (printed 252 / PDF 273).,True,6,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinGeneratorOrbit.lean,6,,,True,8,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinGibbsStationaryExpression.lean,6,,,True,8,4,6.4.2;6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinGlobalRandomSolution.lean,6,,,True,6,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHamiltonianDrift.lean,6,,,True,11,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHamiltonianExpectedDrift.lean,6,,,True,10,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHamiltonianIncrementMoments.lean,6,,,True,5,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHamiltonianIncrementVariance.lean,6,,,True,7,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHamiltonianPowerDrift.lean,6,,,True,7,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHamiltonianPowerExpectedDrift.lean,6,,,True,6,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHamiltonianPowerKernelGenerator.lean,6,,,True,6,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHarrisAllTime.lean,6,,,True,3,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHarrisOscillation.lean,6,,,True,4,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHarrisSkeleton.lean,6,,,True,5,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHigherIncrementMoments.lean,6,,,True,9,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinHormander.lean,6,,/-! The explicitly proved Langevin Hörmander claim on printed255/PDF276. -/,True,6,5,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinInitialState.lean,6,,in Theorem 6.2 (printed 252 / PDF 273). All dependence bounds follow from actual integral solutions. -/,True,9,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinInvariantMoments.lean,6,,,True,4,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinLyapunov.lean,6,,/-! Actual Hamiltonian-power Lyapunov calculus on printed253--254/PDF274--275. -/,True,13,3,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinMomentumFirstMean.lean,6,,,True,7,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinMomentumVariation.lean,6,,,True,10,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinNoiseHigherMoments.lean,6,,,True,9,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinNoiseMoments.lean,6,,,True,11,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinNoiseStability.lean,6,,,True,8,3,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinPathSolution.lean,6,,,True,6,3,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinPeriodicCausalFlow.lean,6,,,True,8,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinPeriodicForce.lean,6,,,True,7,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinPeriodicLift.lean,6,,,True,6,4,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinPeriodicLyapunov.lean,6,,,True,11,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean,6,,,True,5,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinPositiveTimeDensity.lean,6,,,True,4,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinPositiveTimeHarris.lean,6,,assumed as a proved fact or deduced here. The literal printed time-zero clause,True,10,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinPotentialNormalization.lean,6,,,True,9,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinProgressive.lean,6,,"Necessary dependency of Theorem 6.2, printed 252 / PDF 273. -/",True,9,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinRandomSolution.lean,6,,,True,8,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinSkeletonInputs.lean,6,,,True,4,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinSkeletonMoments.lean,6,,,True,3,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinSmallTimeGrowth.lean,6,,,True,4,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinSmallTimeMomentum.lean,6,,,True,12,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinSmallTimePosition.lean,6,,,True,12,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinSmoothCutoff.lean,6,,,True,9,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinTaylorMomentControl.lean,6,,,True,4,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinTimeLawKernel.lean,6,,,True,14,3,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinTransitionKernel.lean,6,,Necessary Markov-model dependency of Theorem 6.2 (printed 252 / PDF 273). -/,True,15,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinTransitionSemigroup.lean,6,,"Necessary Markov-model dependencies for Theorem 6.2, printed 252 / PDF 273. -/",True,9,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinUniformMoments.lean,6,,,True,4,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinWeakFeller.lean,6,,,True,19,3,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/LangevinWeakGeneratorBalance.lean,6,,,True,4,0,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerBridgeSupport.lean,6,,,True,14,3,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerDeterministicLaw.lean,6,,,True,4,1,6.2.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerIntegration.lean,6,,/-! Actual finite Wiener integrals and the proved unnumbered integral on printed229--230.,True,11,3,6.2.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerPathLaw.lean,6,,,True,12,2,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerPathSupport.lean,6,,,True,8,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerQuadraticVariation.lean,6,,"/-! The textbook Proposition 6.2, printed pages 229--230 (PDF 250--251).",True,10,3,6.2.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerRefinement.lean,6,,,True,9,2,6.2.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerStratonovich.lean,6,,/-! Printed230/PDF251: the actual temporal midpoint sum for the self-Stratonovich integral.,True,9,3,6.2.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerVectorContinuousPath.lean,6,,,True,2,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerVectorFuture.lean,6,,These are necessary probability-law dependencies of Theorem 6.2 (printed 252 / PDF 273).,True,10,1,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter06/WienerVectorSupport.lean,6,,,True,10,3,6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter07/FormalOperatorFunctionalCalculus.lean,7,,,True,11,3,7.9,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter07/InvariantDistributionSwap.lean,7,,"/-! Lemma 7.1, printed299--300/PDF320--321.",True,4,1,7.9,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter07/SymmetricOperatorBCH.lean,7,,,True,18,7,7.9,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter08/HormanderClosure.lean,8,,,True,6,4,8.4;8.4.1;6.4.4,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter08/StationaryDensityFlow.lean,8,,,True,7,1,8.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter08/ThermostatDensity.lean,8,,,True,17,9,8.2,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter08/ThermostatHormander.lean,8,,,True,13,6,8.4;8.4.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter08/ThermostatLieFields.lean,8,,"/-! Lemma8.1, printed347/PDF368: the actual linear thermostat fields and their Lie closure.",True,10,6,8.4.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter08/ThermostatModeInvariant.lean,8,,/-! Printed346/PDF367: zero eigenmode submanifolds are invariant along actual NHL paths.,True,2,2,8.4.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Chapter08/ThermostatSpan.lean,8,,"/-! Proposition8.3, printed347--348/PDF368--369: genuine positive distinct spectral modes.; The coordinate equations follow the actual C/D definitions on printed347.",True,10,4,8.4.1,登记映射，尚未逐项语义终审
+MolecularDynamics/Notation.lean,0,,,False,0,10,,目录章节可知，精确节/依赖映射未登记

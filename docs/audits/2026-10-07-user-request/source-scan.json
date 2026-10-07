@@ -1,0 +1,153 @@
+{
+  "excluded": [
+    ".lake",
+    ".git"
+  ],
+  "project_lean_files": 539,
+  "formal_lean_files": 280,
+  "matches": {
+    "sorry": [],
+    "admit": [],
+    "axiom": [],
+    "opaque": [],
+    "native_decide": [],
+    "maxHeartbeats_zero": [],
+    "implemented_by": [],
+    "unsafe": [],
+    "all_resource_settings": [
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Hamiltonian.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/IntegrationCandidate.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Probe01_Algebra.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Probe02_Algebra.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Probe03_AllGoals.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Probe04_AllGoals.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Probe05_AllGoals.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Probe06_ExactSpecProofs.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Probe07_Boundaries.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Probe08_IntegrationCandidate.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Probe09_IntegrationExactGoals.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "docs/tasks/T3_implementation/evidence/Probe10_IntegrationExactGoals.lean",
+        "line": 13,
+        "scope": "draft_history",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "MolecularDynamics/Chapter01/Hamiltonian.lean",
+        "line": 16,
+        "scope": "formal",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "MolecularDynamics/Chapter01/LocalExistence.lean",
+        "line": 7,
+        "scope": "formal",
+        "text": "set_option maxHeartbeats 100000"
+      },
+      {
+        "file": "MolecularDynamics/Chapter01/MomentumBounds.lean",
+        "line": 14,
+        "scope": "formal",
+        "text": "set_option synthInstance.maxHeartbeats 2000"
+      },
+      {
+        "file": "MolecularDynamics/Chapter01/MomentumBounds.lean",
+        "line": 15,
+        "scope": "formal",
+        "text": "set_option maxHeartbeats 100000"
+      },
+      {
+        "file": "MolecularDynamics/Chapter02/ActualFlowVariations.lean",
+        "line": 29,
+        "scope": "formal",
+        "text": "set_option maxHeartbeats 800000 in"
+      },
+      {
+        "file": "MolecularDynamics/Chapter06/BrownianClosedCoercivity.lean",
+        "line": 134,
+        "scope": "formal",
+        "text": "set_option maxHeartbeats 800000 in"
+      },
+      {
+        "file": "MolecularDynamics/Chapter06/LangevinInitialState.lean",
+        "line": 79,
+        "scope": "formal",
+        "text": "set_option maxHeartbeats 800000 in"
+      },
+      {
+        "file": "MolecularDynamics/Chapter06/LangevinInitialState.lean",
+        "line": 125,
+        "scope": "formal",
+        "text": "set_option maxHeartbeats 800000 in"
+      },
+      {
+        "file": "MolecularDynamics/Chapter07/SymmetricOperatorBCH.lean",
+        "line": 126,
+        "scope": "formal",
+        "text": "set_option maxHeartbeats 800000 in"
+      },
+      {
+        "file": "MolecularDynamics/Chapter07/SymmetricOperatorBCH.lean",
+        "line": 138,
+        "scope": "formal",
+        "text": "set_option maxHeartbeats 800000 in"
+      }
+    ],
+    "trivial_definition_candidates": []
+  }
+}

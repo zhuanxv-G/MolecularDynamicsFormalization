@@ -1,0 +1,12 @@
+import MolecularDynamics.Chapter06.BrownianMassFourier
+#check Real.sq_sqrt
+#check Real.sqrt_pos.2
+#check Real.sqrt_ne_zero'.2
+#check inv_pow
+#check ContinuousMap.mul
+#check ContinuousMap.mul_apply
+#check Real.continuous_sqrt
+#check Real.sqrt_sq
+#check Real.sqrt_sq_eq_abs
+#check inv_mul_cancel₀
+#check mul_inv_cancel₀

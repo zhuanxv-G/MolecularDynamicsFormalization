@@ -1,0 +1,17 @@
+import MolecularDynamics.Chapter06.BrownianEigenEnumeration
+import Mathlib.Data.Sigma.Order
+import Mathlib.Order.SuccPred.LinearLocallyFinite
+#check Sigma.Lex.le_def
+#check ofLex
+#check toLex
+#check OrderDual.ofDual
+#check LocallyFiniteOrder.ofFiniteIcc
+#check LinearLocallyFiniteOrder.succOrder
+#check LinearLocallyFiniteOrder.predOrder
+#check OrderIso.orderIsoNatOfLinearSuccPredArch
+#check Set.Finite.of_injOn
+#check Finset.min'_mem
+#check Finset.min'_le
+#check Infinite.of_injective
+#check Set.Finite.mem_toFinset
+#check NoMaxOrder

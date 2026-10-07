@@ -1,0 +1,14 @@
+import MolecularDynamics.Chapter06.BrownianGibbsComplexSpectrum
+open MeasureTheory
+#check MolecularDynamics.textbookBrownianGibbsClosedOperator_kernel_constant
+#check MolecularDynamics.textbookPeriodicSmoothEmbedding_one_ae_eq
+#check MolecularDynamics.textbookBrownianGibbsOrderedNatEigenbasis_mem_graph
+#check MolecularDynamics.textbookBrownianGibbsOrderedEigenEnumeration_zero
+#check HilbertBasis.mk
+#check HilbertBasis.coe_mk
+#check HilbertBasis.dense_span
+#check Submodule.topologicalClosure_mono
+#check algebraMap_smul
+#check smul_comm
+#check MolecularDynamics.textbookBrownianGibbsComplexEigenbasis_mem_graph
+#check Set.range_comp
