@@ -1,0 +1,111 @@
+{
+  "started_at": "2026-10-07T11:18:47.5273266+08:00",
+  "finished_at": "2026-10-07T11:20:02.3984693+08:00",
+  "head_at_check": "acb3135b3cf73cd76b0a61c0d17e788ee171d36d",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9168,
+  "audit_declarations": 2567,
+  "inputs": 251,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_increment_binomial",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_increment_integrable",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_increment_mean_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_actual_differentialOperator_limit",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_physical_increment_mean_div_time_tendsto",
+    "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_actual_infinitesimal_lyapunov"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_increment_binomial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_increment_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_increment_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_actual_differentialOperator_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_physical_increment_mean_div_time_tendsto",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicGlobalRandomPhase_hamiltonian_power_actual_infinitesimal_lyapunov",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "4c34ea9295ffbef3e3b3d0c25fec417c5d7fec7d3267a78621f849067ac50d1d"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "10c91b2907261bdf3c9527961e1b606736d3628cc2011b21c887949b195e6622"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "f1cd9b0672668f563047f5aa25cf2e8c4d6d5e6b269b1cdec078ea336959029e"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "8bac43db93d5db4838b60b39241e15fddcdd33b774f0749bab9bd0345e6dea74"
+    }
+  ],
+  "literal_actual_H_power_increment_binomial": "all_natural_l_exact_same_Hincrement_remove_zero_term_true_choose_coefficients",
+  "actual_all_H_power_increment_integrability": "derived_signed_Hincrement_moments_finite_sum_on_zero_to_one_no_U_lower",
+  "actual_all_H_power_expectation_derivative": "all_l_positive_actual_first_second_higher_moments_and_true_finite_binomial_limit",
+  "true_choose_two_real_coefficient": "Nat_cast_choose_two_real_l_times_l_minus_one_over_two",
+  "actual_H_power_differentialOperator_identification": "proved_every_l_at_least_one_pointwise_actual_expectation_generator_no_identity_hypothesis",
+  "actual_physical_H_power_expectation_derivative": "true_sqrt_FD_square_gamma_beta_inverse_full_original_H_power_l_family",
+  "actual_infinitesimal_H_power_Lyapunov": "proved_with_U_at_least_one_true_previously_corrected_Laplacian_coefficient",
+  "closed_semigroup_generator_domain_on_H_power": "not_proved_from_pointwise_expectation_limit_alone",
+  "full_C2_actual_generator_identity": "not_proved",
+  "target_remainder_moment_limit_or_generator_hypothesis": "none",
+  "local_output": "local03_exit0_two_ring_nf_informational_hints_not_empty_no_Lean_error_or_warning",
+  "model": "same_actual_unitmass_periodic_Cinfty_U_original_B_P_gamma_positive_sigma_arbitrary_no_U_lower_except_Lyapunov_U_ge_one_no_density_or_stationarity_physical_beta_positive",
+  "necessary_dependency": "original_H_power_l_Lyapunov_Assumption2_infinitesimal_expectation_generator_printed253_254",
+  "actual_all_Hamiltonian_powers_generator_identity": "proved_pointwise_expectation_limit_all_l_ge_one",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

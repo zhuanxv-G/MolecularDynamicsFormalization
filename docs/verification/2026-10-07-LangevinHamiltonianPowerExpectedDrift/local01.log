@@ -1,0 +1,10 @@
+docs/verification/2026-10-07-LangevinHamiltonianPowerExpectedDrift/Draft.lean:78:6: error: Type mismatch: After simplification, term
+  textbookLangevinPeriodicHamiltonianIncrement_second_moment_div_time_tendsto B P hB U hU hp L hF γ σ hγ x
+ has type
+  @Tendsto ℝ ℝ
+    (fun T => (∫ (sample : Ω), textbookLangevinPeriodicHamiltonianIncrement B U L hF γ σ T x sample ^ 2 ∂P) / T)
+    (𝓝[>] 0) (𝓝 (σ ^ 2 * ∑ i, x.2 i ^ 2))
+but is expected to have type
+  @Tendsto ℝ ℝ
+    (fun T => (∫ (sample : Ω), textbookLangevinPeriodicHamiltonianIncrement B U L hF γ σ T x sample ^ 2 ∂P) / T)
+    (𝓝[>] 0) (𝓝 (if 2 = 1 then -γ * ∑ i, x.2 i ^ 2 + ↑N * σ ^ 2 / 2 else σ ^ 2 * ∑ i, x.2 i ^ 2))
