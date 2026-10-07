@@ -1,0 +1,20 @@
+docs/verification/2026-10-07-LangevinC2OperatorSupport/Draft.lean:100:8: warning: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+docs/verification/2026-10-07-LangevinC2OperatorSupport/Draft.lean:136:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  textbookLangevinPeriodicProjection z
+in the target expression
+  z ∈ textbookLangevinPeriodicProjection ⁻¹' tsupport F
+
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+γ σ : ℝ
+F : textbookLangevinPeriodicPhase N → ℝ
+hG : ContDiff ℝ 2 (F ∘ textbookLangevinPeriodicProjection)
+x : textbookLangevinPeriodicPhase N
+hx : x ∈ Function.support (textbookLangevinPeriodicDifferentialOperator U γ σ F)
+hxs : x ∉ closure (Function.support F)
+z : textbookLangevinPhase N := (textbookLangevinPeriodicRepresentative x.1, x.2)
+g : textbookLangevinPhase N → ℝ := F ∘ textbookLangevinPeriodicProjection
+hz : textbookLangevinPeriodicProjection z = x
+hzg : z ∈ tsupport g
+h : z ∈ textbookLangevinPeriodicProjection ⁻¹' tsupport F
+⊢ False

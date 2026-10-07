@@ -694,3 +694,5 @@ LangevinC2Generator：原sameunitmass6.47 WienerB P/C∞periodicU/forceLip、γp
 LangevinC2KernelGenerator：原sameunitmass6.47 existingκ WienerB P/C∞periodicU/forceLip、γpositiveσ任意、N0包括，无Ulower/density/stationarity。F连续周期相空间观测可无界，realF∘projection C²，explicit∀z actualHessian norm≤M，hM非负；trueprojectionactualinitial和realprocess C²真limit derive同κ actualPeriodicDifferentialOperator。没有目标limitgenerator前提/C³，本批不声称compactcoreHessian自动导出或closed/arbitraryC²/whole6.2。
 
 LangevinCompactC2Generator：原sameunitmass6.47 WienerB P/C∞periodicU/forceLip、γpositiveσ任意N0无Ulower/density/stationarity；F连续、真正periodicphase上支撑紧，realF∘projection C²；Hessian全局界由真实compact与periodicjets导，不作前提、不假设real lift紧支撑、不需C³。maxC0处理F0/N0，actualsameκ pointwise operator非closed/graphcore/full任意C²。
+
+LangevinC2OperatorSupport：actualsameperiodicoperator F真C²lift，C²不需C³或FContinuous额外假设；gammaσ任意N0包括，support U任意，lift/continuous用原C∞periodicU/force周期性；compactF只用于operatorcompact/C0。没有suppliedliftcontinuoussupport/closedgenerator/domain/Gibbs或density前提，chosenrep不假设连续；unifexpectation derivative/graphcore未完。

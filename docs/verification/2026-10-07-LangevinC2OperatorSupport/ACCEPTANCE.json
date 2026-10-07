@@ -1,0 +1,99 @@
+{
+  "started_at": "2026-10-07T12:13:44.8169867+08:00",
+  "finished_at": "2026-10-07T12:14:58.950287+08:00",
+  "head_at_check": "f209a46e7443bc23ffbeab4e251df404e953ecc1",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9174,
+  "audit_declarations": 2599,
+  "inputs": 257,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_C2_lift",
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_C2_continuous",
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_C2_tsupport_subset",
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_compactC2_hasCompactSupport",
+    "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_compactC2_continuous_vanishing"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_C2_lift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_C2_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_C2_tsupport_subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_compactC2_hasCompactSupport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicDifferentialOperator_compactC2_continuous_vanishing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "a0409983227ce3b49d989c931f61e903a1f3e1a3b39640ca5ac1e609399dd008"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "04d962718018f02f9f98edd332a4bb5b9220585a78ed2cdbd066af5d3b76c0a8"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "existing_periodic_operator": "same_existing_textbookLangevinPeriodicDifferentialOperator_no_replacement_definition",
+  "testclass": "true_C2_lift_of_periodic_F_compact_support_required_only_for_compact_C0_image",
+  "representative_independence": "proved_integer_projection_and_first_second_jet_shift_actual_force_periodicity_true_lattice_difference_arbitrary_real_rep",
+  "actual_continuity": "proved_C2_real_Frechet_expression_continuity_descends_through_existing_open_quotient_no_continuity_of_chosen_representative_assumed",
+  "actual_support_inclusion": "proved_support_comp_and_first_second_derivative_support_zero_off_F_tsupport",
+  "actual_compact_preservation": "proved_closed_operator_tsupport_subset_compact_F_tsupport",
+  "actual_C0_image": "true_continuous_original_operator_and_cocompact_limit_zero",
+  "operator_model": "Nzero_any_gamma_sigma_U_any_for_support_U_Cinfty_periodic_for_lift_continuity",
+  "target_operator_lift_continuity_support_or_generator_hypothesis": "none",
+  "higher_C3_test_regularity": "not_required",
+  "closed_semigroup_generator_domain": "not_proved",
+  "graph_core_theorem": "not_proved",
+  "Gibbs_invariance": "not_proved",
+  "local_output": "local02_all5_private_exit0_empty_log_no_Lean_error_or_warning_local01_preimage_rewrite_and_deprecated_sum_warning_preserved",
+  "necessary_dependency": "original_Langevin6_47_actual_periodic_C2_test_operator_codomain_for_generator_Gibbs",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "Gibbs_law_identification": "not_proved",
+  "owner_printed_semantic_correction": "pending",
+  "general_SDE_theorem6_2": "incomplete",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
