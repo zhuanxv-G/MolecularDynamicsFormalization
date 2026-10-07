@@ -1,0 +1,16 @@
+docs/verification/2026-10-07-LangevinCanonicalKernelContinuousTest/Draft.lean:53:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (MolecularDynamics.phase_smooth_kernel✝ δ hδ ⋆[lsmul ℝ ℝ, Measure.addHaar] F ∘ textbookLangevinPeriodicProjection) z
+in the target expression
+  (φ.normed Measure.addHaar ⋆[lsmul ℝ ℝ, Measure.addHaar] F ∘ textbookLangevinPeriodicProjection) z ≠ 0
+
+N : ℕ
+F : textbookLangevinPeriodicPhase N → ℝ
+hsF : HasCompactSupport F
+δ : ℝ
+hδ : 0 < δ
+hδ1 : δ ≤ 1
+hK : IsCompact (textbookLangevinPeriodicSmoothApproximationSupportRegion F)
+z : textbookLangevinPhase N
+hx : textbookLangevinPeriodicProjection z ∈ support (textbookLangevinPeriodicSmoothApproximation F δ hδ)
+φ : ContDiffBump 0 := { rIn := δ / 2, rOut := δ, rIn_pos := ⋯, rIn_lt_rOut := ⋯ }
+⊢ (φ.normed Measure.addHaar ⋆[lsmul ℝ ℝ, Measure.addHaar] F ∘ textbookLangevinPeriodicProjection) z ≠ 0

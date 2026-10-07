@@ -1,0 +1,112 @@
+{
+  "started_at": "2026-10-07T23:53:21.7654728+08:00",
+  "finished_at": "2026-10-07T23:59:30.7932397+08:00",
+  "head_at_check": "e1badc27650611e580959b3c06710fdfa5efb8ce",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9207,
+  "audit_declarations": 2879,
+  "inputs": 290,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinPeriodicSmoothApproximationSupportRegion",
+    "MolecularDynamics.textbookLangevinPeriodicSmoothApproximationSupportRegion_isCompact",
+    "MolecularDynamics.textbookLangevinPeriodicSmoothApproximationSupportRegion_contains",
+    "MolecularDynamics.textbookLangevinPeriodicSmoothApproximation_support_uniform",
+    "MolecularDynamics.textbookLangevinPeriodicPhase_exists_smooth_compact_uniform_approx_in_common_support",
+    "MolecularDynamics.textbookLangevinCanonicalL2_unweighted_shift_locallyIntegrable",
+    "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_continuous_pairing_shift_invariant"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicSmoothApproximationSupportRegion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicSmoothApproximationSupportRegion_isCompact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicSmoothApproximationSupportRegion_contains",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicSmoothApproximation_support_uniform",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinPeriodicPhase_exists_smooth_compact_uniform_approx_in_common_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalL2_unweighted_shift_locallyIntegrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator_kernel_continuous_pairing_shift_invariant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "667a0fec4ee8e67a13255f2d98c41650a105f3f51f096e5112308e70ce201a90"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "92ded178b6e6a0030170d3e25dd7b528d8d988e406e7db8ba932cda3c6dc4bd3"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_U_Cinfty_unitperiodic_beta_positive_gamma_strictly_positive_FD_same_canonical_measure_Nzero",
+  "actual_common_smooth_approximation_support_region": "proved_original_momentum_support_plus_projected_real_unit_ball_times_true_compact_torus",
+  "actual_uniform_support_for_all_radius_at_most_one": "proved_actual_normed_bump_support_and_original_descended_convolution",
+  "actual_smooth_compact_uniform_approx_with_common_support": "proved_real_radius_min_one_actual_uniform_continuity_and_true_normalized_convolution",
+  "actual_reference_translated_canonical_L2_locallyIntegrable": "proved_actual_reference_measure_preserving_homeomorphism_and_compact_integrability",
+  "actual_continuous_compact_kernel_test_pairing_phase_shift_invariance": "proved_true_local_L1_integral_error_estimates_on_same_compact_and_original_smooth_pairing_invariance",
+  "no_assumed_common_support_integral_continuity_pairing_invariance_or_kernel_constancy": true,
+  "weak_zero_gradient_implies_actual_canonical_constant": "not_proved",
+  "full_closed_L_kernel_constancy": "not_proved",
+  "weighted_H1_norm_smooth_density": "not_proved",
+  "actual_L2_semigroup_generator_identification": "not_proved",
+  "actual_semigroup_generator_graph_core": "not_proved",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "forward_Poisson_compact_resolvent_Fredholm_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}
