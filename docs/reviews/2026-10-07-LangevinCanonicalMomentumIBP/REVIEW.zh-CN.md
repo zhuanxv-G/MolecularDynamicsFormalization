@@ -1,0 +1,11 @@
+# 原canonical动量真实分部积分与摩擦扩散弱平衡
+
+8公开声明给完整Langevin canonical弱平衡必要的真实momentum部分。literal momentumdensity采用原sqrt(2πbeta^-1)逆的N次方与exp(-βsum p²/2)，由此前trueGaussian pi PDF证明与actualmeasure字面withDensity一致并给所有observable真实real积分转换。densityC∞与真实fderiv坐标=-βp_iρ从same mechanicalH momentumshift/exp和真实Fréchet line复合导出，不假定目标partial。
+
+对C1compacttest，ρDf、Dρ f、ρf真可积来自连续性与实际测试/其导数的compact support，调用固定mathlib真实fullspace Haar IBP，实际density和真实partial重写得到actualGaussian测度∫D_i f=β∫p_if，无目标IBP/weakbalance前提。对C2compacttest，真firstpartial是C1且compact，二阶及pfirstpart测度积分真实可积；原γΣ(beta^-1Dii-p_iDi) frictiondiffusion每项由实际IBP取消，N0总和空也适用。这是原6.47物理平方关系下的momentum部分，不作为独立一般OU扩展或冒称完整phase弱平衡。
+
+unitmass beta>0 N0、C1/C2compact momentumtest；gamma任意真实系数涵盖原gamma正；无targetdensity/IBP/balance/InvLaw假设。原PDF239/272–275文本及239/273视觉按不变PDFSHA/原239 PNG哈希复用，未称当前新render。phase位置periodicHamiltonian与force项抵消、完整weak∫LFµ=0、actualGibbsInv、functionaladjoint域/graphcore/density/H¹kernel/CORE待证。
+
+local01有hG constantzero类型未明确、shift已defeq simp无progress、真实Fréchet复合base equality、dotfield跨行parse、rho letalias与求和括号错误；编译器错误恢复自动placeholder警告只在失败raw（候选源码无placeholder声明，没有验收）。修真实API/notation后local02完整只sum积分Pi.sub vs pointwise scalar eta，显式scalar差integrability using!及exactbody后local03全8/private空log0零warning。保留raw01–03，无resource/linter/newaxiom。exact统一唯一full01待验。负责人教材语义签核pending。
+
+full-check01通过：9187jobs/2700标准公理/270exactinputs/all10checks0/0Leanwarning/allinput及全部原rawlog SHA一致，新8public唯一标准axioms。actualGauss pi law literalPDF/expectation/C∞partial、C1compact真实Haar IBP及C2compactmomentum OU弱零已证，各实际导数支持与integrability推导；完整phase Hamiltonian qforce balance/actualGibbsInv未证。raw01–03保留，无option变化，earlyparse compilerrecovery只失败raw。

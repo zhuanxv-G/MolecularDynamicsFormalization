@@ -1,0 +1,96 @@
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:37:13: error: don't know how to synthesize implicit argument `f`
+  @ContDiff.comp ℝ (Fin N → ℝ) (textbookLangevinPhase N) ℝ DenselyNormedField.toNontriviallyNormedField
+    Pi.normedAddCommGroup Pi.normedSpace Prod.normedAddCommGroup Prod.normedSpace Real.normedAddCommGroup
+    RCLike.toInnerProductSpaceReal.toNormedSpace ∞ (textbookLangevinGibbsWeight (fun x => 0) β) (fun x => (?m.48, id x))
+    (textbookLangevinGibbsWeight_contDiff (fun x => 0) contDiff_const β) (ContDiff.prodMk contDiff_const contDiff_id)
+context:
+N : ℕ
+β : ℝ
+⊢ (Fin N → ℝ) → textbookLangevinPhase N
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:38:28: error: don't know how to synthesize implicit argument `f`
+  @ContDiff.prodMk ℝ (Fin N → ℝ) (Fin N → ℝ) (Fin N → ℝ) DenselyNormedField.toNontriviallyNormedField
+    Pi.normedAddCommGroup Pi.normedSpace Pi.normedAddCommGroup Pi.normedSpace Pi.normedAddCommGroup Pi.normedSpace ∞
+    (fun x => ?m.48) id contDiff_const contDiff_id
+context:
+N : ℕ
+β : ℝ
+⊢ (Fin N → ℝ) → Fin N → ℝ
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:38:43: error: don't know how to synthesize placeholder
+context:
+N : ℕ
+β : ℝ
+⊢ Fin N → ℝ
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:37:7: error: failed to infer `have` declaration type
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:36:67: error: unsolved goals
+N : ℕ
+β : ℝ
+⊢ ContDiff ℝ ∞ (textbookLangevinCanonicalMomentumDensity N β)
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:83:4: error: `simp` made no progress
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:97:6: error: Application type mismatch: The argument
+  DifferentiableAt.hasFDerivAt hg
+has type
+  HasFDerivAt (textbookLangevinCanonicalMomentumDensity N β) (fderiv ℝ (textbookLangevinCanonicalMomentumDensity N β) p)
+    p
+but is expected to have type
+  HasFDerivAt ?m.571 ?m.572 (p + id 0 • Pi.single i 1)
+in the application
+  HasFDerivAt.comp_hasDerivAt 0 (DifferentiableAt.hasFDerivAt hg)
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:114:85: error: Invalid field notation: Identifier or numeral expected
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:126:11: error: `simp` made no progress
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:142:6: error(lean.unknownIdentifier): Unknown identifier `i`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:142:34: error(lean.unknownIdentifier): Unknown identifier `i`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:146:8: warning: declaration uses `sorry`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:147:27: warning: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:147:49: warning: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:165:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:167:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:172:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:174:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:175:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:164:2: warning: Unused tactic linter: `rw [integral_const_mul, integral_finsetSum _ (fun i _ ↦ (hi1 i).sub (hi2 i))]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:165:2: warning: Unused tactic linter: `have he (i : Fin N) :=
+  textbookLangevinCanonicalMomentumMeasure_integrationByParts N β hβ (D i) (hD i) (hsD i) i` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:167:2: warning: Unused tactic linter: `have hz (i : Fin N) :
+  (∫ p, β⁻¹ * fderiv ℝ (D i) p (Pi.single i 1) - p i * D i p ∂textbookLangevinCanonicalMomentumMeasure N β hβ) = 0 :=
+  by
+  rw [integral_sub (hi1 i) (hi2 i), integral_const_mul, he]
+  rw [← mul_assoc, inv_mul_cancel₀ hβ.ne', one_mul, sub_self]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:172:2: warning: Unused tactic linter: `change
+  γ *
+      (∑ i : Fin N,
+        ∫ p, β⁻¹ * fderiv ℝ (D i) p (Pi.single i 1) - p i * D i p ∂textbookLangevinCanonicalMomentumMeasure N β hβ) =
+    0` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:174:2: warning: Unused tactic linter: `simp_rw [hz]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:175:2: warning: Unused tactic linter: `simp` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

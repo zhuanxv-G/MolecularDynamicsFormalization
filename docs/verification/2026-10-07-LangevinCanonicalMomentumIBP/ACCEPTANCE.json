@@ -1,0 +1,125 @@
+{
+  "started_at": "2026-10-07T17:13:50.1966827+08:00",
+  "finished_at": "2026-10-07T17:17:01.0703851+08:00",
+  "head_at_check": "61cf59abd16d1cc275be5067a328cccbe70b47e0",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9187,
+  "audit_declarations": 2700,
+  "inputs": 270,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalMomentumDensity",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumDensity_contDiff",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumDensity_withDensity",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumDensity_integral",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumDensity_fderiv",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_integrationByParts",
+    "MolecularDynamics.textbookLangevinMomentumOrnsteinUhlenbeckOperator",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_ou_weak_balance"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumDensity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumDensity_contDiff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumDensity_withDensity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumDensity_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumDensity_fderiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_integrationByParts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinMomentumOrnsteinUhlenbeckOperator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_ou_weak_balance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "121da0db8a1359ccee646e2fb44005c14c14dc351de5850600e9bfa7105579bc"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "0def0a6a5bfb9235db9dc5d31a28cf9af04d5699181b4bc829da1201df2eed61"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "78e91bd360cdae1d7188b894e8a1ef1dfcf3dd005137c68e2d84a41e5781d952"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_canonical_momentum_variance_beta_inverse_positive_beta_Nzero",
+  "actual_momentum_density": "same_literal_Gaussian_Boltzmann_coefficient_and_kinetic_weight",
+  "density_law_identity": "proved_true_original_gaussian_pi_measure_with_same_density_and_real_expectation",
+  "density_smooth_partial": "derived_true_mechanical_Gibbs_curve_and_real_Frechet_coordinate_derivative_minus_beta_p_density",
+  "gaussian_integration_by_parts": "proved_actual_measure_C1_compact_momentum_tests_true_fullspace_Haar_IBP_all_integrability_derived",
+  "physical_momentum_operator": "literal_gamma_sum_beta_inverse_second_partial_minus_p_first_partial_original_friction_diffusion_component",
+  "C2_compact_momentum_weak_balance": "proved_true_first_derivative_compact_support_C1_and_real_integrability_then_actual_IBP_cancellation",
+  "project_source_placeholders": "none_early_parse_errors_compiler_recovery_warning_preserved_only_failed_raw_not_accepted_source",
+  "whole_Langevin_phase_weak_balance": "not_proved_Hamiltonian_position_force_terms_pending",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "functional_adjoint_domain_flux_integration_by_parts": "not_proved_complete_phase",
+  "graph_core": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete"
+}

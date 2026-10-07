@@ -396,3 +396,5 @@ import MolecularDynamics.Chapter06.LangevinGibbsStationaryExpression
 import MolecularDynamics.Chapter06.LangevinCanonicalMeasure
 
 import MolecularDynamics.Chapter06.LangevinCanonicalPartition
+
+import MolecularDynamics.Chapter06.LangevinCanonicalMomentumIBP

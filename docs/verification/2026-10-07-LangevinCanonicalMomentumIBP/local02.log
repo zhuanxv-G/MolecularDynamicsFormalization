@@ -1,0 +1,33 @@
+docs/verification/2026-10-07-LangevinCanonicalMomentumIBP/Draft.lean:164:26: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : Fin N → ℝ),
+    ∑ i ∈ ?m.287,
+      ((fun p => β⁻¹ * (fderiv ℝ (D i) p) (Pi.single i 1)) - fun p => p i * D i p)
+        a ∂textbookLangevinCanonicalMomentumMeasure N β hβ
+in the target expression
+  γ *
+      ∫ (a : Fin N → ℝ),
+        ∑ i,
+          (β⁻¹ * (fderiv ℝ (fun q => (fderiv ℝ f q) (Pi.single i 1)) a) (Pi.single i 1) -
+            a i * (fderiv ℝ f a) (Pi.single i 1)) ∂textbookLangevinCanonicalMomentumMeasure N β hβ =
+    0
+
+N : ℕ
+β γ : ℝ
+hβ : 0 < β
+f : (Fin N → ℝ) → ℝ
+hf : ContDiff ℝ 2 f
+hs : HasCompactSupport f
+this : IsProbabilityMeasure (textbookLangevinCanonicalMomentumMeasure N β hβ)
+D : Fin N → (Fin N → ℝ) → ℝ := fun i p => (fderiv ℝ f p) (Pi.single i 1)
+hD : ∀ (i : Fin N), ContDiff ℝ 1 (D i)
+hsD : ∀ (i : Fin N), HasCompactSupport (D i)
+hi1 :
+  ∀ (i : Fin N),
+    Integrable (fun p => β⁻¹ * (fderiv ℝ (D i) p) (Pi.single i 1)) (textbookLangevinCanonicalMomentumMeasure N β hβ)
+hi2 : ∀ (i : Fin N), Integrable (fun p => p i * D i p) (textbookLangevinCanonicalMomentumMeasure N β hβ)
+⊢ γ *
+      ∫ (a : Fin N → ℝ),
+        ∑ i,
+          (β⁻¹ * (fderiv ℝ (fun q => (fderiv ℝ f q) (Pi.single i 1)) a) (Pi.single i 1) -
+            a i * (fderiv ℝ f a) (Pi.single i 1)) ∂textbookLangevinCanonicalMomentumMeasure N β hβ =
+    0
