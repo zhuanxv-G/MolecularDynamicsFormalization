@@ -1256,3 +1256,5 @@ LangevinGeneratorOrbit / CH06-DEP-147 / NOT-CH06-156：8public actualnormgraph t
 LangevinC0ConservedObservable / CH06-DEP-148 / NOT-CH06-157：5public truegraph/domain zeroiff原stationary；actualκ fullsupport和真实C0 tail/maxattainment/概率gap给one-positive-time fixedconstant、actualgenerator/domain与compactC² LFnull常数。σ非零N0，无density/Gibbs/目标constancy；local03零warning exactfull01中，原Prop6.4加权H¹核和Poisson另行。
 
 LangevinGibbsStationaryExpression / CH06-DEP-149 / NOT-CH06-158：12public原phase坐标div及真实drift div=-γN/classicforward表达、same H exp-Gibbs真实一阶p Hessian与drift导数/physicalFD取消及periodicweight allrepresentative lift。N0 βγ正无目标PDE/Gibbs不变性假设。原PDF268 forward公式φ二阶vsρ排印不一致明确记录并按density真实导数，owner pending。local03零warning exactfull01中，概率Gibbs/functionaladjoint/weakbalance/CORE未完。
+
+LangevinCanonicalMeasure / CH06-DEP-150 / NOT-CH06-159：14public真实beta^-1 Gaussian pi动量概率/L²/真实PDF，由盒集唯一性与Fubini证明；原qtorus Gibbs×p真实law给fullphase概率及wrapper、actualBoltzmann密度严格正可积积分1及p²矩；不同position代表以真实periodicity匹配。unitmass原6.47 N0 beta>0 U C∞periodic，无目标probability/density/normalization/moment/GibbsInv。local04零warning及exact full02通过9185/2681/268，actualtransitionGibbs不变性未证。

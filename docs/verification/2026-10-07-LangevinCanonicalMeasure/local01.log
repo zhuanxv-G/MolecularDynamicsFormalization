@@ -1,0 +1,65 @@
+docs/verification/2026-10-07-LangevinCanonicalMeasure/Draft.lean:22:2: error: mod_cast has type
+  ¬β⁻¹ = 0
+but is expected to have type
+  ¬canonicalVariance β hβ = 0
+docs/verification/2026-10-07-LangevinCanonicalMeasure/Draft.lean:53:26: warning: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+docs/verification/2026-10-07-LangevinCanonicalMeasure/Draft.lean:90:73: error: unsolved goals
+case e_a
+N : ℕ
+β : ℝ
+hβ : 0 < β
+p : Fin N → ℝ
+i : Fin N
+⊢ -(p i ^ 2 * (↑⟨β⁻¹, ⋯⟩)⁻¹) = -(p i ^ 2 * β)
+docs/verification/2026-10-07-LangevinCanonicalMeasure/Draft.lean:103:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (∑ i ∈ ?s, ?f i) / ?a
+in the target expression
+  Real.exp (∑ x, -β * p x ^ 2 / 2) = Real.exp ((-β * ∑ i, p i ^ 2) / 2)
+
+case e_a
+N : ℕ
+β : ℝ
+hβ : 0 < β
+p : Fin N → ℝ
+ht :
+  ∀ (i : Fin N),
+    gaussianPDFReal 0 (canonicalVariance β hβ) (p i) = (√(2 * Real.pi * β⁻¹))⁻¹ * Real.exp (-β * p i ^ 2 / 2)
+⊢ Real.exp (∑ x, -β * p x ^ 2 / 2) = Real.exp ((-β * ∑ i, p i ^ 2) / 2)
+docs/verification/2026-10-07-LangevinCanonicalMeasure/Draft.lean:92:15: warning: This simp argument is unused:
+  NNReal.coe_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+docs/verification/2026-10-07-LangevinCanonicalMeasure/Draft.lean:196:67: error(lean.unknownIdentifier): Unknown constant `MeasureTheory.Measure.prod_withDensity`
+docs/verification/2026-10-07-LangevinCanonicalMeasure/Draft.lean:186:77: error: unsolved goals
+N : ℕ
+U : (Fin N → ℝ) → ℝ
+hU : ContDiff ℝ ∞ U
+hp : textbookUnitPeriodicPotential U
+β : ℝ
+hβ : 0 < β
+hq :
+  Measurable fun Q =>
+    ENNReal.ofReal ((textbookConfigurationPartition U β)⁻¹ * textbookConfigurationTorusGibbsWeight U β Q)
+hpD : Measurable fun p => ENNReal.ofReal (canonicalMomentumPDF N β hβ p)
+⊢ (ℙ.withDensity fun Q =>
+          ENNReal.ofReal ((textbookConfigurationPartition U β)⁻¹ * textbookConfigurationTorusGibbsWeight U β Q)).prod
+      (ℙ.withDensity fun p => ENNReal.ofReal (canonicalMomentumPDF N β hβ p)) =
+    (ℙ.prod ℙ).withDensity fun x => ENNReal.ofReal (textbookLangevinCanonicalDensity U β x)
+docs/verification/2026-10-07-LangevinCanonicalMeasure/Draft.lean:212:59: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  SFinite (textbookLangevinCanonicalMomentumMeasure N β hβ)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.

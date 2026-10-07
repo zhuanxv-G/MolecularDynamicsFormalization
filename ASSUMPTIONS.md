@@ -716,3 +716,5 @@ LangevinGeneratorOrbit：原unitmass6.47实际Wiener B P/C∞periodicU/forceLip 
 LangevinC0ConservedObservable：原unitmass6.47/Wiener B P/C∞periodicU/forceLip γ>0，stationaryiff sigma任意，constancy sigma非零N0。真C0 tail/极值存在与actualopen-accessibility导fullsupport，概率gap零⇒continuous AEeq全eq；无density/Gibbs/InvLaw或目标stationarity/constancy。compactC²原LFnull经actualnormgraph。Prop6.4原加权H¹空间核及前向Poisson/Fredholm未证。
 
 LangevinGibbsStationaryExpression：原unitmass6.47 H与drift/noise，N0 β>0 γ>0 physicalsigma=sqrt(2γβ^-1)。true divb=-γN与真实Gibbs exp(-βH) drift/p一二阶导数⇒classicalforward0；same periodicweight lift字面一致。没有目标PDE/invariant law、normalizedcanonicalmeasure、functionaladjointdomain或weakbalance前提，也尚未证明它们。原PDF268 L†ρ公式printedφ二阶不一致按ρ正确导数实现，负责人排印修订签核pending。
+
+LangevinCanonicalMeasure：原unitmass6.47 N0、beta>0、U C∞且unitperiodic；phase position实际normalized Haar、p实际Lebesgue。真实gaussianReal0 variancebeta^-1 pi及q现有Gibbs概率证明fullprob、PDF/coeff/积分1与p²可积；没有目标概率/归一化/密度/矩/actualInvLaw假设。不声称6.3一般非identity质量矩阵、singularU或infiniteposition域结论；实际GibbsInv、weakbalance与functionaladjoint尚待证明。

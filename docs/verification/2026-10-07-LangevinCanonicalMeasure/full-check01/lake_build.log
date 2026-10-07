@@ -1,0 +1,55 @@
+ℹ [8997/9185] Replayed MolecularDynamics.Chapter06.LangevinCausalFlow
+info: MolecularDynamics/Chapter06/LangevinCausalFlow.lean:179:2: Try this:
+  [apply] abel_nf
+ℹ [9014/9185] Replayed MolecularDynamics.Chapter06.LangevinMomentumVariation
+info: MolecularDynamics/Chapter06/LangevinMomentumVariation.lean:76:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9125/9185] Replayed MolecularDynamics.Chapter01.TorusDensity
+info: MolecularDynamics/Chapter01/TorusDensity.lean:25:21: Try this:
+  [apply] abel_nf
+info: MolecularDynamics/Chapter01/TorusDensity.lean:68:21: Try this:
+  [apply] abel_nf
+ℹ [9157/9185] Replayed MolecularDynamics.Chapter06.LangevinMomentumFirstMean
+info: MolecularDynamics/Chapter06/LangevinMomentumFirstMean.lean:53:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9160/9185] Replayed MolecularDynamics.Chapter06.LangevinHamiltonianExpectedDrift
+info: MolecularDynamics/Chapter06/LangevinHamiltonianExpectedDrift.lean:410:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: MolecularDynamics/Chapter06/LangevinHamiltonianExpectedDrift.lean:425:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9166/9185] Replayed MolecularDynamics.Chapter06.LangevinHamiltonianPowerExpectedDrift
+info: MolecularDynamics/Chapter06/LangevinHamiltonianPowerExpectedDrift.lean:202:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: MolecularDynamics/Chapter06/LangevinHamiltonianPowerExpectedDrift.lean:223:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+✔ [9183/9185] Built MolecularDynamics.Chapter06.LangevinCanonicalMeasure (19s)
+✖ [9184/9185] Building MolecularDynamicsFormalization (242s)
+trace: .> LEAN_PATH=C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\build\lib\lean c:\Users\ustc\.elan\toolchains\leanprover--lean4---v4.34.0\bin\lean.exe C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\MolecularDynamicsFormalization.lean -o C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\build\lib\lean\MolecularDynamicsFormalization.olean -i C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\build\lib\lean\MolecularDynamicsFormalization.ilean -c C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\build\ir\MolecularDynamicsFormalization.c --setup C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\.lake\build\ir\MolecularDynamicsFormalization.setup.json --json
+error: MolecularDynamicsFormalization.lean:1:0: import MolecularDynamics.Chapter06.LangevinCanonicalMeasure failed, environment already contains 'MolecularDynamics.instIsAddHaarMeasureUnitAddCircleVolume_molecularDynamics_2._proof_1' from MolecularDynamics.Chapter06.BrownianGroundStateIsometry
+Some required targets logged failures:
+- MolecularDynamicsFormalization
+error: build failed

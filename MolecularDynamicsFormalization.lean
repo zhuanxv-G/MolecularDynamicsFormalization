@@ -392,3 +392,5 @@ import MolecularDynamics.Chapter06.LangevinGeneratorOrbit
 import MolecularDynamics.Chapter06.LangevinC0ConservedObservable
 
 import MolecularDynamics.Chapter06.LangevinGibbsStationaryExpression
+
+import MolecularDynamics.Chapter06.LangevinCanonicalMeasure

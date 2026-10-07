@@ -1,0 +1,303 @@
+[
+  {
+    "path": "MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean",
+    "raw_work_sha256": "3e7eaaf786ed6240e973455f80af92d723465bdadf6ddcea24cdf6e5d96875d4",
+    "staged_sha256": "3e7eaaf786ed6240e973455f80af92d723465bdadf6ddcea24cdf6e5d96875d4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "MolecularDynamicsFormalization.lean",
+    "raw_work_sha256": "257bdc2aadea8178347d1923cba91780f829de4254a072012a11c1bf2fa893de",
+    "staged_sha256": "00ecaa043b7de024cd98a452ae43bac2bb142635747eed196cd1062f86e4cf76",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "Scratch.lean",
+    "raw_work_sha256": "d8531f08b8cd458a4ec71ba706f342f678a0c95031d406b04315fa4c3f9247cb",
+    "staged_sha256": "85abb28b916703c961ba96a16a1d68b739fe87283e6d4767101bdc83b9eea956",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "scripts/CheckAxioms.lean",
+    "raw_work_sha256": "bd6364a6a4a47ec7fae33adfeb10e7bf17249448b86cfffd17094c9a06c5d484",
+    "staged_sha256": "2aac2c0ba1c23112514c48a8f192a7dbebe822973ef36c912420d22800edb2ea",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "FORMALIZATION_MAP.md",
+    "raw_work_sha256": "1896736d9ba2b4f04e4fb8fc8db6ede88b225b67f3a598af9d8051d471d1236a",
+    "staged_sha256": "0eaef75940650a8435928e90cb31ea6978be4b0a056a4dbb7bb34d8684205af4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "ASSUMPTIONS.md",
+    "raw_work_sha256": "7e1b9a8fa994c3c7407e0e32855263b5e9c2170cbbf564536357cbc8e52b1ad5",
+    "staged_sha256": "55ddc70d14cc3a0b1494996693f80f1b67758c41cf70b9a8dc88a11227179a27",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/audits/2026-10-01-initial/CLAIM_LEDGER.csv",
+    "raw_work_sha256": "58365ab8e31ebe070bb7b12411a174d772abed5461677889b4eb21728452cbde",
+    "staged_sha256": "f560410bffd06e5ad91963d4c212414bf9dd9798eadd8439f1c4cccb4a689d7a",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/NOTATION_INVENTORY.csv",
+    "raw_work_sha256": "dd8e138c1248fcb6cad09a9745d82c38463a7ad0261e006ddecb3b986fa37e70",
+    "staged_sha256": "308dc3424c464621b9ec1305be3df5c0316ef9c128d114e6233be448949c6e2d",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/reviews/2026-10-07-LangevinCanonicalMeasure/REVIEW.zh-CN.md",
+    "raw_work_sha256": "138c73e43f16218fa1bd53d2a376c367abc9246e142d8323e406b6e0554e83d9",
+    "staged_sha256": "138c73e43f16218fa1bd53d2a376c367abc9246e142d8323e406b6e0554e83d9",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/ACCEPT_DRIVER.ps1",
+    "raw_work_sha256": "d26966de4242805d185e633dc3714ab6f5b34945b724118a358f12fed4c2cc53",
+    "staged_sha256": "d26966de4242805d185e633dc3714ab6f5b34945b724118a358f12fed4c2cc53",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/ACCEPTANCE.json",
+    "raw_work_sha256": "9c524cce11c92ee9af871fc584c3d62e74ce6f7fc0a908a7f3654cd581d2b23f",
+    "staged_sha256": "b3e62d587c724485396a7ac038e4ea2b1db8f40028c6d2bf5c605d78cfbb4163",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/FULL_DRIVER.log",
+    "raw_work_sha256": "5eb2e3a73a27b2f751a1cb6fa1ec54223859404af51d01c0ae76779133016b5f",
+    "staged_sha256": "5eb2e3a73a27b2f751a1cb6fa1ec54223859404af51d01c0ae76779133016b5f",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/FULL02_DRIVER.log",
+    "raw_work_sha256": "857122864babda6c36a8876c747c9ef562be9036bbdec1628a2db153482e6381",
+    "staged_sha256": "857122864babda6c36a8876c747c9ef562be9036bbdec1628a2db153482e6381",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/INSTANCE_NAME_REPAIR.json",
+    "raw_work_sha256": "76737ea115f993aaf1a5b83b8604909bcc2ae43d688cb3fba4e70203a74804dc",
+    "staged_sha256": "86f82d96cccc5dabb641d3a16704f2b5b2a633bc7f98a9c58bec69fae65dc094",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/LOCAL_CHECK-full01.json",
+    "raw_work_sha256": "87655bcb552617248c42a3e01f8b052ec192749314c4c942c4ae6eab650c5db2",
+    "staged_sha256": "2b1e79f04dab31eec5489e3a83ad39ef4f8683676c764a06d8e5cd18af85adc8",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/LOCAL_CHECK.json",
+    "raw_work_sha256": "ab57f919cbe81cd005495e1991ca24f25306e8ed64118a5ce4408f4359478afd",
+    "staged_sha256": "86e1e2efc2f3fee425c647916a2085dabf8956d41ab532b4b33ebca3e0b85b93",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/local01.log",
+    "raw_work_sha256": "3d3f89049f62a8d6e8696601c32c38facef8c7637eb3f96bd6e7b3b281c7e2d0",
+    "staged_sha256": "3d3f89049f62a8d6e8696601c32c38facef8c7637eb3f96bd6e7b3b281c7e2d0",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/local02.log",
+    "raw_work_sha256": "228d04c315fbb1832718f80e96d0cda278cad38925fec5c824172aa7123de843",
+    "staged_sha256": "228d04c315fbb1832718f80e96d0cda278cad38925fec5c824172aa7123de843",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/local03.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/local04.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/original-PDF239.png",
+    "raw_work_sha256": "6fbc2f641228a78f32795e8c951907eecc894d0685d6485401163349429129b6",
+    "staged_sha256": "6fbc2f641228a78f32795e8c951907eecc894d0685d6485401163349429129b6",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/PUBLIC_DECLARATIONS.json",
+    "raw_work_sha256": "37869770af27d7f7447277f2b24ad1bef659670de1657db313a6821827a79778",
+    "staged_sha256": "284cd8a41203d51f092c4bd7c6811ac4442b4baca28701c10cf22a6d7f791eba",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/SOURCE_AUDIT.json",
+    "raw_work_sha256": "9d331ad5e9ce90de534f07491ca35428fc7266ddcb44c32fca293cff248f7d9a",
+    "staged_sha256": "08a061df37519fc3d0e3d0e1fdb9f843f0cc921c86a51d7c95448d53ed4d6d33",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check01/CHECK_REPORT.json",
+    "raw_work_sha256": "77c753889eeba8214943eee4a6b74df2b277168f47f069e3b19bcc3040667d6e",
+    "staged_sha256": "33c544a615a011d8f37ba9f8b1eccb5ed99711e3cfcfbb065d60858694342d20",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check01/git_branch.log",
+    "raw_work_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "staged_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check01/git_head.log",
+    "raw_work_sha256": "9b9a29fb82dde965e25a4244409071c86564030a1048a695cd663701fa260a37",
+    "staged_sha256": "9b9a29fb82dde965e25a4244409071c86564030a1048a695cd663701fa260a37",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check01/git_status.log",
+    "raw_work_sha256": "08af80abe4442351474b66026e41d7ae8d1514c329bdacb9416e29ed5c4eb8f1",
+    "staged_sha256": "08af80abe4442351474b66026e41d7ae8d1514c329bdacb9416e29ed5c4eb8f1",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check01/lake_build.log",
+    "raw_work_sha256": "c0586120f48a9ee6c7d79ff057422c4b14cf02791872c668f352a79a3c006fb0",
+    "staged_sha256": "c0586120f48a9ee6c7d79ff057422c4b14cf02791872c668f352a79a3c006fb0",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check01/lake_version.log",
+    "raw_work_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "staged_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check01/lean_version.log",
+    "raw_work_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "staged_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check01/mathlib_revision.log",
+    "raw_work_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "staged_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check01/mathlib_status.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/axiom_dependencies.log",
+    "raw_work_sha256": "e946b8e5e22bbf809000c0d21af63a151309961c5937146abec76414c1c40709",
+    "staged_sha256": "e946b8e5e22bbf809000c0d21af63a151309961c5937146abec76414c1c40709",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/CHECK_REPORT.json",
+    "raw_work_sha256": "3721ce8ea1eaf2cb180b1a25c7c32dd06f274d0df1ca65372ed939fb5e019785",
+    "staged_sha256": "e42181509e850ba3ddecb66d2ccab3ab60ca155def31ba91ea7135a3a50fb9f8",
+    "only_crlf_normalization": true,
+    "raw_log_exact": false
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/git_branch.log",
+    "raw_work_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "staged_sha256": "dd8f194c24c77e224512033152bd48c355be3e36e02a17a13277e57a2d5896f4",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/git_head.log",
+    "raw_work_sha256": "9b9a29fb82dde965e25a4244409071c86564030a1048a695cd663701fa260a37",
+    "staged_sha256": "9b9a29fb82dde965e25a4244409071c86564030a1048a695cd663701fa260a37",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/git_status.log",
+    "raw_work_sha256": "08af80abe4442351474b66026e41d7ae8d1514c329bdacb9416e29ed5c4eb8f1",
+    "staged_sha256": "08af80abe4442351474b66026e41d7ae8d1514c329bdacb9416e29ed5c4eb8f1",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/lake_build.log",
+    "raw_work_sha256": "28cd73ac402d9321045927fa858201875ca90ca001e5a1d14d2470e398186dc5",
+    "staged_sha256": "28cd73ac402d9321045927fa858201875ca90ca001e5a1d14d2470e398186dc5",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/lake_version.log",
+    "raw_work_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "staged_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/lean_version.log",
+    "raw_work_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "staged_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/mathlib_revision.log",
+    "raw_work_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "staged_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/mathlib_status.log",
+    "raw_work_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  },
+  {
+    "path": "docs/verification/2026-10-07-LangevinCanonicalMeasure/full-check02/scratch.log",
+    "raw_work_sha256": "f5ee91da640fdd1503e0d3f00c4a6c3ec865ff9c950d468b1be308ac2b39bd21",
+    "staged_sha256": "f5ee91da640fdd1503e0d3f00c4a6c3ec865ff9c950d468b1be308ac2b39bd21",
+    "only_crlf_normalization": true,
+    "raw_log_exact": true
+  }
+]

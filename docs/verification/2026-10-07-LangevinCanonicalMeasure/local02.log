@@ -1,0 +1,12 @@
+docs/verification/2026-10-07-LangevinCanonicalMeasure/Draft.lean:99:4: error: No goals to be solved
+docs/verification/2026-10-07-LangevinCanonicalMeasure/Draft.lean:204:2: error: Type mismatch
+  Eq.symm (ENNReal.ofReal_mul (canonicalMomentumPDF_nonneg N β hβ x.2))
+has type
+  ENNReal.ofReal (canonicalMomentumPDF N β hβ x.2) * ENNReal.ofReal ?m.189 =
+    ENNReal.ofReal (canonicalMomentumPDF N β hβ x.2 * ?m.189)
+but is expected to have type
+  ENNReal.ofReal ((textbookConfigurationPartition U β)⁻¹ * textbookConfigurationTorusGibbsWeight U β x.1) *
+      ENNReal.ofReal (canonicalMomentumPDF N β hβ x.2) =
+    ENNReal.ofReal
+      ((textbookConfigurationPartition U β)⁻¹ * textbookConfigurationTorusGibbsWeight U β x.1 *
+        canonicalMomentumPDF N β hβ x.2)

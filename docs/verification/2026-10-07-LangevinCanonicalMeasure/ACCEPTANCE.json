@@ -1,0 +1,192 @@
+{
+  "started_at": "2026-10-07T16:47:16.5981961+08:00",
+  "finished_at": "2026-10-07T16:52:14.4762189+08:00",
+  "head_at_check": "1e90f0088ecb520564646f4079f7aed47fd45ec9",
+  "branch": "chapter01-kinetic-energy-nonneg",
+  "jobs": 9185,
+  "audit_declarations": 2681,
+  "inputs": 268,
+  "new_public_declarations": [
+    "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_isProbabilityMeasure",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_memLp_two",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_withDensity",
+    "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_pdf_product",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_isProbabilityMeasure",
+    "MolecularDynamics.textbookLangevinCanonicalProbability",
+    "MolecularDynamics.textbookLangevinCanonicalDensity",
+    "MolecularDynamics.textbookLangevinCanonicalDensity_pos",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_withDensity",
+    "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_norm_square_integrable",
+    "MolecularDynamics.textbookLangevinCanonicalDensity_integrable",
+    "MolecularDynamics.textbookLangevinCanonicalDensity_integral_one"
+  ],
+  "new_public_axiom_audit": [
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_isProbabilityMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_memLp_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_withDensity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure_pdf_product",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_isProbabilityMeasure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalProbability",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_withDensity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalMeasure_momentum_norm_square_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "MolecularDynamics.textbookLangevinCanonicalDensity_integral_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_checks_exit_zero": true,
+  "all_inputs_sha256_verified": true,
+  "all_raw_logs_sha256_verified": true,
+  "all_public_axioms_standard": true,
+  "lean_warnings": 0,
+  "local_logs": [
+    {
+      "path": "FULL_DRIVER.log",
+      "sha256": "5eb2e3a73a27b2f751a1cb6fa1ec54223859404af51d01c0ae76779133016b5f"
+    },
+    {
+      "path": "FULL02_DRIVER.log",
+      "sha256": "857122864babda6c36a8876c747c9ef562be9036bbdec1628a2db153482e6381"
+    },
+    {
+      "path": "local01.log",
+      "sha256": "3d3f89049f62a8d6e8696601c32c38facef8c7637eb3f96bd6e7b3b281c7e2d0"
+    },
+    {
+      "path": "local02.log",
+      "sha256": "228d04c315fbb1832718f80e96d0cda278cad38925fec5c824172aa7123de843"
+    },
+    {
+      "path": "local03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_model": "original_unit_mass_6_47_smooth_periodic_potential_positive_beta_Nzero",
+  "momentum_measure": "actual_pi_gaussianReal_zero_mean_variance_beta_inverse_probability",
+  "gaussian_product_density": "derived_rectangle_uniqueness_real_Fubini_true_gaussianReal_integral_not_assumed",
+  "full_phase_measure": "actual_configurational_torus_Gibbs_times_true_momentum_Gaussian_product",
+  "full_normalization": "proved_true_probability_and_density_integral_one_no_target_normalization_premise",
+  "original_Boltzmann_density": "same_periodic_exp_minus_beta_H_actual_partition_and_Gaussian_normalization_coefficient",
+  "position_representative_compatibility": "derived_original_potential_periodicity_not_assumed_representative_continuity",
+  "momentum_norm_square_integrable": "derived_actual_Gaussian_vector_L2_and_true_product_marginal_measure_preserving",
+  "mass_matrix_scope": "unit_mass_original_Langevin6_47_only_general_mass_6_3_not_claimed",
+  "original_PDF239_current_visual": "canonical6_3_partition_factorization_and_smooth_bounded_position_normalization_confirmed",
+  "actual_probability_Gibbs_invariance": "not_proved",
+  "weak_Gibbs_generator_balance": "not_proved",
+  "functional_adjoint_domain_flux_integration_by_parts": "not_proved",
+  "actual_joint_positive_time_density_existence": "not_proved",
+  "graph_core": "not_proved",
+  "weighted_H1_kernel_Proposition6_4": "not_proved",
+  "responsible_semantic_review": "pending",
+  "whole_theorem6_2": "incomplete",
+  "core_scope": "incomplete",
+  "internal_local_instance_names": "unique_named_true_instances_root_import_collision_repaired",
+  "first_full_check": "failed_root_import_anonymous_internal_name_collision_preserved_raw",
+  "final_local_check": "local04_all_14_private_empty_log_zero_warning"
+}
