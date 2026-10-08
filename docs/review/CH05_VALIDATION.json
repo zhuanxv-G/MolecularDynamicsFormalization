@@ -1,0 +1,555 @@
+{
+  "date_Asia_Shanghai": "2026-10-08",
+  "source": "user supplied original textbook PDF, fresh per-page extraction; selected formula images inspected",
+  "coverage_rows": 86,
+  "status_counts": {
+    "defined": 37,
+    "proved": 11,
+    "statement_only": 28,
+    "not_formalizable_now": 10
+  },
+  "proved_conclusions": 11,
+  "proof_count_basis": "CSV rows; repeated mappings are not independent theorems",
+  "full_check_report": "docs/review/check-full05/CHECK_REPORT.json",
+  "full_check_status": "passed",
+  "full_checks": 10,
+  "jobs": 9221,
+  "mapped_declarations_audited": 105,
+  "mapped_axioms": {
+    "MolecularDynamics.Chapter02Review.takahashiPotential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.L2Space": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.average": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.backwardEulerLimit_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.borelClosure_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.compactL2_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.conservedAverage_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.coordinatePullback_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.correlation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.correlationPullback_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.correlationTime_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.denominatorBound_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.density": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.densityAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.densityMeasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.densityNormalization_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.diracAction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.diracApproximation_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.diracMeasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.discreteAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.discreteAveragePrinted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.discretePropagator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.distribution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.divergence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.dynamicalCorrection_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.energyDensityInvariant_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.energySurface": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.ensembleAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.ergodicTimeAverage_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.eulerInvariant_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.flowFieldTransport_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.flowInvariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.fluxBalance_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.gaussianDelta": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.gradientTransverse_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.hamiltonianDensityPropagation_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.hamiltonianSkewExpression_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.hasTimeAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.invariantIndicator_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.kam_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.l2Complete_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.l2Inner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.l2Linearity_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.l2Norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.l2NormSquare_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.l2Symmetry_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.lie": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.liouvilleEquation_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.liouvilleProduct_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.liouvillian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.liouvillianAdjoint_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.lowerDimensionNull_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.massDerivative_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.massFraction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.measureDuality_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.measurePropagator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.mechanicalLiouvillian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.microAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.microErgodic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.microInvariant_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.microMeasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.microPartition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.microProbability_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.microRaw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.mixing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.mixingCorrelationPrinted_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.mixingCorrelation_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.modifiedField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.modifiedLiouvillian_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.nonergodicSet_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.normalEnergyTaylor_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.normalField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.perturbationCorrection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.perturbationDisplacement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.probabilityBounds_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.probabilityDensity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.pullback": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.pullbackPDE_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.regularDistribution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.schwartzSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.setErgodic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.shellDensity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.shellPartition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.shellVolumeLimit_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.shellWeakLimit_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.shellWeakPrinted_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.smoothDenominatorBound_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.solutionOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.steadyFirstIntegral_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.surfaceAreaFormula_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.surfaceMeasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.symplecticEulerDensity_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.testSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.theorem51_statement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.timeAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.transitionProbability": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.velocityCorrelation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.verletShadow2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.weakStationary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.Chapter05Review.zeroPerturbation_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.hasDerivAt_textbookLieDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.textbookHamiltonianVectorField_divergence_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MolecularDynamics.textbookPoissonBracket_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "new_project_axioms": 0,
+  "sorry_admit": 0,
+  "lean_warnings": 0,
+  "all_project_declarations_audited": 6598,
+  "chapters_1_3_and_parked_frozen": "no tracked differences from 8948420",
+  "heartbeat": "lean ACTIVE/15 minutes; entire configuration unchanged",
+  "page_scan_count": 33,
+  "responsible_semantic_review": "pending; statement definitions are not proofs",
+  "lean_version": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435"
+}

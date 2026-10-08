@@ -1,0 +1,38 @@
+[
+  {
+    "item_id": "CH05-NUM-001",
+    "textbook_label": "Theorem 5.1",
+    "review_status": "original_page_checked",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "",
+    "model_dependencies": "原/扰动能量面紧；w 光滑且 w·∇H≠0；微正则平均可定义",
+    "proof_or_external_gap": "陈述跨 PDF 229–230；证明未核对；引用 [338]"
+  },
+  {
+    "item_id": "CH05-DEF-001",
+    "textbook_label": "Definition 5.1",
+    "review_status": "original_page_checked",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "",
+    "model_dependencies": "能量面测度；可观测量可积性；时间平均极限",
+    "proof_or_external_gap": "书中随后给出不变集合概率零一的替代表述；等价性待审"
+  },
+  {
+    "item_id": "CH05-DEP-001",
+    "textbook_label": "Liouville equation",
+    "review_status": "original_page_checked",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "",
+    "model_dependencies": "ρ 光滑可积；边界通量；微分与积分交换",
+    "proof_or_external_gap": "教材以光滑密度推导；弱解另需审"
+  },
+  {
+    "item_id": "CH05-DEP-002",
+    "textbook_label": "stationary generalized distribution",
+    "review_status": "original_page_checked",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "",
+    "model_dependencies": "分布/测试函数；算子对偶；能量面测度",
+    "proof_or_external_gap": "教材指出 Dirac 分布不能直接微分"
+  }
+]

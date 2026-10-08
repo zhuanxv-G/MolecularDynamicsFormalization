@@ -41,7 +41,7 @@ questions={
    '公式(4.25)约束反力的M^-1、(4.40)的1/2、DLM drift的1/M和spin符号是否需勘误？字面版与质量一致版均保留；旋转惯性矩阵需非奇异。',
    'C2/C3约束、正质量与梯度独立的明确假设是否忠实表达原文局部正则框架？joint C2流证明是否应标为较强实现条件？'],
 5:['微正则测度是否采用能量面Hausdorff/Riemannian测度乘1/abs(grad H)的规范？该几何构造尚无一般证明。',
-   'Theorem5.1中的ergodic assumption覆盖epsilon=0和邻近epsilon吗？平均能量匹配的a及余项是否按完整陈述理解？',
+   'Theorem5.1公式使用div(g u)，其几何平均校正本身不假设ergodic；数值轨道解释另需ergodicity。实现补统一紧能量带/非零分母/正有限raw mass，是否接受这些较强技术条件？',
    '遍历定义的量词是每个可积观测量分别几乎处处，还是共同满测集？Birkhoff条件平均与空间平均不可无条件等同。',
    '原文KAM需非退化、Diophantine条件及有限光滑/解析正则性；是否接受显式列出这些条件，正文定性结论仅陈述？',
    '印刷页与PDF页偏移发生变化；本章标题/Exercises/下章标题边界是否接受本次原页核对？'],
@@ -67,7 +67,10 @@ if ch==4:
       'lemma_4_1','textbookGramProjectedEulerChart_hiddenConstraint_and_pullback','rattleRelation','shakeRattlePositions_statement',
       'newtonQuadratic_statement','inertiaTracePrinted_statement','rigidInvariants_statement','dlmPrinted','dlmStructure_statement']
 else:
-    leaves=['theorem51_statement','ergodicTimeAverage_statement','kam_statement','liouvilleEquation_statement'] if ch==5 else ['theorem61_statement','theorem62_statement','proposition64_statement','lemma61_statement']
+    leaves=['theorem51_statement','smoothDenominatorBound_proved','zeroPerturbation_proved',
+      'liouvilleEquation_statement','liouvillianAdjoint_statement','microRaw','shellWeakLimit_statement',
+      'surfaceAreaFormula_statement','microInvariant_statement','microErgodic','ergodicTimeAverage_statement',
+      'kam_statement','mixingCorrelation_statement','symplecticEulerShadow_proved','backwardEulerLimit_statement'] if ch==5 else ['theorem61_statement','theorem62_statement','proposition64_statement','lemma61_statement']
 chosen=[]
 for leaf in leaves:
     hit=next((r for r in rows if any(n.split('.')[-1]==leaf for n in r['Lean声明名'].split(';'))),None)
