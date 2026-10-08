@@ -41,6 +41,7 @@ if phase == '接续入口已改写':
 else:
     p=root/'AGENTS.md';s=p.read_text(encoding='utf-8-sig')
     s=re.sub(r'\n当前阶段：[^\n]*\n','\n',s)
+    s=re.sub(r'\n{3,}', '\n\n', s)
     s=s.replace('# 项目接续与形式化约定\n','# 项目接续与形式化约定\n\n当前阶段：'+task+'\n',1)
     s=s.replace('当前任务是第2章审阅交付','本次任务顺序是第2章审阅交付')
     p.write_text(s,encoding='utf-8')

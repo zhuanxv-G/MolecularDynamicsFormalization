@@ -1,0 +1,710 @@
+MolecularDynamics.Chapter02Review.coordinateVerlet {n : ℕ} (m : Fin n → ℝ)
+  (F : MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n) (h : ℝ) :
+  MolecularDynamics.SymplecticCoordinates n → MolecularDynamics.SymplecticCoordinates n
+'MolecularDynamics.Chapter02Review.coordinateVerlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter02Review.localHamiltonianStructures_statement : Prop
+'MolecularDynamics.Chapter02Review.localHamiltonianStructures_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter02Review.takahashiOrder_statement : Prop
+'MolecularDynamics.Chapter02Review.takahashiOrder_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter02Review.takahashiPotential {n : ℕ} (m : Fin n → ℝ)
+  (U : MolecularDynamics.Chapter02Review.Q n → ℝ) (h : ℝ) (q : MolecularDynamics.Chapter02Review.Q n) : ℝ
+'MolecularDynamics.Chapter02Review.takahashiPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.actualFlowNearCompact {n : ℕ}
+  (f : MolecularDynamics.SymplecticCoordinates n → MolecularDynamics.SymplecticCoordinates n)
+  (D B : Set (MolecularDynamics.SymplecticCoordinates n))
+  (Φ : ℝ → MolecularDynamics.SymplecticCoordinates n → MolecularDynamics.SymplecticCoordinates n) (η : ℝ) : Prop
+'MolecularDynamics.Chapter03Review.actualFlowNearCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.affineInvariant {n : ℕ}
+  (G :
+    (MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n) →
+      ℝ → MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n) :
+  Prop
+'MolecularDynamics.Chapter03Review.affineInvariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.analyticBEA_statement : Prop
+'MolecularDynamics.Chapter03Review.analyticBEA_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.bch4_statement : Prop
+'MolecularDynamics.Chapter03Review.bch4_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.bchHamiltonian3 {n : ℕ} (A B : MolecularDynamics.SymplecticCoordinates n → ℝ) (h : ℝ)
+  (z : MolecularDynamics.SymplecticCoordinates n) : ℝ
+'MolecularDynamics.Chapter03Review.bchHamiltonian3' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.bchHamiltonianMatching_statement : Prop
+'MolecularDynamics.Chapter03Review.bchHamiltonianMatching_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.collisionComposition.{u_1} {E : Type u_1} (G : ℝ → E → E) (Rc : E → E)
+  (times : List ℝ) : E → E
+'MolecularDynamics.Chapter03Review.collisionComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.collisionDefectZero_proved :
+  MolecularDynamics.Chapter03Review.collisionDefectZero_statement
+'MolecularDynamics.Chapter03Review.collisionDefectZero_proved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.collisionDefectZero_statement : Prop
+'MolecularDynamics.Chapter03Review.collisionDefectZero_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.collisionQuadraticPath {n : ℕ} (m : Fin n → ℝ)
+  (F : MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n)
+  (z : MolecularDynamics.Chapter02Review.Z n) (t : ℝ) : MolecularDynamics.Chapter02Review.Q n
+'MolecularDynamics.Chapter03Review.collisionQuadraticPath' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.collisionQuartic_proved : MolecularDynamics.Chapter03Review.collisionQuartic_statement
+'MolecularDynamics.Chapter03Review.collisionQuartic_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.collisionQuartic_statement : Prop
+'MolecularDynamics.Chapter03Review.collisionQuartic_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.collisionRegularity_statement : Prop
+'MolecularDynamics.Chapter03Review.collisionRegularity_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.collisionTimeRelation {d : ℕ} (a b : ℝ → MolecularDynamics.Position d)
+  (radius t : ℝ) : Prop
+'MolecularDynamics.Chapter03Review.collisionTimeRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.collisionalVerletOrder_statement : Prop
+'MolecularDynamics.Chapter03Review.collisionalVerletOrder_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ)
+  (F : MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n)
+  (Rc : MolecularDynamics.Chapter02Review.Z n → MolecularDynamics.Chapter02Review.Z n) (tc hmax h : ℝ)
+  (z w : MolecularDynamics.Chapter02Review.Z n) : Prop
+'MolecularDynamics.Chapter03Review.collisionalVerletRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.commutator.{u_1} {R : Type u_1} [Ring R] (A B : R) : R
+'MolecularDynamics.Chapter03Review.commutator' does not depend on any axioms
+MolecularDynamics.Chapter03Review.commutingEnergySymmetry_statement : Prop
+'MolecularDynamics.Chapter03Review.commutingEnergySymmetry_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.commutingEnergy_statement : Prop
+'MolecularDynamics.Chapter03Review.commutingEnergy_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.commutingFlows_statement : Prop
+'MolecularDynamics.Chapter03Review.commutingFlows_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.correctedReversedField {n : ℕ}
+  (R : MolecularDynamics.Chapter02Review.Q n →L[ℝ] MolecularDynamics.Chapter02Review.Q n)
+  (f : MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n)
+  (z : MolecularDynamics.Chapter02Review.Q n) : MolecularDynamics.Chapter02Review.Q n
+'MolecularDynamics.Chapter03Review.correctedReversedField' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.decoupledOrder_statement : Prop
+'MolecularDynamics.Chapter03Review.decoupledOrder_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.differentLogsCommute_statement : Prop
+'MolecularDynamics.Chapter03Review.differentLogsCommute_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.elasticEnergy_statement : Prop
+'MolecularDynamics.Chapter03Review.elasticEnergy_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.elasticReflection {n : ℕ} (m : Fin n → ℝ) (u p : MolecularDynamics.Position n) :
+  MolecularDynamics.Position n
+'MolecularDynamics.Chapter03Review.elasticReflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.energyProjectionRelation {n : ℕ} (H : MolecularDynamics.Chapter02Review.Z n → ℝ)
+  (E : ℝ) (z : MolecularDynamics.Chapter02Review.Z n) : Prop
+'MolecularDynamics.Chapter03Review.energyProjectionRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.energySymplecticNoGo_statement : Prop
+'MolecularDynamics.Chapter03Review.energySymplecticNoGo_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.equalComponentIntegral (z : ℝ × ℝ) : ℝ
+'MolecularDynamics.Chapter03Review.equalComponentIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.equalEulerIntegral_proved :
+  MolecularDynamics.Chapter03Review.equalEulerIntegral_statement
+'MolecularDynamics.Chapter03Review.equalEulerIntegral_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.equalEulerIntegral_statement : Prop
+'MolecularDynamics.Chapter03Review.equalEulerIntegral_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.eulerOscillatorGrowth_statement : Prop
+'MolecularDynamics.Chapter03Review.eulerOscillatorGrowth_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.exponentialFlat_statement : Prop
+'MolecularDynamics.Chapter03Review.exponentialFlat_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.finiteMatching {n : ℕ} (H : MolecularDynamics.SymplecticCoordinates n → ℝ)
+  (Hj : ℕ → MolecularDynamics.SymplecticCoordinates n → ℝ) (r k : ℕ)
+  (D B : Set (MolecularDynamics.SymplecticCoordinates n))
+  (G : ℝ → MolecularDynamics.SymplecticCoordinates n → MolecularDynamics.SymplecticCoordinates n) : Prop
+'MolecularDynamics.Chapter03Review.finiteMatching' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.flowObservable_statement : Prop
+'MolecularDynamics.Chapter03Review.flowObservable_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.flowReversalIdentity_statement : Prop
+'MolecularDynamics.Chapter03Review.flowReversalIdentity_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.flowReversal_statement : Prop
+'MolecularDynamics.Chapter03Review.flowReversal_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.formalField {n : ℕ}
+  (f : MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n)
+  (fj : ℕ → MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n) (r : ℕ)
+  (z : MolecularDynamics.Chapter02Review.Q n) (i : Fin n) : PowerSeries ℝ
+'MolecularDynamics.Chapter03Review.formalField' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.formalHamiltonian {n : ℕ} (H : MolecularDynamics.SymplecticCoordinates n → ℝ)
+  (Hj : ℕ → MolecularDynamics.SymplecticCoordinates n → ℝ) (r : ℕ) (z : MolecularDynamics.SymplecticCoordinates n) :
+  PowerSeries ℝ
+'MolecularDynamics.Chapter03Review.formalHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.formalHamiltonianField {n : ℕ} (H : MolecularDynamics.SymplecticCoordinates n → ℝ)
+  (Hj : ℕ → MolecularDynamics.SymplecticCoordinates n → ℝ) (r : ℕ) (z : MolecularDynamics.SymplecticCoordinates n)
+  (i : Fin n ⊕ Fin n) : PowerSeries ℝ
+'MolecularDynamics.Chapter03Review.formalHamiltonianField' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.formalObservable {n : ℕ}
+  (f : MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n)
+  (φ : MolecularDynamics.Chapter02Review.Q n → ℝ) (z : MolecularDynamics.Chapter02Review.Q n) : PowerSeries ℝ
+'MolecularDynamics.Chapter03Review.formalObservable' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.formalSplitting.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R
+'MolecularDynamics.Chapter03Review.formalSplitting' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.formalStrang.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R
+'MolecularDynamics.Chapter03Review.formalStrang' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.generalSplitting.{u_1} {E : Type u_1} (T U : ℝ → E → E) (coeff : List (ℝ × ℝ))
+  (h : ℝ) : E → E
+'MolecularDynamics.Chapter03Review.generalSplitting' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.hamiltonianLie {n : ℕ} (H φ : MolecularDynamics.SymplecticCoordinates n → ℝ) :
+  MolecularDynamics.SymplecticCoordinates n → ℝ
+'MolecularDynamics.Chapter03Review.hamiltonianLie' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.hamiltonianSpectrum_statement : Prop
+'MolecularDynamics.Chapter03Review.hamiltonianSpectrum_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.hardCoreDomain {N d : ℕ} (σ : Fin N → ℝ) : Set (Fin N → MolecularDynamics.Position d)
+'MolecularDynamics.Chapter03Review.hardCoreDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.hardCorePotential {N d : ℕ} (σ : Fin N → ℝ)
+  (q : Fin N → MolecularDynamics.Position d) : ENNReal
+'MolecularDynamics.Chapter03Review.hardCorePotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.kineticZero_proved : MolecularDynamics.Chapter03Review.kineticZero_statement
+'MolecularDynamics.Chapter03Review.kineticZero_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.kineticZero_statement : Prop
+'MolecularDynamics.Chapter03Review.kineticZero_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.leadingModifiedField_statement : Prop
+'MolecularDynamics.Chapter03Review.leadingModifiedField_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.leadingShadowHamiltonian_statement : Prop
+'MolecularDynamics.Chapter03Review.leadingShadowHamiltonian_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.leadingShadowPrinted_statement : Prop
+'MolecularDynamics.Chapter03Review.leadingShadowPrinted_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.lieTaylor_statement : Prop
+'MolecularDynamics.Chapter03Review.lieTaylor_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.linearEulerIntegral_proved :
+  MolecularDynamics.Chapter03Review.linearEulerIntegral_statement
+'MolecularDynamics.Chapter03Review.linearEulerIntegral_proved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.linearEulerIntegral_statement : Prop
+'MolecularDynamics.Chapter03Review.linearEulerIntegral_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.linearInvolution {n : ℕ}
+  (R : MolecularDynamics.Chapter02Review.Q n →L[ℝ] MolecularDynamics.Chapter02Review.Q n) : Prop
+'MolecularDynamics.Chapter03Review.linearInvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.linearRKIntegral_proved : MolecularDynamics.Chapter03Review.linearRKIntegral_statement
+'MolecularDynamics.Chapter03Review.linearRKIntegral_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.linearRKIntegral_statement : Prop
+'MolecularDynamics.Chapter03Review.linearRKIntegral_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.localOrder.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  (G Φ : ℝ → E → E) (B : Set E) (r : ℕ) : Prop
+'MolecularDynamics.Chapter03Review.localOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.mechanicalReversal_proved :
+  MolecularDynamics.Chapter03Review.mechanicalReversal_statement
+'MolecularDynamics.Chapter03Review.mechanicalReversal_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.mechanicalReversal_statement : Prop
+'MolecularDynamics.Chapter03Review.mechanicalReversal_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.modifiedCollisionProjection {n : ℕ}
+  (H : MolecularDynamics.SymplecticCoordinates n → ℝ) (Hj : ℕ → MolecularDynamics.SymplecticCoordinates n → ℝ) (r k : ℕ)
+  (h : ℝ) (z w : MolecularDynamics.SymplecticCoordinates n) : Prop
+'MolecularDynamics.Chapter03Review.modifiedCollisionProjection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.modifiedConstruction_statement : Prop
+'MolecularDynamics.Chapter03Review.modifiedConstruction_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.modifiedEven_statement : Prop
+'MolecularDynamics.Chapter03Review.modifiedEven_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.momentumProjection {n : ℕ} (γ : ℝ) (z : MolecularDynamics.Chapter02Review.Z n) :
+  MolecularDynamics.Chapter02Review.Z n
+'MolecularDynamics.Chapter03Review.momentumProjection' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.momentumReversal {n : ℕ} (z : MolecularDynamics.Chapter02Review.Z n) :
+  MolecularDynamics.Chapter02Review.Z n
+'MolecularDynamics.Chapter03Review.momentumReversal' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.noHamiltonianAttractor_statement : Prop
+'MolecularDynamics.Chapter03Review.noHamiltonianAttractor_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.obstacleReflection {d : ℕ} (u p : MolecularDynamics.Position d) :
+  MolecularDynamics.Position d
+'MolecularDynamics.Chapter03Review.obstacleReflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.optimalTruncation_statement : Prop
+'MolecularDynamics.Chapter03Review.optimalTruncation_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.oscillatorAdjointEuler (Ω h : ℝ) (z : ℝ × ℝ) : ℝ × ℝ
+'MolecularDynamics.Chapter03Review.oscillatorAdjointEuler' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.oscillatorEnergyFailure_proved :
+  MolecularDynamics.Chapter03Review.oscillatorEnergyFailure_statement
+'MolecularDynamics.Chapter03Review.oscillatorEnergyFailure_proved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.oscillatorEnergyFailure_statement : Prop
+'MolecularDynamics.Chapter03Review.oscillatorEnergyFailure_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.oscillatorShadow (Ω h : ℝ) (z : ℝ × ℝ) : ℝ
+'MolecularDynamics.Chapter03Review.oscillatorShadow' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.oscillatorShadowInvariant_proved :
+  MolecularDynamics.Chapter03Review.oscillatorShadowInvariant_statement
+'MolecularDynamics.Chapter03Review.oscillatorShadowInvariant_proved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.oscillatorShadowInvariant_statement : Prop
+'MolecularDynamics.Chapter03Review.oscillatorShadowInvariant_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.pairForceDecoupling (φ α β : ℝ → ℝ) (contact : ℝ) : Prop
+'MolecularDynamics.Chapter03Review.pairForceDecoupling' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.partitionedAffinePrinted_statement : Prop
+'MolecularDynamics.Chapter03Review.partitionedAffinePrinted_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.partitionedAffine_statement : Prop
+'MolecularDynamics.Chapter03Review.partitionedAffine_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.positionVerlet {n : ℕ} (m : Fin n → ℝ)
+  (F : MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n) (h : ℝ) :
+  MolecularDynamics.SymplecticCoordinates n → MolecularDynamics.SymplecticCoordinates n
+'MolecularDynamics.Chapter03Review.positionVerlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.potentialDoubleBracket_statement : Prop
+'MolecularDynamics.Chapter03Review.potentialDoubleBracket_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.primitiveDefect_statement : Prop
+'MolecularDynamics.Chapter03Review.primitiveDefect_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.primitiveOrder_statement : Prop
+'MolecularDynamics.Chapter03Review.primitiveOrder_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.primitiveSplitting {n : ℕ} (U : MolecularDynamics.Chapter02Review.Q n → ℝ)
+  (Gfree : ℝ → MolecularDynamics.SymplecticCoordinates n → MolecularDynamics.SymplecticCoordinates n) (h : ℝ) :
+  MolecularDynamics.SymplecticCoordinates n → MolecularDynamics.SymplecticCoordinates n
+'MolecularDynamics.Chapter03Review.primitiveSplitting' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.processorEnergy_statement : Prop
+'MolecularDynamics.Chapter03Review.processorEnergy_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.projectionConstraint (E K U γ : ℝ) : Prop
+'MolecularDynamics.Chapter03Review.projectionConstraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.projectionEnergy_proved : MolecularDynamics.Chapter03Review.projectionEnergy_statement
+'MolecularDynamics.Chapter03Review.projectionEnergy_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.projectionEnergy_statement : Prop
+'MolecularDynamics.Chapter03Review.projectionEnergy_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.projectionFactor (E K U : ℝ) : ℝ
+'MolecularDynamics.Chapter03Review.projectionFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.reversedField {n : ℕ} (R : Matrix (Fin n) (Fin n) ℝ)
+  (f : MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n)
+  (z : MolecularDynamics.Chapter02Review.Q n) : MolecularDynamics.Chapter02Review.Q n
+'MolecularDynamics.Chapter03Review.reversedField' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.reversedFieldPrinted_statement : Prop
+'MolecularDynamics.Chapter03Review.reversedFieldPrinted_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.reversedTrajectory_statement : Prop
+'MolecularDynamics.Chapter03Review.reversedTrajectory_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.reversibleMethod.{u_1} {E : Type u_1} (R : E → E) (G : ℝ → E → E) : Prop
+'MolecularDynamics.Chapter03Review.reversibleMethod' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.reversibleSpectrum_statement : Prop
+'MolecularDynamics.Chapter03Review.reversibleSpectrum_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.reversibleVolumeFailure_statement : Prop
+'MolecularDynamics.Chapter03Review.reversibleVolumeFailure_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.rkAffine_proved : MolecularDynamics.Chapter03Review.rkAffine_statement
+'MolecularDynamics.Chapter03Review.rkAffine_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.rkAffine_statement : Prop
+'MolecularDynamics.Chapter03Review.rkAffine_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.scalarVerletShadow4 (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ
+'MolecularDynamics.Chapter03Review.scalarVerletShadow4' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.shadowPositive_statement : Prop
+'MolecularDynamics.Chapter03Review.shadowPositive_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.smoothSymplecticData {n : ℕ} (H : MolecularDynamics.SymplecticCoordinates n → ℝ)
+  (D B : Set (MolecularDynamics.SymplecticCoordinates n))
+  (G Φ : ℝ → MolecularDynamics.SymplecticCoordinates n → MolecularDynamics.SymplecticCoordinates n) (r : ℕ) : Prop
+'MolecularDynamics.Chapter03Review.smoothSymplecticData' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.strangCubic_statement : Prop
+'MolecularDynamics.Chapter03Review.strangCubic_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.strangInverse_statement : Prop
+'MolecularDynamics.Chapter03Review.strangInverse_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.symmetricAffineReversible_statement : Prop
+'MolecularDynamics.Chapter03Review.symmetricAffineReversible_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.symmetricMethod.{u_1} {E : Type u_1} (G : ℝ → Equiv.Perm E) : Prop
+'MolecularDynamics.Chapter03Review.symmetricMethod' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.symplecticEulerShadow3 {n : ℕ} (m : Fin n → ℝ)
+  (U : MolecularDynamics.Chapter02Review.Q n → ℝ) (h : ℝ) (z : MolecularDynamics.Chapter02Review.Z n) : ℝ
+'MolecularDynamics.Chapter03Review.symplecticEulerShadow3' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.symplecticEulerShadowMatching_statement : Prop
+'MolecularDynamics.Chapter03Review.symplecticEulerShadowMatching_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.symplecticNotReversible_statement : Prop
+'MolecularDynamics.Chapter03Review.symplecticNotReversible_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.symplecticSpectrum_statement : Prop
+'MolecularDynamics.Chapter03Review.symplecticSpectrum_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.takahashiProcessor {n : ℕ} (m : Fin n → ℝ)
+  (U : MolecularDynamics.Chapter02Review.Q n → ℝ) (h : ℝ) (z : MolecularDynamics.Chapter02Review.Z n) :
+  MolecularDynamics.Chapter02Review.Z n
+'MolecularDynamics.Chapter03Review.takahashiProcessor' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.takahashiShadow2 {n : ℕ} (m : Fin n → ℝ)
+  (U : MolecularDynamics.Chapter02Review.Q n → ℝ) (h : ℝ) (z : MolecularDynamics.Chapter02Review.Z n) : ℝ
+'MolecularDynamics.Chapter03Review.takahashiShadow2' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.theorem31_statement : Prop
+'MolecularDynamics.Chapter03Review.theorem31_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.trapezoidalProperties_statement : Prop
+'MolecularDynamics.Chapter03Review.trapezoidalProperties_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.trapezoidalRelation {n : ℕ}
+  (f : MolecularDynamics.Chapter02Review.Q n → MolecularDynamics.Chapter02Review.Q n) (h : ℝ)
+  (z w : MolecularDynamics.Chapter02Review.Q n) : Prop
+'MolecularDynamics.Chapter03Review.trapezoidalRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.truncatedFlow {n : ℕ} (H : MolecularDynamics.SymplecticCoordinates n → ℝ)
+  (Hj : ℕ → MolecularDynamics.SymplecticCoordinates n → ℝ) (r k : ℕ) (h : ℝ)
+  (z : MolecularDynamics.SymplecticCoordinates n) (γ : ℝ → MolecularDynamics.SymplecticCoordinates n) : Prop
+'MolecularDynamics.Chapter03Review.truncatedFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.verletHamiltonianParts {n : ℕ} (T U : MolecularDynamics.SymplecticCoordinates n → ℝ) :
+  Fin 3 → MolecularDynamics.SymplecticCoordinates n → ℝ
+'MolecularDynamics.Chapter03Review.verletHamiltonianParts' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.verletModifiedH {n : ℕ} (T U : MolecularDynamics.SymplecticCoordinates n → ℝ) (h : ℝ)
+  (z : MolecularDynamics.SymplecticCoordinates n) : ℝ
+'MolecularDynamics.Chapter03Review.verletModifiedH' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.verletModifiedHPrinted_statement : Prop
+'MolecularDynamics.Chapter03Review.verletModifiedHPrinted_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.verletModifiedH_statement : Prop
+'MolecularDynamics.Chapter03Review.verletModifiedH_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.verletOscillatorEnergy_statement : Prop
+'MolecularDynamics.Chapter03Review.verletOscillatorEnergy_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.verletVariants_proved : MolecularDynamics.Chapter03Review.verletVariants_statement
+'MolecularDynamics.Chapter03Review.verletVariants_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.verletVariants_statement : Prop
+'MolecularDynamics.Chapter03Review.verletVariants_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.volumeNotSymplectic_statement : Prop
+'MolecularDynamics.Chapter03Review.volumeNotSymplectic_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.yoshida4 {n : ℕ} (m : Fin n → ℝ) (U : MolecularDynamics.Chapter02Review.Q n → ℝ)
+  (h : ℝ) : MolecularDynamics.SymplecticCoordinates n → MolecularDynamics.SymplecticCoordinates n
+'MolecularDynamics.Chapter03Review.yoshida4' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.yoshida4Structure_proved :
+  MolecularDynamics.Chapter03Review.yoshida4Structure_statement
+'MolecularDynamics.Chapter03Review.yoshida4Structure_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.yoshida4Structure_statement : Prop
+'MolecularDynamics.Chapter03Review.yoshida4Structure_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.yoshidaCancellation_statement : Prop
+'MolecularDynamics.Chapter03Review.yoshidaCancellation_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.yoshidaCoefficients (s : ℕ) : ℝ × ℝ
+'MolecularDynamics.Chapter03Review.yoshidaCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.yoshidaCompose.{u_1} {E : Type u_1} (G : ℝ → E → E) (a b h : ℝ) : E → E
+'MolecularDynamics.Chapter03Review.yoshidaCompose' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.Chapter03Review.yoshidaRaiseOrder_statement : Prop
+'MolecularDynamics.Chapter03Review.yoshidaRaiseOrder_statement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.Chapter03Review.yoshidaUnique_statement : Prop
+'MolecularDynamics.Chapter03Review.yoshidaUnique_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ 1 H D)
+  (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :
+  ContDiffOn ℝ 1 (MolecularDynamics.textbookTruncatedHamiltonian H Hj r k h) D
+'MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.energy_step_count_power_factor (r k n : ℕ) (hrk : r ≤ k) (h : ℝ) :
+  ↑n * h ^ (k + 1) = ↑n * h * h ^ (k - r) * h ^ r
+'MolecularDynamics.energy_step_count_power_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.exists_compact_C1_lipschitz_constant.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  (D B : Set E) (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D) (H : E → ℝ)
+  (hH : ContDiffOn ℝ 1 H D) : ∃ L, 0 < L ∧ ∀ u ∈ B, ∀ v ∈ B, ‖H v - H u‖ ≤ L * ‖v - u‖
+'MolecularDynamics.exists_compact_C1_lipschitz_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (D B : Set E) (hD : IsOpen D) (hB : IsCompact B)
+  (hconv : Convex ℝ B) (hBD : B ⊆ D) (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :
+  ∃ L,
+    0 < L ∧
+      ∀ h ∈ Set.Icc 0 1,
+        ∀ u ∈ B,
+          ∀ v ∈ B,
+            ‖MolecularDynamics.textbookTruncatedHamiltonian H Hj r k h v -
+                  MolecularDynamics.textbookTruncatedHamiltonian H Hj r k h u‖ ≤
+              L * ‖v - u‖
+'MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (B : Set E) (hB : IsCompact B)
+  (hHj : ∀ j ∈ Finset.Icc r k, ContinuousOn (Hj j) B) :
+  ∃ C,
+    0 < C ∧ ∀ h ∈ Set.Icc 0 1, ∀ z ∈ B, ‖MolecularDynamics.textbookTruncatedHamiltonian H Hj r k h z - H z‖ ≤ C * h ^ r
+'MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.hasDerivAt_textbookLieDerivative.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  (f : E → E) (φ : E → ℝ) (γ : ℝ → E) (t : ℝ) (hφ : DifferentiableAt ℝ φ (γ t)) (hγ : HasDerivAt γ (f (γ t)) t) :
+  HasDerivAt (fun u => φ (γ u)) (MolecularDynamics.textbookLieDerivative f φ (γ t)) t
+'MolecularDynamics.hasDerivAt_textbookLieDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.hasDerivAt_textbookLieDerivative_second.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  (f : E → E) (φ : E → ℝ) (γ : ℝ → E) (hf : ContDiff ℝ 1 f) (hφ : ContDiff ℝ 2 φ)
+  (hγ : ∀ (t : ℝ), HasDerivAt γ (f (γ t)) t) (t : ℝ) :
+  HasDerivAt (fun u => deriv (fun v => φ (γ v)) u)
+    (MolecularDynamics.textbookLieDerivative f (MolecularDynamics.textbookLieDerivative f φ) (γ t)) t
+'MolecularDynamics.hasDerivAt_textbookLieDerivative_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.hasDerivWithinAt_textbookPoissonBracket {Nc : ℕ}
+  (F H : MolecularDynamics.SymplecticCoordinates Nc → ℝ) (γ : ℝ → MolecularDynamics.SymplecticCoordinates Nc)
+  (s : Set ℝ) (t : ℝ) (hF : DifferentiableAt ℝ F (γ t))
+  (hγ : HasDerivWithinAt γ (MolecularDynamics.textbookHamiltonianVectorField H (γ t)) s t) :
+  HasDerivWithinAt (fun u => F (γ u)) (MolecularDynamics.textbookPoissonBracket F H (γ t)) s t
+'MolecularDynamics.hasDerivWithinAt_textbookPoissonBracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.oneStep_energy_telescoping.{u_1} {E : Type u_1} (K : E → ℝ) (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
+  ∑ i ∈ Finset.range n,
+      (K (MolecularDynamics.oneStepIterate G h z₀ (i + 1)) - K (MolecularDynamics.oneStepIterate G h z₀ i)) =
+    K (MolecularDynamics.oneStepIterate G h z₀ n) - K z₀
+'MolecularDynamics.oneStep_energy_telescoping' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookFormalModifiedExponential_matches_product.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R]
+  (A B : R) (n : ℕ) (hn : n < 3) :
+  (PowerSeries.coeff n)
+      (MolecularDynamics.textbookFormalOperatorExponential A * MolecularDynamics.textbookFormalOperatorExponential B) =
+    (PowerSeries.coeff n) (MolecularDynamics.textbookFormalModifiedExponential A B ((1 / 2) • (A * B - B * A)))
+'MolecularDynamics.textbookFormalModifiedExponential_matches_product' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.textbookFormalOperatorDifference_coeff_three.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R] (A B : R) :
+  (PowerSeries.coeff 3)
+      (MolecularDynamics.textbookFormalOperatorExponential A * MolecularDynamics.textbookFormalOperatorExponential B -
+        MolecularDynamics.textbookFormalOperatorExponential (A + B)) =
+    (1 / 6) • (2 • (A * B ^ 2) + 2 • (A ^ 2 * B) - B * A ^ 2 - B * A * B - B ^ 2 * A - A * B * A)
+'MolecularDynamics.textbookFormalOperatorDifference_coeff_three' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.textbookFormalOperatorDifference_coeff_two.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R] (A B : R) :
+  (PowerSeries.coeff 2)
+      (MolecularDynamics.textbookFormalOperatorExponential A * MolecularDynamics.textbookFormalOperatorExponential B -
+        MolecularDynamics.textbookFormalOperatorExponential (A + B)) =
+    (1 / 2) • (A * B - B * A)
+'MolecularDynamics.textbookFormalOperatorDifference_coeff_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.textbookFormalOperatorExponential.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R] (A : R) : PowerSeries R
+'MolecularDynamics.textbookFormalOperatorExponential' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookFormalOperatorExponential_coeff.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R] (A : R) (n : ℕ) :
+  (PowerSeries.coeff n) (MolecularDynamics.textbookFormalOperatorExponential A) = (1 / ↑n.factorial) • A ^ n
+'MolecularDynamics.textbookFormalOperatorExponential_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookFormalOperatorProduct_coeff_one.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R] (A B : R) :
+  (PowerSeries.coeff 1)
+      (MolecularDynamics.textbookFormalOperatorExponential A * MolecularDynamics.textbookFormalOperatorExponential B) =
+    A + B
+'MolecularDynamics.textbookFormalOperatorProduct_coeff_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookFormalOperatorProduct_coeff_three.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R] (A B : R) :
+  (PowerSeries.coeff 3)
+      (MolecularDynamics.textbookFormalOperatorExponential A * MolecularDynamics.textbookFormalOperatorExponential B) =
+    (1 / 6) • A ^ 3 + (1 / 2) • (A ^ 2 * B) + (1 / 2) • (A * B ^ 2) + (1 / 6) • B ^ 3
+'MolecularDynamics.textbookFormalOperatorProduct_coeff_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookFormalOperatorProduct_coeff_two.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R] (A B : R) :
+  (PowerSeries.coeff 2)
+      (MolecularDynamics.textbookFormalOperatorExponential A * MolecularDynamics.textbookFormalOperatorExponential B) =
+    (1 / 2) • A ^ 2 + A * B + (1 / 2) • B ^ 2
+'MolecularDynamics.textbookFormalOperatorProduct_coeff_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookFormalOperatorProduct_coeff_zero.{u_1} {R : Type u_1} [Ring R] [Algebra ℝ R] (A B : R) :
+  (PowerSeries.coeff 0)
+      (MolecularDynamics.textbookFormalOperatorExponential A * MolecularDynamics.textbookFormalOperatorExponential B) =
+    1
+'MolecularDynamics.textbookFormalOperatorProduct_coeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2 {Nc : ℕ}
+  (H : MolecularDynamics.SymplecticCoordinates Nc → ℝ) (hH : ContDiff ℝ 2 H)
+  (Φ : ℝ × MolecularDynamics.SymplecticCoordinates Nc → MolecularDynamics.SymplecticCoordinates Nc)
+  (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+  (hODE :
+    ∀ t ∈ Set.Icc 0 τ,
+      ∀ (z : MolecularDynamics.SymplecticCoordinates Nc),
+        HasDerivAt (fun s => Φ (s, z)) (MolecularDynamics.textbookHamiltonianVectorField H (Φ (t, z))) t)
+  (hinit : (fun z => Φ (0, z)) = id) (t : ℝ) :
+  t ∈ Set.Icc 0 τ → MolecularDynamics.IsTextbookSymplecticMap fun z => Φ (t, z)
+'MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2 {Nc : ℕ}
+  (H : MolecularDynamics.SymplecticCoordinates Nc → ℝ) (hH : ContDiff ℝ 2 H)
+  (Φ : ℝ × MolecularDynamics.SymplecticCoordinates Nc → MolecularDynamics.SymplecticCoordinates Nc)
+  (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+  (hODE :
+    ∀ t ∈ Set.Icc 0 τ,
+      ∀ (z : MolecularDynamics.SymplecticCoordinates Nc),
+        HasDerivAt (fun s => Φ (s, z)) (MolecularDynamics.textbookHamiltonianVectorField H (Φ (t, z))) t)
+  (hinit : (fun z => Φ (0, z)) = id) (t : ℝ) (ht : t ∈ Set.Icc 0 τ)
+  (s : Set (MolecularDynamics.SymplecticCoordinates Nc)) (hs : MeasurableSet s) :
+  MeasureTheory.volume ((fun z => Φ (t, z)) '' s) = MeasureTheory.volume s
+'MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.textbookHamiltonianLieDerivative_add {Nc : ℕ}
+  (F H₁ H₂ : MolecularDynamics.SymplecticCoordinates Nc → ℝ) (z : MolecularDynamics.SymplecticCoordinates Nc)
+  (hH₁ : DifferentiableAt ℝ H₁ z) (hH₂ : DifferentiableAt ℝ H₂ z) :
+  MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField fun x => H₁ x + H₂ x) F z =
+    MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H₁) F z +
+      MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H₂) F z
+'MolecularDynamics.textbookHamiltonianLieDerivative_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookHamiltonianLieDerivative_commutator {Nc : ℕ}
+  (F H₁ H₂ : MolecularDynamics.SymplecticCoordinates Nc → ℝ) (z : MolecularDynamics.SymplecticCoordinates Nc)
+  (hF : ContDiffAt ℝ 2 F z) (hH₁ : ContDiffAt ℝ 2 H₁ z) (hH₂ : ContDiffAt ℝ 2 H₂ z) :
+  MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H₁)
+        (MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H₂) F) z -
+      MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H₂)
+        (MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H₁) F) z =
+    MolecularDynamics.textbookLieDerivative
+      (MolecularDynamics.textbookHamiltonianVectorField (MolecularDynamics.textbookPoissonBracket H₂ H₁)) F z
+'MolecularDynamics.textbookHamiltonianLieDerivative_commutator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.textbookHamiltonian_energy_const_on_Icc {Nc : ℕ} (H : MolecularDynamics.SymplecticCoordinates Nc → ℝ)
+  (γ : ℝ → MolecularDynamics.SymplecticCoordinates Nc) (τ : ℝ) (hH : ∀ t ∈ Set.Icc 0 τ, DifferentiableAt ℝ H (γ t))
+  (hγ :
+    ∀ t ∈ Set.Icc 0 τ, HasDerivWithinAt γ (MolecularDynamics.textbookHamiltonianVectorField H (γ t)) (Set.Icc 0 τ) t)
+  (t : ℝ) : t ∈ Set.Icc 0 τ → H (γ t) = H (γ 0)
+'MolecularDynamics.textbookHamiltonian_energy_const_on_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookLieDerivative.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] (f : E → E)
+  (φ : E → ℝ) (z : E) : ℝ
+'MolecularDynamics.textbookLieDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson {Nc : ℕ}
+  (F H : MolecularDynamics.SymplecticCoordinates Nc → ℝ) :
+  MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H) F =
+    MolecularDynamics.textbookPoissonBracket F H
+'MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.textbookPoissonBracket {Nc : ℕ} (F G : MolecularDynamics.SymplecticCoordinates Nc → ℝ)
+  (z : MolecularDynamics.SymplecticCoordinates Nc) : ℝ
+'MolecularDynamics.textbookPoissonBracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookPoissonBracket_coordinates {Nc : ℕ} (F G : MolecularDynamics.SymplecticCoordinates Nc → ℝ)
+  (z : MolecularDynamics.SymplecticCoordinates Nc) :
+  MolecularDynamics.textbookPoissonBracket F G z =
+    ∑ i,
+      ((fderiv ℝ F z) (Pi.single (Sum.inl i) 1) * (fderiv ℝ G z) (Pi.single (Sum.inr i) 1) -
+        (fderiv ℝ G z) (Pi.single (Sum.inl i) 1) * (fderiv ℝ F z) (Pi.single (Sum.inr i) 1))
+'MolecularDynamics.textbookPoissonBracket_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookPoissonBracket_jacobi {Nc : ℕ} (F G H : MolecularDynamics.SymplecticCoordinates Nc → ℝ)
+  (z : MolecularDynamics.SymplecticCoordinates Nc) (hF : ContDiffAt ℝ 2 F z) (hG : ContDiffAt ℝ 2 G z)
+  (hH : ContDiffAt ℝ 2 H z) :
+  MolecularDynamics.textbookPoissonBracket F (MolecularDynamics.textbookPoissonBracket G H) z +
+        MolecularDynamics.textbookPoissonBracket H (MolecularDynamics.textbookPoissonBracket F G) z +
+      MolecularDynamics.textbookPoissonBracket G (MolecularDynamics.textbookPoissonBracket H F) z =
+    0
+'MolecularDynamics.textbookPoissonBracket_jacobi' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookPoissonBracket_linear_left {Nc : ℕ} (F G H : MolecularDynamics.SymplecticCoordinates Nc → ℝ)
+  (α β : ℝ) (z : MolecularDynamics.SymplecticCoordinates Nc) (hF : DifferentiableAt ℝ F z)
+  (hH : DifferentiableAt ℝ H z) :
+  MolecularDynamics.textbookPoissonBracket (fun x => α * F x + β * H x) G z =
+    α * MolecularDynamics.textbookPoissonBracket F G z + β * MolecularDynamics.textbookPoissonBracket H G z
+'MolecularDynamics.textbookPoissonBracket_linear_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookPoissonBracket_linear_right {Nc : ℕ} (F G H : MolecularDynamics.SymplecticCoordinates Nc → ℝ)
+  (α β : ℝ) (z : MolecularDynamics.SymplecticCoordinates Nc) (hG : DifferentiableAt ℝ G z)
+  (hH : DifferentiableAt ℝ H z) :
+  MolecularDynamics.textbookPoissonBracket F (fun x => α * G x + β * H x) z =
+    α * MolecularDynamics.textbookPoissonBracket F G z + β * MolecularDynamics.textbookPoissonBracket F H z
+'MolecularDynamics.textbookPoissonBracket_linear_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookPoissonBracket_self {Nc : ℕ} (F : MolecularDynamics.SymplecticCoordinates Nc → ℝ)
+  (z : MolecularDynamics.SymplecticCoordinates Nc) : MolecularDynamics.textbookPoissonBracket F F z = 0
+'MolecularDynamics.textbookPoissonBracket_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookPoissonBracket_skew {Nc : ℕ} (F G : MolecularDynamics.SymplecticCoordinates Nc → ℝ)
+  (z : MolecularDynamics.SymplecticCoordinates Nc) :
+  MolecularDynamics.textbookPoissonBracket F G z = -MolecularDynamics.textbookPoissonBracket G F z
+'MolecularDynamics.textbookPoissonBracket_skew' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookSymplecticEuler_isSymplectic {Nc : ℕ} (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ)
+  (hU : ContDiff ℝ 2 U) : MolecularDynamics.IsTextbookSymplecticMap (MolecularDynamics.textbookSymplecticEuler m U h)
+'MolecularDynamics.textbookSymplecticEuler_isSymplectic' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookTruncatedHamiltonian.{u_1} {E : Type u_1} (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (h : ℝ)
+  (z : E) : ℝ
+'MolecularDynamics.textbookTruncatedHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbookTruncatedHamiltonian_difference_isBigO.{u_1} {E : Type u_1} [NormedAddCommGroup E] (H : E → ℝ)
+  (Hj : ℕ → E → ℝ) (r k : ℕ) (B : Set E) (hB : IsCompact B) (hHj : ∀ j ∈ Finset.Icc r k, ContinuousOn (Hj j) B)
+  (z : ℝ → E) (hz : ∀ h ∈ Set.Icc 0 1, z h ∈ B) :
+  (fun h => MolecularDynamics.textbookTruncatedHamiltonian H Hj r k h (z h) - H (z h)) =O[nhdsWithin 0 (Set.Ioi 0)]
+    fun h => h ^ r
+'MolecularDynamics.textbookTruncatedHamiltonian_difference_isBigO' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+MolecularDynamics.textbook_conjugate_iterates.{u_1} {E : Type u_1} [TopologicalSpace E] (χ : E ≃ₜ E) (A B : E → E)
+  (hA : A = MolecularDynamics.textbookConjugateMap χ B) (n : ℕ) : A^[n] = MolecularDynamics.textbookConjugateMap χ B^[n]
+'MolecularDynamics.textbook_conjugate_iterates' depends on axioms: [propext, Quot.sound]
+MolecularDynamics.textbook_conjugate_iterates_tendsto_iff.{u_1} {E : Type u_1} [TopologicalSpace E] (χ : E ≃ₜ E)
+  (A B : E → E) (hA : A = MolecularDynamics.textbookConjugateMap χ B) (z₀ zStar : E) :
+  Filter.Tendsto (fun n => A^[n] z₀) Filter.atTop (nhds zStar) ↔
+    Filter.Tendsto (fun n => B^[n] (χ z₀)) Filter.atTop (nhds (χ zStar))
+'MolecularDynamics.textbook_conjugate_iterates_tendsto_iff' depends on axioms: [propext, Quot.sound]
+MolecularDynamics.textbook_energy_drift_le_actual_defects {Nc : ℕ} (H : MolecularDynamics.SymplecticCoordinates Nc → ℝ)
+  (Hj : ℕ → MolecularDynamics.SymplecticCoordinates Nc → ℝ) (r k : ℕ)
+  (D B : Set (MolecularDynamics.SymplecticCoordinates Nc)) (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B)
+  (hBD : B ⊆ D) (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)
+  (G : ℝ → MolecularDynamics.SymplecticCoordinates Nc → MolecularDynamics.SymplecticCoordinates Nc)
+  (γ : ℝ → MolecularDynamics.SymplecticCoordinates Nc → ℝ → MolecularDynamics.SymplecticCoordinates Nc)
+  (hγ₀ : ∀ h ∈ Set.Icc 0 1, ∀ z ∈ B, γ h z 0 = z) (hγB : ∀ h ∈ Set.Icc 0 1, ∀ z ∈ B, ∀ t ∈ Set.Icc 0 h, γ h z t ∈ B)
+  (hγ :
+    ∀ h ∈ Set.Icc 0 1,
+      ∀ z ∈ B,
+        ∀ t ∈ Set.Icc 0 h,
+          HasDerivWithinAt (γ h z)
+            (MolecularDynamics.textbookHamiltonianVectorField
+              (MolecularDynamics.textbookTruncatedHamiltonian H Hj r k h) (γ h z t))
+            (Set.Icc 0 h) t) :
+  ∃ C,
+    0 < C ∧
+      ∃ L,
+        0 < L ∧
+          ∀ h ∈ Set.Icc 0 1,
+            ∀ (z₀ : MolecularDynamics.SymplecticCoordinates Nc) (n : ℕ),
+              (∀ i ≤ n, MolecularDynamics.oneStepIterate G h z₀ i ∈ B) →
+                ‖H (MolecularDynamics.oneStepIterate G h z₀ n) - H z₀‖ ≤
+                  2 * C * h ^ r +
+                    L *
+                      ∑ i ∈ Finset.range n,
+                        ‖G h (MolecularDynamics.oneStepIterate G h z₀ i) -
+                            γ h (MolecularDynamics.oneStepIterate G h z₀ i) h‖
+'MolecularDynamics.textbook_energy_drift_le_actual_defects' depends on axioms: [propext, Classical.choice, Quot.sound]
+MolecularDynamics.textbook_energy_drift_rate_of_flow_defect {Nc : ℕ}
+  (H : MolecularDynamics.SymplecticCoordinates Nc → ℝ) (Hj : ℕ → MolecularDynamics.SymplecticCoordinates Nc → ℝ)
+  (r k : ℕ) (hrk : r ≤ k) (D B : Set (MolecularDynamics.SymplecticCoordinates Nc)) (hD : IsOpen D) (hB : IsCompact B)
+  (hconv : Convex ℝ B) (hBD : B ⊆ D) (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)
+  (G : ℝ → MolecularDynamics.SymplecticCoordinates Nc → MolecularDynamics.SymplecticCoordinates Nc)
+  (γ : ℝ → MolecularDynamics.SymplecticCoordinates Nc → ℝ → MolecularDynamics.SymplecticCoordinates Nc)
+  (hγ₀ : ∀ h ∈ Set.Icc 0 1, ∀ z ∈ B, γ h z 0 = z) (hγB : ∀ h ∈ Set.Icc 0 1, ∀ z ∈ B, ∀ t ∈ Set.Icc 0 h, γ h z t ∈ B)
+  (hγ :
+    ∀ h ∈ Set.Icc 0 1,
+      ∀ z ∈ B,
+        ∀ t ∈ Set.Icc 0 h,
+          HasDerivWithinAt (γ h z)
+            (MolecularDynamics.textbookHamiltonianVectorField
+              (MolecularDynamics.textbookTruncatedHamiltonian H Hj r k h) (γ h z t))
+            (Set.Icc 0 h) t)
+  (A T : ℝ) (hA : 0 ≤ A) (hT : 0 ≤ T) (hdefect : ∀ h ∈ Set.Ioc 0 1, ∀ z ∈ B, ‖G h z - γ h z h‖ ≤ A * h ^ (k + 1)) :
+  ∃ M,
+    0 < M ∧
+      ∀ h ∈ Set.Ioc 0 1,
+        ∀ (z₀ : MolecularDynamics.SymplecticCoordinates Nc) (n : ℕ),
+          (∀ i ≤ n, MolecularDynamics.oneStepIterate G h z₀ i ∈ B) →
+            ↑n * h * h ^ (k - r) ≤ T → ‖H (MolecularDynamics.oneStepIterate G h z₀ n) - H z₀‖ ≤ M * h ^ r
+'MolecularDynamics.textbook_energy_drift_rate_of_flow_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
