@@ -72,6 +72,7 @@ if ch==2:
             r['状态']='not_formalizable_now';r['备注']+='；缺一般Gauss配点阶条件与对称性理论；给实际Legendre节点/积分系数及唯一阶段条件的完整Prop，未证'
 else:
     for r in rows:
+        if r['id']=='CH03-036': r['Lean声明名']=ns+'leadingShadowHamiltonian_statement'
         name=r['Lean声明名'];leaf=name.removeprefix(ns)
         proof=ns+leaf.replace('_statement','_proved')
         if leaf.endswith('_statement') and proof in index:
@@ -80,8 +81,31 @@ else:
           'verletModifiedH_statement':['verletModifiedHPrinted_statement']}
         for key,more in extras.items():
             if key in name:r['Lean声明名']+=';'+ ';'.join(ns+x for x in more)
+        by_id={'CH03-034':[ns+'leadingShadowPrinted_statement'],
+          'CH03-102':['MolecularDynamics.Chapter02Review.localHamiltonianStructures_statement'],
+          'CH03-105':[ns+'correctedReversedField'],
+          'CH03-108':[ns+'reversedFieldPrinted_statement'],
+          'CH03-116':[ns+'partitionedAffinePrinted_statement'],
+          'CH03-117':['MolecularDynamics.textbookSymplecticEuler_isSymplectic']}
+        if r['id'] in ['CH03-001','CH03-071','CH03-074','CH03-082','CH03-083']:
+            by_id[r['id']]=[ns+x for x in ['smoothSymplecticData','actualFlowNearCompact','localOrder','finiteMatching','truncatedFlow']]
+        r['Lean声明名']+=''.join(';'+x for x in by_id.get(r['id'],[]))
+        if r['id']=='CH03-071':
+            r['备注']='完整构造/匹配/多项式长时间能量Prop，另附解析指数Prop；正阶数、凸开D、紧凸B⊂D、局部joint C∞近恒等辛映射、实际原始流与一致阶；数值及截断轨道留在B；常数依赖固定k与T，非全部k统一；缺逐阶Hamiltonian构造与ODE余项理论，未搭建大型一般理论'
+        if r['id']=='CH03-137':
+            r['备注']='此定义列出所有正候选根；最小根、横截与接触后状态条件在方法Prop另要求'
+        if r['状态']=='statement_only':
+            if any(x in name for x in ['theorem31','modifiedConstruction']):
+                r['备注']+='；缺形式jet的Hamiltonian构造、逐阶匹配及局部ODE统一余项；finiteMatching是所需结论，未被用作完整构造的假设'
+            elif any(x in name for x in ['analyticBEA','optimalTruncation']):
+                r['备注']+='；缺解析邻域/Cauchy阶乘界、整数最优截断及统一常数；指数误差没有从仅C∞推出'
+        if r['id']=='CH03-140':
+            r['备注']+='；仅碰撞隔离且所有内部接触严格早于hmax的步长序列；伪代码tc=hmax时未反射须导师判断；采用累计自适应时间，不能误作固定hmax步数'
+        if r['id'] in ['CH03-132','CH03-140','CH03-142']:
+            r['状态']='not_formalizable_now'
+            r['备注']+='；缺隔离多约束硬球事件稳定性与非光滑误差理论；用当前隔离接触函数g表示二元碰撞；动量跳跃使同一时刻全相空间一致误差无定义保证，Prop采用误差同阶的单调时间对齐，原书误差度量需导师裁定'
 for r in rows:
-    names=r['Lean声明名'].split(';')
+    names=list(dict.fromkeys(r['Lean声明名'].split(';')))
     names=[ns+n.removeprefix('MolecularDynamics.') if n not in index and ns+n.removeprefix('MolecularDynamics.') in index else n for n in names]
     r['Lean声明名']=';'.join(names)
     missing=[n for n in names if n not in index]
@@ -101,9 +125,9 @@ questions={2:[
  'Liouville/流辛性现有jointC2假设是否接受为较强实现条件？一般C1流、变分原理、Gauss配点等完整Prop均未证明。'],3:[
  'Theorem3.1的C^infinity、每个固定k的代数长时间界，是否应与额外解析性下的指数小匹配/指数长时间界严格区分？',
  '形式级数、有限截断和实际收敛级数是否清楚区分？全阶构造与匹配仅陈述，有限系数和有条件能量界已有证明。',
- 'Verlet修正Hamiltonian系数、Takahashi–Imada势修正符号及正文中辛性/能量“不可能同时保持”的限定条件，是否需勘误？',
- '时间可逆需要固定反演R和唯一局部流，不能从自伴随直接推出；投影修正需E-U≥0和非零动能，是否接受这些补假设？',
- '硬球碰撞需二元非擦碰、正质量和排除同时多重碰撞；这些局部模型是否足够忠实，长期误差阶是否需进一步条件？']}[ch]
+ '印刷105的Lie–Poisson commutator符号前后颠倒、108的不同步长log可交换断言、113的处理器能量展开遗漏U，是否接受所附勘误？Verlet的有限系数定义与高阶匹配证明须分开。',
+ '印刷128一般involution的反演场应使用R而非R转置；130的PRK只能保证分块变换等变；131转置谱不能沿用同一特征向量。能量/辛性no-go需无额外第一积分等条件，是否接受这些限定？',
+ '硬球动量有跳跃，原文一/二阶误差应采用事件时间对齐还是只比较位置？134端点碰撞三阶说法与显示线性项矛盾，135在tc=hmax时未反射，136 second却写alpha一阶导，是否需修正文句/算法？投影须非零动能与E-U≥0。']}[ch]
 scope={2:'印刷53–93 / PDF75–115；习题从印刷94开始，数值实验及数值图表排除。',
        3:'印刷97–136 / PDF119–158，止于印刷136的Exercises标题；数值实验、图表及纯实现伪代码排除。'}[ch]
 intro=f'# 第{ch}章人工审阅材料\n\n{scope}\n清单为唯一进度来源；定义不计为证明。Prop定义编译通过不表示命题成立。\n'
@@ -120,7 +144,7 @@ def entry(r):
 full=intro+''.join(entry(r) for r in rows)
 (review/f'{tag}_REVIEW.zh-CN.md').write_text(full,encoding='utf-8')
 selected={2:['CH02-012','CH02-027','CH02-033','CH02-041','CH02-050','CH02-063','CH02-064','CH02-095','CH02-099','CH02-121','CH02-122','CH02-136','CH02-143','CH02-148','CH02-158'],
-          3:[]}[ch]
+          3:['CH03-001','CH03-005','CH03-034','CH03-045','CH03-047','CH03-052','CH03-059','CH03-065','CH03-071','CH03-080','CH03-083','CH03-093','CH03-108','CH03-127','CH03-140']}[ch]
 if not selected: selected=[r['id'] for r in rows if r['类型']=='定理']+ [r['id'] for r in rows if r['状态']=='proved'][:6]+[r['id'] for r in rows if r['状态']=='statement_only'][:8]
 selected=list(dict.fromkeys(selected))[:15]
 while len(selected)<15:
