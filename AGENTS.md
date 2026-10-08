@@ -8,15 +8,16 @@
 
 ## 工作标准
 
-- 2026-10-08 用户最高优先级新指令：当前阶段只做第1章完整正文清单、忠实 Lean 陈述与人工审阅交付；第6章暂停。完成第1章后停下来等待用户，不自动开始其他章节。本条优先于所有旧范围、路线图和接续提示。
-- 第1章尚未证明的结论允许放在 `MolecularDynamics/Chapter01/Statements.lean`，写成 `def name_statement : Prop := ...`；不得用 True、不得把结论藏进假设。每项最多三次失败，缺大型理论则登记并继续下一项。
-- 本阶段进度只记 `docs/review/CH01_CLAIMS.csv`；不向 STATUS、FORMALIZATION_MAP、ASSUMPTIONS、PROGRESS_OVERVIEW 追加长篇。每次唤醒只读本文件、CURRENT_STATE 顶部、WORK_LOG 最新条目和 CH01_CLAIMS.csv。每检查点日志不超过3行，不复制 Draft、不重算未变历史源码哈希。
+- 2026-10-08 用户最高优先级新指令：当前任务是第2章审阅交付（docs/review/CH02_CLAIMS.csv），完成并push后自动进行第3章（CH03_CLAIMS.csv）；第3章交付后停止并等待用户，不进入第4章。第1章已交付待导师审阅，冻结源码和审阅材料；仅复用时发现编译问题可修并记日志；第6章仍暂停。
+- 当前章依次执行：逐页正文清单并提交 → 忠实Lean陈述与限时证明 → 完整/10–15重点审阅材料 → scripts/check.ps1、公理审计、commit与push。状态使用defined/proved/statement_only/weakened/not_formalizable_now，defined与proved分别统计，已证明结论只计proved。
+- 未证内容写在当前章Statements.lean，格式def name_statement : Prop := ...；不得写True或把结论藏进假设。每条三次候选验收失败或缺大型理论时降级并继续。Theorem 3.1先给完整忠实陈述，仅证明有限截断/已有引理组合，不搭建大型后向误差一般理论。
+- 每个阶段更新CURRENT_STATE顶部下一步；每检查点WORK_LOG不超过3行；只维护当前章CLAIMS与审阅材料，不向历史进度文档追加长篇，不复制Draft，源码未变不重算哈希。每次唤醒只读本文件、CURRENT_STATE顶部、WORK_LOG最新条目及当前章CLAIMS.csv。heartbeat lean保持ACTIVE及原15分钟频率，不关闭、删除或修改。
 
 - 2026-10-04 用户重新限定并授权继续：主线是教材 notation、正文定理（含引理、命题、推论）及证明；补充其必要定义和证明依赖。课后题、数值实验、介绍性例子和独立一般化不作为独立交付，附录按正文依赖使用。正文明确给出的未编号证明及目标定理实际需要的结论仍须落实；已完成习题代码保留并可复用。准确性优先，详见 `docs/CORE_SCOPE.zh-CN.md` 和 `docs/WHOLE_BOOK_ROADMAP.zh-CN.md`。
 - 默认用中文向用户说明进度。区分登记、原文核对、完整证明、构建和语义复核，不用清单条目数冒充证明进度。
-- 不添加 `sorry`、`admit`、项目新公理，不以 `unsafe` 绕过证明，不把结论藏进假设。尚未证明的结论遵循上面的第1章 Prop 陈述规则，不使用占位证明。
+- 不添加 `sorry`、`admit`、项目新公理，不以 `unsafe` 绕过证明，不把结论藏进假设。尚未证明的结论遵循上面的当前章 Prop 陈述规则，不使用占位证明。
 - 逐项明确质量正性、维数、势能正则性、位置域与解区间。原公式对照 PDF 页面核实，同时记录印刷页与从 1 起算的 PDF 页号。
-- `Scratch.lean` 用于小规模 API 和证明草稿验证；已核实的代码进入 `MolecularDynamics/` 并维护顶层导入。当前阶段只更新第1章清单和简短交接。
+- `Scratch.lean` 用于小规模 API 和证明草稿验证；已核实的代码进入 `MolecularDynamics/` 并维护顶层导入。当前阶段只更新第2/3章清单和简短交接。
 - 保持 `lean-toolchain`、`lakefile.toml`、`lake-manifest.json` 的固定版本；不要为找 API 随意升级。数学语义问题见首轮审计，调用前核对本地固定版本声明。
 - 2026-10-04 最新明确要求：只在本地 Codex 推进，不使用 MathCopilot；不控制页面、不代发任务、不轮询网站，也不等待网站返回件。用户已授权启动全书本地形式化长期任务，指定 GPT-6.1 Sol（`gpt-6.1-sol`）、推理强度 High（`high`），无用户指定的时长或 token 上限。逐批证明、验收和保存检查点，完成一个小批次后继续下一批。历史网站材料保留为历史证据，网站未验收不计为通过，也不阻塞已授权的本地工作；负责人最终教材语义签核继续单独登记。额度耗尽后的自动接续需要真实配置与验证，不能承诺无条件或瞬时恢复。
 - Lean 源码变化后运行 `pwsh -NoProfile -File scripts/check.ps1`，它包含源码扫描、`lake build` 与 `Scratch.lean` 检查；记录失败和未运行项。关键定理补充 `#print axioms` 检查，机器编译与负责人语义复核分别登记。
