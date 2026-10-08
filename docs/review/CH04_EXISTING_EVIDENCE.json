@@ -1,0 +1,92 @@
+[
+  {
+    "item_id": "CH04-NUM-001",
+    "textbook_label": "Lemma 4.1",
+    "review_status": "complete_local_full_check_passed_responsible_pending",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "MolecularDynamics.lemma_4_1; MolecularDynamics.lemma_4_1_coordinates",
+    "model_dependencies": "Actual global C2 scalar γ; differentiable q,p,μ at parameter point; chart locally satisfies both printed constraints",
+    "proof_or_external_gap": "Full original scalar proof formalized as actual restricted two-form pullback. Responsible semantic signoff pending; whole integrator and implicit branch construction separate."
+  },
+  {
+    "item_id": "CH04-CLM-001",
+    "textbook_label": "constrained cotangent invariance",
+    "review_status": "actual_reaction_solution_interval_invariance_full_check_passed_responsible_pending",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "MolecularDynamics.textbookConstraintCurvature; MolecularDynamics.textbookConstrainedReactionMultiplier; MolecularDynamics.textbookConstrainedReaction_balance; MolecularDynamics.textbookConstrainedODE_cotangent_invariant; MolecularDynamics.textbookConstrainedODE_cotangent_invariant_of_mass_and_independence",
+    "model_dependencies": "Actual C2 constraints; actual Gram det nonzero along real closed-interval ODE solution; actual initial position/hidden constraints",
+    "proof_or_external_gap": "Actual solution-interval proof and physical positive-mass/independent-gradient Gram condition derived; global ODE existence and numerical nonlinear branch separate"
+  },
+  {
+    "item_id": "CH04-EXT-001",
+    "textbook_label": "SHAKE/RATTLE equivalence proof",
+    "review_status": "original_page_checked",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "",
+    "model_dependencies": "约束流形和余切束；投影可解性；两方法的初值匹配",
+    "proof_or_external_gap": "教材把关键等价证明放在习题，RATTLE 辛性细节指 [229]"
+  },
+  {
+    "item_id": "CH04-CLM-002",
+    "textbook_label": "Finite multiple-constraint momentum correction preserves the restricted form",
+    "review_status": "local_full_check_passed_responsible_pending",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "MolecularDynamics.textbookMultiConstrainedMomentum; MolecularDynamics.differentiableAt_textbookMultiConstrainedMomentum; MolecularDynamics.textbookMultiConstrainedMomentum_preserves_pullback",
+    "model_dependencies": "Actual finite C2 constraint functions; differentiable multipliers; real position constraints near chart point",
+    "proof_or_external_gap": "Whole constrained algorithm/implicit branch existence separate; no ambient symplecticity without chart restriction"
+  },
+  {
+    "item_id": "CH04-CLM-003",
+    "textbook_label": "Constrained Euler stages preserve the restricted form",
+    "review_status": "actual_stages_full_check_passed_solving_branch_construction_pending_responsible_pending",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "MolecularDynamics.textbookProjectedEulerPreMomentum; MolecularDynamics.textbookProjectedEulerPosition; MolecularDynamics.textbookProjectedEulerChart; MolecularDynamics.textbookProjectedEulerChart_preserves_pullback",
+    "model_dependencies": "Actual C2 potential/constraints; actual differentiable initial charts and multipliers; true initial/final position constraints",
+    "proof_or_external_gap": "Actual final Gram solve, mu C1 and hidden constraint now constructed in CH04-CLM-004/005; initial nonlinear lam branch still pending; a records force sign, no order claimed"
+  },
+  {
+    "item_id": "CH04-CLM-004",
+    "textbook_label": "Actual Gram projection solves the hidden constraint",
+    "review_status": "actual_hidden_constraint_construction_full_check_passed_responsible_pending",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "MolecularDynamics.textbookConstraintJacobian; MolecularDynamics.textbookConstraintGram; MolecularDynamics.textbookCotangentMultiplier; MolecularDynamics.textbookCotangentProjection_hiddenConstraint; MolecularDynamics.textbookCotangentProjection_constraint_derivative_zero",
+    "model_dependencies": "Actual derivative-row Jacobian; actual diagonal inverse mass; actual Gram determinant nonzero",
+    "proof_or_external_gap": "Actual mu/projection C1 and final stage proved in CH04-CLM-005; physical Gram nondegeneracy proved in CH04-CLM-006; initial nonlinear lam solving branch pending"
+  },
+  {
+    "item_id": "CH04-CLM-005",
+    "textbook_label": "Actual Gram multiplier C1 and constructed final constrained stage",
+    "review_status": "actual_final_stage_and_regularities_full_check_passed_initial_nonlinear_branch_pending_responsible_pending",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "MolecularDynamics.contDiffAt_textbookCotangentMultiplier; MolecularDynamics.contDiffAt_textbookCotangentProjection; MolecularDynamics.textbookCotangentProjection_preserves_pullback; MolecularDynamics.textbookGramProjectedEulerChart; MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback",
+    "model_dependencies": "Actual C2 constraints/potential; actual C1 q,p and initial lam branch; true position-solving properties; actual final Gram det nonzero",
+    "proof_or_external_gap": "Physical Gram nondegeneracy derived in CH04-CLM-006; initial nonlinear solving branch, force mapping/order and responsible signoff separate"
+  },
+  {
+    "item_id": "CH04-CLM-006",
+    "textbook_label": "Physical hypotheses imply actual Gram nondegeneracy",
+    "review_status": "actual_physical_gram_full_check_passed_responsible_pending",
+    "evidence": "rendered_pdf_page",
+    "existing_lean": "MolecularDynamics.textbookConstraintGram_posDef; MolecularDynamics.textbookConstraintGram_det_pos; MolecularDynamics.textbookCotangentProjection_hiddenConstraint_of_mass_and_independence; MolecularDynamics.contDiffAt_textbookCotangentMultiplier_of_mass_and_independence; MolecularDynamics.textbookConstrainedODE_cotangent_invariant_of_mass_and_independence",
+    "model_dependencies": "Actual positive masses; actual linearly independent constraint gradients; C2/solution data for respective corollaries",
+    "proof_or_external_gap": "Initial nonlinear numerical branch and global ODE existence separate; responsible signoff pending"
+  },
+  {
+    "item_id": "CH04-CLM-007",
+    "textbook_label": "actual C1 constructed constraint reaction",
+    "review_status": "actual_joint_C2_constrained_model_full_check_passed_responsible_pending",
+    "evidence": "rendered_original_page_and_pinned_local_check",
+    "existing_lean": "contDiffAt_textbookConstraintGram_inverse;contDiffAt_textbookConstraintCurvature;contDiffAt_textbookConstrainedReactionMultiplier;contDiffAt_textbookConstrainedPhaseVectorField_of_mass_and_independence",
+    "model_dependencies": "实际C³约束/C²势；真实Gram非退化或正质量/真实梯度独立；联合C²实际参数解族/真实ODE/初始位置及隐藏约束",
+    "proof_or_external_gap": "真实C¹已导出；弱正则性/全球解构造独立pending"
+  },
+  {
+    "item_id": "CH04-CLM-008",
+    "textbook_label": "constrained flow preserves restricted symplectic form",
+    "review_status": "actual_joint_C2_constrained_model_full_check_passed_responsible_pending",
+    "evidence": "rendered_original_page_and_pinned_local_check",
+    "existing_lean": "textbookConstrainedAcceleration_pullback_zero;textbookConstrainedFlow_pullback_constant_of_jointC2;textbookConstrainedFlow_pullback_constant_of_mass_and_independence",
+    "model_dependencies": "实际C³约束/C²势；真实Gram非退化或正质量/真实梯度独立；联合C²实际参数解族/真实ODE/初始位置及隐藏约束",
+    "proof_or_external_gap": "指定联合C²实际参数解族明确；弱正则性/全球解/约束图构造独立pending"
+  }
+]

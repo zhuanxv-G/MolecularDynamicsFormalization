@@ -105,6 +105,7 @@ data='''
 174|4.4.2|定义|The DLM step is half kick, drift, five-axis symmetric spin, half kick with refreshed force/torque.|dlmPrinted;dlmMassConsistent|defined|原drift写q+h p缺1/M，保留字面与质量一致版；实际算法映射
 174|4.4.2|未编号结论|Drift and spin commute, revealing the symmetric kick-drift-spin-drift-kick composition.|driftSpinCommute_statement|statement_only|真实分量更新，正质量与惯量
 174|4.4.2|未编号结论|The complete rigid-body splitting is symmetric and preserves the constrained geometric structure.|dlmStructure_statement|statement_only|完整非canonical Poisson/约束辛性缺口；不搭建新理论
+151|4.3|未编号结论|For l independent regular holonomic constraints, the true number of degrees of freedom is Nc-l.|constraintDegrees_statement|statement_only|页脚数学结论；真实导数满射与kernel维数，秩/零化度等式仅陈述
 '''
 fields=['id','节号','印刷页','PDF页','类型','原文陈述(英文原句或忠实转述)','Lean声明名','文件:行号','状态','备注']
 rows=[]
