@@ -1,13 +1,12 @@
 # 当前可操作状态
 
-
 当前任务：依次完成第4、5、6章审阅交付。第1-3章冻结；第6章封存成果可复用但不得在此阶段做新证明。第6章完成后停止等待用户。
 
-阶段：第4章逐页清单进行中
-下一步：先提交本次入口改写，再核对第4章印刷137–175/PDF159–197（止于Exercises标题前），生成CH04_CLAIMS.csv；已有证明直接映射，新增结论最多三次候选失败。
+阶段：第4章清单已完成
+下一步：第4章97条正文清单已逐页建立；先提交，再补齐计划声明与既有验收映射；PDF159-160是前章习题，197从Exercises开始，实际正文139-174。
 
-第1-3章冻结；第6章CanonicalKernelConstant等封存断点保持原样，不恢复、不做新证明。
-heartbeat lean保持ACTIVE及15分钟频率，不修改。
-每次唤醒只读AGENTS.md、本文件顶部、WORK_LOG最新条目及当前章CLAIMS.csv。
-本次逐章生成清单、完整版/10–15条重点审阅材料，完整check、公理审计、commit与push；第6章交付后等待用户。
-原文语义需人工审阅；机器验收以各章VALIDATION.json为准。
+分支：chapter01-kinetic-energy-nonneg；检查点HEAD：b6dcd38；未提交文件以git status --short为准。
+第1-3章冻结；第6章CanonicalKernelConstant等封存断点保持原样。
+heartbeat lean保持ACTIVE及15分钟频率，未修改。
+每次唤醒只读AGENTS.md、本文件顶部、WORK_LOG最新条目和当前章CLAIMS.csv。
+Prop陈述不是证明；机器验收以各章VALIDATION.json为准，导师语义审阅待完成。
