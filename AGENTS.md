@@ -1,5 +1,7 @@
 # 项目接续与形式化约定
 
+当前阶段：第2章已交付审阅，正在进行第3章（docs/review/CH03_CLAIMS.csv）；第3章交付后停止并等待用户。第1章冻结；第6章仍暂停。
+
 ## 接手现有工作
 
 首次接手、切换账户或上下文丢失时，读取 `docs/handoff/CURRENT_STATE.zh-CN.md` 和 `docs/handoff/WORK_LOG.zh-CN.md` 最新条目，再检查实际源码、Git 分支、HEAD 和未提交文件。平常只按当前任务读取相关资料，不必每次重读整套文档。
@@ -8,7 +10,7 @@
 
 ## 工作标准
 
-- 2026-10-08 用户最高优先级新指令：当前任务是第2章审阅交付（docs/review/CH02_CLAIMS.csv），完成并push后自动进行第3章（CH03_CLAIMS.csv）；第3章交付后停止并等待用户，不进入第4章。第1章已交付待导师审阅，冻结源码和审阅材料；仅复用时发现编译问题可修并记日志；第6章仍暂停。
+- 2026-10-08 用户最高优先级新指令：本次任务顺序是第2章审阅交付（docs/review/CH02_CLAIMS.csv），完成并push后自动进行第3章（CH03_CLAIMS.csv）；第3章交付后停止并等待用户，不进入第4章。第1章已交付待导师审阅，冻结源码和审阅材料；仅复用时发现编译问题可修并记日志；第6章仍暂停。
 - 当前章依次执行：逐页正文清单并提交 → 忠实Lean陈述与限时证明 → 完整/10–15重点审阅材料 → scripts/check.ps1、公理审计、commit与push。状态使用defined/proved/statement_only/weakened/not_formalizable_now，defined与proved分别统计，已证明结论只计proved。
 - 未证内容写在当前章Statements.lean，格式def name_statement : Prop := ...；不得写True或把结论藏进假设。每条三次候选验收失败或缺大型理论时降级并继续。Theorem 3.1先给完整忠实陈述，仅证明有限截断/已有引理组合，不搭建大型后向误差一般理论。
 - 每个阶段更新CURRENT_STATE顶部下一步；每检查点WORK_LOG不超过3行；只维护当前章CLAIMS与审阅材料，不向历史进度文档追加长篇，不复制Draft，源码未变不重算哈希。每次唤醒只读本文件、CURRENT_STATE顶部、WORK_LOG最新条目及当前章CLAIMS.csv。heartbeat lean保持ACTIVE及原15分钟频率，不关闭、删除或修改。
