@@ -440,3 +440,5 @@ import MolecularDynamics.Chapter06.LangevinCanonicalKernelPairingShift
 import MolecularDynamics.Chapter06.LangevinCanonicalKernelContinuousTest
 
 import MolecularDynamics.Chapter01.ReviewProofs
+
+import MolecularDynamics.Chapter02.ReviewProofs
