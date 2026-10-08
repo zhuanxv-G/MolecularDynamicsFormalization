@@ -3,6 +3,7 @@
 当前阶段：第2章已交付审阅，正在进行第3章（docs/review/CH03_CLAIMS.csv）；第3章交付后停止并等待用户。第1章冻结；第6章仍暂停。
 
 
+
 ## 接手现有工作
 
 首次接手、切换账户或上下文丢失时，读取 `docs/handoff/CURRENT_STATE.zh-CN.md` 和 `docs/handoff/WORK_LOG.zh-CN.md` 最新条目，再检查实际源码、Git 分支、HEAD 和未提交文件。平常只按当前任务读取相关资料，不必每次重读整套文档。
