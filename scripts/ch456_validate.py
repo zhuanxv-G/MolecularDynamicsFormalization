@@ -41,10 +41,13 @@ baseline=json.loads((review/'CH456_BASELINE.json').read_text(encoding='utf-8'))
 assert hashlib.sha256(auto.read_bytes()).hexdigest()==baseline['heartbeat_sha256'],'Heartbeat configuration changed'
 assert 'status = "ACTIVE"' in auto.read_text(encoding='utf-8-sig') and 'FREQ=MINUTELY;INTERVAL=15' in auto.read_text(encoding='utf-8-sig')
 if ch==6:
-    old=subprocess.check_output(['git','diff','8948420','--','MolecularDynamics/Chapter06'],cwd=root,text=True)
+    original_paths=subprocess.check_output(['git','ls-tree','-r','--name-only','8948420','--','MolecularDynamics/Chapter06'],cwd=root,text=True).splitlines()
+    assert len(original_paths)==182
+    old=subprocess.check_output(['git','diff','8948420','--',*original_paths],cwd=root,text=True)
     assert not old,'Existing Chapter 6 source modified'
-    for p in (root/'MolecularDynamics/Chapter06').glob('*Review*.lean'):
-        assert not re.search(r'(?m)^(?:theorem|lemma) ',p.read_text(encoding='utf-8'))
+    for filename in ['ReviewDefinitions.lean','Statements.lean']:
+        source=(root/'MolecularDynamics/Chapter06'/filename).read_text(encoding='utf-8')
+        assert not re.search(r'(?m)^(?:theorem|lemma|axiom) |:= by',source),'New Chapter 6 proof introduced'
 build=(folder/'lake_build.log').read_text(encoding='utf-8-sig');deps=(folder/'axiom_dependencies.log').read_text(encoding='utf-8-sig')
 scan=json.loads((review/f'{tag}_PAGE_SCAN.json').read_text(encoding='utf-8'))
 assert len({p['pdf_page'] for p in scan})==len(scan)

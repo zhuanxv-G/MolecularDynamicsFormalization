@@ -448,3 +448,5 @@ import MolecularDynamics.Chapter03.ReviewProofs
 import MolecularDynamics.Chapter04.Statements
 
 import MolecularDynamics.Chapter05.ReviewProofs
+
+import MolecularDynamics.Chapter06.Statements

@@ -33,7 +33,7 @@ with path.open('w',encoding='utf-8-sig',newline='') as f:
 scope={
 4:'扫描用户指定PDF159–197；实际第4章标题在印刷139/PDF161，正文止于印刷174/PDF196。PDF159–160是第3章习题；印刷175/PDF197从Exercises开始，均不纳入。§4.3.7是数值实验，逐页核对后排除。介绍模型、图表、实现成本与经验性能不作为独立数学交付。',
 5:'扫描用户指定PDF199–231；实际页码及章节标题边界以本章PAGE_SCAN.json为准。数值实验、介绍性模型和Exercises不纳入。微正则、Liouville、遍历和KAM一般理论只登记明确缺口，不搭建。',
-6:'扫描PDF233–285至Exercises标题前；逐页边界见PAGE_SCAN.json。全部proved/weakened为既有正式库成果映射，本次没有新证明。CanonicalKernelConstant等封存文件不导入、不恢复。Theorem6.1、Theorem6.2、Proposition6.4保持statement_only。'}[ch]
+6:'扫描用户PDF233–285并补核标题PDF232；实际第6章正文印刷211–258/PDF232–279，PDF280为Exercises、PDF282起第7章，排除。逐页边界见PAGE_SCAN.json。全部proved/weakened为既有正式库成果映射，本次没有新证明。CanonicalKernelConstant等封存文件不导入、不恢复。Theorem6.1、Theorem6.2、Proposition6.4保持statement_only。'}[ch]
 questions={
 4:['印刷142把trapezoidal写为Implicit Midpoint；144却使用真正midpoint。是否接受字面和实际算法分列？',
    '印刷140显式辛PRK最大阈值2/Omega是否隐含阶段数或单位计算成本？分步组合可以改变阈值，书中文字面普适陈述未证明。147特征值sqrt项系数是否有误？',
@@ -46,9 +46,9 @@ questions={
    '原文KAM需非退化、Diophantine条件及有限光滑/解析正则性；是否接受显式列出这些条件，正文定性结论仅陈述？',
    '印刷页与PDF页偏移发生变化；本章标题/Exercises/下章标题边界是否接受本次原页核对？'],
 6:['Prop6.1–6.3的已验收内容与原文一般质量/域/正则性是否一致？单位质量、单位周期实现的范围差异已逐行列明。',
-   'Theorem6.1已有谱和Brownian依赖，但完整指数收敛仍缺 semigroup/谱展开及实际过程桥接；是否接受保持statement_only？',
-   'Theorem6.2已有真实过程、kernel、Markov/Chapman–Kolmogorov依赖；唯一不变测度和完整遍历结论仍不能由这些依赖直接记为proved。',
-   'Proposition6.4的Poisson方程完整存在/唯一模核仍缺Fredholm、紧预解和核识别；封存CanonicalKernelConstant不计正式验收，是否明确？',
+   'Theorem6.1已有真实复谱、半群与过程law/L2密度平均桥接；本章完整陈述补L2初始密度和闭实现，原C2核心、任意初值及time average术语尚未统一验收。是否保留statement_only？',
+   'Assumption1的字面密度连续含t=0，标准扩散从点初值的密度不能如此延拓；一般Harris理论、实际正时密度存在和唯一性仍缺。是否接受字面与t>0版本分列？',
+   'Proposition6.4把weighted均值条件与flat前向伴随混用；字面版唯一性模Gibbs、相对密度修正版模常数分列，仍缺Fredholm/紧预解/rough核识别。是否需勘误？封存不计成果。',
    'Lemma6.1可达性已证单位质量/单位周期模型，但原文更一般域/质量和适应性语义签核仍需人工判断；相关行是否应保留weakened？']}[ch]
 counts=collections.Counter(r['状态'] for r in rows)
 intro=f'# 第{ch}章人工审阅材料\n\n{scope}\n\n清单是进度来源；defined与proved分开统计。Prop定义编译通过只确认陈述类型正确，不表示结论成立。\n'
@@ -70,7 +70,7 @@ else:
     leaves=['theorem51_statement','smoothDenominatorBound_proved','zeroPerturbation_proved',
       'liouvilleEquation_statement','liouvillianAdjoint_statement','microRaw','shellWeakLimit_statement',
       'surfaceAreaFormula_statement','microInvariant_statement','microErgodic','ergodicTimeAverage_statement',
-      'kam_statement','mixingCorrelation_statement','symplecticEulerShadow_proved','backwardEulerLimit_statement'] if ch==5 else ['theorem61_statement','theorem62_statement','proposition64_statement','lemma61_statement']
+      'kam_statement','mixingCorrelation_statement','symplecticEulerShadow_proved','backwardEulerLimit_statement'] if ch==5 else ['theorem61_statement','theorem62_statement','proposition64_statement','lemma61_statement','proposition_6_1','textbookWienerQuadraticSum_meanSquare_tendsto','textbookWienerDeterministicIto_proposition63','textbookBrownianDensityAverage_smooth_exponential','assumption1','textbookLangevinForwardDifferentialOperator_physical_canonical_eq_zero','textbookHormanderAt','textbookLangevinLyapunov_printed_laplacian_bound_counterexample','textbookLangevinCanonicalWeakH1','bathForce','canonicalAveragePrinted']
 chosen=[]
 for leaf in leaves:
     hit=next((r for r in rows if any(n.split('.')[-1]==leaf for n in r['Lean声明名'].split(';'))),None)
