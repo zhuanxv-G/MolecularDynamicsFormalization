@@ -1,0 +1,152 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH01b_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 75 | 53 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-2-Hamiltonian",
+  "kind": "definition",
+  "label": null,
+  "section": "2",
+  "printed_page": "53",
+  "pdf_page": "75",
+  "statement_latex": "and $H=\\boldsymbol p^TM^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$ is the Hamiltonian.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$M$为第1章固定对角质量矩阵；$\\boldsymbol q,\\boldsymbol p\\in\\mathbb R^n$。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.mechanicalHamiltonian",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+  "old_ids": [
+    "CH02-002"
+  ]
+}
+```
+
+## 实际Lean签名/定义
+```lean
+def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n) :
+    PhaseSpace n → ℝ := massHamiltonian m U
+```
+
+原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.CoordinateMasses (MolecularDynamics/Chapter01/NBody.lean:19)
+```lean
+abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Hamiltonian (MolecularDynamics/Notation.lean:24)
+```lean
+abbrev Hamiltonian (n : ℕ) := PhaseSpace n → ℝ
+```
+
+### MolecularDynamics.KineticEnergy (MolecularDynamics/Notation.lean:22)
+```lean
+abbrev KineticEnergy (n : ℕ) := Momentum n → ℝ
+```
+
+### MolecularDynamics.Momentum (MolecularDynamics/Notation.lean:15)
+```lean
+abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.Phase (MolecularDynamics/Chapter05/ReviewDefinitions.lean:19)
+```lean
+abbrev Phase (n : ℕ) := E n × E n
+```
+
+### MolecularDynamics.Chapter06Review.Phase (MolecularDynamics/Chapter06/ReviewDefinitions.lean:18)
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MolecularDynamics.PhaseSpace (MolecularDynamics/Notation.lean:17)
+```lean
+abbrev PhaseSpace (n : ℕ) := Position n × Momentum n
+```
+
+### MolecularDynamics.Position (MolecularDynamics/Notation.lean:13)
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.PotentialEnergy (MolecularDynamics/Notation.lean:21)
+```lean
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+```
+
+### MolecularDynamics.SeparableEnergy (MolecularDynamics/BasicDefinitions.lean:7)
+```lean
+structure SeparableEnergy (n : ℕ) where
+  kinetic : KineticEnergy n
+  potential : PotentialEnergy n
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter03Review.kinetic (MolecularDynamics/Chapter03/ReviewDefinitions.lean:117)
+```lean
+def kinetic {n : ℕ} (m : Fin n → ℝ) (p : Position n) : ℝ := (∑ i, p i^2/m i)/2
+```
+
+### MolecularDynamics.massHamiltonian (MolecularDynamics/Chapter01/Hamiltonian.lean:33)
+```lean
+noncomputable def massHamiltonian {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) : Hamiltonian n := (massSeparableEnergy m U).hamiltonian
+```
+
+### MolecularDynamics.Chapter06Review.massHamiltonian (MolecularDynamics/Chapter06/ReviewDefinitions.lean:37)
+```lean
+def massHamiltonian {n : ℕ} (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
+  (∑ i, (x.2 i) ^ 2 / (2 * m i)) + U x.1
+```
+
+### MolecularDynamics.massSeparableEnergy (MolecularDynamics/Chapter01/Hamiltonian.lean:30)
+```lean
+noncomputable def massSeparableEnergy {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) : SeparableEnergy n := ⟨momentumKineticEnergy m, U⟩
+```
+
+### MD.Ch02.mechanicalHamiltonian (Blueprint/Ch02.lean:23)
+```lean
+def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n) :
+    PhaseSpace n → ℝ := massHamiltonian m U
+```
+
+### MolecularDynamics.momentumKineticEnergy (MolecularDynamics/Chapter01/Hamiltonian.lean:27)
+```lean
+noncomputable def momentumKineticEnergy {n : ℕ} (m : CoordinateMasses n)
+    (p : Momentum n) : ℝ := ∑ i, (p i)^2 / (2 * m i)
+```

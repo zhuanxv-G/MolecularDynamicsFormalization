@@ -1,0 +1,48 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01d",
+  "source_ids": [
+    "MD-2-Euler"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 76,
+      "printed_page": 54
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7954ee90b9f83cd0a3e2e82f5e435c35da6380d8e7aa1e28b80858f9a80a083f",
+  "lean_sha256": "9d2ff0b587c6640243dcf736432e0b4f2357ee3bf04665ece85ade4b061e2527",
+  "signature_sha256": "d972017500dc16cadac7cbc70966761995bf5f94337b248f235b4bf71b73bb3e",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "euler",
+      "code_sha256": "d972017500dc16cadac7cbc70966761995bf5f94337b248f235b4bf71b73bb3e"
+    }
+  ],
+  "paste_plus_pdf_bytes": 124826,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2964,
+      "sha256": "b14ce006857ddd38360742f9f09b95ed24eedcff22fe3d278d4ee873caa2e994"
+    },
+    "BATCH01d_PAGES.pdf": {
+      "bytes": 121921,
+      "sha256": "6af3780218105f0dba2774fecf6a21313d6d359af3b62f38a74df93c1a2f2975"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

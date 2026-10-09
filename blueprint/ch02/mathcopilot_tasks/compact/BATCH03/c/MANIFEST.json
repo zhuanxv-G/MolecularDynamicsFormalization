@@ -1,0 +1,90 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03c",
+  "source_ids": [
+    "MD-2.1.2-Taylor2Order"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 81,
+      "printed_page": 59
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7954ee90b9f83cd0a3e2e82f5e435c35da6380d8e7aa1e28b80858f9a80a083f",
+  "lean_sha256": "9d2ff0b587c6640243dcf736432e0b4f2357ee3bf04665ece85ade4b061e2527",
+  "signature_sha256": "b274d6afd631fc6a123c0b272800e3d1c0093a3a226d18f1ab5cae8d1ec8570a",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "compactTrajectory",
+      "code_sha256": "6d4ebffdfb47b9a03e62490e3d6326ac6e80126ec4e908179bac64c61531baef"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "globalOrder",
+      "code_sha256": "120c2723578250096e3e60aa53a4849f231da7dde46ea2a70d56598775596621"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "oneStepIterate",
+      "code_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "oneStepMaxError",
+      "code_sha256": "a2e0304f877b1bcc275c037c80f553a53265a01a518b5109bd0a07449b85bc5a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "solution",
+      "code_sha256": "4246b13784e62583efb6e55b0aaf0235c08565f8c3c6ec6bf888afa19baaf49b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "taylor2",
+      "code_sha256": "d3ebcb506cb01f20d2ff1b8ee943a203175af0b7f611b80a84217aec479db7a8"
+    }
+  ],
+  "paste_plus_pdf_bytes": 78887,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5343,
+      "sha256": "4e49c34d9c66fe0e4d3628084ec6a5b186cef0b501d03de4351818638f48b76a"
+    },
+    "BATCH03c_PAGES.pdf": {
+      "bytes": 73656,
+      "sha256": "255c94d1b93989b845e8a9bbc2f9c334d8cdf0241a0d67cae01f492c5eb6041e"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

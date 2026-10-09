@@ -94,6 +94,9 @@ try {
         $blueprintFiles = @(Get-Item -LiteralPath (Join-Path $projectRoot 'Blueprint/Ch01.lean'))
     }
     $blueprintAudit = Join-Path $projectRoot 'blueprint/ch01/CheckAxioms.lean'
+    $chapter02Audit = Join-Path $projectRoot 'blueprint/ch02/CheckAxioms.lean'
+    $chapter02File = Join-Path $projectRoot 'Blueprint/Ch02.lean'
+    if (Test-Path -LiteralPath $chapter02File) { $blueprintFiles += Get-Item -LiteralPath $chapter02File }
     $inputPaths = @($sourceFiles.FullName) + @($blueprintFiles.FullName) + @(
         (Join-Path $projectRoot 'lean-toolchain'),
         (Join-Path $projectRoot 'lakefile.toml'),
@@ -102,6 +105,7 @@ try {
         (Join-Path $projectRoot '.github/workflows/lean_action_ci.yml')
     )
     if (Test-Path -LiteralPath $blueprintAudit) { $inputPaths += $blueprintAudit }
+    if (Test-Path -LiteralPath $chapter02Audit) { $inputPaths += $chapter02Audit }
     $report.inputs = @($inputPaths | Sort-Object -Unique | ForEach-Object {
         [ordered]@{
             relative_path = [IO.Path]::GetRelativePath($projectRoot, $_).Replace('\', '/')
@@ -195,6 +199,11 @@ try {
         if (-not (Test-Path -LiteralPath $blueprintAudit)) { throw 'Blueprint axiom audit file is required.' }
         $phase = 'blueprint_axiom_dependencies'
         $null = Invoke-CheckedCommand 'blueprint_axiom_dependencies' $lakeExe @('env', 'lean', $blueprintAudit)
+        if (Test-Path -LiteralPath $chapter02File) {
+            if (-not (Test-Path -LiteralPath $chapter02Audit)) { throw 'Chapter 2 Blueprint axiom audit file is required.' }
+            $phase = 'chapter02_axiom_dependencies'
+            $null = Invoke-CheckedCommand 'chapter02_axiom_dependencies' $lakeExe @('env', 'lean', $chapter02Audit)
+        }
     }
 
     $phase = 'input_stability'

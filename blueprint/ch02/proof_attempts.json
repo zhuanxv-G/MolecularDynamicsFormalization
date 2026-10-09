@@ -1,0 +1,27 @@
+{
+  "items": {
+    "MD-2.1-Thm2.1": [
+      {
+        "attempt": 1,
+        "route": "existing theorem bridge with retained uniqueness hypothesis",
+        "result": "PASS",
+        "evidence": "validation/section21/blueprint_fresh_Ch02.log"
+      }
+    ],
+    "MD-2.1.2-SecondDerivative": [
+      {
+        "attempt": 1,
+        "route": "fderiv chain rule and deriv extensional equality",
+        "result": "PASS",
+        "evidence": "validation/section21/blueprint_fresh_Ch02.log"
+      }
+    ],
+    "MD-2.1.2-Taylor2Order": [
+      {
+        "route": "theory gap audit",
+        "result": "STOP_MISSING_THEORY",
+        "detail": "Missing Taylor local truncation/stability/domain/global order bridge"
+      }
+    ]
+  }
+}

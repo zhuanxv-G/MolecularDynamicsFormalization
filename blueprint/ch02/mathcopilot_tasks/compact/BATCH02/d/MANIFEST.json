@@ -1,0 +1,71 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02d",
+  "source_ids": [
+    "MD-2.1-Thm2.1"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 76,
+      "printed_page": 54
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 78,
+      "printed_page": 56
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7954ee90b9f83cd0a3e2e82f5e435c35da6380d8e7aa1e28b80858f9a80a083f",
+  "lean_sha256": "9d2ff0b587c6640243dcf736432e0b4f2357ee3bf04665ece85ade4b061e2527",
+  "signature_sha256": "6f0e434a31407f1f5de51e8b81dd515c9958fb26ddd37238cb15934a39e502b3",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "Position",
+      "code_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/EulerConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "eulerIterate",
+      "code_sha256": "42d64399307388740d0e604fe3f5d57fb1c39b24bb4956cbb66bf394da1749fb"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/EulerConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "eulerMaxError",
+      "code_sha256": "7853b3a41945eb3f51970090059a3db0993a3bedf874d194fb555938d2148805"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/EulerConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "eulerStep",
+      "code_sha256": "c01610aca3621958b932f184cb4c1245891b409ea9c0a723706593b8afa1cf4b"
+    }
+  ],
+  "paste_plus_pdf_bytes": 146831,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5541,
+      "sha256": "2a1f4d4497e9204e9d586b3d32524e670ae189dfdf2ac5e74bb3f2a3142212e2"
+    },
+    "BATCH02d_PAGES.pdf": {
+      "bytes": 141396,
+      "sha256": "2a9a6657eea264b9378f9e79c152f90c5d2982e8464237f6fe2384ddd470a3ac"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

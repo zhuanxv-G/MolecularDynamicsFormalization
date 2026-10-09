@@ -1,0 +1,48 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01e",
+  "source_ids": [
+    "MD-2-OneStep"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 76,
+      "printed_page": 54
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7954ee90b9f83cd0a3e2e82f5e435c35da6380d8e7aa1e28b80858f9a80a083f",
+  "lean_sha256": "9d2ff0b587c6640243dcf736432e0b4f2357ee3bf04665ece85ade4b061e2527",
+  "signature_sha256": "f79d2e780fa2934c8ed0abd0f39a54ed010cb0660fc97384d1268e8419201ec8",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "numericalTrajectory",
+      "code_sha256": "f79d2e780fa2934c8ed0abd0f39a54ed010cb0660fc97384d1268e8419201ec8"
+    }
+  ],
+  "paste_plus_pdf_bytes": 125508,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3647,
+      "sha256": "f4d15fba5c573786c89a9bf49105282b8174f21c5cada1dcf86e6d4809ef9a60"
+    },
+    "BATCH01e_PAGES.pdf": {
+      "bytes": 121921,
+      "sha256": "6af3780218105f0dba2774fecf6a21313d6d359af3b62f38a74df93c1a2f2975"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

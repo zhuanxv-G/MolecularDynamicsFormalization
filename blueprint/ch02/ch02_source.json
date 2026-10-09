@@ -1,0 +1,335 @@
+[
+  {
+    "source_id": "MD-2-HamiltonianODE",
+    "kind": "definition",
+    "label": null,
+    "section": "2",
+    "printed_page": "53",
+    "pdf_page": "75",
+    "statement_latex": "The challenge before us is to compute solutions of\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad \\dot{\\boldsymbol p}=F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q),\\]\nor, more compactly, with $\\boldsymbol z$ representing the collection of all positions and momenta,\n\\[\\dot{\\boldsymbol z}=f(\\boldsymbol z),\\qquad f(\\boldsymbol z)=J\\nabla H.\\tag{2.1}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；$J$及$H$见同页下两条；n为配置坐标数。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.hamiltonianODE",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "原文ODE按时间域I逐点解释；只定义关系，不宣称解存在。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-001"
+    ]
+  },
+  {
+    "source_id": "MD-2-Hamiltonian",
+    "kind": "definition",
+    "label": null,
+    "section": "2",
+    "printed_page": "53",
+    "pdf_page": "75",
+    "statement_latex": "and $H=\\boldsymbol p^TM^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$ is the Hamiltonian.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$M$为第1章固定对角质量矩阵；$\\boldsymbol q,\\boldsymbol p\\in\\mathbb R^n$。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.mechanicalHamiltonian",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-002"
+    ]
+  },
+  {
+    "source_id": "MD-2-CanonicalJ",
+    "kind": "definition",
+    "label": null,
+    "section": "2",
+    "printed_page": "53",
+    "pdf_page": "75",
+    "statement_latex": "where $J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$,",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$I$为$n\\times n$单位阵；教材符号顺序$(q,p)$。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.canonicalJ",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-003"
+    ]
+  },
+  {
+    "source_id": "MD-2-Euler",
+    "kind": "definition",
+    "label": null,
+    "section": "2",
+    "printed_page": "54",
+    "pdf_page": "76",
+    "statement_latex": "The simplest scheme is certainly Euler’s method which advances the solution from timestep to timestep by the formula\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+hf(\\boldsymbol z_n).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$h$为步长；下标$n$为时间步而非向量分量。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.euler",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-004"
+    ]
+  },
+  {
+    "source_id": "MD-2-OneStep",
+    "kind": "definition",
+    "label": null,
+    "section": "2",
+    "printed_page": "54",
+    "pdf_page": "76",
+    "statement_latex": "Suppose that the system under study has a well defined flow map $\\mathcal F_t$ defined on the phase space (which is assumed to exclude any singular points of the potential energy function). The solution of the initial value problem, $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, $\\boldsymbol z(0)=\\boldsymbol\\zeta$, may be written $\\boldsymbol z(t;\\boldsymbol\\zeta)$ (with $\\boldsymbol z(0;\\boldsymbol\\zeta)=\\boldsymbol\\zeta$), and the flow-map $\\mathcal F_t$ satisfies $\\mathcal F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t;\\boldsymbol\\zeta)$: A one-step method, starting from a given point, approximates a point on the solution trajectory at a given time $h$ units later. Such a method defines a map $\\mathcal G_h$ of the phase space as illustrated in Fig. 2.1.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$\\mathcal F_t(\\zeta)$为给定实际ODE解；$\\mathcal G_h$为单步近似映射；近似质量由后面的误差定义衡量。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.numericalTrajectory",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-005",
+      "CH02-006"
+    ]
+  },
+  {
+    "source_id": "MD-2.1-Convergence",
+    "kind": "definition",
+    "label": null,
+    "section": "2.1",
+    "printed_page": "55",
+    "pdf_page": "77",
+    "statement_latex": "The convergence of a numerical method refers to the ability of the method to provide an arbitrary level of accuracy by using small enough timesteps.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "固定有限时间窗$[0,\\tau]$，$h=\\tau/\\nu$，最大节点误差见p.56/PDF78。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.convergence",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "按固定时间窗网格h=τ/ν表达任意精度；τ>0在具体定理中明示。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-007"
+    ]
+  },
+  {
+    "source_id": "MD-2.1-Order",
+    "kind": "definition",
+    "label": null,
+    "section": "2.1",
+    "printed_page": "55",
+    "pdf_page": "77",
+    "statement_latex": "The order of accuracy is the exponent in the power law by which the error in the method is related to the stepsize. For example, when we say that a method is third order accurate, we mean that the global error (on a fixed finite time interval) can be bounded by $Kh^3$, where $h$ is a sufficiently small timestep and $K$ is a number which depends on the length of the time interval and the features of the problem, but which is independent of $h$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$r=3$为原文例子；定义扩展到一般自然数阶$r$，$h=\\tau/\\nu$。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.order",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "自然数阶r；ν₀>0避免零除；K选择严格正不损失误差上界。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-008"
+    ]
+  },
+  {
+    "source_id": "MD-2.1-Error",
+    "kind": "definition",
+    "label": null,
+    "section": "2.1",
+    "printed_page": "56",
+    "pdf_page": "78",
+    "statement_latex": "Let the approximate solution vectors at successive timesteps be $\\boldsymbol z_0,\\boldsymbol z_1,\\ldots,\\boldsymbol z_\\nu$ where $\\nu h=\\tau$. We assume that $\\tau$, the length of the time interval, is fixed, and $\\nu$ is an integer parameter representing the total number of timesteps. In order to improve the quality of the approximation, the parameter $\\nu$ may be increased, as the stepsize is proportionately decreased. The error at step $n$ is defined by $e_n=\\|\\boldsymbol z_n-\\boldsymbol z(t_n)\\|$, where $t_n=nh$; it clearly depends on $h$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$\\bar e=\\max_{0\\le n\\le\\nu} e_n$来自紧接Theorem2.1；$t_n=nh$，含n=0。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.maximumError",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-009",
+      "CH02-010",
+      "CH02-011"
+    ]
+  },
+  {
+    "source_id": "MD-2.1-Thm2.1",
+    "kind": "theorem",
+    "label": "Theorem 2.1",
+    "section": "2.1",
+    "printed_page": "56",
+    "pdf_page": "78",
+    "statement_latex": "Let $\\mathcal D$ be a bounded, open region in $\\mathbb R^m$ such that $f:\\mathcal D\\to\\mathbb R^m$ is continuously differentiable. Let $\\boldsymbol\\zeta$ be an interior point of $\\mathcal D$ and suppose the initial value problem (2.1) has a unique solution that remains in $\\mathcal D$ for $t\\in[0,\\tau]$. Then there exists a constant $C(\\tau)>0$ such that for sufficiently large $\\nu\\in\\mathbb N$ the numerical solution $\\boldsymbol z_n$ remains in $\\mathcal D$ for $n=0,1,\\ldots,\\nu$, where $h\\nu=\\tau$, and, moreover, the maximum global error in Euler’s method satisfies\n\\[\\bar e:=\\max_{0\\le n\\le\\nu}e_n\\le C(\\tau)h.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$\\zeta=\\gamma(0)$，$e_n$和$h=\\tau/\\nu$见同页上段；Euler单步见p.54/PDF76。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.theorem_2_1",
+    "reusable_proofs": [
+      "MolecularDynamics.theorem_2_1_euler"
+    ],
+    "extra_assumptions": [
+      "时间长度τ≥0显式化；f以环境全函数表示，只在开放D上要求C¹。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-012",
+      "CH02-013"
+    ]
+  },
+  {
+    "source_id": "MD-2.1.2-SecondDerivative",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.1.2",
+    "printed_page": "59",
+    "pdf_page": "81",
+    "statement_latex": "and the second derivative is obtained by differentiating the differential equation itself:\n\\[\\ddot{\\boldsymbol z}(t)=\\frac{\\mathrm d}{\\mathrm dt}\\dot{\\boldsymbol z}(t)=\\frac{\\mathrm d}{\\mathrm dt}f(\\boldsymbol z(t))=f'(\\boldsymbol z(t))\\dot{\\boldsymbol z}(t)=f'(\\boldsymbol z(t))f(\\boldsymbol z(t)),\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$f\\in C^1$，$\\dot z=f(z)$；$f'$为实际Fréchet导数/Jacobian。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.odeSecondDerivative",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "解γ取C²；原文连续求两次时间导数的正则性显式化。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-014"
+    ]
+  },
+  {
+    "source_id": "MD-2.1.2-Taylor2",
+    "kind": "definition",
+    "label": "Example 2.1 (map)",
+    "section": "2.1.2",
+    "printed_page": "59",
+    "pdf_page": "81",
+    "statement_latex": "so one may write the 2nd order Taylor series method as\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+hf(\\boldsymbol z_n)+\\frac{h^2}{2}f'(\\boldsymbol z_n)f(\\boldsymbol z_n).\\]\nThis method generates the flow map approximation\n\\[\\mathcal G_h(\\boldsymbol z)=\\boldsymbol z+hf(\\boldsymbol z)+\\frac{h^2}{2}f'(\\boldsymbol z)f(\\boldsymbol z).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "Note that by the notation $f'(\\boldsymbol z)$ where $\\boldsymbol z\\in\\mathbb R^m$ and $f:\\mathbb R^m\\to\\mathbb R^m$, is meant the $m\\times m$ Jacobian matrix whose $ij$-component is $(f'(\\boldsymbol z))_{ij}=\\partial f_i/\\partial z_j$. An alternative notation for $f'$ is $\\partial f/\\partial\\boldsymbol z$."
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.taylorSecond",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-015",
+      "CH02-017"
+    ]
+  },
+  {
+    "source_id": "MD-2.1.2-Taylor2Order",
+    "kind": "unnumbered_claim",
+    "label": "Example 2.1 (order)",
+    "section": "2.1.2",
+    "printed_page": "59",
+    "pdf_page": "81",
+    "statement_latex": "which is referred to as the 2nd order Taylor series method.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "同页方法公式及前段全局有限时间窗高阶误差定义；“2nd order”含阶陈述。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.taylor2Order",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "compactTrajectory要求f全域C⁶及实际解在固定紧时间窗连续；强于二阶所需，标[EXTRA]，仍需证明局部误差及稳定留域。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "old_ids": [
+      "CH02-016"
+    ]
+  }
+]

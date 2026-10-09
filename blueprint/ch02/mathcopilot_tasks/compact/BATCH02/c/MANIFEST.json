@@ -1,0 +1,60 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02c",
+  "source_ids": [
+    "MD-2.1-Error"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 78,
+      "printed_page": 56
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7954ee90b9f83cd0a3e2e82f5e435c35da6380d8e7aa1e28b80858f9a80a083f",
+  "lean_sha256": "9d2ff0b587c6640243dcf736432e0b4f2357ee3bf04665ece85ade4b061e2527",
+  "signature_sha256": "89ff35b2af09075c46c9358168fc7352256ab3050071ad67f9901084c30931b6",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "maximumError",
+      "code_sha256": "89ff35b2af09075c46c9358168fc7352256ab3050071ad67f9901084c30931b6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "oneStepIterate",
+      "code_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "oneStepMaxError",
+      "code_sha256": "a2e0304f877b1bcc275c037c80f553a53265a01a518b5109bd0a07449b85bc5a"
+    }
+  ],
+  "paste_plus_pdf_bytes": 106928,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4430,
+      "sha256": "09c69c53c896c94979501a4146fa1b2b3bc1450318fdf47d66ac40ac81e98c9c"
+    },
+    "BATCH02c_PAGES.pdf": {
+      "bytes": 102581,
+      "sha256": "3ab51a8a9dc761f8b1ff1fe54c1d940c15fe96fe681f3d5b90100f93ed301de3"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

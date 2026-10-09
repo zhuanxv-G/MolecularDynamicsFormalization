@@ -1,0 +1,54 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01c",
+  "source_ids": [
+    "MD-2-CanonicalJ"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 75,
+      "printed_page": 53
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7954ee90b9f83cd0a3e2e82f5e435c35da6380d8e7aa1e28b80858f9a80a083f",
+  "lean_sha256": "9d2ff0b587c6640243dcf736432e0b4f2357ee3bf04665ece85ade4b061e2527",
+  "signature_sha256": "8efac37fc95eb8b9de41f2bbf9c8a7fedb99cebaf41d853e46b0d232bdcdf45d",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinateMatrix",
+      "code_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "canonicalJ",
+      "code_sha256": "8efac37fc95eb8b9de41f2bbf9c8a7fedb99cebaf41d853e46b0d232bdcdf45d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookJ",
+      "code_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    }
+  ],
+  "paste_plus_pdf_bytes": 94007,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3069,
+      "sha256": "8df2e817f2d9371ca36146bf97f95c5107276095e667dae211d8984ad5b7935d"
+    },
+    "BATCH01c_PAGES.pdf": {
+      "bytes": 91004,
+      "sha256": "cec95183e90be386760ce64f32cfc6598749e96779316872d293bd122806c273"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

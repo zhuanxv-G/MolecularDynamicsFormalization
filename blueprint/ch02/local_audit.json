@@ -1,0 +1,363 @@
+{
+  "template": "C",
+  "method": "local_read_only_semantic_review",
+  "website_audit": "待网站审计",
+  "items": {
+    "MD-2-HamiltonianODE": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.hamiltonianODE",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "64f9c96d0a4ae55f8528b9a0b3968ff0bb32f8d587793814546bf59b4528ae21",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.hamiltonianODE；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2-Hamiltonian": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.mechanicalHamiltonian",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "8b8585b4f7838dd429ec99818a63e6aa3c0a4a75852725679fec79facca9f335",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.mechanicalHamiltonian；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2-CanonicalJ": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.canonicalJ",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "8efac37fc95eb8b9de41f2bbf9c8a7fedb99cebaf41d853e46b0d232bdcdf45d",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.canonicalJ；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2-Euler": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.euler",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "d972017500dc16cadac7cbc70966761995bf5f94337b248f235b4bf71b73bb3e",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.euler；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2-OneStep": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.numericalTrajectory",
+      "verdict": "PASS",
+      "explanation": "定义只记录给定单步映射的有限迭代，不将任意映射称为收敛近似或宣称全球流存在。",
+      "signature_sha256": "f79d2e780fa2934c8ed0abd0f39a54ed010cb0660fc97384d1268e8419201ec8",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.numericalTrajectory；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.1-Convergence": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.convergence",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "dae87f54a85b8f54c7b38cf55b26311d4cd0b182d41066bdc9ba6215dd5b8332",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.convergence；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.1-Order": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.order",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "e05f04a1c9ec06ba535591b5c5ae2e10043d637264e49e2d516a5c8f0a8ad0bb",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.order；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.1-Error": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.maximumError",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "89ff35b2af09075c46c9358168fc7352256ab3050071ad67f9901084c30931b6",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.maximumError；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.1-Thm2.1": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.theorem_2_1",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "6f0e434a31407f1f5de51e8b81dd515c9958fb26ddd37238cb15934a39e502b3",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.theorem_2_1_euler"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "有界开放D、f C¹、初值内部及唯一实际解",
+          "lean": "hDb,hD,hf,hγD,hγ,_hunique；ζ=γ0",
+          "note": "一致；唯一性保留但桥接证明不需使用"
+        },
+        {
+          "source": "足够大ν后每个n≤ν数值留域，最大误差≤Ch",
+          "lean": "C>0、ν₀>0、∀ν≥ν₀后的两个合取结论",
+          "note": "一致；未将数值留域作假设"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.1.2-SecondDerivative": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.odeSecondDerivative",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "bedcaaed95d38f1ca0a96e32276b27794c9f081c2dd7a3856d1c0135a1dbe773",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.odeSecondDerivative；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.1.2-Taylor2": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.taylorSecond",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "2f0a0b493c444eedd7791d6e5e1250bc7f7ed3cfc089cbc805c63a748f83f396",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.taylorSecond；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.1.2-Taylor2Order": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch02.taylor2Order",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "b274d6afd631fc6a123c0b272800e3d1c0093a3a226d18f1ab5cae8d1ec8570a",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺一般Taylor方法局部截断误差、数值留域与全局阶桥接；当前库仅一般one-step条件误差定理。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.taylor2Order；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "axiom_log": "blueprint\\ch02\\validation\\section21\\chapter02_axiom_dependencies.log"
+    }
+  }
+}
