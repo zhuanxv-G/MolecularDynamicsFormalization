@@ -4,6 +4,8 @@
 
 2026-10-09输入限制补充：BATCH01推荐用[精简提交说明](compact/BATCH01/README.md)，分a/b/c三个Task，每份指令853字节，只引用该子任务的材料MD与裁页PDF，两附件+指令合计均小于256000字节。原五条及冻结输入保持原样；三个返回文件逐条整合后才算原BATCH01覆盖完整。旧包与BATCH02–23仍保留；网站实际接收未验证。
 
+网站读取工具故障补充：若报code-mode host closed its stdout，按上述说明将各子任务PASTE.txt全文复制到新Task输入框，只关联对应PDF；PASTE不是供上传的替代附件。若PDF仍读失败则不能完成原页审校，保留待审并反馈维护方。
+
 | 批次 | source_id | 上传文件及页码 | 建议顺序 |
 |---|---|---|---|
 | BATCH01 | MD-1.5.3-Thm1.1, MD-1.2-EnergyConservation, MD-1.3-NewtonEulerLagrange, MD-1.4-LegendreHamiltonian, MD-1.5.1-FlowInverse | 见BATCH01.md包首清单；原文PDF 55, 42, 46, 47, 49 | 1 |

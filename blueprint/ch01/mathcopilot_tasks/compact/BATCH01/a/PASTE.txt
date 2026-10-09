@@ -1,0 +1,282 @@
+请直接使用下方的1条完整材料，依次执行原文审校A和只读语义审计C，按材料末尾要求仅返回一个JSON数组。教材原页见附件BATCH01a_PAGES.pdf，页码映射见下方。
+审校材料已包含在本条消息中，无需调用工具读取Markdown文件。仍须实际核对教材原页；若PDF读取也报错，明确报告工具错误和缺项，未完成的核对不得记为通过。
+
+# BATCH01a 精简审校材料
+
+本批只做原文审校A与只读语义审计C；模板B取消。Lean4.34.0 / Mathlib v4.34.0。
+以下原文JSON、Lean签名及依赖定义从冻结输入逐字截取；没有改写定义或假设。
+这是供审阅的摘录，不是独立Lean工程；未提供定理证明体，不能据此审计证明或公理。
+标准Mathlib运算/微积分符号按该固定版本解释，关键ODE定义另附。
+
+## PDF页码映射
+
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 41 | 18 |
+| 2 | 48 | 25 |
+| 3 | 54 | 31 |
+| 4 | 55 | 32 |
+
+## 审校规则
+
+A：逐条打开原页，核对statement_latex、proof_latex、proof_discussion_latex、页码和context_notation。不得把转述当原文，不静默修正原书，不补造原文证明；null表示无独立完整证明。corrected_json需保留完整条目及source_id；证据指出原PDF页和具体短语/公式。
+C：以A核对后的原文比对实际定义展开、对象/域、量词、假设和全部结论；逐条判断[EXTRA]是否合理、[ERRATUM?]是否需导师判断。禁止以True、P→P、结论作假设、替换对象通过审计。sorry与签名语义分开判断；只读，不修改工程或写证明；给出具体理由、反例和建议。所需上下文/定义缺失时标NEEDS_HUMAN并列缺项，不能按名称猜测或跳过。
+本材料未附本地PASS结果，不得假定本地结论正确。
+
+## 本批完整原文条目与Lean签名
+
+### MD-1.5.3-Thm1.1
+
+```json
+{
+  "source_id": "MD-1.5.3-Thm1.1",
+  "kind": "theorem",
+  "label": "Theorem 1.1",
+  "section": "1.5.3",
+  "printed_page": "32",
+  "pdf_page": "55",
+  "statement_latex": "If $\\boldsymbol{q}^*$ is a strong local minimum of smooth potential $U$ then $\\boldsymbol{z}^*=(\\boldsymbol{q}^*,0)$ is stable.",
+  "proof_latex": null,
+  "proof_note": "原文只有以下证明思路并指向[216]，无完整证明；不把思路冒充原文证明。",
+  "proof_discussion_latex": "The proof of this theorem relies on showing that if trajectories are started from a point sufficiently close to $\\boldsymbol{z}^*$ they cannot wander away to infinity. Although the result holds in greater generality, it is easy to show under assumptions of local smoothness of $U$ (which we are normally happy to make in molecular dynamics). For more discussion see the text [216].",
+  "context_notation": [
+    "$\\boldsymbol{z}=(\\boldsymbol{q},\\boldsymbol{p})$，相空间位置与动量：§1.4印刷p.25/PDF48；$H(\\boldsymbol{q},\\boldsymbol{p})=\\boldsymbol{p}^TM^{-1}\\boldsymbol{p}/2+U(\\boldsymbol{q})$：§1.5.3印刷p.32/PDF55。",
+    "平衡点$f(\\boldsymbol{z}^*)=0$：§1.5.3印刷p.31/PDF54；同节假设平衡点附近$f$连续可微。",
+    "强局部极小：存在$\\epsilon>0$，$0<\\|\\boldsymbol{q}-\\boldsymbol{q}^*\\|<\\epsilon\\Rightarrow U(\\boldsymbol{q})>U(\\boldsymbol{q}^*)$，印刷p.32/PDF55。",
+    "稳定：for all $\\epsilon$, there exists $\\delta$ such that, for all $\\boldsymbol{z}_0$ with $\\|\\boldsymbol{z}_0-\\boldsymbol{z}^*\\|<\\delta$, $\\sup_{t\\geq0}\\|\\mathcal{F}_t(\\boldsymbol{z}_0)-\\boldsymbol{z}^*\\|<\\epsilon$，印刷p.32/PDF55；按正容差解释，正文量词省略$\\epsilon,\\delta>0$。",
+    "$\\boldsymbol{M}$固定正定质量矩阵：§1.2印刷p.18/PDF41的对角质量及§1.5印刷p.25/PDF48的正定前提。"
+  ],
+  "issues": [
+    {
+      "code": "PAGE_SPAN_CORRECTION",
+      "status": "local_verified",
+      "detail": "用户范围31–32/54–55是背景跨度；定理与证明思路均仅32/55。"
+    }
+  ],
+  "lean_decl": "MD.Ch01.theorem_1_1",
+  "reusable_proofs": [
+    "MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_smooth"
+  ],
+  "extra_assumptions": [
+    "hm: 每个固定对角质量正；来自§1.5正定背景，定理句未重复。",
+    "hQ: 势能位置域Q开放；局部ODE和极小值邻域须位于定义域。",
+    "hstrict包含q₀∈Q；补出原文默认的定义域资格。"
+  ],
+  "statement_scope": "只摘录定理句；稳定/强极小定义作为context_notation，Hartman–Grobman陈述不在试点。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "LOCAL_DRAFT",
+      "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+      "before_sha256": "ed167f52115e5ea9d0bd16168460ee67544284d8bb650c47f93b7aacde4503e0",
+      "after_sha256": "15c882d153436a4622fba98867b6fada60a25b60c46ed413654ae763c1a28a12"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+声明全名：`MD.Ch01.theorem_1_1`；原位置：Blueprint/Ch01.lean。
+
+```lean
+/-- source_id: MD-1.5.3-Thm1.1 · Theorem 1.1 · printed p.32 / PDF p.55
+Original: A strong local minimum of a smooth potential yields a stable equilibrium.
+[EXTRA] hm: positive fixed diagonal masses, inherited from p.25 positive definiteness.
+[EXTRA] hQ: open position domain for local ODEs and the minimum neighborhood.
+[EXTRA] hstrict includes q₀ ∈ Q, the implicit domain qualification.
+hU is the original smoothness hypothesis, not an extra C1-force assumption.
+The Euclidean predicate retains positive ε/δ, all nearby initial states, future
+existence, and a bounded real supremum strictly below ε for every future solution.
+The theorem sentence and proof discussion are on p.32 only; p.31 is background. -/
+theorem theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (q₀ : Position n)
+    (hm : ∀ i, 0 < m i) (hQ : IsOpen Q)
+    (hU : ∀ q ∈ Q, ContDiffAt ℝ ∞ U q)
+    (hstrict : IsStrictPotentialMinOn U Q q₀) :
+    IsMechanicalEquilibrium m (fun q => -gradient U q) (q₀, (0 : Momentum n)) ∧
+    IsFutureMechanicalStableEuclidean m (fun q => -gradient U q) Q
+      (q₀, (0 : Momentum n))
+```
+
+## 实际依赖定义（逐字摘录）
+
+原Blueprint处于namespace MD.Ch01，open Set MolecularDynamics MeasureTheory MolecularDynamics.Chapter01Review Filter；open scoped ContDiff InnerProductSpace BigOperators Topology Matrix.Norms.L2Operator。n表示配置坐标数N_c；三维原子模型中N_c=3N。
+每段的namespace和文件路径仅说明原上下文，定义体保持原样。
+
+### MolecularDynamics.CoordinateMasses
+
+原文件：MolecularDynamics/Chapter01/NBody.lean:19。
+
+```lean
+abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Force
+
+原文件：MolecularDynamics/Notation.lean:20。
+
+```lean
+abbrev Force (n : ℕ) := Position n → Position n
+```
+
+### MolecularDynamics.IsFutureMechanicalStableEuclidean
+
+原文件：MolecularDynamics/Chapter01/EuclideanStability.lean:18。
+
+```lean
+def IsFutureMechanicalStableEuclidean {n : ℕ} (m : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (zstar : PhaseSpace n) : Prop :=
+  ∀ ε > 0, ∃ δ > 0, ∀ z₀ : PhaseSpace n, phaseEuclideanDistance z₀ zstar < δ →
+    (∃ a < (0 : ℝ), ∃ γ : ℝ → PhaseSpace n,
+      IsMechanicalSolutionOn m F Q (Ioi a) γ ∧ γ 0 = z₀) ∧
+    ∀ a < (0 : ℝ), ∀ γ : ℝ → PhaseSpace n,
+      IsMechanicalSolutionOn m F Q (Ioi a) γ → γ 0 = z₀ →
+      BddAbove (range (fun t : Ici (0 : ℝ) => phaseEuclideanDistance (γ t) zstar)) ∧
+      sSup (range (fun t : Ici (0 : ℝ) => phaseEuclideanDistance (γ t) zstar)) < ε
+```
+
+### IsIntegralCurveOn
+
+原文件：.lake/packages/mathlib/Mathlib/Analysis/ODE/Basic.lean:44。
+
+原上下文：`open Set`，`variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]`。
+
+```lean
+def IsIntegralCurveOn (γ : ℝ → E) (v : ℝ → E → E) (s : Set ℝ) : Prop :=
+  ∀ t ∈ s, HasDerivWithinAt γ (v t (γ t)) s t
+```
+
+### MolecularDynamics.IsMechanicalEquilibrium
+
+原文件：MolecularDynamics/Chapter01/Equilibrium.lean:11。
+
+```lean
+def IsMechanicalEquilibrium {n : ℕ} (m : CoordinateMasses n)
+    (F : Force n) (z₀ : PhaseSpace n) : Prop :=
+  mechanicalVectorField m F z₀ = 0
+```
+
+### MolecularDynamics.IsMechanicalSolutionOn
+
+原文件：MolecularDynamics/Chapter01/LocalTrajectories.lean:74。
+
+```lean
+def IsMechanicalSolutionOn {n : ℕ} (μ : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (I : Set ℝ) (γ : ℝ → PhaseSpace n) : Prop :=
+  (∀ t ∈ I, (γ t).1 ∈ Q) ∧
+    IsIntegralCurveOn γ (fun _ z => mechanicalVectorField μ F z) I
+```
+
+### MolecularDynamics.IsStrictPotentialMinOn
+
+原文件：MolecularDynamics/Chapter01/PotentialBarriers.lean:30。
+
+```lean
+def IsStrictPotentialMinOn {E : Type*} [MetricSpace E]
+    (U : E → ℝ) (Q : Set E) (q₀ : E) : Prop :=
+  q₀ ∈ Q ∧ ∃ R : ℝ, StrictPotentialMinRadius U Q q₀ R
+```
+
+### MolecularDynamics.MassMatrix
+
+原文件：MolecularDynamics/Notation.lean:18。
+
+```lean
+abbrev MassMatrix (n : ℕ) := Matrix (Fin n) (Fin n) ℝ
+```
+
+### MolecularDynamics.Momentum
+
+原文件：MolecularDynamics/Notation.lean:15。
+
+```lean
+abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.PhaseSpace
+
+原文件：MolecularDynamics/Notation.lean:17。
+
+```lean
+abbrev PhaseSpace (n : ℕ) := Position n × Momentum n
+```
+
+### MolecularDynamics.Position
+
+原文件：MolecularDynamics/Notation.lean:13。
+
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.PotentialEnergy
+
+原文件：MolecularDynamics/Notation.lean:21。
+
+```lean
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+```
+
+### MolecularDynamics.StrictPotentialMinRadius
+
+原文件：MolecularDynamics/Chapter01/PotentialBarriers.lean:26。
+
+```lean
+def StrictPotentialMinRadius {E : Type*} [MetricSpace E]
+    (U : E → ℝ) (Q : Set E) (q₀ : E) (R : ℝ) : Prop :=
+  0 < R ∧ ∀ q ∈ Q, q ≠ q₀ → dist q q₀ < R → U q₀ < U q
+```
+
+### MolecularDynamics.Velocity
+
+原文件：MolecularDynamics/Notation.lean:14。
+
+```lean
+abbrev Velocity (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.diagonalMassMatrix
+
+原文件：MolecularDynamics/Chapter01/NBody.lean:22。
+
+```lean
+def diagonalMassMatrix {n : ℕ} (masses : CoordinateMasses n) : MassMatrix n :=
+  Matrix.diagonal masses
+```
+
+### MolecularDynamics.mechanicalVectorField
+
+原文件：MolecularDynamics/Chapter01/LocalTrajectories.lean:69。
+
+```lean
+noncomputable def mechanicalVectorField {n : ℕ} (μ : CoordinateMasses n)
+    (F : Force n) (z : PhaseSpace n) : PhaseSpace n :=
+  (velocityOperator μ z.2, F z.1)
+```
+
+### MolecularDynamics.phaseEuclideanDistance
+
+原文件：MolecularDynamics/Chapter01/PhaseMetric.lean:16。
+
+```lean
+noncomputable def phaseEuclideanDistance {n : ℕ} (z w : PhaseSpace n) : ℝ :=
+  Real.sqrt (dist z.1 w.1 ^ 2 + dist z.2 w.2 ^ 2)
+```
+
+### MolecularDynamics.velocityOperator
+
+原文件：MolecularDynamics/Chapter01/LocalTrajectories.lean:24。
+
+```lean
+noncomputable def velocityOperator {n : ℕ} (μ : CoordinateMasses n) :
+    Momentum n →L[ℝ] Velocity n :=
+  (Matrix.toEuclideanLin (diagonalMassMatrix μ)⁻¹).toContinuousLinearMap
+```
+
+## 返回格式
+
+仅输出一个JSON数组；每个source_id恰好一次。
+
+```json
+[{"source_id":"本批ID","json_review":{"status":"APPROVED|CORRECTED|NEEDS_HUMAN","issue_codes":[],"corrected_json":null,"issues":[],"evidence":[]},"audit":{"lean_decl":"完整声明名","verdict":"PASS|FAIL|NEEDS_HUMAN","explanation":"逐项理由","counterexample":null,"suggested_fix":null}}]
+```

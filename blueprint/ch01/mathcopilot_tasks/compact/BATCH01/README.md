@@ -2,6 +2,22 @@
 
 原BATCH01的五条内容均保留，分成a/b/c三个独立Task。各Task输入框只粘贴PROMPT.txt，分别关联本行的两个附件。无需把全章JSON、Blueprint或64个依赖文件加入当前Task。
 
+## 读取工具报错时：直接粘贴材料
+
+用户反馈网站报`code-mode host closed its stdout`，尚未获取到文件内容或确认文件存在。该错误只能表明读取工具的通信通道异常；不能判断上传成功与否或具体服务器故障原因。
+
+每个小Task可改用下列方式：打开PASTE.txt，将全文直接复制到新Task输入框，只关联本行PDF附件。PASTE.txt包含任务指令及逐字完整审校材料，不要求工具读取Markdown；不能把PASTE.txt仅作为附件上传，否则仍依赖文件读取工具。
+
+| 子任务 | 全文粘贴到输入框 | 只上传/引用的附件 | 输入文本字节 | 输入+PDF总字节 |
+|---|---|---|---|---|
+| a | [a/PASTE.txt](a/PASTE.txt) | [BATCH01a_PAGES.pdf](a/BATCH01a_PAGES.pdf) | 12079 | 227091 |
+| b | [b/PASTE.txt](b/PASTE.txt) | [BATCH01b_PAGES.pdf](b/BATCH01b_PAGES.pdf) | 13658 | 207204 |
+| c | [c/PASTE.txt](c/PASTE.txt) | [BATCH01c_PAGES.pdf](c/BATCH01c_PAGES.pdf) | 16427 | 130115 |
+
+本地已验证PASTE末尾逐字包含原MATERIALS全部字节，冻结材料/PDF没有改动，三个子任务完整覆盖原五条；证据见各子目录PASTE_MANIFEST.json。网站是否能接收、是否能读取PDF尚未验证。如果PDF读取也出现相同工具错误，原页审校无法完成，应向网站维护方反馈并保留待审状态，不能伪称原页核对通过。
+
+## 正常附件读取方式
+
 | 顺序 | 提交到输入框 | 需上传/引用的两个附件 | 条数 | 指令+两附件总字节 |
 |---|---|---|---|---|
 | 1 | [a/PROMPT.txt](a/PROMPT.txt) | [BATCH01a_MATERIALS.md](a/BATCH01a_MATERIALS.md) + [BATCH01a_PAGES.pdf](a/BATCH01a_PAGES.pdf) | 1 | 227515 |

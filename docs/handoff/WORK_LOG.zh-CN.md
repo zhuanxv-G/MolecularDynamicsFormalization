@@ -203,3 +203,7 @@ BATCH01–07及7段自动审阅文档更新；LJ印刷力符号/局部参数化�
 ## 2026-10-09 MathCopilot 256KB输入适配
 BATCH01分a/b/c；每份853字节指令+两附件，总227515/207628/130539字节；冻结输入逐字一致、13导出页像素一致，网站接收未验证。
 下一步：用户按compact/BATCH01/README.md提交；逐条整合返回；无Lean源码变化，heartbeat原样。
+
+## 2026-10-09 网站读取通道故障应对
+用户返回code-mode host closed its stdout，未读到文件；生成a/b/c的PASTE.txt（12–17KB），逐字含完整材料，原冻结输入/PDF保持；网站接收未验证。
+下一步：新Task全文粘贴PASTE，只关联对应PDF；PDF也读取失败则保留待审并反馈维护方；无Lean变化、heartbeat原样。

@@ -1,7 +1,7 @@
 # 当前可操作状态
 
 当前任务：第1章本地部分完成，等待用户提交 MathCopilot 批次（见 INDEX.md）
-下一步：用户反馈网站输入上限256KB；BATCH01先按blueprint/ch01/mathcopilot_tasks/compact/BATCH01/README.md提交a/b/c三小Task（各853字节指令+两附件，总<256000字节）；其他批次见INDEX.md。mathcopilot_results/有新返回件优先整合EAUDIT，无新件只确认状态。
+下一步：网站读取工具报code-mode host closed its stdout；BATCH01改为全文粘贴blueprint/ch01/mathcopilot_tasks/compact/BATCH01/a、b、c/PASTE.txt到各新Task，只引用对应PDF；文本12–17KB，总<256000字节。若PDF也读取失败则保持待审并反馈维护方。有新返回优先整合EAUDIT，无新件确认等待。
 
 本地交付：印刷p.1–45正文，141条逐字JSON/Blueprint/本地预审、23批A+C包、7段式全章文档全部齐全；原文仍DRAFT，网站尚未审校。
 验证：45原页已渲染核对；本地124 PASS/17 NEEDS_HUMAN；60定义、53条已证定理（20本地证明+33桥接），28处直接sorry。70 self-contained / 38 checked+documented priors / 33 incomplete（含5个待裁定定义）。

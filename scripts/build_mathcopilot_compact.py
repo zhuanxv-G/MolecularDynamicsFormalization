@@ -242,9 +242,49 @@ def build(batch_name: str, part: str | None = None) -> None:
                       'pages': pages, 'validation': report['validation']}, ensure_ascii=False))
 
 
+def build_paste(part: str) -> None:
+    """Export visible message text when the website's file-read host fails."""
+    folder = TASKS / 'compact/BATCH01' / part
+    manifest = json.loads((folder / 'MANIFEST.json').read_text(encoding='utf-8-sig'))
+    export_name = 'BATCH01' + part
+    material_name = export_name + '_MATERIALS.md'
+    pdf_name = export_name + '_PAGES.pdf'
+    for name, entry in manifest['files'].items():
+        raw = (folder / name).read_bytes()
+        if sha(folder / name) != entry['sha256'] or len(raw) != entry['bytes']:
+            raise ValueError('Existing compact input changed: ' + name)
+    prompt = (
+        f'请直接使用下方的{len(manifest["source_ids"])}条完整材料，依次执行原文审校A和只读语义审计C，'
+        f'按材料末尾要求仅返回一个JSON数组。教材原页见附件{pdf_name}，页码映射见下方。\n'
+        '审校材料已包含在本条消息中，无需调用工具读取Markdown文件。'
+        '仍须实际核对教材原页；若PDF读取也报错，明确报告工具错误和缺项，未完成的核对不得记为通过。\n\n'
+    )
+    raw = prompt.replace('\n', '\r\n').encode('utf-8') + (folder / material_name).read_bytes()
+    total = len(raw) + (folder / pdf_name).stat().st_size
+    if len(raw) >= 30000 or total >= 256000:
+        raise ValueError('Paste fallback exceeds local byte budget')
+    output = folder / 'PASTE.txt'
+    output.write_bytes(raw)
+    report = dict(source_ids=manifest['source_ids'], material_file=material_name,
+                  material_sha256=sha(folder/material_name), pdf_file=pdf_name,
+                  pdf_sha256=sha(folder/pdf_name), paste_file=output.name,
+                  paste_bytes=len(raw), paste_sha256=sha(output),
+                  paste_plus_pdf_bytes=total, material_preserved_verbatim=True,
+                  website_acceptance='NOT_TESTED')
+    (folder / 'PASTE_MANIFEST.json').write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print(json.dumps(report, ensure_ascii=False))
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--batch', default='BATCH01')
     parser.add_argument('--part', choices=['a', 'b', 'c'], default='a')
+    parser.add_argument('--paste-only', action='store_true')
     args = parser.parse_args()
-    build(args.batch, args.part)
+    if args.paste_only:
+        if args.batch != 'BATCH01':
+            raise ValueError('Paste exports currently apply to BATCH01 only')
+        build_paste(args.part)
+    else:
+        build(args.batch, args.part)

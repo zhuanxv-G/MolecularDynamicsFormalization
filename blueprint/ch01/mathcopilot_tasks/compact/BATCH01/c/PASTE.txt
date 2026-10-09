@@ -1,0 +1,339 @@
+请直接使用下方的2条完整材料，依次执行原文审校A和只读语义审计C，按材料末尾要求仅返回一个JSON数组。教材原页见附件BATCH01c_PAGES.pdf，页码映射见下方。
+审校材料已包含在本条消息中，无需调用工具读取Markdown文件。仍须实际核对教材原页；若PDF读取也报错，明确报告工具错误和缺项，未完成的核对不得记为通过。
+
+# BATCH01c 精简审校材料
+
+本批只做原文审校A与只读语义审计C；模板B取消。Lean4.34.0 / Mathlib v4.34.0。
+以下原文JSON、Lean签名及依赖定义从冻结输入逐字截取；没有改写定义或假设。
+这是供审阅的摘录，不是独立Lean工程；未提供定理证明体，不能据此审计证明或公理。
+标准Mathlib运算/微积分符号按该固定版本解释，关键ODE定义另附。
+
+## PDF页码映射
+
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 46 | 23 |
+| 2 | 47 | 24 |
+| 3 | 48 | 25 |
+| 4 | 49 | 26 |
+
+## 审校规则
+
+A：逐条打开原页，核对statement_latex、proof_latex、proof_discussion_latex、页码和context_notation。不得把转述当原文，不静默修正原书，不补造原文证明；null表示无独立完整证明。corrected_json需保留完整条目及source_id；证据指出原PDF页和具体短语/公式。
+C：以A核对后的原文比对实际定义展开、对象/域、量词、假设和全部结论；逐条判断[EXTRA]是否合理、[ERRATUM?]是否需导师判断。禁止以True、P→P、结论作假设、替换对象通过审计。sorry与签名语义分开判断；只读，不修改工程或写证明；给出具体理由、反例和建议。所需上下文/定义缺失时标NEEDS_HUMAN并列缺项，不能按名称猜测或跳过。
+本材料未附本地PASS结果，不得假定本地结论正确。
+
+## 本批完整原文条目与Lean签名
+
+### MD-1.4-LegendreHamiltonian
+
+```json
+{
+  "source_id": "MD-1.4-LegendreHamiltonian",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.4",
+  "printed_page": "24",
+  "pdf_page": "47",
+  "statement_latex": "If $\\boldsymbol{M}(\\boldsymbol{q})$ is invertible, the supremum is achieved precisely when\n\\[\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p},\\]\nwhich gives the standard definition of the momentum vector $\\boldsymbol{p}$ in terms of velocities,\n\\[\\boldsymbol{p}=\\frac{\\partial L}{\\partial\\dot{\\boldsymbol{q}}}=\\boldsymbol{M}(\\boldsymbol{q})\\dot{\\boldsymbol{q}},\\]\nand, with $\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p}$, the Legendre transformation results in a new function\n\\[H(\\boldsymbol{q},\\boldsymbol{p})\\stackrel{\\mathrm{def}}{=}\\boldsymbol{p}^TM(\\boldsymbol{q})^{-1}\\boldsymbol{p}/2+U(\\boldsymbol{q}).\\]\nThis is precisely the energy function, written in terms of positions and momenta.",
+  "proof_latex": "In the case of the Lagrangian $L(\\boldsymbol{q},\\boldsymbol{v})=\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find\n\\[\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-(\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})))=\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2)+U(\\boldsymbol{q}).\\]",
+  "proof_note": "仅有上述代数推导；原文没有证明“可逆即达到上确界”或唯一性。",
+  "context_notation": [
+    "同页Legendre定义：凸函数$g(\\boldsymbol{\\xi}):\\mathbb{R}^m\\to\\mathbb{R}$，$\\widetilde g(\\boldsymbol{\\eta})=\\sup_{\\boldsymbol{\\xi}}(\\boldsymbol{\\eta}^T\\boldsymbol{\\xi}-g(\\boldsymbol{\\xi}))$；印刷p.24/PDF47。",
+    "配置相关质量矩阵来自$\\Phi^{\\prime}(\\boldsymbol{Q})^TM\\Phi^{\\prime}(\\boldsymbol{Q})$，变化规则及满秩前提：§1.3印刷p.23/PDF46。因此对称/正定可能是继承的背景，不是“可逆”本身的推论，需独立审计裁决。",
+    "$\\boldsymbol{q},\\boldsymbol{v},\\boldsymbol{p}\\in\\mathbb{R}^{N_c}$，$H$为位置和动量中的能量，§1.4印刷p.24/PDF47。"
+  ],
+  "issues": [
+    {
+      "code": "POSSIBLE_ERRATUM",
+      "status": "NEEDS_HUMAN",
+      "detail": "若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。"
+    },
+    {
+      "code": "REUSE_SCOPE_GAP",
+      "status": "open",
+      "detail": "现有定理仅固定正对角m；本条保留任意配置相关M(q)、上界、sup、精确达到条件、动量偏导和能量对应，不能直接调用旧定理覆盖。"
+    }
+  ],
+  "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+  "reusable_proofs": [
+    "MolecularDynamics.massHamiltonian_eq_legendre_sup",
+    "MolecularDynamics.legendre_objective_eq_massHamiltonian_iff"
+  ],
+  "extra_assumptions": [],
+  "statement_scope": "从“If M(q) is invertible”到“written in terms of positions and momenta.”；前一计算为proof_latex，前置抽象定义为context_notation；Hamilton方程属于下一条。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "LOCAL_DRAFT",
+      "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+      "before_sha256": "134f84e19b17bad810cdb8cdd0308bbcefb36fe2b17b2402605eae163c911a15",
+      "after_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+声明全名：`MD.Ch01.hamiltonian_legendre_transform`；原位置：Blueprint/Ch01.lean。
+
+```lean
+/-- source_id: MD-1.4-LegendreHamiltonian · unnumbered claim · printed p.24 / PDF p.47
+Original: The Legendre supremum is attained precisely at M(q)⁻¹p and yields H(q,p).
+[ERRATUM?] The literal invertibility premise alone does not imply a bounded objective:
+M = -1, U = 0, p = 0 gives v²/2. Convexity/positive definiteness may be inherited
+from the abstract convex Legendre definition and the mechanical mass model on p.23;
+independent audit must settle the intended premise. It has not been silently added.
+The full configuration-dependent matrix M(q) is retained. The fixed positive
+diagonal library theorem cannot establish this signature. This draft is unproved.
+The conjuncts keep boundedness, supremum, exact maximizing velocity, momentum
+gradient, and the energy identity after the inverse-velocity substitution. -/
+theorem hamiltonian_legendre_transform {n : ℕ}
+    (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)
+    (q : Position n) (p : Momentum n) (hM : IsUnit (M q)) :
+    BddAbove (range (fun v : Velocity n =>
+      inner ℝ p v - variableMassLagrangian M U q v)) ∧
+    sSup (range (fun v : Velocity n => inner ℝ p v - variableMassLagrangian M U q v)) =
+      variableMassHamiltonian M U q p ∧
+    (∀ v : Velocity n, inner ℝ p v - variableMassLagrangian M U q v =
+      variableMassHamiltonian M U q p ↔ v = matrixAction (M q)⁻¹ p) ∧
+    (∀ v : Velocity n, HasGradientAt (variableMassLagrangian M U q)
+      (matrixAction (M q) v) v) ∧
+    p = matrixAction (M q) (matrixAction (M q)⁻¹ p) ∧
+    variableMassHamiltonian M U q p =
+      inner ℝ (matrixAction (M q)⁻¹ p)
+        (matrixAction (M q) (matrixAction (M q)⁻¹ p)) / 2 + U q
+```
+
+### MD-1.5.1-FlowInverse
+
+```json
+{
+  "source_id": "MD-1.5.1-FlowInverse",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.5.1",
+  "printed_page": "26",
+  "pdf_page": "49",
+  "statement_latex": "The classical systems treated here can be solved forward or backward in time. Observe that $\\mathcal{F}_{-t}\\mathcal{F}_t=\\operatorname{Id}$ (the identity map), thus the flow map is invertible and, indeed, the family of flow maps defined for different values of $t$ form an Abelian group under the operation of composition ($\\mathcal{F}_t\\mathcal{F}_s=\\mathcal{F}_s\\mathcal{F}_t=\\mathcal{F}_{t+s}$).",
+  "proof_latex": null,
+  "proof_note": "原文用Observe that直接断言；没有独立证明。随后Hamiltonian守恒属于另一个结论，不纳入本条。",
+  "context_notation": [
+    "式(1.5)：$\\dot{\\boldsymbol{z}}=\\boldsymbol{f}(\\boldsymbol{z})$，$\\boldsymbol{z}(0)=\\boldsymbol{\\xi}$；$m$维空间及flow map定义$\\mathcal{F}_t(\\boldsymbol{\\xi})=\\boldsymbol{z}(t)$：§1.5.1印刷p.26/PDF49。",
+    "正文明确继承前小节存在唯一性前提；势能下界、固定正定质量、能量限制下位置紧性：§1.5印刷p.25–26/PDF48–49。",
+    "IsGlobalMechanicalFlowOn只假设逐初值全实时间ODE解、ψ 0 z=z和状态域S不变；不把反演、群律或双射藏进假设。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch01.flow_inverse",
+  "reusable_proofs": [
+    "MolecularDynamics.globalMechanicalFlow_inverse",
+    "MolecularDynamics.globalMechanicalFlow_add",
+    "MolecularDynamics.globalMechanicalFlow_commute",
+    "MolecularDynamics.globalMechanicalFlow_bijOn"
+  ],
+  "extra_assumptions": [
+    "hψ: 显式全实时间解及S不变，落实正文双向可解和flow map前提；本条不证明全局流存在。",
+    "hreg: F在Q为C¹，用于ODE唯一性，落实正文继承的存在唯一性前提。",
+    "_hm: 正固定质量，使对象限于原文分子Hamiltonian系统。"
+  ],
+  "statement_scope": "完整反演/可逆/Abelian群律段；恒等元ψ0由flow定义，结论覆盖双向反演、双射和加法/交换律。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+声明全名：`MD.Ch01.flow_inverse`；原位置：Blueprint/Ch01.lean。
+
+```lean
+/-- source_id: MD-1.5.1-FlowInverse · unnumbered claim · printed p.26 / PDF p.49
+Original: Two-sided flow maps are inverse and form an Abelian composition group.
+[EXTRA] hψ: actual all-real-time solutions, identity initial value and S-invariance;
+these make the textbook's two-sided flow assumption explicit, not the group laws.
+[EXTRA] hreg: C1 force for uniqueness, inherited from the preceding IVP discussion.
+[EXTRA] _hm: positive fixed masses qualify the molecular Hamiltonian model.
+The force is specifically -gradient U, as in the source Hamiltonian setting.
+Quantification is on the invariant state domain S; no claim of global existence
+for arbitrary forces or initial points outside S. Both inverses, bijectivity,
+identity, addition and commutation clauses are included. -/
+theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (S : Set (PhaseSpace n))
+    (ψ : ℝ → PhaseSpace n → PhaseSpace n)
+    (_hm : ∀ i, 0 < m i)
+    (hψ : IsGlobalMechanicalFlowOn m (fun q => -gradient U q) Q S ψ)
+    (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 (fun x => -gradient U x) q) :
+    (∀ z ∈ S, ψ 0 z = z) ∧
+    (∀ t : ℝ, ∀ z ∈ S, ψ (-t) (ψ t z) = z ∧ ψ t (ψ (-t) z) = z) ∧
+    (∀ t : ℝ, BijOn (ψ t) S S) ∧
+    ∀ s t : ℝ, ∀ z ∈ S,
+      ψ t (ψ s z) = ψ s (ψ t z) ∧ ψ t (ψ s z) = ψ (t + s) z
+```
+
+## 实际依赖定义（逐字摘录）
+
+原Blueprint处于namespace MD.Ch01，open Set MolecularDynamics MeasureTheory MolecularDynamics.Chapter01Review Filter；open scoped ContDiff InnerProductSpace BigOperators Topology Matrix.Norms.L2Operator。n表示配置坐标数N_c；三维原子模型中N_c=3N。
+每段的namespace和文件路径仅说明原上下文，定义体保持原样。
+
+### MolecularDynamics.CoordinateMasses
+
+原文件：MolecularDynamics/Chapter01/NBody.lean:19。
+
+```lean
+abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Force
+
+原文件：MolecularDynamics/Notation.lean:20。
+
+```lean
+abbrev Force (n : ℕ) := Position n → Position n
+```
+
+### MolecularDynamics.IsGlobalMechanicalFlowOn
+
+原文件：MolecularDynamics/Chapter01/GlobalFlow.lean:41。
+
+```lean
+def IsGlobalMechanicalFlowOn {n : ℕ} (m : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (S : Set (PhaseSpace n))
+    (ψ : ℝ → PhaseSpace n → PhaseSpace n) : Prop :=
+  (∀ z ∈ S, IsMechanicalSolutionOn m F Q univ (fun t => ψ t z) ∧ ψ 0 z = z) ∧
+  ∀ t, MapsTo (ψ t) S S
+```
+
+### IsIntegralCurveOn
+
+原文件：.lake/packages/mathlib/Mathlib/Analysis/ODE/Basic.lean:44。
+
+原上下文：`open Set`，`variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]`。
+
+```lean
+def IsIntegralCurveOn (γ : ℝ → E) (v : ℝ → E → E) (s : Set ℝ) : Prop :=
+  ∀ t ∈ s, HasDerivWithinAt γ (v t (γ t)) s t
+```
+
+### MolecularDynamics.IsMechanicalSolutionOn
+
+原文件：MolecularDynamics/Chapter01/LocalTrajectories.lean:74。
+
+```lean
+def IsMechanicalSolutionOn {n : ℕ} (μ : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (I : Set ℝ) (γ : ℝ → PhaseSpace n) : Prop :=
+  (∀ t ∈ I, (γ t).1 ∈ Q) ∧
+    IsIntegralCurveOn γ (fun _ z => mechanicalVectorField μ F z) I
+```
+
+### MolecularDynamics.MassMatrix
+
+原文件：MolecularDynamics/Notation.lean:18。
+
+```lean
+abbrev MassMatrix (n : ℕ) := Matrix (Fin n) (Fin n) ℝ
+```
+
+### MolecularDynamics.Momentum
+
+原文件：MolecularDynamics/Notation.lean:15。
+
+```lean
+abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.PhaseSpace
+
+原文件：MolecularDynamics/Notation.lean:17。
+
+```lean
+abbrev PhaseSpace (n : ℕ) := Position n × Momentum n
+```
+
+### MolecularDynamics.Position
+
+原文件：MolecularDynamics/Notation.lean:13。
+
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.PotentialEnergy
+
+原文件：MolecularDynamics/Notation.lean:21。
+
+```lean
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+```
+
+### MolecularDynamics.Velocity
+
+原文件：MolecularDynamics/Notation.lean:14。
+
+```lean
+abbrev Velocity (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.diagonalMassMatrix
+
+原文件：MolecularDynamics/Chapter01/NBody.lean:22。
+
+```lean
+def diagonalMassMatrix {n : ℕ} (masses : CoordinateMasses n) : MassMatrix n :=
+  Matrix.diagonal masses
+```
+
+### MD.Ch01.matrixAction
+
+原文件：Blueprint/Ch01.lean:62。
+
+```lean
+noncomputable def matrixAction {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ)
+    (v : Position n) : Position n := Matrix.toEuclideanLin A v
+```
+
+### MolecularDynamics.mechanicalVectorField
+
+原文件：MolecularDynamics/Chapter01/LocalTrajectories.lean:69。
+
+```lean
+noncomputable def mechanicalVectorField {n : ℕ} (μ : CoordinateMasses n)
+    (F : Force n) (z : PhaseSpace n) : PhaseSpace n :=
+  (velocityOperator μ z.2, F z.1)
+```
+
+### MD.Ch01.variableMassHamiltonian
+
+原文件：Blueprint/Ch01.lean:69。
+
+```lean
+noncomputable def variableMassHamiltonian {n : ℕ}
+    (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)
+    (q : Position n) (p : Momentum n) : ℝ := inner ℝ p (matrixAction (M q)⁻¹ p) / 2 + U q
+```
+
+### MD.Ch01.variableMassLagrangian
+
+原文件：Blueprint/Ch01.lean:65。
+
+```lean
+noncomputable def variableMassLagrangian {n : ℕ}
+    (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)
+    (q : Position n) (v : Velocity n) : ℝ := inner ℝ v (matrixAction (M q) v) / 2 - U q
+```
+
+### MolecularDynamics.velocityOperator
+
+原文件：MolecularDynamics/Chapter01/LocalTrajectories.lean:24。
+
+```lean
+noncomputable def velocityOperator {n : ℕ} (μ : CoordinateMasses n) :
+    Momentum n →L[ℝ] Velocity n :=
+  (Matrix.toEuclideanLin (diagonalMassMatrix μ)⁻¹).toContinuousLinearMap
+```
+
+## 返回格式
+
+仅输出一个JSON数组；每个source_id恰好一次。
+
+```json
+[{"source_id":"本批ID","json_review":{"status":"APPROVED|CORRECTED|NEEDS_HUMAN","issue_codes":[],"corrected_json":null,"issues":[],"evidence":[]},"audit":{"lean_decl":"完整声明名","verdict":"PASS|FAIL|NEEDS_HUMAN","explanation":"逐项理由","counterexample":null,"suggested_fix":null}}]
+```

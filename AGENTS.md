@@ -1,7 +1,7 @@
 # 项目接续与形式化约定
 
 当前任务：第1章本地部分完成，等待用户提交 MathCopilot 批次（见 INDEX.md）
-下一步：BATCH01使用mathcopilot_tasks/compact/BATCH01/README.md的a/b/c小Task（853字节指令+对应两附件，总<256000字节）；无网站新件确认等待，有新件优先整合并登记EAUDIT批次。
+下一步：网站读取工具报code-mode host closed its stdout；BATCH01可全文粘贴compact/BATCH01/a、b、c/PASTE.txt到各新Task，只关联对应PDF；若PDF也读失败则保持待审。无新件确认等待，有新件优先整合EAUDIT。
 
 ## 当前最高优先级范围（2026-10-09用户夜间指令）
 
