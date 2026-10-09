@@ -1,0 +1,5 @@
+'MD.Ch01.theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.energy_conservation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.newton_iff_euler_lagrange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hamiltonian_legendre_transform' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.flow_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -135,3 +135,11 @@ CanonicalKernelConstant完整报告失败；源码/证据原样移至docs/parked
 
 ## 2026-10-08 第4/5/6章交付关闭
 8f6b8e5/2eb6b89/4acebed均已push；312条及三章完整/15重点材料、check、公理审计完成，ACTIVE/15分钟heartbeat原样。停止等待用户，不进入第7章。
+
+## 2026-10-09 第1章五步试点：入口与原页检查点
+入口改写；5条原页已渲染核对，Theorem1.1仅32/55；正式库与heartbeat不改。
+JSON/Blueprint草案建立；Legendre保留M(q)和字面可逆前提，疑似缺正定/凸性标ERRATUM?；网站尚无返回件，不冻结。
+
+## 2026-10-09 第1章五步试点：本地任务包验收完成
+5条原文/完整陈述、15个A/B/C任务、审计登记与自动审阅草案完成；首次Newton导数候选不匹配已修复，最终check/fresh/公理审计通过，正式库源码原样。
+4条本地复用证明仅基础公理，Legendre保留M(q)和ERRATUM?、1处sorry；全部未冻结且最终incomplete，缺15网站返回件，保存提交后停止等待；heartbeat未改。

@@ -5,3 +5,6 @@ docs/tasks/T3_implementation/** -text whitespace=cr-at-eol,-blank-at-eof
 docs/verification/2026-10-03-T3-first-batch*/** -text whitespace=cr-at-eol,-blank-at-eof
 # Preserve GitHub decoded log lines, including timestamp-only lines ending in a space.
 docs/verification/2026-10-03-T3-first-batch-retry03/remote-ci/JOB_LOG.decoded.txt -text whitespace=-trailing-space
+
+# Preserve pilot compiler evidence bytes and recorded SHA256 values.
+blueprint/ch01/validation/**/*.log -text whitespace=cr-at-eol,-trailing-space

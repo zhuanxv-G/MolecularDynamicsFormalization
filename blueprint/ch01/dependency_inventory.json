@@ -1,0 +1,240 @@
+[
+  {
+    "module": "MolecularDynamics.BasicDefinitions",
+    "file": "MolecularDynamics/BasicDefinitions.lean",
+    "sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+    "imports": [
+      "MolecularDynamics.Notation"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.Continuation",
+    "file": "MolecularDynamics/Chapter01/Continuation.lean",
+    "sha256": "e77c1e1886b52ae50d0a0cde07cf5fd5237679e058c5c0f517bf3493e315746b",
+    "imports": [
+      "MolecularDynamics.Chapter01.LocalExistence",
+      "Mathlib.Analysis.Calculus.MeanValue",
+      "Mathlib.Analysis.Normed.Group.Bounded",
+      "Mathlib.Topology.Connected.Clopen"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.EnergyConservation",
+    "file": "MolecularDynamics/Chapter01/EnergyConservation.lean",
+    "sha256": "95e0a1323f35ac2c2dca0d5c07ba33310eea0870364a968cde57d72cb5b04d88",
+    "imports": [
+      "MolecularDynamics.Chapter01.Hamiltonian",
+      "Mathlib.Analysis.Calculus.MeanValue",
+      "Mathlib.Topology.Order.IntermediateValue"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.EnergyGlobalExistence",
+    "file": "MolecularDynamics/Chapter01/EnergyGlobalExistence.lean",
+    "sha256": "80b6d0500bef523dc65036b200927879b614a350b2af255c0086a8d7fcfc03bf",
+    "imports": [
+      "MolecularDynamics.Chapter01.GlobalContinuation",
+      "MolecularDynamics.Chapter01.MechanicalConfinement"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.Equilibrium",
+    "file": "MolecularDynamics/Chapter01/Equilibrium.lean",
+    "sha256": "f0d4dd105bb1fa17ecb4b5a4747313472e8edfb17525ba3e54701ced2a6652f3",
+    "imports": [
+      "MolecularDynamics.Chapter01.PotentialBarriers",
+      "MolecularDynamics.Chapter01.Hamiltonian",
+      "Mathlib.Analysis.Calculus.LocalExtr.Basic"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.EuclideanStability",
+    "file": "MolecularDynamics/Chapter01/EuclideanStability.lean",
+    "sha256": "cedb85daece3f296fa461ef044de11fa8d2a9035cc4e031cd131c856f0b63223",
+    "imports": [
+      "MolecularDynamics.Chapter01.Stability",
+      "MolecularDynamics.Chapter01.PhaseMetric"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.FutureFlow",
+    "file": "MolecularDynamics/Chapter01/FutureFlow.lean",
+    "sha256": "76c2271c0db331887b590db566c07a52d2386e3dfd70f8e9a86fab498d45bd27",
+    "imports": [
+      "MolecularDynamics.Chapter01.EnergyGlobalExistence"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.GlobalContinuation",
+    "file": "MolecularDynamics/Chapter01/GlobalContinuation.lean",
+    "sha256": "d10da97e70d6e568cd09c3bc38d9479400bb0c32baeea618a017d7f67559eecf",
+    "imports": [
+      "MolecularDynamics.Chapter01.MechanicalContinuation"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.GlobalFlow",
+    "file": "MolecularDynamics/Chapter01/GlobalFlow.lean",
+    "sha256": "b1717acf1ce8de2516978e1cd639323d8d95b076397df8ad47a279805f0f5227",
+    "imports": [
+      "MolecularDynamics.Chapter01.TimeReversal"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.Hamiltonian",
+    "file": "MolecularDynamics/Chapter01/Hamiltonian.lean",
+    "sha256": "0a56c9934f89ea749babd0a0c28ebd08b4736773492fd160599df6cf00077acb",
+    "imports": [
+      "MolecularDynamics.Chapter01.LocalTrajectories"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.Lagrangian",
+    "file": "MolecularDynamics/Chapter01/Lagrangian.lean",
+    "sha256": "c4a91f086477bc2d31a296db69be1abb9b7906b252edb2c6610d07f131b6b010",
+    "imports": [
+      "MolecularDynamics.Chapter01.Hamiltonian"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.LegendreTransform",
+    "file": "MolecularDynamics/Chapter01/LegendreTransform.lean",
+    "sha256": "9c47ba44b1620ca64f53cd3d0cb880e49ec80ac88c9eb1a1ef335f6fadd968b2",
+    "imports": [
+      "MolecularDynamics.Chapter01.Lagrangian"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.LocalExistence",
+    "file": "MolecularDynamics/Chapter01/LocalExistence.lean",
+    "sha256": "de29ed4ddf8dcd0f6abf162916bf643df7e47257d84486dc3cb6c4b1b1a32c53",
+    "imports": [
+      "MolecularDynamics.Chapter01.LocalTrajectories",
+      "Mathlib.Analysis.ODE.ExistUnique"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.LocalTrajectories",
+    "file": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+    "sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+    "imports": [
+      "MolecularDynamics.Chapter01.ParticleCoordinates"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.MechanicalConfinement",
+    "file": "MolecularDynamics/Chapter01/MechanicalConfinement.lean",
+    "sha256": "b375c6a6275e8bda4d88d038a8f52cb0df81be6f4d134c9ec469a4b33b881d44",
+    "imports": [
+      "MolecularDynamics.Chapter01.MomentumBounds",
+      "MolecularDynamics.Chapter01.PotentialBarriers"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.MechanicalContinuation",
+    "file": "MolecularDynamics/Chapter01/MechanicalContinuation.lean",
+    "sha256": "31d426139c3afaeb0a8fb82198d4500f9cdfe5441e2f675c5a7d49467dcf270c",
+    "imports": [
+      "MolecularDynamics.Chapter01.Continuation",
+      "MolecularDynamics.Chapter01.ODEEndpoint"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.MomentumBounds",
+    "file": "MolecularDynamics/Chapter01/MomentumBounds.lean",
+    "sha256": "1e01cc57467dd072a7b57c70daf08529fb7bed8556dd76b31dd407428887c11e",
+    "imports": [
+      "MolecularDynamics.Chapter01.EnergyConservation"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.NBody",
+    "file": "MolecularDynamics/Chapter01/NBody.lean",
+    "sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+    "imports": [
+      "Mathlib",
+      "MolecularDynamics.BasicDefinitions"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.ODEEndpoint",
+    "file": "MolecularDynamics/Chapter01/ODEEndpoint.lean",
+    "sha256": "a383a3cd72e2865b5e892d036afd4447e21b18f0dbdfd21a27f69e82875fb21e",
+    "imports": [
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.Tactic.Abel",
+      "Mathlib.Analysis.ODE.ExistUnique"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.ParticleCoordinates",
+    "file": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+    "sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+    "imports": [
+      "MolecularDynamics.Chapter01.NBody"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.PhaseMetric",
+    "file": "MolecularDynamics/Chapter01/PhaseMetric.lean",
+    "sha256": "de5439ee38dcb0df840dbbecc2e0b917ab08f0d475ff6fc020569c1987c180fc",
+    "imports": [
+      "MolecularDynamics.Notation",
+      "Mathlib.Analysis.Real.Sqrt",
+      "Mathlib.Tactic.Linarith"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.PotentialBarriers",
+    "file": "MolecularDynamics/Chapter01/PotentialBarriers.lean",
+    "sha256": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6",
+    "imports": [
+      "MolecularDynamics.Notation",
+      "Mathlib.Topology.Order.Compact",
+      "Mathlib.Analysis.Normed.Module.FiniteDimension",
+      "Mathlib.Topology.MetricSpace.ProperSpace",
+      "Mathlib.Topology.Order.IntermediateValue",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.NormNum"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.PotentialRegularity",
+    "file": "MolecularDynamics/Chapter01/PotentialRegularity.lean",
+    "sha256": "b526985cb33afb585a5c40f33e6490c6529a1676c9cb6bf94e75cfae50c3a6ea",
+    "imports": [
+      "MolecularDynamics.Notation",
+      "Mathlib.Analysis.Calculus.ContDiff.Comp",
+      "Mathlib.Analysis.Calculus.Gradient.Basic",
+      "Mathlib.Tactic.NormNum"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.Stability",
+    "file": "MolecularDynamics/Chapter01/Stability.lean",
+    "sha256": "bbf3a6eaad913c7b0b14280bf8c4d7ae052ad3433c1a40a5e203a4fdc4bb22f7",
+    "imports": [
+      "MolecularDynamics.Chapter01.EnergyGlobalExistence",
+      "MolecularDynamics.Chapter01.PotentialRegularity",
+      "MolecularDynamics.Chapter01.Equilibrium"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Chapter01.TimeReversal",
+    "file": "MolecularDynamics/Chapter01/TimeReversal.lean",
+    "sha256": "19385c150937bcab0f2d4371812bc8e7ae2c943f448932752ded08fcd4e1e8c9",
+    "imports": [
+      "MolecularDynamics.Chapter01.FutureFlow"
+    ]
+  },
+  {
+    "module": "MolecularDynamics.Notation",
+    "file": "MolecularDynamics/Notation.lean",
+    "sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+    "imports": [
+      "Mathlib.Analysis.InnerProductSpace.PiL2",
+      "Mathlib.Data.Matrix.Basic"
+    ]
+  }
+]

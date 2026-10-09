@@ -1,0 +1,70 @@
+{
+  "source_pdf": "C:\\Users\\ustc\\Desktop\\formal math\\Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_count": 461,
+  "pdf_page_numbering": "1-based",
+  "local_review": "rendered original pages visually inspected; source transcription drafted by Codex",
+  "independent_review": "pending MathCopilot results",
+  "reviewed_pages": [
+    {
+      "pdf_page": 41,
+      "printed_page": "18",
+      "extracted_text_sha256": "b67d805929e12cfcd81b20da87392e7a65a4e374c066f105eef550592e18e56d",
+      "render_path": "tmp/pdfs/ch01-pilot/page-41.png"
+    },
+    {
+      "pdf_page": 42,
+      "printed_page": "19",
+      "extracted_text_sha256": "43dcc46a04df150e8af80edb35032139eb29bfddab5aa592ccd71b48c27db389",
+      "render_path": "tmp/pdfs/ch01-pilot/page-42.png"
+    },
+    {
+      "pdf_page": 45,
+      "printed_page": "22",
+      "extracted_text_sha256": "2dbed5bf44cffb27e6f267c84805596c694ddd8b12902cb74314cb0780765c56",
+      "render_path": "tmp/pdfs/ch01-pilot/page-45.png"
+    },
+    {
+      "pdf_page": 46,
+      "printed_page": "23",
+      "extracted_text_sha256": "223f43efcf93bfaa742a86f6534665d7bc9157ebeb77667292d143c6b81f631d",
+      "render_path": "tmp/pdfs/ch01-pilot/page-46.png"
+    },
+    {
+      "pdf_page": 47,
+      "printed_page": "24",
+      "extracted_text_sha256": "b104e65733e5081357edef2622d8f0aa21ec963531e576eae667255a324d772c",
+      "render_path": "tmp/pdfs/ch01-pilot/page-47.png"
+    },
+    {
+      "pdf_page": 48,
+      "printed_page": "25",
+      "extracted_text_sha256": "aeff422119f6b6b74b234f21569c02703c015b6950ce895a12fcbb61d2d9685c",
+      "render_path": "tmp/pdfs/ch01-pilot/page-48.png"
+    },
+    {
+      "pdf_page": 49,
+      "printed_page": "26",
+      "extracted_text_sha256": "c5c0a51837644e849bd3fc9e690bf76c1ee2c4221793b3a96146d3c56d243160",
+      "render_path": "tmp/pdfs/ch01-pilot/page-49.png"
+    },
+    {
+      "pdf_page": 54,
+      "printed_page": "31",
+      "extracted_text_sha256": "871d157acf6553745bd5666175270169ec1d7ad394cc1176d157f2ff49bee8fb",
+      "render_path": "tmp/pdfs/ch01-pilot/page-54.png"
+    },
+    {
+      "pdf_page": 55,
+      "printed_page": "32",
+      "extracted_text_sha256": "a0142e7d94135329234ad5f5eae998c2b1855ccded91d2de41f8c3e23ccba4d3",
+      "render_path": "tmp/pdfs/ch01-pilot/page-55.png"
+    }
+  ],
+  "notes": [
+    "Theorem 1.1 statement and proof discussion are on printed 32/PDF55; printed31/PDF54 is context.",
+    "Energy computation and Legendre algebra are displayed; Theorem1.1 has only discussion; Euler-Lagrange and flow group paragraph have no standalone proof.",
+    "No independent MathCopilot PASS has been received."
+  ],
+  "font_check": "Energy function E: Times-Italic on PDF41/42; thermodynamic parameter E is Times-Roman on PDF42. Mass matrix rendered bold as on original pages."
+}

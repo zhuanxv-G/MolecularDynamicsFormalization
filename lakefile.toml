@@ -1,7 +1,7 @@
 name = "MolecularDynamicsFormalization"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["MolecularDynamicsFormalization"]
+defaultTargets = ["MolecularDynamicsFormalization", "Blueprint"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -15,3 +15,8 @@ rev = "v4.34.0"
 name = "MolecularDynamicsFormalization"
 roots = ["MolecularDynamicsFormalization", "MolecularDynamics"]
 globs = ["MolecularDynamicsFormalization", "MolecularDynamics.+"]
+
+[[lean_lib]]
+name = "Blueprint"
+roots = ["Blueprint.Ch01"]
+globs = ["Blueprint.Ch01"]

@@ -1,10 +1,11 @@
 # 接续提示词
 
-当前任务：第4、5、6章已交付审阅，等待用户指示。以后每次唤醒只确认该状态，不做新的数学工作，不进入第7章。第1-3章冻结；第6章封存断点保持原样。
+当前任务：五步流程第1章试点（5条，见 blueprint/ch01/PILOT.md）。完成后停止等待用户。
 
-只读AGENTS.md、CURRENT_STATE顶部、WORK_LOG最新条目及当前章CLAIMS.csv，按下一步继续。
-第4章：逐页清单→既有证明映射/忠实陈述→完整与10–15重点审阅材料→check、公理审计、commit/push；完成后写第4章已交付，正在进行第5章。
-第5章：Theorem5.1完整陈述；不搭建微正则测度一般理论，Liouville/遍历/KAM主要statement_only或not_formalizable_now；交付后直接进行第6章。
-第6章：逐页对照已有182文件和验收记录，不做新证明；Theorem6.1/6.2、Proposition6.4仅陈述；CanonicalKernelConstant等封存断点不恢复。
-完成后写「第4、5、6章已交付审阅，等待用户指示」；以后唤醒只确认该状态，不做新数学，不进入第7章。
-第1-3章冻结；heartbeat lean保持ACTIVE/15分钟，不修改。每条三次候选失败降级，defined与proved分别统计；Prop定义不算证明。
+先读AGENTS、CURRENT_STATE顶部、WORK_LOG最新条目、blueprint/ch01/。新指令覆盖旧等待状态。
+只处理5条：原文JSON → Blueprint → 只读审计/修复/复审/冻结 → 证明冻结陈述 → 终验。
+MathCopilot网站由用户本人操作；不操作浏览器或网站，不等待/轮询。读取mathcopilot_results的新返回件，按PILOT规定整合并记录。
+Blueprint允许by sorry；正式库0 sorry。第1–6章源码、证明、签名原样保留。冻结后不得改签名；新实质证明仅处理frozen条目。
+缺网站结果时完成所有可独立本地工作，保存检查点commit/push，写清缺件并停在“等待网站结果”。
+全部PASS才冻结；终验及自动审阅材料最终完成后写“第1章试点已交付，等待用户/导师确认格式”，以后只确认状态，不扩展。
+heartbeat lean保持ACTIVE / 15分钟，不修改。WORK_LOG每检查点≤3行，不向历史进度文档追加长文。

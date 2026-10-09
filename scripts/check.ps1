@@ -32,6 +32,8 @@ $report = [ordered]@{
     lake_version = $null
     actual_mathlib_revision = $null
     source_scan = 'not_run'
+    blueprint_scan = 'not_run'
+    blueprint_placeholders = @()
     inputs = @()
     checks = [Collections.Generic.List[object]]::new()
     machine_check_status = 'running'
@@ -85,13 +87,21 @@ try {
     $sourceFiles = @(Get-ChildItem -LiteralPath $projectRoot -Filter '*.lean' -File)
     $sourceFiles += @(Get-ChildItem -LiteralPath (Join-Path $projectRoot 'MolecularDynamics') -Filter '*.lean' -File -Recurse)
     $sourceFiles += Get-Item -LiteralPath $auditPath
-    $inputPaths = @($sourceFiles.FullName) + @(
+    $blueprintFiles = @()
+    if (Test-Path -LiteralPath (Join-Path $projectRoot 'Blueprint')) {
+        # On Windows Blueprint/ and blueprint/ share a physical directory.
+        # The pilot target is explicit; metadata-side audit files are checked below.
+        $blueprintFiles = @(Get-Item -LiteralPath (Join-Path $projectRoot 'Blueprint/Ch01.lean'))
+    }
+    $blueprintAudit = Join-Path $projectRoot 'blueprint/ch01/CheckAxioms.lean'
+    $inputPaths = @($sourceFiles.FullName) + @($blueprintFiles.FullName) + @(
         (Join-Path $projectRoot 'lean-toolchain'),
         (Join-Path $projectRoot 'lakefile.toml'),
         (Join-Path $projectRoot 'lake-manifest.json'),
         $PSCommandPath,
         (Join-Path $projectRoot '.github/workflows/lean_action_ci.yml')
     )
+    if (Test-Path -LiteralPath $blueprintAudit) { $inputPaths += $blueprintAudit }
     $report.inputs = @($inputPaths | Sort-Object -Unique | ForEach-Object {
         [ordered]@{
             relative_path = [IO.Path]::GetRelativePath($projectRoot, $_).Replace('\', '/')
@@ -130,6 +140,19 @@ try {
     }
     $report.source_scan = 'passed'
 
+    # Draft statements live in a separate library; only sorry is permitted there.
+    # A successful draft build must never be reported as a completed proof.
+    $blueprintForbidden = @($blueprintFiles | Select-String -Pattern '\b(admit|axiom|unsafe|True)\b' -CaseSensitive)
+    if ($blueprintForbidden.Count -gt 0) {
+        $report.blueprint_scan = 'failed'
+        $blueprintForbidden | ForEach-Object { Write-Host "$($_.Path):$($_.LineNumber): $($_.Line)" }
+        throw 'Blueprint contains a prohibited shortcut or trivialized statement.'
+    }
+    $report.blueprint_placeholders = @($blueprintFiles | Select-String -Pattern '\bsorry\b' -CaseSensitive | ForEach-Object {
+        [ordered]@{ file = [IO.Path]::GetRelativePath($projectRoot, $_.Path); line = $_.LineNumber }
+    })
+    $report.blueprint_scan = $(if ($report.blueprint_placeholders.Count) { 'draft_with_placeholders' } else { 'passed' })
+
     $phase = 'runtime_versions'
     $lakeExe = (Get-Command lake -ErrorAction Stop).Source
     $report.branch = Invoke-CheckedCommand 'git_branch' 'git' @('-c', "safe.directory=$projectRoot", 'branch', '--show-current')
@@ -162,6 +185,17 @@ try {
     $null = Invoke-CheckedCommand 'scratch' $lakeExe @('env', 'lean', 'Scratch.lean')
     $phase = 'axiom_dependencies'
     $null = Invoke-CheckedCommand 'axiom_dependencies' $lakeExe @('env', 'lean', 'scripts/CheckAxioms.lean')
+    if ($blueprintFiles.Count) {
+        $phase = 'blueprint_fresh_check'
+        foreach ($blueprintFile in $blueprintFiles) {
+            $relative = [IO.Path]::GetRelativePath($projectRoot, $blueprintFile.FullName)
+            $name = 'blueprint_fresh_' + [IO.Path]::GetFileNameWithoutExtension($relative)
+            $null = Invoke-CheckedCommand $name $lakeExe @('env', 'lean', $relative)
+        }
+        if (-not (Test-Path -LiteralPath $blueprintAudit)) { throw 'Blueprint axiom audit file is required.' }
+        $phase = 'blueprint_axiom_dependencies'
+        $null = Invoke-CheckedCommand 'blueprint_axiom_dependencies' $lakeExe @('env', 'lean', $blueprintAudit)
+    }
 
     $phase = 'input_stability'
     foreach ($inputFile in $report.inputs) {
@@ -172,6 +206,7 @@ try {
     }
     $report.machine_check_status = 'passed'
     Write-Host 'Fixed versions, project source scan, lake build, Scratch.lean, and axiom dependency checks passed.'
+    if ($report.blueprint_placeholders.Count) { Write-Host 'Blueprint draft compiled with recorded placeholders; these entries remain incomplete.' }
 } catch {
     $report.machine_check_status = 'failed'
     $report.failed_phase = $phase
