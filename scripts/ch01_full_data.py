@@ -35,7 +35,11 @@ def theorem_type(file,name):
         if c in ')}]': depth-=1
         if c==':' and depth==0:
             args,conclusion=rest[:i].strip(),rest[i+1:].strip()
-            return ('∀ '+args+',\n    ' if args else '')+conclusion
+            generic=''
+            if re.search(r'\bE\b',args+' '+conclusion):
+                field='ℂ' if 'ComplexSpectralFlow' in file else 'ℝ'
+                generic=f'{{E : Type*}} [NormedAddCommGroup E] [NormedSpace {field} E] [CompleteSpace E] '
+            return ('∀ '+generic+args+',\n    ' if generic or args else '')+conclusion
     raise ValueError(header)
 
 def add(key, section, pages, old, statement, code, *, kind='definition', label=None,
@@ -214,6 +218,94 @@ This means that a natural choice for the unit of time is
 \[\alpha^{-1}=\sigma\sqrt{\frac m\epsilon}\approx2.17\times10^{-12}\mathrm s.\]
 By using the units given here, we may work with a simplified form of the Lennard-Jones system involving unit masses and a parameter-independent potential energy function.''','ljTimeScaling_statement',context=[r'$R_{ij}=\|\boldsymbol Q_i-\boldsymbol Q_j\|$；$\hat\varphi_{LJ}(R)=4[R^{-12}-R^{-6}]$。'],extra=['m,ε,σ,α正；真实C2非碰撞轨迹。'],missing='LJ导数、时间二阶链式法则及范数缩放组合，需补单位时间等式；大型缺失理论以外可分小批证明。',verdict='NEEDS_HUMAN')
 
+add('Lagrangian','1.3',22,[70],r'''For the system (1.3) with N atoms and $N_c=3N$ configuration coordinates, the Lagrangian is
+\[L\stackrel{\mathrm{def}}=\frac{\dot{\boldsymbol q}^{T}\boldsymbol M\dot{\boldsymbol q}}2-U(\boldsymbol q).\]''',
+    '''def fixedMassLagrangian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (q : Position n) (v : Velocity n) : ℝ := nBodyKineticEnergy m v - U q''',context=['固定对角M；n=Nc，三维按质量重复坐标。nBodyKineticEnergy_eq_inner给出矩阵二次式一致性。'])
+exclude([71],'excluded_qualitative：p.22仅历史介绍principle of least action并明确指向第2章；没有第1章独立变分陈述或论证，不能把第2章定理补造为第1章原文。')
+add('GeneralizedCoordinates','1.3',23,[74,75,76,77],r'''When we introduce a smooth change of variables $\boldsymbol q=\boldsymbol\Phi(\boldsymbol Q)$, where $\boldsymbol\Phi:\mathbb R^{N_c}\to\mathbb R^{N_c}$, this induces a corresponding transformation of the velocity vector by
+\[\dot{\boldsymbol q}=\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q},\]
+where $\boldsymbol\Phi'$ is the $N_c\times N_c$ Jacobian matrix of $\boldsymbol\Phi$. Then the Lagrangian of the system is transformed to
+\[\widetilde L=\frac{\dot{\boldsymbol Q}^{T}\boldsymbol\Phi'(\boldsymbol Q)^{T}\boldsymbol M\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q}}2-U(\boldsymbol\Phi(\boldsymbol Q)),\]''',
+    '''theorem generalized_coordinates {n k : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (Φ : Position k → Position n)
+    (J : Matrix (Fin n) (Fin k) ℝ) (q : ℝ → Position k) (V : Velocity k) (t : ℝ)
+    (hΦ : HasFDerivAt Φ J.toEuclideanLin.toContinuousLinearMap (q t))
+    (hq : HasDerivAt q V t) :
+    HasDerivAt (fun s => Φ (q s)) (J.toEuclideanLin V) t ∧
+    massLagrangian m U (Φ (q t)) (J.toEuclideanLin V) =
+      inner ℝ V ((generalizedMassMatrix m J).toEuclideanLin V) / 2 - U (Φ (q t)) := by
+  exact ⟨hasDerivAt_coordinateChange Φ J q V t hΦ hq,
+    massLagrangian_coordinateChange m U Φ J (q t) V⟩''',kind='unnumbered_claim',
+    context=['J=Φ′(Q)真实Frechet导数；generalizedMassMatrix=JᵀMJ；后段允许k=Nd≤Nc参数化约束流形。'],
+    extra=['原文smooth可在本结论弱化至点态真实可微；k可小于n，含原文约束推广。'],prior=['MolecularDynamics/Chapter01/GeneralizedCoordinates.lean:hasDerivAt_coordinateChange','MolecularDynamics/Chapter01/GeneralizedCoordinates.lean:massLagrangian_coordinateChange'])
+bridge('GeneralizedMassRegular','1.3',23,[78],r'''We will assume that any such changes of variables are regular transformations in the sense that $\boldsymbol\Phi'$ is of full rank and the resulting generalized mass matrix is invertible.''','MolecularDynamics/Chapter01/GeneralizedCoordinates.lean','generalizedMassMatrix_isUnit',extra=['正粒子质量；full rank为Jacobian列单射，符合n≥k。'],context=['这是原文模型假设及其由正定质量推出的关系，不假设结论可逆。'])
+add('ConvexLegendre','1.4',24,[79],r'''Abstractly, a Legendre transformation of a given convex function $g=g(\boldsymbol\xi):\mathbb R^m\to\mathbb R$ is a new function $\widetilde g=\widetilde g(\boldsymbol\eta):\mathbb R^m\to\mathbb R$ defined by
+\[\widetilde g(\boldsymbol\eta)=\sup_{\boldsymbol\xi}(\boldsymbol\eta^T\boldsymbol\xi-g(\boldsymbol\xi)),\]''',definition('legendreTransform'),extra=['值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。'],issue='原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。',verdict='NEEDS_HUMAN',explanation='原文sup可非有限。EReal是显式[EXTRA]值域修复，不能宣称逐字的R值对象已经PASS。')
+add('HamiltonEquations','1.4',24,[84],r'''The equations of motion can be written
+\[\dot{\boldsymbol q}=\frac{\partial H}{\partial\boldsymbol p},\qquad\dot{\boldsymbol p}=-\frac{\partial H}{\partial\boldsymbol q}.\]''',
+    '''def hamiltonEquations {n : ℕ} (H : PhaseSpace n → ℝ) (q p : ℝ → Position n) : Prop :=
+  ∀ t, HasDerivAt q (gradient (fun v => H (q t,v)) (p t)) t ∧
+    HasDerivAt p (-gradient (fun x => H (x,p t)) (q t)) t''',context=['速度与动量导数均是真导数；H可微的模型背景在使用时另给资格。'])
+bridge('HamiltonFixedMass','1.4',24,[85],r'''For constant $\boldsymbol M$ we obtain the dynamical equations,
+\[\dot{\boldsymbol q}=\boldsymbol M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol F=-\partial U/\partial\boldsymbol q.\]''','MolecularDynamics/Chapter01/Hamiltonian.lean','hamiltonianVectorField_eq',extra=['固定对角正质量；一般常SPD矩阵待扩展，原文M可指配置相关模型取常值。'],verdict='NEEDS_HUMAN',explanation='现有桥接仅固定对角M；原文常M含一般SPD。签名必须扩展一般常质量矩阵，不能把对角特例当全条PASS。')
+stated('HamiltonLagrangeEquivalence','1.4',25,[86],r'''More generally, for molecular models, the Hamiltonian and Lagrangian formulations are interchangeable, but the use of the Hamiltonian form is preferred for allowing simplified description of the geometric character of the solutions of the system as we discuss in Chaps. 2–4.''','generalLegendreEquivalence_statement',extra=['一般配置相关M C2、U C2、M逐点正定；轨迹q′=v真实且时间域开放。'],missing='一般矩阵二次型速度梯度及配置导数、可微矩阵逆和Euler–Lagrange转换理论。')
+add('PhaseSpace','1.4',25,[87,88],'''The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $\mathbb R^3$ is described by coordinates and positions, i.e., by a point in $\mathbb R^{6N}$.''',
+    definition('finiteEnergyPhaseSpace') if False else '''def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseSpace n) :=
+  {z | H z ≠ ⊤ ∧ H z ≠ ⊥}''',extra=['采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。'])
+
+# Complete easily overlooked clauses before admitting a local PASS.
+for r in RECORDS:
+    if r['source_id']=='MD-1.2-HarmonicSolution':
+        r['code']='''theorem harmonic_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace n) :
+    IsMechanicalSolutionOn (fun _ : Fin n => (1 : ℝ)) (fun q => (-(Ω^2)) • q)
+      univ univ (fun t => harmonicFlow Ω t z) ∧
+    harmonicFlow Ω 0 z = z ∧
+    ∀ t, (harmonicFlow Ω t z).1 = Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2 := by
+  exact ⟨harmonicFlow_isMechanicalSolution Ω hΩ z, harmonicFlow_zero Ω z, fun _ => rfl⟩'''
+        r['lean_decl']='MD.Ch01.harmonic_solution'
+    if r['source_id']=='MD-1.2-LJCoordinateScaling':
+        r['code']='''theorem lj_coordinate_scaling (Q : ℝ → V3) (σ t : ℝ) (v a : V3)
+    (hσ : 0 < σ) (hv : HasDerivAt Q v t) (ha : HasDerivAt (deriv Q) a t) :
+    HasDerivAt (fun s => σ • Q s) (σ • v) t ∧
+    HasDerivAt (fun s => σ • deriv Q s) (σ • a) t ∧
+    ∀ r s : V3, ‖σ • r - σ • s‖ = σ * ‖r-s‖ := by
+  refine ⟨hv.const_smul σ, ha.const_smul σ, ?_⟩
+  intro r s
+  rw [← smul_sub, norm_smul, Real.norm_eq_abs, abs_of_pos hσ]'''
+        r['lean_decl']='MD.Ch01.lj_coordinate_scaling';r['local_verdict']='PASS'
+        r['local_explanation']='实际导数缩放与全部距离缩放结论均已保留；σ正保证原文范数缩放不缺绝对值。';r['missing']=None
+    if r['source_id']=='MD-1.2-LJTimeScaling':
+        r['code']=r['code'].replace('∀ (N : ℕ)', '∀ (N : ℕ)',1).replace('∀ τ i, deriv (deriv (fun s => Q s i)) τ = ljForce 1 1 (Q τ) i)',
+            '∀ τ i, deriv (deriv (fun s => Q s i)) τ = ljForce 1 1 (Q τ) i) ∧\n    α⁻¹ = σ * Real.sqrt (m / ε)')
+        # Parenthesize the iff as a conjunct, rather than letting ∧ bind only to its right.
+        r['code']=r['code'].replace('((∀ t i, m •', '(((∀ t i, m •').replace('ljForce 1 1 (Q τ) i) ∧','ljForce 1 1 (Q τ) i)) ∧')
+        r['local_verdict']='PASS';r['local_explanation']='修正旧遗漏后，保留真实时间二阶缩放双向等价及单位时间α⁻¹=σ√(m/ε)；原文数值近似不作为形式化精度定理。'
+
+for r in RECORDS:
+    if r['source_id']=='MD-1.2-ConstraintDimension':
+        r['code']=r['code'].replace('  sorry', '  intro n r C q _ hs\n  have hrange : LinearMap.range (fderiv ℝ C q).toLinearMap = ⊤ :=\n    LinearMap.range_eq_top.mpr hs\n  have h := (fderiv ℝ C q).toLinearMap.finrank_range_add_finrank_ker\n  rw [hrange] at h\n  simpa [degreesOfFreedom, Position, finrank_euclideanSpace, Nat.add_comm] using h')
+        r['missing']=None
+    if r['source_id']=='MD-1.2-PairCancellation':
+        r['code']=r['code'].replace('  sorry', '''  intro N F _ hanti
+  have h : (∑ i, ∑ j, F i j) = -(∑ i, ∑ j, F i j) := by
+    calc
+      (∑ i, ∑ j, F i j) = ∑ j, ∑ i, F i j := Finset.sum_comm
+      _ = ∑ j, ∑ i, -F j i := by
+        apply Finset.sum_congr rfl
+        intro j _
+        apply Finset.sum_congr rfl
+        intro i _
+        exact hanti i j
+      _ = -(∑ j, ∑ i, F j i) := by simp only [Finset.sum_neg_distrib]
+  have hcoord (k : Fin 3) : (∑ i, ∑ j, F i j) k = 0 := by
+    have hk := congrArg (fun v : V3 => v k) h
+    simp only [PiLp.neg_apply] at hk
+    linarith
+  ext k
+  exact hcoord k''')
+        r['missing']=None
+
 def write_section(section):
     original=json.loads((BASE/'ch01_source.json').read_text(encoding='utf-8-sig'))
     ids={r['source_id'] for r in RECORDS if r['section'].startswith(section)}
@@ -223,6 +315,11 @@ def write_section(section):
     (BASE/'ch01_source.json').write_text(json.dumps(clean,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     lean_path=ROOT/'Blueprint/Ch01.lean'
     text=lean_path.read_text(encoding='utf-8-sig')
+    for r in new:
+        for prior in r['priors']:
+            if prior.startswith('MolecularDynamics/') and '.lean:' in prior:
+                module=prior.split('.lean:')[0].replace('/','.')
+                if 'import '+module+'\n' not in text: text='import '+module+'\n'+text
     # One marked section at a time; Windows paths deliberately avoid Sec1_x imports.
     marker=f'/- BEGIN FULL SECTION {section} -/'
     endmarker=f'/- END FULL SECTION {section} -/'

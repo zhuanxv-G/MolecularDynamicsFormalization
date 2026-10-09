@@ -622,5 +622,321 @@
       "CH01-042",
       "CH01-043"
     ]
+  },
+  {
+    "source_id": "MD-1.2-NewtonCompact",
+    "kind": "definition",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "18",
+    "pdf_page": "41",
+    "statement_latex": "In this book, we shall frequently use a compact, vectorial notation, where $\\boldsymbol q$ and $\\dot{\\boldsymbol q}$ represent vectors of the positions and velocities, and $\\boldsymbol M$ is a diagonal mass matrix, so the equations of motion (1.2) become\n\\[\\boldsymbol M\\frac{\\mathrm d^2}{\\mathrm dt^2}\\boldsymbol q=\\boldsymbol F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q).\\tag{1.3}\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$N_c=3N$；$\\boldsymbol M=\\operatorname{diag}(m_1,m_1,m_1,\\ldots,m_N,m_N,m_N)$；一维时$N_c=N$。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.compactNewton",
+    "extra_assumptions": [
+      "真实二阶可微资格写成HasDerivAt，避免总导数对不可微曲线给伪解。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-044",
+      "CH01-045",
+      "CH01-046",
+      "CH01-047",
+      "CH01-048",
+      "CH01-049",
+      "CH01-050"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-DegreesFreedom",
+    "kind": "definition",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "18",
+    "pdf_page": "41",
+    "statement_latex": "The number of local directions in which the configurational (position) state can be varied is called the number of degrees of freedom $N_d$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.degreesOfFreedom",
+    "extra_assumptions": [
+      "在可微约束C局部正则层中以导数核维数表示；无约束取零约束。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-051"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-ConstraintDimension",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "18",
+    "pdf_page": "41",
+    "statement_latex": "For the N-body system in $\\mathbb R^3$ without additional constraints there are $N_d=N_c=3N$ degrees of freedom. If $r$ independent constraints are present the number of degrees of freedom is $N_d=N_c-r$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.constraintdimension",
+    "extra_assumptions": [
+      "约束映射可微，独立约束=导数满射；n=Nc，r≤n由满射推出。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-052"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-TotalEnergy",
+    "kind": "definition",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "18",
+    "pdf_page": "41",
+    "statement_latex": "The total energy of the N-body system is a function of positions and velocities,\n\\[E(\\boldsymbol q_1,\\ldots,\\boldsymbol q_N,\\dot{\\boldsymbol q}_1,\\ldots,\\dot{\\boldsymbol q}_N)=\\sum_{j=1}^{N}\\frac{m_j\\|\\dot{\\boldsymbol q}_j\\|^2}{2}+U(\\boldsymbol q_1,\\ldots,\\boldsymbol q_N).\\tag{1.4}\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "斜体E为函数，直立E为守恒能量值；动能是有限和。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.particleTotalEnergy",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-053",
+      "CH01-054",
+      "CH01-057"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-PairCancellation",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "19",
+    "pdf_page": "42",
+    "statement_latex": "This means that the sum of all the forces will vanish.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "前文Newton第三定律：i作用j的力是j作用i的力的exact negative。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.paircancellation",
+    "extra_assumptions": [
+      "Fi i=0，内部两体力反对称；无外力。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-058"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-MomentumConservation",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "19",
+    "pdf_page": "42",
+    "statement_latex": "and thus the three components of the total momentum vector $\\boldsymbol p_{\\mathrm{tot}}:=\\sum_{i=1}^{N}\\boldsymbol p_i$ will be conserved quantities.",
+    "proof_latex": "Since\n\\[\\frac{\\mathrm d\\boldsymbol p_i}{\\mathrm dt}=\\boldsymbol F_i,\\]\nwe have\n\\[\\sum_{i=1}^{N}\\frac{\\mathrm d\\boldsymbol p_i}{\\mathrm dt}=\\sum_{i=1}^{N}\\boldsymbol F_i=0\\]",
+    "proof_note": "按渲染原页逐字转录原文论证。",
+    "context_notation": [
+      "p=m qdot，三维d=3，任意d为推广；IsMechanicalSolutionOn是真正时间微分方程。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.momentumconservation",
+    "extra_assumptions": [
+      "开放连通时间区间；净力为零来自前文内部力消去，此桥接显式采用净力条件。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-059",
+      "CH01-060",
+      "CH01-061"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-HarmonicSolution",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "19–20",
+    "pdf_page": "42–43",
+    "statement_latex": "Example 1.3 (Harmonic Oscillator) Consider the system\n\\[\\dot x=v,\\qquad\\dot v=-\\Omega^2x.\\]\nThis system describes the behavior of a particle with unit mass in one dimension, with energy function $E(x,\\dot x)=\\dot x^2/2+\\Omega^2x^2/2$, where its motion is governed by a linear 2nd order equation $\\ddot x+\\Omega^2x=0$. The solution, for given $x(0)=\\xi$, $\\dot x(0)=v(0)=\\eta$, is\n\\[x(t)=\\xi\\cos(\\Omega t)+\\frac\\eta\\Omega\\sin(\\Omega t).\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "harmonicFlow同时给出位置与实际动量/速度；harmonicFlow_zero保证初值。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.harmonic_solution",
+    "extra_assumptions": [
+      "Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-062",
+      "CH01-063"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-ScalarMechanical",
+    "kind": "definition",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "20",
+    "pdf_page": "43",
+    "statement_latex": "Example 1.4 (Single Degree of Freedom) Consider a simple system with a single degree of freedom (with unit mass $m=1$ for simplicity) and energy function $E(x,\\dot x)=\\dot x^2/2+U(x)$ (which includes the harmonic oscillator as a special case). The equations of motion are\n\\[\\dot x=v,\\qquad\\dot v=-\\frac{\\partial U}{\\partial x}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "scalarPotentialEnergy U z = z.2²/2+U z.1；定义方程不宣称解存在。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.scalarMechanicalModel",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-064"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-ScalarQuadrature",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "20",
+    "pdf_page": "43",
+    "statement_latex": "Near this point, provided $\\eta\\ne0$, let us solve the equation $E(x,v)=E(\\xi,\\eta)$ for $v$ as a unique smooth function of $x,\\xi,\\eta$ using the implicit function theorem: $v=V(x,\\xi,\\eta)$. Inserting this into the differential equations we then find\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=v=V(x,\\xi,\\eta).\\]\nThis is a separable differential equation; it is therefore easily integrated from any provided initial value, $x(0)=\\xi$, as a function of $t$, resulting in a relation $x=X(t,\\xi,\\eta)$. Then $v=V(X(t,\\xi,\\eta),\\xi,\\eta)$ and we see that it is possible to derive the formula for the solution $(x,v)$ as a function of $t$ and the initial conditions.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "HasScalarQuadratureRepresentation保留真实积分原函数、局部逆与逆等式。原文只对给定ξ,η说明；联合参数光滑性尚未完整登记。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.scalarquadrature",
+    "extra_assumptions": [
+      "U C2满足局部隐函数/唯一性资格；局部时间窗；非转向分支对应原文η≠0，其余分支为额外加强。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-065",
+      "CH01-066"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-UniformLJSystem",
+    "kind": "definition",
+    "label": "Example 1.5",
+    "section": "1.2",
+    "printed_page": "21",
+    "pdf_page": "44",
+    "statement_latex": "The energy of the system is\n\\[E=\\frac12\\sum_{i=1}^{N}m\\dot{\\boldsymbol q}_i^2+\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{\\mathrm{LJ}}(r_{ij}),\\]\nwhere $r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|$ and the mass $m$ of an argon atom is $6.69\\times10^{-26}$ kg.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "物理数值m只是原文参数背景，不形式化测量准确性；pairDistance=rij。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.uniformLJSystem",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-068"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-RadialLJForceLiteral",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "21",
+    "pdf_page": "44",
+    "statement_latex": "The equations of motion are, for $i=1,2,\\ldots,N$, using the chain rule,\n\\[m\\ddot{\\boldsymbol q}_i=\\sum_{j=1,\\ j\\ne i}^{N}\\frac{\\varphi'_{\\mathrm{LJ}}(r_{ij})}{r_{ij}}(\\boldsymbol q_i-\\boldsymbol q_j)\n=-24\\frac\\epsilon\\sigma\\sum_{j=1,\\ j\\ne i}^{N}r_{ij}^{-1}\\left[2\\left(\\frac\\sigma{r_{ij}}\\right)^{13}-\\left(\\frac\\sigma{r_{ij}}\\right)^7\\right](\\boldsymbol q_i-\\boldsymbol q_j).\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "首个等式缺负号；所印次行实际为势的正梯度，不同于此前Newton负梯度。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.radial_lj_force_literal",
+    "extra_assumptions": [
+      "正ε,σ及非碰撞；hnewton采用式(1.3)负梯度定义，未把字面错误结果放入假设。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-069"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-LJCoordinateScaling",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "21",
+    "pdf_page": "44",
+    "statement_latex": "Now introduce the change of variables\n\\[\\boldsymbol Q_i=\\sigma^{-1}\\boldsymbol q_i,\\qquad i=1,2,\\ldots,N,\\]\nthen $\\dot{\\boldsymbol q}_i=\\sigma\\dot{\\boldsymbol Q}_i$, $\\ddot{\\boldsymbol q}_i=\\sigma\\ddot{\\boldsymbol Q}_i$, and $\\|\\boldsymbol q_i-\\boldsymbol q_j\\|=\\sigma\\|\\boldsymbol Q_i-\\boldsymbol Q_j\\|$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.lj_coordinate_scaling",
+    "extra_assumptions": [
+      "σ>0使范数缩放无绝对值；实际一阶/二阶导数资格。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-199"
+    ]
+  },
+  {
+    "source_id": "MD-1.2-LJTimeScaling",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.2",
+    "printed_page": "21–22",
+    "pdf_page": "44–45",
+    "statement_latex": "Thus we see that if we make the additional time transformation\n\\[\\tau=\\alpha t,\\qquad\\alpha^2=\\frac\\epsilon{m\\sigma^2},\\]\nthen the equations become\n\\[\\frac{\\mathrm d^2\\boldsymbol Q_i}{\\mathrm d\\tau^2}=-\\sum_{j=1,\\ j\\ne i}^{N}\\frac{\\hat\\varphi'_{\\mathrm{LJ}}(R_{ij})}{R_{ij}}(\\boldsymbol Q_i-\\boldsymbol Q_j).\\]\nThis means that a natural choice for the unit of time is\n\\[\\alpha^{-1}=\\sigma\\sqrt{\\frac m\\epsilon}\\approx2.17\\times10^{-12}\\mathrm s.\\]\nBy using the units given here, we may work with a simplified form of the Lennard-Jones system involving unit masses and a parameter-independent potential energy function.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$R_{ij}=\\|\\boldsymbol Q_i-\\boldsymbol Q_j\\|$；$\\hat\\varphi_{LJ}(R)=4[R^{-12}-R^{-6}]$。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.ljtimescaling",
+    "extra_assumptions": [
+      "m,ε,σ,α正；真实C2非碰撞轨迹。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-200"
+    ]
   }
 ]

@@ -23,3 +23,16 @@ import Blueprint.Ch01
 #print axioms MD.Ch01.angleBondModel
 #print axioms MD.Ch01.dihedralPotential
 #print axioms MD.Ch01.gayBerneModel
+#print axioms MD.Ch01.compactNewton
+#print axioms MD.Ch01.degreesOfFreedom
+#print axioms MD.Ch01.constraintdimension
+#print axioms MD.Ch01.particleTotalEnergy
+#print axioms MD.Ch01.paircancellation
+#print axioms MD.Ch01.momentumconservation
+#print axioms MD.Ch01.harmonic_solution
+#print axioms MD.Ch01.scalarMechanicalModel
+#print axioms MD.Ch01.scalarquadrature
+#print axioms MD.Ch01.uniformLJSystem
+#print axioms MD.Ch01.radial_lj_force_literal
+#print axioms MD.Ch01.lj_coordinate_scaling
+#print axioms MD.Ch01.ljtimescaling

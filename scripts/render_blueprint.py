@@ -53,73 +53,60 @@ def cell(text) -> str:
 
 
 def render(source_path: Path, lean_path: Path, audit_path: Path) -> str:
-    sources = json.loads(source_path.read_text(encoding='utf-8-sig'))
-    lean = declarations(lean_path.read_text(encoding='utf-8-sig'))
-    audit = json.loads(audit_path.read_text(encoding='utf-8-sig'))
-    if {s['source_id'] for s in sources} != set(lean) or set(lean) != set(audit['items']):
-        raise ValueError('Source, marked Lean declarations and audit IDs do not match')
-    lines = ['| source_id | 标签 | 审计判定 | 最终状态 |', '|---|---|---|---|']
+    from ch01_full_tools import declarations as whole_declarations
+    sources=json.loads(source_path.read_text(encoding='utf-8-sig'))
+    ds=whole_declarations()
+    audit=json.loads(audit_path.read_text(encoding='utf-8-sig'))['items']
+    if {s['source_id'] for s in sources} != set(ds) or set(ds)!=set(audit):
+        raise ValueError('Source/Blueprint/local audit ID mismatch')
+    lines=['# 第1章 Lean Blueprint 本地审阅材料','',
+        '覆盖印刷p.1–45正文，习题除外。原文JSON仍为DRAFT；本地模板C预审独立于网站审计。网站未返回，所有条目均待网站审计，未冻结。编译和公理检查只验证当前Lean陈述/证明，不证明其忠于原文，也不验证物理模型。','',
+        '| source_id | 页码 印刷/PDF | 本地预审 | 网站审计 | 状态 |','|---|---|---|---|---|']
     for s in sources:
-        a = audit['items'][s['source_id']]
-        lines.append('| ' + ' | '.join(map(cell, [s['source_id'], s['label'] or '未编号结论',
-                    a['verdict'], a.get('final_status', 'incomplete')])) + ' |')
+        a=audit[s['source_id']]
+        lines.append('| '+' | '.join(map(cell,[s['source_id'],s['printed_page']+'/'+s['pdf_page'],a['verdict'],'待网站审计',a.get('final_status','incomplete')]))+' |')
+    lines+=['','## 需要导师判断的问题','']
     for s in sources:
-        sid = s['source_id']
-        a, d = audit['items'][sid], lean[sid]
-        lines += ['', f"## {sid} · {s['label'] or '未编号结论'} · 印刷 p.{s['printed_page']} / PDF p.{s['pdf_page']}",
-                  '', '### 1. 原文陈述', '', quote(s['statement_latex']),
-                  '', '### 2. 原文证明', '']
-        proof = s.get('proof_latex')
-        if proof:
-            if len(proof) > 1200:
-                lines += ['<details>', '<summary>展开原文证明</summary>', '', quote(proof), '', '</details>']
-            else:
-                lines += [quote(proof)]
-        else:
-            lines += ['原书无完整证明，`proof_latex = null`。']
-        if s.get('proof_note'):
-            lines += ['', s['proof_note']]
-        if s.get('proof_discussion_latex'):
-            lines += ['', '原文证明思路（不计为完整证明）：', '', quote(s['proof_discussion_latex'])]
-        lines += ['', '### 3. Lean 陈述', '', '```lean', d['statement'], '```',
-                  '', '### 4. 对照表', '', '| 原文成分 | Lean 对应 | 备注（[EXTRA]/[ERRATUM?]/一致） |',
-                  '|---|---|---|']
-        for row in a['correspondence']:
-            lines += ['| ' + ' | '.join(cell(row[k]) for k in ('source', 'lean', 'note')) + ' |']
-        lines += ['', '### 5. 审计结论', '',
-                  f"原文 JSON：{s['review_status']}；MathCopilot只读审计：{a['verdict']}；frozen={str(a['frozen']).lower()}。",
-                  '', a['explanation']]
-        for stage in ('json_review', 'blueprint_translation', 'semantic_review'):
-            stage_data = a[stage]
-            lines += ['', f"- {stage}：{stage_data['status']}；任务 `{stage_data['task']}`；返回件 " +
-                      ('、'.join('`' + r + '`' for r in stage_data.get('results', [])) or '尚未收到') + '。']
-        for issue in s.get('issues', []):
-            lines += ['', f"- {issue['code']}：{issue['detail']}（{issue['status']}）。"]
-        lines += ['', '### 6. 最终状态与证明位置', '',
-                  f"最终状态：**{a.get('final_status', 'incomplete')}**。{a.get('final_status_note', '')}",
-                  '', f"Blueprint声明/证明位置：`Blueprint/Ch01.lean:{d['line']}`。",
-                  '', f"本地证明状态：{a.get('local_proof_status', 'not_checked')}。",
-                  '', f"依赖公理：`{', '.join(a.get('axioms', [])) or '尚未检查'}`。",
-                  '', f"直接风险：{a.get('direct_risk', '尚未检查')}。",
-                  '', f"依赖闭包风险：{a.get('dependency_risk', '尚未检查')}。"]
-        for p in a.get('proof_locations', []):
-            lines += ['', f"- 复用证明：`{p['file']}:{p['line']}`，`{p['decl']}`。"]
-        lines += ['', '当前签名SHA256：`' + d['signature_sha256'] + '`；原文条目SHA256：`' + entry_hash(s) + '`。']
-    return '\n'.join(lines) + '\n'
+        a=audit[s['source_id']]
+        if a['verdict']!='PASS' or s.get('issues'):
+            lines.append('- '+s['source_id']+'：'+a['explanation'])
+            lines.extend('  '+i['detail'] for i in s.get('issues',[]))
+    for s in sources:
+        sid=s['source_id'];a=audit[sid];d=ds[sid]
+        lines+=['',f"## 1. {sid} · {s['label'] or s['kind']} · 印刷p.{s['printed_page']} / PDFp.{s['pdf_page']}",'',
+            '### 2. 原文陈述','',quote(s['statement_latex']),'','### 3. 原文证明','']
+        proof=s.get('proof_latex')
+        if proof and len(proof)>1200:lines+=['<details>','<summary>展开逐字原文证明</summary>','',quote(proof),'','</details>']
+        else:lines+=[quote(proof) if proof else '原书无独立完整证明（proof_latex=null）。']
+        if s.get('proof_note'):lines+=['',s['proof_note']]
+        if s.get('proof_discussion_latex'):lines+=['','原文证明思路：','',quote(s['proof_discussion_latex'])]
+        lines+=['','### 4. Lean陈述','','```lean',d['statement'],'```','','### 5. 对照表','',
+            '| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |','|---|---|---|']
+        for row in a['correspondence']:lines.append('| '+' | '.join(cell(row[k]) for k in ('source','lean','note'))+' |')
+        for i in s.get('issues',[]):lines.append('| 原书疑点 | '+cell(i['detail'])+' | [ERRATUM?] |')
+        lines+=['','### 6. 审计结论','',f"本地预审：**{a['verdict']}**。{a['explanation']}",'',
+            '网站审计：**待网站审计**。原文JSON：'+s['review_status']+'；未冻结。']
+        if a.get('counterexample'):lines+=['','反例：'+a['counterexample']]
+        if a.get('suggested_fix'):lines+=['','建议：'+a['suggested_fix']]
+        lines+=['','### 7. 状态与证明位置','',
+            '**'+a.get('final_status','incomplete')+'**；本地证明状态：'+a['proof_status']+'。',
+            '',f"位置：`Blueprint/Ch01.lean:{d['line']}`（`{d['name']}`）。",'',
+            'Lean编译/公理检查：'+('已验证' if a['checked'] else '本轮待验证')+'；公理：`'+(', '.join(a.get('axioms',[])) or '未检查')+'`。','',
+            '直接占位：'+('有sorry' if a['direct_placeholder'] else '无直接sorry')+'；传递占位：'+('含sorryAx' if 'sorryAx' in a.get('axioms',[]) else ('未检出' if a['checked'] else '未验证'))+'。']
+        if a.get('missing'):lines+=['','缺失/继续路线：'+a['missing']]
+        if a.get('documented_priors'):lines+=['','已登记前置证明/定义：'+ '; '.join(a['documented_priors'])+'。']
+        lines+=['','签名SHA256：`'+d['signature_sha256']+'`；原文SHA256：`'+entry_hash(s)+'`。']
+    return '\n'.join(lines)+'\n'
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--source', type=Path, default=ROOT/'blueprint/ch01/ch01_source.json')
-    parser.add_argument('--lean', type=Path, default=ROOT/'Blueprint/Ch01.lean')
-    parser.add_argument('--audit', type=Path, default=ROOT/'blueprint/ch01/audit.json')
-    parser.add_argument('--output', type=Path, default=ROOT/'docs/review/CH01_PILOT.zh-CN.md')
-    args = parser.parse_args()
-    result = render(args.source, args.lean, args.audit)
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(result, encoding='utf-8')
-    print(f'Rendered 5 pilot entries: {args.output}')
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--source',type=Path,default=ROOT/'blueprint/ch01/ch01_source.json')
+    parser.add_argument('--lean',type=Path,default=ROOT/'Blueprint/Ch01.lean')
+    parser.add_argument('--audit',type=Path,default=ROOT/'blueprint/ch01/local_audit.json')
+    parser.add_argument('--output',type=Path,default=ROOT/'docs/review/CH01_BLUEPRINT.zh-CN.md')
+    a=parser.parse_args()
+    a.output.write_text(render(a.source,a.lean,a.audit),encoding='utf-8')
+    print('Rendered',len(json.loads(a.source.read_text(encoding='utf-8-sig'))),'entries:',a.output)
 
-
-if __name__ == '__main__':
-    main()
+if __name__=='__main__':main()

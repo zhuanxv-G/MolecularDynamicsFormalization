@@ -1,3 +1,6 @@
+import MolecularDynamics.Chapter01.ScalarLocalIVP
+import MolecularDynamics.Chapter01.HarmonicOscillator
+import MolecularDynamics.Chapter01.MomentumConservation
 import MolecularDynamics.Chapter01.ReviewProofs
 import MolecularDynamics.Chapter01.EuclideanStability
 import MolecularDynamics.Chapter01.EnergyConservation
@@ -347,5 +350,170 @@ def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁
   4 * εGB * ((σ₀ / Δ)^12 - (σ₀ / Δ)^6)
 
 /- END FULL SECTION 1.1 -/
+
+/- BEGIN FULL SECTION 1.2 -/
+
+/-- source_id: MD-1.2-NewtonCompact · definition · printed p.18 / PDF p.41
+[EXTRA] 真实二阶可微资格写成HasDerivAt，避免总导数对不可微曲线给伪解。
+
+-/
+def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (q : ℝ → Position n) (t : ℝ) : Prop :=
+  HasDerivAt q (deriv q t) t ∧ HasDerivAt (deriv q) (deriv (deriv q) t) t ∧
+  massOperator m (deriv (deriv q) t) = -gradient U (q t)
+
+/-- source_id: MD-1.2-DegreesFreedom · definition · printed p.18 / PDF p.41
+[EXTRA] 在可微约束C局部正则层中以导数核维数表示；无约束取零约束。
+
+-/
+def degreesOfFreedom {n r : ℕ} (C : Position n → Position r) (q : Position n) :=
+  Module.finrank ℝ (LinearMap.ker (fderiv ℝ C q).toLinearMap)
+
+/-- source_id: MD-1.2-ConstraintDimension · unnumbered_claim · printed p.18 / PDF p.41
+[EXTRA] 约束映射可微，独立约束=导数满射；n=Nc，r≤n由满射推出。
+
+-/
+theorem constraintdimension :
+  ∀ (n r : ℕ) (C : Position n → Position r) (q : Position n),
+    DifferentiableAt ℝ C q → Function.Surjective (fderiv ℝ C q) →
+    degreesOfFreedom C q + r = n := by
+  intro n r C q _ hs
+  have hrange : LinearMap.range (fderiv ℝ C q).toLinearMap = ⊤ :=
+    LinearMap.range_eq_top.mpr hs
+  have h := (fderiv ℝ C q).toLinearMap.finrank_range_add_finrank_ker
+  rw [hrange] at h
+  simpa [degreesOfFreedom, Position, finrank_euclideanSpace, Nat.add_comm] using h
+
+/-- source_id: MD-1.2-TotalEnergy · definition · printed p.18 / PDF p.41
+
+
+-/
+def particleTotalEnergy {N : ℕ} (m : Fin N → ℝ) (U : (Fin N → V3) → ℝ)
+    (q v : Fin N → V3) : ℝ := (∑ j, m j * ‖v j‖^2 / 2) + U q
+
+/-- source_id: MD-1.2-PairCancellation · unnumbered_claim · printed p.19 / PDF p.42
+[EXTRA] Fi i=0，内部两体力反对称；无外力。
+
+-/
+theorem paircancellation :
+  ∀ (N : ℕ) (F : Fin N → Fin N → V3),
+    (∀ i, F i i = 0) → (∀ i j, F i j = -F j i) → ∑ i, ∑ j, F i j = 0 := by
+  intro N F _ hanti
+  have h : (∑ i, ∑ j, F i j) = -(∑ i, ∑ j, F i j) := by
+    calc
+      (∑ i, ∑ j, F i j) = ∑ j, ∑ i, F i j := Finset.sum_comm
+      _ = ∑ j, ∑ i, -F j i := by
+        apply Finset.sum_congr rfl
+        intro j _
+        apply Finset.sum_congr rfl
+        intro i _
+        exact hanti i j
+      _ = -(∑ j, ∑ i, F j i) := by simp only [Finset.sum_neg_distrib]
+  have hcoord (k : Fin 3) : (∑ i, ∑ j, F i j) k = 0 := by
+    have hk := congrArg (fun v : V3 => v k) h
+    simp only [PiLp.neg_apply] at hk
+    linarith
+  ext k
+  exact hcoord k
+
+/-- source_id: MD-1.2-MomentumConservation · unnumbered_claim · printed p.19 / PDF p.42
+[EXTRA] 开放连通时间区间；净力为零来自前文内部力消去，此桥接显式采用净力条件。
+
+-/
+theorem momentumconservation :
+  ∀ {N d : ℕ}
+    (m : CoordinateMasses (N * d)) (F : Force (N * d))
+    (Q : Set (Position (N * d))) (a b : ℝ)
+    (γ : ℝ → PhaseSpace (N * d))
+    (hγ : IsMechanicalSolutionOn m F Q (Ioo a b) γ)
+    (hFsum : ∀ q ∈ Q, ∀ c : Fin d,
+      ∑ i : Fin N, F q (particleCoordinateEquiv N d (i, c)) = 0)
+    (c : Fin d) (s t : ℝ)
+    (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
+    totalMomentumCoordinate (γ s).2 c = totalMomentumCoordinate (γ t).2 c := by
+  exact @MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
+
+/-- source_id: MD-1.2-HarmonicSolution · unnumbered_claim · printed p.19–20 / PDF p.42–43
+[EXTRA] Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。
+
+-/
+theorem harmonic_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace n) :
+    IsMechanicalSolutionOn (fun _ : Fin n => (1 : ℝ)) (fun q => (-(Ω^2)) • q)
+      univ univ (fun t => harmonicFlow Ω t z) ∧
+    harmonicFlow Ω 0 z = z ∧
+    ∀ t, (harmonicFlow Ω t z).1 = Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2 := by
+  exact ⟨harmonicFlow_isMechanicalSolution Ω hΩ z, harmonicFlow_zero Ω z, fun _ => rfl⟩
+
+/-- source_id: MD-1.2-ScalarMechanical · definition · printed p.20 / PDF p.43
+
+
+-/
+def scalarMechanicalModel (U : ℝ → ℝ) (z : ℝ → ℝ × ℝ) : Prop :=
+  ∀ t, HasDerivAt z ((z t).2, -deriv U (z t).1) t
+
+/-- source_id: MD-1.2-ScalarQuadrature · unnumbered_claim · printed p.20 / PDF p.43
+[EXTRA] U C2满足局部隐函数/唯一性资格；局部时间窗；非转向分支对应原文η≠0，其余分支为额外加强。
+
+-/
+theorem scalarquadrature :
+  ∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U)
+    (z₀ : ℝ × ℝ) (t₀ : ℝ),
+    ∃ (ε : ℝ) (γ : ℝ → ℝ × ℝ), 0 < ε ∧ γ t₀ = z₀ ∧
+      (∀ t ∈ Ioo (t₀ - ε) (t₀ + ε), HasDerivAt γ (scalarPotentialVectorField U (γ t)) t) ∧
+      (∀ t ∈ Ioo (t₀ - ε) (t₀ + ε), scalarPotentialEnergy U (γ t) = scalarPotentialEnergy U z₀) ∧
+      ScalarPotentialLocalDescription U γ (t₀ - ε) (t₀ + ε) t₀ := by
+  exact @MolecularDynamics.scalarPotential_exists_localIVP_integrable
+
+/-- source_id: MD-1.2-UniformLJSystem · Example 1.5 · printed p.21 / PDF p.44
+
+
+-/
+def uniformLJSystem {N : ℕ} (m ε σ : ℝ) (q v : Fin N → V3) : ℝ :=
+  (∑ i, m * ‖v i‖^2 / 2) + uniformLJEnergy ε σ q
+
+/-- source_id: MD-1.2-RadialLJForceLiteral · unnumbered_claim · printed p.21 / PDF p.44
+[EXTRA] 正ε,σ及非碰撞；hnewton采用式(1.3)负梯度定义，未把字面错误结果放入假设。
+[ERRATUM?] 首个等式缺负号；所印次行实际为势的正梯度，不同于此前Newton负梯度。
+-/
+theorem radial_lj_force_literal {N : ℕ} (m ε σ : ℝ)
+    (q : Fin N → V3) (a : Fin N → V3) (i : Fin N)
+    (hε : 0 < ε) (hσ : 0 < σ)
+    (hnc : ∀ j, i ≠ j → q i ≠ q j)
+    (hnewton : m • a i = ljForce ε σ q i) :
+    m • a i = ∑ j ∈ Finset.univ.erase i,
+      (deriv (lennardJonesPotential ε σ) ‖q i-q j‖ / ‖q i-q j‖) • (q i-q j) ∧
+    m • a i = (-24 * ε / σ) • (∑ j ∈ Finset.univ.erase i,
+      (‖q i-q j‖⁻¹ * (2 * (σ / ‖q i-q j‖)^13 - (σ / ‖q i-q j‖)^7)) • (q i-q j)) := by
+  sorry
+
+/-- source_id: MD-1.2-LJCoordinateScaling · unnumbered_claim · printed p.21 / PDF p.44
+[EXTRA] σ>0使范数缩放无绝对值；实际一阶/二阶导数资格。
+
+-/
+theorem lj_coordinate_scaling (Q : ℝ → V3) (σ t : ℝ) (v a : V3)
+    (hσ : 0 < σ) (hv : HasDerivAt Q v t) (ha : HasDerivAt (deriv Q) a t) :
+    HasDerivAt (fun s => σ • Q s) (σ • v) t ∧
+    HasDerivAt (fun s => σ • deriv Q s) (σ • a) t ∧
+    ∀ r s : V3, ‖σ • r - σ • s‖ = σ * ‖r-s‖ := by
+  refine ⟨hv.const_smul σ, ha.const_smul σ, ?_⟩
+  intro r s
+  rw [← smul_sub, norm_smul, Real.norm_eq_abs, abs_of_pos hσ]
+
+/-- source_id: MD-1.2-LJTimeScaling · unnumbered_claim · printed p.21–22 / PDF p.44–45
+[EXTRA] m,ε,σ,α正；真实C2非碰撞轨迹。
+
+-/
+theorem ljtimescaling :
+  ∀ (N : ℕ) (m ε σ α : ℝ) (Q : ℝ → Fin N → V3),
+    0 < m → 0 < ε → 0 < σ → 0 < α → α^2=ε/(m*σ^2) →
+    (∀ i, ContDiff ℝ 2 (fun t => Q t i)) →
+    (∀ t i j, i ≠ j → Q t i ≠ Q t j) →
+    (((∀ t i, m • deriv (deriv (fun s => σ • Q (α*s) i)) t =
+      ljForce ε σ (fun j => σ • Q (α*t) j) i) ↔
+    ∀ τ i, deriv (deriv (fun s => Q s i)) τ = ljForce 1 1 (Q τ) i)) ∧
+    α⁻¹ = σ * Real.sqrt (m / ε) := by
+  sorry
+
+/- END FULL SECTION 1.2 -/
 
 end MD.Ch01

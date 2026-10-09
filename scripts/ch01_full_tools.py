@@ -120,7 +120,7 @@ def mark_checked(log):
         m=re.search(r"'"+re.escape(name)+r"' (?:depends on axioms:\s*\[([^\]]*)\]|does not depend on any axioms)",text)
         if not m:raise ValueError('missing axiom output '+name)
         axioms=[] if m.group(1) is None else [s.strip() for s in m.group(1).split(',') if s.strip()]
-        a.update(checked=True,axioms=axioms,final_status='incomplete' if 'sorryAx' in axioms else
+        a.update(checked=True,axioms=axioms,final_status='incomplete' if 'sorryAx' in axioms or a['verdict']!='PASS' else
                  ('checked+documented priors' if a['documented_priors'] else 'self-contained'),axiom_log=str(Path(log).relative_to(ROOT)))
     (BASE/'local_audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
