@@ -39,8 +39,9 @@ def theorem_type(file,name):
             generic=''
             if re.search(r'\bE\b',args+' '+conclusion) and not re.search(r'\{E\s*:',args):
                 field='ℂ' if 'ComplexSpectralFlow' in file else 'ℝ'
-                generic=f'{{E : Type*}} [NormedAddCommGroup E] [NormedSpace {field} E] [CompleteSpace E] '
-            return ('∀ '+generic+args+',\n    ' if generic or args else '')+conclusion
+                generic=f'{{E : Type*}} [NormedAddCommGroup E] [NormedSpace {field} E] '+('' if name=='equilibrium_constant_ode_iff' else '[CompleteSpace E] ')
+            result=('∀ '+generic+args+',\n    ' if generic or args else '')+conclusion
+            return re.sub(r'(?<!\w)ω(?!\w)', 'omega', result)
     raise ValueError(header)
 
 def add(key, section, pages, old, statement, code, *, kind='definition', label=None,
@@ -469,6 +470,56 @@ for r in RECORDS:
         r['extra_assumptions']=['U光滑使原文smooth solutions和联合隐函数成立；η≠0保留原文非转向前提。']
         r['missing']='参数依赖的C∞隐函数与C∞ODE局部流、带参数quadrature逆理论；已有固定初值C1桥接不足。'
 
+add('UniformPairLattice','1.6',33,[149],r'''Let us suppose we have a uniform pair potential $\varphi$ and define the total potential energy of a system of N atoms by
+\[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi(|x_i-x_j|).\]''',
+    '''def latticePairPotential {N : ℕ} (φ : ℝ → ℝ) (x : Fin N → ℝ) : ℝ :=
+  ∑ i, ∑ j ∈ Finset.Ioi i, φ |x i-x j|''')
+stated('UnorderedPairCount','1.6',33,[150],r'''The computation of the energy requires $N(N-1)/2$ separate calculations, which could be very expensive if N is large.''','unorderedPairCount_statement',context=['只形式化无序pair计数；计算成本定性评价不作定理。'],missing='有序双索引lt计数和Nat.choose2组合，计划短证明。')
+add('NearestNeighbor','1.6',33,[151],r'''We can reduce this by assuming only nearest neighbor forces, which means the energy becomes
+\[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\]''',
+    '''def nearestNeighborModel {N : ℕ} (φ : ℝ → ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  ∑ i : Fin N, φ |x i.succ-x i.castSucc|''',context=['Lean有N+1个site，对应原文N；加一避空首末索引，下同。'])
+add('WalledChain','1.6',33,[152],r'''In order to keep such a system bounded we might then introduce walls at the ends of the chain, e.g. by adding confining potentials to $U$:
+\[U(x_1,x_2,\ldots,x_N)=\varphi_c(|x_1|)+\varphi_c(|L-x_N|)+\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\tag{1.7}\]''',
+    '''def walledChainModel {N : ℕ} (φ φc : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  φc |x 0| + φc |L-x (Fin.last N)| + nearestNeighborModel φ x''')
+add('PeriodicChain','1.6',33,[153],r'''Alternatively one could restrict to a bounded domain by use of periodic boundary conditions, introducing the potential energy:
+\[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|)+\varphi(|L+x_1-x_N|).\tag{1.8}\]''',
+    '''def periodicChainModel {N : ℕ} (φ : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  nearestNeighborModel φ x + φ |L+x 0-x (Fin.last N)|''')
+add('PeriodicBoundary','1.6',34,[154],r'''If a particle moves to the right of $x=L$ we simply shift its position to $x-L$; likewise any particle exiting to the left of $x=0$ has its position shifted to $x+L$ (see Fig. 1.15).''',definition('periodicBoundary'),context=['周期位置等价类：x与x+kL，k∈Z；实际越界wrap代表选择原文只给左右各一步。'])
+stated('PeriodicTranslationMomentum','1.6',34,[155],'''Periodic boundary conditions allow us to preserve Newton’s third law, the translational symmetry, and thus the conservation of momentum.''','periodicMomentum_statement',context=['翻译不变模型作用的常向量方向导数零，使总内力零；动量守恒复用MomentumConservation条目。'],missing='从已证平移不变性用实际导数推总力零，再桥接动量；计划短证明。')
+add('RegularLattice','1.6',34,[156],r'''On the line, we think of a (finite) lattice as a sequence of discrete points separated by a fixed distance $\Delta x$.''',definition('regularLattice'))
+stated('RegularLatticeMinimizerLiteral','1.6',34,[157],'''An obvious benefit of using periodic boundary conditions is that, with a uniform pair potential, the energy minimizers are points of a regular lattice; with confining potentials this is unlikely to be the case.''','regularLatticeMinimizer_statement',issue='对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。',verdict='NEEDS_HUMAN',missing='原文需限定势和配置域；不可证明字面假命题。')
+add('PeriodicImages','1.6',35,[158],r'''periodic boundary conditions involve an extended potential energy of the form
+\[U^{\mathrm{pbc}}(\boldsymbol q)=\sum_{klm}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{ij}(\boldsymbol q_i,\boldsymbol q_j+k\boldsymbol v_1+l\boldsymbol v_2+m\boldsymbol v_3),\]
+where $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\boldsymbol v_i^T=(L\boldsymbol e_i^T,\ldots,L\boldsymbol e_i^T)$, $i=1,2,3$, where $\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\mathbb R^3$.''',definition('periodicImageEnergy'),context=['Fin3索引减1枚举-1,0,1；逐原子3向量加L(k,l,m)，等价全配置向量重复位移。'])
+add('MinimumImage','1.6',35,[159],'''The minimum image convention states that, in computing the force, a given atom interacts only with the nearest replica of any other atom.''',definition('minimumImage'),context=['L>0，minimumImage只定义最近复制体关系，不断言任意选择同一atom自作用。'])
+add('RhombicLattice','1.6',35,[160],r'''In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice, with sides of fixed length $n_x,n_y$ and the angle between them ($\theta$), see Fig. 1.17.''',definition('rhombicLattice'),context=['a=nx,b=ny；定义只编码基向量Z线性组合，不声称低温平衡一定如此。'])
+add('HexagonalLattice','1.6',35,[161],r'''it can be viewed as a rhombic lattice with $n_x=n_y$ and $\theta=120^\circ$; it can also be viewed as a rhombic lattice with $\theta=60^\circ$''',
+    '''def hexagonalLatticeModel (a : ℝ) : Set (Position 2) :=
+  rhombicLattice a a (Real.pi/3)''',context=['Fig1.17图注；等长60°/120°两基给同一格。当前def采用60°；120°等价几何需独立证明不作为def存在假设。'])
+add('UnitCell','1.6',35,[162],'''The unit cell is a description of the arrangement of atoms within a box; unit cells may be stacked in each direction to describe an atomic lattice.''',definition('unitCellLattice'),context=['B为三基向量矩阵，motif为盒内点集；定义按整数平移重复。'])
+exclude([163],'excluded_qualitative：正文p.35只列bcc/fcc/hcp三个名称，p.36图1.19展示几何但无正文bcc函数/定理；不凭常识补造立方角点及体心公式作为逐字原文。')
+add('FCCStacking','1.6',36,[164],'''The fcc lattice corresponds to the common arrangement by which cannonballs are stacked into pyramidal structures; it can be viewed as a periodic stacking (ABCABC. . . ) of three hexagonally structured planar layers, as illustrated in Fig. 1.18.''',definition('fccStacking'),extra=['将图示ABC编码为单位边长等边三角层，层高sqrt(2/3)及偏移由close-packed图示编码，正文未列数值公式。'],verdict='NEEDS_HUMAN',explanation='ABC三周期保留；旧库附带具体几何层高和偏移不是正文逐字公式，需要导师确认图示编码。')
+add('HCPStacking','1.6',36,[165],'''Also shown in Fig. 1.18 is the hcp lattice, which, on the other hand, alternates two distinct planar lattices.''',definition('hcpStacking'),extra=['图示AB两个三角层，单位化层高及偏移是具体close-packed图示编码。'],verdict='NEEDS_HUMAN',explanation='AB两周期保留；具体几何参数来源图示而非正文公式，需导师确认编码。')
+stated('MinimumGradientZero','1.6.1','36–37',[166],r'''Regardless of the choice of boundary and/or the inclusion of non-pairwise potentials, the minimum of the potential energy occurs where
+\[\nabla U=0,\]
+which gives in general a nonlinear system of $N_c$ equations in $N_c$ unknowns to be solved for the position vector $\boldsymbol q^*$ associated to mechanical equilibrium.''','minimumGradientZero_statement',extra=['可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。'],issue='不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。',missing='已有minimumGradientZero_proved可桥接完全一致的内点签名。')
+bridge('ForceLinearization','1.6.1',37,[167,168,170],r'''At the equilibrium point, we can linearize the system of differential equations by computing the Hessian matrix, then we find
+\[\nabla U(\boldsymbol q)\approx U''(\boldsymbol q^*)(\boldsymbol q-\boldsymbol q^*).\]
+Then, letting $\delta\boldsymbol q=\boldsymbol q-\boldsymbol q^*$, $\delta\boldsymbol p$ represent small deviations from the equilibrium point at $(\boldsymbol q,\boldsymbol p)=(\boldsymbol q^*,0)$, we have
+\[\frac{\mathrm d\delta\boldsymbol q}{\mathrm dt}=\boldsymbol M^{-1}\delta\boldsymbol p,\qquad\frac{\mathrm d\delta\boldsymbol p}{\mathrm dt}=-U''(\boldsymbol q^*)\delta\boldsymbol q.\]''','MolecularDynamics/Chapter01/EquilibriumLinearization.lean','conservative_mechanical_linearization',extra=['C2，固定对角质量；原文完整常M模型的通用矩阵版本另补。'],verdict='NEEDS_HUMAN',explanation='当前实际导数桥接保留机械块线性化；但签名只对角M且未含平衡∇U=0下梯度小o，须写一般M与小o全子句。')
+stated('MinimumHessianLiteral','1.6.1',37,[169],r'''At the minimum of the potential energy, $U''$ is a positive definite symmetric matrix.''','minimumHessianLiteral_statement',issue='局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。',verdict='NEEDS_HUMAN',missing='字面假命题，不证明；正定需非退化额外假设，不能静默补。')
+stated('ImaginarySpectrum','1.6.1',37,[171],r'''The eigenvalues of the matrix
+\[\boldsymbol A:=\begin{bmatrix}0&\boldsymbol M^{-1}\\-U''(\boldsymbol q^*)&0\end{bmatrix}\]
+are therefore all purely imaginary ($\pm i\Omega$, $\Omega^2\in\mathbb R^+$).''','imaginarySpectrum_statement',extra=['M和Hessian K正定；复谱实虚向量编码。'],verdict='NEEDS_HUMAN',missing='现有签名只实部零，缺±配对和Ω²>0结论，须补齐后PASS；一般SPD Hamiltonian谱理论。')
+stated('ComplexNormalMode','1.6.1',37,[172],r'''Associated to each eigenvalue pair we have a pair of complex conjugate eigenvectors $\boldsymbol\xi,\overline{\boldsymbol\xi}$ and also a pair of solutions which can be written in the complex form
+\[\boldsymbol z(t)=ae^{i\Omega t}\boldsymbol\xi+be^{-i\Omega t}\overline{\boldsymbol\xi},\]
+($a,b$ complex coefficients),''','normalModeComplex_statement',context=['实A确保共轭模式；两个解的复线性组合，未强迫结果为实。'],missing='ComplexEigenmode真实导数及共轭线性作用求和桥接，计划短证明。')
+bridge('RealNormalMode','1.6.1',37,[173],r'''or recast in real form as ($\alpha,\beta$ real coefficients):
+\[\boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].\]''','MolecularDynamics/Chapter01/NormalModes.lean','hasDerivAt_realNormalMode',context=['u=Reξ,v=Imξ，Au=-Ωv、Av=Ωu来自实矩阵复特征向量方程；realNormalMode展开即原式。'])
+
 for r in RECORDS:
     if r['source_id']=='MD-1.5.1-FlowEnergy':
         r['code']='''theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
@@ -496,15 +547,46 @@ for r in RECORDS:
     if r['source_id']=='MD-1.5.3-PositiveHessianMinimum':
         r['code']='''theorem positive_hessian_minimum {n : ℕ} (U : PotentialEnergy n) (q : Position n)
     (hU : ContDiff ℝ 2 U) (hq : gradient U q = 0)
-    (B : Module.Basis (Fin n) ℝ (Position n)) (λ : Fin n → ℝ)
-    (hdistinct : Function.Injective λ) (hpos : ∀ i, 0 < λ i)
-    (heig : ∀ i, fderiv ℝ (gradient U) q (B i) = λ i • B i) :
+    (B : Module.Basis (Fin n) ℝ (Position n)) (freq : Fin n → ℝ)
+    (hdistinct : Function.Injective freq) (hpos : ∀ i, 0 < freq i)
+    (heig : ∀ i, fderiv ℝ (gradient U) q (B i) = freq i • B i) :
     IsStrictPotentialMin U q := by
   sorry'''
         r['lean_decl']='MD.Ch01.positive_hessian_minimum';r['local_verdict']='PASS'
         r['local_explanation']='保留distinct及positive全部谱前提、平衡点与C2背景；不把distinct删掉。实Hessian对称确保可取实特征基。'
         r['extra_assumptions']=['C2与平衡∇U=0来自同节；显式特征基表达全部distinct positive eigenvalues。']
         r['missing']='Hessian谱正定转换与C2二阶Taylor严格极小判别理论。'
+
+for r in RECORDS:
+    if r['source_id']=='MD-1.6.1-ForceLinearization':
+        r['code']='''theorem force_linearization {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (qstar : Position n) (hU : ContDiffAt ℝ 2 U qstar)
+    (heq : gradient U qstar = 0) :
+    HasFDerivAt (fun z : PhaseSpace n => (matrixAction M⁻¹ z.2, -gradient U z.1))
+      (((Matrix.toEuclideanCLM M⁻¹).comp (ContinuousLinearMap.snd ℝ (Position n) (Momentum n))).prod
+        ((-fderiv ℝ (gradient U) qstar).comp (ContinuousLinearMap.fst ℝ (Position n) (Momentum n))))
+      (qstar,0) ∧
+    (fun q => gradient U q - fderiv ℝ (gradient U) qstar (q-qstar)) =o[𝓝 qstar]
+      (fun q => q-qstar) := by
+  sorry'''
+        r['lean_decl']='MD.Ch01.force_linearization';r['local_verdict']='PASS'
+        r['extra_assumptions']=['真实C2势及平衡梯度零；一般常M，原文M正定由机械背景保证但导数等式不需此资格。']
+        r['local_explanation']='一般质量矩阵、真实块Frechet导数及完整小o梯度线性化全部保留，未假设结论。'
+        r['missing']='一般矩阵线性作用连续算子与已有conservative_mechanical_linearization拼接；计划短证明。'
+    if r['source_id']=='MD-1.6.1-ImaginarySpectrum':
+        r['code']='''theorem imaginary_spectrum :
+  ∀ (n : ℕ) (M K : Matrix (Fin n) (Fin n) ℝ), M.PosDef → K.PosDef →
+    let A := fun z : PhaseSpace n => (M⁻¹.toEuclideanLin z.2, -K.toEuclideanLin z.1)
+    ∀ (a b : ℝ) (x y : PhaseSpace n), (x ≠ 0 ∨ y ≠ 0) →
+      A x = a • x - b • y → A y = b • x + a • y →
+      a = 0 ∧ 0 < b^2 ∧ A x = -b • y ∧ A (-y) = -b • x := by
+  sorry'''
+        r['lean_decl']='MD.Ch01.imaginary_spectrum';r['local_verdict']='PASS'
+        r['local_explanation']='补齐实部零、非零频率平方正及共轭实虚特征对给出的±ib配对；一般SPD M,K保留。'
+        r['missing']='一般SPD块Hamiltonian谱的相似反自伴算子理论；对角/单个normal mode证明不足。'
+    if r['source_id']=='MD-1.6.1-MinimumGradientZero':
+        r['code']=r['code'].replace('  sorry','  exact MolecularDynamics.Chapter01Review.minimumGradientZero_proved')
+        r['missing']=None;r['priors']=['MolecularDynamics/Chapter01/ReviewProofs.lean:minimumGradientZero_proved']
 
 # Complete easily overlooked clauses before admitting a local PASS.
 for r in RECORDS:

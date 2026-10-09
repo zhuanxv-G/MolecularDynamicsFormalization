@@ -1,3 +1,18 @@
+import MolecularDynamics.Chapter01.EquilibriumLinearization
+import MolecularDynamics.Chapter01.HarmonicTorus
+import MolecularDynamics.Chapter01.HarmonicActionAngle
+import MolecularDynamics.Chapter01.KeplerPolarDynamics
+import MolecularDynamics.Chapter01.PolarCoordinates
+import MolecularDynamics.Chapter01.Kepler
+import MolecularDynamics.Chapter01.RealRecoveryFlow
+import MolecularDynamics.Chapter01.ScalarIntegrability
+import MolecularDynamics.Chapter01.FirstIntegralQuadrature
+import MolecularDynamics.Chapter01.FirstIntegralGraph
+import MolecularDynamics.Chapter01.FirstIntegrals
+import MolecularDynamics.Chapter01.MatrixFlow
+import MolecularDynamics.Chapter01.BasisMatrix
+import MolecularDynamics.Chapter01.ComplexSpectralFlow
+import MolecularDynamics.Chapter01.LocalExistence
 import MolecularDynamics.Chapter01.Hamiltonian
 import MolecularDynamics.Chapter01.GeneralizedCoordinates
 import MolecularDynamics.Chapter01.ScalarLocalIVP
@@ -609,5 +624,558 @@ def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseS
   {z | H z ≠ ⊤ ∧ H z ≠ ⊥}
 
 /- END FULL SECTION 1.4 -/
+
+/- BEGIN FULL SECTION 1.5 -/
+
+/-- source_id: MD-1.5-LocalExistUnique · unnumbered_claim · printed p.25 / PDF p.48
+[EXTRA] generic初值解释为开放非奇异域中的合法初值；力C1是原文存在唯一性背景。固定对角质量模型。
+
+-/
+theorem local_exist_unique {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (hQ : IsOpen Q) (t₀ : ℝ) (z₀ : PhaseSpace n) (hz : z₀.1 ∈ Q)
+    (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 (fun x => -gradient U x) q) :
+    (∃ ε γ, IsLocalMechanicalIVP m (fun q => -gradient U q) Q t₀ z₀ ε γ) ∧
+    ∀ I γ η, IsOpen I → t₀ ∈ I →
+      IsMechanicalSolutionOn m (fun q => -gradient U q) Q I γ →
+      IsMechanicalSolutionOn m (fun q => -gradient U q) Q I η →
+      γ t₀ = z₀ → η t₀ = z₀ → γ =ᶠ[𝓝 t₀] η := by
+  constructor
+  · exact exists_localMechanicalIVP_open_of_force_contDiffAt m _ Q hQ t₀ z₀ hz (hreg _ hz)
+  · intro I γ η hI ht hγ hη hi hj
+    exact mechanicalSolution_eventually_unique_of_contDiffAt m _ Q I t₀ γ η z₀ hI ht hγ hη hi hj
+      (mechanicalVectorField_contDiffAt m _ z₀ (hreg _ hz))
+
+/-- source_id: MD-1.5-EnergySurface · definition · printed p.25 / PDF p.48
+
+
+-/
+def energySurface {n : ℕ} (H : PhaseSpace n → ℝ) (E : ℝ) := {z | H z = E}
+
+/-- source_id: MD-1.5-EnergyBounds · unnumbered_claim · printed p.25 / PDF p.48
+[EXTRA] U定义在整个欧氏位置域；保持一般常M⁻¹正定，未换成固定对角特例。
+
+-/
+theorem energy_bounds {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (E₀ Umin : ℝ) (hM : (M⁻¹).PosDef)
+    (hU : ∀ q, Umin ≤ U q) :
+    (∀ q p, variableMassHamiltonian (fun _ => M) U q p = E₀ →
+      inner ℝ p (matrixAction M⁻¹ p) / 2 = E₀ - U q ∧
+      inner ℝ p (matrixAction M⁻¹ p) / 2 ≤ E₀ - Umin ∧ Umin ≤ U q ∧ U q ≤ E₀) ∧
+    ∃ R : ℝ, ∀ q p, variableMassHamiltonian (fun _ => M) U q p = E₀ → ‖p‖ ≤ R := by
+  sorry
+
+/-- source_id: MD-1.5-UniformLevelsCompact · unnumbered_claim · printed p.26 / PDF p.49
+[EXTRA] U连续保证能量层闭；一般常逆质量正定继承p.25；无奇异域的全欧氏模型，若有奇异域需紧集留域。
+
+-/
+theorem uniform_levels_compact {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (E₀ Umin : ℝ) (hM : (M⁻¹).PosDef)
+    (hU : Continuous U) (hlower : ∀ q, Umin ≤ U q)
+    (hlevels : ∃ R : ℝ, ∀ α ∈ Icc Umin E₀, ∀ q, U q = α → ‖q‖ ≤ R) :
+    IsCompact {z : PhaseSpace n | variableMassHamiltonian (fun _ => M) U z.1 z.2 = E₀} := by
+  sorry
+
+/-- source_id: MD-1.5-CompactContinuation · unnumbered_claim · printed p.25–26 / PDF p.48–49
+[EXTRA] 共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。
+
+-/
+theorem compact_continuation {n : ℕ} (m : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (K : Set (PhaseSpace n)) (z₀ : PhaseSpace n)
+    (hQ : IsOpen Q) (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 F q)
+    (hK : IsCompact K) (hKQ : ∀ z ∈ K, z.1 ∈ Q) (hz : z₀ ∈ K)
+    (hconfine : ∀ a b γ, 0 ∈ Ioo a b → IsMechanicalSolutionOn m F Q (Ioo a b) γ →
+      γ 0 = z₀ → ∀ t ∈ Ioo a b, γ t ∈ K) :
+    ∃ γ, IsMechanicalSolutionOn m F Q univ γ ∧ γ 0 = z₀ ∧ ∀ t, γ t ∈ K := by
+  sorry
+
+/-- source_id: MD-1.5-Nonconfining · unnumbered_claim · printed p.26 / PDF p.49
+
+
+-/
+theorem nonconfining :
+  ¬ Bornology.IsBounded {q : Position 2 | (q 0)^2 = 1} := by
+  sorry
+
+/-- source_id: MD-1.5.1-FlowMap · definition · printed p.26 / PDF p.49
+
+
+-/
+def flowMap {n : ℕ} (f : Position n → Position n) (F : ℝ → Position n → Position n) : Prop :=
+  (∀ ξ, F 0 ξ = ξ) ∧ ∀ ξ t, HasDerivAt (fun s => F s ξ) (f (F t ξ)) t
+
+/-- source_id: MD-1.5.1-FlowEnergy · unnumbered_claim · printed p.26 / PDF p.49
+[EXTRA] H可微及F为真实全局Hamilton流（初值和ODE，不含守恒结论）。
+
+-/
+theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
+    (F : ℝ → PhaseSpace n → PhaseSpace n) (hH : Differentiable ℝ H)
+    (hF : ∀ ξ, F 0 ξ = ξ ∧ ∀ t, HasDerivAt (fun s => F s ξ) (symplecticGradient H (F t ξ)) t) :
+    ∀ ξ t, H (F t ξ) = H ξ := by
+  sorry
+
+/-- source_id: MD-1.5.1-HarmonicPhaseFlow · definition · printed p.27 / PDF p.50
+
+
+-/
+def harmonicPhaseFlow {n : ℕ} (Ω t : ℝ) (z : PhaseSpace n) : PhaseSpace n :=
+  (Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2,
+    (-Ω*Real.sin (Ω*t)) • z.1 + Real.cos (Ω*t) • z.2)
+
+/-- source_id: MD-1.5.1-SpectralSolution · unnumbered_claim · printed p.27 / PDF p.50
+[EXTRA] 有限维复数特征基；在公式中以t-t0调用零初时流；coeff=b.repr ξ。
+
+-/
+theorem spectralsolution :
+  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E] {ι : Type*} [Fintype ι]
+    (A : E →L[ℂ] E) (b : Module.Basis ι ℂ E) (ν : ι → ℂ)
+    (hb : ∀ i, A (b i) = ν i • b i) (z : E) (t : ℝ),
+    complexExponentialFlow A t z =
+      ∑ i, (b.repr z i * Complex.exp (ν i * (t : ℂ))) • b i := by
+  exact @MolecularDynamics.complexExponentialFlow_eigenbasis
+
+/-- source_id: MD-1.5.1-BasisCoefficients · unnumbered_claim · printed p.27 / PDF p.50
+[EXTRA] RCLike域包含实/复两种；真实有限基。
+
+-/
+theorem basis_coefficients {m : ℕ} {𝕜 : Type*} [RCLike 𝕜]
+    (b : Module.Basis (Fin m) 𝕜 (EuclideanSpace 𝕜 (Fin m)))
+    (z : EuclideanSpace 𝕜 (Fin m)) :
+    IsUnit (basisColumnMatrix b) ∧ (basisColumnMatrix b).mulVec (b.repr z) = WithLp.ofLp z ∧
+    (basisColumnMatrix b)⁻¹.mulVec (WithLp.ofLp z) = b.repr z := by
+  exact ⟨basisColumnMatrix_isUnit b, basisColumnMatrix_mulVec_repr b z,
+    basisColumnMatrix_inverse_coefficients b z⟩
+
+/-- source_id: MD-1.5.1-MatrixExponentialSolution · unnumbered_claim · printed p.27 / PDF p.50
+
+
+-/
+theorem matrixexponentialsolution :
+  ∀ {m : ℕ} (A : Matrix (Fin m) (Fin m) ℝ)
+    (z : Position m) (t₀ : ℝ) (γ : ℝ → Position m)
+    (hγ : ∀ t, HasDerivAt γ (WithLp.toLp 2 (A.mulVec (γ t))) t)
+    (hinit : γ t₀ = z),
+    γ = fun t => matrixExponentialFlow A (t - t₀) z := by
+  exact @MolecularDynamics.matrixExponentialFlow_unique
+
+/-- source_id: MD-1.5.1-MatrixExpSeries · unnumbered_claim · printed p.27–28 / PDF p.50–51
+
+
+-/
+theorem matrix_exp_series {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
+    HasSum (fun k : ℕ => ((k.factorial : ℝ)⁻¹) • A^k) (NormedSpace.exp A) := by
+  exact MolecularDynamics.Chapter01Review.matrixExponentialSeries_hasSum A
+
+/-- source_id: MD-1.5.2-FirstIntegral · definition · printed p.28 / PDF p.51
+
+
+-/
+def smoothFirstIntegral {n : ℕ} (f : Position n → Position n) (Q : Set (Position n))
+    (I : Position n → ℝ) : Prop := ContDiffOn ℝ ∞ I Q ∧ IsFirstIntegralOn f Q I
+
+/-- source_id: MD-1.5.2-FirstIntegralCriterion · unnumbered_claim · printed p.28 / PDF p.51
+[EXTRA] 开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral_gradient_criterion。
+
+-/
+theorem firstintegralcriterion :
+  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] (f : E → E) (Q : Set E) (J : E → ℝ)
+    (hQ : IsOpen Q) (hf : ∀ x ∈ Q, ContDiffAt ℝ 1 f x)
+    (hJ : ∀ x ∈ Q, DifferentiableAt ℝ J x),
+    IsFirstIntegralOn f Q J ↔ ∀ x ∈ Q, fderiv ℝ J x (f x) = 0 := by
+  exact @MolecularDynamics.isFirstIntegralOn_iff_differential
+
+/-- source_id: MD-1.5.2-PlanarGraphReduction · unnumbered_claim · printed p.28 / PDF p.51
+[EXTRA] 对y偏导非零，真实strict导数，局部时间窗；原文省略隐函数非退化条件。
+
+-/
+theorem planargraphreduction :
+  ∀ (f : ℝ × ℝ → ℝ × ℝ)
+    (Q : Set (ℝ × ℝ)) (J : ℝ × ℝ → ℝ) (a b t₀ : ℝ) (γ : ℝ → ℝ × ℝ)
+    (hfirst : IsFirstIntegralOn f Q J)
+    (hQ : ∀ t ∈ Ioo a b, γ t ∈ Q)
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (f (γ t)) t) (ht₀ : t₀ ∈ Ioo a b)
+    (L : (ℝ × ℝ) →L[ℝ] ℝ) (hJ : HasStrictFDerivAt J L (γ t₀))
+    (hpartial : L (0, 1) ≠ 0),
+    ∃ ψ : ℝ → ℝ, ψ (γ t₀).1 = (γ t₀).2 ∧ DifferentiableAt ℝ ψ (γ t₀).1 ∧
+      (∀ᶠ v in 𝓝 (γ t₀), J v = J (γ t₀) ↔ ψ v.1 = v.2) ∧
+      (∀ᶠ t in 𝓝 t₀, (γ t).2 = ψ (γ t).1 ∧
+        HasDerivAt (fun u => (γ u).1) ((f ((γ t).1, ψ (γ t).1)).1) t) := by
+  exact @MolecularDynamics.planarFirstIntegral_localGraph_reduction
+
+/-- source_id: MD-1.5.2-PlanarQuadrature · unnumbered_claim · printed p.28 / PDF p.51
+[EXTRA] 正则第一积分图及非转向速度非零；真实C2、局部积分逆。
+
+-/
+theorem planarquadrature :
+  ∀ (f : ℝ × ℝ → ℝ × ℝ)
+    (Q : Set (ℝ × ℝ)) (J : ℝ × ℝ → ℝ) (a b t₀ : ℝ) (γ : ℝ → ℝ × ℝ)
+    (hfirst : IsFirstIntegralOn f Q J) (hQ : ∀ t ∈ Ioo a b, γ t ∈ Q)
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (f (γ t)) t) (ht₀ : t₀ ∈ Ioo a b)
+    (hJ : ContDiffAt ℝ 1 J (γ t₀)) (hf : ContDiffAt ℝ 1 f (γ t₀))
+    (hpartial : (fderiv ℝ J (γ t₀)) (0, 1) ≠ 0) (hspeed : (f (γ t₀)).1 ≠ 0),
+    ∃ (ψ g : ℝ → ℝ) (δ ε : ℝ), 0 < δ ∧ 0 < ε ∧
+      ψ (γ t₀).1 = (γ t₀).2 ∧ ContDiffAt ℝ 1 ψ (γ t₀).1 ∧
+      HasStrictDerivAt g (f (γ t₀)).1 0 ∧
+      (∀ᶠ t in 𝓝 t₀, (γ t).1 = g (t - t₀) ∧ (γ t).2 = ψ (g (t - t₀))) ∧
+      (∀ᶠ x in 𝓝 (γ t₀).1,
+        g (separableTimePrimitive (fun x => (f (x, ψ x)).1) (γ t₀).1 x) = x) ∧
+      (∀ᶠ y in 𝓝 0, separableTimePrimitive (fun x => (f (x, ψ x)).1) (γ t₀).1 (g y) = y) ∧
+      (∀ t ∈ Ioo (t₀ - ε) (t₀ + ε), t ∈ Ioo a b ∧
+        separableTimePrimitive (fun x => (f (x, ψ x)).1) (γ t₀).1 (γ t).1 = t - t₀) := by
+  exact @MolecularDynamics.planarFirstIntegral_nonturning_quadrature
+
+/-- source_id: MD-1.5.2-ScalarFirstIntegral · unnumbered_claim · printed p.28 / PDF p.51
+[EXTRA] U C2；原文integrable的quadrature结论复用§1.2条目，不等同于全局闭式轨道。
+
+-/
+theorem scalarfirstintegral :
+  ∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U),
+    IsFirstIntegralOn (scalarPotentialVectorField U) univ (scalarPotentialEnergy U) := by
+  exact @MolecularDynamics.scalarPotentialEnergy_isFirstIntegral
+
+/-- source_id: MD-1.5.1-RealSpectralSolution · unnumbered_claim · printed p.27 / PDF p.50
+
+
+-/
+theorem realspectralsolution :
+  ∀ {m : ℕ}
+    (A : Matrix (Fin m) (Fin m) ℝ)
+    (b : Module.Basis (Fin m) ℂ (EuclideanSpace ℂ (Fin m))) (ν : Fin m → ℂ)
+    (hb : ∀ j, Matrix.toEuclideanCLM (n := Fin m) (𝕜 := ℂ) (A.map Complex.ofReal)
+      (b j) = ν j • b j)
+    (z : EuclideanSpace ℂ (Fin m)) (hz : ∀ j, (z j).im = 0) (t : ℝ) (i : Fin m),
+    ((∑ j, (b.repr z j * Complex.exp (ν j * (t : ℂ))) • b j) i).im = 0 := by
+  exact @MolecularDynamics.realMatrix_complexSpectral_sum_isReal
+
+/-- source_id: MD-1.5.2-KeplerEnergy · definition · printed p.29 / PDF p.52
+
+
+-/
+def planarKeplerEnergy (x y v w : ℝ) : ℝ :=
+  v^2/2 + w^2/2 - 1/Real.sqrt (x^2+y^2)
+
+/-- source_id: MD-1.5.2-KeplerConservedEnergy · unnumbered_claim · printed p.29 / PDF p.52
+[EXTRA] 真实机械轨迹、非碰撞开放时间区间；n=2对应平面。
+
+-/
+theorem keplerconservedenergy :
+  ∀ {n : ℕ} (a b : ℝ) (γ : ℝ → PhaseSpace n)
+    (hγ : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce
+      {q : Position n | q ≠ 0} (Ioo a b) γ)
+    (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
+    massHamiltonian (fun _ => (1 : ℝ)) keplerPotential (γ s) =
+      massHamiltonian (fun _ => (1 : ℝ)) keplerPotential (γ t) := by
+  exact @MolecularDynamics.kepler_energy_const_on_Ioo
+
+/-- source_id: MD-1.5.2-KeplerAngularMomentum · unnumbered_claim · printed p.29 / PDF p.52
+
+
+-/
+theorem keplerangularmomentum :
+  ∀ (a b : ℝ) (γ : ℝ → PhaseSpace 2)
+    (hγ : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce
+      {q : Position 2 | q ≠ 0} (Ioo a b) γ)
+    (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
+    planarAngularMomentum (γ s) = planarAngularMomentum (γ t) := by
+  exact @MolecularDynamics.kepler_planarAngularMomentum_const_on_Ioo
+
+/-- source_id: MD-1.5.2-KeplerMomentum · unnumbered_claim · printed p.29 / PDF p.52
+[EXTRA] q≠0；单位质量。
+
+-/
+theorem keplermomentum :
+  ∀ q : Position 2, q ≠ 0 → keplerForce q ≠ 0 := by
+  sorry
+
+/-- source_id: MD-1.5.2-PolarCoordinates · definition · printed p.29 / PDF p.52
+
+
+-/
+def polarCoordinates (r θ : ℝ) : Position 2 := WithLp.toLp 2 ![r*Real.cos θ,r*Real.sin θ]
+
+/-- source_id: MD-1.5.2-KeplerPolarLagrangian · unnumbered_claim · printed p.29 / PDF p.52
+
+
+-/
+theorem keplerpolarlagrangian :
+  ∀ (r θ v omega : ℝ),
+    ((v * Real.cos θ - r * omega * Real.sin θ) ^ 2 +
+      (v * Real.sin θ + r * omega * Real.cos θ) ^ 2) / 2 + 1 / r =
+    v ^ 2 / 2 + r ^ 2 * omega ^ 2 / 2 + 1 / r := by
+  exact @MolecularDynamics.keplerPolarLagrangian_identity
+
+/-- source_id: MD-1.5.2-KeplerPolarODE · unnumbered_claim · printed p.29 / PDF p.52
+
+
+-/
+theorem keplerpolarode :
+  ∀ (I : Set ℝ) (r θ v omega : ℝ → ℝ),
+    IsKeplerPolarEulerLagrangeOn I r θ v omega ↔
+      ∀ t ∈ I, 0 < r t ∧ HasDerivAt r (v t) t ∧ HasDerivAt θ (omega t) t ∧
+        HasDerivAt v (r t * omega t ^ 2 - (r t ^ 2)⁻¹) t ∧
+        HasDerivAt (fun u => r u ^ 2 * omega u) 0 t := by
+  exact @MolecularDynamics.keplerPolar_eulerLagrange_iff
+
+/-- source_id: MD-1.5.2-PolarAngularIdentity · unnumbered_claim · printed p.29 / PDF p.52
+
+
+-/
+theorem polarangularidentity :
+  ∀ (r θ v omega : ℝ),
+    (r * Real.cos θ) * (v * Real.sin θ + r * omega * Real.cos θ) -
+      (r * Real.sin θ) * (v * Real.cos θ - r * omega * Real.sin θ) = r ^ 2 * omega := by
+  exact @MolecularDynamics.polarAngularMomentum_identity
+
+/-- source_id: MD-1.5.2-KeplerRadialReduction · unnumbered_claim · printed p.29 / PDF p.52
+[EXTRA] r非零、角动量l固定，既有极坐标Euler–Lagrange真实解；角动量常性先前已证。
+
+-/
+theorem keplerradialreduction :
+  ∀ (I : Set ℝ) (r θ v omega : ℝ → ℝ)
+    (h : IsKeplerPolarEulerLagrangeOn I r θ v omega) (t : ℝ) (ht : t ∈ I)
+    (l : ℝ) (hl : r t ^ 2 * omega t = l),
+    HasDerivAt v (-(r t ^ 2)⁻¹ + l ^ 2 / r t ^ 3) t := by
+  exact @MolecularDynamics.keplerPolar_radial_reduction
+
+/-- source_id: MD-1.5.2-KeplerRadialEnergy · definition · printed p.30 / PDF p.53
+
+
+-/
+def radialKeplerEnergy (ℓ r v : ℝ) : ℝ := v^2/2-1/r+ℓ^2/(2*r^2)
+
+/-- source_id: MD-1.5.2-KeplerFullSolution · unnumbered_claim · printed p.30 / PDF p.53
+[EXTRA] 完整非碰撞存在区间含0；原文不保证径向碰撞时仍有全局解；角θ为区间上的连续实提升。
+
+-/
+theorem kepler_full_solution (a b : ℝ) (z : ℝ → PhaseSpace 2)
+    (h0 : 0 ∈ Ioo a b)
+    (hz : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce
+      {q : Position 2 | q ≠ 0} (Ioo a b) z) :
+    ∃ ℓ θ₀ : ℝ, ∃ r v θ : ℝ → ℝ,
+      (∀ t ∈ Ioo a b, 0 < r t ∧ HasDerivAt r (v t) t ∧
+        HasDerivAt v (-1/(r t)^2+ℓ^2/(r t)^3) t ∧
+        θ t = θ₀ + ∫ s in (0 : ℝ)..t, ℓ/(r s)^2 ∧
+        (z t).1 = polarCoordinates (r t) (θ t)) ∧
+      (∀ t₀ ∈ Ioo a b, ScalarPotentialLocalDescription
+        (fun x => -1/x + ℓ^2/(2*x^2)) (fun t => (r t,v t)) a b t₀) ∧
+      z 0 = ((polarCoordinates (r 0) θ₀),
+        WithLp.toLp 2 ![v 0*Real.cos θ₀-ℓ/r 0*Real.sin θ₀,
+          v 0*Real.sin θ₀+ℓ/r 0*Real.cos θ₀]) := by
+  sorry
+
+/-- source_id: MD-1.5.2-ActionAngleCoordinates · definition · printed p.30 / PDF p.53
+
+
+-/
+def oscillatorActionAngle (Ω I θ : ℝ) : ℝ × ℝ :=
+  (Real.sqrt (2*I/Ω)*Real.cos θ, Real.sqrt (2*I*Ω)*Real.sin θ)
+
+/-- source_id: MD-1.5.2-ActionEnergy · unnumbered_claim · printed p.30 / PDF p.53
+[EXTRA] Ω>0，I≥0；harmonicActionVelocity_formula保证v的sqrt(2IΩ)形式一致。
+
+-/
+theorem actionenergy :
+  ∀ (Ω J θ : ℝ) (hΩ : 0 < Ω) (hJ : 0 ≤ J),
+    harmonicScalarEnergy Ω (harmonicActionPosition Ω J θ)
+      (harmonicActionVelocity Ω J θ) = J * Ω := by
+  exact @MolecularDynamics.harmonicAction_energy
+
+/-- source_id: MD-1.5.2-ActionODE · unnumbered_claim · printed p.30 / PDF p.53
+[EXTRA] Ω,I正；真实I′、θ′，非退化局部角坐标。
+
+-/
+theorem actionode :
+  ∀ (Ω : ℝ) (J θ : ℝ → ℝ) (d omega t : ℝ)
+    (hΩ : 0 < Ω) (hJ : 0 < J t) (hd : HasDerivAt J d t) (hθ : HasDerivAt θ omega t),
+    (HasDerivAt (fun u => harmonicActionPosition Ω (J u) (θ u))
+        (harmonicActionVelocity Ω (J t) (θ t)) t ∧
+      HasDerivAt (fun u => harmonicActionVelocity Ω (J u) (θ u))
+        (-(Ω ^ 2) * harmonicActionPosition Ω (J t) (θ t)) t) ↔ d = 0 ∧ omega = -Ω := by
+  exact @MolecularDynamics.harmonicAction_ode_iff
+
+/-- source_id: MD-1.5.2-ActionSolution · unnumbered_claim · printed p.30 / PDF p.53
+[EXTRA] 连通开放时间窗含起始s；正action及Ω，真实坐标解。
+
+-/
+theorem actionsolution :
+  ∀ (Ω a b : ℝ) (J θ : ℝ → ℝ)
+    (hΩ : 0 < Ω) (hJ : ∀ t ∈ Ioo a b, 0 < J t)
+    (hreg : ∀ t ∈ Ioo a b, DifferentiableAt ℝ J t ∧ DifferentiableAt ℝ θ t)
+    (hODE : ∀ t ∈ Ioo a b,
+      HasDerivAt (fun u => harmonicActionPosition Ω (J u) (θ u))
+        (harmonicActionVelocity Ω (J t) (θ t)) t ∧
+      HasDerivAt (fun u => harmonicActionVelocity Ω (J u) (θ u))
+        (-(Ω ^ 2) * harmonicActionPosition Ω (J t) (θ t)) t)
+    (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
+    J t = J s ∧ θ t = θ s - Ω * (t - s) := by
+  exact @MolecularDynamics.harmonicAction_time_formula
+
+/-- source_id: MD-1.5.2-HarmonicTorus · definition · printed p.30 / PDF p.53
+
+
+-/
+def oscillatorTorusMotion {d : ℕ} (I Ω : Fin d → ℝ) (θ₀ : HarmonicTorus d)
+    (t : ℝ) : (Fin d → ℝ) × HarmonicTorus d := (I, harmonicTorusRotation Ω t θ₀)
+
+/-- source_id: MD-1.5.2-TorusPeriod · unnumbered_claim · printed p.30 / PDF p.53
+[EXTRA] 给定周期T；每频率×T为整数圈是精确共振条件；原句没有单独定义commensurate。
+
+-/
+theorem torusperiod :
+  ∀ {n : ℕ}
+    (Ω : Fin n → ℝ) (T : ℝ) (θ : HarmonicTorus n),
+    Function.Periodic (fun t => harmonicTorusRotation Ω t θ) T ↔
+      ∀ j, ∃ k : ℤ, (k : ℝ) * (2 * Real.pi) = Ω j * T := by
+  exact @MolecularDynamics.harmonicTorusRotation_periodic_iff_integer
+
+/-- source_id: MD-1.5.2-TorusDense · unnumbered_claim · printed p.30 / PDF p.53
+[EXTRA] 高维全整数关系无共振；仅成对频率比无理不足，此为原文quasi-periodic intended meaning的数学资格。
+[ERRATUM?] 原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。
+-/
+theorem torusdense :
+  ∀ (n : ℕ) (Ω : Fin n → ℝ),
+    (∀ k : Fin n → ℤ, (∑ i, (k i : ℝ)*Ω i) = 0 → ∀ i, k i = 0) →
+    ∀ θ : HarmonicTorus n, DenseRange (fun t : ℝ => harmonicTorusRotation Ω t θ) := by
+  sorry
+
+/-- source_id: MD-1.5.2-LocalActionAngleReduction · unnumbered_claim · printed p.30 / PDF p.53
+[EXTRA] 全部积分C∞且Poisson括号两两零；正则共同能量层紧、连通；满秩=独立。
+[ERRATUM?] local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。
+-/
+theorem local_action_angle_reduction :
+  ∀ (d : ℕ) (I : Fin d → PhaseSpace d → ℝ) (c : Fin d → ℝ),
+    (∀ i, ContDiff ℝ ∞ (I i)) →
+    (∀ i j z, poissonBracket (I i) (I j) z = 0) →
+    let S := {z : PhaseSpace d | ∀ i, I i z = c i}
+    IsCompact S → IsConnected S →
+    (∀ z ∈ S, Function.Surjective
+      (fun v : PhaseSpace d => fun i => fderiv ℝ (I i) z v)) →
+    localActionAngle I S ∧ ∃ e : S ≃ₜ HarmonicTorus d,
+      ∀ i, ∃ Ω : Fin d → ℝ, ∀ (γ : ℝ → PhaseSpace d)
+        (hγ : ∀ t, γ t ∈ S ∧ HasDerivAt γ (symplecticGradient (I i) (γ t)) t),
+        ∀ t, e ⟨γ t, (hγ t).1⟩ = harmonicTorusRotation Ω t (e ⟨γ 0, (hγ 0).1⟩) := by
+  sorry
+
+/-- source_id: MD-1.5.3-Equilibrium · definition · printed p.31 / PDF p.54
+
+
+-/
+def equilibriumDefinition {n : ℕ} (f : Position n → Position n) (z : Position n) : Prop := f z = 0
+
+/-- source_id: MD-1.5.3-ConstantEquilibrium · unnumbered_claim · printed p.31 / PDF p.54
+
+
+-/
+theorem constantequilibrium :
+  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] (f : E → E) (z₀ : E) (t : ℝ),
+    HasDerivAt (fun _ : ℝ => z₀) (f z₀) t ↔ f z₀ = 0 := by
+  exact @MolecularDynamics.equilibrium_constant_ode_iff
+
+/-- source_id: MD-1.5.3-EquilibriumLinearization · unnumbered_claim · printed p.31 / PDF p.54
+
+
+-/
+theorem equilibriumlinearization :
+  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] (f : E → E) (z₀ h₀ : E) (t₀ : ℝ)
+    (hF : ContDiffAt ℝ 1 f z₀) (heq : f z₀ = 0),
+    ∃ δ : ℝ → E, δ t₀ = h₀ ∧
+      (∀ t, HasDerivAt δ ((fderiv ℝ f z₀) (δ t)) t) ∧
+      (equilibriumLinearizationRemainder f z₀ (fderiv ℝ f z₀)) =o[𝓝 0] (fun h : E => h) := by
+  exact @MolecularDynamics.equilibrium_linearized_IVP
+
+/-- source_id: MD-1.5.3-Hyperbolic · definition · printed p.31–32 / PDF p.54–55
+
+
+-/
+def hyperbolic {n : ℕ} (A : Position n →L[ℝ] Position n) : Prop :=
+  ∀ (a b : ℝ) (x y : Position n), (x ≠ 0 ∨ y ≠ 0) →
+    A x = a • x - b • y → A y = b • x + a • y → a ≠ 0
+
+/-- source_id: MD-1.5.3-HartmanGrobmanLiteral · unnumbered_claim · printed p.31–32 / PDF p.54–55
+[EXTRA] C1全域模型及真实全局流为局部应用的技术资格；共轭在轨迹保持局部域时断言。
+[ERRATUM?] 原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。
+-/
+theorem hartmangrobmanliteral :
+  ∀ (n : ℕ) (f : Position n → Position n) (z : Position n)
+    (F : ℝ → Position n → Position n),
+    ContDiff ℝ 1 f → f z = 0 → hyperbolic (fderiv ℝ f z) → isFlowOf f F →
+    ∃ (U V : Set (Position n)) (φ ψ : Position n → Position n),
+      IsOpen U ∧ IsOpen V ∧ 0 ∈ U ∧ 0 ∈ V ∧ φ 0 = 0 ∧
+      ContDiffOn ℝ ∞ φ U ∧ ContDiffOn ℝ ∞ ψ V ∧
+      MapsTo φ U V ∧ MapsTo ψ V U ∧ LeftInvOn ψ φ U ∧ LeftInvOn φ ψ V ∧
+      ∀ x ∈ U, ∀ t : ℝ,
+        (∀ s ∈ uIcc 0 t, linearExponentialFlow (fderiv ℝ f z) s x ∈ U) →
+        F t (z+φ x) = z+φ (linearExponentialFlow (fderiv ℝ f z) t x) := by
+  sorry
+
+/-- source_id: MD-1.5.3-LyapunovStability · definition · printed p.32 / PDF p.55
+[EXTRA] ε,δ正按Lyapunov容差惯例；有界性避免Lean实数总sup的未界伪结论。
+
+-/
+def lyapunovStable {n : ℕ} (F : ℝ → Position n → Position n) (z : Position n) : Prop :=
+  ∀ ε > 0, ∃ δ > 0, ∀ x, ‖x-z‖ < δ →
+    BddAbove (range (fun t : Set.Ici (0 : ℝ) => ‖F t x-z‖)) ∧
+    sSup (range (fun t : Set.Ici (0 : ℝ) => ‖F t x-z‖)) < ε
+
+/-- source_id: MD-1.5.3-HyperbolicStabilityTransfer · unnumbered_claim · printed p.32 / PDF p.55
+[EXTRA] C1及真实全局流；stable谓词的统一界<ε与原文严格sup形式等价。
+
+-/
+theorem hyperbolicstabilitytransfer :
+  ∀ (n : ℕ) (f : Position n → Position n) (z : Position n)
+    (F : ℝ → Position n → Position n), ContDiff ℝ 1 f → f z = 0 →
+    hyperbolic (fderiv ℝ f z) → isFlowOf f F →
+    (stable F z ↔ stable (fun t x => linearExponentialFlow (fderiv ℝ f z) t x) 0) := by
+  sorry
+
+/-- source_id: MD-1.5.3-HamiltonEquilibrium · unnumbered_claim · printed p.32 / PDF p.55
+[EXTRA] 一般常M正定、U可微；heq为原文Hamilton平衡的两梯度定义。
+
+-/
+theorem hamilton_equilibrium {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (q p : Position n) (hM : M.PosDef)
+    (hU : DifferentiableAt ℝ U q)
+    (heq : gradient (fun v => variableMassHamiltonian (fun _ => M) U q v) p = 0 ∧
+      gradient (fun x => variableMassHamiltonian (fun _ => M) U x p) q = 0) :
+    p = 0 ∧ gradient U q = 0 := by
+  sorry
+
+/-- source_id: MD-1.5.3-StrongLocalMinimum · definition · printed p.32 / PDF p.55
+
+
+-/
+def strongLocalMinimum {n : ℕ} (U : PotentialEnergy n) (qstar : Position n) : Prop :=
+  ∃ ε > 0, ∀ q, 0 < ‖q-qstar‖ → ‖q-qstar‖ < ε → U qstar < U q
+
+/-- source_id: MD-1.5.3-LinearizedHamiltonian · definition · printed p.32 / PDF p.55
+
+
+-/
+def linearizedHamiltonian {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (qstar : Position n) (δq δp : Position n) : ℝ :=
+  inner ℝ δp (matrixAction M⁻¹ δp)/2 + inner ℝ δq (fderiv ℝ (gradient U) qstar δq)/2
+
+/-- source_id: MD-1.5.3-PositiveHessianQuadratic · unnumbered_claim · printed p.33 / PDF p.56
+[EXTRA] M正定，K=U″对称正定；一般矩阵。
+
+-/
+theorem positivehessianquadratic :
+  ∀ (n : ℕ) (M K : Matrix (Fin n) (Fin n) ℝ), M.PosDef → K.PosDef →
+    IsStrictPotentialMin (fun z : PhaseSpace n =>
+      inner ℝ z.2 (M⁻¹.toEuclideanLin z.2)/2 + inner ℝ z.1 (K.toEuclideanLin z.1)/2) 0 := by
+  sorry
+
+/-- source_id: MD-1.5.3-PositiveHessianMinimum · unnumbered_claim · printed p.33 / PDF p.56
+[EXTRA] C2与平衡∇U=0来自同节；显式特征基表达全部distinct positive eigenvalues。
+
+-/
+theorem positive_hessian_minimum {n : ℕ} (U : PotentialEnergy n) (q : Position n)
+    (hU : ContDiff ℝ 2 U) (hq : gradient U q = 0)
+    (B : Module.Basis (Fin n) ℝ (Position n)) (freq : Fin n → ℝ)
+    (hdistinct : Function.Injective freq) (hpos : ∀ i, 0 < freq i)
+    (heig : ∀ i, fderiv ℝ (gradient U) q (B i) = freq i • B i) :
+    IsStrictPotentialMin U q := by
+  sorry
+
+/- END FULL SECTION 1.5 -/
 
 end MD.Ch01

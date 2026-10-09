@@ -1128,5 +1128,1132 @@
       "CH01-087",
       "CH01-088"
     ]
+  },
+  {
+    "source_id": "MD-1.5-LocalExistUnique",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5",
+    "printed_page": "25",
+    "pdf_page": "48",
+    "statement_latex": "One of the most important properties of a typical classical molecular Hamiltonian system is the existence and uniqueness of solutions started from a generic initial condition.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.local_exist_unique",
+    "extra_assumptions": [
+      "generic初值解释为开放非奇异域中的合法初值；力C1是原文存在唯一性背景。固定对角质量模型。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-089"
+    ]
+  },
+  {
+    "source_id": "MD-1.5-EnergySurface",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5",
+    "printed_page": "25",
+    "pdf_page": "48",
+    "statement_latex": "For given $E_0\\geq U_{\\min}$ define $\\Sigma_{E_0}=\\{(\\boldsymbol q,\\boldsymbol p)\\mid H(\\boldsymbol q,\\boldsymbol p)=E_0\\}$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "Σ是指定H的能量层，E0≥Umin为使用背景，不声称层非空。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.energySurface",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-090"
+    ]
+  },
+  {
+    "source_id": "MD-1.5-EnergyBounds",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5",
+    "printed_page": "25",
+    "pdf_page": "48",
+    "statement_latex": "Assume that $U$ is a potential energy function which is bounded below, $U\\geq U_{\\min}$. For given $E_0\\geq U_{\\min}$ define $\\Sigma_{E_0}=\\{(\\boldsymbol q,\\boldsymbol p)\\mid H(\\boldsymbol q,\\boldsymbol p)=E_0\\}$. Then, for $(\\boldsymbol q,\\boldsymbol p)\\in\\Sigma_{E_0}$\n\\[\\frac{\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p}2+U(\\boldsymbol q)=E_0\\Rightarrow\\frac{\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p}2=E_0-U(\\boldsymbol q)\\leq E_0-U_{\\min}.\\]\n$\\boldsymbol M^{-1}$ is a positive definite matrix (assumed here to be constant), so we can infer that the momenta are bounded at fixed total energy. We would like to say something similar for positions. We have, at energy $E_0$,\n\\[U_{\\min}\\leq U(\\boldsymbol q)\\leq E_0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.energy_bounds",
+    "extra_assumptions": [
+      "U定义在整个欧氏位置域；保持一般常M⁻¹正定，未换成固定对角特例。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-091",
+      "CH01-092",
+      "CH01-093"
+    ]
+  },
+  {
+    "source_id": "MD-1.5-UniformLevelsCompact",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5",
+    "printed_page": "26",
+    "pdf_page": "49",
+    "statement_latex": "What is needed is an assumption that the level sets $\\widehat\\Sigma_\\alpha=\\{\\boldsymbol q\\mid U(\\boldsymbol q)=\\alpha\\}$ are bounded uniformly for $\\alpha\\in[U_{\\min},E_0]$. Then it follows that solutions satisfying the energy constraint remain confined to a compact (closed and bounded) set.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.uniform_levels_compact",
+    "extra_assumptions": [
+      "U连续保证能量层闭；一般常逆质量正定继承p.25；无奇异域的全欧氏模型，若有奇异域需紧集留域。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-094",
+      "CH01-096"
+    ]
+  },
+  {
+    "source_id": "MD-1.5-CompactContinuation",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5",
+    "printed_page": "25–26",
+    "pdf_page": "48–49",
+    "statement_latex": "The uniqueness of solutions is easily verified in the usual way (as for the local result for uniqueness of solutions). The key point is that, with the energy constraint, solutions typically remain bounded for all time.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.compact_continuation",
+    "extra_assumptions": [
+      "共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-095"
+    ]
+  },
+  {
+    "source_id": "MD-1.5-Nonconfining",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5",
+    "printed_page": "26",
+    "pdf_page": "49",
+    "statement_latex": "The assumption on $U$ is not satisfied by some simple potentials. For example consider $U(x,y)=x^2$ which is completely independent of $y$ and so places no restriction on that variable for constant energy.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.nonconfining",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-097"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.1-FlowMap",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.1",
+    "printed_page": "26",
+    "pdf_page": "49",
+    "statement_latex": "Consider now the initial value problem\n\\[\\dot{\\boldsymbol z}=f(\\boldsymbol z),\\qquad\\boldsymbol z(0)=\\boldsymbol\\xi,\\tag{1.5}\\]\nin a $m$-dimensional space. If we assume that $f$ corresponds to a molecular Hamiltonian system satisfying the assumptions of the existence and uniqueness result of the previous subsection, then we may define a mapping from a point in phase space to the point $t$ units later along the time-evolution starting from the initial point. We refer to this map as the flow map and denote it by $\\mathcal F_t$. $\\mathcal F_t(\\boldsymbol\\xi)=\\boldsymbol z(t)$ solves the initial value problem (1.5).",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "这里只定义已存在全局流满足IVP；不假设群律，不声明任意f全局可解。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.flowMap",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-098"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.1-FlowEnergy",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.1",
+    "printed_page": "26",
+    "pdf_page": "49",
+    "statement_latex": "The flow map of a Hamiltonian system conserves its Hamiltonian, thus\n\\[H(\\mathcal F_t(\\boldsymbol\\xi))=H(\\boldsymbol\\xi).\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.flow_energy",
+    "extra_assumptions": [
+      "H可微及F为真实全局Hamilton流（初值和ODE，不含守恒结论）。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-101"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.1",
+    "printed_page": "27",
+    "pdf_page": "50",
+    "statement_latex": "for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is\n\\[\\begin{pmatrix}q(t)\\\\p(t)\\end{pmatrix}=\\mathcal F_t\\begin{pmatrix}q_0\\\\p_0\\end{pmatrix}=\\begin{pmatrix}q_0\\cos(\\Omega t)+p_0\\sin(\\Omega t)/\\Omega\\\\-q_0\\Omega\\sin(\\Omega t)+p_0\\cos(\\Omega t)\\end{pmatrix}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "p.26方程q′=p,p′=-Ω²q；Ω≠0域；§1.2已有真实解与初值证明。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.harmonicPhaseFlow",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-102"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.1-SpectralSolution",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.1",
+    "printed_page": "27",
+    "pdf_page": "50",
+    "statement_latex": "If $\\boldsymbol A$ has a basis of eigenvectors $\\boldsymbol\\eta_i$, $i=1,\\ldots,m$, with corresponding eigenvalues $\\lambda_1,\\lambda_2,\\ldots,\\lambda_m$, then we may write the solution at time $t$ as\n\\[\\boldsymbol z(t)=\\sum_{i=1}^{m}c_i e^{\\lambda_i(t-t_0)}\\boldsymbol\\eta_i\\]\nwhere the coefficients $c_i$ are obtained by solving the equation\n\\[\\boldsymbol z(t_0)=\\boldsymbol\\xi=\\sum_{i=1}^{m}c_i\\boldsymbol\\eta_i.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "允许复数特征值，不偷换为实谱。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.spectralsolution",
+    "extra_assumptions": [
+      "有限维复数特征基；在公式中以t-t0调用零初时流；coeff=b.repr ξ。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-103"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.1-BasisCoefficients",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.1",
+    "printed_page": "27",
+    "pdf_page": "50",
+    "statement_latex": "(ii) with our assumption that the $\\{\\boldsymbol\\eta_i\\}$ form a basis, the calculation of the coefficients will always be possible, since the matrix $\\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\\boldsymbol c$ which satisfies the square linear system\n\\[\\boldsymbol\\xi=\\boldsymbol X\\boldsymbol c.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.basis_coefficients",
+    "extra_assumptions": [
+      "RCLike域包含实/复两种；真实有限基。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-105"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.1-MatrixExponentialSolution",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.1",
+    "printed_page": "27",
+    "pdf_page": "50",
+    "statement_latex": "An alternative expression for the solution is in terms of the exponential of the matrix $\\boldsymbol A$ scaled by time,\n\\[\\boldsymbol z(t)=e^{\\boldsymbol A(t-t_0)}\\boldsymbol\\xi.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "matrixExponentialFlow_eq把连续算子指数对应到真正矩阵指数。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.matrixexponentialsolution",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-106"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.1-MatrixExpSeries",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.1",
+    "printed_page": "27–28",
+    "pdf_page": "50–51",
+    "statement_latex": "Alternatively, we may think of $\\exp(\\boldsymbol A)$ as the sum of the exponential series\n\\[e^{\\boldsymbol A}=\\boldsymbol I+\\boldsymbol A+\\frac1{2!}\\boldsymbol A^2+\\frac1{3!}\\boldsymbol A^3+\\cdots\\]\nalthough this is seldom the most efficient method to compute it (this series converges for all matrices $\\boldsymbol A$, and so in fact the exponential expression for the solution of the linear system is well defined even in the absence of a full set of eigenvectors).",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "HasSum包含级数收敛和等式；需要Matrix.Norms.L2Operator范数约定。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.matrix_exp_series",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-107",
+      "CH01-108"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-FirstIntegral",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "28",
+    "pdf_page": "51",
+    "statement_latex": "Another term for constants of motion is first integral. In general, if we have a dynamical system $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, a first integral is a smooth function $I(\\boldsymbol z)$ which is constant along solutions, for all values of the initial condition.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "IsFirstIntegralOn量化每条真实曲线及其存在区间，不附加全局存在。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.smoothFirstIntegral",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-109"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-FirstIntegralCriterion",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "28",
+    "pdf_page": "51",
+    "statement_latex": "Since this should hold everywhere, the condition for $I$ to be a first integral is that $\\nabla I\\cdot f=0$.",
+    "proof_latex": "Let $\\boldsymbol z(t)$ ($t\\in\\mathbb R$) be a solution, then\n\\[I(\\boldsymbol z(t))=I(\\boldsymbol z(0))\\Rightarrow0=\\frac{\\mathrm d}{\\mathrm dt}I(\\boldsymbol z(t))=\\nabla I(\\boldsymbol z(t))\\cdot\\dot{\\boldsymbol z}(t)=\\nabla I(\\boldsymbol z(t))\\cdot f(\\boldsymbol z(t)).\\]",
+    "proof_note": "按渲染原页逐字转录原文论证。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.firstintegralcriterion",
+    "extra_assumptions": [
+      "开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral_gradient_criterion。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-110"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-PlanarGraphReduction",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "28",
+    "pdf_page": "51",
+    "statement_latex": "In principle, such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=g(x,\\psi(x)).\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "正文前句二维f=(g,h)且第一积分I(x,y)=I0；不把IsFirstIntegralOn当证明目标假设，它是本条原文已有第一积分。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.planargraphreduction",
+    "extra_assumptions": [
+      "对y偏导非零，真实strict导数，局部时间窗；原文省略隐函数非退化条件。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-111",
+      "CH01-112"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-PlanarQuadrature",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "28",
+    "pdf_page": "51",
+    "statement_latex": "Such an ordinary differential equation is said to be separable, and theoretically can be solved, given an initial condition, for x as a function of t.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.planarquadrature",
+    "extra_assumptions": [
+      "正则第一积分图及非转向速度非零；真实C2、局部积分逆。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-113"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-ScalarFirstIntegral",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "28",
+    "pdf_page": "51",
+    "statement_latex": "Example 1.6 The single degree of freedom model of Example 1.4 has the energy as a first integral. The system is therefore integrable.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.scalarfirstintegral",
+    "extra_assumptions": [
+      "U C2；原文integrable的quadrature结论复用§1.2条目，不等同于全局闭式轨道。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-114"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.1-RealSpectralSolution",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.1",
+    "printed_page": "27",
+    "pdf_page": "50",
+    "statement_latex": "Observations: (i) eigenvectors, eigenvalues, and coefficients $c_i$ may be complex, but if $\\boldsymbol A$ and $\\boldsymbol\\xi$ have real coefficients, it is nonetheless possible to obtain a real solution,",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "谱和结果每坐标虚部=0，对t-t0调用；不强制特征值为实。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.realspectralsolution",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-104"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerEnergy",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "29",
+    "pdf_page": "52",
+    "statement_latex": "Example 1.7 The Kepler problem describes the motion of a body in the plane moving under gravitational force exerted by a second, fixed body (located at the origin); it has the energy $E(x,y,\\dot x,\\dot y)=\\dot x^2/2+\\dot y^2/2-1/\\sqrt{x^2+y^2}$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "x²+y²>0非碰撞域；单位质量和引力系数。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.planarKeplerEnergy",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-115"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerConservedEnergy",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "29",
+    "pdf_page": "52",
+    "statement_latex": "The two conserved quantities, energy and angular momentum, mean that the Kepler problem is an integrable system.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "另一守恒量独立列KeplerAngularMomentum；可积重建列KeplerFullSolution。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.keplerconservedenergy",
+    "extra_assumptions": [
+      "真实机械轨迹、非碰撞开放时间区间；n=2对应平面。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-116"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerAngularMomentum",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "29",
+    "pdf_page": "52",
+    "statement_latex": "however, due to the fact that the potential energy is rotationally invariant (dependent only on the distance of the moving particle from the origin), the angular momentum of the system is conserved.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$l_z=x\\dot y-y\\dot x$，p.29同页；非碰撞真轨迹。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.keplerangularmomentum",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-117"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerMomentum",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "29",
+    "pdf_page": "52",
+    "statement_latex": "Note that a consequence of fixing one of the bodies in the Kepler problem is that the two components of the total momentum vector, i.e. $(m\\dot x,m\\dot y)$, are obviously no longer conserved;",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.keplermomentum",
+    "extra_assumptions": [
+      "q≠0；单位质量。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-201"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-PolarCoordinates",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "29",
+    "pdf_page": "52",
+    "statement_latex": "In polar coordinates $(x,y)=(r\\cos\\theta,r\\sin\\theta)$, the Lagrangian $L$ for the Kepler problem is",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "r>0，角实数局部提升；0处排除。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.polarCoordinates",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-118"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerPolarLagrangian",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "29",
+    "pdf_page": "52",
+    "statement_latex": "\\[L=K-U=\\frac12(\\dot r\\cos\\theta-r\\dot\\theta\\sin\\theta)^2+\\frac12(\\dot r\\sin\\theta+r\\dot\\theta\\cos\\theta)^2+\\frac1r=\\frac{\\dot r^2}2+\\frac{r^2\\dot\\theta^2}2+\\frac1r.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "v=r′、ω=θ′；公式为代数恒等式，物理域r>0。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.keplerpolarlagrangian",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-119"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerPolarODE",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "29",
+    "pdf_page": "52",
+    "statement_latex": "Working these out directly, one gets\n\\[\\ddot r=-\\frac1{r^2}+r\\dot\\theta^2,\\qquad0=\\frac{\\mathrm d}{\\mathrm dt}(r^2\\dot\\theta).\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "IsKeplerPolarEulerLagrangeOn包含真实一阶/二阶导数及r≠0，展开定义核对。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.keplerpolarode",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-120"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-PolarAngularIdentity",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "29",
+    "pdf_page": "52",
+    "statement_latex": "Expressed in polar coordinates this is\n\\[l_z=(r\\cos\\theta)(\\dot r\\sin\\theta+r\\dot\\theta\\cos\\theta)-(r\\sin\\theta)(\\dot r\\cos\\theta-r\\dot\\theta\\sin\\theta)\n=r^2\\dot\\theta(\\cos^2\\theta+\\sin^2\\theta)=r^2\\dot\\theta,\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "保留三角恒等式计算中的真实速度对应，代数定理不需r>0。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.polarangularidentity",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-121"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerRadialReduction",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "29",
+    "pdf_page": "52",
+    "statement_latex": "Taking this quantity as fixed, we may write the remaining equation as $\\ddot r=-1/r^2+l_z^2/r^3$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.keplerradialreduction",
+    "extra_assumptions": [
+      "r非零、角动量l固定，既有极坐标Euler–Lagrange真实解；角动量常性先前已证。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-122"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerRadialEnergy",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "30",
+    "pdf_page": "53",
+    "statement_latex": "system with energy\n\\[\\widehat E(r,\\dot r)=\\frac{\\dot r^2}2-\\frac1r+\\frac{l_z^2}{2r^2}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "r>0；ℓ固定z角动量；原句跨p.29–30，system指径向单自由度系统。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.radialKeplerEnergy",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-123"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerFullSolution",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "30",
+    "pdf_page": "53",
+    "statement_latex": "From our previous work, we know that this system (a single degree of freedom system) can be solved for $r$ as a function of $t$ and the initial conditions. Once $r=r(t)$ is known, we may obtain $\\theta$ by integration:\n\\[\\theta=\\theta(0)+\\int_0^t\\frac{l_z}{r^2(s)}\\,\\mathrm ds.\\]\nThe example shows that the full solution of the Kepler problem can be worked out given the initial conditions, as long as we are happy to express the solution in terms of antiderivatives of simple functions (and their inverses).",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.kepler_full_solution",
+    "extra_assumptions": [
+      "完整非碰撞存在区间含0；原文不保证径向碰撞时仍有全局解；角θ为区间上的连续实提升。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-124",
+      "CH01-125",
+      "CH01-126"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-ActionAngleCoordinates",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "30",
+    "pdf_page": "53",
+    "statement_latex": "Define new variables\n\\[x=\\sqrt{2I/\\Omega}\\cos\\theta,\\qquad v=\\sqrt{2I\\Omega}\\sin\\theta.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "Ω>0，I>0非退化action；(I,θ)是新坐标对，不另拆单符号。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.oscillatorActionAngle",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-127",
+      "CH01-202"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-ActionEnergy",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "30",
+    "pdf_page": "53",
+    "statement_latex": "In these variables, the energy is $E=I\\Omega$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.actionenergy",
+    "extra_assumptions": [
+      "Ω>0，I≥0；harmonicActionVelocity_formula保证v的sqrt(2IΩ)形式一致。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-128"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-ActionODE",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "30",
+    "pdf_page": "53",
+    "statement_latex": "Introducing these formulas into the equations of motion and simplifying leads to $\\dot I=0$, $\\dot\\theta=-\\Omega$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.actionode",
+    "extra_assumptions": [
+      "Ω,I正；真实I′、θ′，非退化局部角坐标。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-129"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-ActionSolution",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "30",
+    "pdf_page": "53",
+    "statement_latex": "The first equation expresses the constancy of energy; the second describes a rotation with frequency $\\Omega$, i.e., the solution is $\\theta(t)=\\theta(0)-\\Omega t$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "取s=0即原文公式；签名同时给I(t)=I(s)。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.actionsolution",
+    "extra_assumptions": [
+      "连通开放时间窗含起始s；正action及Ω，真实坐标解。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-130"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-HarmonicTorus",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "30",
+    "pdf_page": "53",
+    "statement_latex": "The same change of variables $(x_j,v_j)\\to(I_j,\\theta_j)$, applied to each oscillator, would yield equations of motion $\\dot I_j=0$, $\\dot\\theta_j=-\\Omega_j$. This describes a point winding about a $d$-dimensional torus defined by angular rotation frequencies $\\Omega_j$ and radii $|I_j|$ (Fig. 1.14).",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "HarmonicTorus d = Fin d→Real.Angle；角模2π；I为固定action，半径的几何映射不新造定理。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.oscillatorTorusMotion",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-131"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-TorusPeriod",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "30",
+    "pdf_page": "53",
+    "statement_latex": "Depending on the ratio of frequencies such motions may be periodic or quasi-periodic;",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.torusperiod",
+    "extra_assumptions": [
+      "给定周期T；每频率×T为整数圈是精确共振条件；原句没有单独定义commensurate。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-132"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-TorusDense",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "30",
+    "pdf_page": "53",
+    "statement_latex": "in the latter case the paths do not “close up” but instead we see the curve gradually fills in the surface of the torus.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.torusdense",
+    "extra_assumptions": [
+      "高维全整数关系无共振；仅成对频率比无理不足，此为原文quasi-periodic intended meaning的数学资格。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-133"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-LocalActionAngleReduction",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.2",
+    "printed_page": "30",
+    "pdf_page": "53",
+    "statement_latex": "More generally, one finds occasional examples of nonlinear systems which possess as many independent first integrals as degrees of freedom (satisfying a certain “involution” condition); such systems may be reduced via a coordinate transformation to action-angle variables, i.e. they exhibit tori motion.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.local_action_angle_reduction",
+    "extra_assumptions": [
+      "全部积分C∞且Poisson括号两两零；正则共同能量层紧、连通；满秩=独立。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-134"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-Equilibrium",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "31",
+    "pdf_page": "54",
+    "statement_latex": "An equilibrium point of such system is a solution of $f(\\boldsymbol z)=0$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.equilibriumDefinition",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-135"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-ConstantEquilibrium",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "31",
+    "pdf_page": "54",
+    "statement_latex": "An equilibrium point $\\boldsymbol z^*$ corresponds to an equilibrium solution, since if we define a constant function $\\boldsymbol z(t)=\\boldsymbol z^*$ then we have $\\dot{\\boldsymbol z}(t)=f(\\boldsymbol z^*)=0$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.constantequilibrium",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-136"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-EquilibriumLinearization",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "31",
+    "pdf_page": "54",
+    "statement_latex": "We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\\boldsymbol z^*$ and make use of the fact that $f(\\boldsymbol z)\\approx f(\\boldsymbol z^*)+f'(\\boldsymbol z^*)(\\boldsymbol z-\\boldsymbol z^*)$ for $\\|\\boldsymbol z-\\boldsymbol z^*\\|$ sufficiently small. Since $f(\\boldsymbol z^*)=0$ we have, defining $\\delta\\boldsymbol z:=\\boldsymbol z-\\boldsymbol z^*$,\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}=\\boldsymbol A\\delta\\boldsymbol z,\\qquad\\boldsymbol A=f'(\\boldsymbol z^*).\\]\nThe symbol $\\approx$ is not very precise.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "小o余项将≈精确定义为一阶近似；δ的线性ODE是近似系统，不声称非线性扰动精确满足Aδ。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.equilibriumlinearization",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-137",
+      "CH01-138"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-Hyperbolic",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "31–32",
+    "pdf_page": "54–55",
+    "statement_latex": "In case the equilibrium point is hyperbolic, meaning that the real parts of the eigenvalues of $\\boldsymbol A=f'(\\boldsymbol z^*)$ are nonzero,",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "实算子用复特征向量的实虚部编码；所有非零特征对对应实部a≠0。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hyperbolic",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-139"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-HartmanGrobmanLiteral",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "31–32",
+    "pdf_page": "54–55",
+    "statement_latex": "then one can infer that the solutions of the nonlinear and linear systems are in fact topologically conjugate: if $\\boldsymbol z$ is the solution of the nonlinear system and $\\delta\\boldsymbol z$ is the solution of the linear system, then there is a smooth, invertible map $\\boldsymbol\\Phi$ of $\\mathbb R^m$ defined in a neighborhood of the origin such that\n\\[\\boldsymbol z(t)=\\boldsymbol z^*+\\boldsymbol\\Phi(\\delta\\boldsymbol z(t)).\\]\nThis is referred to as the Hartman-Grobman theorem (for more discussion see [177], where this result is referred to as the “Linearization Theorem”; a proof may be found in [362]).",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.hartmangrobmanliteral",
+    "extra_assumptions": [
+      "C1全域模型及真实全局流为局部应用的技术资格；共轭在轨迹保持局部域时断言。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-140"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-LyapunovStability",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "32",
+    "pdf_page": "55",
+    "statement_latex": "Let $\\boldsymbol z^*$ be an equilibrium point. We say that $\\boldsymbol z^*$ is stable (“in the sense of Lyapunov”) if, for all $\\epsilon$, there exists $\\delta$ such that, for all $\\boldsymbol z_0$ such that $\\|\\boldsymbol z_0-\\boldsymbol z^*\\|<\\delta$,\n\\[\\sup_{t\\geq0}\\|\\mathcal F_t(\\boldsymbol z_0)-\\boldsymbol z^*\\|<\\epsilon.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.lyapunovStable",
+    "extra_assumptions": [
+      "ε,δ正按Lyapunov容差惯例；有界性避免Lean实数总sup的未界伪结论。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-141"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-HyperbolicStabilityTransfer",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "32",
+    "pdf_page": "55",
+    "statement_latex": "The Hartman-Grobman theorem clearly implies that the stability of a given hyperbolic equilibrium point $\\boldsymbol z^*$ of a nonlinear system can be inferred from the stability of the origin for the linearization of the system around $\\boldsymbol z^*$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hyperbolicstabilitytransfer",
+    "extra_assumptions": [
+      "C1及真实全局流；stable谓词的统一界<ε与原文严格sup形式等价。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-142"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-HamiltonEquilibrium",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "32",
+    "pdf_page": "55",
+    "statement_latex": "Observe that an equilibrium point $\\boldsymbol z^*=(\\boldsymbol q^*,\\boldsymbol p^*)$ of a Hamiltonian system in “kinetic plus potential” form\n\\[H(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p/2+U(\\boldsymbol q)\\]\nwill always have $\\boldsymbol p^*=0$ and $\\nabla U(\\boldsymbol q^*)=0$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hamilton_equilibrium",
+    "extra_assumptions": [
+      "一般常M正定、U可微；heq为原文Hamilton平衡的两梯度定义。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-143"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-StrongLocalMinimum",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "32",
+    "pdf_page": "55",
+    "statement_latex": "We say that $\\boldsymbol q^*$ is a strong local minimum of the potential if there exists $\\epsilon>0$ such that\n\\[0<\\|\\boldsymbol q-\\boldsymbol q^*\\|<\\epsilon\\Rightarrow U(\\boldsymbol q)>U(\\boldsymbol q^*).\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.strongLocalMinimum",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-144"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-LinearizedHamiltonian",
+    "kind": "definition",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "32",
+    "pdf_page": "55",
+    "statement_latex": "If the potential is $C^2$, then the linearized version is of the same “kinetic plus potential” form with Hamiltonian\n\\[\\widetilde H=\\frac{\\delta\\boldsymbol p^T\\boldsymbol M^{-1}\\delta\\boldsymbol p}2+\\frac{\\delta\\boldsymbol q^T U''(\\boldsymbol q^*)\\delta\\boldsymbol q}2.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "C2使fderiv gradient为真实Hessian；定义只登记该二次Hamiltonian形式。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.linearizedHamiltonian",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-146"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-PositiveHessianQuadratic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "33",
+    "pdf_page": "56",
+    "statement_latex": "A condition for this system to have a strong local minimum at $\\delta\\boldsymbol p=0$, $\\delta\\boldsymbol q=0$ is that the Hessian matrix $U''(\\boldsymbol q^*)$ be positive definite.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.positivehessianquadratic",
+    "extra_assumptions": [
+      "M正定，K=U″对称正定；一般矩阵。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-147"
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-PositiveHessianMinimum",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.5.3",
+    "printed_page": "33",
+    "pdf_page": "56",
+    "statement_latex": "In case the eigenvalues of $U''(\\boldsymbol q^*)$ are all distinct and positive, then the strong local minimum property will also follow for $\\boldsymbol q^*$ in relation to the original potential.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.positive_hessian_minimum",
+    "extra_assumptions": [
+      "C2与平衡∇U=0来自同节；显式特征基表达全部distinct positive eigenvalues。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-148"
+    ]
   }
 ]
