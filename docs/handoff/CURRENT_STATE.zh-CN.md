@@ -15,4 +15,5 @@ Legendre原文使用配置相关M(q)，不能以固定对角质量结果代替�
 第1–6章正式源码和签名保留；heartbeat lean ACTIVE / 15分钟未修改。每次唤醒仅按AGENTS规定的当前入口读取。
 已有其他任务工作树改动：WORK_LOG中快速审阅PDF条目、output/、tmp/、docs/review/check-full06/、scripts/export_ch01_review_pdf.py，保留。
 
-最后更新：2026-10-09T13:21:16.912117+08:00；当前检查基线HEAD为1b1cbae，交付提交以git log -1为准。
+最后更新：2026-10-09T13:28:19.066072+08:00；Lean材料提交5e055cc已push，交接文档最近提交以git log -1为准。
+远程CI未核验；本地终版完整检查证据已落盘。后续无网站新结果仅确认等待，不扩展范围。
