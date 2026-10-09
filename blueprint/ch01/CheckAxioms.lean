@@ -36,3 +36,6 @@ import Blueprint.Ch01
 #print axioms MD.Ch01.radial_lj_force_literal
 #print axioms MD.Ch01.lj_coordinate_scaling
 #print axioms MD.Ch01.ljtimescaling
+#print axioms MD.Ch01.fixedMassLagrangian
+#print axioms MD.Ch01.generalized_coordinates
+#print axioms MD.Ch01.generalizedmassregular

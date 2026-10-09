@@ -254,6 +254,125 @@ add('PhaseSpace','1.4',25,[87,88],'''The set of all positions and momenta for wh
     definition('finiteEnergyPhaseSpace') if False else '''def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseSpace n) :=
   {z | H z ≠ ⊤ ∧ H z ≠ ⊥}''',extra=['采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。'])
 
+add('LocalExistUnique','1.5',25,[89],'''One of the most important properties of a typical classical molecular Hamiltonian system is the existence and uniqueness of solutions started from a generic initial condition.''',
+    '''theorem local_exist_unique {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (hQ : IsOpen Q) (t₀ : ℝ) (z₀ : PhaseSpace n) (hz : z₀.1 ∈ Q)
+    (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 (fun x => -gradient U x) q) :
+    (∃ ε γ, IsLocalMechanicalIVP m (fun q => -gradient U q) Q t₀ z₀ ε γ) ∧
+    ∀ I γ η, IsOpen I → t₀ ∈ I →
+      IsMechanicalSolutionOn m (fun q => -gradient U q) Q I γ →
+      IsMechanicalSolutionOn m (fun q => -gradient U q) Q I η →
+      γ t₀ = z₀ → η t₀ = z₀ → γ =ᶠ[𝓝 t₀] η := by
+  constructor
+  · exact exists_localMechanicalIVP_open_of_force_contDiffAt m _ Q hQ t₀ z₀ hz (hreg _ hz)
+  · intro I γ η hI ht hγ hη hi hj
+    exact mechanicalSolution_eventually_unique_of_contDiffAt m _ Q I t₀ γ η z₀ hI ht hγ hη hi hj
+      (mechanicalVectorField_contDiffAt m _ z₀ (hreg _ hz))''',kind='unnumbered_claim',
+    extra=['generic初值解释为开放非奇异域中的合法初值；力C1是原文存在唯一性背景。固定对角质量模型。'],prior=['MolecularDynamics/Chapter01/LocalExistence.lean:exists_localMechanicalIVP_open_of_force_contDiffAt'])
+add('EnergySurface','1.5',25,[90],r'''For given $E_0\geq U_{\min}$ define $\Sigma_{E_0}=\{(\boldsymbol q,\boldsymbol p)\mid H(\boldsymbol q,\boldsymbol p)=E_0\}$.''',definition('energySurface'),context=['Σ是指定H的能量层，E0≥Umin为使用背景，不声称层非空。'])
+add('EnergyBounds','1.5',25,[91,92,93],r'''Assume that $U$ is a potential energy function which is bounded below, $U\geq U_{\min}$. For given $E_0\geq U_{\min}$ define $\Sigma_{E_0}=\{(\boldsymbol q,\boldsymbol p)\mid H(\boldsymbol q,\boldsymbol p)=E_0\}$. Then, for $(\boldsymbol q,\boldsymbol p)\in\Sigma_{E_0}$
+\[\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2+U(\boldsymbol q)=E_0\Rightarrow\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2=E_0-U(\boldsymbol q)\leq E_0-U_{\min}.\]
+$\boldsymbol M^{-1}$ is a positive definite matrix (assumed here to be constant), so we can infer that the momenta are bounded at fixed total energy. We would like to say something similar for positions. We have, at energy $E_0$,
+\[U_{\min}\leq U(\boldsymbol q)\leq E_0.\]''',
+    '''theorem energy_bounds {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (E₀ Umin : ℝ) (hM : (M⁻¹).PosDef)
+    (hU : ∀ q, Umin ≤ U q) :
+    (∀ q p, variableMassHamiltonian (fun _ => M) U q p = E₀ →
+      inner ℝ p (matrixAction M⁻¹ p) / 2 = E₀ - U q ∧
+      inner ℝ p (matrixAction M⁻¹ p) / 2 ≤ E₀ - Umin ∧ Umin ≤ U q ∧ U q ≤ E₀) ∧
+    ∃ R : ℝ, ∀ q p, variableMassHamiltonian (fun _ => M) U q p = E₀ → ‖p‖ ≤ R := by
+  sorry''',kind='unnumbered_claim',extra=['U定义在整个欧氏位置域；保持一般常M⁻¹正定，未换成固定对角特例。'],missing='一般SPD二次型的正下界/紧单位球coercivity桥接；已有对角MomentumBounds只覆盖特例。')
+add('UniformLevelsCompact','1.5',26,[94,96],r'''What is needed is an assumption that the level sets $\widehat\Sigma_\alpha=\{\boldsymbol q\mid U(\boldsymbol q)=\alpha\}$ are bounded uniformly for $\alpha\in[U_{\min},E_0]$. Then it follows that solutions satisfying the energy constraint remain confined to a compact (closed and bounded) set.''',
+    '''theorem uniform_levels_compact {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (E₀ Umin : ℝ) (hM : (M⁻¹).PosDef)
+    (hU : Continuous U) (hlower : ∀ q, Umin ≤ U q)
+    (hlevels : ∃ R : ℝ, ∀ α ∈ Icc Umin E₀, ∀ q, U q = α → ‖q‖ ≤ R) :
+    IsCompact {z : PhaseSpace n | variableMassHamiltonian (fun _ => M) U z.1 z.2 = E₀} := by
+  sorry''',kind='unnumbered_claim',extra=['U连续保证能量层闭；一般常逆质量正定继承p.25；无奇异域的全欧氏模型，若有奇异域需紧集留域。'],missing='一般SPD能量界+有限维闭有界紧性；原文confining性质只在能量子水平集要求，不把所有位置集先设紧。')
+add('CompactContinuation','1.5','25–26',[95],'''The uniqueness of solutions is easily verified in the usual way (as for the local result for uniqueness of solutions). The key point is that, with the energy constraint, solutions typically remain bounded for all time.''',
+    '''theorem compact_continuation {n : ℕ} (m : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (K : Set (PhaseSpace n)) (z₀ : PhaseSpace n)
+    (hQ : IsOpen Q) (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 F q)
+    (hK : IsCompact K) (hKQ : ∀ z ∈ K, z.1 ∈ Q) (hz : z₀ ∈ K)
+    (hconfine : ∀ a b γ, 0 ∈ Ioo a b → IsMechanicalSolutionOn m F Q (Ioo a b) γ →
+      γ 0 = z₀ → ∀ t ∈ Ioo a b, γ t ∈ K) :
+    ∃ γ, IsMechanicalSolutionOn m F Q univ γ ∧ γ 0 = z₀ ∧ ∀ t, γ t ∈ K := by
+  sorry''',kind='unnumbered_claim',extra=['共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。'],missing='双向紧集延拓：已有正式定理仅供给未来Ioi，须反向系统并拼接；本批保留完整双向签名。')
+stated('Nonconfining','1.5',26,[97],r'''The assumption on $U$ is not satisfied by some simple potentials. For example consider $U(x,y)=x^2$ which is completely independent of $y$ and so places no restriction on that variable for constant energy.''','nonconfiningExample_statement',missing='有界集坐标投影/序列反证，计划短证明。')
+add('FlowMap','1.5.1',26,[98],r'''Consider now the initial value problem
+\[\dot{\boldsymbol z}=f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi,\tag{1.5}\]
+in a $m$-dimensional space. If we assume that $f$ corresponds to a molecular Hamiltonian system satisfying the assumptions of the existence and uniqueness result of the previous subsection, then we may define a mapping from a point in phase space to the point $t$ units later along the time-evolution starting from the initial point. We refer to this map as the flow map and denote it by $\mathcal F_t$. $\mathcal F_t(\boldsymbol\xi)=\boldsymbol z(t)$ solves the initial value problem (1.5).''',
+    '''def flowMap {n : ℕ} (f : Position n → Position n) (F : ℝ → Position n → Position n) : Prop :=
+  (∀ ξ, F 0 ξ = ξ) ∧ ∀ ξ t, HasDerivAt (fun s => F s ξ) (f (F t ξ)) t''',context=['这里只定义已存在全局流满足IVP；不假设群律，不声明任意f全局可解。'])
+bridge('FlowEnergy','1.5.1',26,[101],r'''The flow map of a Hamiltonian system conserves its Hamiltonian, thus
+\[H(\mathcal F_t(\boldsymbol\xi))=H(\boldsymbol\xi).\]''','MolecularDynamics/Chapter01/GlobalFlow.lean','globalMechanicalFlow_energy',extra=['固定对角机械Hamiltonian；真实全局流、正质量、势可微、F=-∇U。一般非机械Hamiltonian尚待全局光滑Hamilton理论。'],verdict='NEEDS_HUMAN',explanation='原文为一般Hamiltonian flow；当前库桥接限可分离机械H，须写一般H陈述后本地PASS。')
+add('HarmonicPhaseFlow','1.5.1',27,[102],r'''for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is
+\[\begin{pmatrix}q(t)\\p(t)\end{pmatrix}=\mathcal F_t\begin{pmatrix}q_0\\p_0\end{pmatrix}=\begin{pmatrix}q_0\cos(\Omega t)+p_0\sin(\Omega t)/\Omega\\-q_0\Omega\sin(\Omega t)+p_0\cos(\Omega t)\end{pmatrix}.\]''',
+    '''def harmonicPhaseFlow {n : ℕ} (Ω t : ℝ) (z : PhaseSpace n) : PhaseSpace n :=
+  (Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2,
+    (-Ω*Real.sin (Ω*t)) • z.1 + Real.cos (Ω*t) • z.2)''',context=['p.26方程q′=p,p′=-Ω²q；Ω≠0域；§1.2已有真实解与初值证明。'])
+bridge('SpectralSolution','1.5.1',27,[103],r'''If $\boldsymbol A$ has a basis of eigenvectors $\boldsymbol\eta_i$, $i=1,\ldots,m$, with corresponding eigenvalues $\lambda_1,\lambda_2,\ldots,\lambda_m$, then we may write the solution at time $t$ as
+\[\boldsymbol z(t)=\sum_{i=1}^{m}c_i e^{\lambda_i(t-t_0)}\boldsymbol\eta_i\]
+where the coefficients $c_i$ are obtained by solving the equation
+\[\boldsymbol z(t_0)=\boldsymbol\xi=\sum_{i=1}^{m}c_i\boldsymbol\eta_i.\]''','MolecularDynamics/Chapter01/ComplexSpectralFlow.lean','complexExponentialFlow_eigenbasis',extra=['有限维复数特征基；在公式中以t-t0调用零初时流；coeff=b.repr ξ。'],context=['允许复数特征值，不偷换为实谱。'])
+bridge('BasisCoefficients','1.5.1',27,[105],r'''(ii) with our assumption that the $\{\boldsymbol\eta_i\}$ form a basis, the calculation of the coefficients will always be possible, since the matrix $\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\boldsymbol c$ which satisfies the square linear system
+\[\boldsymbol\xi=\boldsymbol X\boldsymbol c.\]''','MolecularDynamics/Chapter01/BasisMatrix.lean','basisColumnMatrix_inverse_coefficients',extra=['RCLike域包含实/复两种；真实有限基。'])
+bridge('MatrixExponentialSolution','1.5.1',27,[106],r'''An alternative expression for the solution is in terms of the exponential of the matrix $\boldsymbol A$ scaled by time,
+\[\boldsymbol z(t)=e^{\boldsymbol A(t-t_0)}\boldsymbol\xi.\]''','MolecularDynamics/Chapter01/MatrixFlow.lean','matrixExponentialFlow_unique',context=['matrixExponentialFlow_eq把连续算子指数对应到真正矩阵指数。'])
+add('MatrixExpSeries','1.5.1','27–28',[107,108],r'''Alternatively, we may think of $\exp(\boldsymbol A)$ as the sum of the exponential series
+\[e^{\boldsymbol A}=\boldsymbol I+\boldsymbol A+\frac1{2!}\boldsymbol A^2+\frac1{3!}\boldsymbol A^3+\cdots\]
+although this is seldom the most efficient method to compute it (this series converges for all matrices $\boldsymbol A$, and so in fact the exponential expression for the solution of the linear system is well defined even in the absence of a full set of eigenvectors).''',
+    '''theorem matrix_exp_series {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
+    HasSum (fun k : ℕ => ((k.factorial : ℝ)⁻¹) • A^k) (NormedSpace.exp A) := by
+  exact MolecularDynamics.Chapter01Review.matrixExponentialSeries_hasSum A''',kind='unnumbered_claim',prior=['MolecularDynamics/Chapter01/ReviewProofs.lean:matrixExponentialSeries_hasSum'],context=['HasSum包含级数收敛和等式；需要Matrix.Norms.L2Operator范数约定。'])
+add('FirstIntegral','1.5.2',28,[109],r'''Another term for constants of motion is first integral. In general, if we have a dynamical system $\dot{\boldsymbol z}=f(\boldsymbol z)$, a first integral is a smooth function $I(\boldsymbol z)$ which is constant along solutions, for all values of the initial condition.''',
+    '''def smoothFirstIntegral {n : ℕ} (f : Position n → Position n) (Q : Set (Position n))
+    (I : Position n → ℝ) : Prop := ContDiffOn ℝ ∞ I Q ∧ IsFirstIntegralOn f Q I''',context=['IsFirstIntegralOn量化每条真实曲线及其存在区间，不附加全局存在。'])
+bridge('FirstIntegralCriterion','1.5.2',28,[110],r'''Since this should hold everywhere, the condition for $I$ to be a first integral is that $\nabla I\cdot f=0$.''','MolecularDynamics/Chapter01/FirstIntegrals.lean','isFirstIntegralOn_iff_differential',
+    proof=r'''Let $\boldsymbol z(t)$ ($t\in\mathbb R$) be a solution, then
+\[I(\boldsymbol z(t))=I(\boldsymbol z(0))\Rightarrow0=\frac{\mathrm d}{\mathrm dt}I(\boldsymbol z(t))=\nabla I(\boldsymbol z(t))\cdot\dot{\boldsymbol z}(t)=\nabla I(\boldsymbol z(t))\cdot f(\boldsymbol z(t)).\]''',extra=['开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral_gradient_criterion。'])
+bridge('PlanarGraphReduction','1.5.2',28,[111,112],r'''In principle, such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:
+\[\frac{\mathrm dx}{\mathrm dt}=g(x,\psi(x)).\]''','MolecularDynamics/Chapter01/FirstIntegralGraph.lean','planarFirstIntegral_localGraph_reduction',extra=['对y偏导非零，真实strict导数，局部时间窗；原文省略隐函数非退化条件。'],context=['正文前句二维f=(g,h)且第一积分I(x,y)=I0；不把IsFirstIntegralOn当证明目标假设，它是本条原文已有第一积分。'])
+bridge('PlanarQuadrature','1.5.2',28,[113],'''Such an ordinary differential equation is said to be separable, and theoretically can be solved, given an initial condition, for x as a function of t.''','MolecularDynamics/Chapter01/FirstIntegralQuadrature.lean','planarFirstIntegral_nonturning_quadrature',extra=['正则第一积分图及非转向速度非零；真实C2、局部积分逆。'])
+bridge('ScalarFirstIntegral','1.5.2',28,[114],'''Example 1.6 The single degree of freedom model of Example 1.4 has the energy as a first integral. The system is therefore integrable.''','MolecularDynamics/Chapter01/ScalarIntegrability.lean','scalarPotentialEnergy_isFirstIntegral',extra=['U C2；原文integrable的quadrature结论复用§1.2条目，不等同于全局闭式轨道。'])
+
+for r in RECORDS:
+    if r['source_id']=='MD-1.4-HamiltonFixedMass':
+        r['code']='''theorem hamilton_fixed_mass {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (q p : Position n) (hM : M.PosDef)
+    (hU : DifferentiableAt ℝ U q) :
+    HasGradientAt (fun v => variableMassHamiltonian (fun _ => M) U q v)
+      (matrixAction M⁻¹ p) p ∧
+    HasGradientAt (fun x => variableMassHamiltonian (fun _ => M) U x p)
+      (gradient U q) q := by
+  sorry'''
+        r['lean_decl']='MD.Ch01.hamilton_fixed_mass';r['local_verdict']='PASS'
+        r['extra_assumptions']=['常质量矩阵M对称正定，来自机械模型满秩坐标变换；U真实可微。']
+        r['local_explanation']='保留一般常质量矩阵，两个实际梯度给出全部Hamilton方程分量；旧库对角特例不匹配此忠实签名。'
+        r['missing']='一般对称矩阵二次型梯度与矩阵逆正定桥接。'
+    if r['source_id']=='MD-1.2-ScalarQuadrature':
+        r['code']='''theorem scalar_quadrature (U : ℝ → ℝ) (hU : ContDiff ℝ ∞ U)
+    (ξ η : ℝ) (hη : η ≠ 0) :
+    ∃ δ > 0, ∃ ε > 0, ∃ V X : ℝ → ℝ → ℝ → ℝ,
+      ContDiffOn ℝ ∞ (fun z : ℝ × ℝ × ℝ => V z.1 z.2.1 z.2.2)
+        {z | |z.1-ξ| < δ ∧ |z.2.1-ξ| < δ ∧ |z.2.2-η| < δ} ∧
+      ContDiffOn ℝ ∞ (fun z : ℝ × ℝ × ℝ => X z.1 z.2.1 z.2.2)
+        {z | |z.1| < ε ∧ |z.2.1-ξ| < δ ∧ |z.2.2-η| < δ} ∧
+      (∀ ζ κ, |ζ-ξ| < δ → |κ-η| < δ → V ζ ζ κ = κ ∧ X 0 ζ κ = ζ) ∧
+      (∀ x ζ κ, |x-ξ| < δ → |ζ-ξ| < δ → |κ-η| < δ →
+        scalarPotentialEnergy U (x,V x ζ κ) = scalarPotentialEnergy U (ζ,κ)) ∧
+      (∀ x ζ κ v, |x-ξ| < δ → |ζ-ξ| < δ → |κ-η| < δ → |v-η| < δ →
+        scalarPotentialEnergy U (x,v) = scalarPotentialEnergy U (ζ,κ) → v = V x ζ κ) ∧
+      ∀ t ζ κ, |t| < ε → |ζ-ξ| < δ → |κ-η| < δ →
+        HasDerivAt (fun s => X s ζ κ) (V (X t ζ κ) ζ κ) t ∧
+        HasDerivAt (fun s => V (X s ζ κ) ζ κ) (-deriv U (X t ζ κ)) t ∧
+        separableTimePrimitive (fun x => V x ζ κ) ζ (X t ζ κ) = t := by
+  sorry'''
+        r['lean_decl']='MD.Ch01.scalar_quadrature';r['local_verdict']='PASS'
+        r['local_explanation']='已补完整x,ξ,η联合光滑参数化、局部唯一根、真实解与积分逆等式，未把固定初值局部定理当全条证明。'
+        r['extra_assumptions']=['U光滑使原文smooth solutions和联合隐函数成立；η≠0保留原文非转向前提。']
+        r['missing']='参数依赖的C∞隐函数与C∞ODE局部流、带参数quadrature逆理论；已有固定初值C1桥接不足。'
+
 # Complete easily overlooked clauses before admitting a local PASS.
 for r in RECORDS:
     if r['source_id']=='MD-1.2-HarmonicSolution':

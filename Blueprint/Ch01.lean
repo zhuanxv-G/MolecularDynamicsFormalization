@@ -1,3 +1,4 @@
+import MolecularDynamics.Chapter01.GeneralizedCoordinates
 import MolecularDynamics.Chapter01.ScalarLocalIVP
 import MolecularDynamics.Chapter01.HarmonicOscillator
 import MolecularDynamics.Chapter01.MomentumConservation
@@ -515,5 +516,42 @@ theorem ljtimescaling :
   sorry
 
 /- END FULL SECTION 1.2 -/
+
+/- BEGIN FULL SECTION 1.3 -/
+
+/-- source_id: MD-1.3-Lagrangian · definition · printed p.22 / PDF p.45
+
+
+-/
+def fixedMassLagrangian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (q : Position n) (v : Velocity n) : ℝ := nBodyKineticEnergy m v - U q
+
+/-- source_id: MD-1.3-GeneralizedCoordinates · unnumbered_claim · printed p.23 / PDF p.46
+[EXTRA] 原文smooth可在本结论弱化至点态真实可微；k可小于n，含原文约束推广。
+
+-/
+theorem generalized_coordinates {n k : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (Φ : Position k → Position n)
+    (J : Matrix (Fin n) (Fin k) ℝ) (q : ℝ → Position k) (V : Velocity k) (t : ℝ)
+    (hΦ : HasFDerivAt Φ J.toEuclideanLin.toContinuousLinearMap (q t))
+    (hq : HasDerivAt q V t) :
+    HasDerivAt (fun s => Φ (q s)) (J.toEuclideanLin V) t ∧
+    massLagrangian m U (Φ (q t)) (J.toEuclideanLin V) =
+      inner ℝ V ((generalizedMassMatrix m J).toEuclideanLin V) / 2 - U (Φ (q t)) := by
+  exact ⟨hasDerivAt_coordinateChange Φ J q V t hΦ hq,
+    massLagrangian_coordinateChange m U Φ J (q t) V⟩
+
+/-- source_id: MD-1.3-GeneralizedMassRegular · unnumbered_claim · printed p.23 / PDF p.46
+[EXTRA] 正粒子质量；full rank为Jacobian列单射，符合n≥k。
+
+-/
+theorem generalizedmassregular :
+  ∀ {n k : ℕ} (m : CoordinateMasses n)
+    (J : Matrix (Fin n) (Fin k) ℝ) (hm : ∀ i, 0 < m i)
+    (hJ : Function.Injective J.mulVec),
+    IsUnit (generalizedMassMatrix m J) := by
+  exact @MolecularDynamics.generalizedMassMatrix_isUnit
+
+/- END FULL SECTION 1.3 -/
 
 end MD.Ch01
