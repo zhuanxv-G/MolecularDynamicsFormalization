@@ -1,0 +1,4 @@
+请对附件 BATCH01c_MATERIALS.md 中的 2 条做独立审校，原页见 BATCH01c_PAGES.pdf；原PDF/印刷页与附件页的映射在材料开头。
+A：逐字核对原文陈述、证明和上下文，原书疑误保留并指出。
+C：核对Lean实际定义、对象、量词、假设及全部结论，评估[EXTRA]；签名语义与是否sorry分开判断。只读，不改文件或补证明。材料不足写NEEDS_HUMAN，勿猜。
+仅返回一个JSON数组，每条字段：source_id，json_review{status,issue_codes,corrected_json,issues,evidence}，audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。corrected_json有修订时给完整条目；无修订、反例或修复建议填null。证据标原PDF页及具体依据。无围栏或额外文字。

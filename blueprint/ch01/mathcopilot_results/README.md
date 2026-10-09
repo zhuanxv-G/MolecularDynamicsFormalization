@@ -4,6 +4,8 @@
 
 原样保存返回数组为 `BATCH01_result.json`、`BATCH02_result.json`……。若网站返回带文字或围栏，可先保存同名 `.md`；保留原始件再解析。
 
+256KB输入限制适配：BATCH01分a/b/c小Task提交，分别原样保存BATCH01a_result.json、BATCH01b_result.json、BATCH01c_result.json；三份按source_id合并覆盖原五条，不修改原批次对应关系。收到一份即可逐条整合；尚未返回的条目保持待审，不能将整批标PASS。精简输入哈希见mathcopilot_tasks/compact/BATCH01/各子目录MANIFEST.json。
+
 每项字段：`source_id`、`json_review{status,issue_codes,corrected_json,issues,evidence}`、`audit{lean_decl,verdict,explanation,counterexample,suggested_fix}`。输入版本以对应批次 `MANIFEST.json` 的文件哈希为准。
 
 新返回件优先整合：合并原文修订并追加repair_log，保存网站审计结果，核对声明与输入版本；修改过的声明重新审计并登记EAUDIT批次，相关本地证明重新检查。缺条、版本不符或未决项不能记PASS，未返回项保持“待网站审计”。

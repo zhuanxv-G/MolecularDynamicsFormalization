@@ -64,6 +64,8 @@ def sync():
     mapping={'mapped':mapped,'excluded':EXCLUDED}
     (BASE/'old_mapping.json').write_text(json.dumps(mapping,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     taskdir=BASE/'mathcopilot_tasks';index=['# 第1章MathCopilot批次索引','','每个文件整段粘贴一个Task，先A后C，B取消；网站只由用户提交。输入版本以批次MANIFEST.json的SHA256为准。','','| 批次 | source_id | 上传文件及页码 | 建议顺序 |','|---|---|---|---|']
+    if (taskdir/'compact/BATCH01/README.md').exists():
+        index[3:3]=['BATCH01输入限制适配：优先按[精简提交说明](compact/BATCH01/README.md)分a/b/c三个Task提交。每Task只粘贴短PROMPT.txt并引用对应材料MD和裁页PDF；原五条保持完整，按source_id整合三个返回件；网站接收未验证。','']
     groups=[('BATCH01',[s for s in sources if s['source_id'] in pilot])]
     num=2
     for sec in dict.fromkeys(s['section'] for s in sources if s['source_id'] not in pilot):

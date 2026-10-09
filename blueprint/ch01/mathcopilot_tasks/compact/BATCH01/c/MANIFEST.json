@@ -1,0 +1,275 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01c",
+  "git_commit": "3c52e2e592edcda48a960d15ea6978b002f5535f",
+  "frozen_task_sha256": "28d920a8c3e6bb21ce10572e446af3e8788cae69cc304991fd5a4bc61b5bef44",
+  "frozen_source_files": {
+    "blueprint/ch01/ch01_source.json": "4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695",
+    "Blueprint/Ch01.lean": "91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240",
+    "MolecularDynamics/BasicDefinitions.lean": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+    "MolecularDynamics/Chapter01/BasisMatrix.lean": "3bdf3d414cb4196cfe87b644786e2b1f29166952ea61ab8bd28f7ebd44a1c4df",
+    "MolecularDynamics/Chapter01/ComplexSpectralFlow.lean": "f8d1952fa9cebf6c100c24a6595a8edadc9a932e3a53f905132eb297a0fd552e",
+    "MolecularDynamics/Chapter01/Continuation.lean": "e77c1e1886b52ae50d0a0cde07cf5fd5237679e058c5c0f517bf3493e315746b",
+    "MolecularDynamics/Chapter01/EnergyConservation.lean": "95e0a1323f35ac2c2dca0d5c07ba33310eea0870364a968cde57d72cb5b04d88",
+    "MolecularDynamics/Chapter01/EnergyGlobalExistence.lean": "80b6d0500bef523dc65036b200927879b614a350b2af255c0086a8d7fcfc03bf",
+    "MolecularDynamics/Chapter01/Equilibrium.lean": "24f99ee513b0e23a57ec918fdb3d4948e999947dfc7f3c873d5a0cb44c48bbe6",
+    "MolecularDynamics/Chapter01/EquilibriumLinearization.lean": "71f700c3ab2a83b2aa7a1ea0500453101b092c904b73ce10c4dd43155ff6c436",
+    "MolecularDynamics/Chapter01/EuclideanStability.lean": "35c34eba90fc5a23e998d92ccfa16037b0caed6a198e5951d63830af84e4ee66",
+    "MolecularDynamics/Chapter01/FirstIntegralGraph.lean": "5a23f002003d8dfa34febe3f2d0ab8de9db2cb63465c063bf92bea542b25da10",
+    "MolecularDynamics/Chapter01/FirstIntegralQuadrature.lean": "5f78b45fdf25e5024107e909f509aebac2a85393a229d7621efc46ef34d7da50",
+    "MolecularDynamics/Chapter01/FirstIntegrals.lean": "51838782e66b7ee38209ca095e4a79b786581293a7499ceb66d3a4b6b9189720",
+    "MolecularDynamics/Chapter01/FutureFlow.lean": "69203bd44898fae5db15f2834aa2d20beeafdc906989cea81b39f1f3b17a75de",
+    "MolecularDynamics/Chapter01/GeneralizedCoordinates.lean": "6652226b2dcd4f973be3aa0c1b3b880d9605838b5282aa1672356204f1aef955",
+    "MolecularDynamics/Chapter01/GlobalContinuation.lean": "d840d419f43908c3958671d18eb3adb76c117d8f342cf15053c5e12ea5cbd053",
+    "MolecularDynamics/Chapter01/GlobalFlow.lean": "77b9456080da8eeda8ab9a4fae1460823c479daddedcb63097275857fafee3c4",
+    "MolecularDynamics/Chapter01/Hamiltonian.lean": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e",
+    "MolecularDynamics/Chapter01/HamiltonianHessian.lean": "b4e252327d8478735239654571cf820f0eeb5cb47480722d9b0390bbbc9c8d6d",
+    "MolecularDynamics/Chapter01/HarmonicActionAngle.lean": "7625ca1bcc62ea12e2214aea7df958fcd7d32e61715ba54661e26896ec4e0720",
+    "MolecularDynamics/Chapter01/HarmonicOscillator.lean": "8f44fa0990ed793c190029b16ee2c64a3e51f91f579db1382b4f59938d830573",
+    "MolecularDynamics/Chapter01/HarmonicTorus.lean": "fc68cda8e36d3a7d4c3cbbba67252f7cf5b7f0f8a7615a1d33ea32f567c42189",
+    "MolecularDynamics/Chapter01/Kepler.lean": "9c98710e9118f810927240ba2b0887872bf9e88641418471bbc13b5ae1c424cf",
+    "MolecularDynamics/Chapter01/KeplerCartesianBridge.lean": "3d66c113e908f96ebf4d9d6a40f53a19ca415297382e2fba7a275d4bc16edd1d",
+    "MolecularDynamics/Chapter01/KeplerPolarDynamics.lean": "cf75bbe5342875a5cac3f8496edc68883cedf65fbebcff33953c5479886c2ecb",
+    "MolecularDynamics/Chapter01/KeplerQuadrature.lean": "501d859be46cee064f7304bc5d92b2a6cdc241607b337dd16cd663a857183dd7",
+    "MolecularDynamics/Chapter01/KeplerReconstruction.lean": "9c90148c71f9cdf4edb625524f51b0bc9feb96199838645b1733cef486c5d85d",
+    "MolecularDynamics/Chapter01/Lagrangian.lean": "3be1e4d92e1f85a7c24250e72d01e7491620d988de32e513fa3f557a3f24be78",
+    "MolecularDynamics/Chapter01/LatticePairPotential.lean": "fe3d94e8c07979e08da619c1866823e34bbe7f1ce732d92ff5f2c4a002df972a",
+    "MolecularDynamics/Chapter01/LatticeVibrations.lean": "3fe58acf7a8a3646aa9cd7fcac5f210a5ae9b27e6bd39648504f65d3d6049cc3",
+    "MolecularDynamics/Chapter01/LegendreTransform.lean": "6702be49a397aa1ac21e8bd2ab1121c2b69033b14f4f3d22779e178d52719b98",
+    "MolecularDynamics/Chapter01/LinearFlow.lean": "fb2fa6db4936e40275468b34e871212c1423e55e532ad3afb715aa360e192228",
+    "MolecularDynamics/Chapter01/LinearizedHamiltonian.lean": "bf7062ce2ff7c2e2910c3fcf0ba4184cd25b6d5432167f1c7a870b298a594af8",
+    "MolecularDynamics/Chapter01/LocalExistence.lean": "de29ed4ddf8dcd0f6abf162916bf643df7e47257d84486dc3cb6c4b1b1a32c53",
+    "MolecularDynamics/Chapter01/LocalTrajectories.lean": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+    "MolecularDynamics/Chapter01/MatrixFlow.lean": "055b277396664fe170dc6b1494af832809a64c4fd7a4814b3e2e0adb753a65d6",
+    "MolecularDynamics/Chapter01/MechanicalConfinement.lean": "b375c6a6275e8bda4d88d038a8f52cb0df81be6f4d134c9ec469a4b33b881d44",
+    "MolecularDynamics/Chapter01/MechanicalContinuation.lean": "31d426139c3afaeb0a8fb82198d4500f9cdfe5441e2f675c5a7d49467dcf270c",
+    "MolecularDynamics/Chapter01/MomentumBounds.lean": "1e01cc57467dd072a7b57c70daf08529fb7bed8556dd76b31dd407428887c11e",
+    "MolecularDynamics/Chapter01/MomentumConservation.lean": "e190b6d01baa041c67970c535da2777c0985150f0fe8ca8fb520a8139e785c59",
+    "MolecularDynamics/Chapter01/NBody.lean": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+    "MolecularDynamics/Chapter01/NormalModes.lean": "4bef7628ccd8043acf84b69e40ba962f6450431ab9f082c230318a89e8d24357",
+    "MolecularDynamics/Chapter01/ODEEndpoint.lean": "384580bf781bfdcc3da367a07cdad4525552a69cb944ac80066639092b74f93c",
+    "MolecularDynamics/Chapter01/ParticleCoordinates.lean": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+    "MolecularDynamics/Chapter01/PhaseMetric.lean": "de5439ee38dcb0df840dbbecc2e0b917ab08f0d475ff6fc020569c1987c180fc",
+    "MolecularDynamics/Chapter01/PlanarAngularMomentum.lean": "676f52823522352f343d770cb24d079824d0b927216ff33e03cb85578019ea4c",
+    "MolecularDynamics/Chapter01/PolarCoordinateMap.lean": "07903aa1752d63444b62cf59916e7e8eab7f46ee998aff976cca6c33ee07de4a",
+    "MolecularDynamics/Chapter01/PolarCoordinates.lean": "9628a7dde3e1a4f3f8536a707fe64d14866ab6de118718aad0adb03f7864920c",
+    "MolecularDynamics/Chapter01/PotentialBarriers.lean": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6",
+    "MolecularDynamics/Chapter01/PotentialRegularity.lean": "b526985cb33afb585a5c40f33e6490c6529a1676c9cb6bf94e75cfae50c3a6ea",
+    "MolecularDynamics/Chapter01/RealRecoveryFlow.lean": "98789fa0a6028f59ff631309fa90a33c1582183f38c691e73f6fb0fe35ede643",
+    "MolecularDynamics/Chapter01/RealSpectralFlow.lean": "0443a23771e1fa62d48deb2952d950d42f89e878daa57cbdb67e087956b28009",
+    "MolecularDynamics/Chapter01/ReviewDefinitions.lean": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+    "MolecularDynamics/Chapter01/ReviewProofs.lean": "b1f077aed564044052691e796d27dcb7f1a8e5e30e91d36362d0e93d1ec41bb4",
+    "MolecularDynamics/Chapter01/ScalarIntegrability.lean": "a907c5c009a4ac717222d52524244b11c7faf4b0401a6a8171f492bd8741893a",
+    "MolecularDynamics/Chapter01/ScalarLocalIVP.lean": "779a4bb9f543fc0c897a034c4dff93dfed153561738ee3db5819c3c9ce7338b5",
+    "MolecularDynamics/Chapter01/ScalarTurning.lean": "e332bd5d3ac6f16874c5e0dae5b524899ec16ef68d816fa1e4829b115c940150",
+    "MolecularDynamics/Chapter01/SeparableQuadrature.lean": "435e218a6dacc6ee234f5c1b9caf154d96a125c182c57ed8227355b4a0586923",
+    "MolecularDynamics/Chapter01/Stability.lean": "dda14927a9232180b580f882d122db6752c5df8c6d4ec4a481c97972a2e58122",
+    "MolecularDynamics/Chapter01/Statements.lean": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+    "MolecularDynamics/Chapter01/TimeReversal.lean": "0c6d7ddb4f767278d51b62a0eba9676bfa0ef7894ac50019617bdf70d3222556",
+    "MolecularDynamics/Chapter01/TorusDensity.lean": "4a47faac193e849a14d70745e3c1d88fedf44d69d95ce6c598f4c60ac0dbee7d",
+    "MolecularDynamics/Chapter01/TorusPeriod.lean": "b77384851f7d6c00af75ec295dd7fe345b0f82efe26e28d5930cefa55f164bdf",
+    "MolecularDynamics/Chapter01/VariationalEquation.lean": "55f990dde34738e0b03c093bd81680d3427e688c8d5912f78ff3584bd664db4e",
+    "MolecularDynamics/Notation.lean": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_ids": [
+    "MD-1.4-LegendreHamiltonian",
+    "MD-1.5.1-FlowInverse"
+  ],
+  "excerpts": [
+    {
+      "source_id": "MD-1.4-LegendreHamiltonian",
+      "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+      "source_entry_sha256": "19e2d6efb52a3a5c22d4605d0b51352d3990bebc263bdbeb9cd0ae7567fef46c",
+      "signature_sha256": "2b468a3414ce493fbfab95cfca2a8569d174f3299324481d7e9a79a3444c27b5"
+    },
+    {
+      "source_id": "MD-1.5.1-FlowInverse",
+      "lean_decl": "MD.Ch01.flow_inverse",
+      "source_entry_sha256": "2994f82e34ebebd142275777b3ca9e936822fe53c1693d5efd5de5fb0ea1948f",
+      "signature_sha256": "0612c669694cac25394cc94c88490c2844c0ae68af39ec6306d4ab0952450ee4"
+    }
+  ],
+  "definitions": [
+    {
+      "name": "CoordinateMasses",
+      "namespace": "MolecularDynamics",
+      "code": "abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ",
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "line": 19,
+      "code_sha256": "50939e8d47d2aea37f48a71423ee3ae48b297b19ba4394b17b02a93c1f4510a4"
+    },
+    {
+      "name": "IsGlobalMechanicalFlowOn",
+      "namespace": "MolecularDynamics",
+      "code": "def IsGlobalMechanicalFlowOn {n : ℕ} (m : CoordinateMasses n) (F : Force n)\n    (Q : Set (Position n)) (S : Set (PhaseSpace n))\n    (ψ : ℝ → PhaseSpace n → PhaseSpace n) : Prop :=\n  (∀ z ∈ S, IsMechanicalSolutionOn m F Q univ (fun t => ψ t z) ∧ ψ 0 z = z) ∧\n  ∀ t, MapsTo (ψ t) S S",
+      "path": "MolecularDynamics/Chapter01/GlobalFlow.lean",
+      "line": 41,
+      "code_sha256": "9bfa3225fa29971650521ff8aab9716213783c1721a275b00847d51af4f1cc0f"
+    },
+    {
+      "name": "Force",
+      "namespace": "MolecularDynamics",
+      "code": "abbrev Force (n : ℕ) := Position n → Position n",
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 20,
+      "code_sha256": "96d8a4c978b42ab5868278a8f9c5f164d431ef08f24baf04a0c1fcab21d713f0"
+    },
+    {
+      "name": "IsMechanicalSolutionOn",
+      "namespace": "MolecularDynamics",
+      "code": "def IsMechanicalSolutionOn {n : ℕ} (μ : CoordinateMasses n) (F : Force n)\n    (Q : Set (Position n)) (I : Set ℝ) (γ : ℝ → PhaseSpace n) : Prop :=\n  (∀ t ∈ I, (γ t).1 ∈ Q) ∧\n    IsIntegralCurveOn γ (fun _ z => mechanicalVectorField μ F z) I",
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "line": 74,
+      "code_sha256": "57e22f321cfe8f54c9731f68f4200374e8b3b05c735ff5a01296226dda617030"
+    },
+    {
+      "name": "IsIntegralCurveOn",
+      "namespace": "",
+      "code": "def IsIntegralCurveOn (γ : ℝ → E) (v : ℝ → E → E) (s : Set ℝ) : Prop :=\n  ∀ t ∈ s, HasDerivWithinAt γ (v t (γ t)) s t",
+      "path": ".lake/packages/mathlib/Mathlib/Analysis/ODE/Basic.lean",
+      "line": 44,
+      "code_sha256": "c1eae90b5a6d670e047b28c8679be266582b09d25f88ded4204ffc631580a9fb"
+    },
+    {
+      "name": "Momentum",
+      "namespace": "MolecularDynamics",
+      "code": "abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)",
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 15,
+      "code_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "name": "PhaseSpace",
+      "namespace": "MolecularDynamics",
+      "code": "abbrev PhaseSpace (n : ℕ) := Position n × Momentum n",
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 17,
+      "code_sha256": "daa02c2c07383d89b526c2336a494ea2279c29eb9ade168bef41013e54ebff7f"
+    },
+    {
+      "name": "Position",
+      "namespace": "MolecularDynamics",
+      "code": "abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)",
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 13,
+      "code_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "name": "PotentialEnergy",
+      "namespace": "MolecularDynamics",
+      "code": "abbrev PotentialEnergy (n : ℕ) := Position n → ℝ",
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 21,
+      "code_sha256": "043ad8ba46ea4ec31839daabf34e8017edbc3d00188fad3366e80af19ddc6116"
+    },
+    {
+      "name": "Velocity",
+      "namespace": "MolecularDynamics",
+      "code": "abbrev Velocity (n : ℕ) := EuclideanSpace ℝ (Fin n)",
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 14,
+      "code_sha256": "22e67e3397d83abd0c1c1aeaa28366555c9f365d02734f9df1fd443624636cf1"
+    },
+    {
+      "name": "matrixAction",
+      "namespace": "MD.Ch01",
+      "code": "noncomputable def matrixAction {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ)\n    (v : Position n) : Position n := Matrix.toEuclideanLin A v",
+      "path": "Blueprint/Ch01.lean",
+      "line": 62,
+      "code_sha256": "08dc285ebeaad08fd9f4790f1300bd74aaddd2f0ad54e22d165f11f6146be158"
+    },
+    {
+      "name": "mechanicalVectorField",
+      "namespace": "MolecularDynamics",
+      "code": "noncomputable def mechanicalVectorField {n : ℕ} (μ : CoordinateMasses n)\n    (F : Force n) (z : PhaseSpace n) : PhaseSpace n :=\n  (velocityOperator μ z.2, F z.1)",
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "line": 69,
+      "code_sha256": "36242d31adc1ee6a6edb451265a0838c3eebc158a8fa6ed8b06960f6f4dc15ea"
+    },
+    {
+      "name": "variableMassHamiltonian",
+      "namespace": "MD.Ch01",
+      "code": "noncomputable def variableMassHamiltonian {n : ℕ}\n    (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)\n    (q : Position n) (p : Momentum n) : ℝ := inner ℝ p (matrixAction (M q)⁻¹ p) / 2 + U q",
+      "path": "Blueprint/Ch01.lean",
+      "line": 69,
+      "code_sha256": "ed6cfeb8e0be7e26c75c70cdf37aaa95dc638a6739b04eca0fbd72c2e4864d9b"
+    },
+    {
+      "name": "variableMassLagrangian",
+      "namespace": "MD.Ch01",
+      "code": "noncomputable def variableMassLagrangian {n : ℕ}\n    (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)\n    (q : Position n) (v : Velocity n) : ℝ := inner ℝ v (matrixAction (M q) v) / 2 - U q",
+      "path": "Blueprint/Ch01.lean",
+      "line": 65,
+      "code_sha256": "f977a889ef6725f2e1419ba916da37e9714a459fe4a8a893459361beb03b6090"
+    },
+    {
+      "name": "velocityOperator",
+      "namespace": "MolecularDynamics",
+      "code": "noncomputable def velocityOperator {n : ℕ} (μ : CoordinateMasses n) :\n    Momentum n →L[ℝ] Velocity n :=\n  (Matrix.toEuclideanLin (diagonalMassMatrix μ)⁻¹).toContinuousLinearMap",
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "line": 24,
+      "code_sha256": "715cd487c9efc9fe4ffaa4f5b65e0178109869a91e2adb9f649fed6c888b96d5"
+    },
+    {
+      "name": "diagonalMassMatrix",
+      "namespace": "MolecularDynamics",
+      "code": "def diagonalMassMatrix {n : ℕ} (masses : CoordinateMasses n) : MassMatrix n :=\n  Matrix.diagonal masses",
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "line": 22,
+      "code_sha256": "56c215aa345f33da76588c37690a0b34fd6c467f706ccbb6c832962abd41e7db"
+    },
+    {
+      "name": "MassMatrix",
+      "namespace": "MolecularDynamics",
+      "code": "abbrev MassMatrix (n : ℕ) := Matrix (Fin n) (Fin n) ℝ",
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 18,
+      "code_sha256": "98dc2589cf902b088edd39fbacfd5ceaeb43e0ec8cd3609f562eac8091e9df77"
+    }
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 46,
+      "printed_page": 23
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 47,
+      "printed_page": 24
+    },
+    {
+      "attachment_page": 3,
+      "original_pdf_page": 48,
+      "printed_page": 25
+    },
+    {
+      "attachment_page": 4,
+      "original_pdf_page": 49,
+      "printed_page": 26
+    }
+  ],
+  "files": {
+    "BATCH01c_MATERIALS.md": {
+      "bytes": 15998,
+      "sha256": "0816cd57435e65df9ba5a07be51f906370e4ce3030656f0fac47e0d27194add2"
+    },
+    "BATCH01c_PAGES.pdf": {
+      "bytes": 113688,
+      "sha256": "86407a4efa3a8a34a08ea8c10d1ffa26f2b9e19b957126f5fd905e017386881c"
+    },
+    "PROMPT.txt": {
+      "bytes": 853,
+      "sha256": "03baab0eb9cfc65a75f326ece5e67ecd0642531d9a7762f56ac8e455933766e7"
+    }
+  },
+  "validation": {
+    "frozen_input_hashes": "PASS",
+    "verbatim_source_and_signature": "PASS",
+    "verbatim_definition_excerpts": "PASS",
+    "pdf_text_content_and_dimensions": "PASS",
+    "website_acceptance": "NOT_TESTED",
+    "rendered_pages_pixel_identical": "PASS"
+  }
+}
