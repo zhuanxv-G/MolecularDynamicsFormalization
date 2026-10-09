@@ -763,6 +763,8 @@ def write_section(section):
     (BASE/'ch01_source.json').write_text(json.dumps(clean,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     lean_path=ROOT/'Blueprint/Ch01.lean'
     text=lean_path.read_text(encoding='utf-8-sig')
+    if 'open MeasureTheory' not in text:
+        text=text.replace('namespace MD.Ch01','namespace MD.Ch01\nopen MeasureTheory',1)
     for r in new:
         for prior in r['priors']:
             if prior.startswith('MolecularDynamics/') and '.lean:' in prior:
