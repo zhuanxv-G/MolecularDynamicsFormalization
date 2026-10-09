@@ -10,21 +10,21 @@
       "frozen": false,
       "frozen_signature_sha256": null,
       "frozen_input_fingerprint": null,
-      "explanation": "尚未收到MathCopilot结果；本地PDF核对与编译不是网站语义PASS。",
+      "explanation": "等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。",
       "json_review": {
         "status": "PENDING",
-        "task": "T_json_review_MD-1.5.3-Thm1.1",
+        "task": "PILOT_ALL",
         "results": []
       },
       "blueprint_translation": {
-        "status": "PENDING",
+        "status": "CANCELLED_NOT_REQUIRED",
         "task": "T_blueprint_MD-1.5.3-Thm1.1",
         "results": [],
-        "comparison": null
+        "comparison": "用户已取消模板B；独立翻译不再作为冻结前提。"
       },
       "semantic_review": {
         "status": "PENDING",
-        "task": "T_audit_MD-1.5.3-Thm1.1",
+        "task": "PILOT_ALL",
         "results": []
       },
       "correspondence": [
@@ -121,21 +121,21 @@
       "frozen": false,
       "frozen_signature_sha256": null,
       "frozen_input_fingerprint": null,
-      "explanation": "尚未收到MathCopilot结果；本地PDF核对与编译不是网站语义PASS。",
+      "explanation": "等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。",
       "json_review": {
         "status": "PENDING",
-        "task": "T_json_review_MD-1.2-EnergyConservation",
+        "task": "PILOT_ALL",
         "results": []
       },
       "blueprint_translation": {
-        "status": "PENDING",
+        "status": "CANCELLED_NOT_REQUIRED",
         "task": "T_blueprint_MD-1.2-EnergyConservation",
         "results": [],
-        "comparison": null
+        "comparison": "用户已取消模板B；独立翻译不再作为冻结前提。"
       },
       "semantic_review": {
         "status": "PENDING",
-        "task": "T_audit_MD-1.2-EnergyConservation",
+        "task": "PILOT_ALL",
         "results": []
       },
       "correspondence": [
@@ -242,21 +242,21 @@
       "frozen": false,
       "frozen_signature_sha256": null,
       "frozen_input_fingerprint": null,
-      "explanation": "尚未收到MathCopilot结果；本地PDF核对与编译不是网站语义PASS。",
+      "explanation": "等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。",
       "json_review": {
         "status": "PENDING",
-        "task": "T_json_review_MD-1.3-NewtonEulerLagrange",
+        "task": "PILOT_ALL",
         "results": []
       },
       "blueprint_translation": {
-        "status": "PENDING",
+        "status": "CANCELLED_NOT_REQUIRED",
         "task": "T_blueprint_MD-1.3-NewtonEulerLagrange",
         "results": [],
-        "comparison": null
+        "comparison": "用户已取消模板B；独立翻译不再作为冻结前提。"
       },
       "semantic_review": {
         "status": "PENDING",
-        "task": "T_audit_MD-1.3-NewtonEulerLagrange",
+        "task": "PILOT_ALL",
         "results": []
       },
       "correspondence": [
@@ -373,21 +373,21 @@
       "frozen": false,
       "frozen_signature_sha256": null,
       "frozen_input_fingerprint": null,
-      "explanation": "尚未收到MathCopilot结果；本地PDF核对与编译不是网站语义PASS。",
+      "explanation": "等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。",
       "json_review": {
         "status": "PENDING",
-        "task": "T_json_review_MD-1.4-LegendreHamiltonian",
+        "task": "PILOT_ALL",
         "results": []
       },
       "blueprint_translation": {
-        "status": "PENDING",
+        "status": "CANCELLED_NOT_REQUIRED",
         "task": "T_blueprint_MD-1.4-LegendreHamiltonian",
         "results": [],
-        "comparison": null
+        "comparison": "用户已取消模板B；独立翻译不再作为冻结前提。"
       },
       "semantic_review": {
         "status": "PENDING",
-        "task": "T_audit_MD-1.4-LegendreHamiltonian",
+        "task": "PILOT_ALL",
         "results": []
       },
       "correspondence": [
@@ -495,21 +495,21 @@
       "frozen": false,
       "frozen_signature_sha256": null,
       "frozen_input_fingerprint": null,
-      "explanation": "尚未收到MathCopilot结果；本地PDF核对与编译不是网站语义PASS。",
+      "explanation": "等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。",
       "json_review": {
         "status": "PENDING",
-        "task": "T_json_review_MD-1.5.1-FlowInverse",
+        "task": "PILOT_ALL",
         "results": []
       },
       "blueprint_translation": {
-        "status": "PENDING",
+        "status": "CANCELLED_NOT_REQUIRED",
         "task": "T_blueprint_MD-1.5.1-FlowInverse",
         "results": [],
-        "comparison": null
+        "comparison": "用户已取消模板B；独立翻译不再作为冻结前提。"
       },
       "semantic_review": {
         "status": "PENDING",
-        "task": "T_audit_MD-1.5.1-FlowInverse",
+        "task": "PILOT_ALL",
         "results": []
       },
       "correspondence": [
@@ -861,5 +861,22 @@
       "源码风险扫描是保守文本检查；数学忠实性由只读语义审计判定。",
       "传递公理来自Lean实际#print axioms；未对Mathlib全部源码作文本风险审计。"
     ]
+  },
+  "workflow": {
+    "mode": "one_batch_one_file",
+    "active_task": "PILOT_ALL",
+    "stages": [
+      "json_review",
+      "semantic_review"
+    ],
+    "independent_blueprint_translation_required": false,
+    "expected_result": "mathcopilot_results/PILOT_ALL_result.md|json",
+    "integration": "Codex reads the combined array once; legacy per-task ingest/prepare/freeze scripts are not used for this batch.",
+    "freeze_conditions": [
+      "all source entries approved",
+      "all current signatures semantic PASS",
+      "all unresolved issues closed"
+    ],
+    "updated_at": "2026-10-09T13:34:21.891467+08:00"
   }
 }

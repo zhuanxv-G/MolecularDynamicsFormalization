@@ -53,13 +53,13 @@ theorem MD.Ch01.theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 
 原文 JSON：DRAFT；MathCopilot只读审计：PENDING；frozen=false。
 
-尚未收到MathCopilot结果；本地PDF核对与编译不是网站语义PASS。
+等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
 
-- json_review：PENDING；任务 `T_json_review_MD-1.5.3-Thm1.1`；返回件 尚未收到。
+- json_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- blueprint_translation：PENDING；任务 `T_blueprint_MD-1.5.3-Thm1.1`；返回件 尚未收到。
+- blueprint_translation：CANCELLED_NOT_REQUIRED；任务 `T_blueprint_MD-1.5.3-Thm1.1`；返回件 尚未收到。
 
-- semantic_review：PENDING；任务 `T_audit_MD-1.5.3-Thm1.1`；返回件 尚未收到。
+- semantic_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
 - PAGE_SPAN_CORRECTION：用户范围31–32/54–55是背景跨度；定理与证明思路均仅32/55。（local_verified）。
 
@@ -124,13 +124,13 @@ theorem MD.Ch01.energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : Pote
 
 原文 JSON：DRAFT；MathCopilot只读审计：PENDING；frozen=false。
 
-尚未收到MathCopilot结果；本地PDF核对与编译不是网站语义PASS。
+等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
 
-- json_review：PENDING；任务 `T_json_review_MD-1.2-EnergyConservation`；返回件 尚未收到。
+- json_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- blueprint_translation：PENDING；任务 `T_blueprint_MD-1.2-EnergyConservation`；返回件 尚未收到。
+- blueprint_translation：CANCELLED_NOT_REQUIRED；任务 `T_blueprint_MD-1.2-EnergyConservation`；返回件 尚未收到。
 
-- semantic_review：PENDING；任务 `T_audit_MD-1.2-EnergyConservation`；返回件 尚未收到。
+- semantic_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
 ### 6. 最终状态与证明位置
 
@@ -198,13 +198,13 @@ theorem MD.Ch01.newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
 
 原文 JSON：DRAFT；MathCopilot只读审计：PENDING；frozen=false。
 
-尚未收到MathCopilot结果；本地PDF核对与编译不是网站语义PASS。
+等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
 
-- json_review：PENDING；任务 `T_json_review_MD-1.3-NewtonEulerLagrange`；返回件 尚未收到。
+- json_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- blueprint_translation：PENDING；任务 `T_blueprint_MD-1.3-NewtonEulerLagrange`；返回件 尚未收到。
+- blueprint_translation：CANCELLED_NOT_REQUIRED；任务 `T_blueprint_MD-1.3-NewtonEulerLagrange`；返回件 尚未收到。
 
-- semantic_review：PENDING；任务 `T_audit_MD-1.3-NewtonEulerLagrange`；返回件 尚未收到。
+- semantic_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
 ### 6. 最终状态与证明位置
 
@@ -290,13 +290,13 @@ theorem MD.Ch01.hamiltonian_legendre_transform {n : ℕ}
 
 原文 JSON：NEEDS_HUMAN；MathCopilot只读审计：PENDING；frozen=false。
 
-尚未收到MathCopilot结果；本地PDF核对与编译不是网站语义PASS。
+等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
 
-- json_review：PENDING；任务 `T_json_review_MD-1.4-LegendreHamiltonian`；返回件 尚未收到。
+- json_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- blueprint_translation：PENDING；任务 `T_blueprint_MD-1.4-LegendreHamiltonian`；返回件 尚未收到。
+- blueprint_translation：CANCELLED_NOT_REQUIRED；任务 `T_blueprint_MD-1.4-LegendreHamiltonian`；返回件 尚未收到。
 
-- semantic_review：PENDING；任务 `T_audit_MD-1.4-LegendreHamiltonian`；返回件 尚未收到。
+- semantic_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
 - POSSIBLE_ERRATUM：若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。（NEEDS_HUMAN）。
 
@@ -369,13 +369,13 @@ theorem MD.Ch01.flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEn
 
 原文 JSON：DRAFT；MathCopilot只读审计：PENDING；frozen=false。
 
-尚未收到MathCopilot结果；本地PDF核对与编译不是网站语义PASS。
+等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
 
-- json_review：PENDING；任务 `T_json_review_MD-1.5.1-FlowInverse`；返回件 尚未收到。
+- json_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- blueprint_translation：PENDING；任务 `T_blueprint_MD-1.5.1-FlowInverse`；返回件 尚未收到。
+- blueprint_translation：CANCELLED_NOT_REQUIRED；任务 `T_blueprint_MD-1.5.1-FlowInverse`；返回件 尚未收到。
 
-- semantic_review：PENDING；任务 `T_audit_MD-1.5.1-FlowInverse`；返回件 尚未收到。
+- semantic_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
 ### 6. 最终状态与证明位置
 

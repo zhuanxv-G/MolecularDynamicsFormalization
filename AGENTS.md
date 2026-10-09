@@ -4,6 +4,9 @@
 
 ## 当前最高优先级范围（2026-10-09）
 
+- 2026-10-09最新任务包约定：每批一个文件，本批只提交`blueprint/ch01/mathcopilot_tasks/PILOT_ALL.md`，五条在一个Task中先A原文审校、再C只读语义审计，输出单个JSON数组；模板B已取消。原15文件归档保留。后续各章同样每批一个文件，优先<40KB，必要时最多两个；非PASS修复后只生成一个PILOT_REAUDIT.md，限需复审条目。
+- 返回件为`mathcopilot_results/PILOT_ALL_result.md|json`，Codex按PILOT.md一次性整合；旧单条prepare/ingest脚本（含--freeze）本批停用，不能要求用户拆分数组或等待B。冻结只需当前原文approved、当前签名全部语义PASS、issues闭合；保留原始返回件，repair_log只追加。
+
 - 按导师workshop五步流程：逐字原文JSON → Lean Blueprint → 只读审计、修复、复审、冻结签名 → 证明冻结陈述 → 忠实性、fresh check、直接风险和依赖闭包终验。
 - 仅处理PILOT.md中5条。第1–6章已有MolecularDynamics/源码、证明和签名全部保留，作为可复用证明素材；不进入其他条目或第7章，第6章封存断点保持原样。
 - MathCopilot网站仅由用户本人操作。Codex负责本地起草、任务包、接收结果、整合、本地证明和检查；不控制浏览器、网站、代发任务或轮询服务。
