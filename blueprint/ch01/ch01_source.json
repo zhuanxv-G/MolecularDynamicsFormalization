@@ -197,5 +197,430 @@
     "statement_scope": "完整反演/可逆/Abelian群律段；恒等元ψ0由flow定义，结论覆盖双向反演、双射和加法/交换律。",
     "review_status": "DRAFT",
     "repair_log": []
+  },
+  {
+    "source_id": "MD-1.1-Schrodinger",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1",
+    "printed_page": "5",
+    "pdf_page": "28",
+    "statement_latex": "The Schrödinger equation itself is a partial differential equation of the following form:\n\\[i\\hbar\\frac{\\partial\\Phi}{\\partial t}=-\\hbar^2\\sum_{j=1}^{13}\\frac{1}{2\\mu_j}\\left(\\frac{\\partial^2\\Phi}{\\partial q_{j,x}^2}+\\frac{\\partial^2\\Phi}{\\partial q_{j,y}^2}+\\frac{\\partial^2\\Phi}{\\partial q_{j,z}^2}\\right)+U_P(q_{1,x},q_{1,y},\\ldots,q_{13,z})\\Phi.\\tag{1.1}\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$\\Phi:\\mathbb R\\times\\mathbb R^{39}\\to\\mathbb C$；$i^2=-1$；$\\hbar$为Planck常数；$\\mu_j$为第$j$粒子质量；$U_P$为原始原子势能。13粒子来自10电子+3核水分子示例。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.schrodingerEquation",
+    "extra_assumptions": [
+      "Lean质量及Planck常数以正参数给定；定义采用总导数算子，仅定义满足方程的关系，不声明存在解。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-001",
+      "CH01-002",
+      "CH01-003",
+      "CH01-004",
+      "CH01-005",
+      "CH01-006"
+    ]
+  },
+  {
+    "source_id": "MD-1.1-NewtonModel",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1",
+    "printed_page": "6",
+    "pdf_page": "29",
+    "statement_latex": "where the forces are determined from the potential energy function $U$. Denoting the coordinates of the $i$th nucleus of an N-atom system by $q_{i,x},q_{i,y},q_{i,z}$, and the atomic mass by $m_i$, the equations of motion for the nucleus can be written out as\n\\[m_i\\frac{\\mathrm d^2q_{i,x}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,x}},\\qquad m_i\\frac{\\mathrm d^2q_{i,y}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,y}},\\qquad m_i\\frac{\\mathrm d^2q_{i,z}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,z}}.\\tag{1.2}\\]\nIt is important to recognize that (1.2) does not, itself, give a complete description of the motion; it must be supplemented by initial conditions (positions and velocities given at some specified instant) for all atoms.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$U=U_{BO}$仅依赖核位置；$n=3N$，每粒子质量重复三次。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.newtonInitialValueModel",
+    "extra_assumptions": [
+      "n为展平坐标数；三维实例n=3N，质量限制通过coordinateMassesOfParticles给出。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-007",
+      "CH01-008",
+      "CH01-009"
+    ]
+  },
+  {
+    "source_id": "MD-1.1-HardSphere",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1",
+    "printed_page": "7",
+    "pdf_page": "30",
+    "statement_latex": "The simplest model for a molecular interaction potential is the hard-sphere model. We assume that each atom is an impenetrable sphere which interacts with other atoms via perfectly elastic collision with the atoms transferring, according to standard rules, momentum and energy to one another during the collisions.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hardSphereModel",
+    "extra_assumptions": [
+      "只编码不可穿透与完全弹性守恒关系；原文未指定碰撞散射规则，此定义不唯一决定碰撞后速度。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-010"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.1-Multibody",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.1",
+    "printed_page": "8",
+    "pdf_page": "31",
+    "statement_latex": "In the most common situations, the potential energy function consists of a sum of 2-body, 3-body and/or 4-body terms,\n\\[U_{ij}(\\boldsymbol q_i,\\boldsymbol q_j),\\qquad U_{ijk}(\\boldsymbol q_i,\\boldsymbol q_j,\\boldsymbol q_k),\\qquad U_{ijkl}(\\boldsymbol q_i,\\boldsymbol q_j,\\boldsymbol q_k,\\boldsymbol q_l),\\]\nwhere $\\boldsymbol q_i$ is the position vector of atom $i$ such that $(q_{i,x},q_{i,y},q_{i,z})=\\boldsymbol q_i\\in\\mathbb R^3$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.multibodyPotential",
+    "extra_assumptions": [
+      "按无序不同粒子组计数i<j<k<l；原文仅列成分未指定求和计数约定。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-011",
+      "CH01-012",
+      "CH01-013",
+      "CH01-014"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.1-Morse",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.1",
+    "printed_page": "8",
+    "pdf_page": "31",
+    "statement_latex": "A simple potential energy function whose graph can be used to approximate the potential energy of bond dissociation is the Morse potential\n\\[\\varphi_{\\mathrm{Morse}}(r)=D\\left(1-e^{-a(r-r_e)}\\right)^2.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$D,a,r_e>0$为物理参数；$r>0$为核距离。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.morsePotential",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-015"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.1-MorseMinimum",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.1.1",
+    "printed_page": "8",
+    "pdf_page": "31",
+    "statement_latex": "(See Fig. 1.5.) $r_e$ is the location of the minimum, $D$ gives the well depth, and $a$ is a shape parameter that can be used to control the curvature at the minimum.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.morse_minimum",
+    "extra_assumptions": [
+      "D,a,rₑ正；well depth解释为无穷远极限减最小值。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-016"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.1-LengthBond",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.1",
+    "printed_page": "9",
+    "pdf_page": "32",
+    "statement_latex": "Because they often do not need to be allowed to break during simulation and are very strong compared to the other potential terms, chemical bonds such as the covalent $\\mathrm H_2^+$ bond described above are sometimes treated as springs with given rest-length:\n\\[\\varphi_{ij}^{\\mathrm{len}}(r_{ij})=\\frac{k_{ij}^{\\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\\qquad r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|$；Lean pairDistance；$k>0$，$r_0$静长。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.lengthBond",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-017",
+      "CH01-018"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.1-Dispersion",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.1",
+    "printed_page": "10",
+    "pdf_page": "33",
+    "statement_latex": "This leads to an instantaneous polarization and an attractive interaction termed London dispersion; it is most often modelled using an inverse sixth power potential:\n\\[\\varphi_{\\mathrm{disp}}(r)\\sim-\\frac K{r^6},\\qquad K>0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$r>0$；$\\sim$表示经验模型形式，此def只定义右侧模型。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.dispersionPotential",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-019"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.1-Buckingham",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.1",
+    "printed_page": "10",
+    "pdf_page": "33",
+    "statement_latex": "Buckingham [56] suggested a combined potential of the form\n\\[\\varphi_B(r)=Ae^{-Br}-\\frac C{r^6},\\qquad A>0,\\ B>0,\\ C>0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$r>0$；参数正。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.buckinghamPotential",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-020"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.1-LennardJones",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.1",
+    "printed_page": "10",
+    "pdf_page": "33",
+    "statement_latex": "A more common choice in simulation is the Lennard-Jones (6–12) potential\n\\[\\varphi_{\\mathrm{LJ}}(r)=4\\epsilon\\left[\\left(\\frac\\sigma r\\right)^{12}-\\left(\\frac\\sigma r\\right)^6\\right].\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$\\epsilon,\\sigma,r>0$。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.lennardJonesPotential",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-021"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.1-LJRepulsion",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.1.1",
+    "printed_page": "11",
+    "pdf_page": "34",
+    "statement_latex": "of short-ranged soft walls in molecular dynamics, i.e., the fact that $\\varphi_{\\mathrm{LJ}}$ tends rapidly to positive infinity as $r\\to0$, the atoms remain well separated in long simulations. The singularity at $r=0$ is therefore rarely encountered in dynamics trajectories, however the presence of the singularity may nonetheless create problems for mathematical analysis, as many theoretical techniques rely on assumed smoothness.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "p.10末句开头为Because of the strongly repulsive character，当前引用从p.11延续部分开始；定性模拟经验不等同严格无碰撞定理。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.lj_repulsion",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-022",
+      "CH01-198"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.1-HeterogeneousLJ",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.1",
+    "printed_page": "11",
+    "pdf_page": "34",
+    "statement_latex": "When there are many atoms of different types, the parameters of the potential will depend on this, so we obtain contributions to the total potential energy of the form\n\\[\\varphi_{ij}^{\\mathrm{LJ}}(r_{ij})=4\\epsilon_{ij}\\left[\\left(\\frac{\\sigma_{ij}}{r_{ij}}\\right)^{12}-\\left(\\frac{\\sigma_{ij}}{r_{ij}}\\right)^6\\right],\\]\nwhere $r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.heterogeneousLJ",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-023"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.2-Coulomb",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.2",
+    "printed_page": "12",
+    "pdf_page": "35",
+    "statement_latex": "When, as in the case of the alanine dipeptide, net charges are present on the atoms, one may model this by means of Coulomb potentials:\n\\[\\varphi_{ij}^{\\mathrm{Coulomb}}(r_{ij})=\\frac{CQ_iQ_j}{\\epsilon r_{ij}},\\]\nwhere $\\epsilon>0$ is the dielectric constant, and $Q_i,Q_j$ are the charges on atoms $i$ and $j$, respectively. $C$ is a positive coefficient allowing the adjustment of units. Obviously the effect of the Coulombic potential depends strongly on whether the atoms have the same or oppositely signed charges.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "不同电荷符号的影响是定性背景；原页没有旧清单声称的导数符号定理。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.coulombPotential",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-024",
+      "CH01-025"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.2-Cutoff",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.2",
+    "printed_page": "12",
+    "pdf_page": "35",
+    "statement_latex": "In the simplest treatments, the Coulomb potential is simply cut off at distance $r_{\\mathrm{cut}}$, i.e., is taken to be zero for $r>r_{\\mathrm{cut}}$. This should be done in such a way that the potential remains at least continuously differentiable, preferably smoother (see Exercise 11).",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.smoothCutoff",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-026"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.2-Yukawa",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.2",
+    "printed_page": "12",
+    "pdf_page": "35",
+    "statement_latex": "More accurate treatments of the long range behavior include the use of an exponential term involving the Debye length $\\kappa$ which models screening due to the presence of a polar solvent, in which case the potential is modified to have the form of a Yukawa potential:\n\\[\\varphi_{ij}^{\\mathrm{screened}}(r_{ij})=\\frac{CQ_iQ_j}{\\epsilon r_{ij}}e^{-\\kappa r_{ij}}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "保留原文κ；不把指数改成-r/κ。原文称Debye length但式子以逆长度参数使用，待导师判断。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "原文κ称Debye length，但e^{-κr}的量纲通常对应逆长度；本定义保留字面公式。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.yukawaScreened",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-027"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.2-AngleBond",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.2",
+    "printed_page": "13",
+    "pdf_page": "36",
+    "statement_latex": "When a trio of atoms with labels $i,j,k$ and $k$ admits a pair of length bonds, say $(i,j)$ and $(j,k)$, then an additional three-body term will need to be incorporated:\n\\[\\varphi_{ijk}^{\\mathrm{ang}}=\\frac{k_{ijk}^{\\mathrm{ang}}}{2}(\\theta_{ijk}-\\theta_{ijk}^0)^2,\\]\nwhere the angle $\\theta_{ijk}$ is given in terms of the positions as\n\\[\\theta_{ijk}=\\arccos\\frac{(\\boldsymbol q_i-\\boldsymbol q_j)\\cdot(\\boldsymbol q_j-\\boldsymbol q_k)}{r_{ij}r_{jk}}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "k正、两键长非零；保留原页(qᵢ-qⱼ)·(qⱼ-qₖ)方向及重复and k。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.angleBondModel",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-028",
+      "CH01-029"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.2-Dihedral",
+    "kind": "definition",
+    "label": null,
+    "section": "1.1.2",
+    "printed_page": "13",
+    "pdf_page": "36",
+    "statement_latex": "Dihedral potentials typically are modelled using a trigonometric potential function, as\n\\[\\varphi_{ijkl}^{\\mathrm{dih}}=k_{ijkl}^{\\mathrm{dih}}[1+\\cos(n_{ijkl}^{\\mathrm{dih}}\\eta_{ijkl}-d_{ijkl}^{\\mathrm{dih}})].\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "η位置角的通用转换公式原文未给；角作为参数。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.dihedralPotential",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-030"
+    ]
+  },
+  {
+    "source_id": "MD-1.1.2-GayBerne",
+    "kind": "definition",
+    "label": "Example 1.2",
+    "section": "1.1.2",
+    "printed_page": "16–17",
+    "pdf_page": "39–40",
+    "statement_latex": "The potential energy may be written as\n\\[\\varphi_{\\mathrm{GB}}(\\boldsymbol q_1,\\boldsymbol q_2,\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)=4\\epsilon_{\\mathrm{GB}}\\left[\\left(\\frac{\\sigma_0}{\\Delta}\\right)^{12}-\\left(\\frac{\\sigma_0}{\\Delta}\\right)^6\\right],\\]\n\\[\\epsilon_{\\mathrm{GB}}(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)=\\epsilon_1(\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)\\epsilon_2(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2),\\]\nwith\n\\[\\Delta(\\boldsymbol r,\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)=\\|\\boldsymbol r\\|-\\sigma_0/\\sqrt{W(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2,\\chi)},\\]\n\\[\\epsilon_1(\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)=\\epsilon_0[1-\\chi^2(\\hat{\\boldsymbol u}_1\\cdot\\hat{\\boldsymbol u}_2)^2]^{-1/2},\\qquad\\epsilon_2(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)=W(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2,\\chi'),\\]\nand\n\\[W(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2,\\chi)\\stackrel{\\mathrm{def}}=1-\\frac\\chi2\\left[\\frac{(\\hat{\\boldsymbol r}\\cdot(\\hat{\\boldsymbol u}_1+\\hat{\\boldsymbol u}_2))^2}{1+\\chi\\hat{\\boldsymbol u}_1\\cdot\\hat{\\boldsymbol u}_2}+\\frac{(\\hat{\\boldsymbol r}\\cdot(\\hat{\\boldsymbol u}_1-\\hat{\\boldsymbol u}_2))^2}{1-\\chi\\hat{\\boldsymbol u}_1\\cdot\\hat{\\boldsymbol u}_2}\\right].\\]\nFinally\n\\[\\chi=\\frac{[\\sigma_e/\\sigma_s]^2-1}{[\\sigma_e/\\sigma_s]^2+1},\\qquad\\chi'=\\frac{1-[\\epsilon_e/\\epsilon_s]^{1/\\mu}}{1+[\\epsilon_e/\\epsilon_s]^{1/\\mu}}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "$\\boldsymbol r=\\boldsymbol q_{12}=\\boldsymbol q_2-\\boldsymbol q_1$；$\\hat{\\boldsymbol r}=\\boldsymbol r/\\|\\boldsymbol r\\|$；两取向单位向量；各根号正、分母非零。",
+      "放大PDF39原页确认εGB=ε1ε2，无平方；旧库gayBerneWell有ε2²，不能桥接，Blueprint保留忠实公式。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.gayBerneModel",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-035",
+      "CH01-036",
+      "CH01-037",
+      "CH01-038",
+      "CH01-039",
+      "CH01-040",
+      "CH01-041",
+      "CH01-042",
+      "CH01-043"
+    ]
   }
 ]

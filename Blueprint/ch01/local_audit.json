@@ -1,0 +1,929 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "Codex local template C",
+  "items": {
+    "MD-1.1-Schrodinger": {
+      "lean_decl": "MD.Ch01.schrodingerEquation",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.schrodingerEquation",
+          "note": "一致"
+        },
+        {
+          "source": "原文未显式量化的技术资格",
+          "lean": "Lean质量及Planck常数以正参数给定；定义采用总导数算子，仅定义满足方程的关系，不声明存在解。",
+          "note": "[EXTRA]"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "a456719f3292ddf1c142e744f5f952be92a79aaa449e8eadf079382fe75f64a4",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1-NewtonModel": {
+      "lean_decl": "MD.Ch01.newtonInitialValueModel",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.newtonInitialValueModel",
+          "note": "一致"
+        },
+        {
+          "source": "原文未显式量化的技术资格",
+          "lean": "n为展平坐标数；三维实例n=3N，质量限制通过coordinateMassesOfParticles给出。",
+          "note": "[EXTRA]"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "d9dbd769b70a2b8e1c1c617900ecef552e578fb31728e25f8e77274c18ffb5bc",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1-HardSphere": {
+      "lean_decl": "MD.Ch01.hardSphereModel",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "原文standard rules含方向/法向冲量等未明说内容；当前关系保留不可穿透和两守恒量，但尚不能据此声称完整散射模型。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.hardSphereModel",
+          "note": "NEEDS_HUMAN"
+        },
+        {
+          "source": "原文未显式量化的技术资格",
+          "lean": "只编码不可穿透与完全弹性守恒关系；原文未指定碰撞散射规则，此定义不唯一决定碰撞后速度。",
+          "note": "[EXTRA]"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "1f6689f4c2c087032feceecd82cc53be990cb04e410dd7fd3b3de224db92185f",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.1-Multibody": {
+      "lean_decl": "MD.Ch01.multibodyPotential",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.multibodyPotential",
+          "note": "一致"
+        },
+        {
+          "source": "原文未显式量化的技术资格",
+          "lean": "按无序不同粒子组计数i<j<k<l；原文仅列成分未指定求和计数约定。",
+          "note": "[EXTRA]"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "14a629971804bc42ff3c6e5d969ff08795c915c3ce9f86db6b1754bc3a299965",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.1-Morse": {
+      "lean_decl": "MD.Ch01.morsePotential",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.morsePotential",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "69f3f1b2e57792d4b8e571938af9ac343007494a69e059c2f3cc842bbb78d7ee",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.1-MorseMinimum": {
+      "lean_decl": "MD.Ch01.morse_minimum",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已保留最小值和井深；原文还提到a控制曲率，当前签名未含二阶导数，须补齐后进入证明。",
+      "counterexample": null,
+      "suggested_fix": "指数无穷远极限及严格最小值/曲率完整对应待补。",
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.morse_minimum",
+          "note": "NEEDS_HUMAN"
+        },
+        {
+          "source": "原文未显式量化的技术资格",
+          "lean": "D,a,rₑ正；well depth解释为无穷远极限减最小值。",
+          "note": "[EXTRA]"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "placeholder",
+      "website_audit": "待网站审计",
+      "missing": "指数无穷远极限及严格最小值/曲率完整对应待补。",
+      "checked": true,
+      "signature_sha256": "a2294a6a45e9a7419e8bc86a142c5794a2076af2071ef4e6e45902d1520bfdf2",
+      "direct_placeholder": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.1-LengthBond": {
+      "lean_decl": "MD.Ch01.lengthBond",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.lengthBond",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "6dc1cbf5f5331ae35834577db64838fabe6be0c8deaf6bb503c58008f65890c6",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.1-Dispersion": {
+      "lean_decl": "MD.Ch01.dispersionPotential",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.dispersionPotential",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "919b6add4a110f807000c50b2d29b67741b31fdee6b861ddc391f93f7faf2f43",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.1-Buckingham": {
+      "lean_decl": "MD.Ch01.buckinghamPotential",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.buckinghamPotential",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "fe661b6bad850b9c0dd6b801add0345ee27c838ce6578d471ba4e72edf28cf71",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.1-LennardJones": {
+      "lean_decl": "MD.Ch01.lennardJonesPotential",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.lennardJonesPotential",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "c59ecc0fa91ade5d874e80ef3f97928193bd26f8212127cea8b0cc3d03d4a91b",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.1-LJRepulsion": {
+      "lean_decl": "MD.Ch01.lj_repulsion",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "数学极限对应原文论据；atoms remain well separated为定性模拟描述，须裁定是否作为严格无碰撞结论。",
+      "counterexample": null,
+      "suggested_fix": "忠实范围待裁定；单侧有理函数极限可另行短证明。",
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.lj_repulsion",
+          "note": "NEEDS_HUMAN"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "placeholder",
+      "website_audit": "待网站审计",
+      "missing": "忠实范围待裁定；单侧有理函数极限可另行短证明。",
+      "checked": true,
+      "signature_sha256": "a54df37fd50ba09697d5aeb8f871996449b24346498eae4238ec618f30fb6144",
+      "direct_placeholder": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.1-HeterogeneousLJ": {
+      "lean_decl": "MD.Ch01.heterogeneousLJ",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.heterogeneousLJ",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "52b91099ddd48b107a2b6e520de963b729bc69c43867ef7de9a64c6c104bb125",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.2-Coulomb": {
+      "lean_decl": "MD.Ch01.coulombPotential",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.coulombPotential",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "c99bf55a6e57b945f6a8e304f44b235c6cf0a763db160d917d8a8cab01f7f35c",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.2-Cutoff": {
+      "lean_decl": "MD.Ch01.smoothCutoff",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.smoothCutoff",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "126ddf4c90c49f42cef51a781adcf940e4c1d22e13be9be5cc2146c0d61e5236",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.2-Yukawa": {
+      "lean_decl": "MD.Ch01.yukawaScreened",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.yukawaScreened",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "2e3930687eb550ee87abfa8443816b2c0cfa18f7b4f0abe91f247ed90ec298a1",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.2-AngleBond": {
+      "lean_decl": "MD.Ch01.angleBondModel",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.angleBondModel",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "d27b7eed4005272ea7ad565b091134ab4cdae5f057ade28898476085cde62457",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.2-Dihedral": {
+      "lean_decl": "MD.Ch01.dihedralPotential",
+      "verdict": "PASS",
+      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.dihedralPotential",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "e205c138e66f0f194f170f5ac749439eb113cf4628d6f9fb812cbb86faf67cd0",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.1.2-GayBerne": {
+      "lean_decl": "MD.Ch01.gayBerneModel",
+      "verdict": "PASS",
+      "explanation": "逐项展开辅助定义核对所有8个公式；不复用旧gayBernePotential，其ε2平方与原页不一致。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "原页完整公式/陈述",
+          "lean": "MD.Ch01.gayBerneModel",
+          "note": "一致"
+        }
+      ],
+      "documented_priors": [
+        "ReviewDefinitions.gayBerneChi/ChiPrime/W/EpsilonOne/EpsilonTwo"
+      ],
+      "proof_attempts": 0,
+      "proof_status": "definition",
+      "website_audit": "待网站审计",
+      "missing": null,
+      "checked": true,
+      "signature_sha256": "d932c5f5ca37d31eaf3ae07646dc058b169b5e8645c47a77920d2e7317847dcf",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.5.3-Thm1.1": {
+      "lean_decl": "MD.Ch01.theorem_1_1",
+      "verdict": "PASS",
+      "explanation": "按原页核对所有量词、实际导数及完整结论；显式技术前提与范围见[EXTRA]和对应表；既有桥接适用于该签名。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "位置、动量相空间；固定质量动能+势能系统",
+          "lean": "Position n、Momentum n、PhaseSpace n；mechanicalVectorField m (-gradient U)",
+          "note": "一致；n=N_c，三维原子系统n=3N"
+        },
+        {
+          "source": "q*为强局部极小；存在正半径；穿孔邻域U(q)>U(q*)",
+          "lean": "hstrict : IsStrictPotentialMinOn U Q q₀",
+          "note": "一致；定义展开含∀q∈Q、q≠q₀、dist<R；[EXTRA] q₀∈Q"
+        },
+        {
+          "source": "smooth potential U",
+          "lean": "hU : ∀ q∈Q, ContDiffAt ℝ ∞ U q",
+          "note": "一致；原文smooth明确写出"
+        },
+        {
+          "source": "正定质量的背景",
+          "lean": "hm : ∀ i, 0<m i",
+          "note": "[EXTRA] 定理句未重复，p.25背景明确；固定对角模型"
+        },
+        {
+          "source": "位置域及局部邻域",
+          "lean": "hQ : IsOpen Q",
+          "note": "[EXTRA] 邻域在势能定义域内"
+        },
+        {
+          "source": "z*=(q*,0)是平衡状态",
+          "lean": "IsMechanicalEquilibrium ... (q₀,0)",
+          "note": "一致；原文stable以前提平衡点定义，补出隐含资格"
+        },
+        {
+          "source": "∀正ε，∃正δ，∀初值z₀；欧氏距离<δ",
+          "lean": "IsFutureMechanicalStableEuclidean的ε/δ/z₀量词",
+          "note": "一致；正容差解释及欧氏phaseEuclideanDistance，非乘积最大距离"
+        },
+        {
+          "source": "所有t≥0的流存在",
+          "lean": "该稳定定义中的∃a<0、∃γ、IsMechanicalSolutionOn (Ioi a)、γ0=z₀",
+          "note": "一致；显式未来存在，避免无解时稳定断言空真"
+        },
+        {
+          "source": "sup(t≥0)||F_t(z₀)-z*||<ε",
+          "lean": "∀同初值未来解，BddAbove(range ...) ∧ sSup(range ...)<ε",
+          "note": "一致；有界性保护实数sSup，严格<保留；尚待独立语义审计"
+        }
+      ],
+      "documented_priors": [
+        "MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_smooth"
+      ],
+      "proof_attempts": 0,
+      "proof_status": "existing_bridge",
+      "website_audit": "待网站审计",
+      "checked": true,
+      "missing": null,
+      "signature_sha256": "05ed1f54ee881d97a6b9acb5ecb6908b9eb7b5aed6f08b62e4b073d8db1e2e44",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.2-EnergyConservation": {
+      "lean_decl": "MD.Ch01.energy_conservation",
+      "verdict": "PASS",
+      "explanation": "按原页核对所有量词、实际导数及完整结论；显式技术前提与范围见[EXTRA]和对应表；既有桥接适用于该签名。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "式(1.3) Newton解；每坐标M q̈=-∇U",
+          "lean": "hq : IsNewtonTrajectoryOn m U Q (Ioo a b) q",
+          "note": "一致；真实一阶/二阶导数和位置留在Q；不把守恒作假设"
+        },
+        {
+          "source": "粒子/坐标质量、位置、速度",
+          "lean": "m : CoordinateMasses n；q与deriv q",
+          "note": "一致的展平坐标模型；任意对角质量推广待审"
+        },
+        {
+          "source": "质量正性",
+          "lean": "hm : ∀i,0<m i",
+          "note": "[EXTRA] 逆质量辅助重写；可考虑直接牛顿证明是否能减少此额外前提"
+        },
+        {
+          "source": "势能偏导/链式法则",
+          "lean": "hU : ∀x∈Q,DifferentiableAt ℝ U x",
+          "note": "[EXTRA] 原文导数计算的隐含前提"
+        },
+        {
+          "source": "解的存在时间和任意比较时间",
+          "lean": "Ioo a b；∀s∈Ioo a b，∀t∈Ioo a b",
+          "note": "[EXTRA] 显式开连通区间；仅在同一解区间内比较"
+        },
+        {
+          "source": "式(1.4)位置-速度总能量",
+          "lean": "nBodyTotalEnergy m U (q t) (deriv q t)",
+          "note": "一致；使用massHamiltonian_massOperator证明两种表示相同"
+        },
+        {
+          "source": "its derivative vanishes；dE/dt=0",
+          "lean": "∀t∈Ioo a b,HasDerivAt (fun s=>nBodyTotalEnergy ...) 0 t",
+          "note": "一致；实际导数为零"
+        },
+        {
+          "source": "the energy is conserved",
+          "lean": "∀s,t在区间内，nBodyTotalEnergy(s)=nBodyTotalEnergy(t)",
+          "note": "一致；完整守恒子句"
+        }
+      ],
+      "documented_priors": [
+        "MolecularDynamics.mechanical_energy_hasDerivAt_zero",
+        "MolecularDynamics.mechanical_energy_const_on_Ioo",
+        "MolecularDynamics.massHamiltonian_massOperator",
+        "MolecularDynamics.newtonTrajectory_to_mechanicalSolution"
+      ],
+      "proof_attempts": 0,
+      "proof_status": "existing_bridge",
+      "website_audit": "待网站审计",
+      "checked": true,
+      "missing": null,
+      "signature_sha256": "f127edcebe32563ae5ff4f88df5cda69ff6ede9ecfe10bed2ee5a4dd7dc9051e",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.3-NewtonEulerLagrange": {
+      "lean_decl": "MD.Ch01.newton_iff_euler_lagrange",
+      "verdict": "PASS",
+      "explanation": "按原页核对所有量词、实际导数及完整结论；显式技术前提与范围见[EXTRA]和对应表；既有桥接适用于该签名。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "系统(1.3)，L定义于p.22",
+          "lean": "m、U；massLagrangian=动能-U",
+          "note": "一致；当前条处于固定质量，未替换为之后一般坐标M(q)"
+        },
+        {
+          "source": "q(t)及全部Nc个坐标",
+          "lean": "q : ℝ→Position n；向量等式；n=N_c",
+          "note": "一致；三维原子场景n=3N，坐标质量展开待审"
+        },
+        {
+          "source": "正质量",
+          "lean": "hm",
+          "note": "[EXTRA] 使用相空间互逆质量算子"
+        },
+        {
+          "source": "势能位置偏导",
+          "lean": "hU",
+          "note": "[EXTRA] U在Q每点可微"
+        },
+        {
+          "source": "时间导数",
+          "lean": "hI : IsOpen I",
+          "note": "[EXTRA] two-sided导数，避免within在边界退化"
+        },
+        {
+          "source": "Newton二阶轨迹定义",
+          "lean": "IsNewtonTrajectoryOn；HasDerivAt q，HasDerivAt (deriv q)，M q̈=-∇U",
+          "note": "一致；不是仅total deriv方程"
+        },
+        {
+          "source": "Newton → d/dt(∂L/∂q̇)=∂L/∂q",
+          "lean": "↔左到右；IsEulerLagrangeTrajectoryOn展开含真实导数",
+          "note": "一致；复用mechanicalSolution_eulerLagrange"
+        },
+        {
+          "source": "运动方程可表达为Euler–Lagrange；反向等价",
+          "lean": "↔右到左；eulerLagrange_to_mechanicalSolution再回Newton",
+          "note": "一致；反向未遗漏"
+        },
+        {
+          "source": "每条方程/位置域",
+          "lean": "两个轨迹谓词都要求∀t∈I,q t∈Q，随后∀t∈I",
+          "note": "一致；量词与域一致"
+        }
+      ],
+      "documented_priors": [
+        "MolecularDynamics.mechanicalSolution_eulerLagrange",
+        "MolecularDynamics.eulerLagrange_to_mechanicalSolution",
+        "MolecularDynamics.newtonTrajectory_to_mechanicalSolution",
+        "MolecularDynamics.hasDerivAt_deriv_position",
+        "MolecularDynamics.solution_nBodyEquationAt"
+      ],
+      "proof_attempts": 0,
+      "proof_status": "existing_bridge",
+      "website_audit": "待网站审计",
+      "checked": true,
+      "missing": null,
+      "signature_sha256": "27fd7e1251d62b07011dfeab02b981ad825d1b4c505a630e04a75d5f5eabaf9f",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.4-LegendreHamiltonian": {
+      "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "M=-1,U=p=0时目标v²/2无界；字面可逆前提不足；配置相关一般矩阵不能由固定对角库推出。",
+      "counterexample": "n=1,M=-1,U=0,p=0",
+      "suggested_fix": "导师裁定是否继承凸性/对称正定背景；当前不静默添加。",
+      "correspondence": [
+        {
+          "source": "M(q)配置相关质量矩阵",
+          "lean": "M : Position n → Matrix (Fin n) (Fin n) ℝ",
+          "note": "一致；没有缩为固定对角质量"
+        },
+        {
+          "source": "q,p；对v取上确界",
+          "lean": "q,p后给hM；range(fun v:Velocity n=>inner p v-L)",
+          "note": "一致；q固定后优化v"
+        },
+        {
+          "source": "If M(q) is invertible",
+          "lean": "hM : IsUnit (M q)",
+          "note": "[ERRATUM?] 字面前提；没有静默加入正定/对称/凸性；需审计上下文是否继承它们"
+        },
+        {
+          "source": "L(q,v)=vᵀM(q)v/2-U(q)",
+          "lean": "variableMassLagrangian、matrixAction",
+          "note": "一致；直接矩阵二次型"
+        },
+        {
+          "source": "sup_v(pᵀv-L)且sup achieved",
+          "lean": "BddAbove(range ...) ∧ sSup(range ...)=H",
+          "note": "一致；有界保护避免实数sSup对无界集退化"
+        },
+        {
+          "source": "precisely when v=M(q)⁻¹p",
+          "lean": "∀v,目标=H ↔ v=matrixAction (M q)⁻¹ p",
+          "note": "一致；完整唯一达到条件；但只可逆不足，未证"
+        },
+        {
+          "source": "p=∂L/∂q̇=M(q)q̇",
+          "lean": "∀v,HasGradientAt L (matrixAction (M q) v) v；p=M(q)(M(q)⁻¹p)",
+          "note": "一致；动量是真实梯度；若M非对称需审计"
+        },
+        {
+          "source": "H(q,p)=pᵀM(q)⁻¹p/2+U(q)",
+          "lean": "variableMassHamiltonian",
+          "note": "一致；逆矩阵作用于全矩阵"
+        },
+        {
+          "source": "This is precisely the energy function",
+          "lean": "H=逆速度ᵀM(q)逆速度/2+U(q)",
+          "note": "一致；替换回速度能量的子句保留"
+        },
+        {
+          "source": "抽象Legendre的convex g及机械质量上下文",
+          "lean": "当前签名未并入凸性/正定，留在context_notation与issues",
+          "note": "[ERRATUM?] 无界反例M=-1，必须先裁定/修复签名再复审冻结"
+        }
+      ],
+      "documented_priors": [
+        "MolecularDynamics.massHamiltonian_eq_legendre_sup",
+        "MolecularDynamics.legendre_objective_eq_massHamiltonian_iff"
+      ],
+      "proof_attempts": 0,
+      "proof_status": "placeholder",
+      "website_audit": "待网站审计",
+      "checked": true,
+      "missing": "一般配置相关正定矩阵Legendre理论；原文字面前提疑点。",
+      "signature_sha256": "2b468a3414ce493fbfab95cfca2a8569d174f3299324481d7e9a79a3444c27b5",
+      "direct_placeholder": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    },
+    "MD-1.5.1-FlowInverse": {
+      "lean_decl": "MD.Ch01.flow_inverse",
+      "verdict": "PASS",
+      "explanation": "按原页核对所有量词、实际导数及完整结论；显式技术前提与范围见[EXTRA]和对应表；既有桥接适用于该签名。",
+      "counterexample": null,
+      "suggested_fix": null,
+      "correspondence": [
+        {
+          "source": "classical systems；自治flow map F_t(ξ)解决(1.5)",
+          "lean": "IsGlobalMechanicalFlowOn m (-gradient U) Q S ψ；ψ:ℝ→PhaseSpace→PhaseSpace",
+          "note": "一致；保持分子Hamiltonian的保守力对象；全m维自治ODE的一般化不纳入"
+        },
+        {
+          "source": "固定正质量的Hamiltonian背景",
+          "lean": "_hm : ∀i,0<m i",
+          "note": "[EXTRA] 原文质量正定背景明确，反演段未重复；群律证明本身不使用正性"
+        },
+        {
+          "source": "forward or backward in time",
+          "lean": "hψ每z∈S都有全实时间ODE解；S不变",
+          "note": "[EXTRA] 显式前提；不承诺任意力的全局流存在"
+        },
+        {
+          "source": "继承existence and uniqueness",
+          "lean": "hreg : ∀q∈Q,ContDiffAt ℝ 1 F q",
+          "note": "[EXTRA] 唯一性的C1充分前提；正则性来源待审"
+        },
+        {
+          "source": "初值ξ；恒等元Id",
+          "lean": "∀z∈S,ψ 0 z=z",
+          "note": "一致；来自flow定义，不把群律放入假设"
+        },
+        {
+          "source": "F_{-t}F_t=Id",
+          "lean": "∀t,∀z∈S,ψ(-t)(ψ t z)=z",
+          "note": "一致；量词含所有实时间"
+        },
+        {
+          "source": "flow map is invertible",
+          "lean": "ψ t(ψ(-t)z)=z ∧ BijOn(ψ t)S S",
+          "note": "一致；双向反演与双射，限制在不变状态域"
+        },
+        {
+          "source": "Abelian group composition F_t F_s=F_s F_t",
+          "lean": "∀s,t,∀z∈S,ψ t(ψ s z)=ψ s(ψ t z)",
+          "note": "一致；闭包由hψ的MapsTo给出"
+        },
+        {
+          "source": "F_t F_s=F_{t+s}",
+          "lean": "ψ t(ψ s z)=ψ(t+s)z",
+          "note": "一致；identity/inverse/composition，函数复合结合律由函数操作固有"
+        },
+        {
+          "source": "前小节的全局流存在前提",
+          "lean": "以实际解族hψ参数化该结论；不另断言∃ψ",
+          "note": "一致；需要导师确认这种条件化与正文继承前提等价"
+        }
+      ],
+      "documented_priors": [
+        "MolecularDynamics.globalMechanicalFlow_inverse",
+        "MolecularDynamics.globalMechanicalFlow_add",
+        "MolecularDynamics.globalMechanicalFlow_commute",
+        "MolecularDynamics.globalMechanicalFlow_bijOn"
+      ],
+      "proof_attempts": 0,
+      "proof_status": "existing_bridge",
+      "website_audit": "待网站审计",
+      "checked": true,
+      "missing": null,
+      "signature_sha256": "0612c669694cac25394cc94c88490c2844c0ae68af39ec6306d4ab0952450ee4",
+      "direct_placeholder": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "axiom_log": "blueprint\\ch01\\validation\\full-sec11\\blueprint_axiom_dependencies.log"
+    }
+  }
+}

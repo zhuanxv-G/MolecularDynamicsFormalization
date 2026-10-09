@@ -1,3 +1,4 @@
+import MolecularDynamics.Chapter01.ReviewProofs
 import MolecularDynamics.Chapter01.EuclideanStability
 import MolecularDynamics.Chapter01.EnergyConservation
 import MolecularDynamics.Chapter01.Lagrangian
@@ -15,7 +16,12 @@ No signature is frozen until the matching MathCopilot audit passes.
 open Set MolecularDynamics
 open scoped ContDiff InnerProductSpace
 
+noncomputable section
+set_option autoImplicit false
 namespace MD.Ch01
+
+open MolecularDynamics.Chapter01Review Filter
+open scoped BigOperators Topology
 
 local instance (n : ℕ) : ContinuousSMul ℝ (Position n) := by
   have : IsBoundedSMul ℝ (Position n) := NormedSpace.toIsBoundedSMul
@@ -191,5 +197,155 @@ theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
   · intro s t z hz
     exact ⟨globalMechanicalFlow_commute hψ hreg hz s t,
       (globalMechanicalFlow_add hψ hreg hz s t).symm⟩
+
+/- BEGIN FULL SECTION 1.1 -/
+
+/-- source_id: MD-1.1-Schrodinger · definition · printed p.5 / PDF p.28
+[EXTRA] Lean质量及Planck常数以正参数给定；定义采用总导数算子，仅定义满足方程的关系，不声明存在解。
+
+-/
+def schrodingerEquation (h : planckConstant) (μ : quantumMass)
+    (U : primitivePotential) (Φ : waveFunction) : Prop :=
+  ∀ t q, Complex.I * (h.val : ℂ) * deriv (fun s => Φ s q) t =
+    -(h.val : ℂ)^2 * ∑ i : Fin 39,
+      secondPartial (Φ t) q i / (2 * (μ ⟨i.val / 3, by omega⟩).val : ℂ) +
+      (U q : ℂ) * Φ t q
+
+/-- source_id: MD-1.1-NewtonModel · definition · printed p.6 / PDF p.29
+[EXTRA] n为展平坐标数；三维实例n=3N，质量限制通过coordinateMassesOfParticles给出。
+
+-/
+def newtonInitialValueModel {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (I : Set ℝ) (q : ℝ → Position n) (t₀ : ℝ)
+    (q₀ v₀ : Position n) : Prop :=
+  IsNewtonTrajectoryOn m U Q I q ∧ q t₀ = q₀ ∧ HasDerivAt q v₀ t₀
+
+/-- source_id: MD-1.1-HardSphere · definition · printed p.7 / PDF p.30
+[EXTRA] 只编码不可穿透与完全弹性守恒关系；原文未指定碰撞散射规则，此定义不唯一决定碰撞后速度。
+
+-/
+def hardSphereModel (R₁ R₂ m₁ m₂ : ℝ) (q₁ q₂ v₁ v₂ w₁ w₂ : V3) : Prop :=
+  0 < R₁ ∧ 0 < R₂ ∧ 0 < m₁ ∧ 0 < m₂ ∧ R₁ + R₂ ≤ dist q₁ q₂ ∧
+  (dist q₁ q₂ = R₁ + R₂ →
+    m₁ • v₁ + m₂ • v₂ = m₁ • w₁ + m₂ • w₂ ∧
+    m₁ * ‖v₁‖^2 / 2 + m₂ * ‖v₂‖^2 / 2 = m₁ * ‖w₁‖^2 / 2 + m₂ * ‖w₂‖^2 / 2)
+
+/-- source_id: MD-1.1.1-Multibody · definition · printed p.8 / PDF p.31
+[EXTRA] 按无序不同粒子组计数i<j<k<l；原文仅列成分未指定求和计数约定。
+
+-/
+def multibodyPotential {N : ℕ} (U₂ : Fin N → Fin N → V3 → V3 → ℝ)
+    (U₃ : Fin N → Fin N → Fin N → V3 → V3 → V3 → ℝ)
+    (U₄ : Fin N → Fin N → Fin N → Fin N → V3 → V3 → V3 → V3 → ℝ)
+    (q : Fin N → V3) : ℝ :=
+  (∑ i, ∑ j ∈ Finset.Ioi i, U₂ i j (q i) (q j)) +
+  (∑ i, ∑ j ∈ Finset.Ioi i, ∑ k ∈ Finset.Ioi j, U₃ i j k (q i) (q j) (q k)) +
+  (∑ i, ∑ j ∈ Finset.Ioi i, ∑ k ∈ Finset.Ioi j, ∑ l ∈ Finset.Ioi k,
+    U₄ i j k l (q i) (q j) (q k) (q l))
+
+/-- source_id: MD-1.1.1-Morse · definition · printed p.8 / PDF p.31
+
+
+-/
+def morsePotential (D a rₑ r : ℝ) := D * (1 - Real.exp (-a * (r-rₑ)))^2
+
+/-- source_id: MD-1.1.1-MorseMinimum · unnumbered_claim · printed p.8 / PDF p.31
+[EXTRA] D,a,rₑ正；well depth解释为无穷远极限减最小值。
+
+-/
+theorem morse_minimum :
+  ∀ D a rₑ : ℝ, 0 < D → 0 < a → 0 < rₑ →
+    (∀ r > 0, 0 ≤ morsePotential D a rₑ r) ∧
+    morsePotential D a rₑ rₑ = 0 ∧ Tendsto (morsePotential D a rₑ) atTop (𝓝 D) := by
+  sorry
+
+/-- source_id: MD-1.1.1-LengthBond · definition · printed p.9 / PDF p.32
+
+
+-/
+def lengthBond (k r₀ r : ℝ) := k / 2 * (r-r₀)^2
+
+/-- source_id: MD-1.1.1-Dispersion · definition · printed p.10 / PDF p.33
+
+
+-/
+def dispersionPotential (K r : ℝ) := -K / r^6
+
+/-- source_id: MD-1.1.1-Buckingham · definition · printed p.10 / PDF p.33
+
+
+-/
+def buckinghamPotential (A B C r : ℝ) := A * Real.exp (-B*r) - C/r^6
+
+/-- source_id: MD-1.1.1-LennardJones · definition · printed p.10 / PDF p.33
+
+
+-/
+def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
+
+/-- source_id: MD-1.1.1-LJRepulsion · unnumbered_claim · printed p.11 / PDF p.34
+
+
+-/
+theorem lj_repulsion :
+  ∀ ε σ : ℝ, 0 < ε → 0 < σ →
+    Tendsto (lennardJonesPotential ε σ) (𝓝[>] 0) atTop := by
+  sorry
+
+/-- source_id: MD-1.1.1-HeterogeneousLJ · definition · printed p.11 / PDF p.34
+
+
+-/
+def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
+    (q : Fin N → V3) (i j : Fin N) :=
+  lennardJonesPotential (ε i j) (σ i j) (pairDistance (q i) (q j))
+
+/-- source_id: MD-1.1.2-Coulomb · definition · printed p.12 / PDF p.35
+
+
+-/
+def coulombPotential (C Qᵢ Qⱼ dielectric r : ℝ) := C*Qᵢ*Qⱼ/(dielectric*r)
+
+/-- source_id: MD-1.1.2-Cutoff · definition · printed p.12 / PDF p.35
+
+
+-/
+def smoothCutoff (φ : ℝ → ℝ) (r_cut : ℝ) : Prop :=
+  ContDiff ℝ 1 φ ∧ ∀ r, r_cut < r → φ r = 0
+
+/-- source_id: MD-1.1.2-Yukawa · definition · printed p.12 / PDF p.35
+
+[ERRATUM?] 原文κ称Debye length，但e^{-κr}的量纲通常对应逆长度；本定义保留字面公式。
+-/
+def yukawaScreened (C Qᵢ Qⱼ dielectric κ r : ℝ) : ℝ :=
+  C * Qᵢ * Qⱼ / (dielectric * r) * Real.exp (-κ * r)
+
+/-- source_id: MD-1.1.2-AngleBond · definition · printed p.13 / PDF p.36
+
+
+-/
+def angleBondModel (k θ₀ : ℝ) (qᵢ qⱼ qₖ : V3) : ℝ :=
+  k / 2 * (Real.arccos (inner ℝ (qᵢ-qⱼ) (qⱼ-qₖ) /
+    (‖qᵢ-qⱼ‖ * ‖qⱼ-qₖ‖)) - θ₀)^2
+
+/-- source_id: MD-1.1.2-Dihedral · definition · printed p.13 / PDF p.36
+
+
+-/
+def dihedralPotential (k n θ d : ℝ) := k*(1+Real.cos (n*θ-d))
+
+/-- source_id: MD-1.1.2-GayBerne · Example 1.2 · printed p.16–17 / PDF p.39–40
+
+
+-/
+def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁ u₂ : V3) : ℝ :=
+  let r := q₂ - q₁
+  let χ := gayBerneChi σₑ σₛ
+  let χ' := gayBerneChiPrime εₑ εₛ μ
+  let Δ := ‖r‖ - σ₀ / Real.sqrt (gayBerneW (‖r‖⁻¹ • r) u₁ u₂ χ)
+  let εGB := gayBerneEpsilonOne ε₀ χ u₁ u₂ * gayBerneEpsilonTwo (‖r‖⁻¹ • r) u₁ u₂ χ'
+  4 * εGB * ((σ₀ / Δ)^12 - (σ₀ / Δ)^6)
+
+/- END FULL SECTION 1.1 -/
 
 end MD.Ch01
