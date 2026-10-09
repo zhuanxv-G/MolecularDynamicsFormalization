@@ -1,0 +1,143 @@
+M  Blueprint/Ch01.lean
+M  blueprint/ch01/CheckAxioms.lean
+RM Blueprint/ch01/PROGRESS.md -> blueprint/ch01/PROGRESS.md
+M  blueprint/ch01/ch01_source.json
+A  blueprint/ch01/excluded_passages.json
+RM Blueprint/ch01/local_audit.json -> blueprint/ch01/local_audit.json
+RM Blueprint/ch01/mathcopilot_tasks/BATCH01.md -> blueprint/ch01/mathcopilot_tasks/BATCH01.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH02.md -> blueprint/ch01/mathcopilot_tasks/BATCH02.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH03.md -> blueprint/ch01/mathcopilot_tasks/BATCH03.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH04.md -> blueprint/ch01/mathcopilot_tasks/BATCH04.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH05.md -> blueprint/ch01/mathcopilot_tasks/BATCH05.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH06.md -> blueprint/ch01/mathcopilot_tasks/BATCH06.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH07.md -> blueprint/ch01/mathcopilot_tasks/BATCH07.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH08.md -> blueprint/ch01/mathcopilot_tasks/BATCH08.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH09.md -> blueprint/ch01/mathcopilot_tasks/BATCH09.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH10.md -> blueprint/ch01/mathcopilot_tasks/BATCH10.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH11.md -> blueprint/ch01/mathcopilot_tasks/BATCH11.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH12.md -> blueprint/ch01/mathcopilot_tasks/BATCH12.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH13.md -> blueprint/ch01/mathcopilot_tasks/BATCH13.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH14.md -> blueprint/ch01/mathcopilot_tasks/BATCH14.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH15.md -> blueprint/ch01/mathcopilot_tasks/BATCH15.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH16.md -> blueprint/ch01/mathcopilot_tasks/BATCH16.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH17.md -> blueprint/ch01/mathcopilot_tasks/BATCH17.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH18.md -> blueprint/ch01/mathcopilot_tasks/BATCH18.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH19.md -> blueprint/ch01/mathcopilot_tasks/BATCH19.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH20.md -> blueprint/ch01/mathcopilot_tasks/BATCH20.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH21.md -> blueprint/ch01/mathcopilot_tasks/BATCH21.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH22.md -> blueprint/ch01/mathcopilot_tasks/BATCH22.md
+RM Blueprint/ch01/mathcopilot_tasks/BATCH23.md -> blueprint/ch01/mathcopilot_tasks/BATCH23.md
+RM Blueprint/ch01/mathcopilot_tasks/INDEX.md -> blueprint/ch01/mathcopilot_tasks/INDEX.md
+RM Blueprint/ch01/mathcopilot_tasks/MANIFEST.json -> blueprint/ch01/mathcopilot_tasks/MANIFEST.json
+R  blueprint/ch01/mathcopilot_tasks/PILOT_ALL.md -> blueprint/ch01/mathcopilot_tasks/archive/PILOT_ALL.md
+RM Blueprint/ch01/old_mapping.json -> blueprint/ch01/old_mapping.json
+A  blueprint/ch01/proof_attempts.json
+A  blueprint/ch01/source_page_checks.json
+A  blueprint/ch01/validation/full-final/CHECK_REPORT.json
+R  Blueprint/ch01/validation/full-sec11/CHECK_REPORT.json -> blueprint/ch01/validation/full-sec11/CHECK_REPORT.json
+R  Blueprint/ch01/validation/full-sec12/CHECK_REPORT.json -> blueprint/ch01/validation/full-sec12/CHECK_REPORT.json
+R  Blueprint/ch01/validation/full-sec13/CHECK_REPORT.json -> blueprint/ch01/validation/full-sec13/CHECK_REPORT.json
+R  Blueprint/ch01/validation/full-sec13/axiom_dependencies.log -> blueprint/ch01/validation/full-sec13/axiom_dependencies.log
+R  Blueprint/ch01/validation/full-sec13/blueprint_axiom_dependencies.log -> blueprint/ch01/validation/full-sec13/blueprint_axiom_dependencies.log
+R  Blueprint/ch01/validation/full-sec13/blueprint_fresh_Ch01.log -> blueprint/ch01/validation/full-sec13/blueprint_fresh_Ch01.log
+R  Blueprint/ch01/validation/full-sec13/git_branch.log -> blueprint/ch01/validation/full-sec13/git_branch.log
+R  Blueprint/ch01/validation/full-sec13/git_head.log -> blueprint/ch01/validation/full-sec13/git_head.log
+R  Blueprint/ch01/validation/full-sec13/git_status.log -> blueprint/ch01/validation/full-sec13/git_status.log
+R  Blueprint/ch01/validation/full-sec13/lake_build.log -> blueprint/ch01/validation/full-sec13/lake_build.log
+R  Blueprint/ch01/validation/full-sec13/lake_version.log -> blueprint/ch01/validation/full-sec13/lake_version.log
+R  Blueprint/ch01/validation/full-sec13/lean_version.log -> blueprint/ch01/validation/full-sec13/lean_version.log
+R  Blueprint/ch01/validation/full-sec13/mathlib_revision.log -> blueprint/ch01/validation/full-sec13/mathlib_revision.log
+R  Blueprint/ch01/validation/full-sec13/mathlib_status.log -> blueprint/ch01/validation/full-sec13/mathlib_status.log
+R  Blueprint/ch01/validation/full-sec13/scratch.log -> blueprint/ch01/validation/full-sec13/scratch.log
+R  Blueprint/ch01/validation/full-sec14/CHECK_REPORT.json -> blueprint/ch01/validation/full-sec14/CHECK_REPORT.json
+R  Blueprint/ch01/validation/full-sec14/axiom_dependencies.log -> blueprint/ch01/validation/full-sec14/axiom_dependencies.log
+R  Blueprint/ch01/validation/full-sec14/blueprint_axiom_dependencies.log -> blueprint/ch01/validation/full-sec14/blueprint_axiom_dependencies.log
+R  Blueprint/ch01/validation/full-sec14/blueprint_fresh_Ch01.log -> blueprint/ch01/validation/full-sec14/blueprint_fresh_Ch01.log
+R  Blueprint/ch01/validation/full-sec14/git_branch.log -> blueprint/ch01/validation/full-sec14/git_branch.log
+R  Blueprint/ch01/validation/full-sec14/git_head.log -> blueprint/ch01/validation/full-sec14/git_head.log
+R  Blueprint/ch01/validation/full-sec14/git_status.log -> blueprint/ch01/validation/full-sec14/git_status.log
+R  Blueprint/ch01/validation/full-sec14/lake_build.log -> blueprint/ch01/validation/full-sec14/lake_build.log
+R  Blueprint/ch01/validation/full-sec14/lake_version.log -> blueprint/ch01/validation/full-sec14/lake_version.log
+R  Blueprint/ch01/validation/full-sec14/lean_version.log -> blueprint/ch01/validation/full-sec14/lean_version.log
+R  Blueprint/ch01/validation/full-sec14/mathlib_revision.log -> blueprint/ch01/validation/full-sec14/mathlib_revision.log
+R  Blueprint/ch01/validation/full-sec14/mathlib_status.log -> blueprint/ch01/validation/full-sec14/mathlib_status.log
+R  Blueprint/ch01/validation/full-sec14/scratch.log -> blueprint/ch01/validation/full-sec14/scratch.log
+R  Blueprint/ch01/validation/full-sec15/CHECK_REPORT.json -> blueprint/ch01/validation/full-sec15/CHECK_REPORT.json
+R  Blueprint/ch01/validation/full-sec15/axiom_dependencies.log -> blueprint/ch01/validation/full-sec15/axiom_dependencies.log
+R  Blueprint/ch01/validation/full-sec15/blueprint_axiom_dependencies.log -> blueprint/ch01/validation/full-sec15/blueprint_axiom_dependencies.log
+R  Blueprint/ch01/validation/full-sec15/blueprint_fresh_Ch01.log -> blueprint/ch01/validation/full-sec15/blueprint_fresh_Ch01.log
+R  Blueprint/ch01/validation/full-sec15/git_branch.log -> blueprint/ch01/validation/full-sec15/git_branch.log
+R  Blueprint/ch01/validation/full-sec15/git_head.log -> blueprint/ch01/validation/full-sec15/git_head.log
+R  Blueprint/ch01/validation/full-sec15/git_status.log -> blueprint/ch01/validation/full-sec15/git_status.log
+R  Blueprint/ch01/validation/full-sec15/lake_build.log -> blueprint/ch01/validation/full-sec15/lake_build.log
+R  Blueprint/ch01/validation/full-sec15/lake_version.log -> blueprint/ch01/validation/full-sec15/lake_version.log
+R  Blueprint/ch01/validation/full-sec15/lean_version.log -> blueprint/ch01/validation/full-sec15/lean_version.log
+R  Blueprint/ch01/validation/full-sec15/mathlib_revision.log -> blueprint/ch01/validation/full-sec15/mathlib_revision.log
+R  Blueprint/ch01/validation/full-sec15/mathlib_status.log -> blueprint/ch01/validation/full-sec15/mathlib_status.log
+R  Blueprint/ch01/validation/full-sec15/scratch.log -> blueprint/ch01/validation/full-sec15/scratch.log
+R  Blueprint/ch01/validation/full-sec16-final/CHECK_REPORT.json -> blueprint/ch01/validation/full-sec16-final/CHECK_REPORT.json
+R  Blueprint/ch01/validation/full-sec16-final/axiom_dependencies.log -> blueprint/ch01/validation/full-sec16-final/axiom_dependencies.log
+R  Blueprint/ch01/validation/full-sec16-final/blueprint_axiom_dependencies.log -> blueprint/ch01/validation/full-sec16-final/blueprint_axiom_dependencies.log
+R  Blueprint/ch01/validation/full-sec16-final/blueprint_fresh_Ch01.log -> blueprint/ch01/validation/full-sec16-final/blueprint_fresh_Ch01.log
+R  Blueprint/ch01/validation/full-sec16-final/git_branch.log -> blueprint/ch01/validation/full-sec16-final/git_branch.log
+R  Blueprint/ch01/validation/full-sec16-final/git_head.log -> blueprint/ch01/validation/full-sec16-final/git_head.log
+R  Blueprint/ch01/validation/full-sec16-final/git_status.log -> blueprint/ch01/validation/full-sec16-final/git_status.log
+R  Blueprint/ch01/validation/full-sec16-final/lake_build.log -> blueprint/ch01/validation/full-sec16-final/lake_build.log
+R  Blueprint/ch01/validation/full-sec16-final/lake_version.log -> blueprint/ch01/validation/full-sec16-final/lake_version.log
+R  Blueprint/ch01/validation/full-sec16-final/lean_version.log -> blueprint/ch01/validation/full-sec16-final/lean_version.log
+R  Blueprint/ch01/validation/full-sec16-final/mathlib_revision.log -> blueprint/ch01/validation/full-sec16-final/mathlib_revision.log
+R  Blueprint/ch01/validation/full-sec16-final/mathlib_status.log -> blueprint/ch01/validation/full-sec16-final/mathlib_status.log
+R  Blueprint/ch01/validation/full-sec16-final/scratch.log -> blueprint/ch01/validation/full-sec16-final/scratch.log
+R  Blueprint/ch01/validation/full-sec16/CHECK_REPORT.json -> blueprint/ch01/validation/full-sec16/CHECK_REPORT.json
+R  Blueprint/ch01/validation/full-sec17/CHECK_REPORT.json -> blueprint/ch01/validation/full-sec17/CHECK_REPORT.json
+R  Blueprint/ch01/validation/full-sec17/axiom_dependencies.log -> blueprint/ch01/validation/full-sec17/axiom_dependencies.log
+R  Blueprint/ch01/validation/full-sec17/blueprint_axiom_dependencies.log -> blueprint/ch01/validation/full-sec17/blueprint_axiom_dependencies.log
+R  Blueprint/ch01/validation/full-sec17/blueprint_fresh_Ch01.log -> blueprint/ch01/validation/full-sec17/blueprint_fresh_Ch01.log
+R  Blueprint/ch01/validation/full-sec17/git_branch.log -> blueprint/ch01/validation/full-sec17/git_branch.log
+R  Blueprint/ch01/validation/full-sec17/git_head.log -> blueprint/ch01/validation/full-sec17/git_head.log
+R  Blueprint/ch01/validation/full-sec17/git_status.log -> blueprint/ch01/validation/full-sec17/git_status.log
+R  Blueprint/ch01/validation/full-sec17/lake_build.log -> blueprint/ch01/validation/full-sec17/lake_build.log
+R  Blueprint/ch01/validation/full-sec17/lake_version.log -> blueprint/ch01/validation/full-sec17/lake_version.log
+R  Blueprint/ch01/validation/full-sec17/lean_version.log -> blueprint/ch01/validation/full-sec17/lean_version.log
+R  Blueprint/ch01/validation/full-sec17/mathlib_revision.log -> blueprint/ch01/validation/full-sec17/mathlib_revision.log
+R  Blueprint/ch01/validation/full-sec17/mathlib_status.log -> blueprint/ch01/validation/full-sec17/mathlib_status.log
+R  Blueprint/ch01/validation/full-sec17/scratch.log -> blueprint/ch01/validation/full-sec17/scratch.log
+A  blueprint/ch01/validation/proof-attempts/proof-complex-1.log
+A  blueprint/ch01/validation/proof-attempts/proof-energy-2.log
+A  blueprint/ch01/validation/proof-attempts/proof-final-1.log
+A  blueprint/ch01/validation/proof-attempts/proof-final-2.log
+A  blueprint/ch01/validation/proof-attempts/proof-final-3.log
+A  blueprint/ch01/validation/proof-attempts/proof-last-short-1.log
+A  blueprint/ch01/validation/proof-attempts/proof-last-short-2.log
+A  blueprint/ch01/validation/proof-attempts/proof-last-short-3.log
+A  blueprint/ch01/validation/proof-attempts/proof-ljtime-1.log
+A  blueprint/ch01/validation/proof-attempts/proof-ljtime-2.log
+A  blueprint/ch01/validation/proof-attempts/proof-ljtime-3.log
+A  blueprint/ch01/validation/proof-attempts/proof-periodic-3.log
+A  blueprint/ch01/validation/proof-attempts/proof-sec16-1.log
+A  blueprint/ch01/validation/proof-attempts/proof-sec16-2.log
+A  blueprint/ch01/validation/proof-attempts/proof-sec16-3.log
+A  blueprint/ch01/validation/proof-attempts/proof-sec16more-1.log
+A  blueprint/ch01/validation/proof-attempts/proof-sec16more-2.log
+A  blueprint/ch01/validation/proof-attempts/proof-sec16more-3.log
+A  blueprint/ch01/validation/proof-attempts/proof-sec17-1.log
+A  blueprint/ch01/validation/proof-attempts/proof-sec17-2.log
+A  blueprint/ch01/validation/proof-attempts/proof-sec17-3.log
+A  blueprint/ch01/validation/proof-attempts/proof-trimer-1.log
+A  blueprint/ch01/validation/proof-attempts/proof-trimer-2.log
+A  blueprint/ch01/validation/proof-attempts/proof-trimer-3.log
+MM docs/handoff/CURRENT_STATE.zh-CN.md
+M  docs/handoff/WORK_LOG.zh-CN.md
+M  docs/review/CH01_BLUEPRINT.zh-CN.md
+M  scripts/ch01_full_data.py
+A  scripts/ch01_full_delivery.py
+M  scripts/ch01_full_proofs.py
+M  scripts/ch01_full_tools.py
+M  scripts/render_blueprint.py
+?? blueprint/ch01/validation/full-final-clauses/
+?? docs/review/check-full06/
+?? output/
+?? scripts/__pycache__/
+?? scripts/export_ch01_review_pdf.py
+?? scripts/validate_ch01_delivery.py
+?? tmp/

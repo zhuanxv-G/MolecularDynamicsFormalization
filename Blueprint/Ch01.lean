@@ -27,7 +27,7 @@ import MolecularDynamics.Chapter01.LegendreTransform
 import MolecularDynamics.Chapter01.GlobalFlow
 
 /-!
-Chapter 1 pilot: draft signatures for independent semantic review.
+Chapter 1 body: 141 draft statements for independent semantic review.
 Existing formal-library sources and signatures are preserved.
 The dimension n denotes N_c (3N for three-dimensional atomic coordinates).
 The formal fixed diagonal model also supports the line case N_c = N.
@@ -223,11 +223,12 @@ theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 /- BEGIN FULL SECTION 1.1 -/
 
 /-- source_id: MD-1.1-Schrodinger · definition · printed p.5 / PDF p.28
-[EXTRA] Lean质量及Planck常数以正参数给定；定义采用总导数算子，仅定义满足方程的关系，不声明存在解。
+[EXTRA] 正质量及正Planck参数；按经典解解释，Φ在时间/位置联合C2，保证总导数算子表示实际偏导数；不声明解存在。
 
 -/
 def schrodingerEquation (h : planckConstant) (μ : quantumMass)
     (U : primitivePotential) (Φ : waveFunction) : Prop :=
+  ContDiff ℝ 2 (Function.uncurry Φ) ∧
   ∀ t q, Complex.I * (h.val : ℂ) * deriv (fun s => Φ s q) t =
     -(h.val : ℂ)^2 * ∑ i : Fin 39,
       secondPartial (Φ t) q i / (2 * (μ ⟨i.val / 3, by omega⟩).val : ℂ) +
@@ -305,14 +306,29 @@ def buckinghamPotential (A B C r : ℝ) := A * Real.exp (-B*r) - C/r^6
 -/
 def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
 
-/-- source_id: MD-1.1.1-LJRepulsion · unnumbered_claim · printed p.11 / PDF p.34
+/-- source_id: MD-1.1.1-LJRepulsion · unnumbered_claim · printed p.10–11 / PDF p.33–34
 
 
 -/
 theorem lj_repulsion :
   ∀ ε σ : ℝ, 0 < ε → 0 < σ →
     Tendsto (lennardJonesPotential ε σ) (𝓝[>] 0) atTop := by
-  sorry
+  intro ε σ hε hσ
+  have h₁ : Tendsto (fun r : ℝ => σ/r) (𝓝[>] (0:ℝ)) atTop := by
+    simpa [div_eq_mul_inv] using (tendsto_inv_nhdsGT_zero (𝕜 := ℝ)).const_mul_atTop hσ
+  have h₂ : Tendsto (fun r : ℝ => (σ/r)^6) (𝓝[>] (0:ℝ)) atTop := by
+    simpa only [Function.comp_def] using (tendsto_pow_atTop (by decide : (6:ℕ) ≠ 0)).comp h₁
+  have h₃ : Tendsto (fun r : ℝ => 2*(σ/r)^6-1) (𝓝[>] (0:ℝ)) atTop := by
+    simpa only [sub_eq_add_neg] using (h₂.const_mul_atTop (by norm_num : (0:ℝ) < 2)).atTop_add
+      (tendsto_const_nhds (x := (-1:ℝ)))
+  have h₄ : Tendsto (fun r : ℝ => ε*(2*(σ/r)^6-1)^2-ε) (𝓝[>] (0:ℝ)) atTop := by
+    simpa only [Function.comp_def, sub_eq_add_neg] using
+      (((tendsto_pow_atTop (by decide : (2:ℕ) ≠ 0)).comp h₃).const_mul_atTop hε).atTop_add
+        (tendsto_const_nhds (x := -ε))
+  convert h₄ using 1
+  funext r
+  unfold lennardJonesPotential
+  ring
 
 /-- source_id: MD-1.1.1-HeterogeneousLJ · definition · printed p.11 / PDF p.34
 
@@ -436,21 +452,35 @@ theorem paircancellation :
   exact hcoord k
 
 /-- source_id: MD-1.2-MomentumConservation · unnumbered_claim · printed p.19 / PDF p.42
-[EXTRA] 开放连通时间区间；净力为零来自前文内部力消去，此桥接显式采用净力条件。
+[EXTRA] 真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。
 
 -/
-theorem momentumconservation :
-  ∀ {N d : ℕ}
-    (m : CoordinateMasses (N * d)) (F : Force (N * d))
-    (Q : Set (Position (N * d))) (a b : ℝ)
-    (γ : ℝ → PhaseSpace (N * d))
-    (hγ : IsMechanicalSolutionOn m F Q (Ioo a b) γ)
-    (hFsum : ∀ q ∈ Q, ∀ c : Fin d,
-      ∑ i : Fin N, F q (particleCoordinateEquiv N d (i, c)) = 0)
-    (c : Fin d) (s t : ℝ)
-    (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
-    totalMomentumCoordinate (γ s).2 c = totalMomentumCoordinate (γ t).2 c := by
-  exact @MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
+theorem momentum_conservation :
+  ∀ (N : ℕ) (m : Fin N → ℝ) (v : ℝ → Fin N → V3)
+    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I → IsPreconnected I →
+    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →
+    (∀ t ∈ I, (∑ i, ∑ j, F t i j) = 0) ∧
+    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i • v s i) 0 t) ∧
+    ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i • v a i) = ∑ i, m i • v b i := by
+  intro N m v F I ho hi hanti hNewton
+  have hz (t : ℝ) (ht : t ∈ I) : (∑ i, ∑ j, F t i j) = 0 := by
+    apply paircancellation N (F t)
+    · intro i
+      ext k
+      have h := congrArg (fun u : V3 => u k) (hanti t ht i i)
+      simp only [PiLp.neg_apply] at h
+      change (F t i i) k = 0
+      linarith
+    · exact hanti t ht
+  have hd (t : ℝ) (ht : t ∈ I) : HasDerivAt (fun s => ∑ i, m i • v s i) 0 t := by
+    have h := HasDerivAt.fun_sum (u := Finset.univ) (fun i _ => hNewton t ht i)
+    rwa [hz t ht] at h
+  refine ⟨hz,hd,?_⟩
+  intro a ha b hb
+  exact ho.is_const_of_deriv_eq_zero hi
+    (fun t ht => (hd t ht).differentiableAt.differentiableWithinAt)
+    (fun t ht => (hd t ht).deriv) ha hb
 
 /-- source_id: MD-1.2-HarmonicSolution · unnumbered_claim · printed p.19–20 / PDF p.42–43
 [EXTRA] Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。
@@ -540,7 +570,66 @@ theorem ljtimescaling :
       ljForce ε σ (fun j => σ • Q (α*t) j) i) ↔
     ∀ τ i, deriv (deriv (fun s => Q s i)) τ = ljForce 1 1 (Q τ) i)) ∧
     α⁻¹ = σ * Real.sqrt (m / ε) := by
-  sorry
+  intro N m ε σ α Q hm he hs ha hscale hQ hnc
+  have hfirst (i : Fin N) (t : ℝ) :
+      deriv (fun s => σ • Q (α*s) i) t = (σ*α) • deriv (fun s => Q s i) (α*t) := by
+    have hd := ((hQ i).differentiable (by norm_num) (α*t)).hasDerivAt.scomp t
+      ((hasDerivAt_id t).const_mul α)
+    simpa [Function.comp_def, Pi.smul_def, smul_smul] using (hd.const_smul σ).deriv
+  have hsecond (i : Fin N) (t : ℝ) :
+      deriv (deriv (fun s => σ • Q (α*s) i)) t =
+        (σ*α^2) • deriv (deriv (fun s => Q s i)) (α*t) := by
+    have hf : deriv (fun s => σ • Q (α*s) i) = fun s => (σ*α) • deriv (fun s => Q s i) (α*s) :=
+      funext (hfirst i)
+    rw [hf]
+    have hQi : ContDiff ℝ (1+1) (fun s => Q s i) := hQ i
+    have hd := (hQi.deriv'.differentiable (by norm_num) (α*t)).hasDerivAt.scomp t
+      ((hasDerivAt_id t).const_mul α)
+    simpa [Function.comp_def, Pi.smul_def, smul_smul,pow_two,mul_assoc] using (hd.const_smul (σ*α)).deriv
+  have hphi (e s r : ℝ) (hr : r ≠ 0) :
+      deriv (Chapter01Review.lennardJonesPotential e s) r =
+        (24*e/r)*((s/r)^6-2*(s/r)^12) := by
+    have hx := (hasDerivAt_const r s).div (hasDerivAt_id r) hr
+    have hd := ((hx.pow 12).sub (hx.pow 6)).const_mul (4*e)
+    convert hd.deriv using 1
+    · rfl
+    · simp only [Pi.div_apply, Pi.pow_apply, id_eq, Nat.cast_ofNat]
+      norm_num only [Nat.reduceSub]
+      field_simp [hr] <;> ring
+  have hforce (t : ℝ) (i : Fin N) :
+      ljForce ε σ (fun j => σ • Q t j) i = (ε/σ) • ljForce 1 1 (Q t) i := by
+    unfold ljForce
+    rw [Finset.smul_sum]
+    apply Finset.sum_congr rfl
+    intro j hj
+    have hij : i ≠ j := (Finset.mem_erase.mp hj).1.symm
+    have hr : 0 < ‖Q t i-Q t j‖ := norm_pos_iff.mpr (sub_ne_zero.mpr (hnc t i j hij))
+    have hd : pairDistance (σ • Q t i) (σ • Q t j) = σ * pairDistance (Q t i) (Q t j) := by
+      simp [pairDistance,← smul_sub,norm_smul,Real.norm_eq_abs,abs_of_pos hs]
+    change (-deriv (Chapter01Review.lennardJonesPotential ε σ) (pairDistance (σ • Q t i) (σ • Q t j)) / pairDistance (σ • Q t i) (σ • Q t j)) • (σ • Q t i - σ • Q t j) = _
+    rw [hphi _ _ _ (by rw [hd]; exact ne_of_gt (mul_pos hs hr)),hphi 1 1 (pairDistance (Q t i) (Q t j)) (ne_of_gt hr),hd]
+    rw [← smul_sub,smul_smul,smul_smul]
+    congr 1
+    dsimp [pairDistance]
+    field_simp [hs.ne',hr.ne'] <;> ring
+  have hcoeff : m*(σ*α^2) = ε/σ := by
+    rw [hscale]
+    field_simp [hs.ne',hm.ne'] <;> ring
+  have hunit : α⁻¹ = σ*Real.sqrt (m/ε) := by
+    apply (sq_eq_sq₀ (inv_nonneg.mpr ha.le) (mul_nonneg hs.le (Real.sqrt_nonneg _))).mp
+    rw [mul_pow,Real.sq_sqrt (div_nonneg hm.le he.le),inv_pow,hscale]
+    field_simp [hm.ne',hs.ne',he.ne'] <;> ring
+  refine ⟨?_,hunit⟩
+  constructor
+  · intro h τ i
+    have hh := h (τ/α) i
+    rw [hsecond,hforce,smul_smul,hcoeff] at hh
+    have ht : α*(τ/α) = τ := by field_simp [ha.ne']
+    rw [ht] at hh
+    have hc := congrArg (fun v : V3 => (σ/ε) • v) hh
+    simpa [smul_smul,div_eq_mul_inv,hs.ne',he.ne',mul_assoc,mul_comm,mul_left_comm] using hc
+  · intro h t i
+    rw [hsecond,hforce,smul_smul,hcoeff,h (α*t) i]
 
 /- END FULL SECTION 1.2 -/
 
@@ -609,7 +698,23 @@ theorem hamilton_fixed_mass {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
       (matrixAction M⁻¹ p) p ∧
     HasGradientAt (fun x => variableMassHamiltonian (fun _ => M) U x p)
       (gradient U q) q := by
-  sorry
+  let B := Matrix.toEuclideanCLM (n := Fin n) (𝕜 := ℝ) M⁻¹
+  have hsym := Matrix.isSymmetric_toEuclideanLin_iff.mpr hM.inv.isHermitian
+  have hKD : HasFDerivAt (fun v : Position n => inner ℝ v (B v)/2)
+      (InnerProductSpace.toDual ℝ (Position n) (B p)) p := by
+    have hd := (hasFDerivAt_id (𝕜 := ℝ) p).inner ℝ B.hasFDerivAt
+    convert hd.mul_const ((2:ℝ)⁻¹) using 1
+    · simp only [div_eq_mul_inv, id_eq]
+    · ext v
+      simp [fderivInnerCLM_apply, InnerProductSpace.toDual_apply_apply]
+      have hs : inner ℝ p (B v) = inner ℝ (B p) v := (hsym p v).symm
+      rw [hs, real_inner_comm v (B p)]
+      ring
+  constructor
+  · rw [hasGradientAt_iff_hasFDerivAt]
+    exact hKD.add_const (U q)
+  · rw [hasGradientAt_iff_hasFDerivAt]
+    exact hU.hasGradientAt.hasFDerivAt.const_add (inner ℝ p (B p)/2)
 
 /-- source_id: MD-1.4-HamiltonLagrangeEquivalence · unnumbered_claim · printed p.25 / PDF p.48
 [EXTRA] 一般配置相关M C2、U C2、M逐点正定；轨迹q′=v真实且时间域开放。
@@ -629,7 +734,7 @@ theorem hamiltonlagrangeequivalence :
 
 /-- source_id: MD-1.4-PhaseSpace · definition · printed p.25 / PDF p.48
 [EXTRA] 采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。
-
+[ERRATUM?] p.25原句described by coordinates and positions字面重复位置；前句定义是positions and momenta，Lean按前句定义保留位置×动量，原句不静默改字。
 -/
 def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseSpace n) :=
   {z | H z ≠ ⊤ ∧ H z ≠ ⊥}
@@ -869,13 +974,25 @@ theorem planarquadrature :
   exact @MolecularDynamics.planarFirstIntegral_nonturning_quadrature
 
 /-- source_id: MD-1.5.2-ScalarFirstIntegral · unnumbered_claim · printed p.28 / PDF p.51
-[EXTRA] U C2；原文integrable的quadrature结论复用§1.2条目，不等同于全局闭式轨道。
+[EXTRA] U C2；开放时间段真实解、积分逆图使用速度非零点；转向点全局拼接不声称已有证明。
 
 -/
-theorem scalarfirstintegral :
-  ∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U),
-    IsFirstIntegralOn (scalarPotentialVectorField U) univ (scalarPotentialEnergy U) := by
-  exact @MolecularDynamics.scalarPotentialEnergy_isFirstIntegral
+theorem scalar_first_integral_and_quadrature :
+  (∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U),
+    IsFirstIntegralOn (scalarPotentialVectorField U) univ (scalarPotentialEnergy U)) ∧
+  (∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U)
+    (a b t₀ : ℝ) (γ : ℝ → ℝ × ℝ)
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (scalarPotentialVectorField U (γ t)) t)
+    (ht₀ : t₀ ∈ Ioo a b) (hv₀ : (γ t₀).2 ≠ 0),
+    ∃ (ψ g : ℝ → ℝ) (δ ε : ℝ), 0 < δ ∧ 0 < ε ∧
+      ψ (γ t₀).1 = (γ t₀).2 ∧ ContDiffAt ℝ 1 ψ (γ t₀).1 ∧
+      HasStrictDerivAt g (γ t₀).2 0 ∧
+      (∀ᶠ t in 𝓝 t₀, (γ t).1 = g (t - t₀) ∧ (γ t).2 = ψ (g (t - t₀))) ∧
+      (∀ᶠ x in 𝓝 (γ t₀).1, g (separableTimePrimitive ψ (γ t₀).1 x) = x) ∧
+      (∀ᶠ y in 𝓝 0, separableTimePrimitive ψ (γ t₀).1 (g y) = y) ∧
+      (∀ t ∈ Ioo (t₀ - ε) (t₀ + ε), t ∈ Ioo a b ∧
+        separableTimePrimitive ψ (γ t₀).1 (γ t).1 = t - t₀)) := by
+  exact ⟨@MolecularDynamics.scalarPotentialEnergy_isFirstIntegral, @MolecularDynamics.scalarPotential_nonturning_quadrature⟩
 
 /-- source_id: MD-1.5.1-RealSpectralSolution · unnumbered_claim · printed p.27 / PDF p.50
 
@@ -899,17 +1016,37 @@ def planarKeplerEnergy (x y v w : ℝ) : ℝ :=
   v^2/2 + w^2/2 - 1/Real.sqrt (x^2+y^2)
 
 /-- source_id: MD-1.5.2-KeplerConservedEnergy · unnumbered_claim · printed p.29 / PDF p.52
-[EXTRA] 真实机械轨迹、非碰撞开放时间区间；n=2对应平面。
+[EXTRA] 真实平面非碰撞机械解；积分重建的整个存在区间含0，角为连续实提升；不声称穿越碰撞的全局轨道。
 
 -/
-theorem keplerconservedenergy :
-  ∀ {n : ℕ} (a b : ℝ) (γ : ℝ → PhaseSpace n)
+theorem kepler_energy_angular_integrability :
+  (∀ (a b : ℝ) (γ : ℝ → PhaseSpace 2)
     (hγ : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce
-      {q : Position n | q ≠ 0} (Ioo a b) γ)
+      {q : Position 2 | q ≠ 0} (Ioo a b) γ)
     (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
     massHamiltonian (fun _ => (1 : ℝ)) keplerPotential (γ s) =
-      massHamiltonian (fun _ => (1 : ℝ)) keplerPotential (γ t) := by
-  exact @MolecularDynamics.kepler_energy_const_on_Ioo
+      massHamiltonian (fun _ => (1 : ℝ)) keplerPotential (γ t)) ∧
+  (∀ (a b : ℝ) (γ : ℝ → PhaseSpace 2)
+    (hγ : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce
+      {q : Position 2 | q ≠ 0} (Ioo a b) γ)
+    (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
+    planarAngularMomentum (γ s) = planarAngularMomentum (γ t)) ∧
+  (∀ (a b : ℝ) (z : ℝ → PhaseSpace 2)
+    (h0 : 0 ∈ Ioo a b)
+    (hz : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce
+      {q : Position 2 | q ≠ 0} (Ioo a b) z),
+    ∃ ℓ θ₀ : ℝ, ∃ r v θ : ℝ → ℝ,
+      (∀ t ∈ Ioo a b, 0 < r t ∧ HasDerivAt r (v t) t ∧
+        HasDerivAt v (-1/(r t)^2+ℓ^2/(r t)^3) t ∧
+        θ t = θ₀ + ∫ s in (0 : ℝ)..t, ℓ/(r s)^2 ∧
+        (z t).1 = (fun r θ : ℝ => (WithLp.toLp 2 ![r*Real.cos θ,r*Real.sin θ] : Position 2)) (r t) (θ t)) ∧
+      (∀ t₀ ∈ Ioo a b, ScalarPotentialLocalDescription
+        (fun x => -1/x + ℓ^2/(2*x^2)) (fun t => (r t,v t)) a b t₀) ∧
+      z 0 = (((fun r θ : ℝ => (WithLp.toLp 2 ![r*Real.cos θ,r*Real.sin θ] : Position 2)) (r 0) θ₀),
+        WithLp.toLp 2 ![v 0*Real.cos θ₀-ℓ/r 0*Real.sin θ₀,
+          v 0*Real.sin θ₀+ℓ/r 0*Real.cos θ₀])) := by
+  refine ⟨@MolecularDynamics.kepler_energy_const_on_Ioo 2, @MolecularDynamics.kepler_planarAngularMomentum_const_on_Ioo, ?_⟩
+  sorry
 
 /-- source_id: MD-1.5.2-KeplerAngularMomentum · unnumbered_claim · printed p.29 / PDF p.52
 
@@ -982,7 +1119,7 @@ theorem keplerradialreduction :
     HasDerivAt v (-(r t ^ 2)⁻¹ + l ^ 2 / r t ^ 3) t := by
   exact @MolecularDynamics.keplerPolar_radial_reduction
 
-/-- source_id: MD-1.5.2-KeplerRadialEnergy · definition · printed p.30 / PDF p.53
+/-- source_id: MD-1.5.2-KeplerRadialEnergy · definition · printed p.29–30 / PDF p.52–53
 
 
 -/
@@ -1183,7 +1320,16 @@ theorem hamilton_equilibrium {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
     (heq : gradient (fun v => variableMassHamiltonian (fun _ => M) U q v) p = 0 ∧
       gradient (fun x => variableMassHamiltonian (fun _ => M) U x p) q = 0) :
     p = 0 ∧ gradient U q = 0 := by
-  sorry
+  have hg := hamilton_fixed_mass M U q p hM hU
+  have hv : matrixAction M⁻¹ p = 0 := hg.1.gradient.symm.trans heq.1
+  have hc : M⁻¹.mulVec (WithLp.ofLp p) = M⁻¹.mulVec 0 := by
+    have hh := congrArg WithLp.ofLp hv
+    simpa [matrixAction] using hh
+  have hinj := Matrix.mulVec_injective_iff_isUnit.mpr hM.inv.isUnit
+  have hp : p = 0 := by
+    have hh := hinj hc
+    simpa using hh
+  exact ⟨hp,hg.2.gradient.symm.trans heq.2⟩
 
 /-- source_id: MD-1.5.3-StrongLocalMinimum · definition · printed p.32 / PDF p.55
 
@@ -1536,21 +1682,18 @@ theorem centralpairgradient :
   ring
 
 /-- source_id: MD-1.7-CentralMomentum · unnumbered_claim · printed p.39 / PDF p.62
-[EXTRA] 逐对作用反对称推出净力零；真实Newton解和连通时间区间。
+[EXTRA] 真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。
 
 -/
-theorem centralmomentum :
-  ∀ {N d : ℕ}
-    (m : CoordinateMasses (N * d)) (F : Force (N * d))
-    (Q : Set (Position (N * d))) (a b : ℝ)
-    (γ : ℝ → PhaseSpace (N * d))
-    (hγ : IsMechanicalSolutionOn m F Q (Ioo a b) γ)
-    (hFsum : ∀ q ∈ Q, ∀ c : Fin d,
-      ∑ i : Fin N, F q (particleCoordinateEquiv N d (i, c)) = 0)
-    (c : Fin d) (s t : ℝ)
-    (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
-    totalMomentumCoordinate (γ s).2 c = totalMomentumCoordinate (γ t).2 c := by
-  exact @MolecularDynamics.totalMomentumCoordinate_const_on_Ioo
+theorem central_momentum :
+  ∀ (N : ℕ) (m : Fin N → ℝ) (v : ℝ → Fin N → V3)
+    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I → IsPreconnected I →
+    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →
+    (∀ t ∈ I, (∑ i, ∑ j, F t i j) = 0) ∧
+    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i • v s i) 0 t) ∧
+    ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i • v a i) = ∑ i, m i • v b i := by
+  exact @momentum_conservation
 
 /-- source_id: MD-1.7-CentralAngularMomentum · unnumbered_claim · printed p.39 / PDF p.62
 [EXTRA] 真实位置和动量导数；反对称内力和沿位移方向中心力。
@@ -1565,7 +1708,56 @@ theorem centralangularmomentum :
     (∀ t ∈ I, ∀ i j, cross3 (q t i-q t j) (F t i j) = 0) →
     (∀ t ∈ I, ∀ i j, cross3 (q t i) (F t i j) = -cross3 (q t j) (F t j i)) ∧
     ∀ t ∈ I, HasDerivAt (fun s => ∑ i, cross3 (q s i) (m i • v s i)) 0 t := by
-  sorry
+  intro N m q v F I _ hq hp hanti hcenter
+  have hsub (u v w : V3) : cross3 (u-v) w = cross3 u w-cross3 v w := by
+    ext k; fin_cases k <;> simp [cross3] <;> ring
+  have hneg (u w : V3) : cross3 u (-w) = -cross3 u w := by
+    ext k; fin_cases k <;> simp [cross3] <;> ring
+  have ht (t : ℝ) (h : t ∈ I) (i j : Fin N) :
+      cross3 (q t i) (F t i j) = -cross3 (q t j) (F t j i) := by
+    have hc := hcenter t h i j
+    rw [hsub] at hc
+    rw [hanti t h j i,hneg,neg_neg]
+    exact sub_eq_zero.mp hc
+  have hcross (u w : ℝ → V3) (du dw : V3) (t : ℝ)
+      (hu : HasDerivAt u du t) (hw : HasDerivAt w dw t) :
+      HasDerivAt (fun s => cross3 (u s) (w s)) (cross3 du (w t)+cross3 (u t) dw) t := by
+    have huc (k : Fin 3) : HasDerivAt (fun s => u s k) (du k) t :=
+      (PiLp.proj (p := 2) (β := fun _ : Fin 3 => ℝ) k).hasFDerivAt.comp_hasDerivAt t hu
+    have hwc (k : Fin 3) : HasDerivAt (fun s => w s k) (dw k) t :=
+      (PiLp.proj (p := 2) (β := fun _ : Fin 3 => ℝ) k).hasFDerivAt.comp_hasDerivAt t hw
+    have hc (k : Fin 3) : HasDerivAt (fun s => cross3 (u s) (w s) k)
+        ((cross3 du (w t)+cross3 (u t) dw) k) t := by
+      fin_cases k
+      · convert! ((huc 1).mul (hwc 2)).sub ((huc 2).mul (hwc 1)) using 1 <;> simp [cross3] <;> ring
+      · convert! ((huc 2).mul (hwc 0)).sub ((huc 0).mul (hwc 2)) using 1 <;> simp [cross3] <;> ring
+      · convert! ((huc 0).mul (hwc 1)).sub ((huc 1).mul (hwc 0)) using 1 <;> simp [cross3] <;> ring
+    let b : Fin 3 → V3 := fun k => WithLp.toLp 2 (Pi.single k 1)
+    have hre (z : V3) : (∑ k, z k • b k) = z := by
+      ext k; fin_cases k <;> simp [b,Fin.sum_univ_three]
+    have hh := HasDerivAt.fun_sum (u := Finset.univ) (fun k _ => (hc k).smul_const (b k))
+    simpa only [hre] using hh
+  have hself (a : ℝ) (u : V3) : cross3 u (a • u) = 0 := by
+    ext k; fin_cases k <;> simp [cross3] <;> ring
+  have hsum (u : V3) (f : Fin N → V3) : cross3 u (∑ j,f j) = ∑ j,cross3 u (f j) := by
+    ext k; fin_cases k <;> simp [cross3,Finset.mul_sum,Finset.sum_sub_distrib]
+  refine ⟨ht,?_⟩
+  intro t h
+  have hz : (∑ i, ∑ j,cross3 (q t i) (F t i j)) = 0 := by
+    apply paircancellation N (fun i j => cross3 (q t i) (F t i j))
+    · intro i
+      ext k
+      have he := congrArg (fun u : V3 => u k) (ht t h i i)
+      simp only [PiLp.neg_apply] at he
+      change (cross3 (q t i) (F t i i)) k = 0
+      linarith
+    · exact ht t h
+  have hd (i : Fin N) : HasDerivAt (fun s => cross3 (q s i) (m i • v s i))
+      (∑ j,cross3 (q t i) (F t i j)) t := by
+    simpa only [hself,zero_add,hsum] using hcross (fun s => q s i) (fun s => m i • v s i)
+      (v t i) (∑ j,F t i j) t (hq t h i) (hp t h i)
+  have hh := HasDerivAt.fun_sum (u := Finset.univ) (fun i _ => hd i)
+  rwa [hz] at hh
 
 /-- source_id: MD-1.7-CenterOfMassMotion · unnumbered_claim · printed p.39 / PDF p.62
 [EXTRA] 质量正、总质量正、真实位置导数、连通时间域；平移部分据已得总动量守恒。
@@ -1581,7 +1773,27 @@ theorem centerofmassmotion :
       (∑ i, m i)⁻¹ • (∑ i, m i • q t i) =
         (∑ i, m i)⁻¹ • (∑ i, m i • q a i) +
           (t-a) • ((∑ i, m i)⁻¹ • (∑ i, m i • v a i)) := by
-  sorry
+  intro N m q v I a ho hi ha hm hM hq hp
+  let P := ∑ i, m i • v a i
+  have hPc (t : ℝ) (ht : t ∈ I) : (∑ i, m i • v t i) = P :=
+    ho.is_const_of_deriv_eq_zero hi
+      (fun s hs => (hp s hs).differentiableAt.differentiableWithinAt)
+      (fun s hs => (hp s hs).deriv) ht ha
+  have hQ (t : ℝ) (ht : t ∈ I) : HasDerivAt (fun s => ∑ i, m i • q s i) P t := by
+    have hh := HasDerivAt.fun_sum (u := Finset.univ) (fun i _ => (hq t ht i).const_smul (m i))
+    rwa [hPc t ht] at hh
+  have hR (t : ℝ) (ht : t ∈ I) : HasDerivAt (fun s => (∑ i, m i • q s i)-s • P) 0 t := by
+    simpa only [one_smul, sub_self, id_eq] using (hQ t ht).fun_sub ((hasDerivAt_id t).smul_const P)
+  intro t ht
+  have hc := ho.is_const_of_deriv_eq_zero hi
+    (fun s hs => (hR s hs).differentiableAt.differentiableWithinAt)
+    (fun s hs => (hR s hs).deriv) ht ha
+  have he : (∑ i, m i • q t i) = (∑ i, m i • q a i)+(t-a) • P := by
+    calc
+      _ = ((∑ i, m i • q a i)-a • P)+t • P := (sub_eq_iff_eq_add).mp hc
+      _ = _ := by simp [sub_smul, sub_eq_add_neg, add_smul, neg_smul, add_assoc, add_comm, add_left_comm]
+  have hh := congrArg (fun u => (∑ i,m i)⁻¹ • u) he
+  simpa [P, smul_add, smul_smul, mul_comm] using hh
 
 /-- source_id: MD-1.7-ConstantRotationLiteral · unnumbered_claim · printed p.39 / PDF p.62
 
@@ -1607,7 +1819,35 @@ def isoscelesCoordinates (x y : ℝ) : Fin 3 → V3 :=
 theorem isosceles_energy_reduction (x y v w : ℝ) (hx : 0 < x) :
     (∑ i : Fin 3, ‖isoscelesCoordinates v w i‖^2/2) +
       uniformLJEnergy 1 1 (isoscelesCoordinates x y) = isoscelesEnergy x y v w := by
-  sorry
+  have h01 : isoscelesCoordinates x y 0-isoscelesCoordinates x y 1 =
+      WithLp.toLp 2 ![2*x,0,0] := by
+    ext i; fin_cases i <;> simp [isoscelesCoordinates] <;> ring
+  have h02 : isoscelesCoordinates x y 0-isoscelesCoordinates x y 2 =
+      WithLp.toLp 2 ![x,-y,0] := by
+    ext i; fin_cases i <;> simp [isoscelesCoordinates] <;> ring
+  have h12 : isoscelesCoordinates x y 1-isoscelesCoordinates x y 2 =
+      WithLp.toLp 2 ![-x,-y,0] := by
+    ext i; fin_cases i <;> simp [isoscelesCoordinates] <;> ring
+  have hsq (z : V3) : ‖z‖^2 = (z 0)^2+(z 1)^2+(z 2)^2 := by
+    simpa only [Fin.sum_univ_three,Real.norm_eq_abs,sq_abs] using
+      PiLp.norm_sq_eq_of_L2 (fun _ : Fin 3 => ℝ) z
+  have hn (a b : ℝ) : ‖(WithLp.toLp 2 ![a,b,0] : V3)‖ = Real.sqrt (a^2+b^2) := by
+    rw [norm_eq_sqrt_real_inner,real_inner_self_eq_norm_sq,hsq]
+    simp
+  have hK : (∑ i : Fin 3, ‖isoscelesCoordinates v w i‖^2/2) = v^2+w^2/3 := by
+    simp only [Fin.sum_univ_three,hsq]
+    simp [isoscelesCoordinates]
+    ring
+  have h0 : Finset.Ioi (0:Fin 3) = {1,2} := by decide
+  have h1 : Finset.Ioi (1:Fin 3) = {2} := by decide
+  have h2 : Finset.Ioi (2:Fin 3) = ∅ := by decide
+  rw [hK]
+  unfold uniformLJEnergy
+  simp only [Fin.sum_univ_three,h0,h1,h2,Finset.sum_singleton,Finset.sum_empty]
+  rw [Finset.sum_pair (show (1:Fin 3) ≠ 2 by decide)]
+  simp [pairDistance,h01,h02,h12,hn,Real.sqrt_sq_eq_abs,abs_of_pos hx,abs_mul,
+    isoscelesEnergy,isoscelesPotential]
+  ring
 
 /-- source_id: MD-1.7-IsoscelesAccessibleRegion · unnumbered_claim · printed p.40 / PDF p.63
 
@@ -1657,7 +1897,7 @@ theorem trimersaddle :
 
 /-- source_id: MD-1.7-TrimerEscapeLiteral · unnumbered_claim · printed p.40 / PDF p.63
 
-[ERRATUM?] 保留原文每个body最终逃逸到∞的字面结论及前段质心固定、等腰、零角动量背景；正能量到散射的论证缺失，待导师裁定。
+[ERRATUM?] every body逃逸字面过强：取等腰退化为共线y≡0，q₁=(x,0,0)、q₂=(-x,0,0)、q₃=0，中心粒子合力零，质心/动量/角动量均零；x>1的外向正能量解使外侧两粒子逃逸而中心始终固定。需裁定是否改为至少一对分离。
 -/
 theorem trimerescapeliteral :
   ∀ (q v : ℝ → Fin 3 → V3) (E : ℝ), 0 < E →
@@ -1708,7 +1948,7 @@ def variationalMatrixLiteral {n : ℕ} (F : ℝ → Position n → Position n)
 
 /-- source_id: MD-1.7.2-VariationalEquationLiteral · unnumbered_claim · printed p.44–45 / PDF p.67–68
 
-[ERRATUM?] 前条字面W=D Ft(Ftξ)多出取值点移动链式项。局部标量f(z)=z²,Ftξ=ξ/(1-tξ)：W=(1-tξ)²/(1-2tξ)²；t=0的W′=2ξ相合，但t≠0一般不满足原式。
+[ERRATUM?] 标准W应在ξ处取DFt。取全局光滑完备流f(x)=sin x，在ξ=π/2附近Ft(x)=2 arctan(e^t tan(x/2))；t=log 2时字面W=10/17，W′=-198/289，而f′(Ftξ)W=-6/17=-102/289，不相等。
 -/
 theorem variationalequationliteral :
   ∀ (n : ℕ) (f : Position n → Position n) (F : ℝ → Position n → Position n),
@@ -1719,7 +1959,7 @@ theorem variationalequationliteral :
 
 /-- source_id: MD-1.7.2-NearbyTrajectoryLiteral · unnumbered_claim · printed p.45 / PDF p.68
 [EXTRA] ≈严格化为固定t、扰动趋0的Frechet小o；沿用原文字面W。
-[ERRATUM?] 原文字面W在Ftξ而不是ξ；前条非线性流提供不同Jacobian的反例，不能用修正版flowFirstOrder_proof冒充。
+[ERRATUM?] 同一全局sin流在ξ=π/2,t=log 2时DFt(ξ)=4/5，字面DFt(Ftξ)=10/17；差额线性项不为小o。须导师裁定取值点，当前不静默修正。
 -/
 theorem nearby_trajectory_literal :
   ∀ (n : ℕ) (F : ℝ → Position n → Position n), differentiableFlow F →

@@ -1,0 +1,362 @@
+[
+  {
+    "source_id": "MD-1.1.1-MorseMinimum",
+    "distinct_attempts": 3,
+    "failed_attempts": 3,
+    "timebox_exhausted": true,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-final-1.log",
+        "sha256": "78feccd1c5ae733651bcc09d98accb70e05abde8465d82dd11cf34e0d8ce8f3a"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-final-2.log",
+        "sha256": "ecac0949c4591505dcb0ef351da56857951ec20d78d82da5012a5e15ac697dbd"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-final-3.log",
+        "sha256": "95d218232439135505c45aea39b0094a4bf4008e7947b1383eba048fa856107c"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.1.1-LJRepulsion",
+    "distinct_attempts": 3,
+    "failed_attempts": 2,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-final-1.log",
+        "sha256": "78feccd1c5ae733651bcc09d98accb70e05abde8465d82dd11cf34e0d8ce8f3a"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-final-2.log",
+        "sha256": "ecac0949c4591505dcb0ef351da56857951ec20d78d82da5012a5e15ac697dbd"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-final-3.log",
+        "sha256": "95d218232439135505c45aea39b0094a4bf4008e7947b1383eba048fa856107c"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.2-LJTimeScaling",
+    "distinct_attempts": 3,
+    "failed_attempts": 2,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-ljtime-1.log",
+        "sha256": "4dbe246b03b2b586afa9624a36c4986641b6e0cc865792ca4773bde4b74eff05"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-ljtime-2.log",
+        "sha256": "bf9b4c0f34854494377304aec5bde555f57ddf0a2422e8c107a6b1652bda0964"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-ljtime-3.log",
+        "sha256": "fa4eee76974810dafc0eae65665f6db2e7e077c50632bf52f099d830347fb329"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.2-MomentumConservation",
+    "distinct_attempts": 2,
+    "failed_attempts": 1,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-last-short-1.log",
+        "sha256": "03febaf5699aacd70359ee0a7b58320b2b740afed6287d519874594d5290b496"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-last-short-3.log",
+        "sha256": "533399d8d78e4f001e344631942852c9da91382ae03ad07a9fe0d9a2e191364e"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.4-HamiltonFixedMass",
+    "distinct_attempts": 2,
+    "failed_attempts": 1,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-final-1.log",
+        "sha256": "78feccd1c5ae733651bcc09d98accb70e05abde8465d82dd11cf34e0d8ce8f3a"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-final-2.log",
+        "sha256": "ecac0949c4591505dcb0ef351da56857951ec20d78d82da5012a5e15ac697dbd"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.5-Nonconfining",
+    "distinct_attempts": 1,
+    "failed_attempts": 0,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-1.log",
+        "sha256": "db50a47f825bd2d97b14e0d4b35b6351c0757b39ac91a80e37ad4719080f979d"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.5.1-FlowEnergy",
+    "distinct_attempts": 3,
+    "failed_attempts": 2,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-1.log",
+        "sha256": "db50a47f825bd2d97b14e0d4b35b6351c0757b39ac91a80e37ad4719080f979d"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-2.log",
+        "sha256": "597fd20fa812ae3cb9551ed8c1d102ffb0e573995ca471b8a7d22c7c11a2c65b"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-3.log",
+        "sha256": "cb49ead6536802338f9e2686529538ae7cb338bed3c2562e13b80e7f5eff5444"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerMomentum",
+    "distinct_attempts": 1,
+    "failed_attempts": 0,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-1.log",
+        "sha256": "db50a47f825bd2d97b14e0d4b35b6351c0757b39ac91a80e37ad4719080f979d"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-HamiltonEquilibrium",
+    "distinct_attempts": 1,
+    "failed_attempts": 0,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-final-2.log",
+        "sha256": "ecac0949c4591505dcb0ef351da56857951ec20d78d82da5012a5e15ac697dbd"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.5.3-PositiveHessianQuadratic",
+    "distinct_attempts": 3,
+    "failed_attempts": 2,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-1.log",
+        "sha256": "db50a47f825bd2d97b14e0d4b35b6351c0757b39ac91a80e37ad4719080f979d"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-2.log",
+        "sha256": "597fd20fa812ae3cb9551ed8c1d102ffb0e573995ca471b8a7d22c7c11a2c65b"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-3.log",
+        "sha256": "cb49ead6536802338f9e2686529538ae7cb338bed3c2562e13b80e7f5eff5444"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.6-UnorderedPairCount",
+    "distinct_attempts": 2,
+    "failed_attempts": 1,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16-1.log",
+        "sha256": "792650da1e9a1f9a1ae22c61c775aaefe6c358adf76abc70cb0d4c4d8097759d"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16-2.log",
+        "sha256": "827d152375f58019ed4248f25a609810dc391a52084b00d47d37edcaacac9814"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.6-HexagonalLattice",
+    "distinct_attempts": 3,
+    "failed_attempts": 2,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16more-1.log",
+        "sha256": "37bf005f063a64f63f53de5aa954d388f0bfd524f6960ed845979816c0d17b26"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16more-2.log",
+        "sha256": "4a7badb7f228cf4beab2a3bc74fbdd944ef74f14b5671805238eed341e67b8ec"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16more-3.log",
+        "sha256": "ea24f5524aa821361d465cf153b22b9f8850358b5de6543c20b9107fe4c606a6"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.6-PeriodicTranslationMomentum",
+    "distinct_attempts": 3,
+    "failed_attempts": 3,
+    "timebox_exhausted": true,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16more-2.log",
+        "sha256": "4a7badb7f228cf4beab2a3bc74fbdd944ef74f14b5671805238eed341e67b8ec"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16more-3.log",
+        "sha256": "ea24f5524aa821361d465cf153b22b9f8850358b5de6543c20b9107fe4c606a6"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-periodic-3.log",
+        "sha256": "4d86968e9f720b6d52cff8136fb1780f676d11f0ff056db96a5df97f30dd9e46"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.6.1-ForceLinearization",
+    "distinct_attempts": 3,
+    "failed_attempts": 2,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16-1.log",
+        "sha256": "792650da1e9a1f9a1ae22c61c775aaefe6c358adf76abc70cb0d4c4d8097759d"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16-2.log",
+        "sha256": "827d152375f58019ed4248f25a609810dc391a52084b00d47d37edcaacac9814"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16-3.log",
+        "sha256": "532b67151459694bc2759b64406f0470cbcc227a029a7866c63ed61df45314ca"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.6.1-ComplexNormalMode",
+    "distinct_attempts": 3,
+    "failed_attempts": 3,
+    "timebox_exhausted": true,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-complex-1.log",
+        "sha256": "d607086cb12b0a10b230eaf171c4fb6089a3af4303256e0d30286813cb5c1ca1"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16more-1.log",
+        "sha256": "37bf005f063a64f63f53de5aa954d388f0bfd524f6960ed845979816c0d17b26"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec16more-2.log",
+        "sha256": "4a7badb7f228cf4beab2a3bc74fbdd944ef74f14b5671805238eed341e67b8ec"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.7-CentralPairGradient",
+    "distinct_attempts": 2,
+    "failed_attempts": 1,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-1.log",
+        "sha256": "db50a47f825bd2d97b14e0d4b35b6351c0757b39ac91a80e37ad4719080f979d"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-2.log",
+        "sha256": "597fd20fa812ae3cb9551ed8c1d102ffb0e573995ca471b8a7d22c7c11a2c65b"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.7-CentralAngularMomentum",
+    "distinct_attempts": 1,
+    "failed_attempts": 0,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-angular-1.log",
+        "sha256": "8642d2d3aa9fab1ac497531fb6bcde0b2810099d69f5c43b1c5876c427b41409"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.7-CenterOfMassMotion",
+    "distinct_attempts": 2,
+    "failed_attempts": 1,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-last-short-1.log",
+        "sha256": "03febaf5699aacd70359ee0a7b58320b2b740afed6287d519874594d5290b496"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-last-short-3.log",
+        "sha256": "533399d8d78e4f001e344631942852c9da91382ae03ad07a9fe0d9a2e191364e"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.7-IsoscelesEnergyReduction",
+    "distinct_attempts": 2,
+    "failed_attempts": 1,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-last-short-2.log",
+        "sha256": "996443721fe8588487b9e0fee3c939bf191521168df8026a43c0661d6d3b4191"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-energy-2.log",
+        "sha256": "f007f2a774b9ce877e19786655012d0a6b9ef7a68fdf3ac4662a7bbb203b6f35"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.7-EquilateralTrimerMinimum",
+    "distinct_attempts": 3,
+    "failed_attempts": 3,
+    "timebox_exhausted": true,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-trimer-1.log",
+        "sha256": "0e6617a12f04f16a9d2827b6fd1b2c020fd2342543b353c41619650b263bd09e"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-trimer-2.log",
+        "sha256": "419c638aa92d7213205c62e1550685ddbce59d6ff44db83f0f41387835887690"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-trimer-3.log",
+        "sha256": "0df47d1e8ae8e4b734713fff016dbaed76d5b5c77288918a536905b8264b12f9"
+      }
+    ]
+  },
+  {
+    "source_id": "MD-1.7.2-PositiveLyapunovGrowth",
+    "distinct_attempts": 2,
+    "failed_attempts": 1,
+    "timebox_exhausted": false,
+    "logs": [
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-1.log",
+        "sha256": "db50a47f825bd2d97b14e0d4b35b6351c0757b39ac91a80e37ad4719080f979d"
+      },
+      {
+        "file": "blueprint/ch01/validation/proof-attempts/proof-sec17-2.log",
+        "sha256": "597fd20fa812ae3cb9551ed8c1d102ffb0e573995ca471b8a7d22c7c11a2c65b"
+      }
+    ]
+  }
+]

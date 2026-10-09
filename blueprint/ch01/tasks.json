@@ -233,8 +233,8 @@
       "MD-1.5.1-FlowInverse"
     ],
     "stage": "combined_json_review_semantic_audit",
-    "status": "ACTIVE",
-    "task_file": "blueprint/ch01/mathcopilot_tasks/PILOT_ALL.md",
+    "status": "SUPERSEDED_ARCHIVED",
+    "task_file": "blueprint/ch01/mathcopilot_tasks/archive/PILOT_ALL.md",
     "base_commit": "0f0999d1c5b7adbcf35e30fcb277e022224fa07b",
     "input_fingerprints": {
       "MD-1.5.3-Thm1.1": {
@@ -276,6 +276,7 @@
     ],
     "output_schema": "array[{source_id,json_review:{status,issue_codes,corrected_json,issues,evidence},audit:{lean_decl,verdict,explanation,counterexample,suggested_fix}}]",
     "independent_blueprint_translation": "CANCELLED_NOT_REQUIRED",
-    "reaudit_task_file": "blueprint/ch01/mathcopilot_tasks/PILOT_REAUDIT.md"
+    "reaudit_task_file": "blueprint/ch01/mathcopilot_tasks/PILOT_REAUDIT.md",
+    "superseded_by": "BATCH01"
   }
 }

@@ -42,7 +42,8 @@
         "before_sha256": "ed167f52115e5ea9d0bd16168460ee67544284d8bb650c47f93b7aacde4503e0",
         "after_sha256": "15c882d153436a4622fba98867b6fada60a25b60c46ed413654ae763c1a28a12"
       }
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-EnergyConservation",
@@ -81,7 +82,8 @@
         "before_sha256": "7f312da1537b6dbc8de851fa3386482fce4bb6e0cd4da388f067e5bc8e71c458",
         "after_sha256": "602eec4ec54600d2453b232c7f51b0ab138de3d3f56be31e060fb6e6d0aed2c5"
       }
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.3-NewtonEulerLagrange",
@@ -120,7 +122,8 @@
         "before_sha256": "f1b2f920de30a049706acea0983e0b77c579ba964de2bef6732506baf3824aea",
         "after_sha256": "1a2246dbfd6de1a5d68c368c83933fd807672cc490097359d2afea3f40aaf4e8"
       }
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.4-LegendreHamiltonian",
@@ -156,7 +159,7 @@
     ],
     "extra_assumptions": [],
     "statement_scope": "从“If M(q) is invertible”到“written in terms of positions and momenta.”；前一计算为proof_latex，前置抽象定义为context_notation；Hamilton方程属于下一条。",
-    "review_status": "NEEDS_HUMAN",
+    "review_status": "DRAFT",
     "repair_log": [
       {
         "stage": "LOCAL_DRAFT",
@@ -164,7 +167,8 @@
         "before_sha256": "134f84e19b17bad810cdb8cdd0308bbcefb36fe2b17b2402605eae163c911a15",
         "after_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00"
       }
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.1-FlowInverse",
@@ -196,7 +200,8 @@
     ],
     "statement_scope": "完整反演/可逆/Abelian群律段；恒等元ψ0由flow定义，结论覆盖双向反演、双射和加法/交换律。",
     "review_status": "DRAFT",
-    "repair_log": []
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1-Schrodinger",
@@ -215,7 +220,7 @@
     "issues": [],
     "lean_decl": "MD.Ch01.schrodingerEquation",
     "extra_assumptions": [
-      "Lean质量及Planck常数以正参数给定；定义采用总导数算子，仅定义满足方程的关系，不声明存在解。"
+      "正质量及正Planck参数；按经典解解释，Φ在时间/位置联合C2，保证总导数算子表示实际偏导数；不声明解存在。"
     ],
     "repair_log": [],
     "old_ids": [
@@ -225,7 +230,8 @@
       "CH01-004",
       "CH01-005",
       "CH01-006"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1-NewtonModel",
@@ -251,7 +257,8 @@
       "CH01-007",
       "CH01-008",
       "CH01-009"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1-HardSphere",
@@ -273,7 +280,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-010"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.1-Multibody",
@@ -298,7 +306,8 @@
       "CH01-012",
       "CH01-013",
       "CH01-014"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.1-Morse",
@@ -320,7 +329,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-015"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.1-MorseMinimum",
@@ -332,7 +342,9 @@
     "statement_latex": "(See Fig. 1.5.) $r_e$ is the location of the minimum, $D$ gives the well depth, and $a$ is a shape parameter that can be used to control the curvature at the minimum.",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
+    "context_notation": [
+      "a controls curvature为定性形状参数说明，合并为Morse定义背景；原页无二阶导数公式，不凭计算添加原文公式。"
+    ],
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.morse_minimum",
@@ -342,7 +354,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-016"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.1-LengthBond",
@@ -365,7 +378,8 @@
     "old_ids": [
       "CH01-017",
       "CH01-018"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.1-Dispersion",
@@ -387,7 +401,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-019"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.1-Buckingham",
@@ -409,7 +424,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-020"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.1-LennardJones",
@@ -431,20 +447,21 @@
     "repair_log": [],
     "old_ids": [
       "CH01-021"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.1-LJRepulsion",
     "kind": "unnumbered_claim",
     "label": null,
     "section": "1.1.1",
-    "printed_page": "11",
-    "pdf_page": "34",
-    "statement_latex": "of short-ranged soft walls in molecular dynamics, i.e., the fact that $\\varphi_{\\mathrm{LJ}}$ tends rapidly to positive infinity as $r\\to0$, the atoms remain well separated in long simulations. The singularity at $r=0$ is therefore rarely encountered in dynamics trajectories, however the presence of the singularity may nonetheless create problems for mathematical analysis, as many theoretical techniques rely on assumed smoothness.",
+    "printed_page": "10–11",
+    "pdf_page": "33–34",
+    "statement_latex": "Because of the strongly repulsive character of short-ranged soft walls in molecular dynamics, i.e., the fact that $\\varphi_{\\mathrm{LJ}}$ tends rapidly to positive infinity as $r\\to0$, the atoms remain well separated in long simulations. The singularity at $r=0$ is therefore rarely encountered in dynamics trajectories, however the presence of the singularity may nonetheless create problems for mathematical analysis, as many theoretical techniques rely on assumed smoothness.",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
-      "p.10末句开头为Because of the strongly repulsive character，当前引用从p.11延续部分开始；定性模拟经验不等同严格无碰撞定理。"
+      "数学结论是原文r→0极限；长模拟保持分离为定性经验，不升级为有限能量全局无碰撞定理。"
     ],
     "review_status": "DRAFT",
     "issues": [],
@@ -452,9 +469,9 @@
     "extra_assumptions": [],
     "repair_log": [],
     "old_ids": [
-      "CH01-022",
-      "CH01-198"
-    ]
+      "CH01-022"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.1-HeterogeneousLJ",
@@ -474,7 +491,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-023"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.2-Coulomb",
@@ -497,7 +515,8 @@
     "old_ids": [
       "CH01-024",
       "CH01-025"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.2-Cutoff",
@@ -517,7 +536,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-026"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.2-Yukawa",
@@ -545,7 +565,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-027"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.2-AngleBond",
@@ -568,7 +589,8 @@
     "old_ids": [
       "CH01-028",
       "CH01-029"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.2-Dihedral",
@@ -590,7 +612,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-030"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.1.2-GayBerne",
@@ -621,691 +644,8 @@
       "CH01-041",
       "CH01-042",
       "CH01-043"
-    ]
-  },
-  {
-    "source_id": "MD-1.3-Lagrangian",
-    "kind": "definition",
-    "label": null,
-    "section": "1.3",
-    "printed_page": "22",
-    "pdf_page": "45",
-    "statement_latex": "For the system (1.3) with N atoms and $N_c=3N$ configuration coordinates, the Lagrangian is\n\\[L\\stackrel{\\mathrm{def}}=\\frac{\\dot{\\boldsymbol q}^{T}\\boldsymbol M\\dot{\\boldsymbol q}}2-U(\\boldsymbol q).\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "固定对角M；n=Nc，三维按质量重复坐标。nBodyKineticEnergy_eq_inner给出矩阵二次式一致性。"
     ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.fixedMassLagrangian",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-070"
-    ]
-  },
-  {
-    "source_id": "MD-1.3-GeneralizedCoordinates",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.3",
-    "printed_page": "23",
-    "pdf_page": "46",
-    "statement_latex": "When we introduce a smooth change of variables $\\boldsymbol q=\\boldsymbol\\Phi(\\boldsymbol Q)$, where $\\boldsymbol\\Phi:\\mathbb R^{N_c}\\to\\mathbb R^{N_c}$, this induces a corresponding transformation of the velocity vector by\n\\[\\dot{\\boldsymbol q}=\\boldsymbol\\Phi'(\\boldsymbol Q)\\dot{\\boldsymbol Q},\\]\nwhere $\\boldsymbol\\Phi'$ is the $N_c\\times N_c$ Jacobian matrix of $\\boldsymbol\\Phi$. Then the Lagrangian of the system is transformed to\n\\[\\widetilde L=\\frac{\\dot{\\boldsymbol Q}^{T}\\boldsymbol\\Phi'(\\boldsymbol Q)^{T}\\boldsymbol M\\boldsymbol\\Phi'(\\boldsymbol Q)\\dot{\\boldsymbol Q}}2-U(\\boldsymbol\\Phi(\\boldsymbol Q)),\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "J=Φ′(Q)真实Frechet导数；generalizedMassMatrix=JᵀMJ；后段允许k=Nd≤Nc参数化约束流形。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.generalized_coordinates",
-    "extra_assumptions": [
-      "原文smooth可在本结论弱化至点态真实可微；k可小于n，含原文约束推广。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-074",
-      "CH01-075",
-      "CH01-076",
-      "CH01-077"
-    ]
-  },
-  {
-    "source_id": "MD-1.3-GeneralizedMassRegular",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.3",
-    "printed_page": "23",
-    "pdf_page": "46",
-    "statement_latex": "We will assume that any such changes of variables are regular transformations in the sense that $\\boldsymbol\\Phi'$ is of full rank and the resulting generalized mass matrix is invertible.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "这是原文模型假设及其由正定质量推出的关系，不假设结论可逆。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.generalizedmassregular",
-    "extra_assumptions": [
-      "正粒子质量；full rank为Jacobian列单射，符合n≥k。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-078"
-    ]
-  },
-  {
-    "source_id": "MD-1.4-ConvexLegendre",
-    "kind": "definition",
-    "label": null,
-    "section": "1.4",
-    "printed_page": "24",
-    "pdf_page": "47",
-    "statement_latex": "Abstractly, a Legendre transformation of a given convex function $g=g(\\boldsymbol\\xi):\\mathbb R^m\\to\\mathbb R$ is a new function $\\widetilde g=\\widetilde g(\\boldsymbol\\eta):\\mathbb R^m\\to\\mathbb R$ defined by\n\\[\\widetilde g(\\boldsymbol\\eta)=\\sup_{\\boldsymbol\\xi}(\\boldsymbol\\eta^T\\boldsymbol\\xi-g(\\boldsymbol\\xi)),\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [
-      {
-        "code": "ERRATUM?",
-        "status": "NEEDS_HUMAN",
-        "detail": "原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。"
-      }
-    ],
-    "lean_decl": "MD.Ch01.legendreTransform",
-    "extra_assumptions": [
-      "值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-079"
-    ]
-  },
-  {
-    "source_id": "MD-1.4-HamiltonEquations",
-    "kind": "definition",
-    "label": null,
-    "section": "1.4",
-    "printed_page": "24",
-    "pdf_page": "47",
-    "statement_latex": "The equations of motion can be written\n\\[\\dot{\\boldsymbol q}=\\frac{\\partial H}{\\partial\\boldsymbol p},\\qquad\\dot{\\boldsymbol p}=-\\frac{\\partial H}{\\partial\\boldsymbol q}.\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "速度与动量导数均是真导数；H可微的模型背景在使用时另给资格。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.hamiltonEquations",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-084"
-    ]
-  },
-  {
-    "source_id": "MD-1.4-HamiltonFixedMass",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.4",
-    "printed_page": "24",
-    "pdf_page": "47",
-    "statement_latex": "For constant $\\boldsymbol M$ we obtain the dynamical equations,\n\\[\\dot{\\boldsymbol q}=\\boldsymbol M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol F=-\\partial U/\\partial\\boldsymbol q.\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.hamilton_fixed_mass",
-    "extra_assumptions": [
-      "常质量矩阵M对称正定，来自机械模型满秩坐标变换；U真实可微。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-085"
-    ]
-  },
-  {
-    "source_id": "MD-1.4-HamiltonLagrangeEquivalence",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.4",
-    "printed_page": "25",
-    "pdf_page": "48",
-    "statement_latex": "More generally, for molecular models, the Hamiltonian and Lagrangian formulations are interchangeable, but the use of the Hamiltonian form is preferred for allowing simplified description of the geometric character of the solutions of the system as we discuss in Chaps. 2–4.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.hamiltonlagrangeequivalence",
-    "extra_assumptions": [
-      "一般配置相关M C2、U C2、M逐点正定；轨迹q′=v真实且时间域开放。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-086"
-    ]
-  },
-  {
-    "source_id": "MD-1.4-PhaseSpace",
-    "kind": "definition",
-    "label": null,
-    "section": "1.4",
-    "printed_page": "25",
-    "pdf_page": "48",
-    "statement_latex": "The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $\\mathbb R^3$ is described by coordinates and positions, i.e., by a point in $\\mathbb R^{6N}$.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.finiteEnergyPhaseDomain",
-    "extra_assumptions": [
-      "采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-087",
-      "CH01-088"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-UniformPairLattice",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "33",
-    "pdf_page": "56",
-    "statement_latex": "Let us suppose we have a uniform pair potential $\\varphi$ and define the total potential energy of a system of N atoms by\n\\[U(x_1,x_2,\\ldots,x_N)=\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi(|x_i-x_j|).\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.latticePairPotential",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-149"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-UnorderedPairCount",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "33",
-    "pdf_page": "56",
-    "statement_latex": "The computation of the energy requires $N(N-1)/2$ separate calculations, which could be very expensive if N is large.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "只形式化无序pair计数；计算成本定性评价不作定理。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.unorderedpaircount",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-150"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-NearestNeighbor",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "33",
-    "pdf_page": "56",
-    "statement_latex": "We can reduce this by assuming only nearest neighbor forces, which means the energy becomes\n\\[U(x_1,x_2,\\ldots,x_N)=\\sum_{i=1}^{N-1}\\varphi(|x_{i+1}-x_i|).\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "Lean有N+1个site，对应原文N；加一避空首末索引，下同。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.nearestNeighborModel",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-151"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-WalledChain",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "33",
-    "pdf_page": "56",
-    "statement_latex": "In order to keep such a system bounded we might then introduce walls at the ends of the chain, e.g. by adding confining potentials to $U$:\n\\[U(x_1,x_2,\\ldots,x_N)=\\varphi_c(|x_1|)+\\varphi_c(|L-x_N|)+\\sum_{i=1}^{N-1}\\varphi(|x_{i+1}-x_i|).\\tag{1.7}\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.walledChainModel",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-152"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-PeriodicChain",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "33",
-    "pdf_page": "56",
-    "statement_latex": "Alternatively one could restrict to a bounded domain by use of periodic boundary conditions, introducing the potential energy:\n\\[U(x_1,x_2,\\ldots,x_N)=\\sum_{i=1}^{N-1}\\varphi(|x_{i+1}-x_i|)+\\varphi(|L+x_1-x_N|).\\tag{1.8}\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.periodicChainModel",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-153"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-PeriodicBoundary",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "34",
-    "pdf_page": "57",
-    "statement_latex": "If a particle moves to the right of $x=L$ we simply shift its position to $x-L$; likewise any particle exiting to the left of $x=0$ has its position shifted to $x+L$ (see Fig. 1.15).",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "周期位置等价类：x与x+kL，k∈Z；实际越界wrap代表选择原文只给左右各一步。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.periodicBoundary",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-154"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-PeriodicTranslationMomentum",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "34",
-    "pdf_page": "57",
-    "statement_latex": "Periodic boundary conditions allow us to preserve Newton’s third law, the translational symmetry, and thus the conservation of momentum.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "翻译不变模型作用的常向量方向导数零，使总内力零；动量守恒复用MomentumConservation条目。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.periodic_translation_momentum",
-    "extra_assumptions": [
-      "一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-155"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-RegularLattice",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "34",
-    "pdf_page": "57",
-    "statement_latex": "On the line, we think of a (finite) lattice as a sequence of discrete points separated by a fixed distance $\\Delta x$.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.regularLattice",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-156"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-RegularLatticeMinimizerLiteral",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "34",
-    "pdf_page": "57",
-    "statement_latex": "An obvious benefit of using periodic boundary conditions is that, with a uniform pair potential, the energy minimizers are points of a regular lattice; with confining potentials this is unlikely to be the case.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [
-      {
-        "code": "ERRATUM?",
-        "status": "NEEDS_HUMAN",
-        "detail": "对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。"
-      }
-    ],
-    "lean_decl": "MD.Ch01.regularlatticeminimizerliteral",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-157"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-PeriodicImages",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "35",
-    "pdf_page": "58",
-    "statement_latex": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol v_1+l\\boldsymbol v_2+m\\boldsymbol v_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol v_i^T=(L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "Fin3索引减1枚举-1,0,1；逐原子3向量加L(k,l,m)，等价全配置向量重复位移。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.periodicImageEnergy",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-158"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-MinimumImage",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "35",
-    "pdf_page": "58",
-    "statement_latex": "The minimum image convention states that, in computing the force, a given atom interacts only with the nearest replica of any other atom.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "L>0，minimumImage只定义最近复制体关系，不断言任意选择同一atom自作用。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.minimumImage",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-159"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-RhombicLattice",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "35",
-    "pdf_page": "58",
-    "statement_latex": "In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice, with sides of fixed length $n_x,n_y$ and the angle between them ($\\theta$), see Fig. 1.17.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "a=nx,b=ny；定义只编码基向量Z线性组合，不声称低温平衡一定如此。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.rhombicLattice",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-160"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-HexagonalLattice",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "35",
-    "pdf_page": "58",
-    "statement_latex": "it can be viewed as a rhombic lattice with $n_x=n_y$ and $\\theta=120^\\circ$; it can also be viewed as a rhombic lattice with $\\theta=60^\\circ$",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "Fig1.17图注；等长60°/120°两基给同一格。当前def采用60°；120°等价几何需独立证明不作为def存在假设。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.hexagonal_lattice_two_bases",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-161"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-UnitCell",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "35",
-    "pdf_page": "58",
-    "statement_latex": "The unit cell is a description of the arrangement of atoms within a box; unit cells may be stacked in each direction to describe an atomic lattice.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "B为三基向量矩阵，motif为盒内点集；定义按整数平移重复。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.unitCellLattice",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-162"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-FCCStacking",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "36",
-    "pdf_page": "59",
-    "statement_latex": "The fcc lattice corresponds to the common arrangement by which cannonballs are stacked into pyramidal structures; it can be viewed as a periodic stacking (ABCABC. . . ) of three hexagonally structured planar layers, as illustrated in Fig. 1.18.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.fccStacking",
-    "extra_assumptions": [
-      "将图示ABC编码为单位边长等边三角层，层高sqrt(2/3)及偏移由close-packed图示编码，正文未列数值公式。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-164"
-    ]
-  },
-  {
-    "source_id": "MD-1.6-HCPStacking",
-    "kind": "definition",
-    "label": null,
-    "section": "1.6",
-    "printed_page": "36",
-    "pdf_page": "59",
-    "statement_latex": "Also shown in Fig. 1.18 is the hcp lattice, which, on the other hand, alternates two distinct planar lattices.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.hcpStacking",
-    "extra_assumptions": [
-      "图示AB两个三角层，单位化层高及偏移是具体close-packed图示编码。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-165"
-    ]
-  },
-  {
-    "source_id": "MD-1.6.1-MinimumGradientZero",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.6.1",
-    "printed_page": "36–37",
-    "pdf_page": "59–60",
-    "statement_latex": "Regardless of the choice of boundary and/or the inclusion of non-pairwise potentials, the minimum of the potential energy occurs where\n\\[\\nabla U=0,\\]\nwhich gives in general a nonlinear system of $N_c$ equations in $N_c$ unknowns to be solved for the position vector $\\boldsymbol q^*$ associated to mechanical equilibrium.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [
-      {
-        "code": "ERRATUM?",
-        "status": "NEEDS_HUMAN",
-        "detail": "不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。"
-      }
-    ],
-    "lean_decl": "MD.Ch01.minimumgradientzero",
-    "extra_assumptions": [
-      "可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-166"
-    ]
-  },
-  {
-    "source_id": "MD-1.6.1-ForceLinearization",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.6.1",
-    "printed_page": "37",
-    "pdf_page": "60",
-    "statement_latex": "At the equilibrium point, we can linearize the system of differential equations by computing the Hessian matrix, then we find\n\\[\\nabla U(\\boldsymbol q)\\approx U''(\\boldsymbol q^*)(\\boldsymbol q-\\boldsymbol q^*).\\]\nThen, letting $\\delta\\boldsymbol q=\\boldsymbol q-\\boldsymbol q^*$, $\\delta\\boldsymbol p$ represent small deviations from the equilibrium point at $(\\boldsymbol q,\\boldsymbol p)=(\\boldsymbol q^*,0)$, we have\n\\[\\frac{\\mathrm d\\delta\\boldsymbol q}{\\mathrm dt}=\\boldsymbol M^{-1}\\delta\\boldsymbol p,\\qquad\\frac{\\mathrm d\\delta\\boldsymbol p}{\\mathrm dt}=-U''(\\boldsymbol q^*)\\delta\\boldsymbol q.\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.force_linearization",
-    "extra_assumptions": [
-      "真实C2势及平衡梯度零；一般常M，原文M正定由机械背景保证但导数等式不需此资格。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-167",
-      "CH01-168",
-      "CH01-170"
-    ]
-  },
-  {
-    "source_id": "MD-1.6.1-MinimumHessianLiteral",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.6.1",
-    "printed_page": "37",
-    "pdf_page": "60",
-    "statement_latex": "At the minimum of the potential energy, $U''$ is a positive definite symmetric matrix.",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [
-      {
-        "code": "ERRATUM?",
-        "status": "NEEDS_HUMAN",
-        "detail": "局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。"
-      }
-    ],
-    "lean_decl": "MD.Ch01.minimumhessianliteral",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-169"
-    ]
-  },
-  {
-    "source_id": "MD-1.6.1-ImaginarySpectrum",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.6.1",
-    "printed_page": "37",
-    "pdf_page": "60",
-    "statement_latex": "The eigenvalues of the matrix\n\\[\\boldsymbol A:=\\begin{bmatrix}0&\\boldsymbol M^{-1}\\\\-U''(\\boldsymbol q^*)&0\\end{bmatrix}\\]\nare therefore all purely imaginary ($\\pm i\\Omega$, $\\Omega^2\\in\\mathbb R^+$).",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.imaginary_spectrum",
-    "extra_assumptions": [
-      "M和Hessian K正定；复谱实虚向量编码。"
-    ],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-171"
-    ]
-  },
-  {
-    "source_id": "MD-1.6.1-ComplexNormalMode",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.6.1",
-    "printed_page": "37",
-    "pdf_page": "60",
-    "statement_latex": "Associated to each eigenvalue pair we have a pair of complex conjugate eigenvectors $\\boldsymbol\\xi,\\overline{\\boldsymbol\\xi}$ and also a pair of solutions which can be written in the complex form\n\\[\\boldsymbol z(t)=ae^{i\\Omega t}\\boldsymbol\\xi+be^{-i\\Omega t}\\overline{\\boldsymbol\\xi},\\]\n($a,b$ complex coefficients),",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "实A确保共轭模式；两个解的复线性组合，未强迫结果为实。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.complexnormalmode",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-172"
-    ]
-  },
-  {
-    "source_id": "MD-1.6.1-RealNormalMode",
-    "kind": "unnumbered_claim",
-    "label": null,
-    "section": "1.6.1",
-    "printed_page": "37",
-    "pdf_page": "60",
-    "statement_latex": "or recast in real form as ($\\alpha,\\beta$ real coefficients):\n\\[\\boldsymbol z(t)=\\alpha[\\sin(\\Omega t)\\operatorname{Re}(\\boldsymbol\\xi)+\\cos(\\Omega t)\\operatorname{Im}(\\boldsymbol\\xi)]+\\beta[\\cos(\\Omega t)\\operatorname{Re}(\\boldsymbol\\xi)-\\sin(\\Omega t)\\operatorname{Im}(\\boldsymbol\\xi)].\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
-    "context_notation": [
-      "u=Reξ,v=Imξ，Au=-Ωv、Av=Ωu来自实矩阵复特征向量方程；realNormalMode展开即原式。"
-    ],
-    "review_status": "DRAFT",
-    "issues": [],
-    "lean_decl": "MD.Ch01.realnormalmode",
-    "extra_assumptions": [],
-    "repair_log": [],
-    "old_ids": [
-      "CH01-173"
-    ]
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-NewtonCompact",
@@ -1335,7 +675,8 @@
       "CH01-048",
       "CH01-049",
       "CH01-050"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-DegreesFreedom",
@@ -1357,7 +698,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-051"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-ConstraintDimension",
@@ -1379,7 +721,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-052"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-TotalEnergy",
@@ -1403,7 +746,8 @@
       "CH01-053",
       "CH01-054",
       "CH01-057"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-PairCancellation",
@@ -1427,7 +771,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-058"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-MomentumConservation",
@@ -1444,16 +789,17 @@
     ],
     "review_status": "DRAFT",
     "issues": [],
-    "lean_decl": "MD.Ch01.momentumconservation",
+    "lean_decl": "MD.Ch01.momentum_conservation",
     "extra_assumptions": [
-      "开放连通时间区间；净力为零来自前文内部力消去，此桥接显式采用净力条件。"
+      "真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。"
     ],
     "repair_log": [],
     "old_ids": [
       "CH01-059",
       "CH01-060",
       "CH01-061"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-HarmonicSolution",
@@ -1478,7 +824,8 @@
     "old_ids": [
       "CH01-062",
       "CH01-063"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-ScalarMechanical",
@@ -1500,7 +847,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-064"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-ScalarQuadrature",
@@ -1525,7 +873,8 @@
     "old_ids": [
       "CH01-065",
       "CH01-066"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-UniformLJSystem",
@@ -1547,7 +896,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-068"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-RadialLJForceLiteral",
@@ -1575,7 +925,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-069"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-LJCoordinateScaling",
@@ -1597,7 +948,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-199"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.2-LJTimeScaling",
@@ -1621,7 +973,212 @@
     "repair_log": [],
     "old_ids": [
       "CH01-200"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.3-Lagrangian",
+    "kind": "definition",
+    "label": null,
+    "section": "1.3",
+    "printed_page": "22",
+    "pdf_page": "45",
+    "statement_latex": "For the system (1.3) with N atoms and $N_c=3N$ configuration coordinates, the Lagrangian is\n\\[L\\stackrel{\\mathrm{def}}=\\frac{\\dot{\\boldsymbol q}^{T}\\boldsymbol M\\dot{\\boldsymbol q}}2-U(\\boldsymbol q).\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "固定对角M；n=Nc，三维按质量重复坐标。nBodyKineticEnergy_eq_inner给出矩阵二次式一致性。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.fixedMassLagrangian",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-070"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.3-GeneralizedCoordinates",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.3",
+    "printed_page": "23",
+    "pdf_page": "46",
+    "statement_latex": "When we introduce a smooth change of variables $\\boldsymbol q=\\boldsymbol\\Phi(\\boldsymbol Q)$, where $\\boldsymbol\\Phi:\\mathbb R^{N_c}\\to\\mathbb R^{N_c}$, this induces a corresponding transformation of the velocity vector by\n\\[\\dot{\\boldsymbol q}=\\boldsymbol\\Phi'(\\boldsymbol Q)\\dot{\\boldsymbol Q},\\]\nwhere $\\boldsymbol\\Phi'$ is the $N_c\\times N_c$ Jacobian matrix of $\\boldsymbol\\Phi$. Then the Lagrangian of the system is transformed to\n\\[\\widetilde L=\\frac{\\dot{\\boldsymbol Q}^{T}\\boldsymbol\\Phi'(\\boldsymbol Q)^{T}\\boldsymbol M\\boldsymbol\\Phi'(\\boldsymbol Q)\\dot{\\boldsymbol Q}}2-U(\\boldsymbol\\Phi(\\boldsymbol Q)),\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "J=Φ′(Q)真实Frechet导数；generalizedMassMatrix=JᵀMJ；后段允许k=Nd≤Nc参数化约束流形。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.generalized_coordinates",
+    "extra_assumptions": [
+      "原文smooth可在本结论弱化至点态真实可微；k可小于n，含原文约束推广。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-074",
+      "CH01-075",
+      "CH01-076",
+      "CH01-077"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.3-GeneralizedMassRegular",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.3",
+    "printed_page": "23",
+    "pdf_page": "46",
+    "statement_latex": "We will assume that any such changes of variables are regular transformations in the sense that $\\boldsymbol\\Phi'$ is of full rank and the resulting generalized mass matrix is invertible.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "这是原文模型假设及其由正定质量推出的关系，不假设结论可逆。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.generalizedmassregular",
+    "extra_assumptions": [
+      "正粒子质量；full rank为Jacobian列单射，符合n≥k。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-078"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.4-ConvexLegendre",
+    "kind": "definition",
+    "label": null,
+    "section": "1.4",
+    "printed_page": "24",
+    "pdf_page": "47",
+    "statement_latex": "Abstractly, a Legendre transformation of a given convex function $g=g(\\boldsymbol\\xi):\\mathbb R^m\\to\\mathbb R$ is a new function $\\widetilde g=\\widetilde g(\\boldsymbol\\eta):\\mathbb R^m\\to\\mathbb R$ defined by\n\\[\\widetilde g(\\boldsymbol\\eta)=\\sup_{\\boldsymbol\\xi}(\\boldsymbol\\eta^T\\boldsymbol\\xi-g(\\boldsymbol\\xi)),\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.legendreTransform",
+    "extra_assumptions": [
+      "值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-079"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.4-HamiltonEquations",
+    "kind": "definition",
+    "label": null,
+    "section": "1.4",
+    "printed_page": "24",
+    "pdf_page": "47",
+    "statement_latex": "The equations of motion can be written\n\\[\\dot{\\boldsymbol q}=\\frac{\\partial H}{\\partial\\boldsymbol p},\\qquad\\dot{\\boldsymbol p}=-\\frac{\\partial H}{\\partial\\boldsymbol q}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "速度与动量导数均是真导数；H可微的模型背景在使用时另给资格。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hamiltonEquations",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-084"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.4-HamiltonFixedMass",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.4",
+    "printed_page": "24",
+    "pdf_page": "47",
+    "statement_latex": "For constant $\\boldsymbol M$ we obtain the dynamical equations,\n\\[\\dot{\\boldsymbol q}=\\boldsymbol M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol F=-\\partial U/\\partial\\boldsymbol q.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hamilton_fixed_mass",
+    "extra_assumptions": [
+      "常质量矩阵M对称正定，来自机械模型满秩坐标变换；U真实可微。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-085"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.4-HamiltonLagrangeEquivalence",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.4",
+    "printed_page": "25",
+    "pdf_page": "48",
+    "statement_latex": "More generally, for molecular models, the Hamiltonian and Lagrangian formulations are interchangeable, but the use of the Hamiltonian form is preferred for allowing simplified description of the geometric character of the solutions of the system as we discuss in Chaps. 2–4.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hamiltonlagrangeequivalence",
+    "extra_assumptions": [
+      "一般配置相关M C2、U C2、M逐点正定；轨迹q′=v真实且时间域开放。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-086"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.4-PhaseSpace",
+    "kind": "definition",
+    "label": null,
+    "section": "1.4",
+    "printed_page": "25",
+    "pdf_page": "48",
+    "statement_latex": "The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $\\mathbb R^3$ is described by coordinates and positions, i.e., by a point in $\\mathbb R^{6N}$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "p.25原句described by coordinates and positions字面重复位置；前句定义是positions and momenta，Lean按前句定义保留位置×动量，原句不静默改字。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.finiteEnergyPhaseDomain",
+    "extra_assumptions": [
+      "采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-087",
+      "CH01-088"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5-LocalExistUnique",
@@ -1643,7 +1200,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-089"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5-EnergySurface",
@@ -1665,7 +1223,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-090"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5-EnergyBounds",
@@ -1674,9 +1233,9 @@
     "section": "1.5",
     "printed_page": "25",
     "pdf_page": "48",
-    "statement_latex": "Assume that $U$ is a potential energy function which is bounded below, $U\\geq U_{\\min}$. For given $E_0\\geq U_{\\min}$ define $\\Sigma_{E_0}=\\{(\\boldsymbol q,\\boldsymbol p)\\mid H(\\boldsymbol q,\\boldsymbol p)=E_0\\}$. Then, for $(\\boldsymbol q,\\boldsymbol p)\\in\\Sigma_{E_0}$\n\\[\\frac{\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p}2+U(\\boldsymbol q)=E_0\\Rightarrow\\frac{\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p}2=E_0-U(\\boldsymbol q)\\leq E_0-U_{\\min}.\\]\n$\\boldsymbol M^{-1}$ is a positive definite matrix (assumed here to be constant), so we can infer that the momenta are bounded at fixed total energy. We would like to say something similar for positions. We have, at energy $E_0$,\n\\[U_{\\min}\\leq U(\\boldsymbol q)\\leq E_0.\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
+    "statement_latex": "Assume that $U$ is a potential energy function which is bounded below, $U\\geq U_{\\min}$. For given $E_0\\geq U_{\\min}$ define $\\Sigma_{E_0}=\\{(\\boldsymbol q,\\boldsymbol p)\\mid H(\\boldsymbol q,\\boldsymbol p)=E_0\\}$. Then, for $(\\boldsymbol q,\\boldsymbol p)\\in\\Sigma_{E_0}$ we have\n\\[\\frac{\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p}2+U(\\boldsymbol q)=E_0\\Rightarrow\\frac{\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p}2=E_0-U(\\boldsymbol q)\\leq E_0-U_{\\min}.\\]\n$\\boldsymbol M^{-1}$ is a positive definite matrix (assumed here to be constant), so we can infer that the momenta are bounded at fixed total energy. We would like to say something similar for positions. We have, at energy $E_0$,\n\\[U_{\\min}\\leq U(\\boldsymbol q)\\leq E_0.\\]",
+    "proof_latex": "Then, for $(\\boldsymbol q,\\boldsymbol p)\\in\\Sigma_{E_0}$ we have\n\\[\\frac{\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p}2+U(\\boldsymbol q)=E_0\\Rightarrow\\frac{\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p}2=E_0-U(\\boldsymbol q)\\leq E_0-U_{\\min}.\\]\n$\\boldsymbol M^{-1}$ is a positive definite matrix (assumed here to be constant), so we can infer that the momenta are bounded at fixed total energy. We would like to say something similar for positions. We have, at energy $E_0$,\n\\[U_{\\min}\\leq U(\\boldsymbol q)\\leq E_0.\\]",
+    "proof_note": "原页能量不等式及正定推界论证逐字引用；与陈述合引部分保留，未添加原书没有的证明。",
     "context_notation": [],
     "review_status": "DRAFT",
     "issues": [],
@@ -1684,12 +1243,20 @@
     "extra_assumptions": [
       "U定义在整个欧氏位置域；保持一般常M⁻¹正定，未换成固定对角特例。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "LOCAL_RENDER_RECHECK",
+        "reason": "重看PDF48补漏we have；将原页论证同时列入proof_latex。",
+        "before_sha256": "9f6ec2e74844dd0cce30bf00f28ede9dfc17e7532d8e7f0f4216f7db3726b89d",
+        "after_sha256": "84def7c6102bd8cd0852473f4092b9e1ce4e723e67d24688edf6712c8e1a32b4"
+      }
+    ],
     "old_ids": [
       "CH01-091",
       "CH01-092",
       "CH01-093"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5-UniformLevelsCompact",
@@ -1712,7 +1279,8 @@
     "old_ids": [
       "CH01-094",
       "CH01-096"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5-CompactContinuation",
@@ -1734,7 +1302,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-095"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5-Nonconfining",
@@ -1754,7 +1323,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-097"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.1-FlowMap",
@@ -1776,7 +1346,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-098"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.1-FlowEnergy",
@@ -1798,7 +1369,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-101"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.1-HarmonicPhaseFlow",
@@ -1820,7 +1392,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-102"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.1-SpectralSolution",
@@ -1844,7 +1417,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-103"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.1-BasisCoefficients",
@@ -1866,7 +1440,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-105"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.1-MatrixExponentialSolution",
@@ -1888,7 +1463,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-106"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.1-MatrixExpSeries",
@@ -1911,7 +1487,8 @@
     "old_ids": [
       "CH01-107",
       "CH01-108"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-FirstIntegral",
@@ -1933,7 +1510,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-109"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-FirstIntegralCriterion",
@@ -1955,7 +1533,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-110"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-PlanarGraphReduction",
@@ -1980,7 +1559,8 @@
     "old_ids": [
       "CH01-111",
       "CH01-112"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-PlanarQuadrature",
@@ -2002,7 +1582,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-113"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-ScalarFirstIntegral",
@@ -2017,14 +1598,15 @@
     "context_notation": [],
     "review_status": "DRAFT",
     "issues": [],
-    "lean_decl": "MD.Ch01.scalarfirstintegral",
+    "lean_decl": "MD.Ch01.scalar_first_integral_and_quadrature",
     "extra_assumptions": [
-      "U C2；原文integrable的quadrature结论复用§1.2条目，不等同于全局闭式轨道。"
+      "U C2；开放时间段真实解、积分逆图使用速度非零点；转向点全局拼接不声称已有证明。"
     ],
     "repair_log": [],
     "old_ids": [
       "CH01-114"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.1-RealSpectralSolution",
@@ -2046,7 +1628,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-104"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-KeplerEnergy",
@@ -2068,7 +1651,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-115"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-KeplerConservedEnergy",
@@ -2081,18 +1665,19 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
-      "另一守恒量独立列KeplerAngularMomentum；可积重建列KeplerFullSolution。"
+      "本条保留整句全部结论；旋转对称理由另见KeplerAngularMomentum；完整重建公式另见KeplerFullSolution。"
     ],
     "review_status": "DRAFT",
     "issues": [],
-    "lean_decl": "MD.Ch01.keplerconservedenergy",
+    "lean_decl": "MD.Ch01.kepler_energy_angular_integrability",
     "extra_assumptions": [
-      "真实机械轨迹、非碰撞开放时间区间；n=2对应平面。"
+      "真实平面非碰撞机械解；积分重建的整个存在区间含0，角为连续实提升；不声称穿越碰撞的全局轨道。"
     ],
     "repair_log": [],
     "old_ids": [
       "CH01-116"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-KeplerAngularMomentum",
@@ -2114,7 +1699,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-117"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-KeplerMomentum",
@@ -2136,7 +1722,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-201"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-PolarCoordinates",
@@ -2158,7 +1745,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-118"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-KeplerPolarLagrangian",
@@ -2168,8 +1756,8 @@
     "printed_page": "29",
     "pdf_page": "52",
     "statement_latex": "\\[L=K-U=\\frac12(\\dot r\\cos\\theta-r\\dot\\theta\\sin\\theta)^2+\\frac12(\\dot r\\sin\\theta+r\\dot\\theta\\cos\\theta)^2+\\frac1r=\\frac{\\dot r^2}2+\\frac{r^2\\dot\\theta^2}2+\\frac1r.\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
+    "proof_latex": "\\[L=K-U=\\frac12(\\dot r\\cos\\theta-r\\dot\\theta\\sin\\theta)^2+\\frac12(\\dot r\\sin\\theta+r\\dot\\theta\\cos\\theta)^2+\\frac1r=\\frac{\\dot r^2}2+\\frac{r^2\\dot\\theta^2}2+\\frac1r.\\]",
+    "proof_note": "原页三角/代数恒等式计算即原文论证，逐字引用；原文陈述中的同一计算保留。",
     "context_notation": [
       "v=r′、ω=θ′；公式为代数恒等式，物理域r>0。"
     ],
@@ -2180,7 +1768,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-119"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-KeplerPolarODE",
@@ -2202,7 +1791,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-120"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-PolarAngularIdentity",
@@ -2212,8 +1802,8 @@
     "printed_page": "29",
     "pdf_page": "52",
     "statement_latex": "Expressed in polar coordinates this is\n\\[l_z=(r\\cos\\theta)(\\dot r\\sin\\theta+r\\dot\\theta\\cos\\theta)-(r\\sin\\theta)(\\dot r\\cos\\theta-r\\dot\\theta\\sin\\theta)\n=r^2\\dot\\theta(\\cos^2\\theta+\\sin^2\\theta)=r^2\\dot\\theta,\\]",
-    "proof_latex": null,
-    "proof_note": "原书无独立完整证明。",
+    "proof_latex": "Expressed in polar coordinates this is\n\\[l_z=(r\\cos\\theta)(\\dot r\\sin\\theta+r\\dot\\theta\\cos\\theta)-(r\\sin\\theta)(\\dot r\\cos\\theta-r\\dot\\theta\\sin\\theta)\n=r^2\\dot\\theta(\\cos^2\\theta+\\sin^2\\theta)=r^2\\dot\\theta,\\]",
+    "proof_note": "原页三角/代数恒等式计算即原文论证，逐字引用；原文陈述中的同一计算保留。",
     "context_notation": [
       "保留三角恒等式计算中的真实速度对应，代数定理不需r>0。"
     ],
@@ -2224,7 +1814,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-121"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-KeplerRadialReduction",
@@ -2246,16 +1837,17 @@
     "repair_log": [],
     "old_ids": [
       "CH01-122"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-KeplerRadialEnergy",
     "kind": "definition",
     "label": null,
     "section": "1.5.2",
-    "printed_page": "30",
-    "pdf_page": "53",
-    "statement_latex": "system with energy\n\\[\\widehat E(r,\\dot r)=\\frac{\\dot r^2}2-\\frac1r+\\frac{l_z^2}{2r^2}.\\]",
+    "printed_page": "29–30",
+    "pdf_page": "52–53",
+    "statement_latex": "The equation for $r$ is that of a one-degree-of-freedom system with energy\n\\[\\widehat E(r,\\dot r)=\\frac{\\dot r^2}2-\\frac1r+\\frac{l_z^2}{2r^2}.\\]",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
@@ -2268,7 +1860,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-123"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-KeplerFullSolution",
@@ -2292,7 +1885,8 @@
       "CH01-124",
       "CH01-125",
       "CH01-126"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-ActionAngleCoordinates",
@@ -2315,7 +1909,8 @@
     "old_ids": [
       "CH01-127",
       "CH01-202"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-ActionEnergy",
@@ -2337,7 +1932,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-128"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-ActionODE",
@@ -2359,7 +1955,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-129"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-ActionSolution",
@@ -2383,7 +1980,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-130"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-HarmonicTorus",
@@ -2405,7 +2003,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-131"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-TorusPeriod",
@@ -2427,7 +2026,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-132"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-TorusDense",
@@ -2455,7 +2055,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-133"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.2-LocalActionAngleReduction",
@@ -2483,7 +2084,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-134"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-Equilibrium",
@@ -2503,7 +2105,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-135"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-ConstantEquilibrium",
@@ -2523,7 +2126,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-136"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-EquilibriumLinearization",
@@ -2546,7 +2150,8 @@
     "old_ids": [
       "CH01-137",
       "CH01-138"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-Hyperbolic",
@@ -2568,7 +2173,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-139"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-HartmanGrobmanLiteral",
@@ -2596,7 +2202,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-140"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-LyapunovStability",
@@ -2618,7 +2225,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-141"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-HyperbolicStabilityTransfer",
@@ -2640,7 +2248,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-142"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-HamiltonEquilibrium",
@@ -2662,7 +2271,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-143"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-StrongLocalMinimum",
@@ -2682,7 +2292,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-144"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-LinearizedHamiltonian",
@@ -2704,7 +2315,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-146"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-PositiveHessianQuadratic",
@@ -2726,7 +2338,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-147"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.5.3-PositiveHessianMinimum",
@@ -2748,7 +2361,524 @@
     "repair_log": [],
     "old_ids": [
       "CH01-148"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-UniformPairLattice",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "33",
+    "pdf_page": "56",
+    "statement_latex": "Let us suppose we have a uniform pair potential $\\varphi$ and define the total potential energy of a system of N atoms by\n\\[U(x_1,x_2,\\ldots,x_N)=\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi(|x_i-x_j|).\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.latticePairPotential",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-149"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-UnorderedPairCount",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "33",
+    "pdf_page": "56",
+    "statement_latex": "The computation of the energy requires $N(N-1)/2$ separate calculations, which could be very expensive if N is large.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "只形式化无序pair计数；计算成本定性评价不作定理。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.unorderedpaircount",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-150"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-NearestNeighbor",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "33",
+    "pdf_page": "56",
+    "statement_latex": "We can reduce this by assuming only nearest neighbor forces, which means the energy becomes\n\\[U(x_1,x_2,\\ldots,x_N)=\\sum_{i=1}^{N-1}\\varphi(|x_{i+1}-x_i|).\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "Lean有N+1个site，对应原文N；加一避空首末索引，下同。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.nearestNeighborModel",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-151"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-WalledChain",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "33",
+    "pdf_page": "56",
+    "statement_latex": "In order to keep such a system bounded we might then introduce walls at the ends of the chain, e.g. by adding confining potentials to $U$:\n\\[U(x_1,x_2,\\ldots,x_N)=\\varphi_c(|x_1|)+\\varphi_c(|L-x_N|)+\\sum_{i=1}^{N-1}\\varphi(|x_{i+1}-x_i|).\\tag{1.7}\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.walledChainModel",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-152"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-PeriodicChain",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "33",
+    "pdf_page": "56",
+    "statement_latex": "Alternatively one could restrict to a bounded domain by use of periodic boundary conditions, introducing the potential energy:\n\\[U(x_1,x_2,\\ldots,x_N)=\\sum_{i=1}^{N-1}\\varphi(|x_{i+1}-x_i|)+\\varphi(|L+x_1-x_N|).\\tag{1.8}\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.periodicChainModel",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-153"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-PeriodicBoundary",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "34",
+    "pdf_page": "57",
+    "statement_latex": "If a particle moves to the right of $x=L$ we simply shift its position to $x-L$; likewise any particle exiting to the left of $x=0$ has its position shifted to $x+L$ (see Fig. 1.15).",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "周期位置等价类：x与x+kL，k∈Z；实际越界wrap代表选择原文只给左右各一步。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.periodicBoundary",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-154"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-PeriodicTranslationMomentum",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "34",
+    "pdf_page": "57",
+    "statement_latex": "Periodic boundary conditions allow us to preserve Newton’s third law, the translational symmetry, and thus the conservation of momentum.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "翻译不变模型作用的常向量方向导数零，使总内力零；动量守恒复用MomentumConservation条目。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.periodic_translation_momentum",
+    "extra_assumptions": [
+      "一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-155"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-RegularLattice",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "34",
+    "pdf_page": "57",
+    "statement_latex": "On the line, we think of a (finite) lattice as a sequence of discrete points separated by a fixed distance $\\Delta x$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.regularLattice",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-156"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-RegularLatticeMinimizerLiteral",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "34",
+    "pdf_page": "57",
+    "statement_latex": "An obvious benefit of using periodic boundary conditions is that, with a uniform pair potential, the energy minimizers are points of a regular lattice; with confining potentials this is unlikely to be the case.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.regularlatticeminimizerliteral",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-157"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-PeriodicImages",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "35",
+    "pdf_page": "58",
+    "statement_latex": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol v_1+l\\boldsymbol v_2+m\\boldsymbol v_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol v_i^T=(L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "Fin3索引减1枚举-1,0,1；逐原子3向量加L(k,l,m)，等价全配置向量重复位移。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.periodicImageEnergy",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-158"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-MinimumImage",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "35",
+    "pdf_page": "58",
+    "statement_latex": "The minimum image convention states that, in computing the force, a given atom interacts only with the nearest replica of any other atom.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "L>0，minimumImage只定义最近复制体关系，不断言任意选择同一atom自作用。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.minimumImage",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-159"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-RhombicLattice",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "35",
+    "pdf_page": "58",
+    "statement_latex": "In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice, with sides of fixed length $n_x,n_y$ and the angle between them ($\\theta$), see Fig. 1.17.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "a=nx,b=ny；定义只编码基向量Z线性组合，不声称低温平衡一定如此。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.rhombicLattice",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-160"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-HexagonalLattice",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "35",
+    "pdf_page": "58",
+    "statement_latex": "it can be viewed as a rhombic lattice with $n_x=n_y$ and $\\theta=120^\\circ$; it can also be viewed as a rhombic lattice with $\\theta=60^\\circ$",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "Fig1.17图注；等长60°/120°两基给同一格。当前def采用60°；120°等价几何需独立证明不作为def存在假设。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hexagonal_lattice_two_bases",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-161"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-UnitCell",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "35",
+    "pdf_page": "58",
+    "statement_latex": "The unit cell is a description of the arrangement of atoms within a box; unit cells may be stacked in each direction to describe an atomic lattice.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "B为三基向量矩阵，motif为盒内点集；定义按整数平移重复。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.unitCellLattice",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-162"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-FCCStacking",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "36",
+    "pdf_page": "59",
+    "statement_latex": "The fcc lattice corresponds to the common arrangement by which cannonballs are stacked into pyramidal structures; it can be viewed as a periodic stacking (ABCABC. . . ) of three hexagonally structured planar layers, as illustrated in Fig. 1.18.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.fccStacking",
+    "extra_assumptions": [
+      "将图示ABC编码为单位边长等边三角层，层高sqrt(2/3)及偏移由close-packed图示编码，正文未列数值公式。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-164"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6-HCPStacking",
+    "kind": "definition",
+    "label": null,
+    "section": "1.6",
+    "printed_page": "36",
+    "pdf_page": "59",
+    "statement_latex": "Also shown in Fig. 1.18 is the hcp lattice, which, on the other hand, alternates two distinct planar lattices.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hcpStacking",
+    "extra_assumptions": [
+      "图示AB两个三角层，单位化层高及偏移是具体close-packed图示编码。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-165"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6.1-MinimumGradientZero",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.6.1",
+    "printed_page": "36–37",
+    "pdf_page": "59–60",
+    "statement_latex": "Regardless of the choice of boundary and/or the inclusion of non-pairwise potentials, the minimum of the potential energy occurs where\n\\[\\nabla U=0,\\]\nwhich gives in general a nonlinear system of $N_c$ equations in $N_c$ unknowns to be solved for the position vector $\\boldsymbol q^*$ associated to mechanical equilibrium.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.minimumgradientzero",
+    "extra_assumptions": [
+      "可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-166"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6.1-ForceLinearization",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.6.1",
+    "printed_page": "37",
+    "pdf_page": "60",
+    "statement_latex": "At the equilibrium point, we can linearize the system of differential equations by computing the Hessian matrix, then we find\n\\[\\nabla U(\\boldsymbol q)\\approx U''(\\boldsymbol q^*)(\\boldsymbol q-\\boldsymbol q^*).\\]\nThen, letting $\\delta\\boldsymbol q=\\boldsymbol q-\\boldsymbol q^*$, $\\delta\\boldsymbol p$ represent small deviations from the equilibrium point at $(\\boldsymbol q,\\boldsymbol p)=(\\boldsymbol q^*,0)$, we have\n\\[\\frac{\\mathrm d\\delta\\boldsymbol q}{\\mathrm dt}=\\boldsymbol M^{-1}\\delta\\boldsymbol p,\\qquad\\frac{\\mathrm d\\delta\\boldsymbol p}{\\mathrm dt}=-U''(\\boldsymbol q^*)\\delta\\boldsymbol q.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.force_linearization",
+    "extra_assumptions": [
+      "真实C2势及平衡梯度零；一般常M，原文M正定由机械背景保证但导数等式不需此资格。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-167",
+      "CH01-168",
+      "CH01-170"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6.1-MinimumHessianLiteral",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.6.1",
+    "printed_page": "37",
+    "pdf_page": "60",
+    "statement_latex": "At the minimum of the potential energy, $U''$ is a positive definite symmetric matrix.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.minimumhessianliteral",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-169"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6.1-ImaginarySpectrum",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.6.1",
+    "printed_page": "37",
+    "pdf_page": "60",
+    "statement_latex": "The eigenvalues of the matrix\n\\[\\boldsymbol A:=\\begin{bmatrix}0&\\boldsymbol M^{-1}\\\\-U''(\\boldsymbol q^*)&0\\end{bmatrix}\\]\nare therefore all purely imaginary ($\\pm i\\Omega$, $\\Omega^2\\in\\mathbb R^+$).",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.imaginary_spectrum",
+    "extra_assumptions": [
+      "M和Hessian K正定；复谱实虚向量编码。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-171"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6.1-ComplexNormalMode",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.6.1",
+    "printed_page": "37",
+    "pdf_page": "60",
+    "statement_latex": "Associated to each eigenvalue pair we have a pair of complex conjugate eigenvectors $\\boldsymbol\\xi,\\overline{\\boldsymbol\\xi}$ and also a pair of solutions which can be written in the complex form\n\\[\\boldsymbol z(t)=ae^{i\\Omega t}\\boldsymbol\\xi+be^{-i\\Omega t}\\overline{\\boldsymbol\\xi},\\]\n($a,b$ complex coefficients),",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "实A确保共轭模式；两个解的复线性组合，未强迫结果为实。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.complexnormalmode",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-172"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-1.6.1-RealNormalMode",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.6.1",
+    "printed_page": "37",
+    "pdf_page": "60",
+    "statement_latex": "or recast in real form as ($\\alpha,\\beta$ real coefficients):\n\\[\\boldsymbol z(t)=\\alpha[\\sin(\\Omega t)\\operatorname{Re}(\\boldsymbol\\xi)+\\cos(\\Omega t)\\operatorname{Im}(\\boldsymbol\\xi)]+\\beta[\\cos(\\Omega t)\\operatorname{Re}(\\boldsymbol\\xi)-\\sin(\\Omega t)\\operatorname{Im}(\\boldsymbol\\xi)].\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "u=Reξ,v=Imξ，Au=-Ωv、Av=Ωu来自实矩阵复特征向量方程；realNormalMode展开即原式。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.realnormalmode",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-173"
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-PlanarTrimerModel",
@@ -2768,7 +2898,8 @@
     "lean_decl": "MD.Ch01.planarTrimerEnergy",
     "extra_assumptions": [],
     "repair_log": [],
-    "old_ids": []
+    "old_ids": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-CentralPairPotential",
@@ -2790,7 +2921,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-174"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-CentralPairGradient",
@@ -2812,7 +2944,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-175"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-CentralMomentum",
@@ -2829,14 +2962,15 @@
     ],
     "review_status": "DRAFT",
     "issues": [],
-    "lean_decl": "MD.Ch01.centralmomentum",
+    "lean_decl": "MD.Ch01.central_momentum",
     "extra_assumptions": [
-      "逐对作用反对称推出净力零；真实Newton解和连通时间区间。"
+      "真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。"
     ],
     "repair_log": [],
     "old_ids": [
       "CH01-176"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-CentralAngularMomentum",
@@ -2860,7 +2994,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-177"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-CenterOfMassMotion",
@@ -2884,7 +3019,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-178"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-ConstantRotationLiteral",
@@ -2910,7 +3046,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-179"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-IsoscelesCoordinates",
@@ -2938,7 +3075,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-180"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-IsoscelesEnergyReduction",
@@ -2960,7 +3098,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-181"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-IsoscelesAccessibleRegion",
@@ -2980,7 +3119,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-182"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-EquilateralTrimerMinimum",
@@ -3002,7 +3142,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-203"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-TrimerEnergyLowerBound",
@@ -3024,7 +3165,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-204"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-CollinearTrimer",
@@ -3046,7 +3188,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-205"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-TrimerSaddle",
@@ -3068,7 +3211,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-206"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7-TrimerEscapeLiteral",
@@ -3086,7 +3230,7 @@
       {
         "code": "ERRATUM?",
         "status": "NEEDS_HUMAN",
-        "detail": "保留原文每个body最终逃逸到∞的字面结论及前段质心固定、等腰、零角动量背景；正能量到散射的论证缺失，待导师裁定。"
+        "detail": "every body逃逸字面过强：取等腰退化为共线y≡0，q₁=(x,0,0)、q₂=(-x,0,0)、q₃=0，中心粒子合力零，质心/动量/角动量均零；x>1的外向正能量解使外侧两粒子逃逸而中心始终固定。需裁定是否改为至少一对分离。"
       }
     ],
     "lean_decl": "MD.Ch01.trimerescapeliteral",
@@ -3094,7 +3238,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-207"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7.1-ChaosConditions",
@@ -3119,7 +3264,8 @@
       "CH01-183",
       "CH01-184",
       "CH01-185"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7.1-TransitivityErgodicityLiteral",
@@ -3147,7 +3293,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-186"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7.1-AnisotropicOscillator",
@@ -3174,7 +3321,8 @@
       "CH01-187",
       "CH01-188",
       "CH01-189"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7.2-FlowJacobianLiteral",
@@ -3203,7 +3351,8 @@
     "old_ids": [
       "CH01-190",
       "CH01-191"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7.2-VariationalEquationLiteral",
@@ -3221,7 +3370,7 @@
       {
         "code": "ERRATUM?",
         "status": "NEEDS_HUMAN",
-        "detail": "前条字面W=D Ft(Ftξ)多出取值点移动链式项。局部标量f(z)=z²,Ftξ=ξ/(1-tξ)：W=(1-tξ)²/(1-2tξ)²；t=0的W′=2ξ相合，但t≠0一般不满足原式。"
+        "detail": "标准W应在ξ处取DFt。取全局光滑完备流f(x)=sin x，在ξ=π/2附近Ft(x)=2 arctan(e^t tan(x/2))；t=log 2时字面W=10/17，W′=-198/289，而f′(Ftξ)W=-6/17=-102/289，不相等。"
       }
     ],
     "lean_decl": "MD.Ch01.variationalequationliteral",
@@ -3229,7 +3378,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-192"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7.2-NearbyTrajectoryLiteral",
@@ -3247,7 +3397,7 @@
       {
         "code": "ERRATUM?",
         "status": "NEEDS_HUMAN",
-        "detail": "原文字面W在Ftξ而不是ξ；前条非线性流提供不同Jacobian的反例，不能用修正版flowFirstOrder_proof冒充。"
+        "detail": "同一全局sin流在ξ=π/2,t=log 2时DFt(ξ)=4/5，字面DFt(Ftξ)=10/17；差额线性项不为小o。须导师裁定取值点，当前不静默修正。"
       }
     ],
     "lean_decl": "MD.Ch01.nearby_trajectory_literal",
@@ -3257,7 +3407,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-193"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7.2-SingularValues",
@@ -3281,7 +3432,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-194"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7.2-SingularEllipsoid",
@@ -3303,7 +3455,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-195"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7.2-LyapunovExponents",
@@ -3327,7 +3480,8 @@
     "repair_log": [],
     "old_ids": [
       "CH01-196"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
     "source_id": "MD-1.7.2-PositiveLyapunovGrowth",
@@ -3351,6 +3505,7 @@
     "repair_log": [],
     "old_ids": [
       "CH01-197"
-    ]
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]

@@ -1,6 +1,6 @@
 # 第1章 Lean Blueprint 本地审阅材料
 
-覆盖印刷p.1–45正文，习题除外。原文JSON仍为DRAFT；本地模板C预审独立于网站审计。网站未返回，所有条目均待网站审计，未冻结。编译和公理检查只验证当前Lean陈述/证明，不证明其忠于原文，也不验证物理模型。
+覆盖印刷p.1–45正文，习题除外。原文JSON审校状态见各条；本地模板C预审独立于网站审计。已整合网站返回0条，其余待网站审计；未冻结。编译和公理检查验证当前Lean陈述/证明，原文忠实性由独立审校核验。
 
 | source_id | 页码 印刷/PDF | 本地预审 | 网站审计 | 状态 |
 |---|---|---|---|---|
@@ -14,12 +14,12 @@
 | MD-1.1-HardSphere | 7/30 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-1.1.1-Multibody | 8/31 | PASS | 待网站审计 | self-contained |
 | MD-1.1.1-Morse | 8/31 | PASS | 待网站审计 | self-contained |
-| MD-1.1.1-MorseMinimum | 8/31 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-1.1.1-MorseMinimum | 8/31 | PASS | 待网站审计 | incomplete |
 | MD-1.1.1-LengthBond | 9/32 | PASS | 待网站审计 | self-contained |
 | MD-1.1.1-Dispersion | 10/33 | PASS | 待网站审计 | self-contained |
 | MD-1.1.1-Buckingham | 10/33 | PASS | 待网站审计 | self-contained |
 | MD-1.1.1-LennardJones | 10/33 | PASS | 待网站审计 | self-contained |
-| MD-1.1.1-LJRepulsion | 11/34 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-1.1.1-LJRepulsion | 10–11/33–34 | PASS | 待网站审计 | self-contained |
 | MD-1.1.1-HeterogeneousLJ | 11/34 | PASS | 待网站审计 | self-contained |
 | MD-1.1.2-Coulomb | 12/35 | PASS | 待网站审计 | self-contained |
 | MD-1.1.2-Cutoff | 12/35 | PASS | 待网站审计 | self-contained |
@@ -27,14 +27,77 @@
 | MD-1.1.2-AngleBond | 13/36 | PASS | 待网站审计 | self-contained |
 | MD-1.1.2-Dihedral | 13/36 | PASS | 待网站审计 | self-contained |
 | MD-1.1.2-GayBerne | 16–17/39–40 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.2-NewtonCompact | 18/41 | PASS | 待网站审计 | self-contained |
+| MD-1.2-DegreesFreedom | 18/41 | PASS | 待网站审计 | self-contained |
+| MD-1.2-ConstraintDimension | 18/41 | PASS | 待网站审计 | self-contained |
+| MD-1.2-TotalEnergy | 18/41 | PASS | 待网站审计 | self-contained |
+| MD-1.2-PairCancellation | 19/42 | PASS | 待网站审计 | self-contained |
+| MD-1.2-MomentumConservation | 19/42 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.2-HarmonicSolution | 19–20/42–43 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.2-ScalarMechanical | 20/43 | PASS | 待网站审计 | self-contained |
+| MD-1.2-ScalarQuadrature | 20/43 | PASS | 待网站审计 | incomplete |
+| MD-1.2-UniformLJSystem | 21/44 | PASS | 待网站审计 | self-contained |
+| MD-1.2-RadialLJForceLiteral | 21/44 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-1.2-LJCoordinateScaling | 21/44 | PASS | 待网站审计 | self-contained |
+| MD-1.2-LJTimeScaling | 21–22/44–45 | PASS | 待网站审计 | self-contained |
 | MD-1.3-Lagrangian | 22/45 | PASS | 待网站审计 | self-contained |
 | MD-1.3-GeneralizedCoordinates | 23/46 | PASS | 待网站审计 | checked+documented priors |
 | MD-1.3-GeneralizedMassRegular | 23/46 | PASS | 待网站审计 | checked+documented priors |
 | MD-1.4-ConvexLegendre | 24/47 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-1.4-HamiltonEquations | 24/47 | PASS | 待网站审计 | self-contained |
-| MD-1.4-HamiltonFixedMass | 24/47 | PASS | 待网站审计 | incomplete |
+| MD-1.4-HamiltonFixedMass | 24/47 | PASS | 待网站审计 | checked+documented priors |
 | MD-1.4-HamiltonLagrangeEquivalence | 25/48 | PASS | 待网站审计 | incomplete |
 | MD-1.4-PhaseSpace | 25/48 | PASS | 待网站审计 | self-contained |
+| MD-1.5-LocalExistUnique | 25/48 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5-EnergySurface | 25/48 | PASS | 待网站审计 | self-contained |
+| MD-1.5-EnergyBounds | 25/48 | PASS | 待网站审计 | incomplete |
+| MD-1.5-UniformLevelsCompact | 26/49 | PASS | 待网站审计 | incomplete |
+| MD-1.5-CompactContinuation | 25–26/48–49 | PASS | 待网站审计 | incomplete |
+| MD-1.5-Nonconfining | 26/49 | PASS | 待网站审计 | self-contained |
+| MD-1.5.1-FlowMap | 26/49 | PASS | 待网站审计 | self-contained |
+| MD-1.5.1-FlowEnergy | 26/49 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.1-HarmonicPhaseFlow | 27/50 | PASS | 待网站审计 | self-contained |
+| MD-1.5.1-SpectralSolution | 27/50 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.1-BasisCoefficients | 27/50 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.1-MatrixExponentialSolution | 27/50 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.1-MatrixExpSeries | 27–28/50–51 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-FirstIntegral | 28/51 | PASS | 待网站审计 | self-contained |
+| MD-1.5.2-FirstIntegralCriterion | 28/51 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-PlanarGraphReduction | 28/51 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-PlanarQuadrature | 28/51 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-ScalarFirstIntegral | 28/51 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.1-RealSpectralSolution | 27/50 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-KeplerEnergy | 29/52 | PASS | 待网站审计 | self-contained |
+| MD-1.5.2-KeplerConservedEnergy | 29/52 | PASS | 待网站审计 | incomplete |
+| MD-1.5.2-KeplerAngularMomentum | 29/52 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-KeplerMomentum | 29/52 | PASS | 待网站审计 | self-contained |
+| MD-1.5.2-PolarCoordinates | 29/52 | PASS | 待网站审计 | self-contained |
+| MD-1.5.2-KeplerPolarLagrangian | 29/52 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-KeplerPolarODE | 29/52 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-PolarAngularIdentity | 29/52 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-KeplerRadialReduction | 29/52 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-KeplerRadialEnergy | 29–30/52–53 | PASS | 待网站审计 | self-contained |
+| MD-1.5.2-KeplerFullSolution | 30/53 | PASS | 待网站审计 | incomplete |
+| MD-1.5.2-ActionAngleCoordinates | 30/53 | PASS | 待网站审计 | self-contained |
+| MD-1.5.2-ActionEnergy | 30/53 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-ActionODE | 30/53 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-ActionSolution | 30/53 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-HarmonicTorus | 30/53 | PASS | 待网站审计 | self-contained |
+| MD-1.5.2-TorusPeriod | 30/53 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.2-TorusDense | 30/53 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-1.5.2-LocalActionAngleReduction | 30/53 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-1.5.3-Equilibrium | 31/54 | PASS | 待网站审计 | self-contained |
+| MD-1.5.3-ConstantEquilibrium | 31/54 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.3-EquilibriumLinearization | 31/54 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.5.3-Hyperbolic | 31–32/54–55 | PASS | 待网站审计 | self-contained |
+| MD-1.5.3-HartmanGrobmanLiteral | 31–32/54–55 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-1.5.3-LyapunovStability | 32/55 | PASS | 待网站审计 | self-contained |
+| MD-1.5.3-HyperbolicStabilityTransfer | 32/55 | PASS | 待网站审计 | incomplete |
+| MD-1.5.3-HamiltonEquilibrium | 32/55 | PASS | 待网站审计 | self-contained |
+| MD-1.5.3-StrongLocalMinimum | 32/55 | PASS | 待网站审计 | self-contained |
+| MD-1.5.3-LinearizedHamiltonian | 32/55 | PASS | 待网站审计 | self-contained |
+| MD-1.5.3-PositiveHessianQuadratic | 33/56 | PASS | 待网站审计 | self-contained |
+| MD-1.5.3-PositiveHessianMinimum | 33/56 | PASS | 待网站审计 | incomplete |
 | MD-1.6-UniformPairLattice | 33/56 | PASS | 待网站审计 | self-contained |
 | MD-1.6-UnorderedPairCount | 33/56 | PASS | 待网站审计 | self-contained |
 | MD-1.6-NearestNeighbor | 33/56 | PASS | 待网站审计 | self-contained |
@@ -57,78 +120,15 @@
 | MD-1.6.1-ImaginarySpectrum | 37/60 | PASS | 待网站审计 | incomplete |
 | MD-1.6.1-ComplexNormalMode | 37/60 | PASS | 待网站审计 | incomplete |
 | MD-1.6.1-RealNormalMode | 37/60 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.2-NewtonCompact | 18/41 | PASS | 待网站审计 | self-contained |
-| MD-1.2-DegreesFreedom | 18/41 | PASS | 待网站审计 | self-contained |
-| MD-1.2-ConstraintDimension | 18/41 | PASS | 待网站审计 | self-contained |
-| MD-1.2-TotalEnergy | 18/41 | PASS | 待网站审计 | self-contained |
-| MD-1.2-PairCancellation | 19/42 | PASS | 待网站审计 | self-contained |
-| MD-1.2-MomentumConservation | 19/42 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.2-HarmonicSolution | 19–20/42–43 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.2-ScalarMechanical | 20/43 | PASS | 待网站审计 | self-contained |
-| MD-1.2-ScalarQuadrature | 20/43 | PASS | 待网站审计 | incomplete |
-| MD-1.2-UniformLJSystem | 21/44 | PASS | 待网站审计 | self-contained |
-| MD-1.2-RadialLJForceLiteral | 21/44 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-1.2-LJCoordinateScaling | 21/44 | PASS | 待网站审计 | self-contained |
-| MD-1.2-LJTimeScaling | 21–22/44–45 | PASS | 待网站审计 | incomplete |
-| MD-1.5-LocalExistUnique | 25/48 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5-EnergySurface | 25/48 | PASS | 待网站审计 | self-contained |
-| MD-1.5-EnergyBounds | 25/48 | PASS | 待网站审计 | incomplete |
-| MD-1.5-UniformLevelsCompact | 26/49 | PASS | 待网站审计 | incomplete |
-| MD-1.5-CompactContinuation | 25–26/48–49 | PASS | 待网站审计 | incomplete |
-| MD-1.5-Nonconfining | 26/49 | PASS | 待网站审计 | self-contained |
-| MD-1.5.1-FlowMap | 26/49 | PASS | 待网站审计 | self-contained |
-| MD-1.5.1-FlowEnergy | 26/49 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.1-HarmonicPhaseFlow | 27/50 | PASS | 待网站审计 | self-contained |
-| MD-1.5.1-SpectralSolution | 27/50 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.1-BasisCoefficients | 27/50 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.1-MatrixExponentialSolution | 27/50 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.1-MatrixExpSeries | 27–28/50–51 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-FirstIntegral | 28/51 | PASS | 待网站审计 | self-contained |
-| MD-1.5.2-FirstIntegralCriterion | 28/51 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-PlanarGraphReduction | 28/51 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-PlanarQuadrature | 28/51 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-ScalarFirstIntegral | 28/51 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.1-RealSpectralSolution | 27/50 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-KeplerEnergy | 29/52 | PASS | 待网站审计 | self-contained |
-| MD-1.5.2-KeplerConservedEnergy | 29/52 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-KeplerAngularMomentum | 29/52 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-KeplerMomentum | 29/52 | PASS | 待网站审计 | self-contained |
-| MD-1.5.2-PolarCoordinates | 29/52 | PASS | 待网站审计 | self-contained |
-| MD-1.5.2-KeplerPolarLagrangian | 29/52 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-KeplerPolarODE | 29/52 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-PolarAngularIdentity | 29/52 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-KeplerRadialReduction | 29/52 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-KeplerRadialEnergy | 30/53 | PASS | 待网站审计 | self-contained |
-| MD-1.5.2-KeplerFullSolution | 30/53 | PASS | 待网站审计 | incomplete |
-| MD-1.5.2-ActionAngleCoordinates | 30/53 | PASS | 待网站审计 | self-contained |
-| MD-1.5.2-ActionEnergy | 30/53 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-ActionODE | 30/53 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-ActionSolution | 30/53 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-HarmonicTorus | 30/53 | PASS | 待网站审计 | self-contained |
-| MD-1.5.2-TorusPeriod | 30/53 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.2-TorusDense | 30/53 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-1.5.2-LocalActionAngleReduction | 30/53 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-1.5.3-Equilibrium | 31/54 | PASS | 待网站审计 | self-contained |
-| MD-1.5.3-ConstantEquilibrium | 31/54 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.3-EquilibriumLinearization | 31/54 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.5.3-Hyperbolic | 31–32/54–55 | PASS | 待网站审计 | self-contained |
-| MD-1.5.3-HartmanGrobmanLiteral | 31–32/54–55 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-1.5.3-LyapunovStability | 32/55 | PASS | 待网站审计 | self-contained |
-| MD-1.5.3-HyperbolicStabilityTransfer | 32/55 | PASS | 待网站审计 | incomplete |
-| MD-1.5.3-HamiltonEquilibrium | 32/55 | PASS | 待网站审计 | incomplete |
-| MD-1.5.3-StrongLocalMinimum | 32/55 | PASS | 待网站审计 | self-contained |
-| MD-1.5.3-LinearizedHamiltonian | 32/55 | PASS | 待网站审计 | self-contained |
-| MD-1.5.3-PositiveHessianQuadratic | 33/56 | PASS | 待网站审计 | self-contained |
-| MD-1.5.3-PositiveHessianMinimum | 33/56 | PASS | 待网站审计 | incomplete |
 | MD-1.7-PlanarTrimerModel | 38/61 | PASS | 待网站审计 | self-contained |
 | MD-1.7-CentralPairPotential | 38/61 | PASS | 待网站审计 | self-contained |
 | MD-1.7-CentralPairGradient | 38/61 | PASS | 待网站审计 | self-contained |
 | MD-1.7-CentralMomentum | 39/62 | PASS | 待网站审计 | checked+documented priors |
-| MD-1.7-CentralAngularMomentum | 39/62 | PASS | 待网站审计 | incomplete |
-| MD-1.7-CenterOfMassMotion | 39/62 | PASS | 待网站审计 | incomplete |
+| MD-1.7-CentralAngularMomentum | 39/62 | PASS | 待网站审计 | self-contained |
+| MD-1.7-CenterOfMassMotion | 39/62 | PASS | 待网站审计 | self-contained |
 | MD-1.7-ConstantRotationLiteral | 39/62 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-1.7-IsoscelesCoordinates | 39/62 | PASS | 待网站审计 | self-contained |
-| MD-1.7-IsoscelesEnergyReduction | 39/62 | PASS | 待网站审计 | incomplete |
+| MD-1.7-IsoscelesEnergyReduction | 39/62 | PASS | 待网站审计 | self-contained |
 | MD-1.7-IsoscelesAccessibleRegion | 40/63 | PASS | 待网站审计 | checked+documented priors |
 | MD-1.7-EquilateralTrimerMinimum | 38/61 | PASS | 待网站审计 | incomplete |
 | MD-1.7-TrimerEnergyLowerBound | 40/63 | PASS | 待网站审计 | checked+documented priors |
@@ -148,18 +148,24 @@
 
 ## 需要导师判断的问题
 
-- MD-1.5.3-Thm1.1：按原页核对所有量词、实际导数及完整结论；显式技术前提与范围见[EXTRA]和对应表；既有桥接适用于该签名。
-  用户范围31–32/54–55是背景跨度；定理与证明思路均仅32/55。
 - MD-1.4-LegendreHamiltonian：M=-1,U=p=0时目标v²/2无界；字面可逆前提不足；配置相关一般矩阵不能由固定对角库推出。
   若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。
   现有定理仅固定正对角m；本条保留任意配置相关M(q)、上界、sup、精确达到条件、动量偏导和能量对应，不能直接调用旧定理覆盖。
 - MD-1.1-HardSphere：原文standard rules含方向/法向冲量等未明说内容；当前关系保留不可穿透和两守恒量，但尚不能据此声称完整散射模型。
-- MD-1.1.1-MorseMinimum：已保留最小值和井深；原文还提到a控制曲率，当前签名未含二阶导数，须补齐后进入证明。
-- MD-1.1.1-LJRepulsion：数学极限对应原文论据；atoms remain well separated为定性模拟描述，须裁定是否作为严格无碰撞结论。
 - MD-1.1.2-Yukawa：逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
   原文κ称Debye length，但e^{-κr}的量纲通常对应逆长度；本定义保留字面公式。
+- MD-1.2-RadialLJForceLiteral：保留两条印刷等式，但由负梯度Newton不能推出；须导师裁定勘误，当前不证明假陈述。
+  首个等式缺负号；所印次行实际为势的正梯度，不同于此前Newton负梯度。
 - MD-1.4-ConvexLegendre：原文sup可非有限。EReal是显式[EXTRA]值域修复，不能宣称逐字的R值对象已经PASS。
   原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。
+- MD-1.4-PhaseSpace：逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+  p.25原句described by coordinates and positions字面重复位置；前句定义是positions and momenta，Lean按前句定义保留位置×动量，原句不静默改字。
+- MD-1.5.2-TorusDense：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+  原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。
+- MD-1.5.2-LocalActionAngleReduction：完整保留局部坐标规约及全局环面运动，额外紧/连通资格逐条登记；原文未说这些限制，需导师裁定。
+  local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。
+- MD-1.5.3-HartmanGrobmanLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+  原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。
 - MD-1.6-RegularLatticeMinimizerLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
   对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。
 - MD-1.6-FCCStacking：ABC三周期保留；旧库附带具体几何层高和偏移不是正文逐字公式，需要导师确认图示编码。
@@ -168,29 +174,21 @@
   不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。
 - MD-1.6.1-MinimumHessianLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
   局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。
-- MD-1.2-RadialLJForceLiteral：保留两条印刷等式，但由负梯度Newton不能推出；须导师裁定勘误，当前不证明假陈述。
-  首个等式缺负号；所印次行实际为势的正梯度，不同于此前Newton负梯度。
-- MD-1.5.2-TorusDense：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
-  原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。
-- MD-1.5.2-LocalActionAngleReduction：完整保留局部坐标规约及全局环面运动，额外紧/连通资格逐条登记；原文未说这些限制，需导师裁定。
-  local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。
-- MD-1.5.3-HartmanGrobmanLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
-  原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。
 - MD-1.7-ConstantRotationLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
   角动量常数不推出角速度常数；中心运动r变时θ̇=ℓ/r²。例r(t)=sqrt(1+t²),θ(t)=arctan t,ℓ=1。
 - MD-1.7-IsoscelesCoordinates：逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
   同段“零平动/角动量→等腰”一般过强；这里只定义明确给定的对称配置，不把任意零动量当等腰。
 - MD-1.7-TrimerEscapeLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
-  保留原文每个body最终逃逸到∞的字面结论及前段质心固定、等腰、零角动量背景；正能量到散射的论证缺失，待导师裁定。
+  every body逃逸字面过强：取等腰退化为共线y≡0，q₁=(x,0,0)、q₂=(-x,0,0)、q₃=0，中心粒子合力零，质心/动量/角动量均零；x>1的外向正能量解使外侧两粒子逃逸而中心始终固定。需裁定是否改为至少一对分离。
 - MD-1.7.1-ChaosConditions：两必要性质及transitivity邻域关系保留；敏感依赖正文随后“given pair rapidly grows”不是标准存在扰动量词，需导师确认数学化选择。
 - MD-1.7.1-TransitivityErgodicityLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
   拓扑传递和给定测度遍历通常不等价；μ=0时identity流遍历为真而传递为假。非退化概率测度也需进一步限定。
 - MD-1.7.2-FlowJacobianLiteral：逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
   标准变分矩阵应为DξFt(ξ)，原文把取值点写Ftξ；忠实保留字面定义，后续两条不静默改。
 - MD-1.7.2-VariationalEquationLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
-  前条字面W=D Ft(Ftξ)多出取值点移动链式项。局部标量f(z)=z²,Ftξ=ξ/(1-tξ)：W=(1-tξ)²/(1-2tξ)²；t=0的W′=2ξ相合，但t≠0一般不满足原式。
+  标准W应在ξ处取DFt。取全局光滑完备流f(x)=sin x，在ξ=π/2附近Ft(x)=2 arctan(e^t tan(x/2))；t=log 2时字面W=10/17，W′=-198/289，而f′(Ftξ)W=-6/17=-102/289，不相等。
 - MD-1.7.2-NearbyTrajectoryLiteral：逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-  原文字面W在Ftξ而不是ξ；前条非线性流提供不同Jacobian的反例，不能用修正版flowFirstOrder_proof冒充。
+  同一全局sin流在ξ=π/2,t=log 2时DFt(ξ)=4/5，字面DFt(Ftξ)=10/17；差额线性项不为小o。须导师裁定取值点，当前不静默修正。
 
 ## 1. MD-1.5.3-Thm1.1 · Theorem 1.1 · 印刷p.32 / PDFp.55
 
@@ -225,16 +223,11 @@ theorem theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 位置、动量相空间；固定质量动能+势能系统 | Position n、Momentum n、PhaseSpace n；mechanicalVectorField m (-gradient U) | 一致；n=N_c，三维原子系统n=3N |
-| q*为强局部极小；存在正半径；穿孔邻域U(q)>U(q*) | hstrict : IsStrictPotentialMinOn U Q q₀ | 一致；定义展开含∀q∈Q、q≠q₀、dist<R；[EXTRA] q₀∈Q |
-| smooth potential U | hU : ∀ q∈Q, ContDiffAt ℝ ∞ U q | 一致；原文smooth明确写出 |
-| 正定质量的背景 | hm : ∀ i, 0<m i | [EXTRA] 定理句未重复，p.25背景明确；固定对角模型 |
-| 位置域及局部邻域 | hQ : IsOpen Q | [EXTRA] 邻域在势能定义域内 |
-| z*=(q*,0)是平衡状态 | IsMechanicalEquilibrium ... (q₀,0) | 一致；原文stable以前提平衡点定义，补出隐含资格 |
-| ∀正ε，∃正δ，∀初值z₀；欧氏距离<δ | IsFutureMechanicalStableEuclidean的ε/δ/z₀量词 | 一致；正容差解释及欧氏phaseEuclideanDistance，非乘积最大距离 |
-| 所有t≥0的流存在 | 该稳定定义中的∃a<0、∃γ、IsMechanicalSolutionOn (Ioi a)、γ0=z₀ | 一致；显式未来存在，避免无解时稳定断言空真 |
-| sup(t≥0)\|\|F_t(z₀)-z*\|\|<ε | ∀同初值未来解，BddAbove(range ...) ∧ sSup(range ...)<ε | 一致；有界性保护实数sSup，严格<保留；尚待独立语义审计 |
-| 原书疑点 | 用户范围31–32/54–55是背景跨度；定理与证明思路均仅32/55。 | [ERRATUM?] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)<br>    (Q : Set (Position n)) (q₀ : Position n)<br>    (hm : ∀ i, 0 < m i) (hQ : IsOpen Q)<br>    (hU : ∀ q ∈ Q, ContDiffAt ℝ ∞ U q)<br>    (hstrict : IsStrictPotentialMinOn U Q q₀) :<br>    IsMechanicalEquilibrium m (fun q => -gradient U q) (q₀, (0 : Momentum n)) ∧<br>    IsFutureMechanicalStableEuclidean m (fun q => -gradient U q) Q<br>      (q₀, (0 : Momentum n)) | 一致 |
+| 原文未显式量化的技术资格 | hm: 每个固定对角质量正；来自§1.5正定背景，定理句未重复。 | [EXTRA] |
+| 原文未显式量化的技术资格 | hQ: 势能位置域Q开放；局部ODE和极小值邻域须位于定义域。 | [EXTRA] |
+| 原文未显式量化的技术资格 | hstrict包含q₀∈Q；补出原文默认的定义域资格。 | [EXTRA] |
+| 原页核对/疑点 | 用户范围31–32/54–55是背景跨度；定理与证明思路均仅32/55。 | local_verified |
 
 ### 6. 审计结论
 
@@ -246,7 +239,7 @@ theorem theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:82`（`MD.Ch01.theorem_1_1`）。
+位置：[Blueprint/Ch01.lean:82](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:82>)（`MD.Ch01.theorem_1_1`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -286,14 +279,10 @@ theorem energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 式(1.3) Newton解；每坐标M q̈=-∇U | hq : IsNewtonTrajectoryOn m U Q (Ioo a b) q | 一致；真实一阶/二阶导数和位置留在Q；不把守恒作假设 |
-| 粒子/坐标质量、位置、速度 | m : CoordinateMasses n；q与deriv q | 一致的展平坐标模型；任意对角质量推广待审 |
-| 质量正性 | hm : ∀i,0<m i | [EXTRA] 逆质量辅助重写；可考虑直接牛顿证明是否能减少此额外前提 |
-| 势能偏导/链式法则 | hU : ∀x∈Q,DifferentiableAt ℝ U x | [EXTRA] 原文导数计算的隐含前提 |
-| 解的存在时间和任意比较时间 | Ioo a b；∀s∈Ioo a b，∀t∈Ioo a b | [EXTRA] 显式开连通区间；仅在同一解区间内比较 |
-| 式(1.4)位置-速度总能量 | nBodyTotalEnergy m U (q t) (deriv q t) | 一致；使用massHamiltonian_massOperator证明两种表示相同 |
-| its derivative vanishes；dE/dt=0 | ∀t∈Ioo a b,HasDerivAt (fun s=>nBodyTotalEnergy ...) 0 t | 一致；实际导数为零 |
-| the energy is conserved | ∀s,t在区间内，nBodyTotalEnergy(s)=nBodyTotalEnergy(t) | 一致；完整守恒子句 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)<br>    (Q : Set (Position n)) (a b : ℝ) (q : ℝ → Position n)<br>    (hm : ∀ i, 0 < m i) (hU : ∀ x ∈ Q, DifferentiableAt ℝ U x)<br>    (hq : IsNewtonTrajectoryOn m U Q (Ioo a b) q) :<br>    (∀ t ∈ Ioo a b, HasDerivAt<br>      (fun s => nBodyTotalEnergy m U (q s) (deriv q s)) 0 t) ∧<br>    ∀ s ∈ Ioo a b, ∀ t ∈ Ioo a b,<br>      nBodyTotalEnergy m U (q s) (deriv q s) =<br>      nBodyTotalEnergy m U (q t) (deriv q t) | 一致 |
+| 原文未显式量化的技术资格 | hm: 固定对角质量正；牛顿相空间重写使用逆质量。 | [EXTRA] |
+| 原文未显式量化的技术资格 | hU: U在Q每点可微；保证原文链式法则有意义。 | [EXTRA] |
+| 原文未显式量化的技术资格 | 时间取开连通区间Ioo a b；能量比较仅对s,t属于该区间，不作越过解存在区间的结论。 | [EXTRA] |
 
 ### 6. 审计结论
 
@@ -305,7 +294,7 @@ theorem energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:100`（`MD.Ch01.energy_conservation`）。
+位置：[Blueprint/Ch01.lean:100](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:100>)（`MD.Ch01.energy_conservation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -343,15 +332,11 @@ theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 系统(1.3)，L定义于p.22 | m、U；massLagrangian=动能-U | 一致；当前条处于固定质量，未替换为之后一般坐标M(q) |
-| q(t)及全部Nc个坐标 | q : ℝ→Position n；向量等式；n=N_c | 一致；三维原子场景n=3N，坐标质量展开待审 |
-| 正质量 | hm | [EXTRA] 使用相空间互逆质量算子 |
-| 势能位置偏导 | hU | [EXTRA] U在Q每点可微 |
-| 时间导数 | hI : IsOpen I | [EXTRA] two-sided导数，避免within在边界退化 |
-| Newton二阶轨迹定义 | IsNewtonTrajectoryOn；HasDerivAt q，HasDerivAt (deriv q)，M q̈=-∇U | 一致；不是仅total deriv方程 |
-| Newton → d/dt(∂L/∂q̇)=∂L/∂q | ↔左到右；IsEulerLagrangeTrajectoryOn展开含真实导数 | 一致；复用mechanicalSolution_eulerLagrange |
-| 运动方程可表达为Euler–Lagrange；反向等价 | ↔右到左；eulerLagrange_to_mechanicalSolution再回Newton | 一致；反向未遗漏 |
-| 每条方程/位置域 | 两个轨迹谓词都要求∀t∈I,q t∈Q，随后∀t∈I | 一致；量词与域一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)<br>    (U : PotentialEnergy n) (Q : Set (Position n)) (I : Set ℝ)<br>    (q : ℝ → Position n) (hm : ∀ i, 0 < m i) (hI : IsOpen I)<br>    (hU : ∀ x ∈ Q, DifferentiableAt ℝ U x) :<br>    IsNewtonTrajectoryOn m U Q I q ↔ IsEulerLagrangeTrajectoryOn m U Q I q | 一致 |
+| \[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\frac{\partial L}{\partial\boldsymbol{q}}.\] | MD.Ch01.newton_iff_euler_lagrange，完整展开陈述见上一行及第4段 | 一致 |
+| 原文未显式量化的技术资格 | hm: 每个固定对角质量正；用于从相空间方程回到牛顿方程。 | [EXTRA] |
+| 原文未显式量化的技术资格 | hI: 时间域开放；把within导数还原为原文双侧时间导数。 | [EXTRA] |
+| 原文未显式量化的技术资格 | hU: U在Q可微；保证位置偏导是实际导数。 | [EXTRA] |
 
 ### 6. 审计结论
 
@@ -363,7 +348,7 @@ theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:136`（`MD.Ch01.newton_iff_euler_lagrange`）。
+位置：[Blueprint/Ch01.lean:136](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:136>)（`MD.Ch01.newton_iff_euler_lagrange`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -416,26 +401,18 @@ theorem hamiltonian_legendre_transform {n : ℕ}
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| M(q)配置相关质量矩阵 | M : Position n → Matrix (Fin n) (Fin n) ℝ | 一致；没有缩为固定对角质量 |
-| q,p；对v取上确界 | q,p后给hM；range(fun v:Velocity n=>inner p v-L) | 一致；q固定后优化v |
-| If M(q) is invertible | hM : IsUnit (M q) | [ERRATUM?] 字面前提；没有静默加入正定/对称/凸性；需审计上下文是否继承它们 |
-| L(q,v)=vᵀM(q)v/2-U(q) | variableMassLagrangian、matrixAction | 一致；直接矩阵二次型 |
-| sup_v(pᵀv-L)且sup achieved | BddAbove(range ...) ∧ sSup(range ...)=H | 一致；有界保护避免实数sSup对无界集退化 |
-| precisely when v=M(q)⁻¹p | ∀v,目标=H ↔ v=matrixAction (M q)⁻¹ p | 一致；完整唯一达到条件；但只可逆不足，未证 |
-| p=∂L/∂q̇=M(q)q̇ | ∀v,HasGradientAt L (matrixAction (M q) v) v；p=M(q)(M(q)⁻¹p) | 一致；动量是真实梯度；若M非对称需审计 |
-| H(q,p)=pᵀM(q)⁻¹p/2+U(q) | variableMassHamiltonian | 一致；逆矩阵作用于全矩阵 |
-| This is precisely the energy function | H=逆速度ᵀM(q)逆速度/2+U(q) | 一致；替换回速度能量的子句保留 |
-| 抽象Legendre的convex g及机械质量上下文 | 当前签名未并入凸性/正定，留在context_notation与issues | [ERRATUM?] 无界反例M=-1，必须先裁定/修复签名再复审冻结 |
-| 原书疑点 | 若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。 | [ERRATUM?] |
-| 原书疑点 | 现有定理仅固定正对角m；本条保留任意配置相关M(q)、上界、sup、精确达到条件、动量偏导和能量对应，不能直接调用旧定理覆盖。 | [ERRATUM?] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem hamiltonian_legendre_transform {n : ℕ}<br>    (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)<br>    (q : Position n) (p : Momentum n) (hM : IsUnit (M q)) :<br>    BddAbove (range (fun v : Velocity n =><br>      inner ℝ p v - variableMassLagrangian M U q v)) ∧<br>    sSup (range (fun v : Velocity n => inner ℝ p v - variableMassLagrangian M U q v)) =<br>      variableMassHamiltonian M U q p ∧<br>    (∀ v : Velocity n, inner ℝ p v - variableMassLagrangian M U q v =<br>      variableMassHamiltonian M U q p ↔ v = matrixAction (M q)⁻¹ p) ∧<br>    (∀ v : Velocity n, HasGradientAt (variableMassLagrangian M U q)<br>      (matrixAction (M q) v) v) ∧<br>    p = matrixAction (M q) (matrixAction (M q)⁻¹ p) ∧<br>    variableMassHamiltonian M U q p =<br>      inner ℝ (matrixAction (M q)⁻¹ p)<br>        (matrixAction (M q) (matrixAction (M q)⁻¹ p)) / 2 + U q | NEEDS_HUMAN |
+| \[\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p},\]；\[\boldsymbol{p}=\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\boldsymbol{M}(\boldsymbol{q})\dot{\boldsymbol{q}},\]；\[H(\boldsymbol{q},\boldsymbol{p})\stackrel{\mathrm{def}}{=}\boldsymbol{p}^TM(\boldsymbol{q})^{-1}\boldsymbol{p}/2+U(\boldsymbol{q}).\] | MD.Ch01.hamiltonian_legendre_transform，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
+| 原页核对/疑点 | 若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。 | NEEDS_HUMAN |
+| 原页核对/疑点 | 现有定理仅固定正对角m；本条保留任意配置相关M(q)、上界、sup、精确达到条件、动量偏导和能量对应，不能直接调用旧定理覆盖。 | open |
 
 ### 6. 审计结论
 
 本地预审：**NEEDS_HUMAN**。M=-1,U=p=0时目标v²/2无界；字面可逆前提不足；配置相关一般矩阵不能由固定对角库推出。
 
-网站审计：**待网站审计**。原文JSON：NEEDS_HUMAN；未冻结。
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-反例：n=1,M=-1,U=0,p=0
+反例：若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。
 
 建议：导师裁定是否继承凸性/对称正定背景；当前不静默添加。
 
@@ -443,7 +420,7 @@ theorem hamiltonian_legendre_transform {n : ℕ}
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:175`（`MD.Ch01.hamiltonian_legendre_transform`）。
+位置：[Blueprint/Ch01.lean:175](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:175>)（`MD.Ch01.hamiltonian_legendre_transform`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -487,16 +464,10 @@ theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| classical systems；自治flow map F_t(ξ)解决(1.5) | IsGlobalMechanicalFlowOn m (-gradient U) Q S ψ；ψ:ℝ→PhaseSpace→PhaseSpace | 一致；保持分子Hamiltonian的保守力对象；全m维自治ODE的一般化不纳入 |
-| 固定正质量的Hamiltonian背景 | _hm : ∀i,0<m i | [EXTRA] 原文质量正定背景明确，反演段未重复；群律证明本身不使用正性 |
-| forward or backward in time | hψ每z∈S都有全实时间ODE解；S不变 | [EXTRA] 显式前提；不承诺任意力的全局流存在 |
-| 继承existence and uniqueness | hreg : ∀q∈Q,ContDiffAt ℝ 1 F q | [EXTRA] 唯一性的C1充分前提；正则性来源待审 |
-| 初值ξ；恒等元Id | ∀z∈S,ψ 0 z=z | 一致；来自flow定义，不把群律放入假设 |
-| F_{-t}F_t=Id | ∀t,∀z∈S,ψ(-t)(ψ t z)=z | 一致；量词含所有实时间 |
-| flow map is invertible | ψ t(ψ(-t)z)=z ∧ BijOn(ψ t)S S | 一致；双向反演与双射，限制在不变状态域 |
-| Abelian group composition F_t F_s=F_s F_t | ∀s,t,∀z∈S,ψ t(ψ s z)=ψ s(ψ t z) | 一致；闭包由hψ的MapsTo给出 |
-| F_t F_s=F_{t+s} | ψ t(ψ s z)=ψ(t+s)z | 一致；identity/inverse/composition，函数复合结合律由函数操作固有 |
-| 前小节的全局流存在前提 | 以实际解族hψ参数化该结论；不另断言∃ψ | 一致；需要导师确认这种条件化与正文继承前提等价 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)<br>    (Q : Set (Position n)) (S : Set (PhaseSpace n))<br>    (ψ : ℝ → PhaseSpace n → PhaseSpace n)<br>    (_hm : ∀ i, 0 < m i)<br>    (hψ : IsGlobalMechanicalFlowOn m (fun q => -gradient U q) Q S ψ)<br>    (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 (fun x => -gradient U x) q) :<br>    (∀ z ∈ S, ψ 0 z = z) ∧<br>    (∀ t : ℝ, ∀ z ∈ S, ψ (-t) (ψ t z) = z ∧ ψ t (ψ (-t) z) = z) ∧<br>    (∀ t : ℝ, BijOn (ψ t) S S) ∧<br>    ∀ s t : ℝ, ∀ z ∈ S,<br>      ψ t (ψ s z) = ψ s (ψ t z) ∧ ψ t (ψ s z) = ψ (t + s) z | 一致 |
+| 原文未显式量化的技术资格 | hψ: 显式全实时间解及S不变，落实正文双向可解和flow map前提；本条不证明全局流存在。 | [EXTRA] |
+| 原文未显式量化的技术资格 | hreg: F在Q为C¹，用于ODE唯一性，落实正文继承的存在唯一性前提。 | [EXTRA] |
+| 原文未显式量化的技术资格 | _hm: 正固定质量，使对象限于原文分子Hamiltonian系统。 | [EXTRA] |
 
 ### 6. 审计结论
 
@@ -508,7 +479,7 @@ theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:202`（`MD.Ch01.flow_inverse`）。
+位置：[Blueprint/Ch01.lean:202](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:202>)（`MD.Ch01.flow_inverse`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -536,6 +507,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ```lean
 def schrodingerEquation (h : planckConstant) (μ : quantumMass)
     (U : primitivePotential) (Φ : waveFunction) : Prop :=
+  ContDiff ℝ 2 (Function.uncurry Φ) ∧
   ∀ t q, Complex.I * (h.val : ℂ) * deriv (fun s => Φ s q) t =
     -(h.val : ℂ)^2 * ∑ i : Fin 39,
       secondPartial (Φ t) q i / (2 * (μ ⟨i.val / 3, by omega⟩).val : ℂ) +
@@ -546,12 +518,15 @@ def schrodingerEquation (h : planckConstant) (μ : quantumMass)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.schrodingerEquation | 一致 |
-| 原文未显式量化的技术资格 | Lean质量及Planck常数以正参数给定；定义采用总导数算子，仅定义满足方程的关系，不声明存在解。 | [EXTRA] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def schrodingerEquation (h : planckConstant) (μ : quantumMass)<br>    (U : primitivePotential) (Φ : waveFunction) : Prop :=<br>  ContDiff ℝ 2 (Function.uncurry Φ) ∧<br>  ∀ t q, Complex.I * (h.val : ℂ) * deriv (fun s => Φ s q) t =<br>    -(h.val : ℂ)^2 * ∑ i : Fin 39,<br>      secondPartial (Φ t) q i / (2 * (μ ⟨i.val / 3, by omega⟩).val : ℂ) +<br>      (U q : ℂ) * Φ t q | 一致 |
+| \[i\hbar\frac{\partial\Phi}{\partial t}=-\hbar^2\sum_{j=1}^{13}\frac{1}{2\mu_j}\left(\frac{\partial^2\Phi}{\partial q_{j,x}^2}+\frac{\partial^2\Phi}{\partial q_{j,y}^2}+\frac{\partial^2\Phi}{\partial q_{j,z}^2}\right)+U_P(q_{1,x},q_{1,y},\ldots,q_{13,z})\Phi.\tag{1.1}\] | MD.Ch01.schrodingerEquation，完整展开陈述见上一行及第4段 | 一致 |
+| 13粒子的3分量二阶偏导与质量权重 | Fin 39; μ ⟨i.val / 3, …⟩; secondPartial (Φ t) q i / (2 * μᵢ) | 一致 |
+| 时间导数与势项 | Complex.I * h * deriv (fun s => Φ s q) t; (U q : ℂ) * Φ t q | 一致 |
+| 原文未显式量化的技术资格 | 正质量及正Planck参数；按经典解解释，Φ在时间/位置联合C2，保证总导数算子表示实际偏导数；不声明解存在。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+本地预审：**PASS**。13粒子39坐标及逐质量系数完全保留；联合C2显式登记为经典解技术资格，排除以不可微函数总导数的默认零值冒充PDE。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
@@ -559,13 +534,13 @@ def schrodingerEquation (h : planckConstant) (μ : quantumMass)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:229`（`MD.Ch01.schrodingerEquation`）。
+位置：[Blueprint/Ch01.lean:229](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:229>)（`MD.Ch01.schrodingerEquation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-签名SHA256：`a456719f3292ddf1c142e744f5f952be92a79aaa449e8eadf079382fe75f64a4`；原文SHA256：`4f1477c2e45fb4684278e4cd3632ba088f0f85bc88a68ec0eadb598073bcf5c5`。
+签名SHA256：`d42ffb3b09f6a38dba4cd6ed88a79c7b5c434d0d091cbac0599d1b1e186a14d0`；原文SHA256：`4f1477c2e45fb4684278e4cd3632ba088f0f85bc88a68ec0eadb598073bcf5c5`。
 
 ## 1. MD-1.1-NewtonModel · definition · 印刷p.6 / PDFp.29
 
@@ -594,7 +569,8 @@ def newtonInitialValueModel {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.newtonInitialValueModel | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def newtonInitialValueModel {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)<br>    (Q : Set (Position n)) (I : Set ℝ) (q : ℝ → Position n) (t₀ : ℝ)<br>    (q₀ v₀ : Position n) : Prop :=<br>  IsNewtonTrajectoryOn m U Q I q ∧ q t₀ = q₀ ∧ HasDerivAt q v₀ t₀ | 一致 |
+| \[m_i\frac{\mathrm d^2q_{i,x}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,x}},\qquad m_i\frac{\mathrm d^2q_{i,y}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,y}},\qquad m_i\frac{\mathrm d^2q_{i,z}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,z}}.\tag{1.2}\] | MD.Ch01.newtonInitialValueModel，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | n为展平坐标数；三维实例n=3N，质量限制通过coordinateMassesOfParticles给出。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -607,7 +583,7 @@ def newtonInitialValueModel {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:240`（`MD.Ch01.newtonInitialValueModel`）。
+位置：[Blueprint/Ch01.lean:241](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:241>)（`MD.Ch01.newtonInitialValueModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -641,7 +617,7 @@ def hardSphereModel (R₁ R₂ m₁ m₂ : ℝ) (q₁ q₂ v₁ v₂ w₁ w₂ :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.hardSphereModel | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def hardSphereModel (R₁ R₂ m₁ m₂ : ℝ) (q₁ q₂ v₁ v₂ w₁ w₂ : V3) : Prop :=<br>  0 < R₁ ∧ 0 < R₂ ∧ 0 < m₁ ∧ 0 < m₂ ∧ R₁ + R₂ ≤ dist q₁ q₂ ∧<br>  (dist q₁ q₂ = R₁ + R₂ →<br>    m₁ • v₁ + m₂ • v₂ = m₁ • w₁ + m₂ • w₂ ∧<br>    m₁ * ‖v₁‖^2 / 2 + m₂ * ‖v₂‖^2 / 2 = m₁ * ‖w₁‖^2 / 2 + m₂ * ‖w₂‖^2 / 2) | NEEDS_HUMAN |
 | 原文未显式量化的技术资格 | 只编码不可穿透与完全弹性守恒关系；原文未指定碰撞散射规则，此定义不唯一决定碰撞后速度。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -654,7 +630,7 @@ def hardSphereModel (R₁ R₂ m₁ m₂ : ℝ) (q₁ q₂ v₁ v₂ w₁ w₂ :
 
 **incomplete**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:249`（`MD.Ch01.hardSphereModel`）。
+位置：[Blueprint/Ch01.lean:250](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:250>)（`MD.Ch01.hardSphereModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -693,7 +669,8 @@ def multibodyPotential {N : ℕ} (U₂ : Fin N → Fin N → V3 → V3 → ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.multibodyPotential | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def multibodyPotential {N : ℕ} (U₂ : Fin N → Fin N → V3 → V3 → ℝ)<br>    (U₃ : Fin N → Fin N → Fin N → V3 → V3 → V3 → ℝ)<br>    (U₄ : Fin N → Fin N → Fin N → Fin N → V3 → V3 → V3 → V3 → ℝ)<br>    (q : Fin N → V3) : ℝ :=<br>  (∑ i, ∑ j ∈ Finset.Ioi i, U₂ i j (q i) (q j)) +<br>  (∑ i, ∑ j ∈ Finset.Ioi i, ∑ k ∈ Finset.Ioi j, U₃ i j k (q i) (q j) (q k)) +<br>  (∑ i, ∑ j ∈ Finset.Ioi i, ∑ k ∈ Finset.Ioi j, ∑ l ∈ Finset.Ioi k,<br>    U₄ i j k l (q i) (q j) (q k) (q l)) | 一致 |
+| \[U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\qquad U_{ijk}(\boldsymbol q_i,\boldsymbol q_j,\boldsymbol q_k),\qquad U_{ijkl}(\boldsymbol q_i,\boldsymbol q_j,\boldsymbol q_k,\boldsymbol q_l),\] | MD.Ch01.multibodyPotential，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 按无序不同粒子组计数i<j<k<l；原文仅列成分未指定求和计数约定。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -706,7 +683,7 @@ def multibodyPotential {N : ℕ} (U₂ : Fin N → Fin N → V3 → V3 → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:259`（`MD.Ch01.multibodyPotential`）。
+位置：[Blueprint/Ch01.lean:260](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:260>)（`MD.Ch01.multibodyPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -737,7 +714,8 @@ def morsePotential (D a rₑ r : ℝ) := D * (1 - Real.exp (-a * (r-rₑ)))^2
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.morsePotential | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def morsePotential (D a rₑ r : ℝ) := D * (1 - Real.exp (-a * (r-rₑ)))^2 | 一致 |
+| \[\varphi_{\mathrm{Morse}}(r)=D\left(1-e^{-a(r-r_e)}\right)^2.\] | MD.Ch01.morsePotential，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -749,7 +727,7 @@ def morsePotential (D a rₑ r : ℝ) := D * (1 - Real.exp (-a * (r-rₑ)))^2
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:272`（`MD.Ch01.morsePotential`）。
+位置：[Blueprint/Ch01.lean:273](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:273>)（`MD.Ch01.morsePotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -782,30 +760,34 @@ theorem morse_minimum :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.morse_minimum | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem morse_minimum :<br>  ∀ D a rₑ : ℝ, 0 < D → 0 < a → 0 < rₑ →<br>    (∀ r > 0, 0 ≤ morsePotential D a rₑ r) ∧<br>    morsePotential D a rₑ rₑ = 0 ∧ Tendsto (morsePotential D a rₑ) atTop (𝓝 D) | 一致 |
+| rₑ处极小、井深D | ∀ r>0, 0≤morsePotential…; morsePotential…rₑ=0; Tendsto … atTop (𝓝 D) | 一致 |
+| a controls curvature | 定性形状参数合并context_notation；原书未给二阶导数公式 | 一致（定性背景） |
 | 原文未显式量化的技术资格 | D,a,rₑ正；well depth解释为无穷远极限减最小值。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**NEEDS_HUMAN**。已保留最小值和井深；原文还提到a控制曲率，当前签名未含二阶导数，须补齐后进入证明。
+本地预审：**PASS**。最小值和井深的全部数学结论已保留；a的定性参数解释合并在context_notation，对照表单独列明，不伪造曲率原文公式。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：指数无穷远极限及严格最小值/曲率完整对应待补。
+建议：三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:278`（`MD.Ch01.morse_minimum`）。
+位置：[Blueprint/Ch01.lean:279](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:279>)（`MD.Ch01.morse_minimum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：指数无穷远极限及严格最小值/曲率完整对应待补。
+缺失/继续路线：三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。
 
-签名SHA256：`a2294a6a45e9a7419e8bc86a142c5794a2076af2071ef4e6e45902d1520bfdf2`；原文SHA256：`8b248ac897fa3fa116d9eb706c9c924fe362dfec4adc5acb734fa68b8edadb81`。
+本地独立尝试3次，失败3次；证据：blueprint/ch01/proof_attempts.json。
+
+签名SHA256：`a2294a6a45e9a7419e8bc86a142c5794a2076af2071ef4e6e45902d1520bfdf2`；原文SHA256：`76f09cbc4cd011f5336d8919582679d28fca6a28ed647828dcb4e266b38a6428`。
 
 ## 1. MD-1.1.1-LengthBond · definition · 印刷p.9 / PDFp.32
 
@@ -830,7 +812,8 @@ def lengthBond (k r₀ r : ℝ) := k / 2 * (r-r₀)^2
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.lengthBond | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def lengthBond (k r₀ r : ℝ) := k / 2 * (r-r₀)^2 | 一致 |
+| \[\varphi_{ij}^{\mathrm{len}}(r_{ij})=\frac{k_{ij}^{\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\qquad r_{ij}=\\|\boldsymbol q_i-\boldsymbol q_j\\|.\] | MD.Ch01.lengthBond，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -842,7 +825,7 @@ def lengthBond (k r₀ r : ℝ) := k / 2 * (r-r₀)^2
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:288`（`MD.Ch01.lengthBond`）。
+位置：[Blueprint/Ch01.lean:289](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:289>)（`MD.Ch01.lengthBond`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -873,7 +856,8 @@ def dispersionPotential (K r : ℝ) := -K / r^6
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.dispersionPotential | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def dispersionPotential (K r : ℝ) := -K / r^6 | 一致 |
+| \[\varphi_{\mathrm{disp}}(r)\sim-\frac K{r^6},\qquad K>0.\] | MD.Ch01.dispersionPotential，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -885,7 +869,7 @@ def dispersionPotential (K r : ℝ) := -K / r^6
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:294`（`MD.Ch01.dispersionPotential`）。
+位置：[Blueprint/Ch01.lean:295](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:295>)（`MD.Ch01.dispersionPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -916,7 +900,8 @@ def buckinghamPotential (A B C r : ℝ) := A * Real.exp (-B*r) - C/r^6
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.buckinghamPotential | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def buckinghamPotential (A B C r : ℝ) := A * Real.exp (-B*r) - C/r^6 | 一致 |
+| \[\varphi_B(r)=Ae^{-Br}-\frac C{r^6},\qquad A>0,\ B>0,\ C>0.\] | MD.Ch01.buckinghamPotential，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -928,7 +913,7 @@ def buckinghamPotential (A B C r : ℝ) := A * Real.exp (-B*r) - C/r^6
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:300`（`MD.Ch01.buckinghamPotential`）。
+位置：[Blueprint/Ch01.lean:301](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:301>)（`MD.Ch01.buckinghamPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -959,7 +944,8 @@ def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.lennardJonesPotential | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6) | 一致 |
+| \[\varphi_{\mathrm{LJ}}(r)=4\epsilon\left[\left(\frac\sigma r\right)^{12}-\left(\frac\sigma r\right)^6\right].\] | MD.Ch01.lennardJonesPotential，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -971,7 +957,7 @@ def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:306`（`MD.Ch01.lennardJonesPotential`）。
+位置：[Blueprint/Ch01.lean:307](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:307>)（`MD.Ch01.lennardJonesPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -979,11 +965,11 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 签名SHA256：`c59ecc0fa91ade5d874e80ef3f97928193bd26f8212127cea8b0cc3d03d4a91b`；原文SHA256：`93565783f8049e53567171ecf451d83bd742ba2a3494d8d45844b5d9b226f106`。
 
-## 1. MD-1.1.1-LJRepulsion · unnumbered_claim · 印刷p.11 / PDFp.34
+## 1. MD-1.1.1-LJRepulsion · unnumbered_claim · 印刷p.10–11 / PDFp.33–34
 
 ### 2. 原文陈述
 
-> of short-ranged soft walls in molecular dynamics, i.e., the fact that $\varphi_{\mathrm{LJ}}$ tends rapidly to positive infinity as $r\to0$, the atoms remain well separated in long simulations. The singularity at $r=0$ is therefore rarely encountered in dynamics trajectories, however the presence of the singularity may nonetheless create problems for mathematical analysis, as many theoretical techniques rely on assumed smoothness.
+> Because of the strongly repulsive character of short-ranged soft walls in molecular dynamics, i.e., the fact that $\varphi_{\mathrm{LJ}}$ tends rapidly to positive infinity as $r\to0$, the atoms remain well separated in long simulations. The singularity at $r=0$ is therefore rarely encountered in dynamics trajectories, however the presence of the singularity may nonetheless create problems for mathematical analysis, as many theoretical techniques rely on assumed smoothness.
 
 ### 3. 原文证明
 
@@ -1003,29 +989,29 @@ theorem lj_repulsion :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.lj_repulsion | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem lj_repulsion :<br>  ∀ ε σ : ℝ, 0 < ε → 0 < σ →<br>    Tendsto (lennardJonesPotential ε σ) (𝓝[>] 0) atTop | 一致 |
+| r→0时趋正无穷 | Tendsto (lennardJonesPotential ε σ) (𝓝[>] 0) atTop | 一致 |
+| 长模拟中通常保持分离 | context_notation；严格有限能量无碰撞旧CH01-198排除 | 一致（定性经验） |
 
 ### 6. 审计结论
 
-本地预审：**NEEDS_HUMAN**。数学极限对应原文论据；atoms remain well separated为定性模拟描述，须裁定是否作为严格无碰撞结论。
+本地预审：**PASS**。原文明示数学论据是r→0正无穷极限；长模拟well-separated为定性经验，放上下文。旧CH01-198严格有限能量无碰撞命题未在原文给出，单独登记excluded_qualitative。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：忠实范围待裁定；单侧有理函数极限可另行短证明。
-
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：placeholder。
+**self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:312`（`MD.Ch01.lj_repulsion`）。
+位置：[Blueprint/Ch01.lean:313](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:313>)（`MD.Ch01.lj_repulsion`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
-直接占位：有sorry；传递占位：含sorryAx。
+直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：忠实范围待裁定；单侧有理函数极限可另行短证明。
+本地独立尝试3次，失败2次；证据：blueprint/ch01/proof_attempts.json。
 
-签名SHA256：`a54df37fd50ba09697d5aeb8f871996449b24346498eae4238ec618f30fb6144`；原文SHA256：`e1c76613f863dfbd8a0765e73b8a7918e4050fb640b2b37dd8a66dda59050fe6`。
+签名SHA256：`a54df37fd50ba09697d5aeb8f871996449b24346498eae4238ec618f30fb6144`；原文SHA256：`c79e4ecbce227b1e1ba1a2c3589836600e896eb554894c67e72cb8b5dc910470`。
 
 ## 1. MD-1.1.1-HeterogeneousLJ · definition · 印刷p.11 / PDFp.34
 
@@ -1053,7 +1039,8 @@ def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.heterogeneousLJ | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)<br>    (q : Fin N → V3) (i j : Fin N) :=<br>  lennardJonesPotential (ε i j) (σ i j) (pairDistance (q i) (q j)) | 一致 |
+| \[\varphi_{ij}^{\mathrm{LJ}}(r_{ij})=4\epsilon_{ij}\left[\left(\frac{\sigma_{ij}}{r_{ij}}\right)^{12}-\left(\frac{\sigma_{ij}}{r_{ij}}\right)^6\right],\] | MD.Ch01.heterogeneousLJ，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -1065,7 +1052,7 @@ def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:321`（`MD.Ch01.heterogeneousLJ`）。
+位置：[Blueprint/Ch01.lean:337](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:337>)（`MD.Ch01.heterogeneousLJ`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1097,7 +1084,8 @@ def coulombPotential (C Qᵢ Qⱼ dielectric r : ℝ) := C*Qᵢ*Qⱼ/(dielectric
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.coulombPotential | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def coulombPotential (C Qᵢ Qⱼ dielectric r : ℝ) := C*Qᵢ*Qⱼ/(dielectric*r) | 一致 |
+| \[\varphi_{ij}^{\mathrm{Coulomb}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}},\] | MD.Ch01.coulombPotential，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -1109,7 +1097,7 @@ def coulombPotential (C Qᵢ Qⱼ dielectric r : ℝ) := C*Qᵢ*Qⱼ/(dielectric
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:329`（`MD.Ch01.coulombPotential`）。
+位置：[Blueprint/Ch01.lean:345](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:345>)（`MD.Ch01.coulombPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1140,7 +1128,7 @@ def smoothCutoff (φ : ℝ → ℝ) (r_cut : ℝ) : Prop :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.smoothCutoff | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def smoothCutoff (φ : ℝ → ℝ) (r_cut : ℝ) : Prop :=<br>  ContDiff ℝ 1 φ ∧ ∀ r, r_cut < r → φ r = 0 | 一致 |
 
 ### 6. 审计结论
 
@@ -1152,7 +1140,7 @@ def smoothCutoff (φ : ℝ → ℝ) (r_cut : ℝ) : Prop :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:335`（`MD.Ch01.smoothCutoff`）。
+位置：[Blueprint/Ch01.lean:351](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:351>)（`MD.Ch01.smoothCutoff`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1184,8 +1172,10 @@ def yukawaScreened (C Qᵢ Qⱼ dielectric κ r : ℝ) : ℝ :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.yukawaScreened | 一致 |
-| 原书疑点 | 原文κ称Debye length，但e^{-κr}的量纲通常对应逆长度；本定义保留字面公式。 | [ERRATUM?] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def yukawaScreened (C Qᵢ Qⱼ dielectric κ r : ℝ) : ℝ :=<br>  C * Qᵢ * Qⱼ / (dielectric * r) * Real.exp (-κ * r) | 一致 |
+| \[\varphi_{ij}^{\mathrm{screened}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}}e^{-\kappa r_{ij}}.\] | MD.Ch01.yukawaScreened，完整展开陈述见上一行及第4段 | 一致 |
+| exp(-κr) | Real.exp (-κ * r) | 一致；κ称屏蔽长度的量纲疑点见原文issues |
+| 原页核对/疑点 | 原文κ称Debye length，但e^{-κr}的量纲通常对应逆长度；本定义保留字面公式。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -1197,7 +1187,7 @@ def yukawaScreened (C Qᵢ Qⱼ dielectric κ r : ℝ) : ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:342`（`MD.Ch01.yukawaScreened`）。
+位置：[Blueprint/Ch01.lean:358](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:358>)（`MD.Ch01.yukawaScreened`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1232,7 +1222,8 @@ def angleBondModel (k θ₀ : ℝ) (qᵢ qⱼ qₖ : V3) : ℝ :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.angleBondModel | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def angleBondModel (k θ₀ : ℝ) (qᵢ qⱼ qₖ : V3) : ℝ :=<br>  k / 2 * (Real.arccos (inner ℝ (qᵢ-qⱼ) (qⱼ-qₖ) /<br>    (‖qᵢ-qⱼ‖ * ‖qⱼ-qₖ‖)) - θ₀)^2 | 一致 |
+| \[\varphi_{ijk}^{\mathrm{ang}}=\frac{k_{ijk}^{\mathrm{ang}}}{2}(\theta_{ijk}-\theta_{ijk}^0)^2,\]；\[\theta_{ijk}=\arccos\frac{(\boldsymbol q_i-\boldsymbol q_j)\cdot(\boldsymbol q_j-\boldsymbol q_k)}{r_{ij}r_{jk}}.\] | MD.Ch01.angleBondModel，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -1244,7 +1235,7 @@ def angleBondModel (k θ₀ : ℝ) (qᵢ qⱼ qₖ : V3) : ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:349`（`MD.Ch01.angleBondModel`）。
+位置：[Blueprint/Ch01.lean:365](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:365>)（`MD.Ch01.angleBondModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1275,7 +1266,8 @@ def dihedralPotential (k n θ d : ℝ) := k*(1+Real.cos (n*θ-d))
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.dihedralPotential | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def dihedralPotential (k n θ d : ℝ) := k*(1+Real.cos (n*θ-d)) | 一致 |
+| \[\varphi_{ijkl}^{\mathrm{dih}}=k_{ijkl}^{\mathrm{dih}}[1+\cos(n_{ijkl}^{\mathrm{dih}}\eta_{ijkl}-d_{ijkl}^{\mathrm{dih}})].\] | MD.Ch01.dihedralPotential，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -1287,7 +1279,7 @@ def dihedralPotential (k n θ d : ℝ) := k*(1+Real.cos (n*θ-d))
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:357`（`MD.Ch01.dihedralPotential`）。
+位置：[Blueprint/Ch01.lean:373](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:373>)（`MD.Ch01.dihedralPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1332,7 +1324,10 @@ def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.gayBerneModel | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁ u₂ : V3) : ℝ :=<br>  let r := q₂ - q₁<br>  let χ := gayBerneChi σₑ σₛ<br>  let χ' := gayBerneChiPrime εₑ εₛ μ<br>  let Δ := ‖r‖ - σ₀ / Real.sqrt (gayBerneW (‖r‖⁻¹ • r) u₁ u₂ χ)<br>  let εGB := gayBerneEpsilonOne ε₀ χ u₁ u₂ * gayBerneEpsilonTwo (‖r‖⁻¹ • r) u₁ u₂ χ'<br>  4 * εGB * ((σ₀ / Δ)^12 - (σ₀ / Δ)^6) | 一致 |
+| \[\varphi_{\mathrm{GB}}(\boldsymbol q_1,\boldsymbol q_2,\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=4\epsilon_{\mathrm{GB}}\left[\left(\frac{\sigma_0}{\Delta}\right)^{12}-\left(\frac{\sigma_0}{\Delta}\right)^6\right],\]；\[\epsilon_{\mathrm{GB}}(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\epsilon_1(\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)\epsilon_2(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2),\]；\[\Delta(\boldsymbol r,\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\\|\boldsymbol r\\|-\sigma_0/\sqrt{W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi)},\]；\[\epsilon_1(\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\epsilon_0[1-\chi^2(\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2)^2]^{-1/2},\qquad\epsilon_2(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi'),\]；\[W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi)\stackrel{\mathrm{def}}=1-\frac\chi2\left[\frac{(\hat{\boldsymbol r}\cdot(\hat{\boldsymbol u}_1+\hat{\boldsymbol u}_2))^2}{1+\chi\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2}+\frac{(\hat{\boldsymbol r}\cdot(\hat{\boldsymbol u}_1-\hat{\boldsymbol u}_2))^2}{1-\chi\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2}\right].\]；\[\chi=\frac{[\sigma_e/\sigma_s]^2-1}{[\sigma_e/\sigma_s]^2+1},\qquad\chi'=\frac{1-[\epsilon_e/\epsilon_s]^{1/\mu}}{1+[\epsilon_e/\epsilon_s]^{1/\mu}}.\] | MD.Ch01.gayBerneModel，完整展开陈述见上一行及第4段 | 一致 |
+| εGB=ε₁ε₂ | gayBerneEpsilonOne … * gayBerneEpsilonTwo …，没有平方ε₂ | 一致；旧正式定义平方与原页不同，未桥接 |
+| ρ、χ、χ′及各向异性参数 | gayBerneModel的r/χ/χ′/Δ定义及原始定义文件 | 一致 |
 
 ### 6. 审计结论
 
@@ -1344,7 +1339,7 @@ def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁
 
 **checked+documented priors**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:363`（`MD.Ch01.gayBerneModel`）。
+位置：[Blueprint/Ch01.lean:379](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:379>)（`MD.Ch01.gayBerneModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1353,1458 +1348,6 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 已登记前置证明/定义：ReviewDefinitions.gayBerneChi/ChiPrime/W/EpsilonOne/EpsilonTwo。
 
 签名SHA256：`d932c5f5ca37d31eaf3ae07646dc058b169b5e8645c47a77920d2e7317847dcf`；原文SHA256：`a1fa5496e18be16a688d2ac1dc52038d5f9048c62f93db463e5d1f423dc81424`。
-
-## 1. MD-1.3-Lagrangian · definition · 印刷p.22 / PDFp.45
-
-### 2. 原文陈述
-
-> For the system (1.3) with N atoms and $N_c=3N$ configuration coordinates, the Lagrangian is
-> \[L\stackrel{\mathrm{def}}=\frac{\dot{\boldsymbol q}^{T}\boldsymbol M\dot{\boldsymbol q}}2-U(\boldsymbol q).\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def fixedMassLagrangian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
-    (q : Position n) (v : Velocity n) : ℝ := nBodyKineticEnergy m v - U q
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.fixedMassLagrangian | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:553`（`MD.Ch01.fixedMassLagrangian`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`ce6d17f1da31241a86bd471c89e2f670db238659115ed1a6c8c9a6edd84e5b5f`；原文SHA256：`0ec61b3ac0c192b19e0e46244f6cb129323fb5ac14aa0acc6a19c98917049df7`。
-
-## 1. MD-1.3-GeneralizedCoordinates · unnumbered_claim · 印刷p.23 / PDFp.46
-
-### 2. 原文陈述
-
-> When we introduce a smooth change of variables $\boldsymbol q=\boldsymbol\Phi(\boldsymbol Q)$, where $\boldsymbol\Phi:\mathbb R^{N_c}\to\mathbb R^{N_c}$, this induces a corresponding transformation of the velocity vector by
-> \[\dot{\boldsymbol q}=\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q},\]
-> where $\boldsymbol\Phi'$ is the $N_c\times N_c$ Jacobian matrix of $\boldsymbol\Phi$. Then the Lagrangian of the system is transformed to
-> \[\widetilde L=\frac{\dot{\boldsymbol Q}^{T}\boldsymbol\Phi'(\boldsymbol Q)^{T}\boldsymbol M\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q}}2-U(\boldsymbol\Phi(\boldsymbol Q)),\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem generalized_coordinates {n k : ℕ} (m : CoordinateMasses n)
-    (U : PotentialEnergy n) (Φ : Position k → Position n)
-    (J : Matrix (Fin n) (Fin k) ℝ) (q : ℝ → Position k) (V : Velocity k) (t : ℝ)
-    (hΦ : HasFDerivAt Φ J.toEuclideanLin.toContinuousLinearMap (q t))
-    (hq : HasDerivAt q V t) :
-    HasDerivAt (fun s => Φ (q s)) (J.toEuclideanLin V) t ∧
-    massLagrangian m U (Φ (q t)) (J.toEuclideanLin V) =
-      inner ℝ V ((generalizedMassMatrix m J).toEuclideanLin V) / 2 - U (Φ (q t))
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.generalized_coordinates | 一致 |
-| 原文未显式量化的技术资格 | 原文smooth可在本结论弱化至点态真实可微；k可小于n，含原文约束推广。 | [EXTRA] |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**checked+documented priors**；本地证明状态：local_proof。
-
-位置：`Blueprint/Ch01.lean:560`（`MD.Ch01.generalized_coordinates`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-已登记前置证明/定义：MolecularDynamics/Chapter01/GeneralizedCoordinates.lean:hasDerivAt_coordinateChange; MolecularDynamics/Chapter01/GeneralizedCoordinates.lean:massLagrangian_coordinateChange。
-
-签名SHA256：`bb0ed63d16db6eaed7010deaebaa91e722050a21d83ce1c1813d98b1d2e88eb2`；原文SHA256：`3c05ee90cdabb61ecb14bf2a78d78514fd52ca909b8ed1d3d640328fe6fb1d95`。
-
-## 1. MD-1.3-GeneralizedMassRegular · unnumbered_claim · 印刷p.23 / PDFp.46
-
-### 2. 原文陈述
-
-> We will assume that any such changes of variables are regular transformations in the sense that $\boldsymbol\Phi'$ is of full rank and the resulting generalized mass matrix is invertible.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem generalizedmassregular :
-  ∀ {n k : ℕ} (m : CoordinateMasses n)
-    (J : Matrix (Fin n) (Fin k) ℝ) (hm : ∀ i, 0 < m i)
-    (hJ : Function.Injective J.mulVec),
-    IsUnit (generalizedMassMatrix m J)
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.generalizedmassregular | 一致 |
-| 原文未显式量化的技术资格 | 正粒子质量；full rank为Jacobian列单射，符合n≥k。 | [EXTRA] |
-
-### 6. 审计结论
-
-本地预审：**PASS**。展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**checked+documented priors**；本地证明状态：local_proof。
-
-位置：`Blueprint/Ch01.lean:575`（`MD.Ch01.generalizedmassregular`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-已登记前置证明/定义：MolecularDynamics/Chapter01/GeneralizedCoordinates.lean:generalizedMassMatrix_isUnit。
-
-签名SHA256：`2a56bbd90d4156b27564e3969bbf34ff82400c8407a6a90b47f1e8f863d19695`；原文SHA256：`df833c28d1289dab039a9b6cb7c4da15948e658afc0480bd9c5c3ebb05bd9619`。
-
-## 1. MD-1.4-ConvexLegendre · definition · 印刷p.24 / PDFp.47
-
-### 2. 原文陈述
-
-> Abstractly, a Legendre transformation of a given convex function $g=g(\boldsymbol\xi):\mathbb R^m\to\mathbb R$ is a new function $\widetilde g=\widetilde g(\boldsymbol\eta):\mathbb R^m\to\mathbb R$ defined by
-> \[\widetilde g(\boldsymbol\eta)=\sup_{\boldsymbol\xi}(\boldsymbol\eta^T\boldsymbol\xi-g(\boldsymbol\xi)),\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def legendreTransform {n : ℕ} (g : Position n → ℝ) (η : Position n) : EReal :=
-  ⨆ θ : Position n, ((inner ℝ η θ - g θ : ℝ) : EReal)
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.legendreTransform | NEEDS_HUMAN |
-| 原文未显式量化的技术资格 | 值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。 | [EXTRA] |
-| 原书疑点 | 原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。 | [ERRATUM?] |
-
-### 6. 审计结论
-
-本地预审：**NEEDS_HUMAN**。原文sup可非有限。EReal是显式[EXTRA]值域修复，不能宣称逐字的R值对象已经PASS。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**incomplete**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:590`（`MD.Ch01.legendreTransform`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`80ba9bfdafb6ce32e8e31a4455aee8eac961de0c2ee3d59347cfe5b97d07b0f4`；原文SHA256：`0c6780ad6bf964d2a9dc10860c4ec97729633cff676ef5a2464fd49f3f2b4494`。
-
-## 1. MD-1.4-HamiltonEquations · definition · 印刷p.24 / PDFp.47
-
-### 2. 原文陈述
-
-> The equations of motion can be written
-> \[\dot{\boldsymbol q}=\frac{\partial H}{\partial\boldsymbol p},\qquad\dot{\boldsymbol p}=-\frac{\partial H}{\partial\boldsymbol q}.\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def hamiltonEquations {n : ℕ} (H : PhaseSpace n → ℝ) (q p : ℝ → Position n) : Prop :=
-  ∀ t, HasDerivAt q (gradient (fun v => H (q t,v)) (p t)) t ∧
-    HasDerivAt p (-gradient (fun x => H (x,p t)) (q t)) t
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.hamiltonEquations | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:597`（`MD.Ch01.hamiltonEquations`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`3358b59456367c6d5b6e6fb83ec1d77f3189382a11f99b725d6a94f23b135003`；原文SHA256：`f9482e12951a8ba751e83abc096eb55cdc64d69cc13b02ceeff66e6eda738b8e`。
-
-## 1. MD-1.4-HamiltonFixedMass · unnumbered_claim · 印刷p.24 / PDFp.47
-
-### 2. 原文陈述
-
-> For constant $\boldsymbol M$ we obtain the dynamical equations,
-> \[\dot{\boldsymbol q}=\boldsymbol M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol F=-\partial U/\partial\boldsymbol q.\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem hamilton_fixed_mass {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
-    (U : PotentialEnergy n) (q p : Position n) (hM : M.PosDef)
-    (hU : DifferentiableAt ℝ U q) :
-    HasGradientAt (fun v => variableMassHamiltonian (fun _ => M) U q v)
-      (matrixAction M⁻¹ p) p ∧
-    HasGradientAt (fun x => variableMassHamiltonian (fun _ => M) U x p)
-      (gradient U q) q
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.hamilton_fixed_mass | 一致 |
-| 原文未显式量化的技术资格 | 常质量矩阵M对称正定，来自机械模型满秩坐标变换；U真实可微。 | [EXTRA] |
-
-### 6. 审计结论
-
-本地预审：**PASS**。保留一般常质量矩阵，两个实际梯度给出全部Hamilton方程分量；旧库对角特例不匹配此忠实签名。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：一般对称矩阵二次型梯度与矩阵逆正定桥接。
-
-### 7. 状态与证明位置
-
-**incomplete**；本地证明状态：placeholder。
-
-位置：`Blueprint/Ch01.lean:605`（`MD.Ch01.hamilton_fixed_mass`）。
-
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
-
-直接占位：有sorry；传递占位：含sorryAx。
-
-缺失/继续路线：一般对称矩阵二次型梯度与矩阵逆正定桥接。
-
-已登记前置证明/定义：MolecularDynamics/Chapter01/Hamiltonian.lean:hamiltonianVectorField_eq。
-
-签名SHA256：`a450ef3c6930ce3f7c3a4574cad99ae52b07658e332a2b72f5ef49665351a703`；原文SHA256：`3c64be7a1c1e7d8628ed31e2902b59263fe0d4ab13e11b9f97d1300f885f2c1f`。
-
-## 1. MD-1.4-HamiltonLagrangeEquivalence · unnumbered_claim · 印刷p.25 / PDFp.48
-
-### 2. 原文陈述
-
-> More generally, for molecular models, the Hamiltonian and Lagrangian formulations are interchangeable, but the use of the Hamiltonian form is preferred for allowing simplified description of the geometric character of the solutions of the system as we discuss in Chaps. 2–4.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem hamiltonlagrangeequivalence :
-  ∀ (n : ℕ) (M : Position n → Matrix (Fin n) (Fin n) ℝ)
-    (U : PotentialEnergy n) (q v : ℝ → Position n) (I : Set ℝ),
-    IsOpen I → ContDiff ℝ 2 M → ContDiff ℝ 2 U →
-    (∀ x, (M x).PosDef) → (∀ t ∈ I, HasDerivAt q (v t) t) →
-    ((∀ t ∈ I, HasDerivAt (fun s => gradient (quadraticL M U (q s)) (v s))
-      (gradient (fun x => quadraticL M U x (v t)) (q t)) t) ↔
-    ∀ t ∈ I, let p := fun s => (M (q s)).toEuclideanLin (v s)
-      HasDerivAt q (gradient (quadraticH M U (q t)) (p t)) t ∧
-      HasDerivAt p (-gradient (fun x => quadraticH M U x (p t)) (q t)) t)
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.hamiltonlagrangeequivalence | 一致 |
-| 原文未显式量化的技术资格 | 一般配置相关M C2、U C2、M逐点正定；轨迹q′=v真实且时间域开放。 | [EXTRA] |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：一般矩阵二次型速度梯度及配置导数、可微矩阵逆和Euler–Lagrange转换理论。
-
-### 7. 状态与证明位置
-
-**incomplete**；本地证明状态：placeholder。
-
-位置：`Blueprint/Ch01.lean:618`（`MD.Ch01.hamiltonlagrangeequivalence`）。
-
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
-
-直接占位：有sorry；传递占位：含sorryAx。
-
-缺失/继续路线：一般矩阵二次型速度梯度及配置导数、可微矩阵逆和Euler–Lagrange转换理论。
-
-签名SHA256：`d4374a73f13763ab7bc20eb390d3b4b5f69969cd233377d5b7d4fdfe3a54984a`；原文SHA256：`a1d08decd5a306298f70a9d84495e066083ad1744ae51e5e7ccce8cfd3005504`。
-
-## 1. MD-1.4-PhaseSpace · definition · 印刷p.25 / PDFp.48
-
-### 2. 原文陈述
-
-> The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $\mathbb R^3$ is described by coordinates and positions, i.e., by a point in $\mathbb R^{6N}$.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseSpace n) :=
-  {z | H z ≠ ⊤ ∧ H z ≠ ⊥}
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.finiteEnergyPhaseDomain | 一致 |
-| 原文未显式量化的技术资格 | 采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。 | [EXTRA] |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:634`（`MD.Ch01.finiteEnergyPhaseDomain`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`c22f176d7814c340bf356c062250e3dbbb041be67e53f86c64e1091363abe1e2`；原文SHA256：`4ac4575e2a94e5f8f3358667dde4eaae10e204d8c4cc6b308a99b3641d267855`。
-
-## 1. MD-1.6-UniformPairLattice · definition · 印刷p.33 / PDFp.56
-
-### 2. 原文陈述
-
-> Let us suppose we have a uniform pair potential $\varphi$ and define the total potential energy of a system of N atoms by
-> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi(|x_i-x_j|).\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def latticePairPotential {N : ℕ} (φ : ℝ → ℝ) (x : Fin N → ℝ) : ℝ :=
-  ∑ i, ∑ j ∈ Finset.Ioi i, φ |x i-x j|
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.latticePairPotential | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1260`（`MD.Ch01.latticePairPotential`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`ae335e0a22b2ae9f67606b88170b09a0fb08e6f370b60f738e806e087bcc5fdb`；原文SHA256：`1ab0e26a5a903461e6d47ddda8aa0bb2f6e5fa7a1038bdfeca17d8ddcc05cec0`。
-
-## 1. MD-1.6-UnorderedPairCount · unnumbered_claim · 印刷p.33 / PDFp.56
-
-### 2. 原文陈述
-
-> The computation of the energy requires $N(N-1)/2$ separate calculations, which could be very expensive if N is large.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem unorderedpaircount :
-  ∀ N : ℕ, (Finset.univ.filter (fun p : Fin N × Fin N => p.1 < p.2)).card = N*(N-1)/2
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.unorderedpaircount | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：有序双索引lt计数和Nat.choose2组合，计划短证明。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：local_proof。
-
-位置：`Blueprint/Ch01.lean:1267`（`MD.Ch01.unorderedpaircount`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-缺失/继续路线：有序双索引lt计数和Nat.choose2组合，计划短证明。
-
-签名SHA256：`5d6f86a7e51bdfb3056ed8ae47c2985be3249f8a229c56bd8ddaedd61e199be7`；原文SHA256：`042af6822800600079af916e0da48126381caa6ad0aee2b25c72551e49f363a7`。
-
-## 1. MD-1.6-NearestNeighbor · definition · 印刷p.33 / PDFp.56
-
-### 2. 原文陈述
-
-> We can reduce this by assuming only nearest neighbor forces, which means the energy becomes
-> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def nearestNeighborModel {N : ℕ} (φ : ℝ → ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
-  ∑ i : Fin N, φ |x i.succ-x i.castSucc|
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.nearestNeighborModel | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1276`（`MD.Ch01.nearestNeighborModel`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`c9f9dabf3d9ad9e94ab3219c95f25b7ba08b83c89a0e700797229382f5292c5c`；原文SHA256：`49403eb582702b950944360004f34bf58ff3bdc659e8b48ca0dc40c7faee2a20`。
-
-## 1. MD-1.6-WalledChain · definition · 印刷p.33 / PDFp.56
-
-### 2. 原文陈述
-
-> In order to keep such a system bounded we might then introduce walls at the ends of the chain, e.g. by adding confining potentials to $U$:
-> \[U(x_1,x_2,\ldots,x_N)=\varphi_c(|x_1|)+\varphi_c(|L-x_N|)+\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\tag{1.7}\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def walledChainModel {N : ℕ} (φ φc : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
-  φc |x 0| + φc |L-x (Fin.last N)| + nearestNeighborModel φ x
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.walledChainModel | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1283`（`MD.Ch01.walledChainModel`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`6aa702191c74f535264b934fcadfa137368b23646f8f55c39ddda748cb5c38ec`；原文SHA256：`05159e764ae6162987436cf7dc97920dbd25ed945b25cd1b837be7b896112007`。
-
-## 1. MD-1.6-PeriodicChain · definition · 印刷p.33 / PDFp.56
-
-### 2. 原文陈述
-
-> Alternatively one could restrict to a bounded domain by use of periodic boundary conditions, introducing the potential energy:
-> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|)+\varphi(|L+x_1-x_N|).\tag{1.8}\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def periodicChainModel {N : ℕ} (φ : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
-  nearestNeighborModel φ x + φ |L+x 0-x (Fin.last N)|
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.periodicChainModel | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1290`（`MD.Ch01.periodicChainModel`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`5d20e7645218c8dacee1094cef2db10fc2cca6ffe99113eaec2a6837c893522b`；原文SHA256：`d4ab02db4c674d5eb01d72c0a74b530e240abd506a2a7c797c8fa5b4313f1741`。
-
-## 1. MD-1.6-PeriodicBoundary · definition · 印刷p.34 / PDFp.57
-
-### 2. 原文陈述
-
-> If a particle moves to the right of $x=L$ we simply shift its position to $x-L$; likewise any particle exiting to the left of $x=0$ has its position shifted to $x+L$ (see Fig. 1.15).
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def periodicBoundary (L : ℝ) (x y : ℝ) : Prop := ∃ k : ℤ, y = x + k*L
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.periodicBoundary | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1297`（`MD.Ch01.periodicBoundary`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`2fd68f7d5f14e976fd6bd0b8f4edee8dbe7b3486388dadc2e11d3f1b8e91bce9`；原文SHA256：`a0f1b2fd9d88af028fe4d1d0388573ac314037b24250c2552492e6a3081ab9dd`。
-
-## 1. MD-1.6-PeriodicTranslationMomentum · unnumbered_claim · 印刷p.34 / PDFp.57
-
-### 2. 原文陈述
-
-> Periodic boundary conditions allow us to preserve Newton’s third law, the translational symmetry, and thus the conservation of momentum.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem periodic_translation_momentum :
-  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ),
-    let U := boxPeriodicNearestNeighborPotentialEnergy φ L
-    (∀ q c, U (fun i => q i+c) = U q) ∧
-    (∀ q, DifferentiableAt ℝ U q → fderiv ℝ U q (fun _ => 1) = 0) ∧
-    ∀ (m : Fin (N+1) → ℝ) (q v : ℝ → Fin (N+1) → ℝ) (I : Set ℝ),
-      IsOpen I → IsPreconnected I → (∀ i, 0 < m i) →
-      (∀ t ∈ I, DifferentiableAt ℝ U (q t)) →
-      (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t ∧
-        HasDerivAt (fun s => m i*v s i) (-fderiv ℝ U (q t) (Pi.single i 1)) t) →
-      (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i*v s i) 0 t) ∧
-      ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i*v a i) = ∑ i, m i*v b i
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.periodic_translation_momentum | 一致 |
-| 原文未显式量化的技术资格 | 一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。 | [EXTRA] |
-
-### 6. 审计结论
-
-本地预审：**PASS**。补齐全平移不变、净力零真实导数与动量守恒；Newton第三定律为相邻差值势的反向partial，CentralPairGradient另条编码，不把动量结论当假设。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：平移轨迹链式法则、基向量和为常1的fderiv线性作用、有限和零导数及连通域常数桥接。
-
-### 7. 状态与证明位置
-
-**incomplete**；本地证明状态：placeholder。
-
-位置：`Blueprint/Ch01.lean:1303`（`MD.Ch01.periodic_translation_momentum`）。
-
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
-
-直接占位：有sorry；传递占位：含sorryAx。
-
-缺失/继续路线：平移轨迹链式法则、基向量和为常1的fderiv线性作用、有限和零导数及连通域常数桥接。
-
-签名SHA256：`d5ab02ba52ab0637f83ae1c9d626b6dea6cde704c7ff34ffdd7dc7e73e6b3ca7`；原文SHA256：`845c9f7d7f10e7a691c6cb72f22724271c12cda925ebbe7759b841f9814d9b6e`。
-
-## 1. MD-1.6-RegularLattice · definition · 印刷p.34 / PDFp.57
-
-### 2. 原文陈述
-
-> On the line, we think of a (finite) lattice as a sequence of discrete points separated by a fixed distance $\Delta x$.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def regularLattice {N : ℕ} (a δ : ℝ) (x : Fin N → ℝ) : Prop :=
-  0 < δ ∧ ∀ i, x i = a + i.val*δ
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.regularLattice | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1321`（`MD.Ch01.regularLattice`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`5c57ad73285c41ec056d8fdeba5d06b241bb8090f1b202bac1fc2af9c2250632`；原文SHA256：`e62d7027ecfbea2720a59800c1e98b2382a2a7383358979ce4ec818f2b73bd4f`。
-
-## 1. MD-1.6-RegularLatticeMinimizerLiteral · unnumbered_claim · 印刷p.34 / PDFp.57
-
-### 2. 原文陈述
-
-> An obvious benefit of using periodic boundary conditions is that, with a uniform pair potential, the energy minimizers are points of a regular lattice; with confining potentials this is unlikely to be the case.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem regularlatticeminimizerliteral :
-  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ), 0 < L →
-    ∀ x : Fin (N+1) → ℝ,
-    (∀ y : Fin (N+1) → ℝ, boxPeriodicNearestNeighborPotentialEnergy φ L x ≤
-      boxPeriodicNearestNeighborPotentialEnergy φ L y) →
-    ∃ a : ℝ, regularLattice a (L/(N+1)) x
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.regularlatticeminimizerliteral | NEEDS_HUMAN |
-| 原书疑点 | 对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。 | [ERRATUM?] |
-
-### 6. 审计结论
-
-本地预审：**NEEDS_HUMAN**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：原文需限定势和配置域；不可证明字面假命题。
-
-### 7. 状态与证明位置
-
-**incomplete**；本地证明状态：placeholder。
-
-位置：`Blueprint/Ch01.lean:1328`（`MD.Ch01.regularlatticeminimizerliteral`）。
-
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
-
-直接占位：有sorry；传递占位：含sorryAx。
-
-缺失/继续路线：原文需限定势和配置域；不可证明字面假命题。
-
-签名SHA256：`8fdbdc2a4957dad46d9a05f062fed7fb6361468a585fe4e5f82077cb55832254`；原文SHA256：`319cdd2f0fe4a68b728af327e7e7b9da509d3af66ac6f512fe4251296909d53e`。
-
-## 1. MD-1.6-PeriodicImages · definition · 印刷p.35 / PDFp.58
-
-### 2. 原文陈述
-
-> periodic boundary conditions involve an extended potential energy of the form
-> \[U^{\mathrm{pbc}}(\boldsymbol q)=\sum_{klm}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{ij}(\boldsymbol q_i,\boldsymbol q_j+k\boldsymbol v_1+l\boldsymbol v_2+m\boldsymbol v_3),\]
-> where $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\boldsymbol v_i^T=(L\boldsymbol e_i^T,\ldots,L\boldsymbol e_i^T)$, $i=1,2,3$, where $\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\mathbb R^3$.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTerms)
-    (q : Fin N → V3) :=
-  ∑ k : Fin 3, ∑ l : Fin 3, ∑ m : Fin 3, ∑ i, ∑ j ∈ Finset.Ioi i,
-    φ i j (q i) (q j + WithLp.toLp 2 ![L*((k.val:ℝ)-1),L*((l.val:ℝ)-1),L*((m.val:ℝ)-1)])
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.periodicImageEnergy | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1340`（`MD.Ch01.periodicImageEnergy`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`d11ddd7273009acde9e63933f2d89f102183fc42e5012ee63a3ee9455b446d1f`；原文SHA256：`cf6f3b2f23da9e393824b057eec76bebcce8990a1dd75ae9208c1b22f6be688e`。
-
-## 1. MD-1.6-MinimumImage · definition · 印刷p.35 / PDFp.58
-
-### 2. 原文陈述
-
-> The minimum image convention states that, in computing the force, a given atom interacts only with the nearest replica of any other atom.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def minimumImage (L : ℝ) (q r image : V3) : Prop :=
-  ∃ k : Fin 3 → ℤ, image = r + WithLp.toLp 2 (fun i => L*k i) ∧
-    ∀ l : Fin 3 → ℤ, ‖q-image‖ ≤ ‖q-(r+WithLp.toLp 2 (fun i => L*l i))‖
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.minimumImage | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1349`（`MD.Ch01.minimumImage`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`0d4c0dbca82f99ca89d3aceb7b4915dae48547cc5d1e058ab9e4c200a8737f1f`；原文SHA256：`88fa589b609c2305a61750ea1e8e2e1c4d0739e959da4f1daa755e981fa8cc17`。
-
-## 1. MD-1.6-RhombicLattice · definition · 印刷p.35 / PDFp.58
-
-### 2. 原文陈述
-
-> In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice, with sides of fixed length $n_x,n_y$ and the angle between them ($\theta$), see Fig. 1.17.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def rhombicLattice (a b θ : ℝ) : Set (Position 2) :=
-  {x | ∃ k l : ℤ, x = WithLp.toLp 2 ![k*a+l*b*Real.cos θ,l*b*Real.sin θ]}
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.rhombicLattice | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1357`（`MD.Ch01.rhombicLattice`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`fc67364985cec87986905ec2031bb5b4a475a1e2b1d178a1ffbf45c9d75d27f7`；原文SHA256：`11c9d10fb51c2712f5ede6b647636f7d2c532c73a25c1d6e7238ecb3a9aa2098`。
-
-## 1. MD-1.6-HexagonalLattice · unnumbered_claim · 印刷p.35 / PDFp.58
-
-### 2. 原文陈述
-
-> it can be viewed as a rhombic lattice with $n_x=n_y$ and $\theta=120^\circ$; it can also be viewed as a rhombic lattice with $\theta=60^\circ$
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem hexagonal_lattice_two_bases (a : ℝ) :
-    rhombicLattice a a (2*Real.pi/3) = rhombicLattice a a (Real.pi/3)
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.hexagonal_lattice_two_bases | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：60°/120°基向量三角函数值及整数基替换；计划短证明。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：local_proof。
-
-位置：`Blueprint/Ch01.lean:1364`（`MD.Ch01.hexagonal_lattice_two_bases`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-缺失/继续路线：60°/120°基向量三角函数值及整数基替换；计划短证明。
-
-签名SHA256：`a5364b427f844c956623d44050946c40918c4ab5e5f17dd3ee164d7bdbe8a316`；原文SHA256：`8238551c83931c9d57c40de6eee1605ae2d5f441e27fb8f0b69368656f1dd5ae`。
-
-## 1. MD-1.6-UnitCell · definition · 印刷p.35 / PDFp.58
-
-### 2. 原文陈述
-
-> The unit cell is a description of the arrangement of atoms within a box; unit cells may be stacked in each direction to describe an atomic lattice.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def unitCellLattice (B : Matrix (Fin 3) (Fin 3) ℝ) (motif : Set V3) : Set V3 :=
-  {q | ∃ k : Fin 3 → ℤ, ∃ u ∈ motif,
-    q = B.toEuclideanLin (WithLp.toLp 2 (fun i => (k i : ℝ))) + u}
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.unitCellLattice | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**self-contained**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1389`（`MD.Ch01.unitCellLattice`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`b1f1abd72173af6d190a93a70e797d9809259371e7b8c688315e0389a42dd341`；原文SHA256：`b47a03533013045e0065a2e6282cb2e948d414802dcc3c8b0fb4a94f034e154a`。
-
-## 1. MD-1.6-FCCStacking · definition · 印刷p.36 / PDFp.59
-
-### 2. 原文陈述
-
-> The fcc lattice corresponds to the common arrangement by which cannonballs are stacked into pyramidal structures; it can be viewed as a periodic stacking (ABCABC. . . ) of three hexagonally structured planar layers, as illustrated in Fig. 1.18.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def fccStacking : Set V3 :=
-  {x | ∃ k : ℤ, let j := k % 3
-    x 2 = k*Real.sqrt (2/3) ∧
-      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.fccStacking | NEEDS_HUMAN |
-| 原文未显式量化的技术资格 | 将图示ABC编码为单位边长等边三角层，层高sqrt(2/3)及偏移由close-packed图示编码，正文未列数值公式。 | [EXTRA] |
-
-### 6. 审计结论
-
-本地预审：**NEEDS_HUMAN**。ABC三周期保留；旧库附带具体几何层高和偏移不是正文逐字公式，需要导师确认图示编码。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**incomplete**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1397`（`MD.Ch01.fccStacking`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`fa9be10cf431caafd34a4ec44e2fb67dd7a89d650174ed3a861caf17a6843825`；原文SHA256：`b54e48f45d2f1e0c50af5acf9fc8bafe90f1cf636e58c7bfab29e3e4724b80da`。
-
-## 1. MD-1.6-HCPStacking · definition · 印刷p.36 / PDFp.59
-
-### 2. 原文陈述
-
-> Also shown in Fig. 1.18 is the hcp lattice, which, on the other hand, alternates two distinct planar lattices.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-def hcpStacking : Set V3 :=
-  {x | ∃ k : ℤ, let j := k % 2
-    x 2 = k*Real.sqrt (2/3) ∧
-      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.hcpStacking | NEEDS_HUMAN |
-| 原文未显式量化的技术资格 | 图示AB两个三角层，单位化层高及偏移是具体close-packed图示编码。 | [EXTRA] |
-
-### 6. 审计结论
-
-本地预审：**NEEDS_HUMAN**。AB两周期保留；具体几何参数来源图示而非正文公式，需导师确认编码。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**incomplete**；本地证明状态：definition。
-
-位置：`Blueprint/Ch01.lean:1406`（`MD.Ch01.hcpStacking`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-签名SHA256：`0d005924214051cf078e70c98cf6e02c30873194b02d86d30c076ba7c3d70903`；原文SHA256：`1a537168f3987b658b819101c97350cf02a3ed6aa8c1bc98e5d6c1efb1c8ef97`。
-
-## 1. MD-1.6.1-MinimumGradientZero · unnumbered_claim · 印刷p.36–37 / PDFp.59–60
-
-### 2. 原文陈述
-
-> Regardless of the choice of boundary and/or the inclusion of non-pairwise potentials, the minimum of the potential energy occurs where
-> \[\nabla U=0,\]
-> which gives in general a nonlinear system of $N_c$ equations in $N_c$ unknowns to be solved for the position vector $\boldsymbol q^*$ associated to mechanical equilibrium.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem minimumgradientzero :
-  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n),
-    DifferentiableAt ℝ U q → IsLocalMin U q → gradient U q = 0
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.minimumgradientzero | 一致 |
-| 原文未显式量化的技术资格 | 可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。 | [EXTRA] |
-| 原书疑点 | 不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。 | [ERRATUM?] |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**checked+documented priors**；本地证明状态：local_proof。
-
-位置：`Blueprint/Ch01.lean:1415`（`MD.Ch01.minimumgradientzero`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-已登记前置证明/定义：MolecularDynamics/Chapter01/ReviewProofs.lean:minimumGradientZero_proved。
-
-签名SHA256：`c088338166995b06263d18fa56b99498e42d9707f380a2d80fa54f799c888096`；原文SHA256：`71ef0efb8d517a63179fe8237ccb4875df59bed282d1e355ceaab46963f522a2`。
-
-## 1. MD-1.6.1-ForceLinearization · unnumbered_claim · 印刷p.37 / PDFp.60
-
-### 2. 原文陈述
-
-> At the equilibrium point, we can linearize the system of differential equations by computing the Hessian matrix, then we find
-> \[\nabla U(\boldsymbol q)\approx U''(\boldsymbol q^*)(\boldsymbol q-\boldsymbol q^*).\]
-> Then, letting $\delta\boldsymbol q=\boldsymbol q-\boldsymbol q^*$, $\delta\boldsymbol p$ represent small deviations from the equilibrium point at $(\boldsymbol q,\boldsymbol p)=(\boldsymbol q^*,0)$, we have
-> \[\frac{\mathrm d\delta\boldsymbol q}{\mathrm dt}=\boldsymbol M^{-1}\delta\boldsymbol p,\qquad\frac{\mathrm d\delta\boldsymbol p}{\mathrm dt}=-U''(\boldsymbol q^*)\delta\boldsymbol q.\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem force_linearization {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
-    (U : PotentialEnergy n) (qstar : Position n) (hU : ContDiffAt ℝ 2 U qstar)
-    (heq : gradient U qstar = 0) :
-    HasFDerivAt (fun z : PhaseSpace n => (matrixAction M⁻¹ z.2, -gradient U z.1))
-      (((Matrix.toEuclideanCLM (n := Fin n) (𝕜 := ℝ) M⁻¹).comp (ContinuousLinearMap.snd ℝ (Position n) (Momentum n))).prod
-        ((-fderiv ℝ (gradient U) qstar).comp (ContinuousLinearMap.fst ℝ (Position n) (Momentum n))))
-      (qstar,0) ∧
-    (fun q => gradient U q - fderiv ℝ (gradient U) qstar (q-qstar)) =o[𝓝 qstar]
-      (fun q => q-qstar)
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.force_linearization | 一致 |
-| 原文未显式量化的技术资格 | 真实C2势及平衡梯度零；一般常M，原文M正定由机械背景保证但导数等式不需此资格。 | [EXTRA] |
-
-### 6. 审计结论
-
-本地预审：**PASS**。一般质量矩阵、真实块Frechet导数及完整小o梯度线性化全部保留，未假设结论。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：一般矩阵线性作用连续算子与已有conservative_mechanical_linearization拼接；计划短证明。
-
-### 7. 状态与证明位置
-
-**checked+documented priors**；本地证明状态：local_proof。
-
-位置：`Blueprint/Ch01.lean:1424`（`MD.Ch01.force_linearization`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-缺失/继续路线：一般矩阵线性作用连续算子与已有conservative_mechanical_linearization拼接；计划短证明。
-
-已登记前置证明/定义：MolecularDynamics/Chapter01/EquilibriumLinearization.lean:conservative_mechanical_linearization。
-
-签名SHA256：`beea36b5e2e1b8731777f2bd6d6dd4a029fe7242b579a955db637315b0979ab7`；原文SHA256：`5db03a7223df3d59a3cf1810bd4bfb8d2f05d9c0094d5e18ed4fa08ac2700fab`。
-
-## 1. MD-1.6.1-MinimumHessianLiteral · unnumbered_claim · 印刷p.37 / PDFp.60
-
-### 2. 原文陈述
-
-> At the minimum of the potential energy, $U''$ is a positive definite symmetric matrix.
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem minimumhessianliteral :
-  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n), ContDiff ℝ 2 U →
-    IsLocalMin U q →
-    (∀ u v, inner ℝ u (fderiv ℝ (gradient U) q v) = inner ℝ v (fderiv ℝ (gradient U) q u)) ∧
-    ∀ v : Position n, v ≠ 0 → 0 < inner ℝ v (fderiv ℝ (gradient U) q v)
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.minimumhessianliteral | NEEDS_HUMAN |
-| 原书疑点 | 局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。 | [ERRATUM?] |
-
-### 6. 审计结论
-
-本地预审：**NEEDS_HUMAN**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：字面假命题，不证明；正定需非退化额外假设，不能静默补。
-
-### 7. 状态与证明位置
-
-**incomplete**；本地证明状态：placeholder。
-
-位置：`Blueprint/Ch01.lean:1451`（`MD.Ch01.minimumhessianliteral`）。
-
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
-
-直接占位：有sorry；传递占位：含sorryAx。
-
-缺失/继续路线：字面假命题，不证明；正定需非退化额外假设，不能静默补。
-
-签名SHA256：`dcaac8ffe7ea38166591d02b0298d672e8f00b53b94c49589f7b902e828a3252`；原文SHA256：`13722d752744b1fe3247dc3cc168c771625882b94b470ec80fe5e83ccea0dc84`。
-
-## 1. MD-1.6.1-ImaginarySpectrum · unnumbered_claim · 印刷p.37 / PDFp.60
-
-### 2. 原文陈述
-
-> The eigenvalues of the matrix
-> \[\boldsymbol A:=\begin{bmatrix}0&\boldsymbol M^{-1}\\-U''(\boldsymbol q^*)&0\end{bmatrix}\]
-> are therefore all purely imaginary ($\pm i\Omega$, $\Omega^2\in\mathbb R^+$).
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem imaginary_spectrum :
-  ∀ (n : ℕ) (M K : Matrix (Fin n) (Fin n) ℝ), M.PosDef → K.PosDef →
-    let A := fun z : PhaseSpace n => (M⁻¹.toEuclideanLin z.2, -K.toEuclideanLin z.1)
-    ∀ (a b : ℝ) (x y : PhaseSpace n), (x ≠ 0 ∨ y ≠ 0) →
-      A x = a • x - b • y → A y = b • x + a • y →
-      a = 0 ∧ 0 < b^2 ∧ A x = -b • y ∧ A (-y) = -b • x
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.imaginary_spectrum | 一致 |
-| 原文未显式量化的技术资格 | M和Hessian K正定；复谱实虚向量编码。 | [EXTRA] |
-
-### 6. 审计结论
-
-本地预审：**PASS**。补齐实部零、非零频率平方正及共轭实虚特征对给出的±ib配对；一般SPD M,K保留。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：一般SPD块Hamiltonian谱的相似反自伴算子理论；对角/单个normal mode证明不足。
-
-### 7. 状态与证明位置
-
-**incomplete**；本地证明状态：placeholder。
-
-位置：`Blueprint/Ch01.lean:1462`（`MD.Ch01.imaginary_spectrum`）。
-
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
-
-直接占位：有sorry；传递占位：含sorryAx。
-
-缺失/继续路线：一般SPD块Hamiltonian谱的相似反自伴算子理论；对角/单个normal mode证明不足。
-
-签名SHA256：`81330665ea9d2c1e74c0a3414872053dd8999b596bb79453db2c3ca82e0b06a3`；原文SHA256：`729938b130d87c301a64782b8402f7548995c614a8df114ab726df2a33f5499b`。
-
-## 1. MD-1.6.1-ComplexNormalMode · unnumbered_claim · 印刷p.37 / PDFp.60
-
-### 2. 原文陈述
-
-> Associated to each eigenvalue pair we have a pair of complex conjugate eigenvectors $\boldsymbol\xi,\overline{\boldsymbol\xi}$ and also a pair of solutions which can be written in the complex form
-> \[\boldsymbol z(t)=ae^{i\Omega t}\boldsymbol\xi+be^{-i\Omega t}\overline{\boldsymbol\xi},\]
-> ($a,b$ complex coefficients),
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem complexnormalmode :
-  ∀ (n : ℕ) (A : Matrix (Fin n) (Fin n) ℝ) (η : Fin n → ℂ) (Ω : ℝ),
-    (A.map (algebraMap ℝ ℂ)).mulVec η = (Complex.I * Ω) • η →
-    ∀ a b : ℂ, ∀ t : ℝ,
-      HasDerivAt (fun s : ℝ =>
-        a • (Complex.exp (Complex.I*Ω*s) • η) +
-          b • (Complex.exp (-Complex.I*Ω*s) • (fun i => star (η i))))
-        ((A.map (algebraMap ℝ ℂ)).mulVec
-          (a • (Complex.exp (Complex.I*Ω*t) • η) +
-            b • (Complex.exp (-Complex.I*Ω*t) • (fun i => star (η i))))) t
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.complexnormalmode | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：ComplexEigenmode真实导数及共轭线性作用求和桥接，计划短证明。
-
-### 7. 状态与证明位置
-
-**incomplete**；本地证明状态：placeholder。
-
-位置：`Blueprint/Ch01.lean:1474`（`MD.Ch01.complexnormalmode`）。
-
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
-
-直接占位：有sorry；传递占位：含sorryAx。
-
-缺失/继续路线：ComplexEigenmode真实导数及共轭线性作用求和桥接，计划短证明。
-
-签名SHA256：`f78173634b1da94b8fecc486c3945af183f2b47e266a2a3d92fac187f45918e9`；原文SHA256：`c18a19544c2e6cfda514c3f9419575164322a3ef0276dfd78d064fd85c3275e9`。
-
-## 1. MD-1.6.1-RealNormalMode · unnumbered_claim · 印刷p.37 / PDFp.60
-
-### 2. 原文陈述
-
-> or recast in real form as ($\alpha,\beta$ real coefficients):
-> \[\boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].\]
-
-### 3. 原文证明
-
-原书无独立完整证明（proof_latex=null）。
-
-原书无独立完整证明。
-
-### 4. Lean陈述
-
-```lean
-theorem realnormalmode :
-  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-    (A : E →L[ℝ] E) (Ω α β : ℝ) (u v : E)
-    (hu : A u = -Ω • v) (hv : A v = Ω • u) (t : ℝ),
-    HasDerivAt (realNormalMode Ω α β u v)
-      (A (realNormalMode Ω α β u v t)) t
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
-|---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.realnormalmode | 一致 |
-
-### 6. 审计结论
-
-本地预审：**PASS**。展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
-
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-### 7. 状态与证明位置
-
-**checked+documented priors**；本地证明状态：local_proof。
-
-位置：`Blueprint/Ch01.lean:1490`（`MD.Ch01.realnormalmode`）。
-
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
-
-直接占位：无直接sorry；传递占位：未检出。
-
-已登记前置证明/定义：MolecularDynamics/Chapter01/NormalModes.lean:hasDerivAt_realNormalMode。
-
-签名SHA256：`cfd9081469533a64abc73b90f6f6a18137e97f99f9fbd0c2856027c27d68a5cc`；原文SHA256：`dba7d7d8cc5b3b12b0cbf2d01b3867d051c47eedf5869c2f3036314f1fbb15f9`。
 
 ## 1. MD-1.2-NewtonCompact · definition · 印刷p.18 / PDFp.41
 
@@ -2832,7 +1375,8 @@ def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.compactNewton | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)<br>    (q : ℝ → Position n) (t : ℝ) : Prop :=<br>  HasDerivAt q (deriv q t) t ∧ HasDerivAt (deriv q) (deriv (deriv q) t) t ∧<br>  massOperator m (deriv (deriv q) t) = -gradient U (q t) | 一致 |
+| \[\boldsymbol M\frac{\mathrm d^2}{\mathrm dt^2}\boldsymbol q=\boldsymbol F(\boldsymbol q)=-\nabla U(\boldsymbol q).\tag{1.3}\] | MD.Ch01.compactNewton，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 真实二阶可微资格写成HasDerivAt，避免总导数对不可微曲线给伪解。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -2845,7 +1389,7 @@ def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:379`（`MD.Ch01.compactNewton`）。
+位置：[Blueprint/Ch01.lean:395](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:395>)（`MD.Ch01.compactNewton`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2876,7 +1420,7 @@ def degreesOfFreedom {n r : ℕ} (C : Position n → Position r) (q : Position n
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.degreesOfFreedom | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def degreesOfFreedom {n r : ℕ} (C : Position n → Position r) (q : Position n) :=<br>  Module.finrank ℝ (LinearMap.ker (fderiv ℝ C q).toLinearMap) | 一致 |
 | 原文未显式量化的技术资格 | 在可微约束C局部正则层中以导数核维数表示；无约束取零约束。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -2889,7 +1433,7 @@ def degreesOfFreedom {n r : ℕ} (C : Position n → Position r) (q : Position n
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:388`（`MD.Ch01.degreesOfFreedom`）。
+位置：[Blueprint/Ch01.lean:404](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:404>)（`MD.Ch01.degreesOfFreedom`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2922,12 +1466,12 @@ theorem constraintdimension :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.constraintdimension | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem constraintdimension :<br>  ∀ (n r : ℕ) (C : Position n → Position r) (q : Position n),<br>    DifferentiableAt ℝ C q → Function.Surjective (fderiv ℝ C q) →<br>    degreesOfFreedom C q + r = n | 一致 |
 | 原文未显式量化的技术资格 | 约束映射可微，独立约束=导数满射；n=Nc，r≤n由满射推出。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
@@ -2935,7 +1479,7 @@ theorem constraintdimension :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:395`（`MD.Ch01.constraintdimension`）。
+位置：[Blueprint/Ch01.lean:411](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:411>)（`MD.Ch01.constraintdimension`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2967,7 +1511,8 @@ def particleTotalEnergy {N : ℕ} (m : Fin N → ℝ) (U : (Fin N → V3) → �
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.particleTotalEnergy | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def particleTotalEnergy {N : ℕ} (m : Fin N → ℝ) (U : (Fin N → V3) → ℝ)<br>    (q v : Fin N → V3) : ℝ := (∑ j, m j * ‖v j‖^2 / 2) + U q | 一致 |
+| \[E(\boldsymbol q_1,\ldots,\boldsymbol q_N,\dot{\boldsymbol q}_1,\ldots,\dot{\boldsymbol q}_N)=\sum_{j=1}^{N}\frac{m_j\\|\dot{\boldsymbol q}_j\\|^2}{2}+U(\boldsymbol q_1,\ldots,\boldsymbol q_N).\tag{1.4}\] | MD.Ch01.particleTotalEnergy，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -2979,7 +1524,7 @@ def particleTotalEnergy {N : ℕ} (m : Fin N → ℝ) (U : (Fin N → V3) → �
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:410`（`MD.Ch01.particleTotalEnergy`）。
+位置：[Blueprint/Ch01.lean:426](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:426>)（`MD.Ch01.particleTotalEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3011,12 +1556,12 @@ theorem paircancellation :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.paircancellation | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem paircancellation :<br>  ∀ (N : ℕ) (F : Fin N → Fin N → V3),<br>    (∀ i, F i i = 0) → (∀ i j, F i j = -F j i) → ∑ i, ∑ j, F i j = 0 | 一致 |
 | 原文未显式量化的技术资格 | Fi i=0，内部两体力反对称；无外力。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
@@ -3024,7 +1569,7 @@ theorem paircancellation :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:417`（`MD.Ch01.paircancellation`）。
+位置：[Blueprint/Ch01.lean:433](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:433>)（`MD.Ch01.paircancellation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3050,29 +1595,28 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-theorem momentumconservation :
-  ∀ {N d : ℕ}
-    (m : CoordinateMasses (N * d)) (F : Force (N * d))
-    (Q : Set (Position (N * d))) (a b : ℝ)
-    (γ : ℝ → PhaseSpace (N * d))
-    (hγ : IsMechanicalSolutionOn m F Q (Ioo a b) γ)
-    (hFsum : ∀ q ∈ Q, ∀ c : Fin d,
-      ∑ i : Fin N, F q (particleCoordinateEquiv N d (i, c)) = 0)
-    (c : Fin d) (s t : ℝ)
-    (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
-    totalMomentumCoordinate (γ s).2 c = totalMomentumCoordinate (γ t).2 c
+theorem momentum_conservation :
+  ∀ (N : ℕ) (m : Fin N → ℝ) (v : ℝ → Fin N → V3)
+    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I → IsPreconnected I →
+    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →
+    (∀ t ∈ I, (∑ i, ∑ j, F t i j) = 0) ∧
+    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i • v s i) 0 t) ∧
+    ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i • v a i) = ∑ i, m i • v b i
 ```
 
 ### 5. 对照表
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.momentumconservation | 一致 |
-| 原文未显式量化的技术资格 | 开放连通时间区间；净力为零来自前文内部力消去，此桥接显式采用净力条件。 | [EXTRA] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem momentum_conservation :<br>  ∀ (N : ℕ) (m : Fin N → ℝ) (v : ℝ → Fin N → V3)<br>    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I → IsPreconnected I →<br>    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →<br>    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →<br>    (∀ t ∈ I, (∑ i, ∑ j, F t i j) = 0) ∧<br>    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i • v s i) 0 t) ∧<br>    ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i • v a i) = ∑ i, m i • v b i | 一致 |
+| 两体力反向，净力相消 | F t i j = -F t j i → (∑ i, ∑ j, F t i j)=0 | 一致；净力为零是结论 |
+| 全向量/每坐标动量守恒 | 真实HasDerivAt (∑ i,m i • v s i) 0及任意a,b∈I的值相等 | 一致 |
+| 原文未显式量化的技术资格 | 真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
+本地预审：**PASS**。审查后去掉旧桥接中净力零前提，由真实逐对作用反对称推出净力零和全向量/每坐标动量守恒，保留全部结论。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
@@ -3080,15 +1624,17 @@ theorem momentumconservation :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:442`（`MD.Ch01.momentumconservation`）。
+位置：[Blueprint/Ch01.lean:458](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:458>)（`MD.Ch01.momentum_conservation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-已登记前置证明/定义：MolecularDynamics/Chapter01/MomentumConservation.lean:totalMomentumCoordinate_const_on_Ioo。
+本地独立尝试2次，失败1次；证据：blueprint/ch01/proof_attempts.json。
 
-签名SHA256：`e489fdec326b26fc32fb8f2988d429805a517c80db434d98e790e24c39878d5d`；原文SHA256：`27cc4a7ca391817f1701cf884703fcc94ea8f7f6cdfd2ba508331c1566cd1bcd`。
+已登记前置证明/定义：MD.Ch01.paircancellation。
+
+签名SHA256：`fd873a2e83db51de11e8d05b470b5e74d2474acf19129a966bf20f5fa471444e`；原文SHA256：`27cc4a7ca391817f1701cf884703fcc94ea8f7f6cdfd2ba508331c1566cd1bcd`。
 
 ## 1. MD-1.2-HarmonicSolution · unnumbered_claim · 印刷p.19–20 / PDFp.42–43
 
@@ -3119,7 +1665,8 @@ theorem harmonic_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace 
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.harmonic_solution | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem harmonic_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace n) :<br>    IsMechanicalSolutionOn (fun _ : Fin n => (1 : ℝ)) (fun q => (-(Ω^2)) • q)<br>      univ univ (fun t => harmonicFlow Ω t z) ∧<br>    harmonicFlow Ω 0 z = z ∧<br>    ∀ t, (harmonicFlow Ω t z).1 = Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2 | 一致 |
+| \[\dot x=v,\qquad\dot v=-\Omega^2x.\]；\[x(t)=\xi\cos(\Omega t)+\frac\eta\Omega\sin(\Omega t).\] | MD.Ch01.harmonic_solution，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3130,9 +1677,9 @@ theorem harmonic_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace 
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:459`（`MD.Ch01.harmonic_solution`）。
+位置：[Blueprint/Ch01.lean:489](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:489>)（`MD.Ch01.harmonic_solution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3166,7 +1713,8 @@ def scalarMechanicalModel (U : ℝ → ℝ) (z : ℝ → ℝ × ℝ) : Prop :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.scalarMechanicalModel | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def scalarMechanicalModel (U : ℝ → ℝ) (z : ℝ → ℝ × ℝ) : Prop :=<br>  ∀ t, HasDerivAt z ((z t).2, -deriv U (z t).1) t | 一致 |
+| \[\dot x=v,\qquad\dot v=-\frac{\partial U}{\partial x}.\] | MD.Ch01.scalarMechanicalModel，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -3178,7 +1726,7 @@ def scalarMechanicalModel (U : ℝ → ℝ) (z : ℝ → ℝ × ℝ) : Prop :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:470`（`MD.Ch01.scalarMechanicalModel`）。
+位置：[Blueprint/Ch01.lean:500](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:500>)（`MD.Ch01.scalarMechanicalModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3225,7 +1773,10 @@ theorem scalar_quadrature (U : ℝ → ℝ) (hU : ContDiff ℝ ∞ U)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.scalar_quadrature | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem scalar_quadrature (U : ℝ → ℝ) (hU : ContDiff ℝ ∞ U)<br>    (ξ η : ℝ) (hη : η ≠ 0) :<br>    ∃ δ > 0, ∃ ε > 0, ∃ V X : ℝ → ℝ → ℝ → ℝ,<br>      ContDiffOn ℝ ∞ (fun z : ℝ × ℝ × ℝ => V z.1 z.2.1 z.2.2)<br>        {z \| \|z.1-ξ\| < δ ∧ \|z.2.1-ξ\| < δ ∧ \|z.2.2-η\| < δ} ∧<br>      ContDiffOn ℝ ∞ (fun z : ℝ × ℝ × ℝ => X z.1 z.2.1 z.2.2)<br>        {z \| \|z.1\| < ε ∧ \|z.2.1-ξ\| < δ ∧ \|z.2.2-η\| < δ} ∧<br>      (∀ ζ κ, \|ζ-ξ\| < δ → \|κ-η\| < δ → V ζ ζ κ = κ ∧ X 0 ζ κ = ζ) ∧<br>      (∀ x ζ κ, \|x-ξ\| < δ → \|ζ-ξ\| < δ → \|κ-η\| < δ →<br>        scalarPotentialEnergy U (x,V x ζ κ) = scalarPotentialEnergy U (ζ,κ)) ∧<br>      (∀ x ζ κ v, \|x-ξ\| < δ → \|ζ-ξ\| < δ → \|κ-η\| < δ → \|v-η\| < δ →<br>        scalarPotentialEnergy U (x,v) = scalarPotentialEnergy U (ζ,κ) → v = V x ζ κ) ∧<br>      ∀ t ζ κ, \|t\| < ε → \|ζ-ξ\| < δ → \|κ-η\| < δ →<br>        HasDerivAt (fun s => X s ζ κ) (V (X t ζ κ) ζ κ) t ∧<br>        HasDerivAt (fun s => V (X s ζ κ) ζ κ) (-deriv U (X t ζ κ)) t ∧<br>        separableTimePrimitive (fun x => V x ζ κ) ζ (X t ζ κ) = t | 一致 |
+| \[\frac{\mathrm dx}{\mathrm dt}=v=V(x,\xi,\eta).\] | MD.Ch01.scalar_quadrature，完整展开陈述见上一行及第4段 | 一致 |
+| V(x,ξ,η)光滑且能量式局部唯一确定速度 | 联合ContDiffOn ℝ ∞ V及隐式能量唯一性 | 一致 |
+| 积分逆重建及初值参数光滑依赖 | 联合ContDiffOn ℝ ∞ X、实际ODE、X 0=ξ、积分=时间 | 一致；现有固定初值桥接不足 |
 | 原文未显式量化的技术资格 | U光滑使原文smooth solutions和联合隐函数成立；η≠0保留原文非转向前提。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3234,19 +1785,19 @@ theorem scalar_quadrature (U : ℝ → ℝ) (hU : ContDiff ℝ ∞ U)
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：参数依赖的C∞隐函数与C∞ODE局部流、带参数quadrature逆理论；已有固定初值C1桥接不足。
+建议：缺大型理论：带(x,ξ,η)参数的C∞隐函数定理及积分逆C∞依赖、真实解局部唯一性组合；现有固定初值C1图表不足以推出全部签名。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:477`（`MD.Ch01.scalar_quadrature`）。
+位置：[Blueprint/Ch01.lean:507](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:507>)（`MD.Ch01.scalar_quadrature`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：参数依赖的C∞隐函数与C∞ODE局部流、带参数quadrature逆理论；已有固定初值C1桥接不足。
+缺失/继续路线：缺大型理论：带(x,ξ,η)参数的C∞隐函数定理及积分逆C∞依赖、真实解局部唯一性组合；现有固定初值C1图表不足以推出全部签名。
 
 已登记前置证明/定义：MolecularDynamics/Chapter01/ScalarLocalIVP.lean:scalarPotential_exists_localIVP_integrable。
 
@@ -3277,7 +1828,8 @@ def uniformLJSystem {N : ℕ} (m ε σ : ℝ) (q v : Fin N → V3) : ℝ :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.uniformLJSystem | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def uniformLJSystem {N : ℕ} (m ε σ : ℝ) (q v : Fin N → V3) : ℝ :=<br>  (∑ i, m * ‖v i‖^2 / 2) + uniformLJEnergy ε σ q | 一致 |
+| \[E=\frac12\sum_{i=1}^{N}m\dot{\boldsymbol q}_i^2+\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{\mathrm{LJ}}(r_{ij}),\] | MD.Ch01.uniformLJSystem，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -3289,7 +1841,7 @@ def uniformLJSystem {N : ℕ} (m ε σ : ℝ) (q v : Fin N → V3) : ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:499`（`MD.Ch01.uniformLJSystem`）。
+位置：[Blueprint/Ch01.lean:529](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:529>)（`MD.Ch01.uniformLJSystem`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3329,9 +1881,10 @@ theorem radial_lj_force_literal {N : ℕ} (m ε σ : ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.radial_lj_force_literal | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem radial_lj_force_literal {N : ℕ} (m ε σ : ℝ)<br>    (q : Fin N → V3) (a : Fin N → V3) (i : Fin N)<br>    (hε : 0 < ε) (hσ : 0 < σ)<br>    (hnc : ∀ j, i ≠ j → q i ≠ q j)<br>    (hnewton : m • a i = ljForce ε σ q i) :<br>    m • a i = ∑ j ∈ Finset.univ.erase i,<br>      (deriv (lennardJonesPotential ε σ) ‖q i-q j‖ / ‖q i-q j‖) • (q i-q j) ∧<br>    m • a i = (-24 * ε / σ) • (∑ j ∈ Finset.univ.erase i,<br>      (‖q i-q j‖⁻¹ * (2 * (σ / ‖q i-q j‖)^13 - (σ / ‖q i-q j‖)^7)) • (q i-q j)) | NEEDS_HUMAN |
+| \[m\ddot{\boldsymbol q}_i=\sum_{j=1,\ j\ne i}^{N}\frac{\varphi'_{\mathrm{LJ}}(r_{ij})}{r_{ij}}(\boldsymbol q_i-\boldsymbol q_j)<br>=-24\frac\epsilon\sigma\sum_{j=1,\ j\ne i}^{N}r_{ij}^{-1}\left[2\left(\frac\sigma{r_{ij}}\right)^{13}-\left(\frac\sigma{r_{ij}}\right)^7\right](\boldsymbol q_i-\boldsymbol q_j).\] | MD.Ch01.radial_lj_force_literal，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
 | 原文未显式量化的技术资格 | 正ε,σ及非碰撞；hnewton采用式(1.3)负梯度定义，未把字面错误结果放入假设。 | [EXTRA] |
-| 原书疑点 | 首个等式缺负号；所印次行实际为势的正梯度，不同于此前Newton负梯度。 | [ERRATUM?] |
+| 原页核对/疑点 | 首个等式缺负号；所印次行实际为势的正梯度，不同于此前Newton负梯度。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -3339,11 +1892,13 @@ theorem radial_lj_force_literal {N : ℕ} (m ε σ : ℝ)
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
+反例：首个等式缺负号；所印次行实际为势的正梯度，不同于此前Newton负梯度。
+
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:506`（`MD.Ch01.radial_lj_force_literal`）。
+位置：[Blueprint/Ch01.lean:536](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:536>)（`MD.Ch01.radial_lj_force_literal`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3379,7 +1934,9 @@ theorem lj_coordinate_scaling (Q : ℝ → V3) (σ t : ℝ) (v a : V3)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.lj_coordinate_scaling | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem lj_coordinate_scaling (Q : ℝ → V3) (σ t : ℝ) (v a : V3)<br>    (hσ : 0 < σ) (hv : HasDerivAt Q v t) (ha : HasDerivAt (deriv Q) a t) :<br>    HasDerivAt (fun s => σ • Q s) (σ • v) t ∧<br>    HasDerivAt (fun s => σ • deriv Q s) (σ • a) t ∧<br>    ∀ r s : V3, ‖σ • r - σ • s‖ = σ * ‖r-s‖ | 一致 |
+| \[\boldsymbol Q_i=\sigma^{-1}\boldsymbol q_i,\qquad i=1,2,\ldots,N,\] | MD.Ch01.lj_coordinate_scaling，完整展开陈述见上一行及第4段 | 一致 |
+| 一阶、二阶及所有距离缩放 | 两个HasDerivAt结论及∀r s, ‖σ•r-σ•s‖=σ*‖r-s‖ | 一致 |
 | 原文未显式量化的技术资格 | σ>0使范数缩放无绝对值；实际一阶/二阶导数资格。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3392,7 +1949,7 @@ theorem lj_coordinate_scaling (Q : ℝ → V3) (σ t : ℝ) (v a : V3)
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:521`（`MD.Ch01.lj_coordinate_scaling`）。
+位置：[Blueprint/Ch01.lean:551](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:551>)（`MD.Ch01.lj_coordinate_scaling`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3436,7 +1993,10 @@ theorem ljtimescaling :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.ljtimescaling | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem ljtimescaling :<br>  ∀ (N : ℕ) (m ε σ α : ℝ) (Q : ℝ → Fin N → V3),<br>    0 < m → 0 < ε → 0 < σ → 0 < α → α^2=ε/(m*σ^2) →<br>    (∀ i, ContDiff ℝ 2 (fun t => Q t i)) →<br>    (∀ t i j, i ≠ j → Q t i ≠ Q t j) →<br>    (((∀ t i, m • deriv (deriv (fun s => σ • Q (α*s) i)) t =<br>      ljForce ε σ (fun j => σ • Q (α*t) j) i) ↔<br>    ∀ τ i, deriv (deriv (fun s => Q s i)) τ = ljForce 1 1 (Q τ) i)) ∧<br>    α⁻¹ = σ * Real.sqrt (m / ε) | 一致 |
+| \[\tau=\alpha t,\qquad\alpha^2=\frac\epsilon{m\sigma^2},\]；\[\frac{\mathrm d^2\boldsymbol Q_i}{\mathrm d\tau^2}=-\sum_{j=1,\ j\ne i}^{N}\frac{\hat\varphi'_{\mathrm{LJ}}(R_{ij})}{R_{ij}}(\boldsymbol Q_i-\boldsymbol Q_j).\]；\[\alpha^{-1}=\sigma\sqrt{\frac m\epsilon}\approx2.17\times10^{-12}\mathrm s.\] | MD.Ch01.ljtimescaling，完整展开陈述见上一行及第4段 | 一致 |
+| 时间缩放得到无参数单位质量系统 | 真实C2非碰撞Q的原Newton系统 ↔ ∀τ i,Q″=ljForce 1 1 | 一致 |
+| 单位时间 | α⁻¹=σ*Real.sqrt (m/ε) | 一致 |
 | 原文未显式量化的技术资格 | m,ε,σ,α正；真实C2非碰撞轨迹。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3445,21 +2005,421 @@ theorem ljtimescaling :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：LJ导数、时间二阶链式法则及范数缩放组合，需补单位时间等式；大型缺失理论以外可分小批证明。
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch01.lean:564](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:564>)（`MD.Ch01.ljtimescaling`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+本地独立尝试3次，失败2次；证据：blueprint/ch01/proof_attempts.json。
+
+签名SHA256：`d844f266c9dadfd3edc5fb0953420de365fb2b7bacc83eb96bb08b4ad7573d05`；原文SHA256：`97d79453a1e9c07581bf0341e0ed4909b56827662873635849b19b7666c20606`。
+
+## 1. MD-1.3-Lagrangian · definition · 印刷p.22 / PDFp.45
+
+### 2. 原文陈述
+
+> For the system (1.3) with N atoms and $N_c=3N$ configuration coordinates, the Lagrangian is
+> \[L\stackrel{\mathrm{def}}=\frac{\dot{\boldsymbol q}^{T}\boldsymbol M\dot{\boldsymbol q}}2-U(\boldsymbol q).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def fixedMassLagrangian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (q : Position n) (v : Velocity n) : ℝ := nBodyKineticEnergy m v - U q
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def fixedMassLagrangian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)<br>    (q : Position n) (v : Velocity n) : ℝ := nBodyKineticEnergy m v - U q | 一致 |
+| \[L\stackrel{\mathrm{def}}=\frac{\dot{\boldsymbol q}^{T}\boldsymbol M\dot{\boldsymbol q}}2-U(\boldsymbol q).\] | MD.Ch01.fixedMassLagrangian，完整展开陈述见上一行及第4段 | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:642](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:642>)（`MD.Ch01.fixedMassLagrangian`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`ce6d17f1da31241a86bd471c89e2f670db238659115ed1a6c8c9a6edd84e5b5f`；原文SHA256：`0ec61b3ac0c192b19e0e46244f6cb129323fb5ac14aa0acc6a19c98917049df7`。
+
+## 1. MD-1.3-GeneralizedCoordinates · unnumbered_claim · 印刷p.23 / PDFp.46
+
+### 2. 原文陈述
+
+> When we introduce a smooth change of variables $\boldsymbol q=\boldsymbol\Phi(\boldsymbol Q)$, where $\boldsymbol\Phi:\mathbb R^{N_c}\to\mathbb R^{N_c}$, this induces a corresponding transformation of the velocity vector by
+> \[\dot{\boldsymbol q}=\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q},\]
+> where $\boldsymbol\Phi'$ is the $N_c\times N_c$ Jacobian matrix of $\boldsymbol\Phi$. Then the Lagrangian of the system is transformed to
+> \[\widetilde L=\frac{\dot{\boldsymbol Q}^{T}\boldsymbol\Phi'(\boldsymbol Q)^{T}\boldsymbol M\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q}}2-U(\boldsymbol\Phi(\boldsymbol Q)),\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem generalized_coordinates {n k : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (Φ : Position k → Position n)
+    (J : Matrix (Fin n) (Fin k) ℝ) (q : ℝ → Position k) (V : Velocity k) (t : ℝ)
+    (hΦ : HasFDerivAt Φ J.toEuclideanLin.toContinuousLinearMap (q t))
+    (hq : HasDerivAt q V t) :
+    HasDerivAt (fun s => Φ (q s)) (J.toEuclideanLin V) t ∧
+    massLagrangian m U (Φ (q t)) (J.toEuclideanLin V) =
+      inner ℝ V ((generalizedMassMatrix m J).toEuclideanLin V) / 2 - U (Φ (q t))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem generalized_coordinates {n k : ℕ} (m : CoordinateMasses n)<br>    (U : PotentialEnergy n) (Φ : Position k → Position n)<br>    (J : Matrix (Fin n) (Fin k) ℝ) (q : ℝ → Position k) (V : Velocity k) (t : ℝ)<br>    (hΦ : HasFDerivAt Φ J.toEuclideanLin.toContinuousLinearMap (q t))<br>    (hq : HasDerivAt q V t) :<br>    HasDerivAt (fun s => Φ (q s)) (J.toEuclideanLin V) t ∧<br>    massLagrangian m U (Φ (q t)) (J.toEuclideanLin V) =<br>      inner ℝ V ((generalizedMassMatrix m J).toEuclideanLin V) / 2 - U (Φ (q t)) | 一致 |
+| \[\dot{\boldsymbol q}=\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q},\]；\[\widetilde L=\frac{\dot{\boldsymbol Q}^{T}\boldsymbol\Phi'(\boldsymbol Q)^{T}\boldsymbol M\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q}}2-U(\boldsymbol\Phi(\boldsymbol Q)),\] | MD.Ch01.generalized_coordinates，完整展开陈述见上一行及第4段 | 一致 |
+| 原文未显式量化的技术资格 | 原文smooth可在本结论弱化至点态真实可微；k可小于n，含原文约束推广。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch01.lean:649](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:649>)（`MD.Ch01.generalized_coordinates`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+已登记前置证明/定义：MolecularDynamics/Chapter01/GeneralizedCoordinates.lean:hasDerivAt_coordinateChange; MolecularDynamics/Chapter01/GeneralizedCoordinates.lean:massLagrangian_coordinateChange。
+
+签名SHA256：`bb0ed63d16db6eaed7010deaebaa91e722050a21d83ce1c1813d98b1d2e88eb2`；原文SHA256：`3c05ee90cdabb61ecb14bf2a78d78514fd52ca909b8ed1d3d640328fe6fb1d95`。
+
+## 1. MD-1.3-GeneralizedMassRegular · unnumbered_claim · 印刷p.23 / PDFp.46
+
+### 2. 原文陈述
+
+> We will assume that any such changes of variables are regular transformations in the sense that $\boldsymbol\Phi'$ is of full rank and the resulting generalized mass matrix is invertible.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem generalizedmassregular :
+  ∀ {n k : ℕ} (m : CoordinateMasses n)
+    (J : Matrix (Fin n) (Fin k) ℝ) (hm : ∀ i, 0 < m i)
+    (hJ : Function.Injective J.mulVec),
+    IsUnit (generalizedMassMatrix m J)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem generalizedmassregular :<br>  ∀ {n k : ℕ} (m : CoordinateMasses n)<br>    (J : Matrix (Fin n) (Fin k) ℝ) (hm : ∀ i, 0 < m i)<br>    (hJ : Function.Injective J.mulVec),<br>    IsUnit (generalizedMassMatrix m J) | 一致 |
+| 原文未显式量化的技术资格 | 正粒子质量；full rank为Jacobian列单射，符合n≥k。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch01.lean:664](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:664>)（`MD.Ch01.generalizedmassregular`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+已登记前置证明/定义：MolecularDynamics/Chapter01/GeneralizedCoordinates.lean:generalizedMassMatrix_isUnit。
+
+签名SHA256：`2a56bbd90d4156b27564e3969bbf34ff82400c8407a6a90b47f1e8f863d19695`；原文SHA256：`df833c28d1289dab039a9b6cb7c4da15948e658afc0480bd9c5c3ebb05bd9619`。
+
+## 1. MD-1.4-ConvexLegendre · definition · 印刷p.24 / PDFp.47
+
+### 2. 原文陈述
+
+> Abstractly, a Legendre transformation of a given convex function $g=g(\boldsymbol\xi):\mathbb R^m\to\mathbb R$ is a new function $\widetilde g=\widetilde g(\boldsymbol\eta):\mathbb R^m\to\mathbb R$ defined by
+> \[\widetilde g(\boldsymbol\eta)=\sup_{\boldsymbol\xi}(\boldsymbol\eta^T\boldsymbol\xi-g(\boldsymbol\xi)),\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def legendreTransform {n : ℕ} (g : Position n → ℝ) (η : Position n) : EReal :=
+  ⨆ θ : Position n, ((inner ℝ η θ - g θ : ℝ) : EReal)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def legendreTransform {n : ℕ} (g : Position n → ℝ) (η : Position n) : EReal :=<br>  ⨆ θ : Position n, ((inner ℝ η θ - g θ : ℝ) : EReal) | NEEDS_HUMAN |
+| \[\widetilde g(\boldsymbol\eta)=\sup_{\boldsymbol\xi}(\boldsymbol\eta^T\boldsymbol\xi-g(\boldsymbol\xi)),\] | MD.Ch01.legendreTransform，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
+| 原文未显式量化的技术资格 | 值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。 | [EXTRA] |
+| 原页核对/疑点 | 原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。原文sup可非有限。EReal是显式[EXTRA]值域修复，不能宣称逐字的R值对象已经PASS。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+反例：原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:679](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:679>)（`MD.Ch01.legendreTransform`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`80ba9bfdafb6ce32e8e31a4455aee8eac961de0c2ee3d59347cfe5b97d07b0f4`；原文SHA256：`0c6780ad6bf964d2a9dc10860c4ec97729633cff676ef5a2464fd49f3f2b4494`。
+
+## 1. MD-1.4-HamiltonEquations · definition · 印刷p.24 / PDFp.47
+
+### 2. 原文陈述
+
+> The equations of motion can be written
+> \[\dot{\boldsymbol q}=\frac{\partial H}{\partial\boldsymbol p},\qquad\dot{\boldsymbol p}=-\frac{\partial H}{\partial\boldsymbol q}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def hamiltonEquations {n : ℕ} (H : PhaseSpace n → ℝ) (q p : ℝ → Position n) : Prop :=
+  ∀ t, HasDerivAt q (gradient (fun v => H (q t,v)) (p t)) t ∧
+    HasDerivAt p (-gradient (fun x => H (x,p t)) (q t)) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def hamiltonEquations {n : ℕ} (H : PhaseSpace n → ℝ) (q p : ℝ → Position n) : Prop :=<br>  ∀ t, HasDerivAt q (gradient (fun v => H (q t,v)) (p t)) t ∧<br>    HasDerivAt p (-gradient (fun x => H (x,p t)) (q t)) t | 一致 |
+| \[\dot{\boldsymbol q}=\frac{\partial H}{\partial\boldsymbol p},\qquad\dot{\boldsymbol p}=-\frac{\partial H}{\partial\boldsymbol q}.\] | MD.Ch01.hamiltonEquations，完整展开陈述见上一行及第4段 | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:686](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:686>)（`MD.Ch01.hamiltonEquations`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`3358b59456367c6d5b6e6fb83ec1d77f3189382a11f99b725d6a94f23b135003`；原文SHA256：`f9482e12951a8ba751e83abc096eb55cdc64d69cc13b02ceeff66e6eda738b8e`。
+
+## 1. MD-1.4-HamiltonFixedMass · unnumbered_claim · 印刷p.24 / PDFp.47
+
+### 2. 原文陈述
+
+> For constant $\boldsymbol M$ we obtain the dynamical equations,
+> \[\dot{\boldsymbol q}=\boldsymbol M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol F=-\partial U/\partial\boldsymbol q.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamilton_fixed_mass {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (q p : Position n) (hM : M.PosDef)
+    (hU : DifferentiableAt ℝ U q) :
+    HasGradientAt (fun v => variableMassHamiltonian (fun _ => M) U q v)
+      (matrixAction M⁻¹ p) p ∧
+    HasGradientAt (fun x => variableMassHamiltonian (fun _ => M) U x p)
+      (gradient U q) q
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem hamilton_fixed_mass {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)<br>    (U : PotentialEnergy n) (q p : Position n) (hM : M.PosDef)<br>    (hU : DifferentiableAt ℝ U q) :<br>    HasGradientAt (fun v => variableMassHamiltonian (fun _ => M) U q v)<br>      (matrixAction M⁻¹ p) p ∧<br>    HasGradientAt (fun x => variableMassHamiltonian (fun _ => M) U x p)<br>      (gradient U q) q | 一致 |
+| \[\dot{\boldsymbol q}=\boldsymbol M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol F=-\partial U/\partial\boldsymbol q.\] | MD.Ch01.hamilton_fixed_mass，完整展开陈述见上一行及第4段 | 一致 |
+| 一般固定矩阵M的两Hamilton偏梯度 | M.PosDef；动量梯度matrixAction M⁻¹ p，位置梯度gradient U q | 一致；保留一般SPD矩阵 |
+| 原文未显式量化的技术资格 | 常质量矩阵M对称正定，来自机械模型满秩坐标变换；U真实可微。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。保留一般常质量矩阵，两个实际梯度给出全部Hamilton方程分量；旧库对角特例不匹配此忠实签名。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch01.lean:694](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:694>)（`MD.Ch01.hamilton_fixed_mass`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+本地独立尝试2次，失败1次；证据：blueprint/ch01/proof_attempts.json。
+
+已登记前置证明/定义：MolecularDynamics/Chapter01/Hamiltonian.lean:hamiltonianVectorField_eq。
+
+签名SHA256：`a450ef3c6930ce3f7c3a4574cad99ae52b07658e332a2b72f5ef49665351a703`；原文SHA256：`3c64be7a1c1e7d8628ed31e2902b59263fe0d4ab13e11b9f97d1300f885f2c1f`。
+
+## 1. MD-1.4-HamiltonLagrangeEquivalence · unnumbered_claim · 印刷p.25 / PDFp.48
+
+### 2. 原文陈述
+
+> More generally, for molecular models, the Hamiltonian and Lagrangian formulations are interchangeable, but the use of the Hamiltonian form is preferred for allowing simplified description of the geometric character of the solutions of the system as we discuss in Chaps. 2–4.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonlagrangeequivalence :
+  ∀ (n : ℕ) (M : Position n → Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (q v : ℝ → Position n) (I : Set ℝ),
+    IsOpen I → ContDiff ℝ 2 M → ContDiff ℝ 2 U →
+    (∀ x, (M x).PosDef) → (∀ t ∈ I, HasDerivAt q (v t) t) →
+    ((∀ t ∈ I, HasDerivAt (fun s => gradient (quadraticL M U (q s)) (v s))
+      (gradient (fun x => quadraticL M U x (v t)) (q t)) t) ↔
+    ∀ t ∈ I, let p := fun s => (M (q s)).toEuclideanLin (v s)
+      HasDerivAt q (gradient (quadraticH M U (q t)) (p t)) t ∧
+      HasDerivAt p (-gradient (fun x => quadraticH M U x (p t)) (q t)) t)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem hamiltonlagrangeequivalence :<br>  ∀ (n : ℕ) (M : Position n → Matrix (Fin n) (Fin n) ℝ)<br>    (U : PotentialEnergy n) (q v : ℝ → Position n) (I : Set ℝ),<br>    IsOpen I → ContDiff ℝ 2 M → ContDiff ℝ 2 U →<br>    (∀ x, (M x).PosDef) → (∀ t ∈ I, HasDerivAt q (v t) t) →<br>    ((∀ t ∈ I, HasDerivAt (fun s => gradient (quadraticL M U (q s)) (v s))<br>      (gradient (fun x => quadraticL M U x (v t)) (q t)) t) ↔<br>    ∀ t ∈ I, let p := fun s => (M (q s)).toEuclideanLin (v s)<br>      HasDerivAt q (gradient (quadraticH M U (q t)) (p t)) t ∧<br>      HasDerivAt p (-gradient (fun x => quadraticH M U x (p t)) (q t)) t) | 一致 |
+| 原文未显式量化的技术资格 | 一般配置相关M C2、U C2、M逐点正定；轨迹q′=v真实且时间域开放。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：缺大型理论：配置相关矩阵逆的C2微分、一般二次型的配置/速度梯度和Euler–Lagrange全等价；固定质量偏梯度已证明但范围不足。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:534`（`MD.Ch01.ljtimescaling`）。
+位置：[Blueprint/Ch01.lean:723](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:723>)（`MD.Ch01.hamiltonlagrangeequivalence`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：LJ导数、时间二阶链式法则及范数缩放组合，需补单位时间等式；大型缺失理论以外可分小批证明。
+缺失/继续路线：缺大型理论：配置相关矩阵逆的C2微分、一般二次型的配置/速度梯度和Euler–Lagrange全等价；固定质量偏梯度已证明但范围不足。
 
-签名SHA256：`d844f266c9dadfd3edc5fb0953420de365fb2b7bacc83eb96bb08b4ad7573d05`；原文SHA256：`97d79453a1e9c07581bf0341e0ed4909b56827662873635849b19b7666c20606`。
+签名SHA256：`d4374a73f13763ab7bc20eb390d3b4b5f69969cd233377d5b7d4fdfe3a54984a`；原文SHA256：`a1d08decd5a306298f70a9d84495e066083ad1744ae51e5e7ccce8cfd3005504`。
+
+## 1. MD-1.4-PhaseSpace · definition · 印刷p.25 / PDFp.48
+
+### 2. 原文陈述
+
+> The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $\mathbb R^3$ is described by coordinates and positions, i.e., by a point in $\mathbb R^{6N}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseSpace n) :=
+  {z | H z ≠ ⊤ ∧ H z ≠ ⊥}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseSpace n) :=<br>  {z \| H z ≠ ⊤ ∧ H z ≠ ⊥} | 一致 |
+| 原文未显式量化的技术资格 | 采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。 | [EXTRA] |
+| 原页核对/疑点 | p.25原句described by coordinates and positions字面重复位置；前句定义是positions and momenta，Lean按前句定义保留位置×动量，原句不静默改字。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:739](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:739>)（`MD.Ch01.finiteEnergyPhaseDomain`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`c22f176d7814c340bf356c062250e3dbbb041be67e53f86c64e1091363abe1e2`；原文SHA256：`4ac4575e2a94e5f8f3358667dde4eaae10e204d8c4cc6b308a99b3641d267855`。
 
 ## 1. MD-1.5-LocalExistUnique · unnumbered_claim · 印刷p.25 / PDFp.48
 
@@ -3490,7 +2450,7 @@ theorem local_exist_unique {n : ℕ} (m : CoordinateMasses n) (U : PotentialEner
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.local_exist_unique | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem local_exist_unique {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)<br>    (Q : Set (Position n)) (hQ : IsOpen Q) (t₀ : ℝ) (z₀ : PhaseSpace n) (hz : z₀.1 ∈ Q)<br>    (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 (fun x => -gradient U x) q) :<br>    (∃ ε γ, IsLocalMechanicalIVP m (fun q => -gradient U q) Q t₀ z₀ ε γ) ∧<br>    ∀ I γ η, IsOpen I → t₀ ∈ I →<br>      IsMechanicalSolutionOn m (fun q => -gradient U q) Q I γ →<br>      IsMechanicalSolutionOn m (fun q => -gradient U q) Q I η →<br>      γ t₀ = z₀ → η t₀ = z₀ → γ =ᶠ[𝓝 t₀] η | 一致 |
 | 原文未显式量化的技术资格 | generic初值解释为开放非奇异域中的合法初值；力C1是原文存在唯一性背景。固定对角质量模型。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3501,9 +2461,9 @@ theorem local_exist_unique {n : ℕ} (m : CoordinateMasses n) (U : PotentialEner
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:645`（`MD.Ch01.local_exist_unique`）。
+位置：[Blueprint/Ch01.lean:750](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:750>)（`MD.Ch01.local_exist_unique`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3535,7 +2495,7 @@ def energySurface {n : ℕ} (H : PhaseSpace n → ℝ) (E : ℝ) := {z | H z = E
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.energySurface | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def energySurface {n : ℕ} (H : PhaseSpace n → ℝ) (E : ℝ) := {z \| H z = E} | 一致 |
 
 ### 6. 审计结论
 
@@ -3547,7 +2507,7 @@ def energySurface {n : ℕ} (H : PhaseSpace n → ℝ) (E : ℝ) := {z | H z = E
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:663`（`MD.Ch01.energySurface`）。
+位置：[Blueprint/Ch01.lean:768](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:768>)（`MD.Ch01.energySurface`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3559,16 +2519,19 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> Assume that $U$ is a potential energy function which is bounded below, $U\geq U_{\min}$. For given $E_0\geq U_{\min}$ define $\Sigma_{E_0}=\{(\boldsymbol q,\boldsymbol p)\mid H(\boldsymbol q,\boldsymbol p)=E_0\}$. Then, for $(\boldsymbol q,\boldsymbol p)\in\Sigma_{E_0}$
+> Assume that $U$ is a potential energy function which is bounded below, $U\geq U_{\min}$. For given $E_0\geq U_{\min}$ define $\Sigma_{E_0}=\{(\boldsymbol q,\boldsymbol p)\mid H(\boldsymbol q,\boldsymbol p)=E_0\}$. Then, for $(\boldsymbol q,\boldsymbol p)\in\Sigma_{E_0}$ we have
 > \[\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2+U(\boldsymbol q)=E_0\Rightarrow\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2=E_0-U(\boldsymbol q)\leq E_0-U_{\min}.\]
 > $\boldsymbol M^{-1}$ is a positive definite matrix (assumed here to be constant), so we can infer that the momenta are bounded at fixed total energy. We would like to say something similar for positions. We have, at energy $E_0$,
 > \[U_{\min}\leq U(\boldsymbol q)\leq E_0.\]
 
 ### 3. 原文证明
 
-原书无独立完整证明（proof_latex=null）。
+> Then, for $(\boldsymbol q,\boldsymbol p)\in\Sigma_{E_0}$ we have
+> \[\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2+U(\boldsymbol q)=E_0\Rightarrow\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2=E_0-U(\boldsymbol q)\leq E_0-U_{\min}.\]
+> $\boldsymbol M^{-1}$ is a positive definite matrix (assumed here to be constant), so we can infer that the momenta are bounded at fixed total energy. We would like to say something similar for positions. We have, at energy $E_0$,
+> \[U_{\min}\leq U(\boldsymbol q)\leq E_0.\]
 
-原书无独立完整证明。
+原页能量不等式及正定推界论证逐字引用；与陈述合引部分保留，未添加原书没有的证明。
 
 ### 4. Lean陈述
 
@@ -3586,7 +2549,8 @@ theorem energy_bounds {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.energy_bounds | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem energy_bounds {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)<br>    (U : PotentialEnergy n) (E₀ Umin : ℝ) (hM : (M⁻¹).PosDef)<br>    (hU : ∀ q, Umin ≤ U q) :<br>    (∀ q p, variableMassHamiltonian (fun _ => M) U q p = E₀ →<br>      inner ℝ p (matrixAction M⁻¹ p) / 2 = E₀ - U q ∧<br>      inner ℝ p (matrixAction M⁻¹ p) / 2 ≤ E₀ - Umin ∧ Umin ≤ U q ∧ U q ≤ E₀) ∧<br>    ∃ R : ℝ, ∀ q p, variableMassHamiltonian (fun _ => M) U q p = E₀ → ‖p‖ ≤ R | 一致 |
+| \[\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2+U(\boldsymbol q)=E_0\Rightarrow\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2=E_0-U(\boldsymbol q)\leq E_0-U_{\min}.\]；\[U_{\min}\leq U(\boldsymbol q)\leq E_0.\] | MD.Ch01.energy_bounds，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | U定义在整个欧氏位置域；保持一般常M⁻¹正定，未换成固定对角特例。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3595,21 +2559,21 @@ theorem energy_bounds {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：一般SPD二次型的正下界/紧单位球coercivity桥接；已有对角MomentumBounds只覆盖特例。
+建议：缺一般SPD矩阵二次型在紧单位球上的严格正下界与coercivity桥接；旧正式对角质量证明不能直接支持一般质量矩阵。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:669`（`MD.Ch01.energy_bounds`）。
+位置：[Blueprint/Ch01.lean:774](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:774>)（`MD.Ch01.energy_bounds`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：一般SPD二次型的正下界/紧单位球coercivity桥接；已有对角MomentumBounds只覆盖特例。
+缺失/继续路线：缺一般SPD矩阵二次型在紧单位球上的严格正下界与coercivity桥接；旧正式对角质量证明不能直接支持一般质量矩阵。
 
-签名SHA256：`48f0743912bc342304d45a32c4dbed24983db86fc10dae1d9706709a7ab3bae4`；原文SHA256：`43f6d38f2c4759c3a31dc05129c2bb9e7dea5734b498cc15a26732bbd06a6aae`。
+签名SHA256：`48f0743912bc342304d45a32c4dbed24983db86fc10dae1d9706709a7ab3bae4`；原文SHA256：`c33ba2f4c1898ebcc6ac5bda9724533c02482053e96b540c9510ce2d846598cd`。
 
 ## 1. MD-1.5-UniformLevelsCompact · unnumbered_claim · 印刷p.26 / PDFp.49
 
@@ -3637,7 +2601,7 @@ theorem uniform_levels_compact {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.uniform_levels_compact | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem uniform_levels_compact {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)<br>    (U : PotentialEnergy n) (E₀ Umin : ℝ) (hM : (M⁻¹).PosDef)<br>    (hU : Continuous U) (hlower : ∀ q, Umin ≤ U q)<br>    (hlevels : ∃ R : ℝ, ∀ α ∈ Icc Umin E₀, ∀ q, U q = α → ‖q‖ ≤ R) :<br>    IsCompact {z : PhaseSpace n \| variableMassHamiltonian (fun _ => M) U z.1 z.2 = E₀} | 一致 |
 | 原文未显式量化的技术资格 | U连续保证能量层闭；一般常逆质量正定继承p.25；无奇异域的全欧氏模型，若有奇异域需紧集留域。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3646,19 +2610,19 @@ theorem uniform_levels_compact {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：一般SPD能量界+有限维闭有界紧性；原文confining性质只在能量子水平集要求，不把所有位置集先设紧。
+建议：依赖尚缺的一般SPD动量统一界及连续能量层闭、有界、紧组合；不假设结论或改成对角特例。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:682`（`MD.Ch01.uniform_levels_compact`）。
+位置：[Blueprint/Ch01.lean:787](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:787>)（`MD.Ch01.uniform_levels_compact`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：一般SPD能量界+有限维闭有界紧性；原文confining性质只在能量子水平集要求，不把所有位置集先设紧。
+缺失/继续路线：依赖尚缺的一般SPD动量统一界及连续能量层闭、有界、紧组合；不假设结论或改成对角特例。
 
 签名SHA256：`ab85043a046750bbd284aa1a6e93956dc6551b6e73c38e954689420e224ca8fa`；原文SHA256：`9d9945b76efe552a3e2ce536621f7bac4ddf09e22475ac99f23dd38a5ad538da`。
 
@@ -3690,7 +2654,7 @@ theorem compact_continuation {n : ℕ} (m : CoordinateMasses n) (F : Force n)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.compact_continuation | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem compact_continuation {n : ℕ} (m : CoordinateMasses n) (F : Force n)<br>    (Q : Set (Position n)) (K : Set (PhaseSpace n)) (z₀ : PhaseSpace n)<br>    (hQ : IsOpen Q) (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 F q)<br>    (hK : IsCompact K) (hKQ : ∀ z ∈ K, z.1 ∈ Q) (hz : z₀ ∈ K)<br>    (hconfine : ∀ a b γ, 0 ∈ Ioo a b → IsMechanicalSolutionOn m F Q (Ioo a b) γ →<br>      γ 0 = z₀ → ∀ t ∈ Ioo a b, γ t ∈ K) :<br>    ∃ γ, IsMechanicalSolutionOn m F Q univ γ ∧ γ 0 = z₀ ∧ ∀ t, γ t ∈ K | 一致 |
 | 原文未显式量化的技术资格 | 共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3699,19 +2663,19 @@ theorem compact_continuation {n : ℕ} (m : CoordinateMasses n) (F : Force n)
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：双向紧集延拓：已有正式定理仅供给未来Ioi，须反向系统并拼接；本批保留完整双向签名。
+建议：缺双向紧集留域延拓与反向系统拼接；旧正式库只供未来延拓，未尝试用其冒充全时间结论。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:693`（`MD.Ch01.compact_continuation`）。
+位置：[Blueprint/Ch01.lean:798](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:798>)（`MD.Ch01.compact_continuation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：双向紧集延拓：已有正式定理仅供给未来Ioi，须反向系统并拼接；本批保留完整双向签名。
+缺失/继续路线：缺双向紧集留域延拓与反向系统拼接；旧正式库只供未来延拓，未尝试用其冒充全时间结论。
 
 签名SHA256：`7ea8154dad2e317dbddab71b20dca89cd20f62c9fcaf8b71cdd7d6158f84cb15`；原文SHA256：`345e137f01d41892e652806e8a1bb14d410b5c8b08da01e179c18001faeb76e5`。
 
@@ -3738,27 +2702,25 @@ theorem nonconfining :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.nonconfining | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem nonconfining :<br>  ¬ Bornology.IsBounded {q : Position 2 \| (q 0)^2 = 1} | 一致 |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：有界集坐标投影/序列反证，计划短证明。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:706`（`MD.Ch01.nonconfining`）。
+位置：[Blueprint/Ch01.lean:811](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:811>)（`MD.Ch01.nonconfining`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：有界集坐标投影/序列反证，计划短证明。
+本地独立尝试1次，失败0次；证据：blueprint/ch01/proof_attempts.json。
 
 签名SHA256：`d204a699974456eb9ec95b244fee306ff7f9b405c186adcca42ad8d1e49adee9`；原文SHA256：`3818f6807e50e7b1770535c47829a0c76f117e51092de5a0a7ac2dd7108d5e36`。
 
@@ -3787,7 +2749,8 @@ def flowMap {n : ℕ} (f : Position n → Position n) (F : ℝ → Position n �
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.flowMap | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def flowMap {n : ℕ} (f : Position n → Position n) (F : ℝ → Position n → Position n) : Prop :=<br>  (∀ ξ, F 0 ξ = ξ) ∧ ∀ ξ t, HasDerivAt (fun s => F s ξ) (f (F t ξ)) t | 一致 |
+| \[\dot{\boldsymbol z}=f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi,\tag{1.5}\] | MD.Ch01.flowMap，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -3799,7 +2762,7 @@ def flowMap {n : ℕ} (f : Position n → Position n) (F : ℝ → Position n �
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:721`（`MD.Ch01.flowMap`）。
+位置：[Blueprint/Ch01.lean:826](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:826>)（`MD.Ch01.flowMap`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3833,7 +2796,9 @@ theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.flow_energy | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)<br>    (F : ℝ → PhaseSpace n → PhaseSpace n) (hH : Differentiable ℝ H)<br>    (hF : ∀ ξ, F 0 ξ = ξ ∧ ∀ t, HasDerivAt (fun s => F s ξ) (symplecticGradient H (F t ξ)) t) :<br>    ∀ ξ t, H (F t ξ) = H ξ | 一致 |
+| \[H(\mathcal F_t(\boldsymbol\xi))=H(\boldsymbol\xi).\] | MD.Ch01.flow_energy，完整展开陈述见上一行及第4段 | 一致 |
+| 一般Hamilton流保能量，所有初值与时间 | ∀ξ t,H(F t ξ)=H ξ；hF为实际symplecticGradient H的ODE | 一致；守恒未作前提 |
 | 原文未显式量化的技术资格 | H可微及F为真实全局Hamilton流（初值和ODE，不含守恒结论）。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3842,19 +2807,17 @@ theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：一般H的乘积空间Frechet微分分解与Hamilton偏梯度相消；优先短证明。
-
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:728`（`MD.Ch01.flow_energy`）。
+位置：[Blueprint/Ch01.lean:833](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:833>)（`MD.Ch01.flow_energy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：一般H的乘积空间Frechet微分分解与Hamilton偏梯度相消；优先短证明。
+本地独立尝试3次，失败2次；证据：blueprint/ch01/proof_attempts.json。
 
 已登记前置证明/定义：MolecularDynamics/Chapter01/GlobalFlow.lean:globalMechanicalFlow_energy。
 
@@ -3885,7 +2848,8 @@ def harmonicPhaseFlow {n : ℕ} (Ω t : ℝ) (z : PhaseSpace n) : PhaseSpace n :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.harmonicPhaseFlow | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def harmonicPhaseFlow {n : ℕ} (Ω t : ℝ) (z : PhaseSpace n) : PhaseSpace n :=<br>  (Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2,<br>    (-Ω*Real.sin (Ω*t)) • z.1 + Real.cos (Ω*t) • z.2) | 一致 |
+| \[\begin{pmatrix}q(t)\\p(t)\end{pmatrix}=\mathcal F_t\begin{pmatrix}q_0\\p_0\end{pmatrix}=\begin{pmatrix}q_0\cos(\Omega t)+p_0\sin(\Omega t)/\Omega\\-q_0\Omega\sin(\Omega t)+p_0\cos(\Omega t)\end{pmatrix}.\] | MD.Ch01.harmonicPhaseFlow，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -3897,7 +2861,7 @@ def harmonicPhaseFlow {n : ℕ} (Ω t : ℝ) (z : PhaseSpace n) : PhaseSpace n :
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:765`（`MD.Ch01.harmonicPhaseFlow`）。
+位置：[Blueprint/Ch01.lean:870](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:870>)（`MD.Ch01.harmonicPhaseFlow`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3935,7 +2899,8 @@ theorem spectralsolution :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.spectralsolution | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem spectralsolution :<br>  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E] {ι : Type*} [Fintype ι]<br>    (A : E →L[ℂ] E) (b : Module.Basis ι ℂ E) (ν : ι → ℂ)<br>    (hb : ∀ i, A (b i) = ν i • b i) (z : E) (t : ℝ),<br>    complexExponentialFlow A t z =<br>      ∑ i, (b.repr z i * Complex.exp (ν i * (t : ℂ))) • b i | 一致 |
+| \[\boldsymbol z(t)=\sum_{i=1}^{m}c_i e^{\lambda_i(t-t_0)}\boldsymbol\eta_i\]；\[\boldsymbol z(t_0)=\boldsymbol\xi=\sum_{i=1}^{m}c_i\boldsymbol\eta_i.\] | MD.Ch01.spectralsolution，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 有限维复数特征基；在公式中以t-t0调用零初时流；coeff=b.repr ξ。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3946,9 +2911,9 @@ theorem spectralsolution :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:773`（`MD.Ch01.spectralsolution`）。
+位置：[Blueprint/Ch01.lean:878](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:878>)（`MD.Ch01.spectralsolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3985,7 +2950,8 @@ theorem basis_coefficients {m : ℕ} {𝕜 : Type*} [RCLike 𝕜]
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.basis_coefficients | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem basis_coefficients {m : ℕ} {𝕜 : Type*} [RCLike 𝕜]<br>    (b : Module.Basis (Fin m) 𝕜 (EuclideanSpace 𝕜 (Fin m)))<br>    (z : EuclideanSpace 𝕜 (Fin m)) :<br>    IsUnit (basisColumnMatrix b) ∧ (basisColumnMatrix b).mulVec (b.repr z) = WithLp.ofLp z ∧<br>    (basisColumnMatrix b)⁻¹.mulVec (WithLp.ofLp z) = b.repr z | 一致 |
+| \[\boldsymbol\xi=\boldsymbol X\boldsymbol c.\] | MD.Ch01.basis_coefficients，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | RCLike域包含实/复两种；真实有限基。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -3996,9 +2962,9 @@ theorem basis_coefficients {m : ℕ} {𝕜 : Type*} [RCLike 𝕜]
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:785`（`MD.Ch01.basis_coefficients`）。
+位置：[Blueprint/Ch01.lean:890](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:890>)（`MD.Ch01.basis_coefficients`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4036,7 +3002,8 @@ theorem matrixexponentialsolution :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.matrixexponentialsolution | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem matrixexponentialsolution :<br>  ∀ {m : ℕ} (A : Matrix (Fin m) (Fin m) ℝ)<br>    (z : Position m) (t₀ : ℝ) (γ : ℝ → Position m)<br>    (hγ : ∀ t, HasDerivAt γ (WithLp.toLp 2 (A.mulVec (γ t))) t)<br>    (hinit : γ t₀ = z),<br>    γ = fun t => matrixExponentialFlow A (t - t₀) z | 一致 |
+| \[\boldsymbol z(t)=e^{\boldsymbol A(t-t_0)}\boldsymbol\xi.\] | MD.Ch01.matrixexponentialsolution，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -4046,9 +3013,9 @@ theorem matrixexponentialsolution :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:797`（`MD.Ch01.matrixexponentialsolution`）。
+位置：[Blueprint/Ch01.lean:902](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:902>)（`MD.Ch01.matrixexponentialsolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4083,7 +3050,8 @@ theorem matrix_exp_series {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.matrix_exp_series | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem matrix_exp_series {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :<br>    HasSum (fun k : ℕ => ((k.factorial : ℝ)⁻¹) • A^k) (NormedSpace.exp A) | 一致 |
+| \[e^{\boldsymbol A}=\boldsymbol I+\boldsymbol A+\frac1{2!}\boldsymbol A^2+\frac1{3!}\boldsymbol A^3+\cdots\] | MD.Ch01.matrix_exp_series，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -4093,9 +3061,9 @@ theorem matrix_exp_series {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:809`（`MD.Ch01.matrix_exp_series`）。
+位置：[Blueprint/Ch01.lean:914](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:914>)（`MD.Ch01.matrix_exp_series`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4128,7 +3096,7 @@ def smoothFirstIntegral {n : ℕ} (f : Position n → Position n) (Q : Set (Posi
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.smoothFirstIntegral | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def smoothFirstIntegral {n : ℕ} (f : Position n → Position n) (Q : Set (Position n))<br>    (I : Position n → ℝ) : Prop := ContDiffOn ℝ ∞ I Q ∧ IsFirstIntegralOn f Q I | 一致 |
 
 ### 6. 审计结论
 
@@ -4140,7 +3108,7 @@ def smoothFirstIntegral {n : ℕ} (f : Position n → Position n) (Q : Set (Posi
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:817`（`MD.Ch01.smoothFirstIntegral`）。
+位置：[Blueprint/Ch01.lean:922](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:922>)（`MD.Ch01.smoothFirstIntegral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4175,7 +3143,7 @@ theorem firstintegralcriterion :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.firstintegralcriterion | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem firstintegralcriterion :<br>  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] (f : E → E) (Q : Set E) (J : E → ℝ)<br>    (hQ : IsOpen Q) (hf : ∀ x ∈ Q, ContDiffAt ℝ 1 f x)<br>    (hJ : ∀ x ∈ Q, DifferentiableAt ℝ J x),<br>    IsFirstIntegralOn f Q J ↔ ∀ x ∈ Q, fderiv ℝ J x (f x) = 0 | 一致 |
 | 原文未显式量化的技术资格 | 开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral_gradient_criterion。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -4186,9 +3154,9 @@ theorem firstintegralcriterion :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:824`（`MD.Ch01.firstintegralcriterion`）。
+位置：[Blueprint/Ch01.lean:929](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:929>)（`MD.Ch01.firstintegralcriterion`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4232,7 +3200,8 @@ theorem planargraphreduction :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.planargraphreduction | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem planargraphreduction :<br>  ∀ (f : ℝ × ℝ → ℝ × ℝ)<br>    (Q : Set (ℝ × ℝ)) (J : ℝ × ℝ → ℝ) (a b t₀ : ℝ) (γ : ℝ → ℝ × ℝ)<br>    (hfirst : IsFirstIntegralOn f Q J)<br>    (hQ : ∀ t ∈ Ioo a b, γ t ∈ Q)<br>    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (f (γ t)) t) (ht₀ : t₀ ∈ Ioo a b)<br>    (L : (ℝ × ℝ) →L[ℝ] ℝ) (hJ : HasStrictFDerivAt J L (γ t₀))<br>    (hpartial : L (0, 1) ≠ 0),<br>    ∃ ψ : ℝ → ℝ, ψ (γ t₀).1 = (γ t₀).2 ∧ DifferentiableAt ℝ ψ (γ t₀).1 ∧<br>      (∀ᶠ v in 𝓝 (γ t₀), J v = J (γ t₀) ↔ ψ v.1 = v.2) ∧<br>      (∀ᶠ t in 𝓝 t₀, (γ t).2 = ψ (γ t).1 ∧<br>        HasDerivAt (fun u => (γ u).1) ((f ((γ t).1, ψ (γ t).1)).1) t) | 一致 |
+| \[\frac{\mathrm dx}{\mathrm dt}=g(x,\psi(x)).\] | MD.Ch01.planargraphreduction，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 对y偏导非零，真实strict导数，局部时间窗；原文省略隐函数非退化条件。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -4243,9 +3212,9 @@ theorem planargraphreduction :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:835`（`MD.Ch01.planargraphreduction`）。
+位置：[Blueprint/Ch01.lean:940](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:940>)（`MD.Ch01.planargraphreduction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4292,7 +3261,7 @@ theorem planarquadrature :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.planarquadrature | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem planarquadrature :<br>  ∀ (f : ℝ × ℝ → ℝ × ℝ)<br>    (Q : Set (ℝ × ℝ)) (J : ℝ × ℝ → ℝ) (a b t₀ : ℝ) (γ : ℝ → ℝ × ℝ)<br>    (hfirst : IsFirstIntegralOn f Q J) (hQ : ∀ t ∈ Ioo a b, γ t ∈ Q)<br>    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (f (γ t)) t) (ht₀ : t₀ ∈ Ioo a b)<br>    (hJ : ContDiffAt ℝ 1 J (γ t₀)) (hf : ContDiffAt ℝ 1 f (γ t₀))<br>    (hpartial : (fderiv ℝ J (γ t₀)) (0, 1) ≠ 0) (hspeed : (f (γ t₀)).1 ≠ 0),<br>    ∃ (ψ g : ℝ → ℝ) (δ ε : ℝ), 0 < δ ∧ 0 < ε ∧<br>      ψ (γ t₀).1 = (γ t₀).2 ∧ ContDiffAt ℝ 1 ψ (γ t₀).1 ∧<br>      HasStrictDerivAt g (f (γ t₀)).1 0 ∧<br>      (∀ᶠ t in 𝓝 t₀, (γ t).1 = g (t - t₀) ∧ (γ t).2 = ψ (g (t - t₀))) ∧<br>      (∀ᶠ x in 𝓝 (γ t₀).1,<br>        g (separableTimePrimitive (fun x => (f (x, ψ x)).1) (γ t₀).1 x) = x) ∧<br>      (∀ᶠ y in 𝓝 0, separableTimePrimitive (fun x => (f (x, ψ x)).1) (γ t₀).1 (g y) = y) ∧<br>      (∀ t ∈ Ioo (t₀ - ε) (t₀ + ε), t ∈ Ioo a b ∧<br>        separableTimePrimitive (fun x => (f (x, ψ x)).1) (γ t₀).1 (γ t).1 = t - t₀) | 一致 |
 | 原文未显式量化的技术资格 | 正则第一积分图及非转向速度非零；真实C2、局部积分逆。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -4303,9 +3272,9 @@ theorem planarquadrature :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:853`（`MD.Ch01.planarquadrature`）。
+位置：[Blueprint/Ch01.lean:958](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:958>)（`MD.Ch01.planarquadrature`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4330,37 +3299,51 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-theorem scalarfirstintegral :
-  ∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U),
-    IsFirstIntegralOn (scalarPotentialVectorField U) univ (scalarPotentialEnergy U)
+theorem scalar_first_integral_and_quadrature :
+  (∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U),
+    IsFirstIntegralOn (scalarPotentialVectorField U) univ (scalarPotentialEnergy U)) ∧
+  (∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U)
+    (a b t₀ : ℝ) (γ : ℝ → ℝ × ℝ)
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (scalarPotentialVectorField U (γ t)) t)
+    (ht₀ : t₀ ∈ Ioo a b) (hv₀ : (γ t₀).2 ≠ 0),
+    ∃ (ψ g : ℝ → ℝ) (δ ε : ℝ), 0 < δ ∧ 0 < ε ∧
+      ψ (γ t₀).1 = (γ t₀).2 ∧ ContDiffAt ℝ 1 ψ (γ t₀).1 ∧
+      HasStrictDerivAt g (γ t₀).2 0 ∧
+      (∀ᶠ t in 𝓝 t₀, (γ t).1 = g (t - t₀) ∧ (γ t).2 = ψ (g (t - t₀))) ∧
+      (∀ᶠ x in 𝓝 (γ t₀).1, g (separableTimePrimitive ψ (γ t₀).1 x) = x) ∧
+      (∀ᶠ y in 𝓝 0, separableTimePrimitive ψ (γ t₀).1 (g y) = y) ∧
+      (∀ t ∈ Ioo (t₀ - ε) (t₀ + ε), t ∈ Ioo a b ∧
+        separableTimePrimitive ψ (γ t₀).1 (γ t).1 = t - t₀))
 ```
 
 ### 5. 对照表
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.scalarfirstintegral | 一致 |
-| 原文未显式量化的技术资格 | U C2；原文integrable的quadrature结论复用§1.2条目，不等同于全局闭式轨道。 | [EXTRA] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem scalar_first_integral_and_quadrature :<br>  (∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U),<br>    IsFirstIntegralOn (scalarPotentialVectorField U) univ (scalarPotentialEnergy U)) ∧<br>  (∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U)<br>    (a b t₀ : ℝ) (γ : ℝ → ℝ × ℝ)<br>    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (scalarPotentialVectorField U (γ t)) t)<br>    (ht₀ : t₀ ∈ Ioo a b) (hv₀ : (γ t₀).2 ≠ 0),<br>    ∃ (ψ g : ℝ → ℝ) (δ ε : ℝ), 0 < δ ∧ 0 < ε ∧<br>      ψ (γ t₀).1 = (γ t₀).2 ∧ ContDiffAt ℝ 1 ψ (γ t₀).1 ∧<br>      HasStrictDerivAt g (γ t₀).2 0 ∧<br>      (∀ᶠ t in 𝓝 t₀, (γ t).1 = g (t - t₀) ∧ (γ t).2 = ψ (g (t - t₀))) ∧<br>      (∀ᶠ x in 𝓝 (γ t₀).1, g (separableTimePrimitive ψ (γ t₀).1 x) = x) ∧<br>      (∀ᶠ y in 𝓝 0, separableTimePrimitive ψ (γ t₀).1 (g y) = y) ∧<br>      (∀ t ∈ Ioo (t₀ - ε) (t₀ + ε), t ∈ Ioo a b ∧<br>        separableTimePrimitive ψ (γ t₀).1 (γ t).1 = t - t₀)) | 一致 |
+| energy as a first integral | scalarPotentialEnergy_isFirstIntegral的完整签名 | 一致 |
+| therefore integrable | scalarPotential_nonturning_quadrature的实际局部积分逆重建 | 一致；非转向资格显式 |
+| 原文未显式量化的技术资格 | U C2；开放时间段真实解、积分逆图使用速度非零点；转向点全局拼接不声称已有证明。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
+本地预审：**PASS**。补齐energy first integral和therefore integrable两结论；全部实际局部积分逆重建由既有证明桥接，非转向技术资格显式。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:875`（`MD.Ch01.scalarfirstintegral`）。
+位置：[Blueprint/Ch01.lean:980](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:980>)（`MD.Ch01.scalar_first_integral_and_quadrature`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-已登记前置证明/定义：MolecularDynamics/Chapter01/ScalarIntegrability.lean:scalarPotentialEnergy_isFirstIntegral。
+已登记前置证明/定义：MolecularDynamics/Chapter01/ScalarIntegrability.lean:scalarPotentialEnergy_isFirstIntegral; MolecularDynamics/Chapter01/ScalarIntegrability.lean:scalarPotential_nonturning_quadrature。
 
-签名SHA256：`36c1b1338ee55624c48628b086f7a56659ef4782a40ddd2b640c77eca91a9e5c`；原文SHA256：`d364c224f575df8ac6f0c2374ea50a7a5215a637efa14c0d68412e48c541de85`。
+签名SHA256：`63b284f743535a2234c249a20fdbd7f70717696366f587013b79502b212fbe0f`；原文SHA256：`d364c224f575df8ac6f0c2374ea50a7a5215a637efa14c0d68412e48c541de85`。
 
 ## 1. MD-1.5.1-RealSpectralSolution · unnumbered_claim · 印刷p.27 / PDFp.50
 
@@ -4391,7 +3374,7 @@ theorem realspectralsolution :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.realspectralsolution | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem realspectralsolution :<br>  ∀ {m : ℕ}<br>    (A : Matrix (Fin m) (Fin m) ℝ)<br>    (b : Module.Basis (Fin m) ℂ (EuclideanSpace ℂ (Fin m))) (ν : Fin m → ℂ)<br>    (hb : ∀ j, Matrix.toEuclideanCLM (n := Fin m) (𝕜 := ℂ) (A.map Complex.ofReal)<br>      (b j) = ν j • b j)<br>    (z : EuclideanSpace ℂ (Fin m)) (hz : ∀ j, (z j).im = 0) (t : ℝ) (i : Fin m),<br>    ((∑ j, (b.repr z j * Complex.exp (ν j * (t : ℂ))) • b j) i).im = 0 | 一致 |
 
 ### 6. 审计结论
 
@@ -4401,9 +3384,9 @@ theorem realspectralsolution :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:884`（`MD.Ch01.realspectralsolution`）。
+位置：[Blueprint/Ch01.lean:1001](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1001>)（`MD.Ch01.realspectralsolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4436,7 +3419,7 @@ def planarKeplerEnergy (x y v w : ℝ) : ℝ :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.planarKeplerEnergy | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def planarKeplerEnergy (x y v w : ℝ) : ℝ :=<br>  v^2/2 + w^2/2 - 1/Real.sqrt (x^2+y^2) | 一致 |
 
 ### 6. 审计结论
 
@@ -4448,7 +3431,7 @@ def planarKeplerEnergy (x y v w : ℝ) : ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:898`（`MD.Ch01.planarKeplerEnergy`）。
+位置：[Blueprint/Ch01.lean:1015](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1015>)（`MD.Ch01.planarKeplerEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4471,41 +3454,66 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-theorem keplerconservedenergy :
-  ∀ {n : ℕ} (a b : ℝ) (γ : ℝ → PhaseSpace n)
+theorem kepler_energy_angular_integrability :
+  (∀ (a b : ℝ) (γ : ℝ → PhaseSpace 2)
     (hγ : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce
-      {q : Position n | q ≠ 0} (Ioo a b) γ)
+      {q : Position 2 | q ≠ 0} (Ioo a b) γ)
     (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
     massHamiltonian (fun _ => (1 : ℝ)) keplerPotential (γ s) =
-      massHamiltonian (fun _ => (1 : ℝ)) keplerPotential (γ t)
+      massHamiltonian (fun _ => (1 : ℝ)) keplerPotential (γ t)) ∧
+  (∀ (a b : ℝ) (γ : ℝ → PhaseSpace 2)
+    (hγ : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce
+      {q : Position 2 | q ≠ 0} (Ioo a b) γ)
+    (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
+    planarAngularMomentum (γ s) = planarAngularMomentum (γ t)) ∧
+  (∀ (a b : ℝ) (z : ℝ → PhaseSpace 2)
+    (h0 : 0 ∈ Ioo a b)
+    (hz : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce
+      {q : Position 2 | q ≠ 0} (Ioo a b) z),
+    ∃ ℓ θ₀ : ℝ, ∃ r v θ : ℝ → ℝ,
+      (∀ t ∈ Ioo a b, 0 < r t ∧ HasDerivAt r (v t) t ∧
+        HasDerivAt v (-1/(r t)^2+ℓ^2/(r t)^3) t ∧
+        θ t = θ₀ + ∫ s in (0 : ℝ)..t, ℓ/(r s)^2 ∧
+        (z t).1 = (fun r θ : ℝ => (WithLp.toLp 2 ![r*Real.cos θ,r*Real.sin θ] : Position 2)) (r t) (θ t)) ∧
+      (∀ t₀ ∈ Ioo a b, ScalarPotentialLocalDescription
+        (fun x => -1/x + ℓ^2/(2*x^2)) (fun t => (r t,v t)) a b t₀) ∧
+      z 0 = (((fun r θ : ℝ => (WithLp.toLp 2 ![r*Real.cos θ,r*Real.sin θ] : Position 2)) (r 0) θ₀),
+        WithLp.toLp 2 ![v 0*Real.cos θ₀-ℓ/r 0*Real.sin θ₀,
+          v 0*Real.sin θ₀+ℓ/r 0*Real.cos θ₀]))
 ```
 
 ### 5. 对照表
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.keplerconservedenergy | 一致 |
-| 原文未显式量化的技术资格 | 真实机械轨迹、非碰撞开放时间区间；n=2对应平面。 | [EXTRA] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem kepler_energy_angular_integrability :<br>  (∀ (a b : ℝ) (γ : ℝ → PhaseSpace 2)<br>    (hγ : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce<br>      {q : Position 2 \| q ≠ 0} (Ioo a b) γ)<br>    (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),<br>    massHamiltonian (fun _ => (1 : ℝ)) keplerPotential (γ s) =<br>      massHamiltonian (fun _ => (1 : ℝ)) keplerPotential (γ t)) ∧<br>  (∀ (a b : ℝ) (γ : ℝ → PhaseSpace 2)<br>    (hγ : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce<br>      {q : Position 2 \| q ≠ 0} (Ioo a b) γ)<br>    (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),<br>    planarAngularMomentum (γ s) = planarAngularMomentum (γ t)) ∧<br>  (∀ (a b : ℝ) (z : ℝ → PhaseSpace 2)<br>    (h0 : 0 ∈ Ioo a b)<br>    (hz : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce<br>      {q : Position 2 \| q ≠ 0} (Ioo a b) z),<br>    ∃ ℓ θ₀ : ℝ, ∃ r v θ : ℝ → ℝ,<br>      (∀ t ∈ Ioo a b, 0 < r t ∧ HasDerivAt r (v t) t ∧<br>        HasDerivAt v (-1/(r t)^2+ℓ^2/(r t)^3) t ∧<br>        θ t = θ₀ + ∫ s in (0 : ℝ)..t, ℓ/(r s)^2 ∧<br>        (z t).1 = (fun r θ : ℝ => (WithLp.toLp 2 ![r*Real.cos θ,r*Real.sin θ] : Position 2)) (r t) (θ t)) ∧<br>      (∀ t₀ ∈ Ioo a b, ScalarPotentialLocalDescription<br>        (fun x => -1/x + ℓ^2/(2*x^2)) (fun t => (r t,v t)) a b t₀) ∧<br>      z 0 = (((fun r θ : ℝ => (WithLp.toLp 2 ![r*Real.cos θ,r*Real.sin θ] : Position 2)) (r 0) θ₀),<br>        WithLp.toLp 2 ![v 0*Real.cos θ₀-ℓ/r 0*Real.sin θ₀,<br>          v 0*Real.sin θ₀+ℓ/r 0*Real.cos θ₀])) | 一致 |
+| energy and angular momentum | 平面真实解的kepler_energy_const_on_Ioo与kepler_planarAngularMomentum_const_on_Ioo完整签名 | 一致；两结论已桥接 |
+| mean that … is an integrable system | 整个非碰撞存在区间的径向quadrature、角积分与初值重建合取 | 一致；未以只证明能量守恒代替全部结论 |
+| 原文未显式量化的技术资格 | 真实平面非碰撞机械解；积分重建的整个存在区间含0，角为连续实提升；不声称穿越碰撞的全局轨道。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
+本地预审：**PASS**。逐字整句含能量守恒、角动量守恒与可积性三结论；已扩为完整合取。两守恒量用既有证明，完整极坐标/quadrature重建保持占位。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
+建议：整句两守恒量已分别桥接；可积性完整极坐标提升和全存在区间quadrature重建尚缺大型理论，未删掉therefore integrable结论。
+
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:905`（`MD.Ch01.keplerconservedenergy`）。
+位置：[Blueprint/Ch01.lean:1022](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1022>)（`MD.Ch01.kepler_energy_angular_integrability`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
-直接占位：无直接sorry；传递占位：未检出。
+直接占位：有sorry；传递占位：含sorryAx。
 
-已登记前置证明/定义：MolecularDynamics/Chapter01/Kepler.lean:kepler_energy_const_on_Ioo。
+缺失/继续路线：整句两守恒量已分别桥接；可积性完整极坐标提升和全存在区间quadrature重建尚缺大型理论，未删掉therefore integrable结论。
 
-签名SHA256：`165cc4f04e9b5d8f50a215053c6818745b2718baa0ab050b289c1651a4d7361f`；原文SHA256：`28afcc9ab95682a2d2e79e88c2d26e4906a0ce507fd3c73addf195350f6b3ca3`。
+已登记前置证明/定义：MolecularDynamics/Chapter01/Kepler.lean:kepler_energy_const_on_Ioo; MolecularDynamics/Chapter01/Kepler.lean:kepler_planarAngularMomentum_const_on_Ioo。
+
+签名SHA256：`3723211145a5dbab95d41c2d9ac02d2da1a214bf26040615e96c441de16f67ab`；原文SHA256：`606b6a70901c177d701f456732d2d0b91dc97ccbe21c571a74d268ed15d1b727`。
 
 ## 1. MD-1.5.2-KeplerAngularMomentum · unnumbered_claim · 印刷p.29 / PDFp.52
 
@@ -4534,7 +3542,7 @@ theorem keplerangularmomentum :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.keplerangularmomentum | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem keplerangularmomentum :<br>  ∀ (a b : ℝ) (γ : ℝ → PhaseSpace 2)<br>    (hγ : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce<br>      {q : Position 2 \| q ≠ 0} (Ioo a b) γ)<br>    (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),<br>    planarAngularMomentum (γ s) = planarAngularMomentum (γ t) | 一致 |
 
 ### 6. 审计结论
 
@@ -4544,9 +3552,9 @@ theorem keplerangularmomentum :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:918`（`MD.Ch01.keplerangularmomentum`）。
+位置：[Blueprint/Ch01.lean:1055](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1055>)（`MD.Ch01.keplerangularmomentum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4579,28 +3587,26 @@ theorem keplermomentum :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.keplermomentum | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem keplermomentum :<br>  ∀ q : Position 2, q ≠ 0 → keplerForce q ≠ 0 | 一致 |
 | 原文未显式量化的技术资格 | q≠0；单位质量。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：非零向量被非零径向系数缩放，计划短证明。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:930`（`MD.Ch01.keplermomentum`）。
+位置：[Blueprint/Ch01.lean:1067](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1067>)（`MD.Ch01.keplermomentum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：非零向量被非零径向系数缩放，计划短证明。
+本地独立尝试1次，失败0次；证据：blueprint/ch01/proof_attempts.json。
 
 签名SHA256：`d43c3215bd604a58ab74a73418f766ebf14eca2c8ce9ccc5215e781907157abc`；原文SHA256：`e0da08a2d09d1e1a809207695ea6c2c3441b880612e6d205359751208d93a9f3`。
 
@@ -4626,7 +3632,7 @@ def polarCoordinates (r θ : ℝ) : Position 2 := WithLp.toLp 2 ![r*Real.cos θ,
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.polarCoordinates | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def polarCoordinates (r θ : ℝ) : Position 2 := WithLp.toLp 2 ![r*Real.cos θ,r*Real.sin θ] | 一致 |
 
 ### 6. 审计结论
 
@@ -4638,7 +3644,7 @@ def polarCoordinates (r θ : ℝ) : Position 2 := WithLp.toLp 2 ![r*Real.cos θ,
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:939`（`MD.Ch01.polarCoordinates`）。
+位置：[Blueprint/Ch01.lean:1076](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1076>)（`MD.Ch01.polarCoordinates`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4654,9 +3660,9 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 3. 原文证明
 
-原书无独立完整证明（proof_latex=null）。
+> \[L=K-U=\frac12(\dot r\cos\theta-r\dot\theta\sin\theta)^2+\frac12(\dot r\sin\theta+r\dot\theta\cos\theta)^2+\frac1r=\frac{\dot r^2}2+\frac{r^2\dot\theta^2}2+\frac1r.\]
 
-原书无独立完整证明。
+原页三角/代数恒等式计算即原文论证，逐字引用；原文陈述中的同一计算保留。
 
 ### 4. Lean陈述
 
@@ -4672,7 +3678,8 @@ theorem keplerpolarlagrangian :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.keplerpolarlagrangian | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem keplerpolarlagrangian :<br>  ∀ (r θ v omega : ℝ),<br>    ((v * Real.cos θ - r * omega * Real.sin θ) ^ 2 +<br>      (v * Real.sin θ + r * omega * Real.cos θ) ^ 2) / 2 + 1 / r =<br>    v ^ 2 / 2 + r ^ 2 * omega ^ 2 / 2 + 1 / r | 一致 |
+| \[L=K-U=\frac12(\dot r\cos\theta-r\dot\theta\sin\theta)^2+\frac12(\dot r\sin\theta+r\dot\theta\cos\theta)^2+\frac1r=\frac{\dot r^2}2+\frac{r^2\dot\theta^2}2+\frac1r.\] | MD.Ch01.keplerpolarlagrangian，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -4682,9 +3689,9 @@ theorem keplerpolarlagrangian :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:945`（`MD.Ch01.keplerpolarlagrangian`）。
+位置：[Blueprint/Ch01.lean:1082](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1082>)（`MD.Ch01.keplerpolarlagrangian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4692,7 +3699,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 已登记前置证明/定义：MolecularDynamics/Chapter01/PolarCoordinates.lean:keplerPolarLagrangian_identity。
 
-签名SHA256：`35cdcc81e66b0ceed46f77d1b18b19defc050655639648123c59a7cb9544afee`；原文SHA256：`dfbdfa62123d9480edc6c6101c5cd77d6fd498ac1c0a6f595621d5d3600a94eb`。
+签名SHA256：`35cdcc81e66b0ceed46f77d1b18b19defc050655639648123c59a7cb9544afee`；原文SHA256：`9e462f566fd76db0b9eaf02f4e9c2a80b8f21e1d0ec9db9bc934bbbdc00026e9`。
 
 ## 1. MD-1.5.2-KeplerPolarODE · unnumbered_claim · 印刷p.29 / PDFp.52
 
@@ -4722,7 +3729,8 @@ theorem keplerpolarode :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.keplerpolarode | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem keplerpolarode :<br>  ∀ (I : Set ℝ) (r θ v omega : ℝ → ℝ),<br>    IsKeplerPolarEulerLagrangeOn I r θ v omega ↔<br>      ∀ t ∈ I, 0 < r t ∧ HasDerivAt r (v t) t ∧ HasDerivAt θ (omega t) t ∧<br>        HasDerivAt v (r t * omega t ^ 2 - (r t ^ 2)⁻¹) t ∧<br>        HasDerivAt (fun u => r u ^ 2 * omega u) 0 t | 一致 |
+| \[\ddot r=-\frac1{r^2}+r\dot\theta^2,\qquad0=\frac{\mathrm d}{\mathrm dt}(r^2\dot\theta).\] | MD.Ch01.keplerpolarode，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -4732,9 +3740,9 @@ theorem keplerpolarode :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:956`（`MD.Ch01.keplerpolarode`）。
+位置：[Blueprint/Ch01.lean:1093](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1093>)（`MD.Ch01.keplerpolarode`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4754,9 +3762,11 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 3. 原文证明
 
-原书无独立完整证明（proof_latex=null）。
+> Expressed in polar coordinates this is
+> \[l_z=(r\cos\theta)(\dot r\sin\theta+r\dot\theta\cos\theta)-(r\sin\theta)(\dot r\cos\theta-r\dot\theta\sin\theta)
+> =r^2\dot\theta(\cos^2\theta+\sin^2\theta)=r^2\dot\theta,\]
 
-原书无独立完整证明。
+原页三角/代数恒等式计算即原文论证，逐字引用；原文陈述中的同一计算保留。
 
 ### 4. Lean陈述
 
@@ -4771,7 +3781,8 @@ theorem polarangularidentity :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.polarangularidentity | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem polarangularidentity :<br>  ∀ (r θ v omega : ℝ),<br>    (r * Real.cos θ) * (v * Real.sin θ + r * omega * Real.cos θ) -<br>      (r * Real.sin θ) * (v * Real.cos θ - r * omega * Real.sin θ) = r ^ 2 * omega | 一致 |
+| \[l_z=(r\cos\theta)(\dot r\sin\theta+r\dot\theta\cos\theta)-(r\sin\theta)(\dot r\cos\theta-r\dot\theta\sin\theta)<br>=r^2\dot\theta(\cos^2\theta+\sin^2\theta)=r^2\dot\theta,\] | MD.Ch01.polarangularidentity，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -4781,9 +3792,9 @@ theorem polarangularidentity :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:968`（`MD.Ch01.polarangularidentity`）。
+位置：[Blueprint/Ch01.lean:1105](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1105>)（`MD.Ch01.polarangularidentity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4791,7 +3802,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 已登记前置证明/定义：MolecularDynamics/Chapter01/PolarCoordinates.lean:polarAngularMomentum_identity。
 
-签名SHA256：`c59b3f04e695215296d3562c18d3cff1f9f0a155be77069341b5b1e9255b7d0c`；原文SHA256：`8aa1e93cfde5c86cadf3c076c89e780c9f62da0c448894fa36b29fb4c2b13df0`。
+签名SHA256：`c59b3f04e695215296d3562c18d3cff1f9f0a155be77069341b5b1e9255b7d0c`；原文SHA256：`c1fe3441def587974cd0b21b723913da855d9c99ef9607bc863d2147adb03b11`。
 
 ## 1. MD-1.5.2-KeplerRadialReduction · unnumbered_claim · 印刷p.29 / PDFp.52
 
@@ -4819,7 +3830,7 @@ theorem keplerradialreduction :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.keplerradialreduction | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem keplerradialreduction :<br>  ∀ (I : Set ℝ) (r θ v omega : ℝ → ℝ)<br>    (h : IsKeplerPolarEulerLagrangeOn I r θ v omega) (t : ℝ) (ht : t ∈ I)<br>    (l : ℝ) (hl : r t ^ 2 * omega t = l),<br>    HasDerivAt v (-(r t ^ 2)⁻¹ + l ^ 2 / r t ^ 3) t | 一致 |
 | 原文未显式量化的技术资格 | r非零、角动量l固定，既有极坐标Euler–Lagrange真实解；角动量常性先前已证。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -4830,9 +3841,9 @@ theorem keplerradialreduction :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:978`（`MD.Ch01.keplerradialreduction`）。
+位置：[Blueprint/Ch01.lean:1115](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1115>)（`MD.Ch01.keplerradialreduction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4842,11 +3853,11 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 签名SHA256：`2f1f7de480ab7a320345d2398387ca945af24d9587452346b2335b20d67f69b5`；原文SHA256：`fa6ef19309cb7aace3709518c1b49b45934ee51b988bc0dd7e7e4fd1ae349b01`。
 
-## 1. MD-1.5.2-KeplerRadialEnergy · definition · 印刷p.30 / PDFp.53
+## 1. MD-1.5.2-KeplerRadialEnergy · definition · 印刷p.29–30 / PDFp.52–53
 
 ### 2. 原文陈述
 
-> system with energy
+> The equation for $r$ is that of a one-degree-of-freedom system with energy
 > \[\widehat E(r,\dot r)=\frac{\dot r^2}2-\frac1r+\frac{l_z^2}{2r^2}.\]
 
 ### 3. 原文证明
@@ -4865,7 +3876,8 @@ def radialKeplerEnergy (ℓ r v : ℝ) : ℝ := v^2/2-1/r+ℓ^2/(2*r^2)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.radialKeplerEnergy | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def radialKeplerEnergy (ℓ r v : ℝ) : ℝ := v^2/2-1/r+ℓ^2/(2*r^2) | 一致 |
+| \[\widehat E(r,\dot r)=\frac{\dot r^2}2-\frac1r+\frac{l_z^2}{2r^2}.\] | MD.Ch01.radialKeplerEnergy，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -4877,13 +3889,13 @@ def radialKeplerEnergy (ℓ r v : ℝ) : ℝ := v^2/2-1/r+ℓ^2/(2*r^2)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:989`（`MD.Ch01.radialKeplerEnergy`）。
+位置：[Blueprint/Ch01.lean:1126](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1126>)（`MD.Ch01.radialKeplerEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-签名SHA256：`5b2fe00e0e32e32594cd86bc65e0bb4fe295aefe49ec5d43c35a6652207b7f52`；原文SHA256：`e36a03b1b2b8582b2a52c3db2efe7c9f4c1bccc9a7ce67c5e0419291ee1b19ad`。
+签名SHA256：`5b2fe00e0e32e32594cd86bc65e0bb4fe295aefe49ec5d43c35a6652207b7f52`；原文SHA256：`86d1d5410343e5ea041a71280414b438ebe46507d76ae276dc15d033d4e96a6d`。
 
 ## 1. MD-1.5.2-KeplerFullSolution · unnumbered_claim · 印刷p.30 / PDFp.53
 
@@ -4922,7 +3934,8 @@ theorem kepler_full_solution (a b : ℝ) (z : ℝ → PhaseSpace 2)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.kepler_full_solution | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem kepler_full_solution (a b : ℝ) (z : ℝ → PhaseSpace 2)<br>    (h0 : 0 ∈ Ioo a b)<br>    (hz : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce<br>      {q : Position 2 \| q ≠ 0} (Ioo a b) z) :<br>    ∃ ℓ θ₀ : ℝ, ∃ r v θ : ℝ → ℝ,<br>      (∀ t ∈ Ioo a b, 0 < r t ∧ HasDerivAt r (v t) t ∧<br>        HasDerivAt v (-1/(r t)^2+ℓ^2/(r t)^3) t ∧<br>        θ t = θ₀ + ∫ s in (0 : ℝ)..t, ℓ/(r s)^2 ∧<br>        (z t).1 = polarCoordinates (r t) (θ t)) ∧<br>      (∀ t₀ ∈ Ioo a b, ScalarPotentialLocalDescription<br>        (fun x => -1/x + ℓ^2/(2*x^2)) (fun t => (r t,v t)) a b t₀) ∧<br>      z 0 = ((polarCoordinates (r 0) θ₀),<br>        WithLp.toLp 2 ![v 0*Real.cos θ₀-ℓ/r 0*Real.sin θ₀,<br>          v 0*Real.sin θ₀+ℓ/r 0*Real.cos θ₀]) | 一致 |
+| \[\theta=\theta(0)+\int_0^t\frac{l_z}{r^2(s)}\,\mathrm ds.\] | MD.Ch01.kepler_full_solution，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 完整非碰撞存在区间含0；原文不保证径向碰撞时仍有全局解；角θ为区间上的连续实提升。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -4931,19 +3944,19 @@ theorem kepler_full_solution (a b : ℝ) (z : ℝ → PhaseSpace 2)
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：全存在区间极坐标角提升、穿越全部转向点的quadrature图拼接；现有库只有固定初值局部重建。
+建议：缺全局Kepler极坐标提升、碰撞边界控制及跨转向点的quadrature图拼接；已有固定初值局部重建不足。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:995`（`MD.Ch01.kepler_full_solution`）。
+位置：[Blueprint/Ch01.lean:1132](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1132>)（`MD.Ch01.kepler_full_solution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：全存在区间极坐标角提升、穿越全部转向点的quadrature图拼接；现有库只有固定初值局部重建。
+缺失/继续路线：缺全局Kepler极坐标提升、碰撞边界控制及跨转向点的quadrature图拼接；已有固定初值局部重建不足。
 
 签名SHA256：`b736f12cb9a0c91f105f04a31bb1fad390242ec28c4d296e0749dd6e2047af80`；原文SHA256：`b7d9e487a0479b5b2a2d80a56d559013aea614ea2b07455f5620e81bded806ac`。
 
@@ -4971,7 +3984,8 @@ def oscillatorActionAngle (Ω I θ : ℝ) : ℝ × ℝ :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.oscillatorActionAngle | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def oscillatorActionAngle (Ω I θ : ℝ) : ℝ × ℝ :=<br>  (Real.sqrt (2*I/Ω)*Real.cos θ, Real.sqrt (2*I*Ω)*Real.sin θ) | 一致 |
+| \[x=\sqrt{2I/\Omega}\cos\theta,\qquad v=\sqrt{2I\Omega}\sin\theta.\] | MD.Ch01.oscillatorActionAngle，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -4983,7 +3997,7 @@ def oscillatorActionAngle (Ω I θ : ℝ) : ℝ × ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1015`（`MD.Ch01.oscillatorActionAngle`）。
+位置：[Blueprint/Ch01.lean:1152](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1152>)（`MD.Ch01.oscillatorActionAngle`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5016,7 +4030,7 @@ theorem actionenergy :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.actionenergy | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem actionenergy :<br>  ∀ (Ω J θ : ℝ) (hΩ : 0 < Ω) (hJ : 0 ≤ J),<br>    harmonicScalarEnergy Ω (harmonicActionPosition Ω J θ)<br>      (harmonicActionVelocity Ω J θ) = J * Ω | 一致 |
 | 原文未显式量化的技术资格 | Ω>0，I≥0；harmonicActionVelocity_formula保证v的sqrt(2IΩ)形式一致。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -5027,9 +4041,9 @@ theorem actionenergy :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:1022`（`MD.Ch01.actionenergy`）。
+位置：[Blueprint/Ch01.lean:1159](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1159>)（`MD.Ch01.actionenergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5067,7 +4081,7 @@ theorem actionode :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.actionode | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem actionode :<br>  ∀ (Ω : ℝ) (J θ : ℝ → ℝ) (d omega t : ℝ)<br>    (hΩ : 0 < Ω) (hJ : 0 < J t) (hd : HasDerivAt J d t) (hθ : HasDerivAt θ omega t),<br>    (HasDerivAt (fun u => harmonicActionPosition Ω (J u) (θ u))<br>        (harmonicActionVelocity Ω (J t) (θ t)) t ∧<br>      HasDerivAt (fun u => harmonicActionVelocity Ω (J u) (θ u))<br>        (-(Ω ^ 2) * harmonicActionPosition Ω (J t) (θ t)) t) ↔ d = 0 ∧ omega = -Ω | 一致 |
 | 原文未显式量化的技术资格 | Ω,I正；真实I′、θ′，非退化局部角坐标。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -5078,9 +4092,9 @@ theorem actionode :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:1032`（`MD.Ch01.actionode`）。
+位置：[Blueprint/Ch01.lean:1169](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1169>)（`MD.Ch01.actionode`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5122,7 +4136,7 @@ theorem actionsolution :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.actionsolution | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem actionsolution :<br>  ∀ (Ω a b : ℝ) (J θ : ℝ → ℝ)<br>    (hΩ : 0 < Ω) (hJ : ∀ t ∈ Ioo a b, 0 < J t)<br>    (hreg : ∀ t ∈ Ioo a b, DifferentiableAt ℝ J t ∧ DifferentiableAt ℝ θ t)<br>    (hODE : ∀ t ∈ Ioo a b,<br>      HasDerivAt (fun u => harmonicActionPosition Ω (J u) (θ u))<br>        (harmonicActionVelocity Ω (J t) (θ t)) t ∧<br>      HasDerivAt (fun u => harmonicActionVelocity Ω (J u) (θ u))<br>        (-(Ω ^ 2) * harmonicActionPosition Ω (J t) (θ t)) t)<br>    (s t : ℝ) (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),<br>    J t = J s ∧ θ t = θ s - Ω * (t - s) | 一致 |
 | 原文未显式量化的技术资格 | 连通开放时间窗含起始s；正action及Ω，真实坐标解。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -5133,9 +4147,9 @@ theorem actionsolution :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:1045`（`MD.Ch01.actionsolution`）。
+位置：[Blueprint/Ch01.lean:1182](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1182>)（`MD.Ch01.actionsolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5168,7 +4182,7 @@ def oscillatorTorusMotion {d : ℕ} (I Ω : Fin d → ℝ) (θ₀ : HarmonicToru
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.oscillatorTorusMotion | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def oscillatorTorusMotion {d : ℕ} (I Ω : Fin d → ℝ) (θ₀ : HarmonicTorus d)<br>    (t : ℝ) : (Fin d → ℝ) × HarmonicTorus d := (I, harmonicTorusRotation Ω t θ₀) | 一致 |
 
 ### 6. 审计结论
 
@@ -5180,7 +4194,7 @@ def oscillatorTorusMotion {d : ℕ} (I Ω : Fin d → ℝ) (θ₀ : HarmonicToru
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1062`（`MD.Ch01.oscillatorTorusMotion`）。
+位置：[Blueprint/Ch01.lean:1199](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1199>)（`MD.Ch01.oscillatorTorusMotion`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5214,7 +4228,7 @@ theorem torusperiod :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.torusperiod | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem torusperiod :<br>  ∀ {n : ℕ}<br>    (Ω : Fin n → ℝ) (T : ℝ) (θ : HarmonicTorus n),<br>    Function.Periodic (fun t => harmonicTorusRotation Ω t θ) T ↔<br>      ∀ j, ∃ k : ℤ, (k : ℝ) * (2 * Real.pi) = Ω j * T | 一致 |
 | 原文未显式量化的技术资格 | 给定周期T；每频率×T为整数圈是精确共振条件；原句没有单独定义commensurate。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -5225,9 +4239,9 @@ theorem torusperiod :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:1069`（`MD.Ch01.torusperiod`）。
+位置：[Blueprint/Ch01.lean:1206](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1206>)（`MD.Ch01.torusperiod`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5262,9 +4276,9 @@ theorem torusdense :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.torusdense | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem torusdense :<br>  ∀ (n : ℕ) (Ω : Fin n → ℝ),<br>    (∀ k : Fin n → ℤ, (∑ i, (k i : ℝ)*Ω i) = 0 → ∀ i, k i = 0) →<br>    ∀ θ : HarmonicTorus n, DenseRange (fun t : ℝ => harmonicTorusRotation Ω t θ) | NEEDS_HUMAN |
 | 原文未显式量化的技术资格 | 高维全整数关系无共振；仅成对频率比无理不足，此为原文quasi-periodic intended meaning的数学资格。 | [EXTRA] |
-| 原书疑点 | 原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。 | [ERRATUM?] |
+| 原页核对/疑点 | 原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -5272,13 +4286,15 @@ theorem torusdense :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
+反例：原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。
+
 建议：一般d维Kronecker稠密轨道理论；正式库仅二维无理比。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1080`（`MD.Ch01.torusdense`）。
+位置：[Blueprint/Ch01.lean:1217](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1217>)（`MD.Ch01.torusdense`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5321,9 +4337,9 @@ theorem local_action_angle_reduction :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.local_action_angle_reduction | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem local_action_angle_reduction :<br>  ∀ (d : ℕ) (I : Fin d → PhaseSpace d → ℝ) (c : Fin d → ℝ),<br>    (∀ i, ContDiff ℝ ∞ (I i)) →<br>    (∀ i j z, poissonBracket (I i) (I j) z = 0) →<br>    let S := {z : PhaseSpace d \| ∀ i, I i z = c i}<br>    IsCompact S → IsConnected S →<br>    (∀ z ∈ S, Function.Surjective<br>      (fun v : PhaseSpace d => fun i => fderiv ℝ (I i) z v)) →<br>    localActionAngle I S ∧ ∃ e : S ≃ₜ HarmonicTorus d,<br>      ∀ i, ∃ Ω : Fin d → ℝ, ∀ (γ : ℝ → PhaseSpace d)<br>        (hγ : ∀ t, γ t ∈ S ∧ HasDerivAt γ (symplecticGradient (I i) (γ t)) t),<br>        ∀ t, e ⟨γ t, (hγ t).1⟩ = harmonicTorusRotation Ω t (e ⟨γ 0, (hγ 0).1⟩) | NEEDS_HUMAN |
 | 原文未显式量化的技术资格 | 全部积分C∞且Poisson括号两两零；正则共同能量层紧、连通；满秩=独立。 | [EXTRA] |
-| 原书疑点 | local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。 | [ERRATUM?] |
+| 原页核对/疑点 | local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -5331,13 +4347,15 @@ theorem local_action_angle_reduction :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
+反例：local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。
+
 建议：一般Liouville–Arnold/Carathéodory–Jacobi–Lie理论；全局环面子句需另行裁定补齐。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1090`（`MD.Ch01.local_action_angle_reduction`）。
+位置：[Blueprint/Ch01.lean:1227](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1227>)（`MD.Ch01.local_action_angle_reduction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5369,7 +4387,7 @@ def equilibriumDefinition {n : ℕ} (f : Position n → Position n) (z : Positio
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.equilibriumDefinition | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def equilibriumDefinition {n : ℕ} (f : Position n → Position n) (z : Position n) : Prop := f z = 0 | 一致 |
 
 ### 6. 审计结论
 
@@ -5381,7 +4399,7 @@ def equilibriumDefinition {n : ℕ} (f : Position n → Position n) (z : Positio
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1108`（`MD.Ch01.equilibriumDefinition`）。
+位置：[Blueprint/Ch01.lean:1245](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1245>)（`MD.Ch01.equilibriumDefinition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5413,7 +4431,7 @@ theorem constantequilibrium :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.constantequilibrium | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem constantequilibrium :<br>  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] (f : E → E) (z₀ : E) (t : ℝ),<br>    HasDerivAt (fun _ : ℝ => z₀) (f z₀) t ↔ f z₀ = 0 | 一致 |
 
 ### 6. 审计结论
 
@@ -5423,9 +4441,9 @@ theorem constantequilibrium :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:1114`（`MD.Ch01.constantequilibrium`）。
+位置：[Blueprint/Ch01.lean:1251](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1251>)（`MD.Ch01.constantequilibrium`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5464,7 +4482,8 @@ theorem equilibriumlinearization :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.equilibriumlinearization | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem equilibriumlinearization :<br>  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] (f : E → E) (z₀ h₀ : E) (t₀ : ℝ)<br>    (hF : ContDiffAt ℝ 1 f z₀) (heq : f z₀ = 0),<br>    ∃ δ : ℝ → E, δ t₀ = h₀ ∧<br>      (∀ t, HasDerivAt δ ((fderiv ℝ f z₀) (δ t)) t) ∧<br>      (equilibriumLinearizationRemainder f z₀ (fderiv ℝ f z₀)) =o[𝓝 0] (fun h : E => h) | 一致 |
+| \[\frac{\mathrm d\delta\boldsymbol z}{\mathrm dt}=\boldsymbol A\delta\boldsymbol z,\qquad\boldsymbol A=f'(\boldsymbol z^*).\] | MD.Ch01.equilibriumlinearization，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -5474,9 +4493,9 @@ theorem equilibriumlinearization :
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:1123`（`MD.Ch01.equilibriumlinearization`）。
+位置：[Blueprint/Ch01.lean:1260](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1260>)（`MD.Ch01.equilibriumlinearization`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5510,7 +4529,7 @@ def hyperbolic {n : ℕ} (A : Position n →L[ℝ] Position n) : Prop :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.hyperbolic | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def hyperbolic {n : ℕ} (A : Position n →L[ℝ] Position n) : Prop :=<br>  ∀ (a b : ℝ) (x y : Position n), (x ≠ 0 ∨ y ≠ 0) →<br>    A x = a • x - b • y → A y = b • x + a • y → a ≠ 0 | 一致 |
 
 ### 6. 审计结论
 
@@ -5522,7 +4541,7 @@ def hyperbolic {n : ℕ} (A : Position n →L[ℝ] Position n) : Prop :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1135`（`MD.Ch01.hyperbolic`）。
+位置：[Blueprint/Ch01.lean:1272](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1272>)（`MD.Ch01.hyperbolic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5564,9 +4583,10 @@ theorem hartmangrobmanliteral :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.hartmangrobmanliteral | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem hartmangrobmanliteral :<br>  ∀ (n : ℕ) (f : Position n → Position n) (z : Position n)<br>    (F : ℝ → Position n → Position n),<br>    ContDiff ℝ 1 f → f z = 0 → hyperbolic (fderiv ℝ f z) → isFlowOf f F →<br>    ∃ (U V : Set (Position n)) (φ ψ : Position n → Position n),<br>      IsOpen U ∧ IsOpen V ∧ 0 ∈ U ∧ 0 ∈ V ∧ φ 0 = 0 ∧<br>      ContDiffOn ℝ ∞ φ U ∧ ContDiffOn ℝ ∞ ψ V ∧<br>      MapsTo φ U V ∧ MapsTo ψ V U ∧ LeftInvOn ψ φ U ∧ LeftInvOn φ ψ V ∧<br>      ∀ x ∈ U, ∀ t : ℝ,<br>        (∀ s ∈ uIcc 0 t, linearExponentialFlow (fderiv ℝ f z) s x ∈ U) →<br>        F t (z+φ x) = z+φ (linearExponentialFlow (fderiv ℝ f z) t x) | NEEDS_HUMAN |
+| \[\boldsymbol z(t)=\boldsymbol z^*+\boldsymbol\Phi(\delta\boldsymbol z(t)).\] | MD.Ch01.hartmangrobmanliteral，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
 | 原文未显式量化的技术资格 | C1全域模型及真实全局流为局部应用的技术资格；共轭在轨迹保持局部域时断言。 | [EXTRA] |
-| 原书疑点 | 原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。 | [ERRATUM?] |
+| 原页核对/疑点 | 原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -5574,13 +4594,15 @@ theorem hartmangrobmanliteral :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
+反例：原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。
+
 建议：一般Hartman–Grobman理论；光滑共轭字面断言需导师勘误。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1143`（`MD.Ch01.hartmangrobmanliteral`）。
+位置：[Blueprint/Ch01.lean:1280](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1280>)（`MD.Ch01.hartmangrobmanliteral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5616,7 +4638,8 @@ def lyapunovStable {n : ℕ} (F : ℝ → Position n → Position n) (z : Positi
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.lyapunovStable | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def lyapunovStable {n : ℕ} (F : ℝ → Position n → Position n) (z : Position n) : Prop :=<br>  ∀ ε > 0, ∃ δ > 0, ∀ x, ‖x-z‖ < δ →<br>    BddAbove (range (fun t : Set.Ici (0 : ℝ) => ‖F t x-z‖)) ∧<br>    sSup (range (fun t : Set.Ici (0 : ℝ) => ‖F t x-z‖)) < ε | 一致 |
+| \[\sup_{t\geq0}\\|\mathcal F_t(\boldsymbol z_0)-\boldsymbol z^*\\|<\epsilon.\] | MD.Ch01.lyapunovStable，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | ε,δ正按Lyapunov容差惯例；有界性避免Lean实数总sup的未界伪结论。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -5629,7 +4652,7 @@ def lyapunovStable {n : ℕ} (F : ℝ → Position n → Position n) (z : Positi
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1160`（`MD.Ch01.lyapunovStable`）。
+位置：[Blueprint/Ch01.lean:1297](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1297>)（`MD.Ch01.lyapunovStable`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5663,7 +4686,7 @@ theorem hyperbolicstabilitytransfer :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.hyperbolicstabilitytransfer | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem hyperbolicstabilitytransfer :<br>  ∀ (n : ℕ) (f : Position n → Position n) (z : Position n)<br>    (F : ℝ → Position n → Position n), ContDiff ℝ 1 f → f z = 0 →<br>    hyperbolic (fderiv ℝ f z) → isFlowOf f F →<br>    (stable F z ↔ stable (fun t x => linearExponentialFlow (fderiv ℝ f z) t x) 0) | 一致 |
 | 原文未显式量化的技术资格 | C1及真实全局流；stable谓词的统一界<ε与原文严格sup形式等价。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -5672,19 +4695,19 @@ theorem hyperbolicstabilitytransfer :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：局部拓扑共轭与稳定性转移理论；不能用含疑误smooth共轭占位传递证明。
+建议：缺一般Hartman–Grobman局部拓扑共轭和稳定/不稳定转移；不调用仍含sorry的smooth字面条目。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1169`（`MD.Ch01.hyperbolicstabilitytransfer`）。
+位置：[Blueprint/Ch01.lean:1306](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1306>)（`MD.Ch01.hyperbolicstabilitytransfer`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：局部拓扑共轭与稳定性转移理论；不能用含疑误smooth共轭占位传递证明。
+缺失/继续路线：缺一般Hartman–Grobman局部拓扑共轭和稳定/不稳定转移；不调用仍含sorry的smooth字面条目。
 
 签名SHA256：`06ab4a57f9709625a41dab12ca4132adf2070af3b10c4d1616f369179fe4cebe`；原文SHA256：`effb44e5a36b5649b61748188dc7543f3114393fd0b9976bf48d7c4e14c56f21`。
 
@@ -5717,7 +4740,8 @@ theorem hamilton_equilibrium {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.hamilton_equilibrium | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem hamilton_equilibrium {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)<br>    (U : PotentialEnergy n) (q p : Position n) (hM : M.PosDef)<br>    (hU : DifferentiableAt ℝ U q)<br>    (heq : gradient (fun v => variableMassHamiltonian (fun _ => M) U q v) p = 0 ∧<br>      gradient (fun x => variableMassHamiltonian (fun _ => M) U x p) q = 0) :<br>    p = 0 ∧ gradient U q = 0 | 一致 |
+| \[H(\boldsymbol q,\boldsymbol p)=\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p/2+U(\boldsymbol q)\] | MD.Ch01.hamilton_equilibrium，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 一般常M正定、U可微；heq为原文Hamilton平衡的两梯度定义。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -5726,19 +4750,17 @@ theorem hamilton_equilibrium {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：一般矩阵速度梯度和逆单射；已有对角mechanicalEquilibrium_iff不能取代一般签名。
-
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：placeholder。
+**self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:1180`（`MD.Ch01.hamilton_equilibrium`）。
+位置：[Blueprint/Ch01.lean:1317](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1317>)（`MD.Ch01.hamilton_equilibrium`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
-直接占位：有sorry；传递占位：含sorryAx。
+直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：一般矩阵速度梯度和逆单射；已有对角mechanicalEquilibrium_iff不能取代一般签名。
+本地独立尝试1次，失败0次；证据：blueprint/ch01/proof_attempts.json。
 
 签名SHA256：`9133a27389b16c1e021593df7203554ce713574c87b018f57275959139c69585`；原文SHA256：`113c8ffdecfd2fb78e9ce902fadbfd318d3b9ed61b892a6440c2312be1eb009a`。
 
@@ -5766,7 +4788,8 @@ def strongLocalMinimum {n : ℕ} (U : PotentialEnergy n) (qstar : Position n) : 
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.strongLocalMinimum | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def strongLocalMinimum {n : ℕ} (U : PotentialEnergy n) (qstar : Position n) : Prop :=<br>  ∃ ε > 0, ∀ q, 0 < ‖q-qstar‖ → ‖q-qstar‖ < ε → U qstar < U q | 一致 |
+| \[0<\\|\boldsymbol q-\boldsymbol q^*\\|<\epsilon\Rightarrow U(\boldsymbol q)>U(\boldsymbol q^*).\] | MD.Ch01.strongLocalMinimum，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -5778,7 +4801,7 @@ def strongLocalMinimum {n : ℕ} (U : PotentialEnergy n) (qstar : Position n) : 
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1192`（`MD.Ch01.strongLocalMinimum`）。
+位置：[Blueprint/Ch01.lean:1338](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1338>)（`MD.Ch01.strongLocalMinimum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5811,7 +4834,8 @@ def linearizedHamiltonian {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.linearizedHamiltonian | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def linearizedHamiltonian {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)<br>    (U : PotentialEnergy n) (qstar : Position n) (δq δp : Position n) : ℝ :=<br>  inner ℝ δp (matrixAction M⁻¹ δp)/2 + inner ℝ δq (fderiv ℝ (gradient U) qstar δq)/2 | 一致 |
+| \[\widetilde H=\frac{\delta\boldsymbol p^T\boldsymbol M^{-1}\delta\boldsymbol p}2+\frac{\delta\boldsymbol q^T U''(\boldsymbol q^*)\delta\boldsymbol q}2.\] | MD.Ch01.linearizedHamiltonian，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -5823,7 +4847,7 @@ def linearizedHamiltonian {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1199`（`MD.Ch01.linearizedHamiltonian`）。
+位置：[Blueprint/Ch01.lean:1345](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1345>)（`MD.Ch01.linearizedHamiltonian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5856,28 +4880,26 @@ theorem positivehessianquadratic :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.positivehessianquadratic | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem positivehessianquadratic :<br>  ∀ (n : ℕ) (M K : Matrix (Fin n) (Fin n) ℝ), M.PosDef → K.PosDef →<br>    IsStrictPotentialMin (fun z : PhaseSpace n =><br>      inner ℝ z.2 (M⁻¹.toEuclideanLin z.2)/2 + inner ℝ z.1 (K.toEuclideanLin z.1)/2) 0 | 一致 |
 | 原文未显式量化的技术资格 | M正定，K=U″对称正定；一般矩阵。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：一般SPD矩阵逆正定、非零相空间二次型严格正；计划桥接Mathlib矩阵PosDef理论。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:1207`（`MD.Ch01.positivehessianquadratic`）。
+位置：[Blueprint/Ch01.lean:1353](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1353>)（`MD.Ch01.positivehessianquadratic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：一般SPD矩阵逆正定、非零相空间二次型严格正；计划桥接Mathlib矩阵PosDef理论。
+本地独立尝试3次，失败2次；证据：blueprint/ch01/proof_attempts.json。
 
 签名SHA256：`8889033bfeeb03c2a087cd0924e4ce598e79cbb1fba715090ed84a22c1182857`；原文SHA256：`27c55299235db7eeaa44f33854b0cdfbfe73d63a8202c90cff9dbc5db3157482`。
 
@@ -5908,7 +4930,9 @@ theorem positive_hessian_minimum {n : ℕ} (U : PotentialEnergy n) (q : Position
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.positive_hessian_minimum | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem positive_hessian_minimum {n : ℕ} (U : PotentialEnergy n) (q : Position n)<br>    (hU : ContDiff ℝ 2 U) (hq : gradient U q = 0)<br>    (B : Module.Basis (Fin n) ℝ (Position n)) (freq : Fin n → ℝ)<br>    (hdistinct : Function.Injective freq) (hpos : ∀ i, 0 < freq i)<br>    (heig : ∀ i, fderiv ℝ (gradient U) q (B i) = freq i • B i) :<br>    IsStrictPotentialMin U q | 一致 |
+| distinct positive eigenvalues | Function.Injective freq；∀i,0<freq i；实特征基完整heig | 一致 |
+| 势的严格局部极小 | IsStrictPotentialMin U q | 一致；未替换为纯二次型 |
 | 原文未显式量化的技术资格 | C2与平衡∇U=0来自同节；显式特征基表达全部distinct positive eigenvalues。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -5917,21 +4941,1095 @@ theorem positive_hessian_minimum {n : ℕ} (U : PotentialEnergy n) (q : Position
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：Hessian谱正定转换与C2二阶Taylor严格极小判别理论。
+建议：缺实对称Hessian谱正定转换和C2二阶Taylor严格局部极小判别；已证明的纯二次型极小不等于非线性势结论。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1244`（`MD.Ch01.positive_hessian_minimum`）。
+位置：[Blueprint/Ch01.lean:1390](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1390>)（`MD.Ch01.positive_hessian_minimum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：Hessian谱正定转换与C2二阶Taylor严格极小判别理论。
+缺失/继续路线：缺实对称Hessian谱正定转换和C2二阶Taylor严格局部极小判别；已证明的纯二次型极小不等于非线性势结论。
 
 签名SHA256：`9595dc9ac6090cbcd9df50e0c03b268fbe43d76f5684d786f0d93eef593200be`；原文SHA256：`eb853836c012ec6167ae0cdf039f941831bfd39e7a1830f383bec39a074d287b`。
+
+## 1. MD-1.6-UniformPairLattice · definition · 印刷p.33 / PDFp.56
+
+### 2. 原文陈述
+
+> Let us suppose we have a uniform pair potential $\varphi$ and define the total potential energy of a system of N atoms by
+> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi(|x_i-x_j|).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def latticePairPotential {N : ℕ} (φ : ℝ → ℝ) (x : Fin N → ℝ) : ℝ :=
+  ∑ i, ∑ j ∈ Finset.Ioi i, φ |x i-x j|
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def latticePairPotential {N : ℕ} (φ : ℝ → ℝ) (x : Fin N → ℝ) : ℝ :=<br>  ∑ i, ∑ j ∈ Finset.Ioi i, φ \|x i-x j\| | 一致 |
+| \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi(\|x_i-x_j\|).\] | MD.Ch01.latticePairPotential，完整展开陈述见上一行及第4段 | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1406](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1406>)（`MD.Ch01.latticePairPotential`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`ae335e0a22b2ae9f67606b88170b09a0fb08e6f370b60f738e806e087bcc5fdb`；原文SHA256：`1ab0e26a5a903461e6d47ddda8aa0bb2f6e5fa7a1038bdfeca17d8ddcc05cec0`。
+
+## 1. MD-1.6-UnorderedPairCount · unnumbered_claim · 印刷p.33 / PDFp.56
+
+### 2. 原文陈述
+
+> The computation of the energy requires $N(N-1)/2$ separate calculations, which could be very expensive if N is large.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem unorderedpaircount :
+  ∀ N : ℕ, (Finset.univ.filter (fun p : Fin N × Fin N => p.1 < p.2)).card = N*(N-1)/2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem unorderedpaircount :<br>  ∀ N : ℕ, (Finset.univ.filter (fun p : Fin N × Fin N => p.1 < p.2)).card = N*(N-1)/2 | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch01.lean:1413](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1413>)（`MD.Ch01.unorderedpaircount`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+本地独立尝试2次，失败1次；证据：blueprint/ch01/proof_attempts.json。
+
+签名SHA256：`5d6f86a7e51bdfb3056ed8ae47c2985be3249f8a229c56bd8ddaedd61e199be7`；原文SHA256：`042af6822800600079af916e0da48126381caa6ad0aee2b25c72551e49f363a7`。
+
+## 1. MD-1.6-NearestNeighbor · definition · 印刷p.33 / PDFp.56
+
+### 2. 原文陈述
+
+> We can reduce this by assuming only nearest neighbor forces, which means the energy becomes
+> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def nearestNeighborModel {N : ℕ} (φ : ℝ → ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  ∑ i : Fin N, φ |x i.succ-x i.castSucc|
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def nearestNeighborModel {N : ℕ} (φ : ℝ → ℝ) (x : Fin (N+1) → ℝ) : ℝ :=<br>  ∑ i : Fin N, φ \|x i.succ-x i.castSucc\| | 一致 |
+| \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(\|x_{i+1}-x_i\|).\] | MD.Ch01.nearestNeighborModel，完整展开陈述见上一行及第4段 | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1422](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1422>)（`MD.Ch01.nearestNeighborModel`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`c9f9dabf3d9ad9e94ab3219c95f25b7ba08b83c89a0e700797229382f5292c5c`；原文SHA256：`49403eb582702b950944360004f34bf58ff3bdc659e8b48ca0dc40c7faee2a20`。
+
+## 1. MD-1.6-WalledChain · definition · 印刷p.33 / PDFp.56
+
+### 2. 原文陈述
+
+> In order to keep such a system bounded we might then introduce walls at the ends of the chain, e.g. by adding confining potentials to $U$:
+> \[U(x_1,x_2,\ldots,x_N)=\varphi_c(|x_1|)+\varphi_c(|L-x_N|)+\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\tag{1.7}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def walledChainModel {N : ℕ} (φ φc : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  φc |x 0| + φc |L-x (Fin.last N)| + nearestNeighborModel φ x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def walledChainModel {N : ℕ} (φ φc : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=<br>  φc \|x 0\| + φc \|L-x (Fin.last N)\| + nearestNeighborModel φ x | 一致 |
+| \[U(x_1,x_2,\ldots,x_N)=\varphi_c(\|x_1\|)+\varphi_c(\|L-x_N\|)+\sum_{i=1}^{N-1}\varphi(\|x_{i+1}-x_i\|).\tag{1.7}\] | MD.Ch01.walledChainModel，完整展开陈述见上一行及第4段 | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1429](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1429>)（`MD.Ch01.walledChainModel`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`6aa702191c74f535264b934fcadfa137368b23646f8f55c39ddda748cb5c38ec`；原文SHA256：`05159e764ae6162987436cf7dc97920dbd25ed945b25cd1b837be7b896112007`。
+
+## 1. MD-1.6-PeriodicChain · definition · 印刷p.33 / PDFp.56
+
+### 2. 原文陈述
+
+> Alternatively one could restrict to a bounded domain by use of periodic boundary conditions, introducing the potential energy:
+> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|)+\varphi(|L+x_1-x_N|).\tag{1.8}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def periodicChainModel {N : ℕ} (φ : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  nearestNeighborModel φ x + φ |L+x 0-x (Fin.last N)|
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def periodicChainModel {N : ℕ} (φ : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=<br>  nearestNeighborModel φ x + φ \|L+x 0-x (Fin.last N)\| | 一致 |
+| \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(\|x_{i+1}-x_i\|)+\varphi(\|L+x_1-x_N\|).\tag{1.8}\] | MD.Ch01.periodicChainModel，完整展开陈述见上一行及第4段 | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1436](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1436>)（`MD.Ch01.periodicChainModel`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`5d20e7645218c8dacee1094cef2db10fc2cca6ffe99113eaec2a6837c893522b`；原文SHA256：`d4ab02db4c674d5eb01d72c0a74b530e240abd506a2a7c797c8fa5b4313f1741`。
+
+## 1. MD-1.6-PeriodicBoundary · definition · 印刷p.34 / PDFp.57
+
+### 2. 原文陈述
+
+> If a particle moves to the right of $x=L$ we simply shift its position to $x-L$; likewise any particle exiting to the left of $x=0$ has its position shifted to $x+L$ (see Fig. 1.15).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def periodicBoundary (L : ℝ) (x y : ℝ) : Prop := ∃ k : ℤ, y = x + k*L
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def periodicBoundary (L : ℝ) (x y : ℝ) : Prop := ∃ k : ℤ, y = x + k*L | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1443](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1443>)（`MD.Ch01.periodicBoundary`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`2fd68f7d5f14e976fd6bd0b8f4edee8dbe7b3486388dadc2e11d3f1b8e91bce9`；原文SHA256：`a0f1b2fd9d88af028fe4d1d0388573ac314037b24250c2552492e6a3081ab9dd`。
+
+## 1. MD-1.6-PeriodicTranslationMomentum · unnumbered_claim · 印刷p.34 / PDFp.57
+
+### 2. 原文陈述
+
+> Periodic boundary conditions allow us to preserve Newton’s third law, the translational symmetry, and thus the conservation of momentum.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem periodic_translation_momentum :
+  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ),
+    let U := boxPeriodicNearestNeighborPotentialEnergy φ L
+    (∀ q c, U (fun i => q i+c) = U q) ∧
+    (∀ q, DifferentiableAt ℝ U q → fderiv ℝ U q (fun _ => 1) = 0) ∧
+    ∀ (m : Fin (N+1) → ℝ) (q v : ℝ → Fin (N+1) → ℝ) (I : Set ℝ),
+      IsOpen I → IsPreconnected I → (∀ i, 0 < m i) →
+      (∀ t ∈ I, DifferentiableAt ℝ U (q t)) →
+      (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t ∧
+        HasDerivAt (fun s => m i*v s i) (-fderiv ℝ U (q t) (Pi.single i 1)) t) →
+      (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i*v s i) 0 t) ∧
+      ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i*v a i) = ∑ i, m i*v b i
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem periodic_translation_momentum :<br>  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ),<br>    let U := boxPeriodicNearestNeighborPotentialEnergy φ L<br>    (∀ q c, U (fun i => q i+c) = U q) ∧<br>    (∀ q, DifferentiableAt ℝ U q → fderiv ℝ U q (fun _ => 1) = 0) ∧<br>    ∀ (m : Fin (N+1) → ℝ) (q v : ℝ → Fin (N+1) → ℝ) (I : Set ℝ),<br>      IsOpen I → IsPreconnected I → (∀ i, 0 < m i) →<br>      (∀ t ∈ I, DifferentiableAt ℝ U (q t)) →<br>      (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t ∧<br>        HasDerivAt (fun s => m i*v s i) (-fderiv ℝ U (q t) (Pi.single i 1)) t) →<br>      (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i*v s i) 0 t) ∧<br>      ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i*v a i) = ∑ i, m i*v b i | 一致 |
+| 平移不变及方向导数为零 | ∀q c,U(q+c)=U q；fderiv U q (fun _=>1)=0 | 一致 |
+| 真实Newton系统总动量守恒 | 有限和HasDerivAt 0及∀a b∈I动量相等 | 一致 |
+| 原文未显式量化的技术资格 | 一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。补齐全平移不变、净力零真实导数与动量守恒；Newton第三定律为相邻差值势的反向partial，CentralPairGradient另条编码，不把动量结论当假设。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：三次失败已止：Pi空间拓扑与实际HasDerivAt链式法则实例不能统一；平移不变已有正式证明，完整方向导数及动量桥接未通过。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch01.lean:1449](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1449>)（`MD.Ch01.periodic_translation_momentum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：含sorryAx。
+
+缺失/继续路线：三次失败已止：Pi空间拓扑与实际HasDerivAt链式法则实例不能统一；平移不变已有正式证明，完整方向导数及动量桥接未通过。
+
+本地独立尝试3次，失败3次；证据：blueprint/ch01/proof_attempts.json。
+
+签名SHA256：`d5ab02ba52ab0637f83ae1c9d626b6dea6cde704c7ff34ffdd7dc7e73e6b3ca7`；原文SHA256：`845c9f7d7f10e7a691c6cb72f22724271c12cda925ebbe7759b841f9814d9b6e`。
+
+## 1. MD-1.6-RegularLattice · definition · 印刷p.34 / PDFp.57
+
+### 2. 原文陈述
+
+> On the line, we think of a (finite) lattice as a sequence of discrete points separated by a fixed distance $\Delta x$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def regularLattice {N : ℕ} (a δ : ℝ) (x : Fin N → ℝ) : Prop :=
+  0 < δ ∧ ∀ i, x i = a + i.val*δ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def regularLattice {N : ℕ} (a δ : ℝ) (x : Fin N → ℝ) : Prop :=<br>  0 < δ ∧ ∀ i, x i = a + i.val*δ | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1467](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1467>)（`MD.Ch01.regularLattice`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`5c57ad73285c41ec056d8fdeba5d06b241bb8090f1b202bac1fc2af9c2250632`；原文SHA256：`e62d7027ecfbea2720a59800c1e98b2382a2a7383358979ce4ec818f2b73bd4f`。
+
+## 1. MD-1.6-RegularLatticeMinimizerLiteral · unnumbered_claim · 印刷p.34 / PDFp.57
+
+### 2. 原文陈述
+
+> An obvious benefit of using periodic boundary conditions is that, with a uniform pair potential, the energy minimizers are points of a regular lattice; with confining potentials this is unlikely to be the case.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem regularlatticeminimizerliteral :
+  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ), 0 < L →
+    ∀ x : Fin (N+1) → ℝ,
+    (∀ y : Fin (N+1) → ℝ, boxPeriodicNearestNeighborPotentialEnergy φ L x ≤
+      boxPeriodicNearestNeighborPotentialEnergy φ L y) →
+    ∃ a : ℝ, regularLattice a (L/(N+1)) x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem regularlatticeminimizerliteral :<br>  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ), 0 < L →<br>    ∀ x : Fin (N+1) → ℝ,<br>    (∀ y : Fin (N+1) → ℝ, boxPeriodicNearestNeighborPotentialEnergy φ L x ≤<br>      boxPeriodicNearestNeighborPotentialEnergy φ L y) →<br>    ∃ a : ℝ, regularLattice a (L/(N+1)) x | NEEDS_HUMAN |
+| 原页核对/疑点 | 对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+反例：对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。
+
+建议：原文需限定势和配置域；不可证明字面假命题。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch01.lean:1474](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1474>)（`MD.Ch01.regularlatticeminimizerliteral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：含sorryAx。
+
+缺失/继续路线：原文需限定势和配置域；不可证明字面假命题。
+
+签名SHA256：`8fdbdc2a4957dad46d9a05f062fed7fb6361468a585fe4e5f82077cb55832254`；原文SHA256：`319cdd2f0fe4a68b728af327e7e7b9da509d3af66ac6f512fe4251296909d53e`。
+
+## 1. MD-1.6-PeriodicImages · definition · 印刷p.35 / PDFp.58
+
+### 2. 原文陈述
+
+> periodic boundary conditions involve an extended potential energy of the form
+> \[U^{\mathrm{pbc}}(\boldsymbol q)=\sum_{klm}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{ij}(\boldsymbol q_i,\boldsymbol q_j+k\boldsymbol v_1+l\boldsymbol v_2+m\boldsymbol v_3),\]
+> where $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\boldsymbol v_i^T=(L\boldsymbol e_i^T,\ldots,L\boldsymbol e_i^T)$, $i=1,2,3$, where $\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\mathbb R^3$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTerms)
+    (q : Fin N → V3) :=
+  ∑ k : Fin 3, ∑ l : Fin 3, ∑ m : Fin 3, ∑ i, ∑ j ∈ Finset.Ioi i,
+    φ i j (q i) (q j + WithLp.toLp 2 ![L*((k.val:ℝ)-1),L*((l.val:ℝ)-1),L*((m.val:ℝ)-1)])
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTerms)<br>    (q : Fin N → V3) :=<br>  ∑ k : Fin 3, ∑ l : Fin 3, ∑ m : Fin 3, ∑ i, ∑ j ∈ Finset.Ioi i,<br>    φ i j (q i) (q j + WithLp.toLp 2 ![L*((k.val:ℝ)-1),L*((l.val:ℝ)-1),L*((m.val:ℝ)-1)]) | 一致 |
+| \[U^{\mathrm{pbc}}(\boldsymbol q)=\sum_{klm}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{ij}(\boldsymbol q_i,\boldsymbol q_j+k\boldsymbol v_1+l\boldsymbol v_2+m\boldsymbol v_3),\] | MD.Ch01.periodicImageEnergy，完整展开陈述见上一行及第4段 | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1486](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1486>)（`MD.Ch01.periodicImageEnergy`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`d11ddd7273009acde9e63933f2d89f102183fc42e5012ee63a3ee9455b446d1f`；原文SHA256：`cf6f3b2f23da9e393824b057eec76bebcce8990a1dd75ae9208c1b22f6be688e`。
+
+## 1. MD-1.6-MinimumImage · definition · 印刷p.35 / PDFp.58
+
+### 2. 原文陈述
+
+> The minimum image convention states that, in computing the force, a given atom interacts only with the nearest replica of any other atom.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def minimumImage (L : ℝ) (q r image : V3) : Prop :=
+  ∃ k : Fin 3 → ℤ, image = r + WithLp.toLp 2 (fun i => L*k i) ∧
+    ∀ l : Fin 3 → ℤ, ‖q-image‖ ≤ ‖q-(r+WithLp.toLp 2 (fun i => L*l i))‖
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def minimumImage (L : ℝ) (q r image : V3) : Prop :=<br>  ∃ k : Fin 3 → ℤ, image = r + WithLp.toLp 2 (fun i => L*k i) ∧<br>    ∀ l : Fin 3 → ℤ, ‖q-image‖ ≤ ‖q-(r+WithLp.toLp 2 (fun i => L*l i))‖ | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1495](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1495>)（`MD.Ch01.minimumImage`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`0d4c0dbca82f99ca89d3aceb7b4915dae48547cc5d1e058ab9e4c200a8737f1f`；原文SHA256：`88fa589b609c2305a61750ea1e8e2e1c4d0739e959da4f1daa755e981fa8cc17`。
+
+## 1. MD-1.6-RhombicLattice · definition · 印刷p.35 / PDFp.58
+
+### 2. 原文陈述
+
+> In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice, with sides of fixed length $n_x,n_y$ and the angle between them ($\theta$), see Fig. 1.17.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rhombicLattice (a b θ : ℝ) : Set (Position 2) :=
+  {x | ∃ k l : ℤ, x = WithLp.toLp 2 ![k*a+l*b*Real.cos θ,l*b*Real.sin θ]}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def rhombicLattice (a b θ : ℝ) : Set (Position 2) :=<br>  {x \| ∃ k l : ℤ, x = WithLp.toLp 2 ![k*a+l*b*Real.cos θ,l*b*Real.sin θ]} | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1503](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1503>)（`MD.Ch01.rhombicLattice`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`fc67364985cec87986905ec2031bb5b4a475a1e2b1d178a1ffbf45c9d75d27f7`；原文SHA256：`11c9d10fb51c2712f5ede6b647636f7d2c532c73a25c1d6e7238ecb3a9aa2098`。
+
+## 1. MD-1.6-HexagonalLattice · unnumbered_claim · 印刷p.35 / PDFp.58
+
+### 2. 原文陈述
+
+> it can be viewed as a rhombic lattice with $n_x=n_y$ and $\theta=120^\circ$; it can also be viewed as a rhombic lattice with $\theta=60^\circ$
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hexagonal_lattice_two_bases (a : ℝ) :
+    rhombicLattice a a (2*Real.pi/3) = rhombicLattice a a (Real.pi/3)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem hexagonal_lattice_two_bases (a : ℝ) :<br>    rhombicLattice a a (2*Real.pi/3) = rhombicLattice a a (Real.pi/3) | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch01.lean:1510](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1510>)（`MD.Ch01.hexagonal_lattice_two_bases`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+本地独立尝试3次，失败2次；证据：blueprint/ch01/proof_attempts.json。
+
+签名SHA256：`a5364b427f844c956623d44050946c40918c4ab5e5f17dd3ee164d7bdbe8a316`；原文SHA256：`8238551c83931c9d57c40de6eee1605ae2d5f441e27fb8f0b69368656f1dd5ae`。
+
+## 1. MD-1.6-UnitCell · definition · 印刷p.35 / PDFp.58
+
+### 2. 原文陈述
+
+> The unit cell is a description of the arrangement of atoms within a box; unit cells may be stacked in each direction to describe an atomic lattice.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def unitCellLattice (B : Matrix (Fin 3) (Fin 3) ℝ) (motif : Set V3) : Set V3 :=
+  {q | ∃ k : Fin 3 → ℤ, ∃ u ∈ motif,
+    q = B.toEuclideanLin (WithLp.toLp 2 (fun i => (k i : ℝ))) + u}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def unitCellLattice (B : Matrix (Fin 3) (Fin 3) ℝ) (motif : Set V3) : Set V3 :=<br>  {q \| ∃ k : Fin 3 → ℤ, ∃ u ∈ motif,<br>    q = B.toEuclideanLin (WithLp.toLp 2 (fun i => (k i : ℝ))) + u} | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1535](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1535>)（`MD.Ch01.unitCellLattice`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`b1f1abd72173af6d190a93a70e797d9809259371e7b8c688315e0389a42dd341`；原文SHA256：`b47a03533013045e0065a2e6282cb2e948d414802dcc3c8b0fb4a94f034e154a`。
+
+## 1. MD-1.6-FCCStacking · definition · 印刷p.36 / PDFp.59
+
+### 2. 原文陈述
+
+> The fcc lattice corresponds to the common arrangement by which cannonballs are stacked into pyramidal structures; it can be viewed as a periodic stacking (ABCABC. . . ) of three hexagonally structured planar layers, as illustrated in Fig. 1.18.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def fccStacking : Set V3 :=
+  {x | ∃ k : ℤ, let j := k % 3
+    x 2 = k*Real.sqrt (2/3) ∧
+      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def fccStacking : Set V3 :=<br>  {x \| ∃ k : ℤ, let j := k % 3<br>    x 2 = k*Real.sqrt (2/3) ∧<br>      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)} | NEEDS_HUMAN |
+| 原文未显式量化的技术资格 | 将图示ABC编码为单位边长等边三角层，层高sqrt(2/3)及偏移由close-packed图示编码，正文未列数值公式。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。ABC三周期保留；旧库附带具体几何层高和偏移不是正文逐字公式，需要导师确认图示编码。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1543](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1543>)（`MD.Ch01.fccStacking`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`fa9be10cf431caafd34a4ec44e2fb67dd7a89d650174ed3a861caf17a6843825`；原文SHA256：`b54e48f45d2f1e0c50af5acf9fc8bafe90f1cf636e58c7bfab29e3e4724b80da`。
+
+## 1. MD-1.6-HCPStacking · definition · 印刷p.36 / PDFp.59
+
+### 2. 原文陈述
+
+> Also shown in Fig. 1.18 is the hcp lattice, which, on the other hand, alternates two distinct planar lattices.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def hcpStacking : Set V3 :=
+  {x | ∃ k : ℤ, let j := k % 2
+    x 2 = k*Real.sqrt (2/3) ∧
+      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def hcpStacking : Set V3 :=<br>  {x \| ∃ k : ℤ, let j := k % 2<br>    x 2 = k*Real.sqrt (2/3) ∧<br>      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)} | NEEDS_HUMAN |
+| 原文未显式量化的技术资格 | 图示AB两个三角层，单位化层高及偏移是具体close-packed图示编码。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。AB两周期保留；具体几何参数来源图示而非正文公式，需导师确认编码。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch01.lean:1552](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1552>)（`MD.Ch01.hcpStacking`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`0d005924214051cf078e70c98cf6e02c30873194b02d86d30c076ba7c3d70903`；原文SHA256：`1a537168f3987b658b819101c97350cf02a3ed6aa8c1bc98e5d6c1efb1c8ef97`。
+
+## 1. MD-1.6.1-MinimumGradientZero · unnumbered_claim · 印刷p.36–37 / PDFp.59–60
+
+### 2. 原文陈述
+
+> Regardless of the choice of boundary and/or the inclusion of non-pairwise potentials, the minimum of the potential energy occurs where
+> \[\nabla U=0,\]
+> which gives in general a nonlinear system of $N_c$ equations in $N_c$ unknowns to be solved for the position vector $\boldsymbol q^*$ associated to mechanical equilibrium.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem minimumgradientzero :
+  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n),
+    DifferentiableAt ℝ U q → IsLocalMin U q → gradient U q = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem minimumgradientzero :<br>  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n),<br>    DifferentiableAt ℝ U q → IsLocalMin U q → gradient U q = 0 | 一致 |
+| \[\nabla U=0,\] | MD.Ch01.minimumgradientzero，完整展开陈述见上一行及第4段 | 一致 |
+| 原文未显式量化的技术资格 | 可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。 | [EXTRA] |
+| 原页核对/疑点 | 不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch01.lean:1561](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1561>)（`MD.Ch01.minimumgradientzero`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+已登记前置证明/定义：MolecularDynamics/Chapter01/ReviewProofs.lean:minimumGradientZero_proved。
+
+签名SHA256：`c088338166995b06263d18fa56b99498e42d9707f380a2d80fa54f799c888096`；原文SHA256：`71ef0efb8d517a63179fe8237ccb4875df59bed282d1e355ceaab46963f522a2`。
+
+## 1. MD-1.6.1-ForceLinearization · unnumbered_claim · 印刷p.37 / PDFp.60
+
+### 2. 原文陈述
+
+> At the equilibrium point, we can linearize the system of differential equations by computing the Hessian matrix, then we find
+> \[\nabla U(\boldsymbol q)\approx U''(\boldsymbol q^*)(\boldsymbol q-\boldsymbol q^*).\]
+> Then, letting $\delta\boldsymbol q=\boldsymbol q-\boldsymbol q^*$, $\delta\boldsymbol p$ represent small deviations from the equilibrium point at $(\boldsymbol q,\boldsymbol p)=(\boldsymbol q^*,0)$, we have
+> \[\frac{\mathrm d\delta\boldsymbol q}{\mathrm dt}=\boldsymbol M^{-1}\delta\boldsymbol p,\qquad\frac{\mathrm d\delta\boldsymbol p}{\mathrm dt}=-U''(\boldsymbol q^*)\delta\boldsymbol q.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem force_linearization {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (qstar : Position n) (hU : ContDiffAt ℝ 2 U qstar)
+    (heq : gradient U qstar = 0) :
+    HasFDerivAt (fun z : PhaseSpace n => (matrixAction M⁻¹ z.2, -gradient U z.1))
+      (((Matrix.toEuclideanCLM (n := Fin n) (𝕜 := ℝ) M⁻¹).comp (ContinuousLinearMap.snd ℝ (Position n) (Momentum n))).prod
+        ((-fderiv ℝ (gradient U) qstar).comp (ContinuousLinearMap.fst ℝ (Position n) (Momentum n))))
+      (qstar,0) ∧
+    (fun q => gradient U q - fderiv ℝ (gradient U) qstar (q-qstar)) =o[𝓝 qstar]
+      (fun q => q-qstar)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem force_linearization {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)<br>    (U : PotentialEnergy n) (qstar : Position n) (hU : ContDiffAt ℝ 2 U qstar)<br>    (heq : gradient U qstar = 0) :<br>    HasFDerivAt (fun z : PhaseSpace n => (matrixAction M⁻¹ z.2, -gradient U z.1))<br>      (((Matrix.toEuclideanCLM (n := Fin n) (𝕜 := ℝ) M⁻¹).comp (ContinuousLinearMap.snd ℝ (Position n) (Momentum n))).prod<br>        ((-fderiv ℝ (gradient U) qstar).comp (ContinuousLinearMap.fst ℝ (Position n) (Momentum n))))<br>      (qstar,0) ∧<br>    (fun q => gradient U q - fderiv ℝ (gradient U) qstar (q-qstar)) =o[𝓝 qstar]<br>      (fun q => q-qstar) | 一致 |
+| \[\nabla U(\boldsymbol q)\approx U''(\boldsymbol q^*)(\boldsymbol q-\boldsymbol q^*).\]；\[\frac{\mathrm d\delta\boldsymbol q}{\mathrm dt}=\boldsymbol M^{-1}\delta\boldsymbol p,\qquad\frac{\mathrm d\delta\boldsymbol p}{\mathrm dt}=-U''(\boldsymbol q^*)\delta\boldsymbol q.\] | MD.Ch01.force_linearization，完整展开陈述见上一行及第4段 | 一致 |
+| 一般质量Hamilton向量场的块导数 | (M⁻¹∘snd).prod ((-D∇U)∘fst)的HasFDerivAt | 一致 |
+| 梯度线性化误差 | ∇U(q)-D∇U(q*)(q-q*) =o[𝓝 q*] (q-q*) | 一致 |
+| 原文未显式量化的技术资格 | 真实C2势及平衡梯度零；一般常M，原文M正定由机械背景保证但导数等式不需此资格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。一般质量矩阵、真实块Frechet导数及完整小o梯度线性化全部保留，未假设结论。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch01.lean:1570](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1570>)（`MD.Ch01.force_linearization`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+本地独立尝试3次，失败2次；证据：blueprint/ch01/proof_attempts.json。
+
+已登记前置证明/定义：MolecularDynamics/Chapter01/EquilibriumLinearization.lean:conservative_mechanical_linearization。
+
+签名SHA256：`beea36b5e2e1b8731777f2bd6d6dd4a029fe7242b579a955db637315b0979ab7`；原文SHA256：`5db03a7223df3d59a3cf1810bd4bfb8d2f05d9c0094d5e18ed4fa08ac2700fab`。
+
+## 1. MD-1.6.1-MinimumHessianLiteral · unnumbered_claim · 印刷p.37 / PDFp.60
+
+### 2. 原文陈述
+
+> At the minimum of the potential energy, $U''$ is a positive definite symmetric matrix.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem minimumhessianliteral :
+  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n), ContDiff ℝ 2 U →
+    IsLocalMin U q →
+    (∀ u v, inner ℝ u (fderiv ℝ (gradient U) q v) = inner ℝ v (fderiv ℝ (gradient U) q u)) ∧
+    ∀ v : Position n, v ≠ 0 → 0 < inner ℝ v (fderiv ℝ (gradient U) q v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem minimumhessianliteral :<br>  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n), ContDiff ℝ 2 U →<br>    IsLocalMin U q →<br>    (∀ u v, inner ℝ u (fderiv ℝ (gradient U) q v) = inner ℝ v (fderiv ℝ (gradient U) q u)) ∧<br>    ∀ v : Position n, v ≠ 0 → 0 < inner ℝ v (fderiv ℝ (gradient U) q v) | NEEDS_HUMAN |
+| 原页核对/疑点 | 局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+反例：局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。
+
+建议：字面假命题，不证明；正定需非退化额外假设，不能静默补。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch01.lean:1597](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1597>)（`MD.Ch01.minimumhessianliteral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：含sorryAx。
+
+缺失/继续路线：字面假命题，不证明；正定需非退化额外假设，不能静默补。
+
+签名SHA256：`dcaac8ffe7ea38166591d02b0298d672e8f00b53b94c49589f7b902e828a3252`；原文SHA256：`13722d752744b1fe3247dc3cc168c771625882b94b470ec80fe5e83ccea0dc84`。
+
+## 1. MD-1.6.1-ImaginarySpectrum · unnumbered_claim · 印刷p.37 / PDFp.60
+
+### 2. 原文陈述
+
+> The eigenvalues of the matrix
+> \[\boldsymbol A:=\begin{bmatrix}0&\boldsymbol M^{-1}\\-U''(\boldsymbol q^*)&0\end{bmatrix}\]
+> are therefore all purely imaginary ($\pm i\Omega$, $\Omega^2\in\mathbb R^+$).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem imaginary_spectrum :
+  ∀ (n : ℕ) (M K : Matrix (Fin n) (Fin n) ℝ), M.PosDef → K.PosDef →
+    let A := fun z : PhaseSpace n => (M⁻¹.toEuclideanLin z.2, -K.toEuclideanLin z.1)
+    ∀ (a b : ℝ) (x y : PhaseSpace n), (x ≠ 0 ∨ y ≠ 0) →
+      A x = a • x - b • y → A y = b • x + a • y →
+      a = 0 ∧ 0 < b^2 ∧ A x = -b • y ∧ A (-y) = -b • x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem imaginary_spectrum :<br>  ∀ (n : ℕ) (M K : Matrix (Fin n) (Fin n) ℝ), M.PosDef → K.PosDef →<br>    let A := fun z : PhaseSpace n => (M⁻¹.toEuclideanLin z.2, -K.toEuclideanLin z.1)<br>    ∀ (a b : ℝ) (x y : PhaseSpace n), (x ≠ 0 ∨ y ≠ 0) →<br>      A x = a • x - b • y → A y = b • x + a • y →<br>      a = 0 ∧ 0 < b^2 ∧ A x = -b • y ∧ A (-y) = -b • x | 一致 |
+| \[\boldsymbol A:=\begin{bmatrix}0&\boldsymbol M^{-1}\\-U''(\boldsymbol q^*)&0\end{bmatrix}\] | MD.Ch01.imaginary_spectrum，完整展开陈述见上一行及第4段 | 一致 |
+| 全部特征值±iΩ与Ω²>0 | 任意非零实虚特征对推出a=0、0<b²及A x=-b•y、A(-y)=-b•x | 一致；全部三个结论保留 |
+| 原文未显式量化的技术资格 | M和Hessian K正定；复谱实虚向量编码。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。补齐实部零、非零频率平方正及共轭实虚特征对给出的±ib配对；一般SPD M,K保留。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：缺一般SPD M,K的Hamilton块谱相似变换及共轭特征对、非零频率理论；实部零、平方正和±配对须同时证明。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch01.lean:1608](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1608>)（`MD.Ch01.imaginary_spectrum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：含sorryAx。
+
+缺失/继续路线：缺一般SPD M,K的Hamilton块谱相似变换及共轭特征对、非零频率理论；实部零、平方正和±配对须同时证明。
+
+签名SHA256：`81330665ea9d2c1e74c0a3414872053dd8999b596bb79453db2c3ca82e0b06a3`；原文SHA256：`729938b130d87c301a64782b8402f7548995c614a8df114ab726df2a33f5499b`。
+
+## 1. MD-1.6.1-ComplexNormalMode · unnumbered_claim · 印刷p.37 / PDFp.60
+
+### 2. 原文陈述
+
+> Associated to each eigenvalue pair we have a pair of complex conjugate eigenvectors $\boldsymbol\xi,\overline{\boldsymbol\xi}$ and also a pair of solutions which can be written in the complex form
+> \[\boldsymbol z(t)=ae^{i\Omega t}\boldsymbol\xi+be^{-i\Omega t}\overline{\boldsymbol\xi},\]
+> ($a,b$ complex coefficients),
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem complexnormalmode :
+  ∀ (n : ℕ) (A : Matrix (Fin n) (Fin n) ℝ) (η : Fin n → ℂ) (Ω : ℝ),
+    (A.map (algebraMap ℝ ℂ)).mulVec η = (Complex.I * Ω) • η →
+    ∀ a b : ℂ, ∀ t : ℝ,
+      HasDerivAt (fun s : ℝ =>
+        a • (Complex.exp (Complex.I*Ω*s) • η) +
+          b • (Complex.exp (-Complex.I*Ω*s) • (fun i => star (η i))))
+        ((A.map (algebraMap ℝ ℂ)).mulVec
+          (a • (Complex.exp (Complex.I*Ω*t) • η) +
+            b • (Complex.exp (-Complex.I*Ω*t) • (fun i => star (η i))))) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem complexnormalmode :<br>  ∀ (n : ℕ) (A : Matrix (Fin n) (Fin n) ℝ) (η : Fin n → ℂ) (Ω : ℝ),<br>    (A.map (algebraMap ℝ ℂ)).mulVec η = (Complex.I * Ω) • η →<br>    ∀ a b : ℂ, ∀ t : ℝ,<br>      HasDerivAt (fun s : ℝ =><br>        a • (Complex.exp (Complex.I*Ω*s) • η) +<br>          b • (Complex.exp (-Complex.I*Ω*s) • (fun i => star (η i))))<br>        ((A.map (algebraMap ℝ ℂ)).mulVec<br>          (a • (Complex.exp (Complex.I*Ω*t) • η) +<br>            b • (Complex.exp (-Complex.I*Ω*t) • (fun i => star (η i))))) t | 一致 |
+| \[\boldsymbol z(t)=ae^{i\Omega t}\boldsymbol\xi+be^{-i\Omega t}\overline{\boldsymbol\xi},\] | MD.Ch01.complexnormalmode，完整展开陈述见上一行及第4段 | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：三次失败已止：Pi复空间的连续线性作用与实时间导数/复标量作用接口不统一；数学共轭模式论证与现有实模式证明不能冒充此签名。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch01.lean:1620](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1620>)（`MD.Ch01.complexnormalmode`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：含sorryAx。
+
+缺失/继续路线：三次失败已止：Pi复空间的连续线性作用与实时间导数/复标量作用接口不统一；数学共轭模式论证与现有实模式证明不能冒充此签名。
+
+本地独立尝试3次，失败3次；证据：blueprint/ch01/proof_attempts.json。
+
+签名SHA256：`f78173634b1da94b8fecc486c3945af183f2b47e266a2a3d92fac187f45918e9`；原文SHA256：`c18a19544c2e6cfda514c3f9419575164322a3ef0276dfd78d064fd85c3275e9`。
+
+## 1. MD-1.6.1-RealNormalMode · unnumbered_claim · 印刷p.37 / PDFp.60
+
+### 2. 原文陈述
+
+> or recast in real form as ($\alpha,\beta$ real coefficients):
+> \[\boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem realnormalmode :
+  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (A : E →L[ℝ] E) (Ω α β : ℝ) (u v : E)
+    (hu : A u = -Ω • v) (hv : A v = Ω • u) (t : ℝ),
+    HasDerivAt (realNormalMode Ω α β u v)
+      (A (realNormalMode Ω α β u v t)) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem realnormalmode :<br>  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]<br>    (A : E →L[ℝ] E) (Ω α β : ℝ) (u v : E)<br>    (hu : A u = -Ω • v) (hv : A v = Ω • u) (t : ℝ),<br>    HasDerivAt (realNormalMode Ω α β u v)<br>      (A (realNormalMode Ω α β u v t)) t | 一致 |
+| \[\boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].\] | MD.Ch01.realnormalmode，完整展开陈述见上一行及第4段 | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch01.lean:1636](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1636>)（`MD.Ch01.realnormalmode`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+已登记前置证明/定义：MolecularDynamics/Chapter01/NormalModes.lean:hasDerivAt_realNormalMode。
+
+签名SHA256：`cfd9081469533a64abc73b90f6f6a18137e97f99f9fbd0c2856027c27d68a5cc`；原文SHA256：`dba7d7d8cc5b3b12b0cbf2d01b3867d051c47eedf5869c2f3036314f1fbb15f9`。
 
 ## 1. MD-1.7-PlanarTrimerModel · Example 1.8 (Planar Lennard-Jones Trimer) · 印刷p.38 / PDFp.61
 
@@ -5959,7 +6057,8 @@ def planarTrimerEnergy (q v : Fin 3 → Position 2) : ℝ :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.planarTrimerEnergy | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def planarTrimerEnergy (q v : Fin 3 → Position 2) : ℝ :=<br>  (∑ i, ‖v i‖^2/2) + lennardJonesPotential 1 1 ‖q 0-q 1‖ +<br>    lennardJonesPotential 1 1 ‖q 1-q 2‖ + lennardJonesPotential 1 1 ‖q 0-q 2‖ | 一致 |
+| \[E=K+U=\frac{\\|\dot{\boldsymbol q}_1\\|^2}{2}+\frac{\\|\dot{\boldsymbol q}_2\\|^2}{2}+\frac{\\|\dot{\boldsymbol q}_3\\|^2}{2}+\hat\varphi_{\mathrm{LJ}}(\\|\boldsymbol q_1-\boldsymbol q_2\\|)+\hat\varphi_{\mathrm{LJ}}(\\|\boldsymbol q_2-\boldsymbol q_3\\|)+\hat\varphi_{\mathrm{LJ}}(\\|\boldsymbol q_1-\boldsymbol q_3\\|),\] | MD.Ch01.planarTrimerEnergy，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -5971,7 +6070,7 @@ def planarTrimerEnergy (q v : Fin 3 → Position 2) : ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1506`（`MD.Ch01.planarTrimerEnergy`）。
+位置：[Blueprint/Ch01.lean:1652](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1652>)（`MD.Ch01.planarTrimerEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6004,7 +6103,8 @@ def centralPairEnergy {N : ℕ} (φ : Fin N → Fin N → ℝ → ℝ) (q : Fin 
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.centralPairEnergy | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def centralPairEnergy {N : ℕ} (φ : Fin N → Fin N → ℝ → ℝ) (q : Fin N → V3) :=<br>  (∑ i, ∑ j ∈ Finset.univ.erase i, φ i j (pairDistance (q i) (q j)))/2 | 一致 |
+| \[U=\frac12\sum_{i\ne j}U_{ij},\] | MD.Ch01.centralPairEnergy，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
@@ -6016,7 +6116,7 @@ def centralPairEnergy {N : ℕ} (φ : Fin N → Fin N → ℝ → ℝ) (q : Fin 
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1514`（`MD.Ch01.centralPairEnergy`）。
+位置：[Blueprint/Ch01.lean:1660](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1660>)（`MD.Ch01.centralPairEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6049,28 +6149,27 @@ theorem centralpairgradient :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.centralpairgradient | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem centralpairgradient :<br>  ∀ (φ : ℝ → ℝ) (q r : V3), q ≠ r → DifferentiableAt ℝ φ ‖q-r‖ →<br>    gradient (fun x => φ ‖x-r‖) q = -gradient (fun y => φ ‖q-y‖) r | 一致 |
+| \[\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\] | MD.Ch01.centralpairgradient，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 势在非碰撞距离可微；partial为欧氏梯度。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：范数链式法则和反向仿射变量替换的梯度桥接，计划短证明。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:1521`（`MD.Ch01.centralpairgradient`）。
+位置：[Blueprint/Ch01.lean:1667](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1667>)（`MD.Ch01.centralpairgradient`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：范数链式法则和反向仿射变量替换的梯度桥接，计划短证明。
+本地独立尝试2次，失败1次；证据：blueprint/ch01/proof_attempts.json。
 
 签名SHA256：`e5f770dd43cbf8f1709b38d8969502f418537db8e874202ba2538e28428da17d`；原文SHA256：`b753b4e0f30ce3fc7ff2bba75fb98bc6f12c6fc4149db4f95f23a546cc0d4f84`。
 
@@ -6091,45 +6190,43 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-theorem centralmomentum :
-  ∀ {N d : ℕ}
-    (m : CoordinateMasses (N * d)) (F : Force (N * d))
-    (Q : Set (Position (N * d))) (a b : ℝ)
-    (γ : ℝ → PhaseSpace (N * d))
-    (hγ : IsMechanicalSolutionOn m F Q (Ioo a b) γ)
-    (hFsum : ∀ q ∈ Q, ∀ c : Fin d,
-      ∑ i : Fin N, F q (particleCoordinateEquiv N d (i, c)) = 0)
-    (c : Fin d) (s t : ℝ)
-    (hs : s ∈ Ioo a b) (ht : t ∈ Ioo a b),
-    totalMomentumCoordinate (γ s).2 c = totalMomentumCoordinate (γ t).2 c
+theorem central_momentum :
+  ∀ (N : ℕ) (m : Fin N → ℝ) (v : ℝ → Fin N → V3)
+    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I → IsPreconnected I →
+    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →
+    (∀ t ∈ I, (∑ i, ∑ j, F t i j) = 0) ∧
+    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i • v s i) 0 t) ∧
+    ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i • v a i) = ∑ i, m i • v b i
 ```
 
 ### 5. 对照表
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.centralmomentum | 一致 |
-| 原文未显式量化的技术资格 | 逐对作用反对称推出净力零；真实Newton解和连通时间区间。 | [EXTRA] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem central_momentum :<br>  ∀ (N : ℕ) (m : Fin N → ℝ) (v : ℝ → Fin N → V3)<br>    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I → IsPreconnected I →<br>    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →<br>    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →<br>    (∀ t ∈ I, (∑ i, ∑ j, F t i j) = 0) ∧<br>    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i • v s i) 0 t) ∧<br>    ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i • v a i) = ∑ i, m i • v b i | 一致 |
+| \[\sum_{i=1}^N m_i\ddot{\boldsymbol q}_i=0,\] | MD.Ch01.central_momentum，完整展开陈述见上一行及第4段 | 一致 |
+| 原文未显式量化的技术资格 | 真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
+本地预审：**PASS**。审查后去掉旧桥接中净力零前提，由真实逐对作用反对称推出净力零和全向量/每坐标动量守恒，保留全部结论。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:1542`（`MD.Ch01.centralmomentum`）。
+位置：[Blueprint/Ch01.lean:1688](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1688>)（`MD.Ch01.central_momentum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-已登记前置证明/定义：MolecularDynamics/Chapter01/MomentumConservation.lean:totalMomentumCoordinate_const_on_Ioo。
+已登记前置证明/定义：MD.Ch01.momentum_conservation。
 
-签名SHA256：`bc8b718dd6bc76411232c8b8cc2b28450af478727f40a0b8b1e161232c249654`；原文SHA256：`d303700846990dd46f221204dce3d2e2e3143efa66aa40566a4f2bf32c57a54b`。
+签名SHA256：`7eb95c56098bf26ccf9d8c283c92358e91005f987895f2c2f4e2563aaa82a0e8`；原文SHA256：`d303700846990dd46f221204dce3d2e2e3143efa66aa40566a4f2bf32c57a54b`。
 
 ## 1. MD-1.7-CentralAngularMomentum · unnumbered_claim · 印刷p.39 / PDFp.62
 
@@ -6165,28 +6262,29 @@ theorem centralangularmomentum :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.centralangularmomentum | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem centralangularmomentum :<br>  ∀ (N : ℕ) (m : Fin N → ℝ) (q v : ℝ → Fin N → V3)<br>    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I →<br>    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t) →<br>    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →<br>    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →<br>    (∀ t ∈ I, ∀ i j, cross3 (q t i-q t j) (F t i j) = 0) →<br>    (∀ t ∈ I, ∀ i j, cross3 (q t i) (F t i j) = -cross3 (q t j) (F t j i)) ∧<br>    ∀ t ∈ I, HasDerivAt (fun s => ∑ i, cross3 (q s i) (m i • v s i)) 0 t | 一致 |
+| \[\boldsymbol q_i\times\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\boldsymbol q_j\times\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\]；\[\frac{\mathrm d}{\mathrm dt}\sum_{i=1}^N\boldsymbol q_i\times(m_i\dot{\boldsymbol q}_i)=0,\] | MD.Ch01.centralangularmomentum，完整展开陈述见上一行及第4段 | 一致 |
+| 逐对力矩相消 | ∀t i j,cross3(qᵢ,Fᵢⱼ)=-cross3(qⱼ,Fⱼᵢ) | 一致 |
+| 角动量守恒 | HasDerivAt (∑i,cross3(qᵢ,mᵢ•vᵢ)) 0 | 一致 |
 | 原文未显式量化的技术资格 | 真实位置和动量导数；反对称内力和沿位移方向中心力。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：叉积双线性导数、有限双和反对称力矩相消；尚须完整中心势到力矩零的桥接。
-
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：placeholder。
+**self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:1559`（`MD.Ch01.centralangularmomentum`）。
+位置：[Blueprint/Ch01.lean:1702](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1702>)（`MD.Ch01.centralangularmomentum`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
-直接占位：有sorry；传递占位：含sorryAx。
+直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：叉积双线性导数、有限双和反对称力矩相消；尚须完整中心势到力矩零的桥接。
+本地独立尝试1次，失败0次；证据：blueprint/ch01/proof_attempts.json。
 
 签名SHA256：`30852325e4b4740d5979546aae4fd76e2f91c34a107f70325e9b13c2c4301e45`；原文SHA256：`878940022a1dce4840133ff896408f7f91ba98f311909338151f4c1dee1ac681`。
 
@@ -6221,28 +6319,26 @@ theorem centerofmassmotion :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.centerofmassmotion | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem centerofmassmotion :<br>  ∀ (N : ℕ) (m : Fin N → ℝ) (q v : ℝ → Fin N → V3)<br>    (I : Set ℝ) (a : ℝ), IsOpen I → IsPreconnected I → a ∈ I →<br>    (∀ i, 0 < m i) → 0 < ∑ i, m i →<br>    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t) →<br>    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i • v s i) 0 t) →<br>    ∀ t ∈ I,<br>      (∑ i, m i)⁻¹ • (∑ i, m i • q t i) =<br>        (∑ i, m i)⁻¹ • (∑ i, m i • q a i) +<br>          (t-a) • ((∑ i, m i)⁻¹ • (∑ i, m i • v a i)) | 一致 |
 | 原文未显式量化的技术资格 | 质量正、总质量正、真实位置导数、连通时间域；平移部分据已得总动量守恒。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：有限和真实导数与总动量常数的仿射轨迹桥接，计划短证明。
-
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：placeholder。
+**self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:1574`（`MD.Ch01.centerofmassmotion`）。
+位置：[Blueprint/Ch01.lean:1766](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1766>)（`MD.Ch01.centerofmassmotion`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
-直接占位：有sorry；传递占位：含sorryAx。
+直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：有限和真实导数与总动量常数的仿射轨迹桥接，计划短证明。
+本地独立尝试2次，失败1次；证据：blueprint/ch01/proof_attempts.json。
 
 签名SHA256：`912a483400c1d20ff375306a83ed30c736f6ab128e28c6d83b1bea011f25f3fc`；原文SHA256：`f2556a07f6a0c6008223606fcd5a89ece8e054a1dbe16b7b414db26f4ec7f3a6`。
 
@@ -6271,8 +6367,8 @@ theorem constantrotationliteral :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.constantrotationliteral | NEEDS_HUMAN |
-| 原书疑点 | 角动量常数不推出角速度常数；中心运动r变时θ̇=ℓ/r²。例r(t)=sqrt(1+t²),θ(t)=arctan t,ℓ=1。 | [ERRATUM?] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem constantrotationliteral :<br>  ∀ (r θ : ℝ → ℝ) (ℓ : ℝ),<br>    (∀ t, 0 < r t ∧ (r t)^2*deriv θ t = ℓ) →<br>    ∃ freq : ℝ, ∀ t, deriv θ t = freq | NEEDS_HUMAN |
+| 原页核对/疑点 | 角动量常数不推出角速度常数；中心运动r变时θ̇=ℓ/r²。例r(t)=sqrt(1+t²),θ(t)=arctan t,ℓ=1。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -6280,13 +6376,15 @@ theorem constantrotationliteral :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
+反例：r(t)=sqrt(1+t²)、θ(t)=arctan t、ℓ=1；r²θ′≡1但θ′(0)=1、θ′(1)=1/2。解析反例，未作为Lean证明提交。
+
 建议：字面推论假，需导师裁定为定性旋转描述或修正为角动量守恒。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1590`（`MD.Ch01.constantrotationliteral`）。
+位置：[Blueprint/Ch01.lean:1802](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1802>)（`MD.Ch01.constantrotationliteral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6320,8 +6418,9 @@ def isoscelesCoordinates (x y : ℝ) : Fin 3 → V3 :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.isoscelesCoordinates | 一致 |
-| 原书疑点 | 同段“零平动/角动量→等腰”一般过强；这里只定义明确给定的对称配置，不把任意零动量当等腰。 | [ERRATUM?] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def isoscelesCoordinates (x y : ℝ) : Fin 3 → V3 :=<br>  ![WithLp.toLp 2 ![x,-y/3,0],WithLp.toLp 2 ![-x,-y/3,0],WithLp.toLp 2 ![0,2*y/3,0]] | 一致 |
+| \[\boldsymbol q_1=\begin{bmatrix}x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_2=\begin{bmatrix}-x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_3=\begin{bmatrix}0\\2y/3\\0\end{bmatrix},\] | MD.Ch01.isoscelesCoordinates，完整展开陈述见上一行及第4段 | 一致 |
+| 原页核对/疑点 | 同段“零平动/角动量→等腰”一般过强；这里只定义明确给定的对称配置，不把任意零动量当等腰。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -6333,7 +6432,7 @@ def isoscelesCoordinates (x y : ℝ) : Fin 3 → V3 :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1600`（`MD.Ch01.isoscelesCoordinates`）。
+位置：[Blueprint/Ch01.lean:1812](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1812>)（`MD.Ch01.isoscelesCoordinates`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6367,7 +6466,8 @@ theorem isosceles_energy_reduction (x y v w : ℝ) (hx : 0 < x) :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.isosceles_energy_reduction | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem isosceles_energy_reduction (x y v w : ℝ) (hx : 0 < x) :<br>    (∑ i : Fin 3, ‖isoscelesCoordinates v w i‖^2/2) +<br>      uniformLJEnergy 1 1 (isoscelesCoordinates x y) = isoscelesEnergy x y v w | 一致 |
+| \[E=\dot x^2+\frac{\dot y^2}{3}+2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x),\] | MD.Ch01.isosceles_energy_reduction，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 单位质量及x>0保证q1-q2距离为2x，未以所求能量等式为假设。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -6376,19 +6476,17 @@ theorem isosceles_energy_reduction (x y v w : ℝ) (hx : 0 < x) :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：具体Fin3向量范数平方与距离的代数计算；计划短证明。
-
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：placeholder。
+**self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:1607`（`MD.Ch01.isosceles_energy_reduction`）。
+位置：[Blueprint/Ch01.lean:1819](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1819>)（`MD.Ch01.isosceles_energy_reduction`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
-直接占位：有sorry；传递占位：含sorryAx。
+直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：具体Fin3向量范数平方与距离的代数计算；计划短证明。
+本地独立尝试2次，失败1次；证据：blueprint/ch01/proof_attempts.json。
 
 签名SHA256：`417859f5938271eae37f67a791d4938799f2be3a2bef0047963ae7e7238abae3`；原文SHA256：`50470b33dcaa4dee241c3119e55109186badf0a4b3f51a915a65c7e2b766fb10`。
 
@@ -6416,19 +6514,20 @@ theorem isoscelesaccessibleregion :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.isoscelesaccessibleregion | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem isoscelesaccessibleregion :<br>  ∀ x y v w E : ℝ, isoscelesEnergy x y v w = E → isoscelesPotential x y ≤ E | 一致 |
+| \[2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x)\le E.\] | MD.Ch01.isoscelesaccessibleregion，完整展开陈述见上一行及第4段 | 一致 |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:1616`（`MD.Ch01.isoscelesaccessibleregion`）。
+位置：[Blueprint/Ch01.lean:1856](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1856>)（`MD.Ch01.isoscelesaccessibleregion`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6466,7 +6565,10 @@ theorem equilateraltrimerminimum :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.equilateraltrimerminimum | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem equilateraltrimerminimum :<br>  ∀ q : Fin 3 → V3, (∀ i j, i ≠ j → q i ≠ q j) →<br>    -3 ≤ uniformLJEnergy 1 1 q ∧<br>    (uniformLJEnergy 1 1 q = -3 ↔<br>      ∀ i j, i ≠ j → pairDistance (q i) (q j) = Real.rpow 2 (1/6)) | 一致 |
+| \[U=3\hat\varphi_{\mathrm{LJ}}(r),\] | MD.Ch01.equilateraltrimerminimum，完整展开陈述见上一行及第4段 | 一致 |
+| 全局极小值-3 | -3≤uniformLJEnergy 1 1 q | 一致 |
+| 达到极小当且仅当三边等于2^(1/6) | 能量=-3 ↔ ∀i≠j,pairDistance…=Real.rpow 2 (1/6) | 一致 |
 | 原文未显式量化的技术资格 | 单位LJ；非碰撞配置。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -6475,19 +6577,21 @@ theorem equilateraltrimerminimum :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：LJ井底唯一性rpow与三条距离同时达到井底的等边几何；计划短证明后缺项记录。
+建议：三次失败已止：LJ单距离唯一极小值、rpow根及三边势和计算已在尝试中补出；最后有限指标反向距离等式归一化未闭合，完整定理保持占位。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1624`（`MD.Ch01.equilateraltrimerminimum`）。
+位置：[Blueprint/Ch01.lean:1864](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1864>)（`MD.Ch01.equilateraltrimerminimum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：LJ井底唯一性rpow与三条距离同时达到井底的等边几何；计划短证明后缺项记录。
+缺失/继续路线：三次失败已止：LJ单距离唯一极小值、rpow根及三边势和计算已在尝试中补出；最后有限指标反向距离等式归一化未闭合，完整定理保持占位。
+
+本地独立尝试3次，失败3次；证据：blueprint/ch01/proof_attempts.json。
 
 签名SHA256：`fb69960d5eb865aec275bc6f869a1a1c0721bc91fba26125fa34e680ef6249da`；原文SHA256：`ec33e44298f81bfc3ed0516ea83632b881ed055bd81d0dcc4869e4e6cd09793e`。
 
@@ -6515,19 +6619,19 @@ theorem trimerenergylowerbound :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.trimerenergylowerbound | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem trimerenergylowerbound :<br>  ∀ (q v : Fin 3 → V3), (∀ i j, i ≠ j → q i ≠ q j) →<br>    -3 ≤ (∑ i, ‖v i‖^2/2) + uniformLJEnergy 1 1 q | 一致 |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：local_proof。
+**checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:1635`（`MD.Ch01.trimerenergylowerbound`）。
+位置：[Blueprint/Ch01.lean:1875](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1875>)（`MD.Ch01.trimerenergylowerbound`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6560,7 +6664,7 @@ def collinearTrimer (x : ℝ) :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.collinearTrimer | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def collinearTrimer (x : ℝ) :=<br>  2*lennardJonesPotential 1 1 x + lennardJonesPotential 1 1 (2*x) | 一致 |
 
 ### 6. 审计结论
 
@@ -6572,7 +6676,7 @@ def collinearTrimer (x : ℝ) :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1644`（`MD.Ch01.collinearTrimer`）。
+位置：[Blueprint/Ch01.lean:1884](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1884>)（`MD.Ch01.collinearTrimer`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6606,7 +6710,7 @@ theorem trimersaddle :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.trimersaddle | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem trimersaddle :<br>  ∃ x > 0, (∀ y > 0, collinearTrimer x ≤ collinearTrimer y) ∧<br>    ∃ δ > 0, (∀ u : ℝ, 0 < \|u-x\| → \|u-x\| < δ →<br>      isoscelesPotential x 0 < isoscelesPotential u 0) ∧<br>    ∀ y : ℝ, 0 < \|y\| → \|y\| < δ → isoscelesPotential x y < isoscelesPotential x 0 | 一致 |
 | 原文未显式量化的技术资格 | x>0，局部严格增减按足够小非零位移解释；去掉图上数字猜测。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -6615,19 +6719,19 @@ theorem trimersaddle :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：有理LJ势驻点根与二维严格鞍点的符号二阶导数计算。
+建议：缺共线LJ驻点全局唯一根及二维严格鞍点的两方向二阶导数符号/局部比较；不只证明一维极小就宣称鞍点。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1651`（`MD.Ch01.trimersaddle`）。
+位置：[Blueprint/Ch01.lean:1891](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1891>)（`MD.Ch01.trimersaddle`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：有理LJ势驻点根与二维严格鞍点的符号二阶导数计算。
+缺失/继续路线：缺共线LJ驻点全局唯一根及二维严格鞍点的两方向二阶导数符号/局部比较；不只证明一维极小就宣称鞍点。
 
 签名SHA256：`b74f65429906510e4dd2e07a48842d3e0df115c79f15c13a45c2fbc75595a88c`；原文SHA256：`458a00cb68f45c9f1cef26a4844d8e9f27c99a7d4f271958cc44d2ed7f9b9987`。
 
@@ -6662,8 +6766,8 @@ theorem trimerescapeliteral :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.trimerescapeliteral | NEEDS_HUMAN |
-| 原书疑点 | 保留原文每个body最终逃逸到∞的字面结论及前段质心固定、等腰、零角动量背景；正能量到散射的论证缺失，待导师裁定。 | [ERRATUM?] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem trimerescapeliteral :<br>  ∀ (q v : ℝ → Fin 3 → V3) (E : ℝ), 0 < E →<br>    (∀ t i j, i ≠ j → q t i ≠ q t j) →<br>    (∀ t, (∑ i, q t i) = 0 ∧ (∑ i, v t i) = 0 ∧<br>      (∑ i, cross3 (q t i) (v t i)) = 0 ∧<br>      ∃ x > 0, ∃ y, q t = isoscelesCoordinates x y) →<br>    (∀ t i, HasDerivAt (fun s => q s i) (v t i) t ∧<br>      HasDerivAt (fun s => v s i) (ljForce 1 1 (q t) i) t) →<br>    (∀ t, (∑ i, ‖v t i‖^2/2)+uniformLJEnergy 1 1 (q t) = E) →<br>    ∀ i : Fin 3, Tendsto (fun t => ‖q t i‖) atTop atTop | NEEDS_HUMAN |
+| 原页核对/疑点 | every body逃逸字面过强：取等腰退化为共线y≡0，q₁=(x,0,0)、q₂=(-x,0,0)、q₃=0，中心粒子合力零，质心/动量/角动量均零；x>1的外向正能量解使外侧两粒子逃逸而中心始终固定。需裁定是否改为至少一对分离。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -6671,13 +6775,15 @@ theorem trimerescapeliteral :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
+反例：every body逃逸字面过强：取等腰退化为共线y≡0，q₁=(x,0,0)、q₂=(-x,0,0)、q₃=0，中心粒子合力零，质心/动量/角动量均零；x>1的外向正能量解使外侧两粒子逃逸而中心始终固定。需裁定是否改为至少一对分离。
+
 建议：全局三体散射/逃逸理论；字面every body与至少一对分离的差距不能冒充完整证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1662`（`MD.Ch01.trimerescapeliteral`）。
+位置：[Blueprint/Ch01.lean:1902](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1902>)（`MD.Ch01.trimerescapeliteral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6713,7 +6819,7 @@ def chaosConditions {n : ℕ} (F : ℝ → Position n → Position n) (D : Set (
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.chaosConditions | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def chaosConditions {n : ℕ} (F : ℝ → Position n → Position n) (D : Set (Position n)) : Prop :=<br>  sensitiveDependence F D ∧ topologicalTransitivity F D | NEEDS_HUMAN |
 | 原文未显式量化的技术资格 | 敏感依赖以固定可见分离量ε、任意δ近邻的标准量词解释；原文说明without being entirely formal，未指定这个严格ε/δ版本。 | [EXTRA] |
 | 原文未显式量化的技术资格 | topologicalTransitivity使用相对开集和非负时间，D须流不变才能解释为相域。 | [EXTRA] |
 
@@ -6727,7 +6833,7 @@ def chaosConditions {n : ℕ} (F : ℝ → Position n → Position n) (D : Set (
 
 **incomplete**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1679`（`MD.Ch01.chaosConditions`）。
+位置：[Blueprint/Ch01.lean:1919](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1919>)（`MD.Ch01.chaosConditions`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6762,9 +6868,9 @@ theorem transitivityergodicityliteral :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.transitivityergodicityliteral | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem transitivityergodicityliteral :<br>  ∀ (n : ℕ) (f : Position n → Position n)<br>    (F : ℝ → Position n → Position n) (μ : Measure (Position n)),<br>    isFlowOf f F → Continuous (Function.uncurry F) →<br>    (∀ t, MeasurePreserving (F t) μ μ) →<br>    (topologicalTransitivity F univ ↔ flowErgodic F μ) | NEEDS_HUMAN |
 | 原文未显式量化的技术资格 | 为表达ergodicity必须引入原文此处未给的不变测度μ；F为连续真实流。 | [EXTRA] |
-| 原书疑点 | 拓扑传递和给定测度遍历通常不等价；μ=0时identity流遍历为真而传递为假。非退化概率测度也需进一步限定。 | [ERRATUM?] |
+| 原页核对/疑点 | 拓扑传递和给定测度遍历通常不等价；μ=0时identity流遍历为真而传递为假。非退化概率测度也需进一步限定。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -6772,13 +6878,15 @@ theorem transitivityergodicityliteral :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
+反例：拓扑传递和给定测度遍历通常不等价；μ=0时identity流遍历为真而传递为假。非退化概率测度也需进一步限定。
+
 建议：字面等价不成立；不通过新增结论前提修补。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1686`（`MD.Ch01.transitivityergodicityliteral`）。
+位置：[Blueprint/Ch01.lean:1926](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1926>)（`MD.Ch01.transitivityergodicityliteral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6819,7 +6927,8 @@ def anisotropicEnergy (κ₀ l₀ ε x y v w : ℝ) :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.anisotropicEnergy | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def anisotropicEnergy (κ₀ l₀ ε x y v w : ℝ) :=<br>  let p := anisotropicParameters κ₀ l₀ ε (anisotropicAngular x y)<br>  (v^2+w^2)/2+p.1/2*(Real.sqrt (x^2+y^2)-p.2)^2 | 一致 |
+| \[E(x,y,\dot x,\dot y)=\frac12(\dot x^2+\dot y^2)+\frac{\kappa(c_3)}2(r-l(c_3))^2,\qquad r=\sqrt{x^2+y^2},\tag{1.9}\]；\[c_3=\cos(3\theta)\]；\[\cos\theta=c=\frac xr,\qquad c_3=4c^3-3c,\]；\[\kappa(c_3)=\kappa_0(1-\tfrac12\epsilon c_3),\qquad l(c_3)=l_0(1+\tfrac12\epsilon c_3).\] | MD.Ch01.anisotropicEnergy，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 定义在r=0用Lean总函数延拓，物理域r>0。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -6832,7 +6941,7 @@ def anisotropicEnergy (κ₀ l₀ ε x y v w : ℝ) :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1698`（`MD.Ch01.anisotropicEnergy`）。
+位置：[Blueprint/Ch01.lean:1938](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1938>)（`MD.Ch01.anisotropicEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6866,8 +6975,10 @@ def variationalMatrixLiteral {n : ℕ} (F : ℝ → Position n → Position n)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.variationalMatrixLiteral | 一致 |
-| 原书疑点 | 标准变分矩阵应为DξFt(ξ)，原文把取值点写Ftξ；忠实保留字面定义，后续两条不静默改。 | [ERRATUM?] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def variationalMatrixLiteral {n : ℕ} (F : ℝ → Position n → Position n)<br>    (ξ : Position n) (t : ℝ) := fderiv ℝ (F t) (F t ξ) | 一致 |
+| \[\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi.\]；\[\boldsymbol W(t)=F_t'(\boldsymbol z(t,\boldsymbol\xi))=\frac{\partial F_t}{\partial\boldsymbol z}(\boldsymbol z(t,\boldsymbol\xi)).\] | MD.Ch01.variationalMatrixLiteral，完整展开陈述见上一行及第4段 | 一致 |
+| W的取值点为z(t,ξ)=Ftξ | fderiv ℝ (F t) (F t ξ) | [ERRATUM?] 字面保留，未换为ξ |
+| 原页核对/疑点 | 标准变分矩阵应为DξFt(ξ)，原文把取值点写Ftξ；忠实保留字面定义，后续两条不静默改。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -6879,7 +6990,7 @@ def variationalMatrixLiteral {n : ℕ} (F : ℝ → Position n → Position n)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1706`（`MD.Ch01.variationalMatrixLiteral`）。
+位置：[Blueprint/Ch01.lean:1946](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1946>)（`MD.Ch01.variationalMatrixLiteral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6915,8 +7026,9 @@ theorem variationalequationliteral :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.variationalequationliteral | NEEDS_HUMAN |
-| 原书疑点 | 前条字面W=D Ft(Ftξ)多出取值点移动链式项。局部标量f(z)=z²,Ftξ=ξ/(1-tξ)：W=(1-tξ)²/(1-2tξ)²；t=0的W′=2ξ相合，但t≠0一般不满足原式。 | [ERRATUM?] |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem variationalequationliteral :<br>  ∀ (n : ℕ) (f : Position n → Position n) (F : ℝ → Position n → Position n),<br>    ContDiff ℝ 1 f → differentiableFlow F → isFlowOf f F →<br>    ∀ ξ t, HasDerivAt (fun s => variationalMatrixLiteral F ξ s)<br>      ((fderiv ℝ f (F t ξ)).comp (variationalMatrixLiteral F ξ t)) t | NEEDS_HUMAN |
+| \[\frac{\mathrm d}{\mathrm dt}\boldsymbol W(t)=\boldsymbol f'(\boldsymbol z(t,\boldsymbol\xi))\boldsymbol W(t).\tag{1.10}\] | MD.Ch01.variationalequationliteral，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
+| 原页核对/疑点 | 标准W应在ξ处取DFt。取全局光滑完备流f(x)=sin x，在ξ=π/2附近Ft(x)=2 arctan(e^t tan(x/2))；t=log 2时字面W=10/17，W′=-198/289，而f′(Ftξ)W=-6/17=-102/289，不相等。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -6924,13 +7036,15 @@ theorem variationalequationliteral :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
+反例：标准W应在ξ处取DFt。取全局光滑完备流f(x)=sin x，在ξ=π/2附近Ft(x)=2 arctan(e^t tan(x/2))；t=log 2时字面W=10/17，W′=-198/289，而f′(Ftξ)W=-6/17=-102/289，不相等。
+
 建议：需导师确认取值点勘误；修正后一般非线性参数导数交换亦需理论，常系数已有证明不足。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1713`（`MD.Ch01.variationalequationliteral`）。
+位置：[Blueprint/Ch01.lean:1953](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1953>)（`MD.Ch01.variationalequationliteral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6966,9 +7080,10 @@ theorem nearby_trajectory_literal :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.nearby_trajectory_literal | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem nearby_trajectory_literal :<br>  ∀ (n : ℕ) (F : ℝ → Position n → Position n), differentiableFlow F →<br>    ∀ t ξ, (fun x => F t x-F t ξ-variationalMatrixLiteral F ξ t (x-ξ))<br>      =o[𝓝 ξ] (fun x => x-ξ) | NEEDS_HUMAN |
+| \[\boldsymbol z(t,\hat{\boldsymbol\xi})-\boldsymbol z(t,\boldsymbol\xi)\approx\boldsymbol W(t)(\hat{\boldsymbol\xi}-\boldsymbol\xi).\] | MD.Ch01.nearby_trajectory_literal，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
 | 原文未显式量化的技术资格 | ≈严格化为固定t、扰动趋0的Frechet小o；沿用原文字面W。 | [EXTRA] |
-| 原书疑点 | 原文字面W在Ftξ而不是ξ；前条非线性流提供不同Jacobian的反例，不能用修正版flowFirstOrder_proof冒充。 | [ERRATUM?] |
+| 原页核对/疑点 | 同一全局sin流在ξ=π/2,t=log 2时DFt(ξ)=4/5，字面DFt(Ftξ)=10/17；差额线性项不为小o。须导师裁定取值点，当前不静默修正。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
@@ -6976,13 +7091,15 @@ theorem nearby_trajectory_literal :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
+反例：同一全局sin流在ξ=π/2,t=log 2时DFt(ξ)=4/5，字面DFt(Ftξ)=10/17；差额线性项不为小o。须导师裁定取值点，当前不静默修正。
+
 建议：等待导师判断W取值点勘误，修正版由可微定义直接推出。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1724`（`MD.Ch01.nearby_trajectory_literal`）。
+位置：[Blueprint/Ch01.lean:1964](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1964>)（`MD.Ch01.nearby_trajectory_literal`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7017,7 +7134,7 @@ def singularValues {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) (σ : Fin n → �
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.singularValues | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def singularValues {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) (σ : Fin n → ℝ) : Prop :=<br>  (∀ i, 0 ≤ σ i) ∧ Antitone σ ∧<br>  ∃ O : Matrix (Fin n) (Fin n) ℝ,<br>    O.transpose*O=1 ∧ O.transpose*(A.transpose*A)*O=Matrix.diagonal (fun i => (σ i)^2) | 一致 |
 | 原文未显式量化的技术资格 | 用存在正交特征基刻画谱关系；不是以要证明的椭球图像结论为假设。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -7030,7 +7147,7 @@ def singularValues {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) (σ : Fin n → �
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1734`（`MD.Ch01.singularValues`）。
+位置：[Blueprint/Ch01.lean:1974](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1974>)（`MD.Ch01.singularValues`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7065,7 +7182,7 @@ theorem singularellipsoid :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.singularellipsoid | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem singularellipsoid :<br>  ∀ (n : ℕ) (A : Matrix (Fin n) (Fin n) ℝ) (σ : Fin n → ℝ), IsUnit A →<br>    singularValues A σ →<br>    ∃ O : Matrix (Fin n) (Fin n) ℝ, O.transpose*O=1 ∧<br>      (A.toEuclideanLin '' {v : Position n \| ‖v‖=1}) =<br>        {x : Position n \| ∑ i, ((O.transpose.toEuclideanLin x) i / σ i)^2 = 1} | 一致 |
 | 原文未显式量化的技术资格 | regular=可逆；单位球面，正交主轴O及半轴σ；平移/半径可按线性缩放恢复。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -7074,19 +7191,19 @@ theorem singularellipsoid :
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
-建议：一般实矩阵奇异值分解与逆矩阵球面像几何理论。
+建议：缺一般实矩阵SVD、正交坐标变换与逆矩阵球面像的完整几何证明；奇异值定义本身不是椭球结论证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1743`（`MD.Ch01.singularellipsoid`）。
+位置：[Blueprint/Ch01.lean:1983](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1983>)（`MD.Ch01.singularellipsoid`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：含sorryAx。
 
-缺失/继续路线：一般实矩阵奇异值分解与逆矩阵球面像几何理论。
+缺失/继续路线：缺一般实矩阵SVD、正交坐标变换与逆矩阵球面像的完整几何证明；奇异值定义本身不是椭球结论证明。
 
 签名SHA256：`84b2bbd8bf39ec1a24583dae4f84a7e04498c505f4b01d1546f402b738186e59`；原文SHA256：`d522a534b9b1e6909946d371a3ab95d325dd3de048145e7c8527b8f2f4f401c3`。
 
@@ -7115,7 +7232,9 @@ def lyapunovExponent (σ : ℝ → ℝ) : EReal :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.lyapunovExponent | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | def lyapunovExponent (σ : ℝ → ℝ) : EReal :=<br>  Filter.limsup (fun t : ℝ => ((Real.log (σ t)/t : ℝ) : EReal)) atTop | 一致 |
+| \[\lambda_i=\limsup_{t\to\infty}\frac1t\log\sigma_i(\boldsymbol W),\] | MD.Ch01.lyapunovExponent，完整展开陈述见上一行及第4段 | 一致 |
+| limsup与有序奇异值 | Filter.limsup ((Real.log (σ t)/t : ℝ) : EReal) atTop；σ为singularValues关系的第i分量 | 一致 |
 | 原文未显式量化的技术资格 | 扩展实数EReal允许±∞，原文未保证极限有限；σ(t)>0在可逆流Jacobian背景，避免log0。 | [EXTRA] |
 
 ### 6. 审计结论
@@ -7128,7 +7247,7 @@ def lyapunovExponent (σ : ℝ → ℝ) : EReal :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1755`（`MD.Ch01.lyapunovExponent`）。
+位置：[Blueprint/Ch01.lean:1995](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:1995>)（`MD.Ch01.lyapunovExponent`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7160,27 +7279,26 @@ theorem positivelyapunovgrowth :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原页完整公式/陈述 | MD.Ch01.positivelyapunovgrowth | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | theorem positivelyapunovgrowth :<br>  ∀ σ : ℝ → ℝ, (∀ t > 0, 0 < σ t) → 0 < lyapunovExponent σ →<br>    ∃ c > 0, ∀ T : ℝ, ∃ t > T, Real.exp (c*t) < σ t | 一致 |
+| 正limsup蕴涵指数放大 | ∃c>0,∀T,∃t>T,Real.exp(c*t)<σ t | 一致；任意晚子列，不增强为全部晚时刻 |
 | 原文未显式量化的技术资格 | 依据limsup只能得到任意晚时间仍有指数放大，即无穷时间子列；不添加所有足够大t统一增长。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
-
-建议：EReal limsup的无穷晚超阈值与log/exp严格不等式桥接；一般Lyapunov存在性/可测谱理论不在本条证明内。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:1762`（`MD.Ch01.positivelyapunovgrowth`）。
+位置：[Blueprint/Ch01.lean:2002](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch01.lean:2002>)（`MD.Ch01.positivelyapunovgrowth`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出。
 
-缺失/继续路线：EReal limsup的无穷晚超阈值与log/exp严格不等式桥接；一般Lyapunov存在性/可测谱理论不在本条证明内。
+本地独立尝试2次，失败1次；证据：blueprint/ch01/proof_attempts.json。
 
 签名SHA256：`46bb7832d6e5c152a0f779d8d437c44499c4ac9306c1275066ff764e0cd0a725`；原文SHA256：`bb1d95a602dd620b8e271e15009da812d01d5b81a21124bd3b06a372aacd78d8`。

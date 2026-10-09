@@ -521,6 +521,18 @@ bridge('RealNormalMode','1.6.1',37,[173],r'''or recast in real form as ($\alpha,
 \[\boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].\]''','MolecularDynamics/Chapter01/NormalModes.lean','hasDerivAt_realNormalMode',context=['u=Reξ,v=Imξ，Au=-Ωv、Av=Ωu来自实矩阵复特征向量方程；realNormalMode展开即原式。'])
 
 for r in RECORDS:
+    if r['source_id']=='MD-1.1.1-MorseMinimum':
+        r['local_verdict']='PASS'
+        r['context_notation'].append('a controls curvature为定性形状参数说明，合并为Morse定义背景；原页无二阶导数公式，不凭计算添加原文公式。')
+        r['local_explanation']='最小值和井深的全部数学结论已保留；a的定性参数解释合并在context_notation，对照表单独列明，不伪造曲率原文公式。'
+        r['missing']='指数无穷远极限与非负平方，计划短证明。'
+    if r['source_id']=='MD-1.1.1-LJRepulsion':
+        r['old_ids']=['CH01-022'];r['local_verdict']='PASS'
+        r['statement_latex']='Because of the strongly repulsive character '+r['statement_latex']
+        r['printed_page']='10–11';r['pdf_page']='33–34'
+        r['context_notation']=['数学结论是原文r→0极限；长模拟保持分离为定性经验，不升级为有限能量全局无碰撞定理。']
+        r['local_explanation']='原文明示数学论据是r→0正无穷极限；长模拟well-separated为定性经验，放上下文。旧CH01-198严格有限能量无碰撞命题未在原文给出，单独登记excluded_qualitative。'
+        r['missing']='正幂/倒数单侧极限，计划短证明。'
     if r['source_id']=='MD-1.5.1-FlowEnergy':
         r['code']='''theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
     (F : ℝ → PhaseSpace n → PhaseSpace n) (hH : Differentiable ℝ H)
@@ -748,6 +760,81 @@ for r in RECORDS:
         r['extra_assumptions']=['一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。']
         r['local_explanation']='补齐全平移不变、净力零真实导数与动量守恒；Newton第三定律为相邻差值势的反向partial，CentralPairGradient另条编码，不把动量结论当假设。'
         r['missing']='平移轨迹链式法则、基向量和为常1的fderiv线性作用、有限和零导数及连通域常数桥接。'
+    if r['source_id']=='MD-1.5.2-ScalarFirstIntegral':
+        quad=theorem_type('MolecularDynamics/Chapter01/ScalarIntegrability.lean','scalarPotential_nonturning_quadrature')
+        r['code']='theorem scalar_first_integral_and_quadrature :\n  ('+theorem_type('MolecularDynamics/Chapter01/ScalarIntegrability.lean','scalarPotentialEnergy_isFirstIntegral')+') ∧\n  ('+quad+') := by\n  exact ⟨@MolecularDynamics.scalarPotentialEnergy_isFirstIntegral, @MolecularDynamics.scalarPotential_nonturning_quadrature⟩'
+        r['lean_decl']='MD.Ch01.scalar_first_integral_and_quadrature'
+        r['priors'].append('MolecularDynamics/Chapter01/ScalarIntegrability.lean:scalarPotential_nonturning_quadrature')
+        r['local_explanation']='补齐energy first integral和therefore integrable两结论；全部实际局部积分逆重建由既有证明桥接，非转向技术资格显式。'
+        r['extra_assumptions']=['U C2；开放时间段真实解、积分逆图使用速度非零点；转向点全局拼接不声称已有证明。']
+
+exclude([198],'excluded_qualitative：p.10–11以LJ强排斥解释长模拟中通常well separated，未给旧清单有限能量→统一正间距的严格命题；数学极限保留MD-1.1.1-LJRepulsion。')
+
+momentum_type='''∀ (N : ℕ) (m : Fin N → ℝ) (v : ℝ → Fin N → V3)
+    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I → IsPreconnected I →
+    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →
+    (∀ t ∈ I, (∑ i, ∑ j, F t i j) = 0) ∧
+    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i • v s i) 0 t) ∧
+    ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i • v a i) = ∑ i, m i • v b i'''
+for r in RECORDS:
+    if r['source_id'] in ('MD-1.2-MomentumConservation','MD-1.7-CentralMomentum'):
+        name='momentum_conservation' if r['section']=='1.2' else 'central_momentum'
+        r['code']='theorem '+name+' :\n  '+momentum_type+' := by\n  '+('sorry' if r['section']=='1.2' else 'exact @momentum_conservation')
+        r['lean_decl']='MD.Ch01.'+name;r['local_verdict']='PASS'
+        r['extra_assumptions']=['真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。']
+        r['local_explanation']='审查后去掉旧桥接中净力零前提，由真实逐对作用反对称推出净力零和全向量/每坐标动量守恒，保留全部结论。'
+        r['priors']=['MD.Ch01.paircancellation'] if r['section']=='1.2' else ['MD.Ch01.momentum_conservation']
+        r['missing']='有限和真实导数与反对称力相消桥接，计划短证明。' if r['section']=='1.2' else None
+
+# Final semantic review keeps literal source errors visible and qualifies total derivatives.
+full_kepler=next(r for r in RECORDS if r['source_id']=='MD-1.5.2-KeplerFullSolution')
+kh=re.split(r'\s:=\s*by\b',full_kepler['code'],maxsplit=1)[0]
+kh=re.sub(r'^theorem\s+\w+\s*','',kh)
+depth=0
+for i,c in enumerate(kh):
+    if c in '({[':depth+=1
+    if c in ')}]':depth-=1
+    if c==':' and depth==0:
+        full_kepler_type='∀ '+kh[:i].strip()+',\n    '+kh[i+1:].strip()
+        full_kepler_type=full_kepler_type.replace('polarCoordinates','(fun r θ : ℝ => (WithLp.toLp 2 ![r*Real.cos θ,r*Real.sin θ] : Position 2))')
+        break
+for r in RECORDS:
+    if r['source_id']=='MD-1.5.2-KeplerConservedEnergy':
+        energy=theorem_type('MolecularDynamics/Chapter01/Kepler.lean','kepler_energy_const_on_Ioo')
+        energy=re.sub(r'\bn\b','2',energy.replace('∀ {n : ℕ}','∀',1))
+        angular=theorem_type('MolecularDynamics/Chapter01/Kepler.lean','kepler_planarAngularMomentum_const_on_Ioo')
+        r['code']='theorem kepler_energy_angular_integrability :\n  ('+energy+') ∧\n  ('+angular+') ∧\n  ('+full_kepler_type+') := by\n  refine ⟨@MolecularDynamics.kepler_energy_const_on_Ioo 2, @MolecularDynamics.kepler_planarAngularMomentum_const_on_Ioo, ?_⟩\n  sorry'
+        r['lean_decl']='MD.Ch01.kepler_energy_angular_integrability'
+        r['local_explanation']='逐字整句含能量守恒、角动量守恒与可积性三结论；已扩为完整合取。两守恒量用既有证明，完整极坐标/quadrature重建保持占位。'
+        r['extra_assumptions']=['真实平面非碰撞机械解；积分重建的整个存在区间含0，角为连续实提升；不声称穿越碰撞的全局轨道。']
+        r['context_notation']=['本条保留整句全部结论；旋转对称理由另见KeplerAngularMomentum；完整重建公式另见KeplerFullSolution。']
+        r['priors']=['MolecularDynamics/Chapter01/Kepler.lean:kepler_energy_const_on_Ioo','MolecularDynamics/Chapter01/Kepler.lean:kepler_planarAngularMomentum_const_on_Ioo']
+        r['missing']='能量及角动量已桥接；完整全存在区间极坐标提升与跨转向点quadrature拼接尚缺大型理论。'
+    if r['source_id']=='MD-1.5.2-KeplerRadialEnergy':
+        r['statement_latex']='The equation for $r$ is that of a one-degree-of-freedom '+r['statement_latex']
+        r['printed_page']='29–30';r['pdf_page']='52–53'
+    if r['source_id']=='MD-1.5-EnergyBounds':
+        before=r['statement_latex']
+        r['statement_latex']=r['statement_latex'].replace(r'Then, for $(\boldsymbol q,\boldsymbol p)\in\Sigma_{E_0}$',r'Then, for $(\boldsymbol q,\boldsymbol p)\in\Sigma_{E_0}$ we have')
+        r['proof_latex']=r['statement_latex'][r['statement_latex'].index('Then, for'):]
+        r['proof_note']='原页能量不等式及正定推界论证逐字引用；与陈述合引部分保留，未添加原书没有的证明。'
+        r['repair_log'].append(dict(stage='LOCAL_RENDER_RECHECK',reason='重看PDF48补漏we have；将原页论证同时列入proof_latex。',before_sha256=hashlib.sha256(before.encode()).hexdigest(),after_sha256=hashlib.sha256(r['statement_latex'].encode()).hexdigest()))
+    if r['source_id'] in ('MD-1.5.2-KeplerPolarLagrangian','MD-1.5.2-PolarAngularIdentity'):
+        r['proof_latex']=r['statement_latex']
+        r['proof_note']='原页三角/代数恒等式计算即原文论证，逐字引用；原文陈述中的同一计算保留。'
+    if r['source_id']=='MD-1.4-PhaseSpace':
+        r['issues']=[dict(code='ERRATUM?',status='NEEDS_HUMAN',detail='p.25原句described by coordinates and positions字面重复位置；前句定义是positions and momenta，Lean按前句定义保留位置×动量，原句不静默改字。')]
+    if r['source_id']=='MD-1.1-Schrodinger':
+        r['code']=r['code'].replace('  ∀ t q,', '  ContDiff ℝ 2 (Function.uncurry Φ) ∧\n  ∀ t q,')
+        r['extra_assumptions']=['正质量及正Planck参数；按经典解解释，Φ在时间/位置联合C2，保证总导数算子表示实际偏导数；不声明解存在。']
+        r['local_explanation']='13粒子39坐标及逐质量系数完全保留；联合C2显式登记为经典解技术资格，排除以不可微函数总导数的默认零值冒充PDE。'
+    if r['source_id']=='MD-1.7.2-VariationalEquationLiteral':
+        r['issues'][0]['detail']='标准W应在ξ处取DFt。取全局光滑完备流f(x)=sin x，在ξ=π/2附近Ft(x)=2 arctan(e^t tan(x/2))；t=log 2时字面W=10/17，W′=-198/289，而f′(Ftξ)W=-6/17=-102/289，不相等。'
+    if r['source_id']=='MD-1.7.2-NearbyTrajectoryLiteral':
+        r['issues'][0]['detail']='同一全局sin流在ξ=π/2,t=log 2时DFt(ξ)=4/5，字面DFt(Ftξ)=10/17；差额线性项不为小o。须导师裁定取值点，当前不静默修正。'
+    if r['source_id']=='MD-1.7-TrimerEscapeLiteral':
+        r['issues'][0]['detail']='every body逃逸字面过强：取等腰退化为共线y≡0，q₁=(x,0,0)、q₂=(-x,0,0)、q₃=0，中心粒子合力零，质心/动量/角动量均零；x>1的外向正能量解使外侧两粒子逃逸而中心始终固定。需裁定是否改为至少一对分离。'
 
 def write_section(section):
     from ch01_full_proofs import PROOFS
@@ -760,6 +847,9 @@ def write_section(section):
     new=[r for r in RECORDS if r['section'].startswith(section)]
     clean=[r for r in original if r['source_id'] not in ids]+[
         {k:v for k,v in r.items() if k not in ('code','local_verdict','local_explanation','priors','missing')} for r in new]
+    order={r['source_id']:i for i,r in enumerate(RECORDS)}
+    pilot_order={r['source_id']:i for i,r in enumerate(original) if r['source_id'] not in order}
+    clean.sort(key=lambda r:(1,order[r['source_id']]) if r['source_id'] in order else (0,pilot_order[r['source_id']]))
     (BASE/'ch01_source.json').write_text(json.dumps(clean,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     lean_path=ROOT/'Blueprint/Ch01.lean'
     text=lean_path.read_text(encoding='utf-8-sig')

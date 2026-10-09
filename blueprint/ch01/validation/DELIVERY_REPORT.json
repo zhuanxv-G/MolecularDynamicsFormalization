@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "source_entries": 141,
+  "printed_pages_checked": 45,
+  "old_mapped": 199,
+  "old_excluded": 8,
+  "batches": 23,
+  "maximum_batch_bytes": 22644,
+  "local_verdicts": {
+    "PASS": 124,
+    "NEEDS_HUMAN": 17
+  },
+  "proof_states": {
+    "definition": 60,
+    "placeholder": 28,
+    "local_proof": 20,
+    "existing_bridge": 33
+  },
+  "final_states": {
+    "self-contained": 70,
+    "incomplete": 33,
+    "checked+documented priors": 38
+  },
+  "direct_placeholders": 28,
+  "formal_diff_from_baseline": "empty",
+  "website_results": 0,
+  "heartbeat": "not modified",
+  "note": "PASS指交付完整性及本地证据一致，不代替网站或导师语义审计。"
+}

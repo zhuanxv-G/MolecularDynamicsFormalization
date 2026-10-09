@@ -24,7 +24,16 @@ def sync():
     sources=json.loads((BASE/'ch01_source.json').read_text(encoding='utf-8-sig'))
     ds=declarations(); audit=json.loads((BASE/'local_audit.json').read_text(encoding='utf-8'))
     pilot=json.loads((BASE/'audit.json').read_text(encoding='utf-8-sig'))['items']
+    website={};wp=BASE/'website_audit.json'
+    if wp.exists():
+        wd=json.loads(wp.read_text(encoding='utf-8-sig'))
+        if isinstance(wd,dict):wd=wd.get('items',wd)
+        website={x['source_id']:x for x in wd} if isinstance(wd,list) else wd
+    def web(sid):
+        w=website.get(sid)
+        return '待网站审计' if w is None else w.get('audit',w).get('verdict','NEEDS_HUMAN')
     for s in sources:
+        s.setdefault('review_status','DRAFT')
         sid=s['source_id'];d=ds[sid]
         if sid not in audit['items']:
             a=pilot[sid]
@@ -37,9 +46,15 @@ def sync():
                 correspondence=a['correspondence'],documented_priors=s.get('reusable_proofs',[]),
                 proof_attempts=0,proof_status='placeholder' if bad else 'existing_bridge',website_audit='待网站审计',
                 checked=False,missing='一般配置相关正定矩阵Legendre理论；原文字面前提疑点。' if bad else None)
-        a=audit['items'][sid];a['signature_sha256']=d['signature_sha256']
+        a=audit['items'][sid]
+        if a.get('signature_sha256') != d['signature_sha256']:
+            a.update(checked=False,axioms=[],final_status='incomplete')
+        a['signature_sha256']=d['signature_sha256']
+        a['website_audit']=web(sid)
         a['direct_placeholder']='sorry' in d['block']
         if not a['direct_placeholder'] and a['proof_status']=='placeholder': a['proof_status']='local_proof'
+        if not a['direct_placeholder']: a['missing']=None
+    (BASE/'ch01_source.json').write_text(json.dumps(sources,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     (BASE/'local_audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     (BASE/'CheckAxioms.lean').write_text('import Blueprint.Ch01\n\n'+'\n'.join('#print axioms '+s['lean_decl'] for s in sources)+'\n',encoding='utf-8')
     mapped={oid:s['source_id'] for s in sources for oid in s.get('old_ids',[])}
@@ -65,8 +80,12 @@ def sync():
     deps=sorted(paths-{'Blueprint/Ch01.lean'})
     manifest=[]
     for number,(batch,items) in enumerate(groups,1):
-        if batch!='BATCH01':
-            pages=sorted(set(int(n) for s in items for n in re.findall(r'\d+',s['pdf_page'])))
+        if items:
+            pages=set()
+            for s in items:
+                ns=[int(n) for n in re.findall(r'\d+',s['pdf_page'])]
+                pages.update(range(ns[0],ns[-1]+1))
+            pages=sorted(pages)
             prompt=[f'# {batch}：第1章原文审校A + 只读语义审计C','', '## 开始前 @引用 / 上传','',
                 '1. 教材PDF `../Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf`；PDF页从1起算，本批页：'+', '.join(map(str,pages))+'；上下文读取该节相邻页。',
                 '2. `blueprint/ch01/ch01_source.json`（仅审本批source_id）及 `Blueprint/Ch01.lean`（包含全部辅助定义）。',
@@ -86,20 +105,24 @@ def sync():
         size=(taskdir/(batch+'.md')).stat().st_size
         if size>=40000:raise ValueError((batch,size))
         manifest.append({'batch':batch,'source_ids':[s['source_id'] for s in items], 'bytes':size,
+            'task_sha256':hashlib.sha256((taskdir/(batch+'.md')).read_bytes()).hexdigest(),
+            'source_pdf_sha256':hashlib.sha256(next(ROOT.parent.glob('Leimkuhler2015b*.pdf')).read_bytes()).hexdigest(),
             'files':{p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in files}})
         index.append('| '+batch+' | '+', '.join(s['source_id'] for s in items)+' | 见'+batch+'.md包首清单；原文PDF '+', '.join(s['pdf_page'] for s in items)+' | '+str(number)+' |')
     (taskdir/'MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    index+=['','## 每批共同上传文件','', '`blueprint/ch01/ch01_source.json`、`Blueprint/Ch01.lean`及以下实际依赖文件；各批PDF页码见上表与包首。','','```text',*deps,'```']
     (taskdir/'INDEX.md').write_text('\n'.join(index)+'\n',encoding='utf-8')
     rows=list(csv.DictReader((ROOT/'docs/review/CH01_CLAIMS.csv').open(encoding='utf-8-sig')))
     progress=['# 第1章五步流程本地进度','','范围：印刷p.1–45正文，Exercises排除；正式库基线63fa09227e1d898e0cacae3c33241d3d6ecba816，heartbeat ACTIVE/15分钟原样。',
-        '下一步：按CURRENT_STATE顶部接续；未完成节继续原页逐字核对和本地证明。',
-        f'当前{len(sources)}条；本地PASS {sum(audit["items"][s["source_id"]]["verdict"]=="PASS" for s in sources)}；网站返回0；任务包{len(groups)}批，每批≤8条、每文件<40KB。','',
+        '下一步：按CURRENT_STATE顶部接续；全章已覆盖，终检和推送完成后等待用户提交INDEX.md中的网站批次。',
+        f'当前{len(sources)}条；本地PASS {sum(audit["items"][s["source_id"]]["verdict"]=="PASS" for s in sources)}；网站返回{len(website)}；任务包{len(groups)}批，每批≤8条、每文件<40KB。','',
         '## 逐条进度','','| source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明 |','|---|---|---|---|---|---|']
     for s in sources:
         a=audit['items'][s['source_id']]
         batch=next(b for b,its in groups if s in its)
         proof='sorry / '+(a.get('missing') or a.get('suggested_fix') or '待证明') if a['direct_placeholder'] else a['proof_status']
-        progress.append('| '+' | '.join([s['source_id'],s['review_status']+'/原页已核','陈述已写；'+('已编译' if a['checked'] else '待本轮编译'),a['verdict'],f'待网站审计 / {batch}',proof.replace('|','/')])+' |')
+        if a['direct_placeholder'] and a.get('proof_failures'):proof+=f'（失败{a["proof_failures"]}次，时间盒已止）'
+        progress.append('| '+' | '.join([s['source_id'],s['review_status']+'/原页已核','陈述已写；'+('已编译' if a['checked'] else '待本轮编译'),a['verdict'],web(s['source_id'])+' / '+batch,proof.replace('|','/')])+' |')
     progress+=['','## 旧清单完整映射','','| 旧id | 新source_id或排除理由 |','|---|---|']
     for r in rows:progress.append('| '+r['id']+' | '+mapped.get(r['id'],EXCLUDED.get(r['id'],'PENDING：所属节尚未处理'))+' |')
     progress+=['','## 导师判断与缺失理论','']
@@ -109,6 +132,12 @@ def sync():
             progress.append('- '+s['source_id']+'：'+a['explanation']+'；'+(a.get('missing') or a.get('suggested_fix') or '问题详见JSON issues。'))
     progress+=['','## 排除正文','', '- 印刷p.1–4为介绍、历史、规模、应用及图示，无独立数学定义/有论证结论，excluded_qualitative；p.17末尾跨p.18模拟参数经验段同类。',
         '- 数值图示、模型经验准确性与原文未给公式的模型分类不冒充定理；每个旧id均见上表。']
+    exclusions=BASE/'excluded_passages.json'
+    if exclusions.exists():
+        for e in json.loads(exclusions.read_text(encoding='utf-8')):
+            progress.append('- 印刷p.'+e['printed_page']+' / PDFp.'+e['pdf_page']+'：'+e['reason'])
+    progress+=['','## 验证证据','', '- 全部45原页视觉核对索引：source_page_checks.json；逐次本地证明尝试：proof_attempts.json；完整check报告：validation/各节及最终目录。',
+        '- 原页转录、本地语义判定、Lean检查及网站审计分别登记；原文仍DRAFT，网站尚未返回。']
     (BASE/'PROGRESS.md').write_text('\n'.join(progress)+'\n',encoding='utf-8')
     print('synced',len(sources),'entries',len(groups),'batches', 'max bytes',max(x['bytes'] for x in manifest))
 
