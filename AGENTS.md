@@ -1,30 +1,20 @@
 # 项目接续与形式化约定
 
-当前任务：五步流程第1章试点（5条，见 blueprint/ch01/PILOT.md）。完成后停止等待用户。
+当前任务：第1章全章五步流程本地部分（见 blueprint/ch01/PROGRESS.md）。网站任务包按批合并，等用户提交；完成后停止等待用户。
+下一步：按CURRENT_STATE顶部及PROGRESS.md接续尚未完成的节；不再停在五条试点。
 
-## 当前最高优先级范围（2026-10-09）
+## 当前最高优先级范围（2026-10-09用户夜间指令）
 
-- 2026-10-09最新任务包约定：每批一个文件，本批只提交`blueprint/ch01/mathcopilot_tasks/PILOT_ALL.md`，五条在一个Task中先A原文审校、再C只读语义审计，输出单个JSON数组；模板B已取消。原15文件归档保留。后续各章同样每批一个文件，优先<40KB，必要时最多两个；非PASS修复后只生成一个PILOT_REAUDIT.md，限需复审条目。
-- 返回件为`mathcopilot_results/PILOT_ALL_result.md|json`，Codex按PILOT.md一次性整合；旧单条prepare/ingest脚本（含--freeze）本批停用，不能要求用户拆分数组或等待B。冻结只需当前原文approved、当前签名全部语义PASS、issues闭合；保留原始返回件，repair_log只追加。
-
-- 按导师workshop五步流程：逐字原文JSON → Lean Blueprint → 只读审计、修复、复审、冻结签名 → 证明冻结陈述 → 忠实性、fresh check、直接风险和依赖闭包终验。
-- 仅处理PILOT.md中5条。第1–6章已有MolecularDynamics/源码、证明和签名全部保留，作为可复用证明素材；不进入其他条目或第7章，第6章封存断点保持原样。
-- MathCopilot网站仅由用户本人操作。Codex负责本地起草、任务包、接收结果、整合、本地证明和检查；不控制浏览器、网站、代发任务或轮询服务。
-- heartbeat lean保持ACTIVE / 15分钟，不修改。网站返回件缺失时继续独立本地工作，最终停在“等待网站结果”，列出缺件；不得伪造PASS或冻结。
-- Blueprint/目录允许by sorry表示未证陈述；MolecularDynamics/正式库仍0 sorry。禁止admit、新增axiom、unsafe证明绕过、True、P→P或把结论作为假设。
-- 第2步允许直接复用既有证明或建立由既有定理推出陈述的包装。新的实质证明仅在条目frozen后开展；冻结后不改签名、不弱化、不加假设。陈述有误退回审计。
-- 原文逐字核对教材PDF原页，页号从1起算，跨页拼接；不确定处记NEEDS_HUMAN。额外技术前提逐条标[EXTRA]，疑似原文错误记JSON issues并标[ERRATUM?]，不得静默改正。
-- JSON修复日志只追加。只读审计与修复、复审使用不同任务。全部条目经当前文件版本审计PASS后才标记frozen；第1章最终交付后写“第1章试点已交付，等待用户/导师确认格式”，之后只确认状态。
-
-## 接续与验收
-
-- 每次唤醒只读本文件、CURRENT_STATE顶部、WORK_LOG最新条目及blueprint/ch01/下文件；按具体下一步读取相关源码/API。
-- 首次接手检查实际Git分支、HEAD和未提交文件。保留其他任务遗留的改动和未跟踪文件，禁止直接覆盖或清理。
-- scripts/check.ps1验正式库无占位及固定版本构建，并登记Blueprint输入和单独风险扫描；Blueprint逐条运行#print axioms，含sorryAx的条目必须incomplete。构建通过不等于语义审计通过。
-- 终验分类只使用self-contained Lean proof / checked proof + documented priors / incomplete；明确直接占位风险与传递导入风险的区别。
-- 保持Lean 4.34.0、Mathlib v4.34.0固定版本，不升级。Lean源码变化后运行pwsh -NoProfile -File scripts/check.ps1；纯文档变更不重复全检。
-- scripts/render_blueprint.py从JSON、Blueprint和audit自动生成docs/review/CH01_PILOT.zh-CN.md；不能把待审草案标成最终交付。
-- 每个独立小任务或长任务检查点更新CURRENT_STATE，WORK_LOG每检查点≤3行；不向STATUS、FORMALIZATION_MAP、ASSUMPTIONS追加长文。最终或待返回件检查点commit + push（用户已授权）。
-- 默认中文，先说重点。明确区分原页核对、Lean编译、公理审计、网站语义审计和导师确认哪些已验证、哪些未验证。
-
-旧章节交付流程和“只在本地、不使用MathCopilot”的旧约定已被本次指令替代；历史证据保留在日志及章节文档。
+- 第1章正文印刷p.1–45，习题除外；逐字JSON → 忠实Blueprint → 每批≤8条A原文审校+C只读语义审计包 → 本地预审PASS后在Blueprint证明 → 自动渲染全章文档。模板B取消。
+- 原5条试点为BATCH01，原15任务已归档。网站只由用户提交；Codex只生成任务包并整合返回件，不控制网站，不等待网站才开展本地证明。
+- MolecularDynamics/正式库不改源码或签名、保持0 sorry；Blueprint/允许by sorry。禁止admit、新增axiom、unsafe绕过、True、P→P、结论作假设或凭空新增对象。
+- 保留对象、量词、假设及全部结论；额外前提逐条[EXTRA]，疑似原文错误[ERRATUM?]，不确定原文NEEDS_HUMAN。必须渲染PDF原页核对；单个符号放context_notation；定性描述合并或登记excluded_qualitative。旧CH01_CLAIMS.csv全部映射。
+- PROGRESS.md为唯一逐条进度表；local_audit.json使用模板C判定，只有本地PASS条目进入新证明。网站未返回写待网站审计，不伪造网站PASS或冻结。
+- 优先桥接既有证明→短证明→其余；单条3次失败或缺大型理论则保留sorry、记录缺项并继续；需要导师判断的问题记录后继续，无人回复时不等待。
+- 按节提交；每小批单文件lake env lean，每节结束完整scripts/check.ps1，固定Lean4.34.0/Mathlib v4.34.0，不升级。逐条#print axioms，含sorryAx必须incomplete；区分直接与传递占位风险。
+- scripts/render_blueprint.py生成docs/review/CH01_BLUEPRINT.zh-CN.md；每条7段并有汇总及NEEDS_HUMAN/[ERRATUM?]列表。状态只用self-contained / checked+documented priors / incomplete。
+- 每次唤醒只读AGENTS、CURRENT_STATE顶部、WORK_LOG最新、PROGRESS.md，再按下一步读相关输入。每检查点更新CURRENT_STATE，WORK_LOG≤3行；不向STATUS/FORMALIZATION_MAP/ASSUMPTIONS追加长文。
+- 首次接续核验Git分支、HEAD、未提交文件，保留其他任务文件。commit+push已授权；每节一次commit。
+- heartbeat lean保持ACTIVE/15分钟、不修改；不进入第2章。完成标准：全章JSON/Blueprint/本地预审/批次包齐全、能证已证、文档生成、check通过、push。完成后顶部写“第1章本地部分完成，等待用户提交 MathCopilot 批次（见 INDEX.md）”，以后只确认状态。
+- mathcopilot_results/出现新返回件时优先合并JSON审校和语义审计，登记EAUDIT批次；保留原始件、repair_log只追加，签名修复后重新审计。
+- 默认中文先说重点，明确原页核对、Lean编译、公理审计、网站审计、导师确认哪些已验证。本次用户新指令取代试点5条后等待及先冻结再证明限制。
