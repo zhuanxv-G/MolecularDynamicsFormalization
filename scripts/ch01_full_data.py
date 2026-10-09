@@ -156,10 +156,10 @@ def bridge(key,section,pages,old,statement,file,name,*,proof=None,extra=(),conte
     add(key,section,pages,old,statement,code,kind='unnumbered_claim',proof=proof,extra=extra,context=context,issue=issue,verdict=verdict,
         explanation=explanation or '展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。',prior=[file+':'+name])
 
-def stated(key,section,pages,old,statement,name,*,proof=None,extra=(),context=(),issue=None,verdict='PASS',missing=None):
+def stated(key,section,pages,old,statement,name,*,proof=None,extra=(),context=(),issue=None,verdict='PASS',missing=None,prior=(),label=None):
     local=re.sub(r'\W','_',key).lower()
     add(key,section,pages,old,statement,'theorem '+local+' :\n  '+prop(name)+' := by\n  sorry',kind='unnumbered_claim',proof=proof,extra=extra,context=context,issue=issue,verdict=verdict,
-        missing=missing,explanation='逐项核对展开后的陈述、真实定义、量词及[EXTRA]；'+('原文疑点保留，待导师裁定。' if issue else '语义本地通过，证明尚未完成。'))
+        missing=missing,prior=prior,label=label,explanation='逐项核对展开后的陈述、真实定义、量词及[EXTRA]；'+('原文疑点保留，待导师裁定。' if issue else '语义本地通过，证明尚未完成。'))
 
 add('NewtonCompact','1.2',18,[44,45,46,47,48,49,50],r'''In this book, we shall frequently use a compact, vectorial notation, where $\boldsymbol q$ and $\dot{\boldsymbol q}$ represent vectors of the positions and velocities, and $\boldsymbol M$ is a diagonal mass matrix, so the equations of motion (1.2) become
 \[\boldsymbol M\frac{\mathrm d^2}{\mathrm dt^2}\boldsymbol q=\boldsymbol F(\boldsymbol q)=-\nabla U(\boldsymbol q).\tag{1.3}\]''',
@@ -563,7 +563,7 @@ for r in RECORDS:
     (U : PotentialEnergy n) (qstar : Position n) (hU : ContDiffAt ℝ 2 U qstar)
     (heq : gradient U qstar = 0) :
     HasFDerivAt (fun z : PhaseSpace n => (matrixAction M⁻¹ z.2, -gradient U z.1))
-      (((Matrix.toEuclideanCLM M⁻¹).comp (ContinuousLinearMap.snd ℝ (Position n) (Momentum n))).prod
+      (((Matrix.toEuclideanCLM (n := Fin n) (𝕜 := ℝ) M⁻¹).comp (ContinuousLinearMap.snd ℝ (Position n) (Momentum n))).prod
         ((-fderiv ℝ (gradient U) qstar).comp (ContinuousLinearMap.fst ℝ (Position n) (Momentum n))))
       (qstar,0) ∧
     (fun q => gradient U q - fderiv ℝ (gradient U) qstar (q-qstar)) =o[𝓝 qstar]
@@ -640,7 +640,121 @@ for r in RECORDS:
   exact hcoord k''')
         r['missing']=None
 
+add('PlanarTrimerModel','1.7',38,[],r'''One of the simplest illustrations of the chaotic nature of molecular systems is given by the Lennard-Jones model consisting of just three atoms with motion restricted to the plane. The energy is
+\[E=K+U=\frac{\|\dot{\boldsymbol q}_1\|^2}{2}+\frac{\|\dot{\boldsymbol q}_2\|^2}{2}+\frac{\|\dot{\boldsymbol q}_3\|^2}{2}+\hat\varphi_{\mathrm{LJ}}(\|\boldsymbol q_1-\boldsymbol q_2\|)+\hat\varphi_{\mathrm{LJ}}(\|\boldsymbol q_2-\boldsymbol q_3\|)+\hat\varphi_{\mathrm{LJ}}(\|\boldsymbol q_1-\boldsymbol q_3\|),\]
+with the interatomic interaction given by $\hat\varphi_{\mathrm{LJ}}(r)=4[r^{-12}-r^{-6}]$.''',
+    '''def planarTrimerEnergy (q v : Fin 3 → Position 2) : ℝ :=
+  (∑ i, ‖v i‖^2/2) + lennardJonesPotential 1 1 ‖q 0-q 1‖ +
+    lennardJonesPotential 1 1 ‖q 1-q 2‖ + lennardJonesPotential 1 1 ‖q 0-q 2‖''',
+    label='Example 1.8 (Planar Lennard-Jones Trimer)',context=['单位质量、平面R²、非碰撞物理域；inverse整数幂与(1/r)^k等价。'])
+add('CentralPairPotential','1.7',38,[174],r'''In general, when the total potential is a sum of distance potentials
+\[U=\frac12\sum_{i\ne j}U_{ij},\]
+where $U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=\varphi_{ij}(\|\boldsymbol q_i-\boldsymbol q_j\|)$, we say that the system has central forces.''',definition('centralPairEnergy'),context=['φᵢⱼ=φⱼᵢ为同一无序对相互作用；qᵢ≠qⱼ和径向势可微用于后续导数，不是本定义存在条件。'])
+stated('CentralPairGradient','1.7',38,[175],r'''In this case,
+\[\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\]''','centralPairGradient_statement',extra=['势在非碰撞距离可微；partial为欧氏梯度。'],missing='范数链式法则和反向仿射变量替换的梯度桥接，计划短证明。')
+bridge('CentralMomentum','1.7',39,[176],r'''and so, for central forces,
+\[\sum_{i=1}^N m_i\ddot{\boldsymbol q}_i=0,\]
+which expresses the constancy of the momentum.''','MolecularDynamics/Chapter01/MomentumConservation.lean','totalMomentumCoordinate_const_on_Ioo',extra=['逐对作用反对称推出净力零；真实Newton解和连通时间区间。'],context=['∑mᵢq̈ᵢ=0为PairCancellation及IsMechanicalSolutionOn的组合；bridge结论对每坐标守恒即整个向量守恒。'])
+stated('CentralAngularMomentum','1.7',39,[177],r'''Moreover, viewing the $\boldsymbol q_i$ as vectors in $\mathbb R^3$ (with 0 as their third component),
+\[\boldsymbol q_i\times\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\boldsymbol q_j\times\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\]
+which implies
+\[\frac{\mathrm d}{\mathrm dt}\sum_{i=1}^N\boldsymbol q_i\times(m_i\dot{\boldsymbol q}_i)=0,\]
+and tells us that the total angular momentum is also conserved.''','totalAngularMomentum_statement',extra=['真实位置和动量导数；反对称内力和沿位移方向中心力。'],context=['cross3为欧氏3D叉积；原文平面嵌入是特例，当前一般3D。'],missing='叉积双线性导数、有限双和反对称力矩相消；尚须完整中心势到力矩零的桥接。')
+stated('CenterOfMassMotion','1.7',39,[178],'''This means that the system will translate and rotate at a constant rate in time.''','centerOfMassMotion_statement',extra=['质量正、总质量正、真实位置导数、连通时间域；平移部分据已得总动量守恒。'],context=['本条仅translation；rotation字面部分分开保留下一条。'],missing='有限和真实导数与总动量常数的仿射轨迹桥接，计划短证明。')
+stated('ConstantRotationLiteral','1.7',39,[179],'''This means that the system will translate and rotate at a constant rate in time.''','rotationLiteral_statement',verdict='NEEDS_HUMAN',issue='角动量常数不推出角速度常数；中心运动r变时θ̇=ℓ/r²。例r(t)=sqrt(1+t²),θ(t)=arctan t,ℓ=1。',missing='字面推论假，需导师裁定为定性旋转描述或修正为角动量守恒。')
+add('IsoscelesCoordinates','1.7',39,[180],r'''Let us introduce new coordinates in the Lennard-Jones trimer as illustrated in Fig. 1.21, so that the center of mass is fixed at the origin: that is,
+\[\boldsymbol q_1=\begin{bmatrix}x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_2=\begin{bmatrix}-x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_3=\begin{bmatrix}0\\2y/3\\0\end{bmatrix},\]''',definition('isoscelesCoordinates'),context=['单位质量；质心固定及等腰约束是特定对称初值，非所有零角动量三体配置。'],issue='同段“零平动/角动量→等腰”一般过强；这里只定义明确给定的对称配置，不把任意零动量当等腰。')
+add('IsoscelesEnergyReduction','1.7',39,[181],r'''reducing the energy to
+\[E=\dot x^2+\frac{\dot y^2}{3}+2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x),\]
+which describes the vibrational motion.''',
+    '''theorem isosceles_energy_reduction (x y v w : ℝ) (hx : 0 < x) :
+    (∑ i : Fin 3, ‖isoscelesCoordinates v w i‖^2/2) +
+      uniformLJEnergy 1 1 (isoscelesCoordinates x y) = isoscelesEnergy x y v w := by
+  sorry''',kind='unnumbered_claim',extra=['单位质量及x>0保证q1-q2距离为2x，未以所求能量等式为假设。'],missing='具体Fin3向量范数平方与距离的代数计算；计划短证明。')
+stated('IsoscelesAccessibleRegion','1.7',40,[182],r'''kinetic energy is non-negative, we must have
+\[2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x)\le E.\]''','isoscelesEnergyBound_statement',prior=['MolecularDynamics/Chapter01/ReviewProofs.lean:isoscelesEnergyBound_proved'])
+RECORDS[-1]['code']=RECORDS[-1]['code'].replace('  sorry','  exact MolecularDynamics.Chapter01Review.isoscelesEnergyBound_proved');RECORDS[-1]['missing']=None
+stated('EquilateralTrimerMinimum','1.7',38,[203],r'''The global minimum of this simple system must be radially symmetric. Placing the atoms at the vertices of an equilateral triangle, we have
+\[U=3\hat\varphi_{\mathrm{LJ}}(r),\]
+where $r$ is the length of a side. This is minimized when $r=2^{1/6}\approx1.1225$.''','trimerMinimum_statement',label='Example 1.8 (Planar Lennard-Jones Trimer)',extra=['单位LJ；非碰撞配置。'],missing='LJ井底唯一性rpow与三条距离同时达到井底的等边几何；计划短证明后缺项记录。')
+stated('TrimerEnergyLowerBound','1.7',40,[204],r'''(When $E>0$, the bodies eventually escape to infinity; $E<-3$ is not attainable.)''','trimerLowerBound_statement',context=['本条为E<-3不可达；E>0逃逸下一条字面保留。'],prior=['MolecularDynamics/Chapter01/ReviewProofs.lean:trimerLowerBound_proved'])
+RECORDS[-1]['code']=RECORDS[-1]['code'].replace('  sorry','  exact MolecularDynamics.Chapter01Review.trimerLowerBound_proved');RECORDS[-1]['missing']=None
+add('CollinearTrimer','1.7',40,[205],r'''Arranging the three atoms in a collinear configuration ($y=0$) the potential energy becomes $\hat U=\hat U(x)=2\hat\varphi_{\mathrm{LJ}}(x)+\hat\varphi_{\mathrm{LJ}}(2x)$.''',definition('collinearTrimer'),context=['x>0；本def逐字记录共线模型。'])
+stated('TrimerSaddle','1.7','40–41',[206],r'''Minimizing the potential in the collinear configuration allows us to determine the saddle point $(x^*,0)$. Near this point, $U$ decreases if we move in the $\pm y$ direction and increases if we move in the $\pm x$ direction.''','trimerSaddle_statement',extra=['x>0，局部严格增减按足够小非零位移解释；去掉图上数字猜测。'],missing='有理LJ势驻点根与二维严格鞍点的符号二阶导数计算。')
+stated('TrimerEscapeLiteral','1.7',40,[207],r'''(When $E>0$, the bodies eventually escape to infinity; $E<-3$ is not attainable.)''','trimerEscapeLiteral_statement',verdict='NEEDS_HUMAN',issue='原文正能量必逃逸缺论证；现有字面Prop仅至少一对距离趋∞，不保证每个body均逃逸，须裁定对象和限定。',missing='全局三体散射/逃逸理论；字面every body与至少一对分离的差距不能冒充完整证明。')
+add('ChaosConditions','1.7.1','41–42',[183,184,185],r'''Typical definitions of a “chaotic dynamical system” [103] require at least the following conditions to be satisfied on the phase space $D$:
+• The solutions depend sensitively on the initial data taken from $D$;
+• The flow is topologically transitive in $D$.
+The second condition states that given arbitrarily small neighborhoods $D_1$ and $D_2$ of two different points in $D$ then it is possible to find a trajectory that goes from some point of $D_1$ to some point of $D_2$.''',definition('chaosConditions'),extra=['敏感依赖以固定可见分离量ε、任意δ近邻的标准量词解释；原文说明without being entirely formal，未指定这个严格ε/δ版本。','topologicalTransitivity使用相对开集和非负时间，D须流不变才能解释为相域。'],verdict='NEEDS_HUMAN',explanation='两必要性质及transitivity邻域关系保留；敏感依赖正文随后“given pair rapidly grows”不是标准存在扰动量词，需导师确认数学化选择。')
+stated('TransitivityErgodicityLiteral','1.7.1',42,[186],'''We will see later that this concept, which is essentially equivalent to ergodicity, is a crucial component of molecular theories.''','transitivityErgodicityLiteral_statement',extra=['为表达ergodicity必须引入原文此处未给的不变测度μ；F为连续真实流。'],verdict='NEEDS_HUMAN',issue='拓扑传递和给定测度遍历通常不等价；μ=0时identity流遍历为真而传递为假。非退化概率测度也需进一步限定。',missing='字面等价不成立；不通过新增结论前提修补。')
+add('AnisotropicOscillator','1.7.1',42,[187,188,189],r'''Consider the system with energy
+\[E(x,y,\dot x,\dot y)=\frac12(\dot x^2+\dot y^2)+\frac{\kappa(c_3)}2(r-l(c_3))^2,\qquad r=\sqrt{x^2+y^2},\tag{1.9}\]
+where
+\[c_3=\cos(3\theta)\]
+is defined in terms of the angular coordinate of the position $(x,y)$ with respect to the $(1,0)$-direction,
+\[\cos\theta=c=\frac xr,\qquad c_3=4c^3-3c,\]
+and we have defined
+\[\kappa(c_3)=\kappa_0(1-\tfrac12\epsilon c_3),\qquad l(c_3)=l_0(1+\tfrac12\epsilon c_3).\]''',definition('anisotropicEnergy'),label='Example 1.9 (Anisotropic Oscillator)',context=['anisotropicAngular及anisotropicParameters是本定义依赖公式；r>0；c3三倍角关系须单独核对。','原文κ按PDF字形抄；数值实验κ₀=l₀=1、ε变化不转成全称轨迹定理。'],extra=['定义在r=0用Lean总函数延拓，物理域r>0。'])
+add('FlowJacobianLiteral','1.7.2',44,[190,191],r'''Let a dynamical system $\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z)$ be given in $\mathbb R^m$ with flow map $F_t:\mathbb R^m\to\mathbb R^m$ which we assume to be continuously differentiable. Let $\boldsymbol z(t,\boldsymbol\xi)$ represent the solution of initial value problem
+\[\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi.\]
+We then compute the $m\times m$ Jacobian matrix of $F_t(\boldsymbol z(t,\boldsymbol\xi))$:
+\[\boldsymbol W(t)=F_t'(\boldsymbol z(t,\boldsymbol\xi))=\frac{\partial F_t}{\partial\boldsymbol z}(\boldsymbol z(t,\boldsymbol\xi)).\]''',definition('variationalMatrixLiteral'),context=['F为C1真实flow，z(t,ξ)=Ftξ；原文字面在Ftξ处对初值变量微分。'],issue='标准变分矩阵应为DξFt(ξ)，原文把取值点写Ftξ；忠实保留字面定义，后续两条不静默改。')
+stated('VariationalEquationLiteral','1.7.2','44–45',[192],r'''Differentiating $\boldsymbol W(t)$ with respect to $t$ and using the differential equation and the chain rule, we have
+\[\frac{\mathrm d}{\mathrm dt}\boldsymbol W(t)=\boldsymbol f'(\boldsymbol z(t,\boldsymbol\xi))\boldsymbol W(t).\tag{1.10}\]
+The system of Eq. (1.10) is referred to as the system of variational equations corresponding to the dynamical system $\mathrm d\boldsymbol z/\mathrm dt=\boldsymbol f(\boldsymbol z)$.''','variationalEquationLiteral_statement',verdict='NEEDS_HUMAN',issue='前条字面W=D Ft(Ftξ)多出取值点移动链式项。局部标量f(z)=z²,Ftξ=ξ/(1-tξ)：W=(1-tξ)²/(1-2tξ)²；t=0的W′=2ξ相合，但t≠0一般不满足原式。',missing='需导师确认取值点勘误；修正后一般非线性参数导数交换亦需理论，常系数已有证明不足。')
+add('NearbyTrajectoryLiteral','1.7.2',45,[193],r'''If we have two solutions started from nearby initial conditions $\boldsymbol\xi,\hat{\boldsymbol\xi}$, then their difference is approximated by the solution of the variational equations
+\[\boldsymbol z(t,\hat{\boldsymbol\xi})-\boldsymbol z(t,\boldsymbol\xi)\approx\boldsymbol W(t)(\hat{\boldsymbol\xi}-\boldsymbol\xi).\]''',
+    '''theorem nearby_trajectory_literal :
+  ∀ (n : ℕ) (F : ℝ → Position n → Position n), differentiableFlow F →
+    ∀ t ξ, (fun x => F t x-F t ξ-variationalMatrixLiteral F ξ t (x-ξ))
+      =o[𝓝 ξ] (fun x => x-ξ) := by
+  sorry''',kind='unnumbered_claim',extra=['≈严格化为固定t、扰动趋0的Frechet小o；沿用原文字面W。'],verdict='NEEDS_HUMAN',issue='原文字面W在Ftξ而不是ξ；前条非线性流提供不同Jacobian的反例，不能用修正版flowFirstOrder_proof冒充。',missing='等待导师判断W取值点勘误，修正版由可微定义直接推出。')
+add('SingularValues','1.7.2',45,[194],r'''The square roots of the eigenvalues of $\boldsymbol A^T\boldsymbol A$, also called the singular values of $\boldsymbol A$, then give the axes of the image ellipsoid.''',definition('singularValues'),context=['有限维实矩阵；非负、largest-to-smallest顺序及正交对角化刻画全部谱，顺序原文随后给出。'],extra=['用存在正交特征基刻画谱关系；不是以要证明的椭球图像结论为假设。'])
+stated('SingularEllipsoid','1.7.2',45,[195],r'''We may view a regular linear mapping $\boldsymbol v\mapsto\boldsymbol A\boldsymbol v$, where $\boldsymbol A\in\mathbb R^{m\times m}$, as a mapping of an $m-1$-dimensional sphere (embedded in the $m$-dimensional Euclidean space) to an ellipsoid in the same space (Fig. 1.26). The square roots of the eigenvalues of $\boldsymbol A^T\boldsymbol A$, also called the singular values of $\boldsymbol A$, then give the axes of the image ellipsoid.''','singularEllipsoid_statement',extra=['regular=可逆；单位球面，正交主轴O及半轴σ；平移/半径可按线性缩放恢复。'],missing='一般实矩阵奇异值分解与逆矩阵球面像几何理论。')
+add('LyapunovExponents','1.7.2',45,[196],r'''The Lyapunov exponents $\lambda_1,\lambda_2,\ldots,\lambda_m$ are defined by
+\[\lambda_i=\limsup_{t\to\infty}\frac1t\log\sigma_i(\boldsymbol W),\]
+where $\sigma_i$ represents the ith singular value of the given matrix (to maintain continuity, these should be ordered in some way, say largest to smallest).''',definition('lyapunovExponent'),context=['σ:time→ith ordered singular value ofW(t)；与前条singularValues相接。'],extra=['扩展实数EReal允许±∞，原文未保证极限有限；σ(t)>0在可逆流Jacobian背景，避免log0。'])
+stated('PositiveLyapunovGrowth','1.7.2',45,[197],'''The presence of a positive Lyapunov exponent implies exponential growth of perturbations, which, as we have seen, is one of the hallmarks of chaos.''','positiveLyapunovGrowth_statement',extra=['依据limsup只能得到任意晚时间仍有指数放大，即无穷时间子列；不添加所有足够大t统一增长。'],context=['σ来自实际W奇异值；大小增长描述无穷小扰动算子，有限扰动在有界相域会饱和。'],missing='EReal limsup的无穷晚超阈值与log/exp严格不等式桥接；一般Lyapunov存在性/可测谱理论不在本条证明内。')
+
+for r in RECORDS:
+    if r['source_id']=='MD-1.6-HexagonalLattice':
+        r['code']='''theorem hexagonal_lattice_two_bases (a : ℝ) :
+    rhombicLattice a a (2*Real.pi/3) = rhombicLattice a a (Real.pi/3) := by
+  sorry'''
+        r['lean_decl']='MD.Ch01.hexagonal_lattice_two_bases';r['kind']='unnumbered_claim'
+        r['missing']='60°/120°基向量三角函数值及整数基替换；计划短证明。'
+    if r['source_id']=='MD-1.7-TrimerEscapeLiteral':
+        r['code']=r['code'].replace('∃ i j : Fin 3, i ≠ j ∧ Tendsto (fun t => pairDistance (q t i) (q t j)) atTop atTop',
+            '∀ i : Fin 3, Tendsto (fun t => ‖q t i‖) atTop atTop')
+        r['issues'][0]['detail']='保留原文每个body最终逃逸到∞的字面结论及前段质心固定、等腰、零角动量背景；正能量到散射的论证缺失，待导师裁定。'
+    if r['source_id']=='MD-1.7-CentralAngularMomentum':
+        r['code']=r['code'].replace('∀ t ∈ I, HasDerivAt',
+            '(∀ t ∈ I, ∀ i j, cross3 (q t i) (F t i j) = -cross3 (q t j) (F t j i)) ∧\n    ∀ t ∈ I, HasDerivAt',1)
+    if r['source_id']=='MD-1.6-PeriodicTranslationMomentum':
+        r['code']='''theorem periodic_translation_momentum :
+  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ),
+    let U := boxPeriodicNearestNeighborPotentialEnergy φ L
+    (∀ q c, U (fun i => q i+c) = U q) ∧
+    (∀ q, DifferentiableAt ℝ U q → fderiv ℝ U q (fun _ => 1) = 0) ∧
+    ∀ (m : Fin (N+1) → ℝ) (q v : ℝ → Fin (N+1) → ℝ) (I : Set ℝ),
+      IsOpen I → IsPreconnected I → (∀ i, 0 < m i) →
+      (∀ t ∈ I, DifferentiableAt ℝ U (q t)) →
+      (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t ∧
+        HasDerivAt (fun s => m i*v s i) (-fderiv ℝ U (q t) (Pi.single i 1)) t) →
+      (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i*v s i) 0 t) ∧
+      ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i*v a i) = ∑ i, m i*v b i := by
+  sorry'''
+        r['lean_decl']='MD.Ch01.periodic_translation_momentum'
+        r['extra_assumptions']=['一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。']
+        r['local_explanation']='补齐全平移不变、净力零真实导数与动量守恒；Newton第三定律为相邻差值势的反向partial，CentralPairGradient另条编码，不把动量结论当假设。'
+        r['missing']='平移轨迹链式法则、基向量和为常1的fderiv线性作用、有限和零导数及连通域常数桥接。'
+
 def write_section(section):
+    from ch01_full_proofs import PROOFS
+    for r in RECORDS:
+        if r['source_id'] in PROOFS:
+            assert r['local_verdict']=='PASS'
+            r['code']=r['code'].replace('  sorry',PROOFS[r['source_id']])
     original=json.loads((BASE/'ch01_source.json').read_text(encoding='utf-8-sig'))
     ids={r['source_id'] for r in RECORDS if r['section'].startswith(section)}
     new=[r for r in RECORDS if r['section'].startswith(section)]

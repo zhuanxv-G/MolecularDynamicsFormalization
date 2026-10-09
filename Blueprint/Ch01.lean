@@ -1,3 +1,4 @@
+import MolecularDynamics.Chapter01.NormalModes
 import MolecularDynamics.Chapter01.EquilibriumLinearization
 import MolecularDynamics.Chapter01.HarmonicTorus
 import MolecularDynamics.Chapter01.HarmonicActionAngle
@@ -1177,5 +1178,251 @@ theorem positive_hessian_minimum {n : ℕ} (U : PotentialEnergy n) (q : Position
   sorry
 
 /- END FULL SECTION 1.5 -/
+
+/- BEGIN FULL SECTION 1.6 -/
+
+/-- source_id: MD-1.6-UniformPairLattice · definition · printed p.33 / PDF p.56
+
+
+-/
+def latticePairPotential {N : ℕ} (φ : ℝ → ℝ) (x : Fin N → ℝ) : ℝ :=
+  ∑ i, ∑ j ∈ Finset.Ioi i, φ |x i-x j|
+
+/-- source_id: MD-1.6-UnorderedPairCount · unnumbered_claim · printed p.33 / PDF p.56
+
+
+-/
+theorem unorderedpaircount :
+  ∀ N : ℕ, (Finset.univ.filter (fun p : Fin N × Fin N => p.1 < p.2)).card = N*(N-1)/2 := by
+  intro N
+  simpa [Nat.choose_two_right] using Finset.card_product_filter_lt (s := (Finset.univ : Finset (Fin N)))
+
+/-- source_id: MD-1.6-NearestNeighbor · definition · printed p.33 / PDF p.56
+
+
+-/
+def nearestNeighborModel {N : ℕ} (φ : ℝ → ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  ∑ i : Fin N, φ |x i.succ-x i.castSucc|
+
+/-- source_id: MD-1.6-WalledChain · definition · printed p.33 / PDF p.56
+
+
+-/
+def walledChainModel {N : ℕ} (φ φc : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  φc |x 0| + φc |L-x (Fin.last N)| + nearestNeighborModel φ x
+
+/-- source_id: MD-1.6-PeriodicChain · definition · printed p.33 / PDF p.56
+
+
+-/
+def periodicChainModel {N : ℕ} (φ : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  nearestNeighborModel φ x + φ |L+x 0-x (Fin.last N)|
+
+/-- source_id: MD-1.6-PeriodicBoundary · definition · printed p.34 / PDF p.57
+
+
+-/
+def periodicBoundary (L : ℝ) (x y : ℝ) : Prop := ∃ k : ℤ, y = x + k*L
+
+/-- source_id: MD-1.6-PeriodicTranslationMomentum · unnumbered_claim · printed p.34 / PDF p.57
+[EXTRA] 一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。
+
+-/
+theorem periodic_translation_momentum :
+  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ),
+    let U := boxPeriodicNearestNeighborPotentialEnergy φ L
+    (∀ q c, U (fun i => q i+c) = U q) ∧
+    (∀ q, DifferentiableAt ℝ U q → fderiv ℝ U q (fun _ => 1) = 0) ∧
+    ∀ (m : Fin (N+1) → ℝ) (q v : ℝ → Fin (N+1) → ℝ) (I : Set ℝ),
+      IsOpen I → IsPreconnected I → (∀ i, 0 < m i) →
+      (∀ t ∈ I, DifferentiableAt ℝ U (q t)) →
+      (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t ∧
+        HasDerivAt (fun s => m i*v s i) (-fderiv ℝ U (q t) (Pi.single i 1)) t) →
+      (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i*v s i) 0 t) ∧
+      ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i*v a i) = ∑ i, m i*v b i := by
+  sorry
+
+/-- source_id: MD-1.6-RegularLattice · definition · printed p.34 / PDF p.57
+
+
+-/
+def regularLattice {N : ℕ} (a δ : ℝ) (x : Fin N → ℝ) : Prop :=
+  0 < δ ∧ ∀ i, x i = a + i.val*δ
+
+/-- source_id: MD-1.6-RegularLatticeMinimizerLiteral · unnumbered_claim · printed p.34 / PDF p.57
+
+[ERRATUM?] 对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。
+-/
+theorem regularlatticeminimizerliteral :
+  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ), 0 < L →
+    ∀ x : Fin (N+1) → ℝ,
+    (∀ y : Fin (N+1) → ℝ, boxPeriodicNearestNeighborPotentialEnergy φ L x ≤
+      boxPeriodicNearestNeighborPotentialEnergy φ L y) →
+    ∃ a : ℝ, regularLattice a (L/(N+1)) x := by
+  sorry
+
+/-- source_id: MD-1.6-PeriodicImages · definition · printed p.35 / PDF p.58
+
+
+-/
+def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTerms)
+    (q : Fin N → V3) :=
+  ∑ k : Fin 3, ∑ l : Fin 3, ∑ m : Fin 3, ∑ i, ∑ j ∈ Finset.Ioi i,
+    φ i j (q i) (q j + WithLp.toLp 2 ![L*((k.val:ℝ)-1),L*((l.val:ℝ)-1),L*((m.val:ℝ)-1)])
+
+/-- source_id: MD-1.6-MinimumImage · definition · printed p.35 / PDF p.58
+
+
+-/
+def minimumImage (L : ℝ) (q r image : V3) : Prop :=
+  ∃ k : Fin 3 → ℤ, image = r + WithLp.toLp 2 (fun i => L*k i) ∧
+    ∀ l : Fin 3 → ℤ, ‖q-image‖ ≤ ‖q-(r+WithLp.toLp 2 (fun i => L*l i))‖
+
+/-- source_id: MD-1.6-RhombicLattice · definition · printed p.35 / PDF p.58
+
+
+-/
+def rhombicLattice (a b θ : ℝ) : Set (Position 2) :=
+  {x | ∃ k l : ℤ, x = WithLp.toLp 2 ![k*a+l*b*Real.cos θ,l*b*Real.sin θ]}
+
+/-- source_id: MD-1.6-HexagonalLattice · unnumbered_claim · printed p.35 / PDF p.58
+
+
+-/
+theorem hexagonal_lattice_two_bases (a : ℝ) :
+    rhombicLattice a a (2*Real.pi/3) = rhombicLattice a a (Real.pi/3) := by
+  ext x
+  have hc : Real.cos (2*Real.pi/3) = -(1/2:ℝ) := by
+    rw [show 2*Real.pi/3 = Real.pi-Real.pi/3 by ring, Real.cos_pi_sub, Real.cos_pi_div_three]
+  have hs : Real.sin (2*Real.pi/3) = Real.sqrt 3/2 := by
+    rw [show 2*Real.pi/3 = Real.pi-Real.pi/3 by ring, Real.sin_pi_sub, Real.sin_pi_div_three]
+  constructor
+  · rintro ⟨k,l,rfl⟩
+    refine ⟨k-l,l,?_⟩
+    congr 1
+    ext i
+    fin_cases i <;> simp [hc, hs,
+      Real.cos_pi_div_three, Real.sin_pi_div_three] <;> push_cast <;> ring
+  · rintro ⟨k,l,rfl⟩
+    refine ⟨k+l,l,?_⟩
+    congr 1
+    ext i
+    fin_cases i <;> simp [hc, hs,
+      Real.cos_pi_div_three, Real.sin_pi_div_three] <;> push_cast <;> ring
+
+/-- source_id: MD-1.6-UnitCell · definition · printed p.35 / PDF p.58
+
+
+-/
+def unitCellLattice (B : Matrix (Fin 3) (Fin 3) ℝ) (motif : Set V3) : Set V3 :=
+  {q | ∃ k : Fin 3 → ℤ, ∃ u ∈ motif,
+    q = B.toEuclideanLin (WithLp.toLp 2 (fun i => (k i : ℝ))) + u}
+
+/-- source_id: MD-1.6-FCCStacking · definition · printed p.36 / PDF p.59
+[EXTRA] 将图示ABC编码为单位边长等边三角层，层高sqrt(2/3)及偏移由close-packed图示编码，正文未列数值公式。
+
+-/
+def fccStacking : Set V3 :=
+  {x | ∃ k : ℤ, let j := k % 3
+    x 2 = k*Real.sqrt (2/3) ∧
+      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
+
+/-- source_id: MD-1.6-HCPStacking · definition · printed p.36 / PDF p.59
+[EXTRA] 图示AB两个三角层，单位化层高及偏移是具体close-packed图示编码。
+
+-/
+def hcpStacking : Set V3 :=
+  {x | ∃ k : ℤ, let j := k % 2
+    x 2 = k*Real.sqrt (2/3) ∧
+      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
+
+/-- source_id: MD-1.6.1-MinimumGradientZero · unnumbered_claim · printed p.36–37 / PDF p.59–60
+[EXTRA] 可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。
+[ERRATUM?] 不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。
+-/
+theorem minimumgradientzero :
+  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n),
+    DifferentiableAt ℝ U q → IsLocalMin U q → gradient U q = 0 := by
+  exact MolecularDynamics.Chapter01Review.minimumGradientZero_proved
+
+/-- source_id: MD-1.6.1-ForceLinearization · unnumbered_claim · printed p.37 / PDF p.60
+[EXTRA] 真实C2势及平衡梯度零；一般常M，原文M正定由机械背景保证但导数等式不需此资格。
+
+-/
+theorem force_linearization {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (qstar : Position n) (hU : ContDiffAt ℝ 2 U qstar)
+    (heq : gradient U qstar = 0) :
+    HasFDerivAt (fun z : PhaseSpace n => (matrixAction M⁻¹ z.2, -gradient U z.1))
+      (((Matrix.toEuclideanCLM (n := Fin n) (𝕜 := ℝ) M⁻¹).comp (ContinuousLinearMap.snd ℝ (Position n) (Momentum n))).prod
+        ((-fderiv ℝ (gradient U) qstar).comp (ContinuousLinearMap.fst ℝ (Position n) (Momentum n))))
+      (qstar,0) ∧
+    (fun q => gradient U q - fderiv ℝ (gradient U) qstar (q-qstar)) =o[𝓝 qstar]
+      (fun q => q-qstar) := by
+  let B := Matrix.toEuclideanCLM (n := Fin n) (𝕜 := ℝ) M⁻¹
+  have hg := (gradient_contDiffAt_of_potential_contDiffAt_two hU).differentiableAt (by norm_num)
+  constructor
+  · change HasFDerivAt (fun z : PhaseSpace n => (B z.2, -gradient U z.1)) _ (qstar,0)
+    have hn : HasFDerivAt (fun q => -gradient U q) (-fderiv ℝ (gradient U) qstar) qstar :=
+      hg.hasFDerivAt.neg
+    have h₂ := hn.comp (qstar,0)
+      ((ContinuousLinearMap.fst ℝ (Position n) (Momentum n)).hasFDerivAt (x := (qstar,0)))
+    have h₁ := B.hasFDerivAt.comp (qstar,0)
+      ((ContinuousLinearMap.snd ℝ (Position n) (Momentum n)).hasFDerivAt (x := (qstar,0)))
+    exact h₁.prodMk h₂
+  · have h := hasFDerivAt_iff_isLittleO.mp hg.hasFDerivAt
+    simpa only [heq, sub_zero] using h
+
+/-- source_id: MD-1.6.1-MinimumHessianLiteral · unnumbered_claim · printed p.37 / PDF p.60
+
+[ERRATUM?] 局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。
+-/
+theorem minimumhessianliteral :
+  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n), ContDiff ℝ 2 U →
+    IsLocalMin U q →
+    (∀ u v, inner ℝ u (fderiv ℝ (gradient U) q v) = inner ℝ v (fderiv ℝ (gradient U) q u)) ∧
+    ∀ v : Position n, v ≠ 0 → 0 < inner ℝ v (fderiv ℝ (gradient U) q v) := by
+  sorry
+
+/-- source_id: MD-1.6.1-ImaginarySpectrum · unnumbered_claim · printed p.37 / PDF p.60
+[EXTRA] M和Hessian K正定；复谱实虚向量编码。
+
+-/
+theorem imaginary_spectrum :
+  ∀ (n : ℕ) (M K : Matrix (Fin n) (Fin n) ℝ), M.PosDef → K.PosDef →
+    let A := fun z : PhaseSpace n => (M⁻¹.toEuclideanLin z.2, -K.toEuclideanLin z.1)
+    ∀ (a b : ℝ) (x y : PhaseSpace n), (x ≠ 0 ∨ y ≠ 0) →
+      A x = a • x - b • y → A y = b • x + a • y →
+      a = 0 ∧ 0 < b^2 ∧ A x = -b • y ∧ A (-y) = -b • x := by
+  sorry
+
+/-- source_id: MD-1.6.1-ComplexNormalMode · unnumbered_claim · printed p.37 / PDF p.60
+
+
+-/
+theorem complexnormalmode :
+  ∀ (n : ℕ) (A : Matrix (Fin n) (Fin n) ℝ) (η : Fin n → ℂ) (Ω : ℝ),
+    (A.map (algebraMap ℝ ℂ)).mulVec η = (Complex.I * Ω) • η →
+    ∀ a b : ℂ, ∀ t : ℝ,
+      HasDerivAt (fun s : ℝ =>
+        a • (Complex.exp (Complex.I*Ω*s) • η) +
+          b • (Complex.exp (-Complex.I*Ω*s) • (fun i => star (η i))))
+        ((A.map (algebraMap ℝ ℂ)).mulVec
+          (a • (Complex.exp (Complex.I*Ω*t) • η) +
+            b • (Complex.exp (-Complex.I*Ω*t) • (fun i => star (η i))))) t := by
+  sorry
+
+/-- source_id: MD-1.6.1-RealNormalMode · unnumbered_claim · printed p.37 / PDF p.60
+
+
+-/
+theorem realnormalmode :
+  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (A : E →L[ℝ] E) (Ω α β : ℝ) (u v : E)
+    (hu : A u = -Ω • v) (hv : A v = Ω • u) (t : ℝ),
+    HasDerivAt (realNormalMode Ω α β u v)
+      (A (realNormalMode Ω α β u v t)) t := by
+  exact @MolecularDynamics.hasDerivAt_realNormalMode
+
+/- END FULL SECTION 1.6 -/
 
 end MD.Ch01

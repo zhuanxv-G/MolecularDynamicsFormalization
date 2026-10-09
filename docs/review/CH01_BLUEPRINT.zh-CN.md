@@ -98,6 +98,28 @@
 | MD-1.5.3-LinearizedHamiltonian | 32/55 | PASS | 待网站审计 | self-contained |
 | MD-1.5.3-PositiveHessianQuadratic | 33/56 | PASS | 待网站审计 | incomplete |
 | MD-1.5.3-PositiveHessianMinimum | 33/56 | PASS | 待网站审计 | incomplete |
+| MD-1.6-UniformPairLattice | 33/56 | PASS | 待网站审计 | self-contained |
+| MD-1.6-UnorderedPairCount | 33/56 | PASS | 待网站审计 | self-contained |
+| MD-1.6-NearestNeighbor | 33/56 | PASS | 待网站审计 | self-contained |
+| MD-1.6-WalledChain | 33/56 | PASS | 待网站审计 | self-contained |
+| MD-1.6-PeriodicChain | 33/56 | PASS | 待网站审计 | self-contained |
+| MD-1.6-PeriodicBoundary | 34/57 | PASS | 待网站审计 | self-contained |
+| MD-1.6-PeriodicTranslationMomentum | 34/57 | PASS | 待网站审计 | incomplete |
+| MD-1.6-RegularLattice | 34/57 | PASS | 待网站审计 | self-contained |
+| MD-1.6-RegularLatticeMinimizerLiteral | 34/57 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-1.6-PeriodicImages | 35/58 | PASS | 待网站审计 | self-contained |
+| MD-1.6-MinimumImage | 35/58 | PASS | 待网站审计 | self-contained |
+| MD-1.6-RhombicLattice | 35/58 | PASS | 待网站审计 | self-contained |
+| MD-1.6-HexagonalLattice | 35/58 | PASS | 待网站审计 | self-contained |
+| MD-1.6-UnitCell | 35/58 | PASS | 待网站审计 | self-contained |
+| MD-1.6-FCCStacking | 36/59 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-1.6-HCPStacking | 36/59 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-1.6.1-MinimumGradientZero | 36–37/59–60 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.6.1-ForceLinearization | 37/60 | PASS | 待网站审计 | checked+documented priors |
+| MD-1.6.1-MinimumHessianLiteral | 37/60 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-1.6.1-ImaginarySpectrum | 37/60 | PASS | 待网站审计 | incomplete |
+| MD-1.6.1-ComplexNormalMode | 37/60 | PASS | 待网站审计 | incomplete |
+| MD-1.6.1-RealNormalMode | 37/60 | PASS | 待网站审计 | checked+documented priors |
 
 ## 需要导师判断的问题
 
@@ -122,6 +144,14 @@
   local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。
 - MD-1.5.3-HartmanGrobmanLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
   原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。
+- MD-1.6-RegularLatticeMinimizerLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+  对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。
+- MD-1.6-FCCStacking：ABC三周期保留；旧库附带具体几何层高和偏移不是正文逐字公式，需要导师确认图示编码。
+- MD-1.6-HCPStacking：AB两周期保留；具体几何参数来源图示而非正文公式，需导师确认编码。
+- MD-1.6.1-MinimumGradientZero：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+  不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。
+- MD-1.6.1-MinimumHessianLiteral：逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+  局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。
 
 ## 1. MD-1.5.3-Thm1.1 · Theorem 1.1 · 印刷p.32 / PDFp.55
 
@@ -177,7 +207,7 @@ theorem theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:80`（`MD.Ch01.theorem_1_1`）。
+位置：`Blueprint/Ch01.lean:81`（`MD.Ch01.theorem_1_1`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -236,7 +266,7 @@ theorem energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:98`（`MD.Ch01.energy_conservation`）。
+位置：`Blueprint/Ch01.lean:99`（`MD.Ch01.energy_conservation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -294,7 +324,7 @@ theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:134`（`MD.Ch01.newton_iff_euler_lagrange`）。
+位置：`Blueprint/Ch01.lean:135`（`MD.Ch01.newton_iff_euler_lagrange`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -374,7 +404,7 @@ theorem hamiltonian_legendre_transform {n : ℕ}
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:173`（`MD.Ch01.hamiltonian_legendre_transform`）。
+位置：`Blueprint/Ch01.lean:174`（`MD.Ch01.hamiltonian_legendre_transform`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -439,7 +469,7 @@ theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：`Blueprint/Ch01.lean:200`（`MD.Ch01.flow_inverse`）。
+位置：`Blueprint/Ch01.lean:201`（`MD.Ch01.flow_inverse`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -490,7 +520,7 @@ def schrodingerEquation (h : planckConstant) (μ : quantumMass)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:227`（`MD.Ch01.schrodingerEquation`）。
+位置：`Blueprint/Ch01.lean:228`（`MD.Ch01.schrodingerEquation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -538,7 +568,7 @@ def newtonInitialValueModel {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:238`（`MD.Ch01.newtonInitialValueModel`）。
+位置：`Blueprint/Ch01.lean:239`（`MD.Ch01.newtonInitialValueModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -585,7 +615,7 @@ def hardSphereModel (R₁ R₂ m₁ m₂ : ℝ) (q₁ q₂ v₁ v₂ w₁ w₂ :
 
 **incomplete**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:247`（`MD.Ch01.hardSphereModel`）。
+位置：`Blueprint/Ch01.lean:248`（`MD.Ch01.hardSphereModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -637,7 +667,7 @@ def multibodyPotential {N : ℕ} (U₂ : Fin N → Fin N → V3 → V3 → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:257`（`MD.Ch01.multibodyPotential`）。
+位置：`Blueprint/Ch01.lean:258`（`MD.Ch01.multibodyPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -680,7 +710,7 @@ def morsePotential (D a rₑ r : ℝ) := D * (1 - Real.exp (-a * (r-rₑ)))^2
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:270`（`MD.Ch01.morsePotential`）。
+位置：`Blueprint/Ch01.lean:271`（`MD.Ch01.morsePotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -728,7 +758,7 @@ theorem morse_minimum :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:276`（`MD.Ch01.morse_minimum`）。
+位置：`Blueprint/Ch01.lean:277`（`MD.Ch01.morse_minimum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -773,7 +803,7 @@ def lengthBond (k r₀ r : ℝ) := k / 2 * (r-r₀)^2
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:286`（`MD.Ch01.lengthBond`）。
+位置：`Blueprint/Ch01.lean:287`（`MD.Ch01.lengthBond`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -816,7 +846,7 @@ def dispersionPotential (K r : ℝ) := -K / r^6
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:292`（`MD.Ch01.dispersionPotential`）。
+位置：`Blueprint/Ch01.lean:293`（`MD.Ch01.dispersionPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -859,7 +889,7 @@ def buckinghamPotential (A B C r : ℝ) := A * Real.exp (-B*r) - C/r^6
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:298`（`MD.Ch01.buckinghamPotential`）。
+位置：`Blueprint/Ch01.lean:299`（`MD.Ch01.buckinghamPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -902,7 +932,7 @@ def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:304`（`MD.Ch01.lennardJonesPotential`）。
+位置：`Blueprint/Ch01.lean:305`（`MD.Ch01.lennardJonesPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -948,7 +978,7 @@ theorem lj_repulsion :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:310`（`MD.Ch01.lj_repulsion`）。
+位置：`Blueprint/Ch01.lean:311`（`MD.Ch01.lj_repulsion`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -996,7 +1026,7 @@ def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:319`（`MD.Ch01.heterogeneousLJ`）。
+位置：`Blueprint/Ch01.lean:320`（`MD.Ch01.heterogeneousLJ`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1040,7 +1070,7 @@ def coulombPotential (C Qᵢ Qⱼ dielectric r : ℝ) := C*Qᵢ*Qⱼ/(dielectric
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:327`（`MD.Ch01.coulombPotential`）。
+位置：`Blueprint/Ch01.lean:328`（`MD.Ch01.coulombPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1083,7 +1113,7 @@ def smoothCutoff (φ : ℝ → ℝ) (r_cut : ℝ) : Prop :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:333`（`MD.Ch01.smoothCutoff`）。
+位置：`Blueprint/Ch01.lean:334`（`MD.Ch01.smoothCutoff`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1128,7 +1158,7 @@ def yukawaScreened (C Qᵢ Qⱼ dielectric κ r : ℝ) : ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:340`（`MD.Ch01.yukawaScreened`）。
+位置：`Blueprint/Ch01.lean:341`（`MD.Ch01.yukawaScreened`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1175,7 +1205,7 @@ def angleBondModel (k θ₀ : ℝ) (qᵢ qⱼ qₖ : V3) : ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:347`（`MD.Ch01.angleBondModel`）。
+位置：`Blueprint/Ch01.lean:348`（`MD.Ch01.angleBondModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1218,7 +1248,7 @@ def dihedralPotential (k n θ d : ℝ) := k*(1+Real.cos (n*θ-d))
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:355`（`MD.Ch01.dihedralPotential`）。
+位置：`Blueprint/Ch01.lean:356`（`MD.Ch01.dihedralPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1275,7 +1305,7 @@ def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁
 
 **checked+documented priors**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:361`（`MD.Ch01.gayBerneModel`）。
+位置：`Blueprint/Ch01.lean:362`（`MD.Ch01.gayBerneModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1324,7 +1354,7 @@ def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:377`（`MD.Ch01.compactNewton`）。
+位置：`Blueprint/Ch01.lean:378`（`MD.Ch01.compactNewton`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1368,7 +1398,7 @@ def degreesOfFreedom {n r : ℕ} (C : Position n → Position r) (q : Position n
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:386`（`MD.Ch01.degreesOfFreedom`）。
+位置：`Blueprint/Ch01.lean:387`（`MD.Ch01.degreesOfFreedom`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1414,7 +1444,7 @@ theorem constraintdimension :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:393`（`MD.Ch01.constraintdimension`）。
+位置：`Blueprint/Ch01.lean:394`（`MD.Ch01.constraintdimension`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1458,7 +1488,7 @@ def particleTotalEnergy {N : ℕ} (m : Fin N → ℝ) (U : (Fin N → V3) → �
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:408`（`MD.Ch01.particleTotalEnergy`）。
+位置：`Blueprint/Ch01.lean:409`（`MD.Ch01.particleTotalEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1503,7 +1533,7 @@ theorem paircancellation :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:415`（`MD.Ch01.paircancellation`）。
+位置：`Blueprint/Ch01.lean:416`（`MD.Ch01.paircancellation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1559,7 +1589,7 @@ theorem momentumconservation :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:440`（`MD.Ch01.momentumconservation`）。
+位置：`Blueprint/Ch01.lean:441`（`MD.Ch01.momentumconservation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1611,7 +1641,7 @@ theorem harmonic_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace 
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:457`（`MD.Ch01.harmonic_solution`）。
+位置：`Blueprint/Ch01.lean:458`（`MD.Ch01.harmonic_solution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1657,7 +1687,7 @@ def scalarMechanicalModel (U : ℝ → ℝ) (z : ℝ → ℝ × ℝ) : Prop :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:468`（`MD.Ch01.scalarMechanicalModel`）。
+位置：`Blueprint/Ch01.lean:469`（`MD.Ch01.scalarMechanicalModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1708,7 +1738,7 @@ theorem scalarquadrature :
 
 **incomplete**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:475`（`MD.Ch01.scalarquadrature`）。
+位置：`Blueprint/Ch01.lean:476`（`MD.Ch01.scalarquadrature`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1755,7 +1785,7 @@ def uniformLJSystem {N : ℕ} (m ε σ : ℝ) (q v : Fin N → V3) : ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:488`（`MD.Ch01.uniformLJSystem`）。
+位置：`Blueprint/Ch01.lean:489`（`MD.Ch01.uniformLJSystem`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1809,7 +1839,7 @@ theorem radial_lj_force_literal {N : ℕ} (m ε σ : ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:495`（`MD.Ch01.radial_lj_force_literal`）。
+位置：`Blueprint/Ch01.lean:496`（`MD.Ch01.radial_lj_force_literal`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1858,7 +1888,7 @@ theorem lj_coordinate_scaling (Q : ℝ → V3) (σ t : ℝ) (v a : V3)
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:510`（`MD.Ch01.lj_coordinate_scaling`）。
+位置：`Blueprint/Ch01.lean:511`（`MD.Ch01.lj_coordinate_scaling`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1917,7 +1947,7 @@ theorem ljtimescaling :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:523`（`MD.Ch01.ljtimescaling`）。
+位置：`Blueprint/Ch01.lean:524`（`MD.Ch01.ljtimescaling`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1963,7 +1993,7 @@ def fixedMassLagrangian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy 
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:542`（`MD.Ch01.fixedMassLagrangian`）。
+位置：`Blueprint/Ch01.lean:543`（`MD.Ch01.fixedMassLagrangian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2016,7 +2046,7 @@ theorem generalized_coordinates {n k : ℕ} (m : CoordinateMasses n)
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:549`（`MD.Ch01.generalized_coordinates`）。
+位置：`Blueprint/Ch01.lean:550`（`MD.Ch01.generalized_coordinates`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2065,7 +2095,7 @@ theorem generalizedmassregular :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:564`（`MD.Ch01.generalizedmassregular`）。
+位置：`Blueprint/Ch01.lean:565`（`MD.Ch01.generalizedmassregular`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2113,7 +2143,7 @@ def legendreTransform {n : ℕ} (g : Position n → ℝ) (η : Position n) : ERe
 
 **incomplete**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:579`（`MD.Ch01.legendreTransform`）。
+位置：`Blueprint/Ch01.lean:580`（`MD.Ch01.legendreTransform`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2158,7 +2188,7 @@ def hamiltonEquations {n : ℕ} (H : PhaseSpace n → ℝ) (q p : ℝ → Positi
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:586`（`MD.Ch01.hamiltonEquations`）。
+位置：`Blueprint/Ch01.lean:587`（`MD.Ch01.hamiltonEquations`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2210,7 +2240,7 @@ theorem hamilton_fixed_mass {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:594`（`MD.Ch01.hamilton_fixed_mass`）。
+位置：`Blueprint/Ch01.lean:595`（`MD.Ch01.hamilton_fixed_mass`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2268,7 +2298,7 @@ theorem hamiltonlagrangeequivalence :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:607`（`MD.Ch01.hamiltonlagrangeequivalence`）。
+位置：`Blueprint/Ch01.lean:608`（`MD.Ch01.hamiltonlagrangeequivalence`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2314,7 +2344,7 @@ def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseS
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:623`（`MD.Ch01.finiteEnergyPhaseDomain`）。
+位置：`Blueprint/Ch01.lean:624`（`MD.Ch01.finiteEnergyPhaseDomain`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2364,7 +2394,7 @@ theorem local_exist_unique {n : ℕ} (m : CoordinateMasses n) (U : PotentialEner
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:634`（`MD.Ch01.local_exist_unique`）。
+位置：`Blueprint/Ch01.lean:635`（`MD.Ch01.local_exist_unique`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2408,7 +2438,7 @@ def energySurface {n : ℕ} (H : PhaseSpace n → ℝ) (E : ℝ) := {z | H z = E
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:652`（`MD.Ch01.energySurface`）。
+位置：`Blueprint/Ch01.lean:653`（`MD.Ch01.energySurface`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2462,7 +2492,7 @@ theorem energy_bounds {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:658`（`MD.Ch01.energy_bounds`）。
+位置：`Blueprint/Ch01.lean:659`（`MD.Ch01.energy_bounds`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2513,7 +2543,7 @@ theorem uniform_levels_compact {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:671`（`MD.Ch01.uniform_levels_compact`）。
+位置：`Blueprint/Ch01.lean:672`（`MD.Ch01.uniform_levels_compact`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2566,7 +2596,7 @@ theorem compact_continuation {n : ℕ} (m : CoordinateMasses n) (F : Force n)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:682`（`MD.Ch01.compact_continuation`）。
+位置：`Blueprint/Ch01.lean:683`（`MD.Ch01.compact_continuation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2613,7 +2643,7 @@ theorem nonconfining :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:695`（`MD.Ch01.nonconfining`）。
+位置：`Blueprint/Ch01.lean:696`（`MD.Ch01.nonconfining`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2660,7 +2690,7 @@ def flowMap {n : ℕ} (f : Position n → Position n) (F : ℝ → Position n �
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:703`（`MD.Ch01.flowMap`）。
+位置：`Blueprint/Ch01.lean:704`（`MD.Ch01.flowMap`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2709,7 +2739,7 @@ theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:710`（`MD.Ch01.flow_energy`）。
+位置：`Blueprint/Ch01.lean:711`（`MD.Ch01.flow_energy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2758,7 +2788,7 @@ def harmonicPhaseFlow {n : ℕ} (Ω t : ℝ) (z : PhaseSpace n) : PhaseSpace n :
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:720`（`MD.Ch01.harmonicPhaseFlow`）。
+位置：`Blueprint/Ch01.lean:721`（`MD.Ch01.harmonicPhaseFlow`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2809,7 +2839,7 @@ theorem spectralsolution :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:728`（`MD.Ch01.spectralsolution`）。
+位置：`Blueprint/Ch01.lean:729`（`MD.Ch01.spectralsolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2859,7 +2889,7 @@ theorem basis_coefficients {m : ℕ} {𝕜 : Type*} [RCLike 𝕜]
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:740`（`MD.Ch01.basis_coefficients`）。
+位置：`Blueprint/Ch01.lean:741`（`MD.Ch01.basis_coefficients`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2909,7 +2939,7 @@ theorem matrixexponentialsolution :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:752`（`MD.Ch01.matrixexponentialsolution`）。
+位置：`Blueprint/Ch01.lean:753`（`MD.Ch01.matrixexponentialsolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2956,7 +2986,7 @@ theorem matrix_exp_series {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:764`（`MD.Ch01.matrix_exp_series`）。
+位置：`Blueprint/Ch01.lean:765`（`MD.Ch01.matrix_exp_series`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3001,7 +3031,7 @@ def smoothFirstIntegral {n : ℕ} (f : Position n → Position n) (Q : Set (Posi
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:772`（`MD.Ch01.smoothFirstIntegral`）。
+位置：`Blueprint/Ch01.lean:773`（`MD.Ch01.smoothFirstIntegral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3049,7 +3079,7 @@ theorem firstintegralcriterion :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:779`（`MD.Ch01.firstintegralcriterion`）。
+位置：`Blueprint/Ch01.lean:780`（`MD.Ch01.firstintegralcriterion`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3106,7 +3136,7 @@ theorem planargraphreduction :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:790`（`MD.Ch01.planargraphreduction`）。
+位置：`Blueprint/Ch01.lean:791`（`MD.Ch01.planargraphreduction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3166,7 +3196,7 @@ theorem planarquadrature :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:808`（`MD.Ch01.planarquadrature`）。
+位置：`Blueprint/Ch01.lean:809`（`MD.Ch01.planarquadrature`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3213,7 +3243,7 @@ theorem scalarfirstintegral :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:830`（`MD.Ch01.scalarfirstintegral`）。
+位置：`Blueprint/Ch01.lean:831`（`MD.Ch01.scalarfirstintegral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3264,7 +3294,7 @@ theorem realspectralsolution :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:839`（`MD.Ch01.realspectralsolution`）。
+位置：`Blueprint/Ch01.lean:840`（`MD.Ch01.realspectralsolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3309,7 +3339,7 @@ def planarKeplerEnergy (x y v w : ℝ) : ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:853`（`MD.Ch01.planarKeplerEnergy`）。
+位置：`Blueprint/Ch01.lean:854`（`MD.Ch01.planarKeplerEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3358,7 +3388,7 @@ theorem keplerconservedenergy :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:860`（`MD.Ch01.keplerconservedenergy`）。
+位置：`Blueprint/Ch01.lean:861`（`MD.Ch01.keplerconservedenergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3407,7 +3437,7 @@ theorem keplerangularmomentum :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:873`（`MD.Ch01.keplerangularmomentum`）。
+位置：`Blueprint/Ch01.lean:874`（`MD.Ch01.keplerangularmomentum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3455,7 +3485,7 @@ theorem keplermomentum :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:885`（`MD.Ch01.keplermomentum`）。
+位置：`Blueprint/Ch01.lean:886`（`MD.Ch01.keplermomentum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3499,7 +3529,7 @@ def polarCoordinates (r θ : ℝ) : Position 2 := WithLp.toLp 2 ![r*Real.cos θ,
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:893`（`MD.Ch01.polarCoordinates`）。
+位置：`Blueprint/Ch01.lean:894`（`MD.Ch01.polarCoordinates`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3545,7 +3575,7 @@ theorem keplerpolarlagrangian :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:899`（`MD.Ch01.keplerpolarlagrangian`）。
+位置：`Blueprint/Ch01.lean:900`（`MD.Ch01.keplerpolarlagrangian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3595,7 +3625,7 @@ theorem keplerpolarode :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:910`（`MD.Ch01.keplerpolarode`）。
+位置：`Blueprint/Ch01.lean:911`（`MD.Ch01.keplerpolarode`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3644,7 +3674,7 @@ theorem polarangularidentity :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:922`（`MD.Ch01.polarangularidentity`）。
+位置：`Blueprint/Ch01.lean:923`（`MD.Ch01.polarangularidentity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3693,7 +3723,7 @@ theorem keplerradialreduction :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:932`（`MD.Ch01.keplerradialreduction`）。
+位置：`Blueprint/Ch01.lean:933`（`MD.Ch01.keplerradialreduction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3738,7 +3768,7 @@ def radialKeplerEnergy (ℓ r v : ℝ) : ℝ := v^2/2-1/r+ℓ^2/(2*r^2)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:943`（`MD.Ch01.radialKeplerEnergy`）。
+位置：`Blueprint/Ch01.lean:944`（`MD.Ch01.radialKeplerEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3798,7 +3828,7 @@ theorem kepler_full_solution (a b : ℝ) (z : ℝ → PhaseSpace 2)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:949`（`MD.Ch01.kepler_full_solution`）。
+位置：`Blueprint/Ch01.lean:950`（`MD.Ch01.kepler_full_solution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3844,7 +3874,7 @@ def oscillatorActionAngle (Ω I θ : ℝ) : ℝ × ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:969`（`MD.Ch01.oscillatorActionAngle`）。
+位置：`Blueprint/Ch01.lean:970`（`MD.Ch01.oscillatorActionAngle`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3890,7 +3920,7 @@ theorem actionenergy :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:976`（`MD.Ch01.actionenergy`）。
+位置：`Blueprint/Ch01.lean:977`（`MD.Ch01.actionenergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3941,7 +3971,7 @@ theorem actionode :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:986`（`MD.Ch01.actionode`）。
+位置：`Blueprint/Ch01.lean:987`（`MD.Ch01.actionode`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3996,7 +4026,7 @@ theorem actionsolution :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:999`（`MD.Ch01.actionsolution`）。
+位置：`Blueprint/Ch01.lean:1000`（`MD.Ch01.actionsolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4041,7 +4071,7 @@ def oscillatorTorusMotion {d : ℕ} (I Ω : Fin d → ℝ) (θ₀ : HarmonicToru
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1016`（`MD.Ch01.oscillatorTorusMotion`）。
+位置：`Blueprint/Ch01.lean:1017`（`MD.Ch01.oscillatorTorusMotion`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4088,7 +4118,7 @@ theorem torusperiod :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:1023`（`MD.Ch01.torusperiod`）。
+位置：`Blueprint/Ch01.lean:1024`（`MD.Ch01.torusperiod`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4139,7 +4169,7 @@ theorem torusdense :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1034`（`MD.Ch01.torusdense`）。
+位置：`Blueprint/Ch01.lean:1035`（`MD.Ch01.torusdense`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4198,7 +4228,7 @@ theorem local_action_angle_reduction :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1044`（`MD.Ch01.local_action_angle_reduction`）。
+位置：`Blueprint/Ch01.lean:1045`（`MD.Ch01.local_action_angle_reduction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4242,7 +4272,7 @@ def equilibriumDefinition {n : ℕ} (f : Position n → Position n) (z : Positio
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1062`（`MD.Ch01.equilibriumDefinition`）。
+位置：`Blueprint/Ch01.lean:1063`（`MD.Ch01.equilibriumDefinition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4286,7 +4316,7 @@ theorem constantequilibrium :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:1068`（`MD.Ch01.constantequilibrium`）。
+位置：`Blueprint/Ch01.lean:1069`（`MD.Ch01.constantequilibrium`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4337,7 +4367,7 @@ theorem equilibriumlinearization :
 
 **checked+documented priors**；本地证明状态：local_proof。
 
-位置：`Blueprint/Ch01.lean:1077`（`MD.Ch01.equilibriumlinearization`）。
+位置：`Blueprint/Ch01.lean:1078`（`MD.Ch01.equilibriumlinearization`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4383,7 +4413,7 @@ def hyperbolic {n : ℕ} (A : Position n →L[ℝ] Position n) : Prop :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1089`（`MD.Ch01.hyperbolic`）。
+位置：`Blueprint/Ch01.lean:1090`（`MD.Ch01.hyperbolic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4441,7 +4471,7 @@ theorem hartmangrobmanliteral :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1097`（`MD.Ch01.hartmangrobmanliteral`）。
+位置：`Blueprint/Ch01.lean:1098`（`MD.Ch01.hartmangrobmanliteral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4490,7 +4520,7 @@ def lyapunovStable {n : ℕ} (F : ℝ → Position n → Position n) (z : Positi
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1114`（`MD.Ch01.lyapunovStable`）。
+位置：`Blueprint/Ch01.lean:1115`（`MD.Ch01.lyapunovStable`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4539,7 +4569,7 @@ theorem hyperbolicstabilitytransfer :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1123`（`MD.Ch01.hyperbolicstabilitytransfer`）。
+位置：`Blueprint/Ch01.lean:1124`（`MD.Ch01.hyperbolicstabilitytransfer`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4593,7 +4623,7 @@ theorem hamilton_equilibrium {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1134`（`MD.Ch01.hamilton_equilibrium`）。
+位置：`Blueprint/Ch01.lean:1135`（`MD.Ch01.hamilton_equilibrium`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4639,7 +4669,7 @@ def strongLocalMinimum {n : ℕ} (U : PotentialEnergy n) (qstar : Position n) : 
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1146`（`MD.Ch01.strongLocalMinimum`）。
+位置：`Blueprint/Ch01.lean:1147`（`MD.Ch01.strongLocalMinimum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4684,7 +4714,7 @@ def linearizedHamiltonian {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：`Blueprint/Ch01.lean:1153`（`MD.Ch01.linearizedHamiltonian`）。
+位置：`Blueprint/Ch01.lean:1154`（`MD.Ch01.linearizedHamiltonian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4732,7 +4762,7 @@ theorem positivehessianquadratic :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1161`（`MD.Ch01.positivehessianquadratic`）。
+位置：`Blueprint/Ch01.lean:1162`（`MD.Ch01.positivehessianquadratic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4784,7 +4814,7 @@ theorem positive_hessian_minimum {n : ℕ} (U : PotentialEnergy n) (q : Position
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：`Blueprint/Ch01.lean:1171`（`MD.Ch01.positive_hessian_minimum`）。
+位置：`Blueprint/Ch01.lean:1172`（`MD.Ch01.positive_hessian_minimum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4793,3 +4823,1060 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 缺失/继续路线：Hessian谱正定转换与C2二阶Taylor严格极小判别理论。
 
 签名SHA256：`9595dc9ac6090cbcd9df50e0c03b268fbe43d76f5684d786f0d93eef593200be`；原文SHA256：`eb853836c012ec6167ae0cdf039f941831bfd39e7a1830f383bec39a074d287b`。
+
+## 1. MD-1.6-UniformPairLattice · definition · 印刷p.33 / PDFp.56
+
+### 2. 原文陈述
+
+> Let us suppose we have a uniform pair potential $\varphi$ and define the total potential energy of a system of N atoms by
+> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi(|x_i-x_j|).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def latticePairPotential {N : ℕ} (φ : ℝ → ℝ) (x : Fin N → ℝ) : ℝ :=
+  ∑ i, ∑ j ∈ Finset.Ioi i, φ |x i-x j|
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.latticePairPotential | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1188`（`MD.Ch01.latticePairPotential`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`ae335e0a22b2ae9f67606b88170b09a0fb08e6f370b60f738e806e087bcc5fdb`；原文SHA256：`1ab0e26a5a903461e6d47ddda8aa0bb2f6e5fa7a1038bdfeca17d8ddcc05cec0`。
+
+## 1. MD-1.6-UnorderedPairCount · unnumbered_claim · 印刷p.33 / PDFp.56
+
+### 2. 原文陈述
+
+> The computation of the energy requires $N(N-1)/2$ separate calculations, which could be very expensive if N is large.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem unorderedpaircount :
+  ∀ N : ℕ, (Finset.univ.filter (fun p : Fin N × Fin N => p.1 < p.2)).card = N*(N-1)/2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.unorderedpaircount | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：有序双索引lt计数和Nat.choose2组合，计划短证明。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：`Blueprint/Ch01.lean:1195`（`MD.Ch01.unorderedpaircount`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+缺失/继续路线：有序双索引lt计数和Nat.choose2组合，计划短证明。
+
+签名SHA256：`5d6f86a7e51bdfb3056ed8ae47c2985be3249f8a229c56bd8ddaedd61e199be7`；原文SHA256：`042af6822800600079af916e0da48126381caa6ad0aee2b25c72551e49f363a7`。
+
+## 1. MD-1.6-NearestNeighbor · definition · 印刷p.33 / PDFp.56
+
+### 2. 原文陈述
+
+> We can reduce this by assuming only nearest neighbor forces, which means the energy becomes
+> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def nearestNeighborModel {N : ℕ} (φ : ℝ → ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  ∑ i : Fin N, φ |x i.succ-x i.castSucc|
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.nearestNeighborModel | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1204`（`MD.Ch01.nearestNeighborModel`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`c9f9dabf3d9ad9e94ab3219c95f25b7ba08b83c89a0e700797229382f5292c5c`；原文SHA256：`49403eb582702b950944360004f34bf58ff3bdc659e8b48ca0dc40c7faee2a20`。
+
+## 1. MD-1.6-WalledChain · definition · 印刷p.33 / PDFp.56
+
+### 2. 原文陈述
+
+> In order to keep such a system bounded we might then introduce walls at the ends of the chain, e.g. by adding confining potentials to $U$:
+> \[U(x_1,x_2,\ldots,x_N)=\varphi_c(|x_1|)+\varphi_c(|L-x_N|)+\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\tag{1.7}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def walledChainModel {N : ℕ} (φ φc : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  φc |x 0| + φc |L-x (Fin.last N)| + nearestNeighborModel φ x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.walledChainModel | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1211`（`MD.Ch01.walledChainModel`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`6aa702191c74f535264b934fcadfa137368b23646f8f55c39ddda748cb5c38ec`；原文SHA256：`05159e764ae6162987436cf7dc97920dbd25ed945b25cd1b837be7b896112007`。
+
+## 1. MD-1.6-PeriodicChain · definition · 印刷p.33 / PDFp.56
+
+### 2. 原文陈述
+
+> Alternatively one could restrict to a bounded domain by use of periodic boundary conditions, introducing the potential energy:
+> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|)+\varphi(|L+x_1-x_N|).\tag{1.8}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def periodicChainModel {N : ℕ} (φ : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) → ℝ) : ℝ :=
+  nearestNeighborModel φ x + φ |L+x 0-x (Fin.last N)|
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.periodicChainModel | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1218`（`MD.Ch01.periodicChainModel`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`5d20e7645218c8dacee1094cef2db10fc2cca6ffe99113eaec2a6837c893522b`；原文SHA256：`d4ab02db4c674d5eb01d72c0a74b530e240abd506a2a7c797c8fa5b4313f1741`。
+
+## 1. MD-1.6-PeriodicBoundary · definition · 印刷p.34 / PDFp.57
+
+### 2. 原文陈述
+
+> If a particle moves to the right of $x=L$ we simply shift its position to $x-L$; likewise any particle exiting to the left of $x=0$ has its position shifted to $x+L$ (see Fig. 1.15).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def periodicBoundary (L : ℝ) (x y : ℝ) : Prop := ∃ k : ℤ, y = x + k*L
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.periodicBoundary | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1225`（`MD.Ch01.periodicBoundary`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`2fd68f7d5f14e976fd6bd0b8f4edee8dbe7b3486388dadc2e11d3f1b8e91bce9`；原文SHA256：`a0f1b2fd9d88af028fe4d1d0388573ac314037b24250c2552492e6a3081ab9dd`。
+
+## 1. MD-1.6-PeriodicTranslationMomentum · unnumbered_claim · 印刷p.34 / PDFp.57
+
+### 2. 原文陈述
+
+> Periodic boundary conditions allow us to preserve Newton’s third law, the translational symmetry, and thus the conservation of momentum.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem periodic_translation_momentum :
+  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ),
+    let U := boxPeriodicNearestNeighborPotentialEnergy φ L
+    (∀ q c, U (fun i => q i+c) = U q) ∧
+    (∀ q, DifferentiableAt ℝ U q → fderiv ℝ U q (fun _ => 1) = 0) ∧
+    ∀ (m : Fin (N+1) → ℝ) (q v : ℝ → Fin (N+1) → ℝ) (I : Set ℝ),
+      IsOpen I → IsPreconnected I → (∀ i, 0 < m i) →
+      (∀ t ∈ I, DifferentiableAt ℝ U (q t)) →
+      (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t ∧
+        HasDerivAt (fun s => m i*v s i) (-fderiv ℝ U (q t) (Pi.single i 1)) t) →
+      (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i*v s i) 0 t) ∧
+      ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i*v a i) = ∑ i, m i*v b i
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.periodic_translation_momentum | 一致 |
+| 原文未显式量化的技术资格 | 一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。补齐全平移不变、净力零真实导数与动量守恒；Newton第三定律为相邻差值势的反向partial，CentralPairGradient另条编码，不把动量结论当假设。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：平移轨迹链式法则、基向量和为常1的fderiv线性作用、有限和零导数及连通域常数桥接。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：`Blueprint/Ch01.lean:1231`（`MD.Ch01.periodic_translation_momentum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：含sorryAx。
+
+缺失/继续路线：平移轨迹链式法则、基向量和为常1的fderiv线性作用、有限和零导数及连通域常数桥接。
+
+签名SHA256：`d5ab02ba52ab0637f83ae1c9d626b6dea6cde704c7ff34ffdd7dc7e73e6b3ca7`；原文SHA256：`845c9f7d7f10e7a691c6cb72f22724271c12cda925ebbe7759b841f9814d9b6e`。
+
+## 1. MD-1.6-RegularLattice · definition · 印刷p.34 / PDFp.57
+
+### 2. 原文陈述
+
+> On the line, we think of a (finite) lattice as a sequence of discrete points separated by a fixed distance $\Delta x$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def regularLattice {N : ℕ} (a δ : ℝ) (x : Fin N → ℝ) : Prop :=
+  0 < δ ∧ ∀ i, x i = a + i.val*δ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.regularLattice | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1249`（`MD.Ch01.regularLattice`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`5c57ad73285c41ec056d8fdeba5d06b241bb8090f1b202bac1fc2af9c2250632`；原文SHA256：`e62d7027ecfbea2720a59800c1e98b2382a2a7383358979ce4ec818f2b73bd4f`。
+
+## 1. MD-1.6-RegularLatticeMinimizerLiteral · unnumbered_claim · 印刷p.34 / PDFp.57
+
+### 2. 原文陈述
+
+> An obvious benefit of using periodic boundary conditions is that, with a uniform pair potential, the energy minimizers are points of a regular lattice; with confining potentials this is unlikely to be the case.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem regularlatticeminimizerliteral :
+  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ), 0 < L →
+    ∀ x : Fin (N+1) → ℝ,
+    (∀ y : Fin (N+1) → ℝ, boxPeriodicNearestNeighborPotentialEnergy φ L x ≤
+      boxPeriodicNearestNeighborPotentialEnergy φ L y) →
+    ∃ a : ℝ, regularLattice a (L/(N+1)) x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.regularlatticeminimizerliteral | NEEDS_HUMAN |
+| 原书疑点 | 对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：原文需限定势和配置域；不可证明字面假命题。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：`Blueprint/Ch01.lean:1256`（`MD.Ch01.regularlatticeminimizerliteral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：含sorryAx。
+
+缺失/继续路线：原文需限定势和配置域；不可证明字面假命题。
+
+签名SHA256：`8fdbdc2a4957dad46d9a05f062fed7fb6361468a585fe4e5f82077cb55832254`；原文SHA256：`319cdd2f0fe4a68b728af327e7e7b9da509d3af66ac6f512fe4251296909d53e`。
+
+## 1. MD-1.6-PeriodicImages · definition · 印刷p.35 / PDFp.58
+
+### 2. 原文陈述
+
+> periodic boundary conditions involve an extended potential energy of the form
+> \[U^{\mathrm{pbc}}(\boldsymbol q)=\sum_{klm}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{ij}(\boldsymbol q_i,\boldsymbol q_j+k\boldsymbol v_1+l\boldsymbol v_2+m\boldsymbol v_3),\]
+> where $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\boldsymbol v_i^T=(L\boldsymbol e_i^T,\ldots,L\boldsymbol e_i^T)$, $i=1,2,3$, where $\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\mathbb R^3$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTerms)
+    (q : Fin N → V3) :=
+  ∑ k : Fin 3, ∑ l : Fin 3, ∑ m : Fin 3, ∑ i, ∑ j ∈ Finset.Ioi i,
+    φ i j (q i) (q j + WithLp.toLp 2 ![L*((k.val:ℝ)-1),L*((l.val:ℝ)-1),L*((m.val:ℝ)-1)])
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.periodicImageEnergy | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1268`（`MD.Ch01.periodicImageEnergy`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`d11ddd7273009acde9e63933f2d89f102183fc42e5012ee63a3ee9455b446d1f`；原文SHA256：`cf6f3b2f23da9e393824b057eec76bebcce8990a1dd75ae9208c1b22f6be688e`。
+
+## 1. MD-1.6-MinimumImage · definition · 印刷p.35 / PDFp.58
+
+### 2. 原文陈述
+
+> The minimum image convention states that, in computing the force, a given atom interacts only with the nearest replica of any other atom.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def minimumImage (L : ℝ) (q r image : V3) : Prop :=
+  ∃ k : Fin 3 → ℤ, image = r + WithLp.toLp 2 (fun i => L*k i) ∧
+    ∀ l : Fin 3 → ℤ, ‖q-image‖ ≤ ‖q-(r+WithLp.toLp 2 (fun i => L*l i))‖
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.minimumImage | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1277`（`MD.Ch01.minimumImage`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`0d4c0dbca82f99ca89d3aceb7b4915dae48547cc5d1e058ab9e4c200a8737f1f`；原文SHA256：`88fa589b609c2305a61750ea1e8e2e1c4d0739e959da4f1daa755e981fa8cc17`。
+
+## 1. MD-1.6-RhombicLattice · definition · 印刷p.35 / PDFp.58
+
+### 2. 原文陈述
+
+> In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice, with sides of fixed length $n_x,n_y$ and the angle between them ($\theta$), see Fig. 1.17.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rhombicLattice (a b θ : ℝ) : Set (Position 2) :=
+  {x | ∃ k l : ℤ, x = WithLp.toLp 2 ![k*a+l*b*Real.cos θ,l*b*Real.sin θ]}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.rhombicLattice | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1285`（`MD.Ch01.rhombicLattice`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`fc67364985cec87986905ec2031bb5b4a475a1e2b1d178a1ffbf45c9d75d27f7`；原文SHA256：`11c9d10fb51c2712f5ede6b647636f7d2c532c73a25c1d6e7238ecb3a9aa2098`。
+
+## 1. MD-1.6-HexagonalLattice · unnumbered_claim · 印刷p.35 / PDFp.58
+
+### 2. 原文陈述
+
+> it can be viewed as a rhombic lattice with $n_x=n_y$ and $\theta=120^\circ$; it can also be viewed as a rhombic lattice with $\theta=60^\circ$
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hexagonal_lattice_two_bases (a : ℝ) :
+    rhombicLattice a a (2*Real.pi/3) = rhombicLattice a a (Real.pi/3)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.hexagonal_lattice_two_bases | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：60°/120°基向量三角函数值及整数基替换；计划短证明。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：`Blueprint/Ch01.lean:1292`（`MD.Ch01.hexagonal_lattice_two_bases`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+缺失/继续路线：60°/120°基向量三角函数值及整数基替换；计划短证明。
+
+签名SHA256：`a5364b427f844c956623d44050946c40918c4ab5e5f17dd3ee164d7bdbe8a316`；原文SHA256：`8238551c83931c9d57c40de6eee1605ae2d5f441e27fb8f0b69368656f1dd5ae`。
+
+## 1. MD-1.6-UnitCell · definition · 印刷p.35 / PDFp.58
+
+### 2. 原文陈述
+
+> The unit cell is a description of the arrangement of atoms within a box; unit cells may be stacked in each direction to describe an atomic lattice.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def unitCellLattice (B : Matrix (Fin 3) (Fin 3) ℝ) (motif : Set V3) : Set V3 :=
+  {q | ∃ k : Fin 3 → ℤ, ∃ u ∈ motif,
+    q = B.toEuclideanLin (WithLp.toLp 2 (fun i => (k i : ℝ))) + u}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.unitCellLattice | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1317`（`MD.Ch01.unitCellLattice`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`b1f1abd72173af6d190a93a70e797d9809259371e7b8c688315e0389a42dd341`；原文SHA256：`b47a03533013045e0065a2e6282cb2e948d414802dcc3c8b0fb4a94f034e154a`。
+
+## 1. MD-1.6-FCCStacking · definition · 印刷p.36 / PDFp.59
+
+### 2. 原文陈述
+
+> The fcc lattice corresponds to the common arrangement by which cannonballs are stacked into pyramidal structures; it can be viewed as a periodic stacking (ABCABC. . . ) of three hexagonally structured planar layers, as illustrated in Fig. 1.18.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def fccStacking : Set V3 :=
+  {x | ∃ k : ℤ, let j := k % 3
+    x 2 = k*Real.sqrt (2/3) ∧
+      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.fccStacking | NEEDS_HUMAN |
+| 原文未显式量化的技术资格 | 将图示ABC编码为单位边长等边三角层，层高sqrt(2/3)及偏移由close-packed图示编码，正文未列数值公式。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。ABC三周期保留；旧库附带具体几何层高和偏移不是正文逐字公式，需要导师确认图示编码。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1325`（`MD.Ch01.fccStacking`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`fa9be10cf431caafd34a4ec44e2fb67dd7a89d650174ed3a861caf17a6843825`；原文SHA256：`b54e48f45d2f1e0c50af5acf9fc8bafe90f1cf636e58c7bfab29e3e4724b80da`。
+
+## 1. MD-1.6-HCPStacking · definition · 印刷p.36 / PDFp.59
+
+### 2. 原文陈述
+
+> Also shown in Fig. 1.18 is the hcp lattice, which, on the other hand, alternates two distinct planar lattices.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def hcpStacking : Set V3 :=
+  {x | ∃ k : ℤ, let j := k % 2
+    x 2 = k*Real.sqrt (2/3) ∧
+      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.hcpStacking | NEEDS_HUMAN |
+| 原文未显式量化的技术资格 | 图示AB两个三角层，单位化层高及偏移是具体close-packed图示编码。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。AB两周期保留；具体几何参数来源图示而非正文公式，需导师确认编码。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：`Blueprint/Ch01.lean:1334`（`MD.Ch01.hcpStacking`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+签名SHA256：`0d005924214051cf078e70c98cf6e02c30873194b02d86d30c076ba7c3d70903`；原文SHA256：`1a537168f3987b658b819101c97350cf02a3ed6aa8c1bc98e5d6c1efb1c8ef97`。
+
+## 1. MD-1.6.1-MinimumGradientZero · unnumbered_claim · 印刷p.36–37 / PDFp.59–60
+
+### 2. 原文陈述
+
+> Regardless of the choice of boundary and/or the inclusion of non-pairwise potentials, the minimum of the potential energy occurs where
+> \[\nabla U=0,\]
+> which gives in general a nonlinear system of $N_c$ equations in $N_c$ unknowns to be solved for the position vector $\boldsymbol q^*$ associated to mechanical equilibrium.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem minimumgradientzero :
+  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n),
+    DifferentiableAt ℝ U q → IsLocalMin U q → gradient U q = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.minimumgradientzero | 一致 |
+| 原文未显式量化的技术资格 | 可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。 | [EXTRA] |
+| 原书疑点 | 不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：local_proof。
+
+位置：`Blueprint/Ch01.lean:1343`（`MD.Ch01.minimumgradientzero`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+已登记前置证明/定义：MolecularDynamics/Chapter01/ReviewProofs.lean:minimumGradientZero_proved。
+
+签名SHA256：`c088338166995b06263d18fa56b99498e42d9707f380a2d80fa54f799c888096`；原文SHA256：`71ef0efb8d517a63179fe8237ccb4875df59bed282d1e355ceaab46963f522a2`。
+
+## 1. MD-1.6.1-ForceLinearization · unnumbered_claim · 印刷p.37 / PDFp.60
+
+### 2. 原文陈述
+
+> At the equilibrium point, we can linearize the system of differential equations by computing the Hessian matrix, then we find
+> \[\nabla U(\boldsymbol q)\approx U''(\boldsymbol q^*)(\boldsymbol q-\boldsymbol q^*).\]
+> Then, letting $\delta\boldsymbol q=\boldsymbol q-\boldsymbol q^*$, $\delta\boldsymbol p$ represent small deviations from the equilibrium point at $(\boldsymbol q,\boldsymbol p)=(\boldsymbol q^*,0)$, we have
+> \[\frac{\mathrm d\delta\boldsymbol q}{\mathrm dt}=\boldsymbol M^{-1}\delta\boldsymbol p,\qquad\frac{\mathrm d\delta\boldsymbol p}{\mathrm dt}=-U''(\boldsymbol q^*)\delta\boldsymbol q.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem force_linearization {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (qstar : Position n) (hU : ContDiffAt ℝ 2 U qstar)
+    (heq : gradient U qstar = 0) :
+    HasFDerivAt (fun z : PhaseSpace n => (matrixAction M⁻¹ z.2, -gradient U z.1))
+      (((Matrix.toEuclideanCLM (n := Fin n) (𝕜 := ℝ) M⁻¹).comp (ContinuousLinearMap.snd ℝ (Position n) (Momentum n))).prod
+        ((-fderiv ℝ (gradient U) qstar).comp (ContinuousLinearMap.fst ℝ (Position n) (Momentum n))))
+      (qstar,0) ∧
+    (fun q => gradient U q - fderiv ℝ (gradient U) qstar (q-qstar)) =o[𝓝 qstar]
+      (fun q => q-qstar)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.force_linearization | 一致 |
+| 原文未显式量化的技术资格 | 真实C2势及平衡梯度零；一般常M，原文M正定由机械背景保证但导数等式不需此资格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。一般质量矩阵、真实块Frechet导数及完整小o梯度线性化全部保留，未假设结论。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：一般矩阵线性作用连续算子与已有conservative_mechanical_linearization拼接；计划短证明。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：local_proof。
+
+位置：`Blueprint/Ch01.lean:1352`（`MD.Ch01.force_linearization`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+缺失/继续路线：一般矩阵线性作用连续算子与已有conservative_mechanical_linearization拼接；计划短证明。
+
+已登记前置证明/定义：MolecularDynamics/Chapter01/EquilibriumLinearization.lean:conservative_mechanical_linearization。
+
+签名SHA256：`beea36b5e2e1b8731777f2bd6d6dd4a029fe7242b579a955db637315b0979ab7`；原文SHA256：`5db03a7223df3d59a3cf1810bd4bfb8d2f05d9c0094d5e18ed4fa08ac2700fab`。
+
+## 1. MD-1.6.1-MinimumHessianLiteral · unnumbered_claim · 印刷p.37 / PDFp.60
+
+### 2. 原文陈述
+
+> At the minimum of the potential energy, $U''$ is a positive definite symmetric matrix.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem minimumhessianliteral :
+  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n), ContDiff ℝ 2 U →
+    IsLocalMin U q →
+    (∀ u v, inner ℝ u (fderiv ℝ (gradient U) q v) = inner ℝ v (fderiv ℝ (gradient U) q u)) ∧
+    ∀ v : Position n, v ≠ 0 → 0 < inner ℝ v (fderiv ℝ (gradient U) q v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.minimumhessianliteral | NEEDS_HUMAN |
+| 原书疑点 | 局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：字面假命题，不证明；正定需非退化额外假设，不能静默补。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：`Blueprint/Ch01.lean:1379`（`MD.Ch01.minimumhessianliteral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：含sorryAx。
+
+缺失/继续路线：字面假命题，不证明；正定需非退化额外假设，不能静默补。
+
+签名SHA256：`dcaac8ffe7ea38166591d02b0298d672e8f00b53b94c49589f7b902e828a3252`；原文SHA256：`13722d752744b1fe3247dc3cc168c771625882b94b470ec80fe5e83ccea0dc84`。
+
+## 1. MD-1.6.1-ImaginarySpectrum · unnumbered_claim · 印刷p.37 / PDFp.60
+
+### 2. 原文陈述
+
+> The eigenvalues of the matrix
+> \[\boldsymbol A:=\begin{bmatrix}0&\boldsymbol M^{-1}\\-U''(\boldsymbol q^*)&0\end{bmatrix}\]
+> are therefore all purely imaginary ($\pm i\Omega$, $\Omega^2\in\mathbb R^+$).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem imaginary_spectrum :
+  ∀ (n : ℕ) (M K : Matrix (Fin n) (Fin n) ℝ), M.PosDef → K.PosDef →
+    let A := fun z : PhaseSpace n => (M⁻¹.toEuclideanLin z.2, -K.toEuclideanLin z.1)
+    ∀ (a b : ℝ) (x y : PhaseSpace n), (x ≠ 0 ∨ y ≠ 0) →
+      A x = a • x - b • y → A y = b • x + a • y →
+      a = 0 ∧ 0 < b^2 ∧ A x = -b • y ∧ A (-y) = -b • x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.imaginary_spectrum | 一致 |
+| 原文未显式量化的技术资格 | M和Hessian K正定；复谱实虚向量编码。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。补齐实部零、非零频率平方正及共轭实虚特征对给出的±ib配对；一般SPD M,K保留。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：一般SPD块Hamiltonian谱的相似反自伴算子理论；对角/单个normal mode证明不足。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：`Blueprint/Ch01.lean:1390`（`MD.Ch01.imaginary_spectrum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：含sorryAx。
+
+缺失/继续路线：一般SPD块Hamiltonian谱的相似反自伴算子理论；对角/单个normal mode证明不足。
+
+签名SHA256：`81330665ea9d2c1e74c0a3414872053dd8999b596bb79453db2c3ca82e0b06a3`；原文SHA256：`729938b130d87c301a64782b8402f7548995c614a8df114ab726df2a33f5499b`。
+
+## 1. MD-1.6.1-ComplexNormalMode · unnumbered_claim · 印刷p.37 / PDFp.60
+
+### 2. 原文陈述
+
+> Associated to each eigenvalue pair we have a pair of complex conjugate eigenvectors $\boldsymbol\xi,\overline{\boldsymbol\xi}$ and also a pair of solutions which can be written in the complex form
+> \[\boldsymbol z(t)=ae^{i\Omega t}\boldsymbol\xi+be^{-i\Omega t}\overline{\boldsymbol\xi},\]
+> ($a,b$ complex coefficients),
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem complexnormalmode :
+  ∀ (n : ℕ) (A : Matrix (Fin n) (Fin n) ℝ) (η : Fin n → ℂ) (Ω : ℝ),
+    (A.map (algebraMap ℝ ℂ)).mulVec η = (Complex.I * Ω) • η →
+    ∀ a b : ℂ, ∀ t : ℝ,
+      HasDerivAt (fun s : ℝ =>
+        a • (Complex.exp (Complex.I*Ω*s) • η) +
+          b • (Complex.exp (-Complex.I*Ω*s) • (fun i => star (η i))))
+        ((A.map (algebraMap ℝ ℂ)).mulVec
+          (a • (Complex.exp (Complex.I*Ω*t) • η) +
+            b • (Complex.exp (-Complex.I*Ω*t) • (fun i => star (η i))))) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.complexnormalmode | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+建议：ComplexEigenmode真实导数及共轭线性作用求和桥接，计划短证明。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：`Blueprint/Ch01.lean:1402`（`MD.Ch01.complexnormalmode`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：含sorryAx。
+
+缺失/继续路线：ComplexEigenmode真实导数及共轭线性作用求和桥接，计划短证明。
+
+签名SHA256：`f78173634b1da94b8fecc486c3945af183f2b47e266a2a3d92fac187f45918e9`；原文SHA256：`c18a19544c2e6cfda514c3f9419575164322a3ef0276dfd78d064fd85c3275e9`。
+
+## 1. MD-1.6.1-RealNormalMode · unnumbered_claim · 印刷p.37 / PDFp.60
+
+### 2. 原文陈述
+
+> or recast in real form as ($\alpha,\beta$ real coefficients):
+> \[\boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书无独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem realnormalmode :
+  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (A : E →L[ℝ] E) (Ω α β : ℝ) (u v : E)
+    (hu : A u = -Ω • v) (hv : A v = Ω • u) (t : ℝ),
+    HasDerivAt (realNormalMode Ω α β u v)
+      (A (realNormalMode Ω α β u v t)) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原页完整公式/陈述 | MD.Ch01.realnormalmode | 一致 |
+
+### 6. 审计结论
+
+本地预审：**PASS**。展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：local_proof。
+
+位置：`Blueprint/Ch01.lean:1418`（`MD.Ch01.realnormalmode`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出。
+
+已登记前置证明/定义：MolecularDynamics/Chapter01/NormalModes.lean:hasDerivAt_realNormalMode。
+
+签名SHA256：`cfd9081469533a64abc73b90f6f6a18137e97f99f9fbd0c2856027c27d68a5cc`；原文SHA256：`dba7d7d8cc5b3b12b0cbf2d01b3867d051c47eedf5869c2f3036314f1fbb15f9`。

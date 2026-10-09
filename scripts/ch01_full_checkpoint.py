@@ -17,7 +17,7 @@ text=text[:i]+'下一步：'+next_step+text[j:];state.write_text(text,encoding='
 with (ROOT/'docs/handoff/WORK_LOG.zh-CN.md').open('a',encoding='utf-8') as f:
     f.write(f'\n## 2026-10-09 第1章全章：§{section}检查点\n逐字JSON/忠实Blueprint/本地自审/批次包更新；完整check及逐条公理审计通过，正式库不改。\n下一步：{next_step}；网站未返回，heartbeat原样。\n')
 paths=['Blueprint/Ch01.lean','blueprint/ch01','scripts/ch01_full_data.py','scripts/ch01_full_tools.py',
-       'scripts/ch01_full_checkpoint.py','scripts/render_blueprint.py','docs/review/CH01_BLUEPRINT.zh-CN.md',
+       'scripts/ch01_full_checkpoint.py','scripts/ch01_full_proofs.py','scripts/render_blueprint.py','docs/review/CH01_BLUEPRINT.zh-CN.md',
        'docs/handoff/CURRENT_STATE.zh-CN.md','docs/handoff/WORK_LOG.zh-CN.md']
 subprocess.run(['git','add',*paths],cwd=ROOT,check=True)
 logs=[str(p.relative_to(ROOT)).replace('\\','/') for p in rp.glob('*.log')]
