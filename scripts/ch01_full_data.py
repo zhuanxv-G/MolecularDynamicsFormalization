@@ -20,14 +20,15 @@ def block(file, name):
     return rest[:end.start() if end else len(rest)].strip()
 
 def definition(name):
-    code=block('MolecularDynamics/Chapter01/ReviewDefinitions.lean',name)
+    try: code=block('MolecularDynamics/Chapter01/ReviewDefinitions.lean',name)
+    except ValueError: code=block('MolecularDynamics/Chapter01/Statements.lean',name)
     return re.sub(r'^(def|abbrev) '+name, 'def '+name, code)
 
 def prop(name):
     return block('MolecularDynamics/Chapter01/Statements.lean',name).split(':=',1)[1].strip()
 
 def theorem_type(file,name):
-    header=block(file,name).split(':=',1)[0]
+    header=re.split(r'\s:=\s*(?:by|rfl)\b|\s:=\s*\n',block(file,name),maxsplit=1)[0]
     rest=re.sub(r'^theorem '+name+r'\s*','',header)
     depth=0
     for i,c in enumerate(rest):
@@ -36,7 +37,7 @@ def theorem_type(file,name):
         if c==':' and depth==0:
             args,conclusion=rest[:i].strip(),rest[i+1:].strip()
             generic=''
-            if re.search(r'\bE\b',args+' '+conclusion):
+            if re.search(r'\bE\b',args+' '+conclusion) and not re.search(r'\{E\s*:',args):
                 field='ℂ' if 'ComplexSpectralFlow' in file else 'ℝ'
                 generic=f'{{E : Type*}} [NormedAddCommGroup E] [NormedSpace {field} E] [CompleteSpace E] '
             return ('∀ '+generic+args+',\n    ' if generic or args else '')+conclusion
@@ -250,8 +251,8 @@ add('HamiltonEquations','1.4',24,[84],r'''The equations of motion can be written
 bridge('HamiltonFixedMass','1.4',24,[85],r'''For constant $\boldsymbol M$ we obtain the dynamical equations,
 \[\dot{\boldsymbol q}=\boldsymbol M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol F=-\partial U/\partial\boldsymbol q.\]''','MolecularDynamics/Chapter01/Hamiltonian.lean','hamiltonianVectorField_eq',extra=['固定对角正质量；一般常SPD矩阵待扩展，原文M可指配置相关模型取常值。'],verdict='NEEDS_HUMAN',explanation='现有桥接仅固定对角M；原文常M含一般SPD。签名必须扩展一般常质量矩阵，不能把对角特例当全条PASS。')
 stated('HamiltonLagrangeEquivalence','1.4',25,[86],r'''More generally, for molecular models, the Hamiltonian and Lagrangian formulations are interchangeable, but the use of the Hamiltonian form is preferred for allowing simplified description of the geometric character of the solutions of the system as we discuss in Chaps. 2–4.''','generalLegendreEquivalence_statement',extra=['一般配置相关M C2、U C2、M逐点正定；轨迹q′=v真实且时间域开放。'],missing='一般矩阵二次型速度梯度及配置导数、可微矩阵逆和Euler–Lagrange转换理论。')
-add('PhaseSpace','1.4',25,[87,88],'''The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $\mathbb R^3$ is described by coordinates and positions, i.e., by a point in $\mathbb R^{6N}$.''',
-    definition('finiteEnergyPhaseSpace') if False else '''def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseSpace n) :=
+add('PhaseSpace','1.4',25,[87,88],r'''The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $\mathbb R^3$ is described by coordinates and positions, i.e., by a point in $\mathbb R^{6N}$.''',
+    '''def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseSpace n) :=
   {z | H z ≠ ⊤ ∧ H z ≠ ⊥}''',extra=['采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。'])
 
 add('LocalExistUnique','1.5',25,[89],'''One of the most important properties of a typical classical molecular Hamiltonian system is the existence and uniqueness of solutions started from a generic initial condition.''',
@@ -336,6 +337,101 @@ bridge('PlanarGraphReduction','1.5.2',28,[111,112],r'''In principle, such an equ
 bridge('PlanarQuadrature','1.5.2',28,[113],'''Such an ordinary differential equation is said to be separable, and theoretically can be solved, given an initial condition, for x as a function of t.''','MolecularDynamics/Chapter01/FirstIntegralQuadrature.lean','planarFirstIntegral_nonturning_quadrature',extra=['正则第一积分图及非转向速度非零；真实C2、局部积分逆。'])
 bridge('ScalarFirstIntegral','1.5.2',28,[114],'''Example 1.6 The single degree of freedom model of Example 1.4 has the energy as a first integral. The system is therefore integrable.''','MolecularDynamics/Chapter01/ScalarIntegrability.lean','scalarPotentialEnergy_isFirstIntegral',extra=['U C2；原文integrable的quadrature结论复用§1.2条目，不等同于全局闭式轨道。'])
 
+bridge('RealSpectralSolution','1.5.1',27,[104],r'''Observations: (i) eigenvectors, eigenvalues, and coefficients $c_i$ may be complex, but if $\boldsymbol A$ and $\boldsymbol\xi$ have real coefficients, it is nonetheless possible to obtain a real solution,''','MolecularDynamics/Chapter01/RealRecoveryFlow.lean','realMatrix_complexSpectral_sum_isReal',context=['谱和结果每坐标虚部=0，对t-t0调用；不强制特征值为实。'])
+add('KeplerEnergy','1.5.2',29,[115],r'''Example 1.7 The Kepler problem describes the motion of a body in the plane moving under gravitational force exerted by a second, fixed body (located at the origin); it has the energy $E(x,y,\dot x,\dot y)=\dot x^2/2+\dot y^2/2-1/\sqrt{x^2+y^2}$.''',
+    '''def planarKeplerEnergy (x y v w : ℝ) : ℝ :=
+  v^2/2 + w^2/2 - 1/Real.sqrt (x^2+y^2)''',context=['x²+y²>0非碰撞域；单位质量和引力系数。'])
+bridge('KeplerConservedEnergy','1.5.2',29,[116],'''The two conserved quantities, energy and angular momentum, mean that the Kepler problem is an integrable system.''','MolecularDynamics/Chapter01/Kepler.lean','kepler_energy_const_on_Ioo',extra=['真实机械轨迹、非碰撞开放时间区间；n=2对应平面。'],context=['另一守恒量独立列KeplerAngularMomentum；可积重建列KeplerFullSolution。'])
+bridge('KeplerAngularMomentum','1.5.2',29,[117],r'''however, due to the fact that the potential energy is rotationally invariant (dependent only on the distance of the moving particle from the origin), the angular momentum of the system is conserved.''','MolecularDynamics/Chapter01/Kepler.lean','kepler_planarAngularMomentum_const_on_Ioo',context=[r'$l_z=x\dot y-y\dot x$，p.29同页；非碰撞真轨迹。'])
+stated('KeplerMomentum','1.5.2',29,[201],r'''Note that a consequence of fixing one of the bodies in the Kepler problem is that the two components of the total momentum vector, i.e. $(m\dot x,m\dot y)$, are obviously no longer conserved;''','keplerMomentumNotConserved_statement',extra=['q≠0；单位质量。'],missing='非零向量被非零径向系数缩放，计划短证明。')
+add('PolarCoordinates','1.5.2',29,[118],r'''In polar coordinates $(x,y)=(r\cos\theta,r\sin\theta)$, the Lagrangian $L$ for the Kepler problem is''',
+    '''def polarCoordinates (r θ : ℝ) : Position 2 := WithLp.toLp 2 ![r*Real.cos θ,r*Real.sin θ]''',context=['r>0，角实数局部提升；0处排除。'])
+bridge('KeplerPolarLagrangian','1.5.2',29,[119],r'''\[L=K-U=\frac12(\dot r\cos\theta-r\dot\theta\sin\theta)^2+\frac12(\dot r\sin\theta+r\dot\theta\cos\theta)^2+\frac1r=\frac{\dot r^2}2+\frac{r^2\dot\theta^2}2+\frac1r.\]''','MolecularDynamics/Chapter01/PolarCoordinates.lean','keplerPolarLagrangian_identity',context=['v=r′、ω=θ′；公式为代数恒等式，物理域r>0。'])
+bridge('KeplerPolarODE','1.5.2',29,[120],r'''Working these out directly, one gets
+\[\ddot r=-\frac1{r^2}+r\dot\theta^2,\qquad0=\frac{\mathrm d}{\mathrm dt}(r^2\dot\theta).\]''','MolecularDynamics/Chapter01/KeplerPolarDynamics.lean','keplerPolar_eulerLagrange_iff',context=['IsKeplerPolarEulerLagrangeOn包含真实一阶/二阶导数及r≠0，展开定义核对。'])
+bridge('PolarAngularIdentity','1.5.2',29,[121],r'''Expressed in polar coordinates this is
+\[l_z=(r\cos\theta)(\dot r\sin\theta+r\dot\theta\cos\theta)-(r\sin\theta)(\dot r\cos\theta-r\dot\theta\sin\theta)
+=r^2\dot\theta(\cos^2\theta+\sin^2\theta)=r^2\dot\theta,\]''','MolecularDynamics/Chapter01/PolarCoordinates.lean','polarAngularMomentum_identity',context=['保留三角恒等式计算中的真实速度对应，代数定理不需r>0。'])
+bridge('KeplerRadialReduction','1.5.2',29,[122],r'''Taking this quantity as fixed, we may write the remaining equation as $\ddot r=-1/r^2+l_z^2/r^3$.''','MolecularDynamics/Chapter01/KeplerPolarDynamics.lean','keplerPolar_radial_reduction',extra=['r非零、角动量l固定，既有极坐标Euler–Lagrange真实解；角动量常性先前已证。'])
+add('KeplerRadialEnergy','1.5.2',30,[123],r'''system with energy
+\[\widehat E(r,\dot r)=\frac{\dot r^2}2-\frac1r+\frac{l_z^2}{2r^2}.\]''',
+    '''def radialKeplerEnergy (ℓ r v : ℝ) : ℝ := v^2/2-1/r+ℓ^2/(2*r^2)''',context=['r>0；ℓ固定z角动量；原句跨p.29–30，system指径向单自由度系统。'])
+add('KeplerFullSolution','1.5.2',30,[124,125,126],r'''From our previous work, we know that this system (a single degree of freedom system) can be solved for $r$ as a function of $t$ and the initial conditions. Once $r=r(t)$ is known, we may obtain $\theta$ by integration:
+\[\theta=\theta(0)+\int_0^t\frac{l_z}{r^2(s)}\,\mathrm ds.\]
+The example shows that the full solution of the Kepler problem can be worked out given the initial conditions, as long as we are happy to express the solution in terms of antiderivatives of simple functions (and their inverses).''',
+    '''theorem kepler_full_solution (a b : ℝ) (z : ℝ → PhaseSpace 2)
+    (h0 : 0 ∈ Ioo a b)
+    (hz : IsMechanicalSolutionOn (fun _ => (1 : ℝ)) keplerForce
+      {q : Position 2 | q ≠ 0} (Ioo a b) z) :
+    ∃ ℓ θ₀ : ℝ, ∃ r v θ : ℝ → ℝ,
+      (∀ t ∈ Ioo a b, 0 < r t ∧ HasDerivAt r (v t) t ∧
+        HasDerivAt v (-1/(r t)^2+ℓ^2/(r t)^3) t ∧
+        θ t = θ₀ + ∫ s in (0 : ℝ)..t, ℓ/(r s)^2 ∧
+        (z t).1 = polarCoordinates (r t) (θ t)) ∧
+      (∀ t₀ ∈ Ioo a b, ScalarPotentialLocalDescription
+        (fun x => -1/x + ℓ^2/(2*x^2)) (fun t => (r t,v t)) a b t₀) ∧
+      z 0 = ((polarCoordinates (r 0) θ₀),
+        WithLp.toLp 2 ![v 0*Real.cos θ₀-ℓ/r 0*Real.sin θ₀,
+          v 0*Real.sin θ₀+ℓ/r 0*Real.cos θ₀]) := by
+  sorry''',kind='unnumbered_claim',extra=['完整非碰撞存在区间含0；原文不保证径向碰撞时仍有全局解；角θ为区间上的连续实提升。'],missing='全存在区间极坐标角提升、穿越全部转向点的quadrature图拼接；现有库只有固定初值局部重建。')
+add('ActionAngleCoordinates','1.5.2',30,[127,202],r'''Define new variables
+\[x=\sqrt{2I/\Omega}\cos\theta,\qquad v=\sqrt{2I\Omega}\sin\theta.\]''',
+    '''def oscillatorActionAngle (Ω I θ : ℝ) : ℝ × ℝ :=
+  (Real.sqrt (2*I/Ω)*Real.cos θ, Real.sqrt (2*I*Ω)*Real.sin θ)''',context=['Ω>0，I>0非退化action；(I,θ)是新坐标对，不另拆单符号。'])
+bridge('ActionEnergy','1.5.2',30,[128],r'''In these variables, the energy is $E=I\Omega$.''','MolecularDynamics/Chapter01/HarmonicActionAngle.lean','harmonicAction_energy',extra=['Ω>0，I≥0；harmonicActionVelocity_formula保证v的sqrt(2IΩ)形式一致。'])
+bridge('ActionODE','1.5.2',30,[129],r'''Introducing these formulas into the equations of motion and simplifying leads to $\dot I=0$, $\dot\theta=-\Omega$.''','MolecularDynamics/Chapter01/HarmonicActionAngle.lean','harmonicAction_ode_iff',extra=['Ω,I正；真实I′、θ′，非退化局部角坐标。'])
+bridge('ActionSolution','1.5.2',30,[130],r'''The first equation expresses the constancy of energy; the second describes a rotation with frequency $\Omega$, i.e., the solution is $\theta(t)=\theta(0)-\Omega t$.''','MolecularDynamics/Chapter01/HarmonicActionAngle.lean','harmonicAction_time_formula',extra=['连通开放时间窗含起始s；正action及Ω，真实坐标解。'],context=['取s=0即原文公式；签名同时给I(t)=I(s)。'])
+add('HarmonicTorus','1.5.2',30,[131],r'''The same change of variables $(x_j,v_j)\to(I_j,\theta_j)$, applied to each oscillator, would yield equations of motion $\dot I_j=0$, $\dot\theta_j=-\Omega_j$. This describes a point winding about a $d$-dimensional torus defined by angular rotation frequencies $\Omega_j$ and radii $|I_j|$ (Fig. 1.14).''',
+    '''def oscillatorTorusMotion {d : ℕ} (I Ω : Fin d → ℝ) (θ₀ : HarmonicTorus d)
+    (t : ℝ) : (Fin d → ℝ) × HarmonicTorus d := (I, harmonicTorusRotation Ω t θ₀)''',context=['HarmonicTorus d = Fin d→Real.Angle；角模2π；I为固定action，半径的几何映射不新造定理。'])
+bridge('TorusPeriod','1.5.2',30,[132],'''Depending on the ratio of frequencies such motions may be periodic or quasi-periodic;''','MolecularDynamics/Chapter01/HarmonicTorus.lean','harmonicTorusRotation_periodic_iff_integer',extra=['给定周期T；每频率×T为整数圈是精确共振条件；原句没有单独定义commensurate。'])
+stated('TorusDense','1.5.2',30,[133],'''in the latter case the paths do not “close up” but instead we see the curve gradually fills in the surface of the torus.''','torusDense_statement',extra=['高维全整数关系无共振；仅成对频率比无理不足，此为原文quasi-periodic intended meaning的数学资格。'],missing='一般d维Kronecker稠密轨道理论；正式库仅二维无理比。',verdict='NEEDS_HUMAN',issue='原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。')
+add('LocalActionAngleReduction','1.5.2',30,[134],'''More generally, one finds occasional examples of nonlinear systems which possess as many independent first integrals as degrees of freedom (satisfying a certain “involution” condition); such systems may be reduced via a coordinate transformation to action-angle variables, i.e. they exhibit tori motion.''',
+    '''theorem local_action_angle_reduction (d : ℕ) (I : Fin d → PhaseSpace d → ℝ)
+    (S : Set (PhaseSpace d)) (hS : IsOpen S)
+    (hI : ∀ i, ContDiff ℝ ∞ (I i))
+    (hcomm : ∀ i j z, poissonBracket (I i) (I j) z = 0)
+    (hregular : ∀ z ∈ S, Function.Surjective (fun v : PhaseSpace d => fun i => fderiv ℝ (I i) z v)) :
+    localActionAngle I S := by
+  sorry''',kind='unnumbered_claim',extra=['真实光滑Hamiltonian第一积分，正则满秩为independent；局部开集，原文未给紧连通正则层条件。'],issue='local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。',verdict='NEEDS_HUMAN',missing='一般Liouville–Arnold/Carathéodory–Jacobi–Lie理论；全局环面子句需另行裁定补齐。')
+add('Equilibrium','1.5.3',31,[135],r'''An equilibrium point of such system is a solution of $f(\boldsymbol z)=0$.''',definition('equilibriumDefinition'))
+bridge('ConstantEquilibrium','1.5.3',31,[136],r'''An equilibrium point $\boldsymbol z^*$ corresponds to an equilibrium solution, since if we define a constant function $\boldsymbol z(t)=\boldsymbol z^*$ then we have $\dot{\boldsymbol z}(t)=f(\boldsymbol z^*)=0$.''','MolecularDynamics/Chapter01/EquilibriumLinearization.lean','equilibrium_constant_ode_iff')
+bridge('EquilibriumLinearization','1.5.3',31,[137,138],r'''We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\boldsymbol z^*$ and make use of the fact that $f(\boldsymbol z)\approx f(\boldsymbol z^*)+f'(\boldsymbol z^*)(\boldsymbol z-\boldsymbol z^*)$ for $\|\boldsymbol z-\boldsymbol z^*\|$ sufficiently small. Since $f(\boldsymbol z^*)=0$ we have, defining $\delta\boldsymbol z:=\boldsymbol z-\boldsymbol z^*$,
+\[\frac{\mathrm d\delta\boldsymbol z}{\mathrm dt}=\boldsymbol A\delta\boldsymbol z,\qquad\boldsymbol A=f'(\boldsymbol z^*).\]
+The symbol $\approx$ is not very precise.''','MolecularDynamics/Chapter01/EquilibriumLinearization.lean','equilibrium_linearized_IVP',context=['小o余项将≈精确定义为一阶近似；δ的线性ODE是近似系统，不声称非线性扰动精确满足Aδ。'])
+add('Hyperbolic','1.5.3','31–32',[139],r'''In case the equilibrium point is hyperbolic, meaning that the real parts of the eigenvalues of $\boldsymbol A=f'(\boldsymbol z^*)$ are nonzero,''',definition('hyperbolic'),context=['实算子用复特征向量的实虚部编码；所有非零特征对对应实部a≠0。'])
+stated('HartmanGrobmanLiteral','1.5.3','31–32',[140],r'''then one can infer that the solutions of the nonlinear and linear systems are in fact topologically conjugate: if $\boldsymbol z$ is the solution of the nonlinear system and $\delta\boldsymbol z$ is the solution of the linear system, then there is a smooth, invertible map $\boldsymbol\Phi$ of $\mathbb R^m$ defined in a neighborhood of the origin such that
+\[\boldsymbol z(t)=\boldsymbol z^*+\boldsymbol\Phi(\delta\boldsymbol z(t)).\]
+This is referred to as the Hartman-Grobman theorem (for more discussion see [177], where this result is referred to as the “Linearization Theorem”; a proof may be found in [362]).''','hartmanGrobmanLiteral_statement',extra=['C1全域模型及真实全局流为局部应用的技术资格；共轭在轨迹保持局部域时断言。'],issue='原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。',verdict='NEEDS_HUMAN',missing='一般Hartman–Grobman理论；光滑共轭字面断言需导师勘误。')
+add('LyapunovStability','1.5.3',32,[141],r'''Let $\boldsymbol z^*$ be an equilibrium point. We say that $\boldsymbol z^*$ is stable (“in the sense of Lyapunov”) if, for all $\epsilon$, there exists $\delta$ such that, for all $\boldsymbol z_0$ such that $\|\boldsymbol z_0-\boldsymbol z^*\|<\delta$,
+\[\sup_{t\geq0}\|\mathcal F_t(\boldsymbol z_0)-\boldsymbol z^*\|<\epsilon.\]''',
+    '''def lyapunovStable {n : ℕ} (F : ℝ → Position n → Position n) (z : Position n) : Prop :=
+  ∀ ε > 0, ∃ δ > 0, ∀ x, ‖x-z‖ < δ →
+    BddAbove (range (fun t : Set.Ici (0 : ℝ) => ‖F t x-z‖)) ∧
+    sSup (range (fun t : Set.Ici (0 : ℝ) => ‖F t x-z‖)) < ε''',extra=['ε,δ正按Lyapunov容差惯例；有界性避免Lean实数总sup的未界伪结论。'])
+stated('HyperbolicStabilityTransfer','1.5.3',32,[142],r'''The Hartman-Grobman theorem clearly implies that the stability of a given hyperbolic equilibrium point $\boldsymbol z^*$ of a nonlinear system can be inferred from the stability of the origin for the linearization of the system around $\boldsymbol z^*$.''','hyperbolicStabilityTransfer_statement',extra=['C1及真实全局流；stable谓词的统一界<ε与原文严格sup形式等价。'],missing='局部拓扑共轭与稳定性转移理论；不能用含疑误smooth共轭占位传递证明。')
+add('HamiltonEquilibrium','1.5.3',32,[143],r'''Observe that an equilibrium point $\boldsymbol z^*=(\boldsymbol q^*,\boldsymbol p^*)$ of a Hamiltonian system in “kinetic plus potential” form
+\[H(\boldsymbol q,\boldsymbol p)=\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p/2+U(\boldsymbol q)\]
+will always have $\boldsymbol p^*=0$ and $\nabla U(\boldsymbol q^*)=0$.''',
+    '''theorem hamilton_equilibrium {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (q p : Position n) (hM : M.PosDef)
+    (hU : DifferentiableAt ℝ U q)
+    (heq : gradient (fun v => variableMassHamiltonian (fun _ => M) U q v) p = 0 ∧
+      gradient (fun x => variableMassHamiltonian (fun _ => M) U x p) q = 0) :
+    p = 0 ∧ gradient U q = 0 := by
+  sorry''',kind='unnumbered_claim',extra=['一般常M正定、U可微；heq为原文Hamilton平衡的两梯度定义。'],missing='一般矩阵速度梯度和逆单射；已有对角mechanicalEquilibrium_iff不能取代一般签名。')
+add('StrongLocalMinimum','1.5.3',32,[144],r'''We say that $\boldsymbol q^*$ is a strong local minimum of the potential if there exists $\epsilon>0$ such that
+\[0<\|\boldsymbol q-\boldsymbol q^*\|<\epsilon\Rightarrow U(\boldsymbol q)>U(\boldsymbol q^*).\]''',
+    '''def strongLocalMinimum {n : ℕ} (U : PotentialEnergy n) (qstar : Position n) : Prop :=
+  ∃ ε > 0, ∀ q, 0 < ‖q-qstar‖ → ‖q-qstar‖ < ε → U qstar < U q''')
+add('LinearizedHamiltonian','1.5.3',32,[146],r'''If the potential is $C^2$, then the linearized version is of the same “kinetic plus potential” form with Hamiltonian
+\[\widetilde H=\frac{\delta\boldsymbol p^T\boldsymbol M^{-1}\delta\boldsymbol p}2+\frac{\delta\boldsymbol q^T U''(\boldsymbol q^*)\delta\boldsymbol q}2.\]''',
+    '''def linearizedHamiltonian {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (qstar : Position n) (δq δp : Position n) : ℝ :=
+  inner ℝ δp (matrixAction M⁻¹ δp)/2 + inner ℝ δq (fderiv ℝ (gradient U) qstar δq)/2''',context=['C2使fderiv gradient为真实Hessian；定义只登记该二次Hamiltonian形式。'])
+stated('PositiveHessianQuadratic','1.5.3',33,[147],r'''A condition for this system to have a strong local minimum at $\delta\boldsymbol p=0$, $\delta\boldsymbol q=0$ is that the Hessian matrix $U''(\boldsymbol q^*)$ be positive definite.''','positiveHessianQuadraticMinimum_statement',extra=['M正定，K=U″对称正定；一般矩阵。'],missing='一般SPD矩阵逆正定、非零相空间二次型严格正；计划桥接Mathlib矩阵PosDef理论。')
+stated('PositiveHessianMinimum','1.5.3',33,[148],r'''In case the eigenvalues of $U''(\boldsymbol q^*)$ are all distinct and positive, then the strong local minimum property will also follow for $\boldsymbol q^*$ in relation to the original potential.''','positiveHessianMinimum_statement',extra=['原文q*是平衡点，∇U=0；U C2；当前正定二次型签名未保留distinct eigenvalue原文条件。'],verdict='NEEDS_HUMAN',missing='需补原文distinct谱条件及正定Hessian局部极小的Taylor余项/二阶判别定理。')
+
 for r in RECORDS:
     if r['source_id']=='MD-1.4-HamiltonFixedMass':
         r['code']='''theorem hamilton_fixed_mass {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
@@ -372,6 +468,43 @@ for r in RECORDS:
         r['local_explanation']='已补完整x,ξ,η联合光滑参数化、局部唯一根、真实解与积分逆等式，未把固定初值局部定理当全条证明。'
         r['extra_assumptions']=['U光滑使原文smooth solutions和联合隐函数成立；η≠0保留原文非转向前提。']
         r['missing']='参数依赖的C∞隐函数与C∞ODE局部流、带参数quadrature逆理论；已有固定初值C1桥接不足。'
+
+for r in RECORDS:
+    if r['source_id']=='MD-1.5.1-FlowEnergy':
+        r['code']='''theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
+    (F : ℝ → PhaseSpace n → PhaseSpace n) (hH : Differentiable ℝ H)
+    (hF : ∀ ξ, F 0 ξ = ξ ∧ ∀ t, HasDerivAt (fun s => F s ξ) (symplecticGradient H (F t ξ)) t) :
+    ∀ ξ t, H (F t ξ) = H ξ := by
+  sorry'''
+        r['lean_decl']='MD.Ch01.flow_energy';r['local_verdict']='PASS'
+        r['extra_assumptions']=['H可微及F为真实全局Hamilton流（初值和ODE，不含守恒结论）。']
+        r['local_explanation']='已改一般H和一般Hamilton流，保留所有初值/时间守恒，未把机械可分离特例当通用证明。'
+        r['missing']='一般H的乘积空间Frechet微分分解与Hamilton偏梯度相消；优先短证明。'
+    if r['source_id']=='MD-1.5.1-BasisCoefficients':
+        r['code']='''theorem basis_coefficients {m : ℕ} {𝕜 : Type*} [RCLike 𝕜]
+    (b : Module.Basis (Fin m) 𝕜 (EuclideanSpace 𝕜 (Fin m)))
+    (z : EuclideanSpace 𝕜 (Fin m)) :
+    IsUnit (basisColumnMatrix b) ∧ (basisColumnMatrix b).mulVec (b.repr z) = WithLp.ofLp z ∧
+    (basisColumnMatrix b)⁻¹.mulVec (WithLp.ofLp z) = b.repr z := by
+  exact ⟨basisColumnMatrix_isUnit b, basisColumnMatrix_mulVec_repr b z,
+    basisColumnMatrix_inverse_coefficients b z⟩'''
+        r['lean_decl']='MD.Ch01.basis_coefficients'
+    if r['source_id']=='MD-1.5.2-LocalActionAngleReduction':
+        r['code']='theorem local_action_angle_reduction :\n  '+prop('liouvilleArnold_statement')+' := by\n  sorry'
+        r['extra_assumptions']=['全部积分C∞且Poisson括号两两零；正则共同能量层紧、连通；满秩=独立。']
+        r['local_explanation']='完整保留局部坐标规约及全局环面运动，额外紧/连通资格逐条登记；原文未说这些限制，需导师裁定。'
+    if r['source_id']=='MD-1.5.3-PositiveHessianMinimum':
+        r['code']='''theorem positive_hessian_minimum {n : ℕ} (U : PotentialEnergy n) (q : Position n)
+    (hU : ContDiff ℝ 2 U) (hq : gradient U q = 0)
+    (B : Module.Basis (Fin n) ℝ (Position n)) (λ : Fin n → ℝ)
+    (hdistinct : Function.Injective λ) (hpos : ∀ i, 0 < λ i)
+    (heig : ∀ i, fderiv ℝ (gradient U) q (B i) = λ i • B i) :
+    IsStrictPotentialMin U q := by
+  sorry'''
+        r['lean_decl']='MD.Ch01.positive_hessian_minimum';r['local_verdict']='PASS'
+        r['local_explanation']='保留distinct及positive全部谱前提、平衡点与C2背景；不把distinct删掉。实Hessian对称确保可取实特征基。'
+        r['extra_assumptions']=['C2与平衡∇U=0来自同节；显式特征基表达全部distinct positive eigenvalues。']
+        r['missing']='Hessian谱正定转换与C2二阶Taylor严格极小判别理论。'
 
 # Complete easily overlooked clauses before admitting a local PASS.
 for r in RECORDS:

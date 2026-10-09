@@ -1,7 +1,7 @@
 # 当前可操作状态
 
 当前任务：第1章全章五步流程本地部分（见 blueprint/ch01/PROGRESS.md）。网站任务包按批合并，等用户提交；完成后停止等待用户。
-下一步：处理§1.4一般质量Hamilton与Legendre陈述，再推进§1.5全部子节。
+下一步：检查§1.5全部子节并优先桥接谱流、Kepler、action-angle和线性化。
 阶段：第0步入口+BATCH01；网站返回0。
 基线：63fa09227e1d898e0cacae3c33241d3d6ecba816；分支chapter01-kinetic-energy-nonneg。正式库与heartbeat不改，其他任务改动保留。
 

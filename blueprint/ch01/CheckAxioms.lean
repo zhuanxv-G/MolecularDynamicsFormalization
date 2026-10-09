@@ -39,3 +39,8 @@ import Blueprint.Ch01
 #print axioms MD.Ch01.fixedMassLagrangian
 #print axioms MD.Ch01.generalized_coordinates
 #print axioms MD.Ch01.generalizedmassregular
+#print axioms MD.Ch01.legendreTransform
+#print axioms MD.Ch01.hamiltonEquations
+#print axioms MD.Ch01.hamilton_fixed_mass
+#print axioms MD.Ch01.hamiltonlagrangeequivalence
+#print axioms MD.Ch01.finiteEnergyPhaseDomain

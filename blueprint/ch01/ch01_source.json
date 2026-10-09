@@ -1011,5 +1011,122 @@
     "old_ids": [
       "CH01-078"
     ]
+  },
+  {
+    "source_id": "MD-1.4-ConvexLegendre",
+    "kind": "definition",
+    "label": null,
+    "section": "1.4",
+    "printed_page": "24",
+    "pdf_page": "47",
+    "statement_latex": "Abstractly, a Legendre transformation of a given convex function $g=g(\\boldsymbol\\xi):\\mathbb R^m\\to\\mathbb R$ is a new function $\\widetilde g=\\widetilde g(\\boldsymbol\\eta):\\mathbb R^m\\to\\mathbb R$ defined by\n\\[\\widetilde g(\\boldsymbol\\eta)=\\sup_{\\boldsymbol\\xi}(\\boldsymbol\\eta^T\\boldsymbol\\xi-g(\\boldsymbol\\xi)),\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。"
+      }
+    ],
+    "lean_decl": "MD.Ch01.legendreTransform",
+    "extra_assumptions": [
+      "值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-079"
+    ]
+  },
+  {
+    "source_id": "MD-1.4-HamiltonEquations",
+    "kind": "definition",
+    "label": null,
+    "section": "1.4",
+    "printed_page": "24",
+    "pdf_page": "47",
+    "statement_latex": "The equations of motion can be written\n\\[\\dot{\\boldsymbol q}=\\frac{\\partial H}{\\partial\\boldsymbol p},\\qquad\\dot{\\boldsymbol p}=-\\frac{\\partial H}{\\partial\\boldsymbol q}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [
+      "速度与动量导数均是真导数；H可微的模型背景在使用时另给资格。"
+    ],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hamiltonEquations",
+    "extra_assumptions": [],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-084"
+    ]
+  },
+  {
+    "source_id": "MD-1.4-HamiltonFixedMass",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.4",
+    "printed_page": "24",
+    "pdf_page": "47",
+    "statement_latex": "For constant $\\boldsymbol M$ we obtain the dynamical equations,\n\\[\\dot{\\boldsymbol q}=\\boldsymbol M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol F=-\\partial U/\\partial\\boldsymbol q.\\]",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hamilton_fixed_mass",
+    "extra_assumptions": [
+      "常质量矩阵M对称正定，来自机械模型满秩坐标变换；U真实可微。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-085"
+    ]
+  },
+  {
+    "source_id": "MD-1.4-HamiltonLagrangeEquivalence",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "1.4",
+    "printed_page": "25",
+    "pdf_page": "48",
+    "statement_latex": "More generally, for molecular models, the Hamiltonian and Lagrangian formulations are interchangeable, but the use of the Hamiltonian form is preferred for allowing simplified description of the geometric character of the solutions of the system as we discuss in Chaps. 2–4.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.hamiltonlagrangeequivalence",
+    "extra_assumptions": [
+      "一般配置相关M C2、U C2、M逐点正定；轨迹q′=v真实且时间域开放。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-086"
+    ]
+  },
+  {
+    "source_id": "MD-1.4-PhaseSpace",
+    "kind": "definition",
+    "label": null,
+    "section": "1.4",
+    "printed_page": "25",
+    "pdf_page": "48",
+    "statement_latex": "The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $\\mathbb R^3$ is described by coordinates and positions, i.e., by a point in $\\mathbb R^{6N}$.",
+    "proof_latex": null,
+    "proof_note": "原书无独立完整证明。",
+    "context_notation": [],
+    "review_status": "DRAFT",
+    "issues": [],
+    "lean_decl": "MD.Ch01.finiteEnergyPhaseDomain",
+    "extra_assumptions": [
+      "采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。"
+    ],
+    "repair_log": [],
+    "old_ids": [
+      "CH01-087",
+      "CH01-088"
+    ]
   }
 ]

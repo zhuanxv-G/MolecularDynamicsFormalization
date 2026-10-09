@@ -1,3 +1,4 @@
+import MolecularDynamics.Chapter01.Hamiltonian
 import MolecularDynamics.Chapter01.GeneralizedCoordinates
 import MolecularDynamics.Chapter01.ScalarLocalIVP
 import MolecularDynamics.Chapter01.HarmonicOscillator
@@ -25,7 +26,7 @@ set_option autoImplicit false
 namespace MD.Ch01
 
 open MolecularDynamics.Chapter01Review Filter
-open scoped BigOperators Topology
+open scoped BigOperators Topology Matrix.Norms.L2Operator
 
 local instance (n : ℕ) : ContinuousSMul ℝ (Position n) := by
   have : IsBoundedSMul ℝ (Position n) := NormedSpace.toIsBoundedSMul
@@ -553,5 +554,60 @@ theorem generalizedmassregular :
   exact @MolecularDynamics.generalizedMassMatrix_isUnit
 
 /- END FULL SECTION 1.3 -/
+
+/- BEGIN FULL SECTION 1.4 -/
+
+/-- source_id: MD-1.4-ConvexLegendre · definition · printed p.24 / PDF p.47
+[EXTRA] 值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。
+[ERRATUM?] 原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。
+-/
+def legendreTransform {n : ℕ} (g : Position n → ℝ) (η : Position n) : EReal :=
+  ⨆ θ : Position n, ((inner ℝ η θ - g θ : ℝ) : EReal)
+
+/-- source_id: MD-1.4-HamiltonEquations · definition · printed p.24 / PDF p.47
+
+
+-/
+def hamiltonEquations {n : ℕ} (H : PhaseSpace n → ℝ) (q p : ℝ → Position n) : Prop :=
+  ∀ t, HasDerivAt q (gradient (fun v => H (q t,v)) (p t)) t ∧
+    HasDerivAt p (-gradient (fun x => H (x,p t)) (q t)) t
+
+/-- source_id: MD-1.4-HamiltonFixedMass · unnumbered_claim · printed p.24 / PDF p.47
+[EXTRA] 常质量矩阵M对称正定，来自机械模型满秩坐标变换；U真实可微。
+
+-/
+theorem hamilton_fixed_mass {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (q p : Position n) (hM : M.PosDef)
+    (hU : DifferentiableAt ℝ U q) :
+    HasGradientAt (fun v => variableMassHamiltonian (fun _ => M) U q v)
+      (matrixAction M⁻¹ p) p ∧
+    HasGradientAt (fun x => variableMassHamiltonian (fun _ => M) U x p)
+      (gradient U q) q := by
+  sorry
+
+/-- source_id: MD-1.4-HamiltonLagrangeEquivalence · unnumbered_claim · printed p.25 / PDF p.48
+[EXTRA] 一般配置相关M C2、U C2、M逐点正定；轨迹q′=v真实且时间域开放。
+
+-/
+theorem hamiltonlagrangeequivalence :
+  ∀ (n : ℕ) (M : Position n → Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (q v : ℝ → Position n) (I : Set ℝ),
+    IsOpen I → ContDiff ℝ 2 M → ContDiff ℝ 2 U →
+    (∀ x, (M x).PosDef) → (∀ t ∈ I, HasDerivAt q (v t) t) →
+    ((∀ t ∈ I, HasDerivAt (fun s => gradient (quadraticL M U (q s)) (v s))
+      (gradient (fun x => quadraticL M U x (v t)) (q t)) t) ↔
+    ∀ t ∈ I, let p := fun s => (M (q s)).toEuclideanLin (v s)
+      HasDerivAt q (gradient (quadraticH M U (q t)) (p t)) t ∧
+      HasDerivAt p (-gradient (fun x => quadraticH M U x (p t)) (q t)) t) := by
+  sorry
+
+/-- source_id: MD-1.4-PhaseSpace · definition · printed p.25 / PDF p.48
+[EXTRA] 采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。
+
+-/
+def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseSpace n) :=
+  {z | H z ≠ ⊤ ∧ H z ≠ ⊥}
+
+/- END FULL SECTION 1.4 -/
 
 end MD.Ch01

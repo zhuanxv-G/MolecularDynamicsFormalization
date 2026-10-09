@@ -1,0 +1,99 @@
+ℹ [8988/9225] Replayed MolecularDynamics.Chapter06.LangevinCausalFlow
+info: MolecularDynamics/Chapter06/LangevinCausalFlow.lean:179:2: Try this:
+  [apply] abel_nf
+ℹ [9078/9225] Replayed MolecularDynamics.Chapter06.LangevinMomentumVariation
+info: MolecularDynamics/Chapter06/LangevinMomentumVariation.lean:76:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9098/9225] Replayed MolecularDynamics.Chapter06.LangevinMomentumFirstMean
+info: MolecularDynamics/Chapter06/LangevinMomentumFirstMean.lean:53:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9101/9225] Replayed MolecularDynamics.Chapter06.LangevinHamiltonianExpectedDrift
+info: MolecularDynamics/Chapter06/LangevinHamiltonianExpectedDrift.lean:410:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: MolecularDynamics/Chapter06/LangevinHamiltonianExpectedDrift.lean:425:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9106/9225] Replayed MolecularDynamics.Chapter06.LangevinHamiltonianPowerExpectedDrift
+info: MolecularDynamics/Chapter06/LangevinHamiltonianPowerExpectedDrift.lean:202:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: MolecularDynamics/Chapter06/LangevinHamiltonianPowerExpectedDrift.lean:223:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9204/9225] Replayed MolecularDynamics.Chapter01.TorusDensity
+info: MolecularDynamics/Chapter01/TorusDensity.lean:25:21: Try this:
+  [apply] abel_nf
+info: MolecularDynamics/Chapter01/TorusDensity.lean:68:21: Try this:
+  [apply] abel_nf
+⚠ [9224/9225] Built Blueprint.Ch01 (20s)
+warning: Blueprint/Ch01.lean:158:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:261:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:295:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:430:5: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:431:5: Variable name `hFsum` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hFsum
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:434:5: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:434:24: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:461:17: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:480:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:508:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:551:36: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:552:5: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:579:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:592:8: declaration uses `sorry`
+Build completed successfully (9225 jobs).

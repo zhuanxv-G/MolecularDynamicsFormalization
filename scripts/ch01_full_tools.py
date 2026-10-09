@@ -13,7 +13,7 @@ def declarations():
         raw=re.split(r'/\- (?:BEGIN|END) FULL SECTION',raw)[0].strip()
         decl=re.search(r'\b(theorem|def)\s+(\w+)',raw)
         if not decl:raise ValueError(m.group(1))
-        code=raw if decl.group(1)=='def' else raw.split(':=',1)[0].rstrip()
+        code=raw if decl.group(1)=='def' else re.split(r'\s:=\s*by\b',raw,maxsplit=1)[0].rstrip()
         name='MD.Ch01.'+decl.group(2)
         out[m.group(1)]={'name':name,'statement':code,'block':raw,
             'line':text[:m.end()].count('\n')+raw[:decl.start()].count('\n')+2,
