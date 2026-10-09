@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "started_at": "2026-10-09T18:35:00.4980243+08:00",
-  "finished_at": null,
+  "finished_at": "2026-10-09T18:45:34.1297168+08:00",
   "project_root": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
   "branch": "chapter01-kinetic-energy-nonneg",
   "head": "081bb6191f263eb58c9ad54162037263c35bae4a",
@@ -1460,10 +1460,73 @@
       "exit_code": 0,
       "raw_log": "mathlib_status.log",
       "raw_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lake_build",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "build"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "lake_build.log",
+      "raw_log_sha256": "d048d7e49eee268bd2412165cec7096569a35a5929e98c7680ead8ddd14d8dfd"
+    },
+    {
+      "name": "scratch",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "Scratch.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "scratch.log",
+      "raw_log_sha256": "313d7d8a4c867ae94ec6c76233c3d92188bac4d996222614efc0510a71376c4f"
+    },
+    {
+      "name": "axiom_dependencies",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "scripts/CheckAxioms.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "axiom_dependencies.log",
+      "raw_log_sha256": "4752968d596e6e834b2fbc84d3455c8797eabeaec240b74c6a3624ff0969d5e0"
+    },
+    {
+      "name": "blueprint_fresh_Ch01",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "Blueprint\\Ch01.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "blueprint_fresh_Ch01.log",
+      "raw_log_sha256": "1ba20210a4c8ba399f24e9f55bbfc5c9ce49a64115810613ffc4a5817ef18e8c"
+    },
+    {
+      "name": "blueprint_axiom_dependencies",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\ch01\\CheckAxioms.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "blueprint_axiom_dependencies.log",
+      "raw_log_sha256": "d28d7f3730c91c05cae081c1dd589d7a69b8a4faaae0eec656441c13a5d7a2cf"
     }
   ],
-  "machine_check_status": "running",
-  "exit_code": null,
+  "machine_check_status": "passed",
+  "exit_code": 0,
   "responsible_semantic_review": "pending",
   "failed_phase": null,
   "error": null
