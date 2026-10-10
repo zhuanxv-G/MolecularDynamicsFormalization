@@ -1,0 +1,31 @@
+blueprint\ch03\validation\short_search\StrangCubic-route1.lean:16:13: error: Invalid simp theorem: Expected a proposition, but found
+  (G : Type u_1) → [inst : Group G] → Subgroup G
+blueprint\ch03\validation\short_search\StrangCubic-route1.lean:18:2: error: ring failed, ring expressions not equal
+R : Type
+inst✝¹ : Ring R
+inst✝ : Algebra ℝ R
+A B : R
+⊢ 3 / 16 = 0
+blueprint\ch03\validation\short_search\StrangCubic-route1.lean:16:43: warning: This simp argument is unused:
+  mul_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [commutator, mul_add, add_mul, sub_mul, smul_mul_assoc, mul_smul_comm, smul_add, smul_sub,
+    smul_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch03\validation\short_search\StrangCubic-route1.lean:16:52: warning: This simp argument is unused:
+  sub_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [commutator, mul_add, add_mul, mul_sub, smul_mul_assoc, mul_smul_comm, smul_add, smul_sub,
+    smul_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch03\validation\short_search\StrangCubic-route1.lean:17:45: warning: This simp argument is unused:
+  smul_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [commutator, mul_add, add_mul, mul_sub, sub_mul, smul_mul_assoc, mul_smul_comm, smul_add, smul_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

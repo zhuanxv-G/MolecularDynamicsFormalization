@@ -1,0 +1,149 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11e",
+  "source_ids": [
+    "MD-3.3.4-ProcessorEnergyPrinted"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 134,
+      "printed_page": 112
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 135,
+      "printed_page": 113
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "31ae5912539586e323e50df35aa3fdf9ab36a0c0d3445747b242b49083e17323",
+  "lean_sha256": "5ea886e0c9adb821098b28ecd8f5a6d1a1509d4827a06fb33017694167aef3a6",
+  "signature_sha256": "2060a6cc9988351db4d5e79381c9143ef065d147505843265e2e16b688c033d3",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "grad",
+      "code_sha256": "522e86de81741a525bcd8720e95f1f0a3f1ba51791c5d13cea4bed7e30a1620e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "grad",
+      "code_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "grad",
+      "code_sha256": "2b02b79e903c41eb476fa11e97dc6ad10bd20c99b33fe437c813ade44b68008e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "hessianAction",
+      "code_sha256": "24225db475e278a994b7613a7a5fc699eb9cb83d9add1ff4a8a62e03281d08ee"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "mechanicalEnergy",
+      "code_sha256": "079c953a9952f55770c6040393e028f1fbddfa00eafad3f1cd6d61f26ea03b25"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "positiveMass",
+      "code_sha256": "b9acc89b85e9b87ac122f258b0bd23cb20efd6ecc4ec0894b39658f630a85d21"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "quadraticKinetic",
+      "code_sha256": "0f8e339d29f2ef435e91de9746aaa1f557b7ccba5e8413ba893e513ace830464"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "shadowTerms",
+      "code_sha256": "e7ccc023b1165dc679aab206b883037a560643bde78c63a2ea5a39bec67d70a2"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "takahashiProcessor",
+      "code_sha256": "2b6d6ed25bd41458eae536c1166cb57eacc1f0981a03724b1d4a262fe8331e01"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "takahashiShadow2",
+      "code_sha256": "11d253418ce896c343b987634b28607548729496c95be45438b2107cd9bb671f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGradient",
+      "code_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    }
+  ],
+  "paste_plus_pdf_bytes": 107589,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7484,
+      "sha256": "65c758c59f9eaa96f157f67b6095aab3a7655388f67bd29686859916c4b090b9"
+    },
+    "BATCH11e_PAGES.pdf": {
+      "bytes": 100105,
+      "sha256": "d8ce4d7a571fcce6d4a064ca2f9b12b5aa267076094819dc84f25706ff068f0f"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

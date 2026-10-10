@@ -1,0 +1,72 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08d",
+  "source_ids": [
+    "MD-3.3.2-VerletModifiedHamiltonian"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 129,
+      "printed_page": 107
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "31ae5912539586e323e50df35aa3fdf9ab36a0c0d3445747b242b49083e17323",
+  "lean_sha256": "5ea886e0c9adb821098b28ecd8f5a6d1a1509d4827a06fb33017694167aef3a6",
+  "signature_sha256": "c690e6c69117d914d690be2de2dbe674aa9da9da57aa5dd578cd445aa3ad078e",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinateMatrix",
+      "code_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookHamiltonianVectorField",
+      "code_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookJ",
+      "code_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "textbookPoissonBracket",
+      "code_sha256": "8266f6e26328af2f7adab2f4687c220f4d9a91cec52c49dc8827ae913a282f63"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "verletModifiedH",
+      "code_sha256": "c690e6c69117d914d690be2de2dbe674aa9da9da57aa5dd578cd445aa3ad078e"
+    }
+  ],
+  "paste_plus_pdf_bytes": 91023,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5767,
+      "sha256": "bb9b93be4495a3b5e832343ec6c1c9cf1dd92c524438c8c512817320864e5dd6"
+    },
+    "BATCH08d_PAGES.pdf": {
+      "bytes": 85256,
+      "sha256": "537db71c81aaf0deec0498ff2ae9670b1cf08c92666bf571e1b62b846d780ac0"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

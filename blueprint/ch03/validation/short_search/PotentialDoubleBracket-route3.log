@@ -1,0 +1,70 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch03\validation\short_search\PotentialDoubleBracket-route3.lean:12:114: error: unsolved goals
+n : ℕ
+m : Fin n → ℝ
+U : Q n → ℝ
+hm : positiveMass m
+hU : ContDiff ℝ 2 U
+z : Z n
+hDU : Differentiable ℝ U
+hgrad : ContDiff ℝ 1 (grad U)
+⊢ ∑ x, (fderiv ℝ U z.1) (Pi.single x 1) ^ 2 * (m x)⁻¹ =
+    ∑ x,
+        (fderiv ℝ (fun x => U (x ∘ Sum.inl)) (Sum.elim z.1 z.2)) (Pi.single (Sum.inl x) 1) *
+          (fderiv ℝ
+              (textbookPoissonBracket (fun x => U (x ∘ Sum.inl)) fun x =>
+                (∑ x_1, x (Sum.inr x_1) ^ 2 * (m x_1)⁻¹) * (1 / 2))
+              (Sum.elim z.1 z.2))
+            (Pi.single (Sum.inr x) 1) -
+      ∑ x,
+        (fderiv ℝ
+              (textbookPoissonBracket (fun x => U (x ∘ Sum.inl)) fun x =>
+                (∑ x_1, x (Sum.inr x_1) ^ 2 * (m x_1)⁻¹) * (1 / 2))
+              (Sum.elim z.1 z.2))
+            (Pi.single (Sum.inl x) 1) *
+          (fderiv ℝ (fun x => U (x ∘ Sum.inl)) (Sum.elim z.1 z.2)) (Pi.single (Sum.inr x) 1)
+blueprint\ch03\validation\short_search\PotentialDoubleBracket-route3.lean:19:55: warning: This simp argument is unused:
+  fderiv_comp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [grad, invMass, unpack, pack, quadraticKinetic, fderiv_fun_sum, fderiv_const_mul, fderiv_fun_mul,
+    Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch03\validation\short_search\PotentialDoubleBracket-route3.lean:20:4: warning: This simp argument is unused:
+  fderiv_fun_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [grad, invMass, unpack, pack, quadraticKinetic, fderiv_comp, fderiv_const_mul, fderiv_fun_mul,
+    Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch03\validation\short_search\PotentialDoubleBracket-route3.lean:20:20: warning: This simp argument is unused:
+  fderiv_const_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [grad, invMass, unpack, pack, quadraticKinetic, fderiv_comp, fderiv_fun_sum, fderiv_fun_mul,
+    Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch03\validation\short_search\PotentialDoubleBracket-route3.lean:20:38: warning: This simp argument is unused:
+  fderiv_fun_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [grad, invMass, unpack, pack, quadraticKinetic, fderiv_comp, fderiv_fun_sum, fderiv_const_mul,
+    Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch03\validation\short_search\PotentialDoubleBracket-route3.lean:20:54: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [grad, invMass, unpack, pack, quadraticKinetic, fderiv_comp, fderiv_fun_sum, fderiv_const_mul,
+    fderiv_fun_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

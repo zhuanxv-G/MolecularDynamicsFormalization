@@ -1,0 +1,233 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH07b_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 128 | 106 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-3.3.1-SymplecticEulerShadowMatching",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.3.1",
+  "printed_page": "106",
+  "pdf_page": "128",
+  "statement_latex": "The BCH expansion gives the perturbed Hamiltonian",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "同页展示式逐字保存在SymplecticEulerShadow；数值symplectic Euler采用第2章坐标约定。"
+  ],
+  "issues": [
+    {
+      "code": "NEEDS_HUMAN",
+      "detail": "原文只写Hamiltonian O(h⁴)，实际端点O(h⁵)解释与数值坐标顺序待审。"
+    }
+  ],
+  "lean_decl": "MD.Ch03.symplecticEulerShadowMatching",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "正对角质量、U全域C∞、紧初值集B；截断h³的实际局部流端点O(h⁵)为额外严格化。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem symplecticEulerShadowMatching :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),
+    positiveMass m → ContDiff ℝ ⊤ U → IsCompact B →
+    matchesHamiltonian (fun h z => symplecticEulerShadow3 m U h (unpack z))
+      (textbookSymplecticEuler m U) B 4
+```
+
+原上下文：namespace MD.Ch03；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter03Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.SymplecticCoordinateMatrix (MolecularDynamics/Chapter02/SymplecticForm.lean:27)
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+
+### MolecularDynamics.SymplecticCoordinates (MolecularDynamics/Chapter02/SymplecticForm.lean:25)
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+
+### MolecularDynamics.Chapter02Review.Z (MolecularDynamics/Chapter02/ReviewDefinitions.lean:18)
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter04Review.Z (MolecularDynamics/Chapter04/ReviewDefinitions.lean:16)
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter02Review.grad (MolecularDynamics/Chapter02/ReviewDefinitions.lean:133)
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+
+### MolecularDynamics.Chapter04Review.grad (MolecularDynamics/Chapter04/ReviewDefinitions.lean:20)
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+
+### MolecularDynamics.Chapter05Review.grad (MolecularDynamics/Chapter05/ReviewDefinitions.lean:59)
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+
+### MolecularDynamics.Chapter03Review.hessianAction (MolecularDynamics/Chapter03/ReviewDefinitions.lean:55)
+```lean
+def hessianAction {n : ℕ} (U : Q n → ℝ) (q v : Q n) : Q n := (fderiv ℝ (grad U) q) v
+```
+
+### MolecularDynamics.Chapter02Review.invMass (MolecularDynamics/Chapter02/ReviewDefinitions.lean:41)
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+
+### MolecularDynamics.Chapter04Review.invMass (MolecularDynamics/Chapter04/ReviewDefinitions.lean:19)
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+
+### MolecularDynamics.Chapter03Review.matchesHamiltonian (MolecularDynamics/Chapter03/Statements.lean:134)
+```lean
+def matchesHamiltonian {n : ℕ} (K : ℝ → SymplecticCoordinates n → ℝ)
+    (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) (B : Set (SymplecticCoordinates n)) (p : ℕ) : Prop :=
+  ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+    ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, Γ h z 0=z ∧ solution (textbookHamiltonianVectorField (K h)) (Γ h z) 0 h ∧
+      ‖G h z-Γ h z h‖ ≤ C*h^(p+1)
+```
+
+### MolecularDynamics.Chapter03Review.mechanicalEnergy (MolecularDynamics/Chapter03/ReviewDefinitions.lean:54)
+```lean
+def mechanicalEnergy {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (z : Z n) : ℝ := quadraticKinetic m z.2+U z.1
+```
+
+### MolecularDynamics.Chapter02Review.positiveMass (MolecularDynamics/Chapter02/ReviewDefinitions.lean:149)
+```lean
+def positiveMass {n : ℕ} (m : Fin n → ℝ) : Prop := ∀ i, 0 < m i
+```
+
+### MolecularDynamics.Chapter03Review.quadraticKinetic (MolecularDynamics/Chapter03/ReviewDefinitions.lean:53)
+```lean
+def quadraticKinetic {n : ℕ} (m : Fin n → ℝ) (p : Q n) : ℝ := (∑ i, p i^2/m i)/2
+```
+
+### MolecularDynamics.Chapter03Review.shadowTerms (MolecularDynamics/Chapter03/ReviewDefinitions.lean:56)
+```lean
+def shadowTerms {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (z : Z n) : ℝ × ℝ × ℝ :=
+  let v := invMass m z.2
+  ((∑ i, v i * hessianAction U z.1 v i),
+    (∑ i, grad U z.1 i * invMass m (grad U z.1) i),
+    (∑ i, invMass m (grad U z.1) i * hessianAction U z.1 v i))
+```
+
+### MolecularDynamics.Chapter02Review.solution (MolecularDynamics/Chapter02/ReviewDefinitions.lean:142)
+```lean
+def solution {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (f : E → E) (γ : ℝ → E) (a b : ℝ) : Prop :=
+  ∀ t ∈ Icc a b, HasDerivWithinAt γ (f (γ t)) (Icc a b) t
+```
+
+### MD.Ch03.symplecticEulerShadow3 (Blueprint/Ch03.lean:371)
+```lean
+def symplecticEulerShadow3 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) (z : Z n) : ℝ :=
+  mechanicalEnergy m U z-h/2*(∑ i, invMass m z.2 i*grad U z.1 i)+
+    h^2/12*((shadowTerms m U z).1+(shadowTerms m U z).2.1)-h^3/12*(shadowTerms m U z).2.2
+```
+
+### MolecularDynamics.textbookConstraintGradient (MolecularDynamics/Chapter04/ConstrainedProjection.lean:20)
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```
+
+### MolecularDynamics.textbookHamiltonianVectorField (MolecularDynamics/Chapter02/SplittingError.lean:176)
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+
+### MolecularDynamics.textbookJ (MolecularDynamics/Chapter02/SymplecticForm.lean:31)
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+
+### MolecularDynamics.textbookMomentumKick (MolecularDynamics/Chapter02/SymplecticEuler.lean:70)
+```lean
+noncomputable def textbookMomentumKick {Nc : ℕ}
+    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ)
+    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+  Sum.elim (fun i => z (Sum.inl i))
+    (fun i => z (Sum.inr i) + h * F (textbookPositionProjection Nc z) i)
+```
+
+### MolecularDynamics.textbookPositionDrift (MolecularDynamics/Chapter02/SymplecticEuler.lean:77)
+```lean
+noncomputable def textbookPositionDrift {Nc : ℕ} (m : Fin Nc → ℝ) (h : ℝ)
+    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+  Sum.elim (fun i => z (Sum.inl i) + h * (m i)⁻¹ * z (Sum.inr i))
+    (fun i => z (Sum.inr i))
+```
+
+### MolecularDynamics.textbookPositionProjection (MolecularDynamics/Chapter02/SymplecticEuler.lean:19)
+```lean
+noncomputable def textbookPositionProjection (Nc : ℕ) :
+    SymplecticCoordinates Nc →L[ℝ] (Fin Nc → ℝ) :=
+  ContinuousLinearMap.pi fun i => ContinuousLinearMap.proj (Sum.inl i)
+```
+
+### MolecularDynamics.textbookPotentialForce (MolecularDynamics/Chapter02/SymplecticEuler.lean:34)
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```
+
+### MolecularDynamics.textbookSymplecticEuler (MolecularDynamics/Chapter02/SymplecticEuler.lean:184)
+```lean
+noncomputable def textbookSymplecticEuler {Nc : ℕ}
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :
+    SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+  textbookPositionDrift m h ∘ textbookMomentumKick (textbookPotentialForce U) h
+```
+
+### MolecularDynamics.Chapter02Review.unpack (MolecularDynamics/Chapter02/ReviewDefinitions.lean:137)
+```lean
+def unpack {n : ℕ} (z : SymplecticCoordinates n) : Z n := (z ∘ Sum.inl, z ∘ Sum.inr)
+```

@@ -1,0 +1,73 @@
+Blueprint/Ch03.lean:21:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:52:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:135:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:147:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:171:65: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:171:65: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:190:58: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:190:58: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:195:58: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:195:58: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:222:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:222:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:276:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:276:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:284:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:284:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:303:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:312:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:322:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:334:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:349:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:359:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:378:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:421:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:429:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:442:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:448:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:453:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:522:19: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  1 / (2 - κ)
+in the target expression
+  b = -(κ / (2 - κ))
+
+s : ℕ
+hs : 1 ≤ s
+a b : ℝ
+κ : ℝ := yoshidaRoot s
+hN : 1 < ↑(2 * s + 1)
+hκ2 : κ < 2
+hd0 : 2 - κ ≠ 0
+hκpow : κ ^ (2 * s + 1) = 2
+ho : Odd (2 * s + 1)
+hab : 2 * a + b = 1
+hp : 2 * a ^ (2 * s + 1) + b ^ (2 * s + 1) = 0
+heq : (-b) ^ (2 * s + 1) = (κ * a) ^ (2 * s + 1)
+hrel : -b = κ * a
+ha : a = 1 / (2 - κ)
+⊢ b = -(κ / (2 - κ))
+Blueprint/Ch03.lean:533:8: warning: declaration uses `sorry`

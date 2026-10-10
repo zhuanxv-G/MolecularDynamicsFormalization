@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch03/validation/short_search/PotentialDoubleBracket-route1.lean",
+    "log": "blueprint/ch03/validation/short_search/PotentialDoubleBracket-route1.log",
+    "source_sha256": "295f74ab454e58a5cde8bf27cf8d0dee0e519d3d64a2f26c5d6bca36ceceea36",
+    "log_sha256": "03c146dd1188aef4ea7220fab5d67f6566b4c3140c1955e21de61fce07da9757"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch03/validation/short_search/PotentialDoubleBracket-route2.lean",
+    "log": "blueprint/ch03/validation/short_search/PotentialDoubleBracket-route2.log",
+    "source_sha256": "e162d50074ffc72b9e540f3f4c6d6bd62d18e01d238fd667d2e267397945cfc6",
+    "log_sha256": "6c54a486eae696948ead15c28002590bda03b17451c6448eebe2e1524e728bc6"
+  },
+  {
+    "route": 3,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch03/validation/short_search/PotentialDoubleBracket-route3.lean",
+    "log": "blueprint/ch03/validation/short_search/PotentialDoubleBracket-route3.log",
+    "source_sha256": "10cac1f83e1febf571c9e390783d1c10cd18e9121cdaf525ea4d1a2e16a056ce",
+    "log_sha256": "5c783ddb6da97379962c3933c2cb0deb61b6f0321e47a0759c974d97328f216f"
+  }
+]

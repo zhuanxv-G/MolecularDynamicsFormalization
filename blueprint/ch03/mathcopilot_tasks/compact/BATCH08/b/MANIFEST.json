@@ -1,0 +1,48 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08b",
+  "source_ids": [
+    "MD-3.3.2-VerletHamiltonianParts"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 129,
+      "printed_page": 107
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "31ae5912539586e323e50df35aa3fdf9ab36a0c0d3445747b242b49083e17323",
+  "lean_sha256": "5ea886e0c9adb821098b28ecd8f5a6d1a1509d4827a06fb33017694167aef3a6",
+  "signature_sha256": "4e512d856d45249f67285856d6aa5ba560b945e0d56354c83a29d23fd7daa309",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "verletHamiltonianParts",
+      "code_sha256": "4e512d856d45249f67285856d6aa5ba560b945e0d56354c83a29d23fd7daa309"
+    }
+  ],
+  "paste_plus_pdf_bytes": 88525,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3269,
+      "sha256": "d9614bbbb7863dc56d8b84b88123b29892aab2e45199ba4d8ee396eee03f86d1"
+    },
+    "BATCH08b_PAGES.pdf": {
+      "bytes": 85256,
+      "sha256": "537db71c81aaf0deec0498ff2ae9670b1cf08c92666bf571e1b62b846d780ac0"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

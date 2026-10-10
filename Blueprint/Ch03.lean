@@ -231,4 +231,385 @@ theorem hamiltonianCoordinateDerivative
   exact hamiltonianObservableDerivative (fun z => z (Sum.inl i)) H γ t
     (differentiableAt_pi.mp differentiableAt_id (Sum.inl i)) hγ
 
+/-- source_id: MD-3.3-HamiltonianLieAdditivity · unnumbered_claim · §3.3 · 印刷p.103 / PDFp.125
+[EXTRA] H₁,H₂在z可微；原文smooth资格显式化。 -/
+theorem hamiltonianLieAdditivity (F H₁ H₂ : SymplecticCoordinates Nc → ℝ)
+    (z : SymplecticCoordinates Nc) (hH₁ : DifferentiableAt ℝ H₁ z)
+    (hH₂ : DifferentiableAt ℝ H₂ z) :
+    textbookLieDerivative (textbookHamiltonianVectorField (fun x => H₁ x + H₂ x)) F z =
+      textbookLieDerivative (textbookHamiltonianVectorField H₁) F z +
+      textbookLieDerivative (textbookHamiltonianVectorField H₂) F z := by
+  apply MolecularDynamics.textbookHamiltonianLieDerivative_add <;> assumption
+
+/-- source_id: MD-3.3-FormalSplitting · definition · §3.3 · 印刷p.103 / PDFp.125 -/
+def formalSplitting {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R :=
+  textbookFormalOperatorExponential A * textbookFormalOperatorExponential B
+
+/-- source_id: MD-3.3-ExactExponentialCubic · unnumbered_claim · §3.3 · 印刷p.103 / PDFp.125 -/
+theorem exactExponentialCubic (A B : R) :
+    (∀ j < 4, PowerSeries.coeff j (textbookFormalOperatorExponential (A+B)) =
+      (1/(j.factorial : ℝ)) • (A+B)^j) ∧
+    ((A+B)^2 = A*B+B*A+A^2+B^2) ∧
+    ((A+B)^3 = A^3+A^2*B+A*B^2+A*B*A+B^2*A+B*A^2+B*A*B+B^3) := by
+  refine ⟨fun j _ => textbookFormalOperatorExponential_coeff (A+B) j, ?_, ?_⟩
+  · noncomm_ring
+  · noncomm_ring
+
+/-- source_id: MD-3.3-ProductExponentialCubic · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 -/
+theorem productExponentialCubic (A B : R) :
+    PowerSeries.coeff 0 (formalSplitting A B)=1 ∧
+    PowerSeries.coeff 1 (formalSplitting A B)=A+B ∧
+    PowerSeries.coeff 2 (formalSplitting A B)=
+      (1/2:ℝ) • A^2+A*B+(1/2:ℝ) • B^2 ∧
+    PowerSeries.coeff 3 (formalSplitting A B)=
+      (1/6:ℝ) • A^3+(1/2:ℝ) • (A^2*B)+(1/2:ℝ) • (A*B^2)+(1/6:ℝ) • B^3 := by
+  exact ⟨textbookFormalOperatorProduct_coeff_zero A B,
+    textbookFormalOperatorProduct_coeff_one A B,
+    textbookFormalOperatorProduct_coeff_two A B,
+    textbookFormalOperatorProduct_coeff_three A B⟩
+
+/-- source_id: MD-3.3-DifferenceCommutator · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 -/
+theorem differenceCommutator (A B : R) :
+    PowerSeries.coeff 2 (textbookFormalOperatorExponential A *
+      textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A + B)) =
+      (1 / 2 : ℝ) • (A * B - B * A) := by
+  apply MolecularDynamics.textbookFormalOperatorDifference_coeff_two <;> assumption
+
+/-- source_id: MD-3.3-DifferenceCubic · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 -/
+theorem differenceCubic (A B : R) :
+    PowerSeries.coeff 3 (textbookFormalOperatorExponential A *
+      textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A + B)) =
+      (1 / 6 : ℝ) • ((2 : ℝ) • (A * B ^ 2) + (2 : ℝ) • (A ^ 2 * B) -
+        B * A ^ 2 - B * A * B - B ^ 2 * A - A * B * A) := by
+  apply MolecularDynamics.textbookFormalOperatorDifference_coeff_three <;> assumption
+
+/-- source_id: MD-3.3-HamiltonianCommutator · unnumbered_claim · §3.3 · 印刷p.104–105 / PDFp.126–127
+[EXTRA] F,H₁,H₂在z为C²；原文smooth资格显式化。 -/
+theorem hamiltonianCommutator
+    (F H₁ H₂ : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc)
+    (hF : ContDiffAt ℝ 2 F z) (hH₁ : ContDiffAt ℝ 2 H₁ z)
+    (hH₂ : ContDiffAt ℝ 2 H₂ z) :
+    textbookLieDerivative (textbookHamiltonianVectorField H₁)
+        (textbookLieDerivative (textbookHamiltonianVectorField H₂) F) z -
+      textbookLieDerivative (textbookHamiltonianVectorField H₂)
+        (textbookLieDerivative (textbookHamiltonianVectorField H₁) F) z =
+      textbookLieDerivative (textbookHamiltonianVectorField
+        (textbookPoissonBracket H₂ H₁)) F z := by
+  apply MolecularDynamics.textbookHamiltonianLieDerivative_commutator <;> assumption
+
+/-- source_id: MD-3.3-HamiltonianCommutatorPrinted · unnumbered_claim · §3.3 · 印刷p.105 / PDFp.127
+[EXTRA] F,H₁,H₂取C²，原文smooth资格明示。
+[ERRATUM?] p.105/PDF127相邻两式的Hamiltonian Poisson括号顺序相反；本条保留印刷{H₁,H₂}。 -/
+theorem leadingShadowPrinted :
+  ∀ (n : ℕ) (A B F : SymplecticCoordinates n → ℝ), ContDiff ℝ 2 A →
+    ContDiff ℝ 2 B → ContDiff ℝ 2 F → ∀ z,
+    hamiltonianLie A (hamiltonianLie B F) z-hamiltonianLie B (hamiltonianLie A F) z=
+      hamiltonianLie (textbookPoissonBracket A B) F z := by
+  sorry
+
+/-- source_id: MD-3.3-LeadingModifiedExponential · unnumbered_claim · §3.3 · 印刷p.105 / PDFp.127
+[ERRATUM?] p.105/PDF127比较式似应为二次系数之差（第二项前负号）；展示h³交叉项似缺1/2。最终R₀式与既有匹配一致。 -/
+theorem leadingModifiedExponential (A B : R) (n : ℕ) (hn : n < 3) :
+    PowerSeries.coeff n
+      (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B) =
+      PowerSeries.coeff n
+        (textbookFormalModifiedExponential A B ((1 / 2 : ℝ) • (A * B - B * A))) := by
+  sorry
+
+/-- source_id: MD-3.3-LeadingShadowHamiltonian · unnumbered_claim · §3.3 · 印刷p.105 / PDFp.127
+[EXTRA] D开放、K紧且K⊆D、A/B在D无限可微并给定真实局部流；实际修正ODE解及O(h³)端点余项为结论。
+[ERRATUM?] 与同页印刷交换子和状态/pullback组合约定一起核对，不能静默换号。 -/
+theorem leadingShadowHamiltonian :
+  ∀ (n : ℕ) (A B : SymplecticCoordinates n → ℝ) (D K : Set (SymplecticCoordinates n))
+    (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    IsOpen D → IsCompact K → K ⊆ D → ContDiffOn ℝ ⊤ A D → ContDiffOn ℝ ⊤ B D →
+    actualFlow (textbookHamiltonianVectorField A) D Φ η → actualFlow (textbookHamiltonianVectorField B) D Ψ η →
+    ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+      ∀ h ∈ Ioo 0 δ, ∀ z ∈ K, Γ h z 0=z ∧
+        solution (textbookHamiltonianVectorField (fun x => A x+B x+h/2*textbookPoissonBracket A B x)) (Γ h z) 0 h ∧
+        ‖Φ h (Ψ h z)-Γ h z h‖ ≤ C*h^3 := by
+  sorry
+
+/-- source_id: MD-3.3-BCH4 · unnumbered_claim · §3.3 · 印刷p.106 / PDFp.128 -/
+theorem bch4 :
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R), ∀ j < 5,
+    PowerSeries.coeff j (formalLog (formalSplitting A B))=PowerSeries.coeff j (bchLog4 A B) := by
+  sorry
+
+/-- source_id: MD-3.3-BCHHamiltonian · definition · §3.3 · 印刷p.106 / PDFp.128 -/
+def bchHamiltonian3 {n : ℕ} (A B : SymplecticCoordinates n → ℝ) (h : ℝ) (z : SymplecticCoordinates n) : ℝ :=
+  A z+B z+h/2*textbookPoissonBracket A B z+
+    h^2/12*(textbookPoissonBracket A (textbookPoissonBracket A B) z-
+      textbookPoissonBracket B (textbookPoissonBracket A B) z)-
+    h^3/24*textbookPoissonBracket B (textbookPoissonBracket A (textbookPoissonBracket A B)) z
+
+/-- source_id: MD-3.3-BCHHamiltonianMatching · unnumbered_claim · §3.3 · 印刷p.106 / PDFp.128
+[EXTRA] 实际匹配按截断至h³、端点误差O(h⁵)表达；D开放、K紧、光滑Hamiltonian与真实局部流明示。
+[NEEDS_HUMAN] 需确定原书组合顺序和有限截断的实际余项阶；未把匹配结论当假设。 -/
+theorem bchHamiltonianMatching :
+  ∀ (n : ℕ) (A B : SymplecticCoordinates n → ℝ) (D K : Set (SymplecticCoordinates n))
+    (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    IsOpen D → IsCompact K → K ⊆ D → ContDiffOn ℝ ⊤ A D → ContDiffOn ℝ ⊤ B D →
+    actualFlow (textbookHamiltonianVectorField A) D Φ η → actualFlow (textbookHamiltonianVectorField B) D Ψ η →
+    matchesHamiltonian (bchHamiltonian3 A B) (fun h => Φ h ∘ Ψ h) K 4 := by
+  sorry
+
+/-- source_id: MD-3.3-CommutingFlows · unnumbered_claim · §3.3 · 印刷p.106 / PDFp.128
+[EXTRA] 光滑Hamiltonian、开放域及三个真实局部流；|h|<η/2保证复合时间在所给流的定义区间。 -/
+theorem commutingFlows :
+  ∀ (n : ℕ) (A B : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
+    (Φ Ψ Χ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    IsOpen D → ContDiffOn ℝ ⊤ A D → ContDiffOn ℝ ⊤ B D →
+    (∀ z ∈ D, textbookPoissonBracket A B z=0) →
+    actualFlow (textbookHamiltonianVectorField A) D Φ η → actualFlow (textbookHamiltonianVectorField B) D Ψ η →
+    actualFlow (textbookHamiltonianVectorField (fun z => A z+B z)) D Χ η →
+    ∀ z ∈ D, ∀ h ∈ Ioo (-η/2) (η/2), Φ h (Ψ h z)=Χ h z := by
+  sorry
+
+/-- source_id: MD-3.3.1-SymplecticEulerShadow · definition · §3.3.1 · 印刷p.106 / PDFp.128
+[EXTRA] M取固定对角质量矩阵，与第1章机械模型一致；不包括任意非对角M。 -/
+def symplecticEulerShadow3 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) (z : Z n) : ℝ :=
+  mechanicalEnergy m U z-h/2*(∑ i, invMass m z.2 i*grad U z.1 i)+
+    h^2/12*((shadowTerms m U z).1+(shadowTerms m U z).2.1)-h^3/12*(shadowTerms m U z).2.2
+
+/-- source_id: MD-3.3.1-SymplecticEulerShadowMatching · unnumbered_claim · §3.3.1 · 印刷p.106 / PDFp.128
+[EXTRA] 正对角质量、U全域C∞、紧初值集B；截断h³的实际局部流端点O(h⁵)为额外严格化。
+[NEEDS_HUMAN] 原文只写Hamiltonian O(h⁴)，实际端点O(h⁵)解释与数值坐标顺序待审。 -/
+theorem symplecticEulerShadowMatching :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),
+    positiveMass m → ContDiff ℝ ⊤ U → IsCompact B →
+    matchesHamiltonian (fun h z => symplecticEulerShadow3 m U h (unpack z))
+      (textbookSymplecticEuler m U) B 4 := by
+  sorry
+
+/-- source_id: MD-3.3.2-VerletMaps · (3.3) · §3.3.2 · 印刷p.107 / PDFp.129
+[EXTRA] 固定对角质量M，保持第1章对象；无非对角质量一般化。 -/
+def verletMaps {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) :
+    (SymplecticCoordinates n → SymplecticCoordinates n) ×
+      (SymplecticCoordinates n → SymplecticCoordinates n) :=
+  (positionVerlet m (textbookPotentialForce U) h,
+    coordinateVerlet m (textbookPotentialForce U) h)
+
+/-- source_id: MD-3.3.2-VerletHamiltonianParts · definition · §3.3.2 · 印刷p.107 / PDFp.129 -/
+def verletHamiltonianParts {n : ℕ} (T U : SymplecticCoordinates n → ℝ) : Fin 3 → SymplecticCoordinates n → ℝ :=
+  ![(fun z => U z/2), T, (fun z => U z/2)]
+
+/-- source_id: MD-3.3.2-VerletStructure · unnumbered_claim · §3.3.2 · 印刷p.107 / PDFp.129
+[EXTRA] U全域C²以保障真实梯度kick为辛映射；原文光滑Hamiltonian假设显式化。 -/
+theorem verletStructure :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ), ContDiff ℝ 2 U →
+    (∀ h, IsTextbookSymplecticMap (coordinateVerlet m (textbookPotentialForce U) h) ∧
+      IsTextbookSymplecticMap (positionVerlet m (textbookPotentialForce U) h)) ∧
+    (∀ h z, coordinateVerlet m (textbookPotentialForce U) (-h)
+      (coordinateVerlet m (textbookPotentialForce U) h z)=z) ∧
+    (∀ h z, positionVerlet m (textbookPotentialForce U) (-h)
+      (positionVerlet m (textbookPotentialForce U) h z)=z) := by
+  exact MolecularDynamics.Chapter03Review.verletVariants_proved
+
+/-- source_id: MD-3.3.2-VerletModifiedHamiltonian · definition · §3.3.2 · 印刷p.107 / PDFp.129 -/
+def verletModifiedH {n : ℕ} (T U : SymplecticCoordinates n → ℝ) (h : ℝ) (z : SymplecticCoordinates n) : ℝ :=
+  T z+U z+h^2/12*(textbookPoissonBracket T (textbookPoissonBracket T U) z-
+    textbookPoissonBracket U (textbookPoissonBracket U T) z/2)+h^4/120*(
+      -textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/6+
+      textbookPoissonBracket U (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/3-
+      textbookPoissonBracket U (textbookPoissonBracket U (textbookPoissonBracket T (textbookPoissonBracket T U))) z/4+
+      textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket U (textbookPoissonBracket U T))) z)
+
+/-- source_id: MD-3.3.2-VerletModifiedMatching · unnumbered_claim · §3.3.2 · 印刷p.107 / PDFp.129
+[EXTRA] 正对角质量、U全域C∞、紧初值B；完整印刷h⁴截断实际O(h⁶)端点匹配为额外严格化。
+[NEEDS_HUMAN] 与速度/位置Verlet的组合次序共同核对h²,h⁴系数；原文Hamiltonian O(h⁶)与实际匹配阶也需裁定。 -/
+theorem verletModifiedMatching :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),
+    positiveMass m → ContDiff ℝ ⊤ U → IsCompact B →
+    matchesHamiltonian (verletModifiedH (fun z => quadraticKinetic m (unpack z).2) (fun z => U (unpack z).1))
+      (coordinateVerlet m (textbookPotentialForce U)) B 5 := by
+  sorry
+
+/-- source_id: MD-3.3.2-ModifiedEven · unnumbered_claim · §3.3.2 · 印刷p.107–108 / PDFp.129–130 -/
+theorem modifiedEven :
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R), ∀ j : ℕ,
+    PowerSeries.coeff (2*j) (formalLog (formalStrang A B))=0 := by
+  sorry
+
+/-- source_id: MD-3.3.2-Strang · definition · §3.3.2 · 印刷p.108 / PDFp.130
+[ERRATUM?] p.108/PDF130第一展开把Z_[2]配t²、Z_[3]配t³，而下一展开(3.5)按总指数幂2、3排列；保留原页不静默纠正索引。 -/
+def formalStrang {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R :=
+  textbookFormalOperatorExponential ((1/2 : ℝ) • A) * textbookFormalOperatorExponential B *
+    textbookFormalOperatorExponential ((1/2 : ℝ) • A)
+
+/-- source_id: MD-3.3.2-DifferentLogsCommute · (3.4)–(3.5) · §3.3.2 · 印刷p.108 / PDFp.130
+[ERRATUM?] p.108/PDF130 “Z_s commutes with Z_t” 对一般非交换X,Y可疑；应由反步关系单独推导奇性。 -/
+theorem differentLogsCommute :
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R) (s t : ℝ),
+    commutator (formalLog (formalStrang (s • A) (s • B))) (formalLog (formalStrang (t • A) (t • B)))=0 := by
+  sorry
+
+/-- source_id: MD-3.3.2-StrangInverse · unnumbered_claim · §3.3.2 · 印刷p.108 / PDFp.130 -/
+theorem strangInverse :
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R), formalStrang A B * formalStrang (-A) (-B)=1 := by
+  sorry
+
+/-- source_id: MD-3.3.2-StrangCubic · (3.6)–(3.7) · §3.3.2 · 印刷p.108 / PDFp.130 -/
+theorem strangCubic :
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),
+    PowerSeries.coeff 3 (formalLog (formalStrang A B))=
+      (1/12:ℝ) • commutator B (commutator B A)-(1/24:ℝ) • commutator A (commutator A B) := by
+  intro R _ _ A B
+  norm_num [formalLog, formalStrang, textbookFormalOperatorExponential,
+    PowerSeries.coeff_mk, PowerSeries.coeff_mul, Finset.Nat.antidiagonal_succ,
+    Nat.factorial_succ, pow_succ, Finset.sum_Icc_succ_top, MolecularDynamics.Chapter03Review.commutator,
+    mul_add, add_mul, mul_sub, sub_mul, smul_mul_assoc, mul_smul_comm,
+    smul_add, smul_sub, smul_smul]
+  simp only [mul_assoc]
+  module
+
+/-- source_id: MD-3.3.3-YoshidaComposition · definition · §3.3.3 · 印刷p.109 / PDFp.131 -/
+def yoshidaCompose {E : Type*} (G : ℝ → E → E) (a b h : ℝ) : E → E := G (a*h) ∘ G (b*h) ∘ G (a*h)
+
+/-- source_id: MD-3.3.3-YoshidaCoefficients · definition · §3.3.3 · 印刷p.109 / PDFp.131 -/
+def yoshidaCoefficients (s : ℕ) : ℝ × ℝ := (1/(2-yoshidaRoot s),-yoshidaRoot s/(2-yoshidaRoot s))
+
+/-- source_id: MD-3.3.3-YoshidaCancellation · unnumbered_claim · §3.3.3 · 印刷p.109 / PDFp.131
+[EXTRA] 显式s≥1，并保留中间系数τ₁<0作为根公式的数学推论。 -/
+theorem yoshidaCancellation :
+  ∀ s : ℕ, 1 ≤ s → let ab := yoshidaCoefficients s
+    2*ab.1+ab.2=1 ∧ 2*ab.1^(2*s+1)+ab.2^(2*s+1)=0 ∧ ab.2 < 0 := by
+  intro s hs
+  let κ := yoshidaRoot s
+  have hκ0 : 0 < κ := Real.rpow_pos_of_pos (by norm_num) _
+  have hN : 1 < ((2*s+1 : ℕ) : ℝ) := by exact_mod_cast (show 1 < 2*s+1 by omega)
+  have hκ2 : κ < 2 := by
+    change Real.rpow 2 (1/((2*s+1 : ℕ):ℝ)) < 2
+    calc
+      _ < Real.rpow 2 1 := Real.rpow_lt_rpow_of_exponent_lt (by norm_num)
+        ((div_lt_one (by positivity)).2 hN)
+      _ = 2 := Real.rpow_one 2
+  have hκpow : κ^(2*s+1)=2 := by
+    simpa [κ, yoshidaRoot, one_div] using
+      (Real.rpow_inv_natCast_pow (x := (2:ℝ)) (n := 2*s+1) (by norm_num) (by omega))
+  have hd : 0 < 2-κ := sub_pos.mpr hκ2
+  have hd0 : 2-κ ≠ 0 := ne_of_gt hd
+  have ho : Odd (2*s+1) := ⟨s, by omega⟩
+  change 2*(1/(2-κ))+(-κ/(2-κ))=1 ∧
+    2*(1/(2-κ))^(2*s+1)+(-κ/(2-κ))^(2*s+1)=0 ∧ -κ/(2-κ)<0
+  refine ⟨?_, ?_, div_neg_of_neg_of_pos (neg_neg_of_pos hκ0) hd⟩
+  · field_simp
+    ring
+  · rw [neg_div, ho.neg_pow, div_pow, div_pow, one_pow, hκpow]
+    ring
+
+/-- source_id: MD-3.3.3-YoshidaUnique · unnumbered_claim · §3.3.3 · 印刷p.109 / PDFp.131 -/
+theorem yoshidaUnique :
+  ∀ s : ℕ, 1 ≤ s → ∀ a b : ℝ,
+    (2*a+b=1 ∧ 2*a^(2*s+1)+b^(2*s+1)=0) ↔ (a,b)=yoshidaCoefficients s := by
+  intro s hs a b
+  let κ := yoshidaRoot s
+  have hN : 1 < ((2*s+1 : ℕ) : ℝ) := by exact_mod_cast (show 1 < 2*s+1 by omega)
+  have hκ2 : κ < 2 := by
+    change Real.rpow 2 (1/((2*s+1 : ℕ):ℝ)) < 2
+    calc
+      _ < Real.rpow 2 1 := Real.rpow_lt_rpow_of_exponent_lt (by norm_num)
+        ((div_lt_one (by positivity)).2 hN)
+      _ = 2 := Real.rpow_one 2
+  have hd0 : 2-κ ≠ 0 := ne_of_gt (sub_pos.mpr hκ2)
+  have hκpow : κ^(2*s+1)=2 := by
+    simpa [κ, yoshidaRoot, one_div] using
+      (Real.rpow_inv_natCast_pow (x := (2:ℝ)) (n := 2*s+1) (by norm_num) (by omega))
+  have ho : Odd (2*s+1) := ⟨s, by omega⟩
+  constructor
+  · rintro ⟨hab, hp⟩
+    have heq : (-b)^(2*s+1)=(κ*a)^(2*s+1) := by
+      rw [ho.neg_pow, mul_pow, hκpow]
+      linarith
+    have hrel : -b=κ*a := ho.pow_injective heq
+    have ha : a=1/(2-κ) := by
+      apply (eq_div_iff hd0).2
+      nlinarith
+    have hb : b=-κ/(2-κ) := by
+      calc
+        b = -κ*a := by nlinarith
+        _ = -κ/(2-κ) := by rw [ha]; ring
+    change (a,b)=(1/(2-κ),-κ/(2-κ))
+    exact Prod.ext ha hb
+  · intro heq
+    change (a,b)=(1/(2-κ),-κ/(2-κ)) at heq
+    rcases Prod.mk.inj heq with ⟨rfl,rfl⟩
+    exact ⟨(yoshidaCancellation s hs).1, (yoshidaCancellation s hs).2.1⟩
+
+/-- source_id: MD-3.3.3-YoshidaRaiseOrder · unnumbered_claim · §3.3.3 · 印刷p.109 / PDFp.131
+[EXTRA] 给定光滑场、G在(h,z)全域C∞、开放D与紧B、实际双向局部流、反步对称和局部阶；实际改阶是结论。 -/
+theorem yoshidaRaiseOrder :
+  ∀ (n s : ℕ) (f : Q n → Q n) (G Φ : ℝ → Q n → Q n) (D B : Set (Q n)) η,
+    1 ≤ s → ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ (fun hz : ℝ × Q n => G hz.1 hz.2) →
+    IsOpen D → IsCompact B → B ⊆ D → actualFlow f D Φ η →
+    (∀ h z, G (-h) (G h z)=z) → localOrder G Φ B (2*s) →
+    localOrder (yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2) Φ B (2*s+2) := by
+  sorry
+
+/-- source_id: MD-3.3.3-Yoshida4 · Example 3.1 / (3.8) · §3.3.3 · 印刷p.109–110 / PDFp.131–132
+[EXTRA] M为固定对角质量；不假设正反步骤的实际无限时域流存在。 -/
+def yoshida4 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) : SymplecticCoordinates n → SymplecticCoordinates n :=
+  yoshidaCompose (coordinateVerlet m (textbookPotentialForce U)) (yoshidaCoefficients 1).1 (yoshidaCoefficients 1).2 h
+
+/-- source_id: MD-3.3.3-Yoshida4Structure · unnumbered_claim · §3.3.3 · 印刷p.110 / PDFp.132
+[EXTRA] U全域C²；真实kick/drift及三次回文复合。 -/
+theorem yoshida4Structure :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ), ContDiff ℝ 2 U →
+    (∀ h, IsTextbookSymplecticMap (yoshida4 m U h)) ∧ (∀ h z, yoshida4 m U (-h) (yoshida4 m U h z)=z) := by
+  exact MolecularDynamics.Chapter03Review.yoshida4Structure_proved
+
+/-- source_id: MD-3.3.3-GeneralSplitting · definition · §3.3.3 · 印刷p.111 / PDFp.133 -/
+def generalSplitting {E : Type*} (T U : ℝ → E → E) (coeff : List (ℝ × ℝ)) (h : ℝ) : E → E :=
+  coeff.foldr (fun ab acc => T (ab.1*h) ∘ U (ab.2*h) ∘ acc) id
+
+/-- source_id: MD-3.3.4-TakahashiPotential · definition · §3.3.4 · 印刷p.112 / PDFp.134
+[EXTRA] M为固定对角质量矩阵，原第1章机械模型。 -/
+def takahashiImada {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) :
+    SymplecticCoordinates n → SymplecticCoordinates n :=
+  coordinateVerlet m (textbookPotentialForce (takahashiPotential m U h)) h
+
+/-- source_id: MD-3.3.4-PotentialDoubleBracket · unnumbered_claim · §3.3.4 · 印刷p.112 / PDFp.134
+[EXTRA] 正对角质量、U全域C²，显式化真实二次Poisson括号的微分资格。 -/
+theorem potentialDoubleBracket :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ), positiveMass m → ContDiff ℝ 2 U → ∀ z : Z n,
+    (∑ i, grad U z.1 i*invMass m (grad U z.1) i)=
+      textbookPoissonBracket (fun x => U (unpack x).1)
+        (textbookPoissonBracket (fun x => U (unpack x).1) (fun x => quadraticKinetic m (unpack x).2)) (pack z) := by
+  sorry
+
+/-- source_id: MD-3.3.4-TakahashiShadow · definition · §3.3.4 · 印刷p.112 / PDFp.134 -/
+def takahashiShadow2 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) (z : Z n) : ℝ :=
+  mechanicalEnergy m U z+h^2/12*((shadowTerms m U z).1-(shadowTerms m U z).2.1)
+
+/-- source_id: MD-3.3.4-TakahashiProcessor · (3.9) · §3.3.4 · 印刷p.113 / PDFp.135 -/
+def takahashiProcessor {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) (z : Z n) : Z n :=
+  (z.1-(h^2/12) • invMass m (grad U z.1), z.2+(h^2/12) • hessianAction U z.1 (invMass m z.2))
+
+/-- source_id: MD-3.3.4-ProcessorEnergyPrinted · unnumbered_claim · §3.3.4 · 印刷p.113 / PDFp.135
+[EXTRA] 正对角质量、U全域C⁴、紧初值集B；展示O(h⁴)按小h统一实际余项解释。
+[ERRATUM?] 第一行“T + h²/12(...)”似应为“H + h²/12(...)”；原文逐字保留，未改变正式库。 -/
+theorem processorEnergyPrinted :
+    ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (Z n)),
+      positiveMass m → ContDiff ℝ 4 U → IsCompact B →
+      ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ B,
+        (|mechanicalEnergy m U (takahashiProcessor m U h z) -
+          (quadraticKinetic m z.2+h^2/12*((shadowTerms m U z).1-(shadowTerms m U z).2.1))|
+          ≤ C*h^4) ∧
+        (|mechanicalEnergy m U (takahashiProcessor m U h z)-takahashiShadow2 m U h z|
+          ≤ C*h^4) := by
+  sorry
+
+/-- source_id: MD-3.3.4-TakahashiEffectiveOrder · unnumbered_claim · §3.3.4 · 印刷p.113 / PDFp.135
+[EXTRA] 正对角质量、U全域C∞、实际有限时间解连续；处理器χ要求全局homeomorphism，强于原文局部坐标展开。
+[NEEDS_HUMAN] 全局χ是否过强，以及可选局部处理器和其作用方向，需导师判断。 -/
+theorem takahashiEffectiveOrder :
+    ∀ n (m : Fin n → ℝ) (U : Q n → ℝ), positiveMass m → ContDiff ℝ ⊤ U →
+      ∃ χ : ℝ → Z n ≃ₜ Z n, ∀ (γ : ℝ → Z n) τ, 0 < τ →
+        solution (mechanicalField m (fun q => -grad U q)) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
+        ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+          oneStepMaxError (fun h => textbookProcessedMethod χ
+            (fun k => verlet m (fun q => -grad (takahashiPotential m U k) q) k) h)
+            (τ/ν) γ ν ≤ C*(τ/ν)^4 := by
+  sorry
+
 end MD.Ch03

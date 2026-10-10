@@ -1,0 +1,101 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH05g_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 126 | 104 |
+| 2 | 127 | 105 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-3.3-HamiltonianCommutator",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.3",
+  "printed_page": "104–105",
+  "pdf_page": "126–127",
+  "statement_latex": "Observe that, for any real-valued functions $f$ and $H$ of phase space,\n\\[\\mathcal L_Hf=\\nabla f^TJ\\nabla H=\\{f,H\\}.\\]\nHence $\\mathcal L_{H_1}\\mathcal L_{H_2}f=\\{\\{f,H_2\\},H_1\\}$, and, using this and skew-symmetry of the Poisson bracket,\n\\[[\\mathcal L_{H_1},\\mathcal L_{H_2}]f=\\{\\{f,H_2\\},H_1\\}-\\{\\{f,H_1\\},H_2\\}=\\{\\{f,H_2\\},H_1\\}+\\{\\{H_1,f\\},H_2\\}.\\]\nBy the Jacobi identity, $\\{\\{f,H_2\\},H_1\\}+\\{\\{H_2,H_1\\},f\\}+\\{\\{H_1,f\\},H_2\\}=0$.\nTherefore\n\\[[\\mathcal L_{H_1},\\mathcal L_{H_2}]f=-\\{\\{H_2,H_1\\},f\\}=\\{f,\\{H_2,H_1\\}\\}.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$[A,B]=AB-BA$；$\\mathcal L_Hf=\\{f,H\\}$；本条保留原书第一推导正确的$\\{H_2,H_1\\}$顺序。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.hamiltonianCommutator",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookHamiltonianLieDerivative_commutator"
+  ],
+  "extra_assumptions": [
+    "F,H₁,H₂在z为C²；原文smooth资格显式化。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem hamiltonianCommutator
+    (F H₁ H₂ : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc)
+    (hF : ContDiffAt ℝ 2 F z) (hH₁ : ContDiffAt ℝ 2 H₁ z)
+    (hH₂ : ContDiffAt ℝ 2 H₂ z) :
+    textbookLieDerivative (textbookHamiltonianVectorField H₁)
+        (textbookLieDerivative (textbookHamiltonianVectorField H₂) F) z -
+      textbookLieDerivative (textbookHamiltonianVectorField H₂)
+        (textbookLieDerivative (textbookHamiltonianVectorField H₁) F) z =
+      textbookLieDerivative (textbookHamiltonianVectorField
+        (textbookPoissonBracket H₂ H₁)) F z
+```
+
+原上下文：namespace MD.Ch03；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter03Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.SymplecticCoordinateMatrix (MolecularDynamics/Chapter02/SymplecticForm.lean:27)
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+
+### MolecularDynamics.SymplecticCoordinates (MolecularDynamics/Chapter02/SymplecticForm.lean:25)
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+
+### MolecularDynamics.textbookHamiltonianVectorField (MolecularDynamics/Chapter02/SplittingError.lean:176)
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+
+### MolecularDynamics.textbookJ (MolecularDynamics/Chapter02/SymplecticForm.lean:31)
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+
+### MD.Ch03.textbookLieDerivative (Blueprint/Ch03.lean:104)
+```lean
+noncomputable def textbookLieDerivative (f : E → E) (φ : E → ℝ) (z : E) : ℝ :=
+  (fderiv ℝ φ z) (f z)
+```
+
+### MD.Ch03.textbookPoissonBracket (Blueprint/Ch03.lean:159)
+```lean
+noncomputable def textbookPoissonBracket (F G : SymplecticCoordinates Nc → ℝ)
+    (z : SymplecticCoordinates Nc) : ℝ :=
+  (fderiv ℝ F z) (textbookHamiltonianVectorField G z)
+```

@@ -33,9 +33,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log",
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json"
     },
     "MD-3.1-AdjointEulerOscillator": {
       "checked": true,
@@ -66,9 +66,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log",
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json"
     },
     "MD-3.1-ShadowHamiltonian": {
       "checked": true,
@@ -99,9 +99,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log",
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json"
     },
     "MD-3.1-EnergyFailure": {
       "checked": true,
@@ -134,9 +134,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log",
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json"
     },
     "MD-3.1-ShadowInvariant": {
       "checked": true,
@@ -169,9 +169,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log",
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json"
     },
     "MD-3.1-ShadowEllipses": {
       "checked": true,
@@ -203,9 +203,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log",
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json"
     },
     "MD-3.1-EulerGrowth": {
       "checked": true,
@@ -234,11 +234,14 @@
       ],
       "counterexample": null,
       "suggested_fix": null,
-      "proof_attempts": 0,
+      "proof_attempts": 1,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log",
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch03/validation/batch02-lean-route1.log"
+      ]
     },
     "MD-3.1-FormalHamiltonian": {
       "checked": true,
@@ -269,9 +272,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log",
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json"
     },
     "MD-3.1-FormalHamiltonianField": {
       "checked": true,
@@ -302,9 +305,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log",
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json"
     },
     "MD-3.2-LieDerivative": {
       "checked": true,
@@ -335,9 +338,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-ObservableDerivative": {
       "checked": true,
@@ -370,9 +373,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-ObservableSecondDerivative": {
       "checked": true,
@@ -405,9 +408,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-OperatorExponential": {
       "checked": true,
@@ -438,9 +441,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-FormalObservable": {
       "checked": true,
@@ -471,9 +474,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-FiniteLieTaylor": {
       "checked": true,
@@ -505,9 +508,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-FlowCoordinates": {
       "checked": true,
@@ -539,9 +542,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-PoissonBracket": {
       "checked": true,
@@ -572,9 +575,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "compiled": true,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-PoissonCoordinates": {
       "checked": true,
@@ -607,9 +610,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-PoissonBilinearity": {
       "checked": true,
@@ -643,9 +646,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-PoissonSkew": {
       "checked": true,
@@ -678,9 +681,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-PoissonSelf": {
       "checked": true,
@@ -713,9 +716,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-PoissonJacobi": {
       "checked": true,
@@ -748,9 +751,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-HamiltonianObservableDerivative": {
       "checked": true,
@@ -783,9 +786,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-HamiltonianLie": {
       "checked": true,
@@ -818,9 +821,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     },
     "MD-3.2-HamiltonianCoordinateDerivative": {
       "checked": true,
@@ -853,9 +856,1375 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-HamiltonianLieAdditivity": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.hamiltonianLieAdditivity",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "b32e799e2f9b46b3af728b89e88bafefff2739c289790c6ea97cc17c195ed910",
+      "block_sha256": "720fb9e93ed8d69535108e3794f7b3b90a59e2d1c1ab5c713e0667e12ba10e47",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookHamiltonianLieDerivative_add"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.hamiltonianLieAdditivity；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-FormalSplitting": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.formalSplitting",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "2139a1e6c9c3afb35f4f748f5bdc651779422fc77e34356376ca0c84fad80fc1",
+      "block_sha256": "2139a1e6c9c3afb35f4f748f5bdc651779422fc77e34356376ca0c84fad80fc1",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.formalSplitting；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-ExactExponentialCubic": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.exactExponentialCubic",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "3d1a56006a5a8ef8c298b30d417cb68397719e383b3632fa4377a2ee468a6207",
+      "block_sha256": "121cc7a01c0bbd1654a1cd85a1775ffde6c82f447897a57961d1c9a317aa6790",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookFormalOperatorExponential_coeff"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.exactExponentialCubic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-ProductExponentialCubic": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.productExponentialCubic",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "00feeb5a56a4ff12b3c9369f5adb1b053947ccf16319f00dd5583841e4ca890a",
+      "block_sha256": "83d3390052151742c5b541aa71524125fa2466d5189ea6cd91b98c7fcea1d0bc",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookFormalOperatorProduct_coeff_zero",
+        "MolecularDynamics.textbookFormalOperatorProduct_coeff_one",
+        "MolecularDynamics.textbookFormalOperatorProduct_coeff_two",
+        "MolecularDynamics.textbookFormalOperatorProduct_coeff_three"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.productExponentialCubic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-DifferenceCommutator": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.differenceCommutator",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "02e91036ea652078c294b557de230cf9d9288988220d02f340c30dc5956d4fce",
+      "block_sha256": "827260a981534a17e05345ff19b11c349b3d961bda9a9a6652ee38b5c529ddb5",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookFormalOperatorDifference_coeff_two"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.differenceCommutator；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-DifferenceCubic": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.differenceCubic",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "66d9dbf2d118d6369aec5c0ce25284c7c8a17201e7a4977b83c76910eb9498ac",
+      "block_sha256": "ddc1bbb575742cfd0201b153fda15b0a32d861a759ceab9c953bd1281fef20ed",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookFormalOperatorDifference_coeff_three"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.differenceCubic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-HamiltonianCommutator": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.hamiltonianCommutator",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "c701490196b801f88684b76d106ba23209e00ab9f06e666e1d341b31886732ac",
+      "block_sha256": "25c0e82aa1e5c34414e2f394ee1343d156ad8677c881dacc6407b046ef902899",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookHamiltonianLieDerivative_commutator"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.hamiltonianCommutator；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-HamiltonianCommutatorPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.leadingShadowPrinted",
+      "verdict": "FAIL",
+      "explanation": "原页的下一式把{H₂,H₁}改成{H₁,H₂}，与刚推导的式子相差负号；字面错误签名保留sorry，不以正确桥接替换原文。",
+      "signature_sha256": "3323c86f36bb492cdddec3031ade52cb43f1e63e203d0a69cf1cfabb229feb36",
+      "block_sha256": "e53edf1c31c40389dfd1d4300d77096dd67955d206fb61e806a95a480780482c",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "印刷符号疑误待网站/导师裁定；本地FAIL不进入证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.leadingShadowPrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-LeadingModifiedExponential": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.leadingModifiedExponential",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "真实形式匹配定理支持R₀=[A,B]/2，但原页中间比较式的加号及h³项的1/2遗漏需要独立裁定；本条暂不因局部桥接而记整段PASS。",
+      "signature_sha256": "fc753e75bf42aef42322ba01b837720c307e3064d27b709b9f491dbf32b3a259",
+      "block_sha256": "f425b5b89c8cbc260615c0355f784cfd6e0d29cb768eb78966f7dfd9fe76ff32",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [
+        "MolecularDynamics.textbookFormalModifiedExponential_matches_product"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.leadingModifiedExponential；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-LeadingShadowHamiltonian": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.leadingShadowHamiltonian",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "字面Hamiltonian系数保留；原文观测量算子和实际状态映射组合顺序及交换子符号疑误使实际匹配暂待审。",
+      "signature_sha256": "8d9d3d8def37b85fe93bda0321c0d5727ec3a1066456e7f706202bdd05748432",
+      "block_sha256": "59a87df76a387f04d9095c74623da8345b0a7c244c030f890ef2d6726caf0fa6",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺实际Hamiltonian截断匹配和统一ODE余项；符号/组合约定待审，本地非PASS不证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.leadingShadowHamiltonian；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-BCH4": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.bch4",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "858a780952f3f8d2ccbdf0fcbca272feda161e674a447d9dec66167cc2d12777",
+      "block_sha256": "e52ee7d9ac1576f7d014da48017b3887c78d688b7042734141160249f5997a91",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺非交换formalLog的四阶有限系数计算桥接；完整BCH理论不建设，保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.bch4；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-BCHHamiltonian": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.bchHamiltonian3",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "290b0f0f8b5f83f580c49bbab26fa7371bd15424a60ec50d699691aaad2a924e",
+      "block_sha256": "290b0f0f8b5f83f580c49bbab26fa7371bd15424a60ec50d699691aaad2a924e",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.bchHamiltonian3；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-BCHHamiltonianMatching": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.bchHamiltonianMatching",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际状态组合Φ_h∘Ψ_h与印刷Lie算子次序需审；严格有限匹配比原文形式意义更强，标EXTRA并保留完整存在结论。",
+      "signature_sha256": "f65767e8dd7fc1a1205098bc6ddba1e20944edde4d51cb32fce0ccdba5b846fe",
+      "block_sha256": "6d0798d246f1713dc74f71355e9b9e048eec6f2c6e081721b62d6cdb463415e8",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺高阶Hamiltonian/ODE端点余项；非PASS不证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.bchHamiltonianMatching；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3-CommutingFlows": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.commutingFlows",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "51e5c49cfcbcaba5532e4047cd713ea6ab26b460c24b9b35a0d790d0fd7fcf42",
+      "block_sha256": "dcd1b0f5e8e90a448af4475d766a8e44c7a6c2397758fc0a40fb71d6899276c5",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺实际Hamiltonian向量场交换子到局部流交换及和场流的桥接；不搭完整交换流理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.commutingFlows；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.1-SymplecticEulerShadow": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.symplecticEulerShadow3",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "cf0ab06fc175fb955ab598b8080cbe9e398f868904b499d81ee4f5bb302a5bf9",
+      "block_sha256": "cf0ab06fc175fb955ab598b8080cbe9e398f868904b499d81ee4f5bb302a5bf9",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.symplecticEulerShadow3；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.1-SymplecticEulerShadowMatching": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.symplecticEulerShadowMatching",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "h³截断只通常支持局部O(h⁵)，完整匹配和状态/算子次序需要独立审校；保留完整签名但不提前证明。",
+      "signature_sha256": "9ddd1bbd45328fe6da271d07d21956dc45b48cb1bec173e0161ce1483c8776fd",
+      "block_sha256": "5c479e24f926b6958bc860c8505e5a0c1255db123963ebe81e27d1ce14122e24",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺完整BCH机械系数与实际截断ODE匹配；本地非PASS不证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.symplecticEulerShadowMatching；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.2-VerletMaps": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.verletMaps",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "ff2b84aa03813acb4743cc79f0523b97eae2215a1b376d2e046e3a320eb43016",
+      "block_sha256": "ff2b84aa03813acb4743cc79f0523b97eae2215a1b376d2e046e3a320eb43016",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.verletMaps；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.2-VerletHamiltonianParts": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.verletHamiltonianParts",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "4e512d856d45249f67285856d6aa5ba560b945e0d56354c83a29d23fd7daa309",
+      "block_sha256": "4e512d856d45249f67285856d6aa5ba560b945e0d56354c83a29d23fd7daa309",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.verletHamiltonianParts；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.2-VerletStructure": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.verletStructure",
+      "verdict": "PASS",
+      "explanation": "保留两种Verlet的反步复合恒等式及辛结构；辛结构由前章kick/drift性质和此处真实复合继承，不假设待证对称性。",
+      "signature_sha256": "c00ff4a077c8421898e281a73c4b176d57a43531ae551907769bc7dba338dca1",
+      "block_sha256": "78efc739c56bdb4b12b8135c0de82ef12977341f96478a4343db1835b4d103ac",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.Chapter03Review.verletVariants_proved"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.verletStructure；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.2-VerletModifiedHamiltonian": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.verletModifiedH",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "c690e6c69117d914d690be2de2dbe674aa9da9da57aa5dd578cd445aa3ad078e",
+      "block_sha256": "c690e6c69117d914d690be2de2dbe674aa9da9da57aa5dd578cd445aa3ad078e",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.verletModifiedH；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.2-VerletModifiedMatching": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.verletModifiedMatching",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "印刷h²系数对应哪个Verlet和状态/pullback次序需要核对；完整印刷有限函数的匹配存在结论保留，未用较弱h²另一签名替代。",
+      "signature_sha256": "fe9833daea8b9fbf3f4f9db2a417c1c8ea2209c36166b1a15cd47e2af00b70a2",
+      "block_sha256": "cc6dcaf940ca4cf4aa7a67bb4930b91a211b97f834587e616938c99a9ac2ea8a",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺完整BCH嵌套Poisson系数推导及实际流余项；非PASS不证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.verletModifiedMatching；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.2-ModifiedEven": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.modifiedEven",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "f66b51ff4c318d74187c762e0064daa590927cc92fbad75480d0ae2fe306eee7",
+      "block_sha256": "24916fa7390d6dc9c246770fb984d198095d79f5b094b64a226c4a6e72f7e448",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺形式反步恒等式→formalLog奇性的完整桥接；不建设大型非交换formalLog理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.modifiedEven；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.2-Strang": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.formalStrang",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "5a5308d2a11acae9140a691f24aa00f3314c5242574f4b82dc30b3b95266be01",
+      "block_sha256": "5a5308d2a11acae9140a691f24aa00f3314c5242574f4b82dc30b3b95266be01",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.formalStrang；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.2-DifferentLogsCommute": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.differentLogsCommute",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "一般不同步长修正生成元没有自动交换的依据；字面全称断言保留，不用它证明正确奇性。",
+      "signature_sha256": "8efa01f426e3f69a3e8fb2af594243da887f049f7db3cb345e716f7438c9bfd4",
+      "block_sha256": "91fceb99f90ab8ac6b74edf5e6e8df520da8febde83655033ed1cd0dd9374104",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "印刷不同步长交换断言待独立反例/导师裁定；非PASS不证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.differentLogsCommute；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.2-StrangInverse": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.strangInverse",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "97f4c706e960d40157db1ec6d2cdc5eef62f5bd972b09a13f173d8b1215eb9d2",
+      "block_sha256": "a43a3d85c393b9af7f37916323a07faecb7e220027d5161f5ed1f849cbc22927",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺任意实非交换代数中形式指数负参数的完整逆元系数桥接；保留sorry，不搭大型形式指数理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.strangInverse；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.2-StrangCubic": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.strangCubic",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "bb1932bdc29b629891d70e3a6878fa135e7e7efb44ffa0aaebaf88902e986924",
+      "block_sha256": "9944b2fb03a5ec437995a8669d3c3ce9f4248dbfd4acd311975bc5775e97ff84",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.strangCubic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch03/validation/short_search/StrangCubic.json"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.3-YoshidaComposition": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.yoshidaCompose",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "eeac5c1c96fc6cedf83cddd8df38c715358be84a7a0d3c168b1c5c71ada8f84c",
+      "block_sha256": "eeac5c1c96fc6cedf83cddd8df38c715358be84a7a0d3c168b1c5c71ada8f84c",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.yoshidaCompose；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.3-YoshidaCoefficients": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.yoshidaCoefficients",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "d06e66714f0a3b220ea448d5ef241e77ed15bac230997c39b3aaedd6f86276ff",
+      "block_sha256": "d06e66714f0a3b220ea448d5ef241e77ed15bac230997c39b3aaedd6f86276ff",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.yoshidaCoefficients；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.3-YoshidaCancellation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.yoshidaCancellation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "6ca4d08022323637cd1cc3cacc53ba260e5f66997d713b5aaf5eeb45006f3e15",
+      "block_sha256": "743c853a3ecbc1b9da8508dfad15dc3920db9d95bf8b6c762665a124b428b534",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.yoshidaCancellation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch03/validation/batch08-route1-COMPILE.json"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.3-YoshidaUnique": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.yoshidaUnique",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "89084d3635119536c3375da68ec12f183e0949040fd3401f580c8af652758473",
+      "block_sha256": "5371ad76728f9883fb289ef1b99c58bdaaf0991f7b8da86030d61ecc48d2f034",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.yoshidaUnique；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 2,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch03/validation/batch08-unique-route1-COMPILE.json",
+        "blueprint/ch03/validation/batch08-unique-route2-COMPILE.json"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.3-YoshidaRaiseOrder": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.yoshidaRaiseOrder",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "1ae981665dde4821e59408163599bdd6060477cf6e85b9eb943f76d2a22e0bb7",
+      "block_sha256": "570829270e9d12f44c947c5a79d57cd1b842ba3cfbd64be5c1513d6eef3e0c35",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺完整非交换BCH/奇性到实际局部余项改阶桥接；属大型理论，不建设。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.yoshidaRaiseOrder；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.3-Yoshida4": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.yoshida4",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "77358eba9875f950dd89b09140473263b1825dafbb9ff43498cafae23e4dd50a",
+      "block_sha256": "77358eba9875f950dd89b09140473263b1825dafbb9ff43498cafae23e4dd50a",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.yoshida4；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.3-Yoshida4Structure": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.yoshida4Structure",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "98c5cbdebe7f5b33474347242c9d65187a57845ee5511d9b76e2905d610427ed",
+      "block_sha256": "2b970d34d1366729610678c5d079516bb1d657d6019b02188cb24e3fc4ba9ff5",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.Chapter03Review.yoshida4Structure_proved"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.yoshida4Structure；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.3-GeneralSplitting": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.generalSplitting",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "924a01c82c34328e77e16a9b43b93cf287130ac21fb29e17a3e97487fb949d5d",
+      "block_sha256": "924a01c82c34328e77e16a9b43b93cf287130ac21fb29e17a3e97487fb949d5d",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.generalSplitting；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.4-TakahashiPotential": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.takahashiImada",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "e44113bb5fc9ef8d9578fd4320dffc378f34761c4207d2debe031d15c60b9d71",
+      "block_sha256": "e44113bb5fc9ef8d9578fd4320dffc378f34761c4207d2debe031d15c60b9d71",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.takahashiImada；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.4-PotentialDoubleBracket": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.potentialDoubleBracket",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "b8c4cf762f0452588033effcf9114e165093f81854320ca8570612ea7e49aded",
+      "block_sha256": "71ab51093678f6d8d0ad1183a59922abc62ce41a7d9605bac014241d266fd561",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "需实际机械Hamiltonian的坐标Poisson双括号/梯度接口桥接；当前不存在现成桥接，有限微分路线待处理。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.potentialDoubleBracket；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.4-TakahashiShadow": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.takahashiShadow2",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "11d253418ce896c343b987634b28607548729496c95be45438b2107cd9bb671f",
+      "block_sha256": "11d253418ce896c343b987634b28607548729496c95be45438b2107cd9bb671f",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.takahashiShadow2；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.4-TakahashiProcessor": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.takahashiProcessor",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "2b6d6ed25bd41458eae536c1166cb57eacc1f0981a03724b1d4a262fe8331e01",
+      "block_sha256": "2b6d6ed25bd41458eae536c1166cb57eacc1f0981a03724b1d4a262fe8331e01",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.takahashiProcessor；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.4-ProcessorEnergyPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.processorEnergyPrinted",
+      "verdict": "FAIL",
+      "explanation": "p.113/PDF135第一行漏写U，h=0时已要求H=T；与下一行及上一页H̃矛盾。两行完整字面结论均保留sorry，不静默补U。",
+      "signature_sha256": "2060a6cc9988351db4d5e79381c9143ef065d147505843265e2e16b688c033d3",
+      "block_sha256": "91c0dc82c4283c64f61c36490fadbc61b7ffa08dc1fac235c8dd7e85e2079689",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "印刷漏项待裁定；非PASS不证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.processorEnergyPrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
+    },
+    "MD-3.3.4-TakahashiEffectiveOrder": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.takahashiEffectiveOrder",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "全局可逆处理器与原书局部近恒等坐标变换的关系待审；完整实际轨迹四阶结论保留，不把能量阶误当任意观测量阶。",
+      "signature_sha256": "1560b4d956c5e9d02533877a59f53360850bf31441c4fba4c4c1e450d58d2cf7",
+      "block_sha256": "75dff1e7f0297bc8636bb858c63f0b25731e2332756fa03f158558ddcfe85f4a",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.takahashiEffectiveOrder；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch09-cubic-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section33\\chapter_axioms.log"
     }
   }
 }

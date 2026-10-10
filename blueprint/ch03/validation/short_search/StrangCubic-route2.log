@@ -1,0 +1,6 @@
+blueprint\ch03\validation\short_search\StrangCubic-route2.lean:18:2: error: ring failed, ring expressions not equal
+R : Type
+inst✝¹ : Ring R
+inst✝ : Algebra ℝ R
+A B : R
+⊢ 3 / 16 = 0

@@ -1,0 +1,84 @@
+{
+  "batch": "BATCH10",
+  "subtask": "BATCH10e",
+  "source_ids": [
+    "MD-3.3.3-YoshidaRaiseOrder"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 131,
+      "printed_page": 109
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "31ae5912539586e323e50df35aa3fdf9ab36a0c0d3445747b242b49083e17323",
+  "lean_sha256": "5ea886e0c9adb821098b28ecd8f5a6d1a1509d4827a06fb33017694167aef3a6",
+  "signature_sha256": "1ae981665dde4821e59408163599bdd6060477cf6e85b9eb943f76d2a22e0bb7",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "actualFlow",
+      "code_sha256": "cb75a494f3dbd443d1820aded2bd01245f6bb284bab13cad5f843c9d30518c23"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "localOrder",
+      "code_sha256": "35fce0c5dc0e426c289a6d68e3e3d5243526e9e4e1567646bc0e3140623e3663"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "yoshidaCoefficients",
+      "code_sha256": "d06e66714f0a3b220ea448d5ef241e77ed15bac230997c39b3aaedd6f86276ff"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "yoshidaCompose",
+      "code_sha256": "eeac5c1c96fc6cedf83cddd8df38c715358be84a7a0d3c168b1c5c71ada8f84c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "yoshidaRoot",
+      "code_sha256": "50e2b7601bd13a41de5ce8a28b7b72e28acedf9c4907a921f7b130090ff24038"
+    }
+  ],
+  "paste_plus_pdf_bytes": 87921,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5018,
+      "sha256": "b936cff53cb1855e8d0399fde03ddc6dc53a1343297d0320f6520045bdf6391c"
+    },
+    "BATCH10e_PAGES.pdf": {
+      "bytes": 82903,
+      "sha256": "703e89bff6ad979f549459fb89369062a4c5c58153554ada4b5b09fac3e043f6"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

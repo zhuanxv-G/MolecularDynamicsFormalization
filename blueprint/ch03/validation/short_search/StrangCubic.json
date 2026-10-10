@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch03/validation/short_search/StrangCubic-route1.lean",
+    "log": "blueprint/ch03/validation/short_search/StrangCubic-route1.log",
+    "source_sha256": "e8d9d6c6bc606f88922271d6d37db290ad701844985c00f10db603906616ca94",
+    "log_sha256": "a48c632ef657801978b7e5620a942c0356645786edba563d0f027b5528d7a89c"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch03/validation/short_search/StrangCubic-route2.lean",
+    "log": "blueprint/ch03/validation/short_search/StrangCubic-route2.log",
+    "source_sha256": "d4ed15f24679bed3c10b2717f879d61def5b1d2ee724a8af2994a75af4bf133f",
+    "log_sha256": "c2c5a978cb5e1b81872a8be4df5acef6c1e7c5bd7a7f1e51db2b346fae29e912"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro R _ _ A B\n  norm_num [formalLog, formalStrang, textbookFormalOperatorExponential,\n    PowerSeries.coeff_mk, PowerSeries.coeff_mul, Finset.Nat.antidiagonal_succ,\n    Nat.factorial_succ, pow_succ, Finset.sum_Icc_succ_top, MolecularDynamics.Chapter03Review.commutator,\n    mul_add, add_mul, mul_sub, sub_mul, smul_mul_assoc, mul_smul_comm,\n    smul_add, smul_sub, smul_smul]\n  simp only [mul_assoc]\n  module",
+    "source": "blueprint/ch03/validation/short_search/StrangCubic-route3.lean",
+    "log": "blueprint/ch03/validation/short_search/StrangCubic-route3.log",
+    "source_sha256": "a638e1e7528c5d965cfbf0e25a736a08a36a25bedd2289bc200a39ea7497edf2",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

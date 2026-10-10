@@ -1,0 +1,119 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH08a_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 129 | 107 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-3.3.2-VerletMaps",
+  "kind": "definition",
+  "label": "(3.3)",
+  "section": "3.3.2",
+  "printed_page": "107",
+  "pdf_page": "129",
+  "statement_latex": "Recall the position and velocity Verlet methods:\n\\[\\begin{array}{ll}\\text{Position Verlet:}&\\text{Velocity Verlet:}\\\\\n\\widehat Q:=q+(h/2)M^{-1}p,&\\widehat P:=p-(h/2)\\nabla U(q),\\\\\nP:=p-h\\nabla U(\\widehat Q),&Q:=q+hM^{-1}\\widehat P,\\\\\nQ:=\\widehat Q+(h/2)M^{-1}P.&P:=\\widehat P-(h/2)\\nabla U(Q).\\end{array}\\tag{3.3}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "第一分量为position/drift-kick-drift；第二分量velocity/kick-drift-kick。真实F=−grad U。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.verletMaps",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "固定对角质量M，保持第1章对象；无非对角质量一般化。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+def verletMaps {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) :
+    (SymplecticCoordinates n → SymplecticCoordinates n) ×
+      (SymplecticCoordinates n → SymplecticCoordinates n) :=
+  (positionVerlet m (textbookPotentialForce U) h,
+    coordinateVerlet m (textbookPotentialForce U) h)
+```
+
+原上下文：namespace MD.Ch03；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter03Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.SymplecticCoordinates (MolecularDynamics/Chapter02/SymplecticForm.lean:25)
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+
+### MolecularDynamics.Chapter02Review.coordinateVerlet (MolecularDynamics/Chapter02/ReviewDefinitions.lean:138)
+```lean
+def coordinateVerlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) :
+    SymplecticCoordinates n → SymplecticCoordinates n :=
+  textbookMomentumKick F (h/2) ∘ textbookPositionDrift m h ∘ textbookMomentumKick F (h/2)
+```
+
+### MolecularDynamics.Chapter03Review.positionVerlet (MolecularDynamics/Chapter03/ReviewDefinitions.lean:64)
+```lean
+def positionVerlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) :
+    SymplecticCoordinates n → SymplecticCoordinates n :=
+  textbookPositionDrift m (h/2) ∘ textbookMomentumKick F h ∘ textbookPositionDrift m (h/2)
+```
+
+### MolecularDynamics.textbookMomentumKick (MolecularDynamics/Chapter02/SymplecticEuler.lean:70)
+```lean
+noncomputable def textbookMomentumKick {Nc : ℕ}
+    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ)
+    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+  Sum.elim (fun i => z (Sum.inl i))
+    (fun i => z (Sum.inr i) + h * F (textbookPositionProjection Nc z) i)
+```
+
+### MolecularDynamics.textbookPositionDrift (MolecularDynamics/Chapter02/SymplecticEuler.lean:77)
+```lean
+noncomputable def textbookPositionDrift {Nc : ℕ} (m : Fin Nc → ℝ) (h : ℝ)
+    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+  Sum.elim (fun i => z (Sum.inl i) + h * (m i)⁻¹ * z (Sum.inr i))
+    (fun i => z (Sum.inr i))
+```
+
+### MolecularDynamics.textbookPositionProjection (MolecularDynamics/Chapter02/SymplecticEuler.lean:19)
+```lean
+noncomputable def textbookPositionProjection (Nc : ℕ) :
+    SymplecticCoordinates Nc →L[ℝ] (Fin Nc → ℝ) :=
+  ContinuousLinearMap.pi fun i => ContinuousLinearMap.proj (Sum.inl i)
+```
+
+### MolecularDynamics.textbookPotentialForce (MolecularDynamics/Chapter02/SymplecticEuler.lean:34)
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```
+
+### MD.Ch03.verletMaps (Blueprint/Ch03.lean:387)
+```lean
+def verletMaps {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) :
+    (SymplecticCoordinates n → SymplecticCoordinates n) ×
+      (SymplecticCoordinates n → SymplecticCoordinates n) :=
+  (positionVerlet m (textbookPotentialForce U) h,
+    coordinateVerlet m (textbookPotentialForce U) h)
+```

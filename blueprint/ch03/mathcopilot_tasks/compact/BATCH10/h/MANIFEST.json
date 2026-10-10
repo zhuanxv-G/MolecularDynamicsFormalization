@@ -1,0 +1,48 @@
+{
+  "batch": "BATCH10",
+  "subtask": "BATCH10h",
+  "source_ids": [
+    "MD-3.3.3-GeneralSplitting"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 133,
+      "printed_page": 111
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "31ae5912539586e323e50df35aa3fdf9ab36a0c0d3445747b242b49083e17323",
+  "lean_sha256": "5ea886e0c9adb821098b28ecd8f5a6d1a1509d4827a06fb33017694167aef3a6",
+  "signature_sha256": "924a01c82c34328e77e16a9b43b93cf287130ac21fb29e17a3e97487fb949d5d",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "generalSplitting",
+      "code_sha256": "924a01c82c34328e77e16a9b43b93cf287130ac21fb29e17a3e97487fb949d5d"
+    }
+  ],
+  "paste_plus_pdf_bytes": 134434,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3459,
+      "sha256": "d9e6877837735d799bbab6db8835e9fd19b5bc1278eb489d48ed7cafb7a6636a"
+    },
+    "BATCH10h_PAGES.pdf": {
+      "bytes": 130975,
+      "sha256": "6d3ede2ae1bcb06ed9912e079755cc10ae41b81c2f32ac3cfb7bb04ccd8a0801"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

@@ -28,6 +28,8 @@ p.verify_protected()
 paths=['.gitattributes','AGENTS.md','lakefile.toml','docs/handoff/CURRENT_STATE.zh-CN.md','docs/handoff/RESUME_PROMPT.zh-CN.md','docs/handoff/WORK_LOG.zh-CN.md','docs/handoff/LOCAL_PIPELINE.md',f'Blueprint/Ch{ch:02}.lean',f'blueprint/ch{ch:02}',f'docs/review/CH{ch:02}_BLUEPRINT.zh-CN.md',
     'scripts/blueprint_source.py','scripts/local_blueprint.py','scripts/local_stage.py','scripts/local_chapter_check.ps1','scripts/local_checkpoint.py',f'scripts/ch{ch:02}_data.py']
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_section*.py') if x.stem in sys.modules]
+paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_short_search*.py')]
+paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_bracket_search*.py')]
 stage(paths)
 subprocess.run(['git','commit','-m',f'ch{ch:02} sec{section}: faithful local blueprint and checked checkpoint'],cwd=ROOT,check=True)
 subprocess.run(['git','push','-u','origin',f'chapter{ch:02}-blueprint'],cwd=ROOT,check=True)

@@ -91,3 +91,25 @@ dict(printed_page='99–100',pdf_page='121–122',reason='图3.1及Ω=h=1的六�
 
 import ch03_section32
 import ch03_section32b
+import ch03_section33
+import ch03_section33b
+import ch03_section33c
+import ch03_section33d
+import ch03_section33e
+
+# Reuse the bounded local algebra search only when its saved compiler evidence
+# and exact generated source are unchanged. This never changes formal sources.
+import json,hashlib
+route_path=BASE/'validation/short_search/StrangCubic.json'
+if route_path.exists():
+    routes=json.loads(route_path.read_text(encoding='utf-8'))
+    target=next(r for r in RECORDS if r['source_id']=='MD-3.3.2-StrangCubic')
+    for route in routes:
+        assert hashlib.sha256((ROOT/route['source']).read_bytes()).hexdigest()==route['source_sha256']
+        assert hashlib.sha256((ROOT/route['log']).read_bytes()).hexdigest()==route['log_sha256']
+        if route['exit_code']==0:
+            target['code']=target['code'].replace('by\n  sorry','by\n  '+route['proof'])
+            target['missing']=None
+            break
+    else:
+        if len(routes)>=3:target['missing']='三条有限系数证明路线失败，已停止；证据见validation/short_search/StrangCubic.json。'
