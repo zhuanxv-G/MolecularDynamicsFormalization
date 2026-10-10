@@ -1,8 +1,8 @@
 # 第3章本地五步流程进度
 
 范围：印刷p.97–136/PDF119–158，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
-下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前128条；旧清单映射124/143；本地PASS 103；网站返回0。
+第3章本地部分完成；第3章等待用户提交MathCopilot批次；继续下一章本地流程。网站不可用，未冻结。
+当前149条；旧清单映射143/143；本地PASS 117；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -124,7 +124,7 @@
 | MD-3.6.2-RKAffine | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-3.6.2-PartitionedAffinePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；字面非PASS不证明；正确分块运输另列。 |
 | MD-3.6.2-PartitionedAffine | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.6.3-SymplecticNotReversible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待单位振子h=1数值反例；需明确Jacobian/梯度坐标展开，不改正式库。 |
+| MD-3.6.3-SymplecticNotReversible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticNotReversible.json。 |
 | MD-3.6.3-TrapezoidalRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-3.6.3-TrapezoidalProperties | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。 |
 | MD-3.6.3-HamiltonianSpectrum | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺Hamiltonian矩阵复谱及转置相似性桥接；字面证明需审，不证明非PASS。 |
@@ -134,171 +134,175 @@
 | MD-3.6.1-MechanicalReversalCorrect | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-3.6.3-ConjugateOrderPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原文阶数/稳定性性能的精确意义及处理器正则性待审；本地非PASS不证明。 |
 | MD-3.6.3-ReversibleVolumeFailure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺非线性可逆光滑equivalence和Jacobian绝对det≠1的反例桥接；线性可逆矩阵不足以给本例。 |
+| MD-3.7-HardCoreDomain | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.7-ElasticReflection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.7-ElasticEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-3.7-CollisionComposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.7-CollisionRegularity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺有限事件gluedCollision索引稳定与各段ODE光滑性/一侧极限的完整桥接；不建设完整混合动力系统理论。 |
+| MD-3.7.1-HardCorePotential | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-3.7.1-PrimitiveSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.7.1-PrimitiveOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺碰撞事件稳定性与非光滑全局误差理论；不建设大型理论。 |
+| MD-3.7.1-ObstacleReflection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.7.1-PrimitiveDefect | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺实际碰撞步族的Taylor展开及一致O(h²)余项；本地非PASS不证明。 |
+| MD-3.7.1-CollisionDefectZero | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.7.1-EndImpactThirdOrderPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；字面FAIL不证明，等待网站/导师裁定。 |
+| MD-3.7.2-CollisionQuadraticPath | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.7.2-CollisionTimeRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.7.2-CollisionQuartic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.7.2-CollisionalVerletRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.7.2-CollisionalVerletOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺自适应碰撞事件定位稳定性与非光滑全局误差理论；不建设大型理论。 |
+| MD-3.7.3-PairForceDecoupling | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-3.7.3-DecoupledOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺混合冲量与碰撞稳定性全局误差理论；本地非PASS不证明。 |
+| MD-3.7.3-ModifiedCollisionProjection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.7.1-FreeHardSphereHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 
 ## 旧143条完整映射
 
 | 旧id | 新source_id或当前缺项 |
 |---|---|
-| CH02-001 | PENDING：所属节尚未处理 |
-| CH02-002 | PENDING：所属节尚未处理 |
-| CH02-003 | PENDING：所属节尚未处理 |
-| CH02-004 | PENDING：所属节尚未处理 |
-| CH02-005 | PENDING：所属节尚未处理 |
-| CH02-006 | PENDING：所属节尚未处理 |
-| CH02-007 | PENDING：所属节尚未处理 |
-| CH02-008 | PENDING：所属节尚未处理 |
-| CH02-009 | PENDING：所属节尚未处理 |
-| CH02-010 | PENDING：所属节尚未处理 |
-| CH02-011 | PENDING：所属节尚未处理 |
-| CH02-012 | PENDING：所属节尚未处理 |
-| CH02-013 | PENDING：所属节尚未处理 |
-| CH02-014 | PENDING：所属节尚未处理 |
-| CH02-015 | PENDING：所属节尚未处理 |
-| CH02-016 | PENDING：所属节尚未处理 |
-| CH02-017 | PENDING：所属节尚未处理 |
-| CH02-018 | PENDING：所属节尚未处理 |
-| CH02-019 | PENDING：所属节尚未处理 |
-| CH02-020 | PENDING：所属节尚未处理 |
-| CH02-021 | PENDING：所属节尚未处理 |
-| CH02-022 | PENDING：所属节尚未处理 |
-| CH02-023 | PENDING：所属节尚未处理 |
-| CH02-024 | PENDING：所属节尚未处理 |
-| CH02-025 | PENDING：所属节尚未处理 |
-| CH02-026 | PENDING：所属节尚未处理 |
-| CH02-027 | PENDING：所属节尚未处理 |
-| CH02-028 | PENDING：所属节尚未处理 |
-| CH02-029 | PENDING：所属节尚未处理 |
-| CH02-030 | PENDING：所属节尚未处理 |
-| CH02-031 | PENDING：所属节尚未处理 |
-| CH02-032 | PENDING：所属节尚未处理 |
-| CH02-033 | PENDING：所属节尚未处理 |
-| CH02-034 | PENDING：所属节尚未处理 |
-| CH02-035 | PENDING：所属节尚未处理 |
-| CH02-036 | PENDING：所属节尚未处理 |
-| CH02-037 | PENDING：所属节尚未处理 |
-| CH02-038 | PENDING：所属节尚未处理 |
-| CH02-039 | PENDING：所属节尚未处理 |
-| CH02-040 | PENDING：所属节尚未处理 |
-| CH02-041 | PENDING：所属节尚未处理 |
-| CH02-042 | PENDING：所属节尚未处理 |
-| CH02-043 | PENDING：所属节尚未处理 |
-| CH02-044 | PENDING：所属节尚未处理 |
-| CH02-045 | PENDING：所属节尚未处理 |
-| CH02-046 | PENDING：所属节尚未处理 |
-| CH02-047 | PENDING：所属节尚未处理 |
-| CH02-048 | PENDING：所属节尚未处理 |
-| CH02-049 | PENDING：所属节尚未处理 |
-| CH02-050 | PENDING：所属节尚未处理 |
-| CH02-051 | PENDING：所属节尚未处理 |
-| CH02-052 | PENDING：所属节尚未处理 |
-| CH02-053 | PENDING：所属节尚未处理 |
-| CH02-054 | PENDING：所属节尚未处理 |
-| CH02-055 | PENDING：所属节尚未处理 |
-| CH02-056 | PENDING：所属节尚未处理 |
-| CH02-057 | PENDING：所属节尚未处理 |
-| CH02-058 | PENDING：所属节尚未处理 |
-| CH02-059 | PENDING：所属节尚未处理 |
-| CH02-060 | PENDING：所属节尚未处理 |
-| CH02-061 | PENDING：所属节尚未处理 |
-| CH02-062 | PENDING：所属节尚未处理 |
-| CH02-063 | PENDING：所属节尚未处理 |
-| CH02-064 | PENDING：所属节尚未处理 |
-| CH02-065 | PENDING：所属节尚未处理 |
-| CH02-066 | PENDING：所属节尚未处理 |
-| CH02-067 | PENDING：所属节尚未处理 |
-| CH02-068 | PENDING：所属节尚未处理 |
-| CH02-069 | PENDING：所属节尚未处理 |
-| CH02-070 | PENDING：所属节尚未处理 |
-| CH02-071 | PENDING：所属节尚未处理 |
-| CH02-072 | PENDING：所属节尚未处理 |
-| CH02-073 | PENDING：所属节尚未处理 |
-| CH02-074 | PENDING：所属节尚未处理 |
-| CH02-075 | PENDING：所属节尚未处理 |
-| CH02-076 | PENDING：所属节尚未处理 |
-| CH02-077 | PENDING：所属节尚未处理 |
-| CH02-078 | PENDING：所属节尚未处理 |
-| CH02-079 | PENDING：所属节尚未处理 |
-| CH02-080 | PENDING：所属节尚未处理 |
-| CH02-081 | PENDING：所属节尚未处理 |
-| CH02-082 | PENDING：所属节尚未处理 |
-| CH02-083 | PENDING：所属节尚未处理 |
-| CH02-084 | PENDING：所属节尚未处理 |
-| CH02-085 | PENDING：所属节尚未处理 |
-| CH02-086 | PENDING：所属节尚未处理 |
-| CH02-087 | PENDING：所属节尚未处理 |
-| CH02-088 | PENDING：所属节尚未处理 |
-| CH02-089 | PENDING：所属节尚未处理 |
-| CH02-090 | PENDING：所属节尚未处理 |
-| CH02-091 | PENDING：所属节尚未处理 |
-| CH02-092 | PENDING：所属节尚未处理 |
-| CH02-093 | PENDING：所属节尚未处理 |
-| CH02-094 | PENDING：所属节尚未处理 |
-| CH02-095 | PENDING：所属节尚未处理 |
-| CH02-096 | PENDING：所属节尚未处理 |
-| CH02-097 | PENDING：所属节尚未处理 |
-| CH02-098 | PENDING：所属节尚未处理 |
-| CH02-099 | PENDING：所属节尚未处理 |
-| CH02-100 | PENDING：所属节尚未处理 |
-| CH02-101 | PENDING：所属节尚未处理 |
-| CH02-102 | PENDING：所属节尚未处理 |
-| CH02-103 | PENDING：所属节尚未处理 |
-| CH02-104 | PENDING：所属节尚未处理 |
-| CH02-105 | PENDING：所属节尚未处理 |
-| CH02-106 | PENDING：所属节尚未处理 |
-| CH02-107 | PENDING：所属节尚未处理 |
-| CH02-108 | PENDING：所属节尚未处理 |
-| CH02-109 | PENDING：所属节尚未处理 |
-| CH02-110 | PENDING：所属节尚未处理 |
-| CH02-111 | PENDING：所属节尚未处理 |
-| CH02-112 | PENDING：所属节尚未处理 |
-| CH02-113 | PENDING：所属节尚未处理 |
-| CH02-114 | PENDING：所属节尚未处理 |
-| CH02-115 | PENDING：所属节尚未处理 |
-| CH02-116 | PENDING：所属节尚未处理 |
-| CH02-117 | PENDING：所属节尚未处理 |
-| CH02-118 | PENDING：所属节尚未处理 |
-| CH02-119 | PENDING：所属节尚未处理 |
-| CH02-120 | PENDING：所属节尚未处理 |
-| CH02-121 | PENDING：所属节尚未处理 |
-| CH02-122 | PENDING：所属节尚未处理 |
-| CH02-123 | PENDING：所属节尚未处理 |
-| CH02-124 | PENDING：所属节尚未处理 |
-| CH02-125 | PENDING：所属节尚未处理 |
-| CH02-126 | PENDING：所属节尚未处理 |
-| CH02-127 | PENDING：所属节尚未处理 |
-| CH02-128 | PENDING：所属节尚未处理 |
-| CH02-129 | PENDING：所属节尚未处理 |
-| CH02-130 | PENDING：所属节尚未处理 |
-| CH02-131 | PENDING：所属节尚未处理 |
-| CH02-132 | PENDING：所属节尚未处理 |
-| CH02-133 | PENDING：所属节尚未处理 |
-| CH02-134 | PENDING：所属节尚未处理 |
-| CH02-135 | PENDING：所属节尚未处理 |
-| CH02-136 | PENDING：所属节尚未处理 |
-| CH02-137 | PENDING：所属节尚未处理 |
-| CH02-138 | PENDING：所属节尚未处理 |
-| CH02-139 | PENDING：所属节尚未处理 |
-| CH02-140 | PENDING：所属节尚未处理 |
-| CH02-141 | PENDING：所属节尚未处理 |
-| CH02-142 | PENDING：所属节尚未处理 |
-| CH02-143 | PENDING：所属节尚未处理 |
-| CH02-144 | PENDING：所属节尚未处理 |
-| CH02-145 | PENDING：所属节尚未处理 |
-| CH02-146 | PENDING：所属节尚未处理 |
-| CH02-147 | PENDING：所属节尚未处理 |
-| CH02-148 | PENDING：所属节尚未处理 |
-| CH02-149 | PENDING：所属节尚未处理 |
-| CH02-150 | PENDING：所属节尚未处理 |
-| CH02-151 | PENDING：所属节尚未处理 |
-| CH02-152 | PENDING：所属节尚未处理 |
-| CH02-153 | PENDING：所属节尚未处理 |
-| CH02-154 | PENDING：所属节尚未处理 |
-| CH02-155 | PENDING：所属节尚未处理 |
-| CH02-156 | PENDING：所属节尚未处理 |
-| CH02-157 | PENDING：所属节尚未处理 |
-| CH02-158 | PENDING：所属节尚未处理 |
-| CH02-159 | PENDING：所属节尚未处理 |
-| CH02-160 | PENDING：所属节尚未处理 |
+| CH03-001 | MD-3-ModifiedConstruction |
+| CH03-002 | MD-3.1-AdjointEulerOscillator |
+| CH03-003 | MD-3.1-ShadowHamiltonian |
+| CH03-004 | MD-3.1-EnergyFailure |
+| CH03-005 | MD-3.1-ShadowInvariant |
+| CH03-006 | MD-3.1-ShadowEllipses |
+| CH03-007 | MD-3.1-EulerGrowth |
+| CH03-008 | MD-3.1-FormalHamiltonian |
+| CH03-009 | MD-3.1-FormalHamiltonianField |
+| CH03-010 | MD-3.2-LieDerivative |
+| CH03-011 | MD-3.2-ObservableDerivative |
+| CH03-012 | MD-3.2-ObservableSecondDerivative |
+| CH03-013 | MD-3.2-OperatorExponential |
+| CH03-014 | MD-3.2-FormalObservable |
+| CH03-015 | MD-3.2-FiniteLieTaylor |
+| CH03-016 | MD-3.2-FlowCoordinates |
+| CH03-017 | MD-3.2-PoissonBracket |
+| CH03-018 | MD-3.2-PoissonCoordinates |
+| CH03-019 | MD-3.2-PoissonBilinearity |
+| CH03-020 | MD-3.2-PoissonSkew |
+| CH03-021 | MD-3.2-PoissonSelf |
+| CH03-022 | MD-3.2-PoissonJacobi |
+| CH03-023 | MD-3.2-HamiltonianObservableDerivative |
+| CH03-024 | MD-3.2-HamiltonianLie |
+| CH03-025 | MD-3.2-HamiltonianLie |
+| CH03-026 | MD-3.3-HamiltonianLieAdditivity |
+| CH03-027 | MD-3.3-FormalSplitting |
+| CH03-028 | MD-3.3-ExactExponentialCubic |
+| CH03-029 | MD-3.3-ProductExponentialCubic |
+| CH03-030 | MD-3.3-DifferenceCommutator |
+| CH03-031 | MD-3.3-DifferenceCubic |
+| CH03-032 | MD-3.3-DifferenceCommutator |
+| CH03-033 | MD-3.3-DifferenceCommutator |
+| CH03-034 | MD-3.3-HamiltonianCommutatorPrinted |
+| CH03-035 | MD-3.3-LeadingModifiedExponential |
+| CH03-036 | MD-3.3-LeadingShadowHamiltonian |
+| CH03-037 | MD-3.3-BCH4 |
+| CH03-038 | MD-3.3-BCHHamiltonian |
+| CH03-039 | MD-3.3-BCHHamiltonianMatching |
+| CH03-040 | MD-3.3-CommutingFlows |
+| CH03-041 | MD-3.3.1-SymplecticEulerShadow |
+| CH03-042 | MD-3.3.1-SymplecticEulerShadowMatching |
+| CH03-043 | MD-3.3.2-VerletMaps |
+| CH03-044 | MD-3.3.2-VerletHamiltonianParts |
+| CH03-045 | MD-3.3.2-VerletStructure |
+| CH03-046 | MD-3.3.2-VerletModifiedHamiltonian |
+| CH03-047 | MD-3.3.2-VerletModifiedMatching |
+| CH03-048 | MD-3.3.2-ModifiedEven |
+| CH03-049 | MD-3.3.2-Strang |
+| CH03-050 | MD-3.3.2-DifferentLogsCommute |
+| CH03-051 | MD-3.3.2-StrangInverse |
+| CH03-052 | MD-3.3.2-StrangCubic |
+| CH03-053 | MD-3.3.3-YoshidaComposition |
+| CH03-054 | MD-3.3.3-YoshidaCancellation |
+| CH03-055 | MD-3.3.3-YoshidaCoefficients |
+| CH03-056 | MD-3.3.3-YoshidaUnique |
+| CH03-057 | MD-3.3.3-YoshidaRaiseOrder |
+| CH03-058 | MD-3.3.3-Yoshida4 |
+| CH03-059 | MD-3.3.3-Yoshida4Structure |
+| CH03-060 | MD-3.3.3-GeneralSplitting |
+| CH03-061 | MD-3.3.4-TakahashiPotential |
+| CH03-062 | MD-3.3.4-PotentialDoubleBracket |
+| CH03-063 | MD-3.3.4-TakahashiShadow |
+| CH03-064 | MD-3.3.4-TakahashiProcessor |
+| CH03-065 | MD-3.3.4-ProcessorEnergyPrinted |
+| CH03-066 | MD-3.3.4-TakahashiEffectiveOrder |
+| CH03-067 | MD-3.4-ModifiedField |
+| CH03-068 | MD-3.4-LeadingModifiedField |
+| CH03-069 | MD-3.4-TruncatedHamiltonian |
+| CH03-070 | MD-3.4-TruncationSmooth |
+| CH03-071 | MD-3.4-Thm3.1 |
+| CH03-072 | MD-3.4-CompactLipschitz |
+| CH03-073 | MD-3.4-TruncatedFlow |
+| CH03-074 | MD-3.4-FiniteMatchingConstruction |
+| CH03-075 | MD-3.4-TruncatedConservation |
+| CH03-076 | MD-3.4-EnergyTelescoping |
+| CH03-077 | MD-3.4-UniformTruncatedLipschitz |
+| CH03-078 | MD-3.4-TruncationRemainder |
+| CH03-079 | MD-3.4-PhysicalEnergyDrift |
+| CH03-080 | MD-3.4-PolynomialEnergyRate |
+| CH03-081 | MD-3.4-StepCountPower |
+| CH03-082 | MD-3.4-ArbitraryFiniteTruncation |
+| CH03-083 | MD-3.4-AnalyticDefect |
+| CH03-084 | MD-3.4-OptimalTruncation |
+| CH03-085 | MD-3.4-ExponentialFlat |
+| CH03-086 | MD-3.4-ScalarVerletShadow4 |
+| CH03-087 | MD-3.4-CommutingEnergy |
+| CH03-088 | MD-3.4-CommutingEnergySymmetry |
+| CH03-089 | MD-3.4-EnergySymplecticNoGo |
+| CH03-090 | MD-3.5-EqualComponentIntegral |
+| CH03-091 | MD-3.5-EqualEulerIntegral |
+| CH03-092 | MD-3.5-LinearEulerIntegral |
+| CH03-093 | MD-3.5-LinearRKIntegral |
+| CH03-094 | MD-3.5-VerletOscillatorEnergy |
+| CH03-095 | MD-3.5-MomentumProjection |
+| CH03-096 | MD-3.5-ProjectionConstraint |
+| CH03-097 | MD-3.5-ProjectionFactor |
+| CH03-098 | MD-3.5-ProjectionEnergy |
+| CH03-099 | MD-3.5-KineticZero |
+| CH03-100 | MD-3.5-EnergyProjectionRelation |
+| CH03-101 | MD-3.5-NoHamiltonianAttractor |
+| CH03-102 | MD-3.6-HamiltonianFlowStructures |
+| CH03-103 | MD-3.6-VolumeNotSymplectic |
+| CH03-104 | MD-3.6.1-LinearInvolution |
+| CH03-105 | MD-3.6.1-ReversedFieldPrinted |
+| CH03-106 | MD-3.6.1-MomentumReversal |
+| CH03-107 | MD-3.6.1-MechanicalReversal |
+| CH03-108 | MD-3.6.1-ReversedTrajectoryPrinted |
+| CH03-109 | MD-3.6.2-FlowReversal |
+| CH03-110 | MD-3.6.2-FlowReversalIdentity |
+| CH03-111 | MD-3.6.2-ReversibleMethod |
+| CH03-112 | MD-3.6.2-SymmetricMethod |
+| CH03-113 | MD-3.6.2-AffineInvariant |
+| CH03-114 | MD-3.6.2-SymmetricAffineReversible |
+| CH03-115 | MD-3.6.2-RKAffine |
+| CH03-116 | MD-3.6.2-PartitionedAffinePrinted |
+| CH03-117 | MD-3.6.3-SymplecticNotReversible |
+| CH03-118 | MD-3.6.3-TrapezoidalRelation |
+| CH03-119 | MD-3.6.3-TrapezoidalProperties |
+| CH03-120 | MD-3.6.3-HamiltonianSpectrum |
+| CH03-121 | MD-3.6.3-SymplecticSpectrum |
+| CH03-122 | MD-3.6.3-ReversibleSpectrum |
+| CH03-123 | MD-3.6.3-ConjugateIterates |
+| CH03-124 | MD-3.6.3-ReversibleVolumeFailure |
+| CH03-125 | MD-3.7-HardCoreDomain |
+| CH03-126 | MD-3.7-ElasticReflection |
+| CH03-127 | MD-3.7-ElasticEnergy |
+| CH03-128 | MD-3.7-CollisionComposition |
+| CH03-129 | MD-3.7-CollisionRegularity |
+| CH03-130 | MD-3.7.1-HardCorePotential |
+| CH03-131 | MD-3.7.1-PrimitiveSplitting |
+| CH03-132 | MD-3.7.1-PrimitiveOrder |
+| CH03-133 | MD-3.7.1-ObstacleReflection |
+| CH03-134 | MD-3.7.1-PrimitiveDefect |
+| CH03-135 | MD-3.7.1-CollisionDefectZero |
+| CH03-136 | MD-3.7.2-CollisionQuadraticPath |
+| CH03-137 | MD-3.7.2-CollisionTimeRelation |
+| CH03-138 | MD-3.7.2-CollisionQuartic |
+| CH03-139 | MD-3.7.2-CollisionalVerletRelation |
+| CH03-140 | MD-3.7.2-CollisionalVerletOrder |
+| CH03-141 | MD-3.7.3-PairForceDecoupling |
+| CH03-142 | MD-3.7.3-DecoupledOrder |
+| CH03-143 | MD-3.7.3-ModifiedCollisionProjection |
 
 ## NEEDS_HUMAN / [ERRATUM?] / 缺理论
 
@@ -343,7 +347,7 @@
 - MD-3.6.2-AffineInvariant：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 (3.17)左端印刷z而不是z̃；保留原文，语义按前后说明的变换坐标。
 - MD-3.6.2-SymmetricAffineReversible：额外符号相容性是独立必要资格，不能当作原书已明示假设。 本地非PASS不进入证明；条件化有限代数推论可另审。一般方法需要G_{−f}(h)=G_f(−h)，否则原文蕴含式条件不全。
 - MD-3.6.2-PartitionedAffinePrinted：任意混合q,p的线性等价通常不保持不同PRK表格的分区；字面全称保留待反例审查。 字面非PASS不证明；正确分块运输另列。PRK一般只对保持分区的分块线性变换等变；任意混合变换的全称可疑。
-- MD-3.6.3-SymplecticNotReversible：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待单位振子h=1数值反例；需明确Jacobian/梯度坐标展开，不改正式库。
+- MD-3.6.3-SymplecticNotReversible：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticNotReversible.json。
 - MD-3.6.3-TrapezoidalProperties：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。
 - MD-3.6.3-HamiltonianSpectrum：谱结论保留真实复特征值；原证明把原矩阵同一个u当成转置特征向量，不能照抄为有效证明；纯虚时quadruplets可退化。 缺Hamiltonian矩阵复谱及转置相似性桥接；字面证明需审，不证明非PASS。同一u一般不是转置特征向量；四元素集合可重复，不声称总有4个互异值。
 - MD-3.6.3-SymplecticSpectrum：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺辛矩阵非退化、逆转置相似及复谱桥接；不建设新的完整谱理论。
@@ -351,6 +355,15 @@
 - MD-3.6.3-ConjugateIterates：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。
 - MD-3.6.3-ConjugateOrderPrinted：仅拓扑共轭不保持数值误差幂阶；通常需要定量局部Lipschitz或光滑处理器及步长资格。原泛称性能也未精确定义。 原文阶数/稳定性性能的精确意义及处理器正则性待审；本地非PASS不证明。homeomorphism可用平方根改变误差阶；原文缺定量正则性，不能由迭代共轭冒充已证同有效阶。
 - MD-3.6.3-ReversibleVolumeFailure：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺非线性可逆光滑equivalence和Jacobian绝对det≠1的反例桥接；线性可逆矩阵不足以给本例。
+- MD-3.7-CollisionRegularity：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺有限事件gluedCollision索引稳定与各段ODE光滑性/一侧极限的完整桥接；不建设完整混合动力系统理论。
+- MD-3.7.1-HardCorePotential：原页印刷≤把接触归入infinite，但p132准许≥及弹性碰撞接触；定义保持非严格非重叠域在接触为0，需导师裁定边界。 p133括号印刷≤与p132接触等号允许冲突；不静默改成<。
+- MD-3.7.1-PrimitiveOrder：完整有限时间一阶误差保留；原文未指误差度量，跳跃动量不能无条件按同一实时间全相空间比较；长期energy无界的泛称也不是所有势的定理。 缺碰撞事件稳定性与非光滑全局误差理论；不建设大型理论。时间对齐误差度量、有限单接触资格及长期energy无界的量化均需审。
+- MD-3.7.1-PrimitiveDefect：原文P̄是第一次half-kick后的动量；旧正式库Prop的pbar则写初始动量，本Blueprint沿用但明确差O(h)，其线性系数对应及一致族资格需审。 缺实际碰撞步族的Taylor展开及一致O(h²)余项；本地非PASS不证明。书中P̄与签名初始pbar的差异及通过O(h²)吸收的正则性需要独立审校。
+- MD-3.7.1-EndImpactThirdOrderPrinted：一维qc=1,pbar=−1,U(q)=q,tc=h给initial=(1+h+h²/2,−1)、final=(1,1)，ΔH=−h−h²/2，绝非O(h³)。 字面FAIL不证明，等待网站/导师裁定。原文end-step豁免与同页−(h−2tc)线性项冲突；具体单位障碍反例见审计。
+- MD-3.7.2-CollisionalVerletRelation：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 tc=hmax边界时原伪代码不反射，之后的二阶陈述排除此边界，不能冒充一般结果。
+- MD-3.7.2-CollisionalVerletOrder：原文二阶论断未明示边界和跳跃轨道误差度量；忠实记录额外资格，不能将变步长当固定hmax迭代时钟。 缺自适应碰撞事件定位稳定性与非光滑全局误差理论；不建设大型理论。同时间全相空间误差与时间对齐、tc=hmax边界、隔离接触资格需裁定。
+- MD-3.7.3-PairForceDecoupling：字面公式α′=0保留；second term指β却写α，随后用α生成路径、β作kick，需独立裁定约定。 “second term”与α′接触为0不一致；不静默改为β′。
+- MD-3.7.3-DecoupledOrder：保留完整条件化二阶误差；原文α/β职责冲突及方法/误差资格未裁定，不以某个约定假装原文已审。 缺混合冲量与碰撞稳定性全局误差理论；本地非PASS不证明。结合PairForceDecoupling，哪个势负责零法向kick需导师判定。
 
 ## 定性段落排除
 
@@ -361,3 +374,5 @@
 - p.116–122/PDF138–144：推荐/警告、double-well及七原子Lennard-Jones数值实验和Fig3.3–3.9为定性或经验观测；能量/势公式复用第1章定义，非新普适定理；数学修正能量脚注已单列。
 - p.122–127/PDF144–149：舍入误差、投影实现代价/概率、投影LJ和双弹簧数值实验、Fig3.10–3.14及性能判断为定性或经验观测；数学投影关系和Hamiltonian无吸引子断言已单列。
 - p.127–132/PDF149–154：设计原则选择、维数泛型、文献及KAM类比为定性评述；原文共轭effective-order附加数学断言已单列疑点，不排除。
+- p.133/PDF155：这是事件驱动精确计算的算法可用性说明；没有给计算模型、同时碰撞裁决或任意初始条件资格。保留原句供网站审校，不将算法可用性伪装成已证明的全局流存在唯一定理；实际自由Hamiltonian、事件复合和轨道规则在JSON/Blueprint保留。
+- p.132–136/PDF154–158：检测/求根/并行成本、长期数值观察及统计性能、文献推荐为定性或实现背景；正文数学定义、误差与接触疑点均保留；p136的Exercises起及后页习题全部排除。

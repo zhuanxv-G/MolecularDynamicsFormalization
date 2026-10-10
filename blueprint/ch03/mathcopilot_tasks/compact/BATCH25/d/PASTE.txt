@@ -1,0 +1,99 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH25d_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 157 | 135 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-3.7.2-CollisionalVerletRelation",
+  "kind": "definition",
+  "label": null,
+  "section": "3.7.2",
+  "printed_page": "135",
+  "pdf_page": "157",
+  "statement_latex": "Collisional Verlet Algorithm (CVA) [Single Step]\n[computes $h$ (the timestep) and $(Q,P)$ given a starting point $(q,p)$]\nCalculate $\\tau_c$ the time of next collision from the Verlet paths (quadratics) of (3.18) using collision conditions (3.19).\nIf $\\tau_c<h_{\\max}$, then\n\\[h:=\\tau_c,\\qquad(Q,P):=R_c\\mathcal G_h^{\\mathrm{Verlet}}(q,p)\\]\nelse\n\\[h:=h_{\\max},\\qquad(Q,P):=\\mathcal G_h^{\\mathrm{Verlet}}(q,p).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "实际方法关系保持严格tc<hmax；tc=hmax时原算法不反射，随后顺序/资格疑点保留。"
+  ],
+  "issues": [
+    {
+      "code": "NEEDS_HUMAN",
+      "detail": "tc=hmax边界时原伪代码不反射，之后的二阶陈述排除此边界，不能冒充一般结果。"
+    }
+  ],
+  "lean_decl": "MD.Ch03.collisionalVerletRelation",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "tc>0,hmax>0明示；tc必须是下一接触时刻，求根实现不是数学定理。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (Rc : Z n → Z n)
+    (tc hmax h : ℝ) (z w : Z n) : Prop :=
+  0 < tc ∧ 0 < hmax ∧ h=min tc hmax ∧
+    w=if tc<hmax then Rc (verlet m F h z) else verlet m F h z
+```
+
+原上下文：namespace MD.Ch03；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter03Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter02Review.Z (MolecularDynamics/Chapter02/ReviewDefinitions.lean:18)
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter04Review.Z (MolecularDynamics/Chapter04/ReviewDefinitions.lean:16)
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MD.Ch03.collisionalVerletRelation (Blueprint/Ch03.lean:1437)
+```lean
+def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (Rc : Z n → Z n)
+    (tc hmax h : ℝ) (z w : Z n) : Prop :=
+  0 < tc ∧ 0 < hmax ∧ h=min tc hmax ∧
+    w=if tc<hmax then Rc (verlet m F h z) else verlet m F h z
+```
+
+### MolecularDynamics.Chapter02Review.invMass (MolecularDynamics/Chapter02/ReviewDefinitions.lean:41)
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+
+### MolecularDynamics.Chapter04Review.invMass (MolecularDynamics/Chapter04/ReviewDefinitions.lean:19)
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+
+### MolecularDynamics.Chapter02Review.verlet (MolecularDynamics/Chapter02/ReviewDefinitions.lean:60)
+```lean
+def verlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n) : Z n :=
+  let qnew := z.1 + h • invMass m z.2 + (h^2/2) • invMass m (F z.1)
+  (qnew, z.2 + (h/2) • (F z.1 + F qnew))
+```

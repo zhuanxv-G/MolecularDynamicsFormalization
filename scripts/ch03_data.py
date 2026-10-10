@@ -122,3 +122,6 @@ import ch03_section36
 import ch03_section36b
 import ch03_section36c
 import ch03_section36d
+import ch03_section37
+import ch03_section37b
+import ch03_section37c

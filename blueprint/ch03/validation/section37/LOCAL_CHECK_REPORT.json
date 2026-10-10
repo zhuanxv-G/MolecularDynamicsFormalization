@@ -1,0 +1,45 @@
+{
+  "chapter": 3,
+  "machine_check_status": "passed",
+  "shared_check_sha256": "2a4e0b7352d5f875ef5a2c822764e25c5b083a38d51f29d26314d5058e3aac7d",
+  "inputs": [
+    {
+      "relative_path": "Blueprint/Ch03.lean",
+      "sha256": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+    },
+    {
+      "relative_path": "blueprint/ch03/CheckAxioms.lean",
+      "sha256": "1d891c7baffc01dfc109190848ec2345bf7c7e8308fec1c7b9a993e951a42a52"
+    },
+    {
+      "relative_path": "lakefile.toml",
+      "sha256": "1adf86abe18961cd566d8fb0817fc4c4175bdaaedca79c3288e36fbc2f562b4a"
+    },
+    {
+      "relative_path": "lean-toolchain",
+      "sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632"
+    },
+    {
+      "relative_path": "lake-manifest.json",
+      "sha256": "5156c987301057f3386cd99b43d5125e87b82bd245e712c60152cc4b5f357aba"
+    },
+    {
+      "relative_path": "scripts/local_chapter_check.ps1",
+      "sha256": "015181b3ddd1bccbd024597fb74e6cd7ab8b50379d4f780ea54d7f459797e0cf"
+    }
+  ],
+  "checks": [
+    {
+      "name": "chapter_fresh",
+      "exit_code": 0,
+      "raw_log": "chapter_fresh.log",
+      "raw_log_sha256": "357bbf04e967b1a2f73f7afac906457e6a61ef6474af7bd8f076acc8842ceb24"
+    },
+    {
+      "name": "chapter_axioms",
+      "exit_code": 0,
+      "raw_log": "chapter_axioms.log",
+      "raw_log_sha256": "c323c6aefb36178656e127349ddd808f84143fa71c5b46da193a34de27eef1ef"
+    }
+  ]
+}

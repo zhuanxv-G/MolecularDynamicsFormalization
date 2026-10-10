@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH25",
+  "subtask": "BATCH25b",
+  "source_ids": [
+    "MD-3.7.2-CollisionTimeRelation"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 157,
+      "printed_page": 135
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "0cdb87a4ff4b797d2b6e3dc10ec5e10db169d58fd10e8332e45bb5617be950a2",
+  "lean_sha256": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795",
+  "signature_sha256": "ee0722ca4ea0c7ace19913f622e7dbfec5b164dd34ddce53a053239921e91384",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "Position",
+      "code_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "collisionTimeRelation",
+      "code_sha256": "ee0722ca4ea0c7ace19913f622e7dbfec5b164dd34ddce53a053239921e91384"
+    }
+  ],
+  "paste_plus_pdf_bytes": 88477,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3138,
+      "sha256": "a99fd69ee64e34522686b558afb0dd9f695042cef7ef9606f17b55fb834f8181"
+    },
+    "BATCH25b_PAGES.pdf": {
+      "bytes": 85339,
+      "sha256": "6ac8b5901fc086e7f6a472ec0b752497fde447481038308f00393cd5bba3bb7c"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 90078
+}

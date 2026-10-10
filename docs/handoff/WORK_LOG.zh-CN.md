@@ -259,3 +259,7 @@ JSON/Blueprint/本地预审/compact包与7段文档已生成；完整check和逐
 ## 2026-10-10 第3章：§3.6检查点
 128条JSON/Blueprint/本地预审/compact/7段文档；完整check与逐条公理通过，冻结文件不变。
 下一步：继续第3章§3.7；原页已核，复用弹性反射短证明与碰撞四次式桥接，原书碰撞端点疑误保留待审。；网站待审，原模型及heartbeat调度保留。
+
+## 2026-10-10 第3章：§3.7检查点
+149条JSON/Blueprint/本地预审/compact/7段文档；完整check与逐条公理通过，冻结文件不变。
+下一步：自动进入第4章；从第3章最后commit建立chapter04-blueprint，原页36页已核，预备scripts/ch04_section*.py按≤8条生成并编译。；网站待审，原模型及heartbeat调度保留。

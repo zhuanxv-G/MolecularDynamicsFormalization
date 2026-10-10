@@ -1,0 +1,36 @@
+{
+  "batch": "BATCH24",
+  "subtask": "BATCH24f",
+  "source_ids": [
+    "MD-3.7.1-CollisionDefectZero"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 156,
+      "printed_page": 134
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "0cdb87a4ff4b797d2b6e3dc10ec5e10db169d58fd10e8332e45bb5617be950a2",
+  "lean_sha256": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795",
+  "signature_sha256": "69963fea7a26a8f6e080f6bc368c11a070ab0677a62fa353de843600c2b5a38c",
+  "definition_excerpts": [],
+  "paste_plus_pdf_bytes": 79357,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2996,
+      "sha256": "c3ba3491364ddac9ab883df458b1b5d82c914df5355579b7e62bfee7e0dddb49"
+    },
+    "BATCH24f_PAGES.pdf": {
+      "bytes": 76361,
+      "sha256": "a0f24d1c1727d6a35bf89d3927c99b54ac6c7dd0f3e5c789ea1672e3af853152"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 80518
+}

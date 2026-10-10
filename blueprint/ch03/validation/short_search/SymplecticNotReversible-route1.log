@@ -1,0 +1,22 @@
+blueprint\ch03\validation\short_search\SymplecticNotReversible-route1.lean:14:57: error(lean.invalidField): Invalid field `div_const`: The environment does not contain `HasFDerivAtFilter.div_const`, so it is not possible to project the field `div_const` from an expression
+  HasFDerivAt.pow ?m.173 2
+of type
+  HasFDerivAtFilter (fun x => ?m.170 x ^ 2) ((2 • ?m.170 ?m.172 ^ (2 - 1)) • ?m.171) (𝓝 ?m.172 ×ˢ pure ?m.172)
+blueprint\ch03\validation\short_search\SymplecticNotReversible-route1.lean:14:16: error: Application type mismatch: The argument
+  hasFDerivAt_apply 0 q
+has type
+  HasFDerivAt (fun f => f 0) (ContinuousLinearMap.proj 0) q
+but is expected to have type
+  HasFDerivAt ?m.170 ?m.171 ?m.172
+in the application
+  HasFDerivAt.pow (hasFDerivAt_apply 0 q)
+blueprint\ch03\validation\short_search\SymplecticNotReversible-route1.lean:11:108: error: unsolved goals
+hf : ∀ (q : Q 1), textbookPotentialForce (fun x => x 0 ^ 2 / 2) q = fun i => -q i
+he :
+  canonicalReversal
+      (textbookSymplecticEuler (fun x => 1) (fun q => q 0 ^ 2 / 2) 1
+        (canonicalReversal
+          (textbookSymplecticEuler (fun x => 1) (fun q => q 0 ^ 2 / 2) 1 (pack (fun x => 1, fun x => 0))))) =
+    pack (fun x => 1, fun x => 0)
+hc : True
+⊢ False

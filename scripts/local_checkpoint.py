@@ -14,8 +14,21 @@ for r in [full,local]:
     for x in r['checks']:assert x['exit_code']==0 and p.sha(rp/x['raw_log'])==x['raw_log_sha256']
 p.checked(rp/'chapter_axioms.log');p.generate();render(ch,p)
 landing(ch,p,section,'①–⑤§'+section+'已检验')
+finish='--finish' in sys.argv
+if finish:
+    sections=sorted(q.parent.name for q in (p.BASE/'validation').glob('section*/LOCAL_CHECK_REPORT.json'))
+    subprocess.run([sys.executable,str(ROOT/'scripts/validate_local_delivery.py'),str(ch),'--sections',*sections],cwd=ROOT,check=True)
+    table=ROOT/'docs/handoff/LOCAL_PIPELINE.md';content=table.read_text(encoding='utf-8')
+    old=next(x for x in content.splitlines() if x.startswith(f'| {ch} |'));fields=old.split('|')
+    fields[4]=' ⑤全部本地流程验收完成 ';fields[-2]=' 完成 '
+    table.write_text(content.replace(old,'|'.join(fields)),encoding='utf-8')
+    progress=p.BASE/'PROGRESS.md';content=progress.read_text(encoding='utf-8')
+    content=content.replace('下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。',
+        '本章全部本地流程完成；验证见DELIVERY_VALIDATION.json。网站待审；下一章按LOCAL_PIPELINE自动接续。')
+    progress.write_text(content,encoding='utf-8')
 state=ROOT/'docs/handoff/CURRENT_STATE.zh-CN.md';lines=state.read_text(encoding='utf-8').splitlines()
 lines[3]='下一步：'+next_step
+if finish:lines.insert(8,f'第{ch}章全部本地流程完成：{len(p.RECORDS)}条、旧映射全覆盖、七段文档、compact预算/哈希/裁页、全部节完整检查已验；网站和导师审校待完成。')
 lines.insert(8,f'§{section}检查点：{len(p.RECORDS)}条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。')
 state.write_text('\n'.join(lines)+'\n',encoding='utf-8')
 for relative in ['AGENTS.md','docs/handoff/RESUME_PROMPT.zh-CN.md']:

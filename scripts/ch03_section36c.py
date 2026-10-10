@@ -29,4 +29,4 @@ In such a case the iterates of the two maps will also be conjugate''',copied('Mo
 extra=['χ明确为equivalence，以使原文χ⁻¹有定义；原文homomorphism的用词待审。'],context=['数值effective order的附加断言另列ConjugateOrderPrinted，不靠有限共轭恒等式声称已证。'],prior=['MolecularDynamics.textbook_conjugate_iterates'],issues=[dict(code='ERRATUM?',detail='原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。')])
 from blueprint_source import apply_saved_routes
 from ch03_data import RECORDS
-apply_saved_routes(3,RECORDS,['PartitionedAffine'])
+apply_saved_routes(3,RECORDS,['PartitionedAffine','SymplecticNotReversible'])

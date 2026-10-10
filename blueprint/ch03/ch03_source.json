@@ -3281,5 +3281,536 @@
     "review_status": "DRAFT",
     "repair_log": [],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7-HardCoreDomain",
+    "kind": "definition",
+    "label": null,
+    "section": "3.7",
+    "printed_page": "132",
+    "pdf_page": "154",
+    "statement_latex": "We assume, as usual a Hamiltonian $H=p^TM^{-1}p/2+U(q)$ but we add the inequality constraint $\\|q_i-q_j\\|\\ge\\sigma_i+\\sigma_j$ where $\\sigma_i$, $i=1,\\ldots,N$ is a core radius. The condition $\\|q_i-q_j\\|=\\sigma_i+\\sigma_j$, some $i,j$ defines the constraint surface.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "i≠j明确；接触等号允许，不当重叠。σ作为半径通常非负。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.hardCoreDomain",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7-ElasticReflection",
+    "kind": "definition",
+    "label": null,
+    "section": "3.7",
+    "printed_page": "132",
+    "pdf_page": "154",
+    "statement_latex": "When the particles are not touching, they move along Newtonian paths defined by the standard equations of motion. At impact, they exchange momentum and energy according to the rules of elastic collision. Specifically, at the point of contact, the momentum vectors of the two spheres are adjusted according to the rule:\n\\[p:=p+\\alpha u_\\perp\\]\nwhere $u_\\perp$ is normal to the constraint surface and $\\alpha$ is a parameter chosen to maintain the conservation of energy.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "在完整配置动量空间写一般质量法向反射；不把定义当K守恒证明。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.elasticReflection",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]选取质量度量反射α=−2Σuᵢpᵢ/mᵢ ÷ Σuᵢ²/mᵢ，具体α原书在障碍特例p134给出；正质量/非零法向是后条守恒资格。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7-ElasticEnergy",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.7",
+    "printed_page": "132",
+    "pdf_page": "154",
+    "statement_latex": "where $u_\\perp$ is normal to the constraint surface and $\\alpha$ is a parameter chosen to maintain the conservation of energy.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch03.elasticEnergy",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "正质量、u≠0，α取前条实际质量度量反射值；碰撞时位置不变，K守恒即总能量守恒。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7-CollisionComposition",
+    "kind": "definition",
+    "label": null,
+    "section": "3.7",
+    "printed_page": "132–133",
+    "pdf_page": "154–155",
+    "statement_latex": "Let $R_c$ denote the action of the collision operator on the vector of positions and momenta. Then we can write the evolution formally as\n\\[\\mathcal F_\\tau^{\\mathrm{h.s.}}(q,p)=\\mathcal G_{\\Delta\\tau_r}\\circ R_c\\circ\\mathcal G_{\\Delta\\tau_{r-1}}\\cdots\\circ R_c\\circ\\mathcal G_{\\Delta\\tau_0}\\]\nwhere $\\Delta\\tau_1,\\Delta\\tau_2,\\ldots,\\Delta\\tau_{r-1}$ are the times between collisions, $\\Delta\\tau_0$ is the time until the first collision, and $\\Delta\\tau_r$ is the time between the last collision and $\\tau$. Here $\\mathcal G_t$ is the flow map of the smooth system (Hamiltonian $H$).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "有限事件序列，实际右到左流/反射复合；不宣称任意多重或无限碰撞解存在唯一。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.collisionComposition",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7-CollisionRegularity",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.7",
+    "printed_page": "133",
+    "pdf_page": "155",
+    "statement_latex": "The trajectory is thus piecewise smooth with continuous configurational path and momenta exhibiting finite jump discontinuities.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch03.collisionRegularity",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.1-HardCorePotential",
+    "kind": "definition",
+    "label": null,
+    "section": "3.7.1",
+    "printed_page": "133",
+    "pdf_page": "155",
+    "statement_latex": "Splitting methods are suggested by considering a formal hard-sphere Hamiltonian\n\\[H_{\\mathrm{h.s.}}=p^TM^{-1}p/2+U(q)+U_{\\mathrm{h.s.}},\\]\nwhere $U_{\\mathrm{h.s.}}$ is assumed to be infinite for overlapping configurations (some $\\|q_i-q_j\\|\\le\\sigma_i+\\sigma_j$) and zero otherwise.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "p133括号印刷≤与p132接触等号允许冲突；不静默改成<。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.hardCorePotential",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.1-PrimitiveSplitting",
+    "kind": "definition",
+    "label": null,
+    "section": "3.7.1",
+    "printed_page": "133",
+    "pdf_page": "155",
+    "statement_latex": "One approach is to consider the splitting $H=H_{\\mathrm{free}}+U$, evolving $H_{\\mathrm{free}}$ for fixed intervals punctuated by impulses derived from the smooth potential $U$. In [40, 184] this algorithm is termed the “Primitive Splitting Algorithm” and can be described by the three steps:\n\\[P:=p-\\frac h2\\nabla U(q),\\qquad(Q,P):=\\mathcal G_h^{\\mathrm{free}}(q,P),\\qquad P:=P-\\frac h2\\nabla U(Q).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "Gfree给定真实自由硬球演化，数学复合而非求根/并行算法实现；不由定义证明Gfree存在。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.primitiveSplitting",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.1-PrimitiveOrder",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.7.1",
+    "printed_page": "133–134",
+    "pdf_page": "155–156",
+    "statement_latex": "Even with this symmetric form (“kick”, “drift”, “kick”) where “drift” now involves the solution of the system $H_{\\mathrm{free}}$, it was shown in [184] that energy accumulates rapidly. Assuming a finite number of collisions on a fixed interval, the error behaves as $O(h)$. In long simulations the energy error grows without bound.\nIn general, because an error of size $O(h)$ occurs in each collision and there are a finite number of collisions in a fixed time interval, the total error is also $O(h)$, i.e. first order.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "NEEDS_HUMAN",
+        "detail": "时间对齐误差度量、有限单接触资格及长期energy无界的量化均需审。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.primitiveOrder",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "正质量、C∞势/接触函数、有限横截隔离单接触、真实freeCollisionFlow；采用O(h)单调时间对齐以比较跳跃动量，不假设结论误差界。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.1-ObstacleReflection",
+    "kind": "definition",
+    "label": null,
+    "section": "3.7.1",
+    "printed_page": "134",
+    "pdf_page": "156",
+    "statement_latex": "The coefficient $\\alpha$ is chosen so that the kinetic energy is conserved through collision, thus\n\\[\\alpha=-2\\frac{u_\\perp\\cdot\\overline P}{u_\\perp\\cdot u_\\perp}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "质量=1，u=qc非零；本定义是p+αu的实际函数，能量性质关联ElasticEnergy。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.obstacleReflection",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.1-PrimitiveDefect",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.7.1",
+    "printed_page": "134",
+    "pdf_page": "156",
+    "statement_latex": "We next calculate the change in energy in a single step by inserting $Q$ and $P$ into the Hamiltonian and expanding around the point of collision $q_c$, obtaining\n\\[\\Delta H\\stackrel{\\mathrm{def}}=H(Q,P)-H(q,p)=-(h-2\\tau_c)\\frac{q_c^T\\overline P}{q_c^Tq_c}q_c^T\\nabla U(q_c)+O(h^2).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "NEEDS_HUMAN",
+        "detail": "书中P̄与签名初始pbar的差异及通过O(h²)吸收的正则性需要独立审校。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.primitiveDefect",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "C³势、固定非零qc、真实初末碰撞步族和0<tc(h)<h；O(h²)以小正h的一致界表示。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.1-CollisionDefectZero",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.7.1",
+    "printed_page": "134",
+    "pdf_page": "156",
+    "statement_latex": "• the collision occurs at the middle of the timestep, $\\tau_c=h/2$,\n• the directional derivative of $U$ along the collision vector $(u_\\perp=q_c)$ vanishes, or\n• the momentum vector is orthogonal to the collision vector at the point of contact.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "只给上式线性系数在这三个条件下为0，保留O(h²)，不由零系数推出三阶；no collision/end-step两条另见EndImpactThirdOrderPrinted。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.collisionDefectZero",
+    "reusable_proofs": [
+      "MolecularDynamics.Chapter03Review.collisionDefectZero_proved"
+    ],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.1-EndImpactThirdOrderPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.7.1",
+    "printed_page": "134",
+    "pdf_page": "156",
+    "statement_latex": "In cases (i) and (ii) it is clear that the error accumulating in a single step will be third order in the stepsize, since the Verlet method has local error of order three (since it is a second order method).\n• there is no collision\n• the collision occurs at the end of a timestep",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "保留(ii)tc=h、原primitive末端反射及最后half-kick的真实步族；无碰撞的Verlet局部三阶在第2章已另述。"
+    ],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原文end-step豁免与同页−(h−2tc)线性项冲突；具体单位障碍反例见审计。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.endImpactThirdOrderPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionQuadraticPath",
+    "kind": "definition",
+    "label": "(3.18)",
+    "section": "3.7.2",
+    "printed_page": "135",
+    "pdf_page": "157",
+    "statement_latex": "The idea is to make use of the quadratic\n\\[Q(t)=q+tM^{-1}p-\\frac{t^2}{2}M^{-1}\\nabla U(q)\\tag{3.18}\\]\nwhich represents the position vector obtained from a Verlet step of size $t$. Note that this defines quadratic paths for all particles in the system.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "F=−grad U代入一般Force函数；t²/2实际有限多项式。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.collisionQuadraticPath",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionTimeRelation",
+    "kind": "definition",
+    "label": "(3.19)",
+    "section": "3.7.2",
+    "printed_page": "135",
+    "pdf_page": "157",
+    "statement_latex": "It is then possible to calculate the collision times by solving equations\n\\[\\|Q_i(t)-Q_j(t)\\|=\\sigma_i+\\sigma_j,\\qquad i\\ne j.\\tag{3.19}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "a=Qi,b=Qj,radius=σi+σj；关系列出所有正候选根；下一次最小根与横截资格由方法声明单列。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.collisionTimeRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionQuartic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.7.2",
+    "printed_page": "135",
+    "pdf_page": "157",
+    "statement_latex": "If the Verlet method is used, then it turns out that the insertion of (3.18) into (3.19) results in a quartic polynomial that must be solved for each particle pair.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "a=qᵢ−qⱼ,b=vᵢ−vⱼ,c=(M⁻¹Fᵢ−M⁻¹Fⱼ)/2；完整四次系数及norm等价，不假设其根存在。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.collisionQuartic",
+    "reusable_proofs": [
+      "MolecularDynamics.Chapter03Review.collisionQuartic_proved"
+    ],
+    "extra_assumptions": [
+      "radius≥0保证平方不引入负半径伪根；四次最高系数可退化，degree≤4。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionalVerletRelation",
+    "kind": "definition",
+    "label": null,
+    "section": "3.7.2",
+    "printed_page": "135",
+    "pdf_page": "157",
+    "statement_latex": "Collisional Verlet Algorithm (CVA) [Single Step]\n[computes $h$ (the timestep) and $(Q,P)$ given a starting point $(q,p)$]\nCalculate $\\tau_c$ the time of next collision from the Verlet paths (quadratics) of (3.18) using collision conditions (3.19).\nIf $\\tau_c<h_{\\max}$, then\n\\[h:=\\tau_c,\\qquad(Q,P):=R_c\\mathcal G_h^{\\mathrm{Verlet}}(q,p)\\]\nelse\n\\[h:=h_{\\max},\\qquad(Q,P):=\\mathcal G_h^{\\mathrm{Verlet}}(q,p).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "实际方法关系保持严格tc<hmax；tc=hmax时原算法不反射，随后顺序/资格疑点保留。"
+    ],
+    "issues": [
+      {
+        "code": "NEEDS_HUMAN",
+        "detail": "tc=hmax边界时原伪代码不反射，之后的二阶陈述排除此边界，不能冒充一般结果。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.collisionalVerletRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "tc>0,hmax>0明示；tc必须是下一接触时刻，求根实现不是数学定理。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionalVerletOrder",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.7.2",
+    "printed_page": "135",
+    "pdf_page": "157",
+    "statement_latex": "A step can then be taken to the first point of subsequent collision, with positions updated using the quadratic and momenta adjusted according to the Verlet map combined with $R_c$. In this way, all steps taken are Verlet steps so the order of accuracy is two. Effectively, this is a Verlet method with variable timestep chosen to match collision times.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "NEEDS_HUMAN",
+        "detail": "同时间全相空间误差与时间对齐、tc=hmax边界、隔离接触资格需裁定。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.collisionalVerletOrder",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "正质量、C∞势/接触函数、有限横截隔离事件、最小正接触根；自适应累计真实时间及O(hmax²)单调时间对齐；所有内部接触严格早于hmax，排除伪代码未反射的相等边界。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.3-PairForceDecoupling",
+    "kind": "definition",
+    "label": null,
+    "section": "3.7.3",
+    "printed_page": "136",
+    "pdf_page": "158",
+    "statement_latex": "This can be achieved in systems of spheres with pair potentials $\\varphi_{ij}$ only by writing $\\varphi_{ij}=\\alpha_{ij}+\\beta_{ij}$ where the derivative of the second term is chosen to vanish at the point of contact between the spheres, i.e. $\\alpha'_{ij}(\\sigma_i+\\sigma_j)=0$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "“second term”与α′接触为0不一致；不静默改为β′。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.pairForceDecoupling",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.3-DecoupledOrder",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.7.3",
+    "printed_page": "136",
+    "pdf_page": "158",
+    "statement_latex": "The idea is to exploit the observation that impulsive forces (“kicks”) can be supplied without reducing the order of accuracy as long as these have a vanishing component in the direction of the collision vector $u_\\perp$, that is if $F_\\perp=-\\nabla U(q_c)\\cdot u_\\perp=0$.\nIf this decomposition is used, then it is possible to build a 2nd order accurate hybrid method that uses only the first part $\\alpha$ to define the quadratic Verlet paths for the collision detection scheme, whereas $\\beta$ is introduced as a standard “kick” at collision points.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "结合PairForceDecoupling，哪个势负责零法向kick需导师判定。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.decoupledOrder",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "以U表示真正kick势并要求它在接触法向导数0；另一V用于碰撞子流；正质量、有限横截隔离事件与时间对齐误差。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+    "kind": "definition",
+    "label": null,
+    "section": "3.7.3",
+    "printed_page": "136",
+    "pdf_page": "158",
+    "statement_latex": "In particular, one may use the backward error analysis to obtain a modified Hamiltonian $\\widetilde H_h$ corresponding to the Verlet method with stepsize $h$, then to project during collisions not onto the energy surface, but onto the modified energy surface, so that\n\\[\\widetilde H_h=\\mathrm{const}.\\]\n(In practice, a low order approximation of $\\widetilde H_h$ is used, such as the truncation to terms of order four or six in the stepsize.)",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "原书实际使用有限截断；关系只要求起点终点有同一截断值，不证明投影存在/唯一、不供应BEA或统计准确。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.modifiedCollisionProjection",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.7.1-FreeHardSphereHamiltonian",
+    "kind": "definition",
+    "label": null,
+    "section": "3.7.1",
+    "printed_page": "133",
+    "pdf_page": "155",
+    "statement_latex": "The hard sphere system described by\n\\[H_{\\mathrm{free}}=p^TM^{-1}p/2+U_{\\mathrm{h.s.}}\\]\nconsists of purely ballistic (straight line) motion punctuated by momentum jumps.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "位置不接触时自由ODE为q′=M⁻¹p,p′=0；事件复合与真实动量反射在CollisionComposition/CollisionRegularity/ElasticEnergy保留。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.freeHardSphereHamiltonian",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "正质量下用WithTop ℝ保留有限动能和+∞障碍；沿用p132接触允许的边界，p133≤疑点仍由HardCorePotential保留。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]

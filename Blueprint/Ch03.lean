@@ -1279,4 +1279,222 @@ theorem reversibleVolumeFailure :
     ∃ z, |(textbookCoordinateJacobian G z).det| ≠ 1 := by
   sorry
 
+/-- source_id: MD-3.7-HardCoreDomain · definition · §3.7 · 印刷p.132 / PDFp.154 -/
+def hardCoreDomain {N d : ℕ} (σ : Fin N → ℝ) : Set (Fin N → Position d) :=
+  {q | ∀ i j, i ≠ j → σ i+σ j ≤ ‖q i-q j‖}
+
+/-- source_id: MD-3.7-ElasticReflection · definition · §3.7 · 印刷p.132 / PDFp.154
+[EXTRA] [EXTRA]选取质量度量反射α=−2Σuᵢpᵢ/mᵢ ÷ Σuᵢ²/mᵢ，具体α原书在障碍特例p134给出；正质量/非零法向是后条守恒资格。 -/
+def elasticReflection {n : ℕ} (m : Fin n → ℝ) (u p : Position n) : Position n := p+elasticCoefficient m u p • u
+
+/-- source_id: MD-3.7-ElasticEnergy · unnumbered_claim · §3.7 · 印刷p.132 / PDFp.154
+[EXTRA] 正质量、u≠0，α取前条实际质量度量反射值；碰撞时位置不变，K守恒即总能量守恒。 -/
+theorem elasticEnergy :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (u p : Position n), positiveMass m → u ≠ 0 →
+    kinetic m (elasticReflection m u p)=kinetic m p ∧
+      (∑ i, u i*elasticReflection m u p i/m i)=-(∑ i, u i*p i/m i) := by
+  intro n m u p hm hu
+  have hex : ∃ i, u i ≠ 0 := by
+    by_contra! h
+    apply hu
+    ext i
+    exact h i
+  let S : ℝ := ∑ i, u i^2/m i
+  let T : ℝ := ∑ i, u i*p i/m i
+  have hS : 0 < S := by
+    apply Finset.sum_pos'
+    · intro i _; exact div_nonneg (sq_nonneg _) (le_of_lt (hm i))
+    · obtain ⟨i, hi⟩ := hex
+      exact ⟨i, Finset.mem_univ i, div_pos (sq_pos_of_ne_zero hi) (hm i)⟩
+  let a := -2*T/S
+  have hid : ∀ i, (p i+a*u i)^2/m i =
+      p i^2/m i+2*a*(u i*p i/m i)+a^2*(u i^2/m i) := by
+    intro i; ring
+  have hnormal : ∀ i, u i*(p i+a*u i)/m i =
+      u i*p i/m i+a*(u i^2/m i) := by
+    intro i; ring
+  constructor
+  · change (∑ i, (p i+a*u i)^2/m i)/2 = (∑ i, p i^2/m i)/2
+    simp_rw [hid, Finset.sum_add_distrib, ← Finset.mul_sum]
+    change ((∑ i, p i^2/m i)+2*a*T+a^2*S)/2 = _
+    dsimp [a]
+    field_simp
+    ring
+  · change (∑ i, u i*(p i+a*u i)/m i) = -T
+    simp_rw [hnormal, Finset.sum_add_distrib, ← Finset.mul_sum]
+    change T+a*S = -T
+    dsimp [a]
+    field_simp
+    ring
+
+/-- source_id: MD-3.7-CollisionComposition · definition · §3.7 · 印刷p.132–133 / PDFp.154–155 -/
+def collisionComposition {E : Type*} (G : ℝ → E → E) (Rc : E → E) (times : List ℝ) : E → E :=
+  match times with
+  | [] => id
+  | [t] => G t
+  | t::u::ts => G t ∘ Rc ∘ collisionComposition G Rc (u::ts)
+termination_by times.length
+
+/-- source_id: MD-3.7-CollisionRegularity · unnumbered_claim · §3.7 · 印刷p.133 / PDFp.155
+[EXTRA] 有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。 -/
+theorem collisionRegularity :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) (g : Q n → ℝ)
+    (times : ℕ → ℝ) (segments : ℕ → ℝ → Z n) ν,
+    positiveMass m → ContDiff ℝ ⊤ F → concatenatedCollisionSegments m F g times segments ν →
+    ContinuousOn (fun t => (gluedCollision times segments ν t).1) (Icc (times 0) (times (ν+1))) ∧
+    (∀ j ≤ ν, ∀ t ∈ Ioo (times j) (times (j+1)),
+      ContDiffAt ℝ ⊤ (fun t => (gluedCollision times segments ν t).2) t) ∧
+    (∀ j < ν, Tendsto (fun t => (gluedCollision times segments ν t).2)
+      (𝓝[<] (times (j+1))) (𝓝 ((segments j (times (j+1))).2)) ∧
+      Tendsto (fun t => (gluedCollision times segments ν t).2)
+      (𝓝[>] (times (j+1))) (𝓝 ((segments (j+1) (times (j+1))).2))) := by
+  sorry
+
+/-- source_id: MD-3.7.1-HardCorePotential · definition · §3.7.1 · 印刷p.133 / PDFp.155
+[ERRATUM?] p133括号印刷≤与p132接触等号允许冲突；不静默改成<。 -/
+def hardCorePotential {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d) : ENNReal :=
+  @ite ENNReal (q ∈ hardCoreDomain σ) (Classical.propDecidable _) 0 ⊤
+
+/-- source_id: MD-3.7.1-PrimitiveSplitting · definition · §3.7.1 · 印刷p.133 / PDFp.155 -/
+def primitiveSplitting {n : ℕ} (U : Q n → ℝ)
+    (Gfree : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) (h : ℝ) :=
+  textbookMomentumKick (textbookPotentialForce U) (h/2) ∘ Gfree h ∘ textbookMomentumKick (textbookPotentialForce U) (h/2)
+
+/-- source_id: MD-3.7.1-PrimitiveOrder · unnumbered_claim · §3.7.1 · 印刷p.133–134 / PDFp.155–156
+[EXTRA] 正质量、C∞势/接触函数、有限横截隔离单接触、真实freeCollisionFlow；采用O(h)单调时间对齐以比较跳跃动量，不假设结论误差界。
+[NEEDS_HUMAN] 时间对齐误差度量、有限单接触资格及长期energy无界的量化均需审。 -/
+theorem primitiveOrder :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U g : Q n → ℝ) (Gfree : ℝ → Z n → Z n)
+    (q p : ℝ → Q n) τ events,
+    positiveMass m → ContDiff ℝ ⊤ U → ContDiff ℝ ⊤ g → 0 < τ →
+    finiteCollisionTrajectory m (fun x => -grad U x) g q p 0 τ events → freeCollisionFlow m g Gfree →
+    collisionalGlobalOrder (fun h =>
+      (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1)) ∘ Gfree h ∘
+      (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1))) q p τ 1 := by
+  sorry
+
+/-- source_id: MD-3.7.1-ObstacleReflection · definition · §3.7.1 · 印刷p.134 / PDFp.156 -/
+def obstacleReflection {d : ℕ} (u p : Position d) : Position d := p- (2*inner ℝ u p / inner ℝ u u) • u
+
+/-- source_id: MD-3.7.1-PrimitiveDefect · unnumbered_claim · §3.7.1 · 印刷p.134 / PDFp.156
+[EXTRA] C³势、固定非零qc、真实初末碰撞步族和0<tc(h)<h；O(h²)以小正h的一致界表示。
+[NEEDS_HUMAN] 书中P̄与签名初始pbar的差异及通过O(h²)吸收的正则性需要独立审校。 -/
+theorem primitiveDefect :
+  ∀ (d : ℕ) (U : Position d → ℝ) (qc pbar : Position d)
+    (initial final : ℝ → Position d × Position d) (tc : ℝ → ℝ),
+    ContDiff ℝ 3 U → qc ≠ 0 →
+    (∀ h > 0, 0 < tc h ∧ tc h < h ∧
+      let F := -gradient U (initial h).1
+      let pminus := pbar+(h/2) • F
+      (initial h).2=pbar ∧ (initial h).1=qc-tc h • pminus ∧
+      final h=(qc+(h-tc h) • obstacleReflection qc pminus,
+        obstacleReflection qc pminus+(h/2) • (-gradient U (qc+(h-tc h) • obstacleReflection qc pminus)))) →
+    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ,
+      |((‖(final h).2‖^2/2+U (final h).1)-(‖(initial h).2‖^2/2+U (initial h).1))+
+        (h-2*tc h)*(inner ℝ qc pbar/inner ℝ qc qc)*inner ℝ qc (gradient U qc)| ≤ C*h^2 := by
+  sorry
+
+/-- source_id: MD-3.7.1-CollisionDefectZero · unnumbered_claim · §3.7.1 · 印刷p.134 / PDFp.156 -/
+theorem collisionDefectZero :
+  ∀ h tc a b c : ℝ, (h=2*tc ∨ a=0 ∨ c=0) → (h-2*tc)*(a/b)*c=0 := by
+  exact MolecularDynamics.Chapter03Review.collisionDefectZero_proved
+
+/-- source_id: MD-3.7.1-EndImpactThirdOrderPrinted · unnumbered_claim · §3.7.1 · 印刷p.134 / PDFp.156
+[ERRATUM?] 原文end-step豁免与同页−(h−2tc)线性项冲突；具体单位障碍反例见审计。 -/
+theorem endImpactThirdOrderPrinted :
+  ∀ (d : ℕ) (U : Position d → ℝ) (qc pbar : Position d)
+    (initial final : ℝ → Position d × Position d) (tc : ℝ → ℝ),
+    ContDiff ℝ 3 U → qc ≠ 0 →
+    (∀ h > 0, tc h = h ∧
+      let F := -gradient U (initial h).1
+      let pminus := pbar+(h/2) • F
+      (initial h).2=pbar ∧ (initial h).1=qc-tc h • pminus ∧
+      final h=(qc+(h-tc h) • obstacleReflection qc pminus,
+        obstacleReflection qc pminus+(h/2) • (-gradient U (qc+(h-tc h) • obstacleReflection qc pminus)))) →
+    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ,
+      |((‖(final h).2‖^2/2+U (final h).1)-(‖(initial h).2‖^2/2+U (initial h).1))| ≤ C*h^3 := by
+  sorry
+
+/-- source_id: MD-3.7.2-CollisionQuadraticPath · (3.18) · §3.7.2 · 印刷p.135 / PDFp.157 -/
+def collisionQuadraticPath {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (z : Z n) (t : ℝ) : Q n :=
+  z.1+t • invMass m z.2+(t^2/2) • invMass m (F z.1)
+
+/-- source_id: MD-3.7.2-CollisionTimeRelation · (3.19) · §3.7.2 · 印刷p.135 / PDFp.157 -/
+def collisionTimeRelation {d : ℕ} (a b : ℝ → Position d) (radius t : ℝ) : Prop := 0 < t ∧ ‖a t-b t‖=radius
+
+/-- source_id: MD-3.7.2-CollisionQuartic · unnumbered_claim · §3.7.2 · 印刷p.135 / PDFp.157
+[EXTRA] radius≥0保证平方不引入负半径伪根；四次最高系数可退化，degree≤4。 -/
+theorem collisionQuartic :
+  ∀ (d : ℕ) (a b c : Position d) (R t : ℝ), 0 ≤ R →
+    (‖a+t • b+t^2 • c‖=R ↔
+      inner ℝ c c*t^4+2*inner ℝ b c*t^3+(inner ℝ b b+2*inner ℝ a c)*t^2+
+        2*inner ℝ a b*t+inner ℝ a a-R^2=0) := by
+  exact MolecularDynamics.Chapter03Review.collisionQuartic_proved
+
+/-- source_id: MD-3.7.2-CollisionalVerletRelation · definition · §3.7.2 · 印刷p.135 / PDFp.157
+[EXTRA] tc>0,hmax>0明示；tc必须是下一接触时刻，求根实现不是数学定理。
+[NEEDS_HUMAN] tc=hmax边界时原伪代码不反射，之后的二阶陈述排除此边界，不能冒充一般结果。 -/
+def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (Rc : Z n → Z n)
+    (tc hmax h : ℝ) (z w : Z n) : Prop :=
+  0 < tc ∧ 0 < hmax ∧ h=min tc hmax ∧
+    w=if tc<hmax then Rc (verlet m F h z) else verlet m F h z
+
+/-- source_id: MD-3.7.2-CollisionalVerletOrder · unnumbered_claim · §3.7.2 · 印刷p.135 / PDFp.157
+[EXTRA] 正质量、C∞势/接触函数、有限横截隔离事件、最小正接触根；自适应累计真实时间及O(hmax²)单调时间对齐；所有内部接触严格早于hmax，排除伪代码未反射的相等边界。
+[NEEDS_HUMAN] 同时间全相空间误差与时间对齐、tc=hmax边界、隔离接触资格需裁定。 -/
+theorem collisionalVerletOrder :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U g : Q n → ℝ) (q p : ℝ → Q n) τ events
+    (tc : Z n → ℝ) (Rc : Z n → Z n) (G : ℝ → Z n → Z n),
+    positiveMass m → ContDiff ℝ ⊤ U → ContDiff ℝ ⊤ g → 0 < τ →
+    finiteCollisionTrajectory m (fun x => -grad U x) g q p 0 τ events →
+    (∀ z, admissibleCollisionState m g z → 0 < tc z ∧
+      g (collisionQuadraticPath m (fun x => -grad U x) z (tc z))=0 ∧
+      ∀ t ∈ Ioo 0 (tc z), 0 < g (collisionQuadraticPath m (fun x => -grad U x) z t)) →
+    (∀ z, Rc z=(z.1,z.2+(-2*(∑ i, grad g z.1 i*z.2 i/m i)/
+      (∑ i, grad g z.1 i^2/m i)) • grad g z.1)) →
+    (∀ h > 0, ∀ z, collisionalVerletRelation m (fun x => -grad U x) Rc (tc z) h (min (tc z) h) z (G h z)) →
+    ∃ C > 0, ∃ δ > 0, ∀ hmax ∈ Ioo 0 δ, ∀ times : ℕ → ℝ,
+      times 0=0 → (∀ j, times (j+1)=times j+min (tc (oneStepIterate G hmax (q 0,p 0) j)) hmax) →
+      (∀ j, times j < τ → admissibleCollisionState m g (oneStepIterate G hmax (q 0,p 0) j) ∧
+        tc (oneStepIterate G hmax (q 0,p 0) j) ≠ hmax) →
+      ∃ θ : ℝ ≃o ℝ, θ 0=0 ∧ θ τ=τ ∧ (∀ t ∈ Icc 0 τ, |θ t-t| ≤ C*hmax^2) ∧
+        ∀ j, times j ≤ τ →
+          ‖oneStepIterate G hmax (q 0,p 0) j-(q (θ (times j)),p (θ (times j)))‖ ≤ C*hmax^2 := by
+  sorry
+
+/-- source_id: MD-3.7.3-PairForceDecoupling · definition · §3.7.3 · 印刷p.136 / PDFp.158
+[ERRATUM?] “second term”与α′接触为0不一致；不静默改为β′。 -/
+def pairForceDecoupling (φ α β : ℝ → ℝ) (contact : ℝ) : Prop :=
+  (∀ r, φ r=α r+β r) ∧ deriv α contact=0
+
+/-- source_id: MD-3.7.3-DecoupledOrder · unnumbered_claim · §3.7.3 · 印刷p.136 / PDFp.158
+[EXTRA] 以U表示真正kick势并要求它在接触法向导数0；另一V用于碰撞子流；正质量、有限横截隔离事件与时间对齐误差。
+[ERRATUM?] 结合PairForceDecoupling，哪个势负责零法向kick需导师判定。 -/
+theorem decoupledOrder :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U V g : Q n → ℝ) (q p : ℝ → Q n) τ events
+    (Gfree : ℝ → Z n → Z n), positiveMass m → ContDiff ℝ ⊤ U → ContDiff ℝ ⊤ V →
+    ContDiff ℝ ⊤ g → 0 < τ →
+    (∀ x, g x=0 → ∑ i, grad g x i*invMass m (grad U x) i=0) →
+    finiteCollisionTrajectory m (fun x => -grad U x-grad V x) g q p 0 τ events →
+    (∀ z, 0 ≤ g z.1 → ∀ T > 0, ∃ ev, Gfree 0 z=z ∧
+      finiteCollisionTrajectory m (fun x => -grad V x) g
+        (fun t => (Gfree t z).1) (fun t => (Gfree t z).2) 0 T ev) →
+    collisionalGlobalOrder (fun h =>
+      (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1)) ∘ Gfree h ∘
+      (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1))) q p τ 2 := by
+  sorry
+
+/-- source_id: MD-3.7.3-ModifiedCollisionProjection · definition · §3.7.3 · 印刷p.136 / PDFp.158 -/
+def modifiedCollisionProjection {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r k : ℕ) (h : ℝ)
+    (z w : SymplecticCoordinates n) : Prop :=
+  textbookTruncatedHamiltonian H Hj r k h w=textbookTruncatedHamiltonian H Hj r k h z
+
+/-- source_id: MD-3.7.1-FreeHardSphereHamiltonian · definition · §3.7.1 · 印刷p.133 / PDFp.155
+[EXTRA] 正质量下用WithTop ℝ保留有限动能和+∞障碍；沿用p132接触允许的边界，p133≤疑点仍由HardCorePotential保留。 -/
+def freeHardSphereHamiltonian {N d : ℕ} (m σ : Fin N → ℝ)
+    (q p : Fin N → Position d) : WithTop ℝ :=
+  @ite (WithTop ℝ) (q ∈ MolecularDynamics.Chapter03Review.hardCoreDomain σ)
+    (Classical.propDecidable _) ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ) ⊤
+
 end MD.Ch03

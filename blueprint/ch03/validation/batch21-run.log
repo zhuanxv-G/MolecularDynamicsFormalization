@@ -1,0 +1,120 @@
+Generated 149 entries; 143 /143 old rows mapped; protected 547
+Blueprint/Ch03.lean:21:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:52:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:135:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:147:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:171:65: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:171:65: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:190:58: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:190:58: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:195:58: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:195:58: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:222:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:222:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:276:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:276:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:284:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:284:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:303:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:312:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:322:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:334:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:349:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:359:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:378:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:421:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:429:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:442:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:448:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:541:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:573:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:591:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:605:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:622:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:651:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:680:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:703:57: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:703:57: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:719:0: warning: automatically included section variable(s) unused in theorem `MD.Ch03.truncationRemainder`:
+  [NormedSpace ? E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ? E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch03.lean:778:57: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch03.lean:782:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:793:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:814:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:848:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:887:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1027:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1053:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1067:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1085:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1096:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1105:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1114:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1123:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1144:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1162:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1204:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1216:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1229:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1236:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1244:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1253:0: warning: automatically included section variable(s) unused in theorem `MD.Ch03.conjugateIterates`:
+  [NormedSpace ? E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ? E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch03.lean:1256:54: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch03.lean:1268:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1276:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1340:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1366:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1382:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1404:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1445:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1473:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:1497:2: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (q �� Chapter03Review.hardCoreDomain ��)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Blueprint/Ch03.lean:1498:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HDiv ? ? (WithTop ?)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+

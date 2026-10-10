@@ -1,0 +1,23 @@
+"""First eight §3.7 claims, original PDF154–156."""
+from ch03_data import add,copied,proposition,D
+add('HardCoreDomain','3.7',132,[125],r'''We assume, as usual a Hamiltonian $H=p^TM^{-1}p/2+U(q)$ but we add the inequality constraint $\|q_i-q_j\|\ge\sigma_i+\sigma_j$ where $\sigma_i$, $i=1,\ldots,N$ is a core radius. The condition $\|q_i-q_j\|=\sigma_i+\sigma_j$, some $i,j$ defines the constraint surface.''',copied(D,'hardCoreDomain'),kind='definition',context=['i≠j明确；接触等号允许，不当重叠。σ作为半径通常非负。'])
+add('ElasticReflection','3.7',132,[126],r'''When the particles are not touching, they move along Newtonian paths defined by the standard equations of motion. At impact, they exchange momentum and energy according to the rules of elastic collision. Specifically, at the point of contact, the momentum vectors of the two spheres are adjusted according to the rule:
+\[p:=p+\alpha u_\perp\]
+where $u_\perp$ is normal to the constraint surface and $\alpha$ is a parameter chosen to maintain the conservation of energy.''',copied(D,'elasticReflection'),kind='definition',extra=['[EXTRA]选取质量度量反射α=−2Σuᵢpᵢ/mᵢ ÷ Σuᵢ²/mᵢ，具体α原书在障碍特例p134给出；正质量/非零法向是后条守恒资格。'],context=['在完整配置动量空间写一般质量法向反射；不把定义当K守恒证明。'])
+add('ElasticEnergy','3.7',132,[127],r'''where $u_\perp$ is normal to the constraint surface and $\alpha$ is a parameter chosen to maintain the conservation of energy.''',proposition('elasticEnergy_statement'),extra=['正质量、u≠0，α取前条实际质量度量反射值；碰撞时位置不变，K守恒即总能量守恒。'],missing='待有限加权平方代数证明；需Σuᵢ²/mᵢ>0及全分母清理。')
+add('CollisionComposition','3.7','132–133',[128],r'''Let $R_c$ denote the action of the collision operator on the vector of positions and momenta. Then we can write the evolution formally as
+\[\mathcal F_\tau^{\mathrm{h.s.}}(q,p)=\mathcal G_{\Delta\tau_r}\circ R_c\circ\mathcal G_{\Delta\tau_{r-1}}\cdots\circ R_c\circ\mathcal G_{\Delta\tau_0}\]
+where $\Delta\tau_1,\Delta\tau_2,\ldots,\Delta\tau_{r-1}$ are the times between collisions, $\Delta\tau_0$ is the time until the first collision, and $\Delta\tau_r$ is the time between the last collision and $\tau$. Here $\mathcal G_t$ is the flow map of the smooth system (Hamiltonian $H$).''',copied(D,'collisionComposition'),kind='definition',context=['有限事件序列，实际右到左流/反射复合；不宣称任意多重或无限碰撞解存在唯一。'])
+add('CollisionRegularity','3.7',133,[129],r'''The trajectory is thus piecewise smooth with continuous configurational path and momenta exhibiting finite jump discontinuities.''',proposition('collisionRegularity_statement'),extra=['有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。'],missing='缺有限事件gluedCollision索引稳定与各段ODE光滑性/一侧极限的完整桥接；不建设完整混合动力系统理论。')
+add('HardCorePotential','3.7.1',133,[130],r'''Splitting methods are suggested by considering a formal hard-sphere Hamiltonian
+\[H_{\mathrm{h.s.}}=p^TM^{-1}p/2+U(q)+U_{\mathrm{h.s.}},\]
+where $U_{\mathrm{h.s.}}$ is assumed to be infinite for overlapping configurations (some $\|q_i-q_j\|\le\sigma_i+\sigma_j$) and zero otherwise.''',copied(D,'hardCorePotential'),kind='definition',verdict='NEEDS_HUMAN',explanation='原页印刷≤把接触归入infinite，但p132准许≥及弹性碰撞接触；定义保持非严格非重叠域在接触为0，需导师裁定边界。',issues=[dict(code='ERRATUM?',detail='p133括号印刷≤与p132接触等号允许冲突；不静默改成<。')])
+add('PrimitiveSplitting','3.7.1',133,[131],r'''One approach is to consider the splitting $H=H_{\mathrm{free}}+U$, evolving $H_{\mathrm{free}}$ for fixed intervals punctuated by impulses derived from the smooth potential $U$. In [40, 184] this algorithm is termed the “Primitive Splitting Algorithm” and can be described by the three steps:
+\[P:=p-\frac h2\nabla U(q),\qquad(Q,P):=\mathcal G_h^{\mathrm{free}}(q,P),\qquad P:=P-\frac h2\nabla U(Q).\]''',copied(D,'primitiveSplitting'),kind='definition',context=['Gfree给定真实自由硬球演化，数学复合而非求根/并行算法实现；不由定义证明Gfree存在。'])
+add('PrimitiveOrder','3.7.1','133–134',[132],r'''Even with this symmetric form (“kick”, “drift”, “kick”) where “drift” now involves the solution of the system $H_{\mathrm{free}}$, it was shown in [184] that energy accumulates rapidly. Assuming a finite number of collisions on a fixed interval, the error behaves as $O(h)$. In long simulations the energy error grows without bound.
+In general, because an error of size $O(h)$ occurs in each collision and there are a finite number of collisions in a fixed time interval, the total error is also $O(h)$, i.e. first order.''',proposition('primitiveOrder_statement'),
+extra=['正质量、C∞势/接触函数、有限横截隔离单接触、真实freeCollisionFlow；采用O(h)单调时间对齐以比较跳跃动量，不假设结论误差界。'],
+verdict='NEEDS_HUMAN',explanation='完整有限时间一阶误差保留；原文未指误差度量，跳跃动量不能无条件按同一实时间全相空间比较；长期energy无界的泛称也不是所有势的定理。',issues=[dict(code='NEEDS_HUMAN',detail='时间对齐误差度量、有限单接触资格及长期energy无界的量化均需审。')],missing='缺碰撞事件稳定性与非光滑全局误差理论；不建设大型理论。')
+from blueprint_source import apply_saved_routes
+from ch03_data import RECORDS
+apply_saved_routes(3,RECORDS,['ElasticEnergy'])

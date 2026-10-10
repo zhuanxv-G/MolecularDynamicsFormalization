@@ -1,0 +1,55 @@
+{
+  "result": "PASS",
+  "chapter": 3,
+  "source_entries": 149,
+  "old_rows_mapped": 143,
+  "full_batches": 26,
+  "compact_subtasks": 149,
+  "max_total_task_bytes": 226709,
+  "protected_unchanged": 547,
+  "statuses": {
+    "incomplete": 54,
+    "self-contained": 56,
+    "checked+documented priors": 39
+  },
+  "local_verdicts": {
+    "PASS": 117,
+    "NEEDS_HUMAN": 27,
+    "FAIL": 5
+  },
+  "direct_sorry": 50,
+  "transitive_only_sorry": 0,
+  "original_pages_rendered_and_visually_checked": 40,
+  "section_check_report_hashes": {
+    "section31": {
+      "shared": "cdccb033ff1c79cffc9c042178cec5907c04e0151ac9d77cb8936a44931cc773",
+      "chapter": "0757e9ee69620826bbbeb05793d9f50829f9c565303fa635e8cf6fe95653f924"
+    },
+    "section32": {
+      "shared": "c7e6d92e144071f0def3bdd58e3410f297a82e1ed92fc4a5761504056cf47d18",
+      "chapter": "9fb5a8ed805d9b3e3ef961b51aa0d4cc5ca236987dd670f4d491c39e2b1de186"
+    },
+    "section33": {
+      "shared": "56322fdc04074cb8b529d3c82297c8eac182e4e80b595fe4044d55db996bcd75",
+      "chapter": "999676d8262de15f8573b1ec4b5ff21dbcdb6951665eaecedae47f8cd8105598"
+    },
+    "section34": {
+      "shared": "45a8aa0359d4d87297dbc4b615b23961ba44987478c0cf179323c3d5ff0bf824",
+      "chapter": "cb1f6662d7db3eeb09625d635689fd35f78d559e04b942a6ff6e4e3957a83ac5"
+    },
+    "section35": {
+      "shared": "b8bb77449ca734847019898846b9f0727cdc55941494517243c94c65172435ac",
+      "chapter": "29418b7170de7ad3097d8c9ffd1ae90596b3fb8c933704b7775c61befdb8cab7"
+    },
+    "section36": {
+      "shared": "e079b9a7405f747527770229ade4ce1ea64d9ff956a36faf3bf701de7bd2cb38",
+      "chapter": "495e1684fe34f93e7fb42360431994ee396619216affe4081266e772d69a2498"
+    },
+    "section37": {
+      "shared": "2a4e0b7352d5f875ef5a2c822764e25c5b083a38d51f29d26314d5058e3aac7d",
+      "chapter": "631831fcf201cf81fa3adb04be5c50cf51f7e81aa3b9f9748876983bfe7fd35d"
+    }
+  },
+  "website_audit": "待网站审计",
+  "mentor_issues": "已记录，尚未确认"
+}
