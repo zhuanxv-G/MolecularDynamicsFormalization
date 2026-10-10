@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15c",
+  "source_ids": [
+    "MD-3.5-LinearEulerIntegral"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 145,
+      "printed_page": 123
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a6491b8729f94fc1fdae77df77de9c90e96f2e861335345534054f05aebabb82",
+  "lean_sha256": "382721c74b2eaf2edddee8d189ef382a57914e669ad30b8cdcadb115d8bc5b80",
+  "signature_sha256": "358f434fcfb052f652abfcd01c511aaba4cae478a9af26971704000b3262f9ca",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "paste_plus_pdf_bytes": 71082,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3512,
+      "sha256": "9c85ffb0577d61a63a44e5e1ceedf2a1cf6f15c134fb9741973fe835e8dd50dc"
+    },
+    "BATCH15c_PAGES.pdf": {
+      "bytes": 67570,
+      "sha256": "14b15d189cecf8cf3a0779621f04041067e058cb2ea10ca332063378bddd93f5"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 72744
+}

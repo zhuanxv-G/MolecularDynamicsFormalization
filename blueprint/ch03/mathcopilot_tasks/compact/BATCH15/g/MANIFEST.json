@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15g",
+  "source_ids": [
+    "MD-3.5-ProjectionConstraint"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 145,
+      "printed_page": 123
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a6491b8729f94fc1fdae77df77de9c90e96f2e861335345534054f05aebabb82",
+  "lean_sha256": "382721c74b2eaf2edddee8d189ef382a57914e669ad30b8cdcadb115d8bc5b80",
+  "signature_sha256": "d790d9306c8dadf29727c1f560964850bb233c9138387994716e55953ee9bd90",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "projectionConstraint",
+      "code_sha256": "d790d9306c8dadf29727c1f560964850bb233c9138387994716e55953ee9bd90"
+    }
+  ],
+  "paste_plus_pdf_bytes": 70544,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2974,
+      "sha256": "68c63717c6c6f11666cf4ae80ab5047f4ab77c94c9a582d203302626b4e4fae4"
+    },
+    "BATCH15g_PAGES.pdf": {
+      "bytes": 67570,
+      "sha256": "14b15d189cecf8cf3a0779621f04041067e058cb2ea10ca332063378bddd93f5"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 72169
+}

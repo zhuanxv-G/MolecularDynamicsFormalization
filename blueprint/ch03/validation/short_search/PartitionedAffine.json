@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n s Lq Lp fq fp Aq Ap bq bp h z w Fq Fp hq hp hw\n  have tq : ∀ a : Fin s → ℝ,\n      Lq.symm (Lq z.1+h • ∑ j, a j • Lq (Fq j)) = z.1+h • ∑ j, a j • Fq j := by\n    intro a\n    apply Lq.injective\n    simp\n  have tp : ∀ a : Fin s → ℝ,\n      Lp.symm (Lp z.2+h • ∑ j, a j • Lp (Fp j)) = z.2+h • ∑ j, a j • Fp j := by\n    intro a\n    apply Lp.injective\n    simp\n  refine ⟨?_, ?_, ?_⟩\n  · intro i\n    rw [tq, tp]\n    exact congrArg Lq (hq i)\n  · intro i\n    rw [tq, tp]\n    exact congrArg Lp (hp i)\n  · rw [hw]\n    simp",
+    "source": "blueprint/ch03/validation/short_search/PartitionedAffine-route1.lean",
+    "log": "blueprint/ch03/validation/short_search/PartitionedAffine-route1.log",
+    "source_sha256": "f43002923e37a4244125bce87d7efd9fd2f68b487dd228dfd9adfdb15927d84d",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

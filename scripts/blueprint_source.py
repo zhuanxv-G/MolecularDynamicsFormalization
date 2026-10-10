@@ -1,6 +1,7 @@
 """Chapter-local source records and faithful extraction of unchanged library declarations."""
 from pathlib import Path
 import re
+import json,hashlib
 ROOT=Path(__file__).resolve().parents[1]
 class ChapterData:
     def __init__(self,ch):
@@ -39,3 +40,20 @@ class ChapterData:
         if not m:raise ValueError(name)
         end=text.find('\ndef ',m.end());body=text[m.end():end if end>=0 else text.rfind('end MolecularDynamics')].strip()
         return 'theorem '+(newname or name.removesuffix('_statement'))+' :\n  '+body+' := by\n  '+proof
+
+def apply_saved_routes(ch,records,keys):
+    for key in keys:
+        path=ROOT/f'blueprint/ch{ch:02}/validation/short_search/{key}.json'
+        if not path.exists():continue
+        routes=json.loads(path.read_text(encoding='utf-8'))
+        target=next(x for x in records if x['source_id'].endswith('-'+key))
+        assert target['local_verdict']=='PASS'
+        for r in routes:
+            assert hashlib.sha256((ROOT/r['source']).read_bytes()).hexdigest()==r['source_sha256']
+            assert hashlib.sha256((ROOT/r['log']).read_bytes()).hexdigest()==r['log_sha256']
+            if r['exit_code']==0:
+                target['code']=target['code'].replace('by\n  sorry','by\n  '+r['proof'])
+                target['missing']=None
+                break
+        else:
+            if len(routes)>=3:target['missing']=f'三条短证明路线失败，停止该条；保存证据见validation/short_search/{key}.json。'

@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16c",
+  "source_ids": [
+    "MD-3.5-EnergyProjectionRelation"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 146,
+      "printed_page": 124
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a6491b8729f94fc1fdae77df77de9c90e96f2e861335345534054f05aebabb82",
+  "lean_sha256": "382721c74b2eaf2edddee8d189ef382a57914e669ad30b8cdcadb115d8bc5b80",
+  "signature_sha256": "fca3e1cf0c2daefe756b440b32841890d919920d9f63e2ec8a1b4bfe68728eee",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "energyProjectionRelation",
+      "code_sha256": "fca3e1cf0c2daefe756b440b32841890d919920d9f63e2ec8a1b4bfe68728eee"
+    }
+  ],
+  "paste_plus_pdf_bytes": 81122,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3873,
+      "sha256": "82eb120d24b19acb119af4ba1c0f9985c07b63c24dc7926bb67888fe947a4e12"
+    },
+    "BATCH16c_PAGES.pdf": {
+      "bytes": 77249,
+      "sha256": "acd94e9bb821b201a8e7caf76a8899caf66f991bd4331dd9af470a65d8c08aeb"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 83755
+}

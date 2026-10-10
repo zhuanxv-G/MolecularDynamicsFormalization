@@ -1,1 +1,195 @@
 warning: in the working copy of 'docs/handoff/WORK_LOG.zh-CN.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/blueprint_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_blueprint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_stage.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_chapter_check.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_checkpoint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_data.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/render_local_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_section32.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_section32b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_section33.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_section33b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_section33c.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_section33d.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_section33e.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_section34.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_section34b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_section34c.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_short_search.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_short_search34.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_short_search_more.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch03_bracket_search.py', LF will be replaced by CRLF the next time Git touches it
+[chapter03-blueprint 3badfd7] ch03 sec3.4: faithful local blueprint and checked checkpoint
+ 248 files changed, 67009 insertions(+), 481 deletions(-)
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/BATCH12.md
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/BATCH13.md
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/BATCH14.md
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/a/BATCH12a_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/a/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/a/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/b/BATCH12b_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/b/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/b/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/c/BATCH12c_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/c/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/c/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/d/BATCH12d_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/d/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/d/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/e/BATCH12e_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/e/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/e/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/f/BATCH12f_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/f/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/f/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/g/BATCH12g_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/g/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/g/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/h/BATCH12h_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/h/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH12/h/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/a/BATCH13a_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/a/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/a/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/b/BATCH13b_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/b/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/b/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/c/BATCH13c_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/c/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/c/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/d/BATCH13d_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/d/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/d/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/e/BATCH13e_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/e/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/e/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/f/BATCH13f_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/f/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/f/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/g/BATCH13g_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/g/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/g/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/h/BATCH13h_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/h/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH13/h/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/a/BATCH14a_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/a/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/a/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/b/BATCH14b_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/b/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/b/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/c/BATCH14c_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/c/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/c/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/d/BATCH14d_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/d/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/d/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/e/BATCH14e_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/e/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/e/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/f/BATCH14f_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/f/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/f/PASTE.txt
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/g/BATCH14g_PAGES.pdf
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/g/MANIFEST.json
+ create mode 100644 blueprint/ch03/mathcopilot_tasks/compact/BATCH14/g/PASTE.txt
+ create mode 100644 blueprint/ch03/source_pages/p143.png
+ create mode 100644 blueprint/ch03/source_pages/p143.txt
+ create mode 100644 blueprint/ch03/source_pages/p144.png
+ create mode 100644 blueprint/ch03/source_pages/p144.txt
+ create mode 100644 blueprint/ch03/source_pages/p145.png
+ create mode 100644 blueprint/ch03/source_pages/p145.txt
+ create mode 100644 blueprint/ch03/source_pages/p146.png
+ create mode 100644 blueprint/ch03/source_pages/p146.txt
+ create mode 100644 blueprint/ch03/source_pages/p147.png
+ create mode 100644 blueprint/ch03/source_pages/p147.txt
+ create mode 100644 blueprint/ch03/source_pages/p148.png
+ create mode 100644 blueprint/ch03/source_pages/p148.txt
+ create mode 100644 blueprint/ch03/source_pages/p149.png
+ create mode 100644 blueprint/ch03/source_pages/p149.txt
+ create mode 100644 blueprint/ch03/source_pages/p150.png
+ create mode 100644 blueprint/ch03/source_pages/p150.txt
+ create mode 100644 blueprint/ch03/source_pages/p151.png
+ create mode 100644 blueprint/ch03/source_pages/p151.txt
+ create mode 100644 blueprint/ch03/source_pages/p152.png
+ create mode 100644 blueprint/ch03/source_pages/p152.txt
+ create mode 100644 blueprint/ch03/source_pages/p153.png
+ create mode 100644 blueprint/ch03/source_pages/p153.txt
+ create mode 100644 blueprint/ch03/source_pages/p154.png
+ create mode 100644 blueprint/ch03/source_pages/p154.txt
+ create mode 100644 blueprint/ch03/source_pages/p155.png
+ create mode 100644 blueprint/ch03/source_pages/p155.txt
+ create mode 100644 blueprint/ch03/source_pages/p156.png
+ create mode 100644 blueprint/ch03/source_pages/p156.txt
+ create mode 100644 blueprint/ch03/source_pages/p157.png
+ create mode 100644 blueprint/ch03/source_pages/p157.txt
+ create mode 100644 blueprint/ch03/source_pages/p158.png
+ create mode 100644 blueprint/ch03/source_pages/p158.txt
+ create mode 100644 blueprint/ch03/validation/batch10-COMPILE.json
+ create mode 100644 blueprint/ch03/validation/batch10-lean.log
+ create mode 100644 blueprint/ch03/validation/batch11-COMPILE.json
+ create mode 100644 blueprint/ch03/validation/batch11-lean.log
+ create mode 100644 blueprint/ch03/validation/batch11-rate-fixed-COMPILE.json
+ create mode 100644 blueprint/ch03/validation/batch11-rate-fixed-lean.log
+ create mode 100644 blueprint/ch03/validation/batch12-COMPILE.json
+ create mode 100644 blueprint/ch03/validation/batch12-lean.log
+ create mode 100644 blueprint/ch03/validation/batch12-qualified-COMPILE.json
+ create mode 100644 blueprint/ch03/validation/batch12-qualified-lean.log
+ create mode 100644 blueprint/ch03/validation/section34-commit.log
+ create mode 100644 blueprint/ch03/validation/section34-run.log
+ create mode 100644 blueprint/ch03/validation/section34/CHECK_REPORT.json
+ create mode 100644 blueprint/ch03/validation/section34/LOCAL_CHECK_REPORT.json
+ create mode 100644 blueprint/ch03/validation/section34/axiom_dependencies.log
+ create mode 100644 blueprint/ch03/validation/section34/blueprint_axiom_dependencies.log
+ create mode 100644 blueprint/ch03/validation/section34/blueprint_fresh_Ch01.log
+ create mode 100644 blueprint/ch03/validation/section34/blueprint_fresh_Ch02.log
+ create mode 100644 blueprint/ch03/validation/section34/chapter02_axiom_dependencies.log
+ create mode 100644 blueprint/ch03/validation/section34/chapter_axioms.log
+ create mode 100644 blueprint/ch03/validation/section34/chapter_fresh.log
+ create mode 100644 blueprint/ch03/validation/section34/git_branch.log
+ create mode 100644 blueprint/ch03/validation/section34/git_head.log
+ create mode 100644 blueprint/ch03/validation/section34/git_status.log
+ create mode 100644 blueprint/ch03/validation/section34/lake_build.log
+ create mode 100644 blueprint/ch03/validation/section34/lake_version.log
+ create mode 100644 blueprint/ch03/validation/section34/lean_version.log
+ create mode 100644 blueprint/ch03/validation/section34/mathlib_revision.log
+ create mode 100644 blueprint/ch03/validation/section34/mathlib_status.log
+ create mode 100644 blueprint/ch03/validation/section34/scratch.log
+ create mode 100644 blueprint/ch03/validation/short_search/CommutingEnergySymmetry-route1.lean
+ create mode 100644 blueprint/ch03/validation/short_search/CommutingEnergySymmetry-route1.log
+ create mode 100644 blueprint/ch03/validation/short_search/CommutingEnergySymmetry.json
+ create mode 100644 blueprint/ch03/validation/short_search/ElasticEnergy-route1.lean
+ create mode 100644 blueprint/ch03/validation/short_search/ElasticEnergy-route1.log
+ create mode 100644 blueprint/ch03/validation/short_search/ElasticEnergy.json
+ create mode 100644 blueprint/ch03/validation/short_search/EqualComponentIntegral-route1.lean
+ create mode 100644 blueprint/ch03/validation/short_search/EqualComponentIntegral-route1.log
+ create mode 100644 blueprint/ch03/validation/short_search/EqualComponentIntegral-route2.lean
+ create mode 100644 blueprint/ch03/validation/short_search/EqualComponentIntegral-route2.log
+ create mode 100644 blueprint/ch03/validation/short_search/EqualComponentIntegral.json
+ create mode 100644 blueprint/ch03/validation/short_search/ExponentialFlat-route1.lean
+ create mode 100644 blueprint/ch03/validation/short_search/ExponentialFlat-route1.log
+ create mode 100644 blueprint/ch03/validation/short_search/ExponentialFlat.json
+ create mode 100644 blueprint/ch03/validation/short_search/LinearContinuousIntegral-route1.lean
+ create mode 100644 blueprint/ch03/validation/short_search/LinearContinuousIntegral-route1.log
+ create mode 100644 blueprint/ch03/validation/short_search/LinearContinuousIntegral.json
+ create mode 100644 blueprint/ch03/validation/short_search/ReversedTrajectory-route1.lean
+ create mode 100644 blueprint/ch03/validation/short_search/ReversedTrajectory-route1.log
+ create mode 100644 blueprint/ch03/validation/short_search/ReversedTrajectory-route2.lean
+ create mode 100644 blueprint/ch03/validation/short_search/ReversedTrajectory-route2.log
+ create mode 100644 blueprint/ch03/validation/short_search/ReversedTrajectory-route3.lean
+ create mode 100644 blueprint/ch03/validation/short_search/ReversedTrajectory.json
+ create mode 100644 scripts/ch03_section34.py
+ create mode 100644 scripts/ch03_section34b.py
+ create mode 100644 scripts/ch03_section34c.py
+ create mode 100644 scripts/ch03_short_search34.py
+ create mode 100644 scripts/ch03_short_search_more.py
+ create mode 100644 scripts/render_local_source.py
+fatal: unable to access 'https://github.com/zhuanxv-G/MolecularDynamicsFormalization.git/': schannel: failed to receive handshake, SSL/TLS connection failed
+Generated 88 entries; 89 /143 old rows mapped; protected 547
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_checkpoint.py", line 36, in <module>
+    subprocess.run(['git','push','-u','origin',f'chapter{ch:02}-blueprint'],cwd=ROOT,check=True)
+  File "D:\anaconda\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'push', '-u', 'origin', 'chapter03-blueprint']' returned non-zero exit status 128.

@@ -92,6 +92,19 @@
 | MD-3.4-CommutingEnergy | 117/139 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-3.4-CommutingEnergySymmetry | 118/140 | PASS | 待网站审计 | self-contained |
 | MD-3.4-EnergySymplecticNoGo | 118/140 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.5-EqualComponentIntegral | 122/144 | PASS | 待网站审计 | self-contained |
+| MD-3.5-EqualEulerIntegral | 123/145 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.5-LinearEulerIntegral | 123/145 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.5-LinearRKIntegral | 123/145 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.5-VerletOscillatorEnergy | 123/145 | PASS | 待网站审计 | self-contained |
+| MD-3.5-MomentumProjection | 123/145 | PASS | 待网站审计 | self-contained |
+| MD-3.5-ProjectionConstraint | 123/145 | PASS | 待网站审计 | self-contained |
+| MD-3.5-ProjectionFactor | 124/146 | PASS | 待网站审计 | self-contained |
+| MD-3.5-ProjectionEnergy | 124/146 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.5-KineticZero | 124/146 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.5-EnergyProjectionRelation | 124/146 | PASS | 待网站审计 | self-contained |
+| MD-3.5-NoHamiltonianAttractor | 126/148 | PASS | 待网站审计 | incomplete |
+| MD-3.5-LinearContinuousIntegral | 123/145 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -2662,7 +2675,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/StrangCubic.json。
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/StrangCubic.json；blueprint/ch03/validation/short_search/StrangCubic-route1.lean；blueprint/ch03/validation/short_search/StrangCubic-route1.log；blueprint/ch03/validation/short_search/StrangCubic-route2.lean；blueprint/ch03/validation/short_search/StrangCubic-route2.log；blueprint/ch03/validation/short_search/StrangCubic-route3.lean；blueprint/ch03/validation/short_search/StrangCubic-route3.log。
 
 签名SHA256：`bb1932bdc29b629891d70e3a6878fa135e7e7efb44ffa0aaebaf88902e986924`；原文SHA256：`a6a7a97a664162ef0056c5f605d73e22387ba171df64f325410c8082f8eca578`。
 
@@ -3134,6 +3147,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：需实际机械Hamiltonian的坐标Poisson双括号/梯度接口桥接；当前不存在现成桥接，有限微分路线待处理。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/PotentialDoubleBracket.json；blueprint/ch03/validation/short_search/PotentialDoubleBracket-route1.lean；blueprint/ch03/validation/short_search/PotentialDoubleBracket-route1.log；blueprint/ch03/validation/short_search/PotentialDoubleBracket-route2.lean；blueprint/ch03/validation/short_search/PotentialDoubleBracket-route2.log；blueprint/ch03/validation/short_search/PotentialDoubleBracket-route3.lean；blueprint/ch03/validation/short_search/PotentialDoubleBracket-route3.log。
 
 签名SHA256：`b8c4cf762f0452588033effcf9114e165093f81854320ca8570612ea7e49aded`；原文SHA256：`3bf2e242e793d02696ef5e6766fc7813960d7a03ff728d8ee40b83b382d35a82`。
 
@@ -4360,6 +4375,8 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/ExponentialFlat.json；blueprint/ch03/validation/short_search/ExponentialFlat-route1.lean；blueprint/ch03/validation/short_search/ExponentialFlat-route1.log。
+
 签名SHA256：`2cfc4e62d1d56740e05abd3688b67326cd7547f4457ef0ef1c4ce39077ccaa0c`；原文SHA256：`477229752af7c4ed7982f95857abe1a76911022ca094a35bbcaa1f9fa41a3232`。
 
 ## 1. MD-3.4-ScalarVerletShadow4 · definition · 印刷p.117 / PDFp.139
@@ -4510,6 +4527,8 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/CommutingEnergySymmetry.json；blueprint/ch03/validation/short_search/CommutingEnergySymmetry-route1.lean；blueprint/ch03/validation/short_search/CommutingEnergySymmetry-route1.log。
+
 签名SHA256：`0757b99e00043019c30131745b1a9d9942e0c7eb1d3695162e23ca4b0f09dae1`；原文SHA256：`9c41fa7b6b11b808a532429174aaa4753a6c7c9fd329e5bdb0c5e5b5b6fa9e15`。
 
 ## 1. MD-3.4-EnergySymplecticNoGo · unnumbered_claim · 印刷p.118 / PDFp.140
@@ -4565,3 +4584,623 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 缺失/继续路线：缺Ge–Marsden精确理论及局部全局资格；不建设大型理论。
 
 签名SHA256：`3bbfd63714bd201f173162f8684d842a5b8105028c8de8a60f4212061fe85ab3`；原文SHA256：`bc0c57d116a615c2eb7fa6969d20917aca0fb621f751dd4e84239ac477dde58f`。
+
+## 1. MD-3.5-EqualComponentIntegral · unnumbered_claim · 印刷p.122 / PDFp.144
+
+### 2. 原文陈述
+
+> Consider the following 2D example of a differential equation system
+> \[\dot u=f(u,v),\qquad\dot v=f(u,v).\]
+> Notice that this system has a first integral
+> \[I(u,v)=u-v,\]
+> and consider the application of Euler's method:
+> \[u_{n+1}=u_n+hf(u_n,v_n),\qquad v_{n+1}=v_n+hf(u_n,v_n).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem equalComponentFirstIntegral :
+    ∃ I : ℝ × ℝ → ℝ, (∀ z, I z = z.1-z.2) ∧
+      ∀ (f : ℝ × ℝ → ℝ) (u v : ℝ → ℝ),
+        (∀ t, HasDerivAt u (f (u t,v t)) t) →
+        (∀ t, HasDerivAt v (f (u t,v t)) t) →
+        ∀ t, I (u t,v t) = I (u 0,v 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.equalComponentFirstIntegral；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 真实轨道导数资格显式，采用全实时间轨道版本，不宣称任意f都全时间有解。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch03.lean:900](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:900>)（`MD.Ch03.equalComponentFirstIntegral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/EqualComponentIntegral.json；blueprint/ch03/validation/short_search/EqualComponentIntegral-route1.lean；blueprint/ch03/validation/short_search/EqualComponentIntegral-route1.log；blueprint/ch03/validation/short_search/EqualComponentIntegral-route2.lean；blueprint/ch03/validation/short_search/EqualComponentIntegral-route2.log。
+
+签名SHA256：`9c1555d092c22a722faee092c67bf5b902356dbd1b05e948ed5a0e23c45aa7ea`；原文SHA256：`bd00488cad78ca3e79138ab5cf47d92f4e72ccf610ea654586008d7a019cd419`。
+
+## 1. MD-3.5-EqualEulerIntegral · unnumbered_claim · 印刷p.123 / PDFp.145
+
+### 2. 原文陈述
+
+> We see that
+> \[I(u_{n+1},v_{n+1})=u_{n+1}-v_{n+1}=u_n-v_n=I(u_n,v_n),\]
+> which means that Euler's method conserves this first integral.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem equalEulerIntegral :
+  ∀ (f : ℝ × ℝ → ℝ) h z, equalComponentIntegral (z.1+h*f z,z.2+h*f z)=equalComponentIntegral z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.equalEulerIntegral；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:915](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:915>)（`MD.Ch03.equalEulerIntegral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter03Review.equalEulerIntegral_proved。
+
+签名SHA256：`5c2da37e345d7a3ca79d736a74cca02f4828ced5ea8ce73f9717256a9b5fe536`；原文SHA256：`1d47b636aee5c3d01e3ea59b03e2c04e640f7dba8871d95ce0a5f0ead3973ce9`。
+
+## 1. MD-3.5-LinearEulerIntegral · unnumbered_claim · 印刷p.123 / PDFp.145
+
+### 2. 原文陈述
+
+> Generalizing this slightly, we could imagine a system of ODEs of the form
+> \[\dot{\boldsymbol z}=f(\boldsymbol z),\]
+> such that, for some vector $\boldsymbol b$,
+> \[\boldsymbol b\cdot f(\boldsymbol z)\equiv0,\]
+> then $I(\boldsymbol z)=\boldsymbol b\cdot\boldsymbol z$ is a first integral. It is straightforward to see that Euler's method conserves such a linear first integral exactly, as is true of many other popular numerical methods.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem linearEulerIntegral :
+  ∀ (n : ℕ) (b : Q n →L[ℝ] ℝ) (f : Q n → Q n), (∀ z, b (f z)=0) →
+    ∀ (h : ℝ) z, b (z+h • f z)=b z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.linearEulerIntegral；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:920](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:920>)（`MD.Ch03.linearEulerIntegral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter03Review.linearEulerIntegral_proved。
+
+签名SHA256：`358f434fcfb052f652abfcd01c511aaba4cae478a9af26971704000b3262f9ca`；原文SHA256：`4ebf1db281d7f7d500e4961a00f5a0feda92006e725f62f45de573c7121f3a74`。
+
+## 1. MD-3.5-LinearRKIntegral · unnumbered_claim · 印刷p.123 / PDFp.145
+
+### 2. 原文陈述
+
+> It is straightforward to see that Euler's method conserves such a linear first integral exactly, as is true of many other popular numerical methods.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem linearRKIntegral :
+  ∀ (n s : ℕ) (ℓ : Q n →L[ℝ] ℝ) (f : Q n → Q n), (∀ z, ℓ (f z)=0) →
+    ∀ (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ) h z w F,
+      rungeKuttaRelation f A b h z w F → ℓ w=ℓ z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.linearRKIntegral；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 明确选择任意有限阶段Runge–Kutta关系；所有阶段满足原场线性第一积分资格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:927](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:927>)（`MD.Ch03.linearRKIntegral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter03Review.linearRKIntegral_proved。
+
+签名SHA256：`6ba48fb58c73c972beef65e5a209a64c817e212406e2d1715f098bc85baf289d`；原文SHA256：`f83f49a7698710ddd287543ba5af19b9b660848f41e89774adea48f8c465a91c`。
+
+## 1. MD-3.5-VerletOscillatorEnergy · unnumbered_claim · 印刷p.123 / PDFp.145
+
+### 2. 原文陈述
+
+> In the case of Euler's method applied to the harmonic oscillator, the error in energy grows with time and without bound. In the case of Störmer-Verlet, the energy fluctuates but remains bounded for all time and at its worst is of size proportional to $h^2$, a numerical observation that is supported by the existence of the modified Hamiltonian.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem verletOscillatorEnergy :
+  ∀ Ω ρ : ℝ, 0 < Ω → 0 < ρ → ρ < 2 → ∀ z : Z 1,
+    ∃ C ≥ 0, ∀ h : ℝ, |h*Ω| ≤ ρ → ∀ ν : ℕ, |mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2)
+      (oneStepIterate (verlet (fun _ => 1) (fun q _ => -Ω^2*q 0)) h z ν)-
+      mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2) z| ≤ C*h^2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.verletOscillatorEnergy；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | Ω>0，固定ρ∈(0,2)，\|hΩ\|≤ρ；排除不稳定及阈值步长。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch03.lean:935](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:935>)（`MD.Ch03.verletOscillatorEnergy`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/VerletOscillatorEnergy.json；blueprint/ch03/validation/short_search/VerletOscillatorEnergy-route1.lean；blueprint/ch03/validation/short_search/VerletOscillatorEnergy-route1.log；blueprint/ch03/validation/short_search/VerletOscillatorEnergy-route2.lean；blueprint/ch03/validation/short_search/VerletOscillatorEnergy-route2.log。
+
+签名SHA256：`86b41b0783938de61a17ccbc1f8a5506198bda967327c2f5e434a26e491607f8`；原文SHA256：`4e299a4d2067e05a3c09f6587046b8c4b9f3ef747d3ac2208d1aff70c56e536a`。
+
+## 1. MD-3.5-MomentumProjection · definition · 印刷p.123 / PDFp.145
+
+### 2. 原文陈述
+
+> We start by taking a timestep with any arbitrary (nonconserving) numerical method, say to an intermediate phase point $\overline Q,\overline P$, then we “fix it up” by scaling the momentum by an adjustment factor, defining
+> \[Q=\overline Q,\qquad P=\gamma\overline P,\]
+> selecting $\gamma$ so that the energy in the result is a prescribed value $E$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def momentumProjection {n : ℕ} (γ : ℝ) (z : Z n) : Z n := (z.1,γ • z.2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.momentumProjection；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1002](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1002>)（`MD.Ch03.momentumProjection`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`a03a52012fe644a34ae8388b8bc0789f09d4eea52ba3ad1c64468d5ed61ea0ef`；原文SHA256：`5fb289b0b9db2920c385315c89db616bea3ce8661fa6629dfcfd075f3e91a935`。
+
+## 1. MD-3.5-ProjectionConstraint · (3.12) · 印刷p.123 / PDFp.145
+
+### 2. 原文陈述
+
+> This method is easy to implement: the equation that must be solved is
+> \[\frac{\gamma^2\overline P^TM^{-1}\overline P}{2}+U(\overline Q)=E.\tag{3.12}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def projectionConstraint (E K U γ : ℝ) : Prop := γ^2*K+U=E
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.projectionConstraint；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1005](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1005>)（`MD.Ch03.projectionConstraint`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`d790d9306c8dadf29727c1f560964850bb233c9138387994716e55953ee9bd90`；原文SHA256：`f67646c3e3e7dce70350f09b17bc4acf96d493e17aa05bcad37079227d572611`。
+
+## 1. MD-3.5-ProjectionFactor · (3.13) · 印刷p.124 / PDFp.146
+
+### 2. 原文陈述
+
+> and, since $\overline Q$ is known, this gives
+> \[\gamma=\left(\frac{E-\overline U}{\overline K}\right)^{1/2},\tag{3.13}\]
+> where $\overline U=U(\overline Q)$ and $\overline K=\overline P^TM^{-1}\overline P/2$ are the potential and kinetic energies after a step of the original non-conserving scheme.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def projectionFactor (E K U : ℝ) : ℝ := Real.sqrt ((E-U)/K)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.projectionFactor；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1008](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1008>)（`MD.Ch03.projectionFactor`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0c332bf7251a49f15cdaa20ae47d189f8b46be710ae7a9d532f2ea8b958a9d31`；原文SHA256：`58aabcda16aa7d2ea86ebaafacfd1b86fa7df91d7c404501f4f5d7f8901b4b45`。
+
+## 1. MD-3.5-ProjectionEnergy · unnumbered_claim · 印刷p.124 / PDFp.146
+
+### 2. 原文陈述
+
+> We also must assume that $E-\overline U\ge0$, which, for a large system, seems the likely situation, since we may suppose $\overline K+\overline U=\overline E\approx E$, thus $E-\overline U\approx\overline K\ge0$. Thus we assume a system with many degrees of freedom so that all the conditions for the method to be well defined are satisfied.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem projectionEnergy :
+  ∀ E K U : ℝ, 0 < K → U ≤ E → projectionConstraint E K U (projectionFactor E K U)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.projectionEnergy；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | K>0且U≤E显式给出，禁止由自由度数目推算。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:1012](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1012>)（`MD.Ch03.projectionEnergy`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter03Review.projectionEnergy_proved。
+
+签名SHA256：`a45fa56102018ceb59cc0e7d8ad4e6d21562aaa4e8a726cbbe59ef19212ffdea`；原文SHA256：`edfb2eded97bb066c6a83c2625aa40cb2946cc6d4224f33adb5e033861b875b0`。
+
+## 1. MD-3.5-KineticZero · unnumbered_claim · 印刷p.124 / PDFp.146
+
+### 2. 原文陈述
+
+> If, in the harmonic oscillator, $\overline p_{n+1}$ happens to vanish, then $\gamma$ is not defined. We could work around this obstacle by assuming a large number of degrees of freedom, in which case $\overline K$ is only zero if all the momenta simultaneously vanish and this situation is, in a realistic model of a molecule, extremely unlikely.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem kineticZero :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (p : Position n), positiveMass m → (kinetic m p=0 ↔ p=0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.kineticZero；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 正质量。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:1018](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1018>)（`MD.Ch03.kineticZero`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter03Review.kineticZero_proved。
+
+签名SHA256：`10526013284a3015a5f8f3140efa288091931180b0ad69021e02ae1fd9793e2e`；原文SHA256：`05a97ba0be1821f1dddc82b934b208ad5b20fc9475cd74ca251b793f9c53d368`。
+
+## 1. MD-3.5-EnergyProjectionRelation · definition · 印刷p.124 / PDFp.146
+
+### 2. 原文陈述
+
+> There are many alternative projection methods which we could use for this purpose, which might alter both the positions and momenta. Modifying the positions means that we will somehow need to solve the equation
+> \[H(Q,P)=E,\]
+> where $Q$ depends on a parameter or parameters (typically a Lagrange multiplier that is used to maintain the constraint).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def energyProjectionRelation {n : ℕ} (H : Z n → ℝ) (E : ℝ) (z : Z n) : Prop := H z=E
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.energyProjectionRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1023](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1023>)（`MD.Ch03.energyProjectionRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`fca3e1cf0c2daefe756b440b32841890d919920d9f63e2ec8a1b4bfe68728eee`；原文SHA256：`a20496921dfcf2674eca3c9a6fa756118b13486aeec5f3c73976669cc43077c7`。
+
+## 1. MD-3.5-NoHamiltonianAttractor · unnumbered_claim · 印刷p.126 / PDFp.148
+
+### 2. 原文陈述
+
+> In the first phase, the discrete trajectory appears to be filling in the correct region and without any evidence of nonphysical behavior. The performance is very similar to a Verlet method without projection during this period. In the second phase the system begins to move toward a limit cycle, i.e. an attractive periodic orbit. The presence of such limit cycles is impossible in a Hamiltonian system, thus it is evident that an nonphysical artefact has been introduced by the projection method.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem noHamiltonianAttractor :
+  ∀ (n : ℕ) (H : SymplecticCoordinates n → ℝ) (Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
+    (orbit B : Set (SymplecticCoordinates n)), ContDiff ℝ 2 H →
+    (∀ z, Φ 0 z=z) → (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) →
+    (∀ z t, HasDerivAt (fun s => Φ s z) (textbookHamiltonianVectorField H (Φ t z)) t) →
+    IsCompact orbit → orbit.Nonempty → volume orbit=0 → IsOpen B → 0 < volume B → volume B < ⊤ →
+    ¬ (∀ z ∈ B, Tendsto (fun t => Metric.infDist (Φ t z) orbit) atTop (𝓝 0))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.noHamiltonianAttractor；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 明确C²Hamiltonian的全时间真实流、紧零体积周期轨道、开放正有限体积吸引盆；不只给任意一条轨道。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1027](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1027>)（`MD.Ch03.noHamiltonianAttractor`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺实际流体积保持到开放盆不可能吸引零体积轨道的动力系统测度论桥接；不建设大型吸引子理论。
+
+签名SHA256：`6eff5e78ba9cf738fe14cd0e289e08724dd8bd994ea5889edef7088e8deb0add`；原文SHA256：`f066284bd04f39ba4fedc4b29677e05b319800f5363e676511f11bba8a2b3108`。
+
+## 1. MD-3.5-LinearContinuousIntegral · unnumbered_claim · 印刷p.123 / PDFp.145
+
+### 2. 原文陈述
+
+> Generalizing this slightly, we could imagine a system of ODEs of the form
+> \[\dot{\boldsymbol z}=f(\boldsymbol z),\]
+> such that, for some vector $\boldsymbol b$,
+> \[\boldsymbol b\cdot f(\boldsymbol z)\equiv0,\]
+> then $I(\boldsymbol z)=\boldsymbol b\cdot\boldsymbol z$ is a first integral.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem linearContinuousIntegral :
+    ∀ (n : ℕ) (b : Fin n → ℝ) (f : Q n → Q n) (γ : ℝ → Q n),
+      (∀ z, ∑ i, b i*f z i = 0) →
+      (∀ t, HasDerivAt γ (f (γ t)) t) →
+      ∀ t, (∑ i, b i*γ t i) = ∑ i, b i*γ 0 i
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.linearContinuousIntegral；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 真实全时间轨道导数资格显式；不宣称任意f有全时间解。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch03.lean:1038](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1038>)（`MD.Ch03.linearContinuousIntegral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/LinearContinuousIntegral.json；blueprint/ch03/validation/short_search/LinearContinuousIntegral-route1.lean；blueprint/ch03/validation/short_search/LinearContinuousIntegral-route1.log。
+
+签名SHA256：`f788e6f05c4f915f4f49271c499b1529eb059206e15727af0330eda09666f2e6`；原文SHA256：`bf9ae2a9bf64072ba0f64ed4f7f4c18d391e472abf47ba3be379265789ef49ba`。

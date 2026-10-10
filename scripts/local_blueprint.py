@@ -80,11 +80,25 @@ def compile_batch(ch,p,batch):
     audit=json.loads((p.BASE/'local_audit.json').read_text(encoding='utf-8'))
     for item in audit['items'].values():item.update(compiled=True,compile_evidence=evidence.relative_to(ROOT).as_posix())
     p.dump(p.BASE/'local_audit.json',audit)
+
+def sync_attempts(ch,p):
+    audit=json.loads((p.BASE/'local_audit.json').read_text(encoding='utf-8'))
+    for path in (p.BASE/'validation/short_search').glob('*.json'):
+        routes=json.loads(path.read_text(encoding='utf-8'))
+        if not isinstance(routes,list):continue
+        for sid,a in audit['items'].items():
+            if sid.endswith('-'+path.stem):
+                a['proof_attempts']=len(routes)
+                a['attempt_evidence']=[path.relative_to(ROOT).as_posix()]+[r[k] for r in routes for k in ['source','log']]
+    p.dump(p.BASE/'local_audit.json',audit)
+    p.progress(json.loads((p.BASE/f'ch{ch:02}_source.json').read_text(encoding='utf-8')),
+        audit['items'],json.loads((p.BASE/'old_mapping.json').read_text(encoding='utf-8'))['mapped'],
+        list(p.csv.DictReader((ROOT/'docs/review'/f'CH{ch:02}_CLAIMS.csv').open(encoding='utf-8-sig'))))
 def main():
     a=argparse.ArgumentParser();a.add_argument('chapter',type=int);a.add_argument('--checked');a.add_argument('--compile',action='store_true');a.add_argument('--batch',default='01');a.add_argument('--step',default='①–④当前节');args=a.parse_args()
     p=pipeline(args.chapter)
     if args.checked:p.checked(ROOT/args.checked)
-    p.generate();render(args.chapter,p);landing(args.chapter,p,args.batch,args.step)
+    p.generate();sync_attempts(args.chapter,p);render(args.chapter,p);landing(args.chapter,p,args.batch,args.step)
     if args.compile:
         compile_batch(args.chapter,p,args.batch)
         p.generate();render(args.chapter,p);landing(args.chapter,p,args.batch,args.step)

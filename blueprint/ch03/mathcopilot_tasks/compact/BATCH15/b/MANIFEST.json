@@ -1,0 +1,48 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15b",
+  "source_ids": [
+    "MD-3.5-EqualEulerIntegral"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 144,
+      "printed_page": 122
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 145,
+      "printed_page": 123
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a6491b8729f94fc1fdae77df77de9c90e96f2e861335345534054f05aebabb82",
+  "lean_sha256": "382721c74b2eaf2edddee8d189ef382a57914e669ad30b8cdcadb115d8bc5b80",
+  "signature_sha256": "5c2da37e345d7a3ca79d736a74cca02f4828ced5ea8ce73f9717256a9b5fe536",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "equalComponentIntegral",
+      "code_sha256": "4d3ba141693dee3df5a0dd91244c7eba2d42b4151866dc931b7ba57aa3cec081"
+    }
+  ],
+  "paste_plus_pdf_bytes": 146176,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3003,
+      "sha256": "ed99892874219ddfe11b7825330da86d78b998e7f06144f21c5927b641b6e6f2"
+    },
+    "BATCH15b_PAGES.pdf": {
+      "bytes": 143173,
+      "sha256": "2591f651128caa7dded7d008751f93c126335a9b6e646f60e4253e81b15140c1"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 147715
+}

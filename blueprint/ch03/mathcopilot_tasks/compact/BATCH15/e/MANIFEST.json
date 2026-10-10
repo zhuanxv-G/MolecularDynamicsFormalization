@@ -1,0 +1,103 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15e",
+  "source_ids": [
+    "MD-3.5-VerletOscillatorEnergy"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 145,
+      "printed_page": 123
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a6491b8729f94fc1fdae77df77de9c90e96f2e861335345534054f05aebabb82",
+  "lean_sha256": "382721c74b2eaf2edddee8d189ef382a57914e669ad30b8cdcadb115d8bc5b80",
+  "signature_sha256": "86b41b0783938de61a17ccbc1f8a5506198bda967327c2f5e434a26e491607f8",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "mechanicalEnergy",
+      "code_sha256": "079c953a9952f55770c6040393e028f1fbddfa00eafad3f1cd6d61f26ea03b25"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "oneStepIterate",
+      "code_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "quadraticKinetic",
+      "code_sha256": "0f8e339d29f2ef435e91de9746aaa1f557b7ccba5e8413ba893e513ace830464"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "verlet",
+      "code_sha256": "401060069967ba034fd1337efdba9f5ddda707775b16934659f1d861ecc3c84b"
+    }
+  ],
+  "paste_plus_pdf_bytes": 73376,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5806,
+      "sha256": "8b6b05f2298da1acb0abce0292e71bb4bcd339763eb1e7407cb9c722dac4d256"
+    },
+    "BATCH15e_PAGES.pdf": {
+      "bytes": 67570,
+      "sha256": "14b15d189cecf8cf3a0779621f04041067e058cb2ea10ca332063378bddd93f5"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 77336
+}

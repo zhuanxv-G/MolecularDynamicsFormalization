@@ -251,3 +251,7 @@ JSON/Blueprint/本地预审/compact包与7段文档已生成；完整check和逐
 ## 2026-10-10 第3章：§3.4检查点
 88条JSON/Blueprint/本地预审/compact/7段文档；完整check与逐条公理通过，冻结文件不变。
 下一步：继续第3章§3.5；复用§3.4完整检查及短证明；scripts/ch03_section35*.py为已核原页的预备输入，尚未生成计数。；网站待审，原模型及heartbeat调度保留。
+
+## 2026-10-10 第3章：§3.5检查点
+101条JSON/Blueprint/本地预审/compact/7段文档；完整check与逐条公理通过，冻结文件不变。
+下一步：继续第3章§3.6；复用101条及§3.5完整检查，从已核原页的scripts/ch03_section36*.py小批接续。；网站待审，原模型及heartbeat调度保留。

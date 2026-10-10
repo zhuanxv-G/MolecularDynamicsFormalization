@@ -1,0 +1,8 @@
+blueprint\ch03\validation\short_search\ReversedTrajectory-route3.lean:14:2: error: Type mismatch: After simplification, term
+  HasFDerivAt.comp_hasDerivAt t (ContinuousLinearMap.hasFDerivAt R) (HasDerivAt.scomp t (hγ (-t)) (hasDerivAt_neg t))
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Q n) Pi.normedAddCommGroup.toAddCommGroup
+    Pi.normedSpace.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (⇑R ∘ γ ∘ Neg.neg) (-R (f (γ (-t)))) t
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField (Q n) Pi.addCommGroup (Pi.Function.module (Fin n) ℝ ℝ)
+    Pi.topologicalSpace ⋯ (fun s => R (γ (-s))) (-R (f (γ (-t)))) t

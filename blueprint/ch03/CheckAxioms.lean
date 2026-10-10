@@ -88,3 +88,16 @@ import Blueprint.Ch03
 #print axioms MD.Ch03.commutingEnergy
 #print axioms MD.Ch03.commutingEnergySymmetry
 #print axioms MD.Ch03.energySymplecticNoGo
+#print axioms MD.Ch03.equalComponentFirstIntegral
+#print axioms MD.Ch03.equalEulerIntegral
+#print axioms MD.Ch03.linearEulerIntegral
+#print axioms MD.Ch03.linearRKIntegral
+#print axioms MD.Ch03.verletOscillatorEnergy
+#print axioms MD.Ch03.momentumProjection
+#print axioms MD.Ch03.projectionConstraint
+#print axioms MD.Ch03.projectionFactor
+#print axioms MD.Ch03.projectionEnergy
+#print axioms MD.Ch03.kineticZero
+#print axioms MD.Ch03.energyProjectionRelation
+#print axioms MD.Ch03.noHamiltonianAttractor
+#print axioms MD.Ch03.linearContinuousIntegral

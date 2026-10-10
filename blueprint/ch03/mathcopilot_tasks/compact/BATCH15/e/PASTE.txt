@@ -1,0 +1,115 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH15e_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 145 | 123 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-3.5-VerletOscillatorEnergy",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.5",
+  "printed_page": "123",
+  "pdf_page": "145",
+  "statement_latex": "In the case of Euler's method applied to the harmonic oscillator, the error in energy grows with time and without bound. In the case of Störmer-Verlet, the energy fluctuates but remains bounded for all time and at its worst is of size proportional to $h^2$, a numerical observation that is supported by the existence of the modified Hamiltonian.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "Euler无界另为EulerGrowth；本条保留Verlet谐振子全时间能量界。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.verletOscillatorEnergy",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "Ω>0，固定ρ∈(0,2)，|hΩ|≤ρ；排除不稳定及阈值步长。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem verletOscillatorEnergy :
+  ∀ Ω ρ : ℝ, 0 < Ω → 0 < ρ → ρ < 2 → ∀ z : Z 1,
+    ∃ C ≥ 0, ∀ h : ℝ, |h*Ω| ≤ ρ → ∀ ν : ℕ, |mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2)
+      (oneStepIterate (verlet (fun _ => 1) (fun q _ => -Ω^2*q 0)) h z ν)-
+      mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2) z| ≤ C*h^2
+```
+
+原上下文：namespace MD.Ch03；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter03Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter02Review.Z (MolecularDynamics/Chapter02/ReviewDefinitions.lean:18)
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter04Review.Z (MolecularDynamics/Chapter04/ReviewDefinitions.lean:16)
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter02Review.invMass (MolecularDynamics/Chapter02/ReviewDefinitions.lean:41)
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+
+### MolecularDynamics.Chapter04Review.invMass (MolecularDynamics/Chapter04/ReviewDefinitions.lean:19)
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+
+### MolecularDynamics.Chapter03Review.mechanicalEnergy (MolecularDynamics/Chapter03/ReviewDefinitions.lean:54)
+```lean
+def mechanicalEnergy {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (z : Z n) : ℝ := quadraticKinetic m z.2+U z.1
+```
+
+### MolecularDynamics.oneStepIterate (MolecularDynamics/Chapter02/OneStepConvergence.lean:31)
+```lean
+noncomputable def oneStepIterate (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) : E :=
+  (G h)^[n] z₀
+
+@[simp] theorem oneStepIterate_zero (G : ℝ → E → E) (h : ℝ) (z₀ : E) :
+    oneStepIterate G h z₀ 0 = z₀ := rfl
+
+@[simp] theorem oneStepIterate_succ (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
+    oneStepIterate G h z₀ (n + 1) = G h (oneStepIterate G h z₀ n) :=
+  Function.iterate_succ_apply' _ _ _
+```
+
+### MolecularDynamics.Chapter03Review.quadraticKinetic (MolecularDynamics/Chapter03/ReviewDefinitions.lean:53)
+```lean
+def quadraticKinetic {n : ℕ} (m : Fin n → ℝ) (p : Q n) : ℝ := (∑ i, p i^2/m i)/2
+```
+
+### MolecularDynamics.Chapter02Review.verlet (MolecularDynamics/Chapter02/ReviewDefinitions.lean:60)
+```lean
+def verlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n) : Z n :=
+  let qnew := z.1 + h • invMass m z.2 + (h^2/2) • invMass m (F z.1)
+  (qnew, z.2 + (h/2) • (F z.1 + F qnew))
+```

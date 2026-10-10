@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16b",
+  "source_ids": [
+    "MD-3.5-KineticZero"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 146,
+      "printed_page": 124
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a6491b8729f94fc1fdae77df77de9c90e96f2e861335345534054f05aebabb82",
+  "lean_sha256": "382721c74b2eaf2edddee8d189ef382a57914e669ad30b8cdcadb115d8bc5b80",
+  "signature_sha256": "10526013284a3015a5f8f3140efa288091931180b0ad69021e02ae1fd9793e2e",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "Position",
+      "code_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "kinetic",
+      "code_sha256": "79ca1ff46c2f9ba76ca8397bf3643284f66585f95e64959591590413e27f47cc"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "positiveMass",
+      "code_sha256": "b9acc89b85e9b87ac122f258b0bd23cb20efd6ecc4ec0894b39658f630a85d21"
+    }
+  ],
+  "paste_plus_pdf_bytes": 80896,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3647,
+      "sha256": "182b21133606751030a895eeea1e5cebc69db3d103087dc95a367126b2f71431"
+    },
+    "BATCH16b_PAGES.pdf": {
+      "bytes": 77249,
+      "sha256": "acd94e9bb821b201a8e7caf76a8899caf66f991bd4331dd9af470a65d8c08aeb"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 82789
+}

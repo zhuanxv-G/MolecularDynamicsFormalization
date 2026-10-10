@@ -1,0 +1,54 @@
+blueprint\ch03\validation\short_search\VerletOscillatorEnergy-route1.lean:54:20: error: linarith failed to find a contradiction
+case left
+Ω ρ : ℝ
+hΩ : 0 < Ω
+hρ : 0 < ρ
+hρ2 : ρ < 2
+z : Z 1
+A : ℝ := 1 - ρ ^ 2 / 4
+hA : 0 < A
+E0 : ℝ := z.2 0 ^ 2 + Ω ^ 2 * z.1 0 ^ 2
+h : ℝ
+hh : |h * Ω| ≤ ρ
+ν : ℕ
+hh2 : h ^ 2 * Ω ^ 2 ≤ ρ ^ 2
+hcoeff : A ≤ 1 - h ^ 2 * Ω ^ 2 / 4
+K : Z 1 → ℝ := fun w => w.2 0 ^ 2 + Ω ^ 2 * (1 - h ^ 2 * Ω ^ 2 / 4) * w.1 0 ^ 2
+hstep : ∀ (w : Z 1), K (verlet (fun x => 1) (fun q x => -Ω ^ 2 * q 0) h w) = K w
+hi : K (oneStepIterate (verlet (fun x => 1) fun q x => -Ω ^ 2 * q 0) h z ν) = K z
+hupper : K z ≤ E0
+hlower : ∀ (w : Z 1), Ω ^ 2 * A * w.1 0 ^ 2 ≤ K w
+w : Z 1 := oneStepIterate (verlet (fun x => 1) fun q x => -Ω ^ 2 * q 0) h z ν
+hden : 0 < Ω ^ 2 * A
+hw : w.1 0 ^ 2 ≤ E0 / (Ω ^ 2 * A)
+hz : z.1 0 ^ 2 ≤ E0 / (Ω ^ 2 * A)
+a✝ : w.1 0 ^ 2 - z.1 0 ^ 2 < -(2 * E0 / (Ω ^ 2 * A))
+⊢ False
+failed
+blueprint\ch03\validation\short_search\VerletOscillatorEnergy-route1.lean:54:20: error: linarith failed to find a contradiction
+case right
+Ω ρ : ℝ
+hΩ : 0 < Ω
+hρ : 0 < ρ
+hρ2 : ρ < 2
+z : Z 1
+A : ℝ := 1 - ρ ^ 2 / 4
+hA : 0 < A
+E0 : ℝ := z.2 0 ^ 2 + Ω ^ 2 * z.1 0 ^ 2
+h : ℝ
+hh : |h * Ω| ≤ ρ
+ν : ℕ
+hh2 : h ^ 2 * Ω ^ 2 ≤ ρ ^ 2
+hcoeff : A ≤ 1 - h ^ 2 * Ω ^ 2 / 4
+K : Z 1 → ℝ := fun w => w.2 0 ^ 2 + Ω ^ 2 * (1 - h ^ 2 * Ω ^ 2 / 4) * w.1 0 ^ 2
+hstep : ∀ (w : Z 1), K (verlet (fun x => 1) (fun q x => -Ω ^ 2 * q 0) h w) = K w
+hi : K (oneStepIterate (verlet (fun x => 1) fun q x => -Ω ^ 2 * q 0) h z ν) = K z
+hupper : K z ≤ E0
+hlower : ∀ (w : Z 1), Ω ^ 2 * A * w.1 0 ^ 2 ≤ K w
+w : Z 1 := oneStepIterate (verlet (fun x => 1) fun q x => -Ω ^ 2 * q 0) h z ν
+hden : 0 < Ω ^ 2 * A
+hw : w.1 0 ^ 2 ≤ E0 / (Ω ^ 2 * A)
+hz : z.1 0 ^ 2 ≤ E0 / (Ω ^ 2 * A)
+a✝ : 2 * E0 / (Ω ^ 2 * A) < w.1 0 ^ 2 - z.1 0 ^ 2
+⊢ False
+failed
