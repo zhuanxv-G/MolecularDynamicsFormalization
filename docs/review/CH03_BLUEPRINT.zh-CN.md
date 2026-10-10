@@ -105,6 +105,33 @@
 | MD-3.5-EnergyProjectionRelation | 124/146 | PASS | 待网站审计 | self-contained |
 | MD-3.5-NoHamiltonianAttractor | 126/148 | PASS | 待网站审计 | incomplete |
 | MD-3.5-LinearContinuousIntegral | 123/145 | PASS | 待网站审计 | self-contained |
+| MD-3.6-HamiltonianFlowStructures | 127–128/149–150 | PASS | 待网站审计 | incomplete |
+| MD-3.6-VolumeNotSymplectic | 128/150 | PASS | 待网站审计 | incomplete |
+| MD-3.6.1-LinearInvolution | 128/150 | PASS | 待网站审计 | self-contained |
+| MD-3.6.1-ReversedFieldPrinted | 128/150 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.6.1-MomentumReversal | 128/150 | PASS | 待网站审计 | self-contained |
+| MD-3.6.1-MechanicalReversal | 128/150 | FAIL | 待网站审计 | incomplete |
+| MD-3.6.1-ReversedTrajectoryPrinted | 128–129/150–151 | FAIL | 待网站审计 | incomplete |
+| MD-3.6.1-ReversedTrajectory | 129/151 | PASS | 待网站审计 | incomplete |
+| MD-3.6.2-FlowReversal | 129/151 | PASS | 待网站审计 | incomplete |
+| MD-3.6.2-FlowReversalIdentity | 129/151 | PASS | 待网站审计 | incomplete |
+| MD-3.6.2-ReversibleMethod | 130/152 | PASS | 待网站审计 | self-contained |
+| MD-3.6.2-SymmetricMethod | 130/152 | PASS | 待网站审计 | self-contained |
+| MD-3.6.2-AffineInvariant | 130/152 | PASS | 待网站审计 | self-contained |
+| MD-3.6.2-SymmetricAffineReversible | 130/152 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.6.2-RKAffine | 130/152 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.6.2-PartitionedAffinePrinted | 130/152 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.6.2-PartitionedAffine | 130/152 | PASS | 待网站审计 | self-contained |
+| MD-3.6.3-SymplecticNotReversible | 131/153 | PASS | 待网站审计 | incomplete |
+| MD-3.6.3-TrapezoidalRelation | 131/153 | PASS | 待网站审计 | self-contained |
+| MD-3.6.3-TrapezoidalProperties | 131/153 | PASS | 待网站审计 | incomplete |
+| MD-3.6.3-HamiltonianSpectrum | 131/153 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.6.3-SymplecticSpectrum | 131/153 | PASS | 待网站审计 | incomplete |
+| MD-3.6.3-ReversibleSpectrum | 131/153 | PASS | 待网站审计 | incomplete |
+| MD-3.6.3-ConjugateIterates | 131–132/153–154 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.6.1-MechanicalReversalCorrect | 128/150 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.6.3-ConjugateOrderPrinted | 132/154 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.6.3-ReversibleVolumeFailure | 132/154 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -147,6 +174,24 @@
   离散快照守恒不直接推出连续修正流守恒。
 - MD-3.4-EnergySymplecticNoGo：定性no-go不能无条件成立；补全Ge–Marsden所需原理和全局流资格尚待审，忠实保留疑点。
   原文practical排他陈述缺精确非可积性/无额外第一积分等假设。
+- MD-3.6.1-ReversedFieldPrinted：字面定义保留Rᵀ；不把它当任意involution的正确反转；p129使用R⁻¹=R与此不同。
+  一般线性involution的时间反转应−R⁻¹f(Rz)=−Rf(Rz)，不是−Rᵀ；机械R对称时两者相同。
+- MD-3.6.1-MechanicalReversal：字面三项完整保留；n=1,m=1,U=0,z=(0,1)时f=(1,0)，原右列=(−1,0)，与“clearly equal”不符。正确反转结论另列桥接，未以正确结论替换印刷等式。
+  p128右端列向量符号与−Rf(Rz)实际计算不符；原文不静默更改。
+- MD-3.6.1-ReversedTrajectoryPrinted：R=[[1,1],[0,−1]]满足R²=I，取常场f=(1,0)；真实反向导数−Rf=(−1,0)，字面−Rᵀf=(−1,−1)不同。
+  p128的Rᵀ字面反转与p129的R链式法则不能一般同时成立；具体二维反例见本地审计。
+- MD-3.6.2-AffineInvariant：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  (3.17)左端印刷z而不是z̃；保留原文，语义按前后说明的变换坐标。
+- MD-3.6.2-SymmetricAffineReversible：额外符号相容性是独立必要资格，不能当作原书已明示假设。
+  一般方法需要G_{−f}(h)=G_f(−h)，否则原文蕴含式条件不全。
+- MD-3.6.2-PartitionedAffinePrinted：任意混合q,p的线性等价通常不保持不同PRK表格的分区；字面全称保留待反例审查。
+  PRK一般只对保持分区的分块线性变换等变；任意混合变换的全称可疑。
+- MD-3.6.3-HamiltonianSpectrum：谱结论保留真实复特征值；原证明把原矩阵同一个u当成转置特征向量，不能照抄为有效证明；纯虚时quadruplets可退化。
+  同一u一般不是转置特征向量；四元素集合可重复，不声称总有4个互异值。
+- MD-3.6.3-ConjugateIterates：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。
+- MD-3.6.3-ConjugateOrderPrinted：仅拓扑共轭不保持数值误差幂阶；通常需要定量局部Lipschitz或光滑处理器及步长资格。原泛称性能也未精确定义。
+  homeomorphism可用平方根改变误差阶；原文缺定量正则性，不能由迭代共轭冒充已证同有效阶。
 
 ## 1. MD-3-ModifiedConstruction · unnumbered_claim · 印刷p.97 / PDFp.119
 
@@ -5204,3 +5249,1321 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/LinearContinuousIntegral.json；blueprint/ch03/validation/short_search/LinearContinuousIntegral-route1.lean；blueprint/ch03/validation/short_search/LinearContinuousIntegral-route1.log。
 
 签名SHA256：`f788e6f05c4f915f4f49271c499b1529eb059206e15727af0330eda09666f2e6`；原文SHA256：`bf9ae2a9bf64072ba0f64ed4f7f4c18d391e472abf47ba3be379265789ef49ba`。
+
+## 1. MD-3.6-HamiltonianFlowStructures · unnumbered_claim · 印刷p.127–128 / PDFp.149–150
+
+### 2. 原文陈述
+
+> The flow of a Hamiltonian system of the form $H=p^TM^{-1}p/2+U(q)$ will preserve all of the following:
+> 1. The symplectic two-form $\mathrm dq\wedge\mathrm dp$.
+> 2. The Hamiltonian (i.e., the energy) $H$.
+> 3. The volume in phase space (as the vector field is divergence free).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonianFlowStructures :
+  ∀ n (H : SymplecticCoordinates n → ℝ) D Ω
+    (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n) τ,
+    0 < τ → ContDiffOn ℝ 2 H D → localFlowC1 (textbookHamiltonianVectorField H) D Ω Φ τ →
+    (∀ t ∈ Ioo 0 τ, ∀ z ∈ Ω,
+      HasDerivAt (fun s => textbookJacobian (fun y => Φ (s,y)) z)
+        (textbookJ n*textbookHamiltonianHessian H (Φ (t,z))*textbookJacobian (fun y => Φ (t,y)) z) t) ∧
+    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, IsTextbookSymplectic (textbookJacobian (fun y => Φ (t,y)) z)) ∧
+    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, (textbookJacobian (fun y => Φ (t,y)) z).det = 1) ∧
+    (∀ t ∈ Icc 0 τ, ∀ S, MeasurableSet S → S ⊆ Ω →
+      volume ((fun z => Φ (t,z)) '' S) = volume S)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.hamiltonianFlowStructures；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 原场在开放域C¹，真实局部流、反步与局部定义域资格显式。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1053](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1053>)（`MD.Ch03.hamiltonianFlowStructures`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：完整C¹流可微性、变分及测度保持桥接仍缺；已存在jointC²特例不能替代本签名。
+
+签名SHA256：`932ed255c1a8b2a2f31142e2a8165151e6f96b1b0c954ba8e14116239d5f2232`；原文SHA256：`947102d3e0690c165310ad66d536a1f106c98c7365210288d7610725f2db40e6`。
+
+## 1. MD-3.6-VolumeNotSymplectic · unnumbered_claim · 印刷p.128 / PDFp.150
+
+### 2. 原文陈述
+
+> The phase volume conservation can be seen as a consequence of the symplectic property, but it is a weaker condition. It is possible to construct methods that preserve volume but which are not symplectic, and we can build methods that exactly conserve the energy (as we shall show below).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem volumeNotSymplectic :
+  ∃ G : SymplecticCoordinates 2 → SymplecticCoordinates 2,
+    ContDiff ℝ 1 G ∧ (∀ z, (textbookJacobian G z).det=1) ∧ ¬ IsTextbookSymplecticMap G
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.volumeNotSymplectic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1067](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1067>)（`MD.Ch03.volumeNotSymplectic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待构造四维线性det=1非辛映射并桥接真实Jacobian；缺完整有限矩阵到坐标映射桥接。
+
+签名SHA256：`5ae890b15f145f4e2acbf4d9b150f4a21b7b9be95df45aa09f805d04f2025bb2`；原文SHA256：`5ea3c11b9e8bd4a7e6e348298f2bc4279d5ec1ca8d8353ccf11998d8dd19db75`。
+
+## 1. MD-3.6.1-LinearInvolution · definition · 印刷p.128 / PDFp.150
+
+### 2. 原文陈述
+
+> By an involution we mean a linear mapping $\boldsymbol z\mapsto R\boldsymbol z$ where $R^2=I$, i.e. $R$ is its own inverse.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def linearInvolution {n : ℕ} (R : Q n →L[ℝ] Q n) : Prop := R.comp R = ContinuousLinearMap.id ℝ (Q n)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.linearInvolution；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1073](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1073>)（`MD.Ch03.linearInvolution`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0d8bf8f9f4975d8fc1013768c46242b3dbc62105108deb3817d8ab7016ed229f`；原文SHA256：`fda6aee7f0b0ee357cb040935da174f7f1d7b182b3609fa71909cf8292bade55`。
+
+## 1. MD-3.6.1-ReversedFieldPrinted · definition · 印刷p.128 / PDFp.150
+
+### 2. 原文陈述
+
+> Given the involution $R$ we define the time reversal of the vector field $f$ with respect to $R$ by
+> \[\widetilde f(\boldsymbol z)=-R^Tf(R\boldsymbol z).\]
+> When a vector field is its own reversal we say that it is a time-reversible vector field.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def reversedField {n : ℕ} (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (z : Q n) : Q n :=
+  -(R.transpose.mulVec (f (R.mulVec z)))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.reversedField；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 一般线性involution的时间反转应−R⁻¹f(Rz)=−Rf(Rz)，不是−Rᵀ；机械R对称时两者相同。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。字面定义保留Rᵀ；不把它当任意involution的正确反转；p129使用R⁻¹=R与此不同。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1077](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1077>)（`MD.Ch03.reversedField`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`b982533c2c0f6f7b37863366a4fa6d2a4304e0c2d52e6ed42d93cf457de31131`；原文SHA256：`51f52e06275d2e17aeff48be2f51d57e4a734f5672dbd568fc70006bdf3ad37f`。
+
+## 1. MD-3.6.1-MomentumReversal · definition · 印刷p.128 / PDFp.150
+
+### 2. 原文陈述
+
+> Let $H(q,p)=p^TM^{-1}p/2+U(q)$ be the Hamiltonian for a system of $N_c$ configuration variables. Define the $2N_c\times2N_c$ matrix $R$ by
+> \[R=\begin{bmatrix}I&0\\0&-I\end{bmatrix}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def momentumReversal {n : ℕ} (z : Z n) : Z n := (z.1,-z.2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.momentumReversal；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1081](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1081>)（`MD.Ch03.momentumReversal`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c5ad7c9b8c323b15d92e604bfa15d702a80d08c4d5f747736ed92fbbe19ea791`；原文SHA256：`c8ea52f6c3c484a031326a86a40c356c72683171256465467cfed9559e290552`。
+
+## 1. MD-3.6.1-MechanicalReversal · unnumbered_claim · 印刷p.128 / PDFp.150
+
+### 2. 原文陈述
+
+> The vector fields involved are
+> \[f=\begin{bmatrix}M^{-1}p\\-\nabla U(q)\end{bmatrix},\qquad\widetilde f=-Rf(Rz)=\begin{bmatrix}-M^{-1}p\\\nabla U(q)\end{bmatrix},\]
+> which are clearly equal. Therefore the molecular dynamics Hamiltonian system is time-reversible.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem mechanicalReversalPrinted :
+    ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (z : Z n),
+      (-momentumReversal (mechanicalField m (fun q => -grad U q) (momentumReversal z)) =
+        (-invMass m z.2, grad U z.1)) ∧
+      ((-invMass m z.2, grad U z.1) = mechanicalField m (fun q => -grad U q) z) ∧
+      mechanicalField m (fun q => -grad U q) (momentumReversal z) =
+        -momentumReversal (mechanicalField m (fun q => -grad U q) z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.mechanicalReversalPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | p128右端列向量符号与−Rf(Rz)实际计算不符；原文不静默更改。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**FAIL**。字面三项完整保留；n=1,m=1,U=0,z=(0,1)时f=(1,0)，原右列=(−1,0)，与“clearly equal”不符。正确反转结论另列桥接，未以正确结论替换印刷等式。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1085](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1085>)（`MD.Ch03.mechanicalReversalPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本地FAIL不进入证明；正确机械反转已有正式库证明，原展示式待裁定。
+
+签名SHA256：`8a2dc9812a7665ec6c4c36fa2565708a47f628a400297d566371fd9438a64072`；原文SHA256：`879da94514970d6de5a8b0c22191de02bb9e2833131d387d8afa68747298575d`。
+
+## 1. MD-3.6.1-ReversedTrajectoryPrinted · unnumbered_claim · 印刷p.128–129 / PDFp.150–151
+
+### 2. 原文陈述
+
+> For the system $\mathrm dz/\mathrm dt=f(\boldsymbol z)$, a coordinate transformation $\boldsymbol z\mapsto\widetilde{\boldsymbol z}=R\boldsymbol z$ results in
+> \[\frac{\mathrm d\widetilde{\boldsymbol z}}{\mathrm dt}=R\frac{\mathrm d\boldsymbol z}{\mathrm dt}=Rf(R^{-1}\widetilde{\boldsymbol z})=Rf(R\widetilde{\boldsymbol z}),\]
+> since $R^{-1}=R$. A change of time $t\mapsto\tau=-t$ results in
+> \[\frac{\mathrm d\boldsymbol z}{\mathrm d\tau}=\frac{\mathrm dt}{\mathrm d\tau}\frac{\mathrm d\boldsymbol z}{\mathrm dt}=-f(\boldsymbol z).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem reversedTrajectoryPrinted :
+  ∀ (n : ℕ) (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (γ : ℝ → Q n),
+    R*R=1 → (∀ t, HasDerivAt γ (f (γ t)) t) →
+    ∀ t, HasDerivAt (fun s => R.mulVec (γ (-s)))
+      (reversedField R f (R.mulVec (γ (-t)))) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.reversedTrajectoryPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | p128的Rᵀ字面反转与p129的R链式法则不能一般同时成立；具体二维反例见本地审计。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**FAIL**。R=[[1,1],[0,−1]]满足R²=I，取常场f=(1,0)；真实反向导数−Rf=(−1,0)，字面−Rᵀf=(−1,−1)不同。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1096](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1096>)（`MD.Ch03.reversedTrajectoryPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：字面FAIL不进入证明，等待网站与导师裁定。
+
+签名SHA256：`8e2fea05bfe125444f2fd986e254c59ebeab2ed20f3d917c4921761a1cbb3e52`；原文SHA256：`298fb0693e984a5a743f6cefb0558d7acd4e3b187bd9bebaa22ea291ec4f1e2d`。
+
+## 1. MD-3.6.1-ReversedTrajectory · unnumbered_claim · 印刷p.129 / PDFp.151
+
+### 2. 原文陈述
+
+> In other words, for a reversible vector field, the coordinate transformation $\boldsymbol z\mapsto R\boldsymbol z$ is equivalent to the change of time $t\mapsto-t$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem reversedTrajectory :
+  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (γ : ℝ → Q n),
+    linearInvolution R → (∀ z, f (R z)=-R (f z)) →
+    (∀ t, HasDerivAt γ (f (γ t)) t) → ∀ t,
+      HasDerivAt (fun s => R (γ (-s))) (f (R (γ (-t)))) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.reversedTrajectory；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]采用正确f(Rz)=−Rf(z)而非一般Rᵀ字面定义；每个实t均有真实γ导数。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1105](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1105>)（`MD.Ch03.reversedTrajectory`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：三条短证明路线失败，停止该条；保存证据见validation/short_search/ReversedTrajectory.json。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/ReversedTrajectory.json；blueprint/ch03/validation/short_search/ReversedTrajectory-route1.lean；blueprint/ch03/validation/short_search/ReversedTrajectory-route1.log；blueprint/ch03/validation/short_search/ReversedTrajectory-route2.lean；blueprint/ch03/validation/short_search/ReversedTrajectory-route2.log；blueprint/ch03/validation/short_search/ReversedTrajectory-route3.lean；blueprint/ch03/validation/short_search/ReversedTrajectory-route3.log。
+
+签名SHA256：`1e554736eeb68843d938e49546bb01b1623b85f398c167b3d4bd77b12bef94e7`；原文SHA256：`ab8bd928388387aae244db868d7b74f2ef986761e86e5a9e8006ae0b34081a77`。
+
+## 1. MD-3.6.2-FlowReversal · unnumbered_claim · 印刷p.129 / PDFp.151
+
+### 2. 原文陈述
+
+> From this we see that if we start from a point $z_0$ and integrate forward in time (i.e apply $\mathcal F_t$) then apply the involution $R$, we get the exact same result as if we start from $\widetilde z(0)=Rz_0$ and integrate backward in time (i.e. apply $\mathcal F_{-t}$). In sum, since $z_0$ is an arbitrary point,
+> \[\mathcal F_{-t}(Rz)=R\mathcal F_t(z).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem flowReversal :
+  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (Φ : ℝ → Q n → Q n),
+    linearInvolution R → ContDiff ℝ 1 f → (∀ z, f (R z)=-R (f z)) →
+    (∀ z, Φ 0 z=z) → (∀ z t, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t) →
+    ∀ t z, Φ (-t) (R z)=R (Φ t z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.flowReversal；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 正确R反转、C¹场和全实时间真实流；不把所需反转等式藏进流假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1114](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1114>)（`MD.Ch03.flowReversal`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺C¹场ODE唯一性到全时间反向轨道一致的完整桥接；不建设新ODE唯一性理论。
+
+签名SHA256：`e0b2fcfe2e883008f45c39ed101edaf9c7e3b57dbf0b4ed4b9e6cb3c72c4626a`；原文SHA256：`b4298b2318ee17d581ef81d41674825187a6630d009c5463e284c373a76ee38d`。
+
+## 1. MD-3.6.2-FlowReversalIdentity · (3.14) · 印刷p.129 / PDFp.151
+
+### 2. 原文陈述
+
+> For the flow map, $\mathcal F_{-t}=\mathcal F_t^{-1}$ so we can recast the identity as
+> \[R\circ\mathcal F_t\circ R\circ\mathcal F_t=\mathrm{Id},\tag{3.14}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem flowReversalIdentity :
+  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (Φ : ℝ → Q n → Q n),
+    linearInvolution R → ContDiff ℝ 1 f → (∀ z, f (R z)=-R (f z)) →
+    (∀ z, Φ 0 z=z) → (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) →
+    (∀ z t, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t) → ∀ t z, R (Φ t (R (Φ t z)))=z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.flowReversalIdentity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 正确R反转、C¹场、实际全时间流、群性质；不供应结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1123](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1123>)（`MD.Ch03.flowReversalIdentity`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：依赖尚未桥接的完整FlowReversal及实际流唯一性。
+
+签名SHA256：`b48aaa34a7ab24acf20e543fd1df0e21597825a8a754ebff04f15b1530bb94cc`；原文SHA256：`06eb9245d8c9fbf32e54e715dd14bb3d282dfbdbaa3cf6029c026d05baef754c`。
+
+## 1. MD-3.6.2-ReversibleMethod · (3.15) · 印刷p.130 / PDFp.152
+
+### 2. 原文陈述
+
+> It does not automatically follow that a symmetric numerical method is time-reversible, i.e. satisfies a relation inspired by (3.14), namely
+> \[R\circ\mathcal G_h\circ R\circ\mathcal G_h=\mathrm{Id}.\tag{3.15}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def reversibleMethod {E : Type*} (R : E → E) (G : ℝ → E → E) : Prop := ∀ h z, R (G h (R (G h z)))=z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.reversibleMethod；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1131](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1131>)（`MD.Ch03.reversibleMethod`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`8cd78f1aa3af3cfcb26a44c8e56afdd41a121ac46f0a701cf713ac098b73fce4`；原文SHA256：`7fcbca3b1a18a1362955adef4ce3a937ca461295337934f5362ca18fdad4f6c3`。
+
+## 1. MD-3.6.2-SymmetricMethod · definition · 印刷p.130 / PDFp.152
+
+### 2. 原文陈述
+
+> Recall from the previous chapter that a numerical method $\mathcal G_h$ was said to be symmetric if it satisfied
+> \[\mathcal G_{-h}=\mathcal G_h^{-1}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def symmetricMethod {E : Type*} (G : ℝ → Equiv.Perm E) : Prop := ∀ h, G (-h)=(G h).symm
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.symmetricMethod；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1134](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1134>)（`MD.Ch03.symmetricMethod`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`57abc58f48d26ec36f020c76c384b86e7ee4927d0a074f99b498d8fbc879f8bd`；原文SHA256：`81d249364b8beb0ae9468b9a9a083e2eac8ed04771e7537bd9d71ddde572eeba`。
+
+## 1. MD-3.6.2-AffineInvariant · Definition 3.1 · 印刷p.130 / PDFp.152
+
+### 2. 原文陈述
+
+> Definition 3.1 (Affine Invariance) Let
+> \[\frac{\mathrm d\boldsymbol z}{\mathrm dt}=f(\boldsymbol z)\tag{3.16}\]
+> be a given ordinary differential equation. The transformation $\widetilde{\boldsymbol z}=A\boldsymbol z$, where $A$ is a non-singular square matrix, results in the modified differential equation
+> \[\frac{\mathrm d\boldsymbol z}{\mathrm dt}=Af(A^{-1}\widetilde{\boldsymbol z}).\tag{3.17}\]
+> Let $z_0,z_1,\ldots$ be a sequence of points obtained by application of the numerical method $\mathcal G_h$ to (3.16). If the same method, when applied to (3.17) produces the set of points $Az_0,Az_1,\ldots$, then we say that the numerical method is invariant with respect to the transformation $\widetilde{\boldsymbol z}=Az$. An affine invariant method is one which is invariant under any such transformation.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def affineInvariant {n : ℕ} (G : (Q n → Q n) → ℝ → Q n → Q n) : Prop :=
+  ∀ (A : Q n ≃L[ℝ] Q n) f h z, G (transportedField A f) h (A z) = A (G f h z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.affineInvariant；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | (3.17)左端印刷z而不是z̃；保留原文，语义按前后说明的变换坐标。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1138](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1138>)（`MD.Ch03.affineInvariant`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`93028da20132d9239b3b9c08f7b9a548dbdec86736df9fed2e171339ffbf4bdf`；原文SHA256：`54edb9acc1b0ebef8e182d25ec56ca54090e22c3043e56aae0788c95d3115033`。
+
+## 1. MD-3.6.2-SymmetricAffineReversible · unnumbered_claim · 印刷p.130 / PDFp.152
+
+### 2. 原文陈述
+
+> If a differential equation is time-reversible with respect to the involution $R$, and we apply a method which is affine invariant and symmetric, then the method will be time-reversible (3.15).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem symmetricAffineReversible :
+  ∀ (n : ℕ) (R : Q n ≃L[ℝ] Q n) (f : Q n → Q n)
+    (G : (Q n → Q n) → ℝ → Q n → Q n),
+    (∀ z, R (R z)=z) → (∀ z, f (R z)=-R (f z)) → affineInvariant G →
+    (∀ g h z, G (fun x => -g x) h z=G g (-h) z) →
+    (∀ h z, G f (-h) (G f h z)=z) → reversibleMethod R (G f)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.symmetricAffineReversible；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]G_{−f}(h)=G_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。 | [EXTRA] |
+| 原页核对/疑点 | 一般方法需要G_{−f}(h)=G_f(−h)，否则原文蕴含式条件不全。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。额外符号相容性是独立必要资格，不能当作原书已明示假设。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1144](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1144>)（`MD.Ch03.symmetricAffineReversible`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本地非PASS不进入证明；条件化有限代数推论可另审。
+
+签名SHA256：`1af6277e80c886833f616b0073b8e0bb12249bef7beeb25e4ed6e6e0bbd9513f`；原文SHA256：`1ddf6ee14a9096f40dd9b8e12c0005469bdd8493c4e5bb802b409bc4a29aa69b`。
+
+## 1. MD-3.6.2-RKAffine · unnumbered_claim · 印刷p.130 / PDFp.152
+
+### 2. 原文陈述
+
+> All Runge-Kutta methods and Partitioned Runge-Kutta methods are affine invariant, thus, if they are also symmetric, then they preserve time-reversal symmetry.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem rkAffine :
+  ∀ (n s : ℕ) (L : Q n ≃L[ℝ] Q n) (f : Q n → Q n)
+    (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ) h z w F,
+    rungeKuttaRelation f A b h z w F →
+      rungeKuttaRelation (transportedField L f) A b h (L z) (L w) (fun i => L (F i))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.rkAffine；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:1153](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1153>)（`MD.Ch03.rkAffine`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter03Review.rkAffine_proved。
+
+签名SHA256：`7a88944e646a3cd3842217f341982e92a3b02647d9e768a96ef25f0e12a3894d`；原文SHA256：`0b22a04ec501deba1f2cfcd60911196cc7e1591b86f56d5b9180f8bf5da4f7af`。
+
+## 1. MD-3.6.2-PartitionedAffinePrinted · unnumbered_claim · 印刷p.130 / PDFp.152
+
+### 2. 原文陈述
+
+> All Runge-Kutta methods and Partitioned Runge-Kutta methods are affine invariant, thus, if they are also symmetric, then they preserve time-reversal symmetry.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem partitionedAffinePrinted :
+  ∀ (n s : ℕ) (L : Z n ≃L[ℝ] Z n) (f : Z n → Z n)
+    (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) h z w F,
+    partitionedRKRelation f Aq Ap bq bp h z w F →
+      partitionedRKRelation (fun x => L (f (L.symm x))) Aq Ap bq bp h (L z) (L w) (fun i => L (F i))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.partitionedAffinePrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | PRK一般只对保持分区的分块线性变换等变；任意混合变换的全称可疑。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。任意混合q,p的线性等价通常不保持不同PRK表格的分区；字面全称保留待反例审查。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1162](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1162>)（`MD.Ch03.partitionedAffinePrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：字面非PASS不证明；正确分块运输另列。
+
+签名SHA256：`bda122135a9cd8f4a0d2a28c2b553fcd4578a001d74e3feff73d82d8154578f1`；原文SHA256：`652cd7b98b190cc0131c8094d7a771f3a84cd32350ab6a2ef143d56e9d3134f9`。
+
+## 1. MD-3.6.2-PartitionedAffine · unnumbered_claim · 印刷p.130 / PDFp.152
+
+### 2. 原文陈述
+
+> All Runge-Kutta methods and Partitioned Runge-Kutta methods are affine invariant, thus, if they are also symmetric, then they preserve time-reversal symmetry.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem partitionedAffine :
+  ∀ (n s : ℕ) (Lq Lp : Q n ≃L[ℝ] Q n) (fq fp : Z n → Q n)
+    (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) (h : ℝ) (z w : Z n) (Fq Fp : Fin s → Q n),
+    (∀ i, Fq i=fq (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →
+    (∀ i, Fp i=fp (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →
+    w=(z.1+h • ∑ i, bq i • Fq i,z.2+h • ∑ i, bp i • Fp i) →
+    (∀ i, Lq (Fq i)=Lq (fq (Lq.symm (Lq z.1+h • ∑ j, Aq i j • Lq (Fq j)),
+      Lp.symm (Lp z.2+h • ∑ j, Ap i j • Lp (Fp j))))) ∧
+    (∀ i, Lp (Fp i)=Lp (fp (Lq.symm (Lq z.1+h • ∑ j, Aq i j • Lq (Fq j)),
+      Lp.symm (Lp z.2+h • ∑ j, Ap i j • Lp (Fp j))))) ∧
+    (Lq w.1,Lp w.2)=(Lq z.1+h • ∑ i, bq i • Lq (Fq i),Lp z.2+h • ∑ i, bp i • Lp (Fp i))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.partitionedAffine；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]正确限定为保持q,p分区的连续线性等价Lq,Lp；不同分区表格不要求混合线性等变。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch03.lean:1171](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1171>)（`MD.Ch03.partitionedAffine`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch03/validation/short_search/PartitionedAffine.json；blueprint/ch03/validation/short_search/PartitionedAffine-route1.lean；blueprint/ch03/validation/short_search/PartitionedAffine-route1.log。
+
+签名SHA256：`5bb682a291b599d6898e7bc518bd4f9752a06cbb23b8a1000ecef1499a13abd2`；原文SHA256：`ccc9d4e386fc5cf2fcee1716ed924db68953dabdbb0f2e27db6308bfcdd9c1cf`。
+
+## 1. MD-3.6.3-SymplecticNotReversible · unnumbered_claim · 印刷p.131 / PDFp.153
+
+### 2. 原文陈述
+
+> A method can be symplectic but not time-reversible (e.g. Symplectic Euler) or it can be time-reversible and not symplectic (e.g. Trapezoidal Rule).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem symplecticNotReversible :
+  ∃ (h : ℝ) (z : Z 1),
+    canonicalReversal (textbookSymplecticEuler (fun _ : Fin 1 => 1) (fun q => q 0^2/2) h
+      (canonicalReversal (textbookSymplecticEuler (fun _ => 1) (fun q => q 0^2/2) h (pack z)))) ≠ pack z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.symplecticNotReversible；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1204](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1204>)（`MD.Ch03.symplecticNotReversible`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待单位振子h=1数值反例；需明确Jacobian/梯度坐标展开，不改正式库。
+
+签名SHA256：`530b5df455bb86bc4cfbf3e6311585071404800c442ab4a5f226fd7dc394d824`；原文SHA256：`cf4a7030c582d1484a1f9d6b71d522546914f8f976ac467477c5782f274d4772`。
+
+## 1. MD-3.6.3-TrapezoidalRelation · definition · 印刷p.131 / PDFp.153
+
+### 2. 原文陈述
+
+> A method can be symplectic but not time-reversible (e.g. Symplectic Euler) or it can be time-reversible and not symplectic (e.g. Trapezoidal Rule).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def trapezoidalRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop := w=z+(h/2) • (f z+f w)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.trapezoidalRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 补梯形法标准隐式关系作为审阅上下文。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:1212](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1212>)（`MD.Ch03.trapezoidalRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`094bcfba3c941b7380f25200386a507cef864a0356465e79bfe07a22e8809654`；原文SHA256：`34ccc4cb963abe1539bb7d45698ac4292649f8f6a5af97bb33ae3a2546bfae32`。
+
+## 1. MD-3.6.3-TrapezoidalProperties · unnumbered_claim · 印刷p.131 / PDFp.153
+
+### 2. 原文陈述
+
+> A method can be symplectic but not time-reversible (e.g. Symplectic Euler) or it can be time-reversible and not symplectic (e.g. Trapezoidal Rule).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem trapezoidalProperties :
+  (∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) h z w,
+    linearInvolution R → (∀ x, f (R x)=-R (f x)) → trapezoidalRelation f h z w →
+    trapezoidalRelation f h (R w) (R z)) ∧
+  ∃ (n : ℕ) (H : SymplecticCoordinates n → ℝ)
+    (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) (h : ℝ),
+    ContDiff ℝ ⊤ H ∧ ContDiff ℝ 1 (G h) ∧
+    (∀ z, G h z=z+(h/2) • (textbookHamiltonianVectorField H z+textbookHamiltonianVectorField H (G h z))) ∧
+    ¬ IsTextbookSymplecticMap (G h)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.trapezoidalProperties；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 完整实际隐式G与C¹Jacobian资格，不用求解存在作为结论前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1216](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1216>)（`MD.Ch03.trapezoidalProperties`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。
+
+签名SHA256：`454f9121cbe7bfda17ae66186b7d4cd4c48217d2825e1f97dbcbaf3fa5875455`；原文SHA256：`0680fe2d5301800b59c69141f43df8466cc391fa4c08506a874a1dd8bc26e8b0`。
+
+## 1. MD-3.6.3-HamiltonianSpectrum · unnumbered_claim · 印刷p.131 / PDFp.153
+
+### 2. 原文陈述
+
+> For example, consider a linear Hamiltonian system $\mathrm dz/\mathrm dt=JAz$, with $A$ a symmetric matrix. If $\lambda$ is an eigenvalue of $JA$ then $JAu=\lambda u$ for some eigenvector $u\ne0$. Because the matrix $JA$ is real, we know that $\overline\lambda$ will also be an eigenvalue. At the same time, we know that since $\lambda$ is an eigenvalue of $JA$ it is also an eigenvalue of its transpose $(JA)^T=A^TJ^T=-AJ$, thus
+> \[-AJu=\lambda u\]
+> multiplying by $J$ and setting $v=Ju$ we have
+> \[-JAv=\lambda v\]
+> implying that $-\lambda$ (and hence also $-\overline\lambda$) is an eigenvalue of $JA$. Real eigenvalues of $JA$ are paired with their negatives. If the imaginary part is nonzero, the eigenvalues occur in quadruplets $\{\pm\lambda,\pm\overline\lambda\}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonianSpectrum :
+  ∀ (n : ℕ) (A : Matrix (Fin n ⊕ Fin n) (Fin n ⊕ Fin n) ℝ), A.transpose=A → ∀ ζ,
+    complexEigenvalue (textbookJ n*A) ζ → complexEigenvalue (textbookJ n*A) (-ζ) ∧
+      complexEigenvalue (textbookJ n*A) (star ζ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.hamiltonianSpectrum；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 同一u一般不是转置特征向量；四元素集合可重复，不声称总有4个互异值。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。谱结论保留真实复特征值；原证明把原矩阵同一个u当成转置特征向量，不能照抄为有效证明；纯虚时quadruplets可退化。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1229](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1229>)（`MD.Ch03.hamiltonianSpectrum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺Hamiltonian矩阵复谱及转置相似性桥接；字面证明需审，不证明非PASS。
+
+签名SHA256：`bbfffd07b3a9a4bc6d920674991c4b01c028b0dc5ab4c98abeb8e726af0b3d5c`；原文SHA256：`234c880adb316e6e621f6376d9a83bc0fdde3eb35eaa8981e013bceb9ff94d7e`。
+
+## 1. MD-3.6.3-SymplecticSpectrum · unnumbered_claim · 印刷p.131 / PDFp.153
+
+### 2. 原文陈述
+
+> The flow map is
+> \[\mathcal F_t(z)=\mathrm e^{tJA}z\]
+> and the exponential matrix will inherit a related structure within the spectrum: $\lambda$ an eigenvalue of $\exp(tJA)$ implies that $\overline\lambda$, $1/\lambda$ and $1/\overline\lambda$ are all eigenvalues of $\exp(tJA)$. This eigenvalue structure is generic for linear symplectic maps in general.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem symplecticSpectrum :
+  ∀ (n : ℕ) (A : Matrix (Fin n ⊕ Fin n) (Fin n ⊕ Fin n) ℝ),
+    A.transpose*textbookJ n*A=textbookJ n → ∀ ζ, complexEigenvalue A ζ →
+      ζ ≠ 0 ∧ complexEigenvalue A ζ⁻¹ ∧ complexEigenvalue A (star ζ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.symplecticSpectrum；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1236](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1236>)（`MD.Ch03.symplecticSpectrum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺辛矩阵非退化、逆转置相似及复谱桥接；不建设新的完整谱理论。
+
+签名SHA256：`fedfed74498a20a5cd15a8c982ac81c7fd1e20f45157e4144f5a25586fed7b99`；原文SHA256：`f03fc6155ab5a9f02165d4e92e744f66604a9c1a757627c5eeef3801d48f2069`。
+
+## 1. MD-3.6.3-ReversibleSpectrum · unnumbered_claim · 印刷p.131 / PDFp.153
+
+### 2. 原文陈述
+
+> Suppose now we have a linear time-reversible map $\phi(z)=Tz$, then
+> \[T^{-1}=RTR.\]
+> Given an eigenvalue, eigenvector pair $(\lambda,u)$ of $T$, let $u=Rv$, so that $Ru=R^2v=v$, then
+> \[T^{-1}v=RTRv=RTu=\lambda Ru=\lambda v.\]
+> Thus $\lambda$ is an eigenvalue of $T^{-1}$ which, in turn, implies that $1/\lambda$ is an eigenvalue of $T$. The matrix being real implies that the conjugates of $\lambda$ and $1/\lambda$ are also eigenvalues, thus we have the same eigenvalue quadruplets as for a linear symplectic map.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem reversibleSpectrum :
+  ∀ (n : ℕ) (A R : Matrix (Fin n) (Fin n) ℝ), IsUnit A.det → R*R=1 →
+    A⁻¹=R*A*R → ∀ ζ, complexEigenvalue A ζ →
+      ζ ≠ 0 ∧ complexEigenvalue A ζ⁻¹ ∧ complexEigenvalue A (star ζ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.reversibleSpectrum；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | T可逆、R²=I明确；真实complexEigenvalue，非零性作为结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1244](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1244>)（`MD.Ch03.reversibleSpectrum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺有限矩阵可逆相似和共轭复特征向量运输桥接；不建设完整谱理论。
+
+签名SHA256：`5450682ae3fe8b40113723c2cb507a02c8a8aedf5161cbb54d6a24b02aaf6729`；原文SHA256：`9834bec730f5fe03a1172237fe559aaf5a15494d9d8132f56b0e78da961a2f87`。
+
+## 1. MD-3.6.3-ConjugateIterates · unnumbered_claim · 印刷p.131–132 / PDFp.153–154
+
+### 2. 原文陈述
+
+> Recall that a pair of maps $\Phi$ and $\Psi$ are said to be conjugate if there is a homomorphism $\chi$ such that
+> \[\Phi=\chi^{-1}\Psi\chi.\]
+> In such a case the iterates of the two maps will also be conjugate
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem conjugateIterates (χ : E ≃ₜ E) (A B : E → E)
+    (hA : A = textbookConjugateMap χ B) (n : ℕ) :
+    A^[n] = textbookConjugateMap χ (B^[n])
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.conjugateIterates；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | χ明确为equivalence，以使原文χ⁻¹有定义；原文homomorphism的用词待审。 | [EXTRA] |
+| 原页核对/疑点 | 原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:1253](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1253>)（`MD.Ch03.conjugateIterates`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbook_conjugate_iterates。
+
+签名SHA256：`4a8770997bd9229e03eef0fd51fe7efdfdc641d18d98fe335f5ed755ce0fbcc8`；原文SHA256：`83cd0a6338329d1ef4766462a95ddd85d3d015b50584152dc8a9d234ff970746`。
+
+## 1. MD-3.6.1-MechanicalReversalCorrect · unnumbered_claim · 印刷p.128 / PDFp.150
+
+### 2. 原文陈述
+
+> Therefore the molecular dynamics Hamiltonian system is time-reversible.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem mechanicalReversalCorrect :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) z,
+    mechanicalField m F (momentumReversal z)=-momentumReversal (mechanicalField m F z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.mechanicalReversalCorrect；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]独立正确机械R反转结论；原书错误展示等式仍由MechanicalReversalPrinted保留，不静默更改它。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:1260](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1260>)（`MD.Ch03.mechanicalReversalCorrect`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter03Review.mechanicalReversal_proved。
+
+签名SHA256：`7d038e4391d0c44ed6db545f5a3ba748de3759d485081ec07b4b96d93e4a0cd1`；原文SHA256：`0e85cee19cc3f0d445480562aab44cee10743431b4f24151196fc4bebb898983`。
+
+## 1. MD-3.6.3-ConjugateOrderPrinted · unnumbered_claim · 印刷p.132 / PDFp.154
+
+### 2. 原文陈述
+
+> and, if they are numerical methods, they will have similar stability properties and performance (e.g. the same effective order).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem conjugateOrderPrinted :
+    ∀ (n r : ℕ) (χ : Q n ≃ₜ Q n) (G Φ : ℝ → Q n → Q n) (B : Set (Q n)),
+      0 < r → IsCompact B → MolecularDynamics.Chapter03Review.localOrder G Φ B r →
+      MolecularDynamics.Chapter03Review.localOrder
+        (fun h z => χ (G h (χ.symm z))) (fun h z => χ (Φ h (χ.symm z))) (χ '' B) r
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.conjugateOrderPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | 将“same effective order”按同一局部误差幂阶和真实共轭参考流解释；χ至少homeomorphism、紧初值域、r>0。 | [EXTRA] |
+| 原页核对/疑点 | homeomorphism可用平方根改变误差阶；原文缺定量正则性，不能由迭代共轭冒充已证同有效阶。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。仅拓扑共轭不保持数值误差幂阶；通常需要定量局部Lipschitz或光滑处理器及步长资格。原泛称性能也未精确定义。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1268](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1268>)（`MD.Ch03.conjugateOrderPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原文阶数/稳定性性能的精确意义及处理器正则性待审；本地非PASS不证明。
+
+签名SHA256：`5e6b758f202b62c87bf4b5291eab0b94079c46caebeddf26a168585a0a21bb3f`；原文SHA256：`75b279b419338c011d5423977a7c4f5ed9e03d116a58e4b8c94431cee47a1a55`。
+
+## 1. MD-3.6.3-ReversibleVolumeFailure · unnumbered_claim · 印刷p.132 / PDFp.154
+
+### 2. 原文陈述
+
+> Of particular importance for molecular dynamics are the following properties: a symplectic map will preserve volume, whereas a time-reversible map need not do so, and a symplectic integrator will approximately conserve energy due to the existence of the perturbed Hamiltonian, whereas a time-reversible integrator may give rise to a drift in energy [166].
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem reversibleVolumeFailure :
+  ∃ (n : ℕ) (R : Q n →L[ℝ] Q n) (G : Q n ≃ Q n), linearInvolution R ∧
+    ContDiff ℝ 1 G ∧ ContDiff ℝ 1 G.symm ∧ (∀ z, R (G (R (G z)))=z) ∧
+    ∃ z, |(textbookCoordinateJacobian G z).det| ≠ 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.reversibleVolumeFailure；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:1276](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1276>)（`MD.Ch03.reversibleVolumeFailure`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺非线性可逆光滑equivalence和Jacobian绝对det≠1的反例桥接；线性可逆矩阵不足以给本例。
+
+签名SHA256：`d507998bd9046f3a7c4449be4cddb68a0d3415e1f1d83af4b91fa3b8bbfc5d14`；原文SHA256：`9b07bf86a3c2d3ffcadf40dafe3afb27465bb38897b3a0858b50f1036d678b5b`。

@@ -20,6 +20,11 @@ def pipeline(ch):
     text=text.replace('namespace MD.Ch'+f'{ch:02}'+'；open',f'namespace MD.Ch{ch:02}；open')
     text=text.replace('import MolecularDynamics.Chapter02.ReviewProofs',
         f'import MolecularDynamics.Chapter{ch:02}.ReviewProofs\nimport MolecularDynamics.Chapter02.ReviewProofs',1)
+    if not (ROOT/f'MolecularDynamics/Chapter{ch:02}/ReviewProofs.lean').exists():
+        text=text.replace(f'import MolecularDynamics.Chapter{ch:02}.ReviewProofs',
+                          f'import MolecularDynamics.Chapter{ch:02}.Statements')
+    if ch==4:
+        text=text.replace('Matrix.Norms.L2Operator','Matrix.Norms.Elementwise')
     text=text.replace('open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review',
         f'open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review')
     text=text.replace('variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]',

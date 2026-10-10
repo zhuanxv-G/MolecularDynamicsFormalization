@@ -1048,4 +1048,235 @@ theorem linearContinuousIntegral :
   exact is_const_of_deriv_eq_zero (fun s => (hd s).differentiableAt)
     (fun s => (hd s).deriv) t 0
 
+/-- source_id: MD-3.6-HamiltonianFlowStructures · unnumbered_claim · §3.6 · 印刷p.127–128 / PDFp.149–150
+[EXTRA] 原场在开放域C¹，真实局部流、反步与局部定义域资格显式。 -/
+theorem hamiltonianFlowStructures :
+  ∀ n (H : SymplecticCoordinates n → ℝ) D Ω
+    (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n) τ,
+    0 < τ → ContDiffOn ℝ 2 H D → localFlowC1 (textbookHamiltonianVectorField H) D Ω Φ τ →
+    (∀ t ∈ Ioo 0 τ, ∀ z ∈ Ω,
+      HasDerivAt (fun s => textbookJacobian (fun y => Φ (s,y)) z)
+        (textbookJ n*textbookHamiltonianHessian H (Φ (t,z))*textbookJacobian (fun y => Φ (t,y)) z) t) ∧
+    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, IsTextbookSymplectic (textbookJacobian (fun y => Φ (t,y)) z)) ∧
+    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, (textbookJacobian (fun y => Φ (t,y)) z).det = 1) ∧
+    (∀ t ∈ Icc 0 τ, ∀ S, MeasurableSet S → S ⊆ Ω →
+      volume ((fun z => Φ (t,z)) '' S) = volume S) := by
+  sorry
+
+/-- source_id: MD-3.6-VolumeNotSymplectic · unnumbered_claim · §3.6 · 印刷p.128 / PDFp.150 -/
+theorem volumeNotSymplectic :
+  ∃ G : SymplecticCoordinates 2 → SymplecticCoordinates 2,
+    ContDiff ℝ 1 G ∧ (∀ z, (textbookJacobian G z).det=1) ∧ ¬ IsTextbookSymplecticMap G := by
+  sorry
+
+/-- source_id: MD-3.6.1-LinearInvolution · definition · §3.6.1 · 印刷p.128 / PDFp.150 -/
+def linearInvolution {n : ℕ} (R : Q n →L[ℝ] Q n) : Prop := R.comp R = ContinuousLinearMap.id ℝ (Q n)
+
+/-- source_id: MD-3.6.1-ReversedFieldPrinted · definition · §3.6.1 · 印刷p.128 / PDFp.150
+[ERRATUM?] 一般线性involution的时间反转应−R⁻¹f(Rz)=−Rf(Rz)，不是−Rᵀ；机械R对称时两者相同。 -/
+def reversedField {n : ℕ} (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (z : Q n) : Q n :=
+  -(R.transpose.mulVec (f (R.mulVec z)))
+
+/-- source_id: MD-3.6.1-MomentumReversal · definition · §3.6.1 · 印刷p.128 / PDFp.150 -/
+def momentumReversal {n : ℕ} (z : Z n) : Z n := (z.1,-z.2)
+
+/-- source_id: MD-3.6.1-MechanicalReversal · unnumbered_claim · §3.6.1 · 印刷p.128 / PDFp.150
+[ERRATUM?] p128右端列向量符号与−Rf(Rz)实际计算不符；原文不静默更改。 -/
+theorem mechanicalReversalPrinted :
+    ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (z : Z n),
+      (-momentumReversal (mechanicalField m (fun q => -grad U q) (momentumReversal z)) =
+        (-invMass m z.2, grad U z.1)) ∧
+      ((-invMass m z.2, grad U z.1) = mechanicalField m (fun q => -grad U q) z) ∧
+      mechanicalField m (fun q => -grad U q) (momentumReversal z) =
+        -momentumReversal (mechanicalField m (fun q => -grad U q) z) := by
+  sorry
+
+/-- source_id: MD-3.6.1-ReversedTrajectoryPrinted · unnumbered_claim · §3.6.1 · 印刷p.128–129 / PDFp.150–151
+[ERRATUM?] p128的Rᵀ字面反转与p129的R链式法则不能一般同时成立；具体二维反例见本地审计。 -/
+theorem reversedTrajectoryPrinted :
+  ∀ (n : ℕ) (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (γ : ℝ → Q n),
+    R*R=1 → (∀ t, HasDerivAt γ (f (γ t)) t) →
+    ∀ t, HasDerivAt (fun s => R.mulVec (γ (-s)))
+      (reversedField R f (R.mulVec (γ (-t)))) t := by
+  sorry
+
+/-- source_id: MD-3.6.1-ReversedTrajectory · unnumbered_claim · §3.6.1 · 印刷p.129 / PDFp.151
+[EXTRA] [EXTRA]采用正确f(Rz)=−Rf(z)而非一般Rᵀ字面定义；每个实t均有真实γ导数。 -/
+theorem reversedTrajectory :
+  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (γ : ℝ → Q n),
+    linearInvolution R → (∀ z, f (R z)=-R (f z)) →
+    (∀ t, HasDerivAt γ (f (γ t)) t) → ∀ t,
+      HasDerivAt (fun s => R (γ (-s))) (f (R (γ (-t)))) t := by
+  sorry
+
+/-- source_id: MD-3.6.2-FlowReversal · unnumbered_claim · §3.6.2 · 印刷p.129 / PDFp.151
+[EXTRA] 正确R反转、C¹场和全实时间真实流；不把所需反转等式藏进流假设。 -/
+theorem flowReversal :
+  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (Φ : ℝ → Q n → Q n),
+    linearInvolution R → ContDiff ℝ 1 f → (∀ z, f (R z)=-R (f z)) →
+    (∀ z, Φ 0 z=z) → (∀ z t, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t) →
+    ∀ t z, Φ (-t) (R z)=R (Φ t z) := by
+  sorry
+
+/-- source_id: MD-3.6.2-FlowReversalIdentity · (3.14) · §3.6.2 · 印刷p.129 / PDFp.151
+[EXTRA] 正确R反转、C¹场、实际全时间流、群性质；不供应结论。 -/
+theorem flowReversalIdentity :
+  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (Φ : ℝ → Q n → Q n),
+    linearInvolution R → ContDiff ℝ 1 f → (∀ z, f (R z)=-R (f z)) →
+    (∀ z, Φ 0 z=z) → (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) →
+    (∀ z t, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t) → ∀ t z, R (Φ t (R (Φ t z)))=z := by
+  sorry
+
+/-- source_id: MD-3.6.2-ReversibleMethod · (3.15) · §3.6.2 · 印刷p.130 / PDFp.152 -/
+def reversibleMethod {E : Type*} (R : E → E) (G : ℝ → E → E) : Prop := ∀ h z, R (G h (R (G h z)))=z
+
+/-- source_id: MD-3.6.2-SymmetricMethod · definition · §3.6.2 · 印刷p.130 / PDFp.152 -/
+def symmetricMethod {E : Type*} (G : ℝ → Equiv.Perm E) : Prop := ∀ h, G (-h)=(G h).symm
+
+/-- source_id: MD-3.6.2-AffineInvariant · Definition 3.1 · §3.6.2 · 印刷p.130 / PDFp.152
+[ERRATUM?] (3.17)左端印刷z而不是z̃；保留原文，语义按前后说明的变换坐标。 -/
+def affineInvariant {n : ℕ} (G : (Q n → Q n) → ℝ → Q n → Q n) : Prop :=
+  ∀ (A : Q n ≃L[ℝ] Q n) f h z, G (transportedField A f) h (A z) = A (G f h z)
+
+/-- source_id: MD-3.6.2-SymmetricAffineReversible · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152
+[EXTRA] [EXTRA]G_{−f}(h)=G_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。
+[NEEDS_HUMAN] 一般方法需要G_{−f}(h)=G_f(−h)，否则原文蕴含式条件不全。 -/
+theorem symmetricAffineReversible :
+  ∀ (n : ℕ) (R : Q n ≃L[ℝ] Q n) (f : Q n → Q n)
+    (G : (Q n → Q n) → ℝ → Q n → Q n),
+    (∀ z, R (R z)=z) → (∀ z, f (R z)=-R (f z)) → affineInvariant G →
+    (∀ g h z, G (fun x => -g x) h z=G g (-h) z) →
+    (∀ h z, G f (-h) (G f h z)=z) → reversibleMethod R (G f) := by
+  sorry
+
+/-- source_id: MD-3.6.2-RKAffine · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152 -/
+theorem rkAffine :
+  ∀ (n s : ℕ) (L : Q n ≃L[ℝ] Q n) (f : Q n → Q n)
+    (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ) h z w F,
+    rungeKuttaRelation f A b h z w F →
+      rungeKuttaRelation (transportedField L f) A b h (L z) (L w) (fun i => L (F i)) := by
+  exact MolecularDynamics.Chapter03Review.rkAffine_proved
+
+/-- source_id: MD-3.6.2-PartitionedAffinePrinted · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152
+[ERRATUM?] PRK一般只对保持分区的分块线性变换等变；任意混合变换的全称可疑。 -/
+theorem partitionedAffinePrinted :
+  ∀ (n s : ℕ) (L : Z n ≃L[ℝ] Z n) (f : Z n → Z n)
+    (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) h z w F,
+    partitionedRKRelation f Aq Ap bq bp h z w F →
+      partitionedRKRelation (fun x => L (f (L.symm x))) Aq Ap bq bp h (L z) (L w) (fun i => L (F i)) := by
+  sorry
+
+/-- source_id: MD-3.6.2-PartitionedAffine · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152
+[EXTRA] [EXTRA]正确限定为保持q,p分区的连续线性等价Lq,Lp；不同分区表格不要求混合线性等变。 -/
+theorem partitionedAffine :
+  ∀ (n s : ℕ) (Lq Lp : Q n ≃L[ℝ] Q n) (fq fp : Z n → Q n)
+    (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) (h : ℝ) (z w : Z n) (Fq Fp : Fin s → Q n),
+    (∀ i, Fq i=fq (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →
+    (∀ i, Fp i=fp (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →
+    w=(z.1+h • ∑ i, bq i • Fq i,z.2+h • ∑ i, bp i • Fp i) →
+    (∀ i, Lq (Fq i)=Lq (fq (Lq.symm (Lq z.1+h • ∑ j, Aq i j • Lq (Fq j)),
+      Lp.symm (Lp z.2+h • ∑ j, Ap i j • Lp (Fp j))))) ∧
+    (∀ i, Lp (Fp i)=Lp (fp (Lq.symm (Lq z.1+h • ∑ j, Aq i j • Lq (Fq j)),
+      Lp.symm (Lp z.2+h • ∑ j, Ap i j • Lp (Fp j))))) ∧
+    (Lq w.1,Lp w.2)=(Lq z.1+h • ∑ i, bq i • Lq (Fq i),Lp z.2+h • ∑ i, bp i • Lp (Fp i)) := by
+  intro n s Lq Lp fq fp Aq Ap bq bp h z w Fq Fp hq hp hw
+  have tq : ∀ a : Fin s → ℝ,
+      Lq.symm (Lq z.1+h • ∑ j, a j • Lq (Fq j)) = z.1+h • ∑ j, a j • Fq j := by
+    intro a
+    apply Lq.injective
+    simp
+  have tp : ∀ a : Fin s → ℝ,
+      Lp.symm (Lp z.2+h • ∑ j, a j • Lp (Fp j)) = z.2+h • ∑ j, a j • Fp j := by
+    intro a
+    apply Lp.injective
+    simp
+  refine ⟨?_, ?_, ?_⟩
+  · intro i
+    rw [tq, tp]
+    exact congrArg Lq (hq i)
+  · intro i
+    rw [tq, tp]
+    exact congrArg Lp (hp i)
+  · rw [hw]
+    simp
+
+/-- source_id: MD-3.6.3-SymplecticNotReversible · unnumbered_claim · §3.6.3 · 印刷p.131 / PDFp.153 -/
+theorem symplecticNotReversible :
+  ∃ (h : ℝ) (z : Z 1),
+    canonicalReversal (textbookSymplecticEuler (fun _ : Fin 1 => 1) (fun q => q 0^2/2) h
+      (canonicalReversal (textbookSymplecticEuler (fun _ => 1) (fun q => q 0^2/2) h (pack z)))) ≠ pack z := by
+  sorry
+
+/-- source_id: MD-3.6.3-TrapezoidalRelation · definition · §3.6.3 · 印刷p.131 / PDFp.153
+[EXTRA] 补梯形法标准隐式关系作为审阅上下文。 -/
+def trapezoidalRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop := w=z+(h/2) • (f z+f w)
+
+/-- source_id: MD-3.6.3-TrapezoidalProperties · unnumbered_claim · §3.6.3 · 印刷p.131 / PDFp.153
+[EXTRA] 完整实际隐式G与C¹Jacobian资格，不用求解存在作为结论前提。 -/
+theorem trapezoidalProperties :
+  (∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) h z w,
+    linearInvolution R → (∀ x, f (R x)=-R (f x)) → trapezoidalRelation f h z w →
+    trapezoidalRelation f h (R w) (R z)) ∧
+  ∃ (n : ℕ) (H : SymplecticCoordinates n → ℝ)
+    (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) (h : ℝ),
+    ContDiff ℝ ⊤ H ∧ ContDiff ℝ 1 (G h) ∧
+    (∀ z, G h z=z+(h/2) • (textbookHamiltonianVectorField H z+textbookHamiltonianVectorField H (G h z))) ∧
+    ¬ IsTextbookSymplecticMap (G h) := by
+  sorry
+
+/-- source_id: MD-3.6.3-HamiltonianSpectrum · unnumbered_claim · §3.6.3 · 印刷p.131 / PDFp.153
+[ERRATUM?] 同一u一般不是转置特征向量；四元素集合可重复，不声称总有4个互异值。 -/
+theorem hamiltonianSpectrum :
+  ∀ (n : ℕ) (A : Matrix (Fin n ⊕ Fin n) (Fin n ⊕ Fin n) ℝ), A.transpose=A → ∀ ζ,
+    complexEigenvalue (textbookJ n*A) ζ → complexEigenvalue (textbookJ n*A) (-ζ) ∧
+      complexEigenvalue (textbookJ n*A) (star ζ) := by
+  sorry
+
+/-- source_id: MD-3.6.3-SymplecticSpectrum · unnumbered_claim · §3.6.3 · 印刷p.131 / PDFp.153 -/
+theorem symplecticSpectrum :
+  ∀ (n : ℕ) (A : Matrix (Fin n ⊕ Fin n) (Fin n ⊕ Fin n) ℝ),
+    A.transpose*textbookJ n*A=textbookJ n → ∀ ζ, complexEigenvalue A ζ →
+      ζ ≠ 0 ∧ complexEigenvalue A ζ⁻¹ ∧ complexEigenvalue A (star ζ) := by
+  sorry
+
+/-- source_id: MD-3.6.3-ReversibleSpectrum · unnumbered_claim · §3.6.3 · 印刷p.131 / PDFp.153
+[EXTRA] T可逆、R²=I明确；真实complexEigenvalue，非零性作为结论。 -/
+theorem reversibleSpectrum :
+  ∀ (n : ℕ) (A R : Matrix (Fin n) (Fin n) ℝ), IsUnit A.det → R*R=1 →
+    A⁻¹=R*A*R → ∀ ζ, complexEigenvalue A ζ →
+      ζ ≠ 0 ∧ complexEigenvalue A ζ⁻¹ ∧ complexEigenvalue A (star ζ) := by
+  sorry
+
+/-- source_id: MD-3.6.3-ConjugateIterates · unnumbered_claim · §3.6.3 · 印刷p.131–132 / PDFp.153–154
+[EXTRA] χ明确为equivalence，以使原文χ⁻¹有定义；原文homomorphism的用词待审。
+[ERRATUM?] 原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。 -/
+theorem conjugateIterates (χ : E ≃ₜ E) (A B : E → E)
+    (hA : A = textbookConjugateMap χ B) (n : ℕ) :
+    A^[n] = textbookConjugateMap χ (B^[n]) := by
+  apply MolecularDynamics.textbook_conjugate_iterates <;> assumption
+
+/-- source_id: MD-3.6.1-MechanicalReversalCorrect · unnumbered_claim · §3.6.1 · 印刷p.128 / PDFp.150
+[EXTRA] [EXTRA]独立正确机械R反转结论；原书错误展示等式仍由MechanicalReversalPrinted保留，不静默更改它。 -/
+theorem mechanicalReversalCorrect :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) z,
+    mechanicalField m F (momentumReversal z)=-momentumReversal (mechanicalField m F z) := by
+  exact MolecularDynamics.Chapter03Review.mechanicalReversal_proved
+
+/-- source_id: MD-3.6.3-ConjugateOrderPrinted · unnumbered_claim · §3.6.3 · 印刷p.132 / PDFp.154
+[EXTRA] 将“same effective order”按同一局部误差幂阶和真实共轭参考流解释；χ至少homeomorphism、紧初值域、r>0。
+[NEEDS_HUMAN] homeomorphism可用平方根改变误差阶；原文缺定量正则性，不能由迭代共轭冒充已证同有效阶。 -/
+theorem conjugateOrderPrinted :
+    ∀ (n r : ℕ) (χ : Q n ≃ₜ Q n) (G Φ : ℝ → Q n → Q n) (B : Set (Q n)),
+      0 < r → IsCompact B → MolecularDynamics.Chapter03Review.localOrder G Φ B r →
+      MolecularDynamics.Chapter03Review.localOrder
+        (fun h z => χ (G h (χ.symm z))) (fun h z => χ (Φ h (χ.symm z))) (χ '' B) r := by
+  sorry
+
+/-- source_id: MD-3.6.3-ReversibleVolumeFailure · unnumbered_claim · §3.6.3 · 印刷p.132 / PDFp.154 -/
+theorem reversibleVolumeFailure :
+  ∃ (n : ℕ) (R : Q n →L[ℝ] Q n) (G : Q n ≃ Q n), linearInvolution R ∧
+    ContDiff ℝ 1 G ∧ ContDiff ℝ 1 G.symm ∧ (∀ z, R (G (R (G z)))=z) ∧
+    ∃ z, |(textbookCoordinateJacobian G z).det| ≠ 1 := by
+  sorry
+
 end MD.Ch03

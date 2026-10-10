@@ -1,0 +1,109 @@
+{
+  "batch": "BATCH21",
+  "subtask": "BATCH21a",
+  "source_ids": [
+    "MD-3.6.3-SymplecticNotReversible"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 153,
+      "printed_page": 131
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7e7f00bdaf55b15e6f4aede74909a3ae6c2962628bb24aa05ec71bb0b3e0177f",
+  "lean_sha256": "a71cfff4db4c5a0078085ea1c148a98ded0870fa7ff4bd5c28a8c81c27f1e8b4",
+  "signature_sha256": "530b5df455bb86bc4cfbf3e6311585071404800c442ab4a5f226fd7dc394d824",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "canonicalReversal",
+      "code_sha256": "57546b30d5ee4c6747e07f12b9937acde52b470d48cf8ae6544052c03a9a3f21"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "pack",
+      "code_sha256": "56b2ee5902c18f0964630ead7fc0bd74471c75b7077ea7f06d0122bd2f4cdaa0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookMomentumKick",
+      "code_sha256": "140fb611184d1fe410f849925b752e19bca879083ad3b90037363a059820d604"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPositionDrift",
+      "code_sha256": "2cb1c98648cdcff42e0f32a16e159ea1f67f39c35c11b9da21600c85624e4813"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPositionProjection",
+      "code_sha256": "e26c2a0065ed4d17a75fd55ee46cc91cdf21abead5097b255cf11154196c56b0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPotentialForce",
+      "code_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookSymplecticEuler",
+      "code_sha256": "6e53ee5f4a9068cb7f0831009eb53769d608210c90a01e8cb724e9af7490aea7"
+    }
+  ],
+  "paste_plus_pdf_bytes": 83276,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5987,
+      "sha256": "e886c059eb39567bc33efca9a3fb0eba6f56d3dab104020e9935383a13b6a4bf"
+    },
+    "BATCH21a_PAGES.pdf": {
+      "bytes": 77289,
+      "sha256": "177d72653dd1de0f445d75ade09781fd71a68a0b5fc25900bbb7237a915db8a3"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 87481
+}

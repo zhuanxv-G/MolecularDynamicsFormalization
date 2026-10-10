@@ -118,3 +118,7 @@ import ch03_section34b
 import ch03_section34c
 import ch03_section35
 import ch03_section35b
+import ch03_section36
+import ch03_section36b
+import ch03_section36c
+import ch03_section36d

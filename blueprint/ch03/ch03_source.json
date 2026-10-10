@@ -2603,5 +2603,683 @@
     "review_status": "DRAFT",
     "repair_log": [],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6-HamiltonianFlowStructures",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6",
+    "printed_page": "127–128",
+    "pdf_page": "149–150",
+    "statement_latex": "The flow of a Hamiltonian system of the form $H=p^TM^{-1}p/2+U(q)$ will preserve all of the following:\n1. The symplectic two-form $\\mathrm dq\\wedge\\mathrm dp$.\n2. The Hamiltonian (i.e., the energy) $H$.\n3. The volume in phase space (as the vector field is divergence free).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "原列表第4项time-reversal symmetry由§3.6.1–2单独保留；此签名保留一般C¹局部流的前三性质，不能由较强jointC²桥接冒充。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.hamiltonianFlowStructures",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "原场在开放域C¹，真实局部流、反步与局部定义域资格显式。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6-VolumeNotSymplectic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6",
+    "printed_page": "128",
+    "pdf_page": "150",
+    "statement_latex": "The phase volume conservation can be seen as a consequence of the symplectic property, but it is a weaker condition. It is possible to construct methods that preserve volume but which are not symplectic, and we can build methods that exactly conserve the energy (as we shall show below).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "四维实际光滑映射、Jacobian det=1且不辛；辛蕴含体积见第2章，能量投影见§3.5。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.volumeNotSymplectic",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.1-LinearInvolution",
+    "kind": "definition",
+    "label": null,
+    "section": "3.6.1",
+    "printed_page": "128",
+    "pdf_page": "150",
+    "statement_latex": "By an involution we mean a linear mapping $\\boldsymbol z\\mapsto R\\boldsymbol z$ where $R^2=I$, i.e. $R$ is its own inverse.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "一般R²=I不蕴含Rᵀ=R或正交。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.linearInvolution",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedFieldPrinted",
+    "kind": "definition",
+    "label": null,
+    "section": "3.6.1",
+    "printed_page": "128",
+    "pdf_page": "150",
+    "statement_latex": "Given the involution $R$ we define the time reversal of the vector field $f$ with respect to $R$ by\n\\[\\widetilde f(\\boldsymbol z)=-R^Tf(R\\boldsymbol z).\\]\nWhen a vector field is its own reversal we say that it is a time-reversible vector field.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "一般线性involution的时间反转应−R⁻¹f(Rz)=−Rf(Rz)，不是−Rᵀ；机械R对称时两者相同。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.reversedField",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.1-MomentumReversal",
+    "kind": "definition",
+    "label": null,
+    "section": "3.6.1",
+    "printed_page": "128",
+    "pdf_page": "150",
+    "statement_latex": "Let $H(q,p)=p^TM^{-1}p/2+U(q)$ be the Hamiltonian for a system of $N_c$ configuration variables. Define the $2N_c\\times2N_c$ matrix $R$ by\n\\[R=\\begin{bmatrix}I&0\\\\0&-I\\end{bmatrix}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "在Z n=Q n×Q n的等价坐标给(q,−p)；canonicalReversal是同一动作的pack坐标。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.momentumReversal",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.1-MechanicalReversal",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.1",
+    "printed_page": "128",
+    "pdf_page": "150",
+    "statement_latex": "The vector fields involved are\n\\[f=\\begin{bmatrix}M^{-1}p\\\\-\\nabla U(q)\\end{bmatrix},\\qquad\\widetilde f=-Rf(Rz)=\\begin{bmatrix}-M^{-1}p\\\\\\nabla U(q)\\end{bmatrix},\\]\nwhich are clearly equal. Therefore the molecular dynamics Hamiltonian system is time-reversible.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "原页右侧列向量实际写−M⁻¹p,+∇U，与左侧不等；−Rf(Rz)实际应等f。正确代数结论桥接，原展示式保留待审。"
+    ],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "p128右端列向量符号与−Rf(Rz)实际计算不符；原文不静默更改。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.mechanicalReversalPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.1",
+    "printed_page": "128–129",
+    "pdf_page": "150–151",
+    "statement_latex": "For the system $\\mathrm dz/\\mathrm dt=f(\\boldsymbol z)$, a coordinate transformation $\\boldsymbol z\\mapsto\\widetilde{\\boldsymbol z}=R\\boldsymbol z$ results in\n\\[\\frac{\\mathrm d\\widetilde{\\boldsymbol z}}{\\mathrm dt}=R\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=Rf(R^{-1}\\widetilde{\\boldsymbol z})=Rf(R\\widetilde{\\boldsymbol z}),\\]\nsince $R^{-1}=R$. A change of time $t\\mapsto\\tau=-t$ results in\n\\[\\frac{\\mathrm d\\boldsymbol z}{\\mathrm d\\tau}=\\frac{\\mathrm dt}{\\mathrm d\\tau}\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=-f(\\boldsymbol z).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "将p128字面−Rᵀ定义代入反向轨道得到的待审断言；不是p129实际R链式法则的正确版本。"
+    ],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "p128的Rᵀ字面反转与p129的R链式法则不能一般同时成立；具体二维反例见本地审计。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.reversedTrajectoryPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedTrajectory",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.1",
+    "printed_page": "129",
+    "pdf_page": "151",
+    "statement_latex": "In other words, for a reversible vector field, the coordinate transformation $\\boldsymbol z\\mapsto R\\boldsymbol z$ is equivalent to the change of time $t\\mapsto-t$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "p129正确R链式法则版本；与字面Rᵀ断言分开；γ的真实时间导数明示。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.reversedTrajectory",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]采用正确f(Rz)=−Rf(z)而非一般Rᵀ字面定义；每个实t均有真实γ导数。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversal",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.2",
+    "printed_page": "129",
+    "pdf_page": "151",
+    "statement_latex": "From this we see that if we start from a point $z_0$ and integrate forward in time (i.e apply $\\mathcal F_t$) then apply the involution $R$, we get the exact same result as if we start from $\\widetilde z(0)=Rz_0$ and integrate backward in time (i.e. apply $\\mathcal F_{-t}$). In sum, since $z_0$ is an arbitrary point,\n\\[\\mathcal F_{-t}(Rz)=R\\mathcal F_t(z).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch03.flowReversal",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "正确R反转、C¹场和全实时间真实流；不把所需反转等式藏进流假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversalIdentity",
+    "kind": "unnumbered_claim",
+    "label": "(3.14)",
+    "section": "3.6.2",
+    "printed_page": "129",
+    "pdf_page": "151",
+    "statement_latex": "For the flow map, $\\mathcal F_{-t}=\\mathcal F_t^{-1}$ so we can recast the identity as\n\\[R\\circ\\mathcal F_t\\circ R\\circ\\mathcal F_t=\\mathrm{Id},\\tag{3.14}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch03.flowReversalIdentity",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "正确R反转、C¹场、实际全时间流、群性质；不供应结论。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.2-ReversibleMethod",
+    "kind": "definition",
+    "label": "(3.15)",
+    "section": "3.6.2",
+    "printed_page": "130",
+    "pdf_page": "152",
+    "statement_latex": "It does not automatically follow that a symmetric numerical method is time-reversible, i.e. satisfies a relation inspired by (3.14), namely\n\\[R\\circ\\mathcal G_h\\circ R\\circ\\mathcal G_h=\\mathrm{Id}.\\tag{3.15}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch03.reversibleMethod",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.2-SymmetricMethod",
+    "kind": "definition",
+    "label": null,
+    "section": "3.6.2",
+    "printed_page": "130",
+    "pdf_page": "152",
+    "statement_latex": "Recall from the previous chapter that a numerical method $\\mathcal G_h$ was said to be symmetric if it satisfied\n\\[\\mathcal G_{-h}=\\mathcal G_h^{-1}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "equivalence给实际逆映射；与固定R的可逆性分开。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.symmetricMethod",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.2-AffineInvariant",
+    "kind": "definition",
+    "label": "Definition 3.1",
+    "section": "3.6.2",
+    "printed_page": "130",
+    "pdf_page": "152",
+    "statement_latex": "Definition 3.1 (Affine Invariance) Let\n\\[\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=f(\\boldsymbol z)\\tag{3.16}\\]\nbe a given ordinary differential equation. The transformation $\\widetilde{\\boldsymbol z}=A\\boldsymbol z$, where $A$ is a non-singular square matrix, results in the modified differential equation\n\\[\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=Af(A^{-1}\\widetilde{\\boldsymbol z}).\\tag{3.17}\\]\nLet $z_0,z_1,\\ldots$ be a sequence of points obtained by application of the numerical method $\\mathcal G_h$ to (3.16). If the same method, when applied to (3.17) produces the set of points $Az_0,Az_1,\\ldots$, then we say that the numerical method is invariant with respect to the transformation $\\widetilde{\\boldsymbol z}=Az$. An affine invariant method is one which is invariant under any such transformation.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "A为连续线性等价；原定义未含平移，保留该范围；transportedField给真正A f A⁻¹。"
+    ],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "(3.17)左端印刷z而不是z̃；保留原文，语义按前后说明的变换坐标。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.affineInvariant",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.2-SymmetricAffineReversible",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.2",
+    "printed_page": "130",
+    "pdf_page": "152",
+    "statement_latex": "If a differential equation is time-reversible with respect to the involution $R$, and we apply a method which is affine invariant and symmetric, then the method will be time-reversible (3.15).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "NEEDS_HUMAN",
+        "detail": "一般方法需要G_{−f}(h)=G_f(−h)，否则原文蕴含式条件不全。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.symmetricAffineReversible",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]G_{−f}(h)=G_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.2-RKAffine",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.2",
+    "printed_page": "130",
+    "pdf_page": "152",
+    "statement_latex": "All Runge-Kutta methods and Partitioned Runge-Kutta methods are affine invariant, thus, if they are also symmetric, then they preserve time-reversal symmetry.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "本条仅保留Runge–Kutta实际阶段关系在线性等价下的运输；PRK与对称可逆推论为相邻条目，合起来覆盖原句。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.rkAffine",
+    "reusable_proofs": [
+      "MolecularDynamics.Chapter03Review.rkAffine_proved"
+    ],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.2-PartitionedAffinePrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.2",
+    "printed_page": "130",
+    "pdf_page": "152",
+    "statement_latex": "All Runge-Kutta methods and Partitioned Runge-Kutta methods are affine invariant, thus, if they are also symmetric, then they preserve time-reversal symmetry.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "PRK一般只对保持分区的分块线性变换等变；任意混合变换的全称可疑。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.partitionedAffinePrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.2-PartitionedAffine",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.2",
+    "printed_page": "130",
+    "pdf_page": "152",
+    "statement_latex": "All Runge-Kutta methods and Partitioned Runge-Kutta methods are affine invariant, thus, if they are also symmetric, then they preserve time-reversal symmetry.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "这是原文PRK的严格条件化分块版本；字面全称单独保留，未替代它。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.partitionedAffine",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]正确限定为保持q,p分区的连续线性等价Lq,Lp；不同分区表格不要求混合线性等变。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.3-SymplecticNotReversible",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.3",
+    "printed_page": "131",
+    "pdf_page": "153",
+    "statement_latex": "A method can be symplectic but not time-reversible (e.g. Symplectic Euler) or it can be time-reversible and not symplectic (e.g. Trapezoidal Rule).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "本条保留单位质量谐振子Symplectic Euler相对于机械R的反例；辛性已有第2章SymplecticEuler证明；trapezoidal相邻条目单列。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.symplecticNotReversible",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.3-TrapezoidalRelation",
+    "kind": "definition",
+    "label": null,
+    "section": "3.6.3",
+    "printed_page": "131",
+    "pdf_page": "153",
+    "statement_latex": "A method can be symplectic but not time-reversible (e.g. Symplectic Euler) or it can be time-reversible and not symplectic (e.g. Trapezoidal Rule).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "原页只举Trapezoidal Rule名称，没有印出更新式；[EXTRA]补标准定义Z=z+h(f(z)+f(Z))/2作为后条对象，非本页逐字新增公式。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.trapezoidalRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "补梯形法标准隐式关系作为审阅上下文。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.3-TrapezoidalProperties",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.3",
+    "printed_page": "131",
+    "pdf_page": "153",
+    "statement_latex": "A method can be symplectic but not time-reversible (e.g. Symplectic Euler) or it can be time-reversible and not symplectic (e.g. Trapezoidal Rule).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "本条保留梯形关系在正确反转下可逆及一个真实Hamiltonian非辛步解反例；Symplectic Euler相邻反例单列。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.trapezoidalProperties",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "完整实际隐式G与C¹Jacobian资格，不用求解存在作为结论前提。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.3-HamiltonianSpectrum",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.3",
+    "printed_page": "131",
+    "pdf_page": "153",
+    "statement_latex": "For example, consider a linear Hamiltonian system $\\mathrm dz/\\mathrm dt=JAz$, with $A$ a symmetric matrix. If $\\lambda$ is an eigenvalue of $JA$ then $JAu=\\lambda u$ for some eigenvector $u\\ne0$. Because the matrix $JA$ is real, we know that $\\overline\\lambda$ will also be an eigenvalue. At the same time, we know that since $\\lambda$ is an eigenvalue of $JA$ it is also an eigenvalue of its transpose $(JA)^T=A^TJ^T=-AJ$, thus\n\\[-AJu=\\lambda u\\]\nmultiplying by $J$ and setting $v=Ju$ we have\n\\[-JAv=\\lambda v\\]\nimplying that $-\\lambda$ (and hence also $-\\overline\\lambda$) is an eigenvalue of $JA$. Real eigenvalues of $JA$ are paired with their negatives. If the imaginary part is nonzero, the eigenvalues occur in quadruplets $\\{\\pm\\lambda,\\pm\\overline\\lambda\\}$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "同一u一般不是转置特征向量；四元素集合可重复，不声称总有4个互异值。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.hamiltonianSpectrum",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.3-SymplecticSpectrum",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.3",
+    "printed_page": "131",
+    "pdf_page": "153",
+    "statement_latex": "The flow map is\n\\[\\mathcal F_t(z)=\\mathrm e^{tJA}z\\]\nand the exponential matrix will inherit a related structure within the spectrum: $\\lambda$ an eigenvalue of $\\exp(tJA)$ implies that $\\overline\\lambda$, $1/\\lambda$ and $1/\\overline\\lambda$ are all eigenvalues of $\\exp(tJA)$. This eigenvalue structure is generic for linear symplectic maps in general.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "原文一般线性辛矩阵的谱结论直接表达；指数流实例来自线性流为辛的性质；ζ≠0明确，不假设逆谱。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.symplecticSpectrum",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.3-ReversibleSpectrum",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.3",
+    "printed_page": "131",
+    "pdf_page": "153",
+    "statement_latex": "Suppose now we have a linear time-reversible map $\\phi(z)=Tz$, then\n\\[T^{-1}=RTR.\\]\nGiven an eigenvalue, eigenvector pair $(\\lambda,u)$ of $T$, let $u=Rv$, so that $Ru=R^2v=v$, then\n\\[T^{-1}v=RTRv=RTu=\\lambda Ru=\\lambda v.\\]\nThus $\\lambda$ is an eigenvalue of $T^{-1}$ which, in turn, implies that $1/\\lambda$ is an eigenvalue of $T$. The matrix being real implies that the conjugates of $\\lambda$ and $1/\\lambda$ are also eigenvalues, thus we have the same eigenvalue quadruplets as for a linear symplectic map.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch03.reversibleSpectrum",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "T可逆、R²=I明确；真实complexEigenvalue，非零性作为结论。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.3-ConjugateIterates",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.3",
+    "printed_page": "131–132",
+    "pdf_page": "153–154",
+    "statement_latex": "Recall that a pair of maps $\\Phi$ and $\\Psi$ are said to be conjugate if there is a homomorphism $\\chi$ such that\n\\[\\Phi=\\chi^{-1}\\Psi\\chi.\\]\nIn such a case the iterates of the two maps will also be conjugate",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "数值effective order的附加断言另列ConjugateOrderPrinted，不靠有限共轭恒等式声称已证。"
+    ],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.conjugateIterates",
+    "reusable_proofs": [
+      "MolecularDynamics.textbook_conjugate_iterates"
+    ],
+    "extra_assumptions": [
+      "χ明确为equivalence，以使原文χ⁻¹有定义；原文homomorphism的用词待审。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.1-MechanicalReversalCorrect",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.1",
+    "printed_page": "128",
+    "pdf_page": "150",
+    "statement_latex": "Therefore the molecular dynamics Hamiltonian system is time-reversible.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "F=−grad U代入任意位置力版本；泛化不改变机械坐标反转对象。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.mechanicalReversalCorrect",
+    "reusable_proofs": [
+      "MolecularDynamics.Chapter03Review.mechanicalReversal_proved"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]独立正确机械R反转结论；原书错误展示等式仍由MechanicalReversalPrinted保留，不静默更改它。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.3-ConjugateOrderPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.3",
+    "printed_page": "132",
+    "pdf_page": "154",
+    "statement_latex": "and, if they are numerical methods, they will have similar stability properties and performance (e.g. the same effective order).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "NEEDS_HUMAN",
+        "detail": "homeomorphism可用平方根改变误差阶；原文缺定量正则性，不能由迭代共轭冒充已证同有效阶。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.conjugateOrderPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "将“same effective order”按同一局部误差幂阶和真实共轭参考流解释；χ至少homeomorphism、紧初值域、r>0。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.6.3-ReversibleVolumeFailure",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.6.3",
+    "printed_page": "132",
+    "pdf_page": "154",
+    "statement_latex": "Of particular importance for molecular dynamics are the following properties: a symplectic map will preserve volume, whereas a time-reversible map need not do so, and a symplectic integrator will approximately conserve energy due to the existence of the perturbed Hamiltonian, whereas a time-reversible integrator may give rise to a drift in energy [166].",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "本条保留真实可逆光滑非保体积反例；辛体积与BEA能量性质已在前章及§3.4保留；可逆方法能量漂移按may定性。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.reversibleVolumeFailure",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]

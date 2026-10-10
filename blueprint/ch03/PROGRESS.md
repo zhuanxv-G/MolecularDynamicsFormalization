@@ -2,7 +2,7 @@
 
 范围：印刷p.97–136/PDF119–158，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前101条；旧清单映射101/143；本地PASS 83；网站返回0。
+当前128条；旧清单映射124/143；本地PASS 103；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -107,6 +107,33 @@
 | MD-3.5-EnergyProjectionRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-3.5-NoHamiltonianAttractor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际流体积保持到开放盆不可能吸引零体积轨道的动力系统测度论桥接；不建设大型吸引子理论。 |
 | MD-3.5-LinearContinuousIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-3.6-HamiltonianFlowStructures | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；完整C¹流可微性、变分及测度保持桥接仍缺；已存在jointC²特例不能替代本签名。 |
+| MD-3.6-VolumeNotSymplectic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待构造四维线性det=1非辛映射并桥接真实Jacobian；缺完整有限矩阵到坐标映射桥接。 |
+| MD-3.6.1-LinearInvolution | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.6.1-ReversedFieldPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-3.6.1-MomentumReversal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.6.1-MechanicalReversal | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；本地FAIL不进入证明；正确机械反转已有正式库证明，原展示式待裁定。 |
+| MD-3.6.1-ReversedTrajectoryPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；字面FAIL不进入证明，等待网站与导师裁定。 |
+| MD-3.6.1-ReversedTrajectory | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/ReversedTrajectory.json。 |
+| MD-3.6.2-FlowReversal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺C¹场ODE唯一性到全时间反向轨道一致的完整桥接；不建设新ODE唯一性理论。 |
+| MD-3.6.2-FlowReversalIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；依赖尚未桥接的完整FlowReversal及实际流唯一性。 |
+| MD-3.6.2-ReversibleMethod | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.6.2-SymmetricMethod | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.6.2-AffineInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.6.2-SymmetricAffineReversible | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；本地非PASS不进入证明；条件化有限代数推论可另审。 |
+| MD-3.6.2-RKAffine | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.6.2-PartitionedAffinePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；字面非PASS不证明；正确分块运输另列。 |
+| MD-3.6.2-PartitionedAffine | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-3.6.3-SymplecticNotReversible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待单位振子h=1数值反例；需明确Jacobian/梯度坐标展开，不改正式库。 |
+| MD-3.6.3-TrapezoidalRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.6.3-TrapezoidalProperties | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。 |
+| MD-3.6.3-HamiltonianSpectrum | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺Hamiltonian矩阵复谱及转置相似性桥接；字面证明需审，不证明非PASS。 |
+| MD-3.6.3-SymplecticSpectrum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺辛矩阵非退化、逆转置相似及复谱桥接；不建设新的完整谱理论。 |
+| MD-3.6.3-ReversibleSpectrum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺有限矩阵可逆相似和共轭复特征向量运输桥接；不建设完整谱理论。 |
+| MD-3.6.3-ConjugateIterates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.6.1-MechanicalReversalCorrect | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.6.3-ConjugateOrderPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原文阶数/稳定性性能的精确意义及处理器正则性待审；本地非PASS不证明。 |
+| MD-3.6.3-ReversibleVolumeFailure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺非线性可逆光滑equivalence和Jacobian绝对det≠1的反例桥接；线性可逆矩阵不足以给本例。 |
 
 ## 旧143条完整映射
 
@@ -305,6 +332,25 @@
 - MD-3.4-CommutingEnergy：书中从numerical solution到连续流导数的跳步需审；Lean只保留明确连续流版本，不将离散能量守恒作为连续守恒证明。 非PASS不进入证明；连续流版本可以另桥接Lie–Poisson导数。离散快照守恒不直接推出连续修正流守恒。
 - MD-3.4-EnergySymplecticNoGo：定性no-go不能无条件成立；补全Ge–Marsden所需原理和全局流资格尚待审，忠实保留疑点。 缺Ge–Marsden精确理论及局部全局资格；不建设大型理论。原文practical排他陈述缺精确非可积性/无额外第一积分等假设。
 - MD-3.5-NoHamiltonianAttractor：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际流体积保持到开放盆不可能吸引零体积轨道的动力系统测度论桥接；不建设大型吸引子理论。
+- MD-3.6-HamiltonianFlowStructures：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 完整C¹流可微性、变分及测度保持桥接仍缺；已存在jointC²特例不能替代本签名。
+- MD-3.6-VolumeNotSymplectic：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待构造四维线性det=1非辛映射并桥接真实Jacobian；缺完整有限矩阵到坐标映射桥接。
+- MD-3.6.1-ReversedFieldPrinted：字面定义保留Rᵀ；不把它当任意involution的正确反转；p129使用R⁻¹=R与此不同。 一般线性involution的时间反转应−R⁻¹f(Rz)=−Rf(Rz)，不是−Rᵀ；机械R对称时两者相同。
+- MD-3.6.1-MechanicalReversal：字面三项完整保留；n=1,m=1,U=0,z=(0,1)时f=(1,0)，原右列=(−1,0)，与“clearly equal”不符。正确反转结论另列桥接，未以正确结论替换印刷等式。 本地FAIL不进入证明；正确机械反转已有正式库证明，原展示式待裁定。p128右端列向量符号与−Rf(Rz)实际计算不符；原文不静默更改。
+- MD-3.6.1-ReversedTrajectoryPrinted：R=[[1,1],[0,−1]]满足R²=I，取常场f=(1,0)；真实反向导数−Rf=(−1,0)，字面−Rᵀf=(−1,−1)不同。 字面FAIL不进入证明，等待网站与导师裁定。p128的Rᵀ字面反转与p129的R链式法则不能一般同时成立；具体二维反例见本地审计。
+- MD-3.6.1-ReversedTrajectory：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 三条短证明路线失败，停止该条；保存证据见validation/short_search/ReversedTrajectory.json。
+- MD-3.6.2-FlowReversal：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺C¹场ODE唯一性到全时间反向轨道一致的完整桥接；不建设新ODE唯一性理论。
+- MD-3.6.2-FlowReversalIdentity：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 依赖尚未桥接的完整FlowReversal及实际流唯一性。
+- MD-3.6.2-AffineInvariant：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 (3.17)左端印刷z而不是z̃；保留原文，语义按前后说明的变换坐标。
+- MD-3.6.2-SymmetricAffineReversible：额外符号相容性是独立必要资格，不能当作原书已明示假设。 本地非PASS不进入证明；条件化有限代数推论可另审。一般方法需要G_{−f}(h)=G_f(−h)，否则原文蕴含式条件不全。
+- MD-3.6.2-PartitionedAffinePrinted：任意混合q,p的线性等价通常不保持不同PRK表格的分区；字面全称保留待反例审查。 字面非PASS不证明；正确分块运输另列。PRK一般只对保持分区的分块线性变换等变；任意混合变换的全称可疑。
+- MD-3.6.3-SymplecticNotReversible：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待单位振子h=1数值反例；需明确Jacobian/梯度坐标展开，不改正式库。
+- MD-3.6.3-TrapezoidalProperties：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。
+- MD-3.6.3-HamiltonianSpectrum：谱结论保留真实复特征值；原证明把原矩阵同一个u当成转置特征向量，不能照抄为有效证明；纯虚时quadruplets可退化。 缺Hamiltonian矩阵复谱及转置相似性桥接；字面证明需审，不证明非PASS。同一u一般不是转置特征向量；四元素集合可重复，不声称总有4个互异值。
+- MD-3.6.3-SymplecticSpectrum：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺辛矩阵非退化、逆转置相似及复谱桥接；不建设新的完整谱理论。
+- MD-3.6.3-ReversibleSpectrum：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺有限矩阵可逆相似和共轭复特征向量运输桥接；不建设完整谱理论。
+- MD-3.6.3-ConjugateIterates：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。
+- MD-3.6.3-ConjugateOrderPrinted：仅拓扑共轭不保持数值误差幂阶；通常需要定量局部Lipschitz或光滑处理器及步长资格。原泛称性能也未精确定义。 原文阶数/稳定性性能的精确意义及处理器正则性待审；本地非PASS不证明。homeomorphism可用平方根改变误差阶；原文缺定量正则性，不能由迭代共轭冒充已证同有效阶。
+- MD-3.6.3-ReversibleVolumeFailure：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺非线性可逆光滑equivalence和Jacobian绝对det≠1的反例桥接；线性可逆矩阵不足以给本例。
 
 ## 定性段落排除
 
@@ -314,3 +360,4 @@
 - p.109–112/PDF131–134：Yoshida历史、力计算成本、图3.2实验能量曲线、最优系数与模型截断误差选择为定性背景；真实复合公式另列。
 - p.116–122/PDF138–144：推荐/警告、double-well及七原子Lennard-Jones数值实验和Fig3.3–3.9为定性或经验观测；能量/势公式复用第1章定义，非新普适定理；数学修正能量脚注已单列。
 - p.122–127/PDF144–149：舍入误差、投影实现代价/概率、投影LJ和双弹簧数值实验、Fig3.10–3.14及性能判断为定性或经验观测；数学投影关系和Hamiltonian无吸引子断言已单列。
+- p.127–132/PDF149–154：设计原则选择、维数泛型、文献及KAM类比为定性评述；原文共轭effective-order附加数学断言已单列疑点，不排除。

@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19d",
+  "source_ids": [
+    "MD-3.6.2-SymmetricMethod"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 152,
+      "printed_page": 130
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7e7f00bdaf55b15e6f4aede74909a3ae6c2962628bb24aa05ec71bb0b3e0177f",
+  "lean_sha256": "a71cfff4db4c5a0078085ea1c148a98ded0870fa7ff4bd5c28a8c81c27f1e8b4",
+  "signature_sha256": "57abc58f48d26ec36f020c76c384b86e7ee4927d0a074f99b498d8fbc879f8bd",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "symmetricMethod",
+      "code_sha256": "57abc58f48d26ec36f020c76c384b86e7ee4927d0a074f99b498d8fbc879f8bd"
+    }
+  ],
+  "paste_plus_pdf_bytes": 87358,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3038,
+      "sha256": "b66bc2a4c1007061ebbc1c3218d959c994cb0de446dcba9c68546fe4a1efda88"
+    },
+    "BATCH19d_PAGES.pdf": {
+      "bytes": 84320,
+      "sha256": "8dc597b797d8c7f8939fb972c96f504f0795c5b448ebe8106d513bc702da4d6d"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 88975
+}

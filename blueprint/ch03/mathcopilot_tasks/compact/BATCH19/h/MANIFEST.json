@@ -1,0 +1,67 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19h",
+  "source_ids": [
+    "MD-3.6.2-PartitionedAffinePrinted"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 152,
+      "printed_page": 130
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7e7f00bdaf55b15e6f4aede74909a3ae6c2962628bb24aa05ec71bb0b3e0177f",
+  "lean_sha256": "a71cfff4db4c5a0078085ea1c148a98ded0870fa7ff4bd5c28a8c81c27f1e8b4",
+  "signature_sha256": "bda122135a9cd8f4a0d2a28c2b553fcd4578a001d74e3feff73d82d8154578f1",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "partitionedRKRelation",
+      "code_sha256": "11bb9e8720cc956e103819030c95010af2cd5a933d6b1e8e98ab42a2bd08694b"
+    }
+  ],
+  "paste_plus_pdf_bytes": 88442,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4122,
+      "sha256": "35753aaf7e64d47f2f8fbae443fe482fd86d6624d7c5562158caf94faed88b56"
+    },
+    "BATCH19h_PAGES.pdf": {
+      "bytes": 84320,
+      "sha256": "8dc597b797d8c7f8939fb972c96f504f0795c5b448ebe8106d513bc702da4d6d"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 90874
+}
