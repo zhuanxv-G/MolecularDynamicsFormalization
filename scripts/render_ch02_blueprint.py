@@ -92,6 +92,8 @@ def render(source_path: Path, lean_path: Path, audit_path: Path, website_path: P
         lines+=['','### 4. Lean陈述','','```lean',d['statement'],'```','','### 5. 对照表','',
             '| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |','|---|---|---|']
         for row in a['correspondence']:lines.append('| '+' | '.join(cell(row[k]) for k in ('source','lean','note'))+' |')
+        for extra in s.get('extra_assumptions',[]):
+            lines.append('| 原文省略/技术资格 | '+cell(extra)+' | [EXTRA] |')
         for i in s.get('issues',[]):
             note='[ERRATUM?]' if i.get('code')=='ERRATUM?' else i.get('status',i.get('code','NEEDS_HUMAN'))
             lines.append('| 原页核对/疑点 | '+cell(i['detail'])+' | '+note+' |')
@@ -107,8 +109,8 @@ def render(source_path: Path, lean_path: Path, audit_path: Path, website_path: P
         lines+=['','### 7. 状态与证明位置','',
             '**'+a.get('final_status','incomplete')+'**；本地证明状态：'+a['proof_status']+'。',
             '',f"位置：[Blueprint/Ch02.lean:{d['line']}](<{(ROOT/'Blueprint/Ch02.lean').as_posix()}:{d['line']}>)（`{d['name']}`）。",'',
-            'Lean编译/公理检查：'+('已验证' if a['checked'] else '本轮待验证')+'；公理：`'+(', '.join(a.get('axioms',[])) or '未检查')+'`。','',
-            '直接占位：'+('有sorry' if a['direct_placeholder'] else '无直接sorry')+'；传递占位：'+('含sorryAx' if 'sorryAx' in a.get('axioms',[]) else ('未检出' if a['checked'] else '未验证'))+'。']
+            'Lean编译/公理检查：'+('已验证' if a['checked'] else '本轮待验证')+'；公理：`'+(', '.join(a.get('axioms',[])) or ('无' if a['checked'] else '未检查'))+'`。','',
+            '直接占位：'+('有sorry' if a['direct_placeholder'] else '无直接sorry')+'；传递占位：'+('存在（无直接sorry但公理含sorryAx）' if a.get('transitive_placeholder') else ('未检出；直接sorry的sorryAx已单列' if a['checked'] else '未验证'))+'。']
         if a.get('missing'):lines+=['','缺失/继续路线：'+a['missing']]
         if a.get('proof_attempts'):lines+=['',f"本地独立尝试{a['proof_attempts']}次，失败{a.get('proof_failures',0)}次；证据：blueprint/ch02/proof_attempts.json。"]
         if a.get('documented_priors'):lines+=['','已登记前置证明/定义：'+ '; '.join(a['documented_priors'])+'。']

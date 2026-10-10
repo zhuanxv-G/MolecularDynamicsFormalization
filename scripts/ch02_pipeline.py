@@ -23,6 +23,7 @@ def declarations():
         statement=raw if d.group(1)=='def' else re.split(r'\s:=\s*by\b',raw,1)[0].rstrip()
         out[m.group(1)]=dict(name='MD.Ch02.'+d.group(2),statement=statement,block=raw,
             line=text[:m.end()].count('\n')+raw[:d.start()].count('\n')+2,
+            block_sha256=hashlib.sha256(raw.encode()).hexdigest(),
             signature_sha256=hashlib.sha256(statement.encode()).hexdigest())
     return out
 
@@ -41,6 +42,7 @@ open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Oper
 noncomputable section
 namespace MD.Ch02
 variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 '''
     chunks=[header]
@@ -60,11 +62,12 @@ variable {n Nc : ℕ}
     ds=declarations();items={}
     for r in RECORDS:
         sid=r['source_id'];d=ds[sid];a=previous.get(sid,{})
-        if a.get('signature_sha256')!=d['signature_sha256']:a.update(checked=False,axioms=[],final_status='incomplete')
+        if a.get('signature_sha256')!=d['signature_sha256'] or a.get('block_sha256')!=d['block_sha256']:
+            a.update(checked=False,axioms=[],final_status='incomplete')
         direct=bool(re.search(r'\bsorry\b',d['block']))
         a.update(lean_decl=d['name'],verdict=r['local_verdict'],explanation=r['local_explanation'],
-            signature_sha256=d['signature_sha256'],direct_placeholder=direct,
-            proof_status='placeholder' if direct else ('definition' if r['code'].startswith('def ') else ('existing_bridge' if r['priors'] else 'local_proof')),
+            signature_sha256=d['signature_sha256'],block_sha256=d['block_sha256'],direct_placeholder=direct,
+            proof_status='placeholder' if direct else ('definition' if bool(re.match(r'(?:noncomputable )?def ',r['code'])) else ('existing_bridge' if r['priors'] else 'local_proof')),
             documented_priors=r['priors'],missing=r['missing'],website_audit='待网站审计',
             correspondence=r['correspondence'] or [dict(source='原文完整数学对象和展示式',lean=d['name']+'；定义体/完整签名见上',note='一致；逐条技术条件见[EXTRA]')],
             counterexample=None,suggested_fix=None,proof_attempts=a.get('proof_attempts',0))
@@ -83,6 +86,7 @@ def packages(sources,ds):
     paths=['Blueprint/Ch02.lean']+[p.relative_to(ROOT).as_posix() for p in (ROOT/'MolecularDynamics').rglob('*.lean')]
     index=definitions(paths+['.lake/packages/mathlib/Mathlib/Analysis/ODE/Basic.lean'])
     pdf=next(ROOT.parent.glob('Leimkuhler2015b*.pdf'));reader=PdfReader(pdf); original=fitz.open(pdf)
+    source_pdf_hash=sha(pdf);original_pixels={}
     batches=[];num=1
     for sec in dict.fromkeys(s['section'] for s in sources):
         its=[s for s in sources if s['section']==sec]
@@ -116,7 +120,7 @@ def packages(sources,ds):
             materials=['## 原页映射','| 附件页 | 原PDF页 | 印刷页 |','|---|---|---|']
             materials += [f'| {k+1} | {p} | {p-22} |' for k,p in enumerate(pages)]
             materials += ['','## 完整原文JSON','```json',json.dumps(s,ensure_ascii=False,indent=2),'```','','## 实际Lean签名/定义','```lean',ds[sid]['statement'],'```','',
-                '原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}。',
+                '原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]。',
                 '标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。','']
             excerpts=[]
             for name,choices in sorted(selected.items()):
@@ -125,16 +129,24 @@ def packages(sources,ds):
                     excerpts.append(dict(path=d['path'],namespace=d['namespace'],name=name,code_sha256=hashlib.sha256(d['code'].encode()).hexdigest()))
             text='请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 '+task+'_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。\n\n'+prompt+'\n'+'\n'.join(materials)
             (folder/'PASTE.txt').write_text(text,encoding='utf-8')
-            writer=PdfWriter()
-            for p in pages:writer.add_page(reader.pages[p-1]).compress_content_streams(level=9)
-            writer.compress_identical_objects();pdfout=folder/(task+'_PAGES.pdf');writer.write(pdfout)
-            exported=fitz.open(pdfout)
-            for k,p in enumerate(pages):
-                assert original[p-1].get_pixmap().samples==exported[k].get_pixmap().samples,(task,p)
+            pdfout=folder/(task+'_PAGES.pdf');old_manifest=folder/'MANIFEST.json'
+            previous=json.loads(old_manifest.read_text(encoding='utf-8')) if old_manifest.exists() else {}
+            cached=(pdfout.exists() and previous.get('source_pdf_sha256')==source_pdf_hash and
+                [x['original_pdf_page'] for x in previous.get('page_mapping',[])]==pages and
+                previous.get('files',{}).get(pdfout.name,{}).get('sha256')==sha(pdfout) and
+                previous.get('validation',{}).get('pdf_rendered_pixel_equality')=='PASS')
+            if not cached:
+                writer=PdfWriter()
+                for p in pages:writer.add_page(reader.pages[p-1]).compress_content_streams(level=9)
+                writer.compress_identical_objects();writer.write(pdfout)
+                exported=fitz.open(pdfout)
+                for k,p in enumerate(pages):
+                    if p not in original_pixels:original_pixels[p]=original[p-1].get_pixmap().samples
+                    assert original_pixels[p]==exported[k].get_pixmap().samples,(task,p)
             size=len(text.encode())+pdfout.stat().st_size
             assert size<256000,(task,size)
             report=dict(batch=batch,subtask=task,source_ids=[sid],page_mapping=[dict(attachment_page=k+1,original_pdf_page=p,printed_page=p-22) for k,p in enumerate(pages)],
-                source_pdf_sha256=sha(pdf),source_json_sha256=sha(BASE/'ch02_source.json'),lean_sha256=sha(ROOT/'Blueprint/Ch02.lean'),
+                source_pdf_sha256=source_pdf_hash,source_json_sha256=sha(BASE/'ch02_source.json'),lean_sha256=sha(ROOT/'Blueprint/Ch02.lean'),
                 signature_sha256=ds[sid]['signature_sha256'],definition_excerpts=excerpts,paste_plus_pdf_bytes=size,
                 files={p.name:dict(bytes=p.stat().st_size,sha256=sha(p)) for p in [folder/'PASTE.txt',pdfout]},
                 validation=dict(verbatim_source_signature_definitions='PASS',pdf_rendered_pixel_equality='PASS',website_acceptance='NOT_TESTED'))
@@ -175,6 +187,7 @@ def checked(log):
         assert m,'Missing axiom output '+a['lean_decl']
         axs=[] if m.group(1) is None else [x.strip() for x in m.group(1).split(',') if x.strip()]
         a.update(checked=True,axioms=axs,final_status='incomplete' if 'sorryAx' in axs or a['verdict']!='PASS' else ('checked+documented priors' if a['documented_priors'] else 'self-contained'),
+            transitive_placeholder=('sorryAx' in axs and not a['direct_placeholder']),
             axiom_log=str(Path(log).relative_to(ROOT)))
     dump(BASE/'local_audit.json',audit)
 

@@ -1,0 +1,34 @@
+Blueprint\Ch02.lean:88:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:95:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:122:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:137:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:153:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:163:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:180:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:208:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:218:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:280:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.errorRecursion`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint\Ch02.lean:295:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.errorBound`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint\Ch02.lean:308:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.consistencyConvergence`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint\Ch02.lean:360:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:370:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:383:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:395:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:412:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:456:8: warning: declaration uses `sorry`
+Blueprint\Ch02.lean:497:8: warning: declaration uses `sorry`

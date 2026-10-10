@@ -1,0 +1,35 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11f",
+  "source_ids": [
+    "MD-2.2.4-IntegralLipschitz"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 93,
+      "printed_page": 71
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "3e48b17bbad44969d2ebcf7ead49264bb754e35d9cad79065a9b52397f5fdcdb",
+  "lean_sha256": "a8c61106d968fc0dcb756f391b52ba67effc78a04ddcd8b48d53a144e7697861",
+  "signature_sha256": "a30e6e954613f78bf915d74dbf08924cb216aa1246cea165e15da60731aad61f",
+  "definition_excerpts": [],
+  "paste_plus_pdf_bytes": 89855,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3039,
+      "sha256": "053c2111b39327c6d53c7ccf09012e33599bb727a36d9008675be2057b0a1847"
+    },
+    "BATCH11f_PAGES.pdf": {
+      "bytes": 86868,
+      "sha256": "3a32ebc0b604992ab3c31f2a53695e62bf4c0fdf62932a9ae8eebe6cf7fbd840"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

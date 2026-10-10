@@ -29,12 +29,13 @@ def copied(relative,name,newname=None,prove=True):
     text=(ROOT/relative).read_text(encoding='utf-8-sig')
     m=re.search(r'(?m)^(?:noncomputable )?(def|theorem|lemma) '+re.escape(name)+r'\b',text)
     if not m:raise ValueError((relative,name))
-    start=m.start(); end=text.find('\n\n',m.end())
+    start=m.start(); stop=re.search(r'\n(?:(?:noncomputable )?(?:def|abbrev|theorem|lemma|end)\b|/--|/-!)',text[m.end():])
+    end=m.end()+stop.start() if stop else len(text)
     if m.group(1)=='def':
         # Definitions can contain blank lines only after their body in these inputs.
         block=text[start:end if end>=0 else len(text)].strip()
         return re.sub(r'\bdef '+re.escape(name)+r'\b','def '+(newname or name),block,count=1)
-    match=re.search(r'\s:=\s*by',text[m.end():])
+    match=re.search(r'\s:=\s*(?:by\b)?',text[m.end():])
     if not match:raise ValueError('theorem body boundary '+name)
     signature=text[start:m.end()+match.start()].strip()
     signature=re.sub(r'^(theorem|lemma) '+re.escape(name), 'theorem '+(newname or name),signature)
@@ -124,3 +125,5 @@ extra=['compactTrajectory要求f全域C⁶及实际解在固定紧时间窗连�
 missing='缺一般Taylor方法局部截断误差、数值留域与全局阶桥接；当前库仅一般one-step条件误差定理。')
 EXCLUDED += [dict(printed_page='53–55',pdf_page='75–77',reason='导论、固定步长经验、图2.1与文献建议为定性背景，excluded_qualitative。'),
              dict(printed_page='56–58',pdf_page='78–80',reason='§2.1.1 trimer数值轨迹、参考解与图2.2–2.3为实验观察，excluded_qualitative；不将观测斜率及增长冒充普适定理。')]
+
+import ch02_section22

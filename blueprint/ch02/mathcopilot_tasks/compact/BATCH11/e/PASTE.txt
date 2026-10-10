@@ -1,0 +1,50 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH11e_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 93 | 71 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-2.2.4-IntegralMeanValue",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.2.4",
+  "printed_page": "71",
+  "pdf_page": "93",
+  "statement_latex": "Now if $I:\\mathbb R^m\\to\\mathbb R$ has continuous partial derivatives, we may conclude directly that\n\\[I(\\boldsymbol a)=I(\\boldsymbol b)+\\nabla I(\\boldsymbol z_*)\\cdot(\\boldsymbol a-\\boldsymbol b),\\]\nwhere $\\boldsymbol z_*$ is a point on the line in $\\mathbb R^m$ connecting $\\boldsymbol a$ to $\\boldsymbol b$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch02.integralMeanValue",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "实际EuclideanSpace ℝ (Fin n)，开放域含线段及C¹；实Fréchet算子范数等于Euclidean梯度范数。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+  "old_ids": [
+    "CH02-059"
+  ]
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem integralMeanValue :
+  ∀ n (I : EuclideanSpace ℝ (Fin n) → ℝ) (D : Set (EuclideanSpace ℝ (Fin n))) a b,
+    IsOpen D → segment ℝ a b ⊆ D → ContDiffOn ℝ 1 I D →
+    ∃ c ∈ segment ℝ a b, I a-I b = (fderiv ℝ I c) (a-b)
+```
+
+原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。

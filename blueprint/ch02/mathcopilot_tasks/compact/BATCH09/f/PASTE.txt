@@ -1,0 +1,85 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH09f_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 89 | 67 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-2.2.3-ConsistencyConvergence",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.2.3",
+  "printed_page": "67",
+  "pdf_page": "89",
+  "statement_latex": "This result shows that a method which is consistent of order $p$ and stable is convergent of order $p$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch02.consistencyConvergence",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "τ,δ,L,p严格正，K≥0；D含精确及所有细网格数值解（原文明确简化前提）。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+  "old_ids": [
+    "CH02-048"
+  ]
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem consistencyConvergence
+    (G : ℝ → E → E) (γ : ℝ → E) (D : Set E)
+    {τ δ L K p : ℝ} (hτ : 0 < τ) (hδ : 0 < δ) (hL : 0 < L)
+    (hK : 0 ≤ K) (hp : 0 < p)
+    (hexact : MapsTo γ (Icc 0 τ) D)
+    (hnum : ∀ ν : ℕ, 0 < ν → τ / (ν : ℝ) ≤ δ →
+      ∀ n ≤ ν, oneStepIterate G (τ / (ν : ℝ)) (γ 0) n ∈ D)
+    (hstable : ∀ h ∈ Ioc 0 δ, ∀ u ∈ D, ∀ w ∈ D,
+      ‖G h u - G h w‖ ≤ (1 + h * L) * ‖u - w‖)
+    (hconsistent : ∀ h ∈ Ioo 0 δ, ∀ t ∈ Icc 0 τ, t + h ≤ τ →
+      ‖G h (γ t) - γ (t + h)‖ ≤ K * h ^ (p + 1)) :
+    Tendsto (fun ν : ℕ => oneStepMaxError G (τ / (ν : ℝ)) γ ν) atTop (𝓝 0) ∧
+    ∀ᶠ ν : ℕ in atTop, oneStepMaxError G (τ / (ν : ℝ)) γ ν ≤
+      ((K / L) * Real.exp (L * τ)) * (τ / (ν : ℝ)) ^ p
+```
+
+原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.oneStepIterate (MolecularDynamics/Chapter02/OneStepConvergence.lean:31)
+```lean
+noncomputable def oneStepIterate (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) : E :=
+  (G h)^[n] z₀
+
+@[simp] theorem oneStepIterate_zero (G : ℝ → E → E) (h : ℝ) (z₀ : E) :
+    oneStepIterate G h z₀ 0 = z₀ := rfl
+
+@[simp] theorem oneStepIterate_succ (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
+    oneStepIterate G h z₀ (n + 1) = G h (oneStepIterate G h z₀ n) :=
+  Function.iterate_succ_apply' _ _ _
+```
+
+### MolecularDynamics.oneStepMaxError (MolecularDynamics/Chapter02/OneStepConvergence.lean:48)
+```lean
+noncomputable def oneStepMaxError (G : ℝ → E → E) (h : ℝ) (γ : ℝ → E) (ν : ℕ) : ℝ :=
+  (Finset.range (ν + 1)).sup' Finset.nonempty_range_add_one
+    (fun n => ‖oneStepIterate G h (γ 0) n - γ ((n : ℝ) * h)‖)
+```

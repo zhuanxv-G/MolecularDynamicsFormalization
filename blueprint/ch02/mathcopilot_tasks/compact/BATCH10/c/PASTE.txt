@@ -1,0 +1,72 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH10c_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 90 | 68 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-2.2.3-VerletConsistency",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.2.3",
+  "printed_page": "68",
+  "pdf_page": "90",
+  "statement_latex": "These relations can be summarized as telling us that\n\\[\\|\\mathcal G_h(\\boldsymbol z)-\\mathcal F_h(\\boldsymbol z)\\|=\\kappa(\\boldsymbol z)h^3+O(h^4),\\]\nwhere $\\kappa(\\boldsymbol z)=\\kappa(q,p)$ is a function of the position and momentum. We may then define\n\\[\\bar K=\\max_{t\\in[0,\\tau]}\\kappa(\\boldsymbol z(t))\\]\nbounding the local error by (with neglect of the fourth order terms) $\\bar K h^3$. Thus the Verlet method is consistent of order two.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [
+    {
+      "code": "NEGLECTED_REMAINDER",
+      "status": "NEEDS_HUMAN",
+      "detail": "原文忽略O(h⁴)后用maxκ界误差，不是严格界；保留κ主项和严格一致性，常数区分maxκ与吸收余项后的C。"
+    }
+  ],
+  "lean_decl": "MD.Ch02.verletConsistency",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "实际标量M=1流、F C³、正时间窗和连续紧轨迹；O余项在h→0+解释；严格界C允许吸收余项，不宣称C=maxκ。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+  "old_ids": [
+    "CH02-053"
+  ]
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem verletConsistency : ∀ (F : ℝ → ℝ) (Φ : ℝ → (ℝ × ℝ) → (ℝ × ℝ))
+    (γ : ℝ → ℝ × ℝ) τ δ,
+    0 < τ → 0 < δ → ContDiff ℝ 3 F → ContinuousOn γ (Icc 0 τ) →
+    (∀ z, Φ 0 z=z ∧ ∀ t ∈ Ioo (-δ) δ,
+      HasDerivAt (fun s => Φ s z) ((Φ t z).2,F (Φ t z).1) t) →
+    (∀ t ∈ Icc 0 τ, ∀ h ∈ Ioo 0 δ, γ (t+h)=Φ h (γ t)) →
+    ∃ κ : ℝ × ℝ → ℝ, ContinuousOn κ (Set.range γ) ∧
+      (∀ z ∈ Set.range γ, 0 ≤ κ z ∧ Asymptotics.IsBigO (𝓝[>] 0)
+        (fun h => ‖scalarVerlet F h z-Φ h z‖-κ z*h^3) (fun h : ℝ => h^4)) ∧
+      (∃ K ≥ 0, (∀ t ∈ Icc 0 τ, κ (γ t) ≤ K) ∧
+        (∃ t ∈ Icc 0 τ, κ (γ t)=K)) ∧
+      (∃ C ≥ 0, ∃ δ₀ > 0, ∀ t ∈ Icc 0 τ, ∀ h ∈ Ioo 0 δ₀,
+        ‖scalarVerlet F h (γ t)-Φ h (γ t)‖ ≤ C*h^3)
+```
+
+原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter02Review.scalarVerlet (MolecularDynamics/Chapter02/Statements.lean:71)
+```lean
+def scalarVerlet (F : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
+  let q := z.1+h*z.2+h^2/2*F z.1
+  (q, z.2+h/2*(F z.1+F q))
+```

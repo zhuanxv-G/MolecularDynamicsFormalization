@@ -13,32 +13,32 @@
       {
         "subtask": "BATCH01a",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH01/a",
-        "bytes": 95219,
-        "manifest_sha256": "2be31e7756c41521d59349e7cfc395745637382c39ebcf46d6d7f226fd08b638"
+        "bytes": 95285,
+        "manifest_sha256": "1ba96edebcfc06b375df83fe8e11f2cc6cc404dd0ef5a0d15fae5e42c398eb35"
       },
       {
         "subtask": "BATCH01b",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH01/b",
-        "bytes": 96976,
-        "manifest_sha256": "6c645f8779d58f9fc0553043380121f00d48de5c0b9ef72b4ec038275efb1dbc"
+        "bytes": 97042,
+        "manifest_sha256": "104e125cabcf0f862c4286fc77ef9d53f95f16811506fa5b0131732b06a9e47c"
       },
       {
         "subtask": "BATCH01c",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH01/c",
-        "bytes": 94007,
-        "manifest_sha256": "5cc88a0b654296ff2c33ee5bee05dcd8685037e65734e1cb077bb326065ae877"
+        "bytes": 94073,
+        "manifest_sha256": "527665a96d091ac057275ab2c163243faccdf61119fd64de9cf513e260ddff4f"
       },
       {
         "subtask": "BATCH01d",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH01/d",
-        "bytes": 124826,
-        "manifest_sha256": "260ec5705a930ab3be550be7e85d124dfc25c55d6d20e099d5f998a8aacda221"
+        "bytes": 124892,
+        "manifest_sha256": "997a83a2ec4869c61f4c9a73484021fc05f491e5d80685e0adddaf0cc1a21d02"
       },
       {
         "subtask": "BATCH01e",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH01/e",
-        "bytes": 125508,
-        "manifest_sha256": "477352c02e81c8149cde6e627d0d87228736f8335138ff91a8cc2ddec2ff9383"
+        "bytes": 125574,
+        "manifest_sha256": "c5b95306e742bf17babca6940e19c5bf0b91b976077b1c021b59c1fb7eaa419e"
       }
     ]
   },
@@ -55,26 +55,26 @@
       {
         "subtask": "BATCH02a",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH02/a",
-        "bytes": 116059,
-        "manifest_sha256": "c7331f5de840d8a72fc15c096228c4993cb72295c50cf85331217d137086bd74"
+        "bytes": 116125,
+        "manifest_sha256": "a3d1c8a68ef1fcc3b8d1d4420fd9a1e0a1e7b448f45f2f302445ddcce810aa21"
       },
       {
         "subtask": "BATCH02b",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH02/b",
-        "bytes": 67233,
-        "manifest_sha256": "4ec68887cdf6f782bf7bce4d035a5e748a303d6c653a00a7f34adc306ba495d7"
+        "bytes": 67299,
+        "manifest_sha256": "346be6669e8e6d9a9fe39e797746323aca4e5d3a37f69a4a6efcdebc5afb3303"
       },
       {
         "subtask": "BATCH02c",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH02/c",
-        "bytes": 106928,
-        "manifest_sha256": "ffe32103bfd313855e9ad798cff29dc1689210f509def79091aea3136c390eb2"
+        "bytes": 106994,
+        "manifest_sha256": "b649319e6a27974b1c178a9934883bf5adb0181fc16d39b2a0d3e11b8fd5de47"
       },
       {
         "subtask": "BATCH02d",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH02/d",
-        "bytes": 146831,
-        "manifest_sha256": "4a8e6097271827348a1a8c979668bf6392672d9d78dd339a3eb0ece2d0611a6d"
+        "bytes": 146897,
+        "manifest_sha256": "7532662956ccf006fdc447cdc86742562eb82858fc04b25f461f1e0a0b407265"
       }
     ]
   },
@@ -90,20 +90,392 @@
       {
         "subtask": "BATCH03a",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH03/a",
-        "bytes": 76894,
-        "manifest_sha256": "bbed7c733c53e118ec18eeb05dcaa2a4e7841d2bba42482e15d06f299d1317b3"
+        "bytes": 76960,
+        "manifest_sha256": "36ecaa5b77a7d3e27ecb47c228238986d80df982ca791a9093dbdd8601157098"
       },
       {
         "subtask": "BATCH03b",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH03/b",
-        "bytes": 77188,
-        "manifest_sha256": "74f7eb65f0399b683a6d0e1bfec6d2178e3ec68f12e5d6ee62f0b1312929c31f"
+        "bytes": 77254,
+        "manifest_sha256": "aeb516ea4cc23db498e85f3adf51ef4d482123d856fe305e7763ac7f515555a6"
       },
       {
         "subtask": "BATCH03c",
         "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH03/c",
-        "bytes": 78887,
-        "manifest_sha256": "e3e4a7f7e69b9afd70f0c953ff0f355f5b9ead88d513bea26028f731bd7cb35c"
+        "bytes": 78953,
+        "manifest_sha256": "75b70a05974a25d3f40182290eef9e9a3acfc72bf8439f5dc646f398dbaf9a69"
+      }
+    ]
+  },
+  {
+    "batch": "BATCH04",
+    "source_ids": [
+      "MD-2.2-VerletOrder"
+    ],
+    "full_batch_sha256": "7dd0cbdeebe021b396c7534bb8a244fc38fd70ef169165f5637ccdc31de5a011",
+    "subtasks": [
+      {
+        "subtask": "BATCH04a",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH04/a",
+        "bytes": 105375,
+        "manifest_sha256": "96179f76d041ef2592fc97451f50cab774fe64ce649c5e2ae38ef68d67aedef1"
+      }
+    ]
+  },
+  {
+    "batch": "BATCH05",
+    "source_ids": [
+      "MD-2.2.1-Lagrangian",
+      "MD-2.2.1-Admissible",
+      "MD-2.2.1-Action",
+      "MD-2.2.1-Variation",
+      "MD-2.2.1-FirstVariation",
+      "MD-2.2.1-TaylorPrinted",
+      "MD-2.2.1-StationaryAction",
+      "MD-2.2.1-Parts"
+    ],
+    "full_batch_sha256": "2d561c7f564aa4c66a215f7e57ea1d55c1548d7124435771f1371f63b3946fd2",
+    "subtasks": [
+      {
+        "subtask": "BATCH05a",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH05/a",
+        "bytes": 102417,
+        "manifest_sha256": "081adb0c3f53a997fa94a8a246f5cc206c135253597c27100e3560d2bc0307db"
+      },
+      {
+        "subtask": "BATCH05b",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH05/b",
+        "bytes": 103009,
+        "manifest_sha256": "6f3d8d90826e94116fc9bd71981c8d1916e1ac4f9abff46163cba3a79ae63948"
+      },
+      {
+        "subtask": "BATCH05c",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH05/c",
+        "bytes": 102304,
+        "manifest_sha256": "8e2f9c6fea44f730af09da459fd330dd86f06656cac961f41be423b975a2d0a9"
+      },
+      {
+        "subtask": "BATCH05d",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH05/d",
+        "bytes": 102468,
+        "manifest_sha256": "aac6bf5830538bf94331b4bd4bc906ea82acae372489f957f822acdba042b19a"
+      },
+      {
+        "subtask": "BATCH05e",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH05/e",
+        "bytes": 103911,
+        "manifest_sha256": "f7f0078b6f6a421fa6ab778a860c3eb01186a0b2e4790add24de3094d2c0deec"
+      },
+      {
+        "subtask": "BATCH05f",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH05/f",
+        "bytes": 102829,
+        "manifest_sha256": "a4f652af976f8153d0461e83406e02198b88e39700a53007d58849cfe3313a76"
+      },
+      {
+        "subtask": "BATCH05g",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH05/g",
+        "bytes": 110385,
+        "manifest_sha256": "ff1fa7c59803d1d4a55dc4a3ae7a76d017dd44465859abfcd9803d350a9d2f33"
+      },
+      {
+        "subtask": "BATCH05h",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH05/h",
+        "bytes": 90092,
+        "manifest_sha256": "f538be51d8441b14e4019ca96778296a95054d8976f2e3c34821ed711d7f9c15"
+      }
+    ]
+  },
+  {
+    "batch": "BATCH06",
+    "source_ids": [
+      "MD-2.2.1-EulerLagrange",
+      "MD-2.2.1-VariationalDerivativePrinted",
+      "MD-2.2.1-StationaryNotMin"
+    ],
+    "full_batch_sha256": "15c58ec2b533a1b02bfd6445dfc8be31233d8bb830b9114eb3a3674715ccc6d4",
+    "subtasks": [
+      {
+        "subtask": "BATCH06a",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH06/a",
+        "bytes": 91191,
+        "manifest_sha256": "11704c039d0cc49e60dae855a1c94b7a6017011aa69040f20de853ce1f4f25f4"
+      },
+      {
+        "subtask": "BATCH06b",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH06/b",
+        "bytes": 110098,
+        "manifest_sha256": "9637322347a394e2edde20e969e6740855076fde9be5957ce45d45bb7ebd6459"
+      },
+      {
+        "subtask": "BATCH06c",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH06/c",
+        "bytes": 91501,
+        "manifest_sha256": "b1bde444c66f033706940ec85b8ea3b5ff1c355d39153202881bb7ef4e9365c6"
+      }
+    ]
+  },
+  {
+    "batch": "BATCH07",
+    "source_ids": [
+      "MD-2.2.2-DiscretePath",
+      "MD-2.2.2-DiscreteVelocity",
+      "MD-2.2.2-DiscreteAction",
+      "MD-2.2.2-DiscreteStationaryPrinted",
+      "MD-2.2.2-DiscreteDerivative",
+      "MD-2.2.2-DiscreteVerlet",
+      "MD-2.2.2-Stormer",
+      "MD-2.2.2-VelocityVerlet"
+    ],
+    "full_batch_sha256": "caa762caf73d25adc0408a82a307c567ff639a3d3f2e360b4b118acd242c727b",
+    "subtasks": [
+      {
+        "subtask": "BATCH07a",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH07/a",
+        "bytes": 85710,
+        "manifest_sha256": "0e9afdf3dc8513760e48d1f681dde1acaee928f1e1cb1af9a3449584fc602f20"
+      },
+      {
+        "subtask": "BATCH07b",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH07/b",
+        "bytes": 85751,
+        "manifest_sha256": "9b5de6960e147f21ab51a5395da9f503a4b7e757a74331f5c5da36dc7d27b3ae"
+      },
+      {
+        "subtask": "BATCH07c",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH07/c",
+        "bytes": 86676,
+        "manifest_sha256": "9650fe11c7ed4284b15c886f8c6db2f0954f9ad5cb8b692f30ed8430ea5580f0"
+      },
+      {
+        "subtask": "BATCH07d",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH07/d",
+        "bytes": 98633,
+        "manifest_sha256": "1f8f621f0fa6b8ef77324fdfcf79d390b4a13a7b501a82b0538cadfadba59526"
+      },
+      {
+        "subtask": "BATCH07e",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH07/e",
+        "bytes": 94297,
+        "manifest_sha256": "c71494b220d9e20be7ab61a1a9465a14c5364f27d14a35098cecdf710f7c6870"
+      },
+      {
+        "subtask": "BATCH07f",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH07/f",
+        "bytes": 95030,
+        "manifest_sha256": "db9015f11e4bb66b2a7a3a04c487ed775184fdd2d658fd3b00623502b77e9548"
+      },
+      {
+        "subtask": "BATCH07g",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH07/g",
+        "bytes": 99299,
+        "manifest_sha256": "7e78eb3faaba662a3b73a7167cf0ff47b8665dc0603ad92cf51d9929658bee01"
+      },
+      {
+        "subtask": "BATCH07h",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH07/h",
+        "bytes": 100724,
+        "manifest_sha256": "4a24e1c0e870202808c0eb23f955db75f561f5b2c655643fceb3da947b077470"
+      }
+    ]
+  },
+  {
+    "batch": "BATCH08",
+    "source_ids": [
+      "MD-2.2.2-EliminateVelocity",
+      "MD-2.2.2-MomentumVerlet",
+      "MD-2.2.2-Leapfrog",
+      "MD-2.2.2-LeapfrogInit",
+      "MD-2.2.2-LeapfrogReconstruct"
+    ],
+    "full_batch_sha256": "d0ea3ca5c2912808c7c0040ee02530e34e19343d0e78de3a4c99c73c7cbb6e9d",
+    "subtasks": [
+      {
+        "subtask": "BATCH08a",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH08/a",
+        "bytes": 82322,
+        "manifest_sha256": "ed7fd7c96da4b10363ed8501393d38e46d95e338178626084656d96fac9e1ff2"
+      },
+      {
+        "subtask": "BATCH08b",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH08/b",
+        "bytes": 82408,
+        "manifest_sha256": "87b2e22396bb801f6f9d2366ada04f75a269be5d4f91e28752dc801185333d5f"
+      },
+      {
+        "subtask": "BATCH08c",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH08/c",
+        "bytes": 82174,
+        "manifest_sha256": "870c0ee7b38d55414d51e9bcebc092b0555d224c2ff3d195676f25af5a790f94"
+      },
+      {
+        "subtask": "BATCH08d",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH08/d",
+        "bytes": 81799,
+        "manifest_sha256": "85b13d7648f0aa488ecf8bc1e005845df3cdf44498e7a55ffc2be2362b2d6652"
+      },
+      {
+        "subtask": "BATCH08e",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH08/e",
+        "bytes": 81922,
+        "manifest_sha256": "eb397f16b3a2b59cf03308ffb716b6d42ea0c12a2c163368d619deea01ac7f57"
+      }
+    ]
+  },
+  {
+    "batch": "BATCH09",
+    "source_ids": [
+      "MD-2.2.3-ErrorDifference",
+      "MD-2.2.3-Consistency",
+      "MD-2.2.3-Stability",
+      "MD-2.2.3-ErrorRecursion",
+      "MD-2.2.3-ErrorBound",
+      "MD-2.2.3-ConsistencyConvergence",
+      "MD-2.2.3-ScalarVerlet",
+      "MD-2.2.3-VerletExpansion"
+    ],
+    "full_batch_sha256": "dc9df5292bcfb072b493ab75a7ec3e0c486509fbfd0d987758569f9f7e64dcc9",
+    "subtasks": [
+      {
+        "subtask": "BATCH09a",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH09/a",
+        "bytes": 90691,
+        "manifest_sha256": "cc8a0cc390baca94123a79f6ce89a641c535e630fd64a1bf289445412607c54a"
+      },
+      {
+        "subtask": "BATCH09b",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH09/b",
+        "bytes": 107481,
+        "manifest_sha256": "eaab65987757e14c76e406d0e257e21b619630ce593bbbc654074a5337ae4aa9"
+      },
+      {
+        "subtask": "BATCH09c",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH09/c",
+        "bytes": 107494,
+        "manifest_sha256": "bc633c1f5a729bf35e2d9567f560392cdd97e3a2cbba24f3566209b1b42c70dc"
+      },
+      {
+        "subtask": "BATCH09d",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH09/d",
+        "bytes": 107957,
+        "manifest_sha256": "34bc2cfe143bd7dc185446472b66eba37a9f4d8194a0cf9cfc5249f7b2562993"
+      },
+      {
+        "subtask": "BATCH09e",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH09/e",
+        "bytes": 87765,
+        "manifest_sha256": "c4df6a221b4a48d9a160475d34d151ae6ea32c4b8896475eb9116aaf3ad53409"
+      },
+      {
+        "subtask": "BATCH09f",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH09/f",
+        "bytes": 88220,
+        "manifest_sha256": "067f1b9bca99fad3724e093446fe9eec85aa41d39f9867f12ca87a0ddfd937a1"
+      },
+      {
+        "subtask": "BATCH09g",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH09/g",
+        "bytes": 86845,
+        "manifest_sha256": "223288dc4ebf40ff1d84a85108655b6772d59fa20e556cd5921ed6fdd8823300"
+      },
+      {
+        "subtask": "BATCH09h",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH09/h",
+        "bytes": 96746,
+        "manifest_sha256": "5b0452d018194814aca2ca7fa4b6fd617ca5ea9b8587390819fc44318e3ced2c"
+      }
+    ]
+  },
+  {
+    "batch": "BATCH10",
+    "source_ids": [
+      "MD-2.2.3-ExactExpansion",
+      "MD-2.2.3-DefectPrinted",
+      "MD-2.2.3-VerletConsistency",
+      "MD-2.2.3-VerletStability"
+    ],
+    "full_batch_sha256": "1189aa7d1288522c172def22aaedef01825e74f699a09033ad11dd6baef3fa92",
+    "subtasks": [
+      {
+        "subtask": "BATCH10a",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH10/a",
+        "bytes": 83043,
+        "manifest_sha256": "5b080ed158f94906cc1c7a3d0881990dcb2917e0f06c2242fbffcd571b598bf0"
+      },
+      {
+        "subtask": "BATCH10b",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH10/b",
+        "bytes": 83192,
+        "manifest_sha256": "0bb48d58358b9507baa8b041c74b05e62119cb4d824e5054090f17ca6f6ab31b"
+      },
+      {
+        "subtask": "BATCH10c",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH10/c",
+        "bytes": 83991,
+        "manifest_sha256": "5a36c17eb078230047176d6c60a12b5b88e8d7203bf299938813d0806ec6dd60"
+      },
+      {
+        "subtask": "BATCH10d",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH10/d",
+        "bytes": 228836,
+        "manifest_sha256": "6872d72949787e1ab2d53efb17cb74cb85d823384b5760c6ec4f44cfa9a5a0b7"
+      }
+    ]
+  },
+  {
+    "batch": "BATCH11",
+    "source_ids": [
+      "MD-2.2.4-FirstIntegral",
+      "MD-2.2.4-IntegralPreserved",
+      "MD-2.2.4-EnergyPreserved",
+      "MD-2.2.4-AngularMomentum",
+      "MD-2.2.4-IntegralMeanValue",
+      "MD-2.2.4-IntegralLipschitz",
+      "MD-2.2.4-IntegralErrorPrinted"
+    ],
+    "full_batch_sha256": "9447d6089ff9224fad6283392ea4719208c48c1a0dd51c4a6c62b153ae7e06b5",
+    "subtasks": [
+      {
+        "subtask": "BATCH11a",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH11/a",
+        "bytes": 173419,
+        "manifest_sha256": "89fd10ee0cb579b309060b2546acc459aa390ce1d2d93ee47623f1da270d83bd"
+      },
+      {
+        "subtask": "BATCH11b",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH11/b",
+        "bytes": 174261,
+        "manifest_sha256": "1f70d3251d9d82b9ba11024d8a82b52f61d6ae618309d0e7b8bc96e48c3fcab8"
+      },
+      {
+        "subtask": "BATCH11c",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH11/c",
+        "bytes": 174057,
+        "manifest_sha256": "8a0b46cb0fad169b93a75d7a18d74cdebd10d01eb22a081bb6fe66700e3c705b"
+      },
+      {
+        "subtask": "BATCH11d",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH11/d",
+        "bytes": 89931,
+        "manifest_sha256": "49198d26cf604be788f5a90952fba7ff91a6d79e66b4fa6151ac6b81988d94a4"
+      },
+      {
+        "subtask": "BATCH11e",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH11/e",
+        "bytes": 89873,
+        "manifest_sha256": "08a3513c7e91865386ee69c287980ab2fd731ab1367990fa0005ef158082a8cf"
+      },
+      {
+        "subtask": "BATCH11f",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH11/f",
+        "bytes": 89855,
+        "manifest_sha256": "8e4e9d2bd63c0f52fe02476922604fea77613c93c72d7747964819a351eff0ae"
+      },
+      {
+        "subtask": "BATCH11g",
+        "path": "blueprint/ch02/mathcopilot_tasks/compact/BATCH11/g",
+        "bytes": 90590,
+        "manifest_sha256": "0e77070582867fa64db1d514cb96d6f17106c510725958c3a0a976213b4f76a9"
       }
     ]
   }

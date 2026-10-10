@@ -1,0 +1,54 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09f",
+  "source_ids": [
+    "MD-2.2.3-ConsistencyConvergence"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 89,
+      "printed_page": 67
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "3e48b17bbad44969d2ebcf7ead49264bb754e35d9cad79065a9b52397f5fdcdb",
+  "lean_sha256": "a8c61106d968fc0dcb756f391b52ba67effc78a04ddcd8b48d53a144e7697861",
+  "signature_sha256": "b87ca03cb9c5749bac480fe34da336d92ad93f71ab8c7eca1714a9016e63f15d",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "oneStepIterate",
+      "code_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "oneStepMaxError",
+      "code_sha256": "a2e0304f877b1bcc275c037c80f553a53265a01a518b5109bd0a07449b85bc5a"
+    }
+  ],
+  "paste_plus_pdf_bytes": 88220,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4489,
+      "sha256": "ab179ff3e9489ee03ae427de3ac3b46bcc25d81d28d09b4420ea0b97db6ad80a"
+    },
+    "BATCH09f_PAGES.pdf": {
+      "bytes": 83816,
+      "sha256": "b0a960eb6bfbd40370016e49fa4e6a732b23a22111ec9b0ee4d8f5e3fb156d27"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

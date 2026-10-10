@@ -1,0 +1,59 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09b",
+  "source_ids": [
+    "MD-2.2.3-Consistency"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 88,
+      "printed_page": 66
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 89,
+      "printed_page": 67
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "3e48b17bbad44969d2ebcf7ead49264bb754e35d9cad79065a9b52397f5fdcdb",
+  "lean_sha256": "a8c61106d968fc0dcb756f391b52ba67effc78a04ddcd8b48d53a144e7697861",
+  "signature_sha256": "81b9bbc8c8a451935f2f2b65f660d0ee130e97bc3fc4613cbf43b1c624cfbccc",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "consistency",
+      "code_sha256": "81b9bbc8c8a451935f2f2b65f660d0ee130e97bc3fc4613cbf43b1c624cfbccc"
+    }
+  ],
+  "paste_plus_pdf_bytes": 107481,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3765,
+      "sha256": "67be76fbfd8e43f4d6f09574a3c156a37e80021ddedca2691dc906acb834964f"
+    },
+    "BATCH09b_PAGES.pdf": {
+      "bytes": 103783,
+      "sha256": "fd8ef8b6f1d55d9a1541d030ba2a92fe3edefd12bdef06771611cefbf6973ded"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

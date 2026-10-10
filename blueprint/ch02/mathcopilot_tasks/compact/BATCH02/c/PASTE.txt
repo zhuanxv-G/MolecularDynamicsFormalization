@@ -47,7 +47,7 @@ def maximumError {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   oneStepMaxError G h γ ν
 ```
 
-原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}。
+原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]。
 标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
 
 ### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
@@ -55,7 +55,7 @@ def maximumError {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch02.maximumError (Blueprint/Ch02.lean:50)
+### MD.Ch02.maximumError (Blueprint/Ch02.lean:51)
 ```lean
 def maximumError {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (G : ℝ → E → E) (γ : ℝ → E) (h : ℝ) (ν : ℕ) : ℝ :=

@@ -1,0 +1,35 @@
+{
+  "batch": "BATCH10",
+  "subtask": "BATCH10a",
+  "source_ids": [
+    "MD-2.2.3-ExactExpansion"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 90,
+      "printed_page": 68
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "3e48b17bbad44969d2ebcf7ead49264bb754e35d9cad79065a9b52397f5fdcdb",
+  "lean_sha256": "a8c61106d968fc0dcb756f391b52ba67effc78a04ddcd8b48d53a144e7697861",
+  "signature_sha256": "f2c55a7e37901894aa81ab392ab101c4eb4c3d190a02ea19d1b69472a017dbc9",
+  "definition_excerpts": [],
+  "paste_plus_pdf_bytes": 83043,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3388,
+      "sha256": "23a509f9b12d7abcc94424e9dab2e208c07753291eb82cbba534cd04609bf1ac"
+    },
+    "BATCH10a_PAGES.pdf": {
+      "bytes": 79709,
+      "sha256": "98d49c8a1b4c33514a9074b7e81689f901071120864958dabfecdcb713eb039b"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

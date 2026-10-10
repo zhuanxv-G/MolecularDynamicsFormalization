@@ -22,6 +22,62 @@
         "result": "STOP_MISSING_THEORY",
         "detail": "Missing Taylor local truncation/stability/domain/global order bridge"
       }
+    ],
+    "MD-2.2.4-AngularMomentum": [
+      {
+        "attempt": 1,
+        "result": "FAIL",
+        "route": "tuple HasDerivWithinAt projection/mul",
+        "evidence": "validation/section22-short.log"
+      },
+      {
+        "attempt": 2,
+        "result": "FAIL",
+        "route": "typed coordinate derivatives with .hasDerivWithinAt",
+        "evidence": "validation/section22-short2.log"
+      },
+      {
+        "attempt": 3,
+        "result": "FAIL",
+        "route": "Filter derivative conversion",
+        "evidence": "validation/section22-short3.log"
+      }
+    ],
+    "MD-2.2.4-IntegralPreserved": [
+      {
+        "attempt": 1,
+        "result": "FAIL",
+        "route": "untyped chain rule (NormedSpace instance mismatch)",
+        "evidence": "validation/section22-short.log"
+      },
+      {
+        "attempt": 2,
+        "result": "PASS",
+        "route": "typed scalar chain rule on Icc and right-derivative constancy",
+        "evidence": "validation/section22-mvt-real2.log"
+      }
+    ],
+    "MD-2.2.4-IntegralMeanValue": [
+      {
+        "attempt": 1,
+        "result": "FAIL",
+        "route": "domain_mvt: differentiability qualification and segment symmetry",
+        "evidence": "validation/section22-mvt-real1.log"
+      },
+      {
+        "attempt": 2,
+        "result": "PASS",
+        "route": "domain_mvt with actual fderiv on open domain",
+        "evidence": "validation/section22-mvt-real2.log"
+      }
+    ],
+    "MD-2.2.4-IntegralLipschitz": [
+      {
+        "attempt": 1,
+        "result": "PASS",
+        "route": "same actual mean point and continuous linear map operator bound",
+        "evidence": "validation/section22-mvt-real2.log"
+      }
     ]
   }
 }

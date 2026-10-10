@@ -1,0 +1,71 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07g",
+  "source_ids": [
+    "MD-2.2.2-Stormer"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 86,
+      "printed_page": 64
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 115,
+      "printed_page": 93
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "3e48b17bbad44969d2ebcf7ead49264bb754e35d9cad79065a9b52397f5fdcdb",
+  "lean_sha256": "a8c61106d968fc0dcb756f391b52ba67effc78a04ddcd8b48d53a144e7697861",
+  "signature_sha256": "83dc5efda6aaaf94fb398e07b9327a57f25c4b7484392e7ad8e7af72d2d81bab",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "bp_stormerRelation",
+      "code_sha256": "83dc5efda6aaaf94fb398e07b9327a57f25c4b7484392e7ad8e7af72d2d81bab"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    }
+  ],
+  "paste_plus_pdf_bytes": 99299,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3633,
+      "sha256": "cc3b69a57772ee755993175dadd6a25f709a0e3ac00342a90e425399ce4bf9c0"
+    },
+    "BATCH07g_PAGES.pdf": {
+      "bytes": 95742,
+      "sha256": "993098a6571f3399d9263e0de05fffca792cf9c54911077f18af63ea29f50830"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

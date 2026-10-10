@@ -1,0 +1,91 @@
+Blueprint/Ch02.lean:88:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:95:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:122:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:137:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:153:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:163:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:180:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:208:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:218:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:280:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.errorRecursion`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:295:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.errorBound`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:323:75: error: Tactic `assumption` failed
+
+case left.hnum
+E : Type u_1
+inst✝¹ : NormedAddCommGroup E
+inst✝ : NormedSpace ℝ E
+G : ℝ → E → E
+γ : ℝ → E
+D : Set E
+τ δ L K p : ℝ
+hτ : 0 < τ
+hδ : 0 < δ
+hL : 0 < L
+hK : 0 ≤ K
+hp : 0 < p
+hexact : MapsTo γ (Icc 0 τ) D
+hnum : ∀ (ν : ℕ), 0 < ν → τ / ↑ν ≤ δ → ∀ n ≤ ν, oneStepIterate G (τ / ↑ν) (γ 0) n ∈ D
+hstable : ∀ h ∈ Ioc 0 δ, ∀ u ∈ D, ∀ w ∈ D, ‖G h u - G h w‖ ≤ (1 + h * L) * ‖u - w‖
+hconsistent : ∀ h ∈ Ioo 0 δ, ∀ t ∈ Icc 0 τ, t + h ≤ τ → ‖G h (γ t) - γ (t + h)‖ ≤ K * h ^ (p + 1)
+⊢ ∀ (ν : ℕ), 0 < ν → τ / ↑ν ≤ p → ∀ n ≤ ν, oneStepIterate G (τ / ↑ν) (γ 0) n ∈ D
+Blueprint/Ch02.lean:323:75: error: Tactic `assumption` failed
+
+case left.hstable
+E : Type u_1
+inst✝¹ : NormedAddCommGroup E
+inst✝ : NormedSpace ℝ E
+G : ℝ → E → E
+γ : ℝ → E
+D : Set E
+τ δ L K p : ℝ
+hτ : 0 < τ
+hδ : 0 < δ
+hL : 0 < L
+hK : 0 ≤ K
+hp : 0 < p
+hexact : MapsTo γ (Icc 0 τ) D
+hnum : ∀ (ν : ℕ), 0 < ν → τ / ↑ν ≤ δ → ∀ n ≤ ν, oneStepIterate G (τ / ↑ν) (γ 0) n ∈ D
+hstable : ∀ h ∈ Ioc 0 δ, ∀ u ∈ D, ∀ w ∈ D, ‖G h u - G h w‖ ≤ (1 + h * L) * ‖u - w‖
+hconsistent : ∀ h ∈ Ioo 0 δ, ∀ t ∈ Icc 0 τ, t + h ≤ τ → ‖G h (γ t) - γ (t + h)‖ ≤ K * h ^ (p + 1)
+⊢ ∀ h ∈ Ioc 0 p, ∀ u ∈ D, ∀ w ∈ D, ‖G h u - G h w‖ ≤ (1 + h * p) * ‖u - w‖
+Blueprint/Ch02.lean:323:75: error: Tactic `assumption` failed
+
+case left.hconsistent
+E : Type u_1
+inst✝¹ : NormedAddCommGroup E
+inst✝ : NormedSpace ℝ E
+G : ℝ → E → E
+γ : ℝ → E
+D : Set E
+τ δ L K p : ℝ
+hτ : 0 < τ
+hδ : 0 < δ
+hL : 0 < L
+hK : 0 ≤ K
+hp : 0 < p
+hexact : MapsTo γ (Icc 0 τ) D
+hnum : ∀ (ν : ℕ), 0 < ν → τ / ↑ν ≤ δ → ∀ n ≤ ν, oneStepIterate G (τ / ↑ν) (γ 0) n ∈ D
+hstable : ∀ h ∈ Ioc 0 δ, ∀ u ∈ D, ∀ w ∈ D, ‖G h u - G h w‖ ≤ (1 + h * L) * ‖u - w‖
+hconsistent : ∀ h ∈ Ioo 0 δ, ∀ t ∈ Icc 0 τ, t + h ≤ τ → ‖G h (γ t) - γ (t + h)‖ ≤ K * h ^ (p + 1)
+⊢ ∀ h ∈ Ioo 0 p, ∀ t ∈ Icc 0 τ, t + h ≤ τ → ‖G h (γ t) - γ (t + h)‖ ≤ K * h ^ (p + 1)
+Blueprint/Ch02.lean:358:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:368:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:381:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:393:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:410:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:424:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:442:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:454:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:462:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:471:8: warning: declaration uses `sorry`

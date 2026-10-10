@@ -1,0 +1,52 @@
+Blueprint/Ch02.lean:88:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:95:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:122:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:137:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:153:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:163:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:180:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:208:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:218:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:280:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.errorRecursion`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:295:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.errorBound`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:308:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.consistencyConvergence`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:360:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:370:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:383:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:395:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:412:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:436:4: error: Type mismatch: After simplification, term
+  hc
+ has type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (I ∘ γ) 0 (Icc a b) t
+but is expected to have type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.instAddCommGroup Semiring.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun s => I (γ s)) 0 (Icc a b) t
+Blueprint/Ch02.lean:465:30: error(lean.invalidField): Invalid field `mul`: The environment does not contain `HasFDerivAtFilter.mul`, so it is not possible to project the field `mul` from an expression
+  HasFDerivAtFilter.fst (hγ t ht)
+of type
+  HasFDerivAtFilter (fun x => (γ x).1)
+    (ContinuousLinearMap.fst ℝ ℝ (ℝ × ℝ × ℝ) ∘SL
+      ContinuousLinearMap.toSpanSingleton ℝ
+        ((γ t).2.2.1, (γ t).2.2.2, ρ ((γ t).1 ^ 2 + (γ t).2.1 ^ 2) * (γ t).1,
+          ρ ((γ t).1 ^ 2 + (γ t).2.1 ^ 2) * (γ t).2.1))
+    (𝓝[Icc a b] t ×ˢ pure t)
+Blueprint/Ch02.lean:474:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:482:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:491:8: warning: declaration uses `sorry`

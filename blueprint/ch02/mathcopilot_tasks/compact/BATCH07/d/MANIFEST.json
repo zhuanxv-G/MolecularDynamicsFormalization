@@ -1,0 +1,77 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07d",
+  "source_ids": [
+    "MD-2.2.2-DiscreteStationaryPrinted"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 85,
+      "printed_page": 63
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 86,
+      "printed_page": 64
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "3e48b17bbad44969d2ebcf7ead49264bb754e35d9cad79065a9b52397f5fdcdb",
+  "lean_sha256": "a8c61106d968fc0dcb756f391b52ba67effc78a04ddcd8b48d53a144e7697861",
+  "signature_sha256": "7b1665846f2b2a4d259a1e1dece7d555ba7939241be18910a2536074c613d49e",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "discreteAction",
+      "code_sha256": "d5a4aef1084927d76acac190d95df0fcddbc47b427fcb45c51c6cf5b00605bdd"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "discreteVelocity",
+      "code_sha256": "b41d426e91924e3830180c59bbc2165cac11b89dec2683adfc2e6e2979a1ef4d"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "printedDiscreteStationary",
+      "code_sha256": "7b1665846f2b2a4d259a1e1dece7d555ba7939241be18910a2536074c613d49e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "replaceNode",
+      "code_sha256": "0aa1f994d32eba7235b8f59488dbec3b7090357dbd4d2be74e12d679eb77fb03"
+    }
+  ],
+  "paste_plus_pdf_bytes": 98633,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4600,
+      "sha256": "e1cac5fcde9944de29b6bb1909b01926928386d9574291d5bf3a703787518975"
+    },
+    "BATCH07d_PAGES.pdf": {
+      "bytes": 94124,
+      "sha256": "be35e84dea9a9251eb6285ac03a82defef45bfa5b258868f7084d4bd09ddcbfb"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

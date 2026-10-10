@@ -46,7 +46,7 @@ def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnerg
     PhaseSpace n → ℝ := massHamiltonian m U
 ```
 
-原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}。
+原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]。
 标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
 
 ### MolecularDynamics.CoordinateMasses (MolecularDynamics/Chapter01/NBody.lean:19)
@@ -139,7 +139,7 @@ noncomputable def massSeparableEnergy {n : ℕ} (m : CoordinateMasses n)
     (U : PotentialEnergy n) : SeparableEnergy n := ⟨momentumKineticEnergy m, U⟩
 ```
 
-### MD.Ch02.mechanicalHamiltonian (Blueprint/Ch02.lean:23)
+### MD.Ch02.mechanicalHamiltonian (Blueprint/Ch02.lean:24)
 ```lean
 def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n) :
     PhaseSpace n → ℝ := massHamiltonian m U
