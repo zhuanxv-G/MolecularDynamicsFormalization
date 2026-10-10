@@ -1,0 +1,79 @@
+{
+  "batch": "BATCH13",
+  "subtask": "BATCH13e",
+  "source_ids": [
+    "MD-3.4-PhysicalEnergyDrift"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 137,
+      "printed_page": 115
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "5ffd37fb8d9b61f2f229257997494e0736b1ce3fcc64d01922ae2c12b35e8ba5",
+  "lean_sha256": "1383b5071a3755e6d67a0fcbebeb2b643ce1ddb05eb0b788ff47134239581d6c",
+  "signature_sha256": "35f4c7619f093a43e8762642c21321c12d8c8c124f026c7b7033de07c2d153eb",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinateMatrix",
+      "code_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "oneStepIterate",
+      "code_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookHamiltonianVectorField",
+      "code_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookJ",
+      "code_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ModifiedHamiltonianBounds.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookTruncatedHamiltonian",
+      "code_sha256": "ae4576437497e7b2a8dde76a400e7f755c31380752cb4ac2abe3b94f50ad8979"
+    }
+  ],
+  "paste_plus_pdf_bytes": 94259,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6138,
+      "sha256": "cf2390a24c0981154259d36a2cb19e472f53f88ecae05c48b5cebc8536f19ce3"
+    },
+    "BATCH13e_PAGES.pdf": {
+      "bytes": 88121,
+      "sha256": "09129af39c2a7dd73f7cd3d9017500be4e8d48802e77b8d54b6815ca1e27c2e0"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 97194
+}

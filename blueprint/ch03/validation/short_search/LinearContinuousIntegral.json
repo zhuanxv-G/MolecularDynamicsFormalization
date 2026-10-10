@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n b f γ hbf hγ t\n  have hd : ∀ s, HasDerivAt (fun t => ∑ i, b i*γ t i) 0 s := by\n    intro s\n    simpa only [hbf] using HasDerivAt.fun_sum\n      (u := Finset.univ) (fun i _ => ((hasDerivAt_pi.mp (hγ s)) i).const_mul (b i))\n  exact is_const_of_deriv_eq_zero (fun s => (hd s).differentiableAt)\n    (fun s => (hd s).deriv) t 0",
+    "source": "blueprint/ch03/validation/short_search/LinearContinuousIntegral-route1.lean",
+    "log": "blueprint/ch03/validation/short_search/LinearContinuousIntegral-route1.log",
+    "source_sha256": "4b40d52d4648a129d67767404f3354afa412df033505941cf18387d8fea1907d",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

@@ -1,0 +1,49 @@
+3.5  Energy Conserving Methods                                                123
+
+
+We see that
+
+               I.unC1; vnC1/ D unC1   vnC1 D un   vn D I.un; vn/;
+
+which means that Euler’s method conserves this ﬁrst integral. We say that this
+conservation property is exact, even though, in practice, there could be ﬂuctuations
+in the result depending on how the computations are carried out on a computer
+(normally, if the relevant algebraic equations are solved numerically, there will be
+small residual errors which are similar in magnitude to the computer rounding error.
+   Generalizing this slightly, we could imagine a system of ODEs of the form
+
+                                                                            Pz D f.z/;
+
+such that, for some vector b,
+
+                            b  f.z/    0;
+
+then I.z/ D b  z is a ﬁrst integral. It is straightforward to see that Euler’s method
+conserves such a linear ﬁrst integral exactly, as is true of many other popular
+numerical methods. Thus momentum conservation is rarely violated by (sensible)
+numerical methods.
+  The interest is usually in conserving some more complicated ﬁrst integrals, for
+example the energy of the system. None of the schemes we have considered so far
+(Euler’s method, Störmer-Verlet, etc.) conserves this quantity exactly, even in the
+case of a harmonic oscillator. In the case of Euler’s method applied to the harmonic
+oscillator, the error in energy grows with time and without bound. In the case of
+Störmer-Verlet, the energy ﬂuctuates but remains bounded for all time and at its
+worst is of size proportional to h2, a numerical observation that is supported by the
+existence of the modiﬁed Hamiltonian.
+    It is tempting to consider energy-conserving methods by which the energy is
+corrected at each step back to the initial value. This is easy to do in general, and
+there are in fact many choices of the method used. Let us consider one particular
+approach. We start by taking a timestep with any arbitrary (nonconserving) numer-
+ical method, say to an intermediate phase point NQ; NP, then we “ﬁx it up” by scaling
+the momentum by an adjustment factor, deﬁning
+
+                 Q D NQ;   P D   NP;
+
+selecting   so that the energy in the result is a prescribed value E. The energy
+ﬂuctuation in our pre-correction scheme would typically be small in a single
+timestep, so the correction   should also be close to one. This method is easy to
+implement: the equation that must be solved is
+
+                                  2 NPTM  1 NP
+                    C U. NQ/ D E;                      (3.12)
+                           2

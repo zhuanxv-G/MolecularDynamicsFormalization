@@ -113,3 +113,6 @@ if route_path.exists():
             break
     else:
         if len(routes)>=3:target['missing']='三条有限系数证明路线失败，已停止；证据见validation/short_search/StrangCubic.json。'
+import ch03_section34
+import ch03_section34b
+import ch03_section34c

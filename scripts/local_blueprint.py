@@ -28,6 +28,16 @@ def pipeline(ch):
     text=text.replace('MolecularDynamics.Chapter02Review；', f'MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review；')
     text=text.replace('a.update(checked=False,axioms=[]', 'a.update(checked=False,compiled=False,axioms=[]')
     text=text.replace("'已编译' if a['checked'] else '待编译'", "'已编译/公理已核' if a['checked'] else ('已编译/待公理' if a.get('compiled') else '待编译')")
+    # The user's byte cap includes all three files, including the manifest.
+    text=text.replace("dump(folder/'MANIFEST.json',report);subtasks.append", """dump(folder/'MANIFEST.json',report)
+            for _ in range(3):
+                report['total_task_bytes']=size+(folder/'MANIFEST.json').stat().st_size
+                dump(folder/'MANIFEST.json',report)
+            total_bytes=sum(f.stat().st_size for f in folder.iterdir() if f.is_file())
+            assert total_bytes<256000,(task,total_bytes)
+            subtasks.append""")
+    text=text.replace('bytes=size,manifest_sha256=', 'bytes=total_bytes,manifest_sha256=')
+    text=text.replace('compact子任务（输入+PDF字节）', 'compact子任务（PASTE+PDF+MANIFEST字节）')
     # Per-module source scope never includes Ch01 or prior chapter output writes.
     m=types.ModuleType('local_current_pipeline');m.__file__=str(ROOT/'scripts/local_blueprint.py')
     sys.modules[m.__name__]=m;exec(compile(text,m.__file__,'exec'),m.__dict__)
@@ -65,7 +75,7 @@ def compile_batch(ch,p,batch):
         log.write_bytes(result.stdout)
         p.dump(evidence,dict(command=command,exit_code=result.returncode,input_sha256=input_sha,log_sha256=p.sha(log),decl_blocks={sid:d['block_sha256'] for sid,d in p.declarations().items()}))
         if result.returncode:
-            print(result.stdout.decode('utf-8',errors='replace'));raise SystemExit(result.returncode)
+            print(result.stdout.decode('utf-8',errors='replace').encode(sys.stdout.encoding,errors='replace').decode(sys.stdout.encoding));raise SystemExit(result.returncode)
         print('Single-file Lean passed:',batch)
     audit=json.loads((p.BASE/'local_audit.json').read_text(encoding='utf-8'))
     for item in audit['items'].values():item.update(compiled=True,compile_evidence=evidence.relative_to(ROOT).as_posix())

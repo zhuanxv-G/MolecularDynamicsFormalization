@@ -1,0 +1,45 @@
+132                                              3  Analyzing Geometric Integrators
+
+                  ˚ D    1      :
+
+In such a case the iterates of the two maps will also be conjugate and, if they
+are numerical methods, they will have similar stability properties and performance
+(e.g. the same effective order). It is difﬁcult to separate the relevance of the two
+properties in cases where symplectic and reversible maps are conjugate. This is
+however rarely the case and certainly does not hold generically for discrete maps in
+many dimensions [209]. There is no direct correspondence between reversible and
+symplectic maps, however each class of maps admits certain theorems of dynamical
+systems which are in many ways analogous (for example, the Kolmogorov-Arnold-
+Moser, or KAM, theory for symplectic maps near elliptic ﬁxed points [386] has an
+analogue for reversible maps [97]).
+  Of particular importance for molecular dynamics are the following properties:
+a symplectic map will preserve volume, whereas a time-reversible map need not
+do so, and a symplectic integrator will approximately conserve energy due to the
+existence of the perturbed Hamiltonian, whereas a time-reversible integrator may
+give rise to a drift in energy [166].
+
+
+
+3.7  Molecular Dynamics with Hard-Sphere Collisions
+
+
+We close this chapter with a discussion of molecular dynamics with hard-core
+repulsion. This is a system which is not, properly speaking, Hamiltonian, but
+which has dynamics that are largely deﬁned by a Hamiltonian system. The added
+complication is the nonsmooth character of the motion as impulses are applied at
+points of collision. The discussion below is a summary of work in [40, 184].
+  We assume, as usual a Hamiltonian H D pTM 1p=2 C U.q/ but we add the
+inequality constraint kqi   qjk           i C    j where   i, i D 1; : : : ; N is a core radius.
+The condition kqi   qjk D    i C   j, some i; j deﬁnes the constraint surface. When the
+particles are not touching, they move along Newtonian paths deﬁned by the standard
+equations of motion. At impact, they exchange momentum and energy according to
+the rules of elastic collision. Speciﬁcally, at the point of contact, the momentum
+vectors of the two spheres are adjusted according to the rule:
+
+                            p :D p C ˛u?
+
+where u? is normal to the constraint surface and ˛ is a parameter chosen to maintain
+the conservation of energy. Let Rc denote the action of the collision operator on the
+vector of positions and momenta. Then we can write the evolution formally as
+
+        F h:s: .q; p/ D G    r ı Rc ı G    r  1 : : : ı Rc ı G   0

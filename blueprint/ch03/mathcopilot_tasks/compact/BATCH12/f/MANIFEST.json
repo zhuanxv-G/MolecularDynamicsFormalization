@@ -1,0 +1,43 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12f",
+  "source_ids": [
+    "MD-3.4-CompactLipschitz"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 136,
+      "printed_page": 114
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "5ffd37fb8d9b61f2f229257997494e0736b1ce3fcc64d01922ae2c12b35e8ba5",
+  "lean_sha256": "1383b5071a3755e6d67a0fcbebeb2b643ce1ddb05eb0b788ff47134239581d6c",
+  "signature_sha256": "399bc1b2fce9a1f28ae47583eb098deb189d841593043c38044f2e6231b1fff9",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "paste_plus_pdf_bytes": 111834,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3342,
+      "sha256": "190ece99942192311b6df3325532ccce5ef5508e54239ceb4e43e0f61253d611"
+    },
+    "BATCH12f_PAGES.pdf": {
+      "bytes": 108492,
+      "sha256": "55a546bf07f554c7d0c2497bae5267deb91cadbb8ec4342f6a30b16a8b606a44"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 113246
+}

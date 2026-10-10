@@ -1,0 +1,45 @@
+134                                              3  Analyzing Geometric Integrators
+
+
+the end of the timestep, and (iii) there is a single collision within the timestep. [The
+case of additional collisions within the step could be handled as in (iii).] In cases
+(i) and (ii) it is clear that the error accumulating in a single step will be third order
+in the stepsize, since the Verlet method has local error of order three (since it is a
+second order method).
+  Now consider case (iii). The contact happens when the particles are separated by
+a distance 1, at which point u? D q. We assume the time of contact is  c.
+
+                          NP :D p    h2rU .q/ ;   qc :D q C  c NP;
+
+              u? :D qc;                 OP :D NP C ˛ u?;
+
+           Q :D qc C .h    c/ OP P :D OP    h2 rU .Q/ ;
+
+The coefﬁcient ˛ is chosen so that the kinetic energy is conserved through collision,
+thus
+
+                             u?  NP
+                       ˛ D  2            :
+                             u? u?
+
+  We next calculate the change in energy in a single step by inserting Q and P into
+the Hamiltonian and expanding around the point of collision qc, obtaining
+
+
+                                def
+           H D H .Q; P/  H .q; p/
+                                   qTc NP           D   .h  2 c/     qTc rU .qc/ C O h2
+                                                     qTc qc
+
+Energy is therefore conserved only to ﬁrst order through the collision unless one of
+the following conditions holds:
+
+•  there is no collision
+•  the collision occurs at the end of a timestep
+•  the collision occurs at the middle of the timestep,  c D h=2,
+•  the directional derivative of U along the collision vector (u? D qc) vanishes, or
+•  the momentum vector is orthogonal to the collision vector at the point of contact.
+
+   In general, because an error of size O.h/ occurs in each collision and there are a
+ﬁnite number of collisions in a ﬁxed time interval, the total error is also O.h/, i.e.
+ﬁrst order.

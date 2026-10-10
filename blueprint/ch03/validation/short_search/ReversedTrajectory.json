@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch03/validation/short_search/ReversedTrajectory-route1.lean",
+    "log": "blueprint/ch03/validation/short_search/ReversedTrajectory-route1.log",
+    "source_sha256": "662b3d78b091545f89f788e24d43b10f2e42dd071aa7ef83fc1fbfb3fa40c92a",
+    "log_sha256": "778c071629ead1dead971310c9148df4dfd515274a136692d38e90149c57d2b1"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch03/validation/short_search/ReversedTrajectory-route2.lean",
+    "log": "blueprint/ch03/validation/short_search/ReversedTrajectory-route2.log",
+    "source_sha256": "5315f942a36f0c029974ae54545275b71d9f1505875bd703414cc41ce8222df3",
+    "log_sha256": "abe15573c3a47214236632443f128d585760e7ac6806cbb7f5b9a9359ec7afc8"
+  },
+  {
+    "route": 3,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch03/validation/short_search/ReversedTrajectory-route3.lean",
+    "log": "blueprint/ch03/validation/short_search/ReversedTrajectory-route3.log",
+    "source_sha256": "95fb7ece51ecfe0c16c87f6dc885e6c81e75cc3b97ccdbee0441443d7d2cc8b2",
+    "log_sha256": "03588ff94e81e78392e6b4e385fa2ded8422041957af1ed9ab17f4f6acbd7e9c"
+  }
+]

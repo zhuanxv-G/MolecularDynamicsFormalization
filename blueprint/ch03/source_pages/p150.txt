@@ -1,0 +1,50 @@
+128                                              3  Analyzing Geometric Integrators
+
+
+1. The symplectic two-form dq ^ dp.
+2. The Hamiltonian (i.e., the energy) H.
+3. The volume in phase space (as the vector ﬁeld is divergence free).
+4. The time-reversal symmetry.
+
+  A natural question is which of these properties should underpin the design of a
+numerical method for molecular dynamics? In this section we address this through
+illustrative examples.
+  The phase volume conservation can be seen as a consequence of the symplectic
+property, but  it is a weaker condition. It is possible to construct methods that
+preserve volume but which are not symplectic, and we can build methods that
+exactly conserve the energy (as we shall show below). Until now we have said little
+about the time-reversal symmetry of molecular dynamics.
+
+
+
+3.6.1  Time-Reversal Symmetry
+
+
+The term time-reversal symmetry or time-reversibility  is used in two ways in
+connection with molecular dynamics. In this chapter, we use the term to refer to
+a property that can be expressed in terms of the individual trajectories of the system.
+(A somewhat different reversibility property is related to the evolution of probability
+distributions, see Chap.8.)
+   Let Pz D f.z/ be a dynamical system. By an involution we mean a linear mapping
+z 7! Rz where R2 D I, i.e. R is its own inverse. Given the involution R we deﬁne
+the time reversal of the vector ﬁeld f with respect to R by
+
+                                         Qf.z/ D  RTf.Rz/:
+
+When a vector ﬁeld is its own reversal we say that it is a time-reversible vector ﬁeld.
+   Let H.q; p/ D pTM 1p=2 C U.q/ be the Hamiltonian for a system of Nc
+conﬁguration variables. Deﬁne the 2Nc   2Nc matrix R by
+
+                                           I 0
+                     R D              :
+                                 0   I
+
+The vector ﬁelds involved are
+
+         M 1p              M 1p                f D                   ;        Qf D  Rf.Rz/ D                     ;
+               rU.q/                    rU.q/
+
+which are clearly equal. Therefore the molecular dynamics Hamiltonian system is
+time-reversible.
+  The time-reversal symmetry may be understood as a property of the vector ﬁeld.
+This engenders a symmetry at the level of the trajectories of the system.

@@ -2,7 +2,7 @@
 
 范围：印刷p.97–136/PDF119–158，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前65条；旧清单映射66/143；本地PASS 53；网站返回0。
+当前88条；旧清单映射89/143；本地PASS 70；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -71,6 +71,29 @@
 | MD-3.3.4-TakahashiProcessor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-3.3.4-ProcessorEnergyPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；印刷漏项待裁定；非PASS不证明。 |
 | MD-3.3.4-TakahashiEffectiveOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。 |
+| MD-3.4-ModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.4-LeadingModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺真实步长Taylor展开、系数极限及修正场ODE余项桥接；属于完整修正方程理论，保留sorry。 |
+| MD-3.4-TruncatedHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.4-TruncationSmooth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.4-Thm3.1 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺Hamiltonian形式jet构造、全阶匹配与实际局部ODE统一余项；不建设大型BEA理论。 |
+| MD-3.4-CompactLipschitz | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.4-TruncatedFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.4-FiniteMatchingConstruction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺形式jet的Hamiltonian构造与实际有限截断匹配/余项；大型BEA理论缺项。 |
+| MD-3.4-TruncatedConservation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.4-EnergyTelescoping | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.4-UniformTruncatedLipschitz | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.4-TruncationRemainder | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.4-PhysicalEnergyDrift | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.4-PolynomialEnergyRate | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.4-StepCountPower | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.4-ArbitraryFiniteTruncation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺全阶Hamiltonian构造与实际截断匹配；C∞的任意固定阶不推出统一解析界。 |
+| MD-3.4-AnalyticDefect | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺解析Hamiltonian jet、Cauchy阶乘界和实际流统一余项；不建设大型BEA理论。 |
+| MD-3.4-OptimalTruncation | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺整数最优截断与一致指数常数界；原文取整问题待审。 |
+| MD-3.4-ExponentialFlat | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-3.4-ScalarVerletShadow4 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-3.4-CommutingEnergy | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；非PASS不进入证明；连续流版本可以另桥接Lie–Poisson导数。 |
+| MD-3.4-CommutingEnergySymmetry | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-3.4-EnergySymplecticNoGo | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺Ge–Marsden精确理论及局部全局资格；不建设大型理论。 |
 
 ## 旧143条完整映射
 
@@ -259,6 +282,15 @@
 - MD-3.3.4-PotentialDoubleBracket：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 需实际机械Hamiltonian的坐标Poisson双括号/梯度接口桥接；当前不存在现成桥接，有限微分路线待处理。
 - MD-3.3.4-ProcessorEnergyPrinted：p.113/PDF135第一行漏写U，h=0时已要求H=T；与下一行及上一页H̃矛盾。两行完整字面结论均保留sorry，不静默补U。 印刷漏项待裁定；非PASS不证明。第一行“T + h²/12(...)”似应为“H + h²/12(...)”；原文逐字保留，未改变正式库。
 - MD-3.3.4-TakahashiEffectiveOrder：全局可逆处理器与原书局部近恒等坐标变换的关系待审；完整实际轨迹四阶结论保留，不把能量阶误当任意观测量阶。 缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。全局χ是否过强，以及可选局部处理器和其作用方向，需导师判断。
+- MD-3.4-LeadingModifiedField：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实步长Taylor展开、系数极限及修正场ODE余项桥接；属于完整修正方程理论，保留sorry。
+- MD-3.4-Thm3.1：完整构造/匹配/长时间能量结论均未假设；但原文给定H̃_k，本签名以存在H_j重建它，量词严格化及截断轨道资格仍需导师裁定，不宣称已证原书定理。 缺Hamiltonian形式jet构造、全阶匹配与实际局部ODE统一余项；不建设大型BEA理论。给定H̃_k与存在一组构造系数的量词对应、截断轨道留B及所有n≤ν的长时间范围需审；任意n和T的量化包含原文每个n≤ν。 证明先对H取L，后对H̃_k沿用L，并在Lνh^(k+1)中省略缺陷常数C；本地辅助桥接显式给实际截断族统一L和C，但原文不改。
+- MD-3.4-FiniteMatchingConstruction：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺形式jet的Hamiltonian构造与实际有限截断匹配/余项；大型BEA理论缺项。
+- MD-3.4-ArbitraryFiniteTruncation：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺全阶Hamiltonian构造与实际截断匹配；C∞的任意固定阶不推出统一解析界。
+- MD-3.4-AnalyticDefect：解析资格是补充而非原书明说；一般解析辛方法所需复邻域与统一常数的精确条件待审。 缺解析Hamiltonian jet、Cauchy阶乘界和实际流统一余项；不建设大型BEA理论。many standard classes的精确方法类及解析邻域条件原文未给。
+- MD-3.4-OptimalTruncation：书中实数最优k与整数截断需量化；幂函数的单调增长阈值也不是导数最小阈值，字面段落与整数界需独立裁定。 缺整数最优截断与一致指数常数界；原文取整问题待审。连续最优k未必整数；Lean整数界不冒充原文全部连续最小化结论。
+- MD-3.4-ScalarVerletShadow4：有限式定义忠实保留；原文modified energy的O(h⁶)真实性需完整Verlet BCH匹配，不能只凭定义记为已证。 O(h⁶)的实际修正匹配另为未完成理论；有限函数与余项分开。
+- MD-3.4-CommutingEnergy：书中从numerical solution到连续流导数的跳步需审；Lean只保留明确连续流版本，不将离散能量守恒作为连续守恒证明。 非PASS不进入证明；连续流版本可以另桥接Lie–Poisson导数。离散快照守恒不直接推出连续修正流守恒。
+- MD-3.4-EnergySymplecticNoGo：定性no-go不能无条件成立；补全Ge–Marsden所需原理和全局流资格尚待审，忠实保留疑点。 缺Ge–Marsden精确理论及局部全局资格；不建设大型理论。原文practical排他陈述缺精确非可积性/无额外第一积分等假设。
 
 ## 定性段落排除
 
@@ -266,3 +298,4 @@
 - p.99–100/PDF121–122：图3.1及Ω=h=1的六点数值轨道作为实验插图，excluded_qualitative；不将图像观测作为普适定理。
 - p.108/PDF130：更多对称二阶变体及Verlet金标准/力评估成本为定性设计与实现背景，excluded_qualitative。
 - p.109–112/PDF131–134：Yoshida历史、力计算成本、图3.2实验能量曲线、最优系数与模型截断误差选择为定性背景；真实复合公式另列。
+- p.116–122/PDF138–144：推荐/警告、double-well及七原子Lennard-Jones数值实验和Fig3.3–3.9为定性或经验观测；能量/势公式复用第1章定义，非新普适定理；数学修正能量脚注已单列。

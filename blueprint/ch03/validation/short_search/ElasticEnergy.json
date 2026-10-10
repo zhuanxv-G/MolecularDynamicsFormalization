@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n m u p hm hu\n  have hex : ∃ i, u i ≠ 0 := by\n    by_contra! h\n    apply hu\n    ext i\n    exact h i\n  let S : ℝ := ∑ i, u i^2/m i\n  let T : ℝ := ∑ i, u i*p i/m i\n  have hS : 0 < S := by\n    apply Finset.sum_pos'\n    · intro i _; exact div_nonneg (sq_nonneg _) (le_of_lt (hm i))\n    · obtain ⟨i, hi⟩ := hex\n      exact ⟨i, Finset.mem_univ i, div_pos (sq_pos_of_ne_zero hi) (hm i)⟩\n  let a := -2*T/S\n  have hid : ∀ i, (p i+a*u i)^2/m i =\n      p i^2/m i+2*a*(u i*p i/m i)+a^2*(u i^2/m i) := by\n    intro i; ring\n  have hnormal : ∀ i, u i*(p i+a*u i)/m i =\n      u i*p i/m i+a*(u i^2/m i) := by\n    intro i; ring\n  constructor\n  · change (∑ i, (p i+a*u i)^2/m i)/2 = (∑ i, p i^2/m i)/2\n    simp_rw [hid, Finset.sum_add_distrib, ← Finset.mul_sum]\n    change ((∑ i, p i^2/m i)+2*a*T+a^2*S)/2 = _\n    dsimp [a]\n    field_simp\n    ring\n  · change (∑ i, u i*(p i+a*u i)/m i) = -T\n    simp_rw [hnormal, Finset.sum_add_distrib, ← Finset.mul_sum]\n    change T+a*S = -T\n    dsimp [a]\n    field_simp\n    ring",
+    "source": "blueprint/ch03/validation/short_search/ElasticEnergy-route1.lean",
+    "log": "blueprint/ch03/validation/short_search/ElasticEnergy-route1.log",
+    "source_sha256": "271fcf8d498df2a9f8761bb031951b8e460e34ef3047003643f3ec3f78b79b41",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

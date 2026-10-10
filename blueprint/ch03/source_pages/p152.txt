@@ -1,0 +1,52 @@
+130                                              3  Analyzing Geometric Integrators
+
+
+where we have slightly abused notation by allowing the symbol R to refer to both
+the involution matrix and the corresponding mapping z 7! Rz.
+  We may seek numerical methods that mimic this property, which we refer
+to time-reversible numerical methods. Recall from the previous chapter that a
+numerical method Gh was said to be symmetric if it satisﬁed
+
+                       G  h D G h 1 :
+
+It does not automatically follow that a symmetric numerical method is time-
+reversible, i.e. satisﬁes a relation inspired by (3.14), namely
+
+                  R ı Gh ı R ı Gh D Id:                        (3.15)
+
+The additional condition needed to ensure (3.15) is the afﬁne invariance property
+(or invariance with respect to the speciﬁc afﬁne transformation z 7! Rz).
+
+Deﬁnition 3.1 (Afﬁne Invariance) Let
+
+                                 dz
+                   D f.z/                              (3.16)
+                                      dt
+
+be a given ordinary differential equation. The transformation Qz D Az, where A is a
+non-singular square matrix, results in the modiﬁed differential equation
+
+                              dz
+                  D Af.A  1Qz/:                           (3.17)
+                                  dt
+
+Let z0; z1; : : : be a sequence of points obtained by application of the numerical
+method Gh to (3.16). If the same method, when applied to (3.17) produces the set of
+points Az0; Az1; : : :, then we say that the numerical method is invariant with respect
+to the transformation Qz D Az. An afﬁne invariant method is one which is invariant
+under any such transformation.
+
+    If a differential equation is time-reversible with respect to the involution R, and
+we apply a method which is afﬁne invariant and symmetric, then the method will be
+time-reversible (3.15).
+   All Runge-Kutta methods and Partitioned Runge-Kutta methods are afﬁne invari-
+ant, thus, if they are also symmetric, then they preserve time-reversal symmetry.
+
+
+
+3.6.3  Comparing Symplectic and Time-Reversible Methods
+
+
+The symplectic property
+
+                Ft0T JFt0 D J

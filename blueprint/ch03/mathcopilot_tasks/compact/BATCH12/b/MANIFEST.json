@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12b",
+  "source_ids": [
+    "MD-3.4-LeadingModifiedField"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 135,
+      "printed_page": 113
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "5ffd37fb8d9b61f2f229257997494e0736b1ce3fcc64d01922ae2c12b35e8ba5",
+  "lean_sha256": "1383b5071a3755e6d67a0fcbebeb2b643ce1ddb05eb0b788ff47134239581d6c",
+  "signature_sha256": "3fabfdfb5a2468c0ff11bb7938bbc51fc698c8e610b988fa531c8332b5f65bb2",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "actualFlow",
+      "code_sha256": "cb75a494f3dbd443d1820aded2bd01245f6bb284bab13cad5f843c9d30518c23"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "localOrder",
+      "code_sha256": "35fce0c5dc0e426c289a6d68e3e3d5243526e9e4e1567646bc0e3140623e3663"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "solution",
+      "code_sha256": "4246b13784e62583efb6e55b0aaf0235c08565f8c3c6ec6bf888afa19baaf49b"
+    }
+  ],
+  "paste_plus_pdf_bytes": 97766,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5187,
+      "sha256": "707c64d089c34ed16aae8c1ea8a5ef67afc3969ec2f6fa3641bc6910c04691d5"
+    },
+    "BATCH12b_PAGES.pdf": {
+      "bytes": 92579,
+      "sha256": "fe216ec3389d53f5c45ae4275e2f6a466b3b40c634de3996cee11251caa91ea4"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 100441
+}

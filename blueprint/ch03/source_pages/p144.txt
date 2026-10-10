@@ -1,0 +1,56 @@
+122                                              3  Analyzing Geometric Integrators
+
+
+
+
+                    −9.1
+
+
+
+                    −9.3
+                                                 Energy  −9.5                                          h = 0.03
+
+
+
+                    −9.7
+                                                       h = 0.025
+
+
+                    −9.9
+                       0     1     2     3     4     5     6     7     8     9    10
+
+                                                         time/10000
+
+Fig. 3.10 Energy as a function of time for the Verlet method with two different stepsizes. The drift
+is controlled for h D 0:025 but much more dramatic at h D 0:03
+
+
+is not well conserved by the Verlet method. The explanation is that the backward
+error analysis presented previously, and therefore the assumption that the numerical
+method is described by a Hamiltonian ﬂow map, is invalid. This is a consequence
+of the mentioned fact that construction of the modiﬁed Hamiltonian depends on an
+optimal truncation at high order. For h D 0:03 in this example, the truncation would
+introduce a substantial error, or, alternatively, the “Hamiltonian ﬂow” interpretation
+for the numerical method is poor. Either the stepsize must be reduced in such cases
+(already h D 0:025 shows much less drift) or some other method must be used.
+
+
+
+3.5  Energy Conserving Methods
+
+
+It is possible to derive numerical methods that exactly (i.e. to within rounding
+error) conserve the energy at each step and this may seem a more natural approach
+to molecular dynamics than symplectic integration since we have discussed and
+evaluated methods in terms of their energy conservation.
+   Consider the following 2D example of a differential equation system
+
+                                            Pu D f.u; v/;      Pv D f.u; v/:
+
+Notice that this system has a ﬁrst integral
+
+                                   I.u; v/ D u   v;
+
+and consider the application of Euler’s method:
+
+             unC1 D un C hf.un; vn/;   vnC1 D vn C hf.un; vn/:

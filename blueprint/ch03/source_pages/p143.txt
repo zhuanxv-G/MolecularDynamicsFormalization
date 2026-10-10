@@ -1,0 +1,55 @@
+3.4  Perturbative Expansion: Exponentially Small Errors                              121
+
+
+
+                     −9.74
+                                                                 Verlet h=0.01
+                     −9.76
+                                                  RK4 h=0.01
+                     −9.78
+
+                      −9.8
+                     −9.82               RK4                                                    Energy                                                     h=0.02
+                     −9.84
+
+                     −9.86
+
+                     −9.88
+
+                      −9.9
+                        0      5     10     15     20     25     30     35     40
+
+                                                             time
+
+Fig. 3.8 The energy for the explicit 4th order Runge-Kutta method applied to the 7-atom Lennard-
+Jones cluster is seen to exhibit a secular drift
+
+                                                                                   Distribution
+                                                               reference
+                                     RK4 h= 0.02
+                                     RK4 h= 0.01
+
+
+
+                 0.5      1.0      1.5     2        2.5     3        3.5
+                                         interatomic distance
+
+Fig. 3.9 The radial distribution computed using the explicit 4th order Runge-Kutta method with
+stepsizes of h D 0:01 and h D 0:02. Due to energy drift, the h D 0:02 solution is completely
+inaccurate, whereas even the h D 0:01 curve is much worse than that obtained using Verlet
+with h D 0:02, despite the fact that the Runge-Kutta method uses four times the number of
+force evaluations per timestep. These calculations were performed using 1M timesteps; if a longer
+simulation were used, the RK4 errors in distribution would be expected to increase (due to the
+increasing energy drift) whereas the errors reported in Figure 3.6 for the Verlet method would not
+be expected to depend appreciably on the time interval
+
+
+the radial distribution function which is computed in Fig. 3.9. This method requires
+four evaluations of the force for each timestep, yet the results are poor even when the
+stepsize is the same as that used in Verlet which only requires one force evaluation
+per step. A more natural comparison would need to be with h D 0:04 in the Runge-
+Kutta method, but at such a stepsize, the performance would be disastrous. Note
+that at a slightly larger stepsize than that considered here, h D 0:03, the Verlet
+method would show a large error in distribution. To gain some insight into what
+is happening for this stepsize, see Fig. 3.10, where energy is graphed vs. time for
+stepsizes of h D 0:025 and h D 0:03. Evidently, at the largest stepsize, energy

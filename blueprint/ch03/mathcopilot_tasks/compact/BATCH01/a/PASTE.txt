@@ -594,7 +594,7 @@ def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Pr
   ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
 ```
 
-### MolecularDynamics.Chapter03Review.truncatedFlow (MolecularDynamics/Chapter03/ReviewDefinitions.lean:87)
+### MD.Ch03.truncatedFlow (Blueprint/Ch03.lean:674)
 ```lean
 def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
     (r k : ℕ) (h : ℝ) (z : SymplecticCoordinates n) (γ : ℝ → SymplecticCoordinates n) : Prop :=

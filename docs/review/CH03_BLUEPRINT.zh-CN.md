@@ -69,6 +69,29 @@
 | MD-3.3.4-TakahashiProcessor | 113/135 | PASS | 待网站审计 | self-contained |
 | MD-3.3.4-ProcessorEnergyPrinted | 113/135 | FAIL | 待网站审计 | incomplete |
 | MD-3.3.4-TakahashiEffectiveOrder | 113/135 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.4-ModifiedField | 113/135 | PASS | 待网站审计 | self-contained |
+| MD-3.4-LeadingModifiedField | 113/135 | PASS | 待网站审计 | incomplete |
+| MD-3.4-TruncatedHamiltonian | 114/136 | PASS | 待网站审计 | self-contained |
+| MD-3.4-TruncationSmooth | 114/136 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.4-Thm3.1 | 114–116/136–138 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.4-CompactLipschitz | 114/136 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.4-TruncatedFlow | 115/137 | PASS | 待网站审计 | self-contained |
+| MD-3.4-FiniteMatchingConstruction | 115/137 | PASS | 待网站审计 | incomplete |
+| MD-3.4-TruncatedConservation | 115/137 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.4-EnergyTelescoping | 115/137 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.4-UniformTruncatedLipschitz | 115/137 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.4-TruncationRemainder | 115/137 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.4-PhysicalEnergyDrift | 115/137 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.4-PolynomialEnergyRate | 116/138 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.4-StepCountPower | 116/138 | PASS | 待网站审计 | checked+documented priors |
+| MD-3.4-ArbitraryFiniteTruncation | 116/138 | PASS | 待网站审计 | incomplete |
+| MD-3.4-AnalyticDefect | 116/138 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.4-OptimalTruncation | 116/138 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.4-ExponentialFlat | 116/138 | PASS | 待网站审计 | self-contained |
+| MD-3.4-ScalarVerletShadow4 | 117/139 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.4-CommutingEnergy | 117/139 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-3.4-CommutingEnergySymmetry | 118/140 | PASS | 待网站审计 | self-contained |
+| MD-3.4-EnergySymplecticNoGo | 118/140 | NEEDS_HUMAN | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -98,6 +121,19 @@
   第一行“T + h²/12(...)”似应为“H + h²/12(...)”；原文逐字保留，未改变正式库。
 - MD-3.3.4-TakahashiEffectiveOrder：全局可逆处理器与原书局部近恒等坐标变换的关系待审；完整实际轨迹四阶结论保留，不把能量阶误当任意观测量阶。
   全局χ是否过强，以及可选局部处理器和其作用方向，需导师判断。
+- MD-3.4-Thm3.1：完整构造/匹配/长时间能量结论均未假设；但原文给定H̃_k，本签名以存在H_j重建它，量词严格化及截断轨道资格仍需导师裁定，不宣称已证原书定理。
+  给定H̃_k与存在一组构造系数的量词对应、截断轨道留B及所有n≤ν的长时间范围需审；任意n和T的量化包含原文每个n≤ν。
+  证明先对H取L，后对H̃_k沿用L，并在Lνh^(k+1)中省略缺陷常数C；本地辅助桥接显式给实际截断族统一L和C，但原文不改。
+- MD-3.4-AnalyticDefect：解析资格是补充而非原书明说；一般解析辛方法所需复邻域与统一常数的精确条件待审。
+  many standard classes的精确方法类及解析邻域条件原文未给。
+- MD-3.4-OptimalTruncation：书中实数最优k与整数截断需量化；幂函数的单调增长阈值也不是导数最小阈值，字面段落与整数界需独立裁定。
+  连续最优k未必整数；Lean整数界不冒充原文全部连续最小化结论。
+- MD-3.4-ScalarVerletShadow4：有限式定义忠实保留；原文modified energy的O(h⁶)真实性需完整Verlet BCH匹配，不能只凭定义记为已证。
+  O(h⁶)的实际修正匹配另为未完成理论；有限函数与余项分开。
+- MD-3.4-CommutingEnergy：书中从numerical solution到连续流导数的跳步需审；Lean只保留明确连续流版本，不将离散能量守恒作为连续守恒证明。
+  离散快照守恒不直接推出连续修正流守恒。
+- MD-3.4-EnergySymplecticNoGo：定性no-go不能无条件成立；补全Ge–Marsden所需原理和全局流资格尚待审，忠实保留疑点。
+  原文practical排他陈述缺精确非可积性/无额外第一积分等假设。
 
 ## 1. MD-3-ModifiedConstruction · unnumbered_claim · 印刷p.97 / PDFp.119
 
@@ -3300,3 +3336,1232 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 缺失/继续路线：缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。
 
 签名SHA256：`1560b4d956c5e9d02533877a59f53360850bf31441c4fba4c4c1e450d58d2cf7`；原文SHA256：`709f7e4d334d982eadd2b980c5f079ca478fb3cf4762c1cbda65db5280d42ea9`。
+
+## 1. MD-3.4-ModifiedField · definition · 印刷p.113 / PDFp.135
+
+### 2. 原文陈述
+
+> Assume a smooth differential equation system
+> \[\frac{\mathrm d\boldsymbol z}{\mathrm dt}=f(\boldsymbol z)\]
+> with flow map $\mathcal F_t$, and a one-step method $\mathcal G_h$. We obtain, typically by matching of terms from Taylor expansion, a “modified differential equation” as a series expansion
+> \[\frac{\mathrm d\boldsymbol z}{\mathrm dt}=\widetilde f_h(\boldsymbol z)=f(\boldsymbol z)+h^rf_r(\boldsymbol z)+h^{r+1}f_{r+1}(\boldsymbol z)+\cdots,\]
+> where $r$ is the classical order of accuracy of the method.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def formalField {n : ℕ} (f : Q n → Q n) (fj : ℕ → Q n → Q n) (r : ℕ)
+    (z : Q n) (i : Fin n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun j => if j=0 then f z i else if r ≤ j then fj j z i else 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.formalField；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:616](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:616>)（`MD.Ch03.formalField`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`43526ad0e4a32c0335132038186bcb836863d3b56e39b3d42d1acd150c533e25`；原文SHA256：`e484b12d3a6b3c515504edf6753e4efa2f72015090ee190af55c6dd43d6818b0`。
+
+## 1. MD-3.4-LeadingModifiedField · unnumbered_claim · 印刷p.113 / PDFp.135
+
+### 2. 原文陈述
+
+> In fact, it is straightforward to show that if numerical method satisfies
+> \[\mathcal G_h(\boldsymbol z)-\mathcal F_h(\boldsymbol z)=h^{r+1}\Gamma_{r+1}(\boldsymbol z)+O(h^{r+2}),\]
+> i.e. $h^{r+1}\Gamma_{r+1}$ is the leading term in the local error expansion, then we have
+> \[f_r(\boldsymbol z)=\Gamma_{r+1}(\boldsymbol z).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem leadingModifiedField :
+  ∀ (n r : ℕ) (f : Q n → Q n) (G Φ : ℝ → Q n → Q n) (D B : Set (Q n)) η,
+    0 < r → ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ (fun hz : ℝ × Q n => G hz.1 hz.2) →
+    IsOpen D → IsCompact B → B ⊆ D → actualFlow f D Φ η → localOrder G Φ B r →
+    ∃ fr : Q n → Q n, ContDiffOn ℝ ⊤ fr D ∧
+      (∀ z ∈ B, Tendsto (fun h => (h^(r+1))⁻¹ • (G h z-Φ h z)) (𝓝[≠] 0) (𝓝 (fr z))) ∧
+      ∃ Γ : ℝ → Q n → ℝ → Q n, ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z ∈ B,
+        Γ h z 0=z ∧ solution (fun x => f x+h^r • fr x) (Γ h z) 0 h ∧
+          ‖G h z-Γ h z h‖ ≤ C*h^(r+2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.leadingModifiedField；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | r>0、全域C∞的f及(h,z)↦G_h、开放D与紧B及真实双向局部流；局部r阶条件。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:622](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:622>)（`MD.Ch03.leadingModifiedField`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺真实步长Taylor展开、系数极限及修正场ODE余项桥接；属于完整修正方程理论，保留sorry。
+
+签名SHA256：`3fabfdfb5a2468c0ff11bb7938bbc51fc698c8e610b988fa531c8332b5f65bb2`；原文SHA256：`c2574fdfc4cc0f670b1888fd929324803c0dc13c5bc2311201fe5530a5667978`。
+
+## 1. MD-3.4-TruncatedHamiltonian · (3.11) · 印刷p.114 / PDFp.136
+
+### 2. 原文陈述
+
+> Define
+> \[\widetilde H_k\stackrel{\mathrm{def}}=H+h^rH_r+h^{r+1}H_{r+1}+\cdots+h^kH_k.\tag{3.11}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def truncatedHamiltonian (H : E → ℝ) (Hj : ℕ → E → ℝ)
+    (r k : ℕ) (h : ℝ) (z : E) : ℝ :=
+  H z + ∑ j ∈ Finset.Icc r k, h ^ j * Hj j z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.truncatedHamiltonian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:634](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:634>)（`MD.Ch03.truncatedHamiltonian`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`952febcb8ae1856a20e14d55f20f5a0fc6221ab55689014427af24a87407329a`；原文SHA256：`ff85c86c73d25e2dae1b6de1d4ce4bd6fdb0e82e645a916a8f03b7dab3560ffb`。
+
+## 1. MD-3.4-TruncationSmooth · unnumbered_claim · 印刷p.114 / PDFp.136
+
+### 2. 原文陈述
+
+> Suppose the Hamiltonian $H$ and modified Hamiltonian $\widetilde H_k$ are smooth functions globally defined on a convex, compact subset $\mathcal B$ of $\mathbb R^{2N_c}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem truncationSmooth (H : E → ℝ) (Hj : ℕ → E → ℝ)
+    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ 1 H D)
+    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :
+    ContDiffOn ℝ 1 (textbookTruncatedHamiltonian H Hj r k h) D
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.truncationSmooth；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 各系数在开放环境D为C¹；这里只证明所需C¹子结论，原文smooth假设本身不作为新断言。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:640](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:640>)（`MD.Ch03.truncationSmooth`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian。
+
+签名SHA256：`175380f1ed099a2b94e1ce33c33bb7459e6cf5a8b093a1102b41aee0ff0ef8e7`；原文SHA256：`faa5a3cefc63e6f3cc222282f02461dc5d782d10a3b453f2bb04a161669deae5`。
+
+## 1. MD-3.4-Thm3.1 · Theorem 3.1 · 印刷p.114–116 / PDFp.136–138
+
+### 2. 原文陈述
+
+> Theorem 3.1. Suppose the Hamiltonian $H$ and modified Hamiltonian $\widetilde H_k$ are smooth functions globally defined on a convex, compact subset $\mathcal B$ of $\mathbb R^{2N_c}$ and suppose that the exact solution and numerical approximations (for $h$ sufficiently small) are confined to $\mathcal B$. Then, we have asymptotically for $h\to0$ that
+> \[H(\boldsymbol z_n)=H(\boldsymbol z_0)+O(h^r),\]
+> for $n=0,1,\ldots,\nu$ where $\tau=\nu h=O(h^{-k+r})$.
+
+### 3. 原文证明
+
+<details>
+<summary>展开逐字原文证明</summary>
+
+> Proof First observe that due to smoothness and the assumptions on $\mathcal B$, we have a global Lipschitz constant
+> \[|H(\boldsymbol u)-H(\boldsymbol v)|\le L\|\boldsymbol u-\boldsymbol v\|\]
+> for all $\boldsymbol u,\boldsymbol v\in\mathcal B$.
+> Denote by $\mathcal F_h^{(k)}$ the flow map of the truncated Hamiltonian expansion $\widetilde H_k$,
+> \[\mathcal F_h^{(k)}\stackrel{\mathrm{def}}=\exp(h\mathcal L_{\widetilde H_k}).\]
+> By construction, we have
+> \[\boldsymbol z_{n+1}=\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n\]
+> where $\|\boldsymbol\eta_n\|\le Ch^{k+1}$.
+> Since $\mathcal F_h^{(k)}$ preserves its Hamiltonian (3.11), we have
+> \[\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))=\widetilde H_k(\boldsymbol z_n).\]
+> Now
+> \[\begin{aligned}\widetilde H_k(\boldsymbol z_\nu)-\widetilde H_k(\boldsymbol z_0)
+> &=\sum_{n=0}^{\nu-1}\widetilde H_k(\boldsymbol z_{n+1})-\widetilde H_k(\boldsymbol z_n)\\
+> &=\sum_{n=0}^{\nu-1}\widetilde H_k(\boldsymbol z_{n+1})-\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))\\
+> &=\sum_{n=0}^{\nu-1}\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n)-\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)).\end{aligned}\]
+> Hence
+> \[|\widetilde H_k(\boldsymbol z_\nu)-\widetilde H_k(\boldsymbol z_0)|\le L\sum_{n=0}^{\nu-1}\|\boldsymbol\eta_n\|\le L\nu h^{k+1}.\]
+> We have $\nu=\tau/h$, thus
+> \[|\widetilde H_k(\boldsymbol z_\nu)-\widetilde H_k(\boldsymbol z_0)|\le L\tau h^k.\]
+> Next observe that
+> \[H=\widetilde H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\cdots-h^kH_{(k)}=\widetilde H_k+O(h^r).\]
+> Therefore
+> \[|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le L\nu h^{k+1}+O(h^r),\]
+> so that, as long as $\nu\le C_2h^{-k+r-1}$, we have
+> \[|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le O(h^r).\quad\square\]
+
+</details>
+
+完整原书证明按PDF136–138跨页拼接；保留原文L及省略C的展示式，不静默修订其常数。
+
+### 4. Lean陈述
+
+```lean
+theorem theorem31 :
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
+    ∀ k ≥ r, finiteMatching H Hj r k D B G ∧
+      ∀ T > 0, ∃ M > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z₀ ∈ B, ∀ ν : ℕ,
+        (∀ i ≤ ν, oneStepIterate G h z₀ i ∈ B) →
+        (∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+          ∀ z ∈ B, truncatedFlow H Hj r k h z (Γ h z) ∧
+            (∀ t ∈ Icc 0 h, Γ h z t ∈ B)) →
+        (ν:ℝ)*h*h^(k-r) ≤ T → ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.theorem31；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | smoothSymplecticData显式添加原方法r阶/近恒等辛/joint C∞、开放凸环境D、紧凸B⊆D、真实原流；r>0。 | [EXTRA] |
+| 原文省略/技术资格 | 本签名保留完整构造H_j与finiteMatching为结论，k≥r固定；数值迭代和截断ODE留B，常数可依赖k,T而非所有k统一。 | [EXTRA] |
+| 原页核对/疑点 | 给定H̃_k与存在一组构造系数的量词对应、截断轨道留B及所有n≤ν的长时间范围需审；任意n和T的量化包含原文每个n≤ν。 | NEEDS_HUMAN |
+| 原页核对/疑点 | 证明先对H取L，后对H̃_k沿用L，并在Lνh^(k+1)中省略缺陷常数C；本地辅助桥接显式给实际截断族统一L和C，但原文不改。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。完整构造/匹配/长时间能量结论均未假设；但原文给定H̃_k，本签名以存在H_j重建它，量词严格化及截断轨道资格仍需导师裁定，不宣称已证原书定理。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:651](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:651>)（`MD.Ch03.theorem31`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺Hamiltonian形式jet构造、全阶匹配与实际局部ODE统一余项；不建设大型BEA理论。
+
+签名SHA256：`b5ceb7075955e7b4641df25fab48b8b76c3cb1595ee811753c7c3a39fc286e58`；原文SHA256：`cc1c6d195c66a859a465fc914663ad1a4dfa0a1a77ae8a5e6ecf6151027341df`。
+
+## 1. MD-3.4-CompactLipschitz · unnumbered_claim · 印刷p.114 / PDFp.136
+
+### 2. 原文陈述
+
+> Proof First observe that due to smoothness and the assumptions on $\mathcal B$, we have a global Lipschitz constant
+> \[|H(\boldsymbol u)-H(\boldsymbol v)|\le L\|\boldsymbol u-\boldsymbol v\|\]
+> for all $\boldsymbol u,\boldsymbol v\in\mathcal B$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem compactLipschitz (D B : Set E) (hD : IsOpen D)
+    (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (H : E → ℝ) (hH : ContDiffOn ℝ 1 H D) :
+    ∃ L : ℝ, 0 < L ∧ ∀ u ∈ B, ∀ v ∈ B, ‖H v - H u‖ ≤ L * ‖v - u‖
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.compactLipschitz；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 显式开放环境D及B⊆D、H在D为C¹；L由真实导数紧集界推出，未作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:667](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:667>)（`MD.Ch03.compactLipschitz`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.exists_compact_C1_lipschitz_constant。
+
+签名SHA256：`399bc1b2fce9a1f28ae47583eb098deb189d841593043c38044f2e6231b1fff9`；原文SHA256：`3aa744acb4195c4f18c122fb28820b545b8b8cde93fbbc9b1416b60f91398613`。
+
+## 1. MD-3.4-TruncatedFlow · definition · 印刷p.115 / PDFp.137
+
+### 2. 原文陈述
+
+> Denote by $\mathcal F_h^{(k)}$ the flow map of the truncated Hamiltonian expansion $\widetilde H_k$,
+> \[\mathcal F_h^{(k)}\stackrel{\mathrm{def}}=\exp(h\mathcal L_{\widetilde H_k}).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
+    (r k : ℕ) (h : ℝ) (z : SymplecticCoordinates n) (γ : ℝ → SymplecticCoordinates n) : Prop :=
+  γ 0=z ∧ solution (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)) γ 0 h
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.truncatedFlow；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:674](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:674>)（`MD.Ch03.truncatedFlow`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`580ac76907196f8148b886e2424629abe935d144425e6c5cf6759eb5563d8362`；原文SHA256：`c15ee0c9f5088689e5ab507e900075cd7f2728cfe79ad92189600240a6bb4fea`。
+
+## 1. MD-3.4-FiniteMatchingConstruction · unnumbered_claim · 印刷p.115 / PDFp.137
+
+### 2. 原文陈述
+
+> By construction, we have
+> \[\boldsymbol z_{n+1}=\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n\]
+> where $\|\boldsymbol\eta_n\|\le Ch^{k+1}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem finiteMatchingConstruction :
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
+      ∀ k ≥ r, finiteMatching H Hj r k D B G
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.finiteMatchingConstruction；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | smoothSymplecticData与原书构造上下文相同；保留任意k的真实finiteMatching为结论，不当作前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:680](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:680>)（`MD.Ch03.finiteMatchingConstruction`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺形式jet的Hamiltonian构造与实际有限截断匹配/余项；大型BEA理论缺项。
+
+签名SHA256：`06f9ddd7d45146c5af5fef80bf10d581735889fb98b8839a21060e35d2686751`；原文SHA256：`1b66cdf3a23a4b50b8756d0463b090b035b14a2ad126677ee94404afb9ca5871`。
+
+## 1. MD-3.4-TruncatedConservation · unnumbered_claim · 印刷p.115 / PDFp.137
+
+### 2. 原文陈述
+
+> Since $\mathcal F_h^{(k)}$ preserves its Hamiltonian (3.11), we have
+> \[\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))=\widetilde H_k(\boldsymbol z_n).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem truncatedConservation (H : SymplecticCoordinates Nc → ℝ)
+    (γ : ℝ → SymplecticCoordinates Nc) (τ : ℝ)
+    (hH : ∀ t ∈ Icc 0 τ, DifferentiableAt ℝ H (γ t))
+    (hγ : ∀ t ∈ Icc 0 τ,
+      HasDerivWithinAt γ (textbookHamiltonianVectorField H (γ t)) (Icc 0 τ) t) :
+    ∀ t ∈ Icc 0 τ, H (γ t) = H (γ 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.truncatedConservation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 沿γ对K的可微性与真实ODE在闭区间明示，包含端点；构造γ属于另项。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:690](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:690>)（`MD.Ch03.truncatedConservation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookHamiltonian_energy_const_on_Icc。
+
+签名SHA256：`c11ed9e23513427632ce1647c207aad3e1583e56ed56f9216e552bffe944ed2a`；原文SHA256：`c4e3d16ec21e3bf2b1154201ff573eb99ef5155da6ca0de52722a458ba0ab6ce`。
+
+## 1. MD-3.4-EnergyTelescoping · unnumbered_claim · 印刷p.115 / PDFp.137
+
+### 2. 原文陈述
+
+> Now
+> \[\begin{aligned}\widetilde H_k(\boldsymbol z_\nu)-\widetilde H_k(\boldsymbol z_0)&=\sum_{n=0}^{\nu-1}\widetilde H_k(\boldsymbol z_{n+1})-\widetilde H_k(\boldsymbol z_n)\\
+> &=\sum_{n=0}^{\nu-1}\widetilde H_k(\boldsymbol z_{n+1})-\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))\\
+> &=\sum_{n=0}^{\nu-1}\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n)-\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)).\end{aligned}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem energyTelescoping {E : Type*} (K : E → ℝ)
+    (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
+    ∑ i ∈ Finset.range n, (K (oneStepIterate G h z₀ (i + 1)) -
+      K (oneStepIterate G h z₀ i)) = K (oneStepIterate G h z₀ n) - K z₀
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.energyTelescoping；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本条有限和恒等式与前两项守恒/缺陷定义共同给出三行；只桥接真实望远镜求和，不伪称modifiedConstruction完成。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:699](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:699>)（`MD.Ch03.energyTelescoping`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.oneStep_energy_telescoping。
+
+签名SHA256：`a1403377ce8b71c6cb7c33dd20a2d5be06d52bc5c81dc9ba066b8599d5fcab4c`；原文SHA256：`cef02028f354e024f467c20e97b1f37cdde7fa9bc98a770c69e4a8cafe373291`。
+
+## 1. MD-3.4-UniformTruncatedLipschitz · unnumbered_claim · 印刷p.115 / PDFp.137
+
+### 2. 原文陈述
+
+> Hence
+> \[|\widetilde H_k(\boldsymbol z_\nu)-\widetilde H_k(\boldsymbol z_0)|\le L\sum_{n=0}^{\nu-1}\|\boldsymbol\eta_n\|\le L\nu h^{k+1}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem uniformTruncatedLipschitz
+    (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (D B : Set E) (hD : IsOpen D)
+    (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (hH : ContDiffOn ℝ 1 H D)
+    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :
+    ∃ L : ℝ, 0 < L ∧ ∀ h ∈ Icc (0 : ℝ) 1, ∀ u ∈ B, ∀ v ∈ B,
+      ‖textbookTruncatedHamiltonian H Hj r k h v -
+        textbookTruncatedHamiltonian H Hj r k h u‖ ≤ L * ‖v - u‖
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.uniformTruncatedLipschitz；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 开放D、紧凸B⊆D及H和有限H_j在D C¹；0≤h≤1；L由有限系数导数界推出。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:707](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:707>)（`MD.Ch03.uniformTruncatedLipschitz`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz。
+
+签名SHA256：`f14ed6f267d6614cf6a7d6cee024fd264601881d4a37f9b93936d5128053cdaf`；原文SHA256：`d24cda92dbe212878d0b2724ae47a5f79bf6b2517e75bf4602003b2dba138abe`。
+
+## 1. MD-3.4-TruncationRemainder · unnumbered_claim · 印刷p.115 / PDFp.137
+
+### 2. 原文陈述
+
+> Next observe that
+> \[H=\widetilde H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\cdots-h^kH_{(k)}=\widetilde H_k+O(h^r).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem truncationRemainder
+    (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (B : Set E) (hB : IsCompact B)
+    (hHj : ∀ j ∈ Finset.Icc r k, ContinuousOn (Hj j) B) :
+    ∃ C : ℝ, 0 < C ∧ ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B,
+      ‖textbookTruncatedHamiltonian H Hj r k h z - H z‖ ≤ C * h ^ r
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.truncationRemainder；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 各有限系数在紧B连续；0≤h≤1；统一正C由紧性推出，未供应所需余项界。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:719](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:719>)（`MD.Ch03.truncationRemainder`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder。
+
+签名SHA256：`bf4969d3c3f26d89bdec351f11382401484886f881c2027415198c7f577df5df`；原文SHA256：`92ff757575a56078c048ea5b6fbbbe4932804f1d6379827ac0e595399a31f4f3`。
+
+## 1. MD-3.4-PhysicalEnergyDrift · unnumbered_claim · 印刷p.115 / PDFp.137
+
+### 2. 原文陈述
+
+> Therefore
+> \[|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le L\nu h^{k+1}+O(h^r),\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem physicalEnergyDrift
+    (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)
+    (r k : ℕ) (D B : Set (SymplecticCoordinates Nc))
+    (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)
+    (G : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (γ : ℝ → SymplecticCoordinates Nc → ℝ → SymplecticCoordinates Nc)
+    (hγ₀ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, γ h z 0 = z)
+    (hγB : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h, γ h z t ∈ B)
+    (hγ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h,
+      HasDerivWithinAt (γ h z)
+        (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)
+          (γ h z t)) (Icc 0 h) t) :
+    ∃ C : ℝ, 0 < C ∧ ∃ L : ℝ, 0 < L ∧
+      ∀ h ∈ Icc (0 : ℝ) 1, ∀ z₀, ∀ n : ℕ,
+        (∀ i ≤ n, oneStepIterate G h z₀ i ∈ B) →
+        ‖H (oneStepIterate G h z₀ n) - H z₀‖ ≤ 2 * C * h ^ r +
+          L * ∑ i ∈ Finset.range n, ‖G h (oneStepIterate G h z₀ i) -
+            γ h (oneStepIterate G h z₀ i) h‖
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.physicalEnergyDrift；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 开放D、紧凸B⊆D及有限C¹系数；给定真实截断ODE族γ及其留B、γ(h,z,0)=z，未假设γ的能量守恒或误差界。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:728](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:728>)（`MD.Ch03.physicalEnergyDrift`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbook_energy_drift_le_actual_defects。
+
+签名SHA256：`35f4c7619f093a43e8762642c21321c12d8c8c124f026c7b7033de07c2d153eb`；原文SHA256：`8bec01e59cc5a2dbd2cf1b919290696099472664d4251fc14653da829be3da1d`。
+
+## 1. MD-3.4-PolynomialEnergyRate · unnumbered_claim · 印刷p.116 / PDFp.138
+
+### 2. 原文陈述
+
+> so that, as long as $\nu\le C_2h^{-k+r-1}$, we have
+> \[|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le O(h^r).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem polynomialEnergyRate
+    (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)
+    (r k : ℕ) (hrk : r ≤ k) (D B : Set (SymplecticCoordinates Nc))
+    (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)
+    (G : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (γ : ℝ → SymplecticCoordinates Nc → ℝ → SymplecticCoordinates Nc)
+    (hγ₀ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, γ h z 0 = z)
+    (hγB : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h, γ h z t ∈ B)
+    (hγ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h,
+      HasDerivWithinAt (γ h z)
+        (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)
+          (γ h z t)) (Icc 0 h) t)
+    (A T : ℝ) (hA : 0 ≤ A) (hT : 0 ≤ T)
+    (hdefect : ∀ h ∈ Ioc (0 : ℝ) 1, ∀ z ∈ B, ‖G h z - γ h z h‖ ≤ A * h ^ (k + 1)) :
+    ∃ M : ℝ, 0 < M ∧ ∀ h ∈ Ioc (0 : ℝ) 1, ∀ z₀, ∀ n : ℕ,
+      (∀ i ≤ n, oneStepIterate G h z₀ i ∈ B) →
+      (n : ℝ) * h * h ^ (k - r) ≤ T →
+      ‖H (oneStepIterate G h z₀ n) - H z₀‖ ≤ M * h ^ r
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.polynomialEnergyRate；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]hdefect是假设明确给出的实际一步O(h^(k+1))端点界，源自原书“By construction”尚未形式化的先验；不是本条能量结论。 | [EXTRA] |
+| 原文省略/技术资格 | D/B及C¹、实际截断ODE留B、r≤k、A,T≥0、0<h≤1、数值轨道留B；长时间条件νhh^(k−r)≤T。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:752](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:752>)（`MD.Ch03.polynomialEnergyRate`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbook_energy_drift_rate_of_flow_defect; 需另证FiniteMatchingConstruction；本条仅条件化先验推论。
+
+签名SHA256：`dd6859dda8e1d4466f034152405697dd822e255b010d98d07eadc405fa30ec68`；原文SHA256：`f8329d0cf6588057292722134de27e6570f5c06c4dfbf979ae0dbc93a75a1a12`。
+
+## 1. MD-3.4-StepCountPower · unnumbered_claim · 印刷p.116 / PDFp.138
+
+### 2. 原文陈述
+
+> so that, as long as $\nu\le C_2h^{-k+r-1}$, we have
+> \[|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le O(h^r).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem stepCountPower (r k n : ℕ) (hrk : r ≤ k) (h : ℝ) :
+    (n : ℝ) * h ^ (k + 1) = ((n : ℝ) * h * h ^ (k - r)) * h ^ r
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.stepCountPower；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 自然数r≤k使k−r没有截断损失；不将此代数辅助冒充完整能量定理。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch03.lean:776](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:776>)（`MD.Ch03.stepCountPower`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.energy_step_count_power_factor。
+
+签名SHA256：`85630d9acd381738b3bf93336a6f54e745e3b8942b01ea3c5a638a6743f4072d`；原文SHA256：`5d587994da1af9b4d54aead0399a800b0251f591f1a59f4954b17e2138ec424c`。
+
+## 1. MD-3.4-ArbitraryFiniteTruncation · unnumbered_claim · 印刷p.116 / PDFp.138
+
+### 2. 原文陈述
+
+> If the differential equations are infinitely differentiable, we may take the truncation index $k$ as large as we like, but the constants appearing in the above theorem will depend on the truncation index in a complicated way.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem arbitraryFiniteTruncation :
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
+      ∀ k ≥ r, finiteMatching H Hj r k D B G
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.arbitraryFiniteTruncation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | smoothSymplecticData保持全部Hamiltonian/近恒等辛/compact条件；完整∀k匹配作为结论，没有把它当作前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:782](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:782>)（`MD.Ch03.arbitraryFiniteTruncation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺全阶Hamiltonian构造与实际截断匹配；C∞的任意固定阶不推出统一解析界。
+
+签名SHA256：`bf65ee5b2fd33a8df49269b926fe720182b07b8cf7f79eb8b9d85112715c8206`；原文SHA256：`c2eae059d18863e3b9c58ec16fd12caa12486a8c6b663807d6949fc99e780d27`。
+
+## 1. MD-3.4-AnalyticDefect · unnumbered_claim · 印刷p.116 / PDFp.138
+
+### 2. 原文陈述
+
+> It is possible to prove (see discussions in [164, 227] for more detail), that for many standard classes of numerical methods, there are real, positive constants $C,D$ such that
+> \[\|\mathcal G_h(\cdot)-\mathcal F_h^{(k)}(\cdot)\|\le Ch[D(k+1)h]^{k+1},\]
+> giving a precise bound on the magnitude of the difference between the time $h$ evolution under the truncated perturbed Hamiltonian and the numerical method.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem analyticBEA :
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r → AnalyticOnNhd ℝ H D →
+    AnalyticOnNhd ℝ (fun hz : ℝ × SymplecticCoordinates n => G hz.1 hz.2)
+      (Ioo (-1:ℝ) 1 ×ˢ D) →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, AnalyticOnNhd ℝ (Hj j) D) ∧
+    ∃ C > 0, ∃ A > 0, ∃ δ > 0,
+      (∀ k ≥ r, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+        ∀ h ∈ Ioo 0 δ, A*((k+1:ℕ):ℝ)*h ≤ 1 → ∀ z ∈ B,
+          truncatedFlow H Hj r k h z (Γ h z) ∧ (∀ t ∈ Icc 0 h, Γ h z t ∈ D) ∧
+          ‖G h z-Γ h z h‖ ≤ C*h*(A*((k+1:ℕ):ℝ)*h)^(k+1)) ∧
+      ∃ γ > 0, ∃ κ : ℝ → ℕ, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+        ∀ h ∈ Ioo 0 δ, r ≤ κ h ∧
+          ∀ z ∈ B, truncatedFlow H Hj r (κ h) h z (Γ h z) ∧
+            ‖G h z-Γ h z h‖ ≤ C*h*Real.exp (-γ/h)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.analyticBEA；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | 原文many standard classes未明说正则性；显式H和联合步映射解析、原有smoothSymplecticData及紧域；全阶系数构造与指数截断仍为结论。 | [EXTRA] |
+| 原页核对/疑点 | many standard classes的精确方法类及解析邻域条件原文未给。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。解析资格是补充而非原书明说；一般解析辛方法所需复邻域与统一常数的精确条件待审。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:793](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:793>)（`MD.Ch03.analyticBEA`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺解析Hamiltonian jet、Cauchy阶乘界和实际流统一余项；不建设大型BEA理论。
+
+签名SHA256：`963405f995960ad1ca5f1bfc77bb13b9821363abbf5286d5b31c5d7c7adabd75`；原文SHA256：`de4bdfdeea0c12cb9f2c5d9f06a6f2ae191c7806af4094c8ea75ffeef70d3578`。
+
+## 1. MD-3.4-OptimalTruncation · unnumbered_claim · 印刷p.116 / PDFp.138
+
+### 2. 原文陈述
+
+> If $h$ is small, then for $k$ sufficiently small the quantity in brackets is less than one and the difference from the truncated approximation decreases in magnitude with increasing $k$. As soon as $k$ satisfies
+> \[k+1>\frac1{Dh}\]
+> the power grows monotonically without bound. We can minimize the difference between $\mathcal G_h$ and $\mathcal F_h^{(k)}$ by choosing
+> \[k=\frac1{Dh\mathrm e}-1,\]
+> in which case,
+> \[\|\mathcal G_h(\cdot)-\mathcal F_h^{(k)}(\cdot)\|<Ch\mathrm e^{-\gamma/h},\qquad\gamma=\frac1{D\mathrm e}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem optimalTruncation :
+  ∀ A > 0, ∃ δ > 0, ∃ C > 0, ∀ h ∈ Ioo 0 δ,
+    let k := Nat.floor (1/(A*Real.exp 1*h))
+    0 < k ∧ (A*(k:ℝ)*h)^k ≤ C*Real.exp (-(1/(A*Real.exp 1))/h)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.optimalTruncation；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | D>0；足够小正h；取整后允许独立正C吸收误差。 | [EXTRA] |
+| 原页核对/疑点 | 连续最优k未必整数；Lean整数界不冒充原文全部连续最小化结论。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。书中实数最优k与整数截断需量化；幂函数的单调增长阈值也不是导数最小阈值，字面段落与整数界需独立裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:814](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:814>)（`MD.Ch03.optimalTruncation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺整数最优截断与一致指数常数界；原文取整问题待审。
+
+签名SHA256：`ec534b9b04099d7a1e9c1f00c5ecc917c82c67b1a040a7942b71ffab2b383343`；原文SHA256：`1e4c33a47d61abd82d8705b1db164534ddc0b294e7b852f32fc778cab4ceee24`。
+
+## 1. MD-3.4-ExponentialFlat · unnumbered_claim · 印刷p.116 / PDFp.138
+
+### 2. 原文陈述
+
+> This bound tends to zero extremely rapidly (more rapidly than any power of $h$) as $h\to0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem exponentialFlat :
+  ∀ γ > 0, ∀ k : ℕ, Tendsto (fun h : ℝ => Real.exp (-γ/h)/h^k) (𝓝[>] 0) (𝓝 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.exponentialFlat；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | γ>0、h→0⁺；不声称只有C∞就有指数缺陷。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch03.lean:822](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:822>)（`MD.Ch03.exponentialFlat`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2cfc4e62d1d56740e05abd3688b67326cd7547f4457ef0ef1c4ce39077ccaa0c`；原文SHA256：`477229752af7c4ed7982f95857abe1a76911022ca094a35bbcaa1f9fa41a3232`。
+
+## 1. MD-3.4-ScalarVerletShadow4 · definition · 印刷p.117 / PDFp.139
+
+### 2. 原文陈述
+
+> The modified energy for the Verlet method for a single degree of freedom system with energy $H=p^2/2+U(q)$ is
+> \[\widetilde H_h=H+\frac{h^2}{24}(2p^2U''-(U')^2)
+> +h^4\left(\frac1{720}p^4U''''-\frac1{120}p^2U'U'''-\frac1{240}(U')^2U''-\frac1{60}p^2((U'')^2+U'U''')\right)+O(h^6).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def scalarVerletShadow4 (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=
+  let p := z.2; let q := z.1
+  p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(
+    p^4*iteratedDeriv 4 U q/720-p^2*deriv U q*iteratedDeriv 3 U q/120-
+    (deriv U q)^2*iteratedDeriv 2 U q/240-p^2*((iteratedDeriv 2 U q)^2+deriv U q*iteratedDeriv 3 U q)/60)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.scalarVerletShadow4；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | O(h⁶)的实际修正匹配另为未完成理论；有限函数与余项分开。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。有限式定义忠实保留；原文modified energy的O(h⁶)真实性需完整Verlet BCH匹配，不能只凭定义记为已证。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch03.lean:839](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:839>)（`MD.Ch03.scalarVerletShadow4`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0a044f304059badf4881166f196e4d0e33728eae6c9d1dce50cc77f41c39f1d5`；原文SHA256：`7c61ac40350474cc9d0eb6232e3f9bc516df715c6b7d2d4af0b266c017deaba1`。
+
+## 1. MD-3.4-CommutingEnergy · unnumbered_claim · 印刷p.117 / PDFp.139
+
+### 2. 原文陈述
+
+> Suppose that, somehow, $H$ were exactly conserved along the numerical solution, so
+> \[\dot H=0\Rightarrow\{H,\widetilde H_h\}=0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem commutingEnergy :
+  ∀ (n : ℕ) (H K : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
+    (Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    ContDiffOn ℝ 1 H D → IsOpen D → actualFlow (textbookHamiltonianVectorField K) D Φ η →
+    (∀ z ∈ D, ∀ t ∈ Ioo (-η) η, H (Φ t z)=H z) → ∀ z ∈ D, textbookPoissonBracket H K z=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.commutingEnergy；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | H在开放D为C¹、实际K-Hamiltonian流存在正η且全轨道H守恒。 | [EXTRA] |
+| 原页核对/疑点 | 离散快照守恒不直接推出连续修正流守恒。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。书中从numerical solution到连续流导数的跳步需审；Lean只保留明确连续流版本，不将离散能量守恒作为连续守恒证明。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:848](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:848>)（`MD.Ch03.commutingEnergy`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：非PASS不进入证明；连续流版本可以另桥接Lie–Poisson导数。
+
+签名SHA256：`d728361ef8bf19acb646721d49f2959341a1f7a5f693d05a49b8f1227422ffa5`；原文SHA256：`21f94e4c6f708443eb0987f1d17b157df575f56fb3e4e2570920c4d08f8d4259`。
+
+## 1. MD-3.4-CommutingEnergySymmetry · unnumbered_claim · 印刷p.118 / PDFp.140
+
+### 2. 原文陈述
+
+> Since $\{g_1,g_2\}=-\{g_2,g_1\}$, we have
+> \[\{\widetilde H_h,H\}=0.\]
+> This would imply that $\widetilde H_h$ is actually, itself, a first integral of the molecular system.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem commutingEnergySymmetry :
+  ∀ (n : ℕ) (H K : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
+    (Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    ContDiffOn ℝ 1 K D → IsOpen D → actualFlow (textbookHamiltonianVectorField H) D Φ η →
+    (∀ z ∈ D, MolecularDynamics.textbookPoissonBracket H K z=0) →
+      (∀ z ∈ D, MolecularDynamics.textbookPoissonBracket K H z=0) ∧ ∀ z ∈ D, ∀ t ∈ Ioo (-η) η, K (Φ t z)=K z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.commutingEnergySymmetry；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 开放D、K为C¹、实际H流存在正η。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch03.lean:857](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:857>)（`MD.Ch03.commutingEnergySymmetry`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0757b99e00043019c30131745b1a9d9942e0c7eb1d3695162e23ca4b0f09dae1`；原文SHA256：`9c41fa7b6b11b808a532429174aaa4753a6c7c9fd329e5bdb0c5e5b5b6fa9e15`。
+
+## 1. MD-3.4-EnergySymplecticNoGo · unnumbered_claim · 印刷p.118 / PDFp.140
+
+### 2. 原文陈述
+
+> This certainly seems unlikely to hold except in very special cases indeed, unless the numerical method happens to coincide with the exact solution (up to a time rescaling). Thus the properties of symplecticness and energy conservation for numerical methods are essentially mutually exclusive from a practical point of view. A more precise formulation of this result was first given by Ge and Marsden [400].
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem energySymplecticNoGo :
+  ∀ (n : ℕ) (H : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    IsOpen D → ContDiffOn ℝ ⊤ H D → noExtraIntegrals H D →
+    actualFlow (textbookHamiltonianVectorField H) D Φ η →
+    ContDiff ℝ ⊤ (fun hz : ℝ × SymplecticCoordinates n => G hz.1 hz.2) →
+    (∀ z ∈ D, G 0 z=z) → (∀ h ∈ Ioo (-η) η, IsTextbookSymplecticMap (G h)) →
+    (∀ h ∈ Ioo (-η) η, ∀ z ∈ D, H (G h z)=H z) →
+    ∃ δ > 0, ∃ τ : ℝ → ℝ → ℝ, ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ D, G h z=Φ (τ h (H z)) z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch03.energySymplecticNoGo；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]noExtraIntegrals明确所有光滑第一积分是H的函数；开放D、全光滑实际流与近恒等辛方法；该强资格原文未列。 | [EXTRA] |
+| 原页核对/疑点 | 原文practical排他陈述缺精确非可积性/无额外第一积分等假设。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。定性no-go不能无条件成立；补全Ge–Marsden所需原理和全局流资格尚待审，忠实保留疑点。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch03.lean:887](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:887>)（`MD.Ch03.energySymplecticNoGo`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺Ge–Marsden精确理论及局部全局资格；不建设大型理论。
+
+签名SHA256：`3bbfd63714bd201f173162f8684d842a5b8105028c8de8a60f4212061fe85ab3`；原文SHA256：`bc0c57d116a615c2eb7fa6969d20917aca0fb621f751dd4e84239ac477dde58f`。

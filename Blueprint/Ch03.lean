@@ -612,4 +612,287 @@ theorem takahashiEffectiveOrder :
             (τ/ν) γ ν ≤ C*(τ/ν)^4 := by
   sorry
 
+/-- source_id: MD-3.4-ModifiedField · definition · §3.4 · 印刷p.113 / PDFp.135 -/
+def formalField {n : ℕ} (f : Q n → Q n) (fj : ℕ → Q n → Q n) (r : ℕ)
+    (z : Q n) (i : Fin n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun j => if j=0 then f z i else if r ≤ j then fj j z i else 0)
+
+/-- source_id: MD-3.4-LeadingModifiedField · unnumbered_claim · §3.4 · 印刷p.113 / PDFp.135
+[EXTRA] r>0、全域C∞的f及(h,z)↦G_h、开放D与紧B及真实双向局部流；局部r阶条件。 -/
+theorem leadingModifiedField :
+  ∀ (n r : ℕ) (f : Q n → Q n) (G Φ : ℝ → Q n → Q n) (D B : Set (Q n)) η,
+    0 < r → ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ (fun hz : ℝ × Q n => G hz.1 hz.2) →
+    IsOpen D → IsCompact B → B ⊆ D → actualFlow f D Φ η → localOrder G Φ B r →
+    ∃ fr : Q n → Q n, ContDiffOn ℝ ⊤ fr D ∧
+      (∀ z ∈ B, Tendsto (fun h => (h^(r+1))⁻¹ • (G h z-Φ h z)) (𝓝[≠] 0) (𝓝 (fr z))) ∧
+      ∃ Γ : ℝ → Q n → ℝ → Q n, ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z ∈ B,
+        Γ h z 0=z ∧ solution (fun x => f x+h^r • fr x) (Γ h z) 0 h ∧
+          ‖G h z-Γ h z h‖ ≤ C*h^(r+2) := by
+  sorry
+
+/-- source_id: MD-3.4-TruncatedHamiltonian · (3.11) · §3.4 · 印刷p.114 / PDFp.136 -/
+noncomputable def truncatedHamiltonian (H : E → ℝ) (Hj : ℕ → E → ℝ)
+    (r k : ℕ) (h : ℝ) (z : E) : ℝ :=
+  H z + ∑ j ∈ Finset.Icc r k, h ^ j * Hj j z
+
+/-- source_id: MD-3.4-TruncationSmooth · unnumbered_claim · §3.4 · 印刷p.114 / PDFp.136
+[EXTRA] 各系数在开放环境D为C¹；这里只证明所需C¹子结论，原文smooth假设本身不作为新断言。 -/
+theorem truncationSmooth (H : E → ℝ) (Hj : ℕ → E → ℝ)
+    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ 1 H D)
+    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :
+    ContDiffOn ℝ 1 (textbookTruncatedHamiltonian H Hj r k h) D := by
+  apply MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian <;> assumption
+
+/-- source_id: MD-3.4-Thm3.1 · Theorem 3.1 · §3.4 · 印刷p.114–116 / PDFp.136–138
+[EXTRA] smoothSymplecticData显式添加原方法r阶/近恒等辛/joint C∞、开放凸环境D、紧凸B⊆D、真实原流；r>0。
+[EXTRA] 本签名保留完整构造H_j与finiteMatching为结论，k≥r固定；数值迭代和截断ODE留B，常数可依赖k,T而非所有k统一。
+[NEEDS_HUMAN] 给定H̃_k与存在一组构造系数的量词对应、截断轨道留B及所有n≤ν的长时间范围需审；任意n和T的量化包含原文每个n≤ν。
+[NEEDS_HUMAN] 证明先对H取L，后对H̃_k沿用L，并在Lνh^(k+1)中省略缺陷常数C；本地辅助桥接显式给实际截断族统一L和C，但原文不改。 -/
+theorem theorem31 :
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
+    ∀ k ≥ r, finiteMatching H Hj r k D B G ∧
+      ∀ T > 0, ∃ M > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z₀ ∈ B, ∀ ν : ℕ,
+        (∀ i ≤ ν, oneStepIterate G h z₀ i ∈ B) →
+        (∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+          ∀ z ∈ B, truncatedFlow H Hj r k h z (Γ h z) ∧
+            (∀ t ∈ Icc 0 h, Γ h z t ∈ B)) →
+        (ν:ℝ)*h*h^(k-r) ≤ T → ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r := by
+  sorry
+
+/-- source_id: MD-3.4-CompactLipschitz · unnumbered_claim · §3.4 · 印刷p.114 / PDFp.136
+[EXTRA] 显式开放环境D及B⊆D、H在D为C¹；L由真实导数紧集界推出，未作假设。 -/
+theorem compactLipschitz (D B : Set E) (hD : IsOpen D)
+    (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (H : E → ℝ) (hH : ContDiffOn ℝ 1 H D) :
+    ∃ L : ℝ, 0 < L ∧ ∀ u ∈ B, ∀ v ∈ B, ‖H v - H u‖ ≤ L * ‖v - u‖ := by
+  apply MolecularDynamics.exists_compact_C1_lipschitz_constant <;> assumption
+
+/-- source_id: MD-3.4-TruncatedFlow · definition · §3.4 · 印刷p.115 / PDFp.137 -/
+def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
+    (r k : ℕ) (h : ℝ) (z : SymplecticCoordinates n) (γ : ℝ → SymplecticCoordinates n) : Prop :=
+  γ 0=z ∧ solution (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)) γ 0 h
+
+/-- source_id: MD-3.4-FiniteMatchingConstruction · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
+[EXTRA] smoothSymplecticData与原书构造上下文相同；保留任意k的真实finiteMatching为结论，不当作前提。 -/
+theorem finiteMatchingConstruction :
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
+      ∀ k ≥ r, finiteMatching H Hj r k D B G := by
+  sorry
+
+/-- source_id: MD-3.4-TruncatedConservation · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
+[EXTRA] 沿γ对K的可微性与真实ODE在闭区间明示，包含端点；构造γ属于另项。 -/
+theorem truncatedConservation (H : SymplecticCoordinates Nc → ℝ)
+    (γ : ℝ → SymplecticCoordinates Nc) (τ : ℝ)
+    (hH : ∀ t ∈ Icc 0 τ, DifferentiableAt ℝ H (γ t))
+    (hγ : ∀ t ∈ Icc 0 τ,
+      HasDerivWithinAt γ (textbookHamiltonianVectorField H (γ t)) (Icc 0 τ) t) :
+    ∀ t ∈ Icc 0 τ, H (γ t) = H (γ 0) := by
+  apply MolecularDynamics.textbookHamiltonian_energy_const_on_Icc <;> assumption
+
+/-- source_id: MD-3.4-EnergyTelescoping · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137 -/
+theorem energyTelescoping {E : Type*} (K : E → ℝ)
+    (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
+    ∑ i ∈ Finset.range n, (K (oneStepIterate G h z₀ (i + 1)) -
+      K (oneStepIterate G h z₀ i)) = K (oneStepIterate G h z₀ n) - K z₀ := by
+  apply MolecularDynamics.oneStep_energy_telescoping <;> assumption
+
+/-- source_id: MD-3.4-UniformTruncatedLipschitz · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
+[EXTRA] 开放D、紧凸B⊆D及H和有限H_j在D C¹；0≤h≤1；L由有限系数导数界推出。 -/
+theorem uniformTruncatedLipschitz
+    (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (D B : Set E) (hD : IsOpen D)
+    (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (hH : ContDiffOn ℝ 1 H D)
+    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :
+    ∃ L : ℝ, 0 < L ∧ ∀ h ∈ Icc (0 : ℝ) 1, ∀ u ∈ B, ∀ v ∈ B,
+      ‖textbookTruncatedHamiltonian H Hj r k h v -
+        textbookTruncatedHamiltonian H Hj r k h u‖ ≤ L * ‖v - u‖ := by
+  apply MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz <;> assumption
+
+/-- source_id: MD-3.4-TruncationRemainder · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
+[EXTRA] 各有限系数在紧B连续；0≤h≤1；统一正C由紧性推出，未供应所需余项界。 -/
+theorem truncationRemainder
+    (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (B : Set E) (hB : IsCompact B)
+    (hHj : ∀ j ∈ Finset.Icc r k, ContinuousOn (Hj j) B) :
+    ∃ C : ℝ, 0 < C ∧ ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B,
+      ‖textbookTruncatedHamiltonian H Hj r k h z - H z‖ ≤ C * h ^ r := by
+  apply MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder <;> assumption
+
+/-- source_id: MD-3.4-PhysicalEnergyDrift · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
+[EXTRA] 开放D、紧凸B⊆D及有限C¹系数；给定真实截断ODE族γ及其留B、γ(h,z,0)=z，未假设γ的能量守恒或误差界。 -/
+theorem physicalEnergyDrift
+    (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)
+    (r k : ℕ) (D B : Set (SymplecticCoordinates Nc))
+    (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)
+    (G : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (γ : ℝ → SymplecticCoordinates Nc → ℝ → SymplecticCoordinates Nc)
+    (hγ₀ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, γ h z 0 = z)
+    (hγB : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h, γ h z t ∈ B)
+    (hγ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h,
+      HasDerivWithinAt (γ h z)
+        (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)
+          (γ h z t)) (Icc 0 h) t) :
+    ∃ C : ℝ, 0 < C ∧ ∃ L : ℝ, 0 < L ∧
+      ∀ h ∈ Icc (0 : ℝ) 1, ∀ z₀, ∀ n : ℕ,
+        (∀ i ≤ n, oneStepIterate G h z₀ i ∈ B) →
+        ‖H (oneStepIterate G h z₀ n) - H z₀‖ ≤ 2 * C * h ^ r +
+          L * ∑ i ∈ Finset.range n, ‖G h (oneStepIterate G h z₀ i) -
+            γ h (oneStepIterate G h z₀ i) h‖ := by
+  apply MolecularDynamics.textbook_energy_drift_le_actual_defects <;> assumption
+
+/-- source_id: MD-3.4-PolynomialEnergyRate · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
+[EXTRA] [EXTRA]hdefect是假设明确给出的实际一步O(h^(k+1))端点界，源自原书“By construction”尚未形式化的先验；不是本条能量结论。
+[EXTRA] D/B及C¹、实际截断ODE留B、r≤k、A,T≥0、0<h≤1、数值轨道留B；长时间条件νhh^(k−r)≤T。 -/
+theorem polynomialEnergyRate
+    (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)
+    (r k : ℕ) (hrk : r ≤ k) (D B : Set (SymplecticCoordinates Nc))
+    (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)
+    (G : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (γ : ℝ → SymplecticCoordinates Nc → ℝ → SymplecticCoordinates Nc)
+    (hγ₀ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, γ h z 0 = z)
+    (hγB : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h, γ h z t ∈ B)
+    (hγ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h,
+      HasDerivWithinAt (γ h z)
+        (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)
+          (γ h z t)) (Icc 0 h) t)
+    (A T : ℝ) (hA : 0 ≤ A) (hT : 0 ≤ T)
+    (hdefect : ∀ h ∈ Ioc (0 : ℝ) 1, ∀ z ∈ B, ‖G h z - γ h z h‖ ≤ A * h ^ (k + 1)) :
+    ∃ M : ℝ, 0 < M ∧ ∀ h ∈ Ioc (0 : ℝ) 1, ∀ z₀, ∀ n : ℕ,
+      (∀ i ≤ n, oneStepIterate G h z₀ i ∈ B) →
+      (n : ℝ) * h * h ^ (k - r) ≤ T →
+      ‖H (oneStepIterate G h z₀ n) - H z₀‖ ≤ M * h ^ r := by
+  exact MolecularDynamics.textbook_energy_drift_rate_of_flow_defect
+    H Hj r k hrk D B hD hB hconv hBD hH hHj G γ hγ₀ hγB hγ A T hA hT hdefect
+
+/-- source_id: MD-3.4-StepCountPower · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
+[EXTRA] 自然数r≤k使k−r没有截断损失；不将此代数辅助冒充完整能量定理。 -/
+theorem stepCountPower (r k n : ℕ) (hrk : r ≤ k) (h : ℝ) :
+    (n : ℝ) * h ^ (k + 1) = ((n : ℝ) * h * h ^ (k - r)) * h ^ r := by
+  apply MolecularDynamics.energy_step_count_power_factor <;> assumption
+
+/-- source_id: MD-3.4-ArbitraryFiniteTruncation · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
+[EXTRA] smoothSymplecticData保持全部Hamiltonian/近恒等辛/compact条件；完整∀k匹配作为结论，没有把它当作前提。 -/
+theorem arbitraryFiniteTruncation :
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
+      ∀ k ≥ r, finiteMatching H Hj r k D B G := by
+  sorry
+
+/-- source_id: MD-3.4-AnalyticDefect · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
+[EXTRA] 原文many standard classes未明说正则性；显式H和联合步映射解析、原有smoothSymplecticData及紧域；全阶系数构造与指数截断仍为结论。
+[NEEDS_HUMAN] many standard classes的精确方法类及解析邻域条件原文未给。 -/
+theorem analyticBEA :
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r → AnalyticOnNhd ℝ H D →
+    AnalyticOnNhd ℝ (fun hz : ℝ × SymplecticCoordinates n => G hz.1 hz.2)
+      (Ioo (-1:ℝ) 1 ×ˢ D) →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, AnalyticOnNhd ℝ (Hj j) D) ∧
+    ∃ C > 0, ∃ A > 0, ∃ δ > 0,
+      (∀ k ≥ r, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+        ∀ h ∈ Ioo 0 δ, A*((k+1:ℕ):ℝ)*h ≤ 1 → ∀ z ∈ B,
+          truncatedFlow H Hj r k h z (Γ h z) ∧ (∀ t ∈ Icc 0 h, Γ h z t ∈ D) ∧
+          ‖G h z-Γ h z h‖ ≤ C*h*(A*((k+1:ℕ):ℝ)*h)^(k+1)) ∧
+      ∃ γ > 0, ∃ κ : ℝ → ℕ, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+        ∀ h ∈ Ioo 0 δ, r ≤ κ h ∧
+          ∀ z ∈ B, truncatedFlow H Hj r (κ h) h z (Γ h z) ∧
+            ‖G h z-Γ h z h‖ ≤ C*h*Real.exp (-γ/h) := by
+  sorry
+
+/-- source_id: MD-3.4-OptimalTruncation · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
+[EXTRA] D>0；足够小正h；取整后允许独立正C吸收误差。
+[NEEDS_HUMAN] 连续最优k未必整数；Lean整数界不冒充原文全部连续最小化结论。 -/
+theorem optimalTruncation :
+  ∀ A > 0, ∃ δ > 0, ∃ C > 0, ∀ h ∈ Ioo 0 δ,
+    let k := Nat.floor (1/(A*Real.exp 1*h))
+    0 < k ∧ (A*(k:ℝ)*h)^k ≤ C*Real.exp (-(1/(A*Real.exp 1))/h) := by
+  sorry
+
+/-- source_id: MD-3.4-ExponentialFlat · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
+[EXTRA] γ>0、h→0⁺；不声称只有C∞就有指数缺陷。 -/
+theorem exponentialFlat :
+  ∀ γ > 0, ∀ k : ℕ, Tendsto (fun h : ℝ => Real.exp (-γ/h)/h^k) (𝓝[>] 0) (𝓝 0) := by
+  intro γ hγ k
+  have ht : Tendsto (fun h : ℝ => γ / h) (𝓝[>] 0) atTop := by
+    simpa only [div_eq_mul_inv] using tendsto_inv_nhdsGT_zero.const_mul_atTop hγ
+  have hp := ((Real.tendsto_pow_mul_exp_neg_atTop_nhds_zero k).comp ht).div_const (γ^k)
+  convert hp using 1
+  · ext h
+    by_cases hh : h = 0
+    · subst h; cases k <;> simp
+    · have hg : γ ≠ 0 := ne_of_gt hγ
+      simp only [Function.comp_apply, div_pow, neg_div]
+      field_simp
+  · simp
+
+/-- source_id: MD-3.4-ScalarVerletShadow4 · definition · §3.4 · 印刷p.117 / PDFp.139
+[NEEDS_HUMAN] O(h⁶)的实际修正匹配另为未完成理论；有限函数与余项分开。 -/
+def scalarVerletShadow4 (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=
+  let p := z.2; let q := z.1
+  p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(
+    p^4*iteratedDeriv 4 U q/720-p^2*deriv U q*iteratedDeriv 3 U q/120-
+    (deriv U q)^2*iteratedDeriv 2 U q/240-p^2*((iteratedDeriv 2 U q)^2+deriv U q*iteratedDeriv 3 U q)/60)
+
+/-- source_id: MD-3.4-CommutingEnergy · unnumbered_claim · §3.4 · 印刷p.117 / PDFp.139
+[EXTRA] H在开放D为C¹、实际K-Hamiltonian流存在正η且全轨道H守恒。
+[NEEDS_HUMAN] 离散快照守恒不直接推出连续修正流守恒。 -/
+theorem commutingEnergy :
+  ∀ (n : ℕ) (H K : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
+    (Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    ContDiffOn ℝ 1 H D → IsOpen D → actualFlow (textbookHamiltonianVectorField K) D Φ η →
+    (∀ z ∈ D, ∀ t ∈ Ioo (-η) η, H (Φ t z)=H z) → ∀ z ∈ D, textbookPoissonBracket H K z=0 := by
+  sorry
+
+/-- source_id: MD-3.4-CommutingEnergySymmetry · unnumbered_claim · §3.4 · 印刷p.118 / PDFp.140
+[EXTRA] 开放D、K为C¹、实际H流存在正η。 -/
+theorem commutingEnergySymmetry :
+  ∀ (n : ℕ) (H K : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
+    (Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    ContDiffOn ℝ 1 K D → IsOpen D → actualFlow (textbookHamiltonianVectorField H) D Φ η →
+    (∀ z ∈ D, MolecularDynamics.textbookPoissonBracket H K z=0) →
+      (∀ z ∈ D, MolecularDynamics.textbookPoissonBracket K H z=0) ∧ ∀ z ∈ D, ∀ t ∈ Ioo (-η) η, K (Φ t z)=K z := by
+  intro n H K D Φ η hK hD hflow hzero
+  have hskew : ∀ z ∈ D, MolecularDynamics.textbookPoissonBracket K H z = 0 := by
+    intro z hz
+    rw [MolecularDynamics.textbookPoissonBracket_skew, hzero z hz, neg_zero]
+  refine ⟨hskew, ?_⟩
+  intro z hz t ht
+  have hη := hflow.1
+  have htraj := hflow.2 z hz
+  have hd : ∀ s ∈ Ioo (-η) η, HasDerivAt (fun u => K (Φ u z)) 0 s := by
+    intro s hs
+    have hks : DifferentiableAt ℝ K (Φ s z) :=
+      (hK.differentiableOn (by norm_num)).differentiableAt (hD.mem_nhds (htraj.2 s hs).1)
+    simpa only [textbookLieDerivative_hamiltonian_eq_poisson,
+      hskew _ (htraj.2 s hs).1] using
+      hasDerivAt_textbookLieDerivative (textbookHamiltonianVectorField H) K
+        (fun u => Φ u z) s hks (htraj.2 s hs).2
+  have heq := isOpen_Ioo.is_const_of_deriv_eq_zero (convex_Ioo (-η) η).isPreconnected
+    (fun s hs => (hd s hs).differentiableAt.differentiableWithinAt)
+    (fun s hs => (hd s hs).deriv) ht (show (0:ℝ) ∈ Ioo (-η) η by constructor <;> linarith)
+  simpa only [htraj.1] using heq
+
+/-- source_id: MD-3.4-EnergySymplecticNoGo · unnumbered_claim · §3.4 · 印刷p.118 / PDFp.140
+[EXTRA] [EXTRA]noExtraIntegrals明确所有光滑第一积分是H的函数；开放D、全光滑实际流与近恒等辛方法；该强资格原文未列。
+[NEEDS_HUMAN] 原文practical排他陈述缺精确非可积性/无额外第一积分等假设。 -/
+theorem energySymplecticNoGo :
+  ∀ (n : ℕ) (H : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    IsOpen D → ContDiffOn ℝ ⊤ H D → noExtraIntegrals H D →
+    actualFlow (textbookHamiltonianVectorField H) D Φ η →
+    ContDiff ℝ ⊤ (fun hz : ℝ × SymplecticCoordinates n => G hz.1 hz.2) →
+    (∀ z ∈ D, G 0 z=z) → (∀ h ∈ Ioo (-η) η, IsTextbookSymplecticMap (G h)) →
+    (∀ h ∈ Ioo (-η) η, ∀ z ∈ D, H (G h z)=H z) →
+    ∃ δ > 0, ∃ τ : ℝ → ℝ → ℝ, ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ D, G h z=Φ (τ h (H z)) z := by
+  sorry
+
 end MD.Ch03

@@ -1,0 +1,4 @@
+blueprint\ch03\validation\short_search\ReversedTrajectory-route2.lean:15:47: error(lean.invalidField): Invalid field `comp_hasDerivAt`: The environment does not contain `HasFDerivAtFilter.comp_hasDerivAt`, so it is not possible to project the field `comp_hasDerivAt` from an expression
+  hγ (-t)
+of type
+  HasFDerivAtFilter γ (ContinuousLinearMap.toSpanSingleton ℝ (f (γ (-t)))) (𝓝 (-t) ×ˢ pure (-t))

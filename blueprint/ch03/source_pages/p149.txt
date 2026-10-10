@@ -1,0 +1,58 @@
+3.6 On the Importance of Being Symplectic                                       127
+
+
+    0                        0                       0
+
+  −1                      −1                      −1
+
+y −2                        y −2                       y −2
+
+  −3                      −3                      −3
+
+  −4                      −4                      −4
+    −2  −1   0   1   2     −2  −1   0   1   2     −2  −1   0   1   2
+                x                           x                           x
+
+Fig. 3.13 A projected Verlet trajectory for the pendulum model is shown in its xy projection for
+three successive intervals of timesteps (see text for discussion). The graphs show the transition
+from correct sampling behavior to motion conﬁned to a limit cycle
+
+
+            0                            0
+
+
+           −1                          −1
+
+         y −2                         y −2
+
+
+           −3                          −3
+
+
+           −4                          −4
+            −2   −1    0    1    2     −2   −1    0    1    2
+                          x                            x
+
+Fig. 3.14 The steady state behavior obtained in the pendulum example using Verlet (left) and the
+projected Verlet method (right). The graphs show the ﬁnal 450,000 steps of simulation in a 500,000
+step trajectory
+
+
+3.6 On the Importance of Being Symplectic
+
+
+Symplecticness is a strong condition and we have seen, in the construction of the
+perturbed Hamiltonian the last section, that it implies a constraint on the growth
+of errors in energy. This does not, however, automatically mean that there are
+no other suitable principles that could underpin the design of good numerical
+methods for molecular dynamics. The ﬂow of a Hamiltonian system of the form
+H D pTM 1p=2 C U.q/ will preserve all of the following2:
+
+
+
+
+
+2Other conserved quantities may be present in speciﬁc situations, but this is the exception rather
+than the rule. For example the conservation of angular momentum, which we would expect in the
+case of celestial mechanics, is destroyed by the use of various boundary conditions in molecular
+simulation.

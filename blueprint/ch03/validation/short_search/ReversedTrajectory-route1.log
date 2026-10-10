@@ -1,0 +1,8 @@
+blueprint\ch03\validation\short_search\ReversedTrajectory-route1.lean:15:36: error: Application type mismatch: The argument
+  HasDerivAt.comp t ?m.94 (hasDerivAt_neg t)
+has type
+  HasDerivAt (?m.91 ∘ Neg.neg) (?m.93 * -1) t
+but is expected to have type
+  HasDerivAt ?m.79 ?m.80 t
+in the application
+  HasFDerivAt.comp_hasDerivAt t (ContinuousLinearMap.hasFDerivAt R) (HasDerivAt.comp t ?m.94 (hasDerivAt_neg t))

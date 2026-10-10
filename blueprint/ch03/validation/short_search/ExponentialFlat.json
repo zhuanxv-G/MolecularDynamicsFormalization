@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro γ hγ k\n  have ht : Tendsto (fun h : ℝ => γ / h) (𝓝[>] 0) atTop := by\n    simpa only [div_eq_mul_inv] using tendsto_inv_nhdsGT_zero.const_mul_atTop hγ\n  have hp := ((Real.tendsto_pow_mul_exp_neg_atTop_nhds_zero k).comp ht).div_const (γ^k)\n  convert hp using 1\n  · ext h\n    by_cases hh : h = 0\n    · subst h; cases k <;> simp\n    · have hg : γ ≠ 0 := ne_of_gt hγ\n      simp only [Function.comp_apply, div_pow, neg_div]\n      field_simp\n  · simp",
+    "source": "blueprint/ch03/validation/short_search/ExponentialFlat-route1.lean",
+    "log": "blueprint/ch03/validation/short_search/ExponentialFlat-route1.log",
+    "source_sha256": "9f9c27b7df9cfb4a682ed14450b871f36959a2af6b4aa01296155d465bcc67ea",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

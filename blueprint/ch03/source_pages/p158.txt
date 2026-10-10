@@ -1,0 +1,49 @@
+136                                              3  Analyzing Geometric Integrators
+
+
+   Timestepping then proceeds as usual, with the slight modiﬁcation that the time
+between steps will vary throughout integration. Numerical results with this method
+reported in [184] are very favorable.
+
+
+
+3.7.3  Enhancements of the Collisional Verlet Method
+
+
+A further idea introduced in [184] was to use a force decoupling strategy to reduce
+the cost of computations. The idea is to exploit the observation that impulsive forces
+(“kicks”) can be supplied without reducing the order of accuracy as long as these
+have a vanishing component in the direction of the collision vector u?, that is if
+F? D  rU.qc/ u? D 0. This can be achieved in systems of spheres with pair
+potentials 'ij only by writing 'ij D ˛ij C ˇij where the derivative of the second term
+is chosen to vanish at the point of contact between the spheres, i.e. ˛0ij.   i C  j/ D 0.
+If this decomposition is used, then it is possible to build a 2nd order accurate hybrid
+method that uses only the ﬁrst part ˛ to deﬁne the quadratic Verlet paths for the
+collision detection scheme, whereas ˇ is introduced as a standard “kick” at collision
+points.
+   In Collisional Verlet, the momenta are adjusted at the collision point to preserve
+the kinetic energy (and hence the total energy). It is possible to project to some other
+manifold using projection techniques like those mentioned previously, as discussed
+in [40]. In particular, one may use the backward error analysis to obtain a modiﬁed
+Hamiltonian QHh corresponding to the Verlet method with stepsize h, then to project
+during collisions not onto the energy surface, but onto the modiﬁed energy surface,
+so that
+
+                                        QHh    const:
+
+(In practice, a low order approximation of QHh is used, such as the truncation to
+terms of order four or six in the stepsize.) The resulting method substantially
+exhibits higher accuracy than the standard Collisional Verlet method in long
+term simulations, including accurate recovery of statistical properties (for example
+velocity autocorrelation functions). Additional cost is, however, involved in the
+handling of the collisions.
+   Other methods for hard sphere molecular dynamics and polymer modelling based
+on variational integration strategies, as well as comparative discussion, are provided
+in [235].
+
+
+
+Exercises
+
+
+1. Consider the solutions of

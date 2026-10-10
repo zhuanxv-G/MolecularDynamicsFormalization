@@ -1,0 +1,47 @@
+124                                              3  Analyzing Geometric Integrators
+
+and, since NQ is known, this gives
+
+                          E   NU  1=2
+                D                    ;                          (3.13)
+                                                 NK
+
+where NU D U. NQ/ and NK D NP TM  1 NP=2 are the potential and kinetic energies after
+a step of the original non-conserving scheme. As long as the steps are small enough
+we could hope that the resulting method is sensible. This is, however, not quite true.
+If, in the harmonic oscillator, NpnC1 happens to vanish, then    is not deﬁned. We
+could work around this obstacle by assuming a large number of degrees of freedom,
+in which case NK is only zero if all the momenta simultaneously vanish and this
+situation is, in a realistic model of a molecule, extremely unlikely. We also must
+assume that E  NU    0, which, for a large system, seems the likely situation, since we
+may suppose NK C NU D NE   E, thus E   NU    NK    0. Thus we assume a system with
+many degrees of freedom so that all the conditions for the method to be well deﬁned
+are satisﬁed. Although it may appear that the method requires two evaluations of the
+energy at each timestep (which may seem a high cost, since Euler’s method and even
+the 2nd order Verlet method only require one), the evaluation of the energy needed
+to compute   is at the end point of the combined step, and this is the starting point
+for the next step—essentially the same work would be needed anyway to compute
+the forces at the next step. In practice, some care must be exercised in implementing
+this method. In particular the kinetic energy needs to be monitored for approach to
+zero; when this occurs the projections must be disabled or replaced by an alternate
+scheme.
+  When we adjust the momenta by scaling in order to satisfy the energy constraint,
+we are, in effect, projecting the preliminary numerical approximation onto an
+energy surface, using one particular type of projection. There are many alternative
+projection methods which we could use for this purpose, which might alter both the
+positions and momenta. Modifying the positions means that we will somehow need
+to solve the equation
+
+                          H.Q; P/ D E;
+
+where Q depends on a parameter or parameters (typically a Lagrange multiplier
+that is used to maintain the constraint). These methods are necessarily implicit and
+require solving nonlinear equations involving the potential energy U [308]. In an
+iterative strategy such as Newton’s method, we will need to compute the potential
+energy several times at each timestep. This is a very high price to pay in practice
+and is one reason why complicated energy projection methods are not popular.
+   Another reason why energy conserving methods are rarely used in molecular
+simulation is that they may lead to behavior that is not consistent with the properties
+of our original model. If we think of the procedure that we use to deﬁne the step
+as deﬁning a map of phase space, the map does not necessarily have qualitative
+properties that mimic those of the original system. Note that, as we have mentioned

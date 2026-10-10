@@ -12,8 +12,8 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "31ae5912539586e323e50df35aa3fdf9ab36a0c0d3445747b242b49083e17323",
-  "lean_sha256": "5ea886e0c9adb821098b28ecd8f5a6d1a1509d4827a06fb33017694167aef3a6",
+  "source_json_sha256": "5ffd37fb8d9b61f2f229257997494e0736b1ce3fcc64d01922ae2c12b35e8ba5",
+  "lean_sha256": "1383b5071a3755e6d67a0fcbebeb2b643ce1ddb05eb0b788ff47134239581d6c",
   "signature_sha256": "fc753e75bf42aef42322ba01b837720c307e3064d27b709b9f491dbf32b3a259",
   "definition_excerpts": [
     {
@@ -416,5 +416,6 @@
     "verbatim_source_signature_definitions": "PASS",
     "pdf_rendered_pixel_equality": "PASS",
     "website_acceptance": "NOT_TESTED"
-  }
+  },
+  "total_task_bytes": 109225
 }

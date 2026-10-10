@@ -1,0 +1,49 @@
+126                                              3  Analyzing Geometric Integrators
+
+
+Fig. 3.12 Pendulum model                                      (0,0)
+with two different natural
+frequencies
+                                                                 k1=1
+
+
+
+
+                                                                                             (x,y)
+
+                                                              k2=10
+
+                                                                   (0,-2)
+
+
+
+springs are assumed to have rest lengths of `1, `2, respectively. The potential energy
+function is
+
+                                 k1              k2
+                   U.x; y/ D    .r1   `1/2 C    .r2   `2/2;
+                          2            2
+     p      p
+where r1 D   x2 C y2; r2 D   x2 C .y C 2/2:
+  We take k1 D 1, k2 D 10 (each spring has a rest length of 1) and the initial
+conditions q0 D .0;  2:9/; p0 D .:8718; 0/ with energy E   2:235. The pendulum
+positions ﬁll in a region which is approximately a disk with a hole cut out. A
+correct result is obtained using the Verlet method with a stepsize of h D 0:04.
+Yet, for exactly the same stepsize, using the energy projection method, the results
+are completely different.
+   In Fig. 3.13, the position of the point x; y is shown for three successive series of
+timesteps: (i) 0   n < 25;000, (ii) 25;000   n < 30;000, and (iii) 30;000   n
+500;000. In the ﬁrst phase, the discrete trajectory appears to be ﬁlling in the correct
+region and without any evidence of nonphysical behavior. The performance is very
+similar to a Verlet method without projection during this period. In the second phase
+the system begins to move toward a limit cycle, i.e. an attractive periodic orbit.
+The presence of such limit cycles is impossible in a Hamiltonian system, thus it is
+evident that a nonphysical artefact has been introduced by the projection method.
+Finally, in the third phase, the trajectory is increasingly conﬁned. In Fig. 3.14, the
+trajectory is shown for timesteps n D 50;000 to 500;000 and this is contrasted with
+the correct image of the conﬁgurational region. Because of the use of energy as a
+constraint, we have also given up this means of assessing the quality of the solution;
+the projected numerical method makes errors in the energy of relative size 10  14 or
+less. However, the observation here is that the energy conserving projection would
+be utterly useless at this stepsize, although, if we were to judge the quality of the
+method from the ﬁrst 25;000 steps, we would see nothing amiss.

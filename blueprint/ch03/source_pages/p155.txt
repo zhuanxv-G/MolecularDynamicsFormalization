@@ -1,0 +1,48 @@
+3.7  Molecular Dynamics with Hard-Sphere Collisions                               133
+
+where    1;    2; : : : ;     r  1 are the times between collisions,    0 is the time until
+the ﬁrst collision, and     r is the time between the last collision and   . Here Gt is the
+ﬂow map of the smooth system (Hamiltonian H). The trajectory is thus piecewise
+smooth with continuous conﬁgurational path and momenta exhibiting ﬁnite jump
+discontinuities.
+   Various numerical methods have been proposed for collisional Hamiltonian
+systems [136, 176, 184, 263, 348, 352]. Typically, these schemes rely on the Verlet
+method to propagate the system between collisions, with collisions detected either
+(i) by checking for overlap at the end of the step, (ii) checking for overlap during
+the step, or (iii) approximating the time to collision before the step. Collisions lead
+to momentum exchange between particles according the principle outlined above.
+
+
+
+3.7.1  Splitting Methods for Hard Sphere Molecular Dynamics
+
+
+Splitting methods are suggested by considering a formal hard-sphere Hamiltonian
+
+                            Hh:s: D pTM 1p=2 C U.q/ C Uh:s:;
+
+where Uh:s: is assumed to be inﬁnite for overlapping conﬁgurations (some kqi
+qjk         i C   j) and zero otherwise. The hard sphere system described by
+
+                               Hfree D pTM 1p=2 C Uh:s:
+
+consists of purely ballistic (straight line) motion punctuated by momentum jumps.
+This system is formally integrable, i.e. we may write down its exact solution for
+any given initial conditions. (In practice, for large systems solved in parallel, this
+computation may be highly nontrivial [108, 336].) One approach is to consider the
+splitting H D Hfree C U, evolving Hfree for ﬁxed intervals punctuated by impulses
+derived from the smooth potential U. In [40, 184] this algorithm is termed the
+“Primitive Splitting Algorithm” and can be described by the three steps:
+
+             h                                     free                 h
+    P :D p  2rU .q/ ;    .Q; P/ :D G                                                h   .q; P/ ;   P :D P  2rU .Q/ :
+
+Even with this symmetric form (“kick”, “drift”, “kick”) where “drift” now involves
+the solution of the system Hfree, it was shown in [184] that energy accumulates
+rapidly. Assuming a ﬁnite number of collisions on a ﬁxed interval, the error behaves
+as O.h/. In long simulations the energy error grows without bound.
+  To understand why this is the case, we consider a step of the primitive splitting
+algorithm applied to a simple system consisting of a ﬁxed body at the origin
+and a single body (mass=1) moving under an external potential and in occasional
+contact with the ﬁxed body, both bodies having radius 0:5. Let us consider three
+possibilities: (i) there is no collision in the timestep, (ii) there is a collision only at

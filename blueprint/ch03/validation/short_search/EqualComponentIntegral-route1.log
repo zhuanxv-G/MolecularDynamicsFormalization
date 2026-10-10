@@ -1,0 +1,8 @@
+blueprint\ch03\validation\short_search\EqualComponentIntegral-route1.lean:18:4: error: Type mismatch: After simplification, term
+  HasDerivAt.sub (hu s) (hv s)
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (u - v) 0 s
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.instAddCommGroup Semiring.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun t => u t - v t) 0 s

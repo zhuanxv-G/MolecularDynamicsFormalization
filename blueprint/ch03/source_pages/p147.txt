@@ -1,0 +1,46 @@
+3.5  Energy Conserving Methods                                                125
+
+
+earlier in this chapter, it is in general impossible to simultaneously preserve the
+energy and the symplectic structure in a numerical method for Hamiltonian systems.
+There is nothing that tells us that the map constructed by energy projection may not
+exhibit artiﬁcial behavior (uncharacteristic of Hamiltonian systems). These artiﬁcial
+dynamical artifacts are particularly prevalent in low-dimensional models and at
+large stepsizes, although they may be manifest in any system.
+  We examine here the application of energy conserving methods in connection
+with the Lennard-Jones example discussed previously. The projection method may
+be used with any integrator. With respect to both Euler’s method and the 4th
+order Runge-Kutta method, for large stepsizes, nonphysical effects are noticeable.
+However, for small enough stepsize,  it is possible to improve the accuracy of
+averages obtained using the Runge-Kutta method by incorporating the projection
+(Fig. 3.11 shows the radial distribution for h D 0:01 with and without projection.)
+The lesson of this example is that one of the most important features of a method
+for molecular dynamics is its conservation of energy. However, already at h D 0:02
+the results were poor with the projected Runge-Kutta method. Thus the energy
+conservation seems only to offer a beneﬁt as a ﬁne-tuning. The addition of energy
+projection does not make the Runge-Kutta scheme competitive with Verlet for
+molecular simulation.
+  As a second example, we consider a simple model of an atom bonded to a pair
+of ﬁxed neighbors by (nonlinear) springs, as depicted in Fig. 3.12. The coefﬁcients
+k1 and k2 determine the potential energy function U of the system (a function of the
+position of the moving body q D .x; y/, which we assume to lie in a plane). The
+
+
+
+
+
+                                                           reference
+                                       RK4 h= 0.01                                                                                                Distribution
+                                                          Projected RK4 h= 0.01
+
+
+
+
+
+                    0.5      1.0      1.5     2        2.5     3        3.5
+                                            interatomic distance
+
+Fig. 3.11 The radial distribution computed using the projected Runge-Kutta method (3.12)–(3.13)
+with 1M steps of stepsize h D 0:01, in comparison to that obtained using the unprojected RK4
+method with the same number of steps. This result demonstrates improving energy conservation
+can have an important effect on the accuracy of computed averages

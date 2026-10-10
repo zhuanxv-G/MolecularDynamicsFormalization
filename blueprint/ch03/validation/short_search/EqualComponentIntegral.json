@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch03/validation/short_search/EqualComponentIntegral-route1.lean",
+    "log": "blueprint/ch03/validation/short_search/EqualComponentIntegral-route1.log",
+    "source_sha256": "d66016ad01a44e69f91a6150d45433b732bb099ae5e9d585caefedf52522b03a",
+    "log_sha256": "e955b0ba918d8df4ed46ff047289cb95612320233b29955cee5ca89ef3f4ec13"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "refine ⟨(fun z => z.1-z.2), (fun _ => rfl), ?_⟩\n  intro f u v hu hv t\n  have hd : ∀ s, HasDerivAt (fun t => u t-v t) 0 s := by\n    intro s\n    simpa using (hu s).fun_sub (hv s)\n  exact is_const_of_deriv_eq_zero (fun s => (hd s).differentiableAt)\n    (fun s => (hd s).deriv) t 0",
+    "source": "blueprint/ch03/validation/short_search/EqualComponentIntegral-route2.lean",
+    "log": "blueprint/ch03/validation/short_search/EqualComponentIntegral-route2.log",
+    "source_sha256": "57d686fdc76c5e2612cbf4da54347eb14e693f7fdf490161a8c3e6bcff3cb857",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

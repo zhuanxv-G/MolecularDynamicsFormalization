@@ -1,0 +1,104 @@
+Blueprint/Ch03.lean:21:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:52:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:135:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:147:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:171:65: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:171:65: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:190:58: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:190:58: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:195:58: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:195:58: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:222:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:222:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:276:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:276:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:284:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:284:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:303:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:312:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:322:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:334:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:349:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:359:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:378:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:421:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:429:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:442:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:448:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:541:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:573:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:591:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:605:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:622:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:651:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:680:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:703:57: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:703:57: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:719:0: warning: automatically included section variable(s) unused in theorem `MD.Ch03.truncationRemainder`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch03.lean:771:72: error: Tactic `assumption` failed
+
+case hdefect
+Nc : ℕ
+H : SymplecticCoordinates Nc → ℝ
+Hj : ℕ → SymplecticCoordinates Nc → ℝ
+r k : ℕ
+hrk : r ≤ k
+D B : Set (SymplecticCoordinates Nc)
+hD : IsOpen D
+hB : IsCompact B
+hconv : Convex ℝ B
+hBD : B ⊆ D
+hH : ContDiffOn ℝ 1 H D
+hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D
+G : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc
+γ : ℝ → SymplecticCoordinates Nc → ℝ → SymplecticCoordinates Nc
+hγ₀ : ∀ h ∈ Icc 0 1, ∀ z ∈ B, γ h z 0 = z
+hγB : ∀ h ∈ Icc 0 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h, γ h z t ∈ B
+hγ :
+  ∀ h ∈ Icc 0 1,
+    ∀ z ∈ B,
+      ∀ t ∈ Icc 0 h,
+        HasDerivWithinAt (γ h z) (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h) (γ h z t))
+          (Icc 0 h) t
+A T : ℝ
+hA : 0 ≤ A
+hT : 0 ≤ T
+hdefect : ∀ h ∈ Ioc 0 1, ∀ z ∈ B, ‖G h z - γ h z h‖ ≤ A * h ^ (k + 1)
+⊢ ∀ h ∈ Ioc 0 1, ∀ z ∈ B, ‖G h z - γ h z h‖ ≤ T * h ^ (k + 1)
+Blueprint/Ch03.lean:777:57: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch03.lean:781:8: warning: declaration uses `sorry`

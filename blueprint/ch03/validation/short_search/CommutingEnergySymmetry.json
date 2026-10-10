@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n H K D Φ η hK hD hflow hzero\n  have hskew : ∀ z ∈ D, textbookPoissonBracket K H z = 0 := by\n    intro z hz\n    rw [textbookPoissonBracket_skew, hzero z hz, neg_zero]\n  refine ⟨hskew, ?_⟩\n  intro z hz t ht\n  have hη := hflow.1\n  have htraj := hflow.2 z hz\n  have hd : ∀ s ∈ Ioo (-η) η, HasDerivAt (fun u => K (Φ u z)) 0 s := by\n    intro s hs\n    have hks : DifferentiableAt ℝ K (Φ s z) :=\n      (hK.differentiableOn (by norm_num)).differentiableAt (hD.mem_nhds (htraj.2 s hs).1)\n    simpa only [textbookLieDerivative_hamiltonian_eq_poisson,\n      hskew _ (htraj.2 s hs).1] using\n      hasDerivAt_textbookLieDerivative (textbookHamiltonianVectorField H) K\n        (fun u => Φ u z) s hks (htraj.2 s hs).2\n  have heq := isOpen_Ioo.is_const_of_deriv_eq_zero (convex_Ioo (-η) η).isPreconnected\n    (fun s hs => (hd s hs).differentiableAt.differentiableWithinAt)\n    (fun s hs => (hd s hs).deriv) ht (show (0:ℝ) ∈ Ioo (-η) η by constructor <;> linarith)\n  simpa only [htraj.1] using heq",
+    "source": "blueprint/ch03/validation/short_search/CommutingEnergySymmetry-route1.lean",
+    "log": "blueprint/ch03/validation/short_search/CommutingEnergySymmetry-route1.log",
+    "source_sha256": "1c8314c1c5e65b2ecb5ec00fdc60a299f693d15589ca1d9598a34ffa61ffef46",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

@@ -1,0 +1,52 @@
+3.7  Molecular Dynamics with Hard-Sphere Collisions                               135
+
+3.7.2  Collisional Verlet Algorithm for Hard Spheres
+
+
+A method was given in [184] based on a modiﬁed collision procedure which greatly
+reduces the error growth.
+  The idea is to make use of the quadratic
+
+                                                         t2
+                     Q.t/ D q C tM 1p  M 1rU .q/                 (3.18)
+                                     2
+
+which represents the position vector obtained from a Verlet step of size t. Note that
+this deﬁnes quadratic paths for all particles in the system. It is then possible to
+calculate the collision times by solving equations
+
+                      kQi.t/   Qj.t/k D    i C   j;      i ¤ j:                 (3.19)
+
+A step can then be taken to the ﬁrst point of subsequent collision, with positions
+updated using the quadratic and momenta adjusted according to the Verlet map
+combined with Rc. In this way, all steps taken are Verlet steps so the order of
+accuracy is two. Effectively, this is a Verlet method with variable timestep chosen
+to match collision times. A maximum outer stepsize hmax is incorporated to prevent
+too-large steps from being taken (in case collisions are infrequent). We write the
+method here in a slightly different form than in [184]: both the stepsize taken and
+the coordinates are viewed as variables.
+
+               Collisional Verlet Algorithm (CVA) [Single Step]
+
+   [computes h (the timestep) and .Q; P/ given a starting point .q; p/]
+
+   Calculate  c the time of next collision from the Verlet paths (quadratics) of (3.18)
+   using collision conditions (3.19).
+   If  c < hmax, then
+
+     h :D  c
+     .Q; P/ :D RcG hVerlet .q; p/
+
+   else
+
+     h :D hmax
+     .Q; P/ :D G hVerlet .q; p/
+
+  An alternative to Verlet could be used for propagation between collisions, but it
+is likely that the collision computations would then become more costly.
+    If the Verlet method is used, then it turns out that the insertion of (3.18) into (3.19)
+results in a quartic polynomial that must be solved for each particle pair. Care must
+be taken in solving these quartics to ensure that roots are not missed. Using hash
+tables, neighbor lists and similar methods (like those used to compute non-bonded
+forces), the number of computations can be greatly reduced. Importantly, the
+calculations needed are all explicit and ﬁnite (no iteration is needed).

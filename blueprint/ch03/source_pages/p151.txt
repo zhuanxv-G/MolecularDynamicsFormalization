@@ -1,0 +1,51 @@
+3.6 On the Importance of Being Symplectic                                       129
+
+
+   For the system dz=dt D f.z/, a coordinate transformation z 7! Qz D Rz results in
+
+                                dQz             D Rdz D Rf.R  1Qz/ D Rf.RQz/;
+                         dt      dt
+
+since R  1 D R.
+  A change of time t 7! D    t results in
+
+                            dz     dt dz
+                D    D   f.z/:
+                        d    d  dt
+
+In other words, for a reversible vector ﬁeld, the coordinate transformation z 7! Rz
+is equivalent to the change of time t 7!    t.
+
+
+
+3.6.2  Time-Reversal Symmetry and Symmetric Numerical
+      Methods
+
+
+The ﬂow map Ft.z0/ gives a solution of the differential equation, thus for a time-
+reversible system, we have, with z.t/ D Ft.z0/,
+
+                    d          dz
+                      dtFt.z0/ D dt D  Rf.RFt.z0//:
+
+Hence
+
+                       d
+                       dtRFt.z0/ D  f.RFt.z0//;
+
+and if we deﬁne Qz.t/ D RFt.z0/ then Qz.t/ satisﬁes the differential equation
+
+                                                dQz
+                   D   f.Qz/:
+                                    dt
+
+  From this we see that if we start from a point z0 and integrate forward in time (i.e
+apply Ft) then apply the involution R, we get the exact same result as if we start
+from Qz.0/ D Rz0 and integrate backward in time (i.e apply F  t). In sum, since z0 is
+an arbitrary point,
+
+              F t.Rz/ D RFt.z/:
+
+For the ﬂow map, F   t D Ft 1 so we can recast the identity as
+
+                  R ı Ft ı R ı Ft D Id;                        (3.14)

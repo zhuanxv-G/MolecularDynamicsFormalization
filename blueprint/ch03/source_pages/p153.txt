@@ -1,0 +1,48 @@
+3.6 On the Importance of Being Symplectic                                       131
+
+
+and the time-reversal symmetry
+
+                        Ft ı R ı Ft D R
+
+have a formal similarity, but they are essentially unrelated. A method can be
+symplectic but not time-reversible (e.g. Symplectic Euler) or  it can be time-
+reversible and not symplectic (e.g. Trapezoidal Rule). However there are intriguing
+relationships between these properties which we discuss here.
+   Interestingly the time-reversal symmetry provides analogous properties in some
+respects to the properties of Hamiltonian systems. For example, consider a linear
+Hamiltonian system dz=dt D JAz, with A a symmetric matrix. If   is an eigenvalue
+of JA then JAu D  u for some eigenvector u ¤ 0. Because the matrix JA is real,
+we know that N will also be an eigenvalue. At the same time, we know that since   is
+an eigenvalue of JA it is also an eigenvalue of its transpose .JA/T D ATJT D  AJ,
+thus
+
+                          AJu D  u
+
+multiplying by J and setting v D Ju we have
+
+                           JAv D  v
+
+                                            Nimplying that    (and hence also     ) is an eigenvalue of JA. Real eigenvalues of
+JA are paired with their negatives. If the imaginary part is nonzero, the eigenvalues
+occur in quadruplets f˙  ; ˙N g. The ﬂow map is
+
+                              Ft.z/ D etJAz
+
+and the exponential matrix will inherit a related structure within the spectrum:  an
+eigenvalue of exp.tJA/ implies that N , 1=  and 1=N are all eigenvalues of exp.tJA/.
+This eigenvalue structure is generic for linear symplectic maps in general.
+  Suppose now we have a linear time-reversible map ˚.z/ D Tz, then
+
+                       T  1 D RTR:
+
+Given an eigenvalue, eigenvector pair .  ; u/ of T, let u D Rv, so that Ru D R2v D
+v, then
+
+               T 1v D RTRv D RTu D Ru D  v:
+
+Thus   is an eigenvalue of T  1 which, in turn, implies that 1=  is an eigenvalue of T.
+The matrix being real implies that the conjugates of  and 1=  are also eigenvalues,
+thus we have the same eigenvalue quadruplets as for a linear symplectic map.
+   Recall that a pair of maps ˚ and    are said to be conjugate if there is a
+homomorphism   such that
