@@ -1,0 +1,42 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02b",
+  "source_ids": [
+    "MD-3.1-ShadowHamiltonian"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 120,
+      "printed_page": 98
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a5bc0de4001fc3f1482e5c2eb904ab0ca112f61106ff05c5d774cc81a62d2dc3",
+  "lean_sha256": "90a579154985b86c218c8bb3030cd24dcfc68af2d8af1250687e4b3d3e74fed2",
+  "signature_sha256": "55e1272f00a4662019171c20d999abbc2a18c3c083849be650f11214838f897a",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "oscillatorShadow",
+      "code_sha256": "55e1272f00a4662019171c20d999abbc2a18c3c083849be650f11214838f897a"
+    }
+  ],
+  "paste_plus_pdf_bytes": 69941,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2848,
+      "sha256": "593481eba2369f75af4eb3194940320113998664cecfc8aae01cbb148f4304cd"
+    },
+    "BATCH02b_PAGES.pdf": {
+      "bytes": 67093,
+      "sha256": "041fa8b9808874d29351228a8349f54f3b10c8e4e57b334ebeb043c7640e5446"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

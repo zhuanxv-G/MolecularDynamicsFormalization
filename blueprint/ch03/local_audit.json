@@ -1,0 +1,292 @@
+{
+  "template": "C",
+  "method": "local_read_only_semantic_review",
+  "website_audit": "待网站审计",
+  "items": {
+    "MD-3-ModifiedConstruction": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.modifiedConstruction",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "26d8194741dfb244f0cc42e7f7fd0239a7edce61b68aacca039f8fc252aad899",
+      "block_sha256": "fc12b45826df79a88383bd8c30e944afdea1b50f52160a1594b96fa873c7ff00",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺形式jet的Hamiltonian构造、逐阶匹配及实际截断ODE的统一余项；属于大型向后误差分析理论，保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.modifiedConstruction；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+    },
+    "MD-3.1-AdjointEulerOscillator": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.oscillatorAdjointEuler",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "0c1bb261811e2f1dde9f82a5327bfb54d18c34d773330c0b0c991d8e2e97d994",
+      "block_sha256": "0c1bb261811e2f1dde9f82a5327bfb54d18c34d773330c0b0c991d8e2e97d994",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.oscillatorAdjointEuler；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+    },
+    "MD-3.1-ShadowHamiltonian": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.oscillatorShadow",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "55e1272f00a4662019171c20d999abbc2a18c3c083849be650f11214838f897a",
+      "block_sha256": "55e1272f00a4662019171c20d999abbc2a18c3c083849be650f11214838f897a",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.oscillatorShadow；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+    },
+    "MD-3.1-EnergyFailure": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.oscillatorEnergyFailure",
+      "verdict": "PASS",
+      "explanation": "原文一般不守恒按存在实反例表达，不误称所有初值都不守恒；Ω=h=1,z=(1,0)给具体反例。",
+      "signature_sha256": "c3931e29537f656ca3f1c15cf891c755cde21369f6e51af8cd95436b752f6b8c",
+      "block_sha256": "678ca22499dd1d1af13c159cfb002efb9ca32717a99fa2ddc17650fc539a05e6",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.Chapter03Review.oscillatorEnergyFailure_proved"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.oscillatorEnergyFailure；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+    },
+    "MD-3.1-ShadowInvariant": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.oscillatorShadowInvariant",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "53220a26b50d31d685a18d6b8ccdad370aaa54c5bf00fa101c196c8eed5a17b6",
+      "block_sha256": "e8f06c862e699df4144752ea03b0047e10b9b2bcb38d3086b86654442c288861",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.Chapter03Review.oscillatorShadowInvariant_proved"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.oscillatorShadowInvariant；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+    },
+    "MD-3.1-ShadowEllipses": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.shadowEllipses",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Lean同时保留一般a,b,ε二次曲线旋转及轴长连续性、振子正定与线性标准形；“slightly rotated”的角度趋零在a=b退化主轴时不成立，字面定量含义仍需裁定，不能记PASS。",
+      "signature_sha256": "2950fb774f3e8755df903baf21f0aa224b009872cd7f24928e3657142a125112",
+      "block_sha256": "07d3f3d8ad6281b9bb9d9d34b4d818de3d2917bda88479d83e0511ea7dcc4f57",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.shadowEllipses；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+    },
+    "MD-3.1-EulerGrowth": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.eulerOscillatorGrowth",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "6b414991931764830cf3b1a8f87ee3faa08b5b5cc843e33981bc5cc9160c0b31",
+      "block_sha256": "762eed42b7545cd12590ae5b7fb38d41292a2607248700b66e32ed6b3aa5d712",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.eulerOscillatorGrowth；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+    },
+    "MD-3.1-FormalHamiltonian": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.formalHamiltonian",
+      "verdict": "PASS",
+      "explanation": "仅定义原文所设形式展开；实际近似流的存在另列ModifiedConstruction，未借定义宣称向后误差理论成立。",
+      "signature_sha256": "c7308ae7abc466efbd717aa8231d7529856efd97bd2a7311606add213a96d61c",
+      "block_sha256": "c7308ae7abc466efbd717aa8231d7529856efd97bd2a7311606add213a96d61c",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.formalHamiltonian；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+    },
+    "MD-3.1-FormalHamiltonianField": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.formalHamiltonianField",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "586d130fe17d7289bbc60ed3aca1a5727c9861b434b69cac9051b12b96bb0ce4",
+      "block_sha256": "586d130fe17d7289bbc60ed3aca1a5727c9861b434b69cac9051b12b96bb0ce4",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.formalHamiltonianField；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+    }
+  }
+}

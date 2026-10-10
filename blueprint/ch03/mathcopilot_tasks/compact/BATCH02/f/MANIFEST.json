@@ -1,0 +1,53 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02f",
+  "source_ids": [
+    "MD-3.1-EulerGrowth"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 120,
+      "printed_page": 98
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 122,
+      "printed_page": 100
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a5bc0de4001fc3f1482e5c2eb904ab0ca112f61106ff05c5d774cc81a62d2dc3",
+  "lean_sha256": "90a579154985b86c218c8bb3030cd24dcfc68af2d8af1250687e4b3d3e74fed2",
+  "signature_sha256": "6b414991931764830cf3b1a8f87ee3faa08b5b5cc843e33981bc5cc9160c0b31",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "oscillatorEnergy",
+      "code_sha256": "6a0eb2a8586ed214ee210ffa38535b56dd636aef3dca840118e9cab4fe8e4e10"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "oscillatorEuler",
+      "code_sha256": "490d4fc3d404dee0e7418822ba1e43392c14145358ca88e3d77861e5c4fd597d"
+    }
+  ],
+  "paste_plus_pdf_bytes": 113660,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3464,
+      "sha256": "39982b9b2976e72e465c1f837206febf8f729fa360a347a848bed264335afd57"
+    },
+    "BATCH02f_PAGES.pdf": {
+      "bytes": 110196,
+      "sha256": "fc17aa1e7bf4c8c8440ab394d02d6e9da658e6e71243290e435e41c5e501e7d3"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

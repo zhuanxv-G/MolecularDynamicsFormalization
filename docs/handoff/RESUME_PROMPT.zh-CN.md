@@ -1,7 +1,7 @@
 # 接续提示词
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：从第2章已完成检查点8ca2ccf接续；建立chapter03-blueprint，按≤8条落盘批次完成第3章。
+下一步：继续第3章§3.2 Lie导数与Poisson括号；复用§3.1完整检查和公理证据，按≤8条落盘。
 
 先git status，读取AGENTS、CURRENT_STATE顶部、WORK_LOG最新、LOCAL_PIPELINE及当前章PROGRESS。从最近落盘批次接续，核验已有结果后复用，不重做已通过的JSON、Blueprint、证明或构建；未提交半成品核对后继续。
 ## 当前最高优先级范围（2026-10-10用户新指令）

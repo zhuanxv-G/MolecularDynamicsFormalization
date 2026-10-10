@@ -1,0 +1,226 @@
+[
+  {
+    "source_id": "MD-3-ModifiedConstruction",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3",
+    "printed_page": "97",
+    "pdf_page": "119",
+    "statement_latex": "We can express the fundamental consequence as follows: not only are Hamiltonian flow maps symplectic, but also near-identity symplectic maps are (in an approximate sense) Hamiltonian flow maps [31]. The fact leads to the existence of a modified (perturbed) Hamiltonian from which the discrete trajectory may be derived (as snapshots of continuous trajectories). In some cases we may derive this perturbed Hamiltonian as an expansion in powers of the stepsize.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "The starting point is that symplectic integrators are symplectic maps that are “near to the identity” since they depend on a parameter (the stepsize $h$) which can be chosen as small as needed, and, if consistent, in the limit $h\\to0$, such a map must tend to the identity map."
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.modifiedConstruction",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。",
+      "按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.1-AdjointEulerOscillator",
+    "kind": "definition",
+    "label": null,
+    "section": "3.1",
+    "printed_page": "98",
+    "pdf_page": "120",
+    "statement_latex": "Let us begin with an illustrative example. Consider the harmonic oscillator with frequency $\\Omega$ which has Hamiltonian $H(q,p)=p^2/2+\\Omega^2q^2/2$, and consider the adjoint symplectic Euler method\n\\[Q=q+hp,\\qquad P=p-h\\Omega^2Q,\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$q,p,Q,P,h,\\Omega\\in\\mathbb R$；$H(q,p)=(p^2+\\Omega^2q^2)/2$。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.oscillatorAdjointEuler",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.1-ShadowHamiltonian",
+    "kind": "definition",
+    "label": "(3.1)",
+    "section": "3.1",
+    "printed_page": "98",
+    "pdf_page": "120",
+    "statement_latex": "However, if we modify the Hamiltonian from $H(q,p)=p^2/2+\\Omega^2q^2/2$ to\n\\[\\widetilde H(q,p)=\\frac{p^2+h\\Omega^2pq+\\Omega^2q^2}{2},\\tag{3.1}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "同页$Q=q+hp$、$P=p-h\\Omega^2Q$。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.oscillatorShadow",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.1-EnergyFailure",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.1",
+    "printed_page": "98",
+    "pdf_page": "120",
+    "statement_latex": "If $H(q,p)=E$, then, for typical steps, we cannot expect $H(Q,P)=E$. (Just insert the formulas for $Q$ and $P$ into the Hamiltonian and check that the value is not the same as $H(q,p)$.)",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "同页$H(q,p)=(p^2+\\Omega^2q^2)/2$，$Q=q+hp$、$P=p-h\\Omega^2Q$。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.oscillatorEnergyFailure",
+    "reusable_proofs": [
+      "MolecularDynamics.Chapter03Review.oscillatorEnergyFailure_proved"
+    ],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.1-ShadowInvariant",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.1",
+    "printed_page": "99",
+    "pdf_page": "121",
+    "statement_latex": "This means that $\\widetilde H$ is a conserved quantity of the numerical method.",
+    "proof_latex": "\\[\\begin{aligned}\\widetilde H(Q,P)&=\\frac{P^2}{2}+\\frac{h\\Omega^2PQ}{2}+\\frac{\\Omega^2Q^2}{2}\\\\\n&=\\frac12p^2-\\frac{h\\Omega^2pQ}{2}+\\frac{\\Omega^2Q^2}{2}\\\\&=\\widetilde H(q,p).\\end{aligned}\\]",
+    "proof_note": "原书计算按原页转录。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$\\widetilde H$及adjoint symplectic Euler见p.98/PDF120。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.oscillatorShadowInvariant",
+    "reusable_proofs": [
+      "MolecularDynamics.Chapter03Review.oscillatorShadowInvariant_proved"
+    ],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.1-ShadowEllipses",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.1",
+    "printed_page": "99",
+    "pdf_page": "121",
+    "statement_latex": "Recall that the graph of\n\\[\\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1\\]\nis an ellipse with major and minor axes aligned to the coordinate axes. If $\\epsilon$ is a small value, then,\n\\[\\frac{x^2}{a^2}+\\frac{y^2}{b^2}+\\epsilon xy=1\\]\nwill be a slightly rotated ellipse (with slightly different major and minor axes). Thus we can think of the energy surface of the numerical method as being a small perturbation of the ellipse which represents the ‘energy surface’ (energy curve, in this case) of the harmonic oscillator itself.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$a,b\\ne0$；小扰动一般二次曲线作为背景；本条完整原文的泛型二次曲线尚需与Lean振子特例统一。",
+      "$\\widetilde H$见p.98/PDF120；正能量水平集。"
+    ],
+    "issues": [
+      {
+        "code": "NEEDS_HUMAN",
+        "detail": "一般a,b,ε椭圆旋转与振子特例之间仍需完整统一；不以特例冒充全部结论。"
+      }
+    ],
+    "lean_decl": "MD.Ch03.shadowEllipses",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "显式Ω>0、|hΩ|<2，排除退化与不稳定步长；线性等价给出振子二次型标准形。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.1-EulerGrowth",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "3.1",
+    "printed_page": "100",
+    "pdf_page": "122",
+    "statement_latex": "Obviously this conservation property (the existence of a perturbed energy surface) is a special feature of the method we have considered. If we used Euler’s method to solve the harmonic oscillator we would find that energy grows without bound.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "振子及原始能量见p.98/PDF120；Euler为$(q+hp,p-h\\Omega^2q)$。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.eulerOscillatorGrowth",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "Ω≠0、固定h≠0且初始能量>0，排除平衡点和零步长。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.1-FormalHamiltonian",
+    "kind": "definition",
+    "label": null,
+    "section": "3.1",
+    "printed_page": "100",
+    "pdf_page": "122",
+    "statement_latex": "Now consider the more general Hamiltonian setting. Let $\\mathcal G_h$ be a $r$th order symplectic integrator, $r\\ge1$. Suppose that it is the flow map of a certain Hamiltonian system, with Hamiltonian $\\widetilde H_h$. If the method order is $r$, we may expect this Hamiltonian to be a $O(h^r)$ approximation of $H$, thus we posit an expansion of the form\n\\[\\widetilde H_h=H+h^rH^{(r)}+h^{r+1}H^{(r+1)}+\\cdots.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "$r\\ge1$；$H^{(j)}$为待确定光滑系数函数；h为形式变量而不是级数收敛参数。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.formalHamiltonian",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-3.1-FormalHamiltonianField",
+    "kind": "definition",
+    "label": null,
+    "section": "3.1",
+    "printed_page": "100",
+    "pdf_page": "122",
+    "statement_latex": "To determine the terms $H^{(r)},H^{(r+1)},\\ldots$, we write the differential equations on $\\widetilde H_h$:\n\\[\\dot{\\boldsymbol z}=J\\nabla H+h^rJ\\nabla H^{(r)}+h^{r+1}J\\nabla H^{(r+1)}+\\cdots.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": "The solution of this system can be expanded in powers of h and equated term-by-term with the expansion of G_h in powers of h. In this way, successive terms may be computed. Although mechanical, this procedure is tedious.",
+    "context_notation": [
+      "$r\\ge1$；形式Hamiltonian见同页上段；每个系数取真实$J\\nabla H^{(j)}$，不把无穷级数当收敛ODE。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch03.formalHamiltonianField",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  }
+]

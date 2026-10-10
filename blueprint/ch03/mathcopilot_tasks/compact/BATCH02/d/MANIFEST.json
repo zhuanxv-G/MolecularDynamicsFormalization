@@ -1,0 +1,53 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02d",
+  "source_ids": [
+    "MD-3.1-ShadowInvariant"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 120,
+      "printed_page": 98
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 121,
+      "printed_page": 99
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a5bc0de4001fc3f1482e5c2eb904ab0ca112f61106ff05c5d774cc81a62d2dc3",
+  "lean_sha256": "90a579154985b86c218c8bb3030cd24dcfc68af2d8af1250687e4b3d3e74fed2",
+  "signature_sha256": "53220a26b50d31d685a18d6b8ccdad370aaa54c5bf00fa101c196c8eed5a17b6",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "oscillatorAdjointEuler",
+      "code_sha256": "0c1bb261811e2f1dde9f82a5327bfb54d18c34d773330c0b0c991d8e2e97d994"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "oscillatorShadow",
+      "code_sha256": "55e1272f00a4662019171c20d999abbc2a18c3c083849be650f11214838f897a"
+    }
+  ],
+  "paste_plus_pdf_bytes": 105136,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3334,
+      "sha256": "b1f210d508d8270e072d376918799682b91fbd01983e0364ae46b54176b97992"
+    },
+    "BATCH02d_PAGES.pdf": {
+      "bytes": 101802,
+      "sha256": "fbe677a72a9e52375759619c49c4a6876ab6fd04ca5184b59c1494058eb6704c"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

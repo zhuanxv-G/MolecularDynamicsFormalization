@@ -1,0 +1,48 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02c",
+  "source_ids": [
+    "MD-3.1-EnergyFailure"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 120,
+      "printed_page": 98
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a5bc0de4001fc3f1482e5c2eb904ab0ca112f61106ff05c5d774cc81a62d2dc3",
+  "lean_sha256": "90a579154985b86c218c8bb3030cd24dcfc68af2d8af1250687e4b3d3e74fed2",
+  "signature_sha256": "c3931e29537f656ca3f1c15cf891c755cde21369f6e51af8cd95436b752f6b8c",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "oscillatorAdjointEuler",
+      "code_sha256": "0c1bb261811e2f1dde9f82a5327bfb54d18c34d773330c0b0c991d8e2e97d994"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter03Review",
+      "name": "oscillatorEnergy",
+      "code_sha256": "6a0eb2a8586ed214ee210ffa38535b56dd636aef3dca840118e9cab4fe8e4e10"
+    }
+  ],
+  "paste_plus_pdf_bytes": 70408,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3315,
+      "sha256": "1fe03f9b5b77c6857c2af28a5d008755125892d1663d4b055f59199b87585df6"
+    },
+    "BATCH02c_PAGES.pdf": {
+      "bytes": 67093,
+      "sha256": "041fa8b9808874d29351228a8349f54f3b10c8e4e57b334ebeb043c7640e5446"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}
