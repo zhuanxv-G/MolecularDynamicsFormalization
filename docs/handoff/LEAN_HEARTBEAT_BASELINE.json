@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "id": "lean",
+  "kind": "heartbeat",
+  "name": "全书 Lean 本地自动接续",
+  "prompt": "监测已获用户授权的教材本地 Lean 任务。用户于2026-10-10在本聊天明确要求：当第2章执行聊天 01a120c8-80e1-7c73-b0a4-04346ac02d16 因额度耗尽而中止，额度恢复后由本监测自动给该聊天发送一次接续消息，无需用户再次手动回复。这一授权仅限该执行聊天现有第2章任务；不创建新聊天、Goal、工作树或自动化，不扩大数学范围。保留该聊天现有 GPT-6.1 Sol / High 设置，发送消息时不覆盖模型或思考强度。\n\n每次唤醒先简短读取 C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization 下 AGENTS.md、docs/handoff/CURRENT_STATE.zh-CN.md 顶部及 WORK_LOG.zh-CN.md 最新条目，然后用 wait_threads(timeoutMs:0)核对执行聊天。工程入口与最新直接用户指令决定当前范围：第1章已完成本地交付、暂停等待网站审校；第2章进行本地五步流程；不进入第3章，不恢复第6章。此监测只做状态核对与授权的额度恢复接续，不写工程共享文件、不运行 Lean 或构建、不操作 Git、不操作或轮询 MathCopilot。\n\n执行聊天正在运行或有排队接续消息时保持安静，不发送、不打断。任务已完成、等待用户/网站结果、审批待处理，或用户明确暂停/取消时，不自动继续。状态或错误含糊时，只读 read_thread 最近一轮核对；不要从“notLoaded”单独推断额度中断。只有最新未完成轮的错误明确显示 usage limit、quota、rate limit，或可信检查点明确记载此次为额度中断，才检查 get_usage_limits。ordinaryUsageAllowed 非 true 或相关限额不可用时保留检查点等待，禁止购买、消耗额度重置、切换账号或模型。连接故障等非额度错误只在首次出现时通知用户，不擅自重启。\n\n满足额度可用、当前任务未完成且无暂停、原执行聊天仍停止后，在发送前再核对一次聊天状态。使用 send_message_to_thread，只发送：“按用户已授权的第2章本地五步流程继续。先核对AGENTS、CURRENT_STATE顶部、WORK_LOG最新及blueprint/ch02/PROGRESS.md，从最近落盘检查点接续；先读取现有编译结果，复用已通过证据，避免重复证明或构建。保持现有模型设置，第1章与正式库冻结，不进入第3章。”无需重新向用户索取发送授权。\n\n在 C:\\Users\\ustc\\.codex\\automations\\lean\\resume_state.json 记录该目标、已接续的失败轮ID、发送时间和发送结果；这是监测去重记录，不改工程。每个失败轮最多成功发送一次；两次自动发送至少相隔30分钟。成功发送后记录，再用一次 compact snapshot 确认开始运行；配置保存或消息发送成功不等于自动恢复已经实测，必须区分“已发送”和“确认运行”。发送结果含糊时先核对是否已出现接续消息或新一轮，不盲目重复发送。若明确发送失败，记录原因，只在首次失败或需要用户介入时通知。已有记录的同一故障不重复通知。\n\nheartbeat保持 ACTIVE 及现有15分钟频率。没有变化、任务正常运行、额度仍不足、等待用户或网站结果时保持安静。只在确认自动恢复成功、任务完成、新的失败或必须用户行动时通知；不承诺即时或无条件恢复。",
+  "status": "ACTIVE",
+  "rrule": "FREQ=MINUTELY;INTERVAL=15",
+  "target_thread_id": "01a10bc0-bc8d-7043-8df9-21a6b0bde09a",
+  "created_at": 1791046600766,
+  "updated_at": 1791609500915,
+  "resume_state_sha256": "29f6b67f831cd5daa0a2ba9cf0e1b1d54f72cf3c9a7e3a518bc1c6bc0c5cff03"
+}

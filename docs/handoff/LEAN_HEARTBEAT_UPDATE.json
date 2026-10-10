@@ -1,0 +1,14 @@
+{
+  "prompt_first_3_lines": [
+    "监测用户于2026-10-10授权的第2–6章本地流程，工程入口以docs/handoff/LOCAL_PIPELINE.md为准。",
+    "第1章及MolecularDynamics/正式库冻结；不恢复第6章封存断点或长证明，不进入第7章。",
+    "此heartbeat只做状态核对与额度恢复接续；执行聊天运行或有排队消息时保持安静。"
+  ],
+  "status": "ACTIVE",
+  "schedule": "每15分钟",
+  "target_thread_id": "01a10bc0-bc8d-7043-8df9-21a6b0bde09a",
+  "execution_thread_id": "01a120c8-80e1-7c73-b0a4-04346ac02d16",
+  "resume_state_sha256": "29f6b67f831cd5daa0a2ba9cf0e1b1d54f72cf3c9a7e3a518bc1c6bc0c5cff03",
+  "unchanged_fields_verified": true,
+  "automatic_resume_end_to_end": "NOT_TESTED"
+}
