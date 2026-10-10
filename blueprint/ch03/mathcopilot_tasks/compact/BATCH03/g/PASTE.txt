@@ -1,0 +1,94 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH03g_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 123 | 101 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-3.2-FlowCoordinates",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.2",
+  "printed_page": "101",
+  "pdf_page": "123",
+  "statement_latex": "This gives a concise formula for the evolution of any function of the phase variables, including, in particular, any solution component $z_i$. Thus the flow map for the system can be represented by $\\exp(t\\mathcal L_f)$. When one writes $\\mathcal F_t=\\exp(t\\mathcal L_f)$, what is actually meant is that the individual components satisfy\n\\[z_i(t,\\boldsymbol\\zeta)=[\\mathcal F_t(\\boldsymbol\\zeta)]_i=\\left.(\\exp(t\\mathcal L_f)z_i)\\right|_{\\boldsymbol z=\\boldsymbol\\zeta}.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "原文同页将exp按形式解释；坐标ζ的每个实际流分量的有限Taylor展开，不声称形式级数实际收敛。"
+  ],
+  "issues": [
+    {
+      "code": "NEEDS_HUMAN",
+      "detail": "形式exp作用于坐标的等式无实际收敛主张；严格化为有限Taylor余项是否超出原文需裁定。"
+    }
+  ],
+  "lean_decl": "MD.Ch03.flowCoordinates",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "有限截断阶k+1真实余项是额外严格化，原文没有此显式不等式；f全域C∞。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem flowCoordinates :
+    ∀ (n k : ℕ) (f : Q n → Q n) (D : Set (Q n))
+      (Φ : ℝ → Q n → Q n) (η : ℝ),
+      ContDiff ℝ ⊤ f → actualFlow f D Φ η →
+      ∀ ζ ∈ D, ∀ i : Fin n, ∃ C > 0, ∃ δ > 0, δ ≤ η ∧
+        ∀ t ∈ Ioo (-δ) δ,
+          |Φ t ζ i - ∑ j ∈ Finset.range (k+1),
+            t^j * PowerSeries.coeff j (formalObservable f (fun z => z i) ζ)|
+            ≤ C * |t|^(k+1)
+```
+
+原上下文：namespace MD.Ch03；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter03Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter03Review.actualFlow (MolecularDynamics/Chapter03/Statements.lean:15)
+```lean
+def actualFlow {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (f : E → E) (D : Set E) (Φ : ℝ → E → E) (η : ℝ) : Prop :=
+  0 < η ∧ ∀ z ∈ D, Φ 0 z=z ∧ ∀ t ∈ Ioo (-η) η,
+    Φ t z ∈ D ∧ HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+
+### MD.Ch03.formalObservable (Blueprint/Ch03.lean:128)
+```lean
+def formalObservable {n : ℕ} (f : Q n → Q n) (φ : Q n → ℝ) (z : Q n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun j => ((textbookLieDerivative f)^[j] φ) z/(Nat.factorial j : ℝ))
+```
+
+### MD.Ch03.textbookLieDerivative (Blueprint/Ch03.lean:104)
+```lean
+noncomputable def textbookLieDerivative (f : E → E) (φ : E → ℝ) (z : E) : ℝ :=
+  (fderiv ℝ φ z) (f z)
+```

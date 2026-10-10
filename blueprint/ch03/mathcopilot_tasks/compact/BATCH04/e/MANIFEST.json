@@ -1,0 +1,66 @@
+{
+  "batch": "BATCH04",
+  "subtask": "BATCH04e",
+  "source_ids": [
+    "MD-3.2-PoissonJacobi"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 124,
+      "printed_page": 102
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e7dd972674054a690b9c07fb96d2231ddef0e4a166e880334beb8af8781bea92",
+  "lean_sha256": "329117ffd6635145011fe0c1be86df0454feac45c5094be920b29fbd680e20df",
+  "signature_sha256": "59b81a2dc289d562b491e7520921f3afd82560ba6dd761cd7e8ead98e3fb5782",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinateMatrix",
+      "code_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookHamiltonianVectorField",
+      "code_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookJ",
+      "code_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "textbookPoissonBracket",
+      "code_sha256": "8266f6e26328af2f7adab2f4687c220f4d9a91cec52c49dc8827ae913a282f63"
+    }
+  ],
+  "paste_plus_pdf_bytes": 92569,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4320,
+      "sha256": "f2d5f60f7ebd39c682f8370e28049e90c412bac2acf185e72d37e4e228aafbcf"
+    },
+    "BATCH04e_PAGES.pdf": {
+      "bytes": 88249,
+      "sha256": "dea7fac99699ceb97edec51a2b2ef51d6610ed7bb344876ba8faa912a09ff185"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

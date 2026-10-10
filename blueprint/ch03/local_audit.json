@@ -33,7 +33,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
     },
     "MD-3.1-AdjointEulerOscillator": {
       "checked": true,
@@ -64,7 +66,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
     },
     "MD-3.1-ShadowHamiltonian": {
       "checked": true,
@@ -95,7 +99,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
     },
     "MD-3.1-EnergyFailure": {
       "checked": true,
@@ -128,7 +134,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
     },
     "MD-3.1-ShadowInvariant": {
       "checked": true,
@@ -161,7 +169,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
     },
     "MD-3.1-ShadowEllipses": {
       "checked": true,
@@ -193,7 +203,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
     },
     "MD-3.1-EulerGrowth": {
       "checked": true,
@@ -224,7 +236,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
     },
     "MD-3.1-FormalHamiltonian": {
       "checked": true,
@@ -255,7 +269,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
     },
     "MD-3.1-FormalHamiltonianField": {
       "checked": true,
@@ -286,7 +302,560 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch03\\validation\\section31\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log",
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json"
+    },
+    "MD-3.2-LieDerivative": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.textbookLieDerivative",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "568897e0d038d7a64bb00948ec5045c2014446c16bba7bc93488b691f9d2e415",
+      "block_sha256": "568897e0d038d7a64bb00948ec5045c2014446c16bba7bc93488b691f9d2e415",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.textbookLieDerivative；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-ObservableDerivative": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.observableDerivative",
+      "verdict": "PASS",
+      "explanation": "用任意实际解及任意时间点的真实链式法则表达；原文全局唯一性强于此局部结论所需，未新增解存在结论。",
+      "signature_sha256": "714e6477f16bacc079bf619047d96de6ffb311cd38ab94c0365077b6400648ba",
+      "block_sha256": "9b01941be78f9dd92be4991f6784383b7ba76528aa1d16d3b09c8fa1e321a620",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.hasDerivAt_textbookLieDerivative"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.observableDerivative；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-ObservableSecondDerivative": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.observableSecondDerivative",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "4f0579405e3800d20901e83140a41ad23ee7fdf0c682a235f73f205f9f627e66",
+      "block_sha256": "43e193d1f80fa3139f42b2055776331242e0bde564678ff263ed38f1c6c9c0a6",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.hasDerivAt_textbookLieDerivative_second"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.observableSecondDerivative；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-OperatorExponential": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.formalOperatorExponential",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "d8303f6a62fc6cb0979dc77a74cb3ccd4407e95ebd38a702de2ced3c21339030",
+      "block_sha256": "d8303f6a62fc6cb0979dc77a74cb3ccd4407e95ebd38a702de2ced3c21339030",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.formalOperatorExponential；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-FormalObservable": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.formalObservable",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "10c8070f852dab6d1a5ac64c4144b83196579fb635db04f7f8dae8424c985c82",
+      "block_sha256": "10c8070f852dab6d1a5ac64c4144b83196579fb635db04f7f8dae8424c985c82",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.formalObservable；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-FiniteLieTaylor": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.lieTaylor",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "旧清单添加了原书未显式写出的有限Taylor余项；完整有限签名保留并标EXTRA，独立审校前不将其称为原书逐字定理。",
+      "signature_sha256": "6d05a317cf8151a341ecdf4195e6d6977eac82b2db946e15ac2fcdf5a5c58912",
+      "block_sha256": "5134a8f8b44f7d7484d70fa8e77c6b6b76728b009e35c21f114e1b6367334080",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "任意阶Lie迭代正则性与实际Taylor一致余项桥接尚缺；非PASS不证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.lieTaylor；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-FlowCoordinates": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch03.flowCoordinates",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "保留真实流、坐标、实际Lie形式系数及任意有限截断余项；原文形式等式与此额外有限解释的范围待独立审校，未把只证明坐标ODE当作整个结论。",
+      "signature_sha256": "7735f5d7b0be3e1a9c7a6df4e4402f4d51bf4237e0bc3494dfac3b2945484805",
+      "block_sha256": "39eb15b2a92b41ff149501074c02625b21d1cc64a6dd40632fdf592e154f8746",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺实际流与高阶Lie Taylor系数的完整有限余项桥接；本地非PASS不证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.flowCoordinates；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-PoissonBracket": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch03.textbookPoissonBracket",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "8266f6e26328af2f7adab2f4687c220f4d9a91cec52c49dc8827ae913a282f63",
+      "block_sha256": "8266f6e26328af2f7adab2f4687c220f4d9a91cec52c49dc8827ae913a282f63",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.textbookPoissonBracket；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compiled": true,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-PoissonCoordinates": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.poissonCoordinates",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "fc204e4a12085afbf6e165072880e696ea62f0e05afbfed21dd312b67c8be055",
+      "block_sha256": "457469e9fde83675d498a40b9db8b0e861ec41964a44abc4353dd74df7a67176",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookPoissonBracket_coordinates"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.poissonCoordinates；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-PoissonBilinearity": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.poissonBilinearity",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "0ce95fe3b6022c4037005bcb781aaec02a78e5ed260027a064213f0ecc5bc97c",
+      "block_sha256": "c020eff01689846ebc5b9b9df4e18d6cd99bb95323deef12045b59d46b81b66a",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookPoissonBracket_linear_right",
+        "MolecularDynamics.textbookPoissonBracket_linear_left"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.poissonBilinearity；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-PoissonSkew": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.poissonSkew",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "0bcee02b8c56518d7993572a4832ddb0f5ada91b6b8a418c6f8cf52b8356b856",
+      "block_sha256": "29ba7c8cc246852ca440dad8c64a999ab833de70c520eac9b9656f0911179ca6",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookPoissonBracket_skew"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.poissonSkew；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-PoissonSelf": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.poissonSelf",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "ec538ae95cb7e2493014039e67bc9c8f098c5d267b5a55d386375a44e64d5a7f",
+      "block_sha256": "79f07ef7da6709aed7411f8a285323d6e270a445dd81915c7d5e4e08715aea4f",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookPoissonBracket_self"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.poissonSelf；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-PoissonJacobi": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.poissonJacobi",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "59b81a2dc289d562b491e7520921f3afd82560ba6dd761cd7e8ead98e3fb5782",
+      "block_sha256": "92af9526757c306ff97e5578eae1aae697798479d36bb815f596c4de473ae5b8",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookPoissonBracket_jacobi"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.poissonJacobi；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-HamiltonianObservableDerivative": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.hamiltonianObservableDerivative",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "c81326f54f8c48b94a66a5ab8143f38fe8d2a7355da400e934484701ce6a715b",
+      "block_sha256": "5242f47f3c800e8c2ff5131d962a39455cbbc46705a669f8c36052f80a313a69",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.hasDerivAt_textbookLieDerivative"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.hamiltonianObservableDerivative；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-HamiltonianLie": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.hamiltonianLie_eq_poisson",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "48399597724088ca0b52574346737cfd41019baa390d440f842b2e73732704cd",
+      "block_sha256": "d1f88a8e585f1b48f09a89af6a14437579507103ae8d8b8e29d6ac4550ca79da",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.hamiltonianLie_eq_poisson；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
+    },
+    "MD-3.2-HamiltonianCoordinateDerivative": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch03.hamiltonianCoordinateDerivative",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "4ddf5df53b67b123207eb2530ac9271cd849ffb9cb373904dc47cb84e105f38e",
+      "block_sha256": "0bebdbd3035363e6935979bdb51619c789a24d9c328384f2cf83448d48b6441c",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.hasDerivAt_textbookLieDerivative"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch03.hamiltonianCoordinateDerivative；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch03/validation/batch04-route2-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch03\\validation\\section32\\chapter_axioms.log"
     }
   }
 }

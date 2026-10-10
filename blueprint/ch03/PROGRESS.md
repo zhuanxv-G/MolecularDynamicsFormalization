@@ -2,19 +2,35 @@
 
 范围：印刷p.97–136/PDF119–158，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前9条；旧清单映射9/143；本地PASS 8；网站返回0。
+当前25条；旧清单映射25/143；本地PASS 22；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
-| MD-3-ModifiedConstruction | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；缺形式jet的Hamiltonian构造、逐阶匹配及实际截断ODE的统一余项；属于大型向后误差分析理论，保留sorry。 |
-| MD-3.1-AdjointEulerOscillator | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.1-ShadowHamiltonian | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.1-EnergyFailure | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.1-ShadowInvariant | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.1-ShadowEllipses | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。 |
-| MD-3.1-EulerGrowth | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.1-FormalHamiltonian | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.1-FormalHamiltonianField | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-3-ModifiedConstruction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺形式jet的Hamiltonian构造、逐阶匹配及实际截断ODE的统一余项；属于大型向后误差分析理论，保留sorry。 |
+| MD-3.1-AdjointEulerOscillator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.1-ShadowHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.1-EnergyFailure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.1-ShadowInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.1-ShadowEllipses | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。 |
+| MD-3.1-EulerGrowth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-3.1-FormalHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.1-FormalHamiltonianField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.2-LieDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.2-ObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.2-ObservableSecondDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.2-OperatorExponential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.2-FormalObservable | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.2-FiniteLieTaylor | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；任意阶Lie迭代正则性与实际Taylor一致余项桥接尚缺；非PASS不证明。 |
+| MD-3.2-FlowCoordinates | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺实际流与高阶Lie Taylor系数的完整有限余项桥接；本地非PASS不证明。 |
+| MD-3.2-PoissonBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3.2-PoissonCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonBilinearity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonSkew | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonSelf | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonJacobi | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.2-HamiltonianObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.2-HamiltonianLie | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-3.2-HamiltonianCoordinateDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 
 ## 旧143条完整映射
 
@@ -185,6 +201,8 @@
 
 - MD-3-ModifiedConstruction：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺形式jet的Hamiltonian构造、逐阶匹配及实际截断ODE的统一余项；属于大型向后误差分析理论，保留sorry。
 - MD-3.1-ShadowEllipses：Lean同时保留一般a,b,ε二次曲线旋转及轴长连续性、振子正定与线性标准形；“slightly rotated”的角度趋零在a=b退化主轴时不成立，字面定量含义仍需裁定，不能记PASS。 需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。一般a,b,ε椭圆旋转与振子特例之间仍需完整统一；不以特例冒充全部结论。
+- MD-3.2-FiniteLieTaylor：旧清单添加了原书未显式写出的有限Taylor余项；完整有限签名保留并标EXTRA，独立审校前不将其称为原书逐字定理。 任意阶Lie迭代正则性与实际Taylor一致余项桥接尚缺；非PASS不证明。是否将额外有限余项定理作为原文的忠实严格化，由导师/网站裁定；本地不进入证明。
+- MD-3.2-FlowCoordinates：保留真实流、坐标、实际Lie形式系数及任意有限截断余项；原文形式等式与此额外有限解释的范围待独立审校，未把只证明坐标ODE当作整个结论。 缺实际流与高阶Lie Taylor系数的完整有限余项桥接；本地非PASS不证明。形式exp作用于坐标的等式无实际收敛主张；严格化为有限Taylor余项是否超出原文需裁定。
 
 ## 定性段落排除
 

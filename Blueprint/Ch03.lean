@@ -100,4 +100,135 @@ def formalHamiltonianField {n : ℕ} (H : SymplecticCoordinates n → ℝ)
   PowerSeries.mk (fun j => if j=0 then textbookHamiltonianVectorField H z i else
     if r ≤ j then textbookHamiltonianVectorField (Hj j) z i else 0)
 
+/-- source_id: MD-3.2-LieDerivative · definition · §3.2 · 印刷p.100 / PDFp.122 -/
+noncomputable def textbookLieDerivative (f : E → E) (φ : E → ℝ) (z : E) : ℝ :=
+  (fderiv ℝ φ z) (f z)
+
+/-- source_id: MD-3.2-ObservableDerivative · (3.2) · §3.2 · 印刷p.100–101 / PDFp.122–123 -/
+theorem observableDerivative (f : E → E) (φ : E → ℝ)
+    (γ : ℝ → E) (t : ℝ) (hφ : DifferentiableAt ℝ φ (γ t))
+    (hγ : HasDerivAt γ (f (γ t)) t) :
+    HasDerivAt (fun u => φ (γ u)) (textbookLieDerivative f φ (γ t)) t := by
+  apply MolecularDynamics.hasDerivAt_textbookLieDerivative <;> assumption
+
+/-- source_id: MD-3.2-ObservableSecondDerivative · unnumbered_claim · §3.2 · 印刷p.101 / PDFp.123
+[EXTRA] f全域C¹、φ全域C²，显式化原文smooth及第二次求导资格。 -/
+theorem observableSecondDerivative (f : E → E) (φ : E → ℝ)
+    (γ : ℝ → E) (hf : ContDiff ℝ 1 f) (hφ : ContDiff ℝ 2 φ)
+    (hγ : ∀ t, HasDerivAt γ (f (γ t)) t) (t : ℝ) :
+    HasDerivAt (fun u => deriv (fun v => φ (γ v)) u)
+      (textbookLieDerivative f (textbookLieDerivative f φ) (γ t)) t := by
+  apply MolecularDynamics.hasDerivAt_textbookLieDerivative_second <;> assumption
+
+/-- source_id: MD-3.2-OperatorExponential · definition · §3.2 · 印刷p.101 / PDFp.123 -/
+noncomputable def formalOperatorExponential (A : R) : PowerSeries R :=
+  PowerSeries.mk (fun n => (1 / (n.factorial : ℝ)) • A ^ n)
+
+/-- source_id: MD-3.2-FormalObservable · definition · §3.2 · 印刷p.101 / PDFp.123 -/
+def formalObservable {n : ℕ} (f : Q n → Q n) (φ : Q n → ℝ) (z : Q n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun j => ((textbookLieDerivative f)^[j] φ) z/(Nat.factorial j : ℝ))
+
+/-- source_id: MD-3.2-FiniteLieTaylor · unnumbered_claim · §3.2 · 印刷p.101 / PDFp.123
+[EXTRA] [EXTRA]有限阶k+1统一局部余项是原文形式展开的额外严格有限解释，原文未明写常数C与δ。
+[EXTRA] [EXTRA]f与φ取全域C∞并给定实际ODE解；不预设无限级数收敛。
+[NEEDS_HUMAN] 是否将额外有限余项定理作为原文的忠实严格化，由导师/网站裁定；本地不进入证明。 -/
+theorem lieTaylor :
+  ∀ (n k : ℕ) (f : Q n → Q n) (φ : Q n → ℝ) (γ : ℝ → Q n),
+    ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ φ →
+    (∀ t, HasDerivAt γ (f (γ t)) t) →
+    ∃ C > 0, ∃ δ > 0, ∀ t ∈ Ioo (-δ) δ,
+      |φ (γ t)-∑ j ∈ Finset.range (k+1), t^j/(Nat.factorial j:ℝ)*
+        ((textbookLieDerivative f)^[j] φ) (γ 0)| ≤ C*|t|^(k+1) := by
+  sorry
+
+/-- source_id: MD-3.2-FlowCoordinates · unnumbered_claim · §3.2 · 印刷p.101 / PDFp.123
+[EXTRA] 有限截断阶k+1真实余项是额外严格化，原文没有此显式不等式；f全域C∞。
+[NEEDS_HUMAN] 形式exp作用于坐标的等式无实际收敛主张；严格化为有限Taylor余项是否超出原文需裁定。 -/
+theorem flowCoordinates :
+    ∀ (n k : ℕ) (f : Q n → Q n) (D : Set (Q n))
+      (Φ : ℝ → Q n → Q n) (η : ℝ),
+      ContDiff ℝ ⊤ f → actualFlow f D Φ η →
+      ∀ ζ ∈ D, ∀ i : Fin n, ∃ C > 0, ∃ δ > 0, δ ≤ η ∧
+        ∀ t ∈ Ioo (-δ) δ,
+          |Φ t ζ i - ∑ j ∈ Finset.range (k+1),
+            t^j * PowerSeries.coeff j (formalObservable f (fun z => z i) ζ)|
+            ≤ C * |t|^(k+1) := by
+  sorry
+
+/-- source_id: MD-3.2-PoissonBracket · definition · §3.2 · 印刷p.102 / PDFp.124 -/
+noncomputable def textbookPoissonBracket (F G : SymplecticCoordinates Nc → ℝ)
+    (z : SymplecticCoordinates Nc) : ℝ :=
+  (fderiv ℝ F z) (textbookHamiltonianVectorField G z)
+
+/-- source_id: MD-3.2-PoissonCoordinates · unnumbered_claim · §3.2 · 印刷p.102 / PDFp.124 -/
+theorem poissonCoordinates (F G : SymplecticCoordinates Nc → ℝ)
+    (z : SymplecticCoordinates Nc) :
+    textbookPoissonBracket F G z = ∑ i : Fin Nc,
+      ((fderiv ℝ F z) (Pi.single (Sum.inl i) 1) *
+        (fderiv ℝ G z) (Pi.single (Sum.inr i) 1) -
+      (fderiv ℝ G z) (Pi.single (Sum.inl i) 1) *
+        (fderiv ℝ F z) (Pi.single (Sum.inr i) 1)) := by
+  apply MolecularDynamics.textbookPoissonBracket_coordinates <;> assumption
+
+/-- source_id: MD-3.2-PoissonBilinearity · unnumbered_claim · §3.2 · 印刷p.102 / PDFp.124
+[EXTRA] 原文smooth函数按点可微资格显式化；保留旧清单双变量线性的完整两条结论。 -/
+theorem poissonBilinearity (F G H : SymplecticCoordinates Nc → ℝ)
+    (α β : ℝ) (z : SymplecticCoordinates Nc)
+    (hF : DifferentiableAt ℝ F z) (hG : DifferentiableAt ℝ G z)
+    (hH : DifferentiableAt ℝ H z) :
+    (textbookPoissonBracket F (fun x => α*G x+β*H x) z =
+      α*textbookPoissonBracket F G z+β*textbookPoissonBracket F H z) ∧
+    (textbookPoissonBracket (fun x => α*F x+β*G x) H z =
+      α*textbookPoissonBracket F H z+β*textbookPoissonBracket G H z) := by
+  exact ⟨MolecularDynamics.textbookPoissonBracket_linear_right F G H α β z hG hH,
+    MolecularDynamics.textbookPoissonBracket_linear_left F H G α β z hF hG⟩
+
+/-- source_id: MD-3.2-PoissonSkew · unnumbered_claim · §3.2 · 印刷p.102 / PDFp.124 -/
+theorem poissonSkew (F G : SymplecticCoordinates Nc → ℝ)
+    (z : SymplecticCoordinates Nc) :
+    textbookPoissonBracket F G z = -textbookPoissonBracket G F z := by
+  apply MolecularDynamics.textbookPoissonBracket_skew <;> assumption
+
+/-- source_id: MD-3.2-PoissonSelf · unnumbered_claim · §3.2 · 印刷p.102 / PDFp.124 -/
+theorem poissonSelf (F : SymplecticCoordinates Nc → ℝ)
+    (z : SymplecticCoordinates Nc) : textbookPoissonBracket F F z = 0 := by
+  apply MolecularDynamics.textbookPoissonBracket_self <;> assumption
+
+/-- source_id: MD-3.2-PoissonJacobi · unnumbered_claim · §3.2 · 印刷p.102 / PDFp.124
+[EXTRA] 显式各函数在z为C²；真实二阶导数对称性支持Jacobi。 -/
+theorem poissonJacobi (F G H : SymplecticCoordinates Nc → ℝ)
+    (z : SymplecticCoordinates Nc) (hF : ContDiffAt ℝ 2 F z)
+    (hG : ContDiffAt ℝ 2 G z) (hH : ContDiffAt ℝ 2 H z) :
+    textbookPoissonBracket F (textbookPoissonBracket G H) z +
+      textbookPoissonBracket H (textbookPoissonBracket F G) z +
+      textbookPoissonBracket G (textbookPoissonBracket H F) z = 0 := by
+  apply MolecularDynamics.textbookPoissonBracket_jacobi <;> assumption
+
+/-- source_id: MD-3.2-HamiltonianObservableDerivative · unnumbered_claim · §3.2 · 印刷p.102 / PDFp.124
+[EXTRA] smooth只需在γ(t)可微；ODE真实导数明示。 -/
+theorem hamiltonianObservableDerivative
+    (F H : SymplecticCoordinates Nc → ℝ) (γ : ℝ → SymplecticCoordinates Nc)
+    (t : ℝ) (hF : DifferentiableAt ℝ F (γ t))
+    (hγ : HasDerivAt γ (textbookHamiltonianVectorField H (γ t)) t) :
+    HasDerivAt (fun u => F (γ u)) (textbookPoissonBracket F H (γ t)) t := by
+  exact MolecularDynamics.hasDerivAt_textbookLieDerivative
+    (textbookHamiltonianVectorField H) F γ t hF hγ
+
+/-- source_id: MD-3.2-HamiltonianLie · unnumbered_claim · §3.2 · 印刷p.102 / PDFp.124 -/
+theorem hamiltonianLie_eq_poisson
+    (F H : SymplecticCoordinates Nc → ℝ) :
+    textbookLieDerivative (textbookHamiltonianVectorField H) F =
+      textbookPoissonBracket F H := by
+  apply MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson <;> assumption
+
+/-- source_id: MD-3.2-HamiltonianCoordinateDerivative · unnumbered_claim · §3.2 · 印刷p.102 / PDFp.124 -/
+theorem hamiltonianCoordinateDerivative
+    (H : SymplecticCoordinates Nc → ℝ) (γ : ℝ → SymplecticCoordinates Nc)
+    (i : Fin Nc) (t : ℝ)
+    (hγ : HasDerivAt γ (textbookHamiltonianVectorField H (γ t)) t) :
+    HasDerivAt (fun u => γ u (Sum.inl i))
+      (textbookPoissonBracket (fun z => z (Sum.inl i)) H (γ t)) t := by
+  exact hamiltonianObservableDerivative (fun z => z (Sum.inl i)) H γ t
+    (differentiableAt_pi.mp differentiableAt_id (Sum.inl i)) hγ
+
 end MD.Ch03

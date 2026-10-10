@@ -88,3 +88,6 @@ copied(D,'formalHamiltonianField'),kind='definition',context=[r'$r\ge1$；形式
 discussion='The solution of this system can be expanded in powers of h and equated term-by-term with the expansion of G_h in powers of h. In this way, successive terms may be computed. Although mechanical, this procedure is tedious.')
 EXCLUDED += [dict(printed_page='97–98',pdf_page='119–120',reason='导论误差比较、替代结构、文献历史、数值方法选择为定性背景；数学近恒等断言已单列。'),
 dict(printed_page='99–100',pdf_page='121–122',reason='图3.1及Ω=h=1的六点数值轨道作为实验插图，excluded_qualitative；不将图像观测作为普适定理。')]
+
+import ch03_section32
+import ch03_section32b

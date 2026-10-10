@@ -4,7 +4,7 @@ Never modify/run the Chapter 1 or Chapter 2 generators. Each instantiated module
 has its own source records and output directory; page offsets are chapter-local.
 """
 from pathlib import Path
-import sys,types,re,json,hashlib,argparse
+import sys,types,re,json,hashlib,argparse,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 RANGES={3:(97,136,119,158),4:(139,174,161,196),5:(179,209,200,230),6:(211,258,232,279)}
 def pipeline(ch):
@@ -26,6 +26,8 @@ def pipeline(ch):
         'variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]\nvariable {R : Type*} [Ring R] [Algebra ℝ R]',1)
     text=text.replace('[NormedSpace ℝ E]。', '[NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。')
     text=text.replace('MolecularDynamics.Chapter02Review；', f'MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review；')
+    text=text.replace('a.update(checked=False,axioms=[]', 'a.update(checked=False,compiled=False,axioms=[]')
+    text=text.replace("'已编译' if a['checked'] else '待编译'", "'已编译/公理已核' if a['checked'] else ('已编译/待公理' if a.get('compiled') else '待编译')")
     # Per-module source scope never includes Ch01 or prior chapter output writes.
     m=types.ModuleType('local_current_pipeline');m.__file__=str(ROOT/'scripts/local_blueprint.py')
     sys.modules[m.__name__]=m;exec(compile(text,m.__file__,'exec'),m.__dict__)
@@ -50,9 +52,30 @@ def landing(ch,p,batch,step):
     for i,x in enumerate(lines[:20]):
         if x.startswith('跨章唯一总进度：'):lines[i]=f'跨章唯一总进度：docs/handoff/LOCAL_PIPELINE.md；当前章逐条进度：blueprint/ch{ch:02}/PROGRESS.md。'
     state.write_text('\n'.join(lines)+'\n',encoding='utf-8')
+def compile_batch(ch,p,batch):
+    folder=p.BASE/'validation';folder.mkdir(exist_ok=True)
+    log=folder/f'batch{batch}-lean.log';evidence=folder/f'batch{batch}-COMPILE.json'
+    input_sha=p.sha(ROOT/f'Blueprint/Ch{ch:02}.lean')
+    previous=json.loads(evidence.read_text(encoding='utf-8')) if evidence.exists() else {}
+    if previous.get('exit_code')==0 and previous.get('input_sha256')==input_sha and log.exists() and previous.get('log_sha256')==p.sha(log):
+        print('Reused passed single-file evidence:',batch)
+    else:
+        command=['lake','env','lean',f'Blueprint/Ch{ch:02}.lean']
+        result=subprocess.run(command,cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+        log.write_bytes(result.stdout)
+        p.dump(evidence,dict(command=command,exit_code=result.returncode,input_sha256=input_sha,log_sha256=p.sha(log),decl_blocks={sid:d['block_sha256'] for sid,d in p.declarations().items()}))
+        if result.returncode:
+            print(result.stdout.decode('utf-8',errors='replace'));raise SystemExit(result.returncode)
+        print('Single-file Lean passed:',batch)
+    audit=json.loads((p.BASE/'local_audit.json').read_text(encoding='utf-8'))
+    for item in audit['items'].values():item.update(compiled=True,compile_evidence=evidence.relative_to(ROOT).as_posix())
+    p.dump(p.BASE/'local_audit.json',audit)
 def main():
-    a=argparse.ArgumentParser();a.add_argument('chapter',type=int);a.add_argument('--checked');a.add_argument('--batch',default='01');a.add_argument('--step',default='①–④当前节');args=a.parse_args()
+    a=argparse.ArgumentParser();a.add_argument('chapter',type=int);a.add_argument('--checked');a.add_argument('--compile',action='store_true');a.add_argument('--batch',default='01');a.add_argument('--step',default='①–④当前节');args=a.parse_args()
     p=pipeline(args.chapter)
     if args.checked:p.checked(ROOT/args.checked)
     p.generate();render(args.chapter,p);landing(args.chapter,p,args.batch,args.step)
+    if args.compile:
+        compile_batch(args.chapter,p,args.batch)
+        p.generate();render(args.chapter,p);landing(args.chapter,p,args.batch,args.step)
 if __name__=='__main__':main()

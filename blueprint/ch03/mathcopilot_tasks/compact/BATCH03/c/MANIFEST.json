@@ -1,0 +1,48 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03c",
+  "source_ids": [
+    "MD-3.2-ObservableSecondDerivative"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 123,
+      "printed_page": 101
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e7dd972674054a690b9c07fb96d2231ddef0e4a166e880334beb8af8781bea92",
+  "lean_sha256": "329117ffd6635145011fe0c1be86df0454feac45c5094be920b29fbd680e20df",
+  "signature_sha256": "4f0579405e3800d20901e83140a41ad23ee7fdf0c682a235f73f205f9f627e66",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "namespace": "MD.Ch03",
+      "name": "textbookLieDerivative",
+      "code_sha256": "568897e0d038d7a64bb00948ec5045c2014446c16bba7bc93488b691f9d2e415"
+    }
+  ],
+  "paste_plus_pdf_bytes": 92485,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3467,
+      "sha256": "a53fd72cdafba0a951b2a780a7808681e9299d410010d487d169ee123af9c9e5"
+    },
+    "BATCH03c_PAGES.pdf": {
+      "bytes": 89018,
+      "sha256": "bee45155a3a526d1ab012fe18ff51b2291c6a312b51352ec9d1dee8662f553dc"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

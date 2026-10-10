@@ -1,0 +1,54 @@
+Blueprint/Ch03.lean:21:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:52:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:135:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:147:8: warning: declaration uses `sorry`
+Blueprint/Ch03.lean:171:65: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:171:65: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:184:72: error: Application type mismatch: The argument
+  hG
+has type
+  DifferentiableAt ℝ G z
+but is expected to have type
+  DifferentiableAt ℝ H z
+in the application
+  textbookPoissonBracket_linear_left F G H α β z hF hG
+Blueprint/Ch03.lean:190:58: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:190:58: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:195:58: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:195:58: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:222:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch03.lean:222:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch03.lean:231:2: error: Tactic `apply` failed: could not unify the conclusion of `@hamiltonianObservableDerivative`
+  HasDerivAt (fun u => ?F (?γ u)) (textbookPoissonBracket ?F ?H (?γ ?t)) ?t
+with the goal
+  HasDerivAt (fun u => γ u (Sum.inl i)) (textbookPoissonBracket (fun z => z (Sum.inl i)) H (γ t)) t
+
+Note: The full type of `@hamiltonianObservableDerivative` is
+  ∀ {Nc : ℕ} (F H : SymplecticCoordinates Nc → ℝ) (γ : ℝ → SymplecticCoordinates Nc) (t : ℝ),
+    DifferentiableAt ℝ F (γ t) →
+      HasDerivAt γ (textbookHamiltonianVectorField H (γ t)) t →
+        HasDerivAt (fun u => F (γ u)) (textbookPoissonBracket F H (γ t)) t
+
+Nc : ℕ
+H : SymplecticCoordinates Nc → ℝ
+γ : ℝ → SymplecticCoordinates Nc
+i : Fin Nc
+t : ℝ
+hγ : HasDerivAt γ (textbookHamiltonianVectorField H (γ t)) t
+⊢ HasDerivAt (fun u => γ u (Sum.inl i)) (textbookPoissonBracket (fun z => z (Sum.inl i)) H (γ t)) t
