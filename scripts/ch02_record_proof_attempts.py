@@ -20,22 +20,39 @@ def record():
     for sid,ts in trials.items():
         if sid in items:
             items[sid]['proof_attempts']=3;items[sid]['proof_trials']=ts
+            items[sid]['proof_failures']=3
+            items[sid]['attempt_evidence']=[t['log'] for t in ts]
             items[sid]['stop_reason']='三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。'
     successful={
-        'MD-2.2.3-FirstIntegralPreserved':2,
-        'MD-2.3.2-VolumeChange':1,
-        'MD-2.3.2-DeterminantODE':2,
-        'MD-2.3.4-PullbackMatrix':2,
+        'MD-2.3.1-VolumeChange':1,
+        'MD-2.3.1-DeterminantODE':2,
+        'MD-2.3.3-PullbackMatrix':2,
         'MD-2.4.5-EulerConjugacy':3}
     for sid,count in successful.items():
         if sid in items:
             items[sid]['proof_attempts']=count
+            items[sid]['proof_failures']=count-1
+            items[sid]['attempt_evidence']=['blueprint/ch02/validation/section24-preview1.log',
+                'blueprint/ch02/validation/section24-preview2.log','blueprint/ch02/validation/section24-preview3.log'] if sid.endswith('EulerConjugacy') else ['blueprint/ch02/validation/section23-draft1.log','blueprint/ch02/validation/section23-draft2.log']
     for sid,a in items.items():
+        if sid.endswith('AngularMomentum'):
+            a.update(proof_attempts=3,proof_failures=3,attempt_evidence=[
+                'blueprint/ch02/validation/section22-short3.log'],
+                attempts_description='同一角动量候选中三个分量的投影/导数路线未通过；不是三次完整工程编译。')
+        if sid.endswith('IntegralPreserved'):
+            a.update(proof_attempts=2,proof_failures=1,attempt_evidence=[
+                'blueprint/ch02/validation/section22-short.log','blueprint/ch02/validation/section22-short2.log'])
+    for sid,a in items.items():
+        if a['proof_status']=='definition':
+            a['proof_attempts']=0
+            for key in ['proof_failures','attempt_evidence','proof_trials']:a.pop(key,None)
         if a['verdict']!='PASS':a['stop_reason']='导师/原文疑点未裁定；不进入新证明。'
         elif a['proof_status']=='placeholder' and sid not in trials:
             a['stop_reason']='缺完整理论或正式库仅有较弱接口；记录missing并继续。'
         if a['verdict']!='PASS' and a['correspondence']:
             for row in a['correspondence']:row['note']='字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。'
+        for evidence in a.get('attempt_evidence',[]):
+            assert (BASE.parent.parent/evidence).exists(),evidence
     dump(p,audit)
     dump(BASE/'validation'/'bounded-proof-routes.json',dict(accepted_candidates=0,
         note='These automatic routes did not close a goal. Manual local proofs are separately compiled and axiom-audited.',

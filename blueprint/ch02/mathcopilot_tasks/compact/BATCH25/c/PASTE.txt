@@ -192,7 +192,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.newtonPrinted (Blueprint/Ch02.lean:1089)
+### MD.Ch02.newtonPrinted (Blueprint/Ch02.lean:1092)
 ```lean
 def newtonPrinted {n : ℕ} (g : Q n → Q n) (τ xNext xPrev : Q n)
     (J : Q n ≃L[ℝ] Q n) : Q n := xNext-J.symm (g xPrev-τ)

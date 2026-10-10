@@ -48,7 +48,7 @@ def backwardEulerResidual (f : E → E) (h : ℝ) (z w : E) : E := w-z-h • f w
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch02.backwardEulerResidual (Blueprint/Ch02.lean:1085)
+### MD.Ch02.backwardEulerResidual (Blueprint/Ch02.lean:1088)
 ```lean
 def backwardEulerResidual (f : E → E) (h : ℝ) (z w : E) : E := w-z-h • f w
 ```

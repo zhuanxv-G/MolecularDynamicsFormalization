@@ -48,7 +48,7 @@ def bp_conjugateMap (χ : E ≃ₜ E) (B : E → E) : E → E := χ.symm ∘ B �
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch02.bp_conjugateMap (Blueprint/Ch02.lean:1111)
+### MD.Ch02.bp_conjugateMap (Blueprint/Ch02.lean:1114)
 ```lean
 def bp_conjugateMap (χ : E ≃ₜ E) (B : E → E) : E → E := χ.symm ∘ B ∘ χ
 ```

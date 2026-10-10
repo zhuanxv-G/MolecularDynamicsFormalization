@@ -50,7 +50,7 @@ noncomputable def bp_processedIterate (χ : ℝ → E ≃ₜ E) (B : ℝ → E �
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch02.bp_processedIterate (Blueprint/Ch02.lean:1163)
+### MD.Ch02.bp_processedIterate (Blueprint/Ch02.lean:1166)
 ```lean
 noncomputable def bp_processedIterate (χ : ℝ → E ≃ₜ E) (B : ℝ → E → E)
     (h : ℝ) (z₀ : E) (n : ℕ) : E :=

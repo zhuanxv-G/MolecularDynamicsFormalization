@@ -23,6 +23,12 @@ if section=='2.5':
     lines=[line.replace('验证：已视觉核对章首、正文/习题页界；全章原页、逐字转录、语义和Lean检查随节推进。网站不可用，均待网站审计。',
         '验证：42页正文原页已渲染并视觉核对；全章逐字转录、本地预审、Lean编译及公理检查完成。网站审计和导师裁定尚未验证。') for line in lines]
 lines[8:8]=[f'§{section}检查点：{len(json.loads((BASE/"ch02_source.json").read_text(encoding="utf-8")))}条已编译并逐条审计公理；完整check通过，compact原页像素与字节预算已核验。']
+if section=='2.5':
+    v=json.loads((BASE/'DELIVERY_VALIDATION.json').read_text(encoding='utf-8'))
+    assert v['result']=='PASS'
+    counts=v['statuses']
+    lines[9:9]=[f'本地汇总：self-contained {counts["self-contained"]}；checked+documented priors {counts["checked+documented priors"]}；incomplete {counts["incomplete"]}。直接sorry {v["direct_sorry"]}，仅传递sorry {v["transitive_only_sorry"]}；导师疑点{v["local_verdicts"]["NEEDS_HUMAN"]}项。',
+        f'交付：160旧条目全部映射；{v["full_batches"]}批/{v["compact_subtasks"]}份compact，最大{v["max_paste_plus_pdf_bytes"]}字节；终验见blueprint/ch02/DELIVERY_VALIDATION.json。']
 state.write_text('\n'.join(lines)+'\n',encoding='utf-8')
 for entry in ['AGENTS.md','docs/handoff/RESUME_PROMPT.zh-CN.md']:
     path=ROOT/entry;txt=path.read_text(encoding='utf-8')

@@ -69,7 +69,8 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
             signature_sha256=d['signature_sha256'],block_sha256=d['block_sha256'],direct_placeholder=direct,
             proof_status='placeholder' if direct else ('definition' if bool(re.match(r'(?:noncomputable )?def ',r['code'])) else ('existing_bridge' if r['priors'] else 'local_proof')),
             documented_priors=r['priors'],missing=r['missing'],website_audit='待网站审计',
-            correspondence=r['correspondence'] or [dict(source='原文完整数学对象和展示式',lean=d['name']+'；定义体/完整签名见上',note='一致；逐条技术条件见[EXTRA]')],
+            correspondence=r['correspondence'] or [dict(source='原文完整数学对象和展示式',lean=d['name']+'；定义体/完整签名见上',
+                note='一致；逐条技术条件见[EXTRA]' if r['local_verdict']=='PASS' else '字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。')],
             counterexample=None,suggested_fix=None,proof_attempts=a.get('proof_attempts',0))
         items[sid]=a
     dump(audit_path,dict(template='C',method='local_read_only_semantic_review',website_audit='待网站审计',items=items))
@@ -143,7 +144,7 @@ def packages(sources,ds):
                 for k,p in enumerate(pages):
                     if p not in original_pixels:original_pixels[p]=original[p-1].get_pixmap().samples
                     assert original_pixels[p]==exported[k].get_pixmap().samples,(task,p)
-            size=len(text.encode())+pdfout.stat().st_size
+            size=(folder/'PASTE.txt').stat().st_size+pdfout.stat().st_size
             assert size<256000,(task,size)
             report=dict(batch=batch,subtask=task,source_ids=[sid],page_mapping=[dict(attachment_page=k+1,original_pdf_page=p,printed_page=p-22) for k,p in enumerate(pages)],
                 source_pdf_sha256=source_pdf_hash,source_json_sha256=sha(BASE/'ch02_source.json'),lean_sha256=sha(ROOT/'Blueprint/Ch02.lean'),
@@ -162,8 +163,9 @@ def packages(sources,ds):
     (BASE/'mathcopilot_results/README.md').write_text('网站不可用，尚无返回件。用户按INDEX提交后将原始JSON或Markdown放此处；原始件保留，非PASS或签名修复需EAUDIT。\n',encoding='utf-8')
 
 def progress(sources,audit,mapping,old):
+    complete=len(mapping)==160 and all(a['checked'] for a in audit.values())
     lines=['# 第2章本地五步流程进度','','范围：印刷p.53–94/PDF75–116，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。',
-        '下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。',
+        '第2章本地部分完成；第1、2章均等待用户提交MathCopilot批次。网站不可用，未冻结。' if complete else '下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。',
         f'当前{len(sources)}条；旧清单映射{len(mapping)}/160；本地PASS {sum(a["verdict"]=="PASS" for a in audit.values())}；网站返回0。','',
         '| source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |','|---|---|---|---|---|---|']
     for s in sources:

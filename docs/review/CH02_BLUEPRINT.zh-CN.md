@@ -139,6 +139,31 @@
 | MD-2.4.5-ProcessingIterates | 88/110 | PASS | 待网站审计 | checked+documented priors |
 | MD-2.4.5-ProcessingOrder | 88/110 | PASS | 待网站审计 | checked+documented priors |
 | MD-2.4.5-EulerEffectiveOrder | 88/110 | PASS | 待网站审计 | incomplete |
+| MD-2.5.1-RK | 89/111 | PASS | 待网站审计 | self-contained |
+| MD-2.5.1-RK4 | 89/111 | PASS | 待网站审计 | self-contained |
+| MD-2.5.1-RK4Order | 89/111 | PASS | 待网站审计 | incomplete |
+| MD-2.5.1-ExplicitRK | 89/111 | PASS | 待网站审计 | incomplete |
+| MD-2.5.1-RKSymplectic | 89–90/111–112 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.5.1-GaussFamily | 90/112 | PASS | 待网站审计 | incomplete |
+| MD-2.5.1-Midpoint | 90/112 | PASS | 待网站审计 | self-contained |
+| MD-2.5.1-MidpointProperties | 90/112 | PASS | 待网站审计 | incomplete |
+| MD-2.5.1-GaussTwo | 90/112 | PASS | 待网站审计 | self-contained |
+| MD-2.5.1-GaussTwoOrder | 90/112 | PASS | 待网站审计 | incomplete |
+| MD-2.5.2-PartitionedVerlet | 90/112 | PASS | 待网站审计 | self-contained |
+| MD-2.5.2-PartitionedReduction | 91/113 | PASS | 待网站审计 | incomplete |
+| MD-2.5.2-GeneralEuler | 91/113 | PASS | 待网站审计 | self-contained |
+| MD-2.5.2-GeneralSymplectic | 91/113 | PASS | 待网站审计 | incomplete |
+| MD-2.5.2-GeneralVerletSymplectic | 91/113 | PASS | 待网站审计 | incomplete |
+| MD-2.5.3-Newmark | 92/114 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.5.3-NewmarkReduction | 92/114 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.5.3-NewmarkDamping | 92/114 | PASS | 待网站审计 | incomplete |
+| MD-2.5.3-NewmarkNotSymplectic | 92/114 | PASS | 待网站审计 | incomplete |
+| MD-2.5.4-MultiTaylor | 92/114 | PASS | 待网站审计 | self-contained |
+| MD-2.5.4-TIPotential | 92–93/114–115 | PASS | 待网站审计 | self-contained |
+| MD-2.5.4-TIForce | 93/115 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.5.4-TIOrder | 93/115 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.5.5-Beeman | 94/116 | PASS | 待网站审计 | self-contained |
+| MD-2.5.5-BeemanOrder | 94/116 | NEEDS_HUMAN | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -174,6 +199,18 @@
   Jacobian可逆仅推出局部可逆，不能推出任意辛映射全球双射；正确群是给定全球辛微分同胚。
 - MD-2.4.4-Newton：字面双输入更新与标准Newton不同，待裁定索引；定义不证明收敛。
   原文混用zₙ⁽ᵏ⁾与zₙ₊₁⁽ᵏ⁾；保留两个不同输入，不静默改成相同迭代点。映射可逆也不保证任意近似Jacobian非奇异。
+- MD-2.5.1-RKSymplectic：完整字面系数判别的充分与普适必要方向都保留；可约/冗余阶段必要性反例资格未裁定，不能只证明充分性冒充整句。
+  原句precise condition需不可约/非退化资格；完整普适iff已保留，冗余RK必要性不能默认为真。
+- MD-2.5.3-Newmark：字面关系已保存；原书质量约定需裁定。
+  Q式力项缺M⁻¹；不默改成质量一致Newmark。
+- MD-2.5.3-NewmarkReduction：完整字面一般质量结论，不静默限定单位质量；待裁定。
+  字面Newmark在一般M不等于Verlet，仅M=I或修正Q式force质量因子后成立；不以旧质量修正版证明替代原句。
+- MD-2.5.4-TIForce：原书力与改势符号不一致，未作静默修正。
+  上项改势为U−h²‖gradU‖²M⁻¹/24，负梯度应有+ h²Hessian项；原页此力式负号冲突，保留字面。
+- MD-2.5.4-TIOrder：符号依赖未裁定，保留存在处理器的实际四阶结论。
+  有效四阶依赖改势符号；原文改势和力相互冲突，本签名保留负号改势，需裁定处理器方向和正负修正。
+- MD-2.5.5-BeemanOrder：原式逐字核对；谐振子局部Taylor诊断显示动量h³缺陷，需导师裁定原文three是局部阶、位置阶还是原书疑误。
+  三阶的阶定义需要裁定：单位质量谐振子q=cos t、p=−sin t，从两个精确起点代入原式，一步动量误差首项为−h³/12；全相空间全局三阶与该局部缺陷不一致。保留原文three及完整全局三阶签名，不静默改成二阶。
 
 ## 1. MD-2-HamiltonianODE · definition · 印刷p.53 / PDFp.75
 
@@ -683,6 +720,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：缺一般Taylor方法局部截断误差、数值留域与全局阶桥接；当前库仅一般one-step条件误差定理。
 
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
 签名SHA256：`b274d6afd631fc6a123c0b272800e3d1c0093a3a226d18f1ab5cae8d1ec8570a`；原文SHA256：`d5b6c3d33183b985921f59e298ff73cc05ed309fc3d507b224229f7bffda0e36`。
 
 ## 1. MD-2.2-VerletOrder · unnumbered_claim · 印刷p.60 / PDFp.82
@@ -732,6 +771,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺完整Verlet局部截断误差、稳定性及数值留域推导。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
 签名SHA256：`c07b38837f52424197c58718962f6ea1b09fd6ef56c8b3400e923b7dbc083dd0`；原文SHA256：`abe5e164617b9a390caccfa16c885de2b1d2b7ec81558ddbdbeb15ec02104bb9`。
 
@@ -803,7 +844,7 @@ def admissibleSmooth {n : ℕ} (a b : ℝ) (x y : Q n) (q : ℝ → Q n) : Prop 
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.admissibleSmooth；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.admissibleSmooth；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原文省略/技术资格 | 全实线C∞延拓强于只在[α,β]光滑的局部资格。 | [EXTRA] |
 | 原页核对/疑点 | 原页先说twice continuously differentiable，后说C∞/smooth；按后一明确C∞登记，不能用旧CSV的C1转述。 | NEEDS_HUMAN |
 
@@ -822,6 +863,8 @@ def admissibleSmooth {n : ℕ} (a b : ℝ) (x y : Q n) (q : ℝ → Q n) : Prop 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`a6e26d4be5f24e27a02e5571211fd6f521eb7f6c8f696edc099ee8c5b23d11a9`；原文SHA256：`64aedce4aabcedca0b1cf5c29f7d38cc46569c507cc5fa3b61fe103438b95481`。
 
@@ -970,6 +1013,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：积分下求导及一致二阶Taylor余项。
 
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
 签名SHA256：`bff5a9f8d87e38ca0e35668c29e6574bb2e479ead2904c0c34412a23c71e8f4b`；原文SHA256：`257e0978599348d52e57ed47c1304310e8142896aa813e6d68329680497e908c`。
 
 ## 1. MD-2.2.1-TaylorPrinted · Footnote 3 · 印刷p.61 / PDFp.83
@@ -1000,7 +1045,7 @@ theorem taylorPrinted : ∀ n (k : ℕ) (f : Q n → ℝ) z₀,
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.taylorPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.taylorPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | 原脚注二阶及以后漏1/j!；f(x)=x²在0的k=2展开会给2x²，余项差为-x²而非O(x³)。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -1020,6 +1065,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：原书疑误裁定；正确Taylor余项理论另缺。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`5af4f96b8e15de9ba85bbc583438f0a0d283aaab9ebc3b8ba5a23a4151c1bcd5`；原文SHA256：`5f5dc50e6c4651f1cf942a0197b2ae81bc912e1c4215f3917da5e0c8a27abd5e`。
 
@@ -1122,6 +1169,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：实际作用量求导、连续线性泛函值积分分部与变分正则性理论。
 
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
 签名SHA256：`7fb262663a8a6785937fdf478e22775d3de8c90fa9f80cdbcf95e6aefbc15386`；原文SHA256：`5bd14844f8b6369964421e0f5b16d99f257d04a0a3b9e7c175ebb896ba9444e3`。
 
 ## 1. MD-2.2.1-EulerLagrange · unnumbered_claim · 印刷p.62 / PDFp.84
@@ -1174,6 +1223,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：基本变分引理、积分分部及实际作用量的一阶求导。
 
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
 签名SHA256：`ccbc59ea7969869446827af6d9db924d7e656390292141d3dc09097289af9bc1`；原文SHA256：`724ea022644814ea84698915e618c9f37a1404c30338409e20a37c647d80c3ab`。
 
 ## 1. MD-2.2.1-VariationalDerivativePrinted · definition · 印刷p.62 / PDFp.84
@@ -1203,7 +1254,7 @@ def printedVariationalDerivative {E : Type*} [NormedAddCommGroup E] [NormedSpace
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.printedVariationalDerivative；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.printedVariationalDerivative；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | 左式漏F(q)，原页实际如此。字面定义对于非零常值F无解，不能静默替成HasFDerivAt。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -1221,6 +1272,8 @@ def printedVariationalDerivative {E : Type*} [NormedAddCommGroup E] [NormedSpace
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`ca49b5bcf458f8bd2458e4b0792e577bc2433a43fcf9db99968ad7997724b6a1`；原文SHA256：`c503ab054047fde3cc807b5118727c407fa4680daf86791472dddba426a56d4f`。
 
@@ -1270,6 +1323,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：尚缺具体负动能作用量曲线反例及积分平方严格正证明。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
 签名SHA256：`b8b180dae5097d6251914014c712b64a7b7704d2d22d29a22ef97da37552c304`；原文SHA256：`ff27f3255db59bd89b392aede63545202928f5553cdeabf635ae4a8a3b3d2cf7`。
 
@@ -1386,7 +1441,7 @@ def bp_discreteAction {n : ℕ} (L : Q n → Q n → ℝ) (q : ℕ → Q n) (h :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.bp_discreteAction；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.bp_discreteAction；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | 正文L写v上方点且+U，与p.60/PDF82和紧接展示离散作用量的-U冲突；定义只登记一般L离散求和，不把两种机械式同时认作正确。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -1404,6 +1459,8 @@ def bp_discreteAction {n : ℕ} (L : Q n → Q n → ℝ) (q : ℕ → Q n) (h :
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`894e6b90da81bc361b2a861b2ee67cb3396fb854e9e3438a7fa1236ebf55d7a5`；原文SHA256：`018c568b554c1aaec72b65a74cccd089851669c163e50e320cf1b0f9b5c7478e`。
 
@@ -1436,7 +1493,7 @@ def printedDiscreteStationary {n : ℕ} (L : Q n → Q n → ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.printedDiscreteStationary；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.printedDiscreteStationary；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | 原页n=1,…,ν包含右端点，后页说端点固定且只对1,…,ν-1求导。保留字面≤ν，不默改为<ν。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -1454,6 +1511,8 @@ def printedDiscreteStationary {n : ℕ} (L : Q n → Q n → ℝ)
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`7b1665846f2b2a4d259a1e1dece7d555ba7939241be18910a2536074c613d49e`；原文SHA256：`a37b10e5f0eda5fa53a3f419bb58e1b68373944baa62a08f7b2bd5aead1faae5`。
 
@@ -1506,7 +1565,9 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：有限节点替换对实际离散作用量的Fréchet求导。
 
-本地独立尝试3次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/short-search1.log；blueprint/ch02/validation/short-search2.log；blueprint/ch02/validation/short-search3.log。
+
+停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
 
 签名SHA256：`609609c6b4d27f686a89255390f55e103ef274e5b37df72065dba51fa4a69598`；原文SHA256：`6240faa0df939ec8073881db8d0a1ea0d07eee2b023cc0492b35ef1c0e7c1a63`。
 
@@ -1558,7 +1619,9 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：实际离散作用量导数及驻值与Störmer式等价。
 
-本地独立尝试3次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/short-search1.log；blueprint/ch02/validation/short-search2.log；blueprint/ch02/validation/short-search3.log。
+
+停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
 
 签名SHA256：`62985652a458df3d19f35e462cc00fa7f1d994a980a64a4e49b4b527f3dd6124`；原文SHA256：`3965a5022853c11528c025916f6a0b0ad4997fd49fe5808a6b71857cfd721c6f`。
 
@@ -2286,6 +2349,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：实际标量复合力的三阶Taylor余项及代数归一。
 
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
 签名SHA256：`154e3215a2cb7cf589ed43fe80580f4d7144044be37e2f4350e2dee587096575`；原文SHA256：`4ce3612789f2ab6e5efb29a35e5f9441cc4174836dd9d19589f0ede0a6baa058`。
 
 ## 1. MD-2.2.3-ExactExpansion · unnumbered_claim · 印刷p.68 / PDFp.90
@@ -2342,6 +2407,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：ODE导数升阶与四阶Taylor余项界。
 
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
 签名SHA256：`f2c55a7e37901894aa81ab392ab101c4eb4c3d190a02ea19d1b69472a017dbc9`；原文SHA256：`345ba85557f62689396904de16243dabfb46804bbb71c64661bfa969172d379f`。
 
 ## 1. MD-2.2.3-DefectPrinted · unnumbered_claim · 印刷p.68 / PDFp.90
@@ -2375,7 +2442,7 @@ theorem defectPrinted : ∀ (F : ℝ → ℝ) (γ : ℝ → ℝ × ℝ), ContDif
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.defectPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.defectPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原文省略/技术资格 | 实际轨迹、F C³；t=0归一。 | [EXTRA] |
 | 原页核对/疑点 | 位置Q仅到h²，减精确q(t+h)应为负h³F′p/6；原页为正号，保留字面。 | [ERRATUM?] |
 
@@ -2396,6 +2463,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：原书位置差疑误裁定及实际余项理论。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`f2e43ef3a33c65967a0acc6a84c8353d9d65ab37d49e7eaa0ddd62b828b3b90c`；原文SHA256：`53163547fe92926f03c9306cc3cdc84f924222e61eeac0b61e7445504aa263b7`。
 
@@ -2459,6 +2528,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：实际三阶缺陷、κ连续性及统一余项常数。
 
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
 签名SHA256：`45ff6af7c8b9194bd143ecc899ccb3f59a8e0d5050307c18bafa689a0a8ec9bd`；原文SHA256：`811060712f51d0fc3e44bab1a2ba381489aba03301ef5cbc3e8e4a541b84a66e`。
 
 ## 1. MD-2.2.3-VerletStability · unnumbered_claim · 印刷p.68–69 / PDFp.90–91
@@ -2511,7 +2582,9 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：实际Verlet映射的1+hC Lipschitz界，可用半踢漂移组合逐坐标界证明。
 
-本地独立尝试3次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/short-search1.log；blueprint/ch02/validation/short-search2.log；blueprint/ch02/validation/short-search3.log。
+
+停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
 
 签名SHA256：`28c8135a84a4048281d19549d154e1861b611fb59b8d00b8afcd2c5ab1049fe5`；原文SHA256：`ed30d47992a6d9cb522dcf666ad1591a895513dd7e04a1e6c1e1d0ea62a076fc`。
 
@@ -2603,7 +2676,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-本地独立尝试2次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试2次，未通过1次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/section22-short.log；blueprint/ch02/validation/section22-short2.log。
 
 签名SHA256：`b54e6f4cbbe553b015a6b997d0506d2c4bcb66334cc59ceac2e2b02c50211f05`；原文SHA256：`f2b1a45b4aa842688c933d65cf07a88eb8351ab6115de8aaef8245c705271194`。
 
@@ -2708,7 +2781,11 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：短证明3次失败：within导数的tuple投影/Filter接口转换未完成；乘积求导抵消路线及日志已保留。
 
-本地独立尝试3次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/section22-short3.log。
+
+同一角动量候选中三个分量的投影/导数路线未通过；不是三次完整工程编译。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
 签名SHA256：`fafca7546afc5249607d05b74474c368fd7bb3aa2e54a3808e35c4cb8fa6d762`；原文SHA256：`c224813a7f759cdb093819269915d3571cdcca9919f975729bd0e41ba8bd54f6`。
 
@@ -2836,7 +2913,7 @@ theorem integralErrorPrinted :
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.integralErrorPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.integralErrorPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原文省略/技术资格 | 域含连接线段，B,K≥0及L>0；用原文先前轨迹误差界，不把待证积分误差作前提。 | [EXTRA] |
 | 原页核对/疑点 | 由(2.12)及均值不等式只能得Kbar B/L，额外1/2未推导；常数Kbar若重命名需明确。 | [ERRATUM?] |
 
@@ -2857,6 +2934,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：原书1/2因子裁定；均值与轨迹误差组合。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`18a8529ed663f3cf547feb86796db991a5c52c6769bd37ebe2a989c764218bac`；原文SHA256：`a6752137777d74e5a5d2a3fc4248d36547d7006289ac7ba67f1c8e40b4f78e0c`。
 
@@ -3103,6 +3182,8 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/section23-draft1.log；blueprint/ch02/validation/section23-draft2.log。
+
 签名SHA256：`45e9e37dd2fa10d2930c8ccab3a2754cc6fb38bef896638052b33a1949190638`；原文SHA256：`2b327448ac9b8235a5b23b07577a8450ba97f74bde71507e226d7cea3173c3e5`。
 
 ## 1. MD-2.3.1-VariationalPrinted · unnumbered_claim · 印刷p.73 / PDFp.95
@@ -3137,7 +3218,7 @@ theorem variationalPrinted : ∀ n (f : Q n → Q n) (Φ : ℝ × Q n → Q n) �
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.variationalPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.variationalPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | 原文W在z(t)取Jacobian，而变分矩阵应在固定初值ζ取Jacobian；沿移动取值点会多一链式项。后式还需要W可逆，局部流可给但不能忽略域。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -3157,6 +3238,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：原书取值点裁定；正确固定初值版本库已有jointC²证明。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`fcd47e1a641b66b44fdd6cc96805f37ab6e4a930b2fd91c337aa6e6f503bf312`；原文SHA256：`6130da9c501db15f53f480ca668874b35f25c0ed617eef37fc307ac157c877b3`。
 
@@ -3208,6 +3291,8 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
+本地路线尝试2次，未通过1次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/section23-draft1.log；blueprint/ch02/validation/section23-draft2.log。
+
 已登记前置证明/定义：MolecularDynamics.textbookMatrixDet_hasDerivAt_of_linearODE。
 
 签名SHA256：`d585200f7db73e2a1e225c0a0b7043a0400c81ba665194e1a187bb908abfea03`；原文SHA256：`f18401542dccb8c06fbbfad01daf95539f521c06b4b25526dd2b7176f0333084`。
@@ -3258,6 +3343,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：真实矩阵行列式导数与标量积分因子常值证明。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
 签名SHA256：`557d998d5be18ee1f805ce31e2bc59e3f06817b8381ba08b86e849ba4d00b7e5`；原文SHA256：`93e99fba83092ad06d084a320a04b99e84d3aa942c1c20c467cdabd44e40b6bc`。
 
@@ -3404,6 +3491,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：LJ能级闭曲线/非平衡周期轨道理论；能量守恒本身不足以自动得周期。
 
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
 签名SHA256：`22498ca2f035d27f2ffaf4cc308031586846c4884ce4c37967fb2f4013eae195`；原文SHA256：`c7dc10edecdb134acea369c97837a77a4f0fa75588595bc6d06e74d837fced4f`。
 
 ## 1. MD-2.3.2-LinearDivergence · unnumbered_claim · 印刷p.74–75 / PDFp.96–97
@@ -3455,6 +3544,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：线性流行列式指数公式及体积换元的必要/充分方向。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
 签名SHA256：`66579fe2fecac5cec625529bb107f69c8223f102fa685d3c0acb05dcc7059864`；原文SHA256：`e4ef2e9baf4a3c4f331f134a0895f1af9f462bf12147e6a10dad7f43aa6d3555`。
 
@@ -3526,7 +3617,7 @@ theorem eulerVolumePrinted : ∀ n (S : Matrix (Fin n) (Fin n) ℝ) h,
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.eulerVolumePrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.eulerVolumePrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | 体积只要求\|det\|=1；原文省略正向/足够小步长条件。反射在大步长可保持体积但det=-1。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -3544,6 +3635,8 @@ theorem eulerVolumePrinted : ∀ n (S : Matrix (Fin n) (Fin n) ℝ) h,
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`ae1958f4a95f0551c3a9b1b808a25dec8093fe8e1ec32befd25dee94efe1aec6`；原文SHA256：`52757042050f1ae1a29f43e87d9b499bc065efd30db7f51532669c347c2d3f89`。
 
@@ -3694,7 +3787,9 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：隐式实际关系的求导、分母非零解导数及2×2矩阵整理。
 
-本地独立尝试3次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/short-search1.log；blueprint/ch02/validation/short-search2.log；blueprint/ch02/validation/short-search3.log。
+
+停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
 
 签名SHA256：`706f61c465edb22e8eaf8ce20e79e90c0f283044df14a49a407e4e6acca2067f`；原文SHA256：`5e616aece11449bfbf15a9b915b005db505b9a0efd06e2191403bd434a944764`。
 
@@ -3750,7 +3845,9 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：实际隐式求导；若全局area保持还须单射局部域与换元。
 
-本地独立尝试3次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/short-search1.log；blueprint/ch02/validation/short-search2.log；blueprint/ch02/validation/short-search3.log。
+
+停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
 
 签名SHA256：`703c7f58d4d7edf80d82e8abb9e9da8c77c081361672ff7e30e4faa6487afffd`；原文SHA256：`65332a3bed9f9b254652e4bd46b875e05b12d29950007e7769f06f3e4f10aa78`。
 
@@ -4100,7 +4197,7 @@ def coefficientTwoForm {n : ℕ} (A : Q n → Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.coefficientTwoForm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.coefficientTwoForm；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | 双和系数A的实际双线性矩阵是A-Aᵀ；若A反对称为2A。后文直接用A作矩阵表示存在因子约定疑点。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -4118,6 +4215,8 @@ def coefficientTwoForm {n : ℕ} (A : Q n → Matrix (Fin n) (Fin n) ℝ)
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`75288c766eebbf2d972f2c2d7213ab1cd2f07b1e3e7c6d37cbe913d5bad664ad`；原文SHA256：`93683d6555e009f2f10b7f8c5b9f21ec776ad7553dd01ce068bcc9594fc655b6`。
 
@@ -4256,6 +4355,8 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
+本地路线尝试2次，未通过1次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/section23-draft1.log；blueprint/ch02/validation/section23-draft2.log。
+
 签名SHA256：`328275b973bcfdd02dbc04990c62d3e26fd7c1d5990b9747080fb27f94ba738e`；原文SHA256：`ec1096a54df2268823a8cc0ca4d4a294b078385e06a68bdefcc6a92210c7e2bd`。
 
 ## 1. MD-2.3.3-PreservesForm · definition · 印刷p.78 / PDFp.100
@@ -4284,7 +4385,7 @@ def bp_preservesTwoForm {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) : Prop :=
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.bp_preservesTwoForm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.bp_preservesTwoForm；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | 一般位置相关A的守恒式应DΦ(z)ᵀA(Φ(z))DΦ(z)=A(z)；原文省略底点，若只针对常矩阵才无歧义。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -4302,6 +4403,8 @@ def bp_preservesTwoForm {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) : Prop :=
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`2cf1e332563e1049735e8c393b3308abfe23430effa9cfdf663591bda8a0ffd9`；原文SHA256：`d4802133b77ac5c54c3d6fae2cf7d13ed012c58735ae6ab6440e2eaf15180a94`。
 
@@ -4581,7 +4684,7 @@ theorem hamiltonVariationalPrinted : ∀ n (H : SymplecticCoordinates n → ℝ)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.hamiltonVariationalPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.hamiltonVariationalPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | 与p.73一样W应在固定初值ζ求导；原页后文明确W(t)=F′t(z(t,ζ))，本条保留该字面W。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -4601,6 +4704,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：原书W取值点裁定；固定初值真实流版本已有证明。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`1707f4118e60d3169d3bcd8f4ad90f137d68d135ee19be188152113261e98154`；原文SHA256：`4f472655666f7e7b8a5fec112134f8f5fdc04ba3cd7345a56d9575dabd9963f1`。
 
@@ -4931,7 +5036,7 @@ theorem globalGroupPrinted : ∀ n (Φ : SymplecticCoordinates n → SymplecticC
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.globalGroupPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.globalGroupPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | Jacobian可逆仅推出局部可逆，不能推出任意辛映射全球双射；正确群是给定全球辛微分同胚。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -4951,6 +5056,8 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：原书全球逆断言裁定；正确微分同胚群接口已有。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`f8b91dae6784ff9437a94d82ddd2bb14959e8005f733036a5474cd2a685dae90`；原文SHA256：`de97cbfc93e31c33430ad7d2d08b01fb13c47390f17e0b85db92c10371b3cb8a`。
 
@@ -5094,7 +5201,9 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：完整步映射Fréchet导数与kick/drift组合的坐标整理。
 
-本地独立尝试3次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/short-search1.log；blueprint/ch02/validation/short-search2.log；blueprint/ch02/validation/short-search3.log。
+
+停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
 
 签名SHA256：`7b8a1997890bab8bd0a33f1481ceab26b89037973f027e5adeaced1337f61f63`；原文SHA256：`c2a7ad9bb869b14ec1a082193640d589a5a9e4658c5fc33d4598e019c7899172`。
 
@@ -5727,11 +5836,9 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-noncomputable def bp_potentialFlow {Nc : ℕ}
-    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ)
-    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
-  Sum.elim (fun i => z (Sum.inl i))
-    (fun i => z (Sum.inr i) + h * F (textbookPositionProjection Nc z) i)
+def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
+    (h : ℝ) : SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+  textbookMomentumKick (textbookPotentialForce U) h
 ```
 
 ### 5. 对照表
@@ -5742,7 +5849,7 @@ noncomputable def bp_potentialFlow {Nc : ℕ}
 
 ### 6. 审计结论
 
-本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+本地预审：**PASS**。闭式势能子流采用原文实际负梯度，未把任意独立F偷换为给定U的力。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
@@ -5756,7 +5863,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`3f5840eae7317e0e2d712a6d5843665bce89dfaeaf496cf5ac6782821780cd1a`；原文SHA256：`687623253a4cb7cdec7ed7f17f252f3e939b9427aa94afe7c6ae0df026c2d33f`。
+签名SHA256：`4585986b700aacb1b18e7b4d04af5aeea9adf94db997e014cef1ff43d1e1d660`；原文SHA256：`687623253a4cb7cdec7ed7f17f252f3e939b9427aa94afe7c6ae0df026c2d33f`。
 
 ## 1. MD-2.4.1-SplitEuler · unnumbered_claim · 印刷p.84 / PDFp.106
 
@@ -5799,7 +5906,7 @@ theorem splitEuler :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1007](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1007>)（`MD.Ch02.splitEuler`）。
+位置：[Blueprint/Ch02.lean:1005](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1005>)（`MD.Ch02.splitEuler`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5853,7 +5960,7 @@ theorem verletComposition :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1016](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1016>)（`MD.Ch02.verletComposition`）。
+位置：[Blueprint/Ch02.lean:1014](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1014>)（`MD.Ch02.verletComposition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5900,7 +6007,7 @@ theorem verletSymplectic :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1026](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1026>)（`MD.Ch02.verletSymplectic`）。
+位置：[Blueprint/Ch02.lean:1024](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1024>)（`MD.Ch02.verletSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5950,7 +6057,7 @@ theorem symmetricComposition {E : Type*}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1033](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1033>)（`MD.Ch02.symmetricComposition`）。
+位置：[Blueprint/Ch02.lean:1031](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1031>)（`MD.Ch02.symmetricComposition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6002,13 +6109,15 @@ theorem symmetricEven :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1041](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1041>)（`MD.Ch02.symmetricEven`）。
+位置：[Blueprint/Ch02.lean:1039](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1039>)（`MD.Ch02.symmetricEven`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
 签名SHA256：`7fdd81357ed53ab61f61f2e867220dfedf92b659e54f9e95a622834d99a5c869`；原文SHA256：`9866876427127a281c9a45e44391f1c58669c60a9459252734517414dcbe4977`。
 
@@ -6052,7 +6161,7 @@ theorem compositionSymplectic {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1052](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1052>)（`MD.Ch02.compositionSymplectic`）。
+位置：[Blueprint/Ch02.lean:1050](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1050>)（`MD.Ch02.compositionSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6102,7 +6211,7 @@ theorem compositionOrder :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1061](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1061>)（`MD.Ch02.compositionOrder`）。
+位置：[Blueprint/Ch02.lean:1059](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1059>)（`MD.Ch02.compositionOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6110,7 +6219,9 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。
 
-本地独立尝试3次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/short-search1.log；blueprint/ch02/validation/short-search2.log；blueprint/ch02/validation/short-search3.log。
+
+停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
 
 签名SHA256：`1bf8eac0f16350ec1e86e8f53adc07374531346781388530bc05dfbd07929fd7`；原文SHA256：`2c49e55e0554aca2d4d2766399eb4a375a5640d17f870b7e9090290761a09167`。
 
@@ -6152,7 +6263,7 @@ def bp_harmonicAnharmonic (Ω : ℝ) (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1071](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1071>)（`MD.Ch02.bp_harmonicAnharmonic`）。
+位置：[Blueprint/Ch02.lean:1069](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1069>)（`MD.Ch02.bp_harmonicAnharmonic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6177,11 +6288,15 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-theorem implicitLocal :
-  ∀ n (g : Q n → Q n) x (A : Q n ≃L[ℝ] Q n), ContDiff ℝ 1 g → HasFDerivAt g A.toContinuousLinearMap x →
-    ∃ U V : Set (Q n), IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g x ∈ V ∧
-      ∃ inv : Q n → Q n, ContDiffOn ℝ 1 inv V ∧
-        (∃ K ≥ 0, ∀ y ∈ V, ‖inv y‖ ≤ K) ∧ (∀ y ∈ V, inv y ∈ U ∧ g (inv y) = y) ∧ (∀ y ∈ U, inv (g y) = y)
+theorem implicitLocal : ∀ n (g : ℝ → Q n → Q n) x
+    (A : Q n ≃L[ℝ] Q n), ContDiff ℝ ∞ (Function.uncurry g) →
+    HasFDerivAt (g 0) A.toContinuousLinearMap x →
+    ∃ δ > 0, ∀ h : ℝ, |h| < δ → ∃ U V : Set (Q n),
+      IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g h x ∈ V ∧
+      ∃ inv : Q n → Q n, ContDiffOn ℝ ∞ inv V ∧
+        (∃ K ≥ 0, ∀ y ∈ V, ‖inv y‖ ≤ K) ∧
+        (∀ y ∈ V, inv y ∈ U ∧ g h (inv y)=y) ∧
+        (∀ y ∈ U, inv (g h y)=y)
 ```
 
 ### 5. 对照表
@@ -6189,11 +6304,12 @@ theorem implicitLocal :
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch02.implicitLocal；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
-| 原文省略/技术资格 | [EXTRA]g C¹且实际导数为连续线性同构；只能保证局部逆，原文“typically”不构成任意g可逆定理。逆在更小紧邻域有界。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA]g依赖真实步长h；联合C∞，零步实际导数为连续线性同构。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA]结论为充分小步长的局部逆；缩小有界邻域，不宣称全域有界逆。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。完整局部唯一逆、正逆律、C¹及局部有界性均保留；原文typically的可逆导数资格逐项[EXTRA]，不宣称任意隐式关系全球可逆。
+本地预审：**PASS**。步长量词、局部唯一双逆、连续/光滑和有界四类结论保留；没有把足够小步长的可逆性本身作假设。
 
 网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
 
@@ -6201,15 +6317,17 @@ theorem implicitLocal :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1077](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1077>)（`MD.Ch02.implicitLocal`）。
+位置：[Blueprint/Ch02.lean:1076](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1076>)（`MD.Ch02.implicitLocal`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-缺失/继续路线：实际逆函数定理局部Homeomorph、缩小紧邻域及连续逆有界。
+缺失/继续路线：参数化光滑逆函数定理、连续可逆导数邻域及局部有界光滑逆理论。
 
-签名SHA256：`c8475385c25020935a96ccac808f6b51946f304ca8ae0ba502cc29da0f8c13d5`；原文SHA256：`1be99b0cb7bd46dc20f62e72f5a635e31f284131c7f0c2c581939b5b6b7c1350`。
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
+签名SHA256：`31ab493f1e53cbe621f52b41dc1901bd8e41326a50976a575851726eb4e33fd1`；原文SHA256：`1be99b0cb7bd46dc20f62e72f5a635e31f284131c7f0c2c581939b5b6b7c1350`。
 
 ## 1. MD-2.4.4-BackwardEulerSolve · Example 2.6 · 印刷p.86 / PDFp.108
 
@@ -6250,7 +6368,7 @@ def backwardEulerResidual (f : E → E) (h : ℝ) (z w : E) : E := w-z-h • f w
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1085](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1085>)（`MD.Ch02.backwardEulerResidual`）。
+位置：[Blueprint/Ch02.lean:1088](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1088>)（`MD.Ch02.backwardEulerResidual`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6284,7 +6402,7 @@ def newtonPrinted {n : ℕ} (g : Q n → Q n) (τ xNext xPrev : Q n)
 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
-| 原文完整数学对象和展示式 | MD.Ch02.newtonPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文完整数学对象和展示式 | MD.Ch02.newtonPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原页核对/疑点 | 原文混用zₙ⁽ᵏ⁾与zₙ₊₁⁽ᵏ⁾；保留两个不同输入，不静默改成相同迭代点。映射可逆也不保证任意近似Jacobian非奇异。 | [ERRATUM?] |
 
 ### 6. 审计结论
@@ -6297,11 +6415,13 @@ def newtonPrinted {n : ℕ} (g : Q n → Q n) (τ xNext xPrev : Q n)
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1089](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1089>)（`MD.Ch02.newtonPrinted`）。
+位置：[Blueprint/Ch02.lean:1092](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1092>)（`MD.Ch02.newtonPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
 签名SHA256：`4ff1a3615304b0aa2f3290959be770562e7e408db6d6a6443452a1c0ef1950a0`；原文SHA256：`96dc2a713a72e465ba585be6b067dd2472c4562cb2026a915509d600bba17d09`。
 
@@ -6345,13 +6465,15 @@ theorem newtonQuadratic :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1094](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1094>)（`MD.Ch02.newtonQuadratic`）。
+位置：[Blueprint/Ch02.lean:1097](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1097>)（`MD.Ch02.newtonQuadratic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
 签名SHA256：`20047deae134f8eed0bf39fc0ddd15cf0bf26bd6556dc43015b3e4d27d3d1d96`；原文SHA256：`fc51529b1f909c51e5bae26ef399a6efd03ca6f697f16e870071be2e6791139c`。
 
@@ -6399,7 +6521,7 @@ theorem frozenNewton :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1103](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1103>)（`MD.Ch02.frozenNewton`）。
+位置：[Blueprint/Ch02.lean:1106](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1106>)（`MD.Ch02.frozenNewton`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6407,7 +6529,9 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：沿凸球积分/均值范数界、保持邻域与迭代几何界。
 
-本地独立尝试3次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/short-search1.log；blueprint/ch02/validation/short-search2.log；blueprint/ch02/validation/short-search3.log。
+
+停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
 
 签名SHA256：`94141309cef5b825f47717dc0310e12a4b9f8a86b6fe6ba4d427d5033b15d30e`；原文SHA256：`6fdfbe6a516d4021d0b1fd373911c9f4c5696a83a82191223524eec3d2970fed`。
 
@@ -6447,7 +6571,7 @@ def bp_conjugateMap (χ : E ≃ₜ E) (B : E → E) : E → E := χ.symm ∘ B �
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1111](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1111>)（`MD.Ch02.bp_conjugateMap`）。
+位置：[Blueprint/Ch02.lean:1114](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1114>)（`MD.Ch02.bp_conjugateMap`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6492,7 +6616,7 @@ theorem conjugateIterates (χ : E ≃ₜ E) (A B : E → E)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1114](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1114>)（`MD.Ch02.conjugateIterates`）。
+位置：[Blueprint/Ch02.lean:1117](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1117>)（`MD.Ch02.conjugateIterates`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6538,7 +6662,7 @@ theorem conjugateLimits (χ : E ≃ₜ E) (A B : E → E) (hA : A=textbookConjug
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1120](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1120>)（`MD.Ch02.conjugateLimits`）。
+位置：[Blueprint/Ch02.lean:1123](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1123>)（`MD.Ch02.conjugateLimits`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6585,13 +6709,13 @@ theorem eulerConjugacy :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch02.lean:1128](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1128>)（`MD.Ch02.eulerConjugacy`）。
+位置：[Blueprint/Ch02.lean:1131](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1131>)（`MD.Ch02.eulerConjugacy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-本地独立尝试3次，失败0次；证据：blueprint/ch02/proof_attempts.json。
+本地路线尝试3次，未通过2次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/section24-preview1.log；blueprint/ch02/validation/section24-preview2.log；blueprint/ch02/validation/section24-preview3.log。
 
 签名SHA256：`1768f66436ec26ebb9d3d6a271ed49d92a59bafb797122cffd7e1a0e71c6d32c`；原文SHA256：`711d7b2e4b137e9c3c9c846a0bccd3dea1391b9b8f25785bf33ecf2b0ec56ac3`。
 
@@ -6633,7 +6757,7 @@ noncomputable def bp_processedIterate (χ : ℝ → E ≃ₜ E) (B : ℝ → E �
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1163](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1163>)（`MD.Ch02.bp_processedIterate`）。
+位置：[Blueprint/Ch02.lean:1166](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1166>)（`MD.Ch02.bp_processedIterate`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6678,7 +6802,7 @@ theorem processingIterates (χ : ℝ → E ≃ₜ E)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1168](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1168>)（`MD.Ch02.processingIterates`）。
+位置：[Blueprint/Ch02.lean:1171](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1171>)（`MD.Ch02.processingIterates`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6729,7 +6853,7 @@ theorem processingOrder (χ : ℝ → E ≃ₜ E) (B G : ℝ → E → E)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1176](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1176>)（`MD.Ch02.processingOrder`）。
+位置：[Blueprint/Ch02.lean:1179](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1179>)（`MD.Ch02.processingOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6784,7 +6908,7 @@ theorem eulerEffectiveOrder : ∀ n (m : Fin n → ℝ) (U : Q n → ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1189](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1189>)（`MD.Ch02.eulerEffectiveOrder`）。
+位置：[Blueprint/Ch02.lean:1192](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1192>)（`MD.Ch02.eulerEffectiveOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6792,4 +6916,1270 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 缺失/继续路线：实际半kick Homeomorph处理器构造及完整Verlet全局二阶，局部共轭代数条目不能单独证明有效二阶。
 
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
 签名SHA256：`ba4f7a94a85d2c5d6144cecafa707893988b3d750a2642335ce0c60366f4c62e`；原文SHA256：`8ce4f33c383c86c2138497218f78e3116e25f667e37fa4a902c5b0983e41546d`。
+
+## 1. MD-2.5.1-RK · definition · 印刷p.89 / PDFp.111
+
+### 2. 原文陈述
+
+> The family of Runge-Kutta methods for solving $\dot{\boldsymbol z}=f(\boldsymbol z)$ is defined by
+> \[\boldsymbol Z=\boldsymbol z+h\sum_{i=1}^s b_i\boldsymbol F_i,\]
+> where the vectors $\boldsymbol F_i$, $i=1,\ldots,s$, are computed by solving the system
+> \[\boldsymbol F_i=f\left(\boldsymbol z+h\sum_{j=1}^s a_{ij}\boldsymbol F_j\right),\qquad i=1,\ldots,s.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_rungeKuttaRelation {n s : ℕ} (f : Q n → Q n) (A : Matrix (Fin s) (Fin s) ℝ)
+    (b : Fin s → ℝ) (h : ℝ) (z w : Q n) (F : Fin s → Q n) : Prop :=
+  (∀ i, F i = f (z + h • ∑ j, A i j • F j)) ∧ w = z + h • ∑ i, b i • F i
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_rungeKuttaRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:1206](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1206>)（`MD.Ch02.bp_rungeKuttaRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`53f5abf47fd1bff1ec6a1bb6da6fbf9ddfc85ed06c9b9dbb19f40257ba245ea0`；原文SHA256：`b1442c71c123e3896383085b62b3f79877e2f8bcfcf8c047d1b7d1ff41ff16ce`。
+
+## 1. MD-2.5.1-RK4 · definition · 印刷p.89 / PDFp.111
+
+### 2. 原文陈述
+
+> An example of a popular 4th order explicit method is the choice of matrix $A$ with coefficients $a_{ij}=0$ except $a_{21}=1/2$, $a_{32}=1/2$ and $a_{43}=1$, and $b_1=1/6$, $b_2=1/3$, $b_3=1/3$, $b_4=1/6$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_rk4 {n : ℕ} (f : Q n → Q n) (h : ℝ) (z : Q n) : Q n :=
+  let k₁ := f z
+  let k₂ := f (z + (h/2) • k₁)
+  let k₃ := f (z + (h/2) • k₂)
+  let k₄ := f (z + h • k₃)
+  z + (h/6) • (k₁ + (2 : ℝ) • k₂ + (2 : ℝ) • k₃ + k₄)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_rk4；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:1211](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1211>)（`MD.Ch02.bp_rk4`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`17248a38e547ebf40f970969b743a7a2ab08095ec2084695c87832e971d651f3`；原文SHA256：`1128e98d0ba26ce82848df76721a07f631e294839196cf34ce00fb51b43dbf4b`。
+
+## 1. MD-2.5.1-RK4Order · unnumbered_claim · 印刷p.89 / PDFp.111
+
+### 2. 原文陈述
+
+> An example of a popular 4th order explicit method
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem rk4Order :
+  ∀ n (f : Q n → Q n) (γ : ℝ → Q n) τ, compactTrajectory f γ τ → globalOrder (rk4 f) γ τ 4
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.rk4Order；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]compactTrajectory实际C⁶向量场与紧窗实际轨迹；高阶资格强于原文简写。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1220](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1220>)（`MD.Ch02.rk4Order`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：一般RK树阶条件/实际四阶Taylor展开及局部误差、稳定性、数值留域的全局阶桥接。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
+签名SHA256：`ce4d4c9efc044fa7e5e7f21266ad138d5368f9c4cb551bd4ba5e2c10f1bdf331`；原文SHA256：`6b6aa34d7f94e31271174f46f24672b514e316604bc892ad5191379494c8a017`。
+
+## 1. MD-2.5.1-ExplicitRK · unnumbered_claim · 印刷p.89 / PDFp.111
+
+### 2. 原文陈述
+
+> This method is not symplectic, and in fact impossible to find symplectic explicit methods within the Runge-Kutta family.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem explicitRK :
+  ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ),
+    (∀ i j, i ≤ j → A i j = 0) → (∑ i, b i) = 1 →
+    ∃ (H : SymplecticCoordinates 1 → ℝ) (G : SymplecticCoordinates 1 → SymplecticCoordinates 1)
+      (stages : SymplecticCoordinates 1 → Fin s → SymplecticCoordinates 1) (h : ℝ),
+      ContDiff ℝ ⊤ H ∧ 0 < h ∧
+      (∀ z, (∀ i, stages z i = textbookHamiltonianVectorField H (z+h • ∑ j, A i j • stages z j)) ∧
+        G z = z+h • ∑ i, b i • stages z i) ∧ ¬ IsTextbookSymplecticMap G
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.explicitRK；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]一致性∑bᵢ=1排除全零权重恒等映射；“不辛”解释为存在光滑Hamilton模型与实际阶段/步映射不辛，不宣称每个具体H均不辛。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1226](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1226>)（`MD.Ch02.explicitRK`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：已有证明仅系数条件不可能；普适必要性及实际RK反例构造尚缺，不能把系数lemma当完整结论。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
+签名SHA256：`5a30063ac9980cf1a98331a2e8702c70a6f18f78e3fcdb98c692f21962487757`；原文SHA256：`72d8bbbc6bd69481918eb6e85388227fd5bab22cc94cf54bcca5a01e298d95e8`。
+
+## 1. MD-2.5.1-RKSymplectic · unnumbered_claim · 印刷p.89–90 / PDFp.111–112
+
+### 2. 原文陈述
+
+> Let us emphasize that, while a typical RK method is not symplectic, some implicit Runge-Kutta methods are symplectic. The precise condition that must be satisfied [325] is
+> \[b_i a_{ij}+b_j a_{ji}=b_i b_j,\qquad i=1,\ldots,s,\quad j=1,\ldots,s.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem rkSymplectic : ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ),
+    (∀ i j, b i*A i j+b j*A j i=b i*b j) ↔
+    (∀ n (H : SymplecticCoordinates n → ℝ) (h : ℝ)
+      (G : SymplecticCoordinates n → SymplecticCoordinates n)
+      (stages : SymplecticCoordinates n → Fin s → SymplecticCoordinates n),
+      ContDiff ℝ 2 H → ContDiff ℝ 1 G →
+      (∀ i, ContDiff ℝ 1 (fun z => stages z i)) →
+      (∀ z, (∀ i, stages z i=textbookHamiltonianVectorField H
+        (z+h • ∑ j, A i j • stages z j)) ∧ G z=z+h • ∑ i, b i • stages z i) →
+      IsTextbookSymplecticMap G)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.rkSymplectic；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | H C²；真实阶段函数与完整步G C¹且确实满足RK关系。 | [EXTRA] |
+| 原页核对/疑点 | 原句precise condition需不可约/非退化资格；完整普适iff已保留，冗余RK必要性不能默认为真。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。完整字面系数判别的充分与普适必要方向都保留；可约/冗余阶段必要性反例资格未裁定，不能只证明充分性冒充整句。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1239](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1239>)（`MD.Ch02.rkSymplectic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：实际RK楔积充分性与不可约必要性理论。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
+
+签名SHA256：`3514a69006828c28e6cb39b05f237392196c003bfd5d3877ce52469df906b81f`；原文SHA256：`0315ae165d9b90e540646bac4f51ade64ebc25eccedb1233dc6bdd9cb0c21c60`。
+
+## 1. MD-2.5.1-GaussFamily · Example 2.7 (family) · 印刷p.90 / PDFp.112
+
+### 2. 原文陈述
+
+> The Gauss-Legendre family of Runge-Kutta (GLRK) methods correspond to approximating the vector field at the Gauss points, i.e. the zeros of the orthogonal polynomials that arise in Gaussian quadrature. As these points are symmetrically distributed the GLRK schemes are symmetric, hence have even order.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gaussFamily :
+  ∀ n s (c : Fin s → ℝ) (f : Q n → Q n) (F G : ℝ → Q n → Q n), 0 < s →
+    Function.Injective c → (∀ i, c i ∈ Ioo (0 : ℝ) 1 ∧ legendreValue s (2*c i-1) = 0) →
+    ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ (Function.uncurry G) →
+    (∀ h z, ∃! data : Q n × (Fin s → Q n),
+      rungeKuttaRelation f (fun i j => ∫ t in (0 : ℝ)..c i, lagrangeBasis c j t)
+        (fun j => ∫ t in (0 : ℝ)..1, lagrangeBasis c j t) h z data.1 data.2) →
+    (∀ h z, ∃ stages, rungeKuttaRelation f (fun i j => ∫ t in (0 : ℝ)..c i, lagrangeBasis c j t)
+      (fun j => ∫ t in (0 : ℝ)..1, lagrangeBasis c j t) h z (G h z) stages) →
+    (∀ z, F 0 z = z ∧ ∀ t, HasDerivAt (fun u => F u z) (f (F t z)) t) →
+    (∀ h z, G (-h) (G h z) = z) ∧ (∃ r : ℕ, 0 < r ∧ Even r ∧ methodLocalOrder G F r)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.gaussFamily；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际Legendre根节点、Lagrange积分系数；s>0，节点单射，C∞向量场和实际光滑G；真实唯一阶段及真实流资格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。原句中的对称与偶数阶全部保留；没有额外声称原句未陈述的一般2s阶。2阶段四阶在GaussTwoOrder单列。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1253](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1253>)（`MD.Ch02.gaussFamily`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：大型Gauss配点构造、正交多项式根/对称性及偶数阶逆步理论；当前库无完整理论。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
+签名SHA256：`c4d0664b85e500bd5f327b792229eb8401103f7febc58665aa1ab5ff94d1e539`；原文SHA256：`cdcff190f179c15d64d5a610fd307d487ad1cd1bd394f74bd78ea80ec994e61c`。
+
+## 1. MD-2.5.1-Midpoint · definition · 印刷p.90 / PDFp.112
+
+### 2. 原文陈述
+
+> The simplest such method is the implicit midpoint rule:
+> \[\boldsymbol Z=\boldsymbol z+h\boldsymbol F_1,\qquad\boldsymbol F_1=f\left(\boldsymbol z+\frac h2\boldsymbol F_1\right),\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_midpointRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop :=
+  w = z + h • f ((1/2 : ℝ) • (z+w))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_midpointRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:1267](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1267>)（`MD.Ch02.bp_midpointRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`5077088980f1e929da6c1db67619d276efc52495f7ea3a5a4d1622433804249b`；原文SHA256：`fcb872fd2d0fe16a15a775ac709c6c821e3962d387a3562f0029d6d9f28e1196`。
+
+## 1. MD-2.5.1-MidpointProperties · unnumbered_claim · 印刷p.90 / PDFp.112
+
+### 2. 原文陈述
+
+> which has order 2.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem midpointProperties :
+  ∀ n (H : SymplecticCoordinates n → ℝ) (G F : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    ContDiff ℝ 4 H → ContDiff ℝ 1 (Function.uncurry G) →
+    (∀ h z, G h z = z+h • textbookHamiltonianVectorField H ((1/2 : ℝ) • (z+G h z))) →
+    (∀ z, F 0 z = z ∧ ∀ t, HasDerivAt (fun u => F u z) (textbookHamiltonianVectorField H (F t z)) t) →
+    (∀ h, IsTextbookSymplecticMap (G h)) ∧ methodLocalOrder G F 2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.midpointProperties；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1272](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1272>)（`MD.Ch02.midpointProperties`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：实际中点隐式楔积、局部三阶余项及唯一可微求解接口。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
+签名SHA256：`fd95aea0d5eed30ef9be9d6cd8574727a87d587504fef82325c8f6726b7a0c9b`；原文SHA256：`7b2a4eac1e90e772699bc77caf32c97a85fd7d2ad6698a60f8ced95ce1cd1584`。
+
+## 1. MD-2.5.1-GaussTwo · definition · 印刷p.90 / PDFp.112
+
+### 2. 原文陈述
+
+> The 4th order method ($s=2$) has coefficients
+> \[b_1=b_2=\frac12,\qquad A=(a_{ij})=\begin{bmatrix}\frac14&\frac14-\frac{\sqrt3}6\\\frac14+\frac{\sqrt3}6&\frac14\end{bmatrix}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def gaussTwoData : Matrix (Fin 2) (Fin 2) ℝ × (Fin 2 → ℝ) :=
+  (gaussTwoCoefficients, fun _ => 1/2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.gaussTwoData；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:1281](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1281>)（`MD.Ch02.gaussTwoData`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`b26c3de967f457af66769fb1497e8df1c5534bb9fb2049940d7baa4d5b048a10`；原文SHA256：`c6018927812a3baa17ffabbafb3dc0e4b1c9fc70623a891d113eaafc804afdb7`。
+
+## 1. MD-2.5.1-GaussTwoOrder · unnumbered_claim · 印刷p.90 / PDFp.112
+
+### 2. 原文陈述
+
+> The 4th order method ($s=2$) has coefficients
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gaussTwoOrder : ∀ n (f : Q n → Q n) (G : ℝ → Q n → Q n)
+    (γ : ℝ → Q n) τ,
+    compactTrajectory f γ τ → ContDiff ℝ 6 (Function.uncurry G) →
+    (∀ h z, ∃ stages : Fin 2 → Q n,
+      rungeKuttaRelation f gaussTwoCoefficients (fun _ => 1/2) h z (G h z) stages) →
+    globalOrder G γ τ 4
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.gaussTwoOrder；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1286](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1286>)（`MD.Ch02.gaussTwoOrder`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：大型Gauss2阶段局部五阶余项、光滑求解/稳定性及全局阶理论。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
+签名SHA256：`8c996b76ba91e50e2df552b1fab7cc0a6cc662dd1b1c5e6da5bc44cc058b73bc`；原文SHA256：`7997ed90be5745c73171b80f0e1a1f6c11ff8cf777f00770084053309a1c60ac`。
+
+## 1. MD-2.5.2-PartitionedVerlet · definition · 印刷p.90 / PDFp.112
+
+### 2. 原文陈述
+
+> As an illustration, consider the method:
+> \[\hat{\boldsymbol P}=\boldsymbol p-\frac h2\nabla_qH(\boldsymbol q,\hat{\boldsymbol P}),\tag{2.26}\]
+> \[\boldsymbol Q=\boldsymbol q+\frac h2(\nabla_pH(\boldsymbol q,\hat{\boldsymbol P})+\nabla_pH(\boldsymbol Q,\hat{\boldsymbol P})),\tag{2.27}\]
+> \[\boldsymbol P=\hat{\boldsymbol P}-\frac h2\nabla_qH(\boldsymbol Q,\hat{\boldsymbol P}).\tag{2.28}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_partitionedVerletRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w : Z n) (p : Q n) : Prop :=
+  p = z.2 - (h/2) • partialQ H z.1 p ∧
+  w.1 = z.1 + (h/2) • (partialP H z.1 p + partialP H w.1 p) ∧
+  w.2 = p - (h/2) • partialQ H w.1 p
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_partitionedVerletRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:1295](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1295>)（`MD.Ch02.bp_partitionedVerletRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`d4b95865686595e9600a1c2781ded953fe3fc68c558a2271f703ff01b57b4cd7`；原文SHA256：`b9d40c1739ae2c1e1313ab92fe052182e357d614b42c1597257dd9fe58a99426`。
+
+## 1. MD-2.5.2-PartitionedReduction · unnumbered_claim · 印刷p.91 / PDFp.113
+
+### 2. 原文陈述
+
+> When $H=\boldsymbol p^TM^{-1}\boldsymbol p/2+U(\boldsymbol q)$ this is just the leapfrog/Verlet method, but it can be used also for more general systems.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem partitionedReduction :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h z w,
+    positiveMass m → Differentiable ℝ U →
+    ((∃ p, partitionedVerletRelation (fun z : Z n => (∑ i, z.2 i^2/m i)/2+U z.1) h z w p) ↔
+      w = verlet m (fun q => -grad U q) h z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.partitionedReduction；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 固定正对角质量、U实际可微；中间动量存在关系与Verlet映射等价。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1302](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1302>)（`MD.Ch02.partitionedReduction`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：机械H两个实际偏导的坐标计算，随后三步关系消元。
+
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/short-search1.log；blueprint/ch02/validation/short-search2.log；blueprint/ch02/validation/short-search3.log。
+
+停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
+
+签名SHA256：`436cd443cc7cdd17b108c711bd67b3ae18d7489a2ed2943e607215f1f67cad31`；原文SHA256：`4f15cccc8a860426f45a7c6ddbf2dc3edfc533d9d364935235d0234ec6229713`。
+
+## 1. MD-2.5.2-GeneralEuler · definition · 印刷p.91 / PDFp.113
+
+### 2. 原文陈述
+
+> where $\mathcal G_h$ is defined by
+> \[\boldsymbol P=\boldsymbol p-h\nabla_qH(\boldsymbol q,\boldsymbol P),\tag{2.29}\]
+> \[\boldsymbol Q=\boldsymbol q+h\nabla_pH(\boldsymbol q,\boldsymbol P),\tag{2.30}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_generalSymplecticEulerRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w : Z n) : Prop :=
+  w.2 = z.2 - h • partialQ H z.1 w.2 ∧ w.1 = z.1 + h • partialP H z.1 w.2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_generalSymplecticEulerRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:1310](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1310>)（`MD.Ch02.bp_generalSymplecticEulerRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2ad9b0bcc6a6e0fd9499e3d6ca9b9af1e264942d5423f24e45760c90e7be7c98`；原文SHA256：`1640efc700b4f7c2ad8af9ba768ad8057eb558327cb006d32b3a894bae891e80`。
+
+## 1. MD-2.5.2-GeneralSymplectic · unnumbered_claim · 印刷p.91 / PDFp.113
+
+### 2. 原文陈述
+
+> To see that it is symplectic, we first note that this is a symmetric composition of the form
+> \[\mathcal K_h=\mathcal G_{h/2}^*\circ\mathcal G_{h/2},\]
+> so it is enough to show that this basic method is symplectic.
+
+### 3. 原文证明
+
+> Taking differentials of (2.30) defining $\mathcal G_h$ and then wedge products and summing, we have
+> \[\sum_i dQ_i\wedge dP_i=\sum_i dq_i\wedge dP_i+h\sum_i\sum_j H_{p_iq_j}dq_j\wedge dP_i+h\sum_i\sum_j H_{p_ip_j}dP_j\wedge dP_i.\]
+> The last term on the right vanishes by equality of mixed partials and the antisymmetry of the wedge product. On the other hand, using (2.29), we obtain, by similar means,
+> \[\sum_i dq_i\wedge dP_i=\sum_i dq_i\wedge dp_i-h\sum_i\sum_j H_{q_ip_j}dq_i\wedge dP_j.\]
+> Relabelling the indices in the sum and using our previous work results in
+> \[\sum_i dQ_i\wedge dP_i=\sum_i dq_i\wedge dp_i,\]
+> implying that the method is symplectic.
+
+原书计算按原页转录。
+
+### 4. Lean陈述
+
+```lean
+theorem generalSymplectic :
+  ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n) h,
+    ContDiff ℝ 2 H → ContDiff ℝ 1 G →
+    (∀ z, generalSymplecticEulerRelation H h (unpack z) (unpack (G z))) → IsTextbookSymplecticMap G
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.generalSymplectic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | H C²，真实C¹完整求解映射，逐点满足实际隐式关系。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1315](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1315>)（`MD.Ch02.generalSymplectic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：隐式实际Jacobian/楔积抵消；混合Hessian和一般求解接口。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
+签名SHA256：`ce003c2e82c623a7eaf435ec3061f9648c52e57c9dafc8d946e76f82f4661941`；原文SHA256：`8eddc576c4432a6bf8e38507164e2d5fe257b529ffb0e942afc8661db0a0865c`。
+
+## 1. MD-2.5.2-GeneralVerletSymplectic · unnumbered_claim · 印刷p.91 / PDFp.113
+
+### 2. 原文陈述
+
+> To see that it is symplectic, we first note that this is a symmetric composition
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem generalVerletSymplectic :
+  ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n)
+    (p : SymplecticCoordinates n → Q n) h, ContDiff ℝ 2 H → ContDiff ℝ 1 G → ContDiff ℝ 1 p →
+    (∀ z, partitionedVerletRelation H h (unpack z) (unpack (G z)) (p z)) → IsTextbookSymplecticMap G
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.generalVerletSymplectic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | H C²，实际C¹中间动量和完整求解映射，满足三步隐式关系。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1323](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1323>)（`MD.Ch02.generalVerletSymplectic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：一般隐式辛Euler的实际证明、伴随求解及半步组合等价；需要完整隐式映射理论。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
+签名SHA256：`5d0edafec0283bcf200d2396f1bc96e26ce49e5db213898f5445763a681c7d79`；原文SHA256：`e7317e99524970c4ce90250ec089095519d2300f7f93a7fe6f2b091d8a82d962`。
+
+## 1. MD-2.5.3-Newmark · definition · 印刷p.92 / PDFp.114
+
+### 2. 原文陈述
+
+> As a special case of a partitioned Runge-Kutta method, consider the Newmark family of methods [280] defined for two parameters $\sigma$ and $\eta$ by the formulas
+> \[\boldsymbol P=\boldsymbol p-h(1-\sigma)\nabla U(\boldsymbol q)-h\sigma\nabla U(\boldsymbol Q),\]
+> \[\boldsymbol Q=\boldsymbol q+hM^{-1}\boldsymbol p-h^2\left(\frac12-\eta\right)\nabla U(\boldsymbol q)-h^2\eta\nabla U(\boldsymbol Q).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_newmarkRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (γ β h : ℝ) (z w : Z n) : Prop :=
+  w.2 = z.2 + (h*(1-γ)) • F z.1 + (h*γ) • F w.1 ∧
+  w.1 = z.1 + h • invMass m z.2 + (h^2*(1/2-β)) • F z.1 + (h^2*β) • F w.1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_newmarkRelation；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | Q式力项缺M⁻¹；不默改成质量一致Newmark。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。字面关系已保存；原书质量约定需裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:1331](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1331>)（`MD.Ch02.bp_newmarkRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
+
+签名SHA256：`b9a5fddcff9169fdc5aab81161de83276701484de6bb677949b4d952bf241a6f`；原文SHA256：`66b587c748fae0d8812e3da5addf60ef75d4d034a505cea3e20ce15440c3f2cc`。
+
+## 1. MD-2.5.3-NewmarkReduction · unnumbered_claim · 印刷p.92 / PDFp.114
+
+### 2. 原文陈述
+
+> For $\eta=0$ we then arrive at the Verlet method.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem newmarkReduction : ∀ n (m : Fin n → ℝ) (F : Q n → Q n) h z w,
+    newmarkRelation m F (1/2) 0 h z w ↔ w=verlet m F h z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.newmarkReduction；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 字面Newmark在一般M不等于Verlet，仅M=I或修正Q式force质量因子后成立；不以旧质量修正版证明替代原句。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。完整字面一般质量结论，不静默限定单位质量；待裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1337](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1337>)（`MD.Ch02.newmarkReduction`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原书质量因子；旧已证版本是质量修正式，不能直接桥接。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
+
+签名SHA256：`19dfdbae3acf4edf5b5bb3a935d76edc426a2f65e5f438bb2117fb728e60c345`；原文SHA256：`8635e733cb140125d47e48d623193dbf9910e3f20bb75eaf13d60742da684506`。
+
+## 1. MD-2.5.3-NewmarkDamping · unnumbered_claim · 印刷p.92 / PDFp.114
+
+### 2. 原文陈述
+
+> In practice the choice $\sigma=1/2$ is used to avoid spurious damping (it can be demonstrated for a simple model problem); this certainly would appear to be desirable in the setting of molecular dynamics.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem newmarkDamping :
+  ∀ (G : Q 2 → Q 2) Ω β h,
+    ContDiff ℝ 1 G → (∀ z,
+      G z 1 = z 1-h/2*Ω^2*(z 0+G z 0) ∧
+      G z 0 = z 0+h*z 1-h^2*((1/2-β)*Ω^2*z 0+β*Ω^2*G z 0)) →
+    1+h^2*β*Ω^2 ≠ 0 → ∀ z, (textbookCoordinateJacobian G z).det = 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.newmarkDamping；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]限定原文simple model为单位质量线性振子；h步隐式线性系统非奇异；用实际放大矩阵det=1表达无面积收缩，不声称任意势能能量恒定。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1343](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1343>)（`MD.Ch02.newmarkDamping`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：线性振子实际隐式放大矩阵与行列式计算。
+
+本地路线尝试3次，未通过3次（含超时或签名展开预算失败）；证据：blueprint/ch02/validation/short-search1.log；blueprint/ch02/validation/short-search2.log；blueprint/ch02/validation/short-search3.log。
+
+停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
+
+签名SHA256：`e569c2d9390d6f26bf650fe26a9e420ff3c4c8bdaa5ccf278f1408c6da76c0e5`；原文SHA256：`e6296b64602d20e93b10781d11c5d78768c67fed3e3a46914f7e8fc33963c818`。
+
+## 1. MD-2.5.3-NewmarkNotSymplectic · unnumbered_claim · 印刷p.92 / PDFp.114
+
+### 2. 原文陈述
+
+> The implicit Newmark methods are not symplectic, but a related family of symplectic methods can be constructed by using linear interpolated forces evaluated at interpolated positions [395].
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem newmarkNotSymplectic :
+  ∃ (U : Q 1 → ℝ) (β h : ℝ) (G : SymplecticCoordinates 1 → SymplecticCoordinates 1),
+    ContDiff ℝ 3 U ∧ β ≠ 0 ∧ h ≠ 0 ∧ ContDiff ℝ 1 G ∧
+    (∀ z, newmarkMassCorrected (fun _ => 1) (textbookPotentialForce U) (1/2) β h
+      (unpack z) (unpack (G z))) ∧ ¬ IsTextbookSymplecticMap G
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.newmarkNotSymplectic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]存在一个非线性势能、β≠0与非零步长的实际可微求解反例；不是排除每个线性特殊情形。单位质量与字面式一致。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1353](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1353>)（`MD.Ch02.newmarkNotSymplectic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：具体非线性势能全局C¹隐式求解反例与实际Jacobian非辛；相关interpolated family无公式登记定性排除。
+
+停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
+
+签名SHA256：`d77c806530aa710473114f7e62b761761084a8de9a5bdb1a2c110a9032acb228`；原文SHA256：`b77fbb053114d2587fe03b69d0757dd045c06b8082621ef7ec959c31a70a793d`。
+
+## 1. MD-2.5.4-MultiTaylor · definition · 印刷p.92 / PDFp.114
+
+### 2. 原文陈述
+
+> we may approximate a single step by
+> \[\boldsymbol z_{n+1}=\boldsymbol z_n+h\dot{\boldsymbol z}_n+\frac{h^2}{2}\ddot{\boldsymbol z}_n+\cdots+\frac{h^k}{k!}\boldsymbol z_n^{(k)},\]
+> where it is possible to make use of higher order derivatives of the solution in formulating the method. Then using the differential equation, the time derivatives may be replaced by elementary differentials of the vector field.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_multiTaylor {n : ℕ} (d : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
+  ∑ j ∈ Finset.range (k+1), (h^j / (Nat.factorial j : ℝ)) • d j
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_multiTaylor；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:1361](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1361>)（`MD.Ch02.bp_multiTaylor`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`27740468243fa6a1f524c2463a62a007b1037313809ff1df52f44133618ce9c2`；原文SHA256：`6aec063f4d2dc3d63bf069350f3afb2d2c1898890dafd7697ab3f77023c85319`。
+
+## 1. MD-2.5.4-TIPotential · definition · 印刷p.92–93 / PDFp.114–115
+
+### 2. 原文陈述
+
+> the Takahashi-Imada method [355] (also known as Rowlands’ method [316]) has the same form as the Verlet method
+> \[\hat{\boldsymbol P}=\boldsymbol p-(h/2)\nabla\tilde U(\boldsymbol q),\quad\boldsymbol Q=\boldsymbol q+hM^{-1}\hat{\boldsymbol P},\quad\boldsymbol P=\hat{\boldsymbol P}-(h/2)\nabla\tilde U(\boldsymbol Q),\]
+> where the corresponding potential energy function is
+> \[\tilde U(\boldsymbol q)=U(\boldsymbol q)-\frac{h^2}{24}\nabla U(\boldsymbol q)^TM^{-1}\nabla U(\boldsymbol q).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def tiMethod {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) : Z n → Z n :=
+  verlet m (fun q => -grad (takahashiPotential m U h) q) h
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.tiMethod；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:1365](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1365>)（`MD.Ch02.tiMethod`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`69bd41b852a81d5bd6ac731c71c1a2a457d53c8ebd43f25dc7822f06f50e9f6f`；原文SHA256：`a0ea461f97decda00cb852ec037bd6b8519ff9323814de5b38b4c4c43a4cb1ca`。
+
+## 1. MD-2.5.4-TIForce · unnumbered_claim · 印刷p.93 / PDFp.115
+
+### 2. 原文陈述
+
+> The forces arising from such a modified potential can be worked out:
+> \[\tilde F=-\nabla\tilde U=-\left[I+\frac{h^2}{12}U''M^{-1}\right]\nabla U,\]
+> where $U''$ is the Hessian matrix of the potential.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem tiForce :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h q,
+    positiveMass m → ContDiff ℝ 2 U →
+    -grad (takahashiPotential m U h) q =
+      -grad U q - (h^2/12) • (fderiv ℝ (grad U) q) (invMass m (grad U q))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.tiForce；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | 正质量，U C²，真实改势梯度及Hessian作用。 | [EXTRA] |
+| 原页核对/疑点 | 上项改势为U−h²‖gradU‖²M⁻¹/24，负梯度应有+ h²Hessian项；原页此力式负号冲突，保留字面。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。原书力与改势符号不一致，未作静默修正。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1371](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1371>)（`MD.Ch02.tiForce`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原书改势/力符号裁定。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
+
+签名SHA256：`f05848ec07cb654b37f8ee9a9034654787bbb815df0425e34c64b2c6c8e015bb`；原文SHA256：`02b3adb8166b7e3af5c6ebd80d3f004b15bb50d08e9a8de9d12b18f34376dd85`。
+
+## 1. MD-2.5.4-TIOrder · unnumbered_claim · 印刷p.93 / PDFp.115
+
+### 2. 原文陈述
+
+> This method can be shown to have effective order four, meaning that there is a change of variables $\chi_h$ which can be used to transform the Takahashi-Imada method into one of order four using the processing technique of Sect. 2.4.5. The potential energy modification has been specifically chosen to annihilate terms in the local error expansion (after coordinate transformation).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem tiOrder :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ), positiveMass m → ContDiff ℝ ⊤ U →
+    ∃ χ : ℝ → Z n ≃ₜ Z n, ∀ (γ : ℝ → Z n) τ, 0 < τ →
+      solution (mechanicalField m (fun q => -grad U q)) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
+      ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+        oneStepMaxError (fun h => textbookProcessedMethod χ
+          (fun k => verlet m (fun q => -grad (takahashiPotential m U k) q) k) h)
+          (τ/ν) γ ν ≤ C*(τ/ν)^4
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.tiOrder；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | 正质量，U C∞；实际步依照上项负号改势；处理器为实际Homeomorph，原轨迹及有限时间窗误差结论。 | [EXTRA] |
+| 原页核对/疑点 | 有效四阶依赖改势符号；原文改势和力相互冲突，本签名保留负号改势，需裁定处理器方向和正负修正。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。符号依赖未裁定，保留存在处理器的实际四阶结论。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1381](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1381>)（`MD.Ch02.tiOrder`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：大型修正方程/处理器构造及四阶局部消项与全局阶理论。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
+
+签名SHA256：`8ac4d0cb4e1cc5bd657bab115480e9926d43f1aff8f40733aad470448102b9ae`；原文SHA256：`28d3169d2f440c37cab036b4971e247cfcd971ec479226615486613e37c947ac`。
+
+## 1. MD-2.5.5-Beeman · Example 2.8 (Beeman’s Algorithm) · 印刷p.94 / PDFp.116
+
+### 2. 原文陈述
+
+> The method treats the positions and momenta differently, updating these from the formulas
+> \[\boldsymbol q_{n+1}=\boldsymbol q_n+h\dot{\boldsymbol q}_n+\frac{h^2}{6}[4\ddot{\boldsymbol q}_n-\ddot{\boldsymbol q}_{n-1}].\tag{2.31}\]
+> \[\boldsymbol p_{n+1}=\boldsymbol p_n+\frac h6 M[2\ddot{\boldsymbol q}_{n+1}+5\ddot{\boldsymbol q}_n-\ddot{\boldsymbol q}_{n-1}].\tag{2.32}\]
+> The shorthand $\dot{\boldsymbol q}_n\equiv M^{-1}\boldsymbol p_n$, $\ddot{\boldsymbol q}_n\equiv M^{-1}F(\boldsymbol q_n)$ has been used.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def beeman {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (qPrev : Q n) (z : Z n) : Z n :=
+  let a := invMass m (F z.1)
+  let aPrev := invMass m (F qPrev)
+  let q := z.1+h • invMass m z.2+(h^2/6) • ((4 : ℝ) • a-aPrev)
+  let p := z.2+(h/6) • mass m ((2 : ℝ) • invMass m (F q)+(5 : ℝ) • a-aPrev)
+  (q,p)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.beeman；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:1392](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1392>)（`MD.Ch02.beeman`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`fb5f862369ca9704ac9b0ed02654d54cbe24378fc8cf13bed3ac53763df992ee`；原文SHA256：`043e5d672891e92008d701f4f248db76c8e941b3a5d94195304f61f47ed45588`。
+
+## 1. MD-2.5.5-BeemanOrder · unnumbered_claim · 印刷p.94 / PDFp.116
+
+### 2. 原文陈述
+
+> The order of accuracy of the scheme above can be shown to be three.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem beemanOrder : ∀ n (m : Fin n → ℝ) (F : Q n → Q n)
+    (γ : ℝ → Z n) τ,
+    positiveMass m → ContDiff ℝ 4 F → 0 < τ →
+    solution (mechanicalField m F) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
+    ∃ C > 0, ∃ ν₀ : ℕ, 1 < ν₀ ∧ ∀ ν ≥ ν₀,
+      ∀ z : ℕ → Z n, z 0=γ 0 → z 1=γ (τ/ν) →
+        (∀ k, 1 ≤ k → z (k+1)=beeman m F (τ/ν) (z (k-1)).1 (z k)) →
+        ∀ k ≤ ν, ‖z k-γ (k*(τ/ν))‖ ≤ C*(τ/ν)^3
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.beemanOrder；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]正固定对角质量，F C⁴；实际紧轨迹，前两步取精确起始值（强于三阶启动）；真实多步递推，保留两坐标误差。 | [EXTRA] |
+| 原页核对/疑点 | 三阶的阶定义需要裁定：单位质量谐振子q=cos t、p=−sin t，从两个精确起点代入原式，一步动量误差首项为−h³/12；全相空间全局三阶与该局部缺陷不一致。保留原文three及完整全局三阶签名，不静默改成二阶。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。原式逐字核对；谐振子局部Taylor诊断显示动量h³缺陷，需导师裁定原文three是局部阶、位置阶还是原书疑误。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:1402](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1402>)（`MD.Ch02.beemanOrder`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：先裁定Beeman阶约定/原书疑误；大型多步全局误差理论亦缺。Taylor与数值诊断不是Lean反例证明。
+
+停止/继续原因：导师/原文疑点未裁定；不进入新证明。
+
+签名SHA256：`eba140fe4ae20da8ef6213b1a84a54d1bb16ee1e678bb3e8c2a2902a6bb92a34`；原文SHA256：`a4c904bb5538aae908e797b00c8d945d0d596a9020be756dbec0fd7749ff0a67`。

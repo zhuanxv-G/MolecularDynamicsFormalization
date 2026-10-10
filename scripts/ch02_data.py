@@ -132,4 +132,6 @@ import ch02_section23
 
 import ch02_section24
 
+import ch02_section25
+
 import ch02_final_refinements

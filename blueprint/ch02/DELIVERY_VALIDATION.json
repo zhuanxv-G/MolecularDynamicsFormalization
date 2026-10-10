@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "source_entries": 160,
+  "old_rows_mapped": 160,
+  "full_batches": 32,
+  "compact_subtasks": 160,
+  "max_paste_plus_pdf_bytes": 228893,
+  "protected_unchanged": 547,
+  "statuses": {
+    "self-contained": 65,
+    "checked+documented priors": 40,
+    "incomplete": 55
+  },
+  "local_verdicts": {
+    "PASS": 140,
+    "NEEDS_HUMAN": 20
+  },
+  "direct_sorry": 47,
+  "transitive_only_sorry": 0,
+  "original_pages_rendered_and_visually_checked": 42,
+  "section_check_report_hashes": {
+    "section21": "2cec3e86e078b9f9485d7d99b720c5d5186c69ffd346a7bd03da47ea469a62d4",
+    "section22": "c3107ab20db302b7585c86eed83c1e834c7975719483a2c98f0f7152c26cf365",
+    "section23": "a3623a5e68d77cd7483f412b9b2988dafef004298c19a474c0c094527700d3cc",
+    "section24": "4854eb82abc6b698958cd1d7b6e167f51f549a39c9200e90f2a9d25391ace128",
+    "section25": "1c36cf7a290422ebcc69787f94ad6b568884edf0e94d6a9bc4669d2bfd289c58"
+  },
+  "website_audit": "待网站审计",
+  "mentor_issues": "记录于PROGRESS及CH02_BLUEPRINT，尚未确认"
+}

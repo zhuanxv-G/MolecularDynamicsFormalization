@@ -227,3 +227,7 @@ JSON/Blueprint/本地预审/compact包与7段文档已生成；完整check和逐
 ## 2026-10-10 第2章：§2.4检查点
 JSON/Blueprint/本地预审/compact包与7段文档已生成；完整check和逐条公理通过，第1章与正式库字节不变。
 下一步：完成§2.5 Runge–Kutta、PRK、Newmark及多导数/多步法，补齐160旧条目映射并做全章终验。；网站待审，heartbeat原样。
+
+## 2026-10-10 第2章：§2.5检查点
+JSON/Blueprint/本地预审/compact包与7段文档已生成；完整check和逐条公理通过，第1章与正式库字节不变。
+下一步：仅确认等待状态；有新返回件则按EAUDIT与追加repair_log规则整合、修签名后重审；不进入第3章。；网站待审，heartbeat原样。

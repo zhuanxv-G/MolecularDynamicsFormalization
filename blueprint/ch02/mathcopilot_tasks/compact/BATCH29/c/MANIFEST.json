@@ -1,0 +1,78 @@
+{
+  "batch": "BATCH29",
+  "subtask": "BATCH29c",
+  "source_ids": [
+    "MD-2.5.2-GeneralEuler"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 113,
+      "printed_page": 91
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "3b0ee40fcac82936d75f36d9738eb457f1508ae0d49e162b67a354ad392bdb4b",
+  "lean_sha256": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+  "signature_sha256": "2ad9b0bcc6a6e0fd9499e3d6ca9b9af1e264942d5423f24e45760c90e7be7c98",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "bp_generalSymplecticEulerRelation",
+      "code_sha256": "2ad9b0bcc6a6e0fd9499e3d6ca9b9af1e264942d5423f24e45760c90e7be7c98"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "partialP",
+      "code_sha256": "6df3b1ab03ea7aec5fbdfdc3e9da382ee08e090334d171ec567f393fcdcf9fee"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "partialQ",
+      "code_sha256": "4efa9fb5d707dc01e1ecd752f7bce6a4c701d6657879454388251642200a1fca"
+    }
+  ],
+  "paste_plus_pdf_bytes": 88160,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4153,
+      "sha256": "7cf6585693c525ba0d8cb4de8ecd42f32a0424989a72800b514c75ded75744ce"
+    },
+    "BATCH29c_PAGES.pdf": {
+      "bytes": 84007,
+      "sha256": "aa2bd1dde74faf91d2719e46860f519de54fa94dec6f697859cbb138e1330798"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

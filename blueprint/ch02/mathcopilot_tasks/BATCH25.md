@@ -23,7 +23,8 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   "lean_decl": "MD.Ch02.implicitLocal",
   "reusable_proofs": [],
   "extra_assumptions": [
-    "[EXTRA]g C¹且实际导数为连续线性同构；只能保证局部逆，原文“typically”不构成任意g可逆定理。逆在更小紧邻域有界。"
+    "[EXTRA]g依赖真实步长h；联合C∞，零步实际导数为连续线性同构。",
+    "[EXTRA]结论为充分小步长的局部逆；缩小有界邻域，不宣称全域有界逆。"
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
@@ -32,11 +33,15 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
 }
 ```
 ```lean
-theorem implicitLocal :
-  ∀ n (g : Q n → Q n) x (A : Q n ≃L[ℝ] Q n), ContDiff ℝ 1 g → HasFDerivAt g A.toContinuousLinearMap x →
-    ∃ U V : Set (Q n), IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g x ∈ V ∧
-      ∃ inv : Q n → Q n, ContDiffOn ℝ 1 inv V ∧
-        (∃ K ≥ 0, ∀ y ∈ V, ‖inv y‖ ≤ K) ∧ (∀ y ∈ V, inv y ∈ U ∧ g (inv y) = y) ∧ (∀ y ∈ U, inv (g y) = y)
+theorem implicitLocal : ∀ n (g : ℝ → Q n → Q n) x
+    (A : Q n ≃L[ℝ] Q n), ContDiff ℝ ∞ (Function.uncurry g) →
+    HasFDerivAt (g 0) A.toContinuousLinearMap x →
+    ∃ δ > 0, ∀ h : ℝ, |h| < δ → ∃ U V : Set (Q n),
+      IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g h x ∈ V ∧
+      ∃ inv : Q n → Q n, ContDiffOn ℝ ∞ inv V ∧
+        (∃ K ≥ 0, ∀ y ∈ V, ‖inv y‖ ≤ K) ∧
+        (∀ y ∈ V, inv y ∈ U ∧ g h (inv y)=y) ∧
+        (∀ y ∈ U, inv (g h y)=y)
 ```
 
 ### MD-2.4.4-BackwardEulerSolve

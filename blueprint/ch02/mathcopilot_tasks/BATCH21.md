@@ -209,11 +209,9 @@ private theorem momentumKick_hasFDerivAt {Nc : ℕ}
 }
 ```
 ```lean
-noncomputable def bp_potentialFlow {Nc : ℕ}
-    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ)
-    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
-  Sum.elim (fun i => z (Sum.inl i))
-    (fun i => z (Sum.inr i) + h * F (textbookPositionProjection Nc z) i)
+def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
+    (h : ℝ) : SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+  textbookMomentumKick (textbookPotentialForce U) h
 ```
 
 ### MD-2.4.1-SplitEuler

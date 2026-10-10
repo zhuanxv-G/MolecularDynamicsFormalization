@@ -2993,7 +2993,8 @@
     "lean_decl": "MD.Ch02.implicitLocal",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]g C¹且实际导数为连续线性同构；只能保证局部逆，原文“typically”不构成任意g可逆定理。逆在更小紧邻域有界。"
+      "[EXTRA]g依赖真实步长h；联合C∞，零步实际导数为连续线性同构。",
+      "[EXTRA]结论为充分小步长的局部逆；缩小有界邻域，不宣称全域有界逆。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
@@ -3282,6 +3283,627 @@
     "reusable_proofs": [],
     "extra_assumptions": [
       "[EXTRA]正固定质量，U C⁴；真实机械Hamilton轨迹及紧时间窗；处理器为实际Homeomorph，完整processed误差界，不以待证二阶作假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.1-RK",
+    "kind": "definition",
+    "label": null,
+    "section": "2.5.1",
+    "printed_page": "89",
+    "pdf_page": "111",
+    "statement_latex": "The family of Runge-Kutta methods for solving $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$ is defined by\n\\[\\boldsymbol Z=\\boldsymbol z+h\\sum_{i=1}^s b_i\\boldsymbol F_i,\\]\nwhere the vectors $\\boldsymbol F_i$, $i=1,\\ldots,s$, are computed by solving the system\n\\[\\boldsymbol F_i=f\\left(\\boldsymbol z+h\\sum_{j=1}^s a_{ij}\\boldsymbol F_j\\right),\\qquad i=1,\\ldots,s.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "s有限阶段；给实际关系，不宣称任意隐式系统可解。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_rungeKuttaRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.1-RK4",
+    "kind": "definition",
+    "label": null,
+    "section": "2.5.1",
+    "printed_page": "89",
+    "pdf_page": "111",
+    "statement_latex": "An example of a popular 4th order explicit method is the choice of matrix $A$ with coefficients $a_{ij}=0$ except $a_{21}=1/2$, $a_{32}=1/2$ and $a_{43}=1$, and $b_1=1/6$, $b_2=1/3$, $b_3=1/3$, $b_4=1/6$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "展开实际四阶段给出同一A/b权重；4阶陈述单列。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_rk4",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.1-RK4Order",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.1",
+    "printed_page": "89",
+    "pdf_page": "111",
+    "statement_latex": "An example of a popular 4th order explicit method",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "完整系数与映射见同页RK4条目，非任意方法；有限时间窗全局4阶。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.rk4Order",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]compactTrajectory实际C⁶向量场与紧窗实际轨迹；高阶资格强于原文简写。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.1-ExplicitRK",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.1",
+    "printed_page": "89",
+    "pdf_page": "111",
+    "statement_latex": "This method is not symplectic, and in fact impossible to find symplectic explicit methods within the Runge-Kutta family.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.explicitRK",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]一致性∑bᵢ=1排除全零权重恒等映射；“不辛”解释为存在光滑Hamilton模型与实际阶段/步映射不辛，不宣称每个具体H均不辛。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.1-RKSymplectic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.1",
+    "printed_page": "89–90",
+    "pdf_page": "111–112",
+    "statement_latex": "Let us emphasize that, while a typical RK method is not symplectic, some implicit Runge-Kutta methods are symplectic. The precise condition that must be satisfied [325] is\n\\[b_i a_{ij}+b_j a_{ji}=b_i b_j,\\qquad i=1,\\ldots,s,\\quad j=1,\\ldots,s.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "“precise condition”按针对所有光滑Hamilton模型的判别表达；一般可约RK的必要性仍有疑点。"
+    ],
+    "issues": [
+      {
+        "code": "NECESSITY_QUALIFICATION",
+        "status": "NEEDS_HUMAN",
+        "detail": "原句precise condition需不可约/非退化资格；完整普适iff已保留，冗余RK必要性不能默认为真。"
+      }
+    ],
+    "lean_decl": "MD.Ch02.rkSymplectic",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "H C²；真实阶段函数与完整步G C¹且确实满足RK关系。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.1-GaussFamily",
+    "kind": "unnumbered_claim",
+    "label": "Example 2.7 (family)",
+    "section": "2.5.1",
+    "printed_page": "90",
+    "pdf_page": "112",
+    "statement_latex": "The Gauss-Legendre family of Runge-Kutta (GLRK) methods correspond to approximating the vector field at the Gauss points, i.e. the zeros of the orthogonal polynomials that arise in Gaussian quadrature. As these points are symmetrically distributed the GLRK schemes are symmetric, hence have even order.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.gaussFamily",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]实际Legendre根节点、Lagrange积分系数；s>0，节点单射，C∞向量场和实际光滑G；真实唯一阶段及真实流资格。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.1-Midpoint",
+    "kind": "definition",
+    "label": null,
+    "section": "2.5.1",
+    "printed_page": "90",
+    "pdf_page": "112",
+    "statement_latex": "The simplest such method is the implicit midpoint rule:\n\\[\\boldsymbol Z=\\boldsymbol z+h\\boldsymbol F_1,\\qquad\\boldsymbol F_1=f\\left(\\boldsymbol z+\\frac h2\\boldsymbol F_1\\right),\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "消去实际F₁得到Z=z+hf((z+Z)/2)；只是隐式关系。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_midpointRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.1-MidpointProperties",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.1",
+    "printed_page": "90",
+    "pdf_page": "112",
+    "statement_latex": "which has order 2.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "来自GLRK辛RK上下文，保留二阶与辛性两个结论；实际中点关系见同页。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.midpointProperties",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.1-GaussTwo",
+    "kind": "definition",
+    "label": null,
+    "section": "2.5.1",
+    "printed_page": "90",
+    "pdf_page": "112",
+    "statement_latex": "The 4th order method ($s=2$) has coefficients\n\\[b_1=b_2=\\frac12,\\qquad A=(a_{ij})=\\begin{bmatrix}\\frac14&\\frac14-\\frac{\\sqrt3}6\\\\\\frac14+\\frac{\\sqrt3}6&\\frac14\\end{bmatrix}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "本定义完整A及b；四阶子句来自GaussFamily(s=2)的大型配点阶理论，不能只凭系数称已证明。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.gaussTwoData",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.1-GaussTwoOrder",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.1",
+    "printed_page": "90",
+    "pdf_page": "112",
+    "statement_latex": "The 4th order method ($s=2$) has coefficients",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "同页GaussTwoData保存全部A、b；此条保存确切2阶段方法全局4阶结论而非仅系数。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.gaussTwoOrder",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.2-PartitionedVerlet",
+    "kind": "definition",
+    "label": null,
+    "section": "2.5.2",
+    "printed_page": "90",
+    "pdf_page": "112",
+    "statement_latex": "As an illustration, consider the method:\n\\[\\hat{\\boldsymbol P}=\\boldsymbol p-\\frac h2\\nabla_qH(\\boldsymbol q,\\hat{\\boldsymbol P}),\\tag{2.26}\\]\n\\[\\boldsymbol Q=\\boldsymbol q+\\frac h2(\\nabla_pH(\\boldsymbol q,\\hat{\\boldsymbol P})+\\nabla_pH(\\boldsymbol Q,\\hat{\\boldsymbol P})),\\tag{2.27}\\]\n\\[\\boldsymbol P=\\hat{\\boldsymbol P}-\\frac h2\\nabla_qH(\\boldsymbol Q,\\hat{\\boldsymbol P}).\\tag{2.28}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "实际H(q,p)两个偏导与中间动量；不假设隐式关系全球可解。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_partitionedVerletRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.2-PartitionedReduction",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.2",
+    "printed_page": "91",
+    "pdf_page": "113",
+    "statement_latex": "When $H=\\boldsymbol p^TM^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$ this is just the leapfrog/Verlet method, but it can be used also for more general systems.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.partitionedReduction",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "固定正对角质量、U实际可微；中间动量存在关系与Verlet映射等价。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.2-GeneralEuler",
+    "kind": "definition",
+    "label": null,
+    "section": "2.5.2",
+    "printed_page": "91",
+    "pdf_page": "113",
+    "statement_latex": "where $\\mathcal G_h$ is defined by\n\\[\\boldsymbol P=\\boldsymbol p-h\\nabla_qH(\\boldsymbol q,\\boldsymbol P),\\tag{2.29}\\]\n\\[\\boldsymbol Q=\\boldsymbol q+h\\nabla_pH(\\boldsymbol q,\\boldsymbol P),\\tag{2.30}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "实际隐式辛Euler关系，真实求解及可微资格在辛性条目。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_generalSymplecticEulerRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.2-GeneralSymplectic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.2",
+    "printed_page": "91",
+    "pdf_page": "113",
+    "statement_latex": "To see that it is symplectic, we first note that this is a symmetric composition of the form\n\\[\\mathcal K_h=\\mathcal G_{h/2}^*\\circ\\mathcal G_{h/2},\\]\nso it is enough to show that this basic method is symplectic.",
+    "proof_latex": "Taking differentials of (2.30) defining $\\mathcal G_h$ and then wedge products and summing, we have\n\\[\\sum_i dQ_i\\wedge dP_i=\\sum_i dq_i\\wedge dP_i+h\\sum_i\\sum_j H_{p_iq_j}dq_j\\wedge dP_i+h\\sum_i\\sum_j H_{p_ip_j}dP_j\\wedge dP_i.\\]\nThe last term on the right vanishes by equality of mixed partials and the antisymmetry of the wedge product. On the other hand, using (2.29), we obtain, by similar means,\n\\[\\sum_i dq_i\\wedge dP_i=\\sum_i dq_i\\wedge dp_i-h\\sum_i\\sum_j H_{q_ip_j}dq_i\\wedge dP_j.\\]\nRelabelling the indices in the sum and using our previous work results in\n\\[\\sum_i dQ_i\\wedge dP_i=\\sum_i dq_i\\wedge dp_i,\\]\nimplying that the method is symplectic.",
+    "proof_note": "原书计算按原页转录。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.generalSymplectic",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "H C²，真实C¹完整求解映射，逐点满足实际隐式关系。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.2-GeneralVerletSymplectic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.2",
+    "printed_page": "91",
+    "pdf_page": "113",
+    "statement_latex": "To see that it is symplectic, we first note that this is a symmetric composition",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "完整原文主语是(2.26)–(2.28)；GeneralSymplectic条目保存全部原书证明。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.generalVerletSymplectic",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "H C²，实际C¹中间动量和完整求解映射，满足三步隐式关系。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.3-Newmark",
+    "kind": "definition",
+    "label": null,
+    "section": "2.5.3",
+    "printed_page": "92",
+    "pdf_page": "114",
+    "statement_latex": "As a special case of a partitioned Runge-Kutta method, consider the Newmark family of methods [280] defined for two parameters $\\sigma$ and $\\eta$ by the formulas\n\\[\\boldsymbol P=\\boldsymbol p-h(1-\\sigma)\\nabla U(\\boldsymbol q)-h\\sigma\\nabla U(\\boldsymbol Q),\\]\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p-h^2\\left(\\frac12-\\eta\\right)\\nabla U(\\boldsymbol q)-h^2\\eta\\nabla U(\\boldsymbol Q).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "Lean γ/β分别原文σ/η，F=-∇U；严格保留Q式两个force项缺M⁻¹。"
+    ],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "Q式力项缺M⁻¹；不默改成质量一致Newmark。"
+      }
+    ],
+    "lean_decl": "MD.Ch02.bp_newmarkRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.3-NewmarkReduction",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.3",
+    "printed_page": "92",
+    "pdf_page": "114",
+    "statement_latex": "For $\\eta=0$ we then arrive at the Verlet method.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "“then”前句σ=1/2；保留一般M的字面全称。"
+    ],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "字面Newmark在一般M不等于Verlet，仅M=I或修正Q式force质量因子后成立；不以旧质量修正版证明替代原句。"
+      }
+    ],
+    "lean_decl": "MD.Ch02.newmarkReduction",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.3-NewmarkDamping",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.3",
+    "printed_page": "92",
+    "pdf_page": "114",
+    "statement_latex": "In practice the choice $\\sigma=1/2$ is used to avoid spurious damping (it can be demonstrated for a simple model problem); this certainly would appear to be desirable in the setting of molecular dynamics.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.newmarkDamping",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]限定原文simple model为单位质量线性振子；h步隐式线性系统非奇异；用实际放大矩阵det=1表达无面积收缩，不声称任意势能能量恒定。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.3-NewmarkNotSymplectic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.3",
+    "printed_page": "92",
+    "pdf_page": "114",
+    "statement_latex": "The implicit Newmark methods are not symplectic, but a related family of symplectic methods can be constructed by using linear interpolated forces evaluated at interpolated positions [395].",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.newmarkNotSymplectic",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]存在一个非线性势能、β≠0与非零步长的实际可微求解反例；不是排除每个线性特殊情形。单位质量与字面式一致。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.4-MultiTaylor",
+    "kind": "definition",
+    "label": null,
+    "section": "2.5.4",
+    "printed_page": "92",
+    "pdf_page": "114",
+    "statement_latex": "we may approximate a single step by\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+h\\dot{\\boldsymbol z}_n+\\frac{h^2}{2}\\ddot{\\boldsymbol z}_n+\\cdots+\\frac{h^k}{k!}\\boldsymbol z_n^{(k)},\\]\nwhere it is possible to make use of higher order derivatives of the solution in formulating the method. Then using the differential equation, the time derivatives may be replaced by elementary differentials of the vector field.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "dⱼ是真实解j阶时间导数数据，不把任意数据当作已有Taylor阶证明。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_multiTaylor",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.4-TIPotential",
+    "kind": "definition",
+    "label": null,
+    "section": "2.5.4",
+    "printed_page": "92–93",
+    "pdf_page": "114–115",
+    "statement_latex": "the Takahashi-Imada method [355] (also known as Rowlands’ method [316]) has the same form as the Verlet method\n\\[\\hat{\\boldsymbol P}=\\boldsymbol p-(h/2)\\nabla\\tilde U(\\boldsymbol q),\\quad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\hat{\\boldsymbol P},\\quad\\boldsymbol P=\\hat{\\boldsymbol P}-(h/2)\\nabla\\tilde U(\\boldsymbol Q),\\]\nwhere the corresponding potential energy function is\n\\[\\tilde U(\\boldsymbol q)=U(\\boldsymbol q)-\\frac{h^2}{24}\\nabla U(\\boldsymbol q)^TM^{-1}\\nabla U(\\boldsymbol q).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "实际改势已递归引用takahashiPotential；完整Verlet映射而非只记势能符号。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.tiMethod",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.4-TIForce",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.4",
+    "printed_page": "93",
+    "pdf_page": "115",
+    "statement_latex": "The forces arising from such a modified potential can be worked out:\n\\[\\tilde F=-\\nabla\\tilde U=-\\left[I+\\frac{h^2}{12}U''M^{-1}\\right]\\nabla U,\\]\nwhere $U''$ is the Hessian matrix of the potential.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "上项改势为U−h²‖gradU‖²M⁻¹/24，负梯度应有+ h²Hessian项；原页此力式负号冲突，保留字面。"
+      }
+    ],
+    "lean_decl": "MD.Ch02.tiForce",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "正质量，U C²，真实改势梯度及Hessian作用。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.4-TIOrder",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.4",
+    "printed_page": "93",
+    "pdf_page": "115",
+    "statement_latex": "This method can be shown to have effective order four, meaning that there is a change of variables $\\chi_h$ which can be used to transform the Takahashi-Imada method into one of order four using the processing technique of Sect. 2.4.5. The potential energy modification has been specifically chosen to annihilate terms in the local error expansion (after coordinate transformation).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "DEPENDENT_ERRATUM",
+        "status": "NEEDS_HUMAN",
+        "detail": "有效四阶依赖改势符号；原文改势和力相互冲突，本签名保留负号改势，需裁定处理器方向和正负修正。"
+      }
+    ],
+    "lean_decl": "MD.Ch02.tiOrder",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "正质量，U C∞；实际步依照上项负号改势；处理器为实际Homeomorph，原轨迹及有限时间窗误差结论。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.5-Beeman",
+    "kind": "definition",
+    "label": "Example 2.8 (Beeman’s Algorithm)",
+    "section": "2.5.5",
+    "printed_page": "94",
+    "pdf_page": "116",
+    "statement_latex": "The method treats the positions and momenta differently, updating these from the formulas\n\\[\\boldsymbol q_{n+1}=\\boldsymbol q_n+h\\dot{\\boldsymbol q}_n+\\frac{h^2}{6}[4\\ddot{\\boldsymbol q}_n-\\ddot{\\boldsymbol q}_{n-1}].\\tag{2.31}\\]\n\\[\\boldsymbol p_{n+1}=\\boldsymbol p_n+\\frac h6 M[2\\ddot{\\boldsymbol q}_{n+1}+5\\ddot{\\boldsymbol q}_n-\\ddot{\\boldsymbol q}_{n-1}].\\tag{2.32}\\]\nThe shorthand $\\dot{\\boldsymbol q}_n\\equiv M^{-1}\\boldsymbol p_n$, $\\ddot{\\boldsymbol q}_n\\equiv M^{-1}F(\\boldsymbol q_n)$ has been used.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "需要前两个位置与当前动量；先qnext后F(qnext)，每步只需一个新force。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.beeman",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.5.5-BeemanOrder",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.5.5",
+    "printed_page": "94",
+    "pdf_page": "116",
+    "statement_latex": "The order of accuracy of the scheme above can be shown to be three.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "三阶的阶定义需要裁定：单位质量谐振子q=cos t、p=−sin t，从两个精确起点代入原式，一步动量误差首项为−h³/12；全相空间全局三阶与该局部缺陷不一致。保留原文three及完整全局三阶签名，不静默改成二阶。"
+      }
+    ],
+    "lean_decl": "MD.Ch02.beemanOrder",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]正固定对角质量，F C⁴；实际紧轨迹，前两步取精确起始值（强于三阶启动）；真实多步递推，保留两坐标误差。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",

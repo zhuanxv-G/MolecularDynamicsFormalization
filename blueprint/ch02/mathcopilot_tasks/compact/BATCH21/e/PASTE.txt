@@ -37,15 +37,23 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
 
 ## 实际Lean签名/定义
 ```lean
-noncomputable def bp_potentialFlow {Nc : ℕ}
-    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ)
-    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
-  Sum.elim (fun i => z (Sum.inl i))
-    (fun i => z (Sum.inr i) + h * F (textbookPositionProjection Nc z) i)
+def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
+    (h : ℝ) : SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+  textbookMomentumKick (textbookPotentialForce U) h
 ```
 
 原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]。
 标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
 
 ### MolecularDynamics.SymplecticCoordinates (MolecularDynamics/Chapter02/SymplecticForm.lean:25)
 ```lean
@@ -54,7 +62,14 @@ abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 
 ### MD.Ch02.bp_potentialFlow (Blueprint/Ch02.lean:1000)
 ```lean
-noncomputable def bp_potentialFlow {Nc : ℕ}
+def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
+    (h : ℝ) : SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+  textbookMomentumKick (textbookPotentialForce U) h
+```
+
+### MolecularDynamics.textbookMomentumKick (MolecularDynamics/Chapter02/SymplecticEuler.lean:70)
+```lean
+noncomputable def textbookMomentumKick {Nc : ℕ}
     (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ)
     (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
   Sum.elim (fun i => z (Sum.inl i))
@@ -66,4 +81,11 @@ noncomputable def bp_potentialFlow {Nc : ℕ}
 noncomputable def textbookPositionProjection (Nc : ℕ) :
     SymplecticCoordinates Nc →L[ℝ] (Fin Nc → ℝ) :=
   ContinuousLinearMap.pi fun i => ContinuousLinearMap.proj (Sum.inl i)
+```
+
+### MolecularDynamics.textbookPotentialForce (MolecularDynamics/Chapter02/SymplecticEuler.lean:34)
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
 ```

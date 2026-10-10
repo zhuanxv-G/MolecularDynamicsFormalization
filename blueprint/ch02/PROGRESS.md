@@ -1,8 +1,8 @@
 # 第2章本地五步流程进度
 
 范围：印刷p.53–94/PDF75–116，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
-下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前135条；旧清单映射139/160；本地PASS 121；网站返回0。
+第2章本地部分完成；第1、2章均等待用户提交MathCopilot批次。网站不可用，未冻结。
+当前160条；旧清单映射160/160；本地PASS 140；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -128,7 +128,7 @@
 | MD-2.4.2-CompositionSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-2.4.2-CompositionOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。 |
 | MD-2.4.3-HarmonicSplit | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.4.4-ImplicitLocal | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际逆函数定理局部Homeomorph、缩小紧邻域及连续逆有界。 |
+| MD-2.4.4-ImplicitLocal | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；参数化光滑逆函数定理、连续可逆导数邻域及局部有界光滑逆理论。 |
 | MD-2.4.4-BackwardEulerSolve | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
 | MD-2.4.4-Newton | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
 | MD-2.4.4-NewtonQuadratic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。 |
@@ -141,6 +141,31 @@
 | MD-2.4.5-ProcessingIterates | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-2.4.5-ProcessingOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-2.4.5-EulerEffectiveOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际半kick Homeomorph处理器构造及完整Verlet全局二阶，局部共轭代数条目不能单独证明有效二阶。 |
+| MD-2.5.1-RK | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.5.1-RK4 | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.5.1-RK4Order | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；一般RK树阶条件/实际四阶Taylor展开及局部误差、稳定性、数值留域的全局阶桥接。 |
+| MD-2.5.1-ExplicitRK | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；已有证明仅系数条件不可能；普适必要性及实际RK反例构造尚缺，不能把系数lemma当完整结论。 |
+| MD-2.5.1-RKSymplectic | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；实际RK楔积充分性与不可约必要性理论。 |
+| MD-2.5.1-GaussFamily | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；大型Gauss配点构造、正交多项式根/对称性及偶数阶逆步理论；当前库无完整理论。 |
+| MD-2.5.1-Midpoint | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.5.1-MidpointProperties | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际中点隐式楔积、局部三阶余项及唯一可微求解接口。 |
+| MD-2.5.1-GaussTwo | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.5.1-GaussTwoOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；大型Gauss2阶段局部五阶余项、光滑求解/稳定性及全局阶理论。 |
+| MD-2.5.2-PartitionedVerlet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.5.2-PartitionedReduction | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；机械H两个实际偏导的坐标计算，随后三步关系消元。 |
+| MD-2.5.2-GeneralEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.5.2-GeneralSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；隐式实际Jacobian/楔积抵消；混合Hessian和一般求解接口。 |
+| MD-2.5.2-GeneralVerletSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；一般隐式辛Euler的实际证明、伴随求解及半步组合等价；需要完整隐式映射理论。 |
+| MD-2.5.3-Newmark | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-2.5.3-NewmarkReduction | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书质量因子；旧已证版本是质量修正式，不能直接桥接。 |
+| MD-2.5.3-NewmarkDamping | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；线性振子实际隐式放大矩阵与行列式计算。 |
+| MD-2.5.3-NewmarkNotSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；具体非线性势能全局C¹隐式求解反例与实际Jacobian非辛；相关interpolated family无公式登记定性排除。 |
+| MD-2.5.4-MultiTaylor | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.5.4-TIPotential | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.5.4-TIForce | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书改势/力符号裁定。 |
+| MD-2.5.4-TIOrder | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；大型修正方程/处理器构造及四阶局部消项与全局阶理论。 |
+| MD-2.5.5-Beeman | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.5.5-BeemanOrder | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；先裁定Beeman阶约定/原书疑误；大型多步全局误差理论亦缺。Taylor与数值诊断不是Lean反例证明。 |
 
 ## 旧160条完整映射
 
@@ -284,27 +309,27 @@
 | CH02-136 | MD-2.4.5-Processing |
 | CH02-137 | MD-2.4.5-ProcessingIterates |
 | CH02-138 | MD-2.4.5-ProcessingOrder |
-| CH02-139 | PENDING：所属节尚未处理 |
-| CH02-140 | PENDING：所属节尚未处理 |
-| CH02-141 | PENDING：所属节尚未处理 |
-| CH02-142 | PENDING：所属节尚未处理 |
-| CH02-143 | PENDING：所属节尚未处理 |
-| CH02-144 | PENDING：所属节尚未处理 |
-| CH02-145 | PENDING：所属节尚未处理 |
-| CH02-146 | PENDING：所属节尚未处理 |
-| CH02-147 | PENDING：所属节尚未处理 |
-| CH02-148 | PENDING：所属节尚未处理 |
-| CH02-149 | PENDING：所属节尚未处理 |
-| CH02-150 | PENDING：所属节尚未处理 |
-| CH02-151 | PENDING：所属节尚未处理 |
-| CH02-152 | PENDING：所属节尚未处理 |
-| CH02-153 | PENDING：所属节尚未处理 |
-| CH02-154 | PENDING：所属节尚未处理 |
-| CH02-155 | PENDING：所属节尚未处理 |
-| CH02-156 | PENDING：所属节尚未处理 |
-| CH02-157 | PENDING：所属节尚未处理 |
-| CH02-158 | PENDING：所属节尚未处理 |
-| CH02-159 | PENDING：所属节尚未处理 |
+| CH02-139 | MD-2.5.1-RK |
+| CH02-140 | MD-2.5.1-RK4 |
+| CH02-141 | MD-2.5.1-RK4Order |
+| CH02-142 | MD-2.5.1-ExplicitRK |
+| CH02-143 | MD-2.5.1-RKSymplectic |
+| CH02-144 | MD-2.5.1-Midpoint |
+| CH02-145 | MD-2.5.1-GaussFamily |
+| CH02-146 | MD-2.5.1-MidpointProperties |
+| CH02-147 | MD-2.5.1-GaussTwo |
+| CH02-148 | MD-2.5.2-PartitionedVerlet |
+| CH02-149 | MD-2.5.2-PartitionedReduction |
+| CH02-150 | MD-2.5.2-GeneralEuler |
+| CH02-151 | MD-2.5.2-GeneralSymplectic |
+| CH02-152 | MD-2.5.3-Newmark |
+| CH02-153 | MD-2.5.3-NewmarkReduction |
+| CH02-154 | MD-2.5.3-NewmarkDamping |
+| CH02-155 | MD-2.5.3-NewmarkNotSymplectic |
+| CH02-156 | MD-2.5.4-MultiTaylor |
+| CH02-157 | MD-2.5.4-TIPotential |
+| CH02-158 | MD-2.5.4-TIForce |
+| CH02-159 | MD-2.5.4-TIOrder |
 | CH02-160 | MD-2.2.2-Stormer |
 
 ## NEEDS_HUMAN / [ERRATUM?] / 缺理论
@@ -344,11 +369,27 @@
 - MD-2.3.6-KickDifferential：完整实际辛Euler步映射的两个坐标微分子句；grad U的真实导数即Hessian，不以任意矩阵代替。 完整步映射Fréchet导数与kick/drift组合的坐标整理。
 - MD-2.4.1-SymmetricEven：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。
 - MD-2.4.2-CompositionOrder：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。
-- MD-2.4.4-ImplicitLocal：完整局部唯一逆、正逆律、C¹及局部有界性均保留；原文typically的可逆导数资格逐项[EXTRA]，不宣称任意隐式关系全球可逆。 实际逆函数定理局部Homeomorph、缩小紧邻域及连续逆有界。
+- MD-2.4.4-ImplicitLocal：步长量词、局部唯一双逆、连续/光滑和有界四类结论保留；没有把足够小步长的可逆性本身作假设。 参数化光滑逆函数定理、连续可逆导数邻域及局部有界光滑逆理论。
 - MD-2.4.4-Newton：字面双输入更新与标准Newton不同，待裁定索引；定义不证明收敛。 原文混用zₙ⁽ᵏ⁾与zₙ₊₁⁽ᵏ⁾；保留两个不同输入，不静默改成相同迭代点。映射可逆也不保证任意近似Jacobian非奇异。
 - MD-2.4.4-NewtonQuadratic：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。
 - MD-2.4.4-FrozenNewton：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 沿凸球积分/均值范数界、保持邻域与迭代几何界。
 - MD-2.4.5-EulerEffectiveOrder：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 实际半kick Homeomorph处理器构造及完整Verlet全局二阶，局部共轭代数条目不能单独证明有效二阶。
+- MD-2.5.1-RK4Order：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 一般RK树阶条件/实际四阶Taylor展开及局部误差、稳定性、数值留域的全局阶桥接。
+- MD-2.5.1-ExplicitRK：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 已有证明仅系数条件不可能；普适必要性及实际RK反例构造尚缺，不能把系数lemma当完整结论。
+- MD-2.5.1-RKSymplectic：完整字面系数判别的充分与普适必要方向都保留；可约/冗余阶段必要性反例资格未裁定，不能只证明充分性冒充整句。 实际RK楔积充分性与不可约必要性理论。原句precise condition需不可约/非退化资格；完整普适iff已保留，冗余RK必要性不能默认为真。
+- MD-2.5.1-GaussFamily：原句中的对称与偶数阶全部保留；没有额外声称原句未陈述的一般2s阶。2阶段四阶在GaussTwoOrder单列。 大型Gauss配点构造、正交多项式根/对称性及偶数阶逆步理论；当前库无完整理论。
+- MD-2.5.1-MidpointProperties：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 实际中点隐式楔积、局部三阶余项及唯一可微求解接口。
+- MD-2.5.1-GaussTwoOrder：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 大型Gauss2阶段局部五阶余项、光滑求解/稳定性及全局阶理论。
+- MD-2.5.2-PartitionedReduction：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 机械H两个实际偏导的坐标计算，随后三步关系消元。
+- MD-2.5.2-GeneralSymplectic：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 隐式实际Jacobian/楔积抵消；混合Hessian和一般求解接口。
+- MD-2.5.2-GeneralVerletSymplectic：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 一般隐式辛Euler的实际证明、伴随求解及半步组合等价；需要完整隐式映射理论。
+- MD-2.5.3-Newmark：字面关系已保存；原书质量约定需裁定。 Q式力项缺M⁻¹；不默改成质量一致Newmark。
+- MD-2.5.3-NewmarkReduction：完整字面一般质量结论，不静默限定单位质量；待裁定。 原书质量因子；旧已证版本是质量修正式，不能直接桥接。字面Newmark在一般M不等于Verlet，仅M=I或修正Q式force质量因子后成立；不以旧质量修正版证明替代原句。
+- MD-2.5.3-NewmarkDamping：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 线性振子实际隐式放大矩阵与行列式计算。
+- MD-2.5.3-NewmarkNotSymplectic：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 具体非线性势能全局C¹隐式求解反例与实际Jacobian非辛；相关interpolated family无公式登记定性排除。
+- MD-2.5.4-TIForce：原书力与改势符号不一致，未作静默修正。 原书改势/力符号裁定。上项改势为U−h²‖gradU‖²M⁻¹/24，负梯度应有+ h²Hessian项；原页此力式负号冲突，保留字面。
+- MD-2.5.4-TIOrder：符号依赖未裁定，保留存在处理器的实际四阶结论。 大型修正方程/处理器构造及四阶局部消项与全局阶理论。有效四阶依赖改势符号；原文改势和力相互冲突，本签名保留负号改势，需裁定处理器方向和正负修正。
+- MD-2.5.5-BeemanOrder：原式逐字核对；谐振子局部Taylor诊断显示动量h³缺陷，需导师裁定原文three是局部阶、位置阶还是原书疑误。 先裁定Beeman阶约定/原书疑误；大型多步全局误差理论亦缺。Taylor与数值诊断不是Lean反例证明。三阶的阶定义需要裁定：单位质量谐振子q=cos t、p=−sin t，从两个精确起点代入原式，一步动量误差首项为−h³/12；全相空间全局三阶与该局部缺陷不一致。保留原文three及完整全局三阶签名，不静默改成二阶。
 
 ## 定性段落排除
 
@@ -361,3 +402,5 @@
 - p.74/PDF96：图2.6初始圆盘与能量数值区间为示例观察，excluded_qualitative；LJ模型与bounded→periodic陈述另列。
 - p.80–82/PDF102–104：辛积分历史与软件实现说明为excluded_qualitative；实际映射公式另列。
 - p.85–89/PDF107–111：任意高阶展望、第3章指引、隐式计算成本/稀疏实现及图2.7流程动机为excluded_qualitative；实际公式、误差与共轭结论已单列。
+- p.89–94/PDF111–116：隐式RK效率、PRK一般族文献、Hessian稀疏成本、multistep物理优劣为excluded_qualitative；全部展示算法及阶陈述单列。
+- p.94–96/PDF116–118：Exercises标题起所有习题排除；Beeman例及三阶正文在标题前保留。

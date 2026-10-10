@@ -112,7 +112,10 @@ def render(source_path: Path, lean_path: Path, audit_path: Path, website_path: P
             'Lean编译/公理检查：'+('已验证' if a['checked'] else '本轮待验证')+'；公理：`'+(', '.join(a.get('axioms',[])) or ('无' if a['checked'] else '未检查'))+'`。','',
             '直接占位：'+('有sorry' if a['direct_placeholder'] else '无直接sorry')+'；传递占位：'+('存在（无直接sorry但公理含sorryAx）' if a.get('transitive_placeholder') else ('未检出；直接sorry的sorryAx已单列' if a['checked'] else '未验证'))+'。']
         if a.get('missing'):lines+=['','缺失/继续路线：'+a['missing']]
-        if a.get('proof_attempts'):lines+=['',f"本地独立尝试{a['proof_attempts']}次，失败{a.get('proof_failures',0)}次；证据：blueprint/ch02/proof_attempts.json。"]
+        if a.get('proof_attempts'):
+            lines+=['',f"本地路线尝试{a['proof_attempts']}次，未通过{a.get('proof_failures',0)}次（含超时或签名展开预算失败）；证据："+'；'.join(a.get('attempt_evidence',[]))+'。']
+        if a.get('attempts_description'):lines+=['',a['attempts_description']]
+        if a.get('stop_reason'):lines+=['','停止/继续原因：'+a['stop_reason']]
         if a.get('documented_priors'):lines+=['','已登记前置证明/定义：'+ '; '.join(a['documented_priors'])+'。']
         lines+=['','签名SHA256：`'+d['signature_sha256']+'`；原文SHA256：`'+entry_hash(s)+'`。']
     return '\n'.join(lines)+'\n'

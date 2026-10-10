@@ -997,11 +997,9 @@ private theorem momentumKick_hasFDerivAt {Nc : ℕ}
       (hasFDerivAt_apply (Sum.inr i) z).fun_add (hi.fun_const_smul h)
 
 /-- source_id: MD-2.4.1-PotentialFlow · definition · §2.4.1 · 印刷p.84 / PDFp.106 -/
-noncomputable def bp_potentialFlow {Nc : ℕ}
-    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ)
-    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
-  Sum.elim (fun i => z (Sum.inl i))
-    (fun i => z (Sum.inr i) + h * F (textbookPositionProjection Nc z) i)
+def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
+    (h : ℝ) : SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+  textbookMomentumKick (textbookPotentialForce U) h
 
 /-- source_id: MD-2.4.1-SplitEuler · unnumbered_claim · §2.4.1 · 印刷p.84 / PDFp.106 -/
 theorem splitEuler :
@@ -1073,12 +1071,17 @@ def bp_harmonicAnharmonic (Ω : ℝ) (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ
   (q, -Ω*Real.sin (h*Ω)*z.1 + Real.cos (h*Ω)*z.2 - h*deriv U q)
 
 /-- source_id: MD-2.4.4-ImplicitLocal · unnumbered_claim · §2.4.4 · 印刷p.86 / PDFp.108
-[EXTRA] [EXTRA]g C¹且实际导数为连续线性同构；只能保证局部逆，原文“typically”不构成任意g可逆定理。逆在更小紧邻域有界。 -/
-theorem implicitLocal :
-  ∀ n (g : Q n → Q n) x (A : Q n ≃L[ℝ] Q n), ContDiff ℝ 1 g → HasFDerivAt g A.toContinuousLinearMap x →
-    ∃ U V : Set (Q n), IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g x ∈ V ∧
-      ∃ inv : Q n → Q n, ContDiffOn ℝ 1 inv V ∧
-        (∃ K ≥ 0, ∀ y ∈ V, ‖inv y‖ ≤ K) ∧ (∀ y ∈ V, inv y ∈ U ∧ g (inv y) = y) ∧ (∀ y ∈ U, inv (g y) = y) := by
+[EXTRA] [EXTRA]g依赖真实步长h；联合C∞，零步实际导数为连续线性同构。
+[EXTRA] [EXTRA]结论为充分小步长的局部逆；缩小有界邻域，不宣称全域有界逆。 -/
+theorem implicitLocal : ∀ n (g : ℝ → Q n → Q n) x
+    (A : Q n ≃L[ℝ] Q n), ContDiff ℝ ∞ (Function.uncurry g) →
+    HasFDerivAt (g 0) A.toContinuousLinearMap x →
+    ∃ δ > 0, ∀ h : ℝ, |h| < δ → ∃ U V : Set (Q n),
+      IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g h x ∈ V ∧
+      ∃ inv : Q n → Q n, ContDiffOn ℝ ∞ inv V ∧
+        (∃ K ≥ 0, ∀ y ∈ V, ‖inv y‖ ≤ K) ∧
+        (∀ y ∈ V, inv y ∈ U ∧ g h (inv y)=y) ∧
+        (∀ y ∈ U, inv (g h y)=y) := by
   sorry
 
 /-- source_id: MD-2.4.4-BackwardEulerSolve · Example 2.6 · §2.4.4 · 印刷p.86 / PDFp.108 -/
@@ -1197,6 +1200,213 @@ theorem eulerEffectiveOrder : ∀ n (m : Fin n → ℝ) (U : Q n → ℝ)
         coordinateVerlet m (textbookPotentialForce U) h) ∧
       (∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
         textbookProcessedMaxError χ (textbookSymplecticEuler m U) (τ/ν) γ ν ≤ C*(τ/ν)^2) := by
+  sorry
+
+/-- source_id: MD-2.5.1-RK · definition · §2.5.1 · 印刷p.89 / PDFp.111 -/
+def bp_rungeKuttaRelation {n s : ℕ} (f : Q n → Q n) (A : Matrix (Fin s) (Fin s) ℝ)
+    (b : Fin s → ℝ) (h : ℝ) (z w : Q n) (F : Fin s → Q n) : Prop :=
+  (∀ i, F i = f (z + h • ∑ j, A i j • F j)) ∧ w = z + h • ∑ i, b i • F i
+
+/-- source_id: MD-2.5.1-RK4 · definition · §2.5.1 · 印刷p.89 / PDFp.111 -/
+def bp_rk4 {n : ℕ} (f : Q n → Q n) (h : ℝ) (z : Q n) : Q n :=
+  let k₁ := f z
+  let k₂ := f (z + (h/2) • k₁)
+  let k₃ := f (z + (h/2) • k₂)
+  let k₄ := f (z + h • k₃)
+  z + (h/6) • (k₁ + (2 : ℝ) • k₂ + (2 : ℝ) • k₃ + k₄)
+
+/-- source_id: MD-2.5.1-RK4Order · unnumbered_claim · §2.5.1 · 印刷p.89 / PDFp.111
+[EXTRA] [EXTRA]compactTrajectory实际C⁶向量场与紧窗实际轨迹；高阶资格强于原文简写。 -/
+theorem rk4Order :
+  ∀ n (f : Q n → Q n) (γ : ℝ → Q n) τ, compactTrajectory f γ τ → globalOrder (rk4 f) γ τ 4 := by
+  sorry
+
+/-- source_id: MD-2.5.1-ExplicitRK · unnumbered_claim · §2.5.1 · 印刷p.89 / PDFp.111
+[EXTRA] [EXTRA]一致性∑bᵢ=1排除全零权重恒等映射；“不辛”解释为存在光滑Hamilton模型与实际阶段/步映射不辛，不宣称每个具体H均不辛。 -/
+theorem explicitRK :
+  ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ),
+    (∀ i j, i ≤ j → A i j = 0) → (∑ i, b i) = 1 →
+    ∃ (H : SymplecticCoordinates 1 → ℝ) (G : SymplecticCoordinates 1 → SymplecticCoordinates 1)
+      (stages : SymplecticCoordinates 1 → Fin s → SymplecticCoordinates 1) (h : ℝ),
+      ContDiff ℝ ⊤ H ∧ 0 < h ∧
+      (∀ z, (∀ i, stages z i = textbookHamiltonianVectorField H (z+h • ∑ j, A i j • stages z j)) ∧
+        G z = z+h • ∑ i, b i • stages z i) ∧ ¬ IsTextbookSymplecticMap G := by
+  sorry
+
+/-- source_id: MD-2.5.1-RKSymplectic · unnumbered_claim · §2.5.1 · 印刷p.89–90 / PDFp.111–112
+[EXTRA] H C²；真实阶段函数与完整步G C¹且确实满足RK关系。
+[NECESSITY_QUALIFICATION] 原句precise condition需不可约/非退化资格；完整普适iff已保留，冗余RK必要性不能默认为真。 -/
+theorem rkSymplectic : ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ),
+    (∀ i j, b i*A i j+b j*A j i=b i*b j) ↔
+    (∀ n (H : SymplecticCoordinates n → ℝ) (h : ℝ)
+      (G : SymplecticCoordinates n → SymplecticCoordinates n)
+      (stages : SymplecticCoordinates n → Fin s → SymplecticCoordinates n),
+      ContDiff ℝ 2 H → ContDiff ℝ 1 G →
+      (∀ i, ContDiff ℝ 1 (fun z => stages z i)) →
+      (∀ z, (∀ i, stages z i=textbookHamiltonianVectorField H
+        (z+h • ∑ j, A i j • stages z j)) ∧ G z=z+h • ∑ i, b i • stages z i) →
+      IsTextbookSymplecticMap G) := by
+  sorry
+
+/-- source_id: MD-2.5.1-GaussFamily · Example 2.7 (family) · §2.5.1 · 印刷p.90 / PDFp.112
+[EXTRA] [EXTRA]实际Legendre根节点、Lagrange积分系数；s>0，节点单射，C∞向量场和实际光滑G；真实唯一阶段及真实流资格。 -/
+theorem gaussFamily :
+  ∀ n s (c : Fin s → ℝ) (f : Q n → Q n) (F G : ℝ → Q n → Q n), 0 < s →
+    Function.Injective c → (∀ i, c i ∈ Ioo (0 : ℝ) 1 ∧ legendreValue s (2*c i-1) = 0) →
+    ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ (Function.uncurry G) →
+    (∀ h z, ∃! data : Q n × (Fin s → Q n),
+      rungeKuttaRelation f (fun i j => ∫ t in (0 : ℝ)..c i, lagrangeBasis c j t)
+        (fun j => ∫ t in (0 : ℝ)..1, lagrangeBasis c j t) h z data.1 data.2) →
+    (∀ h z, ∃ stages, rungeKuttaRelation f (fun i j => ∫ t in (0 : ℝ)..c i, lagrangeBasis c j t)
+      (fun j => ∫ t in (0 : ℝ)..1, lagrangeBasis c j t) h z (G h z) stages) →
+    (∀ z, F 0 z = z ∧ ∀ t, HasDerivAt (fun u => F u z) (f (F t z)) t) →
+    (∀ h z, G (-h) (G h z) = z) ∧ (∃ r : ℕ, 0 < r ∧ Even r ∧ methodLocalOrder G F r) := by
+  sorry
+
+/-- source_id: MD-2.5.1-Midpoint · definition · §2.5.1 · 印刷p.90 / PDFp.112 -/
+def bp_midpointRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop :=
+  w = z + h • f ((1/2 : ℝ) • (z+w))
+
+/-- source_id: MD-2.5.1-MidpointProperties · unnumbered_claim · §2.5.1 · 印刷p.90 / PDFp.112
+[EXTRA] [EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。 -/
+theorem midpointProperties :
+  ∀ n (H : SymplecticCoordinates n → ℝ) (G F : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    ContDiff ℝ 4 H → ContDiff ℝ 1 (Function.uncurry G) →
+    (∀ h z, G h z = z+h • textbookHamiltonianVectorField H ((1/2 : ℝ) • (z+G h z))) →
+    (∀ z, F 0 z = z ∧ ∀ t, HasDerivAt (fun u => F u z) (textbookHamiltonianVectorField H (F t z)) t) →
+    (∀ h, IsTextbookSymplecticMap (G h)) ∧ methodLocalOrder G F 2 := by
+  sorry
+
+/-- source_id: MD-2.5.1-GaussTwo · definition · §2.5.1 · 印刷p.90 / PDFp.112 -/
+def gaussTwoData : Matrix (Fin 2) (Fin 2) ℝ × (Fin 2 → ℝ) :=
+  (gaussTwoCoefficients, fun _ => 1/2)
+
+/-- source_id: MD-2.5.1-GaussTwoOrder · unnumbered_claim · §2.5.1 · 印刷p.90 / PDFp.112
+[EXTRA] [EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。 -/
+theorem gaussTwoOrder : ∀ n (f : Q n → Q n) (G : ℝ → Q n → Q n)
+    (γ : ℝ → Q n) τ,
+    compactTrajectory f γ τ → ContDiff ℝ 6 (Function.uncurry G) →
+    (∀ h z, ∃ stages : Fin 2 → Q n,
+      rungeKuttaRelation f gaussTwoCoefficients (fun _ => 1/2) h z (G h z) stages) →
+    globalOrder G γ τ 4 := by
+  sorry
+
+/-- source_id: MD-2.5.2-PartitionedVerlet · definition · §2.5.2 · 印刷p.90 / PDFp.112 -/
+def bp_partitionedVerletRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w : Z n) (p : Q n) : Prop :=
+  p = z.2 - (h/2) • partialQ H z.1 p ∧
+  w.1 = z.1 + (h/2) • (partialP H z.1 p + partialP H w.1 p) ∧
+  w.2 = p - (h/2) • partialQ H w.1 p
+
+/-- source_id: MD-2.5.2-PartitionedReduction · unnumbered_claim · §2.5.2 · 印刷p.91 / PDFp.113
+[EXTRA] 固定正对角质量、U实际可微；中间动量存在关系与Verlet映射等价。 -/
+theorem partitionedReduction :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h z w,
+    positiveMass m → Differentiable ℝ U →
+    ((∃ p, partitionedVerletRelation (fun z : Z n => (∑ i, z.2 i^2/m i)/2+U z.1) h z w p) ↔
+      w = verlet m (fun q => -grad U q) h z) := by
+  sorry
+
+/-- source_id: MD-2.5.2-GeneralEuler · definition · §2.5.2 · 印刷p.91 / PDFp.113 -/
+def bp_generalSymplecticEulerRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w : Z n) : Prop :=
+  w.2 = z.2 - h • partialQ H z.1 w.2 ∧ w.1 = z.1 + h • partialP H z.1 w.2
+
+/-- source_id: MD-2.5.2-GeneralSymplectic · unnumbered_claim · §2.5.2 · 印刷p.91 / PDFp.113
+[EXTRA] H C²，真实C¹完整求解映射，逐点满足实际隐式关系。 -/
+theorem generalSymplectic :
+  ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n) h,
+    ContDiff ℝ 2 H → ContDiff ℝ 1 G →
+    (∀ z, generalSymplecticEulerRelation H h (unpack z) (unpack (G z))) → IsTextbookSymplecticMap G := by
+  sorry
+
+/-- source_id: MD-2.5.2-GeneralVerletSymplectic · unnumbered_claim · §2.5.2 · 印刷p.91 / PDFp.113
+[EXTRA] H C²，实际C¹中间动量和完整求解映射，满足三步隐式关系。 -/
+theorem generalVerletSymplectic :
+  ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n)
+    (p : SymplecticCoordinates n → Q n) h, ContDiff ℝ 2 H → ContDiff ℝ 1 G → ContDiff ℝ 1 p →
+    (∀ z, partitionedVerletRelation H h (unpack z) (unpack (G z)) (p z)) → IsTextbookSymplecticMap G := by
+  sorry
+
+/-- source_id: MD-2.5.3-Newmark · definition · §2.5.3 · 印刷p.92 / PDFp.114
+[ERRATUM?] Q式力项缺M⁻¹；不默改成质量一致Newmark。 -/
+def bp_newmarkRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (γ β h : ℝ) (z w : Z n) : Prop :=
+  w.2 = z.2 + (h*(1-γ)) • F z.1 + (h*γ) • F w.1 ∧
+  w.1 = z.1 + h • invMass m z.2 + (h^2*(1/2-β)) • F z.1 + (h^2*β) • F w.1
+
+/-- source_id: MD-2.5.3-NewmarkReduction · unnumbered_claim · §2.5.3 · 印刷p.92 / PDFp.114
+[ERRATUM?] 字面Newmark在一般M不等于Verlet，仅M=I或修正Q式force质量因子后成立；不以旧质量修正版证明替代原句。 -/
+theorem newmarkReduction : ∀ n (m : Fin n → ℝ) (F : Q n → Q n) h z w,
+    newmarkRelation m F (1/2) 0 h z w ↔ w=verlet m F h z := by
+  sorry
+
+/-- source_id: MD-2.5.3-NewmarkDamping · unnumbered_claim · §2.5.3 · 印刷p.92 / PDFp.114
+[EXTRA] [EXTRA]限定原文simple model为单位质量线性振子；h步隐式线性系统非奇异；用实际放大矩阵det=1表达无面积收缩，不声称任意势能能量恒定。 -/
+theorem newmarkDamping :
+  ∀ (G : Q 2 → Q 2) Ω β h,
+    ContDiff ℝ 1 G → (∀ z,
+      G z 1 = z 1-h/2*Ω^2*(z 0+G z 0) ∧
+      G z 0 = z 0+h*z 1-h^2*((1/2-β)*Ω^2*z 0+β*Ω^2*G z 0)) →
+    1+h^2*β*Ω^2 ≠ 0 → ∀ z, (textbookCoordinateJacobian G z).det = 1 := by
+  sorry
+
+/-- source_id: MD-2.5.3-NewmarkNotSymplectic · unnumbered_claim · §2.5.3 · 印刷p.92 / PDFp.114
+[EXTRA] [EXTRA]存在一个非线性势能、β≠0与非零步长的实际可微求解反例；不是排除每个线性特殊情形。单位质量与字面式一致。 -/
+theorem newmarkNotSymplectic :
+  ∃ (U : Q 1 → ℝ) (β h : ℝ) (G : SymplecticCoordinates 1 → SymplecticCoordinates 1),
+    ContDiff ℝ 3 U ∧ β ≠ 0 ∧ h ≠ 0 ∧ ContDiff ℝ 1 G ∧
+    (∀ z, newmarkMassCorrected (fun _ => 1) (textbookPotentialForce U) (1/2) β h
+      (unpack z) (unpack (G z))) ∧ ¬ IsTextbookSymplecticMap G := by
+  sorry
+
+/-- source_id: MD-2.5.4-MultiTaylor · definition · §2.5.4 · 印刷p.92 / PDFp.114 -/
+def bp_multiTaylor {n : ℕ} (d : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
+  ∑ j ∈ Finset.range (k+1), (h^j / (Nat.factorial j : ℝ)) • d j
+
+/-- source_id: MD-2.5.4-TIPotential · definition · §2.5.4 · 印刷p.92–93 / PDFp.114–115 -/
+def tiMethod {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) : Z n → Z n :=
+  verlet m (fun q => -grad (takahashiPotential m U h) q) h
+
+/-- source_id: MD-2.5.4-TIForce · unnumbered_claim · §2.5.4 · 印刷p.93 / PDFp.115
+[EXTRA] 正质量，U C²，真实改势梯度及Hessian作用。
+[ERRATUM?] 上项改势为U−h²‖gradU‖²M⁻¹/24，负梯度应有+ h²Hessian项；原页此力式负号冲突，保留字面。 -/
+theorem tiForce :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h q,
+    positiveMass m → ContDiff ℝ 2 U →
+    -grad (takahashiPotential m U h) q =
+      -grad U q - (h^2/12) • (fderiv ℝ (grad U) q) (invMass m (grad U q)) := by
+  sorry
+
+/-- source_id: MD-2.5.4-TIOrder · unnumbered_claim · §2.5.4 · 印刷p.93 / PDFp.115
+[EXTRA] 正质量，U C∞；实际步依照上项负号改势；处理器为实际Homeomorph，原轨迹及有限时间窗误差结论。
+[DEPENDENT_ERRATUM] 有效四阶依赖改势符号；原文改势和力相互冲突，本签名保留负号改势，需裁定处理器方向和正负修正。 -/
+theorem tiOrder :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ), positiveMass m → ContDiff ℝ ⊤ U →
+    ∃ χ : ℝ → Z n ≃ₜ Z n, ∀ (γ : ℝ → Z n) τ, 0 < τ →
+      solution (mechanicalField m (fun q => -grad U q)) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
+      ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+        oneStepMaxError (fun h => textbookProcessedMethod χ
+          (fun k => verlet m (fun q => -grad (takahashiPotential m U k) q) k) h)
+          (τ/ν) γ ν ≤ C*(τ/ν)^4 := by
+  sorry
+
+/-- source_id: MD-2.5.5-Beeman · Example 2.8 (Beeman’s Algorithm) · §2.5.5 · 印刷p.94 / PDFp.116 -/
+def beeman {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (qPrev : Q n) (z : Z n) : Z n :=
+  let a := invMass m (F z.1)
+  let aPrev := invMass m (F qPrev)
+  let q := z.1+h • invMass m z.2+(h^2/6) • ((4 : ℝ) • a-aPrev)
+  let p := z.2+(h/6) • mass m ((2 : ℝ) • invMass m (F q)+(5 : ℝ) • a-aPrev)
+  (q,p)
+
+/-- source_id: MD-2.5.5-BeemanOrder · unnumbered_claim · §2.5.5 · 印刷p.94 / PDFp.116
+[EXTRA] [EXTRA]正固定对角质量，F C⁴；实际紧轨迹，前两步取精确起始值（强于三阶启动）；真实多步递推，保留两坐标误差。
+[ERRATUM?] 三阶的阶定义需要裁定：单位质量谐振子q=cos t、p=−sin t，从两个精确起点代入原式，一步动量误差首项为−h³/12；全相空间全局三阶与该局部缺陷不一致。保留原文three及完整全局三阶签名，不静默改成二阶。 -/
+theorem beemanOrder : ∀ n (m : Fin n → ℝ) (F : Q n → Q n)
+    (γ : ℝ → Z n) τ,
+    positiveMass m → ContDiff ℝ 4 F → 0 < τ →
+    solution (mechanicalField m F) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
+    ∃ C > 0, ∃ ν₀ : ℕ, 1 < ν₀ ∧ ∀ ν ≥ ν₀,
+      ∀ z : ℕ → Z n, z 0=γ 0 → z 1=γ (τ/ν) →
+        (∀ k, 1 ≤ k → z (k+1)=beeman m F (τ/ν) (z (k-1)).1 (z k)) →
+        ∀ k ≤ ν, ‖z k-γ (k*(τ/ν))‖ ≤ C*(τ/ν)^3 := by
   sorry
 
 end MD.Ch02

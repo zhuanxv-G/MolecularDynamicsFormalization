@@ -37,6 +37,31 @@ for r in RECORDS:
         r['local_explanation']='两个矩阵求和的零式完整；原文中间两等式保留为逐字证明，实际导数结论在FormConstant真实ODE常值条目。'
     if r['source_id']=='MD-2.4.4-FrozenNewton':
         r['code']=r['code'].replace('0 ≤ ρ →','0 < ρ →')
+    if r['source_id']=='MD-2.4.1-PotentialFlow':
+        r['code']='''def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
+    (h : ℝ) : SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+  textbookMomentumKick (textbookPotentialForce U) h'''
+        r['local_explanation']='闭式势能子流采用原文实际负梯度，未把任意独立F偷换为给定U的力。'
+    if r['source_id']=='MD-2.4.4-ImplicitLocal':
+        r['code']='''theorem implicitLocal : ∀ n (g : ℝ → Q n → Q n) x
+    (A : Q n ≃L[ℝ] Q n), ContDiff ℝ ∞ (Function.uncurry g) →
+    HasFDerivAt (g 0) A.toContinuousLinearMap x →
+    ∃ δ > 0, ∀ h : ℝ, |h| < δ → ∃ U V : Set (Q n),
+      IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g h x ∈ V ∧
+      ∃ inv : Q n → Q n, ContDiffOn ℝ ∞ inv V ∧
+        (∃ K ≥ 0, ∀ y ∈ V, ‖inv y‖ ≤ K) ∧
+        (∀ y ∈ V, inv y ∈ U ∧ g h (inv y)=y) ∧
+        (∀ y ∈ U, inv (g h y)=y) := by
+  sorry'''
+        r['extra_assumptions']=['[EXTRA]g依赖真实步长h；联合C∞，零步实际导数为连续线性同构。',
+            '[EXTRA]结论为充分小步长的局部逆；缩小有界邻域，不宣称全域有界逆。']
+        r.update(local_explanation='步长量词、局部唯一双逆、连续/光滑和有界四类结论保留；没有把足够小步长的可逆性本身作假设。',
+            missing='参数化光滑逆函数定理、连续可逆导数邻域及局部有界光滑逆理论。')
+    if r['source_id']=='MD-2.5.1-GaussFamily':
+        r['code']=r['code'].replace('methodLocalOrder G F (2*s)',
+            '(∃ r : ℕ, 0 < r ∧ Even r ∧ methodLocalOrder G F r)')
+        r['missing']='大型Gauss配点构造、正交多项式根/对称性及偶数阶逆步理论；当前库无完整理论。'
+        r['local_explanation']='原句中的对称与偶数阶全部保留；没有额外声称原句未陈述的一般2s阶。2阶段四阶在GaussTwoOrder单列。'
     if r['source_id']=='MD-2.4.5-EulerConjugacy':
         # Effective order is a separate conclusion, not hidden in a note.
         r['statement_latex']='As an illustration, the Symplectic Euler method turns out to be conjugate to the Verlet method (see Exercise 12).'

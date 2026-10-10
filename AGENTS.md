@@ -1,7 +1,7 @@
 # 项目接续与形式化约定
 
-当前任务：第2章本地五步流程（见 blueprint/ch02/PROGRESS.md）；第1章暂停在等待网站审校（见 blueprint/ch01/mathcopilot_tasks/INDEX.md）。
-下一步：完成§2.5 Runge–Kutta、PRK、Newmark及多导数/多步法，补齐160旧条目映射并做全章终验。
+第2章本地部分完成；第1、2章均等待用户提交 MathCopilot 批次（见 blueprint/ch01|ch02/mathcopilot_tasks/INDEX.md）
+下一步：仅确认等待状态；有新返回件则按EAUDIT与追加repair_log规则整合、修签名后重审；不进入第3章。
 
 ## 第1章规则（暂停；仅新返回件整合时适用）
 
