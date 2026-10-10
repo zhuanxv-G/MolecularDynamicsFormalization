@@ -60,6 +60,60 @@
 | MD-2.2.4-IntegralMeanValue | 71/93 | PASS | 待网站审计 | self-contained |
 | MD-2.2.4-IntegralLipschitz | 71/93 | PASS | 待网站审计 | self-contained |
 | MD-2.2.4-IntegralErrorPrinted | 71/93 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.3.1-Divergence | 72/94 | PASS | 待网站审计 | self-contained |
+| MD-2.3.1-Liouville | 72/94 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.1-HamiltonDivergence | 72/94 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.1-HamiltonVolume | 72/94 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.1-VolumeChange | 73/95 | PASS | 待网站审计 | self-contained |
+| MD-2.3.1-VariationalPrinted | 73/95 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.3.1-DeterminantODE | 73/95 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.1-DeterminantExponential | 73/95 | PASS | 待网站审计 | incomplete |
+| MD-2.3.1-FlowDet | 73/95 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.1-LJOscillator | 73–74/95–96 | PASS | 待网站审计 | self-contained |
+| MD-2.3.1-LJBoundedPeriodic | 74/96 | PASS | 待网站审计 | incomplete |
+| MD-2.3.2-LinearDivergence | 74–75/96–97 | PASS | 待网站审计 | incomplete |
+| MD-2.3.2-LinearEuler | 75/97 | PASS | 待网站审计 | self-contained |
+| MD-2.3.2-EulerVolumePrinted | 75/97 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.3.2-EulerVolumeCounterexample | 75/97 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.2-AsymmetricEuler | 75/97 | PASS | 待网站审计 | self-contained |
+| MD-2.3.2-AsymmetricJacobian | 75/97 | PASS | 待网站审计 | incomplete |
+| MD-2.3.2-AsymmetricArea | 75–76/97–98 | PASS | 待网站审计 | incomplete |
+| MD-2.3.3-SymplecticMap | 76/98 | PASS | 待网站审计 | self-contained |
+| MD-2.3.3-OneForm | 76/98 | PASS | 待网站审计 | self-contained |
+| MD-2.3.3-Differential | 76/98 | PASS | 待网站审计 | self-contained |
+| MD-2.3.3-CoordinateDifferentials | 76/98 | PASS | 待网站审计 | self-contained |
+| MD-2.3.3-Wedge | 76/98 | PASS | 待网站审计 | self-contained |
+| MD-2.3.3-SymplecticForm | 77/99 | PASS | 待网站审计 | self-contained |
+| MD-2.3.3-FormSumWedges | 77/99 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.3-GeneralTwoForm | 77/99 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.3.3-PullbackOne | 77/99 | PASS | 待网站审计 | self-contained |
+| MD-2.3.3-PullbackTwo | 77/99 | PASS | 待网站审计 | self-contained |
+| MD-2.3.3-PullbackMatrix | 77–78/99–100 | PASS | 待网站审计 | self-contained |
+| MD-2.3.3-PreservesForm | 78/100 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.3.3-SymplecticIffForm | 78/100 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.3-SymplecticDet | 78/100 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.3-HamiltonDet | 78/100 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.4-Hessian | 79/101 | PASS | 待网站审计 | self-contained |
+| MD-2.3.4-HessianSymmetry | 79/101 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.4-HamiltonVariationalPrinted | 79/101 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.3.4-MatrixCancellation | 79/101 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.4-FormConstant | 79/101 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.4-HamiltonSymplectic | 79/101 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.5-ChainRule | 79/101 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.5-SymplecticComposition | 79/101 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.5-SymplecticInverse | 79/101 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.5-GlobalGroupPrinted | 79/101 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-2.3.6-SymplecticIntegrator | 80/102 | PASS | 待网站审计 | self-contained |
+| MD-2.3.6-SymplecticEuler | 80/102 | PASS | 待网站审计 | self-contained |
+| MD-2.3.6-KickDifferential | 81/103 | PASS | 待网站审计 | incomplete |
+| MD-2.3.6-WedgeSelf | 81/103 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.6-SymplecticEulerPreserves | 81/103 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.7-Adjoint | 81/103 | PASS | 待网站审计 | self-contained |
+| MD-2.3.7-FlowSelfAdjoint | 82/104 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.7-BackwardEuler | 82/104 | PASS | 待网站审计 | self-contained |
+| MD-2.3.7-EulerAdjoint | 82/104 | PASS | 待网站审计 | checked+documented priors |
+| MD-2.3.7-AdjointSymplecticEuler | 82/104 | PASS | 待网站审计 | self-contained |
+| MD-2.3.7-AdjointInvolution | 82/104 | PASS | 待网站审计 | checked+documented priors |
 
 ## 需要导师判断的问题
 
@@ -79,6 +133,20 @@
   原文忽略O(h⁴)后用maxκ界误差，不是严格界；保留κ主项和严格一致性，常数区分maxκ与吸收余项后的C。
 - MD-2.2.4-IntegralErrorPrinted：保留字面1/(2L)，需裁定原文常数疑误。
   由(2.12)及均值不等式只能得Kbar B/L，额外1/2未推导；常数Kbar若重命名需明确。
+- MD-2.3.1-VariationalPrinted：忠实保留移动取值点及两子句；与正确变分矩阵不同，需导师裁定。
+  原文W在z(t)取Jacobian，而变分矩阵应在固定初值ζ取Jacobian；沿移动取值点会多一链式项。后式还需要W可逆，局部流可给但不能忽略域。
+- MD-2.3.2-EulerVolumePrinted：保留字面det=1判别，不静默改绝对值；需裁定小h方向约定。
+  体积只要求|det|=1；原文省略正向/足够小步长条件。反射在大步长可保持体积但det=-1。
+- MD-2.3.3-GeneralTwoForm：逐字保留双和系数定义，不静默除2或假设已归一；后文矩阵解释需裁定。
+  双和系数A的实际双线性矩阵是A-Aᵀ；若A反对称为2A。后文直接用A作矩阵表示存在因子约定疑点。
+- MD-2.3.3-PreservesForm：拉回定义保留实际底点，原文简写矩阵式是否只指常系数需导师裁定。
+  一般位置相关A的守恒式应DΦ(z)ᵀA(Φ(z))DΦ(z)=A(z)；原文省略底点，若只针对常矩阵才无歧义。
+- MD-2.3.4-HamiltonVariationalPrinted：原文移动取值点与变分方程冲突；不静默改成固定ζ。
+  与p.73一样W应在固定初值ζ求导；原页后文明确W(t)=F′t(z(t,ζ))，本条保留该字面W。
+- MD-2.3.5-ChainRule：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+  原文Φ₁′Φ₂′未写外导数的Φ₂(z)取值点；Lean用正确链式法则，需审校确认简写约定。
+- MD-2.3.5-GlobalGroupPrinted：字面全球逆与逆辛性两个结论保留；不偷偷加入全球双射为假设。
+  Jacobian可逆仅推出局部可逆，不能推出任意辛映射全球双射；正确群是给定全球辛微分同胚。
 
 ## 1. MD-2-HamiltonianODE · definition · 印刷p.53 / PDFp.75
 
@@ -2795,3 +2863,2607 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 缺失/继续路线：原书1/2因子裁定；均值与轨迹误差组合。
 
 签名SHA256：`18a8529ed663f3cf547feb86796db991a5c52c6769bd37ebe2a989c764218bac`；原文SHA256：`a6752137777d74e5a5d2a3fc4248d36547d7006289ac7ba67f1c8e40b4f78e0c`。
+
+## 1. MD-2.3.1-Divergence · definition · 印刷p.72 / PDFp.94
+
+### 2. 原文陈述
+
+> the divergence of $f$ vanishes, i.e.
+> \[\nabla\cdot f=\sum_{i=1}^m\frac{\partial f_i}{\partial z_i}=0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_divergence {n : ℕ} (f : Q n → Q n) (z : Q n) : ℝ := (textbookCoordinateJacobian f z).trace
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_divergence；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:506](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:506>)（`MD.Ch02.bp_divergence`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`06d622e99a994ecf60fe7d1d45dff3588510734972791164d18cd85b150a3416`；原文SHA256：`cd0bb033efdc3dbc061bb6408c2f7872ee04ec452eb2c60e36285d44ee9b1529`。
+
+## 1. MD-2.3.1-Liouville · Liouville’s theorem · 印刷p.72 / PDFp.94
+
+### 2. 原文陈述
+
+> Consider a set of points $S(t)$ in phase space with evolution associated to a differential equation $\dot{\boldsymbol z}=f(\boldsymbol z)$ described by the flow map $\mathcal F_t(S(0))=S(t)$. Liouville’s theorem [16] states that the volume of such a set is invariant with respect to $t$ if the divergence of $f$ vanishes,
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem liouville
+    (f : ((Fin n) → ℝ) → (Fin n) → ℝ) (hf : ContDiff ℝ 1 f)
+    (hdiv : ∀ z, (textbookCoordinateJacobian f z).trace = 0)
+    (Φ : ℝ × ((Fin n) → ℝ) → (Fin n) → ℝ) (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z)) (f (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) (t : ℝ) (ht : t ∈ Icc 0 τ)
+    (s : Set ((Fin n) → ℝ)) (hs : MeasurableSet s) :
+    volume ((fun z => Φ (t, z)) '' s) = volume s
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.liouville；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际解族Φ联合C²（原文未重复此较强正则性）；f C¹、Φ0=id、τ>0及实际时间ODE；只对可测S表达Lebesgue体积。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:510](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:510>)（`MD.Ch02.liouville`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookDivergenceFreeFlow_volume_image_of_jointC2。
+
+签名SHA256：`a918b09f2fbe555cb7acf9bd2e19a2adce1abe76c16c3e75f9b6491fc286d048`；原文SHA256：`e47d440b486837162059b097a7191329960f482e3fb30accb0af8d680507b9d5`。
+
+## 1. MD-2.3.1-HamiltonDivergence · unnumbered_claim · 印刷p.72 / PDFp.94
+
+### 2. 原文陈述
+
+> It is a simple exercise to show that for a Hamiltonian system the divergence vanishes, since
+> \[\nabla\cdot f=\sum_{i=1}^{N_c}\frac{\partial^2 H}{\partial q_i\partial p_i}-\sum_{i=1}^{N_c}\frac{\partial^2 H}{\partial p_i\partial q_i}=0,\]
+> by equality of mixed partials.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonDivergence {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc)
+    (hH : ContDiffAt ℝ 2 H z) :
+    (textbookJacobian (textbookHamiltonianVectorField H) z).trace = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.hamiltonDivergence；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | H C²，保证混合偏导对称。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:522](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:522>)（`MD.Ch02.hamiltonDivergence`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookHamiltonianVectorField_divergence_zero。
+
+签名SHA256：`ffe8a85282e553138530f1a49a986255bc0f119f9acc0434a4dde7b3c28e3ca1`；原文SHA256：`45506bf540e87754a6849f968ca8fffb564d33f433a2da836ad335c95e3d2e03`。
+
+## 1. MD-2.3.1-HamiltonVolume · unnumbered_claim · 印刷p.72 / PDFp.94
+
+### 2. 原文陈述
+
+> Thus Hamiltonian systems always have volume preserving flows.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonVolume {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (hH : ContDiff ℝ 2 H)
+    (Φ : ℝ × SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z))
+      (textbookHamiltonianVectorField H (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) (t : ℝ) (ht : t ∈ Icc 0 τ)
+    (s : Set (SymplecticCoordinates Nc)) (hs : MeasurableSet s) :
+    volume ((fun z => Φ (t, z)) '' s) = volume s
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.hamiltonVolume；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]Φ联合C²；H C²、Φ0=id，τ>0；可测集S。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:530](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:530>)（`MD.Ch02.hamiltonVolume`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2。
+
+签名SHA256：`33de595ec5d8dadc3a8ba06c1ba3fa2bf2185bb6402cbdb2af8444b979da7bb7`；原文SHA256：`c11ac140dcbf322e9fb33246451bf19e934778d656d2e1cb4340796100045162`。
+
+## 1. MD-2.3.1-VolumeChange · unnumbered_claim · 印刷p.73 / PDFp.95
+
+### 2. 原文陈述
+
+> If we view the map $\mathcal F_t$ as a change of variables, we have
+> \[\operatorname{Vol}(S(t))=\int_S |D|\,d\omega,\]
+> where $D=\det\left(\frac{\partial\mathcal F_t}{\partial\boldsymbol z}\right)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem volumeChange :
+  ∀ n (Φ : Q n → Q n) (S : Set (Q n)), ContDiff ℝ 1 Φ → Function.Injective Φ → MeasurableSet S →
+    volume (Φ '' S) = ∫⁻ z in S, ENNReal.ofReal |(textbookCoordinateJacobian Φ z).det| ∂volume
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.volumeChange；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | Φ C¹单射，可测S；正则流的固定时刻映射具备这些资格；真实Lebesgue体积和lintegral。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch02.lean:543](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:543>)（`MD.Ch02.volumeChange`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`45e9e37dd2fa10d2930c8ccab3a2754cc6fb38bef896638052b33a1949190638`；原文SHA256：`2b327448ac9b8235a5b23b07577a8450ba97f74bde71507e226d7cea3173c3e5`。
+
+## 1. MD-2.3.1-VariationalPrinted · unnumbered_claim · 印刷p.73 / PDFp.95
+
+### 2. 原文陈述
+
+> To understand where Liouville’s theorem comes from, recall that the variational equations of the last chapter are a system of ordinary differential equations for $W(t)=\mathcal F_t'(\boldsymbol z(t))$:
+> \[\frac{\mathrm dW}{\mathrm dt}=f'(\boldsymbol z(t))W.\]
+> Thus
+> \[\dot W W^{-1}=f'(\boldsymbol z(t)).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem variationalPrinted : ∀ n (f : Q n → Q n) (Φ : ℝ × Q n → Q n) τ ζ,
+    flowC1 f Φ τ → ∀ t ∈ Ioo 0 τ,
+    HasDerivAt (fun s => textbookCoordinateJacobian (fun y => Φ (s,y)) (Φ (s,ζ)))
+      (textbookCoordinateJacobian f (Φ (t,ζ)) *
+        textbookCoordinateJacobian (fun y => Φ (t,y)) (Φ (t,ζ))) t ∧
+    (deriv (fun s => textbookCoordinateJacobian (fun y => Φ (s,y)) (Φ (s,ζ))) t) *
+      (textbookCoordinateJacobian (fun y => Φ (t,y)) (Φ (t,ζ)))⁻¹ =
+      textbookCoordinateJacobian f (Φ (t,ζ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.variationalPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | 原文W在z(t)取Jacobian，而变分矩阵应在固定初值ζ取Jacobian；沿移动取值点会多一链式项。后式还需要W可逆，局部流可给但不能忽略域。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。忠实保留移动取值点及两子句；与正确变分矩阵不同，需导师裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:561](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:561>)（`MD.Ch02.variationalPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原书取值点裁定；正确固定初值版本库已有jointC²证明。
+
+签名SHA256：`fcd47e1a641b66b44fdd6cc96805f37ab6e4a930b2fd91c337aa6e6f503bf312`；原文SHA256：`6130da9c501db15f53f480ca668874b35f25c0ed617eef37fc307ac157c877b3`。
+
+## 1. MD-2.3.1-DeterminantODE · unnumbered_claim · 印刷p.73 / PDFp.95
+
+### 2. 原文陈述
+
+> Now let $D=\det(W)$. One can show (see Exercise 5) that
+> \[\frac{\dot D}{D}=\operatorname{tr}(\dot W W^{-1}).\]
+> This implies that
+> \[\dot D=\operatorname{div}(f(\boldsymbol z(t)))D,\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem determinantODE : ∀ n (A W : ℝ → Matrix (Fin n) (Fin n) ℝ) t,
+    HasDerivAt W (A t * W t) t → (W t).det ≠ 0 →
+    HasDerivAt (fun s => (W s).det) ((A t).trace*(W t).det) t ∧
+      deriv (fun s => (W s).det) t/(W t).det =
+        Matrix.trace ((A t*W t)*(W t)⁻¹)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.determinantODE；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 实际W′=AW且detW≠0，符合原文W⁻¹及D除法的资格；A=f′(z(t))。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。同时保留D实际导数及D′/D=tr(Wdot W⁻¹)，不遗漏原文除法子句。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:573](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:573>)（`MD.Ch02.determinantODE`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookMatrixDet_hasDerivAt_of_linearODE。
+
+签名SHA256：`d585200f7db73e2a1e225c0a0b7043a0400c81ba665194e1a187bb908abfea03`；原文SHA256：`f18401542dccb8c06fbbfad01daf95539f521c06b4b25526dd2b7176f0333084`。
+
+## 1. MD-2.3.1-DeterminantExponential · unnumbered_claim · 印刷p.73 / PDFp.95
+
+### 2. 原文陈述
+
+> and thus
+> \[D(t)=D(0)e^{\int_0^t\operatorname{div}(f(\boldsymbol z(s)))\,ds}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem determinantExponential :
+  ∀ n (A : ℝ → Matrix (Fin n) (Fin n) ℝ) (W : ℝ → Matrix (Fin n) (Fin n) ℝ) t,
+    Continuous A → (∀ s, HasDerivAt W (A s * W s) s) →
+    (W t).det = (W 0).det * Real.exp (∫ s in (0 : ℝ)..t, (A s).trace)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.determinantExponential；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 实际W′=AW，A连续；tr A=div f(z(s))，全实线ODE资格用于任意t积分。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:586](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:586>)（`MD.Ch02.determinantExponential`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：真实矩阵行列式导数与标量积分因子常值证明。
+
+签名SHA256：`557d998d5be18ee1f805ce31e2bc59e3f06817b8381ba08b86e849ba4d00b7e5`；原文SHA256：`93e99fba83092ad06d084a320a04b99e84d3aa942c1c20c467cdabd44e40b6bc`。
+
+## 1. MD-2.3.1-FlowDet · unnumbered_claim · 印刷p.73 / PDFp.95
+
+### 2. 原文陈述
+
+> In particular, if $\operatorname{div}f\equiv0$, we see that $D\equiv D(0)=1$ and it follows that the volume is constant. Liouville’s theorem may be summarized compactly as:
+> \[\nabla\cdot f=0\Rightarrow\det\mathcal F_t'=1.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem flowDet
+    (f : ((Fin n) → ℝ) → (Fin n) → ℝ) (hf : ContDiff ℝ 1 f)
+    (hdiv : ∀ z, (textbookCoordinateJacobian f z).trace = 0)
+    (Φ : ℝ × ((Fin n) → ℝ) → (Fin n) → ℝ) (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z)) (f (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) :
+    ∀ t ∈ Icc 0 τ, ∀ z, (textbookCoordinateJacobian (fun y => Φ (t, y)) z).det = 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.flowDet；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]Φ联合C²、f C¹、Φ0=id，τ>0及实际ODE；D0=1由Jacobian初值而非结论假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:594](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:594>)（`MD.Ch02.flowDet`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookDivergenceFreeFlowJacobian_det_eq_one_of_jointC2。
+
+签名SHA256：`e26cc89140a1b0029f9ed5cf4e10a1bee280615d0ae82395a761baef2bc3998c`；原文SHA256：`4e3c9134a036d4e1f94e30320bf9852d6260ba74f0636936194553b6bf1d3cb5`。
+
+## 1. MD-2.3.1-LJOscillator · Example 2.3 (model) · 印刷p.73–74 / PDFp.95–96
+
+### 2. 原文陈述
+
+> A 1-d oscillator with Lennard-Jones potential is described by the equations
+> \[\dot q=p,\qquad\dot p=-\varphi_{LJ}'(q).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def ljOscillatorEquation (φ : ℝ → ℝ) (γ : ℝ → ℝ × ℝ) (I : Set ℝ) : Prop :=
+  ∀ t ∈ I, HasDerivAt γ ((γ t).2,-deriv φ (γ t).1) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.ljOscillatorEquation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:604](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:604>)（`MD.Ch02.ljOscillatorEquation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`44c3fb1ff72827123789ce65d4fc9708bab7f17453c8b4cac431d5e4b8bb77fa`；原文SHA256：`47d0d381d850a80ffd6191823fd0cc63019d4c876e99328605d66dffd9008138`。
+
+## 1. MD-2.3.1-LJBoundedPeriodic · unnumbered_claim · 印刷p.74 / PDFp.96
+
+### 2. 原文陈述
+
+> As a consequence of energy conservation, any bounded individual trajectory of this system will be a periodic orbit.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem ljBoundedPeriodic : ∀ (σ ε : ℝ) (γ : ℝ → ℝ × ℝ),
+    0 < σ → 0 < ε →
+    ljOscillatorEquation (fun q => 4*ε*((σ/q)^12-(σ/q)^6)) γ Set.univ →
+    (∀ t, 0 < (γ t).1) → Bornology.IsBounded (Set.range γ) →
+    ∃ T > 0, ∀ t, γ (t+T) = γ t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.ljBoundedPeriodic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | LJ参数正，实际全时轨迹且位置q>0；平衡解也允许任意正周期。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:609](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:609>)（`MD.Ch02.ljBoundedPeriodic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：LJ能级闭曲线/非平衡周期轨道理论；能量守恒本身不足以自动得周期。
+
+签名SHA256：`22498ca2f035d27f2ffaf4cc308031586846c4884ce4c37967fb2f4013eae195`；原文SHA256：`c7dc10edecdb134acea369c97837a77a4f0fa75588595bc6d06e74d837fced4f`。
+
+## 1. MD-2.3.2-LinearDivergence · unnumbered_claim · 印刷p.74–75 / PDFp.96–97
+
+### 2. 原文陈述
+
+> Consider a linear differential equation system in $\mathbb R^m$,
+> \[\dot{\boldsymbol z}=S\boldsymbol z,\]
+> for some matrix $S\in\mathbb R^{m\times m}$. The condition for the flow of this system to conserve volume is just that the trace of $S$ (which is the divergence of the vector field $f(\boldsymbol z)=S\boldsymbol z$) be zero.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem linearDivergence : ∀ n (S : Matrix (Fin n) (Fin n) ℝ)
+    (Φ : ℝ × Q n → Q n), ContDiff ℝ 2 Φ → (∀ z, Φ (0,z)=z) →
+    (∀ t z, HasDerivAt (fun s => Φ (s,z)) (S.mulVec (Φ (t,z))) t) →
+    (∀ z, divergence S.mulVec z=S.trace) ∧
+    ((∀ t, ∀ T : Set (Q n), MeasurableSet T →
+      volume ((fun z => Φ (t,z)) '' T)=volume T) ↔ S.trace=0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.linearDivergence；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际全时C²解族Φ，Φ0=id并满足真实线性ODE；只量化可测T。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。完整div=tr S及实际线性流所有可测集合体积保存↔tr S=0；未仅以迹等式替换流体积结论。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:618](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:618>)（`MD.Ch02.linearDivergence`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：线性流行列式指数公式及体积换元的必要/充分方向。
+
+签名SHA256：`66579fe2fecac5cec625529bb107f69c8223f102fa685d3c0acb05dcc7059864`；原文SHA256：`e4ef2e9baf4a3c4f331f134a0895f1af9f462bf12147e6a10dad7f43aa6d3555`。
+
+## 1. MD-2.3.2-LinearEuler · definition · 印刷p.75 / PDFp.97
+
+### 2. 原文陈述
+
+> Applying Euler’s method to the same system results in
+> \[\boldsymbol z_{n+1}=\boldsymbol z_n+hS\boldsymbol z_n=(I+hS)\boldsymbol z_n,\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_linearEuler {n : ℕ} (S : Matrix (Fin n) (Fin n) ℝ) (h : ℝ) : Matrix (Fin n) (Fin n) ℝ :=
+  1 + h • S
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_linearEuler；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:627](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:627>)（`MD.Ch02.bp_linearEuler`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c9c76d33b0c1d540fe8345f242218713dff158866036ecb145fdddacb2830232`；原文SHA256：`1dae9f23526250fd38cc3f733966004d57ae65bf1c491ee5b6a472fdcc790a7c`。
+
+## 1. MD-2.3.2-EulerVolumePrinted · unnumbered_claim · 印刷p.75 / PDFp.97
+
+### 2. 原文陈述
+
+> and the condition for Euler’s method to conserve volume is that $\det(I+hS)=1$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem eulerVolumePrinted : ∀ n (S : Matrix (Fin n) (Fin n) ℝ) h,
+    (∀ T : Set (Q n), MeasurableSet T →
+      volume ((linearEuler S h).mulVec '' T)=volume T) ↔ (linearEuler S h).det=1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.eulerVolumePrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | 体积只要求\|det\|=1；原文省略正向/足够小步长条件。反射在大步长可保持体积但det=-1。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。保留字面det=1判别，不静默改绝对值；需裁定小h方向约定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:632](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:632>)（`MD.Ch02.eulerVolumePrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`ae1958f4a95f0551c3a9b1b808a25dec8093fe8e1ec32befd25dee94efe1aec6`；原文SHA256：`52757042050f1ae1a29f43e87d9b499bc065efd30db7f51532669c347c2d3f89`。
+
+## 1. MD-2.3.2-EulerVolumeCounterexample · unnumbered_claim · 印刷p.75 / PDFp.97
+
+### 2. 原文陈述
+
+> The conditions for volume preservation by the flow map and its Euler approximation are essentially unrelated. Thus Euler’s method does not in general conserve phase space volume (it conserves volume only in very special cases—see Exercise 6).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem eulerVolumeCounterexample :
+  ∃ S : Matrix (Fin 2) (Fin 2) ℝ, S.trace = 0 ∧ ∀ h : ℝ, h ≠ 0 → (linearEuler S h).det ≠ 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.eulerVolumeCounterexample；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。二维旋转矩阵tr S=0而det(I+hS)=1+h²，对任意非零h大于1；已证具体反例表达does not in general。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:638](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:638>)（`MD.Ch02.eulerVolumeCounterexample`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter02Review.eulerVolumeCounterexample_proved。
+
+签名SHA256：`bedba73383ecc2d00eb5664534422e04e8a72c512579815247785f284a1e0414`；原文SHA256：`b687427142ca7da6d6f0b9f1bdc97b7c894ebd2fd55caaa9d09797a9bfe837ea`。
+
+## 1. MD-2.3.2-AsymmetricEuler · definition · 印刷p.75 / PDFp.97
+
+### 2. 原文陈述
+
+> the asymmetrical variant of Euler’s method defined by
+> \[u_{n+1}=u_n+hf(u_{n+1},v_n),\qquad v_{n+1}=v_n+hg(u_{n+1},v_n).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_asymmetricEulerRelation (f g : ℝ → ℝ → ℝ) (h u v U V : ℝ) : Prop :=
+  U = u + h*f U v ∧ V = v + h*g U v
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_asymmetricEulerRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:643](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:643>)（`MD.Ch02.bp_asymmetricEulerRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`a085725f67359691b9f2cd2195d49fb5daf80778fc36c0817b1a22c0e26e1044`；原文SHA256：`3805ac8e7d77cec3822fa1bbb8c1792de2b579cfe1d527860406a20d827559e4`。
+
+## 1. MD-2.3.2-AsymmetricJacobian · unnumbered_claim · 印刷p.75 / PDFp.97
+
+### 2. 原文陈述
+
+> Solving for the various entries we have
+> \[\mathcal G_h'=\begin{bmatrix}1/(1-hf_u)&hf_v/(1-hf_u)\\hg_u/(1-hf_u)&1+hg_v+h^2g_uf_v/(1-hf_u)\end{bmatrix},\]
+> and calculating the determinant of the Jacobian results in
+> \[\det\mathcal G_h'=\frac{1+hg_v}{1-hf_u}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem asymmetricDet :
+  ∀ (f g : ℝ → ℝ → ℝ) (Ψ : Q 2 → Q 2) h,
+    ContDiff ℝ 1 (Function.uncurry f) → ContDiff ℝ 1 (Function.uncurry g) → ContDiff ℝ 1 Ψ →
+    (∀ z, asymmetricEulerRelation f g h (z 0) (z 1) (Ψ z 0) (Ψ z 1)) →
+    ∀ z, 1-h*deriv (fun u => f u (z 1)) (Ψ z 0) ≠ 0 →
+      (textbookCoordinateJacobian Ψ z) =
+        !![(1/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0)) : ℝ),
+          h*deriv (f (Ψ z 0)) (z 1)/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0));
+          h*deriv (fun u => g u (z 1)) (Ψ z 0)/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0)),
+          1+h*deriv (g (Ψ z 0)) (z 1)+h^2*deriv (fun u => g u (z 1)) (Ψ z 0)*
+            deriv (f (Ψ z 0)) (z 1)/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0))] ∧
+      (textbookCoordinateJacobian Ψ z).det =
+        (1+h*deriv (g (Ψ z 0)) (z 1))/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.asymmetricDet；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | f,g及实际隐式解映射Ψ C¹；分母1-hfu≠0；偏导在(U,v)取值。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。完整Jacobian四条矩阵项与行列式，实际偏导统一在(U,v)取值。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:648](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:648>)（`MD.Ch02.asymmetricDet`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：隐式实际关系的求导、分母非零解导数及2×2矩阵整理。
+
+签名SHA256：`706f61c465edb22e8eaf8ce20e79e90c0f283044df14a49a407e4e6acca2067f`；原文SHA256：`5e616aece11449bfbf15a9b915b005db505b9a0efd06e2191403bd434a944764`。
+
+## 1. MD-2.3.2-AsymmetricArea · unnumbered_claim · 印刷p.75–76 / PDFp.97–98
+
+### 2. 原文陈述
+
+> In the event that the vector field is divergence free, we have $f_u+g_v=0$ which implies that the numerator and denominator are identical, and it follows that $\det\mathcal G_h'=1$. Thus the asymmetric variant of the Euler method is area preserving, even though the standard Euler method is not.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem asymmetricArea :
+  ∀ (f g : ℝ → ℝ → ℝ) (Ψ : Q 2 → Q 2) h,
+    ContDiff ℝ 1 (Function.uncurry f) → ContDiff ℝ 1 (Function.uncurry g) → ContDiff ℝ 1 Ψ →
+    (∀ z, asymmetricEulerRelation f g h (z 0) (z 1) (Ψ z 0) (Ψ z 1)) →
+    (∀ u v, deriv (fun x => f x v) u + deriv (g u) v = 0) →
+    (∀ z, 1-h*deriv (fun u => f u (z 1)) (Ψ z 0) ≠ 0) →
+    Function.Injective Ψ →
+    (∀ z, (textbookCoordinateJacobian Ψ z).det = 1) ∧
+    (∀ T : Set (Q 2), MeasurableSet T → volume (Ψ '' T)=volume T)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.asymmetricArea；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | f,g及实际解映射Ψ C¹，分母处处非零；行列式1给局部面积保存，整集需单射域。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA]Ψ实际单射，保证整集面积换元；Jacobian1本身仅给局部面积。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。实际Jacobian1与所有可测集合面积保持两个结论均保留。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:666](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:666>)（`MD.Ch02.asymmetricArea`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：实际隐式求导；若全局area保持还须单射局部域与换元。
+
+签名SHA256：`703c7f58d4d7edf80d82e8abb9e9da8c77c081361672ff7e30e4faa6487afffd`；原文SHA256：`65332a3bed9f9b254652e4bd46b875e05b12d29950007e7769f06f3e4f10aa78`。
+
+## 1. MD-2.3.3-SymplecticMap · definition · 印刷p.76 / PDFp.98
+
+### 2. 原文陈述
+
+> Let $m=2N_c$. A symplectic map $\Phi:\mathbb R^m\to\mathbb R^m$ is one that preserves the symplectic differential 2-form. The simplest way to write this is as the following algebraic condition on the Jacobian matrix of $\Phi$:
+> \[\Phi'^TJ\Phi'=J.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_IsSymplecticMap {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
+  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_IsSymplecticMap；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:678](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:678>)（`MD.Ch02.bp_IsSymplecticMap`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`96eb04304a1e03b0c729378aabbd1ffddcd65d8156cce2853b1ad30721e6dd70`；原文SHA256：`efdb27b35d71a48a67a6d376a6c26530aded362cbc0a8e975039b8837af097b0`。
+
+## 1. MD-2.3.3-OneForm · definition · 印刷p.76 / PDFp.98
+
+### 2. 原文陈述
+
+> A 1-form $\alpha$ defined on $\mathbb R^m$ is a family of linear mappings from $\mathbb R^m$ to $\mathbb R$, defined for each point of $\mathbb R^m$. Let $\boldsymbol a:\mathbb R^m\to\mathbb R^m$, then we may define a one-form associated to this vector by $\alpha(\boldsymbol x)(\boldsymbol\xi)=\boldsymbol a(\boldsymbol x)^T\boldsymbol\xi$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def oneFormFamily (n : ℕ) := Q n → Q n →L[ℝ] ℝ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.oneFormFamily；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:683](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:683>)（`MD.Ch02.oneFormFamily`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`404fce0c6a0d809bb9b9ba8ddf23eb9bc73a9e7ccb6fba621f6644cf3ab653dd`；原文SHA256：`265f70d42b54096d41cfd07764352ac4ca81d9a435eec301a2819a8caae10c0f`。
+
+## 1. MD-2.3.3-Differential · definition · 印刷p.76 / PDFp.98
+
+### 2. 原文陈述
+
+> The differential of a function $g:\mathbb R^m\to\mathbb R$, denoted $dg$, is a family of linear mappings (one for each point in phase space) from vectors $\boldsymbol\xi\in\mathbb R^m$ into the reals defined by
+> \[dg(\boldsymbol q,\boldsymbol p)(\boldsymbol\xi)=\nabla g(\boldsymbol q,\boldsymbol p)^T\boldsymbol\xi.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_differential {n : ℕ} (g : Q n → ℝ) : oneForm n := fderiv ℝ g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_differential；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:686](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:686>)（`MD.Ch02.bp_differential`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`aae8d13bec2e62f94d659ecfb100fbb585582a1974b8be028bf15ccedeff89cf`；原文SHA256：`b76c38ffab987a5f609d17171291bf75f55b6ffced3e8f92f58e24ebee8a6ecd`。
+
+## 1. MD-2.3.3-CoordinateDifferentials · definition · 印刷p.76 / PDFp.98
+
+### 2. 原文陈述
+
+> So, denoting the $i$th position coordinate by $q_i$, we have $dq_i(\boldsymbol\xi)=\xi_i$; the differential is thus an example of a 1-form.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def coordinateDifferentials (n : ℕ) :
+    (Fin n → SymplecticCoordinates n →ₗ[ℝ] ℝ) × (Fin n → SymplecticCoordinates n →ₗ[ℝ] ℝ) :=
+  (textbookDq,textbookDp)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.coordinateDifferentials；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:689](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:689>)（`MD.Ch02.coordinateDifferentials`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0225b26c7d97ab1d95da16fc2c36ec15e563c54edfdb6a6d2f9f23922db0ec16`；原文SHA256：`f5d9ea97a8d2bbaf00e0f06b7d740c4a4ccf3695ae5776b9beb4076a34883cba`。
+
+## 1. MD-2.3.3-Wedge · definition · 印刷p.76 / PDFp.98
+
+### 2. 原文陈述
+
+> It is written $\alpha\wedge\beta$ and is defined, for vectors $\boldsymbol\xi,\boldsymbol\eta\in\mathbb R^m$ by
+> \[\alpha\wedge\beta(\boldsymbol\xi,\boldsymbol\eta)=\alpha(\boldsymbol\xi)\beta(\boldsymbol\eta)-\alpha(\boldsymbol\eta)\beta(\boldsymbol\xi).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_wedge {Nc : ℕ} (α β : SymplecticCoordinates Nc →ₗ[ℝ] ℝ) :
+    LinearMap.BilinForm ℝ (SymplecticCoordinates Nc) :=
+  LinearMap.BilinForm.comp (LinearMap.mul ℝ ℝ) α β -
+    LinearMap.BilinForm.comp (LinearMap.mul ℝ ℝ) β α
+
+@[simp] theorem textbookWedgeOneForms_apply {Nc : ℕ}
+    (α β : SymplecticCoordinates Nc →ₗ[ℝ] ℝ) (u v : SymplecticCoordinates Nc) :
+    textbookWedgeOneForms α β u v = α u * β v - α v * β u := by
+  change α u * β v - β u * α v = _
+  ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_wedge；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:694](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:694>)（`MD.Ch02.bp_wedge`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`f9b4321a740283837e530eb715e77f4f0ec74e60df96f00a8aeccd74c7020657`；原文SHA256：`cf1ae41933ec3d106f4e550252b92c7a83c077ef6488d2c8680a53bcc596f8b7`。
+
+## 1. MD-2.3.3-SymplecticForm · definition · 印刷p.77 / PDFp.99
+
+### 2. 原文陈述
+
+> Summing these terms results in the symplectic 2-form, denoted $\psi_S$:
+> \[\psi_S=\sum_{i=1}^{N_c}dq_i\wedge dp_i(\boldsymbol\xi,\boldsymbol\eta)=\boldsymbol\xi^T\left(\sum_{i=1}^{N_c}J^{(i)}\right)\boldsymbol\eta=\boldsymbol\xi^TJ\boldsymbol\eta.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def bp_symplecticForm (Nc : ℕ) :
+    LinearMap.BilinForm ℝ (SymplecticCoordinates Nc) :=
+  (textbookJ Nc).toBilin'
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_symplecticForm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:706](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:706>)（`MD.Ch02.bp_symplecticForm`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`f8bbc81af2a6c775d3c43847ac738030f3fffb3b93216b09919728535ed59666`；原文SHA256：`b5ef2946f74bb9f376f6f9c9c296b10e719da25071fd16fb5a8f41b3c3030565`。
+
+## 1. MD-2.3.3-FormSumWedges · unnumbered_claim · 印刷p.77 / PDFp.99
+
+### 2. 原文陈述
+
+> The wedge product of the coordinate differentials $dq_i,dp_i$ may be written
+> \[dq_i\wedge dp_i(\boldsymbol\xi,\boldsymbol\eta)=\xi_i\eta_{i+N_c}-\xi_{i+N_c}\eta_i=\boldsymbol\xi^TJ^{(i)}\boldsymbol\eta.\]
+> Summing these terms results in the symplectic 2-form, denoted $\psi_S$:
+> \[\psi_S=\sum_{i=1}^{N_c}dq_i\wedge dp_i(\boldsymbol\xi,\boldsymbol\eta)=\boldsymbol\xi^TJ\boldsymbol\eta.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem formSumWedges (Nc : ℕ) :
+    textbookSymplecticForm Nc =
+      ∑ i : Fin Nc, textbookWedgeOneForms (textbookDq i) (textbookDp i)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.formSumWedges；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:711](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:711>)（`MD.Ch02.formSumWedges`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookSymplecticForm_eq_sum_wedges。
+
+签名SHA256：`4b575c19183e85e030e61bcd93a7a9e8ea8924e2eb3fa0d78f98779db992612b`；原文SHA256：`dd7701db3aaec54045aaa6996f70455a95f3f63107dcc7af52af6219b6aff771`。
+
+## 1. MD-2.3.3-GeneralTwoForm · definition · 印刷p.77 / PDFp.99
+
+### 2. 原文陈述
+
+> In general, a differential 2-form $\psi$ is represented in coordinates by
+> \[\psi_{\boldsymbol z}=\sum_{i,j}a_{ij}(\boldsymbol z)\,dz_i\wedge dz_j,\]
+> with matrix of coefficients $A(\boldsymbol z)=(a_{ij}(\boldsymbol z))$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def coefficientTwoForm {n : ℕ} (A : Q n → Matrix (Fin n) (Fin n) ℝ)
+    (z u v : Q n) : ℝ :=
+  ∑ i, ∑ j, A z i j * (u i*v j-v i*u j)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.coefficientTwoForm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | 双和系数A的实际双线性矩阵是A-Aᵀ；若A反对称为2A。后文直接用A作矩阵表示存在因子约定疑点。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。逐字保留双和系数定义，不静默除2或假设已归一；后文矩阵解释需裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:718](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:718>)（`MD.Ch02.coefficientTwoForm`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`75288c766eebbf2d972f2c2d7213ab1cd2f07b1e3e7c6d37cbe913d5bad664ad`；原文SHA256：`93683d6555e009f2f10b7f8c5b9f21ec776ad7553dd01ce068bcc9594fc655b6`。
+
+## 1. MD-2.3.3-PullbackOne · definition · 印刷p.77 / PDFp.99
+
+### 2. 原文陈述
+
+> It is written $\Phi^*\psi$, so
+> \[(\Phi^*\psi_{\boldsymbol z})(\boldsymbol\xi)=\psi_{\Phi(\boldsymbol z)}(\Phi'(\boldsymbol z)\boldsymbol\xi).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_pullbackOne {n : ℕ} (Φ : Q n → Q n) (α : oneForm n) : oneForm n :=
+  fun z => (α (Φ z)).comp (fderiv ℝ Φ z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_pullbackOne；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:723](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:723>)（`MD.Ch02.bp_pullbackOne`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`412c7c076d6ccee75cc217401dcb094b1d16ceaf4abfc0e9fcc5e7b4291ed9ce`；原文SHA256：`ac353ced242da40624996afc6695d2f8bf5f8ab4cb0c8cfe784a7bd24ea972a7`。
+
+## 1. MD-2.3.3-PullbackTwo · definition · 印刷p.77 / PDFp.99
+
+### 2. 原文陈述
+
+> The pull-back of a differential 2-form $\psi_1\wedge\psi_2$ is consequently defined as
+> \[\Phi^*(\psi_1\wedge\psi_2)=(\Phi^*\psi_1)\wedge(\Phi^*\psi_2).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_pullbackTwo {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) (z u v : Q n) : ℝ :=
+  A.val (Φ z) ((fderiv ℝ Φ z) u) ((fderiv ℝ Φ z) v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_pullbackTwo；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:727](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:727>)（`MD.Ch02.bp_pullbackTwo`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`ae1ba9459833475ebd1eb5c236628b1455c3c3cb164d9b0d3af358c94d5e857e`；原文SHA256：`6f91d18416162a6b4a1d0fa5341eae59d76424b5cf678e98fe58cf3fe5b5c22a`。
+
+## 1. MD-2.3.3-PullbackMatrix · unnumbered_claim · 印刷p.77–78 / PDFp.99–100
+
+### 2. 原文陈述
+
+> Given a differential 2-form $\psi_{\boldsymbol z}$ represented by the matrix $A(\boldsymbol z)=(a_{ij}(\boldsymbol z))$, the pull-back of $\psi_{\boldsymbol z}$ under $\Phi$ is defined by
+> \[\Phi^*\psi_{\boldsymbol z}=\sum_{ij}b_{ij}(\boldsymbol z)dz_i\wedge dz_j,\]
+> where the matrix $B(\boldsymbol z)=(b_{ij}(\boldsymbol z))$ is related to $A(\boldsymbol z)$ by
+> \[B(\boldsymbol z)=\Phi'^T(\boldsymbol z)A(\Phi(\boldsymbol z))\Phi'(\boldsymbol z).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem pullbackMatrix :
+  ∀ n (Φ : Q n → Q n) (A : Q n → Matrix (Fin n) (Fin n) ℝ) z u v,
+    dotProduct ((fderiv ℝ Φ z) u) ((A (Φ z)).mulVec ((fderiv ℝ Φ z) v)) =
+      dotProduct u (((textbookCoordinateJacobian Φ z).transpose * A (Φ z) *
+        textbookCoordinateJacobian Φ z).mulVec v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.pullbackMatrix；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch02.lean:731](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:731>)（`MD.Ch02.pullbackMatrix`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`328275b973bcfdd02dbc04990c62d3e26fd7c1d5990b9747080fb27f94ba738e`；原文SHA256：`ec1096a54df2268823a8cc0ca4d4a294b078385e06a68bdefcc6a92210c7e2bd`。
+
+## 1. MD-2.3.3-PreservesForm · definition · 印刷p.78 / PDFp.100
+
+### 2. 原文陈述
+
+> We say that a 2-form $\psi$ is conserved under mapping $\Phi$ if
+> \[\Phi^*\psi=\psi.\]
+> In coordinates, the conservation of the 2-form represented by matrix $A$ under a mapping $\Phi$ means that
+> \[\Phi'^TA\Phi'=A.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_preservesTwoForm {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) : Prop :=
+  ∀ z u v, pullbackTwo Φ A z u v = A.val z u v
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_preservesTwoForm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | 一般位置相关A的守恒式应DΦ(z)ᵀA(Φ(z))DΦ(z)=A(z)；原文省略底点，若只针对常矩阵才无歧义。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。拉回定义保留实际底点，原文简写矩阵式是否只指常系数需导师裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:745](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:745>)（`MD.Ch02.bp_preservesTwoForm`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2cf1e332563e1049735e8c393b3308abfe23430effa9cfdf663591bda8a0ffd9`；原文SHA256：`d4802133b77ac5c54c3d6fae2cf7d13ed012c58735ae6ab6440e2eaf15180a94`。
+
+## 1. MD-2.3.3-SymplecticIffForm · unnumbered_claim · 印刷p.78 / PDFp.100
+
+### 2. 原文陈述
+
+> In the particular case of the symplectic 2-form $\psi_S$, we have $A=J$, and the following condition for conservation under the mapping $\Phi$
+> \[\Phi'^TJ\Phi'=J.\tag{2.17}\]
+> A map that conserves the symplectic 2-form, or, in coordinates, satisfies (2.17), is termed a symplectic map.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem symplecticIffForm {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) :
+    IsTextbookSymplecticMap Φ ↔ ContDiff ℝ 1 Φ ∧
+      ∀ z u v, textbookSymplecticForm Nc ((fderiv ℝ Φ z) u) ((fderiv ℝ Φ z) v) =
+        textbookSymplecticForm Nc u v
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.symplecticIffForm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:749](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:749>)（`MD.Ch02.symplecticIffForm`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.isTextbookSymplecticMap_iff_preserves_form。
+
+签名SHA256：`64a3dfb845cb5e497d3afa3182520c0dc6606396be102ffb12991feacd7594b0`；原文SHA256：`4c9be16860b2e84346faf2e4c40b57335f6daa33d1d69103e56095d262cd0a33`。
+
+## 1. MD-2.3.3-SymplecticDet · unnumbered_claim · 印刷p.78 / PDFp.100
+
+### 2. 原文陈述
+
+> Taking the determinant of both sides of (2.17), we have
+> \[\det(\Phi'^TJ\Phi')=\det(J)\Rightarrow\det(\Phi'^T)\det(J)\det(\Phi')=\det(J),\]
+> hence
+> \[\det(\Phi')^2=1,\]
+> so $|\det(\Phi')|=1$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem symplecticDet {n : ℕ} (A : SymplecticCoordinateMatrix n) (hA : IsTextbookSymplectic A) :
+    A.det^2=1 ∧ |A.det|=1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.symplecticDet；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:757](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:757>)（`MD.Ch02.symplecticDet`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.IsTextbookSymplectic.det_square; MolecularDynamics.IsTextbookSymplectic.abs_det。
+
+签名SHA256：`7f6c57054ec27fd05771ce7a35a019d337571f3029e373be5ee0b0d455134db5`；原文SHA256：`d3d5226201a0f644dc8e251c5d602e1e483ca6ce6bb69445e6ae7be79296cf04`。
+
+## 1. MD-2.3.3-HamiltonDet · unnumbered_claim · 印刷p.78 / PDFp.100
+
+### 2. 原文陈述
+
+> If the system is Hamiltonian, the map is symplectic for all $t$, and the determinant will be a continuous function of $t$, so the cases of interest have $\det(\mathcal F_t')=+1$. The flow map of a Hamiltonian system is volume preserving.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonDet {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+    (hH : ContDiff ℝ 2 H) (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n)
+    (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s,z))
+      (textbookHamiltonianVectorField H (Φ (t,z))) t)
+    (hinit : (fun z => Φ (0,z))=id) :
+    (∀ t ∈ Icc 0 τ, ∀ z, (textbookJacobian (fun y => Φ (t,y)) z).det=1) ∧
+    (∀ t ∈ Icc 0 τ, ∀ S : Set (SymplecticCoordinates n), MeasurableSet S →
+      volume ((fun z => Φ (t,z)) '' S)=volume S)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.hamiltonDet；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]联合C²实际解族，H C²、Φ0=id，τ>0；体积结论另项HamiltonVolume完整覆盖。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:763](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:763>)（`MD.Ch02.hamiltonDet`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookHamiltonianFlowJacobian_det_eq_one_of_jointC2; MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2。
+
+签名SHA256：`30cb4470734e8189d22a43094a450755569d549de8290d80b921e47bc495dab8`；原文SHA256：`4622565d6c6a1fc9a3abb64a4ed7e755fabeb8fc81127697c549493940bc99bc`。
+
+## 1. MD-2.3.4-Hessian · definition · 印刷p.79 / PDFp.101
+
+### 2. 原文陈述
+
+> where $S(t)=H_{zz}(\boldsymbol z(t,\boldsymbol\zeta))$ is a symmetric matrix.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def bp_hessian {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc := fun i j =>
+  fderiv ℝ (fderiv ℝ H) z (Pi.single i 1) (Pi.single j 1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_hessian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:777](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:777>)（`MD.Ch02.bp_hessian`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`49ce3ff559e45fc56b489bfa2587dfa36457b4247a6f473c0191742306cf6411`；原文SHA256：`cd3c162902d79beda208bb56b7a1d539502908875304e5c1d9ea63c8f283d418`。
+
+## 1. MD-2.3.4-HessianSymmetry · unnumbered_claim · 印刷p.79 / PDFp.101
+
+### 2. 原文陈述
+
+> where $S(t)=H_{zz}(\boldsymbol z(t,\boldsymbol\zeta))$ is a symmetric matrix.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hessianSymmetry {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc)
+    (hH : ContDiffAt ℝ 2 H z) : (textbookHamiltonianHessian H z).IsSymm
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.hessianSymmetry；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | H在所取点C²，混合偏导相等。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:784](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:784>)（`MD.Ch02.hessianSymmetry`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookHamiltonianHessian_isSymm。
+
+签名SHA256：`742e5e666e4a9aeca86345057edc8bae84cf22ccfc033d8c9205f8c535ef7a88`；原文SHA256：`0aa2283c07abbaddc015019db94ccb4b601dab442ca611e54f3bcb19899209b4`。
+
+## 1. MD-2.3.4-HamiltonVariationalPrinted · unnumbered_claim · 印刷p.79 / PDFp.101
+
+### 2. 原文陈述
+
+> For the Hamiltonian system $\dot{\boldsymbol z}=J\nabla H(\boldsymbol z)$, these take the form:
+> \[\dot W=JS(t)W,\]
+> where $S(t)=H_{zz}(\boldsymbol z(t,\boldsymbol\zeta))$ is a symmetric matrix.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonVariationalPrinted : ∀ n (H : SymplecticCoordinates n → ℝ)
+    (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n) τ ζ,
+    ContDiff ℝ 2 H → ContDiff ℝ 1 Φ → (∀ z, Φ (0,z)=z) →
+    (∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s,z))
+      (textbookHamiltonianVectorField H (Φ (t,z))) t) →
+    ∀ t ∈ Ioo 0 τ, HasDerivAt
+      (fun s => textbookJacobian (fun y => Φ (s,y)) (Φ (s,ζ)))
+      (textbookJ n * textbookHamiltonianHessian H (Φ (t,ζ)) *
+        textbookJacobian (fun y => Φ (t,y)) (Φ (t,ζ))) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.hamiltonVariationalPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | 与p.73一样W应在固定初值ζ求导；原页后文明确W(t)=F′t(z(t,ζ))，本条保留该字面W。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。原文移动取值点与变分方程冲突；不静默改成固定ζ。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:791](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:791>)（`MD.Ch02.hamiltonVariationalPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原书W取值点裁定；固定初值真实流版本已有证明。
+
+签名SHA256：`1707f4118e60d3169d3bcd8f4ad90f137d68d135ee19be188152113261e98154`；原文SHA256：`4f472655666f7e7b8a5fec112134f8f5fdc04ba3cd7345a56d9575dabd9963f1`。
+
+## 1. MD-2.3.4-MatrixCancellation · unnumbered_claim · 印刷p.79 / PDFp.101
+
+### 2. 原文陈述
+
+> Computing
+> \[W^TJ\dot W=W^TJ^2SW=-W^TSW,\]
+> whereas
+> \[\dot W^TJW=W^TS^TJ^TJW=W^TSW,\]
+> hence
+> \[\frac{\mathrm d}{\mathrm dt}W^TJW=W^TJ\dot W+\dot W^TJW=0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem matrixCancellation {Nc : ℕ}
+    (S W : SymplecticCoordinateMatrix Nc) (hS : S.IsSymm) :
+    (textbookJ Nc * S * W)ᵀ * textbookJ Nc * W +
+      Wᵀ * textbookJ Nc * (textbookJ Nc * S * W) = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.matrixCancellation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | S对称；任意矩阵W。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:804](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:804>)（`MD.Ch02.matrixCancellation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.hamiltonian_variational_matrix_cancellation。
+
+签名SHA256：`b339f782b67e9e3b6bac920332dd7885787a0bda6539a6595eb66356f97594f5`；原文SHA256：`b3923503a201048835cfd76bedc6122e378cb546f27080bbe5f1489a3e4f999a`。
+
+## 1. MD-2.3.4-FormConstant · unnumbered_claim · 印刷p.79 / PDFp.101
+
+### 2. 原文陈述
+
+> This means that $W^TJW$ is a constant matrix.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem formConstant {Nc : ℕ}
+    (S W : ℝ → SymplecticCoordinateMatrix Nc) (τ : ℝ)
+    (hS : ∀ t ∈ Icc 0 τ, (S t).IsSymm)
+    (hW : ∀ t ∈ Icc 0 τ,
+      HasDerivWithinAt W (textbookJ Nc * S t * W t) (Icc 0 τ) t) :
+    ∀ t ∈ Icc 0 τ, (W t)ᵀ * textbookJ Nc * W t = (W 0)ᵀ * textbookJ Nc * W 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.formConstant；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | S(t)逐点对称，W实际满足W′=JSW，闭连通时间窗；这一独立矩阵ODE陈述不把流的变分方程结论作流辛性前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:812](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:812>)（`MD.Ch02.formConstant`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.hamiltonian_variational_form_constant。
+
+签名SHA256：`0c85874445d78c3e0a1451e193a25dba959596f7cd2a3444fca04a7d7c923a62`；原文SHA256：`dd6ca36dc55157ce72ec3011df773132385e69ebef69668a14a2ae5bcb00af3d`。
+
+## 1. MD-2.3.4-HamiltonSymplectic · unnumbered_claim · 印刷p.79 / PDFp.101
+
+### 2. 原文陈述
+
+> hence
+> \[W^TJW\equiv W(0)^TJW(0)=J.\]
+> This proves that the flow map of a Hamiltonian system is a symplectic map.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonSymplectic {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (hH : ContDiff ℝ 2 H)
+    (Φ : ℝ × SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z))
+      (textbookHamiltonianVectorField H (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) :
+    ∀ t ∈ Icc 0 τ, IsTextbookSymplecticMap (fun z => Φ (t, z))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.hamiltonSymplectic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际解族联合C²；H C²、Φ0=id、τ>0及真实Hamilton ODE。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:822](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:822>)（`MD.Ch02.hamiltonSymplectic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2。
+
+签名SHA256：`b6c0be2f6dee8891f34d8bdee5f141ed8acc5a17f20f49e1bf8fedfacc10b8c7`；原文SHA256：`8000d3b9fb3189d4c9c9e610064bbcf5009d1a6aee5b26d7eb7171a231d0d893`。
+
+## 1. MD-2.3.5-ChainRule · unnumbered_claim · 印刷p.79 / PDFp.101
+
+### 2. 原文陈述
+
+> Let $\Phi_1$ and $\Phi_2$ be any pair of symplectic maps. Then
+> \[(\Phi_1\circ\Phi_2)'=\Phi_1'\Phi_2',\]
+> by the chain rule,
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem chainRule {Nc : ℕ}
+    (Φ Ψ : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (hΦ : Differentiable ℝ Φ) (hΨ : Differentiable ℝ Ψ) (z : SymplecticCoordinates Nc) :
+    textbookJacobian (Φ ∘ Ψ) z = textbookJacobian Φ (Ψ z) * textbookJacobian Ψ z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.chainRule；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 两个实际映射在相应点可微；外导数在Φ₂(z)取值，原文简写省略底点。 | [EXTRA] |
+| 原页核对/疑点 | 原文Φ₁′Φ₂′未写外导数的Φ₂(z)取值点；Lean用正确链式法则，需审校确认简写约定。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:835](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:835>)（`MD.Ch02.chainRule`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookJacobian_comp。
+
+签名SHA256：`2c11109e0d6a1733ccd5ee761fc8a56fdb9c6944663a296873a98a619a2f6dbc`；原文SHA256：`50672b6d73896bd39ecfcf8016cb40ebdbcfb1f6e65aaa9509b820ef81c45b28`。
+
+## 1. MD-2.3.5-SymplecticComposition · unnumbered_claim · 印刷p.79 / PDFp.101
+
+### 2. 原文陈述
+
+> Thus the composition of any pair of symplectic maps is a symplectic map.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem symplecticComposition {Nc : ℕ}
+    {Φ Ψ : SymplecticCoordinates Nc → SymplecticCoordinates Nc}
+    (hΦ : IsTextbookSymplecticMap Φ) (hΨ : IsTextbookSymplecticMap Ψ) :
+    IsTextbookSymplecticMap (Φ ∘ Ψ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.symplecticComposition；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:842](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:842>)（`MD.Ch02.symplecticComposition`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.IsTextbookSymplecticMap.comp。
+
+签名SHA256：`166a2e3618e42474f7aa0f0ee7d89459ba5f7e167df504e6ee7cbdcf8c8ff47d`；原文SHA256：`0c798ea99671a09c2649cca8df721a874140903ea524b96daa2a15cf695cd1c1`。
+
+## 1. MD-2.3.5-SymplecticInverse · unnumbered_claim · 印刷p.79 / PDFp.101
+
+### 2. 原文陈述
+
+> and the inverse of a symplectic map is symplectic since $\Phi'^TJ\Phi'=J$ implies $J=\Phi'^{-T}J\Phi'^{-1}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem symplecticInverse {Nc : ℕ}
+    {e : Equiv.Perm (SymplecticCoordinates Nc)} (he : IsTextbookSymplecticEquiv e) :
+    IsTextbookSymplecticEquiv e.symm
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.symplecticInverse；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]e为确实全局双射且e和e⁻¹可微的辛微分同胚；原文前句从det非零推出全球逆无效，另项字面保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:850](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:850>)（`MD.Ch02.symplecticInverse`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.IsTextbookSymplecticEquiv.symm。
+
+签名SHA256：`2694b055598d0580332816e2bc2be4f1a287c770040aa2b56e213e0049179083`；原文SHA256：`30880c4a58754a577bb25c7d2f25e350cfb2bedf3c648882a783eff3c125f668`。
+
+## 1. MD-2.3.5-GlobalGroupPrinted · unnumbered_claim · 印刷p.79 / PDFp.101
+
+### 2. 原文陈述
+
+> The determinant of a symplectic map is $\pm1$, hence these maps are always invertible, and the inverse of a symplectic map is symplectic since $\Phi'^TJ\Phi'=J$ implies $J=\Phi'^{-T}J\Phi'^{-1}$. Thus the symplectic maps form a group under composition.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem globalGroupPrinted : ∀ n (Φ : SymplecticCoordinates n → SymplecticCoordinates n),
+    IsTextbookSymplecticMap Φ → Function.Bijective Φ ∧
+      IsTextbookSymplecticMap (Function.invFun Φ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.globalGroupPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | Jacobian可逆仅推出局部可逆，不能推出任意辛映射全球双射；正确群是给定全球辛微分同胚。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。字面全球逆与逆辛性两个结论保留；不偷偷加入全球双射为假设。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:857](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:857>)（`MD.Ch02.globalGroupPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原书全球逆断言裁定；正确微分同胚群接口已有。
+
+签名SHA256：`f8b91dae6784ff9437a94d82ddd2bb14959e8005f733036a5474cd2a685dae90`；原文SHA256：`de97cbfc93e31c33430ad7d2d08b01fb13c47390f17e0b85db92c10371b3cb8a`。
+
+## 1. MD-2.3.6-SymplecticIntegrator · definition · 印刷p.80 / PDFp.102
+
+### 2. 原文陈述
+
+> A symplectic integrator is an approximation of the flow map that conserves the symplectic 2-form.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_symplecticIntegrator {n : ℕ} (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) : Prop :=
+  ∀ h, IsTextbookSymplecticMap (G h)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_symplecticIntegrator；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:863](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:863>)（`MD.Ch02.bp_symplecticIntegrator`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`593f5f3d0b323b5ebe4c517f6a4d1bb0ef7452aea77eab904ad3e70e3ea66fae`；原文SHA256：`f666a9c3a89d6b6219c5109dd465bb1b8d1f038cb9fe6504b81dd21c9688e00f`。
+
+## 1. MD-2.3.6-SymplecticEuler · definition · 印刷p.80 / PDFp.102
+
+### 2. 原文陈述
+
+> The following scheme is a slight modification of the Euler method.
+> \[\boldsymbol Q=\boldsymbol q+hM^{-1}\boldsymbol P,\tag{2.18}\]
+> \[\boldsymbol P=\boldsymbol p+hF(\boldsymbol q).\tag{2.19}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def bp_symplecticEuler {Nc : ℕ}
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :
+    SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+  textbookPositionDrift m h ∘ textbookMomentumKick (textbookPotentialForce U) h
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_symplecticEuler；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:867](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:867>)（`MD.Ch02.bp_symplecticEuler`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`a98ed6b08a8429095fdff8ae4780cf114147f1fc5c53125a9d7c606dfa7ede0e`；原文SHA256：`5d3e8b940f30d2a06cbe8e7e498e8e67bf135ff58bcc897a0a659c25dfe9e592`。
+
+## 1. MD-2.3.6-KickDifferential · unnumbered_claim · 印刷p.81 / PDFp.103
+
+### 2. 原文陈述
+
+> then
+> \[dQ_i=dq_i+hm_i^{-1}dP_i,\tag{2.20}\]
+> \[dP_i=dp_i-h\sum_{j=1}^{N_c}\frac{\partial^2U}{\partial q_j\partial q_i}dq_j.\tag{2.21}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem kickDifferential : ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h z,
+    ContDiff ℝ 2 U → ∀ ξ : SymplecticCoordinates n, ∀ i : Fin n,
+      ((fderiv ℝ (textbookSymplecticEuler m U h) z) ξ) (Sum.inl i) =
+        ξ (Sum.inl i)+h*(m i)⁻¹*((fderiv ℝ (textbookSymplecticEuler m U h) z) ξ) (Sum.inr i) ∧
+      ((fderiv ℝ (textbookSymplecticEuler m U h) z) ξ) (Sum.inr i) =
+        ξ (Sum.inr i)-h*((fderiv ℝ (grad U) (z ∘ Sum.inl)) (ξ ∘ Sum.inl)) i
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.kickDifferential；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | U C²，实际Hessian。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。完整实际辛Euler步映射的两个坐标微分子句；grad U的真实导数即Hessian，不以任意矩阵代替。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch02.lean:874](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:874>)（`MD.Ch02.kickDifferential`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：完整步映射Fréchet导数与kick/drift组合的坐标整理。
+
+签名SHA256：`7b8a1997890bab8bd0a33f1481ceab26b89037973f027e5adeaced1337f61f63`；原文SHA256：`c2a7ad9bb869b14ec1a082193640d589a5a9e4658c5fc33d4598e019c7899172`。
+
+## 1. MD-2.3.6-WedgeSelf · unnumbered_claim · 印刷p.81 / PDFp.103
+
+### 2. 原文陈述
+
+> but $du\wedge du\equiv0$ for any $u$,
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem wedgeSelf :
+  ∀ n (α : SymplecticCoordinates n →ₗ[ℝ] ℝ) u v, textbookWedgeOneForms α α u v = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.wedgeSelf；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:883](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:883>)（`MD.Ch02.wedgeSelf`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter02Review.wedgeSelf_proved。
+
+签名SHA256：`6a6adb7e0b3821d1a023a56b7934587e90b78f198ecd94cfe75ef1f680ae41da`；原文SHA256：`08b235e407cc23875bdf3997c74f3b028c773d300f9ddd36384ca86e9ab64f5e`。
+
+## 1. MD-2.3.6-SymplecticEulerPreserves · unnumbered_claim · 印刷p.81 / PDFp.103
+
+### 2. 原文陈述
+
+> This implies that
+> \[\sum_{i=1}^{N_c}dQ_i\wedge dP_i=\sum_{i=1}^{N_c}dq_i\wedge dp_i,\]
+> which means that the method is symplectic.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem symplecticEulerPreserves {Nc : ℕ}
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) (hU : ContDiff ℝ 2 U) :
+    IsTextbookSymplecticMap (textbookSymplecticEuler m U h)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.symplecticEulerPreserves；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | U C²，固定对角质量；真实完整步映射。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:889](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:889>)（`MD.Ch02.symplecticEulerPreserves`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookSymplecticEuler_isSymplectic。
+
+签名SHA256：`c51a9814bbacde7e34af713feaef4f9d1a64c6e0a47319fd661045074c430377`；原文SHA256：`c2be4ae9b813d2dab452e374d404e416a6a449bf4aa9968cd4a68e974cc5dfee`。
+
+## 1. MD-2.3.7-Adjoint · definition · 印刷p.81 / PDFp.103
+
+### 2. 原文陈述
+
+> Given any numerical integrator $\mathcal G_h$, consider the map
+> \[\mathcal G_h^*=\mathcal G_{-h}^{-1}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def bp_adjoint {E : Type*} (G : ℝ → Equiv.Perm E) (h : ℝ) :
+    Equiv.Perm E := (G (-h)).symm
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_adjoint；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]方法G每个可用h为实际Equiv.Perm；只在负步可逆时定义伴随，不能宣称任意步映射天然可逆。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:896](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:896>)（`MD.Ch02.bp_adjoint`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`42cb7d57564e1f942c11886dad4d626551250e38a3441e1bb65c675d8b6b1ba1`；原文SHA256：`0736d11cb0a588ce413ca64658229a755f409eaf9f9e70950b74d3d6db6361d8`。
+
+## 1. MD-2.3.7-FlowSelfAdjoint · unnumbered_claim · 印刷p.82 / PDFp.104
+
+### 2. 原文陈述
+
+> For the flow map $\mathcal F_h$, we know that the inverse map is precisely $\mathcal F_{-h}$, so $\mathcal F_h^*=\mathcal F_h$, i.e. the flow map is in the normal sense “self-adjoint,” i.e. symmetric.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem flowSelfAdjoint {E : Type*} [TopologicalSpace E]
+    (F : Flow ℝ E) : textbookAdjointMethod (textbookFlowMethod F) = textbookFlowMethod F
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.flowSelfAdjoint；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]给定全球Flow群；原文局部流若无全球存在，须在正负步都可用域解释，未宣称所有ODE有全球流。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:901](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:901>)（`MD.Ch02.flowSelfAdjoint`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookFlowMethod_isSelfAdjoint。
+
+签名SHA256：`81adb59ea92d38e20b7cbaad7311bcc3f9e2f929c311b4a9f7c5a31c34e8fb26`；原文SHA256：`68aa8cc4752051dce35842c600cc3630a84614829bdeeda1be8506fe8f7240dc`。
+
+## 1. MD-2.3.7-BackwardEuler · definition · 印刷p.82 / PDFp.104
+
+### 2. 原文陈述
+
+> The adjoint method is defined by
+> \[\boldsymbol Z=\boldsymbol z+hf(\boldsymbol Z),\]
+> and where the first was explicit, the second is implicit (it is the so-called backward Euler method).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def bp_backwardEulerRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop := w = z + h • f w
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_backwardEulerRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:906](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:906>)（`MD.Ch02.bp_backwardEulerRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0710fa74f33ab3f99e1850938d06d2e7c63d8f81d0991d268919c67a3bbd9309`；原文SHA256：`f5a3d79d06c9c2f410de38e20051c591a297bb25a55373886705beeea9824261`。
+
+## 1. MD-2.3.7-EulerAdjoint · unnumbered_claim · 印刷p.82 / PDFp.104
+
+### 2. 原文陈述
+
+> In particular, consider Euler’s method
+> \[\boldsymbol Z=\boldsymbol z+hf(\boldsymbol z).\]
+> The adjoint method is defined by
+> \[\boldsymbol Z=\boldsymbol z+hf(\boldsymbol Z),\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem eulerAdjoint (f : E → E) (G : ℝ → Equiv.Perm E)
+    (h : ℝ) (hG : ∀ Z, G (-h) Z = eulerStep f (-h) Z) (z Z : E) :
+    textbookAdjointMethod G h z = Z ↔ Z = z + h • f Z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.eulerAdjoint；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]给定负步Euler实际双射；G(-h)与Euler映射逐点一致，不假设所有f/h可逆。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:910](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:910>)（`MD.Ch02.eulerAdjoint`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.euler_adjoint_iff_backward。
+
+签名SHA256：`0c1f51145a4d79d3cc12a17befd1f05442ceb9bd0ed9446b642989c978f779a3`；原文SHA256：`075fa842ebabae09eb76b36cacb98f95518959f1cf4bb735c6fe03f4d3cdb4a9`。
+
+## 1. MD-2.3.7-AdjointSymplecticEuler · definition · 印刷p.82 / PDFp.104
+
+### 2. 原文陈述
+
+> Its adjoint method has a similar structure:
+> \[\boldsymbol Q=\boldsymbol q+hM^{-1}\boldsymbol p,\tag{2.22}\]
+> \[\boldsymbol P=\boldsymbol p+hF(\boldsymbol Q).\tag{2.23}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def bp_adjointSymplecticEuler {Nc : ℕ}
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :
+    Equiv.Perm (SymplecticCoordinates Nc) :=
+  textbookAdjointMethod (textbookSymplecticEulerEquiv m U) h
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.bp_adjointSymplecticEuler；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch02.lean:916](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:916>)（`MD.Ch02.bp_adjointSymplecticEuler`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c292e2abe748bed70188ca6aa328d53b6608001f937e3a5ccb9a60a614dff88e`；原文SHA256：`47868b07b50c6df1188cbb6c67432505b15ab9266a0622e4c69cf5b90d8a4813`。
+
+## 1. MD-2.3.7-AdjointInvolution · unnumbered_claim · 印刷p.82 / PDFp.104
+
+### 2. 原文陈述
+
+> the adjoint of the adjoint is the original method:
+> \[\mathcal G_h^{**}=[\mathcal G_{-h}^*]^{-1}=[\mathcal G_h^{-1}]^{-1}=\mathcal G_h.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem adjointInvolution {E : Type*} (G : ℝ → Equiv.Perm E) :
+    textbookAdjointMethod (textbookAdjointMethod G) = G
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch02.adjointInvolution；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 实际可逆步方法族Equiv.Perm；负步及双逆确实存在。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch02.lean:923](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:923>)（`MD.Ch02.adjointInvolution`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookAdjointMethod_involutive。
+
+签名SHA256：`277699fc6f0d6bf772721982b3fcdc5937bcd0c78f10f7a6372777d786248fc6`；原文SHA256：`164b3dbcaed4b6129a197a3c72209501ef67ff65392263cbc556a25c63f6116e`。

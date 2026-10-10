@@ -30,10 +30,7 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-043"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -67,10 +64,7 @@ theorem errorDifference :
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-044"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -102,10 +96,7 @@ def consistency {n : ℕ} (G F : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : �
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-045"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -141,10 +132,7 @@ def stability {n : ℕ} (G : ℝ → Q n → Q n) (D : Set (Q n)) : Prop :=
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-046"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -186,10 +174,7 @@ theorem errorRecursion (G : ℝ → E → E) (γ : ℝ → E) (D : Set E)
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-047"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -227,10 +212,7 @@ theorem errorBound (G : ℝ → E → E) (γ : ℝ → E) (D : Set E)
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-048"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -273,10 +255,7 @@ theorem consistencyConvergence
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-049"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -310,10 +289,7 @@ def bp_scalarVerlet (F : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-050"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean

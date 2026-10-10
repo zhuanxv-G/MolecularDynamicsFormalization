@@ -1,0 +1,60 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16a",
+  "source_ids": [
+    "MD-2.3.3-PullbackOne"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 99,
+      "printed_page": 77
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c1e9fb58a79658d78aa722c84d63bbd9891d803e153b2e388562f84960da5dd6",
+  "lean_sha256": "3b414f97377d7f8e8c949a2f11cafdc22d0877d8959e56b2540ea6f820aa9b55",
+  "signature_sha256": "412c7c076d6ccee75cc217401dcb094b1d16ceaf4abfc0e9fcc5e7b4291ed9ce",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "bp_pullbackOne",
+      "code_sha256": "412c7c076d6ccee75cc217401dcb094b1d16ceaf4abfc0e9fcc5e7b4291ed9ce"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "oneForm",
+      "code_sha256": "731afcdc121a249e3d2631d1209aea3a051688f3e196beb20dfdc99b440ffdb7"
+    }
+  ],
+  "paste_plus_pdf_bytes": 81607,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3315,
+      "sha256": "5f57bab41791ab32b7c1f0e42456ab2bf1f7f944a9ec6c9c9a612c7af1f29271"
+    },
+    "BATCH16a_PAGES.pdf": {
+      "bytes": 78358,
+      "sha256": "8d4f9949b4b92d5d4745090e9b9dc82a27b2ae4c2aecc3b1297b6c760537b07c"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

@@ -28,10 +28,7 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-019"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -68,10 +65,7 @@ def bp_mechanicalL {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (q v : Q n) :
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-020"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -102,10 +96,7 @@ def admissibleSmooth {n : ℕ} (a b : ℝ) (x y : Q n) (q : ℝ → Q n) : Prop 
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-021"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -136,10 +127,7 @@ def bp_action {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) 
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-022"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -169,10 +157,7 @@ def bp_variation {n : ℕ} (q η : ℝ → Q n) (ε : ℝ) (t : ℝ) : Q n := q 
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-023"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -218,10 +203,7 @@ theorem firstVariation :
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-024"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -256,10 +238,7 @@ theorem taylorPrinted : ∀ n (k : ℕ) (f : Q n → ℝ) z₀,
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-025"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -293,10 +272,7 @@ def stationarySmoothAction {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : 
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-026"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean

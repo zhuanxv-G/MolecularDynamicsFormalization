@@ -1,0 +1,77 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14a",
+  "source_ids": [
+    "MD-2.3.2-LinearDivergence"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 96,
+      "printed_page": 74
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 97,
+      "printed_page": 75
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c1e9fb58a79658d78aa722c84d63bbd9891d803e153b2e388562f84960da5dd6",
+  "lean_sha256": "3b414f97377d7f8e8c949a2f11cafdc22d0877d8959e56b2540ea6f820aa9b55",
+  "signature_sha256": "66579fe2fecac5cec625529bb107f69c8223f102fa685d3c0acb05dcc7059864",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "divergence",
+      "code_sha256": "fca4155f771790cf8c3acf9f9abc777c144909df3175e048be774a4479f982d6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "divergence",
+      "code_sha256": "dadd38091a1232e6bbd2460766d10afb82a44329b5f562152debdcd372b86255"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/LiouvilleVolume.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCoordinateJacobian",
+      "code_sha256": "96dc75035e362b25476b1c4cbfcd553e5349a04a3b5b286bb07fbb14c496afd0"
+    }
+  ],
+  "paste_plus_pdf_bytes": 172297,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4473,
+      "sha256": "91ae3d911f3488351b3d6d8623ab8fa17127b0df42370775ac5da85624ed47cd"
+    },
+    "BATCH14a_PAGES.pdf": {
+      "bytes": 167908,
+      "sha256": "30b264d785f7489593eccb8954205192f7afc163a4541d0e437f956116e73984"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

@@ -2,7 +2,7 @@
 
 范围：印刷p.53–94/PDF75–116，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前56条；旧清单映射62/160；本地PASS 49；网站返回0。
+当前110条；旧清单映射115/160；本地PASS 97；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -62,6 +62,60 @@
 | MD-2.2.4-IntegralMeanValue | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-2.2.4-IntegralLipschitz | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-2.2.4-IntegralErrorPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书1/2因子裁定；均值与轨迹误差组合。 |
+| MD-2.3.1-Divergence | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.1-Liouville | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.1-HamiltonDivergence | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.1-HamiltonVolume | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.1-VolumeChange | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-2.3.1-VariationalPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书取值点裁定；正确固定初值版本库已有jointC²证明。 |
+| MD-2.3.1-DeterminantODE | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.1-DeterminantExponential | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；真实矩阵行列式导数与标量积分因子常值证明。 |
+| MD-2.3.1-FlowDet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.1-LJOscillator | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.1-LJBoundedPeriodic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；LJ能级闭曲线/非平衡周期轨道理论；能量守恒本身不足以自动得周期。 |
+| MD-2.3.2-LinearDivergence | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；线性流行列式指数公式及体积换元的必要/充分方向。 |
+| MD-2.3.2-LinearEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.2-EulerVolumePrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete |
+| MD-2.3.2-EulerVolumeCounterexample | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.2-AsymmetricEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.2-AsymmetricJacobian | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；隐式实际关系的求导、分母非零解导数及2×2矩阵整理。 |
+| MD-2.3.2-AsymmetricArea | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际隐式求导；若全局area保持还须单射局部域与换元。 |
+| MD-2.3.3-SymplecticMap | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.3-OneForm | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.3-Differential | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.3-CoordinateDifferentials | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.3-Wedge | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.3-SymplecticForm | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.3-FormSumWedges | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.3-GeneralTwoForm | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-2.3.3-PullbackOne | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.3-PullbackTwo | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.3-PullbackMatrix | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-2.3.3-PreservesForm | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-2.3.3-SymplecticIffForm | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.3-SymplecticDet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.3-HamiltonDet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.4-Hessian | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.4-HessianSymmetry | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.4-HamiltonVariationalPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书W取值点裁定；固定初值真实流版本已有证明。 |
+| MD-2.3.4-MatrixCancellation | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.4-FormConstant | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.4-HamiltonSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.5-ChainRule | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.5-SymplecticComposition | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.5-SymplecticInverse | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.5-GlobalGroupPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书全球逆断言裁定；正确微分同胚群接口已有。 |
+| MD-2.3.6-SymplecticIntegrator | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.6-SymplecticEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.6-KickDifferential | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；完整步映射Fréchet导数与kick/drift组合的坐标整理。 |
+| MD-2.3.6-WedgeSelf | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.6-SymplecticEulerPreserves | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.7-Adjoint | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.7-FlowSelfAdjoint | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.7-BackwardEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.7-EulerAdjoint | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.3.7-AdjointSymplecticEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.3.7-AdjointInvolution | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 
 ## 旧160条完整映射
 
@@ -128,59 +182,59 @@
 | CH02-059 | MD-2.2.4-IntegralMeanValue |
 | CH02-060 | MD-2.2.4-IntegralLipschitz |
 | CH02-061 | MD-2.2.4-IntegralErrorPrinted |
-| CH02-062 | PENDING：所属节尚未处理 |
-| CH02-063 | PENDING：所属节尚未处理 |
-| CH02-064 | PENDING：所属节尚未处理 |
-| CH02-065 | PENDING：所属节尚未处理 |
-| CH02-066 | PENDING：所属节尚未处理 |
-| CH02-067 | PENDING：所属节尚未处理 |
-| CH02-068 | PENDING：所属节尚未处理 |
-| CH02-069 | PENDING：所属节尚未处理 |
-| CH02-070 | PENDING：所属节尚未处理 |
-| CH02-071 | PENDING：所属节尚未处理 |
-| CH02-072 | PENDING：所属节尚未处理 |
-| CH02-073 | PENDING：所属节尚未处理 |
-| CH02-074 | PENDING：所属节尚未处理 |
-| CH02-075 | PENDING：所属节尚未处理 |
-| CH02-076 | PENDING：所属节尚未处理 |
-| CH02-077 | PENDING：所属节尚未处理 |
-| CH02-078 | PENDING：所属节尚未处理 |
-| CH02-079 | PENDING：所属节尚未处理 |
-| CH02-080 | PENDING：所属节尚未处理 |
-| CH02-081 | PENDING：所属节尚未处理 |
-| CH02-082 | PENDING：所属节尚未处理 |
-| CH02-083 | PENDING：所属节尚未处理 |
-| CH02-084 | PENDING：所属节尚未处理 |
-| CH02-085 | PENDING：所属节尚未处理 |
-| CH02-086 | PENDING：所属节尚未处理 |
-| CH02-087 | PENDING：所属节尚未处理 |
-| CH02-088 | PENDING：所属节尚未处理 |
-| CH02-089 | PENDING：所属节尚未处理 |
-| CH02-090 | PENDING：所属节尚未处理 |
-| CH02-091 | PENDING：所属节尚未处理 |
-| CH02-092 | PENDING：所属节尚未处理 |
-| CH02-093 | PENDING：所属节尚未处理 |
-| CH02-094 | PENDING：所属节尚未处理 |
-| CH02-095 | PENDING：所属节尚未处理 |
-| CH02-096 | PENDING：所属节尚未处理 |
-| CH02-097 | PENDING：所属节尚未处理 |
-| CH02-098 | PENDING：所属节尚未处理 |
-| CH02-099 | PENDING：所属节尚未处理 |
-| CH02-100 | PENDING：所属节尚未处理 |
-| CH02-101 | PENDING：所属节尚未处理 |
-| CH02-102 | PENDING：所属节尚未处理 |
-| CH02-103 | PENDING：所属节尚未处理 |
-| CH02-104 | PENDING：所属节尚未处理 |
-| CH02-105 | PENDING：所属节尚未处理 |
-| CH02-106 | PENDING：所属节尚未处理 |
-| CH02-107 | PENDING：所属节尚未处理 |
-| CH02-108 | PENDING：所属节尚未处理 |
-| CH02-109 | PENDING：所属节尚未处理 |
-| CH02-110 | PENDING：所属节尚未处理 |
-| CH02-111 | PENDING：所属节尚未处理 |
-| CH02-112 | PENDING：所属节尚未处理 |
-| CH02-113 | PENDING：所属节尚未处理 |
-| CH02-114 | PENDING：所属节尚未处理 |
+| CH02-062 | MD-2.3.1-Divergence |
+| CH02-063 | MD-2.3.1-Liouville |
+| CH02-064 | MD-2.3.1-HamiltonDivergence |
+| CH02-065 | MD-2.3.1-HamiltonVolume |
+| CH02-066 | MD-2.3.1-VolumeChange |
+| CH02-067 | MD-2.3.1-VariationalPrinted |
+| CH02-068 | MD-2.3.1-DeterminantODE |
+| CH02-069 | MD-2.3.1-DeterminantExponential |
+| CH02-070 | MD-2.3.1-FlowDet |
+| CH02-071 | MD-2.3.2-LinearDivergence |
+| CH02-072 | MD-2.3.2-LinearEuler |
+| CH02-073 | MD-2.3.2-EulerVolumePrinted |
+| CH02-074 | MD-2.3.2-EulerVolumeCounterexample |
+| CH02-075 | MD-2.3.2-AsymmetricEuler |
+| CH02-076 | MD-2.3.2-AsymmetricJacobian |
+| CH02-077 | MD-2.3.2-AsymmetricArea |
+| CH02-078 | MD-2.3.3-SymplecticMap |
+| CH02-079 | MD-2.3.3-OneForm |
+| CH02-080 | MD-2.3.3-Differential |
+| CH02-081 | MD-2.3.3-CoordinateDifferentials |
+| CH02-082 | MD-2.3.3-Wedge |
+| CH02-083 | MD-2.3.3-SymplecticForm |
+| CH02-084 | MD-2.3.3-FormSumWedges |
+| CH02-085 | MD-2.3.3-GeneralTwoForm |
+| CH02-086 | MD-2.3.3-PullbackOne |
+| CH02-087 | MD-2.3.3-PullbackTwo |
+| CH02-088 | MD-2.3.3-PullbackMatrix |
+| CH02-089 | MD-2.3.3-PreservesForm |
+| CH02-090 | MD-2.3.3-SymplecticIffForm |
+| CH02-091 | MD-2.3.3-SymplecticDet |
+| CH02-092 | MD-2.3.3-HamiltonDet |
+| CH02-093 | MD-2.3.4-Hessian |
+| CH02-094 | MD-2.3.4-HessianSymmetry |
+| CH02-095 | MD-2.3.4-HamiltonVariationalPrinted |
+| CH02-096 | MD-2.3.4-MatrixCancellation |
+| CH02-097 | MD-2.3.4-FormConstant |
+| CH02-098 | MD-2.3.4-HamiltonSymplectic |
+| CH02-099 | MD-2.3.5-ChainRule |
+| CH02-100 | MD-2.3.5-SymplecticComposition |
+| CH02-101 | MD-2.3.5-SymplecticInverse |
+| CH02-102 | MD-2.3.5-GlobalGroupPrinted |
+| CH02-103 | MD-2.3.5-GlobalGroupPrinted |
+| CH02-104 | MD-2.3.6-SymplecticIntegrator |
+| CH02-105 | MD-2.3.6-SymplecticEuler |
+| CH02-106 | MD-2.3.6-KickDifferential |
+| CH02-107 | MD-2.3.6-WedgeSelf |
+| CH02-108 | MD-2.3.6-SymplecticEulerPreserves |
+| CH02-109 | MD-2.3.7-Adjoint |
+| CH02-110 | MD-2.3.7-FlowSelfAdjoint |
+| CH02-111 | MD-2.3.7-BackwardEuler |
+| CH02-112 | MD-2.3.7-EulerAdjoint |
+| CH02-113 | MD-2.3.7-AdjointSymplecticEuler |
+| CH02-114 | MD-2.3.7-AdjointInvolution |
 | CH02-115 | PENDING：所属节尚未处理 |
 | CH02-116 | PENDING：所属节尚未处理 |
 | CH02-117 | PENDING：所属节尚未处理 |
@@ -250,6 +304,19 @@
 - MD-2.2.3-VerletStability：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 实际Verlet映射的1+hC Lipschitz界，可用半踢漂移组合逐坐标界证明。
 - MD-2.2.4-AngularMomentum：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 短证明3次失败：within导数的tuple投影/Filter接口转换未完成；乘积求导抵消路线及日志已保留。
 - MD-2.2.4-IntegralErrorPrinted：保留字面1/(2L)，需裁定原文常数疑误。 原书1/2因子裁定；均值与轨迹误差组合。由(2.12)及均值不等式只能得Kbar B/L，额外1/2未推导；常数Kbar若重命名需明确。
+- MD-2.3.1-VariationalPrinted：忠实保留移动取值点及两子句；与正确变分矩阵不同，需导师裁定。 原书取值点裁定；正确固定初值版本库已有jointC²证明。原文W在z(t)取Jacobian，而变分矩阵应在固定初值ζ取Jacobian；沿移动取值点会多一链式项。后式还需要W可逆，局部流可给但不能忽略域。
+- MD-2.3.1-DeterminantExponential：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 真实矩阵行列式导数与标量积分因子常值证明。
+- MD-2.3.1-LJBoundedPeriodic：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 LJ能级闭曲线/非平衡周期轨道理论；能量守恒本身不足以自动得周期。
+- MD-2.3.2-LinearDivergence：完整div=tr S及实际线性流所有可测集合体积保存↔tr S=0；未仅以迹等式替换流体积结论。 线性流行列式指数公式及体积换元的必要/充分方向。
+- MD-2.3.2-EulerVolumePrinted：保留字面det=1判别，不静默改绝对值；需裁定小h方向约定。 体积只要求|det|=1；原文省略正向/足够小步长条件。反射在大步长可保持体积但det=-1。
+- MD-2.3.2-AsymmetricJacobian：完整Jacobian四条矩阵项与行列式，实际偏导统一在(U,v)取值。 隐式实际关系的求导、分母非零解导数及2×2矩阵整理。
+- MD-2.3.2-AsymmetricArea：实际Jacobian1与所有可测集合面积保持两个结论均保留。 实际隐式求导；若全局area保持还须单射局部域与换元。
+- MD-2.3.3-GeneralTwoForm：逐字保留双和系数定义，不静默除2或假设已归一；后文矩阵解释需裁定。 双和系数A的实际双线性矩阵是A-Aᵀ；若A反对称为2A。后文直接用A作矩阵表示存在因子约定疑点。
+- MD-2.3.3-PreservesForm：拉回定义保留实际底点，原文简写矩阵式是否只指常系数需导师裁定。 一般位置相关A的守恒式应DΦ(z)ᵀA(Φ(z))DΦ(z)=A(z)；原文省略底点，若只针对常矩阵才无歧义。
+- MD-2.3.4-HamiltonVariationalPrinted：原文移动取值点与变分方程冲突；不静默改成固定ζ。 原书W取值点裁定；固定初值真实流版本已有证明。与p.73一样W应在固定初值ζ求导；原页后文明确W(t)=F′t(z(t,ζ))，本条保留该字面W。
+- MD-2.3.5-ChainRule：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 原文Φ₁′Φ₂′未写外导数的Φ₂(z)取值点；Lean用正确链式法则，需审校确认简写约定。
+- MD-2.3.5-GlobalGroupPrinted：字面全球逆与逆辛性两个结论保留；不偷偷加入全球双射为假设。 原书全球逆断言裁定；正确微分同胚群接口已有。Jacobian可逆仅推出局部可逆，不能推出任意辛映射全球双射；正确群是给定全球辛微分同胚。
+- MD-2.3.6-KickDifferential：完整实际辛Euler步映射的两个坐标微分子句；grad U的真实导数即Hessian，不以任意矩阵代替。 完整步映射Fréchet导数与kick/drift组合的坐标整理。
 
 ## 定性段落排除
 
@@ -258,3 +325,6 @@
 - p.60/PDF82：Verlet的物理环境意义与历史介绍为定性说明，excluded_qualitative。
 - p.65–66/PDF87–88：力评估次数、实现与舍入误差说明归入excluded_qualitative；数学初始化与重构另列。
 - p.69–71/PDF91–93：图2.4–2.5能量/轨迹误差的数值观察与长时间警示为excluded_qualitative；不冒充普适界。
+- p.71–72/PDF93–94：几何积分动机与指向第3章的修正能量说明为excluded_qualitative；此处不开展第3章理论。
+- p.74/PDF96：图2.6初始圆盘与能量数值区间为示例观察，excluded_qualitative；LJ模型与bounded→periodic陈述另列。
+- p.80–82/PDF102–104：辛积分历史与软件实现说明为excluded_qualitative；实际映射公式另列。

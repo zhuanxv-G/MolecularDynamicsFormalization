@@ -28,10 +28,7 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-055"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -62,10 +59,7 @@ def bp_firstIntegral {n : ℕ} (I : Q n → ℝ) (f : Q n → Q n) (D : Set (Q n
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-056"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -100,10 +94,7 @@ theorem firstIntegralPreserved :
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-057"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -138,10 +129,7 @@ theorem energyPreserved (H : SymplecticCoordinates Nc → ℝ)
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-058"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -178,10 +166,7 @@ theorem centralAngularMomentum :
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-059"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -216,10 +201,7 @@ theorem integralMeanValue :
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-060"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -258,10 +240,7 @@ theorem integralPointwiseBound : ∀ n (I : EuclideanSpace ℝ (Fin n) → ℝ) 
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-061"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean

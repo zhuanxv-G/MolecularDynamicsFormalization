@@ -28,10 +28,7 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-051"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -74,10 +71,7 @@ theorem exactExpansion :
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-052"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -119,10 +113,7 @@ theorem defectPrinted : ∀ (F : ℝ → ℝ) (γ : ℝ → ℝ × ℝ), ContDif
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-053"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -164,10 +155,7 @@ theorem verletConsistency : ∀ (F : ℝ → ℝ) (Φ : ℝ → (ℝ × ℝ) →
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-054"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean

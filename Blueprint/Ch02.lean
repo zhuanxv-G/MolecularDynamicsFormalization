@@ -502,4 +502,426 @@ theorem integralErrorPrinted :
     |I a-I b| ≤ (K*B/(2*L))*Real.exp (L*k*h)*h^p := by
   sorry
 
+/-- source_id: MD-2.3.1-Divergence · definition · §2.3.1 · 印刷p.72 / PDFp.94 -/
+def bp_divergence {n : ℕ} (f : Q n → Q n) (z : Q n) : ℝ := (textbookCoordinateJacobian f z).trace
+
+/-- source_id: MD-2.3.1-Liouville · Liouville’s theorem · §2.3.1 · 印刷p.72 / PDFp.94
+[EXTRA] [EXTRA]实际解族Φ联合C²（原文未重复此较强正则性）；f C¹、Φ0=id、τ>0及实际时间ODE；只对可测S表达Lebesgue体积。 -/
+theorem liouville
+    (f : ((Fin n) → ℝ) → (Fin n) → ℝ) (hf : ContDiff ℝ 1 f)
+    (hdiv : ∀ z, (textbookCoordinateJacobian f z).trace = 0)
+    (Φ : ℝ × ((Fin n) → ℝ) → (Fin n) → ℝ) (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z)) (f (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) (t : ℝ) (ht : t ∈ Icc 0 τ)
+    (s : Set ((Fin n) → ℝ)) (hs : MeasurableSet s) :
+    volume ((fun z => Φ (t, z)) '' s) = volume s := by
+  apply MolecularDynamics.textbookDivergenceFreeFlow_volume_image_of_jointC2 <;> assumption
+
+/-- source_id: MD-2.3.1-HamiltonDivergence · unnumbered_claim · §2.3.1 · 印刷p.72 / PDFp.94
+[EXTRA] H C²，保证混合偏导对称。 -/
+theorem hamiltonDivergence {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc)
+    (hH : ContDiffAt ℝ 2 H z) :
+    (textbookJacobian (textbookHamiltonianVectorField H) z).trace = 0 := by
+  apply MolecularDynamics.textbookHamiltonianVectorField_divergence_zero <;> assumption
+
+/-- source_id: MD-2.3.1-HamiltonVolume · unnumbered_claim · §2.3.1 · 印刷p.72 / PDFp.94
+[EXTRA] [EXTRA]Φ联合C²；H C²、Φ0=id，τ>0；可测集S。 -/
+theorem hamiltonVolume {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (hH : ContDiff ℝ 2 H)
+    (Φ : ℝ × SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z))
+      (textbookHamiltonianVectorField H (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) (t : ℝ) (ht : t ∈ Icc 0 τ)
+    (s : Set (SymplecticCoordinates Nc)) (hs : MeasurableSet s) :
+    volume ((fun z => Φ (t, z)) '' s) = volume s := by
+  apply MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2 <;> assumption
+
+/-- source_id: MD-2.3.1-VolumeChange · unnumbered_claim · §2.3.1 · 印刷p.73 / PDFp.95
+[EXTRA] Φ C¹单射，可测S；正则流的固定时刻映射具备这些资格；真实Lebesgue体积和lintegral。 -/
+theorem volumeChange :
+  ∀ n (Φ : Q n → Q n) (S : Set (Q n)), ContDiff ℝ 1 Φ → Function.Injective Φ → MeasurableSet S →
+    volume (Φ '' S) = ∫⁻ z in S, ENNReal.ofReal |(textbookCoordinateJacobian Φ z).det| ∂volume := by
+  intro n Φ S hΦ hinj hS
+  have hd : ∀ z ∈ S, HasFDerivWithinAt Φ (fderiv ℝ Φ z) S z := by
+    intro z hz
+    exact (hΦ.differentiable_one z).hasFDerivAt.hasFDerivWithinAt
+  have hcv := lintegral_abs_det_fderiv_eq_addHaar_image
+    (volume : Measure (Q n)) hS hd hinj.injOn
+  have heq : ∀ z, (fderiv ℝ Φ z).det=(textbookCoordinateJacobian Φ z).det := by
+    intro z
+    change LinearMap.det (fderiv ℝ Φ z).toLinearMap=_
+    rw [← LinearMap.det_toMatrix']
+    rfl
+  simpa only [heq] using hcv.symm
+
+/-- source_id: MD-2.3.1-VariationalPrinted · unnumbered_claim · §2.3.1 · 印刷p.73 / PDFp.95
+[ERRATUM?] 原文W在z(t)取Jacobian，而变分矩阵应在固定初值ζ取Jacobian；沿移动取值点会多一链式项。后式还需要W可逆，局部流可给但不能忽略域。 -/
+theorem variationalPrinted : ∀ n (f : Q n → Q n) (Φ : ℝ × Q n → Q n) τ ζ,
+    flowC1 f Φ τ → ∀ t ∈ Ioo 0 τ,
+    HasDerivAt (fun s => textbookCoordinateJacobian (fun y => Φ (s,y)) (Φ (s,ζ)))
+      (textbookCoordinateJacobian f (Φ (t,ζ)) *
+        textbookCoordinateJacobian (fun y => Φ (t,y)) (Φ (t,ζ))) t ∧
+    (deriv (fun s => textbookCoordinateJacobian (fun y => Φ (s,y)) (Φ (s,ζ))) t) *
+      (textbookCoordinateJacobian (fun y => Φ (t,y)) (Φ (t,ζ)))⁻¹ =
+      textbookCoordinateJacobian f (Φ (t,ζ)) := by
+  sorry
+
+/-- source_id: MD-2.3.1-DeterminantODE · unnumbered_claim · §2.3.1 · 印刷p.73 / PDFp.95
+[EXTRA] 实际W′=AW且detW≠0，符合原文W⁻¹及D除法的资格；A=f′(z(t))。 -/
+theorem determinantODE : ∀ n (A W : ℝ → Matrix (Fin n) (Fin n) ℝ) t,
+    HasDerivAt W (A t * W t) t → (W t).det ≠ 0 →
+    HasDerivAt (fun s => (W s).det) ((A t).trace*(W t).det) t ∧
+      deriv (fun s => (W s).det) t/(W t).det =
+        Matrix.trace ((A t*W t)*(W t)⁻¹) := by
+  intro n A W t hW hdet
+  have hd := MolecularDynamics.textbookMatrixDet_hasDerivAt_of_linearODE W (A t) t hW
+  refine ⟨hd,?_⟩
+  rw [hd.deriv, mul_div_cancel_right₀ _ hdet, Matrix.mul_assoc,
+    Matrix.mul_nonsing_inv _ (isUnit_iff_ne_zero.mpr hdet), Matrix.mul_one]
+
+/-- source_id: MD-2.3.1-DeterminantExponential · unnumbered_claim · §2.3.1 · 印刷p.73 / PDFp.95
+[EXTRA] 实际W′=AW，A连续；tr A=div f(z(s))，全实线ODE资格用于任意t积分。 -/
+theorem determinantExponential :
+  ∀ n (A : ℝ → Matrix (Fin n) (Fin n) ℝ) (W : ℝ → Matrix (Fin n) (Fin n) ℝ) t,
+    Continuous A → (∀ s, HasDerivAt W (A s * W s) s) →
+    (W t).det = (W 0).det * Real.exp (∫ s in (0 : ℝ)..t, (A s).trace) := by
+  sorry
+
+/-- source_id: MD-2.3.1-FlowDet · unnumbered_claim · §2.3.1 · 印刷p.73 / PDFp.95
+[EXTRA] [EXTRA]Φ联合C²、f C¹、Φ0=id，τ>0及实际ODE；D0=1由Jacobian初值而非结论假设。 -/
+theorem flowDet
+    (f : ((Fin n) → ℝ) → (Fin n) → ℝ) (hf : ContDiff ℝ 1 f)
+    (hdiv : ∀ z, (textbookCoordinateJacobian f z).trace = 0)
+    (Φ : ℝ × ((Fin n) → ℝ) → (Fin n) → ℝ) (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z)) (f (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) :
+    ∀ t ∈ Icc 0 τ, ∀ z, (textbookCoordinateJacobian (fun y => Φ (t, y)) z).det = 1 := by
+  apply MolecularDynamics.textbookDivergenceFreeFlowJacobian_det_eq_one_of_jointC2 <;> assumption
+
+/-- source_id: MD-2.3.1-LJOscillator · Example 2.3 (model) · §2.3.1 · 印刷p.73–74 / PDFp.95–96 -/
+def ljOscillatorEquation (φ : ℝ → ℝ) (γ : ℝ → ℝ × ℝ) (I : Set ℝ) : Prop :=
+  ∀ t ∈ I, HasDerivAt γ ((γ t).2,-deriv φ (γ t).1) t
+
+/-- source_id: MD-2.3.1-LJBoundedPeriodic · unnumbered_claim · §2.3.1 · 印刷p.74 / PDFp.96
+[EXTRA] LJ参数正，实际全时轨迹且位置q>0；平衡解也允许任意正周期。 -/
+theorem ljBoundedPeriodic : ∀ (σ ε : ℝ) (γ : ℝ → ℝ × ℝ),
+    0 < σ → 0 < ε →
+    ljOscillatorEquation (fun q => 4*ε*((σ/q)^12-(σ/q)^6)) γ Set.univ →
+    (∀ t, 0 < (γ t).1) → Bornology.IsBounded (Set.range γ) →
+    ∃ T > 0, ∀ t, γ (t+T) = γ t := by
+  sorry
+
+/-- source_id: MD-2.3.2-LinearDivergence · unnumbered_claim · §2.3.2 · 印刷p.74–75 / PDFp.96–97
+[EXTRA] [EXTRA]实际全时C²解族Φ，Φ0=id并满足真实线性ODE；只量化可测T。 -/
+theorem linearDivergence : ∀ n (S : Matrix (Fin n) (Fin n) ℝ)
+    (Φ : ℝ × Q n → Q n), ContDiff ℝ 2 Φ → (∀ z, Φ (0,z)=z) →
+    (∀ t z, HasDerivAt (fun s => Φ (s,z)) (S.mulVec (Φ (t,z))) t) →
+    (∀ z, divergence S.mulVec z=S.trace) ∧
+    ((∀ t, ∀ T : Set (Q n), MeasurableSet T →
+      volume ((fun z => Φ (t,z)) '' T)=volume T) ↔ S.trace=0) := by
+  sorry
+
+/-- source_id: MD-2.3.2-LinearEuler · definition · §2.3.2 · 印刷p.75 / PDFp.97 -/
+def bp_linearEuler {n : ℕ} (S : Matrix (Fin n) (Fin n) ℝ) (h : ℝ) : Matrix (Fin n) (Fin n) ℝ :=
+  1 + h • S
+
+/-- source_id: MD-2.3.2-EulerVolumePrinted · unnumbered_claim · §2.3.2 · 印刷p.75 / PDFp.97
+[ERRATUM?] 体积只要求|det|=1；原文省略正向/足够小步长条件。反射在大步长可保持体积但det=-1。 -/
+theorem eulerVolumePrinted : ∀ n (S : Matrix (Fin n) (Fin n) ℝ) h,
+    (∀ T : Set (Q n), MeasurableSet T →
+      volume ((linearEuler S h).mulVec '' T)=volume T) ↔ (linearEuler S h).det=1 := by
+  sorry
+
+/-- source_id: MD-2.3.2-EulerVolumeCounterexample · unnumbered_claim · §2.3.2 · 印刷p.75 / PDFp.97 -/
+theorem eulerVolumeCounterexample :
+  ∃ S : Matrix (Fin 2) (Fin 2) ℝ, S.trace = 0 ∧ ∀ h : ℝ, h ≠ 0 → (linearEuler S h).det ≠ 1 := by
+  exact MolecularDynamics.Chapter02Review.eulerVolumeCounterexample_proved
+
+/-- source_id: MD-2.3.2-AsymmetricEuler · definition · §2.3.2 · 印刷p.75 / PDFp.97 -/
+def bp_asymmetricEulerRelation (f g : ℝ → ℝ → ℝ) (h u v U V : ℝ) : Prop :=
+  U = u + h*f U v ∧ V = v + h*g U v
+
+/-- source_id: MD-2.3.2-AsymmetricJacobian · unnumbered_claim · §2.3.2 · 印刷p.75 / PDFp.97
+[EXTRA] f,g及实际隐式解映射Ψ C¹；分母1-hfu≠0；偏导在(U,v)取值。 -/
+theorem asymmetricDet :
+  ∀ (f g : ℝ → ℝ → ℝ) (Ψ : Q 2 → Q 2) h,
+    ContDiff ℝ 1 (Function.uncurry f) → ContDiff ℝ 1 (Function.uncurry g) → ContDiff ℝ 1 Ψ →
+    (∀ z, asymmetricEulerRelation f g h (z 0) (z 1) (Ψ z 0) (Ψ z 1)) →
+    ∀ z, 1-h*deriv (fun u => f u (z 1)) (Ψ z 0) ≠ 0 →
+      (textbookCoordinateJacobian Ψ z) =
+        !![(1/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0)) : ℝ),
+          h*deriv (f (Ψ z 0)) (z 1)/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0));
+          h*deriv (fun u => g u (z 1)) (Ψ z 0)/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0)),
+          1+h*deriv (g (Ψ z 0)) (z 1)+h^2*deriv (fun u => g u (z 1)) (Ψ z 0)*
+            deriv (f (Ψ z 0)) (z 1)/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0))] ∧
+      (textbookCoordinateJacobian Ψ z).det =
+        (1+h*deriv (g (Ψ z 0)) (z 1))/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0)) := by
+  sorry
+
+/-- source_id: MD-2.3.2-AsymmetricArea · unnumbered_claim · §2.3.2 · 印刷p.75–76 / PDFp.97–98
+[EXTRA] f,g及实际解映射Ψ C¹，分母处处非零；行列式1给局部面积保存，整集需单射域。
+[EXTRA] [EXTRA]Ψ实际单射，保证整集面积换元；Jacobian1本身仅给局部面积。 -/
+theorem asymmetricArea :
+  ∀ (f g : ℝ → ℝ → ℝ) (Ψ : Q 2 → Q 2) h,
+    ContDiff ℝ 1 (Function.uncurry f) → ContDiff ℝ 1 (Function.uncurry g) → ContDiff ℝ 1 Ψ →
+    (∀ z, asymmetricEulerRelation f g h (z 0) (z 1) (Ψ z 0) (Ψ z 1)) →
+    (∀ u v, deriv (fun x => f x v) u + deriv (g u) v = 0) →
+    (∀ z, 1-h*deriv (fun u => f u (z 1)) (Ψ z 0) ≠ 0) →
+    Function.Injective Ψ →
+    (∀ z, (textbookCoordinateJacobian Ψ z).det = 1) ∧
+    (∀ T : Set (Q 2), MeasurableSet T → volume (Ψ '' T)=volume T) := by
+  sorry
+
+/-- source_id: MD-2.3.3-SymplecticMap · definition · §2.3.3 · 印刷p.76 / PDFp.98 -/
+def bp_IsSymplecticMap {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
+  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+
+/-- source_id: MD-2.3.3-OneForm · definition · §2.3.3 · 印刷p.76 / PDFp.98 -/
+def oneFormFamily (n : ℕ) := Q n → Q n →L[ℝ] ℝ
+
+/-- source_id: MD-2.3.3-Differential · definition · §2.3.3 · 印刷p.76 / PDFp.98 -/
+def bp_differential {n : ℕ} (g : Q n → ℝ) : oneForm n := fderiv ℝ g
+
+/-- source_id: MD-2.3.3-CoordinateDifferentials · definition · §2.3.3 · 印刷p.76 / PDFp.98 -/
+def coordinateDifferentials (n : ℕ) :
+    (Fin n → SymplecticCoordinates n →ₗ[ℝ] ℝ) × (Fin n → SymplecticCoordinates n →ₗ[ℝ] ℝ) :=
+  (textbookDq,textbookDp)
+
+/-- source_id: MD-2.3.3-Wedge · definition · §2.3.3 · 印刷p.76 / PDFp.98 -/
+def bp_wedge {Nc : ℕ} (α β : SymplecticCoordinates Nc →ₗ[ℝ] ℝ) :
+    LinearMap.BilinForm ℝ (SymplecticCoordinates Nc) :=
+  LinearMap.BilinForm.comp (LinearMap.mul ℝ ℝ) α β -
+    LinearMap.BilinForm.comp (LinearMap.mul ℝ ℝ) β α
+
+@[simp] theorem textbookWedgeOneForms_apply {Nc : ℕ}
+    (α β : SymplecticCoordinates Nc →ₗ[ℝ] ℝ) (u v : SymplecticCoordinates Nc) :
+    textbookWedgeOneForms α β u v = α u * β v - α v * β u := by
+  change α u * β v - β u * α v = _
+  ring
+
+/-- source_id: MD-2.3.3-SymplecticForm · definition · §2.3.3 · 印刷p.77 / PDFp.99 -/
+noncomputable def bp_symplecticForm (Nc : ℕ) :
+    LinearMap.BilinForm ℝ (SymplecticCoordinates Nc) :=
+  (textbookJ Nc).toBilin'
+
+/-- source_id: MD-2.3.3-FormSumWedges · unnumbered_claim · §2.3.3 · 印刷p.77 / PDFp.99 -/
+theorem formSumWedges (Nc : ℕ) :
+    textbookSymplecticForm Nc =
+      ∑ i : Fin Nc, textbookWedgeOneForms (textbookDq i) (textbookDp i) := by
+  apply MolecularDynamics.textbookSymplecticForm_eq_sum_wedges <;> assumption
+
+/-- source_id: MD-2.3.3-GeneralTwoForm · definition · §2.3.3 · 印刷p.77 / PDFp.99
+[ERRATUM?] 双和系数A的实际双线性矩阵是A-Aᵀ；若A反对称为2A。后文直接用A作矩阵表示存在因子约定疑点。 -/
+def coefficientTwoForm {n : ℕ} (A : Q n → Matrix (Fin n) (Fin n) ℝ)
+    (z u v : Q n) : ℝ :=
+  ∑ i, ∑ j, A z i j * (u i*v j-v i*u j)
+
+/-- source_id: MD-2.3.3-PullbackOne · definition · §2.3.3 · 印刷p.77 / PDFp.99 -/
+def bp_pullbackOne {n : ℕ} (Φ : Q n → Q n) (α : oneForm n) : oneForm n :=
+  fun z => (α (Φ z)).comp (fderiv ℝ Φ z)
+
+/-- source_id: MD-2.3.3-PullbackTwo · definition · §2.3.3 · 印刷p.77 / PDFp.99 -/
+def bp_pullbackTwo {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) (z u v : Q n) : ℝ :=
+  A.val (Φ z) ((fderiv ℝ Φ z) u) ((fderiv ℝ Φ z) v)
+
+/-- source_id: MD-2.3.3-PullbackMatrix · unnumbered_claim · §2.3.3 · 印刷p.77–78 / PDFp.99–100 -/
+theorem pullbackMatrix :
+  ∀ n (Φ : Q n → Q n) (A : Q n → Matrix (Fin n) (Fin n) ℝ) z u v,
+    dotProduct ((fderiv ℝ Φ z) u) ((A (Φ z)).mulVec ((fderiv ℝ Φ z) v)) =
+      dotProduct u (((textbookCoordinateJacobian Φ z).transpose * A (Φ z) *
+        textbookCoordinateJacobian Φ z).mulVec v) := by
+  intro n Φ A z u v
+  rw [← textbookCoordinateJacobian_mulVec Φ z u,
+    ← textbookCoordinateJacobian_mulVec Φ z v]
+  rw [← Matrix.mulVec_mulVec, ← Matrix.mulVec_mulVec,
+    Matrix.dotProduct_transpose_mulVec]
+  exact dotProduct_comm _ _
+
+/-- source_id: MD-2.3.3-PreservesForm · definition · §2.3.3 · 印刷p.78 / PDFp.100
+[ERRATUM?] 一般位置相关A的守恒式应DΦ(z)ᵀA(Φ(z))DΦ(z)=A(z)；原文省略底点，若只针对常矩阵才无歧义。 -/
+def bp_preservesTwoForm {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) : Prop :=
+  ∀ z u v, pullbackTwo Φ A z u v = A.val z u v
+
+/-- source_id: MD-2.3.3-SymplecticIffForm · unnumbered_claim · §2.3.3 · 印刷p.78 / PDFp.100 -/
+theorem symplecticIffForm {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) :
+    IsTextbookSymplecticMap Φ ↔ ContDiff ℝ 1 Φ ∧
+      ∀ z u v, textbookSymplecticForm Nc ((fderiv ℝ Φ z) u) ((fderiv ℝ Φ z) v) =
+        textbookSymplecticForm Nc u v := by
+  apply MolecularDynamics.isTextbookSymplecticMap_iff_preserves_form <;> assumption
+
+/-- source_id: MD-2.3.3-SymplecticDet · unnumbered_claim · §2.3.3 · 印刷p.78 / PDFp.100 -/
+theorem symplecticDet {n : ℕ} (A : SymplecticCoordinateMatrix n) (hA : IsTextbookSymplectic A) :
+    A.det^2=1 ∧ |A.det|=1 := by
+  exact ⟨hA.det_square,hA.abs_det⟩
+
+/-- source_id: MD-2.3.3-HamiltonDet · unnumbered_claim · §2.3.3 · 印刷p.78 / PDFp.100
+[EXTRA] [EXTRA]联合C²实际解族，H C²、Φ0=id，τ>0；体积结论另项HamiltonVolume完整覆盖。 -/
+theorem hamiltonDet {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+    (hH : ContDiff ℝ 2 H) (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n)
+    (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s,z))
+      (textbookHamiltonianVectorField H (Φ (t,z))) t)
+    (hinit : (fun z => Φ (0,z))=id) :
+    (∀ t ∈ Icc 0 τ, ∀ z, (textbookJacobian (fun y => Φ (t,y)) z).det=1) ∧
+    (∀ t ∈ Icc 0 τ, ∀ S : Set (SymplecticCoordinates n), MeasurableSet S →
+      volume ((fun z => Φ (t,z)) '' S)=volume S) := by
+  constructor
+  · exact MolecularDynamics.textbookHamiltonianFlowJacobian_det_eq_one_of_jointC2 H hH Φ hΦ τ hODE hinit
+  · exact MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2 H hH Φ hΦ τ hODE hinit
+
+/-- source_id: MD-2.3.4-Hessian · definition · §2.3.4 · 印刷p.79 / PDFp.101 -/
+noncomputable def bp_hessian {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc := fun i j =>
+  fderiv ℝ (fderiv ℝ H) z (Pi.single i 1) (Pi.single j 1)
+
+/-- source_id: MD-2.3.4-HessianSymmetry · unnumbered_claim · §2.3.4 · 印刷p.79 / PDFp.101
+[EXTRA] H在所取点C²，混合偏导相等。 -/
+theorem hessianSymmetry {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc)
+    (hH : ContDiffAt ℝ 2 H z) : (textbookHamiltonianHessian H z).IsSymm := by
+  apply MolecularDynamics.textbookHamiltonianHessian_isSymm <;> assumption
+
+/-- source_id: MD-2.3.4-HamiltonVariationalPrinted · unnumbered_claim · §2.3.4 · 印刷p.79 / PDFp.101
+[ERRATUM?] 与p.73一样W应在固定初值ζ求导；原页后文明确W(t)=F′t(z(t,ζ))，本条保留该字面W。 -/
+theorem hamiltonVariationalPrinted : ∀ n (H : SymplecticCoordinates n → ℝ)
+    (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n) τ ζ,
+    ContDiff ℝ 2 H → ContDiff ℝ 1 Φ → (∀ z, Φ (0,z)=z) →
+    (∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s,z))
+      (textbookHamiltonianVectorField H (Φ (t,z))) t) →
+    ∀ t ∈ Ioo 0 τ, HasDerivAt
+      (fun s => textbookJacobian (fun y => Φ (s,y)) (Φ (s,ζ)))
+      (textbookJ n * textbookHamiltonianHessian H (Φ (t,ζ)) *
+        textbookJacobian (fun y => Φ (t,y)) (Φ (t,ζ))) t := by
+  sorry
+
+/-- source_id: MD-2.3.4-MatrixCancellation · unnumbered_claim · §2.3.4 · 印刷p.79 / PDFp.101
+[EXTRA] S对称；任意矩阵W。 -/
+theorem matrixCancellation {Nc : ℕ}
+    (S W : SymplecticCoordinateMatrix Nc) (hS : S.IsSymm) :
+    (textbookJ Nc * S * W)ᵀ * textbookJ Nc * W +
+      Wᵀ * textbookJ Nc * (textbookJ Nc * S * W) = 0 := by
+  apply MolecularDynamics.hamiltonian_variational_matrix_cancellation <;> assumption
+
+/-- source_id: MD-2.3.4-FormConstant · unnumbered_claim · §2.3.4 · 印刷p.79 / PDFp.101
+[EXTRA] S(t)逐点对称，W实际满足W′=JSW，闭连通时间窗；这一独立矩阵ODE陈述不把流的变分方程结论作流辛性前提。 -/
+theorem formConstant {Nc : ℕ}
+    (S W : ℝ → SymplecticCoordinateMatrix Nc) (τ : ℝ)
+    (hS : ∀ t ∈ Icc 0 τ, (S t).IsSymm)
+    (hW : ∀ t ∈ Icc 0 τ,
+      HasDerivWithinAt W (textbookJ Nc * S t * W t) (Icc 0 τ) t) :
+    ∀ t ∈ Icc 0 τ, (W t)ᵀ * textbookJ Nc * W t = (W 0)ᵀ * textbookJ Nc * W 0 := by
+  apply MolecularDynamics.hamiltonian_variational_form_constant <;> assumption
+
+/-- source_id: MD-2.3.4-HamiltonSymplectic · unnumbered_claim · §2.3.4 · 印刷p.79 / PDFp.101
+[EXTRA] [EXTRA]实际解族联合C²；H C²、Φ0=id、τ>0及真实Hamilton ODE。 -/
+theorem hamiltonSymplectic {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (hH : ContDiff ℝ 2 H)
+    (Φ : ℝ × SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z))
+      (textbookHamiltonianVectorField H (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) :
+    ∀ t ∈ Icc 0 τ, IsTextbookSymplecticMap (fun z => Φ (t, z)) := by
+  apply MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2 <;> assumption
+
+/-- source_id: MD-2.3.5-ChainRule · unnumbered_claim · §2.3.5 · 印刷p.79 / PDFp.101
+[EXTRA] 两个实际映射在相应点可微；外导数在Φ₂(z)取值，原文简写省略底点。
+[OMITTED_EVALUATION_POINT] 原文Φ₁′Φ₂′未写外导数的Φ₂(z)取值点；Lean用正确链式法则，需审校确认简写约定。 -/
+theorem chainRule {Nc : ℕ}
+    (Φ Ψ : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (hΦ : Differentiable ℝ Φ) (hΨ : Differentiable ℝ Ψ) (z : SymplecticCoordinates Nc) :
+    textbookJacobian (Φ ∘ Ψ) z = textbookJacobian Φ (Ψ z) * textbookJacobian Ψ z := by
+  apply MolecularDynamics.textbookJacobian_comp <;> assumption
+
+/-- source_id: MD-2.3.5-SymplecticComposition · unnumbered_claim · §2.3.5 · 印刷p.79 / PDFp.101 -/
+theorem symplecticComposition {Nc : ℕ}
+    {Φ Ψ : SymplecticCoordinates Nc → SymplecticCoordinates Nc}
+    (hΦ : IsTextbookSymplecticMap Φ) (hΨ : IsTextbookSymplecticMap Ψ) :
+    IsTextbookSymplecticMap (Φ ∘ Ψ) := by
+  apply MolecularDynamics.IsTextbookSymplecticMap.comp <;> assumption
+
+/-- source_id: MD-2.3.5-SymplecticInverse · unnumbered_claim · §2.3.5 · 印刷p.79 / PDFp.101
+[EXTRA] [EXTRA]e为确实全局双射且e和e⁻¹可微的辛微分同胚；原文前句从det非零推出全球逆无效，另项字面保留。 -/
+theorem symplecticInverse {Nc : ℕ}
+    {e : Equiv.Perm (SymplecticCoordinates Nc)} (he : IsTextbookSymplecticEquiv e) :
+    IsTextbookSymplecticEquiv e.symm := by
+  apply MolecularDynamics.IsTextbookSymplecticEquiv.symm <;> assumption
+
+/-- source_id: MD-2.3.5-GlobalGroupPrinted · unnumbered_claim · §2.3.5 · 印刷p.79 / PDFp.101
+[ERRATUM?] Jacobian可逆仅推出局部可逆，不能推出任意辛映射全球双射；正确群是给定全球辛微分同胚。 -/
+theorem globalGroupPrinted : ∀ n (Φ : SymplecticCoordinates n → SymplecticCoordinates n),
+    IsTextbookSymplecticMap Φ → Function.Bijective Φ ∧
+      IsTextbookSymplecticMap (Function.invFun Φ) := by
+  sorry
+
+/-- source_id: MD-2.3.6-SymplecticIntegrator · definition · §2.3.6 · 印刷p.80 / PDFp.102 -/
+def bp_symplecticIntegrator {n : ℕ} (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) : Prop :=
+  ∀ h, IsTextbookSymplecticMap (G h)
+
+/-- source_id: MD-2.3.6-SymplecticEuler · definition · §2.3.6 · 印刷p.80 / PDFp.102 -/
+noncomputable def bp_symplecticEuler {Nc : ℕ}
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :
+    SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+  textbookPositionDrift m h ∘ textbookMomentumKick (textbookPotentialForce U) h
+
+/-- source_id: MD-2.3.6-KickDifferential · unnumbered_claim · §2.3.6 · 印刷p.81 / PDFp.103
+[EXTRA] U C²，实际Hessian。 -/
+theorem kickDifferential : ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h z,
+    ContDiff ℝ 2 U → ∀ ξ : SymplecticCoordinates n, ∀ i : Fin n,
+      ((fderiv ℝ (textbookSymplecticEuler m U h) z) ξ) (Sum.inl i) =
+        ξ (Sum.inl i)+h*(m i)⁻¹*((fderiv ℝ (textbookSymplecticEuler m U h) z) ξ) (Sum.inr i) ∧
+      ((fderiv ℝ (textbookSymplecticEuler m U h) z) ξ) (Sum.inr i) =
+        ξ (Sum.inr i)-h*((fderiv ℝ (grad U) (z ∘ Sum.inl)) (ξ ∘ Sum.inl)) i := by
+  sorry
+
+/-- source_id: MD-2.3.6-WedgeSelf · unnumbered_claim · §2.3.6 · 印刷p.81 / PDFp.103 -/
+theorem wedgeSelf :
+  ∀ n (α : SymplecticCoordinates n →ₗ[ℝ] ℝ) u v, textbookWedgeOneForms α α u v = 0 := by
+  exact MolecularDynamics.Chapter02Review.wedgeSelf_proved
+
+/-- source_id: MD-2.3.6-SymplecticEulerPreserves · unnumbered_claim · §2.3.6 · 印刷p.81 / PDFp.103
+[EXTRA] U C²，固定对角质量；真实完整步映射。 -/
+theorem symplecticEulerPreserves {Nc : ℕ}
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) (hU : ContDiff ℝ 2 U) :
+    IsTextbookSymplecticMap (textbookSymplecticEuler m U h) := by
+  apply MolecularDynamics.textbookSymplecticEuler_isSymplectic <;> assumption
+
+/-- source_id: MD-2.3.7-Adjoint · definition · §2.3.7 · 印刷p.81 / PDFp.103
+[EXTRA] [EXTRA]方法G每个可用h为实际Equiv.Perm；只在负步可逆时定义伴随，不能宣称任意步映射天然可逆。 -/
+noncomputable def bp_adjoint {E : Type*} (G : ℝ → Equiv.Perm E) (h : ℝ) :
+    Equiv.Perm E := (G (-h)).symm
+
+/-- source_id: MD-2.3.7-FlowSelfAdjoint · unnumbered_claim · §2.3.7 · 印刷p.82 / PDFp.104
+[EXTRA] [EXTRA]给定全球Flow群；原文局部流若无全球存在，须在正负步都可用域解释，未宣称所有ODE有全球流。 -/
+theorem flowSelfAdjoint {E : Type*} [TopologicalSpace E]
+    (F : Flow ℝ E) : textbookAdjointMethod (textbookFlowMethod F) = textbookFlowMethod F := by
+  apply MolecularDynamics.textbookFlowMethod_isSelfAdjoint <;> assumption
+
+/-- source_id: MD-2.3.7-BackwardEuler · definition · §2.3.7 · 印刷p.82 / PDFp.104 -/
+def bp_backwardEulerRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop := w = z + h • f w
+
+/-- source_id: MD-2.3.7-EulerAdjoint · unnumbered_claim · §2.3.7 · 印刷p.82 / PDFp.104
+[EXTRA] [EXTRA]给定负步Euler实际双射；G(-h)与Euler映射逐点一致，不假设所有f/h可逆。 -/
+theorem eulerAdjoint (f : E → E) (G : ℝ → Equiv.Perm E)
+    (h : ℝ) (hG : ∀ Z, G (-h) Z = eulerStep f (-h) Z) (z Z : E) :
+    textbookAdjointMethod G h z = Z ↔ Z = z + h • f Z := by
+  apply MolecularDynamics.euler_adjoint_iff_backward <;> assumption
+
+/-- source_id: MD-2.3.7-AdjointSymplecticEuler · definition · §2.3.7 · 印刷p.82 / PDFp.104 -/
+noncomputable def bp_adjointSymplecticEuler {Nc : ℕ}
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :
+    Equiv.Perm (SymplecticCoordinates Nc) :=
+  textbookAdjointMethod (textbookSymplecticEulerEquiv m U) h
+
+/-- source_id: MD-2.3.7-AdjointInvolution · unnumbered_claim · §2.3.7 · 印刷p.82 / PDFp.104
+[EXTRA] 实际可逆步方法族Equiv.Perm；负步及双逆确实存在。 -/
+theorem adjointInvolution {E : Type*} (G : ℝ → Equiv.Perm E) :
+    textbookAdjointMethod (textbookAdjointMethod G) = G := by
+  apply MolecularDynamics.textbookAdjointMethod_involutive <;> assumption
+
 end MD.Ch02

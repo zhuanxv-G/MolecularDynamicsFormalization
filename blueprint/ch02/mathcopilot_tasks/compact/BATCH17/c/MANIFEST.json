@@ -1,0 +1,72 @@
+{
+  "batch": "BATCH17",
+  "subtask": "BATCH17c",
+  "source_ids": [
+    "MD-2.3.4-HamiltonVariationalPrinted"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 101,
+      "printed_page": 79
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c1e9fb58a79658d78aa722c84d63bbd9891d803e153b2e388562f84960da5dd6",
+  "lean_sha256": "3b414f97377d7f8e8c949a2f11cafdc22d0877d8959e56b2540ea6f820aa9b55",
+  "signature_sha256": "1707f4118e60d3169d3bcd8f4ad90f137d68d135ee19be188152113261e98154",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinateMatrix",
+      "code_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/HamiltonianVariational.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookHamiltonianHessian",
+      "code_sha256": "5ae3d489e4dd0ef823e986e63d7de8c7aa53b7a0fd65c4f3fcbaaa57af072ca3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookHamiltonianVectorField",
+      "code_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookJ",
+      "code_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookJacobian",
+      "code_sha256": "de22cc68d29839d120350e99f4983537ef9e72385df49f475c8e3396754dcdbe"
+    }
+  ],
+  "paste_plus_pdf_bytes": 86600,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5106,
+      "sha256": "d38d74cb3ae9cb571548bf5c8513d3dbea51a1ad839ec9ae58471ffbec59716d"
+    },
+    "BATCH17c_PAGES.pdf": {
+      "bytes": 81593,
+      "sha256": "d3e7af628867cbcfb8a4b34ae19e77a21414c63ac29de18afc4c6f47c52df749"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

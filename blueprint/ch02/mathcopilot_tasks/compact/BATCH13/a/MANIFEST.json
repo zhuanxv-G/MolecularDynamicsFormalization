@@ -1,0 +1,42 @@
+{
+  "batch": "BATCH13",
+  "subtask": "BATCH13a",
+  "source_ids": [
+    "MD-2.3.1-FlowDet"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 95,
+      "printed_page": 73
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c1e9fb58a79658d78aa722c84d63bbd9891d803e153b2e388562f84960da5dd6",
+  "lean_sha256": "3b414f97377d7f8e8c949a2f11cafdc22d0877d8959e56b2540ea6f820aa9b55",
+  "signature_sha256": "e26cc89140a1b0029f9ed5cf4e10a1bee280615d0ae82395a761baef2bc3998c",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/LiouvilleVolume.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCoordinateJacobian",
+      "code_sha256": "96dc75035e362b25476b1c4cbfcd553e5349a04a3b5b286bb07fbb14c496afd0"
+    }
+  ],
+  "paste_plus_pdf_bytes": 87800,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3485,
+      "sha256": "4735fc85a816b76a49508ccf075ec32f14a29ff3df18c3fb2b076c23a14e157a"
+    },
+    "BATCH13a_PAGES.pdf": {
+      "bytes": 84373,
+      "sha256": "c3ac0853e9b8e45fb3f9c2252e3f73e14a2f412302dd6ae9abdf08f967870359"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

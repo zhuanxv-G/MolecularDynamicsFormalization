@@ -28,10 +28,7 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-030"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -61,10 +58,7 @@ def finiteDiscretePath (n ν : ℕ) := Fin (ν+1) → Q n
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-031"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -99,10 +93,7 @@ def bp_discreteVelocity {n : ℕ} (q : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-032"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -137,10 +128,7 @@ def bp_discreteAction {n : ℕ} (L : Q n → Q n → ℝ) (q : ℕ → Q n) (h :
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-033"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -173,10 +161,7 @@ def printedDiscreteStationary {n : ℕ} (L : Q n → Q n → ℝ)
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-034"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -213,10 +198,7 @@ theorem discreteActionDerivative :
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-035"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -250,11 +232,7 @@ theorem discreteStationaryVerlet :
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-036",
-    "CH02-160"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
@@ -285,10 +263,7 @@ def bp_stormerRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ)
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
   "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
-  "old_ids": [
-    "CH02-037"
-  ]
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean

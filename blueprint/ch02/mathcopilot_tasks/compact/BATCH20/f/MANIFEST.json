@@ -1,0 +1,48 @@
+{
+  "batch": "BATCH20",
+  "subtask": "BATCH20f",
+  "source_ids": [
+    "MD-2.3.7-AdjointInvolution"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 104,
+      "printed_page": 82
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c1e9fb58a79658d78aa722c84d63bbd9891d803e153b2e388562f84960da5dd6",
+  "lean_sha256": "3b414f97377d7f8e8c949a2f11cafdc22d0877d8959e56b2540ea6f820aa9b55",
+  "signature_sha256": "277699fc6f0d6bf772721982b3fcdc5937bcd0c78f10f7a6372777d786248fc6",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/AdjointMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookAdjointMethod",
+      "code_sha256": "f5c0b5fb6ce848d19f9d67ee0a70de4319fddae5919f016900b935eb3b44ce8e"
+    }
+  ],
+  "paste_plus_pdf_bytes": 87233,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3120,
+      "sha256": "a45778b130cce98166bbbd16d9fb4394f2896769408b2fd2f5c6d0b9253ab144"
+    },
+    "BATCH20f_PAGES.pdf": {
+      "bytes": 84171,
+      "sha256": "183e4bf088e1f1eb188a2740b718f55d8422b3492bb20450360ee3cf84f2edbd"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12f",
+  "source_ids": [
+    "MD-2.3.1-VariationalPrinted"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 95,
+      "printed_page": 73
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c1e9fb58a79658d78aa722c84d63bbd9891d803e153b2e388562f84960da5dd6",
+  "lean_sha256": "3b414f97377d7f8e8c949a2f11cafdc22d0877d8959e56b2540ea6f820aa9b55",
+  "signature_sha256": "fcd47e1a641b66b44fdd6cc96805f37ab6e4a930b2fd91c337aa6e6f503bf312",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/Statements.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "flowC1",
+      "code_sha256": "989e413e35e66deceaa666faebe9044aa869ce56596d580a188691bf96a02420"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/LiouvilleVolume.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCoordinateJacobian",
+      "code_sha256": "96dc75035e362b25476b1c4cbfcd553e5349a04a3b5b286bb07fbb14c496afd0"
+    }
+  ],
+  "paste_plus_pdf_bytes": 88693,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4398,
+      "sha256": "42e19086e88eb11e0605c76056e08c3be7bea9d553996e05fa6d1d258336cb5f"
+    },
+    "BATCH12f_PAGES.pdf": {
+      "bytes": 84373,
+      "sha256": "c3ac0853e9b8e45fb3f9c2252e3f73e14a2f412302dd6ae9abdf08f967870359"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

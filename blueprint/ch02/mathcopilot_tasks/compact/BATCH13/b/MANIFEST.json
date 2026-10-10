@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH13",
+  "subtask": "BATCH13b",
+  "source_ids": [
+    "MD-2.3.1-LJOscillator"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 95,
+      "printed_page": 73
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 96,
+      "printed_page": 74
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c1e9fb58a79658d78aa722c84d63bbd9891d803e153b2e388562f84960da5dd6",
+  "lean_sha256": "3b414f97377d7f8e8c949a2f11cafdc22d0877d8959e56b2540ea6f820aa9b55",
+  "signature_sha256": "44c3fb1ff72827123789ce65d4fc9708bab7f17453c8b4cac431d5e4b8bb77fa",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "ljOscillatorEquation",
+      "code_sha256": "44c3fb1ff72827123789ce65d4fc9708bab7f17453c8b4cac431d5e4b8bb77fa"
+    }
+  ],
+  "paste_plus_pdf_bytes": 175123,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2949,
+      "sha256": "f340880d0e34f1fa7eb58a1c200eedc9c4f4a7cc3314bf5d6260c7a317af8808"
+    },
+    "BATCH13b_PAGES.pdf": {
+      "bytes": 172226,
+      "sha256": "d396ef914c8d32734228d9d968e2cd0efe4102397eff5ace40f225435adcba40"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

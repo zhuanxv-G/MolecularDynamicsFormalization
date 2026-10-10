@@ -1,0 +1,95 @@
+blueprint/ch02/validation/ShortSearch2.lean:17:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+blueprint/ch02/validation/ShortSearch2.lean:33:2: warning: aesop: failed to prove the goal after exhaustive search.
+blueprint/ch02/validation/ShortSearch2.lean:31:98: error: unsolved goals
+case mp
+n : ℕ
+m : Fin n → ℝ
+U : Q n → ℝ
+q : ℕ → Q n
+h : ℝ
+ν : ℕ
+a : positiveMass m
+a_1 : Differentiable ℝ U
+a_2 : ¬h = 0
+a_3 : discreteStationary (mechanicalL m U) q h ν
+k : ℕ
+a_4 : 0 < k
+a_5 : k < ν
+⊢ stormerRelation m (fun x => -grad U x) h (q (k - 1)) (q k) (q (k + 1))
+
+case mpr
+n : ℕ
+m : Fin n → ℝ
+U : Q n → ℝ
+q : ℕ → Q n
+h : ℝ
+ν : ℕ
+a : positiveMass m
+a_1 : Differentiable ℝ U
+a_2 : ¬h = 0
+a_3 : ∀ (k : ℕ), 0 < k → k < ν → stormerRelation m (fun x => -grad U x) h (q (k - 1)) (q k) (q (k + 1))
+⊢ discreteStationary (mechanicalL m U) q h ν
+blueprint/ch02/validation/ShortSearch2.lean:36:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+blueprint/ch02/validation/ShortSearch2.lean:46:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+blueprint/ch02/validation/ShortSearch2.lean:63:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+blueprint/ch02/validation/ShortSearch2.lean:83:2: warning: aesop: failed to prove the goal after exhaustive search.
+blueprint/ch02/validation/ShortSearch2.lean:81:79: error: unsolved goals
+case left
+n : ℕ
+m : Fin n → ℝ
+U : Q n → ℝ
+h : ℝ
+z : SymplecticCoordinates n
+a : ContDiff ℝ 2 U
+ξ : SymplecticCoordinates n
+i : Fin n
+⊢ (fderiv ℝ (textbookSymplecticEuler m U h) z) ξ (Sum.inl i) =
+    ξ (Sum.inl i) + h * (m i)⁻¹ * (fderiv ℝ (textbookSymplecticEuler m U h) z) ξ (Sum.inr i)
+
+case right
+n : ℕ
+m : Fin n → ℝ
+U : Q n → ℝ
+h : ℝ
+z : SymplecticCoordinates n
+a : ContDiff ℝ 2 U
+ξ : SymplecticCoordinates n
+i : Fin n
+⊢ (fderiv ℝ (textbookSymplecticEuler m U h) z) ξ (Sum.inr i) =
+    ξ (Sum.inr i) - h * (fderiv ℝ (grad U) (z ∘ Sum.inl)) (ξ ∘ Sum.inl) i
+blueprint/ch02/validation/ShortSearch2.lean:86:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+blueprint/ch02/validation/ShortSearch2.lean:96:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+blueprint/ch02/validation/ShortSearch2.lean:105:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+blueprint/ch02/validation/ShortSearch2.lean:114:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.

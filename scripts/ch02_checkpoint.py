@@ -27,6 +27,10 @@ paths=['.gitattributes','AGENTS.md','docs/handoff/CURRENT_STATE.zh-CN.md','docs/
        'Blueprint/Ch02.lean','blueprint/ch02','docs/review/CH02_BLUEPRINT.zh-CN.md','lakefile.toml','scripts/check.ps1',
        'scripts/ch02_bootstrap.py','scripts/ch02_data.py','scripts/ch02_pipeline.py','scripts/ch02_checkpoint.py','scripts/ch02_stage.py','scripts/render_ch02_blueprint.py']
 paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/'scripts').glob('ch02_section*.py') if p.stem in sys.modules]
+paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/'scripts').glob('ch02_*.py')
+          if p.stem in ('ch02_final_refinements','ch02_bounded_short_search') and
+            (p.stem in sys.modules or section=='2.5')]
+if section=='2.5':paths.append('scripts/validate_ch02_delivery.py')
 stage(paths)
 staged=subprocess.check_output(['git','diff','--cached','--name-only'],cwd=ROOT,text=True).splitlines()
 assert not any(p.startswith(('output/','tmp/','docs/review/check-full06/','scripts/__pycache__/','blueprint/ch01/','MolecularDynamics/','docs/review/CH01_')) for p in staged)

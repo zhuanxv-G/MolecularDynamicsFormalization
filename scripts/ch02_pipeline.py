@@ -49,7 +49,7 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     sources=[]
     for r in RECORDS:
         sources.append({k:v for k,v in r.items() if k not in
-            ('code','local_verdict','local_explanation','priors','missing','correspondence')})
+            ('code','local_verdict','local_explanation','priors','missing','correspondence','old_ids')})
         comment=f"/-- source_id: {r['source_id']} · {r['label'] or r['kind']} · §{r['section']} · 印刷p.{r['printed_page']} / PDFp.{r['pdf_page']}"
         comment+=''.join('\n[EXTRA] '+x for x in r['extra_assumptions'])
         comment+=''.join('\n['+x.get('code','NEEDS_HUMAN')+'] '+x['detail'] for x in r['issues'])

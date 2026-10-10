@@ -1,0 +1,42 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14d",
+  "source_ids": [
+    "MD-2.3.2-EulerVolumeCounterexample"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 97,
+      "printed_page": 75
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c1e9fb58a79658d78aa722c84d63bbd9891d803e153b2e388562f84960da5dd6",
+  "lean_sha256": "3b414f97377d7f8e8c949a2f11cafdc22d0877d8959e56b2540ea6f820aa9b55",
+  "signature_sha256": "bedba73383ecc2d00eb5664534422e04e8a72c512579815247785f284a1e0414",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "linearEuler",
+      "code_sha256": "51ec1e50a1aaa095d57c751962cb121b04d12b662f2e1cdbee520777dc1bdbd2"
+    }
+  ],
+  "paste_plus_pdf_bytes": 78715,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3030,
+      "sha256": "d36b2188fd66d66dd7ef1a3c1a5ce186a1460c660097880aca0b2e045004c637"
+    },
+    "BATCH14d_PAGES.pdf": {
+      "bytes": 75736,
+      "sha256": "dca53012b3d47bbe02467ba0bb8f352d03c26a17ed40122e81eefcc3beda3d9a"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

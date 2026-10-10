@@ -1,0 +1,77 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14g",
+  "source_ids": [
+    "MD-2.3.2-AsymmetricArea"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 97,
+      "printed_page": 75
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 98,
+      "printed_page": 76
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c1e9fb58a79658d78aa722c84d63bbd9891d803e153b2e388562f84960da5dd6",
+  "lean_sha256": "3b414f97377d7f8e8c949a2f11cafdc22d0877d8959e56b2540ea6f820aa9b55",
+  "signature_sha256": "703c7f58d4d7edf80d82e8abb9e9da8c77c081361672ff7e30e4faa6487afffd",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "asymmetricEulerRelation",
+      "code_sha256": "26fccf754e022609720e6182077a02538b25c339233726915ac03ed4abe975c6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/LiouvilleVolume.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCoordinateJacobian",
+      "code_sha256": "96dc75035e362b25476b1c4cbfcd553e5349a04a3b5b286bb07fbb14c496afd0"
+    }
+  ],
+  "paste_plus_pdf_bytes": 99090,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4539,
+      "sha256": "25656170627d260e175de64c9a2fdfbb6f8b42a70840d05b2d19a3f96eae1b2a"
+    },
+    "BATCH14g_PAGES.pdf": {
+      "bytes": 94637,
+      "sha256": "2ee78ff7f653d7f31632a126ac52efe3addf77ace8afacedbe3a24766747596e"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

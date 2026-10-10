@@ -1,0 +1,54 @@
+{
+  "batch": "BATCH18",
+  "subtask": "BATCH18a",
+  "source_ids": [
+    "MD-2.3.5-ChainRule"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 101,
+      "printed_page": 79
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c1e9fb58a79658d78aa722c84d63bbd9891d803e153b2e388562f84960da5dd6",
+  "lean_sha256": "3b414f97377d7f8e8c949a2f11cafdc22d0877d8959e56b2540ea6f820aa9b55",
+  "signature_sha256": "2c11109e0d6a1733ccd5ee761fc8a56fdb9c6944663a296873a98a619a2f6dbc",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinateMatrix",
+      "code_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookJacobian",
+      "code_sha256": "de22cc68d29839d120350e99f4983537ef9e72385df49f475c8e3396754dcdbe"
+    }
+  ],
+  "paste_plus_pdf_bytes": 85372,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3853,
+      "sha256": "1411b36d7673abaa9d8f7a155a691738b83329a9d43af2e158e1744fad77a9cd"
+    },
+    "BATCH18a_PAGES.pdf": {
+      "bytes": 81593,
+      "sha256": "d3e7af628867cbcfb8a4b34ae19e77a21414c63ac29de18afc4c6f47c52df749"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

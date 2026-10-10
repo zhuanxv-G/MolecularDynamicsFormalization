@@ -1,0 +1,172 @@
+blueprint/ch02/validation/Section24Draft.lean:47:76: error: Tactic `assumption` failed
+
+case hF
+Nc : ℕ
+D : Set (SymplecticCoordinates Nc)
+hD : IsOpen D
+H₁ H₂ : SymplecticCoordinates Nc → ℝ
+hH₁ : ContDiffOn ℝ 2 H₁ D
+hH₂ : ContDiffOn ℝ 2 H₂ D
+F F₁ F₂ : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc
+u : SymplecticCoordinates Nc
+τ : ℝ
+hτ : 0 ≤ τ
+hFD : ∀ t ∈ Icc 0 τ, F t u ∈ D
+hF₂D : ∀ t ∈ Icc 0 τ, F₂ t u ∈ D
+hF₁D : ∀ s ∈ Icc 0 τ, ∀ t ∈ Icc 0 τ, F₁ t (F₂ s u) ∈ D
+hF :
+  ∀ t ∈ Icc 0 τ,
+    HasDerivWithinAt (fun v => F v u) (textbookHamiltonianVectorField (fun x => H₁ x + H₂ x) (F t u)) (Icc 0 τ) t
+hF₂ : ∀ t ∈ Icc 0 τ, HasDerivWithinAt (fun v => F₂ v u) (textbookHamiltonianVectorField H₂ (F₂ t u)) (Icc 0 τ) t
+hF₁ :
+  ∀ s ∈ Icc 0 τ,
+    ∀ t ∈ Icc 0 τ,
+      HasDerivWithinAt (fun v => F₁ v (F₂ s u)) (textbookHamiltonianVectorField H₁ (F₁ t (F₂ s u))) (Icc 0 τ) t
+hc : ContinuousOn (fun p => F₁ p.2 (F₂ p.1 u)) (Icc 0 τ ×ˢ Icc 0 τ)
+hinit : F 0 u = u
+hinit₂ : F₂ 0 u = u
+hinit₁ : ∀ s ∈ Icc 0 τ, F₁ 0 (F₂ s u) = F₂ s u
+⊢ ∀ t ∈ Icc 0 τ,
+    HasDerivWithinAt (fun v => F v u) (textbookHamiltonianVectorField (fun x => H₂ x + H₂ x) (F t u)) (Icc 0 τ) t
+blueprint/ch02/validation/Section24Draft.lean:47:76: error: Tactic `assumption` failed
+
+case hF₁
+Nc : ℕ
+D : Set (SymplecticCoordinates Nc)
+hD : IsOpen D
+H₁ H₂ : SymplecticCoordinates Nc → ℝ
+hH₁ : ContDiffOn ℝ 2 H₁ D
+hH₂ : ContDiffOn ℝ 2 H₂ D
+F F₁ F₂ : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc
+u : SymplecticCoordinates Nc
+τ : ℝ
+hτ : 0 ≤ τ
+hFD : ∀ t ∈ Icc 0 τ, F t u ∈ D
+hF₂D : ∀ t ∈ Icc 0 τ, F₂ t u ∈ D
+hF₁D : ∀ s ∈ Icc 0 τ, ∀ t ∈ Icc 0 τ, F₁ t (F₂ s u) ∈ D
+hF :
+  ∀ t ∈ Icc 0 τ,
+    HasDerivWithinAt (fun v => F v u) (textbookHamiltonianVectorField (fun x => H₁ x + H₂ x) (F t u)) (Icc 0 τ) t
+hF₂ : ∀ t ∈ Icc 0 τ, HasDerivWithinAt (fun v => F₂ v u) (textbookHamiltonianVectorField H₂ (F₂ t u)) (Icc 0 τ) t
+hF₁ :
+  ∀ s ∈ Icc 0 τ,
+    ∀ t ∈ Icc 0 τ,
+      HasDerivWithinAt (fun v => F₁ v (F₂ s u)) (textbookHamiltonianVectorField H₁ (F₁ t (F₂ s u))) (Icc 0 τ) t
+hc : ContinuousOn (fun p => F₁ p.2 (F₂ p.1 u)) (Icc 0 τ ×ˢ Icc 0 τ)
+hinit : F 0 u = u
+hinit₂ : F₂ 0 u = u
+hinit₁ : ∀ s ∈ Icc 0 τ, F₁ 0 (F₂ s u) = F₂ s u
+⊢ ∀ s ∈ Icc 0 τ,
+    ∀ t ∈ Icc 0 τ,
+      HasDerivWithinAt (fun v => F₁ v (F₂ s u)) (textbookHamiltonianVectorField H₂ (F₁ t (F₂ s u))) (Icc 0 τ) t
+blueprint/ch02/validation/Section24Draft.lean:110:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint/ch02/validation/Section24Draft.lean:110:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint/ch02/validation/Section24Draft.lean:112:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section24Draft.lean:129:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section24Draft.lean:141:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section24Draft.lean:153:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section24Draft.lean:160:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section24Draft.lean:169:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.conjugateIterates`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+blueprint/ch02/validation/Section24Draft.lean:172:54: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint/ch02/validation/Section24Draft.lean:174:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.conjugateLimits`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint/ch02/validation/Section24Draft.lean:190:2: error: unsolved goals
+case inl
+n : ℕ
+m : Fin n → ℝ
+U : Q n → ℝ
+h : ℝ
+z : SymplecticCoordinates n
+i : Fin n
+⊢ True ∨ h = 0 ∨ m i = 0
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint/ch02/validation/Section24Draft.lean:191:2: error: unsolved goals
+case inr.e_a.e_a
+n : ℕ
+m : Fin n → ℝ
+U : Q n → ℝ
+h : ℝ
+z : SymplecticCoordinates n
+i : Fin n
+⊢ z (Sum.inr i) + h * textbookPotentialForce U (fun i => z (Sum.inl i)) i * (-1 / 2) = z (Sum.inr i)
+
+case inr.e_a.e_a
+n : ℕ
+m : Fin n → ℝ
+U : Q n → ℝ
+h : ℝ
+z : SymplecticCoordinates n
+i : Fin n
+⊢ h * textbookPotentialForce U (fun i => z (Sum.inl i)) i =
+    h * textbookPotentialForce U (fun i => z (Sum.inl i)) i * (1 / 2)
+
+case inr.e_a.e_a
+n : ℕ
+m : Fin n → ℝ
+U : Q n → ℝ
+h : ℝ
+z : SymplecticCoordinates n
+i : Fin n
+⊢ textbookPotentialForce U
+      (fun i =>
+        z (Sum.inl i) + h * (m i)⁻¹ * z (Sum.inr i) +
+          h ^ 2 * (m i)⁻¹ * textbookPotentialForce U (fun i => z (Sum.inl i)) i * (1 / 2))
+      i =
+    textbookPotentialForce U
+      (fun i =>
+        h * (m i)⁻¹ * z (Sum.inr i) + h ^ 2 * (m i)⁻¹ * textbookPotentialForce U (fun i => z (Sum.inl i)) i * (1 / 2) +
+          z (Sum.inl i))
+      i
+blueprint/ch02/validation/Section24Draft.lean:197:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.processingIterates`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+blueprint/ch02/validation/Section24Draft.lean:201:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint/ch02/validation/Section24Draft.lean:203:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.processingOrder`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
