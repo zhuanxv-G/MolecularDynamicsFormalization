@@ -53,7 +53,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_divergence (Blueprint/Ch02.lean:506)
+### MD.Ch02.bp_divergence (Blueprint/Ch02.lean:508)
 ```lean
 def bp_divergence {n : ℕ} (f : Q n → Q n) (z : Q n) : ℝ := (textbookCoordinateJacobian f z).trace
 ```

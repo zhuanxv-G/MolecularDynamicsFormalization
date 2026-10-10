@@ -19,7 +19,9 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
   "context_notation": [
-    "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；$J$及$H$见同页下两条；n为配置坐标数。"
+    "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；J在本条上下文、H见同页mechanicalHamiltonian条目；n为配置坐标数。",
+    "where $J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$,",
+    "$I$为$n\\times n$单位阵；教材符号顺序$(q,p)$。"
   ],
   "issues": [],
   "lean_decl": "MD.Ch02.hamiltonianODE",
@@ -70,37 +72,6 @@ def hamiltonianODE {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 ```lean
 def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n) :
     PhaseSpace n → ℝ := massHamiltonian m U
-```
-
-### MD-2-CanonicalJ
-```json
-{
-  "source_id": "MD-2-CanonicalJ",
-  "kind": "definition",
-  "label": null,
-  "section": "2",
-  "printed_page": "53",
-  "pdf_page": "75",
-  "statement_latex": "where $J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$,",
-  "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
-  "proof_discussion_latex": null,
-  "context_notation": [
-    "$I$为$n\\times n$单位阵；教材符号顺序$(q,p)$。"
-  ],
-  "issues": [],
-  "lean_decl": "MD.Ch02.canonicalJ",
-  "reusable_proofs": [],
-  "extra_assumptions": [],
-  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-  "review_status": "DRAFT",
-  "repair_log": [],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
-}
-```
-```lean
-def canonicalJ (n : ℕ) : Matrix (Sum (Fin n) (Fin n)) (Sum (Fin n) (Fin n)) ℝ :=
-  textbookJ n
 ```
 
 ### MD-2-Euler

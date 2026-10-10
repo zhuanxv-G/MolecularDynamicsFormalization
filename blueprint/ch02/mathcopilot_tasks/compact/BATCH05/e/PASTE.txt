@@ -40,6 +40,8 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
 theorem firstVariation :
   ∀ n (L : Q n → Q n → ℝ) (q η : ℝ → Q n) a b,
     a < b → ContDiff ℝ 2 (Function.uncurry L) → ContDiff ℝ 2 q → ContDiff ℝ 2 η →
+    (∀ ε : ℝ, action L a b (variation q η ε)-action L a b q =
+      ∫ t in a..b, L (q t+ε • η t) (deriv q t+ε • deriv η t)-L (q t) (deriv q t)) ∧
     HasDerivAt (fun ε => action L a b (variation q η ε))
       (∫ t in a..b, (fderiv ℝ (fun x => L x (deriv q t)) (q t)) (η t) +
         (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) 0 ∧

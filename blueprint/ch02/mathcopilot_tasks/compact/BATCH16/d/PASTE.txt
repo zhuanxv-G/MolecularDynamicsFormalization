@@ -196,7 +196,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_preservesTwoForm (Blueprint/Ch02.lean:745)
+### MD.Ch02.bp_preservesTwoForm (Blueprint/Ch02.lean:747)
 ```lean
 def bp_preservesTwoForm {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) : Prop :=
   ∀ z u v, pullbackTwo Φ A z u v = A.val z u v

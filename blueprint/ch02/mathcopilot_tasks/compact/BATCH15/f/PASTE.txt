@@ -57,7 +57,7 @@ abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch02.bp_symplecticForm (Blueprint/Ch02.lean:706)
+### MD.Ch02.bp_symplecticForm (Blueprint/Ch02.lean:708)
 ```lean
 noncomputable def bp_symplecticForm (Nc : ℕ) :
     LinearMap.BilinForm ℝ (SymplecticCoordinates Nc) :=

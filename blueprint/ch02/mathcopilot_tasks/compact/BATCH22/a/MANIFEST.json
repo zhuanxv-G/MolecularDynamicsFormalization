@@ -1,0 +1,60 @@
+{
+  "batch": "BATCH22",
+  "subtask": "BATCH22a",
+  "source_ids": [
+    "MD-2.4.1-SymmetricComposition"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 107,
+      "printed_page": 85
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "8f1d25de6dc56571094d49ceb2de25860a36cc336abcce3718e0708d59da4c22",
+  "lean_sha256": "1b9839bbcaeaa2b5167ed4e10318efd7e585aae615cb45f67bf1c9c1db34e30c",
+  "signature_sha256": "6437c3a96d9a1338ae8e1f2ed65b996ec6db99ba0f4b9171da78c60295529f51",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/AdjointMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookAdjointMethod",
+      "code_sha256": "f5c0b5fb6ce848d19f9d67ee0a70de4319fddae5919f016900b935eb3b44ce8e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/CompositionMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookComposeMethods",
+      "code_sha256": "af61beb0edbfb9fa40be286f54f12fd94218788adba322123a0d44c0a79d0cd6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/CompositionMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookSymmetricComposition",
+      "code_sha256": "54afb471d94bb92a2f6ef51d4741cea6263ad4669ad85806ffec9d21061ba8cb"
+    }
+  ],
+  "paste_plus_pdf_bytes": 89132,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3890,
+      "sha256": "b7ca920e48d7d0d09adc52c30bb8df7ca2ebe0623395040d5828a7d6176f5671"
+    },
+    "BATCH22a_PAGES.pdf": {
+      "bytes": 85314,
+      "sha256": "5464de4fb3522a88f2ea5abee9ed2d3d7d57c655a3129cc7fcf36a89ff1beb71"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

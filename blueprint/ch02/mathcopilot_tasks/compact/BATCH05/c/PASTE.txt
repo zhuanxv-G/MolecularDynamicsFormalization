@@ -54,7 +54,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_action (Blueprint/Ch02.lean:114)
+### MD.Ch02.bp_action (Blueprint/Ch02.lean:110)
 ```lean
 def bp_action {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) : ℝ :=
   ∫ t in a..b, L (q t) (deriv q t)

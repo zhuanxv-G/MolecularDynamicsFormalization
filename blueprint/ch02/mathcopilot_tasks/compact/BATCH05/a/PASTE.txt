@@ -54,7 +54,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_mechanicalL (Blueprint/Ch02.lean:104)
+### MD.Ch02.bp_mechanicalL (Blueprint/Ch02.lean:100)
 ```lean
 def bp_mechanicalL {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (q v : Q n) : ℝ :=
   (∑ i, m i * v i ^ 2) / 2 - U q

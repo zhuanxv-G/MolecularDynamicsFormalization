@@ -216,7 +216,7 @@ abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch02.bp_symplecticIntegrator (Blueprint/Ch02.lean:863)
+### MD.Ch02.bp_symplecticIntegrator (Blueprint/Ch02.lean:865)
 ```lean
 def bp_symplecticIntegrator {n : ℕ} (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) : Prop :=
   ∀ h, IsTextbookSymplecticMap (G h)

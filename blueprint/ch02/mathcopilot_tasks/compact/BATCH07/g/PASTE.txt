@@ -55,7 +55,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_stormerRelation (Blueprint/Ch02.lean:226)
+### MD.Ch02.bp_stormerRelation (Blueprint/Ch02.lean:228)
 ```lean
 def bp_stormerRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (a b c : Q n) : Prop :=
   c - (2 : ℝ) • b + a = h^2 • invMass m (F b)

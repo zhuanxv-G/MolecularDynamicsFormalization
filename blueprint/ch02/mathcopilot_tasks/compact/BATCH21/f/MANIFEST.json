@@ -1,0 +1,126 @@
+{
+  "batch": "BATCH21",
+  "subtask": "BATCH21f",
+  "source_ids": [
+    "MD-2.4.1-SplitEuler"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 106,
+      "printed_page": 84
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "8f1d25de6dc56571094d49ceb2de25860a36cc336abcce3718e0708d59da4c22",
+  "lean_sha256": "1b9839bbcaeaa2b5167ed4e10318efd7e585aae615cb45f67bf1c9c1db34e30c",
+  "signature_sha256": "cd7672becd691437bfd5157c7463f3203a4474f2ea075d6b0ba7005abebafcf5",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "splittingMap",
+      "code_sha256": "9ea91f596c553d63672046d7e395d0dcb3fb543ba9f47dc6dbe34a2de0504578"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/AdjointMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookAdjointMethod",
+      "code_sha256": "f5c0b5fb6ce848d19f9d67ee0a70de4319fddae5919f016900b935eb3b44ce8e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/AdjointMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookAdjointSymplecticEuler",
+      "code_sha256": "02434970a794f374258b87503fcf0f1ae202764015d0ad4416613fffe38c75da"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookMomentumKick",
+      "code_sha256": "140fb611184d1fe410f849925b752e19bca879083ad3b90037363a059820d604"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookMomentumKickEquiv",
+      "code_sha256": "f0aa2297fe67f29da6ebf528857e135e6d5cd1792cea94b767a62083f114a7a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPositionDrift",
+      "code_sha256": "2cb1c98648cdcff42e0f32a16e159ea1f67f39c35c11b9da21600c85624e4813"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPositionDriftEquiv",
+      "code_sha256": "f767c3ab3725842b1aabe8a39005e3f6b49360ce37147f688638c976c7292302"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPositionProjection",
+      "code_sha256": "e26c2a0065ed4d17a75fd55ee46cc91cdf21abead5097b255cf11154196c56b0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPotentialForce",
+      "code_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookSymplecticEuler",
+      "code_sha256": "6e53ee5f4a9068cb7f0831009eb53769d608210c90a01e8cb724e9af7490aea7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookSymplecticEulerEquiv",
+      "code_sha256": "da68a65ede4d6c1d5c700bde5e0b8fe637caed5529bbbf200a548b2852d967e5"
+    }
+  ],
+  "paste_plus_pdf_bytes": 85208,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7624,
+      "sha256": "a015e6cda9ea1fef452b0006fe4a77a2331ea50c85af7a5b9cf737af023df734"
+    },
+    "BATCH21f_PAGES.pdf": {
+      "bytes": 77739,
+      "sha256": "535d05a9d8bd623cb98ac4f850fc61ab5bce274828da25fd65b9db997e891913"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

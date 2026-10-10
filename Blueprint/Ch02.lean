@@ -24,10 +24,6 @@ def hamiltonianODE {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n) :
     PhaseSpace n → ℝ := massHamiltonian m U
 
-/-- source_id: MD-2-CanonicalJ · definition · §2 · 印刷p.53 / PDFp.75 -/
-def canonicalJ (n : ℕ) : Matrix (Sum (Fin n) (Fin n)) (Sum (Fin n) (Fin n)) ℝ :=
-  textbookJ n
-
 /-- source_id: MD-2-Euler · definition · §2 · 印刷p.54 / PDFp.76 -/
 def euler {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (f : E → E) (h : ℝ) (z : E) : E := z + h • f z
@@ -122,6 +118,8 @@ def bp_variation {n : ℕ} (q η : ℝ → Q n) (ε : ℝ) (t : ℝ) : Q n := q 
 theorem firstVariation :
   ∀ n (L : Q n → Q n → ℝ) (q η : ℝ → Q n) a b,
     a < b → ContDiff ℝ 2 (Function.uncurry L) → ContDiff ℝ 2 q → ContDiff ℝ 2 η →
+    (∀ ε : ℝ, action L a b (variation q η ε)-action L a b q =
+      ∫ t in a..b, L (q t+ε • η t) (deriv q t+ε • deriv η t)-L (q t) (deriv q t)) ∧
     HasDerivAt (fun ε => action L a b (variation q η ε))
       (∫ t in a..b, (fderiv ℝ (fun x => L x (deriv q t)) (q t)) (η t) +
         (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) 0 ∧
@@ -149,13 +147,17 @@ def stationarySmoothAction {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : 
     HasDerivAt (fun ε => action L a b (variation q η ε)) 0 0
 
 /-- source_id: MD-2.2.1-Parts · unnumbered_claim · §2.2.1 · 印刷p.62 / PDFp.84
-[EXTRA] α<β；L及曲线C²；η端点为0。 -/
-theorem firstVariationParts :
-  ∀ n (L : Q n → Q n → ℝ) (q η : ℝ → Q n) a b,
-    a < b → ContDiff ℝ 2 (Function.uncurry L) → ContDiff ℝ 2 q → ContDiff ℝ 2 η →
-    η a = 0 → η b = 0 →
-    (∫ t in a..b, (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) =
-      -(∫ t in a..b, (deriv (fun s => fderiv ℝ (L (q s)) (deriv q s)) t) (η t)) := by
+[EXTRA] α<β，实际L和q C²；η按原文C∞、零端点；真实作用量驻值。 -/
+theorem firstVariationParts : ∀ n (L : Q n → Q n → ℝ)
+    (q η : ℝ → Q n) a b, a < b → ContDiff ℝ 2 (Function.uncurry L) →
+    ContDiff ℝ 2 q → ContDiff ℝ ∞ η → η a=0 → η b=0 →
+    stationarySmoothAction L a b q →
+    (∫ t in a..b, (fderiv ℝ (fun x => L x (deriv q t)) (q t)) (η t)+
+      (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) =
+    (∫ t in a..b, ((fderiv ℝ (fun x => L x (deriv q t)) (q t))-
+      deriv (fun s => fderiv ℝ (L (q s)) (deriv q s)) t) (η t)) ∧
+    (∫ t in a..b, ((fderiv ℝ (fun x => L x (deriv q t)) (q t))-
+      deriv (fun s => fderiv ℝ (L (q s)) (deriv q s)) t) (η t))=0 := by
   sorry
 
 /-- source_id: MD-2.2.1-EulerLagrange · unnumbered_claim · §2.2.1 · 印刷p.62 / PDFp.84
@@ -923,5 +925,278 @@ noncomputable def bp_adjointSymplecticEuler {Nc : ℕ}
 theorem adjointInvolution {E : Type*} (G : ℝ → Equiv.Perm E) :
     textbookAdjointMethod (textbookAdjointMethod G) = G := by
   apply MolecularDynamics.textbookAdjointMethod_involutive <;> assumption
+
+/-- source_id: MD-2.4.1-Splitting · definition · §2.4.1 · 印刷p.83 / PDFp.105 -/
+def bp_splittingMap {E : Type*} (F₁ F₂ : ℝ → E → E) (h : ℝ) : E → E := F₁ h ∘ F₂ h
+
+/-- source_id: MD-2.4.1-FieldAdd · unnumbered_claim · §2.4.1 · 印刷p.83 / PDFp.105
+[EXTRA] H₁,H₂在实际点可微，实际Fréchet梯度。 -/
+theorem fieldAdd {Nc : ℕ}
+    (H₁ H₂ : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc)
+    (h₁ : DifferentiableAt ℝ H₁ z) (h₂ : DifferentiableAt ℝ H₂ z) :
+    textbookHamiltonianVectorField (fun x => H₁ x + H₂ x) z =
+      textbookHamiltonianVectorField H₁ z + textbookHamiltonianVectorField H₂ z := by
+  apply MolecularDynamics.textbookHamiltonianVectorField_add <;> assumption
+
+/-- source_id: MD-2.4.1-SplittingLocal · unnumbered_claim · §2.4.1 · 印刷p.83 / PDFp.105
+[EXTRA] 实际H及两个子Hamilton局部ODE、初值及留开放域；H₁,H₂ C²，组合在紧时间矩形连续；没有假设待证局部误差。 -/
+theorem splittingLocal {Nc : ℕ}
+    (D : Set (SymplecticCoordinates Nc)) (hD : IsOpen D)
+    (H₁ H₂ : SymplecticCoordinates Nc → ℝ)
+    (hH₁ : ContDiffOn ℝ 2 H₁ D) (hH₂ : ContDiffOn ℝ 2 H₂ D)
+    (F F₁ F₂ : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (u : SymplecticCoordinates Nc) {τ : ℝ} (hτ : 0 ≤ τ)
+    (hFD : ∀ t ∈ Icc 0 τ, F t u ∈ D)
+    (hF₂D : ∀ t ∈ Icc 0 τ, F₂ t u ∈ D)
+    (hF₁D : ∀ s ∈ Icc 0 τ, ∀ t ∈ Icc 0 τ, F₁ t (F₂ s u) ∈ D)
+    (hF : ∀ t ∈ Icc 0 τ, HasDerivWithinAt (fun v => F v u)
+      (textbookHamiltonianVectorField (fun x => H₁ x + H₂ x) (F t u)) (Icc 0 τ) t)
+    (hF₂ : ∀ t ∈ Icc 0 τ, HasDerivWithinAt (fun v => F₂ v u)
+      (textbookHamiltonianVectorField H₂ (F₂ t u)) (Icc 0 τ) t)
+    (hF₁ : ∀ s ∈ Icc 0 τ, ∀ t ∈ Icc 0 τ, HasDerivWithinAt
+      (fun v => F₁ v (F₂ s u)) (textbookHamiltonianVectorField H₁ (F₁ t (F₂ s u))) (Icc 0 τ) t)
+    (hc : ContinuousOn (fun p : ℝ × ℝ => F₁ p.2 (F₂ p.1 u)) (Icc 0 τ ×ˢ Icc 0 τ))
+    (hinit : F 0 u = u) (hinit₂ : F₂ 0 u = u)
+    (hinit₁ : ∀ s ∈ Icc 0 τ, F₁ 0 (F₂ s u) = F₂ s u) :
+    ∃ C : ℝ, 0 < C ∧
+      (∀ h ∈ Icc 0 τ, ‖F₁ h (F₂ h u) - F h u‖ ≤ C * h ^ 2) ∧
+      (0 < τ → Asymptotics.IsBigO (𝓝[>] (0 : ℝ))
+        (fun h => F₁ h (F₂ h u) - F h u) (fun h : ℝ => h ^ 2)) := by
+  exact MolecularDynamics.exists_hamiltonian_splitting_localError_bound
+    D hD H₁ H₂ hH₁ hH₂ F F₁ F₂ u hτ hFD hF₂D hF₁D hF hF₂ hF₁ hc hinit hinit₂ hinit₁
+
+/-- source_id: MD-2.4.1-KineticFlow · Example 2.4 (kinetic) · §2.4.1 · 印刷p.83–84 / PDFp.105–106 -/
+noncomputable def bp_kineticFlow {Nc : ℕ} (m : Fin Nc → ℝ) (h : ℝ)
+    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+  Sum.elim (fun i => z (Sum.inl i) + h * (m i)⁻¹ * z (Sum.inr i))
+    (fun i => z (Sum.inr i))
+
+private noncomputable def momentumKickDerivative {Nc : ℕ}
+    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc →L[ℝ] SymplecticCoordinates Nc :=
+  ContinuousLinearMap.pi (Sum.elim
+    (fun i => ContinuousLinearMap.proj (Sum.inl i))
+    (fun i => ContinuousLinearMap.proj (Sum.inr i) + h •
+      (ContinuousLinearMap.proj i).comp
+        ((fderiv ℝ F (textbookPositionProjection Nc z)).comp
+          (textbookPositionProjection Nc))))
+
+private theorem momentumKick_hasFDerivAt {Nc : ℕ}
+    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ) (z : SymplecticCoordinates Nc)
+    (hF : ContDiff ℝ 1 F) :
+    HasFDerivAt (textbookMomentumKick F h) (momentumKickDerivative F h z) z := by
+  apply hasFDerivAt_pi.mpr
+  intro i
+  rcases i with i | i
+  · exact hasFDerivAt_apply (Sum.inl i) z
+  · have hf := ((hF.differentiable_one (textbookPositionProjection Nc z)).hasFDerivAt.comp z
+      (textbookPositionProjection Nc).hasFDerivAt)
+    have hi := (hasFDerivAt_apply i (F (textbookPositionProjection Nc z))).comp z hf
+    simpa only [textbookMomentumKick, Sum.elim_inr, Pi.add_apply, Pi.smul_apply,
+      Function.comp_apply, smul_eq_mul] using
+      (hasFDerivAt_apply (Sum.inr i) z).fun_add (hi.fun_const_smul h)
+
+/-- source_id: MD-2.4.1-PotentialFlow · definition · §2.4.1 · 印刷p.84 / PDFp.106 -/
+noncomputable def bp_potentialFlow {Nc : ℕ}
+    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ)
+    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+  Sum.elim (fun i => z (Sum.inl i))
+    (fun i => z (Sum.inr i) + h * F (textbookPositionProjection Nc z) i)
+
+/-- source_id: MD-2.4.1-SplitEuler · unnumbered_claim · §2.4.1 · 印刷p.84 / PDFp.106 -/
+theorem splitEuler :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h,
+    splittingMap (textbookPositionDrift m) (textbookMomentumKick (textbookPotentialForce U)) h =
+      textbookSymplecticEuler m U h ∧
+    splittingMap (textbookMomentumKick (textbookPotentialForce U)) (textbookPositionDrift m) h =
+      (fun z => textbookAdjointSymplecticEuler m U h z) := by
+  exact MolecularDynamics.Chapter02Review.kineticPotentialComposition_proved
+
+/-- source_id: MD-2.4.1-VerletComposition · Example 2.5 (composition) · §2.4.1 · 印刷p.84–85 / PDFp.106–107 -/
+theorem verletComposition :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h z,
+    coordinateVerlet m (textbookPotentialForce U) h z =
+      pack (verlet m (textbookPotentialForce U) h (unpack z)) ∧
+    coordinateVerlet m (textbookPotentialForce U) h z =
+      textbookAdjointSymplecticEuler m U (h/2) (textbookSymplecticEuler m U (h/2) z) := by
+  exact MolecularDynamics.Chapter02Review.verletComposition_proved
+
+/-- source_id: MD-2.4.1-VerletSymplectic · unnumbered_claim · §2.4.1 · 印刷p.85 / PDFp.107
+[EXTRA] U C²；真实完整步映射。 -/
+theorem verletSymplectic :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h, ContDiff ℝ 2 U →
+    IsTextbookSymplecticMap (coordinateVerlet m (textbookPotentialForce U) h) := by
+  exact MolecularDynamics.Chapter02Review.verletSymplectic_proved
+
+/-- source_id: MD-2.4.1-SymmetricComposition · unnumbered_claim · §2.4.1 · 印刷p.85 / PDFp.107
+[EXTRA] 实际可逆步Equiv.Perm；完整伴随半步组合。 -/
+theorem symmetricComposition {E : Type*}
+    (G : ℝ → Equiv.Perm E) :
+    textbookAdjointMethod (textbookSymmetricComposition G) =
+      textbookSymmetricComposition G := by
+  apply MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint <;> assumption
+
+/-- source_id: MD-2.4.1-SymmetricEven · unnumbered_claim · §2.4.1 · 印刷p.85 / PDFp.107
+[EXTRA] [EXTRA]r>0为有限确切局部阶：r阶界成立而r+1阶不成立；两族C∞且原流为群，自伴随并实际可逆。原书省略“确切”阶资格，精确流没有有限阶。 -/
+theorem symmetricEven :
+  ∀ n (G F : ℝ → Equiv.Perm (Q n)) r,
+    0 < r → textbookAdjointMethod G = G → textbookAdjointMethod F = F →
+    (∀ h k z, F h (F k z) = F (h+k) z) →
+    ContDiff ℝ ⊤ (fun x : ℝ × Q n => G x.1 x.2) →
+    ContDiff ℝ ⊤ (fun x : ℝ × Q n => F x.1 x.2) →
+    methodLocalOrder (fun h => G h) (fun h => F h) r →
+    (¬ methodLocalOrder (fun h => G h) (fun h => F h) (r+1)) → Even r := by
+  sorry
+
+/-- source_id: MD-2.4.2-CompositionSymplectic · unnumbered_claim · §2.4.2 · 印刷p.85 / PDFp.107 -/
+theorem compositionSymplectic {Nc : ℕ}
+    (G₁ G₂ : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (hG₁ : ∀ h, IsTextbookSymplecticMap (G₁ h))
+    (hG₂ : ∀ h, IsTextbookSymplecticMap (G₂ h)) (h : ℝ) :
+    IsTextbookSymplecticMap (textbookComposeMaps G₁ G₂ h) := by
+  apply MolecularDynamics.textbookComposeMaps_isSymplectic <;> assumption
+
+/-- source_id: MD-2.4.2-CompositionOrder · unnumbered_claim · §2.4.2 · 印刷p.85 / PDFp.107
+[EXTRA] [EXTRA]两个方法逼近同一实际流；第一个方法1+L|h|稳定；陈述保留至少min阶，允许更高，不把“typically”冒充确切阶相等。 -/
+theorem compositionOrder :
+  ∀ n (F : ℝ → Equiv.Perm (Q n)) (G₁ G₂ : ℝ → Q n → Q n) r s,
+    (∀ h k z, F h (F k z) = F (h+k) z) →
+    methodLocalOrder G₁ (fun h => F h) r → methodLocalOrder G₂ (fun h => F h) s →
+    (∀ δ > 0, ∃ L ≥ 0, ∀ h : ℝ, |h| < δ → ∀ u v, ‖G₁ h u-G₁ h v‖ ≤ (1 + |h| * L)*‖u-v‖) →
+    methodLocalOrder (textbookComposeMaps G₁ G₂) (fun h => F h) (min r s) := by
+  sorry
+
+/-- source_id: MD-2.4.3-HarmonicSplit · definition · §2.4.3 · 印刷p.85–86 / PDFp.107–108
+[EXTRA] [EXTRA]Ω≠0时闭式除法有效；Ω=0须取极限漂移，原文未写退化情形。 -/
+def bp_harmonicAnharmonic (Ω : ℝ) (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
+  let q := Real.cos (h*Ω)*z.1 + Real.sin (h*Ω)/Ω*z.2
+  (q, -Ω*Real.sin (h*Ω)*z.1 + Real.cos (h*Ω)*z.2 - h*deriv U q)
+
+/-- source_id: MD-2.4.4-ImplicitLocal · unnumbered_claim · §2.4.4 · 印刷p.86 / PDFp.108
+[EXTRA] [EXTRA]g C¹且实际导数为连续线性同构；只能保证局部逆，原文“typically”不构成任意g可逆定理。逆在更小紧邻域有界。 -/
+theorem implicitLocal :
+  ∀ n (g : Q n → Q n) x (A : Q n ≃L[ℝ] Q n), ContDiff ℝ 1 g → HasFDerivAt g A.toContinuousLinearMap x →
+    ∃ U V : Set (Q n), IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g x ∈ V ∧
+      ∃ inv : Q n → Q n, ContDiffOn ℝ 1 inv V ∧
+        (∃ K ≥ 0, ∀ y ∈ V, ‖inv y‖ ≤ K) ∧ (∀ y ∈ V, inv y ∈ U ∧ g (inv y) = y) ∧ (∀ y ∈ U, inv (g y) = y) := by
+  sorry
+
+/-- source_id: MD-2.4.4-BackwardEulerSolve · Example 2.6 · §2.4.4 · 印刷p.86 / PDFp.108 -/
+def backwardEulerResidual (f : E → E) (h : ℝ) (z w : E) : E := w-z-h • f w
+
+/-- source_id: MD-2.4.4-Newton · definition · §2.4.4 · 印刷p.86–87 / PDFp.108–109
+[ERRATUM?] 原文混用zₙ⁽ᵏ⁾与zₙ₊₁⁽ᵏ⁾；保留两个不同输入，不静默改成相同迭代点。映射可逆也不保证任意近似Jacobian非奇异。 -/
+def newtonPrinted {n : ℕ} (g : Q n → Q n) (τ xNext xPrev : Q n)
+    (J : Q n ≃L[ℝ] Q n) : Q n := xNext-J.symm (g xPrev-τ)
+
+/-- source_id: MD-2.4.4-NewtonQuadratic · unnumbered_claim · §2.4.4 · 印刷p.87 / PDFp.109
+[EXTRA] [EXTRA]C²、简单零点及可逆实际导数；充分近初值；局部一步二次界涵盖迭代误差关系。 -/
+theorem newtonQuadratic :
+  ∀ n (g : Q n → Q n) x (A : Q n ≃L[ℝ] Q n),
+    ContDiff ℝ 2 g → g x = 0 → HasFDerivAt g A.toContinuousLinearMap x →
+    ∃ C > 0, ∃ δ > 0, ∀ y : Q n, ‖y-x‖ < δ →
+      ∃ B : Q n ≃L[ℝ] Q n, HasFDerivAt g B.toContinuousLinearMap y ∧ ‖newtonStep g 0 y B-x‖ ≤ C*‖y-x‖^2 := by
+  sorry
+
+/-- source_id: MD-2.4.4-FrozenNewton · unnumbered_claim · §2.4.4 · 印刷p.87 / PDFp.109
+[EXTRA] [EXTRA]固定D连续线性同构，邻域内实际I−D⁻¹g′范数≤ρ<1，ρ>0；精确可核的small资格，未声称任意近似Jacobian都收敛。 -/
+theorem frozenNewton :
+  ∀ n (g : Q n → Q n) (A : Q n ≃L[ℝ] Q n) x δ ρ,
+    g x = 0 → 0 < δ → 0 < ρ → ρ < 1 → ContDiff ℝ 1 g →
+    (∀ y ∈ Metric.ball x δ, ‖ContinuousLinearMap.id ℝ (Q n)-A.symm.toContinuousLinearMap.comp (fderiv ℝ g y)‖ ≤ ρ) →
+    ∀ y ∈ Metric.ball x δ, ‖newtonStep g 0 y A-x‖ ≤ ρ*‖y-x‖ := by
+  sorry
+
+/-- source_id: MD-2.4.5-Conjugacy · definition · §2.4.5 · 印刷p.88 / PDFp.110 -/
+def bp_conjugateMap (χ : E ≃ₜ E) (B : E → E) : E → E := χ.symm ∘ B ∘ χ
+
+/-- source_id: MD-2.4.5-ConjugateIterates · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110 -/
+theorem conjugateIterates (χ : E ≃ₜ E) (A B : E → E)
+    (hA : A = textbookConjugateMap χ B) (n : ℕ) :
+    A^[n] = textbookConjugateMap χ (B^[n]) := by
+  apply MolecularDynamics.textbook_conjugate_iterates <;> assumption
+
+/-- source_id: MD-2.4.5-ConjugateLimits · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110 -/
+theorem conjugateLimits (χ : E ≃ₜ E) (A B : E → E) (hA : A=textbookConjugateMap χ B)
+    (zStar : E) (hB : ∀ z, Tendsto (fun k : ℕ => B^[k] z) atTop (𝓝 zStar)) :
+    ∀ z, Tendsto (fun k : ℕ => A^[k] z) atTop (𝓝 (χ.symm zStar)) := by
+  intro z
+  apply (MolecularDynamics.textbook_conjugate_iterates_tendsto_iff χ A B hA z (χ.symm zStar)).mpr
+  simpa using hB (χ z)
+
+/-- source_id: MD-2.4.5-EulerConjugacy · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110 -/
+theorem eulerConjugacy :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h,
+    textbookMomentumKick (textbookPotentialForce U) (h/2) ∘ textbookSymplecticEuler m U h ∘
+      textbookMomentumKick (textbookPotentialForce U) (-h/2) = coordinateVerlet m (textbookPotentialForce U) h := by
+  intro n m U h
+  funext z
+  let F := textbookPotentialForce U
+  let q : Q n := fun i => z (Sum.inl i)+h*(m i)⁻¹*
+    (z (Sum.inr i)+(h/2)*F (textbookPositionProjection n z) i)
+  have hl : textbookPositionProjection n
+      (textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z))=q := by
+    funext i
+    simp [q,F,textbookPositionProjection,textbookSymplecticEuler,
+      textbookMomentumKick,textbookPositionDrift,Function.comp_def]
+    ring <;> simp
+  have hr : textbookPositionProjection n
+      (textbookPositionDrift m h (textbookMomentumKick F (h/2) z))=q := by
+    funext i
+    simp [q,textbookPositionProjection,textbookPositionDrift,textbookMomentumKick]
+  funext i
+  rcases i with i | i
+  · change textbookPositionProjection n
+      (textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z)) i =
+        textbookPositionProjection n (textbookPositionDrift m h (textbookMomentumKick F (h/2) z)) i
+    rw [hl,hr]
+  · change textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z) (Sum.inr i)+
+      (h/2)*F (textbookPositionProjection n
+        (textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z))) i =
+      textbookMomentumKick F (h/2) z (Sum.inr i)+(h/2)*F (textbookPositionProjection n
+        (textbookPositionDrift m h (textbookMomentumKick F (h/2) z))) i
+    rw [hl,hr,textbookSymplecticEuler_momentum,textbookPositionProjection_momentumKick]
+    simp [F,textbookMomentumKick]
+    ring
+
+/-- source_id: MD-2.4.5-Processing · definition · §2.4.5 · 印刷p.88 / PDFp.110 -/
+noncomputable def bp_processedIterate (χ : ℝ → E ≃ₜ E) (B : ℝ → E → E)
+    (h : ℝ) (z₀ : E) (n : ℕ) : E :=
+  (χ h).symm (oneStepIterate B h ((χ h) z₀) n)
+
+/-- source_id: MD-2.4.5-ProcessingIterates · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110 -/
+theorem processingIterates (χ : ℝ → E ≃ₜ E)
+    (B G : ℝ → E → E) (hG : ∀ h, G h = textbookProcessedMethod χ B h)
+    (h : ℝ) (z₀ : E) (n : ℕ) :
+    textbookProcessedIterate χ B h z₀ n = oneStepIterate G h z₀ n := by
+  apply MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy <;> assumption
+
+/-- source_id: MD-2.4.5-ProcessingOrder · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110
+[EXTRA] r自然数有限时间窗误差界；χh为实际Homeomorph。 -/
+theorem processingOrder (χ : ℝ → E ≃ₜ E) (B G : ℝ → E → E)
+    (hG : ∀ h, G h=textbookProcessedMethod χ B h) (γ : ℝ → E) (τ : ℝ) (r : ℕ)
+    (horder : ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+      oneStepMaxError G (τ/ν) γ ν ≤ C*(τ/ν)^r) :
+    (∀ h ν, textbookProcessedMaxError χ B h γ ν=oneStepMaxError G h γ ν) ∧
+    (∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+      textbookProcessedMaxError χ B (τ/ν) γ ν ≤ C*(τ/ν)^r) := by
+  have heq := MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy χ B G hG
+  refine ⟨fun h ν => heq h γ ν, ?_⟩
+  simpa only [heq] using horder
+
+/-- source_id: MD-2.4.5-EulerEffectiveOrder · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110
+[EXTRA] [EXTRA]正固定质量，U C⁴；真实机械Hamilton轨迹及紧时间窗；处理器为实际Homeomorph，完整processed误差界，不以待证二阶作假设。 -/
+theorem eulerEffectiveOrder : ∀ n (m : Fin n → ℝ) (U : Q n → ℝ)
+    (γ : ℝ → SymplecticCoordinates n) τ,
+    positiveMass m → ContDiff ℝ 4 U → 0 < τ →
+    (∀ t ∈ Icc 0 τ, HasDerivWithinAt γ
+      (textbookHamiltonianVectorField (fun z => (∑ i, z (Sum.inr i)^2/m i)/2+
+        U (z ∘ Sum.inl)) (γ t)) (Icc 0 τ) t) → ContinuousOn γ (Icc 0 τ) →
+    ∃ χ : ℝ → SymplecticCoordinates n ≃ₜ SymplecticCoordinates n,
+      (∀ h, textbookProcessedMethod χ (textbookSymplecticEuler m U) h =
+        coordinateVerlet m (textbookPotentialForce U) h) ∧
+      (∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+        textbookProcessedMaxError χ (textbookSymplecticEuler m U) (τ/ν) γ ν ≤ C*(τ/ν)^2) := by
+  sorry
 
 end MD.Ch02

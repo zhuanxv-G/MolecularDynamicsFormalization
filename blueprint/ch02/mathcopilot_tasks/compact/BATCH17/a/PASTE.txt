@@ -57,7 +57,7 @@ abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch02.bp_hessian (Blueprint/Ch02.lean:777)
+### MD.Ch02.bp_hessian (Blueprint/Ch02.lean:779)
 ```lean
 noncomputable def bp_hessian {Nc : ℕ}
     (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :

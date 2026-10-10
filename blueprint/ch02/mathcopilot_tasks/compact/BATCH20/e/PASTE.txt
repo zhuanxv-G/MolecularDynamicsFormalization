@@ -56,7 +56,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch02.bp_adjointSymplecticEuler (Blueprint/Ch02.lean:916)
+### MD.Ch02.bp_adjointSymplecticEuler (Blueprint/Ch02.lean:918)
 ```lean
 noncomputable def bp_adjointSymplecticEuler {Nc : ℕ}
     (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :

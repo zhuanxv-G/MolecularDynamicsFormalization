@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH24",
+  "subtask": "BATCH24a",
+  "source_ids": [
+    "MD-2.4.3-HarmonicSplit"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 107,
+      "printed_page": 85
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 108,
+      "printed_page": 86
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "8f1d25de6dc56571094d49ceb2de25860a36cc336abcce3718e0708d59da4c22",
+  "lean_sha256": "1b9839bbcaeaa2b5167ed4e10318efd7e585aae615cb45f67bf1c9c1db34e30c",
+  "signature_sha256": "bceac7ec7db51d0092802e37dabe073960ff147065b243c9c53298131ae8cc30",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "namespace": "MD.Ch02",
+      "name": "bp_harmonicAnharmonic",
+      "code_sha256": "bceac7ec7db51d0092802e37dabe073960ff147065b243c9c53298131ae8cc30"
+    }
+  ],
+  "paste_plus_pdf_bytes": 102178,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3687,
+      "sha256": "00c82be66690e0bcf64dd60d8aa42c3e4ace22c55c9f52960d18d7e97b704af4"
+    },
+    "BATCH24a_PAGES.pdf": {
+      "bytes": 98547,
+      "sha256": "79b890659bedbe632e6da62ff41c994ec995452eb0891349f6201485b8bb5093"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

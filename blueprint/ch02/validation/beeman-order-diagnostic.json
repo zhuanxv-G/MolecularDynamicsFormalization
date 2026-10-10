@@ -1,0 +1,28 @@
+{
+  "model": "m=1,F(q)=-q; q(t)=cos(t),p(t)=-sin(t); exact two starting values",
+  "position_local_defect": "-h**4/8 + O(h**6)",
+  "momentum_local_defect": "-h**3/12 + 31*h**5/720 + O(h**6)",
+  "global_error_at_t1": [
+    {
+      "n": 40,
+      "error": 4.1532314699592484e-05
+    },
+    {
+      "n": 80,
+      "error": 1.0457779514663288e-05,
+      "halving_ratio": 3.9714276478442003
+    },
+    {
+      "n": 160,
+      "error": 2.6238061677010813e-06,
+      "halving_ratio": 3.9857286881165286
+    },
+    {
+      "n": 320,
+      "error": 6.571233524473633e-07,
+      "halving_ratio": 3.9928670285861627
+    }
+  ],
+  "result": "NEEDS_HUMAN",
+  "verified": "Sympy Taylor and floating point diagnostic only; no Lean counterexample or asymptotic lower-bound proof."
+}

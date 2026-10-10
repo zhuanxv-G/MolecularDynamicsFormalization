@@ -60,7 +60,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.admissibleSmooth (Blueprint/Ch02.lean:110)
+### MD.Ch02.admissibleSmooth (Blueprint/Ch02.lean:106)
 ```lean
 def admissibleSmooth {n : ℕ} (a b : ℝ) (x y : Q n) (q : ℝ → Q n) : Prop :=
   ContDiff ℝ ∞ q ∧ q a = x ∧ q b = y

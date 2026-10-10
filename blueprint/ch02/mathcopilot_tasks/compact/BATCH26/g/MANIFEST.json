@@ -1,0 +1,78 @@
+{
+  "batch": "BATCH26",
+  "subtask": "BATCH26g",
+  "source_ids": [
+    "MD-2.4.5-ProcessingOrder"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 110,
+      "printed_page": 88
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "8f1d25de6dc56571094d49ceb2de25860a36cc336abcce3718e0708d59da4c22",
+  "lean_sha256": "1b9839bbcaeaa2b5167ed4e10318efd7e585aae615cb45f67bf1c9c1db34e30c",
+  "signature_sha256": "510287b0056b765b86b162007abca10eb1c45512f08808be7a3c6d1c36406732",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "oneStepIterate",
+      "code_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "namespace": "MolecularDynamics",
+      "name": "oneStepMaxError",
+      "code_sha256": "a2e0304f877b1bcc275c037c80f553a53265a01a518b5109bd0a07449b85bc5a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ProcessedMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConjugateMap",
+      "code_sha256": "691a91929f16607bebfb35c4f6a7795fdf4c2394df70674264320b0ac7487e54"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ProcessedMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookProcessedIterate",
+      "code_sha256": "9adc7c4e9ae705d9618c521f48ebee56bb8400dcf2c2f20c5eb4de994a43da92"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ProcessedMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookProcessedMaxError",
+      "code_sha256": "824956cc862587bac89e7d35d4a3e0f5d963e9e0cbf6d095cd3a67679af112cf"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ProcessedMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookProcessedMethod",
+      "code_sha256": "29505ccaac14272c1b5ada05fd7f389b763a96eb7077acdb48d490e032103a2d"
+    }
+  ],
+  "paste_plus_pdf_bytes": 86848,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5467,
+      "sha256": "49aa93cae3af13864f5d1c870d0570480260da7a3244b79ab8aebc199f794332"
+    },
+    "BATCH26g_PAGES.pdf": {
+      "bytes": 81486,
+      "sha256": "22c883da72eac6dd6e9139d3b3d4aaca1da06c37a7a702d527d7364748c0b79f"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

@@ -22,7 +22,9 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
   "context_notation": [
-    "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；$J$及$H$见同页下两条；n为配置坐标数。"
+    "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；J在本条上下文、H见同页mechanicalHamiltonian条目；n为配置坐标数。",
+    "where $J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$,",
+    "$I$为$n\\times n$单位阵；教材符号顺序$(q,p)$。"
   ],
   "issues": [],
   "lean_decl": "MD.Ch02.hamiltonianODE",

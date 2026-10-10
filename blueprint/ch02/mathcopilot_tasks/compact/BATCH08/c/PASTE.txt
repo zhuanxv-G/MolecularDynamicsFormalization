@@ -65,7 +65,7 @@ abbrev Z (n : ℕ) := Q n × Q n
 abbrev Z (n : ℕ) := Q n × Q n
 ```
 
-### MD.Ch02.bp_leapfrog (Blueprint/Ch02.lean:248)
+### MD.Ch02.bp_leapfrog (Blueprint/Ch02.lean:250)
 ```lean
 def bp_leapfrog {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n) : Z n :=
   let vnew := z.2 + h • invMass m (F z.1)

@@ -53,7 +53,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.finiteDiscretePath (Blueprint/Ch02.lean:188)
+### MD.Ch02.finiteDiscretePath (Blueprint/Ch02.lean:190)
 ```lean
 def finiteDiscretePath (n ν : ℕ) := Fin (ν+1) → Q n
 ```

@@ -129,3 +129,7 @@ EXCLUDED += [dict(printed_page='53–55',pdf_page='75–77',reason='导论、固
 import ch02_section22
 
 import ch02_section23
+
+import ch02_section24
+
+import ch02_final_refinements

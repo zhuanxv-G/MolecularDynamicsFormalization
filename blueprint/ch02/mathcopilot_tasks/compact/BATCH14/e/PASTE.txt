@@ -54,7 +54,7 @@ abbrev V := Fin 3 → ℝ
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_asymmetricEulerRelation (Blueprint/Ch02.lean:643)
+### MD.Ch02.bp_asymmetricEulerRelation (Blueprint/Ch02.lean:645)
 ```lean
 def bp_asymmetricEulerRelation (f g : ℝ → ℝ → ℝ) (h u v U V : ℝ) : Prop :=
   U = u + h*f U v ∧ V = v + h*g U v

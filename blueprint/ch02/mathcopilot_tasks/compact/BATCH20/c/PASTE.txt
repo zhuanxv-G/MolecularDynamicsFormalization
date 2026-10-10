@@ -53,7 +53,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_backwardEulerRelation (Blueprint/Ch02.lean:906)
+### MD.Ch02.bp_backwardEulerRelation (Blueprint/Ch02.lean:908)
 ```lean
 def bp_backwardEulerRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop := w = z + h • f w
 ```

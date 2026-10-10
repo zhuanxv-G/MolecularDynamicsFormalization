@@ -53,7 +53,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_differential (Blueprint/Ch02.lean:686)
+### MD.Ch02.bp_differential (Blueprint/Ch02.lean:688)
 ```lean
 def bp_differential {n : ℕ} (g : Q n → ℝ) : oneForm n := fderiv ℝ g
 ```

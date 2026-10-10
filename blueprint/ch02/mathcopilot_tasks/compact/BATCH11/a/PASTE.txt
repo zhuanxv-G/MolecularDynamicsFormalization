@@ -54,7 +54,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_firstIntegral (Blueprint/Ch02.lean:421)
+### MD.Ch02.bp_firstIntegral (Blueprint/Ch02.lean:423)
 ```lean
 def bp_firstIntegral {n : ℕ} (I : Q n → ℝ) (f : Q n → Q n) (D : Set (Q n)) : Prop :=
   ∀ z ∈ D, (fderiv ℝ I z) (f z) = 0

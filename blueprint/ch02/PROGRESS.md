@@ -2,13 +2,12 @@
 
 范围：印刷p.53–94/PDF75–116，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前110条；旧清单映射115/160；本地PASS 97；网站返回0。
+当前135条；旧清单映射139/160；本地PASS 121；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
 | MD-2-HamiltonianODE | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
 | MD-2-Hamiltonian | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2-CanonicalJ | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
 | MD-2-Euler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
 | MD-2-OneStep | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
 | MD-2.1-Convergence | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
@@ -26,7 +25,7 @@
 | MD-2.2.1-FirstVariation | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；积分下求导及一致二阶Taylor余项。 |
 | MD-2.2.1-TaylorPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书疑误裁定；正确Taylor余项理论另缺。 |
 | MD-2.2.1-StationaryAction | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.1-Parts | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；连续线性泛函值曲线的区间分部积分。 |
+| MD-2.2.1-Parts | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际作用量求导、连续线性泛函值积分分部与变分正则性理论。 |
 | MD-2.2.1-EulerLagrange | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；基本变分引理、积分分部及实际作用量的一阶求导。 |
 | MD-2.2.1-VariationalDerivativePrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
 | MD-2.2.1-StationaryNotMin | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；尚缺具体负动能作用量曲线反例及积分平方严格正证明。 |
@@ -116,6 +115,32 @@
 | MD-2.3.7-EulerAdjoint | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-2.3.7-AdjointSymplecticEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
 | MD-2.3.7-AdjointInvolution | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.1-Splitting | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.4.1-FieldAdd | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.1-SplittingLocal | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.1-KineticFlow | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.4.1-PotentialFlow | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.4.1-SplitEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.1-VerletComposition | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.1-VerletSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.1-SymmetricComposition | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.1-SymmetricEven | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。 |
+| MD-2.4.2-CompositionSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.2-CompositionOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。 |
+| MD-2.4.3-HarmonicSplit | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.4.4-ImplicitLocal | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际逆函数定理局部Homeomorph、缩小紧邻域及连续逆有界。 |
+| MD-2.4.4-BackwardEulerSolve | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.4.4-Newton | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-2.4.4-NewtonQuadratic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。 |
+| MD-2.4.4-FrozenNewton | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；沿凸球积分/均值范数界、保持邻域与迭代几何界。 |
+| MD-2.4.5-Conjugacy | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.4.5-ConjugateIterates | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.5-ConjugateLimits | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.5-EulerConjugacy | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-2.4.5-Processing | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
+| MD-2.4.5-ProcessingIterates | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.5-ProcessingOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-2.4.5-EulerEffectiveOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际半kick Homeomorph处理器构造及完整Verlet全局二阶，局部共轭代数条目不能单独证明有效二阶。 |
 
 ## 旧160条完整映射
 
@@ -123,7 +148,7 @@
 |---|---|
 | CH02-001 | MD-2-HamiltonianODE |
 | CH02-002 | MD-2-Hamiltonian |
-| CH02-003 | MD-2-CanonicalJ |
+| CH02-003 | MD-2-HamiltonianODE |
 | CH02-004 | MD-2-Euler |
 | CH02-005 | MD-2-OneStep |
 | CH02-006 | MD-2-OneStep |
@@ -235,30 +260,30 @@
 | CH02-112 | MD-2.3.7-EulerAdjoint |
 | CH02-113 | MD-2.3.7-AdjointSymplecticEuler |
 | CH02-114 | MD-2.3.7-AdjointInvolution |
-| CH02-115 | PENDING：所属节尚未处理 |
-| CH02-116 | PENDING：所属节尚未处理 |
-| CH02-117 | PENDING：所属节尚未处理 |
-| CH02-118 | PENDING：所属节尚未处理 |
-| CH02-119 | PENDING：所属节尚未处理 |
-| CH02-120 | PENDING：所属节尚未处理 |
-| CH02-121 | PENDING：所属节尚未处理 |
-| CH02-122 | PENDING：所属节尚未处理 |
-| CH02-123 | PENDING：所属节尚未处理 |
-| CH02-124 | PENDING：所属节尚未处理 |
-| CH02-125 | PENDING：所属节尚未处理 |
-| CH02-126 | PENDING：所属节尚未处理 |
-| CH02-127 | PENDING：所属节尚未处理 |
-| CH02-128 | PENDING：所属节尚未处理 |
-| CH02-129 | PENDING：所属节尚未处理 |
-| CH02-130 | PENDING：所属节尚未处理 |
-| CH02-131 | PENDING：所属节尚未处理 |
-| CH02-132 | PENDING：所属节尚未处理 |
-| CH02-133 | PENDING：所属节尚未处理 |
-| CH02-134 | PENDING：所属节尚未处理 |
-| CH02-135 | PENDING：所属节尚未处理 |
-| CH02-136 | PENDING：所属节尚未处理 |
-| CH02-137 | PENDING：所属节尚未处理 |
-| CH02-138 | PENDING：所属节尚未处理 |
+| CH02-115 | MD-2.4.1-Splitting |
+| CH02-116 | MD-2.4.1-FieldAdd |
+| CH02-117 | MD-2.4.1-SplittingLocal |
+| CH02-118 | MD-2.4.1-KineticFlow |
+| CH02-119 | MD-2.4.1-PotentialFlow |
+| CH02-120 | MD-2.4.1-SplitEuler |
+| CH02-121 | MD-2.4.1-VerletComposition |
+| CH02-122 | MD-2.4.1-VerletSymplectic |
+| CH02-123 | MD-2.4.1-SymmetricComposition |
+| CH02-124 | MD-2.4.1-SymmetricEven |
+| CH02-125 | MD-2.4.2-CompositionSymplectic |
+| CH02-126 | MD-2.4.2-CompositionOrder |
+| CH02-127 | MD-2.4.3-HarmonicSplit |
+| CH02-128 | MD-2.4.4-ImplicitLocal |
+| CH02-129 | MD-2.4.4-Newton |
+| CH02-130 | MD-2.4.4-NewtonQuadratic |
+| CH02-131 | MD-2.4.4-FrozenNewton |
+| CH02-132 | MD-2.4.5-Conjugacy |
+| CH02-133 | MD-2.4.5-ConjugateIterates |
+| CH02-134 | MD-2.4.5-ConjugateLimits |
+| CH02-135 | MD-2.4.5-EulerConjugacy |
+| CH02-136 | MD-2.4.5-Processing |
+| CH02-137 | MD-2.4.5-ProcessingIterates |
+| CH02-138 | MD-2.4.5-ProcessingOrder |
 | CH02-139 | PENDING：所属节尚未处理 |
 | CH02-140 | PENDING：所属节尚未处理 |
 | CH02-141 | PENDING：所属节尚未处理 |
@@ -287,9 +312,9 @@
 - MD-2.1.2-Taylor2Order：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 缺一般Taylor方法局部截断误差、数值留域与全局阶桥接；当前库仅一般one-step条件误差定理。
 - MD-2.2-VerletOrder：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 缺完整Verlet局部截断误差、稳定性及数值留域推导。
 - MD-2.2.1-Admissible：原文C²与C∞两种表述需导师裁定；当前保留后一C∞，尚不视作与整段完全一致。 原页先说twice continuously differentiable，后说C∞/smooth；按后一明确C∞登记，不能用旧CSV的C1转述。
-- MD-2.2.1-FirstVariation：实际作用量一阶变分与O(ε²)余项均保留；紧时间窗下积分内一致余项以作用量余项表达，实际导数及积分未换成任意系数。 积分下求导及一致二阶Taylor余项。
+- MD-2.2.1-FirstVariation：实际作用量差的精确积分恒等式、一阶导数及O(ε²)余项全部保留。 积分下求导及一致二阶Taylor余项。
 - MD-2.2.1-TaylorPrinted：保留原文漏阶乘的字面式，不静默修正，需导师确认。 原书疑误裁定；正确Taylor余项理论另缺。原脚注二阶及以后漏1/j!；f(x)=x²在0的k=2展开会给2x²，余项差为-x²而非O(x³)。
-- MD-2.2.1-Parts：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 连续线性泛函值曲线的区间分部积分。
+- MD-2.2.1-Parts：完整一阶变分I、分部积分后EL积分、驻值下I=0三个子句；前提是真实作用量驻值定义，不以目标积分零作假设。 实际作用量求导、连续线性泛函值积分分部与变分正则性理论。
 - MD-2.2.1-EulerLagrange：量词改为原文C∞零端点变分，保留真实作用量及实际Euler–Lagrange方程；C² q覆盖原文至少两次可微资格。 基本变分引理、积分分部及实际作用量的一阶求导。
 - MD-2.2.1-VariationalDerivativePrinted：字面漏基准值；抽象E仅表达函数空间中的方向变分，完整C∞曲线拓扑未构造。 左式漏F(q)，原页实际如此。字面定义对于非零常值F无解，不能静默替成HasFDerivAt。
 - MD-2.2.1-StationaryNotMin：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 尚缺具体负动能作用量曲线反例及积分平方严格正证明。
@@ -317,6 +342,13 @@
 - MD-2.3.5-ChainRule：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 原文Φ₁′Φ₂′未写外导数的Φ₂(z)取值点；Lean用正确链式法则，需审校确认简写约定。
 - MD-2.3.5-GlobalGroupPrinted：字面全球逆与逆辛性两个结论保留；不偷偷加入全球双射为假设。 原书全球逆断言裁定；正确微分同胚群接口已有。Jacobian可逆仅推出局部可逆，不能推出任意辛映射全球双射；正确群是给定全球辛微分同胚。
 - MD-2.3.6-KickDifferential：完整实际辛Euler步映射的两个坐标微分子句；grad U的真实导数即Hessian，不以任意矩阵代替。 完整步映射Fréchet导数与kick/drift组合的坐标整理。
+- MD-2.4.1-SymmetricEven：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。
+- MD-2.4.2-CompositionOrder：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。
+- MD-2.4.4-ImplicitLocal：完整局部唯一逆、正逆律、C¹及局部有界性均保留；原文typically的可逆导数资格逐项[EXTRA]，不宣称任意隐式关系全球可逆。 实际逆函数定理局部Homeomorph、缩小紧邻域及连续逆有界。
+- MD-2.4.4-Newton：字面双输入更新与标准Newton不同，待裁定索引；定义不证明收敛。 原文混用zₙ⁽ᵏ⁾与zₙ₊₁⁽ᵏ⁾；保留两个不同输入，不静默改成相同迭代点。映射可逆也不保证任意近似Jacobian非奇异。
+- MD-2.4.4-NewtonQuadratic：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。
+- MD-2.4.4-FrozenNewton：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 沿凸球积分/均值范数界、保持邻域与迭代几何界。
+- MD-2.4.5-EulerEffectiveOrder：已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。 实际半kick Homeomorph处理器构造及完整Verlet全局二阶，局部共轭代数条目不能单独证明有效二阶。
 
 ## 定性段落排除
 
@@ -328,3 +360,4 @@
 - p.71–72/PDF93–94：几何积分动机与指向第3章的修正能量说明为excluded_qualitative；此处不开展第3章理论。
 - p.74/PDF96：图2.6初始圆盘与能量数值区间为示例观察，excluded_qualitative；LJ模型与bounded→periodic陈述另列。
 - p.80–82/PDF102–104：辛积分历史与软件实现说明为excluded_qualitative；实际映射公式另列。
+- p.85–89/PDF107–111：任意高阶展望、第3章指引、隐式计算成本/稀疏实现及图2.7流程动机为excluded_qualitative；实际公式、误差与共轭结论已单列。

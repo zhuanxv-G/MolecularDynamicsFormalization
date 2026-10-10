@@ -2,7 +2,6 @@ import Blueprint.Ch02
 
 #print axioms MD.Ch02.hamiltonianODE
 #print axioms MD.Ch02.mechanicalHamiltonian
-#print axioms MD.Ch02.canonicalJ
 #print axioms MD.Ch02.euler
 #print axioms MD.Ch02.numericalTrajectory
 #print axioms MD.Ch02.convergence
@@ -110,3 +109,29 @@ import Blueprint.Ch02
 #print axioms MD.Ch02.eulerAdjoint
 #print axioms MD.Ch02.bp_adjointSymplecticEuler
 #print axioms MD.Ch02.adjointInvolution
+#print axioms MD.Ch02.bp_splittingMap
+#print axioms MD.Ch02.fieldAdd
+#print axioms MD.Ch02.splittingLocal
+#print axioms MD.Ch02.bp_kineticFlow
+#print axioms MD.Ch02.bp_potentialFlow
+#print axioms MD.Ch02.splitEuler
+#print axioms MD.Ch02.verletComposition
+#print axioms MD.Ch02.verletSymplectic
+#print axioms MD.Ch02.symmetricComposition
+#print axioms MD.Ch02.symmetricEven
+#print axioms MD.Ch02.compositionSymplectic
+#print axioms MD.Ch02.compositionOrder
+#print axioms MD.Ch02.bp_harmonicAnharmonic
+#print axioms MD.Ch02.implicitLocal
+#print axioms MD.Ch02.backwardEulerResidual
+#print axioms MD.Ch02.newtonPrinted
+#print axioms MD.Ch02.newtonQuadratic
+#print axioms MD.Ch02.frozenNewton
+#print axioms MD.Ch02.bp_conjugateMap
+#print axioms MD.Ch02.conjugateIterates
+#print axioms MD.Ch02.conjugateLimits
+#print axioms MD.Ch02.eulerConjugacy
+#print axioms MD.Ch02.bp_processedIterate
+#print axioms MD.Ch02.processingIterates
+#print axioms MD.Ch02.processingOrder
+#print axioms MD.Ch02.eulerEffectiveOrder

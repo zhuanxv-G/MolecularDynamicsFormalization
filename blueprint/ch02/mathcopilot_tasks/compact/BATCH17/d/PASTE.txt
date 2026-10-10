@@ -17,9 +17,9 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
   "section": "2.3.4",
   "printed_page": "79",
   "pdf_page": "101",
-  "statement_latex": "Computing\n\\[W^TJ\\dot W=W^TJ^2SW=-W^TSW,\\]\nwhereas\n\\[\\dot W^TJW=W^TS^TJ^TJW=W^TSW,\\]\nhence\n\\[\\frac{\\mathrm d}{\\mathrm dt}W^TJW=W^TJ\\dot W+\\dot W^TJW=0.\\]",
-  "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "statement_latex": "Hence\n\\[\\frac{\\mathrm d}{\\mathrm dt}W^TJW=W^TJ\\dot W+\\dot W^TJW=0.\\]",
+  "proof_latex": "Computing\n\\[W^TJ\\dot W=W^TJ^2SW=-W^TSW,\\]\nwhereas\n\\[\\dot W^TJW=W^TS^TJ^TJW=W^TSW,\\]\nhence\n\\[\\frac{\\mathrm d}{\\mathrm dt}W^TJW=W^TJ\\dot W+\\dot W^TJW=0.\\]",
+  "proof_note": "两个中间矩阵等式属于原文证明计算，逐字保留于proof_latex；实际时间乘积导数及常值由FormConstant承担。",
   "proof_discussion_latex": null,
   "context_notation": [
     "W′=JSW由前项背景；本条矩阵恒等式两个乘积项之和为0，实际乘积求导见FormConstant。"

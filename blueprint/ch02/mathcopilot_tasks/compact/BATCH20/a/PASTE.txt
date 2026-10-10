@@ -49,7 +49,7 @@ noncomputable def bp_adjoint {E : Type*} (G : ℝ → Equiv.Perm E) (h : ℝ) :
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch02.bp_adjoint (Blueprint/Ch02.lean:896)
+### MD.Ch02.bp_adjoint (Blueprint/Ch02.lean:898)
 ```lean
 noncomputable def bp_adjoint {E : Type*} (G : ℝ → Equiv.Perm E) (h : ℝ) :
     Equiv.Perm E := (G (-h)).symm

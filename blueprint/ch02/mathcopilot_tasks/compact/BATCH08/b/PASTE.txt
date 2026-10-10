@@ -65,7 +65,7 @@ abbrev Z (n : ℕ) := Q n × Q n
 abbrev Z (n : ℕ) := Q n × Q n
 ```
 
-### MD.Ch02.bp_verlet (Blueprint/Ch02.lean:243)
+### MD.Ch02.bp_verlet (Blueprint/Ch02.lean:245)
 ```lean
 def bp_verlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n) : Z n :=
   let qnew := z.1 + h • invMass m z.2 + (h^2/2) • invMass m (F z.1)

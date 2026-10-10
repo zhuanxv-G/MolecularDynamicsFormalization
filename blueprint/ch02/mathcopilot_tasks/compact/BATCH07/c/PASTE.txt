@@ -58,7 +58,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_discreteAction (Blueprint/Ch02.lean:196)
+### MD.Ch02.bp_discreteAction (Blueprint/Ch02.lean:198)
 ```lean
 def bp_discreteAction {n : ℕ} (L : Q n → Q n → ℝ) (q : ℕ → Q n) (h : ℝ) (ν : ℕ) : ℝ :=
   ∑ k ∈ Finset.range ν, h * L (q k) (discreteVelocity q h k)

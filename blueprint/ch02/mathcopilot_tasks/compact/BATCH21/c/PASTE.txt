@@ -1,0 +1,92 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH21c_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 105 | 83 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-2.4.1-SplittingLocal",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.4.1",
+  "printed_page": "83",
+  "pdf_page": "105",
+  "statement_latex": "For this to be a first order method, we need at least $\\|\\mathcal G_h(\\boldsymbol u)-\\mathcal F_h(\\boldsymbol u)\\|\\le C(\\boldsymbol u)h^2$.",
+  "proof_latex": "We expand the map $\\mathcal F_h$ into its Taylor series:\n\\[\\mathcal F_h(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H(\\boldsymbol u)+\\mathcal O(h^2)=\\boldsymbol u+h(J\\nabla H_1(\\boldsymbol u)+J\\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\tag{2.24}\\]\nFor the individual maps $\\mathcal F_{1,h}$ and $\\mathcal F_{2,h}$, we have\n\\[\\mathcal F_{1,h}(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_1(\\boldsymbol u)+\\mathcal O(h^2),\\qquad\\mathcal F_{2,h}(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u)+\\mathcal O(h^2).\\]\nComposing the two maps we obtain\n\\[\\mathcal F_{1,h}(\\mathcal F_{2,h}(\\boldsymbol u))=\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u)+hJ\\nabla H_1(\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\]\nAssuming $H_1$ is twice continuously differentiable, we may expand further in the last term and collect\n\\[\\mathcal F_{1,h}(\\mathcal F_{2,h}(\\boldsymbol u))=\\boldsymbol u+h(J\\nabla H_2(\\boldsymbol u)+J\\nabla H_1(\\boldsymbol u))+\\mathcal O(h^2).\\]\nThus the splitting method does indeed provide a second order local approximation to the flow map.",
+  "proof_note": "原书计算按原页转录。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch02.splittingLocal",
+  "reusable_proofs": [
+    "MolecularDynamics.exists_hamiltonian_splitting_localError_bound"
+  ],
+  "extra_assumptions": [
+    "实际H及两个子Hamilton局部ODE、初值及留开放域；H₁,H₂ C²，组合在紧时间矩形连续；没有假设待证局部误差。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem splittingLocal {Nc : ℕ}
+    (D : Set (SymplecticCoordinates Nc)) (hD : IsOpen D)
+    (H₁ H₂ : SymplecticCoordinates Nc → ℝ)
+    (hH₁ : ContDiffOn ℝ 2 H₁ D) (hH₂ : ContDiffOn ℝ 2 H₂ D)
+    (F F₁ F₂ : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (u : SymplecticCoordinates Nc) {τ : ℝ} (hτ : 0 ≤ τ)
+    (hFD : ∀ t ∈ Icc 0 τ, F t u ∈ D)
+    (hF₂D : ∀ t ∈ Icc 0 τ, F₂ t u ∈ D)
+    (hF₁D : ∀ s ∈ Icc 0 τ, ∀ t ∈ Icc 0 τ, F₁ t (F₂ s u) ∈ D)
+    (hF : ∀ t ∈ Icc 0 τ, HasDerivWithinAt (fun v => F v u)
+      (textbookHamiltonianVectorField (fun x => H₁ x + H₂ x) (F t u)) (Icc 0 τ) t)
+    (hF₂ : ∀ t ∈ Icc 0 τ, HasDerivWithinAt (fun v => F₂ v u)
+      (textbookHamiltonianVectorField H₂ (F₂ t u)) (Icc 0 τ) t)
+    (hF₁ : ∀ s ∈ Icc 0 τ, ∀ t ∈ Icc 0 τ, HasDerivWithinAt
+      (fun v => F₁ v (F₂ s u)) (textbookHamiltonianVectorField H₁ (F₁ t (F₂ s u))) (Icc 0 τ) t)
+    (hc : ContinuousOn (fun p : ℝ × ℝ => F₁ p.2 (F₂ p.1 u)) (Icc 0 τ ×ˢ Icc 0 τ))
+    (hinit : F 0 u = u) (hinit₂ : F₂ 0 u = u)
+    (hinit₁ : ∀ s ∈ Icc 0 τ, F₁ 0 (F₂ s u) = F₂ s u) :
+    ∃ C : ℝ, 0 < C ∧
+      (∀ h ∈ Icc 0 τ, ‖F₁ h (F₂ h u) - F h u‖ ≤ C * h ^ 2) ∧
+      (0 < τ → Asymptotics.IsBigO (𝓝[>] (0 : ℝ))
+        (fun h => F₁ h (F₂ h u) - F h u) (fun h : ℝ => h ^ 2))
+```
+
+原上下文：namespace MD.Ch02；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.SymplecticCoordinateMatrix (MolecularDynamics/Chapter02/SymplecticForm.lean:27)
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+
+### MolecularDynamics.SymplecticCoordinates (MolecularDynamics/Chapter02/SymplecticForm.lean:25)
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+
+### MolecularDynamics.textbookHamiltonianVectorField (MolecularDynamics/Chapter02/SplittingError.lean:176)
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+
+### MolecularDynamics.textbookJ (MolecularDynamics/Chapter02/SymplecticForm.lean:31)
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```

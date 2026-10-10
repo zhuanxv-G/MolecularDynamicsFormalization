@@ -212,7 +212,7 @@ private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 ```
 
-### MD.Ch02.coefficientTwoForm (Blueprint/Ch02.lean:718)
+### MD.Ch02.coefficientTwoForm (Blueprint/Ch02.lean:720)
 ```lean
 def coefficientTwoForm {n : ℕ} (A : Q n → Matrix (Fin n) (Fin n) ℝ)
     (z u v : Q n) : ℝ :=

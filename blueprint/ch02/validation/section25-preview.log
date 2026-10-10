@@ -1,0 +1,20 @@
+blueprint/ch02/validation/Section25Draft.lean:27:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:31:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:49:49: error: typeclass instance problem is stuck
+  HSMul (?m.114 s A b n H) (SymplecticCoordinates n) (SymplecticCoordinates n)
+
+Note: Lean will not try to resolve this typeclass instance problem because the first type argument to `HSMul` contains metavariables. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+blueprint/ch02/validation/Section25Draft.lean:53:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:69:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:85:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:95:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:101:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:111:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:115:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:123:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:136:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:143:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:160:8: warning: declaration uses `sorry`
+blueprint/ch02/validation/Section25Draft.lean:170:8: warning: declaration uses `sorry`

@@ -51,7 +51,7 @@ noncomputable def bp_symplecticEuler {Nc : ℕ}
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch02.bp_symplecticEuler (Blueprint/Ch02.lean:867)
+### MD.Ch02.bp_symplecticEuler (Blueprint/Ch02.lean:869)
 ```lean
 noncomputable def bp_symplecticEuler {Nc : ℕ}
     (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :

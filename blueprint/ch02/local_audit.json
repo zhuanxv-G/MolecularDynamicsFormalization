@@ -30,7 +30,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "64f9c96d0a4ae55f8528b9a0b3968ff0bb32f8d587793814546bf59b4528ae21",
       "transitive_placeholder": false
     },
@@ -61,39 +61,8 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "8b8585b4f7838dd429ec99818a63e6aa3c0a4a75852725679fec79facca9f335",
-      "transitive_placeholder": false
-    },
-    "MD-2-CanonicalJ": {
-      "checked": true,
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "final_status": "self-contained",
-      "lean_decl": "MD.Ch02.canonicalJ",
-      "verdict": "PASS",
-      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "8efac37fc95eb8b9de41f2bbf9c8a7fedb99cebaf41d853e46b0d232bdcdf45d",
-      "direct_placeholder": false,
-      "proof_status": "definition",
-      "documented_priors": [],
-      "missing": null,
-      "website_audit": "待网站审计",
-      "correspondence": [
-        {
-          "source": "原文完整数学对象和展示式",
-          "lean": "MD.Ch02.canonicalJ；定义体/完整签名见上",
-          "note": "一致；逐条技术条件见[EXTRA]"
-        }
-      ],
-      "counterexample": null,
-      "suggested_fix": null,
-      "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
-      "block_sha256": "8efac37fc95eb8b9de41f2bbf9c8a7fedb99cebaf41d853e46b0d232bdcdf45d",
       "transitive_placeholder": false
     },
     "MD-2-Euler": {
@@ -123,7 +92,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "d972017500dc16cadac7cbc70966761995bf5f94337b248f235b4bf71b73bb3e",
       "transitive_placeholder": false
     },
@@ -154,7 +123,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "f79d2e780fa2934c8ed0abd0f39a54ed010cb0660fc97384d1268e8419201ec8",
       "transitive_placeholder": false
     },
@@ -185,7 +154,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "dae87f54a85b8f54c7b38cf55b26311d4cd0b182d41066bdc9ba6215dd5b8332",
       "transitive_placeholder": false
     },
@@ -216,7 +185,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "e05f04a1c9ec06ba535591b5c5ae2e10043d637264e49e2d516a5c8f0a8ad0bb",
       "transitive_placeholder": false
     },
@@ -247,7 +216,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "89ff35b2af09075c46c9358168fc7352256ab3050071ad67f9901084c30931b6",
       "transitive_placeholder": false
     },
@@ -285,7 +254,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "ee68eaf61eb1e0cfdc32e9e386a05b67b916bf511da28ade383b79700361de95",
       "transitive_placeholder": false
     },
@@ -316,7 +285,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "d967e9ccd03ec6f795e4b74bee8fd4b981f2649fc71f4af307ed1d0d8ddad470",
       "transitive_placeholder": false
     },
@@ -347,7 +316,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "2f0a0b493c444eedd7791d6e5e1250bc7f7ed3cfc089cbc805c63a748f83f396",
       "transitive_placeholder": false
     },
@@ -379,9 +348,10 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
       "block_sha256": "349546de79741a85539d5428aec081c8c2ce0d6161db3e42a9880b6c2ff08e2c",
-      "transitive_placeholder": false
+      "transitive_placeholder": false,
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.2-VerletOrder": {
       "checked": true,
@@ -413,7 +383,8 @@
       "proof_attempts": 0,
       "block_sha256": "ae931b5cec14e4cfe032f1d9d629f8b4d40ecce708e3531f8a5050431b42026e",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.2.1-Lagrangian": {
       "checked": true,
@@ -444,7 +415,7 @@
       "proof_attempts": 0,
       "block_sha256": "563899e2355258f62a01de81206f7745a661aa4d4d9f5bb120def2752c1656d4",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.1-Admissible": {
       "checked": true,
@@ -475,7 +446,8 @@
       "proof_attempts": 0,
       "block_sha256": "a6e26d4be5f24e27a02e5571211fd6f521eb7f6c8f696edc099ee8c5b23d11a9",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.2.1-Action": {
       "checked": true,
@@ -506,7 +478,7 @@
       "proof_attempts": 0,
       "block_sha256": "9d8fe74d61a74836c8ca062b092912088e57bd3c9ff3bdd03ea3f1c9ca62efa1",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.1-Variation": {
       "checked": true,
@@ -537,7 +509,7 @@
       "proof_attempts": 0,
       "block_sha256": "2d0dbf83f054ceade7c209c731536ae4ab39181a1e4ea94af03c4f35fbfd1bac",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.1-FirstVariation": {
       "checked": true,
@@ -550,8 +522,8 @@
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.firstVariation",
       "verdict": "PASS",
-      "explanation": "实际作用量一阶变分与O(ε²)余项均保留；紧时间窗下积分内一致余项以作用量余项表达，实际导数及积分未换成任意系数。",
-      "signature_sha256": "0fa6820f279a3b47af5e9e5a745ca12e1eea87fe230dd7bf23488ef4ade6bdfe",
+      "explanation": "实际作用量差的精确积分恒等式、一阶导数及O(ε²)余项全部保留。",
+      "signature_sha256": "bff5a9f8d87e38ca0e35668c29e6574bb2e479ead2904c0c34412a23c71e8f4b",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -567,9 +539,10 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "block_sha256": "82e0a2643649bf4825f1774aae383a2444f2e2fbe4ed8edbf7c532ba9a594e91",
+      "block_sha256": "2708fc802d880428b54df1decd576374aa558470f9377f7a6ed8a8b61e62625c",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.2.1-TaylorPrinted": {
       "checked": true,
@@ -601,7 +574,8 @@
       "proof_attempts": 0,
       "block_sha256": "df423d2f8ad927da1b181c02dc14063403490e3adf725725dec8a3a6fc40faf8",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.2.1-StationaryAction": {
       "checked": true,
@@ -632,7 +606,7 @@
       "proof_attempts": 0,
       "block_sha256": "5e47ad2b3f039ca3e80fb624e61ffc4a6ac657de6bf25f36cc31f7b4d6ac08c0",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.1-Parts": {
       "checked": true,
@@ -645,12 +619,12 @@
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.firstVariationParts",
       "verdict": "PASS",
-      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "7b4772af7ba04d98058dfa8366e9c0b2f0de46c71702b283eb0a25997cd603e8",
+      "explanation": "完整一阶变分I、分部积分后EL积分、驻值下I=0三个子句；前提是真实作用量驻值定义，不以目标积分零作假设。",
+      "signature_sha256": "7fb262663a8a6785937fdf478e22775d3de8c90fa9f80cdbcf95e6aefbc15386",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
-      "missing": "连续线性泛函值曲线的区间分部积分。",
+      "missing": "实际作用量求导、连续线性泛函值积分分部与变分正则性理论。",
       "website_audit": "待网站审计",
       "correspondence": [
         {
@@ -662,9 +636,10 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "block_sha256": "6433da035463a60b9c08ec9b2900f182b78c75b9bc3342fe5d51ab992049bd3f",
+      "block_sha256": "04aed2668b2d7c52dd3a193512ded6c929f1ba2f4227cfcc412b1839bbe8f26c",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.2.1-EulerLagrange": {
       "checked": true,
@@ -696,7 +671,8 @@
       "proof_attempts": 0,
       "block_sha256": "f987468949bff3bc1d9263d3d55a485360060c735136b4260fac36a377afa823",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.2.1-VariationalDerivativePrinted": {
       "checked": true,
@@ -727,7 +703,8 @@
       "proof_attempts": 0,
       "block_sha256": "ca49b5bcf458f8bd2458e4b0792e577bc2433a43fcf9db99968ad7997724b6a1",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.2.1-StationaryNotMin": {
       "checked": true,
@@ -759,7 +736,8 @@
       "proof_attempts": 0,
       "block_sha256": "059989a8d4880047d052f8eb60b187fd547d0fb8971fff4a2385ff0b73b60eaa",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.2.2-DiscretePath": {
       "checked": true,
@@ -790,7 +768,7 @@
       "proof_attempts": 0,
       "block_sha256": "c9ece6fe071a344a7cb514e193ba6ce67da24392cd4e894b94b9a4157470fe4f",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.2-DiscreteVelocity": {
       "checked": true,
@@ -821,7 +799,7 @@
       "proof_attempts": 0,
       "block_sha256": "a58ea42a20332cd23bf50a5c258a15dd275c98e762a669eff9850898f51b3676",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.2-DiscreteAction": {
       "checked": true,
@@ -852,7 +830,8 @@
       "proof_attempts": 0,
       "block_sha256": "894e6b90da81bc361b2a861b2ee67cb3396fb854e9e3438a7fa1236ebf55d7a5",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.2.2-DiscreteStationaryPrinted": {
       "checked": true,
@@ -883,7 +862,8 @@
       "proof_attempts": 0,
       "block_sha256": "7b1665846f2b2a4d259a1e1dece7d555ba7939241be18910a2536074c613d49e",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.2.2-DiscreteDerivative": {
       "checked": true,
@@ -912,10 +892,40 @@
       ],
       "counterexample": null,
       "suggested_fix": null,
-      "proof_attempts": 0,
+      "proof_attempts": 3,
       "block_sha256": "47ba452b40b8d518098ad5eb1acf672a2fe4ed008c34b05273160ac298ebf061",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "proof_trials": [
+        {
+          "route": "exact?",
+          "result": "INTERRUPTED_TIME_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+          ],
+          "log": "blueprint/ch02/validation/short-search1.log"
+        },
+        {
+          "route": "aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search2.log"
+        },
+        {
+          "route": "definition simplification, ring_nf, aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search3.log"
+        }
+      ],
+      "stop_reason": "三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。"
     },
     "MD-2.2.2-DiscreteVerlet": {
       "checked": true,
@@ -944,10 +954,40 @@
       ],
       "counterexample": null,
       "suggested_fix": null,
-      "proof_attempts": 0,
+      "proof_attempts": 3,
       "block_sha256": "211290aa3f716ea12abd0f73e9866fcaf3ffdfc9792efa8cfb34596ead283020",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "proof_trials": [
+        {
+          "route": "exact?",
+          "result": "INTERRUPTED_TIME_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+          ],
+          "log": "blueprint/ch02/validation/short-search1.log"
+        },
+        {
+          "route": "aesop",
+          "result": "FAILED_TACTIC",
+          "accepted": false,
+          "diagnostics": [
+            "unsolved goals"
+          ],
+          "log": "blueprint/ch02/validation/short-search2.log"
+        },
+        {
+          "route": "definition simplification, ring_nf, aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search3.log"
+        }
+      ],
+      "stop_reason": "三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。"
     },
     "MD-2.2.2-Stormer": {
       "checked": true,
@@ -978,7 +1018,7 @@
       "proof_attempts": 0,
       "block_sha256": "83dc5efda6aaaf94fb398e07b9327a57f25c4b7484392e7ad8e7af72d2d81bab",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.2-VelocityVerlet": {
       "checked": true,
@@ -1009,7 +1049,7 @@
       "proof_attempts": 0,
       "block_sha256": "7d3bf778c1d4118f303327c622472e022abb5d925efee0257554b602fe9cf869",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.2-EliminateVelocity": {
       "checked": true,
@@ -1042,7 +1082,7 @@
       "proof_attempts": 0,
       "block_sha256": "aebcfee0e7e46853cab82da42d5f85a040ebb5a0779ebbceca75e87c6d1e4288",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.2-MomentumVerlet": {
       "checked": true,
@@ -1073,7 +1113,7 @@
       "proof_attempts": 0,
       "block_sha256": "2e39b3119ec26b4905e6ae308ca224d99c07662893683ff4b41a9fbd464306f3",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.2-Leapfrog": {
       "checked": true,
@@ -1104,7 +1144,7 @@
       "proof_attempts": 0,
       "block_sha256": "2262cf50ad2ed24993a2030dc174bdbd926f190b53583273fbcc90a310eff2eb",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.2-LeapfrogInit": {
       "checked": true,
@@ -1135,7 +1175,7 @@
       "proof_attempts": 0,
       "block_sha256": "2ed885b48eb9485547001aaa4bb0aa8dbcf23a68cb5274f463876b953893bd08",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.2-LeapfrogReconstruct": {
       "checked": true,
@@ -1166,7 +1206,7 @@
       "proof_attempts": 0,
       "block_sha256": "a8ed39b3cca44c5dde05acc754df8310a7e42cc6cb4b01e5256173e81cf3061d",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.3-ErrorDifference": {
       "checked": true,
@@ -1199,7 +1239,7 @@
       "proof_attempts": 0,
       "block_sha256": "e0ce99c34f385a17301301eb6d535225750acaf95b946e6749ab036f4d62bd8d",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.3-Consistency": {
       "checked": true,
@@ -1230,7 +1270,7 @@
       "proof_attempts": 0,
       "block_sha256": "81b9bbc8c8a451935f2f2b65f660d0ee130e97bc3fc4613cbf43b1c624cfbccc",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.3-Stability": {
       "checked": true,
@@ -1261,7 +1301,7 @@
       "proof_attempts": 0,
       "block_sha256": "55535bfd89f6c8476e4d541f0609cd8813d43fa5fb9a9f4408f538a31e01b5c2",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.3-ErrorRecursion": {
       "checked": true,
@@ -1294,7 +1334,7 @@
       "proof_attempts": 0,
       "block_sha256": "b9b46bc25db80e2db764e4faf2bb3e2d5fb970e817f22c438be4ff363aacc292",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.3-ErrorBound": {
       "checked": true,
@@ -1327,7 +1367,7 @@
       "proof_attempts": 0,
       "block_sha256": "99771ec4486a5cfb725e257da79bad6f88f2b046049d4c8d834bd6721c4b5d62",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.3-ConsistencyConvergence": {
       "checked": true,
@@ -1361,7 +1401,7 @@
       "proof_attempts": 0,
       "block_sha256": "9643f9c992ca31f0e9f83a0d0464a2f877e3732e6f15453846716554c97effc4",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.3-ScalarVerlet": {
       "checked": true,
@@ -1392,7 +1432,7 @@
       "proof_attempts": 0,
       "block_sha256": "9dfddfbbb443c0d9081db423d421826ecd8f5f7e7993428160be94ceed9c36ce",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.3-VerletExpansion": {
       "checked": true,
@@ -1424,7 +1464,8 @@
       "proof_attempts": 0,
       "block_sha256": "8cbf636e7194515b28f5bdc9c6fc7bf6b85335691e443e7cea705dbcc28ba093",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.2.3-ExactExpansion": {
       "checked": true,
@@ -1456,7 +1497,8 @@
       "proof_attempts": 0,
       "block_sha256": "85940fdc8caa3763a7a7b38eeff8f7608a125a37c13ca0a5a593bc261043c93b",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.2.3-DefectPrinted": {
       "checked": true,
@@ -1488,7 +1530,8 @@
       "proof_attempts": 0,
       "block_sha256": "8a0cb6c050cb3b5dbff31d47ce7b904aa3d9a23e3438b79b54ae1329a317d718",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.2.3-VerletConsistency": {
       "checked": true,
@@ -1520,7 +1563,8 @@
       "proof_attempts": 0,
       "block_sha256": "4db39bc6882d31aaf56324d600c6721ec4b955abfd9384a23572f2a6674a94c6",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.2.3-VerletStability": {
       "checked": true,
@@ -1549,10 +1593,40 @@
       ],
       "counterexample": null,
       "suggested_fix": null,
-      "proof_attempts": 0,
+      "proof_attempts": 3,
       "block_sha256": "f53fe6597d6e812c89a8af7f2124a0e50460821a2adc97f6d5ce1d147b2e5729",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "proof_trials": [
+        {
+          "route": "exact?",
+          "result": "INTERRUPTED_TIME_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+          ],
+          "log": "blueprint/ch02/validation/short-search1.log"
+        },
+        {
+          "route": "aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search2.log"
+        },
+        {
+          "route": "definition simplification, ring_nf, aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search3.log"
+        }
+      ],
+      "stop_reason": "三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。"
     },
     "MD-2.2.4-FirstIntegral": {
       "checked": true,
@@ -1583,7 +1657,7 @@
       "proof_attempts": 0,
       "block_sha256": "a4b67f13739ca66e69d9eb455968e402ecdb5a636a561cbea075a41084978ac6",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.4-IntegralPreserved": {
       "checked": true,
@@ -1614,7 +1688,7 @@
       "proof_attempts": 2,
       "block_sha256": "e2003b06fb755574b0066b43ff230f4852a2c290f21721e0d3a216850a1ea0bf",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.4-EnergyPreserved": {
       "checked": true,
@@ -1647,7 +1721,7 @@
       "proof_attempts": 0,
       "block_sha256": "46e12ca4bc8e0257da417321feecf71fad16b54ed89921a42c930140dca2d859",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.4-AngularMomentum": {
       "checked": true,
@@ -1679,7 +1753,8 @@
       "proof_attempts": 3,
       "block_sha256": "dd7ea1fff1a70d2a5266c11b2ac49bb158328b33c9dd5de420f8f6438f720b9d",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.2.4-IntegralMeanValue": {
       "checked": true,
@@ -1710,7 +1785,7 @@
       "proof_attempts": 0,
       "block_sha256": "709ca9f7f124efe0b80dda7496b7eb4e730f24b40eb7b5f8a9e174ce0d888b35",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.4-IntegralLipschitz": {
       "checked": true,
@@ -1741,7 +1816,7 @@
       "proof_attempts": 0,
       "block_sha256": "753b4eab15b67cb836a4a8b43d5db6f7cb047bba0dde3c74db7894b962067069",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.2.4-IntegralErrorPrinted": {
       "checked": true,
@@ -1773,7 +1848,8 @@
       "proof_attempts": 0,
       "block_sha256": "ccbbeac954e1d477c04fe4d11136a06bbdac04c7701c484b1be09a31ac16623e",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.3.1-Divergence": {
       "checked": true,
@@ -1804,7 +1880,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.1-Liouville": {
       "checked": true,
@@ -1837,7 +1913,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.1-HamiltonDivergence": {
       "checked": true,
@@ -1870,7 +1946,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.1-HamiltonVolume": {
       "checked": true,
@@ -1903,7 +1979,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.1-VolumeChange": {
       "checked": true,
@@ -1934,7 +2010,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.1-VariationalPrinted": {
       "checked": true,
@@ -1966,7 +2042,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.3.1-DeterminantODE": {
       "checked": true,
@@ -1999,7 +2076,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.1-DeterminantExponential": {
       "checked": true,
@@ -2031,7 +2108,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.3.1-FlowDet": {
       "checked": true,
@@ -2064,7 +2142,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.1-LJOscillator": {
       "checked": true,
@@ -2095,7 +2173,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.1-LJBoundedPeriodic": {
       "checked": true,
@@ -2127,7 +2205,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.3.2-LinearDivergence": {
       "checked": true,
@@ -2159,7 +2238,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
     },
     "MD-2.3.2-LinearEuler": {
       "checked": true,
@@ -2190,7 +2270,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.2-EulerVolumePrinted": {
       "checked": true,
@@ -2222,7 +2302,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.3.2-EulerVolumeCounterexample": {
       "checked": true,
@@ -2255,7 +2336,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.2-AsymmetricEuler": {
       "checked": true,
@@ -2286,7 +2367,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.2-AsymmetricJacobian": {
       "checked": true,
@@ -2316,9 +2397,39 @@
       ],
       "counterexample": null,
       "suggested_fix": null,
-      "proof_attempts": 0,
+      "proof_attempts": 3,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "proof_trials": [
+        {
+          "route": "exact?",
+          "result": "INTERRUPTED_TIME_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+          ],
+          "log": "blueprint/ch02/validation/short-search1.log"
+        },
+        {
+          "route": "aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search2.log"
+        },
+        {
+          "route": "definition simplification, ring_nf, aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search3.log"
+        }
+      ],
+      "stop_reason": "三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。"
     },
     "MD-2.3.2-AsymmetricArea": {
       "checked": true,
@@ -2348,9 +2459,39 @@
       ],
       "counterexample": null,
       "suggested_fix": null,
-      "proof_attempts": 0,
+      "proof_attempts": 3,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "proof_trials": [
+        {
+          "route": "exact?",
+          "result": "INTERRUPTED_TIME_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+          ],
+          "log": "blueprint/ch02/validation/short-search1.log"
+        },
+        {
+          "route": "aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search2.log"
+        },
+        {
+          "route": "definition simplification, ring_nf, aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search3.log"
+        }
+      ],
+      "stop_reason": "三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。"
     },
     "MD-2.3.3-SymplecticMap": {
       "checked": true,
@@ -2381,7 +2522,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-OneForm": {
       "checked": true,
@@ -2412,7 +2553,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-Differential": {
       "checked": true,
@@ -2443,7 +2584,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-CoordinateDifferentials": {
       "checked": true,
@@ -2474,7 +2615,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-Wedge": {
       "checked": true,
@@ -2505,7 +2646,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-SymplecticForm": {
       "checked": true,
@@ -2536,7 +2677,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-FormSumWedges": {
       "checked": true,
@@ -2569,7 +2710,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-GeneralTwoForm": {
       "checked": true,
@@ -2600,7 +2741,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.3.3-PullbackOne": {
       "checked": true,
@@ -2631,7 +2773,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-PullbackTwo": {
       "checked": true,
@@ -2662,7 +2804,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-PullbackMatrix": {
       "checked": true,
@@ -2693,7 +2835,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-PreservesForm": {
       "checked": true,
@@ -2724,7 +2866,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.3.3-SymplecticIffForm": {
       "checked": true,
@@ -2757,7 +2900,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-SymplecticDet": {
       "checked": true,
@@ -2791,7 +2934,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.3-HamiltonDet": {
       "checked": true,
@@ -2825,7 +2968,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.4-Hessian": {
       "checked": true,
@@ -2856,7 +2999,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.4-HessianSymmetry": {
       "checked": true,
@@ -2889,7 +3032,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.4-HamiltonVariationalPrinted": {
       "checked": true,
@@ -2921,7 +3064,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.3.4-MatrixCancellation": {
       "checked": true,
@@ -2933,7 +3077,7 @@
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.matrixCancellation",
       "verdict": "PASS",
-      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "explanation": "两个矩阵求和的零式完整；原文中间两等式保留为逐字证明，实际导数结论在FormConstant真实ODE常值条目。",
       "signature_sha256": "b339f782b67e9e3b6bac920332dd7885787a0bda6539a6595eb66356f97594f5",
       "block_sha256": "24f898dc5b8f6cde9dcc260644a7320e0b99bcd48781ab06675f99658148f180",
       "direct_placeholder": false,
@@ -2954,7 +3098,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.4-FormConstant": {
       "checked": true,
@@ -2987,7 +3131,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.4-HamiltonSymplectic": {
       "checked": true,
@@ -3020,7 +3164,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.5-ChainRule": {
       "checked": true,
@@ -3053,7 +3197,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.5-SymplecticComposition": {
       "checked": true,
@@ -3086,7 +3230,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.5-SymplecticInverse": {
       "checked": true,
@@ -3119,7 +3263,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.5-GlobalGroupPrinted": {
       "checked": true,
@@ -3151,7 +3295,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
     },
     "MD-2.3.6-SymplecticIntegrator": {
       "checked": true,
@@ -3182,7 +3327,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.6-SymplecticEuler": {
       "checked": true,
@@ -3213,7 +3358,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.6-KickDifferential": {
       "checked": true,
@@ -3243,9 +3388,39 @@
       ],
       "counterexample": null,
       "suggested_fix": null,
-      "proof_attempts": 0,
+      "proof_attempts": 3,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log",
+      "proof_trials": [
+        {
+          "route": "exact?",
+          "result": "INTERRUPTED_TIME_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+          ],
+          "log": "blueprint/ch02/validation/short-search1.log"
+        },
+        {
+          "route": "aesop",
+          "result": "FAILED_TACTIC",
+          "accepted": false,
+          "diagnostics": [
+            "unsolved goals"
+          ],
+          "log": "blueprint/ch02/validation/short-search2.log"
+        },
+        {
+          "route": "definition simplification, ring_nf, aesop",
+          "result": "FAILED_TACTIC",
+          "accepted": false,
+          "diagnostics": [
+            "simp_all made no progress"
+          ],
+          "log": "blueprint/ch02/validation/short-search3.log"
+        }
+      ],
+      "stop_reason": "三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。"
     },
     "MD-2.3.6-WedgeSelf": {
       "checked": true,
@@ -3278,7 +3453,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.6-SymplecticEulerPreserves": {
       "checked": true,
@@ -3311,7 +3486,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.7-Adjoint": {
       "checked": true,
@@ -3342,7 +3517,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.7-FlowSelfAdjoint": {
       "checked": true,
@@ -3375,7 +3550,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.7-BackwardEuler": {
       "checked": true,
@@ -3406,7 +3581,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.7-EulerAdjoint": {
       "checked": true,
@@ -3439,7 +3614,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.7-AdjointSymplecticEuler": {
       "checked": true,
@@ -3470,7 +3645,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     },
     "MD-2.3.7-AdjointInvolution": {
       "checked": true,
@@ -3503,7 +3678,906 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch02\\validation\\section23\\chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.1-Splitting": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.bp_splittingMap",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "65aa410d9cfef1499fdebb01078a0e787060f42cec5c94b97faf218e4e365bd4",
+      "block_sha256": "65aa410d9cfef1499fdebb01078a0e787060f42cec5c94b97faf218e4e365bd4",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.bp_splittingMap；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.1-FieldAdd": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.fieldAdd",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "67f893348e3994a2ca7194f355f2f3acb52749dfd64be30859b96303e07fe167",
+      "block_sha256": "ccc84f39fb26f0f3df5ae8304c5925271b9eb7c47508e0881bedaaa671efa072",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookHamiltonianVectorField_add"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.fieldAdd；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.1-SplittingLocal": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.splittingLocal",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "29fb43427dbd3c6b6339bd3bf42c619ea08afcf75e4152b355679b556ec098cb",
+      "block_sha256": "b7166f800bf48183e951df1a2cf7fd2b391f5d647b9c9e24d3a44a5242e02e40",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.exists_hamiltonian_splitting_localError_bound"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.splittingLocal；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.1-KineticFlow": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.bp_kineticFlow",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "45ec1b1ed155a265074baa5d648471d195610e565577a13b207ff1ff0711274b",
+      "block_sha256": "45ec1b1ed155a265074baa5d648471d195610e565577a13b207ff1ff0711274b",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.bp_kineticFlow；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.1-PotentialFlow": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.bp_potentialFlow",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "3f5840eae7317e0e2d712a6d5843665bce89dfaeaf496cf5ac6782821780cd1a",
+      "block_sha256": "3f5840eae7317e0e2d712a6d5843665bce89dfaeaf496cf5ac6782821780cd1a",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.bp_potentialFlow；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.1-SplitEuler": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.splitEuler",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "cd7672becd691437bfd5157c7463f3203a4474f2ea075d6b0ba7005abebafcf5",
+      "block_sha256": "1ead3a56cdba0860a8c7cb4d05bc46b93d828f188761a38e936daabe715f860a",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.Chapter02Review.kineticPotentialComposition_proved"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.splitEuler；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.1-VerletComposition": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.verletComposition",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "96b4965793fb8f0171bff9712a590f272a1b92d60574ac1cd34fa8ccb738b723",
+      "block_sha256": "ebae792f78d15d2bb5015a0eda2dfe8f6d6bba08ff7c17feefc5aeb89ff8cb28",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.Chapter02Review.verletComposition_proved"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.verletComposition；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.1-VerletSymplectic": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.verletSymplectic",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "0a8f68ccc7f058eedc08589def4b33b3bf808480bfe7f18768054ab7ff7ecdfe",
+      "block_sha256": "36729366a8080f5b43da679a158775ee742517d06151b23920756e2a1fa90f54",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.Chapter02Review.verletSymplectic_proved"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.verletSymplectic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.1-SymmetricComposition": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.symmetricComposition",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "6437c3a96d9a1338ae8e1f2ed65b996ec6db99ba0f4b9171da78c60295529f51",
+      "block_sha256": "315ffc8428e0eb1bb6f01f16544beddcd6b6ce17ed7966ffe3a7a79b4bee0207",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.symmetricComposition；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.1-SymmetricEven": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch02.symmetricEven",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "7fdd81357ed53ab61f61f2e867220dfedf92b659e54f9e95a622834d99a5c869",
+      "block_sha256": "2bb41afabe4e893055554df42c814e3b7f556faff7c234c3f91939a9180d46c9",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.symmetricEven；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.2-CompositionSymplectic": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.compositionSymplectic",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "2bbd80a45ac37f20d763f1ba15c2b059375a6a490002a88d82eea744fcf92f79",
+      "block_sha256": "5b55487f0d5f4e06a788da33c51d216cae49f3d141f4e09f9ccf1690b78d14b4",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookComposeMaps_isSymplectic"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.compositionSymplectic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.2-CompositionOrder": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch02.compositionOrder",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "1bf8eac0f16350ec1e86e8f53adc07374531346781388530bc05dfbd07929fd7",
+      "block_sha256": "8b97735344d8d93f6111a0271bbbf06c961b0937107c822983e56c8426051c2e",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.compositionOrder；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "proof_trials": [
+        {
+          "route": "exact?",
+          "result": "INTERRUPTED_TIME_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+          ],
+          "log": "blueprint/ch02/validation/short-search1.log"
+        },
+        {
+          "route": "aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search2.log"
+        },
+        {
+          "route": "definition simplification, ring_nf, aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search3.log"
+        }
+      ],
+      "stop_reason": "三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.3-HarmonicSplit": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.bp_harmonicAnharmonic",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "bceac7ec7db51d0092802e37dabe073960ff147065b243c9c53298131ae8cc30",
+      "block_sha256": "bceac7ec7db51d0092802e37dabe073960ff147065b243c9c53298131ae8cc30",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.bp_harmonicAnharmonic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.4-ImplicitLocal": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch02.implicitLocal",
+      "verdict": "PASS",
+      "explanation": "完整局部唯一逆、正逆律、C¹及局部有界性均保留；原文typically的可逆导数资格逐项[EXTRA]，不宣称任意隐式关系全球可逆。",
+      "signature_sha256": "c8475385c25020935a96ccac808f6b51946f304ca8ae0ba502cc29da0f8c13d5",
+      "block_sha256": "bc7a249277bacd0b88dcd829259bd0e367fa6ec78c98fa6ae68dd898d2420760",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "实际逆函数定理局部Homeomorph、缩小紧邻域及连续逆有界。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.implicitLocal；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.4-BackwardEulerSolve": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.backwardEulerResidual",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "981366fe0ab214d362e3b9074de486e3b4bd4fcd4de4db7c25334297500a5a78",
+      "block_sha256": "981366fe0ab214d362e3b9074de486e3b4bd4fcd4de4db7c25334297500a5a78",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.backwardEulerResidual；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.4-Newton": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch02.newtonPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "字面双输入更新与标准Newton不同，待裁定索引；定义不证明收敛。",
+      "signature_sha256": "4ff1a3615304b0aa2f3290959be770562e7e408db6d6a6443452a1c0ef1950a0",
+      "block_sha256": "4ff1a3615304b0aa2f3290959be770562e7e408db6d6a6443452a1c0ef1950a0",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.newtonPrinted；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.4-NewtonQuadratic": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch02.newtonQuadratic",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "20047deae134f8eed0bf39fc0ddd15cf0bf26bd6556dc43015b3e4d27d3d1d96",
+      "block_sha256": "db0a248ccb9b5c002fde4675f0b4983c6afd8583646ad656a13d5fde6440a15e",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.newtonQuadratic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.4-FrozenNewton": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch02.frozenNewton",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "94141309cef5b825f47717dc0310e12a4b9f8a86b6fe6ba4d427d5033b15d30e",
+      "block_sha256": "d87e0274773adc085626aa64a5881d00998aa45f1417bbd7969c1bcc2d7e44cb",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "沿凸球积分/均值范数界、保持邻域与迭代几何界。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.frozenNewton；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "proof_trials": [
+        {
+          "route": "exact?",
+          "result": "INTERRUPTED_TIME_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+          ],
+          "log": "blueprint/ch02/validation/short-search1.log"
+        },
+        {
+          "route": "aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search2.log"
+        },
+        {
+          "route": "definition simplification, ring_nf, aesop",
+          "result": "FAILED_ELABORATION_BUDGET",
+          "accepted": false,
+          "diagnostics": [
+            "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+          ],
+          "log": "blueprint/ch02/validation/short-search3.log"
+        }
+      ],
+      "stop_reason": "三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.5-Conjugacy": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.bp_conjugateMap",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "67671e344609e54649f886dbacc93f1b3363729d1a6360828d394d59fc010b59",
+      "block_sha256": "67671e344609e54649f886dbacc93f1b3363729d1a6360828d394d59fc010b59",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.bp_conjugateMap；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.5-ConjugateIterates": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.conjugateIterates",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "4a8770997bd9229e03eef0fd51fe7efdfdc641d18d98fe335f5ed755ce0fbcc8",
+      "block_sha256": "6eff9e3797dea380205e25531dddf24d1f09c80b36ce97032f9663ea5938fd44",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbook_conjugate_iterates"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.conjugateIterates；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.5-ConjugateLimits": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.conjugateLimits",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "a760f26ac5a40c79ad71dc333909ff2474f51685bfe8cd93802a957f89caf6db",
+      "block_sha256": "fa715beb72514de2d3add144500a5390b2c4c368141ee68df953879c0b6f2b7b",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbook_conjugate_iterates_tendsto_iff"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.conjugateLimits；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.5-EulerConjugacy": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.eulerConjugacy",
+      "verdict": "PASS",
+      "explanation": "完整实际半kick共轭恒等式已短证；有效二阶单列，不能据此冒充完整二阶误差已证。",
+      "signature_sha256": "1768f66436ec26ebb9d3d6a271ed49d92a59bafb797122cffd7e1a0e71c6d32c",
+      "block_sha256": "f01c3dd081a93359fa69ac31ba658432fcf121067e14adde0032de527f273651",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.eulerConjugacy；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.5-Processing": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch02.bp_processedIterate",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "f577ed040a558b725bb65303a765c359eecb20bcdf40e135613cb87948c000bb",
+      "block_sha256": "f577ed040a558b725bb65303a765c359eecb20bcdf40e135613cb87948c000bb",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.bp_processedIterate；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.5-ProcessingIterates": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.processingIterates",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "3b3e18eff821050eab240902af6e3f1402ce2f3d5df3e3f6513340d6707fde6c",
+      "block_sha256": "1ce9fb3bedb5a6bfbd604e12ee9de60cecb54869eee78596cd0dcd31b15a28a2",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.processingIterates；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.5-ProcessingOrder": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch02.processingOrder",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "510287b0056b765b86b162007abca10eb1c45512f08808be7a3c6d1c36406732",
+      "block_sha256": "888b18fd3dd2e172e5816427da9fc28bcc8cf0b66ceb02e649c04782190641a2",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.processingOrder；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
+    },
+    "MD-2.4.5-EulerEffectiveOrder": {
+      "checked": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch02.eulerEffectiveOrder",
+      "verdict": "PASS",
+      "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
+      "signature_sha256": "ba4f7a94a85d2c5d6144cecafa707893988b3d750a2642335ce0c60366f4c62e",
+      "block_sha256": "fd7472899c9aff15655915ef2abdf0ea4df9eb8706a36dc66dd1f549b1c19511",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "实际半kick Homeomorph处理器构造及完整Verlet全局二阶，局部共轭代数条目不能单独证明有效二阶。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch02.eulerEffectiveOrder；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch02\\validation\\section24\\chapter02_axiom_dependencies.log"
     }
   }
 }

@@ -78,7 +78,7 @@ def action {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) : �
   ∫ t in a..b, L (q t) (deriv q t)
 ```
 
-### MD.Ch02.stationarySmoothAction (Blueprint/Ch02.lean:147)
+### MD.Ch02.stationarySmoothAction (Blueprint/Ch02.lean:145)
 ```lean
 def stationarySmoothAction {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) : Prop :=
   ∀ η : ℝ → Q n, ContDiff ℝ ∞ η → η a = 0 → η b = 0 →

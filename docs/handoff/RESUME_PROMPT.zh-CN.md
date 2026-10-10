@@ -1,7 +1,7 @@
 # 接续提示词
 
 当前任务：第2章本地五步流程（见 blueprint/ch02/PROGRESS.md）；第1章暂停在等待网站审校（见 blueprint/ch01/mathcopilot_tasks/INDEX.md）。
-下一步：核对第2章印刷p.53–94/PDF75–116正文，逐节完成JSON、忠实Blueprint、本地预审、compact任务包及证明；从§2.1开始。
+下一步：完成§2.5 Runge–Kutta、PRK、Newmark及多导数/多步法，补齐160旧条目映射并做全章终验。
 
 每次唤醒只读AGENTS、CURRENT_STATE顶部、WORK_LOG最新和blueprint/ch02/PROGRESS.md，再按下一步读取相关输入。
 第2章按第1章本地五步流程逐节工作，正式库不改且0 sorry；Blueprint允许by sorry。每小批单文件Lean，每节完整scripts/check.ps1及逐条公理审计，每节一次commit并push。

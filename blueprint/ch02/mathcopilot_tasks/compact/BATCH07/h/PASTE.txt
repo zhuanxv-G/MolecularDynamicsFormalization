@@ -67,7 +67,7 @@ abbrev Z (n : ℕ) := Q n × Q n
 abbrev Z (n : ℕ) := Q n × Q n
 ```
 
-### MD.Ch02.bp_velocityVerlet (Blueprint/Ch02.lean:230)
+### MD.Ch02.bp_velocityVerlet (Blueprint/Ch02.lean:232)
 ```lean
 def bp_velocityVerlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n) : Z n :=
   let vhalf := z.2 + (h/2) • invMass m (F z.1)

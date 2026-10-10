@@ -53,7 +53,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_variation (Blueprint/Ch02.lean:118)
+### MD.Ch02.bp_variation (Blueprint/Ch02.lean:114)
 ```lean
 def bp_variation {n : ℕ} (q η : ℝ → Q n) (ε : ℝ) (t : ℝ) : Q n := q t + ε • η t
 ```

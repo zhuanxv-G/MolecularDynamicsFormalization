@@ -10,7 +10,8 @@ def stage(paths):
     remove=[]
     for e in entries:
         meta,path=e.split('\t',1)
-        if canonical(path)!=path:remove.append('0 '+'0'*40+'\t'+path+'\0')
+        obsolete=path.startswith('blueprint/ch02/') and 'blueprint/ch02' in paths and not (ROOT/path).exists()
+        if canonical(path)!=path or obsolete:remove.append('0 '+'0'*40+'\t'+path+'\0')
     if remove:subprocess.run(['git','-c','core.ignorecase=false','update-index','-z','--index-info'],cwd=ROOT,input=''.join(remove).encode('utf-8'),check=True)
     files=[]
     for relative in paths:

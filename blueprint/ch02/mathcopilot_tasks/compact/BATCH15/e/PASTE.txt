@@ -57,7 +57,7 @@ def bp_wedge {Nc : ℕ} (α β : SymplecticCoordinates Nc →ₗ[ℝ] ℝ) :
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch02.bp_wedge (Blueprint/Ch02.lean:694)
+### MD.Ch02.bp_wedge (Blueprint/Ch02.lean:696)
 ```lean
 def bp_wedge {Nc : ℕ} (α β : SymplecticCoordinates Nc →ₗ[ℝ] ℝ) :
     LinearMap.BilinForm ℝ (SymplecticCoordinates Nc) :=

@@ -50,7 +50,7 @@ def maximumError {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch02.maximumError (Blueprint/Ch02.lean:51)
+### MD.Ch02.maximumError (Blueprint/Ch02.lean:47)
 ```lean
 def maximumError {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (G : ℝ → E → E) (γ : ℝ → E) (h : ℝ) (ν : ℕ) : ℝ :=

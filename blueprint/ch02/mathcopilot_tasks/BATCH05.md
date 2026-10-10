@@ -164,6 +164,8 @@ def bp_variation {n : ℕ} (q η : ℝ → Q n) (ε : ℝ) (t : ℝ) : Q n := q 
 theorem firstVariation :
   ∀ n (L : Q n → Q n → ℝ) (q η : ℝ → Q n) a b,
     a < b → ContDiff ℝ 2 (Function.uncurry L) → ContDiff ℝ 2 q → ContDiff ℝ 2 η →
+    (∀ ε : ℝ, action L a b (variation q η ε)-action L a b q =
+      ∫ t in a..b, L (q t+ε • η t) (deriv q t+ε • deriv η t)-L (q t) (deriv q t)) ∧
     HasDerivAt (fun ε => action L a b (variation q η ε))
       (∫ t in a..b, (fderiv ℝ (fun x => L x (deriv q t)) (q t)) (η t) +
         (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) 0 ∧
@@ -261,13 +263,13 @@ def stationarySmoothAction {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : 
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
   "context_notation": [
-    "I=0来自驻值前提；本条只证明分部积分恒等式，零结论由驻值展开传入。"
+    "I在上一段由实际作用量驻值得到，不能仅保留分部积分中的一个项。"
   ],
   "issues": [],
   "lean_decl": "MD.Ch02.firstVariationParts",
   "reusable_proofs": [],
   "extra_assumptions": [
-    "α<β；L及曲线C²；η端点为0。"
+    "α<β，实际L和q C²；η按原文C∞、零端点；真实作用量驻值。"
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
@@ -276,11 +278,15 @@ def stationarySmoothAction {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : 
 }
 ```
 ```lean
-theorem firstVariationParts :
-  ∀ n (L : Q n → Q n → ℝ) (q η : ℝ → Q n) a b,
-    a < b → ContDiff ℝ 2 (Function.uncurry L) → ContDiff ℝ 2 q → ContDiff ℝ 2 η →
-    η a = 0 → η b = 0 →
-    (∫ t in a..b, (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) =
-      -(∫ t in a..b, (deriv (fun s => fderiv ℝ (L (q s)) (deriv q s)) t) (η t))
+theorem firstVariationParts : ∀ n (L : Q n → Q n → ℝ)
+    (q η : ℝ → Q n) a b, a < b → ContDiff ℝ 2 (Function.uncurry L) →
+    ContDiff ℝ 2 q → ContDiff ℝ ∞ η → η a=0 → η b=0 →
+    stationarySmoothAction L a b q →
+    (∫ t in a..b, (fderiv ℝ (fun x => L x (deriv q t)) (q t)) (η t)+
+      (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) =
+    (∫ t in a..b, ((fderiv ℝ (fun x => L x (deriv q t)) (q t))-
+      deriv (fun s => fderiv ℝ (L (q s)) (deriv q s)) t) (η t)) ∧
+    (∫ t in a..b, ((fderiv ℝ (fun x => L x (deriv q t)) (q t))-
+      deriv (fun s => fderiv ℝ (L (q s)) (deriv q s)) t) (η t))=0
 ```
 

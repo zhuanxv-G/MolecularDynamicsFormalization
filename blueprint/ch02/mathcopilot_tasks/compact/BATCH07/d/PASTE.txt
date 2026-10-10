@@ -73,7 +73,7 @@ def discreteVelocity {n : ℕ} (q : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
   h⁻¹ • (q (k+1) - q k)
 ```
 
-### MD.Ch02.printedDiscreteStationary (Blueprint/Ch02.lean:201)
+### MD.Ch02.printedDiscreteStationary (Blueprint/Ch02.lean:203)
 ```lean
 def printedDiscreteStationary {n : ℕ} (L : Q n → Q n → ℝ)
     (q : ℕ → Q n) (h : ℝ) (ν : ℕ) : Prop :=

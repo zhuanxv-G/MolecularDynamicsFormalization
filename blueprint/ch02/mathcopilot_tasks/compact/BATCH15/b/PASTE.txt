@@ -53,7 +53,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.oneFormFamily (Blueprint/Ch02.lean:683)
+### MD.Ch02.oneFormFamily (Blueprint/Ch02.lean:685)
 ```lean
 def oneFormFamily (n : ℕ) := Q n → Q n →L[ℝ] ℝ
 ```

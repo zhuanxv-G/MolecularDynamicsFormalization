@@ -54,7 +54,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.taylorSecond (Blueprint/Ch02.lean:83)
+### MD.Ch02.taylorSecond (Blueprint/Ch02.lean:79)
 ```lean
 def taylorSecond {n : ℕ} (f : Q n → Q n) (h : ℝ) (z : Q n) : Q n :=
   z + h • f z + (h^2 / 2) • (fderiv ℝ f z) (f z)

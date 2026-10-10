@@ -82,7 +82,7 @@ noncomputable def oneStepMaxError (G : ℝ → E → E) (h : ℝ) (γ : ℝ → 
     (fun n => ‖oneStepIterate G h (γ 0) n - γ ((n : ℝ) * h)‖)
 ```
 
-### MD.Ch02.order (Blueprint/Ch02.lean:46)
+### MD.Ch02.order (Blueprint/Ch02.lean:42)
 ```lean
 def order {n : ℕ} (G : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : ℝ) (r : ℕ) : Prop :=
   ∃ K > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,

@@ -192,7 +192,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_pullbackTwo (Blueprint/Ch02.lean:727)
+### MD.Ch02.bp_pullbackTwo (Blueprint/Ch02.lean:729)
 ```lean
 def bp_pullbackTwo {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) (z u v : Q n) : ℝ :=
   A.val (Φ z) ((fderiv ℝ Φ z) u) ((fderiv ℝ Φ z) v)

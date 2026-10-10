@@ -1,0 +1,66 @@
+{
+  "batch": "BATCH23",
+  "subtask": "BATCH23b",
+  "source_ids": [
+    "MD-2.4.2-CompositionOrder"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 107,
+      "printed_page": 85
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "8f1d25de6dc56571094d49ceb2de25860a36cc336abcce3718e0708d59da4c22",
+  "lean_sha256": "1b9839bbcaeaa2b5167ed4e10318efd7e585aae615cb45f67bf1c9c1db34e30c",
+  "signature_sha256": "1bf8eac0f16350ec1e86e8f53adc07374531346781388530bc05dfbd07929fd7",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/Statements.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "methodLocalOrder",
+      "code_sha256": "045303cd875ec03be1a92b89c14b2c05830dec92b4f71f2f6ddb72e98111cfc0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/CompositionMethods.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookComposeMaps",
+      "code_sha256": "9c9054133d03d31c6bd2e6d07da24c8c27dd9ab9ffa938450c8a9f9fbb202325"
+    }
+  ],
+  "paste_plus_pdf_bytes": 89379,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4142,
+      "sha256": "77594a2bbc878eed523c3384e012d42223020faa5c1e8c8c5604a32b814c9a72"
+    },
+    "BATCH23b_PAGES.pdf": {
+      "bytes": 85314,
+      "sha256": "5464de4fb3522a88f2ea5abee9ed2d3d7d57c655a3129cc7fcf36a89ff1beb71"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

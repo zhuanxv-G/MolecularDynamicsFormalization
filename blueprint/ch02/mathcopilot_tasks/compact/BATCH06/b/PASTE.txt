@@ -218,7 +218,7 @@ private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 ```
 
-### MD.Ch02.printedVariationalDerivative (Blueprint/Ch02.lean:173)
+### MD.Ch02.printedVariationalDerivative (Blueprint/Ch02.lean:175)
 ```lean
 def printedVariationalDerivative {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (F : E → ℝ) (q : E) (A : E →L[ℝ] ℝ) : Prop :=

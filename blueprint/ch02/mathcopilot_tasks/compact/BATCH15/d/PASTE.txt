@@ -51,7 +51,7 @@ def coordinateDifferentials (n : ℕ) :
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch02.coordinateDifferentials (Blueprint/Ch02.lean:689)
+### MD.Ch02.coordinateDifferentials (Blueprint/Ch02.lean:691)
 ```lean
 def coordinateDifferentials (n : ℕ) :
     (Fin n → SymplecticCoordinates n →ₗ[ℝ] ℝ) × (Fin n → SymplecticCoordinates n →ₗ[ℝ] ℝ) :=

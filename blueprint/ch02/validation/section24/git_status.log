@@ -1,0 +1,204 @@
+ M Blueprint/Ch02.lean
+ M blueprint/ch02/CheckAxioms.lean
+ M blueprint/ch02/PROGRESS.md
+ M blueprint/ch02/ch02_source.json
+ M blueprint/ch02/excluded_qualitative.json
+ M blueprint/ch02/local_audit.json
+ M blueprint/ch02/mathcopilot_tasks/BATCH01.md
+ M blueprint/ch02/mathcopilot_tasks/BATCH05.md
+ M blueprint/ch02/mathcopilot_tasks/BATCH17.md
+ M blueprint/ch02/mathcopilot_tasks/INDEX.md
+ M blueprint/ch02/mathcopilot_tasks/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH01/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH01/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH01/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH01/c/BATCH01c_PAGES.pdf
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH01/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH01/c/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH01/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH01/d/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH02/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH02/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH02/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH02/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH02/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH02/c/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH02/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH03/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH03/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH03/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH03/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH04/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/c/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/d/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/e/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/f/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/g/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/g/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/h/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH05/h/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH06/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH06/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH06/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH06/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH06/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/c/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/d/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/f/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/g/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/g/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/h/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH07/h/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH08/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH08/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH08/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH08/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH08/c/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH08/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH08/d/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH08/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH08/e/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/c/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/f/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/g/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/g/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH09/h/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH10/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH10/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH10/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH10/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH11/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH11/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH11/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH11/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH11/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH11/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH11/f/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH11/g/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH12/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH12/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH12/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH12/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH12/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH12/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH12/f/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH12/g/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH12/h/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH13/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH13/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH13/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH13/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH13/c/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH14/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH14/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH14/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH14/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH14/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH14/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH14/e/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH14/f/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH14/g/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/c/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/d/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/e/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/f/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/f/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/g/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/h/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH15/h/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH16/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH16/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH16/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH16/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH16/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH16/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH16/d/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH16/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH16/f/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH16/g/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH17/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH17/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH17/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH17/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH17/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH17/d/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH17/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH17/f/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH18/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH18/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH18/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH18/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH19/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH19/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH19/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH19/b/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH19/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH19/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH19/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH20/a/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH20/a/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH20/b/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH20/c/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH20/c/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH20/d/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH20/e/MANIFEST.json
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH20/e/PASTE.txt
+ M blueprint/ch02/mathcopilot_tasks/compact/BATCH20/f/MANIFEST.json
+ M blueprint/ch02/old_mapping.json
+ M scripts/ch02_checkpoint.py
+ M scripts/ch02_data.py
+?? blueprint/ch02/mathcopilot_tasks/BATCH21.md
+?? blueprint/ch02/mathcopilot_tasks/BATCH22.md
+?? blueprint/ch02/mathcopilot_tasks/BATCH23.md
+?? blueprint/ch02/mathcopilot_tasks/BATCH24.md
+?? blueprint/ch02/mathcopilot_tasks/BATCH25.md
+?? blueprint/ch02/mathcopilot_tasks/BATCH26.md
+?? blueprint/ch02/mathcopilot_tasks/compact/BATCH21/
+?? blueprint/ch02/mathcopilot_tasks/compact/BATCH22/
+?? blueprint/ch02/mathcopilot_tasks/compact/BATCH23/
+?? blueprint/ch02/mathcopilot_tasks/compact/BATCH24/
+?? blueprint/ch02/mathcopilot_tasks/compact/BATCH25/
+?? blueprint/ch02/mathcopilot_tasks/compact/BATCH26/
+?? blueprint/ch02/validation/Section24Draft3.lean
+?? blueprint/ch02/validation/ShortSearch3.lean
+?? blueprint/ch02/validation/bounded-proof-routes.json
+?? blueprint/ch02/validation/section24/
+?? blueprint/ch02/validation/short-search3-mapping.json
+?? docs/review/check-full06/
+?? output/
+?? scripts/__pycache__/
+?? scripts/ch02_bounded_short_search.py
+?? scripts/ch02_final_refinements.py
+?? scripts/ch02_record_proof_attempts.py
+?? scripts/ch02_section24.py
+?? scripts/ch02_section25.py
+?? scripts/export_ch01_review_pdf.py
+?? scripts/validate_ch02_delivery.py
+?? tmp/

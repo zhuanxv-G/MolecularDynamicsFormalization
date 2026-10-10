@@ -1,0 +1,60 @@
+{
+  "batch": "BATCH21",
+  "subtask": "BATCH21b",
+  "source_ids": [
+    "MD-2.4.1-FieldAdd"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 105,
+      "printed_page": 83
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "8f1d25de6dc56571094d49ceb2de25860a36cc336abcce3718e0708d59da4c22",
+  "lean_sha256": "1b9839bbcaeaa2b5167ed4e10318efd7e585aae615cb45f67bf1c9c1db34e30c",
+  "signature_sha256": "67f893348e3994a2ca7194f355f2f3acb52749dfd64be30859b96303e07fe167",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinateMatrix",
+      "code_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookHamiltonianVectorField",
+      "code_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookJ",
+      "code_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    }
+  ],
+  "paste_plus_pdf_bytes": 87686,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3779,
+      "sha256": "72635f4cb0319eb9b40dc805bb8a838db9d3ef7ed4c36de30db6f6fd61fca5b2"
+    },
+    "BATCH21b_PAGES.pdf": {
+      "bytes": 83982,
+      "sha256": "07c667381fa8a39146843b8ccdd5eef38c7afa0bf088b3c4a334d858ca4e880b"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  }
+}

@@ -1,0 +1,1 @@
+旧任务包只作版本历史保留，不可提交网站。有效批次仅以mathcopilot_tasks/INDEX.md和MANIFEST.json为准。CanonicalJ已合并到HamiltonianODE的context_notation。

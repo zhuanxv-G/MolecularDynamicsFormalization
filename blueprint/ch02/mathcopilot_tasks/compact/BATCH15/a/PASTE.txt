@@ -211,7 +211,7 @@ abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch02.bp_IsSymplecticMap (Blueprint/Ch02.lean:678)
+### MD.Ch02.bp_IsSymplecticMap (Blueprint/Ch02.lean:680)
 ```lean
 def bp_IsSymplecticMap {Nc : ℕ}
     (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=

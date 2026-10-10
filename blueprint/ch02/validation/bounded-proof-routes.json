@@ -1,0 +1,296 @@
+{
+  "accepted_candidates": 0,
+  "note": "These automatic routes did not close a goal. Manual local proofs are separately compiled and axiom-audited.",
+  "trials": {
+    "MD-2.2.2-DiscreteDerivative": [
+      {
+        "route": "exact?",
+        "result": "INTERRUPTED_TIME_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+        ],
+        "log": "blueprint/ch02/validation/short-search1.log"
+      },
+      {
+        "route": "aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search2.log"
+      },
+      {
+        "route": "definition simplification, ring_nf, aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search3.log"
+      }
+    ],
+    "MD-2.2.2-DiscreteVerlet": [
+      {
+        "route": "exact?",
+        "result": "INTERRUPTED_TIME_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+        ],
+        "log": "blueprint/ch02/validation/short-search1.log"
+      },
+      {
+        "route": "aesop",
+        "result": "FAILED_TACTIC",
+        "accepted": false,
+        "diagnostics": [
+          "unsolved goals"
+        ],
+        "log": "blueprint/ch02/validation/short-search2.log"
+      },
+      {
+        "route": "definition simplification, ring_nf, aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search3.log"
+      }
+    ],
+    "MD-2.2.3-VerletStability": [
+      {
+        "route": "exact?",
+        "result": "INTERRUPTED_TIME_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+        ],
+        "log": "blueprint/ch02/validation/short-search1.log"
+      },
+      {
+        "route": "aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search2.log"
+      },
+      {
+        "route": "definition simplification, ring_nf, aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search3.log"
+      }
+    ],
+    "MD-2.3.2-AsymmetricJacobian": [
+      {
+        "route": "exact?",
+        "result": "INTERRUPTED_TIME_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+        ],
+        "log": "blueprint/ch02/validation/short-search1.log"
+      },
+      {
+        "route": "aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search2.log"
+      },
+      {
+        "route": "definition simplification, ring_nf, aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search3.log"
+      }
+    ],
+    "MD-2.3.2-AsymmetricArea": [
+      {
+        "route": "exact?",
+        "result": "INTERRUPTED_TIME_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+        ],
+        "log": "blueprint/ch02/validation/short-search1.log"
+      },
+      {
+        "route": "aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search2.log"
+      },
+      {
+        "route": "definition simplification, ring_nf, aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search3.log"
+      }
+    ],
+    "MD-2.3.6-KickDifferential": [
+      {
+        "route": "exact?",
+        "result": "INTERRUPTED_TIME_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+        ],
+        "log": "blueprint/ch02/validation/short-search1.log"
+      },
+      {
+        "route": "aesop",
+        "result": "FAILED_TACTIC",
+        "accepted": false,
+        "diagnostics": [
+          "unsolved goals"
+        ],
+        "log": "blueprint/ch02/validation/short-search2.log"
+      },
+      {
+        "route": "definition simplification, ring_nf, aesop",
+        "result": "FAILED_TACTIC",
+        "accepted": false,
+        "diagnostics": [
+          "simp_all made no progress"
+        ],
+        "log": "blueprint/ch02/validation/short-search3.log"
+      }
+    ],
+    "MD-2.4.2-CompositionOrder": [
+      {
+        "route": "exact?",
+        "result": "INTERRUPTED_TIME_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+        ],
+        "log": "blueprint/ch02/validation/short-search1.log"
+      },
+      {
+        "route": "aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search2.log"
+      },
+      {
+        "route": "definition simplification, ring_nf, aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search3.log"
+      }
+    ],
+    "MD-2.4.4-FrozenNewton": [
+      {
+        "route": "exact?",
+        "result": "INTERRUPTED_TIME_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+        ],
+        "log": "blueprint/ch02/validation/short-search1.log"
+      },
+      {
+        "route": "aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search2.log"
+      },
+      {
+        "route": "definition simplification, ring_nf, aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search3.log"
+      }
+    ],
+    "MD-2.5.2-PartitionedReduction": [
+      {
+        "route": "exact?",
+        "result": "INTERRUPTED_TIME_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+        ],
+        "log": "blueprint/ch02/validation/short-search1.log"
+      },
+      {
+        "route": "aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search2.log"
+      },
+      {
+        "route": "definition simplification, ring_nf, aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search3.log"
+      }
+    ],
+    "MD-2.5.3-NewmarkDamping": [
+      {
+        "route": "exact?",
+        "result": "INTERRUPTED_TIME_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "Shared wall-clock budget exceeded; process interrupted; no proof accepted."
+        ],
+        "log": "blueprint/ch02/validation/short-search1.log"
+      },
+      {
+        "route": "aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search2.log"
+      },
+      {
+        "route": "definition simplification, ring_nf, aesop",
+        "result": "FAILED_ELABORATION_BUDGET",
+        "accepted": false,
+        "diagnostics": [
+          "(deterministic) timeout at `whnf`, maximum number of heartbeats (2000) has been reached"
+        ],
+        "log": "blueprint/ch02/validation/short-search3.log"
+      }
+    ]
+  }
+}

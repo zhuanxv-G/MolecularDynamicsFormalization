@@ -11,7 +11,9 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；$J$及$H$见同页下两条；n为配置坐标数。"
+      "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；J在本条上下文、H见同页mechanicalHamiltonian条目；n为配置坐标数。",
+      "where $J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$,",
+      "$I$为$n\\times n$单位阵；教材符号顺序$(q,p)$。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch02.hamiltonianODE",
@@ -44,29 +46,6 @@
     "extra_assumptions": [
       "固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
-  },
-  {
-    "source_id": "MD-2-CanonicalJ",
-    "kind": "definition",
-    "label": null,
-    "section": "2",
-    "printed_page": "53",
-    "pdf_page": "75",
-    "statement_latex": "where $J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$,",
-    "proof_latex": null,
-    "proof_note": "原书未给独立完整证明。",
-    "proof_discussion_latex": null,
-    "context_notation": [
-      "$I$为$n\\times n$单位阵；教材符号顺序$(q,p)$。"
-    ],
-    "issues": [],
-    "lean_decl": "MD.Ch02.canonicalJ",
-    "reusable_proofs": [],
-    "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
     "repair_log": [],
@@ -499,13 +478,13 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "I=0来自驻值前提；本条只证明分部积分恒等式，零结论由驻值展开传入。"
+      "I在上一段由实际作用量驻值得到，不能仅保留分部积分中的一个项。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch02.firstVariationParts",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "α<β；L及曲线C²；η端点为0。"
+      "α<β，实际L和q C²；η按原文C∞、零端点；真实作用量驻值。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
@@ -2248,9 +2227,9 @@
     "section": "2.3.4",
     "printed_page": "79",
     "pdf_page": "101",
-    "statement_latex": "Computing\n\\[W^TJ\\dot W=W^TJ^2SW=-W^TSW,\\]\nwhereas\n\\[\\dot W^TJW=W^TS^TJ^TJW=W^TSW,\\]\nhence\n\\[\\frac{\\mathrm d}{\\mathrm dt}W^TJW=W^TJ\\dot W+\\dot W^TJW=0.\\]",
-    "proof_latex": null,
-    "proof_note": "原书未给独立完整证明。",
+    "statement_latex": "Hence\n\\[\\frac{\\mathrm d}{\\mathrm dt}W^TJW=W^TJ\\dot W+\\dot W^TJW=0.\\]",
+    "proof_latex": "Computing\n\\[W^TJ\\dot W=W^TJ^2SW=-W^TSW,\\]\nwhereas\n\\[\\dot W^TJW=W^TS^TJ^TJW=W^TSW,\\]\nhence\n\\[\\frac{\\mathrm d}{\\mathrm dt}W^TJW=W^TJ\\dot W+\\dot W^TJW=0.\\]",
+    "proof_note": "两个中间矩阵等式属于原文证明计算，逐字保留于proof_latex；实际时间乘积导数及常值由FormConstant承担。",
     "proof_discussion_latex": null,
     "context_notation": [
       "W′=JSW由前项背景；本条矩阵恒等式两个乘积项之和为0，实际乘积求导见FormConstant。"
@@ -2683,6 +2662,626 @@
     ],
     "extra_assumptions": [
       "实际可逆步方法族Equiv.Perm；负步及双逆确实存在。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.1-Splitting",
+    "kind": "definition",
+    "label": null,
+    "section": "2.4.1",
+    "printed_page": "83",
+    "pdf_page": "105",
+    "statement_latex": "Suppose that a Hamiltonian $H$ can be split into two parts, i.e. $H=H_1+H_2$, and that the flow maps $\\mathcal F_{1,t}$ and $\\mathcal F_{2,t}$ are known in closed form for the Hamiltonians $H_1$ and $H_2$, respectively. It is natural to think of using the composition of the flow maps $\\mathcal G_h=\\mathcal F_{1,h}\\circ\\mathcal F_{2,h}$ as an approximation to $\\mathcal F_h$, the flow map of the combined Hamiltonian $H$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "只定义给定实际子流的组合；近似精度由后项给出，不把任意映射称为实际流。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_splittingMap",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.1-FieldAdd",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.1",
+    "printed_page": "83",
+    "pdf_page": "105",
+    "statement_latex": "$J\\nabla H=J\\nabla H_1+J\\nabla H_2$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.fieldAdd",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookHamiltonianVectorField_add"
+    ],
+    "extra_assumptions": [
+      "H₁,H₂在实际点可微，实际Fréchet梯度。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.1-SplittingLocal",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.1",
+    "printed_page": "83",
+    "pdf_page": "105",
+    "statement_latex": "For this to be a first order method, we need at least $\\|\\mathcal G_h(\\boldsymbol u)-\\mathcal F_h(\\boldsymbol u)\\|\\le C(\\boldsymbol u)h^2$.",
+    "proof_latex": "We expand the map $\\mathcal F_h$ into its Taylor series:\n\\[\\mathcal F_h(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H(\\boldsymbol u)+\\mathcal O(h^2)=\\boldsymbol u+h(J\\nabla H_1(\\boldsymbol u)+J\\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\tag{2.24}\\]\nFor the individual maps $\\mathcal F_{1,h}$ and $\\mathcal F_{2,h}$, we have\n\\[\\mathcal F_{1,h}(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_1(\\boldsymbol u)+\\mathcal O(h^2),\\qquad\\mathcal F_{2,h}(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u)+\\mathcal O(h^2).\\]\nComposing the two maps we obtain\n\\[\\mathcal F_{1,h}(\\mathcal F_{2,h}(\\boldsymbol u))=\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u)+hJ\\nabla H_1(\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\]\nAssuming $H_1$ is twice continuously differentiable, we may expand further in the last term and collect\n\\[\\mathcal F_{1,h}(\\mathcal F_{2,h}(\\boldsymbol u))=\\boldsymbol u+h(J\\nabla H_2(\\boldsymbol u)+J\\nabla H_1(\\boldsymbol u))+\\mathcal O(h^2).\\]\nThus the splitting method does indeed provide a second order local approximation to the flow map.",
+    "proof_note": "原书计算按原页转录。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.splittingLocal",
+    "reusable_proofs": [
+      "MolecularDynamics.exists_hamiltonian_splitting_localError_bound"
+    ],
+    "extra_assumptions": [
+      "实际H及两个子Hamilton局部ODE、初值及留开放域；H₁,H₂ C²，组合在紧时间矩形连续；没有假设待证局部误差。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.1-KineticFlow",
+    "kind": "definition",
+    "label": "Example 2.4 (kinetic)",
+    "section": "2.4.1",
+    "printed_page": "83–84",
+    "pdf_page": "105–106",
+    "statement_latex": "Let $H_1(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^TM^{-1}\\boldsymbol p/2$ and $H_2(\\boldsymbol q,\\boldsymbol p)=U(\\boldsymbol q)$, and calculate the flow maps $\\mathcal F_{1,h}$ and $\\mathcal F_{2,h}$ for these individual Hamiltonians. Since\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol0\\quad(H_1),\\]\nwe find the time-$h$ flow to be\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p,\\qquad\\boldsymbol P=\\boldsymbol p.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "固定对角质量，mᵢ≠0资格由机械模型；闭式映射逐坐标表达。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_kineticFlow",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.1-PotentialFlow",
+    "kind": "definition",
+    "label": null,
+    "section": "2.4.1",
+    "printed_page": "84",
+    "pdf_page": "106",
+    "statement_latex": "On the other hand, for the system with Hamiltonian $H_2$, we have\n\\[\\dot{\\boldsymbol q}=\\boldsymbol0,\\qquad\\dot{\\boldsymbol p}=-\\nabla U(\\boldsymbol q)\\quad(H_2),\\]\nwhich implies the flow map\n\\[\\boldsymbol Q=\\boldsymbol q,\\qquad\\boldsymbol P=\\boldsymbol p-h\\nabla U(\\boldsymbol q).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "F=-∇U；实际闭式映射。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_potentialFlow",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.1-SplitEuler",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.1",
+    "printed_page": "84",
+    "pdf_page": "106",
+    "statement_latex": "When these maps are composed, we obtain\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol P,\\qquad\\boldsymbol P=\\boldsymbol p-h\\nabla U(\\boldsymbol q),\\]\nwhich is the Symplectic Euler method. The reversed composition gives the adjoint Symplectic Euler method (2.22), (2.23).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.splitEuler",
+    "reusable_proofs": [
+      "MolecularDynamics.Chapter02Review.kineticPotentialComposition_proved"
+    ],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.1-VerletComposition",
+    "kind": "unnumbered_claim",
+    "label": "Example 2.5 (composition)",
+    "section": "2.4.1",
+    "printed_page": "84–85",
+    "pdf_page": "106–107",
+    "statement_latex": "We compose the Symplectic Euler method $\\mathcal G_h$ and its adjoint $\\mathcal G_h^*$, in each case using step $h/2$; we define $\\mathcal K_h=\\mathcal G_{h/2}^*\\circ\\mathcal G_{h/2}$.",
+    "proof_latex": "We obtain\n\\[\\bar{\\boldsymbol q}=\\boldsymbol q+\\frac h2M^{-1}\\bar{\\boldsymbol p},\\quad\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\\nabla U(\\boldsymbol q),\\]\n\\[\\boldsymbol Q=\\bar{\\boldsymbol q}+\\frac h2M^{-1}\\bar{\\boldsymbol p},\\quad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\\nabla U(\\boldsymbol Q).\\]\nThese simplify to\n\\[\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\\nabla U(\\boldsymbol q),\\quad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\bar{\\boldsymbol p},\\quad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\\nabla U(\\boldsymbol Q).\\]\nThis is the leapfrog/Verlet scheme.",
+    "proof_note": "原书计算按原页转录。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.verletComposition",
+    "reusable_proofs": [
+      "MolecularDynamics.Chapter02Review.verletComposition_proved"
+    ],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.1-VerletSymplectic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.1",
+    "printed_page": "85",
+    "pdf_page": "107",
+    "statement_latex": "Hence the leapfrog/Verlet scheme is a composition of two symplectic maps and is itself symplectic.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.verletSymplectic",
+    "reusable_proofs": [
+      "MolecularDynamics.Chapter02Review.verletSymplectic_proved"
+    ],
+    "extra_assumptions": [
+      "U C²；真实完整步映射。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.1-SymmetricComposition",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.1",
+    "printed_page": "85",
+    "pdf_page": "107",
+    "statement_latex": "In fact we can say even more, since $\\mathcal K_h=\\mathcal G_{h/2}^*\\circ\\mathcal G_{h/2}$, we have\n\\[\\mathcal K_h^*=[\\mathcal G_{h/2}^*\\circ\\mathcal G_{h/2}]^*=\\mathcal G_{h/2}^*\\circ\\mathcal G_{h/2}=\\mathcal K_h,\\]\nwhich is to say that this method is self-adjoint or symmetric.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.symmetricComposition",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint"
+    ],
+    "extra_assumptions": [
+      "实际可逆步Equiv.Perm；完整伴随半步组合。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.1-SymmetricEven",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.1",
+    "printed_page": "85",
+    "pdf_page": "107",
+    "statement_latex": "It is easy to show that symmetric discretization schemes must have even order [14, 29].",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.symmetricEven",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]r>0为有限确切局部阶：r阶界成立而r+1阶不成立；两族C∞且原流为群，自伴随并实际可逆。原书省略“确切”阶资格，精确流没有有限阶。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.2-CompositionSymplectic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.2",
+    "printed_page": "85",
+    "pdf_page": "107",
+    "statement_latex": "Starting from two different methods $\\mathcal G_{1,h}$ and $\\mathcal G_{2,h}$, as long as they are both symplectic methods, we can use the composition of the maps\n\\[\\mathcal G_h=\\mathcal G_{1,h/2}\\circ\\mathcal G_{2,h/2}\\]\nas an alternative symplectic integrator.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.compositionSymplectic",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookComposeMaps_isSymplectic"
+    ],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.2-CompositionOrder",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.2",
+    "printed_page": "85",
+    "pdf_page": "107",
+    "statement_latex": "The order of accuracy of the resulting method is typically the minimum of that of the two starting integrators, but as the Verlet method shows, it can be higher in certain instances.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.compositionOrder",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]两个方法逼近同一实际流；第一个方法1+L|h|稳定；陈述保留至少min阶，允许更高，不把“typically”冒充确切阶相等。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.3-HarmonicSplit",
+    "kind": "definition",
+    "label": null,
+    "section": "2.4.3",
+    "printed_page": "85–86",
+    "pdf_page": "107–108",
+    "statement_latex": "Suppose that we have a Hamiltonian of the form $H=H_0+H_1$ where $H_0=\\boldsymbol p^TM^{-1}\\boldsymbol p/2+\\boldsymbol q^TA\\boldsymbol q/2$ defines a system of harmonic oscillators, whereas $H_1(\\boldsymbol q,\\boldsymbol p)=\\tilde U(\\boldsymbol q)$ is an anharmonic perturbation. In the simplest case, we can consider $H_0=(1/2)p^2+(\\Omega^2/2)q^2$, then a scheme of this type would be\n\\[\\begin{bmatrix}Q\\\\\\hat p\\end{bmatrix}=\\begin{bmatrix}\\cos(h\\Omega)&\\sin(h\\Omega)/\\Omega\\\\-\\Omega\\sin(h\\Omega)&\\cos(h\\Omega)\\end{bmatrix}\\begin{bmatrix}q\\\\p\\end{bmatrix},\\qquad P=\\hat p-h\\tilde U'(Q).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "Lean定义是原文明确标量简例；一般矩阵分裂作为同条背景记号保留。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_harmonicAnharmonic",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]Ω≠0时闭式除法有效；Ω=0须取极限漂移，原文未写退化情形。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.4-ImplicitLocal",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.4",
+    "printed_page": "86",
+    "pdf_page": "108",
+    "statement_latex": "An implicit method will typically result in a system of nonlinear equations of the form\n\\[g(\\boldsymbol z_{n+1})=\\boldsymbol\\tau_n,\\tag{2.25}\\]\nwhich will need to be solved at each timestep. The right hand $\\boldsymbol\\tau_n$ is a vector that depends on the previous time-step $\\boldsymbol z_n$, perhaps in a complicated way. We may assume the number of equations represented by (2.25) is equal to the dimension of the phase space where $\\boldsymbol z$ is defined, so we have a square nonlinear system. Typically $g$ will depend on the stepsize and coefficients of the method and will have the property that for $h$ sufficiently small, the solution is uniquely defined and is continuously defined in terms of $\\boldsymbol\\tau_n$, that is the mapping $g$ has a bounded and smooth inverse.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.implicitLocal",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]g C¹且实际导数为连续线性同构；只能保证局部逆，原文“typically”不构成任意g可逆定理。逆在更小紧邻域有界。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.4-BackwardEulerSolve",
+    "kind": "definition",
+    "label": "Example 2.6",
+    "section": "2.4.4",
+    "printed_page": "86",
+    "pdf_page": "108",
+    "statement_latex": "The Backward Euler method,\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+hf(\\boldsymbol z_{n+1}),\\]\nis an example of an implicit method. The calculation of a timestep involves solving a system of equations of the form\n\\[g(\\boldsymbol w)=\\boldsymbol w-\\boldsymbol z_n-hf(\\boldsymbol w)=\\boldsymbol0.\\]\nThe map $\\mathcal G_h$ is defined implicitly by the equation\n\\[\\mathcal G_h(\\boldsymbol z)=\\boldsymbol z+hf(\\mathcal G_h(\\boldsymbol z)).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "零点即隐式步关系；没有断言每个f/h存在唯一零点。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.backwardEulerResidual",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.4-Newton",
+    "kind": "definition",
+    "label": null,
+    "section": "2.4.4",
+    "printed_page": "86–87",
+    "pdf_page": "108–109",
+    "statement_latex": "Solving the system may proceed from an initial guess $\\boldsymbol z_{n+1}^{(0)}$ by use of Newton’s method:\n\\[\\boldsymbol z_{n+1}^{(k+1)}=\\boldsymbol z_{n+1}^{(k)}-[J^{(k)}]^{-1}(g(\\boldsymbol z_n^{(k)})-\\boldsymbol\\tau_n),\\]\nwhere $J^{(k)}$ is the Jacobian matrix of the mapping $g$ evaluated at $\\boldsymbol z_n^{(k)}$, or else an approximation of this Jacobian (assumed to be nonsingular due to the invertibility of the mapping). The iteration may be recast in the form\n\\[\\boldsymbol b_k=-(g(\\boldsymbol z_n^{(k)})-\\boldsymbol\\tau_n),\\quad J^{(k)}\\Delta\\boldsymbol z_k=\\boldsymbol b_k,\\quad\\boldsymbol z_{n+1}^{(k+1)}=\\boldsymbol z_{n+1}^{(k)}+\\Delta\\boldsymbol z_k.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "status": "NEEDS_HUMAN",
+        "detail": "原文混用zₙ⁽ᵏ⁾与zₙ₊₁⁽ᵏ⁾；保留两个不同输入，不静默改成相同迭代点。映射可逆也不保证任意近似Jacobian非奇异。"
+      }
+    ],
+    "lean_decl": "MD.Ch02.newtonPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.4-NewtonQuadratic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.4",
+    "printed_page": "87",
+    "pdf_page": "109",
+    "statement_latex": "Newton’s method (without approximation of the Jacobian matrix) has a remarkable quadratic convergence property, meaning that, when the initial guess is close to the solution, the errors $e_k,e_{k+1}$ at the $k$th and $k+1$st iterations satisfy the relation\n\\[e_{k+1}\\le Ke_k^2.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "标准Newton的同一个迭代点，前项字面索引疑点另列；e=‖y−x*‖。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.newtonQuadratic",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]C²、简单零点及可逆实际导数；充分近初值；局部一步二次界涵盖迭代误差关系。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.4-FrozenNewton",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.4",
+    "printed_page": "87",
+    "pdf_page": "109",
+    "statement_latex": "For example, if the Jacobian matrix is large and can be written in the form\n\\[J(\\boldsymbol z)=D+E(\\boldsymbol z),\\]\nwhere $E$ is small in norm and $D$ is a constant sparse matrix, then, in many cases, the Jacobian matrix may be replaced by the constant matrix $D$ and the iteration will still converge.\nThis rapid convergence is typically lost when the Jacobian matrix is approximated in some way, and one finds instead\n\\[e_{k+1}\\le\\rho e_k,\\]\nwhere $0<\\rho<1$, i.e., quadratic convergence is replaced by geometric convergence.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.frozenNewton",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]固定D连续线性同构，邻域内实际I−D⁻¹g′范数≤ρ<1，ρ>0；精确可核的small资格，未声称任意近似Jacobian都收敛。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.5-Conjugacy",
+    "kind": "definition",
+    "label": null,
+    "section": "2.4.5",
+    "printed_page": "88",
+    "pdf_page": "110",
+    "statement_latex": "In general, we say that two maps $A$ and $B$ are conjugate if there is a homeomorphism $\\chi$ such that\n\\[A=\\chi^{-1}\\circ B\\circ\\chi.\\]\nA homeomorphism is a continuous bijection which has a continuous inverse.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "χ为实际Homeomorph，包含正逆连续与双逆律。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_conjugateMap",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.5-ConjugateIterates",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.5",
+    "printed_page": "88",
+    "pdf_page": "110",
+    "statement_latex": "Conjugate maps have the property that their iterates are also conjugate, since\n\\[A^n=(\\chi^{-1}\\circ B\\circ\\chi)^n=(\\chi^{-1}\\circ B\\circ\\chi)\\circ(\\chi^{-1}\\circ B\\circ\\chi)\\circ\\cdots\\circ(\\chi^{-1}\\circ B\\circ\\chi)=\\chi^{-1}B^n\\circ\\chi.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.conjugateIterates",
+    "reusable_proofs": [
+      "MolecularDynamics.textbook_conjugate_iterates"
+    ],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.5-ConjugateLimits",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.5",
+    "printed_page": "88",
+    "pdf_page": "110",
+    "statement_latex": "If $A$ and $B$ are maps of phase space, then the conjugacy implies that they have equivalent stability properties under iteration, since if $B^n(\\boldsymbol z_0)\\to\\boldsymbol z^*$, as $n\\to\\infty$, for all initial points $\\boldsymbol z_0$, then also $A^n(\\boldsymbol z_0)\\to\\chi^{-1}(\\boldsymbol z^*)$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.conjugateLimits",
+    "reusable_proofs": [
+      "MolecularDynamics.textbook_conjugate_iterates_tendsto_iff"
+    ],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.5-EulerConjugacy",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.5",
+    "printed_page": "88",
+    "pdf_page": "110",
+    "statement_latex": "As an illustration, the Symplectic Euler method turns out to be conjugate to the Verlet method (see Exercise 12).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "χh为半步momentum kick，反向kick是确实逆；有效二阶还依赖Verlet全局二阶，另列缺项。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.eulerConjugacy",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.5-Processing",
+    "kind": "definition",
+    "label": null,
+    "section": "2.4.5",
+    "printed_page": "88",
+    "pdf_page": "110",
+    "statement_latex": "Let us suppose that we have such a conjugacy between two numerical methods $\\mathcal G_h$ and $\\tilde{\\mathcal G}_h$, that is\n\\[\\mathcal G_h=\\chi_h^{-1}\\circ\\tilde{\\mathcal G}_h\\circ\\chi_h,\\]\ndefined in such a way that $\\mathcal G_h$ has order $r$ and $\\tilde{\\mathcal G}_h$ has order $s<r$. Then, given an initial condition $\\boldsymbol z_0$, we first modify (“pre-process”) this to $\\tilde{\\boldsymbol z}_0=\\chi_h(\\boldsymbol z_0)$, then take multiple steps with the method $\\tilde{\\mathcal G}_h$, and finally transform (“post-process”) each obtained point back by $\\chi_h^{-1}$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "G及χ给定真实共轭，定阶r/s是该算法外部资格；定义保存pre/iterate/post全过程。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.bp_processedIterate",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.5-ProcessingIterates",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.5",
+    "printed_page": "88",
+    "pdf_page": "110",
+    "statement_latex": "The resulting approximation will be of order $r$ even though the timestepping is performed using a lower order method.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "先给出处理算法与高阶方法真实迭代相等；最大误差及阶结论下一项，不以共轭凭空推出r阶。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.processingIterates",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy"
+    ],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.5-ProcessingOrder",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.5",
+    "printed_page": "88",
+    "pdf_page": "110",
+    "statement_latex": "The resulting approximation will be of order $r$ even though the timestepping is performed using a lower order method.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "原文明示G已具有r阶；这是对不同算法迭代的精确误差转移，不把待证processed误差作假设。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch02.processingOrder",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy"
+    ],
+    "extra_assumptions": [
+      "r自然数有限时间窗误差界；χh为实际Homeomorph。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-2.4.5-EulerEffectiveOrder",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "2.4.5",
+    "printed_page": "88",
+    "pdf_page": "110",
+    "statement_latex": "One sometimes refers to the “effective order” of a numerical method as the order attainable via processing, thus the effective order of the Symplectic Euler method would be two.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch02.eulerEffectiveOrder",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]正固定质量，U C⁴；真实机械Hamilton轨迹及紧时间窗；处理器为实际Homeomorph，完整processed误差界，不以待证二阶作假设。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",

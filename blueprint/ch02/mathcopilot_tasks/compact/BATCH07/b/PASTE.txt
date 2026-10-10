@@ -54,7 +54,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch02.bp_discreteVelocity (Blueprint/Ch02.lean:191)
+### MD.Ch02.bp_discreteVelocity (Blueprint/Ch02.lean:193)
 ```lean
 def bp_discreteVelocity {n : ℕ} (q : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
   h⁻¹ • (q (k+1) - q k)
