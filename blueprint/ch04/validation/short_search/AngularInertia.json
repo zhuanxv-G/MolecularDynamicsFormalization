@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro N m δ Θ «ω» ho hdet\n  have ht : ∀ (A : MolecularDynamics.Chapter04Review.Mat3) (v w : V), dot (A *ᵥ v) w=dot v (Aᵀ *ᵥ w) := by\n    intro A v w\n    simp [dot,Matrix.mulVec,dotProduct,Fin.sum_univ_three]\n    ring\n  have hi : ∀ v : V, Θᵀ *ᵥ (Θ *ᵥ v)=v := by\n    intro v\n    rw [Matrix.mulVec_mulVec,ho,Matrix.one_mulVec]\n  have hn : ∀ v : V, dot (Θ *ᵥ v) (Θ *ᵥ v)=dot v v := by\n    intro v\n    rw [ht,hi]\n  have hc : ∀ u w : V, cross3 u (cross3 w u)=dot u u • w-dot u w • u := by\n    intro u w\n    ext i\n    fin_cases i <;> simp [cross3,dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul] <;> ring\n  have he : ∀ v y : V, MolecularDynamics.Chapter04Review.outer v *ᵥ y=dot v y • v := by\n    intro v y\n    ext i\n    simp [MolecularDynamics.Chapter04Review.outer,Matrix.mulVec,dotProduct,dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul]\n    ring\n  have hterm : ∀ v : V, Θᵀ *ᵥ cross3 (Θ *ᵥ v) (cross3 «ω» (Θ *ᵥ v))=\n      (dot v v • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ (Θᵀ *ᵥ «ω») := by\n    intro v\n    rw [hc,Matrix.mulVec_sub,Matrix.mulVec_smul,Matrix.mulVec_smul,hn,ht,hi,\n      Matrix.sub_mulVec,Matrix.smul_mulVec,Matrix.one_mulVec,he]\n  simp only [MolecularDynamics.Chapter04Review.bodyMomentum,MolecularDynamics.Chapter04Review.angularMomentum,\n    MolecularDynamics.Chapter04Review.inertiaTensor,Matrix.mulVec_sum,Matrix.mulVec_smul,Matrix.sum_mulVec,Matrix.smul_mulVec]\n  apply Finset.sum_congr rfl\n  intro i hii\n  rw [hterm]",
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.log",
+    "source_sha256": "ebd77e0c475c9affa82f642e9fd4ffc4145681ae07df8ad5eb7f1594aea5de88",
+    "log_sha256": "3f7ccd3596da5d162d4bf2270896cb6af02e37e5081307b771dbf732ab2721a6"
+  }
+]

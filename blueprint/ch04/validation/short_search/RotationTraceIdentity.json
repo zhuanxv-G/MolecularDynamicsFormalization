@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro N m δ dΘ\n  unfold MolecularDynamics.Chapter04Review.rotationKinetic MolecularDynamics.Chapter04Review.secondMoment\n  rw [Matrix.mul_sum,Matrix.sum_mul,Matrix.trace_sum]\n  rw [Finset.sum_div,Finset.sum_div]\n  apply Finset.sum_congr rfl\n  intro i hi\n  simp [Matrix.trace,Matrix.mul_apply,Matrix.mulVec,dotProduct,MolecularDynamics.Chapter04Review.dot,MolecularDynamics.Chapter04Review.outer,Fin.sum_univ_three]\n  ring",
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.log",
+    "source_sha256": "ebd77e0c475c9affa82f642e9fd4ffc4145681ae07df8ad5eb7f1594aea5de88",
+    "log_sha256": "3f7ccd3596da5d162d4bf2270896cb6af02e37e5081307b771dbf732ab2721a6"
+  }
+]

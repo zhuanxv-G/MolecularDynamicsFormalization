@@ -110,6 +110,10 @@
 | MD-4.3.5.1-MomentumProjector | 163/185 | PASS | 待网站审计 | self-contained |
 | MD-4.3.5.1-ConstrainedPotentialFlow | 163/185 | PASS | 待网站审计 | self-contained |
 | MD-4.3.5.1-GeodesicRelation | 164/186 | PASS | 待网站审计 | self-contained |
+| MD-4.3.6-MShakeIteration | 164/186 | PASS | 待网站审计 | self-contained |
+| MD-4.3.6-SETTLE | 165/187 | PASS | 待网站审计 | self-contained |
+| MD-4.3.6-LINCSInverse | 165/187 | PASS | 待网站审计 | self-contained |
+| MD-4.3.6-LINCSConvergence | 165/187 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -5342,3 +5346,180 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`c38acedc52ccaaff16d108b4e5f5d4d879685665e196b7ef09303b085346feb4`；原文SHA256：`3b619448efb3bf3f5214ac937630d1232585bf8ceb42b0db7b33cccf1775c798`。
+
+## 1. MD-4.3.6-MShakeIteration · definition · 印刷p.164 / PDFp.186
+
+### 2. 原文陈述
+
+> M-Shake This is Newton-iteration-based implementation of SHAKE, using (4.18)–(4.19) to solve Eqs. (4.27)–(4.29).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def mShakeIteration {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (k : ℕ) := (MolecularDynamics.Chapter04Review.newtonConstraint m g q base)^[k] 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.mShakeIteration；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1239](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1239>)（`MD.Ch04.mShakeIteration`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`6fccb7f8ba75fef448e176c6225dedf9daf58b84429cd3f7916bd083316379f8`；原文SHA256：`0cc5bf9683b88ac45b5fe57f24e53f3b789d244947ab01eee946725e4addfc89`。
+
+## 1. MD-4.3.6-SETTLE · definition · 印刷p.165 / PDFp.187
+
+### 2. 原文陈述
+
+> SETTLE The SETTLE method [274] is just the SHAKE approach applied to a small system combined with an exact solve of the nonlinear equations. It is usually applied to treat rigid bodies (as discussed in the following section).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def settleRelation {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Prop := MolecularDynamics.Chapter04Review.projectionResidual m g q base η=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.settleRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]正文没有闭式算法细节，仅登记真实小系统residual=0关系；不发明SETTLE闭式或存在定理。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1244](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1244>)（`MD.Ch04.settleRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`58789c2c47392b5cd30ee44b4222bc5950e26515e69872fd3736e8a0824b11ba`；原文SHA256：`172a4edb1445c8dceb392ab2df676f9c57461f63f0883968b67f34294b5551e7`。
+
+## 1. MD-4.3.6-LINCSInverse · definition · 印刷p.165 / PDFp.187
+
+### 2. 原文陈述
+
+> LINCS In solving the Eqs. (4.27)–(4.29) by Newton iteration, the largest cost and the most significant barrier to parallelization is the linear solve. The LINCS method [119,175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def lincsInverse {l : ℕ} (C : Matrix (Fin l) (Fin l) ℝ) (k : ℕ) := ∑ j ∈ Finset.range (k+1), C^j
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.lincsInverse；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]标准Neumann有限和Σ(j=0..k) C^j表达series inverse，正文没有印系数公式；收敛条件另条。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1249](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1249>)（`MD.Ch04.lincsInverse`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`4e3ca7cb84d0e3233bbe9e8055d9f7a343a30b1fd2983b3c72983d2536e809aa`；原文SHA256：`0e8357f6fbcc1aa3d43a0cacbc40f3c320ab873edf019c5950bbe95aef1c1b15`。
+
+## 1. MD-4.3.6-LINCSConvergence · unnumbered_claim · 印刷p.165 / PDFp.187
+
+### 2. 原文陈述
+
+> The LINCS method [119,175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem lincsConvergence :
+  ∀ l (C : Matrix (Fin l) (Fin l) ℝ),
+  ‖C.toLin'.toContinuousLinearMap‖ < 1 → Tendsto (MolecularDynamics.Chapter04Review.lincsInverse C) atTop (𝓝 ((1-C)⁻¹))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.lincsConvergence；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确实际连续线性算子C.toLin'.toContinuousLinearMap的范数<1；不使用逐元素最大范数作为Neumann收敛资格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:1253](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1253>)（`MD.Ch04.lincsConvergence`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺Banach代数Neumann级数与有限维矩阵逆/逐元素拓扑之间的接口桥接；保留真实有限和逆矩阵极限，不新建一般逆算子理论。
+
+签名SHA256：`b4aaefdc84beb9218743f26fc668e1fcfc0a631a466ff15b38d1ca300e2eb504`；原文SHA256：`ceee0c5032c2713d2dff69aaeef6caba603fc1448f5c31e99656659e246980fc`。

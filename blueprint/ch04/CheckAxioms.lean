@@ -106,3 +106,7 @@ import Blueprint.Ch04
 #print axioms MD.Ch04.momentumProjector
 #print axioms MD.Ch04.constrainedPotentialFlow
 #print axioms MD.Ch04.geodesicRelation
+#print axioms MD.Ch04.mShakeIteration
+#print axioms MD.Ch04.settleRelation
+#print axioms MD.Ch04.lincsInverse
+#print axioms MD.Ch04.lincsConvergence

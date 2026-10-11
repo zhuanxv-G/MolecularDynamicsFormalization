@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.log",
+    "source_sha256": "43fe875f051a664ae987ff3c89cf961886033273122e5dc9338e812d98005fa4",
+    "log_sha256": "16e87bfbbc348c16d694b0f254385f2500dcc82bf036b9c6c890a2bddc9c2cc9"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro Θ t d hd ho\n  have hs : ∀ i j : Fin 3, ∑ k, (d i k*Θ t j k+Θ t i k*d j k)=0 := by\n    intro i j\n    have hf : HasDerivAt (fun s => ∑ k, Θ s i k*Θ s j k)\n        (∑ k, (d i k*Θ t j k+Θ t i k*d j k)) t := by\n      apply HasDerivAt.fun_sum\n      intro k hk\n      exact ((hasDerivAt_pi.mp (hasDerivAt_pi.mp hd i) k).mul (hasDerivAt_pi.mp (hasDerivAt_pi.mp hd j) k))\n    have he : (fun s => ∑ k, Θ s i k*Θ s j k) =ᶠ[𝓝 t] (fun _ => (1 : Mat3) i j) := by\n      filter_upwards [ho] with s h\n      simpa [Matrix.mul_apply,Matrix.transpose_apply] using congrArg (fun B : Mat3 => B i j) h\n    exact hf.unique ((hasDerivAt_const t ((1 : Mat3) i j)).congr_of_eventuallyEq he)\n  ext i j\n  have h := hs i j\n  simp only [Fin.sum_univ_three] at h\n  simp [Matrix.mul_apply,Matrix.transpose_apply,Fin.sum_univ_three]\n  nlinarith [h]",
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.log",
+    "source_sha256": "af088cac60f44fa2e93ec761300e52a0945e49164eb149508c756c3b5e717b19",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

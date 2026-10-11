@@ -1235,4 +1235,24 @@ def geodesicRelation {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDyn
     (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) : Prop :=
   MolecularDynamics.Chapter04Review.constrainedSolution m (fun _ => 0) g q p rho I
 
+/-- source_id: MD-4.3.6-MShakeIteration · definition · §4.3.6 · 印刷p.164 / PDFp.186 -/
+def mShakeIteration {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (k : ℕ) := (MolecularDynamics.Chapter04Review.newtonConstraint m g q base)^[k] 0
+
+/-- source_id: MD-4.3.6-SETTLE · definition · §4.3.6 · 印刷p.165 / PDFp.187
+[EXTRA] [EXTRA]正文没有闭式算法细节，仅登记真实小系统residual=0关系；不发明SETTLE闭式或存在定理。 -/
+def settleRelation {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Prop := MolecularDynamics.Chapter04Review.projectionResidual m g q base η=0
+
+/-- source_id: MD-4.3.6-LINCSInverse · definition · §4.3.6 · 印刷p.165 / PDFp.187
+[EXTRA] [EXTRA]标准Neumann有限和Σ(j=0..k) C^j表达series inverse，正文没有印系数公式；收敛条件另条。 -/
+def lincsInverse {l : ℕ} (C : Matrix (Fin l) (Fin l) ℝ) (k : ℕ) := ∑ j ∈ Finset.range (k+1), C^j
+
+/-- source_id: MD-4.3.6-LINCSConvergence · unnumbered_claim · §4.3.6 · 印刷p.165 / PDFp.187
+[EXTRA] [EXTRA]明确实际连续线性算子C.toLin'.toContinuousLinearMap的范数<1；不使用逐元素最大范数作为Neumann收敛资格。 -/
+theorem lincsConvergence :
+  ∀ l (C : Matrix (Fin l) (Fin l) ℝ),
+  ‖C.toLin'.toContinuousLinearMap‖ < 1 → Tendsto (MolecularDynamics.Chapter04Review.lincsInverse C) atTop (𝓝 ((1-C)⁻¹)) := by
+  sorry
+
 end MD.Ch04

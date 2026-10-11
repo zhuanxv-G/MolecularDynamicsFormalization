@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro N m δ\n  have he : ∀ v : MolecularDynamics.Chapter04Review.V,\n      MolecularDynamics.Chapter04Review.dot v v • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer v= -(MolecularDynamics.Chapter04Review.skewMatrix v)^2 := by\n    intro v\n    ext i j\n    fin_cases i <;> fin_cases j <;>\n      simp [MolecularDynamics.Chapter04Review.dot,MolecularDynamics.Chapter04Review.outer,MolecularDynamics.Chapter04Review.skewMatrix,Matrix.mul_apply,Fin.sum_univ_three,pow_two] <;> ring\n  simp [MolecularDynamics.Chapter04Review.inertiaTensor,he,Finset.sum_neg_distrib]",
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.log",
+    "source_sha256": "ebd77e0c475c9affa82f642e9fd4ffc4145681ae07df8ad5eb7f1594aea5de88",
+    "log_sha256": "3f7ccd3596da5d162d4bf2270896cb6af02e37e5081307b771dbf732ab2721a6"
+  }
+]

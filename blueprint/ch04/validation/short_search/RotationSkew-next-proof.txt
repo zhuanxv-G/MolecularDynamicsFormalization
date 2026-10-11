@@ -1,0 +1,17 @@
+intro Θ t d hd ho
+  have hs : ∀ i j : Fin 3, ∑ k, (d i k*Θ t j k+Θ t i k*d j k)=0 := by
+    intro i j
+    have hf : HasDerivAt (fun s => ∑ k, Θ s i k*Θ s j k)
+        (∑ k, (d i k*Θ t j k+Θ t i k*d j k)) t := by
+      apply HasDerivAt.fun_sum
+      intro k hk
+      exact ((hasDerivAt_pi.mp (hasDerivAt_pi.mp hd i) k).mul (hasDerivAt_pi.mp (hasDerivAt_pi.mp hd j) k))
+    have he : (fun s => ∑ k, Θ s i k*Θ s j k) =ᶠ[𝓝 t] (fun _ => (1 : Mat3) i j) := by
+      filter_upwards [ho] with s h
+      simpa [Matrix.mul_apply,Matrix.transpose_apply] using congrArg (fun B : Mat3 => B i j) h
+    exact hf.unique ((hasDerivAt_const t ((1 : Mat3) i j)).congr_of_eventuallyEq he)
+  ext i j
+  have h := hs i j
+  simp only [Fin.sum_univ_three] at h
+  simp [Matrix.mul_apply,Matrix.transpose_apply,Fin.sum_univ_three]
+  nlinarith [h]

@@ -2559,5 +2559,97 @@
     "review_status": "DRAFT",
     "repair_log": [],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.6-MShakeIteration",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3.6",
+    "printed_page": "164",
+    "pdf_page": "186",
+    "statement_latex": "M-Shake This is Newton-iteration-based implementation of SHAKE, using (4.18)–(4.19) to solve Eqs. (4.27)–(4.29).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "实际Newton从0迭代k次；无需声称收敛，收敛已另列。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.mShakeIteration",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.6-SETTLE",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3.6",
+    "printed_page": "165",
+    "pdf_page": "187",
+    "statement_latex": "SETTLE The SETTLE method [274] is just the SHAKE approach applied to a small system combined with an exact solve of the nonlinear equations. It is usually applied to treat rigid bodies (as discussed in the following section).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.settleRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]正文没有闭式算法细节，仅登记真实小系统residual=0关系；不发明SETTLE闭式或存在定理。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.6-LINCSInverse",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3.6",
+    "printed_page": "165",
+    "pdf_page": "187",
+    "statement_latex": "LINCS In solving the Eqs. (4.27)–(4.29) by Newton iteration, the largest cost and the most significant barrier to parallelization is the linear solve. The LINCS method [119,175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.lincsInverse",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]标准Neumann有限和Σ(j=0..k) C^j表达series inverse，正文没有印系数公式；收敛条件另条。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.6-LINCSConvergence",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3.6",
+    "printed_page": "165",
+    "pdf_page": "187",
+    "statement_latex": "The LINCS method [119,175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.lincsConvergence",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]明确实际连续线性算子C.toLin'.toContinuousLinearMap的范数<1；不使用逐元素最大范数作为Neumann收敛资格。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]

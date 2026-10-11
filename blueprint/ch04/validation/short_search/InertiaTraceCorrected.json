@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.log",
+    "source_sha256": "43fe875f051a664ae987ff3c89cf961886033273122e5dc9338e812d98005fa4",
+    "log_sha256": "16e87bfbbc348c16d694b0f254385f2500dcc82bf036b9c6c890a2bddc9c2cc9"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08.log",
+    "source_sha256": "6e2d445ab79fb84a0a9086b6896345e12210e5b5e431f38d0b898a090f25fdef",
+    "log_sha256": "37d80e7ab79c5aa214367334c99a27669d60dcf5cd13d2d97f4422eb93df2fb0"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro N m δ\n  have he : ∀ v : MolecularDynamics.Chapter04Review.V,\n      (MolecularDynamics.Chapter04Review.dot v v • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer v).trace=2*MolecularDynamics.Chapter04Review.dot v v := by\n    intro v\n    simp [Matrix.trace,MolecularDynamics.Chapter04Review.dot,MolecularDynamics.Chapter04Review.outer,Fin.sum_univ_three]\n    ring\n  rw [MolecularDynamics.Chapter04Review.inertiaTensor,Matrix.trace_sum]\n  simp_rw [Matrix.trace_smul,he,smul_eq_mul]\n  have ht : (∑ i, m i*(2*MolecularDynamics.Chapter04Review.dot (δ i) (δ i)))/2=\n      ∑ i, m i*MolecularDynamics.Chapter04Review.dot (δ i) (δ i) := by\n    rw [Finset.sum_div]\n    apply Finset.sum_congr rfl\n    intro i hi\n    ring\n  rw [ht,MolecularDynamics.Chapter04Review.secondMoment]\n  ext i j\n  simp only [Matrix.sum_apply,Matrix.smul_apply,Matrix.sub_apply,smul_eq_mul]\n  rw [Finset.sum_mul,← Finset.sum_sub_distrib]\n  apply Finset.sum_congr rfl\n  intro k hk\n  ring",
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.log",
+    "source_sha256": "885329fa31afc694a2991cbe96db87d50080814ecc4c91e0f31009862fc5e0c8",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

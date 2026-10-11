@@ -1,0 +1,103 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19b",
+  "source_ids": [
+    "MD-4.3.6-SETTLE"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 187,
+      "printed_page": 165
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "ba7dbb96eae845df974790a41602b57bf17f5a4efd75e3758269eb7fd5fecdb5",
+  "lean_sha256": "d3389d550a12bcf7e2807815e23f5461832ab657005fbfc2396cb632a585c342",
+  "signature_sha256": "58789c2c47392b5cd30ee44b4222bc5950e26515e69872fd3736e8a0824b11ba",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "projectionResidual",
+      "code_sha256": "94d2cdeedd7b79823624a38170050725aa72a634026cdf1872e0ef3101a53536"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "projectionResidual",
+      "code_sha256": "b95035b14226d0c683ddc169850d6e7f327933f99af384df7965f935d81ff5d5"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "settleRelation",
+      "code_sha256": "58789c2c47392b5cd30ee44b4222bc5950e26515e69872fd3736e8a0824b11ba"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGradient",
+      "code_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintJacobian",
+      "code_sha256": "8cf31fc6e8fc4d97e435434cd3ff311cd4bdc6e77b6c39dac71331c66249f03a"
+    }
+  ],
+  "paste_plus_pdf_bytes": 75806,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5883,
+      "sha256": "5b6f19b199eba420ad71d1c778e75fad3ace04a216b1046c548eb776f211feae"
+    },
+    "BATCH19b_PAGES.pdf": {
+      "bytes": 69923,
+      "sha256": "9e206c94ebb858f98250a864d2424b80e7bcdc638c267176ff736a56f200ef8b"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 79682
+}

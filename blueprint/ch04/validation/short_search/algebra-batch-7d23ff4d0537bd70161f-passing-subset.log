@@ -1,0 +1,17 @@
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f-passing-subset.lean:30:15: error(lean.invalidField): Invalid field `apply`: The environment does not contain `HasFDerivAtFilter.apply`, so it is not possible to project the field `apply` from an expression
+  hd
+of type
+  HasFDerivAtFilter Θ (ContinuousLinearMap.toSpanSingleton ℝ dΘ) (𝓝 t ×ˢ pure t)
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f-passing-subset.lean:32:28: error(lean.unknownIdentifier): Unknown constant `Matrix.mul_eq_one_comm.mp`
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f-passing-subset.lean:49:135: warning: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, MolecularDynamics.Chapter04Review.outer,
+    MolecularDynamics.Chapter04Review.skewMatrix, Fin.sum_univ_three, pow_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f-passing-subset.lean:60:15: error(lean.invalidField): Invalid field `apply`: The environment does not contain `HasFDerivAtFilter.apply`, so it is not possible to project the field `apply` from an expression
+  hd
+of type
+  HasFDerivAtFilter Θ (ContinuousLinearMap.toSpanSingleton ℝ d) (𝓝 t ×ˢ pure t)

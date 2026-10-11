@@ -1,0 +1,51 @@
+InertiaTraceCorrected failed route 2
+SecondMomentDiagonal failed route 2
+blueprint\ch04\validation\short_search\algebra-batch-2b3ac4f6f94905e89d08.lean:69:2: error: `simp` made no progress
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  function expected
+    (∑ i, m i • outer (δ i)) i
+blueprint\ch04\validation\short_search\algebra-batch-2b3ac4f6f94905e89d08.lean:92:29: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+δ : Fin N → V
+R : Mat3 := secondMoment m δ
+i j : Fin 3
+⊢ (∑ i, m i • outer (δ i)) j i = (∑ i, m i • outer (δ i)) i j
+blueprint\ch04\validation\short_search\algebra-batch-2b3ac4f6f94905e89d08.lean:95:59: warning: This simp argument is unused:
+  MolecularDynamics.Chapter04Review.outer
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [R, MolecularDynamics.Chapter04Review.secondMoment, Matrix.conjTranspose_apply, Finset.sum_apply,
+    Pi.smul_apply, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-2b3ac4f6f94905e89d08.lean:95:126: warning: This simp argument is unused:
+  Finset.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [R, MolecularDynamics.Chapter04Review.secondMoment, MolecularDynamics.Chapter04Review.outer,
+    Matrix.conjTranspose_apply, Pi.smul_apply, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-2b3ac4f6f94905e89d08.lean:95:143: warning: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [R, MolecularDynamics.Chapter04Review.secondMoment, MolecularDynamics.Chapter04Review.outer,
+    Matrix.conjTranspose_apply, Finset.sum_apply, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-2b3ac4f6f94905e89d08.lean:95:157: warning: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [R, MolecularDynamics.Chapter04Review.secondMoment, MolecularDynamics.Chapter04Review.outer,
+    Matrix.conjTranspose_apply, Finset.sum_apply, Pi.smul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+RotationSkew PASS
+RigidVelocity PASS
+RotationTrajectory PASS

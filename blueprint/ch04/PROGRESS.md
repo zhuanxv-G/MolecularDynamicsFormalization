@@ -2,7 +2,7 @@
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前106条；旧清单映射76/100；本地PASS 93；网站返回0。
+当前110条；旧清单映射79/100；本地PASS 97；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -112,6 +112,10 @@
 | MD-4.3.5.1-MomentumProjector | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-4.3.5.1-ConstrainedPotentialFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-4.3.5.1-GeodesicRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.6-MShakeIteration | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.6-SETTLE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.6-LINCSInverse | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.6-LINCSConvergence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺Banach代数Neumann级数与有限维矩阵逆/逐元素拓扑之间的接口桥接；保留真实有限和逆矩阵极限，不新建一般逆算子理论。 |
 
 ## 旧100条完整映射
 
@@ -192,9 +196,9 @@
 | CH04-073 | MD-4.3.5.1-MomentumProjector |
 | CH04-074 | MD-4.3.5.1-ConstrainedPotentialFlow |
 | CH04-075 | MD-4.3.5.1-GeodesicRelation |
-| CH04-076 | PENDING：所属节尚未处理 |
-| CH04-077 | PENDING：所属节尚未处理 |
-| CH04-078 | PENDING：所属节尚未处理 |
+| CH04-076 | MD-4.3.6-MShakeIteration |
+| CH04-077 | MD-4.3.6-LINCSInverse |
+| CH04-078 | MD-4.3.6-LINCSConvergence |
 | CH04-079 | PENDING：所属节尚未处理 |
 | CH04-080 | PENDING：所属节尚未处理 |
 | CH04-081 | PENDING：所属节尚未处理 |
@@ -252,7 +256,9 @@
 - MD-4.3.5-SHAKEPositionOrder：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际约束多步方法一致误差与离散分支存在理论；不建设大型收敛理论。
 - MD-4.3.5.1-ConstrainedComposition：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际Euler/adjoint分支的短组合辛性桥接；不假设分支辛性。
 - MD-4.3.5.1-ConstrainedCompositionOrder：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实约束分支二阶Taylor与局部误差理论；不建设大型理论。
+- MD-4.3.6-LINCSConvergence：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺Banach代数Neumann级数与有限维矩阵逆/逐元素拓扑之间的接口桥接；保留真实有限和逆矩阵极限，不新建一般逆算子理论。
 
 ## 定性段落排除
 
 - p.139–144/PDF161–166：MD平衡点类型的经验判断、化学键最快模式、图示精度和误差传播推测、求解成本与使用建议为定性背景；稳定性、谱、端点、频率和中点数学公式均独立保留。
+- p.164–166/PDF186–188：实现成本、并行化、SOR/CG引用和局部参数化实现建议；§4.3.7水体系数值实验、Fig4.5观测误差和推荐步长是特定模拟数据，不当一般定理。算法数学对象和收敛条件均已独立登记。

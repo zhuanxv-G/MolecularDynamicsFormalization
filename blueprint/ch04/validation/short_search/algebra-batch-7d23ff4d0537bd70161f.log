@@ -1,0 +1,63 @@
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:32:18: error(lean.invalidField): Invalid field `apply`: The environment does not contain `HasFDerivAtFilter.apply`, so it is not possible to project the field `apply` from an expression
+  hd
+of type
+  HasFDerivAtFilter Θ (ContinuousLinearMap.toSpanSingleton ℝ d) (𝓝 t ×ˢ pure t)
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:36:81: error: Application type mismatch: The argument
+  EventuallyEq.symm he
+has type
+  (fun x => 1 i j) =ᶠ[𝓝 t] fun s => ∑ k, Θ s i k * Θ s j k
+but is expected to have type
+  (fun s => ∑ k, Θ s i k * Θ s j k) =ᶠ[𝓝 t] fun x => 1 i j
+in the application
+  HasDerivAt.congr_of_eventuallyEq (hasDerivAt_const t (1 i j)) (EventuallyEq.symm he)
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:52:15: error(lean.invalidField): Invalid field `apply`: The environment does not contain `HasFDerivAtFilter.apply`, so it is not possible to project the field `apply` from an expression
+  hd
+of type
+  HasFDerivAtFilter Θ (ContinuousLinearMap.toSpanSingleton ℝ dΘ) (𝓝 t ×ˢ pure t)
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:54:28: error(lean.unknownIdentifier): Unknown constant `Matrix.mul_eq_one_comm.mp`
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:71:135: warning: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, MolecularDynamics.Chapter04Review.outer,
+    MolecularDynamics.Chapter04Review.skewMatrix, Fin.sum_univ_three, pow_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:92:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (∑ i, m i * (2 * dot (δ i) (δ i))) / 2
+in the target expression
+  secondMoment m δ = ((∑ x, m x • (2 * dot (δ x) (δ x))) / 2) • 1 - ∑ i, m i • (dot (δ i) (δ i) • 1 - outer (δ i))
+
+N : ℕ
+m : Fin N → ℝ
+δ : Fin N → V
+he : ∀ (v : V), trace (dot v v • 1 - outer v) = 2 * dot v v
+ht : (∑ i, m i * (2 * dot (δ i) (δ i))) / 2 = ∑ i, m i * dot (δ i) (δ i)
+⊢ secondMoment m δ = ((∑ x, m x • (2 * dot (δ x) (δ x))) / 2) • 1 - ∑ i, m i • (dot (δ i) (δ i) • 1 - outer (δ i))
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:107:15: error(lean.invalidField): Invalid field `apply`: The environment does not contain `HasFDerivAtFilter.apply`, so it is not possible to project the field `apply` from an expression
+  hd
+of type
+  HasFDerivAtFilter Θ (ContinuousLinearMap.toSpanSingleton ℝ d) (𝓝 t ×ˢ pure t)
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:116:29: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+δ : Fin N → V
+R : Mat3 := secondMoment m δ
+i j : Fin 3
+⊢ (∑ i, m i • outer (δ i)) j i = (∑ i, m i • outer (δ i)) i j
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:124:15: error(lean.unknownIdentifier): Unknown constant `Matrix.conjStarAlgAut_star_apply`
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:119:59: warning: This simp argument is unused:
+  MolecularDynamics.Chapter04Review.outer
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [R, MolecularDynamics.Chapter04Review.secondMoment, Matrix.conjTranspose_apply, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-7d23ff4d0537bd70161f.lean:119:126: warning: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [R, MolecularDynamics.Chapter04Review.secondMoment, MolecularDynamics.Chapter04Review.outer,
+    Matrix.conjTranspose_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

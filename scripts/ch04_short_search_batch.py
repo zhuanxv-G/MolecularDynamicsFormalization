@@ -2,7 +2,7 @@
 import ast,sys,json,hashlib,subprocess,importlib,re
 from ch04_data import ROOT,BASE,RECORDS
 mods={'RotationTraceIdentity':'44b','RotationSkew':'44b','RigidVelocity':'44b',
-      'InertiaSkewIdentity':'44c','InertiaTraceCorrected':'44c','RotationTrajectory':'44extras','SecondMomentDiagonal':'44extras','AngularInertia':'441'}
+      'InertiaSkewIdentity':'44c','InertiaTraceCorrected':'44c','RotationTrajectory':'44extras','SecondMomentDiagonal':'44extras','AngularInertia':'441','RotationBodyEnergy':'44extras','RigidInvariants':'441'}
 keys=sys.argv[1:];assert 0<len(keys)<=8 and len(set(keys))==len(keys)
 tree=ast.parse((ROOT/'scripts/ch04_short_search_algebra.py').read_text(encoding='utf-8'))
 proofs=ast.literal_eval(next(x.value for x in tree.body if isinstance(x,ast.Assign) and any(isinstance(y,ast.Name) and y.id=='proofs' for y in x.targets)))
@@ -61,7 +61,7 @@ def save(key,source,rawlog,exit_code):
 if code==0:
     for key in pending:save(key,src,log,0)
 else:
-    lines=[int(x) for x in re.findall(r':(\d+):\d+: error:',out)]
+    lines=[int(x) for x in re.findall(r':(\d+):\d+: error(?:\([^)]*\))?:',out)]
     assert lines and all(any(lo<=n<=hi for lo,hi in ranges.values()) for n in lines),out
     failed={key for key,(lo,hi) in ranges.items() if any(lo<=n<=hi for n in lines)}
     for key in failed:save(key,src,log,code)

@@ -1,0 +1,14 @@
+intro Θ dΘ δ «ω» t hd ho hs
+  have he : ∀ i, HasDerivAt (fun s => ∑ j, Θ s i j*δ j) (∑ j,dΘ i j*δ j) t := by
+    intro i
+    apply HasDerivAt.fun_sum
+    intro j hj
+    exact (hasDerivAt_pi.mp (hasDerivAt_pi.mp hd i) j).mul_const (δ j)
+  have hv : HasDerivAt (fun s => Θ s *ᵥ δ) (dΘ *ᵥ δ) t := hasDerivAt_pi.mpr he
+  have hi : (Θ t)ᵀ*Θ t=1 := mul_eq_one_comm.mp ho
+  have hcross : MolecularDynamics.Chapter04Review.skewMatrix «ω» *ᵥ (Θ t *ᵥ δ)=
+      MolecularDynamics.Chapter04Review.cross3 «ω» (Θ t *ᵥ δ) := by
+    ext i
+    fin_cases i <;> simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
+  rw [← hcross,← hs,Matrix.mulVec_mulVec,Matrix.mul_assoc,hi,Matrix.mul_one]
+  exact hv
