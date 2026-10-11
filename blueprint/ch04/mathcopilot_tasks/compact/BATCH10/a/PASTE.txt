@@ -84,7 +84,7 @@ def dot {n : ℕ} (u v : Q n) : ℝ := ∑ i, u i * v i
 def phaseForm {n : ℕ} (u v : Z n) : ℝ := dot u.1 v.2 - dot v.1 u.2
 ```
 
-### MD.Ch04.restrictedForm (Blueprint/Ch04.lean:725)
+### MD.Ch04.restrictedForm (Blueprint/Ch04.lean:726)
 ```lean
 def restrictedForm {n : ℕ} (chart : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (z u v : MolecularDynamics.Chapter04Review.Z n) : ℝ :=
   MolecularDynamics.Chapter04Review.phaseForm ((fderiv ℝ chart z) u) ((fderiv ℝ chart z) v)

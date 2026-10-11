@@ -43,6 +43,8 @@ paths=['.gitattributes','AGENTS.md','lakefile.toml','docs/handoff/CURRENT_STATE.
 paths += ['scripts/render_local_source.py','scripts/validate_local_delivery.py']
 if ch==4 and (ROOT/'scripts/partition_ch04_sections.py').exists():
     paths.append('scripts/partition_ch04_sections.py')
+if ch==4 and (ROOT/'scripts/ch04_reconcile_short_batch.py').exists():
+    paths.append('scripts/ch04_reconcile_short_batch.py')
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_section*.py') if x.stem in sys.modules]
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_short_search*.py')]
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_bracket_search*.py')]

@@ -1,0 +1,43 @@
+intro N m δ Θ «ω» ho hdet
+  let x := Θᵀ *ᵥ «ω»
+  have ht : ∀ (A : Mat3) (v w : V), dot (A *ᵥ v) w=dot v (Aᵀ *ᵥ w) := by
+    intro A v w
+    simp [dot,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+    ring
+  have hi : ∀ v : V, Θᵀ *ᵥ (Θ *ᵥ v)=v := by
+    intro v
+    rw [Matrix.mulVec_mulVec,ho,Matrix.one_mulVec]
+  have hx : Θ *ᵥ x=«ω» := by
+    dsimp [x]
+    rw [Matrix.mulVec_mulVec,mul_eq_one_comm.mp ho,Matrix.one_mulVec]
+  have hn : dot «ω» «ω»=dot x x := by
+    conv_lhs => rw [← hx]
+    rw [ht,hi]
+  have hc : ∀ v w : V, dot (cross3 w v) (cross3 w v)=dot v v*dot w w-(dot v w)^2 := by
+    intro v w
+    simp [cross3,dot,Fin.sum_univ_three]
+    ring
+  have he : ∀ v y : V, dot y ((dot v v • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ y)=dot v v*dot y y-(dot v y)^2 := by
+    intro v y
+    simp [dot,Matrix.sub_mulVec,Matrix.smul_mulVec,Matrix.one_mulVec,MolecularDynamics.Chapter04Review.outer,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+    ring
+  have hf : ∀ v : V, dot (cross3 «ω» (Θ *ᵥ v)) (cross3 «ω» (Θ *ᵥ v))=
+      dot x ((dot v v • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ x) := by
+    intro v
+    rw [hc,he]
+    have hv : dot (Θ *ᵥ v) (Θ *ᵥ v)=dot v v := by rw [ht,hi]
+    have hw : dot (Θ *ᵥ v) «ω»=dot v x := ht Θ v «ω»
+    rw [hv,hn,hw]
+  have hsum : ∀ (K : ℕ) (a : Fin K → V), dot x (∑ i,a i)=∑ i,dot x (a i) := by
+    intro K a
+    simp [dot,Fin.sum_univ_three,Finset.sum_apply,Finset.mul_sum,Finset.sum_add_distrib]
+  have hsmul : ∀ (c : ℝ) (v : V), dot x (c • v)=c*dot x v := by
+    intro c v
+    simp [dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul]
+    ring
+  rw [MolecularDynamics.Chapter04Review.rotationalEnergy,MolecularDynamics.Chapter04Review.inertiaTensor,Matrix.sum_mulVec]
+  change (∑ i,m i*dot (cross3 «ω» (Θ *ᵥ δ i)) (cross3 «ω» (Θ *ᵥ δ i)))/2=
+      dot x (∑ i,(m i • (dot (δ i) (δ i) • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer (δ i))) *ᵥ x)/2
+  simp_rw [Matrix.smul_mulVec]
+  rw [hsum]
+  simp_rw [hsmul,hf]

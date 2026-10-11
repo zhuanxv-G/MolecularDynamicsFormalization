@@ -1,1 +1,111 @@
 warning: in the working copy of 'docs/handoff/WORK_LOG.zh-CN.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/blueprint_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_blueprint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_stage.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_chapter_check.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_checkpoint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_data.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/render_local_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/validate_local_delivery.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/partition_ch04_sections.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section4.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section41.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section421.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section421b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section42extra.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section42molly.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section43.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section432.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section434.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section434b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section435.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section436.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section43b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section4b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_algebra.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_batch.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_euler_stability.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_growth.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_more.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_resonance.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_stability.py', LF will be replaced by CRLF the next time Git touches it
+[chapter04-blueprint 6af39fe] ch04 sec4.3.6: faithful local blueprint and checked checkpoint
+ 197 files changed, 54603 insertions(+), 544 deletions(-)
+ create mode 100644 blueprint/ch04/batch18-run.log
+ create mode 100644 blueprint/ch04/full436-run.log
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/BATCH19.md
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/a/BATCH19a_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/a/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/a/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/b/BATCH19b_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/b/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/b/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/c/BATCH19c_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/c/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/c/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/d/BATCH19d_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/d/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH19/d/PASTE.txt
+ create mode 100644 blueprint/ch04/validation/algebra-eight-run.log
+ create mode 100644 blueprint/ch04/validation/algebra-five2-run.log
+ create mode 100644 blueprint/ch04/validation/algebra-reconcile-run.log
+ create mode 100644 blueprint/ch04/validation/algebra-two3-run.log
+ create mode 100644 blueprint/ch04/validation/batch18-COMPILE.json
+ create mode 100644 blueprint/ch04/validation/batch18-lean.log
+ create mode 100644 blueprint/ch04/validation/section436-commit.log
+ create mode 100644 blueprint/ch04/validation/section436/CHECK_REPORT.json
+ create mode 100644 blueprint/ch04/validation/section436/LOCAL_CHECK_REPORT.json
+ create mode 100644 blueprint/ch04/validation/section436/axiom_dependencies.log
+ create mode 100644 blueprint/ch04/validation/section436/blueprint_axiom_dependencies.log
+ create mode 100644 blueprint/ch04/validation/section436/blueprint_fresh_Ch01.log
+ create mode 100644 blueprint/ch04/validation/section436/blueprint_fresh_Ch02.log
+ create mode 100644 blueprint/ch04/validation/section436/chapter02_axiom_dependencies.log
+ create mode 100644 blueprint/ch04/validation/section436/chapter_axioms.log
+ create mode 100644 blueprint/ch04/validation/section436/chapter_fresh.log
+ create mode 100644 blueprint/ch04/validation/section436/git_branch.log
+ create mode 100644 blueprint/ch04/validation/section436/git_head.log
+ create mode 100644 blueprint/ch04/validation/section436/git_status.log
+ create mode 100644 blueprint/ch04/validation/section436/lake_build.log
+ create mode 100644 blueprint/ch04/validation/section436/lake_version.log
+ create mode 100644 blueprint/ch04/validation/section436/lean_version.log
+ create mode 100644 blueprint/ch04/validation/section436/mathlib_revision.log
+ create mode 100644 blueprint/ch04/validation/section436/mathlib_status.log
+ create mode 100644 blueprint/ch04/validation/section436/scratch.log
+ create mode 100644 blueprint/ch04/validation/short_search/AngularInertia.json
+ create mode 100644 blueprint/ch04/validation/short_search/InertiaSkewIdentity.json
+ create mode 100644 blueprint/ch04/validation/short_search/InertiaTraceCorrected-next-proof.txt
+ create mode 100644 blueprint/ch04/validation/short_search/InertiaTraceCorrected.json
+ create mode 100644 blueprint/ch04/validation/short_search/RigidVelocity-next-proof.txt
+ create mode 100644 blueprint/ch04/validation/short_search/RigidVelocity.json
+ create mode 100644 blueprint/ch04/validation/short_search/RotationSkew-next-proof.txt
+ create mode 100644 blueprint/ch04/validation/short_search/RotationSkew.json
+ create mode 100644 blueprint/ch04/validation/short_search/RotationTraceIdentity.json
+ create mode 100644 blueprint/ch04/validation/short_search/RotationTrajectory-next-proof.txt
+ create mode 100644 blueprint/ch04/validation/short_search/RotationTrajectory.json
+ create mode 100644 blueprint/ch04/validation/short_search/SecondMomentDiagonal-next-proof.txt
+ create mode 100644 blueprint/ch04/validation/short_search/SecondMomentDiagonal.json
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.compile.json
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.lean
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.log
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08.compile.json
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08.lean
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08.log
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-passing-subset.compile.json
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-passing-subset.lean
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-passing-subset.log
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.compile.json
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.lean
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.log
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.compile.json
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.lean
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.log
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.compile.json
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.lean
+ create mode 100644 blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.log
+ create mode 100644 scripts/ch04_section436.py
+To https://github.com/zhuanxv-G/MolecularDynamicsFormalization.git
+   7e540e66..6af39fe5  chapter04-blueprint -> chapter04-blueprint
+branch 'chapter04-blueprint' set up to track 'origin/chapter04-blueprint'.
+Generated 110 entries; 79 /100 old rows mapped; protected 568
+Committed and pushed 6af39fe5e0b3140bdd3c5aec89c80e6df83b6747 ; live cross-chapter pointer updated.

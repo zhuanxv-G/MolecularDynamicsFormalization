@@ -66,18 +66,18 @@ def impulseMatrix (Ω h : ℝ) := slowMatrix (h/2) * fastMatrix Ω h * slowMatri
 def slowMatrix (h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![1,0; -h,1]
 ```
 
-### MD.Ch04.fastMatrix (Blueprint/Ch04.lean:422)
+### MD.Ch04.fastMatrix (Blueprint/Ch04.lean:423)
 ```lean
 def fastMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![Real.cos (Ω*h),Real.sin (Ω*h)/Ω; -Ω*Real.sin (Ω*h),Real.cos (Ω*h)]
 ```
 
-### MD.Ch04.impulseMatrix (Blueprint/Ch04.lean:426)
+### MD.Ch04.impulseMatrix (Blueprint/Ch04.lean:427)
 ```lean
 def impulseMatrix (Ω h : ℝ) := MolecularDynamics.Chapter04Review.slowMatrix (h/2) * MolecularDynamics.Chapter04Review.fastMatrix Ω h * MolecularDynamics.Chapter04Review.slowMatrix (h/2)
 ```
 
-### MD.Ch04.slowMatrix (Blueprint/Ch04.lean:418)
+### MD.Ch04.slowMatrix (Blueprint/Ch04.lean:419)
 ```lean
 def slowMatrix (h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![1,0; -h,1]
 ```

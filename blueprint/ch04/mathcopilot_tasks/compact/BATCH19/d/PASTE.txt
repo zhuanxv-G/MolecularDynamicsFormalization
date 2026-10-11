@@ -50,7 +50,7 @@ theorem lincsConvergence :
 def lincsInverse {l : ℕ} (C : Matrix (Fin l) (Fin l) ℝ) (k : ℕ) := ∑ j ∈ Finset.range (k+1), C^j
 ```
 
-### MD.Ch04.lincsInverse (Blueprint/Ch04.lean:1249)
+### MD.Ch04.lincsInverse (Blueprint/Ch04.lean:1250)
 ```lean
 def lincsInverse {l : ℕ} (C : Matrix (Fin l) (Fin l) ℝ) (k : ℕ) := ∑ j ∈ Finset.range (k+1), C^j
 ```

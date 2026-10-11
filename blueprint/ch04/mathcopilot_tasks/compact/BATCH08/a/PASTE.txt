@@ -50,7 +50,7 @@ def flexiblePendulumHamiltonian (m ε r₀ : ℝ) (U : Position 3 → ℝ)
 abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch04.flexiblePendulumHamiltonian (Blueprint/Ch04.lean:630)
+### MD.Ch04.flexiblePendulumHamiltonian (Blueprint/Ch04.lean:631)
 ```lean
 def flexiblePendulumHamiltonian (m ε r₀ : ℝ) (U : Position 3 → ℝ)
     (z : Position 3 × Position 3) : ℝ :=

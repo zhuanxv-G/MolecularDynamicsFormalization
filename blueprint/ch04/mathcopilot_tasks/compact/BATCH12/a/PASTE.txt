@@ -91,7 +91,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch04.frozenNewtonConstraint (Blueprint/Ch04.lean:822)
+### MD.Ch04.frozenNewtonConstraint (Blueprint/Ch04.lean:823)
 ```lean
 def frozenNewtonConstraint {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=
@@ -108,7 +108,7 @@ def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹
 def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
 ```
 
-### MD.Ch04.projectionJacobian (Blueprint/Ch04.lean:810)
+### MD.Ch04.projectionJacobian (Blueprint/Ch04.lean:811)
 ```lean
 def projectionJacobian {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Matrix (Fin l) (Fin l) ℝ :=
@@ -116,7 +116,7 @@ def projectionJacobian {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularD
     textbookInverseMassMatrix m * (textbookConstraintJacobian g q)ᵀ
 ```
 
-### MD.Ch04.projectionResidual (Blueprint/Ch04.lean:805)
+### MD.Ch04.projectionResidual (Blueprint/Ch04.lean:806)
 ```lean
 def projectionResidual {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=

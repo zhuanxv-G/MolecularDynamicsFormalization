@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-f1cc7dc19bb9d13c8d85.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-f1cc7dc19bb9d13c8d85.log",
+    "source_sha256": "258c5b6247fc82265ceb4cb6824a5a75a13b2284d5c2f460411724c86aa4b565",
+    "log_sha256": "8e0bd31f7cee6d82ef8a0628dea83aabd1d4818e69e953e7b16ca2c4c397c8be"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro N m δ Θ «ω» ho hdet\n  let x := Θᵀ *ᵥ «ω»\n  have ht : ∀ (A : Mat3) (v w : V), dot (A *ᵥ v) w=dot v (Aᵀ *ᵥ w) := by\n    intro A v w\n    simp [dot,Matrix.mulVec,dotProduct,Fin.sum_univ_three]\n    ring\n  have hi : ∀ v : V, Θᵀ *ᵥ (Θ *ᵥ v)=v := by\n    intro v\n    rw [Matrix.mulVec_mulVec,ho,Matrix.one_mulVec]\n  have hx : Θ *ᵥ x=«ω» := by\n    dsimp [x]\n    rw [Matrix.mulVec_mulVec,mul_eq_one_comm.mp ho,Matrix.one_mulVec]\n  have hn : dot «ω» «ω»=dot x x := by\n    conv_lhs => rw [← hx]\n    rw [ht,hi]\n  have hc : ∀ v w : V, dot (cross3 w v) (cross3 w v)=dot v v*dot w w-(dot v w)^2 := by\n    intro v w\n    simp [cross3,dot,Fin.sum_univ_three]\n    ring\n  have he : ∀ v y : V, dot y ((dot v v • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ y)=dot v v*dot y y-(dot v y)^2 := by\n    intro v y\n    simp [dot,Matrix.sub_mulVec,Matrix.smul_mulVec,Matrix.one_mulVec,MolecularDynamics.Chapter04Review.outer,Matrix.mulVec,dotProduct,Fin.sum_univ_three]\n    ring\n  have hf : ∀ v : V, dot (cross3 «ω» (Θ *ᵥ v)) (cross3 «ω» (Θ *ᵥ v))=\n      dot x ((dot v v • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ x) := by\n    intro v\n    rw [hc,he]\n    have hv : dot (Θ *ᵥ v) (Θ *ᵥ v)=dot v v := by rw [ht,hi]\n    have hw : dot (Θ *ᵥ v) «ω»=dot v x := ht Θ v «ω»\n    rw [hv,hn,hw]\n  have hsum : ∀ (K : ℕ) (a : Fin K → V), dot x (∑ i,a i)=∑ i,dot x (a i) := by\n    intro K a\n    simp [dot,Fin.sum_univ_three,Finset.sum_apply,Finset.mul_sum,Finset.sum_add_distrib]\n  have hsmul : ∀ (c : ℝ) (v : V), dot x (c • v)=c*dot x v := by\n    intro c v\n    simp [dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul]\n    ring\n  rw [MolecularDynamics.Chapter04Review.rotationalEnergy,MolecularDynamics.Chapter04Review.inertiaTensor,Matrix.sum_mulVec]\n  change (∑ i,m i*dot (cross3 «ω» (Θ *ᵥ δ i)) (cross3 «ω» (Θ *ᵥ δ i)))/2=\n      dot x (∑ i,(m i • (dot (δ i) (δ i) • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer (δ i))) *ᵥ x)/2\n  simp_rw [Matrix.smul_mulVec]\n  rw [hsum]\n  simp_rw [hsmul,hf]",
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-f95b57dbc2e454a4881e.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-f95b57dbc2e454a4881e.log",
+    "source_sha256": "5c89e336691d2d5d87cfca17efde7eeda1cdef25965d6938dfb886b81e8a9ecd",
+    "log_sha256": "422f6763f6396b993ecf28d5ea8ed13be58b20628f4d35df2648b33fa62d1a71"
+  }
+]

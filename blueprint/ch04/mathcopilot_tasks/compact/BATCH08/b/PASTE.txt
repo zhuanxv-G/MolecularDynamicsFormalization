@@ -49,7 +49,7 @@ def restraintPotential (ε r₀ : ℝ) (q : Position 3) : ℝ :=
 abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch04.restraintPotential (Blueprint/Ch04.lean:635)
+### MD.Ch04.restraintPotential (Blueprint/Ch04.lean:636)
 ```lean
 def restraintPotential (ε r₀ : ℝ) (q : Position 3) : ℝ :=
   ε⁻¹*(‖q‖-r₀)^2/2

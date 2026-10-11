@@ -1,0 +1,54 @@
+{
+  "batch": "BATCH21",
+  "subtask": "BATCH21b",
+  "source_ids": [
+    "MD-4.4-RotationSkew"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 190,
+      "printed_page": 168
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 191,
+      "printed_page": 169
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e8b07e3a4753c7a91f6a700f6d954af027af905fbec085934dd4faadf3358f16",
+  "lean_sha256": "fce9d47f4a84e73731e80d24b5eeebb98a5c931e83fab79980cf32c0ad42a39b",
+  "signature_sha256": "54f550b8b9a0dd8d33149c43a5c6c5749ddd5e7eae2a6c8238b5e5e5ee74bcae",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    }
+  ],
+  "paste_plus_pdf_bytes": 151123,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3181,
+      "sha256": "d50bba52286ea224451a3e1861f0f1db814699faf94d524a24c3321e256a6093"
+    },
+    "BATCH21b_PAGES.pdf": {
+      "bytes": 147942,
+      "sha256": "befbd165435b50f1475defe018399a15bc6f90f73ba15a7b5248fa49e246df66"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 152891
+}

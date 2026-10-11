@@ -1,0 +1,68 @@
+RotationBodyEnergy failed route 1
+RigidInvariants failed route 1
+blueprint\ch04\validation\short_search\algebra-batch-f1cc7dc19bb9d13c8d85.lean:37:87: error: unsolved goals
+N : ℕ
+m : Fin N → ℝ
+δ : Fin N → V
+Θ : Mat3
+ω : V
+ho : Θᵀ * Θ = 1
+hdet : det Θ = 1
+x : Fin 3 → ℝ := Θᵀ *ᵥ «ω»
+ht : ∀ (A : Mat3) (v w : V), dot (A *ᵥ v) w = dot v (Aᵀ *ᵥ w)
+hi : ∀ (v : V), Θᵀ *ᵥ Θ *ᵥ v = v
+hx : Θ *ᵥ x = «ω»
+hn : dot «ω» «ω» = dot x x
+hc : ∀ (v w : V), dot (cross3 w v) (cross3 w v) = dot v v * dot w w - dot v w ^ 2
+he : ∀ (v y : V), dot y ((dot v v • 1 - outer v) *ᵥ y) = dot v v * dot y y - dot v y ^ 2
+v : V
+⊢ dot v v * dot «ω» (Θᵀᵀ *ᵥ x) - dot (Θ *ᵥ v) «ω» ^ 2 = dot v v * dot x x - dot v x ^ 2
+blueprint\ch04\validation\short_search\algebra-batch-f1cc7dc19bb9d13c8d85.lean:34:14: warning: This simp argument is unused:
+  Matrix.sub_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dot, Matrix.smul_mulVec, Matrix.one_mulVec, MolecularDynamics.Chapter04Review.outer, Matrix.mulVec,
+    dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-f1cc7dc19bb9d13c8d85.lean:34:32: warning: This simp argument is unused:
+  Matrix.smul_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dot, Matrix.sub_mulVec, Matrix.one_mulVec, MolecularDynamics.Chapter04Review.outer, Matrix.mulVec,
+    dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-f1cc7dc19bb9d13c8d85.lean:34:51: warning: This simp argument is unused:
+  Matrix.one_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dot, Matrix.sub_mulVec, Matrix.smul_mulVec, MolecularDynamics.Chapter04Review.outer, Matrix.mulVec,
+    dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-f1cc7dc19bb9d13c8d85.lean:89:22: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  dot (T⁻¹ *ᵥ π t) (eulerRigidField T (π t))
+in the target expression
+  dot (T⁻¹ *ᵥ eulerRigidField T (π t)) (π t) + dot (π t) (T⁻¹ *ᵥ eulerRigidField T (π t)) = 0
+
+T : Mat3
+π : ℝ → V
+a b : ℝ
+hT : PosDef T
+hab : a ≤ b
+hπ : ContinuousOn π (Icc a b)
+hsol : freeRigidSolution T π (Icc a b)
+hsym : T⁻¹ᵀ = T⁻¹
+hcomm : ∀ (u v : V), dot u v = dot v u
+htrans : ∀ (B : Mat3) (u v : V), dot u (B *ᵥ v) = dot (Bᵀ *ᵥ u) v
+hc : ∀ (u v : V), dot (cross3 u v) v = 0 ∧ dot u (cross3 u v) = 0
+hd :
+  ∀ (B : Mat3),
+    ∀ t ∈ Icc a b,
+      HasDerivWithinAt (fun s => dot (π s) (B *ᵥ π s))
+        (dot (eulerRigidField T (π t)) (B *ᵥ π t) + dot (π t) (B *ᵥ eulerRigidField T (π t))) (Icc a b) t
+t : ℝ
+ht : t ∈ Icc a b
+⊢ dot (T⁻¹ *ᵥ eulerRigidField T (π t)) (π t) + dot (π t) (T⁻¹ *ᵥ eulerRigidField T (π t)) = 0
+

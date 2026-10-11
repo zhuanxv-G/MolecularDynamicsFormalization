@@ -116,7 +116,7 @@ abbrev Z (n : ℕ) := Q n × Q n
 def dot {n : ℕ} (u v : Q n) : ℝ := ∑ i, u i * v i
 ```
 
-### MD.Ch04.fastVerlet (Blueprint/Ch04.lean:401)
+### MD.Ch04.fastVerlet (Blueprint/Ch04.lean:402)
 ```lean
 def fastVerlet {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n :=
   Chapter02Review.verlet m (fun q => -MolecularDynamics.Chapter04Review.grad UF q) h
@@ -147,7 +147,7 @@ def kick {n : ℕ} (U : Q n → ℝ) (h : ℝ) (z : Z n) : Z n := (z.1,z.2-h •
 def phaseForm {n : ℕ} (u v : Z n) : ℝ := dot u.1 v.2 - dot v.1 u.2
 ```
 
-### MD.Ch04.respa (Blueprint/Ch04.lean:406)
+### MD.Ch04.respa (Blueprint/Ch04.lean:407)
 ```lean
 def respa {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (r : ℕ) (h : ℝ) (z : MolecularDynamics.Chapter04Review.Z n) : MolecularDynamics.Chapter04Review.Z n :=
   MolecularDynamics.Chapter04Review.kick US (h/2) ((MolecularDynamics.Chapter04Review.fastVerlet m UF (h/r))^[r] (MolecularDynamics.Chapter04Review.kick US (h/2) z))

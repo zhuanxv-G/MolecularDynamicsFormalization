@@ -38,3 +38,8 @@ import ch04_section435
 import ch04_section435extra
 import ch04_section4351
 import ch04_section436
+import ch04_section44
+import ch04_section44b
+import ch04_section44cross
+import ch04_section44c
+import ch04_section44extras

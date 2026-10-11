@@ -59,7 +59,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch04.actualMidpointRelation (Blueprint/Ch04.lean:336)
+### MD.Ch04.actualMidpointRelation (Blueprint/Ch04.lean:337)
 ```lean
 def actualMidpointRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
   znew=z+h • f ((1/2 : ℝ) • (z+znew))

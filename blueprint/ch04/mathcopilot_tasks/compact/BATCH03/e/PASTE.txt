@@ -55,13 +55,13 @@ def implicitFactor (Ω h : ℝ) : ℂ :=
   (1+Complex.I*(h*Ω/2 : ℝ))/(1-Complex.I*(h*Ω/2 : ℝ))
 ```
 
-### MD.Ch04.implicitFactor (Blueprint/Ch04.lean:340)
+### MD.Ch04.implicitFactor (Blueprint/Ch04.lean:341)
 ```lean
 def implicitFactor (Ω h : ℝ) : ℂ :=
   (1+Complex.I*(h*Ω/2 : ℝ))/(1-Complex.I*(h*Ω/2 : ℝ))
 ```
 
-### MD.Ch04.printedModifiedFrequency (Blueprint/Ch04.lean:360)
+### MD.Ch04.printedModifiedFrequency (Blueprint/Ch04.lean:361)
 ```lean
 def printedModifiedFrequency (Ω h : ℝ) : ℂ :=
   (Complex.I*(h : ℂ))⁻¹ * Complex.log (MolecularDynamics.Chapter04Review.implicitFactor Ω h)

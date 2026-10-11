@@ -79,7 +79,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch04.constrainedSolution (Blueprint/Ch04.lean:589)
+### MD.Ch04.constrainedSolution (Blueprint/Ch04.lean:590)
 ```lean
 def constrainedSolution {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) : Prop :=
@@ -88,12 +88,12 @@ def constrainedSolution {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.C
     q t ∈ MolecularDynamics.Chapter04Review.constraintSet g
 ```
 
-### MD.Ch04.constraintSet (Blueprint/Ch04.lean:597)
+### MD.Ch04.constraintSet (Blueprint/Ch04.lean:598)
 ```lean
 def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}
 ```
 
-### MD.Ch04.geodesicRelation (Blueprint/Ch04.lean:1234)
+### MD.Ch04.geodesicRelation (Blueprint/Ch04.lean:1235)
 ```lean
 def geodesicRelation {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) : Prop :=

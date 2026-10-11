@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH20",
+  "subtask": "BATCH20c",
+  "source_ids": [
+    "MD-4.4-CenterMass"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 189,
+      "printed_page": 167
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e8b07e3a4753c7a91f6a700f6d954af027af905fbec085934dd4faadf3358f16",
+  "lean_sha256": "fce9d47f4a84e73731e80d24b5eeebb98a5c931e83fab79980cf32c0ad42a39b",
+  "signature_sha256": "5b1cd9a3ba6724e1c5e2a09aa56a12f3afe0ccdc1cac3f7afe0ffd882fbdf1c5",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "totalMass",
+      "code_sha256": "53a87967f53651705d46ec49a269fb8570d470da775efebccde397615b874c4f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "centerMass",
+      "code_sha256": "5b1cd9a3ba6724e1c5e2a09aa56a12f3afe0ccdc1cac3f7afe0ffd882fbdf1c5"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "totalMass",
+      "code_sha256": "53a87967f53651705d46ec49a269fb8570d470da775efebccde397615b874c4f"
+    }
+  ],
+  "paste_plus_pdf_bytes": 136225,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3831,
+      "sha256": "a4538704fab13234d752a6d39fb0bbd1b41dce1b0ef699443ba4e9d76cf1b1de"
+    },
+    "BATCH20c_PAGES.pdf": {
+      "bytes": 132394,
+      "sha256": "3f42921ed289f9c86e8036ea47a8a5ab916dade87d40d8e6293fa60f5a301d3a"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 138792
+}

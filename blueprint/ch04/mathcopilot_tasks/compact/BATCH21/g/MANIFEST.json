@@ -1,0 +1,91 @@
+{
+  "batch": "BATCH21",
+  "subtask": "BATCH21g",
+  "source_ids": [
+    "MD-4.4-RigidVelocity"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 191,
+      "printed_page": 169
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e8b07e3a4753c7a91f6a700f6d954af027af905fbec085934dd4faadf3358f16",
+  "lean_sha256": "fce9d47f4a84e73731e80d24b5eeebb98a5c931e83fab79980cf32c0ad42a39b",
+  "signature_sha256": "f097bdbe8247095343248e852be3bdb8cd8a9ac26cf088e2634a085eb646250e",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "cross3",
+      "code_sha256": "482e275d45f901379b4e5bc7b76d0c76d5a6d4e033a454340d968594bd131931"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "skewMatrix",
+      "code_sha256": "2a9ce22411b192f40702811ed441f42477221fbe13c32f50bf28b888707d896b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "cross3",
+      "code_sha256": "0a5cca048815d451f60fad8066cd7ce02646180304182fb2b95e13a5462cfa50"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "skewMatrix",
+      "code_sha256": "239f5666392b7eb19bbe2b0476fc1b88d530419ade96153b90c6f75f167d1824"
+    }
+  ],
+  "paste_plus_pdf_bytes": 87746,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4617,
+      "sha256": "531ad92bfe29a822170a5a7cdc1611c365da7b9e03bc3643dcaaec0122f0bf96"
+    },
+    "BATCH21g_PAGES.pdf": {
+      "bytes": 83129,
+      "sha256": "9327e92897c1d1cd35cc1ad92a8edddd208ac11c0b4487ea3831102eb61251a8"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 91072
+}

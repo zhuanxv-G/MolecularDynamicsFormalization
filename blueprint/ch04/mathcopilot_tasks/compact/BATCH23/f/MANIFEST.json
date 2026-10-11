@@ -1,0 +1,67 @@
+{
+  "batch": "BATCH23",
+  "subtask": "BATCH23f",
+  "source_ids": [
+    "MD-4.4-RotationTrajectory"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 190,
+      "printed_page": 168
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e8b07e3a4753c7a91f6a700f6d954af027af905fbec085934dd4faadf3358f16",
+  "lean_sha256": "fce9d47f4a84e73731e80d24b5eeebb98a5c931e83fab79980cf32c0ad42a39b",
+  "signature_sha256": "a45c920782722e8e7645f19d32ce0b6c45d2829dc73010af99267d5996bc57a0",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    }
+  ],
+  "paste_plus_pdf_bytes": 143994,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3499,
+      "sha256": "a7bda8641edbe066f01e584749b950300087843006f65dc5629b40ce34a2abf5"
+    },
+    "BATCH23f_PAGES.pdf": {
+      "bytes": 140495,
+      "sha256": "4a9a1271a8969209a0e9035b571eaad8136252b6f1e9a7475302c65931cdb19f"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 146414
+}

@@ -54,7 +54,7 @@ def constrainedPendulum (U : Position 3 → ℝ) (r₀ : ℝ)
 abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch04.constrainedPendulum (Blueprint/Ch04.lean:649)
+### MD.Ch04.constrainedPendulum (Blueprint/Ch04.lean:650)
 ```lean
 def constrainedPendulum (U : Position 3 → ℝ) (r₀ : ℝ)
     (q v : ℝ → Position 3) (lam : ℝ → ℝ) (I : Set ℝ) : Prop :=

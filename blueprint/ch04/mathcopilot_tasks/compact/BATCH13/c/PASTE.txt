@@ -90,7 +90,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch04.componentConstraintStep (Blueprint/Ch04.lean:875)
+### MD.Ch04.componentConstraintStep (Blueprint/Ch04.lean:876)
 ```lean
 def componentConstraintStep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q Qnow : MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : MolecularDynamics.Chapter04Review.Q n :=
@@ -98,7 +98,7 @@ def componentConstraintStep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → Molec
     MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)
 ```
 
-### MD.Ch04.componentSweep (Blueprint/Ch04.lean:882)
+### MD.Ch04.componentSweep (Blueprint/Ch04.lean:883)
 ```lean
 def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q Qnow : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=

@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-f1cc7dc19bb9d13c8d85.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-f1cc7dc19bb9d13c8d85.log",
+    "source_sha256": "258c5b6247fc82265ceb4cb6824a5a75a13b2284d5c2f460411724c86aa4b565",
+    "log_sha256": "8e0bd31f7cee6d82ef8a0628dea83aabd1d4818e69e953e7b16ca2c4c397c8be"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro T π a b hT hab hπ hsol\n  have hsym : (T⁻¹)ᵀ=T⁻¹ := by\n    simpa [Matrix.conjTranspose_eq_transpose_of_trivial] using hT.isHermitian.inv.eq\n  have hcomm : ∀ u v : V, dot u v=dot v u := by\n    intro u v\n    simp [dot,mul_comm]\n  have htrans : ∀ (B : Mat3) (u v : V), dot u (B *ᵥ v)=dot (Bᵀ *ᵥ u) v := by\n    intro B u v\n    simp [dot,Matrix.mulVec,dotProduct,Fin.sum_univ_three]\n    ring\n  have hc : ∀ u v : V, dot (cross3 u v) v=0 ∧ dot u (cross3 u v)=0 := by\n    intro u v\n    constructor <;> simp [cross3,dot,Fin.sum_univ_three] <;> ring\n  have hd : ∀ (B : Mat3) t, t ∈ Icc a b →\n      HasDerivWithinAt (fun s => dot (π s) (B *ᵥ π s))\n      (dot (eulerRigidField T (π t)) (B *ᵥ π t)+dot (π t) (B *ᵥ eulerRigidField T (π t))) (Icc a b) t := by\n    intro B t ht\n    have hp := hsol t ht\n    have hx : ∀ i, HasDerivWithinAt (fun s => (B *ᵥ π s) i) ((B *ᵥ eulerRigidField T (π t)) i) (Icc a b) t := by\n      intro i\n      change HasDerivWithinAt (fun s => ∑ j, B i j*π s j) (∑ j,B i j*eulerRigidField T (π t) j) (Icc a b) t\n      apply HasDerivWithinAt.fun_sum\n      intro j hj\n      exact (hasDerivWithinAt_pi.mp hp j).const_mul (B i j)\n    have h := HasDerivWithinAt.fun_sum (u := Finset.univ) (fun i _ => (hasDerivWithinAt_pi.mp hp i).mul (hx i))\n    simpa [dot,Finset.sum_add_distrib] using h\n  have he : ∀ t ∈ Icc a b, HasDerivWithinAt (fun s => dot (π s) (T⁻¹ *ᵥ π s)) 0 (Icc a b) t := by\n    intro t ht\n    have hz : dot (eulerRigidField T (π t)) (T⁻¹ *ᵥ π t)+dot (π t) (T⁻¹ *ᵥ eulerRigidField T (π t))=0 := by\n      rw [htrans T⁻¹ (π t) (eulerRigidField T (π t)),hsym,hcomm (T⁻¹ *ᵥ π t) (eulerRigidField T (π t))]\n      simp [eulerRigidField,(hc (π t) (T⁻¹ *ᵥ π t)).1]\n    simpa [hz] using hd T⁻¹ t ht\n  have hn : ∀ t ∈ Icc a b, HasDerivWithinAt (fun s => dot (π s) (π s)) 0 (Icc a b) t := by\n    intro t ht\n    have hz : dot (eulerRigidField T (π t)) (π t)+dot (π t) (eulerRigidField T (π t))=0 := by\n      rw [hcomm (eulerRigidField T (π t)) (π t)]\n      simp [eulerRigidField,(hc (π t) (T⁻¹ *ᵥ π t)).2]\n    simpa [Matrix.one_mulVec,hz] using hd 1 t ht\n  have ce : ∀ t ∈ Icc a b, dot (π t) (T⁻¹ *ᵥ π t)=dot (π a) (T⁻¹ *ᵥ π a) := by\n    apply constant_of_has_deriv_right_zero (fun t ht => (he t ht).continuousWithinAt)\n    intro t ht\n    exact (he t (mem_Icc_of_Ico ht)).mono_of_mem_nhdsWithin (Icc_mem_nhdsGE_of_mem ht)\n  have cn : ∀ t ∈ Icc a b, dot (π t) (π t)=dot (π a) (π a) := by\n    apply constant_of_has_deriv_right_zero (fun t ht => (hn t ht).continuousWithinAt)\n    intro t ht\n    exact (hn t (mem_Icc_of_Ico ht)).mono_of_mem_nhdsWithin (Icc_mem_nhdsGE_of_mem ht)\n  intro t ht\n  exact ⟨ce t ht,cn t ht⟩",
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-f95b57dbc2e454a4881e.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-f95b57dbc2e454a4881e.log",
+    "source_sha256": "5c89e336691d2d5d87cfca17efde7eeda1cdef25965d6938dfb886b81e8a9ecd",
+    "log_sha256": "422f6763f6396b993ecf28d5ea8ed13be58b20628f4d35df2648b33fa62d1a71"
+  }
+]

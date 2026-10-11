@@ -103,12 +103,12 @@ abbrev Z (n : ℕ) := Q n × Q n
 abbrev Z (n : ℕ) := Q n × Q n
 ```
 
-### MD.Ch04.constraintSet (Blueprint/Ch04.lean:597)
+### MD.Ch04.constraintSet (Blueprint/Ch04.lean:598)
 ```lean
 def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}
 ```
 
-### MD.Ch04.cotangentSet (Blueprint/Ch04.lean:601)
+### MD.Ch04.cotangentSet (Blueprint/Ch04.lean:602)
 ```lean
 def cotangentSet {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Z n) :=
   {z | z.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧ textbookConstraintJacobian g z.1 *ᵥ MolecularDynamics.Chapter04Review.invMass m z.2=0}
@@ -124,7 +124,7 @@ def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹
 def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
 ```
 
-### MD.Ch04.projectionResidual (Blueprint/Ch04.lean:805)
+### MD.Ch04.projectionResidual (Blueprint/Ch04.lean:806)
 ```lean
 def projectionResidual {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=

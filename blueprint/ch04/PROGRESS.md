@@ -2,7 +2,7 @@
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前110条；旧清单映射79/100；本地PASS 97；网站返回0。
+当前141条；旧清单映射88/100；本地PASS 125；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -116,6 +116,37 @@
 | MD-4.3.6-SETTLE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-4.3.6-LINCSInverse | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-4.3.6-LINCSConvergence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺Banach代数Neumann级数与有限维矩阵逆/逐元素拓扑之间的接口桥接；保留真实有限和逆矩阵极限，不新建一般逆算子理论。 |
+| MD-4.4-WaterPairPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-TotalMass | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-CenterMass | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-RelativePositions | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-RelativeWeightedZero | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-KineticSplit | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-SecondMoment | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-RotationKinetic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-RotationTraceIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-RotationSkew | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-SkewMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-CrossProduct | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-SkewRepresentation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-CrossMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-RigidVelocity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-InertiaTensor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-CrossIdentityFull | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-RotationalEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-InertiaSkewIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-InertiaTracePrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；本地FAIL；待网站/导师裁定。 |
+| MD-4.4-InertiaTraceCorrected | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-DipolarHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-DipolarPairPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-DipolarRotationalPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-4.4-RigidHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-SecondMomentDiagonal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-RotationBodyEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-DipolarConstraint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-DipolarPotentialSum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4-RotationTrajectory | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4-RotationDerivativePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；待网站/导师裁定最后δ点号；不证明疑误版本。 |
 
 ## 旧100条完整映射
 
@@ -199,15 +230,15 @@
 | CH04-076 | MD-4.3.6-MShakeIteration |
 | CH04-077 | MD-4.3.6-LINCSInverse |
 | CH04-078 | MD-4.3.6-LINCSConvergence |
-| CH04-079 | PENDING：所属节尚未处理 |
-| CH04-080 | PENDING：所属节尚未处理 |
-| CH04-081 | PENDING：所属节尚未处理 |
-| CH04-082 | PENDING：所属节尚未处理 |
-| CH04-083 | PENDING：所属节尚未处理 |
-| CH04-084 | PENDING：所属节尚未处理 |
-| CH04-085 | PENDING：所属节尚未处理 |
-| CH04-086 | PENDING：所属节尚未处理 |
-| CH04-087 | PENDING：所属节尚未处理 |
+| CH04-079 | MD-4.4-RelativePositions |
+| CH04-080 | MD-4.4-KineticSplit |
+| CH04-081 | MD-4.4-RotationKinetic |
+| CH04-082 | MD-4.4-RotationSkew |
+| CH04-083 | MD-4.4-CrossProduct |
+| CH04-084 | MD-4.4-CrossIdentityFull |
+| CH04-085 | MD-4.4-RotationalEnergy |
+| CH04-086 | MD-4.4-InertiaTracePrinted |
+| CH04-087 | MD-4.4-RigidHamiltonian |
 | CH04-088 | PENDING：所属节尚未处理 |
 | CH04-089 | PENDING：所属节尚未处理 |
 | CH04-090 | PENDING：所属节尚未处理 |
@@ -257,6 +288,9 @@
 - MD-4.3.5.1-ConstrainedComposition：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际Euler/adjoint分支的短组合辛性桥接；不假设分支辛性。
 - MD-4.3.5.1-ConstrainedCompositionOrder：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实约束分支二阶Taylor与局部误差理论；不建设大型理论。
 - MD-4.3.6-LINCSConvergence：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺Banach代数Neumann级数与有限维矩阵逆/逐元素拓扑之间的接口桥接；保留真实有限和逆矩阵极限，不新建一般逆算子理论。
+- MD-4.4-InertiaTracePrinted：3维trace(T)=2Σm|δ|²，末式系数少1/2，一般不成立。 本地FAIL；待网站/导师裁定。(4.40)末式应trace(T)/2 I−T；原式逐字保留。
+- MD-4.4-DipolarRotationalPrinted：此处trace和缺1/2，与p168及此页Σπ²/(2I)不一致；且引用错误(4.40)。 p170 Ex4.1 trace动能印刷少1/2；R与T关系亦引用疑误式。
+- MD-4.4-RotationDerivativePrinted：原页最后δ_i带点，与先前δ_i=Θδ_i(0)代换不符；通常应为无点δ_i，正确运动学另条保留。 待网站/导师裁定最后δ点号；不证明疑误版本。p168展示最后应以配置δ_i而非速度dotδ_i代换；已渲染视觉复核。
 
 ## 定性段落排除
 

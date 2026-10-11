@@ -52,7 +52,7 @@ theorem eulerImaginaryGrowth :
 def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
 ```
 
-### MD.Ch04.eulerFactor (Blueprint/Ch04.lean:27)
+### MD.Ch04.eulerFactor (Blueprint/Ch04.lean:28)
 ```lean
 def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
 ```

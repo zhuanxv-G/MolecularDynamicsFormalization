@@ -13,6 +13,38 @@ routes=json.loads(state.read_text(encoding='utf-8')) if state.exists() else []
 if any(x['exit_code']==0 for x in routes) or len(routes)>=3:print(key,'saved evidence reused');sys.exit()
 route=len(routes)+1
 proofs={
+'RigidHamiltonianField':'''intro T π hT
+  let B := T⁻¹
+  have hsym : Bᵀ=B := by
+    simpa [B,Matrix.conjTranspose_eq_transpose_of_trivial] using hT.isHermitian.inv.eq
+  have hs : ∀ i j : Fin 3, B i j=B j i := by
+    intro i j
+    simpa using congrArg (fun A : Mat3 => A j i) hsym
+  let row : Fin 3 → (V →L[ℝ] ℝ) := fun i => ∑ j, B i j • (ContinuousLinearMap.proj j : V →L[ℝ] ℝ)
+  let L : V →L[ℝ] ℝ := (2 : ℝ)⁻¹ • ∑ i, (π i • row i+(B *ᵥ π) i • (ContinuousLinearMap.proj i : V →L[ℝ] ℝ))
+  have hb : ∀ i, HasFDerivAt (fun x : V => (B *ᵥ x) i) (row i) π := by
+    intro i
+    change HasFDerivAt (fun x : V => ∑ j,B i j*x j) (∑ j,B i j • (ContinuousLinearMap.proj j : V →L[ℝ] ℝ)) π
+    apply HasFDerivAt.fun_sum
+    intro j hj
+    exact (hasFDerivAt_apply j π).const_mul (B i j)
+  have hh : HasFDerivAt (fun x : V => ∑ i,x i*(B *ᵥ x) i)
+      (∑ i, (π i • row i+(B *ᵥ π) i • (ContinuousLinearMap.proj i : V →L[ℝ] ℝ))) π := by
+    apply HasFDerivAt.fun_sum
+    intro i hii
+    exact (hasFDerivAt_apply i π).mul (hb i)
+  have hd : HasFDerivAt (fun x : V => dot x (B *ᵥ x)/2) L π := by
+    simpa [dot,L,smul_eq_mul,div_eq_mul_inv,mul_comm] using hh.const_smul ((2 : ℝ)⁻¹)
+  have hg : MolecularDynamics.Chapter04Review.grad (fun x : V => dot x (B *ᵥ x)/2) π=B *ᵥ π := by
+    ext i
+    change (fderiv ℝ (fun x : V => dot x (B *ᵥ x)/2) π) (Pi.single i 1)=(B *ᵥ π) i
+    rw [hd.fderiv]
+    fin_cases i <;> simp [L,row,ContinuousLinearMap.sum_apply,ContinuousLinearMap.smul_apply,
+      ContinuousLinearMap.proj_apply,Fin.sum_univ_three,Pi.single_apply,Matrix.mulVec,dotProduct,hs 1 0,hs 2 0,hs 2 1] <;> ring
+  change cross3 π (B *ᵥ π)=MolecularDynamics.Chapter04Review.rigidPoissonMatrix π *ᵥ MolecularDynamics.Chapter04Review.grad (fun x : V => dot x (B *ᵥ x)/2) π
+  rw [hg]
+  ext i
+  fin_cases i <;> simp [MolecularDynamics.Chapter04Review.rigidPoissonMatrix,MolecularDynamics.Chapter04Review.skewMatrix,cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring''',
 'RigidInvariants':'''intro T π a b hT hab hπ hsol
   have hsym : (T⁻¹)ᵀ=T⁻¹ := by
     simpa [Matrix.conjTranspose_eq_transpose_of_trivial] using hT.isHermitian.inv.eq
@@ -31,7 +63,7 @@ proofs={
       (dot (eulerRigidField T (π t)) (B *ᵥ π t)+dot (π t) (B *ᵥ eulerRigidField T (π t))) (Icc a b) t := by
     intro B t ht
     have hp := hsol t ht
-    have hx : ∀ i, HasDerivWithinAt (fun s => (B *ᵥ π s) i) (B *ᵥ eulerRigidField T (π t)) i (Icc a b) t := by
+    have hx : ∀ i, HasDerivWithinAt (fun s => (B *ᵥ π s) i) ((B *ᵥ eulerRigidField T (π t)) i) (Icc a b) t := by
       intro i
       change HasDerivWithinAt (fun s => ∑ j, B i j*π s j) (∑ j,B i j*eulerRigidField T (π t) j) (Icc a b) t
       apply HasDerivWithinAt.fun_sum

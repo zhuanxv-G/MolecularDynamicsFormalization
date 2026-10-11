@@ -91,7 +91,7 @@ abbrev Z (n : ℕ) := Q n × Q n
 abbrev Z (n : ℕ) := Q n × Q n
 ```
 
-### MD.Ch04.fastVerlet (Blueprint/Ch04.lean:401)
+### MD.Ch04.fastVerlet (Blueprint/Ch04.lean:402)
 ```lean
 def fastVerlet {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n :=
   Chapter02Review.verlet m (fun q => -MolecularDynamics.Chapter04Review.grad UF q) h
@@ -112,7 +112,7 @@ def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradie
 def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
 ```
 
-### MD.Ch04.mollifiedAverage (Blueprint/Ch04.lean:504)
+### MD.Ch04.mollifiedAverage (Blueprint/Ch04.lean:505)
 ```lean
 def mollifiedAverage {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapter04Review.Q n → ℝ)
     (K : ℕ) (w : ℕ → ℝ) (δ : ℝ) (q : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=

@@ -59,7 +59,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch04.holonomicRelation (Blueprint/Ch04.lean:570)
+### MD.Ch04.holonomicRelation (Blueprint/Ch04.lean:571)
 ```lean
 def holonomicRelation {n l : ℕ} (g : MolecularDynamics.Chapter04Review.Q n → ℝ → MolecularDynamics.Chapter04Review.Q l) (q : ℝ → MolecularDynamics.Chapter04Review.Q n) : Prop :=
   ∀ t, g (q t) t=0

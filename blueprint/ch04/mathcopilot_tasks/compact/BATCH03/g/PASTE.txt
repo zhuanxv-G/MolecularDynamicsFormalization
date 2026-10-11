@@ -116,7 +116,7 @@ def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹
 def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
 ```
 
-### MD.Ch04.mechanicalMidpointRelation (Blueprint/Ch04.lean:376)
+### MD.Ch04.mechanicalMidpointRelation (Blueprint/Ch04.lean:377)
 ```lean
 def mechanicalMidpointRelation {n : ℕ} (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ)
     (h : ℝ) (z mid out : MolecularDynamics.Chapter04Review.Z n) : Prop :=

@@ -62,7 +62,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch04.printedImplicitRelation (Blueprint/Ch04.lean:331)
+### MD.Ch04.printedImplicitRelation (Blueprint/Ch04.lean:332)
 ```lean
 def printedImplicitRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
   znew=z+(h/2) • (f z+f znew)

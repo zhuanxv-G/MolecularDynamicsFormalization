@@ -6,6 +6,7 @@ import MolecularDynamics.Chapter02.LiouvilleVolume
 import MolecularDynamics.Chapter02.HamiltonianVolume
 import MolecularDynamics.Chapter01.Lagrangian
 import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
+import Mathlib.Analysis.Matrix.Spectrum
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
@@ -1253,6 +1254,337 @@ def lincsInverse {l : ℕ} (C : Matrix (Fin l) (Fin l) ℝ) (k : ℕ) := ∑ j �
 theorem lincsConvergence :
   ∀ l (C : Matrix (Fin l) (Fin l) ℝ),
   ‖C.toLin'.toContinuousLinearMap‖ < 1 → Tendsto (MolecularDynamics.Chapter04Review.lincsInverse C) atTop (𝓝 ((1-C)⁻¹)) := by
+  sorry
+
+/-- source_id: MD-4.4-WaterPairPotential · definition · §4.4 · 印刷p.167 / PDFp.189
+[EXTRA] 有限电荷位点、所有距离>0与k1,k2,k3>0是物理定义域；不将经验模型当普遍物理定律。 -/
+def waterPairPotential {a b : ℕ} (k1 k2 k3 rOO : ℝ) (qa : Fin a → ℝ)
+    (qb : Fin b → ℝ) (r : Fin a → Fin b → ℝ) : ℝ :=
+  (∑ i, ∑ j, k1*qa i*qb j/r i j)+k2/rOO^12-k3/rOO^6
+
+/-- source_id: MD-4.4-TotalMass · definition · §4.4 · 印刷p.167 / PDFp.189 -/
+def totalMass {N : ℕ} (m : Fin N → ℝ) : ℝ := ∑ i, m i
+
+/-- source_id: MD-4.4-CenterMass · definition · §4.4 · 印刷p.167 / PDFp.189 -/
+def centerMass {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V :=
+  (MolecularDynamics.Chapter04Review.totalMass m)⁻¹ • ∑ i, m i • q i
+
+/-- source_id: MD-4.4-RelativePositions · definition · §4.4 · 印刷p.167 / PDFp.189 -/
+def relativePositions {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDynamics.Chapter04Review.V) : Fin N → MolecularDynamics.Chapter04Review.V :=
+  fun i => q i-MolecularDynamics.Chapter04Review.centerMass m q
+
+/-- source_id: MD-4.4-RelativeWeightedZero · unnumbered_claim · §4.4 · 印刷p.167 / PDFp.189
+[EXTRA] 总质量非零；原物理正质量给此资格，空体系排除。 -/
+theorem relativeWeightedZero : ∀ N (m : Fin N → ℝ) (q : Fin N → MolecularDynamics.Chapter04Review.V),
+    MolecularDynamics.Chapter04Review.totalMass m ≠ 0 → (∑ i, m i • MolecularDynamics.Chapter04Review.relativePositions m q i)=0 := by
+  intro N m q hm
+  simp only [MolecularDynamics.Chapter04Review.relativePositions,smul_sub,Finset.sum_sub_distrib,← Finset.sum_smul]
+  rw [MolecularDynamics.Chapter04Review.centerMass,smul_smul]
+  change (∑ i, m i • q i)-(MolecularDynamics.Chapter04Review.totalMass m * (MolecularDynamics.Chapter04Review.totalMass m)⁻¹) • (∑ i, m i • q i)=0
+  rw [mul_inv_cancel₀ hm,one_smul,sub_self]
+
+/-- source_id: MD-4.4-KineticSplit · unnumbered_claim · §4.4 · 印刷p.167 / PDFp.189 -/
+theorem kineticSplit :
+  ∀ N (m : Fin N → ℝ) (v : MolecularDynamics.Chapter04Review.V) (w : Fin N → MolecularDynamics.Chapter04Review.V),
+  (∑ i, m i • w i)=0 →
+    (∑ i, m i*MolecularDynamics.Chapter04Review.dot (v+w i) (v+w i))/2=MolecularDynamics.Chapter04Review.totalMass m*MolecularDynamics.Chapter04Review.dot v v/2+(∑ i,m i*MolecularDynamics.Chapter04Review.dot (w i) (w i))/2 := by
+  intro N m v w hz
+  have h0 := congrFun hz 0
+  have h1 := congrFun hz 1
+  have h2 := congrFun hz 2
+  simp only [Finset.sum_apply,Pi.smul_apply,smul_eq_mul,Pi.zero_apply] at h0 h1 h2
+  have he : ∀ i, MolecularDynamics.Chapter04Review.dot (v+w i) (v+w i)=
+      MolecularDynamics.Chapter04Review.dot v v+2*MolecularDynamics.Chapter04Review.dot v (w i)+MolecularDynamics.Chapter04Review.dot (w i) (w i) := by
+    intro i
+    simp [MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three]
+    ring
+  have ht : ∀ a : Fin 3, (∑ i, m i*(v a*w i a))=v a*∑ i,m i*w i a := by
+    intro a
+    rw [Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro i hi
+    ring
+  have hc : ∑ i, m i*MolecularDynamics.Chapter04Review.dot v (w i)=0 := by
+    simp only [MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three,mul_add,Finset.sum_add_distrib]
+    rw [ht 0,ht 1,ht 2,h0,h1,h2]
+    ring
+  simp_rw [he,mul_add,Finset.sum_add_distrib]
+  rw [← Finset.sum_mul]
+  have hx : (∑ i, m i*(2*MolecularDynamics.Chapter04Review.dot v (w i)))=0 := by
+    rw [show (∑ i, m i*(2*MolecularDynamics.Chapter04Review.dot v (w i)))=2*∑ i,m i*MolecularDynamics.Chapter04Review.dot v (w i) by rw [Finset.mul_sum]; apply Finset.sum_congr rfl; intro i hi; ring,hc,mul_zero]
+  rw [hx]
+  simp [MolecularDynamics.Chapter04Review.totalMass]
+  ring
+
+/-- source_id: MD-4.4-SecondMoment · definition · §4.4 · 印刷p.168 / PDFp.190 -/
+def secondMoment {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 := ∑ i, m i • MolecularDynamics.Chapter04Review.outer (δ i)
+
+/-- source_id: MD-4.4-RotationKinetic · definition · §4.4 · 印刷p.168 / PDFp.190 -/
+def rotationKinetic (R dΘ : MolecularDynamics.Chapter04Review.Mat3) : ℝ := (dΘ*R*dΘᵀ).trace/2
+
+/-- source_id: MD-4.4-RotationTraceIdentity · unnumbered_claim · §4.4 · 印刷p.168 / PDFp.190 -/
+theorem rotationTraceIdentity : ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) (dΘ : MolecularDynamics.Chapter04Review.Mat3),
+    (∑ i, m i*MolecularDynamics.Chapter04Review.dot (dΘ *ᵥ δ i) (dΘ *ᵥ δ i))/2=
+      MolecularDynamics.Chapter04Review.rotationKinetic (MolecularDynamics.Chapter04Review.secondMoment m δ) dΘ := by
+  intro N m δ dΘ
+  unfold MolecularDynamics.Chapter04Review.rotationKinetic MolecularDynamics.Chapter04Review.secondMoment
+  rw [Matrix.mul_sum,Matrix.sum_mul,Matrix.trace_sum]
+  rw [Finset.sum_div,Finset.sum_div]
+  apply Finset.sum_congr rfl
+  intro i hi
+  simp [Matrix.trace,Matrix.mul_apply,Matrix.mulVec,dotProduct,MolecularDynamics.Chapter04Review.dot,MolecularDynamics.Chapter04Review.outer,Fin.sum_univ_three]
+  ring
+
+/-- source_id: MD-4.4-RotationSkew · unnumbered_claim · §4.4 · 印刷p.168–169 / PDFp.190–191
+[EXTRA] 真实HasDerivAt矩阵轨道与邻域正交约束；不假设导数乘积恒等式。 -/
+theorem rotationSkew :
+  ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) t d,
+  HasDerivAt Θ d t → (∀ᶠ s in 𝓝 t, Θ s*(Θ s)ᵀ=1) → (d*(Θ t)ᵀ)ᵀ=-(d*(Θ t)ᵀ) := by
+  intro Θ t d hd ho
+  have hs : ∀ i j : Fin 3, ∑ k, (d i k*Θ t j k+Θ t i k*d j k)=0 := by
+    intro i j
+    have hf : HasDerivAt (fun s => ∑ k, Θ s i k*Θ s j k)
+        (∑ k, (d i k*Θ t j k+Θ t i k*d j k)) t := by
+      apply HasDerivAt.fun_sum
+      intro k hk
+      exact ((hasDerivAt_pi.mp (hasDerivAt_pi.mp hd i) k).mul (hasDerivAt_pi.mp (hasDerivAt_pi.mp hd j) k))
+    have he : (fun s => ∑ k, Θ s i k*Θ s j k) =ᶠ[𝓝 t] (fun _ => (1 : Mat3) i j) := by
+      filter_upwards [ho] with s h
+      simpa [Matrix.mul_apply,Matrix.transpose_apply] using congrArg (fun B : Mat3 => B i j) h
+    exact hf.unique ((hasDerivAt_const t ((1 : Mat3) i j)).congr_of_eventuallyEq he)
+  ext i j
+  have h := hs i j
+  simp only [Fin.sum_univ_three] at h
+  simp [Matrix.mul_apply,Matrix.transpose_apply,Fin.sum_univ_three]
+  nlinarith [h]
+
+/-- source_id: MD-4.4-SkewMatrix · (4.38) · §4.4 · 印刷p.169 / PDFp.191 -/
+def skewMatrix (v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 := !![0,-v 2,v 1; v 2,0,-v 0; -v 1,v 0,0]
+
+/-- source_id: MD-4.4-CrossProduct · definition · §4.4 · 印刷p.169 / PDFp.191 -/
+def cross3 (u v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := ![u 1*v 2-u 2*v 1,u 2*v 0-u 0*v 2,u 0*v 1-u 1*v 0]
+
+/-- source_id: MD-4.4-SkewRepresentation · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191 -/
+theorem skewRepresentation : ∀ A : MolecularDynamics.Chapter04Review.Mat3, Aᵀ = -A → ∃! «ω» : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.skewMatrix «ω»=A := by
+  intro A ha
+  have hs : ∀ i j : Fin 3, A j i= -A i j := by
+    intro i j
+    simpa using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B i j) ha
+  refine ⟨![A 2 1,A 0 2,A 1 0],?_,?_⟩
+  · ext i j
+    fin_cases i <;> fin_cases j <;> simp [MolecularDynamics.Chapter04Review.skewMatrix] <;> nlinarith [hs 0 0,hs 0 1,hs 0 2,hs 1 1,hs 1 2,hs 2 2]
+  · intro w hw
+    ext i
+    fin_cases i
+    · simpa [MolecularDynamics.Chapter04Review.skewMatrix] using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B 2 1) hw
+    · simpa [MolecularDynamics.Chapter04Review.skewMatrix] using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B 0 2) hw
+    · simpa [MolecularDynamics.Chapter04Review.skewMatrix] using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B 1 0) hw
+
+/-- source_id: MD-4.4-CrossMatrix · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191
+[EXTRA] [EXTRA]本条仅首等式的子引理；原式两个等式全部保存在CrossIdentityFull，不把子引理当全部结论。 -/
+theorem crossMatrix :
+  ∀ u v : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.skewMatrix u *ᵥ v=MolecularDynamics.Chapter04Review.cross3 u v := by
+  intro u v
+  ext i
+  fin_cases i <;> simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
+
+/-- source_id: MD-4.4-RigidVelocity · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191
+[EXTRA] 给定真实正交旋转轨道和定义角速度的skew关系；不是把速度公式当假设。 -/
+theorem rigidVelocity : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (dΘ : MolecularDynamics.Chapter04Review.Mat3) (δ «ω» : MolecularDynamics.Chapter04Review.V) t,
+  HasDerivAt Θ dΘ t → Θ t*(Θ t)ᵀ=1 → dΘ*(Θ t)ᵀ=MolecularDynamics.Chapter04Review.skewMatrix «ω» →
+    HasDerivAt (fun s => Θ s *ᵥ δ) (MolecularDynamics.Chapter04Review.cross3 «ω» (Θ t *ᵥ δ)) t := by
+  intro Θ dΘ δ «ω» t hd ho hs
+  have he : ∀ i, HasDerivAt (fun s => ∑ j, Θ s i j*δ j) (∑ j,dΘ i j*δ j) t := by
+    intro i
+    apply HasDerivAt.fun_sum
+    intro j hj
+    exact (hasDerivAt_pi.mp (hasDerivAt_pi.mp hd i) j).mul_const (δ j)
+  have hv : HasDerivAt (fun s => Θ s *ᵥ δ) (dΘ *ᵥ δ) t := hasDerivAt_pi.mpr he
+  have hi : (Θ t)ᵀ*Θ t=1 := mul_eq_one_comm.mp ho
+  have hcross : MolecularDynamics.Chapter04Review.skewMatrix «ω» *ᵥ (Θ t *ᵥ δ)=
+      MolecularDynamics.Chapter04Review.cross3 «ω» (Θ t *ᵥ δ) := by
+    ext i
+    fin_cases i <;> simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
+  rw [← hcross,← hs,Matrix.mulVec_mulVec,Matrix.mul_assoc,hi,Matrix.mul_one]
+  exact hv
+
+/-- source_id: MD-4.4-InertiaTensor · definition · §4.4 · 印刷p.169 / PDFp.191 -/
+def inertiaTensor {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 :=
+  ∑ i, m i • (MolecularDynamics.Chapter04Review.dot (δ i) (δ i) • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer (δ i))
+
+/-- source_id: MD-4.4-CrossIdentityFull · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191 -/
+theorem crossIdentityFull : ∀ u v : MolecularDynamics.Chapter04Review.V,
+    MolecularDynamics.Chapter04Review.skewMatrix u *ᵥ v=MolecularDynamics.Chapter04Review.cross3 u v ∧
+    MolecularDynamics.Chapter04Review.cross3 u v= -(MolecularDynamics.Chapter04Review.skewMatrix v *ᵥ u) := by
+  intro u v
+  constructor <;> ext i <;> fin_cases i <;>
+    simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
+
+/-- source_id: MD-4.4-RotationalEnergy · definition · §4.4 · 印刷p.169 / PDFp.191 -/
+def rotationalEnergy (T : MolecularDynamics.Chapter04Review.Mat3) («ω» : MolecularDynamics.Chapter04Review.V) : ℝ := MolecularDynamics.Chapter04Review.dot «ω» (T *ᵥ «ω»)/2
+
+/-- source_id: MD-4.4-InertiaSkewIdentity · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191 -/
+theorem inertiaSkewIdentity : ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V),
+  MolecularDynamics.Chapter04Review.inertiaTensor m δ= -∑ i, m i • (MolecularDynamics.Chapter04Review.skewMatrix (δ i))^2 := by
+  intro N m δ
+  have he : ∀ v : MolecularDynamics.Chapter04Review.V,
+      MolecularDynamics.Chapter04Review.dot v v • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer v= -(MolecularDynamics.Chapter04Review.skewMatrix v)^2 := by
+    intro v
+    ext i j
+    fin_cases i <;> fin_cases j <;>
+      simp [MolecularDynamics.Chapter04Review.dot,MolecularDynamics.Chapter04Review.outer,MolecularDynamics.Chapter04Review.skewMatrix,Matrix.mul_apply,Fin.sum_univ_three,pow_two] <;> ring
+  simp [MolecularDynamics.Chapter04Review.inertiaTensor,he,Finset.sum_neg_distrib]
+
+/-- source_id: MD-4.4-InertiaTracePrinted · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191
+[ERRATUM?] (4.40)末式应trace(T)/2 I−T；原式逐字保留。 -/
+theorem inertiaTracePrinted :
+  ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V),
+  MolecularDynamics.Chapter04Review.secondMoment m δ=(MolecularDynamics.Chapter04Review.inertiaTensor m δ).trace • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.inertiaTensor m δ := by
+  sorry
+
+/-- source_id: MD-4.4-InertiaTraceCorrected · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191
+[EXTRA] [EXTRA]纠正(4.40)末式系数为trace(T)/2；不覆盖原印刷条目。 -/
+theorem inertiaTraceCorrected :
+  ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V),
+  MolecularDynamics.Chapter04Review.secondMoment m δ=((MolecularDynamics.Chapter04Review.inertiaTensor m δ).trace/2) • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.inertiaTensor m δ := by
+  intro N m δ
+  have he : ∀ v : MolecularDynamics.Chapter04Review.V,
+      (MolecularDynamics.Chapter04Review.dot v v • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer v).trace=2*MolecularDynamics.Chapter04Review.dot v v := by
+    intro v
+    simp [Matrix.trace,MolecularDynamics.Chapter04Review.dot,MolecularDynamics.Chapter04Review.outer,Fin.sum_univ_three]
+    ring
+  rw [MolecularDynamics.Chapter04Review.inertiaTensor,Matrix.trace_sum]
+  simp_rw [Matrix.trace_smul,he,smul_eq_mul]
+  have ht : (∑ i, m i*(2*MolecularDynamics.Chapter04Review.dot (δ i) (δ i)))/2=
+      ∑ i, m i*MolecularDynamics.Chapter04Review.dot (δ i) (δ i) := by
+    rw [Finset.sum_div]
+    apply Finset.sum_congr rfl
+    intro i hi
+    ring
+  rw [ht,MolecularDynamics.Chapter04Review.secondMoment]
+  ext i j
+  simp only [Matrix.sum_apply,Matrix.smul_apply,Matrix.sub_apply,smul_eq_mul]
+  rw [Finset.sum_mul,← Finset.sum_sub_distrib]
+  apply Finset.sum_congr rfl
+  intro k hk
+  ring
+
+/-- source_id: MD-4.4-DipolarHamiltonian · Example 4.1 · §4.4 · 印刷p.169–170 / PDFp.191–192
+[EXTRA] 所有质量/主惯性矩>0，单位偶极方向为物理约束；N有限。 -/
+def dipolarHamiltonian {N : ℕ} (mass : Fin N → ℝ) (inertia : MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.V) → ℝ)
+    (q p μ π : Fin N → MolecularDynamics.Chapter04Review.V) : ℝ :=
+  (∑ i, ∑ j, (π i j)^2/(2*inertia j))+(∑ i, MolecularDynamics.Chapter04Review.dot (p i) (p i)/(2*mass i))+U q μ
+
+/-- source_id: MD-4.4-DipolarPairPotential · definition · §4.4 · 印刷p.170 / PDFp.192
+[EXTRA] r=Euclidean距离>0；本条实际pair函数，不声称经验模型准确性。 -/
+def dipolarPairPotential (lj : ℝ → ℝ) (r : ℝ) (q μ ν : MolecularDynamics.Chapter04Review.V) : ℝ :=
+  lj r+MolecularDynamics.Chapter04Review.dot μ (((r^3)⁻¹ • (1 : MolecularDynamics.Chapter04Review.Mat3)-(3/r^5) • MolecularDynamics.Chapter04Review.outer q) *ᵥ ν)
+
+/-- source_id: MD-4.4-DipolarRotationalPrinted · definition · §4.4 · 印刷p.170 / PDFp.192
+[ERRATUM?] p170 Ex4.1 trace动能印刷少1/2；R与T关系亦引用疑误式。 -/
+def dipolarRotationalPrinted {N : ℕ} (R : MolecularDynamics.Chapter04Review.Mat3) (dΘ : Fin N → MolecularDynamics.Chapter04Review.Mat3) : ℝ :=
+  ∑ i, (dΘ i*R*(dΘ i)ᵀ).trace
+
+/-- source_id: MD-4.4-RigidHamiltonian · definition · §4.4 · 印刷p.170 / PDFp.192
+[EXTRA] M>0、R非奇异是物理资格；正交约束单列在真实ODE关系中；inverse定义不计存在理论。 -/
+def rigidHamiltonian (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (q p : MolecularDynamics.Chapter04Review.V) (Θ mom : MolecularDynamics.Chapter04Review.Mat3) : ℝ :=
+  MolecularDynamics.Chapter04Review.dot p p/(2*M)+(mom*R⁻¹*momᵀ).trace/2+U q Θ
+
+/-- source_id: MD-4.4-SecondMomentDiagonal · unnumbered_claim · §4.4 · 印刷p.168 / PDFp.190 -/
+theorem secondMomentDiagonal : ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V),
+    ∃ O : MolecularDynamics.Chapter04Review.Mat3, Oᵀ*O=1 ∧ ∀ i j, i ≠ j →
+      (Oᵀ*MolecularDynamics.Chapter04Review.secondMoment m δ*O) i j=0 := by
+  intro N m δ
+  let R := MolecularDynamics.Chapter04Review.secondMoment m δ
+  have hs : R.IsHermitian := by
+    change Rᴴ=R
+    ext i j
+    simp [R,MolecularDynamics.Chapter04Review.secondMoment,MolecularDynamics.Chapter04Review.outer,Matrix.conjTranspose_apply,Matrix.sum_apply,Matrix.smul_apply,mul_comm]
+  let O := hs.eigenvectorUnitary
+  refine ⟨(O : MolecularDynamics.Chapter04Review.Mat3),?_,?_⟩
+  · simpa [Matrix.star_eq_conjTranspose,Matrix.conjTranspose_eq_transpose_of_trivial] using Unitary.coe_star_mul_self O
+  · have he : (O : MolecularDynamics.Chapter04Review.Mat3)ᵀ*R*(O : MolecularDynamics.Chapter04Review.Mat3)=Matrix.diagonal hs.eigenvalues := by
+      simpa [O,Unitary.conjStarAlgAut_star_apply,Matrix.star_eq_conjTranspose,Matrix.conjTranspose_eq_transpose_of_trivial] using hs.conjStarAlgAut_star_eigenvectorUnitary
+    intro i j hij
+    simpa [Matrix.diagonal,hij] using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B i j) he
+
+/-- source_id: MD-4.4-RotationBodyEnergy · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191
+[EXTRA] 真实SO3旋转；不把动能等式/叉积协变当假设。 -/
+theorem rotationBodyEnergy : ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) (Θ : MolecularDynamics.Chapter04Review.Mat3) («ω» : MolecularDynamics.Chapter04Review.V),
+  Θᵀ*Θ=1 → Θ.det=1 →
+  (∑ i, m i*MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.cross3 «ω» (Θ *ᵥ δ i)) (MolecularDynamics.Chapter04Review.cross3 «ω» (Θ *ᵥ δ i)))/2=
+    MolecularDynamics.Chapter04Review.rotationalEnergy (MolecularDynamics.Chapter04Review.inertiaTensor m δ) (Θᵀ *ᵥ «ω») := by
+  intro N m δ Θ «ω» ho hdet
+  let x := Θᵀ *ᵥ «ω»
+  have ht : ∀ (A : Mat3) (v w : V), dot (A *ᵥ v) w=dot v (Aᵀ *ᵥ w) := by
+    intro A v w
+    simp [dot,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+    ring
+  have hi : ∀ v : V, Θᵀ *ᵥ (Θ *ᵥ v)=v := by
+    intro v
+    rw [Matrix.mulVec_mulVec,ho,Matrix.one_mulVec]
+  have hx : Θ *ᵥ x=«ω» := by
+    dsimp [x]
+    rw [Matrix.mulVec_mulVec,mul_eq_one_comm.mp ho,Matrix.one_mulVec]
+  have hn : dot «ω» «ω»=dot x x := by
+    conv_lhs => rw [← hx]
+    rw [ht,hi]
+  have hc : ∀ v w : V, dot (cross3 w v) (cross3 w v)=dot v v*dot w w-(dot v w)^2 := by
+    intro v w
+    simp [cross3,dot,Fin.sum_univ_three]
+    ring
+  have he : ∀ v y : V, dot y ((dot v v • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ y)=dot v v*dot y y-(dot v y)^2 := by
+    intro v y
+    simp [dot,Matrix.sub_mulVec,Matrix.smul_mulVec,Matrix.one_mulVec,MolecularDynamics.Chapter04Review.outer,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+    ring
+  have hf : ∀ v : V, dot (cross3 «ω» (Θ *ᵥ v)) (cross3 «ω» (Θ *ᵥ v))=
+      dot x ((dot v v • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ x) := by
+    intro v
+    rw [hc,he]
+    have hv : dot (Θ *ᵥ v) (Θ *ᵥ v)=dot v v := by rw [ht,hi]
+    have hw : dot (Θ *ᵥ v) «ω»=dot v x := ht Θ v «ω»
+    rw [hv,hn,hw]
+  have hsum : ∀ (K : ℕ) (a : Fin K → V), dot x (∑ i,a i)=∑ i,dot x (a i) := by
+    intro K a
+    simp [dot,Fin.sum_univ_three,Finset.sum_apply,Finset.mul_sum,Finset.sum_add_distrib]
+  have hsmul : ∀ (c : ℝ) (v : V), dot x (c • v)=c*dot x v := by
+    intro c v
+    simp [dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul]
+    ring
+  rw [MolecularDynamics.Chapter04Review.rotationalEnergy,MolecularDynamics.Chapter04Review.inertiaTensor,Matrix.sum_mulVec]
+  change (∑ i,m i*dot (cross3 «ω» (Θ *ᵥ δ i)) (cross3 «ω» (Θ *ᵥ δ i)))/2=
+      dot x (∑ i,(m i • (dot (δ i) (δ i) • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer (δ i))) *ᵥ x)/2
+  simp_rw [Matrix.smul_mulVec]
+  rw [hsum]
+  simp_rw [hsmul,hf]
+
+/-- source_id: MD-4.4-DipolarConstraint · definition · §4.4 · 印刷p.170 / PDFp.192 -/
+def dipolarConstraint {N : ℕ} (μ : Fin N → MolecularDynamics.Chapter04Review.V) : Prop :=
+  ∀ i, MolecularDynamics.Chapter04Review.dot (μ i) (μ i)=1
+
+/-- source_id: MD-4.4-DipolarPotentialSum · definition · §4.4 · 印刷p.170 / PDFp.192
+[EXTRA] 对无重叠位置，真实Euclidean距离sqrtΣ(qi−qj)²及有限无序pair和；经验势定义，不计模拟正确性。 -/
+def dipolarPotentialSum {N : ℕ} (lj : ℝ → ℝ) (q μ : Fin N → MolecularDynamics.Chapter04Review.V) : ℝ :=
+  ∑ i, ∑ j, if i < j then
+    dipolarPairPotential lj (Real.sqrt (MolecularDynamics.Chapter04Review.dot (q i-q j) (q i-q j))) (q i-q j) (μ i) (μ j) else 0
+
+/-- source_id: MD-4.4-RotationTrajectory · unnumbered_claim · §4.4 · 印刷p.168 / PDFp.190 -/
+theorem rotationTrajectory : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (d : MolecularDynamics.Chapter04Review.Mat3) (δ : MolecularDynamics.Chapter04Review.V) t,
+  HasDerivAt Θ d t → HasDerivAt (fun s => Θ s *ᵥ δ) (d *ᵥ δ) t := by
+  intro Θ d δ t hd
+  have he : ∀ i, HasDerivAt (fun s => ∑ j, Θ s i j*δ j) (∑ j,d i j*δ j) t := by
+    intro i
+    apply HasDerivAt.fun_sum
+    intro j hj
+    exact (hasDerivAt_pi.mp (hasDerivAt_pi.mp hd i) j).mul_const (δ j)
+  exact hasDerivAt_pi.mpr he
+
+/-- source_id: MD-4.4-RotationDerivativePrinted · unnumbered_claim · §4.4 · 印刷p.168 / PDFp.190
+[ERRATUM?] p168展示最后应以配置δ_i而非速度dotδ_i代换；已渲染视觉复核。 -/
+theorem rotationDerivativePrinted : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (d : MolecularDynamics.Chapter04Review.Mat3) (δ : MolecularDynamics.Chapter04Review.V) t,
+  HasDerivAt Θ d t → Θ t*(Θ t)ᵀ=1 →
+    d *ᵥ δ=(d*(Θ t)ᵀ) *ᵥ (d *ᵥ δ) := by
   sorry
 
 end MD.Ch04

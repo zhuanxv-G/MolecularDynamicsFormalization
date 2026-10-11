@@ -54,7 +54,7 @@ def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
 def scalarStable (a : ℂ) : Prop := ∃ C : ℝ, ∀ k : ℕ, ‖a^k‖ ≤ C
 ```
 
-### MD.Ch04.eulerFactor (Blueprint/Ch04.lean:27)
+### MD.Ch04.eulerFactor (Blueprint/Ch04.lean:28)
 ```lean
 def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
 ```
