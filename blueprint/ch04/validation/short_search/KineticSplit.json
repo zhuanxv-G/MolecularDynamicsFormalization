@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/KineticSplit-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/KineticSplit-route1.log",
+    "source_sha256": "6fb696ac383b8e4661403f847d497fed7d2bc8ad2c7032d6f5fe689934c9a65f",
+    "log_sha256": "0db383d54695e3d8df7974aa898b9d4b4dc291744fd27b84f7855158f6941b37"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro N m v w hz\n  have h0 := congrFun hz 0\n  have h1 := congrFun hz 1\n  have h2 := congrFun hz 2\n  simp only [Finset.sum_apply,Pi.smul_apply,smul_eq_mul,Pi.zero_apply] at h0 h1 h2\n  have he : ∀ i, MolecularDynamics.Chapter04Review.dot (v+w i) (v+w i)=\n      MolecularDynamics.Chapter04Review.dot v v+2*MolecularDynamics.Chapter04Review.dot v (w i)+MolecularDynamics.Chapter04Review.dot (w i) (w i) := by\n    intro i\n    simp [MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three]\n    ring\n  have ht : ∀ a : Fin 3, (∑ i, m i*(v a*w i a))=v a*∑ i,m i*w i a := by\n    intro a\n    rw [Finset.mul_sum]\n    apply Finset.sum_congr rfl\n    intro i hi\n    ring\n  have hc : ∑ i, m i*MolecularDynamics.Chapter04Review.dot v (w i)=0 := by\n    simp only [MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three,mul_add,Finset.sum_add_distrib]\n    rw [ht 0,ht 1,ht 2,h0,h1,h2]\n    ring\n  simp_rw [he,mul_add,Finset.sum_add_distrib]\n  rw [← Finset.sum_mul]\n  have hx : (∑ i, m i*(2*MolecularDynamics.Chapter04Review.dot v (w i)))=0 := by\n    rw [show (∑ i, m i*(2*MolecularDynamics.Chapter04Review.dot v (w i)))=2*∑ i,m i*MolecularDynamics.Chapter04Review.dot v (w i) by rw [Finset.mul_sum]; apply Finset.sum_congr rfl; intro i hi; ring,hc,mul_zero]\n  rw [hx]\n  simp [MolecularDynamics.Chapter04Review.totalMass]\n  ring",
+    "source": "blueprint/ch04/validation/short_search/KineticSplit-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/KineticSplit-route2.log",
+    "source_sha256": "9e69968569bce4a791967f92a2ab6822b0dadd002e42d4cc4e807efb3c269767",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

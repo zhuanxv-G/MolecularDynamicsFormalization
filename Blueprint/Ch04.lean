@@ -883,4 +883,150 @@ def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynam
     (q Qnow : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=
   (List.finRange l).foldl (fun Qcur j => MolecularDynamics.Chapter04Review.componentConstraintStep m g q Qcur j) Qnow
 
+/-- source_id: MD-4.3.4-ProjectedEulerPrinted · definition · §4.3.4 · 印刷p.159 / PDFp.181
+[ERRATUM?] p159(4.21)力符号与p163及F=−∇U定义不一致。 -/
+def projectedEulerPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (pbar : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  pbar=z.2+h • (-F z.1)-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m pbar ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=pbar-(textbookConstraintJacobian g out.1)ᵀ *ᵥ μ ∧ out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
+
+/-- source_id: MD-4.3.4-ProjectedEulerRelation · definition · §4.3.4 · 印刷p.159 / PDFp.181
+[EXTRA] [EXTRA]实际力F=−∇U采用+hF版本，与p163一致；不是(4.21)逐字公式。 -/
+def projectedEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (pbar : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  pbar=z.2+h • F z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m pbar ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=pbar-(textbookConstraintJacobian g out.1)ᵀ *ᵥ μ ∧ out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
+
+/-- source_id: MD-4.3.4-Lemma41 · Lemma 4.1 · §4.3.4 · 印刷p.159–160 / PDFp.181–182
+[EXTRA] 真实局部参数图、q/p/μ可微，约束在x邻域成立；完整拉回2形式对任意u,v相等。
+[ERRATUM?] p160证明两处内和印刷dq_j；实际Hessian链式公式应dq_i。原proof_latex保持字面，正式库用真实Hessian对称性证明结论。 -/
+theorem lemma41 {Nc : ℕ} {E : Type*}
+    [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (γ : (Fin Nc → ℝ) → ℝ) (hγ : ContDiff ℝ 2 γ) (μ : E → ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : DifferentiableAt ℝ q x) (hp : DifferentiableAt ℝ p x)
+    (hμ : DifferentiableAt ℝ μ x)
+    (hchart : ∀ᶠ y in 𝓝 x, γ (q y) = 0 ∧
+      p y ⬝ᵥ textbookConstraintGradient γ (q y) = 0) (u v : E) :
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookCotangentChart q (textbookConstrainedMomentum γ μ q p)) x u)
+      (fderiv ℝ (textbookCotangentChart q (textbookConstrainedMomentum γ μ q p)) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v) := by
+  apply MolecularDynamics.lemma_4_1 <;> assumption
+
+/-- source_id: MD-4.3.4-MultiMomentumPullback · unnumbered_claim · §4.3.4 · 印刷p.160 / PDFp.182
+[EXTRA] 有限约束族、真实C²约束与可微乘子/参数图；只给定光滑分支，不声称构造解存在。 -/
+theorem multiMomentumPullback {Nc : ℕ} {E ι : Type*}
+    [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (s : Finset ι) (γ : ι → (Fin Nc → ℝ) → ℝ) (μ : ι → E → ℝ)
+    (q : E → Fin Nc → ℝ) (x : E) (hq : DifferentiableAt ℝ q x)
+    (hγ : ∀ j ∈ s, ContDiff ℝ 2 (γ j))
+    (hμ : ∀ j ∈ s, DifferentiableAt ℝ (μ j) x)
+    (hconstraint : ∀ j ∈ s, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)
+    (p : E → Fin Nc → ℝ) (hp : DifferentiableAt ℝ p x) (u v : E) :
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookCotangentChart q (textbookMultiConstrainedMomentum s γ μ q p)) x u)
+      (fderiv ℝ (textbookCotangentChart q (textbookMultiConstrainedMomentum s γ μ q p)) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v) := by
+  apply MolecularDynamics.textbookMultiConstrainedMomentum_preserves_pullback <;> assumption
+
+/-- source_id: MD-4.3.4-ProjectedEulerPullback · unnumbered_claim · §4.3.4 · 印刷p.160 / PDFp.182
+[EXTRA] 真实势力、C²势与约束、可微乘子/参数图，前后位置约束；力kick系数a任意实数覆盖符号两版；不是求解分支存在证明。 -/
+theorem projectedEulerPullback {Nc : ℕ} {E ι : Type*}
+    [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (s : Finset ι) (γ : ι → (Fin Nc → ℝ) → ℝ) (lam μ : ι → E → ℝ)
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h a : ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : DifferentiableAt ℝ q x) (hp : DifferentiableAt ℝ p x)
+    (hU : ContDiff ℝ 2 U) (hγ : ∀ j ∈ s, ContDiff ℝ 2 (γ j))
+    (hlam : ∀ j ∈ s, DifferentiableAt ℝ (lam j) x)
+    (hμ : ∀ j ∈ s, DifferentiableAt ℝ (μ j) x)
+    (hold : ∀ j ∈ s, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)
+    (hnew : ∀ j ∈ s, ∀ᶠ y in 𝓝 x, γ j
+      (textbookProjectedEulerPosition m h q (textbookProjectedEulerPreMomentum s γ lam U h a q p) y) = 0)
+    (u v : E) :
+    textbookSymplecticForm Nc (fderiv ℝ (textbookProjectedEulerChart s γ lam μ m U h a q p) x u)
+      (fderiv ℝ (textbookProjectedEulerChart s γ lam μ m U h a q p) x v) =
+      textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+        (fderiv ℝ (textbookCotangentChart q p) x v) := by
+  apply MolecularDynamics.textbookProjectedEulerChart_preserves_pullback <;> assumption
+
+/-- source_id: MD-4.3.4-CotangentMultiplier · definition · §4.3.4 · 印刷p.159 / PDFp.181
+[EXTRA] [EXTRA]将(4.23–24)在Gram非奇异资格下解出实际μ=(GM⁻¹Gᵀ)⁻¹GM⁻¹p；正文未另印此显式式。 -/
+noncomputable def cotangentMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+  (textbookConstraintGram m γ q)⁻¹ *ᵥ
+    (textbookConstraintJacobian γ q *ᵥ (textbookInverseMassMatrix m *ᵥ p))
+
+/-- source_id: MD-4.3.4-CotangentProjection · definition · §4.3.4 · 印刷p.159 / PDFp.181
+[EXTRA] [EXTRA]采用实际Gram逆乘子；非奇异Gram是方法资格，另条证明隐藏约束。 -/
+noncomputable def cotangentProjection {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  p - (textbookConstraintJacobian γ q)ᵀ *ᵥ textbookCotangentMultiplier m γ q p
+
+/-- source_id: MD-4.3.4-CotangentHidden · unnumbered_claim · §4.3.4 · 印刷p.159 / PDFp.181
+[EXTRA] [EXTRA]对实际逆Gram构造证明结论，正质量与约束梯度线性独立；不把隐藏约束作假设。 -/
+theorem cotangentHidden {Nc Mc : ℕ}
+    (m : Fin Nc → ℝ) (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i)
+    (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) q)) :
+    textbookConstraintJacobian γ q *ᵥ
+      (textbookInverseMassMatrix m *ᵥ textbookCotangentProjection m γ q p) = 0 := by
+  apply MolecularDynamics.textbookCotangentProjection_hiddenConstraint_of_mass_and_independence <;> assumption
+
+/-- source_id: MD-4.3.4-CotangentRegularity · unnumbered_claim · §4.3.4 · 印刷p.160 / PDFp.182
+[EXTRA] [EXTRA]实际逆Gram投影的一阶正则性资格：C²约束、C¹参数图、Gram非奇异；非另印定理。 -/
+theorem cotangentRegularity {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : E → Fin Nc → ℝ) (x : E)
+    (hγ : ∀ j, ContDiff ℝ 2 (γ j)) (hq : ContDiffAt ℝ 1 q x)
+    (hp : ContDiffAt ℝ 1 p x) (hdet : (textbookConstraintGram m γ (q x)).det ≠ 0) :
+    ContDiffAt ℝ 1 (fun y => textbookCotangentProjection m γ (q y) (p y)) x := by
+  apply MolecularDynamics.contDiffAt_textbookCotangentProjection <;> assumption
+
+/-- source_id: MD-4.3.4-CotangentPullback · unnumbered_claim · §4.3.4 · 印刷p.160 / PDFp.182
+[EXTRA] 实际逆Gram投影、C²约束、C¹参数图、Gram非奇异及邻域位置约束；可微乘子由正式库导出，不作新假设。 -/
+theorem cotangentPullback {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : E → Fin Nc → ℝ) (x : E)
+    (hγ : ∀ j, ContDiff ℝ 2 (γ j)) (hq : ContDiffAt ℝ 1 q x)
+    (hp : ContDiffAt ℝ 1 p x) (hdet : (textbookConstraintGram m γ (q x)).det ≠ 0)
+    (hconstraint : ∀ j, ∀ᶠ y in 𝓝 x, γ j (q y) = 0) (u v : E) :
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookCotangentChart q
+        (fun y => textbookCotangentProjection m γ (q y) (p y))) x u)
+      (fderiv ℝ (textbookCotangentChart q
+        (fun y => textbookCotangentProjection m γ (q y) (p y))) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v) := by
+  apply MolecularDynamics.textbookCotangentProjection_preserves_pullback <;> assumption
+
+/-- source_id: MD-4.3.4-GramProjectedEuler · unnumbered_claim · §4.3.4 · 印刷p.160 / PDFp.182
+[EXTRA] [EXTRA]将(4.20–24)实际Gram末投影同时证明隐藏约束与完整拉回形式不变；给定C¹位置投影分支，非解的存在理论。 -/
+theorem gramProjectedEuler {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (lam : Fin Mc → E → ℝ)
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h a : ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : ContDiffAt ℝ 1 q x) (hp : ContDiffAt ℝ 1 p x)
+    (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 2 (γ j))
+    (hlam : ∀ j, ContDiffAt ℝ 1 (lam j) x)
+    (hold : ∀ j, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)
+    (hnew : ∀ j, ∀ᶠ y in 𝓝 x, γ j
+      (textbookProjectedEulerPosition m h q
+        (textbookProjectedEulerPreMomentum Finset.univ γ lam U h a q p) y) = 0)
+    (hdet : (textbookConstraintGram m γ (textbookProjectedEulerPosition m h q
+      (textbookProjectedEulerPreMomentum Finset.univ γ lam U h a q p) x)).det ≠ 0)
+    (u v : E) :
+    (∀ j, (fderiv ℝ (γ j) (fun i => textbookGramProjectedEulerChart γ lam m U h a q p x (Sum.inl i)))
+        (textbookInverseMassMatrix m *ᵥ
+          (fun i => textbookGramProjectedEulerChart γ lam m U h a q p x (Sum.inr i))) = 0) ∧
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookGramProjectedEulerChart γ lam m U h a q p) x u)
+      (fderiv ℝ (textbookGramProjectedEulerChart γ lam m U h a q p) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v) := by
+  apply MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback <;> assumption
+
 end MD.Ch04

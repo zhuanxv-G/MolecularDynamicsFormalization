@@ -1,0 +1,18 @@
+Generated 87 entries; 62 /100 old rows mapped; protected 568
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 125, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 121, in main
+    p.generate();sync_attempts(args.chapter,p);render(args.chapter,p);landing(args.chapter,p,args.batch,args.step)
+                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 73, in render
+    out.write_text(m.render(p.BASE/f'ch{ch:02}_source.json',ROOT/f'Blueprint/Ch{ch:02}.lean',p.BASE/'local_audit.json'),encoding='utf-8')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 94, in render
+    result=subprocess.run(command,cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 94, in <genexpr>
+    result=subprocess.run(command,cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+                                                                     ^^^^^^
+TypeError: string indices must be integers, not 'str'

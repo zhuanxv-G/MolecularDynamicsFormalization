@@ -4,7 +4,8 @@ from ch04_data import ROOT,BASE,RECORDS,NS
 key=sys.argv[1]
 mods={'RelativeWeightedZero':'44','KineticSplit':'44','SkewRepresentation':'44b',
       'InertiaSkewIdentity':'44c','InertiaTraceCorrected':'44c','RotationTraceIdentity':'44b',
-      'SHAKEElimination':'435extra','RotationTrajectory':'44extras','CrossIdentityFull':'44cross'}
+      'SHAKEElimination':'435extra','RotationTrajectory':'44extras','CrossIdentityFull':'44cross',
+      'ConstrainedPotentialFlow':'4351','RotationSkew':'44b','RigidVelocity':'44b'}
 importlib.import_module('ch04_section'+mods[key])
 r=next(x for x in RECORDS if x['source_id'].endswith('-'+key));assert r['local_verdict']=='PASS'
 folder=BASE/'validation/short_search';state=folder/f'{key}.json'
@@ -12,6 +13,60 @@ routes=json.loads(state.read_text(encoding='utf-8')) if state.exists() else []
 if any(x['exit_code']==0 for x in routes) or len(routes)>=3:print(key,'saved evidence reused');sys.exit()
 route=len(routes)+1
 proofs={
+'RotationSkew':'''intro Θ t d hd ho
+  have hs : ∀ i j : Fin 3, ∑ k, (d i k*Θ t j k+Θ t i k*d j k)=0 := by
+    intro i j
+    have hf : HasDerivAt (fun s => ∑ k, Θ s i k*Θ s j k)
+        (∑ k, (d i k*Θ t j k+Θ t i k*d j k)) t := by
+      apply HasDerivAt.fun_sum
+      intro k hk
+      exact (((hd.apply i).apply k).mul ((hd.apply j).apply k))
+    have he : (fun s => ∑ k, Θ s i k*Θ s j k) =ᶠ[𝓝 t] (fun _ => (1 : Mat3) i j) := by
+      filter_upwards [ho] with s h
+      simpa [Matrix.mul_apply,Matrix.transpose_apply] using congrArg (fun B : Mat3 => B i j) h
+    exact hf.unique ((hasDerivAt_const t ((1 : Mat3) i j)).congr_of_eventuallyEq he.symm)
+  ext i j
+  have h := hs i j
+  simp only [Fin.sum_univ_three] at h
+  simp [Matrix.mul_apply,Matrix.transpose_apply,Fin.sum_univ_three]
+  nlinarith [h]''',
+'RigidVelocity':'''intro Θ dΘ δ «ω» t hd ho hs
+  have he : ∀ i, HasDerivAt (fun s => ∑ j, Θ s i j*δ j) (∑ j,dΘ i j*δ j) t := by
+    intro i
+    apply HasDerivAt.fun_sum
+    intro j hj
+    exact ((hd.apply i).apply j).mul_const (δ j)
+  have hv : HasDerivAt (fun s => Θ s *ᵥ δ) (dΘ *ᵥ δ) t := hasDerivAt_pi.mpr he
+  have hi : (Θ t)ᵀ*Θ t=1 := Matrix.mul_eq_one_comm.mp ho
+  have hcross : MolecularDynamics.Chapter04Review.skewMatrix «ω» *ᵥ (Θ t *ᵥ δ)=
+      MolecularDynamics.Chapter04Review.cross3 «ω» (Θ t *ᵥ δ) := by
+    ext i
+    fin_cases i <;> simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
+  rw [← hcross,← hs,Matrix.mulVec_mulVec,Matrix.mul_assoc,hi,Matrix.mul_one]
+  exact hv''',
+'ConstrainedPotentialFlow':'''intro n l m U g z hz hdet hg t
+  rcases hz with ⟨hq,hp⟩
+  let u := MolecularDynamics.Chapter04Review.momentumProjector m g z.1 *ᵥ MolecularDynamics.Chapter04Review.grad U z.1
+  have hi : ∀ v : Fin n → ℝ, MolecularDynamics.Chapter04Review.invMass m v=textbookInverseMassMatrix m *ᵥ v := by
+    intro v
+    ext i
+    simp [MolecularDynamics.Chapter04Review.invMass,textbookInverseMassMatrix]
+  have hproj : ∀ v : Fin n → ℝ, MolecularDynamics.Chapter04Review.momentumProjector m g z.1 *ᵥ v=textbookCotangentProjection m g z.1 v := by
+    intro v
+    simp only [MolecularDynamics.Chapter04Review.momentumProjector,Matrix.sub_mulVec,Matrix.one_mulVec,
+      textbookCotangentProjection,textbookCotangentMultiplier,Matrix.mulVec_mulVec,Matrix.mul_assoc]
+  have hu : textbookConstraintJacobian g z.1 *ᵥ (textbookInverseMassMatrix m *ᵥ u)=0 := by
+    dsimp [u]
+    rw [hproj]
+    exact textbookCotangentProjection_hiddenConstraint m g z.1 _ hdet
+  rw [hi] at hp
+  constructor
+  · change z.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+      textbookConstraintJacobian g z.1 *ᵥ MolecularDynamics.Chapter04Review.invMass m (z.2-t • u)=0
+    refine ⟨hq,?_⟩
+    rw [hi,Matrix.mulVec_sub,Matrix.mulVec_smul,Matrix.mulVec_sub,Matrix.mulVec_smul,hp,hu]
+    simp
+  · simpa [u,Matrix.neg_mulVec] using (((hasDerivAt_id t).smul_const u).const_sub z.2)''',
 'CrossIdentityFull':'''intro u v
   constructor <;> ext i <;> fin_cases i <;>
     simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring''',
@@ -117,6 +172,19 @@ if route==2:
     candidate=candidate.replace('MolecularDynamics.Chapter04Review.reaction','textbookConstraintJacobian')
     if key=='SHAKEElimination':
         candidate=proofs[key].replace('⟨hq0,hh0,hp0,hg0⟩','⟨hh0,hq0,hg0,hp0⟩').replace('⟨hq1,hh1,hp1,hg1⟩','⟨hh1,hq1,hg1,hp1⟩')
+    if key=='KineticSplit':
+        begin=candidate.index('  have hc :');end=candidate.index('  simp_rw [he',begin)
+        candidate=candidate[:begin]+'''  have ht : ∀ a : Fin 3, (∑ i, m i*(v a*w i a))=v a*∑ i,m i*w i a := by
+    intro a
+    rw [Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro i hi
+    ring
+  have hc : ∑ i, m i*MolecularDynamics.Chapter04Review.dot v (w i)=0 := by
+    simp only [MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three,mul_add,Finset.sum_add_distrib]
+    rw [ht 0,ht 1,ht 2,h0,h1,h2]
+    ring
+'''+candidate[end:]
 if route==3:
     candidate=candidate.replace('HasDerivAt.fun_sum','HasDerivAt.sum')
     if key=='SHAKEElimination':

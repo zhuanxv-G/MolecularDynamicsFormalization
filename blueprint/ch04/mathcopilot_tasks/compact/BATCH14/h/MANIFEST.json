@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14h",
+  "source_ids": [
+    "MD-4.3.4-CotangentHidden"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 181,
+      "printed_page": 159
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "366d42f105500c38ceaeb955fdb3f1a213d340dd8763ef9909935232a4a120cd",
+  "lean_sha256": "3e2d4c2782172db253ce17b2e38d169f815b46c1c576f13ed0686b7e07c8526a",
+  "signature_sha256": "ecec3e23e950c4a57e4ff4011248ab3ac328a30b88939f6ffd9496875e272afd",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGradient",
+      "code_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGram",
+      "code_sha256": "f9d0691a77a4664150d234c00a3129e9c83be39d8b1787031a5684ce26cba140"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintJacobian",
+      "code_sha256": "8cf31fc6e8fc4d97e435434cd3ff311cd4bdc6e77b6c39dac71331c66249f03a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCotangentMultiplier",
+      "code_sha256": "c1033483c5bfe6e9e06df937630e038831f71b01d526807140d2dc7589c330a4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCotangentProjection",
+      "code_sha256": "e604ed7249d581d3df5743817c9d096bdb5cfb85754e03b06d9e99b88722125a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookInverseMassMatrix",
+      "code_sha256": "9e7434aa6e315ddbe11e2a45e46a9d927661975aa91274386af7c31412a7c330"
+    }
+  ],
+  "paste_plus_pdf_bytes": 99065,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5147,
+      "sha256": "c2c7d6271bc2cc149f82c68d1714684ce3617144a2781a78d46986aff7b2214f"
+    },
+    "BATCH14h_PAGES.pdf": {
+      "bytes": 93918,
+      "sha256": "7bd77ca416812154eb2170fed2cd92543ad9c03948864d6e61991aa5f2d7aa6d"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 101791
+}

@@ -1,0 +1,115 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH14c_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 181 | 159 |
+| 2 | 182 | 160 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-4.3.4-Lemma41",
+  "kind": "lemma",
+  "label": "Lemma 4.1",
+  "section": "4.3.4",
+  "printed_page": "159–160",
+  "pdf_page": "181–182",
+  "statement_latex": "Lemma 4.1 Let $\\gamma:\\mathbb R^{N_c}\\to\\mathbb R$ be $C^2$. Let $q,p\\in\\mathbb R^{N_c}$ be constrained to the manifold defined by\n\\[\\gamma(q)=0,\\quad p\\cdot\\nabla\\gamma(q)=0,\\]\nand suppose $P,\\mu$ satisfy $P=p-\\mu\\nabla\\gamma(q)$. Then\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge dP_j=\\sum_{j=1}^{N_c}dq_j\\wedge dp_j.\\]",
+  "proof_latex": "Clearly the result follows provided\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge d[\\mu\\nabla\\gamma(q)]_j=0,\\]\nwhere $[\\ldots]_j$ indicates the jth component of the term in brackets. We have\n\\[\\sum_jdq_j\\wedge d[\\mu\\nabla\\gamma(q)]_j=\\sum_jdq_j\\wedge\\left(\\frac{\\partial\\gamma}{\\partial q_j}d\\mu+\\mu\\sum_i\\gamma''_{ij}dq_j\\right).\\]\nThen we note\n\\[\\sum_jdq_j\\wedge\\frac{\\partial\\gamma}{\\partial q_j}d\\mu=\\sum_jdq_j\\frac{\\partial\\gamma}{\\partial q_j}\\wedge d\\mu=0,\\]\nsince $\\gamma(q)\\equiv0$ implies $d\\gamma(q)=\\sum_j\\frac{\\partial\\gamma}{\\partial q_j}dq_j\\equiv0$. Moreover\n\\[\\sum_jdq_j\\wedge\\sum_i\\gamma''_{ij}dq_j=0,\\]\nsince the Hessian matrix $\\gamma''$ is symmetric.",
+  "proof_note": "原书计算按原页转录。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "p160证明两处内和印刷dq_j；实际Hessian链式公式应dq_i。原proof_latex保持字面，正式库用真实Hessian对称性证明结论。"
+    }
+  ],
+  "lean_decl": "MD.Ch04.lemma41",
+  "reusable_proofs": [
+    "MolecularDynamics.lemma_4_1"
+  ],
+  "extra_assumptions": [
+    "真实局部参数图、q/p/μ可微，约束在x邻域成立；完整拉回2形式对任意u,v相等。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem lemma41 {Nc : ℕ} {E : Type*}
+    [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (γ : (Fin Nc → ℝ) → ℝ) (hγ : ContDiff ℝ 2 γ) (μ : E → ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : DifferentiableAt ℝ q x) (hp : DifferentiableAt ℝ p x)
+    (hμ : DifferentiableAt ℝ μ x)
+    (hchart : ∀ᶠ y in 𝓝 x, γ (q y) = 0 ∧
+      p y ⬝ᵥ textbookConstraintGradient γ (q y) = 0) (u v : E) :
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookCotangentChart q (textbookConstrainedMomentum γ μ q p)) x u)
+      (fderiv ℝ (textbookCotangentChart q (textbookConstrainedMomentum γ μ q p)) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v)
+```
+
+原上下文：namespace MD.Ch04；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter04Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.Elementwise；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.SymplecticCoordinateMatrix (MolecularDynamics/Chapter02/SymplecticForm.lean:27)
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+
+### MolecularDynamics.SymplecticCoordinates (MolecularDynamics/Chapter02/SymplecticForm.lean:25)
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+
+### MolecularDynamics.textbookConstrainedMomentum (MolecularDynamics/Chapter04/ConstrainedProjection.lean:34)
+```lean
+noncomputable def textbookConstrainedMomentum {Nc : ℕ} {E : Type*}
+    (γ : (Fin Nc → ℝ) → ℝ) (μ : E → ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E) : Fin Nc → ℝ :=
+  p x - μ x • textbookConstraintGradient γ (q x)
+```
+
+### MolecularDynamics.textbookConstraintGradient (MolecularDynamics/Chapter04/ConstrainedProjection.lean:20)
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```
+
+### MolecularDynamics.textbookCotangentChart (MolecularDynamics/Chapter04/ConstrainedProjection.lean:40)
+```lean
+def textbookCotangentChart {Nc : ℕ} {E : Type*}
+    (q p : E → Fin Nc → ℝ) (x : E) : SymplecticCoordinates Nc :=
+  Sum.elim (q x) (p x)
+```
+
+### MolecularDynamics.textbookJ (MolecularDynamics/Chapter02/SymplecticForm.lean:31)
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+
+### MolecularDynamics.textbookSymplecticForm (MolecularDynamics/Chapter02/SymplecticForm.lean:77)
+```lean
+noncomputable def textbookSymplecticForm (Nc : ℕ) :
+    LinearMap.BilinForm ℝ (SymplecticCoordinates Nc) :=
+  (textbookJ Nc).toBilin'
+```

@@ -83,6 +83,17 @@
 | MD-4.3.3-ComponentPrinted | 158/180 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-4.3.3-ComponentConstraintStep | 158/180 | PASS | 待网站审计 | self-contained |
 | MD-4.3.3-ComponentSweep | 158/180 | PASS | 待网站审计 | self-contained |
+| MD-4.3.4-ProjectedEulerPrinted | 159/181 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.3.4-ProjectedEulerRelation | 159/181 | PASS | 待网站审计 | self-contained |
+| MD-4.3.4-Lemma41 | 159–160/181–182 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3.4-MultiMomentumPullback | 160/182 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3.4-ProjectedEulerPullback | 160/182 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3.4-CotangentMultiplier | 159/181 | PASS | 待网站审计 | self-contained |
+| MD-4.3.4-CotangentProjection | 159/181 | PASS | 待网站审计 | self-contained |
+| MD-4.3.4-CotangentHidden | 159/181 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3.4-CotangentRegularity | 160/182 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3.4-CotangentPullback | 160/182 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3.4-GramProjectedEuler | 160/182 | PASS | 待网站审计 | checked+documented priors |
 
 ## 需要导师判断的问题
 
@@ -112,6 +123,10 @@
   R(0)仍是新预测点与旧点的交叉Gram，原等式一般不成立。
 - MD-4.3.3-ComponentPrinted：字面分母G_j^1与已定义G_n^j不一致。引入待解释Gsup1保留它，更新方向仍为G_n^j；常规修正版另列。
   一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。
+- MD-4.3.4-ProjectedEulerPrinted：原(4.21)写−hF_n，与此前F=−∇U及p163的+hF不一致；逐字保留，质量一致及正确力符号版另列。
+  p159(4.21)力符号与p163及F=−∇U定义不一致。
+- MD-4.3.4-Lemma41：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  p160证明两处内和印刷dq_j；实际Hessian链式公式应dq_i。原proof_latex保持字面，正式库用真实Hessian对称性证明结论。
 
 ## 1. MD-4-LinearField · (4.1) · 印刷p.139 / PDFp.161
 
@@ -3879,3 +3894,605 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`f323195bcb6cdf1c6347e35a0ff8a6ba239dbb4ec13ccccf1ad678c3705809ac`；原文SHA256：`0010f1dd91e1999a8d184ee6e405b5dc4e75709f3798a90d85934519924c2658`。
+
+## 1. MD-4.3.4-ProjectedEulerPrinted · definition · 印刷p.159 / PDFp.181
+
+### 2. 原文陈述
+
+> On the other hand it is not too difficult to correct this defect by incorporating an additional projection onto the cotangent space:
+> \[q_{n+1}=q_n+hM^{-1}\bar p_{n+1},\tag{4.20}\]
+> \[\bar p_{n+1}=p_n-hF_n-hg'(q_n)^T\lambda_n,\tag{4.21}\]
+> \[0=g(q_{n+1}),\tag{4.22}\]
+> \[p_{n+1}=\bar p_{n+1}-g'(q_{n+1})^T\mu_{n+1},\tag{4.23}\]
+> \[0=g'(q_{n+1})M^{-1}p_{n+1}.\tag{4.24}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def projectedEulerPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (pbar : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  pbar=z.2+h • (-F z.1)-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m pbar ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=pbar-(textbookConstraintJacobian g out.1)ᵀ *ᵥ μ ∧ out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.projectedEulerPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | p159(4.21)力符号与p163及F=−∇U定义不一致。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。原(4.21)写−hF_n，与此前F=−∇U及p163的+hF不一致；逐字保留，质量一致及正确力符号版另列。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:888](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:888>)（`MD.Ch04.projectedEulerPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`d385f24fc8b096550e30a72c3c28c09070c01a99886c016d79527058e278fd2c`；原文SHA256：`8c842490d90f465df76a1cecc221dcebc32328f4794aa8e47e228458559c0d52`。
+
+## 1. MD-4.3.4-ProjectedEulerRelation · definition · 印刷p.159 / PDFp.181
+
+### 2. 原文陈述
+
+> The demonstration that the method is symplectic can be seen as a consequence of the following lemma.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def projectedEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (pbar : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  pbar=z.2+h • F z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m pbar ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=pbar-(textbookConstraintJacobian g out.1)ᵀ *ᵥ μ ∧ out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.projectedEulerRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际力F=−∇U采用+hF版本，与p163一致；不是(4.21)逐字公式。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:896](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:896>)（`MD.Ch04.projectedEulerRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0e914ee040edbce7b75e8bac681dacecd3e4437df2981688a0291858e8692891`；原文SHA256：`edeeb8162102c68edeeea05812bc52abc78ca19d0d1d5d3aaf438189016dcc6e`。
+
+## 1. MD-4.3.4-Lemma41 · Lemma 4.1 · 印刷p.159–160 / PDFp.181–182
+
+### 2. 原文陈述
+
+> Lemma 4.1 Let $\gamma:\mathbb R^{N_c}\to\mathbb R$ be $C^2$. Let $q,p\in\mathbb R^{N_c}$ be constrained to the manifold defined by
+> \[\gamma(q)=0,\quad p\cdot\nabla\gamma(q)=0,\]
+> and suppose $P,\mu$ satisfy $P=p-\mu\nabla\gamma(q)$. Then
+> \[\sum_{j=1}^{N_c}dq_j\wedge dP_j=\sum_{j=1}^{N_c}dq_j\wedge dp_j.\]
+
+### 3. 原文证明
+
+> Clearly the result follows provided
+> \[\sum_{j=1}^{N_c}dq_j\wedge d[\mu\nabla\gamma(q)]_j=0,\]
+> where $[\ldots]_j$ indicates the jth component of the term in brackets. We have
+> \[\sum_jdq_j\wedge d[\mu\nabla\gamma(q)]_j=\sum_jdq_j\wedge\left(\frac{\partial\gamma}{\partial q_j}d\mu+\mu\sum_i\gamma''_{ij}dq_j\right).\]
+> Then we note
+> \[\sum_jdq_j\wedge\frac{\partial\gamma}{\partial q_j}d\mu=\sum_jdq_j\frac{\partial\gamma}{\partial q_j}\wedge d\mu=0,\]
+> since $\gamma(q)\equiv0$ implies $d\gamma(q)=\sum_j\frac{\partial\gamma}{\partial q_j}dq_j\equiv0$. Moreover
+> \[\sum_jdq_j\wedge\sum_i\gamma''_{ij}dq_j=0,\]
+> since the Hessian matrix $\gamma''$ is symmetric.
+
+原书计算按原页转录。
+
+### 4. Lean陈述
+
+```lean
+theorem lemma41 {Nc : ℕ} {E : Type*}
+    [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (γ : (Fin Nc → ℝ) → ℝ) (hγ : ContDiff ℝ 2 γ) (μ : E → ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : DifferentiableAt ℝ q x) (hp : DifferentiableAt ℝ p x)
+    (hμ : DifferentiableAt ℝ μ x)
+    (hchart : ∀ᶠ y in 𝓝 x, γ (q y) = 0 ∧
+      p y ⬝ᵥ textbookConstraintGradient γ (q y) = 0) (u v : E) :
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookCotangentChart q (textbookConstrainedMomentum γ μ q p)) x u)
+      (fderiv ℝ (textbookCotangentChart q (textbookConstrainedMomentum γ μ q p)) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| γ(q)=0、p·∇γ(q)=0、P=p−μ∇γ(q)及完整两形式相等 | lemma41中的邻域位置/隐藏约束、实际参数图与任意u,v的拉回等式 | 标量完整原陈述，保留p的隐藏约束；不把拉回等式作假设。 |
+| 原文省略/技术资格 | 真实局部参数图、q/p/μ可微，约束在x邻域成立；完整拉回2形式对任意u,v相等。 | [EXTRA] |
+| 原页核对/疑点 | p160证明两处内和印刷dq_j；实际Hessian链式公式应dq_i。原proof_latex保持字面，正式库用真实Hessian对称性证明结论。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:905](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:905>)（`MD.Ch04.lemma41`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.lemma_4_1。
+
+签名SHA256：`1425fba995c044cc3471af09cc4ae38b821147f7eb14747fed767ab31c030916`；原文SHA256：`d1768a66b45a91be6cfa707d3fb4e28c922b51513561855575085051e15cbc5e`。
+
+## 1. MD-4.3.4-MultiMomentumPullback · unnumbered_claim · 印刷p.160 / PDFp.182
+
+### 2. 原文陈述
+
+> Observe that $g'(q_{n+1})^T\mu_{n+1}=\sum_{k=1}^l\mu_{n+1,k}\nabla g_k(q_{n+1})$. Thus we may apply Lemma 4.1 with $\gamma$ replaced by each $g_k$ to demonstrate
+> \[\sum_jdq_{n+1,j}\wedge dp_{n+1,j}=\sum_jdq_{n+1,j}\wedge d\bar p_{n+1,j}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem multiMomentumPullback {Nc : ℕ} {E ι : Type*}
+    [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (s : Finset ι) (γ : ι → (Fin Nc → ℝ) → ℝ) (μ : ι → E → ℝ)
+    (q : E → Fin Nc → ℝ) (x : E) (hq : DifferentiableAt ℝ q x)
+    (hγ : ∀ j ∈ s, ContDiff ℝ 2 (γ j))
+    (hμ : ∀ j ∈ s, DifferentiableAt ℝ (μ j) x)
+    (hconstraint : ∀ j ∈ s, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)
+    (p : E → Fin Nc → ℝ) (hp : DifferentiableAt ℝ p x) (u v : E) :
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookCotangentChart q (textbookMultiConstrainedMomentum s γ μ q p)) x u)
+      (fderiv ℝ (textbookCotangentChart q (textbookMultiConstrainedMomentum s γ μ q p)) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.multiMomentumPullback；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 有限约束族、真实C²约束与可微乘子/参数图；只给定光滑分支，不声称构造解存在。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:922](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:922>)（`MD.Ch04.multiMomentumPullback`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookMultiConstrainedMomentum_preserves_pullback。
+
+签名SHA256：`5b8b0b2ff3dd0f1ec527c67ed38b49812ead40cd79f43fe5cd60c871ed58e941`；原文SHA256：`167a80da5d9a2e88e5e17fa1fd5b0ffbe0a6d3464c4bf4ea05de108b97f4cb7f`。
+
+## 1. MD-4.3.4-ProjectedEulerPullback · unnumbered_claim · 印刷p.160 / PDFp.182
+
+### 2. 原文陈述
+
+> Using similar argumentation based on the properties of the wedge product, we next show
+> \[\sum_jdq_{n+1,j}\wedge d\bar p_{n+1,j}=\sum_jdq_{n,j}\wedge d\bar p_{n+1,j};\]
+> and, finally, invoking Lemma 4.1 again,
+> \[\sum_jdq_{n,j}\wedge d\bar p_{n+1,j}=\sum_jdq_{n,j}\wedge dp_{n,j}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem projectedEulerPullback {Nc : ℕ} {E ι : Type*}
+    [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (s : Finset ι) (γ : ι → (Fin Nc → ℝ) → ℝ) (lam μ : ι → E → ℝ)
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h a : ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : DifferentiableAt ℝ q x) (hp : DifferentiableAt ℝ p x)
+    (hU : ContDiff ℝ 2 U) (hγ : ∀ j ∈ s, ContDiff ℝ 2 (γ j))
+    (hlam : ∀ j ∈ s, DifferentiableAt ℝ (lam j) x)
+    (hμ : ∀ j ∈ s, DifferentiableAt ℝ (μ j) x)
+    (hold : ∀ j ∈ s, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)
+    (hnew : ∀ j ∈ s, ∀ᶠ y in 𝓝 x, γ j
+      (textbookProjectedEulerPosition m h q (textbookProjectedEulerPreMomentum s γ lam U h a q p) y) = 0)
+    (u v : E) :
+    textbookSymplecticForm Nc (fderiv ℝ (textbookProjectedEulerChart s γ lam μ m U h a q p) x u)
+      (fderiv ℝ (textbookProjectedEulerChart s γ lam μ m U h a q p) x v) =
+      textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+        (fderiv ℝ (textbookCotangentChart q p) x v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.projectedEulerPullback；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 真实势力、C²势与约束、可微乘子/参数图，前后位置约束；力kick系数a任意实数覆盖符号两版；不是求解分支存在证明。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:939](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:939>)（`MD.Ch04.projectedEulerPullback`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookProjectedEulerChart_preserves_pullback。
+
+签名SHA256：`26400bfff26f455edaa0334851261590966269faa824e192af8d562cd0039375`；原文SHA256：`9495bc9a58c2232b5e3459d8adacd1601753f0e1df8c641fb3dfc076b2fb9d84`。
+
+## 1. MD-4.3.4-CotangentMultiplier · definition · 印刷p.159 / PDFp.181
+
+### 2. 原文陈述
+
+> $0=g'(q_{n+1})M^{-1}p_{n+1}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def cotangentMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+  (textbookConstraintGram m γ q)⁻¹ *ᵥ
+    (textbookConstraintJacobian γ q *ᵥ (textbookInverseMassMatrix m *ᵥ p))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.cotangentMultiplier；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]将(4.23–24)在Gram非奇异资格下解出实际μ=(GM⁻¹Gᵀ)⁻¹GM⁻¹p；正文未另印此显式式。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:960](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:960>)（`MD.Ch04.cotangentMultiplier`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`9681f67c87a1f051e52b3c502f18066806e7a49cf57bbff359da95e7da3ee21a`；原文SHA256：`45e791c4891911b7ba603a22e4b770d862e01dab6e3b825a4cc345120ddf505d`。
+
+## 1. MD-4.3.4-CotangentProjection · definition · 印刷p.159 / PDFp.181
+
+### 2. 原文陈述
+
+> $p_{n+1}=\bar p_{n+1}-g'(q_{n+1})^T\mu_{n+1}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def cotangentProjection {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  p - (textbookConstraintJacobian γ q)ᵀ *ᵥ textbookCotangentMultiplier m γ q p
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.cotangentProjection；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]采用实际Gram逆乘子；非奇异Gram是方法资格，另条证明隐藏约束。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:967](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:967>)（`MD.Ch04.cotangentProjection`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`167884c62ad831ab7f181f6dccd07fbe2a7fbfe30a9140ce36449f1567eb7ba5`；原文SHA256：`4c38b8448ae2eab9aff1eec1293393587a55cc2d403657a14d8e1f64f098a6f7`。
+
+## 1. MD-4.3.4-CotangentHidden · unnumbered_claim · 印刷p.159 / PDFp.181
+
+### 2. 原文陈述
+
+> $0=g'(q_{n+1})M^{-1}p_{n+1}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem cotangentHidden {Nc Mc : ℕ}
+    (m : Fin Nc → ℝ) (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i)
+    (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) q)) :
+    textbookConstraintJacobian γ q *ᵥ
+      (textbookInverseMassMatrix m *ᵥ textbookCotangentProjection m γ q p) = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.cotangentHidden；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]对实际逆Gram构造证明结论，正质量与约束梯度线性独立；不把隐藏约束作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:973](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:973>)（`MD.Ch04.cotangentHidden`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookCotangentProjection_hiddenConstraint_of_mass_and_independence。
+
+签名SHA256：`ecec3e23e950c4a57e4ff4011248ab3ac328a30b88939f6ffd9496875e272afd`；原文SHA256：`a66020c8836966d6658d150bc6f48c636f2a71018ae7fa56b4edbb603c7dc06f`。
+
+## 1. MD-4.3.4-CotangentRegularity · unnumbered_claim · 印刷p.160 / PDFp.182
+
+### 2. 原文陈述
+
+> Thus we may apply Lemma 4.1 with $\gamma$ replaced by each $g_k$ to demonstrate $\sum_jdq_{n+1,j}\wedge dp_{n+1,j}=\sum_jdq_{n+1,j}\wedge d\bar p_{n+1,j}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem cotangentRegularity {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : E → Fin Nc → ℝ) (x : E)
+    (hγ : ∀ j, ContDiff ℝ 2 (γ j)) (hq : ContDiffAt ℝ 1 q x)
+    (hp : ContDiffAt ℝ 1 p x) (hdet : (textbookConstraintGram m γ (q x)).det ≠ 0) :
+    ContDiffAt ℝ 1 (fun y => textbookCotangentProjection m γ (q y) (p y)) x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.cotangentRegularity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际逆Gram投影的一阶正则性资格：C²约束、C¹参数图、Gram非奇异；非另印定理。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:983](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:983>)（`MD.Ch04.cotangentRegularity`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.contDiffAt_textbookCotangentProjection。
+
+签名SHA256：`9f67299a9f980a11d7e1d3d6ea732c2aae5a96ce6b2c46cf63da6b26c429e9e2`；原文SHA256：`79f71b779e2b6c413f80d9f186840e21d6a7c93d7316753e132857e60ecc3b69`。
+
+## 1. MD-4.3.4-CotangentPullback · unnumbered_claim · 印刷p.160 / PDFp.182
+
+### 2. 原文陈述
+
+> Thus we may apply Lemma 4.1 with $\gamma$ replaced by each $g_k$ to demonstrate $\sum_jdq_{n+1,j}\wedge dp_{n+1,j}=\sum_jdq_{n+1,j}\wedge d\bar p_{n+1,j}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem cotangentPullback {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : E → Fin Nc → ℝ) (x : E)
+    (hγ : ∀ j, ContDiff ℝ 2 (γ j)) (hq : ContDiffAt ℝ 1 q x)
+    (hp : ContDiffAt ℝ 1 p x) (hdet : (textbookConstraintGram m γ (q x)).det ≠ 0)
+    (hconstraint : ∀ j, ∀ᶠ y in 𝓝 x, γ j (q y) = 0) (u v : E) :
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookCotangentChart q
+        (fun y => textbookCotangentProjection m γ (q y) (p y))) x u)
+      (fderiv ℝ (textbookCotangentChart q
+        (fun y => textbookCotangentProjection m γ (q y) (p y))) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.cotangentPullback；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 实际逆Gram投影、C²约束、C¹参数图、Gram非奇异及邻域位置约束；可微乘子由正式库导出，不作新假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:992](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:992>)（`MD.Ch04.cotangentPullback`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookCotangentProjection_preserves_pullback。
+
+签名SHA256：`0f5dcef73bb05b95c22f6bd11f018b97c58fdd4a9c709b8ec4258a655494fe3b`；原文SHA256：`75235f3106f85f7696c84a4592fbbbe3a3e3b27cf030897f8b2b13d40ee37cf1`。
+
+## 1. MD-4.3.4-GramProjectedEuler · unnumbered_claim · 印刷p.160 / PDFp.182
+
+### 2. 原文陈述
+
+> The demonstration that the method is symplectic can be seen as a consequence of the following lemma.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gramProjectedEuler {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (lam : Fin Mc → E → ℝ)
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h a : ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : ContDiffAt ℝ 1 q x) (hp : ContDiffAt ℝ 1 p x)
+    (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 2 (γ j))
+    (hlam : ∀ j, ContDiffAt ℝ 1 (lam j) x)
+    (hold : ∀ j, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)
+    (hnew : ∀ j, ∀ᶠ y in 𝓝 x, γ j
+      (textbookProjectedEulerPosition m h q
+        (textbookProjectedEulerPreMomentum Finset.univ γ lam U h a q p) y) = 0)
+    (hdet : (textbookConstraintGram m γ (textbookProjectedEulerPosition m h q
+      (textbookProjectedEulerPreMomentum Finset.univ γ lam U h a q p) x)).det ≠ 0)
+    (u v : E) :
+    (∀ j, (fderiv ℝ (γ j) (fun i => textbookGramProjectedEulerChart γ lam m U h a q p x (Sum.inl i)))
+        (textbookInverseMassMatrix m *ᵥ
+          (fun i => textbookGramProjectedEulerChart γ lam m U h a q p x (Sum.inr i))) = 0) ∧
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookGramProjectedEulerChart γ lam m U h a q p) x u)
+      (fderiv ℝ (textbookGramProjectedEulerChart γ lam m U h a q p) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.gramProjectedEuler；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]将(4.20–24)实际Gram末投影同时证明隐藏约束与完整拉回形式不变；给定C¹位置投影分支，非解的存在理论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:1008](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1008>)（`MD.Ch04.gramProjectedEuler`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback。
+
+签名SHA256：`f386a6680c2cf557c39b33683006c5227044ece14eb2a98acdcf5e443a67c787`；原文SHA256：`da5c27ab03ffbd42da3d09c9438f3b4706c3fefc73e20ea6929110a98920d8f2`。

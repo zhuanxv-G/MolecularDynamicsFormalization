@@ -32,3 +32,5 @@ import ch04_section43b
 import ch04_section432
 import ch04_section432extra
 import ch04_section433
+import ch04_section434
+import ch04_section434b

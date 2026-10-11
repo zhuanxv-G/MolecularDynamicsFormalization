@@ -1,0 +1,121 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14e",
+  "source_ids": [
+    "MD-4.3.4-ProjectedEulerPullback"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 182,
+      "printed_page": 160
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "366d42f105500c38ceaeb955fdb3f1a213d340dd8763ef9909935232a4a120cd",
+  "lean_sha256": "3e2d4c2782172db253ce17b2e38d169f815b46c1c576f13ed0686b7e07c8526a",
+  "signature_sha256": "26400bfff26f455edaa0334851261590966269faa824e192af8d562cd0039375",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinateMatrix",
+      "code_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGradient",
+      "code_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCotangentChart",
+      "code_sha256": "2a08d6144b54bc7c82af337165eed59f4f6b769ffe2f05ce752309a85eb3537d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookJ",
+      "code_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookMultiConstrainedMomentum",
+      "code_sha256": "1fac4bcd81665f87dbaf9d5a14f2d678efdf5a3e08a6b29c307109c16acaae31"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPotentialForce",
+      "code_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedIntegrator.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookProjectedEulerChart",
+      "code_sha256": "f56e499c6da80fdf92d62a56c14df938900d8844996105d374216c885b248715"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedIntegrator.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookProjectedEulerPosition",
+      "code_sha256": "dc7891ef0bfad8dc0447a256f4e865699da5f881a18a10c2944f57d1b3d85df8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedIntegrator.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookProjectedEulerPreMomentum",
+      "code_sha256": "98d99d80856329c6b475bc41b358e3edd6c05bb02838271d4b9c5ebb49adba0b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookSymplecticForm",
+      "code_sha256": "82d899dd1583612f614cf176a731c64a1371b5410c9922541e279cf77893dc3d"
+    }
+  ],
+  "paste_plus_pdf_bytes": 89438,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8180,
+      "sha256": "69bf72bed8f4dc648cfb311bdbb15582948e67ca76fc825a4f4aadce06e403d3"
+    },
+    "BATCH14e_PAGES.pdf": {
+      "bytes": 81258,
+      "sha256": "c8c1fc478c0e1f7a52012a0ab9724818c5dd2d0803279ec1e4ac37e6e73c1ff5"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 94198
+}

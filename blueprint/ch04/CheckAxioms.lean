@@ -79,3 +79,14 @@ import Blueprint.Ch04
 #print axioms MD.Ch04.componentPrinted
 #print axioms MD.Ch04.componentConstraintStep
 #print axioms MD.Ch04.componentSweep
+#print axioms MD.Ch04.projectedEulerPrinted
+#print axioms MD.Ch04.projectedEulerRelation
+#print axioms MD.Ch04.lemma41
+#print axioms MD.Ch04.multiMomentumPullback
+#print axioms MD.Ch04.projectedEulerPullback
+#print axioms MD.Ch04.cotangentMultiplier
+#print axioms MD.Ch04.cotangentProjection
+#print axioms MD.Ch04.cotangentHidden
+#print axioms MD.Ch04.cotangentRegularity
+#print axioms MD.Ch04.cotangentPullback
+#print axioms MD.Ch04.gramProjectedEuler
