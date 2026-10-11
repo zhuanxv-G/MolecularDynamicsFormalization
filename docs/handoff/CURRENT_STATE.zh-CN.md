@@ -1,11 +1,12 @@
 # 当前可操作状态
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：先整合第1章新返回件blueprint/ch01/mathcopilot_results/review.json及EAUDIT，再继续第4章§4.1；复用16条与完整检查。
+下一步：第1章五条返回件例外已整合并check通过，EAUDIT01待用户提交；继续第4章§4.1，复用16条及§4完整检查，ModifiedFrequencyLimit等第二路线尚待核验。
 
 顺序：第2章完成且复用 → 第3章 → 第4章 → 第5章 → 第6章；不进入第7章。
 跨章唯一总进度：docs/handoff/LOCAL_PIPELINE.md；当前章逐条进度：blueprint/ch04/PROGRESS.md。
 约束：正式库0 sorry且源码/签名不改；第1章交付冻结；其他任务文件保留不动。
+第1章2026-10-11返回件例外：四条NEEDS与旧Legendre FAIL原样保留，来源/输入绑定未验证；仅Legendre原页字段及hPositive修订，141条公理与完整check通过，五份EAUDIT01预算/裁页已核，无网站PASS或冻结。
 §4检查点：16条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。
 §3.7检查点：149条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。
 第3章全部本地流程完成：149条、旧映射全覆盖、七段文档、compact预算/哈希/裁页、全部节完整检查已验；网站和导师审校待完成。

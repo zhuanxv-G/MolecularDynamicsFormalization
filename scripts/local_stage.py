@@ -6,7 +6,7 @@ def canonical(p):
     if re.match(r'(?i)^blueprint/ch\d\d/',p):return 'blueprint/'+p.split('/',2)[1].lower()+'/'+p.split('/',2)[2]
     if re.fullmatch(r'(?i)blueprint/ch\d\d\.lean',p):return 'Blueprint/'+Path(p).name[0].upper()+Path(p).name[1:]
     return p
-def stage(paths):
+def stage(paths,allow_ch01_return=False):
     entries=subprocess.check_output(['git','ls-files','--stage'],cwd=ROOT,text=True).splitlines()
     removals=[]
     for e in entries:
@@ -21,10 +21,14 @@ def stage(paths):
     payload=[]
     for p in files:
         relative=canonical(p.relative_to(ROOT).as_posix())
-        assert not relative.startswith(('MolecularDynamics/','blueprint/ch01/','output/','tmp/','docs/review/check-full06/','scripts/__pycache__/','docs/review/CH01_'))
+        forbidden=('MolecularDynamics/','output/','tmp/','docs/review/check-full06/','scripts/__pycache__/')
+        if not allow_ch01_return:forbidden+=('blueprint/ch01/','docs/review/CH01_')
+        assert not relative.startswith(forbidden)
         blob=subprocess.check_output(['git','hash-object','-w','--path='+relative,str(p)],cwd=ROOT,text=True).strip()
         payload.append('100644 '+blob+'\t'+relative+'\0')
     subprocess.run(['git','-c','core.ignorecase=false','update-index','-z','--index-info'],cwd=ROOT,input=''.join(payload).encode(),check=True)
     staged=subprocess.check_output(['git','diff','--cached','--name-only'],cwd=ROOT,text=True).splitlines()
     assert all(canonical(p)==p for p in staged)
-    assert not any(p.startswith(('MolecularDynamics/','blueprint/ch01/','output/','tmp/','docs/review/check-full06/','scripts/__pycache__/','docs/review/CH01_')) for p in staged)
+    forbidden=('MolecularDynamics/','output/','tmp/','docs/review/check-full06/','scripts/__pycache__/')
+    if not allow_ch01_return:forbidden+=('blueprint/ch01/','docs/review/CH01_')
+    assert not any(p.startswith(forbidden) for p in staged)

@@ -1,22 +1,18 @@
 # 第1章五步流程本地进度
 
 范围：印刷p.1–45正文，Exercises排除；正式库基线63fa09227e1d898e0cacae3c33241d3d6ecba816，heartbeat ACTIVE/15分钟原样。
-下一步：本地部分完成；网站读取工具报code-mode host closed its stdout，BATCH01可按compact/BATCH01/README.md将a/b/c的PASTE.txt全文粘贴到新Task，只引用对应PDF；PDF读失败则保持待审。无新件确认状态，新件优先整合EAUDIT。
-本地部分完成并推送；当前141条；本地PASS 124；网站返回0；任务包23批，每批≤8条、每文件<40KB。
-
-输入限制适配：BATCH01a/b/c覆盖原五条，853字节指令+本批材料+裁页PDF，总字节分别227515/207628/130539，均<256000。冻结原文/签名/定义逐字一致；13导出页渲染像素与原书一致。网站具体计数与实际接收未验证；本轮无Lean源码变化，不重复全章Lean检查。原逐条网站状态保持待审。
-
-读取工具故障应对：PASTE.txt把材料放进输入框，三份文本12079/13658/16427字节，逐字含完整MATERIALS，总输入+对应PDF227091/207204/130115字节。原输入与PDF哈希保持；网站接收及PDF读取未验证，未收到审校结果。该错误未证明文件不存在；本地验证不能替代网站原页审校。
+下一步：按CURRENT_STATE顶部接续；全章已覆盖，终检和推送完成后等待用户提交INDEX.md中的网站批次。
+当前141条；本地PASS 124；网站返回5；任务包23批，每批≤8条、每文件<40KB。
 
 ## 逐条进度
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明 |
 |---|---|---|---|---|---|
-| MD-1.5.3-Thm1.1 | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计 / BATCH01 | existing_bridge |
-| MD-1.2-EnergyConservation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计 / BATCH01 | existing_bridge |
-| MD-1.3-NewtonEulerLagrange | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计 / BATCH01 | existing_bridge |
-| MD-1.4-LegendreHamiltonian | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | 待网站审计 / BATCH01 | sorry / 一般配置相关正定矩阵Legendre理论；原文字面前提疑点。 |
-| MD-1.5.1-FlowInverse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计 / BATCH01 | existing_bridge |
+| MD-1.5.3-Thm1.1 | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN / BATCH01 | existing_bridge |
+| MD-1.2-EnergyConservation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN / BATCH01 | existing_bridge |
+| MD-1.3-NewtonEulerLagrange | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN / BATCH01 | existing_bridge |
+| MD-1.4-LegendreHamiltonian | CORRECTED/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN / BATCH01 | sorry / 一般配置相关对称正定矩阵Legendre上确界理论未补证明；保持sorry。 |
+| MD-1.5.1-FlowInverse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN / BATCH01 | existing_bridge |
 | MD-1.1-Schrodinger | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计 / BATCH02 | definition |
 | MD-1.1-NewtonModel | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计 / BATCH02 | definition |
 | MD-1.1-HardSphere | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | 待网站审计 / BATCH02 | definition |
@@ -369,7 +365,7 @@
 ## 导师判断与缺失理论
 
 - MD-1.5.3-Thm1.1：按原页核对所有量词、实际导数及完整结论；显式技术前提与范围见[EXTRA]和对应表；既有桥接适用于该签名。；问题详见JSON issues。
-- MD-1.4-LegendreHamiltonian：M=-1,U=p=0时目标v²/2无界；字面可逆前提不足；配置相关一般矩阵不能由固定对角库推出。；一般配置相关正定矩阵Legendre理论；原文字面前提疑点。
+- MD-1.4-LegendreHamiltonian：旧仅可逆签名确有负质量及非对称反例；新hPositive展开继承背景并保留配置相关矩阵和全部六项结论；待EAUDIT01独立语义审校。；一般配置相关对称正定矩阵Legendre上确界理论未补证明；保持sorry。
 - MD-1.1-HardSphere：原文standard rules含方向/法向冲量等未明说内容；当前关系保留不可穿透和两守恒量，但尚不能据此声称完整散射模型。；问题详见JSON issues。
 - MD-1.1.1-MorseMinimum：最小值和井深的全部数学结论已保留；a的定性参数解释合并在context_notation，对照表单独列明，不伪造曲率原文公式。；三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。
 - MD-1.1.2-Yukawa：逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。；问题详见JSON issues。
@@ -425,4 +421,8 @@
 ## 验证证据
 
 - 全部45原页视觉核对索引：source_page_checks.json；逐次本地证明尝试：proof_attempts.json；完整check报告：validation/各节及最终目录。
-- 原页转录、本地语义判定、Lean检查及网站审计分别登记；原文仍DRAFT，网站尚未返回。
+- 原页转录、本地语义判定、Lean检查及网站审计分别登记；五条返回件已登记（来源及输入绑定未核验）；旧四条NEEDS/一条FAIL保留，新签名待EAUDIT01重审，不冻结。
+
+## 2026-10-11 返回件例外
+
+仅Legendre原页字段分类/坐标维数及签名正定背景修订，全部六项结论保留；原签名、原始返回和哈希见mathcopilot_results/integration20261011/RECEIPT.json。当前单文件与完整check通过，含sorryAx仍incomplete；EAUDIT01五份三件预算和原页像素相等已核，网站提交未测试。

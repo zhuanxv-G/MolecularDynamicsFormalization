@@ -167,14 +167,17 @@ Original: The Legendre supremum is attained precisely at M(q)⁻¹p and yields H
 [ERRATUM?] The literal invertibility premise alone does not imply a bounded objective:
 M = -1, U = 0, p = 0 gives v²/2. Convexity/positive definiteness may be inherited
 from the abstract convex Legendre definition and the mechanical mass model on p.23;
-independent audit must settle the intended premise. It has not been silently added.
+[EXTRA] EAUDIT01: hPositive explicitly unfolds the inherited symmetric positive
+definite mechanical background. The literal invertibility sentence stays in JSON;
+the old arbitrary-invertible signature and counterexamples remain in the receipt.
 The full configuration-dependent matrix M(q) is retained. The fixed positive
 diagonal library theorem cannot establish this signature. This draft is unproved.
 The conjuncts keep boundedness, supremum, exact maximizing velocity, momentum
 gradient, and the energy identity after the inverse-velocity substitution. -/
 theorem hamiltonian_legendre_transform {n : ℕ}
     (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)
-    (q : Position n) (p : Momentum n) (hM : IsUnit (M q)) :
+    (q : Position n) (p : Momentum n) (hM : IsUnit (M q))
+    (hPositive : (M q).PosDef) :
     BddAbove (range (fun v : Velocity n =>
       inner ℝ p v - variableMassLagrangian M U q v)) ∧
     sSup (range (fun v : Velocity n => inner ℝ p v - variableMassLagrangian M U q v)) =

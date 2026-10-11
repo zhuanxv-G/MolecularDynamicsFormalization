@@ -1,0 +1,149 @@
+逐字核对原页JSON，再只读核对实际Lean陈述及以下全部实际定义；逐项审[EXTRA]/疑误、对象、量词、前提与全部结论。不得改工程或补证明。材料不足/读页失败写NEEDS_HUMAN，未核对不记PASS。只返回本source_id的json_review和audit；同时回显MANIFEST的source_json_sha256和lean_sha256。
+
+Lean4.34.0/Mathlibv4.34.0；namespace MD.Ch01；noncomputable；open Set Filter MolecularDynamics；三维粒子/广义配置均为EuclideanSpace ℝ (Fin n)。完整定义摘录是审校材料，不是独立Lean工程。
+
+## 本条JSON
+
+{
+  "source_id": "MD-1.5.1-FlowInverse",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.5.1",
+  "printed_page": "26",
+  "pdf_page": "49",
+  "statement_latex": "The classical systems treated here can be solved forward or backward in time. Observe that $\\mathcal{F}_{-t}\\mathcal{F}_t=\\operatorname{Id}$ (the identity map), thus the flow map is invertible and, indeed, the family of flow maps defined for different values of $t$ form an Abelian group under the operation of composition ($\\mathcal{F}_t\\mathcal{F}_s=\\mathcal{F}_s\\mathcal{F}_t=\\mathcal{F}_{t+s}$).",
+  "proof_latex": null,
+  "proof_note": "原文用Observe that直接断言；没有独立证明。随后Hamiltonian守恒属于另一个结论，不纳入本条。",
+  "context_notation": [
+    "式(1.5)：$\\dot{\\boldsymbol{z}}=\\boldsymbol{f}(\\boldsymbol{z})$，$\\boldsymbol{z}(0)=\\boldsymbol{\\xi}$；$m$维空间及flow map定义$\\mathcal{F}_t(\\boldsymbol{\\xi})=\\boldsymbol{z}(t)$：§1.5.1印刷p.26/PDF49。",
+    "正文明确继承前小节存在唯一性前提；势能下界、固定正定质量、能量限制下位置紧性：§1.5印刷p.25–26/PDF48–49。",
+    "IsGlobalMechanicalFlowOn只假设逐初值全实时间ODE解、ψ 0 z=z和状态域S不变；不把反演、群律或双射藏进假设。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch01.flow_inverse",
+  "reusable_proofs": [
+    "MolecularDynamics.globalMechanicalFlow_inverse",
+    "MolecularDynamics.globalMechanicalFlow_add",
+    "MolecularDynamics.globalMechanicalFlow_commute",
+    "MolecularDynamics.globalMechanicalFlow_bijOn"
+  ],
+  "extra_assumptions": [
+    "hψ: 显式全实时间解及S不变，落实正文双向可解和flow map前提；本条不证明全局流存在。",
+    "hreg: F在Q为C¹，用于ODE唯一性，落实正文继承的存在唯一性前提。",
+    "_hm: 正固定质量，使对象限于原文分子Hamiltonian系统。"
+  ],
+  "statement_scope": "完整反演/可逆/Abelian群律段；恒等元ψ0由flow定义，结论覆盖双向反演、双射和加法/交换律。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+
+## 实际签名
+
+theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (S : Set (PhaseSpace n))
+    (ψ : ℝ → PhaseSpace n → PhaseSpace n)
+    (_hm : ∀ i, 0 < m i)
+    (hψ : IsGlobalMechanicalFlowOn m (fun q => -gradient U q) Q S ψ)
+    (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 (fun x => -gradient U x) q) :
+    (∀ z ∈ S, ψ 0 z = z) ∧
+    (∀ t : ℝ, ∀ z ∈ S, ψ (-t) (ψ t z) = z ∧ ψ t (ψ (-t) z) = z) ∧
+    (∀ t : ℝ, BijOn (ψ t) S S) ∧
+    ∀ s t : ℝ, ∀ z ∈ S,
+      ψ t (ψ s z) = ψ s (ψ t z) ∧ ψ t (ψ s z) = ψ (t + s) z
+
+## 旧返回件
+
+{
+  "source_id": "MD-1.5.1-FlowInverse",
+  "json_review": {
+    "status": "APPROVED",
+    "issue_codes": [],
+    "corrected_json": null,
+    "issues": [],
+    "evidence": [
+      "已查看PDF第49页原页图像，对应印刷p.26：前后时间可解、F_{−t}F_t=Id、可逆和Abelian合成群律整段与statement_latex一致。",
+      "同页(1.5)及前一段明确以满足上一小节存在唯一性条件的分子Hamiltonian系统定义流F_t(ξ)=z(t)；已读取PDF48–49的固定正定质量、势能下界及能量约束下位置有界背景。",
+      "原文用“Observe that”直接断言，没有独立完整证明；proof_latex=null正确。随后的Hamiltonian守恒句未被并入本条。"
+    ]
+  },
+  "audit": {
+    "lean_decl": "MD.Ch01.flow_inverse",
+    "verdict": "NEEDS_HUMAN",
+    "explanation": "Ch01.lean:202–221的结论量化全部实时间及S中全部状态，显式包含恒等元、左右反演、BijOn(ψ t) S S、交换律及时间加法律，已见结论覆盖原段。_hm为固定正质量机械背景，hreg可用于唯一性，hψ意在提供全实时间ODE轨迹和状态域不变；这些是合理显式化，但必须检查实际定义。GlobalFlow.lean当前缺失，未找到IsGlobalMechanicalFlowOn，无法确认hψ真正给出每个初值的全实时间解、ψ0=z和S不变，还是把逆映射、双射或群律直接纳入前提，也无法核实其ODE及定义域限制。原文双向可解在此被作为已给流的前提，本声明本身没有证明全局流存在，符合条目的已声明范围。恒等元由流的初值条件给出本身合理；其余群律必须由ODE唯一性推出。证明状态：正文有复用证明且没有直接sorry；依赖链和编译未核验。因核心流谓词和本批MANIFEST未提供，语义判定保留。",
+    "counterexample": null,
+    "suggested_fix": "补齐本批GlobalFlow.lean、相关LocalTrajectories.lean及唯一性依赖和MANIFEST.json；核实IsGlobalMechanicalFlowOn只包含真实全时间解、初值和S不变，不包含反演、双射或群律。若隐藏了这些结论，应删除循环前提，再从唯一性推出结论。"
+  }
+}
+
+## MolecularDynamics.CoordinateMasses (MolecularDynamics/Chapter01/NBody.lean:19)
+
+abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ
+
+## MolecularDynamics.Force (MolecularDynamics/Notation.lean:20)
+
+abbrev Force (n : ℕ) := Position n → Position n
+
+## MolecularDynamics.IsGlobalMechanicalFlowOn (MolecularDynamics/Chapter01/GlobalFlow.lean:41)
+
+def IsGlobalMechanicalFlowOn {n : ℕ} (m : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (S : Set (PhaseSpace n))
+    (ψ : ℝ → PhaseSpace n → PhaseSpace n) : Prop :=
+  (∀ z ∈ S, IsMechanicalSolutionOn m F Q univ (fun t => ψ t z) ∧ ψ 0 z = z) ∧
+  ∀ t, MapsTo (ψ t) S S
+
+## MolecularDynamics.IsMechanicalSolutionOn (MolecularDynamics/Chapter01/LocalTrajectories.lean:74)
+
+def IsMechanicalSolutionOn {n : ℕ} (μ : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (I : Set ℝ) (γ : ℝ → PhaseSpace n) : Prop :=
+  (∀ t ∈ I, (γ t).1 ∈ Q) ∧
+    IsIntegralCurveOn γ (fun _ z => mechanicalVectorField μ F z) I
+
+## MolecularDynamics.MassMatrix (MolecularDynamics/Notation.lean:18)
+
+abbrev MassMatrix (n : ℕ) := Matrix (Fin n) (Fin n) ℝ
+
+## MolecularDynamics.Momentum (MolecularDynamics/Notation.lean:15)
+
+abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+## MolecularDynamics.PhaseSpace (MolecularDynamics/Notation.lean:17)
+
+abbrev PhaseSpace (n : ℕ) := Position n × Momentum n
+
+## MolecularDynamics.Position (MolecularDynamics/Notation.lean:13)
+
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+## MolecularDynamics.PotentialEnergy (MolecularDynamics/Notation.lean:21)
+
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+
+## MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+
+abbrev Q (n : ℕ) := Fin n → ℝ
+
+## MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+
+abbrev Q (n : ℕ) := Fin n → ℝ
+
+## MolecularDynamics.Velocity (MolecularDynamics/Notation.lean:14)
+
+abbrev Velocity (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+## MolecularDynamics.diagonalMassMatrix (MolecularDynamics/Chapter01/NBody.lean:22)
+
+def diagonalMassMatrix {n : ℕ} (masses : CoordinateMasses n) : MassMatrix n :=
+  Matrix.diagonal masses
+
+## MolecularDynamics.mechanicalVectorField (MolecularDynamics/Chapter01/LocalTrajectories.lean:69)
+
+noncomputable def mechanicalVectorField {n : ℕ} (μ : CoordinateMasses n)
+    (F : Force n) (z : PhaseSpace n) : PhaseSpace n :=
+  (velocityOperator μ z.2, F z.1)
+
+## MolecularDynamics.velocityOperator (MolecularDynamics/Chapter01/LocalTrajectories.lean:24)
+
+noncomputable def velocityOperator {n : ℕ} (μ : CoordinateMasses n) :
+    Momentum n →L[ℝ] Velocity n :=
+  (Matrix.toEuclideanLin (diagonalMassMatrix μ)⁻¹).toContinuousLinearMap

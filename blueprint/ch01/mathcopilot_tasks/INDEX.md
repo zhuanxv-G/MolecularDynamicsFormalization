@@ -1,10 +1,8 @@
 # 第1章MathCopilot批次索引
 
-每个文件整段粘贴一个Task，先A后C，B取消；网站只由用户提交。本地交付代码版本c63b079；输入版本以批次MANIFEST.json的SHA256为准。
+每个文件整段粘贴一个Task，先A后C，B取消；网站只由用户提交。输入版本以批次MANIFEST.json的SHA256为准。
+BATCH01输入限制适配：优先按[精简提交说明](compact/BATCH01/README.md)分a/b/c三个Task提交。每Task只粘贴短PROMPT.txt并引用对应材料MD和裁页PDF；原五条保持完整，按source_id整合三个返回件；网站接收未验证。
 
-2026-10-09输入限制补充：BATCH01推荐用[精简提交说明](compact/BATCH01/README.md)，分a/b/c三个Task，每份指令853字节，只引用该子任务的材料MD与裁页PDF，两附件+指令合计均小于256000字节。原五条及冻结输入保持原样；三个返回文件逐条整合后才算原BATCH01覆盖完整。旧包与BATCH02–23仍保留；网站实际接收未验证。
-
-网站读取工具故障补充：若报code-mode host closed its stdout，按上述说明将各子任务PASTE.txt全文复制到新Task输入框，只关联对应PDF；PASTE不是供上传的替代附件。若PDF仍读失败则不能完成原页审校，保留待审并反馈维护方。
 
 | 批次 | source_id | 上传文件及页码 | 建议顺序 |
 |---|---|---|---|
@@ -102,3 +100,7 @@ MolecularDynamics/Chapter01/TorusPeriod.lean
 MolecularDynamics/Chapter01/VariationalEquation.lean
 MolecularDynamics/Notation.lean
 ```
+
+## EAUDIT01：返回件整合
+
+BATCH01旧compact是历史输入；优先提交[EAUDIT01/INDEX.md](EAUDIT01/INDEX.md)。四条原NEEDS、一条旧FAIL已保存；新签名待网站重审，无网站PASS或冻结。

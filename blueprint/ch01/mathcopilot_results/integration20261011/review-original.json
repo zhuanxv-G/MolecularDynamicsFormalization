@@ -1,0 +1,184 @@
+[
+  {
+    "source_id": "MD-1.5.3-Thm1.1",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF第55页原页图像，对应印刷p.32：Theorem 1.1的定理句与statement_latex一致，定理和紧随的证明讨论均在该页。",
+        "同页强局部极小定义为0<‖q−q*‖<ε时U(q)>U(q*)；稳定性定义使用t≥0上的距离上确界严格小于ε。正文没有显式写ε、δ>0，context_notation已说明正容差解释。",
+        "同页证明讨论从“The proof of this theorem relies on showing”开始并指向[216]；没有独立完整证明，proof_latex=null正确。已读取PDF54的平衡点及C¹背景和PDF48的固定正定质量背景。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.theorem_1_1",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:82–90确实使用正对角质量m、开放Q、Q内光滑U及严格极小前提，结论包含(q₀,0)为平衡点和未来稳定性。hm、hQ及q₀∈Q作为机械背景和定义域资格合理；开放Q中的严格极小可以对应原文局部定义，附加平衡点结论也符合上下文。但本批所需EuclideanStability.lean、FutureFlow.lean、PhaseMetric.lean等当前未提供，无法展开IsFutureMechanicalStableEuclidean，核实正ε/δ、全部邻近初值、未来解存在、全部未来时间、真实欧氏距离及有界且严格受限的上确界。旧缓存中IsStrictPotentialMinOn展开为q₀∈Q且存在R>0使Q内非中心点在距离R内满足U(q₀)<U(q)，IsMechanicalEquilibrium展开为机械向量场为零；该缓存未由本批MANIFEST绑定，不能替代本批定义。证明状态：该声明正文有复用证明且没有直接sorry；依赖链及编译未核验。语义判定因关键定义缺失保留。",
+      "counterexample": null,
+      "suggested_fix": "补齐与Ch01.lean同一版本的EuclideanStability.lean、FutureFlow.lean、PhaseMetric.lean、PotentialBarriers.lean、Equilibrium.lean及其相关导入和本批MANIFEST.json，再逐项展开稳定性谓词核查；目前没有足够证据要求修改定理签名。"
+    }
+  },
+  {
+    "source_id": "MD-1.2-EnergyConservation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF第42页原页图像，对应印刷p.19：开头句与statement_latex逐字一致。",
+        "紧接的展示计算为dE/dt=Σm_j q̇_j·q̈_j+Σ(∂U/∂q_j)·q̇_j=Σ(m_j q̈_j+∂U/∂q_j)·q̇_j=0，与proof_latex一致；图像中函数E为数学斜体。",
+        "PDF41/印刷p.18给出(1.3)、(1.4)，明确三维坐标数N_c=3N和每个粒子质量重复三次；PDF42后续总动量讨论未被并入本条。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.energy_conservation",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:54–59中的IsNewtonTrajectoryOn已实际展开：q在时间域内取值于Q，q及deriv q都有HasDerivAt见证，且massOperator m作用于二阶导数等于−gradient U；没有仅靠总化deriv等式冒充可微性。已读取现有NBody.lean：nBodyTotalEnergy=Σ_i m_i(v_i)²/2+U(q)，因此结论确实是位置—速度能量，含每个t上的零导数及同一Ioo a b内任意s,t的能量相等。取n=3N、m_(j,α)=m_j即恢复原书粒子公式；任意固定正对角质量是合理推广，不削弱守恒结论。hm对应物理正质量，hU保证真实梯度及链式法则，开连通时间区间对应单段解；允许空区间不妨碍非空区间结论。证据缺口：massOperator及相关桥接定义只在旧缓存LocalTrajectories.lean中找到，未取得与本批Ch01.lean匹配的依赖文件和MANIFEST；不能确认本批实际导入的算子就是所见固定对角质量算子。证明状态：声明正文无直接sorry；没有完成本批依赖链或编译核验。因此暂不签发PASS。",
+      "counterexample": null,
+      "suggested_fix": "补齐本批版本的LocalTrajectories.lean、NBody.lean、ParticleCoordinates.lean、Hamiltonian.lean、EnergyConservation.lean及MANIFEST.json，确认massOperator为固定对角质量作用并绑定输入版本；已见量词和守恒结论无需修订。"
+    }
+  },
+  {
+    "source_id": "MD-1.3-NewtonEulerLagrange",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF第46页原页图像，对应印刷p.23：首句、d/dt(∂L/∂q̇)=∂L/∂q及完整括号说明与statement_latex一致。",
+        "括号说明明确为N_c=3N个方程、每个原子坐标一个；下一段才进入坐标变换。",
+        "PDF45/印刷p.22定义固定质量L=q̇ᵀMq̇/2−U(q)；本条没有独立证明，proof_latex=null正确。辅助动量关系可见PDF47/印刷p.24。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.newton_iff_euler_lagrange",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:136–163的签名包含真正的双向↔，不是旧单向结论。其牛顿侧在54–59行明确包含Q内轨迹、真实一阶和二阶时间导数及质量算子方程；hm、hI、hU分别对应固定正质量、双侧时间导数所在的开放时间域、实际位置梯度，均为合理显式前提。原文这里使用p.22的固定质量L，并非随后配置相关质量模型，因此固定对角模型的对象选择合适，n=3N且按粒子重复质量可涵盖所有坐标方程。然而Lagrangian.lean当前缺失，未找到IsEulerLagrangeTrajectoryOn的真实定义；无法核实它是否使用实际L的速度/位置偏导，是否覆盖全部坐标和Q内轨迹，以及是否把牛顿条件或所需结论预置在谓词中。massOperator本批定义及输入MANIFEST也未提供。证明状态：该声明正文无直接sorry；双向证明调用的依赖尚未核验。右侧关键谓词缺失使语义审计不能判PASS。",
+      "counterexample": null,
+      "suggested_fix": "补齐本批Lagrangian.lean及其导入、LocalTrajectories.lean、NBody.lean和MANIFEST.json；展开右侧为实际L(q,v)的偏导与时间导数条件，并检查全部坐标及两个方向。如包含牛顿结论作前提，应移除该循环条件。"
+    }
+  },
+  {
+    "source_id": "MD-1.4-LegendreHamiltonian",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "INCOMPLETE_PROOF_AS_PROOF",
+        "CONTEXT_DEPENDENT_INVERTIBILITY",
+        "GENERALIZED_COORDINATE_DIMENSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.4-LegendreHamiltonian",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.4",
+        "printed_page": "24",
+        "pdf_page": "47",
+        "statement_latex": "If $\\boldsymbol{M}(\\boldsymbol{q})$ is invertible, the supremum is achieved precisely when\n\\[\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p},\\]\nwhich gives the standard definition of the momentum vector $\\boldsymbol{p}$ in terms of velocities,\n\\[\\boldsymbol{p}=\\frac{\\partial L}{\\partial\\dot{\\boldsymbol{q}}}=\\boldsymbol{M}(\\boldsymbol{q})\\dot{\\boldsymbol{q}},\\]\nand, with $\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p}$, the Legendre transformation results in a new function\n\\[H(\\boldsymbol{q},\\boldsymbol{p})\\stackrel{\\mathrm{def}}{=}\\boldsymbol{p}^TM(\\boldsymbol{q})^{-1}\\boldsymbol{p}/2+U(\\boldsymbol{q}).\\]\nThis is precisely the energy function, written in terms of positions and momenta.",
+        "proof_latex": null,
+        "proof_note": "原文仅展示将U(q)从上确界中移出的代数恒等式，未独立证明上界、达到条件及唯一性；该段原文完整保存于proof_discussion_latex。",
+        "context_notation": [
+          "同页Legendre定义：凸函数$g(\\boldsymbol{\\xi}):\\mathbb{R}^m\\to\\mathbb{R}$，$\\widetilde g(\\boldsymbol{\\eta})=\\sup_{\\boldsymbol{\\xi}}(\\boldsymbol{\\eta}^T\\boldsymbol{\\xi}-g(\\boldsymbol{\\xi}))$；印刷p.24/PDF47。",
+          "配置相关质量矩阵来自$\\Phi^{\\prime}(\\boldsymbol{Q})^T\\boldsymbol{M}\\Phi^{\\prime}(\\boldsymbol{Q})$；§1.3印刷p.23/PDF46要求变换Jacobian满秩且所得质量矩阵可逆。在固定正质量的机械背景中，这给出对称正定矩阵；对称性和正定性不是单独由可逆推出。",
+          "$\\boldsymbol{q},\\boldsymbol{v},\\boldsymbol{p}$属于广义配置坐标空间；无约束例为$\\mathbb{R}^{N_c}$，约束参数化可为$\\mathbb{R}^{N_d}$，见印刷p.23/PDF46。$H$是位置和动量中的能量，见印刷p.24/PDF47。"
+        ],
+        "issues": [
+          {
+            "code": "POSSIBLE_ERRATUM",
+            "status": "ISSUE",
+            "detail": "保留原句“If M(q) is invertible”。作为任意实矩阵命题，可逆性不足；在p.23的JᵀM_cartJ及固定正质量、满秩机械背景下，对称正定性已继承，故不能仅凭该句认定原书在其上下文中错误。Lean的任意可逆矩阵签名仍有反例。"
+          },
+          {
+            "code": "REUSE_SCOPE_GAP",
+            "status": "confirmed",
+            "detail": "列出的复用定理针对固定正对角质量，不能覆盖任意配置相关矩阵的上界、上确界、精确达到条件及速度梯度。"
+          },
+          {
+            "code": "INCOMPLETE_PROOF_AS_PROOF",
+            "status": "corrected",
+            "detail": "PDF47/印刷p.24只有准备性代数恒等式；proof_latex改为null，原有段落转存proof_discussion_latex，未补写原书证明。"
+          },
+          {
+            "code": "GENERALIZED_COORDINATE_DIMENSION",
+            "status": "corrected",
+            "detail": "PDF46/印刷p.23明确允许从R^{N_d}到R^{N_c}的约束参数化；广义坐标及对应速度、动量的维数不能一律固定为N_c。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+        "reusable_proofs": [
+          "MolecularDynamics.massHamiltonian_eq_legendre_sup",
+          "MolecularDynamics.legendre_objective_eq_massHamiltonian_iff"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "从“If M(q) is invertible”到“written in terms of positions and momenta.”；前一计算为proof_discussion_latex，前置抽象定义为context_notation；Hamilton方程属于下一条。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "LOCAL_DRAFT",
+            "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+            "before_sha256": "134f84e19b17bad810cdb8cdd0308bbcefb36fe2b17b2402605eae163c911a15",
+            "after_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00"
+          },
+          {
+            "stage": "INDEPENDENT_BATCH01_REVIEW",
+            "reason": "依据PDF46–47保留原陈述，调整不完整证明的字段分类，明确继承的机械质量背景及广义坐标维数；只在审校输出中修订，未修改输入文件。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/BATCH01_20261010/pages/pdf46.png; .mathcopilot/reviews/BATCH01_20261010/pages/pdf47.png",
+        "proof_discussion_latex": "In the case of the Lagrangian $L(\\boldsymbol{q},\\boldsymbol{v})=\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find\n\\[\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-(\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})))=\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2)+U(\\boldsymbol{q}).\\]"
+      },
+      "issues": [
+        {
+          "code": "INCOMPLETE_PROOF_AS_PROOF",
+          "detail": "PDF47/印刷p.24的计算只将U(q)移出sup，不能独立证明所摘陈述。依本批proof_latex的完整证明约定改为null，原段完整转存proof_discussion_latex。"
+        },
+        {
+          "code": "CONTEXT_DEPENDENT_INVERTIBILITY",
+          "detail": "原句确实只写可逆，保持原文并标ISSUE；PDF46给出JᵀM_cartJ和满秩机械背景，继承对称正定性。仅以任意矩阵的可逆性解释则错误，不能静默把原句改写为正定性命题。"
+        },
+        {
+          "code": "GENERALIZED_COORDINATE_DIMENSION",
+          "detail": "PDF46允许R^{N_d}→R^{N_c}的约束参数化；原context_notation一律将广义q、v、p放在R^{N_c}过窄，已修正。"
+        }
+      ],
+      "evidence": [
+        "已查看PDF第47页原页图像，对应印刷p.24：从“If M(q) is invertible”到能量对应句的措辞、逆矩阵速度、动量偏导和H公式均与statement_latex一致，未改原文。",
+        "同页先针对convex function定义Legendre变换，随后只展示sup_v(pᵀv−(vᵀM(q)v/2−U(q)))=sup_v(pᵀv−vᵀM(q)v/2)+U(q)；未给出独立完整的最大化证明。",
+        "已查看PDF46/印刷p.23：广义质量由Φ′(Q)ᵀMΦ′(Q)给出，并要求Jacobian满秩；在正物理质量背景下这为对称正定矩阵。该页也明确允许约束参数化维数N_d。",
+        "Ch01.lean:62–71提供matrixAction、variableMassLagrangian及variableMassHamiltonian的实际定义；175–190行只假设IsUnit(M q)，且证明直接为sorry。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+      "verdict": "FAIL",
+      "explanation": "已展开本文件内定义：matrixAction A v=A v，L(q,v)=vᵀM(q)v/2−U(q)，H(q,p)=pᵀM(q)⁻¹p/2+U(q)。对象、配置相关矩阵、速度/动量变量以及上界、上确界、精确达到条件、速度梯度、动量回代和能量对应六项结论均保留；失败在前提。IsUnit(M q)只保证可逆，没有约束M(q)对称或正定，遗漏原书机械质量构造的关键背景。负质量反例使首项BddAbove直接为假；非对称反例使速度梯度结论为假，且即使二次L凸也无法恢复声称的M(q)⁻¹p最大化公式。动量回代及代入速度后的能量恒等式可在可逆条件下成立，不能补救其余错误。固定正对角质量复用定理不能覆盖本签名。证明状态：190行是直接sorry；FAIL依据签名及反例，独立于证明是否完成。",
+      "counterexample": "反例一：n=1，M(x)=[−1]对所有x恒定，U(x)=0，q=0，p=0。M(q)可逆且其逆仍为[−1]，但L(q,v)=−v²/2，目标pᵀv−L=v²/2无上界，故第一合取项失败。反例二：n=2，M(x)=[[1,1],[0,1]]恒定，U=0，p=(1,0)。L(v)=(v₁²+v₁v₂+v₂²)/2为严格凸函数，在v=(1,0)处真实梯度为(1,1/2)，而M v=(1,0)，故HasGradientAt结论失败；真实最大化速度为(4/3,−2/3)，最大值2/3，声称的M⁻¹p=(1,0)和H=1/2也不正确。这些反例针对Lean的任意可逆矩阵签名，均不属于原书对称正定机械质量子类。",
+      "suggested_fix": "在独立修订的形式化签名中显式加入M(q)对称正定，或编码M(q)=JᵀM_cartJ、M_cart正定及J满列秩的机械构造；标明这是展开继承背景后的前提强化，保留原书字面陈述及ISSUE。仅加可逆或二次函数凸性不足以支持非对称矩阵的速度梯度公式。保留任意配置相关矩阵和全部六项结论，不能退回固定正对角模型冒充覆盖。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.1-FlowInverse",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF第49页原页图像，对应印刷p.26：前后时间可解、F_{−t}F_t=Id、可逆和Abelian合成群律整段与statement_latex一致。",
+        "同页(1.5)及前一段明确以满足上一小节存在唯一性条件的分子Hamiltonian系统定义流F_t(ξ)=z(t)；已读取PDF48–49的固定正定质量、势能下界及能量约束下位置有界背景。",
+        "原文用“Observe that”直接断言，没有独立完整证明；proof_latex=null正确。随后的Hamiltonian守恒句未被并入本条。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.flow_inverse",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:202–221的结论量化全部实时间及S中全部状态，显式包含恒等元、左右反演、BijOn(ψ t) S S、交换律及时间加法律，已见结论覆盖原段。_hm为固定正质量机械背景，hreg可用于唯一性，hψ意在提供全实时间ODE轨迹和状态域不变；这些是合理显式化，但必须检查实际定义。GlobalFlow.lean当前缺失，未找到IsGlobalMechanicalFlowOn，无法确认hψ真正给出每个初值的全实时间解、ψ0=z和S不变，还是把逆映射、双射或群律直接纳入前提，也无法核实其ODE及定义域限制。原文双向可解在此被作为已给流的前提，本声明本身没有证明全局流存在，符合条目的已声明范围。恒等元由流的初值条件给出本身合理；其余群律必须由ODE唯一性推出。证明状态：正文有复用证明且没有直接sorry；依赖链和编译未核验。因核心流谓词和本批MANIFEST未提供，语义判定保留。",
+      "counterexample": null,
+      "suggested_fix": "补齐本批GlobalFlow.lean、相关LocalTrajectories.lean及唯一性依赖和MANIFEST.json；核实IsGlobalMechanicalFlowOn只包含真实全时间解、初值和S不变，不包含反演、双射或群律。若隐藏了这些结论，应删除循环前提，再从唯一性推出结论。"
+    }
+  }
+]

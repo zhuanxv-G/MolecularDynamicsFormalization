@@ -1,0 +1,117 @@
+{
+  "batch": "EAUDIT01",
+  "source_ids": [
+    "MD-1.2-EnergyConservation"
+  ],
+  "source_json_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+  "lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af",
+  "signature_sha256": "f127edcebe32563ae5ff4f88df5cda69ff6ede9ecfe10bed2ee5a4dd7dc9051e",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "namespace": "MolecularDynamics",
+      "name": "CoordinateMasses",
+      "code_sha256": "50939e8d47d2aea37f48a71423ee3ae48b297b19ba4394b17b02a93c1f4510a4"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "namespace": "MD.Ch01",
+      "name": "IsNewtonTrajectoryOn",
+      "code_sha256": "e1d11e0d40e26e7100cfcd1a1de37b7839cfb48e6eed41cf0e6b8c3361269245"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "MassMatrix",
+      "code_sha256": "98dc2589cf902b088edd39fbacfd5ceaeb43e0ec8cd3609f562eac8091e9df77"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "Momentum",
+      "code_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "Position",
+      "code_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "PotentialEnergy",
+      "code_sha256": "043ad8ba46ea4ec31839daabf34e8017edbc3d00188fad3366e80af19ddc6116"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "Velocity",
+      "code_sha256": "22e67e3397d83abd0c1c1aeaa28366555c9f365d02734f9df1fd443624636cf1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "namespace": "MolecularDynamics",
+      "name": "diagonalMassMatrix",
+      "code_sha256": "56c215aa345f33da76588c37690a0b34fd6c467f706ccbb6c832962abd41e7db"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "namespace": "MolecularDynamics",
+      "name": "massOperator",
+      "code_sha256": "544a0df334ecbed51b5345a2603421d4e22e4da5a7da49a17376aebbd54fa187"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "namespace": "MolecularDynamics",
+      "name": "nBodyKineticEnergy",
+      "code_sha256": "af191effccc69cca71016191d27b051505bbd5ef1bdf49f095904846eb91ac21"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "namespace": "MolecularDynamics",
+      "name": "nBodyTotalEnergy",
+      "code_sha256": "a0c96abea0e68b3bd52ce523fcefc6d1ea599601f2080c37653f99d895a37c6e"
+    }
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 41,
+      "printed_page": 18
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 42,
+      "printed_page": 19
+    }
+  ],
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8508,
+      "sha256": "1692e9519a8c649d0e160f8c6946a2def9e6a8a8906090eca2ebe79498af6ecc"
+    },
+    "EAUDIT01b_PAGES.pdf": {
+      "bytes": 120352,
+      "sha256": "b4674018b834df1ab6c82ad328e2cdb0f269e77191e58b91d6781a17c9951cfc"
+    }
+  },
+  "validation": {
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 133039
+}

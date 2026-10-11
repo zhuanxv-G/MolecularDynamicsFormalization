@@ -268,12 +268,12 @@ theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
   "printed_page": "24",
   "pdf_page": "47",
   "statement_latex": "If $\\boldsymbol{M}(\\boldsymbol{q})$ is invertible, the supremum is achieved precisely when\n\\[\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p},\\]\nwhich gives the standard definition of the momentum vector $\\boldsymbol{p}$ in terms of velocities,\n\\[\\boldsymbol{p}=\\frac{\\partial L}{\\partial\\dot{\\boldsymbol{q}}}=\\boldsymbol{M}(\\boldsymbol{q})\\dot{\\boldsymbol{q}},\\]\nand, with $\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p}$, the Legendre transformation results in a new function\n\\[H(\\boldsymbol{q},\\boldsymbol{p})\\stackrel{\\mathrm{def}}{=}\\boldsymbol{p}^TM(\\boldsymbol{q})^{-1}\\boldsymbol{p}/2+U(\\boldsymbol{q}).\\]\nThis is precisely the energy function, written in terms of positions and momenta.",
-  "proof_latex": "In the case of the Lagrangian $L(\\boldsymbol{q},\\boldsymbol{v})=\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find\n\\[\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-(\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})))=\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2)+U(\\boldsymbol{q}).\\]",
-  "proof_note": "仅有上述代数推导；原文没有证明“可逆即达到上确界”或唯一性。",
+  "proof_latex": null,
+  "proof_note": "原文仅展示将U(q)从上确界中移出的代数恒等式，未独立证明上界、达到条件及唯一性；该段原文完整保存于proof_discussion_latex。",
   "context_notation": [
     "同页Legendre定义：凸函数$g(\\boldsymbol{\\xi}):\\mathbb{R}^m\\to\\mathbb{R}$，$\\widetilde g(\\boldsymbol{\\eta})=\\sup_{\\boldsymbol{\\xi}}(\\boldsymbol{\\eta}^T\\boldsymbol{\\xi}-g(\\boldsymbol{\\xi}))$；印刷p.24/PDF47。",
-    "配置相关质量矩阵来自$\\Phi^{\\prime}(\\boldsymbol{Q})^TM\\Phi^{\\prime}(\\boldsymbol{Q})$，变化规则及满秩前提：§1.3印刷p.23/PDF46。因此对称/正定可能是继承的背景，不是“可逆”本身的推论，需独立审计裁决。",
-    "$\\boldsymbol{q},\\boldsymbol{v},\\boldsymbol{p}\\in\\mathbb{R}^{N_c}$，$H$为位置和动量中的能量，§1.4印刷p.24/PDF47。"
+    "配置相关质量矩阵来自$\\Phi^{\\prime}(\\boldsymbol{Q})^T\\boldsymbol{M}\\Phi^{\\prime}(\\boldsymbol{Q})$；§1.3印刷p.23/PDF46要求变换Jacobian满秩且所得质量矩阵可逆。在固定正质量的机械背景中，这给出对称正定矩阵；对称性和正定性不是单独由可逆推出。",
+    "$\\boldsymbol{q},\\boldsymbol{v},\\boldsymbol{p}$属于广义配置坐标空间；无约束例为$\\mathbb{R}^{N_c}$，约束参数化可为$\\mathbb{R}^{N_d}$，见印刷p.23/PDF46。$H$是位置和动量中的能量，见印刷p.24/PDF47。"
   ],
   "issues": [
     {
@@ -285,6 +285,24 @@ theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
       "code": "REUSE_SCOPE_GAP",
       "status": "open",
       "detail": "现有定理仅固定正对角m；本条保留任意配置相关M(q)、上界、sup、精确达到条件、动量偏导和能量对应，不能直接调用旧定理覆盖。"
+    },
+    {
+      "code": "INCOMPLETE_PROOF_AS_PROOF",
+      "status": "local_verified",
+      "detail": "PDF47/印刷p.24的计算只将U(q)移出sup，不能独立证明所摘陈述。依本批proof_latex的完整证明约定改为null，原段完整转存proof_discussion_latex。",
+      "receipt": "review.json"
+    },
+    {
+      "code": "CONTEXT_DEPENDENT_INVERTIBILITY",
+      "status": "local_verified",
+      "detail": "原句确实只写可逆，保持原文并标ISSUE；PDF46给出JᵀM_cartJ和满秩机械背景，继承对称正定性。仅以任意矩阵的可逆性解释则错误，不能静默把原句改写为正定性命题。",
+      "receipt": "review.json"
+    },
+    {
+      "code": "GENERALIZED_COORDINATE_DIMENSION",
+      "status": "local_verified",
+      "detail": "PDF46允许R^{N_d}→R^{N_c}的约束参数化；原context_notation一律将广义q、v、p放在R^{N_c}过窄，已修正。",
+      "receipt": "review.json"
     }
   ],
   "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
@@ -292,25 +310,36 @@ theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
     "MolecularDynamics.massHamiltonian_eq_legendre_sup",
     "MolecularDynamics.legendre_objective_eq_massHamiltonian_iff"
   ],
-  "extra_assumptions": [],
-  "statement_scope": "从“If M(q) is invertible”到“written in terms of positions and momenta.”；前一计算为proof_latex，前置抽象定义为context_notation；Hamilton方程属于下一条。",
-  "review_status": "DRAFT",
+  "extra_assumptions": [
+    "[EXTRA] hPositive : (M q).PosDef；展开p23正物理质量及满秩Jacobian继承的对称正定背景，任意可逆矩阵反例不属于此子类。字面可逆原句保留，配置相关M及全部六项结论不变。"
+  ],
+  "statement_scope": "从“If M(q) is invertible”到“written in terms of positions and momenta.”；前一计算为proof_discussion_latex，前置抽象定义为context_notation；Hamilton方程属于下一条。",
+  "review_status": "CORRECTED",
   "repair_log": [
     {
       "stage": "LOCAL_DRAFT",
       "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
       "before_sha256": "134f84e19b17bad810cdb8cdd0308bbcefb36fe2b17b2402605eae163c911a15",
       "after_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00"
+    },
+    {
+      "stage": "RETURN_EXCEPTION_EAUDIT01",
+      "timestamp": "2026-10-11T12:47:10.360448",
+      "before_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00",
+      "after_sha256": "74fc6dc31aa1662b1e9633e94242e829c00e40357f07e1aa3941c699f6c895e8",
+      "reason": "原页PDF46–47已重新视觉核对；不完整sup计算移入proof_discussion，修正广义坐标维数，显式展开继承的正定背景。原语句不改，旧签名和全部返回件保留。"
     }
   ],
-  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+  "proof_discussion_latex": "In the case of the Lagrangian $L(\\boldsymbol{q},\\boldsymbol{v})=\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find\n\\[\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-(\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})))=\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2)+U(\\boldsymbol{q}).\\]"
 }
 ```
 
 ```lean
 theorem hamiltonian_legendre_transform {n : ℕ}
     (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)
-    (q : Position n) (p : Momentum n) (hM : IsUnit (M q)) :
+    (q : Position n) (p : Momentum n) (hM : IsUnit (M q))
+    (hPositive : (M q).PosDef) :
     BddAbove (range (fun v : Velocity n =>
       inner ℝ p v - variableMassLagrangian M U q v)) ∧
     sSup (range (fun v : Velocity n => inner ℝ p v - variableMassLagrangian M U q v)) =

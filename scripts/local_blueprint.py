@@ -25,7 +25,7 @@ def pipeline(ch):
                           f'import MolecularDynamics.Chapter{ch:02}.Statements')
     if ch==4:
         text=text.replace('Matrix.Norms.L2Operator','Matrix.Norms.Elementwise')
-        text=text.replace('import Mathlib.Tactic', 'import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv\nimport Mathlib.Tactic',1)
+        text=text.replace('import Mathlib.Tactic', 'import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv\nimport Mathlib.Analysis.Calculus.Deriv.Slope\nimport Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv\nimport Mathlib.LinearAlgebra.FiniteDimensional.Lemmas\nimport Mathlib.Tactic',1)
     text=text.replace('open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review',
         f'open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review')
     text=text.replace('variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]',
@@ -44,9 +44,23 @@ def pipeline(ch):
             subtasks.append""")
     text=text.replace('bytes=size,manifest_sha256=', 'bytes=total_bytes,manifest_sha256=')
     text=text.replace('compact子任务（输入+PDF字节）', 'compact子任务（PASTE+PDF+MANIFEST字节）')
+    # A qualified project identifier must select its real namespace, rather than
+    # disappear because the excerpt index originally had only bare-name keys.
+    text=text.replace("{d['namespace']}.{name}","{d['namespace']}.{d['name']}")
+    text=text.replace("namespace=d['namespace'],name=name,", "namespace=d['namespace'],name=d['name'],")
     # Per-module source scope never includes Ch01 or prior chapter output writes.
     m=types.ModuleType('local_current_pipeline');m.__file__=str(ROOT/'scripts/local_blueprint.py')
     sys.modules[m.__name__]=m;exec(compile(text,m.__file__,'exec'),m.__dict__)
+    raw_definitions=m.definitions
+    def namespace_index(paths):
+        index=raw_definitions(paths)
+        for choices in list(index.values()):
+            for definition in choices:
+                if definition['namespace']:
+                    qualified=definition['namespace']+'.'+definition['name']
+                    index.setdefault(qualified,[]).append(definition)
+        return index
+    m.definitions=namespace_index
     return m
 def render(ch,p):
     source=(ROOT/'scripts/render_ch02_blueprint.py').read_text(encoding='utf-8')

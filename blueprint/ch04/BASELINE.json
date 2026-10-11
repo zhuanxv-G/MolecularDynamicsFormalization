@@ -2,7 +2,7 @@
   "base_head": "433a13ca6407f96249c17fc56d66a62284040623",
   "branch": "chapter04-blueprint",
   "protected": {
-    "Blueprint/Ch01.lean": "91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240",
+    "Blueprint/Ch01.lean": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af",
     "MolecularDynamics/BasicDefinitions.lean": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
     "MolecularDynamics/Chapter01/ActionAngleChart.lean": "77af2e1b58a314cf61ef0cf0ef8ed9148fd2c2d5dea5807876f5d47cf5d7ad37",
     "MolecularDynamics/Chapter01/BasisMatrix.lean": "3bdf3d414cb4196cfe87b644786e2b1f29166952ea61ab8bd28f7ebd44a1c4df",
@@ -304,15 +304,15 @@
     "blueprint/ch01/CheckAxioms.lean": "ca0fb98e4f4953f324022cf2a97f1ca59d14f4016c78453bca78770968358373",
     "blueprint/ch01/LOCAL_PDF_CHECK.json": "4bd55bc8e711499854ecff1ef6d7eb5308d0be59bbcb98571be24e2e047a10c9",
     "blueprint/ch01/PILOT.md": "cfad1dbcb8b3ee257f9b0a2dc38e4fef8b6857d9e09299560ace5fe45b17de8d",
-    "blueprint/ch01/PROGRESS.md": "950c8f2931f92ccfb6d992183b3cc250c79331a219beaf408365aebace7617db",
+    "blueprint/ch01/PROGRESS.md": "d9ca28626ea2aac59f25dae8ab13b8ef8ec7062f29eea634c5327efe4727c972",
     "blueprint/ch01/archive/PILOT.md": "6f36aa4f588b28f2ad2096929fe05acb4cbf6c9714420be98535a2f2028bdde0",
     "blueprint/ch01/audit.json": "4aceec269dc1f69d2c5dc7c3d97ad7b1edb32ebd04c1a524486c03e767c03479",
-    "blueprint/ch01/ch01_source.json": "4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695",
+    "blueprint/ch01/ch01_source.json": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
     "blueprint/ch01/dependency_inventory.json": "71bd83c7b187971be1e47cf3e3aff91251d750a396bcc9bf0725378f4df49378",
     "blueprint/ch01/excluded_passages.json": "2cdc5ea8354a37fcd9b9723dda7e8db7a5ae2cf02ccde894776d1f5ac5ab987b",
-    "blueprint/ch01/local_audit.json": "95df9665265788374e817cfe89dff3825e27e2ab6ba280d16d1c9d81f1d4da96",
+    "blueprint/ch01/local_audit.json": "d0a238117de4894348e20696237a8cb2797640c19b07138b88d14815ae597006",
     "blueprint/ch01/mathcopilot_results/README.md": "668ad1e98986665e77469829cf872187aad52cba9f9c0450f98027de60794736",
-    "blueprint/ch01/mathcopilot_tasks/BATCH01.md": "28d920a8c3e6bb21ce10572e446af3e8788cae69cc304991fd5a4bc61b5bef44",
+    "blueprint/ch01/mathcopilot_tasks/BATCH01.md": "87ee2c9b34ea5c1ae422ce3e5721328153865fe65efb57e887d2ab043783d0ae",
     "blueprint/ch01/mathcopilot_tasks/BATCH02.md": "5b474e9c2fb15b22bf274ffc284345df8ee299732d8a129cc03acd6cece317fb",
     "blueprint/ch01/mathcopilot_tasks/BATCH03.md": "4fa04b317783ecab8126878d584d87c2ed37a4e33bdea7d5a7f67ecbf51df82d",
     "blueprint/ch01/mathcopilot_tasks/BATCH04.md": "d6752e38bdc5d910a1d4567037e88b04eafb1d4f8f0a3f808f2739a413db8b4d",
@@ -335,8 +335,8 @@
     "blueprint/ch01/mathcopilot_tasks/BATCH21.md": "eb91d50458b257a2c1dcae4b4c060f5ae64757d926b2b70f2673593a7da3a0a1",
     "blueprint/ch01/mathcopilot_tasks/BATCH22.md": "7975104f37f2f9c5a44a0cf9573c371c2cfb48f55f834f104b2e7775bc7a8c2d",
     "blueprint/ch01/mathcopilot_tasks/BATCH23.md": "c833aaf1f26ca7010882606e6cdcee66d2ad286b0c5706f505d6987b2cadc45a",
-    "blueprint/ch01/mathcopilot_tasks/INDEX.md": "55b1d578f819a7a4935fd06edcf4dc4dac10288e090b4cb6c3472deda6451d77",
-    "blueprint/ch01/mathcopilot_tasks/MANIFEST.json": "b95c61d8db07e5346bb55daf1f22cd8792215071c300acf520a0e5c5405d480c",
+    "blueprint/ch01/mathcopilot_tasks/INDEX.md": "9f07a7b7be1c000c74fd4f9d0e78463e7f5138908af9dd8795e40a91403eeba1",
+    "blueprint/ch01/mathcopilot_tasks/MANIFEST.json": "2e7e7aa84bc0ae4537928ed38883328fce92cb1ceea0e66ab867fe2cf918e326",
     "blueprint/ch01/mathcopilot_tasks/archive/PILOT_ALL.md": "92f7d65efe733d1814a273d6e7a538d9ae18b24c4463e69354671455ca7dbb23",
     "blueprint/ch01/mathcopilot_tasks/archive/README.md": "051661edb9a7c0541fe6558b7167e043dc5ca6be04e4cd04a5e3f85d3b7c3d0f",
     "blueprint/ch01/mathcopilot_tasks/archive/T_audit_MD-1.2-EnergyConservation.md": "4e2c16179b8610997f7020e90d5f38bba0518cee02943b8d5f09a7bf83314479",
@@ -541,14 +541,35 @@
     "blueprint/ch01/validation/proof-attempts/proof-trimer-1.log": "0e6617a12f04f16a9d2827b6fd1b2c020fd2342543b353c41619650b263bd09e",
     "blueprint/ch01/validation/proof-attempts/proof-trimer-2.log": "419c638aa92d7213205c62e1550685ddbce59d6ff44db83f0f41387835887690",
     "blueprint/ch01/validation/proof-attempts/proof-trimer-3.log": "0df47d1e8ae8e4b734713fff016dbaed76d5b5c77288918a536905b8264b12f9",
-    "docs/review/CH01_BLUEPRINT.zh-CN.md": "af6e5318a867cdca4f681ee64d5e9cd7cd61a93f07efe439ac7c45aaa76f84f1",
+    "docs/review/CH01_BLUEPRINT.zh-CN.md": "410de5996366b2a5d44760c5e4105949a0c2634640154ffda5a9b6542f07bbf2",
     "docs/review/CH01_CLAIMS.csv": "e9421b24b4f09ff2ac09cc4377632bb2d721b86263719b2076976f813b450003",
     "docs/review/CH01_COVERAGE_EXTRA.json": "73ce17da7feed915574af5ebc4010afbb6dc4c874f47df0775d2b3ff1bc943cb",
     "docs/review/CH01_PILOT.zh-CN.md": "7c4c4f07e9cc045662c1fe43426c87019d8286132ddbead33d03555c02b8c082",
     "docs/review/CH01_REVIEW.zh-CN.md": "b7bf0b5ce8f79d3209bdb0c2c5d9f080704b5ca494deb90acc3f8a6146d43fbf",
     "docs/review/CH01_REVIEW_SHORT.zh-CN.md": "290c77daa019d855f5768d095140024bd2f29e750de60a5dbd9f35286fb82107",
     "docs/review/CH01_SCOPE.zh-CN.md": "e116673bdda896f063d7d3e22c3771d8e99d00ccc885d61f2b417ae868603b5b",
-    "docs/review/CH01_VALIDATION.json": "8555d56f3f18e85a77b3b7c6344f74f0c7a0aaa28e124cd0330c24f86e5cd10d"
+    "docs/review/CH01_VALIDATION.json": "8555d56f3f18e85a77b3b7c6344f74f0c7a0aaa28e124cd0330c24f86e5cd10d",
+    "blueprint/ch01/website_audit.json": "af3b67f6cd9067c4467d7c3db4a4862f4dd61eccc26f91fd8eae4174eeaf3c07",
+    "blueprint/ch01/processed_returns.json": "480f1863e8fad630cf6d20643dff96cddb79cddcb0682e67c638fa20ece2b489",
+    "blueprint/ch01/mathcopilot_results/integration20261011/RECEIPT.json": "ed2149320089b73ac0c9c7331779c51e9987e17e06a9a1b4e952ee83a18ecf72",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/BATCH_EAUDIT01.md": "41a28335d289e3f497fd8a6ea6c5c644c04599cd553eeb9d7fb0cdaac2a9d639",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/INDEX.md": "d638f502dc7ff810a45fbd4ac0dcd80c1df3b06a2fb5db0a8dabfe1c3a4af3cc",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/MANIFEST.json": "1e40be52a0184f0672f197b076ba5df93087ec50b9a1d066bfd152a8ec99e020",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/a/EAUDIT01a_PAGES.pdf": "f2298a873ff2200354d967ec0ba8229f97c84de45121b9dd05f3578bde4f71ae",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/a/MANIFEST.json": "a184ee9854af66ff83c86a14ce6af02688e938ae891adcc7b8b5e09e4c062dc5",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/a/PASTE.txt": "dce4381117606a6c0dfb2e0298b47cc2378984d35fb628691e83485079f9b7eb",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/b/EAUDIT01b_PAGES.pdf": "b4674018b834df1ab6c82ad328e2cdb0f269e77191e58b91d6781a17c9951cfc",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/b/MANIFEST.json": "969ecbd5ce7118a25de46a536d7b5532c84a3f01b7c28ee8dd6d72bb20a4e4c2",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/b/PASTE.txt": "1692e9519a8c649d0e160f8c6946a2def9e6a8a8906090eca2ebe79498af6ecc",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/c/EAUDIT01c_PAGES.pdf": "174e4d7af103bf26b4d085056cf62f5168107cb25f41a5e1e5f9614a0b5bb5ed",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/c/MANIFEST.json": "b0d54c59e3bf860d8b5320dc5a8ce103dfa5296485da707360c5018ed3f91834",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/c/PASTE.txt": "ab68ad46d24b8cdde93eafe5c193a4f73d7826671c1029af72f895dc9a6d2803",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/d/EAUDIT01d_PAGES.pdf": "953aa8f1880c3cc7846f0626675b72d92028fbd439a8b08763a21c1916e469f0",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/d/MANIFEST.json": "fd26f967fcc3ebcc92f284a37ca380bdf9979a942e66592b3070941068a5e643",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/d/PASTE.txt": "7ef04768cbbb4ab256dda89757be49a5713a457eb60e5cb0ef755c28ce71ffba",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/e/EAUDIT01e_PAGES.pdf": "4d7a5a0fc54207e396d1a2669e44435d57e689682a894b818337c4c70502b64a",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/e/MANIFEST.json": "eb2b40918786ebb9defbe5c61d3998bd7d84207fbab1f64e8ee7c556f89d62e5",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT01/e/PASTE.txt": "ace657434c0df54ff9802c6a32e2f3b97b54a88f9596a604baf2834a1c391539"
   },
   "unrelated": {
     "output/pdf/CH01_REVIEW_SHORT.PDF_CHECK.json": "aed60322f1feb1e1867ac5f0cbb33da80156f0f32656dd2068857a2515e558f4",
@@ -790,5 +811,56 @@
   },
   "source_pdf": {
     "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036"
-  }
+  },
+  "authorized_ch01_return_exceptions": [
+    {
+      "reason": "用户允许当前节提交后整合第1章新返回件",
+      "receipt": "blueprint/ch01/mathcopilot_results/integration20261011/RECEIPT.json",
+      "raw_return_sha256": "7eb2fcb903e53514f64c1a0df306be19541638ae8d5e9b3293403ea10222f760",
+      "full_check": "blueprint/ch01/validation/EAUDIT01-default",
+      "full_check_sha256": "22fc3bb9f6476e74b4ad58b3a7a87650c1b6e0457a156fec19b307982c85bc3d",
+      "changes": [
+        {
+          "path": "Blueprint/Ch01.lean",
+          "before_sha256": "91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240",
+          "after_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        {
+          "path": "blueprint/ch01/PROGRESS.md",
+          "before_sha256": "950c8f2931f92ccfb6d992183b3cc250c79331a219beaf408365aebace7617db",
+          "after_sha256": "d9ca28626ea2aac59f25dae8ab13b8ef8ec7062f29eea634c5327efe4727c972"
+        },
+        {
+          "path": "blueprint/ch01/ch01_source.json",
+          "before_sha256": "4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695",
+          "after_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c"
+        },
+        {
+          "path": "blueprint/ch01/local_audit.json",
+          "before_sha256": "95df9665265788374e817cfe89dff3825e27e2ab6ba280d16d1c9d81f1d4da96",
+          "after_sha256": "d0a238117de4894348e20696237a8cb2797640c19b07138b88d14815ae597006"
+        },
+        {
+          "path": "blueprint/ch01/mathcopilot_tasks/BATCH01.md",
+          "before_sha256": "28d920a8c3e6bb21ce10572e446af3e8788cae69cc304991fd5a4bc61b5bef44",
+          "after_sha256": "87ee2c9b34ea5c1ae422ce3e5721328153865fe65efb57e887d2ab043783d0ae"
+        },
+        {
+          "path": "blueprint/ch01/mathcopilot_tasks/INDEX.md",
+          "before_sha256": "55b1d578f819a7a4935fd06edcf4dc4dac10288e090b4cb6c3472deda6451d77",
+          "after_sha256": "9f07a7b7be1c000c74fd4f9d0e78463e7f5138908af9dd8795e40a91403eeba1"
+        },
+        {
+          "path": "blueprint/ch01/mathcopilot_tasks/MANIFEST.json",
+          "before_sha256": "b95c61d8db07e5346bb55daf1f22cd8792215071c300acf520a0e5c5405d480c",
+          "after_sha256": "2e7e7aa84bc0ae4537928ed38883328fce92cb1ceea0e66ab867fe2cf918e326"
+        },
+        {
+          "path": "docs/review/CH01_BLUEPRINT.zh-CN.md",
+          "before_sha256": "af6e5318a867cdca4f681ee64d5e9cd7cd61a93f07efe439ac7c45aaa76f84f1",
+          "after_sha256": "410de5996366b2a5d44760c5e4105949a0c2634640154ffda5a9b6542f07bbf2"
+        }
+      ]
+    }
+  ]
 }

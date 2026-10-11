@@ -1,0 +1,504 @@
+逐字核对原页JSON，再只读核对实际Lean陈述及以下全部实际定义；逐项审[EXTRA]/疑误、对象、量词、前提与全部结论。不得改工程或补证明。材料不足/读页失败写NEEDS_HUMAN，未核对不记PASS。只返回本source_id的json_review和audit；同时回显MANIFEST的source_json_sha256和lean_sha256。
+
+Lean4.34.0/Mathlibv4.34.0；namespace MD.Ch01；noncomputable；open Set Filter MolecularDynamics；三维粒子/广义配置均为EuclideanSpace ℝ (Fin n)。完整定义摘录是审校材料，不是独立Lean工程。
+
+## 本条JSON
+
+{
+  "source_id": "MD-1.5.3-Thm1.1",
+  "kind": "theorem",
+  "label": "Theorem 1.1",
+  "section": "1.5.3",
+  "printed_page": "32",
+  "pdf_page": "55",
+  "statement_latex": "If $\\boldsymbol{q}^*$ is a strong local minimum of smooth potential $U$ then $\\boldsymbol{z}^*=(\\boldsymbol{q}^*,0)$ is stable.",
+  "proof_latex": null,
+  "proof_note": "原文只有以下证明思路并指向[216]，无完整证明；不把思路冒充原文证明。",
+  "proof_discussion_latex": "The proof of this theorem relies on showing that if trajectories are started from a point sufficiently close to $\\boldsymbol{z}^*$ they cannot wander away to infinity. Although the result holds in greater generality, it is easy to show under assumptions of local smoothness of $U$ (which we are normally happy to make in molecular dynamics). For more discussion see the text [216].",
+  "context_notation": [
+    "$\\boldsymbol{z}=(\\boldsymbol{q},\\boldsymbol{p})$，相空间位置与动量：§1.4印刷p.25/PDF48；$H(\\boldsymbol{q},\\boldsymbol{p})=\\boldsymbol{p}^TM^{-1}\\boldsymbol{p}/2+U(\\boldsymbol{q})$：§1.5.3印刷p.32/PDF55。",
+    "平衡点$f(\\boldsymbol{z}^*)=0$：§1.5.3印刷p.31/PDF54；同节假设平衡点附近$f$连续可微。",
+    "强局部极小：存在$\\epsilon>0$，$0<\\|\\boldsymbol{q}-\\boldsymbol{q}^*\\|<\\epsilon\\Rightarrow U(\\boldsymbol{q})>U(\\boldsymbol{q}^*)$，印刷p.32/PDF55。",
+    "稳定：for all $\\epsilon$, there exists $\\delta$ such that, for all $\\boldsymbol{z}_0$ with $\\|\\boldsymbol{z}_0-\\boldsymbol{z}^*\\|<\\delta$, $\\sup_{t\\geq0}\\|\\mathcal{F}_t(\\boldsymbol{z}_0)-\\boldsymbol{z}^*\\|<\\epsilon$，印刷p.32/PDF55；按正容差解释，正文量词省略$\\epsilon,\\delta>0$。",
+    "$\\boldsymbol{M}$固定正定质量矩阵：§1.2印刷p.18/PDF41的对角质量及§1.5印刷p.25/PDF48的正定前提。"
+  ],
+  "issues": [
+    {
+      "code": "PAGE_SPAN_CORRECTION",
+      "status": "local_verified",
+      "detail": "用户范围31–32/54–55是背景跨度；定理与证明思路均仅32/55。"
+    }
+  ],
+  "lean_decl": "MD.Ch01.theorem_1_1",
+  "reusable_proofs": [
+    "MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_smooth"
+  ],
+  "extra_assumptions": [
+    "hm: 每个固定对角质量正；来自§1.5正定背景，定理句未重复。",
+    "hQ: 势能位置域Q开放；局部ODE和极小值邻域须位于定义域。",
+    "hstrict包含q₀∈Q；补出原文默认的定义域资格。"
+  ],
+  "statement_scope": "只摘录定理句；稳定/强极小定义作为context_notation，Hartman–Grobman陈述不在试点。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "LOCAL_DRAFT",
+      "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+      "before_sha256": "ed167f52115e5ea9d0bd16168460ee67544284d8bb650c47f93b7aacde4503e0",
+      "after_sha256": "15c882d153436a4622fba98867b6fada60a25b60c46ed413654ae763c1a28a12"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+
+## 实际签名
+
+theorem theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (q₀ : Position n)
+    (hm : ∀ i, 0 < m i) (hQ : IsOpen Q)
+    (hU : ∀ q ∈ Q, ContDiffAt ℝ ∞ U q)
+    (hstrict : IsStrictPotentialMinOn U Q q₀) :
+    IsMechanicalEquilibrium m (fun q => -gradient U q) (q₀, (0 : Momentum n)) ∧
+    IsFutureMechanicalStableEuclidean m (fun q => -gradient U q) Q
+      (q₀, (0 : Momentum n))
+
+## 旧返回件
+
+{
+  "source_id": "MD-1.5.3-Thm1.1",
+  "json_review": {
+    "status": "APPROVED",
+    "issue_codes": [],
+    "corrected_json": null,
+    "issues": [],
+    "evidence": [
+      "已查看PDF第55页原页图像，对应印刷p.32：Theorem 1.1的定理句与statement_latex一致，定理和紧随的证明讨论均在该页。",
+      "同页强局部极小定义为0<‖q−q*‖<ε时U(q)>U(q*)；稳定性定义使用t≥0上的距离上确界严格小于ε。正文没有显式写ε、δ>0，context_notation已说明正容差解释。",
+      "同页证明讨论从“The proof of this theorem relies on showing”开始并指向[216]；没有独立完整证明，proof_latex=null正确。已读取PDF54的平衡点及C¹背景和PDF48的固定正定质量背景。"
+    ]
+  },
+  "audit": {
+    "lean_decl": "MD.Ch01.theorem_1_1",
+    "verdict": "NEEDS_HUMAN",
+    "explanation": "Ch01.lean:82–90确实使用正对角质量m、开放Q、Q内光滑U及严格极小前提，结论包含(q₀,0)为平衡点和未来稳定性。hm、hQ及q₀∈Q作为机械背景和定义域资格合理；开放Q中的严格极小可以对应原文局部定义，附加平衡点结论也符合上下文。但本批所需EuclideanStability.lean、FutureFlow.lean、PhaseMetric.lean等当前未提供，无法展开IsFutureMechanicalStableEuclidean，核实正ε/δ、全部邻近初值、未来解存在、全部未来时间、真实欧氏距离及有界且严格受限的上确界。旧缓存中IsStrictPotentialMinOn展开为q₀∈Q且存在R>0使Q内非中心点在距离R内满足U(q₀)<U(q)，IsMechanicalEquilibrium展开为机械向量场为零；该缓存未由本批MANIFEST绑定，不能替代本批定义。证明状态：该声明正文有复用证明且没有直接sorry；依赖链及编译未核验。语义判定因关键定义缺失保留。",
+    "counterexample": null,
+    "suggested_fix": "补齐与Ch01.lean同一版本的EuclideanStability.lean、FutureFlow.lean、PhaseMetric.lean、PotentialBarriers.lean、Equilibrium.lean及其相关导入和本批MANIFEST.json，再逐项展开稳定性谓词核查；目前没有足够证据要求修改定理签名。"
+  }
+}
+
+## MolecularDynamics.CoordinateMasses (MolecularDynamics/Chapter01/NBody.lean:19)
+
+abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ
+
+## MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+## MolecularDynamics.Force (MolecularDynamics/Notation.lean:20)
+
+abbrev Force (n : ℕ) := Position n → Position n
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianComplexKernel.lean:12)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianEigenDiscreteness.lean:11)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianEigenEnumeration.lean:19)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianEigenGraph.lean:11)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianEigenNormalization.lean:11)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianEigenOrdering.lean:103)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+include hm hβ in
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean:11)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean:12)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean:12)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean:11)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℂ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean:14)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean:13)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianSpectralAverage.lean:12)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianSpectralDecay.lean:11)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianSpectralEvolution.lean:12)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianSpectralGenerator.lean:12)
+
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+## MolecularDynamics.IsFutureMechanicalStableEuclidean (MolecularDynamics/Chapter01/EuclideanStability.lean:18)
+
+def IsFutureMechanicalStableEuclidean {n : ℕ} (m : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (zstar : PhaseSpace n) : Prop :=
+  ∀ ε > 0, ∃ δ > 0, ∀ z₀ : PhaseSpace n, phaseEuclideanDistance z₀ zstar < δ →
+    (∃ a < (0 : ℝ), ∃ γ : ℝ → PhaseSpace n,
+      IsMechanicalSolutionOn m F Q (Ioi a) γ ∧ γ 0 = z₀) ∧
+    ∀ a < (0 : ℝ), ∀ γ : ℝ → PhaseSpace n,
+      IsMechanicalSolutionOn m F Q (Ioi a) γ → γ 0 = z₀ →
+      BddAbove (range (fun t : Ici (0 : ℝ) => phaseEuclideanDistance (γ t) zstar)) ∧
+      sSup (range (fun t : Ici (0 : ℝ) => phaseEuclideanDistance (γ t) zstar)) < ε
+
+## MolecularDynamics.IsMechanicalEquilibrium (MolecularDynamics/Chapter01/Equilibrium.lean:11)
+
+def IsMechanicalEquilibrium {n : ℕ} (m : CoordinateMasses n)
+    (F : Force n) (z₀ : PhaseSpace n) : Prop :=
+  mechanicalVectorField m F z₀ = 0
+
+## MolecularDynamics.IsMechanicalSolutionOn (MolecularDynamics/Chapter01/LocalTrajectories.lean:74)
+
+def IsMechanicalSolutionOn {n : ℕ} (μ : CoordinateMasses n) (F : Force n)
+    (Q : Set (Position n)) (I : Set ℝ) (γ : ℝ → PhaseSpace n) : Prop :=
+  (∀ t ∈ I, (γ t).1 ∈ Q) ∧
+    IsIntegralCurveOn γ (fun _ z => mechanicalVectorField μ F z) I
+
+## MolecularDynamics.IsStrictPotentialMinOn (MolecularDynamics/Chapter01/PotentialBarriers.lean:30)
+
+def IsStrictPotentialMinOn {E : Type*} [MetricSpace E]
+    (U : E → ℝ) (Q : Set E) (q₀ : E) : Prop :=
+  q₀ ∈ Q ∧ ∃ R : ℝ, StrictPotentialMinRadius U Q q₀ R
+
+## MolecularDynamics.MassMatrix (MolecularDynamics/Notation.lean:18)
+
+abbrev MassMatrix (n : ℕ) := Matrix (Fin n) (Fin n) ℝ
+
+## MolecularDynamics.Momentum (MolecularDynamics/Notation.lean:15)
+
+abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+## MolecularDynamics.PhaseSpace (MolecularDynamics/Notation.lean:17)
+
+abbrev PhaseSpace (n : ℕ) := Position n × Momentum n
+
+## MolecularDynamics.Position (MolecularDynamics/Notation.lean:13)
+
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+## MolecularDynamics.PotentialEnergy (MolecularDynamics/Notation.lean:21)
+
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+
+## MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+
+abbrev Q (n : ℕ) := Fin n → ℝ
+
+## MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+
+abbrev Q (n : ℕ) := Fin n → ℝ
+
+## MolecularDynamics.R (MolecularDynamics/Chapter06/BrownianComplexKernel.lean:21)
+
+private abbrev R := textbookBrownianGibbsClosedOperator m U hU hPU β
+
+## MolecularDynamics.R (MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean:19)
+
+private abbrev R := textbookBrownianGibbsResolvent m U hU hPU β hm hβ
+
+## MolecularDynamics.StrictPotentialMinRadius (MolecularDynamics/Chapter01/PotentialBarriers.lean:26)
+
+def StrictPotentialMinRadius {E : Type*} [MetricSpace E]
+    (U : E → ℝ) (Q : Set E) (q₀ : E) (R : ℝ) : Prop :=
+  0 < R ∧ ∀ q ∈ Q, q ≠ q₀ → dist q q₀ < R → U q₀ < U q
+
+## MolecularDynamics.Velocity (MolecularDynamics/Notation.lean:14)
+
+abbrev Velocity (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+## MolecularDynamics.diagonalMassMatrix (MolecularDynamics/Chapter01/NBody.lean:22)
+
+def diagonalMassMatrix {n : ℕ} (masses : CoordinateMasses n) : MassMatrix n :=
+  Matrix.diagonal masses
+
+## MolecularDynamics.mechanicalVectorField (MolecularDynamics/Chapter01/LocalTrajectories.lean:69)
+
+noncomputable def mechanicalVectorField {n : ℕ} (μ : CoordinateMasses n)
+    (F : Force n) (z : PhaseSpace n) : PhaseSpace n :=
+  (velocityOperator μ z.2, F z.1)
+
+## MolecularDynamics.phaseEuclideanDistance (MolecularDynamics/Chapter01/PhaseMetric.lean:16)
+
+noncomputable def phaseEuclideanDistance {n : ℕ} (z w : PhaseSpace n) : ℝ :=
+  Real.sqrt (dist z.1 w.1 ^ 2 + dist z.2 w.2 ^ 2)
+
+## MolecularDynamics.shifted_graph_equiv (MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean:152)
+
+private def shifted_graph_equiv (hm : ∀ i, 0 < m i) (hβ : 0 < β) :
+    (textbookBrownianGibbsClosedOperator m U hU hPU β).graph ≃L[ℝ] Gibbs U β := by
+  let : IsClosed ((textbookBrownianGibbsClosedOperator m U hU hPU β).graph :
+      Set (Gibbs U β × Gibbs U β)) :=
+    textbookBrownianGibbsClosedOperator_isClosed m U hU hPU β hβ.ne'
+  let : CompleteSpace (textbookBrownianGibbsClosedOperator m U hU hPU β).graph :=
+    IsClosed.completeSpace_coe
+  exact ContinuousLinearEquiv.ofBijective (textbookBrownianGibbsClosedGraphShift m U hU hPU β)
+    (LinearMap.ker_eq_bot.mpr (textbookBrownianGibbsClosedGraphShift_injective m U hU hPU β hm hβ))
+    (textbookBrownianGibbsClosedGraphShift_range_eq_top m U hU hPU β hm hβ)
+
+## MolecularDynamics.textbookBrownianGenerator (MolecularDynamics/Chapter06/BrownianDirichlet.lean:31)
+
+noncomputable def textbookBrownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (f : (Fin Nc → ℝ) → ℝ)
+    (q : Fin Nc → ℝ) : ℝ :=
+  ∑ i, (m i)⁻¹ * (β⁻¹ * textbookConfigurationPartial
+    (textbookConfigurationPartial f i) i q -
+      textbookConfigurationPartial U i q * textbookConfigurationPartial f i q)
+
+## MolecularDynamics.textbookBrownianGibbsClosedGraphProjection (MolecularDynamics/Chapter06/BrownianGraphCompact.lean:87)
+
+def textbookBrownianGibbsClosedGraphProjection {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    (textbookBrownianGibbsClosedOperator m U hU hPU β).graph →L[ℝ]
+      Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) :=
+  (ContinuousLinearMap.fst ℝ
+    (Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β))
+    (Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β))).comp
+      (textbookBrownianGibbsClosedOperator m U hU hPU β).graph.subtypeL
+
+## MolecularDynamics.textbookBrownianGibbsClosedGraphShift (MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean:21)
+
+def textbookBrownianGibbsClosedGraphShift :
+    (textbookBrownianGibbsClosedOperator m U hU hPU β).graph →L[ℝ] Gibbs U β :=
+  ((ContinuousLinearMap.fst ℝ (Gibbs U β) (Gibbs U β)) -
+    (ContinuousLinearMap.snd ℝ (Gibbs U β) (Gibbs U β))).comp
+      (textbookBrownianGibbsClosedOperator m U hU hPU β).graph.subtypeL
+
+## MolecularDynamics.textbookBrownianGibbsClosedOperator (MolecularDynamics/Chapter06/BrownianClosedOperator.lean:77)
+
+noncomputable def textbookBrownianGibbsClosedOperator :
+    Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) →ₗ.[ℝ]
+      Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) :=
+  (textbookBrownianGibbsPartialOperator m U hU hPU β).closure
+
+## MolecularDynamics.textbookBrownianGibbsDomainOperator (MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:198)
+
+noncomputable def textbookBrownianGibbsDomainOperator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    textbookBrownianGibbsSmoothDomain U hU hPU β →ₗ[ℝ]
+      Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) :=
+  (textbookPeriodicSmoothEmbedding U hU hPU β).comp
+    ((textbookBrownianSmoothGenerator m U hU hPU β).comp
+      (textbookPeriodicSmoothEmbeddingEquiv U hU hPU β).symm.toLinearMap)
+
+## MolecularDynamics.textbookBrownianGibbsPartialOperator (MolecularDynamics/Chapter06/BrownianClosedOperator.lean:17)
+
+noncomputable def textbookBrownianGibbsPartialOperator :
+    Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) →ₗ.[ℝ]
+      Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) where
+  domain := textbookBrownianGibbsSmoothDomain U hU hPU β
+  toFun := textbookBrownianGibbsDomainOperator m U hU hPU β
+
+## MolecularDynamics.textbookBrownianGibbsResolvent (MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean:164)
+
+def textbookBrownianGibbsResolvent (hm : ∀ i, 0 < m i) (hβ : 0 < β) :
+    Gibbs U β →L[ℝ] Gibbs U β :=
+  (textbookBrownianGibbsClosedGraphProjection m U hU hPU β).comp
+    (shifted_graph_equiv m U hU hPU β hm hβ).symm.toContinuousLinearMap
+
+## MolecularDynamics.textbookBrownianGibbsSmoothDomain (MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:163)
+
+noncomputable def textbookBrownianGibbsSmoothDomain {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    Submodule ℝ (Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)) :=
+  (textbookPeriodicSmoothEmbedding U hU hPU β).range
+
+## MolecularDynamics.textbookBrownianSmoothGenerator (MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:93)
+
+noncomputable def textbookBrownianSmoothGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    textbookPeriodicSmoothSpace Nc →ₗ[ℝ] textbookPeriodicSmoothSpace Nc where
+  toFun f := ⟨textbookBrownianGenerator m U β f,
+    textbookBrownianGenerator_contDiff m U β f hU f.prop.1,
+    textbookBrownianGenerator_periodic m U β f hU f.prop.1 hPU f.prop.2⟩
+  map_add' := by
+    intro f g
+    apply Subtype.ext
+    exact textbookBrownianGenerator_add m U β f g f.prop.1 g.prop.1
+  map_smul' := by
+    intro c f
+    apply Subtype.ext
+    exact textbookBrownianGenerator_smul m U β f f.prop.1 c
+
+## MolecularDynamics.textbookConfigurationCube (MolecularDynamics/Chapter06/BrownianDirichlet.lean:18)
+
+def textbookConfigurationCube (Nc : ℕ) : Set (Fin Nc → ℝ) := Icc 0 1
+
+## MolecularDynamics.textbookConfigurationGibbsL2Observable (MolecularDynamics/Chapter06/BrownianHilbertCore.lean:55)
+
+noncomputable def textbookConfigurationGibbsL2Observable {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ)
+    (f : (Fin Nc → ℝ) → ℝ) (hf : Continuous f) (hPf : textbookUnitPeriodicPotential f) :
+    Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) :=
+  (textbookConfigurationTorusGibbsMeasure_memLp_two U hU hPU β f hf hPf).toLp
+    (textbookConfigurationTorusObservable f)
+
+## MolecularDynamics.textbookConfigurationGibbsWeight (MolecularDynamics/Chapter06/BrownianDirichlet.lean:21)
+
+noncomputable def textbookConfigurationGibbsWeight {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (q : Fin Nc → ℝ) : ℝ :=
+  Real.exp (-β * U q)
+
+## MolecularDynamics.textbookConfigurationPartial (MolecularDynamics/Chapter06/BrownianDirichlet.lean:13)
+
+noncomputable def textbookConfigurationPartial {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (i : Fin Nc) (q : Fin Nc → ℝ) : ℝ :=
+  fderiv ℝ f q (Pi.single i 1)
+
+## MolecularDynamics.textbookConfigurationPartition (MolecularDynamics/Chapter06/BrownianDirichlet.lean:271)
+
+noncomputable def textbookConfigurationPartition {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) : ℝ :=
+  ∫ q in textbookConfigurationCube Nc, textbookConfigurationGibbsWeight U β q
+
+## MolecularDynamics.textbookConfigurationTorusGibbsMeasure (MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:159)
+
+noncomputable def textbookConfigurationTorusGibbsMeasure {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) : Measure (UnitAddTorus (Fin Nc)) :=
+  volume.withDensity (fun Q ↦ ENNReal.ofReal
+    ((textbookConfigurationPartition U β)⁻¹ * textbookConfigurationTorusGibbsWeight U β Q))
+
+## MolecularDynamics.textbookConfigurationTorusGibbsWeight (MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:128)
+
+noncomputable def textbookConfigurationTorusGibbsWeight {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (Q : UnitAddTorus (Fin Nc)) : ℝ :=
+  Real.exp (-β * textbookConfigurationTorusObservable U Q)
+
+## MolecularDynamics.textbookConfigurationTorusObservable (MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:61)
+
+def textbookConfigurationTorusObservable {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (Q : UnitAddTorus (Fin Nc)) : ℝ :=
+  f (textbookConfigurationTorusRepresentative Q)
+
+## MolecularDynamics.textbookConfigurationTorusRepresentative (MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:26)
+
+def textbookConfigurationTorusRepresentative {Nc : ℕ}
+    (Q : UnitAddTorus (Fin Nc)) : Fin Nc → ℝ :=
+  (UnitAddTorus.measurableEquivPiIoc (0 : Fin Nc → ℝ) Q).val
+
+## MolecularDynamics.textbookPeriodicSmoothEmbedding (MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:120)
+
+noncomputable def textbookPeriodicSmoothEmbedding {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    textbookPeriodicSmoothSpace Nc →ₗ[ℝ] Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) where
+  toFun f := textbookConfigurationGibbsL2Observable U hU hPU β f f.prop.1.continuous f.prop.2
+  map_add' := by
+    intro f g
+    apply Lp.ext
+    filter_upwards [textbookConfigurationGibbsL2Observable_ae_eq U hU hPU β (f + g)
+        (f + g).prop.1.continuous (f + g).prop.2,
+      textbookConfigurationGibbsL2Observable_ae_eq U hU hPU β f f.prop.1.continuous f.prop.2,
+      textbookConfigurationGibbsL2Observable_ae_eq U hU hPU β g g.prop.1.continuous g.prop.2,
+      Lp.coeFn_add (textbookConfigurationGibbsL2Observable U hU hPU β f f.prop.1.continuous f.prop.2)
+        (textbookConfigurationGibbsL2Observable U hU hPU β g g.prop.1.continuous g.prop.2)]
+      with Q hfg hf hg hs
+    exact hfg.trans ((show textbookConfigurationTorusObservable
+      ((f : (Fin Nc → ℝ) → ℝ) + (g : (Fin Nc → ℝ) → ℝ)) Q =
+        textbookConfigurationTorusObservable f Q + textbookConfigurationTorusObservable g Q from rfl).trans
+      ((congrArg₂ (fun a b : ℝ ↦ a + b) hf hg).symm.trans hs.symm))
+  map_smul' := by
+    intro c f
+    apply Lp.ext
+    filter_upwards [textbookConfigurationGibbsL2Observable_ae_eq U hU hPU β (c • f)
+        (c • f).prop.1.continuous (c • f).prop.2,
+      textbookConfigurationGibbsL2Observable_ae_eq U hU hPU β f f.prop.1.continuous f.prop.2,
+      Lp.coeFn_smul c (textbookConfigurationGibbsL2Observable U hU hPU β f f.prop.1.continuous f.prop.2)]
+      with Q hcf hf hs
+    exact hcf.trans ((show textbookConfigurationTorusObservable
+      (c • (f : (Fin Nc → ℝ) → ℝ)) Q =
+        c • textbookConfigurationTorusObservable f Q from rfl).trans
+      ((congrArg (fun a : ℝ ↦ c • a) hf).symm.trans hs.symm))
+
+## MolecularDynamics.textbookPeriodicSmoothEmbeddingEquiv (MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:170)
+
+noncomputable def textbookPeriodicSmoothEmbeddingEquiv {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    textbookPeriodicSmoothSpace Nc ≃ₗ[ℝ] textbookBrownianGibbsSmoothDomain U hU hPU β :=
+  LinearEquiv.ofInjective (textbookPeriodicSmoothEmbedding U hU hPU β)
+    (textbookPeriodicSmoothEmbedding_injective U hU hPU β)
+
+## MolecularDynamics.textbookPeriodicSmoothSpace (MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:70)
+
+def textbookPeriodicSmoothSpace (Nc : ℕ) : Submodule ℝ ((Fin Nc → ℝ) → ℝ) where
+  carrier := {f | ContDiff ℝ ∞ f ∧ textbookUnitPeriodicPotential f}
+  zero_mem' := ⟨contDiff_const, by intro q n; rfl⟩
+  add_mem' := by
+    intro f g hf hg
+    refine ⟨hf.1.add hg.1, ?_⟩
+    intro q n
+    change f (q + fun i ↦ (n i : ℝ)) + g (q + fun i ↦ (n i : ℝ)) = f q + g q
+    rw [hf.2 q n, hg.2 q n]
+  smul_mem' := by
+    intro c f hf
+    refine ⟨hf.1.const_smul c, ?_⟩
+    intro q n
+    change c * f (q + fun i ↦ (n i : ℝ)) = c * f q
+    rw [hf.2 q n]
+
+## MolecularDynamics.textbookUnitPeriodicPotential (MolecularDynamics/Chapter06/LangevinPeriodicForce.lean:13)
+
+def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Prop :=
+  ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
+
+## MolecularDynamics.velocityOperator (MolecularDynamics/Chapter01/LocalTrajectories.lean:24)
+
+noncomputable def velocityOperator {n : ℕ} (μ : CoordinateMasses n) :
+    Momentum n →L[ℝ] Velocity n :=
+  (Matrix.toEuclideanLin (diagonalMassMatrix μ)⁻¹).toContinuousLinearMap

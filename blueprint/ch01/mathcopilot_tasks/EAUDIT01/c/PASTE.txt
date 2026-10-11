@@ -1,0 +1,152 @@
+逐字核对原页JSON，再只读核对实际Lean陈述及以下全部实际定义；逐项审[EXTRA]/疑误、对象、量词、前提与全部结论。不得改工程或补证明。材料不足/读页失败写NEEDS_HUMAN，未核对不记PASS。只返回本source_id的json_review和audit；同时回显MANIFEST的source_json_sha256和lean_sha256。
+
+Lean4.34.0/Mathlibv4.34.0；namespace MD.Ch01；noncomputable；open Set Filter MolecularDynamics；三维粒子/广义配置均为EuclideanSpace ℝ (Fin n)。完整定义摘录是审校材料，不是独立Lean工程。
+
+## 本条JSON
+
+{
+  "source_id": "MD-1.3-NewtonEulerLagrange",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.3",
+  "printed_page": "23",
+  "pdf_page": "46",
+  "statement_latex": "The equations of motion may be expressed in terms of the Lagrangian as:\n\\[\\frac{\\mathrm{d}}{\\mathrm{d}t}\\frac{\\partial L}{\\partial\\dot{\\boldsymbol{q}}}=\\frac{\\partial L}{\\partial\\boldsymbol{q}}.\\]\n(Note that this must be interpreted in general as a set of $N_c=3N$ equations, one for each atomic coordinate.)",
+  "proof_latex": null,
+  "proof_note": "原文给出运动方程的等价表达，没有独立证明；下一段开始讨论坐标变换，不纳入本条。",
+  "context_notation": [
+    "$L\\stackrel{\\mathrm{def}}{=}\\dot{\\boldsymbol{q}}^TM\\dot{\\boldsymbol{q}}/2-U(\\boldsymbol{q})$，固定对角质量系统(1.3)的Lagrangian：§1.3印刷p.22/PDF45。",
+    "式(1.3)与坐标数$N_c$：§1.2印刷p.18/PDF41；$\\boldsymbol{p}=\\boldsymbol{M}\\dot{\\boldsymbol{q}}$为用于复用证明的辅助相空间记号：§1.4印刷p.24/PDF47。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch01.newton_iff_euler_lagrange",
+  "reusable_proofs": [
+    "MolecularDynamics.mechanicalSolution_eulerLagrange",
+    "MolecularDynamics.eulerLagrange_to_mechanicalSolution",
+    "MolecularDynamics.newtonTrajectory_to_mechanicalSolution",
+    "MolecularDynamics.hasDerivAt_deriv_position",
+    "MolecularDynamics.solution_nBodyEquationAt"
+  ],
+  "extra_assumptions": [
+    "hm: 每个固定对角质量正；用于从相空间方程回到牛顿方程。",
+    "hI: 时间域开放；把within导数还原为原文双侧时间导数。",
+    "hU: U在Q可微；保证位置偏导是实际导数。"
+  ],
+  "statement_scope": "p.23首句、展示方程及完整括号说明；以真正牛顿二阶轨迹谓词给出双向等价，不仅保留旧单向定理。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "LOCAL_DRAFT",
+      "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+      "before_sha256": "f1b2f920de30a049706acea0983e0b77c579ba964de2bef6732506baf3824aea",
+      "after_sha256": "1a2246dbfd6de1a5d68c368c83933fd807672cc490097359d2afea3f40aaf4e8"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+
+## 实际签名
+
+theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (Q : Set (Position n)) (I : Set ℝ)
+    (q : ℝ → Position n) (hm : ∀ i, 0 < m i) (hI : IsOpen I)
+    (hU : ∀ x ∈ Q, DifferentiableAt ℝ U x) :
+    IsNewtonTrajectoryOn m U Q I q ↔ IsEulerLagrangeTrajectoryOn m U Q I q
+
+## 旧返回件
+
+{
+  "source_id": "MD-1.3-NewtonEulerLagrange",
+  "json_review": {
+    "status": "APPROVED",
+    "issue_codes": [],
+    "corrected_json": null,
+    "issues": [],
+    "evidence": [
+      "已查看PDF第46页原页图像，对应印刷p.23：首句、d/dt(∂L/∂q̇)=∂L/∂q及完整括号说明与statement_latex一致。",
+      "括号说明明确为N_c=3N个方程、每个原子坐标一个；下一段才进入坐标变换。",
+      "PDF45/印刷p.22定义固定质量L=q̇ᵀMq̇/2−U(q)；本条没有独立证明，proof_latex=null正确。辅助动量关系可见PDF47/印刷p.24。"
+    ]
+  },
+  "audit": {
+    "lean_decl": "MD.Ch01.newton_iff_euler_lagrange",
+    "verdict": "NEEDS_HUMAN",
+    "explanation": "Ch01.lean:136–163的签名包含真正的双向↔，不是旧单向结论。其牛顿侧在54–59行明确包含Q内轨迹、真实一阶和二阶时间导数及质量算子方程；hm、hI、hU分别对应固定正质量、双侧时间导数所在的开放时间域、实际位置梯度，均为合理显式前提。原文这里使用p.22的固定质量L，并非随后配置相关质量模型，因此固定对角模型的对象选择合适，n=3N且按粒子重复质量可涵盖所有坐标方程。然而Lagrangian.lean当前缺失，未找到IsEulerLagrangeTrajectoryOn的真实定义；无法核实它是否使用实际L的速度/位置偏导，是否覆盖全部坐标和Q内轨迹，以及是否把牛顿条件或所需结论预置在谓词中。massOperator本批定义及输入MANIFEST也未提供。证明状态：该声明正文无直接sorry；双向证明调用的依赖尚未核验。右侧关键谓词缺失使语义审计不能判PASS。",
+    "counterexample": null,
+    "suggested_fix": "补齐本批Lagrangian.lean及其导入、LocalTrajectories.lean、NBody.lean和MANIFEST.json；展开右侧为实际L(q,v)的偏导与时间导数条件，并检查全部坐标及两个方向。如包含牛顿结论作前提，应移除该循环条件。"
+  }
+}
+
+## MolecularDynamics.CoordinateMasses (MolecularDynamics/Chapter01/NBody.lean:19)
+
+abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ
+
+## MolecularDynamics.IsEulerLagrangeTrajectoryOn (MolecularDynamics/Chapter01/Lagrangian.lean:75)
+
+def IsEulerLagrangeTrajectoryOn {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (Q : Set (Position n)) (I : Set ℝ)
+    (q : ℝ → Position n) : Prop :=
+  (∀ t ∈ I, q t ∈ Q) ∧ ∀ t ∈ I,
+    HasDerivAt q (deriv q t) t ∧
+    HasDerivAt (fun s => gradient (fun v => massLagrangian m U (q s) v) (deriv q s))
+      (gradient (fun x => massLagrangian m U x (deriv q t)) (q t)) t
+
+## MD.Ch01.IsNewtonTrajectoryOn (Blueprint/Ch01.lean:54)
+
+def IsNewtonTrajectoryOn {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (I : Set ℝ) (q : ℝ → Position n) : Prop :=
+  (∀ t ∈ I, q t ∈ Q) ∧ ∀ t ∈ I,
+    HasDerivAt q (deriv q t) t ∧
+    HasDerivAt (deriv q) (deriv (deriv q) t) t ∧
+    massOperator m (deriv (deriv q) t) = -gradient U (q t)
+
+## MolecularDynamics.MassMatrix (MolecularDynamics/Notation.lean:18)
+
+abbrev MassMatrix (n : ℕ) := Matrix (Fin n) (Fin n) ℝ
+
+## MolecularDynamics.Momentum (MolecularDynamics/Notation.lean:15)
+
+abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+## MolecularDynamics.Position (MolecularDynamics/Notation.lean:13)
+
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+## MolecularDynamics.PotentialEnergy (MolecularDynamics/Notation.lean:21)
+
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+
+## MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+
+abbrev Q (n : ℕ) := Fin n → ℝ
+
+## MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+
+abbrev Q (n : ℕ) := Fin n → ℝ
+
+## MolecularDynamics.Velocity (MolecularDynamics/Notation.lean:14)
+
+abbrev Velocity (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+## MolecularDynamics.diagonalMassMatrix (MolecularDynamics/Chapter01/NBody.lean:22)
+
+def diagonalMassMatrix {n : ℕ} (masses : CoordinateMasses n) : MassMatrix n :=
+  Matrix.diagonal masses
+
+## MolecularDynamics.massLagrangian (MolecularDynamics/Chapter01/Lagrangian.lean:22)
+
+noncomputable def massLagrangian {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (q : Position n) (v : Velocity n) : ℝ :=
+  nBodyKineticEnergy m v - U q
+
+## MolecularDynamics.massOperator (MolecularDynamics/Chapter01/LocalTrajectories.lean:18)
+
+noncomputable def massOperator {n : ℕ} (μ : CoordinateMasses n) :
+    Velocity n →L[ℝ] Momentum n :=
+  (Matrix.toEuclideanLin (diagonalMassMatrix μ)).toContinuousLinearMap
+
+## MolecularDynamics.nBodyKineticEnergy (MolecularDynamics/Chapter01/NBody.lean:38)
+
+noncomputable def nBodyKineticEnergy {n : ℕ} (masses : CoordinateMasses n)
+    (velocity : Velocity n) : ℝ :=
+  ∑ i, masses i * (velocity i) ^ 2 / 2

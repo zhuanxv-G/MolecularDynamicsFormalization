@@ -1,0 +1,69 @@
+{
+  "raw_return_sha256": "7eb2fcb903e53514f64c1a0df306be19541638ae8d5e9b3293403ea10222f760",
+  "before": {
+    "Blueprint/Ch01.lean": "91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240",
+    "blueprint/ch01/ch01_source.json": "4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695",
+    "blueprint/ch01/local_audit.json": "95df9665265788374e817cfe89dff3825e27e2ab6ba280d16d1c9d81f1d4da96"
+  },
+  "source_ids": [
+    "MD-1.5.3-Thm1.1",
+    "MD-1.2-EnergyConservation",
+    "MD-1.3-NewtonEulerLagrange",
+    "MD-1.4-LegendreHamiltonian",
+    "MD-1.5.1-FlowInverse"
+  ],
+  "raw_counts": {
+    "NEEDS_HUMAN": 4,
+    "FAIL": 1
+  },
+  "source_visual_rechecked_pdf_pages": [
+    46,
+    47
+  ],
+  "signature_changed_only": "MD-1.4-LegendreHamiltonian",
+  "website_version_binding": "UNVERIFIED",
+  "next": "继续第4章§4.1，从16条检查点接续，复用原证据。",
+  "full_check": "blueprint/ch01/validation/EAUDIT01-default",
+  "changes": [
+    {
+      "path": "Blueprint/Ch01.lean",
+      "before_sha256": "91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240",
+      "after_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    {
+      "path": "blueprint/ch01/PROGRESS.md",
+      "before_sha256": "950c8f2931f92ccfb6d992183b3cc250c79331a219beaf408365aebace7617db",
+      "after_sha256": "d9ca28626ea2aac59f25dae8ab13b8ef8ec7062f29eea634c5327efe4727c972"
+    },
+    {
+      "path": "blueprint/ch01/ch01_source.json",
+      "before_sha256": "4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695",
+      "after_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c"
+    },
+    {
+      "path": "blueprint/ch01/local_audit.json",
+      "before_sha256": "95df9665265788374e817cfe89dff3825e27e2ab6ba280d16d1c9d81f1d4da96",
+      "after_sha256": "d0a238117de4894348e20696237a8cb2797640c19b07138b88d14815ae597006"
+    },
+    {
+      "path": "blueprint/ch01/mathcopilot_tasks/BATCH01.md",
+      "before_sha256": "28d920a8c3e6bb21ce10572e446af3e8788cae69cc304991fd5a4bc61b5bef44",
+      "after_sha256": "87ee2c9b34ea5c1ae422ce3e5721328153865fe65efb57e887d2ab043783d0ae"
+    },
+    {
+      "path": "blueprint/ch01/mathcopilot_tasks/INDEX.md",
+      "before_sha256": "55b1d578f819a7a4935fd06edcf4dc4dac10288e090b4cb6c3472deda6451d77",
+      "after_sha256": "9f07a7b7be1c000c74fd4f9d0e78463e7f5138908af9dd8795e40a91403eeba1"
+    },
+    {
+      "path": "blueprint/ch01/mathcopilot_tasks/MANIFEST.json",
+      "before_sha256": "b95c61d8db07e5346bb55daf1f22cd8792215071c300acf520a0e5c5405d480c",
+      "after_sha256": "2e7e7aa84bc0ae4537928ed38883328fce92cb1ceea0e66ab867fe2cf918e326"
+    },
+    {
+      "path": "docs/review/CH01_BLUEPRINT.zh-CN.md",
+      "before_sha256": "af6e5318a867cdca4f681ee64d5e9cd7cd61a93f07efe439ac7c45aaa76f84f1",
+      "after_sha256": "410de5996366b2a5d44760c5e4105949a0c2634640154ffda5a9b6542f07bbf2"
+    }
+  ]
+}

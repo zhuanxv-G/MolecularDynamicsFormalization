@@ -1,0 +1,308 @@
+# EAUDIT01：第1章五条返回件后的A+C重审
+
+
+
+旧四条NEEDS_HUMAN和一条FAIL不改写成PASS；只生成，不提交网站。
+
+
+
+## MD-1.5.3-Thm1.1
+
+{
+  "source_id": "MD-1.5.3-Thm1.1",
+  "kind": "theorem",
+  "label": "Theorem 1.1",
+  "section": "1.5.3",
+  "printed_page": "32",
+  "pdf_page": "55",
+  "statement_latex": "If $\\boldsymbol{q}^*$ is a strong local minimum of smooth potential $U$ then $\\boldsymbol{z}^*=(\\boldsymbol{q}^*,0)$ is stable.",
+  "proof_latex": null,
+  "proof_note": "原文只有以下证明思路并指向[216]，无完整证明；不把思路冒充原文证明。",
+  "proof_discussion_latex": "The proof of this theorem relies on showing that if trajectories are started from a point sufficiently close to $\\boldsymbol{z}^*$ they cannot wander away to infinity. Although the result holds in greater generality, it is easy to show under assumptions of local smoothness of $U$ (which we are normally happy to make in molecular dynamics). For more discussion see the text [216].",
+  "context_notation": [
+    "$\\boldsymbol{z}=(\\boldsymbol{q},\\boldsymbol{p})$，相空间位置与动量：§1.4印刷p.25/PDF48；$H(\\boldsymbol{q},\\boldsymbol{p})=\\boldsymbol{p}^TM^{-1}\\boldsymbol{p}/2+U(\\boldsymbol{q})$：§1.5.3印刷p.32/PDF55。",
+    "平衡点$f(\\boldsymbol{z}^*)=0$：§1.5.3印刷p.31/PDF54；同节假设平衡点附近$f$连续可微。",
+    "强局部极小：存在$\\epsilon>0$，$0<\\|\\boldsymbol{q}-\\boldsymbol{q}^*\\|<\\epsilon\\Rightarrow U(\\boldsymbol{q})>U(\\boldsymbol{q}^*)$，印刷p.32/PDF55。",
+    "稳定：for all $\\epsilon$, there exists $\\delta$ such that, for all $\\boldsymbol{z}_0$ with $\\|\\boldsymbol{z}_0-\\boldsymbol{z}^*\\|<\\delta$, $\\sup_{t\\geq0}\\|\\mathcal{F}_t(\\boldsymbol{z}_0)-\\boldsymbol{z}^*\\|<\\epsilon$，印刷p.32/PDF55；按正容差解释，正文量词省略$\\epsilon,\\delta>0$。",
+    "$\\boldsymbol{M}$固定正定质量矩阵：§1.2印刷p.18/PDF41的对角质量及§1.5印刷p.25/PDF48的正定前提。"
+  ],
+  "issues": [
+    {
+      "code": "PAGE_SPAN_CORRECTION",
+      "status": "local_verified",
+      "detail": "用户范围31–32/54–55是背景跨度；定理与证明思路均仅32/55。"
+    }
+  ],
+  "lean_decl": "MD.Ch01.theorem_1_1",
+  "reusable_proofs": [
+    "MolecularDynamics.strictPotentialMin_futureStableEuclidean_of_smooth"
+  ],
+  "extra_assumptions": [
+    "hm: 每个固定对角质量正；来自§1.5正定背景，定理句未重复。",
+    "hQ: 势能位置域Q开放；局部ODE和极小值邻域须位于定义域。",
+    "hstrict包含q₀∈Q；补出原文默认的定义域资格。"
+  ],
+  "statement_scope": "只摘录定理句；稳定/强极小定义作为context_notation，Hartman–Grobman陈述不在试点。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "LOCAL_DRAFT",
+      "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+      "before_sha256": "ed167f52115e5ea9d0bd16168460ee67544284d8bb650c47f93b7aacde4503e0",
+      "after_sha256": "15c882d153436a4622fba98867b6fada60a25b60c46ed413654ae763c1a28a12"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+
+theorem theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (q₀ : Position n)
+    (hm : ∀ i, 0 < m i) (hQ : IsOpen Q)
+    (hU : ∀ q ∈ Q, ContDiffAt ℝ ∞ U q)
+    (hstrict : IsStrictPotentialMinOn U Q q₀) :
+    IsMechanicalEquilibrium m (fun q => -gradient U q) (q₀, (0 : Momentum n)) ∧
+    IsFutureMechanicalStableEuclidean m (fun q => -gradient U q) Q
+      (q₀, (0 : Momentum n))
+
+## MD-1.2-EnergyConservation
+
+{
+  "source_id": "MD-1.2-EnergyConservation",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.2",
+  "printed_page": "19",
+  "pdf_page": "42",
+  "statement_latex": "Along the solutions of (1.3), the energy is conserved, since its derivative vanishes:",
+  "proof_latex": "\\[\\frac{\\mathrm{d}}{\\mathrm{d}t}E=\\sum_{j=1}^{N}m_j\\dot{\\boldsymbol{q}}_j\\cdot\\ddot{\\boldsymbol{q}}_j+\\sum_{j=1}^{N}\\frac{\\partial U}{\\partial\\boldsymbol{q}_j}\\cdot\\dot{\\boldsymbol{q}}_j=\\sum_{j=1}^{N}\\left(m_j\\ddot{\\boldsymbol{q}}_j+\\frac{\\partial U}{\\partial\\boldsymbol{q}_j}\\right)\\cdot\\dot{\\boldsymbol{q}}_j=0.\\]",
+  "proof_note": "原文紧接陈述给出完整导数计算；PDF字体记录确认能量函数为数学斜体E。",
+  "context_notation": [
+    "式(1.3)：$\\boldsymbol{M}\\frac{\\mathrm{d}^2}{\\mathrm{d}t^2}\\boldsymbol{q}=\\boldsymbol{F}(\\boldsymbol{q})=-\\nabla U(\\boldsymbol{q})$；$\\boldsymbol{M}=\\operatorname{diag}(m_1,m_1,m_1,\\ldots,m_N,m_N,m_N)$，§1.2印刷p.18/PDF41。",
+    "式(1.4)：$E(\\boldsymbol{q}_1,\\ldots,\\boldsymbol{q}_N,\\dot{\\boldsymbol{q}}_1,\\ldots,\\dot{\\boldsymbol{q}}_N)=\\sum_{j=1}^{N}m_j\\|\\dot{\\boldsymbol{q}}_j\\|^2/2+U(\\boldsymbol{q}_1,\\ldots,\\boldsymbol{q}_N)$，§1.2印刷p.18/PDF41。",
+    "粒子向量可按坐标展平；三维时n=N_c=3N，直线运动时n=N；本地固定对角质量公式覆盖两者，不约束不同坐标质量相等，需审计确认这种推广。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch01.energy_conservation",
+  "reusable_proofs": [
+    "MolecularDynamics.mechanical_energy_hasDerivAt_zero",
+    "MolecularDynamics.mechanical_energy_const_on_Ioo",
+    "MolecularDynamics.massHamiltonian_massOperator",
+    "MolecularDynamics.newtonTrajectory_to_mechanicalSolution"
+  ],
+  "extra_assumptions": [
+    "hm: 固定对角质量正；牛顿相空间重写使用逆质量。",
+    "hU: U在Q每点可微；保证原文链式法则有意义。",
+    "时间取开连通区间Ioo a b；能量比较仅对s,t属于该区间，不作越过解存在区间的结论。"
+  ],
+  "statement_scope": "p.19首句及紧接的导数计算；后续总动量守恒是另一条，未摘录。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "LOCAL_DRAFT",
+      "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+      "before_sha256": "7f312da1537b6dbc8de851fa3386482fce4bb6e0cd4da388f067e5bc8e71c458",
+      "after_sha256": "602eec4ec54600d2453b232c7f51b0ab138de3d3f56be31e060fb6e6d0aed2c5"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+
+theorem energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (a b : ℝ) (q : ℝ → Position n)
+    (hm : ∀ i, 0 < m i) (hU : ∀ x ∈ Q, DifferentiableAt ℝ U x)
+    (hq : IsNewtonTrajectoryOn m U Q (Ioo a b) q) :
+    (∀ t ∈ Ioo a b, HasDerivAt
+      (fun s => nBodyTotalEnergy m U (q s) (deriv q s)) 0 t) ∧
+    ∀ s ∈ Ioo a b, ∀ t ∈ Ioo a b,
+      nBodyTotalEnergy m U (q s) (deriv q s) =
+      nBodyTotalEnergy m U (q t) (deriv q t)
+
+## MD-1.3-NewtonEulerLagrange
+
+{
+  "source_id": "MD-1.3-NewtonEulerLagrange",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.3",
+  "printed_page": "23",
+  "pdf_page": "46",
+  "statement_latex": "The equations of motion may be expressed in terms of the Lagrangian as:\n\\[\\frac{\\mathrm{d}}{\\mathrm{d}t}\\frac{\\partial L}{\\partial\\dot{\\boldsymbol{q}}}=\\frac{\\partial L}{\\partial\\boldsymbol{q}}.\\]\n(Note that this must be interpreted in general as a set of $N_c=3N$ equations, one for each atomic coordinate.)",
+  "proof_latex": null,
+  "proof_note": "原文给出运动方程的等价表达，没有独立证明；下一段开始讨论坐标变换，不纳入本条。",
+  "context_notation": [
+    "$L\\stackrel{\\mathrm{def}}{=}\\dot{\\boldsymbol{q}}^TM\\dot{\\boldsymbol{q}}/2-U(\\boldsymbol{q})$，固定对角质量系统(1.3)的Lagrangian：§1.3印刷p.22/PDF45。",
+    "式(1.3)与坐标数$N_c$：§1.2印刷p.18/PDF41；$\\boldsymbol{p}=\\boldsymbol{M}\\dot{\\boldsymbol{q}}$为用于复用证明的辅助相空间记号：§1.4印刷p.24/PDF47。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch01.newton_iff_euler_lagrange",
+  "reusable_proofs": [
+    "MolecularDynamics.mechanicalSolution_eulerLagrange",
+    "MolecularDynamics.eulerLagrange_to_mechanicalSolution",
+    "MolecularDynamics.newtonTrajectory_to_mechanicalSolution",
+    "MolecularDynamics.hasDerivAt_deriv_position",
+    "MolecularDynamics.solution_nBodyEquationAt"
+  ],
+  "extra_assumptions": [
+    "hm: 每个固定对角质量正；用于从相空间方程回到牛顿方程。",
+    "hI: 时间域开放；把within导数还原为原文双侧时间导数。",
+    "hU: U在Q可微；保证位置偏导是实际导数。"
+  ],
+  "statement_scope": "p.23首句、展示方程及完整括号说明；以真正牛顿二阶轨迹谓词给出双向等价，不仅保留旧单向定理。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "LOCAL_DRAFT",
+      "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+      "before_sha256": "f1b2f920de30a049706acea0983e0b77c579ba964de2bef6732506baf3824aea",
+      "after_sha256": "1a2246dbfd6de1a5d68c368c83933fd807672cc490097359d2afea3f40aaf4e8"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+
+theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (Q : Set (Position n)) (I : Set ℝ)
+    (q : ℝ → Position n) (hm : ∀ i, 0 < m i) (hI : IsOpen I)
+    (hU : ∀ x ∈ Q, DifferentiableAt ℝ U x) :
+    IsNewtonTrajectoryOn m U Q I q ↔ IsEulerLagrangeTrajectoryOn m U Q I q
+
+## MD-1.4-LegendreHamiltonian
+
+{
+  "source_id": "MD-1.4-LegendreHamiltonian",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.4",
+  "printed_page": "24",
+  "pdf_page": "47",
+  "statement_latex": "If $\\boldsymbol{M}(\\boldsymbol{q})$ is invertible, the supremum is achieved precisely when\n\\[\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p},\\]\nwhich gives the standard definition of the momentum vector $\\boldsymbol{p}$ in terms of velocities,\n\\[\\boldsymbol{p}=\\frac{\\partial L}{\\partial\\dot{\\boldsymbol{q}}}=\\boldsymbol{M}(\\boldsymbol{q})\\dot{\\boldsymbol{q}},\\]\nand, with $\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p}$, the Legendre transformation results in a new function\n\\[H(\\boldsymbol{q},\\boldsymbol{p})\\stackrel{\\mathrm{def}}{=}\\boldsymbol{p}^TM(\\boldsymbol{q})^{-1}\\boldsymbol{p}/2+U(\\boldsymbol{q}).\\]\nThis is precisely the energy function, written in terms of positions and momenta.",
+  "proof_latex": null,
+  "proof_note": "原文仅展示将U(q)从上确界中移出的代数恒等式，未独立证明上界、达到条件及唯一性；该段原文完整保存于proof_discussion_latex。",
+  "context_notation": [
+    "同页Legendre定义：凸函数$g(\\boldsymbol{\\xi}):\\mathbb{R}^m\\to\\mathbb{R}$，$\\widetilde g(\\boldsymbol{\\eta})=\\sup_{\\boldsymbol{\\xi}}(\\boldsymbol{\\eta}^T\\boldsymbol{\\xi}-g(\\boldsymbol{\\xi}))$；印刷p.24/PDF47。",
+    "配置相关质量矩阵来自$\\Phi^{\\prime}(\\boldsymbol{Q})^T\\boldsymbol{M}\\Phi^{\\prime}(\\boldsymbol{Q})$；§1.3印刷p.23/PDF46要求变换Jacobian满秩且所得质量矩阵可逆。在固定正质量的机械背景中，这给出对称正定矩阵；对称性和正定性不是单独由可逆推出。",
+    "$\\boldsymbol{q},\\boldsymbol{v},\\boldsymbol{p}$属于广义配置坐标空间；无约束例为$\\mathbb{R}^{N_c}$，约束参数化可为$\\mathbb{R}^{N_d}$，见印刷p.23/PDF46。$H$是位置和动量中的能量，见印刷p.24/PDF47。"
+  ],
+  "issues": [
+    {
+      "code": "POSSIBLE_ERRATUM",
+      "status": "NEEDS_HUMAN",
+      "detail": "若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。"
+    },
+    {
+      "code": "REUSE_SCOPE_GAP",
+      "status": "open",
+      "detail": "现有定理仅固定正对角m；本条保留任意配置相关M(q)、上界、sup、精确达到条件、动量偏导和能量对应，不能直接调用旧定理覆盖。"
+    },
+    {
+      "code": "INCOMPLETE_PROOF_AS_PROOF",
+      "status": "local_verified",
+      "detail": "PDF47/印刷p.24的计算只将U(q)移出sup，不能独立证明所摘陈述。依本批proof_latex的完整证明约定改为null，原段完整转存proof_discussion_latex。",
+      "receipt": "review.json"
+    },
+    {
+      "code": "CONTEXT_DEPENDENT_INVERTIBILITY",
+      "status": "local_verified",
+      "detail": "原句确实只写可逆，保持原文并标ISSUE；PDF46给出JᵀM_cartJ和满秩机械背景，继承对称正定性。仅以任意矩阵的可逆性解释则错误，不能静默把原句改写为正定性命题。",
+      "receipt": "review.json"
+    },
+    {
+      "code": "GENERALIZED_COORDINATE_DIMENSION",
+      "status": "local_verified",
+      "detail": "PDF46允许R^{N_d}→R^{N_c}的约束参数化；原context_notation一律将广义q、v、p放在R^{N_c}过窄，已修正。",
+      "receipt": "review.json"
+    }
+  ],
+  "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+  "reusable_proofs": [
+    "MolecularDynamics.massHamiltonian_eq_legendre_sup",
+    "MolecularDynamics.legendre_objective_eq_massHamiltonian_iff"
+  ],
+  "extra_assumptions": [
+    "[EXTRA] hPositive : (M q).PosDef；展开p23正物理质量及满秩Jacobian继承的对称正定背景，任意可逆矩阵反例不属于此子类。字面可逆原句保留，配置相关M及全部六项结论不变。"
+  ],
+  "statement_scope": "从“If M(q) is invertible”到“written in terms of positions and momenta.”；前一计算为proof_discussion_latex，前置抽象定义为context_notation；Hamilton方程属于下一条。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "LOCAL_DRAFT",
+      "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+      "before_sha256": "134f84e19b17bad810cdb8cdd0308bbcefb36fe2b17b2402605eae163c911a15",
+      "after_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00"
+    },
+    {
+      "stage": "RETURN_EXCEPTION_EAUDIT01",
+      "timestamp": "2026-10-11T12:47:10.360448",
+      "before_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00",
+      "after_sha256": "74fc6dc31aa1662b1e9633e94242e829c00e40357f07e1aa3941c699f6c895e8",
+      "reason": "原页PDF46–47已重新视觉核对；不完整sup计算移入proof_discussion，修正广义坐标维数，显式展开继承的正定背景。原语句不改，旧签名和全部返回件保留。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+  "proof_discussion_latex": "In the case of the Lagrangian $L(\\boldsymbol{q},\\boldsymbol{v})=\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find\n\\[\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-(\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})))=\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2)+U(\\boldsymbol{q}).\\]"
+}
+
+theorem hamiltonian_legendre_transform {n : ℕ}
+    (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)
+    (q : Position n) (p : Momentum n) (hM : IsUnit (M q))
+    (hPositive : (M q).PosDef) :
+    BddAbove (range (fun v : Velocity n =>
+      inner ℝ p v - variableMassLagrangian M U q v)) ∧
+    sSup (range (fun v : Velocity n => inner ℝ p v - variableMassLagrangian M U q v)) =
+      variableMassHamiltonian M U q p ∧
+    (∀ v : Velocity n, inner ℝ p v - variableMassLagrangian M U q v =
+      variableMassHamiltonian M U q p ↔ v = matrixAction (M q)⁻¹ p) ∧
+    (∀ v : Velocity n, HasGradientAt (variableMassLagrangian M U q)
+      (matrixAction (M q) v) v) ∧
+    p = matrixAction (M q) (matrixAction (M q)⁻¹ p) ∧
+    variableMassHamiltonian M U q p =
+      inner ℝ (matrixAction (M q)⁻¹ p)
+        (matrixAction (M q) (matrixAction (M q)⁻¹ p)) / 2 + U q
+
+## MD-1.5.1-FlowInverse
+
+{
+  "source_id": "MD-1.5.1-FlowInverse",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.5.1",
+  "printed_page": "26",
+  "pdf_page": "49",
+  "statement_latex": "The classical systems treated here can be solved forward or backward in time. Observe that $\\mathcal{F}_{-t}\\mathcal{F}_t=\\operatorname{Id}$ (the identity map), thus the flow map is invertible and, indeed, the family of flow maps defined for different values of $t$ form an Abelian group under the operation of composition ($\\mathcal{F}_t\\mathcal{F}_s=\\mathcal{F}_s\\mathcal{F}_t=\\mathcal{F}_{t+s}$).",
+  "proof_latex": null,
+  "proof_note": "原文用Observe that直接断言；没有独立证明。随后Hamiltonian守恒属于另一个结论，不纳入本条。",
+  "context_notation": [
+    "式(1.5)：$\\dot{\\boldsymbol{z}}=\\boldsymbol{f}(\\boldsymbol{z})$，$\\boldsymbol{z}(0)=\\boldsymbol{\\xi}$；$m$维空间及flow map定义$\\mathcal{F}_t(\\boldsymbol{\\xi})=\\boldsymbol{z}(t)$：§1.5.1印刷p.26/PDF49。",
+    "正文明确继承前小节存在唯一性前提；势能下界、固定正定质量、能量限制下位置紧性：§1.5印刷p.25–26/PDF48–49。",
+    "IsGlobalMechanicalFlowOn只假设逐初值全实时间ODE解、ψ 0 z=z和状态域S不变；不把反演、群律或双射藏进假设。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch01.flow_inverse",
+  "reusable_proofs": [
+    "MolecularDynamics.globalMechanicalFlow_inverse",
+    "MolecularDynamics.globalMechanicalFlow_add",
+    "MolecularDynamics.globalMechanicalFlow_commute",
+    "MolecularDynamics.globalMechanicalFlow_bijOn"
+  ],
+  "extra_assumptions": [
+    "hψ: 显式全实时间解及S不变，落实正文双向可解和flow map前提；本条不证明全局流存在。",
+    "hreg: F在Q为C¹，用于ODE唯一性，落实正文继承的存在唯一性前提。",
+    "_hm: 正固定质量，使对象限于原文分子Hamiltonian系统。"
+  ],
+  "statement_scope": "完整反演/可逆/Abelian群律段；恒等元ψ0由flow定义，结论覆盖双向反演、双射和加法/交换律。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+
+theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (S : Set (PhaseSpace n))
+    (ψ : ℝ → PhaseSpace n → PhaseSpace n)
+    (_hm : ∀ i, 0 < m i)
+    (hψ : IsGlobalMechanicalFlowOn m (fun q => -gradient U q) Q S ψ)
+    (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 (fun x => -gradient U x) q) :
+    (∀ z ∈ S, ψ 0 z = z) ∧
+    (∀ t : ℝ, ∀ z ∈ S, ψ (-t) (ψ t z) = z ∧ ψ t (ψ (-t) z) = z) ∧
+    (∀ t : ℝ, BijOn (ψ t) S S) ∧
+    ∀ s t : ℝ, ∀ z ∈ S,
+      ψ t (ψ s z) = ψ s (ψ t z) ∧ ψ t (ψ s z) = ψ (t + s) z
