@@ -1,0 +1,36 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02d",
+  "source_ids": [
+    "MD-4-VerletBoundaryPrinted"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 163,
+      "printed_page": 141
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "5ec2f06c93e0607de031e44dd5811348c5ec9e2ad79ebf2bec3cbd8c294274d1",
+  "lean_sha256": "560f78bf4adafcc3672b65f9989dbcd49730df2b8c90fb08b14310a58605de39",
+  "signature_sha256": "dc35fa75a8696c46d4d3a045674e7aada7550306e61a5c38ebe827f2f94b2537",
+  "definition_excerpts": [],
+  "paste_plus_pdf_bytes": 118756,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2787,
+      "sha256": "1921df1695689f627a2904f169f9b58f8dd4c8c2b8bb5ac7c40fcd230f79fa26"
+    },
+    "BATCH02d_PAGES.pdf": {
+      "bytes": 115969,
+      "sha256": "68ce290d685224fb7e5060334a714af0738e5990a6762020cad420448388ec5e"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 119918
+}

@@ -1,0 +1,45 @@
+174                                                     4  The Stability Threshold
+
+The notation @U=@   k refers to a 3  3 matrix of partial derivatives of the potential
+with respect to the corresponding elements of the rotation matrix    k, and, for a 3  3
+matrix A,
+
+                           rot.A/ D skew 1.A   AT/:
+
+Then the algorithm proceeds by iteration of timesteps, as shown below.
+
+         DLM Rigid Body Molecular Dynamics Step
+
+1. “Kick”: update the momenta and angular momentum vectors with known forces
+  and torques for a half step:
+
+                            h              k        k   h
+                       pk :D pk C 2Fk;       :D  C 2  k:
+
+2. “Drift”: step forward a whole step in positions
+
+                                   qk :D qk C hpk:
+
+3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps
+
+                 :D    x  h2  1=I1k       I   k :D      kI    k :D    k   T
+                 :D    y  h2  2=I2k       I   k :D      kI    k :D    k   T
+                 :D     z h  3=I3k       I    k :D      kI    k :D    k   T
+                 :D    y  h2  2=I2k       I   k :D      kI    k :D    k   T
+                 :D    x  h2  1=I1k       I   k :D      kI    k :D    k   T
+
+  The notation   x.  / refers to a rotation around the x-axis by an angle    , that is
+
+                    2          3
+                               1   0      0
+                               x.  / D 4 0 cos.  /   sin.  / 5 ;
+                               0 sin.  /  cos.  /
+
+   with corresponding formulae for    y and    z.
+4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with
+   a half step using new forces Fk and torques   k evaluated at the current q,     .
+
+  Note that the symmetric character of the algorithm could be revealed more clearly
+by dividing the “Drift” step into two half steps sandwiched around the Spin step
+(Kick, Drift, Spin, Drift, Kick), but as the updates Drift/Spin are decoupled, the
+order they are performed is not important.

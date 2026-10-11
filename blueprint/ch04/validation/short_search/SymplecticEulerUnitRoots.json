@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.log",
+    "source_sha256": "c4e9e2cdb931bc211eaa6cce568437a87c38f6132efb8cdceb072f468aadbeff",
+    "log_sha256": "4c074d2f2d1845ee38b5eb63d5cd34107df5ea7efbaf5a0fde65e6f4ebb1c9d7"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro Ω h ζ ht he\n  have hr := congrArg Complex.re he\n  have hi := congrArg Complex.im he\n  simp [pow_two, Complex.mul_re, Complex.mul_im] at hr hi\n  have hz : (2*ζ.re-(2-h^2*Ω^2))*ζ.im=0 := by nlinarith [hi]\n  have hn : ζ.re^2+ζ.im^2=1 := by\n    rcases mul_eq_zero.mp hz with hz|hz\n    · nlinarith [hr]\n    · by_cases hpos : 0 ≤ ζ.re\n      · have hab : 0 ≤ h^2*Ω^2*ζ.re := mul_nonneg (mul_nonneg (sq_nonneg h) (sq_nonneg Ω)) hpos\n        have hs : (ζ.re-1)^2=0 := by nlinarith [hr,sq_nonneg (ζ.re-1)]\n        have hzre := sq_eq_zero_iff.mp hs\n        nlinarith\n      · have hab : 0 ≤ (4-h^2*Ω^2)*(-ζ.re) := mul_nonneg (by linarith) (by linarith)\n        have hs : (ζ.re+1)^2=0 := by nlinarith [hr,sq_nonneg (ζ.re+1)]\n        have hzre := sq_eq_zero_iff.mp hs\n        nlinarith\n  have hnorm : ‖ζ‖^2=1 := by\n    rw [Complex.sq_norm,Complex.normSq_apply]\n    nlinarith [hn]\n  nlinarith [norm_nonneg ζ]",
+    "source": "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.log",
+    "source_sha256": "ead119d45f10bbcc1490ae0c97cf99eea53247ce1307b24be9b752b3f77fb562",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

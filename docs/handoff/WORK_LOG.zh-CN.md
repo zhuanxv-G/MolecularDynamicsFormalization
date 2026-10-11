@@ -263,3 +263,7 @@ JSON/Blueprint/本地预审/compact包与7段文档已生成；完整check和逐
 ## 2026-10-10 第3章：§3.7检查点
 149条JSON/Blueprint/本地预审/compact/7段文档；完整check与逐条公理通过，冻结文件不变。
 下一步：自动进入第4章；从第3章最后commit建立chapter04-blueprint，原页36页已核，预备scripts/ch04_section*.py按≤8条生成并编译。；网站待审，原模型及heartbeat调度保留。
+
+## 2026-10-11 第4章：§4检查点
+16条JSON/Blueprint/本地预审/compact/7段文档；完整check与逐条公理通过，冻结文件不变。
+下一步：先整合第1章新返回件blueprint/ch01/mathcopilot_results/review.json及EAUDIT，再继续第4章§4.1；复用16条与完整检查。；网站待审，原模型及heartbeat调度保留。

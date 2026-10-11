@@ -36,9 +36,10 @@ class ChapterData:
         return signature+' := by\n  '+('apply '+ns+'.'+name+' <;> assumption' if prove else 'sorry')
     def proposition(self,name,newname=None,proof='sorry'):
         text=(ROOT/f'MolecularDynamics/Chapter{self.ch:02}/Statements.lean').read_text(encoding='utf-8-sig')
-        m=re.search(r'(?m)^def '+re.escape(name)+r'\s*: Prop :=\n',text)
+        m=re.search(r'(?m)^def '+re.escape(name)+r'\s*: Prop :=[ \t]*(?:\r?\n)?',text)
         if not m:raise ValueError(name)
         end=text.find('\ndef ',m.end());body=text[m.end():end if end>=0 else text.rfind('end MolecularDynamics')].strip()
+        body=re.sub(r'(?m)^[ \t]*--[^\n]*(?:\n|$)','',body).rstrip()
         return 'theorem '+(newname or name.removesuffix('_statement'))+' :\n  '+body+' := by\n  '+proof
 
 def apply_saved_routes(ch,records,keys):

@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/MidpointElimination-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/MidpointElimination-route1.log",
+    "source_sha256": "ffd89266041da796928cf5f2fdf9c16ad218351b366f5efde7d5b7611f4edc78",
+    "log_sha256": "023142b70a2b129a3e1047011641c6b9baa1c8c5de85d644f8be7f3d4a35e03c"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n m U h z mid out hm\n  rcases hm with ⟨hq,hp,houtq,houtp⟩\n  calc\n    mid.1=z.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m mid.2 := hq\n    _ = _ := by\n      rw [hp]\n      funext i\n      simp [MolecularDynamics.Chapter04Review.invMass]\n      ring",
+    "source": "blueprint/ch04/validation/short_search/MidpointElimination-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/MidpointElimination-route2.log",
+    "source_sha256": "51c02803f6b04d8833fb38ceb61b17943a8d17db50da45857b555633138bcd82",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

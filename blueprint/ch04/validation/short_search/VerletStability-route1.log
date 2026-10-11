@@ -1,0 +1,54 @@
+blueprint\ch04\validation\short_search\VerletStability-route1.lean:16:56: error: `dsimp` made no progress
+blueprint\ch04\validation\short_search\VerletStability-route1.lean:21:77: error(lean.unknownIdentifier): Unknown constant `Matrix.dotProduct`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch04\validation\short_search\VerletStability-route1.lean:19:50: error: unsolved goals
+Ω h : ℝ
+hn : 0 < |h * Ω|
+ht : |h * Ω| < 2
+hΩ : Ω ≠ 0
+ht2 : h ^ 2 * Ω ^ 2 < 4
+b : ℝ := Ω ^ 2 * (1 - h ^ 2 * Ω ^ 2 / 4)
+hb : 0 < b
+A : Matrix (Fin 2) (Fin 2) ℝ := verletMatrix Ω h
+K : (Fin 2 → ℝ) → ℝ := fun v => v 1 ^ 2 + b * v 0 ^ 2
+v : Fin 2 → ℝ
+⊢ h ^ 2 * Ω ^ 4 * vecHead v ^ 2 * (-1 / 4) + Ω ^ 2 * vecHead v ^ 2 + vecHead (vecTail v) ^ 2 =
+    h ^ 2 * Ω ^ 4 * v 0 ^ 2 * (-1 / 4) + Ω ^ 2 * v 0 ^ 2 + v 1 ^ 2
+blueprint\ch04\validation\short_search\VerletStability-route1.lean:35:10: error: Function expected at
+  sq_le_sq₀ (abs_nonneg ?m.408) (norm_nonneg ?m.412)
+but this term has type
+  |?m.408| ^ 2 ≤ ‖?m.412‖ ^ 2 ↔ |?m.408| ≤ ‖?m.412‖
+
+Note: Expected a function because this term is being applied to the argument
+  (by simpa using norm_le_pi_norm v i)
+blueprint\ch04\validation\short_search\VerletStability-route1.lean:63:35: error(lean.invalidField): Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression
+  mul_le_mul_left ?m.1072
+of type
+  ∀ (a : ?m.1066), ?m.1067 * a ≤ ?m.1068 * a
+blueprint\ch04\validation\short_search\VerletStability-route1.lean:63:31: error: Application type mismatch: The argument
+  hd
+has type
+  0 < d
+but is expected to have type
+  ?m.1067 ≤ ?m.1068
+in the application
+  mul_le_mul_left hd
+blueprint\ch04\validation\short_search\VerletStability-route1.lean:21:63: warning: This simp argument is unused:
+  Matrix.mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, Matrix.dotProduct, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\VerletStability-route1.lean:21:95: warning: This simp argument is unused:
+  Fin.sum_univ_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, Matrix.mulVec, Matrix.dotProduct]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

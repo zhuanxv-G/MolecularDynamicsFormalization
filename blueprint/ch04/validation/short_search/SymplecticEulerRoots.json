@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.log",
+    "source_sha256": "7af63af084bc9b57c1e674d8c84b6fe172104b5428189662246854c90a032ca4",
+    "log_sha256": "ff8f95daae6d7a97a7e64b0239c1dfc4791c76508488c466b44cec54c7d068d2"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro Ω h ζ\n  let A : Matrix (Fin 2) (Fin 2) ℂ := (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h).map Complex.ofReal\n  have heig : (∃ v : Fin 2 → ℂ, v ≠ 0 ∧ A *ᵥ v=ζ • v) ↔ (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-A).det=0 := by\n    rw [← Matrix.exists_mulVec_eq_zero_iff]\n    simp only [Matrix.sub_mulVec, Matrix.smul_mulVec, Matrix.one_mulVec, sub_eq_zero]\n    constructor\n    · rintro ⟨v,hv,he⟩; exact ⟨v,hv,he.symm⟩\n    · rintro ⟨v,hv,he⟩; exact ⟨v,hv,he.symm⟩\n  have hchar : (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-A).det=ζ^2-(2-h^2*Ω^2 : ℝ)*ζ+1 := by\n    simp [A, MolecularDynamics.Chapter04Review.symplecticEulerMatrix, Matrix.det_fin_two]\n    push_cast\n    ring\n  change (∃ v : Fin 2 → ℂ, v ≠ 0 ∧ A *ᵥ v=ζ • v) ↔ _\n  rw [heig,hchar]\n  constructor\n  · intro he\n    refine ⟨2*ζ-(2-h^2*Ω^2 : ℝ), ?_, Or.inl ?_⟩\n    · push_cast at he ⊢\n      linear_combination 4*he\n    · push_cast\n      ring\n  · rintro ⟨d,hroot,(rfl|rfl)⟩ <;> push_cast at hroot ⊢ <;>\n      linear_combination (1/4 : ℂ)*hroot",
+    "source": "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.log",
+    "source_sha256": "bca1db626508f48fd8d61d5bd1ec6f9e609e2ac68963791e9652566f19a982bd",
+    "log_sha256": "6b2ff12a98d413106d419ae7c98016becbff36f64e10701b6d29b1b110073e87"
+  }
+]

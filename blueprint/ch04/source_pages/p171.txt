@@ -1,0 +1,52 @@
+4.3  Methods for Constrained Dynamics                                           149
+
+
+
+                                                                                       def
+within the MTS method by a modiﬁed potential function NU.q/ D US.A.q//. The
+mapping A.q/ is deﬁned by reference to the fast dynamics, e.g. by the weighted
+average
+
+                               1 XK
+                      A.q/ D                            i  i.q/;
+                      K C 1
+                                             iD0
+
+where the     i are deﬁned recursively by solving the system with Hamiltonian
+
+                           Hfast.q; p/ D pTM 1p=2 C UF.q/
+
+starting from initial position q and zero initial momentum p, for K timesteps using a
+small stepsize  f. This small step does not have to be directly related to the timestep
+used for integrating the fast dynamics within the MTS scheme; it is only used for
+the averaging procedure. The resulting sequence of    i clearly are functions of q only
+and so A is well deﬁned. The weights    i appearing in the average may be selected
+in various ways. The initialization of the calculation of the     i can, moreover, be
+modiﬁed by various alternative q-dependent proposals, or may be randomized.
+  An alternative, simpler, and probably more robust, procedure is simply to ﬁx the
+value of A.q/ by constraining q to its mechanical equilibrium value [189] in which
+case no fast averaging whatsoever needs to be performed. This approach relies on
+the use of the SHAKE method of constrained molecular dynamics (see the following
+section).
+   In each of the molliﬁed multiple timestepping methods, since only the potential
+energy is modiﬁed, and by a smooth mapping of positions, the forces derived by
+differentiating NU are still conservative, and, just as with the MTS method, the
+scheme remains symplectic.
+  The molliﬁcation is only applied for the purpose of modifying the slow impulse
+and the molliﬁed methods are in other ways identical to multiple timestepping.
+These schemes appear to confer some distinct advantage in the large stepsize in
+molecular dynamics. For example where a detailed and fully ﬂexible molecular
+model of a solvated biomolecule might require stepsizes of 2 fs in a Verlet
+simulation, molliﬁed impulse methods may allow increases to 6 fs [189] in the
+‘large’ timestep, i.e. the period between reevaluations of the slow forces. This
+beneﬁt may be substantial in simulations of large systems.
+
+
+
+4.3  Methods for Constrained Dynamics
+
+
+Constraints are used frequently in molecular modelling. By a constraint, we mean
+a modiﬁcation of a dynamical system to maintain the constancy of a given function
+of coordinates (or coordinates and momenta). In this section we consider holonomic
+constraints which may be expressed in terms of positions only, and perhaps time,

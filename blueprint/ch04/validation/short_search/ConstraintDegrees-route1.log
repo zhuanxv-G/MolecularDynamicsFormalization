@@ -1,0 +1,8 @@
+blueprint\ch04\validation\short_search\ConstraintDegrees-route1.lean:15:13: error(lean.unknownIdentifier): Unknown constant `LinearMap.finrank_ker_add_finrank_range`
+blueprint\ch04\validation\short_search\ConstraintDegrees-route1.lean:13:71: error: unsolved goals
+n l : ℕ
+g : Q n → Q l
+q : Q n
+hg : DifferentiableAt ℝ g q
+hs : Function.Surjective ⇑(fderiv ℝ g q)
+⊢ Module.finrank ℝ ↥(↑(fderiv ℝ g q)).ker + l = n

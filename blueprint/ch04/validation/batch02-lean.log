@@ -1,0 +1,18 @@
+Blueprint/Ch04.lean:27:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:40:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:51:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:63:7: error: unexpected token '/--'; expected ':=', 'where' or '|'
+Blueprint/Ch04.lean:61:4: error: Function expected at
+  2 < |h * Ω| → eigenvalueOutside (Chapter04Review.symplecticEulerMatrix Ω h)
+but this term has type
+  Prop
+
+Note: Expected a function because this term is being applied to the argument
+  sorry
+Blueprint/Ch04.lean:67:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:80:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:86:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:92:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:97:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:105:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:113:8: warning: declaration uses `sorry`

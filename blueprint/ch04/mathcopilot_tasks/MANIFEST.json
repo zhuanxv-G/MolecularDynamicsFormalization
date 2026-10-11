@@ -1,0 +1,130 @@
+[
+  {
+    "batch": "BATCH01",
+    "source_ids": [
+      "MD-4-LinearField",
+      "MD-4-EulerFactor",
+      "MD-4-ScalarEulerStable",
+      "MD-4-EulerRegion",
+      "MD-4-OscillatorMatrix",
+      "MD-4-EulerImaginaryGrowth",
+      "MD-4-SymplecticEulerMatrix",
+      "MD-4-SymplecticEulerCharacteristic"
+    ],
+    "full_batch_sha256": "2bcfc71899d1b322db46c9e423c57ea55c102f08b219907f9aad796262ce91c5",
+    "subtasks": [
+      {
+        "subtask": "BATCH01a",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH01/a",
+        "bytes": 125706,
+        "manifest_sha256": "e751e1226c875943b3516e4965f1976a90c7c6f381de7e730e0a3f54cf620505"
+      },
+      {
+        "subtask": "BATCH01b",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH01/b",
+        "bytes": 91207,
+        "manifest_sha256": "ed0898dc06ab9e3266655fedb5c2657a64425c476b1bd7b0e7782349c3f64436"
+      },
+      {
+        "subtask": "BATCH01c",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH01/c",
+        "bytes": 91038,
+        "manifest_sha256": "9eed9b9c2f54832d506acbe39958fc7a7395bbb9d93cdc1c987676ff04d675d6"
+      },
+      {
+        "subtask": "BATCH01d",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH01/d",
+        "bytes": 91140,
+        "manifest_sha256": "f476cdf803124b54678bfa951fa0013412f20eedaa9d12c54a232c4146aa1984"
+      },
+      {
+        "subtask": "BATCH01e",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH01/e",
+        "bytes": 91229,
+        "manifest_sha256": "f4109ff30dd8ae38e1f76d7ecf53cc7ddbaa80607d407ce75dc9a0546df25f21"
+      },
+      {
+        "subtask": "BATCH01f",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH01/f",
+        "bytes": 75588,
+        "manifest_sha256": "f2a6b6129b70292ef737ff2d4bd25b8125b08617fa6f06d9c031c173864aafca"
+      },
+      {
+        "subtask": "BATCH01g",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH01/g",
+        "bytes": 75743,
+        "manifest_sha256": "08e3e243b79234973c7d08bf056796d450a349da2d4e0f1c6a6d174c915b4cf7"
+      },
+      {
+        "subtask": "BATCH01h",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH01/h",
+        "bytes": 75526,
+        "manifest_sha256": "8df5a75212993dc70fe649cffabfbd86a1a4232ed1a359747667dbb6db5b0ab0"
+      }
+    ]
+  },
+  {
+    "batch": "BATCH02",
+    "source_ids": [
+      "MD-4-PRKThreshold",
+      "MD-4-VerletStability",
+      "MD-4-SymplecticEulerBoundaryPrinted",
+      "MD-4-VerletBoundaryPrinted",
+      "MD-4-OscillatorSpectrum",
+      "MD-4-SymplecticEulerRoots",
+      "MD-4-SymplecticEulerUnitRoots",
+      "MD-4-SymplecticEulerStability"
+    ],
+    "full_batch_sha256": "9b724101ce07bc3184d11b6fe9bce6fa75455f050d88884ab939d0300efc232f",
+    "subtasks": [
+      {
+        "subtask": "BATCH02a",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH02/a",
+        "bytes": 110020,
+        "manifest_sha256": "8a5c8cade88dcbace8667b36a5c3f41c15d6c0b92f4bd65cd7f65f8b337a979e"
+      },
+      {
+        "subtask": "BATCH02b",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH02/b",
+        "bytes": 120182,
+        "manifest_sha256": "be69683fe164ad280124d1bf77aae5951a61b1327f9838f524cfe5b31a5e9dce"
+      },
+      {
+        "subtask": "BATCH02c",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH02/c",
+        "bytes": 75352,
+        "manifest_sha256": "697afb7a94c9a4d8f5f93717ec88a5614ed772216b0cce3a17aeea7fe7f1b5aa"
+      },
+      {
+        "subtask": "BATCH02d",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH02/d",
+        "bytes": 119918,
+        "manifest_sha256": "355f81fd25eaae8354b47068ab476dc56ad321beb67779463092d5fa404de06e"
+      },
+      {
+        "subtask": "BATCH02e",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH02/e",
+        "bytes": 75324,
+        "manifest_sha256": "03b3a3a73a3f4477ea9a5f964ab7723bea8261dd9ffd92a58152e947abe620a6"
+      },
+      {
+        "subtask": "BATCH02f",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH02/f",
+        "bytes": 75571,
+        "manifest_sha256": "172d444e10ee002766b86f72fee63c9bcd32405024502a6b2dd350bf20fca1dd"
+      },
+      {
+        "subtask": "BATCH02g",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH02/g",
+        "bytes": 75554,
+        "manifest_sha256": "389d30cc21d29d7350866da1e0bbac4a750d1bff8d81cdd2751fd9fdeff5b150"
+      },
+      {
+        "subtask": "BATCH02h",
+        "path": "blueprint/ch04/mathcopilot_tasks/compact/BATCH02/h",
+        "bytes": 76005,
+        "manifest_sha256": "ec941612f3e9f95f3e865023108d9a974d293c6ac40bffc8d68c3411679ba72c"
+      }
+    ]
+  }
+]

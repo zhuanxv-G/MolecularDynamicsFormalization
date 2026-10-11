@@ -1,0 +1,48 @@
+4.4  Rigid Body Systems                                                       171
+
+subject to the orthogonality constraint   T  D I. Here the potential energy has
+been expressed in terms of qcm and the orientation of the body. The constraint may
+be enforced using Lagrange multipliers with the following equations
+
+                    dtqcmd  D pcm=M;    dtd  D ˘ R  1;
+                    dtpcmd  D  rqcmU; dt˘d  D r U           ;
+                                            I D   T    :
+
+
+These equations may be solved using a SHAKE or RATTLE algorithm [84, 201].
+However, we will present an alternative which is both conceptually simpler and
+easier to implement.
+
+
+
+4.4.1  Euler Equations
+
+
+An elegant form of the equations of motion for the free rigid body is expressed in
+terms of the angular momentum vector referred to the body frame.
+  The angular momentum vector in the reference frame is given by
+
+          XN
+                                               l D    miıi    Pıi:
+                                      iD1
+
+From Eq. (4.39) we may write this as
+
+          XN
+                                            l D    miıi  !   ıi;
+                                   iD1
+
+from which, using the vector triple product identity a  b   c D .a  c/b   .a  b/c,
+we obtain
+
+         XN
+                                      l D    mi kıik2I   ıiıTi  !:
+                                iD1
+
+Deﬁne  D    Tl, the angular momentum vector referred to the body frame of
+reference, then we have (using ıi D   ıi.0/):
+
+                   D T!b:
+
+Thus the inertia tensor relates the angular momentum vector in the body frame to
+the angular velocity vector in the body frame.

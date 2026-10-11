@@ -1,0 +1,53 @@
+160                                                     4  The Stability Threshold
+
+
+Proof Clearly the result follows provided
+
+        XNc
+                                dqj ^ d Œ r  .q/ j D 0;
+                             jD1
+
+where Œ: : :  j indicates the jth component of the term in brackets. We have
+                                        !
+   XNc      XNc        @   XNc     00
+               dqj ^ d Œ r  .q/ j D     dqj ^     d C                ij dqj   :
+                                                @qj           jD1                       jD1                     iD1
+
+Then we note
+
+      XNc      @  XNc @
+                        dqj ^   d D        dqj ^ d D 0;
+                               @qj           @qj                     jD1                 jD1
+                      PNc  @
+since  .q/   0 implies d .q/ D   jD1 @qj dqj    0. Moreover
+
+        XNc  XNc
+                                 dqj ^            ij00 dqj D 0;
+                              jD1       iD1
+
+since the Hessian matrix    00 is symmetric.                                               ut
+
+   Observe that
+
+                       lX
+                    g0.qnC1/T  nC1 D      nC1;krgk.qnC1/:
+                                     kD1
+
+Thus we may apply Lemma 4.1 with   replaced by each gk to demonstrate
+
+     XNc      XNc
+                       dqnC1;j ^ dpnC1;j D     dqnC1;j ^ dNpnC1;j:
+                   jD1                      jD1
+
+Using similar argumentation based on the properties of the wedge product, we next
+show
+
+      XNc      XNc
+                         dqnC1;j ^ dNpnC1;j D     dqn;j ^ dNpnC1;j;
+                     jD1                      jD1
+
+and, ﬁnally, invoking Lemma 4.1 again,
+
+      XNc     XNc
+                              dqn;j ^ dNpnC1;j D     dqn;j ^ dpn;j:
+                       jD1                   jD1

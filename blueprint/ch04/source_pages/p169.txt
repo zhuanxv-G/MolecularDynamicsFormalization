@@ -1,0 +1,54 @@
+4.2  Multiple Timestepping                                                     147
+
+
+Fig. 4.3  Eigenvalues of the
+simple multiple timestepping
+method. The eigenvalues coil                                              0.158
+around the surface of the
+cylinder j  j D 1 except at                        0.157
+exceptional points near
+k =˝, where k 2 Z. Near                        0.156
+these points of resonance,                h
+exponential instabilities are                       0.155
+present
+                                              0.154
+
+                                                  0.04
+
+                                                  0
+                                           Im(  )
+                                                         −0.04       −1
+                                                              −1.002    Re(  )
+
+
+and the norm of the solution will oscillate and grow linearly with n as n ! 1.
+This is the simplest type of linear resonance present in multiple timestepping. The
+resonance at h D  =˝ only gives rise to a relatively weak ‘linear’ instability, but
+what is more serious is that in the vicinity of h D  =˝ the eigenvalues actually
+leave the unit circle. We can see this by expanding  .h/ D 2 cos.h˝/  ˝h sin.h˝/
+in a Taylor expansion around h D  =˝:
+
+
+                       .h/ D  2 C ";    " D   .h    =˝/:
+                       ˝
+
+Both eigenvalues satisfy
+
+              C    1 D  2 C " C O."2/:
+
+In case " > 0, i.e. after h D  =˝, we have complex eigenvalues and we already
+know this case to be stable. For " < 0, however, we have
+
+              D  1 ˙ .j"j=2/1=2 C O."/:
+
+Here both eigenvalues are real and one is outside the unit circle. There is thus a
+small interval of exponential instability directly below h D  =˝.
+  We can easily solve for the two eigenvalues as functions of h and graph them
+as points in three dimensions: x D Re.  /, y D Im.  /, z D h (Fig. 4.3). Such
+resonances will also occur at integer multiples of  =˝, and we can therefore
+expect many small intervals in the stepsize where the multiple timestepping
+method is unstable. When a large system involves a combination of many different
+interactions, the intervals of instability would expect to proliferate from all the
+different natural frequencies.
+  A linear resonance is a rational relationship between the period of the harmonic
+oscillator and the timestep used in simulation. If we substitute a nonlinear oscillator

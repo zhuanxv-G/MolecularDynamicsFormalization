@@ -1,0 +1,51 @@
+140                                                     4  The Stability Threshold
+
+
+The eigenvalues are ˙i!. The reason a method like Euler’s method can never
+perform well for molecular dynamics is that molecular dynamics is a Hamiltonian
+system and at the bottoms of basins on the energy surface, which correspond to
+stable centers, we expect all the eigenvalues of a local linearization of the problem
+to be purely imaginary. The stability condition always fails to hold and, for Euler’s
+method, zn grows exponentially rapidly away from the equilibrium point.
+   Let us perform a similar analysis for the Symplectic Euler method. Because Sym-
+plectic Euler cannot be applied to scalar equations (due to its partitioned structure)
+we must work directly with the second order system, but this is straightforward for
+the harmonic oscillator. The timestep map is deﬁned by
+
+                   Q D q C hP;
+
+                      P D p  h˝2q:
+
+Solving for Q, P this yields
+
+                Q      1  h2˝2 h   q
+                D                                :
+                   P       h˝2  1   p
+
+The eigenvalues of the matrix are easily found, they are
+
+                         h2˝2   1 p
+                               1;2 D 1     ˙   h4˝4  4h2˝2:
+                            2     2
+
+Then we observe that for h2˝2    4, they are complex and their squared magnitude
+is
+
+                       h2˝2  2   1
+                      j  1;2j2 D  1      C   4h2˝2  h4˝4 D 1;
+                           2       4
+
+thus both eigenvalues lie on the unit circle in the complex plane as long as
+
+                      h˝   2:
+
+This is the so-called linear stability condition of the Symplectic Euler method: if
+h˝   2 the integrator is stable. When h˝ > 2, the eigenvalues of the discretization
+method are both real, with one strictly inside and one strictly outside the unit circle.
+This implies that the method will exhibit exponentially growing solutions. We say
+that the stability threshold of the Symplectic Euler method is 2=˝.
+  Among explicit symplectic Partitioned Runge-Kutta methods this is the max-
+imum stability threshold [74]. In a similar way one can analyze the stability of
+the Verlet and other methods and one thus obtains conditions on the stepsize that
+must hold for the equilibrium points to be stable in the linearization. Analyzing
+the stability of both continuous and discrete iteration is much more complicated for

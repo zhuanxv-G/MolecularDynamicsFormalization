@@ -1,0 +1,51 @@
+146                                                     4  The Stability Threshold
+
+
+where it is assumed that ˝     1. The differential equations describing this system
+are
+
+                                                    Pq D p;
+
+                                                    Pp D  .1 C ˝2/q:
+
+               p
+The frequency is therefore N˝ D  1 C ˝2. In the limit of small inner step, we solve
+the system with Hamiltonian HF D p2=2C˝2q2=2 exactly, meanwhile punctuating
+with impulses from US, thus the MTS ﬂow map approximation, which is linear in
+this case, can be written in the form of a matrix-vector multiply
+
+                   Q         q
+                  D Wh        ;
+                      P         p
+
+where
+
+                    Wh D Sh=2FhSh=2;
+
+with
+
+                 1 0             cos.˝h/ ˝  1 sin.˝h/
+            Sh D              ;   Fh D                                              :
+                  h 1        ˝ sin.˝h/  cos.˝h/
+
+Both of these matrices have unit determinant for any h, so the product of the
+eigenvalues of Wh is 1. On the other hand, a short calculation shows that
+
+                                           h
+                      1 C  2 D Tr.Wh/ D 2 cos.h˝/     sin.h˝/:
+                          ˝
+
+For a given h, the eigenvalues of Wh are either complex conjugates or they are
+real and reciprocal to one another. If they are complex conjugates with nonzero
+imaginary part, then we have   1  2 D    1 N 1 D  1, so  j  1j D 1 and the two
+eigenvalues are clearly distinct and on the unit circle in the complex plane.
+    If we consider a relatively small step of size h˝ D  k  we ﬁnd that the
+eigenvalues cross, and the system is unstable. For example, at h D  =˝, we have
+
+                                            1 0
+                Fh D   I ) Wh D  S2h=2 D                 ;                                             h 1
+
+so that
+
+                                     1  0
+                  Wnh D .  1/n               ;                                     nh 1

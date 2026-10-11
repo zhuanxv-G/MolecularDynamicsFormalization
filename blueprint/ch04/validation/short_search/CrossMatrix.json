@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro u v\n  ext i\n  fin_cases i <;> simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring",
+    "source": "blueprint/ch04/validation/short_search/CrossMatrix-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/CrossMatrix-route1.log",
+    "source_sha256": "9f7c790fe6b4411b48deb1de9ca229bb1986be596145f260573dbaf48bb1cef4",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

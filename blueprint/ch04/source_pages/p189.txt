@@ -1,0 +1,55 @@
+4.4  Rigid Body Systems                                                       167
+
+
+Fig. 4.6 Rigid representation                                                H2
+of a water molecule used in
+TIP4P, indicating the “ghost”
+charge site                                 H1          M
+
+
+
+
+                                              O
+
+
+sets of whose charge sites are denoted by A and B, takes the form
+
+         X X  QiQj     k2     k3                                  water                     'water   D         k1   C                 ;
+                                                                      rij      r12OO    r6OO                                     i2A j2B
+
+where rOO represents the distance between the oxygen atoms of the two molecules,
+and k1; k2; k3 are positive constants. Similar potentials are needed for interactions
+between the atoms of the solute and the atoms of the water molecules.
+  More generally, consider a collection of N atoms (masses mi, positions qi, i D
+1; 2; : : : ; N) subject to an external potential U. The kinetic energy is
+
+                              1 XN
+                   K D       mikPqik2:
+                              2
+                                        iD1
+
+The atomic positions may be referred to a coordinate system placed at the center of
+mass of the collection
+                    PN
+                                           iD1 miqi
+                             qcm D                 ;
+                     M
+      PN                            PN
+where M D   iD1 mi is the total mass. We write qi D qcm C ıi, where   iD1 miıi D
+0. Thus the kinetic energy becomes
+
+                1 XN    XN            1 XN
+        K D       mikPqcmk2 C     miPqcm   Pıi C       mikPıik2
+                2                           2
+                      iD1              iD1                iD1
+
+         M         1 XN
+        D    kPqcmk2 C       mikPıik2 ;
+                2         2            „ ƒ‚ …      iD1
+                    „  ƒ‚  …                                    Ktrans
+                                                         Krot
+
+                  PN
+where we have used the fact that    iD1 miıi     0, hence that the time derivative
+also vanishes, in order to remove the middle term. At time t, each vector ıi can
+be related to its initial value by a certain orthogonal 3   3 rotation matrix    .t/:

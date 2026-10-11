@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/ScalarEulerStable-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/ScalarEulerStable-route1.log",
+    "source_sha256": "5e5ac5fe88e6e82d4bb9df1d4006b6ca74ed654426736d6a35d52888f57b289a",
+    "log_sha256": "af27abf9c0e6ce22a81d81e765f62107d8d29d8ff405096a30409f21e8bdbe0f"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro h rho\n  constructor\n  · rintro ⟨C, hC⟩\n    by_contra hn\n    have ht := (tendsto_pow_atTop_atTop_of_one_lt (lt_of_not_ge hn)).eventually (eventually_gt_atTop C)\n    obtain ⟨k,hk⟩ := ht.exists\n    have hb := hC k\n    rw [norm_pow] at hb\n    exact (not_lt_of_ge hb) hk\n  · intro ha\n    refine ⟨1, ?_⟩\n    intro k\n    rw [norm_pow]\n    exact pow_le_one₀ (norm_nonneg _) ha",
+    "source": "blueprint/ch04/validation/short_search/ScalarEulerStable-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/ScalarEulerStable-route2.log",
+    "source_sha256": "88458ca953e0b61a0e5f4d03607832730971c3eda986146fd8720ae6a9f17688",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

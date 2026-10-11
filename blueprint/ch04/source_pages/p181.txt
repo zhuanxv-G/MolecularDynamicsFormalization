@@ -1,0 +1,46 @@
+4.3  Methods for Constrained Dynamics                                           159
+
+
+As is the case for Newton iteration, one may use the constraint residuals as an
+additional test. It is certainly unsafe to check only the latest difference of iterates
+(of a single component), and one should instead check that these are small for an
+entire cycle. The iteration described above is an example of a Gauss-Seidel-Newton
+iteration and it and many other iterative nonlinear solvers are discussed in [292].
+
+
+
+4.3.4  Symplectic Constrained Dynamics Integrators
+
+
+Is (4.14)–(4.16) symplectic (in the sense outlined above for holonomic systems)?
+    It is difﬁcult to make sense of this question, since (4.14)–(4.16) does not even
+constitute a map of the co-tangent bundle. On the other hand it is not too difﬁcult
+to correct this defect by incorporating an additional projection onto the cotangent
+space:
+
+                      qnC1 D qn C hM  1NpnC1;                          (4.20)
+                            NpnC1 D pn  hFn   hg0.qn/T  n;                   (4.21)
+
+                       0 D g.qnC1/;                                  (4.22)
+                      pnC1 D NpnC1   g0.qnC1/T  nC1;                    (4.23)
+                       0 D g0.qnC1/M 1pnC1:                        (4.24)
+
+The demonstration that the method is symplectic can be seen as a consequence of
+the following lemma.
+
+Lemma 4.1 Let    W RNc ! R be C2. Let q; p 2 RNc be constrained to the manifold
+deﬁned by
+
+                            .q/ D 0;   p r  .q/ D 0;
+
+and suppose P;   satisfy
+
+                     P D p   r  .q/:
+
+
+
+Then
+
+       XNc    XNc
+                              dqj ^ dPj D     dqj ^ dpj:
+                           jD1              jD1

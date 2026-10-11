@@ -1,0 +1,52 @@
+164                                                     4  The Stability Threshold
+
+
+  The constrained ﬂow on the kinetic energy term, on the other hand, is generated
+by the equations of motion
+
+                           dq
+                  D M 1p;
+                                  dt
+                           dp
+                  D  g0.q/T   ;
+                                  dt
+
+                            0 D g.q/:
+
+This is nothing other than the mass-weighted geodesic ﬂow on the given constraint
+surface. In most cases, the complication of solving the geodesic ﬂow would lead
+to a need for additional approximations, however it is worth noting that in many
+applications, by far the most important cost is the calculation of the force  rU,
+hence a further approximation of the geodesic ﬂow could be justiﬁed if this method
+conferred additional stability or other beneﬁts. We do not consider this further
+here, but take up the construction as part of our treatment of constrained stochastic
+dynamics in Section 7.12.
+   For an alternative approach to the construction of higher-order composition
+methods for constrained systems see [309].
+
+
+
+4.3.6  Algorithms for Molecular Simulation Using Constraints
+
+
+Because of their importance in the molecular simulation process, a wide variety of
+methods for handling holonomic constraints have been proposed in the past few
+decades. We summarize a few of these here.
+  The term “SHAKE” normally refers to both the discretization mentioned above
+and the component-wise solution of the nonlinear equations (these methods were
+suggested together in the paper [322]). Using the traditional SHAKE approach we
+solve the Eqs. (4.27)–(4.29) using the iterative procedure of Sect. 4.3.3. If RATTLE
+is used for discretization, the iterative method of Sect. 4.3.3 can again be used to
+solve (4.30)–(4.32), followed by a subsequent solve of Eqs. (4.33)–(4.34).
+  While SHAKE/RATTLE is a robust procedure the sequential, iterative character
+of nonlinear solvers needed for its implementation can lead inefﬁciencies when it is
+implemented on a parallel computer. Therefore, a number of the alternative methods
+avoid iteration. We brieﬂy summarize a few of the popular alternative schemes here.
+
+M-Shake   This  is Newton-iteration-based implementation of SHAKE, using
+   (4.18)–(4.19) to solve Eqs. (4.27)–(4.29). Methods like this were ﬁrst proposed
+  by Ciccotti and Ryckaert [84] in the context of rigid body molecular dynamics.
+  An extended discussion of such methods with reference to their convergence,
+   implementation, in particular linear system solvers, and variants such as SHAKE-
+  SOR (which uses the “successive over-relaxation” method) can be found in [25].
+  A conjugate gradient method can also be used [392].

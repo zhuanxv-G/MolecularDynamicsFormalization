@@ -1,0 +1,49 @@
+148                                                     4  The Stability Threshold
+
+
+for the harmonic one, then we encounter more complicated nonlinear resonances.
+It is challenging (perhaps impossible) to analyze the destabilizing effect of such
+resonances in a general molecular dynamics setting, but it is possible to do so in
+some cases for low-dimensional model problems [247, 329, 339].
+   In practice the presence of resonances may or may not render the multiple
+timestepping technique ineffective. One would be concerned if the only gain were
+from the Verlet stability threshold at  NhVerlet D 2=˝ to the location of the ﬁrst
+resonance peak at NhMTS D  =˝, since the multiple timestepping method introduces
+additional complexity. However, the picture is complicated by the observation that
+the strength of the leading resonance is often modest, so the growth observed
+in practice may be slow and, depending on the nature of the coupling of the
+variables of the system (which depends on details of the potential energy functions,
+natural coupling of the modes of the system, and the presence of solvent molecules
+which may introduce a stochastic effect) the growth of error due to resonance
+may be masked by other factors of a strongly system-dependent nature. Moreover,
+molecular systems are often subject to a stochastic thermostat (a topic to be
+addressed in later chapters) which may further alter the role of the resonances.
+Thus the study of the effect of linear and nonlinear resonance peaks on the error in
+molecular dynamics simulation becomes quickly a numerical issue which must be
+investigated using carefully crafted experiments. The analysis of [245] clearly raises
+some concerns regarding the use of multiple timestepping in molecular simulation,
+in particularly they suggest that the usable gain from RESPA simulations in systems
+with detailed solvent (water) is only around a factor of  =2 compared what can be
+achieved using a standard integrator such as Verlet (similar what would be suggested
+by resonance analysis). Nevertheless there are practical examples where multiple
+timestepping is used, especially in schemes incorporating stochastic perturbation
+and with relatively strong scale separation, as when multiple timestepping  is
+combined with the particle-mesh Ewald summation long-ranged force computation
+technique. In Sect. 7.13 we discuss the use of multiple timestepping in connection
+with Langevin dynamics. In Sect. 8.6, we describe the combination of multiple
+timestepping with isokinetic constraints and stochastic perturbation, where very
+substantial increases in outer timestep are found to be possible.
+
+
+
+4.2.2  The Molliﬁed Impulse Method
+
+
+The onset of instability of multiple timestepping is a consequence of introducing
+periodic impulses (via slow force updates) in resonance with a natural frequency of
+the system. As a means of avoiding or at least ameliorating the effect of resonances,
+it has been proposed to modify the points at which the slow forces in multiple
+timestepping are evaluated. The molliﬁed impulse method (MOLLY) [141] is a form
+of multiple timestepping in which the potential energy function is modiﬁed based on
+an averaging of the position variable (over fast dynamics) in such a way as to ﬁlter
+out destabilizing excitations. Effectively, one replaces US.q/ wherever it appears

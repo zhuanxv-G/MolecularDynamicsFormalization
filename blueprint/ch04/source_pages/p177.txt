@@ -1,0 +1,52 @@
+4.3  Methods for Constrained Dynamics                                           155
+
+where we have written U00 for the Hessian matrix of U and g00k for the Hessian matrix
+of gk.
+   For simplicity, we will assume the mass matrix is diagonal with ith diagonal
+element mi. Now we write a formula for the time rate of change of the wedge product
+
+              d XNc    XNc  d                d
+                       dqi ^ dpi D      ^ dpi C dqi ^                 dt                    dtdqi               dtdpi;
+                    iD1              iD1
+
+then use formulas (4.11)–(4.13) to simplify, obtaining
+
+      XNc  d    XNc     1
+                                                                                              i  dpi ^ dpi D 0;                        dtdqi ^ dpi D   m
+                     iD1                iD1
+
+and, writing U00ij D @2U=@qi@qj,
+
+ XNc      d   XNc XNc
+        dqi ^ dtdpi D           dqi ^ U00ijdqj
+    iD1                   iD1 jD1
+
+         XNc Xl        XNc
+                                          Œdqi ^ .d  k/g0ki C dqi ^   k     .g00k /ijdqj :
+                                iD1 kD1                            jD1
+
+Treating each term in turn, ﬁrst observe that
+
+        XNc XNc
+                                     dqi ^ U00ijdqj D 0:
+                              iD1 jD1
+
+This follows from the antisymmetry of the wedge product (dx ^ dy D  dy ^ dx),
+and the fact that the Hessian matrix of U is symmetric. Next, note that
+
+  XNc Xl   XNc    Xl XNc  XNc
+                dqi ^   k     .g00k/ijdqj D        k    dqi ^     .g00k /ijdqj D 0;
+         iD1 kD1          jD1           kD1    iD1       jD1
+
+by the same reasoning, since each of g00k is a symmetric matrix. Finally
+                           !
+  XNc Xl      Xl XNc           lX
+              Œdqi ^ .d  k/g0ki D            g0kidqi ^ d  k D    dgk ^ d  k D 0;
+      iD1 kD1                 kD1   iD1                 kD1
+
+since we know that dgk D 0 from (4.13). Therefore
+
+                         d XNc
+                                      dqi ^ dpi D 0:
+                                dt
+                                   iD1

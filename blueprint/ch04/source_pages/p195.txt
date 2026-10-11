@@ -1,0 +1,49 @@
+4.4  Rigid Body Systems                                                       173
+
+
+i.e. we compose the ﬂows of
+
+        2    3        2    3        2    3
+             T1 1  1                 0                   0
+       P D   4  0  5 ;     P D   4 T2 1 5 ;     P D   4  0 5 ;
+                0                   0                T3 1
+
+Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7).
+This yields a simple, efﬁcient algorithm for the free rigid body which is symplectic
+in a generalized sense.
+
+
+
+4.4.2  Rigid Body Molecular Dynamics Algorithm
+
+
+To develop an integrator for the complete system (including external forces), we
+invoke the splitting technique,2 solving successively for the translational motion
+from the center of mass equations, integrating the torques due to the rotational
+interactions, then solving the Euler equations, and recovering the rotation matrix
+from the linear system
+
+                                      P D   skew.T  1  /:
+
+This is the approach described in [112] and is implemented in several software
+packages.
+  The reliability of these methods is supported by the fact that the combined
+scheme is a symplectic method in the generalized sense of constrained dynamics.
+  The speciﬁc steps of the algorithm proposed in [112] are given here. In what
+follows, we denote the variables associated to the kth rigid body by qk (position
+of center of mass),     k (3   3 rotation matrix), pk (linear momentum vector),
+and   k (angular momentum vector). Individual components are deﬁned by double
+subscripts: the 2nd component of   k is  2.k Procedures given below for rigid body k
+are meant to be performed for all rigid bodies in the system.
+  The algorithm is initialized by computing the forces Fk and torques   k acting on
+the kth rigid body, evaluated at the initial point. The relevant expressions are:
+
+                  @U           k                  k T @U               Fk D         ;    D   rot                        :
+                         @qk                      @   k
+
+
+
+
+
+2We note the seminal role of the work in astronomy of Touma and Wisdom [368] in elucidating
+the “divide and conquer” approach for deriving such schemes for rigid bodies.

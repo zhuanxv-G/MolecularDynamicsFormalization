@@ -1,7 +1,7 @@
 # 接续提示词
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：自动进入第4章；从第3章最后commit建立chapter04-blueprint，原页36页已核，预备scripts/ch04_section*.py按≤8条生成并编译。
+下一步：先整合第1章新返回件blueprint/ch01/mathcopilot_results/review.json及EAUDIT，再继续第4章§4.1；复用16条与完整检查。
 
 先git status，读取AGENTS、CURRENT_STATE顶部、WORK_LOG最新、LOCAL_PIPELINE及当前章PROGRESS。从最近落盘批次接续，核验已有结果后复用，不重做已通过的JSON、Blueprint、证明或构建；未提交半成品核对后继续。
 ## 当前最高优先级范围（2026-10-10用户新指令）

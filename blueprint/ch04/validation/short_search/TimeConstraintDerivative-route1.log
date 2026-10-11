@@ -1,0 +1,18 @@
+blueprint\ch04\validation\short_search\TimeConstraintDerivative-route1.lean:15:46: error: Application type mismatch: The argument
+  HasDerivAt.prodMk hq (hasDerivAt_id t)
+has type
+  HasDerivAt (fun x => (q x, id x)) (v, 1) t
+but is expected to have type
+  HasDerivAt (Prod.mk (q t)) ?m.97 t
+in the application
+  HasFDerivAt.comp_hasDerivAt t (DifferentiableAt.hasFDerivAt hg) (HasDerivAt.prodMk hq (hasDerivAt_id t))
+blueprint\ch04\validation\short_search\TimeConstraintDerivative-route1.lean:13:84: error: unsolved goals
+n l : ℕ
+g : Q n → ℝ → Q l
+q : ℝ → Q n
+t : ℝ
+v : Q n
+hg : DifferentiableAt ℝ (Function.uncurry g) (q t, t)
+hq : HasDerivAt q v t
+hz : ∀ᶠ (s : ℝ) in 𝓝 t, g (q s) s = 0
+⊢ (fderiv ℝ (Function.uncurry g) (q t, t)) (v, 1) = 0

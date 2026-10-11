@@ -1,0 +1,51 @@
+4.3  Higher Order Symplectic Methods: SHAKE and RATTLE                        161
+
+4.3.5  Higher Order Symplectic Methods: SHAKE
+      and RATTLE
+
+
+The projected symplectic constrained method (4.20)–(4.24) is only ﬁrst order
+accurate. We forego providing a detailed proof of this fact, but note that it could
+be demonstrated using standard methods [164]. Note that (4.20)–(4.24) reduces to
+the symplectic Euler method in the absence of constraints, and the projection of the
+momenta would not alter this fact. There are several constraint-preserving, second-
+order alternatives which generalize the Störmer-Verlet scheme. One of these is the
+SHAKE method [322]. The original derivation of the SHAKE method began from
+the position-only, two-step form of the Störmer rule for Rq D F.q/
+
+                     qnC1   2qn C qn  1 D h2M 1F.qn/:
+
+In the presence of the constraint, we consider the scheme
+
+          qnC1   2qn C qn  1 D h2M 1F.qn/   h2g0.qn/T  n;              (4.25)
+
+                     g.qnC1/ D 0:                                        (4.26)
+
+The symmetry suggests that this will be second order. In order to understand the
+symplectic property associated to this method, we need to deﬁne the updates for both
+positions and momenta. A natural choice is to consider the phase space formulation
+of the Störmer-Verlet method for Pq D M 1p; Pp D F.q/, then replace F by F
+g0.q/T   , resulting in
+
+         qnC1 D qn C hM 1pnC1=2;                                       (4.27)
+
+        pnC1=2 D pn C .h=2/F.qn/   .h=2/g0.qn/T  n;                      (4.28)
+
+         pnC1 D pnC1=2 C .h=2/F.qnC1/   .h=2/g0.qnC1/T  nC1:           (4.29)
+
+It is possible to demonstrate (see exercises) that this method reduces to (4.25)–
+(4.26) by eliminating the momenta. However (4.27)–(4.29) does not give a map of
+the cotangent bundle, since g0.qnC1/pnC1 D 0 will not be preserved, even if both the
+constraint and hidden constraint hold at step n.
+  A method that automatically preserves both the constraint and hidden constraint
+is the RATTLE method [12] which consists of the following steps:
+
+             qnC1 D qn C hM 1pnC1=2;                                   (4.30)
+
+            pnC1=2 D pn C .h=2/Fn   .h=2/g0.qn/T  n;                     (4.31)
+
+              0 D g.qnC1/;                                             (4.32)
+
+             pnC1 D pnC1=2 C .h=2/FnC1   g0.qnC1/T  nC1;               (4.33)
+
+              0 D g0.qnC1/M 1pnC1:                                   (4.34)

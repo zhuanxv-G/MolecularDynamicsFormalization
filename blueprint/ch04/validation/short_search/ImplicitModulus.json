@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/ImplicitModulus-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/ImplicitModulus-route1.log",
+    "source_sha256": "d95ec94fc311219f39aa95cac14f648c8a929352986699bb1dd3aa7d4a8b8aa2",
+    "log_sha256": "3afc24b434a52be50ad15b4ba53d867c1332cf5029dc55c1c638aca680102808"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/ImplicitModulus-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/ImplicitModulus-route2.log",
+    "source_sha256": "70a2a55b1f59f5d0e1c0cf02150ad13745c8bd1f78265d3c626b5c4355c7d920",
+    "log_sha256": "3bf4bef6c273e539aea276a492dc6260eb3dd4766e89c7b608f040b46cfa3057"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro Ω h\n  rw [MolecularDynamics.Chapter04Review.implicitFactor,norm_div]\n  have he : (1+Complex.I*((h*Ω/2 : ℝ) : ℂ)) = star (1-Complex.I*((h*Ω/2 : ℝ) : ℂ)) := by simp\n  rw [he,norm_star]\n  apply div_self\n  intro hn\n  have hz := norm_eq_zero.mp hn\n  have hr := congrArg Complex.re hz\n  norm_num at hr",
+    "source": "blueprint/ch04/validation/short_search/ImplicitModulus-route3.lean",
+    "log": "blueprint/ch04/validation/short_search/ImplicitModulus-route3.log",
+    "source_sha256": "dfd9c8841dcb1260361278182a8b292fe26e10b1f090e13958e5444cb83ceea4",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

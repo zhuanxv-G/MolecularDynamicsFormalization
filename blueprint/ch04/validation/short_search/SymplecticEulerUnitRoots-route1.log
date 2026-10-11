@@ -1,0 +1,44 @@
+blueprint\ch04\validation\short_search\SymplecticEulerUnitRoots-route1.lean:21:8: error: linarith failed to find a contradiction
+case h2
+Ω h : ℝ
+ζ : ℂ
+ht : h ^ 2 * Ω ^ 2 ≤ 4
+he : ζ ^ 2 - ↑(2 - h ^ 2 * Ω ^ 2) * ζ + 1 = 0
+hr : ζ.re * ζ.re - ζ.im * ζ.im - (2 - h * h * (Ω * Ω)) * ζ.re + 1 = 0
+hi : ζ.re * ζ.im + ζ.im * ζ.re - (2 - h * h * (Ω * Ω)) * ζ.im = 0
+hz✝ : (2 * ζ.re - (2 - h ^ 2 * Ω ^ 2)) * ζ.im = 0
+hz : ζ.im = 0
+hpos : 0 ≤ ζ.re
+hab : 0 ≤ h ^ 2 * Ω ^ 2 * ζ.re
+a✝ : 1 < ζ.re ^ 2 + ζ.im ^ 2
+⊢ False
+failed
+blueprint\ch04\validation\short_search\SymplecticEulerUnitRoots-route1.lean:23:8: error: linarith failed to find a contradiction
+case h2
+Ω h : ℝ
+ζ : ℂ
+ht : h ^ 2 * Ω ^ 2 ≤ 4
+he : ζ ^ 2 - ↑(2 - h ^ 2 * Ω ^ 2) * ζ + 1 = 0
+hr : ζ.re * ζ.re - ζ.im * ζ.im - (2 - h * h * (Ω * Ω)) * ζ.re + 1 = 0
+hi : ζ.re * ζ.im + ζ.im * ζ.re - (2 - h * h * (Ω * Ω)) * ζ.im = 0
+hz✝ : (2 * ζ.re - (2 - h ^ 2 * Ω ^ 2)) * ζ.im = 0
+hz : ζ.im = 0
+hpos : ¬0 ≤ ζ.re
+hab : 0 ≤ (4 - h ^ 2 * Ω ^ 2) * -ζ.re
+a✝ : 1 < ζ.re ^ 2 + ζ.im ^ 2
+⊢ False
+failed
+blueprint\ch04\validation\short_search\SymplecticEulerUnitRoots-route1.lean:25:2: error: linarith failed to find a contradiction
+case h1
+Ω h : ℝ
+ζ : ℂ
+ht : h ^ 2 * Ω ^ 2 ≤ 4
+he : ζ ^ 2 - ↑(2 - h ^ 2 * Ω ^ 2) * ζ + 1 = 0
+hr : ζ.re * ζ.re - ζ.im * ζ.im - (2 - h * h * (Ω * Ω)) * ζ.re + 1 = 0
+hi : ζ.re * ζ.im + ζ.im * ζ.re - (2 - h * h * (Ω * Ω)) * ζ.im = 0
+hz : (2 * ζ.re - (2 - h ^ 2 * Ω ^ 2)) * ζ.im = 0
+hn : ζ.re ^ 2 + ζ.im ^ 2 = 1
+hnorm : ‖ζ‖ ^ 2 = Complex.normSq ζ
+a✝ : ‖ζ‖ < 1
+⊢ False
+failed

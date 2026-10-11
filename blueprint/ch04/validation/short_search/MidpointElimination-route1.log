@@ -1,0 +1,23 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch04\validation\short_search\MidpointElimination-route1.lean:12:176: error: unsolved goals
+n : ℕ
+m : Fin n → ℝ
+U : Chapter04Review.Q n → ℝ
+h : ℝ
+z mid out : Chapter04Review.Z n
+hq : mid.1 = z.1 + (h / 2) • Chapter04Review.invMass m mid.2
+hp : mid.2 = z.2 - (h / 2) • Chapter04Review.grad U mid.1
+houtq : out.1 = mid.1 + (h / 2) • Chapter04Review.invMass m mid.2
+houtp : out.2 = mid.2 - (h / 2) • Chapter04Review.grad U mid.1
+i : Fin n
+⊢ z.1 i + h * (m i)⁻¹ * z.2 i * (1 / 2) + h ^ 2 * (m i)⁻¹ * Chapter04Review.grad U mid.1 i * (-1 / 4) =
+    z.1 i + h * (m i)⁻¹ * z.2 i * (1 / 2) +
+      h ^ 2 * (m i)⁻¹ *
+          Chapter04Review.grad U
+            (z.1 + (h * (1 / 2)) • Chapter04Review.invMass m (z.2 - (h * (1 / 2)) • Chapter04Review.grad U mid.1)) i *
+        (-1 / 4)

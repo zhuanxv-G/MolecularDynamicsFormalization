@@ -1,0 +1,49 @@
+4.3  Methods for Constrained Dynamics                                           157
+
+
+Once    is known, then this gives   n which in turn gives, after using (4.15), pnC1
+and ﬁnally (4.14) yields qnC1.
+   Since Qn and Gn are known at step n, Eq.(4.17) is an equation for the m
+components of    . This may be solved by various iterative strategies. The simplest
+is Gauss-Newton iteration, which may be written
+
+                         .lC1/         .l/                         1             D  C g0.Q.l//M 1GTn    g.Q.l//;             (4.18)
+                        Q.l/ :D Qn M 1GTn    .l/;                             (4.19)
+
+which might be initialized with    .0/ D 0. A more sensible way to write this is
+
+                    R.l/       .l/ D g.Q.l//;       R.l/ defD g0.Q.l//M 1GTn;
+
+with         .l/ D    .lC1/         .l/. The usual way of solving such equations is by
+Gaussian elimination, which will require re-evaluation of R and refactorization at
+each iteration. However, assuming that the steps are sufﬁciently small and that g0 is
+sufﬁciently smooth, we may be able to ﬁx R at the beginning of the timestep, factor
+it once only, and then solve at each iteration with the same factors. Moreover, in
+case we have chosen    .0/ D 0, we have
+
+                                  R.0/ D GnM 1GTn;
+
+which is a symmetric matrix, and it is well known that in such a case, where a
+Cholesky factorization is available, both efﬁciency and reliability of the elimination
+process are favorably improved.
+  When the solution is unique, the constraints sufﬁciently smooth, and the deter-
+minant of R is bounded well away from zero, Newton’s method has a very rapid
+asymptotic convergence property. It is possible to show that, if      is the solution
+of (4.17), then sufﬁciently near the zero we have
+
+                    k  .lC1/     k  Ck   .l/       k2:
+
+Thus, if C is of moderate size, then two digits of accuracy becomes four, four
+becomes eight, etc. This rapid rate of convergence is only seen sufﬁciently near
+the root and only if R is re-evaluated at each stage of iteration. When R is evaluated
+only once per step, the asymptotic convergence of Newton’s method is linear, i.e.
+we have instead
+
+                    k  .lC1/     k   OCk   .l/      k;
+
+sufﬁciently near to the solution. To stop the Newton iteration, we may check the
+stopping condition
+
+                        k  .lC1/      .l/k < tol;
+
+or else check the constraint residuals, or do both.

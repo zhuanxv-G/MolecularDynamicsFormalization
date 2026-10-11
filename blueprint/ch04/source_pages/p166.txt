@@ -1,0 +1,48 @@
+144                                                     4  The Stability Threshold
+
+
+  When we apply a method such as Implicit Midpoint to a nonlinear molecular
+dynamics problem, we may reduce the equations to determining midpoint values Oq,
+Op such that
+
+                        h                  h
+                               Oq D qn C 2M  1Op;         Op D pn   2rU.Oq/;
+
+where, then,
+
+                        h                    h
+               qnC1 D Oq C 2M  1Op;     pnC1 D Op   2rU.Oq/:
+
+We may therefore view the step as a composition of Implicit Euler and Explicit
+Euler half-steps. Eliminating Op, we ﬁnd
+
+                           h          h2
+                                     Oq D qn C 2M 1pn   4 M 1rU.Oq/:
+
+This is a nonlinear system of equations for Oq. There is no avoiding the substantial
+challenge of solving this system. In principle this can be achieved using various
+iterative methods, such as the Gauss-Newton method. In case the forces are long-
+ranged (e.g. due to Coulombic terms) the cost of a single iteration will include the
+cost of a force evaluation, although we must also cope with numerically solving a
+system of linear equations for the update. In order to beneﬁt from the symplectic
+property of the Implicit Midpoint method, the iteration must be performed to
+high accuracy (i.e. several iterations will typically be needed), otherwise one will
+observe growing errors in energy and trajectory accuracy. Given the accuracy issue
+associated to using large stepsizes due to the corruption of the phase, the possible
+gain from using an implicit method is found to be limited and methods like this
+are rarely encountered in molecular modelling applications. An exception are the
+methods used in handling constrained systems (see Section 4.3, below).
+
+
+
+4.2  Multiple Timestepping
+
+
+The stringency of the timestep threshold and the failure of implicit methods to
+address the issue have led to alternative proposals for ameliorating the instability
+in molecular dynamics, in particular the method of “multiple timestepping” which
+we next describe. Variants of this method were described in a series of papers in
+the early 1990s by Tuckerman and Berne [374] and Tuckerman et al. [375, 377].
+A simultaneous development by Grubmüller et al. [158] most closely matches the
+presentation given here. The ﬁrst resonance analysis is due to Biesiadecki and Skeel
+[35].

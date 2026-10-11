@@ -1,0 +1,5 @@
+blueprint\ch04\validation\short_search\ScalarEulerStable-route1.lean:14:22: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  MulLeftStrictMono ℝ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+blueprint\ch04\validation\short_search\ScalarEulerStable-route1.lean:14:11: error: Tactic `rcases` failed: `x✝ : ?m.42` is not an inductive datatype

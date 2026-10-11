@@ -1,0 +1,42 @@
+Chapter 4
+The Stability Threshold
+
+
+
+
+
+Let us recall the method of studying the asymptotic numerical stability of a linear
+system
+
+                                                                              Pz D Az;                                  (4.1)
+
+where z 2 Rm, A 2 Rm m, when solved by a numerical method. Typically one shows
+that under generic conditions analyzing the asymptotic behavior of the numerical
+method for solving the system can be related to analyzing scalar equations deﬁned
+via an eigendecomposition of A, that is, for the purposes of stability analysis, we
+may replace the system (4.1) by m scalar equations of the form Pu D  u where   is
+an eigenvalue of A. Here    , hence u may in general be complex. Then one applies
+the numerical method directly to the scalar equation. For example Euler’s method
+yields
+
+                           unC1 D .1 C h  /un:
+
+The iteration is stable if junj remains bounded as n ! 1, implying the following
+condition for asymptotic stability:
+
+                                   j1 C h  j   1:
+
+This deﬁnes the “stability region” for Euler’s method as a disk in the complex h  -
+plane centered around  1 of radius 1. This region is shown in Fig. 4.1. If h  , where
+   is an eigenvalue of A lies in the indicated stability region, then Euler’s method
+will be stable for the linear system Pz D Az.
+    If we consider applying this technique to the harmonic oscillator Pq D pI Pp D
+ ˝2q, then the matrix A is
+
+                                  0   I
+                    A D                 :
+                           ˝2 0
+
+© Springer International Publishing Switzerland 2015                                139
+B. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied
+Mathematics 39, DOI 10.1007/978-3-319-16375-8_4

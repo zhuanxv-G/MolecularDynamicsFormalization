@@ -1,0 +1,52 @@
+blueprint\ch04\validation\short_search\SymplecticEulerStability-route1.lean:22:63: warning: This simp argument is unused:
+  Matrix.mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, dotProduct, vecHead, vecTail, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\SymplecticEulerStability-route1.lean:22:89: warning: This simp argument is unused:
+  vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, Matrix.mulVec, dotProduct, vecTail,
+    Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\SymplecticEulerStability-route1.lean:22:98: warning: This simp argument is unused:
+  vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, Matrix.mulVec, dotProduct, vecHead,
+    Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\SymplecticEulerStability-route1.lean:81:4: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch04\validation\short_search\SymplecticEulerStability-route1.lean:131:16: error: unexpected token '|*'; expected '|' or '|ₘ'
+blueprint\ch04\validation\short_search\SymplecticEulerStability-route1.lean:129:8: error: 'change' tactic failed, pattern
+  |a * v 0 + v 1| ≤ (1 + |a|) * ‖v‖
+is not definitionally equal to target
+  ‖vecCons (![1, 0] ⬝ᵥ v) (vecCons (![a, 1] ⬝ᵥ v) (!![,,] *ᵥ v)) ⟨1, ⋯⟩‖ ≤ (1 + |a|) * ‖v‖
+blueprint\ch04\validation\short_search\SymplecticEulerStability-route1.lean:99:2: error: unsolved goals
+case left
+Ω h : ℝ
+hn : 0 < |h * Ω|
+ht : |h * Ω| < 2
+C : ℝ
+hC : ∀ (k : ℕ) (v : Fin 2 → ℝ), ‖verletMatrix Ω h ^ k *ᵥ v‖ ≤ C * ‖v‖
+s : ℝ := h * Ω ^ 2 / 2
+P : Matrix (Fin 2) (Fin 2) ℝ := !![1, 0; -s, 1]
+S : Matrix (Fin 2) (Fin 2) ℝ := !![1, 0; s, 1]
+A : Matrix (Fin 2) (Fin 2) ℝ := symplecticEulerMatrix Ω h
+B : Matrix (Fin 2) (Fin 2) ℝ := verletMatrix Ω h
+hSP : S * P = 1
+hPA : P * A = B * P
+hp : ∀ (k : ℕ), P * A ^ k = B ^ k * P
+hs : ∀ (a : ℝ) (v : Fin 2 → ℝ), ‖!![1, 0; a, 1] *ᵥ v‖ ≤ (1 + |a|) * ‖v‖
+⊢ matrixStable (symplecticEulerMatrix Ω h)
+blueprint\ch04\validation\short_search\SymplecticEulerStability-route1.lean:96:135: error: unsolved goals
+case right
+Ω h : ℝ
+⊢ 2 < |h * Ω| → eigenvalueOutside (symplecticEulerMatrix Ω h)

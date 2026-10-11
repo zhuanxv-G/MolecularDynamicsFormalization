@@ -1,0 +1,8 @@
+blueprint\ch04\validation\short_search\OscillatorSpectrum-route1.lean:12:41: error: unsolved goals
+Ω : ℝ
+ζ : ℂ
+A : Matrix (Fin 2) (Fin 2) ℂ := (oscillatorMatrix Ω).map Complex.ofReal
+heig : (∃ v, v ≠ 0 ∧ A *ᵥ v = ζ • v) ↔ (ζ • 1 - A).det = 0
+hd : (ζ • 1 - A).det = ζ ^ 2 + ↑Ω ^ 2
+hf : ζ ^ 2 + ↑Ω ^ 2 = (ζ - Complex.I * ↑Ω) * (ζ + Complex.I * ↑Ω)
+⊢ ζ = Complex.I * ↑Ω ∨ ζ = -(Complex.I * ↑Ω) ↔ ζ = Complex.I * ↑Ω ∨ ζ = -Complex.I * ↑Ω

@@ -1,0 +1,43 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01e",
+  "source_ids": [
+    "MD-4-OscillatorMatrix"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 161,
+      "printed_page": 139
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "5ec2f06c93e0607de031e44dd5811348c5ec9e2ad79ebf2bec3cbd8c294274d1",
+  "lean_sha256": "560f78bf4adafcc3672b65f9989dbcd49730df2b8c90fb08b14310a58605de39",
+  "signature_sha256": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "oscillatorMatrix",
+      "code_sha256": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e"
+    }
+  ],
+  "paste_plus_pdf_bytes": 89864,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2858,
+      "sha256": "8437a284e6a58e8206aabacf8ba6ebd33d9f24f66644e948ab6a541b1b8b3885"
+    },
+    "BATCH01e_PAGES.pdf": {
+      "bytes": 87006,
+      "sha256": "a6588b74a1c22fa849acc69b3900deb6712936cec4f850c9df1d375809de1d3b"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 91229
+}

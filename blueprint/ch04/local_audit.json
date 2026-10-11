@@ -1,0 +1,594 @@
+{
+  "template": "C",
+  "method": "local_read_only_semantic_review",
+  "website_audit": "待网站审计",
+  "items": {
+    "MD-4-LinearField": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.linearField",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "2343e4ad3baf7e83982a97d63f3327af98af2aa7f07bdd5e721b45a7871a9b0f",
+      "block_sha256": "2343e4ad3baf7e83982a97d63f3327af98af2aa7f07bdd5e721b45a7871a9b0f",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.linearField；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-EulerFactor": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.eulerFactor",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2",
+      "block_sha256": "945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.eulerFactor；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-ScalarEulerStable": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.scalarEulerStable",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "3f315af0062260da82758cfdc7c024e5b986f9d1a510a173c73a5378b4088fcc",
+      "block_sha256": "684399f72bf01f77fe8a73a2fcf8a5fd976461d4b5404bc24ac8e2c246e943a7",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.scalarEulerStable；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 2,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/ScalarEulerStable.json",
+        "blueprint/ch04/validation/short_search/ScalarEulerStable-route1.lean",
+        "blueprint/ch04/validation/short_search/ScalarEulerStable-route1.log",
+        "blueprint/ch04/validation/short_search/ScalarEulerStable-route2.lean",
+        "blueprint/ch04/validation/short_search/ScalarEulerStable-route2.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-EulerRegion": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.eulerStabilityRegion",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "231d8f78a1e7f91da8d98646854f9a833fc9c40786178980d7bab42383ddc2fd",
+      "block_sha256": "231d8f78a1e7f91da8d98646854f9a833fc9c40786178980d7bab42383ddc2fd",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.eulerStabilityRegion；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-OscillatorMatrix": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.oscillatorMatrix",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e",
+      "block_sha256": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.oscillatorMatrix；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-EulerImaginaryGrowth": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.eulerImaginaryGrowth",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "0f44362c601016203b92649b03b9a536c6f4476717ebb3c005e1da23eea658b1",
+      "block_sha256": "bc7711b16a0724883dc1c14fc1ce36b6a8f34e5706304714e56b9484ac410b5c",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.eulerImaginaryGrowth；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 2,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/EulerImaginaryGrowth.json",
+        "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.lean",
+        "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.log",
+        "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.lean",
+        "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-SymplecticEulerMatrix": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.symplecticEulerMatrix",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "bbda75ade1595aa85e225b144694e2c996f0fca307394537ff36da64e954171a",
+      "block_sha256": "bbda75ade1595aa85e225b144694e2c996f0fca307394537ff36da64e954171a",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.symplecticEulerMatrix；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-SymplecticEulerCharacteristic": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.symplecticEulerCharacteristic",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "0bcc48984b3161487b089e49dd1c361bddd0791e16cde047e64421b6f10d7725",
+      "block_sha256": "4a4b2a3b3ef96c7959a5e1a5cc2cb2f4d46a5d257720c203207ee1d6b1234e8a",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.symplecticEulerCharacteristic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic.json",
+        "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.lean",
+        "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-PRKThreshold": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch04.prkThreshold",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "字面普适最大阈值2/Ω保留完整方法参数、阶一一致、显式分区与实际阶段关系；引用文献可能有阶段数/成本/方法类限制，不能凭泛称证明。",
+      "signature_sha256": "c76c585d4e16eea65b7d8a110c4a2ce879f2b1b201d2c1186d83c94c5267bb3d",
+      "block_sha256": "bba02e8057528d0a5ed3ab807b7aa3ca6b92e889f44217ad0c912702166fa387",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺明确方法类与阈值定理，不建立PRK稳定性最优理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.prkThreshold；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-VerletStability": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.verletStability",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "605e049af1358c1cae40697e582fb799623d7c0fb8e8cee9740481027cd3ba27",
+      "block_sha256": "98a083a48c0fe8ea0ba97dbb729fd5316f20a1fb848f9ce653d89bd2bbf64ff1",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.verletStability；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 2,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/VerletStability.json",
+        "blueprint/ch04/validation/short_search/VerletStability-route1.lean",
+        "blueprint/ch04/validation/short_search/VerletStability-route1.log",
+        "blueprint/ch04/validation/short_search/VerletStability-route2.lean",
+        "blueprint/ch04/validation/short_search/VerletStability-route2.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-SymplecticEulerBoundaryPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch04.symplecticEulerBoundaryPrinted",
+      "verdict": "FAIL",
+      "explanation": "Ω=1,h=2时A=[[-3,2],[-2,1]]=−I+N,N²=0,N≠0；A^k=(−1)^k(I−kN)，对合适非零初值线性增长。",
+      "signature_sha256": "d603617b43094c5a8d6ba8162b153041cf61ac69658d6c827001b6a2bf730605",
+      "block_sha256": "9d36efb5dcf4cfcb3a3ea7a94d374b8145566328eb9fe0f90d978882f5824fd1",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "本地FAIL，等待网站/导师裁定端点。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.symplecticEulerBoundaryPrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-VerletBoundaryPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch04.verletBoundaryPrinted",
+      "verdict": "FAIL",
+      "explanation": "Ω=1,h=2时A=[[-1,2],[0,−1]]=−I+N,N²=0；初值(0,1)位置分量模2k，无界。",
+      "signature_sha256": "dc35fa75a8696c46d4d3a045674e7aada7550306e61a5c38ebe827f2f94b2537",
+      "block_sha256": "94d916b82e333596490862a1754701f7f4be0151adc1bea791847a86edf88b82",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "本地FAIL，等待网站/导师裁定。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.verletBoundaryPrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-OscillatorSpectrum": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.oscillatorSpectrum",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "17b2d4e2e7e56c7cd63d9e29fc454f25d02677e62509016806e04730f563c9ca",
+      "block_sha256": "63d75aadf450d5226849f7fb23e1b6c51c304bf036dc089bb149937d3dd7a240",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.oscillatorSpectrum；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 2,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/OscillatorSpectrum.json",
+        "blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.lean",
+        "blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.log",
+        "blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.lean",
+        "blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-SymplecticEulerRoots": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.symplecticEulerRoots",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "bd906d72fcb5499e8d5e4d3bab404ee1bcabccbafd8515848c2e5d20cc544165",
+      "block_sha256": "5fcc676be4f31bc138d0032aa8ffa8dd373716101e3007c5d1dc7f94319a8b85",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.symplecticEulerRoots；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 2,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/SymplecticEulerRoots.json",
+        "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.lean",
+        "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.log",
+        "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.lean",
+        "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-SymplecticEulerUnitRoots": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.symplecticEulerUnitRoots",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "68aaecc991b3ea896935e9813a1be6d8be3b4b0a7218c1b69af5b1582d17cb10",
+      "block_sha256": "b134dc18e1bfbcb5a7b8b6418c60557fa578b3a50f25dd1f35b830abfe982afa",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.symplecticEulerUnitRoots；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 2,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots.json",
+        "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.lean",
+        "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.log",
+        "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.lean",
+        "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    },
+    "MD-4-SymplecticEulerStability": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.symplecticEulerStability",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "31da4d14a4c75f5466f7d85db446a21959c4160c4d5ee6fdbdb6daf16433e5db",
+      "block_sha256": "45e8bc9afd885eb6defdcffd83882180d5edfed3d329fbeda0e0118aa859735f",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.symplecticEulerStability；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/SymplecticEulerStability.json",
+        "blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.lean",
+        "blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.log",
+        "blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.lean",
+        "blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.log",
+        "blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.lean",
+        "blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro π\n  ext i\n  fin_cases i <;> simp [MolecularDynamics.Chapter04Review.rigidPoissonMatrix,MolecularDynamics.Chapter04Review.skewMatrix,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring",
+    "source": "blueprint/ch04/validation/short_search/PoissonDegeneracy-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/PoissonDegeneracy-route1.log",
+    "source_sha256": "fdd7d5a1904b549f8b2c7cde048b4d97949dce09fbac000413dc3d06c4dd8a00",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

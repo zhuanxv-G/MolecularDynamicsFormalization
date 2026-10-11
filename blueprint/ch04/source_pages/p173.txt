@@ -1,0 +1,49 @@
+4.3  Methods for Constrained Dynamics                                           151
+
+
+
+
+
+                                                      Fc = −q
+
+
+
+
+Fig. 4.4  Left: a ﬂexible pendulum model; the bob moves on a path under some applied force
+deﬁned by the potential U and the stiff spring holding the bob near a ﬁxed distance from the origin.
+Right: a constrained version of the same model, where the spring has been replaced with a rod; the
+tension in the rod acts on the bob so as to maintain a precise ﬁxed distance from the origin
+
+
+To formulate a constrained model we use Gauss’s principle of least constraint which
+says that the force Fc needed to compensate for the presence of a constraint of the
+form
+
+                                                def
+                            g.q/ D kqk2   r20 D 0
+
+will be transverse to the tangent space of the manifold fqjg.q/ D 0g, that is, it must
+point in the normal direction
+
+                             Fc D  q  ;
+
+where  2 R will vary over time so that the force Fc represents the tension in
+the stiff rod holding the pendulum bob to the origin (right panel of Fig. 4.4) The
+equations of motion for the constrained system take the form
+
+                                                   Pq D v;
+
+                                                Pv D  rU.q/  q  ;
+
+                         0 D kqk2   r20:
+
+These are called the Euler-Lagrange equations, and they may be derived formally
+by use of the calculus of variations. We refer to   , which is a function of time, as a
+Lagrange multiplier.
+  More generally, if we have a system with Nc conﬁgurational coordinates1 and
+l constraints g1.q/ D 0; g2.q/ D 0; : : : ; gl.q/ D 0, the tension forces due to the
+
+
+
+1Note that with l constraints the actual number of degrees of freedom, which is needed for things
+like the computation of temperature, is Nd D Nc     l.

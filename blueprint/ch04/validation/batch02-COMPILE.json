@@ -1,0 +1,29 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "Blueprint/Ch04.lean"
+  ],
+  "exit_code": 1,
+  "input_sha256": "013d48cebcf8865c60170f89f71f4caf554032ea7c3333fec4e9bbe1505e552d",
+  "log_sha256": "6907fda673e8f4d1e944663286c7650d11f6e4b44b5001ed7daf6e69bc8d6066",
+  "decl_blocks": {
+    "MD-4-LinearField": "2343e4ad3baf7e83982a97d63f3327af98af2aa7f07bdd5e721b45a7871a9b0f",
+    "MD-4-EulerFactor": "945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2",
+    "MD-4-ScalarEulerStable": "49ee616d11c6b3842b9183137627982c84467b80b9a69578550db6e5b47e81fb",
+    "MD-4-EulerRegion": "231d8f78a1e7f91da8d98646854f9a833fc9c40786178980d7bab42383ddc2fd",
+    "MD-4-OscillatorMatrix": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e",
+    "MD-4-EulerImaginaryGrowth": "191667bec47b23e65ecc59a99b0db74029b27c65fc201160a88f4c7afd6b6b50",
+    "MD-4-SymplecticEulerMatrix": "bbda75ade1595aa85e225b144694e2c996f0fca307394537ff36da64e954171a",
+    "MD-4-SymplecticEulerCharacteristic": "e78420c4ad5789502092fe5800c8e06c963d6f0b9728c23982b555938a462483",
+    "MD-4-SymplecticEulerStability": "0586c791dfb82a63b48d1a4bd2fd2f4fadd4b3c372093208ea55718ecabfcfd0",
+    "MD-4-PRKThreshold": "bba02e8057528d0a5ed3ab807b7aa3ca6b92e889f44217ad0c912702166fa387",
+    "MD-4-VerletStability": "f866c407f124b8ecd1834aa47806f9ec9270218e6e23c333dbbe7cf09473e7ee",
+    "MD-4-SymplecticEulerBoundaryPrinted": "9d36efb5dcf4cfcb3a3ea7a94d374b8145566328eb9fe0f90d978882f5824fd1",
+    "MD-4-VerletBoundaryPrinted": "94d916b82e333596490862a1754701f7f4be0151adc1bea791847a86edf88b82",
+    "MD-4-OscillatorSpectrum": "f5425ed4b25e2df84fb82f27310624866d6c420162d368af97d2fbe884c11fad",
+    "MD-4-SymplecticEulerRoots": "bb6ace132a8e5005a69ec8315e0fbd2f4105336a36fdcc8a5109d00884960037",
+    "MD-4-SymplecticEulerUnitRoots": "fec9c6d7d6faa1f7fc70024341ba166471650913bfefbc4aae45fa18f0ed1add"
+  }
+}

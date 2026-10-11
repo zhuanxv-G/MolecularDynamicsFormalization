@@ -1,0 +1,52 @@
+156                                                     4  The Stability Threshold
+
+
+Thus we see that the projected version of the symplectic form in the ambient space
+is conserved by the differential equation system (4.7)–(4.9). This is what is meant
+by saying that the constrained system is analogous to a Hamiltonian system. We
+may also think of its ﬂow map as being a symplectic map of the co-tangent bundle.
+
+
+
+4.3.2  Numerical Methods with Holonomic Constraints
+
+
+In what follows, we discuss the development of constrained integration methods,
+with a focus on the symplectic structure. Although we do this in a different way
+here, our presentation is based on the article [229].
+  From a mathematical point of view, the natural concept of a numerical method
+for the holonomic system (4.7)–(4.9) is that of a mapping from T M to itself which
+approximates the dynamical evolution on a step of length h.
+   Actually, many methods in common use for molecular dynamics cannot be seen
+as maps of T M since the hidden constraint is allowed to be violated. A simple
+example of such a method is the constrained Symplectic Euler-like method
+
+                      qnC1 D qn C hM 1pnC1;                          (4.14)
+
+                      pnC1 D pn  hFn   hg0.qn/T  n;                   (4.15)
+
+                       0 D g.qnC1/:                                  (4.16)
+
+Here   n is a vector which needs to be computed to deﬁne the projection onto M.
+We would typically assume that q0 lies on M so that (4.14)–(4.16) deﬁnes a map
+on M. The hidden constraint g0.q0/M 1p0 D 0 will be violated, but one hopes it
+remains approximately satisﬁed. The justiﬁcation for the latter assumption is that if
+we expand g in a Taylor series, we may write
+
+                    g.qn/   g.qnC1/ C g0.qnC1/.qn   qnC1/:
+
+Then since we maintain g.qn/ D 0 for all n, we have
+
+                         g0.qnC1/M 1pnC1    0:
+
+  To solve the Eqs. (4.14)–(4.16), insert the second in the ﬁrst and the ﬁrst then in
+the third to obtain the simpliﬁed equation
+
+                        g.Qn M 1GTn   / D 0;                       (4.17)
+
+where
+
+                   Qn D qn C hM 1pn  h2M 1Fn;
+                   Gn D g0.qn/;
+
+              D h2  n:

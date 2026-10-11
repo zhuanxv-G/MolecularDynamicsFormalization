@@ -1,0 +1,50 @@
+158                                                     4  The Stability Threshold
+
+    It is worth noting that   .h/ D O.h2/, i.e. for small steps    will also be small.
+This justiﬁes the initial guess    .0/ D 0, and it also suggests that if convergence of
+the Newton iteration is poor, this might be improved by taking a smaller timestep,
+since this effectively places    .0/ closer to the solution of the equation.
+   In the context of large systems with large numbers of constraints it makes sense
+to invest signiﬁcant effort to ensure that the algebraic equations are solved in the
+most efﬁcient way possible. In [25], this topic was studied in depth, and a variety of
+iterative Newton-based numerical algorithms were proposed and compared.
+
+
+
+4.3.3  Iterative Component-Wise Solution of the Nonlinear
+      Equations
+
+
+An alternative method for solving (4.17) is based on solving for   component-wise
+[322]. To describe this algorithm let us enumerate the equations as
+
+                  gj.Qn M 1Gkn  k/ D 0;   Gkn D rgk.qn/;
+
+i.e. Gkn is the kth column of GTn.
+  We begin with the initializations  D 0 and Q D Qn, and solve for     1 from
+
+                       g1.Q M 1G1n    1/ D 0:
+
+This is scalar nonlinear equation for      1. We approximate its solution using a linear
+approximation at Q thus we have
+
+
+                                                           1
+                               1 D rg1.Q/TM 1G1n    g1.Q/:
+
+We then update Q by
+
+                Q :D Q M 1G1n     1;
+
+and continue to update   2 in the same manner (using the second constraint). In
+general, we perform a sequence of updates
+
+
+                                                           1
+                                                          j D rgj.Q/TM 1G1j    gj.Q/;
+               Q :D Q M 1Gjn      j;
+
+as j cycles repeatedly from 1 to m. We halt the iteration when an appropriate stopping
+criterion is satisﬁed, which might be
+
+                    k    jk    tol;      j D 1; 2; : : : ; m:

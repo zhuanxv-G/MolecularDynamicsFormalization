@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/VerletStability-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/VerletStability-route1.log",
+    "source_sha256": "e0f51d8794e0b8984ad591e4c658e393185a27df64eb04f99a997547a3d88e6b",
+    "log_sha256": "fef81a40f6079a1449628aab77c24198923ccf504da34b221c16a59656b8b293"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro Ω h hn ht\n  have hΩ : Ω ≠ 0 := by intro hz; simp [hz] at hn\n  have ht2 : h^2*Ω^2 < 4 := by\n    obtain ⟨ha,hb⟩ := abs_lt.mp ht\n    nlinarith\n  let b : ℝ := Ω^2*(1-h^2*Ω^2/4)\n  have hb : 0 < b := mul_pos (sq_pos_of_ne_zero hΩ) (by nlinarith)\n  let A := MolecularDynamics.Chapter04Review.verletMatrix Ω h\n  let K : (Fin 2 → ℝ) → ℝ := fun v => v 1^2+b*v 0^2\n  have hstep : ∀ v : Fin 2 → ℝ, K (A *ᵥ v)=K v := by\n    intro v\n    simp [K,A,b,MolecularDynamics.Chapter04Review.verletMatrix,Matrix.mulVec,dotProduct, vecHead, vecTail,Fin.sum_univ_two]\n    ring\n  have hi : ∀ k : ℕ, ∀ v : Fin 2 → ℝ, K (A^k *ᵥ v)=K v := by\n    intro k v\n    induction k with\n    | zero => simp\n    | succ k ih => rw [pow_succ',← Matrix.mulVec_mulVec,hstep,ih]\n  let d : ℝ := min 1 b\n  have hd : 0 < d := lt_min (by norm_num) hb\n  have hd1 : d ≤ 1 := min_le_left _ _\n  have hdb : d ≤ b := min_le_right _ _\n  have hcoord : ∀ (v : Fin 2 → ℝ) (i : Fin 2), (v i)^2 ≤ ‖v‖^2 := by\n    intro v i\n    rw [← sq_abs]\n    exact (sq_le_sq₀ (abs_nonneg _) (norm_nonneg _)).mpr (by simpa using norm_le_pi_norm v i)\n  have hu : ∀ v : Fin 2 → ℝ, K v ≤ (1+b)*‖v‖^2 := by\n    intro v\n    have hm := mul_le_mul_of_nonneg_left (hcoord v 0) hb.le\n    dsimp [K]\n    nlinarith [hcoord v 1]\n  have hl : ∀ (v : Fin 2 → ℝ) (i : Fin 2), d*(v i)^2 ≤ K v := by\n    intro v i\n    fin_cases i\n    · dsimp [K]\n      nlinarith [mul_nonneg (sub_nonneg.mpr hdb) (sq_nonneg (v 0)),sq_nonneg (v 1)]\n    · dsimp [K]\n      nlinarith [mul_nonneg (sub_nonneg.mpr hd1) (sq_nonneg (v 1)),mul_nonneg hb.le (sq_nonneg (v 0))]\n  let C : ℝ := Real.sqrt ((1+b)/d)\n  have hC : 0 ≤ C := Real.sqrt_nonneg _\n  have hCs : C^2*d=1+b := by\n    dsimp [C]\n    rw [Real.sq_sqrt (by positivity)]\n    field_simp [ne_of_gt hd]\n  refine ⟨C, ?_⟩\n  intro k v\n  apply (pi_norm_le_iff_of_nonneg (mul_nonneg hC (norm_nonneg v))).mpr\n  intro i\n  have hm : d*((A^k *ᵥ v) i)^2 ≤ d*(C*‖v‖)^2 := calc\n    d*((A^k *ᵥ v) i)^2 ≤ K (A^k *ᵥ v) := hl _ i\n    _ = K v := hi k v\n    _ ≤ (1+b)*‖v‖^2 := hu v\n    _ = d*(C*‖v‖)^2 := by rw [← hCs]; ring\n  have hsq := le_of_mul_le_mul_left hm hd\n  simpa using abs_le_of_sq_le_sq hsq (mul_nonneg hC (norm_nonneg v))",
+    "source": "blueprint/ch04/validation/short_search/VerletStability-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/VerletStability-route2.log",
+    "source_sha256": "f5564feb85165a1204be3e6389aa252685beb61f4ce5b12be33ee4608262f706",
+    "log_sha256": "2b9fd83e6af776da39587f8b1df1a38eb971da05bae263a52c7fb9c633cff0b5"
+  }
+]

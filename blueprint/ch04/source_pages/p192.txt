@@ -1,0 +1,52 @@
+170                                                     4  The Stability Threshold
+
+
+Where Krot represents the rotational kinetic energy expressed in terms of the body-
+ﬁxed angular momentum vectors, Ktrans is the translational kinetic energy, U is the
+potential energy which is a function of all the positions and dipole orientations. The
+vectors   k can be taken to be unit vectors reﬂecting the dipole orientation, so they
+are subject to the constraint k  kk    1. The total dipole-dipole interaction potential
+then takes the form
+
+                            'dipij D 'LJ.rij/ C  Ti L.qij/   j;
+
+with U given as the sum of these over pairs. The 3  3 matrix L is given by
+
+                        1   3
+                     L.qij/ D          qijqTij;        qij D qi    qj:
+                                r3ij    r5ij
+
+The rotational kinetic energy may be written
+
+                                 1 XN    2i;1       2i;2       2i;3
+                 Krot.  1;   2; : : : ;  N/ D      C   C       ;
+                                 2       I1       I2       I3
+                                            iD1
+
+with I1; I2; I3 the moments of inertia, taken to be diagonal with respect to a suitable
+coordinate system. Introducing a rotation matrix    k for the kth dipole, we have
+  k.t/ D    k  k.0/, where  k.0/ is a reference conﬁguration of the dipole (its initial
+state). Then
+
+          XN              T
+                                Krot D    Tr   P iR P i     ;
+                                    iD1
+
+with R deﬁned in terms of T D diag.I1; I2; I3/ by (4.40).
+
+  We now have two alternatives for representing the rotational motion. In the
+ﬁrst, the rotation matrix describing the rigid body’s orientation is the dynamical
+quantity (and we need to enforce the orthogonality of this matrix as a constraint).
+This leads to a constrained integration method, which makes use of SHAKE (in
+a somewhat different way from the method [84] which constrains the relative
+positions of particles). In the second formulation, the orthogonality is used to
+perform a reduction to an angular velocity (or momentum) representation with
+respect to the body frame of reference.
+  A Hamiltonian description of the motion may be formulated in either system
+of notation. The Hamiltonian formulation with rotation matrices involves variables
+qcm; pcm (phase space variables describing the center of mass motion) and     ; ˘ ,
+which are 3  3 matrices. The Hamiltonian is (for a single rigid body):
+
+                      kpcmk2   Tr ˘ R 1˘ T
+            HRB D    C        C U.qcm;   /;
+                2M          2

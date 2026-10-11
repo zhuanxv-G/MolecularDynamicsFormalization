@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.log",
+    "source_sha256": "3bbe1668870a5a488423115de9ed879e0056b02ea4b679f8afdee7647aab9e71",
+    "log_sha256": "af81486cffa358754aa1b44326b783ee6a0fd14a150102077b43a9494e77c10c"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.log",
+    "source_sha256": "b71feb6a9ffe37d72cca03a6b73165db39afe7b93f4a14a29ff9102896000bff",
+    "log_sha256": "1903bb9e15a11c228c95aaa63be2dba16a00dd78096580278bcd8fff1ea32dcf"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro Ω h\n  constructor\n  · rintro ⟨hn,ht⟩\n    obtain ⟨C,hC⟩ := verletStability Ω h hn ht\n    let s : ℝ := h*Ω^2/2\n    let P : Matrix (Fin 2) (Fin 2) ℝ := !![1,0; -s,1]\n    let S : Matrix (Fin 2) (Fin 2) ℝ := !![1,0; s,1]\n    let A := MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h\n    let B := MolecularDynamics.Chapter04Review.verletMatrix Ω h\n    have hSP : S*P=1 := by\n      ext i j; fin_cases i <;> fin_cases j <;>\n        simp [S,P,Matrix.mul_apply,Fin.sum_univ_two]\n    have hPA : P*A=B*P := by\n      ext i j; fin_cases i <;> fin_cases j <;>\n        simp [P,A,B,s,MolecularDynamics.Chapter04Review.symplecticEulerMatrix,\n          MolecularDynamics.Chapter04Review.verletMatrix,Matrix.mul_apply,Fin.sum_univ_two] <;> ring\n    have hp : ∀ k : ℕ, P*A^k=B^k*P := by\n      intro k\n      induction k with\n      | zero => simp\n      | succ k ih => rw [pow_succ',pow_succ',← mul_assoc,hPA,mul_assoc,ih,← mul_assoc]\n    have hs : ∀ a : ℝ, ∀ v : Fin 2 → ℝ,\n        ‖(!![1,0; a,1] : Matrix (Fin 2) (Fin 2) ℝ) *ᵥ v‖ ≤ (1+|a|)*‖v‖ := by\n      intro a v\n      have h0 : |v 0| ≤ ‖v‖ := by simpa using norm_le_pi_norm v 0\n      have h1 : |v 1| ≤ ‖v‖ := by simpa using norm_le_pi_norm v 1\n      apply (pi_norm_le_iff_of_nonneg (by positivity)).mpr\n      intro i\n      fin_cases i\n      · simp [Matrix.mulVec,dotProduct,Fin.sum_univ_two,vecHead,vecTail]\n        nlinarith [mul_nonneg (abs_nonneg a) (norm_nonneg v)]\n      · simp [Matrix.mulVec,dotProduct,Fin.sum_univ_two,vecHead,vecTail]\n        change |a*v 0+v 1| ≤ (1+|a|)*‖v‖\n        calc\n          _ ≤ |a| * |v 0|+|v 1| := by simpa [abs_mul] using abs_add_le (a*v 0) (v 1)\n          _ ≤ |a| * ‖v‖+‖v‖ := add_le_add (mul_le_mul_of_nonneg_left h0 (abs_nonneg a)) h1\n          _ = _ := by ring\n    refine ⟨(1+|s|)^2*|C|, ?_⟩\n    intro k v\n    have he : A^k *ᵥ v=S *ᵥ (B^k *ᵥ (P *ᵥ v)) := by\n      have inner : B^k *ᵥ (P *ᵥ v)=(P*A^k) *ᵥ v := by rw [Matrix.mulVec_mulVec,hp k]\n      rw [inner,Matrix.mulVec_mulVec,← mul_assoc,hSP,one_mul]\n    rw [he]\n    calc\n      _ ≤ (1+|s|)*‖B^k *ᵥ (P *ᵥ v)‖ := hs s _\n      _ ≤ (1+|s|)*(|C| * ‖P *ᵥ v‖) := by\n        apply mul_le_mul_of_nonneg_left _ (by positivity)\n        exact (hC k (P *ᵥ v)).trans (mul_le_mul_of_nonneg_right (le_abs_self C) (norm_nonneg _))\n      _ ≤ (1+|s|)*(|C| * ((1+|s|)*‖v‖)) := by\n        apply mul_le_mul_of_nonneg_left _ (by positivity)\n        apply mul_le_mul_of_nonneg_left _ (abs_nonneg C)\n        simpa [P,abs_neg] using hs (-s) v\n      _ = _ := by ring\n  · intro ht\n    have ht2 : 4 < h^2*Ω^2 := by\n      have hs := sq_lt_sq₀ (by norm_num : (0:ℝ) ≤ 2) (abs_nonneg (h*Ω))\n      have hh : (2:ℝ)^2 < |h*Ω|^2 := hs.mpr ht\n      norm_num [sq_abs,mul_pow] at hh ⊢\n      exact hh\n    let D : ℝ := h^4*Ω^4-4*h^2*Ω^2\n    have hD : 0 < D := by dsimp [D]; nlinarith\n    let d : ℝ := Real.sqrt D\n    have hd : d^2=D := Real.sq_sqrt hD.le\n    let ρ : ℝ := 1-h^2*Ω^2/2-d/2\n    have hr : ρ < -1 := by dsimp [ρ,d]; nlinarith [Real.sqrt_nonneg D]\n    have hv := (symplecticEulerRoots Ω h (ρ : ℂ)).mpr\n      ⟨(d : ℂ),by exact_mod_cast hd,Or.inr (by dsimp [ρ]; push_cast; ring)⟩\n    refine ⟨(ρ : ℂ), ?_, hv⟩\n    rw [Complex.norm_real,Real.norm_eq_abs,abs_of_neg (by linarith)]\n    linarith",
+    "source": "blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.lean",
+    "log": "blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.log",
+    "source_sha256": "0e6e612988ddbc2e5e502d07a1147b1bf3e99b37fab0f2e36c7bd17b9183b4b3",
+    "log_sha256": "b8e7dc93c19d4cedd38afe004fdb8d48f3d22f598d391c483785611d8789d643"
+  }
+]

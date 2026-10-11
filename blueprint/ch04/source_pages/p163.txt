@@ -1,0 +1,42 @@
+4  The Stability Threshold                                                      141
+
+
+
+
+
+Fig. 4.1  Stability regions for Euler’s method (left) and Symplectic Euler/Verlet (right). When
+a harmonic oscillator is treated using these methods, the origin is unstable for Euler’s method,
+regardless of stepsize—this means that there is no choice of scaling h which will allow us to
+ensure that j1 C h  j    1. On the other hand, the Verlet method has an interval of stability on the
+imaginary axis, and it is always possible to ﬁnd a value of h which guarantees that jh˝j   2
+
+
+general nonlinear systems. It is possible for the linearized system to be stable and for
+the equilibrium point nonetheless to be unstable, since, with Hamiltonian systems,
+we typically encounter the purely imaginary eigenvalue case, but the linearized
+analysis is nonetheless helpful. For example, applying the Verlet method to the
+harmonic oscillator with frequency ˝ we ﬁnd that the origin is stable (and the
+numerical solution stays bounded for all time) provided h˝   2 (the same condition
+as for stability of Symplectic Euler). The situation with regard to Euler and Verlet
+(or Symplectic Euler) methods for the harmonic oscillator is illustrated in Fig. 4.1.
+   In the context of molecular dynamics involving chemical bonds, the linear
+stability condition h˝   2 is often quoted as the stepsize limiting condition where
+˝ is assumed to the frequency of the fastest (highest energy) bond stretch, ˝F,
+present in the molecular dynamics model. This is realistic because the bond stretches
+are the highest frequency components in general in these models, and the potential
+energy function used for the bond stretch is typically quadratic in the separation
+distance:
+
+                                                                  2
+                        Ubond.qi; qj/ D    kqi   qjk     lij    ;
+                                2
+
+for  positive parameters   and lij. It should be noted that even this term leads to
+a nonlinear differential equation system and so the relation to the harmonic model
+should be understood as being of a heuristic nature; it is only through numerical
+experiment that the correspondence is ultimately established.
+  More generally, even without the presence of bonds, the “stepsize threshold” in
+the simulation of molecular models by an explicit method like Verlet arises because
+of the shape of the energy surface. The understanding of this for a nonlinear system
+like the Lennard-Jones cluster requires examining the linearization of the problem
+near equilibrium points and even then the discussion is always quite technical

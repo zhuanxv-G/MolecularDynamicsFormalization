@@ -1,0 +1,52 @@
+4.4  Rigid Body Systems                                                       169
+
+which indicates that  P   T is a skew symmetric matrix. Any 3  3 skew matrix may
+be written as
+                       2         3
+                                     0   !3 !2
+                          P   T D skew.!/  4 !3   0   !1 5 :              (4.38)
+                                     !2 !1   0
+
+! is referred to as the spatial angular velocity of the rigid body. It follows that
+
+                d
+                  dtıi D skew.!/ıi D !   ıi D  skew.ıi/!;             (4.39)
+
+which is the usual deﬁnition.
+  We now insert the expression for Pıi into the rotational kinetic energy, to obtain
+
+                   1 XN            1 XN
+                  Krot D       mikPıik2 D       mi!Tskew.ıi/2!:
+                   2              2
+                          iD1                 iD1
+
+It is convenient to express this in terms of the so-called body angular velocity !b D
+  T! in which case it becomes
+
+                                1
+                                     Krot D 2!TbT!b;
+             PN
+where the matrix T D      iD1 miskew.ıi.0//2 is referred to as the moment of inertia
+tensor or simply the inertia tensor and can be written as
+
+        XN
+               T D    mi kıi.0/k2I   ıi.0/ıi.0/T  :
+                            iD1
+
+This matrix is closely related to the matrix R:
+
+   XN   XN
+   R D    miıiıTi D    mikıik2I  T D .T11 C T22 C T33/I   T:        (4.40)
+           iD1            iD1
+
+Example 4.1 (Dipolar Molecular Liquid)  The Stockmayer model for a molecular
+liquid with permanent dipoles [388] treats this as a system of rigid bodies (spheres)
+with dipole-dipole interaction potential; we already encountered this in the exercises
+of Chap. 1. From a computational and modelling perspective, there is no real reason
+to use spheres (and perhaps good reasons not to); for example they might be taken
+to be ellipsoidal. Let us assume that they are identical ellipsoids. The Hamiltonian
+for a more general dipolar system can be written
+
+         H D Krot.  1;   2; : : : ;  N/ C Ktrans.p1; p2; : : : ; pN/
+
+                 CU.q1; q2; : : : ; qN;   1;   2; : : : ;  N/;

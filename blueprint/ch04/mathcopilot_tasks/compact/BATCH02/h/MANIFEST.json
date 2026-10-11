@@ -1,0 +1,36 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02h",
+  "source_ids": [
+    "MD-4-SymplecticEulerStability"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 162,
+      "printed_page": 140
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "5ec2f06c93e0607de031e44dd5811348c5ec9e2ad79ebf2bec3cbd8c294274d1",
+  "lean_sha256": "560f78bf4adafcc3672b65f9989dbcd49730df2b8c90fb08b14310a58605de39",
+  "signature_sha256": "31da4d14a4c75f5466f7d85db446a21959c4160c4d5ee6fdbdb6daf16433e5db",
+  "definition_excerpts": [],
+  "paste_plus_pdf_bytes": 74843,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3434,
+      "sha256": "d1952118f8dde2a83541c0aab0e602f3f4978a66cd786b5bd5143dba7c36c4a2"
+    },
+    "BATCH02h_PAGES.pdf": {
+      "bytes": 71409,
+      "sha256": "eb00d97ac33c91cf7ae81bb8e9af32389eb088962a6d96b1155a0971e776c29d"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 76005
+}

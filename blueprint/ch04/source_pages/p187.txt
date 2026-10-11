@@ -1,0 +1,49 @@
+4.3  Algorithms for Molecular Simulation Using Constraints                          165
+
+
+SETTLE  The SETTLE method [274] is just the SHAKE approach applied to
+   a small system combined with an exact solve of the nonlinear equations. It is
+   usually applied to treat rigid bodies (as discussed in the following section).
+LINCS   In solving the Eqs. (4.27)–(4.29) by Newton iteration, the largest cost and
+   the most signiﬁcant barrier to parallelization is the linear solve. The LINCS
+  method [119, 175] uses a series expansion to approximate the inverse matrix
+   (which is valid only under certain conditions). The method gives substantial
+   speedups in large, weakly-coupled systems.
+
+    It is also possible to use internal coordinate representations to treat constraints,
+i.e. parameterization schemes, which are typically based on partitioning the coor-
+dinates of the system into a set of independent variables and a complementary
+collection of dependent variables (which are expressed in terms of the ﬁrst set).
+These approaches result in systems of slightly smaller dimension, but typically
+greater complexity. Moreover, the parameterization is typically local which leads to
+additional implementation issues. For some details on such schemes and discussion
+of their use in molecular simulation, the reader is referred to [20, 190, 255].
+
+
+
+4.3.7  Numerical Experiment with SHAKE
+
+
+We demonstrate the numerical stability beneﬁt of using constraints in simulation
+by considering a periodic box of 116 TIP3P water molecules in a periodic box
+with side length 16A (for computational convenience the simulated particle density
+is slightly below that of liquid water). We simulate the system using the NAMD
+package [302], with the CHARMM22 forceﬁeld [246] parameterizing the potential
+energy functions. After an initial equilibration of 1ns, we look at the stability
+and conservation of energy in this system, when using either the constrained or
+unconstrained version of the model. The deviation in the total energy over a further
+1ns simulation is plotted in Fig. 4.5. In the unconstrained version of the model, the
+internal angle and the bond lengths of each molecule are free to change, governed
+by a restraining force from the corresponding potential energy terms. This model
+proves to be unstable for stepsizes chosen at 3 fs and over, while the simulation at
+h D 2 fs showed a large variance in the energy error (as well as exhibiting energy
+drift in longer simulations). For accurate results, we would expect the stepsize to
+be restricted to around h D 1 fs, where there is signiﬁcantly smaller average energy
+ﬂuctuation.
+  By contrast, when using constraints to keep the angle and bond lengths ﬁxed,
+we observe that the energy ﬂuctuations are dramatically reduced and we are able
+to use considerably higher stepsizes than in the unconstrained case. Although the
+use of constraints slightly increases the required computational workload (relative
+to the ﬂexible model), the non-bonded force calculation (especially the Coulombic
+component) is typically still the dominant cost in each step of the simulation. As
+the SHAKE method does not require extra force evaluations, the ability to increase

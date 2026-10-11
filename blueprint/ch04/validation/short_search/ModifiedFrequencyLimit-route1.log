@@ -1,0 +1,10 @@
+blueprint\ch04\validation\short_search\ModifiedFrequencyLimit-route1.lean:13:67: error: unsolved goals
+case e'_9
+Ω : ℝ
+⊢ Ω = 2 * (Ω / 2)
+blueprint\ch04\validation\short_search\ModifiedFrequencyLimit-route1.lean:15:2: error: Type mismatch: After simplification, term
+  HasDerivAt.tendsto_slope_zero hd
+ has type
+  Tendsto (fun t => t⁻¹ * (2 * Real.arctan (Ω * t * 2⁻¹))) (𝓝[≠] 0) (𝓝 Ω)
+but is expected to have type
+  Tendsto (modifiedFrequency Ω) (𝓝[≠] 0) (𝓝 Ω)

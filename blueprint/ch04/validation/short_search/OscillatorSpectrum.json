@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.log",
+    "source_sha256": "9bfa20642813e21a494c4d84da10a82599fa6011072162319691ee139e9350a3",
+    "log_sha256": "77801f6d931f5ab5cb6596de87cc367a497862a61f1bb3fb427ee4110386b8ff"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro Ω ζ\n  let A : Matrix (Fin 2) (Fin 2) ℂ := (MolecularDynamics.Chapter04Review.oscillatorMatrix Ω).map Complex.ofReal\n  have heig : (∃ v : Fin 2 → ℂ, v ≠ 0 ∧ A *ᵥ v=ζ • v) ↔ (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-A).det=0 := by\n    rw [← Matrix.exists_mulVec_eq_zero_iff]\n    simp only [Matrix.sub_mulVec, Matrix.smul_mulVec, Matrix.one_mulVec, sub_eq_zero]\n    constructor\n    · rintro ⟨v,hv,he⟩; exact ⟨v,hv,he.symm⟩\n    · rintro ⟨v,hv,he⟩; exact ⟨v,hv,he.symm⟩\n  have hd : (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-A).det=ζ^2+(Ω : ℂ)^2 := by\n    simp [A, MolecularDynamics.Chapter04Review.oscillatorMatrix, Matrix.det_fin_two]\n    push_cast\n    ring\n  change (∃ v : Fin 2 → ℂ, v ≠ 0 ∧ A *ᵥ v=ζ • v) ↔ _\n  rw [heig,hd]\n  have hf : ζ^2+(Ω : ℂ)^2=(ζ-Complex.I*Ω)*(ζ+Complex.I*Ω) := by\n    ring_nf\n    rw [Complex.I_sq]\n    ring\n  rw [hf,mul_eq_zero,sub_eq_zero,add_eq_zero_iff_eq_neg]\n  simp only [neg_mul]",
+    "source": "blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.log",
+    "source_sha256": "d9f1b1dded88a9fae587bd3e8815ec8016e88706ac444db951d3df1d88da157e",
+    "log_sha256": "4863d39a0c0a0d754270aba1abaf7213f4c9eb9489d70f73977d83b059c44f1e"
+  }
+]

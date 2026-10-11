@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.log",
+    "source_sha256": "6589ac3e684facb331d66eebdbad8cf1a112b75ce616944e5381df867fd596c0",
+    "log_sha256": "8e6b91f45b2b24019bcc5add0710a4721c4765279af2313fd75232ae163819fc"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro h Ω hh hΩ z hz\n  have hs : ‖MolecularDynamics.Chapter04Review.eulerFactor h (Complex.I*Ω)‖^2=1+(h*Ω)^2 := by\n    simp_all [MolecularDynamics.Chapter04Review.eulerFactor, Complex.sq_norm, Complex.normSq_apply]\n    ring\n  have hp : 0 < (h*Ω)^2 := sq_pos_of_ne_zero (mul_ne_zero hh hΩ)\n  have hg : 1 < ‖MolecularDynamics.Chapter04Review.eulerFactor h (Complex.I*Ω)‖ := by\n    nlinarith [norm_nonneg (MolecularDynamics.Chapter04Review.eulerFactor h (Complex.I*Ω))]\n  have ht := (tendsto_pow_atTop_atTop_of_one_lt hg).atTop_mul_const (norm_pos_iff.mpr hz)\n  simpa [norm_mul, norm_pow] using ht",
+    "source": "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.log",
+    "source_sha256": "2b1bd35b82be9b0a5285d945819cd6a1c6908ec66c7dde37680b25eb0407a801",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

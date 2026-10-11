@@ -1,0 +1,54 @@
+168                                                     4  The Stability Threshold
+
+
+
+
+                                                                    R(t)
+
+
+
+
+
+                                                                                           R(t)
+
+
+
+
+
+                                                            R(t)
+
+
+Fig. 4.7 A rigid rotation can be viewed as premultiplication by an orthogonal matrix     . In this
+way the orientation of the position vectors of points in the rigid body at any time t are described
+by a trajectory in the space of 3  3 orthogonal matrices,    .t/; t 2 R
+
+
+ıi.t/ D   .t/ıi.0/, see Fig. 4.7, thus we have
+
+                          1 XN             T
+                           Krot D       miıi.0/T P   P ıi.0/:
+                          2
+                                   iD1
+
+This expression may be rewritten as
+
+                              1           T
+                                 Krot D 2Tr   P R P     ;
+
+where the ﬁxed matrix R is given by
+
+          XN
+                  R D     miıi.0/ıi.0/T:
+                                    iD1
+
+By choosing an appropriate coordinate frame,  it is possible to insure that the
+symmetric matrix R is a diagonal matrix.
+  An alternative form for the rotational kinetic energy may be obtained by writing
+
+                                           Pıi D  P ıi.0/
+              D  P   T   ıi.0/ D  P   T Pıi;
+
+where we have used the fact that     is orthogonal. Moreover, since      T D I, we
+have
+
+                                      P   T C     P T D 0;

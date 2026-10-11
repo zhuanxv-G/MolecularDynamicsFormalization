@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro Ω h hΩ\n  simp only [MolecularDynamics.Chapter04Review.impulseMatrix, Matrix.det_mul]\n  have hs : (MolecularDynamics.Chapter04Review.slowMatrix h).det=1 := by\n    simp [MolecularDynamics.Chapter04Review.slowMatrix, Matrix.det_fin_two]\n  have hs2 : (MolecularDynamics.Chapter04Review.slowMatrix (h/2)).det=1 := by\n    simp [MolecularDynamics.Chapter04Review.slowMatrix, Matrix.det_fin_two]\n  have hf : (MolecularDynamics.Chapter04Review.fastMatrix Ω h).det=1 := by\n    simp [MolecularDynamics.Chapter04Review.fastMatrix, Matrix.det_fin_two]\n    field_simp\n    nlinarith [Real.sin_sq_add_cos_sq (Ω*h)]\n  exact ⟨hs,hf,by rw [hs2,hf]; norm_num⟩",
+    "source": "blueprint/ch04/validation/short_search/ImpulseDet-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/ImpulseDet-route1.log",
+    "source_sha256": "be9bdb15616e5e9832749b03de1701d3ec4a7856ec0c727173b496c55a869e87",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

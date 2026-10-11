@@ -1,0 +1,13 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch04\validation\short_search\EulerImaginaryGrowth-route1.lean:12:91: error: unsolved goals
+h Ω : ℝ
+hh : h ≠ 0
+hΩ : Ω ≠ 0
+z : ℂ
+hz : z ≠ 0
+⊢ Complex.normSq (1 + ↑h * Complex.I * ↑Ω) = 1 + h ^ 2 * Ω ^ 2

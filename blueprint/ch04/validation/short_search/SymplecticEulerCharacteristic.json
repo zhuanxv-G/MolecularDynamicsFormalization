@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro Ω h rho\n  simp [MolecularDynamics.Chapter04Review.symplecticEulerMatrix, Matrix.det_fin_two]\n  push_cast\n  ring",
+    "source": "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.log",
+    "source_sha256": "2f1293b01c71b7dc27712d8409338f2bfbd6b69eac47f4e59f68640e790e3ccc",
+    "log_sha256": "b428eda99175b0b285ebf8fae31bea7800afbe529c10635d28d5c8643ee61c49"
+  }
+]

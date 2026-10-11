@@ -1,0 +1,54 @@
+166                                                     4  The Stability Threshold
+
+
+
+                                            6   Flexible water (Verlet)                          h = 0.5fs
+                                                                                         h = 1 fs
+                                                                                         h = 2 fs
+                                            0                                               h = 3 fs                                                                                                                                                                                          (kcal/mol)                                                 h = 4 fs
+                                                       -6                                               h = 5 fs
+
+                                            6   Rigid water (Shake)                                                                                                                                                                       deviation
+
+                                            0                                                                                                                Energy
+
+                                                       -6
+
+                                              0                         0.5                        1.0
+                                                        Time (ns)
+
+Fig. 4.5 We simulate a cubic box of TIP3P water (left) with box side length 16A using periodic
+boundary conditions. The deviation in the total energy is shown for simulations using different
+stepsizes (right), when using either the ﬂexible or rigid (constrained) model. Note that the ﬂexible
+model could not be stably simulated at the larger stepsizes
+
+
+the timestep makes constrained simulation typical more efﬁcient than unconstrained
+dynamics. In general, a doubling of the timestep is often possible.
+  A concern might be that the change of the model from unconstrained to
+constrained could alter the properties of the system in a way that would affect the
+overal simulation results. In practice, it is normally found that the other model and
+sampling errors present mean that the errors due to using constraints are relatively
+minor, particularly if the constraints are limited to bond lengths only, and even less
+of a factor if the constraints are limited to the bonds between hydrogen atoms and
+heavier atoms in biomolecules.
+
+
+
+4.4  Rigid Body Systems
+
+
+In some cases the effect of introducing constraints may be to rigidify completely
+certain molecular groups. Constraints are also used as part of coarse-graining
+procedures in which large collections of atoms may have their relative motions
+eliminated. In this case it is often useful to replace the rigid groups by ideal rigid
+bodies and to model these using rigid body dynamics. There is an extensive research
+literature on numerical methods for rigid body molecular dynamics, our discussion
+here of this topic is limited to a few schemes that we feel offer a reasonable
+combination of efﬁciency and geometric ﬁdelity. For a more complete introduction
+to the topic, we recommend [80, 84] and the references therein.
+  As an example, in the TIP4P model for water, one of the most popular, the waters
+are assumed to be rigid bodies and there are 3 charge sites associated to each: the
+locations of the hydrogen nuclei and an additional “ghost” site located in the plane
+created by the three nuclei and along the perpendicular bisector of the HOH angle
+(Fig. 4.6). The potential energy for the interaction of a pair of such molecules, the

@@ -1,0 +1,45 @@
+172                                                     4  The Stability Threshold
+
+
+   In the absence of external forces,
+
+                            d
+                        0 D dtl D  P  C    P :
+
+Therefore
+
+                                         P D     T P    :
+
+Next observe that
+
+                                   T P D skew.!b/:
+
+This follows from the deﬁnition of the angular velocity and properties of the cross
+product (see exercises). Thus
+
+                                   P D  !b   D    !b;
+
+but since !b D T  1   , we may conclude
+
+                                         P D   T  1   :                           (4.41)
+
+These are the so-called Euler equations for the free rigid body.
+   Let us observe that (4.41) is in the form
+
+                                          P D QJ. /r QH;
+
+where QJ.  / D skew.  / is obviously skew symmetric, and QH D  TT  1 =2 is the
+energy function. Thus the Euler equations are in the form of a Hamiltonian system
+on a three-dimensional phase space. The symplectic structure matrix is dependent
+on the phase variables, and it is degenerate: QJ D    D 0, signifying that total
+angular momentum is conserved: k k D constant. This is a generalization of our
+previous concept of Hamiltonian system. Much of the previously developed theory
+of Hamiltonian systems can be adapted to the setting of the free rigid body with
+analogous deﬁnitions of splitting method and symplectic integrators obtained by
+additive decomposition of the Hamiltonian.
+    It is possible to solve the Euler equations using an exact solution and to use this
+to design efﬁcient integrators [68, 249, 382], but in the most common setting of
+molecular dynamics, where additional approximations will be need, we are usually
+justiﬁed in treating these equations using a more elementary procedure [258]. If
+T is a diagonal matrix, T D diag.I1; I2; I3/, then we split the Euler equations and
+approximate the solution by successive rotations around the three axes of inertia,

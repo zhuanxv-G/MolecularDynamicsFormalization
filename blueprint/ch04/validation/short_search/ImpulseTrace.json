@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro Ω h hΩ\n  simp [MolecularDynamics.Chapter04Review.impulseMatrix, MolecularDynamics.Chapter04Review.slowMatrix,\n    MolecularDynamics.Chapter04Review.fastMatrix, Matrix.trace, Matrix.mul_apply, Fin.sum_univ_two]\n  rw [mul_comm h Ω]\n  ring",
+    "source": "blueprint/ch04/validation/short_search/ImpulseTrace-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/ImpulseTrace-route1.log",
+    "source_sha256": "829fae154d08d449c64e6f66f5027868dc2fd73ce10ec3e32a5d67572ed5d327",
+    "log_sha256": "54459dc700414f6c01106804e8bc0ea0029c0cbbf4cfbab6109fde51e05780c1"
+  }
+]

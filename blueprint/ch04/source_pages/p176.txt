@@ -1,0 +1,50 @@
+154                                                     4  The Stability Threshold
+
+
+where
+
+           X2Nc                                          @Zi
+                               dZi D          dzj:
+                                                 @zj                                        jD1
+
+Taking the derivative with respect to t and deﬁning PZi D fi.Z.t; z//, we can see that
+
+                          d  X2Nc  @PZi
+                             dtdZi D      @zj dzj                                          jD1
+
+                  D dPZi:
+
+The symplecticness condition therefore becomes
+
+                    dZ ^ Jd PZ C d PZ ^ JdZ D 0;
+
+or, in canonical coordinates,
+
+       XNc
+                                        dPqj ^ dpj C dqj ^ dPpj D 0;
+                           jD1
+
+which is essentially a Leibniz differentiation rule for wedge products. The functions
+Pqj; Ppj that appear here are just the components of the vector ﬁeld.
+  We next demonstrate that a similar property holds for the constrained equations.
+Taking differentials, we have
+
+                            dPq D dM 1p;
+
+            Xl
+                            dPp D  drU.q/      d. krgk.q//;
+                                       kD1
+
+                    0 D dgj.q/;      j D 1; 2; : : : ; l;
+
+
+
+   Next, we interchange time derivatives and differentials, and use the chain rule to
+write
+
+          d
+          dtdq D M 1dp;                                                (4.11)
+          d      Xl
+          dtdp D  U00.q/dq       Œ.d k/rgk.q/ C  kg00kdq ;              (4.12)
+                               kD1
+             0 D g0j.q/dq;      j D 1; 2; : : : ; l;                             (4.13)

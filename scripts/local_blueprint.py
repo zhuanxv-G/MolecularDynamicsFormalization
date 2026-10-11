@@ -25,6 +25,7 @@ def pipeline(ch):
                           f'import MolecularDynamics.Chapter{ch:02}.Statements')
     if ch==4:
         text=text.replace('Matrix.Norms.L2Operator','Matrix.Norms.Elementwise')
+        text=text.replace('import Mathlib.Tactic', 'import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv\nimport Mathlib.Tactic',1)
     text=text.replace('open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review',
         f'open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review')
     text=text.replace('variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]',

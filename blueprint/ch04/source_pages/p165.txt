@@ -1,0 +1,57 @@
+4.1  Implicit Schemes                                                         143
+
+
+
+
+
+             1
+
+
+                .8
+
+
+                .6
+
+
+                .4
+
+
+                .2
+
+                                                                         10
+                       .2                                                8
+                             .4                                     6
+                  h         .6                          4
+                                           .8              2
+
+Fig. 4.2 The frequency ratio O˝=˝ for the Implicit Midpoint method. A frequency ratio of 1
+indicates that the phase of the harmonic oscillator is accurate
+
+
+boundedness of the timestepping iteration, and then only at the point of linearization.
+Other issues are often in play.
+    If the Implicit Midpoint method is viewed as the exact solution of a perturbed
+harmonic oscillator, then the frequency of this oscillator is
+
+                             1   1 C ih˝=2
+                             O˝ D    ln                  :
+                                     ih   1  ih˝=2
+
+In the diagram below (Fig. 4.2), we plot the ratio O˝=˝ against h and ˝. If this ratio
+is 1, the frequency is accurately represented. The ﬁgure shows that the frequency is
+only well approximated in case h˝ is sufﬁciently small. For h˝   1 the frequency
+is highly modiﬁed. From this we might infer that a molecular dynamics simulation
+performed using the Implicit Midpoint method is only likely to be accurate in terms
+of resolution of temporally correlated quantities in case h˝ is relatively small.
+  The inaccuracy of phase contributions computed using an implicit method with
+large stepsize (much larger than the Verlet stability threshold, i.e. h   2=˝) may, in
+complicated systems, have additional consequences for error growth. For example,
+consider a large harmonic system with slow and fast dynamical components. The
+frequency ratio shown in Fig. 4.2 suggests that, when using larger timesteps, the
+most severe errors will be introduced in approximating the fast variables. The
+modiﬁcation of frequencies will mean that these components will resonate (in a
+nonphysical way) with the low frequency components, thus we would anticipate a
+rapid propagation of errors from fast components into slow variables (in practice
+an error in the bond stretch may lead, on a rapid timescale, to propagation into a
+dihedral bend). We refer the interested reader to more in-depth treatments of these
+issues [17, 152] for more details.

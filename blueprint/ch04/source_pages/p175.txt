@@ -1,0 +1,48 @@
+4.3  Methods for Constrained Dynamics                                           153
+
+
+where ' is an l-dimensional vector whose kth component is
+
+                      'k D p.t/TM 1r2gk.q.t//M  1p.t/:
+
+Using (4.8) in (4.10) we obtain
+
+                    g0.q/M 1ŒF   g0.q/T  C '    0;
+
+This is a system of linear equations for    . Assuming g0.q/M 1g0.q/T is invertible,
+we may solve for    . Reinserting this expression for   into (4.8) then gives a system
+of ordinary differential equations whose solutions, starting from a point on T M,
+will remain on T M for all time. The co-tangent bundle becomes an invariant
+manifold of this ODE system.    is deﬁned at any time by the physical variables
+q and p.
+  The presence of such an underlying ordinary differential equation is very useful
+for conceptual purposes, but in practice it is usually found to be preferable to work
+directly with the constrained formulation (4.7)–(4.9) for numerical discretization
+and for describing statistical mechanical properties.
+  The formulation of Hamiltonian systems with constraints is discussed from
+various perspectives in [15, 151, 249]. Here, we take a practical perspective on
+these systems, addressing ourselves only to the issues that are directly relevant for
+the extension of numerical methods derived in previous chapters to the constrained
+setting. More detailed treatment of numerical methods for constrained mechanical
+systems may be found in [164, 227].
+
+
+
+4.3.1  Symplectic Structure with Holonomic Constraints
+
+
+Describing the Hamiltonian structure for a constrained system is a little complicated
+to do formally. The simplifying concept that we exploit is that the symplectic 2-
+form in the ambient space can be projected to the co-tangent bundle to deﬁne an
+associated symplectic form on the manifold.
+  One way to understand the symplecticness of the Hamiltonian ﬂow in the
+unconstrained case is as follows. Think of the ﬂow map as deﬁning Z.t; z/ D
+Ft.z/, where we can write the vector Z.t; z/ D ŒZ1.t; z/; : : : ; Z2Nc.t; z/ . Then the
+symplecticness condition is
+
+                      dZ ^ JdZ D dz ^ Jdz:
+
+Taking the time derivative, as the right hand side is constant we have
+
+                         d       d
+                 dZ ^ J dt.dZ/ C dt.dZ/ ^ JdZ D 0;

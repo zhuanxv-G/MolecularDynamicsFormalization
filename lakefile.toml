@@ -18,5 +18,5 @@ globs = ["MolecularDynamicsFormalization", "MolecularDynamics.+"]
 
 [[lean_lib]]
 name = "Blueprint"
-roots = ["Blueprint.Ch01", "Blueprint.Ch02", "Blueprint.Ch03"]
-globs = ["Blueprint.Ch01", "Blueprint.Ch02", "Blueprint.Ch03"]
+roots = ["Blueprint.Ch01", "Blueprint.Ch02", "Blueprint.Ch03", "Blueprint.Ch04"]
+globs = ["Blueprint.Ch01", "Blueprint.Ch02", "Blueprint.Ch03", "Blueprint.Ch04"]

@@ -1,0 +1,51 @@
+150                                                     4  The Stability Threshold
+
+
+i.e.
+
+                                   g.q; t/ D 0:                                (4.3)
+
+Note that by differentiating (4.3) with respect to time, we obtain rqg.q; t/   Pq C
+@g=@t D 0 which involves velocities. The deﬁnition of holonomic constraints
+thus includes equations which relate positions and momenta, but only where
+these are, through the differential equations, equivalent to equations involving
+positions only (4.3). For more details on constrained dynamics, see for example
+[67, 79, 83, 164, 227, 249].
+  An important type of holonomic constraint arising in molecular dynamics relates
+to bond vibration. Recall that the stretch of a chemical bond between two atoms
+gives rise to a potential energy contribution of the form
+
+                                    k
+                             '.r/ D 2.r   r0/2;
+
+where r would typically represent the distance between a pair of atoms, say atoms i
+and j, r D kqi   qjk. The strong chemical bond stretches involving hydrogens and
+various heavier atoms such as nitrogen and carbon give rise to the most rapid modes
+present in the atomic motion. As we have seen, a harmonic oscillator with frequency
+˝, when solved using the Verlet method, has a stability restriction of the form
+
+                                  2
+                              h <     :
+                     ˝
+
+One approach to addressing these stiff terms is to use a multiple timestepping
+method. A more direct approach is to introduce constraints to simply remove the
+stiff bond stretches. This makes sense if (a) the motion of the constrained system can
+be simulated using larger timesteps and (b) the rigidiﬁcation of certain vibrational
+terms does not signiﬁcantly alter the thermodynamic or dynamic properties of
+interest to the modeller.
+  To illustrate the progression from vibrational model to constrained model, one
+may consider a single particle subject to a potential U.q/ as well as an additional
+stiff restraint. We suppose the restraint to have an associated coefﬁcient k D "  1,
+where " is a small parameter. Then we have a generalized ﬂexible pendulum with
+Hamiltonian H D kpk2=.2m/ C U.q/ C " 1.kqk   r0/2=2 (see the left panel of
+Fig. 4.4). The differential equations describing this model are
+
+                                               Pq D m 1p;
+
+                                               Pp D  rU.q/   r'".q/;
+
+where the restraint potential '".q/ D " 1.kqk   r0/2=2 has associated restoring
+force
+
+                        F" D  r'".q/ D '".q/:

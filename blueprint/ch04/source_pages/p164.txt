@@ -1,0 +1,52 @@
+142                                                     4  The Stability Threshold
+
+
+(and, in a certain sense, incomplete, since anharmonicity can produce an unstable
+dynamic from a stable linearized problem). Nevertheless such a stability threshold
+can be found by numerical experiment and it can be veriﬁed that this is not too
+far from the stability threshold that would correspond to a model linearized at
+equilibrium points.
+  The only way to increase the stability threshold is by introducing implicitness or
+by changing in some fundamental way the timestepping framework. We consider
+some alternatives below.
+
+
+
+4.1  Implicit Schemes
+
+
+By introducing a coordinate transformation, we may reduce the harmonic oscillator
+system to a pair of decoupled complex scalar ODEs of the form
+
+                                                                          Pz D ˙i˝z:
+
+Applying a Runge-Kutta method to such a linear system allows direct determination
+of the stability condition. For example, Euler’s method would yield
+
+                             znC1 D .1 ˙ ih˝/zn;
+
+
+                                                               n=2
+which exhibits a growing solution jznC1j D 1 C h2˝2     jz0j.
+  The Implicit Midpoint method which, for the ODE Pz D f.z/ takes the form
+
+                      C f.znC1/                        znC1 D zn C hf.zn/                ;
+                                      2
+
+can be applied to Pz D i˝z and yields
+
+                               1 C ih˝=2
+                            znC1 D              zn:
+                               1  ih˝=2
+
+For all real ˝, we ﬁnd
+
+                           1 C ih˝=2
+                      D 1:                                                                                                                                                              ˇˇˇˇ                                                          ˇˇˇˇ                           1  ih˝=2
+
+This indicates that the Implicit Midpoint method has no stability threshold for the
+stepsize when solving a linear system! This remarkable property may inspire some
+optimism that Implicit Midpoint would allow much larger stepsize in molecular
+dynamics simulation than does Verlet.
+   In actual practice, this does not work out quite as expected. To understand why
+not, we need to recognize that the linear stability condition only describes the

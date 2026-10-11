@@ -1,0 +1,52 @@
+152                                                     4  The Stability Threshold
+
+
+kth constraint will act in the transverse direction to that constraint, i.e. along the
+direction of the gradient rgk, and the equations of motion may be written
+
+                                          Pq D M 1p;                                          (4.4)
+
+            Xl
+                                          Pp D  rU.q/        krgk.q/;                      (4.5)
+                                       kD1
+
+                     0 D gj.q/;      j D 1; 2; : : : ; l;                        (4.6)
+
+where  1;  2; : : : ;    l are the Lagrange multipliers. It is often convenient to combine
+all the constraints and to describe them by a single vector-valued function g W RNc !
+Rl, then we may write the constrained equations of motion in the form
+
+                                               Pq D M 1p;                                       (4.7)
+
+                                               Pp D  rU.q/   g0.q/T   ;                         (4.8)
+
+                       0 D g.q/:                                         (4.9)
+
+Here    is an l-dimensional vector of Lagrange multipliers.
+   Constraints such as those described above deﬁne a manifold in the conﬁguration
+space M D fqjg.q/ D 0g. Given a motion .q.t/; p.t/;  .t// of (4.7)–(4.9) we note
+that g.q.t//   0 at all times t, hence, by differentiation
+
+                                      g0.q.t//Pq.t/    0;
+
+which we may rephrase as
+
+                            g0.q.t//M  1p.t/    0:
+
+Thus while q 2 M, q and p together satisfy a separate constraint relationship
+g0.q/M 1p D 0. This is sometimes referred to as a co-tangency condition or the
+hidden constraint. The set of pairs .q; p/ satisfying, simultaneously, the equations
+
+                       g.q/ D 0;     g0.q/M 1p D 0;
+
+is called the co-tangent bundle associated to the manifold M, and we refer to it as
+T M. The co-tangent bundle is the collection of valid positions and momenta for
+a holonomically constrained mechanical system; it is the constrained analog of the
+phase space. The word “co-tangent” refers to the fact that velocities v D  Pq lie in
+the tangent space g0.q/v D 0, whereas the momenta are viewed as “co-vectors,”
+that is one-forms or linear mappings taking tangent vectors to scalars (through the
+Euclidean inner product).
+  The solution of (4.7)–(4.9) evolves on the co-tangent bundle. Along a solution
+we have g0.q.t//M  1p.t/    0. If we differentiate this again, we obtain
+
+                          g0.q.t//M  1Pp.t/ C '    0;                      (4.10)

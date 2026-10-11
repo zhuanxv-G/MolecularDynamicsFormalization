@@ -1,0 +1,47 @@
+4.2  Multiple Timestepping                                                     145
+
+4.2.1  The Reversible RESPA Scheme
+
+
+In many molecular dynamics applications, the system may be decomposed as
+H.q; p/ D pTM 1p=2 C US.q/ C UF.q/ where US is a “soft” potential, in which
+the natural motion would be relatively slow, whereas UF is a much stronger term
+which would give rise to relatively rapid motion. We further suppose US (with its
+gradient) is expensive to compute, perhaps because it involves many terms, whereas
+UF is relatively simple. Because UF requires small timesteps, we think of separating
+the calculation of a timestep, typically in a symmetric form. Let G hF denote the map
+associated to the Verlet method for the system without US, using a stepsize h:
+
+
+
+                                                       2                                                       h LUF ehLKe h2 LUF ;                    G hF D e
+
+where LK is the Lie-derivative corresponding to the kinetic energy component of
+the Hamiltonian (K D pTM 1p=2). Now consider the map constructed by taking r
+steps using GF;h=r and composing this with kicks from the soft force:
+
+                                                                         2 LUS :                  G hMTS D e h                                                       2 LUS ŒG h=rF  re h
+
+One step of the multiple timestepping algorithm is then implemented as follows:
+
+                       Reversible RESPA Algorithm
+
+
+
+                 P :D p  .h=2/rUS.q/;
+
+              Q :D q;
+
+                        Repeat r times:
+                                                                                 (4.2)
+                    P :D P  .h=2/rUF.Q/=r;
+                 Q :D Q C hM 1P=r;                                                                                                                                                                                                                ˇˇˇˇˇˇ                    P :D P  .h=2/rUF.Q/=r;
+
+                 P :D P  .h=2/rUS.Q/:
+
+   Multiple timestepping is widely used for efﬁciency purposes in systems with
+expensive force computations, but it should be used cautiously. To illustrate the
+potential dangers of multiple timestepping, one need only consider its application
+to a linear one-DOF model problem
+
+   H.q; p/ D p2=2 C US.q/ C UF.q/;   US.q/ D q2=2;   UF.q/ D ˝2q2=2;

@@ -1,0 +1,47 @@
+4.3  Higher Order Symplectic Methods: SHAKE and RATTLE                        163
+
+   Recall that, for a given method Gh the deﬁnition of the adjoint method Gh is given
+by
+
+                        Gh D G h:1
+
+For Symplectic Euler with constraints, we view Gh as a mapping of the co-tangent
+bundle and write .Q; P/ WD Gh.q; p/ where
+
+                                    OP D p C hF.q/   hg0.q/T   ;
+
+               Q D q C hM  1 OP;
+
+                  P D OP   hg0.Q/T   ;
+
+and the multipliers    ;   are deﬁned by the conditions g.Q/ D  0; g0.Q/M  1
+P D 0.
+  Now replace h by  h and then swap Q with q and P with p, resulting in
+
+                                   OP D p   hg0.q/T   ;
+
+               Q D q C hM  1 OP;
+
+                  P D OP C hF.Q/   hg0.Q/T   ;
+
+where    ,   are again deﬁned by the constraint conditions. This deﬁnes the adjoint
+method, another ﬁrst order method for the constrained system. By composing the
+maps Gh=2 and Gh=2 we get a second order symplectic method. In the sense that it
+is deﬁned by ﬁrst order maps which reduce to the Symplectic Euler method and its
+adjoint, this is an analogous scheme to the Störmer-Verlet method. Interestingly, this
+method is not equivalent to SHAKE or RATTLE.
+   Yet this is not the only constrained composition method we could have designed
+in analogy with Störmer-Verlet. Recall that Störmer-Verlet is also the symmetric
+composition of the ﬂow maps of the two Hamiltonians K D pTM 1p=2 and
+U D U.q/. It would be natural to consider a composition of steps resolving the
+constrained ﬂows on K and U separately. For the potential energy term, an exact
+solution is given by
+
+                Q D q;
+
+                    P D p  h˘ .q/rU.q/;
+
+where ˘ is a mass-weighted projector onto the tangent space of the constraints at
+the point q deﬁned by
+
+         ˘ D I   g0.q/T g0.q/M 1g0.q/T   1 g0.q/M  1:
