@@ -1,0 +1,263 @@
+Blueprint/Ch04.lean:82:2: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch04.lean:87:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:113:63: warning: This simp argument is unused:
+  Matrix.mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, dotProduct, vecHead, vecTail, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:113:89: warning: This simp argument is unused:
+  vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, Matrix.mulVec, dotProduct, vecTail,
+    Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:113:98: warning: This simp argument is unused:
+  vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, Matrix.mulVec, dotProduct, vecHead,
+    Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:160:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:166:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:185:4: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch04.lean:213:4: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch04.lean:288:56: warning: This simp argument is unused:
+  vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecTail]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:288:64: warning: This simp argument is unused:
+  vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecHead]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:290:56: warning: This simp argument is unused:
+  vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecTail]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:290:64: warning: This simp argument is unused:
+  vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecHead]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:370:104: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch04.lean:412:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:453:64: warning: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.impulseMatrix, MolecularDynamics.Chapter04Review.slowMatrix,
+    MolecularDynamics.Chapter04Review.fastMatrix, Matrix.trace, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:477:46: warning: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mul_apply, Fin.sum_univ_two, smul_eq_mul, Nat.cast_add, Nat.cast_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:468:192: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch04.lean:468:192: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch04.lean:477:99: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch04.lean:481:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:489:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:496:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:542:10: warning: This simp argument is unused:
+  Real.norm_eq_abs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [abs_pow, abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))), hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:542:27: warning: This simp argument is unused:
+  abs_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))), hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:542:35: warning: This simp argument is unused:
+  abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ)))
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_pow, hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:540:122: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch04.lean:563:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:617:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch04.lean:642:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:678:62: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch04.lean:731:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:796:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:829:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:838:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:849:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:861:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1064:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1081:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1101:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1142:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1167:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1182:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1254:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1435:135: warning: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, MolecularDynamics.Chapter04Review.outer,
+    MolecularDynamics.Chapter04Review.skewMatrix, Fin.sum_univ_three, pow_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1440:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1539:14: warning: This simp argument is unused:
+  Matrix.sub_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dot, Matrix.smul_mulVec, Matrix.one_mulVec, MolecularDynamics.Chapter04Review.outer, Matrix.mulVec,
+    dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1539:32: warning: This simp argument is unused:
+  Matrix.smul_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dot, Matrix.sub_mulVec, Matrix.one_mulVec, MolecularDynamics.Chapter04Review.outer, Matrix.mulVec,
+    dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1539:51: warning: This simp argument is unused:
+  Matrix.one_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dot, Matrix.sub_mulVec, Matrix.smul_mulVec, MolecularDynamics.Chapter04Review.outer, Matrix.mulVec,
+    dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1585:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1640:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Θᵀ *ᵥ cross3 (Θ *ᵥ ?v) (cross3 «ω» (Θ *ᵥ ?v))
+in the target expression
+  m i • Θᵀ *ᵥ Chapter04Review.cross3 (Θ *ᵥ δ i) (Chapter04Review.cross3 «ω» (Θ *ᵥ δ i)) =
+    m i • (dot (δ i) (δ i) • 1 - outer (δ i)) *ᵥ Θᵀ *ᵥ «ω»
+
+N : ℕ
+m : Fin N → ℝ
+δ : Fin N → V
+Θ : Mat3
+ω : V
+ho : Θᵀ * Θ = 1
+hdet : det Θ = 1
+ht : ∀ (A : Mat3) (v w : V), dot (A *ᵥ v) w = dot v (Aᵀ *ᵥ w)
+hi : ∀ (v : V), Θᵀ *ᵥ Θ *ᵥ v = v
+hn : ∀ (v : V), dot (Θ *ᵥ v) (Θ *ᵥ v) = dot v v
+hc : ∀ (u w : V), cross3 u (cross3 w u) = dot u u • w - dot u w • u
+he : ∀ (v y : V), outer v *ᵥ y = dot v y • v
+hterm : ∀ (v : V), Θᵀ *ᵥ cross3 (Θ *ᵥ v) (cross3 «ω» (Θ *ᵥ v)) = (dot v v • 1 - outer v) *ᵥ Θᵀ *ᵥ «ω»
+i : Fin N
+hii : i ∈ Finset.univ
+⊢ m i • Θᵀ *ᵥ Chapter04Review.cross3 (Θ *ᵥ δ i) (Chapter04Review.cross3 «ω» (Θ *ᵥ δ i)) =
+    m i • (dot (δ i) (δ i) • 1 - outer (δ i)) *ᵥ Θᵀ *ᵥ «ω»
+Blueprint/Ch04.lean:1681:4: error: Type mismatch: After simplification, term
+  h
+ has type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    (fun y => ∑ x, π y x * (B *ᵥ π y) x)
+    (∑ x, Chapter04Review.eulerRigidField T (π t) x * (B *ᵥ π t) x + ∑ x, π t x * (B *ᵥ eulerRigidField T (π t)) x)
+    (Icc a b) t
+but is expected to have type
+  @HasDerivWithinAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.instAddCommGroup Semiring.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun s => ∑ i, π s i * (B *ᵥ π s) i)
+    (∑ i, eulerRigidField T (π t) i * (B *ᵥ π t) i + ∑ i, π t i * (B *ᵥ eulerRigidField T (π t)) i) (Icc a b) t
+Blueprint/Ch04.lean:1684:105: error: unsolved goals
+T : Mat3
+π : ℝ → V
+a b : ℝ
+hT : PosDef T
+hab : a ≤ b
+hπ : ContinuousOn π (Icc a b)
+hsol : Chapter04Review.freeRigidSolution T π (Icc a b)
+hsym : T⁻¹ᵀ = T⁻¹
+hcomm : ∀ (u v : V), dot u v = dot v u
+htrans : ∀ (B : Mat3) (u v : V), dot u (B *ᵥ v) = dot (Bᵀ *ᵥ u) v
+hc : ∀ (u v : V), dot (cross3 u v) v = 0 ∧ dot u (cross3 u v) = 0
+hd :
+  ∀ (B : Mat3),
+    ∀ t ∈ Icc a b,
+      HasDerivWithinAt (fun s => dot (π s) (B *ᵥ π s))
+        (dot (eulerRigidField T (π t)) (B *ᵥ π t) + dot (π t) (B *ᵥ eulerRigidField T (π t))) (Icc a b) t
+t : ℝ
+ht : t ∈ Icc a b
+⊢ dot (Chapter04Review.cross3 (π t) (T⁻¹ *ᵥ π t)) (T⁻¹ *ᵥ π t) = 0
+Blueprint/Ch04.lean:1690:91: error: unsolved goals
+T : Mat3
+π : ℝ → V
+a b : ℝ
+hT : PosDef T
+hab : a ≤ b
+hπ : ContinuousOn π (Icc a b)
+hsol : Chapter04Review.freeRigidSolution T π (Icc a b)
+hsym : T⁻¹ᵀ = T⁻¹
+hcomm : ∀ (u v : V), dot u v = dot v u
+htrans : ∀ (B : Mat3) (u v : V), dot u (B *ᵥ v) = dot (Bᵀ *ᵥ u) v
+hc : ∀ (u v : V), dot (cross3 u v) v = 0 ∧ dot u (cross3 u v) = 0
+hd :
+  ∀ (B : Mat3),
+    ∀ t ∈ Icc a b,
+      HasDerivWithinAt (fun s => dot (π s) (B *ᵥ π s))
+        (dot (eulerRigidField T (π t)) (B *ᵥ π t) + dot (π t) (B *ᵥ eulerRigidField T (π t))) (Icc a b) t
+he : ∀ t ∈ Icc a b, HasDerivWithinAt (fun s => dot (π s) (T⁻¹ *ᵥ π s)) 0 (Icc a b) t
+t : ℝ
+ht : t ∈ Icc a b
+⊢ dot (π t) (Chapter04Review.cross3 (π t) (T⁻¹ *ᵥ π t)) = 0
+Blueprint/Ch04.lean:1686:28: warning: This simp argument is unused:
+  (hc (π t) (T⁻¹ *ᵥ π t)).1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [eulerRigidField]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1692:28: warning: This simp argument is unused:
+  (hc (π t) (T⁻¹ *ᵥ π t)).2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [eulerRigidField]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

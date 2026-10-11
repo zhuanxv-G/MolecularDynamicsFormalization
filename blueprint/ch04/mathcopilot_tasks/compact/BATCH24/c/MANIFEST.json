@@ -1,0 +1,151 @@
+{
+  "batch": "BATCH24",
+  "subtask": "BATCH24c",
+  "source_ids": [
+    "MD-4.4.1-AngularInertia"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 193,
+      "printed_page": 171
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "74216b5acf492708466fe193af472b48a861799b508860fd0e1c4a2f3bc39073",
+  "lean_sha256": "779b1be8d8916a5f326855ee68e6687b3e936f5c5193e628a4c826a9c583e2b7",
+  "signature_sha256": "e3b1e7ae54584835b9cf45cfa8cfff142657d078cce99e3db76f576b8ec4c9d1",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "angularMomentum",
+      "code_sha256": "527a0b0214f4100b445cceff8c72aaeba7a467d11b3ab0372d52b04d88919a62"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "bodyMomentum",
+      "code_sha256": "cf8ab8dceb634924c3398ba89b5862e13f0ee752d8e06af00b34c450f4f763be"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "cross3",
+      "code_sha256": "482e275d45f901379b4e5bc7b76d0c76d5a6d4e033a454340d968594bd131931"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "dot",
+      "code_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "inertiaTensor",
+      "code_sha256": "7b11025439b4779640f355bd8eaceb131723edbfdbe750c26732e1d1a8d4152e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "outer",
+      "code_sha256": "ceb543d2b989d03587540642d9939fa02a7ac890811088bd9a863e1b3ebea77e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "angularMomentum",
+      "code_sha256": "692942caaa9748abc706f8212beddd6e8c5518a18f3587d66d0867036c29a1ae"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "bodyMomentum",
+      "code_sha256": "6a1949bbe3cee312fa77317df4cbfaf5ec38d2547a1e8b90769b66939f5a92e1"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "cross3",
+      "code_sha256": "0a5cca048815d451f60fad8066cd7ce02646180304182fb2b95e13a5462cfa50"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "dot",
+      "code_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "inertiaTensor",
+      "code_sha256": "3e0f0042552ff9e59c7587b76933e6b414e57ff139e7656994d0d9d93d9d2ddc"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "outer",
+      "code_sha256": "ceb543d2b989d03587540642d9939fa02a7ac890811088bd9a863e1b3ebea77e"
+    }
+  ],
+  "paste_plus_pdf_bytes": 89129,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7134,
+      "sha256": "a9064e6eb6c6ddd3455135fd31fff096c0db89d4cd0bcc29bccddec7723ee1d0"
+    },
+    "BATCH24c_PAGES.pdf": {
+      "bytes": 81995,
+      "sha256": "d13032113225659bdd2bca5ca3dc9b4cc9301c8059843a9e75147731fa32b03d"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 94912
+}

@@ -1,0 +1,86 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH25d_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 195 | 173 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-4.4.1-PrincipalAxisField",
+  "kind": "definition",
+  "label": null,
+  "section": "4.4.1",
+  "printed_page": "173",
+  "pdf_page": "195",
+  "statement_latex": "If $T$ is a diagonal matrix, $T=\\operatorname{diag}(I_1,I_2,I_3)$, then we split the Euler equations and approximate the solution by successive rotations around the three axes of inertia.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch04.principalAxisField",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]将第二和第三子场的分量分别明确为π₂/π₃；原印刷两处缺下标另列待审，不覆盖原式。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "date": "2026-10-11",
+      "reason": "原页高倍率复核纠正预备转录：列动量Rπ、方向ΘRᵀ与正式库一致；第二及第三拆分均缺下标。原记录归档，正角与π×ω子流符号疑点仍待审。",
+      "before": "blueprint/ch04/validation/transcription-repair-20261011/BEFORE.json",
+      "visual_sha256": {
+        "blueprint/ch04/source_pages/p195-split-detail.png": "2187e0fc326143559f3ee751a3d628e8168e8376ed833d5b4d440bb1cf5039b0",
+        "blueprint/ch04/source_pages/p196-spin-detail.png": "103c0a22caee08e216a7a749055fb24cd007afd063c43f0139555845b335c501"
+      }
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+def principalAxisField (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V :=
+  MolecularDynamics.Chapter04Review.cross3 π (Pi.single i (π i/I i))
+```
+
+原上下文：namespace MD.Ch04；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter04Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.Elementwise；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.cross3 (MolecularDynamics/Chapter04/ReviewDefinitions.lean:161)
+```lean
+def cross3 (u v : V) : V := ![u 1*v 2-u 2*v 1,u 2*v 0-u 0*v 2,u 0*v 1-u 1*v 0]
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch04.cross3 (Blueprint/Ch04.lean:1365)
+```lean
+def cross3 (u v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := ![u 1*v 2-u 2*v 1,u 2*v 0-u 0*v 2,u 0*v 1-u 1*v 0]
+```
+
+### MD.Ch04.principalAxisField (Blueprint/Ch04.lean:1734)
+```lean
+def principalAxisField (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V :=
+  MolecularDynamics.Chapter04Review.cross3 π (Pi.single i (π i/I i))
+```

@@ -11,6 +11,10 @@ def qualify(code):
     split=re.search(r'\b(?:def|theorem)\s+(\w+)',code)
     start=split.end()
     return code[:start]+re.sub(r'(?<![\w.])(?:'+ '|'.join(sorted(names,key=len,reverse=True))+r')\b',lambda m:NS+m.group(),code[start:])
+def qualify_proof(proof):
+    # Standalone routes were checked with Chapter04Review definitions in scope.
+    # In MD.Ch04, copied declarations can shadow them; retain explicit binding.
+    return re.sub(r'(?<![\w.])(?:'+ '|'.join(sorted(names,key=len,reverse=True))+r')\b',lambda m:NS+m.group(),proof)
 def copied(relative,name,newname=None,prove=True):return qualify(_c.copied(relative,name,newname,prove))
 def proposition(name,newname=None,proof='sorry'):return qualify(_c.proposition(name,newname,proof))
 def add(*args,**kwargs):
@@ -43,3 +47,8 @@ import ch04_section44b
 import ch04_section44cross
 import ch04_section44c
 import ch04_section44extras
+import ch04_section441
+import ch04_section441b
+import ch04_section441extra
+from ch04_transcription_repair import apply as apply_transcription_repair
+apply_transcription_repair(RECORDS)

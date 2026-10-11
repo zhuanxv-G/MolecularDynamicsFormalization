@@ -1,0 +1,85 @@
+{
+  "batch": "BATCH24",
+  "subtask": "BATCH24d",
+  "source_ids": [
+    "MD-4.4.1-EulerRigidField"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 194,
+      "printed_page": 172
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "74216b5acf492708466fe193af472b48a861799b508860fd0e1c4a2f3bc39073",
+  "lean_sha256": "779b1be8d8916a5f326855ee68e6687b3e936f5c5193e628a4c826a9c583e2b7",
+  "signature_sha256": "7d9b57b97fd40835d66217810c9a4cf0c89f33fa88a8fedb0a44a899a36f7b38",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "cross3",
+      "code_sha256": "482e275d45f901379b4e5bc7b76d0c76d5a6d4e033a454340d968594bd131931"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "cross3",
+      "code_sha256": "0a5cca048815d451f60fad8066cd7ce02646180304182fb2b95e13a5462cfa50"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "eulerRigidField",
+      "code_sha256": "7d9b57b97fd40835d66217810c9a4cf0c89f33fa88a8fedb0a44a899a36f7b38"
+    }
+  ],
+  "paste_plus_pdf_bytes": 81922,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4188,
+      "sha256": "a4385d3eebec65bff757d8617cb8c834cae37eb50dc6fea35c86a3d562aad02b"
+    },
+    "BATCH24d_PAGES.pdf": {
+      "bytes": 77734,
+      "sha256": "c722f29976464047fc5cbeb61c3de523d3ee1514c34d72b08c4acd1b5087a715"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 84998
+}

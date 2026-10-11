@@ -1,0 +1,53 @@
+blueprint\ch04\validation\short_search\algebra-batch-443e99ed108887cb028d.lean:33:4: error: Type mismatch: After simplification, term
+  HasFDerivAt.const_smul hh 2⁻¹
+ has type
+  @HasFDerivAt ℝ DenselyNormedField.toNontriviallyNormedField V Pi.normedAddCommGroup.toAddCommGroup
+    Pi.normedSpace.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    (2⁻¹ • fun x => ∑ i, x i * (B *ᵥ x) i) (2⁻¹ • ∑ i, (π i • row i + (B *ᵥ π) i • ContinuousLinearMap.proj i)) π
+but is expected to have type
+  @HasFDerivAt ℝ DenselyNormedField.toNontriviallyNormedField V Pi.addCommGroup (Pi.Function.module (Fin 3) ℝ ℝ)
+    Pi.topologicalSpace ℝ Real.instAddCommGroup Semiring.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    (fun x => 2⁻¹ * ∑ i, x i * (B *ᵥ x) i) (2⁻¹ • ∑ i, (π i • row i + (B *ᵥ π) i • ContinuousLinearMap.proj i)) π
+blueprint\ch04\validation\short_search\algebra-batch-443e99ed108887cb028d.lean:38:32: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `_root_.sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `_root_.sum_apply x`).
+blueprint\ch04\validation\short_search\algebra-batch-443e99ed108887cb028d.lean:38:62: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch04\validation\short_search\algebra-batch-443e99ed108887cb028d.lean:38:32: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `_root_.sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `_root_.sum_apply x`).
+blueprint\ch04\validation\short_search\algebra-batch-443e99ed108887cb028d.lean:38:62: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch04\validation\short_search\algebra-batch-443e99ed108887cb028d.lean:38:32: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `_root_.sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `_root_.sum_apply x`).
+blueprint\ch04\validation\short_search\algebra-batch-443e99ed108887cb028d.lean:38:62: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch04\validation\short_search\algebra-batch-443e99ed108887cb028d.lean:38:32: warning: This simp argument is unused:
+  ContinuousLinearMap.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [L, row, ContinuousLinearMap.smul_apply, ContinuousLinearMap.proj_apply, Fin.sum_univ_three,
+    Pi.single_apply, Matrix.mulVec, dotProduct, hs 1 0, hs 2 0, hs 2 1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-443e99ed108887cb028d.lean:38:62: warning: This simp argument is unused:
+  ContinuousLinearMap.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [L, row, ContinuousLinearMap.sum_apply, ContinuousLinearMap.proj_apply, Fin.sum_univ_three,
+    Pi.single_apply, Matrix.mulVec, dotProduct, hs 1 0, hs 2 0, hs 2 1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-443e99ed108887cb028d.lean:39:56: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [L, row, ContinuousLinearMap.sum_apply, ContinuousLinearMap.smul_apply, ContinuousLinearMap.proj_apply,
+    Fin.sum_univ_three, Matrix.mulVec, dotProduct, hs 1 0, hs 2 0, hs 2 1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

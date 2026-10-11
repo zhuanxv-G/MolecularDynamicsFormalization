@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-443e99ed108887cb028d.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-443e99ed108887cb028d.log",
+    "source_sha256": "de41ee21cb1168e3cad539d0fc1707e595f402bb61742858517c9875ce2094b8",
+    "log_sha256": "8173d4b8025a4fb38c33d5624539eff4a01e4fe34994a52ab4321d7a971e06a4"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro T π hT\n  let B := T⁻¹\n  have hsym : Bᵀ=B := by\n    simpa [B,Matrix.conjTranspose_eq_transpose_of_trivial] using hT.isHermitian.inv.eq\n  have hs : ∀ i j : Fin 3, B i j=B j i := by\n    intro i j\n    simpa using congrArg (fun A : Mat3 => A j i) hsym\n  let row : Fin 3 → (V →L[ℝ] ℝ) := fun i => ∑ j, B i j • (ContinuousLinearMap.proj j : V →L[ℝ] ℝ)\n  let L : V →L[ℝ] ℝ := (2 : ℝ)⁻¹ • ∑ i, (π i • row i+(B *ᵥ π) i • (ContinuousLinearMap.proj i : V →L[ℝ] ℝ))\n  have hb : ∀ i, HasFDerivAt (fun x : V => (B *ᵥ x) i) (row i) π := by\n    intro i\n    change HasFDerivAt (fun x : V => ∑ j,B i j*x j) (∑ j,B i j • (ContinuousLinearMap.proj j : V →L[ℝ] ℝ)) π\n    apply HasFDerivAt.fun_sum\n    intro j hj\n    exact (hasFDerivAt_apply j π).const_mul (B i j)\n  have hh : HasFDerivAt (fun x : V => ∑ i,x i*(B *ᵥ x) i)\n      (∑ i, (π i • row i+(B *ᵥ π) i • (ContinuousLinearMap.proj i : V →L[ℝ] ℝ))) π := by\n    apply HasFDerivAt.fun_sum\n    intro i hii\n    exact (hasFDerivAt_apply i π).mul (hb i)\n  have hd : HasFDerivAt (fun x : V => dot x (B *ᵥ x)/2) L π := by\n    convert hh.const_mul ((2 : ℝ)⁻¹) using 1\n    funext x\n    simp only [dot,div_eq_mul_inv]\n    ring\n  have hg : MolecularDynamics.Chapter04Review.grad (fun x : V => dot x (B *ᵥ x)/2) π=B *ᵥ π := by\n    ext i\n    change (fderiv ℝ (fun x : V => dot x (B *ᵥ x)/2) π) (Pi.single i 1)=(B *ᵥ π) i\n    rw [hd.fderiv]\n    fin_cases i <;> simp [L,row,ContinuousLinearMap.sum_apply,ContinuousLinearMap.smul_apply,\n      ContinuousLinearMap.proj_apply,Fin.sum_univ_three,Pi.single_apply,Matrix.mulVec,dotProduct,hs 1 0,hs 2 0,hs 2 1] <;> ring\n  change cross3 π (B *ᵥ π)=MolecularDynamics.Chapter04Review.rigidPoissonMatrix π *ᵥ MolecularDynamics.Chapter04Review.grad (fun x : V => dot x (B *ᵥ x)/2) π\n  rw [hg]\n  ext i\n  fin_cases i <;> simp [MolecularDynamics.Chapter04Review.rigidPoissonMatrix,MolecularDynamics.Chapter04Review.skewMatrix,cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring",
+    "source": "blueprint/ch04/validation/short_search/algebra-batch-253aa22fb57fcc6fd091.lean",
+    "log": "blueprint/ch04/validation/short_search/algebra-batch-253aa22fb57fcc6fd091.log",
+    "source_sha256": "16cba34810e8037c2c15a6fb55b81f3950431309f2edb80a94f8a5c32d0596b5",
+    "log_sha256": "473da964f3bb73cee19e074d85235480e43c4b14c16774df788221c1d9d87cee"
+  }
+]

@@ -13,6 +13,32 @@ routes=json.loads(state.read_text(encoding='utf-8')) if state.exists() else []
 if any(x['exit_code']==0 for x in routes) or len(routes)>=3:print(key,'saved evidence reused');sys.exit()
 route=len(routes)+1
 proofs={
+'ExactPlanarRotation':'''intro I π i hI
+  dsimp only
+  refine ⟨?_,?_,?_⟩
+  · fin_cases i <;> ext j <;> fin_cases j <;>
+      simp [axisRotation,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+  · intro t
+    fin_cases i <;> simp [axisRotation,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+  · intro t
+    have ha : HasDerivAt (fun s : ℝ => -s*π i/I i) (-π i/I i) t := by
+      convert ((hasDerivAt_id t).neg.mul_const (π i)).div_const (I i) using 1 <;> simp
+    have hc := ha.cos
+    have hs := ha.sin
+    apply hasDerivAt_pi.mpr
+    intro j
+    fin_cases i <;> fin_cases j <;>
+      simp [axisRotation,cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three,Pi.single_apply]
+    all_goals first
+      | convert hasDerivAt_const t (π 0) using 1 <;> ring
+      | convert hasDerivAt_const t (π 1) using 1 <;> ring
+      | convert hasDerivAt_const t (π 2) using 1 <;> ring
+      | convert (hc.mul_const (π 0)).sub (hs.mul_const (π 1)) using 1 <;> ring
+      | convert (hs.mul_const (π 0)).add (hc.mul_const (π 1)) using 1 <;> ring
+      | convert (hc.mul_const (π 1)).sub (hs.mul_const (π 2)) using 1 <;> ring
+      | convert (hs.mul_const (π 1)).add (hc.mul_const (π 2)) using 1 <;> ring
+      | convert (hc.mul_const (π 0)).add (hs.mul_const (π 2)) using 1 <;> ring
+      | convert (hc.mul_const (π 2)).sub (hs.mul_const (π 0)) using 1 <;> ring''',
 'RigidHamiltonianField':'''intro T π hT
   let B := T⁻¹
   have hsym : Bᵀ=B := by

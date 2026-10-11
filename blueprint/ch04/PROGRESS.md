@@ -2,7 +2,7 @@
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前141条；旧清单映射88/100；本地PASS 125；网站返回0。
+当前160条；旧清单映射96/100；本地PASS 141；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -147,6 +147,25 @@
 | MD-4.4-DipolarPotentialSum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-4.4-RotationTrajectory | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-4.4-RotationDerivativePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；待网站/导师裁定最后δ点号；不证明疑误版本。 |
+| MD-4.4-RigidMatrixRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.1-AngularMomentum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.1-BodyMomentum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.1-AngularInertia | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4.1-EulerRigidField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.1-FreeRigidSolution | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.1-RigidInvariants | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4.1-RigidPoissonMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.1-PoissonDegeneracy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4.1-AxisRotation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.1-SecondAxisPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-4.4.1-ThirdAxisPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-4.4.1-PrincipalAxisField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-PrintedSpinAxis | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-PrintedSpinStep | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.1-AxisFlowFormal | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；本地NEEDS_HUMAN；待网站/导师裁定正负号。 |
+| MD-4.4.1-SpinPoissonFormal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺动量依赖轴旋转Jacobian与Poisson结构短桥；不搭完整Poisson理论。 |
+| MD-4.4.1-RigidPoissonSkew | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4.1-RigidHamiltonianField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 
 ## 旧100条完整映射
 
@@ -239,14 +258,14 @@
 | CH04-085 | MD-4.4-RotationalEnergy |
 | CH04-086 | MD-4.4-InertiaTracePrinted |
 | CH04-087 | MD-4.4-RigidHamiltonian |
-| CH04-088 | PENDING：所属节尚未处理 |
-| CH04-089 | PENDING：所属节尚未处理 |
-| CH04-090 | PENDING：所属节尚未处理 |
-| CH04-091 | PENDING：所属节尚未处理 |
-| CH04-092 | PENDING：所属节尚未处理 |
-| CH04-093 | PENDING：所属节尚未处理 |
-| CH04-094 | PENDING：所属节尚未处理 |
-| CH04-095 | PENDING：所属节尚未处理 |
+| CH04-088 | MD-4.4-RigidMatrixRelation |
+| CH04-089 | MD-4.4.1-BodyMomentum |
+| CH04-090 | MD-4.4.1-AngularInertia |
+| CH04-091 | MD-4.4.1-FreeRigidSolution |
+| CH04-092 | MD-4.4.1-RigidInvariants |
+| CH04-093 | MD-4.4.1-PoissonDegeneracy |
+| CH04-094 | MD-4.4.2-PrintedSpinStep |
+| CH04-095 | MD-4.4.1-SpinPoissonFormal |
 | CH04-096 | PENDING：所属节尚未处理 |
 | CH04-097 | PENDING：所属节尚未处理 |
 | CH04-098 | PENDING：所属节尚未处理 |
@@ -291,6 +310,11 @@
 - MD-4.4-InertiaTracePrinted：3维trace(T)=2Σm|δ|²，末式系数少1/2，一般不成立。 本地FAIL；待网站/导师裁定。(4.40)末式应trace(T)/2 I−T；原式逐字保留。
 - MD-4.4-DipolarRotationalPrinted：此处trace和缺1/2，与p168及此页Σπ²/(2I)不一致；且引用错误(4.40)。 p170 Ex4.1 trace动能印刷少1/2；R与T关系亦引用疑误式。
 - MD-4.4-RotationDerivativePrinted：原页最后δ_i带点，与先前δ_i=Θδ_i(0)代换不符；通常应为无点δ_i，正确运动学另条保留。 待网站/导师裁定最后δ点号；不证明疑误版本。p168展示最后应以配置δ_i而非速度dotδ_i代换；已渲染视觉复核。
+- MD-4.4.1-SecondAxisPrinted：第二子系统向量第二分量印π而不是π₂，标量/向量类型含糊；a仅代表未确定印刷标量，不能假定a=π₂。 p173第二子系统分量少下标2，原文尚需导师裁定。
+- MD-4.4.1-ThirdAxisPrinted：高倍率原页确认第三子系统末分量也印π而不是π₃；未确定印刷标量以a表示，不假定它等于π₃。 p173第三子系统分量少下标3，单列保留原式。
+- MD-4.4.2-PrintedSpinAxis：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 p174正角列动量Rπ的导数符号与(4.41)π×ω相反；保留原算法，不证明其精确子流。
+- MD-4.4.1-AxisFlowFormal：正式库spinAxis正角动量Rπ与π×ω子场符号相反；结论不先证明错误版。 本地NEEDS_HUMAN；待网站/导师裁定正负号。正角主动Rπ导数=ω×π，不是π×ω；精确流需负角列动量。
+- MD-4.4.1-SpinPoissonFormal：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺动量依赖轴旋转Jacobian与Poisson结构短桥；不搭完整Poisson理论。
 
 ## 定性段落排除
 

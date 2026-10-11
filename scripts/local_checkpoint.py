@@ -45,6 +45,10 @@ if ch==4 and (ROOT/'scripts/partition_ch04_sections.py').exists():
     paths.append('scripts/partition_ch04_sections.py')
 if ch==4 and (ROOT/'scripts/ch04_reconcile_short_batch.py').exists():
     paths.append('scripts/ch04_reconcile_short_batch.py')
+if ch==4 and (ROOT/'scripts/ch04_transcription_repair.py').exists():
+    paths.append('scripts/ch04_transcription_repair.py')
+if ch==4 and (ROOT/'scripts/ch04_table_text.py').exists():
+    paths.append('scripts/ch04_table_text.py')
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_section*.py') if x.stem in sys.modules]
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_short_search*.py')]
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_bracket_search*.py')]

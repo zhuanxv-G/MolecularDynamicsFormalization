@@ -53,7 +53,11 @@ def apply_saved_routes(ch,records,keys):
             assert hashlib.sha256((ROOT/r['source']).read_bytes()).hexdigest()==r['source_sha256']
             assert hashlib.sha256((ROOT/r['log']).read_bytes()).hexdigest()==r['log_sha256']
             if r['exit_code']==0:
-                target['code']=target['code'].replace('by\n  sorry','by\n  '+r['proof'])
+                proof=r['proof']
+                if ch==4:
+                    from ch04_data import qualify_proof
+                    proof=qualify_proof(proof)
+                target['code']=target['code'].replace('by\n  sorry','by\n  '+proof)
                 target['missing']=None
                 break
         else:

@@ -1348,10 +1348,10 @@ theorem rotationSkew :
       apply HasDerivAt.fun_sum
       intro k hk
       exact ((hasDerivAt_pi.mp (hasDerivAt_pi.mp hd i) k).mul (hasDerivAt_pi.mp (hasDerivAt_pi.mp hd j) k))
-    have he : (fun s => ∑ k, Θ s i k*Θ s j k) =ᶠ[𝓝 t] (fun _ => (1 : Mat3) i j) := by
+    have he : (fun s => ∑ k, Θ s i k*Θ s j k) =ᶠ[𝓝 t] (fun _ => (1 : MolecularDynamics.Chapter04Review.Mat3) i j) := by
       filter_upwards [ho] with s h
-      simpa [Matrix.mul_apply,Matrix.transpose_apply] using congrArg (fun B : Mat3 => B i j) h
-    exact hf.unique ((hasDerivAt_const t ((1 : Mat3) i j)).congr_of_eventuallyEq he)
+      simpa [Matrix.mul_apply,Matrix.transpose_apply] using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B i j) h
+    exact hf.unique ((hasDerivAt_const t ((1 : MolecularDynamics.Chapter04Review.Mat3) i j)).congr_of_eventuallyEq he)
   ext i j
   have h := hs i j
   simp only [Fin.sum_univ_three] at h
@@ -1517,44 +1517,44 @@ theorem rotationBodyEnergy : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecular
     MolecularDynamics.Chapter04Review.rotationalEnergy (MolecularDynamics.Chapter04Review.inertiaTensor m δ) (Θᵀ *ᵥ «ω») := by
   intro N m δ Θ «ω» ho hdet
   let x := Θᵀ *ᵥ «ω»
-  have ht : ∀ (A : Mat3) (v w : V), dot (A *ᵥ v) w=dot v (Aᵀ *ᵥ w) := by
+  have ht : ∀ (A : MolecularDynamics.Chapter04Review.Mat3) (v w : MolecularDynamics.Chapter04Review.V), MolecularDynamics.Chapter04Review.dot (A *ᵥ v) w=MolecularDynamics.Chapter04Review.dot v (Aᵀ *ᵥ w) := by
     intro A v w
-    simp [dot,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+    simp [MolecularDynamics.Chapter04Review.dot,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
     ring
-  have hi : ∀ v : V, Θᵀ *ᵥ (Θ *ᵥ v)=v := by
+  have hi : ∀ v : MolecularDynamics.Chapter04Review.V, Θᵀ *ᵥ (Θ *ᵥ v)=v := by
     intro v
     rw [Matrix.mulVec_mulVec,ho,Matrix.one_mulVec]
   have hx : Θ *ᵥ x=«ω» := by
     dsimp [x]
     rw [Matrix.mulVec_mulVec,mul_eq_one_comm.mp ho,Matrix.one_mulVec]
-  have hn : dot «ω» «ω»=dot x x := by
+  have hn : MolecularDynamics.Chapter04Review.dot «ω» «ω»=MolecularDynamics.Chapter04Review.dot x x := by
     conv_lhs => rw [← hx]
     rw [ht,hi]
-  have hc : ∀ v w : V, dot (cross3 w v) (cross3 w v)=dot v v*dot w w-(dot v w)^2 := by
+  have hc : ∀ v w : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.cross3 w v) (MolecularDynamics.Chapter04Review.cross3 w v)=MolecularDynamics.Chapter04Review.dot v v*MolecularDynamics.Chapter04Review.dot w w-(MolecularDynamics.Chapter04Review.dot v w)^2 := by
     intro v w
-    simp [cross3,dot,Fin.sum_univ_three]
+    simp [MolecularDynamics.Chapter04Review.cross3,MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three]
     ring
-  have he : ∀ v y : V, dot y ((dot v v • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ y)=dot v v*dot y y-(dot v y)^2 := by
+  have he : ∀ v y : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.dot y ((MolecularDynamics.Chapter04Review.dot v v • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ y)=MolecularDynamics.Chapter04Review.dot v v*MolecularDynamics.Chapter04Review.dot y y-(MolecularDynamics.Chapter04Review.dot v y)^2 := by
     intro v y
-    simp [dot,Matrix.sub_mulVec,Matrix.smul_mulVec,Matrix.one_mulVec,MolecularDynamics.Chapter04Review.outer,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+    simp [MolecularDynamics.Chapter04Review.dot,Matrix.sub_mulVec,Matrix.smul_mulVec,Matrix.one_mulVec,MolecularDynamics.Chapter04Review.outer,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
     ring
-  have hf : ∀ v : V, dot (cross3 «ω» (Θ *ᵥ v)) (cross3 «ω» (Θ *ᵥ v))=
-      dot x ((dot v v • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ x) := by
+  have hf : ∀ v : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.cross3 «ω» (Θ *ᵥ v)) (MolecularDynamics.Chapter04Review.cross3 «ω» (Θ *ᵥ v))=
+      MolecularDynamics.Chapter04Review.dot x ((MolecularDynamics.Chapter04Review.dot v v • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ x) := by
     intro v
     rw [hc,he]
-    have hv : dot (Θ *ᵥ v) (Θ *ᵥ v)=dot v v := by rw [ht,hi]
-    have hw : dot (Θ *ᵥ v) «ω»=dot v x := ht Θ v «ω»
+    have hv : MolecularDynamics.Chapter04Review.dot (Θ *ᵥ v) (Θ *ᵥ v)=MolecularDynamics.Chapter04Review.dot v v := by rw [ht,hi]
+    have hw : MolecularDynamics.Chapter04Review.dot (Θ *ᵥ v) «ω»=MolecularDynamics.Chapter04Review.dot v x := ht Θ v «ω»
     rw [hv,hn,hw]
-  have hsum : ∀ (K : ℕ) (a : Fin K → V), dot x (∑ i,a i)=∑ i,dot x (a i) := by
+  have hsum : ∀ (K : ℕ) (a : Fin K → MolecularDynamics.Chapter04Review.V), MolecularDynamics.Chapter04Review.dot x (∑ i,a i)=∑ i,MolecularDynamics.Chapter04Review.dot x (a i) := by
     intro K a
-    simp [dot,Fin.sum_univ_three,Finset.sum_apply,Finset.mul_sum,Finset.sum_add_distrib]
-  have hsmul : ∀ (c : ℝ) (v : V), dot x (c • v)=c*dot x v := by
+    simp [MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three,Finset.sum_apply,Finset.mul_sum,Finset.sum_add_distrib]
+  have hsmul : ∀ (c : ℝ) (v : MolecularDynamics.Chapter04Review.V), MolecularDynamics.Chapter04Review.dot x (c • v)=c*MolecularDynamics.Chapter04Review.dot x v := by
     intro c v
-    simp [dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul]
+    simp [MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul]
     ring
   rw [MolecularDynamics.Chapter04Review.rotationalEnergy,MolecularDynamics.Chapter04Review.inertiaTensor,Matrix.sum_mulVec]
-  change (∑ i,m i*dot (cross3 «ω» (Θ *ᵥ δ i)) (cross3 «ω» (Θ *ᵥ δ i)))/2=
-      dot x (∑ i,(m i • (dot (δ i) (δ i) • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer (δ i))) *ᵥ x)/2
+  change (∑ i,m i*MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.cross3 «ω» (Θ *ᵥ δ i)) (MolecularDynamics.Chapter04Review.cross3 «ω» (Θ *ᵥ δ i)))/2=
+      MolecularDynamics.Chapter04Review.dot x (∑ i,(m i • (MolecularDynamics.Chapter04Review.dot (δ i) (δ i) • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer (δ i))) *ᵥ x)/2
   simp_rw [Matrix.smul_mulVec]
   rw [hsum]
   simp_rw [hsmul,hf]
@@ -1586,5 +1586,226 @@ theorem rotationDerivativePrinted : ∀ (Θ : ℝ → MolecularDynamics.Chapter0
   HasDerivAt Θ d t → Θ t*(Θ t)ᵀ=1 →
     d *ᵥ δ=(d*(Θ t)ᵀ) *ᵥ (d *ᵥ δ) := by
   sorry
+
+/-- source_id: MD-4.4-RigidMatrixRelation · definition · §4.4 · 印刷p.171 / PDFp.193 -/
+def rigidMatrixRelation (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter04Review.V) (Θ mom Λ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (I : Set ℝ) : Prop :=
+  ∀ t ∈ I, HasDerivWithinAt q (M⁻¹ • p t) I t ∧ HasDerivWithinAt Θ (mom t*R⁻¹) I t ∧
+    HasDerivWithinAt p (-MolecularDynamics.Chapter04Review.grad (fun x => U x (Θ t)) (q t)) I t ∧
+    HasDerivWithinAt mom (-MolecularDynamics.Chapter04Review.matrixGrad (U (q t)) (Θ t)-Θ t*Λ t) I t ∧ (Θ t)ᵀ*Θ t=1
+
+/-- source_id: MD-4.4.1-AngularMomentum · definition · §4.4.1 · 印刷p.171 / PDFp.193 -/
+def angularMomentum {N : ℕ} (m : Fin N → ℝ) (δ v : Fin N → MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V :=
+  ∑ i, m i • MolecularDynamics.Chapter04Review.cross3 (δ i) (v i)
+
+/-- source_id: MD-4.4.1-BodyMomentum · definition · §4.4.1 · 印刷p.171 / PDFp.193 -/
+def bodyMomentum (Θ : MolecularDynamics.Chapter04Review.Mat3) (l : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := Θᵀ *ᵥ l
+
+/-- source_id: MD-4.4.1-AngularInertia · unnumbered_claim · §4.4.1 · 印刷p.171 / PDFp.193
+[EXTRA] 真实SO(3)矩阵和cross3，嵌套为δ×(ω×δ)；原无括号三重积含糊，明确上下文对象。 -/
+theorem angularInertia :
+  ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) (Θ : MolecularDynamics.Chapter04Review.Mat3) («ω» : MolecularDynamics.Chapter04Review.V),
+  Θᵀ*Θ=1 → Θ.det=1 → MolecularDynamics.Chapter04Review.bodyMomentum Θ
+    (MolecularDynamics.Chapter04Review.angularMomentum m (fun i => Θ *ᵥ δ i) (fun i => MolecularDynamics.Chapter04Review.cross3 «ω» (Θ *ᵥ δ i))) =
+      MolecularDynamics.Chapter04Review.inertiaTensor m δ *ᵥ (Θᵀ *ᵥ «ω») := by
+  intro N m δ Θ «ω» ho hdet
+  have ht : ∀ (A : MolecularDynamics.Chapter04Review.Mat3) (v w : MolecularDynamics.Chapter04Review.V), MolecularDynamics.Chapter04Review.dot (A *ᵥ v) w=MolecularDynamics.Chapter04Review.dot v (Aᵀ *ᵥ w) := by
+    intro A v w
+    simp [MolecularDynamics.Chapter04Review.dot,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+    ring
+  have hi : ∀ v : MolecularDynamics.Chapter04Review.V, Θᵀ *ᵥ (Θ *ᵥ v)=v := by
+    intro v
+    rw [Matrix.mulVec_mulVec,ho,Matrix.one_mulVec]
+  have hn : ∀ v : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.dot (Θ *ᵥ v) (Θ *ᵥ v)=MolecularDynamics.Chapter04Review.dot v v := by
+    intro v
+    rw [ht,hi]
+  have hc : ∀ u w : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.cross3 u (MolecularDynamics.Chapter04Review.cross3 w u)=MolecularDynamics.Chapter04Review.dot u u • w-MolecularDynamics.Chapter04Review.dot u w • u := by
+    intro u w
+    ext i
+    fin_cases i <;> simp [MolecularDynamics.Chapter04Review.cross3,MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul] <;> ring
+  have he : ∀ v y : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.outer v *ᵥ y=MolecularDynamics.Chapter04Review.dot v y • v := by
+    intro v y
+    ext i
+    simp [MolecularDynamics.Chapter04Review.outer,Matrix.mulVec,dotProduct,MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul]
+    ring
+  have hterm : ∀ v : MolecularDynamics.Chapter04Review.V, Θᵀ *ᵥ MolecularDynamics.Chapter04Review.cross3 (Θ *ᵥ v) (MolecularDynamics.Chapter04Review.cross3 «ω» (Θ *ᵥ v))=
+      (MolecularDynamics.Chapter04Review.dot v v • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ (Θᵀ *ᵥ «ω») := by
+    intro v
+    rw [hc,Matrix.mulVec_sub,Matrix.mulVec_smul,Matrix.mulVec_smul,hn,ht,hi,
+      Matrix.sub_mulVec,Matrix.smul_mulVec,Matrix.one_mulVec,he]
+  simp only [MolecularDynamics.Chapter04Review.bodyMomentum,MolecularDynamics.Chapter04Review.angularMomentum,
+    MolecularDynamics.Chapter04Review.inertiaTensor,Matrix.mulVec_sum,Matrix.mulVec_smul,Matrix.sum_mulVec,Matrix.smul_mulVec]
+  apply Finset.sum_congr rfl
+  intro i hii
+  rw [hterm]
+
+/-- source_id: MD-4.4.1-EulerRigidField · (4.41) · §4.4.1 · 印刷p.172 / PDFp.194 -/
+def eulerRigidField (T : MolecularDynamics.Chapter04Review.Mat3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := MolecularDynamics.Chapter04Review.cross3 π (T⁻¹ *ᵥ π)
+
+/-- source_id: MD-4.4.1-FreeRigidSolution · definition · §4.4.1 · 印刷p.172 / PDFp.194 -/
+def freeRigidSolution (T : MolecularDynamics.Chapter04Review.Mat3) (π : ℝ → MolecularDynamics.Chapter04Review.V) (I : Set ℝ) : Prop :=
+  ∀ t ∈ I, HasDerivWithinAt π (MolecularDynamics.Chapter04Review.eulerRigidField T (π t)) I t
+
+/-- source_id: MD-4.4.1-RigidInvariants · unnumbered_claim · §4.4.1 · 印刷p.172 / PDFp.194
+[EXTRA] 对称正定T、实际连续闭区间轨道，证明原能量H̃=πᵀT⁻¹π/2和角动量平方同时守恒；不假设任一守恒。 -/
+theorem rigidInvariants :
+  ∀ (T : MolecularDynamics.Chapter04Review.Mat3) (π : ℝ → MolecularDynamics.Chapter04Review.V) a b,
+  T.PosDef → a ≤ b → ContinuousOn π (Icc a b) → MolecularDynamics.Chapter04Review.freeRigidSolution T π (Icc a b) →
+    ∀ t ∈ Icc a b, MolecularDynamics.Chapter04Review.dot (π t) (T⁻¹ *ᵥ π t)=MolecularDynamics.Chapter04Review.dot (π a) (T⁻¹ *ᵥ π a) ∧
+      MolecularDynamics.Chapter04Review.dot (π t) (π t)=MolecularDynamics.Chapter04Review.dot (π a) (π a) := by
+  intro T π a b hT hab hπ hsol
+  have hsym : (T⁻¹)ᵀ=T⁻¹ := by
+    simpa [Matrix.conjTranspose_eq_transpose_of_trivial] using hT.isHermitian.inv.eq
+  have hcomm : ∀ u v : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.dot u v=MolecularDynamics.Chapter04Review.dot v u := by
+    intro u v
+    simp [MolecularDynamics.Chapter04Review.dot,mul_comm]
+  have htrans : ∀ (B : MolecularDynamics.Chapter04Review.Mat3) (u v : MolecularDynamics.Chapter04Review.V), MolecularDynamics.Chapter04Review.dot u (B *ᵥ v)=MolecularDynamics.Chapter04Review.dot (Bᵀ *ᵥ u) v := by
+    intro B u v
+    simp [MolecularDynamics.Chapter04Review.dot,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+    ring
+  have hc : ∀ u v : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.cross3 u v) v=0 ∧ MolecularDynamics.Chapter04Review.dot u (MolecularDynamics.Chapter04Review.cross3 u v)=0 := by
+    intro u v
+    constructor <;> simp [MolecularDynamics.Chapter04Review.cross3,MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three] <;> ring
+  have hd : ∀ (B : MolecularDynamics.Chapter04Review.Mat3) t, t ∈ Icc a b →
+      HasDerivWithinAt (fun s => MolecularDynamics.Chapter04Review.dot (π s) (B *ᵥ π s))
+      (MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.eulerRigidField T (π t)) (B *ᵥ π t)+MolecularDynamics.Chapter04Review.dot (π t) (B *ᵥ MolecularDynamics.Chapter04Review.eulerRigidField T (π t))) (Icc a b) t := by
+    intro B t ht
+    have hp := hsol t ht
+    have hx : ∀ i, HasDerivWithinAt (fun s => (B *ᵥ π s) i) ((B *ᵥ MolecularDynamics.Chapter04Review.eulerRigidField T (π t)) i) (Icc a b) t := by
+      intro i
+      change HasDerivWithinAt (fun s => ∑ j, B i j*π s j) (∑ j,B i j*MolecularDynamics.Chapter04Review.eulerRigidField T (π t) j) (Icc a b) t
+      apply HasDerivWithinAt.fun_sum
+      intro j hj
+      exact (hasDerivWithinAt_pi.mp hp j).const_mul (B i j)
+    have h := HasDerivWithinAt.fun_sum (u := Finset.univ) (fun i _ => (hasDerivWithinAt_pi.mp hp i).mul (hx i))
+    simpa [MolecularDynamics.Chapter04Review.dot,Finset.sum_add_distrib] using h
+  have he : ∀ t ∈ Icc a b, HasDerivWithinAt (fun s => MolecularDynamics.Chapter04Review.dot (π s) (T⁻¹ *ᵥ π s)) 0 (Icc a b) t := by
+    intro t ht
+    have hz : MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.eulerRigidField T (π t)) (T⁻¹ *ᵥ π t)+MolecularDynamics.Chapter04Review.dot (π t) (T⁻¹ *ᵥ MolecularDynamics.Chapter04Review.eulerRigidField T (π t))=0 := by
+      rw [htrans T⁻¹ (π t) (MolecularDynamics.Chapter04Review.eulerRigidField T (π t)),hsym,hcomm (T⁻¹ *ᵥ π t) (MolecularDynamics.Chapter04Review.eulerRigidField T (π t))]
+      simp [MolecularDynamics.Chapter04Review.eulerRigidField,(hc (π t) (T⁻¹ *ᵥ π t)).1]
+    simpa [hz] using hd T⁻¹ t ht
+  have hn : ∀ t ∈ Icc a b, HasDerivWithinAt (fun s => MolecularDynamics.Chapter04Review.dot (π s) (π s)) 0 (Icc a b) t := by
+    intro t ht
+    have hz : MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.eulerRigidField T (π t)) (π t)+MolecularDynamics.Chapter04Review.dot (π t) (MolecularDynamics.Chapter04Review.eulerRigidField T (π t))=0 := by
+      rw [hcomm (MolecularDynamics.Chapter04Review.eulerRigidField T (π t)) (π t)]
+      simp [MolecularDynamics.Chapter04Review.eulerRigidField,(hc (π t) (T⁻¹ *ᵥ π t)).2]
+    simpa [Matrix.one_mulVec,hz] using hd 1 t ht
+  have ce : ∀ t ∈ Icc a b, MolecularDynamics.Chapter04Review.dot (π t) (T⁻¹ *ᵥ π t)=MolecularDynamics.Chapter04Review.dot (π a) (T⁻¹ *ᵥ π a) := by
+    apply constant_of_has_deriv_right_zero (fun t ht => (he t ht).continuousWithinAt)
+    intro t ht
+    exact (he t (mem_Icc_of_Ico ht)).mono_of_mem_nhdsWithin (Icc_mem_nhdsGE_of_mem ht)
+  have cn : ∀ t ∈ Icc a b, MolecularDynamics.Chapter04Review.dot (π t) (π t)=MolecularDynamics.Chapter04Review.dot (π a) (π a) := by
+    apply constant_of_has_deriv_right_zero (fun t ht => (hn t ht).continuousWithinAt)
+    intro t ht
+    exact (hn t (mem_Icc_of_Ico ht)).mono_of_mem_nhdsWithin (Icc_mem_nhdsGE_of_mem ht)
+  intro t ht
+  exact ⟨ce t ht,cn t ht⟩
+
+/-- source_id: MD-4.4.1-RigidPoissonMatrix · definition · §4.4.1 · 印刷p.172 / PDFp.194 -/
+def rigidPoissonMatrix (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 := MolecularDynamics.Chapter04Review.skewMatrix π
+
+/-- source_id: MD-4.4.1-PoissonDegeneracy · unnumbered_claim · §4.4.1 · 印刷p.172 / PDFp.194 -/
+theorem poissonDegeneracy : ∀ π : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.rigidPoissonMatrix π *ᵥ π=0 := by
+  intro π
+  ext i
+  fin_cases i <;> simp [MolecularDynamics.Chapter04Review.rigidPoissonMatrix,MolecularDynamics.Chapter04Review.skewMatrix,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
+
+/-- source_id: MD-4.4.1-AxisRotation · definition · §4.4.1 · 印刷p.173–174 / PDFp.195–196 -/
+def axisRotation (i : Fin 3) (φ : ℝ) : MolecularDynamics.Chapter04Review.Mat3 :=
+  if i=0 then !![1,0,0; 0,Real.cos φ,-Real.sin φ; 0,Real.sin φ,Real.cos φ]
+  else if i=1 then !![Real.cos φ,0,Real.sin φ; 0,1,0; -Real.sin φ,0,Real.cos φ]
+  else !![Real.cos φ,-Real.sin φ,0; Real.sin φ,Real.cos φ,0; 0,0,1]
+
+/-- source_id: MD-4.4.1-SecondAxisPrinted · definition · §4.4.1 · 印刷p.173 / PDFp.195
+[EXTRA] 为未定义标量引入a供审校，不声称它等于π₂。
+[ERRATUM?] p173第二子系统分量少下标2，原文尚需导师裁定。 -/
+def secondAxisPrinted (I : MolecularDynamics.Chapter04Review.V) (π : MolecularDynamics.Chapter04Review.V) (a : ℝ) : MolecularDynamics.Chapter04Review.V :=
+  MolecularDynamics.Chapter04Review.cross3 π ![0,a/I 1,0]
+
+/-- source_id: MD-4.4.1-ThirdAxisPrinted · definition · §4.4.1 · 印刷p.173 / PDFp.195
+[EXTRA] [EXTRA]a只为缺下标的印刷标量供审校。
+[ERRATUM?] p173第三子系统分量少下标3，单列保留原式。 -/
+def thirdAxisPrinted (I : MolecularDynamics.Chapter04Review.V) (π : MolecularDynamics.Chapter04Review.V) (a : ℝ) : MolecularDynamics.Chapter04Review.V :=
+  MolecularDynamics.Chapter04Review.cross3 π ![0,0,a/I 2]
+
+/-- source_id: MD-4.4.1-PrincipalAxisField · definition · §4.4.1 · 印刷p.173 / PDFp.195
+[EXTRA] [EXTRA]将第二和第三子场的分量分别明确为π₂/π₃；原印刷两处缺下标另列待审，不覆盖原式。 -/
+def principalAxisField (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V :=
+  MolecularDynamics.Chapter04Review.cross3 π (Pi.single i (π i/I i))
+
+/-- source_id: MD-4.4.2-PrintedSpinAxis · definition · §4.4.2 · 印刷p.174 / PDFp.196
+[ERRATUM?] p174正角列动量Rπ的导数符号与(4.41)π×ω相反；保留原算法，不证明其精确子流。 -/
+def printedSpinAxis (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (h : ℝ) (s : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3) : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 :=
+  let R := MolecularDynamics.Chapter04Review.axisRotation i (h*s.1 i/I i)
+  (R *ᵥ s.1,s.2*Rᵀ)
+
+/-- source_id: MD-4.4.2-PrintedSpinStep · definition · §4.4.2 · 印刷p.174 / PDFp.196 -/
+def printedSpinStep (I : MolecularDynamics.Chapter04Review.V) (h : ℝ) : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 → MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 :=
+  printedSpinAxis I 0 (h/2) ∘ printedSpinAxis I 1 (h/2) ∘ printedSpinAxis I 2 h ∘
+    printedSpinAxis I 1 (h/2) ∘ printedSpinAxis I 0 (h/2)
+
+/-- source_id: MD-4.4.1-AxisFlowFormal · unnumbered_claim · §4.4.1 · 印刷p.173 / PDFp.195
+[EXTRA] [EXTRA]旧声明使用与p174一致的正式库spinAxis；作为待审正角精确子流候选，不把它当已证原结论。
+[ERRATUM?] 正角主动Rπ导数=ω×π，不是π×ω；精确流需负角列动量。 -/
+theorem axisFlow :
+  ∀ (I π : MolecularDynamics.Chapter04Review.V) i, 0 < I i → ∀ t : ℝ,
+  HasDerivAt (fun s : ℝ => (MolecularDynamics.Chapter04Review.spinAxis I i s (π,1)).1)
+    (MolecularDynamics.Chapter04Review.cross3 ((MolecularDynamics.Chapter04Review.spinAxis I i t (π,1)).1) (Pi.single i (((MolecularDynamics.Chapter04Review.spinAxis I i t (π,1)).1 i)/I i))) t := by
+  sorry
+
+/-- source_id: MD-4.4.1-SpinPoissonFormal · unnumbered_claim · §4.4.1 · 印刷p.173 / PDFp.195
+[EXTRA] [EXTRA]此条仅正式库三维非canonical动量映射D J Dᵀ=J(Gπ)；Θ字面算法的完整几何结构另列。 -/
+theorem spinPoisson :
+  ∀ I : MolecularDynamics.Chapter04Review.V, (∀ i, 0 < I i) → ∀ h : ℝ,
+  poissonMap (fun π => (MolecularDynamics.Chapter04Review.spinStep I h (π,1)).1) := by
+  sorry
+
+/-- source_id: MD-4.4.1-RigidPoissonSkew · unnumbered_claim · §4.4.1 · 印刷p.172 / PDFp.194 -/
+theorem rigidPoissonSkew : ∀ π : MolecularDynamics.Chapter04Review.V, (MolecularDynamics.Chapter04Review.rigidPoissonMatrix π)ᵀ= -MolecularDynamics.Chapter04Review.rigidPoissonMatrix π := by
+  intro π
+  ext i j
+  fin_cases i <;> fin_cases j <;> simp [MolecularDynamics.Chapter04Review.rigidPoissonMatrix,MolecularDynamics.Chapter04Review.skewMatrix]
+
+/-- source_id: MD-4.4.1-RigidHamiltonianField · unnumbered_claim · §4.4.1 · 印刷p.172 / PDFp.194
+[EXTRA] 正定T确保对称可逆；真实Fréchet配置梯度，不把∇H=T⁻¹π作假设。 -/
+theorem rigidHamiltonianField : ∀ (T : MolecularDynamics.Chapter04Review.Mat3) (π : MolecularDynamics.Chapter04Review.V), T.PosDef →
+  MolecularDynamics.Chapter04Review.eulerRigidField T π=MolecularDynamics.Chapter04Review.rigidPoissonMatrix π *ᵥ
+    MolecularDynamics.Chapter04Review.grad (fun x => MolecularDynamics.Chapter04Review.dot x (T⁻¹ *ᵥ x)/2) π := by
+  intro T π hT
+  let B := T⁻¹
+  have hsym : Bᵀ=B := by
+    simpa [B,Matrix.conjTranspose_eq_transpose_of_trivial] using hT.isHermitian.inv.eq
+  have hs : ∀ i j : Fin 3, B i j=B j i := by
+    intro i j
+    simpa using congrArg (fun A : MolecularDynamics.Chapter04Review.Mat3 => A j i) hsym
+  let row : Fin 3 → (MolecularDynamics.Chapter04Review.V →L[ℝ] ℝ) := fun i => ∑ j, B i j • (ContinuousLinearMap.proj j : MolecularDynamics.Chapter04Review.V →L[ℝ] ℝ)
+  let L : MolecularDynamics.Chapter04Review.V →L[ℝ] ℝ := (2 : ℝ)⁻¹ • ∑ i, (π i • row i+(B *ᵥ π) i • (ContinuousLinearMap.proj i : MolecularDynamics.Chapter04Review.V →L[ℝ] ℝ))
+  have hb : ∀ i, HasFDerivAt (fun x : MolecularDynamics.Chapter04Review.V => (B *ᵥ x) i) (row i) π := by
+    intro i
+    change HasFDerivAt (fun x : MolecularDynamics.Chapter04Review.V => ∑ j,B i j*x j) (∑ j,B i j • (ContinuousLinearMap.proj j : MolecularDynamics.Chapter04Review.V →L[ℝ] ℝ)) π
+    apply HasFDerivAt.fun_sum
+    intro j hj
+    exact (hasFDerivAt_apply j π).const_mul (B i j)
+  have hh : HasFDerivAt (fun x : MolecularDynamics.Chapter04Review.V => ∑ i,x i*(B *ᵥ x) i)
+      (∑ i, (π i • row i+(B *ᵥ π) i • (ContinuousLinearMap.proj i : MolecularDynamics.Chapter04Review.V →L[ℝ] ℝ))) π := by
+    apply HasFDerivAt.fun_sum
+    intro i hii
+    exact (hasFDerivAt_apply i π).mul (hb i)
+  have hd : HasFDerivAt (fun x : MolecularDynamics.Chapter04Review.V => MolecularDynamics.Chapter04Review.dot x (B *ᵥ x)/2) L π := by
+    convert hh.const_mul ((2 : ℝ)⁻¹) using 1
+    funext x
+    simp only [MolecularDynamics.Chapter04Review.dot,div_eq_mul_inv]
+    ring
+  have hg : MolecularDynamics.Chapter04Review.grad (fun x : MolecularDynamics.Chapter04Review.V => MolecularDynamics.Chapter04Review.dot x (B *ᵥ x)/2) π=B *ᵥ π := by
+    ext i
+    change (fderiv ℝ (fun x : MolecularDynamics.Chapter04Review.V => MolecularDynamics.Chapter04Review.dot x (B *ᵥ x)/2) π) (Pi.single i 1)=(B *ᵥ π) i
+    rw [hd.fderiv]
+    fin_cases i <;> simp [L,row,ContinuousLinearMap.sum_apply,ContinuousLinearMap.smul_apply,
+      ContinuousLinearMap.proj_apply,Fin.sum_univ_three,Pi.single_apply,Matrix.mulVec,dotProduct,hs 1 0,hs 2 0,hs 2 1] <;> ring
+  change MolecularDynamics.Chapter04Review.cross3 π (B *ᵥ π)=MolecularDynamics.Chapter04Review.rigidPoissonMatrix π *ᵥ MolecularDynamics.Chapter04Review.grad (fun x : MolecularDynamics.Chapter04Review.V => MolecularDynamics.Chapter04Review.dot x (B *ᵥ x)/2) π
+  rw [hg]
+  ext i
+  fin_cases i <;> simp [MolecularDynamics.Chapter04Review.rigidPoissonMatrix,MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
 
 end MD.Ch04

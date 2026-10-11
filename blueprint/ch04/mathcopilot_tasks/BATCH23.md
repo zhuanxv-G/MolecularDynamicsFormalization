@@ -226,3 +226,37 @@ theorem rotationDerivativePrinted : ∀ (Θ : ℝ → MolecularDynamics.Chapter0
     d *ᵥ δ=(d*(Θ t)ᵀ) *ᵥ (d *ᵥ δ)
 ```
 
+### MD-4.4-RigidMatrixRelation
+```json
+{
+  "source_id": "MD-4.4-RigidMatrixRelation",
+  "kind": "definition",
+  "label": null,
+  "section": "4.4",
+  "printed_page": "171",
+  "pdf_page": "193",
+  "statement_latex": "The constraint may be enforced using Lagrange multipliers with the following equations\n\\[\\frac d{dt}q_{\\rm cm}=p_{\\rm cm}/M,\\quad\\frac d{dt}\\Theta=\\Pi R^{-1},\\]\n\\[\\frac d{dt}p_{\\rm cm}=-\\nabla_{q_{\\rm cm}}U,\\quad\\frac d{dt}\\Pi=-\\nabla_\\Theta U-\\Theta\\Lambda,\\quad I=\\Theta^T\\Theta.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "真实Fréchet矩阵元素偏导，完整轨道关系；不计解存在证明。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.rigidMatrixRelation",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+```lean
+def rigidMatrixRelation (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter04Review.V) (Θ mom Λ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (I : Set ℝ) : Prop :=
+  ∀ t ∈ I, HasDerivWithinAt q (M⁻¹ • p t) I t ∧ HasDerivWithinAt Θ (mom t*R⁻¹) I t ∧
+    HasDerivWithinAt p (-MolecularDynamics.Chapter04Review.grad (fun x => U x (Θ t)) (q t)) I t ∧
+    HasDerivWithinAt mom (-MolecularDynamics.Chapter04Review.matrixGrad (U (q t)) (Θ t)-Θ t*Λ t) I t ∧ (Θ t)ᵀ*Θ t=1
+```
+

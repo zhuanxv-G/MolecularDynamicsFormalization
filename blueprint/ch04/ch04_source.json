@@ -3359,5 +3359,494 @@
     "review_status": "DRAFT",
     "repair_log": [],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4-RigidMatrixRelation",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4",
+    "printed_page": "171",
+    "pdf_page": "193",
+    "statement_latex": "The constraint may be enforced using Lagrange multipliers with the following equations\n\\[\\frac d{dt}q_{\\rm cm}=p_{\\rm cm}/M,\\quad\\frac d{dt}\\Theta=\\Pi R^{-1},\\]\n\\[\\frac d{dt}p_{\\rm cm}=-\\nabla_{q_{\\rm cm}}U,\\quad\\frac d{dt}\\Pi=-\\nabla_\\Theta U-\\Theta\\Lambda,\\quad I=\\Theta^T\\Theta.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "真实Fréchet矩阵元素偏导，完整轨道关系；不计解存在证明。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.rigidMatrixRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-AngularMomentum",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "171",
+    "pdf_page": "193",
+    "statement_latex": "The angular momentum vector in the reference frame is given by $l=\\sum_{i=1}^Nm_i\\delta_i\\times\\dot\\delta_i$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.angularMomentum",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-BodyMomentum",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "171",
+    "pdf_page": "193",
+    "statement_latex": "Define $\\pi=\\Theta^Tl$, the angular momentum vector referred to the body frame of reference.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.bodyMomentum",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-AngularInertia",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "171",
+    "pdf_page": "193",
+    "statement_latex": "From Eq. (4.39) we may write this as $l=\\sum_im_i\\delta_i\\times\\omega\\times\\delta_i$, from which, using the vector triple product identity $a\\times b\\times c=(a\\cdot c)b-(a\\cdot b)c$, we obtain $l=\\sum_im_i[\\|\\delta_i\\|^2I-\\delta_i\\delta_i^T]\\omega$. Define $\\pi=\\Theta^Tl$, then we have (using $\\delta_i=\\Theta\\delta_i(0)$): $\\pi=T\\omega_b$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.angularInertia",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "真实SO(3)矩阵和cross3，嵌套为δ×(ω×δ)；原无括号三重积含糊，明确上下文对象。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-EulerRigidField",
+    "kind": "definition",
+    "label": "(4.41)",
+    "section": "4.4.1",
+    "printed_page": "172",
+    "pdf_page": "194",
+    "statement_latex": "but since $\\omega_b=T^{-1}\\pi$, we may conclude $\\dot\\pi=\\pi\\times T^{-1}\\pi$. These are the so-called Euler equations for the free rigid body.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.eulerRigidField",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-FreeRigidSolution",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "172",
+    "pdf_page": "194",
+    "statement_latex": "$\\dot\\pi=\\pi\\times T^{-1}\\pi$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "实际HasDerivWithinAt解关系；不计轨道存在。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.freeRigidSolution",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-RigidInvariants",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "172",
+    "pdf_page": "194",
+    "statement_latex": "the Euler equations are in the form of a Hamiltonian system on a three-dimensional phase space. The symplectic structure matrix is dependent on the phase variables, and it is degenerate: $\\widetilde J\\pi=\\pi\\times\\pi=0$, signifying that total angular momentum is conserved: $\\|\\pi\\|=\\mathrm{constant}$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.rigidInvariants",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "对称正定T、实际连续闭区间轨道，证明原能量H̃=πᵀT⁻¹π/2和角动量平方同时守恒；不假设任一守恒。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-RigidPoissonMatrix",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "172",
+    "pdf_page": "194",
+    "statement_latex": "$\\dot\\pi=\\widetilde J(\\pi)\\nabla\\widetilde H$, where $\\widetilde J(\\pi)=\\operatorname{skew}(\\pi)$ is obviously skew symmetric, and $\\widetilde H=\\pi^TT^{-1}\\pi/2$ is the energy function.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "真实skewπ；退化与场恒等式另条，不假称Jacobi或全Poisson理论已验。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.rigidPoissonMatrix",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-PoissonDegeneracy",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "172",
+    "pdf_page": "194",
+    "statement_latex": "$\\widetilde J\\pi=\\pi\\times\\pi=0$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.poissonDegeneracy",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-AxisRotation",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "173–174",
+    "pdf_page": "195–196",
+    "statement_latex": "Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7). The notation $\\Theta_x(\\phi)$ refers to a rotation around the x-axis by an angle $\\phi$, that is\n\\[\\Theta_x(\\phi)=\\begin{bmatrix}1&0&0\\\\0&\\cos\\phi&-\\sin\\phi\\\\0&\\sin\\phi&\\cos\\phi\\end{bmatrix},\\]\nwith corresponding formulae for $\\Theta_y$ and $\\Theta_z$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "右手主动轴旋转，Fin3为0,1,2对应书1,2,3。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.axisRotation",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-SecondAxisPrinted",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "173",
+    "pdf_page": "195",
+    "statement_latex": "$\\dot\\pi=\\pi\\times[0,T_2^{-1}\\pi,0]^T$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "p173第二子系统分量少下标2，原文尚需导师裁定。"
+      }
+    ],
+    "lean_decl": "MD.Ch04.secondAxisPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "为未定义标量引入a供审校，不声称它等于π₂。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-ThirdAxisPrinted",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "173",
+    "pdf_page": "195",
+    "statement_latex": "$\\dot\\pi=\\pi\\times[0,0,T_3^{-1}\\pi]^T$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "p173第三子系统分量少下标3，单列保留原式。"
+      }
+    ],
+    "lean_decl": "MD.Ch04.thirdAxisPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]a只为缺下标的印刷标量供审校。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-PrincipalAxisField",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "173",
+    "pdf_page": "195",
+    "statement_latex": "If $T$ is a diagonal matrix, $T=\\operatorname{diag}(I_1,I_2,I_3)$, then we split the Euler equations and approximate the solution by successive rotations around the three axes of inertia.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.principalAxisField",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]将第二和第三子场的分量分别明确为π₂/π₃；原印刷两处缺下标另列待审，不覆盖原式。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [
+      {
+        "date": "2026-10-11",
+        "reason": "原页高倍率复核纠正预备转录：列动量Rπ、方向ΘRᵀ与正式库一致；第二及第三拆分均缺下标。原记录归档，正角与π×ω子流符号疑点仍待审。",
+        "before": "blueprint/ch04/validation/transcription-repair-20261011/BEFORE.json",
+        "visual_sha256": {
+          "blueprint/ch04/source_pages/p195-split-detail.png": "2187e0fc326143559f3ee751a3d628e8168e8376ed833d5b4d440bb1cf5039b0",
+          "blueprint/ch04/source_pages/p196-spin-detail.png": "103c0a22caee08e216a7a749055fb24cd007afd063c43f0139555845b335c501"
+        }
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.2-PrintedSpinAxis",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4.2",
+    "printed_page": "174",
+    "pdf_page": "196",
+    "statement_latex": "$\\pi^k:=\\Theta\\pi^k;\\quad\\Theta^k:=\\Theta^k\\Theta^T$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "高倍率原页确认：π为列向量左乘R，Θ右乘Rᵀ；与正式库spinAxis的定义一致。"
+    ],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "p174正角列动量Rπ的导数符号与(4.41)π×ω相反；保留原算法，不证明其精确子流。"
+      }
+    ],
+    "lean_decl": "MD.Ch04.printedSpinAxis",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [
+      {
+        "date": "2026-10-11",
+        "reason": "原页高倍率复核纠正预备转录：列动量Rπ、方向ΘRᵀ与正式库一致；第二及第三拆分均缺下标。原记录归档，正角与π×ω子流符号疑点仍待审。",
+        "before": "blueprint/ch04/validation/transcription-repair-20261011/BEFORE.json",
+        "visual_sha256": {
+          "blueprint/ch04/source_pages/p195-split-detail.png": "2187e0fc326143559f3ee751a3d628e8168e8376ed833d5b4d440bb1cf5039b0",
+          "blueprint/ch04/source_pages/p196-spin-detail.png": "103c0a22caee08e216a7a749055fb24cd007afd063c43f0139555845b335c501"
+        }
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.2-PrintedSpinStep",
+    "kind": "definition",
+    "label": null,
+    "section": "4.4.2",
+    "printed_page": "174",
+    "pdf_page": "196",
+    "statement_latex": "“Spin”: update the rotational state of the kth rigid body by the sequence of steps\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^z(h\\pi_3^k/I_3);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "真实五轴算法映射；保留字面旋转/动量符号。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.printedSpinStep",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [
+      {
+        "date": "2026-10-11",
+        "reason": "原页高倍率复核纠正预备转录：列动量Rπ、方向ΘRᵀ与正式库一致；第二及第三拆分均缺下标。原记录归档，正角与π×ω子流符号疑点仍待审。",
+        "before": "blueprint/ch04/validation/transcription-repair-20261011/BEFORE.json",
+        "visual_sha256": {
+          "blueprint/ch04/source_pages/p195-split-detail.png": "2187e0fc326143559f3ee751a3d628e8168e8376ed833d5b4d440bb1cf5039b0",
+          "blueprint/ch04/source_pages/p196-spin-detail.png": "103c0a22caee08e216a7a749055fb24cd007afd063c43f0139555845b335c501"
+        }
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-AxisFlowFormal",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "173",
+    "pdf_page": "195",
+    "statement_latex": "Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "正角主动Rπ导数=ω×π，不是π×ω；精确流需负角列动量。"
+      }
+    ],
+    "lean_decl": "MD.Ch04.axisFlow",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]旧声明使用与p174一致的正式库spinAxis；作为待审正角精确子流候选，不把它当已证原结论。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [
+      {
+        "date": "2026-10-11",
+        "reason": "原页高倍率复核纠正预备转录：列动量Rπ、方向ΘRᵀ与正式库一致；第二及第三拆分均缺下标。原记录归档，正角与π×ω子流符号疑点仍待审。",
+        "before": "blueprint/ch04/validation/transcription-repair-20261011/BEFORE.json",
+        "visual_sha256": {
+          "blueprint/ch04/source_pages/p195-split-detail.png": "2187e0fc326143559f3ee751a3d628e8168e8376ed833d5b4d440bb1cf5039b0",
+          "blueprint/ch04/source_pages/p196-spin-detail.png": "103c0a22caee08e216a7a749055fb24cd007afd063c43f0139555845b335c501"
+        }
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-SpinPoissonFormal",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "173",
+    "pdf_page": "195",
+    "statement_latex": "This yields a simple, efficient algorithm for the free rigid body which is symplectic in a generalized sense.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.spinPoisson",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]此条仅正式库三维非canonical动量映射D J Dᵀ=J(Gπ)；Θ字面算法的完整几何结构另列。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-RigidPoissonSkew",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "172",
+    "pdf_page": "194",
+    "statement_latex": "$\\widetilde J(\\pi)=\\operatorname{skew}(\\pi)$ is obviously skew symmetric.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "实际矩阵转置等式；不把Jacobi条件或抽象非退化形式混作skew。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.rigidPoissonSkew",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.4.1-RigidHamiltonianField",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.4.1",
+    "printed_page": "172",
+    "pdf_page": "194",
+    "statement_latex": "Let us observe that (4.41) is in the form $\\dot\\pi=\\widetilde J(\\pi)\\nabla\\widetilde H$, where $\\widetilde J(\\pi)=\\operatorname{skew}(\\pi)$ is obviously skew symmetric, and $\\widetilde H=\\pi^TT^{-1}\\pi/2$ is the energy function.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.rigidHamiltonianField",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "正定T确保对称可逆；真实Fréchet配置梯度，不把∇H=T⁻¹π作假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]

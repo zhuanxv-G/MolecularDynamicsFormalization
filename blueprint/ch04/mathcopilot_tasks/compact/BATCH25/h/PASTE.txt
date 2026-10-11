@@ -1,0 +1,163 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH25h_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 194 | 172 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-4.4.1-RigidHamiltonianField",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4.4.1",
+  "printed_page": "172",
+  "pdf_page": "194",
+  "statement_latex": "Let us observe that (4.41) is in the form $\\dot\\pi=\\widetilde J(\\pi)\\nabla\\widetilde H$, where $\\widetilde J(\\pi)=\\operatorname{skew}(\\pi)$ is obviously skew symmetric, and $\\widetilde H=\\pi^TT^{-1}\\pi/2$ is the energy function.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch04.rigidHamiltonianField",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "正定T确保对称可逆；真实Fréchet配置梯度，不把∇H=T⁻¹π作假设。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem rigidHamiltonianField : ∀ (T : MolecularDynamics.Chapter04Review.Mat3) (π : MolecularDynamics.Chapter04Review.V), T.PosDef →
+  MolecularDynamics.Chapter04Review.eulerRigidField T π=MolecularDynamics.Chapter04Review.rigidPoissonMatrix π *ᵥ
+    MolecularDynamics.Chapter04Review.grad (fun x => MolecularDynamics.Chapter04Review.dot x (T⁻¹ *ᵥ x)/2) π
+```
+
+原上下文：namespace MD.Ch04；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter04Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.Elementwise；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter04Review.Mat3 (MolecularDynamics/Chapter04/ReviewDefinitions.lean:18)
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Mat3 (MolecularDynamics/Chapter04/ReviewDefinitions.lean:18)
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.cross3 (MolecularDynamics/Chapter04/ReviewDefinitions.lean:161)
+```lean
+def cross3 (u v : V) : V := ![u 1*v 2-u 2*v 1,u 2*v 0-u 0*v 2,u 0*v 1-u 1*v 0]
+```
+
+### MolecularDynamics.Chapter04Review.dot (MolecularDynamics/Chapter04/ReviewDefinitions.lean:21)
+```lean
+def dot {n : ℕ} (u v : Q n) : ℝ := ∑ i, u i * v i
+```
+
+### MolecularDynamics.Chapter04Review.eulerRigidField (MolecularDynamics/Chapter04/ReviewDefinitions.lean:177)
+```lean
+def eulerRigidField (T : Mat3) (π : V) : V := cross3 π (T⁻¹ *ᵥ π)
+```
+
+### MolecularDynamics.Chapter04Review.grad (MolecularDynamics/Chapter04/ReviewDefinitions.lean:20)
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+
+### MolecularDynamics.Chapter04Review.rigidPoissonMatrix (MolecularDynamics/Chapter04/ReviewDefinitions.lean:180)
+```lean
+def rigidPoissonMatrix (π : V) : Mat3 := skewMatrix π
+```
+
+### MolecularDynamics.Chapter04Review.skewMatrix (MolecularDynamics/Chapter04/ReviewDefinitions.lean:160)
+```lean
+def skewMatrix (v : V) : Mat3 := !![0,-v 2,v 1; v 2,0,-v 0; -v 1,v 0,0]
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch04.cross3 (Blueprint/Ch04.lean:1365)
+```lean
+def cross3 (u v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := ![u 1*v 2-u 2*v 1,u 2*v 0-u 0*v 2,u 0*v 1-u 1*v 0]
+```
+
+### MolecularDynamics.Chapter04Review.dot (MolecularDynamics/Chapter04/ReviewDefinitions.lean:21)
+```lean
+def dot {n : ℕ} (u v : Q n) : ℝ := ∑ i, u i * v i
+```
+
+### MD.Ch04.eulerRigidField (Blueprint/Ch04.lean:1643)
+```lean
+def eulerRigidField (T : MolecularDynamics.Chapter04Review.Mat3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := MolecularDynamics.Chapter04Review.cross3 π (T⁻¹ *ᵥ π)
+```
+
+### MolecularDynamics.Chapter02Review.grad (MolecularDynamics/Chapter02/ReviewDefinitions.lean:133)
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+
+### MolecularDynamics.Chapter04Review.grad (MolecularDynamics/Chapter04/ReviewDefinitions.lean:20)
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+
+### MolecularDynamics.Chapter05Review.grad (MolecularDynamics/Chapter05/ReviewDefinitions.lean:59)
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+
+### MD.Ch04.rigidPoissonMatrix (Blueprint/Ch04.lean:1706)
+```lean
+def rigidPoissonMatrix (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 := MolecularDynamics.Chapter04Review.skewMatrix π
+```
+
+### MD.Ch04.skewMatrix (Blueprint/Ch04.lean:1362)
+```lean
+def skewMatrix (v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 := !![0,-v 2,v 1; v 2,0,-v 0; -v 1,v 0,0]
+```
+
+### MolecularDynamics.textbookConstraintGradient (MolecularDynamics/Chapter04/ConstrainedProjection.lean:20)
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```

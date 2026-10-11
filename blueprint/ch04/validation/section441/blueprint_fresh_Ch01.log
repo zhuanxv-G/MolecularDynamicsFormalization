@@ -1,0 +1,442 @@
+Blueprint\Ch01.lean:177:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:282:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:510:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:539:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:599:31: warning: This simp argument is unused:
+  Pi.pow_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.div_apply, id_eq, Nat.cast_ofNat]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint\Ch01.lean:617:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint\Ch01.lean:620:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint\Ch01.lean:624:42: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint\Ch01.lean:601:22: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:617:35: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint\Ch01.lean:620:35: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint\Ch01.lean:624:42: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint\Ch01.lean:669:36: warning: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:670:5: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:726:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:777:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:790:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:801:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:884:5: warning: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:908:5: warning: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:909:5: warning: Variable name `hinit` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hinit
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:934:5: warning: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:934:21: warning: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:935:5: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:946:5: warning: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:947:5: warning: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:948:5: warning: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:948:52: warning: Variable name `ht₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:949:27: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:950:5: warning: Variable name `hpartial` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpartial
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:964:5: warning: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:964:40: warning: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:965:5: warning: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:965:52: warning: Variable name `ht₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:966:5: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:966:36: warning: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:967:5: warning: Variable name `hpartial` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpartial
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:967:49: warning: Variable name `hspeed` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hspeed
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:984:18: warning: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:986:18: warning: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:988:5: warning: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:989:5: warning: Variable name `ht₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:989:26: warning: Variable name `hv₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hv₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1008:5: warning: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1010:36: warning: Variable name `hz` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hz
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1025:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1060:5: warning: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1062:15: warning: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1062:34: warning: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1073:21: warning: This simp argument is unused:
+  smul_eq_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [keplerForce, hq, norm_ne_zero_iff.mpr hq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint\Ch01.lean:1120:5: warning: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1120:62: warning: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1121:13: warning: Variable name `hl` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hl
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1135:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1163:17: warning: Variable name `hΩ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hΩ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1163:30: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1174:5: warning: Variable name `hΩ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hΩ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1174:18: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1174:33: warning: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1174:57: warning: Variable name `hθ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hθ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1187:5: warning: Variable name `hΩ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hΩ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1187:18: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1188:5: warning: Variable name `hreg` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hreg
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1189:5: warning: Variable name `hODE` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hODE
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1194:15: warning: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1194:34: warning: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1220:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1230:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1265:5: warning: Variable name `hF` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hF
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1265:32: warning: Variable name `heq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _heq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1283:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1309:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1393:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1452:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1477:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1526:52: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1526:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1532:52: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1532:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1526:56: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint\Ch01.lean:1532:56: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint\Ch01.lean:1600:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1611:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1623:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1642:5: warning: Variable name `hu` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hu
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1642:25: warning: Variable name `hv` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hv
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint\Ch01.lean:1684:8: warning: This simp argument is unused:
+  ContinuousLinearMap.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [innerSL_apply_apply, inner_neg_right]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint\Ch01.lean:1684:61: warning: This simp argument is unused:
+  inner_neg_right
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ContinuousLinearMap.comp_apply, innerSL_apply_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint\Ch01.lean:1735:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1735:91: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1736:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1736:91: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1737:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1737:91: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1797:24: warning: This simp argument is unused:
+  sub_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_eq_add_neg, add_smul, neg_smul, add_assoc, add_comm, add_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint\Ch01.lean:1797:70: warning: This simp argument is unused:
+  add_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_smul, sub_eq_add_neg, add_smul, neg_smul, add_comm, add_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint\Ch01.lean:1805:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1827:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1830:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1833:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint\Ch01.lean:1867:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1894:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1905:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1929:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1956:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1967:8: warning: declaration uses `sorry`
+Blueprint\Ch01.lean:1986:8: warning: declaration uses `sorry`
