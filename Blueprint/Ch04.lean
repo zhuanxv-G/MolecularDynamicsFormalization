@@ -862,4 +862,25 @@ theorem frozenGramPrinted :
       MolecularDynamics.Chapter04Review.projectionJacobian m g q base 0 = textbookConstraintGram m g q := by
   sorry
 
+/-- source_id: MD-4.3.3-ComponentPrinted · definition · §4.3.3 · 印刷p.158 / PDFp.180
+[EXTRA] [EXTRA]Gsup1是未定义印刷G_j^1的显式参数，未假设它等于已定义梯度。
+[ERRATUM?] 一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。 -/
+def componentPrinted {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : MolecularDynamics.Chapter04Review.Q n :=
+  Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j))) •
+    MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)
+
+/-- source_id: MD-4.3.3-ComponentConstraintStep · definition · §4.3.3 · 印刷p.158 / PDFp.180
+[EXTRA] [EXTRA]一般j采用已定义Gn^j=grad gj(qn)，取非零分母才是可用步骤；原一般式索引疑误由ComponentPrinted保留。 -/
+def componentConstraintStep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : MolecularDynamics.Chapter04Review.Q n :=
+  Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q))) •
+    MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)
+
+/-- source_id: MD-4.3.3-ComponentSweep · definition · §4.3.3 · 印刷p.158 / PDFp.180
+[EXTRA] [EXTRA]一次完整顺序sweep，使用上一条统一Gn索引；多轮为其真实函数迭代。 -/
+def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Qnow : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=
+  (List.finRange l).foldl (fun Qcur j => MolecularDynamics.Chapter04Review.componentConstraintStep m g q Qcur j) Qnow
+
 end MD.Ch04

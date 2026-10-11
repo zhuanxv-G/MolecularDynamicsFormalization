@@ -2,7 +2,7 @@
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前76条；旧清单映射55/100；本地PASS 66；网站返回0。
+当前79条；旧清单映射56/100；本地PASS 68；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -82,6 +82,9 @@
 | MD-4.3.2-FrozenNewtonLinear | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺交叉Gram逆的实际Fréchet正则性和局部收缩统一范数界；不建完整一般Newton理论。 |
 | MD-4.3.2-ProjectionScale | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺隐式残差的η′(0)=0链式推导和真实C²小步分支Taylor一致余项桥接；不构造大型分支存在理论。 |
 | MD-4.3.2-FrozenGramPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；本地FAIL不证明，待原始/冻结版本约定裁定。 |
+| MD-4.3.3-ComponentPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-4.3.3-ComponentConstraintStep | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.3-ComponentSweep | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 
 ## 旧100条完整映射
 
@@ -141,7 +144,7 @@
 | CH04-052 | MD-4.3.2-NewtonQuadratic |
 | CH04-053 | MD-4.3.2-FrozenNewtonLinear |
 | CH04-054 | MD-4.3.2-ProjectionScale |
-| CH04-055 | PENDING：所属节尚未处理 |
+| CH04-055 | MD-4.3.3-ComponentPrinted |
 | CH04-056 | PENDING：所属节尚未处理 |
 | CH04-057 | PENDING：所属节尚未处理 |
 | CH04-058 | PENDING：所属节尚未处理 |
@@ -211,6 +214,7 @@
 - MD-4.3.2-FrozenNewtonLinear：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺交叉Gram逆的实际Fréchet正则性和局部收缩统一范数界；不建完整一般Newton理论。
 - MD-4.3.2-ProjectionScale：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺隐式残差的η′(0)=0链式推导和真实C²小步分支Taylor一致余项桥接；不构造大型分支存在理论。
 - MD-4.3.2-FrozenGramPrinted：n=l=1,m=1,g(q)=q²−1,q=1,base=2：g′(base)=4,g′(q)=2，实际R(0)=8而旧点Gram=4。η0=0并不使Q0=qn；若另冻结Jacobian到qn才得到所写对称Gram。 本地FAIL不证明，待原始/冻结版本约定裁定。R(0)仍是新预测点与旧点的交叉Gram，原等式一般不成立。
+- MD-4.3.3-ComponentPrinted：字面分母G_j^1与已定义G_n^j不一致。引入待解释Gsup1保留它，更新方向仍为G_n^j；常规修正版另列。 一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。
 
 ## 定性段落排除
 

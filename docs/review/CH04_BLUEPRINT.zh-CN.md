@@ -80,6 +80,9 @@
 | MD-4.3.2-FrozenNewtonLinear | 157/179 | PASS | 待网站审计 | incomplete |
 | MD-4.3.2-ProjectionScale | 158/180 | PASS | 待网站审计 | incomplete |
 | MD-4.3.2-FrozenGramPrinted | 157/179 | FAIL | 待网站审计 | incomplete |
+| MD-4.3.3-ComponentPrinted | 158/180 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.3.3-ComponentConstraintStep | 158/180 | PASS | 待网站审计 | self-contained |
+| MD-4.3.3-ComponentSweep | 158/180 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -107,6 +110,8 @@
   R(0)=g′(Qn)M⁻¹Gnᵀ，一般不是GnM⁻¹Gnᵀ；只有Qn=qn或冻结Jacobian到旧位置时相同。
 - MD-4.3.2-FrozenGramPrinted：n=l=1,m=1,g(q)=q²−1,q=1,base=2：g′(base)=4,g′(q)=2，实际R(0)=8而旧点Gram=4。η0=0并不使Q0=qn；若另冻结Jacobian到qn才得到所写对称Gram。
   R(0)仍是新预测点与旧点的交叉Gram，原等式一般不成立。
+- MD-4.3.3-ComponentPrinted：字面分母G_j^1与已定义G_n^j不一致。引入待解释Gsup1保留它，更新方向仍为G_n^j；常规修正版另列。
+  一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。
 
 ## 1. MD-4-LinearField · (4.1) · 印刷p.139 / PDFp.161
 
@@ -3732,3 +3737,145 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 缺失/继续路线：本地FAIL不证明，待原始/冻结版本约定裁定。
 
 签名SHA256：`bc460c23348882ab981768df44db676e9598f1a405d485420260eb40c4c8e39d`；原文SHA256：`3a125bb015568395af72359f34e57f10d4faf6558b9b6cd35502d360ca65398c`。
+
+## 1. MD-4.3.3-ComponentPrinted · definition · 印刷p.158 / PDFp.180
+
+### 2. 原文陈述
+
+> In general, we perform a sequence of updates
+> \[\Delta\Lambda_j=[\nabla g_j(Q)^TM^{-1}G_j^1]^{-1}g_j(Q),\qquad Q:=Q-M^{-1}G_n^j\Delta\Lambda_j,\]
+> as $j$ cycles repeatedly from $1$ to $m$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def componentPrinted {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : MolecularDynamics.Chapter04Review.Q n :=
+  Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j))) •
+    MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.componentPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]Gsup1是未定义印刷G_j^1的显式参数，未假设它等于已定义梯度。 | [EXTRA] |
+| 原页核对/疑点 | 一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。字面分母G_j^1与已定义G_n^j不一致。引入待解释Gsup1保留它，更新方向仍为G_n^j；常规修正版另列。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:868](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:868>)（`MD.Ch04.componentPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`191641b886b30ebf96e34166d568cc04d2da8f940b7bd959fe5aa62bb2901ec9`；原文SHA256：`528b58ecce16b007180efed5fe9f8a414353a1145b08006612f8ad8d3a8159c8`。
+
+## 1. MD-4.3.3-ComponentConstraintStep · definition · 印刷p.158 / PDFp.180
+
+### 2. 原文陈述
+
+> \[\Delta\Lambda_1=[\nabla g_1(Q)^TM^{-1}G_n^1]^{-1}g_1(Q).\]
+> We then update $Q$ by
+> \[Q:=Q-M^{-1}G_n^1\Delta\Lambda_1.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def componentConstraintStep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : MolecularDynamics.Chapter04Review.Q n :=
+  Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q))) •
+    MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.componentConstraintStep；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]一般j采用已定义Gn^j=grad gj(qn)，取非零分母才是可用步骤；原一般式索引疑误由ComponentPrinted保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:875](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:875>)（`MD.Ch04.componentConstraintStep`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`8f3d0f0b88d4921d418d1c0ad25cd80308d33f575b10cb951725dc0ecd9797af`；原文SHA256：`10d58fea1507125522bba43ce7326dea6e209932a6a12305864d131046bfad09`。
+
+## 1. MD-4.3.3-ComponentSweep · definition · 印刷p.158 / PDFp.180
+
+### 2. 原文陈述
+
+> and continue to update $\Lambda_2$ in the same manner (using the second constraint). In general, we perform a sequence of updates ... as $j$ cycles repeatedly from $1$ to $m$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Qnow : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=
+  (List.finRange l).foldl (fun Qcur j => MolecularDynamics.Chapter04Review.componentConstraintStep m g q Qcur j) Qnow
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.componentSweep；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]一次完整顺序sweep，使用上一条统一Gn索引；多轮为其真实函数迭代。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:882](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:882>)（`MD.Ch04.componentSweep`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`f323195bcb6cdf1c6347e35a0ff8a6ba239dbb4ec13ccccf1ad678c3705809ac`；原文SHA256：`0010f1dd91e1999a8d184ee6e405b5dc4e75709f3798a90d85934519924c2658`。

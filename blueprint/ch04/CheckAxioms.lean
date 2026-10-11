@@ -76,3 +76,6 @@ import Blueprint.Ch04
 #print axioms MD.Ch04.frozenNewtonLinear
 #print axioms MD.Ch04.projectionScale
 #print axioms MD.Ch04.frozenGramPrinted
+#print axioms MD.Ch04.componentPrinted
+#print axioms MD.Ch04.componentConstraintStep
+#print axioms MD.Ch04.componentSweep
