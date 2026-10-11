@@ -1,0 +1,3 @@
+"""The concluding MOLLY structure claim belongs to section 4.2."""
+from ch04_data import add,proposition
+add('MollifiedStructure','4.2.2',149,[31],r'''In each of the mollified multiple timestepping methods, since only the potential energy is modified, and by a smooth mapping of positions, the forces derived by differentiating $\overline U$ are still conservative, and, just as with the MTS method, the scheme remains symplectic.''',proposition('mollifiedStructure_statement'),extra=['正质量、US/UF/A C²、r>0；实际Fréchet链式法则及RESPA的Jacobian辛性，不假定保结构结论。'],missing='正式库无RESPA实际Jacobian辛性/反步定理；需实际链式法则与有限迭代复合桥接，保留sorry，不另建辛流理论。')

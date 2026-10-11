@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH05",
+  "subtask": "BATCH05b",
+  "source_ids": [
+    "MD-4.2.1-ResonancePower"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 168,
+      "printed_page": 146
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "daee8ee4f219a4e571951f23636b7dee9a167ecff425b34708969d2ce3074cd1",
+  "lean_sha256": "618197fea3c6e06024a2b02de8e345d7dd347b276bb2cb0dc1ef00a794a63aea",
+  "signature_sha256": "e9b4b2e16c4ad7ef30077d178e17c7856cc79115a7749a5f4457ae8423049aea",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "fastMatrix",
+      "code_sha256": "0d473ad72b0101a09508ad66db6100ec9461a6e110f8769e3f3b351bc6b86fdc"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "impulseMatrix",
+      "code_sha256": "fc6183f60f03decac9b20d341f629e72be3ba6febac4387f76c902130c508756"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "slowMatrix",
+      "code_sha256": "4e0bb16f3b5c7b6c1aced7417d0dbab8ca882c12d7f7517d82e8666b1d1c78eb"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "fastMatrix",
+      "code_sha256": "0d473ad72b0101a09508ad66db6100ec9461a6e110f8769e3f3b351bc6b86fdc"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "impulseMatrix",
+      "code_sha256": "64842efb9c63fea33a0ec905f5f73ca3e9eaddf19da2d68f650e7ddaa93372d3"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "slowMatrix",
+      "code_sha256": "4e0bb16f3b5c7b6c1aced7417d0dbab8ca882c12d7f7517d82e8666b1d1c78eb"
+    }
+  ],
+  "paste_plus_pdf_bytes": 76297,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4113,
+      "sha256": "aff6f4b4dbe67a99cee98ed26e765fa4c0622ff7efdc118873726755db1a426f"
+    },
+    "BATCH05b_PAGES.pdf": {
+      "bytes": 72184,
+      "sha256": "1c1c6f965a032b9193dd063dc92d67e2cec57e65e31b2c7b6024023c36f9e77f"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 78845
+}

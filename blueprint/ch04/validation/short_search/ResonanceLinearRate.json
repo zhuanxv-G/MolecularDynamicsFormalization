@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/ResonanceLinearRate-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/ResonanceLinearRate-route1.log",
+    "source_sha256": "b62a622e1185c08af1960c1398e0a391d2663871b497ddd9062db05115ac276d",
+    "log_sha256": "9d87e2ff5237f6f638bd6840d2d83d70ae6f5e23a40d24307f2a91fb22fb21b8"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/ResonanceLinearRate-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/ResonanceLinearRate-route2.log",
+    "source_sha256": "177340d726c1d67fba01ee54d79c9d50c3c3d1fa8b5d6d0438131e154c5bbb27",
+    "log_sha256": "f907f2ff0b086fc7f23c7b262ad64cdfc0e9c7fc4ce9b528a7912b74878ffa89"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro Ω hΩ z hz\n  let c : ℝ := (Real.pi/Ω)*z 0\n  let w : ℕ → Fin 2 → ℝ := fun k => ![z 0/(k : ℝ),z 1/(k : ℝ)-c]\n  have ht : Tendsto w atTop (𝓝 (![0,-c] : Fin 2 → ℝ)) := by\n    apply tendsto_pi_nhds.mpr\n    intro i\n    fin_cases i\n    · simpa [w] using tendsto_const_div_atTop_nhds_zero_nat (z 0 : ℝ)\n    · simpa [w] using (tendsto_const_div_atTop_nhds_zero_nat (z 1 : ℝ)).sub_const c\n  have hn : ‖(![0,-c] : Fin 2 → ℝ)‖=|c| := by\n    apply le_antisymm\n    · apply (pi_norm_le_iff_of_nonneg (abs_nonneg c)).mpr\n      intro i\n      fin_cases i <;> simp\n    · simpa using (norm_le_pi_norm (![0,-c] : Fin 2 → ℝ) 1)\n  have he : (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖/(k : ℝ))\n      =ᶠ[atTop] fun k => ‖w k‖ := by\n    filter_upwards [eventually_gt_atTop (0 : ℕ)] with k hk\n    have hk0 : (k : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hk)\n    have hp := resonancePower Ω hΩ k\n    have hv : (!![1,0; -(k : ℝ)*(Real.pi/Ω),1] : Matrix (Fin 2) (Fin 2) ℝ) *ᵥ z\n        = (k : ℝ) • w k := by\n      ext i\n      fin_cases i <;> simp [Matrix.mulVec,dotProduct,Fin.sum_univ_two,Pi.smul_apply,smul_eq_mul,w,c] <;> field_simp [hk0] <;> ring\n    rw [hp,Matrix.smul_mulVec,hv,norm_smul,norm_smul]\n    simp [Real.norm_eq_abs,abs_pow,abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))),hk0]\n  simpa only [hn,c] using (ht.norm.congr' he.symm)\n",
+    "source": "blueprint/ch04/validation/short_search/ResonanceLinearRate-route3.lean",
+    "log": "blueprint/ch04/validation/short_search/ResonanceLinearRate-route3.log",
+    "source_sha256": "82dbcf2e093d7ea282a2dd56ceebe5474cc51300554cba811a44cef92460fd87",
+    "log_sha256": "f034cd91619e7595fa55e4bb33ddd7f9e238edcf1b48b3d6ea83181639e8cecb"
+  }
+]

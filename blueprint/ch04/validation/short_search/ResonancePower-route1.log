@@ -1,0 +1,16 @@
+blueprint\ch04\validation\short_search\ResonancePower-route1.lean:26:46: warning: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mul_apply, Fin.sum_univ_two, smul_eq_mul, Nat.cast_add, Nat.cast_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\ResonancePower-route1.lean:17:192: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch04\validation\short_search\ResonancePower-route1.lean:17:192: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch04\validation\short_search\ResonancePower-route1.lean:26:99: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

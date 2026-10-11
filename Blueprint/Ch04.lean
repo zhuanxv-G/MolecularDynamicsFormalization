@@ -393,4 +393,177 @@ theorem midpointElimination :
       simp [MolecularDynamics.Chapter04Review.invMass]
       ring
 
+/-- source_id: MD-4.2.1-SplitHamiltonian · definition · §4.2.1 · 印刷p.145 / PDFp.167 -/
+def splitHamiltonian {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (z : MolecularDynamics.Chapter04Review.Z n) : ℝ :=
+  MolecularDynamics.Chapter04Review.dot z.2 (MolecularDynamics.Chapter04Review.invMass m z.2)/2+US z.1+UF z.1
+
+/-- source_id: MD-4.2.1-FastVerlet · definition · §4.2.1 · 印刷p.145 / PDFp.167 -/
+def fastVerlet {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n :=
+  Chapter02Review.verlet m (fun q => -MolecularDynamics.Chapter04Review.grad UF q) h
+
+/-- source_id: MD-4.2.1-RESPA · (4.2) · §4.2.1 · 印刷p.145 / PDFp.167
+[EXTRA] r为正自然数，实际r次函数迭代；不把形式算子等式当实际ODE流。 -/
+def respa {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (r : ℕ) (h : ℝ) (z : MolecularDynamics.Chapter04Review.Z n) : MolecularDynamics.Chapter04Review.Z n :=
+  MolecularDynamics.Chapter04Review.kick US (h/2) ((MolecularDynamics.Chapter04Review.fastVerlet m UF (h/r))^[r] (MolecularDynamics.Chapter04Review.kick US (h/2) z))
+
+/-- source_id: MD-4.2.1-RESPAStructure · unnumbered_claim · §4.2.1 · 印刷p.145 / PDFp.167
+[EXTRA] [EXTRA]本段Reversible名称及p149明确辛性合并成实际保结构声明：正质量、US/UF C²、r>0。 -/
+theorem respaStructure :
+  ∀ n (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) r h,
+    (∀ i, 0 < m i) → ContDiff ℝ 2 US → ContDiff ℝ 2 UF → 0 < r →
+    MolecularDynamics.Chapter04Review.symplecticMap (MolecularDynamics.Chapter04Review.respa m US UF r h) ∧ ∀ z, MolecularDynamics.Chapter04Review.respa m US UF r (-h) (MolecularDynamics.Chapter04Review.respa m US UF r h z)=z := by
+  sorry
+
+/-- source_id: MD-4.2.1-SlowMatrix · definition · §4.2.1 · 印刷p.146 / PDFp.168 -/
+def slowMatrix (h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![1,0; -h,1]
+
+/-- source_id: MD-4.2.1-FastMatrix · definition · §4.2.1 · 印刷p.146 / PDFp.168
+[EXTRA] Ω>0为模型频率；它是精确快振子旋转矩阵，非单个Verlet矩阵。 -/
+def fastMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![Real.cos (Ω*h),Real.sin (Ω*h)/Ω; -Ω*Real.sin (Ω*h),Real.cos (Ω*h)]
+
+/-- source_id: MD-4.2.1-ImpulseMatrix · definition · §4.2.1 · 印刷p.146 / PDFp.168 -/
+def impulseMatrix (Ω h : ℝ) := MolecularDynamics.Chapter04Review.slowMatrix (h/2) * MolecularDynamics.Chapter04Review.fastMatrix Ω h * MolecularDynamics.Chapter04Review.slowMatrix (h/2)
+
+/-- source_id: MD-4.2.1-ImpulseDet · unnumbered_claim · §4.2.1 · 印刷p.146 / PDFp.168
+[EXTRA] Ω≠0保证所写Fh分母资格；真实S,F,W三个det=1。 -/
+theorem impulseDet :
+  ∀ Ω h : ℝ, Ω ≠ 0 →
+  (MolecularDynamics.Chapter04Review.slowMatrix h).det=1 ∧ (MolecularDynamics.Chapter04Review.fastMatrix Ω h).det=1 ∧ (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).det=1 := by
+  intro Ω h hΩ
+  simp only [MolecularDynamics.Chapter04Review.impulseMatrix, Matrix.det_mul]
+  have hs : (MolecularDynamics.Chapter04Review.slowMatrix h).det=1 := by
+    simp [MolecularDynamics.Chapter04Review.slowMatrix, Matrix.det_fin_two]
+  have hs2 : (MolecularDynamics.Chapter04Review.slowMatrix (h/2)).det=1 := by
+    simp [MolecularDynamics.Chapter04Review.slowMatrix, Matrix.det_fin_two]
+  have hf : (MolecularDynamics.Chapter04Review.fastMatrix Ω h).det=1 := by
+    simp [MolecularDynamics.Chapter04Review.fastMatrix, Matrix.det_fin_two]
+    field_simp
+    nlinarith [Real.sin_sq_add_cos_sq (Ω*h)]
+  exact ⟨hs,hf,by rw [hs2,hf]; norm_num⟩
+
+/-- source_id: MD-4.2.1-ImpulseTrace · unnumbered_claim · §4.2.1 · 印刷p.146 / PDFp.168
+[EXTRA] Ω≠0；本条完整矩阵trace恒等式，特征值与trace关系需有限谱桥接。 -/
+theorem impulseTrace :
+  ∀ Ω h : ℝ, Ω ≠ 0 →
+  (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).trace=2*Real.cos (h*Ω)-(h/Ω)*Real.sin (h*Ω) := by
+  intro Ω h hΩ
+  simp [MolecularDynamics.Chapter04Review.impulseMatrix, MolecularDynamics.Chapter04Review.slowMatrix,
+    MolecularDynamics.Chapter04Review.fastMatrix, Matrix.trace, Matrix.mul_apply, Fin.sum_univ_two]
+  rw [mul_comm h Ω]
+  ring
+
+/-- source_id: MD-4.2.1-ResonancePower · unnumbered_claim · §4.2.1 · 印刷p.146 / PDFp.168
+[EXTRA] Ω>0；所有自然数k，不止图中有限迭代。 -/
+theorem resonancePower :
+  ∀ Ω : ℝ, 0 < Ω → ∀ k : ℕ,
+  (MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k=(-1 : ℝ)^k • !![1,0; -(k : ℝ)*(Real.pi/Ω),1] := by
+  intro Ω hΩ k
+  have hne : Ω ≠ 0 := ne_of_gt hΩ
+  have ha : Ω*(Real.pi/Ω)=Real.pi := by field_simp
+  have hm : MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω)= -!![1,0; -(Real.pi/Ω),1] := by
+    ext i j
+    fin_cases i <;> fin_cases j <;>
+      simp [MolecularDynamics.Chapter04Review.impulseMatrix,MolecularDynamics.Chapter04Review.slowMatrix,MolecularDynamics.Chapter04Review.fastMatrix,Matrix.mul_apply,Fin.sum_univ_two,ha] <;> ring
+  induction k with
+  | zero =>
+    ext i j
+    fin_cases i <;> fin_cases j <;> norm_num
+  | succ k hk =>
+    rw [pow_succ,hk,hm,pow_succ]
+    ext i j
+    fin_cases i <;> fin_cases j <;>
+      simp [Matrix.mul_apply,Fin.sum_univ_two,Pi.smul_apply,smul_eq_mul,Nat.cast_add,Nat.cast_one] <;> ring
+
+/-- source_id: MD-4.2.1-ResonanceTaylor · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
+[EXTRA] [EXTRA]原省略高阶项以真实一致O((h−π/Ω)²)余项保留，不将截断线性式当精确等式。 -/
+theorem resonanceTaylor :
+  ∀ Ω : ℝ, 0 < Ω → ∃ C > 0, ∃ δ > 0,
+  ∀ h : ℝ, |h-Real.pi/Ω| < δ →
+    |(MolecularDynamics.Chapter04Review.impulseMatrix Ω h).trace+2-(Real.pi/Ω)*(h-Real.pi/Ω)| ≤ C*(h-Real.pi/Ω)^2 := by
+  sorry
+
+/-- source_id: MD-4.2.1-ResonanceInstability · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
+[EXTRA] Ω>0；存在左邻域，每个h有真实复谱模>1。 -/
+theorem resonanceInstability :
+  ∀ Ω : ℝ, 0 < Ω → ∃ δ > 0,
+  ∀ h ∈ Ioo (Real.pi/Ω-δ) (Real.pi/Ω), MolecularDynamics.Chapter04Review.eigenvalueOutside (MolecularDynamics.Chapter04Review.impulseMatrix Ω h) := by
+  sorry
+
+/-- source_id: MD-4.2.1-ResonanceEigenPrinted · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
+[ERRATUM?] 根展开首项疑少sqrt(2)因子；待网站/导师裁定。 -/
+theorem resonanceEigenPrinted :
+  ∀ Ω : ℝ, 0 < Ω → ∃ C > 0, ∃ δ > 0,
+  ∀ h ∈ Ioo (Real.pi/Ω-δ) (Real.pi/Ω), ∃ rho : ℝ,
+    (rho • (1 : Matrix (Fin 2) (Fin 2) ℝ)-MolecularDynamics.Chapter04Review.impulseMatrix Ω h).det=0 ∧
+    |rho+1-Real.sqrt (|(Real.pi/Ω)*(h-Real.pi/Ω)|/2)| ≤ C*|h-Real.pi/Ω| := by
+  sorry
+
+/-- source_id: MD-4.2.2-MollifiedAverage · definition · §4.2.2 · 印刷p.149 / PDFp.171
+[EXTRA] [EXTRA]原未指定快积分器，以真实fastVerlet离散位置作为θi的具体实例；K+1项有限加权和，不假定权重任意都有效滤波。 -/
+def mollifiedAverage {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (K : ℕ) (w : ℕ → ℝ) (δ : ℝ) (q : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=
+  (1/(K+1 : ℝ)) • ∑ i ∈ Finset.range (K+1), w i • ((MolecularDynamics.Chapter04Review.fastVerlet m UF δ)^[i] (q,0)).1
+
+/-- source_id: MD-4.2.2-MollifiedPotential · definition · §4.2.2 · 印刷p.149 / PDFp.171 -/
+def mollifiedPotential {n : ℕ} (US : MolecularDynamics.Chapter04Review.Q n → ℝ) (A : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) := US ∘ A
+
+/-- source_id: MD-4.2.1-ResonanceLinearRate · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
+[EXTRA] [EXTRA]选实际Pi最大范数给出精确正线性率；q0≠0，否则此增长结论不成立。 -/
+theorem resonanceLinearRate : ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 0 ≠ 0 →
+  Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖/(k : ℝ))
+    atTop (𝓝 (|(Real.pi/Ω)*z 0|)) := by
+  intro Ω hΩ z hz
+  let c : ℝ := (Real.pi/Ω)*z 0
+  let w : ℕ → Fin 2 → ℝ := fun k => ![z 0/(k : ℝ),z 1/(k : ℝ)-c]
+  have ht : Tendsto w atTop (𝓝 (![0,-c] : Fin 2 → ℝ)) := by
+    apply tendsto_pi_nhds.mpr
+    intro i
+    fin_cases i
+    · simpa [w] using tendsto_const_div_atTop_nhds_zero_nat (z 0 : ℝ)
+    · simpa [w] using (tendsto_const_div_atTop_nhds_zero_nat (z 1 : ℝ)).sub_const c
+  have hn : ‖(![0,-c] : Fin 2 → ℝ)‖=|c| := by
+    apply le_antisymm
+    · apply (pi_norm_le_iff_of_nonneg (abs_nonneg c)).mpr
+      intro i
+      fin_cases i <;> simp
+    · simpa using (norm_le_pi_norm (![0,-c] : Fin 2 → ℝ) 1)
+  have he : (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖/(k : ℝ))
+      =ᶠ[atTop] fun k => ‖w k‖ := by
+    filter_upwards [eventually_gt_atTop (0 : ℕ)] with k hk
+    have hk0 : (k : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hk)
+    have hp := resonancePower Ω hΩ k
+    have hv : (!![1,0; -(k : ℝ)*(Real.pi/Ω),1] : Matrix (Fin 2) (Fin 2) ℝ) *ᵥ z
+        = (k : ℝ) • w k := by
+      ext i
+      fin_cases i <;> simp [Matrix.mulVec,dotProduct,Fin.sum_univ_two,Pi.smul_apply,smul_eq_mul,w,c] <;> field_simp [hk0] <;> ring
+    rw [hp,Matrix.smul_mulVec,hv,norm_smul,norm_smul]
+    simp [Real.norm_eq_abs,abs_pow,abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))),hk0]
+  simpa only [hn,c] using (ht.norm.congr' he.symm)
+
+
+/-- source_id: MD-4.2.1-ResonanceGrowth · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
+[EXTRA] 原泛称增长补q0≠0；q0=0时纯动量轨道模不增长。 -/
+theorem resonanceGrowth :
+  ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 0 ≠ 0 →
+  Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖) atTop atTop := by
+  intro Ω hΩ z hz
+  have hc : 0 < |(Real.pi/Ω)*z 0| := abs_pos.mpr (mul_ne_zero (div_ne_zero Real.pi_ne_zero (ne_of_gt hΩ)) hz)
+  have hr := resonanceLinearRate Ω hΩ z hz
+  have ht := hr.pos_mul_atTop hc (tendsto_natCast_atTop_atTop (R := ℝ))
+  apply ht.congr'
+  filter_upwards [eventually_gt_atTop (0 : ℕ)] with k hk
+  have hk0 : (k : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hk)
+  exact div_mul_cancel₀ _ hk0
+
+
+/-- source_id: MD-4.2.2-MollifiedStructure · unnumbered_claim · §4.2.2 · 印刷p.149 / PDFp.171
+[EXTRA] 正质量、US/UF/A C²、r>0；实际Fréchet链式法则及RESPA的Jacobian辛性，不假定保结构结论。 -/
+theorem mollifiedStructure :
+  ∀ n (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (A : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) r h,
+    (∀ i, 0 < m i) → ContDiff ℝ 2 US → ContDiff ℝ 2 UF → ContDiff ℝ 2 A → 0 < r →
+    (∀ q v, (fderiv ℝ (MolecularDynamics.Chapter04Review.mollifiedPotential US A) q) v=(fderiv ℝ US (A q)) ((fderiv ℝ A q) v)) ∧
+    MolecularDynamics.Chapter04Review.symplecticMap (MolecularDynamics.Chapter04Review.respa m (MolecularDynamics.Chapter04Review.mollifiedPotential US A) UF r h) := by
+  sorry
+
 end MD.Ch04

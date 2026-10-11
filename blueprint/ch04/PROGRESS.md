@@ -2,7 +2,7 @@
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前24条；旧清单映射18/100；本地PASS 19；网站返回0。
+当前42条；旧清单映射31/100；本地PASS 36；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -30,6 +30,24 @@
 | MD-4.1-ModifiedFrequencyLimit | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-4.1-MechanicalMidpoint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-4.1-MidpointElimination | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.2.1-SplitHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.2.1-FastVerlet | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.2.1-RESPA | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.2.1-RESPAStructure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；需桥接坐标kick/drift实际辛性、复合与迭代反步；不重新建立辛流理论。 |
+| MD-4.2.1-SlowMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.2.1-FastMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.2.1-ImpulseMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.2.1-ImpulseDet | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.2.1-ImpulseTrace | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.2.1-ResonancePower | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.2.1-ResonanceTaylor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待真实二阶Taylor余项及三角导数在共振点的桥接。 |
+| MD-4.2.1-ResonanceInstability | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺trace<-2的局部Taylor判定与真实复特征向量桥接；保留实际谱而非假设谱。 |
+| MD-4.2.1-ResonanceEigenPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；字面签名疑误不证明；正确二次根展开也未声称已证。 |
+| MD-4.2.2-MollifiedAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.2.2-MollifiedPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.2.1-ResonanceLinearRate | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.2.1-ResonanceGrowth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.2.2-MollifiedStructure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；正式库无RESPA实际Jacobian辛性/反步定理；需实际链式法则与有限迭代复合桥接，保留sorry，不另建辛流理论。 |
 
 ## 旧100条完整映射
 
@@ -53,19 +71,19 @@
 | CH04-016 | MD-4.1-ModifiedFrequencyLimit |
 | CH04-017 | MD-4.1-MechanicalMidpoint |
 | CH04-018 | MD-4.1-MidpointElimination |
-| CH04-019 | PENDING：所属节尚未处理 |
-| CH04-020 | PENDING：所属节尚未处理 |
-| CH04-021 | PENDING：所属节尚未处理 |
-| CH04-022 | PENDING：所属节尚未处理 |
-| CH04-023 | PENDING：所属节尚未处理 |
-| CH04-024 | PENDING：所属节尚未处理 |
-| CH04-025 | PENDING：所属节尚未处理 |
-| CH04-026 | PENDING：所属节尚未处理 |
-| CH04-027 | PENDING：所属节尚未处理 |
-| CH04-028 | PENDING：所属节尚未处理 |
-| CH04-029 | PENDING：所属节尚未处理 |
-| CH04-030 | PENDING：所属节尚未处理 |
-| CH04-031 | PENDING：所属节尚未处理 |
+| CH04-019 | MD-4.2.1-SplitHamiltonian |
+| CH04-020 | MD-4.2.1-FastVerlet |
+| CH04-021 | MD-4.2.1-RESPA |
+| CH04-022 | MD-4.2.1-RESPAStructure |
+| CH04-023 | MD-4.2.1-ImpulseMatrix |
+| CH04-024 | MD-4.2.1-ImpulseDet |
+| CH04-025 | MD-4.2.1-ImpulseTrace |
+| CH04-026 | MD-4.2.1-ResonancePower |
+| CH04-027 | MD-4.2.1-ResonanceGrowth |
+| CH04-028 | MD-4.2.1-ResonanceTaylor |
+| CH04-029 | MD-4.2.1-ResonanceInstability |
+| CH04-030 | MD-4.2.2-MollifiedPotential |
+| CH04-031 | MD-4.2.2-MollifiedStructure |
 | CH04-032 | PENDING：所属节尚未处理 |
 | CH04-033 | PENDING：所属节尚未处理 |
 | CH04-034 | PENDING：所属节尚未处理 |
@@ -145,6 +163,11 @@
 - MD-4-SymplecticEulerStability：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 ≤2端点有单位圆谱但通常Jordan线性增长；幂有界不能包含端点。
 - MD-4.1-PrintedImplicitRelation：字面是梯形法。非线性实际中点f((z+Z)/2)另列，不静默改原公式；线性测试时二者相同。 p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。
 - MD-4.1-PrintedModifiedFrequency：印刷复log表达式原样保留，不用实atan定义替换原式。 原书未指定复log分支；与连续实相位的桥接须审校。
+- MD-4.2.1-RESPAStructure：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 需桥接坐标kick/drift实际辛性、复合与迭代反步；不重新建立辛流理论。
+- MD-4.2.1-ResonanceTaylor：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待真实二阶Taylor余项及三角导数在共振点的桥接。
+- MD-4.2.1-ResonanceInstability：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺trace<-2的局部Taylor判定与真实复特征向量桥接；保留实际谱而非假设谱。
+- MD-4.2.1-ResonanceEigenPrinted：det=1、trace=−2+ε的二次根近−1±sqrt(|ε|)+O(ε)，印刷sqrt(|ε|/2)系数疑误；保留字面实根误差界，未更正成PASS。 字面签名疑误不证明；正确二次根展开也未声称已证。根展开首项疑少sqrt(2)因子；待网站/导师裁定。
+- MD-4.2.2-MollifiedStructure：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 正式库无RESPA实际Jacobian辛性/反步定理；需实际链式法则与有限迭代复合桥接，保留sorry，不另建辛流理论。
 
 ## 定性段落排除
 

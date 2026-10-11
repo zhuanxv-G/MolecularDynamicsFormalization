@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro Ω hΩ z hz\n  have hc : 0 < |(Real.pi/Ω)*z 0| := abs_pos.mpr (mul_ne_zero (div_ne_zero Real.pi_ne_zero (ne_of_gt hΩ)) hz)\n  have hr := resonanceLinearRate Ω hΩ z hz\n  have ht := hr.pos_mul_atTop hc (tendsto_natCast_atTop_atTop (R := ℝ))\n  apply ht.congr'\n  filter_upwards [eventually_gt_atTop (0 : ℕ)] with k hk\n  have hk0 : (k : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hk)\n  exact div_mul_cancel₀ _ hk0\n",
+    "source": "blueprint/ch04/validation/short_search/ResonanceGrowth-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/ResonanceGrowth-route1.log",
+    "source_sha256": "0abde805d63f634ad7d416e7a55dcf035477a0fed1c0c356b8c7c463286181ad",
+    "log_sha256": "17d8fe5162d6bbdd54721dad3d972cd1ea69c286531ef81f6b5efbfa6577ab5a"
+  }
+]

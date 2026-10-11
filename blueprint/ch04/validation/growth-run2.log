@@ -1,0 +1,55 @@
+ResonanceLinearRate 2 1
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:26:46: warning: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mul_apply, Fin.sum_univ_two, smul_eq_mul, Nat.cast_add, Nat.cast_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:17:192: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:17:192: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:26:99: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:53:42: error(lean.unknownIdentifier): Unknown constant `Matrix.dotProduct`
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:53:42: error(lean.unknownIdentifier): Unknown constant `Matrix.dotProduct`
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:53:133: error: `ring_nf` made no progress on the goal
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:53:60: warning: This simp argument is unused:
+  Fin.sum_univ_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, Matrix.dotProduct, Pi.smul_apply, smul_eq_mul, w, c]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:55:10: warning: This simp argument is unused:
+  Real.norm_eq_abs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [abs_pow, abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))), hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:55:27: warning: This simp argument is unused:
+  abs_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))), hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\ResonanceLinearRate-route2.lean:55:35: warning: This simp argument is unused:
+  abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ)))
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_pow, hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+

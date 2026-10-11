@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro Ω hΩ k\n  have hne : Ω ≠ 0 := ne_of_gt hΩ\n  have ha : Ω*(Real.pi/Ω)=Real.pi := by field_simp\n  have hm : MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω)= -!![1,0; -(Real.pi/Ω),1] := by\n    ext i j\n    fin_cases i <;> fin_cases j <;>\n      simp [MolecularDynamics.Chapter04Review.impulseMatrix,MolecularDynamics.Chapter04Review.slowMatrix,MolecularDynamics.Chapter04Review.fastMatrix,Matrix.mul_apply,Fin.sum_univ_two,ha] <;> ring\n  induction k with\n  | zero =>\n    ext i j\n    fin_cases i <;> fin_cases j <;> norm_num\n  | succ k hk =>\n    rw [pow_succ,hk,hm,pow_succ]\n    ext i j\n    fin_cases i <;> fin_cases j <;>\n      simp [Matrix.mul_apply,Fin.sum_univ_two,Pi.smul_apply,smul_eq_mul,Nat.cast_add,Nat.cast_one] <;> ring",
+    "source": "blueprint/ch04/validation/short_search/ResonancePower-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/ResonancePower-route1.log",
+    "source_sha256": "397a66394c912aa5a9c1d1133cea674c7fb2a39e9608e672595ecffdad6830e7",
+    "log_sha256": "5186f9d104e8a9b19aadaa90c48ec9bea0b431c325cac7ba7508e1e90c854f11"
+  }
+]
