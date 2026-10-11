@@ -2,7 +2,7 @@
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前100条；旧清单映射71/100；本地PASS 87；网站返回0。
+当前106条；旧清单映射76/100；本地PASS 93；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -106,6 +106,12 @@
 | MD-4.3.5-SHAKERATTLEEquivalence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺真实约束求解分支唯一性与跨步乘子缩放桥接；不建立隐式求解理论。 |
 | MD-4.3.5-SHAKEElimination | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-4.3.5-SHAKEPositionOrder | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际约束多步方法一致误差与离散分支存在理论；不建设大型收敛理论。 |
+| MD-4.3.5.1-AdjointEuler | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.5.1-ConstrainedComposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际Euler/adjoint分支的短组合辛性桥接；不假设分支辛性。 |
+| MD-4.3.5.1-ConstrainedCompositionOrder | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺真实约束分支二阶Taylor与局部误差理论；不建设大型理论。 |
+| MD-4.3.5.1-MomentumProjector | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.5.1-ConstrainedPotentialFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.3.5.1-GeodesicRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 
 ## 旧100条完整映射
 
@@ -181,11 +187,11 @@
 | CH04-068 | MD-4.3.5-RATTLESymplectic |
 | CH04-069 | MD-4.3.5-StaggeredConstraint |
 | CH04-070 | MD-4.3.5-SHAKERATTLEEquivalence |
-| CH04-071 | PENDING：所属节尚未处理 |
-| CH04-072 | PENDING：所属节尚未处理 |
-| CH04-073 | PENDING：所属节尚未处理 |
-| CH04-074 | PENDING：所属节尚未处理 |
-| CH04-075 | PENDING：所属节尚未处理 |
+| CH04-071 | MD-4.3.5.1-AdjointEuler |
+| CH04-072 | MD-4.3.5.1-ConstrainedCompositionOrder |
+| CH04-073 | MD-4.3.5.1-MomentumProjector |
+| CH04-074 | MD-4.3.5.1-ConstrainedPotentialFlow |
+| CH04-075 | MD-4.3.5.1-GeodesicRelation |
 | CH04-076 | PENDING：所属节尚未处理 |
 | CH04-077 | PENDING：所属节尚未处理 |
 | CH04-078 | PENDING：所属节尚未处理 |
@@ -244,6 +250,8 @@
 - MD-4.3.5-StaggeredConstraint：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 p162的平均乘子需与p161(4.33)无h/2缩放一致；未将未经核定平均关系计为证明。
 - MD-4.3.5-SHAKERATTLEEquivalence：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实约束求解分支唯一性与跨步乘子缩放桥接；不建立隐式求解理论。展示初始p−1/2从(4.29)消元的反力符号需核；原句保持。
 - MD-4.3.5-SHAKEPositionOrder：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际约束多步方法一致误差与离散分支存在理论；不建设大型收敛理论。
+- MD-4.3.5.1-ConstrainedComposition：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际Euler/adjoint分支的短组合辛性桥接；不假设分支辛性。
+- MD-4.3.5.1-ConstrainedCompositionOrder：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实约束分支二阶Taylor与局部误差理论；不建设大型理论。
 
 ## 定性段落排除
 

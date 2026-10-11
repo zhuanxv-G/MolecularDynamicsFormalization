@@ -1,0 +1,15 @@
+blueprint\ch04\validation\short_search\ConstrainedPotentialFlow-route1.lean:17:111: error: unsolved goals
+n l : ℕ
+m : Fin n → ℝ
+U : Q n → ℝ
+g : Fin l → Q n → ℝ
+z : Z n
+hdet : (textbookConstraintGram m g z.1).det ≠ 0
+hg : ∀ (j : Fin l), Differentiable ℝ (g j)
+t : ℝ
+hq : z.1 ∈ constraintSet g
+hp : textbookConstraintJacobian g z.1 *ᵥ invMass m z.2 = 0
+u : Fin n → ℝ := momentumProjector m g z.1 *ᵥ grad U z.1
+v : Fin n → ℝ
+i : Fin n
+⊢ (m i)⁻¹ * v i = ((Matrix.diagonal fun i => (m i)⁻¹) *ᵥ v) i

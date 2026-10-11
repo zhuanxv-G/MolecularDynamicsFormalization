@@ -1153,4 +1153,86 @@ theorem shakePositionOrder :
       ∀ k ≤ N, ‖qn k-q (k*h)‖ ≤ C*h^2 := by
   sorry
 
+/-- source_id: MD-4.3.5.1-AdjointEuler · definition · §4.3.5.1 · 印刷p.163 / PDFp.185 -/
+def adjointEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (half : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  half=z.2-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m half ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=half+h • F out.1-h • ((textbookConstraintJacobian g out.1)ᵀ *ᵥ μ) ∧
+  out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
+
+/-- source_id: MD-4.3.5.1-ConstrainedComposition · unnumbered_claim · §4.3.5.1 · 印刷p.163 / PDFp.185
+[EXTRA] 给定真实C¹半步分支、C²势与约束，前后位置约束；本条完整拉回形式结论，二阶精度另条。 -/
+theorem constrainedComposition :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (E A : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (pE pA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoA μA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l),
+    (∀ j, ContDiff ℝ 3 (g j)) → ContDiff ℝ 3 U → (∀ i, 0 < m i) →
+    (∀ h, Differentiable ℝ (E h) ∧ Differentiable ℝ (A h) ∧
+      Differentiable ℝ (pE h) ∧ Differentiable ℝ (pA h) ∧ Differentiable ℝ (rhoE h) ∧
+      Differentiable ℝ (μE h) ∧ Differentiable ℝ (rhoA h) ∧ Differentiable ℝ (μA h)) →
+    (∀ h z, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+      MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h z) (pE h z) (rhoE h z) (μE h z) ∧
+      MolecularDynamics.Chapter04Review.adjointEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (A h z) (pA h z) (rhoA h z) (μA h z)) →
+    ∀ h, MolecularDynamics.Chapter04Review.restrictedSymplectic m g (A (h/2) ∘ E (h/2)) := by
+  sorry
+
+/-- source_id: MD-4.3.5.1-ConstrainedCompositionOrder · unnumbered_claim · §4.3.5.1 · 印刷p.163 / PDFp.185
+[EXTRA] 真实光滑隐式分支、正质量、C⁴势/约束和一致时间区间；实际局部O(h³)精度。 -/
+theorem constrainedCompositionOrder :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (E A : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (pE pA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rhoE muE rhoA muA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l),
+    (∀ i, 0 < m i) → ContDiff ℝ 4 U → (∀ j, ContDiff ℝ 4 (g j)) →
+    ContDiff ℝ 3 (Function.uncurry E) → ContDiff ℝ 3 (Function.uncurry A) →
+    (∀ z, E 0 z=z ∧ A 0 z=z ∧ muE 0 z=0) →
+    (∀ h z, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+      MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h z) (pE h z) (rhoE h z) (muE h z) ∧
+      MolecularDynamics.Chapter04Review.adjointEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (A h z) (pA h z) (rhoA h z) (muA h z)) →
+    ∀ z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g, (textbookConstraintGram m g z.1).det ≠ 0 →
+    ∀ Φ : ℝ → MolecularDynamics.Chapter04Review.Z n, ContDiff ℝ 3 Φ → Φ 0=z →
+      (∃ d > 0, ∀ t ∈ Ioo (-d) d, HasDerivAt Φ (textbookConstrainedPhaseVectorField m g U (Φ t)) t) →
+      ∃ C > 0, ∃ d > 0, ∀ h ∈ Ioo 0 d, ‖A (h/2) (E (h/2) z)-Φ h‖ ≤ C*h^3 := by
+  sorry
+
+/-- source_id: MD-4.3.5.1-MomentumProjector · definition · §4.3.5.1 · 印刷p.163 / PDFp.185 -/
+def momentumProjector {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q : MolecularDynamics.Chapter04Review.Q n) :=
+  (1 : Matrix (Fin n) (Fin n) ℝ)-(textbookConstraintJacobian g q)ᵀ *
+    (textbookConstraintGram m g q)⁻¹ * textbookConstraintJacobian g q * textbookInverseMassMatrix m
+
+/-- source_id: MD-4.3.5.1-ConstrainedPotentialFlow · unnumbered_claim · §4.3.5.1 · 印刷p.163 / PDFp.185
+[EXTRA] [EXTRA]签名采用真实Gram行列式非零、可微约束及初始余切约束；正质量和独立约束是通常物理资格的充分条件。只证势能子流的固定位置与投影动量ODE。 -/
+theorem constrainedPotentialFlow :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (z : MolecularDynamics.Chapter04Review.Z n),
+    z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g → (textbookConstraintGram m g z.1).det ≠ 0 →
+    (∀ j, Differentiable ℝ (g j)) → ∀ t : ℝ,
+    let P := fun s : ℝ => z.2-s • (MolecularDynamics.Chapter04Review.momentumProjector m g z.1 *ᵥ MolecularDynamics.Chapter04Review.grad U z.1)
+    (z.1,P t) ∈ MolecularDynamics.Chapter04Review.cotangentSet m g ∧ HasDerivAt P (-MolecularDynamics.Chapter04Review.momentumProjector m g z.1 *ᵥ MolecularDynamics.Chapter04Review.grad U z.1) t := by
+  intro n l m U g z hz hdet hg t
+  rcases hz with ⟨hq,hp⟩
+  let u := MolecularDynamics.Chapter04Review.momentumProjector m g z.1 *ᵥ MolecularDynamics.Chapter04Review.grad U z.1
+  have hi : ∀ v : Fin n → ℝ, MolecularDynamics.Chapter04Review.invMass m v=textbookInverseMassMatrix m *ᵥ v := by
+    intro v
+    ext i
+    simp [MolecularDynamics.Chapter04Review.invMass,textbookInverseMassMatrix,Matrix.mulVec_diagonal]
+  have hproj : ∀ v : Fin n → ℝ, MolecularDynamics.Chapter04Review.momentumProjector m g z.1 *ᵥ v=textbookCotangentProjection m g z.1 v := by
+    intro v
+    simp only [MolecularDynamics.Chapter04Review.momentumProjector,Matrix.sub_mulVec,Matrix.one_mulVec,
+      textbookCotangentProjection,textbookCotangentMultiplier,Matrix.mulVec_mulVec,Matrix.mul_assoc]
+  have hu : textbookConstraintJacobian g z.1 *ᵥ (textbookInverseMassMatrix m *ᵥ u)=0 := by
+    dsimp [u]
+    rw [hproj]
+    exact textbookCotangentProjection_hiddenConstraint m g z.1 _ hdet
+  rw [hi] at hp
+  constructor
+  · change z.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+      textbookConstraintJacobian g z.1 *ᵥ MolecularDynamics.Chapter04Review.invMass m (z.2-t • u)=0
+    refine ⟨hq,?_⟩
+    rw [hi,Matrix.mulVec_sub,Matrix.mulVec_smul,Matrix.mulVec_sub,Matrix.mulVec_smul,hp,hu]
+    simp
+  · simpa [u,Matrix.neg_mulVec] using (((hasDerivAt_id t).smul_const u).const_sub z.2)
+
+/-- source_id: MD-4.3.5.1-GeodesicRelation · definition · §4.3.5.1 · 印刷p.164 / PDFp.186 -/
+def geodesicRelation {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) : Prop :=
+  MolecularDynamics.Chapter04Review.constrainedSolution m (fun _ => 0) g q p rho I
+
 end MD.Ch04

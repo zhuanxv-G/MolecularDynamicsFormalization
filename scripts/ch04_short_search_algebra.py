@@ -13,6 +13,49 @@ routes=json.loads(state.read_text(encoding='utf-8')) if state.exists() else []
 if any(x['exit_code']==0 for x in routes) or len(routes)>=3:print(key,'saved evidence reused');sys.exit()
 route=len(routes)+1
 proofs={
+'AngularInertia':'''intro N m δ Θ «ω» ho hdet
+  have ht : ∀ (A : MolecularDynamics.Chapter04Review.Mat3) (v w : V), dot (A *ᵥ v) w=dot v (Aᵀ *ᵥ w) := by
+    intro A v w
+    simp [dot,Matrix.mulVec,dotProduct,Fin.sum_univ_three]
+    ring
+  have hi : ∀ v : V, Θᵀ *ᵥ (Θ *ᵥ v)=v := by
+    intro v
+    rw [Matrix.mulVec_mulVec,ho,Matrix.one_mulVec]
+  have hn : ∀ v : V, dot (Θ *ᵥ v) (Θ *ᵥ v)=dot v v := by
+    intro v
+    rw [ht,hi]
+  have hc : ∀ u w : V, cross3 u (cross3 w u)=dot u u • w-dot u w • u := by
+    intro u w
+    ext i
+    fin_cases i <;> simp [cross3,dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul] <;> ring
+  have he : ∀ v y : V, MolecularDynamics.Chapter04Review.outer v *ᵥ y=dot v y • v := by
+    intro v y
+    ext i
+    simp [MolecularDynamics.Chapter04Review.outer,Matrix.mulVec,dotProduct,dot,Fin.sum_univ_three,Pi.smul_apply,smul_eq_mul]
+    ring
+  have hterm : ∀ v : V, Θᵀ *ᵥ cross3 (Θ *ᵥ v) (cross3 «ω» (Θ *ᵥ v))=
+      (dot v v • (1 : Mat3)-MolecularDynamics.Chapter04Review.outer v) *ᵥ (Θᵀ *ᵥ «ω») := by
+    intro v
+    rw [hc,Matrix.mulVec_sub,Matrix.mulVec_smul,Matrix.mulVec_smul,hn,ht,hi,
+      Matrix.sub_mulVec,Matrix.smul_mulVec,Matrix.one_mulVec,he]
+  simp only [MolecularDynamics.Chapter04Review.bodyMomentum,MolecularDynamics.Chapter04Review.angularMomentum,
+    MolecularDynamics.Chapter04Review.inertiaTensor,Matrix.mulVec_sum,Matrix.mulVec_smul,Matrix.sum_mulVec,Matrix.smul_mulVec]
+  apply Finset.sum_congr rfl
+  intro i hii
+  rw [hterm]''',
+'SecondMomentDiagonal':'''intro N m δ
+  let R := MolecularDynamics.Chapter04Review.secondMoment m δ
+  have hs : R.IsHermitian := by
+    change Rᴴ=R
+    ext i j
+    simp [R,MolecularDynamics.Chapter04Review.secondMoment,MolecularDynamics.Chapter04Review.outer,Matrix.conjTranspose_apply,mul_comm]
+  let O := hs.eigenvectorUnitary
+  refine ⟨(O : MolecularDynamics.Chapter04Review.Mat3),?_,?_⟩
+  · simpa [Matrix.star_eq_conjTranspose,Matrix.conjTranspose_eq_transpose_of_trivial] using Unitary.coe_star_mul_self O
+  · have he : (O : MolecularDynamics.Chapter04Review.Mat3)ᵀ*R*(O : MolecularDynamics.Chapter04Review.Mat3)=Matrix.diagonal hs.eigenvalues := by
+      simpa [O,Matrix.conjStarAlgAut_star_apply,Matrix.star_eq_conjTranspose,Matrix.conjTranspose_eq_transpose_of_trivial] using hs.conjStarAlgAut_star_eigenvectorUnitary
+    intro i j hij
+    simpa [Matrix.diagonal,hij] using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B i j) he''',
 'RotationSkew':'''intro Θ t d hd ho
   have hs : ∀ i j : Fin 3, ∑ k, (d i k*Θ t j k+Θ t i k*d j k)=0 := by
     intro i j
@@ -168,6 +211,8 @@ proofs={
 }
 candidate=proofs[key]
 if route==2:
+    if key=='ConstrainedPotentialFlow':
+        candidate=candidate.replace('textbookInverseMassMatrix]','textbookInverseMassMatrix,Matrix.mulVec_diagonal]')
     candidate=candidate.replace('Matrix.trace_sum','Matrix.trace_sum').replace('HasDerivAt.fun_sum','HasDerivAt.sum')
     candidate=candidate.replace('MolecularDynamics.Chapter04Review.reaction','textbookConstraintJacobian')
     if key=='SHAKEElimination':

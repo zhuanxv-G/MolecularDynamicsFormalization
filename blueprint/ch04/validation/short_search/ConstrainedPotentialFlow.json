@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/ConstrainedPotentialFlow-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/ConstrainedPotentialFlow-route1.log",
+    "source_sha256": "5d2723267ffe751938dc7ff2a89a8348c7019137ab50e247e3611549941a5f83",
+    "log_sha256": "35b7561eaf1785562b5f27da67784ec33d272b4d1018d2a32c4e2c8104c58760"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n l m U g z hz hdet hg t\n  rcases hz with ⟨hq,hp⟩\n  let u := MolecularDynamics.Chapter04Review.momentumProjector m g z.1 *ᵥ MolecularDynamics.Chapter04Review.grad U z.1\n  have hi : ∀ v : Fin n → ℝ, MolecularDynamics.Chapter04Review.invMass m v=textbookInverseMassMatrix m *ᵥ v := by\n    intro v\n    ext i\n    simp [MolecularDynamics.Chapter04Review.invMass,textbookInverseMassMatrix,Matrix.mulVec_diagonal]\n  have hproj : ∀ v : Fin n → ℝ, MolecularDynamics.Chapter04Review.momentumProjector m g z.1 *ᵥ v=textbookCotangentProjection m g z.1 v := by\n    intro v\n    simp only [MolecularDynamics.Chapter04Review.momentumProjector,Matrix.sub_mulVec,Matrix.one_mulVec,\n      textbookCotangentProjection,textbookCotangentMultiplier,Matrix.mulVec_mulVec,Matrix.mul_assoc]\n  have hu : textbookConstraintJacobian g z.1 *ᵥ (textbookInverseMassMatrix m *ᵥ u)=0 := by\n    dsimp [u]\n    rw [hproj]\n    exact textbookCotangentProjection_hiddenConstraint m g z.1 _ hdet\n  rw [hi] at hp\n  constructor\n  · change z.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧\n      textbookConstraintJacobian g z.1 *ᵥ MolecularDynamics.Chapter04Review.invMass m (z.2-t • u)=0\n    refine ⟨hq,?_⟩\n    rw [hi,Matrix.mulVec_sub,Matrix.mulVec_smul,Matrix.mulVec_sub,Matrix.mulVec_smul,hp,hu]\n    simp\n  · simpa [u,Matrix.neg_mulVec] using (((hasDerivAt_id t).smul_const u).const_sub z.2)",
+    "source": "blueprint/ch04/validation/short_search/ConstrainedPotentialFlow-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/ConstrainedPotentialFlow-route2.log",
+    "source_sha256": "f719b2cf6e5a8ec2a1be6f2ef1b101c62bfd341896dae9485e2d805cef42d2b8",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

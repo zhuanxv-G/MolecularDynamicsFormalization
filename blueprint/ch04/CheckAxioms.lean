@@ -100,3 +100,9 @@ import Blueprint.Ch04
 #print axioms MD.Ch04.shakeRattlePositions
 #print axioms MD.Ch04.shakeElimination
 #print axioms MD.Ch04.shakePositionOrder
+#print axioms MD.Ch04.adjointEulerRelation
+#print axioms MD.Ch04.constrainedComposition
+#print axioms MD.Ch04.constrainedCompositionOrder
+#print axioms MD.Ch04.momentumProjector
+#print axioms MD.Ch04.constrainedPotentialFlow
+#print axioms MD.Ch04.geodesicRelation

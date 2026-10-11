@@ -2,7 +2,7 @@
 import ast,sys,json,hashlib,subprocess,importlib,re
 from ch04_data import ROOT,BASE,RECORDS
 mods={'RotationTraceIdentity':'44b','RotationSkew':'44b','RigidVelocity':'44b',
-      'InertiaSkewIdentity':'44c','InertiaTraceCorrected':'44c','RotationTrajectory':'44extras'}
+      'InertiaSkewIdentity':'44c','InertiaTraceCorrected':'44c','RotationTrajectory':'44extras','SecondMomentDiagonal':'44extras','AngularInertia':'441'}
 keys=sys.argv[1:];assert 0<len(keys)<=8 and len(set(keys))==len(keys)
 tree=ast.parse((ROOT/'scripts/ch04_short_search_algebra.py').read_text(encoding='utf-8'))
 proofs=ast.literal_eval(next(x.value for x in tree.body if isinstance(x,ast.Assign) and any(isinstance(y,ast.Name) and y.id=='proofs' for y in x.targets)))
@@ -24,6 +24,7 @@ for key in keys:
 if not pending:sys.exit()
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 header='''import MolecularDynamics.Chapter04.Statements
+import Mathlib.Analysis.Matrix.Spectrum
 import Mathlib.Tactic
 open Set Filter Matrix MolecularDynamics MolecularDynamics.Chapter04Review
 open scoped BigOperators Topology ContDiff Matrix.Norms.Elementwise
@@ -37,12 +38,18 @@ def compile_group(group,label):
         text+='namespace MD.Ch04Short'+key+'\n'+r['code'].replace('by\n  sorry','by\n  '+proof)+'\nend MD.Ch04Short'+key+'\n'
         ranges[key]=(first,len(text.splitlines()))
     src=folder/('algebra-batch-'+label+'.lean');log=src.with_suffix('.log')
-    assert not src.exists(),src
-    src.write_text(text,encoding='utf-8')
+    if src.exists():assert src.read_text(encoding='utf-8')==text,src
+    else:src.write_text(text,encoding='utf-8')
+    receipt=src.with_suffix('.compile.json')
+    if receipt.exists():
+        saved=json.loads(receipt.read_text(encoding='utf-8'))
+        assert saved['input_sha256']==sha(src) and saved['log_sha256']==sha(log)
+        return src,log,saved['exit_code'],ranges,log.read_text(encoding='utf-8')
     result=subprocess.run(['lake','env','lean',str(src.relative_to(ROOT))],cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
     log.write_bytes(result.stdout)
+    receipt.write_text(json.dumps(dict(exit_code=result.returncode,input_sha256=sha(src),log_sha256=sha(log)),indent=2)+'\n',encoding='utf-8')
     return src,log,result.returncode,ranges,result.stdout.decode('utf-8',errors='replace')
-label='-'.join(k+str(len(v[2])+1) for k,v in pending.items())
+label=hashlib.sha256('-'.join(k+str(len(v[2])+1) for k,v in pending.items()).encode()).hexdigest()[:20]
 src,log,code,ranges,out=compile_group(pending,label)
 def save(key,source,rawlog,exit_code):
     r,proof,routes=pending[key]
