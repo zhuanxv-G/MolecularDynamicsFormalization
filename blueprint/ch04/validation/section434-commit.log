@@ -1,1 +1,105 @@
 warning: in the working copy of 'docs/handoff/WORK_LOG.zh-CN.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/blueprint_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_blueprint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_stage.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_chapter_check.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_checkpoint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_data.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/render_local_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/validate_local_delivery.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/partition_ch04_sections.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section4.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section41.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section421.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section421b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section42extra.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section42molly.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section43.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section432.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section434.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section434b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section43b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section4b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_algebra.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_euler_stability.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_growth.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_more.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_resonance.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_stability.py', LF will be replaced by CRLF the next time Git touches it
+[chapter04-blueprint 5ac4382] ch04 sec4.3.4: faithful local blueprint and checked checkpoint
+ 166 files changed, 56728 insertions(+), 418 deletions(-)
+ create mode 100644 blueprint/ch04/batch13-fixed-run.log
+ create mode 100644 blueprint/ch04/batch13-run.log
+ create mode 100644 blueprint/ch04/batch14-run.log
+ create mode 100644 blueprint/ch04/full434-run.log
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/BATCH14.md
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/BATCH15.md
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/a/BATCH14a_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/a/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/a/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/b/BATCH14b_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/b/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/b/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/c/BATCH14c_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/c/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/c/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/d/BATCH14d_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/d/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/d/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/e/BATCH14e_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/e/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/e/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/f/BATCH14f_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/f/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/f/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/g/BATCH14g_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/g/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/g/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/h/BATCH14h_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/h/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH14/h/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH15/a/BATCH15a_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH15/a/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH15/a/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH15/b/BATCH15b_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH15/b/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH15/b/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH15/c/BATCH15c_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH15/c/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH15/c/PASTE.txt
+ create mode 100644 blueprint/ch04/validation/batch13-COMPILE.json
+ create mode 100644 blueprint/ch04/validation/batch13-lean.log
+ create mode 100644 blueprint/ch04/validation/batch14-COMPILE.json
+ create mode 100644 blueprint/ch04/validation/batch14-lean.log
+ create mode 100644 blueprint/ch04/validation/kinetic-split-run2.log
+ create mode 100644 blueprint/ch04/validation/section434-commit.log
+ create mode 100644 blueprint/ch04/validation/section434/CHECK_REPORT.json
+ create mode 100644 blueprint/ch04/validation/section434/LOCAL_CHECK_REPORT.json
+ create mode 100644 blueprint/ch04/validation/section434/axiom_dependencies.log
+ create mode 100644 blueprint/ch04/validation/section434/blueprint_axiom_dependencies.log
+ create mode 100644 blueprint/ch04/validation/section434/blueprint_fresh_Ch01.log
+ create mode 100644 blueprint/ch04/validation/section434/blueprint_fresh_Ch02.log
+ create mode 100644 blueprint/ch04/validation/section434/chapter02_axiom_dependencies.log
+ create mode 100644 blueprint/ch04/validation/section434/chapter_axioms.log
+ create mode 100644 blueprint/ch04/validation/section434/chapter_fresh.log
+ create mode 100644 blueprint/ch04/validation/section434/git_branch.log
+ create mode 100644 blueprint/ch04/validation/section434/git_head.log
+ create mode 100644 blueprint/ch04/validation/section434/git_status.log
+ create mode 100644 blueprint/ch04/validation/section434/lake_build.log
+ create mode 100644 blueprint/ch04/validation/section434/lake_version.log
+ create mode 100644 blueprint/ch04/validation/section434/lean_version.log
+ create mode 100644 blueprint/ch04/validation/section434/mathlib_revision.log
+ create mode 100644 blueprint/ch04/validation/section434/mathlib_status.log
+ create mode 100644 blueprint/ch04/validation/section434/scratch.log
+ create mode 100644 blueprint/ch04/validation/short_search/KineticSplit-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/KineticSplit-route2.lean
+ create mode 100644 blueprint/ch04/validation/short_search/KineticSplit-route2.log
+ create mode 100644 blueprint/ch04/validation/short_search/KineticSplit.json
+ create mode 100644 scripts/ch04_section434.py
+ create mode 100644 scripts/ch04_section434b.py
+To https://github.com/zhuanxv-G/MolecularDynamicsFormalization.git
+   78c3244..5ac4382  chapter04-blueprint -> chapter04-blueprint
+branch 'chapter04-blueprint' set up to track 'origin/chapter04-blueprint'.
+Generated 90 entries; 64 /100 old rows mapped; protected 568
+Committed and pushed 5ac4382a6fca2e79890e35b6c47c4a070eab3836 ; live cross-chapter pointer updated.

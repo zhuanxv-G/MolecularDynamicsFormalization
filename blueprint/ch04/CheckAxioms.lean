@@ -90,3 +90,13 @@ import Blueprint.Ch04
 #print axioms MD.Ch04.cotangentRegularity
 #print axioms MD.Ch04.cotangentPullback
 #print axioms MD.Ch04.gramProjectedEuler
+#print axioms MD.Ch04.shakePositionPrinted
+#print axioms MD.Ch04.shakePositionRelation
+#print axioms MD.Ch04.shakeRelation
+#print axioms MD.Ch04.rattleRelation
+#print axioms MD.Ch04.constrainedOrders
+#print axioms MD.Ch04.rattleSymplectic
+#print axioms MD.Ch04.staggeredConstraintRelation
+#print axioms MD.Ch04.shakeRattlePositions
+#print axioms MD.Ch04.shakeElimination
+#print axioms MD.Ch04.shakePositionOrder

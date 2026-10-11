@@ -2,7 +2,7 @@
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前90条；旧清单映射64/100；本地PASS 78；网站返回0。
+当前100条；旧清单映射71/100；本地PASS 87；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -96,6 +96,16 @@
 | MD-4.3.4-CotangentRegularity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-4.3.4-CotangentPullback | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-4.3.4-GramProjectedEuler | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-4.3.5-SHAKEPositionPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-4.3.5-SHAKEPositionMass | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.5-SHAKEPhase | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.5-RATTLE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.5-ConstrainedOrders | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际约束ODE与隐式分支的高阶Taylor/一致误差理论；不建设大型收敛理论。 |
+| MD-4.3.5-RATTLESymplectic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待桥接已证多约束动量kick、位置drift与末逆Gram投影；若无简短接口保持sorry。 |
+| MD-4.3.5-StaggeredConstraint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.5-SHAKERATTLEEquivalence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺真实约束求解分支唯一性与跨步乘子缩放桥接；不建立隐式求解理论。 |
+| MD-4.3.5-SHAKEElimination | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.3.5-SHAKEPositionOrder | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际约束多步方法一致误差与离散分支存在理论；不建设大型收敛理论。 |
 
 ## 旧100条完整映射
 
@@ -164,13 +174,13 @@
 | CH04-061 | MD-4.3.4-CotangentHidden |
 | CH04-062 | MD-4.3.4-CotangentPullback |
 | CH04-063 | MD-4.3.4-GramProjectedEuler |
-| CH04-064 | PENDING：所属节尚未处理 |
-| CH04-065 | PENDING：所属节尚未处理 |
-| CH04-066 | PENDING：所属节尚未处理 |
-| CH04-067 | PENDING：所属节尚未处理 |
-| CH04-068 | PENDING：所属节尚未处理 |
-| CH04-069 | PENDING：所属节尚未处理 |
-| CH04-070 | PENDING：所属节尚未处理 |
+| CH04-064 | MD-4.3.5-SHAKEPositionPrinted |
+| CH04-065 | MD-4.3.5-SHAKEPhase |
+| CH04-066 | MD-4.3.5-RATTLE |
+| CH04-067 | MD-4.3.5-ConstrainedOrders |
+| CH04-068 | MD-4.3.5-RATTLESymplectic |
+| CH04-069 | MD-4.3.5-StaggeredConstraint |
+| CH04-070 | MD-4.3.5-SHAKERATTLEEquivalence |
 | CH04-071 | PENDING：所属节尚未处理 |
 | CH04-072 | PENDING：所属节尚未处理 |
 | CH04-073 | PENDING：所属节尚未处理 |
@@ -228,6 +238,12 @@
 - MD-4.3.3-ComponentPrinted：字面分母G_j^1与已定义G_n^j不一致。引入待解释Gsup1保留它，更新方向仍为G_n^j；常规修正版另列。 一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。
 - MD-4.3.4-ProjectedEulerPrinted：原(4.21)写−hF_n，与此前F=−∇U及p163的+hF不一致；逐字保留，质量一致及正确力符号版另列。 p159(4.21)力符号与p163及F=−∇U定义不一致。
 - MD-4.3.4-Lemma41：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 p160证明两处内和印刷dq_j；实际Hessian链式公式应dq_i。原proof_latex保持字面，正式库用真实Hessian对称性证明结论。
+- MD-4.3.5-SHAKEPositionPrinted：保留印刷约束反力缺M⁻¹；与相空间消元一般质量版本不一致。 (4.25)约束反力未带M⁻¹；一般非标量对角质量不能任意吸收入λ。
+- MD-4.3.5-ConstrainedOrders：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际约束ODE与隐式分支的高阶Taylor/一致误差理论；不建设大型收敛理论。
+- MD-4.3.5-RATTLESymplectic：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待桥接已证多约束动量kick、位置drift与末逆Gram投影；若无简短接口保持sorry。
+- MD-4.3.5-StaggeredConstraint：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 p162的平均乘子需与p161(4.33)无h/2缩放一致；未将未经核定平均关系计为证明。
+- MD-4.3.5-SHAKERATTLEEquivalence：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实约束求解分支唯一性与跨步乘子缩放桥接；不建立隐式求解理论。展示初始p−1/2从(4.29)消元的反力符号需核；原句保持。
+- MD-4.3.5-SHAKEPositionOrder：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际约束多步方法一致误差与离散分支存在理论；不建设大型收敛理论。
 
 ## 定性段落排除
 

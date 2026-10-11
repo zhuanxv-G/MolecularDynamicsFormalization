@@ -94,6 +94,16 @@
 | MD-4.3.4-CotangentRegularity | 160/182 | PASS | 待网站审计 | checked+documented priors |
 | MD-4.3.4-CotangentPullback | 160/182 | PASS | 待网站审计 | checked+documented priors |
 | MD-4.3.4-GramProjectedEuler | 160/182 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3.5-SHAKEPositionPrinted | 161/183 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.3.5-SHAKEPositionMass | 161/183 | PASS | 待网站审计 | self-contained |
+| MD-4.3.5-SHAKEPhase | 161/183 | PASS | 待网站审计 | self-contained |
+| MD-4.3.5-RATTLE | 161/183 | PASS | 待网站审计 | self-contained |
+| MD-4.3.5-ConstrainedOrders | 161–162/183–184 | PASS | 待网站审计 | incomplete |
+| MD-4.3.5-RATTLESymplectic | 162/184 | PASS | 待网站审计 | incomplete |
+| MD-4.3.5-StaggeredConstraint | 162/184 | PASS | 待网站审计 | self-contained |
+| MD-4.3.5-SHAKERATTLEEquivalence | 162/184 | PASS | 待网站审计 | incomplete |
+| MD-4.3.5-SHAKEElimination | 161/183 | PASS | 待网站审计 | self-contained |
+| MD-4.3.5-SHAKEPositionOrder | 161/183 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -127,6 +137,12 @@
   p159(4.21)力符号与p163及F=−∇U定义不一致。
 - MD-4.3.4-Lemma41：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   p160证明两处内和印刷dq_j；实际Hessian链式公式应dq_i。原proof_latex保持字面，正式库用真实Hessian对称性证明结论。
+- MD-4.3.5-SHAKEPositionPrinted：保留印刷约束反力缺M⁻¹；与相空间消元一般质量版本不一致。
+  (4.25)约束反力未带M⁻¹；一般非标量对角质量不能任意吸收入λ。
+- MD-4.3.5-StaggeredConstraint：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  p162的平均乘子需与p161(4.33)无h/2缩放一致；未将未经核定平均关系计为证明。
+- MD-4.3.5-SHAKERATTLEEquivalence：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  展示初始p−1/2从(4.29)消元的反力符号需核；原句保持。
 
 ## 1. MD-4-LinearField · (4.1) · 印刷p.139 / PDFp.161
 
@@ -4496,3 +4512,525 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 已登记前置证明/定义：MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback。
 
 签名SHA256：`f386a6680c2cf557c39b33683006c5227044ece14eb2a98acdcf5e443a67c787`；原文SHA256：`da5c27ab03ffbd42da3d09c9438f3b4706c3fefc73e20ea6929110a98920d8f2`。
+
+## 1. MD-4.3.5-SHAKEPositionPrinted · definition · 印刷p.161 / PDFp.183
+
+### 2. 原文陈述
+
+> In the presence of the constraint, we consider the scheme
+> \[q_{n+1}-2q_n+q_{n-1}=h^2M^{-1}F(q_n)-h^2g'(q_n)^T\lambda_n,\tag{4.25}\]
+> \[g(q_{n+1})=0.\tag{4.26}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def shakePositionPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (a b c : MolecularDynamics.Chapter04Review.Q n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  c-(2 : ℝ) • b+a=h^2 • MolecularDynamics.Chapter04Review.invMass m (F b)-h^2 • ((textbookConstraintJacobian g b)ᵀ *ᵥ rho) ∧
+  c ∈ MolecularDynamics.Chapter04Review.constraintSet g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.shakePositionPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | (4.25)约束反力未带M⁻¹；一般非标量对角质量不能任意吸收入λ。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。保留印刷约束反力缺M⁻¹；与相空间消元一般质量版本不一致。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1034](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1034>)（`MD.Ch04.shakePositionPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c47b2af3004e140e07923af275997a38d89d8124f0afa0f8dd76b3dcd9188f01`；原文SHA256：`82d32c4df4db5cb6d816545c9e9d9672e759b0e0143a49b1c117cdbca934376e`。
+
+## 1. MD-4.3.5-SHAKEPositionMass · definition · 印刷p.161 / PDFp.183
+
+### 2. 原文陈述
+
+> It is possible to demonstrate (see exercises) that this method reduces to (4.25)–(4.26) by eliminating the momenta.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def shakePositionRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (a b c : MolecularDynamics.Chapter04Review.Q n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  c-(2 : ℝ) • b+a=h^2 • MolecularDynamics.Chapter04Review.invMass m (F b-(textbookConstraintJacobian g b)ᵀ *ᵥ rho) ∧
+  c ∈ MolecularDynamics.Chapter04Review.constraintSet g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.shakePositionRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]质量一致位置式h²M⁻¹(F−Gᵀλ)，非原印刷(4.25)。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1041](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1041>)（`MD.Ch04.shakePositionRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`558157439ed422fced7a3d9994d9bfd203d3bf15b2e721efa7c19292799a0416`；原文SHA256：`a2ea7f79b19e5ca25c9bfd233cfcef0775c45aaaf8eba5fe18e57b151071f1ed`。
+
+## 1. MD-4.3.5-SHAKEPhase · definition · 印刷p.161 / PDFp.183
+
+### 2. 原文陈述
+
+> A natural choice is to consider the phase space formulation of the Störmer-Verlet method for $\dot q=M^{-1}p,\dot p=F(q)$, then replace $F$ by $F-g'(q)^T\lambda$, resulting in
+> \[q_{n+1}=q_n+hM^{-1}p_{n+1/2},\tag{4.27}\]
+> \[p_{n+1/2}=p_n+(h/2)F(q_n)-(h/2)g'(q_n)^T\lambda_n,\tag{4.28}\]
+> \[p_{n+1}=p_{n+1/2}+(h/2)F(q_{n+1})-(h/2)g'(q_{n+1})^T\lambda_{n+1}.\tag{4.29}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def shakeRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (half : MolecularDynamics.Chapter04Review.Q n) (rho rhonew : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  half=z.2+(h/2) • (F z.1-(textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m half ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=half+(h/2) • (F out.1-(textbookConstraintJacobian g out.1)ᵀ *ᵥ rhonew)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.shakeRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1047](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1047>)（`MD.Ch04.shakeRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`97b70b96728edced74258cad66ae8adba4fd2ada6e0a51c817de9f1dc797a582`；原文SHA256：`fc9c349591c7d868e4a983773e45f2819a23997d957391821fb65a1128d29b09`。
+
+## 1. MD-4.3.5-RATTLE · definition · 印刷p.161 / PDFp.183
+
+### 2. 原文陈述
+
+> A method that automatically preserves both the constraint and hidden constraint is the RATTLE method [12] which consists of the following steps:
+> \[q_{n+1}=q_n+hM^{-1}p_{n+1/2},\tag{4.30}\]
+> \[p_{n+1/2}=p_n+(h/2)F_n-(h/2)g'(q_n)^T\lambda_n,\tag{4.31}\]
+> \[0=g(q_{n+1}),\tag{4.32}\]
+> \[p_{n+1}=p_{n+1/2}+(h/2)F_{n+1}-g'(q_{n+1})^T\mu_{n+1},\tag{4.33}\]
+> \[0=g'(q_{n+1})M^{-1}p_{n+1}.\tag{4.34}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rattleRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (half : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  half=z.2+(h/2) • (F z.1-(textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m half ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=half+(h/2) • F out.1-(textbookConstraintJacobian g out.1)ᵀ *ᵥ μ ∧
+  out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rattleRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1054](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1054>)（`MD.Ch04.rattleRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`7ea31e799562d4c514948c68d20a1bea91363d5031346dd0c97ddc93a5db0361`；原文SHA256：`a773339005f22a6161845f73172e68575d1dc2b1702a22dca5790ff121fe6f98`。
+
+## 1. MD-4.3.5-ConstrainedOrders · unnumbered_claim · 印刷p.161–162 / PDFp.183–184
+
+### 2. 原文陈述
+
+> The projected symplectic constrained method (4.20)–(4.24) is only first order accurate. We forego providing a detailed proof of this fact, but note that it could be demonstrated using standard methods [164]. There are several constraint-preserving, second-order alternatives which generalize the Störmer-Verlet scheme. One of these is the SHAKE method [322]. The symmetry suggests that this will be second order.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem constrainedOrders :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (z : MolecularDynamics.Chapter04Review.Z n) (Φ E R : ℝ → MolecularDynamics.Chapter04Review.Z n) (pE pR : ℝ → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoR μR : ℝ → MolecularDynamics.Chapter04Review.Q l),
+    (∀ i, 0 < m i) → ContDiff ℝ 4 U → (∀ j, ContDiff ℝ 4 (g j)) →
+    z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g → (textbookConstraintGram m g z.1).det ≠ 0 →
+    ContDiff ℝ 3 E → ContDiff ℝ 3 R → ContDiff ℝ 3 Φ → E 0=z → R 0=z → Φ 0=z →
+    ContDiff ℝ 2 rhoE → ContDiff ℝ 2 μE → ContDiff ℝ 2 rhoR → ContDiff ℝ 2 μR →
+    μE 0=0 → μR 0=0 →
+    (∃ δ > 0, ∀ h ∈ Ioo (-δ) δ,
+      MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h) (pE h) (rhoE h) (μE h) ∧
+      MolecularDynamics.Chapter04Review.rattleRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (R h) (pR h) (rhoR h) (μR h) ∧
+      HasDerivAt Φ (textbookConstrainedPhaseVectorField m g U (Φ h)) h) →
+    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ‖E h-Φ h‖ ≤ C*h^2 ∧ ‖R h-Φ h‖ ≤ C*h^3
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.constrainedOrders；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 正质量、C⁴数据、独立约束与真实光滑隐式解分支及紧区间；明确局部截断误差Euler O(h²)、RATTLE O(h³)。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:1063](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1063>)（`MD.Ch04.constrainedOrders`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺实际约束ODE与隐式分支的高阶Taylor/一致误差理论；不建设大型收敛理论。
+
+签名SHA256：`0eb651c0b0d2579c8f8e289002aab1f3554ccd61075a04d5edab31ed1e3a52fe`；原文SHA256：`455d06ef8abc68c7a4af70806a1f098a777eee4e09c20b52ae99f16a32c2627e`。
+
+## 1. MD-4.3.5-RATTLESymplectic · unnumbered_claim · 印刷p.162 / PDFp.184
+
+### 2. 原文陈述
+
+> Moreover, the symplecticness of (4.30)–(4.34) may be demonstrated using a very similar approach to that used to demonstrate the symplectic condition for (4.20)–(4.24). Given the above discussion and derivation, the proof of symplecticness of the RATTLE method (4.30)–(4.34) is now a formality. For details refer to [229].
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem rattleSymplectic :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    h (G : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (half : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l),
+    (∀ j, ContDiff ℝ 2 (g j)) → ContDiff ℝ 2 U → Differentiable ℝ G →
+    Differentiable ℝ half → Differentiable ℝ rho → Differentiable ℝ μ →
+    (∀ z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g, MolecularDynamics.Chapter04Review.rattleRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (G z) (half z) (rho z) (μ z)) →
+    MolecularDynamics.Chapter04Review.restrictedSymplectic m g G
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rattleSymplectic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 实际C¹分支、C²势与约束；完整真实拉回两形式，非把辛性作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:1080](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1080>)（`MD.Ch04.rattleSymplectic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待桥接已证多约束动量kick、位置drift与末逆Gram投影；若无简短接口保持sorry。
+
+签名SHA256：`01f9e68f9dd703f8bc57d89ae40e16af4468534d030e414ed8d8f4972ea9ec74`；原文SHA256：`b7f49f44f708e040c6bff6e503bf700d7cd4f450d0741a34f4146926e194cc11`。
+
+## 1. MD-4.3.5-StaggeredConstraint · definition · 印刷p.162 / PDFp.184
+
+### 2. 原文陈述
+
+> the iterations generated by them can be related to the following staggered iteration
+> \[q_{n+1}=q_n+hM^{-1}p_{n+1/2},\tag{4.35}\]
+> \[p_{n+1/2}=p_{n-1/2}+hF_n-hg'(q_n)^T\widetilde\lambda_n,\tag{4.36}\]
+> \[0=g(q_{n+1}),\tag{4.37}\]
+> where, for SHAKE, $\widetilde\lambda_n=\lambda_n$, while, in case of RATTLE, we must define $\widetilde\lambda_n=(\lambda_n+\mu_n)/2$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def staggeredConstraintRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (q qnew oldHalf newHalf : MolecularDynamics.Chapter04Review.Q n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  newHalf=oldHalf+h • (F q-(textbookConstraintJacobian g q)ᵀ *ᵥ rho) ∧
+  qnew=q+h • MolecularDynamics.Chapter04Review.invMass m newHalf ∧ qnew ∈ MolecularDynamics.Chapter04Review.constraintSet g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.staggeredConstraintRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | p162的平均乘子需与p161(4.33)无h/2缩放一致；未将未经核定平均关系计为证明。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1091](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1091>)（`MD.Ch04.staggeredConstraintRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`15c59497f555dee8d257bcdc29d8bab210509f6d5c92315fc98c89db8b27d720`；原文SHA256：`4793a8b4053b3299e8292651d8b642b62e894276f87e7f99c405fb4e363033dc`。
+
+## 1. MD-4.3.5-SHAKERATTLEEquivalence · unnumbered_claim · 印刷p.162 / PDFp.184
+
+### 2. 原文陈述
+
+> Given an initial condition $(q_0^S,p_0^S)$ for the SHAKE discretization, we easily determine $\lambda_0^S$ by taking a step. Then it follows that
+> \[p_{-1/2}=p_0-(h/2)F(q_0^S)-(h/2)g'(q_0^S)^T\lambda_0^S,\]
+> by solving (4.29). Next we obtain $p_0^R$ by solving (4.33)–(4.34) with $n=-1$. Then the sequences generated using $(q_0^S,p_0^S)$ as the initial point for SHAKE and that generated using $(q_0^S,p_0^R)$ in RATTLE will have identical positions (the momenta can be made compatible by simply projecting the SHAKE momenta onto the constraints).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem shakeRattlePositions :
+  ∀ n l (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) h,
+    h ≠ 0 → (∀ i, 0 < m i) →
+    (∀ q, q ∈ MolecularDynamics.Chapter04Review.constraintSet g →
+      LinearIndependent ℝ (fun j => textbookConstraintGradient (g j) q)) →
+    (∀ q base : MolecularDynamics.Chapter04Review.Q n, ∀ eta nu : MolecularDynamics.Chapter04Review.Q l, q ∈ MolecularDynamics.Chapter04Review.constraintSet g →
+      MolecularDynamics.Chapter04Review.projectionResidual m g q base eta=0 → MolecularDynamics.Chapter04Review.projectionResidual m g q base nu=0 →
+      (textbookConstraintJacobian g q)ᵀ *ᵥ eta=(textbookConstraintJacobian g q)ᵀ *ᵥ nu) →
+    ∀ (qS pS qR pR halfS halfR : ℕ → MolecularDynamics.Chapter04Review.Q n) (rhoS rhoR muR : ℕ → MolecularDynamics.Chapter04Review.Q l),
+      qS 0=qR 0 → halfS 0=halfR 0 →
+      (∀ k, MolecularDynamics.Chapter04Review.shakeRelation m F g h (qS k,pS k) (qS (k+1),pS (k+1))
+        (halfS k) (rhoS k) (rhoS (k+1))) →
+      (∀ k, MolecularDynamics.Chapter04Review.rattleRelation m F g h (qR k,pR k) (qR (k+1),pR (k+1))
+        (halfR k) (rhoR k) (muR (k+1))) →
+      ∀ k, qS k=qR k ∧ pR (k+1)=textbookCotangentProjection m g (qS (k+1)) (pS (k+1))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.shakeRattlePositions；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 真实两套关系、相容初始半动量、正质量和同一局部唯一投影分支；不假设位置序列相同。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA]位置约束上梯度线性独立，保证显式逆Gram投影有定义；旧命题此资格缺失，不静默忽略。 | [EXTRA] |
+| 原页核对/疑点 | 展示初始p−1/2从(4.29)消元的反力符号需核；原句保持。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:1100](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1100>)（`MD.Ch04.shakeRattlePositions`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺真实约束求解分支唯一性与跨步乘子缩放桥接；不建立隐式求解理论。
+
+签名SHA256：`363eb32d2932aea167438fb9685c2397480304cf27862094d3f63f64b231173f`；原文SHA256：`621a3e94c48cda14a664d0437358d52946f46c3f069b1705eb722623fa958af7`。
+
+## 1. MD-4.3.5-SHAKEElimination · unnumbered_claim · 印刷p.161 / PDFp.183
+
+### 2. 原文陈述
+
+> It is possible to demonstrate (see exercises) that this method reduces to (4.25)–(4.26) by eliminating the momenta.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem shakeElimination :
+  ∀ n l (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    h (q p half : ℕ → MolecularDynamics.Chapter04Review.Q n) (rho : ℕ → MolecularDynamics.Chapter04Review.Q l),
+    (∀ k, MolecularDynamics.Chapter04Review.shakeRelation m F g h (q k,p k) (q (k+1),p (k+1)) (half k) (rho k) (rho (k+1))) →
+    ∀ k, MolecularDynamics.Chapter04Review.shakePositionRelation m F g h (q k) (q (k+1)) (q (k+2)) (rho (k+1))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.shakeElimination；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际相空间SHAKE消元给质量一致M⁻¹(F−Gᵀλ)；原(4.25)缺M⁻¹的字面版单列待审；只转录正文结论，不进入习题。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch04.lean:1119](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1119>)（`MD.Ch04.shakeElimination`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/SHAKEElimination.json；blueprint/ch04/validation/short_search/SHAKEElimination-route1.lean；blueprint/ch04/validation/short_search/SHAKEElimination-route1.log；blueprint/ch04/validation/short_search/SHAKEElimination-route2.lean；blueprint/ch04/validation/short_search/SHAKEElimination-route2.log；blueprint/ch04/validation/short_search/SHAKEElimination-route3.lean；blueprint/ch04/validation/short_search/SHAKEElimination-route3.log。
+
+签名SHA256：`a723bfd06dff3450875b98cfb1ecb0a5beebd9c4f1155bb20e17c514eb47748d`；原文SHA256：`debaa5ecbc61ecfaa75496674dd6656158f383d7d4827da8597cd2dc6b8b98d6`。
+
+## 1. MD-4.3.5-SHAKEPositionOrder · unnumbered_claim · 印刷p.161 / PDFp.183
+
+### 2. 原文陈述
+
+> There are several constraint-preserving, second-order alternatives which generalize the Störmer-Verlet scheme. One of these is the SHAKE method [322]. The symmetry suggests that this will be second order.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem shakePositionOrder :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) tau,
+    0 < tau → (∀ i, 0 < m i) → ContDiff ℝ 4 U → (∀ j, ContDiff ℝ 4 (g j)) →
+    ContDiff ℝ 4 q → ContDiff ℝ 3 p →
+    MolecularDynamics.Chapter04Review.constrainedSolution m (fun x => -MolecularDynamics.Chapter04Review.grad U x) g q p rho (Icc 0 tau) →
+    (∀ t ∈ Icc 0 tau, (textbookConstraintGram m g (q t)).det ≠ 0) →
+    ∃ C > 0, ∃ N0 : ℕ, 2 ≤ N0 ∧ ∀ N ≥ N0,
+      let h := tau/N
+      ∃ (qn : ℕ → MolecularDynamics.Chapter04Review.Q n) (rhon : ℕ → MolecularDynamics.Chapter04Review.Q l), qn 0=q 0 ∧ qn 1=q h ∧
+      (∀ k, k+2 ≤ N → MolecularDynamics.Chapter04Review.shakePositionRelation m (fun x => -MolecularDynamics.Chapter04Review.grad U x) g h
+        (qn k) (qn (k+1)) (qn (k+2)) (rhon (k+1))) ∧
+      ∀ k ≤ N, ‖qn k-q (k*h)‖ ≤ C*h^2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.shakePositionOrder；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]正质量、C⁴势/约束/实际轨道、沿解非奇异Gram、相容两步初值；精确给真实有限区间位置误差O(h²)及分支存在，不把误差界作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:1141](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1141>)（`MD.Ch04.shakePositionOrder`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺实际约束多步方法一致误差与离散分支存在理论；不建设大型收敛理论。
+
+签名SHA256：`a19cfbc21f4df796ce02c3c770cf7cfb8b114a851ff8e8302f925f2ef846aa9e`；原文SHA256：`bf230e037e7562e39016e97d416d8caa248048e208093af539cea5a5b8a11bf3`。
