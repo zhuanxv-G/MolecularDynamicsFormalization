@@ -46,6 +46,29 @@
 | MD-4.2.1-ResonanceLinearRate | 147/169 | PASS | 待网站审计 | self-contained |
 | MD-4.2.1-ResonanceGrowth | 147/169 | PASS | 待网站审计 | self-contained |
 | MD-4.2.2-MollifiedStructure | 149/171 | PASS | 待网站审计 | incomplete |
+| MD-4.3-HolonomicRelation | 150/172 | PASS | 待网站审计 | self-contained |
+| MD-4.3-TimeConstraintDerivative | 150/172 | PASS | 待网站审计 | self-contained |
+| MD-4.3-ConstrainedSolution | 152/174 | PASS | 待网站审计 | self-contained |
+| MD-4.3-ConstraintSet | 152/174 | PASS | 待网站审计 | self-contained |
+| MD-4.3-CotangentSet | 152/174 | PASS | 待网站审计 | self-contained |
+| MD-4.3-ConstraintJacobian | 152/174 | PASS | 待网站审计 | self-contained |
+| MD-4.3-JacobianActualDerivative | 152/174 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3-ConstraintDegrees | 151/173 | PASS | 待网站审计 | self-contained |
+| MD-4.3-FlexiblePendulumHamiltonian | 150/172 | PASS | 待网站审计 | self-contained |
+| MD-4.3-RestraintPotential | 150/172 | PASS | 待网站审计 | self-contained |
+| MD-4.3-RestraintForcePrinted | 150/172 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.3-ConstrainedPendulum | 151/173 | PASS | 待网站审计 | self-contained |
+| MD-4.3-ConstraintCurvature | 153/175 | PASS | 待网站审计 | self-contained |
+| MD-4.3-ReactionMultiplier | 153/175 | PASS | 待网站审计 | self-contained |
+| MD-4.3-ReactionBalance | 153/175 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3-GramPositive | 153/175 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3-GramInvertible | 153/175 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3-CotangentInvariant | 153/175 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3-ReducedFieldRegularity | 153/175 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3.1-RestrictedForm | 153/175 | PASS | 待网站审计 | self-contained |
+| MD-4.3.1-VariationalFormula | 154/176 | PASS | 待网站审计 | incomplete |
+| MD-4.3.1-HessianPullbackCancel | 155/177 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3.1-ConstrainedFlowPullback | 156/178 | PASS | 待网站审计 | checked+documented priors |
 
 ## 需要导师判断的问题
 
@@ -65,6 +88,8 @@
   原书未指定复log分支；与连续实相位的桥接须审校。
 - MD-4.2.1-ResonanceEigenPrinted：det=1、trace=−2+ε的二次根近−1±sqrt(|ε|)+O(ε)，印刷sqrt(|ε|/2)系数疑误；保留字面实根误差界，未更正成PASS。
   根展开首项疑少sqrt(2)因子；待网站/导师裁定。
+- MD-4.3-RestraintForcePrinted：原φ′ε(q)未定义；若按通常势导数/梯度理解，末项缺负号且标量径向导数不能直接等向量。本候选签名显式记录该解释，不把疑式当证明。
+  Fε=−∇φε=φ′ε的prime含义/负号待裁定；原文不静默更正。
 
 ## 1. MD-4-LinearField · (4.1) · 印刷p.139 / PDFp.161
 
@@ -2022,3 +2047,1132 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 缺失/继续路线：正式库无RESPA实际Jacobian辛性/反步定理；需实际链式法则与有限迭代复合桥接，保留sorry，不另建辛流理论。
 
 签名SHA256：`c888250b6e4e206b92153d5c4b8e3be242c306acc46160dcb4c50a522517e9c4`；原文SHA256：`783f68f12d7dad05b4aa84255eb0e8e4ca179c7e2ab99f221d23ff01ab12b87a`。
+
+## 1. MD-4.3-HolonomicRelation · (4.3) · 印刷p.150 / PDFp.172
+
+### 2. 原文陈述
+
+> In this section we consider holonomic constraints which may be expressed in terms of positions only, and perhaps time, i.e.
+> \[g(q,t)=0.\tag{4.3}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def holonomicRelation {n l : ℕ} (g : MolecularDynamics.Chapter04Review.Q n → ℝ → MolecularDynamics.Chapter04Review.Q l) (q : ℝ → MolecularDynamics.Chapter04Review.Q n) : Prop :=
+  ∀ t, g (q t) t=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.holonomicRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:570](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:570>)（`MD.Ch04.holonomicRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0fa4cca16676fd6a93cfb364fa06a0c4b15a535d5f7925ccc0194e32fbf5a353`；原文SHA256：`db33523d91a21430ffe917b4410af9cc5614c8eb2967838b84aa6d13d3bd5a30`。
+
+## 1. MD-4.3-TimeConstraintDerivative · unnumbered_claim · 印刷p.150 / PDFp.172
+
+### 2. 原文陈述
+
+> Note that by differentiating (4.3) with respect to time, we obtain $\nabla_q g(q,t)\cdot\dot q+\partial g/\partial t=0$ which involves velocities.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem timeConstraintDerivative :
+  ∀ n l (g : MolecularDynamics.Chapter04Review.Q n → ℝ → MolecularDynamics.Chapter04Review.Q l) (q : ℝ → MolecularDynamics.Chapter04Review.Q n) t v,
+    DifferentiableAt ℝ (Function.uncurry g) (q t,t) → HasDerivAt q v t →
+    (∀ᶠ s in 𝓝 t, g (q s) s=0) → (fderiv ℝ (Function.uncurry g) (q t,t)) (v,1)=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.timeConstraintDerivative；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | g的实际uncurry可微、真实曲线导数q′=v、在当前时刻邻域g(q(s),s)=0；不把导数等于0作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch04.lean:575](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:575>)（`MD.Ch04.timeConstraintDerivative`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/TimeConstraintDerivative.json；blueprint/ch04/validation/short_search/TimeConstraintDerivative-route1.lean；blueprint/ch04/validation/short_search/TimeConstraintDerivative-route1.log；blueprint/ch04/validation/short_search/TimeConstraintDerivative-route2.lean；blueprint/ch04/validation/short_search/TimeConstraintDerivative-route2.log；blueprint/ch04/validation/short_search/TimeConstraintDerivative-route3.lean；blueprint/ch04/validation/short_search/TimeConstraintDerivative-route3.log。
+
+签名SHA256：`fcf044d897570cccb829b8bf466bdaee0b99ed4f224b20ab7a4ac28c8f0382a2`；原文SHA256：`1420356a18f1f9932f8ce4c0f91af1d6a1725bc6a11dff529264ba81f651b2f4`。
+
+## 1. MD-4.3-ConstrainedSolution · (4.4)–(4.9) · 印刷p.152 / PDFp.174
+
+### 2. 原文陈述
+
+> the equations of motion may be written
+> \[\dot q=M^{-1}p,\tag{4.4}\]
+> \[\dot p=-\nabla U(q)-\sum_{k=1}^l\lambda_k\nabla g_k(q),\tag{4.5}\]
+> \[0=g_j(q),\quad j=1,2,\ldots,l.\tag{4.6}\]
+> then we may write the constrained equations of motion in the form
+> \[\dot q=M^{-1}p,\tag{4.7}\qquad\dot p=-\nabla U(q)-g'(q)^T\lambda,\tag{4.8}\qquad0=g(q).\tag{4.9}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def constrainedSolution {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) : Prop :=
+  ∀ t ∈ I, HasDerivWithinAt q (MolecularDynamics.Chapter04Review.invMass m (p t)) I t ∧
+    HasDerivWithinAt p (F (q t)-(textbookConstraintJacobian g (q t))ᵀ *ᵥ rho t) I t ∧
+    q t ∈ MolecularDynamics.Chapter04Review.constraintSet g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.constrainedSolution；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:589](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:589>)（`MD.Ch04.constrainedSolution`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`8a73875b6f1cd9d7bf000987cba35b1d144318ccad730d7429d3fc599877f9dd`；原文SHA256：`96f3599cac1401a6614df334fce8843dcbaf906e4ab73d509fa5876e37ae6b4b`。
+
+## 1. MD-4.3-ConstraintSet · definition · 印刷p.152 / PDFp.174
+
+### 2. 原文陈述
+
+> Constraints such as those described above define a manifold in the configuration space $\mathcal M=\{q\mid g(q)=0\}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.constraintSet；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 定义仅集合；称为光滑流形需要独立梯度/正则值资格，未构造抽象流形。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:597](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:597>)（`MD.Ch04.constraintSet`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`cdf79d75391f33efa0755e8d854ddd746cd6dd405774d165dbeceec30e6680ef`；原文SHA256：`437d07b797c3e2517e85f924638e953c7b9b944416aa91d1d740dc7e82d42d24`。
+
+## 1. MD-4.3-CotangentSet · definition · 印刷p.152 / PDFp.174
+
+### 2. 原文陈述
+
+> The set of pairs $(q,p)$ satisfying, simultaneously, the equations
+> \[g(q)=0,\qquad g'(q)M^{-1}p=0,\]
+> is called the co-tangent bundle associated to the manifold $\mathcal M$, and we refer to it as $T^*\mathcal M$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def cotangentSet {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Z n) :=
+  {z | z.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧ textbookConstraintJacobian g z.1 *ᵥ MolecularDynamics.Chapter04Review.invMass m z.2=0}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.cotangentSet；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 正质量及独立梯度为几何解释资格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:601](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:601>)（`MD.Ch04.cotangentSet`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`40e7180d99f1f147fe03e78d3829e54c268a89796c7a4bd766ce2d2d38084b46`；原文SHA256：`29116423866e804bc3fa5afd8c8a04bb00b35549563e83d0361adfe42e44d25b`。
+
+## 1. MD-4.3-ConstraintJacobian · definition · 印刷p.152 / PDFp.174
+
+### 2. 原文陈述
+
+> It is often convenient to combine all the constraints and to describe them by a single vector-valued function $g:\mathbb R^{N_c}\to\mathbb R^l$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def constraintJacobian {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Matrix (Fin Mc) (Fin Nc) ℝ :=
+  fun j i => textbookConstraintGradient (γ j) q i
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.constraintJacobian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:605](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:605>)（`MD.Ch04.constraintJacobian`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`70300cc03ae59d689d656751e6f5cb85d035bcbc3019a6ee1e8b8f1c8f655c75`；原文SHA256：`f2203e18e6a8fa9a09b8c830989d21965fca29b4dc08ba0f3f72f41c4ad05c20`。
+
+## 1. MD-4.3-JacobianActualDerivative · unnumbered_claim · 印刷p.152 / PDFp.174
+
+### 2. 原文陈述
+
+> Given a motion $(q(t),p(t),\lambda(t))$ of (4.7)–(4.9) we note that $g(q(t))\equiv0$ at all times $t$, hence, by differentiation
+> \[g'(q(t))\dot q(t)\equiv0,\]
+> which we may rephrase as
+> \[g'(q(t))M^{-1}p(t)\equiv0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem jacobianActualDerivative {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)
+    (hγ : ∀ j, DifferentiableAt ℝ (γ j) q) :
+    textbookConstraintJacobian γ q =
+      LinearMap.toMatrix' (fderiv ℝ (fun y j => γ j y) q).toLinearMap
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.jacobianActualDerivative；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]本条桥接真实向量Jacobian，不以它冒充完整曲线隐藏约束保持；实际曲线/ODE不变性另条保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:611](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:611>)（`MD.Ch04.jacobianActualDerivative`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookConstraintJacobian_eq_actualDerivative。
+
+签名SHA256：`d2f0f8a2fac6c31234271104de3974088690e01728d9579081c7d9c8e7735248`；原文SHA256：`660afd63e6684c3cd711381a52acb9f5fbb07bad073a39e02f0cfdfd716f11cf`。
+
+## 1. MD-4.3-ConstraintDegrees · unnumbered_claim · 印刷p.151 / PDFp.173
+
+### 2. 原文陈述
+
+> Note that with $l$ constraints the actual number of degrees of freedom, which is needed for things like the computation of temperature, is $N_d=N_c-l$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem constraintDegrees :
+  ∀ n l (g : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q l) (q : MolecularDynamics.Chapter04Review.Q n), DifferentiableAt ℝ g q →
+    Function.Surjective (fderiv ℝ g q) →
+    Module.finrank ℝ (LinearMap.ker (fderiv ℝ g q).toLinearMap)+l=n
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.constraintDegrees；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实约束导数满射、当前点可微；独立正则约束下切空间是ker Dg，维数关系不作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch04.lean:620](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:620>)（`MD.Ch04.constraintDegrees`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/ConstraintDegrees.json；blueprint/ch04/validation/short_search/ConstraintDegrees-route1.lean；blueprint/ch04/validation/short_search/ConstraintDegrees-route1.log；blueprint/ch04/validation/short_search/ConstraintDegrees-route2.lean；blueprint/ch04/validation/short_search/ConstraintDegrees-route2.log。
+
+签名SHA256：`adfc9f7702ae9ae52d18bc557d0dcc7bd6fbe7ef7d36a3d6ec1635927ad05979`；原文SHA256：`21ee72001ef747478ace619f64567cb53bce44a6023521b2475469a45433a8e5`。
+
+## 1. MD-4.3-FlexiblePendulumHamiltonian · definition · 印刷p.150 / PDFp.172
+
+### 2. 原文陈述
+
+> We suppose the restraint to have an associated coefficient $k=\varepsilon^{-1}$, where $\varepsilon$ is a small parameter. Then we have a generalized flexible pendulum with Hamiltonian $H=\|p\|^2/(2m)+U(q)+\varepsilon^{-1}(\|q\|-r_0)^2/2$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def flexiblePendulumHamiltonian (m ε r₀ : ℝ) (U : Position 3 → ℝ)
+    (z : Position 3 × Position 3) : ℝ :=
+  ‖z.2‖^2/(2*m)+U z.1+ε⁻¹*(‖z.1‖-r₀)^2/2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.flexiblePendulumHamiltonian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:630](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:630>)（`MD.Ch04.flexiblePendulumHamiltonian`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c56c831a5c18f9de398e7be25c649c50871cd4bf715294b067c3b136da782632`；原文SHA256：`6aa2cdc2467fae8c85161a973481b7cc66d4759fef4281144c169ff1fa823f68`。
+
+## 1. MD-4.3-RestraintPotential · definition · 印刷p.150 / PDFp.172
+
+### 2. 原文陈述
+
+> where the restraint potential $\varphi_\varepsilon(q)=\varepsilon^{-1}(\|q\|-r_0)^2/2$ has associated restoring force
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def restraintPotential (ε r₀ : ℝ) (q : Position 3) : ℝ :=
+  ε⁻¹*(‖q‖-r₀)^2/2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.restraintPotential；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:635](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:635>)（`MD.Ch04.restraintPotential`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`8592bf4b537b9aeedebf01927be24b58722115e7ba60ed6f25b6fb1c930956b1`；原文SHA256：`c5dd8f935ff889cf20b680642ad38d0af1c09c671054170e39e942092db736f6`。
+
+## 1. MD-4.3-RestraintForcePrinted · unnumbered_claim · 印刷p.150 / PDFp.172
+
+### 2. 原文陈述
+
+> \[F_\varepsilon=-\nabla\varphi_\varepsilon(q)=\varphi'_\varepsilon(q).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem restraintForcePrinted :
+    ∀ ε r₀ : ℝ, ∀ q : Position 3,
+      -gradient (fun x : Position 3 => ε⁻¹*(‖x‖-r₀)^2/2) q =
+       gradient (fun x : Position 3 => ε⁻¹*(‖x‖-r₀)^2/2) q
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.restraintForcePrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]将prime暂按配置梯度解释；该记号解释待审。 | [EXTRA] |
+| 原页核对/疑点 | Fε=−∇φε=φ′ε的prime含义/负号待裁定；原文不静默更正。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。原φ′ε(q)未定义；若按通常势导数/梯度理解，末项缺负号且标量径向导数不能直接等向量。本候选签名显式记录该解释，不把疑式当证明。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:641](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:641>)（`MD.Ch04.restraintForcePrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本地非PASS，等待记号及负号裁定。
+
+签名SHA256：`87b38b0b31e81d70408de45667191a89af0b88dac967ae81c0d0841b5c6f6ff1`；原文SHA256：`cca2253b9fdb25a4ee550d7bd709b637a4dc969556e2a598dc0522d638564f8e`。
+
+## 1. MD-4.3-ConstrainedPendulum · definition · 印刷p.151 / PDFp.173
+
+### 2. 原文陈述
+
+> The equations of motion for the constrained system take the form
+> \[\dot q=v,\qquad\dot v=-\nabla U(q)-q\lambda,\qquad0=\|q\|^2-r_0^2.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def constrainedPendulum (U : Position 3 → ℝ) (r₀ : ℝ)
+    (q v : ℝ → Position 3) (lam : ℝ → ℝ) (I : Set ℝ) : Prop :=
+  ∀ t ∈ I, HasDerivWithinAt q (v t) I t ∧
+    HasDerivWithinAt v (-gradient U (q t)-(lam t) • q t) I t ∧
+    ‖q t‖^2-r₀^2=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.constrainedPendulum；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 原所写v′方程按单位质量，λ吸收法向grad(‖q‖²)=2q的因子；真实欧氏曲线和导数。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:649](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:649>)（`MD.Ch04.constrainedPendulum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`1ef32629c463cdc3852a013511ef85c49ab28f11968763a6f6ac4c760f6a79ca`；原文SHA256：`97676d02fcf74bad6dc9363fb0ddb332477fd79c4f81b83f732fdeb965d3b1bb`。
+
+## 1. MD-4.3-ConstraintCurvature · definition · 印刷p.153 / PDFp.175
+
+### 2. 原文陈述
+
+> where $\varphi$ is an $l$-dimensional vector whose $k$th component is
+> \[\varphi_k=p(t)^TM^{-1}\nabla_q^2g_k(q(t))M^{-1}p(t).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def constraintCurvature {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+  fun j => (fderiv ℝ (fderiv ℝ (γ j)) q)
+    (textbookInverseMassMatrix m *ᵥ p) (textbookInverseMassMatrix m *ᵥ p)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.constraintCurvature；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:656](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:656>)（`MD.Ch04.constraintCurvature`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`8bc260473dde3abcda6fd05e1b0e9d36c0785363eddbb97ad7be250f8ce01767`；原文SHA256：`6a3f97bb26b6fe6eff0e0b5afb7b082df2d40bf7c08bd373340b04b416e6b894`。
+
+## 1. MD-4.3-ReactionMultiplier · definition · 印刷p.153 / PDFp.175
+
+### 2. 原文陈述
+
+> Using (4.8) in (4.10) we obtain
+> \[g'(q)M^{-1}[F-g'(q)^T\lambda]+\varphi=0.\]
+> This is a system of linear equations for $\lambda$. Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\lambda$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def reactionMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (F : (Fin Nc → ℝ) → Fin Nc → ℝ)
+    (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+  (textbookConstraintGram m γ q)⁻¹ *ᵥ
+    (textbookConstraintJacobian γ q *ᵥ (textbookInverseMassMatrix m *ᵥ F q) +
+      textbookConstraintCurvature m γ q p)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.reactionMultiplier；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:662](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:662>)（`MD.Ch04.reactionMultiplier`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`42d2a4baaf722ca9e332933d2168fb80e31acdb234685c0667f69645616e1f4f`；原文SHA256：`ebc1d43eeb637418c1ffd69d2b44aec80a1fd99763663879bad280cbb32d9d76`。
+
+## 1. MD-4.3-ReactionBalance · unnumbered_claim · 印刷p.153 / PDFp.175
+
+### 2. 原文陈述
+
+> Using (4.8) in (4.10) we obtain
+> \[g'(q)M^{-1}[F-g'(q)^T\lambda]+\varphi=0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem reactionBalance {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (F : (Fin Nc → ℝ) → Fin Nc → ℝ)
+    (q p : Fin Nc → ℝ) (hdet : (textbookConstraintGram m γ q).det ≠ 0) :
+    textbookConstraintJacobian γ q *ᵥ (textbookInverseMassMatrix m *ᵥ
+      (F q - (textbookConstraintJacobian γ q)ᵀ *ᵥ textbookConstrainedReactionMultiplier m γ F q p)) +
+        textbookConstraintCurvature m γ q p = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.reactionBalance；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 真实Gram det≠0；F=−grad U是Hamiltonian实例，一般位置力定理提供更强桥接。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:671](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:671>)（`MD.Ch04.reactionBalance`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookConstrainedReaction_balance。
+
+签名SHA256：`1f7d6533ae1c0008d04f2669a1368c724a8afb760ad443d9c5fd15b0752fad5f`；原文SHA256：`86fe0e2515d2e6e1910aad5049899f42e562d50d09fb95100ef21f1710edefe7`。
+
+## 1. MD-4.3-GramPositive · unnumbered_claim · 印刷p.153 / PDFp.175
+
+### 2. 原文陈述
+
+> Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\lambda$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gramPositive {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i)
+    (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) q)) :
+    (textbookConstraintGram m γ q).PosDef
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.gramPositive；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原假设的可检验充分条件：质量正且真实约束梯度线性独立；正定作为结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:681](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:681>)（`MD.Ch04.gramPositive`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookConstraintGram_posDef。
+
+签名SHA256：`f21878bd904e664be738c84b29796d923652562b8c52a1b713beed3d702d629b`；原文SHA256：`dedd6810ba55524df4c05c100220438d3bef9cb0979f7be6a54bdc8ccd4e257d`。
+
+## 1. MD-4.3-GramInvertible · unnumbered_claim · 印刷p.153 / PDFp.175
+
+### 2. 原文陈述
+
+> Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\lambda$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gramInvertible {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i)
+    (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) q)) :
+    (textbookConstraintGram m γ q).det ≠ 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.gramInvertible；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]质量正及梯度独立推出真实Gram det≠0；不是将该结论作为前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:690](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:690>)（`MD.Ch04.gramInvertible`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookConstraintGram_det_ne_zero。
+
+签名SHA256：`4822b536ae48e677779e74aa8abcd90225e36e8b6cde6356285e0fd646ba67a4`；原文SHA256：`4d0b6ade682de0683c59ac1936004bb4e02c8f240cd9e400563b7838775a67d5`。
+
+## 1. MD-4.3-CotangentInvariant · unnumbered_claim · 印刷p.153 / PDFp.175
+
+### 2. 原文陈述
+
+> Reinserting this expression for $\lambda$ into (4.8) then gives a system of ordinary differential equations whose solutions, starting from a point on $T^*\mathcal M$, will remain on $T^*\mathcal M$ for all time. The co-tangent bundle becomes an invariant manifold of this ODE system. $\lambda$ is defined at any time by the physical variables $q$ and $p$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem cotangentInvariant {Nc Mc : ℕ}
+    (m : Fin Nc → ℝ) (γ : Fin Mc → (Fin Nc → ℝ) → ℝ)
+    (F : (Fin Nc → ℝ) → Fin Nc → ℝ) (q p : ℝ → Fin Nc → ℝ) (τ : ℝ)
+    (hm : ∀ i, 0 < m i) (hγ : ∀ j, ContDiff ℝ 2 (γ j))
+    (hind : ∀ t ∈ Icc 0 τ, LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) (q t)))
+    (hq : ∀ t ∈ Icc 0 τ, HasDerivWithinAt q (textbookInverseMassMatrix m *ᵥ p t) (Icc 0 τ) t)
+    (hp : ∀ t ∈ Icc 0 τ, HasDerivWithinAt p
+      (F (q t) - (textbookConstraintJacobian γ (q t))ᵀ *ᵥ
+        textbookConstrainedReactionMultiplier m γ F (q t) (p t)) (Icc 0 τ) t)
+    (hpos₀ : ∀ j, γ j (q 0) = 0)
+    (hhidden₀ : ∀ j, (fderiv ℝ (γ j) (q 0)) (textbookInverseMassMatrix m *ᵥ p 0) = 0) :
+    ∀ t ∈ Icc 0 τ, ∀ j, γ j (q t) = 0 ∧
+      (fderiv ℝ (γ j) (q t)) (textbookInverseMassMatrix m *ᵥ p t) = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.cotangentInvariant；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 给定闭区间实际ODE解、C²约束、正质量及沿解梯度独立；“for all time”仅在实际解定义区间，不声称任意长时域解存在。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:699](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:699>)（`MD.Ch04.cotangentInvariant`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookConstrainedODE_cotangent_invariant_of_mass_and_independence。
+
+签名SHA256：`0827d114105bb0bf9b81ba44dccabb088486cc2f344c02a9e08e6e3e71b7fa38`；原文SHA256：`2102fc95052ce6017198470eaa5f444cfdec9b355f379bd5c43895e404cf4990`。
+
+## 1. MD-4.3-ReducedFieldRegularity · unnumbered_claim · 印刷p.153 / PDFp.175
+
+### 2. 原文陈述
+
+> Reinserting this expression for $\lambda$ into (4.8) then gives a system of ordinary differential equations
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem reducedFieldRegularity
+    {Nc Mc : ℕ} (m : Fin Nc → ℝ) (γ : Fin Mc → (Fin Nc → ℝ) → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (z : (Fin Nc → ℝ) × (Fin Nc → ℝ))
+    (hm : ∀ i, 0 < m i) (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 3 (γ j))
+    (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) z.1)) :
+    ContDiffAt ℝ 1 (textbookConstrainedPhaseVectorField m γ U) z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.reducedFieldRegularity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]C³约束/C¹位置力、质量正、真实梯度独立给局部C¹场；是隐含正则性的独立补充，不冒充构造流存在。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:716](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:716>)（`MD.Ch04.reducedFieldRegularity`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.contDiffAt_textbookConstrainedPhaseVectorField_of_mass_and_independence。
+
+签名SHA256：`68cb0cf76552b7da7705f52ba0383f2208073cf92d7a55e1dc312b1da704d59c`；原文SHA256：`8f8cc8f8b624bedf29b09aa383074367a47870aab7eba5c2fd7f1cdbf5407d29`。
+
+## 1. MD-4.3.1-RestrictedForm · definition · 印刷p.153 / PDFp.175
+
+### 2. 原文陈述
+
+> The simplifying concept that we exploit is that the symplectic $2$-form in the ambient space can be projected to the co-tangent bundle to define an associated symplectic form on the manifold.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def restrictedForm {n : ℕ} (chart : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (z u v : MolecularDynamics.Chapter04Review.Z n) : ℝ :=
+  MolecularDynamics.Chapter04Review.phaseForm ((fderiv ℝ chart z) u) ((fderiv ℝ chart z) v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.restrictedForm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:725](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:725>)（`MD.Ch04.restrictedForm`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`1e983e35d8085a61f543fbf1aeba4b8cd104ce562ac919d9d21e30af6cd42d20`；原文SHA256：`93cee8168b8fff42f426e651d4bd72eb1cc75a1deba252a6ba00538fd67769a1`。
+
+## 1. MD-4.3.1-VariationalFormula · unnumbered_claim · 印刷p.154 / PDFp.176
+
+### 2. 原文陈述
+
+> Next, we interchange time derivatives and differentials, and use the chain rule to write
+> \[\frac{\mathrm d}{\mathrm dt}\mathrm dq=M^{-1}\mathrm dp,\tag{4.11}\]
+> \[\frac{\mathrm d}{\mathrm dt}\mathrm dp=-U''(q)\mathrm dq-\sum_{k=1}^l[(\mathrm d\lambda_k)\nabla g_k(q)+\lambda_kg_k''\mathrm dq],\tag{4.12}\]
+> \[0=g_j'(q)\mathrm dq,\quad j=1,\ldots,l.\tag{4.13}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem variational :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (rho : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l) (z v : MolecularDynamics.Chapter04Review.Z n), ContDiff ℝ 2 U → (∀ j, ContDiff ℝ 2 (g j)) →
+    DifferentiableAt ℝ rho z →
+    (fderiv ℝ (fun x : MolecularDynamics.Chapter04Review.Z n =>
+      (MolecularDynamics.Chapter04Review.invMass m x.2,-MolecularDynamics.Chapter04Review.grad U x.1-(textbookConstraintJacobian g x.1)ᵀ *ᵥ rho x)) z) v =
+      (MolecularDynamics.Chapter04Review.invMass m v.2,-(fderiv ℝ (MolecularDynamics.Chapter04Review.grad U) z.1) v.1-
+        ∑ j, (((fderiv ℝ rho z) v) j • MolecularDynamics.Chapter04Review.grad (g j) z.1+
+          rho z j • (fderiv ℝ (MolecularDynamics.Chapter04Review.grad (g j)) z.1) v.1))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.variational；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 实际Fréchet变分场：U/g C²、乘子ρ(z)可微；切向dg=0由tangentPhase/拉回消去条另保留，不把它漏掉或作无条件全空间结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:730](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:730>)（`MD.Ch04.variational`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待实际梯度、Jacobian乘子有限和的Fréchet链式/乘积展开；未建完整场到流变分理论。
+
+签名SHA256：`4f4edc163defcbeeedcbf43972fdd2063b0b449869f4baa1724e3a88878a0b8d`；原文SHA256：`a6d43ed447fe3d6d2e7464ed0a3aff932495dc22270092e8b16f16d128be8b10`。
+
+## 1. MD-4.3.1-HessianPullbackCancel · unnumbered_claim · 印刷p.155 / PDFp.177
+
+### 2. 原文陈述
+
+> This follows from the antisymmetry of the wedge product $(\mathrm dx\wedge\mathrm dy=-\mathrm dy\wedge\mathrm dx)$, and the fact that the Hessian matrix of $U$ is symmetric. Therefore
+> \[\frac{\mathrm d}{\mathrm dt}\sum_{j=1}^{N_c}\mathrm dq_j\wedge\mathrm dp_j=0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hessianPullbackCancel {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (U : (Fin Nc → ℝ) → ℝ)
+    (ρ : Fin Mc → E → ℝ) (q : E → Fin Nc → ℝ) (x u v : E)
+    (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 2 (γ j))
+    (hq : DifferentiableAt ℝ q x) (hρ : ∀ j, DifferentiableAt ℝ (ρ j) x)
+    (hconstraint : ∀ j, ∀ᶠ y in 𝓝 x, γ j (q y) = 0) :
+    ∑ i : Fin Nc,
+      ((fderiv ℝ q x) u i * (fderiv ℝ
+        (textbookMultiConstrainedMomentum Finset.univ γ ρ q
+          (fun y => textbookPotentialForce U (q y))) x) v i -
+        (fderiv ℝ (textbookMultiConstrainedMomentum Finset.univ γ ρ q
+          (fun y => textbookPotentialForce U (q y))) x) u i * (fderiv ℝ q x) v i) = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.hessianPullbackCancel；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 完整实际C²势/约束、可微乘子和切向位置图；前文各消去项在已证正式库有限和展开中保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:743](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:743>)（`MD.Ch04.hessianPullbackCancel`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookConstrainedAcceleration_pullback_zero。
+
+签名SHA256：`274ae9386e9b77b16e59447e816e338411e9afce21573449ce82d294b616fa30`；原文SHA256：`3fab7494226f091dd349ff7eef14f376758242a6a3e2a638ecc15ee2ae9f6e5a`。
+
+## 1. MD-4.3.1-ConstrainedFlowPullback · unnumbered_claim · 印刷p.156 / PDFp.178
+
+### 2. 原文陈述
+
+> Thus we see that the projected version of the symplectic form in the ambient space is conserved by the differential equation system (4.7)–(4.9). This is what is meant by saying that the constrained system is analogous to a Hamiltonian system. We may also think of its flow map as being a symplectic map of the co-tangent bundle.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem constrainedFlowPullback {Nc Mc : ℕ}
+    (m : Fin Nc → ℝ) (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (U : (Fin Nc → ℝ) → ℝ)
+    (Φ : ℝ × E → (Fin Nc → ℝ) × (Fin Nc → ℝ)) (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hm : ∀ i, 0 < m i) (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 3 (γ j))
+    (hind : ∀ t ∈ Icc 0 τ, ∀ y,
+      LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) (Φ (t, y)).1))
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ y, HasDerivAt (fun s => Φ (s, y))
+      (textbookConstrainedPhaseVectorField m γ U (Φ (t, y))) t)
+    (hpos₀ : ∀ y j, γ j (Φ (0, y)).1 = 0)
+    (hhidden₀ : ∀ y j, (fderiv ℝ (γ j) (Φ (0, y)).1)
+      (textbookInverseMassMatrix m *ᵥ (Φ (0, y)).2) = 0) (x u v : E) :
+    ∀ t ∈ Icc 0 τ,
+      textbookSymplecticForm Nc
+        ((fderiv ℝ (textbookCotangentChart (fun y => (Φ (t, y)).1) (fun y => (Φ (t, y)).2)) x) u)
+        ((fderiv ℝ (textbookCotangentChart (fun y => (Φ (t, y)).1) (fun y => (Φ (t, y)).2)) x) v) =
+      textbookSymplecticForm Nc
+        ((fderiv ℝ (textbookCotangentChart (fun y => (Φ (0, y)).1) (fun y => (Φ (0, y)).2)) x) u)
+        ((fderiv ℝ (textbookCotangentChart (fun y => (Φ (0, y)).1) (fun y => (Φ (0, y)).2)) x) v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.constrainedFlowPullback；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 给定joint C²的真实流/时间区间、C³约束及C²势、正质量/独立梯度；完整条件见桥接签名，不假设辛性结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch04.lean:759](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:759>)（`MD.Ch04.constrainedFlowPullback`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookConstrainedFlow_pullback_constant_of_mass_and_independence。
+
+签名SHA256：`dd14816de1e33efe3f41ea1e25b6c47906a794866e0c7e8d2a498c3642a87dea`；原文SHA256：`3bddf8264c9b59f85b4692a3c82e571876b8f3d6b5f700e6c98df4f6b3b89735`。

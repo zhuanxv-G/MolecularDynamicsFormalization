@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07f",
+  "source_ids": [
+    "MD-4.3-ConstraintJacobian"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 174,
+      "printed_page": 152
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "28970a36bc5e07c082063802910e4abb9ab99d69ca65e46a4faf189505ac262b",
+  "lean_sha256": "e2a7d931d2999ceccdf0c723072603ad6c6289d2b1ac0574878c532be5cbd08a",
+  "signature_sha256": "70300cc03ae59d689d656751e6f5cb85d035bcbc3019a6ee1e8b8f1c8f655c75",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "constraintJacobian",
+      "code_sha256": "70300cc03ae59d689d656751e6f5cb85d035bcbc3019a6ee1e8b8f1c8f655c75"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGradient",
+      "code_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    }
+  ],
+  "paste_plus_pdf_bytes": 94223,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3414,
+      "sha256": "170e7c3989d581149f96e487dd17f09438036f2740f0703a757392e5ab9ac9a3"
+    },
+    "BATCH07f_PAGES.pdf": {
+      "bytes": 90809,
+      "sha256": "a0654d13dffd0d8fd4cceb09b6795259219efc0fecdc6bd0cbb416bd37e4db5b"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 95857
+}

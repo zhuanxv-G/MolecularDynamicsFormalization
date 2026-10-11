@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07b",
+  "source_ids": [
+    "MD-4.3-TimeConstraintDerivative"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 172,
+      "printed_page": 150
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "28970a36bc5e07c082063802910e4abb9ab99d69ca65e46a4faf189505ac262b",
+  "lean_sha256": "e2a7d931d2999ceccdf0c723072603ad6c6289d2b1ac0574878c532be5cbd08a",
+  "signature_sha256": "fcf044d897570cccb829b8bf466bdaee0b99ed4f224b20ab7a4ac28c8f0382a2",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "paste_plus_pdf_bytes": 77044,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3505,
+      "sha256": "b7dbfee694a5068eb01a55cc5031276c1cbca5e64d783ae835fa0aebfd8564da"
+    },
+    "BATCH07b_PAGES.pdf": {
+      "bytes": 73539,
+      "sha256": "494688ba63c6ae696f11de513e6ea8a124c86b1d83036b97eaf3063f6de15f73"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 78961
+}

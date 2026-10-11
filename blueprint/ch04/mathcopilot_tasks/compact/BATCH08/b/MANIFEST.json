@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08b",
+  "source_ids": [
+    "MD-4.3-RestraintPotential"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 172,
+      "printed_page": 150
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "28970a36bc5e07c082063802910e4abb9ab99d69ca65e46a4faf189505ac262b",
+  "lean_sha256": "e2a7d931d2999ceccdf0c723072603ad6c6289d2b1ac0574878c532be5cbd08a",
+  "signature_sha256": "8592bf4b537b9aeedebf01927be24b58722115e7ba60ed6f25b6fb1c930956b1",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "Position",
+      "code_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "restraintPotential",
+      "code_sha256": "8592bf4b537b9aeedebf01927be24b58722115e7ba60ed6f25b6fb1c930956b1"
+    }
+  ],
+  "paste_plus_pdf_bytes": 76555,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3016,
+      "sha256": "d26b7138c72450e7eebfc6d57786a83ad75164d5c3e2c8ecd51d1cbc5d235faf"
+    },
+    "BATCH08b_PAGES.pdf": {
+      "bytes": 73539,
+      "sha256": "494688ba63c6ae696f11de513e6ea8a124c86b1d83036b97eaf3063f6de15f73"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 78148
+}

@@ -1,0 +1,14 @@
+blueprint\ch04\validation\short_search\SHAKEElimination-route1.lean:22:24: error: Application type mismatch: The argument
+  hp0
+has type
+  (q (k + 1), p (k + 1)).1 ∈ constraintSet g
+but is expected to have type
+  ?m.162 = ?m.163
+in the application
+  congrFun hp0
+blueprint\ch04\validation\short_search\SHAKEElimination-route1.lean:26:4: error: Type mismatch: After simplification, term
+  hg1
+ has type
+  p (k + 2) = half (k + 1) + (h / 2) • (F (q (k + 2)) - (textbookConstraintJacobian g (q (k + 2)))ᵀ *ᵥ rho (k + 2))
+but is expected to have type
+  q (k + 2) ∈ constraintSet g

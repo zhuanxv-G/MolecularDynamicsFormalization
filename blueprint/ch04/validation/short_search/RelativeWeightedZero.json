@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro N m q hm\n  simp only [MolecularDynamics.Chapter04Review.relativePositions,smul_sub,Finset.sum_sub_distrib,← Finset.sum_smul]\n  rw [MolecularDynamics.Chapter04Review.centerMass,smul_smul]\n  change (∑ i, m i • q i)-(MolecularDynamics.Chapter04Review.totalMass m * (MolecularDynamics.Chapter04Review.totalMass m)⁻¹) • (∑ i, m i • q i)=0\n  rw [mul_inv_cancel₀ hm,one_smul,sub_self]",
+    "source": "blueprint/ch04/validation/short_search/RelativeWeightedZero-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/RelativeWeightedZero-route1.log",
+    "source_sha256": "cc0ade00c5f760a720b8d922c3ba31faabcf353c1cc508f93c64d279b4fb5fe7",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

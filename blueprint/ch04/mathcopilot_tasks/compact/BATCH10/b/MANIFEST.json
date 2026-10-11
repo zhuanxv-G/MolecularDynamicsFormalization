@@ -1,0 +1,133 @@
+{
+  "batch": "BATCH10",
+  "subtask": "BATCH10b",
+  "source_ids": [
+    "MD-4.3.1-VariationalFormula"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 176,
+      "printed_page": 154
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "28970a36bc5e07c082063802910e4abb9ab99d69ca65e46a4faf189505ac262b",
+  "lean_sha256": "e2a7d931d2999ceccdf0c723072603ad6c6289d2b1ac0574878c532be5cbd08a",
+  "signature_sha256": "4f4edc163defcbeeedcbf43972fdd2063b0b449869f4baa1724e3a88878a0b8d",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "grad",
+      "code_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "grad",
+      "code_sha256": "522e86de81741a525bcd8720e95f1f0a3f1ba51791c5d13cea4bed7e30a1620e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "grad",
+      "code_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "grad",
+      "code_sha256": "2b02b79e903c41eb476fa11e97dc6ad10bd20c99b33fe437c813ade44b68008e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGradient",
+      "code_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintJacobian",
+      "code_sha256": "8cf31fc6e8fc4d97e435434cd3ff311cd4bdc6e77b6c39dac71331c66249f03a"
+    }
+  ],
+  "paste_plus_pdf_bytes": 78151,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7007,
+      "sha256": "f3e6f31799b7541d2138c406d533b2a4b87c11c7dcb56f96d1405fea61e97574"
+    },
+    "BATCH10b_PAGES.pdf": {
+      "bytes": 71144,
+      "sha256": "c642cf8ebfff71dc7b12d17c9b9f2f6e4396c97685645d753f26cbc6662cd40e"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 83368
+}

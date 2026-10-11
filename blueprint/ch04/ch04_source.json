@@ -1008,5 +1008,559 @@
     "review_status": "DRAFT",
     "repair_log": [],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-HolonomicRelation",
+    "kind": "definition",
+    "label": "(4.3)",
+    "section": "4.3",
+    "printed_page": "150",
+    "pdf_page": "172",
+    "statement_latex": "In this section we consider holonomic constraints which may be expressed in terms of positions only, and perhaps time, i.e.\n\\[g(q,t)=0.\\tag{4.3}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "g的真实位置/时间函数；不同于任意独立动量约束。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.holonomicRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-TimeConstraintDerivative",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "150",
+    "pdf_page": "172",
+    "statement_latex": "Note that by differentiating (4.3) with respect to time, we obtain $\\nabla_q g(q,t)\\cdot\\dot q+\\partial g/\\partial t=0$ which involves velocities.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.timeConstraintDerivative",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "g的实际uncurry可微、真实曲线导数q′=v、在当前时刻邻域g(q(s),s)=0；不把导数等于0作假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-ConstrainedSolution",
+    "kind": "definition",
+    "label": "(4.4)–(4.9)",
+    "section": "4.3",
+    "printed_page": "152",
+    "pdf_page": "174",
+    "statement_latex": "the equations of motion may be written\n\\[\\dot q=M^{-1}p,\\tag{4.4}\\]\n\\[\\dot p=-\\nabla U(q)-\\sum_{k=1}^l\\lambda_k\\nabla g_k(q),\\tag{4.5}\\]\n\\[0=g_j(q),\\quad j=1,2,\\ldots,l.\\tag{4.6}\\]\nthen we may write the constrained equations of motion in the form\n\\[\\dot q=M^{-1}p,\\tag{4.7}\\qquad\\dot p=-\\nabla U(q)-g'(q)^T\\lambda,\\tag{4.8}\\qquad0=g(q).\\tag{4.9}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "F=−grad U代入所给一般位置力定义；实际各时刻导数和逐分量约束，不假定λ存在。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.constrainedSolution",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-ConstraintSet",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "152",
+    "pdf_page": "174",
+    "statement_latex": "Constraints such as those described above define a manifold in the configuration space $\\mathcal M=\\{q\\mid g(q)=0\\}$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.constraintSet",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "定义仅集合；称为光滑流形需要独立梯度/正则值资格，未构造抽象流形。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-CotangentSet",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "152",
+    "pdf_page": "174",
+    "statement_latex": "The set of pairs $(q,p)$ satisfying, simultaneously, the equations\n\\[g(q)=0,\\qquad g'(q)M^{-1}p=0,\\]\nis called the co-tangent bundle associated to the manifold $\\mathcal M$, and we refer to it as $T^*\\mathcal M$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "真实约束Jacobian和质量逆作用；以嵌入相空间集合实现，不伪称已构造抽象余切丛。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.cotangentSet",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "正质量及独立梯度为几何解释资格。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-ConstraintJacobian",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "152",
+    "pdf_page": "174",
+    "statement_latex": "It is often convenient to combine all the constraints and to describe them by a single vector-valued function $g:\\mathbb R^{N_c}\\to\\mathbb R^l$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "g′由各真实Fréchet偏导组成，原页方程(4.8)的Jacobian对象。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.constraintJacobian",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-JacobianActualDerivative",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "152",
+    "pdf_page": "174",
+    "statement_latex": "Given a motion $(q(t),p(t),\\lambda(t))$ of (4.7)–(4.9) we note that $g(q(t))\\equiv0$ at all times $t$, hence, by differentiation\n\\[g'(q(t))\\dot q(t)\\equiv0,\\]\nwhich we may rephrase as\n\\[g'(q(t))M^{-1}p(t)\\equiv0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.jacobianActualDerivative",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookConstraintJacobian_eq_actualDerivative"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]本条桥接真实向量Jacobian，不以它冒充完整曲线隐藏约束保持；实际曲线/ODE不变性另条保留。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-ConstraintDegrees",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "151",
+    "pdf_page": "173",
+    "statement_latex": "Note that with $l$ constraints the actual number of degrees of freedom, which is needed for things like the computation of temperature, is $N_d=N_c-l$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.constraintDegrees",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实约束导数满射、当前点可微；独立正则约束下切空间是ker Dg，维数关系不作假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "150",
+    "pdf_page": "172",
+    "statement_latex": "We suppose the restraint to have an associated coefficient $k=\\varepsilon^{-1}$, where $\\varepsilon$ is a small parameter. Then we have a generalized flexible pendulum with Hamiltonian $H=\\|p\\|^2/(2m)+U(q)+\\varepsilon^{-1}(\\|q\\|-r_0)^2/2$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "欧氏Position3及欧氏norm，非Pi最大范数；m>0,ε>0为物理模型资格。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.flexiblePendulumHamiltonian",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-RestraintPotential",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "150",
+    "pdf_page": "172",
+    "statement_latex": "where the restraint potential $\\varphi_\\varepsilon(q)=\\varepsilon^{-1}(\\|q\\|-r_0)^2/2$ has associated restoring force",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "真实欧氏范数径向势；q=0处径向可微性需另核，不由定义冒充光滑。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.restraintPotential",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-RestraintForcePrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "150",
+    "pdf_page": "172",
+    "statement_latex": "\\[F_\\varepsilon=-\\nabla\\varphi_\\varepsilon(q)=\\varphi'_\\varepsilon(q).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "Fε=−∇φε=φ′ε的prime含义/负号待裁定；原文不静默更正。"
+      }
+    ],
+    "lean_decl": "MD.Ch04.restraintForcePrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]将prime暂按配置梯度解释；该记号解释待审。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-ConstrainedPendulum",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "151",
+    "pdf_page": "173",
+    "statement_latex": "The equations of motion for the constrained system take the form\n\\[\\dot q=v,\\qquad\\dot v=-\\nabla U(q)-q\\lambda,\\qquad0=\\|q\\|^2-r_0^2.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "Gauss法向力Fc=−qλ由本关系保留；不将约束力唯一存在作已证结论。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.constrainedPendulum",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "原所写v′方程按单位质量，λ吸收法向grad(‖q‖²)=2q的因子；真实欧氏曲线和导数。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-ConstraintCurvature",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "153",
+    "pdf_page": "175",
+    "statement_latex": "where $\\varphi$ is an $l$-dimensional vector whose $k$th component is\n\\[\\varphi_k=p(t)^TM^{-1}\\nabla_q^2g_k(q(t))M^{-1}p(t).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "真实D²g双线性作用在两个M⁻¹p上；不是任意给定曲率符号。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.constraintCurvature",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-ReactionMultiplier",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "153",
+    "pdf_page": "175",
+    "statement_latex": "Using (4.8) in (4.10) we obtain\n\\[g'(q)M^{-1}[F-g'(q)^T\\lambda]+\\varphi=0.\\]\nThis is a system of linear equations for $\\lambda$. Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\\lambda$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "λ为真实Gram逆乘(GM⁻¹F+φ)；矩阵逆的语义资格det≠0在下一定理及Gram性质中明确。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.reactionMultiplier",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-ReactionBalance",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "153",
+    "pdf_page": "175",
+    "statement_latex": "Using (4.8) in (4.10) we obtain\n\\[g'(q)M^{-1}[F-g'(q)^T\\lambda]+\\varphi=0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.reactionBalance",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookConstrainedReaction_balance"
+    ],
+    "extra_assumptions": [
+      "真实Gram det≠0；F=−grad U是Hamiltonian实例，一般位置力定理提供更强桥接。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-GramPositive",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "153",
+    "pdf_page": "175",
+    "statement_latex": "Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\\lambda$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.gramPositive",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookConstraintGram_posDef"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]原假设的可检验充分条件：质量正且真实约束梯度线性独立；正定作为结论。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-GramInvertible",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "153",
+    "pdf_page": "175",
+    "statement_latex": "Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\\lambda$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.gramInvertible",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookConstraintGram_det_ne_zero"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]质量正及梯度独立推出真实Gram det≠0；不是将该结论作为前提。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-CotangentInvariant",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "153",
+    "pdf_page": "175",
+    "statement_latex": "Reinserting this expression for $\\lambda$ into (4.8) then gives a system of ordinary differential equations whose solutions, starting from a point on $T^*\\mathcal M$, will remain on $T^*\\mathcal M$ for all time. The co-tangent bundle becomes an invariant manifold of this ODE system. $\\lambda$ is defined at any time by the physical variables $q$ and $p$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.cotangentInvariant",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookConstrainedODE_cotangent_invariant_of_mass_and_independence"
+    ],
+    "extra_assumptions": [
+      "给定闭区间实际ODE解、C²约束、正质量及沿解梯度独立；“for all time”仅在实际解定义区间，不声称任意长时域解存在。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3-ReducedFieldRegularity",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3",
+    "printed_page": "153",
+    "pdf_page": "175",
+    "statement_latex": "Reinserting this expression for $\\lambda$ into (4.8) then gives a system of ordinary differential equations",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.reducedFieldRegularity",
+    "reusable_proofs": [
+      "MolecularDynamics.contDiffAt_textbookConstrainedPhaseVectorField_of_mass_and_independence"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]C³约束/C¹位置力、质量正、真实梯度独立给局部C¹场；是隐含正则性的独立补充，不冒充构造流存在。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.1-RestrictedForm",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3.1",
+    "printed_page": "153",
+    "pdf_page": "175",
+    "statement_latex": "The simplifying concept that we exploit is that the symplectic $2$-form in the ambient space can be projected to the co-tangent bundle to define an associated symplectic form on the manifold.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "真实可微约束图的标准2-form拉回；抽象余切丛存在/非退化未由定义证明。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.restrictedForm",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.1-VariationalFormula",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3.1",
+    "printed_page": "154",
+    "pdf_page": "176",
+    "statement_latex": "Next, we interchange time derivatives and differentials, and use the chain rule to write\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\mathrm dq=M^{-1}\\mathrm dp,\\tag{4.11}\\]\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\mathrm dp=-U''(q)\\mathrm dq-\\sum_{k=1}^l[(\\mathrm d\\lambda_k)\\nabla g_k(q)+\\lambda_kg_k''\\mathrm dq],\\tag{4.12}\\]\n\\[0=g_j'(q)\\mathrm dq,\\quad j=1,\\ldots,l.\\tag{4.13}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.variational",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "实际Fréchet变分场：U/g C²、乘子ρ(z)可微；切向dg=0由tangentPhase/拉回消去条另保留，不把它漏掉或作无条件全空间结论。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.1-HessianPullbackCancel",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3.1",
+    "printed_page": "155",
+    "pdf_page": "177",
+    "statement_latex": "This follows from the antisymmetry of the wedge product $(\\mathrm dx\\wedge\\mathrm dy=-\\mathrm dy\\wedge\\mathrm dx)$, and the fact that the Hessian matrix of $U$ is symmetric. Therefore\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\sum_{j=1}^{N_c}\\mathrm dq_j\\wedge\\mathrm dp_j=0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.hessianPullbackCancel",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookConstrainedAcceleration_pullback_zero"
+    ],
+    "extra_assumptions": [
+      "完整实际C²势/约束、可微乘子和切向位置图；前文各消去项在已证正式库有限和展开中保留。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.1-ConstrainedFlowPullback",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3.1",
+    "printed_page": "156",
+    "pdf_page": "178",
+    "statement_latex": "Thus we see that the projected version of the symplectic form in the ambient space is conserved by the differential equation system (4.7)–(4.9). This is what is meant by saying that the constrained system is analogous to a Hamiltonian system. We may also think of its flow map as being a symplectic map of the co-tangent bundle.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.constrainedFlowPullback",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookConstrainedFlow_pullback_constant_of_mass_and_independence"
+    ],
+    "extra_assumptions": [
+      "给定joint C²的真实流/时间区间、C³约束及C²势、正质量/独立梯度；完整条件见桥接签名，不假设辛性结论。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]

@@ -21,3 +21,6 @@ import ch04_section421
 import ch04_section421b
 import ch04_section42extra
 import ch04_section42molly
+import ch04_section43
+import ch04_section43a
+import ch04_section43b

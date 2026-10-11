@@ -566,4 +566,214 @@ theorem mollifiedStructure :
     MolecularDynamics.Chapter04Review.symplecticMap (MolecularDynamics.Chapter04Review.respa m (MolecularDynamics.Chapter04Review.mollifiedPotential US A) UF r h) := by
   sorry
 
+/-- source_id: MD-4.3-HolonomicRelation · (4.3) · §4.3 · 印刷p.150 / PDFp.172 -/
+def holonomicRelation {n l : ℕ} (g : MolecularDynamics.Chapter04Review.Q n → ℝ → MolecularDynamics.Chapter04Review.Q l) (q : ℝ → MolecularDynamics.Chapter04Review.Q n) : Prop :=
+  ∀ t, g (q t) t=0
+
+/-- source_id: MD-4.3-TimeConstraintDerivative · unnumbered_claim · §4.3 · 印刷p.150 / PDFp.172
+[EXTRA] g的实际uncurry可微、真实曲线导数q′=v、在当前时刻邻域g(q(s),s)=0；不把导数等于0作假设。 -/
+theorem timeConstraintDerivative :
+  ∀ n l (g : MolecularDynamics.Chapter04Review.Q n → ℝ → MolecularDynamics.Chapter04Review.Q l) (q : ℝ → MolecularDynamics.Chapter04Review.Q n) t v,
+    DifferentiableAt ℝ (Function.uncurry g) (q t,t) → HasDerivAt q v t →
+    (∀ᶠ s in 𝓝 t, g (q s) s=0) → (fderiv ℝ (Function.uncurry g) (q t,t)) (v,1)=0 := by
+  intro n l g q t v hg hq hz
+  have hp : HasDerivAt (fun s : ℝ => (q s,s)) (v,1) t := hq.prodMk (hasDerivAt_id t)
+  have hd : HasDerivAt (fun s => g (q s) s)
+      ((fderiv ℝ (Function.uncurry g) (q t,t)) (v,1)) t :=
+    hg.hasFDerivAt.comp_hasDerivAt (f := fun s : ℝ => (q s,s)) t hp
+  have hzero : HasDerivAt (fun s => g (q s) s) (0 : Fin l → ℝ) t :=
+    (hasDerivAt_const t (0 : Fin l → ℝ)).congr_of_eventuallyEq hz
+  exact hd.unique hzero
+
+/-- source_id: MD-4.3-ConstrainedSolution · (4.4)–(4.9) · §4.3 · 印刷p.152 / PDFp.174 -/
+def constrainedSolution {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) : Prop :=
+  ∀ t ∈ I, HasDerivWithinAt q (MolecularDynamics.Chapter04Review.invMass m (p t)) I t ∧
+    HasDerivWithinAt p (F (q t)-(textbookConstraintJacobian g (q t))ᵀ *ᵥ rho t) I t ∧
+    q t ∈ MolecularDynamics.Chapter04Review.constraintSet g
+
+/-- source_id: MD-4.3-ConstraintSet · definition · §4.3 · 印刷p.152 / PDFp.174
+[EXTRA] 定义仅集合；称为光滑流形需要独立梯度/正则值资格，未构造抽象流形。 -/
+def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}
+
+/-- source_id: MD-4.3-CotangentSet · definition · §4.3 · 印刷p.152 / PDFp.174
+[EXTRA] 正质量及独立梯度为几何解释资格。 -/
+def cotangentSet {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Z n) :=
+  {z | z.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧ textbookConstraintJacobian g z.1 *ᵥ MolecularDynamics.Chapter04Review.invMass m z.2=0}
+
+/-- source_id: MD-4.3-ConstraintJacobian · definition · §4.3 · 印刷p.152 / PDFp.174 -/
+noncomputable def constraintJacobian {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Matrix (Fin Mc) (Fin Nc) ℝ :=
+  fun j i => textbookConstraintGradient (γ j) q i
+
+/-- source_id: MD-4.3-JacobianActualDerivative · unnumbered_claim · §4.3 · 印刷p.152 / PDFp.174
+[EXTRA] [EXTRA]本条桥接真实向量Jacobian，不以它冒充完整曲线隐藏约束保持；实际曲线/ODE不变性另条保留。 -/
+theorem jacobianActualDerivative {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)
+    (hγ : ∀ j, DifferentiableAt ℝ (γ j) q) :
+    textbookConstraintJacobian γ q =
+      LinearMap.toMatrix' (fderiv ℝ (fun y j => γ j y) q).toLinearMap := by
+  apply MolecularDynamics.textbookConstraintJacobian_eq_actualDerivative <;> assumption
+
+/-- source_id: MD-4.3-ConstraintDegrees · unnumbered_claim · §4.3 · 印刷p.151 / PDFp.173
+[EXTRA] [EXTRA]真实约束导数满射、当前点可微；独立正则约束下切空间是ker Dg，维数关系不作假设。 -/
+theorem constraintDegrees :
+  ∀ n l (g : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q l) (q : MolecularDynamics.Chapter04Review.Q n), DifferentiableAt ℝ g q →
+    Function.Surjective (fderiv ℝ g q) →
+    Module.finrank ℝ (LinearMap.ker (fderiv ℝ g q).toLinearMap)+l=n := by
+  intro n l g q hg hs
+  have hh := LinearMap.finrank_range_add_finrank_ker (fderiv ℝ g q).toLinearMap
+  rw [LinearMap.range_eq_top.mpr hs] at hh
+  simpa [add_comm] using hh
+
+/-- source_id: MD-4.3-FlexiblePendulumHamiltonian · definition · §4.3 · 印刷p.150 / PDFp.172 -/
+def flexiblePendulumHamiltonian (m ε r₀ : ℝ) (U : Position 3 → ℝ)
+    (z : Position 3 × Position 3) : ℝ :=
+  ‖z.2‖^2/(2*m)+U z.1+ε⁻¹*(‖z.1‖-r₀)^2/2
+
+/-- source_id: MD-4.3-RestraintPotential · definition · §4.3 · 印刷p.150 / PDFp.172 -/
+def restraintPotential (ε r₀ : ℝ) (q : Position 3) : ℝ :=
+  ε⁻¹*(‖q‖-r₀)^2/2
+
+/-- source_id: MD-4.3-RestraintForcePrinted · unnumbered_claim · §4.3 · 印刷p.150 / PDFp.172
+[EXTRA] [EXTRA]将prime暂按配置梯度解释；该记号解释待审。
+[ERRATUM?] Fε=−∇φε=φ′ε的prime含义/负号待裁定；原文不静默更正。 -/
+theorem restraintForcePrinted :
+    ∀ ε r₀ : ℝ, ∀ q : Position 3,
+      -gradient (fun x : Position 3 => ε⁻¹*(‖x‖-r₀)^2/2) q =
+       gradient (fun x : Position 3 => ε⁻¹*(‖x‖-r₀)^2/2) q := by
+  sorry
+
+/-- source_id: MD-4.3-ConstrainedPendulum · definition · §4.3 · 印刷p.151 / PDFp.173
+[EXTRA] 原所写v′方程按单位质量，λ吸收法向grad(‖q‖²)=2q的因子；真实欧氏曲线和导数。 -/
+def constrainedPendulum (U : Position 3 → ℝ) (r₀ : ℝ)
+    (q v : ℝ → Position 3) (lam : ℝ → ℝ) (I : Set ℝ) : Prop :=
+  ∀ t ∈ I, HasDerivWithinAt q (v t) I t ∧
+    HasDerivWithinAt v (-gradient U (q t)-(lam t) • q t) I t ∧
+    ‖q t‖^2-r₀^2=0
+
+/-- source_id: MD-4.3-ConstraintCurvature · definition · §4.3 · 印刷p.153 / PDFp.175 -/
+noncomputable def constraintCurvature {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+  fun j => (fderiv ℝ (fderiv ℝ (γ j)) q)
+    (textbookInverseMassMatrix m *ᵥ p) (textbookInverseMassMatrix m *ᵥ p)
+
+/-- source_id: MD-4.3-ReactionMultiplier · definition · §4.3 · 印刷p.153 / PDFp.175 -/
+noncomputable def reactionMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (F : (Fin Nc → ℝ) → Fin Nc → ℝ)
+    (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+  (textbookConstraintGram m γ q)⁻¹ *ᵥ
+    (textbookConstraintJacobian γ q *ᵥ (textbookInverseMassMatrix m *ᵥ F q) +
+      textbookConstraintCurvature m γ q p)
+
+/-- source_id: MD-4.3-ReactionBalance · unnumbered_claim · §4.3 · 印刷p.153 / PDFp.175
+[EXTRA] 真实Gram det≠0；F=−grad U是Hamiltonian实例，一般位置力定理提供更强桥接。 -/
+theorem reactionBalance {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (F : (Fin Nc → ℝ) → Fin Nc → ℝ)
+    (q p : Fin Nc → ℝ) (hdet : (textbookConstraintGram m γ q).det ≠ 0) :
+    textbookConstraintJacobian γ q *ᵥ (textbookInverseMassMatrix m *ᵥ
+      (F q - (textbookConstraintJacobian γ q)ᵀ *ᵥ textbookConstrainedReactionMultiplier m γ F q p)) +
+        textbookConstraintCurvature m γ q p = 0 := by
+  apply MolecularDynamics.textbookConstrainedReaction_balance <;> assumption
+
+/-- source_id: MD-4.3-GramPositive · unnumbered_claim · §4.3 · 印刷p.153 / PDFp.175
+[EXTRA] [EXTRA]原假设的可检验充分条件：质量正且真实约束梯度线性独立；正定作为结论。 -/
+theorem gramPositive {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i)
+    (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) q)) :
+    (textbookConstraintGram m γ q).PosDef := by
+  apply MolecularDynamics.textbookConstraintGram_posDef <;> assumption
+
+/-- source_id: MD-4.3-GramInvertible · unnumbered_claim · §4.3 · 印刷p.153 / PDFp.175
+[EXTRA] [EXTRA]质量正及梯度独立推出真实Gram det≠0；不是将该结论作为前提。 -/
+theorem gramInvertible {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i)
+    (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) q)) :
+    (textbookConstraintGram m γ q).det ≠ 0 := by
+  apply MolecularDynamics.textbookConstraintGram_det_ne_zero <;> assumption
+
+/-- source_id: MD-4.3-CotangentInvariant · unnumbered_claim · §4.3 · 印刷p.153 / PDFp.175
+[EXTRA] 给定闭区间实际ODE解、C²约束、正质量及沿解梯度独立；“for all time”仅在实际解定义区间，不声称任意长时域解存在。 -/
+theorem cotangentInvariant {Nc Mc : ℕ}
+    (m : Fin Nc → ℝ) (γ : Fin Mc → (Fin Nc → ℝ) → ℝ)
+    (F : (Fin Nc → ℝ) → Fin Nc → ℝ) (q p : ℝ → Fin Nc → ℝ) (τ : ℝ)
+    (hm : ∀ i, 0 < m i) (hγ : ∀ j, ContDiff ℝ 2 (γ j))
+    (hind : ∀ t ∈ Icc 0 τ, LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) (q t)))
+    (hq : ∀ t ∈ Icc 0 τ, HasDerivWithinAt q (textbookInverseMassMatrix m *ᵥ p t) (Icc 0 τ) t)
+    (hp : ∀ t ∈ Icc 0 τ, HasDerivWithinAt p
+      (F (q t) - (textbookConstraintJacobian γ (q t))ᵀ *ᵥ
+        textbookConstrainedReactionMultiplier m γ F (q t) (p t)) (Icc 0 τ) t)
+    (hpos₀ : ∀ j, γ j (q 0) = 0)
+    (hhidden₀ : ∀ j, (fderiv ℝ (γ j) (q 0)) (textbookInverseMassMatrix m *ᵥ p 0) = 0) :
+    ∀ t ∈ Icc 0 τ, ∀ j, γ j (q t) = 0 ∧
+      (fderiv ℝ (γ j) (q t)) (textbookInverseMassMatrix m *ᵥ p t) = 0 := by
+  apply MolecularDynamics.textbookConstrainedODE_cotangent_invariant_of_mass_and_independence <;> assumption
+
+/-- source_id: MD-4.3-ReducedFieldRegularity · unnumbered_claim · §4.3 · 印刷p.153 / PDFp.175
+[EXTRA] [EXTRA]C³约束/C¹位置力、质量正、真实梯度独立给局部C¹场；是隐含正则性的独立补充，不冒充构造流存在。 -/
+theorem reducedFieldRegularity
+    {Nc Mc : ℕ} (m : Fin Nc → ℝ) (γ : Fin Mc → (Fin Nc → ℝ) → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (z : (Fin Nc → ℝ) × (Fin Nc → ℝ))
+    (hm : ∀ i, 0 < m i) (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 3 (γ j))
+    (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) z.1)) :
+    ContDiffAt ℝ 1 (textbookConstrainedPhaseVectorField m γ U) z := by
+  apply MolecularDynamics.contDiffAt_textbookConstrainedPhaseVectorField_of_mass_and_independence <;> assumption
+
+/-- source_id: MD-4.3.1-RestrictedForm · definition · §4.3.1 · 印刷p.153 / PDFp.175 -/
+def restrictedForm {n : ℕ} (chart : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (z u v : MolecularDynamics.Chapter04Review.Z n) : ℝ :=
+  MolecularDynamics.Chapter04Review.phaseForm ((fderiv ℝ chart z) u) ((fderiv ℝ chart z) v)
+
+/-- source_id: MD-4.3.1-VariationalFormula · unnumbered_claim · §4.3.1 · 印刷p.154 / PDFp.176
+[EXTRA] 实际Fréchet变分场：U/g C²、乘子ρ(z)可微；切向dg=0由tangentPhase/拉回消去条另保留，不把它漏掉或作无条件全空间结论。 -/
+theorem variational :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (rho : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l) (z v : MolecularDynamics.Chapter04Review.Z n), ContDiff ℝ 2 U → (∀ j, ContDiff ℝ 2 (g j)) →
+    DifferentiableAt ℝ rho z →
+    (fderiv ℝ (fun x : MolecularDynamics.Chapter04Review.Z n =>
+      (MolecularDynamics.Chapter04Review.invMass m x.2,-MolecularDynamics.Chapter04Review.grad U x.1-(textbookConstraintJacobian g x.1)ᵀ *ᵥ rho x)) z) v =
+      (MolecularDynamics.Chapter04Review.invMass m v.2,-(fderiv ℝ (MolecularDynamics.Chapter04Review.grad U) z.1) v.1-
+        ∑ j, (((fderiv ℝ rho z) v) j • MolecularDynamics.Chapter04Review.grad (g j) z.1+
+          rho z j • (fderiv ℝ (MolecularDynamics.Chapter04Review.grad (g j)) z.1) v.1)) := by
+  sorry
+
+/-- source_id: MD-4.3.1-HessianPullbackCancel · unnumbered_claim · §4.3.1 · 印刷p.155 / PDFp.177
+[EXTRA] 完整实际C²势/约束、可微乘子和切向位置图；前文各消去项在已证正式库有限和展开中保留。 -/
+theorem hessianPullbackCancel {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (U : (Fin Nc → ℝ) → ℝ)
+    (ρ : Fin Mc → E → ℝ) (q : E → Fin Nc → ℝ) (x u v : E)
+    (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 2 (γ j))
+    (hq : DifferentiableAt ℝ q x) (hρ : ∀ j, DifferentiableAt ℝ (ρ j) x)
+    (hconstraint : ∀ j, ∀ᶠ y in 𝓝 x, γ j (q y) = 0) :
+    ∑ i : Fin Nc,
+      ((fderiv ℝ q x) u i * (fderiv ℝ
+        (textbookMultiConstrainedMomentum Finset.univ γ ρ q
+          (fun y => textbookPotentialForce U (q y))) x) v i -
+        (fderiv ℝ (textbookMultiConstrainedMomentum Finset.univ γ ρ q
+          (fun y => textbookPotentialForce U (q y))) x) u i * (fderiv ℝ q x) v i) = 0 := by
+  apply MolecularDynamics.textbookConstrainedAcceleration_pullback_zero <;> assumption
+
+/-- source_id: MD-4.3.1-ConstrainedFlowPullback · unnumbered_claim · §4.3.1 · 印刷p.156 / PDFp.178
+[EXTRA] 给定joint C²的真实流/时间区间、C³约束及C²势、正质量/独立梯度；完整条件见桥接签名，不假设辛性结论。 -/
+theorem constrainedFlowPullback {Nc Mc : ℕ}
+    (m : Fin Nc → ℝ) (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (U : (Fin Nc → ℝ) → ℝ)
+    (Φ : ℝ × E → (Fin Nc → ℝ) × (Fin Nc → ℝ)) (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hm : ∀ i, 0 < m i) (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 3 (γ j))
+    (hind : ∀ t ∈ Icc 0 τ, ∀ y,
+      LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) (Φ (t, y)).1))
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ y, HasDerivAt (fun s => Φ (s, y))
+      (textbookConstrainedPhaseVectorField m γ U (Φ (t, y))) t)
+    (hpos₀ : ∀ y j, γ j (Φ (0, y)).1 = 0)
+    (hhidden₀ : ∀ y j, (fderiv ℝ (γ j) (Φ (0, y)).1)
+      (textbookInverseMassMatrix m *ᵥ (Φ (0, y)).2) = 0) (x u v : E) :
+    ∀ t ∈ Icc 0 τ,
+      textbookSymplecticForm Nc
+        ((fderiv ℝ (textbookCotangentChart (fun y => (Φ (t, y)).1) (fun y => (Φ (t, y)).2)) x) u)
+        ((fderiv ℝ (textbookCotangentChart (fun y => (Φ (t, y)).1) (fun y => (Φ (t, y)).2)) x) v) =
+      textbookSymplecticForm Nc
+        ((fderiv ℝ (textbookCotangentChart (fun y => (Φ (0, y)).1) (fun y => (Φ (0, y)).2)) x) u)
+        ((fderiv ℝ (textbookCotangentChart (fun y => (Φ (0, y)).1) (fun y => (Φ (0, y)).2)) x) v) := by
+  apply MolecularDynamics.textbookConstrainedFlow_pullback_constant_of_mass_and_independence <;> assumption
+
 end MD.Ch04

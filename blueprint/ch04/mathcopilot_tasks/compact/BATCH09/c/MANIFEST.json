@@ -1,0 +1,85 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09c",
+  "source_ids": [
+    "MD-4.3-ReducedFieldRegularity"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 175,
+      "printed_page": 153
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "28970a36bc5e07c082063802910e4abb9ab99d69ca65e46a4faf189505ac262b",
+  "lean_sha256": "e2a7d931d2999ceccdf0c723072603ad6c6289d2b1ac0574878c532be5cbd08a",
+  "signature_sha256": "68cb0cf76552b7da7705f52ba0383f2208073cf92d7a55e1dc312b1da704d59c",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReactionRegularity.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstrainedPhaseVectorField",
+      "code_sha256": "fd40c0790fdc9f6a5f4ed29294de1e8004958762f47a54a3f4c13539ca585b87"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReaction.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstrainedReactionMultiplier",
+      "code_sha256": "4c098d46a566eaa7cea8265004a6f811bb0204f83c65edf2d10f5b1d34a177e5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReaction.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintCurvature",
+      "code_sha256": "221e918cc4812b05f61a8e9808ecbe226b291802ba2669726730ad1adbc3c454"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGradient",
+      "code_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGram",
+      "code_sha256": "f9d0691a77a4664150d234c00a3129e9c83be39d8b1787031a5684ce26cba140"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintJacobian",
+      "code_sha256": "8cf31fc6e8fc4d97e435434cd3ff311cd4bdc6e77b6c39dac71331c66249f03a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookInverseMassMatrix",
+      "code_sha256": "9e7434aa6e315ddbe11e2a45e46a9d927661975aa91274386af7c31412a7c330"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPotentialForce",
+      "code_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    }
+  ],
+  "paste_plus_pdf_bytes": 94129,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6395,
+      "sha256": "b231c52ba6657571faf6e73edc3fb0d018f731e63fd9cd3df1d7af0370a1e533"
+    },
+    "BATCH09c_PAGES.pdf": {
+      "bytes": 87734,
+      "sha256": "aab12269b79d9a59d27759bebdf3ffd0990f18caa74c2b3c37ea0bd20ba31648"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 97402
+}

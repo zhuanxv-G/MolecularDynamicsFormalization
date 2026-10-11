@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08d",
+  "source_ids": [
+    "MD-4.3-ConstrainedPendulum"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 173,
+      "printed_page": 151
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "28970a36bc5e07c082063802910e4abb9ab99d69ca65e46a4faf189505ac262b",
+  "lean_sha256": "e2a7d931d2999ceccdf0c723072603ad6c6289d2b1ac0574878c532be5cbd08a",
+  "signature_sha256": "1ef32629c463cdc3852a013511ef85c49ab28f11968763a6f6ac4c760f6a79ca",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "Position",
+      "code_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "constrainedPendulum",
+      "code_sha256": "1ef32629c463cdc3852a013511ef85c49ab28f11968763a6f6ac4c760f6a79ca"
+    }
+  ],
+  "paste_plus_pdf_bytes": 129231,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3537,
+      "sha256": "118b1837974d26f11c2595f3eb01db83f3bf512f65b1d62e936ad057d730899d"
+    },
+    "BATCH08d_PAGES.pdf": {
+      "bytes": 125694,
+      "sha256": "97285e2b60457464a8c3aa60c4315e8436bbd782645a4c9dbb2b67da82d64ec8"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 130829
+}

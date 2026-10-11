@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/SHAKEElimination-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/SHAKEElimination-route1.log",
+    "source_sha256": "16f6560f92a7157311f97c7ab307e2fc0511b4e067d2def85ebc3564336abb44",
+    "log_sha256": "22c6cd38bd1d4ff55914b856fb1d0dbb5b45dc44a51e987a4063c850c7756f58"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/SHAKEElimination-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/SHAKEElimination-route2.log",
+    "source_sha256": "5cce3fb19fd602bf47c5fef482c6909969e3d8d366d5723c3f9a9e4e96fdc837",
+    "log_sha256": "deece71ee7a8451b10d17892901878793962733af65b5827da8ca360989989ce"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro n l m F g h q p half rho hs k\n  have h0 := hs k\n  have h1 := hs (k+1)\n  rcases h0 with ⟨hh0,hq0,hg0,hp0⟩\n  rcases h1 with ⟨hh1,hq1,hg1,hp1⟩\n  constructor\n  · ext i\n    have e0 := congrFun hq0 i\n    have e1 := congrFun hq1 i\n    have e2 := congrFun hp0 i\n    have e3 := congrFun hh1 i\n    simp [MolecularDynamics.Chapter04Review.invMass,Pi.smul_apply,smul_eq_mul] at e0 e1 e2 e3 ⊢\n    linear_combination e1-e0+h*(m i)⁻¹*(e3+e2)\n  · simpa [Nat.add_assoc] using hg1",
+    "source": "blueprint/ch04/validation/short_search/SHAKEElimination-route3.lean",
+    "log": "blueprint/ch04/validation/short_search/SHAKEElimination-route3.log",
+    "source_sha256": "81bace69bb0264ac6964bfef0657ee03abcd39bced156e47a0fabd4cfaf6811d",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

@@ -112,8 +112,12 @@ candidate=proofs[key]
 if route==2:
     candidate=candidate.replace('Matrix.trace_sum','Matrix.trace_sum').replace('HasDerivAt.fun_sum','HasDerivAt.sum')
     candidate=candidate.replace('MolecularDynamics.Chapter04Review.reaction','textbookConstraintJacobian')
+    if key=='SHAKEElimination':
+        candidate=proofs[key].replace('⟨hq0,hh0,hp0,hg0⟩','⟨hh0,hq0,hg0,hp0⟩').replace('⟨hq1,hh1,hp1,hg1⟩','⟨hh1,hq1,hg1,hp1⟩')
 if route==3:
     candidate=candidate.replace('HasDerivAt.fun_sum','HasDerivAt.sum')
+    if key=='SHAKEElimination':
+        candidate=proofs[key].replace('⟨hq0,hh0,hp0,hg0⟩','⟨hh0,hq0,hg0,hp0⟩').replace('⟨hq1,hh1,hp1,hg1⟩','⟨hh1,hq1,hg1,hp1⟩').replace('MolecularDynamics.Chapter04Review.reaction,','')
 src=folder/f'{key}-route{route}.lean';log=src.with_suffix('.log')
 src.write_text('''import MolecularDynamics.Chapter04.Statements
 import Mathlib.Tactic

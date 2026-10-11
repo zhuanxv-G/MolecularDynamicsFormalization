@@ -2,7 +2,7 @@
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前42条；旧清单映射31/100；本地PASS 36；网站返回0。
+当前65条；旧清单映射48/100；本地PASS 58；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -48,6 +48,29 @@
 | MD-4.2.1-ResonanceLinearRate | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-4.2.1-ResonanceGrowth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-4.2.2-MollifiedStructure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；正式库无RESPA实际Jacobian辛性/反步定理；需实际链式法则与有限迭代复合桥接，保留sorry，不另建辛流理论。 |
+| MD-4.3-HolonomicRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3-TimeConstraintDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.3-ConstrainedSolution | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3-ConstraintSet | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3-CotangentSet | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3-ConstraintJacobian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3-JacobianActualDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-4.3-ConstraintDegrees | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.3-FlexiblePendulumHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3-RestraintPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3-RestraintForcePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；本地非PASS，等待记号及负号裁定。 |
+| MD-4.3-ConstrainedPendulum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3-ConstraintCurvature | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3-ReactionMultiplier | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3-ReactionBalance | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-4.3-GramPositive | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-4.3-GramInvertible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-4.3-CotangentInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-4.3-ReducedFieldRegularity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-4.3.1-RestrictedForm | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.1-VariationalFormula | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待实际梯度、Jacobian乘子有限和的Fréchet链式/乘积展开；未建完整场到流变分理论。 |
+| MD-4.3.1-HessianPullbackCancel | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-4.3.1-ConstrainedFlowPullback | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 
 ## 旧100条完整映射
 
@@ -84,22 +107,22 @@
 | CH04-029 | MD-4.2.1-ResonanceInstability |
 | CH04-030 | MD-4.2.2-MollifiedPotential |
 | CH04-031 | MD-4.2.2-MollifiedStructure |
-| CH04-032 | PENDING：所属节尚未处理 |
-| CH04-033 | PENDING：所属节尚未处理 |
-| CH04-034 | PENDING：所属节尚未处理 |
-| CH04-035 | PENDING：所属节尚未处理 |
-| CH04-036 | PENDING：所属节尚未处理 |
-| CH04-037 | PENDING：所属节尚未处理 |
-| CH04-038 | PENDING：所属节尚未处理 |
-| CH04-039 | PENDING：所属节尚未处理 |
-| CH04-040 | PENDING：所属节尚未处理 |
-| CH04-041 | PENDING：所属节尚未处理 |
-| CH04-042 | PENDING：所属节尚未处理 |
-| CH04-043 | PENDING：所属节尚未处理 |
-| CH04-044 | PENDING：所属节尚未处理 |
-| CH04-045 | PENDING：所属节尚未处理 |
-| CH04-046 | PENDING：所属节尚未处理 |
-| CH04-047 | PENDING：所属节尚未处理 |
+| CH04-032 | MD-4.3-HolonomicRelation |
+| CH04-033 | MD-4.3-TimeConstraintDerivative |
+| CH04-034 | MD-4.3-ConstrainedSolution |
+| CH04-035 | MD-4.3-CotangentSet |
+| CH04-036 | MD-4.3-ConstraintJacobian |
+| CH04-037 | MD-4.3-JacobianActualDerivative |
+| CH04-038 | MD-4.3-ConstraintCurvature |
+| CH04-039 | MD-4.3-ReactionMultiplier |
+| CH04-040 | MD-4.3-ReactionBalance |
+| CH04-041 | MD-4.3-GramInvertible |
+| CH04-042 | MD-4.3-CotangentInvariant |
+| CH04-043 | MD-4.3-ReducedFieldRegularity |
+| CH04-044 | MD-4.3.1-RestrictedForm |
+| CH04-045 | MD-4.3.1-VariationalFormula |
+| CH04-046 | MD-4.3.1-HessianPullbackCancel |
+| CH04-047 | MD-4.3.1-ConstrainedFlowPullback |
 | CH04-048 | PENDING：所属节尚未处理 |
 | CH04-049 | PENDING：所属节尚未处理 |
 | CH04-050 | PENDING：所属节尚未处理 |
@@ -152,7 +175,7 @@
 | CH04-097 | PENDING：所属节尚未处理 |
 | CH04-098 | PENDING：所属节尚未处理 |
 | CH04-099 | PENDING：所属节尚未处理 |
-| CH04-100 | PENDING：所属节尚未处理 |
+| CH04-100 | MD-4.3-ConstraintDegrees |
 
 ## NEEDS_HUMAN / [ERRATUM?] / 缺理论
 
@@ -168,6 +191,8 @@
 - MD-4.2.1-ResonanceInstability：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺trace<-2的局部Taylor判定与真实复特征向量桥接；保留实际谱而非假设谱。
 - MD-4.2.1-ResonanceEigenPrinted：det=1、trace=−2+ε的二次根近−1±sqrt(|ε|)+O(ε)，印刷sqrt(|ε|/2)系数疑误；保留字面实根误差界，未更正成PASS。 字面签名疑误不证明；正确二次根展开也未声称已证。根展开首项疑少sqrt(2)因子；待网站/导师裁定。
 - MD-4.2.2-MollifiedStructure：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 正式库无RESPA实际Jacobian辛性/反步定理；需实际链式法则与有限迭代复合桥接，保留sorry，不另建辛流理论。
+- MD-4.3-RestraintForcePrinted：原φ′ε(q)未定义；若按通常势导数/梯度理解，末项缺负号且标量径向导数不能直接等向量。本候选签名显式记录该解释，不把疑式当证明。 本地非PASS，等待记号及负号裁定。Fε=−∇φε=φ′ε的prime含义/负号待裁定；原文不静默更正。
+- MD-4.3.1-VariationalFormula：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待实际梯度、Jacobian乘子有限和的Fréchet链式/乘积展开；未建完整场到流变分理论。
 
 ## 定性段落排除
 
