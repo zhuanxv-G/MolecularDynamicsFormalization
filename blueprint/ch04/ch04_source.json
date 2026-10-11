@@ -1562,5 +1562,269 @@
     "review_status": "DRAFT",
     "repair_log": [],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-PositionEulerPrinted",
+    "kind": "definition",
+    "label": "(4.14)–(4.16)",
+    "section": "4.3.2",
+    "printed_page": "156",
+    "pdf_page": "178",
+    "statement_latex": "A simple example of such a method is the constrained Symplectic Euler-like method\n\\[q_{n+1}=q_n+hM^{-1}p_{n+1},\\tag{4.14}\\]\n\\[p_{n+1}=p_n-hF_n-hg'(q_n)^T\\lambda_n,\\tag{4.15}\\]\n\\[0=g(q_{n+1}).\\tag{4.16}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "印刷Fn负号与后文F=−grad U/+hF用法的约定需裁定。"
+      }
+    ],
+    "lean_decl": "MD.Ch04.positionEulerPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-PositionEulerForceConvention",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3.2",
+    "printed_page": "156",
+    "pdf_page": "178",
+    "statement_latex": "A simple example of such a method is the constrained Symplectic Euler-like method",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.positionEulerRelation",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]采用F=−grad U的统一力版本，动量+hF；字面−hFn原式仍保留在相邻条。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-HiddenEulerError",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3.2",
+    "printed_page": "156",
+    "pdf_page": "178",
+    "statement_latex": "The hidden constraint $g'(q_0)M^{-1}p_0=0$ will be violated, but one hopes it remains approximately satisfied. The justification for the latter assumption is that if we expand $g$ in a Taylor series, we may write\n\\[g(q_n)\\approx g(q_{n+1})+g'(q_{n+1})(q_n-q_{n+1}).\\]\nThen since we maintain $g(q_n)=0$ for all $n$, we have\n\\[g'(q_{n+1})M^{-1}p_{n+1}\\approx0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.hiddenEulerError",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "C²约束与C²实际出点小步分支，out0=z，初位置合法；将approx0定量化为小正h的一致O(h)，不把隐藏误差作前提。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-ProjectionResidual",
+    "kind": "definition",
+    "label": "(4.17)",
+    "section": "4.3.2",
+    "printed_page": "156",
+    "pdf_page": "178",
+    "statement_latex": "To solve the Eqs. (4.14)–(4.16), insert the second in the first and the first then in the third to obtain the simplified equation\n\\[g(Q_n-M^{-1}G_n^T\\Lambda)=0,\\tag{4.17}\\]\nwhere\n\\[Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n,\\qquad G_n=g'(q_n),\\qquad\\Lambda=h^2\\lambda_n.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "q为旧位置，base为所给Qn，η=Λ；关系只定义残差，不宣称非线性根存在。Fn符号原式已单列，不用一个任意base假装完成动量消元证明。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.projectionResidual",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-ProjectionJacobian",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3.2",
+    "printed_page": "157",
+    "pdf_page": "179",
+    "statement_latex": "$R^{(l)}\\Delta\\Lambda^{(l)}=g(Q^{(l)}),\\qquad R^{(l)}\\stackrel{\\mathrm{def}}=g'(Q^{(l)})M^{-1}G_n^T$,",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "R是负的残差Jacobian（Q=base−M⁻¹Gᵀη）；保留原Newton加号，不误称R=+Dη残差。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.projectionJacobian",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-NewtonConstraint",
+    "kind": "definition",
+    "label": "(4.18)–(4.19)",
+    "section": "4.3.2",
+    "printed_page": "157",
+    "pdf_page": "179",
+    "statement_latex": "The simplest is Gauss-Newton iteration, which may be written\n\\[\\Lambda^{(l+1)}=\\Lambda^{(l)}+[g'(Q^{(l)})M^{-1}G_n^T]^{-1}g(Q^{(l)}),\\tag{4.18}\\]\n\\[Q^{(l)}:=Q_n-M^{-1}G_n^T\\Lambda^{(l)},\\tag{4.19}\\]\nwhich might be initialized with $\\Lambda^{(0)}=0$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "实际交叉Gram逆及残差，矩阵非奇异时才是合法求解步；初始化η0=0。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch04.newtonConstraint",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-FrozenNewtonConstraint",
+    "kind": "definition",
+    "label": null,
+    "section": "4.3.2",
+    "printed_page": "157",
+    "pdf_page": "179",
+    "statement_latex": "we may be able to fix $R$ at the beginning of the timestep, factor it once only, and then solve at each iteration with the same factors. Moreover, in case we have chosen $\\Lambda^{(0)}=0$, we have\n\\[R^{(0)}=G_nM^{-1}G_n^T,\\]\nwhich is a symmetric matrix,",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "固定η0=0处的R作为每步矩阵；但Q(0)=base，不无条件等G(q)M⁻¹G(q)ᵀ；原文所写初始Gram等式另列疑点。"
+    ],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "R(0)=g′(Qn)M⁻¹Gnᵀ，一般不是GnM⁻¹Gnᵀ；只有Qn=qn或冻结Jacobian到旧位置时相同。"
+      }
+    ],
+    "lean_decl": "MD.Ch04.frozenNewtonConstraint",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-NewtonQuadratic",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3.2",
+    "printed_page": "157",
+    "pdf_page": "179",
+    "statement_latex": "When the solution is unique, the constraints sufficiently smooth, and the determinant of $R$ is bounded well away from zero, Newton’s method has a very rapid asymptotic convergence property. It is possible to show that, if $\\Lambda_*$ is the solution of (4.17), then sufficiently near the zero we have\n\\[\\|\\Lambda^{(l+1)}-\\Lambda_*\\|\\le C\\|\\Lambda^{(l)}-\\Lambda_*\\|^2.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.newtonQuadratic",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "局部C²约束、真实残差root=0及真实R(root) det≠0；结论给存在邻域/二次界，不假设Newton误差结论。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-FrozenNewtonLinear",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3.2",
+    "printed_page": "157",
+    "pdf_page": "179",
+    "statement_latex": "When $R$ is evaluated only once per step, the asymptotic convergence of Newton’s method is linear, i.e. we have instead\n\\[\\|\\Lambda^{(l+1)}-\\Lambda_*\\|\\le\\widetilde C\\|\\Lambda^{(l)}-\\Lambda_*\\|,\\]\nsufficiently near to the solution.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.frozenNewtonLinear",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实冻结映射在root的导数范数<1量化small-step收缩资格；det R0≠0、真实root和C²约束，不无条件声称冻结必收敛。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-ProjectionScale",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3.2",
+    "printed_page": "158",
+    "pdf_page": "180",
+    "statement_latex": "It is worth noting that $\\Lambda(h)=O(h^2)$, i.e. for small steps $\\Lambda$ will also be small. This justifies the initial guess $\\Lambda^{(0)}=0$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch04.projectionScale",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "给定真实C²选根分支η0=0、正则Gram及初始余切资格；非线性根存在是独立缺项，不把O(h²)结论作假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-4.3.2-FrozenGramPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "4.3.2",
+    "printed_page": "157",
+    "pdf_page": "179",
+    "statement_latex": "Moreover, in case we have chosen $\\Lambda^{(0)}=0$, we have\n\\[R^{(0)}=G_nM^{-1}G_n^T,\\]\nwhich is a symmetric matrix,",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "R(0)仍是新预测点与旧点的交叉Gram，原等式一般不成立。"
+      }
+    ],
+    "lean_decl": "MD.Ch04.frozenGramPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]

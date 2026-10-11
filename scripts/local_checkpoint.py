@@ -41,6 +41,8 @@ p.verify_protected()
 paths=['.gitattributes','AGENTS.md','lakefile.toml','docs/handoff/CURRENT_STATE.zh-CN.md','docs/handoff/RESUME_PROMPT.zh-CN.md','docs/handoff/WORK_LOG.zh-CN.md','docs/handoff/LOCAL_PIPELINE.md',f'Blueprint/Ch{ch:02}.lean',f'blueprint/ch{ch:02}',f'docs/review/CH{ch:02}_BLUEPRINT.zh-CN.md',
     'scripts/blueprint_source.py','scripts/local_blueprint.py','scripts/local_stage.py','scripts/local_chapter_check.ps1','scripts/local_checkpoint.py',f'scripts/ch{ch:02}_data.py']
 paths += ['scripts/render_local_source.py','scripts/validate_local_delivery.py']
+if ch==4 and (ROOT/'scripts/partition_ch04_sections.py').exists():
+    paths.append('scripts/partition_ch04_sections.py')
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_section*.py') if x.stem in sys.modules]
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_short_search*.py')]
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_bracket_search*.py')]

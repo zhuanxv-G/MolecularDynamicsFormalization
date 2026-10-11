@@ -4,7 +4,7 @@ from ch04_data import ROOT,BASE,RECORDS,NS
 key=sys.argv[1]
 mods={'RelativeWeightedZero':'44','KineticSplit':'44','SkewRepresentation':'44b',
       'InertiaSkewIdentity':'44c','InertiaTraceCorrected':'44c','RotationTraceIdentity':'44b',
-      'SHAKEElimination':'4351','RotationTrajectory':'44extras'}
+      'SHAKEElimination':'435extra','RotationTrajectory':'44extras','CrossIdentityFull':'44cross'}
 importlib.import_module('ch04_section'+mods[key])
 r=next(x for x in RECORDS if x['source_id'].endswith('-'+key));assert r['local_verdict']=='PASS'
 folder=BASE/'validation/short_search';state=folder/f'{key}.json'
@@ -12,6 +12,9 @@ routes=json.loads(state.read_text(encoding='utf-8')) if state.exists() else []
 if any(x['exit_code']==0 for x in routes) or len(routes)>=3:print(key,'saved evidence reused');sys.exit()
 route=len(routes)+1
 proofs={
+'CrossIdentityFull':'''intro u v
+  constructor <;> ext i <;> fin_cases i <;>
+    simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring''',
 'RelativeWeightedZero':'''intro N m q hm
   simp only [MolecularDynamics.Chapter04Review.relativePositions,smul_sub,Finset.sum_sub_distrib,← Finset.sum_smul]
   rw [MolecularDynamics.Chapter04Review.centerMass,smul_smul]

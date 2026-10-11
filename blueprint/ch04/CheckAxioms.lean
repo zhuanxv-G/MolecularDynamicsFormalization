@@ -65,3 +65,14 @@ import Blueprint.Ch04
 #print axioms MD.Ch04.variational
 #print axioms MD.Ch04.hessianPullbackCancel
 #print axioms MD.Ch04.constrainedFlowPullback
+#print axioms MD.Ch04.positionEulerPrinted
+#print axioms MD.Ch04.positionEulerRelation
+#print axioms MD.Ch04.hiddenEulerError
+#print axioms MD.Ch04.projectionResidual
+#print axioms MD.Ch04.projectionJacobian
+#print axioms MD.Ch04.newtonConstraint
+#print axioms MD.Ch04.frozenNewtonConstraint
+#print axioms MD.Ch04.newtonQuadratic
+#print axioms MD.Ch04.frozenNewtonLinear
+#print axioms MD.Ch04.projectionScale
+#print axioms MD.Ch04.frozenGramPrinted

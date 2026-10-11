@@ -69,6 +69,17 @@
 | MD-4.3.1-VariationalFormula | 154/176 | PASS | 待网站审计 | incomplete |
 | MD-4.3.1-HessianPullbackCancel | 155/177 | PASS | 待网站审计 | checked+documented priors |
 | MD-4.3.1-ConstrainedFlowPullback | 156/178 | PASS | 待网站审计 | checked+documented priors |
+| MD-4.3.2-PositionEulerPrinted | 156/178 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.3.2-PositionEulerForceConvention | 156/178 | PASS | 待网站审计 | self-contained |
+| MD-4.3.2-HiddenEulerError | 156/178 | PASS | 待网站审计 | incomplete |
+| MD-4.3.2-ProjectionResidual | 156/178 | PASS | 待网站审计 | self-contained |
+| MD-4.3.2-ProjectionJacobian | 157/179 | PASS | 待网站审计 | self-contained |
+| MD-4.3.2-NewtonConstraint | 157/179 | PASS | 待网站审计 | self-contained |
+| MD-4.3.2-FrozenNewtonConstraint | 157/179 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.3.2-NewtonQuadratic | 157/179 | PASS | 待网站审计 | incomplete |
+| MD-4.3.2-FrozenNewtonLinear | 157/179 | PASS | 待网站审计 | incomplete |
+| MD-4.3.2-ProjectionScale | 158/180 | PASS | 待网站审计 | incomplete |
+| MD-4.3.2-FrozenGramPrinted | 157/179 | FAIL | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -90,6 +101,12 @@
   根展开首项疑少sqrt(2)因子；待网站/导师裁定。
 - MD-4.3-RestraintForcePrinted：原φ′ε(q)未定义；若按通常势导数/梯度理解，末项缺负号且标量径向导数不能直接等向量。本候选签名显式记录该解释，不把疑式当证明。
   Fε=−∇φε=φ′ε的prime含义/负号待裁定；原文不静默更正。
+- MD-4.3.2-PositionEulerPrinted：保留印刷−hFn；p163写+hF(q)，若F一直是−grad U则本页负号冲突。物理力符号统一版另列，未静默修复原式。
+  印刷Fn负号与后文F=−grad U/+hF用法的约定需裁定。
+- MD-4.3.2-FrozenNewtonConstraint：定义保留固定实际R(0)版本；原初始Gram和对称性不能当一般已证。
+  R(0)=g′(Qn)M⁻¹Gnᵀ，一般不是GnM⁻¹Gnᵀ；只有Qn=qn或冻结Jacobian到旧位置时相同。
+- MD-4.3.2-FrozenGramPrinted：n=l=1,m=1,g(q)=q²−1,q=1,base=2：g′(base)=4,g′(q)=2，实际R(0)=8而旧点Gram=4。η0=0并不使Q0=qn；若另冻结Jacobian到qn才得到所写对称Gram。
+  R(0)仍是新预测点与旧点的交叉Gram，原等式一般不成立。
 
 ## 1. MD-4-LinearField · (4.1) · 印刷p.139 / PDFp.161
 
@@ -3176,3 +3193,542 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 已登记前置证明/定义：MolecularDynamics.textbookConstrainedFlow_pullback_constant_of_mass_and_independence。
 
 签名SHA256：`dd14816de1e33efe3f41ea1e25b6c47906a794866e0c7e8d2a498c3642a87dea`；原文SHA256：`3bddf8264c9b59f85b4692a3c82e571876b8f3d6b5f700e6c98df4f6b3b89735`。
+
+## 1. MD-4.3.2-PositionEulerPrinted · (4.14)–(4.16) · 印刷p.156 / PDFp.178
+
+### 2. 原文陈述
+
+> A simple example of such a method is the constrained Symplectic Euler-like method
+> \[q_{n+1}=q_n+hM^{-1}p_{n+1},\tag{4.14}\]
+> \[p_{n+1}=p_n-hF_n-hg'(q_n)^T\lambda_n,\tag{4.15}\]
+> \[0=g(q_{n+1}).\tag{4.16}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def positionEulerPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  out.2=z.2-h • F z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m out.2 ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.positionEulerPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 印刷Fn负号与后文F=−grad U/+hF用法的约定需裁定。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。保留印刷−hFn；p163写+hF(q)，若F一直是−grad U则本页负号冲突。物理力符号统一版另列，未静默修复原式。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:781](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:781>)（`MD.Ch04.positionEulerPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`d857a22a94133ec7c1fa2671bbf32d5ddc7a78007c7ba8097eb776b964bb9cea`；原文SHA256：`f1e7e130f729ef49dfd3c330efa1c0fc86c704bfde4ab5f432898b8bbc460635`。
+
+## 1. MD-4.3.2-PositionEulerForceConvention · definition · 印刷p.156 / PDFp.178
+
+### 2. 原文陈述
+
+> A simple example of such a method is the constrained Symplectic Euler-like method
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def positionEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  out.2=z.2+h • F z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m out.2 ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.positionEulerRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]采用F=−grad U的统一力版本，动量+hF；字面−hFn原式仍保留在相邻条。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:788](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:788>)（`MD.Ch04.positionEulerRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`860cf18f69a46c93b5bbec149b39cebd989aeb8fe17086852727c0b5ed1b7941`；原文SHA256：`79ade7b8722dd01e3e67e72fc9c152f1534600799a3921910ffc0579b6ffa359`。
+
+## 1. MD-4.3.2-HiddenEulerError · unnumbered_claim · 印刷p.156 / PDFp.178
+
+### 2. 原文陈述
+
+> The hidden constraint $g'(q_0)M^{-1}p_0=0$ will be violated, but one hopes it remains approximately satisfied. The justification for the latter assumption is that if we expand $g$ in a Taylor series, we may write
+> \[g(q_n)\approx g(q_{n+1})+g'(q_{n+1})(q_n-q_{n+1}).\]
+> Then since we maintain $g(q_n)=0$ for all $n$, we have
+> \[g'(q_{n+1})M^{-1}p_{n+1}\approx0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hiddenEulerError :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (z : MolecularDynamics.Chapter04Review.Z n) (out : ℝ → MolecularDynamics.Chapter04Review.Z n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l),
+    (∀ j, ContDiff ℝ 2 (g j)) → ContDiff ℝ 2 out → out 0=z →
+    (∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, MolecularDynamics.Chapter04Review.positionEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (out h) (rho h)) →
+    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ,
+      ‖textbookConstraintJacobian g (out h).1 *ᵥ MolecularDynamics.Chapter04Review.invMass m (out h).2‖ ≤ C*h
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.hiddenEulerError；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | C²约束与C²实际出点小步分支，out0=z，初位置合法；将approx0定量化为小正h的一致O(h)，不把隐藏误差作前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:795](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:795>)（`MD.Ch04.hiddenEulerError`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺约束Taylor一致二次余项、真实光滑分支与h除法后O(h)估计桥接；不构造大型隐式分支误差理论。
+
+签名SHA256：`b421416caf15c10ef5f2c0af49a984edece6e7037fdc1d6f5c0f334b68540fb7`；原文SHA256：`97c25eb9c5c01eecf783485c6bb27dbc91d137505871ecdc4d8c0faf94af30ff`。
+
+## 1. MD-4.3.2-ProjectionResidual · (4.17) · 印刷p.156 / PDFp.178
+
+### 2. 原文陈述
+
+> To solve the Eqs. (4.14)–(4.16), insert the second in the first and the first then in the third to obtain the simplified equation
+> \[g(Q_n-M^{-1}G_n^T\Lambda)=0,\tag{4.17}\]
+> where
+> \[Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n,\qquad G_n=g'(q_n),\qquad\Lambda=h^2\lambda_n.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def projectionResidual {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=
+  fun j => g j (base-MolecularDynamics.Chapter04Review.invMass m ((textbookConstraintJacobian g q)ᵀ *ᵥ η))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.projectionResidual；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:805](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:805>)（`MD.Ch04.projectionResidual`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`b95035b14226d0c683ddc169850d6e7f327933f99af384df7965f935d81ff5d5`；原文SHA256：`b938dcd9c59804544c79146b6faa90573f3a863e32069c01090396ab851457fb`。
+
+## 1. MD-4.3.2-ProjectionJacobian · definition · 印刷p.157 / PDFp.179
+
+### 2. 原文陈述
+
+> $R^{(l)}\Delta\Lambda^{(l)}=g(Q^{(l)}),\qquad R^{(l)}\stackrel{\mathrm{def}}=g'(Q^{(l)})M^{-1}G_n^T$,
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def projectionJacobian {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Matrix (Fin l) (Fin l) ℝ :=
+  textbookConstraintJacobian g (base-MolecularDynamics.Chapter04Review.invMass m ((textbookConstraintJacobian g q)ᵀ *ᵥ η)) *
+    textbookInverseMassMatrix m * (textbookConstraintJacobian g q)ᵀ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.projectionJacobian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:810](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:810>)（`MD.Ch04.projectionJacobian`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`77b38957fafef6c8777ec345ab159b0b0d3f031a9ce803317d99ab6c121ca6c9`；原文SHA256：`3039d88d0ade9d0f6cf30529dd409061d14f771db9e7ebc7a415ff606c63f27b`。
+
+## 1. MD-4.3.2-NewtonConstraint · (4.18)–(4.19) · 印刷p.157 / PDFp.179
+
+### 2. 原文陈述
+
+> The simplest is Gauss-Newton iteration, which may be written
+> \[\Lambda^{(l+1)}=\Lambda^{(l)}+[g'(Q^{(l)})M^{-1}G_n^T]^{-1}g(Q^{(l)}),\tag{4.18}\]
+> \[Q^{(l)}:=Q_n-M^{-1}G_n^T\Lambda^{(l)},\tag{4.19}\]
+> which might be initialized with $\Lambda^{(0)}=0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def newtonConstraint {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=
+  η+(MolecularDynamics.Chapter04Review.projectionJacobian m g q base η)⁻¹ *ᵥ MolecularDynamics.Chapter04Review.projectionResidual m g q base η
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.newtonConstraint；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:816](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:816>)（`MD.Ch04.newtonConstraint`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`1d3a5c5bec7c8eb2d462b401d4557c7432411e39745bf67d9643ceb3c6a6c1f9`；原文SHA256：`0b498be48519a5079f5d5a064e7fe499f035ef052cdecd1faf44b4dafe3ed259`。
+
+## 1. MD-4.3.2-FrozenNewtonConstraint · definition · 印刷p.157 / PDFp.179
+
+### 2. 原文陈述
+
+> we may be able to fix $R$ at the beginning of the timestep, factor it once only, and then solve at each iteration with the same factors. Moreover, in case we have chosen $\Lambda^{(0)}=0$, we have
+> \[R^{(0)}=G_nM^{-1}G_n^T,\]
+> which is a symmetric matrix,
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def frozenNewtonConstraint {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=
+  η+(MolecularDynamics.Chapter04Review.projectionJacobian m g q base 0)⁻¹ *ᵥ MolecularDynamics.Chapter04Review.projectionResidual m g q base η
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.frozenNewtonConstraint；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | R(0)=g′(Qn)M⁻¹Gnᵀ，一般不是GnM⁻¹Gnᵀ；只有Qn=qn或冻结Jacobian到旧位置时相同。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。定义保留固定实际R(0)版本；原初始Gram和对称性不能当一般已证。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:822](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:822>)（`MD.Ch04.frozenNewtonConstraint`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`809bd05da550f565a173d91bf4add365f795903afec50f48df9e2666d5159186`；原文SHA256：`83addc854b4f40aabe71724a51d7dd2f5ad85266e7ea8953237cff0b6e21e75a`。
+
+## 1. MD-4.3.2-NewtonQuadratic · unnumbered_claim · 印刷p.157 / PDFp.179
+
+### 2. 原文陈述
+
+> When the solution is unique, the constraints sufficiently smooth, and the determinant of $R$ is bounded well away from zero, Newton’s method has a very rapid asymptotic convergence property. It is possible to show that, if $\Lambda_*$ is the solution of (4.17), then sufficiently near the zero we have
+> \[\|\Lambda^{(l+1)}-\Lambda_*\|\le C\|\Lambda^{(l)}-\Lambda_*\|^2.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem newtonQuadratic :
+  ∀ n l (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q base : MolecularDynamics.Chapter04Review.Q n) (root : MolecularDynamics.Chapter04Review.Q l),
+    (∀ j, ContDiff ℝ 2 (g j)) → MolecularDynamics.Chapter04Review.projectionResidual m g q base root=0 →
+    (MolecularDynamics.Chapter04Review.projectionJacobian m g q base root).det ≠ 0 → ∃ C > 0, ∃ δ > 0,
+    ∀ η : MolecularDynamics.Chapter04Review.Q l, ‖η-root‖ < δ → ‖MolecularDynamics.Chapter04Review.newtonConstraint m g q base η-root‖ ≤ C*‖η-root‖^2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.newtonQuadratic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 局部C²约束、真实残差root=0及真实R(root) det≠0；结论给存在邻域/二次界，不假设Newton误差结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:828](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:828>)（`MD.Ch04.newtonQuadratic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺有限维一般Newton逆Jacobian正则性与统一二次误差定理；不新建完整一般Newton收敛理论。
+
+签名SHA256：`64d2e808a9f9a3c3041435a08d29c0ff1192ec024128199660235d13d118c5dc`；原文SHA256：`fd9a8f80ec6c6c02c94eff3132791bd2bbb141386d511c8e7e7dc4bf6c194e76`。
+
+## 1. MD-4.3.2-FrozenNewtonLinear · unnumbered_claim · 印刷p.157 / PDFp.179
+
+### 2. 原文陈述
+
+> When $R$ is evaluated only once per step, the asymptotic convergence of Newton’s method is linear, i.e. we have instead
+> \[\|\Lambda^{(l+1)}-\Lambda_*\|\le\widetilde C\|\Lambda^{(l)}-\Lambda_*\|,\]
+> sufficiently near to the solution.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem frozenNewtonLinear :
+  ∀ n l (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q base : MolecularDynamics.Chapter04Review.Q n) (root : MolecularDynamics.Chapter04Review.Q l),
+    (∀ j, ContDiff ℝ 2 (g j)) → MolecularDynamics.Chapter04Review.projectionResidual m g q base root=0 →
+    (MolecularDynamics.Chapter04Review.projectionJacobian m g q base 0).det ≠ 0 →
+    ‖fderiv ℝ (MolecularDynamics.Chapter04Review.frozenNewtonConstraint m g q base) root‖ < 1 →
+    ∃ C ∈ Ioo (0 : ℝ) 1, ∃ δ > 0, ∀ η : MolecularDynamics.Chapter04Review.Q l, ‖η-root‖ < δ →
+      ‖MolecularDynamics.Chapter04Review.frozenNewtonConstraint m g q base η-root‖ ≤ C*‖η-root‖
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.frozenNewtonLinear；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实冻结映射在root的导数范数<1量化small-step收缩资格；det R0≠0、真实root和C²约束，不无条件声称冻结必收敛。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:837](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:837>)（`MD.Ch04.frozenNewtonLinear`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺交叉Gram逆的实际Fréchet正则性和局部收缩统一范数界；不建完整一般Newton理论。
+
+签名SHA256：`1eb2b0997e8cb48bc11c1ec262f50072abc7431847b43f8c7c88b569cac59738`；原文SHA256：`b3ec06ecd57e595e392beadede462f8f211d2e79e77d2f5249771ee2776c0515`。
+
+## 1. MD-4.3.2-ProjectionScale · unnumbered_claim · 印刷p.158 / PDFp.180
+
+### 2. 原文陈述
+
+> It is worth noting that $\Lambda(h)=O(h^2)$, i.e. for small steps $\Lambda$ will also be small. This justifies the initial guess $\Lambda^{(0)}=0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem projectionScale :
+  ∀ n l (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (z : MolecularDynamics.Chapter04Review.Z n) (η : ℝ → MolecularDynamics.Chapter04Review.Q l), z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+    (∀ j, ContDiff ℝ 2 (g j)) → ContDiff ℝ 2 η → η 0=0 →
+    (textbookConstraintGram m g z.1).det ≠ 0 →
+    (∃ δ > 0, ∀ h ∈ Ioo (-δ) δ,
+      MolecularDynamics.Chapter04Review.projectionResidual m g z.1 (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2+h^2 • MolecularDynamics.Chapter04Review.invMass m (F z.1)) (η h)=0) →
+    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, ‖η h‖ ≤ C*h^2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.projectionScale；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 给定真实C²选根分支η0=0、正则Gram及初始余切资格；非线性根存在是独立缺项，不把O(h²)结论作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:848](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:848>)（`MD.Ch04.projectionScale`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺隐式残差的η′(0)=0链式推导和真实C²小步分支Taylor一致余项桥接；不构造大型分支存在理论。
+
+签名SHA256：`f067178e5f8eb8b92fefb00883373a6321bd6c8eac3d09e03bee13ac7a6c8a65`；原文SHA256：`4db4ffbcbc53cde0e37e071afe0cd4eb68b7e37f33740e9f519671b0dce80ff4`。
+
+## 1. MD-4.3.2-FrozenGramPrinted · unnumbered_claim · 印刷p.157 / PDFp.179
+
+### 2. 原文陈述
+
+> Moreover, in case we have chosen $\Lambda^{(0)}=0$, we have
+> \[R^{(0)}=G_nM^{-1}G_n^T,\]
+> which is a symmetric matrix,
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem frozenGramPrinted :
+    ∀ n l (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q base : MolecularDynamics.Chapter04Review.Q n),
+      MolecularDynamics.Chapter04Review.projectionJacobian m g q base 0 = textbookConstraintGram m g q
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.frozenGramPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | R(0)仍是新预测点与旧点的交叉Gram，原等式一般不成立。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**FAIL**。n=l=1,m=1,g(q)=q²−1,q=1,base=2：g′(base)=4,g′(q)=2，实际R(0)=8而旧点Gram=4。η0=0并不使Q0=qn；若另冻结Jacobian到qn才得到所写对称Gram。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:860](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:860>)（`MD.Ch04.frozenGramPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本地FAIL不证明，待原始/冻结版本约定裁定。
+
+签名SHA256：`bc460c23348882ab981768df44db676e9598f1a405d485420260eb40c4c8e39d`；原文SHA256：`3a125bb015568395af72359f34e57f10d4faf6558b9b6cd35502d360ca65398c`。

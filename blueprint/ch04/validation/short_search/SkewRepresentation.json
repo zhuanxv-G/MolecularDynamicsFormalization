@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/SkewRepresentation-route1.lean",
+    "log": "blueprint/ch04/validation/short_search/SkewRepresentation-route1.log",
+    "source_sha256": "08f701c954cc94a4ac58fd24d941d34bb47ef2daa30fd7b55a04800f442d48e1",
+    "log_sha256": "a2803eb8576153b382ffb1a923545d776cf8634d723913a2a35b30c885460579"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro A ha\n  have hs : ∀ i j : Fin 3, A j i= -A i j := by\n    intro i j\n    simpa using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B i j) ha\n  refine ⟨![A 2 1,A 0 2,A 1 0],?_,?_⟩\n  · ext i j\n    fin_cases i <;> fin_cases j <;> simp [MolecularDynamics.Chapter04Review.skewMatrix] <;> nlinarith [hs 0 0,hs 0 1,hs 0 2,hs 1 1,hs 1 2,hs 2 2]\n  · intro w hw\n    ext i\n    fin_cases i\n    · simpa [MolecularDynamics.Chapter04Review.skewMatrix] using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B 2 1) hw\n    · simpa [MolecularDynamics.Chapter04Review.skewMatrix] using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B 0 2) hw\n    · simpa [MolecularDynamics.Chapter04Review.skewMatrix] using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B 1 0) hw",
+    "source": "blueprint/ch04/validation/short_search/SkewRepresentation-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/SkewRepresentation-route2.log",
+    "source_sha256": "f7d2d41ab4f4181a18421f1027b2b9919818ad7dd7c74f9f8870ded1bed1a3af",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

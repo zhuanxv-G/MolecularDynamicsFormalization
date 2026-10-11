@@ -2,7 +2,7 @@
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前65条；旧清单映射48/100；本地PASS 58；网站返回0。
+当前76条；旧清单映射55/100；本地PASS 66；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -71,6 +71,17 @@
 | MD-4.3.1-VariationalFormula | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待实际梯度、Jacobian乘子有限和的Fréchet链式/乘积展开；未建完整场到流变分理论。 |
 | MD-4.3.1-HessianPullbackCancel | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-4.3.1-ConstrainedFlowPullback | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-4.3.2-PositionEulerPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-4.3.2-PositionEulerForceConvention | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.2-HiddenEulerError | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺约束Taylor一致二次余项、真实光滑分支与h除法后O(h)估计桥接；不构造大型隐式分支误差理论。 |
+| MD-4.3.2-ProjectionResidual | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.2-ProjectionJacobian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.2-NewtonConstraint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.3.2-FrozenNewtonConstraint | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-4.3.2-NewtonQuadratic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺有限维一般Newton逆Jacobian正则性与统一二次误差定理；不新建完整一般Newton收敛理论。 |
+| MD-4.3.2-FrozenNewtonLinear | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺交叉Gram逆的实际Fréchet正则性和局部收缩统一范数界；不建完整一般Newton理论。 |
+| MD-4.3.2-ProjectionScale | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺隐式残差的η′(0)=0链式推导和真实C²小步分支Taylor一致余项桥接；不构造大型分支存在理论。 |
+| MD-4.3.2-FrozenGramPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；本地FAIL不证明，待原始/冻结版本约定裁定。 |
 
 ## 旧100条完整映射
 
@@ -123,13 +134,13 @@
 | CH04-045 | MD-4.3.1-VariationalFormula |
 | CH04-046 | MD-4.3.1-HessianPullbackCancel |
 | CH04-047 | MD-4.3.1-ConstrainedFlowPullback |
-| CH04-048 | PENDING：所属节尚未处理 |
-| CH04-049 | PENDING：所属节尚未处理 |
-| CH04-050 | PENDING：所属节尚未处理 |
-| CH04-051 | PENDING：所属节尚未处理 |
-| CH04-052 | PENDING：所属节尚未处理 |
-| CH04-053 | PENDING：所属节尚未处理 |
-| CH04-054 | PENDING：所属节尚未处理 |
+| CH04-048 | MD-4.3.2-PositionEulerPrinted |
+| CH04-049 | MD-4.3.2-HiddenEulerError |
+| CH04-050 | MD-4.3.2-ProjectionResidual |
+| CH04-051 | MD-4.3.2-NewtonConstraint |
+| CH04-052 | MD-4.3.2-NewtonQuadratic |
+| CH04-053 | MD-4.3.2-FrozenNewtonLinear |
+| CH04-054 | MD-4.3.2-ProjectionScale |
 | CH04-055 | PENDING：所属节尚未处理 |
 | CH04-056 | PENDING：所属节尚未处理 |
 | CH04-057 | PENDING：所属节尚未处理 |
@@ -193,6 +204,13 @@
 - MD-4.2.2-MollifiedStructure：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 正式库无RESPA实际Jacobian辛性/反步定理；需实际链式法则与有限迭代复合桥接，保留sorry，不另建辛流理论。
 - MD-4.3-RestraintForcePrinted：原φ′ε(q)未定义；若按通常势导数/梯度理解，末项缺负号且标量径向导数不能直接等向量。本候选签名显式记录该解释，不把疑式当证明。 本地非PASS，等待记号及负号裁定。Fε=−∇φε=φ′ε的prime含义/负号待裁定；原文不静默更正。
 - MD-4.3.1-VariationalFormula：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待实际梯度、Jacobian乘子有限和的Fréchet链式/乘积展开；未建完整场到流变分理论。
+- MD-4.3.2-PositionEulerPrinted：保留印刷−hFn；p163写+hF(q)，若F一直是−grad U则本页负号冲突。物理力符号统一版另列，未静默修复原式。 印刷Fn负号与后文F=−grad U/+hF用法的约定需裁定。
+- MD-4.3.2-HiddenEulerError：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺约束Taylor一致二次余项、真实光滑分支与h除法后O(h)估计桥接；不构造大型隐式分支误差理论。
+- MD-4.3.2-FrozenNewtonConstraint：定义保留固定实际R(0)版本；原初始Gram和对称性不能当一般已证。 R(0)=g′(Qn)M⁻¹Gnᵀ，一般不是GnM⁻¹Gnᵀ；只有Qn=qn或冻结Jacobian到旧位置时相同。
+- MD-4.3.2-NewtonQuadratic：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺有限维一般Newton逆Jacobian正则性与统一二次误差定理；不新建完整一般Newton收敛理论。
+- MD-4.3.2-FrozenNewtonLinear：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺交叉Gram逆的实际Fréchet正则性和局部收缩统一范数界；不建完整一般Newton理论。
+- MD-4.3.2-ProjectionScale：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺隐式残差的η′(0)=0链式推导和真实C²小步分支Taylor一致余项桥接；不构造大型分支存在理论。
+- MD-4.3.2-FrozenGramPrinted：n=l=1,m=1,g(q)=q²−1,q=1,base=2：g′(base)=4,g′(q)=2，实际R(0)=8而旧点Gram=4。η0=0并不使Q0=qn；若另冻结Jacobian到qn才得到所写对称Gram。 本地FAIL不证明，待原始/冻结版本约定裁定。R(0)仍是新预测点与旧点的交叉Gram，原等式一般不成立。
 
 ## 定性段落排除
 

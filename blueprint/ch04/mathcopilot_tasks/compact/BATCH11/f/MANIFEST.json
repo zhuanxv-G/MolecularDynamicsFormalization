@@ -1,0 +1,121 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11f",
+  "source_ids": [
+    "MD-4.3.2-NewtonConstraint"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 179,
+      "printed_page": 157
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "67fcf002ed9bf3f0d756837e11dd10c1e91ed2c9c9adde4dc9a4840ad683c8bb",
+  "lean_sha256": "42efdc492f2d04351024aea9ed514ab45f83de8cd27035ed133913013fb4940f",
+  "signature_sha256": "1d3a5c5bec7c8eb2d462b401d4557c7432411e39745bf67d9643ceb3c6a6c1f9",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "projectionJacobian",
+      "code_sha256": "46a3ca2c2d87d341f15775c82f3cc56c3019a0362388709765d43a94343c3027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "projectionResidual",
+      "code_sha256": "94d2cdeedd7b79823624a38170050725aa72a634026cdf1872e0ef3101a53536"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "invMass",
+      "code_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "newtonConstraint",
+      "code_sha256": "1d3a5c5bec7c8eb2d462b401d4557c7432411e39745bf67d9643ceb3c6a6c1f9"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "projectionJacobian",
+      "code_sha256": "77b38957fafef6c8777ec345ab159b0b0d3f031a9ce803317d99ab6c121ca6c9"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "projectionResidual",
+      "code_sha256": "b95035b14226d0c683ddc169850d6e7f327933f99af384df7965f935d81ff5d5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGradient",
+      "code_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintJacobian",
+      "code_sha256": "8cf31fc6e8fc4d97e435434cd3ff311cd4bdc6e77b6c39dac71331c66249f03a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookInverseMassMatrix",
+      "code_sha256": "9e7434aa6e315ddbe11e2a45e46a9d927661975aa91274386af7c31412a7c330"
+    }
+  ],
+  "paste_plus_pdf_bytes": 91661,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7395,
+      "sha256": "5630f2cc9763e8cde1cbbb3bafe409bacd53bac3f28ca0d62da2e75b129b2cf8"
+    },
+    "BATCH11f_PAGES.pdf": {
+      "bytes": 84266,
+      "sha256": "093be8e597a914864ccdc8ef58f84069a17302072e5c55da5e7c47aafce461ee"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 96286
+}
