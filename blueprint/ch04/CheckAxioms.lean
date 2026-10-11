@@ -16,3 +16,11 @@ import Blueprint.Ch04
 #print axioms MD.Ch04.symplecticEulerRoots
 #print axioms MD.Ch04.symplecticEulerUnitRoots
 #print axioms MD.Ch04.symplecticEulerStability
+#print axioms MD.Ch04.printedImplicitRelation
+#print axioms MD.Ch04.actualMidpointRelation
+#print axioms MD.Ch04.implicitFactor
+#print axioms MD.Ch04.implicitModulus
+#print axioms MD.Ch04.printedModifiedFrequency
+#print axioms MD.Ch04.modifiedFrequencyLimit
+#print axioms MD.Ch04.mechanicalMidpointRelation
+#print axioms MD.Ch04.midpointElimination

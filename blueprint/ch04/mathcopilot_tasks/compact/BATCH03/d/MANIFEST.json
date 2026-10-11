@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03d",
+  "source_ids": [
+    "MD-4.1-ImplicitModulus"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 164,
+      "printed_page": 142
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "f9ad9e0a713cb5e41cf5ae56f8ea4d78c36c2bda7f3701c5d1188ceb84707349",
+  "lean_sha256": "95cba302068de6f5f614a0d444c1d3412b796795201e21e8dd52528cacb839de",
+  "signature_sha256": "8b259dc410b5741b24216689b139a9e51f809a825dd9da04f9d418aece887aa8",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "implicitFactor",
+      "code_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "implicitFactor",
+      "code_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255"
+    }
+  ],
+  "paste_plus_pdf_bytes": 74942,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3216,
+      "sha256": "b125386f9b1bb89bdf1e997f9900eab0227932c54ad1769120f5c8f4320dc7f1"
+    },
+    "BATCH03d_PAGES.pdf": {
+      "bytes": 71726,
+      "sha256": "8d8adaf8c0a254e55498d3f20afa26ef5242f3bf44b43f772dbc370ec9e3aff5"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 76569
+}

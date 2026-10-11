@@ -32,9 +32,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-EulerFactor": {
       "checked": true,
@@ -65,9 +65,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-ScalarEulerStable": {
       "checked": true,
@@ -98,7 +98,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/ScalarEulerStable.json",
         "blueprint/ch04/validation/short_search/ScalarEulerStable-route1.lean",
@@ -107,7 +107,7 @@
         "blueprint/ch04/validation/short_search/ScalarEulerStable-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-EulerRegion": {
       "checked": true,
@@ -138,9 +138,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-OscillatorMatrix": {
       "checked": true,
@@ -171,9 +171,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-EulerImaginaryGrowth": {
       "checked": true,
@@ -204,7 +204,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/EulerImaginaryGrowth.json",
         "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.lean",
@@ -213,7 +213,7 @@
         "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerMatrix": {
       "checked": true,
@@ -244,9 +244,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerCharacteristic": {
       "checked": true,
@@ -277,14 +277,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic.json",
         "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.lean",
         "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-PRKThreshold": {
       "checked": true,
@@ -316,9 +316,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-VerletStability": {
       "checked": true,
@@ -349,7 +349,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/VerletStability.json",
         "blueprint/ch04/validation/short_search/VerletStability-route1.lean",
@@ -358,7 +358,7 @@
         "blueprint/ch04/validation/short_search/VerletStability-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerBoundaryPrinted": {
       "checked": true,
@@ -390,9 +390,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-VerletBoundaryPrinted": {
       "checked": true,
@@ -424,9 +424,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-OscillatorSpectrum": {
       "checked": true,
@@ -457,7 +457,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/OscillatorSpectrum.json",
         "blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.lean",
@@ -466,7 +466,7 @@
         "blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerRoots": {
       "checked": true,
@@ -497,7 +497,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/SymplecticEulerRoots.json",
         "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.lean",
@@ -506,7 +506,7 @@
         "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerUnitRoots": {
       "checked": true,
@@ -537,7 +537,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots.json",
         "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.lean",
@@ -546,7 +546,7 @@
         "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerStability": {
       "checked": true,
@@ -577,7 +577,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch04/validation/batch02-stability-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/SymplecticEulerStability.json",
         "blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.lean",
@@ -588,7 +588,294 @@
         "blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section4\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
+    },
+    "MD-4.1-PrintedImplicitRelation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch04.printedImplicitRelation",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "字面是梯形法。非线性实际中点f((z+Z)/2)另列，不静默改原公式；线性测试时二者相同。",
+      "signature_sha256": "2d344c2d61f978a2d7d6bb20cf676fbf5af38e168191f3e4900a9d985ab82a95",
+      "block_sha256": "2d344c2d61f978a2d7d6bb20cf676fbf5af38e168191f3e4900a9d985ab82a95",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.printedImplicitRelation；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
+    },
+    "MD-4.1-ActualMidpointRelation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.actualMidpointRelation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "2adca08e7fa90663cfd925710d52fd3cafe69a6c4ff921bf675c7d69939839b4",
+      "block_sha256": "2adca08e7fa90663cfd925710d52fd3cafe69a6c4ff921bf675c7d69939839b4",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.actualMidpointRelation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
+    },
+    "MD-4.1-ImplicitFactor": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.implicitFactor",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255",
+      "block_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.implicitFactor；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
+    },
+    "MD-4.1-ImplicitModulus": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.implicitModulus",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "8b259dc410b5741b24216689b139a9e51f809a825dd9da04f9d418aece887aa8",
+      "block_sha256": "b7e50937fd99670ba9c69ab1de65fb6c276228ba797825288e34d6e44cb1001a",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.implicitModulus；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/ImplicitModulus.json",
+        "blueprint/ch04/validation/short_search/ImplicitModulus-route1.lean",
+        "blueprint/ch04/validation/short_search/ImplicitModulus-route1.log",
+        "blueprint/ch04/validation/short_search/ImplicitModulus-route2.lean",
+        "blueprint/ch04/validation/short_search/ImplicitModulus-route2.log",
+        "blueprint/ch04/validation/short_search/ImplicitModulus-route3.lean",
+        "blueprint/ch04/validation/short_search/ImplicitModulus-route3.log"
+      ],
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
+    },
+    "MD-4.1-PrintedModifiedFrequency": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch04.printedModifiedFrequency",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "印刷复log表达式原样保留，不用实atan定义替换原式。",
+      "signature_sha256": "5eba9a5add8d49d24bb91db664632fcfec238c3f7a75edc2930ea29c196f48c5",
+      "block_sha256": "5eba9a5add8d49d24bb91db664632fcfec238c3f7a75edc2930ea29c196f48c5",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.printedModifiedFrequency；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
+    },
+    "MD-4.1-ModifiedFrequencyLimit": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.modifiedFrequencyLimit",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "f90608e8aadadcc5fedfcc3878723bd1bd821207392530d00059dea9251feadd",
+      "block_sha256": "9847676f2406a7ca76a1a8494dbc0d2bf7fdbaa5dfe61af4ddd06e66e1f01e30",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.modifiedFrequencyLimit；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 2,
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/ModifiedFrequencyLimit.json",
+        "blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route1.lean",
+        "blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route1.log",
+        "blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route2.lean",
+        "blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route2.log"
+      ],
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
+    },
+    "MD-4.1-MechanicalMidpoint": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.mechanicalMidpointRelation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "cc89103a989ba65c687486328e9ecea420dd2f14235618f896b284eb0ae08ccc",
+      "block_sha256": "cc89103a989ba65c687486328e9ecea420dd2f14235618f896b284eb0ae08ccc",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.mechanicalMidpointRelation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
+    },
+    "MD-4.1-MidpointElimination": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.midpointElimination",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "e3b6a28ba13587e41761631949da73e619dbe835a66c510d2ac7501efa576452",
+      "block_sha256": "200ef1f981bf1b11ca8d09abd980b3111132caefce7ce1558c23769ff0361ad9",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.midpointElimination；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 2,
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/MidpointElimination.json",
+        "blueprint/ch04/validation/short_search/MidpointElimination-route1.lean",
+        "blueprint/ch04/validation/short_search/MidpointElimination-route1.log",
+        "blueprint/ch04/validation/short_search/MidpointElimination-route2.lean",
+        "blueprint/ch04/validation/short_search/MidpointElimination-route2.log"
+      ],
+      "compile_evidence": "blueprint/ch04/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section41\\chapter_axioms.log"
     }
   }
 }

@@ -1,0 +1,61 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03b",
+  "source_ids": [
+    "MD-4.1-ActualMidpointRelation"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 164,
+      "printed_page": 142
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "f9ad9e0a713cb5e41cf5ae56f8ea4d78c36c2bda7f3701c5d1188ceb84707349",
+  "lean_sha256": "95cba302068de6f5f614a0d444c1d3412b796795201e21e8dd52528cacb839de",
+  "signature_sha256": "2adca08e7fa90663cfd925710d52fd3cafe69a6c4ff921bf675c7d69939839b4",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "actualMidpointRelation",
+      "code_sha256": "2adca08e7fa90663cfd925710d52fd3cafe69a6c4ff921bf675c7d69939839b4"
+    }
+  ],
+  "paste_plus_pdf_bytes": 75303,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3577,
+      "sha256": "202808a2c04a11dd2ac1f8c02055151d801696904841cac5db6aeb8f72f20c31"
+    },
+    "BATCH03b_PAGES.pdf": {
+      "bytes": 71726,
+      "sha256": "8d8adaf8c0a254e55498d3f20afa26ef5242f3bf44b43f772dbc370ec9e3aff5"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 77432
+}

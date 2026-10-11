@@ -44,7 +44,7 @@ def symplecticEulerMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
 原上下文：namespace MD.Ch04；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter04Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.Elementwise；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
 标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
 
-### MD.Ch04.symplecticEulerMatrix (Blueprint/Ch04.lean:68)
+### MD.Ch04.symplecticEulerMatrix (Blueprint/Ch04.lean:71)
 ```lean
 def symplecticEulerMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![1-h^2*Ω^2,h; -h*Ω^2,1]

@@ -2,7 +2,7 @@
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前16条；旧清单映射11/100；本地PASS 13；网站返回0。
+当前24条；旧清单映射18/100；本地PASS 19；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -22,6 +22,14 @@
 | MD-4-SymplecticEulerRoots | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-4-SymplecticEulerUnitRoots | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-4-SymplecticEulerStability | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.1-PrintedImplicitRelation | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-4.1-ActualMidpointRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.1-ImplicitFactor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.1-ImplicitModulus | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.1-PrintedModifiedFrequency | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-4.1-ModifiedFrequencyLimit | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.1-MechanicalMidpoint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.1-MidpointElimination | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 
 ## 旧100条完整映射
 
@@ -38,13 +46,13 @@
 | CH04-009 | MD-4-SymplecticEulerStability |
 | CH04-010 | MD-4-PRKThreshold |
 | CH04-011 | MD-4-VerletStability |
-| CH04-012 | PENDING：所属节尚未处理 |
-| CH04-013 | PENDING：所属节尚未处理 |
-| CH04-014 | PENDING：所属节尚未处理 |
-| CH04-015 | PENDING：所属节尚未处理 |
-| CH04-016 | PENDING：所属节尚未处理 |
-| CH04-017 | PENDING：所属节尚未处理 |
-| CH04-018 | PENDING：所属节尚未处理 |
+| CH04-012 | MD-4.1-PrintedImplicitRelation |
+| CH04-013 | MD-4.1-ImplicitFactor |
+| CH04-014 | MD-4.1-ImplicitModulus |
+| CH04-015 | MD-4.1-PrintedModifiedFrequency |
+| CH04-016 | MD-4.1-ModifiedFrequencyLimit |
+| CH04-017 | MD-4.1-MechanicalMidpoint |
+| CH04-018 | MD-4.1-MidpointElimination |
 | CH04-019 | PENDING：所属节尚未处理 |
 | CH04-020 | PENDING：所属节尚未处理 |
 | CH04-021 | PENDING：所属节尚未处理 |
@@ -135,6 +143,9 @@
 - MD-4-SymplecticEulerBoundaryPrinted：Ω=1,h=2时A=[[-3,2],[-2,1]]=−I+N,N²=0,N≠0；A^k=(−1)^k(I−kN)，对合适非零初值线性增长。 本地FAIL，等待网站/导师裁定端点。原≤2声明的端点反例；不证明FAIL。
 - MD-4-VerletBoundaryPrinted：Ω=1,h=2时A=[[-1,2],[0,−1]]=−I+N,N²=0；初值(0,1)位置分量模2k，无界。 本地FAIL，等待网站/导师裁定。原≤2端点不保证幂有界，单列原文不静默替换。
 - MD-4-SymplecticEulerStability：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 ≤2端点有单位圆谱但通常Jordan线性增长；幂有界不能包含端点。
+- MD-4.1-PrintedImplicitRelation：字面是梯形法。非线性实际中点f((z+Z)/2)另列，不静默改原公式；线性测试时二者相同。 p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。
+- MD-4.1-PrintedModifiedFrequency：印刷复log表达式原样保留，不用实atan定义替换原式。 原书未指定复log分支；与连续实相位的桥接须审校。
 
 ## 定性段落排除
 
+- p.139–144/PDF161–166：MD平衡点类型的经验判断、化学键最快模式、图示精度和误差传播推测、求解成本与使用建议为定性背景；稳定性、谱、端点、频率和中点数学公式均独立保留。

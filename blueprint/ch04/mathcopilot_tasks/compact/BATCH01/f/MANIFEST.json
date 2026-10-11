@@ -12,15 +12,28 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "5ec2f06c93e0607de031e44dd5811348c5ec9e2ad79ebf2bec3cbd8c294274d1",
-  "lean_sha256": "560f78bf4adafcc3672b65f9989dbcd49730df2b8c90fb08b14310a58605de39",
+  "source_json_sha256": "f9ad9e0a713cb5e41cf5ae56f8ea4d78c36c2bda7f3701c5d1188ceb84707349",
+  "lean_sha256": "95cba302068de6f5f614a0d444c1d3412b796795201e21e8dd52528cacb839de",
   "signature_sha256": "0f44362c601016203b92649b03b9a536c6f4476717ebb3c005e1da23eea658b1",
-  "definition_excerpts": [],
-  "paste_plus_pdf_bytes": 74430,
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "eulerFactor",
+      "code_sha256": "945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "eulerFactor",
+      "code_sha256": "945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2"
+    }
+  ],
+  "paste_plus_pdf_bytes": 74755,
   "files": {
     "PASTE.txt": {
-      "bytes": 3021,
-      "sha256": "c8fad7d1989b5cc558bb1c4c2f5c816584e9a750b530925a6a0d5f8f87fbf788"
+      "bytes": 3346,
+      "sha256": "86e6daed2a7769bb4e0ae5b4b1bb943aab8ace6272cb3b7e9dff8d8d619828e5"
     },
     "BATCH01f_PAGES.pdf": {
       "bytes": 71409,
@@ -32,5 +45,5 @@
     "pdf_rendered_pixel_equality": "PASS",
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 75588
+  "total_task_bytes": 76379
 }

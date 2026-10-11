@@ -4,3 +4,299 @@ warning: in the working copy of 'blueprint/ch04/validation/batch02-comments-lean
 warning: in the working copy of 'blueprint/ch04/validation/batch02-lean.log', LF will be replaced by CRLF the next time Git touches it
 warning: in the working copy of 'blueprint/ch04/validation/batch02-proofs-lean.log', LF will be replaced by CRLF the next time Git touches it
 warning: in the working copy of 'blueprint/ch04/validation/batch02-stability-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/ConstraintDegrees-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/ImplicitModulus-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/ImplicitModulus-route2.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/ImpulseTrace-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/MidpointElimination-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/ScalarEulerStable-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/TimeConstraintDerivative-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/VerletStability-route1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch04/validation/short_search/VerletStability-route2.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/blueprint_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_blueprint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_stage.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_chapter_check.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_checkpoint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_data.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/render_local_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/validate_local_delivery.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section4.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_section4b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_euler_stability.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_more.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch04_short_search_stability.py', LF will be replaced by CRLF the next time Git touches it
+[chapter04-blueprint 05d228b] ch04 sec4: faithful local blueprint and checked checkpoint
+ 259 files changed, 62010 insertions(+), 9 deletions(-)
+ create mode 100644 Blueprint/Ch04.lean
+ create mode 100644 blueprint/ch04/BASELINE.json
+ create mode 100644 blueprint/ch04/CheckAxioms.lean
+ create mode 100644 blueprint/ch04/PROGRESS.md
+ create mode 100644 blueprint/ch04/batch01-run.log
+ create mode 100644 blueprint/ch04/batch02-comments-run.log
+ create mode 100644 blueprint/ch04/batch02-proofs-run.log
+ create mode 100644 blueprint/ch04/batch02-run.log
+ create mode 100644 blueprint/ch04/batch02-stability-run.log
+ create mode 100644 blueprint/ch04/ch04_source.json
+ create mode 100644 blueprint/ch04/excluded_qualitative.json
+ create mode 100644 blueprint/ch04/local_audit.json
+ create mode 100644 blueprint/ch04/mathcopilot_results/README.md
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/BATCH01.md
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/BATCH02.md
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/INDEX.md
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/a/BATCH01a_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/a/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/a/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/b/BATCH01b_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/b/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/b/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/c/BATCH01c_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/c/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/c/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/d/BATCH01d_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/d/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/d/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/e/BATCH01e_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/e/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/e/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/f/BATCH01f_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/f/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/f/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/g/BATCH01g_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/g/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/g/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/h/BATCH01h_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/h/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH01/h/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/a/BATCH02a_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/a/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/a/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/b/BATCH02b_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/b/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/b/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/c/BATCH02c_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/c/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/c/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/d/BATCH02d_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/d/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/d/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/e/BATCH02e_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/e/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/e/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/f/BATCH02f_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/f/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/f/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/g/BATCH02g_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/g/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/g/PASTE.txt
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/h/BATCH02h_PAGES.pdf
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/h/MANIFEST.json
+ create mode 100644 blueprint/ch04/mathcopilot_tasks/compact/BATCH02/h/PASTE.txt
+ create mode 100644 blueprint/ch04/old_mapping.json
+ create mode 100644 blueprint/ch04/source_page_checks.json
+ create mode 100644 blueprint/ch04/source_pages/p161.png
+ create mode 100644 blueprint/ch04/source_pages/p161.txt
+ create mode 100644 blueprint/ch04/source_pages/p162.png
+ create mode 100644 blueprint/ch04/source_pages/p162.txt
+ create mode 100644 blueprint/ch04/source_pages/p163.png
+ create mode 100644 blueprint/ch04/source_pages/p163.txt
+ create mode 100644 blueprint/ch04/source_pages/p164.png
+ create mode 100644 blueprint/ch04/source_pages/p164.txt
+ create mode 100644 blueprint/ch04/source_pages/p165.png
+ create mode 100644 blueprint/ch04/source_pages/p165.txt
+ create mode 100644 blueprint/ch04/source_pages/p166.png
+ create mode 100644 blueprint/ch04/source_pages/p166.txt
+ create mode 100644 blueprint/ch04/source_pages/p167.png
+ create mode 100644 blueprint/ch04/source_pages/p167.txt
+ create mode 100644 blueprint/ch04/source_pages/p168.png
+ create mode 100644 blueprint/ch04/source_pages/p168.txt
+ create mode 100644 blueprint/ch04/source_pages/p169.png
+ create mode 100644 blueprint/ch04/source_pages/p169.txt
+ create mode 100644 blueprint/ch04/source_pages/p170.png
+ create mode 100644 blueprint/ch04/source_pages/p170.txt
+ create mode 100644 blueprint/ch04/source_pages/p171.png
+ create mode 100644 blueprint/ch04/source_pages/p171.txt
+ create mode 100644 blueprint/ch04/source_pages/p172.png
+ create mode 100644 blueprint/ch04/source_pages/p172.txt
+ create mode 100644 blueprint/ch04/source_pages/p173.png
+ create mode 100644 blueprint/ch04/source_pages/p173.txt
+ create mode 100644 blueprint/ch04/source_pages/p174.png
+ create mode 100644 blueprint/ch04/source_pages/p174.txt
+ create mode 100644 blueprint/ch04/source_pages/p175.png
+ create mode 100644 blueprint/ch04/source_pages/p175.txt
+ create mode 100644 blueprint/ch04/source_pages/p176.png
+ create mode 100644 blueprint/ch04/source_pages/p176.txt
+ create mode 100644 blueprint/ch04/source_pages/p177.png
+ create mode 100644 blueprint/ch04/source_pages/p177.txt
+ create mode 100644 blueprint/ch04/source_pages/p178.png
+ create mode 100644 blueprint/ch04/source_pages/p178.txt
+ create mode 100644 blueprint/ch04/source_pages/p179.png
+ create mode 100644 blueprint/ch04/source_pages/p179.txt
+ create mode 100644 blueprint/ch04/source_pages/p180.png
+ create mode 100644 blueprint/ch04/source_pages/p180.txt
+ create mode 100644 blueprint/ch04/source_pages/p181.png
+ create mode 100644 blueprint/ch04/source_pages/p181.txt
+ create mode 100644 blueprint/ch04/source_pages/p182.png
+ create mode 100644 blueprint/ch04/source_pages/p182.txt
+ create mode 100644 blueprint/ch04/source_pages/p183.png
+ create mode 100644 blueprint/ch04/source_pages/p183.txt
+ create mode 100644 blueprint/ch04/source_pages/p184.png
+ create mode 100644 blueprint/ch04/source_pages/p184.txt
+ create mode 100644 blueprint/ch04/source_pages/p185.png
+ create mode 100644 blueprint/ch04/source_pages/p185.txt
+ create mode 100644 blueprint/ch04/source_pages/p186.png
+ create mode 100644 blueprint/ch04/source_pages/p186.txt
+ create mode 100644 blueprint/ch04/source_pages/p187.png
+ create mode 100644 blueprint/ch04/source_pages/p187.txt
+ create mode 100644 blueprint/ch04/source_pages/p188.png
+ create mode 100644 blueprint/ch04/source_pages/p188.txt
+ create mode 100644 blueprint/ch04/source_pages/p189.png
+ create mode 100644 blueprint/ch04/source_pages/p189.txt
+ create mode 100644 blueprint/ch04/source_pages/p190.png
+ create mode 100644 blueprint/ch04/source_pages/p190.txt
+ create mode 100644 blueprint/ch04/source_pages/p191.png
+ create mode 100644 blueprint/ch04/source_pages/p191.txt
+ create mode 100644 blueprint/ch04/source_pages/p192.png
+ create mode 100644 blueprint/ch04/source_pages/p192.txt
+ create mode 100644 blueprint/ch04/source_pages/p193.png
+ create mode 100644 blueprint/ch04/source_pages/p193.txt
+ create mode 100644 blueprint/ch04/source_pages/p194.png
+ create mode 100644 blueprint/ch04/source_pages/p194.txt
+ create mode 100644 blueprint/ch04/source_pages/p195.png
+ create mode 100644 blueprint/ch04/source_pages/p195.txt
+ create mode 100644 blueprint/ch04/source_pages/p196.png
+ create mode 100644 blueprint/ch04/source_pages/p196.txt
+ create mode 100644 blueprint/ch04/validation/batch01-COMPILE.json
+ create mode 100644 blueprint/ch04/validation/batch01-lean.log
+ create mode 100644 blueprint/ch04/validation/batch02-COMPILE.json
+ create mode 100644 blueprint/ch04/validation/batch02-comments-COMPILE.json
+ create mode 100644 blueprint/ch04/validation/batch02-comments-lean.log
+ create mode 100644 blueprint/ch04/validation/batch02-lean.log
+ create mode 100644 blueprint/ch04/validation/batch02-proofs-COMPILE.json
+ create mode 100644 blueprint/ch04/validation/batch02-proofs-lean.log
+ create mode 100644 blueprint/ch04/validation/batch02-stability-COMPILE.json
+ create mode 100644 blueprint/ch04/validation/batch02-stability-lean.log
+ create mode 100644 blueprint/ch04/validation/more-short-run.log
+ create mode 100644 blueprint/ch04/validation/section4-commit.log
+ create mode 100644 blueprint/ch04/validation/section4-run.log
+ create mode 100644 blueprint/ch04/validation/section4/CHECK_REPORT.json
+ create mode 100644 blueprint/ch04/validation/section4/LOCAL_CHECK_REPORT.json
+ create mode 100644 blueprint/ch04/validation/section4/axiom_dependencies.log
+ create mode 100644 blueprint/ch04/validation/section4/blueprint_axiom_dependencies.log
+ create mode 100644 blueprint/ch04/validation/section4/blueprint_fresh_Ch01.log
+ create mode 100644 blueprint/ch04/validation/section4/blueprint_fresh_Ch02.log
+ create mode 100644 blueprint/ch04/validation/section4/chapter02_axiom_dependencies.log
+ create mode 100644 blueprint/ch04/validation/section4/chapter_axioms.log
+ create mode 100644 blueprint/ch04/validation/section4/chapter_fresh.log
+ create mode 100644 blueprint/ch04/validation/section4/git_branch.log
+ create mode 100644 blueprint/ch04/validation/section4/git_head.log
+ create mode 100644 blueprint/ch04/validation/section4/git_status.log
+ create mode 100644 blueprint/ch04/validation/section4/lake_build.log
+ create mode 100644 blueprint/ch04/validation/section4/lake_version.log
+ create mode 100644 blueprint/ch04/validation/section4/lean_version.log
+ create mode 100644 blueprint/ch04/validation/section4/mathlib_revision.log
+ create mode 100644 blueprint/ch04/validation/section4/mathlib_status.log
+ create mode 100644 blueprint/ch04/validation/section4/scratch.log
+ create mode 100644 blueprint/ch04/validation/short_search/ConstraintDegrees-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/ConstraintDegrees-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/ConstraintDegrees.json
+ create mode 100644 blueprint/ch04/validation/short_search/CrossMatrix-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/CrossMatrix-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/CrossMatrix.json
+ create mode 100644 blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.lean
+ create mode 100644 blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.log
+ create mode 100644 blueprint/ch04/validation/short_search/EulerImaginaryGrowth.json
+ create mode 100644 blueprint/ch04/validation/short_search/ImplicitModulus-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/ImplicitModulus-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/ImplicitModulus-route2.lean
+ create mode 100644 blueprint/ch04/validation/short_search/ImplicitModulus-route2.log
+ create mode 100644 blueprint/ch04/validation/short_search/ImplicitModulus-route3.lean
+ create mode 100644 blueprint/ch04/validation/short_search/ImplicitModulus-route3.log
+ create mode 100644 blueprint/ch04/validation/short_search/ImplicitModulus.json
+ create mode 100644 blueprint/ch04/validation/short_search/ImpulseDet-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/ImpulseDet-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/ImpulseDet.json
+ create mode 100644 blueprint/ch04/validation/short_search/ImpulseTrace-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/ImpulseTrace-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/ImpulseTrace.json
+ create mode 100644 blueprint/ch04/validation/short_search/MidpointElimination-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/MidpointElimination-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/MidpointElimination-route2.lean
+ create mode 100644 blueprint/ch04/validation/short_search/MidpointElimination-route2.log
+ create mode 100644 blueprint/ch04/validation/short_search/MidpointElimination.json
+ create mode 100644 blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/ModifiedFrequencyLimit.json
+ create mode 100644 blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.lean
+ create mode 100644 blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.log
+ create mode 100644 blueprint/ch04/validation/short_search/OscillatorSpectrum.json
+ create mode 100644 blueprint/ch04/validation/short_search/PoissonDegeneracy-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/PoissonDegeneracy-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/PoissonDegeneracy.json
+ create mode 100644 blueprint/ch04/validation/short_search/ScalarEulerStable-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/ScalarEulerStable-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/ScalarEulerStable-route2.lean
+ create mode 100644 blueprint/ch04/validation/short_search/ScalarEulerStable-route2.log
+ create mode 100644 blueprint/ch04/validation/short_search/ScalarEulerStable.json
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic.json
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.lean
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.log
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerRoots.json
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.lean
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.log
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.lean
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.log
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerStability.json
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.lean
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.log
+ create mode 100644 blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots.json
+ create mode 100644 blueprint/ch04/validation/short_search/TimeConstraintDerivative-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/TimeConstraintDerivative-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/TimeConstraintDerivative.json
+ create mode 100644 blueprint/ch04/validation/short_search/VerletStability-route1.lean
+ create mode 100644 blueprint/ch04/validation/short_search/VerletStability-route1.log
+ create mode 100644 blueprint/ch04/validation/short_search/VerletStability-route2.lean
+ create mode 100644 blueprint/ch04/validation/short_search/VerletStability-route2.log
+ create mode 100644 blueprint/ch04/validation/short_search/VerletStability.json
+ create mode 100644 docs/review/CH04_BLUEPRINT.zh-CN.md
+ create mode 100644 scripts/ch04_data.py
+ create mode 100644 scripts/ch04_section4.py
+ create mode 100644 scripts/ch04_section4b.py
+ create mode 100644 scripts/ch04_short_search.py
+ create mode 100644 scripts/ch04_short_search_euler_stability.py
+ create mode 100644 scripts/ch04_short_search_more.py
+ create mode 100644 scripts/ch04_short_search_stability.py
+remote: 
+remote: Create a pull request for 'chapter04-blueprint' on GitHub by visiting:        
+remote:      https://github.com/zhuanxv-G/MolecularDynamicsFormalization/pull/new/chapter04-blueprint        
+remote: 
+To https://github.com/zhuanxv-G/MolecularDynamicsFormalization.git
+ * [new branch]      chapter04-blueprint -> chapter04-blueprint
+branch 'chapter04-blueprint' set up to track 'origin/chapter04-blueprint'.
+Generated 16 entries; 11 /100 old rows mapped; protected 547
+Committed and pushed 05d228b91860ba83ffc9445b445d78fa18df513c ; live cross-chapter pointer updated.

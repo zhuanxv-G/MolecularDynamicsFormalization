@@ -1,7 +1,7 @@
 # 接续提示词
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：第1章五条返回件例外已整合并check通过，EAUDIT01待用户提交；继续第4章§4.1，复用16条及§4完整检查，ModifiedFrequencyLimit等第二路线尚待核验。
+下一步：继续第4章§4.2；复用24条及§4.1完整检查，RESPA/impulse/MOLLY预备输入已核；含时约束求导、自由度计数及三维恒等式短证明已保存。
 
 先git status，读取AGENTS、CURRENT_STATE顶部、WORK_LOG最新、LOCAL_PIPELINE及当前章PROGRESS。从最近落盘批次接续，核验已有结果后复用，不重做已通过的JSON、Blueprint、证明或构建；未提交半成品核对后继续。
 ## 当前最高优先级范围（2026-10-10用户新指令）

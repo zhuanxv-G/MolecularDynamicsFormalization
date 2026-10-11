@@ -7,5 +7,14 @@
     "log": "blueprint/ch04/validation/short_search/ConstraintDegrees-route1.log",
     "source_sha256": "20aad2a0f7d538961b9a2178ac6c6c2d57006b8c46caf604108fa1c8825c6aae",
     "log_sha256": "b9157872289b0387089be22e99d515c018375365e1f30e794d854d135f9031f6"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n l g q hg hs\n  have hh := LinearMap.finrank_range_add_finrank_ker (fderiv ℝ g q).toLinearMap\n  rw [LinearMap.range_eq_top.mpr hs] at hh\n  simpa [add_comm] using hh",
+    "source": "blueprint/ch04/validation/short_search/ConstraintDegrees-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/ConstraintDegrees-route2.log",
+    "source_sha256": "b8808425f03a272de24e8b2ca436338c218c1ede39b4de6dd1c16058fa5434df",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   }
 ]

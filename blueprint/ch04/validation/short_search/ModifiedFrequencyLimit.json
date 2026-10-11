@@ -7,5 +7,14 @@
     "log": "blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route1.log",
     "source_sha256": "a1333b7d613faa2ddbde7e95ff683067b5a7f7547aa71e3fb2594c55a0546606",
     "log_sha256": "b2a72b9c03809c40b62cc5f7d9c1f90cb26c5454ddc63fdc38d000be19c13fba"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro Ω\n  have hd : HasDerivAt (fun h : ℝ => 2*Real.arctan (h*Ω/2)) Ω 0 := by\n    convert (((hasDerivAt_id (0 : ℝ)).mul_const Ω).div_const 2).arctan.const_mul 2 using 1 <;> norm_num <;> ring\n  convert hd.tendsto_slope_zero using 1\n  funext t\n  simp [MolecularDynamics.Chapter04Review.modifiedFrequency,smul_eq_mul,div_eq_mul_inv]\n  ring",
+    "source": "blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route2.log",
+    "source_sha256": "aa45573d21f417319a4ecc428dd5b4eeb97ce90ca8b156bf2193d0b540cce136",
+    "log_sha256": "2330578d179911531e5fd7a5087db6564a65647cd3d14adc644850e9eeb35e21"
   }
 ]

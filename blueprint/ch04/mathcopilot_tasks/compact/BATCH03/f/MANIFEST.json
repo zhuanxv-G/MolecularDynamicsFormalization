@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03f",
+  "source_ids": [
+    "MD-4.1-ModifiedFrequencyLimit"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 165,
+      "printed_page": 143
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "f9ad9e0a713cb5e41cf5ae56f8ea4d78c36c2bda7f3701c5d1188ceb84707349",
+  "lean_sha256": "95cba302068de6f5f614a0d444c1d3412b796795201e21e8dd52528cacb839de",
+  "signature_sha256": "f90608e8aadadcc5fedfcc3878723bd1bd821207392530d00059dea9251feadd",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "modifiedFrequency",
+      "code_sha256": "7f35e3d4a099f36fba0a73208681ef375d76b7dec0515105db6b32fa6481d7d2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "modifiedFrequency",
+      "code_sha256": "7f35e3d4a099f36fba0a73208681ef375d76b7dec0515105db6b32fa6481d7d2"
+    }
+  ],
+  "paste_plus_pdf_bytes": 140846,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3343,
+      "sha256": "f21582719f79d2f6d8e53e9fbad9b00ec63677e7a72c46f8f58c3a77495c6225"
+    },
+    "BATCH03f_PAGES.pdf": {
+      "bytes": 137503,
+      "sha256": "4d82e814d7f85e57c0076737bf3a87bb3ca238f4e07382b74086c8a0ffef2b41"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 142546
+}

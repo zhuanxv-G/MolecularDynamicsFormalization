@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03e",
+  "source_ids": [
+    "MD-4.1-PrintedModifiedFrequency"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 165,
+      "printed_page": 143
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "f9ad9e0a713cb5e41cf5ae56f8ea4d78c36c2bda7f3701c5d1188ceb84707349",
+  "lean_sha256": "95cba302068de6f5f614a0d444c1d3412b796795201e21e8dd52528cacb839de",
+  "signature_sha256": "5eba9a5add8d49d24bb91db664632fcfec238c3f7a75edc2930ea29c196f48c5",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "implicitFactor",
+      "code_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "implicitFactor",
+      "code_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "printedModifiedFrequency",
+      "code_sha256": "5eba9a5add8d49d24bb91db664632fcfec238c3f7a75edc2930ea29c196f48c5"
+    }
+  ],
+  "paste_plus_pdf_bytes": 141171,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3668,
+      "sha256": "bef0b61c31eafa94602155bc2a586eac7ecca6936fd472112c152408c6765bce"
+    },
+    "BATCH03e_PAGES.pdf": {
+      "bytes": 137503,
+      "sha256": "4d82e814d7f85e57c0076737bf3a87bb3ca238f4e07382b74086c8a0ffef2b41"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 143026
+}

@@ -1,0 +1,13 @@
+blueprint\ch04\validation\short_search\TimeConstraintDerivative-route2.lean:19:37: error: Application type mismatch: The argument
+  hp
+has type
+  HasDerivAt (fun s => (q s, s)) (v, 1) t
+but is expected to have type
+  HasDerivAt (Prod.mk (q t)) ?m.156 t
+in the application
+  HasFDerivAt.comp_hasDerivAt t (DifferentiableAt.hasFDerivAt hg) hp
+blueprint\ch04\validation\short_search\TimeConstraintDerivative-route2.lean:21:63: error(lean.invalidField): Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression
+  hz
+has type
+  (𝓝 t).1 {x | (fun s => g (q s) s = 0) x}
+which does not have the necessary form.

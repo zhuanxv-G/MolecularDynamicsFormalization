@@ -16,3 +16,4 @@ def proposition(name,newname=None,proof='sorry'):return qualify(_c.proposition(n
 add=_c.add
 import ch04_section4
 import ch04_section4b
+import ch04_section41

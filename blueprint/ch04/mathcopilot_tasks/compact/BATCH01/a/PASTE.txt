@@ -208,7 +208,7 @@ private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 ```
 
-### MD.Ch04.linearField (Blueprint/Ch04.lean:21)
+### MD.Ch04.linearField (Blueprint/Ch04.lean:24)
 ```lean
 def linearField {n : ℕ} (A : Matrix (Fin n) (Fin n) ℂ) (z : Fin n → ℂ) := A *ᵥ z
 ```

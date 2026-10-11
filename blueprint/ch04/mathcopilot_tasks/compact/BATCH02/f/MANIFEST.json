@@ -12,15 +12,28 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "5ec2f06c93e0607de031e44dd5811348c5ec9e2ad79ebf2bec3cbd8c294274d1",
-  "lean_sha256": "560f78bf4adafcc3672b65f9989dbcd49730df2b8c90fb08b14310a58605de39",
+  "source_json_sha256": "f9ad9e0a713cb5e41cf5ae56f8ea4d78c36c2bda7f3701c5d1188ceb84707349",
+  "lean_sha256": "95cba302068de6f5f614a0d444c1d3412b796795201e21e8dd52528cacb839de",
   "signature_sha256": "bd906d72fcb5499e8d5e4d3bab404ee1bcabccbafd8515848c2e5d20cc544165",
-  "definition_excerpts": [],
-  "paste_plus_pdf_bytes": 74413,
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "symplecticEulerMatrix",
+      "code_sha256": "bbda75ade1595aa85e225b144694e2c996f0fca307394537ff36da64e954171a"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "symplecticEulerMatrix",
+      "code_sha256": "bbda75ade1595aa85e225b144694e2c996f0fca307394537ff36da64e954171a"
+    }
+  ],
+  "paste_plus_pdf_bytes": 74828,
   "files": {
     "PASTE.txt": {
-      "bytes": 3004,
-      "sha256": "5de4bb9984078102ce706ae15fe5e12763bc9bff61fa1ce6d8cfabd3f40f61bf"
+      "bytes": 3419,
+      "sha256": "88e0f930a45de251d3fd9b66a8f36e2ec263d12765b1aca92c1b93cb80b5409c"
     },
     "BATCH02f_PAGES.pdf": {
       "bytes": 71409,
@@ -32,5 +45,5 @@
     "pdf_rendered_pixel_equality": "PASS",
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 75571
+  "total_task_bytes": 76472
 }

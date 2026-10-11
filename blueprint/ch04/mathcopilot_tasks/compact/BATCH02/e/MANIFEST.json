@@ -12,15 +12,28 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "5ec2f06c93e0607de031e44dd5811348c5ec9e2ad79ebf2bec3cbd8c294274d1",
-  "lean_sha256": "560f78bf4adafcc3672b65f9989dbcd49730df2b8c90fb08b14310a58605de39",
+  "source_json_sha256": "f9ad9e0a713cb5e41cf5ae56f8ea4d78c36c2bda7f3701c5d1188ceb84707349",
+  "lean_sha256": "95cba302068de6f5f614a0d444c1d3412b796795201e21e8dd52528cacb839de",
   "signature_sha256": "17b2d4e2e7e56c7cd63d9e29fc454f25d02677e62509016806e04730f563c9ca",
-  "definition_excerpts": [],
-  "paste_plus_pdf_bytes": 74168,
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "oscillatorMatrix",
+      "code_sha256": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "oscillatorMatrix",
+      "code_sha256": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e"
+    }
+  ],
+  "paste_plus_pdf_bytes": 74531,
   "files": {
     "PASTE.txt": {
-      "bytes": 2759,
-      "sha256": "28a254a01efb82fe7d07c0d3abefa5be7455896605344efc7cb49c54b3c6bb9d"
+      "bytes": 3122,
+      "sha256": "89de4203e411f83e4a71ada6dad30da8c7279d18a526dcff3d7a0e29ddaae7b8"
     },
     "BATCH02e_PAGES.pdf": {
       "bytes": 71409,
@@ -32,5 +45,5 @@
     "pdf_rendered_pixel_equality": "PASS",
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 75324
+  "total_task_bytes": 76163
 }

@@ -20,6 +20,14 @@
 | MD-4-SymplecticEulerRoots | 140/162 | PASS | 待网站审计 | self-contained |
 | MD-4-SymplecticEulerUnitRoots | 140/162 | PASS | 待网站审计 | self-contained |
 | MD-4-SymplecticEulerStability | 140/162 | PASS | 待网站审计 | self-contained |
+| MD-4.1-PrintedImplicitRelation | 142/164 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.1-ActualMidpointRelation | 142/164 | PASS | 待网站审计 | self-contained |
+| MD-4.1-ImplicitFactor | 142/164 | PASS | 待网站审计 | self-contained |
+| MD-4.1-ImplicitModulus | 142/164 | PASS | 待网站审计 | self-contained |
+| MD-4.1-PrintedModifiedFrequency | 143/165 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.1-ModifiedFrequencyLimit | 143/165 | PASS | 待网站审计 | self-contained |
+| MD-4.1-MechanicalMidpoint | 144/166 | PASS | 待网站审计 | self-contained |
+| MD-4.1-MidpointElimination | 144/166 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -33,6 +41,10 @@
   原≤2端点不保证幂有界，单列原文不静默替换。
 - MD-4-SymplecticEulerStability：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   ≤2端点有单位圆谱但通常Jordan线性增长；幂有界不能包含端点。
+- MD-4.1-PrintedImplicitRelation：字面是梯形法。非线性实际中点f((z+Z)/2)另列，不静默改原公式；线性测试时二者相同。
+  p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。
+- MD-4.1-PrintedModifiedFrequency：印刷复log表达式原样保留，不用实atan定义替换原式。
+  原书未指定复log分支；与连续实相位的桥接须审校。
 
 ## 1. MD-4-LinearField · (4.1) · 印刷p.139 / PDFp.161
 
@@ -71,7 +83,7 @@ def linearField {n : ℕ} (A : Matrix (Fin n) (Fin n) ℂ) (z : Fin n → ℂ) :
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:21](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:21>)（`MD.Ch04.linearField`）。
+位置：[Blueprint/Ch04.lean:24](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:24>)（`MD.Ch04.linearField`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -114,7 +126,7 @@ def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:24](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:24>)（`MD.Ch04.eulerFactor`）。
+位置：[Blueprint/Ch04.lean:27](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:27>)（`MD.Ch04.eulerFactor`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -159,7 +171,7 @@ theorem scalarEulerStable :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:28](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:28>)（`MD.Ch04.scalarEulerStable`）。
+位置：[Blueprint/Ch04.lean:31](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:31>)（`MD.Ch04.scalarEulerStable`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -203,7 +215,7 @@ def eulerStabilityRegion : Set ℂ := {z | ‖1+z‖ ≤ 1}
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:46](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:46>)（`MD.Ch04.eulerStabilityRegion`）。
+位置：[Blueprint/Ch04.lean:49](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:49>)（`MD.Ch04.eulerStabilityRegion`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -247,7 +259,7 @@ def oscillatorMatrix (Ω : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![0,1; -Ω^2,0]
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:50](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:50>)（`MD.Ch04.oscillatorMatrix`）。
+位置：[Blueprint/Ch04.lean:53](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:53>)（`MD.Ch04.oscillatorMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -292,7 +304,7 @@ theorem eulerImaginaryGrowth :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:54](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:54>)（`MD.Ch04.eulerImaginaryGrowth`）。
+位置：[Blueprint/Ch04.lean:57](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:57>)（`MD.Ch04.eulerImaginaryGrowth`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -340,7 +352,7 @@ def symplecticEulerMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:68](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:68>)（`MD.Ch04.symplecticEulerMatrix`）。
+位置：[Blueprint/Ch04.lean:71](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:71>)（`MD.Ch04.symplecticEulerMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -386,7 +398,7 @@ theorem symplecticEulerCharacteristic :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:73](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:73>)（`MD.Ch04.symplecticEulerCharacteristic`）。
+位置：[Blueprint/Ch04.lean:76](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:76>)（`MD.Ch04.symplecticEulerCharacteristic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -438,7 +450,7 @@ theorem prkThreshold :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:83](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:83>)（`MD.Ch04.prkThreshold`）。
+位置：[Blueprint/Ch04.lean:86](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:86>)（`MD.Ch04.prkThreshold`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -485,7 +497,7 @@ theorem verletStability :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:96](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:96>)（`MD.Ch04.verletStability`）。
+位置：[Blueprint/Ch04.lean:99](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:99>)（`MD.Ch04.verletStability`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -531,7 +543,7 @@ theorem symplecticEulerBoundaryPrinted :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:156](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:156>)（`MD.Ch04.symplecticEulerBoundaryPrinted`）。
+位置：[Blueprint/Ch04.lean:159](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:159>)（`MD.Ch04.symplecticEulerBoundaryPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -577,7 +589,7 @@ theorem verletBoundaryPrinted :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:162](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:162>)（`MD.Ch04.verletBoundaryPrinted`）。
+位置：[Blueprint/Ch04.lean:165](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:165>)（`MD.Ch04.verletBoundaryPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -624,7 +636,7 @@ theorem oscillatorSpectrum :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:167](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:167>)（`MD.Ch04.oscillatorSpectrum`）。
+位置：[Blueprint/Ch04.lean:170](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:170>)（`MD.Ch04.oscillatorSpectrum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -674,7 +686,7 @@ theorem symplecticEulerRoots :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:194](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:194>)（`MD.Ch04.symplecticEulerRoots`）。
+位置：[Blueprint/Ch04.lean:197](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:197>)（`MD.Ch04.symplecticEulerRoots`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -722,7 +734,7 @@ theorem symplecticEulerUnitRoots :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:224](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:224>)（`MD.Ch04.symplecticEulerUnitRoots`）。
+位置：[Blueprint/Ch04.lean:227](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:227>)（`MD.Ch04.symplecticEulerUnitRoots`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -770,7 +782,7 @@ theorem symplecticEulerStability :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:252](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:252>)（`MD.Ch04.symplecticEulerStability`）。
+位置：[Blueprint/Ch04.lean:255](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:255>)（`MD.Ch04.symplecticEulerStability`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -779,3 +791,372 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/SymplecticEulerStability.json；blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.lean；blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.log；blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.lean；blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.log；blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.lean；blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.log。
 
 签名SHA256：`31da4d14a4c75f5466f7d85db446a21959c4160c4d5ee6fdbdb6daf16433e5db`；原文SHA256：`5337d81ef03916ce02696f1c9144e1d1d1ebfb3bcf6ecefab190810118b9327f`。
+
+## 1. MD-4.1-PrintedImplicitRelation · definition · 印刷p.142 / PDFp.164
+
+### 2. 原文陈述
+
+> The Implicit Midpoint method, for the ODE $\dot z=f(z)$ takes the form
+> \[z_{n+1}=z_n+h\frac{f(z_n)+f(z_{n+1})}{2},\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def printedImplicitRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
+  znew=z+(h/2) • (f z+f znew)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.printedImplicitRelation；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。字面是梯形法。非线性实际中点f((z+Z)/2)另列，不静默改原公式；线性测试时二者相同。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:331](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:331>)（`MD.Ch04.printedImplicitRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2d344c2d61f978a2d7d6bb20cf676fbf5af38e168191f3e4900a9d985ab82a95`；原文SHA256：`c6439bbfed99daee74b45848db6334ea99552445528c3096d990255f026f56b7`。
+
+## 1. MD-4.1-ActualMidpointRelation · definition · 印刷p.142 / PDFp.164
+
+### 2. 原文陈述
+
+> The Implicit Midpoint method, for the ODE $\dot z=f(z)$
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def actualMidpointRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
+  znew=z+h • f ((1/2 : ℝ) • (z+znew))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.actualMidpointRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]名称通常对应的真正中点关系Z=z+h f((z+Z)/2)供审校上下文；不是原页的印刷公式。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:336](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:336>)（`MD.Ch04.actualMidpointRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2adca08e7fa90663cfd925710d52fd3cafe69a6c4ff921bf675c7d69939839b4`；原文SHA256：`c99fa7adbb8ae88429088509e6b0567ebf4f3f9f12a7102e2374b088a9eee64b`。
+
+## 1. MD-4.1-ImplicitFactor · definition · 印刷p.142 / PDFp.164
+
+### 2. 原文陈述
+
+> can be applied to $\dot z=i\Omega z$ and yields
+> \[z_{n+1}=\frac{1+ih\Omega/2}{1-ih\Omega/2}z_n.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def implicitFactor (Ω h : ℝ) : ℂ :=
+  (1+Complex.I*(h*Ω/2 : ℝ))/(1-Complex.I*(h*Ω/2 : ℝ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.implicitFactor；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:340](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:340>)（`MD.Ch04.implicitFactor`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255`；原文SHA256：`6a31f54a97f5c56bc9a7669f42faea3a9f68fc3cb5fa2af287accd9565db811c`。
+
+## 1. MD-4.1-ImplicitModulus · unnumbered_claim · 印刷p.142 / PDFp.164
+
+### 2. 原文陈述
+
+> For all real $\Omega$, we find
+> \[\left|\frac{1+ih\Omega/2}{1-ih\Omega/2}\right|=1.\]
+> This indicates that the Implicit Midpoint method has no stability threshold for the stepsize when solving a linear system!
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem implicitModulus :
+  ∀ Ω h : ℝ, ‖MolecularDynamics.Chapter04Review.implicitFactor Ω h‖=1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.implicitModulus；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 只保留本段纯虚线性振子对象；不扩成任意不稳定线性系统的有界性。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch04.lean:345](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:345>)（`MD.Ch04.implicitModulus`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/ImplicitModulus.json；blueprint/ch04/validation/short_search/ImplicitModulus-route1.lean；blueprint/ch04/validation/short_search/ImplicitModulus-route1.log；blueprint/ch04/validation/short_search/ImplicitModulus-route2.lean；blueprint/ch04/validation/short_search/ImplicitModulus-route2.log；blueprint/ch04/validation/short_search/ImplicitModulus-route3.lean；blueprint/ch04/validation/short_search/ImplicitModulus-route3.log。
+
+签名SHA256：`8b259dc410b5741b24216689b139a9e51f809a825dd9da04f9d418aece887aa8`；原文SHA256：`89f6ab88c37e62809e2a01032750181e6d65fd901e83b864521e2ec095666572`。
+
+## 1. MD-4.1-PrintedModifiedFrequency · definition · 印刷p.143 / PDFp.165
+
+### 2. 原文陈述
+
+> If the Implicit Midpoint method is viewed as the exact solution of a perturbed harmonic oscillator, then the frequency of this oscillator is
+> \[\widehat\Omega=\frac1{ih}\ln\frac{1+ih\Omega/2}{1-ih\Omega/2}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def printedModifiedFrequency (Ω h : ℝ) : ℂ :=
+  (Complex.I*(h : ℂ))⁻¹ * Complex.log (MolecularDynamics.Chapter04Review.implicitFactor Ω h)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.printedModifiedFrequency；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | h≠0；采用Mathlib Complex.log主支，对原未指定log支单独记录；后条连续实相位为2 atan(hΩ/2)/h。 | [EXTRA] |
+| 原页核对/疑点 | 原书未指定复log分支；与连续实相位的桥接须审校。 | NEEDS_HUMAN |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。印刷复log表达式原样保留，不用实atan定义替换原式。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:360](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:360>)（`MD.Ch04.printedModifiedFrequency`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`5eba9a5add8d49d24bb91db664632fcfec238c3f7a75edc2930ea29c196f48c5`；原文SHA256：`e5fc16a9abb9a7cb39dbbbf8a163d3f1c537da8a212b0553c2fed4173cce56c8`。
+
+## 1. MD-4.1-ModifiedFrequencyLimit · unnumbered_claim · 印刷p.143 / PDFp.165
+
+### 2. 原文陈述
+
+> The figure shows that the frequency is only well approximated in case $h\Omega$ is sufficiently small. For $h\Omega\gg1$ the frequency is highly modified.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem modifiedFrequencyLimit :
+  ∀ Ω : ℝ, Tendsto (MolecularDynamics.Chapter04Review.modifiedFrequency Ω) (nhdsWithin 0 ({0}ᶜ)) (𝓝 Ω)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.modifiedFrequencyLimit；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]将small-h准确表达为连续实相位2 atan(hΩ/2)/h沿非零h→0趋Ω；不声称此极限自动给耦合系统准确度。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch04.lean:365](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:365>)（`MD.Ch04.modifiedFrequencyLimit`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/ModifiedFrequencyLimit.json；blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route1.lean；blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route1.log；blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route2.lean；blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route2.log。
+
+签名SHA256：`f90608e8aadadcc5fedfcc3878723bd1bd821207392530d00059dea9251feadd`；原文SHA256：`158997a643d0dd75ca1b1104dd73e36fa51948789c5131ff5ea0683b341de662`。
+
+## 1. MD-4.1-MechanicalMidpoint · definition · 印刷p.144 / PDFp.166
+
+### 2. 原文陈述
+
+> we may reduce the equations to determining midpoint values $\widehat q,\widehat p$ such that
+> \[\widehat q=q_n+\frac h2M^{-1}\widehat p,\qquad\widehat p=p_n-\frac h2\nabla U(\widehat q),\]
+> where, then,
+> \[q_{n+1}=\widehat q+\frac h2M^{-1}\widehat p,\qquad p_{n+1}=\widehat p-\frac h2\nabla U(\widehat q).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def mechanicalMidpointRelation {n : ℕ} (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (h : ℝ) (z mid out : MolecularDynamics.Chapter04Review.Z n) : Prop :=
+  mid.1=z.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m mid.2 ∧ mid.2=z.2-(h/2) • MolecularDynamics.Chapter04Review.grad U mid.1 ∧
+  out.1=mid.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m mid.2 ∧ out.2=mid.2-(h/2) • MolecularDynamics.Chapter04Review.grad U mid.1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.mechanicalMidpointRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:376](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:376>)（`MD.Ch04.mechanicalMidpointRelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`cc89103a989ba65c687486328e9ecea420dd2f14235618f896b284eb0ae08ccc`；原文SHA256：`d3bf29dd2b5588df5b8afd96e6e6f3e8cf5d573795c567afbd9298d56893e1b3`。
+
+## 1. MD-4.1-MidpointElimination · unnumbered_claim · 印刷p.144 / PDFp.166
+
+### 2. 原文陈述
+
+> We may therefore view the step as a composition of Implicit Euler and Explicit Euler half-steps. Eliminating $\widehat p$, we find
+> \[\widehat q=q_n+\frac h2M^{-1}p_n-\frac{h^2}{4}M^{-1}\nabla U(\widehat q).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem midpointElimination :
+  ∀ n (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) h (z mid out : MolecularDynamics.Chapter04Review.Z n),
+    MolecularDynamics.Chapter04Review.mechanicalMidpointRelation m U h z mid out →
+    mid.1=z.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m z.2-(h^2/4) • MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad U mid.1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.midpointElimination；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch04.lean:382](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:382>)（`MD.Ch04.midpointElimination`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/MidpointElimination.json；blueprint/ch04/validation/short_search/MidpointElimination-route1.lean；blueprint/ch04/validation/short_search/MidpointElimination-route1.log；blueprint/ch04/validation/short_search/MidpointElimination-route2.lean；blueprint/ch04/validation/short_search/MidpointElimination-route2.log。
+
+签名SHA256：`e3b6a28ba13587e41761631949da73e619dbe835a66c510d2ac7501efa576452`；原文SHA256：`331a97825adf39b0fbcf3aded12b6481735a24b27ed72a631b52357faa2a5135`。

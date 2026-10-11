@@ -7,5 +7,23 @@
     "log": "blueprint/ch04/validation/short_search/TimeConstraintDerivative-route1.log",
     "source_sha256": "5297fbe59331c601d6c1e77fc76814fbac3f14be3f7980eec2442b56d63c5232",
     "log_sha256": "d2372692065df5a5e6818fd5513ef82c3866bedbf3634e7e8fd51ca6194a0e26"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch04/validation/short_search/TimeConstraintDerivative-route2.lean",
+    "log": "blueprint/ch04/validation/short_search/TimeConstraintDerivative-route2.log",
+    "source_sha256": "7fba558713829c2a81fc0abb8d4581f21fa9f5440f5b7746e9433f5760e983d5",
+    "log_sha256": "1dbdca9f9440c858bf4bf5b4bf2b72aa261e0131b13de9ccad5b18dd0be3d7e7"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro n l g q t v hg hq hz\n  have hp : HasDerivAt (fun s : ℝ => (q s,s)) (v,1) t := hq.prodMk (hasDerivAt_id t)\n  have hd : HasDerivAt (fun s => g (q s) s)\n      ((fderiv ℝ (Function.uncurry g) (q t,t)) (v,1)) t :=\n    hg.hasFDerivAt.comp_hasDerivAt (f := fun s : ℝ => (q s,s)) t hp\n  have hzero : HasDerivAt (fun s => g (q s) s) (0 : Fin l → ℝ) t :=\n    (hasDerivAt_const t (0 : Fin l → ℝ)).congr_of_eventuallyEq hz\n  exact hd.unique hzero",
+    "source": "blueprint/ch04/validation/short_search/TimeConstraintDerivative-route3.lean",
+    "log": "blueprint/ch04/validation/short_search/TimeConstraintDerivative-route3.log",
+    "source_sha256": "a71c5fc51489dd18aafc1410bdb9409151a0ebecf9ac482d1b1f7aa4130ce6cb",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   }
 ]

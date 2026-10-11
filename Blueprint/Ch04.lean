@@ -6,6 +6,9 @@ import MolecularDynamics.Chapter02.LiouvilleVolume
 import MolecularDynamics.Chapter02.HamiltonianVolume
 import MolecularDynamics.Chapter01.Lagrangian
 import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
+import Mathlib.Analysis.Calculus.Deriv.Slope
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv
+import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 import Mathlib.Tactic
 
 open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter04Review
@@ -322,5 +325,72 @@ theorem symplecticEulerStability :
     refine ⟨(ρ : ℂ), ?_, hv⟩
     rw [Complex.norm_real,Real.norm_eq_abs,abs_of_neg (by linarith)]
     linarith
+
+/-- source_id: MD-4.1-PrintedImplicitRelation · definition · §4.1 · 印刷p.142 / PDFp.164
+[ERRATUM?] p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。 -/
+def printedImplicitRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
+  znew=z+(h/2) • (f z+f znew)
+
+/-- source_id: MD-4.1-ActualMidpointRelation · definition · §4.1 · 印刷p.142 / PDFp.164
+[EXTRA] [EXTRA]名称通常对应的真正中点关系Z=z+h f((z+Z)/2)供审校上下文；不是原页的印刷公式。 -/
+def actualMidpointRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
+  znew=z+h • f ((1/2 : ℝ) • (z+znew))
+
+/-- source_id: MD-4.1-ImplicitFactor · definition · §4.1 · 印刷p.142 / PDFp.164 -/
+def implicitFactor (Ω h : ℝ) : ℂ :=
+  (1+Complex.I*(h*Ω/2 : ℝ))/(1-Complex.I*(h*Ω/2 : ℝ))
+
+/-- source_id: MD-4.1-ImplicitModulus · unnumbered_claim · §4.1 · 印刷p.142 / PDFp.164
+[EXTRA] 只保留本段纯虚线性振子对象；不扩成任意不稳定线性系统的有界性。 -/
+theorem implicitModulus :
+  ∀ Ω h : ℝ, ‖MolecularDynamics.Chapter04Review.implicitFactor Ω h‖=1 := by
+  intro Ω h
+  rw [MolecularDynamics.Chapter04Review.implicitFactor,norm_div]
+  have he : (1+Complex.I*((h*Ω/2 : ℝ) : ℂ)) = star (1-Complex.I*((h*Ω/2 : ℝ) : ℂ)) := by simp
+  rw [he,norm_star]
+  apply div_self
+  intro hn
+  have hz := norm_eq_zero.mp hn
+  have hr := congrArg Complex.re hz
+  norm_num at hr
+
+/-- source_id: MD-4.1-PrintedModifiedFrequency · definition · §4.1 · 印刷p.143 / PDFp.165
+[EXTRA] h≠0；采用Mathlib Complex.log主支，对原未指定log支单独记录；后条连续实相位为2 atan(hΩ/2)/h。
+[NEEDS_HUMAN] 原书未指定复log分支；与连续实相位的桥接须审校。 -/
+def printedModifiedFrequency (Ω h : ℝ) : ℂ :=
+  (Complex.I*(h : ℂ))⁻¹ * Complex.log (MolecularDynamics.Chapter04Review.implicitFactor Ω h)
+
+/-- source_id: MD-4.1-ModifiedFrequencyLimit · unnumbered_claim · §4.1 · 印刷p.143 / PDFp.165
+[EXTRA] [EXTRA]将small-h准确表达为连续实相位2 atan(hΩ/2)/h沿非零h→0趋Ω；不声称此极限自动给耦合系统准确度。 -/
+theorem modifiedFrequencyLimit :
+  ∀ Ω : ℝ, Tendsto (MolecularDynamics.Chapter04Review.modifiedFrequency Ω) (nhdsWithin 0 ({0}ᶜ)) (𝓝 Ω) := by
+  intro Ω
+  have hd : HasDerivAt (fun h : ℝ => 2*Real.arctan (h*Ω/2)) Ω 0 := by
+    convert (((hasDerivAt_id (0 : ℝ)).mul_const Ω).div_const 2).arctan.const_mul 2 using 1 <;> norm_num <;> ring
+  convert hd.tendsto_slope_zero using 1
+  funext t
+  simp [MolecularDynamics.Chapter04Review.modifiedFrequency,smul_eq_mul,div_eq_mul_inv]
+  ring
+
+/-- source_id: MD-4.1-MechanicalMidpoint · definition · §4.1 · 印刷p.144 / PDFp.166 -/
+def mechanicalMidpointRelation {n : ℕ} (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (h : ℝ) (z mid out : MolecularDynamics.Chapter04Review.Z n) : Prop :=
+  mid.1=z.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m mid.2 ∧ mid.2=z.2-(h/2) • MolecularDynamics.Chapter04Review.grad U mid.1 ∧
+  out.1=mid.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m mid.2 ∧ out.2=mid.2-(h/2) • MolecularDynamics.Chapter04Review.grad U mid.1
+
+/-- source_id: MD-4.1-MidpointElimination · unnumbered_claim · §4.1 · 印刷p.144 / PDFp.166 -/
+theorem midpointElimination :
+  ∀ n (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) h (z mid out : MolecularDynamics.Chapter04Review.Z n),
+    MolecularDynamics.Chapter04Review.mechanicalMidpointRelation m U h z mid out →
+    mid.1=z.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m z.2-(h^2/4) • MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad U mid.1) := by
+  intro n m U h z mid out hm
+  rcases hm with ⟨hq,hp,houtq,houtp⟩
+  calc
+    mid.1=z.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m mid.2 := hq
+    _ = _ := by
+      rw [hp]
+      funext i
+      simp [MolecularDynamics.Chapter04Review.invMass]
+      ring
 
 end MD.Ch04

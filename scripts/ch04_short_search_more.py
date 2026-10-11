@@ -52,6 +52,15 @@ if route>1:
   funext t
   simp [MolecularDynamics.Chapter04Review.modifiedFrequency,smul_eq_mul,div_eq_mul_inv]
   ring'''
+if route==3 and key=='TimeConstraintDerivative':
+    candidate='''intro n l g q t v hg hq hz
+  have hp : HasDerivAt (fun s : ℝ => (q s,s)) (v,1) t := hq.prodMk (hasDerivAt_id t)
+  have hd : HasDerivAt (fun s => g (q s) s)
+      ((fderiv ℝ (Function.uncurry g) (q t,t)) (v,1)) t :=
+    hg.hasFDerivAt.comp_hasDerivAt (f := fun s : ℝ => (q s,s)) t hp
+  have hzero : HasDerivAt (fun s => g (q s) s) (0 : Fin l → ℝ) t :=
+    (hasDerivAt_const t (0 : Fin l → ℝ)).congr_of_eventuallyEq hz
+  exact hd.unique hzero'''
 src=folder/f'{key}-route{route}.lean';log=src.with_suffix('.log')
 src.write_text('''import MolecularDynamics.Chapter04.Statements
 import Mathlib.Analysis.Calculus.Deriv.Slope

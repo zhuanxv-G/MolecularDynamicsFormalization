@@ -12,8 +12,8 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "5ec2f06c93e0607de031e44dd5811348c5ec9e2ad79ebf2bec3cbd8c294274d1",
-  "lean_sha256": "560f78bf4adafcc3672b65f9989dbcd49730df2b8c90fb08b14310a58605de39",
+  "source_json_sha256": "f9ad9e0a713cb5e41cf5ae56f8ea4d78c36c2bda7f3701c5d1188ceb84707349",
+  "lean_sha256": "95cba302068de6f5f614a0d444c1d3412b796795201e21e8dd52528cacb839de",
   "signature_sha256": "c76c585d4e16eea65b7d8a110c4a2ce879f2b1b201d2c1186d83c94c5267bb3d",
   "definition_excerpts": [
     {
@@ -155,6 +155,18 @@
       "code_sha256": "998675b0f5b623062f98f8c98660b33b974f6cd5b11faad6ec721b4c75ca2955"
     },
     {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "matrixStable",
+      "code_sha256": "dfbed950168921b593ebe039dc22139bf0ae582c770a62d29984251b5ac71af3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "prkOscillatorRelation",
+      "code_sha256": "9e15f2042d81436e018b37cdaa968c54aab6fd888cd3dd674b4ed92bf913afa8"
+    },
+    {
       "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
       "namespace": "MolecularDynamics.Chapter02Review",
       "name": "Q",
@@ -183,6 +195,18 @@
       "namespace": "MolecularDynamics",
       "name": "cb",
       "code_sha256": "3aa24f2325dbf60b9ab3db6338e22547e2c2741d41e5c8f8dcfa7a003bafca5c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "matrixStable",
+      "code_sha256": "dfbed950168921b593ebe039dc22139bf0ae582c770a62d29984251b5ac71af3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "prkOscillatorRelation",
+      "code_sha256": "9e15f2042d81436e018b37cdaa968c54aab6fd888cd3dd674b4ed92bf913afa8"
     },
     {
       "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
@@ -341,11 +365,11 @@
       "code_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
     }
   ],
-  "paste_plus_pdf_bytes": 94924,
+  "paste_plus_pdf_bytes": 96370,
   "files": {
     "PASTE.txt": {
-      "bytes": 23515,
-      "sha256": "a21b955beb35ec3c135a877227b321d05516b8052798486d780a0cf6dc8d6a94"
+      "bytes": 24961,
+      "sha256": "2cb2c57f21170c249ceb0661d7b6250eb1ac6a9b8a83f8c7c755dd434507b2f2"
     },
     "BATCH02a_PAGES.pdf": {
       "bytes": 71409,
@@ -357,5 +381,5 @@
     "pdf_rendered_pixel_equality": "PASS",
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 110020
+  "total_task_bytes": 112528
 }
