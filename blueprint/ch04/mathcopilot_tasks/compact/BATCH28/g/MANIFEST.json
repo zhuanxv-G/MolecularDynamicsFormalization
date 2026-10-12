@@ -1,0 +1,79 @@
+{
+  "batch": "BATCH28",
+  "subtask": "BATCH28g",
+  "source_ids": [
+    "MD-4.4.2-RigidSystemDriftPrinted"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 196,
+      "printed_page": 174
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "ec859dbde452505834ef2bb42a1016b8747dc1256f654b2b0db651ac0938065f",
+  "lean_sha256": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+  "signature_sha256": "cbf3060dd8a41f4f29afacd21c1dafe19dd535ae79f719e57f561bf5910663ed",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Mat3",
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "RBState",
+      "code_sha256": "e8cb5544b4302f1a6dd38edd628aafd9dc8c41fe02d3a2c70f89bf1b03d3a657"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "RBState",
+      "code_sha256": "e8cb5544b4302f1a6dd38edd628aafd9dc8c41fe02d3a2c70f89bf1b03d3a657"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "rigidSystemDriftPrinted",
+      "code_sha256": "cbf3060dd8a41f4f29afacd21c1dafe19dd535ae79f719e57f561bf5910663ed"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "namespace": "MD.Ch04",
+      "name": "rigidSystemState",
+      "code_sha256": "cedadce1a9de31aed005d459b0ae557210aae5746dcdda5c8cb7670c299fece0"
+    }
+  ],
+  "paste_plus_pdf_bytes": 92065,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3951,
+      "sha256": "6cb18c37991502e20bab5a5b936ddddef1d342213ec39dac3d99100ce493d092"
+    },
+    "BATCH28g_PAGES.pdf": {
+      "bytes": 88114,
+      "sha256": "179c8d51d213c4e2d4723d3e1a3ed9a3d973a7a0572004206c2e71cf7548833d"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 94921
+}

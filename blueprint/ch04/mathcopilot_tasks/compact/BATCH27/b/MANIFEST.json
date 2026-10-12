@@ -1,6 +1,6 @@
 {
-  "batch": "BATCH26",
-  "subtask": "BATCH26b",
+  "batch": "BATCH27",
+  "subtask": "BATCH27b",
   "source_ids": [
     "MD-4.4.2-PrintedSpinStep"
   ],
@@ -12,8 +12,8 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "74216b5acf492708466fe193af472b48a861799b508860fd0e1c4a2f3bc39073",
-  "lean_sha256": "779b1be8d8916a5f326855ee68e6687b3e936f5c5193e628a4c826a9c583e2b7",
+  "source_json_sha256": "ec859dbde452505834ef2bb42a1016b8747dc1256f654b2b0db651ac0938065f",
+  "lean_sha256": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
   "signature_sha256": "158d4536f2caea09adfc9a7b3d70b7d97332fa488ed7f198e5e933cbf449b3bb",
   "definition_excerpts": [
     {
@@ -45,12 +45,6 @@
       "namespace": "MolecularDynamics",
       "name": "Gibbs",
       "code_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
-    },
-    {
-      "path": "MolecularDynamics/Chapter06/BrownianEigenOrdering.lean",
-      "namespace": "MolecularDynamics",
-      "name": "Gibbs",
-      "code_sha256": "8b35e8a190e530468223152a3d2e76734e7c74b8e142c1d533d8991a87b10323"
     },
     {
       "path": "MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean",
@@ -111,6 +105,12 @@
       "namespace": "MolecularDynamics",
       "name": "Gibbs",
       "code_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianEigenOrdering.lean",
+      "namespace": "MolecularDynamics",
+      "name": "Gibbs",
+      "code_sha256": "8b35e8a190e530468223152a3d2e76734e7c74b8e142c1d533d8991a87b10323"
     },
     {
       "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
@@ -333,9 +333,9 @@
   "files": {
     "PASTE.txt": {
       "bytes": 23705,
-      "sha256": "1e6411a806886095a36563b8eab4c4b4245c9f0718267c082cd91f152c3205e8"
+      "sha256": "a3ef4e5a29eb415118ccc9d6da333c7fae8a3ac47171d68defd0abc0c0633f1e"
     },
-    "BATCH26b_PAGES.pdf": {
+    "BATCH27b_PAGES.pdf": {
       "bytes": 88114,
       "sha256": "179c8d51d213c4e2d4723d3e1a3ed9a3d973a7a0572004206c2e71cf7548833d"
     }

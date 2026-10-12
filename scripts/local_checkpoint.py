@@ -16,6 +16,7 @@ p.checked(rp/'chapter_axioms.log');p.generate();render(ch,p)
 landing(ch,p,section,'①–⑤§'+section+'已检验')
 finish='--finish' in sys.argv
 if finish:
+    subprocess.run(['pwsh','-NoProfile','-File',str(ROOT/'scripts/local_archive_obsolete.ps1'),'-Chapter',str(ch)],cwd=ROOT,check=True)
     sections=sorted(q.parent.name for q in (p.BASE/'validation').glob('section*/LOCAL_CHECK_REPORT.json'))
     subprocess.run([sys.executable,str(ROOT/'scripts/validate_local_delivery.py'),str(ch),'--sections',*sections],cwd=ROOT,check=True)
     table=ROOT/'docs/handoff/LOCAL_PIPELINE.md';content=table.read_text(encoding='utf-8')
@@ -41,6 +42,13 @@ p.verify_protected()
 paths=['.gitattributes','AGENTS.md','lakefile.toml','docs/handoff/CURRENT_STATE.zh-CN.md','docs/handoff/RESUME_PROMPT.zh-CN.md','docs/handoff/WORK_LOG.zh-CN.md','docs/handoff/LOCAL_PIPELINE.md',f'Blueprint/Ch{ch:02}.lean',f'blueprint/ch{ch:02}',f'docs/review/CH{ch:02}_BLUEPRINT.zh-CN.md',
     'scripts/blueprint_source.py','scripts/local_blueprint.py','scripts/local_stage.py','scripts/local_chapter_check.ps1','scripts/local_checkpoint.py',f'scripts/ch{ch:02}_data.py']
 paths += ['scripts/render_local_source.py','scripts/validate_local_delivery.py']
+paths.append('scripts/local_archive_obsolete.ps1')
+if (ROOT/'scripts/local_chapter_start.py').exists():
+    paths.append('scripts/local_chapter_start.py')
+if (ROOT/'scripts/local_short_search.py').exists():
+    paths.append('scripts/local_short_search.py')
+if (ROOT/f'scripts/ch{ch:02}_short_candidates.py').exists():
+    paths.append(f'scripts/ch{ch:02}_short_candidates.py')
 if ch==4 and (ROOT/'scripts/partition_ch04_sections.py').exists():
     paths.append('scripts/partition_ch04_sections.py')
 if ch==4 and (ROOT/'scripts/ch04_reconcile_short_batch.py').exists():

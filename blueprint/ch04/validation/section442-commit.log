@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\validate_local_delivery.py", line 44, in <module>
+    assert actual==expected,'Obsolete active compact package'
+           ^^^^^^^^^^^^^^^^
+AssertionError: Obsolete active compact package
+Traceback (most recent call last):
+Generated 179 entries; 100 /100 old rows mapped; protected 568
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_checkpoint.py", line 20, in <module>
+    subprocess.run([sys.executable,str(ROOT/'scripts/validate_local_delivery.py'),str(ch),'--sections',*sections],cwd=ROOT,check=True)
+  File "D:\anaconda\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['D:\\anaconda\\python.exe', 'C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\scripts\\validate_local_delivery.py', '4', '--sections', 'section4', 'section41', 'section42', 'section431', 'section432', 'section433', 'section434', 'section435', 'section4351', 'section436', 'section44', 'section441', 'section441-fidelity', 'section442']' returned non-zero exit status 1.

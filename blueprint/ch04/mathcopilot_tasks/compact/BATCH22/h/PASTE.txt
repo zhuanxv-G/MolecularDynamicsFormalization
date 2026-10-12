@@ -77,14 +77,6 @@ private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
   Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
 ```
 
-### MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianEigenOrdering.lean:103)
-```lean
-private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
-  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
-
-include hm hβ in
-```
-
 ### MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean:11)
 ```lean
 private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
@@ -143,6 +135,14 @@ private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
 ```lean
 private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
   Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+
+### MolecularDynamics.Gibbs (MolecularDynamics/Chapter06/BrownianEigenOrdering.lean:103)
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+include hm hβ in
 ```
 
 ### MolecularDynamics.Chapter04Review.Mat3 (MolecularDynamics/Chapter04/ReviewDefinitions.lean:18)

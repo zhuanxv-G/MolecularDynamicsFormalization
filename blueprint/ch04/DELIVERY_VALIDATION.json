@@ -1,0 +1,83 @@
+{
+  "result": "PASS",
+  "chapter": 4,
+  "source_entries": 179,
+  "old_rows_mapped": 100,
+  "full_batches": 29,
+  "compact_subtasks": 179,
+  "max_total_task_bytes": 183267,
+  "protected_unchanged": 568,
+  "statuses": {
+    "self-contained": 124,
+    "incomplete": 40,
+    "checked+documented priors": 15
+  },
+  "local_verdicts": {
+    "PASS": 157,
+    "NEEDS_HUMAN": 18,
+    "FAIL": 4
+  },
+  "direct_sorry": 30,
+  "transitive_only_sorry": 0,
+  "original_pages_rendered_and_visually_checked": 36,
+  "section_check_report_hashes": {
+    "section4": {
+      "shared": "1065bfa33ae29ba9b3acd2c72497537d4ed99983ef2e00ad825e2bd0a7d446d4",
+      "chapter": "fae004b4b0793551db2784a50462f2668bd556039cfc94778051f3cea8796d58"
+    },
+    "section41": {
+      "shared": "656710c4f7054e20639ec92d44c6201f0414d848c85f21c2420316b5e6fbd40f",
+      "chapter": "83cc5d23b667f23e52009dbc8bed4c50b4a61fad2e1878f9ad2fef0624ab24e7"
+    },
+    "section42": {
+      "shared": "0a95a653cb3cb3fd66d6ef6c77c761dd91890d93afa239a4b208e66752dfbde0",
+      "chapter": "0c4bc575c0df94c209772179ffcebe911a10ff6ec1b2ffed023e8f386f2e2ad0"
+    },
+    "section431": {
+      "shared": "1fe0f74909152ac85a1527329e0381e6110f0f110faa5a5283eb2604264ce71b",
+      "chapter": "4ef082af278de9fc914f5f675efe5615ddc35b38ebc2df2bd3df38aebff8ae5f"
+    },
+    "section432": {
+      "shared": "2b089cf7de15e1447d6decf05b56eacd7da2e00822f5fb4e694687078555800b",
+      "chapter": "8e1d19cf1e0ac04d87bf1eb4127f6a780b05f4164a2c9e591e587b8dbc24c9fe"
+    },
+    "section433": {
+      "shared": "528492743df50a7b0c9524f1770e25e5ec3033cd39f8a70389f22d688a1ab6a3",
+      "chapter": "89598834cc68244f06d590efdddd16e450eb371ce992f5a3bf9b72f4d3dab1d7"
+    },
+    "section434": {
+      "shared": "0fd4e6dc37e0dd28a58e293640d93877df842f64e0b0ed77b269f5420f1bc9e8",
+      "chapter": "5f53e91e38463b2541a6a726353cf2fba7cf1f5417390496c23c14f2cb9a8e46"
+    },
+    "section435": {
+      "shared": "4af2cac69024bbc8d2d3032eed98536a84e1b4951685a826bcde45f3c07e0a6f",
+      "chapter": "eb20273c62227cdcc94c5d951b91bd1c4bf8bdb698885bae98aa0c5a97d62fef"
+    },
+    "section4351": {
+      "shared": "216c9950ee1d3e97a704dbf6f2d2fbfb5c8b3e9360c023a66d23692bfbdbda66",
+      "chapter": "e685c4dd2ad98309bff730abc497f91395e2dfbaea5f6fad7dabc47184520bb4"
+    },
+    "section436": {
+      "shared": "e2b42a5bb5a9c6cb3e0cc1e721ada76470332a82465295d9885d21fa2e989cfc",
+      "chapter": "853e8abd7fe83d78c2e4bec5eb836708a5464af31c45e0111823225784c36d9d"
+    },
+    "section44": {
+      "shared": "73339bab5b769d936a608f7803b2143eb9cdde939aa2f31cc8f1bff1e4d057d3",
+      "chapter": "0ccc38ad4fad7db269b9793a7081a92b7577d2061e32f85a139cc90f7eba62db"
+    },
+    "section441": {
+      "shared": "c09d2cfc14dee6da24bc517e09d09bfac7d277fdb3513fc449445695c54d20af",
+      "chapter": "2a624c37991ac64449ea7dfb400b7dbfc3a6d90a209f369201d9891096e6cb15"
+    },
+    "section441-fidelity": {
+      "shared": "261110e49048268611558181f59c51f9e5a4bcb9a2d62ab1c59af62e03453bdd",
+      "chapter": "ee0bddb952cc1c6d4b52628a3358d2c3c62e8784ee3f40d73dcee7398df3a843"
+    },
+    "section442": {
+      "shared": "f3c7ddce490efc718876029b1d768ae97d2ef57c954d25d8bec954a1b1ab1280",
+      "chapter": "b05cf153d5a348bbfe83b51716f07b316c73e73b43d07297342e256801ebbec8"
+    }
+  },
+  "website_audit": "待网站审计",
+  "mentor_issues": "已记录，尚未确认"
+}

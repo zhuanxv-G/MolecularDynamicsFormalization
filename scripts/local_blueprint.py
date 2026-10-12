@@ -34,6 +34,7 @@ def pipeline(ch):
     text=text.replace('MolecularDynamics.Chapter02Review；', f'MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review；')
     text=text.replace('a.update(checked=False,axioms=[]', 'a.update(checked=False,compiled=False,axioms=[]')
     text=text.replace("'已编译' if a['checked'] else '待编译'", "'已编译/公理已核' if a['checked'] else ('已编译/待公理' if a.get('compiled') else '待编译')")
+    text=text.replace("re.match(r'(?:noncomputable )?def '", "re.match(r'(?:@\\[[^\\]]+\\]\\s*)*(?:noncomputable )?def '")
     # The user's byte cap includes all three files, including the manifest.
     text=text.replace("dump(folder/'MANIFEST.json',report);subtasks.append", """dump(folder/'MANIFEST.json',report)
             for _ in range(3):
@@ -54,6 +55,29 @@ def pipeline(ch):
     raw_definitions=m.definitions
     def namespace_index(paths):
         index=raw_definitions(paths)
+        # A transparent type alias can carry an inline attribute. Preserve it
+        # and command boundaries in excerpts, without changing frozen exporters.
+        attr_definition=re.compile(r'(?m)^(?:@\[[^\n]+?\]\s*)*(?:(?:noncomputable|private|protected) +)*(?:def|abbrev|structure|class) +([\w.\u2080-\u2089]+)')
+        attr_command=re.compile(r'(?m)^(?:@\[[^\n]+?\]\s*)*(?:(?:noncomputable|private|protected|unsafe|partial) +)*(?:def|abbrev|structure|class|theorem|lemma|instance|namespace|end|open|variable|local|set_option|attribute|notation|scoped|#\w+)\b')
+        for relative in paths:
+            source=(ROOT/relative).read_text(encoding='utf-8-sig')
+            if not re.search(r'(?m)^@\[',source):continue
+            # Reindex this one file, so a preceding unannotated definition
+            # cannot accidentally swallow the next attributed declaration.
+            for name in list(index):
+                index[name]=[d for d in index[name] if d['path']!=relative]
+                if not index[name]:del index[name]
+            for match in attr_definition.finditer(source):
+                stop=attr_command.search(source,match.end());end=stop.start() if stop else len(source)
+                code=source[match.start():end].rstrip()
+                while code.endswith('-/'):
+                    opening=code.rfind('/-')
+                    if opening<0:break
+                    code=code[:opening].rstrip()
+                namespaces=re.findall(r'(?m)^namespace ([\w.]+)',source[:match.start()])
+                name=match.group(1)
+                index.setdefault(name,[]).append(dict(name=name,namespace=namespaces[-1] if namespaces else '',
+                    code=code,path=relative,line=source[:match.start()].count('\n')+1))
         for choices in list(index.values()):
             for definition in choices:
                 if definition['namespace']:

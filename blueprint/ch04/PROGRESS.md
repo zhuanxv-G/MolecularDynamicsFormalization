@@ -1,8 +1,8 @@
 # 第4章本地五步流程进度
 
 范围：印刷p.139–174/PDF161–196，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
-下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前160条；旧清单映射96/100；本地PASS 141；网站返回0。
+第4章本地部分完成；第4章等待用户提交MathCopilot批次；继续下一章本地流程。网站不可用，未冻结。
+当前179条；旧清单映射100/100；本地PASS 157；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -166,6 +166,25 @@
 | MD-4.4.1-SpinPoissonFormal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺动量依赖轴旋转Jacobian与Poisson结构短桥；不搭完整Poisson理论。 |
 | MD-4.4.1-RigidPoissonSkew | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-4.4.1-RigidHamiltonianField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4.2-RigidForce | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-MatrixRot | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-RigidTorque | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-DLMPrinted | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-DLMMassOnly | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-DriftSpinCommute | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4.2-DLMStructureFormal | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺实际旋转约束/Poisson形式及完整kick结构；不搭大型刚体理论。 |
+| MD-4.4.2-DLMPrintedStructure | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；待网站/导师裁定spin符号及结构；不建设新Poisson/刚体理论。 |
+| MD-4.4.2-RigidSystemState | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-RigidSystemForce | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-RigidSystemTorque | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-RigidSystemKick | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-RigidSystemDriftPrinted | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-RigidSystemSpinPrinted | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-DLMPrintedSystem | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-SystemDriftSpinCommute | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-4.4.2-RigidSystemSymplectic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-4.4.2-DLMPrintedSystemStructure | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原表spin符号与完整旋转余切结构待审；不建设新Poisson/刚体理论，不证明NEEDS_HUMAN。 |
+| MD-4.4.1-ExactPlanarRotation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/ExactPlanarRotation.json。 |
 
 ## 旧100条完整映射
 
@@ -265,11 +284,11 @@
 | CH04-092 | MD-4.4.1-RigidInvariants |
 | CH04-093 | MD-4.4.1-PoissonDegeneracy |
 | CH04-094 | MD-4.4.2-PrintedSpinStep |
-| CH04-095 | MD-4.4.1-SpinPoissonFormal |
-| CH04-096 | PENDING：所属节尚未处理 |
-| CH04-097 | PENDING：所属节尚未处理 |
-| CH04-098 | PENDING：所属节尚未处理 |
-| CH04-099 | PENDING：所属节尚未处理 |
+| CH04-095 | MD-4.4.1-ExactPlanarRotation |
+| CH04-096 | MD-4.4.2-RigidSystemTorque |
+| CH04-097 | MD-4.4.2-DLMPrintedSystem |
+| CH04-098 | MD-4.4.2-SystemDriftSpinCommute |
+| CH04-099 | MD-4.4.2-DLMPrintedSystemStructure |
 | CH04-100 | MD-4.3-ConstraintDegrees |
 
 ## NEEDS_HUMAN / [ERRATUM?] / 缺理论
@@ -315,6 +334,14 @@
 - MD-4.4.2-PrintedSpinAxis：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 p174正角列动量Rπ的导数符号与(4.41)π×ω相反；保留原算法，不证明其精确子流。
 - MD-4.4.1-AxisFlowFormal：正式库spinAxis正角动量Rπ与π×ω子场符号相反；结论不先证明错误版。 本地NEEDS_HUMAN；待网站/导师裁定正负号。正角主动Rπ导数=ω×π，不是π×ω；精确流需负角列动量。
 - MD-4.4.1-SpinPoissonFormal：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺动量依赖轴旋转Jacobian与Poisson结构短桥；不搭完整Poisson理论。
+- MD-4.4.2-DLMPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 字面drift缺1/M；正角spin动量符号疑点保留。
+- MD-4.4.2-DLMStructureFormal：正式库spin与原表一致；旧陈述为单体质量修正版及反步关系，不能冒充原任意N体完整算法。正角子流符号仍需审校。 缺实际旋转约束/Poisson形式及完整kick结构；不搭大型刚体理论。
+- MD-4.4.2-DLMPrintedStructure：实际字面算法完整rb拉回形式陈述；原spin的相反角动量符号需审校，不能先判PASS。 待网站/导师裁定spin符号及结构；不建设新Poisson/刚体理论。
+- MD-4.4.2-RigidSystemDriftPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 原字面缺1/Mk；完整N体版本保留原式，不静默补质量。
+- MD-4.4.2-RigidSystemSpinPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 正角Rπ与π×ω的子流符号疑点保留，不冒充已证精确刚体子流。
+- MD-4.4.2-DLMPrintedSystem：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 完整原表的缺质量drift与正角spin疑点保持；编译定义不代表正确辛性。
+- MD-4.4.2-DLMPrintedSystemStructure：忠实全N、任意耦合势与字面spin算法；未删量词或弱化成单体。原正角动量/旋转符号疑点和一般质量drift需网站/导师裁定。 原表spin符号与完整旋转余切结构待审；不建设新Poisson/刚体理论，不证明NEEDS_HUMAN。
+- MD-4.4.1-ExactPlanarRotation：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 三条短证明路线失败，停止该条；保存证据见validation/short_search/ExactPlanarRotation.json。
 
 ## 定性段落排除
 

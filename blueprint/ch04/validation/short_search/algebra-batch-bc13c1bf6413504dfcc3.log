@@ -1,0 +1,307 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch04\validation\short_search\algebra-batch-bc13c1bf6413504dfcc3.lean:20:2: error: unsolved goals
+case e'_8
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨0, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩))
+    (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) *
+      (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) *
+      (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    t
+⊢ (fun x => Real.cos (-(x * π 0 * (I 0)⁻¹)) * π 1 - Real.sin (-(x * π 0 * (I 0)⁻¹)) * π 2) = fun x => π 0
+
+case e'_9
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨0, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩))
+    (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) *
+      (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) *
+      (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    t
+⊢ π 0 * (I 0)⁻¹ * Real.sin (-(t * π 0 * (I 0)⁻¹)) * π 1 + π 0 * (I 0)⁻¹ * Real.cos (-(t * π 0 * (I 0)⁻¹)) * π 2 = 0
+
+case e'_8
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨0, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩))
+    (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) *
+      (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) *
+      (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    t
+⊢ (fun x => Real.sin (-(x * π 0 * (I 0)⁻¹)) * π 1 + Real.cos (-(x * π 0 * (I 0)⁻¹)) * π 2) = fun x => π 0
+
+case e'_9
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨0, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩))
+    (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) *
+      (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)) *
+      (-π ((fun i => i) ⟨0, ⋯⟩) / I ((fun i => i) ⟨0, ⋯⟩)))
+    t
+⊢ -(π 0 * (I 0)⁻¹ * Real.cos (-(t * π 0 * (I 0)⁻¹)) * π 1) + π 0 * (I 0)⁻¹ * Real.sin (-(t * π 0 * (I 0)⁻¹)) * π 2 = 0
+
+case e'_8
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨1, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩))
+    (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) *
+      (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) *
+      (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    t
+⊢ (fun x => Real.cos (-(x * π 1 * (I 1)⁻¹)) * π 0 + Real.sin (-(x * π 1 * (I 1)⁻¹)) * π 2) = fun x => π 0
+
+case e'_9
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨1, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩))
+    (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) *
+      (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) *
+      (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    t
+⊢ π 1 * (I 1)⁻¹ * Real.sin (-(t * π 1 * (I 1)⁻¹)) * π 0 - π 1 * (I 1)⁻¹ * Real.cos (-(t * π 1 * (I 1)⁻¹)) * π 2 = 0
+
+case e'_8
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨1, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩))
+    (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) *
+      (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) *
+      (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    t
+⊢ (fun x => -(Real.sin (-(x * π 1 * (I 1)⁻¹)) * π 0) + Real.cos (-(x * π 1 * (I 1)⁻¹)) * π 2) = fun x => π 0
+
+case e'_9
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨1, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩))
+    (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) *
+      (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)) *
+      (-π ((fun i => i) ⟨1, ⋯⟩) / I ((fun i => i) ⟨1, ⋯⟩)))
+    t
+⊢ π 1 * (I 1)⁻¹ * Real.cos (-(t * π 1 * (I 1)⁻¹)) * π 0 + π 1 * (I 1)⁻¹ * Real.sin (-(t * π 1 * (I 1)⁻¹)) * π 2 = 0
+
+case e'_8
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨2, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩))
+    (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) *
+      (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) *
+      (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    t
+⊢ (fun x => Real.cos (-(x * π 2 * (I 2)⁻¹)) * π 0 - Real.sin (-(x * π 2 * (I 2)⁻¹)) * π 1) = fun x => π 0
+
+case e'_9
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨2, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩))
+    (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) *
+      (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) *
+      (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    t
+⊢ π 2 * (I 2)⁻¹ * Real.sin (-(t * π 2 * (I 2)⁻¹)) * π 0 + π 2 * (I 2)⁻¹ * Real.cos (-(t * π 2 * (I 2)⁻¹)) * π 1 = 0
+
+case e'_8
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨2, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩))
+    (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) *
+      (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) *
+      (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    t
+⊢ (fun x => Real.sin (-(x * π 2 * (I 2)⁻¹)) * π 0 + Real.cos (-(x * π 2 * (I 2)⁻¹)) * π 1) = fun x => π 0
+
+case e'_9
+I π : V
+t : ℝ
+hI : 0 < I ((fun i => i) ⟨2, ⋯⟩)
+ha :
+  HasDerivAt (fun s => -s * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩))
+    (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) t
+hc :
+  HasDerivAt (fun x => Real.cos (-x * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    (-Real.sin (-t * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) *
+      (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    t
+hs :
+  HasDerivAt (fun x => Real.sin (-x * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    (Real.cos (-t * π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)) *
+      (-π ((fun i => i) ⟨2, ⋯⟩) / I ((fun i => i) ⟨2, ⋯⟩)))
+    t
+⊢ -(π 2 * (I 2)⁻¹ * Real.cos (-(t * π 2 * (I 2)⁻¹)) * π 0) + π 2 * (I 2)⁻¹ * Real.sin (-(t * π 2 * (I 2)⁻¹)) * π 1 = 0
+blueprint\ch04\validation\short_search\algebra-batch-bc13c1bf6413504dfcc3.lean:28:76: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [axisRotation, cross3, Matrix.mulVec, dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

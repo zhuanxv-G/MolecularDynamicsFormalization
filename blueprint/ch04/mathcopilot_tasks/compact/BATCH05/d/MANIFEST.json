@@ -12,8 +12,8 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "74216b5acf492708466fe193af472b48a861799b508860fd0e1c4a2f3bc39073",
-  "lean_sha256": "779b1be8d8916a5f326855ee68e6687b3e936f5c5193e628a4c826a9c583e2b7",
+  "source_json_sha256": "ec859dbde452505834ef2bb42a1016b8747dc1256f654b2b0db651ac0938065f",
+  "lean_sha256": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
   "signature_sha256": "5b080c9c3f8865f5479aadc88c4fff9378f549deefc1d9b520d14b5317b711b4",
   "definition_excerpts": [
     {
@@ -51,12 +51,6 @@
       "namespace": "MolecularDynamics",
       "name": "Gibbs",
       "code_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
-    },
-    {
-      "path": "MolecularDynamics/Chapter06/BrownianEigenOrdering.lean",
-      "namespace": "MolecularDynamics",
-      "name": "Gibbs",
-      "code_sha256": "8b35e8a190e530468223152a3d2e76734e7c74b8e142c1d533d8991a87b10323"
     },
     {
       "path": "MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean",
@@ -117,6 +111,12 @@
       "namespace": "MolecularDynamics",
       "name": "Gibbs",
       "code_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianEigenOrdering.lean",
+      "namespace": "MolecularDynamics",
+      "name": "Gibbs",
+      "code_sha256": "8b35e8a190e530468223152a3d2e76734e7c74b8e142c1d533d8991a87b10323"
     },
     {
       "path": "MolecularDynamics/Chapter06/BrownianComplexKernel.lean",
@@ -393,7 +393,7 @@
   "files": {
     "PASTE.txt": {
       "bytes": 25114,
-      "sha256": "dd349e2c013ff68319d231054cb6dcc3bcb4a498880a83c6e899b16fbee4c085"
+      "sha256": "3844fd4d968c0776681e85d45b9c8ee6f9d5e138063018c9c8b456bba7ed1419"
     },
     "BATCH05d_PAGES.pdf": {
       "bytes": 141122,

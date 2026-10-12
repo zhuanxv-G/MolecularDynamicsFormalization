@@ -164,6 +164,25 @@
 | MD-4.4.1-SpinPoissonFormal | 173/195 | PASS | 待网站审计 | incomplete |
 | MD-4.4.1-RigidPoissonSkew | 172/194 | PASS | 待网站审计 | self-contained |
 | MD-4.4.1-RigidHamiltonianField | 172/194 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-RigidForce | 173/195 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-MatrixRot | 174/196 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-RigidTorque | 173/195 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-DLMPrinted | 174/196 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-DLMMassOnly | 174/196 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-DriftSpinCommute | 174/196 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-DLMStructureFormal | 173–174/195–196 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.4.2-DLMPrintedStructure | 173–174/195–196 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.4.2-RigidSystemState | 173/195 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-RigidSystemForce | 173/195 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-RigidSystemTorque | 173/195 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-RigidSystemKick | 174/196 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-RigidSystemDriftPrinted | 174/196 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-RigidSystemSpinPrinted | 174/196 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-DLMPrintedSystem | 174/196 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-SystemDriftSpinCommute | 174/196 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-RigidSystemSymplectic | 173–174/195–196 | PASS | 待网站审计 | self-contained |
+| MD-4.4.2-DLMPrintedSystemStructure | 173–174/195–196 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-4.4.1-ExactPlanarRotation | 173/195 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -217,6 +236,17 @@
   p174正角列动量Rπ的导数符号与(4.41)π×ω相反；保留原算法，不证明其精确子流。
 - MD-4.4.1-AxisFlowFormal：正式库spinAxis正角动量Rπ与π×ω子场符号相反；结论不先证明错误版。
   正角主动Rπ导数=ω×π，不是π×ω；精确流需负角列动量。
+- MD-4.4.2-DLMPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  字面drift缺1/M；正角spin动量符号疑点保留。
+- MD-4.4.2-DLMStructureFormal：正式库spin与原表一致；旧陈述为单体质量修正版及反步关系，不能冒充原任意N体完整算法。正角子流符号仍需审校。
+- MD-4.4.2-DLMPrintedStructure：实际字面算法完整rb拉回形式陈述；原spin的相反角动量符号需审校，不能先判PASS。
+- MD-4.4.2-RigidSystemDriftPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  原字面缺1/Mk；完整N体版本保留原式，不静默补质量。
+- MD-4.4.2-RigidSystemSpinPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  正角Rπ与π×ω的子流符号疑点保留，不冒充已证精确刚体子流。
+- MD-4.4.2-DLMPrintedSystem：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  完整原表的缺质量drift与正角spin疑点保持；编译定义不代表正确辛性。
+- MD-4.4.2-DLMPrintedSystemStructure：忠实全N、任意耦合势与字面spin算法；未删量词或弱化成单体。原正角动量/旋转符号疑点和一般质量drift需网站/导师裁定。
 
 ## 1. MD-4-LinearField · (4.1) · 印刷p.139 / PDFp.161
 
@@ -7850,3 +7880,897 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/RigidHamiltonianField.json；blueprint/ch04/validation/short_search/algebra-batch-443e99ed108887cb028d.lean；blueprint/ch04/validation/short_search/algebra-batch-443e99ed108887cb028d.log；blueprint/ch04/validation/short_search/algebra-batch-253aa22fb57fcc6fd091.lean；blueprint/ch04/validation/short_search/algebra-batch-253aa22fb57fcc6fd091.log。
 
 签名SHA256：`ab84e3fc21a1c2045c0bc08ff7f072afa87fd3ea507e2948cd86f03e53b5c728`；原文SHA256：`6aa74b5ac8da0d279f7d24bade069f4e7e9e7ac57d40826c0c884bc32e35cc18`。
+
+## 1. MD-4.4.2-RigidForce · definition · 印刷p.173 / PDFp.195
+
+### 2. 原文陈述
+
+> The relevant expressions are $F_k=-\partial U/\partial q^k$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rigidForce (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (q : MolecularDynamics.Chapter04Review.V) (Θ : MolecularDynamics.Chapter04Review.Mat3) := -MolecularDynamics.Chapter04Review.grad (fun x => U x Θ) q
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rigidForce；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1812](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1812>)（`MD.Ch04.rigidForce`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`29ce179c1f448a3abbbe3177cf964d6fb9a7082734352a98b40ca08bf5fcd784`；原文SHA256：`8bca383b4bb0ad39add96c4909b8101a2614d7d09dd92f0c59964e151b900abd`。
+
+## 1. MD-4.4.2-MatrixRot · definition · 印刷p.174 / PDFp.196
+
+### 2. 原文陈述
+
+> for a $3\times3$ matrix $A$, $\operatorname{rot}(A)=\operatorname{skew}^{-1}(A-A^T)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def matrixRot (A : MolecularDynamics.Chapter04Review.Mat3) : MolecularDynamics.Chapter04Review.V := ![A 2 1-A 1 2,A 0 2-A 2 0,A 1 0-A 0 1]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.matrixRot；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1815](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1815>)（`MD.Ch04.matrixRot`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2ba19fcfb7d1665f2fc4d73cfedb0e0bf6226f93938b899cf151cb30ff3f3619`；原文SHA256：`f0df04f257aeb7247fa2808b3cce51507ae2a085771cac511f4e3a2f7cd0c45c`。
+
+## 1. MD-4.4.2-RigidTorque · definition · 印刷p.173 / PDFp.195
+
+### 2. 原文陈述
+
+> $\tau_k=-\operatorname{rot}(\Theta^{kT}\partial U/\partial\Theta^k)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rigidTorque (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (q : MolecularDynamics.Chapter04Review.V) (Θ : MolecularDynamics.Chapter04Review.Mat3) := -MolecularDynamics.Chapter04Review.matrixRot (Θᵀ*MolecularDynamics.Chapter04Review.matrixGrad (U q) Θ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rigidTorque；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1818](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1818>)（`MD.Ch04.rigidTorque`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`ee445fca16a1eae48e4b7d264d4c196512185971010f48ab6b046c1919a460d3`；原文SHA256：`46e566b0a5953493257540d58dcb6bd913d217d4a14b6ff316405c43cc9ae906`。
+
+## 1. MD-4.4.2-DLMPrinted · definition · 印刷p.174 / PDFp.196
+
+### 2. 原文陈述
+
+> DLM Rigid Body Molecular Dynamics Step
+> 1. “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:
+> \[p^k:=p^k+\tfrac h2 F_k;\quad\pi^k:=\pi^k+\tfrac h2\tau_k.\]
+> 2. “Drift”: step forward a whole step in positions
+> \[q^k:=q^k+hp^k.\]
+> 3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps
+> \[\Theta:=\Theta^x(\tfrac h2\pi_1^k/I_1);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^y(\tfrac h2\pi_2^k/I_2);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^z(h\pi_3^k/I_3);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^y(\tfrac h2\pi_2^k/I_2);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^x(\tfrac h2\pi_1^k/I_1);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T.\]
+> 4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F_k$ and torques $\tau_k$ evaluated at the current $q,\Theta$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def dlmPrinted (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.RBState → MolecularDynamics.Chapter04Review.RBState :=
+  MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘
+    MolecularDynamics.Chapter04Review.rigidDrift 1 h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.dlmPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]本条仅N=1实例；任意N体耦合势与完整算法另由DLMPrintedSystem忠实保存。 | [EXTRA] |
+| 原页核对/疑点 | 字面drift缺1/M；正角spin动量符号疑点保留。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1823](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1823>)（`MD.Ch04.dlmPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`87568e6c189f9a57c20cd6e75931aebbec33b902951c44c1530bc3f5e8679587`；原文SHA256：`b4211740fa9cec42b370a135f568f3591ef4e6aac270cfb27dcb10d390cac7ce`。
+
+## 1. MD-4.4.2-DLMMassOnly · definition · 印刷p.174 / PDFp.196
+
+### 2. 原文陈述
+
+> “Drift”: step forward a whole step in positions $q^k:=q^k+hp^k$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def dlmMassOnly (M : ℝ) (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.RBState → MolecularDynamics.Chapter04Review.RBState :=
+  MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘
+    MolecularDynamics.Chapter04Review.rigidDrift M h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.dlmMassOnly；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]只将drift质量修为q+h p/M；仍保留原spin，不能据此称完整正确几何积分器。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1829](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1829>)（`MD.Ch04.dlmMassOnly`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0adf3b094fe1216ca606513c251869aad4948ebf7e29bd480c255864e8e293c9`；原文SHA256：`548bd421e90bba6d92d13755bd6b9e3660bfcefe15870d4a9dca4d6405340a7e`。
+
+## 1. MD-4.4.2-DriftSpinCommute · unnumbered_claim · 印刷p.174 / PDFp.196
+
+### 2. 原文陈述
+
+> Note that the symmetric character of the algorithm could be revealed more clearly by dividing the “Drift” step into two half steps sandwiched around the Spin step (Kick, Drift, Spin, Drift, Kick), but as the updates Drift/Spin are decoupled, the order they are performed is not important.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem driftSpinCommute : ∀ M h (I : MolecularDynamics.Chapter04Review.V) (z : MolecularDynamics.Chapter04Review.RBState),
+  MolecularDynamics.Chapter04Review.rigidDrift M h (z.1,printedSpinStep I h z.2)=
+    ((MolecularDynamics.Chapter04Review.rigidDrift M h z).1,printedSpinStep I h (MolecularDynamics.Chapter04Review.rigidDrift M h z).2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.driftSpinCommute；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch04.lean:1834](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1834>)（`MD.Ch04.driftSpinCommute`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`4b512cefafc2f3763f794fe7e01205e24fee2174e5617abd207461c3e3c41745`；原文SHA256：`05c09ad8e1fafd8c79ec10712c37d96f29df7b2b647890f6012d9651fa542bac`。
+
+## 1. MD-4.4.2-DLMStructureFormal · unnumbered_claim · 印刷p.173–174 / PDFp.195–196
+
+### 2. 原文陈述
+
+> The reliability of these methods is supported by the fact that the combined scheme is a symplectic method in the generalized sense of constrained dynamics.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem dlmStructure :
+  ∀ M (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ),
+  0 < M → (∀ i, 0 < I i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
+    MolecularDynamics.Chapter04Review.rbSymplectic (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h) ∧ ∀ z : MolecularDynamics.Chapter04Review.RBState,
+      z.2.2ᵀ*z.2.2=1 → z.2.2.det=1 →
+      MolecularDynamics.Chapter04Review.dlmMassConsistent M I U (-h) (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z)=z ∧
+      (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z).2.2ᵀ*(MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z).2.2=1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.dlmStructure；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]旧正式库单体质量一致对象单独保留；原任意N体耦合势的算法几何声明另列。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。正式库spin与原表一致；旧陈述为单体质量修正版及反步关系，不能冒充原任意N体完整算法。正角子流符号仍需审校。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:1842](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1842>)（`MD.Ch04.dlmStructure`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺实际旋转约束/Poisson形式及完整kick结构；不搭大型刚体理论。
+
+签名SHA256：`7eb2d354c82ac279be78ac422909bc5fc1eb6d6fc0b36941b9a53dd2977209b5`；原文SHA256：`aa7f9767bbf0221d205c0256a6c1406055fb7ac8e59fe470771ed581a21cfe3f`。
+
+## 1. MD-4.4.2-DLMPrintedStructure · unnumbered_claim · 印刷p.173–174 / PDFp.195–196
+
+### 2. 原文陈述
+
+> The reliability of these methods is supported by the fact that the combined scheme is a symplectic method in the generalized sense of constrained dynamics.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem dlmPrintedStructure : ∀ (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ),
+  (∀ i, 0 < I i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
+    MolecularDynamics.Chapter04Review.rbSymplectic (dlmPrinted I U h)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.dlmPrintedStructure；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | 明确SO3初态与实际切向量在rbSymplectic定义内；单位质量为原字面drift。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。实际字面算法完整rb拉回形式陈述；原spin的相反角动量符号需审校，不能先判PASS。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:1853](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1853>)（`MD.Ch04.dlmPrintedStructure`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待网站/导师裁定spin符号及结构；不建设新Poisson/刚体理论。
+
+签名SHA256：`1215e47726bfc368bfba10c7590daccacc5d5ca9fdaa7e734773dd4f22a07964`；原文SHA256：`b80148f4393ccbbecaf2554fc8af93692eebeb794ac8a0c458cfe6f6ae798a1f`。
+
+## 1. MD-4.4.2-RigidSystemState · definition · 印刷p.173 / PDFp.195
+
+### 2. 原文陈述
+
+> Procedures given below for rigid body $k$ are meant to be performed for all rigid bodies in the system.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+@[reducible] def rigidSystemState (N : ℕ) := Fin N → MolecularDynamics.Chapter04Review.RBState
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rigidSystemState；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整N体状态的透明类型别名：每体(q,p,π,Θ)；下列势U可耦合全部刚体，不限于单体或独立势。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1860](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1860>)（`MD.Ch04.rigidSystemState`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`cedadce1a9de31aed005d459b0ae557210aae5746dcdda5c8cb7670c299fece0`；原文SHA256：`cd3f542a953b598527be1d413f0827e1959126fcf994d5c3ffe2b359e37cd133`。
+
+## 1. MD-4.4.2-RigidSystemForce · definition · 印刷p.173 / PDFp.195
+
+### 2. 原文陈述
+
+> The relevant expressions are $F_k=-\partial U/\partial q^k$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rigidSystemForce {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ)
+    (z : rigidSystemState N) (k : Fin N) : MolecularDynamics.Chapter04Review.V :=
+  -MolecularDynamics.Chapter04Review.grad (fun x => U (Function.update (fun j => (z j).1.1) k x) (fun j => (z j).2.2)) (z k).1.1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rigidSystemForce；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1863](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1863>)（`MD.Ch04.rigidSystemForce`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`6dcac93b5272a234367798e91a3cb4dd8b32153146ec6cb516c191dd2e1e49dd`；原文SHA256：`0a76cd1e297ec1d5d07daaf603c917c70881f870690afe8eeb8f5fa83e48ac46`。
+
+## 1. MD-4.4.2-RigidSystemTorque · definition · 印刷p.173 / PDFp.195
+
+### 2. 原文陈述
+
+> $\tau_k=-\operatorname{rot}(\Theta^{kT}\partial U/\partial\Theta^k)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rigidSystemTorque {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ)
+    (z : rigidSystemState N) (k : Fin N) : MolecularDynamics.Chapter04Review.V :=
+  -MolecularDynamics.Chapter04Review.matrixRot ((z k).2.2ᵀ * MolecularDynamics.Chapter04Review.matrixGrad
+    (fun A => U (fun j => (z j).1.1) (Function.update (fun j => (z j).2.2) k A)) (z k).2.2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rigidSystemTorque；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1869](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1869>)（`MD.Ch04.rigidSystemTorque`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`ded423e9b807e10a8e679a69598122a933d7f25fba609bb6ae64c16242777154`；原文SHA256：`3ebaadcb831bab6025718b4e1a948dc715ba971309ea9b6995a130e9e9f19379`。
+
+## 1. MD-4.4.2-RigidSystemKick · definition · 印刷p.174 / PDFp.196
+
+### 2. 原文陈述
+
+> “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:
+> \[p^k:=p^k+\tfrac h2 F_k;\quad\pi^k:=\pi^k+\tfrac h2\tau_k.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rigidSystemKick {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ)
+    (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => (((z k).1.1,(z k).1.2+h • rigidSystemForce U z k),
+    ((z k).2.1+h • rigidSystemTorque U z k,(z k).2.2))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rigidSystemKick；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1876](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1876>)（`MD.Ch04.rigidSystemKick`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`d2c8a8b4c36e1cbacc84fa11b81d8d99ab8acc31fb61a1a00096c6bfeb2bfd2a`；原文SHA256：`77549a51f27d639d1507c2ba243ec910ebed53011fec253a191639347a69af59`。
+
+## 1. MD-4.4.2-RigidSystemDriftPrinted · definition · 印刷p.174 / PDFp.196
+
+### 2. 原文陈述
+
+> “Drift”: step forward a whole step in positions
+> \[q^k:=q^k+hp^k.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rigidSystemDriftPrinted {N : ℕ} (h : ℝ) (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => (((z k).1.1+h • (z k).1.2,(z k).1.2),(z k).2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rigidSystemDriftPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | 原字面缺1/Mk；完整N体版本保留原式，不静默补质量。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1884](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1884>)（`MD.Ch04.rigidSystemDriftPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`cbf3060dd8a41f4f29afacd21c1dafe19dd535ae79f719e57f561bf5910663ed`；原文SHA256：`70d4505a3c2e57650827434e966c7bd1c07cedff7486e96ff2259c9ce4159043`。
+
+## 1. MD-4.4.2-RigidSystemSpinPrinted · definition · 印刷p.174 / PDFp.196
+
+### 2. 原文陈述
+
+> “Spin”: update the rotational state of the kth rigid body by the sequence of steps
+> \[\Theta:=\Theta^x(\tfrac h2\pi_1^k/I_1);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^y(\tfrac h2\pi_2^k/I_2);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^z(h\pi_3^k/I_3);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^y(\tfrac h2\pi_2^k/I_2);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^x(\tfrac h2\pi_1^k/I_1);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rigidSystemSpinPrinted {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V) (h : ℝ)
+    (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => ((z k).1,printedSpinStep (I k) h (z k).2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rigidSystemSpinPrinted；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | 正角Rπ与π×ω的子流符号疑点保留，不冒充已证精确刚体子流。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1889](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1889>)（`MD.Ch04.rigidSystemSpinPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`a0040dba92de6eab426eb9b3fbdeffdc433cea674677386477842d97994240c6`；原文SHA256：`2aa7af56ee2d523204e1764c4019ca2883924e39ad74e4e52ea648ee31a5540d`。
+
+## 1. MD-4.4.2-DLMPrintedSystem · definition · 印刷p.174 / PDFp.196
+
+### 2. 原文陈述
+
+> DLM Rigid Body Molecular Dynamics Step
+> 1. “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:
+> \[p^k:=p^k+\tfrac h2 F_k;\quad\pi^k:=\pi^k+\tfrac h2\tau_k.\]
+> 2. “Drift”: step forward a whole step in positions
+> \[q^k:=q^k+hp^k.\]
+> 3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps
+> \[\Theta:=\Theta^x(\tfrac h2\pi_1^k/I_1);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^y(\tfrac h2\pi_2^k/I_2);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^z(h\pi_3^k/I_3);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^y(\tfrac h2\pi_2^k/I_2);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T,\]
+> \[\Theta:=\Theta^x(\tfrac h2\pi_1^k/I_1);\ \pi^k:=\Theta\pi^k;\ \Theta^k:=\Theta^k\Theta^T.\]
+> 4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F_k$ and torques $\tau_k$ evaluated at the current $q,\Theta$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def dlmPrintedSystem {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ) :
+    rigidSystemState N → rigidSystemState N :=
+  rigidSystemKick U (h/2) ∘ rigidSystemSpinPrinted I h ∘
+    rigidSystemDriftPrinted h ∘ rigidSystemKick U (h/2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.dlmPrintedSystem；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原页核对/疑点 | 完整原表的缺质量drift与正角spin疑点保持；编译定义不代表正确辛性。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1895](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1895>)（`MD.Ch04.dlmPrintedSystem`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`f5f08ec8650b0abf4ff80ba0b47f33917c587bf8a4b2b4dc5f05302cd73b7999`；原文SHA256：`ba90b493adc3e4b9d1c461ae61d03674fd8214f58d2a048f945a5cb50c3b6e10`。
+
+## 1. MD-4.4.2-SystemDriftSpinCommute · unnumbered_claim · 印刷p.174 / PDFp.196
+
+### 2. 原文陈述
+
+> as the updates Drift/Spin are decoupled, the order they are performed is not important.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem systemDriftSpinCommute : ∀ N (I : Fin N → MolecularDynamics.Chapter04Review.V) h (z : rigidSystemState N),
+    rigidSystemDriftPrinted h (rigidSystemSpinPrinted I h z)=
+      rigidSystemSpinPrinted I h (rigidSystemDriftPrinted h z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.systemDriftSpinCommute；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch04.lean:1902](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1902>)（`MD.Ch04.systemDriftSpinCommute`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`937a1cbceb50dea52e90a9d779bcfa6c466458e614adeb2d284f294fc992cbd8`；原文SHA256：`312b189f63a0a8d0f8f117b257e930b32265b4ae92e2f10dc50eb4873a73d809`。
+
+## 1. MD-4.4.2-RigidSystemSymplectic · definition · 印刷p.173–174 / PDFp.195–196
+
+### 2. 原文陈述
+
+> the combined scheme is a symplectic method in the generalized sense of constrained dynamics.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rigidSystemSymplectic {N : ℕ} (G : rigidSystemState N → rigidSystemState N) : Prop :=
+  ∀ (z : rigidSystemState N), (∀ k, (z k).2.2ᵀ*(z k).2.2=1 ∧ (z k).2.2.det=1) →
+    (∀ k, (G z k).2.2ᵀ*(G z k).2.2=1 ∧ (G z k).2.2.det=1) ∧
+    ∀ (u v : rigidSystemState N), (∀ k, MolecularDynamics.Chapter04Review.rbTangent (z k) (u k)) → (∀ k, MolecularDynamics.Chapter04Review.rbTangent (z k) (v k)) →
+      (∑ k, MolecularDynamics.Chapter04Review.rbForm (G z k) (((fderiv ℝ G z) u) k) (((fderiv ℝ G z) v) k))=
+        ∑ k, MolecularDynamics.Chapter04Review.rbForm (z k) (u k) (v k)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.rigidSystemSymplectic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整N体SO(3)配置、实际切向量和各体rbForm之和；明确包含输出配置约束及真实Fréchet拉回，不假设辛性或以抽象形式替代。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch04.lean:1910](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1910>)（`MD.Ch04.rigidSystemSymplectic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`4b691e8c936de6e911c4c7cfa4a64f7e8df0aaa55c2366358b224ac221303a5c`；原文SHA256：`4d7b50d47a0271787ff1a86f665228962779b22a7b730c393df6f3270d496057`。
+
+## 1. MD-4.4.2-DLMPrintedSystemStructure · unnumbered_claim · 印刷p.173–174 / PDFp.195–196
+
+### 2. 原文陈述
+
+> The reliability of these methods is supported by the fact that the combined scheme is a symplectic method in the generalized sense of constrained dynamics.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem dlmPrintedSystemStructure : ∀ N (I : Fin N → MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ),
+  (∀ k i, 0 < I k i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
+    rigidSystemSymplectic (dlmPrintedSystem I U h)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.dlmPrintedSystemStructure；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | C³耦合势和正主惯性矩为明确技术资格；实际全部SO3输入/输出约束及N体两形式在定义内。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。忠实全N、任意耦合势与字面spin算法；未删量词或弱化成单体。原正角动量/旋转符号疑点和一般质量drift需网站/导师裁定。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:1919](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1919>)（`MD.Ch04.dlmPrintedSystemStructure`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原表spin符号与完整旋转余切结构待审；不建设新Poisson/刚体理论，不证明NEEDS_HUMAN。
+
+签名SHA256：`98f9f60538a6931bde3f5e271ed92faf44a27d2385b1e8e433b5691dcfceb90e`；原文SHA256：`3162353014b8433b87aa80a02bd052eef161a1e60cb25db444d560be05cdc42d`。
+
+## 1. MD-4.4.1-ExactPlanarRotation · unnumbered_claim · 印刷p.173 / PDFp.195
+
+### 2. 原文陈述
+
+> Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem exactPlanarRotation : ∀ (I π : MolecularDynamics.Chapter04Review.V) (i : Fin 3), 0 < I i →
+  let γ := fun t : ℝ => MolecularDynamics.Chapter04Review.axisRotation i (-t*π i/I i) *ᵥ π
+  γ 0=π ∧ (∀ t,γ t i=π i) ∧
+    ∀ t,HasDerivAt γ (MolecularDynamics.Chapter04Review.cross3 (γ t) (Pi.single i (γ t i/I i))) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch04.exactPlanarRotation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]第二/第三子场按完整π₂/π₃解释，与PrincipalAxisField一致；显式负角主动旋转给出(4.41)的π×ω符号，不将原表正角错误候选当作该精确子流。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch04.lean:1927](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1927>)（`MD.Ch04.exactPlanarRotation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：三条短证明路线失败，停止该条；保存证据见validation/short_search/ExactPlanarRotation.json。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/ExactPlanarRotation.json；blueprint/ch04/validation/short_search/algebra-batch-bc13c1bf6413504dfcc3.lean；blueprint/ch04/validation/short_search/algebra-batch-bc13c1bf6413504dfcc3.log；blueprint/ch04/validation/short_search/algebra-batch-b94ba96b9f58096fd035.lean；blueprint/ch04/validation/short_search/algebra-batch-b94ba96b9f58096fd035.log；blueprint/ch04/validation/short_search/algebra-batch-66d90dada89f1ea0e55d.lean；blueprint/ch04/validation/short_search/algebra-batch-66d90dada89f1ea0e55d.log。
+
+签名SHA256：`7816deb22ae2d9f1e01d540e4445a006a1164996eaba9cf77dcde19b7e083c70`；原文SHA256：`028384a05da396797ebd3399560ee0f446c8cc302f8848af0fd94cb1e9ef2d1d`。

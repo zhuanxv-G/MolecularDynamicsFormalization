@@ -1,0 +1,99 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch04\validation\short_search\algebra-batch-66d90dada89f1ea0e55d.lean:30:14: error: unsolved goals
+case e'_8
+I π : V
+t : ℝ
+hI : 0 < I 0
+ha : HasDerivAt (fun s => s * π 0 * (I 0)⁻¹) (π 0 * (I 0)⁻¹) t
+hc : HasDerivAt (fun x => Real.cos (x * π 0 * (I 0)⁻¹)) (-(Real.sin (t * π 0 * (I 0)⁻¹) * (π 0 * (I 0)⁻¹))) t
+hs : HasDerivAt (fun x => Real.sin (x * π 0 * (I 0)⁻¹)) (Real.cos (t * π 0 * (I 0)⁻¹) * (π 0 * (I 0)⁻¹)) t
+x : ℝ
+⊢ -(Real.sin (x * π 0 * (I 0)⁻¹) * π 1) + Real.cos (x * π 0 * (I 0)⁻¹) * π 2 =
+    ((fun y => π 1 * Real.cos (π 0 * (I 0)⁻¹ * y)) - fun y => π 0 * Real.sin (π 0 * (I 0)⁻¹ * y)) x
+
+case e'_9
+I π : V
+t : ℝ
+hI : 0 < I 0
+ha : HasDerivAt (fun s => s * π 0 * (I 0)⁻¹) (π 0 * (I 0)⁻¹) t
+hc : HasDerivAt (fun x => Real.cos (x * π 0 * (I 0)⁻¹)) (-(Real.sin (t * π 0 * (I 0)⁻¹) * (π 0 * (I 0)⁻¹))) t
+hs : HasDerivAt (fun x => Real.sin (x * π 0 * (I 0)⁻¹)) (Real.cos (t * π 0 * (I 0)⁻¹) * (π 0 * (I 0)⁻¹)) t
+⊢ -(π 0 * (I 0)⁻¹ * Real.cos (t * π 0 * (I 0)⁻¹) * π 1) - π 0 * (I 0)⁻¹ * Real.sin (t * π 0 * (I 0)⁻¹) * π 2 =
+    -(π 0 * (I 0)⁻¹ * π 1 * Real.sin (t * π 0 * (I 0)⁻¹)) - π 0 ^ 2 * (I 0)⁻¹ * Real.cos (t * π 0 * (I 0)⁻¹)
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch04\validation\short_search\algebra-batch-66d90dada89f1ea0e55d.lean:30:14: error: unsolved goals
+case e'_8
+I π : V
+t : ℝ
+hI : 0 < I 1
+ha : HasDerivAt (fun s => s * π 1 * (I 1)⁻¹) (π 1 * (I 1)⁻¹) t
+hc : HasDerivAt (fun x => Real.cos (x * π 1 * (I 1)⁻¹)) (-(Real.sin (t * π 1 * (I 1)⁻¹) * (π 1 * (I 1)⁻¹))) t
+hs : HasDerivAt (fun x => Real.sin (x * π 1 * (I 1)⁻¹)) (Real.cos (t * π 1 * (I 1)⁻¹) * (π 1 * (I 1)⁻¹)) t
+x : ℝ
+⊢ Real.sin (x * π 1 * (I 1)⁻¹) * π 0 + Real.cos (x * π 1 * (I 1)⁻¹) * π 2 =
+    ((fun y => π 1 * Real.cos (π 1 * (I 1)⁻¹ * y)) - fun y => π 0 * Real.sin (π 1 * (I 1)⁻¹ * y)) x
+
+case e'_9
+I π : V
+t : ℝ
+hI : 0 < I 1
+ha : HasDerivAt (fun s => s * π 1 * (I 1)⁻¹) (π 1 * (I 1)⁻¹) t
+hc : HasDerivAt (fun x => Real.cos (x * π 1 * (I 1)⁻¹)) (-(Real.sin (t * π 1 * (I 1)⁻¹) * (π 1 * (I 1)⁻¹))) t
+hs : HasDerivAt (fun x => Real.sin (x * π 1 * (I 1)⁻¹)) (Real.cos (t * π 1 * (I 1)⁻¹) * (π 1 * (I 1)⁻¹)) t
+⊢ π 1 * (I 1)⁻¹ * Real.cos (t * π 1 * (I 1)⁻¹) * π 0 - π 1 * (I 1)⁻¹ * Real.sin (t * π 1 * (I 1)⁻¹) * π 2 =
+    -(π 1 * (I 1)⁻¹ * Real.cos (t * π 1 * (I 1)⁻¹) * π 0) - π 1 ^ 2 * (I 1)⁻¹ * Real.sin (t * π 1 * (I 1)⁻¹)
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch04\validation\short_search\algebra-batch-66d90dada89f1ea0e55d.lean:30:14: error: unsolved goals
+case e'_8
+I π : V
+t : ℝ
+hI : 0 < I 2
+ha : HasDerivAt (fun s => s * π 2 * (I 2)⁻¹) (π 2 * (I 2)⁻¹) t
+hc : HasDerivAt (fun x => Real.cos (x * π 2 * (I 2)⁻¹)) (-(Real.sin (t * π 2 * (I 2)⁻¹) * (π 2 * (I 2)⁻¹))) t
+hs : HasDerivAt (fun x => Real.sin (x * π 2 * (I 2)⁻¹)) (Real.cos (t * π 2 * (I 2)⁻¹) * (π 2 * (I 2)⁻¹)) t
+x : ℝ
+⊢ -(Real.sin (x * π 2 * (I 2)⁻¹) * π 0) + Real.cos (x * π 2 * (I 2)⁻¹) * π 1 =
+    ((fun y => π 1 * Real.cos (π 2 * (I 2)⁻¹ * y)) - fun y => π 0 * Real.sin (π 2 * (I 2)⁻¹ * y)) x
+blueprint\ch04\validation\short_search\algebra-batch-66d90dada89f1ea0e55d.lean:28:76: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [axisRotation, cross3, Matrix.mulVec, dotProduct, Fin.sum_univ_three, neg_div, div_eq_mul_inv, neg_mul,
+    Real.cos_neg, Real.sin_neg] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch04\validation\short_search\algebra-batch-66d90dada89f1ea0e55d.lean:29:8: warning: This simp argument is unused:
+  neg_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [axisRotation, cross3, Matrix.mulVec, dotProduct, Fin.sum_univ_three, Pi.single_apply, div_eq_mul_inv,
+    neg_mul, Real.cos_neg, Real.sin_neg] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

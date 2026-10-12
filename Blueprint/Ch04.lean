@@ -1808,4 +1808,126 @@ theorem rigidHamiltonianField : ∀ (T : MolecularDynamics.Chapter04Review.Mat3)
   ext i
   fin_cases i <;> simp [MolecularDynamics.Chapter04Review.rigidPoissonMatrix,MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
 
+/-- source_id: MD-4.4.2-RigidForce · definition · §4.4.2 · 印刷p.173 / PDFp.195 -/
+def rigidForce (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (q : MolecularDynamics.Chapter04Review.V) (Θ : MolecularDynamics.Chapter04Review.Mat3) := -MolecularDynamics.Chapter04Review.grad (fun x => U x Θ) q
+
+/-- source_id: MD-4.4.2-MatrixRot · definition · §4.4.2 · 印刷p.174 / PDFp.196 -/
+def matrixRot (A : MolecularDynamics.Chapter04Review.Mat3) : MolecularDynamics.Chapter04Review.V := ![A 2 1-A 1 2,A 0 2-A 2 0,A 1 0-A 0 1]
+
+/-- source_id: MD-4.4.2-RigidTorque · definition · §4.4.2 · 印刷p.173 / PDFp.195 -/
+def rigidTorque (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (q : MolecularDynamics.Chapter04Review.V) (Θ : MolecularDynamics.Chapter04Review.Mat3) := -MolecularDynamics.Chapter04Review.matrixRot (Θᵀ*MolecularDynamics.Chapter04Review.matrixGrad (U q) Θ)
+
+/-- source_id: MD-4.4.2-DLMPrinted · definition · §4.4.2 · 印刷p.174 / PDFp.196
+[EXTRA] [EXTRA]本条仅N=1实例；任意N体耦合势与完整算法另由DLMPrintedSystem忠实保存。
+[ERRATUM?] 字面drift缺1/M；正角spin动量符号疑点保留。 -/
+def dlmPrinted (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.RBState → MolecularDynamics.Chapter04Review.RBState :=
+  MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘
+    MolecularDynamics.Chapter04Review.rigidDrift 1 h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)
+
+/-- source_id: MD-4.4.2-DLMMassOnly · definition · §4.4.2 · 印刷p.174 / PDFp.196
+[EXTRA] [EXTRA]只将drift质量修为q+h p/M；仍保留原spin，不能据此称完整正确几何积分器。 -/
+def dlmMassOnly (M : ℝ) (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.RBState → MolecularDynamics.Chapter04Review.RBState :=
+  MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘
+    MolecularDynamics.Chapter04Review.rigidDrift M h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)
+
+/-- source_id: MD-4.4.2-DriftSpinCommute · unnumbered_claim · §4.4.2 · 印刷p.174 / PDFp.196 -/
+theorem driftSpinCommute : ∀ M h (I : MolecularDynamics.Chapter04Review.V) (z : MolecularDynamics.Chapter04Review.RBState),
+  MolecularDynamics.Chapter04Review.rigidDrift M h (z.1,printedSpinStep I h z.2)=
+    ((MolecularDynamics.Chapter04Review.rigidDrift M h z).1,printedSpinStep I h (MolecularDynamics.Chapter04Review.rigidDrift M h z).2) := by
+  intro M h I z
+  rfl
+
+/-- source_id: MD-4.4.2-DLMStructureFormal · unnumbered_claim · §4.4.2 · 印刷p.173–174 / PDFp.195–196
+[EXTRA] [EXTRA]旧正式库单体质量一致对象单独保留；原任意N体耦合势的算法几何声明另列。 -/
+theorem dlmStructure :
+  ∀ M (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ),
+  0 < M → (∀ i, 0 < I i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
+    MolecularDynamics.Chapter04Review.rbSymplectic (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h) ∧ ∀ z : MolecularDynamics.Chapter04Review.RBState,
+      z.2.2ᵀ*z.2.2=1 → z.2.2.det=1 →
+      MolecularDynamics.Chapter04Review.dlmMassConsistent M I U (-h) (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z)=z ∧
+      (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z).2.2ᵀ*(MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z).2.2=1 := by
+  sorry
+
+/-- source_id: MD-4.4.2-DLMPrintedStructure · unnumbered_claim · §4.4.2 · 印刷p.173–174 / PDFp.195–196
+[EXTRA] 明确SO3初态与实际切向量在rbSymplectic定义内；单位质量为原字面drift。 -/
+theorem dlmPrintedStructure : ∀ (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ),
+  (∀ i, 0 < I i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
+    MolecularDynamics.Chapter04Review.rbSymplectic (dlmPrinted I U h) := by
+    sorry
+
+/-- source_id: MD-4.4.2-RigidSystemState · definition · §4.4.2 · 印刷p.173 / PDFp.195
+[EXTRA] [EXTRA]完整N体状态的透明类型别名：每体(q,p,π,Θ)；下列势U可耦合全部刚体，不限于单体或独立势。 -/
+@[reducible] def rigidSystemState (N : ℕ) := Fin N → MolecularDynamics.Chapter04Review.RBState
+
+/-- source_id: MD-4.4.2-RigidSystemForce · definition · §4.4.2 · 印刷p.173 / PDFp.195 -/
+def rigidSystemForce {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ)
+    (z : rigidSystemState N) (k : Fin N) : MolecularDynamics.Chapter04Review.V :=
+  -MolecularDynamics.Chapter04Review.grad (fun x => U (Function.update (fun j => (z j).1.1) k x) (fun j => (z j).2.2)) (z k).1.1
+
+/-- source_id: MD-4.4.2-RigidSystemTorque · definition · §4.4.2 · 印刷p.173 / PDFp.195 -/
+def rigidSystemTorque {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ)
+    (z : rigidSystemState N) (k : Fin N) : MolecularDynamics.Chapter04Review.V :=
+  -MolecularDynamics.Chapter04Review.matrixRot ((z k).2.2ᵀ * MolecularDynamics.Chapter04Review.matrixGrad
+    (fun A => U (fun j => (z j).1.1) (Function.update (fun j => (z j).2.2) k A)) (z k).2.2)
+
+/-- source_id: MD-4.4.2-RigidSystemKick · definition · §4.4.2 · 印刷p.174 / PDFp.196 -/
+def rigidSystemKick {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ)
+    (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => (((z k).1.1,(z k).1.2+h • rigidSystemForce U z k),
+    ((z k).2.1+h • rigidSystemTorque U z k,(z k).2.2))
+
+/-- source_id: MD-4.4.2-RigidSystemDriftPrinted · definition · §4.4.2 · 印刷p.174 / PDFp.196
+[ERRATUM?] 原字面缺1/Mk；完整N体版本保留原式，不静默补质量。 -/
+def rigidSystemDriftPrinted {N : ℕ} (h : ℝ) (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => (((z k).1.1+h • (z k).1.2,(z k).1.2),(z k).2)
+
+/-- source_id: MD-4.4.2-RigidSystemSpinPrinted · definition · §4.4.2 · 印刷p.174 / PDFp.196
+[ERRATUM?] 正角Rπ与π×ω的子流符号疑点保留，不冒充已证精确刚体子流。 -/
+def rigidSystemSpinPrinted {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V) (h : ℝ)
+    (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => ((z k).1,printedSpinStep (I k) h (z k).2)
+
+/-- source_id: MD-4.4.2-DLMPrintedSystem · definition · §4.4.2 · 印刷p.174 / PDFp.196
+[ERRATUM?] 完整原表的缺质量drift与正角spin疑点保持；编译定义不代表正确辛性。 -/
+def dlmPrintedSystem {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ) :
+    rigidSystemState N → rigidSystemState N :=
+  rigidSystemKick U (h/2) ∘ rigidSystemSpinPrinted I h ∘
+    rigidSystemDriftPrinted h ∘ rigidSystemKick U (h/2)
+
+/-- source_id: MD-4.4.2-SystemDriftSpinCommute · unnumbered_claim · §4.4.2 · 印刷p.174 / PDFp.196 -/
+theorem systemDriftSpinCommute : ∀ N (I : Fin N → MolecularDynamics.Chapter04Review.V) h (z : rigidSystemState N),
+    rigidSystemDriftPrinted h (rigidSystemSpinPrinted I h z)=
+      rigidSystemSpinPrinted I h (rigidSystemDriftPrinted h z) := by
+  intro N I h z
+  rfl
+
+/-- source_id: MD-4.4.2-RigidSystemSymplectic · definition · §4.4.2 · 印刷p.173–174 / PDFp.195–196
+[EXTRA] [EXTRA]完整N体SO(3)配置、实际切向量和各体rbForm之和；明确包含输出配置约束及真实Fréchet拉回，不假设辛性或以抽象形式替代。 -/
+def rigidSystemSymplectic {N : ℕ} (G : rigidSystemState N → rigidSystemState N) : Prop :=
+  ∀ (z : rigidSystemState N), (∀ k, (z k).2.2ᵀ*(z k).2.2=1 ∧ (z k).2.2.det=1) →
+    (∀ k, (G z k).2.2ᵀ*(G z k).2.2=1 ∧ (G z k).2.2.det=1) ∧
+    ∀ (u v : rigidSystemState N), (∀ k, MolecularDynamics.Chapter04Review.rbTangent (z k) (u k)) → (∀ k, MolecularDynamics.Chapter04Review.rbTangent (z k) (v k)) →
+      (∑ k, MolecularDynamics.Chapter04Review.rbForm (G z k) (((fderiv ℝ G z) u) k) (((fderiv ℝ G z) v) k))=
+        ∑ k, MolecularDynamics.Chapter04Review.rbForm (z k) (u k) (v k)
+
+/-- source_id: MD-4.4.2-DLMPrintedSystemStructure · unnumbered_claim · §4.4.2 · 印刷p.173–174 / PDFp.195–196
+[EXTRA] C³耦合势和正主惯性矩为明确技术资格；实际全部SO3输入/输出约束及N体两形式在定义内。 -/
+theorem dlmPrintedSystemStructure : ∀ N (I : Fin N → MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ),
+  (∀ k i, 0 < I k i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
+    rigidSystemSymplectic (dlmPrintedSystem I U h) := by
+  sorry
+
+/-- source_id: MD-4.4.1-ExactPlanarRotation · unnumbered_claim · §4.4.1 · 印刷p.173 / PDFp.195
+[EXTRA] [EXTRA]第二/第三子场按完整π₂/π₃解释，与PrincipalAxisField一致；显式负角主动旋转给出(4.41)的π×ω符号，不将原表正角错误候选当作该精确子流。 -/
+theorem exactPlanarRotation : ∀ (I π : MolecularDynamics.Chapter04Review.V) (i : Fin 3), 0 < I i →
+  let γ := fun t : ℝ => MolecularDynamics.Chapter04Review.axisRotation i (-t*π i/I i) *ᵥ π
+  γ 0=π ∧ (∀ t,γ t i=π i) ∧
+    ∀ t,HasDerivAt γ (MolecularDynamics.Chapter04Review.cross3 (γ t) (Pi.single i (γ t i/I i))) t := by
+  sorry
+
 end MD.Ch04

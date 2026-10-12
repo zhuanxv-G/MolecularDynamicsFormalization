@@ -52,3 +52,7 @@ import ch04_section441b
 import ch04_section441extra
 from ch04_transcription_repair import apply as apply_transcription_repair
 apply_transcription_repair(RECORDS)
+import ch04_section442
+import ch04_section442system
+import ch04_section442systemstructure
+import ch04_section441exact

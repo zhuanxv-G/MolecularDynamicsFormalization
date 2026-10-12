@@ -32,9 +32,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-EulerFactor": {
       "checked": true,
@@ -65,9 +65,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-ScalarEulerStable": {
       "checked": true,
@@ -98,7 +98,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/ScalarEulerStable.json",
         "blueprint/ch04/validation/short_search/ScalarEulerStable-route1.lean",
@@ -107,7 +107,7 @@
         "blueprint/ch04/validation/short_search/ScalarEulerStable-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-EulerRegion": {
       "checked": true,
@@ -138,9 +138,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-OscillatorMatrix": {
       "checked": true,
@@ -171,9 +171,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-EulerImaginaryGrowth": {
       "checked": true,
@@ -204,7 +204,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/EulerImaginaryGrowth.json",
         "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.lean",
@@ -213,7 +213,7 @@
         "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerMatrix": {
       "checked": true,
@@ -244,9 +244,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerCharacteristic": {
       "checked": true,
@@ -277,14 +277,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic.json",
         "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.lean",
         "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-PRKThreshold": {
       "checked": true,
@@ -316,9 +316,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-VerletStability": {
       "checked": true,
@@ -349,7 +349,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/VerletStability.json",
         "blueprint/ch04/validation/short_search/VerletStability-route1.lean",
@@ -358,7 +358,7 @@
         "blueprint/ch04/validation/short_search/VerletStability-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerBoundaryPrinted": {
       "checked": true,
@@ -390,9 +390,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-VerletBoundaryPrinted": {
       "checked": true,
@@ -424,9 +424,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-OscillatorSpectrum": {
       "checked": true,
@@ -457,7 +457,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/OscillatorSpectrum.json",
         "blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.lean",
@@ -466,7 +466,7 @@
         "blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerRoots": {
       "checked": true,
@@ -497,7 +497,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/SymplecticEulerRoots.json",
         "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.lean",
@@ -506,7 +506,7 @@
         "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerUnitRoots": {
       "checked": true,
@@ -537,7 +537,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots.json",
         "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.lean",
@@ -546,7 +546,7 @@
         "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4-SymplecticEulerStability": {
       "checked": true,
@@ -577,7 +577,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/SymplecticEulerStability.json",
         "blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.lean",
@@ -588,7 +588,7 @@
         "blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.1-PrintedImplicitRelation": {
       "checked": true,
@@ -619,9 +619,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.1-ActualMidpointRelation": {
       "checked": true,
@@ -652,9 +652,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.1-ImplicitFactor": {
       "checked": true,
@@ -685,9 +685,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.1-ImplicitModulus": {
       "checked": true,
@@ -727,9 +727,9 @@
         "blueprint/ch04/validation/short_search/ImplicitModulus-route3.lean",
         "blueprint/ch04/validation/short_search/ImplicitModulus-route3.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.1-PrintedModifiedFrequency": {
       "checked": true,
@@ -760,9 +760,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.1-ModifiedFrequencyLimit": {
       "checked": true,
@@ -800,9 +800,9 @@
         "blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route2.lean",
         "blueprint/ch04/validation/short_search/ModifiedFrequencyLimit-route2.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.1-MechanicalMidpoint": {
       "checked": true,
@@ -833,9 +833,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.1-MidpointElimination": {
       "checked": true,
@@ -873,9 +873,9 @@
         "blueprint/ch04/validation/short_search/MidpointElimination-route2.lean",
         "blueprint/ch04/validation/short_search/MidpointElimination-route2.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-SplitHamiltonian": {
       "checked": true,
@@ -906,9 +906,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-FastVerlet": {
       "checked": true,
@@ -939,9 +939,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-RESPA": {
       "checked": true,
@@ -972,9 +972,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-RESPAStructure": {
       "checked": true,
@@ -1006,9 +1006,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-SlowMatrix": {
       "checked": true,
@@ -1039,9 +1039,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-FastMatrix": {
       "checked": true,
@@ -1072,9 +1072,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-ImpulseMatrix": {
       "checked": true,
@@ -1105,9 +1105,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-ImpulseDet": {
       "checked": true,
@@ -1143,9 +1143,9 @@
         "blueprint/ch04/validation/short_search/ImpulseDet-route1.lean",
         "blueprint/ch04/validation/short_search/ImpulseDet-route1.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-ImpulseTrace": {
       "checked": true,
@@ -1181,9 +1181,9 @@
         "blueprint/ch04/validation/short_search/ImpulseTrace-route1.lean",
         "blueprint/ch04/validation/short_search/ImpulseTrace-route1.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-ResonancePower": {
       "checked": true,
@@ -1219,9 +1219,9 @@
         "blueprint/ch04/validation/short_search/ResonancePower-route1.lean",
         "blueprint/ch04/validation/short_search/ResonancePower-route1.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-ResonanceTaylor": {
       "checked": true,
@@ -1253,9 +1253,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-ResonanceInstability": {
       "checked": true,
@@ -1287,9 +1287,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-ResonanceEigenPrinted": {
       "checked": true,
@@ -1321,9 +1321,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.2-MollifiedAverage": {
       "checked": true,
@@ -1354,9 +1354,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.2-MollifiedPotential": {
       "checked": true,
@@ -1387,9 +1387,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-ResonanceLinearRate": {
       "checked": true,
@@ -1429,9 +1429,9 @@
         "blueprint/ch04/validation/short_search/ResonanceLinearRate-route3.lean",
         "blueprint/ch04/validation/short_search/ResonanceLinearRate-route3.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.1-ResonanceGrowth": {
       "checked": true,
@@ -1462,14 +1462,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch04/validation/short_search/ResonanceGrowth.json",
         "blueprint/ch04/validation/short_search/ResonanceGrowth-route1.lean",
         "blueprint/ch04/validation/short_search/ResonanceGrowth-route1.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.2.2-MollifiedStructure": {
       "checked": true,
@@ -1501,9 +1501,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-HolonomicRelation": {
       "checked": true,
@@ -1534,9 +1534,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-TimeConstraintDerivative": {
       "checked": true,
@@ -1576,9 +1576,9 @@
         "blueprint/ch04/validation/short_search/TimeConstraintDerivative-route3.lean",
         "blueprint/ch04/validation/short_search/TimeConstraintDerivative-route3.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-ConstrainedSolution": {
       "checked": true,
@@ -1609,9 +1609,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-ConstraintSet": {
       "checked": true,
@@ -1642,9 +1642,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-CotangentSet": {
       "checked": true,
@@ -1675,9 +1675,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-ConstraintJacobian": {
       "checked": true,
@@ -1708,9 +1708,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-JacobianActualDerivative": {
       "checked": true,
@@ -1743,9 +1743,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-ConstraintDegrees": {
       "checked": true,
@@ -1783,9 +1783,9 @@
         "blueprint/ch04/validation/short_search/ConstraintDegrees-route2.lean",
         "blueprint/ch04/validation/short_search/ConstraintDegrees-route2.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-FlexiblePendulumHamiltonian": {
       "checked": true,
@@ -1816,9 +1816,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-RestraintPotential": {
       "checked": true,
@@ -1849,9 +1849,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-RestraintForcePrinted": {
       "checked": true,
@@ -1883,9 +1883,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-ConstrainedPendulum": {
       "checked": true,
@@ -1916,9 +1916,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-ConstraintCurvature": {
       "checked": true,
@@ -1949,9 +1949,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-ReactionMultiplier": {
       "checked": true,
@@ -1982,9 +1982,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-ReactionBalance": {
       "checked": true,
@@ -2017,9 +2017,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-GramPositive": {
       "checked": true,
@@ -2052,9 +2052,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-GramInvertible": {
       "checked": true,
@@ -2087,9 +2087,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-CotangentInvariant": {
       "checked": true,
@@ -2122,9 +2122,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3-ReducedFieldRegularity": {
       "checked": true,
@@ -2157,9 +2157,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.1-RestrictedForm": {
       "checked": true,
@@ -2190,9 +2190,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.1-VariationalFormula": {
       "checked": true,
@@ -2224,9 +2224,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.1-HessianPullbackCancel": {
       "checked": true,
@@ -2259,9 +2259,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.1-ConstrainedFlowPullback": {
       "checked": true,
@@ -2294,9 +2294,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-PositionEulerPrinted": {
       "checked": true,
@@ -2327,9 +2327,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-PositionEulerForceConvention": {
       "checked": true,
@@ -2360,9 +2360,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-HiddenEulerError": {
       "checked": true,
@@ -2394,9 +2394,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-ProjectionResidual": {
       "checked": true,
@@ -2427,9 +2427,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-ProjectionJacobian": {
       "checked": true,
@@ -2460,9 +2460,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-NewtonConstraint": {
       "checked": true,
@@ -2493,9 +2493,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-FrozenNewtonConstraint": {
       "checked": true,
@@ -2526,9 +2526,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-NewtonQuadratic": {
       "checked": true,
@@ -2560,9 +2560,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-FrozenNewtonLinear": {
       "checked": true,
@@ -2594,9 +2594,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-ProjectionScale": {
       "checked": true,
@@ -2628,9 +2628,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.2-FrozenGramPrinted": {
       "checked": true,
@@ -2662,9 +2662,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.3-ComponentPrinted": {
       "checked": true,
@@ -2695,9 +2695,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.3-ComponentConstraintStep": {
       "checked": true,
@@ -2728,9 +2728,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.3-ComponentSweep": {
       "checked": true,
@@ -2761,9 +2761,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-ProjectedEulerPrinted": {
       "checked": true,
@@ -2794,9 +2794,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-ProjectedEulerRelation": {
       "checked": true,
@@ -2827,9 +2827,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-Lemma41": {
       "checked": true,
@@ -2862,9 +2862,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-MultiMomentumPullback": {
       "checked": true,
@@ -2897,9 +2897,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-ProjectedEulerPullback": {
       "checked": true,
@@ -2932,9 +2932,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-CotangentMultiplier": {
       "checked": true,
@@ -2965,9 +2965,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-CotangentProjection": {
       "checked": true,
@@ -2998,9 +2998,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-CotangentHidden": {
       "checked": true,
@@ -3033,9 +3033,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-CotangentRegularity": {
       "checked": true,
@@ -3068,9 +3068,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-CotangentPullback": {
       "checked": true,
@@ -3103,9 +3103,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.4-GramProjectedEuler": {
       "checked": true,
@@ -3138,9 +3138,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5-SHAKEPositionPrinted": {
       "checked": true,
@@ -3171,9 +3171,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5-SHAKEPositionMass": {
       "checked": true,
@@ -3204,9 +3204,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5-SHAKEPhase": {
       "checked": true,
@@ -3237,9 +3237,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5-RATTLE": {
       "checked": true,
@@ -3270,9 +3270,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5-ConstrainedOrders": {
       "checked": true,
@@ -3304,9 +3304,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5-RATTLESymplectic": {
       "checked": true,
@@ -3338,9 +3338,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5-StaggeredConstraint": {
       "checked": true,
@@ -3371,9 +3371,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5-SHAKERATTLEEquivalence": {
       "checked": true,
@@ -3405,9 +3405,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5-SHAKEElimination": {
       "checked": true,
@@ -3447,9 +3447,9 @@
         "blueprint/ch04/validation/short_search/SHAKEElimination-route3.lean",
         "blueprint/ch04/validation/short_search/SHAKEElimination-route3.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5-SHAKEPositionOrder": {
       "checked": true,
@@ -3481,9 +3481,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5.1-AdjointEuler": {
       "checked": true,
@@ -3514,9 +3514,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5.1-ConstrainedComposition": {
       "checked": true,
@@ -3548,9 +3548,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5.1-ConstrainedCompositionOrder": {
       "checked": true,
@@ -3582,9 +3582,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5.1-MomentumProjector": {
       "checked": true,
@@ -3615,9 +3615,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5.1-ConstrainedPotentialFlow": {
       "checked": true,
@@ -3655,9 +3655,9 @@
         "blueprint/ch04/validation/short_search/ConstrainedPotentialFlow-route2.lean",
         "blueprint/ch04/validation/short_search/ConstrainedPotentialFlow-route2.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.5.1-GeodesicRelation": {
       "checked": true,
@@ -3688,9 +3688,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.6-MShakeIteration": {
       "checked": true,
@@ -3721,9 +3721,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.6-SETTLE": {
       "checked": true,
@@ -3754,9 +3754,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.6-LINCSInverse": {
       "checked": true,
@@ -3787,9 +3787,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.3.6-LINCSConvergence": {
       "checked": true,
@@ -3821,9 +3821,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-WaterPairPotential": {
       "checked": true,
@@ -3854,9 +3854,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-TotalMass": {
       "checked": true,
@@ -3887,9 +3887,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-CenterMass": {
       "checked": true,
@@ -3920,9 +3920,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RelativePositions": {
       "checked": true,
@@ -3953,9 +3953,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RelativeWeightedZero": {
       "checked": true,
@@ -3991,9 +3991,9 @@
         "blueprint/ch04/validation/short_search/RelativeWeightedZero-route1.lean",
         "blueprint/ch04/validation/short_search/RelativeWeightedZero-route1.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-KineticSplit": {
       "checked": true,
@@ -4031,9 +4031,9 @@
         "blueprint/ch04/validation/short_search/KineticSplit-route2.lean",
         "blueprint/ch04/validation/short_search/KineticSplit-route2.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-SecondMoment": {
       "checked": true,
@@ -4064,9 +4064,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RotationKinetic": {
       "checked": true,
@@ -4097,9 +4097,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RotationTraceIdentity": {
       "checked": true,
@@ -4135,9 +4135,9 @@
         "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RotationSkew": {
       "checked": true,
@@ -4175,9 +4175,9 @@
         "blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-SkewMatrix": {
       "checked": true,
@@ -4208,9 +4208,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-CrossProduct": {
       "checked": true,
@@ -4241,9 +4241,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-SkewRepresentation": {
       "checked": true,
@@ -4281,9 +4281,9 @@
         "blueprint/ch04/validation/short_search/SkewRepresentation-route2.lean",
         "blueprint/ch04/validation/short_search/SkewRepresentation-route2.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-CrossMatrix": {
       "checked": true,
@@ -4319,9 +4319,9 @@
         "blueprint/ch04/validation/short_search/CrossMatrix-route1.lean",
         "blueprint/ch04/validation/short_search/CrossMatrix-route1.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RigidVelocity": {
       "checked": true,
@@ -4359,9 +4359,9 @@
         "blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-InertiaTensor": {
       "checked": true,
@@ -4392,9 +4392,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-CrossIdentityFull": {
       "checked": true,
@@ -4430,9 +4430,9 @@
         "blueprint/ch04/validation/short_search/CrossIdentityFull-route1.lean",
         "blueprint/ch04/validation/short_search/CrossIdentityFull-route1.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RotationalEnergy": {
       "checked": true,
@@ -4463,9 +4463,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-InertiaSkewIdentity": {
       "checked": true,
@@ -4501,9 +4501,9 @@
         "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-InertiaTracePrinted": {
       "checked": true,
@@ -4535,9 +4535,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-InertiaTraceCorrected": {
       "checked": true,
@@ -4577,9 +4577,9 @@
         "blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-DipolarHamiltonian": {
       "checked": true,
@@ -4610,9 +4610,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-DipolarPairPotential": {
       "checked": true,
@@ -4643,9 +4643,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-DipolarRotationalPrinted": {
       "checked": true,
@@ -4676,9 +4676,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RigidHamiltonian": {
       "checked": true,
@@ -4709,9 +4709,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-SecondMomentDiagonal": {
       "checked": true,
@@ -4751,9 +4751,9 @@
         "blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RotationBodyEnergy": {
       "checked": true,
@@ -4791,9 +4791,9 @@
         "blueprint/ch04/validation/short_search/algebra-batch-f95b57dbc2e454a4881e.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-f95b57dbc2e454a4881e.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-DipolarConstraint": {
       "checked": true,
@@ -4824,9 +4824,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-DipolarPotentialSum": {
       "checked": true,
@@ -4857,9 +4857,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RotationTrajectory": {
       "checked": true,
@@ -4897,9 +4897,9 @@
         "blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RotationDerivativePrinted": {
       "checked": true,
@@ -4931,9 +4931,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4-RigidMatrixRelation": {
       "checked": true,
@@ -4964,9 +4964,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-AngularMomentum": {
       "checked": true,
@@ -4997,9 +4997,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-BodyMomentum": {
       "checked": true,
@@ -5030,9 +5030,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-AngularInertia": {
       "checked": true,
@@ -5068,9 +5068,9 @@
         "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-EulerRigidField": {
       "checked": true,
@@ -5101,9 +5101,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-FreeRigidSolution": {
       "checked": true,
@@ -5134,9 +5134,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-RigidInvariants": {
       "checked": true,
@@ -5174,9 +5174,9 @@
         "blueprint/ch04/validation/short_search/algebra-batch-f95b57dbc2e454a4881e.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-f95b57dbc2e454a4881e.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-RigidPoissonMatrix": {
       "checked": true,
@@ -5207,9 +5207,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-PoissonDegeneracy": {
       "checked": true,
@@ -5245,9 +5245,9 @@
         "blueprint/ch04/validation/short_search/PoissonDegeneracy-route1.lean",
         "blueprint/ch04/validation/short_search/PoissonDegeneracy-route1.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-AxisRotation": {
       "checked": true,
@@ -5278,9 +5278,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-SecondAxisPrinted": {
       "checked": true,
@@ -5311,9 +5311,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-ThirdAxisPrinted": {
       "checked": true,
@@ -5344,9 +5344,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-PrincipalAxisField": {
       "checked": true,
@@ -5377,9 +5377,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.2-PrintedSpinAxis": {
       "checked": true,
@@ -5410,9 +5410,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.2-PrintedSpinStep": {
       "checked": true,
@@ -5443,9 +5443,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-AxisFlowFormal": {
       "checked": true,
@@ -5477,9 +5477,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-SpinPoissonFormal": {
       "checked": true,
@@ -5511,9 +5511,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-RigidPoissonSkew": {
       "checked": true,
@@ -5544,9 +5544,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     },
     "MD-4.4.1-RigidHamiltonianField": {
       "checked": true,
@@ -5584,9 +5584,649 @@
         "blueprint/ch04/validation/short_search/algebra-batch-253aa22fb57fcc6fd091.lean",
         "blueprint/ch04/validation/short_search/algebra-batch-253aa22fb57fcc6fd091.log"
       ],
-      "compile_evidence": "blueprint/ch04/validation/batch26-fidelity-COMPILE.json",
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section441-fidelity\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-RigidForce": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.rigidForce",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "29ce179c1f448a3abbbe3177cf964d6fb9a7082734352a98b40ca08bf5fcd784",
+      "block_sha256": "29ce179c1f448a3abbbe3177cf964d6fb9a7082734352a98b40ca08bf5fcd784",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.rigidForce；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-MatrixRot": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.matrixRot",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "2ba19fcfb7d1665f2fc4d73cfedb0e0bf6226f93938b899cf151cb30ff3f3619",
+      "block_sha256": "2ba19fcfb7d1665f2fc4d73cfedb0e0bf6226f93938b899cf151cb30ff3f3619",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.matrixRot；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-RigidTorque": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.rigidTorque",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "ee445fca16a1eae48e4b7d264d4c196512185971010f48ab6b046c1919a460d3",
+      "block_sha256": "ee445fca16a1eae48e4b7d264d4c196512185971010f48ab6b046c1919a460d3",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.rigidTorque；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-DLMPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.dlmPrinted",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "87568e6c189f9a57c20cd6e75931aebbec33b902951c44c1530bc3f5e8679587",
+      "block_sha256": "87568e6c189f9a57c20cd6e75931aebbec33b902951c44c1530bc3f5e8679587",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.dlmPrinted；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-DLMMassOnly": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.dlmMassOnly",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "0adf3b094fe1216ca606513c251869aad4948ebf7e29bd480c255864e8e293c9",
+      "block_sha256": "0adf3b094fe1216ca606513c251869aad4948ebf7e29bd480c255864e8e293c9",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.dlmMassOnly；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-DriftSpinCommute": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.driftSpinCommute",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "4b512cefafc2f3763f794fe7e01205e24fee2174e5617abd207461c3e3c41745",
+      "block_sha256": "371c70fb8a19ba508d0097a0a601e6ec62a16a1eaf1c0e9f90ee95c6b8d73623",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.driftSpinCommute；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-DLMStructureFormal": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch04.dlmStructure",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "正式库spin与原表一致；旧陈述为单体质量修正版及反步关系，不能冒充原任意N体完整算法。正角子流符号仍需审校。",
+      "signature_sha256": "7eb2d354c82ac279be78ac422909bc5fc1eb6d6fc0b36941b9a53dd2977209b5",
+      "block_sha256": "fb51d5b9f23c2c092500b58eb5a567d26e22acf97246bfe51dc3263fb8636754",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺实际旋转约束/Poisson形式及完整kick结构；不搭大型刚体理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.dlmStructure；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-DLMPrintedStructure": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch04.dlmPrintedStructure",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际字面算法完整rb拉回形式陈述；原spin的相反角动量符号需审校，不能先判PASS。",
+      "signature_sha256": "1215e47726bfc368bfba10c7590daccacc5d5ca9fdaa7e734773dd4f22a07964",
+      "block_sha256": "1103b34794f6ec5f54dd2dd19c8b04e0b2fccea95a6f1f8d74e00ec4f7a646fd",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "待网站/导师裁定spin符号及结构；不建设新Poisson/刚体理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.dlmPrintedStructure；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-RigidSystemState": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.rigidSystemState",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "cedadce1a9de31aed005d459b0ae557210aae5746dcdda5c8cb7670c299fece0",
+      "block_sha256": "cedadce1a9de31aed005d459b0ae557210aae5746dcdda5c8cb7670c299fece0",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.rigidSystemState；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-RigidSystemForce": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.rigidSystemForce",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "6dcac93b5272a234367798e91a3cb4dd8b32153146ec6cb516c191dd2e1e49dd",
+      "block_sha256": "6dcac93b5272a234367798e91a3cb4dd8b32153146ec6cb516c191dd2e1e49dd",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.rigidSystemForce；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-RigidSystemTorque": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.rigidSystemTorque",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "ded423e9b807e10a8e679a69598122a933d7f25fba609bb6ae64c16242777154",
+      "block_sha256": "ded423e9b807e10a8e679a69598122a933d7f25fba609bb6ae64c16242777154",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.rigidSystemTorque；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-RigidSystemKick": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.rigidSystemKick",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "d2c8a8b4c36e1cbacc84fa11b81d8d99ab8acc31fb61a1a00096c6bfeb2bfd2a",
+      "block_sha256": "d2c8a8b4c36e1cbacc84fa11b81d8d99ab8acc31fb61a1a00096c6bfeb2bfd2a",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.rigidSystemKick；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-RigidSystemDriftPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.rigidSystemDriftPrinted",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "cbf3060dd8a41f4f29afacd21c1dafe19dd535ae79f719e57f561bf5910663ed",
+      "block_sha256": "cbf3060dd8a41f4f29afacd21c1dafe19dd535ae79f719e57f561bf5910663ed",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.rigidSystemDriftPrinted；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-RigidSystemSpinPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.rigidSystemSpinPrinted",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "a0040dba92de6eab426eb9b3fbdeffdc433cea674677386477842d97994240c6",
+      "block_sha256": "a0040dba92de6eab426eb9b3fbdeffdc433cea674677386477842d97994240c6",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.rigidSystemSpinPrinted；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-DLMPrintedSystem": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.dlmPrintedSystem",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "f5f08ec8650b0abf4ff80ba0b47f33917c587bf8a4b2b4dc5f05302cd73b7999",
+      "block_sha256": "f5f08ec8650b0abf4ff80ba0b47f33917c587bf8a4b2b4dc5f05302cd73b7999",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.dlmPrintedSystem；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-SystemDriftSpinCommute": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.systemDriftSpinCommute",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "937a1cbceb50dea52e90a9d779bcfa6c466458e614adeb2d284f294fc992cbd8",
+      "block_sha256": "39ef83c1168895c0d18b2c83ee3b1df80e104fd9cb02e397d4ac81ab07625948",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.systemDriftSpinCommute；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-RigidSystemSymplectic": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch04.rigidSystemSymplectic",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "4b691e8c936de6e911c4c7cfa4a64f7e8df0aaa55c2366358b224ac221303a5c",
+      "block_sha256": "4b691e8c936de6e911c4c7cfa4a64f7e8df0aaa55c2366358b224ac221303a5c",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.rigidSystemSymplectic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.2-DLMPrintedSystemStructure": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch04.dlmPrintedSystemStructure",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "忠实全N、任意耦合势与字面spin算法；未删量词或弱化成单体。原正角动量/旋转符号疑点和一般质量drift需网站/导师裁定。",
+      "signature_sha256": "98f9f60538a6931bde3f5e271ed92faf44a27d2385b1e8e433b5691dcfceb90e",
+      "block_sha256": "0e757a99bc7bf683384caf997d2c7386b765a30d5dc74c44e76a2aeafeac554f",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "原表spin符号与完整旋转余切结构待审；不建设新Poisson/刚体理论，不证明NEEDS_HUMAN。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.dlmPrintedSystemStructure；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+    },
+    "MD-4.4.1-ExactPlanarRotation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch04.exactPlanarRotation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "7816deb22ae2d9f1e01d540e4445a006a1164996eaba9cf77dcde19b7e083c70",
+      "block_sha256": "79e0c487d13338652b9399b8fad2ec8958ce15a0a10c40c77631543cb6966977",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "三条短证明路线失败，停止该条；保存证据见validation/short_search/ExactPlanarRotation.json。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch04.exactPlanarRotation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "attempt_evidence": [
+        "blueprint/ch04/validation/short_search/ExactPlanarRotation.json",
+        "blueprint/ch04/validation/short_search/algebra-batch-bc13c1bf6413504dfcc3.lean",
+        "blueprint/ch04/validation/short_search/algebra-batch-bc13c1bf6413504dfcc3.log",
+        "blueprint/ch04/validation/short_search/algebra-batch-b94ba96b9f58096fd035.lean",
+        "blueprint/ch04/validation/short_search/algebra-batch-b94ba96b9f58096fd035.log",
+        "blueprint/ch04/validation/short_search/algebra-batch-66d90dada89f1ea0e55d.lean",
+        "blueprint/ch04/validation/short_search/algebra-batch-66d90dada89f1ea0e55d.log"
+      ],
+      "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
     }
   }
 }
