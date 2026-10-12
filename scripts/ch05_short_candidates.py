@@ -213,6 +213,105 @@ proofs['CompactAdjoint']='''intro n f u v hf hu hv huS hvS
     integral_finsetSum Finset.univ (fun i hi => hright i)]
   simp_rw [hip]
   rw [Finset.sum_neg_distrib]'''
+proofs['MechanicalLiouvillianIdentity']='''intro n m U hm hU u hu z
+  have hd := HasFDerivAt.fun_sum (u:=Finset.univ) (fun (i : Fin n) hi =>
+    ((PiLp.proj (2 : ENNReal) (fun _ : Fin n => ℝ) i).hasFDerivAt.pow 2).div_const (2*m i))
+  have hp : gradient (fun p : MolecularDynamics.Chapter05Review.E n =>
+      (∑ i,(p i)^2/(2*m i))+U z.1) z.2 =
+      WithLp.toLp 2 (fun i => z.2 i/m i) := by
+    apply (InnerProductSpace.toDual ℝ (MolecularDynamics.Chapter05Review.E n)).injective
+    rw [toDual_gradient,(hd.add_const (U z.1)).fderiv]
+    ext v
+    simp only [ContinuousLinearMap.sum_apply,ContinuousLinearMap.smul_apply,
+      ContinuousLinearMap.coe_smul',smul_eq_mul,PiLp.proj_apply,
+      InnerProductSpace.toDual_apply_apply,PiLp.inner_apply,RCLike.conj_to_real,
+      WithLp.toLp_apply]
+    apply Finset.sum_congr rfl
+    intro i hi
+    have hm0 : m i ≠ 0 := ne_of_gt (hm i)
+    field_simp
+    ring
+  have hq : gradient (fun q : MolecularDynamics.Chapter05Review.E n =>
+      (∑ i,(z.2 i)^2/(2*m i))+U q) z.1=gradient U z.1 := by
+    unfold gradient
+    rw [fderiv_const_add]
+  unfold MolecularDynamics.Chapter05Review.mechanicalLiouvillian MolecularDynamics.Chapter05Review.hamiltonianField
+  rw [hp,hq]'''
+proofs['GaussianDeltaProbability']='''intro ε hε
+  have he0 : ε ≠ 0 := ne_of_gt hε
+  have hcoef : 0 < (1 : ℝ)/(2*ε) := by positivity
+  have heq : MolecularDynamics.Chapter05Review.gaussianDelta ε=
+      (fun x : ℝ => Real.exp (-(1/(2*ε))*x^2)/Real.sqrt (2*Real.pi*ε)) := by
+    funext x
+    unfold MolecularDynamics.Chapter05Review.gaussianDelta
+    congr 2
+    ring
+  rw [heq]
+  refine ⟨fun x => by positivity,?_,?_⟩
+  · exact (integrable_exp_neg_mul_sq hcoef).div_const _
+  · rw [integral_div,integral_gaussian]
+    have hp0 : 0 ≤ 2*Real.pi*ε := by positivity
+    have hratio : Real.pi/(1/(2*ε))=2*Real.pi*ε := by field_simp; ring
+    rw [hratio,div_self (ne_of_gt (Real.sqrt_pos.2 (by positivity)))]'''
+proofs['MicroProbability']='''intro n H c hH hpos hfin
+  let σ := MolecularDynamics.Chapter05Review.energySurface H c
+  have hσ : MeasurableSet σ := by
+    exact (isClosed_eq hH.continuous continuous_const).measurableSet
+  have hzero : (MolecularDynamics.Chapter05Review.microRaw H c) σᶜ=0 := by
+    unfold MolecularDynamics.Chapter05Review.microRaw MolecularDynamics.Chapter05Review.surfaceMeasure
+    rw [Measure.withDensity_apply _ hσ.compl]
+    simp [σ]
+  have hu : (MolecularDynamics.Chapter05Review.microMeasure H c) univ=1 := by
+    unfold MolecularDynamics.Chapter05Review.microMeasure
+    rw [Measure.smul_apply,smul_eq_mul]
+    exact ENNReal.inv_mul_cancel (ne_of_gt hpos) (ne_of_lt hfin)
+  have hz : (MolecularDynamics.Chapter05Review.microMeasure H c) σᶜ=0 := by
+    unfold MolecularDynamics.Chapter05Review.microMeasure
+    rw [Measure.smul_apply,hzero,smul_zero]
+  refine ⟨hu,?_,?_⟩
+  · have hh := measure_add_measure_compl hσ (μ:=MolecularDynamics.Chapter05Review.microMeasure H c)
+    simpa only [hz,add_zero,hu] using hh
+  · intro A
+    exact ⟨bot_le,(measure_mono (subset_univ A)).trans_eq hu⟩'''
+proofs['ConservedInfiniteAverage']='''intro X z I r hI
+  have hm (g : X → ℝ) (hg : ∀ t,g (z t)=g (z 0)) :
+      MolecularDynamics.Chapter05Review.hasTimeAverage z g (g (z 0)) := by
+    apply tendsto_congr' _ |>.2 tendsto_const_nhds
+    filter_upwards [eventually_gt_atTop (0 : ℝ)] with T hT
+    exact MolecularDynamics.Chapter05Review.conservedAverage_proved z g (g (z 0)) hg T (ne_of_gt hT)
+  exact ⟨hm I hI,hm (r ∘ I) (fun t => by simp only [Function.comp_apply,hI])⟩'''
+proofs['InvariantIndicatorAverage']='''intro X Φ A hA z hz
+  unfold MolecularDynamics.Chapter05Review.hasTimeAverage
+  have heq : MolecularDynamics.Chapter05Review.timeAverage (fun t => Φ t z)
+      (Aᶜ.indicator (fun _ => (1 : ℝ)))=(fun _ : ℝ => 0) := by
+    funext T
+    simp [MolecularDynamics.Chapter05Review.timeAverage,
+      MolecularDynamics.Chapter05Review.invariantIndicator_proved Φ A hA z hz]
+  rw [heq]
+  exact tendsto_const_nhds'''
+proofs['NonergodicSet']='''intro n μ Φ hμ
+  letI := hμ
+  unfold MolecularDynamics.Chapter05Review.setErgodic
+  push_neg
+  constructor
+  · rintro ⟨A,hA,hΦ,hzero,hone⟩
+    exact ⟨A,hA,hΦ,lt_of_le_of_ne bot_le (Ne.symm hzero),
+      lt_of_le_of_ne ((measure_mono (subset_univ A)).trans_eq measure_univ) hone⟩
+  · rintro ⟨A,hA,hΦ,hpos,hlt⟩
+    exact ⟨A,hA,hΦ,ne_of_gt hpos,ne_of_lt hlt⟩'''
+proofs['GradientTransverse']='''intro n H c hn z hz
+  exact inner_self_ne_zero.mpr (hn z hz)'''
+proofs['MeasureDuality']='''intro n μ Φ φ t hm hi
+  exact integral_map hm.aemeasurable hi.aestronglyMeasurable'''
+proofs['TwoOscillatorEnergyDecomposition']='''intro Ω E z
+  constructor
+  · intro h
+    refine ⟨fun i => twoOscillatorEnergy Ω i z,?_,h,fun i => rfl⟩
+    intro i
+    unfold twoOscillatorEnergy
+    positivity
+  · rintro ⟨c,hc,hE,heq⟩
+    simpa only [heq] using hE'''
 import json,re
 from pathlib import Path
 extra=Path(__file__).with_name('ch05_elementary_candidates.json')

@@ -50,3 +50,8 @@ import Blueprint.Ch05
 #print axioms MD.Ch05.rapidAdjoint
 #print axioms MD.Ch05.liouvillianAdjoint
 #print axioms MD.Ch05.measurePropagator
+#print axioms MD.Ch05.hamiltonianDivergence
+#print axioms MD.Ch05.hamiltonianSkewExpression
+#print axioms MD.Ch05.hamiltonianDensityPropagation
+#print axioms MD.Ch05.mechanicalLiouvillian
+#print axioms MD.Ch05.mechanicalLiouvillianIdentity

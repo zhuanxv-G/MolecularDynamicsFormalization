@@ -1,0 +1,23 @@
+blueprint\ch05\validation\short_search\route-70d450c0f05847bfe59c.lean:53:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-70d450c0f05847bfe59c.lean:53:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-70d450c0f05847bfe59c.lean:96:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-70d450c0f05847bfe59c.lean:324:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-70d450c0f05847bfe59c.lean:346:73: error(lean.invalidField): Invalid field `div_const`: The environment does not contain `HasFDerivAtFilter.div_const`, so it is not possible to project the field `div_const` from an expression
+  HasFDerivAt.pow ?m.183 2
+of type
+  HasFDerivAtFilter (fun x => ?m.180 x ^ 2) ((2 • ?m.180 ?m.182 ^ (2 - 1)) • ?m.181) (𝓝 ?m.182 ×ˢ pure ?m.182)
+blueprint\ch05\validation\short_search\route-70d450c0f05847bfe59c.lean:346:5: error: Application type mismatch: The argument
+  ContinuousLinearMap.hasFDerivAt (PiLp.proj 2 (fun x => ℝ) i)
+has type
+  HasFDerivAt (⇑(PiLp.proj 2 (fun x => ℝ) i)) (PiLp.proj 2 (fun x => ℝ) i) ?m.171
+but is expected to have type
+  HasFDerivAt ?m.180 ?m.181 ?m.182
+in the application
+  HasFDerivAt.pow (ContinuousLinearMap.hasFDerivAt (PiLp.proj 2 (fun x => ℝ) i))

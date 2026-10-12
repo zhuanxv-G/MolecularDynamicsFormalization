@@ -1,11 +1,12 @@
 # 当前可操作状态
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：继续第5章§5.2.3 Hamiltonian散度/负Lie桥接；§5.2.2两小时时间盒已到，未证伴随保留sorry并复用已验结果。
+下一步：继续第5章§5.3.1实际测试空间、分布配对和Dirac/Gaussian短桥；Hamiltonian动能梯度三次失败不重做。
 
 顺序：第2章完成且复用 → 第3章 → 第4章 → 第5章 → 第6章；不进入第7章。
 跨章唯一总进度：docs/handoff/LOCAL_PIPELINE.md；当前章逐条进度：blueprint/ch05/PROGRESS.md。
 约束：正式库0 sorry且源码/签名不改；第1章交付冻结；其他任务文件保留不动。
+§5.2.3检查点：55条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。
 §5.2.2检查点：50条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。
 §5.2.1检查点：31条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。
 第1章2026-10-12 BATCH02–23新返回136条已登记；44 PASS/66 NEEDS/26 FAIL为原返回，缺版本绑定不提升网站PASS；原文JSON及Lean不改，提案留待原页复核。回第5章§5.2.1。

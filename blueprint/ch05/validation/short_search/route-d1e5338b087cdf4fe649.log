@@ -1,0 +1,13 @@
+blueprint\ch05\validation\short_search\route-d1e5338b087cdf4fe649.lean:53:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-d1e5338b087cdf4fe649.lean:53:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-d1e5338b087cdf4fe649.lean:96:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-d1e5338b087cdf4fe649.lean:324:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-d1e5338b087cdf4fe649.lean:347:32: error: typeclass instance problem is stuck, it is often due to metavariables
+  Fin n → Module (?m.223 i) ℝ

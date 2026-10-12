@@ -1,0 +1,27 @@
+intro n m U hm hU u hu z
+  have hi (i : Fin n) : HasFDerivAt
+      (fun p : MolecularDynamics.Chapter05Review.E n => (p i)^2*(2*m i)⁻¹)
+      ((2*m i)⁻¹ • ((2*z.2 i) • PiLp.proj (2 : ENNReal) (fun _ : Fin n => ℝ) i)) z.2 := by
+    simpa only [nsmul_eq_mul,pow_one,PiLp.proj_apply] using
+      (((PiLp.proj (2 : ENNReal) (fun _ : Fin n => ℝ) i).hasFDerivAt (x:=z.2)).pow 2).mul_const (2*m i)⁻¹
+  have hd := HasFDerivAt.fun_sum (u:=Finset.univ) (fun i hi' => hi i)
+  have hp : gradient (fun p : MolecularDynamics.Chapter05Review.E n =>
+      (∑ i,(p i)^2/(2*m i))+U z.1) z.2 =
+      WithLp.toLp 2 (fun i => z.2 i/m i) := by
+    apply (InnerProductSpace.toDual ℝ (MolecularDynamics.Chapter05Review.E n)).injective
+    rw [toDual_gradient,(show HasFDerivAt (fun p : MolecularDynamics.Chapter05Review.E n => (∑ i,(p i)^2/(2*m i))+U z.1) _ z.2 from by simpa only [div_eq_mul_inv] using hd.add_const (U z.1)).fderiv]
+    ext v
+    simp only [ContinuousLinearMap.sum_apply,ContinuousLinearMap.smul_apply,
+      smul_eq_mul,PiLp.proj_apply,InnerProductSpace.toDual_apply_apply,PiLp.inner_apply,
+      WithLp.toLp_apply,real_inner_comm,real_inner_self_eq_norm_sq]
+    apply Finset.sum_congr rfl
+    intro i hi
+    have hm0 : m i ≠ 0 := ne_of_gt (hm i)
+    field_simp
+    ring
+  have hq : gradient (fun q : MolecularDynamics.Chapter05Review.E n =>
+      (∑ i,(z.2 i)^2/(2*m i))+U q) z.1=gradient U z.1 := by
+    unfold gradient
+    rw [fderiv_const_add]
+  unfold MolecularDynamics.Chapter05Review.mechanicalLiouvillian MolecularDynamics.Chapter05Review.hamiltonianField
+  rw [hp,hq]

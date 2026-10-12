@@ -54,6 +54,11 @@
 | MD-5.2.2-RapidAdjoint | 185–186/206–207 | PASS | 待网站审计 | incomplete |
 | MD-5.2.2-CompactAdjoint | 185–186/206–207 | PASS | 待网站审计 | incomplete |
 | MD-5.2.2-MeasurePropagator | 186/207 | PASS | 待网站审计 | self-contained |
+| MD-5.2.3-HamiltonianDivergence | 186/207 | PASS | 待网站审计 | checked+documented priors |
+| MD-5.2.3-HamiltonianSkewExpression | 186/207 | PASS | 待网站审计 | self-contained |
+| MD-5.2.3-HamiltonianDensityPropagation | 187/208 | PASS | 待网站审计 | incomplete |
+| MD-5.2.3-MechanicalLiouvillian | 187/208 | PASS | 待网站审计 | self-contained |
+| MD-5.2.3-MechanicalLiouvillianIdentity | 187/208 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -2381,3 +2386,250 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f`；原文SHA256：`ce30bba850cc2220493083d1cf6c6f1038bedf39d29fce5277f01b90c38e5a81`。
+
+## 1. MD-5.2.3-HamiltonianDivergence · unnumbered_claim · 印刷p.186 / PDFp.207
+
+### 2. 原文陈述
+
+> The term $\nabla\cdot f$ vanishes for $f=J\nabla H$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonianDivergence {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc)
+    (hH : ContDiffAt ℝ 2 H z) :
+    (textbookJacobian (textbookHamiltonianVectorField H) z).trace = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.hamiltonianDivergence；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]固定正式库的实际规范坐标、Jacobian及C² Hamiltonian；保留任意H，既有证明由真实Hessian对称性推出散度零。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch05.lean:476](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:476>)（`MD.Ch05.hamiltonianDivergence`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookHamiltonianVectorField_divergence_zero。
+
+签名SHA256：`407da254c6083d17b70bf131d0cbda337a854e446a1f2d730ca0a7454396db9f`；原文SHA256：`f8fc02e4a3837fccf9d2924eec69e4585fab302899d13ab9e7b0d1fc8acad73a`。
+
+## 1. MD-5.2.3-HamiltonianSkewExpression · unnumbered_claim · 印刷p.186 / PDFp.207
+
+### 2. 原文陈述
+
+> From the above we know that for a smooth scalar function $u=u(z)$, $\mathcal L_f^*u=-\nabla\cdot(uf)=-f\cdot\nabla u-u\nabla\cdot f$. The term $\nabla\cdot f$ vanishes for $f=J\nabla H$. Thus we have $\mathcal L_f^*u=-f\cdot\nabla u=-\mathcal L_fu$. If this holds for all smooth $u$, we write $\mathcal L_f^*=-\mathcal L_f$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonianSkewExpression :
+  ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ),
+  Differentiable ℝ f → Differentiable ℝ u → (∀ z,MolecularDynamics.Chapter05Review.divergence f z=0) →
+  ∀ z,MolecularDynamics.Chapter05Review.liouvillian f u z= -MolecularDynamics.Chapter05Review.lie f u z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.hamiltonianSkewExpression；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]本条保留任意零散度场的实际表达式；Hamiltonian散度零另以正式库桥接；原书的skew-adjoint用语只作形式积分伴随记号，未声称已构造闭算子及其Hilbert空间定义域。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:484](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:484>)（`MD.Ch05.hamiltonianSkewExpression`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/HamiltonianSkewExpression.json；blueprint/ch05/validation/short_search/route-48445423d170860a93a5.lean；blueprint/ch05/validation/short_search/route-48445423d170860a93a5.log。
+
+签名SHA256：`cab991399fa77dda0a3b3af688b9b470e5a484bdae2cd6050987fa62f02917c6`；原文SHA256：`138ae27eaef21913ef7929294b508f8379e354865fdf8f4effc9b46f37f6204b`。
+
+## 1. MD-5.2.3-HamiltonianDensityPropagation · unnumbered_claim · 印刷p.187 / PDFp.208
+
+### 2. 原文陈述
+
+> An important consequence of the skew symmetry of $\mathcal L_f$ for a divergence-free system is that the propagator $e^{t\mathcal L_f^*}$ preserves the integral over the whole phase space, i.e.
+> \[\int_D e^{t\mathcal L_f^*}\rho(z)d\omega=\int_D e^{-t\mathcal L_f}\rho(z)d\omega=\int_D\rho(\mathcal F_{-t}(z))d\omega=\int_D\rho(z)d\omega,\]
+> since we can view $\mathcal F_{-t}(z)$ as a change of variables by a volume-preserving map.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonianDensityPropagation : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n))
+    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (ρ : MolecularDynamics.Chapter05Review.E n → ℝ),
+  NullMeasurableSet D volume → ContDiff ℝ 1 f → MolecularDynamics.Chapter05Review.flow f Φ →
+  ContDiff ℝ 2 (Function.uncurry Φ) → (∀ z,MolecularDynamics.Chapter05Review.divergence f z=0) →
+  (∀ t,Φ t '' D=D) → densityOn D ρ → ∀ t,
+    (∫ z in D,ρ (Φ (-t) z))=(∫ z in D,ρ z) ∧
+    densityMeasureOn D (fun z => ρ (Φ (-t) z))=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D ρ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.hamiltonianDensityPropagation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]一般Lebesgue可测且流不变的相空间D；实际C²自治流，明确域的资格。体积保持是需要推出的中间结论，未作为结论假设；算子exp记号解释为实际pullback/map。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:494](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:494>)（`MD.Ch05.hamiltonianDensityPropagation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺当前全实时间实际流的Jacobian/change-of-variables与受限密度测度输运桥接；保留完整陈述，不建设新的连续性PDE理论。
+
+签名SHA256：`e078f8383de3978b9346486137990466426c5cbc6fc3c6408e259e126d06dbce`；原文SHA256：`e74fa815f3ab81b068d3e96e98fec0250088ee2832b87f893761b5d00708eab1`。
+
+## 1. MD-5.2.3-MechanicalLiouvillian · definition · 印刷p.187 / PDFp.208
+
+### 2. 原文陈述
+
+> The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\ldots,q_{N_c})$ can be written
+> \[\mathcal L_H^*=-\sum_{i=1}^{N_c}m_i^{-1}p_i\frac{\partial}{\partial q_i}-\sum_{i=1}^{N_c}F_i\frac{\partial}{\partial p_i},\]
+> where $F_i=-\partial U/\partial q_i$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def mechanicalLiouvillian {n : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (u : MolecularDynamics.Chapter05Review.Phase n → ℝ) (z : MolecularDynamics.Chapter05Review.Phase n) :=
+  -(fderiv ℝ u z) ((WithLp.toLp 2 fun i => z.2 i/m i),F z.1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.mechanicalLiouvillian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:504](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:504>)（`MD.Ch05.mechanicalLiouvillian`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`1d6f6e14697b5860080ae941ca3a32f9df29a9ab6b6d0f7d96b46d8dd53a49b2`；原文SHA256：`4e890bd1d805f3011dd2c755b7d6941748bfc389b48b86bba3d679b478b5a7af`。
+
+## 1. MD-5.2.3-MechanicalLiouvillianIdentity · unnumbered_claim · 印刷p.187 / PDFp.208
+
+### 2. 原文陈述
+
+> The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\ldots,q_{N_c})$ can be written $\mathcal L_H^*=-\sum_i m_i^{-1}p_i\partial_{q_i}-\sum_iF_i\partial_{p_i}$, where $F_i=-\partial U/\partial q_i$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem mechanicalLiouvillianIdentity : ∀ n (m : Fin n → ℝ) (U : MolecularDynamics.Chapter05Review.E n → ℝ),
+  (∀ i,0 < m i) → ContDiff ℝ 2 U →
+  ∀ (u : MolecularDynamics.Chapter05Review.Phase n → ℝ),Differentiable ℝ u → ∀ z,
+    -(fderiv ℝ u z) (MolecularDynamics.Chapter05Review.hamiltonianField
+      (fun x => (∑ i,(x.2 i)^2/(2*m i))+U x.1) z)=
+    MolecularDynamics.Chapter05Review.mechanicalLiouvillian m (fun q => -gradient U q) u z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.mechanicalLiouvillianIdentity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]正的固定物理质量及C²势；任意实际可微u与完整q,p，保留一般U，不仅二次势；此处为Hamiltonian场的实际负Lie表达式，形式伴随由散度/积分资格另条。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:510](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:510>)（`MD.Ch05.mechanicalLiouvillianIdentity`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：三条短证明路线失败，停止该条；保存证据见validation/short_search/MechanicalLiouvillianIdentity.json。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/MechanicalLiouvillianIdentity.json；blueprint/ch05/validation/short_search/route-70d450c0f05847bfe59c.lean；blueprint/ch05/validation/short_search/route-70d450c0f05847bfe59c.log；blueprint/ch05/validation/short_search/route-8c8b43e0c506554da10b.lean；blueprint/ch05/validation/short_search/route-8c8b43e0c506554da10b.log；blueprint/ch05/validation/short_search/route-d1e5338b087cdf4fe649.lean；blueprint/ch05/validation/short_search/route-d1e5338b087cdf4fe649.log。
+
+签名SHA256：`5ea33ebcbe6c9ac0768ece2ec5f0b92f0eeb64c292bc00b462c5db56287386e8`；原文SHA256：`4cc2fb343b911af601a048142558a5d46179a5182eb6f0b1d4b31e9de592173e`。

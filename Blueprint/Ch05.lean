@@ -471,4 +471,48 @@ theorem liouvillianAdjoint :
 def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
   Measure.map (Φ t) μ
 
+/-- source_id: MD-5.2.3-HamiltonianDivergence · unnumbered_claim · §5.2.3 · 印刷p.186 / PDFp.207
+[EXTRA] [EXTRA]固定正式库的实际规范坐标、Jacobian及C² Hamiltonian；保留任意H，既有证明由真实Hessian对称性推出散度零。 -/
+theorem hamiltonianDivergence {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc)
+    (hH : ContDiffAt ℝ 2 H z) :
+    (textbookJacobian (textbookHamiltonianVectorField H) z).trace = 0 := by
+  apply MolecularDynamics.textbookHamiltonianVectorField_divergence_zero <;> assumption
+
+/-- source_id: MD-5.2.3-HamiltonianSkewExpression · unnumbered_claim · §5.2.3 · 印刷p.186 / PDFp.207
+[EXTRA] [EXTRA]本条保留任意零散度场的实际表达式；Hamiltonian散度零另以正式库桥接；原书的skew-adjoint用语只作形式积分伴随记号，未声称已构造闭算子及其Hilbert空间定义域。 -/
+theorem hamiltonianSkewExpression :
+  ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ),
+  Differentiable ℝ f → Differentiable ℝ u → (∀ z,MolecularDynamics.Chapter05Review.divergence f z=0) →
+  ∀ z,MolecularDynamics.Chapter05Review.liouvillian f u z= -MolecularDynamics.Chapter05Review.lie f u z := by
+  intro n f u hf hu hdiv z
+  rw [liouvilleProduct n f u z (hf z) (hu z),hdiv z]
+  ring
+
+/-- source_id: MD-5.2.3-HamiltonianDensityPropagation · unnumbered_claim · §5.2.3 · 印刷p.187 / PDFp.208
+[EXTRA] [EXTRA]一般Lebesgue可测且流不变的相空间D；实际C²自治流，明确域的资格。体积保持是需要推出的中间结论，未作为结论假设；算子exp记号解释为实际pullback/map。 -/
+theorem hamiltonianDensityPropagation : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n))
+    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (ρ : MolecularDynamics.Chapter05Review.E n → ℝ),
+  NullMeasurableSet D volume → ContDiff ℝ 1 f → MolecularDynamics.Chapter05Review.flow f Φ →
+  ContDiff ℝ 2 (Function.uncurry Φ) → (∀ z,MolecularDynamics.Chapter05Review.divergence f z=0) →
+  (∀ t,Φ t '' D=D) → densityOn D ρ → ∀ t,
+    (∫ z in D,ρ (Φ (-t) z))=(∫ z in D,ρ z) ∧
+    densityMeasureOn D (fun z => ρ (Φ (-t) z))=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D ρ) := by
+  sorry
+
+/-- source_id: MD-5.2.3-MechanicalLiouvillian · definition · §5.2.3 · 印刷p.187 / PDFp.208 -/
+def mechanicalLiouvillian {n : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (u : MolecularDynamics.Chapter05Review.Phase n → ℝ) (z : MolecularDynamics.Chapter05Review.Phase n) :=
+  -(fderiv ℝ u z) ((WithLp.toLp 2 fun i => z.2 i/m i),F z.1)
+
+/-- source_id: MD-5.2.3-MechanicalLiouvillianIdentity · unnumbered_claim · §5.2.3 · 印刷p.187 / PDFp.208
+[EXTRA] [EXTRA]正的固定物理质量及C²势；任意实际可微u与完整q,p，保留一般U，不仅二次势；此处为Hamiltonian场的实际负Lie表达式，形式伴随由散度/积分资格另条。 -/
+theorem mechanicalLiouvillianIdentity : ∀ n (m : Fin n → ℝ) (U : MolecularDynamics.Chapter05Review.E n → ℝ),
+  (∀ i,0 < m i) → ContDiff ℝ 2 U →
+  ∀ (u : MolecularDynamics.Chapter05Review.Phase n → ℝ),Differentiable ℝ u → ∀ z,
+    -(fderiv ℝ u z) (MolecularDynamics.Chapter05Review.hamiltonianField
+      (fun x => (∑ i,(x.2 i)^2/(2*m i))+U x.1) z)=
+    MolecularDynamics.Chapter05Review.mechanicalLiouvillian m (fun q => -gradient U q) u z := by
+  sorry
+
 end MD.Ch05

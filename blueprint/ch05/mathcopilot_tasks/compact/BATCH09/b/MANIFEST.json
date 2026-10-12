@@ -1,0 +1,85 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09b",
+  "source_ids": [
+    "MD-5.2.3-HamiltonianSkewExpression"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 207,
+      "printed_page": 186
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "32f40e4d35d1e918ace6925f4409f4b2962a053e84dd8889089c63f954aff56a",
+  "lean_sha256": "9b467e57c07009d6fdc0a7d6b5df17fe4aaa1b3e1942b3c30d9fc13c06f0afe2",
+  "signature_sha256": "cab991399fa77dda0a3b3af688b9b470e5a484bdae2cd6050987fa62f02917c6",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "divergence",
+      "code_sha256": "dadd38091a1232e6bbd2460766d10afb82a44329b5f562152debdcd372b86255"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "lie",
+      "code_sha256": "6535744b913bb6f850c290344fb7d4a36f3647f43500d689c3a8228a92a2f8a8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "liouvillian",
+      "code_sha256": "db65bb7d048a7bb3083fcb5511c923eeec5534e5b66d837e1840d49f73dbfa32"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "divergence",
+      "code_sha256": "ae0663325774e959009a1539ffd2ca1d15d645ff9af486a72942ee6115dd91a2"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "lie",
+      "code_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "liouvillian",
+      "code_sha256": "c00935b07e671ad9103bce966765d39374e8f4cbcc05a50f0b1ca0c40a9db1f8"
+    }
+  ],
+  "paste_plus_pdf_bytes": 76914,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5362,
+      "sha256": "507c5ce27eb4cdcbc7126565726b01c3820e56ad5a3d4cedb4a6222f2ad22eb1"
+    },
+    "BATCH09b_PAGES.pdf": {
+      "bytes": 71552,
+      "sha256": "526138c876fff43936b409b274d91419b8838481691db546b1cd3ab2fc1055e0"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 79955
+}
