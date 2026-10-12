@@ -1,0 +1,18 @@
+{
+  "syntax": "PASS",
+  "saved_success_reused_without_launch": "PASS",
+  "source_log_receipt_byte_identity": "PASS",
+  "live_process_identity_and_completion": "PASS",
+  "full_check_guard_startup_repair": {
+    "original_error": "Shared checker refuses an existing report directory.",
+    "failed_log": "section541-full-run.log",
+    "correction": "RUNNING receipt stored beside the report directory; shared checker creates the directory.",
+    "state": "Complete shared and chapter checks passed."
+  },
+  "completed_full_check_reuse": {
+    "result": "PASS",
+    "exit_code": 0,
+    "stdout": "Reused completed full and chapter checks with unchanged inputs and log hashes.",
+    "report_and_log_hashes_and_mtimes_unchanged": true
+  }
+}

@@ -2,7 +2,7 @@
 
 范围：印刷p.179–209/PDF200–230，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前110条；旧清单映射57/86；本地PASS 106；网站返回0。
+当前137条；旧清单映射64/86；本地PASS 129；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -116,6 +116,33 @@
 | MD-5.4-DoubleWellCoercivity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-5.4-DoubleWellDisconnected | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-5.4-DoubleWellBasin | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.4.1-UniformMicroErgodic | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
+| MD-5.4.1-MicroErgodicStandard | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-FlowInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-SetErgodic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-InvariantIndicator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-5.4.1-InvariantIndicatorAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/InvariantIndicatorAverage.timebox.json。 |
+| MD-5.4.1-ErgodicTimeEquivalence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；Mathlib存在离散Birkhoff/Ergodic基础，但缺本章连续时间积分平均与集合遍历性等价的接口；不建设大型遍历理论。 |
+| MD-5.4.1-NonergodicSet | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/NonergodicSet.timebox.json。 |
+| MD-5.4.1-HarmonicFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-HarmonicErgodic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺椭圆曲面测度识别与连续时间圆周轨道平均桥接，不建设大型遍历/几何理论。 |
+| MD-5.4.1-TwoOscillatorEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-TwoOscillatorFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-TwoOscillatorTori | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺完整椭圆乘积拓扑、Kronecker稠密及正测度不变子域桥接；不建设新的连续遍历理论。 |
+| MD-5.4.1-Mixing | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-KAMPersistence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺当前有限维Hamiltonian KAM/Nash–Moser及不变环面持久化理论；按用户要求不建设。 |
+| MD-5.4.1-AnisotropicPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-AnisotropicAxisPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原各向异性力/轴不变说法需语义裁定；不证明，不恢复第1章。 |
+| MD-5.4.1-TwoOscillatorEnergyDecomposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/TwoOscillatorEnergyDecomposition.timebox.json。 |
+| MD-5.4.1-CurveImageDimension | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CurveImageDimension.timebox.json。 |
+| MD-5.4.1-PendulumPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-PendulumRegionPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；一般圆盘并集说法及边界/轨道覆盖解释需原页语义裁定，不证明。 |
+| MD-5.4.1-AnisotropicInitialCurve | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-AnisotropicInitialEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/AnisotropicInitialEnergy.timebox.json。 |
+| MD-5.4.1-InitialSegmentPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原四维line segment疑误待裁定，不证明。 |
+| MD-5.4.1-CircleInitialPoints | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-CircleInitialLaw | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4.1-CircleInitialEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CircleInitialEnergy.timebox.json。 |
 
 ## 旧86条完整映射
 
@@ -178,13 +205,13 @@
 | CH05-055 | MD-5.3.3-MicroAverage |
 | CH05-056 | MD-5.4-HasTimeAverage |
 | CH05-057 | MD-5.4-ConservedInfiniteAverage |
-| CH05-058 | PENDING：所属节尚未处理 |
-| CH05-059 | PENDING：所属节尚未处理 |
-| CH05-060 | PENDING：所属节尚未处理 |
-| CH05-061 | PENDING：所属节尚未处理 |
-| CH05-062 | PENDING：所属节尚未处理 |
-| CH05-063 | PENDING：所属节尚未处理 |
-| CH05-064 | PENDING：所属节尚未处理 |
+| CH05-058 | MD-5.4.1-MicroErgodicStandard |
+| CH05-059 | MD-5.4.1-SetErgodic |
+| CH05-060 | MD-5.4.1-InvariantIndicatorAverage |
+| CH05-061 | MD-5.4.1-ErgodicTimeEquivalence |
+| CH05-062 | MD-5.4.1-NonergodicSet |
+| CH05-063 | MD-5.4.1-KAMPersistence |
+| CH05-064 | MD-5.4.1-Mixing |
 | CH05-065 | PENDING：所属节尚未处理 |
 | CH05-066 | PENDING：所属节尚未处理 |
 | CH05-067 | PENDING：所属节尚未处理 |
@@ -238,7 +265,22 @@
 - MD-5.3.2-IdealGasPartition：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实3N球面积、曲面产品测度与微正则权积分桥接；不建设coarea/大型几何理论。
 - MD-5.3.3-LowerDimensionNull：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺Hausdorff维数/光滑图像到真实曲面加权测度零集的接口；不建设大型几何理论。
 - MD-5.3.3-AmbientLowerDimensionNull：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺当前低维C¹像Lebesgue零测与规范Hausdorff测度的现成桥接；需要局部Lipschitz覆盖/维数几何測度接口，不建设新大型几何理论。
+- MD-5.4.1-UniformMicroErgodic：字面量词记录共满测集上的∀光滑可观测量；不静默交换∀g与AEz。原“低维例外”的表述不等价于一般零测集合；标准逐可观测量AE版本另条。 
+- MD-5.4.1-InvariantIndicatorAverage：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/InvariantIndicatorAverage.timebox.json。
+- MD-5.4.1-ErgodicTimeEquivalence：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 Mathlib存在离散Birkhoff/Ergodic基础，但缺本章连续时间积分平均与集合遍历性等价的接口；不建设大型遍历理论。
+- MD-5.4.1-NonergodicSet：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/NonergodicSet.timebox.json。
+- MD-5.4.1-HarmonicErgodic：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺椭圆曲面测度识别与连续时间圆周轨道平均桥接，不建设大型遍历/几何理论。
+- MD-5.4.1-TwoOscillatorTori：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺完整椭圆乘积拓扑、Kronecker稠密及正测度不变子域桥接；不建设新的连续遍历理论。
+- MD-5.4.1-KAMPersistence：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺当前有限维Hamiltonian KAM/Nash–Moser及不变环面持久化理论；按用户要求不建设。
+- MD-5.4.1-AnisotropicAxisPrinted：[ERRATUM?]一般各向异性势的力不能凭“central”称径向，x轴正向处的角向导数未必为零；所选初始ẏ通常非零，亦不属于后句y=ẏ=0集合。探索整个能量面的结论只为模拟直觉，未提升为定理。 原各向异性力/轴不变说法需语义裁定；不证明，不恢复第1章。
+- MD-5.4.1-TwoOscillatorEnergyDecomposition：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/TwoOscillatorEnergyDecomposition.timebox.json。
+- MD-5.4.1-CurveImageDimension：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CurveImageDimension.timebox.json。
+- MD-5.4.1-PendulumRegionPrinted：[ERRATUM?]一般弹簧势在距离小于rest length时不随距离单调，不能由椭圆上的半径上界自动推出能量可达；给定图的特殊参数与一般系数需分开。“swept out”还不能保证单条轨迹覆盖静态能量投影，且边界U=E在全能量投影中可达，原“interior”需解释。 一般圆盘并集说法及边界/轨道覆盖解释需原页语义裁定，不证明。
+- MD-5.4.1-AnisotropicInitialEnergy：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/AnisotropicInitialEnergy.timebox.json。
+- MD-5.4.1-InitialSegmentPrinted：[ERRATUM?]位置区间是线段，但p_y=√(2(E₀−U(x,0)))通常非仿射函数，完整四维初值集一般是曲线而非直线段；字面陈述与正则曲线像定理分开。 原四维line segment疑误待裁定，不证明。
+- MD-5.4.1-CircleInitialEnergy：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CircleInitialEnergy.timebox.json。
 
 ## 定性段落排除
 
 - p.179–181/PDF200–202：引言的宏观/微观建模动机、参考教材推荐，以及iL与量子记号的物理解释为定性背景；Lie导数、流、PDE、第一积分和坐标投影的数学内容保留。
+- p.200–203/PDF221–224：Examples 5.5–5.6的轨迹图、100 million steps、可达域数值边界/视觉混合均为有限模拟观察；保留其动力学背景及KAM引用，不升级为精确遍历/混合定理。

@@ -1044,4 +1044,198 @@ theorem doubleWellBasin : ∀ (z : ℝ → MolecularDynamics.Chapter05Review.E 2
     obtain ⟨s,hs⟩ := intermediate_value_univ 0 t hq (show (0 : ℝ) ∈ Icc (q 0) (q t) from ⟨hneg.le,hpos.le⟩)
     exact hn s hs
 
+/-- source_id: MD-5.4.1-UniformMicroErgodic · Definition 5.1 · §5.4.1 · 印刷p.197 / PDFp.218
+[EXTRA] [EXTRA]沿用前文光滑可观测量且明确µ可积，避免给不存在空间平均的函数套等式；AE采用真实µ_E零测资格。 -/
+def uniformMicroErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c,∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,
+    ContDiff ℝ ⊤ g → Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
+      MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)
+
+/-- source_id: MD-5.4.1-MicroErgodicStandard · definition · §5.4.1 · 印刷p.197 / PDFp.218
+[EXTRA] [EXTRA]标准每个L¹可观测量各自AE初值版本，和原字面共满测集版本分开；不声称两者已等价。 -/
+def microErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  ∀ g : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
+    ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)
+
+/-- source_id: MD-5.4.1-FlowInvariant · definition · §5.4.1 · 印刷p.197–198 / PDFp.218–219
+[EXTRA] [EXTRA]原t≠0；真实流的零时刻恒等自动补上t=0，因而用实际全实时间集合像不变性。仅给定的真实流可解释为动力系统不变性。 -/
+def flowInvariant {X : Type*} (Φ : ℝ → X → X) (A : Set X) : Prop := ∀ t, Φ t '' A=A
+
+/-- source_id: MD-5.4.1-SetErgodic · definition · §5.4.1 · 印刷p.197–198 / PDFp.218–219
+[EXTRA] [EXTRA]明示集合可测和实际概率测度背景；原“as ergodic”字面保留，不在逐字JSON中默改为“is”。 -/
+def setErgodic {X : Type*} [MeasurableSpace X] (μ : Measure X) (Φ : ℝ → X → X) : Prop :=
+  ∀ A : Set X, MeasurableSet A → MolecularDynamics.Chapter05Review.flowInvariant Φ A → μ A=0 ∨ μ A=1
+
+/-- source_id: MD-5.4.1-InvariantIndicator · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219
+[EXTRA] [EXTRA]原φ是可达空间内A的补集示性函数，实际Measure支撑空间限定时可用ambient Aᶜ示性函数；本条保留沿轨道逐点为零，完整无限时间平均另条。 -/
+theorem invariantIndicator {X : Type*} (Φ : ℝ → X → X) (A : Set X)
+    (h : MolecularDynamics.Chapter05Review.flowInvariant Φ A) (z : X) (hz : z ∈ A) (t : ℝ) :
+    Aᶜ.indicator (fun _ => (1 : ℝ)) (Φ t z)=0 := by
+  apply MolecularDynamics.Chapter05Review.invariantIndicator_proved <;> assumption
+
+/-- source_id: MD-5.4.1-InvariantIndicatorAverage · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219 -/
+theorem invariantIndicatorAverage {X : Type*} (Φ : ℝ → X → X) (A : Set X)
+    (hA : MolecularDynamics.Chapter05Review.flowInvariant Φ A) (z : X) (hz : z ∈ A) :
+  MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) (Aᶜ.indicator (fun _ => (1 : ℝ))) 0 := by
+  sorry
+
+/-- source_id: MD-5.4.1-ErgodicTimeEquivalence · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219
+[EXTRA] [EXTRA]完整全实时间可测流、概率保持、群律及L¹资格；对应标准每观测量AE版本，未将原共满测集量词交换当无条件事实。 -/
+theorem ergodicTimeAverage :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ,
+  IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
+  (∀ z,Φ 0 z=z) → (∀ s t z,Φ (s+t) z=Φ s (Φ t z)) →
+  Measurable (Function.uncurry Φ) →
+  (MolecularDynamics.Chapter05Review.setErgodic μ Φ ↔ ∀ g : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable g μ →
+    ∀ᵐ z ∂μ, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.average μ g)) := by
+  sorry
+
+/-- source_id: MD-5.4.1-NonergodicSet · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219 -/
+theorem nonergodicSet :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ,
+  IsProbabilityMeasure μ → (¬MolecularDynamics.Chapter05Review.setErgodic μ Φ ↔
+    ∃ A : Set (MolecularDynamics.Chapter05Review.E n),MeasurableSet A ∧ MolecularDynamics.Chapter05Review.flowInvariant Φ A ∧ 0 < μ A ∧ μ A < 1) := by
+  sorry
+
+/-- source_id: MD-5.4.1-HarmonicFlow · definition · §5.4.1 · 印刷p.198–199 / PDFp.219–220
+[EXTRA] [EXTRA]真实解析振子流，用于完整遍历命题；Ω>0使用资格另条。 -/
+def harmonicFlow (Ω t : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
+  WithLp.toLp 2 ![z 0*Real.cos (Ω*t)+z 1/Ω*Real.sin (Ω*t),
+    z 1*Real.cos (Ω*t)-Ω*z 0*Real.sin (Ω*t)]
+
+/-- source_id: MD-5.4.1-HarmonicErgodic · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219
+[EXTRA] [EXTRA]正频率/正能量，真实已定义振子和曲面测度；本条采用逐个L¹可观测量的AE版本，原平滑版本的共同零集量词另保留。 -/
+theorem harmonicErgodic : ∀ Ω c : ℝ,0 < Ω → 0 < c →
+  MolecularDynamics.Chapter05Review.microErgodic (harmonicEnergy Ω) c (harmonicFlow Ω) := by
+  sorry
+
+/-- source_id: MD-5.4.1-TwoOscillatorEnergy · Example 5.4 · §5.4.1 · 印刷p.198–199 / PDFp.219–220 -/
+def twoOscillatorEnergy (Ω : Fin 2 → ℝ) (i : Fin 2) (z : MolecularDynamics.Chapter05Review.E 4) :=
+  (z (Fin.natAdd 2 i))^2/2+(Ω i)^2*(z (Fin.castAdd 2 i))^2/2
+
+/-- source_id: MD-5.4.1-TwoOscillatorFlow · definition · §5.4.1 · 印刷p.198–199 / PDFp.219–220
+[EXTRA] [EXTRA]明确相空间排列(q1,q2,p1,p2)和真实两个振子流；非零频率资格另条。 -/
+def twoOscillatorFlow (Ω : Fin 2 → ℝ) (t : ℝ) (z : MolecularDynamics.Chapter05Review.E 4) : MolecularDynamics.Chapter05Review.E 4 :=
+  WithLp.toLp 2 ![z 0*Real.cos (Ω 0*t)+z 2/(Ω 0)*Real.sin (Ω 0*t),
+    z 1*Real.cos (Ω 1*t)+z 3/(Ω 1)*Real.sin (Ω 1*t),
+    z 2*Real.cos (Ω 0*t)-Ω 0*z 0*Real.sin (Ω 0*t),
+    z 3*Real.cos (Ω 1*t)-Ω 1*z 1*Real.sin (Ω 1*t)]
+
+/-- source_id: MD-5.4.1-TwoOscillatorTori · Example 5.4 · §5.4.1 · 印刷p.199 / PDFp.220
+[EXTRA] [EXTRA]正分能量、非零频率；“填满”解释为实际轨道稠密，非有限时间覆盖；原总能量面分解包括一个分能量为0的退化圆，不能只以正分能量2-tori穷尽整个集合。 -/
+theorem twoOscillatorTori : ∀ (Ω : Fin 2 → ℝ) (c : Fin 2 → ℝ),
+  (∀ i,Ω i ≠ 0) → (∀ i,0 < c i) →
+  let T := {z : MolecularDynamics.Chapter05Review.E 4 | ∀ i,twoOscillatorEnergy Ω i z=c i}
+  (Nonempty (T ≃ₜ (Metric.sphere (0 : MolecularDynamics.Chapter05Review.E 2) 1 × Metric.sphere (0 : MolecularDynamics.Chapter05Review.E 2) 1))) ∧
+  (∀ z ∈ T,∀ t,∀ i,twoOscillatorEnergy Ω i (twoOscillatorFlow Ω t z)=c i) ∧
+  (Irrational (Ω 0/Ω 1) → ∀ z ∈ T,closure (range (fun t => twoOscillatorFlow Ω t z))=T) ∧
+  (∀ E > 0,¬MolecularDynamics.Chapter05Review.setErgodic (MolecularDynamics.Chapter05Review.microMeasure (fun z => ∑ i,twoOscillatorEnergy Ω i z) E)
+    (twoOscillatorFlow Ω)) := by
+  sorry
+
+/-- source_id: MD-5.4.1-Mixing · definition · §5.4.1 · 印刷p.199 / PDFp.220
+[EXTRA] [EXTRA]实际不变参考测度上的AC概率初值、有界连续测试函数；参考测度是μ，可取微正则测度；避免旧density r谓词暗中以Lebesgue可积替代微正则可积。 -/
+def weakMixing {n : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  ∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ,Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
+  Continuous φ → Bornology.IsBounded (range φ) →
+  Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))
+
+/-- source_id: MD-5.4.1-KAMPersistence · unnumbered_claim · §5.4.1 · 印刷p.200 / PDFp.221
+[EXTRA] [EXTRA]书中引用的KAM持久化作独立完整定理展开：解析近可积Hamiltonian、频率映射非退化和Diophantine条件，实际周期提升的C¹浸入不变环面及动力学共轭；不宣称图中双摆的参数已满足这些资格，也不称环面是三维能量面拓扑连通分支。 -/
+theorem kam :
+  ∀ n (H0 : MolecularDynamics.Chapter05Review.E n → ℝ) (P : MolecularDynamics.Chapter05Review.Phase n → ℝ) (I0 : MolecularDynamics.Chapter05Review.E n) κ τ,
+  0 < n → AnalyticOnNhd ℝ H0 univ → AnalyticOnNhd ℝ P univ → MolecularDynamics.Chapter05Review.periodicPerturbation P →
+  Function.Bijective (fderiv ℝ (gradient H0) I0) → MolecularDynamics.Chapter05Review.diophantine (gradient H0 I0) κ τ →
+  ∃ δ > 0, ∀ ε : ℝ, |ε| < δ → ∃ K : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.Phase n,
+    ContDiff ℝ 1 K ∧
+    (∀ x,Function.Injective (fderiv ℝ K x)) ∧
+    (∀ x (k : Fin n → ℤ), K (x+WithLp.toLp 2 (fun i => (k i : ℝ)))=
+      ((K x).1+WithLp.toLp 2 (fun i => (k i : ℝ)),(K x).2)) ∧
+    (∀ x,(fderiv ℝ K x) (gradient H0 I0)=MolecularDynamics.Chapter05Review.hamiltonianField
+      (fun z => H0 z.2+ε*P z) (K x)) ∧
+    (∀ x,‖(K x).2-I0‖ < 1) := by
+  sorry
+
+/-- source_id: MD-5.4.1-AnisotropicPotential · Example 5.6 · §5.4.1 · 印刷p.201 / PDFp.222 -/
+def anisotropicPotential (κ l ε : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) :=
+  MolecularDynamics.Chapter01Review.anisotropicEnergy κ l ε (z 0) (z 1) 0 0
+
+/-- source_id: MD-5.4.1-AnisotropicAxisPrinted · unnumbered_claim · §5.4.1 · 印刷p.201 / PDFp.222
+[EXTRA] [EXTRA]用第1章实际各向异性势陈述全真实轨道上的轴不变义务；κ/l正及全时间可微轨道，不把轴不变结论作假设。 -/
+theorem anisotropicAxisPrinted : ∀ (κ l ε : ℝ) (z : ℝ → MolecularDynamics.Chapter05Review.Phase 2),
+  0 < κ → 0 < l →
+  (∀ t,HasDerivAt z ((z t).2,-gradient (anisotropicPotential κ l ε) (z t).1) t) →
+  (z 0).1 1=0 → (z 0).2 1=0 → ∀ t,(z t).1 1=0 ∧ (z t).2 1=0 := by
+  sorry
+
+/-- source_id: MD-5.4.1-TwoOscillatorEnergyDecomposition · unnumbered_claim · §5.4.1 · 印刷p.199 / PDFp.220
+[EXTRA] [EXTRA]包括c_i=0的退化边界；原“all such 2-tori”字面忽略零分能量层，完整全能量面分解不能遗漏这些层。 -/
+theorem twoOscillatorEnergyDecomposition : ∀ (Ω : Fin 2 → ℝ) (E : ℝ) (z : MolecularDynamics.Chapter05Review.E 4),
+  ((∑ i,twoOscillatorEnergy Ω i z)=E) ↔
+  ∃ c : Fin 2 → ℝ,(∀ i,0 ≤ c i) ∧ (∑ i,c i)=E ∧ (∀ i,twoOscillatorEnergy Ω i z=c i) := by
+  sorry
+
+/-- source_id: MD-5.4.1-CurveImageDimension · unnumbered_claim · §5.4.1 · 印刷p.202 / PDFp.223
+[EXTRA] [EXTRA]原“one-dimensional”以实际正则参数曲线及全平滑自治流实现；由群律推出可逆场导数而非假设最终像曲线正则。位置投影未必浸入，且有限时刻的曲线本身不是一般二维开集；视觉稠密覆盖仅作为数值观察保留。 -/
+theorem curveImageDimension : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (γ : ℝ → MolecularDynamics.Chapter05Review.E n),
+  MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ ⊤ (Function.uncurry Φ) → ContDiff ℝ ⊤ γ →
+  (∀ s,deriv γ s ≠ 0) → ∀ t,
+  ContDiff ℝ ⊤ (fun s => Φ t (γ s)) ∧ (∀ s,deriv (fun r => Φ t (γ r)) s ≠ 0) := by
+  sorry
+
+/-- source_id: MD-5.4.1-PendulumPotential · Example 5.5 · §5.4.1 · 印刷p.200 / PDFp.221
+[EXTRA] [EXTRA]引用的真实双弹簧势按§3.5印刷126/PDF148已存在原页核对：U=k₁(r₁−l₁)²/2+k₂(r₂−l₂)²/2，r₁=√(x²+y²)、r₂=√(x²+(y+2)²)；不是把数值轨迹图当势的定义。 -/
+def pendulumPotential (k₁ k₂ l₁ l₂ : ℝ) (q : MolecularDynamics.Chapter05Review.E 2) :=
+  k₁/2*(Real.sqrt ((q 0)^2+(q 1)^2)-l₁)^2+
+    k₂/2*(Real.sqrt ((q 0)^2+(q 1+2)^2)-l₂)^2
+
+/-- source_id: MD-5.4.1-PendulumRegionPrinted · unnumbered_claim · §5.4.1 · 印刷p.200 / PDFp.221
+[EXTRA] [EXTRA]原描述的可达region按所有能量初值的位置投影解释，单位动能；真实两圆盘中心、正半径和半径能量椭圆完整保留，不假设所求等式。 -/
+theorem pendulumRegionPrinted : ∀ k₁ k₂ l₁ l₂ c : ℝ,
+  0 < k₁ → 0 < k₂ → 0 < l₁ → 0 < l₂ → 0 < c →
+  {q : MolecularDynamics.Chapter05Review.E 2 | ∃ p : MolecularDynamics.Chapter05Review.E 2,
+    ((p 0)^2+(p 1)^2)/2+pendulumPotential k₁ k₂ l₁ l₂ q=c}=
+  {q : MolecularDynamics.Chapter05Review.E 2 | ∃ r₁ > 0,∃ r₂ > 0,
+    k₁/2*(r₁-l₁)^2+k₂/2*(r₂-l₂)^2=c ∧
+    Real.sqrt ((q 0)^2+(q 1)^2) ≤ r₁ ∧ Real.sqrt ((q 0)^2+(q 1+2)^2) ≤ r₂} := by
+  sorry
+
+/-- source_id: MD-5.4.1-AnisotropicInitialCurve · definition · §5.4.1 · 印刷p.201 / PDFp.222 -/
+def anisotropicInitialCurve (κ l ε c x : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=
+  (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![0,Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))])
+
+/-- source_id: MD-5.4.1-AnisotropicInitialEnergy · unnumbered_claim · §5.4.1 · 印刷p.201 / PDFp.222
+[EXTRA] [EXTRA]根号内非负且单位质量；实际初值能量等式，不从构造宣称轨道遍历整个能量面。 -/
+theorem anisotropicInitialEnergy : ∀ κ l ε c x : ℝ,
+  0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0]) →
+  let z := anisotropicInitialCurve κ l ε c x
+  ((z.2 0)^2+(z.2 1)^2)/2+anisotropicPotential κ l ε z.1=c := by
+  sorry
+
+/-- source_id: MD-5.4.1-InitialSegmentPrinted · unnumbered_claim · §5.4.1 · 印刷p.201 / PDFp.222
+[EXTRA] [EXTRA]保留真实相空间对象、书中区间及实初值的非负根号资格；不把线段结论作假设。 -/
+theorem initialSegmentPrinted : ∀ κ l ε c : ℝ,
+  (∀ x ∈ Icc (105/100 : ℝ) (115/100),0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])) →
+  ∃ a b : MolecularDynamics.Chapter05Review.Phase 2,anisotropicInitialCurve κ l ε c '' Icc (105/100 : ℝ) (115/100)=segment ℝ a b := by
+  sorry
+
+/-- source_id: MD-5.4.1-CircleInitialPoints · definition · §5.4.1 · 印刷p.202 / PDFp.223 -/
+def circleInitialPoints (κ l ε c x θ : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=
+  let R := Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))
+  (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![R*Real.cos θ,R*Real.sin θ])
+
+/-- source_id: MD-5.4.1-CircleInitialLaw · definition · §5.4.1 · 印刷p.202 / PDFp.223
+[EXTRA] [EXTRA]固定x的真实均匀角测度及角参数化推送；不把任意集合叫uniform，不添加跨x独立性假设；概率总质量尚未逐条证明。 -/
+def circleInitialLaw (κ l ε c x : ℝ) : Measure (MolecularDynamics.Chapter05Review.Phase 2) :=
+  Measure.map (circleInitialPoints κ l ε c x)
+    ((ENNReal.ofReal (2*Real.pi))⁻¹ • (volume.restrict (Ioc (0 : ℝ) (2*Real.pi))))
+
+/-- source_id: MD-5.4.1-CircleInitialEnergy · unnumbered_claim · §5.4.1 · 印刷p.202 / PDFp.223
+[EXTRA] [EXTRA]固定位置的实动量圆，根号非负；全能量等式不意味着极限图像填满可达区域。 -/
+theorem circleInitialEnergy : ∀ κ l ε c x θ : ℝ,
+  0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0]) →
+  let z := circleInitialPoints κ l ε c x θ
+  ((z.2 0)^2+(z.2 1)^2)/2+anisotropicPotential κ l ε z.1=c := by
+  sorry
+
 end MD.Ch05

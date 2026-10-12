@@ -45,6 +45,8 @@ variable {{E : Type*}} [NormedAddCommGroup E] [NormedSpace ℝ E]
 background='\n\n'.join(r['code'] for r in data.RECORDS if r['source_id'].split('-')[-1] not in pending and not re.search(r'\bsorry\b',r['code']))
 if ch==5:
     header=header.replace('import Mathlib.Tactic','import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform\nimport Mathlib.Analysis.Calculus.ParametricIntegral\nimport Mathlib.Analysis.Calculus.Deriv.Slope\nimport Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Analysis.SpecialFunctions.Gamma.Basic\nimport MolecularDynamics.Chapter01.ReviewDefinitions\nimport Mathlib.Tactic')
+if not (ROOT/f'MolecularDynamics/Chapter{ch:02}/ReviewProofs.lean').exists():
+    header=header.replace(f'import MolecularDynamics.Chapter{ch:02}.ReviewProofs',f'import MolecularDynamics.Chapter{ch:02}.Statements')
 def compile_group(group,label):
     text=header+background+'\n\n';ranges={}
     for key,(r,proof,_) in group.items():
@@ -59,10 +61,9 @@ def compile_group(group,label):
     if receipt.exists():
         saved=json.loads(receipt.read_text(encoding='utf-8'));assert saved['input_sha256']==sha(src) and saved['log_sha256']==sha(log)
         return src,log,saved['exit_code'],ranges,log.read_text(encoding='utf-8')
-    result=subprocess.run(['lake','env','lean',str(src.relative_to(ROOT))],cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
-    log.write_bytes(result.stdout)
-    receipt.write_text(json.dumps(dict(exit_code=result.returncode,input_sha256=sha(src),log_sha256=sha(log)),indent=2)+'\n',encoding='utf-8')
-    return src,log,result.returncode,ranges,result.stdout.decode('utf-8',errors='replace')
+    from local_compile import compile_recorded
+    result,output,reused=compile_recorded(['lake','env','lean',str(src.relative_to(ROOT))],ROOT,src,log,receipt,reuse_failure=True)
+    return src,log,result['exit_code'],ranges,output.decode('utf-8',errors='replace')
 label=hashlib.sha256('-'.join(k+str(len(v[2])+1) for k,v in pending.items()).encode()).hexdigest()[:20]
 src,log,code,ranges,out=compile_group(pending,label)
 def save(key,source,rawlog,exit_code):

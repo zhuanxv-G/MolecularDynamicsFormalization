@@ -1,0 +1,115 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19g",
+  "source_ids": [
+    "MD-5.4.1-KAMPersistence"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 221,
+      "printed_page": 200
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "498211c89c126c1ba9e95a3da93ec28148b42c2ecaf82206ee9366bbb601449f",
+  "lean_sha256": "51cf0c90bd342180a5e139b7132a9343ba225990e18f664733464f95aec92e28",
+  "signature_sha256": "49c7e5d02a86b4c80d8a6257bd27311aabadf72b127614de15f580d583ce591d",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "Phase",
+      "code_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "diophantine",
+      "code_sha256": "01a2339e8803ab559ee32acacb0b48153c9db1b39e625fc541430a67b3b4caac"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "hamiltonianField",
+      "code_sha256": "4f05d76990caeba1ebe6bb44db6a853798fc2c13442b61c83c53f2406a82b648"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "periodicPerturbation",
+      "code_sha256": "3eee7d58e2489f2c35487a5c16e6c63e7758d61f9a63e66cd2a8e0f2fc24af29"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "Phase",
+      "code_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "Phase",
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "diophantine",
+      "code_sha256": "01a2339e8803ab559ee32acacb0b48153c9db1b39e625fc541430a67b3b4caac"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "hamiltonianField",
+      "code_sha256": "4f05d76990caeba1ebe6bb44db6a853798fc2c13442b61c83c53f2406a82b648"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "periodicPerturbation",
+      "code_sha256": "3eee7d58e2489f2c35487a5c16e6c63e7758d61f9a63e66cd2a8e0f2fc24af29"
+    }
+  ],
+  "paste_plus_pdf_bytes": 73356,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6940,
+      "sha256": "7de1ebdf3900d79001bcd44088cb41cc48318e2497e3966f9703f5c4bd0b6cf1"
+    },
+    "BATCH19g_PAGES.pdf": {
+      "bytes": 66416,
+      "sha256": "6e6b32b42b5aa2cfd7708fa3f25b0720afe808aa10729efb5370d358dc69ac5a"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 77865
+}

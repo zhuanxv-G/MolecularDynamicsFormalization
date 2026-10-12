@@ -125,11 +125,11 @@ def compile_batch(ch,p,batch):
         print('Reused passed single-file evidence:',batch)
     else:
         command=['lake','env','lean',f'Blueprint/Ch{ch:02}.lean']
-        result=subprocess.run(command,cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
-        log.write_bytes(result.stdout)
-        p.dump(evidence,dict(command=command,exit_code=result.returncode,input_sha256=input_sha,log_sha256=p.sha(log),decl_blocks={sid:d['block_sha256'] for sid,d in p.declarations().items()}))
-        if result.returncode:
-            print(result.stdout.decode('utf-8',errors='replace').encode(sys.stdout.encoding,errors='replace').decode(sys.stdout.encoding));raise SystemExit(result.returncode)
+        from local_compile import compile_recorded
+        receipt,output,reused=compile_recorded(command,ROOT,ROOT/f'Blueprint/Ch{ch:02}.lean',log,evidence,reuse_failure=True)
+        p.dump(evidence,dict(receipt,decl_blocks={sid:d['block_sha256'] for sid,d in p.declarations().items()}))
+        if receipt['exit_code']:
+            print(output.decode('utf-8',errors='replace').encode(sys.stdout.encoding,errors='replace').decode(sys.stdout.encoding));raise SystemExit(receipt['exit_code'])
         print('Single-file Lean passed:',batch)
     audit=json.loads((p.BASE/'local_audit.json').read_text(encoding='utf-8'))
     for item in audit['items'].values():item.update(compiled=True,compile_evidence=evidence.relative_to(ROOT).as_posix())

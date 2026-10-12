@@ -323,6 +323,23 @@ proofs['TwoOscillatorEnergyDecomposition']='''intro Ω E z
     positivity
   · rintro ⟨c,hc,hE,heq⟩
     simpa only [heq] using hE'''
+proofs['AnisotropicInitialEnergy']='''intro κ l ε c x hx
+  let U := anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])
+  change (0^2+(Real.sqrt (2*(c-U)))^2)/2+U=c
+  rw [Real.sq_sqrt (by dsimp [U];linarith)]
+  ring'''
+proofs['CircleInitialEnergy']='''intro κ l ε c x θ hx
+  let U := anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])
+  let R := Real.sqrt (2*(c-U))
+  change ((R*Real.cos θ)^2+(R*Real.sin θ)^2)/2+U=c
+  have ht : (R*Real.cos θ)^2+(R*Real.sin θ)^2=R^2 := by
+    calc
+      _=R^2*((Real.sin θ)^2+(Real.cos θ)^2) := by ring
+      _=R^2 := by rw [Real.sin_sq_add_cos_sq,mul_one]
+  rw [ht]
+  dsimp [R]
+  rw [Real.sq_sqrt (by dsimp [U];linarith)]
+  ring'''
 proofs['DiracApproximation']='''intro n r hr hp hs φ hφ
   apply Metric.tendsto_nhds.mpr
   intro e he
@@ -763,6 +780,50 @@ proofs['MixingCorrelation']='''intro n μ Φ a b k hμ hΦ hm ha hb hba hbb
   unfold MolecularDynamics.Chapter05Review.average
   dsimp [M]
   ring'''
+proofs['EulerLogCorrespondence']='''intro h hh
+  have hn : h ≠ 0 := ne_of_gt hh
+  have hp : 0 < 1+h^2 := by positivity
+  have hs : Real.sqrt (1+h^2) ≠ 0 := ne_of_gt (Real.sqrt_pos.2 hp)
+  have he : Real.exp (Real.log (1+h^2)/2)=Real.sqrt (1+h^2) := by
+    have he2 : (Real.exp (Real.log (1+h^2)/2))^2=1+h^2 := by
+      rw [pow_two,←Real.exp_add]
+      convert Real.exp_log hp using 1 <;> congr 1 <;> ring
+    nlinarith [Real.exp_pos (Real.log (1+h^2)/2),Real.sqrt_nonneg (1+h^2),Real.sq_sqrt hp.le]
+  have hbh : Real.arctan h/h*h=Real.arctan h := by field_simp [hn]
+  have haf : (Real.log (1+h^2)/(2*h))*h=Real.log (1+h^2)/2 := by field_simp [hn];ring
+  have hab : (-(Real.log (1+h^2))/(2*h))*h= -(Real.log (1+h^2)/2) := by field_simp [hn];ring
+  constructor
+  · intro z
+    constructor <;> ext i <;> fin_cases i <;>
+      simp [eulerLogFlow,MolecularDynamics.Chapter05Review.forwardEuler,
+        MolecularDynamics.Chapter05Review.backwardEuler,hbh,haf,hab,Real.exp_neg,
+        he,Real.cos_arctan,Real.sin_arctan]
+    all_goals field_simp <;> nlinarith [Real.sq_sqrt hp.le]
+  · intro backward z t
+    let a := (if backward then (-1 : ℝ) else 1)*Real.log (1+h^2)/(2*h)
+    let b := Real.arctan h/h
+    have ha := ((hasDerivAt_id t).const_mul a).exp
+    have hc := ((hasDerivAt_id t).const_mul b).cos
+    have hs := ((hasDerivAt_id t).const_mul b).sin
+    have hq := ha.mul ((hc.const_mul (z 0)).add (hs.const_mul (z 1)))
+    have hp := ha.mul ((hc.const_mul (z 1)).sub (hs.const_mul (z 0)))
+    have hv : HasDerivAt (fun s : ℝ => ![Real.exp (a*s)*(z 0*Real.cos (b*s)+z 1*Real.sin (b*s)),
+        Real.exp (a*s)*(z 1*Real.cos (b*s)-z 0*Real.sin (b*s))])
+        ![a*(Real.exp (a*t)*(z 0*Real.cos (b*t)+z 1*Real.sin (b*t)))+
+            b*(Real.exp (a*t)*(z 1*Real.cos (b*t)-z 0*Real.sin (b*t))),
+          a*(Real.exp (a*t)*(z 1*Real.cos (b*t)-z 0*Real.sin (b*t)))-
+            b*(Real.exp (a*t)*(z 0*Real.cos (b*t)+z 1*Real.sin (b*t)))] t := by
+      apply hasDerivAt_pi.mpr
+      intro i
+      fin_cases i
+      · convert hq using 1 <;> simp [mul_comm] <;> ring
+      · convert hp using 1 <;> simp [mul_comm] <;> ring
+    convert (PiLp.hasFDerivAt_toLp (𝕜:=ℝ) 2 _).comp_hasDerivAt t hv using 1
+    · funext s
+      ext i
+      fin_cases i <;> simp [eulerLogFlow,a,b]
+    · ext i
+      fin_cases i <;> simp [eulerLogField,eulerLogFlow,a,b] <;> ring'''
 import json,re
 from pathlib import Path
 extra=Path(__file__).with_name('ch05_elementary_candidates.json')

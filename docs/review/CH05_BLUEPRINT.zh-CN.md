@@ -114,6 +114,33 @@
 | MD-5.4-DoubleWellCoercivity | 196/217 | PASS | 待网站审计 | self-contained |
 | MD-5.4-DoubleWellDisconnected | 196/217 | PASS | 待网站审计 | self-contained |
 | MD-5.4-DoubleWellBasin | 196/217 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-UniformMicroErgodic | 197/218 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-5.4.1-MicroErgodicStandard | 197/218 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-FlowInvariant | 197–198/218–219 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-SetErgodic | 197–198/218–219 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-InvariantIndicator | 198/219 | PASS | 待网站审计 | checked+documented priors |
+| MD-5.4.1-InvariantIndicatorAverage | 198/219 | PASS | 待网站审计 | incomplete |
+| MD-5.4.1-ErgodicTimeEquivalence | 198/219 | PASS | 待网站审计 | incomplete |
+| MD-5.4.1-NonergodicSet | 198/219 | PASS | 待网站审计 | incomplete |
+| MD-5.4.1-HarmonicFlow | 198–199/219–220 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-HarmonicErgodic | 198/219 | PASS | 待网站审计 | incomplete |
+| MD-5.4.1-TwoOscillatorEnergy | 198–199/219–220 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-TwoOscillatorFlow | 198–199/219–220 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-TwoOscillatorTori | 199/220 | PASS | 待网站审计 | incomplete |
+| MD-5.4.1-Mixing | 199/220 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-KAMPersistence | 200/221 | PASS | 待网站审计 | incomplete |
+| MD-5.4.1-AnisotropicPotential | 201/222 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-AnisotropicAxisPrinted | 201/222 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-5.4.1-TwoOscillatorEnergyDecomposition | 199/220 | PASS | 待网站审计 | incomplete |
+| MD-5.4.1-CurveImageDimension | 202/223 | PASS | 待网站审计 | incomplete |
+| MD-5.4.1-PendulumPotential | 200/221 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-PendulumRegionPrinted | 200/221 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-5.4.1-AnisotropicInitialCurve | 201/222 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-AnisotropicInitialEnergy | 201/222 | PASS | 待网站审计 | incomplete |
+| MD-5.4.1-InitialSegmentPrinted | 201/222 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-5.4.1-CircleInitialPoints | 202/223 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-CircleInitialLaw | 202/223 | PASS | 待网站审计 | self-contained |
+| MD-5.4.1-CircleInitialEnergy | 202/223 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -121,6 +148,10 @@
 - MD-5.3.2-ShellWeakPrinted：[ERRATUM?]原ρ_ε在(5.7)前已除Zε，(5.8)再次除Zε；不得默删。Lean保存重复归一化的字面弱积分，对分布符号ρ0的测度配对采用microAverage解释，需独立裁定；无网站PASS。
 - MD-5.3.2-ShellPointValuePrinted：[ERRATUM?]右侧印刷为分布的点值ρ0(q,p)，左侧是依赖φ的标量；一般分布无这种点值。字面式无法忠实成为良类型等式，保留逐字原式并登记待解释。
 - MD-5.3.2-HarmonicQuadraturePrinted：[ERRATUM?]第一行上界印刷为√(2E)，下一行是√(2E)/Ω，二者对一般Ω不一致；不静默补Ω。
+- MD-5.4.1-UniformMicroErgodic：字面量词记录共满测集上的∀光滑可观测量；不静默交换∀g与AEz。原“低维例外”的表述不等价于一般零测集合；标准逐可观测量AE版本另条。
+- MD-5.4.1-AnisotropicAxisPrinted：[ERRATUM?]一般各向异性势的力不能凭“central”称径向，x轴正向处的角向导数未必为零；所选初始ẏ通常非零，亦不属于后句y=ẏ=0集合。探索整个能量面的结论只为模拟直觉，未提升为定理。
+- MD-5.4.1-PendulumRegionPrinted：[ERRATUM?]一般弹簧势在距离小于rest length时不随距离单调，不能由椭圆上的半径上界自动推出能量可达；给定图的特殊参数与一般系数需分开。“swept out”还不能保证单条轨迹覆盖静态能量投影，且边界U=E在全能量投影中可达，原“interior”需解释。
+- MD-5.4.1-InitialSegmentPrinted：[ERRATUM?]位置区间是线段，但p_y=√(2(E₀−U(x,0)))通常非仿射函数，完整四维初值集一般是曲线而非直线段；字面陈述与正则曲线像定理分开。
 
 ## 1. MD-5.1-LieDerivative · definition · 印刷p.180 / PDFp.201
 
@@ -5224,3 +5255,1267 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/DoubleWellBasin.json；blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b-DoubleWellBasin.lean；blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b-DoubleWellBasin.log。
 
 签名SHA256：`e2e35e5b77c4052340d78492c58c42b02ae264348739791c75574d95bbae5834`；原文SHA256：`3cd471a9678423b7ac837e0f74cc01dbdbec9ca10ee6ce18e812aef087c33366`。
+
+## 1. MD-5.4.1-UniformMicroErgodic · Definition 5.1 · 印刷p.197 / PDFp.218
+
+### 2. 原文陈述
+
+> Definition 5.1 A Hamiltonian system is said to be ergodic on an energy surface $\Sigma_E$ (microcanonically ergodic) if, for almost all trajectories $\tau$ emanating from initial conditions on $\Sigma_E$, and for any observable $g$, the following holds $\bar g=\operatorname{Av}_{H=E}(g)$, where $\bar g$ is defined in (5.9). By “almost all” we mean that there could be a low-dimensional subset for which the trajectory averages fail to equal the space averages.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def uniformMicroErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c,∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,
+    ContDiff ℝ ⊤ g → Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
+      MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.uniformMicroErgodic；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]沿用前文光滑可观测量且明确µ可积，避免给不存在空间平均的函数套等式；AE采用真实µ_E零测资格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。字面量词记录共满测集上的∀光滑可观测量；不静默交换∀g与AEz。原“低维例外”的表述不等价于一般零测集合；标准逐可观测量AE版本另条。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1049](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1049>)（`MD.Ch05.uniformMicroErgodic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`da9b8bd5013041e6a5bae1e5d641a3654b19d79bd51764c962fd65b559f85ba9`；原文SHA256：`34cc8d04e2fc3c46bba2b2129542f97b224933fdb1e5411e60fcf22ad355ff73`。
+
+## 1. MD-5.4.1-MicroErgodicStandard · definition · 印刷p.197 / PDFp.218
+
+### 2. 原文陈述
+
+> for almost all trajectories $\tau$ emanating from initial conditions on $\Sigma_E$, and for any observable $g$, $\bar g=\operatorname{Av}_{H=E}(g)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def microErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  ∀ g : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
+    ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.microErgodic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]标准每个L¹可观测量各自AE初值版本，和原字面共满测集版本分开；不声称两者已等价。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1056](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1056>)（`MD.Ch05.microErgodic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2af7a1147f5204e72e7413abdb59506c09fcf42a1c3e7f7c160d5e253bebef9e`；原文SHA256：`bad92947c4aa97b63558da0939e05924580fc9c48d12ad938e0f79face09e240`。
+
+## 1. MD-5.4.1-FlowInvariant · definition · 印刷p.197–198 / PDFp.218–219
+
+### 2. 原文陈述
+
+> An invariant set $A$ of the flow is one such that $\mathcal F_t(A)=A$, for all $t\ne0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def flowInvariant {X : Type*} (Φ : ℝ → X → X) (A : Set X) : Prop := ∀ t, Φ t '' A=A
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.flowInvariant；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原t≠0；真实流的零时刻恒等自动补上t=0，因而用实际全实时间集合像不变性。仅给定的真实流可解释为动力系统不变性。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1062](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1062>)（`MD.Ch05.flowInvariant`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c872138ed37e6d98aea5ab2af25f6aeebf241f5136e0a5af0623a48cc0f6b13e`；原文SHA256：`20fbdac666bc25e09405729525bb3c8847a00c8fb08d66cf2a63874bed06463a`。
+
+## 1. MD-5.4.1-SetErgodic · definition · 印刷p.197–198 / PDFp.218–219
+
+### 2. 原文陈述
+
+> Alternatively, we may say that a dynamical system as ergodic if the probability measure of any invariant set $A$ of the flow is either 0 or 1.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def setErgodic {X : Type*} [MeasurableSpace X] (μ : Measure X) (Φ : ℝ → X → X) : Prop :=
+  ∀ A : Set X, MeasurableSet A → MolecularDynamics.Chapter05Review.flowInvariant Φ A → μ A=0 ∨ μ A=1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.setErgodic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明示集合可测和实际概率测度背景；原“as ergodic”字面保留，不在逐字JSON中默改为“is”。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1066](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1066>)（`MD.Ch05.setErgodic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`118ba102be7cbf1a1fe38b1aef55bcccba7fb7d2d90cc7c396cc86277d938056`；原文SHA256：`6e2869cd4f8fca2c6292fd1e78725091598e4f8443a1ad34072144cba6223c4d`。
+
+## 1. MD-5.4.1-InvariantIndicator · unnumbered_claim · 印刷p.198 / PDFp.219
+
+### 2. 原文陈述
+
+> Then for any trajectory starting in $A$, we have that the average of $\phi$ along $\tau$ vanishes, i.e. $\bar\phi=\lim_{T\to\infty}T^{-1}\int_0^T\phi(z(t))dt=0$, since $A$ is an invariant set.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem invariantIndicator {X : Type*} (Φ : ℝ → X → X) (A : Set X)
+    (h : MolecularDynamics.Chapter05Review.flowInvariant Φ A) (z : X) (hz : z ∈ A) (t : ℝ) :
+    Aᶜ.indicator (fun _ => (1 : ℝ)) (Φ t z)=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.invariantIndicator；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原φ是可达空间内A的补集示性函数，实际Measure支撑空间限定时可用ambient Aᶜ示性函数；本条保留沿轨道逐点为零，完整无限时间平均另条。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch05.lean:1071](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1071>)（`MD.Ch05.invariantIndicator`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter05Review.invariantIndicator_proved。
+
+签名SHA256：`a0ef5341d234d232cfa68b0f254cea5b93af4d7a0ae7529db402136d864636e8`；原文SHA256：`ccb95f020813d796018f8b4786e581db01cfa5142dfb6d80ac26045830e365b8`。
+
+## 1. MD-5.4.1-InvariantIndicatorAverage · unnumbered_claim · 印刷p.198 / PDFp.219
+
+### 2. 原文陈述
+
+> $\bar\phi=\lim_{T\to\infty}T^{-1}\int_0^T\phi(z(t))dt=0$, since $A$ is an invariant set.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem invariantIndicatorAverage {X : Type*} (Φ : ℝ → X → X) (A : Set X)
+    (hA : MolecularDynamics.Chapter05Review.flowInvariant Φ A) (z : X) (hz : z ∈ A) :
+  MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) (Aᶜ.indicator (fun _ => (1 : ℝ))) 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.invariantIndicatorAverage；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1077](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1077>)（`MD.Ch05.invariantIndicatorAverage`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/InvariantIndicatorAverage.timebox.json。
+
+签名SHA256：`a074b94477d8a0509eedcc215e207e722453cdf1c7e070f3076b0a4f70116f2a`；原文SHA256：`c0f2ab442e87012d120ac147ef5d3efab0ed607bd562a15da6de7ac44c9387d3`。
+
+## 1. MD-5.4.1-ErgodicTimeEquivalence · unnumbered_claim · 印刷p.198 / PDFp.219
+
+### 2. 原文陈述
+
+> If we assume the system is ergodic, we must have $\operatorname{Pr}(\Sigma_E\setminus A)=0$, thus $\operatorname{Pr}(A)=1$. Since, according to the definition, equality of time and space averages is allowed to fail only on a set of probability measure zero, we have that either $\operatorname{Pr}(A)=0$ or $\operatorname{Pr}(A)=1$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem ergodicTimeAverage :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ,
+  IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
+  (∀ z,Φ 0 z=z) → (∀ s t z,Φ (s+t) z=Φ s (Φ t z)) →
+  Measurable (Function.uncurry Φ) →
+  (MolecularDynamics.Chapter05Review.setErgodic μ Φ ↔ ∀ g : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable g μ →
+    ∀ᵐ z ∂μ, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.average μ g))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.ergodicTimeAverage；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整全实时间可测流、概率保持、群律及L¹资格；对应标准每观测量AE版本，未将原共满测集量词交换当无条件事实。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1084](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1084>)（`MD.Ch05.ergodicTimeAverage`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：Mathlib存在离散Birkhoff/Ergodic基础，但缺本章连续时间积分平均与集合遍历性等价的接口；不建设大型遍历理论。
+
+签名SHA256：`c5ad461fd818ac25347023aad6247e65aa2fa2e9dbbb4e89817010d0cb0689c0`；原文SHA256：`a91767ca318a89f117ae51984bbfc807d8ae7cad5025a10d73bb2e4baf149091`。
+
+## 1. MD-5.4.1-NonergodicSet · unnumbered_claim · 印刷p.198 / PDFp.219
+
+### 2. 原文陈述
+
+> If a system is not ergodic, then there will be an invariant set $A$ whose probability measure is strictly between zero and one. The trajectories emanating from this set are unable to explore the entire energy surface and the corresponding trajectory averages will, at least for some observables, be different than the spatial average of that observable.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem nonergodicSet :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ,
+  IsProbabilityMeasure μ → (¬MolecularDynamics.Chapter05Review.setErgodic μ Φ ↔
+    ∃ A : Set (MolecularDynamics.Chapter05Review.E n),MeasurableSet A ∧ MolecularDynamics.Chapter05Review.flowInvariant Φ A ∧ 0 < μ A ∧ μ A < 1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.nonergodicSet；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1094](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1094>)（`MD.Ch05.nonergodicSet`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/NonergodicSet.timebox.json。
+
+签名SHA256：`e26f293f566f92bfbbf18919bc05748a7262c18b26429180ab256d1ba4ebb950`；原文SHA256：`e81db06eeadd1d58d5cced1d3d7b0f7a6b73cbfa66284f159874745007f798f8`。
+
+## 1. MD-5.4.1-HarmonicFlow · definition · 印刷p.198–199 / PDFp.219–220
+
+### 2. 原文陈述
+
+> As a very simple example, the harmonic oscillator is always ergodic on its energy surfaces (i.e. energy curves, in this case).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def harmonicFlow (Ω t : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
+  WithLp.toLp 2 ![z 0*Real.cos (Ω*t)+z 1/Ω*Real.sin (Ω*t),
+    z 1*Real.cos (Ω*t)-Ω*z 0*Real.sin (Ω*t)]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.harmonicFlow；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实解析振子流，用于完整遍历命题；Ω>0使用资格另条。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1102](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1102>)（`MD.Ch05.harmonicFlow`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`64fc0ef5a63be4217086a8b4dbc3ca023c7eccafbec582e92a6bd68bf0e4ed69`；原文SHA256：`31a7bb023e4424b6f9105253faca78d62281533f683b8538ad58f78dac877577`。
+
+## 1. MD-5.4.1-HarmonicErgodic · unnumbered_claim · 印刷p.198 / PDFp.219
+
+### 2. 原文陈述
+
+> As a very simple example, the harmonic oscillator is always ergodic on its energy surfaces (i.e. energy curves, in this case).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem harmonicErgodic : ∀ Ω c : ℝ,0 < Ω → 0 < c →
+  MolecularDynamics.Chapter05Review.microErgodic (harmonicEnergy Ω) c (harmonicFlow Ω)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.harmonicErgodic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]正频率/正能量，真实已定义振子和曲面测度；本条采用逐个L¹可观测量的AE版本，原平滑版本的共同零集量词另保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1108](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1108>)（`MD.Ch05.harmonicErgodic`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺椭圆曲面测度识别与连续时间圆周轨道平均桥接，不建设大型遍历/几何理论。
+
+签名SHA256：`1d0c517959a21200d70802cfda34956609b5c9ad5d69d214a6c784d7a44ac1ee`；原文SHA256：`13a2f2043ab8ff619fc3e5e4afce1758143d81102e8d526c3bb19099ea44b204`。
+
+## 1. MD-5.4.1-TwoOscillatorEnergy · Example 5.4 · 印刷p.198–199 / PDFp.219–220
+
+### 2. 原文陈述
+
+> Example 5.4 (2D Harmonic System) Consider a two-dimensional harmonic system, i.e. the system with Hamiltonian
+> \[H=p_1^2/2+p_2^2/2+\Omega_1^2q_1^2/2+\Omega_2^2q_2^2/2,\]
+> where $\Omega_1$ and $\Omega_2$ are two nonzero parameters. Because the two systems involving $q_1,p_1$ and $q_2,p_2$ are not coupled in the equations of motion, this system has two invariants $H_1=p_1^2/2+\Omega_1^2q_1^2/2$ and $H_2=p_2^2/2+\Omega_2^2q_2^2/2$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def twoOscillatorEnergy (Ω : Fin 2 → ℝ) (i : Fin 2) (z : MolecularDynamics.Chapter05Review.E 4) :=
+  (z (Fin.natAdd 2 i))^2/2+(Ω i)^2*(z (Fin.castAdd 2 i))^2/2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.twoOscillatorEnergy；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1113](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1113>)（`MD.Ch05.twoOscillatorEnergy`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`ab0745151619fe658a5e2649baf952b325bee0100a147563a933c303a3768ce2`；原文SHA256：`fb8dd5f411c3fd920f2f721aff349eba7d977e6e36f369bad71c934a1a6da0de`。
+
+## 1. MD-5.4.1-TwoOscillatorFlow · definition · 印刷p.198–199 / PDFp.219–220
+
+### 2. 原文陈述
+
+> Because the two systems involving $q_1,p_1$ and $q_2,p_2$ are not coupled in the equations of motion, this system has two invariants $H_1$ and $H_2$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def twoOscillatorFlow (Ω : Fin 2 → ℝ) (t : ℝ) (z : MolecularDynamics.Chapter05Review.E 4) : MolecularDynamics.Chapter05Review.E 4 :=
+  WithLp.toLp 2 ![z 0*Real.cos (Ω 0*t)+z 2/(Ω 0)*Real.sin (Ω 0*t),
+    z 1*Real.cos (Ω 1*t)+z 3/(Ω 1)*Real.sin (Ω 1*t),
+    z 2*Real.cos (Ω 0*t)-Ω 0*z 0*Real.sin (Ω 0*t),
+    z 3*Real.cos (Ω 1*t)-Ω 1*z 1*Real.sin (Ω 1*t)]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.twoOscillatorFlow；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确相空间排列(q1,q2,p1,p2)和真实两个振子流；非零频率资格另条。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1118](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1118>)（`MD.Ch05.twoOscillatorFlow`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c128a4fd2e0f5fad8a3fdebc90d779961388bbca3f328bec4708ed782344fb77`；原文SHA256：`bcdacba0463b570e19690f91a4c42b9f3435af8323cdc372bc0107c06eaf6a8f`。
+
+## 1. MD-5.4.1-TwoOscillatorTori · Example 5.4 · 印刷p.199 / PDFp.220
+
+### 2. 原文陈述
+
+> For any $E_1,E_2>0$, the set of points satisfying $H_1=E_1,H_2=E_2$ is a two-dimensional torus. If the frequencies $\Omega_1$ and $\Omega_2$ are not rationally related (i.e. $\Omega_1/\Omega_2$ is an irrational number), then for any $E_1,E_2$ the torus will eventually be filled in by any trajectory. On the other hand, the energy surface $H=E$ is the union of all such 2-tori with $E_1+E_2=E$. There is no mechanism for the system to move from one torus to the other, so the system is not ergodic.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem twoOscillatorTori : ∀ (Ω : Fin 2 → ℝ) (c : Fin 2 → ℝ),
+  (∀ i,Ω i ≠ 0) → (∀ i,0 < c i) →
+  let T := {z : MolecularDynamics.Chapter05Review.E 4 | ∀ i,twoOscillatorEnergy Ω i z=c i}
+  (Nonempty (T ≃ₜ (Metric.sphere (0 : MolecularDynamics.Chapter05Review.E 2) 1 × Metric.sphere (0 : MolecularDynamics.Chapter05Review.E 2) 1))) ∧
+  (∀ z ∈ T,∀ t,∀ i,twoOscillatorEnergy Ω i (twoOscillatorFlow Ω t z)=c i) ∧
+  (Irrational (Ω 0/Ω 1) → ∀ z ∈ T,closure (range (fun t => twoOscillatorFlow Ω t z))=T) ∧
+  (∀ E > 0,¬MolecularDynamics.Chapter05Review.setErgodic (MolecularDynamics.Chapter05Review.microMeasure (fun z => ∑ i,twoOscillatorEnergy Ω i z) E)
+    (twoOscillatorFlow Ω))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.twoOscillatorTori；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]正分能量、非零频率；“填满”解释为实际轨道稠密，非有限时间覆盖；原总能量面分解包括一个分能量为0的退化圆，不能只以正分能量2-tori穷尽整个集合。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1126](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1126>)（`MD.Ch05.twoOscillatorTori`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺完整椭圆乘积拓扑、Kronecker稠密及正测度不变子域桥接；不建设新的连续遍历理论。
+
+签名SHA256：`5b99d3f7b2949ab52f7e3a7e8284997faa8b9a192823ef378c2716d71f355f82`；原文SHA256：`90763fe530a2c0b9e9e3e9a6a2935408bdb37329cd6154949c376aa5ce83128b`。
+
+## 1. MD-5.4.1-Mixing · definition · 印刷p.199 / PDFp.220
+
+### 2. 原文陈述
+
+> An even stronger property than the ergodic property is the concept of a mixing system. For a mixing system, the finite time density $\rho(z;t)$ converges, in the weak sense, to the invariant distribution $\rho_\infty(z)$, as $t\to\infty$. That is, we have, for all test functions $\phi$ in some chosen space
+> \[\lim_{t\to\infty}\langle\phi,\rho(\cdot;t)\rangle=\langle\phi,\rho_\infty\rangle.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def weakMixing {n : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  ∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ,Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
+  Continuous φ → Bornology.IsBounded (range φ) →
+  Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.weakMixing；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际不变参考测度上的AC概率初值、有界连续测试函数；参考测度是μ，可取微正则测度；避免旧density r谓词暗中以Lebesgue可积替代微正则可积。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1138](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1138>)（`MD.Ch05.weakMixing`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`db07c204413cad7ed14d71e2ab496f8897bdb0f23c4482b53c32d5145974b445`；原文SHA256：`54bad3580638c9b792eebd1587da5edb2c686d1d9bc7a0b88cd7d7cd286373a4`。
+
+## 1. MD-5.4.1-KAMPersistence · unnumbered_claim · 印刷p.200 / PDFp.221
+
+### 2. 原文陈述
+
+> The energy surface is three-dimensional (represented as the zero-set of a single constraint in four-dimensional space), but apparently it bifurcates into a collection of isolated components (bounded by two-dimensional closed surfaces). These are none other than the tori predicted by the KAM theory [386].
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem kam :
+  ∀ n (H0 : MolecularDynamics.Chapter05Review.E n → ℝ) (P : MolecularDynamics.Chapter05Review.Phase n → ℝ) (I0 : MolecularDynamics.Chapter05Review.E n) κ τ,
+  0 < n → AnalyticOnNhd ℝ H0 univ → AnalyticOnNhd ℝ P univ → MolecularDynamics.Chapter05Review.periodicPerturbation P →
+  Function.Bijective (fderiv ℝ (gradient H0) I0) → MolecularDynamics.Chapter05Review.diophantine (gradient H0 I0) κ τ →
+  ∃ δ > 0, ∀ ε : ℝ, |ε| < δ → ∃ K : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.Phase n,
+    ContDiff ℝ 1 K ∧
+    (∀ x,Function.Injective (fderiv ℝ K x)) ∧
+    (∀ x (k : Fin n → ℤ), K (x+WithLp.toLp 2 (fun i => (k i : ℝ)))=
+      ((K x).1+WithLp.toLp 2 (fun i => (k i : ℝ)),(K x).2)) ∧
+    (∀ x,(fderiv ℝ K x) (gradient H0 I0)=MolecularDynamics.Chapter05Review.hamiltonianField
+      (fun z => H0 z.2+ε*P z) (K x)) ∧
+    (∀ x,‖(K x).2-I0‖ < 1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.kam；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]书中引用的KAM持久化作独立完整定理展开：解析近可积Hamiltonian、频率映射非退化和Diophantine条件，实际周期提升的C¹浸入不变环面及动力学共轭；不宣称图中双摆的参数已满足这些资格，也不称环面是三维能量面拓扑连通分支。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1145](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1145>)（`MD.Ch05.kam`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺当前有限维Hamiltonian KAM/Nash–Moser及不变环面持久化理论；按用户要求不建设。
+
+签名SHA256：`49c7e5d02a86b4c80d8a6257bd27311aabadf72b127614de15f580d583ce591d`；原文SHA256：`3c5624581342d2dec961c5c01500cdeeafa23302af3cffbeb4d98050f22a6790`。
+
+## 1. MD-5.4.1-AnisotropicPotential · Example 5.6 · 印刷p.201 / PDFp.222
+
+### 2. 原文陈述
+
+> Example 5.6 (Anisotropic Oscillator) The anisotropic oscillator was used in Chap. 1 to illustrate the concept of a chaotic dynamical system.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def anisotropicPotential (κ l ε : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) :=
+  MolecularDynamics.Chapter01Review.anisotropicEnergy κ l ε (z 0) (z 1) 0 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.anisotropicPotential；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1160](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1160>)（`MD.Ch05.anisotropicPotential`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`6b501d55e81b68de2c63857c8285c2c8ba0309cdbbdf8c1387459b8a12923b72`；原文SHA256：`11d5105bd1f71bd914485768950efab62f39884a5f000da80a5c520ccbbe3bfb`。
+
+## 1. MD-5.4.1-AnisotropicAxisPrinted · unnumbered_claim · 印刷p.201 / PDFp.222
+
+### 2. 原文陈述
+
+> Fix, arbitrarily, a small set of initial conditions for the anisotropic pendulum at energy $E_0$, with positions in a small interval on the positive $x$ axis, $1.05\le x\le1.15$ and $y=0$. For each point $(x,0)$ taken from this set select the initial velocities as $\dot x=0$, $\dot y=[2(E_0-U(x,0))]^{1/2}$. The set $y=0$, $\dot y=0$ is invariant under the differential equations of the perturbed central force problem, since the force acts in the radial direction; our choice of initial conditions ensures that trajectories explore the larger $H=E_0$ energy surface.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem anisotropicAxisPrinted : ∀ (κ l ε : ℝ) (z : ℝ → MolecularDynamics.Chapter05Review.Phase 2),
+  0 < κ → 0 < l →
+  (∀ t,HasDerivAt z ((z t).2,-gradient (anisotropicPotential κ l ε) (z t).1) t) →
+  (z 0).1 1=0 → (z 0).2 1=0 → ∀ t,(z t).1 1=0 ∧ (z t).2 1=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.anisotropicAxisPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]用第1章实际各向异性势陈述全真实轨道上的轴不变义务；κ/l正及全时间可微轨道，不把轴不变结论作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。[ERRATUM?]一般各向异性势的力不能凭“central”称径向，x轴正向处的角向导数未必为零；所选初始ẏ通常非零，亦不属于后句y=ẏ=0集合。探索整个能量面的结论只为模拟直觉，未提升为定理。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1165](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1165>)（`MD.Ch05.anisotropicAxisPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原各向异性力/轴不变说法需语义裁定；不证明，不恢复第1章。
+
+签名SHA256：`240bcbdb7d69f121ffcebec7afec469ceac4285fbaaecbe9e2f79e2b895e9be3`；原文SHA256：`126eb572238aad0bcec3a84a0109a76da38b2e3e8eef057b9dbf43a822b1c794`。
+
+## 1. MD-5.4.1-TwoOscillatorEnergyDecomposition · unnumbered_claim · 印刷p.199 / PDFp.220
+
+### 2. 原文陈述
+
+> On the other hand, the energy surface $H=E$ is the union of all such 2-tori with $E_1+E_2=E$. There is no mechanism for the system to move from one torus to the other, so the system is not ergodic.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem twoOscillatorEnergyDecomposition : ∀ (Ω : Fin 2 → ℝ) (E : ℝ) (z : MolecularDynamics.Chapter05Review.E 4),
+  ((∑ i,twoOscillatorEnergy Ω i z)=E) ↔
+  ∃ c : Fin 2 → ℝ,(∀ i,0 ≤ c i) ∧ (∑ i,c i)=E ∧ (∀ i,twoOscillatorEnergy Ω i z=c i)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.twoOscillatorEnergyDecomposition；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]包括c_i=0的退化边界；原“all such 2-tori”字面忽略零分能量层，完整全能量面分解不能遗漏这些层。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1173](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1173>)（`MD.Ch05.twoOscillatorEnergyDecomposition`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/TwoOscillatorEnergyDecomposition.timebox.json。
+
+签名SHA256：`7708eb933a2787b1cb50647b365c7095a63d311c0f31481addb7a3aa0458338a`；原文SHA256：`63793cd77f8b9b8dda0a6f0d9822a1fefb2e541e39cd0394d171cf6291166992`。
+
+## 1. MD-5.4.1-CurveImageDimension · unnumbered_claim · 印刷p.202 / PDFp.223
+
+### 2. 原文陈述
+
+> The segment of initial conditions, a one-dimensional object, when transformed by the smooth map defined by solving initial value problems, should result, again, in a one-dimensional object, i.e. a curve. Yet it appears also to provide a dense covering of a two-dimensional region in the position projection.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem curveImageDimension : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (γ : ℝ → MolecularDynamics.Chapter05Review.E n),
+  MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ ⊤ (Function.uncurry Φ) → ContDiff ℝ ⊤ γ →
+  (∀ s,deriv γ s ≠ 0) → ∀ t,
+  ContDiff ℝ ⊤ (fun s => Φ t (γ s)) ∧ (∀ s,deriv (fun r => Φ t (γ r)) s ≠ 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.curveImageDimension；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原“one-dimensional”以实际正则参数曲线及全平滑自治流实现；由群律推出可逆场导数而非假设最终像曲线正则。位置投影未必浸入，且有限时刻的曲线本身不是一般二维开集；视觉稠密覆盖仅作为数值观察保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1180](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1180>)（`MD.Ch05.curveImageDimension`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CurveImageDimension.timebox.json。
+
+签名SHA256：`aac43a23772b06006912071ec9cf22b7e15ed87012bc481823295fdfc3c93cb5`；原文SHA256：`fedac56a9c9016eb1984856ba840ce4f1c411b266d3544dad3befebe71b434a3`。
+
+## 1. MD-5.4.1-PendulumPotential · Example 5.5 · 印刷p.200 / PDFp.221
+
+### 2. 原文陈述
+
+> Example 5.5 (Double Pendulum) To explore some of the issues related to ergodicity, let us return to the double pendulum considered in Chap. 3.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def pendulumPotential (k₁ k₂ l₁ l₂ : ℝ) (q : MolecularDynamics.Chapter05Review.E 2) :=
+  k₁/2*(Real.sqrt ((q 0)^2+(q 1)^2)-l₁)^2+
+    k₂/2*(Real.sqrt ((q 0)^2+(q 1+2)^2)-l₂)^2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.pendulumPotential；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]引用的真实双弹簧势按§3.5印刷126/PDF148已存在原页核对：U=k₁(r₁−l₁)²/2+k₂(r₂−l₂)²/2，r₁=√(x²+y²)、r₂=√(x²+(y+2)²)；不是把数值轨迹图当势的定义。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1188](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1188>)（`MD.Ch05.pendulumPotential`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`e7a037b6d046800c623236b4fe3a6ac05ab1644a1f4fb080240f70f692847b49`；原文SHA256：`f70eedeb7d93637e8e9f3916f69e049a89b37a23a9726e2558e695c07cbcc553`。
+
+## 1. MD-5.4.1-PendulumRegionPrinted · unnumbered_claim · 印刷p.200 / PDFp.221
+
+### 2. 原文陈述
+
+> For given positive values of the coefficients, the region swept out in the plane by trajectories can be seen to be a union of intersections of pairs of disks centered at the origin and $(0,-2)$, with radii $r_1,r_2$ respectively, which themselves represent a point on an ellipse in the first quadrant. Determining the boundary of this region analytically is difficult but it is easy to find it numerically. For the special case $k_1=k_2=2$, $l_1=l_2=1$, and $E=4$ that the projected region covered by positions at this energy is the interior of the level set $U=E$ shown as a dark oval curve in the three panels of Fig. 5.4.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem pendulumRegionPrinted : ∀ k₁ k₂ l₁ l₂ c : ℝ,
+  0 < k₁ → 0 < k₂ → 0 < l₁ → 0 < l₂ → 0 < c →
+  {q : MolecularDynamics.Chapter05Review.E 2 | ∃ p : MolecularDynamics.Chapter05Review.E 2,
+    ((p 0)^2+(p 1)^2)/2+pendulumPotential k₁ k₂ l₁ l₂ q=c}=
+  {q : MolecularDynamics.Chapter05Review.E 2 | ∃ r₁ > 0,∃ r₂ > 0,
+    k₁/2*(r₁-l₁)^2+k₂/2*(r₂-l₂)^2=c ∧
+    Real.sqrt ((q 0)^2+(q 1)^2) ≤ r₁ ∧ Real.sqrt ((q 0)^2+(q 1+2)^2) ≤ r₂}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.pendulumRegionPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]原描述的可达region按所有能量初值的位置投影解释，单位动能；真实两圆盘中心、正半径和半径能量椭圆完整保留，不假设所求等式。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。[ERRATUM?]一般弹簧势在距离小于rest length时不随距离单调，不能由椭圆上的半径上界自动推出能量可达；给定图的特殊参数与一般系数需分开。“swept out”还不能保证单条轨迹覆盖静态能量投影，且边界U=E在全能量投影中可达，原“interior”需解释。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1194](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1194>)（`MD.Ch05.pendulumRegionPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：一般圆盘并集说法及边界/轨道覆盖解释需原页语义裁定，不证明。
+
+签名SHA256：`08b2f27e0ad18ac15080c1a562414d9c42f82beef1411d3977b732d949f888c7`；原文SHA256：`81a30b68dd0f3db71bd064d28fc16cbabae6b63f4518e277fdcf538caeda9ab6`。
+
+## 1. MD-5.4.1-AnisotropicInitialCurve · definition · 印刷p.201 / PDFp.222
+
+### 2. 原文陈述
+
+> Fix, arbitrarily, a small set of initial conditions for the anisotropic pendulum at energy $E_0$, with positions in a small interval on the positive $x$ axis, $1.05\le x\le1.15$ and $y=0$. For each point $(x,0)$ taken from this set select the initial velocities as $\dot x=0$, $\dot y=[2(E_0-U(x,0))]^{1/2}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def anisotropicInitialCurve (κ l ε c x : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=
+  (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![0,Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))])
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.anisotropicInitialCurve；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1204](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1204>)（`MD.Ch05.anisotropicInitialCurve`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`a4e572f3b53fb1cf550d330040569f3fa429242719fc5907fb53a0c27e1c6053`；原文SHA256：`b55a7af6189257536d26f72c548bd5cff4a3ec68d2bc59c037c4097b2e1001f7`。
+
+## 1. MD-5.4.1-AnisotropicInitialEnergy · unnumbered_claim · 印刷p.201 / PDFp.222
+
+### 2. 原文陈述
+
+> For each point $(x,0)$ taken from this set select the initial velocities as $\dot x=0$, $\dot y=[2(E_0-U(x,0))]^{1/2}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem anisotropicInitialEnergy : ∀ κ l ε c x : ℝ,
+  0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0]) →
+  let z := anisotropicInitialCurve κ l ε c x
+  ((z.2 0)^2+(z.2 1)^2)/2+anisotropicPotential κ l ε z.1=c
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.anisotropicInitialEnergy；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]根号内非负且单位质量；实际初值能量等式，不从构造宣称轨道遍历整个能量面。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1209](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1209>)（`MD.Ch05.anisotropicInitialEnergy`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/AnisotropicInitialEnergy.timebox.json。
+
+签名SHA256：`0b45d8db8fff2860e80f9379f5e083f5cb882381b198eae08c01330c284d6a89`；原文SHA256：`2ef3273de0838e77059bf689fb26abb7a9f8f4c2716b209c84a7199c33cb7350`。
+
+## 1. MD-5.4.1-InitialSegmentPrinted · unnumbered_claim · 印刷p.201 / PDFp.222
+
+### 2. 原文陈述
+
+> The set of initial conditions forms a line segment in the four-dimensional phase space.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem initialSegmentPrinted : ∀ κ l ε c : ℝ,
+  (∀ x ∈ Icc (105/100 : ℝ) (115/100),0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])) →
+  ∃ a b : MolecularDynamics.Chapter05Review.Phase 2,anisotropicInitialCurve κ l ε c '' Icc (105/100 : ℝ) (115/100)=segment ℝ a b
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.initialSegmentPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]保留真实相空间对象、书中区间及实初值的非负根号资格；不把线段结论作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。[ERRATUM?]位置区间是线段，但p_y=√(2(E₀−U(x,0)))通常非仿射函数，完整四维初值集一般是曲线而非直线段；字面陈述与正则曲线像定理分开。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1217](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1217>)（`MD.Ch05.initialSegmentPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原四维line segment疑误待裁定，不证明。
+
+签名SHA256：`a7d1ec410e6d82477b8be6e3734acf345cbbdb895dda0c8ea442856aeec90717`；原文SHA256：`67f57311eb09b2ebe24411bd007e96e98a50e7a6d4829a41fa4179012e22ec85`。
+
+## 1. MD-5.4.1-CircleInitialPoints · definition · 印刷p.202 / PDFp.223
+
+### 2. 原文陈述
+
+> Now consider an alternative initial set. Begin, as before, with a line segment on the $x$-axis, but now choose the initial momenta from the uniform distribution on the circle $p_x^2+p_y^2=2(E_0-U(x,0))$. In this way we again get initial conditions on the $H=E_0$ energy surface, but this time the points are not close to one another in phase space, since the momenta of successive points may differ greatly.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def circleInitialPoints (κ l ε c x θ : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=
+  let R := Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))
+  (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![R*Real.cos θ,R*Real.sin θ])
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.circleInitialPoints；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1223](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1223>)（`MD.Ch05.circleInitialPoints`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c55c50e01f890f1051736300ef8719589d7c13d0ea2474a4f5dc7aab0a1150d4`；原文SHA256：`2a5a8783ee27609af2e0d144be5245d96ea4e7b7b7d120a92ce5f1453ad5e2fb`。
+
+## 1. MD-5.4.1-CircleInitialLaw · definition · 印刷p.202 / PDFp.223
+
+### 2. 原文陈述
+
+> choose the initial momenta from the uniform distribution on the circle $p_x^2+p_y^2=2(E_0-U(x,0))$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def circleInitialLaw (κ l ε c x : ℝ) : Measure (MolecularDynamics.Chapter05Review.Phase 2) :=
+  Measure.map (circleInitialPoints κ l ε c x)
+    ((ENNReal.ofReal (2*Real.pi))⁻¹ • (volume.restrict (Ioc (0 : ℝ) (2*Real.pi))))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.circleInitialLaw；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]固定x的真实均匀角测度及角参数化推送；不把任意集合叫uniform，不添加跨x独立性假设；概率总质量尚未逐条证明。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1229](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1229>)（`MD.Ch05.circleInitialLaw`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`a648e743b146267cb9f3e57ad626ec7febfe3c4101220c14e91fa33efda34ec8`；原文SHA256：`b29ff0458bfabe585cefc6445f8d85713fd2bd757ffbfab07ef4eab92a7885d6`。
+
+## 1. MD-5.4.1-CircleInitialEnergy · unnumbered_claim · 印刷p.202 / PDFp.223
+
+### 2. 原文陈述
+
+> In this way we again get initial conditions on the $H=E_0$ energy surface.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem circleInitialEnergy : ∀ κ l ε c x θ : ℝ,
+  0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0]) →
+  let z := circleInitialPoints κ l ε c x θ
+  ((z.2 0)^2+(z.2 1)^2)/2+anisotropicPotential κ l ε z.1=c
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.circleInitialEnergy；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]固定位置的实动量圆，根号非负；全能量等式不意味着极限图像填满可达区域。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1235](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1235>)（`MD.Ch05.circleInitialEnergy`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CircleInitialEnergy.timebox.json。
+
+签名SHA256：`ab86b0997dc8928f6f1bfdf143515614e37f38c56bf0560628d12ff65f4c0776`；原文SHA256：`39be934308c73e49298770dba816359e4e3b70bf6ef06fe6f7ced1558d73ef65`。

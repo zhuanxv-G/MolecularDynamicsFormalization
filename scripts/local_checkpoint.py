@@ -53,6 +53,8 @@ if (ROOT/'scripts/local_chapter_start.py').exists():
     paths.append('scripts/local_chapter_start.py')
 if (ROOT/'scripts/local_short_search.py').exists():
     paths.append('scripts/local_short_search.py')
+if (ROOT/'scripts/local_compile.py').exists():
+    paths.append('scripts/local_compile.py')
 if (ROOT/f'scripts/ch{ch:02}_short_candidates.py').exists():
     paths.append(f'scripts/ch{ch:02}_short_candidates.py')
 if ch==5:

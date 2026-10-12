@@ -1,0 +1,67 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19f",
+  "source_ids": [
+    "MD-5.4.1-Mixing"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 220,
+      "printed_page": 199
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "498211c89c126c1ba9e95a3da93ec28148b42c2ecaf82206ee9366bbb601449f",
+  "lean_sha256": "51cf0c90bd342180a5e139b7132a9343ba225990e18f664733464f95aec92e28",
+  "signature_sha256": "db07c204413cad7ed14d71e2ab496f8897bdb0f23c4482b53c32d5145974b445",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "average",
+      "code_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "average",
+      "code_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "weakMixing",
+      "code_sha256": "db07c204413cad7ed14d71e2ab496f8897bdb0f23c4482b53c32d5145974b445"
+    }
+  ],
+  "paste_plus_pdf_bytes": 188182,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4747,
+      "sha256": "ef0f101e7e0735dbad99e0113c87f69612a45c4ec246763b8ec329fe85bcbddd"
+    },
+    "BATCH19f_PAGES.pdf": {
+      "bytes": 183435,
+      "sha256": "0abb8592cb891b9c5ace06d0dc0dcef251d48bb1a421cd171df0274400807244"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 190550
+}
