@@ -240,7 +240,7 @@ def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradie
 def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
 ```
 
-### MD.Ch05.outwardNormalFor (Blueprint/Ch05.lean:317)
+### MD.Ch05.outwardNormalFor (Blueprint/Ch05.lean:320)
 ```lean
 def outwardNormalFor {n : ℕ} (A : Set (MolecularDynamics.Chapter05Review.E n)) (ν : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
   ∀ z ∈ frontier A,∃ O : Set (MolecularDynamics.Chapter05Review.E n),∃ r : MolecularDynamics.Chapter05Review.E n → ℝ,

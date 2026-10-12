@@ -1,0 +1,115 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12e",
+  "source_ids": [
+    "MD-5.3.2-EnergyDensityInvariant"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 211,
+      "printed_page": 190
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e4b45fc25a45e71eddbe887cb6661046108dcbe90dcc23a5052370b8bf5e4da3",
+  "lean_sha256": "2ef5fd3009d8cec142a96101c8f6c12d99cd277c2115957c56727e096490874b",
+  "signature_sha256": "92cd5df13260bb0396a03517f7fe662662abb5242f299eaa7b52ef2be6f2141b",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "densityMeasure",
+      "code_sha256": "0c1862948c96055705abf13fab30d11ff0404c481476b29077db20458fa6cb70"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "flow",
+      "code_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "lie",
+      "code_sha256": "6535744b913bb6f850c290344fb7d4a36f3647f43500d689c3a8228a92a2f8a8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "measurePropagator",
+      "code_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "probabilityDensity",
+      "code_sha256": "ec7111064a60d4e0ffb4738f7e5dfc539785ac2942850786ec72672a204a5e2f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "density",
+      "code_sha256": "cb24f1ce958a8a1e95b72fdcf4783440869a7e892f6e1482e9123c8154016f86"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "densityMeasure",
+      "code_sha256": "0c1862948c96055705abf13fab30d11ff0404c481476b29077db20458fa6cb70"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "flow",
+      "code_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "lie",
+      "code_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "measurePropagator",
+      "code_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "probabilityDensity",
+      "code_sha256": "ec7111064a60d4e0ffb4738f7e5dfc539785ac2942850786ec72672a204a5e2f"
+    }
+  ],
+  "paste_plus_pdf_bytes": 89240,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6621,
+      "sha256": "4ff3bc2cf6e6f7f42474031743e5f7a81845ae1cec9397a154c8f4bd12764ef0"
+    },
+    "BATCH12e_PAGES.pdf": {
+      "bytes": 82619,
+      "sha256": "8e2d1743f4a97d7e6ef6531bf047dd783857551c0882beb48373c5d07622af64"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 93594
+}

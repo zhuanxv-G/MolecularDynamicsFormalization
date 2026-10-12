@@ -1,0 +1,61 @@
+{
+  "batch": "BATCH13",
+  "subtask": "BATCH13f",
+  "source_ids": [
+    "MD-5.3.2-SurfaceAreaFormula"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 212,
+      "printed_page": 191
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e4b45fc25a45e71eddbe887cb6661046108dcbe90dcc23a5052370b8bf5e4da3",
+  "lean_sha256": "2ef5fd3009d8cec142a96101c8f6c12d99cd277c2115957c56727e096490874b",
+  "signature_sha256": "7a034b642a61e25498d876f94db0a7cfa9781c8a3ecf0c6af9cdbbd1dee80649",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "hausdorffArea",
+      "code_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "hausdorffArea",
+      "code_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    }
+  ],
+  "paste_plus_pdf_bytes": 102011,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4370,
+      "sha256": "eba3ec0431e66e4cf58257ecff5a5bb2cbf47757ab0e11553576622efba09883"
+    },
+    "BATCH13f_PAGES.pdf": {
+      "bytes": 97641,
+      "sha256": "2ab22003d04461d84ab1a7c6938fd82819054847c1036000d48b63d6a774ba67"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 104200
+}

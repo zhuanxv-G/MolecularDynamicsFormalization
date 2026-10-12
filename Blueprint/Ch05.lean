@@ -9,6 +9,9 @@ import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
+import Mathlib.Analysis.Calculus.Taylor
+import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+import MolecularDynamics.Chapter01.ReviewDefinitions
 import Mathlib.Tactic
 
 open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter05Review
@@ -688,5 +691,198 @@ theorem gaussianDeltaWeak : ∀ φ : ℝ → ℝ,Continuous φ → Bornology.IsB
       filter_upwards [] with x
       rw [←hpoint]
       ring
+
+/-- source_id: MD-5.3.2-WeakStationary · definition · §5.3.2 · 印刷p.189–190 / PDFp.210–211
+[EXTRA] [EXTRA]真实测度对实际测试Lie导数的零配对实现弱方程，来自形式伴随；不是把不可微分布当普通密度求导。用全空间上的测度表达，包括受限D的测度。 -/
+def weakStationary {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (μ : Measure (MolecularDynamics.Chapter05Review.E n)) : Prop :=
+  ∀ φ : MolecularDynamics.Chapter05Review.testSpace n, Integrable (MolecularDynamics.Chapter05Review.lie f φ.1) μ ∧ (∫ z,MolecularDynamics.Chapter05Review.lie f φ.1 z ∂μ)=0
+
+/-- source_id: MD-5.3.2-EnsembleAverage · definition · §5.3.2 · 印刷p.190 / PDFp.211 -/
+def ensembleAverageOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.E n → ℝ) (t : ℝ) :=
+  densityAverageOn D (ρ t) φ
+
+/-- source_id: MD-5.3.2-ConvergenceHeuristic · unnumbered_claim · §5.3.2 · 印刷p.190 / PDFp.211
+[EXTRA] [EXTRA]实际流、流不变D、原Hamiltonian背景使用的体积保持先验、平滑概率密度和紧支持测试函数明示；不替换成任意标量函数，不将最终平均收敛作假设。 -/
+theorem convergenceHeuristic : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n))
+    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.E n → ℝ),
+  NullMeasurableSet D volume → MolecularDynamics.Chapter05Review.flow f Φ → (∀ t,Φ t '' D=D) →
+  (∀ t,MeasurePreserving (Φ t) volume volume) →
+  ContDiff ℝ 1 (Function.uncurry ρ) → ContDiff ℝ ⊤ φ → HasCompactSupport φ →
+  (∀ t,probabilityDensityOn D (ρ t)) →
+  (∀ t,densityMeasureOn D (ρ t)=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D (ρ 0))) →
+  Tendsto (fun t => ∫ z in D,φ z*deriv (fun s => ρ s z) t) atTop (𝓝 0) →
+    ∃ L : ℝ,Tendsto (ensembleAverageOn D ρ φ) atTop (𝓝 L) := by
+  sorry
+
+/-- source_id: MD-5.3.2-HamiltonianEnergyIntegral · unnumbered_claim · §5.3.2 · 印刷p.190 / PDFp.211 -/
+theorem hamiltonianEnergyIntegral {Nc : ℕ} (H : MolecularDynamics.SymplecticCoordinates Nc → ℝ) (z : MolecularDynamics.SymplecticCoordinates Nc) :
+  MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H) H z=0 := by
+  rw [MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson]
+  exact MolecularDynamics.textbookPoissonBracket_self H z
+
+/-- source_id: MD-5.3.2-EnergyDensityInvariant · unnumbered_claim · §5.3.2 · 印刷p.190 / PDFp.211
+[EXTRA] [EXTRA]给定真实流、真实能量第一积分和既有体积保持先验；明确r∘H为实际归一化概率密度，不声称任意r∘H都可积。原Hamiltonian触发的能量和体积先验分别登记，不把密度测度不变结论作假设。 -/
+theorem energyDensityInvariant :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    Φ (r : ℝ → ℝ), MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 1 H → ContDiff ℝ 1 r →
+    (∀ z,MolecularDynamics.Chapter05Review.lie f H z=0) → (∀ t,MeasurePreserving (Φ t) volume volume) →
+    MolecularDynamics.Chapter05Review.probabilityDensity (r ∘ H) → ∀ t,
+    MolecularDynamics.Chapter05Review.measurePropagator Φ t (MolecularDynamics.Chapter05Review.densityMeasure (r ∘ H))=MolecularDynamics.Chapter05Review.densityMeasure (r ∘ H) := by
+  sorry
+
+/-- source_id: MD-5.3.2-ShellWeight · definition · §5.3.2 · 印刷p.190 / PDFp.211 -/
+def shellWeight {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := Real.exp (-(H z-c)^2/(2*ε))
+
+/-- source_id: MD-5.3.2-ShellPartition · definition · §5.3.2 · 印刷p.190–191 / PDFp.211–212 -/
+def shellPartition {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) := ∫ z,MolecularDynamics.Chapter05Review.shellWeight H c ε z
+
+/-- source_id: MD-5.3.2-ShellDensity · definition · §5.3.2 · 印刷p.190–191 / PDFp.211–212 -/
+def shellDensity {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := MolecularDynamics.Chapter05Review.shellWeight H c ε z/MolecularDynamics.Chapter05Review.shellPartition H c ε
+
+/-- source_id: MD-5.3.2-EnergySurface · definition · §5.3.2 · 印刷p.191 / PDFp.212 -/
+def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
+
+/-- source_id: MD-5.3.2-SurfaceMeasure · definition · §5.3.2 · 印刷p.191 / PDFp.212
+[EXTRA] [EXTRA]采用实际规范化Hausdorff超面积受限于等值集合；其与光滑曲面的Gram图公式识别另条且未证。 -/
+def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)
+
+/-- source_id: MD-5.3.2-MicroRaw · definition · §5.3.2 · 印刷p.191 / PDFp.212 -/
+def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
+
+/-- source_id: MD-5.3.2-ShellWeakPrinted · unnumbered_claim · §5.3.2 · 印刷p.191 / PDFp.212
+[EXTRA] [EXTRA]此处记录全相空间版本D=ℝ^m，微正则测度定义给出分布配对目标；其他约束需重定义相应曲面。 -/
+theorem shellWeakPrinted :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
+  ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → ∀ φ : MolecularDynamics.Chapter05Review.testSpace n,
+    Tendsto (fun ε => (MolecularDynamics.Chapter05Review.shellPartition H c ε)⁻¹*(∫ z,φ.1 z*MolecularDynamics.Chapter05Review.shellDensity H c ε z))
+      (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microAverage H c φ.1)) := by
+  sorry
+
+/-- source_id: MD-5.3.2-ShellWeakLimitCorrected · unnumbered_claim · §5.3.2 · 印刷p.191 / PDFp.212
+[EXTRA] [EXTRA]独立修正版：不再对已归一化ρ_ε重复除Zε；可达非空正则能量、C²、紧带及小ε权可积/分母正，全部明示。采用D=ℝ^m；不覆盖附加其他守恒约束的情形。 -/
+theorem shellWeakLimit :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
+  0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → (∃ z,H z=c) →
+  (∃ δ > 0, IsCompact {z | |H z-c| ≤ δ} ∧ (∀ ε ∈ Ioo 0 δ,
+    Integrable (MolecularDynamics.Chapter05Review.shellWeight H c ε) volume ∧ 0 < MolecularDynamics.Chapter05Review.shellPartition H c ε)) →
+  ∀ φ : MolecularDynamics.Chapter05Review.testSpace n, Tendsto (fun ε => ∫ z,φ.1 z*MolecularDynamics.Chapter05Review.shellDensity H c ε z)
+    (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microAverage H c φ.1)) := by
+  sorry
+
+/-- source_id: MD-5.3.2-SurfaceAreaFormula · unnumbered_claim · §5.3.2 · 印刷p.191 / PDFp.212
+[EXTRA] [EXTRA]单射C¹浸入及实际Gram矩阵；书中的图须避免重复覆盖和退化，不能把任意光滑映射当无重数面积参数化。 -/
+theorem surfaceAreaFormula :
+  ∀ d (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E (d+1)) (U : Set (MolecularDynamics.Chapter05Review.E d)),
+  IsOpen U → ContDiffOn ℝ 1 g U → Function.Injective g →
+  (∀ x ∈ U,Function.Injective (fderiv ℝ g x)) →
+  ((MolecularDynamics.Chapter05Review.hausdorffArea d) (g '' U)).toReal=
+    ∫ x in U,Real.sqrt (Matrix.det (fun i j : Fin d =>
+      inner ℝ ((fderiv ℝ g x) (WithLp.toLp 2 (Pi.single i 1)))
+        ((fderiv ℝ g x) (WithLp.toLp 2 (Pi.single j 1))) : Matrix (Fin d) (Fin d) ℝ)) := by
+  sorry
+
+/-- source_id: MD-5.3.2-NormalField · definition · §5.3.2 · 印刷p.192 / PDFp.213 -/
+def normalField {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) := ‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹ • MolecularDynamics.Chapter05Review.grad H z
+
+/-- source_id: MD-5.3.2-NormalEnergyTaylor · unnumbered_claim · §5.3.2 · 印刷p.192 / PDFp.213
+[EXTRA] [EXTRA]本条写正向实际C²局部Taylor余项O(ξ²)，原ΔE参数与反向ξ展开另条；非零梯度用于局部逆坐标，未以正向式替代所有结论。 -/
+theorem normalEnergyTaylor :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) z,
+  ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.grad H z ≠ 0 → ∃ C > 0, ∃ δ > 0, ∀ s : ℝ, |s| < δ →
+    |H (z+s • MolecularDynamics.Chapter05Review.normalField H z)-H z-s*‖MolecularDynamics.Chapter05Review.grad H z‖| ≤ C*s^2 := by
+  sorry
+
+/-- source_id: MD-5.3.2-NormalInverseTaylor · unnumbered_claim · §5.3.2 · 印刷p.192 / PDFp.213
+[EXTRA] [EXTRA]实际C²和非零梯度，ξ由真实局部能量方程得到；保留反向ξ及以ΔE计的正向余项两个结论，不只证明O(ξ²)。 -/
+theorem normalInverseTaylor : ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) z,
+  ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.grad H z ≠ 0 → ∃ C > 0,∃ δ > 0,
+  ∀ e : ℝ,|e| < δ → ∃ ξ : ℝ,
+    H (z+ξ • MolecularDynamics.Chapter05Review.normalField H z)=H z+e ∧
+    |ξ-e/‖MolecularDynamics.Chapter05Review.grad H z‖| ≤ C*e^2 ∧
+    |H (z+ξ • MolecularDynamics.Chapter05Review.normalField H z)-H z-‖MolecularDynamics.Chapter05Review.grad H z‖*ξ| ≤ C*e^2 := by
+  sorry
+
+/-- source_id: MD-5.3.2-PatchShellVolume · unnumbered_claim · §5.3.2 · 印刷p.192–193 / PDFp.213–214
+[EXTRA] [EXTRA]实际紧可测正则曲面片M及薄法线管；原“clearly”体积式实际还需法线管Jacobian=1+O(ξ)，不是一般曲面的精确体积等式；最终O(ΔE)误差保留。 -/
+theorem patchShellVolume : ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (M : Set (MolecularDynamics.Chapter05Review.E n)),
+  0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
+  IsCompact M → MeasurableSet M → M ⊆ MolecularDynamics.Chapter05Review.energySurface H c →
+  ∃ C > 0,∃ δ > 0,∀ e ∈ Ioo 0 δ,
+    |(volume {x | ∃ z ∈ M,∃ s ∈ Ico (0 : ℝ) δ,
+        x=z+s • MolecularDynamics.Chapter05Review.normalField H z ∧ H x-H z ≤ e}).toReal/e-
+        ((MolecularDynamics.Chapter05Review.microRaw H c) M).toReal| ≤ C*e := by
+  sorry
+
+/-- source_id: MD-5.3.2-WholeShellVolumeLimit · unnumbered_claim · §5.3.2 · 印刷p.192–193 / PDFp.213–214
+[EXTRA] [EXTRA]整个正则紧能量面的壳层极限特例，原任意紧曲面片及O(ΔE)结论另条保留，不用特例替换原全结论。 -/
+theorem shellVolumeLimit :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
+  0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
+  (∃ δ > 0,IsCompact {z | |H z-c| ≤ δ} ∧ ∀ z, |H z-c| ≤ δ → MolecularDynamics.Chapter05Review.grad H z ≠ 0) →
+  Tendsto (fun ε => (volume {z | c ≤ H z ∧ H z ≤ c+ε}).toReal/ε)
+    (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microPartition H c)) := by
+  sorry
+
+/-- source_id: MD-5.3.2-MicroRawInvariant · unnumbered_claim · §5.3.2 · 印刷p.193 / PDFp.214
+[EXTRA] [EXTRA]原正文调用的实际全流、体积与能量保持先验明确写出；需要推出的是曲面加权raw测度保持，未把该结论作前提。 -/
+theorem microRawInvariant : ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ,
+  ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → MolecularDynamics.Chapter05Review.flow f Φ →
+  ContDiff ℝ 2 (Function.uncurry Φ) →
+  (∀ t,MeasurePreserving (Φ t) volume volume) → (∀ t z,H (Φ t z)=H z) →
+  ∀ t,MeasurePreserving (Φ t) (MolecularDynamics.Chapter05Review.microRaw H c) (MolecularDynamics.Chapter05Review.microRaw H c) ∧
+    ∀ M,MeasurableSet M → (MolecularDynamics.Chapter05Review.microRaw H c) (Φ t '' M)=(MolecularDynamics.Chapter05Review.microRaw H c) M := by
+  sorry
+
+/-- source_id: MD-5.3.2-MicroInvariant · unnumbered_claim · §5.3.2 · 印刷p.193 / PDFp.214
+[EXTRA] [EXTRA]归一化measure版本另列；原始未归一化µ的不变及集合像等式由上一完整条目保留，不能只凭归一化定义编译称全部已证。 -/
+theorem microInvariant :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ,
+  ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) →
+  (∀ t,MeasurePreserving (Φ t) volume volume) → (∀ t z,H (Φ t z)=H z) →
+  ∀ t,MeasurePreserving (Φ t) (MolecularDynamics.Chapter05Review.microMeasure H c) (MolecularDynamics.Chapter05Review.microMeasure H c) := by
+  sorry
+
+/-- source_id: MD-5.3.2-MicroPartition · definition · §5.3.2 · 印刷p.193 / PDFp.214 -/
+def microPartition {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := ((MolecularDynamics.Chapter05Review.microRaw H c) univ).toReal
+
+/-- source_id: MD-5.3.2-ShellPointValuePrinted · notation · §5.3.2 · 印刷p.191 / PDFp.212
+[EXTRA] [EXTRA]Lean仅提供良类型的测试函数配对记号，不把配对记号的编译当原印刷等式的证明；完整正确弱极限另条，重复Z版本也保留。 -/
+def shellWeakPairing {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (φ : MolecularDynamics.Chapter05Review.E n → ℝ) :=
+  MolecularDynamics.Chapter05Review.microAverage H c φ
+
+/-- source_id: MD-5.3.2-HarmonicEnergy · Example 5.1 · §5.3.2 · 印刷p.193 / PDFp.214 -/
+def harmonicEnergy (Ω : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) := (z 1)^2/2+Ω^2*(z 0)^2/2
+
+/-- source_id: MD-5.3.2-HarmonicQuadraturePrinted · unnumbered_claim · §5.3.2 · 印刷p.193 / PDFp.214
+[EXTRA] [EXTRA]Ω>0及E>0，保存两个不同实际积分上界；端点导数用实平方根总化表达，不提升为已识别曲面面积。 -/
+theorem harmonicQuadraturePrinted : ∀ Ω c : ℝ,0 < Ω → 0 < c →
+  (4*(∫ q in (0 : ℝ)..Real.sqrt (2*c),
+    Real.sqrt (1+(Ω^2*q/Real.sqrt (2*c-Ω^2*q^2))^2)/Real.sqrt (2*c-Ω^2*q^2+Ω^4*q^2)))=
+  4*(∫ q in (0 : ℝ)..Real.sqrt (2*c)/Ω,1/Real.sqrt (2*c-Ω^2*q^2)) := by
+  sorry
+
+/-- source_id: MD-5.3.2-HarmonicPartition · Example 5.1 · §5.3.2 · 印刷p.193 / PDFp.214
+[EXTRA] [EXTRA]正频率和正能量；是真实Hausdorff加权测度的分区函数，不把参数积分写成定义冒充面积识别。 -/
+theorem harmonicPartition : ∀ Ω c : ℝ,0 < Ω → 0 < c →
+  MolecularDynamics.Chapter05Review.microPartition (harmonicEnergy Ω) c=2*Real.pi/Ω := by
+  sorry
+
+/-- source_id: MD-5.3.2-IdealGasEnergy · Example 5.2 · §5.3.2 · 印刷p.193–194 / PDFp.214–215 -/
+def idealGasEnergy (N : ℕ) (m : ℝ) (z : MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
+  (∑ i : Fin (3*N),(z (Fin.natAdd (3*N) i))^2)/(2*m)
+
+/-- source_id: MD-5.3.2-IdealGasPositionDomain · definition · §5.3.2 · 印刷p.193–194 / PDFp.214–215
+[EXTRA] [EXTRA]选择边长L的三维立方基本胞，V=L³；实际位置域有限，不能对无限全位置空间积分再声称分区函数有限。周期边界的基本胞面零测度识别未证明。 -/
+def idealGasPositionDomain (N : ℕ) (L : ℝ) : Set (MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
+  {z | ∀ i : Fin (3*N),z (Fin.castAdd (3*N) i) ∈ Icc (0 : ℝ) L}
+
+/-- source_id: MD-5.3.2-IdealGasPartition · Example 5.2 · §5.3.2 · 印刷p.193–194 / PDFp.214–215
+[EXTRA] [EXTRA]正N/m/E/L、有限基本胞V=L³；微正则raw测度在位置胞上实际限制。3N系数是球面积的正确系数，不登记伪造勘误。 -/
+theorem idealGasPartition : ∀ (N : ℕ) (m c L : ℝ),0 < N → 0 < m → 0 < c → 0 < L →
+  ((MolecularDynamics.Chapter05Review.microRaw (idealGasEnergy N m) c) (idealGasPositionDomain N L)).toReal=
+    (L^3)^N*Real.rpow (2*Real.pi*m*c) ((3*N : ℝ)/2)/(c*Real.Gamma ((3*N : ℝ)/2)) := by
+  sorry
 
 end MD.Ch05

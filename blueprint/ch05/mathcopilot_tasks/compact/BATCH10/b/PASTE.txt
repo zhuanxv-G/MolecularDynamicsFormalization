@@ -53,7 +53,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.schwartzTestSpace (Blueprint/Ch05.lean:523)
+### MD.Ch05.schwartzTestSpace (Blueprint/Ch05.lean:526)
 ```lean
 def schwartzTestSpace (n : ℕ) := SchwartzMap (MolecularDynamics.Chapter05Review.E n) ℝ
 ```

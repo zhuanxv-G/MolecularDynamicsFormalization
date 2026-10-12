@@ -32,9 +32,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.1-TrajectoryChain": {
       "checked": true,
@@ -67,9 +67,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.1-ActualFlow": {
       "checked": true,
@@ -100,9 +100,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.1-ObservablePullback": {
       "checked": true,
@@ -133,9 +133,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.1-FlowFieldTransport": {
       "checked": true,
@@ -167,7 +167,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/FlowFieldTransport.json",
         "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f.lean",
@@ -178,7 +178,7 @@
         "blueprint/ch05/validation/short_search/route-a62427897b1bc14d6e97.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.1-PullbackPDE": {
       "checked": true,
@@ -210,9 +210,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.1-SteadyFirstIntegral": {
       "checked": true,
@@ -243,7 +243,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/SteadyFirstIntegral.json",
         "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f.lean",
@@ -252,7 +252,7 @@
         "blueprint/ch05/validation/short_search/route-6b1502d076f0e3c4ba8d-SteadyFirstIntegral.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.1-CoordinatePullback": {
       "checked": true,
@@ -285,9 +285,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.1-SolutionOperator": {
       "checked": true,
@@ -318,9 +318,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.1-CoordinateLie": {
       "checked": true,
@@ -351,14 +351,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/CoordinateLie.json",
         "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f-CoordinateLie.lean",
         "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f-CoordinateLie.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.1-LiePullbackCommutes": {
       "checked": true,
@@ -390,9 +390,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-DensityOn": {
       "checked": true,
@@ -423,9 +423,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-ProbabilityDensityOn": {
       "checked": true,
@@ -456,9 +456,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-DensityOnNormalization": {
       "checked": true,
@@ -489,14 +489,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/DensityOnNormalization.json",
         "blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.lean",
         "blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-DensityProbability": {
       "checked": true,
@@ -527,9 +527,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-DensityMeasureOn": {
       "checked": true,
@@ -560,9 +560,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-LebesgueClosure": {
       "checked": true,
@@ -593,14 +593,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/LebesgueClosure.json",
         "blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.lean",
         "blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-BorelSigma": {
       "checked": true,
@@ -631,9 +631,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-DensityProbabilityBounds": {
       "checked": true,
@@ -664,14 +664,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/DensityProbabilityBounds.json",
         "blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.lean",
         "blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-DomainL2": {
       "checked": true,
@@ -702,9 +702,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-L2Norm": {
       "checked": true,
@@ -735,9 +735,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-L2Inner": {
       "checked": true,
@@ -768,9 +768,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-L2NormSquare": {
       "checked": true,
@@ -801,14 +801,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/L2NormSquare.json",
         "blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.lean",
         "blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-L2Complete": {
       "checked": true,
@@ -839,14 +839,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/L2Complete.json",
         "blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.lean",
         "blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-L2SymmetricBilinear": {
       "checked": true,
@@ -877,14 +877,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/L2SymmetricBilinear.json",
         "blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.lean",
         "blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-CompactL2": {
       "checked": true,
@@ -915,14 +915,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/CompactL2.json",
         "blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.lean",
         "blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-DensityAverageOn": {
       "checked": true,
@@ -953,9 +953,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-ClosedSupport": {
       "checked": true,
@@ -986,9 +986,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-GaussianL2": {
       "checked": true,
@@ -1019,7 +1019,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/GaussianL2.json",
         "blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e.lean",
@@ -1030,7 +1030,7 @@
         "blueprint/ch05/validation/short_search/route-0ee23dfd17269a60820f.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-FiniteJumpL2": {
       "checked": true,
@@ -1061,14 +1061,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/FiniteJumpL2.json",
         "blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-FiniteJumpL2.lean",
         "blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-FiniteJumpL2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.1-NormalizedAverageFormula": {
       "checked": true,
@@ -1099,14 +1099,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/NormalizedAverageFormula.json",
         "blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-NormalizedAverageFormula.lean",
         "blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-NormalizedAverageFormula.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-MassFraction": {
       "checked": true,
@@ -1137,9 +1137,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-MassDerivative": {
       "checked": true,
@@ -1170,7 +1170,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/MassDerivative.json",
         "blueprint/ch05/validation/short_search/route-4d4d0f7c793a8b77e365.lean",
@@ -1179,7 +1179,7 @@
         "blueprint/ch05/validation/short_search/route-a34cdecca1ffaaa9443b.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-OutwardNormal": {
       "checked": true,
@@ -1210,9 +1210,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-GeneralFluxBalance": {
       "checked": true,
@@ -1244,9 +1244,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-Divergence": {
       "checked": true,
@@ -1277,9 +1277,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-Liouvillian": {
       "checked": true,
@@ -1310,9 +1310,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-LiouvilleEquation": {
       "checked": true,
@@ -1344,9 +1344,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-LiouvilleProduct": {
       "checked": true,
@@ -1377,7 +1377,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/LiouvilleProduct.json",
         "blueprint/ch05/validation/short_search/route-fe461d43a628cd98321e.lean",
@@ -1388,7 +1388,7 @@
         "blueprint/ch05/validation/short_search/route-c7ba962b98f330fb04e1.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-LieCoordinates": {
       "checked": true,
@@ -1419,7 +1419,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/LieCoordinates.json",
         "blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.lean",
@@ -1428,7 +1428,7 @@
         "blueprint/ch05/validation/short_search/route-1525bae73a739536b80b-LieCoordinates.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-DivergenceCoordinates": {
       "checked": true,
@@ -1459,7 +1459,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/DivergenceCoordinates.json",
         "blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.lean",
@@ -1470,7 +1470,7 @@
         "blueprint/ch05/validation/short_search/route-d7aa9b44d094a4ba1bd2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-LiouvilleProductCoordinates": {
       "checked": true,
@@ -1508,9 +1508,9 @@
         "blueprint/ch05/validation/short_search/route-fa1435a7be88dbcb386c.lean",
         "blueprint/ch05/validation/short_search/route-fa1435a7be88dbcb386c.log"
       ],
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-RectangularDomain": {
       "checked": true,
@@ -1541,9 +1541,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-FaceFlux": {
       "checked": true,
@@ -1574,9 +1574,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-BoxFluxBalance": {
       "checked": true,
@@ -1608,9 +1608,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-BoundaryTerm": {
       "checked": true,
@@ -1641,9 +1641,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-TruncatedIntegrationByParts": {
       "checked": true,
@@ -1675,9 +1675,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-RapidAdjoint": {
       "checked": true,
@@ -1709,9 +1709,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-CompactAdjoint": {
       "checked": true,
@@ -1743,9 +1743,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.2-MeasurePropagator": {
       "checked": true,
@@ -1776,9 +1776,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.3-HamiltonianDivergence": {
       "checked": true,
@@ -1811,9 +1811,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.3-HamiltonianSkewExpression": {
       "checked": true,
@@ -1844,14 +1844,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/HamiltonianSkewExpression.json",
         "blueprint/ch05/validation/short_search/route-48445423d170860a93a5.lean",
         "blueprint/ch05/validation/short_search/route-48445423d170860a93a5.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.3-HamiltonianDensityPropagation": {
       "checked": true,
@@ -1883,9 +1883,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.3-MechanicalLiouvillian": {
       "checked": true,
@@ -1916,9 +1916,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.2.3-MechanicalLiouvillianIdentity": {
       "checked": true,
@@ -1950,7 +1950,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/MechanicalLiouvillianIdentity.json",
         "blueprint/ch05/validation/short_search/route-70d450c0f05847bfe59c.lean",
@@ -1961,7 +1961,7 @@
         "blueprint/ch05/validation/short_search/route-d1e5338b087cdf4fe649.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-TestSpace": {
       "checked": true,
@@ -1992,9 +1992,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-SchwartzSpace": {
       "checked": true,
@@ -2025,9 +2025,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-GeneralizedFunction": {
       "checked": true,
@@ -2058,9 +2058,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-SchwartzFunctional": {
       "checked": true,
@@ -2091,9 +2091,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-RegularDistribution": {
       "checked": true,
@@ -2124,9 +2124,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-RegularDistributionLinearity": {
       "checked": true,
@@ -2157,7 +2157,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/RegularDistributionLinearity.json",
         "blueprint/ch05/validation/short_search/route-b31db7a136913da9f696.lean",
@@ -2166,7 +2166,7 @@
         "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-RegularDistributionLinearity.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-DiracAction": {
       "checked": true,
@@ -2197,9 +2197,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-DiracMeasure": {
       "checked": true,
@@ -2230,9 +2230,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-DiracApproximation": {
       "checked": true,
@@ -2263,7 +2263,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/DiracApproximation.json",
         "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.lean",
@@ -2272,7 +2272,7 @@
         "blueprint/ch05/validation/short_search/route-f1710e94750679035b16.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-GaussianDelta": {
       "checked": true,
@@ -2303,9 +2303,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-DiracEvaluates": {
       "checked": true,
@@ -2336,14 +2336,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/DiracEvaluates.json",
         "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-DiracEvaluates.lean",
         "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-DiracEvaluates.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-GaussianDeltaProbability": {
       "checked": true,
@@ -2374,7 +2374,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/GaussianDeltaProbability.json",
         "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.lean",
@@ -2383,7 +2383,7 @@
         "blueprint/ch05/validation/short_search/route-f1710e94750679035b16.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     },
     "MD-5.3.1-GaussianDeltaWeak": {
       "checked": true,
@@ -2414,7 +2414,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch05/validation/batch20-COMPILE.json",
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch05/validation/short_search/GaussianDeltaWeak.json",
         "blueprint/ch05/validation/short_search/route-2b44b961f8bd67d3243e.lean",
@@ -2425,7 +2425,990 @@
         "blueprint/ch05/validation/short_search/route-33c5dbbce20c4dd4890b.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section531\\chapter_axioms.log"
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-WeakStationary": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.weakStationary",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "81d72805d2fbcb104fb42285a8fb9fd6a37fb877364fa7030a1ed62314a9e2a1",
+      "block_sha256": "81d72805d2fbcb104fb42285a8fb9fd6a37fb877364fa7030a1ed62314a9e2a1",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.weakStationary；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-EnsembleAverage": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.ensembleAverageOn",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "633381b35f124d05862b9929354532a53166755b62bd20a1c28f8bd146dae8d6",
+      "block_sha256": "633381b35f124d05862b9929354532a53166755b62bd20a1c28f8bd146dae8d6",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.ensembleAverageOn；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-ConvergenceHeuristic": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.convergenceHeuristic",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "[ERRATUM?]原文为推导弱稳态的启发，导数趋零一般不足以推出有界函数收敛，例如sin(log(1+t²))。当前陈述仍保存实际被流输运的密度积分与全部原结论；尚未构造满足完整动力学前提的密度反例，不能借抽象函数反例宣称这一签名FAIL。",
+      "signature_sha256": "9ad64d407047993e140fdf809a60642b7db769bee27dd914ff6e57b81c723f20",
+      "block_sha256": "98fa6610ada4b5d3b0bd6e71782be932b671966d5559a327fc70bb12f2ebeee4",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "原收敛推断需要独立语义裁定及补充收敛资格；当前不证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.convergenceHeuristic；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-HamiltonianEnergyIntegral": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch05.hamiltonianEnergyIntegral",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "4b25d251c33fddb1bb0a9022121c7d62b1b4384c34e7800ad910b660f6e21a6d",
+      "block_sha256": "f6e4fd7820118d1185b566985191fac3ff3b59d2cbb00d7389c10bc474ee994d",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson",
+        "MolecularDynamics.textbookPoissonBracket_self"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.hamiltonianEnergyIntegral；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-EnergyDensityInvariant": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.energyDensityInvariant",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "92cd5df13260bb0396a03517f7fe662662abb5242f299eaa7b52ef2be6f2141b",
+      "block_sha256": "457ade58cd3de5eb194fef41be92c155274ba2a3c25799a1eef956b6d27faa6a",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "待第一积分链式法则与实际Measure.map/withDensity桥接；不建设新的测度输运理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.energyDensityInvariant；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-ShellWeight": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.shellWeight",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "62634831989160eeeb3c7b733b24189905c25760cc6036793a64667c418aca8a",
+      "block_sha256": "62634831989160eeeb3c7b733b24189905c25760cc6036793a64667c418aca8a",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.shellWeight；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-ShellPartition": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.shellPartition",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "b0c715394bcebcfabe4f0ecd8ee0ab160bd46135b6de20139101d15a02d62708",
+      "block_sha256": "b0c715394bcebcfabe4f0ecd8ee0ab160bd46135b6de20139101d15a02d62708",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.shellPartition；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-ShellDensity": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.shellDensity",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "2832216b7b14bc8b27730ffa6d5ffc7fbaec8fc160f00179b07ca5ed5180bedd",
+      "block_sha256": "2832216b7b14bc8b27730ffa6d5ffc7fbaec8fc160f00179b07ca5ed5180bedd",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.shellDensity；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-EnergySurface": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.energySurface",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "8189ac2bd8835f55284bfd828dd82ee167a402ac72cb4e2ef6d887d7bb657b8d",
+      "block_sha256": "8189ac2bd8835f55284bfd828dd82ee167a402ac72cb4e2ef6d887d7bb657b8d",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.energySurface；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-SurfaceMeasure": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.surfaceMeasure",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "02e29ee26669b0aa73fa8341b87c5cde1604df252964f1c6b15652199194442c",
+      "block_sha256": "02e29ee26669b0aa73fa8341b87c5cde1604df252964f1c6b15652199194442c",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.surfaceMeasure；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-MicroRaw": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.microRaw",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "9980d8764eb598570212c61af756e2b083c7a6fee909b4e181a53afd6276c8fb",
+      "block_sha256": "9980d8764eb598570212c61af756e2b083c7a6fee909b4e181a53afd6276c8fb",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.microRaw；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-ShellWeakPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.shellWeakPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "[ERRATUM?]原ρ_ε在(5.7)前已除Zε，(5.8)再次除Zε；不得默删。Lean保存重复归一化的字面弱积分，对分布符号ρ0的测度配对采用microAverage解释，需独立裁定；无网站PASS。",
+      "signature_sha256": "20058f5e3f0e8e861b8128ba3811af67d8346eac5c8726a8168f378ad6799684",
+      "block_sha256": "032eb4a2c53e0bce23f5869a39de807639691ce305fc9fed5470f5dbb5e75387",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "重复归一化疑误未裁定；coarea及真实弱极限理论不建设，保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.shellWeakPrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-ShellWeakLimitCorrected": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.shellWeakLimit",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "d33b8ae30e9b32047d0581521f8cef26353dc457eaeb5bf83383f3f3fe4690b0",
+      "block_sha256": "0410937874b7193408d91cbb79979f0d2f6fd576f5880015fa01fde8e87a31a9",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺coarea、正则紧曲面的壳层积分渐近及概率弱收敛接口；遵用户要求不建设大型理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.shellWeakLimit；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-SurfaceAreaFormula": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.surfaceAreaFormula",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "7a034b642a61e25498d876f94db0a7cfa9781c8a3ecf0c6af9cdbbd1dee80649",
+      "block_sha256": "21dac2664d6824cdb8f6f516d691fb298e7c1fbcc4247206ea095dc0d23b4df7",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺一般单射浸入的Hausdorff面积公式接口；不建设面积/coarea理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.surfaceAreaFormula；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-NormalField": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.normalField",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "e2a88dc200d7a802d7654d8afb648ba9b22a5b1da6a7b9c2310068feda7c5ce8",
+      "block_sha256": "e2a88dc200d7a802d7654d8afb648ba9b22a5b1da6a7b9c2310068feda7c5ce8",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.normalField；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-NormalEnergyTaylor": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.normalEnergyTaylor",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "478cd3f642be5cbf42075c1b5b69d43b8e2218e0de26bca5ede677d8bc7ee685",
+      "block_sha256": "931c40609e4f17c88465840c43d4b5235dee5602fc6bcd52e56bbac8ce3cbd74",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "三条短证明路线失败，停止该条；保存证据见validation/short_search/NormalEnergyTaylor.json。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.normalEnergyTaylor；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch05/validation/short_search/NormalEnergyTaylor.json",
+        "blueprint/ch05/validation/short_search/route-cd64122aa6ec2f73acf7.lean",
+        "blueprint/ch05/validation/short_search/route-cd64122aa6ec2f73acf7.log",
+        "blueprint/ch05/validation/short_search/route-ad3ef8bcee3f13360b28.lean",
+        "blueprint/ch05/validation/short_search/route-ad3ef8bcee3f13360b28.log",
+        "blueprint/ch05/validation/short_search/route-b074d44d605d37a1a395.lean",
+        "blueprint/ch05/validation/short_search/route-b074d44d605d37a1a395.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-NormalInverseTaylor": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.normalInverseTaylor",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "a3ed3addb921eec21bb925f34fcd2e16bf06a4ab06bd027f99f6b38ef0de217a",
+      "block_sha256": "ebaaa39c06887afaa0f7c13bd14a44f73d1a45afad4d4ec7d7a0cf96ce8263a4",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "所需法线二阶Taylor短桥已失败3条路线并停止；本条还缺实际C²局部逆与统一ΔE余项桥接，保留全部正反向结论，不以含sorryAx的依赖冒称已证。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.normalInverseTaylor；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-PatchShellVolume": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.patchShellVolume",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "745a3f5783fd19a09c79849333f6a92a52d59f8ff8b68bade9ace488c33eb0a1",
+      "block_sha256": "d686af7ae3125ffe3af5fb2944d4806df1f951739f8d61ab7e6adf575121984a",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺一般曲面片法线管的几何Jacobian、面积/coarea及统一误差接口；不建设大型几何理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.patchShellVolume；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-WholeShellVolumeLimit": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.shellVolumeLimit",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "a5853158307a3d4c8f562de5ce3ec3c4beb92ada10c2b0e45a434f1ac1fbba50",
+      "block_sha256": "bb38af81076a6e6ba4c7a7dfc386a1950496e4eb53abfb2fed06907e9fc98c3d",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺能量壳层coarea积分接口；不建设大型几何理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.shellVolumeLimit；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-MicroRawInvariant": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.microRawInvariant",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "60ac975020211d73b6d7a0e448870f6b15ea6cfef4b0b5b87caee3b349dd9bb8",
+      "block_sha256": "6e13ad03091cf67a9015ff0ec164fe03f6af30bb73394a6765d90b0218a230e6",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺由体积/能量保持到真实曲面加权测度的coarea桥；不建设大型几何理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.microRawInvariant；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-MicroInvariant": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.microInvariant",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "2293ff69683ccde89fab08f32ba6fd2ac276d99d47250e6592fcacc26ef09e06",
+      "block_sha256": "b580b175c8a8e074fc7d86a7811fbf955a3456610ae55f6f7fbba19038159574",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺真实coarea及曲面测度保持接口；不建设大型理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.microInvariant；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-MicroPartition": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.microPartition",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "30649adbb0b96b455a49110c7325f340e707dd5311d3fd9ba30a10c53030f05c",
+      "block_sha256": "30649adbb0b96b455a49110c7325f340e707dd5311d3fd9ba30a10c53030f05c",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.microPartition；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-ShellPointValuePrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.shellWeakPairing",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "[ERRATUM?]右侧印刷为分布的点值ρ0(q,p)，左侧是依赖φ的标量；一般分布无这种点值。字面式无法忠实成为良类型等式，保留逐字原式并登记待解释。",
+      "signature_sha256": "16ec41943237af259139ec9efd3f59f072543882212fdf837263bf3cd64f2916",
+      "block_sha256": "16ec41943237af259139ec9efd3f59f072543882212fdf837263bf3cd64f2916",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": "需裁定原分布点值的类别错误；不伪造等式证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.shellWeakPairing；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-HarmonicEnergy": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.harmonicEnergy",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "05e2b262ba24d2e70a647d6ba515fbdf9dbcc1a2973b3e5d4be88d45bc7e33a2",
+      "block_sha256": "05e2b262ba24d2e70a647d6ba515fbdf9dbcc1a2973b3e5d4be88d45bc7e33a2",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.harmonicEnergy；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-HarmonicQuadraturePrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.harmonicQuadraturePrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "[ERRATUM?]第一行上界印刷为√(2E)，下一行是√(2E)/Ω，二者对一般Ω不一致；不静默补Ω。",
+      "signature_sha256": "d44113cf22553200802d1f6409fd0ba52db6250f4d2117358088a3bffcdd3aeb",
+      "block_sha256": "d321a153285321ea1bb956ea4b2a704d67f3f9bc771f4327eb266cd63c19cdba",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "原上界疑误需裁定，局部曲面参数化尚缺接口。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.harmonicQuadraturePrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-HarmonicPartition": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.harmonicPartition",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "d03f3794eaadffe2cda748a96cbe11c80cf2e047459f8a7d6767e411a9d05352",
+      "block_sha256": "f4f2fe29bcaa43def4f29ae5969f11f87ed369056a487e6e5082524617596acf",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺椭圆真实Hausdorff面积/coarea及加权曲面积分桥接，不建设大型几何理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.harmonicPartition；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-IdealGasEnergy": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.idealGasEnergy",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "6f280b1fdaed695c698e5211aeb87aed96e25ab4f956de8f09b20acfc7617a8d",
+      "block_sha256": "6f280b1fdaed695c698e5211aeb87aed96e25ab4f956de8f09b20acfc7617a8d",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.idealGasEnergy；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-IdealGasPositionDomain": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.idealGasPositionDomain",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "6adb12e2ff24d4c16a954e1dea0eaa26a54bb44205877caad4ee569516080fce",
+      "block_sha256": "6adb12e2ff24d4c16a954e1dea0eaa26a54bb44205877caad4ee569516080fce",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.idealGasPositionDomain；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
+    },
+    "MD-5.3.2-IdealGasPartition": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.idealGasPartition",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "83d2b5818032ca68689056e35627eb1693a89aff457baf594c7d4c83d3334fb4",
+      "block_sha256": "f2bb9fb895abef7c505f06323e5298e28f4550600c326f5ff3034fc9df84bcf4",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺真实3N球面积、曲面产品测度与微正则权积分桥接；不建设coarea/大型几何理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.idealGasPartition；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch24-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section532\\chapter_axioms.log"
     }
   }
 }

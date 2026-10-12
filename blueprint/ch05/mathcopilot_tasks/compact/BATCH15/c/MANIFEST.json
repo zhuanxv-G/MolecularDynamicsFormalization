@@ -1,0 +1,60 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15c",
+  "source_ids": [
+    "MD-5.3.2-IdealGasEnergy"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 214,
+      "printed_page": 193
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 215,
+      "printed_page": 194
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e4b45fc25a45e71eddbe887cb6661046108dcbe90dcc23a5052370b8bf5e4da3",
+  "lean_sha256": "2ef5fd3009d8cec142a96101c8f6c12d99cd277c2115957c56727e096490874b",
+  "signature_sha256": "6f280b1fdaed695c698e5211aeb87aed96e25ab4f956de8f09b20acfc7617a8d",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "idealGasEnergy",
+      "code_sha256": "6f280b1fdaed695c698e5211aeb87aed96e25ab4f956de8f09b20acfc7617a8d"
+    }
+  ],
+  "paste_plus_pdf_bytes": 92479,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3444,
+      "sha256": "70775ae3512c55605767dd24e5e21cfae03e1fc1387dca912fe6041705be2488"
+    },
+    "BATCH15c_PAGES.pdf": {
+      "bytes": 89035,
+      "sha256": "85a02f9b93fd03b3911ce894850b34b24cf9294381e9c26dd8ed219972265ab3"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 94448
+}

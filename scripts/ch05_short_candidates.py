@@ -387,6 +387,144 @@ proofs['GaussianDeltaWeak']='''intro φ hφ hb
       filter_upwards [] with x
       rw [←hpoint]
       ring'''
+proofs['NormalEnergyTaylor']='''intro n H z hH hn
+  let g (s : ℝ) := H (z+s • MolecularDynamics.Chapter05Review.normalField H z)
+  have hg : ContDiff ℝ 2 g := by dsimp [g]; fun_prop
+  have hcurve : HasDerivAt (fun s : ℝ => z+s • MolecularDynamics.Chapter05Review.normalField H z)
+      (MolecularDynamics.Chapter05Review.normalField H z) 0 := by
+    convert ((hasDerivAt_id 0).smul_const (MolecularDynamics.Chapter05Review.normalField H z)).const_add z using 1
+  have hgd : HasDerivAt g ((fderiv ℝ H z) (MolecularDynamics.Chapter05Review.normalField H z)) 0 := by
+    simpa only [g,zero_smul,add_zero] using!
+      ((hH.differentiable (by norm_num)) z).hasFDerivAt.comp_hasDerivAt 0 hcurve
+  have hcoeff : (fderiv ℝ H z) (MolecularDynamics.Chapter05Review.normalField H z)=
+      ‖MolecularDynamics.Chapter05Review.grad H z‖ := by
+    have hnorm : ‖gradient H z‖ ≠ 0 := norm_ne_zero_iff.mpr hn
+    unfold MolecularDynamics.Chapter05Review.normalField MolecularDynamics.Chapter05Review.grad
+    rw [←toDual_gradient]
+    simp only [InnerProductSpace.toDual_apply_apply,inner_smul_right,real_inner_self_eq_norm_sq]
+    field_simp
+  have hderiv : deriv g 0=‖MolecularDynamics.Chapter05Review.grad H z‖ := hgd.deriv.trans hcoeff
+  obtain ⟨C,hC⟩ := (taylor_isLittleO_univ (x₀:=0) (n:=2) hg).isBigO.bound
+  obtain ⟨δ,hδ,hbound⟩ := Metric.eventually_nhds_iff.mp hC
+  let A : ℝ := deriv (deriv g) 0/2
+  have ht (s : ℝ) : taylorWithinEval g 2 univ 0 s=g 0+deriv g 0*s+A*s^2 := by
+    simp [taylorWithinEval_succ,taylor_within_zero_eval,iteratedDerivWithin_univ,
+      iteratedDeriv_succ,iteratedDeriv_zero,smul_eq_mul,A]
+    ring
+  refine ⟨|C|+|A|+1,by positivity,δ,hδ,?_⟩
+  intro s hs
+  have hb := hbound (by simpa only [Real.dist_eq,sub_zero] using hs)
+  have hb' : |g s-taylorWithinEval g 2 univ 0 s| ≤ C*s^2 := by
+    simpa only [Real.norm_eq_abs,sub_zero,abs_sq] using hb
+  change |g s-g 0-s*‖MolecularDynamics.Chapter05Review.grad H z‖| ≤ (|C|+|A|+1)*s^2
+  calc
+    |g s-g 0-s*‖MolecularDynamics.Chapter05Review.grad H z‖|=
+        |(g s-taylorWithinEval g 2 univ 0 s)+A*s^2| := by rw [ht,hderiv];congr 1;ring
+    _ ≤ |g s-taylorWithinEval g 2 univ 0 s|+|A*s^2| := abs_add _ _
+    _ ≤ C*s^2+|A|*s^2 := by rw [abs_mul,abs_sq];exact add_le_add_right hb' _
+    _ ≤ (|C|+|A|+1)*s^2 := by nlinarith [le_abs_self C,sq_nonneg s]'''
+proofs['ForwardEnergyGrowth']='''intro h z k
+  have hs (x : MolecularDynamics.Chapter05Review.E 2) :
+      (MolecularDynamics.Chapter05Review.forwardEuler h x 0)^2+
+        (MolecularDynamics.Chapter05Review.forwardEuler h x 1)^2=(1+h^2)*((x 0)^2+(x 1)^2) := by
+    simp [MolecularDynamics.Chapter05Review.forwardEuler]
+    ring
+  induction k with
+  | zero => simp
+  | succ k ih =>
+    rw [Function.iterate_succ_apply',hs,ih,pow_succ]
+    ring'''
+proofs['BackwardEnergyDecay']='''intro h z k
+  have hs (x : MolecularDynamics.Chapter05Review.E 2) :
+      (MolecularDynamics.Chapter05Review.backwardEuler h x 0)^2+
+        (MolecularDynamics.Chapter05Review.backwardEuler h x 1)^2=(1+h^2)⁻¹*((x 0)^2+(x 1)^2) := by
+    have hd : 1+h^2 ≠ 0 := ne_of_gt (by positivity)
+    simp [MolecularDynamics.Chapter05Review.backwardEuler]
+    field_simp
+    ring
+  induction k with
+  | zero => simp
+  | succ k ih =>
+    rw [Function.iterate_succ_apply',hs,ih,pow_succ]
+    ring'''
+proofs['ModifiedLiouvillian']='''intro n f fr u h r hf hfr hu z
+  have hx : DifferentiableAt ℝ (MolecularDynamics.Chapter05Review.modifiedField f fr h r) z :=
+    (hf z).add ((hfr z).const_smul (h^r))
+  rw [liouvilleProduct n _ u z hx (hu z),liouvilleProduct n f u z (hf z) (hu z),
+    liouvilleProduct n fr u z (hfr z) (hu z)]
+  have hd : MolecularDynamics.Chapter05Review.divergence (MolecularDynamics.Chapter05Review.modifiedField f fr h r) z=
+      MolecularDynamics.Chapter05Review.divergence f z+(h^r)*MolecularDynamics.Chapter05Review.divergence fr z := by
+    unfold MolecularDynamics.Chapter05Review.divergence MolecularDynamics.Chapter05Review.modifiedField
+    rw [((hf z).hasFDerivAt.add ((hfr z).hasFDerivAt.const_smul (h^r))).fderiv]
+    change LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)
+      ((fderiv ℝ f z).toLinearMap+(h^r) • (fderiv ℝ fr z).toLinearMap)=_
+    simp only [map_add,map_smul,smul_eq_mul]
+  have hl : MolecularDynamics.Chapter05Review.lie (MolecularDynamics.Chapter05Review.modifiedField f fr h r) u z=
+      MolecularDynamics.Chapter05Review.lie f u z+(h^r)*MolecularDynamics.Chapter05Review.lie fr u z := by
+    simp [MolecularDynamics.Chapter05Review.lie,MolecularDynamics.Chapter05Review.modifiedField,
+      map_add,map_smul,smul_eq_mul]
+  rw [hd,hl]
+  ring'''
+proofs['DoubleWellCoercivity']='''constructor
+  · intro z
+    unfold doubleWellEnergy
+    positivity
+  · intro c
+    have hc : Continuous (doubleWellEnergy) := by unfold doubleWellEnergy; fun_prop
+    have hclosed : IsClosed {z : MolecularDynamics.Chapter05Review.E 2 | doubleWellEnergy z ≤ c} :=
+      isClosed_le hc continuous_const
+    apply (isCompact_closedBall (0 : MolecularDynamics.Chapter05Review.E 2) (4*|c|+4)).of_isClosed_subset hclosed
+    intro z hz
+    have he : (z 1)^2/2+(1-(z 0)^2)^2 ≤ c := hz
+    have hpos : 0 ≤ c := by nlinarith [sq_nonneg (z 1),sq_nonneg (1-(z 0)^2)]
+    have hq : (z 0)^2 ≤ (c+3)/2 := by
+      nlinarith [sq_nonneg (z 1),sq_nonneg ((z 0)^2-2)]
+    have hp : (z 1)^2 ≤ 2*c := by nlinarith [sq_nonneg (1-(z 0)^2)]
+    have hnorm : ‖z‖^2=(z 0)^2+(z 1)^2 := by
+      rw [EuclideanSpace.norm_sq_eq]
+      simp [Fin.sum_univ_two,Real.norm_eq_abs]
+    rw [Metric.mem_closedBall,dist_zero_right,abs_of_nonneg hpos]
+    nlinarith [norm_nonneg z]'''
+proofs['CurveImageDimension']='''intro n f Φ γ hflow hΦ hγ hγn t
+  have hs (t : ℝ) : ContDiff ℝ ⊤ (Φ t) := by
+    simpa only [Function.comp_def,Function.uncurry_apply_pair] using!
+      hΦ.comp (contDiff_const.prodMk contDiff_id : ContDiff ℝ ⊤ (fun x : MolecularDynamics.Chapter05Review.E n => (t,x)))
+  refine ⟨(hs t).comp hγ,?_⟩
+  intro s hzero
+  have hback : (fun r : ℝ => Φ (-t) (Φ t (γ r)))=γ := by
+    funext r
+    rw [←hflow.2.1,neg_add_cancel,hflow.1]
+  have himg := ((hs t).differentiable (by simp) (γ s)).hasFDerivAt.comp_hasDerivAt s
+    ((hγ.differentiable (by simp)) s).hasDerivAt
+  have hb := ((hs (-t)).differentiable (by simp) (Φ t (γ s))).hasFDerivAt.comp_hasDerivAt s himg
+  have hderiv : (fderiv ℝ (Φ t) (γ s)) (deriv γ s)=0 := by
+    exact himg.deriv.trans hzero
+  rw [hderiv,map_zero,hback] at hb
+  exact hγn s hb.deriv'''
+proofs['DoubleWellBasin']='''intro z c hz hc hE t
+  let q (s : ℝ) := (z s) 0
+  have hq : Continuous q := by dsimp [q]; fun_prop
+  have hn (s : ℝ) : q s ≠ 0 := by
+    intro heq
+    have hh := hE s
+    unfold doubleWellEnergy at hh
+    change (z s) 0=0 at heq
+    rw [heq] at hh
+    nlinarith [sq_nonneg ((z s) 1),hc.2]
+  by_cases h0 : 0 < q 0
+  · left
+    refine ⟨h0,?_⟩
+    by_contra ht
+    have hneg : q t < 0 := lt_of_le_of_ne (le_of_not_gt ht) (hn t)
+    obtain ⟨s,hs⟩ := intermediate_value_univ t 0 hq (show (0 : ℝ) ∈ Icc (q t) (q 0) from ⟨hneg.le,h0.le⟩)
+    exact hn s hs
+  · right
+    have hneg : q 0 < 0 := lt_of_le_of_ne (le_of_not_gt h0) (hn 0)
+    refine ⟨hneg,?_⟩
+    by_contra ht
+    have hpos : 0 < q t := lt_of_le_of_ne (le_of_not_gt ht) (Ne.symm (hn t))
+    obtain ⟨s,hs⟩ := intermediate_value_univ 0 t hq (show (0 : ℝ) ∈ Icc (q 0) (q t) from ⟨hneg.le,hpos.le⟩)
+    exact hn s hs'''
 import json,re
 from pathlib import Path
 extra=Path(__file__).with_name('ch05_elementary_candidates.json')

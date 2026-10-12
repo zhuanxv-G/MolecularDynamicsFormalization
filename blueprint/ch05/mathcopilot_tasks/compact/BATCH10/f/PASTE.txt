@@ -67,7 +67,7 @@ def regularDistribution {n : ℕ} (f : E n → ℝ) (φ : schwartzSpace n) := �
 abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
 ```
 
-### MD.Ch05.regularDistribution (Blueprint/Ch05.lean:533)
+### MD.Ch05.regularDistribution (Blueprint/Ch05.lean:536)
 ```lean
 def regularDistribution {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := ∫ z, f z*φ z
 ```

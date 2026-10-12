@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14h",
+  "source_ids": [
+    "MD-5.3.2-HarmonicEnergy"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 214,
+      "printed_page": 193
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e4b45fc25a45e71eddbe887cb6661046108dcbe90dcc23a5052370b8bf5e4da3",
+  "lean_sha256": "2ef5fd3009d8cec142a96101c8f6c12d99cd277c2115957c56727e096490874b",
+  "signature_sha256": "05e2b262ba24d2e70a647d6ba515fbdf9dbcc1a2973b3e5d4be88d45bc7e33a2",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "harmonicEnergy",
+      "code_sha256": "05e2b262ba24d2e70a647d6ba515fbdf9dbcc1a2973b3e5d4be88d45bc7e33a2"
+    }
+  ],
+  "paste_plus_pdf_bytes": 86173,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3107,
+      "sha256": "1307e425b65f0edad66e9ba9fd39fb59bc0ca07e34b6f5aecba1378dd2166f7d"
+    },
+    "BATCH14h_PAGES.pdf": {
+      "bytes": 83066,
+      "sha256": "25afe47034a21cd2c9e78baf562ad18bcff11b8729b8f8361dbf08c61b457166"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 88038
+}

@@ -1,0 +1,62 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH15d_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 214 | 193 |
+| 2 | 215 | 194 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-5.3.2-IdealGasPositionDomain",
+  "kind": "definition",
+  "label": null,
+  "section": "5.3.2",
+  "printed_page": "193–194",
+  "pdf_page": "214–215",
+  "statement_latex": "$Z_E=V^N\\int_S(m/r)d\\sigma$, where $S$ is the $3N-1$ dimensional sphere in $3N$ dimensions of radius $r=\\sqrt{2mE}$, and $d\\sigma$ is the surface area element on this sphere. $V^N$ is the contribution due to integration over positions.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.idealGasPositionDomain",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]选择边长L的三维立方基本胞，V=L³；实际位置域有限，不能对无限全位置空间积分再声称分区函数有限。周期边界的基本胞面零测度识别未证明。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+def idealGasPositionDomain (N : ℕ) (L : ℝ) : Set (MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
+  {z | ∀ i : Fin (3*N),z (Fin.castAdd (3*N) i) ∈ Icc (0 : ℝ) L}
+```
+
+原上下文：namespace MD.Ch05；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter05Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MD.Ch05.idealGasPositionDomain (Blueprint/Ch05.lean:878)
+```lean
+def idealGasPositionDomain (N : ℕ) (L : ℝ) : Set (MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
+  {z | ∀ i : Fin (3*N),z (Fin.castAdd (3*N) i) ∈ Icc (0 : ℝ) L}
+```

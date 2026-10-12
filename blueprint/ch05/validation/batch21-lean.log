@@ -1,0 +1,30 @@
+Blueprint/Ch05.lean:47:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:55:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:88:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:88:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:104:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:148:0: warning: Definition `MD.Ch05.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+Blueprint/Ch05.lean:328:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:351:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:427:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:448:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:457:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:467:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:483:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch05.lean:497:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:513:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:556:67: warning: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+Blueprint/Ch05.lean:556:89: warning: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+Blueprint/Ch05.lean:706:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:725:8: warning: declaration uses `sorry`

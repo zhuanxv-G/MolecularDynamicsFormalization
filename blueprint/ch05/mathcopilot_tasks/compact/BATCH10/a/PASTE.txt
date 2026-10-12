@@ -53,7 +53,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.testSpace (Blueprint/Ch05.lean:519)
+### MD.Ch05.testSpace (Blueprint/Ch05.lean:522)
 ```lean
 def testSpace (n : ℕ) := {φ : MolecularDynamics.Chapter05Review.E n → ℝ // ContDiff ℝ ⊤ φ ∧ HasCompactSupport φ}
 ```

@@ -1,7 +1,7 @@
 # 接续提示词
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：继续第5章§5.3.2真实微正则曲面/壳层及Examples5.1–5.2；五项分布/Dirac/Gaussian短证明全部复用。
+下一步：继续第5章§5.3.3归一化微正则测度的完整概率性质；曲面/coarea/KAM不建，法线Taylor三次失败不重做。
 
 先git status，读取AGENTS、CURRENT_STATE顶部、WORK_LOG最新、LOCAL_PIPELINE及当前章PROGRESS。从最近落盘批次接续，核验已有结果后复用，不重做已通过的JSON、Blueprint、证明或构建；未提交半成品核对后继续。
 ## 当前最高优先级范围（2026-10-10用户新指令）

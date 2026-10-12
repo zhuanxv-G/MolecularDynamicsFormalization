@@ -1,0 +1,38 @@
+intro n H z hH hn
+  let g (s : ℝ) := H (z+s • MolecularDynamics.Chapter05Review.normalField H z)
+  have hg : ContDiff ℝ 2 g := by dsimp [g]; fun_prop
+  have hcurve : HasDerivAt (fun s : ℝ => z+s • MolecularDynamics.Chapter05Review.normalField H z)
+      (MolecularDynamics.Chapter05Review.normalField H z) 0 := by
+    simpa only [id_eq,one_smul] using! ((hasDerivAt_id (0 : ℝ)).smul_const (MolecularDynamics.Chapter05Review.normalField H z)).const_add z
+  have hgd : HasDerivAt g ((fderiv ℝ H z) (MolecularDynamics.Chapter05Review.normalField H z)) 0 := by
+    simpa only [g,zero_smul,add_zero] using!
+      ((hH.differentiable (by norm_num)) (z+(0 : ℝ) • MolecularDynamics.Chapter05Review.normalField H z)).hasFDerivAt.comp_hasDerivAt 0 hcurve
+  have hcoeff : (fderiv ℝ H z) (MolecularDynamics.Chapter05Review.normalField H z)=
+      ‖MolecularDynamics.Chapter05Review.grad H z‖ := by
+    have hnorm : ‖gradient H z‖ ≠ 0 := norm_ne_zero_iff.mpr hn
+    unfold MolecularDynamics.Chapter05Review.normalField MolecularDynamics.Chapter05Review.grad
+    rw [←toDual_gradient]
+    simp only [InnerProductSpace.toDual_apply_apply,inner_smul_right,real_inner_self_eq_norm_sq]
+    field_simp
+  have hderiv : deriv g 0=‖MolecularDynamics.Chapter05Review.grad H z‖ := hgd.deriv.trans hcoeff
+  obtain ⟨C,hC⟩ := (taylor_isLittleO_univ (x₀:=0) (n:=2) hg).isBigO.bound
+  obtain ⟨δ,hδ,hbound⟩ := Metric.eventually_nhds_iff.mp hC
+  let A : ℝ := deriv (deriv g) 0/2
+  have ht (s : ℝ) : taylorWithinEval g 2 univ 0 s=g 0+deriv g 0*s+A*s^2 := by
+    simp [taylorWithinEval_succ,taylor_within_zero_eval,iteratedDerivWithin_univ,
+      iteratedDeriv_succ,iteratedDeriv_zero,smul_eq_mul,A]
+    ring
+  refine ⟨|C|+|A|+1,by positivity,δ,hδ,?_⟩
+  intro s hs
+  have hb := hbound (by simpa only [Real.dist_eq,sub_zero] using hs)
+  have hb' : |g s-taylorWithinEval g 2 univ 0 s| ≤ C*s^2 := by
+    simpa only [Real.norm_eq_abs,sub_zero,abs_sq] using hb
+  change |g s-H z-s*‖MolecularDynamics.Chapter05Review.grad H z‖| ≤ (|C|+|A|+1)*s^2
+  have h0 : H z=g 0 := by simp [g]
+  rw [h0]
+  calc
+    |g s-g 0-s*‖MolecularDynamics.Chapter05Review.grad H z‖|=
+        |(g s-taylorWithinEval g 2 univ 0 s)+A*s^2| := by rw [ht,hderiv];congr 1;ring
+    _ ≤ |g s-taylorWithinEval g 2 univ 0 s|+|A*s^2| := abs_add _ _
+    _ ≤ C*s^2+|A| * s^2 := by rw [abs_mul,abs_sq];exact add_le_add_right hb' _
+    _ ≤ (|C|+|A|+1)*s^2 := by nlinarith [le_abs_self C,sq_nonneg s]

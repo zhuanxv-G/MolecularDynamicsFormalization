@@ -55,7 +55,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.densityOn (Blueprint/Ch05.lean:108)
+### MD.Ch05.densityOn (Blueprint/Ch05.lean:111)
 ```lean
 def densityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Prop :=
   NullMeasurableSet D volume ∧ AEMeasurable ρ (volume.restrict D) ∧

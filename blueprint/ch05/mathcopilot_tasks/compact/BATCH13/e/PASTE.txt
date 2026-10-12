@@ -1,0 +1,216 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH13e_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 212 | 191 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.3.2",
+  "printed_page": "191",
+  "pdf_page": "212",
+  "statement_latex": "$\\lim_{\\varepsilon\\to0}Z_\\varepsilon^{-1}\\int_D\\phi(q,p)\\rho_\\varepsilon d\\omega$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.shellWeakLimit",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]独立修正版：不再对已归一化ρ_ε重复除Zε；可达非空正则能量、C²、紧带及小ε权可积/分母正，全部明示。采用D=ℝ^m；不覆盖附加其他守恒约束的情形。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem shellWeakLimit :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
+  0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → (∃ z,H z=c) →
+  (∃ δ > 0, IsCompact {z | |H z-c| ≤ δ} ∧ (∀ ε ∈ Ioo 0 δ,
+    Integrable (MolecularDynamics.Chapter05Review.shellWeight H c ε) volume ∧ 0 < MolecularDynamics.Chapter05Review.shellPartition H c ε)) →
+  ∀ φ : MolecularDynamics.Chapter05Review.testSpace n, Tendsto (fun ε => ∫ z,φ.1 z*MolecularDynamics.Chapter05Review.shellDensity H c ε z)
+    (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microAverage H c φ.1))
+```
+
+原上下文：namespace MD.Ch05；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter05Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.energySurface (MolecularDynamics/Chapter05/ReviewDefinitions.lean:58)
+```lean
+def energySurface {n : ℕ} (H : E n → ℝ) (c : ℝ) := {z | H z=c}
+```
+
+### MolecularDynamics.Chapter05Review.grad (MolecularDynamics/Chapter05/ReviewDefinitions.lean:59)
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+
+### MolecularDynamics.Chapter05Review.hausdorffArea (MolecularDynamics/Chapter05/ReviewDefinitions.lean:60)
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+
+### MolecularDynamics.Chapter05Review.microAverage (MolecularDynamics/Chapter05/ReviewDefinitions.lean:70)
+```lean
+def microAverage {n : ℕ} (H : E n → ℝ) (c : ℝ) (g : E n → ℝ) := average (microMeasure H c) g
+```
+
+### MolecularDynamics.Chapter05Review.regularEnergy (MolecularDynamics/Chapter05/ReviewDefinitions.lean:72)
+```lean
+def regularEnergy {n : ℕ} (H : E n → ℝ) (c : ℝ) : Prop :=
+  (energySurface H c).Nonempty ∧ IsCompact (energySurface H c) ∧
+  (∀ z ∈ energySurface H c, grad H z ≠ 0) ∧
+  0 < (microRaw H c) univ ∧ (microRaw H c) univ < ∞
+```
+
+### MolecularDynamics.Chapter05Review.shellDensity (MolecularDynamics/Chapter05/ReviewDefinitions.lean:57)
+```lean
+def shellDensity {n : ℕ} (H : E n → ℝ) (c ε : ℝ) (z : E n) := shellWeight H c ε z/shellPartition H c ε
+```
+
+### MolecularDynamics.Chapter05Review.shellPartition (MolecularDynamics/Chapter05/ReviewDefinitions.lean:56)
+```lean
+def shellPartition {n : ℕ} (H : E n → ℝ) (c ε : ℝ) := ∫ z,shellWeight H c ε z
+```
+
+### MolecularDynamics.Chapter05Review.shellWeight (MolecularDynamics/Chapter05/ReviewDefinitions.lean:55)
+```lean
+def shellWeight {n : ℕ} (H : E n → ℝ) (c ε : ℝ) (z : E n) := Real.exp (-(H z-c)^2/(2*ε))
+```
+
+### MolecularDynamics.Chapter05Review.surfaceMeasure (MolecularDynamics/Chapter05/ReviewDefinitions.lean:63)
+```lean
+def surfaceMeasure {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  (hausdorffArea (n-1)).restrict (energySurface H c)
+```
+
+### MolecularDynamics.Chapter05Review.testSpace (MolecularDynamics/Chapter05/ReviewDefinitions.lean:45)
+```lean
+def testSpace (n : ℕ) := {φ : E n → ℝ // ContDiff ℝ ⊤ φ ∧ HasCompactSupport φ}
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter05Review.average (MolecularDynamics/Chapter05/ReviewDefinitions.lean:33)
+```lean
+def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
+```
+
+### MD.Ch05.energySurface (Blueprint/Ch05.lean:743)
+```lean
+def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
+```
+
+### MolecularDynamics.Chapter02Review.grad (MolecularDynamics/Chapter02/ReviewDefinitions.lean:133)
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+
+### MolecularDynamics.Chapter04Review.grad (MolecularDynamics/Chapter04/ReviewDefinitions.lean:20)
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+
+### MolecularDynamics.Chapter05Review.grad (MolecularDynamics/Chapter05/ReviewDefinitions.lean:59)
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+
+### MolecularDynamics.Chapter05Review.hausdorffArea (MolecularDynamics/Chapter05/ReviewDefinitions.lean:60)
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+
+### MolecularDynamics.Chapter05Review.microAverage (MolecularDynamics/Chapter05/ReviewDefinitions.lean:70)
+```lean
+def microAverage {n : ℕ} (H : E n → ℝ) (c : ℝ) (g : E n → ℝ) := average (microMeasure H c) g
+```
+
+### MolecularDynamics.Chapter05Review.microMeasure (MolecularDynamics/Chapter05/ReviewDefinitions.lean:68)
+```lean
+def microMeasure {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  ((microRaw H c) univ)⁻¹ • microRaw H c
+```
+
+### MD.Ch05.microRaw (Blueprint/Ch05.lean:751)
+```lean
+def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
+```
+
+### MolecularDynamics.Chapter05Review.regularEnergy (MolecularDynamics/Chapter05/ReviewDefinitions.lean:72)
+```lean
+def regularEnergy {n : ℕ} (H : E n → ℝ) (c : ℝ) : Prop :=
+  (energySurface H c).Nonempty ∧ IsCompact (energySurface H c) ∧
+  (∀ z ∈ energySurface H c, grad H z ≠ 0) ∧
+  0 < (microRaw H c) univ ∧ (microRaw H c) univ < ∞
+```
+
+### MD.Ch05.shellDensity (Blueprint/Ch05.lean:740)
+```lean
+def shellDensity {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := MolecularDynamics.Chapter05Review.shellWeight H c ε z/MolecularDynamics.Chapter05Review.shellPartition H c ε
+```
+
+### MD.Ch05.shellPartition (Blueprint/Ch05.lean:737)
+```lean
+def shellPartition {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) := ∫ z,MolecularDynamics.Chapter05Review.shellWeight H c ε z
+```
+
+### MD.Ch05.shellWeight (Blueprint/Ch05.lean:734)
+```lean
+def shellWeight {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := Real.exp (-(H z-c)^2/(2*ε))
+```
+
+### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:747)
+```lean
+def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)
+```
+
+### MD.Ch05.testSpace (Blueprint/Ch05.lean:522)
+```lean
+def testSpace (n : ℕ) := {φ : MolecularDynamics.Chapter05Review.E n → ℝ // ContDiff ℝ ⊤ φ ∧ HasCompactSupport φ}
+```
+
+### MolecularDynamics.textbookConstraintGradient (MolecularDynamics/Chapter04/ConstrainedProjection.lean:20)
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```

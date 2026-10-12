@@ -54,7 +54,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.domainL2 (Blueprint/Ch05.lean:167)
+### MD.Ch05.domainL2 (Blueprint/Ch05.lean:170)
 ```lean
 @[reducible] def domainL2 (n : ℕ) (D : Set (MolecularDynamics.Chapter05Review.E n)) := Lp ℝ 2 (volume.restrict D)
 ```

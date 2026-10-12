@@ -1,0 +1,18 @@
+"""Microcanonical weak-limit defects and actual geometric surface definitions."""
+from ch05_data import add,copied,proposition,D,NS
+add('EnergySurface','5.3.2',191,[45],r'''We assume the level sets $\Sigma_E=\{(q,p)\mid H(q,p)=E\}$ to be bounded.''',copied(D,'energySurface'),kind='definition',context=['实际能量等值集合；有界/正则等使用资格单列，不从定义自动推出。'])
+add('SurfaceMeasure','5.3.2',191,[45],r'''where $d\sigma$ is the “area element” of the energy surface. (The term “area” in this context might be replaced by “hyperarea” or “volume” since we are in many dimensions.)''',copied(D,'surfaceMeasure'),kind='definition',extra=['[EXTRA]采用实际规范化Hausdorff超面积受限于等值集合；其与光滑曲面的Gram图公式识别另条且未证。'])
+add('MicroRaw','5.3.2',191,[45],r'''define the invariant measure of a set $M\subset\Sigma_E$ by
+\[\mu(M)=\int_M\frac1{\|\nabla H\|}d\sigma.\]
+Thus the invariant measure of interest to us is a rescaling of the indicated metric by the factor $1/\|\nabla H\|$.''',copied(D,'microRaw'),kind='definition',context=['真实曲面受限测度的withDensity；保留原始未归一化测度，不能未经总质量条件称概率测度。'])
+add('ShellWeakPrinted','5.3.2',191,[44],r'''As we decrease $\varepsilon$, the density remains invariant under Liouville's equation. The prefactor means that we can think of a sequence of smooth densities taken with successively smaller values of $\varepsilon$ as approaching the limiting distribution defined in terms of the delta function by
+\[\rho_0(q,p)=Z_{H=E}^{-1}\delta[H(q,p)-E].\tag{5.7}\]
+To make this statement precise, the definition of the limit must be taken here in the weak sense, that is, we need to study the limit
+\[\lim_{\varepsilon\to0}Z_\varepsilon^{-1}\int_D\phi(q,p)\rho_\varepsilon d\omega,\tag{5.8}\]
+taken in relation to a test function $\phi\in\mathcal T$.''',proposition('shellWeakPrinted_statement'),verdict='NEEDS_HUMAN',explanation='[ERRATUM?]原ρ_ε在(5.7)前已除Zε，(5.8)再次除Zε；不得默删。Lean保存重复归一化的字面弱积分，对分布符号ρ0的测度配对采用microAverage解释，需独立裁定；无网站PASS。',extra=['[EXTRA]此处记录全相空间版本D=ℝ^m，微正则测度定义给出分布配对目标；其他约束需重定义相应曲面。'],missing='重复归一化疑误未裁定；coarea及真实弱极限理论不建设，保留sorry。')
+limitcode=proposition('shellWeakLimit_statement').replace('regularEnergy H c →','regularEnergy H c → (∃ z,H z=c) →',1)
+add('ShellWeakLimitCorrected','5.3.2',191,[44],r'''$\lim_{\varepsilon\to0}Z_\varepsilon^{-1}\int_D\phi(q,p)\rho_\varepsilon d\omega$.''',limitcode,extra=['[EXTRA]独立修正版：不再对已归一化ρ_ε重复除Zε；可达非空正则能量、C²、紧带及小ε权可积/分母正，全部明示。采用D=ℝ^m；不覆盖附加其他守恒约束的情形。'],missing='缺coarea、正则紧曲面的壳层积分渐近及概率弱收敛接口；遵用户要求不建设大型理论。')
+add('SurfaceAreaFormula','5.3.2',191,[46],r'''If we can represent the $m-1$-dimensional set $M$ as the image of an open set $U\in\mathbb R^{m-1}$ under a smooth mapping $g:\mathbb R^{m-1}\to\Sigma_E$, then we have
+\[\operatorname{Vol}(M)=\int_U\sqrt{\det[(g'(\theta))^Tg'(\theta)]}\,d\theta_1d\theta_2\cdots d\theta_{m-1}.\]''',proposition('surfaceAreaFormula_statement'),extra=['[EXTRA]单射C¹浸入及实际Gram矩阵；书中的图须避免重复覆盖和退化，不能把任意光滑映射当无重数面积参数化。'],missing='缺一般单射浸入的Hausdorff面积公式接口；不建设面积/coarea理论。')
+add('NormalField','5.3.2',192,[47],r'''We suppose $\|\nabla H\|$ to be bounded away from zero on $\Sigma_E$. At each point of $M$ we let $n=\nabla H/\|\nabla H\|$ be the unit normal to the energy surface and define a local coordinate $\xi$ measuring distance along the direction of the unit normal.''',copied(D,'normalField'),kind='definition',context=['实际梯度和Euclidean范数；非零梯度下才是单位法线，0处Mathlib总化除法不赋予法线意义。'])
+add('NormalEnergyTaylor','5.3.2',192,[48],r'''$\Delta E=H(z+n\xi)-H(z)=\nabla H\cdot n\xi+O(\Delta E^2)$, and $n=\nabla H/\|\nabla H\|$, we have $\xi=\Delta E/\|\nabla H\|+O(\Delta E^2)$.''',proposition('normalEnergyTaylor_statement'),extra=['[EXTRA]本条写正向实际C²局部Taylor余项O(ξ²)，原ΔE参数与反向ξ展开另条；非零梯度用于局部逆坐标，未以正向式替代所有结论。'],missing='待真实局部二阶Taylor余项的有限维短桥；不建设微正则几何理论。')

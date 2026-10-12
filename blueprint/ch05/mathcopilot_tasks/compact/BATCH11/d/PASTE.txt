@@ -50,7 +50,7 @@ theorem gaussianDeltaProbability : ∀ ε : ℝ,0 < ε →
 def gaussianDelta (ε z : ℝ) := Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)
 ```
 
-### MD.Ch05.gaussianDelta (Blueprint/Ch05.lean:607)
+### MD.Ch05.gaussianDelta (Blueprint/Ch05.lean:610)
 ```lean
 def gaussianDelta (ε z : ℝ) := Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)
 ```

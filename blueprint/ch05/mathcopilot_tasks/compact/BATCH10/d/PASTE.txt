@@ -53,7 +53,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
 ```
 
-### MD.Ch05.schwartzFunctional (Blueprint/Ch05.lean:530)
+### MD.Ch05.schwartzFunctional (Blueprint/Ch05.lean:533)
 ```lean
 def schwartzFunctional (n : ℕ) := (MolecularDynamics.Chapter05Review.schwartzSpace n) →ₗ[ℝ] ℝ
 ```

@@ -217,7 +217,7 @@ private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 ```
 
-### MD.Ch05.densityProbability (Blueprint/Ch05.lean:127)
+### MD.Ch05.densityProbability (Blueprint/Ch05.lean:130)
 ```lean
 def densityProbability {n : ℕ} (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) : ℝ :=
   ∫ z in A,ρ z
