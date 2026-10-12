@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-d6d3ca9f07832b05170d.lean",
+    "log": "blueprint/ch05/validation/short_search/route-d6d3ca9f07832b05170d.log",
+    "source_sha256": "ab7dd22c63b6fdea09e4274e51add853b23342be555738127b791f65b069350a",
+    "log_sha256": "9f607d0812bda1c63dd32d601e2fe09a61ac28c5b9328cac0434485e6609f637"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-8184da3b6892ee409bcb.lean",
+    "log": "blueprint/ch05/validation/short_search/route-8184da3b6892ee409bcb.log",
+    "source_sha256": "8425502fadefaf87ff407c9d1a6311541e935a279ed719e655b44b15c75d2126",
+    "log_sha256": "6bf63a9b7a8534cebe3f887d53768e4dd20cbf99f722274e883f30414d5a4394"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro n H c hH hpos hfin\n  let σ := MolecularDynamics.Chapter05Review.energySurface H c\n  have hσ : MeasurableSet σ := by\n    exact (isClosed_eq hH.continuous continuous_const).measurableSet\n  have hzero : (MolecularDynamics.Chapter05Review.microRaw H c) σᶜ=0 := by\n    unfold MolecularDynamics.Chapter05Review.microRaw\n    apply withDensity_absolutelyContinuous\n    unfold MolecularDynamics.Chapter05Review.surfaceMeasure\n    rw [Measure.restrict_apply hσ.compl]\n    simp [σ]\n  have hu : (MolecularDynamics.Chapter05Review.microMeasure H c) univ=1 := by\n    unfold MolecularDynamics.Chapter05Review.microMeasure\n    rw [Measure.smul_apply,smul_eq_mul]\n    exact ENNReal.inv_mul_cancel (ne_of_gt hpos) (ne_of_lt hfin)\n  have hz : (MolecularDynamics.Chapter05Review.microMeasure H c) σᶜ=0 := by\n    unfold MolecularDynamics.Chapter05Review.microMeasure\n    rw [Measure.smul_apply,hzero,smul_zero]\n  refine ⟨hu,?_,?_⟩\n  · have hh := measure_add_measure_compl hσ (μ:=MolecularDynamics.Chapter05Review.microMeasure H c)\n    simpa only [hz,add_zero,hu] using hh\n  · intro A\n    exact ⟨bot_le,(measure_mono (subset_univ A)).trans_eq hu⟩",
+    "source": "blueprint/ch05/validation/short_search/route-442fced3830d6d895c1b.lean",
+    "log": "blueprint/ch05/validation/short_search/route-442fced3830d6d895c1b.log",
+    "source_sha256": "0b0740bc92215692c390a8484861b7f6880feb7c10dae3e193a43191d91be7d8",
+    "log_sha256": "62c02f8edfb9e426a0afebb60550bb0cd0f78e70d1738fc4218834523e6c3312"
+  }
+]

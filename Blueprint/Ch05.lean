@@ -885,4 +885,51 @@ theorem idealGasPartition : ∀ (N : ℕ) (m c L : ℝ),0 < N → 0 < m → 0 < 
     (L^3)^N*Real.rpow (2*Real.pi*m*c) ((3*N : ℝ)/2)/(c*Real.Gamma ((3*N : ℝ)/2)) := by
   sorry
 
+/-- source_id: MD-5.3.3-MicroMeasure · definition · §5.3.3 · 印刷p.194 / PDFp.215
+[EXTRA] [EXTRA]总raw质量正且有限是使用概率意义的必要资格；定义用实际ENNReal标量归一化，不把无穷总质量逆值0解释成概率测度。 -/
+def microMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  ((MolecularDynamics.Chapter05Review.microRaw H c) univ)⁻¹ • MolecularDynamics.Chapter05Review.microRaw H c
+
+/-- source_id: MD-5.3.3-MicroProbability · unnumbered_claim · §5.3.3 · 印刷p.195 / PDFp.216
+[EXTRA] [EXTRA]原H光滑背景及正有限总质量明示；ΣE总概率1也保留，不仅证明ambient univ质量1。 -/
+theorem microProbability : ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
+  ContDiff ℝ 1 H → 0 < (MolecularDynamics.Chapter05Review.microRaw H c) univ → (MolecularDynamics.Chapter05Review.microRaw H c) univ < (⊤ : ENNReal) →
+  (MolecularDynamics.Chapter05Review.microMeasure H c) univ=1 ∧
+    (MolecularDynamics.Chapter05Review.microMeasure H c) (MolecularDynamics.Chapter05Review.energySurface H c)=1 ∧
+    ∀ A : Set (MolecularDynamics.Chapter05Review.E n),0 ≤ (MolecularDynamics.Chapter05Review.microMeasure H c) A ∧ (MolecularDynamics.Chapter05Review.microMeasure H c) A ≤ 1 := by
+  intro n H c hH hpos hfin
+  let σ := MolecularDynamics.Chapter05Review.energySurface H c
+  have hσ : MeasurableSet σ := by
+    exact (isClosed_eq hH.continuous continuous_const).measurableSet
+  have hzero : (MolecularDynamics.Chapter05Review.microRaw H c) σᶜ=0 := by
+    unfold MolecularDynamics.Chapter05Review.microRaw
+    apply withDensity_absolutelyContinuous
+    unfold MolecularDynamics.Chapter05Review.surfaceMeasure
+    rw [Measure.restrict_apply hσ.compl]
+    simp [σ]
+  have hu : (MolecularDynamics.Chapter05Review.microMeasure H c) univ=1 := by
+    unfold MolecularDynamics.Chapter05Review.microMeasure
+    rw [Measure.smul_apply,smul_eq_mul]
+    exact ENNReal.inv_mul_cancel (ne_of_gt hpos) (ne_of_lt hfin)
+  have hz : (MolecularDynamics.Chapter05Review.microMeasure H c) σᶜ=0 := by
+    unfold MolecularDynamics.Chapter05Review.microMeasure
+    rw [Measure.smul_apply,hzero,smul_zero]
+  refine ⟨hu,?_,?_⟩
+  · have hh := measure_add_measure_compl hσ (μ:=MolecularDynamics.Chapter05Review.microMeasure H c)
+    simpa only [hz,add_zero,hu] using hh
+  · intro A
+    exact ⟨bot_le,(measure_mono (subset_univ A)).trans_eq hu⟩
+
+/-- source_id: MD-5.3.3-LowerDimensionNull · unnumbered_claim · §5.3.3 · 印刷p.195 / PDFp.216
+[EXTRA] [EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。 -/
+theorem lowerDimensionNull :
+  ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)
+    (K : Set (MolecularDynamics.Chapter05Review.E d)), d+1 < n → ContDiff ℝ 1 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
+    ContDiff ℝ 1 g → IsCompact K →
+    g '' K ⊆ MolecularDynamics.Chapter05Review.energySurface H c → (MolecularDynamics.Chapter05Review.microMeasure H c) (g '' K)=0 := by
+  sorry
+
+/-- source_id: MD-5.3.3-MicroAverage · definition · §5.3.3 · 印刷p.195 / PDFp.216 -/
+def microAverage {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) := MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.microMeasure H c) g
+
 end MD.Ch05

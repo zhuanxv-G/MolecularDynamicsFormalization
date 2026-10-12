@@ -97,3 +97,7 @@ import Blueprint.Ch05
 #print axioms MD.Ch05.idealGasEnergy
 #print axioms MD.Ch05.idealGasPositionDomain
 #print axioms MD.Ch05.idealGasPartition
+#print axioms MD.Ch05.microMeasure
+#print axioms MD.Ch05.microProbability
+#print axioms MD.Ch05.lowerDimensionNull
+#print axioms MD.Ch05.microAverage

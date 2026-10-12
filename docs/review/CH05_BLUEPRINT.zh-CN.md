@@ -101,6 +101,10 @@
 | MD-5.3.2-IdealGasEnergy | 193–194/214–215 | PASS | 待网站审计 | self-contained |
 | MD-5.3.2-IdealGasPositionDomain | 193–194/214–215 | PASS | 待网站审计 | self-contained |
 | MD-5.3.2-IdealGasPartition | 193–194/214–215 | PASS | 待网站审计 | incomplete |
+| MD-5.3.3-MicroMeasure | 194/215 | PASS | 待网站审计 | self-contained |
+| MD-5.3.3-MicroProbability | 195/216 | PASS | 待网站审计 | self-contained |
+| MD-5.3.3-LowerDimensionNull | 195/216 | PASS | 待网站审计 | incomplete |
+| MD-5.3.3-MicroAverage | 195/216 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -4620,3 +4624,189 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 缺失/继续路线：缺真实3N球面积、曲面产品测度与微正则权积分桥接；不建设coarea/大型几何理论。
 
 签名SHA256：`83d2b5818032ca68689056e35627eb1693a89aff457baf594c7d4c83d3334fb4`；原文SHA256：`aec3741d1e80abfcecddd316ded3004d1c57489a21ac6473bf270a7b9ed22e28`。
+
+## 1. MD-5.3.3-MicroMeasure · definition · 印刷p.194 / PDFp.215
+
+### 2. 原文陈述
+
+> Let $d\mu_E=Z_E^{-1}\|\nabla H\|^{-1}d\sigma$. We refer to this as the microcanonical probability density and write, for an “appropriate” set $A$, $\operatorname{Pr}(A)=\mu_E(A)=\int_A d\mu_E$. The only requirement for this to make sense is that the set $A$ be a measurable subset of the $H=E$ energy surface, i.e. that it be possible to compute its surface area.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def microMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  ((MolecularDynamics.Chapter05Review.microRaw H c) univ)⁻¹ • MolecularDynamics.Chapter05Review.microRaw H c
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.microMeasure；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]总raw质量正且有限是使用概率意义的必要资格；定义用实际ENNReal标量归一化，不把无穷总质量逆值0解释成概率测度。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:890](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:890>)（`MD.Ch05.microMeasure`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`bcb522f51322c0b449c0aa9aa11a5099d165226ce7bff92c79935a4fe950c67a`；原文SHA256：`ab14b5897a6357bc45e867db98ee68136a8a62b98b3d252af37ef02a4c73072f`。
+
+## 1. MD-5.3.3-MicroProbability · unnumbered_claim · 印刷p.195 / PDFp.216
+
+### 2. 原文陈述
+
+> We have the standard properties of a probability function: $0\leq\operatorname{Pr}(A)\leq1$ for all measurable sets $A$; $\operatorname{Pr}(\Sigma_E)=1$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem microProbability : ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
+  ContDiff ℝ 1 H → 0 < (MolecularDynamics.Chapter05Review.microRaw H c) univ → (MolecularDynamics.Chapter05Review.microRaw H c) univ < (⊤ : ENNReal) →
+  (MolecularDynamics.Chapter05Review.microMeasure H c) univ=1 ∧
+    (MolecularDynamics.Chapter05Review.microMeasure H c) (MolecularDynamics.Chapter05Review.energySurface H c)=1 ∧
+    ∀ A : Set (MolecularDynamics.Chapter05Review.E n),0 ≤ (MolecularDynamics.Chapter05Review.microMeasure H c) A ∧ (MolecularDynamics.Chapter05Review.microMeasure H c) A ≤ 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.microProbability；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原H光滑背景及正有限总质量明示；ΣE总概率1也保留，不仅证明ambient univ质量1。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:895](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:895>)（`MD.Ch05.microProbability`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/MicroProbability.json；blueprint/ch05/validation/short_search/route-d6d3ca9f07832b05170d.lean；blueprint/ch05/validation/short_search/route-d6d3ca9f07832b05170d.log；blueprint/ch05/validation/short_search/route-8184da3b6892ee409bcb.lean；blueprint/ch05/validation/short_search/route-8184da3b6892ee409bcb.log；blueprint/ch05/validation/short_search/route-442fced3830d6d895c1b.lean；blueprint/ch05/validation/short_search/route-442fced3830d6d895c1b.log。
+
+签名SHA256：`bc402005124a5312685a49efc8c6592fd85615e2edbcc2b49042319690585a7a`；原文SHA256：`0921f4334b3a9b250528461828946d0334d51d028152529ea89398dbf979a8a0`。
+
+## 1. MD-5.3.3-LowerDimensionNull · unnumbered_claim · 印刷p.195 / PDFp.216
+
+### 2. 原文陈述
+
+> We also note that lower order objects such as a point or a curve in $\mathbb R^2$, or a surface in $\mathbb R^3$, have zero measure with respect to Lebesgue measure for the ambient space. Similarly, for a Hamiltonian system with $N_d$ degrees of freedom, the energy surface is of dimension $2N_d-1$ and the probability measure of sets of lower dimension than this will vanish.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem lowerDimensionNull :
+  ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)
+    (K : Set (MolecularDynamics.Chapter05Review.E d)), d+1 < n → ContDiff ℝ 1 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
+    ContDiff ℝ 1 g → IsCompact K →
+    g '' K ⊆ MolecularDynamics.Chapter05Review.energySurface H c → (MolecularDynamics.Chapter05Review.microMeasure H c) (g '' K)=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.lowerDimensionNull；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:925](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:925>)（`MD.Ch05.lowerDimensionNull`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺Hausdorff维数/光滑图像到真实曲面加权测度零集的接口；不建设大型几何理论。
+
+签名SHA256：`b7b6e15c358aa337581a7b5a761e7f8a110c0e419378e0bb7eb37d591eb2dd25`；原文SHA256：`6d48fd6b0bb5c62c75ebbfafcb67bc7bc022d971904d1c937b427f508fe4e6f6`。
+
+## 1. MD-5.3.3-MicroAverage · definition · 印刷p.195 / PDFp.216
+
+### 2. 原文陈述
+
+> As we mentioned in motivating the microcanonical distribution, we could alternatively view microcanonical averages as integrals with respect to the singular measure on the ambient space $D$ defined by $\mu_Ed\omega'=Z_E^{-1}\delta[H-E]d\omega$. Regardless of which formulation is adopted, we may use the probability measure to compute expectations (averages) of (suitable) functions defined on the phase space. We write such an expectation as
+> \[\operatorname{Av}_{H=E}(g)=\int_{\Sigma_E}g(z)d\mu_E=\int_Dg(z)\mu_Ed\omega'.\]
+> As shorthand, where the underlying space and probability density are assumed, one may write such an average more simply as $\operatorname{Av}_{H=E}(g)=\langle g\rangle$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def microAverage {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) := MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.microMeasure H c) g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.microAverage；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:933](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:933>)（`MD.Ch05.microAverage`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`f71e52af87f2937399a70a709f9b5c51ed0bce2e36e86622a217b41701490c90`；原文SHA256：`bd43a73f78a77b31c8c3adfa6f0c1be8165c81f8947eb176aa9132ad8bebff41`。

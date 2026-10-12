@@ -87,6 +87,12 @@ def microMeasure {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
   ((microRaw H c) univ)⁻¹ • microRaw H c
 ```
 
+### MolecularDynamics.Chapter05Review.microRaw (MolecularDynamics/Chapter05/ReviewDefinitions.lean:65)
+```lean
+def microRaw {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  (surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖grad H z‖⁻¹))
+```
+
 ### MolecularDynamics.Chapter05Review.regularEnergy (MolecularDynamics/Chapter05/ReviewDefinitions.lean:72)
 ```lean
 def regularEnergy {n : ℕ} (H : E n → ℝ) (c : ℝ) : Prop :=
@@ -145,10 +151,10 @@ def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
     Measure.hausdorffMeasure (d : ℝ)
 ```
 
-### MolecularDynamics.Chapter05Review.microMeasure (MolecularDynamics/Chapter05/ReviewDefinitions.lean:68)
+### MD.Ch05.microMeasure (Blueprint/Ch05.lean:890)
 ```lean
-def microMeasure {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
-  ((microRaw H c) univ)⁻¹ • microRaw H c
+def microMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  ((MolecularDynamics.Chapter05Review.microRaw H c) univ)⁻¹ • MolecularDynamics.Chapter05Review.microRaw H c
 ```
 
 ### MD.Ch05.microRaw (Blueprint/Ch05.lean:751)

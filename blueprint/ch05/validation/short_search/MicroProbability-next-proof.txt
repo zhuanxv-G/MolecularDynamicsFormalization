@@ -1,0 +1,22 @@
+intro n H c hH hpos hfin
+  let σ := MolecularDynamics.Chapter05Review.energySurface H c
+  have hσ : MeasurableSet σ := by
+    exact (isClosed_eq hH.continuous continuous_const).measurableSet
+  have hzero : (MolecularDynamics.Chapter05Review.microRaw H c) σᶜ=0 := by
+    unfold MolecularDynamics.Chapter05Review.microRaw
+    apply withDensity_absolutelyContinuous
+    unfold MolecularDynamics.Chapter05Review.surfaceMeasure
+    rw [Measure.restrict_apply hσ.compl]
+    simp [σ]
+  have hu : (MolecularDynamics.Chapter05Review.microMeasure H c) univ=1 := by
+    unfold MolecularDynamics.Chapter05Review.microMeasure
+    rw [Measure.smul_apply,smul_eq_mul]
+    exact ENNReal.inv_mul_cancel (ne_of_gt hpos) (ne_of_lt hfin)
+  have hz : (MolecularDynamics.Chapter05Review.microMeasure H c) σᶜ=0 := by
+    unfold MolecularDynamics.Chapter05Review.microMeasure
+    rw [Measure.smul_apply,hzero,smul_zero]
+  refine ⟨hu,?_,?_⟩
+  · have hh := measure_add_measure_compl hσ (μ:=MolecularDynamics.Chapter05Review.microMeasure H c)
+    simpa only [hz,add_zero,hu] using hh
+  · intro A
+    exact ⟨bot_le,(measure_mono (subset_univ A)).trans_eq hu⟩

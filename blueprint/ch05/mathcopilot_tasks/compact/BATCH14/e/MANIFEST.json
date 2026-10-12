@@ -12,8 +12,8 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "e4b45fc25a45e71eddbe887cb6661046108dcbe90dcc23a5052370b8bf5e4da3",
-  "lean_sha256": "2ef5fd3009d8cec142a96101c8f6c12d99cd277c2115957c56727e096490874b",
+  "source_json_sha256": "6c26fbed781fbf6ca728de2b0d68bbbd6e16b3e4f6c9f9fcb323da443bc95990",
+  "lean_sha256": "47cf3bac473243f29b825dd38c020e00df3ed45a5a82d00914d4b7d73c1cd3d9",
   "signature_sha256": "2293ff69683ccde89fab08f32ba6fd2ac276d99d47250e6592fcacc26ef09e06",
   "definition_excerpts": [
     {
@@ -57,6 +57,12 @@
       "namespace": "MolecularDynamics.Chapter05Review",
       "name": "microMeasure",
       "code_sha256": "28734254a3a2b03e6fa5b4fe8f4c294a583f82b4faf83225ac6040932f7eea57"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "microRaw",
+      "code_sha256": "e2519ffdb9c766be3aa33bf35315ba208cdd69d5e3f6a7b4ce760272b2665ace"
     },
     {
       "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
@@ -119,10 +125,10 @@
       "code_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
     },
     {
-      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
-      "namespace": "MolecularDynamics.Chapter05Review",
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
       "name": "microMeasure",
-      "code_sha256": "28734254a3a2b03e6fa5b4fe8f4c294a583f82b4faf83225ac6040932f7eea57"
+      "code_sha256": "bcb522f51322c0b449c0aa9aa11a5099d165226ce7bff92c79935a4fe950c67a"
     },
     {
       "path": "Blueprint/Ch05.lean",
@@ -149,11 +155,11 @@
       "code_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
     }
   ],
-  "paste_plus_pdf_bytes": 91812,
+  "paste_plus_pdf_bytes": 92167,
   "files": {
     "PASTE.txt": {
-      "bytes": 8746,
-      "sha256": "98829acfb069878b725b5fb41f0c421fd280b69e1ddcd89f4b3e669102289924"
+      "bytes": 9101,
+      "sha256": "5cdbea9c63ff72e02a8f03f24119e47e71ee5c8621a42867e632056c1171676f"
     },
     "BATCH14e_PAGES.pdf": {
       "bytes": 83066,
@@ -165,5 +171,5 @@
     "pdf_rendered_pixel_equality": "PASS",
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 98401
+  "total_task_bytes": 98956
 }

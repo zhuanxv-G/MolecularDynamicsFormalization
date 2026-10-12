@@ -525,6 +525,94 @@ proofs['DoubleWellBasin']='''intro z c hz hc hE t
     have hpos : 0 < q t := lt_of_le_of_ne (le_of_not_gt ht) (Ne.symm (hn t))
     obtain ⟨s,hs⟩ := intermediate_value_univ 0 t hq (show (0 : ℝ) ∈ Icc (q 0) (q t) from ⟨hneg.le,hpos.le⟩)
     exact hn s hs'''
+proofs['DoubleWellDisconnected']='''intro c hc hS
+  let a : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![-1,Real.sqrt (2*c)]
+  let b : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![1,Real.sqrt (2*c)]
+  have hsqrt : (Real.sqrt (2*c))^2=2*c := Real.sq_sqrt (by positivity)
+  have ha : a ∈ MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c := by
+    simp [MolecularDynamics.Chapter05Review.energySurface,doubleWellEnergy,a,hsqrt] <;> ring
+  have hb : b ∈ MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c := by
+    simp [MolecularDynamics.Chapter05Review.energySurface,doubleWellEnergy,b,hsqrt] <;> ring
+  have hq : ContinuousOn (fun z : MolecularDynamics.Chapter05Review.E 2 => z 0)
+      (MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c) := by fun_prop
+  have hzero : (0 : ℝ) ∈ Icc (a 0) (b 0) := by norm_num [a,b]
+  obtain ⟨z,hz,hz0⟩ := hS.intermediate_value ha hb hq hzero
+  change doubleWellEnergy z=c at hz
+  unfold doubleWellEnergy at hz
+  rw [hz0] at hz
+  nlinarith [sq_nonneg (z 1),hc.2]'''
+proofs['MixingMemoryLoss']='''intro n μ Φ β φ hμ hm hβ hβpos hβmass hφ hb hΦ
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le
+  have hi : Integrable φ μ := Integrable.mono' (integrable_const C)
+    hφ.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hB (φ z) (mem_range_self z)))
+  have he (t : ℝ) : (∫ z,φ (Φ t z) ∂μ)=MolecularDynamics.Chapter05Review.average μ φ := by
+    have hh := integral_map (hΦ t).measurable.aemeasurable
+      (show AEStronglyMeasurable φ (Measure.map (Φ t) μ) from by rw [(hΦ t).map_eq];exact hi.aestronglyMeasurable)
+    rw [(hΦ t).map_eq] at hh
+    exact hh.symm
+  have hp (t : ℝ) : Integrable (fun z => φ (Φ t z)*β z) μ :=
+    hβ.bdd_mul (hφ.measurable.comp (hΦ t).measurable).aestronglyMeasurable
+      (ae_of_all _ (fun z => hB (φ (Φ t z)) (mem_range_self _)))
+  have heq (t : ℝ) : (∫ z,φ (Φ t z)*(β z-1) ∂μ)=
+      (∫ z,φ (Φ t z)*β z ∂μ)-MolecularDynamics.Chapter05Review.average μ φ := by
+    simp_rw [mul_sub,mul_one]
+    rw [integral_sub (hp t) ((hΦ t).integrable_comp_of_integrable hi),he]
+  simp_rw [heq]
+  simpa only [sub_self] using (hm β φ hβ hβpos hβmass hφ hb).sub tendsto_const_nhds'''
+proofs['MixingCorrelation']='''intro n μ Φ a b k hμ hΦ hm ha hb hba hbb
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hbb.exists_pos_norm_le
+  obtain ⟨R,hR,hA⟩ := hba.exists_pos_norm_le
+  have ib : Integrable b μ := Integrable.mono' (integrable_const C)
+    hb.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hB (b z) (mem_range_self z)))
+  have ia : Integrable a μ := Integrable.mono' (integrable_const R)
+    ha.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hA (a z) (mem_range_self z)))
+  have ibound : |∫ z,b z ∂μ| ≤ C := by
+    simpa only [Real.norm_eq_abs,measureReal_univ_eq_one,mul_one] using
+      norm_integral_le_of_norm_le_const (ae_of_all μ (fun z => hB (b z) (mem_range_self z)))
+  let D := C+1
+  let M := (∫ z,b z ∂μ)+D
+  have hM : 0 < M := by dsimp [M,D];linarith [neg_le_of_abs_le ibound]
+  let r (z) := (b z+D)/M
+  have ir : Integrable r μ := (ib.add (integrable_const D)).div_const M
+  have rpos (z) : 0 ≤ r z := by
+    have hx : |b z| ≤ C := by simpa only [Real.norm_eq_abs] using hB (b z) (mem_range_self z)
+    dsimp [r,D]
+    apply div_nonneg _ hM.le
+    linarith [neg_le_of_abs_le hx]
+  have rmass : (∫ z,r z ∂μ)=1 := by
+    dsimp [r]
+    rw [integral_div,integral_add ib (integrable_const D)]
+    simp [integral_const,M,ne_of_gt hM]
+  have ht := hm r a ir rpos rmass ha hba
+  have iap (t : ℝ) : Integrable (fun z => a (Φ t z)) μ :=
+    (hΦ t).integrable_comp_of_integrable ia
+  have ie (t : ℝ) : (∫ z,a (Φ t z) ∂μ)=MolecularDynamics.Chapter05Review.average μ a := by
+    have hh := integral_map (hΦ t).measurable.aemeasurable
+      (show AEStronglyMeasurable a (Measure.map (Φ t) μ) from by rw [(hΦ t).map_eq];exact ia.aestronglyMeasurable)
+    rw [(hΦ t).map_eq] at hh
+    exact hh.symm
+  have ipr (t : ℝ) : Integrable (fun z => a (Φ t z)*r z) μ :=
+    ir.bdd_mul (ha.measurable.comp (hΦ t).measurable).aestronglyMeasurable
+      (ae_of_all _ (fun z => hA (a (Φ t z)) (mem_range_self _)))
+  have heq (t : ℝ) : M*(∫ z,a (Φ t z)*r z ∂μ)-D*MolecularDynamics.Chapter05Review.average μ a=
+      (∫ z,a (Φ t z)*b z ∂μ) := by
+    rw [←ie t,←integral_const_mul,←integral_const_mul,
+      ←integral_sub ((ipr t).const_mul M) ((iap t).const_mul D)]
+    apply integral_congr_ae
+    filter_upwards [] with z
+    dsimp [r]
+    field_simp
+    ring
+  have hh := (ht.const_mul M).sub (tendsto_const_nhds : Tendsto
+    (fun _ : ℝ => D*MolecularDynamics.Chapter05Review.average μ a) atTop
+    (𝓝 (D*MolecularDynamics.Chapter05Review.average μ a)))
+  simp_rw [heq] at hh
+  convert hh.const_mul k using 1
+  unfold MolecularDynamics.Chapter05Review.average
+  dsimp [M]
+  ring'''
 import json,re
 from pathlib import Path
 extra=Path(__file__).with_name('ch05_elementary_candidates.json')

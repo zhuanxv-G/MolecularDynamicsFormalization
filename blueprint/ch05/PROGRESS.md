@@ -2,7 +2,7 @@
 
 范围：印刷p.179–209/PDF200–230，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前97条；旧清单映射51/86；本地PASS 93；网站返回0。
+当前101条；旧清单映射55/86；本地PASS 97；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -103,6 +103,10 @@
 | MD-5.3.2-IdealGasEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-5.3.2-IdealGasPositionDomain | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-5.3.2-IdealGasPartition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺真实3N球面积、曲面产品测度与微正则权积分桥接；不建设coarea/大型几何理论。 |
+| MD-5.3.3-MicroMeasure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.3.3-MicroProbability | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.3.3-LowerDimensionNull | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺Hausdorff维数/光滑图像到真实曲面加权测度零集的接口；不建设大型几何理论。 |
+| MD-5.3.3-MicroAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 
 ## 旧86条完整映射
 
@@ -159,10 +163,10 @@
 | CH05-049 | MD-5.3.2-WholeShellVolumeLimit |
 | CH05-050 | MD-5.3.2-MicroInvariant |
 | CH05-051 | MD-5.3.2-IdealGasPartition |
-| CH05-052 | PENDING：所属节尚未处理 |
-| CH05-053 | PENDING：所属节尚未处理 |
-| CH05-054 | PENDING：所属节尚未处理 |
-| CH05-055 | PENDING：所属节尚未处理 |
+| CH05-052 | MD-5.3.3-MicroMeasure |
+| CH05-053 | MD-5.3.3-MicroProbability |
+| CH05-054 | MD-5.3.3-LowerDimensionNull |
+| CH05-055 | MD-5.3.3-MicroAverage |
 | CH05-056 | PENDING：所属节尚未处理 |
 | CH05-057 | PENDING：所属节尚未处理 |
 | CH05-058 | PENDING：所属节尚未处理 |
@@ -223,6 +227,7 @@
 - MD-5.3.2-HarmonicQuadraturePrinted：[ERRATUM?]第一行上界印刷为√(2E)，下一行是√(2E)/Ω，二者对一般Ω不一致；不静默补Ω。 原上界疑误需裁定，局部曲面参数化尚缺接口。
 - MD-5.3.2-HarmonicPartition：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺椭圆真实Hausdorff面积/coarea及加权曲面积分桥接，不建设大型几何理论。
 - MD-5.3.2-IdealGasPartition：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实3N球面积、曲面产品测度与微正则权积分桥接；不建设coarea/大型几何理论。
+- MD-5.3.3-LowerDimensionNull：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺Hausdorff维数/光滑图像到真实曲面加权测度零集的接口；不建设大型几何理论。
 
 ## 定性段落排除
 
