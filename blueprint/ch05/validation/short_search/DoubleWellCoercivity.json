@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "constructor\n  · intro z\n    unfold doubleWellEnergy\n    positivity\n  · intro c\n    have hc : Continuous (doubleWellEnergy) := by unfold doubleWellEnergy; fun_prop\n    have hclosed : IsClosed {z : MolecularDynamics.Chapter05Review.E 2 | doubleWellEnergy z ≤ c} :=\n      isClosed_le hc continuous_const\n    apply (isCompact_closedBall (0 : MolecularDynamics.Chapter05Review.E 2) (4*|c|+4)).of_isClosed_subset hclosed\n    intro z hz\n    have he : (z 1)^2/2+(1-(z 0)^2)^2 ≤ c := hz\n    have hpos : 0 ≤ c := by nlinarith [sq_nonneg (z 1),sq_nonneg (1-(z 0)^2)]\n    have hq : (z 0)^2 ≤ (c+3)/2 := by\n      nlinarith [sq_nonneg (z 1),sq_nonneg ((z 0)^2-2)]\n    have hp : (z 1)^2 ≤ 2*c := by nlinarith [sq_nonneg (1-(z 0)^2)]\n    have hnorm : ‖z‖^2=(z 0)^2+(z 1)^2 := by\n      rw [EuclideanSpace.norm_sq_eq]\n      simp [Fin.sum_univ_two,Real.norm_eq_abs]\n    rw [Metric.mem_closedBall,dist_zero_right,abs_of_nonneg hpos]\n    nlinarith [norm_nonneg z]",
+    "source": "blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b-DoubleWellCoercivity.lean",
+    "log": "blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b-DoubleWellCoercivity.log",
+    "source_sha256": "0b2f4d161b22c9e3f97cf9dcef5df9b578a8981cf71433e08f84118113e6265c",
+    "log_sha256": "15bf7ff7fd1c9d90b3352e0e8661a2fe25b62b7d49f9c3aba506607d7acae664"
+  }
+]

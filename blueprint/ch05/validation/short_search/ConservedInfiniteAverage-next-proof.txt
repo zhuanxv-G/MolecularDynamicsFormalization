@@ -1,0 +1,6 @@
+have hm (g : X → ℝ) (hg : ∀ t,g (z t)=g (z 0)) :
+      MolecularDynamics.Chapter05Review.hasTimeAverage z g (g (z 0)) := by
+    apply tendsto_congr' _ |>.2 tendsto_const_nhds
+    filter_upwards [eventually_gt_atTop (0 : ℝ)] with T hT
+    exact MolecularDynamics.Chapter05Review.conservedAverage_proved z g (g (z 0)) hg T (ne_of_gt hT)
+  exact ⟨hm I hI,hm (r ∘ I) (fun t => by simp only [Function.comp_apply,hI])⟩

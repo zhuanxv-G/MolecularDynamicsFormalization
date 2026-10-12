@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro z c hz hc hE t\n  let q (s : ℝ) := (z s) 0\n  have hq : Continuous q := by dsimp [q]; fun_prop\n  have hn (s : ℝ) : q s ≠ 0 := by\n    intro heq\n    have hh := hE s\n    unfold doubleWellEnergy at hh\n    change (z s) 0=0 at heq\n    rw [heq] at hh\n    nlinarith [sq_nonneg ((z s) 1),hc.2]\n  by_cases h0 : 0 < q 0\n  · left\n    refine ⟨h0,?_⟩\n    by_contra ht\n    have hneg : q t < 0 := lt_of_le_of_ne (le_of_not_gt ht) (hn t)\n    obtain ⟨s,hs⟩ := intermediate_value_univ t 0 hq (show (0 : ℝ) ∈ Icc (q t) (q 0) from ⟨hneg.le,h0.le⟩)\n    exact hn s hs\n  · right\n    have hneg : q 0 < 0 := lt_of_le_of_ne (le_of_not_gt h0) (hn 0)\n    refine ⟨hneg,?_⟩\n    by_contra ht\n    have hpos : 0 < q t := lt_of_le_of_ne (le_of_not_gt ht) (Ne.symm (hn t))\n    obtain ⟨s,hs⟩ := intermediate_value_univ 0 t hq (show (0 : ℝ) ∈ Icc (q 0) (q t) from ⟨hneg.le,hpos.le⟩)\n    exact hn s hs",
+    "source": "blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b-DoubleWellBasin.lean",
+    "log": "blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b-DoubleWellBasin.log",
+    "source_sha256": "cfe39d5960e295ebbc295b757e9cee46207c77945a8e8bb96d5581bbfbef491c",
+    "log_sha256": "5338e8e4ecfef557c11516e4e77a83dfc1904cddaa186f0ca2aec92d6576e31b"
+  }
+]

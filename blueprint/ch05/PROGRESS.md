@@ -2,7 +2,7 @@
 
 范围：印刷p.179–209/PDF200–230，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前101条；旧清单映射55/86；本地PASS 97；网站返回0。
+当前110条；旧清单映射57/86；本地PASS 106；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -107,6 +107,15 @@
 | MD-5.3.3-MicroProbability | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-5.3.3-LowerDimensionNull | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺Hausdorff维数/光滑图像到真实曲面加权测度零集的接口；不建设大型几何理论。 |
 | MD-5.3.3-MicroAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.3.3-AmbientLowerDimensionNull | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺当前低维C¹像Lebesgue零测与规范Hausdorff测度的现成桥接；需要局部Lipschitz覆盖/维数几何測度接口，不建设新大型几何理论。 |
+| MD-5.4-TimeAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4-HasTimeAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4-ConservedAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-5.4-ConservedInfiniteAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.4-DoubleWellEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.4-DoubleWellCoercivity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.4-DoubleWellDisconnected | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.4-DoubleWellBasin | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 
 ## 旧86条完整映射
 
@@ -167,8 +176,8 @@
 | CH05-053 | MD-5.3.3-MicroProbability |
 | CH05-054 | MD-5.3.3-LowerDimensionNull |
 | CH05-055 | MD-5.3.3-MicroAverage |
-| CH05-056 | PENDING：所属节尚未处理 |
-| CH05-057 | PENDING：所属节尚未处理 |
+| CH05-056 | MD-5.4-HasTimeAverage |
+| CH05-057 | MD-5.4-ConservedInfiniteAverage |
 | CH05-058 | PENDING：所属节尚未处理 |
 | CH05-059 | PENDING：所属节尚未处理 |
 | CH05-060 | PENDING：所属节尚未处理 |
@@ -228,6 +237,7 @@
 - MD-5.3.2-HarmonicPartition：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺椭圆真实Hausdorff面积/coarea及加权曲面积分桥接，不建设大型几何理论。
 - MD-5.3.2-IdealGasPartition：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实3N球面积、曲面产品测度与微正则权积分桥接；不建设coarea/大型几何理论。
 - MD-5.3.3-LowerDimensionNull：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺Hausdorff维数/光滑图像到真实曲面加权测度零集的接口；不建设大型几何理论。
+- MD-5.3.3-AmbientLowerDimensionNull：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺当前低维C¹像Lebesgue零测与规范Hausdorff测度的现成桥接；需要局部Lipschitz覆盖/维数几何測度接口，不建设新大型几何理论。
 
 ## 定性段落排除
 

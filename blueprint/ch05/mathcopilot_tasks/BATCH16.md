@@ -134,3 +134,34 @@ theorem lowerDimensionNull :
 def microAverage {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) := MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.microMeasure H c) g
 ```
 
+### MD-5.3.3-AmbientLowerDimensionNull
+```json
+{
+  "source_id": "MD-5.3.3-AmbientLowerDimensionNull",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.3.3",
+  "printed_page": "195",
+  "pdf_page": "216",
+  "statement_latex": "We also note that lower order objects such as a point or a curve in $\\mathbb R^2$, or a surface in $\\mathbb R^3$, have zero measure with respect to Lebesgue measure for the ambient space.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.ambientLowerDimensionNull",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]以低维C¹参数化的紧像实现原“lower order objects”，保留实际ambient Lebesgue volume结论，不与ΣE上的奇异微正则测度混同；非任意拓扑低维集合。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+```lean
+theorem ambientLowerDimensionNull : ∀ n d (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n) (K : Set (MolecularDynamics.Chapter05Review.E d)),
+  d < n → ContDiff ℝ 1 g → IsCompact K → volume (g '' K)=0
+```
+

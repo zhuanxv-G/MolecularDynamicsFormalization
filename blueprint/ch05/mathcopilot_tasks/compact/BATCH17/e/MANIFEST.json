@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH17",
+  "subtask": "BATCH17e",
+  "source_ids": [
+    "MD-5.4-DoubleWellEnergy"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 217,
+      "printed_page": 196
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "5211ea5484e21424324623819b24c943936d932600662fe764b1593f824a1d97",
+  "lean_sha256": "252dc797aa03cb59594fd8da4ce9ada0a5f48e7d0934939f980ed03277acdd6f",
+  "signature_sha256": "b305bae4c5b6ca337626190bef8ab791839d35b7c9699bf08b88331c690579cc",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "doubleWellEnergy",
+      "code_sha256": "b305bae4c5b6ca337626190bef8ab791839d35b7c9699bf08b88331c690579cc"
+    }
+  ],
+  "paste_plus_pdf_bytes": 153275,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3297,
+      "sha256": "0aa564327d72d6b42bb8cb65be16f96037ba2a85d45a53ac31638f9c48e0c708"
+    },
+    "BATCH17e_PAGES.pdf": {
+      "bytes": 149978,
+      "sha256": "50ca5c7b0fc55262c8e518a347cfb16dbacca61ced191a55d1fc676ddb075993"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 155145
+}

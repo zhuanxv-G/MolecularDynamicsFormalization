@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b.lean",
+    "log": "blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b.log",
+    "source_sha256": "9131f2f6011dbbb263a0ebcc3531e86288084b0ab72ed16a35649234cdaa68f7",
+    "log_sha256": "376633314b522a77523fdd2ae2d46f0a753b02f01908765d1705c3e9089b4d7c"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "have hm (g : X → ℝ) (hg : ∀ t,g (z t)=g (z 0)) :\n      MolecularDynamics.Chapter05Review.hasTimeAverage z g (g (z 0)) := by\n    apply tendsto_congr' _ |>.2 tendsto_const_nhds\n    filter_upwards [eventually_gt_atTop (0 : ℝ)] with T hT\n    exact MolecularDynamics.Chapter05Review.conservedAverage_proved z g (g (z 0)) hg T (ne_of_gt hT)\n  exact ⟨hm I hI,hm (r ∘ I) (fun t => by simp only [Function.comp_apply,hI])⟩",
+    "source": "blueprint/ch05/validation/short_search/route-d8734591675d9fd4fd17.lean",
+    "log": "blueprint/ch05/validation/short_search/route-d8734591675d9fd4fd17.log",
+    "source_sha256": "30e5de13584b4594af304d7c9a702b58aecd02e93951b4bf80e3821d50dec2c0",
+    "log_sha256": "d785e5494e1b8e6d7a267e92eddea2ed431f6437a20f2f1805e21b6efde7fdea"
+  }
+]

@@ -101,3 +101,12 @@ import Blueprint.Ch05
 #print axioms MD.Ch05.microProbability
 #print axioms MD.Ch05.lowerDimensionNull
 #print axioms MD.Ch05.microAverage
+#print axioms MD.Ch05.ambientLowerDimensionNull
+#print axioms MD.Ch05.timeAverage
+#print axioms MD.Ch05.hasTimeAverage
+#print axioms MD.Ch05.conservedAverage
+#print axioms MD.Ch05.conservedInfiniteAverage
+#print axioms MD.Ch05.doubleWellEnergy
+#print axioms MD.Ch05.doubleWellCoercivity
+#print axioms MD.Ch05.doubleWellDisconnected
+#print axioms MD.Ch05.doubleWellBasin

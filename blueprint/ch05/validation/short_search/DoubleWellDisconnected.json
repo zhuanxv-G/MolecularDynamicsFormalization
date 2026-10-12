@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b.lean",
+    "log": "blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b.log",
+    "source_sha256": "9131f2f6011dbbb263a0ebcc3531e86288084b0ab72ed16a35649234cdaa68f7",
+    "log_sha256": "376633314b522a77523fdd2ae2d46f0a753b02f01908765d1705c3e9089b4d7c"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro c hc hS\n  let a : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![-1,Real.sqrt (2*c)]\n  let b : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![1,Real.sqrt (2*c)]\n  have hsqrt : (Real.sqrt (2*c))^2=2*c := Real.sq_sqrt (by linarith [hc.1])\n  have ha : a ∈ MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c := by\n    change (Real.sqrt (2*c))^2/2+(1-(-1 : ℝ)^2)^2=c\n    rw [hsqrt];ring\n  have hb : b ∈ MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c := by\n    change (Real.sqrt (2*c))^2/2+(1-(1 : ℝ)^2)^2=c\n    rw [hsqrt];ring\n  have hq : ContinuousOn (fun z : MolecularDynamics.Chapter05Review.E 2 => z 0)\n      (MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c) := by fun_prop\n  have hzero : (0 : ℝ) ∈ Icc (a 0) (b 0) := by norm_num [a,b]\n  obtain ⟨z,hz,hz0⟩ := hS.intermediate_value ha hb hq hzero\n  change doubleWellEnergy z=c at hz\n  unfold doubleWellEnergy at hz\n  change z 0=0 at hz0\n  rw [hz0] at hz\n  nlinarith [sq_nonneg (z 1),hc.2]",
+    "source": "blueprint/ch05/validation/short_search/route-d8734591675d9fd4fd17.lean",
+    "log": "blueprint/ch05/validation/short_search/route-d8734591675d9fd4fd17.log",
+    "source_sha256": "30e5de13584b4594af304d7c9a702b58aecd02e93951b4bf80e3821d50dec2c0",
+    "log_sha256": "d785e5494e1b8e6d7a267e92eddea2ed431f6437a20f2f1805e21b6efde7fdea"
+  }
+]

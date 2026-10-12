@@ -1,7 +1,7 @@
 # 项目接续与形式化约定
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：继续第5章§5.4真实无限时间平均与双阱分离；先补录环境Lebesgue零测句，不建设低维像大理论。
+下一步：继续第5章§5.4.1标准遍历性/振子/KAM及曲线像；缺大型理论保留sorry，复用已通过双阱四项短证明。
 
 ## 当前最高优先级范围（2026-10-10用户新指令）
 
@@ -9,7 +9,7 @@
 - 每章①逐字JSON及全部旧CSV映射；②忠实Blueprint加入构建；③模板C本地预审及完整BATCH/compact的PASTE.txt+原页PDF+SHA256 MANIFEST（实际磁盘字节<256000）；④仅本地PASS证明，已有桥接→短证明→其余；⑤逐条公理、7段文档及终验。
 - [EXTRA]逐项注明，疑误[ERRATUM?]与NEEDS_HUMAN；禁止True、P→P、结论作假设、admit、新增axiom、unsafe、偷换对象/量词/结论。网站列仅待网站审计，不伪造PASS或冻结。
 - MolecularDynamics/正式库不改源码或签名、0 sorry；第1章交付逐字节冻结。仅出现第1章新返回件时，当前节提交后按原EAUDIT及repair_log只追加整合，修签名后重审，再回当前章。
-- 第5章Mathlib缺失的微正则/遍历/KAM等大型理论不建设，忠实陈述后sorry+缺项；每节2小时时间盒。第6章仅可桥接已有定理，不恢复封存断点/长证明；Thm6.1/6.2/Prop6.4无现成桥接则sorry。
+- 第5章Mathlib缺失的微正则/遍历/KAM等大型理论不建设，忠实陈述后sorry+缺项；每节2小时时间盒。第6章可桥接已有正式定理并进行本地短证明，不恢复封存断点/长证明；Thm6.1/6.2/Prop6.4无现成桥接则sorry。
 - 每章从上章最后commit新建chapterXX-blueprint；每节一次commit+push已授权。每小批≤8条及时落盘，更新该章PROGRESS与跨章唯一总表LOCAL_PIPELINE；每小批单文件lake env lean，每节完整scripts/check.ps1。固定Lean4.34.0/Mathlibv4.34.0。
 - 单条3条失败路线或缺大型理论即sorry+缺项继续；不等待导师。最终状态仅self-contained / checked+documented priors / incomplete，含sorryAx必须incomplete，区分直接和传递占位。
 - 唤醒先git status，再只读AGENTS、CURRENT_STATE顶部、WORK_LOG最新、LOCAL_PIPELINE及当前章PROGRESS；核对现有编译/验证证据，复用已通过工作；未提交半成品核对后续做，不丢弃。每检查点WORK_LOG≤3行；不向STATUS/FORMALIZATION_MAP/ASSUMPTIONS追加长文；其他任务output/tmp/check-full06等不动、不提交。

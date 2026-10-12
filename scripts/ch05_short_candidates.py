@@ -280,8 +280,7 @@ proofs['ConservedInfiniteAverage']='''intro X z I r hI
     filter_upwards [eventually_gt_atTop (0 : ℝ)] with T hT
     exact MolecularDynamics.Chapter05Review.conservedAverage_proved z g (g (z 0)) hg T (ne_of_gt hT)
   exact ⟨hm I hI,hm (r ∘ I) (fun t => by simp only [Function.comp_apply,hI])⟩'''
-proofs['InvariantIndicatorAverage']='''intro X Φ A hA z hz
-  unfold MolecularDynamics.Chapter05Review.hasTimeAverage
+proofs['InvariantIndicatorAverage']='''unfold MolecularDynamics.Chapter05Review.hasTimeAverage
   have heq : MolecularDynamics.Chapter05Review.timeAverage (fun t => Φ t z)
       (Aᶜ.indicator (fun _ => (1 : ℝ)))=(fun _ : ℝ => 0) := by
     funext T
@@ -303,6 +302,18 @@ proofs['GradientTransverse']='''intro n H c hn z hz
   exact inner_self_ne_zero.mpr (hn z hz)'''
 proofs['MeasureDuality']='''intro n μ Φ φ t hm hi
   exact integral_map hm.aemeasurable hi.aestronglyMeasurable'''
+proofs['CorrelationTimeAE']='''intro n d μ Φ a b k t h0 hg he hi
+  filter_upwards [he (fun z => inner ℝ (a (Φ t z)) (b z)) hi] with z hz
+  unfold MolecularDynamics.Chapter05Review.hasTimeAverage MolecularDynamics.Chapter05Review.timeAverage at hz
+  have hh := hz.const_mul k
+  have ht (s : ℝ) : Φ (s+t) z=Φ t (Φ s z) := by rw [add_comm,hg]
+  simpa only [MolecularDynamics.Chapter05Review.average,MolecularDynamics.Chapter05Review.correlation,ht,mul_assoc] using hh'''
+proofs['CenteredCorrelation']='''intro n μ Φ a b k hμ hΦ hm ha hb hba hbb hzero
+  have ht := mixingCorrelation n μ Φ a b k hμ hΦ hm ha hb hba hbb
+  have hl : k*MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b=0 := by
+    rcases hzero with h | h <;> rw [h] <;> ring
+  rw [hl] at ht
+  simpa only [abs_zero] using ht.abs'''
 proofs['TwoOscillatorEnergyDecomposition']='''intro Ω E z
   constructor
   · intro h
@@ -447,6 +458,146 @@ proofs['BackwardEnergyDecay']='''intro h z k
   | succ k ih =>
     rw [Function.iterate_succ_apply',hs,ih,pow_succ]
     ring'''
+proofs['SymplecticEulerEllipse']='''intro h hh
+  let d := 2-|h|
+  have hd : 0 < d := by dsimp [d];linarith
+  have lower (z : MolecularDynamics.Chapter05Review.E 2) :
+      d*((z 0)^2+(z 1)^2) ≤ 4*MolecularDynamics.Chapter05Review.shadowOscillator h z := by
+    unfold MolecularDynamics.Chapter05Review.shadowOscillator
+    dsimp [d]
+    by_cases hp : 0 ≤ h
+    · rw [abs_of_nonneg hp]
+      nlinarith [mul_nonneg hp (sq_nonneg (z 0-z 1))]
+    · rw [abs_of_neg (lt_of_not_ge hp)]
+      nlinarith [mul_nonneg (neg_nonneg.mpr (le_of_lt (lt_of_not_ge hp))) (sq_nonneg (z 0+z 1))]
+  have normeq (z : MolecularDynamics.Chapter05Review.E 2) : ‖z‖^2=(z 0)^2+(z 1)^2 := by
+    rw [EuclideanSpace.norm_sq_eq]
+    simp [Fin.sum_univ_two,Real.norm_eq_abs]
+  refine ⟨?_,?_,?_⟩
+  · intro z hz
+    have hnorm : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hz) _
+    have hl := lower z
+    rw [←normeq] at hl
+    nlinarith [mul_pos hd hnorm]
+  · intro c
+    have hc : Continuous (MolecularDynamics.Chapter05Review.shadowOscillator h) := by
+      unfold MolecularDynamics.Chapter05Review.shadowOscillator;fun_prop
+    have hclosed : IsClosed {z : MolecularDynamics.Chapter05Review.E 2 | MolecularDynamics.Chapter05Review.shadowOscillator h z ≤ c} :=
+      isClosed_le hc continuous_const
+    apply (isCompact_closedBall (0 : MolecularDynamics.Chapter05Review.E 2) (4*|c|/d+1)).of_isClosed_subset hclosed
+    intro z hz
+    have hl := lower z
+    rw [←normeq] at hl
+    have hle : ‖z‖^2 ≤ 4*|c|/d := (le_div_iff₀ hd).mpr (by nlinarith [le_abs_self c])
+    have hB : 0 ≤ 4*|c|/d := by positivity
+    rw [Metric.mem_closedBall,dist_zero_right]
+    nlinarith [norm_nonneg z]
+  · intro z k
+    induction k with
+    | zero => simp
+    | succ k ih =>
+      rw [Function.iterate_succ_apply',MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved,ih]'''
+proofs['BackwardEulerLimit']='''intro h hh
+  have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+  have hc : Continuous (MolecularDynamics.Chapter05Review.backwardEuler h) := by
+    unfold MolecularDynamics.Chapter05Review.backwardEuler
+    fun_prop
+  have hz (z : MolecularDynamics.Chapter05Review.E 2) :
+      Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0) := by
+    apply tendsto_zero_iff_norm_tendsto_zero.mpr
+    have he (k : ℕ) : ‖(MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z‖^2=
+        (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2) := by
+      rw [EuclideanSpace.norm_sq_eq]
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using backwardEnergyDecay h z k
+    have hs : Tendsto (fun k : ℕ => (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2)) atTop (𝓝 0) := by
+      simpa only [zero_mul] using (tendsto_pow_atTop_nhds_zero_of_lt_one
+        (inv_nonneg.mpr (by positivity : 0 ≤ 1+h^2)) ((inv_lt_one₀ (by positivity)).mpr hp)).mul_const ((z 0)^2+(z 1)^2)
+    convert (Real.continuous_sqrt.tendsto 0).comp hs using 1
+    · funext k
+      rw [←he,Real.sqrt_sq (norm_nonneg _)]
+    · simp
+  refine ⟨hz,?_⟩
+  intro μ hμ φ hφ hb
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le
+  have hd := tendsto_integral_filter_of_dominated_convergence
+    (μ:=μ) (fun _ : MolecularDynamics.Chapter05Review.E 2 => C)
+    (F:=fun k z => φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z))
+    (f:=fun _ => φ 0)
+    (Eventually.of_forall (fun k => (hφ.comp (hc.iterate k)).measurable.aestronglyMeasurable))
+    (Eventually.of_forall (fun k => ae_of_all μ (fun z => hB (φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z)) (mem_range_self _))))
+    (integrable_const C) (ae_of_all μ (fun z => (hφ.tendsto 0).comp (hz z)))
+  simpa using hd'''
+proofs['ForwardNormDivergence']='''intro h hh z hz
+  have hs : 0 < (z 0)^2+(z 1)^2 := by
+    have hn : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hz) _
+    rw [EuclideanSpace.norm_sq_eq] at hn
+    simpa [Fin.sum_univ_two,Real.norm_eq_abs] using hn
+  have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+  have he (k : ℕ) : ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖^2=
+      (1+h^2)^k*((z 0)^2+(z 1)^2) := by
+    rw [EuclideanSpace.norm_sq_eq]
+    simpa [Fin.sum_univ_two,Real.norm_eq_abs] using forwardEnergyGrowth h z k
+  have ht := (tendsto_pow_atTop_atTop_of_one_lt hp).atTop_mul_const hs
+  apply tendsto_atTop.2
+  intro b
+  filter_upwards [ht.eventually (eventually_ge_atTop ((max b 0)^2+1))] with k hk
+  rw [←he] at hk
+  nlinarith [norm_nonneg ((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z),le_max_left b 0,le_max_right b 0]'''
+proofs['EulerInvariant']='''intro h hh μ hμ hΦ
+  letI := hμ
+  have heq : ∀ᵐ z ∂μ,z=(0 : MolecularDynamics.Chapter05Review.E 2) := by
+    filter_upwards [hΦ.conservative.ae_frequently_mem_of_mem_nhds] with z hz
+    by_contra hn
+    have hs : 0 < (z 0)^2+(z 1)^2 := by
+      have hs' : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hn) _
+      rw [EuclideanSpace.norm_sq_eq] at hs'
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using hs'
+    have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+    have ht := (tendsto_pow_atTop_atTop_of_one_lt hp).atTop_mul_const hs
+    have hret := hz (Metric.ball 0 (‖z‖+1))
+      (isOpen_ball.mem_nhds (by simp [Metric.mem_ball,dist_zero_right]))
+    obtain ⟨k,hk,hlarge⟩ := (hret.and_eventually
+      (ht.eventually (eventually_ge_atTop ((‖z‖+1)^2+1)))).exists
+    have hen : ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖^2=
+        (1+h^2)^k*((z 0)^2+(z 1)^2) := by
+      rw [EuclideanSpace.norm_sq_eq]
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using forwardEnergyGrowth h z k
+    rw [←hen] at hlarge
+    rw [Metric.mem_ball,dist_zero_right] at hk
+    nlinarith [norm_nonneg ((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z),norm_nonneg z]
+  have hm := Measure.map_congr heq
+  simpa [MolecularDynamics.Chapter05Review.diracMeasure] using hm'''
+proofs['SymplecticEulerDensity']='''intro h hh r hr
+  let M : Matrix (Fin 2) (Fin 2) ℝ := !![1-h^2,h;-h,1]
+  have heq : (M.toEuclideanLin : MolecularDynamics.Chapter05Review.E 2 → MolecularDynamics.Chapter05Review.E 2)=
+      MolecularDynamics.Chapter05Review.symplecticEuler h := by
+    funext z
+    ext i
+    fin_cases i <;>
+      simp [M,Matrix.toEuclideanLin,Matrix.toLpLin_apply,Matrix.mulVec,Fin.sum_univ_two,
+        MolecularDynamics.Chapter05Review.symplecticEuler] <;> ring
+  have hd : LinearMap.det M.toEuclideanLin=1 := by
+    rw [←LinearMap.det_toMatrix (EuclideanSpace.basisFun (Fin 2) ℝ).toBasis,
+      Matrix.toEuclideanLin_eq_toLin_orthonormal,LinearMap.toMatrix_toLin]
+    simp [M,Matrix.det_fin_two]
+    ring
+  have hmap := map_linearMap_addHaar_eq_smul_addHaar
+    (f:=M.toEuclideanLin) (volume : Measure (MolecularDynamics.Chapter05Review.E 2))
+    (show LinearMap.det M.toEuclideanLin ≠ 0 from by rw [hd];norm_num)
+  rw [heq] at hmap
+  have hc : Continuous (MolecularDynamics.Chapter05Review.symplecticEuler h) := by
+    unfold MolecularDynamics.Chapter05Review.symplecticEuler;fun_prop
+  have hf : MeasurePreserving (MolecularDynamics.Chapter05Review.symplecticEuler h)
+      (volume : Measure (MolecularDynamics.Chapter05Review.E 2)) volume :=
+    ⟨hc.measurable,by simpa only [hd,inv_one,abs_one,ENNReal.ofReal_one,one_smul] using hmap⟩
+  refine ⟨hf.measurable,?_⟩
+  ext A hA
+  rw [Measure.map_apply hf.measurable hA]
+  unfold MolecularDynamics.Chapter05Review.densityMeasure
+  rw [withDensity_apply _ (hA.preimage hf.measurable),withDensity_apply _ hA]
+  simpa only [Function.comp_apply,MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved] using
+    hf.setLIntegral_comp_preimage hA hr.1.1.ennreal_ofReal'''
 proofs['ModifiedLiouvillian']='''intro n f fr u h r hf hfr hu z
   have hx : DifferentiableAt ℝ (MolecularDynamics.Chapter05Review.modifiedField f fr h r) z :=
     (hf z).add ((hfr z).const_smul (h^r))
@@ -498,7 +649,7 @@ proofs['CurveImageDimension']='''intro n f Φ γ hflow hΦ hγ hγn t
     ((hγ.differentiable (by simp)) s).hasDerivAt
   have hb := ((hs (-t)).differentiable (by simp) (Φ t (γ s))).hasFDerivAt.comp_hasDerivAt s himg
   have hderiv : (fderiv ℝ (Φ t) (γ s)) (deriv γ s)=0 := by
-    exact himg.deriv.trans hzero
+    exact himg.deriv.symm.trans hzero
   rw [hderiv,map_zero,hback] at hb
   exact hγn s hb.deriv'''
 proofs['DoubleWellBasin']='''intro z c hz hc hE t
@@ -569,7 +720,7 @@ proofs['MixingCorrelation']='''intro n μ Φ a b k hμ hΦ hm ha hb hba hbb
   have ia : Integrable a μ := Integrable.mono' (integrable_const R)
     ha.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hA (a z) (mem_range_self z)))
   have ibound : |∫ z,b z ∂μ| ≤ C := by
-    simpa only [Real.norm_eq_abs,measureReal_univ_eq_one,mul_one] using
+    simpa only [Real.norm_eq_abs,probReal_univ,mul_one] using
       norm_integral_le_of_norm_le_const (ae_of_all μ (fun z => hB (b z) (mem_range_self z)))
   let D := C+1
   let M := (∫ z,b z ∂μ)+D
@@ -603,8 +754,7 @@ proofs['MixingCorrelation']='''intro n μ Φ a b k hμ hΦ hm ha hb hba hbb
     apply integral_congr_ae
     filter_upwards [] with z
     dsimp [r]
-    field_simp
-    ring
+    field_simp [ne_of_gt hM] <;> ring
   have hh := (ht.const_mul M).sub (tendsto_const_nhds : Tendsto
     (fun _ : ℝ => D*MolecularDynamics.Chapter05Review.average μ a) atTop
     (𝓝 (D*MolecularDynamics.Chapter05Review.average μ a)))

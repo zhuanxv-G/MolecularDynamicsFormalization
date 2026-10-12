@@ -1,0 +1,88 @@
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:56:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:56:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:99:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:327:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:367:67: warning: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:367:89: warning: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:584:8: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+X : Type u_2
+z : ℝ → X
+I : X → ℝ
+r : ℝ → ℝ
+hI : ∀ (t : ℝ), I (z t) = I (z 0)
+⊢ Chapter05Review.hasTimeAverage z I (I (z 0)) ∧ Chapter05Review.hasTimeAverage z (r ∘ I) (r (I (z 0)))
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:620:59: error: failed to prove positivity/nonnegativity/nonzeroness
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:621:86: error: unsolved goals
+c : ℝ
+hc : c ∈ Ioo 0 1
+hS : IsPreconnected (Chapter05Review.energySurface doubleWellEnergy c)
+a : E 2 := !₂[-1, √(2 * c)]
+b : E 2 := !₂[1, √(2 * c)]
+hsqrt : √(2 * c) ^ 2 = 2 * c
+⊢ √2 ^ 2 * √c ^ 2 * (1 / 2) = c
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:623:86: error: unsolved goals
+c : ℝ
+hc : c ∈ Ioo 0 1
+hS : IsPreconnected (Chapter05Review.energySurface doubleWellEnergy c)
+a : E 2 := !₂[-1, √(2 * c)]
+b : E 2 := !₂[1, √(2 * c)]
+hsqrt : √(2 * c) ^ 2 = 2 * c
+ha : a ∈ Chapter05Review.energySurface doubleWellEnergy c
+⊢ √2 ^ 2 * √c ^ 2 * (1 / 2) = c
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:631:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun z => z.ofLp 0) z
+in the target expression
+  z.ofLp 1 ^ 2 / 2 + (1 - z.ofLp 0 ^ 2) ^ 2 = c
+
+c : ℝ
+hc : c ∈ Ioo 0 1
+hS : IsPreconnected (Chapter05Review.energySurface doubleWellEnergy c)
+a : E 2 := !₂[-1, √(2 * c)]
+b : E 2 := !₂[1, √(2 * c)]
+hsqrt : √(2 * c) ^ 2 = 2 * c
+ha : a ∈ Chapter05Review.energySurface doubleWellEnergy c
+hb : b ∈ Chapter05Review.energySurface doubleWellEnergy c
+hq : ContinuousOn (fun z => z.ofLp 0) (Chapter05Review.energySurface doubleWellEnergy c)
+hzero : 0 ∈ Icc (a.ofLp 0) (b.ofLp 0)
+z : E 2
+hz0 : (fun z => z.ofLp 0) z = 0
+hz : z.ofLp 1 ^ 2 / 2 + (1 - z.ofLp 0 ^ 2) ^ 2 = c
+⊢ False
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:622:77: warning: This simp argument is unused:
+  hsqrt
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter05Review.energySurface, doubleWellEnergy, a]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch05\validation\short_search\route-c74e5e3ff28a5aa3208b.lean:624:77: warning: This simp argument is unused:
+  hsqrt
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter05Review.energySurface, doubleWellEnergy, b]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

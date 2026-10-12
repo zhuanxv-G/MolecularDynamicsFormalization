@@ -105,6 +105,15 @@
 | MD-5.3.3-MicroProbability | 195/216 | PASS | 待网站审计 | self-contained |
 | MD-5.3.3-LowerDimensionNull | 195/216 | PASS | 待网站审计 | incomplete |
 | MD-5.3.3-MicroAverage | 195/216 | PASS | 待网站审计 | self-contained |
+| MD-5.3.3-AmbientLowerDimensionNull | 195/216 | PASS | 待网站审计 | incomplete |
+| MD-5.4-TimeAverage | 195/216 | PASS | 待网站审计 | self-contained |
+| MD-5.4-HasTimeAverage | 195/216 | PASS | 待网站审计 | self-contained |
+| MD-5.4-ConservedAverage | 196–197/217–218 | PASS | 待网站审计 | checked+documented priors |
+| MD-5.4-ConservedInfiniteAverage | 196–197/217–218 | PASS | 待网站审计 | self-contained |
+| MD-5.4-DoubleWellEnergy | 196/217 | PASS | 待网站审计 | self-contained |
+| MD-5.4-DoubleWellCoercivity | 196/217 | PASS | 待网站审计 | self-contained |
+| MD-5.4-DoubleWellDisconnected | 196/217 | PASS | 待网站审计 | self-contained |
+| MD-5.4-DoubleWellBasin | 196/217 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -4810,3 +4819,408 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`f71e52af87f2937399a70a709f9b5c51ed0bce2e36e86622a217b41701490c90`；原文SHA256：`bd43a73f78a77b31c8c3adfa6f0c1be8165c81f8947eb176aa9132ad8bebff41`。
+
+## 1. MD-5.3.3-AmbientLowerDimensionNull · unnumbered_claim · 印刷p.195 / PDFp.216
+
+### 2. 原文陈述
+
+> We also note that lower order objects such as a point or a curve in $\mathbb R^2$, or a surface in $\mathbb R^3$, have zero measure with respect to Lebesgue measure for the ambient space.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem ambientLowerDimensionNull : ∀ n d (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n) (K : Set (MolecularDynamics.Chapter05Review.E d)),
+  d < n → ContDiff ℝ 1 g → IsCompact K → volume (g '' K)=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.ambientLowerDimensionNull；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]以低维C¹参数化的紧像实现原“lower order objects”，保留实际ambient Lebesgue volume结论，不与ΣE上的奇异微正则测度混同；非任意拓扑低维集合。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:937](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:937>)（`MD.Ch05.ambientLowerDimensionNull`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺当前低维C¹像Lebesgue零测与规范Hausdorff测度的现成桥接；需要局部Lipschitz覆盖/维数几何測度接口，不建设新大型几何理论。
+
+签名SHA256：`7315fe8680cc9c5243fb9fdcb2260a80eae67fb3fcaf700f533004ef5808b328`；原文SHA256：`17140080050b54f23bd515adf1ab67608878b97cc028babd35481ad1b841969b`。
+
+## 1. MD-5.4-TimeAverage · definition · 印刷p.195 / PDFp.216
+
+### 2. 原文陈述
+
+> Given an autonomous system of differential equations $\dot z=f(z)$ in $\mathbb R^m$, and a trajectory $\tau=\{z(t)\mid t\in[0,\infty)\}$, let $g=g(z)$ be any smooth scalar valued function of $z$ (an observable) and define (assuming it exists) the infinite time average of $g$ along $\tau$ by
+> \[\bar g=\lim_{T\to\infty}\frac1T\int_0^T g(z(t))dt.\tag{5.9}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.timeAverage；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:942](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:942>)（`MD.Ch05.timeAverage`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86`；原文SHA256：`819c8e54340e3fdb8981745b916ca43630333446e0746bab9181e6fb38b4e320`。
+
+## 1. MD-5.4-HasTimeAverage · definition · 印刷p.195 / PDFp.216
+
+### 2. 原文陈述
+
+> define (assuming it exists) the infinite time average of $g$ along $\tau$ by $\bar g=\lim_{T\to\infty}T^{-1}\int_0^Tg(z(t))dt$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
+  Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 a)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.hasTimeAverage；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:945](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:945>)（`MD.Ch05.hasTimeAverage`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`b80cdcc652eb14ff8b264b8b07c801373ce82dbfa974b87d30902141c668bf01`；原文SHA256：`bb4943c986660492fc158a8008f3c1f2e917b79a055340cf4020100422166a27`。
+
+## 1. MD-5.4-ConservedAverage · unnumbered_claim · 印刷p.196–197 / PDFp.217–218
+
+### 2. 原文陈述
+
+> Considering any conservative system, we know that the energy itself is a conserved quantity along trajectories, and its average is therefore a function of the initial condition. More generally, if a given system has a first integral (conserved quantity) $I=I(z)$, different from the energy, which is preserved along trajectories, then the average of this conserved quantity (and any other quantity that depends upon it) will be dependent on the choice of initial condition.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem conservedAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ)
+    (h : ∀ t,g (z t)=a) (T : ℝ) (hT : T ≠ 0) : MolecularDynamics.Chapter05Review.timeAverage z g T=a
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.conservedAverage；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]任意真实轨道和已给出的第一积分守恒值；有限T≠0平均等于其值，T→∞结论另条，不把有限式称无限极限已经检查。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch05.lean:950](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:950>)（`MD.Ch05.conservedAverage`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter05Review.conservedAverage_proved。
+
+签名SHA256：`963e188bd6ea1c55f7ee9e6488f7505234717245b694dee7df37d37d9d8f67c1`；原文SHA256：`292128829034573e400ec2c3317e33508b21daa84886a9771906a4758b1c5635`。
+
+## 1. MD-5.4-ConservedInfiniteAverage · unnumbered_claim · 印刷p.196–197 / PDFp.217–218
+
+### 2. 原文陈述
+
+> the energy itself is a conserved quantity along trajectories, and its average is therefore a function of the initial condition. The average of this conserved quantity (and any other quantity that depends upon it) will be dependent on the choice of initial condition.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem conservedInfiniteAverage {X : Type*} (z : ℝ → X) (I : X → ℝ) (r : ℝ → ℝ)
+    (hI : ∀ t,I (z t)=I (z 0)) :
+  MolecularDynamics.Chapter05Review.hasTimeAverage z I (I (z 0)) ∧
+    MolecularDynamics.Chapter05Review.hasTimeAverage z (r ∘ I) (r (I (z 0)))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.conservedInfiniteAverage；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:955](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:955>)（`MD.Ch05.conservedInfiniteAverage`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/ConservedInfiniteAverage.json；blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b.lean；blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b.log；blueprint/ch05/validation/short_search/route-d8734591675d9fd4fd17.lean；blueprint/ch05/validation/short_search/route-d8734591675d9fd4fd17.log。
+
+签名SHA256：`3efcfbefd90bff746af90fe99e4d2060923b2ef36e4f5fff919fe5053a2b55e2`；原文SHA256：`9e1f62dd4b9f9d672292998537f8b07de6d064149935bfa765ec17b8b3b63be5`。
+
+## 1. MD-5.4-DoubleWellEnergy · Example 5.3 · 印刷p.196 / PDFp.217
+
+### 2. 原文陈述
+
+> Example 5.3 Consider the double well potential $\phi(q)=(1-q^2)^2$. The energy $H(q,p)=p^2/2+\phi(q)$ will tend to $+\infty$ as $q\to\infty$ or $p\to\infty$, but is obviously bounded below (by zero).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def doubleWellEnergy (z : MolecularDynamics.Chapter05Review.E 2) : ℝ := (z 1)^2/2+(1-(z 0)^2)^2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.doubleWellEnergy；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:967](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:967>)（`MD.Ch05.doubleWellEnergy`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`b305bae4c5b6ca337626190bef8ab791839d35b7c9699bf08b88331c690579cc`；原文SHA256：`94b94da178cebb65e81780e15d950bcdef527dfed680d3832469368a2253a294`。
+
+## 1. MD-5.4-DoubleWellCoercivity · unnumbered_claim · 印刷p.196 / PDFp.217
+
+### 2. 原文陈述
+
+> The energy $H(q,p)=p^2/2+(1-q^2)^2$ will tend to $+\infty$ as $q\to\infty$ or $p\to\infty$, but is obviously bounded below (by zero).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem doubleWellCoercivity : (∀ z : MolecularDynamics.Chapter05Review.E 2,0 ≤ doubleWellEnergy z) ∧
+  ∀ c : ℝ,IsCompact {z : MolecularDynamics.Chapter05Review.E 2 | doubleWellEnergy z ≤ c}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.doubleWellCoercivity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]以所有真实下水平集的紧性表达有限维能量强制性；不是从数值图升级一般势结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:971](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:971>)（`MD.Ch05.doubleWellCoercivity`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/DoubleWellCoercivity.json；blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b-DoubleWellCoercivity.lean；blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b-DoubleWellCoercivity.log。
+
+签名SHA256：`34042aad3d3417d451d58920b0ab5e5f76d20da27db3438bf14cc47a98c2f7d9`；原文SHA256：`04fae24cbae0f3219c6fd4dbdfd290956a04e022e84f5c6310566cf55e708986`。
+
+## 1. MD-5.4-DoubleWellDisconnected · Example 5.3 · 印刷p.196 / PDFp.217
+
+### 2. 原文陈述
+
+> From the graph it is clear that the energy surface $H(q,p)=E$ has more than one component if $0<E<1$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem doubleWellDisconnected : ∀ c ∈ Ioo (0 : ℝ) 1,
+  ¬IsPreconnected (MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.doubleWellDisconnected；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:995](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:995>)（`MD.Ch05.doubleWellDisconnected`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/DoubleWellDisconnected.json；blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b.lean；blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b.log；blueprint/ch05/validation/short_search/route-d8734591675d9fd4fd17.lean；blueprint/ch05/validation/short_search/route-d8734591675d9fd4fd17.log。
+
+签名SHA256：`d617c7b773954802a253c8117c5edc326fa7a88fe8b6778785628cdbacb3fcdd`；原文SHA256：`91075c4354a8cdc795ed96bf4175b83a580bd984115b0ccb1129f551ed42062a`。
+
+## 1. MD-5.4-DoubleWellBasin · unnumbered_claim · 印刷p.196 / PDFp.217
+
+### 2. 原文陈述
+
+> If an initial condition is taken from one of the two basins, say with energy $E_0$, then the trajectory through that point will remain forever in the one basin, thus the averages of many quantities, if computed using the trajectory values, would not be a good approximation of the overall average at constant energy $E_0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem doubleWellBasin : ∀ (z : ℝ → MolecularDynamics.Chapter05Review.E 2) c,
+  Continuous z → c ∈ Ioo (0 : ℝ) 1 → (∀ t,doubleWellEnergy (z t)=c) →
+  ∀ t,((z 0) 0 > 0 ∧ (z t) 0 > 0) ∨ ((z 0) 0 < 0 ∧ (z t) 0 < 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.doubleWellBasin；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际连续且守恒的轨道；保持左右basin全部结论；“许多平均不近似总平均”是定性后果，未编造数值误差界。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:1019](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1019>)（`MD.Ch05.doubleWellBasin`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/DoubleWellBasin.json；blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b-DoubleWellBasin.lean；blueprint/ch05/validation/short_search/route-c74e5e3ff28a5aa3208b-DoubleWellBasin.log。
+
+签名SHA256：`e2e35e5b77c4052340d78492c58c42b02ae264348739791c75574d95bbae5834`；原文SHA256：`3cd471a9678423b7ac837e0f74cc01dbdbec9ca10ee6ce18e812aef087c33366`。

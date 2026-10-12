@@ -1,0 +1,19 @@
+intro c hc hS
+  let a : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![-1,Real.sqrt (2*c)]
+  let b : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![1,Real.sqrt (2*c)]
+  have hsqrt : (Real.sqrt (2*c))^2=2*c := Real.sq_sqrt (by linarith [hc.1])
+  have ha : a ∈ MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c := by
+    change (Real.sqrt (2*c))^2/2+(1-(-1 : ℝ)^2)^2=c
+    rw [hsqrt];ring
+  have hb : b ∈ MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c := by
+    change (Real.sqrt (2*c))^2/2+(1-(1 : ℝ)^2)^2=c
+    rw [hsqrt];ring
+  have hq : ContinuousOn (fun z : MolecularDynamics.Chapter05Review.E 2 => z 0)
+      (MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c) := by fun_prop
+  have hzero : (0 : ℝ) ∈ Icc (a 0) (b 0) := by norm_num [a,b]
+  obtain ⟨z,hz,hz0⟩ := hS.intermediate_value ha hb hq hzero
+  change doubleWellEnergy z=c at hz
+  unfold doubleWellEnergy at hz
+  change z 0=0 at hz0
+  rw [hz0] at hz
+  nlinarith [sq_nonneg (z 1),hc.2]

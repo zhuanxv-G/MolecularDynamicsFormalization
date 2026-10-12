@@ -932,4 +932,116 @@ theorem lowerDimensionNull :
 /-- source_id: MD-5.3.3-MicroAverage · definition · §5.3.3 · 印刷p.195 / PDFp.216 -/
 def microAverage {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) := MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.microMeasure H c) g
 
+/-- source_id: MD-5.3.3-AmbientLowerDimensionNull · unnumbered_claim · §5.3.3 · 印刷p.195 / PDFp.216
+[EXTRA] [EXTRA]以低维C¹参数化的紧像实现原“lower order objects”，保留实际ambient Lebesgue volume结论，不与ΣE上的奇异微正则测度混同；非任意拓扑低维集合。 -/
+theorem ambientLowerDimensionNull : ∀ n d (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n) (K : Set (MolecularDynamics.Chapter05Review.E d)),
+  d < n → ContDiff ℝ 1 g → IsCompact K → volume (g '' K)=0 := by
+  sorry
+
+/-- source_id: MD-5.4-TimeAverage · definition · §5.4 · 印刷p.195 / PDFp.216 -/
+def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
+
+/-- source_id: MD-5.4-HasTimeAverage · definition · §5.4 · 印刷p.195 / PDFp.216 -/
+def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
+  Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 a)
+
+/-- source_id: MD-5.4-ConservedAverage · unnumbered_claim · §5.4 · 印刷p.196–197 / PDFp.217–218
+[EXTRA] [EXTRA]任意真实轨道和已给出的第一积分守恒值；有限T≠0平均等于其值，T→∞结论另条，不把有限式称无限极限已经检查。 -/
+theorem conservedAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ)
+    (h : ∀ t,g (z t)=a) (T : ℝ) (hT : T ≠ 0) : MolecularDynamics.Chapter05Review.timeAverage z g T=a := by
+  apply MolecularDynamics.Chapter05Review.conservedAverage_proved <;> assumption
+
+/-- source_id: MD-5.4-ConservedInfiniteAverage · unnumbered_claim · §5.4 · 印刷p.196–197 / PDFp.217–218 -/
+theorem conservedInfiniteAverage {X : Type*} (z : ℝ → X) (I : X → ℝ) (r : ℝ → ℝ)
+    (hI : ∀ t,I (z t)=I (z 0)) :
+  MolecularDynamics.Chapter05Review.hasTimeAverage z I (I (z 0)) ∧
+    MolecularDynamics.Chapter05Review.hasTimeAverage z (r ∘ I) (r (I (z 0))) := by
+  have hm (g : X → ℝ) (hg : ∀ t,g (z t)=g (z 0)) :
+      MolecularDynamics.Chapter05Review.hasTimeAverage z g (g (z 0)) := by
+    apply tendsto_congr' _ |>.2 tendsto_const_nhds
+    filter_upwards [eventually_gt_atTop (0 : ℝ)] with T hT
+    exact MolecularDynamics.Chapter05Review.conservedAverage_proved z g (g (z 0)) hg T (ne_of_gt hT)
+  exact ⟨hm I hI,hm (r ∘ I) (fun t => by simp only [Function.comp_apply,hI])⟩
+
+/-- source_id: MD-5.4-DoubleWellEnergy · Example 5.3 · §5.4 · 印刷p.196 / PDFp.217 -/
+def doubleWellEnergy (z : MolecularDynamics.Chapter05Review.E 2) : ℝ := (z 1)^2/2+(1-(z 0)^2)^2
+
+/-- source_id: MD-5.4-DoubleWellCoercivity · unnumbered_claim · §5.4 · 印刷p.196 / PDFp.217
+[EXTRA] [EXTRA]以所有真实下水平集的紧性表达有限维能量强制性；不是从数值图升级一般势结论。 -/
+theorem doubleWellCoercivity : (∀ z : MolecularDynamics.Chapter05Review.E 2,0 ≤ doubleWellEnergy z) ∧
+  ∀ c : ℝ,IsCompact {z : MolecularDynamics.Chapter05Review.E 2 | doubleWellEnergy z ≤ c} := by
+  constructor
+  · intro z
+    unfold doubleWellEnergy
+    positivity
+  · intro c
+    have hc : Continuous (doubleWellEnergy) := by unfold doubleWellEnergy; fun_prop
+    have hclosed : IsClosed {z : MolecularDynamics.Chapter05Review.E 2 | doubleWellEnergy z ≤ c} :=
+      isClosed_le hc continuous_const
+    apply (isCompact_closedBall (0 : MolecularDynamics.Chapter05Review.E 2) (4*|c|+4)).of_isClosed_subset hclosed
+    intro z hz
+    have he : (z 1)^2/2+(1-(z 0)^2)^2 ≤ c := hz
+    have hpos : 0 ≤ c := by nlinarith [sq_nonneg (z 1),sq_nonneg (1-(z 0)^2)]
+    have hq : (z 0)^2 ≤ (c+3)/2 := by
+      nlinarith [sq_nonneg (z 1),sq_nonneg ((z 0)^2-2)]
+    have hp : (z 1)^2 ≤ 2*c := by nlinarith [sq_nonneg (1-(z 0)^2)]
+    have hnorm : ‖z‖^2=(z 0)^2+(z 1)^2 := by
+      rw [EuclideanSpace.norm_sq_eq]
+      simp [Fin.sum_univ_two,Real.norm_eq_abs]
+    rw [Metric.mem_closedBall,dist_zero_right,abs_of_nonneg hpos]
+    nlinarith [norm_nonneg z]
+
+/-- source_id: MD-5.4-DoubleWellDisconnected · Example 5.3 · §5.4 · 印刷p.196 / PDFp.217 -/
+theorem doubleWellDisconnected : ∀ c ∈ Ioo (0 : ℝ) 1,
+  ¬IsPreconnected (MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c) := by
+  intro c hc hS
+  let a : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![-1,Real.sqrt (2*c)]
+  let b : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![1,Real.sqrt (2*c)]
+  have hsqrt : (Real.sqrt (2*c))^2=2*c := Real.sq_sqrt (by linarith [hc.1])
+  have ha : a ∈ MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c := by
+    change (Real.sqrt (2*c))^2/2+(1-(-1 : ℝ)^2)^2=c
+    rw [hsqrt];ring
+  have hb : b ∈ MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c := by
+    change (Real.sqrt (2*c))^2/2+(1-(1 : ℝ)^2)^2=c
+    rw [hsqrt];ring
+  have hq : ContinuousOn (fun z : MolecularDynamics.Chapter05Review.E 2 => z 0)
+      (MolecularDynamics.Chapter05Review.energySurface doubleWellEnergy c) := by fun_prop
+  have hzero : (0 : ℝ) ∈ Icc (a 0) (b 0) := by norm_num [a,b]
+  obtain ⟨z,hz,hz0⟩ := hS.intermediate_value ha hb hq hzero
+  change doubleWellEnergy z=c at hz
+  unfold doubleWellEnergy at hz
+  change z 0=0 at hz0
+  rw [hz0] at hz
+  nlinarith [sq_nonneg (z 1),hc.2]
+
+/-- source_id: MD-5.4-DoubleWellBasin · unnumbered_claim · §5.4 · 印刷p.196 / PDFp.217
+[EXTRA] [EXTRA]实际连续且守恒的轨道；保持左右basin全部结论；“许多平均不近似总平均”是定性后果，未编造数值误差界。 -/
+theorem doubleWellBasin : ∀ (z : ℝ → MolecularDynamics.Chapter05Review.E 2) c,
+  Continuous z → c ∈ Ioo (0 : ℝ) 1 → (∀ t,doubleWellEnergy (z t)=c) →
+  ∀ t,((z 0) 0 > 0 ∧ (z t) 0 > 0) ∨ ((z 0) 0 < 0 ∧ (z t) 0 < 0) := by
+  intro z c hz hc hE t
+  let q (s : ℝ) := (z s) 0
+  have hq : Continuous q := by dsimp [q]; fun_prop
+  have hn (s : ℝ) : q s ≠ 0 := by
+    intro heq
+    have hh := hE s
+    unfold doubleWellEnergy at hh
+    change (z s) 0=0 at heq
+    rw [heq] at hh
+    nlinarith [sq_nonneg ((z s) 1),hc.2]
+  by_cases h0 : 0 < q 0
+  · left
+    refine ⟨h0,?_⟩
+    by_contra ht
+    have hneg : q t < 0 := lt_of_le_of_ne (le_of_not_gt ht) (hn t)
+    obtain ⟨s,hs⟩ := intermediate_value_univ t 0 hq (show (0 : ℝ) ∈ Icc (q t) (q 0) from ⟨hneg.le,h0.le⟩)
+    exact hn s hs
+  · right
+    have hneg : q 0 < 0 := lt_of_le_of_ne (le_of_not_gt h0) (hn 0)
+    refine ⟨hneg,?_⟩
+    by_contra ht
+    have hpos : 0 < q t := lt_of_le_of_ne (le_of_not_gt ht) (Ne.symm (hn t))
+    obtain ⟨s,hs⟩ := intermediate_value_univ 0 t hq (show (0 : ℝ) ∈ Icc (q 0) (q t) from ⟨hneg.le,hpos.le⟩)
+    exact hn s hs
+
 end MD.Ch05
