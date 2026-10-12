@@ -1,0 +1,181 @@
+[
+  {
+    "source_id": "MD-1.1.2-Coulomb",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF第35页原页，页眉印刷页码为12。正文、公式CQ_iQ_j/(εr_ij)、ε>0、C为正系数及电荷符号的定性说明均与statement_latex一致。",
+        "该段为势能公式及说明，没有独立完整证明；proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.coulombPotential",
+      "verdict": "FAIL",
+      "explanation": "所附Ch01.lean第345行的乘除结构与原式一致，Qᵢ、Qⱼ取实数也保留了正负电荷。但严格按完整模型审计，原文明确要求C>0、dielectric>0，r是正的粒子间距；当前签名将全部参数作为无约束实数，没有任何与该条目绑定的有效域声明。Lean的除法是全函数，零分母也产生实数值，因此裸计算公式尚未完整表达原文的对象域和参数条件。原文的定性说明不应被另造为导数符号定理。",
+      "counterexample": null,
+      "suggested_fix": "保留现有公式作为辅助函数，另以模型域谓词或受限参数类型明确C>0、dielectric>0、r>0，并将本source_id绑定到包含这些条件的定义。"
+    }
+  },
+  {
+    "source_id": "MD-1.1.2-Cutoff",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF第35页原页，印刷页12。原文明确写r>r_cut时取零，并要求至少连续可微，最好更光滑；statement_latex与该段一致。",
+        "脚注2补充说明部分结果需要更高光滑性，并未提供截断构造的独立完整证明；proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.smoothCutoff",
+      "verdict": "FAIL",
+      "explanation": "所附Ch01.lean第351—352行准确保留了严格不等式r_cut<r及截断后取零的结论。已展开Mathlib的ContDiff：ContDiff ℝ 1 φ要求φ在整个实轴上C¹。这里截断的是具有原点奇性的库仑势，原文的平滑要求应作用于其正距离定义域，尤其是截断连接处；全实轴C¹额外要求消除原点奇性，会排除合法的平滑截断。这一强化没有标为[EXTRA]，也不能由该段原文推出。“preferably smoother”是建议，不必强化为C∞。",
+      "counterexample": "令r_cut=2，S(s)=1−3s²+2s³。取φ(r)=1/r（0<r≤1），φ(r)=S(r−1)/r（1<r<2），φ(r)=0（r≥2），并在r≤0任意赋值。它在正距离域上C¹，截断连接处连续可微，且r>2时为零；但r→0⁺时φ(r)→+∞，任何赋值都不能使其在全实轴连续，因而不满足当前smoothCutoff。",
+      "suggested_fix": "明确正距离域及r_cut>0，将光滑性改为ContDiffOn ℝ 1 φ (Set.Ioi 0)，并在该域内保留r>r_cut时φ(r)=0的条件。"
+    }
+  },
+  {
+    "source_id": "MD-1.1.2-Yukawa",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "NEEDS_HUMAN",
+          "detail": "PDF第35页、印刷页12确实将κ称为Debye length，同时写e^{-κr_ij}。若r具有长度量纲，指数无量纲要求κ具有逆长度量纲。疑点来自原书，转录没有错误；应保留原文，由人工决定是否记录术语勘误，不能静默改成e^{-r_ij/κ}。"
+        }
+      ],
+      "evidence": [
+        "已查看PDF第35页原页，印刷页12，确认文字为Debye length κ，公式指数为−κr_ij，statement_latex忠实保留二者。",
+        "该段没有独立完整证明；proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.yukawaScreened",
+      "verdict": "FAIL",
+      "explanation": "所附Ch01.lean第358—359行准确表达CQᵢQⱼ/(dielectric·r)乘Real.exp(−κ·r)，没有擅改原书指数。签名仍缺少从同页库仑势继承的C>0、dielectric>0及正距离域，接受零分母等原模型未定义的输入，因而未完整表达原模型条件。κ的术语疑误属于原文审校问题，不是Lean指数抄错，也不应借此修改公式。",
+      "counterexample": null,
+      "suggested_fix": "保留字面指数−κr，为模型补充C>0、dielectric>0、r>0的有效域。κ的名称、量纲及相关条件须待原书疑误经人工裁定后另行记录，不自动替换指数。"
+    }
+  },
+  {
+    "source_id": "MD-1.1.2-AngleBond",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "DUPLICATED_ATOM_LABEL",
+        "UNSUPPORTED_CONTEXT_ASSUMPTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.1.2-AngleBond",
+        "kind": "definition",
+        "label": null,
+        "section": "1.1.2",
+        "printed_page": "13",
+        "pdf_page": "36",
+        "statement_latex": "When a trio of atoms with labels $i$, $j$, and $k$ admits a pair of length bonds, say $(i,j)$ and $(j,k)$, then an additional three-body term will need to be incorporated:\n\\[\\varphi_{ijk}^{\\mathrm{ang}}=\\frac{k_{ijk}^{\\mathrm{ang}}}{2}(\\theta_{ijk}-\\theta_{ijk}^0)^2,\\]\nwhere the angle $\\theta_{ijk}$ is given in terms of the positions as\n\\[\\theta_{ijk}=\\arccos\\frac{(\\boldsymbol q_i-\\boldsymbol q_j)\\cdot(\\boldsymbol q_j-\\boldsymbol q_k)}{r_{ij}r_{jk}}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "两键长非零是角度公式的自然有效域；保留原页(qᵢ-qⱼ)·(qⱼ-qₖ)方向。原文标签为i,j,and k，没有重复k；本段未明确声明k>0。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "DUPLICATED_ATOM_LABEL",
+            "detail": "PDF36、印刷页13原文为labels i, j, and k；旧statement_latex多写了一个k。"
+          },
+          {
+            "code": "UNSUPPORTED_CONTEXT_ASSUMPTION",
+            "detail": "撤去context_notation中未由本段明确给出的k正条件，以及原页存在重复and k的错误说明。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.angleBondModel",
+        "extra_assumptions": [],
+        "repair_log": [
+          "依据PDF36原页，将labels $i,j,k$ and $k$修订为labels $i$, $j$, and $k$。",
+          "修订context_notation，保留原式向量方向，撤去错误的重复标签说明和未明文给出的k正条件。"
+        ],
+        "old_ids": [
+          "CH01-028",
+          "CH01-029"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF36，印刷页13，本次只读原页审校。"
+      },
+      "issues": [
+        {
+          "code": "DUPLICATED_ATOM_LABEL",
+          "detail": "原页只有三个标签i、j、k；JSON的$i,j,k$ and $k$重复了k，附件中声称原页重复and k的说明也不成立。"
+        },
+        {
+          "code": "UNSUPPORTED_CONTEXT_ASSUMPTION",
+          "detail": "原页说明系数与键能的关系，但本段没有明确写k>0；不能将该条件称为逐字核实的原文前提。"
+        }
+      ],
+      "evidence": [
+        "已查看PDF第36页原页，页眉印刷页码13。原文逐字为labels i, j, and k。",
+        "两条公式均与JSON一致，特别是第二个向量确为q_j−q_k；未将其改成q_k−q_j。",
+        "该段没有独立完整证明；proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.angleBondModel",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "所附Ch01.lean第365—367行的显式代数结构与修订后的原文一致：k/2、平衡角差的平方、arccos，以及(qᵢ−qⱼ)与(qⱼ−qₖ)的内积方向均保留。但本次可访问材料中没有V3及其实际内积、范数实例的定义，不能确认对象确为教材的三维欧氏位置，也不能仅凭名字批准用范数替换两条键长。此外签名未明示两键长非零的有效域；Mathlib的实数除法和Real.arccos均为全函数，不能将退化位置上的返回值解释为原文已定义的键角。这里未作编译或sorry判定。",
+      "counterexample": null,
+      "suggested_fix": "补充同一输入快照中的V3及相关实例定义，核实三维欧氏内积和距离；明确qᵢ≠qⱼ、qⱼ≠qₖ的模型有效域。保留原书的向量方向，不擅加本段未明示的k>0条件。"
+    }
+  },
+  {
+    "source_id": "MD-1.1.2-Dihedral",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF第36页原页，印刷页13。正文及k_{ijkl}^{dih}[1+cos(n_{ijkl}^{dih}η_{ijkl}−d_{ijkl}^{dih})]与statement_latex一致。",
+        "邻接正文说η由位置坐标计算，k、n、d为适合局部键组织的系数，但没有给出独立的位置到η的转换公式，也未明确要求n为整数。",
+        "该段没有独立完整证明；proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.dihedralPotential",
+      "verdict": "PASS",
+      "explanation": "所附Ch01.lean第373行直接定义k·(1+Real.cos(n·θ−d))，其中θ对应原文η_{ijkl}。系数、加一项、乘法次序及相位减号均一致。该条目只转录以二面角为参数的势能公式，Lean也以角为参数，没有冒充已完成位置坐标到二面角的几何构造。原段没有明确的系数正性或n整数假设，因此无需擅自增加这些条件；没有[EXTRA]、循环前提或遗漏的公式结论。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.1.2-GayBerne",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF第39、40页原页，印刷页码分别为16、17，Example 1.2标签和页码范围正确。",
+        "PDF39原页确为εGB=ε1ε2，没有ε2的平方；Δ确为‖r‖−σ0/√W，未含额外的+σ0项。",
+        "PDF40原页的ε1指数−1/2、ε2=W(χ′)、W的两个平方分子及分母正负号、χ和χ′的比值公式均与JSON一致。",
+        "PDF39邻接正文明确q12=q2−q1，两个取向向量为单位向量。所摘定义没有独立完整证明；proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.gayBerneModel",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "所附Ch01.lean第379—385行的外层结构保留r=q₂−q₁、‖r‖⁻¹•r、Δ中的减号、εGB的两因子乘积以及12次方减6次方。但本次可访问材料缺少V3、gayBerneChi、gayBerneChiPrime、gayBerneW、gayBerneEpsilonOne、gayBerneEpsilonTwo的实际定义，相关依赖文件也未找到。因此无法核实χ′是否采用正确的实指数、W的全部内积及分母、ε1的−1/2次幂，以及EpsilonTwo内部是否额外平方；外层没有平方不能代替这些检查。原文的单位取向、非零分离向量、根号和分母有效域也未在可见签名中得到明确约束。不能据辅助函数名称或JSON关于旧库的说明判PASS。",
+      "counterexample": null,
+      "suggested_fix": "补充同一输入快照的上述辅助定义及V3的实例后重新展开审计；明确‖u₁‖=‖u₂‖=1、q₁≠q₂、根号及各分母的有效域。逐式核实εGB=ε1ε2、ε2=W(χ′)，不得直接采用含ε2²的其他版本。"
+    }
+  }
+]

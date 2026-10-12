@@ -1,0 +1,24 @@
+[
+  {
+    "source_id": "MD-1.1.1-HeterogeneousLJ",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看教材 PDF 第34页原页，页眉印刷页码为11；该段位于1.1.2标题之前，属于1.1.1。",
+        "statement_latex 的英文正文与原页一致；公式的 LJ 上标、ij 下标、系数4ε_ij、σ_ij/r_ij 的12次方减6次方及公式后的逗号均一致。",
+        "原页紧接公式写明 r_ij=‖q_i−q_j‖，与 JSON 一致。其后的 Fig. 1.6 指引不属于本条定义。",
+        "该段没有独立完整证明，proof_latex=null 正确。已读取 PDF 第33—35页上下文；第34页上文明确说明 r=0 处存在奇异性。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.heterogeneousLJ",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "根目录 Ch01.lean 第337—339行与批次所列定义一致，namespace 为 MD.Ch01。N 为任意自然数，i、j 为有限粒子索引；ε、σ 是依赖两个索引的实参数，能够表达不同原子对使用不同参数。展开同文件第307行的 lennardJonesPotential，得到4*(ε i j)*(((σ i j)/pairDistance (q i) (q j))^12−((σ i j)/pairDistance (q i) (q j))^6)，系数、幂次、减号及参数索引均与原文一致。原文定义的是成对势能贡献，该声明返回单对势值，无须加入总势能求和；没有[EXTRA]、命题前提或证明占位。关键缺口是实际输入未提供 V3 和 pairDistance 的定义；工作区、共享目录及现有归档中均未找到相应定义，附件要求的 ReviewDefinitions.lean、ReviewProofs.lean 也缺失。因此无法确认位置对象确为三维欧氏空间，或 pairDistance 确为原文的欧氏距离，不能仅凭名称判定 PASS。此外签名未限制非碰撞距离，须核实其与原文 r=0 奇异性的域关系；语义判定与编译或 sorry 情况分开。",
+      "counterexample": null,
+      "suggested_fix": "补充本批对应版本的真实依赖定义及输入清单，以核实 V3 的空间和范数、pairDistance 的具体表达式。若确为欧氏距离，应明确原文对应域为 pairDistance (q i) (q j)>0；Lean 实数除法在零处分母被全定义化，公式会返回0，不能将该值解释为教材在碰撞处的势能。可保留总函数实现，但应显式记录非碰撞有效域。"
+    }
+  }
+]

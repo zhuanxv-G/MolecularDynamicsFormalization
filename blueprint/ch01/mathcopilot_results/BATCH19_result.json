@@ -1,0 +1,168 @@
+[
+  {
+    "source_id": "MD-1.6.1-MinimumGradientZero",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "转录及页码正确；原书“Regardless of the choice of boundary”若包含约束边界极小，则全梯度为零不成立。保留原文，需人工确认其是否仅指光滑势所描述的边界条件或无边界配置空间。"
+      ],
+      "evidence": [
+        "PDF第59页／印刷第36页，1.6.1末段原文为“Regardless of the choice of boundary and/or the inclusion of non-pairwise potentials”，随后给出∇U=0。",
+        "PDF第60页／印刷第37页首段接续“N_c equations in N_c unknowns”及机械平衡位置q*；两页合起来与statement_latex一致。",
+        "原页没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.minimumgradientzero",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取实际Ch01.lean及Notation：Position n是实欧氏空间，PotentialEnergy n是其上的实值函数。已核对可用Mathlib源码：gradient通过Riesz对应从fderiv构造；IsLocalMin使用整个空间的邻域𝓝 q，而非约束集内的邻域。该签名正确表达可微无约束局部极小的必要条件，n对应N_c；可微假设合理，但内点解释排除了原文字面允许的约束边界极小，不能未经确认认定覆盖“Regardless”。此外，本批列出的ReviewProofs等依赖及匹配输入的MANIFEST.json未提供，无法确认完整名称解析与输入版本。",
+      "counterexample": "约束集Q=[0,∞)，U(x)=x，q=0是Q上的全局极小，但∇U(0)=1。它反驳不限制边界的原文字面陈述，不反驳Lean的无约束IsLocalMin版本。",
+      "suggested_fix": "保留原文并确认边界解释；将现有声明明确标为内点版本。若需覆盖约束极小，应另给适当可行方向必要条件；一般边界不能直接要求全梯度或所有方向导数为零。补齐本批依赖及输入清单。"
+    }
+  },
+  {
+    "source_id": "MD-1.6.1-ForceLinearization",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第60页／印刷第37页：“computing the Hessian matrix”后给出∇U(q)≈U''(q*)(q−q*)。",
+        "同页依次定义δq=q−q*、δp及平衡点(q*,0)，并列出dδq/dt=M⁻¹δp、dδp/dt=−U''(q*)δq；符号、正负号与转录一致。",
+        "无独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.force_linearization",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已展开Ch01.lean中matrixAction，其为Matrix.toEuclideanLin的实际矩阵作用；Position和Momentum均为同一实欧氏空间，PhaseSpace为二者乘积。按照已核对的Mathlib gradient定义，fderiv ℝ (gradient U) qstar确为Hessian算子。导数结论包含两个线性化分量(M⁻¹δp,−Hδq)，little-o结论表达原文一阶近似。C²及平衡梯度零合理；不要求M正定是导数公式的有效推广，但奇异M的Lean总定义逆矩阵不能解释为物理质量矩阵逆。可见签名核心语义一致；然而EquilibriumLinearization等实际导入文件缺失，且未取得匹配清单，无法完成用户要求的真实依赖解析核验，故不作无条件PASS。",
+      "counterexample": null,
+      "suggested_fix": "提供本批实际EquilibriumLinearization及其导入依赖和MANIFEST.json，以确认gradient等名称的解析和版本。机械模型的实例化应保留质量矩阵可逆或正定条件；广义导数声明可单独保留。"
+    }
+  },
+  {
+    "source_id": "MD-1.6.1-MinimumHessianLiteral",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "原页确实写positive definite，转录没有错误。一般光滑局部极小仅保证Hessian半正定，严格极小也不保证正定；不得将原文静默改为半正定。"
+      ],
+      "evidence": [
+        "PDF第60页／印刷第37页原句：“At the minimum of the potential energy, U'' is a positive definite symmetric matrix.”",
+        "该句未附非退化极小假设或独立完整证明；proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.minimumhessianliteral",
+      "verdict": "FAIL",
+      "explanation": "实际签名用ContDiff ℝ 2、IsLocalMin及Hessian双线性型表达光滑局部极小，结论同时要求对称性和所有非零方向上的严格正性。它忠实保留了原书的正定字面断言，但该断言为假：问题来自原文，而非Lean把半正定转错为正定。C²正则性不能补足非退化条件。签名中的sorry与此反例判断分开；缺失导入文件也不能消除该数学缺陷。",
+      "counterexample": "n=1，U(q)=(q 0)^4，q=0。U为C∞，0为严格全局极小；Hessian在0为零。取v 0=1，则v≠0而inner ℝ v (H v)=0，违背结论0<0。",
+      "suggested_fix": "保留原文及ERRATUM标记，不尝试证明这个一般声明。另列修正版：结论改为对称且半正定；或者明确增添Hessian非退化假设后推出正定，标明该条件原文未写。"
+    }
+  },
+  {
+    "source_id": "MD-1.6.1-ImaginarySpectrum",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_ERROR"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.6.1-ImaginarySpectrum",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.6.1",
+        "printed_page": "37",
+        "pdf_page": "60",
+        "statement_latex": "The eigenvalues of the matrix\n\\[\\boldsymbol A:=\\begin{bmatrix}0&\\boldsymbol M^{-1}\\\\-U''(\\boldsymbol q^*)&0\\end{bmatrix}\\]\nare therefore all purely imaginary ($\\pm i\\Omega$, $\\Omega\\in\\mathbb R$).",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_ERROR",
+            "status": "CORRECTED",
+            "detail": "PDF第60页实际为Ω∈ℝ，原JSON误写Ω²∈ℝ⁺；恢复原页文字。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.imaginary_spectrum",
+        "extra_assumptions": [
+          "M和Hessian K正定；复谱实虚向量编码。"
+        ],
+        "repair_log": [
+          "逐字核对PDF第60页原页，将statement_latex中的Ω²∈ℝ⁺改为Ω∈ℝ；其余原文及页码保持。"
+        ],
+        "old_ids": [
+          "CH01-171"
+        ],
+        "source_page_verification": "本次已渲染核对PDF第60页／印刷第37页。"
+      },
+      "issues": [
+        "括号中的频率条件转录错误：原页为Ω∈ℝ，没有平方，也没有正号。"
+      ],
+      "evidence": [
+        "PDF第60页／印刷第37页，块矩阵A下方原文为“are therefore all purely imaginary (±iΩ, Ω ∈ ℝ).”",
+        "块矩阵右上为M⁻¹、左下为−U''(q*)，与JSON一致；无独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.imaginary_spectrum",
+      "verdict": "PASS",
+      "explanation": "已读取实际声明、欧氏相空间定义及可用Mathlib PosDef源码；PosDef包含Hermitian条件及非零向量二次型严格正，在实矩阵情形即对称正定。A的两个分量准确对应原块矩阵，独立K可实例化为Hessian。x、y编码复特征向量x+iy，非零析取排除零向量；两条前提准确编码特征值a+ib。a=0覆盖所有特征值纯虚；A作用于x−iy的关系给出共轭特征值−ib。0<b²比审校后原文更强，但由M、K正定合理推出，并非结论作前提。K正定对应紧邻原文明确声称的条件，不能据此宣称任意极小的Hessian都正定。此判定仅针对可直接展开的签名语义，sorry不构成已验证证明。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.6.1-ComplexNormalMode",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第60页／印刷第37页明确写每个特征值对关联共轭特征向量ξ、ξ̄。",
+        "原式为z(t)=ae^{iΩt}ξ+be^{-iΩt}ξ̄，随后注明a、b为复系数；与转录一致。",
+        "该段没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.complexnormalmode",
+      "verdict": "FAIL",
+      "explanation": "实际签名对任意实矩阵A、复向量η和实频率Ω给出条件性解公式。map(algebraMap ℝ ℂ)是复化矩阵，star是逐坐标共轭，两指数的符号、任意复系数及每个实时间的导数方程准确。任意维数的推广可以取n=2N_c实例化。但完整原文还断言共轭特征向量对：签名既不要求η≠0，也未在结论给出共轭向量的非零性及−iΩ特征方程，更未把“每个特征值对”组织为相应存在性结论。因此它覆盖解公式，却未显式覆盖全部原文条款；这不意味着所写导数命题本身为假。sorry另属证明状态。",
+      "counterexample": "取n=1、A=[1]、η=0、Ω=1。Lean的特征方程前提成立，所有系数给出零解，但0不是特征向量，A也没有±i这个特征值对。该实例显示当前前提不能认证原文所说的共轭特征向量对。",
+      "suggested_fix": "增加η≠0，并在结论加入η̄≠0及Aℂη̄=(−iΩ)η̄，连同现有解公式保留；若按原文“每个特征值对”组织声明，应从特征值条件取得非零特征向量及其共轭。"
+    }
+  },
+  {
+    "source_id": "MD-1.6.1-RealNormalMode",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第60页／印刷第37页原文为“or recast in real form as (α, β real coefficients)”。",
+        "原式α项为sin(Ωt)Re(ξ)+cos(Ωt)Im(ξ)，β项为cos(Ωt)Re(ξ)−sin(Ωt)Im(ξ)；系数及全部正负号与JSON一致。",
+        "没有独立完整证明，proof_latex=null正确；结合上下文，实形式描述对应的实值解。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.realnormalmode",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取实际声明：A为实连续线性算子，α、β、Ω及时间均为实数；Au=−Ωv、Av=Ωu准确对应实矩阵复特征方程的实虚部分，抽象实赋范空间是合理推广。但本批所列NormalModes.lean未实际提供，工作区及已有归档中也未找到realNormalMode定义；Ch01.lean仅调用它，JSON的context_notation不能替代定义核验。因此无法核对其展开后的两个三角组合、符号和系数，也不能判断它是否充分表达原文的实形式转换。现有HasDerivAt结论仅认证该未展开函数满足ODE。",
+      "counterexample": null,
+      "suggested_fix": "提供本批实际NormalModes.lean及匹配清单，展开realNormalMode逐项核对。若要求完整表达“recast”，还应连接u=Re ξ、v=Im ξ与复公式的实值子族；对应系数为a=(β−iα)/2、b=(β+iα)/2，而非任意复系数都产生实值解。"
+    }
+  }
+]

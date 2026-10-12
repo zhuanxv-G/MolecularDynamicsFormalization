@@ -1,0 +1,287 @@
+[
+  {
+    "source_id": "MD-1.5.1-FlowMap",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF第49页原页，印刷页26：式(1.5)为ż=f(z)、z(0)=ξ；随后定义从初值到t时刻状态的映射，并明确F_t(ξ)=z(t)满足该初值问题。",
+        "所录文字与选取的原文段落一致；后续关于点集演化及群律的文字不属于本条选取范围。该定义没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.flowMap",
+      "verdict": "PASS",
+      "explanation": "已读取Ch01.lean中真实定义：flowMap是给定f和F的性质谓词，展开后恰为所有初值ξ满足F 0 ξ=ξ，以及所有实数t满足真实HasDerivAt微分方程。Position n在可读Notation.lean中实际为EuclideanSpace ℝ (Fin n)，因此这里表示一般m维状态空间，并非按名称强制解释为物理位置。定义没有断言任意f存在全局解，也没有把群律或守恒放入前提。原文继承的Hamiltonian存在唯一性条件用于保证该映射可定义；本条作为已给定全局映射的IVP性质刻画，与批次注明的范围一致。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.1-FlowEnergy",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第49页原页、印刷页26直接写明Hamiltonian系统的流保持Hamiltonian，公式为H(F_t(ξ))=H(ξ)。",
+        "紧接公式的括注仅说明这是能量守恒，没有独立完整证明；proof_latex=null及页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.flow_energy",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean的实际签名量化任意初值和所有实数时间；hH要求H可微，hF要求初值恒等及真实HasDerivAt方程，没有直接假设能量守恒。这些显式前提原则上合理。但关键symplecticGradient的定义未包含在当前可读取的输入中；已检索工作区及其隐藏目录，未找到该定义。现有旧版Hamiltonian.lean定义的是另一个名称hamiltonianVectorField，不能代替本批symplecticGradient。Ch01.lean证明中的change也不能替代对实际依赖定义的读取。因此无法完成用户要求的对象及向量场定义审计，不能仅凭名称判PASS。此结论与证明是否含sorry分开。",
+      "counterexample": null,
+      "suggested_fix": "补齐与本批Ch01.lean同版本的symplecticGradient及相关gradient定义文件和输入清单，核实其展开确为(∂H/∂p,-∂H/∂q)，再完成语义判定。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+        "kind": "definition",
+        "label": null,
+        "section": "1.5.1",
+        "printed_page": "27",
+        "pdf_page": "50",
+        "statement_latex": "for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is\n\\[\\begin{pmatrix}q(t)\\\\p(t)\\end{pmatrix}=\\mathcal F_t\\begin{pmatrix}q_0\\\\p_0\\end{pmatrix}\\equiv\\begin{pmatrix}q_0\\cos(\\Omega t)+p_0\\sin(\\Omega t)/\\Omega\\\\-q_0\\Omega\\sin(\\Omega t)+p_0\\cos(\\Omega t)\\end{pmatrix}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "p.26方程q′=p,p′=-Ω²q；Ω≠0域；§1.2已有真实解与初值证明。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          "PDF50、印刷p.27原公式中F_t作用于初值后的连接符为≡，输入误录为=；按原页恢复，不改变数学公式。"
+        ],
+        "lean_decl": "MD.Ch01.harmonicPhaseFlow",
+        "extra_assumptions": [],
+        "repair_log": [
+          "恢复PDF50原公式第二个连接符为\\equiv。"
+        ],
+        "old_ids": [
+          "CH01-102"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "PDF50原公式第二个连接符为≡，输入为=。页码、正负号、Ω因子及初值均正确。"
+      ],
+      "evidence": [
+        "已查看PDF第50页原页、印刷页27顶端公式：左列等于F_t作用于初值，随后以≡连接显式三角函数表达式。",
+        "PDF49、印刷页26末尾给出q′=p、p′=-Ω²q；本段没有独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.harmonicPhaseFlow",
+      "verdict": "FAIL",
+      "explanation": "已展开真实定义及PhaseSpace n=Position n×Momentum n，两个分量在Ω≠0时与原文公式一致，推广为逐坐标同频振子也合理。但是本声明允许所有实数Ω，未落实本条context_notation指定的Ω≠0域；Lean的除零总定义使Ω=0时得到错误的自由粒子轨道。此外，该声明只定义表达式，并未表达原文的初值问题解身份。所称§1.2已有解与初值证明对应的HarmonicOscillator.lean未提供，不能据此补足本条缺失的解性质。",
+      "counterexample": "取n=1、Ω=0、q₀=0、p₀=1。定义给出harmonicPhaseFlow 0 t (q₀,p₀)=(0,1)对所有t成立，因sin(0)/0=0；于是q′=0≠p=1。原方程此时的真实解为(q(t),p(t))=(t,1)。",
+      "suggested_fix": "明确把解身份的陈述限制到Ω≠0，并关联实际初值及HasDerivAt证明；若希望覆盖Ω=0，则另设零频分支(q₀+t p₀,p₀)。保留教材原式，不静默把原书公式改为零频延拓。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.1-SpectralSolution",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.1-SpectralSolution",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5.1",
+        "printed_page": "27",
+        "pdf_page": "50",
+        "statement_latex": "If $\\boldsymbol A$ has a basis of eigenvectors $\\boldsymbol\\eta_i$, $i=1,\\ldots,m$, with corresponding eigenvalues $\\lambda_1,\\lambda_2,\\ldots,\\lambda_m$, then we may write the solution at time $t$ as\n\\[\\boldsymbol z(t)=\\sum_{i=1}^{m}c_i e^{\\lambda_i(t-t_0)}\\boldsymbol\\eta_i\\]\nwhere the coefficients $c_i$ are obtained by solving the equation\n\\[\\boldsymbol z(t_0)\\equiv\\boldsymbol\\xi=\\sum_{i=1}^{m}c_i\\boldsymbol\\eta_i.\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "允许复数特征值，不偷换为实谱。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          "PDF50、印刷p.27初值展开式中z(t₀)与ξ之间为≡，输入误录为=。"
+        ],
+        "lean_decl": "MD.Ch01.spectralsolution",
+        "extra_assumptions": [
+          "有限维复数特征基；在公式中以t-t0调用零初时流；coeff=b.repr ξ。"
+        ],
+        "repair_log": [
+          "恢复初值展开式中的\\equiv。"
+        ],
+        "old_ids": [
+          "CH01-103"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "初值展开式的≡被录为=；其余文字、求和上下限、指数中的t-t₀及页码正确。"
+      ],
+      "evidence": [
+        "PDF第50页原页、印刷页27：解公式含e^{λ_i(t-t₀)}，其下初值公式为z(t₀)≡ξ=Σc_iη_i。",
+        "原文随后明确特征向量、特征值和系数可以为复数；没有独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.spectralsolution",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名使用有限复数基b，hb明确要求A(b i)=ν i•b i；b.repr是基的真实坐标线性等价，故系数没有被偷换为任意参数。复数域保留了原文允许复谱的条件；有限基保证有限维，连续算子及完备性在该背景下合理，任意实数t也可通过代入t-t₀表达时间平移。但左端complexExponentialFlow的实际定义及其IVP性质所在ComplexSpectralFlow.lean未提供，工作区检索亦未找到，无法确认左端确为原文线性系统的解。不能把函数名称或转调定理名称当作定义证据。",
+      "counterexample": null,
+      "suggested_fix": "提供本批ComplexSpectralFlow.lean及其流定义、初值和ODE关联结果，核实complexExponentialFlow确为A生成的零初时线性流，并明确时间平移后与原文任意t₀初值问题的对应。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.1-BasisCoefficients",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_WORDING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.1-BasisCoefficients",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5.1",
+        "printed_page": "27",
+        "pdf_page": "50",
+        "statement_latex": "(ii) with our assumption that the $\\{\\boldsymbol\\eta_i\\}$ form a basis, the calculation of the coefficients is always possible, since the matrix $\\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\\boldsymbol c$ which satisfies the square linear system\n\\[\\boldsymbol\\xi=\\boldsymbol X\\boldsymbol c.\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          "PDF50、印刷p.27原文为the calculation of the coefficients is always possible；输入改写为will always be possible。"
+        ],
+        "lean_decl": "MD.Ch01.basis_coefficients",
+        "extra_assumptions": [
+          "RCLike域包含实/复两种；真实有限基。"
+        ],
+        "repair_log": [
+          "将will always be possible恢复为is always possible。"
+        ],
+        "old_ids": [
+          "CH01-105"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "输入把is always possible改写为will always be possible，不符合逐字原文要求；公式及页码正确。"
+      ],
+      "evidence": [
+        "PDF第50页原页、印刷页27的Observations (ii)使用is always possible。",
+        "同段明确X的列为特征向量、X可逆且ξ=Xc；没有独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.basis_coefficients",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名中的Module.Basis是真实有限基，b.repr z给出唯一坐标；结论包含矩阵可逆、乘坐标恢复z及逆矩阵求坐标三部分。RCLike允许实数和复数；去掉与系数计算无关的特征向量条件是合理推广。但basisColumnMatrix的真实定义所在BasisMatrix.lean未提供，工作区亦未找到，无法核实矩阵是否以b i为第i列，还是转置或其他对象。不能仅从名称断言三项结论忠实于原文。",
+      "counterexample": null,
+      "suggested_fix": "提供本批BasisMatrix.lean，核实逐项定义basisColumnMatrix b i j=(b j) i以及WithLp转换；完成后再判定是否完整覆盖原文列矩阵与系数方程。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.1-MatrixExponentialSolution",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第50页原页、印刷页27明确给出z(t)=e^{A(t-t₀)}ξ；引导文字、时间平移、初值符号及页码一致。",
+        "同页上文限定A为常数m×m矩阵，初值为z(t₀)=ξ；本段无独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.matrixexponentialsolution",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名对任意维数、实常矩阵、初值、初始时间及真实可微轨道γ量化。hγ要求γ′=Aγ，hinit要求γ t₀=z，没有把指数解结论当作前提；函数等式覆盖所有实数时间，时间平移也正确。但matrixExponentialFlow的定义及context_notation所称matrixExponentialFlow_eq均未包含在可读输入中，MatrixFlow.lean未找到。因此不能核实结论右端是否真正为矩阵指数作用于初值，也不能确认解存在性是否由实际流定义保障。",
+      "counterexample": null,
+      "suggested_fix": "补齐本批MatrixFlow.lean及必要依赖，核实matrixExponentialFlow A s z等于e^{sA}z，并检查真实初值和微分方程性质；保留当前合理的hγ与hinit。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.1-MatrixExpSeries",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_WORDING",
+        "TRANSCRIPTION_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.1-MatrixExpSeries",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5.1",
+        "printed_page": "27–28",
+        "pdf_page": "50–51",
+        "statement_latex": "Alternatively, one may think of $\\exp(\\boldsymbol A)$ as the sum of the exponential series\n\\[e^{\\boldsymbol A}\\equiv\\boldsymbol I+\\boldsymbol A+\\frac1{2!}\\boldsymbol A^2+\\frac1{3!}\\boldsymbol A^3+\\cdots\\]\nalthough this is seldom the most efficient method to compute it (this series converges for all matrices $\\boldsymbol A$, and so in fact the exponential expression for the solution of the linear system is well defined even in the absence of a full set of eigenvectors).",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "HasSum包含级数收敛和等式；需要Matrix.Norms.L2Operator范数约定。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          "PDF50、印刷p.27原文为Alternatively, one may think of，输入为Alternatively, we may think of。",
+          "PDF50指数级数公式的连接符为≡，输入误录为=。"
+        ],
+        "lean_decl": "MD.Ch01.matrix_exp_series",
+        "extra_assumptions": [],
+        "repair_log": [
+          "恢复原文one may及级数公式中的\\equiv。"
+        ],
+        "old_ids": [
+          "CH01-107",
+          "CH01-108"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "one may被改写为we may；级数公式中的≡被改写为=。跨页范围、各项系数及收敛说明正确。"
+      ],
+      "evidence": [
+        "已查看PDF50、印刷p.27底部原页：引导语使用one may，公式为e^A≡I+A+A²/2!+A³/3!+⋯。",
+        "已查看PDF51、印刷p.28顶部原页：续句明确所有矩阵的级数均收敛，并说明无需完整特征向量组即可定义指数。没有独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.matrix_exp_series",
+      "verdict": "PASS",
+      "explanation": "实际签名直接使用任意有限维实方阵、矩阵幂及标准NormedSpace.exp，不依赖名称不明的自定义指数。已读取可用Mathlib源文件Analysis/Normed/Algebra/Exponential.lean：exp由指数形式多线性级数求和定义，expSeries_apply_eq明确第k项为(k!⁻¹)•A^k，exp_eq_tsum给出相同幂级数。Ch01.lean实际打开Matrix.Norms.L2Operator作用域。HasSum同时要求部分和收敛及极限等于该指数；k=0和k=1恰为I和A，且没有可对角化或特征基假设，完整覆盖级数等式、普遍收敛及不依赖完整特征向量组的数学内容。效率评价不是数学定理结论。本判定针对签名语义，不认证其转调证明或缺失的ReviewProofs依赖。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.1-RealSpectralSolution",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第50页原页、印刷页27的Observations (i)明确允许特征向量、特征值及系数为复数，但A和ξ实值时可以得到实解。",
+        "输入保留该观察的完整实解子句，末尾逗号对应原文随后接续and (ii)；页码及proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.realspectralsolution",
+      "verdict": "PASS",
+      "explanation": "实际签名中的A为实矩阵，A.map Complex.ofReal是逐项复化；已读取Mathlib Analysis/CStarAlgebra/Matrix.lean中toEuclideanCLM的真实定义，它通过标准Euclidean基的矩阵与连续线性算子等价实现矩阵作用，并非任意同名函数。hb要求复化矩阵具有所给复特征基；ν、b及b.repr z均允许复值，hz只要求初值每坐标虚部为零。结论对所有实数t及每个坐标i要求完整特征展开的虚部为零，完整覆盖实解内容，且没有错误强化为所有特征值均实。初始时间取零不丢失一般性，代入t-t₀即得到原文时间平移。有限特征基继承自同段上文，合理；结论未作前提。本判定针对显式谱和的实值语义，不认证缺失依赖中的谱解证明。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

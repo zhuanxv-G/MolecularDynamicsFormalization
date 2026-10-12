@@ -1,0 +1,295 @@
+[
+  {
+    "source_id": "MD-1.5.2-FirstIntegral",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_WORD"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.2-FirstIntegral",
+        "kind": "definition",
+        "label": null,
+        "section": "1.5.2",
+        "printed_page": "28",
+        "pdf_page": "51",
+        "statement_latex": "Another term for constant of motion is first integral. In general, if we have a dynamical system $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, a first integral is a smooth function $I(\\boldsymbol z)$ which is constant along solutions, for all values of the initial condition.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "IsFirstIntegralOn量化每条真实曲线及其存在区间，不附加全局存在。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          "PDF第51页、印刷第28页原文为单数 constant of motion；输入误作 constants of motion。"
+        ],
+        "lean_decl": "MD.Ch01.smoothFirstIntegral",
+        "extra_assumptions": [],
+        "repair_log": [
+          "依据PDF原页，将 constants of motion 改为 constant of motion。"
+        ],
+        "old_ids": [
+          "CH01-109"
+        ],
+        "source_page_verification": "本次已直接查看PDF第51页渲染原页，并读取相邻页上下文。"
+      },
+      "issues": [
+        "原文使用单数 constant of motion，其他正文内容及页码一致；proof_latex=null符合该定义无独立证明的情况。"
+      ],
+      "evidence": [
+        "PDF第51页，页眉28，§1.5.2：Another term for constant of motion is first integral.",
+        "同段明确要求 smooth function、constant along solutions、for all values of the initial condition。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.smoothFirstIntegral",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对实际提供的Ch01.lean：定义确为ContDiffOn ℝ ∞ I Q ∧ IsFirstIntegralOn f Q I；Position n的可读定义为EuclideanSpace ℝ (Fin n)，因此有限维实状态对象及光滑性分句吻合。但当前工作区没有所需FirstIntegrals.lean，也没有IsFirstIntegralOn的真实定义；现有共享目录及共享压缩包亦未提供该定义。不能依据context_notation确认它是否量化所有真实局部解、全部初值和区间内任意两时刻，也不能排除空泛谓词。另需确认任意Q上的域内光滑性与教材所指状态域的约定。",
+      "counterexample": null,
+      "suggested_fix": "提供与Ch01.lean同一版本的MolecularDynamics/Chapter01/FirstIntegrals.lean及其依赖，核查IsFirstIntegralOn的完整展开；若教材状态域为开域，应明确Q的域约定。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-FirstIntegralCriterion",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_SYMBOL",
+        "TRANSCRIPTION_PUNCTUATION",
+        "SOURCE_PROOF_SCOPE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.2-FirstIntegralCriterion",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5.2",
+        "printed_page": "28",
+        "pdf_page": "51",
+        "statement_latex": "Since this should hold everywhere, the condition for $I$ to be a first integral is that $\\nabla I\\cdot f\\equiv0$.",
+        "proof_latex": "Let $\\boldsymbol z(t):t\\in\\mathbb R$ be a solution, then\n\\[I(\\boldsymbol z(t))\\equiv I(\\boldsymbol z(0))\\Rightarrow0\\equiv\\frac{\\mathrm d}{\\mathrm dt}I(\\boldsymbol z(t))=\\nabla I(\\boldsymbol z(t))\\cdot\\dot{\\boldsymbol z}(t)=\\nabla I(\\boldsymbol z(t))\\cdot f(\\boldsymbol z(t)).\\]",
+        "proof_note": "按PDF原页转录原文链式法则论证；该段直接展示必要性，未单独展开充分性证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          "原页条件及证明开头使用恒等号≡，输入误作等号=；Let z(t)后原文为冒号，不是括号。",
+          "原页论证直接从沿解恒定推出微分为零，未独立展开充分性；保留原文论证，不补造证明。"
+        ],
+        "lean_decl": "MD.Ch01.firstintegralcriterion",
+        "extra_assumptions": [
+          "开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral_gradient_criterion。"
+        ],
+        "repair_log": [
+          "恢复原页三个恒等号及Let z(t)后的冒号；说明原文论证范围。"
+        ],
+        "old_ids": [
+          "CH01-110"
+        ],
+        "source_page_verification": "本次已直接查看PDF第51页渲染原页，并读取相邻页上下文。"
+      },
+      "issues": [
+        "页码正确；statement_latex和proof_latex存在恒等号及标点转录差异。",
+        "保留原书以全实时间解陈述的论证，不把局部解修订静默写入原文。"
+      ],
+      "evidence": [
+        "PDF第51页、印刷第28页：Let z(t) : t ∈ ℝ be a solution, then。",
+        "原页公式依次为I(z(t))≡I(z(0))⇒0≡dI(z(t))/dt，后续链式法则连接使用等号；末句为∇I·f≡0。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.firstintegralcriterion",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名量化实Banach空间、开域Q、域内局部C1向量场和可微J，结论为沿解守恒与处处DJ(x)[f(x)]=0的双向等价。开放域、完备性和局部C1可用于每个初值的局部存在，是合理的技术条件；有限维欧氏空间中微分作用可对应梯度内积。但缺少IsFirstIntegralOn及isFirstIntegralOn_iff_differential的真实定义源码，不能完成沿解量词核对。另教材上一句将first integral定义为光滑函数，而此签名只假设J可微，结论未显式包含ContDiff光滑性；不能未经定义展开就认定它忠实于包含光滑性的完整定义。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本FirstIntegrals.lean及梯度桥接声明。核实后明确该定理是可微函数的守恒判据；若要与smoothFirstIntegral完整对应，应保留光滑J前提，并在该前提下陈述smoothFirstIntegral与梯度条件的等价。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-PlanarGraphReduction",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_PUNCTUATION",
+        "SOURCE_MISSING_NONDEGENERACY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.2-PlanarGraphReduction",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5.2",
+        "printed_page": "28",
+        "pdf_page": "51",
+        "statement_latex": "In principle such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=g(x,\\psi(x)).\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "正文前句二维f=(g,h)且第一积分I(x,y)=I0；不把IsFirstIntegralOn当证明目标假设，它是本条原文已有第一积分。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          "原文In principle后无逗号，输入多出逗号。",
+          "ISSUE：原书未明确要求∂I/∂y≠0，不能保证任意水平集局部均可写为y=ψ(x)；保留原文，不把补充假设写入引文。"
+        ],
+        "lean_decl": "MD.Ch01.planargraphreduction",
+        "extra_assumptions": [
+          "对y偏导非零，真实strict导数，局部时间窗；原文省略隐函数非退化条件。"
+        ],
+        "repair_log": [
+          "删除In principle后的非原文逗号；记录原书省略隐函数非退化条件的问题。"
+        ],
+        "old_ids": [
+          "CH01-111",
+          "CH01-112"
+        ],
+        "source_page_verification": "本次已直接查看PDF第51页渲染原页，并读取相邻页上下文。"
+      },
+      "issues": [
+        "页码、ψ符号、降维方程及proof_latex=null均正确。",
+        "原书省略对y偏导非零条件，是原文适用范围问题，不应静默改正文。"
+      ],
+      "evidence": [
+        "PDF第51页、印刷第28页：In principle such an equation can be solved (locally at least)。",
+        "前句为二维系统及水平集I(x,y)≡I0；后句显示dx/dt=g(x,ψ(x))，该段没有写出∂I/∂y≠0。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.planargraphreduction",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "可见签名保留二维对象、已有第一积分、真实HasDerivAt解、初始点及局部时间范围；结论同时给出ψ穿过初始点、可微性、水平集局部图等价、轨迹图关系和降维微分方程，没有把所求图关系预设为假设。严格微分和L(0,1)≠0合理补足隐函数定理条件，但只能支持原文的非退化局部版本。因IsFirstIntegralOn的真实定义以及FirstIntegralGraph.lean缺失，无法核查已有第一积分假设是否确实保证所有相关轨迹守恒，故不判PASS。",
+      "counterexample": "针对原文省略的条件：取f(x,y)=(0,1)、I(x,y)=x。I沿所有解恒定，但I=0的水平集为竖直线x=0，原点附近不能表示为单值y=ψ(x)；解γ(t)=(0,t)也不能在任何时间邻域满足该图关系。此例违反Lean新增的L(0,1)≠0，不反驳新增条件后的签名。",
+      "suggested_fix": "提供同版本FirstIntegrals.lean和FirstIntegralGraph.lean；保留原文缺项记录，并明确Lean声明对应∂I/∂y≠0的局部版本。退化点需另选可用坐标或单独分类，不能声称本签名覆盖。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-PlanarQuadrature",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "ASSUMPTION_METADATA_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.2-PlanarQuadrature",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5.2",
+        "printed_page": "28",
+        "pdf_page": "51",
+        "statement_latex": "Such an ordinary differential equation is said to be separable, and theoretically can be solved, given an initial condition, for x as a function of t.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          "statement_latex、proof_latex及页码与原页一致。extra_assumptions中的真实C2与实际签名不符：hJ和hf均为ContDiffAt ℝ 1，即初始状态附近C1。"
+        ],
+        "lean_decl": "MD.Ch01.planarquadrature",
+        "extra_assumptions": [
+          "正则第一积分图及非转向速度非零；J和f在初始状态处ContDiffAt ℝ 1；真实局部解、局部时间积分及其逆。"
+        ],
+        "repair_log": [
+          "仅修订extra_assumptions，将真实C2改为实际签名要求的局部C1。"
+        ],
+        "old_ids": [
+          "CH01-113"
+        ],
+        "source_page_verification": "本次已直接查看PDF第51页渲染原页，并读取相邻页上下文。"
+      },
+      "issues": [
+        "正文转录、印刷第28页/PDF第51页及无独立证明的标记均正确。",
+        "附加条件说明误记正则性阶数，实际Lean要求局部C1而非C2。"
+      ],
+      "evidence": [
+        "PDF第51页底部，降维方程后紧接Such an ordinary differential equation is said to be separable。",
+        "实际Ch01.lean的planarquadrature中hJ为ContDiffAt ℝ 1 J，hf为ContDiffAt ℝ 1 f。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.planarquadrature",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "可见结论提供初始图、局部时间函数g、轨迹表示、separableTimePrimitive与g的两个局部逆关系以及含初始时刻的正长度积分时间窗，确有求积内容。hpartial和hspeed分别保证可解出y及可逆时间求积，是非转向局部版本的合理条件；δ只有正性，未在其他结论中使用，不能解释为已给出的空间邻域半径。IsFirstIntegralOn和separableTimePrimitive的真实定义，以及FirstIntegralQuadrature.lean、SeparableQuadrature.lean均未提供，不能确认所谓时间原函数确为∫dx/g(x,ψ(x))。此外签名以已有γ为前提，直接描述既有解，未显式声明每个初值的解存在；hspeed也排除了平衡点。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本相关定义并确认separableTimePrimitive的被积函数、基点和积分约定。若覆盖原文给定初值可求解的全部范围，补充局部初值问题存在结论及零速度情形；删除未使用的δ或将其连接到明确的空间邻域。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-ScalarFirstIntegral",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第51页、印刷第28页末段确为Example 1.6，引用Example 1.4，依次声称能量为第一积分和系统可积。",
+        "statement_latex与原页一致；此例该段没有独立证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.scalar_first_integral_and_quadrature",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名有两个结论分句：所有C2势的scalarPotentialEnergy为第一积分，以及已有真实标量轨迹在速度非零点的局部图和求积逆描述。C2可作为产生C1力场的合理条件，但当前未提供scalarPotentialVectorField、scalarPotentialEnergy、IsFirstIntegralOn及separableTimePrimitive的真实定义，不能确认动力学为x'=v、v'=-U'(x)，能量为v²/2+U(x)，时间原函数为速度倒数的积分。可见第二分句还排除了所有零速度初值，仅描述已有解；这不能单独确认原文整个系统可积的全部结论。",
+      "counterexample": "覆盖缺项的检验例：按教材标准标量模型取U(x)=x²/2、γ(t)=(cos t,-sin t)、t₀=0。此时初始速度为0、加速度为-1，是非平衡转向点；第二分句的hv₀不成立。该例说明签名不覆盖此初值，并非反驳其非转向结论。",
+      "suggested_fix": "提供同版本ScalarIntegrability.lean、FirstIntegrals.lean及SeparableQuadrature.lean。完整可积性应同时处理非转向点、非平衡转向点和平衡点，并明确任意初值的局部解存在；若仅保留现签名，应明确标记为能量守恒与非转向局部求积的部分形式化。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerEnergy",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第52页、印刷第29页首段Example 1.7说明平面运动、固定于原点的第二物体及其引力。",
+        "原页能量为E(x,y,ẋ,ẏ)=ẋ²/2+ẏ²/2−1/√(x²+y²)，与输入一致；该定义无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.planarKeplerEnergy",
+      "verdict": "PASS",
+      "explanation": "已直接展开实际定义：四个实参数x、y、v、w分别对应两位置坐标及两速度坐标，函数体逐项为v²/2+w²/2−1/Real.sqrt(x²+y²)，系数和符号完全一致，无额外假设或循环结论。教材非碰撞域x²+y²>0已在context_notation说明；定义在全ℝ⁴上的Lean总化仅作为域外扩展，在原文有效域上忠实。此PASS只针对能量公式定义，不包含力场或守恒性。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerConservedEnergy",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第52页、印刷第29页首段末句完整写明两个守恒量为energy and angular momentum，并得出Kepler problem is an integrable system。",
+        "输入保留完整句子，没有漏掉角动量或可积性结论；该句没有独立完整证明。",
+        "相邻PDF第53页、印刷第30页解释径向标量系统、角度积分及以原函数和逆函数表达完整解。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.kepler_energy_angular_integrability",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对实际Ch01.lean的三部分：任意非碰撞真实机械解区间内能量相等、角动量相等，以及含0区间上的正半径、径向二阶动力学、角度积分、位置重建、每点ScalarPotentialLocalDescription和初始动量重建。可见签名保留三类原文结论，没有将它们直接作前提；时间平移至0和排除碰撞合理。但所需keplerForce、keplerPotential、massHamiltonian、planarAngularMomentum、ScalarPotentialLocalDescription及当前版本IsMechanicalSolutionOn未提供。共享旧压缩包虽含旧版机械解定义，不能替代此批同版本依赖。尤其无法确认ScalarPotentialLocalDescription是否真正涵盖径向非转向点、转向点和平衡点，而非空泛或预设结论。该声明第三部分实际含sorry；这属于证明未完成，与本次因定义缺失而无法确定签名语义分开。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本Kepler.lean、Hamiltonian.lean、PlanarAngularMomentum.lean、ScalarIntegrability.lean、ScalarTurning.lean及机械解定义。逐项确认力为−q/‖q‖³、势为−1/‖q‖、角动量为q₀p₁−q₁p₀，并展开ScalarPotentialLocalDescription核查全部径向情形及由初值求解的内容；证明中的sorry另行处理。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerAngularMomentum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第52页、印刷第29页首段确有however, due to the fact that the potential energy is rotationally invariant及括号内只依赖到原点距离的说明，随后声称角动量守恒。",
+        "同页下部给出l_z=x ẏ−y ẋ及l_z=r²θ̇，与context_notation一致。",
+        "所选首段句子无独立完整证明，proof_latex=null可保留；同页后文另有极坐标推导。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.keplerangularmomentum",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "可见签名量化二维相空间轨迹、单位质量、非碰撞位置域、开放存在区间及区间内任意s和t，结论为两时刻planarAngularMomentum相等；这些对象和量词形式符合原文守恒主张，非碰撞条件也合理。固定Kepler模型无需把旋转不变性再作为任意势的前提，但必须展开keplerForce及planarAngularMomentum验证它确是中心引力且守恒量确为x ẏ−y ẋ。当前缺少这些定义和同版本机械解谓词，不能根据名称或调用kepler_planarAngularMomentum_const_on_Ioo就判PASS；也无法确认旋转不变势与所用力场的真实联系。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本Kepler.lean、PlanarAngularMomentum.lean及IsMechanicalSolutionOn所在文件，核查q'=p、p'=−q/‖q‖³和角动量坐标公式，并确认势仅依赖半径且力与该势匹配。"
+    }
+  }
+]

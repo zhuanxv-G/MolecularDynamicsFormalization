@@ -1,0 +1,208 @@
+[
+  {
+    "source_id": "MD-1.7-IsoscelesEnergyReduction",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看 PDF 第62页原页，印刷页39；能量公式、开头 reducing the energy to、公式末尾逗号及后续 which describes the vibrational motion. 均与 JSON 一致。",
+        "同页明确给出 q₁=(x,−y/3,0)、q₂=(−x,−y/3,0)、q₃=(0,2y/3,0)。PDF第61页的模型能量采用单位质量和单位 Lennard-Jones 势。",
+        "原页没有该条的独立完整证明，proof_latex=null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.isosceles_energy_reduction",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取附件 Ch01.lean:1812 的实际 isoscelesCoordinates 定义，其三组坐标与原文一致；将参数换为 v,w 后确实对应坐标速度，动能展开为 v²+w²/3。1819–1821行量化任意实数 x,y,v,w，并在 x>0 下断言三粒子总能量等于约化能量；x>0符合图中距离坐标，单位质量符合原页，均未把目标等式作为前提。但 uniformLJEnergy、isoscelesEnergy、isoscelesPotential 和 V3 的真实定义不在当前附件中，所列 ReviewDefinitions.lean 等依赖也未找到，无法核实粒子对是否恰好计数一次、欧氏范数及右侧全部系数。正文中的 unfold 和复用名称不能代替定义展开，因此不能签发 PASS。正文无直接 sorry；未做编译或依赖证明核验，这与签名语义判定分开。",
+      "counterexample": null,
+      "suggested_fix": "补齐与附件 Ch01.lean 同版本、由本批 MANIFEST.json 绑定的相关依赖，至少提供 V3、uniformLJEnergy、isoscelesEnergy、isoscelesPotential 的完整定义，再核对两条斜边和底边的势能及约化动能。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-IsoscelesAccessibleRegion",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看 PDF 第63页原页，印刷页40；原文为 kinetic energy is non-negative, we must have，随后是不等式 2φ̂_LJ(√(x²+y²))+φ̂_LJ(2x)≤E，句点与 JSON 一致。",
+        "PDF第62页末尾说明能量守恒并引出该句；第63页的不等号确为 ≤。",
+        "原书给出简短理由，没有独立完整证明，proof_latex=null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.isoscelesaccessibleregion",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:1856–1858 的签名量化全部实数 x,y,v,w,E，以 isoscelesEnergy x y v w=E 为前提，结论为 isoscelesPotential x y≤E。指定实际总能量为 E 是合理前提，不是直接假设目标不等式；瞬时动能非负即可给出该必要条件，不必另加时间守恒条件。关键的 isoscelesEnergy 和 isoscelesPotential 真实定义当前缺失，无法确认二者差值就是原文的 v²+w²/3，也无法排除把结论预置进定义的情形。签名扩展到所有实数坐标，物理上只需非碰撞区域；是否为合理代数扩展仍须实际定义确认。正文调用 isoscelesEnergyBound_proved，无直接 sorry，但该名称及正文复用不构成定义核验。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本 isoscelesEnergy、isoscelesPotential 及所用 LJ 势的实际定义，确认能量差为 v²+w²/3，并明确物理坐标域与总化代数定义的关系。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-EquilateralTrimerMinimum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看 PDF 第61页原页，印刷页38，Example 1.8 (Planar Lennard-Jones Trimer)；三句英文及公式 U=3φ̂_LJ(r) 均与 JSON 一致。",
+        "原文确写 radially symmetric，并给出 r=2^(1/6)≈1.1225；未将该措辞静默替换。",
+        "同页定义 φ̂_LJ(r)=4[r^(−12)−r^(−6)]，且说明运动限制在平面。没有独立完整证明，proof_latex=null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.equilateraltrimerminimum",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:1864–1868 的签名包含势能下界 −3，以及达到 −3 当且仅当全部不同粒子间距离等于 2^(1/6)，没有将最小值作为前提。Real.rpow 的指数为实数，因此这里的 1/6 不是自然数整除。单位 LJ 是原文参数选择；非碰撞条件是奇异势的合理定义域资格。签名使用 V3，原例使用平面；若 V3 确为欧氏三维空间且势只依赖距离，则三个点的这种推广合理。然而 V3、pairDistance、uniformLJEnergy 的真实定义当前缺失，不能确认这一条件，也不能核实原文的任意等边边长 r 下 U=3φ̂_LJ(r) 或最小值的实际可达性。不能仅凭定义名称把下界和等号刻画认作全部原文内容已落实。正文直接为 sorry；此事实不单独决定签名语义。",
+      "counterexample": null,
+      "suggested_fix": "补齐同版本 V3、pairDistance、uniformLJEnergy 的定义和本批 MANIFEST.json；核实三对相互作用的计数。审计时同时覆盖任意等边边长 r 的势能公式及边长 2^(1/6) 的可实现配置，必要时补充对应陈述。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-TrimerEnergyLowerBound",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "NEEDS_HUMAN",
+          "detail": "共同引句中的正能量逃逸措辞存在逐粒子解释过强的问题，保留原文，并在 MD-1.7-TrimerEscapeLiteral 中处理。根据本条 context_notation，本条审计范围仅为 E<−3 不可达；该半句的转录无须修订。"
+        }
+      ],
+      "evidence": [
+        "已直接查看 PDF 第63页原页，印刷页40；括号、分号、两个能量条件及全部英文与 JSON 一致。",
+        "原文明确写 E<−3 is not attainable.，没有将端点 E=−3 排除。",
+        "context_notation 明确把正能量逃逸分配给下一条；原书没有能量下界的独立完整证明，proof_latex=null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.trimerenergylowerbound",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "按本条明确限定的范围，Ch01.lean:1875–1878 断言任意三粒子位置和速度的瞬时总能量不小于 −3，包含可达到的端点，量词和目标下界合适。非碰撞条件虽未记录在 extra_assumptions 中，但属于原书奇异 LJ 势的合理物理定义域资格；单位质量和单位 LJ 已由原例固定。平方范数动能非负，签名没有假设能量下界。问题在于 uniformLJEnergy 和 V3 的真实定义未提供，无法确认势能为三对单位 LJ 势之和以及动能的实际欧氏对象；三维到平面模型的关系也不能仅据名称认定。正文调用 trimerLowerBound_proved，无直接 sorry；未核验其依赖或编译。范围外的正能量逃逸没有被此定理证明，不能据此批准整句。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本 uniformLJEnergy、V3、相关 LJ 定义及本批 MANIFEST.json，核实每对势能下界和三对计数；在条目元数据中明确记录非碰撞域。保留与正能量逃逸条目的范围划分。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-CollinearTrimer",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看 PDF 第63页原页，印刷页40；原文确为 collinear configuration (y=0)，以及 φ̂_LJ(x) 的两倍加 φ̂_LJ(2x)，两个 U 均带帽。",
+        "该句的全文、系数、距离参数及句点与 JSON 一致；图1.21把 x 标为半底边距离，context_notation 中 x>0 合适。",
+        "这是模型定义，无独立完整证明，proof_latex=null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.collinearTrimer",
+      "verdict": "PASS",
+      "explanation": "已实际展开 Ch01.lean:307 的局部定义 lennardJonesPotential ε σ r=4ε((σ/r)^12−(σ/r)^6)。1884–1885行的 collinearTrimer 因而恰为 2·4(x^(−12)−x^(−6))+4((2x)^(−12)−(2x)^(−6))，在 context_notation 指定的 x>0 上与原页公式一致，系数、单位参数和距离均未偷换。定义接受所有实数属于 Lean 除法总化的扩展；它没有宣称 x=0 为合法物理配置，物理解释仍限于 x>0。此条直接使用可读的局部 LJ 定义，不依赖缺失的 uniformLJEnergy 或 isoscelesPotential 来确认公式。对象是约化势函数定义，无待审证明。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.7-TrimerSaddle",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_SUBSCRIPT"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.7-TrimerSaddle",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.7",
+        "printed_page": "40–41",
+        "pdf_page": "63–64",
+        "statement_latex": "Minimizing the potential in the collinear configuration allows us to determine the saddle point $(x_*,0)$. Near this point, $U$ decreases if we move in the $\\pm y$ direction and increases if we move in the $\\pm x$ direction.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_SUBSCRIPT",
+            "status": "CORRECTED",
+            "detail": "PDF第63页原文鞍点坐标为 (x_*,0)，星号是下标；原 JSON 的 (x^*,0) 误录为上标。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.trimersaddle",
+        "extra_assumptions": [
+          "x>0，局部严格增减按足够小非零位移解释；去掉图上数字猜测。"
+        ],
+        "repair_log": [
+          {
+            "field": "statement_latex",
+            "old": "$(x^*,0)$",
+            "new": "$(x_*,0)$",
+            "reason": "对照 PDF第63页原页及放大图，恢复原文下标。"
+          }
+        ],
+        "old_ids": [
+          "CH01-206"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_SUBSCRIPT",
+          "status": "CORRECTED",
+          "detail": "仅修正星号的上下标位置，未改变原书数学主张。"
+        }
+      ],
+      "evidence": [
+        "已直接查看并放大 PDF 第63页原页，印刷页40；saddle point 后明确写 (x_*,0)，星号位于下标位置。",
+        "PDF第63页末尾写到 increases if we move in the ±x，PDF第64页首行续为 direction.，因此页码63–64及印刷页40–41正确。",
+        "其余英文、U 与两个方向符号均一致；原书无独立完整证明，proof_latex=null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.trimersaddle",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:1891–1895 包含存在正的共线极小点、在全部正半底边长度中达到全局最小，以及同一个正邻域内沿 x 两侧严格升高、沿 y 两侧严格降低，量词覆盖原文两个方向的结论。绝对值和非零位移合理表达 ± 方向；共用 δ 可取两个邻域的较小者。虽然 u 未显式要求为正，存在性允许选择 δ<x，从而使所需局部位移留在物理域。collinearTrimer 的实际公式已经核实，但 isoscelesPotential 的真实定义当前缺失，无法确认比较的是原书 U，而不是 −U、另一函数或另一坐标约定，也无法确认其在 y=0 时等于已核实的共线势。故不能判 PASS。原文星号下标修正不涉及此存在量词的 Lean 变量。正文直接为 sorry，未写或检查证明。",
+      "counterexample": null,
+      "suggested_fix": "补齐同版本 isoscelesPotential 的实际定义及本批 MANIFEST.json，确认它是 2φ̂_LJ(√(x²+y²))+φ̂_LJ(2x)，并核实 y=0、x>0 时与 collinearTrimer 一致。若要显式固定物理邻域，可将 δ<x 写入陈述；这不是当前已确定的必要修复。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-TrimerEscapeLiteral",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "NEEDS_HUMAN",
+          "detail": "引句与原页完全一致，但 the bodies eventually escape to infinity 若解释为每个粒子相对固定质心的距离均趋于无穷，则存在中心粒子始终固定的正能量共线反例。原文未明确定义系统逃逸与逐粒子逃逸的区别，需要人工裁定；保留原文，不静默改写。"
+        }
+      ],
+      "evidence": [
+        "已直接查看 PDF 第63页原页，印刷页40；原书确写 (When E>0, the bodies eventually escape to infinity; E<−3 is not attainable.)。",
+        "PDF第62页明确给出等腰坐标，PDF第63页明确讨论 y=0 的共线配置；反例不是从原文未涉及的粒子模型引入。",
+        "原书没有该逃逸断言的独立完整证明，proof_latex=null 合适；现有 ERRATUM? 标记应保留。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.trimerescapeliteral",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:1902–1911 明确量化全实轴轨迹，要求非碰撞、质心及总动量为零、总角动量为零、处于给定等腰坐标、真实 HasDerivAt 牛顿方程及恒定正能量；结论却要求每个粒子的范数都趋于无穷。这些前提没有直接假设逃逸，但零动量、零角动量和等腰限制无法排除教材模型中的共线中心固定反例。原文的集合性逃逸措辞是否允许强化成 ∀i，需要人工裁定。另一方面，当前缺失 V3、uniformLJEnergy、ljForce、cross3 的真实定义，因此不能声称已核实下述教材反例满足附件 Lean 的全部前提，也不能仅凭名称签发 PASS 或宣称已完成形式反例核验。共同引句的 E<−3 条款由上一条限定审计，本声明本身没有证明该条款。正文直接为 sorry；原文疑误、语义缺口和证明状态分别保留。",
+      "counterexample": "针对教材实际单位 LJ 模型：令 φ(r)=4(r^(−12)−r^(−6))，W(x)=2φ(x)+φ(2x)。取 x''=−φ'(x)−φ'(2x) 的全实轴非碰撞解，初值 x(0)=1、x'(0)=√1087/32，总能量 x'²+W(x)=1。令 q₁=(x,0,0)、q₂=(−x,0,0)、q₃=(0,0,0)，速度分别为 (x',0,0)、(−x',0,0)、0。这是 y≡0 的等腰坐标族，质心、总动量和总角动量均为零；两个外侧粒子向未来逃逸，中心粒子合力抵消且始终固定，故 ‖q₃(t)‖≡0。该例反驳逐粒子逃逸解释；由于附件所需力与能量定义缺失，尚不能将它报告为已逐项核验的 Lean 反例。",
+      "suggested_fix": "首先补齐与附件同版本的 V3、uniformLJEnergy、ljForce、cross3 及本批 MANIFEST.json，核验上述反例与实际 Lean 前提的对应关系。人工裁定原文所指逃逸：若确指每个粒子，则应登记原书错误并保留原文；若另立系统直径无界或粒子对分离的弱化命题，应明确记录修订并另行审计，不能静默替换，也不能由本反例推断弱化命题普遍成立。"
+    }
+  }
+]

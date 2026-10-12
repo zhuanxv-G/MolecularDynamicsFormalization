@@ -1,0 +1,71 @@
+[
+  {
+    "source_id": "MD-1.7.1-ChaosConditions",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看PDF第64、65页原页，印刷页分别为41、42。第64页列出敏感依赖和拓扑传递两项必要条件；邻域间轨迹的说明跨页至第65页，JSON所录文字与原页一致。",
+        "第64页明确说明讨论并非完全形式化，随后讨论快速分离、通常呈指数增长及有界相域的限制。这些内容是解释性上下文，没有独立完整证明；proof_latex=null恰当。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.chaosConditions",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取附件Ch01.lean第1919–1920行，外层确实是两个谓词的合取。已核实Position n的真实定义为EuclideanSpace ℝ (Fin n)，属于有限维实欧氏空间。然而当前附件、本地源码及已有归档均未找到sensitiveDependence和topologicalTransitivity的定义，无法核实分离量与邻域半径的量词顺序、初值范围、时间方向、相对开集及轨迹条件。签名本身也没有流性质或D不变性的限制，注释中的[D须流不变]不能代替实际约束。标准ε/δ敏感性可以作为明确声明的形式化选择，但原页并未给出该严格版本；在缺少真实定义时不能确认其忠实性或判为PASS。",
+      "counterexample": null,
+      "suggested_fix": "补齐与本批Ch01.lean同一版本的辅助定义，尤其是MolecularDynamics/Chapter01/ReviewDefinitions.lean及流相关依赖。随后展开两项谓词，核实全部量词，并明确真实流和D不变性由何处提供；保留原文非形式化说明，说明ε/δ版本与原文解释的关系。"
+    }
+  },
+  {
+    "source_id": "MD-1.7.1-TransitivityErgodicityLiteral",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "NEEDS_HUMAN",
+          "detail": "转录与原页一致，问题来自原文措辞。此处没有指定测度，也没有给出严格等价命题的假设；“essentially equivalent to ergodicity”不能直接提升为对任意不变测度成立的双向等价。须人工裁定作者意指的限定，保留原句，不静默改写。"
+        }
+      ],
+      "evidence": [
+        "已直接查看PDF第65页、印刷第42页。原文确为“We will see later that this concept, which is essentially equivalent to ergodicity, is a crucial component of molecular theories.”",
+        "该句紧接拓扑传递及稠密填充的解释，没有指定不变测度或给出独立完整证明；页码和proof_latex=null均正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.transitivityergodicityliteral",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取Ch01.lean第1926–1932行：声明全称量化n、f、F及任意测度μ，在isFlowOf、联合连续性和逐时刻保测度假设下，断言整个Position n上的拓扑传递与flowErgodic严格等价。引入不变测度及连续真实流有表达上的理由，但任意μ、D=univ及严格↔均比原文未限定的“essentially equivalent”更具体。当前缺少isFlowOf、topologicalTransitivity、flowErgodic的真实定义，不能将标准定义下的反例冒充对本批Lean定义已经完成的验证，因此暂判NEEDS_HUMAN；若采用通常定义，该签名应判FAIL。源码中的sorry是证明未完成的问题，与上述语义问题分开。",
+      "counterexample": "条件性反例：若辅助谓词采用通常的流、拓扑传递和测度遍历定义，取n=1、f=0、F(t,x)=x、μ=δ₀。恒等流连续并保持δ₀；任意可测集的δ₀测度均为0或1，因此该流对δ₀遍历。但两个不交非空开区间之间没有轨迹，故在整个实线上不拓扑传递。这使用非零概率测度，不能仅靠排除μ=0修复。由于辅助定义缺失，此反例尚未针对本批Lean谓词逐项核实。",
+      "suggested_fix": "先补齐三个辅助谓词的实际定义以完成签名审计。保留原文疑误并请求人工裁定其数学解释；不要继续把任意不变测度下的双向等价当作待证明真命题。若另立修正版，可在明确相域、满支撑不变概率测度等条件下表述遍历性推出拓扑传递的单向结果；反向不能仅由这些条件得到，修正版须与原句区分。"
+    }
+  },
+  {
+    "source_id": "MD-1.7.1-AnisotropicOscillator",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看PDF第65页、印刷第42页的Example 1.9及式(1.9)。动能系数1/2、势能系数κ(c₃)/2、平方项(r−l(c₃))²和r=√(x²+y²)均与JSON一致。",
+        "同页原式为c₃=cos(3θ)、cosθ=c=x/r、c₃=4c³−3c，以及κ(c₃)=κ₀(1−εc₃/2)、l(c₃)=l₀(1+εc₃/2)；JSON的系数、符号和下标正确。",
+        "原页随后说明实验取l₀=κ₀=1并改变ε，属于数值实验上下文。本条摘录的是能量及参数定义，没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.anisotropicEnergy",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取Ch01.lean第1938–1940行：x、y、v、w及三个参数均为实数，外层动能、半径、势能系数和平方项与原式结构一致，v、w可对应ẋ、ẏ。但能量中的p来自anisotropicAngular和anisotropicParameters，当前未找到这两个辅助定义，无法核实实际计算是否为c=x/r、c₃=4c³−3c，以及参数对的顺序、正负号和1/2系数。r=0处采用总函数延拓可以作为明确限定在r>0比较的技术选择，但缺少辅助定义，连延拓的实际取值也不能确认。故不能只凭名称或外层公式判为PASS。",
+      "counterexample": null,
+      "suggested_fix": "补齐与本批一致的anisotropicAngular和anisotropicParameters源码，展开核对全部公式及参数对顺序。在r>0的物理域说明c₃与cos(3θ)的对应关系，并将原点延拓限定为域外约定；不要把实验参数或轨迹现象加入本定义的全称结论。"
+    }
+  }
+]

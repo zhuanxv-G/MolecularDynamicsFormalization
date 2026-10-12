@@ -1,0 +1,195 @@
+[
+  {
+    "source_id": "MD-1.7-PlanarTrimerModel",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看PDF第61页原页，页眉印刷页码为38，标题为1.7，例题标题为Example 1.8 (Planar Lennard-Jones Trimer)。",
+        "原页三个动能项均为‖q̇ᵢ‖²/2；三个势能项依次对应粒子对(1,2)、(2,3)、(1,3)，与JSON一致。",
+        "原页径向势为φ̂_LJ(r)=4[r⁻¹²−r⁻⁶]；英文引入句及公式后的说明均与JSON一致。本摘录没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.planarTrimerEnergy",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取上传的Ch01.lean实际声明及其中lennardJonesPotential的定义，后者确为4*ε*((σ/r)^12-(σ/r)^6)。代入ε=σ=1后，三个无序粒子对、单位质量动能和系数均与原文一致。本地Notation.lean将Position n定义为EuclideanSpace ℝ (Fin n)，其Mathlib定义是PiLp 2，采用欧氏范数。不过本批所列完整依赖及MANIFEST.json未提供，无法完整确认此次声明实际导入的定义版本。此外，声明接受所有q，未形式化context_notation指定的非碰撞物理域；其碰撞处的值是实数除法总函数延拓，不能直接认作教材的物理能量。数值表达式一致，对象版本及域的完整对应仍待确认。",
+      "counterexample": null,
+      "suggested_fix": "补齐本批对应版本的依赖文件及MANIFEST.json，并明确该定义是供非碰撞配置使用的总函数延拓，或用非碰撞配置子类型、关联域谓词限定物理模型的对象范围。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-CentralPairPotential",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第61页、印刷第38页原页下半部写出U=(1/2)∑_{i≠j}Uᵢⱼ。",
+        "同页紧接着给出Uᵢⱼ(qᵢ,qⱼ)=φᵢⱼ(‖qᵢ−qⱼ‖)，并将此类系统称为central forces；JSON正文、公式和页码一致。",
+        "该定义没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.centralPairEnergy",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际声明的内层求和使用Finset.univ.erase i，确实排除j=i；外层遍历全部粒子，整体除以2，对应原文的有序双重求和及其系数。φ允许依赖两个粒子索引，保留了异质相互作用。定义没有强加非碰撞或可微性，符合本条仅定义势能的范围；原文这句话也没有显式要求φᵢⱼ=φⱼᵢ，因此不能把JSON中的对称性说明当成Lean已有假设。但上传内容缺少V3和pairDistance的真实定义，以及所列ReviewDefinitions.lean、ReviewProofs.lean等依赖。不能仅凭名称认定V3是欧氏三维空间、pairDistance是欧氏距离，故暂不能批准对象与距离语义。",
+      "counterexample": null,
+      "suggested_fix": "提供此次导入版本中V3、pairDistance的完整定义及输入清单；确认pairDistance q r=‖q−r‖。若后续把相互作用解释为同一无序对，应在对应模型中明确对称性，而不要声称本定义已经约束了φ。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-CentralPairGradient",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第61页、印刷第38页底部原文为In this case，随后写出∂_{qᵢ}Uᵢⱼ(qᵢ,qⱼ)=−∂_{qⱼ}Uᵢⱼ(qᵢ,qⱼ)。",
+        "JSON保留了同一个Uᵢⱼ及两个不同位置变量的偏导，负号、参数次序和页码正确。",
+        "本页未给出独立完整证明，proof_latex=null正确；下一页继续讨论动量守恒。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.centralpairgradient",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取实际声明。固定一个粒子对后，用任意φ表示该对的径向势是合理的；左侧固定r对x求梯度，右侧固定q对y求梯度，保留了原文两个偏导对象和负号。q≠r与φ在‖q−r‖处可微使距离势的真实梯度有意义，是合理的[EXTRA]，没有把梯度反对称结论作为前提。已核读本地Mathlib的gradient定义，它通过对偶同构从fderiv恢复梯度。然而，本批实际导入依赖缺失，V3及其内积、范数实例无法核实，也无法完整确认导入后的名称解析。因此不能无条件判定其采用了原文要求的欧氏对象。",
+      "counterexample": null,
+      "suggested_fix": "补齐V3及相关实例所在的本批依赖文件，确认其为标准欧氏三维空间，并确认本声明解析到Mathlib的gradient。保留当前非碰撞与径向可微条件，不需要添加所求梯度等式作为假设。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-CentralMomentum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第62页、印刷第39页开头为and so, for central forces，接着写出∑_{i=1}^N mᵢq̈ᵢ=0。",
+        "紧随公式的文字为which expresses the constancy of the momentum，与JSON一致。",
+        "正文及页码正确；这里是承接上一页的推论说明，没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.central_momentum",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取实际声明及其引用的MD.Ch01.momentum_conservation签名。三项结论分别保留总内力为零、总动量的真实导数为零，以及时间域内任意两时刻的向量动量相等。HasDerivAt确为导数存在的谓词，不是仅使用可能默认取零的deriv。内力逐对反对称是上一条所给关系的力学形式，Newton动量导数、开放连通时间域均属合理的[EXTRA]；净力为零仍是结论。质量不要求正性只是扩大了这一代数守恒结论的适用范围。不过V3真实定义缺失；JSON所称IsMechanicalSolutionOn桥接也没有出现在本声明中，现有输入不足以核实中心距离势到这里的F和Newton数据的完整对应。",
+      "counterexample": null,
+      "suggested_fix": "补齐本批V3及力学依赖定义，明确F与距离势的负位置梯度如何对应，并提供与实际Newton轨迹的接口。不要把总内力为零或总动量守恒改成该接口的假设。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-CentralAngularMomentum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第62页、印刷第39页先将平面位置视为第三分量为零的R³向量，再写出qᵢ×∂_{qᵢ}Uᵢⱼ=−qⱼ×∂_{qⱼ}Uᵢⱼ；JSON的两侧对象及负号一致。",
+        "原页随后写出(d/dt)∑_{i=1}^N qᵢ×(mᵢq̇ᵢ)=0，并说明total angular momentum is also conserved；JSON保留了全部这些文字和公式。",
+        "页码正确，原书没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.centralangularmomentum",
+      "verdict": "FAIL",
+      "explanation": "实际签名保留了逐对力矩抵消及总角动量真实导数为零两个公式。位置导数、Newton动量导数、内力反对称及沿位移方向的中心力条件，是合理的力学展开；推广到一般三维也包含原文的平面嵌入。然而它只要求I开放，没有连通性，也没有总角动量在任意两时刻相等的结论，因此不足以覆盖原文的完整守恒表述：导数为零只保证各连通分支分别为常数。另有独立输入缺口：V3、cross3的真实定义未提供，不能把名称或context_notation当作已核实的欧氏叉积。以下反例针对其声称的标准欧氏解释，展示缺少连通性和跨时间守恒条款的后果。",
+      "counterexample": "按标准R³叉积，取N=1、m₁=1、I=R\\{0}、F≡0、v₁(t)=(1,0,0)。令q₁(t)=(t,0,0)当t<0，q₁(t)=(t,1,0)当t>0，t=0处任意定义。在I上全部位置导数、动量导数、反对称和中心力前提成立，总角动量导数也处处为零；但L(−1)=(0,0,0)，L(1)=(0,0,−1)，并不在整个I上守恒。",
+      "suggested_fix": "在保留现有两个公式结论的同时，增加IsPreconnected I，并明确加入任意a,b∈I的总角动量相等条款。补齐cross3、V3及距离势梯度到中心力数据的真实定义和接口；若只审局部导数公式，应明确该子句范围，不能将原文整条守恒陈述登记为已通过。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-CenterOfMassMotion",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "NEEDS_HUMAN",
+          "detail": "原句抄录准确，但整句包含恒定旋转速率的推断；角动量守恒一般不能推出角速度恒定。context_notation已将本条限定为平移子句，这不应被记作原句全部内容已获批准。保留原句，旋转含义需人工裁定。"
+        }
+      ],
+      "evidence": [
+        "PDF第62页、印刷第39页原文确为This means that the system will translate and rotate at a constant rate in time；JSON逐字对应，页码正确。",
+        "该句紧承总动量及总角动量守恒的讨论，随后才谈选择初始条件固定质心和去除净旋转。",
+        "proof_latex=null正确。疑点来自原书的推断，未改写原句。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.centerofmassmotion",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取实际签名。结论是质量加权质心R(t)=R(a)+(t−a)P(a)/M，确实表达质心以恒定速度平移。位置真实导数、正质量、正总质量及开放连通时间域均合理；使用上一条已得的P′=0推导质心仿射运动属于正常的推论组合，结论没有被直接当作前提。它没有旋转结论；这与context_notation明确分拆平移子句的意图一致，但不能据此批准statement_latex整句。原句旋转部分仍有疑误，且V3本批真实定义缺失，完整对象审计无法完成。",
+      "counterexample": null,
+      "suggested_fix": "补齐V3所在的本批依赖，明确登记本声明只对应原句的平移子句。保留原句及旋转疑误标记，让下一条独立处理旋转，不要将质心公式的通过状态扩展到整句。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-ConstantRotationLiteral",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "NEEDS_HUMAN",
+          "detail": "原句抄录及页码正确；恒定角动量不能一般推出恒定角速度。现有ERRATUM?标记有实质依据，应保留原文并由人工决定作者意指的旋转概念及可采用的修订陈述。"
+        }
+      ],
+      "evidence": [
+        "PDF第62页、印刷第39页确有translate and rotate at a constant rate in time这一句，与JSON一致。",
+        "前文给出的结论是总角动量的时间导数为零，并没有给出恒定转动惯量、恒定半径或刚性配置的假设。",
+        "本句没有独立完整证明，proof_latex=null正确；原书疑误未被静默改写。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.constantrotationliteral",
+      "verdict": "FAIL",
+      "explanation": "已读取实际声明。前提只要求正半径及r(t)²θ′(t)=ℓ，结论却要求所有实数时刻的θ′等于同一个freq。这保留了原句旋转字面推断的错误，而没有使其成为有效命题；下面的全局光滑反例满足全部前提。该声明也只表达分拆后的旋转解释，不表达原句的平移子句。声明末尾的sorry属于证明状态，本次FAIL来自签名本身的反例，不能靠补写证明解决。",
+      "counterexample": "取r(t)=sqrt(1+t²)、θ(t)=arctan(t)、ℓ=1。对所有实数t，r(t)>0且r(t)²θ′(t)=(1+t²)/(1+t²)=1；但θ′(0)=1，θ′(1)=1/2，不存在满足结论的固定freq。",
+      "suggested_fix": "保留原句和ERRATUM?标记，提交人工裁定。可另立修订条目表达角动量守恒及θ′=ℓ/r²；若确需恒定角速度，必须明确增加恒定正半径或适当恒定转动惯量等条件，并注明这是强化假设，不能静默加入原文。"
+    }
+  },
+  {
+    "source_id": "MD-1.7-IsoscelesCoordinates",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "NEEDS_HUMAN",
+          "detail": "引入句和三个坐标向量抄录正确，公式本身无误。前段若被解释为仅凭固定质心和零总角动量便得到等腰配置，则过强；它也可能意指另行选择对称初值，需人工确认。已有疑误标记应保留。"
+        }
+      ],
+      "evidence": [
+        "PDF第62页、印刷第39页原文引入Fig. 1.21所示坐标，随后明确列出q₁=(x,−y/3,0)、q₂=(−x,−y/3,0)、q₃=(0,2y/3,0)，与JSON完全一致。",
+        "相邻原文把固定质心、去除净旋转和isosceles three body problem联系起来；这部分上下文存在解释疑点，不能据此推广坐标公式到全部零动量配置。",
+        "例如单位质量初始位置(1,0,0)、(0,2,0)、(−1,−2,0)，速度全零，质心、总动量和总角动量均为零，但三条边长平方分别为5、8、17，是不等边三角形。",
+        "页码正确，本坐标定义没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.isoscelesCoordinates",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取实际定义，三个WithLp.toLp 2向量的分量、符号和1/3、2/3系数均与原页一致。若V3确为标准欧氏三维空间，则三向量之和为零，在单位质量下质心位于原点，且第三粒子到前两个粒子的距离相等。定义只是显式参数化配置，没有声称任意零总动量、零总角动量配置都能如此表示，这与JSON的范围说明一致。它也没有声称时间演化自动保持该对称配置。然而V3的实际定义及本批导入依赖未提供，不能完成对象类型的严格核验；原书前段的含义另需人工裁定。",
+      "counterexample": null,
+      "suggested_fix": "补齐V3及本批依赖版本，确认其为标准欧氏三维空间。保留当前坐标定义及上下文疑误标记，明确这是所选择的对称配置；不要添加任意零总动量、零总角动量配置均为等腰的推断。"
+    }
+  }
+]

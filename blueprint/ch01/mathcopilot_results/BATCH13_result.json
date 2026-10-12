@@ -1,0 +1,194 @@
+[
+  {
+    "source_id": "MD-1.5.2-KeplerMomentum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看PDF第52页原页（印刷第29页），并读取相邻页上下文。Example 1.7中的原句明确写出两动量分量(mẋ,mẏ)不再守恒；JSON文字、公式及句末分号相符。",
+        "原页没有该断言的独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.keplermomentum",
+      "verdict": "FAIL",
+      "explanation": "实际签名只量化非零位置q并断言keplerForce q≠0，没有量化机械轨道、动量分量或时间，也没有表达两个分量分别不是第一积分。向量非零只保证至少一个分量非零，不能直接替代原文关于两个分量的陈述。[EXTRA]中的非碰撞域及单位质量符合本例归一化，但不能补齐缺失结论。此外，本批要求的Kepler.lean未在可用文件中找到，不能确认keplerForce的真实定义；此项FAIL依据已可见的签名缺失，而非猜测其定义。",
+      "counterexample": "逻辑上的分量反例：非零向量(-1,0)的第二分量仍为零。因此仅有力向量非零，不能推出两个动量分量各自变化。这不是声称教材中的两个分量是第一积分，而是指出当前签名缺少分别排除第一积分的内容。",
+      "suggested_fix": "提供本批对应的keplerForce及机械解定义；在真实非碰撞机械解上表达p′=keplerForce(q)，并分别证明两个坐标动量不是对所有初值都守恒的第一积分。不要强化成每条轨道的每个分量都不恒定。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-PolarCoordinates",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第52页（印刷第29页）原页确有“In polar coordinates (x,y)=(r cos θ,r sin θ), the Lagrangian L for the Kepler problem is”，随后接本批下一条的Lagrangian公式。",
+        "坐标顺序、三角函数、页码均相符；proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.polarCoordinates",
+      "verdict": "PASS",
+      "explanation": "已读取实际定义：WithLp.toLp 2 ![r*cos θ,r*sin θ]。可用Notation.lean将Position 2定义为EuclideanSpace ℝ (Fin 2)，因此两个实坐标的对象及顺序正确。允许所有实数r、θ是坐标映射的代数延拓；在上下文r>0及局部角提升下忠实于原文。该定义没有声称映射在全域可逆。句尾引出的Lagrangian公式由下一source_id承接。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerPolarLagrangian",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第52页（印刷第29页）原页的三行计算依次为L=K−U、两个笛卡尔速度平方各乘1/2并加1/r、ṙ²/2+r²θ̇²/2+1/r。",
+        "statement_latex与proof_latex均保留原页这段计算；符号、系数、正负号、末尾句点及页码相符。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.keplerpolarlagrangian",
+      "verdict": "PASS",
+      "explanation": "实际签名展开了两个速度分量v*cos θ−r*omega*sin θ及v*sin θ+r*omega*cos θ，结论恰为原页的三角代数化简；平方和除以2等价于分别乘1/2。v、omega对应瞬时ṙ、θ̇，L=K−U在该计算中是表达式的命名，没有另加关于任意L的量词。对所有实数成立是该代数恒等式的合理延拓；r=0处Lean的除法约定不构成物理域上的额外结论。此判断针对可直接展开的签名，不将被引用证明的存在当作语义证据。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerPolarODE",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第52页（印刷第29页）原页在“Working these out directly, one gets”之后列出r̈=−1/r²+rθ̇²及0=d(r²θ̇)/dt，JSON保留了两条方程。",
+        "原页前文给出两条Euler–Lagrange方程，但没有独立完整推导；proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.keplerpolarode",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取Ch01.lean实际签名：右侧保留r>0、r′=v、θ′=omega、v′=r*omega²−(r²)⁻¹以及(r²*omega)′=0，形式上覆盖原文两条运动方程及速度对应。然而可用输入缺少KeplerPolarDynamics.lean及IsKeplerPolarEulerLagrangeOn的定义，无法确认左侧是独立的Euler–Lagrange条件，还是右侧结论的重述，也无法核实JSON中声称的真实导数及域条件。不能仅凭谓词名称判PASS。",
+      "counterexample": null,
+      "suggested_fix": "提供与本批Ch01.lean同版本的KeplerPolarDynamics.lean及其依赖，展开IsKeplerPolarEulerLagrangeOn，核实其表达原Lagrangian的两条Euler–Lagrange方程，且没有将待证运动方程直接放入前提。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-PolarAngularIdentity",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第52页（印刷第29页）原页在“Expressed in polar coordinates this is”之后给出lz的两个乘积之差，再化为r²θ̇(cos²θ+sin²θ)=r²θ̇。",
+        "statement_latex与proof_latex中的坐标、速度分量、减号、中间等式及末尾逗号均与原页相符；页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.polarangularidentity",
+      "verdict": "PASS",
+      "explanation": "实际签名完整展开原页的两个乘积，v和omega分别对应ṙ和θ̇，结论为r²*omega。原页中间的cos²θ+sin²θ是计算步骤，最终恒等式保留了全部数学结论；lz在此是前文xẏ−yẋ的命名。所有实数r、θ、v、omega上的代数恒等式不需要非碰撞假设，没有偷换速度分量或将结论作为前提。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerRadialReduction",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第52页（印刷第29页）原页下部确有“Taking this quantity as fixed, we may write the remaining equation as”，后接r̈=−1/r²+lz²/r³。",
+        "JSON句子、径向方程及页码相符；原页没有该步骤的独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.keplerradialreduction",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际结论HasDerivAt v (−(r t²)⁻¹+l²/r t³) t与原文径向加速度一致；hl给出该时刻r²*omega=l。逐点量化l并不是声称存在随时间固定的公共角动量，但在已知角动量常性的上下文中可用于固定l的径向方程。决定性前提IsKeplerPolarEulerLagrangeOn的真实定义缺失，因而无法核实v=r′、r非零、真实Euler–Lagrange条件及是否预置结论。[EXTRA]的物理解释合理，但不能用注释替代定义核查。",
+      "counterexample": null,
+      "suggested_fix": "提供本批对应的KeplerPolarDynamics.lean，核实前提中的速度及非碰撞条件。若该条还要独立表达固定角动量后的区间归约，应另明确同一个l满足∀t∈I，r t²*omega t=l，并在整个区间陈述径向方程。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerRadialEnergy",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_HYPHENATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.2-KeplerRadialEnergy",
+        "kind": "definition",
+        "label": null,
+        "section": "1.5.2",
+        "printed_page": "29–30",
+        "pdf_page": "52–53",
+        "statement_latex": "The equation for $r$ is that of a one degree-of-freedom system with energy\n\\[\\widehat E(r,\\dot r)=\\frac{\\dot r^2}2-\\frac1r+\\frac{l_z^2}{2r^2}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "r>0；ℓ固定z角动量；原句跨p.29–30，system指径向单自由度系统。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          "PDF第52页原文为“one degree-of-freedom”，JSON误写为“one-degree-of-freedom”；仅恢复原书拼写，不改数学内容。"
+        ],
+        "lean_decl": "MD.Ch01.radialKeplerEnergy",
+        "extra_assumptions": [],
+        "repair_log": [
+          "原页审校：将statement_latex中的one-degree-of-freedom恢复为one degree-of-freedom。"
+        ],
+        "old_ids": [
+          "CH01-123"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原页在one与degree之间使用空格，JSON额外加入连字符。"
+      ],
+      "evidence": [
+        "PDF第52页（印刷第29页）末行原文为“The equation for r is that of a one degree-of-freedom”；PDF第53页（印刷第30页）开头接“system with energy”。",
+        "PDF第53页原页公式为Ê(r,ṙ)=ṙ²/2−1/r+lz²/(2r²)，JSON公式正确；跨页标注52–53及29–30正确。",
+        "原页无独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.radialKeplerEnergy",
+      "verdict": "PASS",
+      "explanation": "已读取实际定义v²/2−1/r+ℓ²/(2*r²)，变量ℓ、r、v分别对应固定lz、半径及径向速度；三项的系数、分母及符号完全一致。作为能量函数的定义，不要求该声明另外证明守恒或径向方程。对所有实参数定义是合理的函数延拓；教材物理解释使用r>0。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerFullSolution",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看PDF第53页原页（印刷第30页）。径向解依赖t与初值的句子、θ=θ(0)+∫₀ᵗlz/r²(s) ds，以及通过原函数及其逆表示完整解的句子均与JSON相符。",
+        "积分上下限、初始角、分母及页码正确。末句后的实践性评论未纳入本条，不改变所摘录断言。",
+        "原书没有另列独立完整证明，proof_latex=null正确。相邻第51页讨论的是局部隐函数及分离变量求解。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.kepler_full_solution",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名对含0的非碰撞机械解区间量化，结论包含正半径、真实径向导数、归约方程、角积分、位置重建及初始动量重建；这些可见子句与原文结构一致。[EXTRA]限制在非碰撞存在区间并采用实角提升是合理解释，h0不意味着区间最大。关键的keplerForce、当前版本IsMechanicalSolutionOn及ScalarPotentialLocalDescription定义未随本批出现在可用文件中；旧缓存中的机械解定义不能替代本批版本。尤其无法确认ScalarPotentialLocalDescription是否确实给出径向解的原函数及逆函数描述、是否涵盖转向点与平衡情形，故不能确认原文“full solution”的全部结论。实际证明含sorry，这是证明完成度问题，不单独作为语义FAIL依据。",
+      "counterexample": null,
+      "suggested_fix": "提供本批同版本的Kepler.lean、LocalTrajectories.lean、ScalarIntegrability.lean及相关求积、转向和重建依赖，并提供对应输入清单。展开ScalarPotentialLocalDescription核实真实求积与逆函数条件、转向点及平衡分支；同时核实机械解确有位置与动量的导数关系，而非假定重建结论。"
+    }
+  }
+]

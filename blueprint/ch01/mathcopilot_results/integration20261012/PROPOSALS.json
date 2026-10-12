@@ -1,0 +1,2241 @@
+[
+  {
+    "source_id": "MD-1.1-Schrodinger",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+      "sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+      "received_at": "2026-10-12T12:15:06.465572",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1-NewtonModel",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+      "sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+      "received_at": "2026-10-12T12:15:06.466659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "where the forces are determined from the potential energy function $U$. Denoting the coordinates of the $i$th nucleus of an N-atom system by $q_{i,x},q_{i,y},q_{i,z}$, and the atomic mass by $m_i$, the equations of motion for the nucleus can be written out as\n\\[m_i\\frac{\\mathrm d^2q_{i,x}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,x}},\\qquad m_i\\frac{\\mathrm d^2q_{i,y}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,y}},\\qquad m_i\\frac{\\mathrm d^2q_{i,z}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,z}}.\\tag{1.2}\\]\nIt is important to recognize that (1.2) does not, itself, give a complete description of the motion; it must be supplemented by initial conditions (positions and velocities given at some specified instant) for all atoms.",
+        "proposed": "where the forces are determined from the potential energy function $U$. Denoting the coordinates of the $i$th nucleus of an N-atom system by $q_{i,x},q_{i,y},q_{i,z}$, and the atomic mass by $m_i$, the equations of motion for the $i$th nucleus can be written out as\n\\[m_i\\frac{\\mathrm d^2q_{i,x}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,x}},\\qquad m_i\\frac{\\mathrm d^2q_{i,y}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,y}},\\qquad m_i\\frac{\\mathrm d^2q_{i,z}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,z}}.\\tag{1.2}\\]\nIt is important to recognize that (1.2) does not, itself, give a complete description of the motion; it must be supplemented by initial conditions (positions and velocities given at some specified instant) for all atoms."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1-HardSphere",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+      "sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+      "received_at": "2026-10-12T12:15:06.466659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.1-Multibody",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+      "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+      "received_at": "2026-10-12T12:15:06.466659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.1-Morse",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+      "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+      "received_at": "2026-10-12T12:15:06.466659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.1-MorseMinimum",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+      "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+      "received_at": "2026-10-12T12:15:06.467659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.1-LengthBond",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+      "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+      "received_at": "2026-10-12T12:15:06.467659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "Because they often do not need to be allowed to break during simulation and are very strong compared to the other potential terms, chemical bonds such as the covalent $\\mathrm H_2^+$ bond described above are sometimes treated as springs with given rest-length:\n\\[\\varphi_{ij}^{\\mathrm{len}}(r_{ij})=\\frac{k_{ij}^{\\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\\qquad r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|.\\]",
+        "proposed": "Because they often do not need to be allowed to break during simulation and are very strong compared to other potential terms, chemical bonds such as the covalent $\\mathrm H_2^+$ bond described above are sometimes treated as springs with given rest-length:\n\\[\\varphi_{ij}^{\\mathrm{len}}(r_{ij})=\\frac{k_{ij}^{\\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\\qquad r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|.\\]"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.1-Dispersion",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+      "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+      "received_at": "2026-10-12T12:15:06.467659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.1-Buckingham",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+      "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+      "received_at": "2026-10-12T12:15:06.467659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.1-LennardJones",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+      "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+      "received_at": "2026-10-12T12:15:06.467659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.1-LJRepulsion",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+      "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+      "received_at": "2026-10-12T12:15:06.467659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.1-HeterogeneousLJ",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH04_result.json",
+      "sha256": "5941619e97b3355cd8f77b1243fca72cc469320afd27458cc8129f92346bdf1e",
+      "received_at": "2026-10-12T12:15:06.467659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.2-Coulomb",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+      "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+      "received_at": "2026-10-12T12:15:06.467659",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.2-Cutoff",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+      "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+      "received_at": "2026-10-12T12:15:06.468951",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.2-Yukawa",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+      "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+      "received_at": "2026-10-12T12:15:06.468951",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.2-AngleBond",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+      "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+      "received_at": "2026-10-12T12:15:06.468951",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "When a trio of atoms with labels $i,j,k$ and $k$ admits a pair of length bonds, say $(i,j)$ and $(j,k)$, then an additional three-body term will need to be incorporated:\n\\[\\varphi_{ijk}^{\\mathrm{ang}}=\\frac{k_{ijk}^{\\mathrm{ang}}}{2}(\\theta_{ijk}-\\theta_{ijk}^0)^2,\\]\nwhere the angle $\\theta_{ijk}$ is given in terms of the positions as\n\\[\\theta_{ijk}=\\arccos\\frac{(\\boldsymbol q_i-\\boldsymbol q_j)\\cdot(\\boldsymbol q_j-\\boldsymbol q_k)}{r_{ij}r_{jk}}.\\]",
+        "proposed": "When a trio of atoms with labels $i$, $j$, and $k$ admits a pair of length bonds, say $(i,j)$ and $(j,k)$, then an additional three-body term will need to be incorporated:\n\\[\\varphi_{ijk}^{\\mathrm{ang}}=\\frac{k_{ijk}^{\\mathrm{ang}}}{2}(\\theta_{ijk}-\\theta_{ijk}^0)^2,\\]\nwhere the angle $\\theta_{ijk}$ is given in terms of the positions as\n\\[\\theta_{ijk}=\\arccos\\frac{(\\boldsymbol q_i-\\boldsymbol q_j)\\cdot(\\boldsymbol q_j-\\boldsymbol q_k)}{r_{ij}r_{jk}}.\\]"
+      },
+      "context_notation": {
+        "current": [
+          "k正、两键长非零；保留原页(qᵢ-qⱼ)·(qⱼ-qₖ)方向及重复and k。"
+        ],
+        "proposed": [
+          "两键长非零是角度公式的自然有效域；保留原页(qᵢ-qⱼ)·(qⱼ-qₖ)方向。原文标签为i,j,and k，没有重复k；本段未明确声明k>0。"
+        ]
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.2-Dihedral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+      "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+      "received_at": "2026-10-12T12:15:06.468951",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.1.2-GayBerne",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+      "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+      "received_at": "2026-10-12T12:15:06.468951",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-NewtonCompact",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+      "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+      "received_at": "2026-10-12T12:15:06.468951",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-DegreesFreedom",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+      "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+      "received_at": "2026-10-12T12:15:06.470016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-ConstraintDimension",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+      "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+      "received_at": "2026-10-12T12:15:06.470016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-TotalEnergy",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+      "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+      "received_at": "2026-10-12T12:15:06.470016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "The total energy of the N-body system is a function of positions and velocities,\n\\[E(\\boldsymbol q_1,\\ldots,\\boldsymbol q_N,\\dot{\\boldsymbol q}_1,\\ldots,\\dot{\\boldsymbol q}_N)=\\sum_{j=1}^{N}\\frac{m_j\\|\\dot{\\boldsymbol q}_j\\|^2}{2}+U(\\boldsymbol q_1,\\ldots,\\boldsymbol q_N).\\tag{1.4}\\]",
+        "proposed": "The total energy of the N-body system is a function of positions and velocities,\n\\[E(\\boldsymbol q_1,\\boldsymbol q_2,\\ldots,\\boldsymbol q_N,\\dot{\\boldsymbol q}_1,\\dot{\\boldsymbol q}_2,\\ldots,\\dot{\\boldsymbol q}_N)=\\sum_{j=1}^{N}\\frac{m_j\\|\\dot{\\boldsymbol q}_j\\|^2}{2}+U(\\boldsymbol q_1,\\boldsymbol q_2,\\ldots,\\boldsymbol q_N).\\tag{1.4}\\]"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-PairCancellation",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+      "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+      "received_at": "2026-10-12T12:15:06.470016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-MomentumConservation",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+      "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+      "received_at": "2026-10-12T12:15:06.470016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-HarmonicSolution",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+      "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+      "received_at": "2026-10-12T12:15:06.470016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-ScalarMechanical",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+      "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+      "received_at": "2026-10-12T12:15:06.470016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-ScalarQuadrature",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH07_result.json",
+      "sha256": "eccf9d66c8f8b262c42dadf7df779eb3a7ae56c687e6ae3ebb526717a003a4f6",
+      "received_at": "2026-10-12T12:15:06.470016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-UniformLJSystem",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH07_result.json",
+      "sha256": "eccf9d66c8f8b262c42dadf7df779eb3a7ae56c687e6ae3ebb526717a003a4f6",
+      "received_at": "2026-10-12T12:15:06.470016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-RadialLJForceLiteral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH07_result.json",
+      "sha256": "eccf9d66c8f8b262c42dadf7df779eb3a7ae56c687e6ae3ebb526717a003a4f6",
+      "received_at": "2026-10-12T12:15:06.470016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-LJCoordinateScaling",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH07_result.json",
+      "sha256": "eccf9d66c8f8b262c42dadf7df779eb3a7ae56c687e6ae3ebb526717a003a4f6",
+      "received_at": "2026-10-12T12:15:06.471364",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.2-LJTimeScaling",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH07_result.json",
+      "sha256": "eccf9d66c8f8b262c42dadf7df779eb3a7ae56c687e6ae3ebb526717a003a4f6",
+      "received_at": "2026-10-12T12:15:06.471364",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.3-Lagrangian",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH08_result.json",
+      "sha256": "1493ea55958fab6059ebd09283f6ad35ae1f3b5571dc0a3391b234c20aed65e7",
+      "received_at": "2026-10-12T12:15:06.471364",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.3-GeneralizedCoordinates",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH08_result.json",
+      "sha256": "1493ea55958fab6059ebd09283f6ad35ae1f3b5571dc0a3391b234c20aed65e7",
+      "received_at": "2026-10-12T12:15:06.471364",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.3-GeneralizedMassRegular",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH08_result.json",
+      "sha256": "1493ea55958fab6059ebd09283f6ad35ae1f3b5571dc0a3391b234c20aed65e7",
+      "received_at": "2026-10-12T12:15:06.471364",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.4-ConvexLegendre",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH09_result.json",
+      "sha256": "91afac976ee06eb6da99c89ec5d86c1c861c7190678d838dc9ecf8ca6729562c",
+      "received_at": "2026-10-12T12:15:06.471364",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.4-HamiltonEquations",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH09_result.json",
+      "sha256": "91afac976ee06eb6da99c89ec5d86c1c861c7190678d838dc9ecf8ca6729562c",
+      "received_at": "2026-10-12T12:15:06.471364",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.4-HamiltonFixedMass",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH09_result.json",
+      "sha256": "91afac976ee06eb6da99c89ec5d86c1c861c7190678d838dc9ecf8ca6729562c",
+      "received_at": "2026-10-12T12:15:06.471364",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.4-HamiltonLagrangeEquivalence",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH09_result.json",
+      "sha256": "91afac976ee06eb6da99c89ec5d86c1c861c7190678d838dc9ecf8ca6729562c",
+      "received_at": "2026-10-12T12:15:06.472803",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.4-PhaseSpace",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH09_result.json",
+      "sha256": "91afac976ee06eb6da99c89ec5d86c1c861c7190678d838dc9ecf8ca6729562c",
+      "received_at": "2026-10-12T12:15:06.472803",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5-LocalExistUnique",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+      "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+      "received_at": "2026-10-12T12:15:06.472803",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5-EnergySurface",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+      "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+      "received_at": "2026-10-12T12:15:06.472803",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5-EnergyBounds",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+      "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+      "received_at": "2026-10-12T12:15:06.472803",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5-UniformLevelsCompact",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+      "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+      "received_at": "2026-10-12T12:15:06.473847",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5-CompactContinuation",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+      "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+      "received_at": "2026-10-12T12:15:06.473847",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {
+      "printed_page": {
+        "current": "25–26",
+        "proposed": "25"
+      },
+      "pdf_page": {
+        "current": "48–49",
+        "proposed": "48"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5-Nonconfining",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+      "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+      "received_at": "2026-10-12T12:15:06.473847",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.1-FlowMap",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+      "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+      "received_at": "2026-10-12T12:15:06.473847",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.1-FlowEnergy",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+      "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+      "received_at": "2026-10-12T12:15:06.473847",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+      "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+      "received_at": "2026-10-12T12:15:06.473847",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is\n\\[\\begin{pmatrix}q(t)\\\\p(t)\\end{pmatrix}=\\mathcal F_t\\begin{pmatrix}q_0\\\\p_0\\end{pmatrix}=\\begin{pmatrix}q_0\\cos(\\Omega t)+p_0\\sin(\\Omega t)/\\Omega\\\\-q_0\\Omega\\sin(\\Omega t)+p_0\\cos(\\Omega t)\\end{pmatrix}.\\]",
+        "proposed": "for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is\n\\[\\begin{pmatrix}q(t)\\\\p(t)\\end{pmatrix}=\\mathcal F_t\\begin{pmatrix}q_0\\\\p_0\\end{pmatrix}\\equiv\\begin{pmatrix}q_0\\cos(\\Omega t)+p_0\\sin(\\Omega t)/\\Omega\\\\-q_0\\Omega\\sin(\\Omega t)+p_0\\cos(\\Omega t)\\end{pmatrix}.\\]"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.1-SpectralSolution",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+      "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+      "received_at": "2026-10-12T12:15:06.474860",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "If $\\boldsymbol A$ has a basis of eigenvectors $\\boldsymbol\\eta_i$, $i=1,\\ldots,m$, with corresponding eigenvalues $\\lambda_1,\\lambda_2,\\ldots,\\lambda_m$, then we may write the solution at time $t$ as\n\\[\\boldsymbol z(t)=\\sum_{i=1}^{m}c_i e^{\\lambda_i(t-t_0)}\\boldsymbol\\eta_i\\]\nwhere the coefficients $c_i$ are obtained by solving the equation\n\\[\\boldsymbol z(t_0)=\\boldsymbol\\xi=\\sum_{i=1}^{m}c_i\\boldsymbol\\eta_i.\\]",
+        "proposed": "If $\\boldsymbol A$ has a basis of eigenvectors $\\boldsymbol\\eta_i$, $i=1,\\ldots,m$, with corresponding eigenvalues $\\lambda_1,\\lambda_2,\\ldots,\\lambda_m$, then we may write the solution at time $t$ as\n\\[\\boldsymbol z(t)=\\sum_{i=1}^{m}c_i e^{\\lambda_i(t-t_0)}\\boldsymbol\\eta_i\\]\nwhere the coefficients $c_i$ are obtained by solving the equation\n\\[\\boldsymbol z(t_0)\\equiv\\boldsymbol\\xi=\\sum_{i=1}^{m}c_i\\boldsymbol\\eta_i.\\]"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.1-BasisCoefficients",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+      "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+      "received_at": "2026-10-12T12:15:06.474860",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "(ii) with our assumption that the $\\{\\boldsymbol\\eta_i\\}$ form a basis, the calculation of the coefficients will always be possible, since the matrix $\\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\\boldsymbol c$ which satisfies the square linear system\n\\[\\boldsymbol\\xi=\\boldsymbol X\\boldsymbol c.\\]",
+        "proposed": "(ii) with our assumption that the $\\{\\boldsymbol\\eta_i\\}$ form a basis, the calculation of the coefficients is always possible, since the matrix $\\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\\boldsymbol c$ which satisfies the square linear system\n\\[\\boldsymbol\\xi=\\boldsymbol X\\boldsymbol c.\\]"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.1-MatrixExponentialSolution",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+      "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+      "received_at": "2026-10-12T12:15:06.474860",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.1-MatrixExpSeries",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+      "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+      "received_at": "2026-10-12T12:15:06.474860",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "Alternatively, we may think of $\\exp(\\boldsymbol A)$ as the sum of the exponential series\n\\[e^{\\boldsymbol A}=\\boldsymbol I+\\boldsymbol A+\\frac1{2!}\\boldsymbol A^2+\\frac1{3!}\\boldsymbol A^3+\\cdots\\]\nalthough this is seldom the most efficient method to compute it (this series converges for all matrices $\\boldsymbol A$, and so in fact the exponential expression for the solution of the linear system is well defined even in the absence of a full set of eigenvectors).",
+        "proposed": "Alternatively, one may think of $\\exp(\\boldsymbol A)$ as the sum of the exponential series\n\\[e^{\\boldsymbol A}\\equiv\\boldsymbol I+\\boldsymbol A+\\frac1{2!}\\boldsymbol A^2+\\frac1{3!}\\boldsymbol A^3+\\cdots\\]\nalthough this is seldom the most efficient method to compute it (this series converges for all matrices $\\boldsymbol A$, and so in fact the exponential expression for the solution of the linear system is well defined even in the absence of a full set of eigenvectors)."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.1-RealSpectralSolution",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+      "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+      "received_at": "2026-10-12T12:15:06.474860",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-FirstIntegral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+      "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+      "received_at": "2026-10-12T12:15:06.474860",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "Another term for constants of motion is first integral. In general, if we have a dynamical system $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, a first integral is a smooth function $I(\\boldsymbol z)$ which is constant along solutions, for all values of the initial condition.",
+        "proposed": "Another term for constant of motion is first integral. In general, if we have a dynamical system $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, a first integral is a smooth function $I(\\boldsymbol z)$ which is constant along solutions, for all values of the initial condition."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-FirstIntegralCriterion",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+      "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+      "received_at": "2026-10-12T12:15:06.475878",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "Since this should hold everywhere, the condition for $I$ to be a first integral is that $\\nabla I\\cdot f=0$.",
+        "proposed": "Since this should hold everywhere, the condition for $I$ to be a first integral is that $\\nabla I\\cdot f\\equiv0$."
+      },
+      "proof_latex": {
+        "current": "Let $\\boldsymbol z(t)$ ($t\\in\\mathbb R$) be a solution, then\n\\[I(\\boldsymbol z(t))=I(\\boldsymbol z(0))\\Rightarrow0=\\frac{\\mathrm d}{\\mathrm dt}I(\\boldsymbol z(t))=\\nabla I(\\boldsymbol z(t))\\cdot\\dot{\\boldsymbol z}(t)=\\nabla I(\\boldsymbol z(t))\\cdot f(\\boldsymbol z(t)).\\]",
+        "proposed": "Let $\\boldsymbol z(t):t\\in\\mathbb R$ be a solution, then\n\\[I(\\boldsymbol z(t))\\equiv I(\\boldsymbol z(0))\\Rightarrow0\\equiv\\frac{\\mathrm d}{\\mathrm dt}I(\\boldsymbol z(t))=\\nabla I(\\boldsymbol z(t))\\cdot\\dot{\\boldsymbol z}(t)=\\nabla I(\\boldsymbol z(t))\\cdot f(\\boldsymbol z(t)).\\]"
+      },
+      "proof_note": {
+        "current": "按渲染原页逐字转录原文论证。",
+        "proposed": "按PDF原页转录原文链式法则论证；该段直接展示必要性，未单独展开充分性证明。"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-PlanarGraphReduction",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+      "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+      "received_at": "2026-10-12T12:15:06.475878",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "In principle, such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=g(x,\\psi(x)).\\]",
+        "proposed": "In principle such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=g(x,\\psi(x)).\\]"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-PlanarQuadrature",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+      "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+      "received_at": "2026-10-12T12:15:06.475878",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-ScalarFirstIntegral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+      "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+      "received_at": "2026-10-12T12:15:06.475878",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerEnergy",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+      "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+      "received_at": "2026-10-12T12:15:06.475878",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerConservedEnergy",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+      "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+      "received_at": "2026-10-12T12:15:06.475878",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerAngularMomentum",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+      "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+      "received_at": "2026-10-12T12:15:06.475878",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerMomentum",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+      "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+      "received_at": "2026-10-12T12:15:06.475878",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-PolarCoordinates",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+      "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+      "received_at": "2026-10-12T12:15:06.476900",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerPolarLagrangian",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+      "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+      "received_at": "2026-10-12T12:15:06.476900",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerPolarODE",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+      "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+      "received_at": "2026-10-12T12:15:06.476900",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-PolarAngularIdentity",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+      "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+      "received_at": "2026-10-12T12:15:06.476900",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerRadialReduction",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+      "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+      "received_at": "2026-10-12T12:15:06.476900",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerRadialEnergy",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+      "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+      "received_at": "2026-10-12T12:15:06.476900",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "The equation for $r$ is that of a one-degree-of-freedom system with energy\n\\[\\widehat E(r,\\dot r)=\\frac{\\dot r^2}2-\\frac1r+\\frac{l_z^2}{2r^2}.\\]",
+        "proposed": "The equation for $r$ is that of a one degree-of-freedom system with energy\n\\[\\widehat E(r,\\dot r)=\\frac{\\dot r^2}2-\\frac1r+\\frac{l_z^2}{2r^2}.\\]"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerFullSolution",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+      "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+      "received_at": "2026-10-12T12:15:06.476900",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-ActionAngleCoordinates",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+      "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+      "received_at": "2026-10-12T12:15:06.476900",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-ActionEnergy",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+      "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+      "received_at": "2026-10-12T12:15:06.478016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-ActionODE",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+      "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+      "received_at": "2026-10-12T12:15:06.478016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-ActionSolution",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+      "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+      "received_at": "2026-10-12T12:15:06.478016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-HarmonicTorus",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+      "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+      "received_at": "2026-10-12T12:15:06.478016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "The same change of variables $(x_j,v_j)\\to(I_j,\\theta_j)$, applied to each oscillator, would yield equations of motion $\\dot I_j=0$, $\\dot\\theta_j=-\\Omega_j$. This describes a point winding about a $d$-dimensional torus defined by angular rotation frequencies $\\Omega_j$ and radii $|I_j|$ (Fig. 1.14).",
+        "proposed": "The simple change of variables ($(x_j,v_j)\\to(I_j,\\theta_j)$), applied to each oscillator, would yield equations of motion $\\dot I_j=0$, $\\dot\\theta_j=-\\Omega_j$. This describes a point winding about a $d$-dimensional torus defined by angular rotation frequencies $\\Omega_j$ and radii $|I_j|$ (Fig. 1.14)."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-TorusPeriod",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+      "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+      "received_at": "2026-10-12T12:15:06.478016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-TorusDense",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+      "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+      "received_at": "2026-10-12T12:15:06.478016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "in the latter case the paths do not “close up” but instead we see the curve gradually fills in the surface of the torus.",
+        "proposed": "in the latter case the paths do not “close up” but instead we the curve gradually fills in the surface of the torus."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.2-LocalActionAngleReduction",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+      "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+      "received_at": "2026-10-12T12:15:06.478016",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "More generally, one finds occasional examples of nonlinear systems which possess as many independent first integrals as degrees of freedom (satisfying a certain “involution” condition); such systems may be reduced via a coordinate transformation to action-angle variables, i.e. they exhibit tori motion.",
+        "proposed": "More generally, one finds occasional examples of nonlinear systems which possesses as many independent first integrals as degrees of freedom (satisfying a certain “involution” condition); such systems may be reduced via coordinate transformation to action-angle variables, i.e. they exhibit tori motion."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-Equilibrium",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+      "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+      "received_at": "2026-10-12T12:15:06.479015",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "An equilibrium point of such system is a solution of $f(\\boldsymbol z)=0$.",
+        "proposed": "An equilibrium point of such a system is a solution of $f(\\boldsymbol z)=0$."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-ConstantEquilibrium",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+      "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+      "received_at": "2026-10-12T12:15:06.479015",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "An equilibrium point $\\boldsymbol z^*$ corresponds to an equilibrium solution, since if we define a constant function $\\boldsymbol z(t)=\\boldsymbol z^*$ then we have $\\dot{\\boldsymbol z}(t)=f(\\boldsymbol z^*)=0$.",
+        "proposed": "An equilibrium point $\\boldsymbol z^*$ corresponds to an equilibrium solution, since if we define a constant function $\\boldsymbol z(t)\\equiv\\boldsymbol z^*$ then we have $\\dot{\\boldsymbol z}(t)\\equiv f(\\boldsymbol z^*)=0$."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-EquilibriumLinearization",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+      "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+      "received_at": "2026-10-12T12:15:06.479015",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\\boldsymbol z^*$ and make use of the fact that $f(\\boldsymbol z)\\approx f(\\boldsymbol z^*)+f'(\\boldsymbol z^*)(\\boldsymbol z-\\boldsymbol z^*)$ for $\\|\\boldsymbol z-\\boldsymbol z^*\\|$ sufficiently small. Since $f(\\boldsymbol z^*)=0$ we have, defining $\\delta\\boldsymbol z:=\\boldsymbol z-\\boldsymbol z^*$,\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}=\\boldsymbol A\\delta\\boldsymbol z,\\qquad\\boldsymbol A=f'(\\boldsymbol z^*).\\]\nThe symbol $\\approx$ is not very precise.",
+        "proposed": "We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\\boldsymbol z^*$ and make use of the fact that $f(\\boldsymbol z)\\approx f(\\boldsymbol z^*)+f'(\\boldsymbol z^*)(\\boldsymbol z-\\boldsymbol z^*)$ for $\\|\\boldsymbol z-\\boldsymbol z^*\\|$ sufficiently small. Since $f(\\boldsymbol z^*)=0$ we have, defining $\\delta\\boldsymbol z:=\\boldsymbol z-\\boldsymbol z^*$,\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}\\approx\\boldsymbol A\\delta\\boldsymbol z,\\qquad\\boldsymbol A=f'(\\boldsymbol z^*).\\]\nThe symbol $\\approx$ is not very precise. In general, the approximation of solutions is only local in time meaning that solutions of the nonlinear system and the linear approximation may diverge. We refer to the system\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}=f'(\\boldsymbol z^*)\\delta\\boldsymbol z\\]\nas the linearization of the system (1.6) around $\\boldsymbol z^*$."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-Hyperbolic",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+      "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+      "received_at": "2026-10-12T12:15:06.479015",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {
+      "printed_page": {
+        "current": "31–32",
+        "proposed": "31"
+      },
+      "pdf_page": {
+        "current": "54–55",
+        "proposed": "54"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-HartmanGrobmanLiteral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+      "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+      "received_at": "2026-10-12T12:15:06.479015",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-LyapunovStability",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+      "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+      "received_at": "2026-10-12T12:15:06.479015",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-HyperbolicStabilityTransfer",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+      "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+      "received_at": "2026-10-12T12:15:06.479015",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-HamiltonEquilibrium",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+      "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+      "received_at": "2026-10-12T12:15:06.480332",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-StrongLocalMinimum",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH16_result.json",
+      "sha256": "bebd0b718f4a63e47305df6aa0a0b9ba8d826ec0d7556df7da0693b818ac2a43",
+      "received_at": "2026-10-12T12:15:06.480332",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-LinearizedHamiltonian",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH16_result.json",
+      "sha256": "bebd0b718f4a63e47305df6aa0a0b9ba8d826ec0d7556df7da0693b818ac2a43",
+      "received_at": "2026-10-12T12:15:06.480332",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "If the potential is $C^2$, then the linearized version is of the same “kinetic plus potential” form with Hamiltonian\n\\[\\widetilde H=\\frac{\\delta\\boldsymbol p^T\\boldsymbol M^{-1}\\delta\\boldsymbol p}2+\\frac{\\delta\\boldsymbol q^T U''(\\boldsymbol q^*)\\delta\\boldsymbol q}2.\\]",
+        "proposed": "If the potential is $C^2$, the linearized version of this system has “kinetic plus potential” form with Hamiltonian\n\\[\\bar H=\\frac{\\delta\\boldsymbol p^T\\boldsymbol M^{-1}\\delta\\boldsymbol p}{2}+\\frac{\\delta\\boldsymbol q^T U''(\\boldsymbol q^*)\\delta\\boldsymbol q}{2}.\\]"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-PositiveHessianQuadratic",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH16_result.json",
+      "sha256": "bebd0b718f4a63e47305df6aa0a0b9ba8d826ec0d7556df7da0693b818ac2a43",
+      "received_at": "2026-10-12T12:15:06.480332",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.5.3-PositiveHessianMinimum",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH16_result.json",
+      "sha256": "bebd0b718f4a63e47305df6aa0a0b9ba8d826ec0d7556df7da0693b818ac2a43",
+      "received_at": "2026-10-12T12:15:06.480332",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-UniformPairLattice",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+      "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+      "received_at": "2026-10-12T12:15:06.480332",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-UnorderedPairCount",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+      "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+      "received_at": "2026-10-12T12:15:06.480332",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-NearestNeighbor",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+      "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+      "received_at": "2026-10-12T12:15:06.480332",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-WalledChain",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+      "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+      "received_at": "2026-10-12T12:15:06.480332",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "In order to keep such a system bounded we might then introduce walls at the ends of the chain, e.g. by adding confining potentials to $U$:\n\\[U(x_1,x_2,\\ldots,x_N)=\\varphi_c(|x_1|)+\\varphi_c(|L-x_N|)+\\sum_{i=1}^{N-1}\\varphi(|x_{i+1}-x_i|).\\tag{1.7}\\]",
+        "proposed": "In order to keep such a system bounded we might think to introduce walls at the ends of the chain, e.g. by adding confining potentials to $U$:\n\\[U(x_1,x_2,\\ldots,x_N)=\\varphi_c(|x_1|)+\\varphi_c(|L-x_N|)+\\sum_{i=1}^{N-1}\\varphi(|x_{i+1}-x_i|).\\tag{1.7}\\]"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-PeriodicChain",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+      "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+      "received_at": "2026-10-12T12:15:06.481718",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-PeriodicBoundary",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+      "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+      "received_at": "2026-10-12T12:15:06.481718",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-PeriodicTranslationMomentum",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+      "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+      "received_at": "2026-10-12T12:15:06.481718",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-RegularLattice",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+      "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+      "received_at": "2026-10-12T12:15:06.481718",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-RegularLatticeMinimizerLiteral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+      "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+      "received_at": "2026-10-12T12:15:06.481718",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-PeriodicImages",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+      "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+      "received_at": "2026-10-12T12:15:06.481718",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol v_1+l\\boldsymbol v_2+m\\boldsymbol v_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol v_i^T=(L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$.",
+        "proposed": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol\\nu_1+l\\boldsymbol\\nu_2+m\\boldsymbol\\nu_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol\\nu_i^T=(L\\boldsymbol e_i^T,L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$."
+      },
+      "context_notation": {
+        "current": [
+          "Fin3索引减1枚举-1,0,1；逐原子3向量加L(k,l,m)，等价全配置向量重复位移。"
+        ],
+        "proposed": [
+          "Fin3索引减1枚举-1,0,1。",
+          "原书ν_i写为重复三维块组成的全配置位移；逐原子实现需解释为取其对应三维块，不能直接断言不同维数的向量相等。"
+        ]
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-MinimumImage",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+      "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+      "received_at": "2026-10-12T12:15:06.482739",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-RhombicLattice",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+      "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+      "received_at": "2026-10-12T12:15:06.482739",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice, with sides of fixed length $n_x,n_y$ and the angle between them ($\\theta$), see Fig. 1.17.",
+        "proposed": "In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice with sides of fixed length $n_x,n_y$ and the angle between them ($\\theta$), see Fig. 1.17."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-HexagonalLattice",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+      "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+      "received_at": "2026-10-12T12:15:06.482739",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "it can be viewed as a rhombic lattice with $n_x=n_y$ and $\\theta=120^\\circ$; it can also be viewed as a rhombic lattice with $\\theta=60^\\circ$",
+        "proposed": "The standard rhombic lattice in the plane is shown at left; at right is a regular hexagonal lattice which can be viewed as a rhombic lattice with $n_x=n_y$ and $\\theta=120^\\circ$; it can also be viewed as a rhombic lattice with $\\theta=60^\\circ$"
+      },
+      "context_notation": {
+        "current": [
+          "Fig1.17图注；等长60°/120°两基给同一格。当前def采用60°；120°等价几何需独立证明不作为def存在假设。"
+        ],
+        "proposed": [
+          "Fig1.17图注；比较等长边60°与120°两种整数张成点集，不预设二者相等。"
+        ]
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-UnitCell",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+      "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+      "received_at": "2026-10-12T12:15:06.482739",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-FCCStacking",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+      "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+      "received_at": "2026-10-12T12:15:06.482739",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6-HCPStacking",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+      "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+      "received_at": "2026-10-12T12:15:06.482739",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6.1-MinimumGradientZero",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+      "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+      "received_at": "2026-10-12T12:15:06.482739",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6.1-ForceLinearization",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+      "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+      "received_at": "2026-10-12T12:15:06.483800",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6.1-MinimumHessianLiteral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+      "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+      "received_at": "2026-10-12T12:15:06.483800",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6.1-ImaginarySpectrum",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+      "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+      "received_at": "2026-10-12T12:15:06.483800",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "The eigenvalues of the matrix\n\\[\\boldsymbol A:=\\begin{bmatrix}0&\\boldsymbol M^{-1}\\\\-U''(\\boldsymbol q^*)&0\\end{bmatrix}\\]\nare therefore all purely imaginary ($\\pm i\\Omega$, $\\Omega^2\\in\\mathbb R^+$).",
+        "proposed": "The eigenvalues of the matrix\n\\[\\boldsymbol A:=\\begin{bmatrix}0&\\boldsymbol M^{-1}\\\\-U''(\\boldsymbol q^*)&0\\end{bmatrix}\\]\nare therefore all purely imaginary ($\\pm i\\Omega$, $\\Omega\\in\\mathbb R$)."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6.1-ComplexNormalMode",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+      "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+      "received_at": "2026-10-12T12:15:06.483800",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.6.1-RealNormalMode",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+      "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+      "received_at": "2026-10-12T12:15:06.483800",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-PlanarTrimerModel",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+      "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+      "received_at": "2026-10-12T12:15:06.483800",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-CentralPairPotential",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+      "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+      "received_at": "2026-10-12T12:15:06.483800",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-CentralPairGradient",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+      "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+      "received_at": "2026-10-12T12:15:06.484904",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-CentralMomentum",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+      "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+      "received_at": "2026-10-12T12:15:06.484904",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-CentralAngularMomentum",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+      "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+      "received_at": "2026-10-12T12:15:06.484904",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-CenterOfMassMotion",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+      "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+      "received_at": "2026-10-12T12:15:06.484904",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-ConstantRotationLiteral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+      "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+      "received_at": "2026-10-12T12:15:06.484904",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "FAIL",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-IsoscelesCoordinates",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+      "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+      "received_at": "2026-10-12T12:15:06.484904",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-IsoscelesEnergyReduction",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+      "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+      "received_at": "2026-10-12T12:15:06.484904",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-IsoscelesAccessibleRegion",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+      "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+      "received_at": "2026-10-12T12:15:06.484904",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-EquilateralTrimerMinimum",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+      "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+      "received_at": "2026-10-12T12:15:06.484904",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-TrimerEnergyLowerBound",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+      "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+      "received_at": "2026-10-12T12:15:06.484904",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-CollinearTrimer",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+      "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+      "received_at": "2026-10-12T12:15:06.486311",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-TrimerSaddle",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+      "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+      "received_at": "2026-10-12T12:15:06.486311",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "Minimizing the potential in the collinear configuration allows us to determine the saddle point $(x^*,0)$. Near this point, $U$ decreases if we move in the $\\pm y$ direction and increases if we move in the $\\pm x$ direction.",
+        "proposed": "Minimizing the potential in the collinear configuration allows us to determine the saddle point $(x_*,0)$. Near this point, $U$ decreases if we move in the $\\pm y$ direction and increases if we move in the $\\pm x$ direction."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7-TrimerEscapeLiteral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+      "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+      "received_at": "2026-10-12T12:15:06.486311",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7.1-ChaosConditions",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH22_result.json",
+      "sha256": "a08d0fc7f4f4453c0d11e2fa63d54b879a6458bec02f8fac84ce7362a3e3b482",
+      "received_at": "2026-10-12T12:15:06.486311",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7.1-TransitivityErgodicityLiteral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH22_result.json",
+      "sha256": "a08d0fc7f4f4453c0d11e2fa63d54b879a6458bec02f8fac84ce7362a3e3b482",
+      "received_at": "2026-10-12T12:15:06.486311",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7.1-AnisotropicOscillator",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH22_result.json",
+      "sha256": "a08d0fc7f4f4453c0d11e2fa63d54b879a6458bec02f8fac84ce7362a3e3b482",
+      "received_at": "2026-10-12T12:15:06.486311",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7.2-FlowJacobianLiteral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+      "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+      "received_at": "2026-10-12T12:15:06.487428",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "Let a dynamical system $\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z)$ be given in $\\mathbb R^m$ with flow map $F_t:\\mathbb R^m\\to\\mathbb R^m$ which we assume to be continuously differentiable. Let $\\boldsymbol z(t,\\boldsymbol\\xi)$ represent the solution of initial value problem\n\\[\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z),\\qquad\\boldsymbol z(0)=\\boldsymbol\\xi.\\]\nWe then compute the $m\\times m$ Jacobian matrix of $F_t(\\boldsymbol z(t,\\boldsymbol\\xi))$:\n\\[\\boldsymbol W(t)=F_t'(\\boldsymbol z(t,\\boldsymbol\\xi))=\\frac{\\partial F_t}{\\partial\\boldsymbol z}(\\boldsymbol z(t,\\boldsymbol\\xi)).\\]",
+        "proposed": "Let a dynamical system $\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z)$ be given in $\\mathbb R^m$ with flow map $\\mathscr F_t:\\mathbb R^m\\to\\mathbb R^m$ which we assume to be continuously differentiable. Let $\\boldsymbol z(t,\\boldsymbol\\zeta)$ represent the solution of initial value problem\n\\[\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z),\\qquad\\boldsymbol z(0)=\\boldsymbol\\zeta.\\]\nWe then compute the $m\\times m$ Jacobian matrix of $\\mathscr F_t(\\boldsymbol z(t,\\boldsymbol\\zeta))$:\n\\[\\boldsymbol W(t)=\\mathscr F_t'(\\boldsymbol z(t,\\boldsymbol\\zeta))=\\frac{\\partial\\mathscr F_t}{\\partial\\boldsymbol z}(\\boldsymbol z(t,\\boldsymbol\\zeta)).\\]"
+      },
+      "context_notation": {
+        "current": [
+          "F为C1真实flow，z(t,ξ)=Ftξ；原文字面在Ftξ处对初值变量微分。"
+        ],
+        "proposed": [
+          "F对应原书的花体流映射；F为C1真实flow，z(t,ζ)=Ftζ；原文字面在Ftζ处对初值变量微分。"
+        ]
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7.2-VariationalEquationLiteral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+      "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+      "received_at": "2026-10-12T12:15:06.487428",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "Differentiating $\\boldsymbol W(t)$ with respect to $t$ and using the differential equation and the chain rule, we have\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\boldsymbol W(t)=\\boldsymbol f'(\\boldsymbol z(t,\\boldsymbol\\xi))\\boldsymbol W(t).\\tag{1.10}\\]\nThe system of Eq. (1.10) is referred to as the system of variational equations corresponding to the dynamical system $\\mathrm d\\boldsymbol z/\\mathrm dt=\\boldsymbol f(\\boldsymbol z)$.",
+        "proposed": "Differentiating $\\boldsymbol W(t)$ with respect to $t$ and using the differential equation and the chain rule, we have\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\boldsymbol W(t)=\\boldsymbol f'(\\boldsymbol z(t,\\boldsymbol\\zeta))\\boldsymbol W(t).\\tag{1.10}\\]\nThe system of Eq. (1.10) is referred to as the system of variational equations corresponding to the dynamical system $\\mathrm d\\boldsymbol z/\\mathrm dt=\\boldsymbol f(\\boldsymbol z)$."
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7.2-NearbyTrajectoryLiteral",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+      "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+      "received_at": "2026-10-12T12:15:06.487428",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "NEEDS_HUMAN",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "If we have two solutions started from nearby initial conditions $\\boldsymbol\\xi,\\hat{\\boldsymbol\\xi}$, then their difference is approximated by the solution of the variational equations\n\\[\\boldsymbol z(t,\\hat{\\boldsymbol\\xi})-\\boldsymbol z(t,\\boldsymbol\\xi)\\approx\\boldsymbol W(t)(\\hat{\\boldsymbol\\xi}-\\boldsymbol\\xi).\\]",
+        "proposed": "If we have two solutions started from nearby initial conditions $\\boldsymbol\\zeta,\\hat{\\boldsymbol\\zeta}$, then their difference is approximated by the solution of the variational equations\n\\[\\boldsymbol z(t,\\hat{\\boldsymbol\\zeta})-\\boldsymbol z(t,\\boldsymbol\\zeta)\\approx\\boldsymbol W(t)(\\hat{\\boldsymbol\\zeta}-\\boldsymbol\\zeta).\\]"
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7.2-SingularValues",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+      "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+      "received_at": "2026-10-12T12:15:06.487428",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7.2-SingularEllipsoid",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+      "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+      "received_at": "2026-10-12T12:15:06.487428",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7.2-LyapunovExponents",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+      "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+      "received_at": "2026-10-12T12:15:06.487428",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-1.7.2-PositiveLyapunovGrowth",
+    "receipt": {
+      "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+      "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+      "received_at": "2026-10-12T12:15:06.487428",
+      "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+      "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+      "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+    },
+    "reported_verdict": "PASS",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  }
+]

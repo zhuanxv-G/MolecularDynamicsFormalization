@@ -1,0 +1,300 @@
+[
+  {
+    "source_id": "MD-1.6-RegularLatticeMinimizerLiteral",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "ISSUE",
+          "detail": "转录与原页相符，但原书对 uniform pair potential 的概括缺少必要限制。按相邻页公式(1.8)，取 φ≡0，任何配置均为能量极小配置，包括不构成等间距有限晶格的配置。应保留原文，由人工确认适用范围或勘误，不得静默添加凸性等条件。"
+        }
+      ],
+      "evidence": [
+        "已查看 PDF 第57页原页，页眉印刷页码为34；目标句位于介绍一维有限晶格的段落，statement_latex 的文字及标点相符。",
+        "PDF 第57页前一句将一维有限晶格描述为相邻离散点之间具有固定距离 Δx 的序列。",
+        "PDF 第56页、印刷第33页的公式(1.8)给出周期最近邻链能量；取 φ≡0 时各项均为零。",
+        "目标句及相邻上下文没有独立完整证明，proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.regularlatticeminimizerliteral",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取 Ch01.lean 第1467–1479行：regularLattice a δ x 的真实定义为 0<δ 且对每个标签 i，有 x i=a+i.val*δ。因此结论要求固定标签顺序，并将间距指定为 L/(N+1)；原句仅说规则晶格，相邻句给出固定间距，未在目标句中明确这两项限定。极小性前提还对全部实数配置 y 量化，没有显式盒内域、排序或周期代表元资格；关于 confining potentials 的后半句也没有对应形式化内容。实际 boxPeriodicNearestNeighborPotentialEnergy 的定义未在提供的文件、现有本地模块或共享模块中找到，不能依据名称认定它等于公式(1.8)，故无法完成能量对象的展开审计。原文疑误与签名是否忠实、证明中存在 sorry 是不同问题，均不能据此直接批准。",
+      "counterexample": "针对原书公式(1.8)：取三个原子、L=1、φ≡0，位置为 (0,1/4,√2/2)。所有配置能量均为零，而该配置不是等间距有限序列。按声明的参数对应取 Lean N=2，其结论要求间距1/3；首坐标迫使 a=0，第二坐标1/4即违反结论。由于实际能量辅助定义缺失，此处不是已经核验该 Lean 前提的反例。",
+      "suggested_fix": "提供与本批一致的能量辅助定义及版本依据，明确排序、盒内域和周期等价代表元的语义。保留原文及 ERRATUM 标记；如另立经修正的数学命题，应显式列出足以推出等间距的势条件，并与原书字面命题分开。"
+    }
+  },
+  {
+    "source_id": "MD-1.6-PeriodicImages",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_SYMBOL",
+        "TRANSCRIPTION_FORMULA",
+        "SOURCE_DIMENSION_AMBIGUITY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.6-PeriodicImages",
+        "kind": "definition",
+        "label": null,
+        "section": "1.6",
+        "printed_page": "35",
+        "pdf_page": "58",
+        "statement_latex": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol\\nu_1+l\\boldsymbol\\nu_2+m\\boldsymbol\\nu_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol\\nu_i^T=(L\\boldsymbol e_i^T,L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "Fin3索引减1枚举-1,0,1。",
+          "原书ν_i写为重复三维块组成的全配置位移；逐原子实现需解释为取其对应三维块，不能直接断言不同维数的向量相等。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "SOURCE_DIMENSION_AMBIGUITY",
+            "status": "NEEDS_HUMAN",
+            "detail": "原书将ν_i定义为重复三维块组成的向量，却在公式中直接加到单原子位置q_j上。若沿用第18页的单原子三维位置约定，这里缺少取对应块的说明。保留原书公式，待人工确认其简写或勘误。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.periodicImageEnergy",
+        "extra_assumptions": [],
+        "repair_log": [
+          "对照PDF第58页、印刷第35页，将位移符号恢复为粗体希腊ν。",
+          "恢复原页位移向量括号内在省略号之前明确出现的第二个L e_i^T块；未修正原书的维数歧义。"
+        ],
+        "old_ids": [
+          "CH01-158"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次只读查看PDF第58页原页"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_SYMBOL",
+          "detail": "原页位移记号为粗体希腊ν，输入写成拉丁v；已在完整修正版中恢复。"
+        },
+        {
+          "code": "TRANSCRIPTION_FORMULA",
+          "detail": "原页ν_i^T的括号明确写出两个L e_i^T块后再接省略号；输入省略了第二个明确出现的块。"
+        },
+        {
+          "code": "SOURCE_DIMENSION_AMBIGUITY",
+          "status": "ISSUE",
+          "detail": "重复块位移与单原子位置相加的维数说明属于原书问题，修正版保留原式并记录，未静默改成逐原子三维公式。"
+        }
+      ],
+      "evidence": [
+        "已查看并放大 PDF 第58页原页，页眉印刷页码为35；公式的求和范围为 klm、i=1至N−1、j=i+1至N。",
+        "公式下方原页规定 k,l,m 取 −1,0,1，并保留仅考虑模拟盒及其紧邻复制盒的括注。",
+        "原页位移定义为 ν_i^T=(L e_i^T,L e_i^T,…,L e_i^T)，i=1,2,3。",
+        "PDF 第41页、印刷第18页明确区分单原子三维位置 q_i 与全配置3N维向量 q，支持记录上述维数歧义。",
+        "此处是能量定义，没有独立完整证明；proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.periodicImageEnergy",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean 第1486–1489行的显式求和结构相符：三个 Fin 3 索引经 val−1 枚举−1、0、1；Finset.Ioi i只取j>i，故每个不同原子对只计一次；逐原子位移为L(k,l,m)。但 V3、twoBodyTerms 的真实定义未提供，不能确认位置对象确为欧氏三维空间、两体项确为两个位置到实数的函数。另有原书全配置位移与单原子位置相加的歧义；Lean采用三维块解释，不能未经说明就称其与字面原式完全相同。有限近邻复制盒限制来自原文括注，不是新增物理假设；L和q在定义中未受盒长正值及盒内域限制，可作为能量表达式的总延拓，但需与物理配置资格区分。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本 V3、twoBodyTerms 及相关导入定义。保留原书公式及 ISSUE，明确ν_i的全配置含义和取单原子块的映射；取得这一解释的确认后再判定逐原子实现是否忠实。"
+    }
+  },
+  {
+    "source_id": "MD-1.6-MinimumImage",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看 PDF 第58页、印刷第35页；目标句位于讨论截断和近邻贡献的段落末尾，文字及标点与 statement_latex 相符。",
+        "原句同时包含力计算语境、only以及any other atom三项限定。",
+        "原页没有对此定义给出独立完整证明；proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.minimumImage",
+      "verdict": "FAIL",
+      "explanation": "Ch01.lean 第1495–1498行只定义最近周期复制体关系：image是r的整数周期平移，并且其到q的距离不大于任意其他平移的距离。≤允许并列最近像，原文未规定破同距规则，因而这一点合理。但是该关系没有力或相互作用对象，不能表达计算力时只使用最近复制体；也没有原子标签，无法编码any other atom所要求的不同原子资格。context_notation主动缩小为最近复制体关系，不能替代原句的完整约定。L>0仅出现在JSON说明中，未成为定义的有效域条件。V3真实定义缺失妨碍进一步核验欧氏距离，但不影响确定上述句法上缺失的条款。",
+      "counterexample": "在预期欧氏三维解释下，取L=1、q=(0,0,0)、r=image=(1/4,0,0)。image满足最近复制体关系；然而力计算仍可同时采用r和较远的r+(1,0,0)两份相互作用。minimumImage没有任何力计算参数，无法排除这种违反原文only限定的计算。",
+      "suggested_fix": "将现有关系明确列为最近复制体辅助定义；另行表达完整最小像约定，包括L>0、不同原子标签、对每个原子对选取最近复制体，以及力计算仅使用这些选中复制体。提供V3真实定义以核验距离对象。"
+    }
+  },
+  {
+    "source_id": "MD-1.6-RhombicLattice",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_PUNCTUATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.6-RhombicLattice",
+        "kind": "definition",
+        "label": null,
+        "section": "1.6",
+        "printed_page": "35",
+        "pdf_page": "58",
+        "statement_latex": "In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice with sides of fixed length $n_x,n_y$ and the angle between them ($\\theta$), see Fig. 1.17.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "a=nx,b=ny；定义只编码基向量Z线性组合，不声称低温平衡一定如此。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [],
+        "lean_decl": "MD.Ch01.rhombicLattice",
+        "extra_assumptions": [],
+        "repair_log": [
+          "对照PDF第58页、印刷第35页，删除输入在rhombic lattice之后额外插入的逗号。"
+        ],
+        "old_ids": [
+          "CH01-160"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次只读查看PDF第58页原页"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_PUNCTUATION",
+          "detail": "原页为“a rhombic lattice with sides”，输入在lattice之后增加了逗号；逐字审校须删除。"
+        }
+      ],
+      "evidence": [
+        "已查看 PDF 第58页、印刷第35页，下部讨论二维低温几何的段落；原文在lattice与with之间没有逗号。",
+        "原页保留两条边长n_x、n_y及夹角θ，并引用Fig.1.17；不应因rhombic一词而擅自添加n_x=n_y。",
+        "该句没有独立完整证明，proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.rhombicLattice",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取 Ch01.lean 第1503–1504行及本地 MolecularDynamics.Notation 的真实定义：Position 2是EuclideanSpace ℝ (Fin 2)。成员资格确为两整数k,l，使坐标等于(k a+l b cosθ,l b sinθ)，对应向量(a,0)和(b cosθ,b sinθ)的整数张成；没有偷换成True或以结论为前提。几何构造在正边长、非退化夹角下相符。但定义未限定这些有效参数，原句的“典型低温几何”也没有可核对的温度、体系或典型性对象。context_notation将目标限缩为几何构造，而本次要求核对整句全部内容，因此需人工冻结：目标是有效参数上的晶格定义，还是还包括低温经验性断言；目前不能无条件PASS。",
+      "counterexample": "域资格问题的具体实例：a=b=1、θ=0时，现有定义返回{(n,0) | n∈ℤ}，是共线点集，不能作为原页Fig.1.17所描述的非退化二维晶格。该实例指出有效域缺失，不是否定有效参数上的坐标公式。",
+      "suggested_fix": "明确正边长和非退化夹角的资格，并区分总点集构造与有效二维晶格对象。将低温典型性明确标为未形式化的物理背景，或单独给出其可审计陈述；不能仅靠context_notation声称整句已经覆盖。"
+    }
+  },
+  {
+    "source_id": "MD-1.6-HexagonalLattice",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_REWORDING",
+        "MISSING_REFERENT"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.6-HexagonalLattice",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.6",
+        "printed_page": "35",
+        "pdf_page": "58",
+        "statement_latex": "The standard rhombic lattice in the plane is shown at left; at right is a regular hexagonal lattice which can be viewed as a rhombic lattice with $n_x=n_y$ and $\\theta=120^\\circ$; it can also be viewed as a rhombic lattice with $\\theta=60^\\circ$",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "Fig1.17图注；比较等长边60°与120°两种整数张成点集，不预设二者相等。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [],
+        "lean_decl": "MD.Ch01.hexagonal_lattice_two_bases",
+        "extra_assumptions": [],
+        "repair_log": [
+          "对照PDF第58页Fig.1.17图注，恢复完整图注及regular hexagonal lattice的指称，撤销将which can改写为it can的转述。"
+        ],
+        "old_ids": [
+          "CH01-161"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次只读查看PDF第58页原页Fig.1.17图注"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_REWORDING",
+          "detail": "输入开头“it can be viewed”是改写；原页为“a regular hexagonal lattice which can be viewed”。"
+        },
+        {
+          "code": "MISSING_REFERENT",
+          "detail": "输入未保留it所指的规则六角晶格，独立条目缺少对象指称；完整修正版恢复图注。"
+        }
+      ],
+      "evidence": [
+        "已查看 PDF 第58页、印刷第35页Fig.1.17原图及图注；右图被明确称为regular hexagonal lattice。",
+        "图注明确给出n_x=n_y、θ=120°，随后说也可视为θ=60°的rhombic lattice。",
+        "图注提供两种描述，没有独立完整证明；proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.hexagonal_lattice_two_bases",
+      "verdict": "PASS",
+      "explanation": "Ch01.lean 第1510–1511行比较同一真实rhombicLattice定义的两个点集：两条边均为a，夹角分别为2π/3和π/3，准确对应120°和60°。展开后，两套第二生成向量分别为(-a/2,√3 a/2)及(a/2,√3 a/2)，相差第一生成向量(a,0)，因此整数张成点集相同，保留了同一个晶格的两种表示这一数学结论。等式不是定义展开后的P→P，也未把等价性放进前提。物理边长a>0的情形全部包含；对非正a仍成立的总延拓不削弱原结论，也没有断言a=0形成非退化六角晶格。图中左右位置属于图注指示，不是额外数学结论。本判定依据真实定义和签名，独立于现有证明的完成状态。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.6-UnitCell",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看 PDF 第58页、印刷第35页末段；目标两分句的文字、分号及句号与statement_latex相符。",
+        "同段明确讨论三维晶体的平面层堆叠，随后列举bcc、fcc、hcp单胞；hcp名称跨到下一页续接。",
+        "原页没有该定义的独立完整证明，proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.unitCellLattice",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean 第1535–1537行的显式内容是整数平移周期化：q=B.toEuclideanLin(k)+u，其中k为三个整数，u属于motif。这保留了沿三个生成方向重复原子基元的构造。可是V3真实定义缺失，不能完成对象与矩阵作用空间的展开核验；参数B只是任意矩阵，并非实际三基向量的资格，motif只是任意集合，没有盒内、有限原子基元等条件。JSON的“B为三基向量矩阵，motif为盒内点集”并没有被类型或前提落实。若此函数仅是可用于合法单胞的总周期化构造，几何核心相符；若它就是原句的完整unit cell定义，则对象资格尚缺。当前输入不足以冻结这一语义边界。",
+      "counterexample": "说明参数资格缺失的实例：取B为零矩阵、motif为全集。按显示定义，每个q都可取k=0、u=q，因此输出为整个V3；在预期三维解释下这是连续空间，而非盒内有限原子排列重复生成的晶格。该实例不否定合法单胞参数上的周期化操作。",
+      "suggested_fix": "提供V3的同版本定义，并明确此声明是一般周期化辅助构造还是合法单胞定义。后一种情形应编码三方向非退化性、盒内基元资格及采用的原子排列条件；允许边界重叠时应说明代表元约定。"
+    }
+  },
+  {
+    "source_id": "MD-1.6-FCCStacking",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看 PDF 第59页原页，页眉印刷页码为36；目标句位于Fig.1.19下方续接段落，文字及ABCABC省略号含义与输入相符。",
+        "原页Fig.1.18标出fcc的A、B、C三层，并展示不同层的平面排列与相对位置。",
+        "正文没有列出单位边长、层高√(2/3)或平移偏移的数值公式；这些属于几何编码说明。",
+        "该句及图示没有独立完整证明，proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.fccStacking",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean 第1543–1546行确实使用整数层号k和j=k%3；层高按k√(2/3)指定，三种水平偏移按j/2、j√3/6指定，显式层序具有三层重复结构。单位长度、固定取向及原点选择作为理想密堆积图示的坐标归一化是合理的[EXTRA]编码，正文没有这些数值，不能将其当作逐字公式。关键的triangularLayer真实定义以及V3定义均未提供；无法确认它实际生成单位边长六角排列的三角点阵、参数实际表示上述水平平移，也无法核验三层互异及密堆积几何。仅凭函数名和模3不能确认对象是fcc，故不判PASS。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本triangularLayer、V3及相关导入定义。展开核对层内生成向量、参数平移含义、三层偏移的互异性与邻层距离，并保留单位化坐标选择为[EXTRA]说明。"
+    }
+  },
+  {
+    "source_id": "MD-1.6-HCPStacking",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看 PDF 第59页、印刷第36页；目标句紧接fcc说明，文字、插入语及标点与statement_latex相符。",
+        "原页Fig.1.18的hcp堆叠图明确标为A、B、A，与正文two distinct planar lattices相符。",
+        "正文没有列出单位化层高和水平偏移的数值公式；输入已将其标为额外几何编码。",
+        "原页没有该定义的独立完整证明，proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.hcpStacking",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean 第1552–1555行使用整数层号k和j=k%2，故显示的偏移参数交替为两组，层高为k√(2/3)，与ABAB层序的结构相符。单位边长、层高及固定水平偏移作为理想hcp图示的坐标编码，其[EXTRA]性质合理；原文未给出这些公式。但是实际triangularLayer和V3定义缺失，无法确认层内是所需的六角排列，也无法确认两组参数生成两个不同的平面点阵。尤其“两种参数”不能代替原文“两个不同平面晶格”的对象核验；若辅助定义忽略参数或平移等价，该结论就会丢失。因此目前不能依据名称或模2批准。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本triangularLayer与V3定义，展开核验层内几何、水平偏移是否落在不同点阵陪集中，以及邻层的密堆积关系；保留数值归一化为明确的[EXTRA]编码说明。"
+    }
+  }
+]

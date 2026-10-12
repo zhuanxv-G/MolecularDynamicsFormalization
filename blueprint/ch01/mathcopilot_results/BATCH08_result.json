@@ -1,0 +1,65 @@
+[
+  {
+    "source_id": "MD-1.3-Lagrangian",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接渲染核对 PDF 第45页，页眉印刷页码22，所在节为1.3。原文从“For the system (1.3) with N atoms”起的句子及 N_c=3N 与 statement_latex 一致。",
+        "原页公式为 L=def (q̇ᵀMq̇)/2−U(q)，定义符号、转置、分母和负号均一致，公式以句号结束。",
+        "该处给出定义，没有独立完整证明；proof_latex=null 合适。相邻页上下文已读取。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.fixedMassLagrangian",
+      "verdict": "PASS",
+      "explanation": "已展开实际上传的 Ch01.lean 第642行定义，以及 Lean/MolecularDynamics/Notation.lean 和 Chapter01/NBody.lean 中的依赖定义。Position n、Velocity n 均为实欧氏空间；CoordinateMasses n 为 Fin n→ℝ；diagonalMassMatrix m 实际定义为 Matrix.diagonal m；nBodyKineticEnergy m v 实际为 Σ_i m_i v_i²/2。因此 fixedMassLagrangian 的值恰为 vᵀMv/2−U(q)，没有改用动量或改变势能符号。PDF第41页、印刷第18页明确给出固定对角质量矩阵及三维粒子质量重复三次的约定。Lean 允许任意维数和对角质量，是该代数定义的合理泛化；取 n=3N 并重复粒子质量即得到原文对象。定义不需要额外可微性、正质量或运动方程前提。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.3-GeneralizedCoordinates",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接渲染核对 PDF 第46页，页眉印刷页码23；本段仍属于1.3。英文句子、Φ:ℝ^{N_c}→ℝ^{N_c} 及 N_c×N_c Jacobian matrix 与 statement_latex 一致。",
+        "原页速度公式为 q̇=Φ′(Q)Q̇；变换后的公式为 L̃=Q̇ᵀΦ′(Q)ᵀMΦ′(Q)Q̇/2−U(Φ(Q))，转置位置、复合势能和末尾逗号均一致。",
+        "紧接的原文允许 Φ:ℝ^{N_d}→ℝ^{N_c} 且 N_c≥N_d，支持 context_notation 中的约束参数化说明。该处没有独立完整证明，proof_latex=null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.generalized_coordinates",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对上传 Ch01.lean 第649—658行的实际声明。对象为实欧氏空间上的 Φ、时间曲线 q 和速度 V；hΦ 用真实 HasFDerivAt 将 J 绑定为 Φ 在 q(t) 的导数，hq 用真实 HasDerivAt 将 V 绑定为 q 在 t 的速度。第一结论完整表达链式法则。将 smooth 弱化为该点可微，对这些点态公式合理；允许 k<n 有原文明确支持，公式进一步允许其他维数组合也不构成错误强化。第二结论的形式包含动能二次式和复合势能，但本批所需 MolecularDynamics/Chapter01/Lagrangian.lean、GeneralizedCoordinates.lean 未在可读取输入中找到，无法展开 massLagrangian 和 generalizedMassMatrix。JSON 注释声称后者为 JᵀMJ，不能替代真实定义证据，因此不能完成第二结论的语义核验，也不能据声明名称判为 PASS。此限制与证明体是否含 sorry 分开。",
+      "counterexample": null,
+      "suggested_fix": "提供与上传 Ch01.lean 同一快照的 Lagrangian.lean、GeneralizedCoordinates.lean 及其必要依赖和输入哈希，供只读核实 massLagrangian 是否等于原文 L，以及 generalizedMassMatrix 是否实际定义为 Jᵀ(diagonalMassMatrix m)J。"
+    }
+  },
+  {
+    "source_id": "MD-1.3-GeneralizedMassRegular",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接渲染核对 PDF 第46页、印刷第23页。原文确为“We will assume that any such changes of variables are regular transformations”，随后明确要求 Φ′ 满秩且 resulting generalized mass matrix 可逆；statement_latex 完整保留这两个条件。",
+        "前文允许 N_d≤N_c 的约束参数化，故这里的满秩在该维数约定下对应满列秩。",
+        "原文将此表述为模型假设，没有独立完整证明；proof_latex=null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.generalizedmassregular",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对上传 Ch01.lean 第664—669行的实际声明。它全称量化维数、坐标质量和 n×k 矩阵 J，以正质量 hm 和 Function.Injective J.mulVec 为前提。已展开标准 Matrix.mulVec：它是普通矩阵乘向量，因此 hJ 表示满列秩，并自动限制 k≤n。已展开 IsUnit：它要求存在双侧乘法逆，确实表达矩阵可逆，而不是 True 或以可逆性作前提。正粒子质量作为物理模型条件合理；若实际广义质量矩阵为 JᵀMJ，则该声明可合理承担原文正则性条件中可逆性的代数依据。不过原文是对所用坐标变换的假设，当前声明是任意满列秩矩阵的充分性引理，两者的用途应明确区分。由于 GeneralizedCoordinates.lean 缺失，generalizedMassMatrix 的真实定义及其与质量矩阵、Jacobian 的联系无法核实，故不能作最终 PASS 或 FAIL 判定。",
+      "counterexample": null,
+      "suggested_fix": "提供同一输入快照的 GeneralizedCoordinates.lean 和必要依赖，核实 generalizedMassMatrix 的真实公式；同时明确原文模型在相关配置域各点采用满列秩 Jacobian 的条件，避免把此代数引理误读为任意坐标变换自动正则。"
+    }
+  }
+]

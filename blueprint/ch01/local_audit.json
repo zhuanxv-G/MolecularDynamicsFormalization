@@ -38,7 +38,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -49,7 +49,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d42ffb3b09f6a38dba4cd6ed88a79c7b5c434d0d091cbac0599d1b1e186a14d0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+          "sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+          "received_at": "2026-10-12T12:15:06.465572",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1-NewtonModel": {
       "lean_decl": "MD.Ch01.newtonInitialValueModel",
@@ -77,7 +90,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -88,7 +101,22 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d9dbd769b70a2b8e1c1c617900ecef552e578fb31728e25f8e77274c18ffb5bc",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+          "sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+          "received_at": "2026-10-12T12:15:06.466659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.1-HardSphere": {
       "lean_decl": "MD.Ch01.hardSphereModel",
@@ -111,7 +139,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -122,7 +150,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "1f6689f4c2c087032feceecd82cc53be990cb04e410dd7fd3b3de224db92185f",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+          "sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+          "received_at": "2026-10-12T12:15:06.466659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.1-Multibody": {
       "lean_decl": "MD.Ch01.multibodyPotential",
@@ -150,7 +191,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -161,7 +202,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "14a629971804bc42ff3c6e5d969ff08795c915c3ce9f86db6b1754bc3a299965",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+          "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+          "received_at": "2026-10-12T12:15:06.466659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.1-Morse": {
       "lean_decl": "MD.Ch01.morsePotential",
@@ -184,7 +238,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -195,7 +249,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "69f3f1b2e57792d4b8e571938af9ac343007494a69e059c2f3cc842bbb78d7ee",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+          "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+          "received_at": "2026-10-12T12:15:06.466659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.1-MorseMinimum": {
       "lean_decl": "MD.Ch01.morse_minimum",
@@ -228,7 +295,7 @@
       "documented_priors": [],
       "proof_attempts": 3,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。",
       "checked": true,
       "direct_placeholder": true,
@@ -243,7 +310,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "a2294a6a45e9a7419e8bc86a142c5794a2076af2071ef4e6e45902d1520bfdf2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+          "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+          "received_at": "2026-10-12T12:15:06.467659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.1-LengthBond": {
       "lean_decl": "MD.Ch01.lengthBond",
@@ -266,7 +346,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -277,7 +357,22 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "6dc1cbf5f5331ae35834577db64838fabe6be0c8deaf6bb503c58008f65890c6",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+          "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+          "received_at": "2026-10-12T12:15:06.467659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.1.1-Dispersion": {
       "lean_decl": "MD.Ch01.dispersionPotential",
@@ -300,7 +395,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -311,7 +406,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "919b6add4a110f807000c50b2d29b67741b31fdee6b861ddc391f93f7faf2f43",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+          "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+          "received_at": "2026-10-12T12:15:06.467659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.1-Buckingham": {
       "lean_decl": "MD.Ch01.buckinghamPotential",
@@ -334,7 +442,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -345,7 +453,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "fe661b6bad850b9c0dd6b801add0345ee27c838ce6578d471ba4e72edf28cf71",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+          "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+          "received_at": "2026-10-12T12:15:06.467659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.1-LennardJones": {
       "lean_decl": "MD.Ch01.lennardJonesPotential",
@@ -368,7 +489,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -379,7 +500,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "c59ecc0fa91ade5d874e80ef3f97928193bd26f8212127cea8b0cc3d03d4a91b",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+          "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+          "received_at": "2026-10-12T12:15:06.467659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.1-LJRepulsion": {
       "lean_decl": "MD.Ch01.lj_repulsion",
@@ -407,7 +541,7 @@
       "documented_priors": [],
       "proof_attempts": 3,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -420,7 +554,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "a54df37fd50ba09697d5aeb8f871996449b24346498eae4238ec618f30fb6144",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+          "sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+          "received_at": "2026-10-12T12:15:06.467659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.1-HeterogeneousLJ": {
       "lean_decl": "MD.Ch01.heterogeneousLJ",
@@ -443,7 +590,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -454,7 +601,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "52b91099ddd48b107a2b6e520de963b729bc69c43867ef7de9a64c6c104bb125",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH04_result.json",
+          "sha256": "5941619e97b3355cd8f77b1243fca72cc469320afd27458cc8129f92346bdf1e",
+          "received_at": "2026-10-12T12:15:06.467659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.2-Coulomb": {
       "lean_decl": "MD.Ch01.coulombPotential",
@@ -477,7 +637,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -488,7 +648,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "c99bf55a6e57b945f6a8e304f44b235c6cf0a763db160d917d8a8cab01f7f35c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+          "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+          "received_at": "2026-10-12T12:15:06.467659",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.2-Cutoff": {
       "lean_decl": "MD.Ch01.smoothCutoff",
@@ -506,7 +679,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -517,7 +690,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "126ddf4c90c49f42cef51a781adcf940e4c1d22e13be9be5cc2146c0d61e5236",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+          "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+          "received_at": "2026-10-12T12:15:06.468951",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.2-Yukawa": {
       "lean_decl": "MD.Ch01.yukawaScreened",
@@ -545,7 +731,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -559,7 +745,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "2e3930687eb550ee87abfa8443816b2c0cfa18f7b4f0abe91f247ed90ec298a1",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+          "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+          "received_at": "2026-10-12T12:15:06.468951",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.2-AngleBond": {
       "lean_decl": "MD.Ch01.angleBondModel",
@@ -582,7 +781,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -593,7 +792,23 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d27b7eed4005272ea7ad565b091134ab4cdae5f057ade28898476085cde62457",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+          "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+          "received_at": "2026-10-12T12:15:06.468951",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex",
+          "context_notation"
+        ]
+      }
     },
     "MD-1.1.2-Dihedral": {
       "lean_decl": "MD.Ch01.dihedralPotential",
@@ -616,7 +831,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -627,7 +842,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "e205c138e66f0f194f170f5ac749439eb113cf4628d6f9fb812cbb86faf67cd0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+          "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+          "received_at": "2026-10-12T12:15:06.468951",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.1.2-GayBerne": {
       "lean_decl": "MD.Ch01.gayBerneModel",
@@ -662,7 +890,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -673,7 +901,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "d932c5f5ca37d31eaf3ae07646dc058b169b5e8645c47a77920d2e7317847dcf",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH05_result.json",
+          "sha256": "794cbd8ab151e7c53dbf2bc3e67669425f06592f9e41d0105e9973b25877a2d9",
+          "received_at": "2026-10-12T12:15:06.468951",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.3-Thm1.1": {
       "lean_decl": "MD.Ch01.theorem_1_1",
@@ -941,7 +1182,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -952,7 +1193,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "8a151b6d08e1dcf54a81eb6e37cc4f5d4a0c70974fe14ed3a0068ed089894eb2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+          "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+          "received_at": "2026-10-12T12:15:06.468951",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-DegreesFreedom": {
       "lean_decl": "MD.Ch01.degreesOfFreedom",
@@ -975,7 +1229,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -986,7 +1240,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "cc1528b64168788fe6cc74e5a01fd1a0eb941ca19a083e56410a22665a16e8aa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+          "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+          "received_at": "2026-10-12T12:15:06.470016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-ConstraintDimension": {
       "lean_decl": "MD.Ch01.constraintdimension",
@@ -1009,7 +1276,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1020,7 +1287,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "36fd5fab4eec12dceb32579dd6e71c53ab91205e336ff309bcfde361b2d71fe5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+          "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+          "received_at": "2026-10-12T12:15:06.470016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-TotalEnergy": {
       "lean_decl": "MD.Ch01.particleTotalEnergy",
@@ -1043,7 +1323,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1054,7 +1334,22 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "2a72404f4a7daaaaec384f15625586a8dd1eaf4db3a8703f5078972fc6be343a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+          "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+          "received_at": "2026-10-12T12:15:06.470016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.2-PairCancellation": {
       "lean_decl": "MD.Ch01.paircancellation",
@@ -1077,7 +1372,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1088,7 +1383,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "5f3cc22f225bd72c6107d3754e0fa2bd3b934d4d1ef1ca63cd4ad699e0f6c0e4",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+          "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+          "received_at": "2026-10-12T12:15:06.470016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-MomentumConservation": {
       "lean_decl": "MD.Ch01.momentum_conservation",
@@ -1123,7 +1431,7 @@
       ],
       "proof_attempts": 2,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1136,7 +1444,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "fd873a2e83db51de11e8d05b470b5e74d2474acf19129a966bf20f5fa471444e",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+          "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+          "received_at": "2026-10-12T12:15:06.470016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-HarmonicSolution": {
       "lean_decl": "MD.Ch01.harmonic_solution",
@@ -1166,7 +1487,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1177,7 +1498,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "5c422857804bd00c609a866f1999af61bce74ca798fd824794b6a186a234485a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+          "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+          "received_at": "2026-10-12T12:15:06.470016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-ScalarMechanical": {
       "lean_decl": "MD.Ch01.scalarMechanicalModel",
@@ -1200,7 +1534,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1211,7 +1545,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d577b1c49cbefd9974c120579caf6a2bf559987950854218d5e328d9cb5d2f23",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH06_result.json",
+          "sha256": "a3159d0730458a0624def3726cf568328e69d19c90362d6c534f172a10852b26",
+          "received_at": "2026-10-12T12:15:06.470016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-ScalarQuadrature": {
       "lean_decl": "MD.Ch01.scalar_quadrature",
@@ -1251,7 +1598,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "缺大型理论：带(x,ξ,η)参数的C∞隐函数定理及积分逆C∞依赖、真实解局部唯一性组合；现有固定初值C1图表不足以推出全部签名。",
       "checked": true,
       "direct_placeholder": true,
@@ -1264,7 +1611,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "50a0eee424c06aa3aaf074f2eb2eb0d1d46bfa909e895c3a599979254970f59c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH07_result.json",
+          "sha256": "eccf9d66c8f8b262c42dadf7df779eb3a7ae56c687e6ae3ebb526717a003a4f6",
+          "received_at": "2026-10-12T12:15:06.470016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-UniformLJSystem": {
       "lean_decl": "MD.Ch01.uniformLJSystem",
@@ -1287,7 +1647,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1298,7 +1658,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "641c1d0411aadc0b3626ddbcb66f694076074b08516266c596507e95712b2427",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH07_result.json",
+          "sha256": "eccf9d66c8f8b262c42dadf7df779eb3a7ae56c687e6ae3ebb526717a003a4f6",
+          "received_at": "2026-10-12T12:15:06.470016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-RadialLJForceLiteral": {
       "lean_decl": "MD.Ch01.radial_lj_force_literal",
@@ -1326,7 +1699,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": true,
@@ -1341,7 +1714,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "2ba089514613094c530f1baf44a9df9f2b048212d0ae1f0c1a6ec71ecd33934b",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH07_result.json",
+          "sha256": "eccf9d66c8f8b262c42dadf7df779eb3a7ae56c687e6ae3ebb526717a003a4f6",
+          "received_at": "2026-10-12T12:15:06.470016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-LJCoordinateScaling": {
       "lean_decl": "MD.Ch01.lj_coordinate_scaling",
@@ -1374,7 +1760,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1385,7 +1771,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d073c5f6bc3743abc42e40d868513e00f94eeb4283caacadd8fdabe5a7e4de74",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH07_result.json",
+          "sha256": "eccf9d66c8f8b262c42dadf7df779eb3a7ae56c687e6ae3ebb526717a003a4f6",
+          "received_at": "2026-10-12T12:15:06.471364",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.2-LJTimeScaling": {
       "lean_decl": "MD.Ch01.ljtimescaling",
@@ -1423,7 +1822,7 @@
       "documented_priors": [],
       "proof_attempts": 3,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1436,7 +1835,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d844f266c9dadfd3edc5fb0953420de365fb2b7bacc83eb96bb08b4ad7573d05",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH07_result.json",
+          "sha256": "eccf9d66c8f8b262c42dadf7df779eb3a7ae56c687e6ae3ebb526717a003a4f6",
+          "received_at": "2026-10-12T12:15:06.471364",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.3-Lagrangian": {
       "lean_decl": "MD.Ch01.fixedMassLagrangian",
@@ -1459,7 +1871,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "ce6d17f1da31241a86bd471c89e2f670db238659115ed1a6c8c9a6edd84e5b5f",
@@ -1470,7 +1882,20 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH08_result.json",
+          "sha256": "1493ea55958fab6059ebd09283f6ad35ae1f3b5571dc0a3391b234c20aed65e7",
+          "received_at": "2026-10-12T12:15:06.471364",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.3-GeneralizedCoordinates": {
       "lean_decl": "MD.Ch01.generalized_coordinates",
@@ -1501,7 +1926,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "bb0ed63d16db6eaed7010deaebaa91e722050a21d83ce1c1813d98b1d2e88eb2",
@@ -1512,7 +1937,20 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH08_result.json",
+          "sha256": "1493ea55958fab6059ebd09283f6ad35ae1f3b5571dc0a3391b234c20aed65e7",
+          "received_at": "2026-10-12T12:15:06.471364",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.3-GeneralizedMassRegular": {
       "lean_decl": "MD.Ch01.generalizedmassregular",
@@ -1537,7 +1975,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "2a56bbd90d4156b27564e3969bbf34ff82400c8407a6a90b47f1e8f863d19695",
@@ -1548,7 +1986,20 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH08_result.json",
+          "sha256": "1493ea55958fab6059ebd09283f6ad35ae1f3b5571dc0a3391b234c20aed65e7",
+          "received_at": "2026-10-12T12:15:06.471364",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.4-ConvexLegendre": {
       "lean_decl": "MD.Ch01.legendreTransform",
@@ -1576,7 +2027,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1590,7 +2041,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "80ba9bfdafb6ce32e8e31a4455aee8eac961de0c2ee3d59347cfe5b97d07b0f4",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH09_result.json",
+          "sha256": "91afac976ee06eb6da99c89ec5d86c1c861c7190678d838dc9ecf8ca6729562c",
+          "received_at": "2026-10-12T12:15:06.471364",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.4-HamiltonEquations": {
       "lean_decl": "MD.Ch01.hamiltonEquations",
@@ -1613,7 +2077,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1624,7 +2088,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "3358b59456367c6d5b6e6fb83ec1d77f3189382a11f99b725d6a94f23b135003",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH09_result.json",
+          "sha256": "91afac976ee06eb6da99c89ec5d86c1c861c7190678d838dc9ecf8ca6729562c",
+          "received_at": "2026-10-12T12:15:06.471364",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.4-HamiltonFixedMass": {
       "lean_decl": "MD.Ch01.hamilton_fixed_mass",
@@ -1659,7 +2136,7 @@
       ],
       "proof_attempts": 2,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1672,7 +2149,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "a450ef3c6930ce3f7c3a4574cad99ae52b07658e332a2b72f5ef49665351a703",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH09_result.json",
+          "sha256": "91afac976ee06eb6da99c89ec5d86c1c861c7190678d838dc9ecf8ca6729562c",
+          "received_at": "2026-10-12T12:15:06.471364",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.4-HamiltonLagrangeEquivalence": {
       "lean_decl": "MD.Ch01.hamiltonlagrangeequivalence",
@@ -1695,7 +2185,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "缺大型理论：配置相关矩阵逆的C2微分、一般二次型的配置/速度梯度和Euler–Lagrange全等价；固定质量偏梯度已证明但范围不足。",
       "checked": true,
       "direct_placeholder": true,
@@ -1708,7 +2198,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "d4374a73f13763ab7bc20eb390d3b4b5f69969cd233377d5b7d4fdfe3a54984a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH09_result.json",
+          "sha256": "91afac976ee06eb6da99c89ec5d86c1c861c7190678d838dc9ecf8ca6729562c",
+          "received_at": "2026-10-12T12:15:06.472803",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.4-PhaseSpace": {
       "lean_decl": "MD.Ch01.finiteEnergyPhaseDomain",
@@ -1731,7 +2234,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1745,7 +2248,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "c22f176d7814c340bf356c062250e3dbbb041be67e53f86c64e1091363abe1e2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH09_result.json",
+          "sha256": "91afac976ee06eb6da99c89ec5d86c1c861c7190678d838dc9ecf8ca6729562c",
+          "received_at": "2026-10-12T12:15:06.472803",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5-LocalExistUnique": {
       "lean_decl": "MD.Ch01.local_exist_unique",
@@ -1770,7 +2286,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1781,7 +2297,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "49acf65ae08367a0cbf6ddbe868826b11d6f6dcf201d5c94fc3e9647a7b14733",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+          "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+          "received_at": "2026-10-12T12:15:06.472803",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5-EnergySurface": {
       "lean_decl": "MD.Ch01.energySurface",
@@ -1799,7 +2328,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1810,7 +2339,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "12b75b736185d7b5a1308a7bf3e350fcbf4db3df70f54c76d883f8853a5792a1",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+          "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+          "received_at": "2026-10-12T12:15:06.472803",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5-EnergyBounds": {
       "lean_decl": "MD.Ch01.energy_bounds",
@@ -1838,7 +2380,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "缺一般SPD矩阵二次型在紧单位球上的严格正下界与coercivity桥接；旧正式对角质量证明不能直接支持一般质量矩阵。",
       "checked": true,
       "direct_placeholder": true,
@@ -1851,7 +2393,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "48f0743912bc342304d45a32c4dbed24983db86fc10dae1d9706709a7ab3bae4",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+          "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+          "received_at": "2026-10-12T12:15:06.472803",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5-UniformLevelsCompact": {
       "lean_decl": "MD.Ch01.uniform_levels_compact",
@@ -1874,7 +2429,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "依赖尚缺的一般SPD动量统一界及连续能量层闭、有界、紧组合；不假设结论或改成对角特例。",
       "checked": true,
       "direct_placeholder": true,
@@ -1887,7 +2442,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "ab85043a046750bbd284aa1a6e93956dc6551b6e73c38e954689420e224ca8fa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+          "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+          "received_at": "2026-10-12T12:15:06.473847",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5-CompactContinuation": {
       "lean_decl": "MD.Ch01.compact_continuation",
@@ -1910,7 +2478,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "缺双向紧集留域延拓与反向系统拼接；旧正式库只供未来延拓，未尝试用其冒充全时间结论。",
       "checked": true,
       "direct_placeholder": true,
@@ -1923,7 +2491,23 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "7ea8154dad2e317dbddab71b20dca89cd20f62c9fcaf8b71cdd7d6158f84cb15",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+          "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+          "received_at": "2026-10-12T12:15:06.473847",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "printed_page",
+          "pdf_page"
+        ]
+      }
     },
     "MD-1.5-Nonconfining": {
       "lean_decl": "MD.Ch01.nonconfining",
@@ -1941,7 +2525,7 @@
       "documented_priors": [],
       "proof_attempts": 1,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1954,7 +2538,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d204a699974456eb9ec95b244fee306ff7f9b405c186adcca42ad8d1e49adee9",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH10_result.json",
+          "sha256": "868311fef6921802718682be6dcce20ab0170347dde074eacbd791f7a56f2fe7",
+          "received_at": "2026-10-12T12:15:06.473847",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.1-FlowMap": {
       "lean_decl": "MD.Ch01.flowMap",
@@ -1977,7 +2574,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -1988,7 +2585,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "edddadfd1b5441375cba553b5e182764b0096cb2cccc4a7641119b17cd1ec5fa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+          "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+          "received_at": "2026-10-12T12:15:06.473847",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.1-FlowEnergy": {
       "lean_decl": "MD.Ch01.flow_energy",
@@ -2023,7 +2633,7 @@
       ],
       "proof_attempts": 3,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2036,7 +2646,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "4262397bd20d756f26764f5318bd4df4ba0297b1cfe3a689c4048b24e13e43b5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+          "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+          "received_at": "2026-10-12T12:15:06.473847",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.1-HarmonicPhaseFlow": {
       "lean_decl": "MD.Ch01.harmonicPhaseFlow",
@@ -2059,7 +2682,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2070,7 +2693,22 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "776b426f44b6b4ad600a18fcb478090b26fd7b90e0d4f7baa3e28d944814e25c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+          "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+          "received_at": "2026-10-12T12:15:06.473847",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.1-SpectralSolution": {
       "lean_decl": "MD.Ch01.spectralsolution",
@@ -2100,7 +2738,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2111,7 +2749,22 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "ff84311253515b59f80c74ba0da7985d0d325a4d36809c93b7f5f6d68f286578",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+          "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+          "received_at": "2026-10-12T12:15:06.474860",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.1-BasisCoefficients": {
       "lean_decl": "MD.Ch01.basis_coefficients",
@@ -2141,7 +2794,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2152,7 +2805,22 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "80ffe19bcdde4581a1c74c0508767eef524420ae1ac489745b42fb893b31e5b9",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+          "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+          "received_at": "2026-10-12T12:15:06.474860",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.1-MatrixExponentialSolution": {
       "lean_decl": "MD.Ch01.matrixexponentialsolution",
@@ -2177,7 +2845,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2188,7 +2856,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "c9a3b1f43c8f58ecc707375bb9b1e81aa72e5d4c07632ddb9683a8206c968d57",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+          "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+          "received_at": "2026-10-12T12:15:06.474860",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.1-MatrixExpSeries": {
       "lean_decl": "MD.Ch01.matrix_exp_series",
@@ -2213,7 +2894,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2224,7 +2905,22 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "fb900b26924a18d46060d5875605027bc4a3322b0dc9f23a75c30ec87e57fb4c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+          "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+          "received_at": "2026-10-12T12:15:06.474860",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.2-FirstIntegral": {
       "lean_decl": "MD.Ch01.smoothFirstIntegral",
@@ -2242,7 +2938,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2253,7 +2949,22 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "10db090c14a36cee754816add2c96465c4fb221685c489d463298e1bdbff5929",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+          "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+          "received_at": "2026-10-12T12:15:06.474860",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.2-FirstIntegralCriterion": {
       "lean_decl": "MD.Ch01.firstintegralcriterion",
@@ -2278,7 +2989,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2289,7 +3000,24 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "d87fec693d9510335030c79e0c82208a53049a95c987ecb781c5f5310bbc4b9c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+          "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+          "received_at": "2026-10-12T12:15:06.475878",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex",
+          "proof_latex",
+          "proof_note"
+        ]
+      }
     },
     "MD-1.5.2-PlanarGraphReduction": {
       "lean_decl": "MD.Ch01.planargraphreduction",
@@ -2319,7 +3047,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2330,7 +3058,22 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "0edd0b6555c6f14aa6b2d10577b1ac64d85a30d161d09d650f2a6bf7f7cbeac5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+          "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+          "received_at": "2026-10-12T12:15:06.475878",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.2-PlanarQuadrature": {
       "lean_decl": "MD.Ch01.planarquadrature",
@@ -2355,7 +3098,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2366,7 +3109,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "7584b8d18fcd6dbfd6ba769c57e289669bb218ca0f3b71e8a1089392041a83f2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+          "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+          "received_at": "2026-10-12T12:15:06.475878",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-ScalarFirstIntegral": {
       "lean_decl": "MD.Ch01.scalar_first_integral_and_quadrature",
@@ -2402,7 +3158,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2413,7 +3169,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "63b284f743535a2234c249a20fdbd7f70717696366f587013b79502b212fbe0f",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+          "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+          "received_at": "2026-10-12T12:15:06.475878",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.1-RealSpectralSolution": {
       "lean_decl": "MD.Ch01.realspectralsolution",
@@ -2433,7 +3202,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2444,7 +3213,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "00c678b364325008ccae73fb2a1c722cd649c6a1129e6166ae3b413936465eff",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH11_result.json",
+          "sha256": "75aaf2b98de203b2cb518c2ea3b3a73f7688af1744362c3d90610c5e8d899959",
+          "received_at": "2026-10-12T12:15:06.474860",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-KeplerEnergy": {
       "lean_decl": "MD.Ch01.planarKeplerEnergy",
@@ -2462,7 +3244,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2473,7 +3255,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "a4f616ae5b6d421f4321b2ee6d4aa3ba1ac4ea50b4926a11bb4bbc77b5405701",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+          "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+          "received_at": "2026-10-12T12:15:06.475878",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-KeplerConservedEnergy": {
       "lean_decl": "MD.Ch01.kepler_energy_angular_integrability",
@@ -2509,7 +3304,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "整句两守恒量已分别桥接；可积性完整极坐标提升和全存在区间quadrature重建尚缺大型理论，未删掉therefore integrable结论。",
       "checked": true,
       "direct_placeholder": true,
@@ -2522,7 +3317,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "3723211145a5dbab95d41c2d9ac02d2da1a214bf26040615e96c441de16f67ab",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+          "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+          "received_at": "2026-10-12T12:15:06.475878",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-KeplerAngularMomentum": {
       "lean_decl": "MD.Ch01.keplerangularmomentum",
@@ -2542,7 +3350,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2553,7 +3361,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "066fd4d97d6e409f1154855420d95458472725b59242d9711f87e0d68e972964",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH12_result.json",
+          "sha256": "e1cbe738bb5ccbce9b05de8fe0911ffc939a015feaf0371309b64a886dd878b4",
+          "received_at": "2026-10-12T12:15:06.475878",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-KeplerMomentum": {
       "lean_decl": "MD.Ch01.keplermomentum",
@@ -2576,7 +3397,7 @@
       "documented_priors": [],
       "proof_attempts": 1,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2589,7 +3410,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d43c3215bd604a58ab74a73418f766ebf14eca2c8ce9ccc5215e781907157abc",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+          "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+          "received_at": "2026-10-12T12:15:06.475878",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-PolarCoordinates": {
       "lean_decl": "MD.Ch01.polarCoordinates",
@@ -2607,7 +3441,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2618,7 +3452,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "5d713cf1e588029238a91fe47d67943454908227b194de4e9c468a66a6517201",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+          "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+          "received_at": "2026-10-12T12:15:06.476900",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-KeplerPolarLagrangian": {
       "lean_decl": "MD.Ch01.keplerpolarlagrangian",
@@ -2643,7 +3490,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2654,7 +3501,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "35cdcc81e66b0ceed46f77d1b18b19defc050655639648123c59a7cb9544afee",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+          "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+          "received_at": "2026-10-12T12:15:06.476900",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-KeplerPolarODE": {
       "lean_decl": "MD.Ch01.keplerpolarode",
@@ -2679,7 +3539,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2690,7 +3550,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "dcc18b9ce744fc7847c4eddc34d66a2114e29da6a819b472fca69aa1f7d2d99c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+          "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+          "received_at": "2026-10-12T12:15:06.476900",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-PolarAngularIdentity": {
       "lean_decl": "MD.Ch01.polarangularidentity",
@@ -2715,7 +3588,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2726,7 +3599,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "c59b3f04e695215296d3562c18d3cff1f9f0a155be77069341b5b1e9255b7d0c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+          "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+          "received_at": "2026-10-12T12:15:06.476900",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-KeplerRadialReduction": {
       "lean_decl": "MD.Ch01.keplerradialreduction",
@@ -2751,7 +3637,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2762,7 +3648,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "2f1f7de480ab7a320345d2398387ca945af24d9587452346b2335b20d67f69b5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+          "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+          "received_at": "2026-10-12T12:15:06.476900",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-KeplerRadialEnergy": {
       "lean_decl": "MD.Ch01.radialKeplerEnergy",
@@ -2785,7 +3684,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2796,7 +3695,22 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "5b2fe00e0e32e32594cd86bc65e0bb4fe295aefe49ec5d43c35a6652207b7f52",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+          "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+          "received_at": "2026-10-12T12:15:06.476900",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.2-KeplerFullSolution": {
       "lean_decl": "MD.Ch01.kepler_full_solution",
@@ -2824,7 +3738,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "缺全局Kepler极坐标提升、碰撞边界控制及跨转向点的quadrature图拼接；已有固定初值局部重建不足。",
       "checked": true,
       "direct_placeholder": true,
@@ -2837,7 +3751,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "b736f12cb9a0c91f105f04a31bb1fad390242ec28c4d296e0749dd6e2047af80",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH13_result.json",
+          "sha256": "9dd498e76cf8d590d203110f6b08623f2e9003b1f3a3450fe005fea20d6380ee",
+          "received_at": "2026-10-12T12:15:06.476900",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-ActionAngleCoordinates": {
       "lean_decl": "MD.Ch01.oscillatorActionAngle",
@@ -2860,7 +3787,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2871,7 +3798,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "a13c58d8970ebd9cacf1340729b6262f1cb76a8a1a646f64f157c96dac118be0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+          "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+          "received_at": "2026-10-12T12:15:06.476900",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-ActionEnergy": {
       "lean_decl": "MD.Ch01.actionenergy",
@@ -2896,7 +3836,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2907,7 +3847,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "488418347167cc5e893bf82d39a86bf3210b6a11326cae715b33deab431f270c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+          "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+          "received_at": "2026-10-12T12:15:06.478016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-ActionODE": {
       "lean_decl": "MD.Ch01.actionode",
@@ -2932,7 +3885,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2943,7 +3896,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "6ca2dcc15d95aaf419a6352ad4677078adc1c2565c9dcef76f08c01db6e33561",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+          "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+          "received_at": "2026-10-12T12:15:06.478016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-ActionSolution": {
       "lean_decl": "MD.Ch01.actionsolution",
@@ -2968,7 +3934,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -2979,7 +3945,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "b67a95e3dd2bd903eb6e8dfce22b7f39b01784aa4c22faa59be6e7912214ac92",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+          "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+          "received_at": "2026-10-12T12:15:06.478016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-HarmonicTorus": {
       "lean_decl": "MD.Ch01.oscillatorTorusMotion",
@@ -2997,7 +3976,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3008,7 +3987,22 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "b0f61f4316e8686907db43bccab9f55c4b6db91541663ddc402a185e02c74b39",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+          "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+          "received_at": "2026-10-12T12:15:06.478016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.2-TorusPeriod": {
       "lean_decl": "MD.Ch01.torusperiod",
@@ -3033,7 +4027,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3044,7 +4038,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "a25ea00a01329ea3cff5f79fb6440cf8fc0602776f273a638116d4d562ef7842",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+          "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+          "received_at": "2026-10-12T12:15:06.478016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.2-TorusDense": {
       "lean_decl": "MD.Ch01.torusdense",
@@ -3067,7 +4074,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "一般d维Kronecker稠密轨道理论；正式库仅二维无理比。",
       "checked": true,
       "direct_placeholder": true,
@@ -3082,7 +4089,22 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "27a825a57883a095395c7b934ed6f4141224599f072b92897a92ed4619ab4749",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+          "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+          "received_at": "2026-10-12T12:15:06.478016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.2-LocalActionAngleReduction": {
       "lean_decl": "MD.Ch01.local_action_angle_reduction",
@@ -3105,7 +4127,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "一般Liouville–Arnold/Carathéodory–Jacobi–Lie理论；全局环面子句需另行裁定补齐。",
       "checked": true,
       "direct_placeholder": true,
@@ -3120,7 +4142,22 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "292f63a4a0d94ea8b112efca38fc15956e0509df47d115823a074a83e0ae1da0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH14_result.json",
+          "sha256": "2ec0cf72d88dfeb71784506554dcd16ac3f6c04ea6df2c75a7a34e86cce3a542",
+          "received_at": "2026-10-12T12:15:06.478016",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.3-Equilibrium": {
       "lean_decl": "MD.Ch01.equilibriumDefinition",
@@ -3138,7 +4175,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3149,7 +4186,22 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "141a89e2511dc27eace19b732a1d39e8ea93bbd19ec1282c63915e2f75a01fef",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+          "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+          "received_at": "2026-10-12T12:15:06.479015",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.3-ConstantEquilibrium": {
       "lean_decl": "MD.Ch01.constantequilibrium",
@@ -3169,7 +4221,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3180,7 +4232,22 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "8210a7182751f099cf927b6e6000849d35cfe5692d0ed248167b56d276fcf730",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+          "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+          "received_at": "2026-10-12T12:15:06.479015",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.3-EquilibriumLinearization": {
       "lean_decl": "MD.Ch01.equilibriumlinearization",
@@ -3205,7 +4272,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3216,7 +4283,22 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "9e395ce3adf80218f8f296b3c61191d5be6a93d353cd69a4a5d87b9c3a5a8ba1",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+          "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+          "received_at": "2026-10-12T12:15:06.479015",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.3-Hyperbolic": {
       "lean_decl": "MD.Ch01.hyperbolic",
@@ -3234,7 +4316,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3245,7 +4327,23 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "2b31f8c5bbdaf84838f4b989287b6bf3a2bd10ebab44f610d279990588e5e960",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+          "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+          "received_at": "2026-10-12T12:15:06.479015",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "printed_page",
+          "pdf_page"
+        ]
+      }
     },
     "MD-1.5.3-HartmanGrobmanLiteral": {
       "lean_decl": "MD.Ch01.hartmangrobmanliteral",
@@ -3273,7 +4371,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "一般Hartman–Grobman理论；光滑共轭字面断言需导师勘误。",
       "checked": true,
       "direct_placeholder": true,
@@ -3288,7 +4386,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "7cf7fcae847fc852f5d8a3ca5873ef9e6b6bbd4ccb9d7bf312aaf7dce7d48336",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+          "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+          "received_at": "2026-10-12T12:15:06.479015",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.3-LyapunovStability": {
       "lean_decl": "MD.Ch01.lyapunovStable",
@@ -3316,7 +4427,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3327,7 +4438,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "bdda3cb8c61ab23e0a00944c089fe5be2be10adcb3a3a25ff7e0bf3172dc725a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+          "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+          "received_at": "2026-10-12T12:15:06.479015",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.3-HyperbolicStabilityTransfer": {
       "lean_decl": "MD.Ch01.hyperbolicstabilitytransfer",
@@ -3350,7 +4474,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "缺一般Hartman–Grobman局部拓扑共轭和稳定/不稳定转移；不调用仍含sorry的smooth字面条目。",
       "checked": true,
       "direct_placeholder": true,
@@ -3363,7 +4487,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "06ab4a57f9709625a41dab12ca4132adf2070af3b10c4d1616f369179fe4cebe",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+          "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+          "received_at": "2026-10-12T12:15:06.479015",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.3-HamiltonEquilibrium": {
       "lean_decl": "MD.Ch01.hamilton_equilibrium",
@@ -3391,7 +4528,7 @@
       "documented_priors": [],
       "proof_attempts": 1,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3404,7 +4541,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "9133a27389b16c1e021593df7203554ce713574c87b018f57275959139c69585",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH15_result.json",
+          "sha256": "1e37f6ad2e59fac9ef1ba54c8902f529e261d1da892652ea6df886612b47c5a5",
+          "received_at": "2026-10-12T12:15:06.480332",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.3-StrongLocalMinimum": {
       "lean_decl": "MD.Ch01.strongLocalMinimum",
@@ -3427,7 +4577,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3438,7 +4588,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "a7cbfba9e102dfb0c19186aedd6ea2f4a56d98b0af23d5ff94cf978c1462f626",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH16_result.json",
+          "sha256": "bebd0b718f4a63e47305df6aa0a0b9ba8d826ec0d7556df7da0693b818ac2a43",
+          "received_at": "2026-10-12T12:15:06.480332",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.3-LinearizedHamiltonian": {
       "lean_decl": "MD.Ch01.linearizedHamiltonian",
@@ -3461,7 +4624,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3472,7 +4635,22 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "8e7dabd7162e165c02e06ca37d62f6389e0994d7fc2e39cc13f5320b42ed0d62",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH16_result.json",
+          "sha256": "bebd0b718f4a63e47305df6aa0a0b9ba8d826ec0d7556df7da0693b818ac2a43",
+          "received_at": "2026-10-12T12:15:06.480332",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.5.3-PositiveHessianQuadratic": {
       "lean_decl": "MD.Ch01.positivehessianquadratic",
@@ -3495,7 +4673,7 @@
       "documented_priors": [],
       "proof_attempts": 3,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -3508,7 +4686,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "8889033bfeeb03c2a087cd0924e4ce598e79cbb1fba715090ed84a22c1182857",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH16_result.json",
+          "sha256": "bebd0b718f4a63e47305df6aa0a0b9ba8d826ec0d7556df7da0693b818ac2a43",
+          "received_at": "2026-10-12T12:15:06.480332",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.5.3-PositiveHessianMinimum": {
       "lean_decl": "MD.Ch01.positive_hessian_minimum",
@@ -3541,7 +4732,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "缺实对称Hessian谱正定转换和C2二阶Taylor严格局部极小判别；已证明的纯二次型极小不等于非线性势结论。",
       "checked": true,
       "direct_placeholder": true,
@@ -3554,7 +4745,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "9595dc9ac6090cbcd9df50e0c03b268fbe43d76f5684d786f0d93eef593200be",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH16_result.json",
+          "sha256": "bebd0b718f4a63e47305df6aa0a0b9ba8d826ec0d7556df7da0693b818ac2a43",
+          "received_at": "2026-10-12T12:15:06.480332",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-UniformPairLattice": {
       "lean_decl": "MD.Ch01.latticePairPotential",
@@ -3577,7 +4781,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "ae335e0a22b2ae9f67606b88170b09a0fb08e6f370b60f738e806e087bcc5fdb",
@@ -3588,7 +4792,20 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+          "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+          "received_at": "2026-10-12T12:15:06.480332",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-UnorderedPairCount": {
       "lean_decl": "MD.Ch01.unorderedpaircount",
@@ -3606,7 +4823,7 @@
       "documented_priors": [],
       "proof_attempts": 2,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "5d6f86a7e51bdfb3056ed8ae47c2985be3249f8a229c56bd8ddaedd61e199be7",
@@ -3619,7 +4836,20 @@
       "final_status": "self-contained",
       "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
       "proof_failures": 1,
-      "attempt_evidence": "blueprint/ch01/proof_attempts.json"
+      "attempt_evidence": "blueprint/ch01/proof_attempts.json",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+          "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+          "received_at": "2026-10-12T12:15:06.480332",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-NearestNeighbor": {
       "lean_decl": "MD.Ch01.nearestNeighborModel",
@@ -3642,7 +4872,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "c9f9dabf3d9ad9e94ab3219c95f25b7ba08b83c89a0e700797229382f5292c5c",
@@ -3653,7 +4883,20 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+          "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+          "received_at": "2026-10-12T12:15:06.480332",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-WalledChain": {
       "lean_decl": "MD.Ch01.walledChainModel",
@@ -3676,7 +4919,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "6aa702191c74f535264b934fcadfa137368b23646f8f55c39ddda748cb5c38ec",
@@ -3687,7 +4930,22 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+          "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+          "received_at": "2026-10-12T12:15:06.480332",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.6-PeriodicChain": {
       "lean_decl": "MD.Ch01.periodicChainModel",
@@ -3710,7 +4968,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "5d20e7645218c8dacee1094cef2db10fc2cca6ffe99113eaec2a6837c893522b",
@@ -3721,7 +4979,20 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+          "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+          "received_at": "2026-10-12T12:15:06.481718",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-PeriodicBoundary": {
       "lean_decl": "MD.Ch01.periodicBoundary",
@@ -3739,7 +5010,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "2fd68f7d5f14e976fd6bd0b8f4edee8dbe7b3486388dadc2e11d3f1b8e91bce9",
@@ -3750,7 +5021,20 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+          "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+          "received_at": "2026-10-12T12:15:06.481718",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-PeriodicTranslationMomentum": {
       "lean_decl": "MD.Ch01.periodic_translation_momentum",
@@ -3783,7 +5067,7 @@
       "documented_priors": [],
       "proof_attempts": 3,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "三次失败已止：Pi空间拓扑与实际HasDerivAt链式法则实例不能统一；平移不变已有正式证明，完整方向导数及动量桥接未通过。",
       "checked": true,
       "signature_sha256": "d5ab02ba52ab0637f83ae1c9d626b6dea6cde704c7ff34ffdd7dc7e73e6b3ca7",
@@ -3798,7 +5082,20 @@
       "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
       "proof_stop_reason": "three_failed_attempts",
       "proof_failures": 3,
-      "attempt_evidence": "blueprint/ch01/proof_attempts.json"
+      "attempt_evidence": "blueprint/ch01/proof_attempts.json",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+          "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+          "received_at": "2026-10-12T12:15:06.481718",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-RegularLattice": {
       "lean_decl": "MD.Ch01.regularLattice",
@@ -3816,7 +5113,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "5c57ad73285c41ec056d8fdeba5d06b241bb8090f1b202bac1fc2af9c2250632",
@@ -3827,7 +5124,20 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH17_result.json",
+          "sha256": "edf326ee27442766d5026ecd10e81386f47b948134dde2baab362688d4d656b9",
+          "received_at": "2026-10-12T12:15:06.481718",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-RegularLatticeMinimizerLiteral": {
       "lean_decl": "MD.Ch01.regularlatticeminimizerliteral",
@@ -3845,7 +5155,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "原文需限定势和配置域；不可证明字面假命题。",
       "checked": true,
       "signature_sha256": "8fdbdc2a4957dad46d9a05f062fed7fb6361468a585fe4e5f82077cb55832254",
@@ -3860,7 +5170,20 @@
       "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
       "source_questions": [
         "对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。"
-      ]
+      ],
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+          "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+          "received_at": "2026-10-12T12:15:06.481718",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-PeriodicImages": {
       "lean_decl": "MD.Ch01.periodicImageEnergy",
@@ -3883,7 +5206,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "d11ddd7273009acde9e63933f2d89f102183fc42e5012ee63a3ee9455b446d1f",
@@ -3894,7 +5217,23 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+          "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+          "received_at": "2026-10-12T12:15:06.481718",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex",
+          "context_notation"
+        ]
+      }
     },
     "MD-1.6-MinimumImage": {
       "lean_decl": "MD.Ch01.minimumImage",
@@ -3912,7 +5251,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "0d4c0dbca82f99ca89d3aceb7b4915dae48547cc5d1e058ab9e4c200a8737f1f",
@@ -3923,7 +5262,20 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+          "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+          "received_at": "2026-10-12T12:15:06.482739",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-RhombicLattice": {
       "lean_decl": "MD.Ch01.rhombicLattice",
@@ -3941,7 +5293,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "fc67364985cec87986905ec2031bb5b4a475a1e2b1d178a1ffbf45c9d75d27f7",
@@ -3952,7 +5304,22 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+          "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+          "received_at": "2026-10-12T12:15:06.482739",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.6-HexagonalLattice": {
       "lean_decl": "MD.Ch01.hexagonal_lattice_two_bases",
@@ -3970,7 +5337,7 @@
       "documented_priors": [],
       "proof_attempts": 3,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "a5364b427f844c956623d44050946c40918c4ab5e5f17dd3ee164d7bdbe8a316",
@@ -3983,7 +5350,23 @@
       "final_status": "self-contained",
       "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
       "proof_failures": 2,
-      "attempt_evidence": "blueprint/ch01/proof_attempts.json"
+      "attempt_evidence": "blueprint/ch01/proof_attempts.json",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+          "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+          "received_at": "2026-10-12T12:15:06.482739",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex",
+          "context_notation"
+        ]
+      }
     },
     "MD-1.6-UnitCell": {
       "lean_decl": "MD.Ch01.unitCellLattice",
@@ -4001,7 +5384,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "b1f1abd72173af6d190a93a70e797d9809259371e7b8c688315e0389a42dd341",
@@ -4012,7 +5395,20 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+          "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+          "received_at": "2026-10-12T12:15:06.482739",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-FCCStacking": {
       "lean_decl": "MD.Ch01.fccStacking",
@@ -4035,7 +5431,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "fa9be10cf431caafd34a4ec44e2fb67dd7a89d650174ed3a861caf17a6843825",
@@ -4046,7 +5442,20 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+          "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+          "received_at": "2026-10-12T12:15:06.482739",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6-HCPStacking": {
       "lean_decl": "MD.Ch01.hcpStacking",
@@ -4069,7 +5478,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "0d005924214051cf078e70c98cf6e02c30873194b02d86d30c076ba7c3d70903",
@@ -4080,7 +5489,20 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH18_result.json",
+          "sha256": "f2d74fdd4fd4f3dc217b593284576398966216a17b7f3876c073d71e83050f3e",
+          "received_at": "2026-10-12T12:15:06.482739",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6.1-MinimumGradientZero": {
       "lean_decl": "MD.Ch01.minimumgradientzero",
@@ -4110,7 +5532,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "c088338166995b06263d18fa56b99498e42d9707f380a2d80fa54f799c888096",
@@ -4124,7 +5546,20 @@
       "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
       "source_questions": [
         "不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。"
-      ]
+      ],
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+          "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+          "received_at": "2026-10-12T12:15:06.482739",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6.1-ForceLinearization": {
       "lean_decl": "MD.Ch01.force_linearization",
@@ -4164,7 +5599,7 @@
       ],
       "proof_attempts": 3,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "beea36b5e2e1b8731777f2bd6d6dd4a029fe7242b579a955db637315b0979ab7",
@@ -4177,7 +5612,20 @@
       "final_status": "checked+documented priors",
       "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
       "proof_failures": 2,
-      "attempt_evidence": "blueprint/ch01/proof_attempts.json"
+      "attempt_evidence": "blueprint/ch01/proof_attempts.json",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+          "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+          "received_at": "2026-10-12T12:15:06.483800",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6.1-MinimumHessianLiteral": {
       "lean_decl": "MD.Ch01.minimumhessianliteral",
@@ -4195,7 +5643,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "字面假命题，不证明；正定需非退化额外假设，不能静默补。",
       "checked": true,
       "signature_sha256": "dcaac8ffe7ea38166591d02b0298d672e8f00b53b94c49589f7b902e828a3252",
@@ -4210,7 +5658,20 @@
       "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
       "source_questions": [
         "局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。"
-      ]
+      ],
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+          "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+          "received_at": "2026-10-12T12:15:06.483800",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6.1-ImaginarySpectrum": {
       "lean_decl": "MD.Ch01.imaginary_spectrum",
@@ -4243,7 +5704,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "缺一般SPD M,K的Hamilton块谱相似变换及共轭特征对、非零频率理论；实部零、平方正和±配对须同时证明。",
       "checked": true,
       "signature_sha256": "81330665ea9d2c1e74c0a3414872053dd8999b596bb79453db2c3ca82e0b06a3",
@@ -4256,7 +5717,22 @@
       ],
       "final_status": "incomplete",
       "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
-      "proof_stop_reason": "missing_large_theory"
+      "proof_stop_reason": "missing_large_theory",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+          "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+          "received_at": "2026-10-12T12:15:06.483800",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.6.1-ComplexNormalMode": {
       "lean_decl": "MD.Ch01.complexnormalmode",
@@ -4279,7 +5755,7 @@
       "documented_priors": [],
       "proof_attempts": 3,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "三次失败已止：Pi复空间的连续线性作用与实时间导数/复标量作用接口不统一；数学共轭模式论证与现有实模式证明不能冒充此签名。",
       "checked": true,
       "signature_sha256": "f78173634b1da94b8fecc486c3945af183f2b47e266a2a3d92fac187f45918e9",
@@ -4294,7 +5770,20 @@
       "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
       "proof_stop_reason": "three_failed_attempts",
       "proof_failures": 3,
-      "attempt_evidence": "blueprint/ch01/proof_attempts.json"
+      "attempt_evidence": "blueprint/ch01/proof_attempts.json",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+          "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+          "received_at": "2026-10-12T12:15:06.483800",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.6.1-RealNormalMode": {
       "lean_decl": "MD.Ch01.realnormalmode",
@@ -4319,7 +5808,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "signature_sha256": "cfd9081469533a64abc73b90f6f6a18137e97f99f9fbd0c2856027c27d68a5cc",
@@ -4330,7 +5819,20 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH19_result.json",
+          "sha256": "e91c667770f3b87e465799f0fd706d7717144e2e70d27b5c12d69f25bbb16385",
+          "received_at": "2026-10-12T12:15:06.483800",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-PlanarTrimerModel": {
       "lean_decl": "MD.Ch01.planarTrimerEnergy",
@@ -4353,7 +5855,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4364,7 +5866,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "a1424278c96f14209f949c9bf5283c0ce106c0cd09fe1c9ab59f1c9e9b89d439",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+          "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+          "received_at": "2026-10-12T12:15:06.483800",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-CentralPairPotential": {
       "lean_decl": "MD.Ch01.centralPairEnergy",
@@ -4387,7 +5902,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4398,7 +5913,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "8ecfcc8e514861a9e595ae42f204cd13b14a1e7df4b05df03b2998cf715897fa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+          "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+          "received_at": "2026-10-12T12:15:06.483800",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-CentralPairGradient": {
       "lean_decl": "MD.Ch01.centralpairgradient",
@@ -4426,7 +5954,7 @@
       "documented_priors": [],
       "proof_attempts": 2,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4439,7 +5967,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "e5f770dd43cbf8f1709b38d8969502f418537db8e874202ba2538e28428da17d",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+          "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+          "received_at": "2026-10-12T12:15:06.484904",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-CentralMomentum": {
       "lean_decl": "MD.Ch01.central_momentum",
@@ -4469,7 +6010,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4480,7 +6021,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "7eb95c56098bf26ccf9d8c283c92358e91005f987895f2c2f4e2563aaa82a0e8",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+          "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+          "received_at": "2026-10-12T12:15:06.484904",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-CentralAngularMomentum": {
       "lean_decl": "MD.Ch01.centralangularmomentum",
@@ -4518,7 +6072,7 @@
       "documented_priors": [],
       "proof_attempts": 1,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4531,7 +6085,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "30852325e4b4740d5979546aae4fd76e2f91c34a107f70325e9b13c2c4301e45",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+          "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+          "received_at": "2026-10-12T12:15:06.484904",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-CenterOfMassMotion": {
       "lean_decl": "MD.Ch01.centerofmassmotion",
@@ -4554,7 +6121,7 @@
       "documented_priors": [],
       "proof_attempts": 2,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4567,7 +6134,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "912a483400c1d20ff375306a83ed30c736f6ab128e28c6d83b1bea011f25f3fc",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+          "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+          "received_at": "2026-10-12T12:15:06.484904",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-ConstantRotationLiteral": {
       "lean_decl": "MD.Ch01.constantrotationliteral",
@@ -4585,7 +6165,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "字面推论假，需导师裁定为定性旋转描述或修正为角动量守恒。",
       "checked": true,
       "direct_placeholder": true,
@@ -4600,7 +6180,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "4978f2b0879e4ff879a8feae7732fa39580efd2c1844ff9980b7fe17908e5ac8",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "FAIL",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+          "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+          "received_at": "2026-10-12T12:15:06.484904",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-IsoscelesCoordinates": {
       "lean_decl": "MD.Ch01.isoscelesCoordinates",
@@ -4623,7 +6216,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4637,7 +6230,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "014f8a0c9bd208733d5e2eb8b1108250f274b4d8729f5a29be923ebae5646fa2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH20_result.json",
+          "sha256": "2207d43bceeafd948f9e7137104011ca12e531636880fde9a96a4dfacee170e4",
+          "received_at": "2026-10-12T12:15:06.484904",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-IsoscelesEnergyReduction": {
       "lean_decl": "MD.Ch01.isosceles_energy_reduction",
@@ -4665,7 +6271,7 @@
       "documented_priors": [],
       "proof_attempts": 2,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4678,7 +6284,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "417859f5938271eae37f67a791d4938799f2be3a2bef0047963ae7e7238abae3",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+          "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+          "received_at": "2026-10-12T12:15:06.484904",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-IsoscelesAccessibleRegion": {
       "lean_decl": "MD.Ch01.isoscelesaccessibleregion",
@@ -4703,7 +6322,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4714,7 +6333,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "ae398a605be574261cb71d961c6dd1721d44bd6ffd76f1acf301d858cf842948",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+          "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+          "received_at": "2026-10-12T12:15:06.484904",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-EquilateralTrimerMinimum": {
       "lean_decl": "MD.Ch01.equilateraltrimerminimum",
@@ -4752,7 +6384,7 @@
       "documented_priors": [],
       "proof_attempts": 3,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "三次失败已止：LJ单距离唯一极小值、rpow根及三边势和计算已在尝试中补出；最后有限指标反向距离等式归一化未闭合，完整定理保持占位。",
       "checked": true,
       "direct_placeholder": true,
@@ -4767,7 +6399,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "fb69960d5eb865aec275bc6f869a1a1c0721bc91fba26125fa34e680ef6249da",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+          "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+          "received_at": "2026-10-12T12:15:06.484904",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-TrimerEnergyLowerBound": {
       "lean_decl": "MD.Ch01.trimerenergylowerbound",
@@ -4787,7 +6432,7 @@
       ],
       "proof_attempts": 0,
       "proof_status": "existing_bridge",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4798,7 +6443,20 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "6d6a854ca3b5cf682a82aa55fb199c08d8a2e13aa6953266b5235af1f7ae31e0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+          "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+          "received_at": "2026-10-12T12:15:06.484904",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-CollinearTrimer": {
       "lean_decl": "MD.Ch01.collinearTrimer",
@@ -4816,7 +6474,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4827,7 +6485,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "944dc17d687e3b2f437d424f20cac055feadf45c35170ac00b283c91a2c1d8d8",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+          "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+          "received_at": "2026-10-12T12:15:06.486311",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7-TrimerSaddle": {
       "lean_decl": "MD.Ch01.trimersaddle",
@@ -4850,7 +6521,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "缺共线LJ驻点全局唯一根及二维严格鞍点的两方向二阶导数符号/局部比较；不只证明一维极小就宣称鞍点。",
       "checked": true,
       "direct_placeholder": true,
@@ -4863,7 +6534,22 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "b74f65429906510e4dd2e07a48842d3e0df115c79f15c13a45c2fbc75595a88c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+          "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+          "received_at": "2026-10-12T12:15:06.486311",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.7-TrimerEscapeLiteral": {
       "lean_decl": "MD.Ch01.trimerescapeliteral",
@@ -4881,7 +6567,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "全局三体散射/逃逸理论；字面every body与至少一对分离的差距不能冒充完整证明。",
       "checked": true,
       "direct_placeholder": true,
@@ -4896,7 +6582,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "ea9645ff0cda2db0c6439cbbe76937f88ad178b6da4600adca70cd6692ce3719",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH21_result.json",
+          "sha256": "5da1203db770ec3fc9b536c2462b391aac2d21b59b8b840bd7d1aa8e5b10c677",
+          "received_at": "2026-10-12T12:15:06.486311",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7.1-ChaosConditions": {
       "lean_decl": "MD.Ch01.chaosConditions",
@@ -4924,7 +6623,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -4935,7 +6634,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "34e9d710995eac86f326c4d564caa834eb61ae3f1b8aded8bf789c8e3db8a820",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH22_result.json",
+          "sha256": "a08d0fc7f4f4453c0d11e2fa63d54b879a6458bec02f8fac84ce7362a3e3b482",
+          "received_at": "2026-10-12T12:15:06.486311",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7.1-TransitivityErgodicityLiteral": {
       "lean_decl": "MD.Ch01.transitivityergodicityliteral",
@@ -4958,7 +6670,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "字面等价不成立；不通过新增结论前提修补。",
       "checked": true,
       "direct_placeholder": true,
@@ -4973,7 +6685,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "531503278d13a5715e5ae9d10a833daa55906758606f68df0eb6c9685e39d332",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH22_result.json",
+          "sha256": "a08d0fc7f4f4453c0d11e2fa63d54b879a6458bec02f8fac84ce7362a3e3b482",
+          "received_at": "2026-10-12T12:15:06.486311",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7.1-AnisotropicOscillator": {
       "lean_decl": "MD.Ch01.anisotropicEnergy",
@@ -5001,7 +6726,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -5012,7 +6737,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "438069aac96d69c718610e36a9e82f0b54dc5a64c7fa3bca6a68e8e6384cfee5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH22_result.json",
+          "sha256": "a08d0fc7f4f4453c0d11e2fa63d54b879a6458bec02f8fac84ce7362a3e3b482",
+          "received_at": "2026-10-12T12:15:06.486311",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7.2-FlowJacobianLiteral": {
       "lean_decl": "MD.Ch01.variationalMatrixLiteral",
@@ -5040,7 +6778,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -5054,7 +6792,23 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "35ee9ba26a07fe69ec85e6030a2eceb5f66be3543165f3ab65d57e3be9bb1152",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+          "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+          "received_at": "2026-10-12T12:15:06.487428",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex",
+          "context_notation"
+        ]
+      }
     },
     "MD-1.7.2-VariationalEquationLiteral": {
       "lean_decl": "MD.Ch01.variationalequationliteral",
@@ -5077,7 +6831,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "需导师确认取值点勘误；修正后一般非线性参数导数交换亦需理论，常系数已有证明不足。",
       "checked": true,
       "direct_placeholder": true,
@@ -5092,7 +6846,22 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "95313b0a359c9f17a6463aa3ab039a28f0e1c299aba348caf32d9102c0e18020",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+          "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+          "received_at": "2026-10-12T12:15:06.487428",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.7.2-NearbyTrajectoryLiteral": {
       "lean_decl": "MD.Ch01.nearby_trajectory_literal",
@@ -5120,7 +6889,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "等待导师判断W取值点勘误，修正版由可微定义直接推出。",
       "checked": true,
       "direct_placeholder": true,
@@ -5135,7 +6904,22 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "d1f80a5cd42bd35d4c33c163c9ec111b7a1309fc538e23d7ff33c942f0edf950",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "NEEDS_HUMAN",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+          "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+          "received_at": "2026-10-12T12:15:06.487428",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": [
+          "statement_latex"
+        ]
+      }
     },
     "MD-1.7.2-SingularValues": {
       "lean_decl": "MD.Ch01.singularValues",
@@ -5158,7 +6942,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -5169,7 +6953,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "461b57878face0a9b20cd3d8760a51f56fd8ef6a228c62f09bddfdae02f5f5ea",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+          "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+          "received_at": "2026-10-12T12:15:06.487428",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7.2-SingularEllipsoid": {
       "lean_decl": "MD.Ch01.singularellipsoid",
@@ -5192,7 +6989,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "placeholder",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": "缺一般实矩阵SVD、正交坐标变换与逆矩阵球面像的完整几何证明；奇异值定义本身不是椭球结论证明。",
       "checked": true,
       "direct_placeholder": true,
@@ -5205,7 +7002,20 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "84b2bbd8bf39ec1a24583dae4f84a7e04498c505f4b01d1546f402b738186e59",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+          "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+          "received_at": "2026-10-12T12:15:06.487428",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7.2-LyapunovExponents": {
       "lean_decl": "MD.Ch01.lyapunovExponent",
@@ -5238,7 +7048,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -5249,7 +7059,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "86eed3b7aaf421fd3a4bf022cb5f0ae6b6ab3ebe0b7d63b2585ffdd45e150c2e",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+          "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+          "received_at": "2026-10-12T12:15:06.487428",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     },
     "MD-1.7.2-PositiveLyapunovGrowth": {
       "lean_decl": "MD.Ch01.positivelyapunovgrowth",
@@ -5277,7 +7100,7 @@
       "documented_priors": [],
       "proof_attempts": 2,
       "proof_status": "local_proof",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -5290,7 +7113,20 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "46bb7832d6e5c152a0f779d8d437c44499c4ac9306c1275066ff764e0cd0a725",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT01-default\\blueprint_axiom_dependencies.log",
+      "external_review": {
+        "reported_verdict": "PASS",
+        "binding": "UNVERIFIED",
+        "receipt": {
+          "path": "blueprint/ch01/mathcopilot_results/BATCH23_result.json",
+          "sha256": "43b775c2b3f8f419f38eac2682213bad4c5361f3a633ea04dd547903e9ae6c2c",
+          "received_at": "2026-10-12T12:15:06.487428",
+          "input_version_status": "UNVERIFIED: no manifest hash or website job was supplied",
+          "current_source_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "current_lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "proposed_fields": []
+      }
     }
   }
 }

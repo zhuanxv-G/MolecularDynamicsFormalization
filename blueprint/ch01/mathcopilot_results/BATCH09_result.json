@@ -1,0 +1,124 @@
+[
+  {
+    "source_id": "MD-1.4-ConvexLegendre",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "ISSUE",
+          "detail": "PDF47／印刷p.24原文确实将任意凸函数的Legendre变换写成实值函数；凸性不能保证该上确界有限。这是原书的值域问题，转录保持原文，不改成扩展实值。APPROVED仅表示原文转录通过。"
+        }
+      ],
+      "evidence": [
+        "已直接查看教材PDF第47页原页：从“Abstractly, a Legendre transformation”至“defined by”的文字、两处R^m→R及展示公式与statement_latex一致。",
+        "原页公式为g̃(η)=sup_ξ(ηᵀξ−g(ξ))；下文明确说明上确界对向量ξ的变化取遍。",
+        "印刷页码24、PDF页码47正确；此处是定义，没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.legendreTransform",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已展开Ch01.lean:679–680：对Position n中的全部θ，将实数inner ℝ η θ−g θ嵌入EReal后取上确界。现有Notation.lean将Position n定义为EuclideanSpace ℝ (Fin n)，故对象和内积对应原文R^m及ηᵀξ，求上确界的变量正确。但是结果类型为EReal，改变了原文明确写出的实值值域；[EXTRA]对此公开说明，属于原书问题的修复方案，不能当作已经获准的忠实实值译本。定义也未要求g凸；公式向非凸函数的推广本身合理，但需要明确区分原文凸函数子类与推广范围。公式核对通过，值域修复仍需人工裁定；此定义没有sorry证明问题。",
+      "counterexample": "原文实值断言的反例：n=1，g(ξ)=0，η=1。g是实值凸函数，但sup_ξ(ξ−0)=+∞。Lean定义返回⊤，正确体现无穷上确界，却不满足原文的实值值域。这不是Lean定义自身的反例。",
+      "suggested_fix": "保留原文及ISSUE，由人工明确批准EReal推广；若必须保留实值结果，则显式补充每个η对应目标函数有上界的有限性条件，并标明这是前提强化。另以凸性资格或明确范围说明限定原文所对应的函数子类，不能静默改写原书。"
+    }
+  },
+  {
+    "source_id": "MD-1.4-HamiltonEquations",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看PDF47／印刷p.24下部：“The equations of motion can be written”与statement_latex逐字一致。",
+        "原页两式分别为q̇=∂H/∂p、ṗ=−∂H/∂q；变量、偏导对象及负号均正确。",
+        "前文明确H(q,p)=pᵀM(q)⁻¹p/2+U(q)。两式没有独立完整证明，proof_latex=null正确，页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.hamiltonEquations",
+      "verdict": "FAIL",
+      "explanation": "Ch01.lean:686–688确实用两个HasDerivAt保证q、p的真实时间导数；固定q取动量梯度、固定p取位置梯度及负号均正确，向量等式覆盖全部坐标。问题在于H完全未受可微性约束。已实际读取Mathlib/Analysis/Calculus/Gradient/Basic.lean：gradient由fderiv经Riesz对应定义，不可微时取零；因此两个HasDerivAt只保证轨迹可微，不保证原文的H偏导真实存在。JSON中的“使用时另给资格”没有进入此谓词，也没有随附限定其使用范围的声明，不能使该无条件谓词等同于经典Hamilton方程。另有∀t∈ℝ的全时间范围，若用于局部解应显式提供时间域。FAIL依据定义语义，与证明是否完成无关。",
+      "counterexample": "n=1，H(q,p)=p²/2+|q|，q(t)=0、p(t)=0。动量梯度为零；位置函数在q=0不可微，但Lean的gradient在那里也为零。因此两个常值轨迹满足当前谓词，而经典∂H/∂q在轨迹上不存在。",
+      "suggested_fix": "在谓词中加入沿轨迹的两个偏函数DifferentiableAt资格，或使用HasGradientAt同时见证真实偏导与HasDerivAt时间导数。若保留当前定义作为辅助，应另给包含这些资格的经典Hamilton轨迹定义并明确对应关系。局部解版本应量化t∈I。"
+    }
+  },
+  {
+    "source_id": "MD-1.4-HamiltonFixedMass",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看PDF47／印刷p.24末段：“For constant M we obtain the dynamical equations,”与statement_latex一致。",
+        "原页完整等式为q̇=M⁻¹p、ṗ=F=−∂U/∂q；逆矩阵、力的别名及负号均保留。",
+        "已读取PDF46／印刷p.23的广义质量构造和满秩背景，并读取PDF48／印刷p.25的常正定质量背景。本条无独立完整证明，proof_latex=null及页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.hamilton_fixed_mass",
+      "verdict": "PASS",
+      "explanation": "已展开Ch01.lean:62–71中的实际定义：matrixAction A v=A作用于v；variableMassHamiltonian M U q p=⟨p,M(q)⁻¹p⟩/2+U(q)。本声明使用恒定函数M，覆盖一般常质量矩阵，没有退回对角模型。已读取PosDef定义：它包含Hermitian条件和严格正二次型，在实数上即对称正定；该[EXTRA]符合正物理质量及满秩坐标变换背景。hU确保当前位置的U真实可微。两个HasGradientAt分别见证∂H/∂p=M⁻¹p和∂H/∂q=∇U，均是真实偏导，不依赖不可微时取零。将这两项代入上一条已展开的Hamilton方程，恰得原文两条运动方程及F=−∇U；这是对Hamilton向量场的计算，不是对任意曲线或解存在性的断言。虽然时间演化的衔接没有在本签名中重复写出，所需两项场分量已全部覆盖。正文有证明且无直接sorry；本PASS仅为语义审计，不表示已编译或核验完整证明依赖。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.4-HamiltonLagrangeEquivalence",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看PDF48／印刷p.25首段：从“More generally, for molecular models”至“Chaps. 2–4.”与statement_latex逐字一致，章节范围的连接号正确。",
+        "PDF47／印刷p.24先给出配置相关质量模型的Legendre关系和Hamilton方程；PDF46／印刷p.23说明广义坐标及配置相关质量背景。",
+        "原文仅陈述可互换性及采用Hamilton形式的说明，没有独立完整证明；proof_latex=null正确。虽本页页眉为§1.5，所摘首段仍属§1.4结尾，section及页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.hamiltonlagrangeequivalence",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:723–733确有双向↔：左侧是速度偏梯度沿轨迹的时间导数等于位置偏梯度；右侧以p(s)=M(q(s))v(s)建立两条真实HasDerivAt Hamilton方程。q′=v作为共同的运动学资格合理，没有把Euler–Lagrange方程或Hamilton动量方程放进前提。配置相关一般矩阵、任意轨迹及开放时间域均被保留。但当前附件中没有找到quadraticL、quadraticH的真实定义；BATCH09列出的相关依赖文件亦未补齐，不能凭名字或用variableMassLagrangian、variableMassHamiltonian猜测它们的函数体。因此无法确认势能符号、二次型、逆矩阵及位置偏导确实对应原书。全空间C²及处处正定是明确加强的[EXTRA]，用于光滑模型合理，但会排除只在无碰撞配置域上光滑的常见分子势，需注明覆盖范围或局部化。原文后半句是形式选择及后续章节的说明，可保留为注释。正文直接为sorry；语义保留的主要原因是关键定义缺失，而非sorry本身。",
+      "counterexample": null,
+      "suggested_fix": "补齐与Ch01.lean同一版本的quadraticL、quadraticH定义、相关导入和输入MANIFEST，展开核实后再判定。若要覆盖有奇异性的分子模型，改在开放配置域Q上要求局部C²和正定，并要求轨迹留在Q；保留双向等价及真实导数，不能用未核实的同名或类似函数替代。"
+    }
+  },
+  {
+    "source_id": "MD-1.4-PhaseSpace",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "ISSUE",
+          "detail": "PDF48／印刷p.25确实写“described by coordinates and positions”。该措辞与前句positions and momenta及后文位置和动量向量的说明不协调，疑为原书笔误；输入忠实保留原词，不改成momenta。APPROVED仅表示转录通过。"
+        }
+      ],
+      "evidence": [
+        "已直接查看PDF48／印刷p.25原页：有限能量相空间定义及随后N粒子状态句与statement_latex一致，R³和R^{6N}正确。",
+        "已核对原页文字及PDF文本字体记录：“say N”原本就是正文文字；“coordinates and positions”也确为原文，并非JSON误抄。",
+        "紧接的上下文说明相点“represent the collection of all position and momenta vectors of the atoms”，支持按位置和动量解释第一句定义。",
+        "本条没有独立完整证明，proof_latex=null正确；section=1.4及印刷25／PDF48正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.finiteEnergyPhaseDomain",
+      "verdict": "PASS",
+      "explanation": "已展开Ch01.lean:739–740：相域恰为H(z)既非⊤又非⊥的状态集合，没有把全部环境空间误作有限能量域。已读取现有Notation.lean：PhaseSpace n=Position n×Momentum n，两者均为EuclideanSpace ℝ (Fin n)。所以对象是位置和动量；取n=3N时环境空间维数为6N，而有限能量相域可以是其中的真子集，符合原文。EReal中排除两个无穷端点恰好表达能量为有限实数；该[EXTRA]用于表示奇异能量，未增加限制有限状态的额外物理假设。第二句的措辞疑误已明确保留并标ISSUE；位置和动量的解释直接依据同页第一句及后续明确说明，不是静默修改原文。此为定义，PASS仅表示语义对应，不表示完成编译或证明核验。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

@@ -1,0 +1,204 @@
+[
+  {
+    "source_id": "MD-1.2-NewtonCompact",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看 PDF 第41页原页，页眉为印刷第18页，节标题为1.2 The N-Body Problem；所录英文句子与原文一致。",
+        "式(1.3)为 M d²q/dt² = F(q) = −∇U(q)，符号、负号、阶数、句点和编号一致。",
+        "同页说明三维情况下 Nc=3N，质量矩阵按每个粒子的三个坐标重复质量；本段没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.compactNewton",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:395–398的实际定义包含位置曲线及其导数的两个HasDerivAt见证，并包含质量算子作用于二阶导数等于负梯度的方程。[EXTRA]时间可微性资格合理，确实避免仅凭总化deriv等式接受不可微曲线。已读取现有Notation.lean中的Position、PotentialEnergy及NBody.lean中的CoordinateMasses，但本批massOperator定义只在未绑定本批版本的旧缓存LocalTrajectories.lean中找到，且本批MANIFEST.json缺失，不能确认实际导入算子的身份。另外，可见定义没有要求U在q(t)可微；已读取Mathlib的gradient定义及gradient_eq_zero_of_not_differentiableAt，确认不可微处总化梯度返回零。因此还存在把不存在的经典梯度当作零力的语义缺口，必须核实并处理。该条为定义，无证明义务；未进行编译。",
+      "counterexample": "待绑定本批依赖版本的候选反例：按已读旧缓存中的对角质量算子，取n=1、m₀=1、U(x)=|x₀|、q(t)=0。曲线的一阶和二阶导数均真实存在且为零，质量算子作用结果为零；Mathlib在U不可微的原点把gradient U 0定义为零，于是compactNewton成立，但教材方程所用经典∇U(0)不存在。因本批massOperator定义缺失，不能把该候选反例宣称为已核实的本批实例。",
+      "suggested_fix": "补齐与Ch01.lean同版本的Notation.lean、NBody.lean、LocalTrajectories.lean及MANIFEST.json。将势能在q(t)处可微或HasGradientAt作为模型适用资格，避免把总化梯度的默认零值解释为经典力；保留两个真实时间导数见证。"
+    }
+  },
+  {
+    "source_id": "MD-1.2-DegreesFreedom",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第41页、印刷第18页的原句为“The number of local directions in which the configurational (position) state can be varied is called the number of degrees of freedom Nd.”，所录文字和符号一致。",
+        "该句是定义，没有独立完整证明；页码及proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.degreesOfFreedom",
+      "verdict": "FAIL",
+      "explanation": "Ch01.lean:404–405实际定义只是fderiv ℝ C q的线性映射核的实维数。现有Notation.lean中Position n为EuclideanSpace ℝ (Fin n)。定义没有约束层、可行配置资格、可微性或局部正则性条件；注释中的[EXTRA]“局部正则层”没有落实为参数或适用条件。导数核描述线性化允许方向，未经正则性保障不能等同于原文实际配置可变化的局部方向。该定义还依赖约束的表示方式，而原文自由度属于配置空间本身。因此FAIL针对对象替换，不是声称核维数本身算错。该条为定义，无证明义务；本批依赖版本仍需MANIFEST绑定。",
+      "counterexample": "取n=r=1、C(x)=x²、q=0，允许配置为C(x)=0，即单点{0}，没有可变化的局部配置方向，自由度为0。但C在0处光滑且DC(0)=0，导数核为整个ℝ，degreesOfFreedom C 0=1。同一个配置集也可由C̃(x)=x表示，此时定义返回0，说明当前结果依赖约束表示。",
+      "suggested_fix": "把配置空间及其局部流形或正则约束层资格落实到定义的适用条件中，以真实切空间维数表示自由度；仅在适当正则性条件下用ker DC(q)计算。若保留现函数，应明确它表示线性化约束的核维数，并另行建立与几何自由度的对应，不能仅用[EXTRA]注释宣称对应。"
+    }
+  },
+  {
+    "source_id": "MD-1.2-ConstraintDimension",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第41页、印刷第18页依次给出无约束三维N体系统Nd=Nc=3N，以及存在r个独立约束时Nd=Nc−r；JSON保留了两个分句。",
+        "原文没有单独展开独立约束的分析学条件，也没有独立完整证明；所录页码及proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.constraintdimension",
+      "verdict": "FAIL",
+      "explanation": "Ch01.lean:411–420实际量化任意n、r、约束映射C及点q，仅要求C在q可微及DC(q)满射，结论是此前定义的核维数加r等于n。这个结论是秩—零度恒等式；满射使r≤n，因此加法形式与核维数=n−r等价，无约束代数分句也可取r=0、n=3N特化。但是它没有把核维数连接到实际可行配置的局部维数，而且仅在一点可微并满射不足以保证附近约束层为正则流形。[EXTRA]将独立约束解释为满射有合理依据，但缺少支持几何解释的局部正则性。FAIL针对教材自由度含义未被覆盖，不针对Lean代数恒等式的真假。声明正文无直接sorry；未核验编译或依赖链。",
+      "counterexample": "取n=2、r=1、q=(0,0)，定义C(x,y)=x²（当y=0），C(x,y)=y（当y≠0）。在原点，C与线性映射(x,y)↦y之差的绝对值至多为‖(x,y)‖²，所以C在原点可微，导数为满射(x,y)↦y，满足签名前提。其零约束集却只有(0,0)，实际局部自由度为0，而导数核维数为1。Lean结论1+1=2仍成立，恰好说明它只计算线性化核维数，不能据此得到教材意义的Nd=2−1。",
+      "suggested_fix": "增加足以应用局部正则水平集结论的条件，例如C在q的邻域为C¹、q属于指定约束层且DC(q)满射；把degreesOfFreedom绑定到该层的切空间或局部维数，再建立n−r公式。保留无约束三维系统的特化及全部分句，不能只把现有秩—零度恒等式改名为几何结论。"
+    }
+  },
+  {
+    "source_id": "MD-1.2-TotalEnergy",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NONVERBATIM_ARGUMENT_LIST"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.2-TotalEnergy",
+        "kind": "definition",
+        "label": null,
+        "section": "1.2",
+        "printed_page": "18",
+        "pdf_page": "41",
+        "statement_latex": "The total energy of the N-body system is a function of positions and velocities,\n\\[E(\\boldsymbol q_1,\\boldsymbol q_2,\\ldots,\\boldsymbol q_N,\\dot{\\boldsymbol q}_1,\\dot{\\boldsymbol q}_2,\\ldots,\\dot{\\boldsymbol q}_N)=\\sum_{j=1}^{N}\\frac{m_j\\|\\dot{\\boldsymbol q}_j\\|^2}{2}+U(\\boldsymbol q_1,\\boldsymbol q_2,\\ldots,\\boldsymbol q_N).\\tag{1.4}\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "斜体E为函数，直立E为守恒能量值；动能是有限和。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          "原页式(1.4)在E的位置参数列表、速度参数列表及U的位置参数列表中均显式列出第二个粒子的变量；原JSON将它们并入省略号，数学含义不变，但不符合逐字转录要求。"
+        ],
+        "lean_decl": "MD.Ch01.particleTotalEnergy",
+        "extra_assumptions": [],
+        "repair_log": [
+          "依据PDF第41页原页补回E中的q₂和q̇₂，以及U中的q₂；原有公式句点、编号、页码及proof_latex保持原录。"
+        ],
+        "old_ids": [
+          "CH01-053",
+          "CH01-054",
+          "CH01-057"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; independently inspected PDF page 41, printed page 18"
+      },
+      "issues": [
+        "PDF第41页式(1.4)显式写出q₁,q₂,…,qN以及q̇₁,q̇₂,…,q̇N；U的参数也显式写出q₂。原JSON省略这些第二项，需要恢复原页写法。",
+        "原JSON已保留公式句点；页码、系数1/2、质量因子、范数平方、正号及proof_latex=null均正确。"
+      ],
+      "evidence": [
+        "已查看PDF第41页原页，印刷页码18；式(1.4)的三个参数列表均显式列出第二项。",
+        "同页文字确为“The total energy of the N-body system is a function of positions and velocities,”；能量式后没有独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.particleTotalEnergy",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:426–427实际展开为Σj m_j‖v_j‖²/2+U(q)，位置和速度是分别传入的粒子列表，势能接收全部粒子位置，有限和、质量因子、平方、系数及加号均对应式(1.4)。Fin N的零起点索引仅是编码差异，不遗漏粒子；允许任意实质量是代数定义的推广，也覆盖物理质量。然而V3的实际定义在本批附件及可读旧源码中均未找到，ReviewDefinitions.lean亦缺失，不能仅凭V3名称确认对象是三维欧氏空间及‖·‖是欧氏范数。若它是普通Fin 3→ℝ的默认范数，动能就可能错误。因此不能签发PASS。该条为定义，无证明义务；未编译。",
+      "counterexample": null,
+      "suggested_fix": "补齐本批V3的定义文件、相关Notation.lean及MANIFEST.json，确认V3为三维欧氏内积空间且范数平方为三个分量平方之和；普通函数空间的默认上确界范数不能替代这里的欧氏范数。已见有限和和能量表达式无需改变。"
+    }
+  },
+  {
+    "source_id": "MD-1.2-PairCancellation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第42页、印刷第19页原句确为“This means that the sum of all the forces will vanish.”，文字及句点一致。",
+        "前文明确以模型包含完整粒子集合为背景，说明i受j的力与j受i的力恰为相反数，并引用Newton第三定律；所录上下文正确。",
+        "本句没有独立完整证明；页码及proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.paircancellation",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:433–436量化全部粒子数及有序粒子对作用F，要求自作用为零和逐对反对称，结论是全部有序对力的总和为零。若F(i,j)表示粒子i所受来自j的内部作用，这准确表达原文的抵消；显式自作用零合理，并且在实向量空间中已由包含i=j的反对称性推出，不是偷加总力零结论。以全部力都由内部粒子对之和构成来表示无外力背景，也符合原段。没有True、P→P或结论作前提。但是本批V3实际定义缺失，无法完成三维力对象核验，旧缓存不能补足此项。因此保留NEEDS_HUMAN。声明正文无直接sorry；未核验编译。",
+      "counterexample": null,
+      "suggested_fix": "提供本批V3及其实际向量空间结构的定义和MANIFEST.json，并确认F(i,j)的内部作用解释及每粒子净力为Σj F(i,j)。已见反对称前提与抵消结论无需修订。"
+    }
+  },
+  {
+    "source_id": "MD-1.2-MomentumConservation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第42页、印刷第19页原文给出总动量向量p_tot:=Σi p_i，并声称其三个分量守恒；statement_latex与该句一致。",
+        "原页论证依次为“Since”、dp_i/dt=F_i、“we have”、Σi dp_i/dt=Σi F_i=0；proof_latex保留了这些文字、求和范围和等式。",
+        "原页第一条导数等式后有逗号，第二条求和等式后没有另加句点；JSON与原页一致，页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.momentum_conservation",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:458–466的真实签名使用固定质量m、速度列表v及逐对力F，以p_i=m_i•v_i显式定义动量。前提包含逐时逐对反对称以及每个粒子动量的真实HasDerivAt，其导数为该粒子所受内部力之和。结论完整保留逐时总力为零、总动量真实零导数和同一时间域内任意a,b的总动量相等；向量相等在三维对象确认后即覆盖三个分量。开放且预连通的实时间域对应一段解，属合理[EXTRA]；零总力是结论，没有被预置为前提。不要求质量正性不影响这个守恒论证。该声明不调用IsMechanicalSolutionOn，不能以context_notation中的名称替代核查。但V3的本批定义缺失，无法确认动量和力的真实三维对象，故不能判PASS。正文无直接sorry；未核验编译及依赖链。",
+      "counterexample": null,
+      "suggested_fix": "补齐本批V3定义及MANIFEST.json，确认其为三维实向量空间，并绑定F(i,j)与粒子内部作用及p_i=m_i v_i的模型解释。保留全部三项结论、真实动量导数前提及连通时间域；目前没有依据要求改动这些已见条款。"
+    }
+  },
+  {
+    "source_id": "MD-1.2-HarmonicSolution",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "ISSUE_IMPLICIT_FREQUENCY_DOMAIN"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "ISSUE：所引原段使用η/Ω，但没有显式写出Ω≠0。应保留原文；不能把Ω=0时的自由粒子解静默写成该显示公式。此项是原式适用域的隐含资格，不是转录错误。"
+      ],
+      "evidence": [
+        "PDF第42页、印刷第19页末尾为Example 1.3及ẋ=v、v̇=−Ω²x；公式句点已在JSON中保留。",
+        "PDF第43页、印刷第20页接续单位质量、一维、能量函数、二阶方程、初值及x(t)=ξ cos(Ωt)+(η/Ω)sin(Ωt)；所录文字、公式及句点一致。",
+        "原段没有独立完整证明，proof_latex=null正确；跨页范围42–43及印刷19–20正确，原段未显式陈述Ω≠0。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.harmonic_solution",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean:489–493的可见结论包含候选相空间曲线满足单位质量、力为−Ω²q的机械方程，初值为z，以及全部实时间的所示位置公式。hΩ:Ω≠0是显示公式除法的合理域资格；同频独立坐标的n维推广可在n=1恢复原文。不过harmonicFlow的实际定义和本批HarmonicOscillator.lean缺失，无法核实第二分量确为位置公式的速度，或者初值和相空间对象是否被正确编码。IsMechanicalSolutionOn及机械向量场只在未绑定本批版本的旧缓存中找到；该缓存展开为真实积分曲线，不能据此认证本批实际定义。当前签名也只显式验证候选曲线，没有量化任意具有相同初值的解；原段能量函数的对应需通过实际辅助定义核查。不能根据harmonicFlow名称或复用定理名认定这些内容。正文无直接sorry；未核验编译或依赖链。",
+      "counterexample": null,
+      "suggested_fix": "补齐同版本HarmonicOscillator.lean、LocalTrajectories.lean、Notation.lean及MANIFEST.json，展开harmonicFlow的两个分量和真实机械解谓词，核查单位质量下动量等于速度及能量函数对应。若目标是覆盖“The solution”的唯一性含义，还需提供任意同初值解等于所示曲线的条款或明确关联的唯一性结果。保留原文，不静默改写Ω=0情形。"
+    }
+  },
+  {
+    "source_id": "MD-1.2-ScalarMechanical",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第43页、印刷第20页为Example 1.4 (Single Degree of Freedom)，单位质量m=1、能量E(x,ẋ)=ẋ²/2+U(x)及包含谐振子特例的文字均与JSON一致。",
+        "原页运动方程为ẋ=v、v̇=−∂U/∂x，负号、偏导符号和句点均已正确保留。",
+        "所录范围是模型定义，没有独立完整证明；页码及proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.scalarMechanicalModel",
+      "verdict": "FAIL",
+      "explanation": "Ch01.lean:500–501的实际定义量化任意U:ℝ→ℝ及曲线z，并要求所有t上的真实HasDerivAt z，其导数为(v,−deriv U x)。乘积导数确实同时表达ẋ=v和v̇等于所写力，单位质量也对应正确；它没有宣称任意初值解存在。但是定义完全没有要求U在轨迹位置可微。已读取Mathlib/Analysis/Calculus/Deriv/Basic.lean中的真实deriv定义及deriv_zero_of_not_differentiableAt：不可微处返回零，而不是拒绝模型。因此该谓词接受经典∂U/∂x不存在的情形，不能忠实表示原文经典运动方程。context_notation提到的scalarPotentialEnergy实际定义在本批缺失，能量对应也未获核实，但不可微势能问题已可独立判FAIL。该条为定义，无证明义务；未编译。",
+      "counterexample": "取U(x)=|x|，z(t)=(0,0)对全部实时间恒定。真实曲线导数为(0,0)，Mathlib因U在0不可微而令deriv U 0=0，所以scalarMechanicalModel U z成立；教材右侧的经典∂U/∂x在x=0不存在，这不是教材方程的经典解。",
+      "suggested_fix": "在模型适用条件中加入沿轨迹的势能可微性，或使用真实HasDerivAt U U′ x见证来定义力。另提供同版本scalarPotentialEnergy定义，确认其确为v²/2+U(x)及谐振子势能的特化。若要支持不可微势能，应明确建立另一个非光滑模型，不能把总化deriv的默认零值当作原文经典偏导。"
+    }
+  }
+]

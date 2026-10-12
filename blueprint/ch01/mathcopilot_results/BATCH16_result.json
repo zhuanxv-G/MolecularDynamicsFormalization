@@ -1,0 +1,116 @@
+[
+  {
+    "source_id": "MD-1.5.3-StrongLocalMinimum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看 PDF 第55页原页，印刷页码32。原文定义为存在 ε>0，使 0<‖q−q*‖<ε 蕴含 U(q)>U(q*)；JSON 的文字、公式及页码一致。",
+        "该定义没有独立证明，proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.strongLocalMinimum",
+      "verdict": "PASS",
+      "explanation": "已读取 Ch01.lean 的实际定义及 MolecularDynamics/Notation.lean：Position n 是实数上的有限维 EuclideanSpace，PotentialEnergy n 是该空间到实数的函数。定义完整保留存在正半径、对所有位置的量化、穿孔邻域的两个严格不等式以及严格势能比较。U qstar < U q 与原文 U(q)>U(q*) 等价；没有额外假设或循环前提。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.3-LinearizedHamiltonian",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_TEXT_MISMATCH",
+        "SOURCE_SYMBOL_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.3-LinearizedHamiltonian",
+        "kind": "definition",
+        "label": null,
+        "section": "1.5.3",
+        "printed_page": "32",
+        "pdf_page": "55",
+        "statement_latex": "If the potential is $C^2$, the linearized version of this system has “kinetic plus potential” form with Hamiltonian\n\\[\\bar H=\\frac{\\delta\\boldsymbol p^T\\boldsymbol M^{-1}\\delta\\boldsymbol p}{2}+\\frac{\\delta\\boldsymbol q^T U''(\\boldsymbol q^*)\\delta\\boldsymbol q}{2}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "C2使fderiv gradient为真实Hessian；定义只登记该二次Hamiltonian形式。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          "原条目将原文“the linearized version of this system has”改写为“then the linearized version is of the same”；严格原文审校应恢复原句。",
+          "原页使用上横线符号 H̄，而非波浪线符号 H̃。"
+        ],
+        "lean_decl": "MD.Ch01.linearizedHamiltonian",
+        "extra_assumptions": [],
+        "repair_log": [
+          "依据 PDF 第55页、印刷第32页原页恢复原句和 \\bar H；保留原公式及页码。"
+        ],
+        "old_ids": [
+          "CH01-146"
+        ],
+        "source_page_verification": "本次只读审校已查看 PDF 第55页原页。"
+      },
+      "issues": [
+        "文字存在改写，Hamiltonian 的上横线被误录为波浪线；数学二次型和页码正确。"
+      ],
+      "evidence": [
+        "PDF 第55页、印刷第32页末段原句为“If the potential is C², the linearized version of this system has ‘kinetic plus potential’ form with Hamiltonian”。",
+        "原页末行显示 H̄=δpᵀM⁻¹δp/2+δqᵀU″(q*)δq/2；该处没有独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.linearizedHamiltonian",
+      "verdict": "FAIL",
+      "explanation": "已读取实际声明，matrixAction 展开为 Matrix.toEuclideanLin，位置和动量均为实欧氏空间，两个内积项对应原文二次型。但该声明仅定义一个实值函数，没有表达原文的 C² 条件，也没有表达该函数是原 Hamiltonian 系统在平衡点处的线性化系统的 Hamiltonian。任意 U、M、qstar 都能代入，并无平衡点条件、质量矩阵条件或线性化向量场的等式。context_notation 中“只登记该二次Hamiltonian形式”不能替代原文全部断言。另外，当前提供的依赖中未找到 gradient 的实际定义，不能确认该名称确实表示欧氏梯度；即使采用标准梯度解释，上述结论缺失仍然成立。",
+      "counterexample": "缺失条款：C² 条件下，与真实 Hamiltonian 向量场在平衡点处导数的对应关系。现有签名只是返回 ℝ 的定义，无法推出这一关系，也没有陈述它。",
+      "suggested_fix": "保留二次型定义作为辅助定义；另行陈述在 C² 势能、原节质量矩阵条件和平衡点条件下，原 Hamiltonian 向量场的导数等于该二次 Hamiltonian 的向量场，并提供实际 gradient 及相关依赖定义供审计。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.3-PositiveHessianQuadratic",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看 PDF 第56页原页，印刷页码33。页首原句与 statement_latex 一致，包括 δp=0、δq=0 及 Hessian 正定条件。",
+        "“this system”承接第55页末的二次 Hamiltonian；该句仍属第1.5.3节，位于第1.6节标题之前。",
+        "该处没有独立完整证明，proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.positivehessianquadratic",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名量化任意维数和实矩阵 M、K，以 M.PosDef、K.PosDef 为前提，结论作用于完整相空间二次能量，原点对应 δq=δp=0。将真实 Hessian 抽象成一般正定 K 是合理推广；质量矩阵正定与机械背景相符，不属于结论作前提。但结论的核心谓词 IsStrictPotentialMin 不在已提供的当前依赖文件中，无法展开核实其是否确实保留严格穿孔邻域最小值。不能仅根据名称或现有证明中的使用方式判定 PASS。此处签名判定与证明是否完整分开。",
+      "counterexample": null,
+      "suggested_fix": "提供与当前 Ch01.lean 对应的 IsStrictPotentialMin 实际定义及其导入依赖，重点核对正半径、全部附近相空间点和严格能量比较；确认该谓词确为严格局部最小值后再完成判定。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.3-PositiveHessianMinimum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看 PDF 第56页原页，印刷页码33。页首第二句与 statement_latex 一致，明确保留“all distinct and positive”以及“original potential”。",
+        "第55页上下文已设定平衡点，并给出 ∇U(q*)=0 和势能 C² 条件；本句仍属第1.5.3节。",
+        "该处没有独立完整证明，proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.positive_hessian_minimum",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取实际签名：U 和 q 属于原势能及位置对象；hU 显式要求 C²，hq 表达驻点条件，均与上页上下文相符。完整 Fin n 特征基、正特征值及 Injective freq 在标准实对称 Hessian 解释下表达全部特征值互异且正，没有把最小值结论作为前提。然而当前提供的依赖中缺少 gradient 和 IsStrictPotentialMin 的实际定义，无法核实 fderiv 所作用的对象确实是欧氏梯度，也无法核实结论确实是原文严格局部最小值。全空间 C² 比局部 C² 更强，应说明其形式化范围；该点不能弥补定义缺失。声明体含 sorry，仅说明证明尚未完成，不单独构成语义 FAIL。",
+      "counterexample": null,
+      "suggested_fix": "提供当前版本的 gradient、IsStrictPotentialMin 及相关依赖定义；核实梯度与真实 Hessian 的对应、严格局部最小值谓词及完整特征基解释。若要求覆盖原文仅局部光滑的情形，将全局 ContDiff ℝ 2 U 调整为平衡点邻域上的相应条件。"
+    }
+  }
+]

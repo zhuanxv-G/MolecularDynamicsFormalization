@@ -1,0 +1,199 @@
+[
+  {
+    "source_id": "MD-1.1.1-Multibody",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已目视核对 PDF 第31页原页，页眉印刷页码为8，属于1.1.1 Molecular Potentials。",
+        "原文确为2-body、3-body and/or 4-body terms，三个势函数的下标、位置参数及后续三维坐标说明均与 JSON 一致；原文未规定求和计数顺序。",
+        "该段没有独立完整证明，proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.multibodyPotential",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取附件 Ch01.lean 第260–267行实际定义：对任意有限粒子数及二、三、四体实值函数，分别按 i<j、i<j<k、i<j<k<l 求和。该计数约定明确标为[EXTRA]，作为避免重复计数的表示约定合理，未把结论作为前提。但声明的位置类型是 V3，附件中没有其真实定义，也缺少导入的 ReviewProofs/ReviewDefinitions 源文件；已有 ParticleCoordinates 文件仅定义 ParticleVectors，不能据此认定 V3 就是原文的三维欧氏空间。对象类型尚不能完成核验。",
+      "counterexample": null,
+      "suggested_fix": "提供与附件 Ch01.lean 同版本的 ReviewDefinitions.lean、ReviewProofs.lean 及对应输入清单，核实 V3 的展开确为三维实欧氏空间；保持已注明的无序不同粒子组计数约定。"
+    }
+  },
+  {
+    "source_id": "MD-1.1.1-Morse",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已目视核对 PDF 第31页、印刷第8页：从“A simple potential energy function”至“the Morse potential”的摘录与原文一致。",
+        "原页公式为 D(1−e^{−a(r−r_e)})²，指数负号、平衡距离及平方位置均正确。",
+        "原页无独立完整证明；proof_latex=null 及页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.morsePotential",
+      "verdict": "PASS",
+      "explanation": "附件 Ch01.lean 第273行实际定义为 D*(1−Real.exp(−a*(r−rₑ)))²，与原文径向势公式逐项一致。各参数及自变量均为实数；在 context_notation 指定的正参数、正距离物理域上完全吻合。实数全域定义是公式的延拓，本声明没有断言域外参数仍具有物理意义，也没有额外的结论性前提。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.1.1-MorseMinimum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已目视核对 PDF 第31页、印刷第8页，原文确为“r_e is the location of the minimum, D gives the well depth”。",
+        "原句还明确包含“a is a shape parameter that can be used to control the curvature at the minimum”，JSON 完整保留了该子句。",
+        "原页没有二阶导数公式或独立完整证明；proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.morse_minimum",
+      "verdict": "FAIL",
+      "explanation": "附件 Ch01.lean 第279–282行对任意正 D、a、rₑ，仅声明正距离上的非负性、rₑ 处取零及无穷远极限为 D。前两项足以表达 rₑ 是全局最小点，第三项结合最小值表达阱深；正参数[EXTRA]及阱深解释合理。但签名未包含最小点曲率及其受 a 控制的结论，context_notation 将该子句归入背景不能满足全部结论覆盖要求。实际 morsePotential 公式已核对；此 FAIL 是签名覆盖缺失。该定理含 sorry，证明完成状态与本次语义判定分开。",
+      "counterexample": null,
+      "suggested_fix": "保留原文摘录，补充实际二阶导数及曲率依赖的结论，例如最小点处二阶导数等于 2Da²，并说明固定 D 时正 a 对曲率的控制。该计算结果应标为形式化展开，不能回填成教材原文。"
+    }
+  },
+  {
+    "source_id": "MD-1.1.1-LengthBond",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_EXTRA_WORD"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.1.1-LengthBond",
+        "kind": "definition",
+        "label": null,
+        "section": "1.1.1",
+        "printed_page": "9",
+        "pdf_page": "32",
+        "statement_latex": "Because they often do not need to be allowed to break during simulation and are very strong compared to other potential terms, chemical bonds such as the covalent $\\mathrm H_2^+$ bond described above are sometimes treated as springs with given rest-length:\n\\[\\varphi_{ij}^{\\mathrm{len}}(r_{ij})=\\frac{k_{ij}^{\\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\\qquad r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|.\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "$r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|$；Lean pairDistance；$k>0$，$r_0$静长。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [],
+        "lean_decl": "MD.Ch01.lengthBond",
+        "extra_assumptions": [],
+        "repair_log": [
+          "PDF第32页（印刷第9页）原文为 compared to other potential terms；删除转录多出的 the。"
+        ],
+        "old_ids": [
+          "CH01-017",
+          "CH01-018"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次只读审校已目视核对PDF第32页、印刷第9页。"
+      },
+      "issues": [
+        "PDF第32页、印刷第9页原文为“compared to other potential terms”，输入写成“compared to the other potential terms”，多出 the；此处仅修正转录。"
+      ],
+      "evidence": [
+        "已目视核对 PDF 第32页、印刷第9页底部正文，确认上述英文差异。",
+        "H₂⁺、rest-length 及公式中的 k_{ij}^{len}/2、r_{ij}−r_{ij}⁰、平方和 r_{ij}=‖q_i−q_j‖均与原页一致。",
+        "原页无独立完整证明；proof_latex=null 及页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.lengthBond",
+      "verdict": "FAIL",
+      "explanation": "附件 Ch01.lean 第289行仅定义三个实参数的径向函数 k/2*(r−r₀)²，系数和平方项正确。但原文同时定义 r_{ij}=‖q_i−q_j‖；本声明没有粒子位置参数，也没有将 r 与该欧氏距离联系起来。context_notation 中出现 pairDistance 名称不能补足该条款，且其真实定义也未随附件提供。因此目前仅覆盖径向剖面，未覆盖本条完整的两粒子长度键定义。",
+      "counterexample": null,
+      "suggested_fix": "保留径向函数，并补充以两粒子位置为参数、实际取值为 lengthBond k r₀ (‖q_i−q_j‖) 的定义或连接声明；核实所用位置空间和范数。若使用 pairDistance，须提供并展开其真实定义。"
+    }
+  },
+  {
+    "source_id": "MD-1.1.1-Dispersion",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已目视核对 PDF 第33页、印刷第10页：“instantaneous polarization”“London dispersion”及“inverse sixth power potential”所在摘录与原文一致。",
+        "原页公式确用 ∼，右侧为 −K/r⁶，且明确 K>0；JSON 未将 ∼ 改成等号。",
+        "原页无独立完整证明；proof_latex=null 及页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.dispersionPotential",
+      "verdict": "PASS",
+      "explanation": "附件 Ch01.lean 第295行实际定义为 −K/r⁶，负号、分母及幂次正确。在原文 K>0、距离 r>0 的物理域上，这正是所列吸引势模型。依照本条明确的 context_notation，该 def 定义右侧经验模型，并未声称一个另给定的真实势与它严格相等或满足未经指定的渐近关系。实参数全域的总函数延拓不构成对域外物理行为的断言；r=0 的实数除法取值不应解释为物理势值。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.1.1-Buckingham",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已目视核对 PDF 第33页、印刷第10页，原文确为“Buckingham [56] suggested a combined potential of the form”。",
+        "原页公式为 Ae^{−Br}−C/r⁶，并逐一列出 A>0、B>0、C>0；JSON 一致。",
+        "原页无独立完整证明；proof_latex=null 及页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.buckinghamPotential",
+      "verdict": "PASS",
+      "explanation": "附件 Ch01.lean 第301行实际展开为 A*Real.exp(−B*r)−C/r⁶，两个分量、指数负号及系数均忠实于原文。在原文正参数及正距离域上完全一致。声明提供径向公式的实数总函数延拓，未另行断言任意实参数均属于原文的物理参数类；正参数限制须在调用该模型的性质定理中保留。没有结论作前提或其他[EXTRA]强化。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.1.1-LennardJones",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已目视核对 PDF 第33页、印刷第10页，原文确为“A more common choice in simulation is the Lennard-Jones (6–12) potential”。",
+        "原页公式的外因子为4ε，括号内依次为(σ/r)¹²减(σ/r)⁶；JSON 的参数、幂次及符号均正确。",
+        "原页无独立完整证明；proof_latex=null 及页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.lennardJonesPotential",
+      "verdict": "PASS",
+      "explanation": "附件 Ch01.lean 第307行实际定义为 4*ε*((σ/r)^12−(σ/r)^6)，与原文径向模型逐项一致。正 ε、σ、r 的物理域由 context_notation 指定；全实数总函数定义只延拓公式，没有断言非正参数仍具有相同物理性质。后续 lj_repulsion 使用本命名空间下这一实际定义并明确要求 ε、σ>0。没有额外的结论性假设。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.1.1-LJRepulsion",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已目视核对 PDF 第33–34页、印刷第10–11页：该段在第33页末以“Because of the strongly repulsive character”开头，接续于第34页正文，跨页标注正确。",
+        "原文确有 r→0 时势趋向正无穷、长模拟中原子保持分离、轨迹很少遭遇奇点及光滑性假设给数学分析带来困难的全部句子；JSON 摘录一致。",
+        "这些句子属于解释性正文，没有独立完整证明；proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.lj_repulsion",
+      "verdict": "FAIL",
+      "explanation": "附件 Ch01.lean 第313–315行对所有正 ε、σ 声明实际 Lennard-Jones 径向势从正距离侧趋近0时趋向正无穷；对象、正参数假设、单侧滤子及极限目标正确，正性是合理的物理域显式化。该极限子句本身忠实且无需原文未给出的定量速率。但按本批要求覆盖全部结论，签名没有粒子、轨迹或仿真对象，只覆盖极限；未覆盖原文关于长模拟保持分离和轨迹很少遭遇奇点的叙述。context_notation 明确缩小了形式化范围，不能据此把全文覆盖判为 PASS。此 FAIL 是覆盖范围判定，不表示极限定理错误，也不把经验叙述解释为无条件全局无碰撞定理。",
+      "counterexample": null,
+      "suggested_fix": "将精确极限命题与未形式化的经验叙述分别标明覆盖状态，同时保留原文全文。若要求后者成为 Lean 结论，须先明确仿真算法、轨迹、时段及“保持分离”“很少”的含义和相应假设；不能直接替换成原文没有陈述的全局无碰撞定理。"
+    }
+  }
+]

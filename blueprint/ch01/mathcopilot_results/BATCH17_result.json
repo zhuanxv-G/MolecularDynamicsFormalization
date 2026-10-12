@@ -1,0 +1,193 @@
+[
+  {
+    "source_id": "MD-1.6-UniformPairLattice",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接核对 PDF 第56页原页图像，页眉印刷页码为33，所在节为1.6。",
+        "原文为“Let us suppose we have a uniform pair potential φ and define the total potential energy of a system of N atoms by”，随后公式的外层求和为i=1,…,N−1，内层为j=i+1,…,N，被加项为φ(|x_i−x_j|)，与JSON一致。",
+        "该定义没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.latticePairPotential",
+      "verdict": "PASS",
+      "explanation": "已读取Ch01.lean第1406行的实际定义。本节讨论一维链，Fin N→ℝ对应N个实坐标；同一个φ用于全部粒子对，保留uniform条件。展开Finset.Ioi i，内层恰好遍历j>i，每个无序对出现一次；从零编号改为原文从一编号后，求和范围、绝对距离及全部能量项一致。N=0或1时的空和扩展无害。没有额外假设或结论作前提。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.6-UnorderedPairCount",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第56页、印刷第33页，全部粒子对势能公式后的原句为“The computation of the energy requires N(N−1)/2 separate calculations, which could be very expensive if N is large.”，与JSON一致。",
+        "原页没有该计数的独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.unorderedpaircount",
+      "verdict": "PASS",
+      "explanation": "已读取Ch01.lean第1413行的真实签名。Finset.univ遍历Fin N×Fin N，filter条件p.1<p.2排除自配对并为每个无序对保留一个代表，card恰好对应前一公式的求值项数。∀N:ℕ完整保留计数的普遍性；自然数减法和除法在N=0、1时给零，其余情形给准确整数N(N−1)/2。原文关于昂贵计算的定性评价已在context_notation中明确不作数学定理，没有将计数偷换为实际运行时间下界。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.6-NearestNeighbor",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第56页、印刷第33页，原句为“We can reduce this by assuming only nearest neighbor forces, which means the energy becomes”，随后公式为从i=1到N−1求和φ(|x_{i+1}−x_i|)，与JSON一致。",
+        "后续上下文讨论粒子交叉时可能需要重新编号；原页没有本定义的独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.nearestNeighborModel",
+      "verdict": "PASS",
+      "explanation": "已展开Ch01.lean第1422行的实际定义。Lean的N表示键数，Fin(N+1)表示N+1个粒子，与context_notation声明的重编号一致。对i:Fin N，i.castSucc和i.succ分别取相邻坐标i和i+1，恰好遍历所有相邻键，没有闭合键或非相邻相互作用；φ及绝对距离一致。该定义表达原文给出的相邻编号势能公式，不另行宣称任意未排序坐标的编号相邻者都是几何最近邻。没有额外假设。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.6-WalledChain",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "STATEMENT_TRANSCRIPTION_ERROR"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.6-WalledChain",
+        "kind": "definition",
+        "label": null,
+        "section": "1.6",
+        "printed_page": "33",
+        "pdf_page": "56",
+        "statement_latex": "In order to keep such a system bounded we might think to introduce walls at the ends of the chain, e.g. by adding confining potentials to $U$:\n\\[U(x_1,x_2,\\ldots,x_N)=\\varphi_c(|x_1|)+\\varphi_c(|L-x_N|)+\\sum_{i=1}^{N-1}\\varphi(|x_{i+1}-x_i|).\\tag{1.7}\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          "PDF第56页、印刷第33页原文为“we might think to introduce”，原条目误录为“we might then introduce”。"
+        ],
+        "lean_decl": "MD.Ch01.walledChainModel",
+        "extra_assumptions": [],
+        "repair_log": [
+          "A原文审校：将statement_latex中的“we might then introduce”恢复为原页的“we might think to introduce”；公式、编号、页码和proof_latex不变。"
+        ],
+        "old_ids": [
+          "CH01-152"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "“then”并非原书措辞，且漏掉了“think to”；这是转录错误，不是原书疑误。"
+      ],
+      "evidence": [
+        "PDF第56页原页图像、印刷第33页明确写作“In order to keep such a system bounded we might think to introduce walls at the ends of the chain, e.g. by adding confining potentials to U:”。",
+        "公式(1.7)含φ_c(|x_1|)、φ_c(|L−x_N|)及全部N−1个相邻键势能项，与JSON公式一致。",
+        "原页没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.walledChainModel",
+      "verdict": "PASS",
+      "explanation": "已读取Ch01.lean第1429行并展开nearestNeighborModel。沿用本批的粒子数重编号，x 0对应原文x_1，x(Fin.last N)对应末粒子；两个边界项分别为φc(|x_1|)和φc(|L−x_N|)，相邻键和也完整保留。φ和φc是两个独立函数，允许原文随后讨论的φc=φ或不同墙势。该声明忠实定义公式(1.7)；它没有断言任意φc都会使轨迹有界，原文引入真正约束势的建模目的也不能被当作已经证明的有界性定理。没有不合理的额外假设。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.6-PeriodicChain",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第56页、印刷第33页，原文为“Alternatively one could restrict to a bounded domain by use of periodic boundary conditions, introducing the potential energy:”，与JSON一致。",
+        "公式(1.8)为全部相邻键势能之和再加φ(|L+x_1−x_N|)，公式、编号及页码均正确。",
+        "原页没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.periodicChainModel",
+      "verdict": "PASS",
+      "explanation": "已读取Ch01.lean第1436行并展开nearestNeighborModel。Fin(N+1)的首末坐标分别对应原文x_1和x_N；定义包含所有相邻键，以及唯一的闭合项φ(|L+x_1−x_N|)，包括L的符号和绝对值位置都正确。粒子数差一只是本批已说明的参数重编号。该声明形式化的是公式(1.8)，没有把这一实坐标表达式本身冒充为越界回绕算法或已经构造的周期商空间；这些属于另外的定义义务。没有额外假设。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.6-PeriodicBoundary",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第57页原页图像的印刷页码为34。图1.16之后正文明确规定：越过右边界x=L时移到x−L，越过左边界x=0时移到x+L，并引用Fig. 1.15，与JSON逐项一致。",
+        "原页没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.periodicBoundary",
+      "verdict": "FAIL",
+      "explanation": "Ch01.lean第1443行实际定义为∃k:ℤ,y=x+kL。这表达周期位置等价，未表达原文的条件式更新：x>L时必须取y=x−L，x<0时必须取y=x+L。它允许越界后不移动、向错误方向移动或移动任意多个周期；也没有选择域内代表。context_notation虽然说明只形式化等价类，但不能补上被冻结原句中的两项操作条款。问题是语义范围被削弱，与证明是否含sorry无关。",
+      "counterexample": "取L=1、x=5/4、y=5/4，k=0使Lean关系成立；但x>L，原文要求更新为y=1/4。类似地，x=−1/4、y=−1/4也满足Lean关系，而原文要求y=3/4。",
+      "suggested_fix": "将现有关系明确作为周期位置等价的辅助定义；另外给出与原文对应的单步更新规则：x>L取x−L，x<0取x+L，未越界则保持原位置，并明确物理长度L>0。原文只规定单步移动；若要断言更新后一定落入基本区间，应另列越界幅度限制或明确采用额外的重复回绕规则。"
+    }
+  },
+  {
+    "source_id": "MD-1.6-PeriodicTranslationMomentum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第57页、印刷第34页，原文完整句子为“Periodic boundary conditions allow us to preserve Newton’s third law, the translational symmetry, and thus the conservation of momentum.”，与JSON一致。",
+        "这句话位于左右越界回绕说明之后、晶体与格点讨论之前；原页没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.periodic_translation_momentum",
+      "verdict": "FAIL",
+      "explanation": "已读取Ch01.lean第1449行起的实际签名。结论包含平移不变性、常向量方向导数为零、总动量导数为零及时间域内总动量相等；真实HasDerivAt牛顿方程没有将动量守恒放进前提。正质量、轨迹处可微及开且预连通时间域是合理的经典动力学资格。然而原文还明确断言Newton第三定律；签名没有定义逐对作用力，也没有陈述每对作用力相等反向。总内力零不能替代这项逐对结论，因此存在可直接确认的缺失条款。此外，U实际引用boxPeriodicNearestNeighborPotentialEnergy，而非本文件的periodicChainModel；提供的Ch01.lean只有该名称的使用，未包含其定义，现有依赖和共享文件中也未找到，因此不能确认两者对象相同。FAIL依据已确认的第三定律条款缺失；势能对象的进一步核查仍需补齐真实依赖。该定理使用sorry是另一个证明完成度问题，不是本判定依据。",
+      "counterexample": null,
+      "suggested_fix": "补齐当前审计版本中boxPeriodicNearestNeighborPotentialEnergy的真实定义及来源，核实它确实对应公式(1.8)，并明确它与periodicChainModel的关系。定义每条相互作用键的两端作用力，包括跨周期边界的键，在结论中补上逐对相等反向的第三定律条款；为这些真实导数补充必要且明确的可微条件。保留现有平移对称与全部动量结论，不能以总内力零代替逐对第三定律。"
+    }
+  },
+  {
+    "source_id": "MD-1.6-RegularLattice",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第57页、印刷第34页，原文为“On the line, we think of a (finite) lattice as a sequence of discrete points separated by a fixed distance Δx.”，与JSON一致。",
+        "下一句关于能量极小点属于规则格点的主张是另一条陈述，不应并入本定义；本定义没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.regularLattice",
+      "verdict": "PASS",
+      "explanation": "已展开Ch01.lean第1467行的实际定义：0<δ且∀i,x i=a+i.val·δ。Fin N保留有限点列，a允许任意平移；按直线上从左到右的编号约定，相邻点距离恰为固定δ。δ>0表达原文离散点的正间距，排除重合点，而非额外的动力学假设。零起始编号不改变格点对象；N=0或1为退化有限点列。结论仅定义规则格点，没有加入紧接原句的能量极小化主张，也没有将该主张作为前提。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

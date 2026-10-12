@@ -1,0 +1,150 @@
+[
+  {
+    "source_id": "MD-1.5-LocalExistUnique",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接渲染核对PDF第48页，页眉印刷页码25。§1.5首句与statement_latex逐字一致；原页跨行的con-dition属于排版断词，合并为condition正确。",
+        "该句没有独立完整证明，proof_latex=null正确。紧随其后的段落区分局部存在唯一性与附加条件下的典型全局存在。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.local_exist_unique",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch01.lean第750–757行量化初始时刻、初始状态和开放位置域；可见结论包括局部解存在及同初值两解在初始时刻邻域内相等。开放非奇异域和C1力作为generic的明确解释合理。但本批同版本的LocalTrajectories.lean、LocalExistence.lean及MANIFEST.json未提供，无法确认实际导入的解谓词。已读取旧缓存7c61e9d0：IsLocalMechanicalIVP展开为ε>0、初值相等及对称开区间上的机械解；IsMechanicalSolutionOn展开为位置留在Q及真实HasDerivWithinAt方程，向量场为(velocityOperator m p,F q)，velocityOperator采用对角质量矩阵的总化逆。该缓存没有与本批绑定，不能替代当前定义。另需核实模型资格：已提供的CoordinateMasses只是Fin n→ℝ，不自带正质量；hreg约束总化gradient所得映射，不能单独保证U具有真实可微梯度。正文没有直接sorry，但证明状态不能消除这些语义证据缺口。",
+      "counterexample": null,
+      "suggested_fix": "补齐与Ch01.lean同版本的LocalTrajectories.lean、LocalExistence.lean、相关导入及MANIFEST.json，核实正区间半径、初值、真实ODE和留域条件。若采用已见缓存定义，应明确物理质量的正性及U在Q内的可微性，或明确标注该声明推广到总化算子模型，并提供到原文Hamiltonian系统的对应关系。"
+    }
+  },
+  {
+    "source_id": "MD-1.5-EnergySurface",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第48页／印刷第25页原文为“For given E₀ ≥ Umin define ΣE₀ = {(q,p)|H(q,p) = E₀}.”，文字、下标、集合条件与statement_latex一致。",
+        "这是定义，原页没有独立证明；proof_latex=null及页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.energySurface",
+      "verdict": "PASS",
+      "explanation": "Ch01.lean第768行的实际定义是{z | H z = E}；已读取的Notation.lean将PhaseSpace n定义为Position n×Momentum n，两者均为有限维实欧氏空间。因此对象、位置—动量配对及能量等式均对应原文。H是给定函数，没有替换为其他能量。允许任意实数E是定义的合理推广；原文E₀≥Umin属于使用背景，定义本身不需要该条件，也没有声称能量层非空。此项没有证明义务。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5-EnergyBounds",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第48页／印刷第25页从“Assume that U is a potential energy function which is bounded below”至末尾势能不等式，与statement_latex一致，包括“Then, for … we have”和“We have, at energy E₀,”。",
+        "原页显示pᵀM⁻¹p/2 = E₀−U(q) ≤ E₀−Umin及Umin ≤ U(q) ≤ E₀，并明确M⁻¹正定且此处假设为常矩阵。",
+        "proof_latex摘录的是同页已有能量计算和正定推界论述，没有增造证明；重复保留于statement_latex与proof_latex不构成原文错误。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.energy_bounds",
+      "verdict": "PASS",
+      "explanation": "已展开Ch01.lean第62–71行：matrixAction是Matrix.toEuclideanLin，variableMassHamiltonian是⟨p,(M(q))⁻¹p⟩/2+U(q)。代入常映射fun _=>M后，恰为原文的一般常质量矩阵能量，没有换成对角特例。已读取PosDef真实定义，实数情形包含对称性及非零向量二次型严格为正。第774–780行逐项保留动能等式、动能上界、势能下界和势能上界；外置∃R后量化全部同能量q、p，正确表达统一动量界。没有显式假设E₀≥Umin是合理推广：任何满足能量等式的状态已蕴含该条件，低于下界时条件结论为空。全欧氏实值势能是明确的模型范围，静态结论可限制到原势能定义域使用。正文有sorry；本判定仅认可签名语义，不代表证明完成。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5-UniformLevelsCompact",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接渲染核对PDF第49页，印刷页码26。首段的Σ̂α={q|U(q)=α}、α∈[Umin,E₀]及“bounded uniformly”与statement_latex一致。",
+        "第二句明确为满足能量约束的解留在“a compact (closed and bounded) set”；JSON完整保留该句。原页没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.uniform_levels_compact",
+      "verdict": "PASS",
+      "explanation": "第787–791行的hlevels将∃R置于α和q的全部量词之外，准确表达整个闭能量区间内各势能等值层的统一界，不是逐层各取不同界。实际Hamiltonian定义采用一般常M⁻¹；hM和hlower对应前页正定性及势能下界。结论是整个位置—动量能量层紧，因此任何始终满足该能量等式的解均被该紧集包含，覆盖原文的约束性结论，无须把全局解存在加入本条结论。Continuous U是明确且合理的[EXTRA]，用于保证所选能量层本身闭；没有预设紧性。全欧氏模型不直接涵盖奇异位置域上的延拓，不能将本条单独当作奇异域全局存在定理。正文有sorry；语义通过与证明未完成分开。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5-CompactContinuation",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "PAGE_SPAN_CORRECTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5-CompactContinuation",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5",
+        "printed_page": "25",
+        "pdf_page": "48",
+        "statement_latex": "The uniqueness of solutions is easily verified in the usual way (as for the local result for uniqueness of solutions). The key point is that, with the energy constraint, solutions typically remain bounded for all time.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "DRAFT",
+        "issues": [],
+        "lean_decl": "MD.Ch01.compact_continuation",
+        "extra_assumptions": [
+          "共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。"
+        ],
+        "repair_log": [],
+        "old_ids": [
+          "CH01-095"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "所摘两句均完整位于印刷第25页／PDF第48页，未跨页。原printed_page=25–26及pdf_page=48–49把上下文页误计为本条正文出处；仅修正这两个字段。"
+      ],
+      "evidence": [
+        "PDF第48页／印刷第25页§1.5首段完整显示“The uniqueness of solutions is easily verified …”及“The key point is that, with the energy constraint, solutions typically remain bounded for all time.”，措辞与JSON一致。",
+        "PDF第49页／印刷第26页起首是“What is needed is an assumption …”，属于后续限域条件，并非本条两句的续页。",
+        "两句没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.compact_continuation",
+      "verdict": "FAIL",
+      "explanation": "第798–804行可见签名是一个条件式延拓引理：任意C1力F、开放Q、共同紧集K留在Q，以及所有既有局部解留在K，推出某个全实时间解存在并留在K。开放域、紧集不接触奇异边界和C1正则性作为延拓条件合理；hconfine只量化既有局部解，不能简单判为P→P。但是它与本条原文仍有明确缺失：结论没有同初值解的唯一性子句；对象没有U、Hamiltonian或能量约束，原文以能量约束获得有界性的机制被独立的hconfine前提替代。该引理可以作为实现原文结论的辅助步骤，不能单独签发为所摘两句的完整忠实陈述。此外，本批实际IsMechanicalSolutionOn定义及MANIFEST缺失，旧缓存定义不能代替当前导入；该缺口不消除上述可见签名的不对应。正文有sorry，证明状态与此FAIL分开。",
+      "counterexample": null,
+      "suggested_fix": "保留现有声明作为一般延拓辅助引理时，应另行建立对应本source_id的Hamiltonian结论：明确势能、正质量、真实梯度、能量及上下文限域条件，由这些条件获得局部解的紧集约束，再陈述全时间存在、有界性和同初值唯一性。不得仅把原文要得到的能量限域效果列为未经关联的前提；同时补齐同版本解谓词及MANIFEST。"
+    }
+  },
+  {
+    "source_id": "MD-1.5-Nonconfining",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第49页／印刷第26页第二段前两句与statement_latex逐字一致，包括“The assumption on U is not satisfied by some simple potentials.”及例子U(x,y)=x²。",
+        "原文明确该势能完全不依赖y，因此固定能量不限制y；JSON未混入随后关于周期边界条件的建议。原页无独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.nonconfining",
+      "verdict": "PASS",
+      "explanation": "已读取Position 2的真实定义为EuclideanSpace ℝ (Fin 2)，因此q 0是第一坐标，另一坐标是独立实数坐标；没有把位置换成动量或一维空间。第811–812行否定势能等值层(q 0)²=1的有界性，实际表达式只含第一坐标，准确体现U(x,y)=x²对y独立。固定α=1提供一个不受y限制的能量层见证，足以展示该势能不能普遍满足前述限域要求；它没有声称所有轨迹都必然无界。该见证也可取零动量实现为总能量1的状态。可见正文有完整证明且没有直接sorry；本次仅审计签名语义，未进行编译或依赖证明验收。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

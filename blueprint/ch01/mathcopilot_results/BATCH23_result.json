@@ -1,0 +1,277 @@
+[
+  {
+    "source_id": "MD-1.7.2-FlowJacobianLiteral",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_NOTATION_MISMATCH",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.7.2-FlowJacobianLiteral",
+        "kind": "definition",
+        "label": null,
+        "section": "1.7.2",
+        "printed_page": "44",
+        "pdf_page": "67",
+        "statement_latex": "Let a dynamical system $\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z)$ be given in $\\mathbb R^m$ with flow map $\\mathscr F_t:\\mathbb R^m\\to\\mathbb R^m$ which we assume to be continuously differentiable. Let $\\boldsymbol z(t,\\boldsymbol\\zeta)$ represent the solution of initial value problem\n\\[\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z),\\qquad\\boldsymbol z(0)=\\boldsymbol\\zeta.\\]\nWe then compute the $m\\times m$ Jacobian matrix of $\\mathscr F_t(\\boldsymbol z(t,\\boldsymbol\\zeta))$:\n\\[\\boldsymbol W(t)=\\mathscr F_t'(\\boldsymbol z(t,\\boldsymbol\\zeta))=\\frac{\\partial\\mathscr F_t}{\\partial\\boldsymbol z}(\\boldsymbol z(t,\\boldsymbol\\zeta)).\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "F对应原书的花体流映射；F为C1真实flow，z(t,ζ)=Ftζ；原文字面在Ftζ处对初值变量微分。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "status": "NEEDS_HUMAN",
+            "detail": "标准变分矩阵应为DζFt(ζ)，原文把取值点写Ftζ；忠实保留字面定义，后续两条不静默改。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.variationalMatrixLiteral",
+        "extra_assumptions": [],
+        "repair_log": [
+          "A原页审校：初值符号由ξ恢复为原书ζ；流映射由普通F恢复为原书花体mathscr F。保留原书的导数取值点。"
+        ],
+        "old_ids": [
+          "CH01-190",
+          "CH01-191"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次直接核对教材PDF第67页（印刷第44页）。"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_NOTATION_MISMATCH",
+          "detail": "PDF第67页使用花体流映射和初值ζ；JSON使用普通F和ξ。逐字转录要求下应恢复原书符号，不能将变量改名视为原文。"
+        },
+        {
+          "code": "ERRATUM?",
+          "status": "ISSUE",
+          "detail": "原页确实把导数取值点写成z(t,ζ)，不是ζ。该字面定义与后续标准变分公式不相容；保留原文，勘误须人工裁定。"
+        }
+      ],
+      "evidence": [
+        "已直接渲染并核对PDF第67页：页眉印刷页44，节标题为1.7.2。",
+        "原页初值条件为z(0)=ζ，流映射使用花体F；导数公式两处取值点均为z(t,ζ)。",
+        "该段仅给出定义及随后链式法则计算，没有独立完整证明；proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.variationalMatrixLiteral",
+      "verdict": "PASS",
+      "explanation": "实际读取根目录Ch01.lean中的定义体，确认它是fderiv ℝ (F t) (F t ξ)，没有改成在ξ处求导。可见Notation.lean将Position n定义为EuclideanSpace ℝ (Fin n)，故连续线性导数与原书有限维实Jacobian对应；Lean参数ξ只是对原书ζ的变量改名。该定义作为导数辅助函数允许更广泛的F输入，但在原书C1真实流背景下准确表达字面W。原书随后对W的用途存在疑误，不改变本条定义的字面忠实性。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.7.2-VariationalEquationLiteral",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_NOTATION_MISMATCH",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.7.2-VariationalEquationLiteral",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.7.2",
+        "printed_page": "44–45",
+        "pdf_page": "67–68",
+        "statement_latex": "Differentiating $\\boldsymbol W(t)$ with respect to $t$ and using the differential equation and the chain rule, we have\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\boldsymbol W(t)=\\boldsymbol f'(\\boldsymbol z(t,\\boldsymbol\\zeta))\\boldsymbol W(t).\\tag{1.10}\\]\nThe system of Eq. (1.10) is referred to as the system of variational equations corresponding to the dynamical system $\\mathrm d\\boldsymbol z/\\mathrm dt=\\boldsymbol f(\\boldsymbol z)$.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "status": "NEEDS_HUMAN",
+            "detail": "标准W应在ζ处取DFt。取全局光滑完备流f(x)=sin x，在ζ=π/2附近Ft(x)=2 arctan(e^t tan(x/2))；t=log 2时字面W=10/17，W′=-198/289，而f′(Ftζ)W=-6/17=-102/289，不相等。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.variationalequationliteral",
+        "extra_assumptions": [],
+        "repair_log": [
+          "A原页审校：公式中的初值符号由ξ恢复为原书ζ；保留原书式(1.10)及其与字面W定义之间的疑误。"
+        ],
+        "old_ids": [
+          "CH01-192"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次直接核对教材PDF第67–68页（印刷第44–45页）。"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_NOTATION_MISMATCH",
+          "detail": "PDF第67页式(1.10)中的初值符号是ζ，JSON转录成ξ。"
+        },
+        {
+          "code": "ERRATUM?",
+          "status": "ISSUE",
+          "detail": "式(1.10)确为原书内容，但与上一条原书字面W=DFt(Ftζ)不相容；sin流反例否定其在标准流背景下的普遍成立性。不能静默修改W的取值点。"
+        }
+      ],
+      "evidence": [
+        "PDF第67页／印刷第44页底部给出Differentiating开头的句子及编号(1.10)，矩阵乘法顺序是f′(z(t,ζ))W(t)。",
+        "PDF第68页／印刷第45页给出The system of Eq. (1.10)开头的命名句，故67–68及44–45的跨页标注正确。",
+        "PDF第68页两句之间的上下文还说明W是时变线性系统的基本矩阵解；没有另附独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.variationalequationliteral",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取Ch01.lean的实际签名和variationalMatrixLiteral定义：全称量化n、f、F、ξ、t，使用真正的HasDerivAt，右端连续线性映射复合的顺序对应f′W，且忠实保留在Ftξ处取DFt。问题是本次可见附件缺少differentiableFlow和isFlowOf的定义体；Ch01.lean仅引用这些谓词，所列ReviewDefinitions.lean、VariationalEquation.lean等同批依赖未提供，不能依据名称认证它们确实表达C1真实流，也不能排除夹带结论或额外限制。标准真实流解释下，原书及该结论均有明确反例；尚不能认证此反例满足未知Lean谓词。ContDiff ℝ 1 f作为链式法则所需正规性是合理的显式条件。声明中的sorry是另一个证明完成度问题，不作为语义判定依据。",
+      "counterexample": "针对教材的标准流背景：取n=1、f(x)=sin x，F为该光滑全局Lipschitz向量场的全局流。在(-π,π)内F_t(x)=2 arctan(e^t tan(x/2))。令ζ=π/2、t=log 2，则字面W(t)=e^t(1+e^(2t))/(1+e^(4t))=10/17，W′(t)=-198/289，而cos(F_tζ)W(t)=(-3/5)(10/17)=-102/289，差为-96/289。由于两个Lean流谓词的定义缺失，这不是已经认证满足其全部形式前提的Lean反例。",
+      "suggested_fix": "补充同批differentiableFlow、isFlowOf的完整定义和输入版本依据后再展开审计。保留原书字面式及ISSUE；若人工裁定采用标准变分矩阵，应另列修订版W(t)=DFt(ζ)及对应声明，不把变分等式或其等价结论加入流谓词作为前提。"
+    }
+  },
+  {
+    "source_id": "MD-1.7.2-NearbyTrajectoryLiteral",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_NOTATION_MISMATCH",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.7.2-NearbyTrajectoryLiteral",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.7.2",
+        "printed_page": "45",
+        "pdf_page": "68",
+        "statement_latex": "If we have two solutions started from nearby initial conditions $\\boldsymbol\\zeta,\\hat{\\boldsymbol\\zeta}$, then their difference is approximated by the solution of the variational equations\n\\[\\boldsymbol z(t,\\hat{\\boldsymbol\\zeta})-\\boldsymbol z(t,\\boldsymbol\\zeta)\\approx\\boldsymbol W(t)(\\hat{\\boldsymbol\\zeta}-\\boldsymbol\\zeta).\\]",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "status": "NEEDS_HUMAN",
+            "detail": "同一全局sin流在ζ=π/2,t=log 2时DFt(ζ)=4/5，字面DFt(Ftζ)=10/17；差额线性项不为小o。须导师裁定取值点，当前不静默修正。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.nearby_trajectory_literal",
+        "extra_assumptions": [
+          "≈严格化为固定t、扰动趋0的Frechet小o；沿用原文字面W。"
+        ],
+        "repair_log": [
+          "A原页审校：两初值及其差中的ξ、带帽ξ恢复为原书ζ、带帽ζ；保留原书近似式和字面W。"
+        ],
+        "old_ids": [
+          "CH01-193"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次直接核对教材PDF第68页（印刷第45页）。"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_NOTATION_MISMATCH",
+          "detail": "PDF第68页的两初值是ζ和带帽ζ，JSON改成ξ和带帽ξ；正文和公式均须恢复原书符号。"
+        },
+        {
+          "code": "ERRATUM?",
+          "status": "ISSUE",
+          "detail": "原页确实使用上一页的W。按字面DFt(Ftζ)解释，近似式不能成为通常的Fréchet一阶展开；sin流的余项仍含非零线性项。"
+        }
+      ],
+      "evidence": [
+        "已核对PDF第68页／印刷第45页If we have two solutions开头的整句及紧随的显示公式。",
+        "原页差的顺序为z(t,带帽ζ)−z(t,ζ)，右端为W(t)(带帽ζ−ζ)，近似符号为≈；JSON的顺序、符号和页码正确。",
+        "紧随段落将变分方程解释为无穷小初值扰动的相对变化；原页没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.nearby_trajectory_literal",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名在每个固定t和ξ处断言误差对x−ξ是邻域小o，包含全部向量分量，没有声称时间一致估计；该[EXTRA]与原页无穷小扰动上下文相符。展开variationalMatrixLiteral后，一阶系数确为DFt(Ftξ)，未偷换成正确的DFt(ξ)。然而differentiableFlow的实际定义未提供，无法核查它是否包含真实流、所需可微性或不合理的附加条件，因此不能完成全部前提审计。标准C1真实流背景下结论有反例，但不能假定该流满足未见定义的Lean谓词。sorry与这一语义问题分别记录。",
+      "counterexample": "在上述sin向量场的光滑完备流中，取ζ=π/2、t=log 2。DFt(ζ)=4/5，而字面W=DFt(Ftζ)=10/17。令h=x−ζ，则F_t(ζ+h)−F_t(ζ)−Wh=(18/85)h+o(h)，余项范数除以|h|趋于18/85而非0。因此教材字面W不满足所采用的小o近似。该反例尚未针对缺失的differentiableFlow定义认证。",
+      "suggested_fix": "提供同批differentiableFlow的定义体，明确核查真实流和可微性资格。对原书取值点作人工勘误裁定；若采用修订版，应另定义DFt(ζ)并保留原字面条目及ISSUE，不以本小o结论充当可微流的定义或附加假设。"
+    }
+  },
+  {
+    "source_id": "MD-1.7.2-SingularValues",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接核对PDF第68页／印刷第45页：The square roots of the eigenvalues开头的整句，与statement_latex一致。",
+        "原文矩阵是A^T A，确称其特征值的平方根为singular values，并说明它们给出像椭球的轴；没有独立完整证明。",
+        "同页随后明确可按largest to smallest排序，支持context_notation中的非增顺序说明；页码及proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.singularValues",
+      "verdict": "PASS",
+      "explanation": "已展开Ch01.lean中的真实定义：σ各分量非负，Antitone给出非增次序；存在方阵O满足O^T O=I及O^T(A^T A)O=diag(σ_i²)。有限维实方阵的第一条件使O正交，第二条件完整列出全部特征值及重数，非负性唯一选择平方根。因此这是完整谱关系而非仅检查若干特征值；排序是原文明确允许的约定。[EXTRA]正交特征基是实对称谱的等价刻画，没有把像椭球结论作为前提。原句中的几何解释由本批单列的singularellipsoid承担，不能误称本定义自身已经证明该几何结论。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.7.2-SingularEllipsoid",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已核对PDF第68页／印刷第45页We may view a regular linear mapping开头的两句：实m×m矩阵、m−1维球面、同一空间中的椭球及A^T A的特征值平方根均与JSON一致。",
+        "同页Fig. 1.26的图注再次说明regular linear map将m−1维球面映成m−1维椭球。",
+        "原页没有独立完整证明；页码及proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.singularellipsoid",
+      "verdict": "PASS",
+      "explanation": "Position n的实际定义是有限维实EuclideanSpace，Matrix.toEuclideanLin实际使用其标准正交坐标中的矩阵线性作用。IsUnit A表达方阵可逆，对应regular。展开singularValues后，其前提仅规定非负有序的完整奇异谱，没有假设像集合形状。结论同时给出正交O和单位球面像的精确集合等式；在O坐标中椭球方程是Σ(x_i/σ_i)²=1，故σ_i确为半轴长度。可逆性及谱条件保证σ_i>0，无须另将半轴非零作为结论前提。选择单位球面是合理归一化，其他半径由线性缩放恢复；不存在以结论作前提。sorry仅表示证明尚未完成。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.7.2-LyapunovExponents",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已核对PDF第68页／印刷第45页The Lyapunov exponents开头的定义、显示公式及where开头的解释，与statement_latex一致。",
+        "原式确为t→∞时(1/t)log σ_i(W)的lim sup，不是普通极限；原文要求以某种方式排序，并举largest to smallest。",
+        "页码正确，原页无独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.lyapunovExponent",
+      "verdict": "PASS",
+      "explanation": "实际定义是将实数log(σ(t))/t嵌入EReal后沿实时间atTop取Filter.limsup；展开limsSup确为最终上界集合的下确界，因此与原书连续时间上极限一致。它形式化单个输入曲线的增长率函数；按已给context_notation取σ(t)为W(t)的第i个有序奇异值，即得到该λ_i。函数定义允许更广输入，并不自身断言任意函数都是W的奇异值；谱曲线选择是应用时必须保持的对象约定。EReal允许±∞是合理的[EXTRA]，原文未保证有限性。真实可逆C1流背景下奇异值为正；不能把Lean对log 0的总函数延拓当作原书的零奇异值定义。该增长率函数也没有修正原书W的取值点疑误。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.7.2-PositiveLyapunovGrowth",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接核对PDF第68页／印刷第45页The presence of a positive Lyapunov exponent开头的完整句子，与statement_latex一致。",
+        "上文定义使用lim sup；相邻PDF第67页Fig. 1.25说明有限轨迹差在达到可达域尺度后会饱和，支持区分无穷小放大与有限扰动。",
+        "原句没有独立完整证明；页码及proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.positivelyapunovgrowth",
+      "verdict": "PASS",
+      "explanation": "已读取实际签名并展开lyapunovExponent：前提是正时间上的σ>0及扩展实上极限为正；结论量词为存在一个固定c>0，对每个T都存在t>T使σ(t)>exp(ct)。这是上极限定义能支持的任意晚时间指数放大，包含λ=+∞情形，没有把增长结论放入前提。[EXTRA]时间子列解释合理，不能加强为所有充分大时间统一增长。在前条约定的实际奇异值曲线上应用，该σ描述无穷小扰动的相应线性放大尺度；结论不要求同一个扰动方向在所有时间增长，也不声称有界相域中的有限轨迹差永远指数增大。原句的hallmark是现象说明，并非正指数充分推出全部混沌条件；当前签名没有作这种过度推论。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

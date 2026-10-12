@@ -1,0 +1,304 @@
+[
+  {
+    "source_id": "MD-1.5.3-Equilibrium",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_WORD_OMISSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.3-Equilibrium",
+        "kind": "definition",
+        "label": null,
+        "section": "1.5.3",
+        "printed_page": "31",
+        "pdf_page": "54",
+        "statement_latex": "An equilibrium point of such a system is a solution of $f(\\boldsymbol z)=0$.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_WORD_OMISSION",
+            "detail": "such system漏录冠词a；原页为such a system。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.equilibriumDefinition",
+        "extra_assumptions": [],
+        "repair_log": [
+          {
+            "stage": "A_REVIEW",
+            "detail": "仅在输出中补回原文冠词a，未修改文件。"
+          }
+        ],
+        "old_ids": [
+          "CH01-135"
+        ],
+        "source_page_verification": "本次已对照PDF第54页原页图像及文本。"
+      },
+      "issues": [
+        "漏录冠词a；页码正确，proof_latex=null合理。"
+      ],
+      "evidence": [
+        "PDF第54页、印刷第31页，式(1.6)后的首句明确写作such a system。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.equilibriumDefinition",
+      "verdict": "PASS",
+      "explanation": "实际定义直接为f z = 0。Position n展开为EuclideanSpace ℝ (Fin n)，对应原文实有限维状态空间；n表示状态维数，不强制解释为配置自由度。没有增加正则性假设或遗漏平衡条件。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.3-ConstantEquilibrium",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_RELATION_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.3-ConstantEquilibrium",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5.3",
+        "printed_page": "31",
+        "pdf_page": "54",
+        "statement_latex": "An equilibrium point $\\boldsymbol z^*$ corresponds to an equilibrium solution, since if we define a constant function $\\boldsymbol z(t)\\equiv\\boldsymbol z^*$ then we have $\\dot{\\boldsymbol z}(t)\\equiv f(\\boldsymbol z^*)=0$.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_RELATION_SYMBOL",
+            "detail": "原页两处恒等号≡被录成等号=。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.constantequilibrium",
+        "extra_assumptions": [],
+        "repair_log": [
+          {
+            "stage": "A_REVIEW",
+            "detail": "仅在输出中恢复两处原文恒等号，未修改文件。"
+          }
+        ],
+        "old_ids": [
+          "CH01-136"
+        ],
+        "source_page_verification": "本次已对照PDF第54页原页图像及文本。"
+      },
+      "issues": [
+        "恒定函数定义及其导数表达中的两处≡被替换为=；页码正确。解释性推导已包含在statement_latex中，没有独立证明段，proof_latex=null合理。"
+      ],
+      "evidence": [
+        "PDF第54页、印刷第31页，平衡定义后紧接的句子使用z(t)≡z*及ż(t)≡f(z*)=0。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.constantequilibrium",
+      "verdict": "PASS",
+      "explanation": "HasDerivAt使用真实导数关系，常值曲线的导数为零；双向条件恰表达该曲线满足ODE当且仅当f z₀=0。对任意t量化覆盖全部时刻，对实赋范空间的推广包含原文有限维情形，不依赖可疑辅助谓词。原文方向和零导数结论均保留。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.3-EquilibriumLinearization",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_APPROXIMATION_TO_EQUALITY",
+        "OMITTED_LINEARIZATION_CONTEXT"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.3-EquilibriumLinearization",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5.3",
+        "printed_page": "31",
+        "pdf_page": "54",
+        "statement_latex": "We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\\boldsymbol z^*$ and make use of the fact that $f(\\boldsymbol z)\\approx f(\\boldsymbol z^*)+f'(\\boldsymbol z^*)(\\boldsymbol z-\\boldsymbol z^*)$ for $\\|\\boldsymbol z-\\boldsymbol z^*\\|$ sufficiently small. Since $f(\\boldsymbol z^*)=0$ we have, defining $\\delta\\boldsymbol z:=\\boldsymbol z-\\boldsymbol z^*$,\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}\\approx\\boldsymbol A\\delta\\boldsymbol z,\\qquad\\boldsymbol A=f'(\\boldsymbol z^*).\\]\nThe symbol $\\approx$ is not very precise. In general, the approximation of solutions is only local in time meaning that solutions of the nonlinear system and the linear approximation may diverge. We refer to the system\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}=f'(\\boldsymbol z^*)\\delta\\boldsymbol z\\]\nas the linearization of the system (1.6) around $\\boldsymbol z^*$.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "小o余项将≈精确定义为一阶近似；δ的线性ODE是近似系统，不声称非线性扰动精确满足Aδ。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_APPROXIMATION_TO_EQUALITY",
+            "detail": "原文第一条扰动方程使用≈，JSON错误录为=。"
+          },
+          {
+            "code": "OMITTED_LINEARIZATION_CONTEXT",
+            "detail": "恢复紧接的局部时间近似说明及另行定义线性化系统的精确等式，避免混同两个系统。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.equilibriumlinearization",
+        "extra_assumptions": [],
+        "repair_log": [
+          {
+            "stage": "A_REVIEW",
+            "detail": "仅在输出中恢复近似号并补全同页紧接的线性化说明，未修改文件。"
+          }
+        ],
+        "old_ids": [
+          "CH01-137",
+          "CH01-138"
+        ],
+        "source_page_verification": "本次已对照PDF第54页原页图像及文本。"
+      },
+      "issues": [
+        "把≈录成=会将非线性扰动的近似关系误写成精确关系；context_notation不能替代原文符号。页码正确，proof_latex=null合理。"
+      ],
+      "evidence": [
+        "PDF第54页、印刷第31页，第一条居中扰动方程明确使用≈。其后说明近似一般仅局部于时间，再用另一条等式定义linearization。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.equilibriumlinearization",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "显式结论确实构造独立线性ODE解，未断言原非线性扰动精确满足该ODE；任意初值和全时间线性解属于合理增强，CompleteSpace在原文有限维情形自动成立。但关键equilibriumLinearizationRemainder的真实定义及其导入模块未在可读输入中找到，不能确认小o表达式是否为f(z₀+h)-f(z₀)-A h。ContDiffAt ℝ 1只规定点处正则性，不能未经说明直接视为原文整个邻域C1。原文关于解的局部时间近似亦未由显式签名直接表达。",
+      "counterexample": null,
+      "suggested_fix": "补齐对应版本的EquilibriumLinearization.lean并核查余项展开；明确点处可微假设是原文邻域C1的充分条件弱化。若覆盖完整恢复段落，应说明局部解近似的范围或另列相应误差结论。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.3-Hyperbolic",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "PAGE_SPAN_OVERSTATED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.3-Hyperbolic",
+        "kind": "definition",
+        "label": null,
+        "section": "1.5.3",
+        "printed_page": "31",
+        "pdf_page": "54",
+        "statement_latex": "In case the equilibrium point is hyperbolic, meaning that the real parts of the eigenvalues of $\\boldsymbol A=f'(\\boldsymbol z^*)$ are nonzero,",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "实算子用复特征向量的实虚部编码；所有非零特征对对应实部a≠0。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "PAGE_SPAN_OVERSTATED",
+            "detail": "所摘录的双曲定义全部位于印刷第31页、PDF第54页；第32页是后续共轭结论。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.hyperbolic",
+        "extra_assumptions": [],
+        "repair_log": [
+          {
+            "stage": "A_REVIEW",
+            "detail": "仅在输出中将条目页码缩为31/54，未修改文件。"
+          }
+        ],
+        "old_ids": [
+          "CH01-139"
+        ],
+        "source_page_verification": "本次已对照PDF第54、55页原页图像及文本。"
+      },
+      "issues": [
+        "陈述转录正确，但定义本身不跨页；proof_latex=null合理。"
+      ],
+      "evidence": [
+        "PDF第54页、印刷第31页末段已经完整包含特征值实部非零的定义及其逗号。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.hyperbolic",
+      "verdict": "PASS",
+      "explanation": "Position n为实有限维欧氏空间。复特征向量x+i y非零等价于x≠0∨y≠0；A(x+i y)=(a+i b)(x+i y)展开正是A x=a x-b y及A y=b x+a y。对所有此类特征对要求a≠0，完整覆盖实特征值及非实特征值，无对角化或实谱额外假设。A=f'(z*)由使用处绑定。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.3-HartmanGrobmanLiteral",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "SOURCE_SMOOTH_CONJUGACY_ISSUE"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "转录与跨页范围正确，proof_latex=null正确。原书确实写smooth, invertible，而非仅连续同胚；这是原书数学陈述疑误，必须保留原文并由人工处理。"
+      ],
+      "evidence": [
+        "PDF第54页、印刷第31页末段给出双曲前提及then one can infer开头；PDF第55页、印刷第32页首段明确写smooth, invertible map，并给出共轭公式及[177]、[362]引用。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.hartmangrobmanliteral",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "显式结论含开邻域、原点固定、映射及逆映射C∞、双向逆关系和局部轨迹共轭，保留了原书有问题的光滑措辞，并进一步显式要求逆映射光滑。全域C1及全局流限制了原文局部适用范围。isFlowOf与linearExponentialFlow的真实定义未提供，不能据名称认证其语义。即使将两者解释为通常真实流和线性指数流，C1双曲条件仍不足以推出该光滑共轭结论；不能把忠实转录与定理正确性混为一谈。声明含sorry，亦不构成验证。",
+      "counterexample": "按通常真实流解释，取一维f(x)=x+|x|^(3/2)/(1+|x|^(3/2))。它全域C1、导数有界，故有全局流；f(0)=0且f'(0)=1双曲，但f在0不为C2。若存在声明中的局部C∞映射φ及C∞逆ψ，流共轭在t=0求导给出f(φ(x))=φ'(x)x，于是f(y)=φ'(ψ(y))ψ(y)在0附近为C∞，矛盾。此反例针对通常流语义；由于辅助定义缺失，尚不能认定为当前Lean谓词的已核实实例。",
+      "suggested_fix": "先补齐当前版本的流及指数流定义。保留原文ISSUE，由人工决定另设更正版本：将光滑双向逆改为局部同胚，并使用局部流资格；若坚持光滑共轭，必须补充足够正则性及适当线性化条件，不能仅添加全局存在。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.3-LyapunovStability",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第55页、印刷第32页给出的定义包含对ε、δ和全部邻近初值的量词，以及t≥0上的严格上确界不等式；转录、页码及proof_latex=null均一致。原文省略正容差限定，应保留原文并按惯例解释。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.lyapunovStable",
+      "verdict": "PASS",
+      "explanation": "实际展开对每个正ε选取正δ，并对全部满足‖x-z‖<δ的初值要求非负时间轨道距离集合有上界且其sSup严格小于ε。Set.Ici 0完整覆盖t≥0，时间集合非空。BddAbove避免实数条件完备上确界对无界集合的总函数行为，属于合理形式化资格。平衡点及F为系统流由定义使用上下文提供；谓词自身刻画稳定性，没有偷换距离或时间域。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.3-HyperbolicStabilityTransfer",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第55页、印刷第32页，稳定定义及解释后紧接的句子完整陈述由双曲平衡的线性化原点稳定性推断非线性平衡稳定性；文字、页码及proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.hyperbolicstabilitytransfer",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "显式签名具备C1、f z=0及双曲条件，并以双向等价表达稳定性转移，没有直接把稳定结论设为前提。但本条使用的是stable而非已可展开的lyapunovStable。可读输入中未找到stable、isFlowOf、linearExponentialFlow的真实定义，无法核实稳定性的量词、统一界、未来时间域以及F的ODE和流资格；extra_assumptions中的等价说明不能替代定义核查。全局流假设还缩小原文局部定理的范围。声明含sorry，与上述签名语义待核实分开。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本Stability.lean、GlobalFlow.lean及定义线性指数流的模块，逐项展开核查。给出stable与严格sup定义的等价依据，并明确全局流模型仅覆盖原文局部结论的受限实例，或改为局部流陈述。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.3-HamiltonEquilibrium",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第55页、印刷第32页中部，Observe that引出的句子、动能加势能Hamiltonian公式以及p*=0和∇U(q*)=0两个结论均与JSON一致；没有独立完整证明，页码及proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.hamilton_equilibrium",
+      "verdict": "PASS",
+      "explanation": "已展开当前Ch01.lean中的variableMassHamiltonian和matrixAction：前者为⟪p,M⁻¹p⟫/2+U(q)，后者为矩阵在实欧氏空间的实际线性作用；传入fun _=>M使质量矩阵确实恒定。Position及Momentum均为EuclideanSpace ℝ (Fin n)，PotentialEnergy为该空间到ℝ的函数。heq同时要求Hamiltonian的动量梯度和位置梯度为零，正是Hamilton向量场消失，未把p=0或∇U=0预设为前提。M.PosDef提供原文质量矩阵背景中的对称性及可逆性，U在q可微使梯度有实际导数意义。结论同时保留p=0及gradient U q=0，未遗漏条款。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

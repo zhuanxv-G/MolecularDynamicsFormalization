@@ -1,0 +1,117 @@
+[
+  {
+    "source_id": "MD-1.2-ScalarQuadrature",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已核对 PDF 第43页原页，页眉印刷页码为20；正文从“Near this point, provided η ≠ 0”至“the initial conditions”与 statement_latex 一致。",
+        "原页包含能量等式、唯一光滑隐函数 V、dx/dt = V、初值 x(0) = ξ、位置函数 X 及速度复合表达式；无独立完整证明，proof_latex = null 合适。",
+        "相邻上下文明确为单位质量的一维系统，E(x,v) = v²/2 + U(x)，并强调表示的局部性质。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.scalar_quadrature",
+      "verdict": "PASS",
+      "explanation": "已只读取得提交 8fac966abdc551c63ddaea7c8504f80f89ff812d 的依赖源码；该提交的 Blueprint/Ch01.lean 和 ch01_source.json 与附件在 CRLF/LF 归一后逐字一致。ScalarIntegrability.lean 中 scalarPotentialEnergy U (x,v) 实为 v²/2 + U(x)；SeparableQuadrature.lean 中 separableTimePrimitive w ζ x 实为从 ζ 到 x 的区间积分 ∫du/w(u)。实际签名保留正的局部邻域、V 和 X 对全部参数的联合光滑性、位置和速度初值、能量关系、局部速度分支唯一性、两条真实运动方程及积分反演等式，覆盖所摘原文的全部数学子句。η≠0 是原文条件；U 光滑具体化原文的光滑性和隐函数应用。JSON context_notation 关于联合光滑性尚未登记的说明已经过时，应以实际签名为准。第523行的 sorry 属于证明完成度问题，不改变本次签名语义判定。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.2-UniformLJSystem",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已核对 PDF 第44页原页，印刷页码21，位于 Example 1.5。",
+        "动能的 1/2、求和范围 i=1,…,N，以及势能的 i=1,…,N−1、j=i+1,…,N 均与原页一致。",
+        "原页距离定义为 r_ij = ‖q_i−q_j‖，氩原子质量为 6.69×10⁻²⁶ kg；无独立完整证明，proof_latex = null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.uniformLJSystem",
+      "verdict": "PASS",
+      "explanation": "已核对同一匹配提交的 ReviewDefinitions.lean 和 Notation.lean：V3 = Position 3 = EuclideanSpace ℝ (Fin 3)，pairDistance qᵢ qⱼ = ‖qᵢ−qⱼ‖，uniformLJEnergy ε σ q = ∑i ∑j∈Finset.Ioi i 4ε[(σ/r_ij)^12−(σ/r_ij)^6]。因此实际定义是三维粒子的统一质量动能加全部无序粒子对的 Lennard-Jones 势能。Fin N 的零基索引经 i↦i+1 对应原书索引，每对恰计一次，没有重复求和或额外系数。质量作为参数可直接取教材氩质量；JSON 已明确将测量数值作为参数背景。公式在原文的正参数、非碰撞物理域上完全对应；Lean 的域外全定义延拓不构成碰撞配置具有物理意义的断言。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.2-RadialLJForceLiteral",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "status": "NEEDS_HUMAN",
+          "detail": "JSON 忠实抄录原页：首行确实是正的 φ′_LJ(r_ij)/r_ij 求和，次行确实带 −24ε/σ。两行右端相互一致，却都表示势能的正梯度，与此前 Newton 负梯度约定冲突。这是原书符号问题，保留原文，不静默改写。"
+        }
+      ],
+      "evidence": [
+        "PDF 第44页、印刷第21页的原页明确印有 m q̈_i = ∑(φ′_LJ(r_ij)/r_ij)(q_i−q_j)，没有求和前的负号。",
+        "同页次行明确为 −24ε/σ，括号内指数依次为13和7；JSON 的符号、指数、排除自作用的求和及页码均正确。",
+        "PDF 第41页、印刷第18页式(1.3)规定 F = −∇U；PDF 第44页后续坐标缩放方程及第45页时间缩放方程也采用负的径向导数求和。",
+        "原页无独立完整证明，proof_latex = null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.radial_lj_force_literal",
+      "verdict": "FAIL",
+      "explanation": "已展开匹配提交 Statements.lean 第314–317行的 ljForce：它实为 ∑j≠i [−φ′_LJ(r_ij)/r_ij] • (q_i−q_j)。ReviewDefinitions.lean 的势函数与 MD.Ch01.lennardJonesPotential 均为 4ε[(σ/r)^12−(σ/r)^6]。hnewton 因而是正确的负梯度 Newton 前提；结论两项却保留原书的正梯度表达式，均与此前提一般不相容。正 ε、σ 和非碰撞条件合理，但无法消除符号矛盾。声明忠实保留了原书疑误，不能据此批准为正确的 Newton 推论；第545行的 sorry 与此语义失败分别处理。",
+      "counterexample": "取 N=2、i=0、m=ε=σ=1，e=(1,0,0)，q 0=0、q 1=e，a 0=−24e、a 1=24e。所有正参数与非碰撞条件成立，φ′_LJ(1)=−24，实际 ljForce 1 1 q 0=−24e，故 hnewton 成立。结论第一项右端为24e，第二项右端也为24e，均不等于左端−24e。",
+      "suggested_fix": "保留本 source_id 的字面原文并登记 ISSUE，不能把错误公式作为已证明的物理定理。经确认勘误后，另行登记修正版本：第一项求和系数改为 −φ′_LJ(r)/r，第二项外系数改为 +24ε/σ。若保留字面版本，应明确其为原书疑误记录，并附上述反例。"
+    }
+  },
+  {
+    "source_id": "MD-1.2-LJCoordinateScaling",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已核对 PDF 第44页原页、印刷第21页：“Now introduce the change of variables”及 Q_i = σ⁻¹q_i、i=1,…,N 与 JSON 一致。",
+        "随后三项关系依次为 q̇_i=σQ̇_i、q̈_i=σQ̈_i、‖q_i−q_j‖=σ‖Q_i−Q_j‖，与 statement_latex 一致。",
+        "此处尚未变换时间，两种坐标的点号均对同一时间变量求导；无独立完整证明，proof_latex = null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.lj_coordinate_scaling",
+      "verdict": "PASS",
+      "explanation": "已核对匹配提交中 V3 的实际展开为三维实欧氏空间。将 q 定义为 σ•Q，σ>0 保证这与原文 Q=σ⁻¹q 等价。第一项给出实际一阶导数缩放；第二项给出 σ•deriv Q 的实际导数，结合 deriv(σ•Q)=σ•deriv Q，正是二阶导数缩放。最后一项对任意三维向量 r、s 保留完整距离缩放关系。任意曲线 Q 和时刻 t 的量化可逐粒子应用，任意 r、s 的量化覆盖所有粒子对。σ>0 来自长度参数的物理取值，并保证范数系数无需绝对值；hv、ha 是点处实际导数存在的合理资格条件，没有把结论放入前提。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.2-LJTimeScaling",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已核对 PDF 第44–45页原页，印刷页码21–22。第44页末为 τ=αt、α²=ε/(mσ²)，第45页接续归一化运动方程。",
+        "第45页方程的求和前负号、排除 j=i、φ̂′_LJ(R_ij)/R_ij 及向量差均与 JSON 一致。",
+        "第45页原文明确给出 α⁻¹=σ√(m/ε)≈2.17×10⁻¹² s，并说明单位质量和参数无关的势能函数；第44页定义 φ̂_LJ(R)=4[R⁻¹²−R⁻⁶]。",
+        "无独立完整证明，proof_latex = null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.ljtimescaling",
+      "verdict": "FAIL",
+      "explanation": "已展开匹配提交的 ljForce、pairDistance 和 Lennard-Jones 势定义。实际签名正确使用 q_i(t)=σQ_i(αt)，并给出带 m、ε、σ 的 Newton 方程与单位质量归一化方程的双向等价；ljForce 1 1 展开后恰为原文负的 φ̂′_LJ(R)/R 求和，势函数为参数无关的 4[R⁻¹²−R⁻⁶]。正参数、α>0、真实 C² 轨迹及非碰撞条件合理，α⁻¹=σ√(m/ε) 也完整保留。按本任务要求逐条覆盖全部结论，签名缺少原文氩参数下“≈2.17×10⁻¹² s”的数值近似子句，也未登记该子句被排除的形式化范围，因此整条不能判 PASS。此失败是结论覆盖不完整，符号缩放关系本身未发现错误。",
+      "counterexample": null,
+      "suggested_fix": "保留原文的 2.17×10⁻¹² s，补登记教材氩参数 m=6.69×10⁻²⁶ kg、ε=1.65×10⁻²¹ J、σ=3.4×10⁻¹⁰ m 的数值专门化，并明确“≈”的误差容差和单位解释后增加相应结论。若该经验数值拟作为背景排除，应明确记录此范围并重新确认，不能直接认定当前签名覆盖全部原文子句。"
+    }
+  }
+]

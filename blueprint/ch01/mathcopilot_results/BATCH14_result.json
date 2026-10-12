@@ -1,0 +1,306 @@
+[
+  {
+    "source_id": "MD-1.5.2-ActionAngleCoordinates",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "SOURCE_NOTATION_ISSUE"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "SOURCE_NOTATION_ISSUE",
+          "detail": "PDF第53页后文确实把“action-angle”变量写成(I,Ω)，疑为(I,θ)的原书笔误。本条所录定义公式正确；context_notation中的(I,θ)属于解释，不是该后文的逐字引文。保留原书疑误记录，不改公式。"
+        }
+      ],
+      "evidence": [
+        "已目视核对PDF第53页原页，页眉印刷页30；定义为x=√(2I/Ω) cos θ，v=√(2IΩ) sin θ，根号范围及正号均一致。",
+        "同页给出E(x,v)=v²/2+Ω²x²/2及ẋ=v、v̇=−Ω²x；本条没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.oscillatorActionAngle",
+      "verdict": "PASS",
+      "explanation": "已读取实际Ch01.lean中的定义体：实数三参数映射到实数有序对，第一分量是Real.sqrt(2*I/Ω)*Real.cos θ，第二分量是Real.sqrt(2*I*Ω)*Real.sin θ，逐项对应原式。该定义在所有实参数上作全函数延拓，不声称在I≤0或Ω≤0处也是非退化坐标变换；原文适用域Ω>0、I>0内忠实。没有把结论作前提。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-ActionEnergy",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第53页、印刷页30原文为“In these variables, the energy is E = IΩ.”，与statement_latex一致。",
+        "原页没有本条独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.actionenergy",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名全称量化Ω、J、θ，并在Ω>0、J≥0下断言所选能量等于JΩ；J只是I的改名，正频率与非负action资格合理，J=0是合理延拓。但当前提供的文件中缺少HarmonicActionAngle.lean、HarmonicOscillator.lean等所需依赖，无法展开harmonicScalarEnergy、harmonicActionPosition、harmonicActionVelocity，亦无法核实所述velocity_formula。现有压缩包中的旧源码也不包含这些模块。不能仅凭名称批准；实际Ch01.lean中的exact引用不替代定义核验。",
+      "counterexample": null,
+      "suggested_fix": "提供与本批Ch01.lean匹配的依赖源码及MANIFEST，核实能量确为v²/2+Ω²x²/2，位置、速度确为本页坐标公式后再判定。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-ActionODE",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第53页、印刷页30原文为“Introducing these formulas into the equations of motion and simplifying leads to”随后给出İ=0、θ̇=−Ω；公式及负号一致。",
+        "这是计算结果的叙述，没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.actionode",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名使用真实HasDerivAt见证，在任意时刻t、Ω>0及J(t)>0下，将两条振子运动方程与d=0、omega=−Ω作等价关联。可见量词、符号和两条结论符合原文，非退化及可微假设合理，反向蕴含是合理加强，不是结论作前提。但harmonicActionPosition、harmonicActionVelocity的实际定义未提供，不能核实它们是否确为原页坐标变换，故不能完成要求的定义展开审计。",
+      "counterexample": null,
+      "suggested_fix": "补充本批HarmonicActionAngle.lean等依赖，逐项展开坐标定义并核对导数等价所用对象。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-ActionSolution",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第53页、印刷页30原文逐项给出能量恒定、频率Ω的旋转及θ(t)=θ(0)−Ωt，与statement_latex一致。",
+        "没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.actionsolution",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名在连通开放时间区间内量化任意s、t，同时断言J(t)=J(s)及θ(t)=θ(s)−Ω(t−s)。当0属于区间并取s=0时包含原文角度公式；时间原点平移合理。正action、正频率、局部实值可微角度和真实运动方程假设合理。能量恒定子句还需结合actionenergy及实际能量定义；缺失HarmonicActionAngle.lean等依赖使坐标与能量对象无法展开确认，因此不作PASS。",
+      "counterexample": null,
+      "suggested_fix": "提供匹配依赖定义，核实坐标公式与能量表达式；说明原文以0为初始时刻时须0∈Ioo a b，能量恒定由J恒定及E=JΩ推出。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-HarmonicTorus",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_WORDING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.2-HarmonicTorus",
+        "kind": "definition",
+        "label": null,
+        "section": "1.5.2",
+        "printed_page": "30",
+        "pdf_page": "53",
+        "statement_latex": "The simple change of variables ($(x_j,v_j)\\to(I_j,\\theta_j)$), applied to each oscillator, would yield equations of motion $\\dot I_j=0$, $\\dot\\theta_j=-\\Omega_j$. This describes a point winding about a $d$-dimensional torus defined by angular rotation frequencies $\\Omega_j$ and radii $|I_j|$ (Fig. 1.14).",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [
+          "HarmonicTorus d = Fin d→Real.Angle；角模2π；I为固定action，半径的几何映射不新造定理。"
+        ],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_WORDING",
+            "detail": "PDF第53页原文为The simple change of variables，并在坐标变换表达式外另有一层圆括号；原JSON误录为The same change of variables。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.oscillatorTorusMotion",
+        "extra_assumptions": [],
+        "repair_log": [
+          "仅在本输出修正版中恢复simple及坐标变换外层括号；未修改文件。"
+        ],
+        "old_ids": [
+          "CH01-131"
+        ],
+        "source_page_verification": "本次目视核对PDF第53页原页，印刷页30。"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_WORDING",
+          "detail": "same应恢复为原书simple，并恢复外层括号；其余公式、radii |I_j|、图号及页码一致。"
+        }
+      ],
+      "evidence": [
+        "PDF第53页、印刷页30原文开头是“The simple change of variables”，不是“The same change of variables”。",
+        "原页确实写radii |I_j|；保留原文，不擅自改成位置或速度振幅。proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.oscillatorTorusMotion",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际定义体只显式给出固定I与harmonicTorusRotation Ω t θ₀的有序对。当前缺少HarmonicTorus及harmonicTorusRotation的真实定义，JSON中的定义描述不能代替源码，无法核实角空间、模数及旋转负号。此外该定义没有显式包含由各振子坐标变换推出运动方程的桥接，也没有半径|I_j|的几何实现；须核实依赖是否提供这些对应关系，才能判定全部原文子句是否覆盖。",
+      "counterexample": null,
+      "suggested_fix": "提供HarmonicTorus.lean及相关依赖；明确展开角模2π及负频率旋转，并给出逐振子坐标变换和半径|I_j|的解释或对应声明，不应仅以固定action标签代替全部语义。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-TorusPeriod",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第53页、印刷页30原句“Depending on the ratio of frequencies such motions may be periodic or quasi-periodic;”与statement_latex一致，包括分号。",
+        "原文没有独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.torusperiod",
+      "verdict": "FAIL",
+      "explanation": "实际签名仅给定一个T，刻画Function.Periodic与逐频率整数圈条件的等价；没有量化非零正周期的存在，也没有准周期对象、非周期情形或周期/准周期分类的结论。T=0亦被允许，因此不能把该签名单独当成原句全部结论的形式化。整数圈刻画作为周期性子结果合理，但[EXTRA]说明不能补回缺失的准周期子句。另因HarmonicTorus、harmonicTorusRotation定义缺失，角空间对象仍未核实。",
+      "counterexample": "缺失条款：对Ω=(1,√2)，整数圈判据即使成立为一个等价定理，也没有在签名中断言该运动无正周期且为准周期；原文所述第二类行为没有形式化结论。",
+      "suggested_fix": "保留该声明作为周期判据子结果，另用∃T>0表达周期运动，并定义及覆盖无正周期的准周期情形；同时提供真实环面及旋转定义。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-TorusDense",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SILENT_SOURCE_CORRECTION",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.2-TorusDense",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5.2",
+        "printed_page": "30",
+        "pdf_page": "53",
+        "statement_latex": "in the latter case the paths do not “close up” but instead we the curve gradually fills in the surface of the torus.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "SOURCE_TYPO",
+            "status": "ISSUE",
+            "detail": "PDF第53页原书确实写but instead we the curve，疑漏see；保留原文，不补词。"
+          },
+          {
+            "code": "ERRATUM?",
+            "status": "NEEDS_HUMAN",
+            "detail": "原文把准周期情形概括为填满整个d维环面，未区分共振导致的真子环面；全维稠密需要全整数无共振资格。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.torusdense",
+        "extra_assumptions": [
+          "高维全整数关系无共振；仅成对频率比无理不足，此为原文quasi-periodic intended meaning的数学资格。"
+        ],
+        "repair_log": [
+          "仅在本输出修正版中删除原JSON擅补的see，保留原书语病并标记ISSUE；未修改文件。"
+        ],
+        "old_ids": [
+          "CH01-133"
+        ],
+        "source_page_verification": "本次目视核对PDF第53页原页，印刷页30。"
+      },
+      "issues": [
+        {
+          "code": "SILENT_SOURCE_CORRECTION",
+          "detail": "JSON中的see不在原页中，应删除并记录原书语病。"
+        },
+        {
+          "code": "ERRATUM?",
+          "detail": "非闭合准周期运动不必稠密于整个高维环面，不能静默补上无共振条件并宣称原句无误。"
+        }
+      ],
+      "evidence": [
+        "PDF第53页原页两行连读为“but instead we the curve gradually fills in the surface of the torus.”，没有see。",
+        "上文对象为一般d个解耦振子；PDF第54页图1.14仅示意两个自由度，不能替代一般d维陈述的条件。",
+        "本条无独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.torusdense",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名增加所有整数关系均平凡的前提，再断言每个初始角的全时间轨道DenseRange。该资格是全维稠密的标准条件，明显强于原句仅称准周期，必须作为原书疑误的显式资格经人工确认；不得视为自动忠实。HarmonicTorus及harmonicTorusRotation真实定义未提供，也无法核实拓扑和对象。该声明有sorry，但证明缺口与本次签名语义判定分开。",
+      "counterexample": "在标准三维角环面上取Ω=(1,√2,1+√2)、初始角全零。三个频率的两两比值均无理，运动没有正周期，但整数关系Ω₁+Ω₂−Ω₃=0使轨道始终满足θ₁+θ₂−θ₃=0 mod 2π，只能稠密于真子环面，不能填满整个三维环面。这反驳原文的一般化读法，不反驳增加无共振前提后的签名。",
+      "suggested_fix": "由人工确认原文是否限于全整数无共振情形；保留原句和疑误记录，把全维稠密作为明确加条件的修正版，或改述为轨道稠密于由整数关系确定的子环面，并提供依赖定义。"
+    }
+  },
+  {
+    "source_id": "MD-1.5.2-LocalActionAngleReduction",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SILENT_SOURCE_CORRECTION",
+        "TRANSCRIPTION_WORDING",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-1.5.2-LocalActionAngleReduction",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "1.5.2",
+        "printed_page": "30",
+        "pdf_page": "53",
+        "statement_latex": "More generally, one finds occasional examples of nonlinear systems which possesses as many independent first integrals as degrees of freedom (satisfying a certain “involution” condition); such systems may be reduced via coordinate transformation to action-angle variables, i.e. they exhibit tori motion.",
+        "proof_latex": null,
+        "proof_note": "原书无独立完整证明。",
+        "context_notation": [],
+        "review_status": "CORRECTED",
+        "issues": [
+          {
+            "code": "SOURCE_TYPO",
+            "status": "ISSUE",
+            "detail": "原书写systems which possesses，主谓一致疑误保留，不改为possess。"
+          },
+          {
+            "code": "ERRATUM?",
+            "status": "NEEDS_HUMAN",
+            "detail": "独立且对合的第一积分本身不足以保证全局环面运动；紧、连通正则共同水平集是额外资格。现有签名还包含全局环面同胚和流共轭，不是仅局部规约。"
+          }
+        ],
+        "lean_decl": "MD.Ch01.local_action_angle_reduction",
+        "extra_assumptions": [
+          "全部积分C∞且Poisson括号两两零；正则共同能量层紧、连通；满秩=独立。"
+        ],
+        "repair_log": [
+          "仅在本输出修正版中恢复原书possesses及via coordinate transformation，保留疑误；未修改文件。"
+        ],
+        "old_ids": [
+          "CH01-134"
+        ],
+        "source_page_verification": "本次目视核对PDF第53页原页，印刷页30。"
+      },
+      "issues": [
+        {
+          "code": "SILENT_SOURCE_CORRECTION",
+          "detail": "原JSON把原书possesses改成possess，须恢复并标记原书语病。"
+        },
+        {
+          "code": "TRANSCRIPTION_WORDING",
+          "detail": "原书是via coordinate transformation，没有冠词a。"
+        },
+        {
+          "code": "ERRATUM?",
+          "detail": "全局环面结论的额外资格需人工确认；原issues中“本条只保留局部规约”与实际签名不符。"
+        }
+      ],
+      "evidence": [
+        "PDF第53页、印刷页30底部原文确实为“systems which possesses”及“via coordinate transformation”。",
+        "该页前文说至少局部可改写方程，末句却说exhibit tori motion；没有明说紧、连通正则共同水平集。",
+        "没有本条独立完整证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch01.local_action_angle_reduction",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名量化d个光滑函数，假设两两Poisson括号为零及共同水平集S紧、连通、导数满秩，结论同时含localActionAngle、S与HarmonicTorus d的全局同胚，以及每个积分的Hamilton流的旋转共轭。这比仅局部规约更强，原issues的描述不准确。紧性、连通性是原文全局环面读法所缺的实质资格，应人工确认。签名没有单独给出原系统Hamilton量或其流；需展开localActionAngle、poissonBracket、symplecticGradient等定义，确认如何表达原系统的第一积分和坐标变换。但本批ReviewDefinitions.lean、HarmonicTorus.lean等依赖未提供，不能凭名称判断是否存在循环前提或完整辛坐标条件。该声明有sorry，另行记录为证明缺口，不据此判语义FAIL。",
+      "counterexample": "说明原文缺少紧性：一自由度取H(q,p)=p³+p。dH=(3p²+1)dp处处非零，单个积分的对合条件自动成立；运动满足q̇=3p²+1、ṗ=0。每个能量层是非紧直线，轨道不是圆环运动。此例不满足Lean额外紧性前提，故不是Lean签名反例。",
+      "suggested_fix": "提供全部相关定义；人工确认将本条限定为紧、连通、非空正则共同水平集上的作用角结论。明确原Hamilton量与积分的关系，并检查localActionAngle实际包含可逆辛坐标变换和全部所需结论；更正“只保留局部规约”的说明，保留原书资格缺失记录。"
+    }
+  }
+]
