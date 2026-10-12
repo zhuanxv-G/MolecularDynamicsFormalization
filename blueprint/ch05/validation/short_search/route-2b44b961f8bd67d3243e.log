@@ -1,0 +1,48 @@
+blueprint\ch05\validation\short_search\route-2b44b961f8bd67d3243e.lean:53:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-2b44b961f8bd67d3243e.lean:53:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-2b44b961f8bd67d3243e.lean:96:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-2b44b961f8bd67d3243e.lean:324:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-2b44b961f8bd67d3243e.lean:364:67: warning: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+blueprint\ch05\validation\short_search\route-2b44b961f8bd67d3243e.lean:364:89: warning: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch05\validation\short_search\route-2b44b961f8bd67d3243e.lean:460:10: error: Type mismatch: After simplification, term
+  Tendsto.mul_const x (Tendsto.mono_left (Continuous.tendsto Real.continuous_sqrt 0) inf_le_left)
+ has type
+  @Tendsto ℝ ℝ (fun x_1 => √x_1 * x) (𝓝 0 ⊓ 𝓟 (Ioi 0)) (𝓝 0)
+but is expected to have type
+  @Tendsto ℝ ℝ (fun ε => √ε * x) (𝓝[>] 0) (𝓝 0)
+blueprint\ch05\validation\short_search\route-2b44b961f8bd67d3243e.lean:472:57: error: No goals to be solved
+blueprint\ch05\validation\short_search\route-2b44b961f8bd67d3243e.lean:479:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (x : ℝ), ?g (?a * x)
+in the target expression
+  ∫ (x : ℝ), φ x * Chapter05Review.gaussianDelta ε x =
+    √ε * ∫ (x : ℝ), φ (√ε * x) * Chapter05Review.gaussianDelta ε (√ε * x)
+
+φ : ℝ → ℝ
+hφ : Continuous φ
+hb : Bornology.IsBounded (range φ)
+hg :
+  (∀ (x : ℝ), 0 ≤ Chapter05Review.gaussianDelta 1 x) ∧
+    Integrable (Chapter05Review.gaussianDelta 1) volume ∧ ∫ (x : ℝ), Chapter05Review.gaussianDelta 1 x = 1
+C : ℝ
+hC : C > 0
+hBC : ∀ x ∈ range φ, ‖x‖ ≤ C
+ht : Tendsto (fun ε => ∫ (x : ℝ), φ (√ε * x) * Chapter05Review.gaussianDelta 1 x) (𝓝[>] 0) (𝓝 (φ 0))
+ε : ℝ
+hε : ε ∈ Ioi 0
+hεpos : 0 < ε
+hspos : 0 < √ε
+hs0 : √ε ≠ 0
+hpoint : ∀ (x : ℝ), √ε * Chapter05Review.gaussianDelta ε (√ε * x) = Chapter05Review.gaussianDelta 1 x
+⊢ ∫ (x : ℝ), φ x * Chapter05Review.gaussianDelta ε x =
+    √ε * ∫ (x : ℝ), φ (√ε * x) * Chapter05Review.gaussianDelta ε (√ε * x)

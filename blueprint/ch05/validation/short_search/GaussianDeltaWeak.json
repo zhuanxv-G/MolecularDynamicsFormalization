@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-2b44b961f8bd67d3243e.lean",
+    "log": "blueprint/ch05/validation/short_search/route-2b44b961f8bd67d3243e.log",
+    "source_sha256": "8dc6c7b0eab155c80a717b43c0e4c3685dbc381792248571c32aa4aa385fdb71",
+    "log_sha256": "a48cf78ed9b94163209d8664636601fc11fec0e64f6414f558766af5678effef"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-463401a2b819ac9ccd85.lean",
+    "log": "blueprint/ch05/validation/short_search/route-463401a2b819ac9ccd85.log",
+    "source_sha256": "9e3d413d8cff7bc36c039aecd5f953f4a92d8b6abdf0ba1a1d683a1a4b82200b",
+    "log_sha256": "9fb7d346c6087f859e48de9c1bcfbbfd5b9f75843d6539aefcdbd0b25992002b"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro φ hφ hb\n  have hg := gaussianDeltaProbability 1 (by norm_num)\n  obtain ⟨C,hC,hBC⟩ := hb.exists_pos_norm_le\n  have ht : Tendsto (fun ε : ℝ => ∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)\n      (𝓝[>] 0) (𝓝 (φ 0)) := by\n    have hc := tendsto_integral_filter_of_dominated_convergence\n      (fun x : ℝ => C*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)\n      (F:=fun ε x => φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)\n      (f:=fun x => φ 0*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)\n      (Filter.Eventually.of_forall (fun ε => by\n        apply Continuous.aestronglyMeasurable\n        unfold MolecularDynamics.Chapter05Review.gaussianDelta\n        fun_prop))\n      (Filter.Eventually.of_forall (fun ε => ae_of_all _ (fun x => by\n        simpa only [norm_mul,Real.norm_eq_abs,abs_of_nonneg (hg.1 x)] using\n          mul_le_mul_of_nonneg_right (hBC (φ (Real.sqrt ε*x)) (mem_range_self _)) (hg.1 x))))\n      (hg.2.1.const_mul C) (ae_of_all _ (fun x => by\n        have hs : Tendsto (fun ε : ℝ => Real.sqrt ε*x) (𝓝[>] 0) (𝓝 0) := by\n          simpa using! ((Real.continuous_sqrt.tendsto 0).mono_left inf_le_left).mul_const x\n        exact (hφ.tendsto 0 |>.comp hs).mul_const _))\n    simpa only [integral_const_mul,hg.2.2,mul_one] using hc\n  apply tendsto_congr' _ |>.2 ht\n  filter_upwards [self_mem_nhdsWithin] with ε hε\n  have hεpos : 0 < ε := hε\n  have hspos : 0 < Real.sqrt ε := Real.sqrt_pos.2 hεpos\n  have hs0 : Real.sqrt ε ≠ 0 := ne_of_gt hspos\n  have hpoint (x : ℝ) : Real.sqrt ε*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x)=\n      MolecularDynamics.Chapter05Review.gaussianDelta 1 x := by\n    unfold MolecularDynamics.Chapter05Review.gaussianDelta\n    rw [mul_pow,Real.sq_sqrt hεpos.le]\n    have hexp : -(ε*x^2)/(2*ε)= -x^2/2 := by field_simp\n    rw [hexp,Real.sqrt_mul (by positivity : 0 ≤ 2*Real.pi)]\n    simp only [mul_one]\n    field_simp\n  calc\n    (∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x)=\n      Real.sqrt ε*(∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x)) := by\n        change (∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x)=Real.sqrt ε*(∫ x,(fun y => φ y*MolecularDynamics.Chapter05Review.gaussianDelta ε y) (Real.sqrt ε*x))\n        have hchange : (∫ x : ℝ,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x))=\n            (Real.sqrt ε)⁻¹*(∫ x : ℝ,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) := by\n          simpa only [smul_eq_mul,abs_of_pos (inv_pos.mpr hspos)] using!\n            (Measure.integral_comp_mul_left (fun x : ℝ => φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) (Real.sqrt ε))\n        rw [hchange]\n        field_simp\n    _ = ∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x := by\n      rw [←integral_const_mul]\n      apply integral_congr_ae\n      filter_upwards [] with x\n      rw [←hpoint]\n      ring",
+    "source": "blueprint/ch05/validation/short_search/route-33c5dbbce20c4dd4890b.lean",
+    "log": "blueprint/ch05/validation/short_search/route-33c5dbbce20c4dd4890b.log",
+    "source_sha256": "50c620b1608c46a65f92f2a736e0251a8b35976702b3e54f44b270cf357c7c52",
+    "log_sha256": "c53771f07435402997ec0a3f98f7845d6dda35edd812ea2349217b685f026d4f"
+  }
+]

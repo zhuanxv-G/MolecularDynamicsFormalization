@@ -1,0 +1,15 @@
+intro n f hf hb
+  obtain ⟨C,hC⟩ := hb
+  have hi : ∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,
+      Integrable (fun z => f z*φ z) volume := by
+    intro φ
+    apply Integrable.mono' (φ.integrable.norm.mul_const C)
+    · exact hf.continuous.measurable.aestronglyMeasurable.mul φ.continuous.measurable.aestronglyMeasurable
+    · filter_upwards [] with z
+      simpa only [norm_mul,Real.norm_eq_abs,mul_comm] using mul_le_mul_of_nonneg_right (hC z) (abs_nonneg (φ z))
+  refine ⟨hi,?_⟩
+  intro φ ψ a b
+  simp only [MolecularDynamics.Chapter05Review.regularDistribution,SchwartzMap.add_apply,SchwartzMap.smul_apply,smul_eq_mul]
+  simp_rw [mul_add,← mul_assoc,mul_comm (f _) a,mul_comm (f _) b]
+  simp_rw [mul_assoc]
+  rw [integral_add ((hi φ).const_mul a) ((hi ψ).const_mul b),integral_const_mul,integral_const_mul]

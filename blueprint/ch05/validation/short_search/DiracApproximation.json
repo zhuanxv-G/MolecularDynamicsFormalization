@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.lean",
+    "log": "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.log",
+    "source_sha256": "3715fc8511f6e7ea34df8b05593a103048149b5f2eec90315cd44ecdfb4d4e8f",
+    "log_sha256": "b61f6180b373161969d29290f8e801eec8f057d3f0f6bf7a93e26ddb058a0736"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n r hr hp hs φ hφ\n  apply Metric.tendsto_nhds.mpr\n  intro e he\n  obtain ⟨δ,hδ,hφδ⟩ := Metric.continuousAt_iff.mp hφ.continuousAt (e/2) (by positivity)\n  obtain ⟨η,hη,hsη⟩ := hs δ hδ\n  filter_upwards [Ioo_mem_nhdsGT hη] with ε hε\n  have hd := (hp ε hε.1).1\n  have hmass := (hp ε hε.1).2\n  have hb : ∀ z,‖(φ z-φ 0)*r ε z‖ ≤ (e/2)*r ε z := by\n    intro z\n    by_cases hz : r ε z=0\n    · simp [hz]\n    · have hzball := hsη ε hε (show z ∈ Function.support (r ε) from hz)\n      have heφ := hφδ (by simpa only [Metric.mem_ball] using hzball)\n      simpa only [norm_mul,Real.norm_eq_abs,abs_of_nonneg (hd.2.1 z),Real.dist_eq] using\n        mul_le_mul_of_nonneg_right heφ.le (hd.2.1 z)\n  have hdiff : Integrable (fun z => (φ z-φ 0)*r ε z) volume := by\n    apply Integrable.mono' (hd.2.2.const_mul (e/2))\n    · exact ((hφ.sub continuous_const).mul (hr ε hε.1)).measurable.aestronglyMeasurable\n    · exact ae_of_all _ hb\n  have hpr : Integrable (fun z => φ z*r ε z) volume := by\n    convert hdiff.add (hd.2.2.const_mul (φ 0)) using 1\n    funext z\n    change φ z*r ε z=(φ z-φ 0)*r ε z+φ 0*r ε z\n    ring\n  have hi : (∫ z,(φ z-φ 0)*r ε z)=(∫ z,φ z*r ε z)-φ 0 := by\n    simp_rw [sub_mul]\n    rw [integral_sub hpr (hd.2.2.const_mul (φ 0)),integral_const_mul,hmass,mul_one]\n  have hle := norm_integral_le_of_norm_le (hd.2.2.const_mul (e/2)) (ae_of_all _ hb)\n  rw [integral_const_mul,hmass,mul_one,hi] at hle\n  rw [dist_eq_norm]\n  exact hle.trans_lt (by linarith)",
+    "source": "blueprint/ch05/validation/short_search/route-f1710e94750679035b16.lean",
+    "log": "blueprint/ch05/validation/short_search/route-f1710e94750679035b16.log",
+    "source_sha256": "4624b57994445f4fd83d92b778403fe163a3bef80a96d318797a26780e5a771f",
+    "log_sha256": "07bd9781ca8348dc8f1b1f4a2a62bbb17bfff2739478c4d2afcc1446cde225fc"
+  }
+]

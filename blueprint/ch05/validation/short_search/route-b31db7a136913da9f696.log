@@ -1,0 +1,31 @@
+blueprint\ch05\validation\short_search\route-b31db7a136913da9f696.lean:53:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-b31db7a136913da9f696.lean:53:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-b31db7a136913da9f696.lean:96:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-b31db7a136913da9f696.lean:324:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-b31db7a136913da9f696.lean:368:67: warning: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+blueprint\ch05\validation\short_search\route-b31db7a136913da9f696.lean:368:89: warning: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch05\validation\short_search\route-b31db7a136913da9f696.lean:370:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a_1 : E n), a * (f a_1 * φ a_1) + b * (f a_1 * ψ a_1)
+in the target expression
+  ∫ (z : E n), a * f z * φ z + b * f z * ψ z = (a * ∫ (z : E n), f z * φ z) + b * ∫ (z : E n), f z * ψ z
+
+n : ℕ
+f : E n → ℝ
+hf : ContDiff ℝ ω f
+C : ℝ
+hC : ∀ (z : E n), |f z| ≤ C
+hi : ∀ (φ : schwartzSpace n), Integrable (fun z => f z * φ z) volume
+φ ψ : schwartzSpace n
+a b : ℝ
+⊢ ∫ (z : E n), a * f z * φ z + b * f z * ψ z = (a * ∫ (z : E n), f z * φ z) + b * ∫ (z : E n), f z * ψ z

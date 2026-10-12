@@ -1,0 +1,16 @@
+intro ε hε
+  have he0 : ε ≠ 0 := ne_of_gt hε
+  have hcoef : 0 < (1 : ℝ)/(2*ε) := by positivity
+  have heq : MolecularDynamics.Chapter05Review.gaussianDelta ε=
+      (fun x : ℝ => Real.exp (-(1/(2*ε))*x^2)/Real.sqrt (2*Real.pi*ε)) := by
+    funext x
+    unfold MolecularDynamics.Chapter05Review.gaussianDelta
+    congr 2
+    ring
+  rw [heq]
+  refine ⟨fun x => by positivity,?_,?_⟩
+  · exact (integrable_exp_neg_mul_sq hcoef).div_const _
+  · rw [integral_div,integral_gaussian]
+    have hp0 : 0 ≤ 2*Real.pi*ε := by positivity
+    have hratio : Real.pi/(1/(2*ε))=2*Real.pi*ε := by field_simp
+    rw [hratio,div_self (ne_of_gt (Real.sqrt_pos.2 (by positivity)))]

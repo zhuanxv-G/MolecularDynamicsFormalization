@@ -1,0 +1,67 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11a",
+  "source_ids": [
+    "MD-5.3.1-DiracApproximation"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 210,
+      "printed_page": 189
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7eaa2174608332212bc7d05acd155ccf161f9b56dfb51a1d0d87f376d4cbe3d6",
+  "lean_sha256": "09fa9e5f6b2c5450638a5417628e326ebb7d41f1d75a4fdcc5cac8cca503e79c",
+  "signature_sha256": "1bda389043eab2303e1e582eee148535084046b8da2b3e996eca0a77c5821d7f",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "probabilityDensity",
+      "code_sha256": "ec7111064a60d4e0ffb4738f7e5dfc539785ac2942850786ec72672a204a5e2f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "density",
+      "code_sha256": "cb24f1ce958a8a1e95b72fdcf4783440869a7e892f6e1482e9123c8154016f86"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "probabilityDensity",
+      "code_sha256": "ec7111064a60d4e0ffb4738f7e5dfc539785ac2942850786ec72672a204a5e2f"
+    }
+  ],
+  "paste_plus_pdf_bytes": 83066,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4546,
+      "sha256": "949c168aba9f65a690468452eb5f7663bb193ec435170c5fc8eb37a761bf5924"
+    },
+    "BATCH11a_PAGES.pdf": {
+      "bytes": 78520,
+      "sha256": "6123a3c576938880fd8ae211810bc8daa00a5d7682bb84a357a62c01cd3872bf"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 85519
+}

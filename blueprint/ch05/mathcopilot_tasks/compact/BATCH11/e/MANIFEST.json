@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11e",
+  "source_ids": [
+    "MD-5.3.1-GaussianDeltaWeak"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 210,
+      "printed_page": 189
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7eaa2174608332212bc7d05acd155ccf161f9b56dfb51a1d0d87f376d4cbe3d6",
+  "lean_sha256": "09fa9e5f6b2c5450638a5417628e326ebb7d41f1d75a4fdcc5cac8cca503e79c",
+  "signature_sha256": "8cf4d9f801d36145784dab252c9d23b331a3f726016302ef30d08bc12fe27b46",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "gaussianDelta",
+      "code_sha256": "91ff5dcad7079462d8c3230b452ee845e1df53f79ed8998eb4e33f42f27fc513"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "gaussianDelta",
+      "code_sha256": "91ff5dcad7079462d8c3230b452ee845e1df53f79ed8998eb4e33f42f27fc513"
+    }
+  ],
+  "paste_plus_pdf_bytes": 81900,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3380,
+      "sha256": "b4236a736ccc896ca89c383e1ba933bd7c3db1513b96c906f39846387cc15106"
+    },
+    "BATCH11e_PAGES.pdf": {
+      "bytes": 78520,
+      "sha256": "6123a3c576938880fd8ae211810bc8daa00a5d7682bb84a357a62c01cd3872bf"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 83529
+}

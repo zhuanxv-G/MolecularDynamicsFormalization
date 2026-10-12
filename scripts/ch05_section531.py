@@ -1,0 +1,20 @@
+"""Generalized-function statements; literal support and the Gaussian alternative."""
+from ch05_data import add,copied,D,NS
+add('TestSpace','5.3.1',188,[33],r'''The functions on which the generalized function acts are called test functions. Some choices for the space of test functions $\mathcal T^m$ defined on $\mathbb R^m$ include: the $C^\infty$ functions with compact support in $\mathbb R^m$, denoted $C_0^\infty(\mathbb R^m)$; the space $\mathcal S(\mathbb R^m)$ of $C^\infty$ functions on $\mathbb R^m$ whose derivatives decay rapidly at infinity (the so-called Schwarz space).''',copied(D,'testSpace'),kind='definition',context=['两个测试空间选项都保留；紧支持C∞子类型是实际函数与资格，不把任意函数称测试函数。'])
+add('SchwartzSpace','5.3.1',188,[33],r'''The formal definition of $\mathcal S$ is
+\[\mathcal S(\mathbb R^m)\stackrel{\rm def}{=}\{f\in C^\infty(\mathbb R^m)\mid\|f\|_{\alpha,\beta}<\infty\},\]
+where $\alpha$ and $\beta$ are arbitrary multi-indices, i.e. vectors of non-negative integers, and
+\[\|f\|_{\alpha,\beta}\stackrel{\rm def}{=}\sup_{z\in\mathbb R^m}\left|z_1^{\alpha_1}z_2^{\alpha_2}\cdots z_m^{\alpha_m}\frac{\partial^{\beta_1+\beta_2+\cdots+\beta_m}f}{\partial z_1^{\beta_1}\partial z_2^{\beta_2}\cdots\partial z_m^{\beta_m}}\right|.\]''',f'''def schwartzTestSpace (n : ℕ) := SchwartzMap ({NS}E n) ℝ''',kind='definition',extra=['[EXTRA]Mathlib实际SchwartzMap以全阶Fréchet导数及多项式权界编码快速衰减；使用其既有空间，未把名称当任意类型。'])
+add('GeneralizedFunction','5.3.1',188,[34],r'''Formally, we define a generalized function as a real-valued linear operation (a linear functional) defined on a suitable space of functions.''','''def generalizedFunction (T : Type*) [AddCommGroup T] [Module ℝ T] := T →ₗ[ℝ] ℝ''',kind='definition',context=['忠实代数线性定义，对任意适当实测试函数模块T；未偷偷加连续性，也未声称所有线性泛函都是标准连续分布。'])
+add('SchwartzFunctional','5.3.1',188,[34],r'''Formally, we define a generalized function as a real-valued linear operation (a linear functional) defined on a suitable space of functions.''',f'''def schwartzFunctional (n : ℕ) := ({NS}schwartzSpace n) →ₗ[ℝ] ℝ''',kind='definition',extra=['[EXTRA]明确选择原书第二个测试空间；上条泛型定义与紧支持C∞选项仍保留，不以Schwartz选择替换原文所有测试空间。'])
+add('RegularDistribution','5.3.1',188,[35],r'''If $f$ is a bounded, smooth function on $\mathbb R^m$, we may define a generalized function $T_f$ by reference to its action on a test function $\phi\in\mathcal T$ via integration:
+\[T_f(\phi)=\int_{\mathbb R^m}f(z)\phi(z)d\omega.\]
+This is very like the $L^2$ inner product, but the functions involved do not both need to lie in $L^2$. Nevertheless, we write $T_f(\phi)=\langle f,\phi\rangle$, as a helpful shorthand.''',copied(D,'regularDistribution'),kind='definition',context=['实际Lebesgue积分配对；线性泛函性质及有界光滑f下可积性须另证，定义编译未代替这一结论。'])
+add('RegularDistributionLinearity','5.3.1',188,[35],r'''If $f$ is a bounded, smooth function on $\mathbb R^m$, we may define a generalized function $T_f$ by reference to its action on a test function $\phi\in\mathcal T$ via integration: $T_f(\phi)=\int_{\mathbb R^m}f(z)\phi(z)d\omega$.''',f'''theorem regularDistributionLinearity : ∀ n (f : {NS}E n → ℝ),
+  ContDiff ℝ ⊤ f → (∃ C : ℝ,∀ z,|f z| ≤ C) →
+  (∀ φ : {NS}schwartzSpace n,Integrable (fun z => f z*φ z) volume) ∧
+  (∀ (φ ψ : {NS}schwartzSpace n) (a b : ℝ),
+    {NS}regularDistribution f (a • φ+b • ψ)=a*{NS}regularDistribution f φ+b*{NS}regularDistribution f ψ) := by
+  sorry''',extra=['[EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。'],missing='待Mathlib Schwartz可积、全局有界乘子与积分线性桥接；短路线最多3次。')
+add('DiracAction','5.3.1',189,[36],r'''For the Dirac delta $\delta$, its action on a function $\phi\in\mathcal T$ is $\delta[\phi]=\phi(0)$. We write this also as $\langle\delta,\phi\rangle=\int\delta(z)\phi(z)d\omega=\phi(0)$.''',copied(D,'diracAction'),kind='definition',context=['评价泛函是真实φ(0)；形式δ(z)不是Lebesgue普通密度；其实际Dirac测度另条。'])
+add('DiracMeasure','5.3.1',189,[36],r'''For the Dirac delta $\delta$, its action on a function $\phi\in\mathcal T$ is $\delta[\phi]=\phi(0)$.''',copied(D,'diracMeasure'),kind='definition',context=['实际Measure.dirac 0；不能说δ具有普通光滑Lebesgue密度。'])

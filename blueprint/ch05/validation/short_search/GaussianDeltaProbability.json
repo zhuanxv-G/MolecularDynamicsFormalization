@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.lean",
+    "log": "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.log",
+    "source_sha256": "3715fc8511f6e7ea34df8b05593a103048149b5f2eec90315cd44ecdfb4d4e8f",
+    "log_sha256": "b61f6180b373161969d29290f8e801eec8f057d3f0f6bf7a93e26ddb058a0736"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro ε hε\n  have he0 : ε ≠ 0 := ne_of_gt hε\n  have hcoef : 0 < (1 : ℝ)/(2*ε) := by positivity\n  have heq : MolecularDynamics.Chapter05Review.gaussianDelta ε=\n      (fun x : ℝ => Real.exp (-(1/(2*ε))*x^2)/Real.sqrt (2*Real.pi*ε)) := by\n    funext x\n    unfold MolecularDynamics.Chapter05Review.gaussianDelta\n    congr 2\n    ring\n  rw [heq]\n  refine ⟨fun x => by positivity,?_,?_⟩\n  · exact (integrable_exp_neg_mul_sq hcoef).div_const _\n  · rw [integral_div,integral_gaussian]\n    have hp0 : 0 ≤ 2*Real.pi*ε := by positivity\n    have hratio : Real.pi/(1/(2*ε))=2*Real.pi*ε := by field_simp\n    rw [hratio,div_self (ne_of_gt (Real.sqrt_pos.2 (by positivity)))]",
+    "source": "blueprint/ch05/validation/short_search/route-f1710e94750679035b16.lean",
+    "log": "blueprint/ch05/validation/short_search/route-f1710e94750679035b16.log",
+    "source_sha256": "4624b57994445f4fd83d92b778403fe163a3bef80a96d318797a26780e5a771f",
+    "log_sha256": "07bd9781ca8348dc8f1b1f4a2a62bbb17bfff2739478c4d2afcc1446cde225fc"
+  }
+]

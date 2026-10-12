@@ -1,0 +1,49 @@
+blueprint\ch05\validation\short_search\route-da0371dc1bfcb14e64db.lean:53:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-da0371dc1bfcb14e64db.lean:53:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-da0371dc1bfcb14e64db.lean:96:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-da0371dc1bfcb14e64db.lean:324:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-da0371dc1bfcb14e64db.lean:370:67: warning: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+blueprint\ch05\validation\short_search\route-da0371dc1bfcb14e64db.lean:370:89: warning: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch05\validation\short_search\route-da0371dc1bfcb14e64db.lean:397:66: error: No goals to be solved
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch05\validation\short_search\route-da0371dc1bfcb14e64db.lean:427:55: error: unsolved goals
+case e'_6
+n : ℕ
+r : ℝ → E n → ℝ
+hr : ∀ ε > 0, Continuous (r ε)
+hp : ∀ ε > 0, probabilityDensity (r ε)
+hs : ∀ δ > 0, ∃ η > 0, ∀ ε ∈ Ioo 0 η, Function.support (r ε) ⊆ Metric.ball 0 δ
+φ : E n → ℝ
+hφ : Continuous φ
+e : ℝ
+he : e > 0
+δ : ℝ
+hδ : δ > 0
+hφδ : ∀ ⦃x : E n⦄, dist x 0 < δ → dist (φ x) (φ 0) < e / 2
+η : ℝ
+hη : η > 0
+hsη : ∀ ε ∈ Ioo 0 η, Function.support (r ε) ⊆ Metric.ball 0 δ
+ε : ℝ
+hε : ε ∈ Ioo 0 η
+hd : density (r ε)
+hmass : ∫ (z : E n), r ε z = 1
+hb : ∀ (z : E n), ‖(φ z - φ 0) * r ε z‖ ≤ e / 2 * r ε z
+hdiff : Integrable (fun z => (φ z - φ 0) * r ε z) volume
+z : E n
+⊢ φ z * r ε z = ((fun z => φ z * r ε z - φ 0 * r ε z) + fun x => φ 0 * r ε x) z

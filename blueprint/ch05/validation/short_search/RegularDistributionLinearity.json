@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-b31db7a136913da9f696.lean",
+    "log": "blueprint/ch05/validation/short_search/route-b31db7a136913da9f696.log",
+    "source_sha256": "0762d0e9f3ba3c5896e457a0e64f66d2a3e6bc027af5e97e43066e8324726a2a",
+    "log_sha256": "a44c8ca1b3c61ad551df67ad7570fb4599bc24be2b9e8b475cf23103513e8bc2"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n f hf hb\n  obtain ⟨C,hC⟩ := hb\n  have hi : ∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,\n      Integrable (fun z => f z*φ z) volume := by\n    intro φ\n    apply Integrable.mono' (φ.integrable.norm.mul_const C)\n    · exact hf.continuous.measurable.aestronglyMeasurable.mul φ.continuous.measurable.aestronglyMeasurable\n    · filter_upwards [] with z\n      simpa only [norm_mul,Real.norm_eq_abs,mul_comm] using mul_le_mul_of_nonneg_right (hC z) (abs_nonneg (φ z))\n  refine ⟨hi,?_⟩\n  intro φ ψ a b\n  simp only [MolecularDynamics.Chapter05Review.regularDistribution,SchwartzMap.add_apply,SchwartzMap.smul_apply,smul_eq_mul]\n  simp_rw [mul_add,← mul_assoc,mul_comm (f _) a,mul_comm (f _) b]\n  simp_rw [mul_assoc]\n  rw [integral_add ((hi φ).const_mul a) ((hi ψ).const_mul b),integral_const_mul,integral_const_mul]",
+    "source": "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-RegularDistributionLinearity.lean",
+    "log": "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-RegularDistributionLinearity.log",
+    "source_sha256": "f05aa007c4e64c7497091682c8fc39c2a5bff3137b3716a4258386b7a68e694b",
+    "log_sha256": "a2d6a7e2e9227db175fb1d45b8217dc5d1401e01f24f62745752cf62bb38184e"
+  }
+]

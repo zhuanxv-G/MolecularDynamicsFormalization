@@ -515,4 +515,178 @@ theorem mechanicalLiouvillianIdentity : ∀ n (m : Fin n → ℝ) (U : Molecular
     MolecularDynamics.Chapter05Review.mechanicalLiouvillian m (fun q => -gradient U q) u z := by
   sorry
 
+/-- source_id: MD-5.3.1-TestSpace · definition · §5.3.1 · 印刷p.188 / PDFp.209 -/
+def testSpace (n : ℕ) := {φ : MolecularDynamics.Chapter05Review.E n → ℝ // ContDiff ℝ ⊤ φ ∧ HasCompactSupport φ}
+
+/-- source_id: MD-5.3.1-SchwartzSpace · definition · §5.3.1 · 印刷p.188 / PDFp.209
+[EXTRA] [EXTRA]Mathlib实际SchwartzMap以全阶Fréchet导数及多项式权界编码快速衰减；使用其既有空间，未把名称当任意类型。 -/
+def schwartzTestSpace (n : ℕ) := SchwartzMap (MolecularDynamics.Chapter05Review.E n) ℝ
+
+/-- source_id: MD-5.3.1-GeneralizedFunction · definition · §5.3.1 · 印刷p.188 / PDFp.209 -/
+def generalizedFunction (T : Type*) [AddCommGroup T] [Module ℝ T] := T →ₗ[ℝ] ℝ
+
+/-- source_id: MD-5.3.1-SchwartzFunctional · definition · §5.3.1 · 印刷p.188 / PDFp.209
+[EXTRA] [EXTRA]明确选择原书第二个测试空间；上条泛型定义与紧支持C∞选项仍保留，不以Schwartz选择替换原文所有测试空间。 -/
+def schwartzFunctional (n : ℕ) := (MolecularDynamics.Chapter05Review.schwartzSpace n) →ₗ[ℝ] ℝ
+
+/-- source_id: MD-5.3.1-RegularDistribution · definition · §5.3.1 · 印刷p.188 / PDFp.209 -/
+def regularDistribution {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := ∫ z, f z*φ z
+
+/-- source_id: MD-5.3.1-RegularDistributionLinearity · unnumbered_claim · §5.3.1 · 印刷p.188 / PDFp.209
+[EXTRA] [EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。 -/
+theorem regularDistributionLinearity : ∀ n (f : MolecularDynamics.Chapter05Review.E n → ℝ),
+  ContDiff ℝ ⊤ f → (∃ C : ℝ,∀ z,|f z| ≤ C) →
+  (∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,Integrable (fun z => f z*φ z) volume) ∧
+  (∀ (φ ψ : MolecularDynamics.Chapter05Review.schwartzSpace n) (a b : ℝ),
+    MolecularDynamics.Chapter05Review.regularDistribution f (a • φ+b • ψ)=a*MolecularDynamics.Chapter05Review.regularDistribution f φ+b*MolecularDynamics.Chapter05Review.regularDistribution f ψ) := by
+  intro n f hf hb
+  obtain ⟨C,hC⟩ := hb
+  have hi : ∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,
+      Integrable (fun z => f z*φ z) volume := by
+    intro φ
+    apply Integrable.mono' (φ.integrable.norm.mul_const C)
+    · exact hf.continuous.measurable.aestronglyMeasurable.mul φ.continuous.measurable.aestronglyMeasurable
+    · filter_upwards [] with z
+      simpa only [norm_mul,Real.norm_eq_abs,mul_comm] using mul_le_mul_of_nonneg_right (hC z) (abs_nonneg (φ z))
+  refine ⟨hi,?_⟩
+  intro φ ψ a b
+  simp only [MolecularDynamics.Chapter05Review.regularDistribution,SchwartzMap.add_apply,SchwartzMap.smul_apply,smul_eq_mul]
+  simp_rw [mul_add,← mul_assoc,mul_comm (f _) a,mul_comm (f _) b]
+  simp_rw [mul_assoc]
+  rw [integral_add ((hi φ).const_mul a) ((hi ψ).const_mul b),integral_const_mul,integral_const_mul]
+
+/-- source_id: MD-5.3.1-DiracAction · definition · §5.3.1 · 印刷p.189 / PDFp.210 -/
+def diracAction {n : ℕ} (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := φ 0
+
+/-- source_id: MD-5.3.1-DiracMeasure · definition · §5.3.1 · 印刷p.189 / PDFp.210 -/
+def diracMeasure (n : ℕ) : Measure (MolecularDynamics.Chapter05Review.E n) := Measure.dirac 0
+
+/-- source_id: MD-5.3.1-DiracApproximation · unnumbered_claim · §5.3.1 · 印刷p.189 / PDFp.210
+[EXTRA] [EXTRA]实际连续概率密度（原句未写非负，补非负或需统一L¹界）；supp→0解释为闭支持最终在任意零点邻域中，本谓词对非零点支撑的包含和其闭包收缩等价。保留集合supp，不误写函数sup；正ε单侧极限。 -/
+theorem diracApproximation :
+  ∀ n (r : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),
+  (∀ ε > 0,Continuous (r ε)) →
+  (∀ ε > 0,MolecularDynamics.Chapter05Review.probabilityDensity (r ε)) →
+  (∀ δ > 0, ∃ η > 0, ∀ ε ∈ Ioo 0 η, Function.support (r ε) ⊆ Metric.ball 0 δ) →
+  ∀ φ : MolecularDynamics.Chapter05Review.E n → ℝ, Continuous φ →
+    Tendsto (fun ε => ∫ z,φ z*r ε z) (𝓝[>] 0) (𝓝 (φ 0)) := by
+  intro n r hr hp hs φ hφ
+  apply Metric.tendsto_nhds.mpr
+  intro e he
+  obtain ⟨δ,hδ,hφδ⟩ := Metric.continuousAt_iff.mp hφ.continuousAt (e/2) (by positivity)
+  obtain ⟨η,hη,hsη⟩ := hs δ hδ
+  filter_upwards [Ioo_mem_nhdsGT hη] with ε hε
+  have hd := (hp ε hε.1).1
+  have hmass := (hp ε hε.1).2
+  have hb : ∀ z,‖(φ z-φ 0)*r ε z‖ ≤ (e/2)*r ε z := by
+    intro z
+    by_cases hz : r ε z=0
+    · simp [hz]
+    · have hzball := hsη ε hε (show z ∈ Function.support (r ε) from hz)
+      have heφ := hφδ (by simpa only [Metric.mem_ball] using hzball)
+      simpa only [norm_mul,Real.norm_eq_abs,abs_of_nonneg (hd.2.1 z),Real.dist_eq] using
+        mul_le_mul_of_nonneg_right heφ.le (hd.2.1 z)
+  have hdiff : Integrable (fun z => (φ z-φ 0)*r ε z) volume := by
+    apply Integrable.mono' (hd.2.2.const_mul (e/2))
+    · exact ((hφ.sub continuous_const).mul (hr ε hε.1)).measurable.aestronglyMeasurable
+    · exact ae_of_all _ hb
+  have hpr : Integrable (fun z => φ z*r ε z) volume := by
+    convert hdiff.add (hd.2.2.const_mul (φ 0)) using 1
+    funext z
+    change φ z*r ε z=(φ z-φ 0)*r ε z+φ 0*r ε z
+    ring
+  have hi : (∫ z,(φ z-φ 0)*r ε z)=(∫ z,φ z*r ε z)-φ 0 := by
+    simp_rw [sub_mul]
+    rw [integral_sub hpr (hd.2.2.const_mul (φ 0)),integral_const_mul,hmass,mul_one]
+  have hle := norm_integral_le_of_norm_le (hd.2.2.const_mul (e/2)) (ae_of_all _ hb)
+  rw [integral_const_mul,hmass,mul_one,hi] at hle
+  rw [dist_eq_norm]
+  exact hle.trans_lt (by linarith)
+
+/-- source_id: MD-5.3.1-GaussianDelta · definition · §5.3.1 · 印刷p.189 / PDFp.210 -/
+def gaussianDelta (ε z : ℝ) := Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)
+
+/-- source_id: MD-5.3.1-DiracEvaluates · unnumbered_claim · §5.3.1 · 印刷p.189 / PDFp.210 -/
+theorem diracEvaluates : ∀ n (φ : MolecularDynamics.Chapter05Review.schwartzSpace n),
+  (∫ z,φ z ∂(MolecularDynamics.Chapter05Review.diracMeasure n))=MolecularDynamics.Chapter05Review.diracAction φ := by
+  intro n φ
+  simp [MolecularDynamics.Chapter05Review.diracMeasure,MolecularDynamics.Chapter05Review.diracAction]
+
+/-- source_id: MD-5.3.1-GaussianDeltaProbability · unnumbered_claim · §5.3.1 · 印刷p.189 / PDFp.210
+[EXTRA] [EXTRA]ε>0，完整真实概率密度资格另列；定义没有替代归一化证明。 -/
+theorem gaussianDeltaProbability : ∀ ε : ℝ,0 < ε →
+  (∀ x : ℝ,0 ≤ MolecularDynamics.Chapter05Review.gaussianDelta ε x) ∧ Integrable (MolecularDynamics.Chapter05Review.gaussianDelta ε) volume ∧
+  (∫ x,MolecularDynamics.Chapter05Review.gaussianDelta ε x)=1 := by
+  intro ε hε
+  have he0 : ε ≠ 0 := ne_of_gt hε
+  have hcoef : 0 < (1 : ℝ)/(2*ε) := by positivity
+  have heq : MolecularDynamics.Chapter05Review.gaussianDelta ε=
+      (fun x : ℝ => Real.exp (-(1/(2*ε))*x^2)/Real.sqrt (2*Real.pi*ε)) := by
+    funext x
+    unfold MolecularDynamics.Chapter05Review.gaussianDelta
+    congr 2
+    ring
+  rw [heq]
+  refine ⟨fun x => by positivity,?_,?_⟩
+  · exact (integrable_exp_neg_mul_sq hcoef).div_const _
+  · rw [integral_div,integral_gaussian]
+    have hp0 : 0 ≤ 2*Real.pi*ε := by positivity
+    have hratio : Real.pi/(1/(2*ε))=2*Real.pi*ε := by field_simp
+    rw [hratio,div_self (ne_of_gt (Real.sqrt_pos.2 (by positivity)))]
+
+/-- source_id: MD-5.3.1-GaussianDeltaWeak · unnumbered_claim · §5.3.1 · 印刷p.189 / PDFp.210
+[EXTRA] [EXTRA]明确选择有界连续测试函数的实际概率弱极限；原“suitable test”以此资格实现，Schwartz测试也适用。全空间Gaussian没有收缩support，不用上一条support假设套用。 -/
+theorem gaussianDeltaWeak : ∀ φ : ℝ → ℝ,Continuous φ → Bornology.IsBounded (range φ) →
+  Tendsto (fun ε : ℝ => ∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) (𝓝[>] 0) (𝓝 (φ 0)) := by
+  intro φ hφ hb
+  have hg := gaussianDeltaProbability 1 (by norm_num)
+  obtain ⟨C,hC,hBC⟩ := hb.exists_pos_norm_le
+  have ht : Tendsto (fun ε : ℝ => ∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (𝓝[>] 0) (𝓝 (φ 0)) := by
+    have hc := tendsto_integral_filter_of_dominated_convergence
+      (fun x : ℝ => C*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (F:=fun ε x => φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (f:=fun x => φ 0*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (Filter.Eventually.of_forall (fun ε => by
+        apply Continuous.aestronglyMeasurable
+        unfold MolecularDynamics.Chapter05Review.gaussianDelta
+        fun_prop))
+      (Filter.Eventually.of_forall (fun ε => ae_of_all _ (fun x => by
+        simpa only [norm_mul,Real.norm_eq_abs,abs_of_nonneg (hg.1 x)] using
+          mul_le_mul_of_nonneg_right (hBC (φ (Real.sqrt ε*x)) (mem_range_self _)) (hg.1 x))))
+      (hg.2.1.const_mul C) (ae_of_all _ (fun x => by
+        have hs : Tendsto (fun ε : ℝ => Real.sqrt ε*x) (𝓝[>] 0) (𝓝 0) := by
+          simpa using! ((Real.continuous_sqrt.tendsto 0).mono_left inf_le_left).mul_const x
+        exact (hφ.tendsto 0 |>.comp hs).mul_const _))
+    simpa only [integral_const_mul,hg.2.2,mul_one] using hc
+  apply tendsto_congr' _ |>.2 ht
+  filter_upwards [self_mem_nhdsWithin] with ε hε
+  have hεpos : 0 < ε := hε
+  have hspos : 0 < Real.sqrt ε := Real.sqrt_pos.2 hεpos
+  have hs0 : Real.sqrt ε ≠ 0 := ne_of_gt hspos
+  have hpoint (x : ℝ) : Real.sqrt ε*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x)=
+      MolecularDynamics.Chapter05Review.gaussianDelta 1 x := by
+    unfold MolecularDynamics.Chapter05Review.gaussianDelta
+    rw [mul_pow,Real.sq_sqrt hεpos.le]
+    have hexp : -(ε*x^2)/(2*ε)= -x^2/2 := by field_simp
+    rw [hexp,Real.sqrt_mul (by positivity : 0 ≤ 2*Real.pi)]
+    simp only [mul_one]
+    field_simp
+  calc
+    (∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x)=
+      Real.sqrt ε*(∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x)) := by
+        change (∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x)=Real.sqrt ε*(∫ x,(fun y => φ y*MolecularDynamics.Chapter05Review.gaussianDelta ε y) (Real.sqrt ε*x))
+        have hchange : (∫ x : ℝ,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x))=
+            (Real.sqrt ε)⁻¹*(∫ x : ℝ,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) := by
+          simpa only [smul_eq_mul,abs_of_pos (inv_pos.mpr hspos)] using!
+            (Measure.integral_comp_mul_left (fun x : ℝ => φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) (Real.sqrt ε))
+        rw [hchange]
+        field_simp
+    _ = ∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x := by
+      rw [←integral_const_mul]
+      apply integral_congr_ae
+      filter_upwards [] with x
+      rw [←hpoint]
+      ring
+
 end MD.Ch05

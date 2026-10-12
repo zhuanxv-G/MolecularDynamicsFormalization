@@ -1,0 +1,129 @@
+ M Blueprint/Ch05.lean
+ M blueprint/ch03/validation/section37-commit.log
+ M blueprint/ch04/validation/section442-commit-retry.log
+ M blueprint/ch05/CheckAxioms.lean
+ M blueprint/ch05/PROGRESS.md
+ M blueprint/ch05/ch05_source.json
+ M blueprint/ch05/local_audit.json
+ M blueprint/ch05/mathcopilot_tasks/INDEX.md
+ M blueprint/ch05/mathcopilot_tasks/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/e/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/f/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/g/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/h/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH02/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH02/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH02/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/e/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/f/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/g/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/h/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/e/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/f/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/g/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/h/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH05/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH05/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH05/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH05/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH06/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH06/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH06/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH06/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH06/e/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH06/f/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH06/g/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH06/h/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH07/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH07/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH07/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH07/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH07/e/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH07/f/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH07/g/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH07/h/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH08/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH08/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH08/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH09/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH09/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH09/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH09/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH09/e/MANIFEST.json
+ M blueprint/ch05/old_mapping.json
+ M blueprint/ch05/section_timeboxes.json
+ M blueprint/ch05/validation/section523-commit.log
+ M docs/handoff/CURRENT_STATE.zh-CN.md
+ M docs/handoff/LOCAL_PIPELINE.md
+ M docs/review/CH05_BLUEPRINT.zh-CN.md
+ M scripts/ch05_data.py
+ M scripts/ch05_section523.py
+ M scripts/ch05_short_candidates.py
+?? blueprint/ch05/mathcopilot_tasks/BATCH10.md
+?? blueprint/ch05/mathcopilot_tasks/BATCH11.md
+?? blueprint/ch05/mathcopilot_tasks/compact/BATCH10/
+?? blueprint/ch05/mathcopilot_tasks/compact/BATCH11/
+?? blueprint/ch05/validation/batch17-COMPILE.json
+?? blueprint/ch05/validation/batch18-COMPILE.json
+?? blueprint/ch05/validation/batch19-COMPILE.json
+?? blueprint/ch05/validation/batch20-COMPILE.json
+?? blueprint/ch05/validation/section531/
+?? blueprint/ch05/validation/short_search/DiracApproximation-next-proof.txt
+?? blueprint/ch05/validation/short_search/DiracApproximation.json
+?? blueprint/ch05/validation/short_search/DiracEvaluates.json
+?? blueprint/ch05/validation/short_search/GaussianDeltaProbability-next-proof.txt
+?? blueprint/ch05/validation/short_search/GaussianDeltaProbability.json
+?? blueprint/ch05/validation/short_search/GaussianDeltaWeak-next-proof.txt
+?? blueprint/ch05/validation/short_search/GaussianDeltaWeak.json
+?? blueprint/ch05/validation/short_search/RegularDistributionLinearity-next-proof.txt
+?? blueprint/ch05/validation/short_search/RegularDistributionLinearity.json
+?? blueprint/ch05/validation/short_search/route-2b44b961f8bd67d3243e.compile.json
+?? blueprint/ch05/validation/short_search/route-2b44b961f8bd67d3243e.lean
+?? blueprint/ch05/validation/short_search/route-33c5dbbce20c4dd4890b.compile.json
+?? blueprint/ch05/validation/short_search/route-33c5dbbce20c4dd4890b.lean
+?? blueprint/ch05/validation/short_search/route-463401a2b819ac9ccd85.compile.json
+?? blueprint/ch05/validation/short_search/route-463401a2b819ac9ccd85.lean
+?? blueprint/ch05/validation/short_search/route-b31db7a136913da9f696.compile.json
+?? blueprint/ch05/validation/short_search/route-b31db7a136913da9f696.lean
+?? blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-DiracEvaluates.compile.json
+?? blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-DiracEvaluates.lean
+?? blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-RegularDistributionLinearity.compile.json
+?? blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-RegularDistributionLinearity.lean
+?? blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.compile.json
+?? blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.lean
+?? blueprint/ch05/validation/short_search/route-f1710e94750679035b16.compile.json
+?? blueprint/ch05/validation/short_search/route-f1710e94750679035b16.lean
+?? docs/review/check-full06/
+?? output/
+?? scripts/__pycache__/
+?? scripts/ch05_section531.py
+?? scripts/ch05_section531b.py
+?? scripts/ch05_section532.py
+?? scripts/ch05_section532b.py
+?? scripts/ch05_section532c.py
+?? scripts/ch05_section532d.py
+?? scripts/ch05_section533.py
+?? scripts/ch05_section54.py
+?? scripts/ch05_section541.py
+?? scripts/ch05_section541b.py
+?? scripts/ch05_section541c.py
+?? scripts/ch05_section55.py
+?? scripts/ch05_section55b.py
+?? scripts/ch05_section56.py
+?? scripts/ch05_section56b.py
+?? scripts/ch05_section56c.py
+?? scripts/ch05_section56d.py
+?? scripts/export_ch01_review_pdf.py
+?? tmp/

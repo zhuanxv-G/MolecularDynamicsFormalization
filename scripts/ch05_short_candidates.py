@@ -312,6 +312,81 @@ proofs['TwoOscillatorEnergyDecomposition']='''intro Ω E z
     positivity
   · rintro ⟨c,hc,hE,heq⟩
     simpa only [heq] using hE'''
+proofs['DiracApproximation']='''intro n r hr hp hs φ hφ
+  apply Metric.tendsto_nhds.mpr
+  intro e he
+  obtain ⟨δ,hδ,hφδ⟩ := Metric.continuousAt_iff.mp hφ.continuousAt (e/2) (by positivity)
+  obtain ⟨η,hη,hsη⟩ := hs δ hδ
+  filter_upwards [Ioo_mem_nhdsGT hη] with ε hε
+  have hd := (hp ε hε.1).1
+  have hmass := (hp ε hε.1).2
+  have hb : ∀ z,‖(φ z-φ 0)*r ε z‖ ≤ (e/2)*r ε z := by
+    intro z
+    by_cases hz : r ε z=0
+    · simp [hz]
+    · have hzball := hsη ε hε (show z ∈ Function.support (r ε) from hz)
+      have heφ := hφδ (by simpa only [Metric.mem_ball] using hzball)
+      simpa only [norm_mul,Real.norm_eq_abs,abs_of_nonneg (hd.2.1 z),Real.dist_eq] using
+        mul_le_mul_of_nonneg_right heφ.le (hd.2.1 z)
+  have hdiff : Integrable (fun z => (φ z-φ 0)*r ε z) volume := by
+    apply Integrable.mono' (hd.2.2.const_mul (e/2))
+    · exact ((hφ.sub continuous_const).mul (hr ε hε.1)).measurable.aestronglyMeasurable
+    · exact ae_of_all _ hb
+  have hpr : Integrable (fun z => φ z*r ε z) volume := by
+    convert hdiff.add (hd.2.2.const_mul (φ 0)) using 1
+    funext z; ring
+  have hi : (∫ z,(φ z-φ 0)*r ε z)=(∫ z,φ z*r ε z)-φ 0 := by
+    simp_rw [sub_mul]
+    rw [integral_sub hpr (hd.2.2.const_mul (φ 0)),integral_const_mul,hmass,mul_one]
+  have hle := norm_integral_le_of_norm_le (hd.2.2.const_mul (e/2)) (ae_of_all _ hb)
+  rw [integral_const_mul,hmass,mul_one,hi] at hle
+  rw [dist_eq_norm]
+  exact hle.trans_lt (by linarith)'''
+proofs['GaussianDeltaWeak']='''intro φ hφ hb
+  have hg := gaussianDeltaProbability 1 (by norm_num)
+  obtain ⟨C,hC,hBC⟩ := hb.exists_pos_norm_le
+  have ht : Tendsto (fun ε : ℝ => ∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (𝓝[>] 0) (𝓝 (φ 0)) := by
+    have hc := tendsto_integral_filter_of_dominated_convergence
+      (fun x : ℝ => C*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (F:=fun ε x => φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (f:=fun x => φ 0*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (Filter.Eventually.of_forall (fun ε => by
+        apply Continuous.aestronglyMeasurable
+        unfold MolecularDynamics.Chapter05Review.gaussianDelta
+        fun_prop))
+      (Filter.Eventually.of_forall (fun ε => ae_of_all _ (fun x => by
+        simpa only [norm_mul,Real.norm_eq_abs,abs_of_nonneg (hg.1 x)] using
+          mul_le_mul_of_nonneg_right (hBC (φ (Real.sqrt ε*x)) (mem_range_self _)) (hg.1 x))))
+      (hg.2.1.const_mul C) (ae_of_all _ (fun x => by
+        have hs : Tendsto (fun ε : ℝ => Real.sqrt ε*x) (𝓝[>] 0) (𝓝 0) := by
+          simpa using ((Real.continuous_sqrt.tendsto 0).mono_left inf_le_left).mul_const x
+        exact (hφ.tendsto 0 |>.comp hs).mul_const _))
+    simpa only [integral_const_mul,hg.2.2,mul_one] using hc
+  apply tendsto_congr' _ |>.2 ht
+  filter_upwards [self_mem_nhdsWithin] with ε hε
+  have hεpos : 0 < ε := hε
+  have hspos : 0 < Real.sqrt ε := Real.sqrt_pos.2 hεpos
+  have hs0 : Real.sqrt ε ≠ 0 := ne_of_gt hspos
+  have hpoint (x : ℝ) : Real.sqrt ε*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x)=
+      MolecularDynamics.Chapter05Review.gaussianDelta 1 x := by
+    unfold MolecularDynamics.Chapter05Review.gaussianDelta
+    rw [mul_pow,Real.sq_sqrt hεpos.le]
+    have hexp : -(ε*x^2)/(2*ε)= -x^2/2 := by field_simp; ring
+    rw [hexp,Real.sqrt_mul (by positivity : 0 ≤ 2*Real.pi)]
+    simp only [mul_one]
+    field_simp
+  calc
+    (∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x)=
+      Real.sqrt ε*(∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x)) := by
+        rw [Measure.integral_comp_mul_left]
+        simp [smul_eq_mul,abs_of_pos (inv_pos.mpr hspos),hs0]
+    _ = ∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x := by
+      rw [←integral_const_mul]
+      apply integral_congr_ae
+      filter_upwards [] with x
+      rw [←hpoint]
+      ring'''
 import json,re
 from pathlib import Path
 extra=Path(__file__).with_name('ch05_elementary_candidates.json')

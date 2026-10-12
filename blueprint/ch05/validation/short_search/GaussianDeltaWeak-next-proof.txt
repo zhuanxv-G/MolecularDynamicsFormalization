@@ -1,0 +1,50 @@
+intro φ hφ hb
+  have hg := gaussianDeltaProbability 1 (by norm_num)
+  obtain ⟨C,hC,hBC⟩ := hb.exists_pos_norm_le
+  have ht : Tendsto (fun ε : ℝ => ∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (𝓝[>] 0) (𝓝 (φ 0)) := by
+    have hc := tendsto_integral_filter_of_dominated_convergence
+      (fun x : ℝ => C*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (F:=fun ε x => φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (f:=fun x => φ 0*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (Filter.Eventually.of_forall (fun ε => by
+        apply Continuous.aestronglyMeasurable
+        unfold MolecularDynamics.Chapter05Review.gaussianDelta
+        fun_prop))
+      (Filter.Eventually.of_forall (fun ε => ae_of_all _ (fun x => by
+        simpa only [norm_mul,Real.norm_eq_abs,abs_of_nonneg (hg.1 x)] using
+          mul_le_mul_of_nonneg_right (hBC (φ (Real.sqrt ε*x)) (mem_range_self _)) (hg.1 x))))
+      (hg.2.1.const_mul C) (ae_of_all _ (fun x => by
+        have hs : Tendsto (fun ε : ℝ => Real.sqrt ε*x) (𝓝[>] 0) (𝓝 0) := by
+          simpa using! ((Real.continuous_sqrt.tendsto 0).mono_left inf_le_left).mul_const x
+        exact (hφ.tendsto 0 |>.comp hs).mul_const _))
+    simpa only [integral_const_mul,hg.2.2,mul_one] using hc
+  apply tendsto_congr' _ |>.2 ht
+  filter_upwards [self_mem_nhdsWithin] with ε hε
+  have hεpos : 0 < ε := hε
+  have hspos : 0 < Real.sqrt ε := Real.sqrt_pos.2 hεpos
+  have hs0 : Real.sqrt ε ≠ 0 := ne_of_gt hspos
+  have hpoint (x : ℝ) : Real.sqrt ε*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x)=
+      MolecularDynamics.Chapter05Review.gaussianDelta 1 x := by
+    unfold MolecularDynamics.Chapter05Review.gaussianDelta
+    rw [mul_pow,Real.sq_sqrt hεpos.le]
+    have hexp : -(ε*x^2)/(2*ε)= -x^2/2 := by field_simp
+    rw [hexp,Real.sqrt_mul (by positivity : 0 ≤ 2*Real.pi)]
+    simp only [mul_one]
+    field_simp
+  calc
+    (∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x)=
+      Real.sqrt ε*(∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x)) := by
+        change (∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x)=Real.sqrt ε*(∫ x,(fun y => φ y*MolecularDynamics.Chapter05Review.gaussianDelta ε y) (Real.sqrt ε*x))
+        have hchange : (∫ x : ℝ,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x))=
+            (Real.sqrt ε)⁻¹*(∫ x : ℝ,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) := by
+          simpa only [smul_eq_mul,abs_of_pos (inv_pos.mpr hspos)] using!
+            (Measure.integral_comp_mul_left (fun x : ℝ => φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) (Real.sqrt ε))
+        rw [hchange]
+        field_simp
+    _ = ∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x := by
+      rw [←integral_const_mul]
+      apply integral_congr_ae
+      filter_upwards [] with x
+      rw [←hpoint]
+      ring

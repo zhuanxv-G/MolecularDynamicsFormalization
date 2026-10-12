@@ -2,7 +2,7 @@
 
 范围：印刷p.179–209/PDF200–230，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前55条；旧清单映射32/86；本地PASS 55；网站返回0。
+当前68条；旧清单映射38/86；本地PASS 68；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -61,6 +61,19 @@
 | MD-5.2.3-HamiltonianDensityPropagation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺当前全实时间实际流的Jacobian/change-of-variables与受限密度测度输运桥接；保留完整陈述，不建设新的连续性PDE理论。 |
 | MD-5.2.3-MechanicalLiouvillian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-5.2.3-MechanicalLiouvillianIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/MechanicalLiouvillianIdentity.json。 |
+| MD-5.3.1-TestSpace | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.3.1-SchwartzSpace | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.3.1-GeneralizedFunction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.3.1-SchwartzFunctional | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.3.1-RegularDistribution | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.3.1-RegularDistributionLinearity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.3.1-DiracAction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.3.1-DiracMeasure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.3.1-DiracApproximation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.3.1-GaussianDelta | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.3.1-DiracEvaluates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.3.1-GaussianDeltaProbability | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.3.1-GaussianDeltaWeak | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 
 ## 旧86条完整映射
 
@@ -94,16 +107,16 @@
 | CH05-026 | MD-5.2.2-LiouvilleProductCoordinates |
 | CH05-027 | MD-5.2.2-CompactAdjoint |
 | CH05-028 | MD-5.2.2-MeasurePropagator |
-| CH05-029 | MD-5.2.3-HamiltonianSkewExpression |
-| CH05-030 | MD-5.2.3-HamiltonianDensityPropagation |
-| CH05-031 | MD-5.2.3-MechanicalLiouvillianIdentity |
+| CH05-029 | MD-5.2.3-HamiltonianDivergence |
+| CH05-030 | MD-5.2.3-HamiltonianSkewExpression |
+| CH05-031 | MD-5.2.3-HamiltonianDensityPropagation |
 | CH05-032 | MD-5.2.3-MechanicalLiouvillianIdentity |
-| CH05-033 | PENDING：所属节尚未处理 |
-| CH05-034 | PENDING：所属节尚未处理 |
-| CH05-035 | PENDING：所属节尚未处理 |
-| CH05-036 | PENDING：所属节尚未处理 |
-| CH05-037 | PENDING：所属节尚未处理 |
-| CH05-038 | PENDING：所属节尚未处理 |
+| CH05-033 | MD-5.3.1-SchwartzSpace |
+| CH05-034 | MD-5.3.1-SchwartzFunctional |
+| CH05-035 | MD-5.3.1-RegularDistributionLinearity |
+| CH05-036 | MD-5.3.1-DiracEvaluates |
+| CH05-037 | MD-5.3.1-DiracApproximation |
+| CH05-038 | MD-5.3.1-GaussianDeltaWeak |
 | CH05-039 | PENDING：所属节尚未处理 |
 | CH05-040 | PENDING：所属节尚未处理 |
 | CH05-041 | PENDING：所属节尚未处理 |

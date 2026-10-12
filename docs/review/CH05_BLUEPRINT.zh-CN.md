@@ -59,6 +59,19 @@
 | MD-5.2.3-HamiltonianDensityPropagation | 187/208 | PASS | 待网站审计 | incomplete |
 | MD-5.2.3-MechanicalLiouvillian | 187/208 | PASS | 待网站审计 | self-contained |
 | MD-5.2.3-MechanicalLiouvillianIdentity | 187/208 | PASS | 待网站审计 | incomplete |
+| MD-5.3.1-TestSpace | 188/209 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-SchwartzSpace | 188/209 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-GeneralizedFunction | 188/209 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-SchwartzFunctional | 188/209 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-RegularDistribution | 188/209 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-RegularDistributionLinearity | 188/209 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-DiracAction | 189/210 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-DiracMeasure | 189/210 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-DiracApproximation | 189/210 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-GaussianDelta | 189/210 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-DiracEvaluates | 189/210 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-GaussianDeltaProbability | 189/210 | PASS | 待网站审计 | self-contained |
+| MD-5.3.1-GaussianDeltaWeak | 189/210 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -2633,3 +2646,586 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/MechanicalLiouvillianIdentity.json；blueprint/ch05/validation/short_search/route-70d450c0f05847bfe59c.lean；blueprint/ch05/validation/short_search/route-70d450c0f05847bfe59c.log；blueprint/ch05/validation/short_search/route-8c8b43e0c506554da10b.lean；blueprint/ch05/validation/short_search/route-8c8b43e0c506554da10b.log；blueprint/ch05/validation/short_search/route-d1e5338b087cdf4fe649.lean；blueprint/ch05/validation/short_search/route-d1e5338b087cdf4fe649.log。
 
 签名SHA256：`5ea33ebcbe6c9ac0768ece2ec5f0b92f0eeb64c292bc00b462c5db56287386e8`；原文SHA256：`4cc2fb343b911af601a048142558a5d46179a5182eb6f0b1d4b31e9de592173e`。
+
+## 1. MD-5.3.1-TestSpace · definition · 印刷p.188 / PDFp.209
+
+### 2. 原文陈述
+
+> The functions on which the generalized function acts are called test functions. Some choices for the space of test functions $\mathcal T^m$ defined on $\mathbb R^m$ include: the $C^\infty$ functions with compact support in $\mathbb R^m$, denoted $C_0^\infty(\mathbb R^m)$; the space $\mathcal S(\mathbb R^m)$ of $C^\infty$ functions on $\mathbb R^m$ whose derivatives decay rapidly at infinity (the so-called Schwarz space).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def testSpace (n : ℕ) := {φ : MolecularDynamics.Chapter05Review.E n → ℝ // ContDiff ℝ ⊤ φ ∧ HasCompactSupport φ}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.testSpace；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:519](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:519>)（`MD.Ch05.testSpace`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`d18b0e81156df07d12955bf5ee7295546fc07bc65a193169967124397be23ee9`；原文SHA256：`c790a0dacae62f3ae54cf7f16385f3725d8ac18a2f05e5d9dc9510ccbb90c5fe`。
+
+## 1. MD-5.3.1-SchwartzSpace · definition · 印刷p.188 / PDFp.209
+
+### 2. 原文陈述
+
+> The formal definition of $\mathcal S$ is
+> \[\mathcal S(\mathbb R^m)\stackrel{\rm def}{=}\{f\in C^\infty(\mathbb R^m)\mid\|f\|_{\alpha,\beta}<\infty\},\]
+> where $\alpha$ and $\beta$ are arbitrary multi-indices, i.e. vectors of non-negative integers, and
+> \[\|f\|_{\alpha,\beta}\stackrel{\rm def}{=}\sup_{z\in\mathbb R^m}\left|z_1^{\alpha_1}z_2^{\alpha_2}\cdots z_m^{\alpha_m}\frac{\partial^{\beta_1+\beta_2+\cdots+\beta_m}f}{\partial z_1^{\beta_1}\partial z_2^{\beta_2}\cdots\partial z_m^{\beta_m}}\right|.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def schwartzTestSpace (n : ℕ) := SchwartzMap (MolecularDynamics.Chapter05Review.E n) ℝ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.schwartzTestSpace；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]Mathlib实际SchwartzMap以全阶Fréchet导数及多项式权界编码快速衰减；使用其既有空间，未把名称当任意类型。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:523](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:523>)（`MD.Ch05.schwartzTestSpace`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`80814cc4bfa7447ab49129b431ef069d7b469d9379cf4cec4507076a0227d306`；原文SHA256：`b111074df29a54961b8a2e4c89d1563437b3bb4d3c3e489258b307b0c4a6e050`。
+
+## 1. MD-5.3.1-GeneralizedFunction · definition · 印刷p.188 / PDFp.209
+
+### 2. 原文陈述
+
+> Formally, we define a generalized function as a real-valued linear operation (a linear functional) defined on a suitable space of functions.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def generalizedFunction (T : Type*) [AddCommGroup T] [Module ℝ T] := T →ₗ[ℝ] ℝ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.generalizedFunction；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:526](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:526>)（`MD.Ch05.generalizedFunction`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c4406e5e27c477946b053279efbeade9916e72d138e3f088498f5656054e973a`；原文SHA256：`a416eea0cd0ec114bc51b61dcb1e95dd72e9eda2b57299d27c277001e442a7f0`。
+
+## 1. MD-5.3.1-SchwartzFunctional · definition · 印刷p.188 / PDFp.209
+
+### 2. 原文陈述
+
+> Formally, we define a generalized function as a real-valued linear operation (a linear functional) defined on a suitable space of functions.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def schwartzFunctional (n : ℕ) := (MolecularDynamics.Chapter05Review.schwartzSpace n) →ₗ[ℝ] ℝ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.schwartzFunctional；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确选择原书第二个测试空间；上条泛型定义与紧支持C∞选项仍保留，不以Schwartz选择替换原文所有测试空间。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:530](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:530>)（`MD.Ch05.schwartzFunctional`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`6424d1e9072feba9f56573a3bcb7dcfc065a0a3f1496b53c10b5380e047a8f4f`；原文SHA256：`2e04c70a3459621c334ad1868e9a24a3d77e16f4a5d5f20a013077ba2ba30c08`。
+
+## 1. MD-5.3.1-RegularDistribution · definition · 印刷p.188 / PDFp.209
+
+### 2. 原文陈述
+
+> If $f$ is a bounded, smooth function on $\mathbb R^m$, we may define a generalized function $T_f$ by reference to its action on a test function $\phi\in\mathcal T$ via integration:
+> \[T_f(\phi)=\int_{\mathbb R^m}f(z)\phi(z)d\omega.\]
+> This is very like the $L^2$ inner product, but the functions involved do not both need to lie in $L^2$. Nevertheless, we write $T_f(\phi)=\langle f,\phi\rangle$, as a helpful shorthand.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def regularDistribution {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := ∫ z, f z*φ z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.regularDistribution；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:533](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:533>)（`MD.Ch05.regularDistribution`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2b4f489506706c76b07cef60339e49a39cdd3e37b4c5fbfdde2043174652ece7`；原文SHA256：`b296be85d731baffb8c9ee0db19dbfd1067554ef53650f3d7a64637232117685`。
+
+## 1. MD-5.3.1-RegularDistributionLinearity · unnumbered_claim · 印刷p.188 / PDFp.209
+
+### 2. 原文陈述
+
+> If $f$ is a bounded, smooth function on $\mathbb R^m$, we may define a generalized function $T_f$ by reference to its action on a test function $\phi\in\mathcal T$ via integration: $T_f(\phi)=\int_{\mathbb R^m}f(z)\phi(z)d\omega$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem regularDistributionLinearity : ∀ n (f : MolecularDynamics.Chapter05Review.E n → ℝ),
+  ContDiff ℝ ⊤ f → (∃ C : ℝ,∀ z,|f z| ≤ C) →
+  (∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,Integrable (fun z => f z*φ z) volume) ∧
+  (∀ (φ ψ : MolecularDynamics.Chapter05Review.schwartzSpace n) (a b : ℝ),
+    MolecularDynamics.Chapter05Review.regularDistribution f (a • φ+b • ψ)=a*MolecularDynamics.Chapter05Review.regularDistribution f φ+b*MolecularDynamics.Chapter05Review.regularDistribution f ψ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.regularDistributionLinearity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:537](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:537>)（`MD.Ch05.regularDistributionLinearity`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/RegularDistributionLinearity.json；blueprint/ch05/validation/short_search/route-b31db7a136913da9f696.lean；blueprint/ch05/validation/short_search/route-b31db7a136913da9f696.log；blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-RegularDistributionLinearity.lean；blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-RegularDistributionLinearity.log。
+
+签名SHA256：`6737b6d5653f0a89496f1669961d3da9d2d1c8dce06e99f20eaaa78ec7ca6cf0`；原文SHA256：`a9bc4796ebe67b41e9d5241889fd4be4810697ad1130875d3795c820349f736b`。
+
+## 1. MD-5.3.1-DiracAction · definition · 印刷p.189 / PDFp.210
+
+### 2. 原文陈述
+
+> For the Dirac delta $\delta$, its action on a function $\phi\in\mathcal T$ is $\delta[\phi]=\phi(0)$. We write this also as $\langle\delta,\phi\rangle=\int\delta(z)\phi(z)d\omega=\phi(0)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def diracAction {n : ℕ} (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := φ 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.diracAction；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:559](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:559>)（`MD.Ch05.diracAction`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`1e72febc5ef2f17e63683102e939d5448c87591e78cfa38ab4dbdd7d316edd86`；原文SHA256：`8d171747b37540406aab6d69709f4f5572b7f0a2a4e11bf9e7ed35bc1aa3e1e8`。
+
+## 1. MD-5.3.1-DiracMeasure · definition · 印刷p.189 / PDFp.210
+
+### 2. 原文陈述
+
+> For the Dirac delta $\delta$, its action on a function $\phi\in\mathcal T$ is $\delta[\phi]=\phi(0)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def diracMeasure (n : ℕ) : Measure (MolecularDynamics.Chapter05Review.E n) := Measure.dirac 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.diracMeasure；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:562](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:562>)（`MD.Ch05.diracMeasure`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`f916ccdc411fb3486ad2c4256195bc43de03294ebe5cf76065b5e51f6182c27e`；原文SHA256：`6a58f1d393d80664b5f6a16ab70d3e496b3202334e056091ce83b98b61a7e78a`。
+
+## 1. MD-5.3.1-DiracApproximation · unnumbered_claim · 印刷p.189 / PDFp.210
+
+### 2. 原文陈述
+
+> This concept of the delta function (that appears in the integral) may be motivated by introducing a sequence of continuous functions $d_\varepsilon$ having the properties (i) $\int d_\varepsilon d\omega=1$, (ii) $\operatorname{supp}(d_\varepsilon)\to0$, as $\varepsilon\to0$. Then the action of the delta function can be seen as the limit of the actions of the functions $d_\varepsilon$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem diracApproximation :
+  ∀ n (r : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),
+  (∀ ε > 0,Continuous (r ε)) →
+  (∀ ε > 0,MolecularDynamics.Chapter05Review.probabilityDensity (r ε)) →
+  (∀ δ > 0, ∃ η > 0, ∀ ε ∈ Ioo 0 η, Function.support (r ε) ⊆ Metric.ball 0 δ) →
+  ∀ φ : MolecularDynamics.Chapter05Review.E n → ℝ, Continuous φ →
+    Tendsto (fun ε => ∫ z,φ z*r ε z) (𝓝[>] 0) (𝓝 (φ 0))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.diracApproximation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际连续概率密度（原句未写非负，补非负或需统一L¹界）；supp→0解释为闭支持最终在任意零点邻域中，本谓词对非零点支撑的包含和其闭包收缩等价。保留集合supp，不误写函数sup；正ε单侧极限。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:566](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:566>)（`MD.Ch05.diracApproximation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/DiracApproximation.json；blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.lean；blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.log；blueprint/ch05/validation/short_search/route-f1710e94750679035b16.lean；blueprint/ch05/validation/short_search/route-f1710e94750679035b16.log。
+
+签名SHA256：`1bda389043eab2303e1e582eee148535084046b8da2b3e996eca0a77c5821d7f`；原文SHA256：`70a9ebfdc9e3324a85fc2cb084497cba4b8e62f3a3d18bd53748c4f7b31c1fb1`。
+
+## 1. MD-5.3.1-GaussianDelta · definition · 印刷p.189 / PDFp.210
+
+### 2. 原文陈述
+
+> Alternatively, one may use a sequence of smooth functions $\{d_\varepsilon\}$, such as, in one dimension,
+> \[d_\varepsilon=\frac1{\sqrt{2\pi\varepsilon}}\exp\left(-\frac{z^2}{2\varepsilon}\right).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def gaussianDelta (ε z : ℝ) := Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.gaussianDelta；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:607](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:607>)（`MD.Ch05.gaussianDelta`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`91ff5dcad7079462d8c3230b452ee845e1df53f79ed8998eb4e33f42f27fc513`；原文SHA256：`9dc896fa248682ac5794e1ce545a5fdd84aff7d9911d98981fe7526ac49857f7`。
+
+## 1. MD-5.3.1-DiracEvaluates · unnumbered_claim · 印刷p.189 / PDFp.210
+
+### 2. 原文陈述
+
+> $\langle\delta,\phi\rangle=\int\delta(z)\phi(z)d\omega=\phi(0)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem diracEvaluates : ∀ n (φ : MolecularDynamics.Chapter05Review.schwartzSpace n),
+  (∫ z,φ z ∂(MolecularDynamics.Chapter05Review.diracMeasure n))=MolecularDynamics.Chapter05Review.diracAction φ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.diracEvaluates；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:610](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:610>)（`MD.Ch05.diracEvaluates`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/DiracEvaluates.json；blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-DiracEvaluates.lean；blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-DiracEvaluates.log。
+
+签名SHA256：`1efa00c538f645348b77e29f1f510e9f5b987d333a726ce1cf00586af1a28858`；原文SHA256：`ad06cb740bc1e35d466bcf89797a135b9f3d336166c884ce44c5614c6b43581d`。
+
+## 1. MD-5.3.1-GaussianDeltaProbability · unnumbered_claim · 印刷p.189 / PDFp.210
+
+### 2. 原文陈述
+
+> Alternatively, one may use a sequence of smooth functions $\{d_\varepsilon\}$, such as, in one dimension,
+> \[d_\varepsilon=\frac1{\sqrt{2\pi\varepsilon}}\exp\left(-\frac{z^2}{2\varepsilon}\right).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gaussianDeltaProbability : ∀ ε : ℝ,0 < ε →
+  (∀ x : ℝ,0 ≤ MolecularDynamics.Chapter05Review.gaussianDelta ε x) ∧ Integrable (MolecularDynamics.Chapter05Review.gaussianDelta ε) volume ∧
+  (∫ x,MolecularDynamics.Chapter05Review.gaussianDelta ε x)=1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.gaussianDeltaProbability；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]ε>0，完整真实概率密度资格另列；定义没有替代归一化证明。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:617](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:617>)（`MD.Ch05.gaussianDeltaProbability`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/GaussianDeltaProbability.json；blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.lean；blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db.log；blueprint/ch05/validation/short_search/route-f1710e94750679035b16.lean；blueprint/ch05/validation/short_search/route-f1710e94750679035b16.log。
+
+签名SHA256：`4ccc9aee6a5ab969ee3439acd5c364182d14b137d54cd0aed4a4e8a0cf8908c1`；原文SHA256：`4a35b3fc912051eef8bdc81190455979d5103fd116dbe9e3fc8c6ee10e8ad100`。
+
+## 1. MD-5.3.1-GaussianDeltaWeak · unnumbered_claim · 印刷p.189 / PDFp.210
+
+### 2. 原文陈述
+
+> Alternatively, one may use a sequence of smooth functions $\{d_\varepsilon\}$, such as, in one dimension, $d_\varepsilon=(2\pi\varepsilon)^{-1/2}\exp(-z^2/(2\varepsilon))$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gaussianDeltaWeak : ∀ φ : ℝ → ℝ,Continuous φ → Bornology.IsBounded (range φ) →
+  Tendsto (fun ε : ℝ => ∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) (𝓝[>] 0) (𝓝 (φ 0))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.gaussianDeltaWeak；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确选择有界连续测试函数的实际概率弱极限；原“suitable test”以此资格实现，Schwartz测试也适用。全空间Gaussian没有收缩support，不用上一条support假设套用。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:639](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:639>)（`MD.Ch05.gaussianDeltaWeak`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/GaussianDeltaWeak.json；blueprint/ch05/validation/short_search/route-2b44b961f8bd67d3243e.lean；blueprint/ch05/validation/short_search/route-2b44b961f8bd67d3243e.log；blueprint/ch05/validation/short_search/route-463401a2b819ac9ccd85.lean；blueprint/ch05/validation/short_search/route-463401a2b819ac9ccd85.log；blueprint/ch05/validation/short_search/route-33c5dbbce20c4dd4890b.lean；blueprint/ch05/validation/short_search/route-33c5dbbce20c4dd4890b.log。
+
+签名SHA256：`8cf4d9f801d36145784dab252c9d23b331a3f726016302ef30d08bc12fe27b46`；原文SHA256：`0c58506b7225a6194b414b1346109ef1bc9b221e1374b163fb74a29c47901c59`。

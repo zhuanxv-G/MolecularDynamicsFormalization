@@ -55,3 +55,16 @@ import Blueprint.Ch05
 #print axioms MD.Ch05.hamiltonianDensityPropagation
 #print axioms MD.Ch05.mechanicalLiouvillian
 #print axioms MD.Ch05.mechanicalLiouvillianIdentity
+#print axioms MD.Ch05.testSpace
+#print axioms MD.Ch05.schwartzTestSpace
+#print axioms MD.Ch05.generalizedFunction
+#print axioms MD.Ch05.schwartzFunctional
+#print axioms MD.Ch05.regularDistribution
+#print axioms MD.Ch05.regularDistributionLinearity
+#print axioms MD.Ch05.diracAction
+#print axioms MD.Ch05.diracMeasure
+#print axioms MD.Ch05.diracApproximation
+#print axioms MD.Ch05.gaussianDelta
+#print axioms MD.Ch05.diracEvaluates
+#print axioms MD.Ch05.gaussianDeltaProbability
+#print axioms MD.Ch05.gaussianDeltaWeak
