@@ -30,6 +30,9 @@ def pipeline(ch):
         text=text.replace('import Mathlib.Tactic','import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform\nimport Mathlib.Analysis.Calculus.ParametricIntegral\nimport Mathlib.Analysis.Calculus.Deriv.Slope\nimport Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Analysis.SpecialFunctions.Gamma.Basic\nimport MolecularDynamics.Chapter01.ReviewDefinitions\nimport Mathlib.Tactic',1)
     text=text.replace('open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review',
         f'open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review')
+    if ch==6:
+        text=text.replace(f'open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review',
+            f'open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review\nopen scoped ENNReal NNReal InnerProductSpace')
     text=text.replace('variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]',
         'variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]\nvariable {R : Type*} [Ring R] [Algebra ℝ R]',1)
     text=text.replace('[NormedSpace ℝ E]。', '[NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。')
@@ -87,6 +90,20 @@ def pipeline(ch):
                     index.setdefault(qualified,[]).append(definition)
         return index
     m.definitions=namespace_index
+    if ch>=5:
+        raw_generate=m.generate
+        def generate_with_old_links():
+            raw_generate()
+            path=m.BASE/'old_mapping.json'
+            mapping=json.loads(path.read_text(encoding='utf-8'))
+            links={}
+            for record in m.RECORDS:
+                for old_id in record['old_ids']:
+                    links.setdefault(old_id,[]).append(record['source_id'])
+            # Preserve all literal, corrected and derived parts of a split row.
+            mapping['all_source_ids_by_old_id']=links
+            m.dump(path,mapping)
+        m.generate=generate_with_old_links
     return m
 def render(ch,p):
     source=(ROOT/'scripts/render_ch02_blueprint.py').read_text(encoding='utf-8')

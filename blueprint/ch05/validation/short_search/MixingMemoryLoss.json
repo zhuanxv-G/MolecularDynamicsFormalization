@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c.lean",
+    "log": "blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c.log",
+    "source_sha256": "f5b4c3d5ca5bd0b87fec86e0de71b8563c3e99c526c59b7ed65616dcead7ae47",
+    "log_sha256": "5b2138ce481e082f48657e62c90ad1840ab1c1ccfd4545773262e5d40a64bcfe"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n μ Φ β φ hμ hm hβ hβbound hβpos hβmass hφ hb hΦ\n  letI := hμ\n  obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le\n  have hi : Integrable φ μ := Integrable.mono' (integrable_const C)\n    hφ.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hB (φ z) (mem_range_self z)))\n  have he (t : ℝ) : (∫ z,φ (Φ t z) ∂μ)=MolecularDynamics.Chapter05Review.average μ φ := by\n    have hh := integral_map (hΦ t).measurable.aemeasurable\n      (show AEStronglyMeasurable φ (Measure.map (Φ t) μ) from by rw [(hΦ t).map_eq];exact hi.aestronglyMeasurable)\n    rw [(hΦ t).map_eq] at hh\n    exact hh.symm\n  have hp (t : ℝ) : Integrable (fun z => φ (Φ t z)*β z) μ :=\n    hβ.bdd_mul (hφ.measurable.comp (hΦ t).measurable).aestronglyMeasurable\n      (ae_of_all _ (fun z => hB (φ (Φ t z)) (mem_range_self _)))\n  have heq (t : ℝ) : (∫ z,φ (Φ t z)*(β z-1) ∂μ)=\n      (∫ z,φ (Φ t z)*β z ∂μ)-MolecularDynamics.Chapter05Review.average μ φ := by\n    simp_rw [mul_sub,mul_one]\n    have hip : Integrable (fun z => φ (Φ t z)) μ := by\n      simpa only [Function.comp_def] using (hΦ t).integrable_comp_of_integrable hi\n    rw [integral_sub (hp t) hip,he]\n  simp_rw [heq]\n  simpa only [sub_self] using (hm β φ hβ hβpos hβmass hφ hb).sub (tendsto_const_nhds : Tendsto (fun _ : ℝ => MolecularDynamics.Chapter05Review.average μ φ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ)))",
+    "source": "blueprint/ch05/validation/short_search/route-17122b90950be22759f3.lean",
+    "log": "blueprint/ch05/validation/short_search/route-17122b90950be22759f3.log",
+    "source_sha256": "5c98bb3ce551b8cc5f793576072df53f543e4dc0ceb342e1d576dfbd6c1a8eb7",
+    "log_sha256": "42f51c0bc603d7c28ba4ee9f82a83615a4339b57134cbdaf52af9b3abab91ec5"
+  }
+]

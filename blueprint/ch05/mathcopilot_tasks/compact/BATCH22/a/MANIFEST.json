@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH22",
+  "subtask": "BATCH22a",
+  "source_ids": [
+    "MD-5.5-Correlation"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 224,
+      "printed_page": 203
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7dc381e2ea2893853cdddc514e16d482dffabec787489689b4213d5d499e2afb",
+  "lean_sha256": "146ca4ed51068304e12f9dd7252e33cdcf40cab352f22bdd8e7f13eb606e3b0f",
+  "signature_sha256": "815a63cef778f82e48485d9b2de2696440d69be928f0e47e8d22a708fa09a10f",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "correlation",
+      "code_sha256": "815a63cef778f82e48485d9b2de2696440d69be928f0e47e8d22a708fa09a10f"
+    }
+  ],
+  "paste_plus_pdf_bytes": 170498,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4043,
+      "sha256": "20fe7faa18bf06899c746e52c828bc86ac086816f6168a82b08161eac475e821"
+    },
+    "BATCH22a_PAGES.pdf": {
+      "bytes": 166455,
+      "sha256": "d88a70f1ad890c9bc36553fa76fb1512c83c3415aa2001cee0a27c591afb4b3b"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 172358
+}

@@ -13,6 +13,14 @@ old=list(csv.DictReader((ROOT/f'docs/review/CH{ch:02}_CLAIMS.csv').open(encoding
 mapping=json.loads((p.BASE/'old_mapping.json').read_text(encoding='utf-8'))
 assert not mapping['pending'] and set(mapping['mapped'])=={r['id'] for r in old}
 assert set(mapping['mapped'].values())<=set(ids)
+if ch>=5:
+    expected_links={}
+    for record in p.RECORDS:
+        for old_id in record['old_ids']:
+            expected_links.setdefault(old_id,[]).append(record['source_id'])
+    assert mapping['all_source_ids_by_old_id']==expected_links
+    assert set(expected_links)==set(mapping['mapped'])
+    assert all(mapping['mapped'][old_id] in links and set(links)<=set(ids) for old_id,links in expected_links.items())
 for sid,item in audit.items():
     assert item['checked'] and item.get('compiled',True),sid
     assert item['signature_sha256']==ds[sid]['signature_sha256'] and item['block_sha256']==ds[sid]['block_sha256']

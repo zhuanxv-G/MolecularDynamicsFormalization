@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n μ Φ a b k hμ hΦ hm ha hb hba hbb hzero\n  have ht := mixingCorrelation n μ Φ a b k hμ hΦ hm ha hb hba hbb\n  have hl : k*MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b=0 := by\n    rcases hzero with h | h <;> rw [h] <;> ring\n  rw [hl] at ht\n  simpa only [abs_zero] using ht.abs",
+    "source": "blueprint/ch05/validation/short_search/route-17122b90950be22759f3.lean",
+    "log": "blueprint/ch05/validation/short_search/route-17122b90950be22759f3.log",
+    "source_sha256": "5c98bb3ce551b8cc5f793576072df53f543e4dc0ceb342e1d576dfbd6c1a8eb7",
+    "log_sha256": "42f51c0bc603d7c28ba4ee9f82a83615a4339b57134cbdaf52af9b3abab91ec5"
+  }
+]

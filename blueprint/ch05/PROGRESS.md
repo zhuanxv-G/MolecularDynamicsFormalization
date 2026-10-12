@@ -2,7 +2,7 @@
 
 范围：印刷p.179–209/PDF200–230，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前137条；旧清单映射64/86；本地PASS 129；网站返回0。
+当前149条；旧清单映射71/86；本地PASS 139；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -143,6 +143,18 @@
 | MD-5.4.1-CircleInitialPoints | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-5.4.1-CircleInitialLaw | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-5.4.1-CircleInitialEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CircleInitialEnergy.timebox.json。 |
+| MD-5.5-Correlation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.5-CorrelationPullback | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-5.5-CorrelationTimePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原any与AE的量词冲突待裁定，不证明。 |
+| MD-5.5-CorrelationTimeAE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.5-VelocityCorrelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.5-PositionTransition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.5-TransitionProbability | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.5-MeasureDuality | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.5-MixingMemoryLoss | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.5-MixingCorrelationPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原遗漏k待裁定，不证明；正确极限另条。 |
+| MD-5.5-MixingCorrelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.5-CenteredCorrelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 
 ## 旧86条完整映射
 
@@ -212,13 +224,13 @@
 | CH05-062 | MD-5.4.1-NonergodicSet |
 | CH05-063 | MD-5.4.1-KAMPersistence |
 | CH05-064 | MD-5.4.1-Mixing |
-| CH05-065 | PENDING：所属节尚未处理 |
-| CH05-066 | PENDING：所属节尚未处理 |
-| CH05-067 | PENDING：所属节尚未处理 |
-| CH05-068 | PENDING：所属节尚未处理 |
-| CH05-069 | PENDING：所属节尚未处理 |
-| CH05-070 | PENDING：所属节尚未处理 |
-| CH05-071 | PENDING：所属节尚未处理 |
+| CH05-065 | MD-5.5-Correlation |
+| CH05-066 | MD-5.5-CorrelationPullback |
+| CH05-067 | MD-5.5-CorrelationTimeAE |
+| CH05-068 | MD-5.5-VelocityCorrelation |
+| CH05-069 | MD-5.5-TransitionProbability |
+| CH05-070 | MD-5.5-MeasureDuality |
+| CH05-071 | MD-5.5-CenteredCorrelation |
 | CH05-072 | PENDING：所属节尚未处理 |
 | CH05-073 | PENDING：所属节尚未处理 |
 | CH05-074 | PENDING：所属节尚未处理 |
@@ -279,6 +291,8 @@
 - MD-5.4.1-AnisotropicInitialEnergy：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/AnisotropicInitialEnergy.timebox.json。
 - MD-5.4.1-InitialSegmentPrinted：[ERRATUM?]位置区间是线段，但p_y=√(2(E₀−U(x,0)))通常非仿射函数，完整四维初值集一般是曲线而非直线段；字面陈述与正则曲线像定理分开。 原四维line segment疑误待裁定，不证明。
 - MD-5.4.1-CircleInitialEnergy：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CircleInitialEnergy.timebox.json。
+- MD-5.5-CorrelationTimePrinted：[ERRATUM?]“any trajectory”强于此前AE遍历平均；本字面版保留能量面上全部初值量词，正确AE修正版另条；不能凭概率遍历宣称每条轨道。 原any与AE的量词冲突待裁定，不证明。
+- MD-5.5-MixingCorrelationPrinted：[ERRATUM?]相关函数已含任意归一化k，印刷极限遗漏k；保留字面目标，不静默设k=1。原任意函数需可积/有界资格，否则甚至积分未定义。 原遗漏k待裁定，不证明；正确极限另条。
 
 ## 定性段落排除
 

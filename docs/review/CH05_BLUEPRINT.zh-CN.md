@@ -141,6 +141,18 @@
 | MD-5.4.1-CircleInitialPoints | 202/223 | PASS | 待网站审计 | self-contained |
 | MD-5.4.1-CircleInitialLaw | 202/223 | PASS | 待网站审计 | self-contained |
 | MD-5.4.1-CircleInitialEnergy | 202/223 | PASS | 待网站审计 | incomplete |
+| MD-5.5-Correlation | 203/224 | PASS | 待网站审计 | self-contained |
+| MD-5.5-CorrelationPullback | 204/225 | PASS | 待网站审计 | checked+documented priors |
+| MD-5.5-CorrelationTimePrinted | 204/225 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-5.5-CorrelationTimeAE | 204/225 | PASS | 待网站审计 | self-contained |
+| MD-5.5-VelocityCorrelation | 204/225 | PASS | 待网站审计 | self-contained |
+| MD-5.5-PositionTransition | 204/225 | PASS | 待网站审计 | self-contained |
+| MD-5.5-TransitionProbability | 204/225 | PASS | 待网站审计 | self-contained |
+| MD-5.5-MeasureDuality | 205/226 | PASS | 待网站审计 | self-contained |
+| MD-5.5-MixingMemoryLoss | 205/226 | PASS | 待网站审计 | self-contained |
+| MD-5.5-MixingCorrelationPrinted | 205/226 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-5.5-MixingCorrelation | 205/226 | PASS | 待网站审计 | self-contained |
+| MD-5.5-CenteredCorrelation | 205/226 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -152,6 +164,8 @@
 - MD-5.4.1-AnisotropicAxisPrinted：[ERRATUM?]一般各向异性势的力不能凭“central”称径向，x轴正向处的角向导数未必为零；所选初始ẏ通常非零，亦不属于后句y=ẏ=0集合。探索整个能量面的结论只为模拟直觉，未提升为定理。
 - MD-5.4.1-PendulumRegionPrinted：[ERRATUM?]一般弹簧势在距离小于rest length时不随距离单调，不能由椭圆上的半径上界自动推出能量可达；给定图的特殊参数与一般系数需分开。“swept out”还不能保证单条轨迹覆盖静态能量投影，且边界U=E在全能量投影中可达，原“interior”需解释。
 - MD-5.4.1-InitialSegmentPrinted：[ERRATUM?]位置区间是线段，但p_y=√(2(E₀−U(x,0)))通常非仿射函数，完整四维初值集一般是曲线而非直线段；字面陈述与正则曲线像定理分开。
+- MD-5.5-CorrelationTimePrinted：[ERRATUM?]“any trajectory”强于此前AE遍历平均；本字面版保留能量面上全部初值量词，正确AE修正版另条；不能凭概率遍历宣称每条轨道。
+- MD-5.5-MixingCorrelationPrinted：[ERRATUM?]相关函数已含任意归一化k，印刷极限遗漏k；保留字面目标，不静默设k=1。原任意函数需可积/有界资格，否则甚至积分未定义。
 
 ## 1. MD-5.1-LieDerivative · definition · 印刷p.180 / PDFp.201
 
@@ -6519,3 +6533,589 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 缺失/继续路线：本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CircleInitialEnergy.timebox.json。
 
 签名SHA256：`ab86b0997dc8928f6f1bfdf143515614e37f38c56bf0560628d12ff65f4c0776`；原文SHA256：`39be934308c73e49298770dba816359e4e3b70bf6ef06fe6f7ced1558d73ef65`。
+
+## 1. MD-5.5-Correlation · definition · 印刷p.203 / PDFp.224
+
+### 2. 原文陈述
+
+> Let $a$ and $b$ be mappings from the phase space to the same Euclidean space, and define the temporal correlation of $a$ and $b$ (on the surface of energy $E$) by
+> \[C_{ab}(\tau)\stackrel{\rm def}{=}k\operatorname{Av}_{H=E}(a(\mathcal F_t(z))\cdot b(z))
+> =kZ_E^{-1}\int_{\Sigma_E}a(\mathcal F_t(z))\cdot b(z)\delta[H-E]d\omega,\]
+> where $k$ is a normalization constant that is often incorporated to ensure that $C_{ab}(0)=1$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def correlation {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (k t : ℝ) := k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.correlation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1242](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1242>)（`MD.Ch05.correlation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`815a63cef778f82e48485d9b2de2696440d69be928f0e47e8d22a708fa09a10f`；原文SHA256：`60134d3efeb3b9de976d23939100c1b6c37fc4dcc44bb6229a33e373d6b96c70`。
+
+## 1. MD-5.5-CorrelationPullback · unnumbered_claim · 印刷p.204 / PDFp.225
+
+### 2. 原文陈述
+
+> Using the notation developed earlier for the propagator, this has the alternative formulation
+> \[C_{ab}(t)=k\operatorname{Av}_{H=E}\left[b(z)\cdot(e^{t\mathcal L}a)(z)\right].\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem correlationPullback {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t :
+    MolecularDynamics.Chapter05Review.correlation μ Φ a b k t=k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.correlationPullback；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch05.lean:1246](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1246>)（`MD.Ch05.correlationPullback`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.Chapter05Review.correlationPullback_proved。
+
+签名SHA256：`a5ad44d13c413b733e2cbf7ab9714018f1dff82189c88e36df86fa7f853032d4`；原文SHA256：`616621e29786603c57f484a4d7b2fdb4a8678b1570e3d221c747682331f36312`。
+
+## 1. MD-5.5-CorrelationTimePrinted · unnumbered_claim · 印刷p.204 / PDFp.225
+
+### 2. 原文陈述
+
+> If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:
+> \[C_{a,b}(t)=k\lim_{T\to\infty}\frac1T\int_0^T a(z(s+t))\cdot b(z(s))ds.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem correlationTimePrinted : ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c Φ
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t,
+  (∀ z,Φ 0 z=z) → (∀ s u z,Φ (s+u) z=Φ s (Φ u z)) →
+  MolecularDynamics.Chapter05Review.microErgodic H c Φ → Integrable (fun z => inner ℝ (a (Φ t z)) (b z)) (MolecularDynamics.Chapter05Review.microMeasure H c) →
+  ∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,Tendsto
+    (fun T => k*T⁻¹*(∫ s in (0 : ℝ)..T,inner ℝ (a (Φ (s+t) z)) (b (Φ s z))))
+    atTop (𝓝 (MolecularDynamics.Chapter05Review.correlation (MolecularDynamics.Chapter05Review.microMeasure H c) Φ a b k t))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.correlationTimePrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]真实能量面/微正则测度、标准遍历先验及给定lag相关可积资格；原字面全能量初值只作为待裁定义务，不能当本地PASS。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。[ERRATUM?]“any trajectory”强于此前AE遍历平均；本字面版保留能量面上全部初值量词，正确AE修正版另条；不能凭概率遍历宣称每条轨道。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1252](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1252>)（`MD.Ch05.correlationTimePrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原any与AE的量词冲突待裁定，不证明。
+
+签名SHA256：`2fb405e05b19a135490d5ef3f15c6620397ca3594e02268f68a20abe6c549c3e`；原文SHA256：`60cbab9fa868bce529c44a73d493a14d1763094f2d30c37c5ef939447d6716eb`。
+
+## 1. MD-5.5-CorrelationTimeAE · unnumbered_claim · 印刷p.204 / PDFp.225
+
+### 2. 原文陈述
+
+> $C_{a,b}(t)=k\lim_{T\to\infty}T^{-1}\int_0^T a(z(s+t))\cdot b(z(s))ds$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem correlationTime :
+  ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t,
+  (∀ z,Φ 0 z=z) → (∀ s u z,Φ (s+u) z=Φ s (Φ u z)) →
+  (∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,Integrable g μ → ∀ᵐ z ∂μ, MolecularDynamics.Chapter05Review.hasTimeAverage (fun s => Φ s z) g (MolecularDynamics.Chapter05Review.average μ g)) →
+  Integrable (fun z => inner ℝ (a (Φ t z)) (b z)) μ →
+  ∀ᵐ z ∂μ,Tendsto (fun T => k*T⁻¹*(∫ s in (0 : ℝ)..T,inner ℝ (a (Φ (s+t) z)) (b (Φ s z))))
+    atTop (𝓝 (MolecularDynamics.Chapter05Review.correlation μ Φ a b k t))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.correlationTime；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]按本章标准遍历结论修正为对给定lag逐次AE初值；保留真实时间积分、向量内积、可积性和flow群律，原any字面另条。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:1263](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1263>)（`MD.Ch05.correlationTime`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/CorrelationTimeAE.json；blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-CorrelationTimeAE.lean；blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-CorrelationTimeAE.log。
+
+签名SHA256：`2dca650aa2d6a81d8ff28d4463aeb3eaf7e90e38500bfe9d99029def13245de9`；原文SHA256：`732913dff1fd3aaba09c3e97d90d764da106571d5c431a8e3e9b6f8be8771ad8`。
+
+## 1. MD-5.5-VelocityCorrelation · definition · 印刷p.204 / PDFp.225
+
+### 2. 原文陈述
+
+> The velocity autocorrelation function is often written in the shorthand notation
+> \[C_{v,v}(t)\stackrel{\rm def}{=}\frac{\langle v(t)\cdot v(0)\rangle}{\langle v(0)\cdot v(0)\rangle},\]
+> where the averaging may be assumed to be against the microcanonical measure, if otherwise unspecified.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def velocityCorrelation {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (v : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (t : ℝ) := MolecularDynamics.Chapter05Review.correlation μ Φ v v 1 t/MolecularDynamics.Chapter05Review.correlation μ Φ v v 1 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.velocityCorrelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1279](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1279>)（`MD.Ch05.velocityCorrelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`cbc732a8d41b7a435e7000a87ea3d8db629c402ad02863f445ccef437ada7eac`；原文SHA256：`ca821de4d551a8d410ebc8a4bdf9085d405e6b3d35e8bef1af75a94e332fc4ee`。
+
+## 1. MD-5.5-PositionTransition · definition · 印刷p.204 / PDFp.225
+
+### 2. 原文陈述
+
+> Now let $A$ and $B$ be subsets of configuration space (i.e. subsets in the position space) of nonzero measure, and define $T_{AB}(\tau)\stackrel{\rm def}{=}C_{1_B,1_A}(\tau)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def positionTransition {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (π : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (A B : Set (MolecularDynamics.Chapter05Review.E d)) (t : ℝ) :=
+  (∫ z,((B.indicator (fun _ => (1 : ℝ))) (π (Φ t z)))*
+    ((A.indicator (fun _ => (1 : ℝ))) (π z)) ∂μ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.positionTransition；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1283](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1283>)（`MD.Ch05.positionTransition`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`e82271d91489c105b711170808c7f4ff318971b4657f18c7bb0f6410cc29ad59`；原文SHA256：`36e3eeaa38004928d9e82d9b8d06763c33cd5404f3221651ced7c7ca3698b93f`。
+
+## 1. MD-5.5-TransitionProbability · definition · 印刷p.204 / PDFp.225
+
+### 2. 原文陈述
+
+> Dividing $T_{AB}$ by the measure of the set $A$, we obtain the probability for a trajectory to make this transition in the given time, which we may write as
+> \[\operatorname{Pr}_\tau(A\to B)=\frac{\langle1_B(z(\tau))1_A(z(0))\rangle}{\langle1_A(z(0))\rangle},\]
+> where the averaging is assumed to be with respect to the microcanonical distribution at given energy $E$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def transitionProbability {n : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (A B : Set (MolecularDynamics.Chapter05Review.E n)) (t : ℝ) :=
+  (μ (A ∩ (Φ t) ⁻¹' B)).toReal/(μ A).toReal
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.transitionProbability；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]定义中A/B为位置集合的相空间逆像；完整位置投影平均已另条。µ(A)>0使用资格，非首次到达事件。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:1290](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1290>)（`MD.Ch05.transitionProbability`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`75d57dd7d0ce5bfd4c7265cbd40ba2cd5f4a1c6106b5342cdc4850017d286237`；原文SHA256：`7b0bb56d8ff37439fa82e6d18d6fc37197834ebda0d489ad2398f549dc3e7019`。
+
+## 1. MD-5.5-MeasureDuality · unnumbered_claim · 印刷p.205 / PDFp.226
+
+### 2. 原文陈述
+
+> \[\int_{\Sigma_E}\phi(z)\rho(z;t)d\omega
+> =\int_{\Sigma_E}\phi(z)e^{t\mathcal L^*}\rho(z,0)d\omega
+> =\int_{\Sigma_E}[e^{t\mathcal L}\phi(z)]\rho(z,0)d\omega
+> =\int_{\Sigma_E}\phi(\mathcal F_t(z))\rho(z;0)d\omega
+> =\int_{\Sigma_E}\phi(\mathcal F_t(z))\frac{\rho(z;0)}{\rho_E(z)}\rho_E(z)d\omega.\tag{5.10}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem measureDuality :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ (φ : MolecularDynamics.Chapter05Review.E n → ℝ) t,
+  Measurable (Φ t) → Integrable φ (MolecularDynamics.Chapter05Review.measurePropagator Φ t μ) →
+    MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.measurePropagator Φ t μ) φ=MolecularDynamics.Chapter05Review.average μ (MolecularDynamics.Chapter05Review.pullback Φ φ t)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.measureDuality；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]演化密度用真实Measure.map，微正则ρE的比值应理解为对参考奇异测度的Radon–Nikodym密度；不当普通Lebesgue密度相除。明确可测及map下可积，不将最终等式作前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:1296](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1296>)（`MD.Ch05.measureDuality`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/MeasureDuality.json；blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-MeasureDuality.lean；blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-MeasureDuality.log。
+
+签名SHA256：`e1f4340fe612f13a811e7d9d410ec38e6c12ed84815bc2f33f28d1a7bb96360e`；原文SHA256：`4ec46af101e7a94786f56b80a59d7b168bb84df1c6f2c53da75c3f2ef4d3488a`。
+
+## 1. MD-5.5-MixingMemoryLoss · unnumbered_claim · 印刷p.205 / PDFp.226
+
+### 2. 原文陈述
+
+> We assume $\beta(z)\stackrel{\rm def}{=}\rho(z;0)/\rho_E(z)$ is bounded on $\Sigma_E$, and moreover $\operatorname{Av}_{H=E}(\beta)=1$ (i.e., the initial density is a probability density on the energy surface), and that the system is mixing. Then the integral (5.10) is well defined and we may view it as a two-point correlation function of $\phi$ and $\beta$. By the mixing property it must converge to $\int_{\Sigma_E}\phi(z)\rho_Ed\omega$, thus the average value of $\phi$ is ultimately independent of the initial conditions. We have
+> \[\lim_{t\to\infty}\int_{\Sigma_E}\phi(\mathcal F_t(z))(\beta(z)-1)\rho_Ed\omega=0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem mixingMemoryLoss : ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ (β φ : MolecularDynamics.Chapter05Review.E n → ℝ),
+  IsProbabilityMeasure μ → weakMixing μ Φ → Integrable β μ → Bornology.IsBounded (range β) → (∀ z,0 ≤ β z) →
+  (∫ z,β z ∂μ)=1 → Continuous φ → Bornology.IsBounded (range φ) →
+  (∀ t,MeasurePreserving (Φ t) μ μ) →
+  Tendsto (fun t => ∫ z,φ (Φ t z)*(β z-1) ∂μ) atTop (𝓝 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.mixingMemoryLoss；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]β是对实际参考概率测度的非负密度；原bounded在真实假设中保留，可积明确保障所有密度配对。可测参考测度保持保障常数项积分，φ有界连续；最终memory loss未作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:1305](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1305>)（`MD.Ch05.mixingMemoryLoss`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/MixingMemoryLoss.json；blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c.lean；blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c.log；blueprint/ch05/validation/short_search/route-17122b90950be22759f3.lean；blueprint/ch05/validation/short_search/route-17122b90950be22759f3.log。
+
+签名SHA256：`cb6699e53899d0ef5c696bd9c486e76fb94027407df323a23f1870ebc7517305`；原文SHA256：`f89bd0d5cd920a07f19143ca13311b92be1c9f6fb3365cee5b30bb8e4cd8c540`。
+
+## 1. MD-5.5-MixingCorrelationPrinted · unnumbered_claim · 印刷p.205 / PDFp.226
+
+### 2. 原文陈述
+
+> More generally, in a mixing system, if $a$ and $b$ are two arbitrary functions of the phase variables, then
+> \[\lim_{t\to\infty}C_{ab}(t)=\operatorname{Av}_{H=E}(a)\operatorname{Av}_{H=E}(b).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem mixingCorrelationPrinted :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
+    (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k, IsProbabilityMeasure μ → weakMixing μ Φ → Continuous a → Continuous b →
+    Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+    Tendsto (fun t => k*(∫ z,a (Φ t z)*b z ∂μ)) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.mixingCorrelationPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]明确概率测度及有界连续函数；k任意，字面版不改最终右侧。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。[ERRATUM?]相关函数已含任意归一化k，印刷极限遗漏k；保留字面目标，不静默设k=1。原任意函数需可积/有界资格，否则甚至积分未定义。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:1334](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1334>)（`MD.Ch05.mixingCorrelationPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原遗漏k待裁定，不证明；正确极限另条。
+
+签名SHA256：`6accad4ea9a73312362d58042df928d634449eda1afed569b1ecd8595286d024`；原文SHA256：`cd426f4e613974e78a5262022d9a8b2ba64e7986a9efb5aa37e93364cd7e3b4f`。
+
+## 1. MD-5.5-MixingCorrelation · unnumbered_claim · 印刷p.205 / PDFp.226
+
+### 2. 原文陈述
+
+> $\lim_{t\to\infty}C_{ab}(t)=\operatorname{Av}_{H=E}(a)\operatorname{Av}_{H=E}(b)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem mixingCorrelation :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k, IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
+  (∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))) →
+  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+  Tendsto (fun t => k*(∫ z,a (Φ t z)*b z ∂μ)) atTop (𝓝 (k*MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.mixingCorrelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]独立修正版右侧保留k，实际AC概率初值的弱mixing条件及有界连续a/b；原参考微正则分布的不变资格明确为MeasurePreserving，保障各时积分可积和常数项不变。未以目标相关极限作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:1343](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1343>)（`MD.Ch05.mixingCorrelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/MixingCorrelation.json；blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-MixingCorrelation.lean；blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-MixingCorrelation.log。
+
+签名SHA256：`960f40a6206125d552e41c32eaf38e1ecbc03eb9bbf77cbc72df687b11865c3a`；原文SHA256：`bb3dd26125216584b7ca2cf73ce3220d81c63b0e77ce54feae192acb52f74493`。
+
+## 1. MD-5.5-CenteredCorrelation · unnumbered_claim · 印刷p.205 / PDFp.226
+
+### 2. 原文陈述
+
+> So if either property has mean zero, then the absolute value of the autocorrelation function decays with time to zero.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem centeredCorrelation : ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k,IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) → weakMixing μ Φ →
+  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+  (MolecularDynamics.Chapter05Review.average μ a=0 ∨ MolecularDynamics.Chapter05Review.average μ b=0) →
+  Tendsto (fun t => |k*(∫ z,a (Φ t z)*b z ∂μ)|) atTop (𝓝 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.centeredCorrelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]概率测度/有界连续资格，k仍保留；由实际混合相关式推导的绝对值结论，不只保留未中心化极限。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:1406](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1406>)（`MD.Ch05.centeredCorrelation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/CenteredCorrelation.json；blueprint/ch05/validation/short_search/route-17122b90950be22759f3.lean；blueprint/ch05/validation/short_search/route-17122b90950be22759f3.log。
+
+签名SHA256：`39c6b541f68791c55aa90796aac01557445629e695ce52f498cb8432f0821baf`；原文SHA256：`2f59718b632064e30def025a70ebd93a0eb5b01cadac8fca1a807e02f910464e`。

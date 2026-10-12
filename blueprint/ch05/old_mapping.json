@@ -63,16 +63,16 @@
     "CH05-061": "MD-5.4.1-ErgodicTimeEquivalence",
     "CH05-062": "MD-5.4.1-NonergodicSet",
     "CH05-064": "MD-5.4.1-Mixing",
-    "CH05-063": "MD-5.4.1-KAMPersistence"
+    "CH05-063": "MD-5.4.1-KAMPersistence",
+    "CH05-065": "MD-5.5-Correlation",
+    "CH05-066": "MD-5.5-CorrelationPullback",
+    "CH05-067": "MD-5.5-CorrelationTimeAE",
+    "CH05-068": "MD-5.5-VelocityCorrelation",
+    "CH05-069": "MD-5.5-TransitionProbability",
+    "CH05-070": "MD-5.5-MeasureDuality",
+    "CH05-071": "MD-5.5-CenteredCorrelation"
   },
   "pending": [
-    "CH05-065",
-    "CH05-066",
-    "CH05-067",
-    "CH05-068",
-    "CH05-069",
-    "CH05-070",
-    "CH05-071",
     "CH05-072",
     "CH05-073",
     "CH05-074",
@@ -89,5 +89,256 @@
     "CH05-085",
     "CH05-086"
   ],
-  "excluded": {}
+  "excluded": {},
+  "all_source_ids_by_old_id": {
+    "CH05-001": [
+      "MD-5.1-LieDerivative"
+    ],
+    "CH05-002": [
+      "MD-5.1-TrajectoryChain"
+    ],
+    "CH05-003": [
+      "MD-5.1-ObservablePullback"
+    ],
+    "CH05-007": [
+      "MD-5.1-ObservablePullback",
+      "MD-5.1-SolutionOperator"
+    ],
+    "CH05-004": [
+      "MD-5.1-FlowFieldTransport"
+    ],
+    "CH05-005": [
+      "MD-5.1-PullbackPDE"
+    ],
+    "CH05-006": [
+      "MD-5.1-SteadyFirstIntegral"
+    ],
+    "CH05-008": [
+      "MD-5.1-CoordinatePullback",
+      "MD-5.1-CoordinateLie"
+    ],
+    "CH05-009": [
+      "MD-5.2.1-DensityOn",
+      "MD-5.2.1-ProbabilityDensityOn"
+    ],
+    "CH05-010": [
+      "MD-5.2.1-DensityOnNormalization"
+    ],
+    "CH05-011": [
+      "MD-5.2.1-DensityProbability",
+      "MD-5.2.1-DensityMeasureOn"
+    ],
+    "CH05-012": [
+      "MD-5.2.1-LebesgueClosure",
+      "MD-5.2.1-BorelSigma"
+    ],
+    "CH05-013": [
+      "MD-5.2.1-DensityProbabilityBounds"
+    ],
+    "CH05-014": [
+      "MD-5.2.1-DomainL2",
+      "MD-5.2.1-L2Norm"
+    ],
+    "CH05-015": [
+      "MD-5.2.1-L2Inner"
+    ],
+    "CH05-016": [
+      "MD-5.2.1-L2NormSquare"
+    ],
+    "CH05-017": [
+      "MD-5.2.1-L2Complete"
+    ],
+    "CH05-018": [
+      "MD-5.2.1-L2SymmetricBilinear"
+    ],
+    "CH05-019": [
+      "MD-5.2.1-CompactL2"
+    ],
+    "CH05-020": [
+      "MD-5.2.1-DensityAverageOn",
+      "MD-5.2.1-NormalizedAverageFormula"
+    ],
+    "CH05-021": [
+      "MD-5.2.2-MassFraction"
+    ],
+    "CH05-022": [
+      "MD-5.2.2-MassDerivative"
+    ],
+    "CH05-023": [
+      "MD-5.2.2-GeneralFluxBalance",
+      "MD-5.2.2-BoxFluxBalance"
+    ],
+    "CH05-024": [
+      "MD-5.2.2-Divergence",
+      "MD-5.2.2-Liouvillian"
+    ],
+    "CH05-025": [
+      "MD-5.2.2-LiouvilleEquation"
+    ],
+    "CH05-026": [
+      "MD-5.2.2-LiouvilleProduct",
+      "MD-5.2.2-LiouvilleProductCoordinates"
+    ],
+    "CH05-027": [
+      "MD-5.2.2-RapidAdjoint",
+      "MD-5.2.2-CompactAdjoint"
+    ],
+    "CH05-028": [
+      "MD-5.2.2-MeasurePropagator"
+    ],
+    "CH05-029": [
+      "MD-5.2.3-HamiltonianDivergence"
+    ],
+    "CH05-030": [
+      "MD-5.2.3-HamiltonianSkewExpression"
+    ],
+    "CH05-031": [
+      "MD-5.2.3-HamiltonianDensityPropagation"
+    ],
+    "CH05-032": [
+      "MD-5.2.3-MechanicalLiouvillian",
+      "MD-5.2.3-MechanicalLiouvillianIdentity"
+    ],
+    "CH05-033": [
+      "MD-5.3.1-TestSpace",
+      "MD-5.3.1-SchwartzSpace"
+    ],
+    "CH05-034": [
+      "MD-5.3.1-GeneralizedFunction",
+      "MD-5.3.1-SchwartzFunctional"
+    ],
+    "CH05-035": [
+      "MD-5.3.1-RegularDistribution",
+      "MD-5.3.1-RegularDistributionLinearity"
+    ],
+    "CH05-036": [
+      "MD-5.3.1-DiracAction",
+      "MD-5.3.1-DiracMeasure",
+      "MD-5.3.1-DiracEvaluates"
+    ],
+    "CH05-037": [
+      "MD-5.3.1-DiracApproximation"
+    ],
+    "CH05-038": [
+      "MD-5.3.1-GaussianDelta",
+      "MD-5.3.1-GaussianDeltaProbability",
+      "MD-5.3.1-GaussianDeltaWeak"
+    ],
+    "CH05-039": [
+      "MD-5.3.2-WeakStationary"
+    ],
+    "CH05-040": [
+      "MD-5.3.2-EnsembleAverage"
+    ],
+    "CH05-041": [
+      "MD-5.3.2-HamiltonianEnergyIntegral"
+    ],
+    "CH05-042": [
+      "MD-5.3.2-EnergyDensityInvariant"
+    ],
+    "CH05-043": [
+      "MD-5.3.2-ShellWeight",
+      "MD-5.3.2-ShellPartition",
+      "MD-5.3.2-ShellDensity"
+    ],
+    "CH05-045": [
+      "MD-5.3.2-EnergySurface",
+      "MD-5.3.2-SurfaceMeasure",
+      "MD-5.3.2-MicroRaw"
+    ],
+    "CH05-044": [
+      "MD-5.3.2-ShellWeakPrinted",
+      "MD-5.3.2-ShellWeakLimitCorrected"
+    ],
+    "CH05-046": [
+      "MD-5.3.2-SurfaceAreaFormula"
+    ],
+    "CH05-047": [
+      "MD-5.3.2-NormalField"
+    ],
+    "CH05-048": [
+      "MD-5.3.2-NormalEnergyTaylor",
+      "MD-5.3.2-NormalInverseTaylor"
+    ],
+    "CH05-049": [
+      "MD-5.3.2-PatchShellVolume",
+      "MD-5.3.2-WholeShellVolumeLimit"
+    ],
+    "CH05-050": [
+      "MD-5.3.2-MicroRawInvariant",
+      "MD-5.3.2-MicroInvariant"
+    ],
+    "CH05-051": [
+      "MD-5.3.2-MicroPartition",
+      "MD-5.3.2-HarmonicPartition",
+      "MD-5.3.2-IdealGasPartition"
+    ],
+    "CH05-052": [
+      "MD-5.3.3-MicroMeasure"
+    ],
+    "CH05-053": [
+      "MD-5.3.3-MicroProbability"
+    ],
+    "CH05-054": [
+      "MD-5.3.3-LowerDimensionNull"
+    ],
+    "CH05-055": [
+      "MD-5.3.3-MicroAverage"
+    ],
+    "CH05-056": [
+      "MD-5.4-TimeAverage",
+      "MD-5.4-HasTimeAverage"
+    ],
+    "CH05-057": [
+      "MD-5.4-ConservedAverage",
+      "MD-5.4-ConservedInfiniteAverage"
+    ],
+    "CH05-058": [
+      "MD-5.4.1-UniformMicroErgodic",
+      "MD-5.4.1-MicroErgodicStandard"
+    ],
+    "CH05-059": [
+      "MD-5.4.1-FlowInvariant",
+      "MD-5.4.1-SetErgodic"
+    ],
+    "CH05-060": [
+      "MD-5.4.1-InvariantIndicator",
+      "MD-5.4.1-InvariantIndicatorAverage"
+    ],
+    "CH05-061": [
+      "MD-5.4.1-ErgodicTimeEquivalence"
+    ],
+    "CH05-062": [
+      "MD-5.4.1-NonergodicSet"
+    ],
+    "CH05-064": [
+      "MD-5.4.1-Mixing"
+    ],
+    "CH05-063": [
+      "MD-5.4.1-KAMPersistence"
+    ],
+    "CH05-065": [
+      "MD-5.5-Correlation"
+    ],
+    "CH05-066": [
+      "MD-5.5-CorrelationPullback"
+    ],
+    "CH05-067": [
+      "MD-5.5-CorrelationTimeAE"
+    ],
+    "CH05-068": [
+      "MD-5.5-VelocityCorrelation"
+    ],
+    "CH05-069": [
+      "MD-5.5-TransitionProbability"
+    ],
+    "CH05-070": [
+      "MD-5.5-MeasureDuality"
+    ],
+    "CH05-071": [
+      "MD-5.5-MixingCorrelationPrinted",
+      "MD-5.5-MixingCorrelation",
+      "MD-5.5-CenteredCorrelation"
+    ]
+  }
 }

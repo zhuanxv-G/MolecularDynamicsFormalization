@@ -20,6 +20,7 @@ subprocess.run(['git','switch','-c',branch],cwd=ROOT,check=True)
 old=json.loads((ROOT/f'blueprint/ch{ch-1:02}/BASELINE.json').read_text(encoding='utf-8'))
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 for p,h in {**old['protected'],**old['unrelated']}.items():assert sha(ROOT/p)==h,p
+base.mkdir(parents=True,exist_ok=True)
 baseline.write_text(json.dumps(dict(base_head=head,branch=branch,protected=old['protected'],
     unrelated=old['unrelated'],source_pdf=old['source_pdf']),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 lake=ROOT/'lakefile.toml';content=lake.read_text(encoding='utf-8')

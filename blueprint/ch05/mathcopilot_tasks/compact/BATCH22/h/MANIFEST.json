@@ -1,0 +1,85 @@
+{
+  "batch": "BATCH22",
+  "subtask": "BATCH22h",
+  "source_ids": [
+    "MD-5.5-MeasureDuality"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 226,
+      "printed_page": 205
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7dc381e2ea2893853cdddc514e16d482dffabec787489689b4213d5d499e2afb",
+  "lean_sha256": "146ca4ed51068304e12f9dd7252e33cdcf40cab352f22bdd8e7f13eb606e3b0f",
+  "signature_sha256": "e1f4340fe612f13a811e7d9d410ec38e6c12ed84815bc2f33f28d1a7bb96360e",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "average",
+      "code_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "measurePropagator",
+      "code_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "pullback",
+      "code_sha256": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "average",
+      "code_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "measurePropagator",
+      "code_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "pullback",
+      "code_sha256": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810"
+    }
+  ],
+  "paste_plus_pdf_bytes": 86522,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4989,
+      "sha256": "b21317527e0dcdeeae3398dd514b2cbd88cee000996c84c08d84279d6e934c1d"
+    },
+    "BATCH22h_PAGES.pdf": {
+      "bytes": 81533,
+      "sha256": "82d165717020fee89f4442288f23eb8ec710102c13fd6ee902a9daf70e11d198"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 89623
+}

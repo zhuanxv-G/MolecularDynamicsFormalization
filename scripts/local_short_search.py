@@ -47,6 +47,11 @@ if ch==5:
     header=header.replace('import Mathlib.Tactic','import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform\nimport Mathlib.Analysis.Calculus.ParametricIntegral\nimport Mathlib.Analysis.Calculus.Deriv.Slope\nimport Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Analysis.SpecialFunctions.Gamma.Basic\nimport MolecularDynamics.Chapter01.ReviewDefinitions\nimport Mathlib.Tactic')
 if not (ROOT/f'MolecularDynamics/Chapter{ch:02}/ReviewProofs.lean').exists():
     header=header.replace(f'import MolecularDynamics.Chapter{ch:02}.ReviewProofs',f'import MolecularDynamics.Chapter{ch:02}.Statements')
+if ch==6:
+    header=header.replace('open Set Filter Matrix MeasureTheory MolecularDynamics',
+        'open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics')
+    header=header.replace('open scoped BigOperators Topology ContDiff InnerProductSpace ENNReal',
+        'open scoped BigOperators Topology ContDiff InnerProductSpace ENNReal NNReal')
 def compile_group(group,label):
     text=header+background+'\n\n';ranges={}
     for key,(r,proof,_) in group.items():

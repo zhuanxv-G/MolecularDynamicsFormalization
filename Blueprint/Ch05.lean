@@ -1238,4 +1238,181 @@ theorem circleInitialEnergy : ∀ κ l ε c x θ : ℝ,
   ((z.2 0)^2+(z.2 1)^2)/2+anisotropicPotential κ l ε z.1=c := by
   sorry
 
+/-- source_id: MD-5.5-Correlation · definition · §5.5 · 印刷p.203 / PDFp.224 -/
+def correlation {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (k t : ℝ) := k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)
+
+/-- source_id: MD-5.5-CorrelationPullback · unnumbered_claim · §5.5 · 印刷p.204 / PDFp.225 -/
+theorem correlationPullback {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t :
+    MolecularDynamics.Chapter05Review.correlation μ Φ a b k t=k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ) := by
+  apply MolecularDynamics.Chapter05Review.correlationPullback_proved <;> assumption
+
+/-- source_id: MD-5.5-CorrelationTimePrinted · unnumbered_claim · §5.5 · 印刷p.204 / PDFp.225
+[EXTRA] [EXTRA]真实能量面/微正则测度、标准遍历先验及给定lag相关可积资格；原字面全能量初值只作为待裁定义务，不能当本地PASS。 -/
+theorem correlationTimePrinted : ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c Φ
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t,
+  (∀ z,Φ 0 z=z) → (∀ s u z,Φ (s+u) z=Φ s (Φ u z)) →
+  MolecularDynamics.Chapter05Review.microErgodic H c Φ → Integrable (fun z => inner ℝ (a (Φ t z)) (b z)) (MolecularDynamics.Chapter05Review.microMeasure H c) →
+  ∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,Tendsto
+    (fun T => k*T⁻¹*(∫ s in (0 : ℝ)..T,inner ℝ (a (Φ (s+t) z)) (b (Φ s z))))
+    atTop (𝓝 (MolecularDynamics.Chapter05Review.correlation (MolecularDynamics.Chapter05Review.microMeasure H c) Φ a b k t)) := by
+  sorry
+
+/-- source_id: MD-5.5-CorrelationTimeAE · unnumbered_claim · §5.5 · 印刷p.204 / PDFp.225
+[EXTRA] [EXTRA]按本章标准遍历结论修正为对给定lag逐次AE初值；保留真实时间积分、向量内积、可积性和flow群律，原any字面另条。 -/
+theorem correlationTime :
+  ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t,
+  (∀ z,Φ 0 z=z) → (∀ s u z,Φ (s+u) z=Φ s (Φ u z)) →
+  (∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,Integrable g μ → ∀ᵐ z ∂μ, MolecularDynamics.Chapter05Review.hasTimeAverage (fun s => Φ s z) g (MolecularDynamics.Chapter05Review.average μ g)) →
+  Integrable (fun z => inner ℝ (a (Φ t z)) (b z)) μ →
+  ∀ᵐ z ∂μ,Tendsto (fun T => k*T⁻¹*(∫ s in (0 : ℝ)..T,inner ℝ (a (Φ (s+t) z)) (b (Φ s z))))
+    atTop (𝓝 (MolecularDynamics.Chapter05Review.correlation μ Φ a b k t)) := by
+  intro n d μ Φ a b k t h0 hg he hi
+  filter_upwards [he (fun z => inner ℝ (a (Φ t z)) (b z)) hi] with z hz
+  unfold MolecularDynamics.Chapter05Review.hasTimeAverage MolecularDynamics.Chapter05Review.timeAverage at hz
+  have hh := hz.const_mul k
+  have ht (s : ℝ) : Φ (s+t) z=Φ t (Φ s z) := by rw [add_comm,hg]
+  simpa only [MolecularDynamics.Chapter05Review.average,MolecularDynamics.Chapter05Review.correlation,ht,mul_assoc] using hh
+
+/-- source_id: MD-5.5-VelocityCorrelation · definition · §5.5 · 印刷p.204 / PDFp.225 -/
+def velocityCorrelation {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (v : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (t : ℝ) := MolecularDynamics.Chapter05Review.correlation μ Φ v v 1 t/MolecularDynamics.Chapter05Review.correlation μ Φ v v 1 0
+
+/-- source_id: MD-5.5-PositionTransition · definition · §5.5 · 印刷p.204 / PDFp.225 -/
+def positionTransition {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (π : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (A B : Set (MolecularDynamics.Chapter05Review.E d)) (t : ℝ) :=
+  (∫ z,((B.indicator (fun _ => (1 : ℝ))) (π (Φ t z)))*
+    ((A.indicator (fun _ => (1 : ℝ))) (π z)) ∂μ)
+
+/-- source_id: MD-5.5-TransitionProbability · definition · §5.5 · 印刷p.204 / PDFp.225
+[EXTRA] [EXTRA]定义中A/B为位置集合的相空间逆像；完整位置投影平均已另条。µ(A)>0使用资格，非首次到达事件。 -/
+def transitionProbability {n : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (A B : Set (MolecularDynamics.Chapter05Review.E n)) (t : ℝ) :=
+  (μ (A ∩ (Φ t) ⁻¹' B)).toReal/(μ A).toReal
+
+/-- source_id: MD-5.5-MeasureDuality · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
+[EXTRA] [EXTRA]演化密度用真实Measure.map，微正则ρE的比值应理解为对参考奇异测度的Radon–Nikodym密度；不当普通Lebesgue密度相除。明确可测及map下可积，不将最终等式作前提。 -/
+theorem measureDuality :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ (φ : MolecularDynamics.Chapter05Review.E n → ℝ) t,
+  Measurable (Φ t) → Integrable φ (MolecularDynamics.Chapter05Review.measurePropagator Φ t μ) →
+    MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.measurePropagator Φ t μ) φ=MolecularDynamics.Chapter05Review.average μ (MolecularDynamics.Chapter05Review.pullback Φ φ t) := by
+  intro n μ Φ φ t hm hi
+  exact integral_map hm.aemeasurable hi.aestronglyMeasurable
+
+/-- source_id: MD-5.5-MixingMemoryLoss · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
+[EXTRA] [EXTRA]β是对实际参考概率测度的非负密度；原bounded在真实假设中保留，可积明确保障所有密度配对。可测参考测度保持保障常数项积分，φ有界连续；最终memory loss未作假设。 -/
+theorem mixingMemoryLoss : ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ (β φ : MolecularDynamics.Chapter05Review.E n → ℝ),
+  IsProbabilityMeasure μ → weakMixing μ Φ → Integrable β μ → Bornology.IsBounded (range β) → (∀ z,0 ≤ β z) →
+  (∫ z,β z ∂μ)=1 → Continuous φ → Bornology.IsBounded (range φ) →
+  (∀ t,MeasurePreserving (Φ t) μ μ) →
+  Tendsto (fun t => ∫ z,φ (Φ t z)*(β z-1) ∂μ) atTop (𝓝 0) := by
+  intro n μ Φ β φ hμ hm hβ hβbound hβpos hβmass hφ hb hΦ
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le
+  have hi : Integrable φ μ := Integrable.mono' (integrable_const C)
+    hφ.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hB (φ z) (mem_range_self z)))
+  have he (t : ℝ) : (∫ z,φ (Φ t z) ∂μ)=MolecularDynamics.Chapter05Review.average μ φ := by
+    have hh := integral_map (hΦ t).measurable.aemeasurable
+      (show AEStronglyMeasurable φ (Measure.map (Φ t) μ) from by rw [(hΦ t).map_eq];exact hi.aestronglyMeasurable)
+    rw [(hΦ t).map_eq] at hh
+    exact hh.symm
+  have hp (t : ℝ) : Integrable (fun z => φ (Φ t z)*β z) μ :=
+    hβ.bdd_mul (hφ.measurable.comp (hΦ t).measurable).aestronglyMeasurable
+      (ae_of_all _ (fun z => hB (φ (Φ t z)) (mem_range_self _)))
+  have heq (t : ℝ) : (∫ z,φ (Φ t z)*(β z-1) ∂μ)=
+      (∫ z,φ (Φ t z)*β z ∂μ)-MolecularDynamics.Chapter05Review.average μ φ := by
+    simp_rw [mul_sub,mul_one]
+    have hip : Integrable (fun z => φ (Φ t z)) μ := by
+      simpa only [Function.comp_def] using (hΦ t).integrable_comp_of_integrable hi
+    rw [integral_sub (hp t) hip,he]
+  simp_rw [heq]
+  simpa only [sub_self] using (hm β φ hβ hβpos hβmass hφ hb).sub (tendsto_const_nhds : Tendsto (fun _ : ℝ => MolecularDynamics.Chapter05Review.average μ φ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ)))
+
+/-- source_id: MD-5.5-MixingCorrelationPrinted · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
+[EXTRA] [EXTRA]明确概率测度及有界连续函数；k任意，字面版不改最终右侧。 -/
+theorem mixingCorrelationPrinted :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
+    (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k, IsProbabilityMeasure μ → weakMixing μ Φ → Continuous a → Continuous b →
+    Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+    Tendsto (fun t => k*(∫ z,a (Φ t z)*b z ∂μ)) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b)) := by
+  sorry
+
+/-- source_id: MD-5.5-MixingCorrelation · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
+[EXTRA] [EXTRA]独立修正版右侧保留k，实际AC概率初值的弱mixing条件及有界连续a/b；原参考微正则分布的不变资格明确为MeasurePreserving，保障各时积分可积和常数项不变。未以目标相关极限作假设。 -/
+theorem mixingCorrelation :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k, IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
+  (∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))) →
+  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+  Tendsto (fun t => k*(∫ z,a (Φ t z)*b z ∂μ)) atTop (𝓝 (k*MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b)) := by
+  intro n μ Φ a b k hμ hΦ hm ha hb hba hbb
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hbb.exists_pos_norm_le
+  obtain ⟨R,hR,hA⟩ := hba.exists_pos_norm_le
+  have ib : Integrable b μ := Integrable.mono' (integrable_const C)
+    hb.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hB (b z) (mem_range_self z)))
+  have ia : Integrable a μ := Integrable.mono' (integrable_const R)
+    ha.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hA (a z) (mem_range_self z)))
+  have ibound : |∫ z,b z ∂μ| ≤ C := by
+    simpa only [Real.norm_eq_abs,probReal_univ,mul_one] using
+      norm_integral_le_of_norm_le_const (ae_of_all μ (fun z => hB (b z) (mem_range_self z)))
+  let D := C+1
+  let M := (∫ z,b z ∂μ)+D
+  have hM : 0 < M := by dsimp [M,D];linarith [neg_le_of_abs_le ibound]
+  let r (z) := (b z+D)/M
+  have ir : Integrable r μ := (ib.add (integrable_const D)).div_const M
+  have rpos (z) : 0 ≤ r z := by
+    have hx : |b z| ≤ C := by simpa only [Real.norm_eq_abs] using hB (b z) (mem_range_self z)
+    dsimp [r,D]
+    apply div_nonneg _ hM.le
+    linarith [neg_le_of_abs_le hx]
+  have rmass : (∫ z,r z ∂μ)=1 := by
+    dsimp [r]
+    rw [integral_div,integral_add ib (integrable_const D)]
+    simp [integral_const,M,ne_of_gt hM]
+  have ht := hm r a ir rpos rmass ha hba
+  have iap (t : ℝ) : Integrable (fun z => a (Φ t z)) μ :=
+    (hΦ t).integrable_comp_of_integrable ia
+  have ie (t : ℝ) : (∫ z,a (Φ t z) ∂μ)=MolecularDynamics.Chapter05Review.average μ a := by
+    have hh := integral_map (hΦ t).measurable.aemeasurable
+      (show AEStronglyMeasurable a (Measure.map (Φ t) μ) from by rw [(hΦ t).map_eq];exact ia.aestronglyMeasurable)
+    rw [(hΦ t).map_eq] at hh
+    exact hh.symm
+  have ipr (t : ℝ) : Integrable (fun z => a (Φ t z)*r z) μ :=
+    ir.bdd_mul (ha.measurable.comp (hΦ t).measurable).aestronglyMeasurable
+      (ae_of_all _ (fun z => hA (a (Φ t z)) (mem_range_self _)))
+  have heq (t : ℝ) : M*(∫ z,a (Φ t z)*r z ∂μ)-D*MolecularDynamics.Chapter05Review.average μ a=
+      (∫ z,a (Φ t z)*b z ∂μ) := by
+    rw [←ie t,←integral_const_mul,←integral_const_mul,
+      ←integral_sub ((ipr t).const_mul M) ((iap t).const_mul D)]
+    apply integral_congr_ae
+    filter_upwards [] with z
+    dsimp [r]
+    field_simp [ne_of_gt hM] <;> ring
+  have hh := (ht.const_mul M).sub (tendsto_const_nhds : Tendsto
+    (fun _ : ℝ => D*MolecularDynamics.Chapter05Review.average μ a) atTop
+    (𝓝 (D*MolecularDynamics.Chapter05Review.average μ a)))
+  simp_rw [heq] at hh
+  convert hh.const_mul k using 1
+  unfold MolecularDynamics.Chapter05Review.average
+  dsimp [M]
+  ring
+
+/-- source_id: MD-5.5-CenteredCorrelation · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
+[EXTRA] [EXTRA]概率测度/有界连续资格，k仍保留；由实际混合相关式推导的绝对值结论，不只保留未中心化极限。 -/
+theorem centeredCorrelation : ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k,IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) → weakMixing μ Φ →
+  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+  (MolecularDynamics.Chapter05Review.average μ a=0 ∨ MolecularDynamics.Chapter05Review.average μ b=0) →
+  Tendsto (fun t => |k*(∫ z,a (Φ t z)*b z ∂μ)|) atTop (𝓝 0) := by
+  intro n μ Φ a b k hμ hΦ hm ha hb hba hbb hzero
+  have ht := mixingCorrelation n μ Φ a b k hμ hΦ hm ha hb hba hbb
+  have hl : k*MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b=0 := by
+    rcases hzero with h | h <;> rw [h] <;> ring
+  rw [hl] at ht
+  simpa only [abs_zero] using ht.abs
+
 end MD.Ch05

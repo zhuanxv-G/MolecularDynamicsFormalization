@@ -1,0 +1,21 @@
+intro n μ Φ β φ hμ hm hβ hβbound hβpos hβmass hφ hb hΦ
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le
+  have hi : Integrable φ μ := Integrable.mono' (integrable_const C)
+    hφ.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hB (φ z) (mem_range_self z)))
+  have he (t : ℝ) : (∫ z,φ (Φ t z) ∂μ)=MolecularDynamics.Chapter05Review.average μ φ := by
+    have hh := integral_map (hΦ t).measurable.aemeasurable
+      (show AEStronglyMeasurable φ (Measure.map (Φ t) μ) from by rw [(hΦ t).map_eq];exact hi.aestronglyMeasurable)
+    rw [(hΦ t).map_eq] at hh
+    exact hh.symm
+  have hp (t : ℝ) : Integrable (fun z => φ (Φ t z)*β z) μ :=
+    hβ.bdd_mul (hφ.measurable.comp (hΦ t).measurable).aestronglyMeasurable
+      (ae_of_all _ (fun z => hB (φ (Φ t z)) (mem_range_self _)))
+  have heq (t : ℝ) : (∫ z,φ (Φ t z)*(β z-1) ∂μ)=
+      (∫ z,φ (Φ t z)*β z ∂μ)-MolecularDynamics.Chapter05Review.average μ φ := by
+    simp_rw [mul_sub,mul_one]
+    have hip : Integrable (fun z => φ (Φ t z)) μ := by
+      simpa only [Function.comp_def] using (hΦ t).integrable_comp_of_integrable hi
+    rw [integral_sub (hp t) hip,he]
+  simp_rw [heq]
+  simpa only [sub_self] using (hm β φ hβ hβpos hβmass hφ hb).sub (tendsto_const_nhds : Tendsto (fun _ : ℝ => MolecularDynamics.Chapter05Review.average μ φ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ)))

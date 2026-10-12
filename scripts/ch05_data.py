@@ -39,6 +39,8 @@ import ch05_section541
 import ch05_section541b
 import ch05_section541c
 import ch05_section541d
+import ch05_section55
+import ch05_section55b
 from blueprint_source import apply_saved_routes
 from ch05_short_candidates import proofs as short_candidates
 apply_saved_routes(5,RECORDS,[key for key in short_candidates if any(r['source_id'].endswith('-'+key) for r in RECORDS)])

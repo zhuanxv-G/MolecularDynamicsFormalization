@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n d μ Φ a b k t h0 hg he hi\n  filter_upwards [he (fun z => inner ℝ (a (Φ t z)) (b z)) hi] with z hz\n  unfold MolecularDynamics.Chapter05Review.hasTimeAverage MolecularDynamics.Chapter05Review.timeAverage at hz\n  have hh := hz.const_mul k\n  have ht (s : ℝ) : Φ (s+t) z=Φ t (Φ s z) := by rw [add_comm,hg]\n  simpa only [MolecularDynamics.Chapter05Review.average,MolecularDynamics.Chapter05Review.correlation,ht,mul_assoc] using hh",
+    "source": "blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-CorrelationTimeAE.lean",
+    "log": "blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-CorrelationTimeAE.log",
+    "source_sha256": "4eaf69a56fa2d8cfb68fd213ee01e9f3fe249c5c4b2689af99486d248131e5e0",
+    "log_sha256": "2d5c4c3d907dab6a02cb690845679d367e99bbbe808b2e99f02d7320b145fc10"
+  }
+]

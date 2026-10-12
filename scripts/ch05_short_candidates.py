@@ -709,7 +709,7 @@ proofs['DoubleWellDisconnected']='''intro c hc hS
   unfold doubleWellEnergy at hz
   rw [hz0] at hz
   nlinarith [sq_nonneg (z 1),hc.2]'''
-proofs['MixingMemoryLoss']='''intro n μ Φ β φ hμ hm hβ hβpos hβmass hφ hb hΦ
+proofs['MixingMemoryLoss']='''intro n μ Φ β φ hμ hm hβ hβbound hβpos hβmass hφ hb hΦ
   letI := hμ
   obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le
   have hi : Integrable φ μ := Integrable.mono' (integrable_const C)

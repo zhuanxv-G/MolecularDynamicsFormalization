@@ -1,0 +1,61 @@
+{
+  "batch": "BATCH22",
+  "subtask": "BATCH22b",
+  "source_ids": [
+    "MD-5.5-CorrelationPullback"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 225,
+      "printed_page": 204
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "7dc381e2ea2893853cdddc514e16d482dffabec787489689b4213d5d499e2afb",
+  "lean_sha256": "146ca4ed51068304e12f9dd7252e33cdcf40cab352f22bdd8e7f13eb606e3b0f",
+  "signature_sha256": "a5ad44d13c413b733e2cbf7ab9714018f1dff82189c88e36df86fa7f853032d4",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "correlation",
+      "code_sha256": "707447738b4ff3c29316db05c8adf4be751d2befc474d8f736d34019cee8b7d8"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "correlation",
+      "code_sha256": "815a63cef778f82e48485d9b2de2696440d69be928f0e47e8d22a708fa09a10f"
+    }
+  ],
+  "paste_plus_pdf_bytes": 104560,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3961,
+      "sha256": "dd0b168c1f628ef8095c49a4f189d7af137f7468a957c3f12b51ee6696af1629"
+    },
+    "BATCH22b_PAGES.pdf": {
+      "bytes": 100599,
+      "sha256": "905888fd143e4e4abe2692884fb5fd3b900bb2d686531b0e6729490667efe72b"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 106688
+}

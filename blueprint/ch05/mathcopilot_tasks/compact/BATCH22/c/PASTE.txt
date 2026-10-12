@@ -1,0 +1,225 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH22c_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 225 | 204 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-5.5-CorrelationTimePrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.5",
+  "printed_page": "204",
+  "pdf_page": "225",
+  "statement_latex": "If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:\n\\[C_{a,b}(t)=k\\lim_{T\\to\\infty}\\frac1T\\int_0^T a(z(s+t))\\cdot b(z(s))ds.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.correlationTimePrinted",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]真实能量面/微正则测度、标准遍历先验及给定lag相关可积资格；原字面全能量初值只作为待裁定义务，不能当本地PASS。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem correlationTimePrinted : ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c Φ
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t,
+  (∀ z,Φ 0 z=z) → (∀ s u z,Φ (s+u) z=Φ s (Φ u z)) →
+  MolecularDynamics.Chapter05Review.microErgodic H c Φ → Integrable (fun z => inner ℝ (a (Φ t z)) (b z)) (MolecularDynamics.Chapter05Review.microMeasure H c) →
+  ∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,Tendsto
+    (fun T => k*T⁻¹*(∫ s in (0 : ℝ)..T,inner ℝ (a (Φ (s+t) z)) (b (Φ s z))))
+    atTop (𝓝 (MolecularDynamics.Chapter05Review.correlation (MolecularDynamics.Chapter05Review.microMeasure H c) Φ a b k t))
+```
+
+原上下文：namespace MD.Ch05；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter05Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.average (MolecularDynamics/Chapter05/ReviewDefinitions.lean:33)
+```lean
+def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
+```
+
+### MolecularDynamics.Chapter05Review.correlation (MolecularDynamics/Chapter05/ReviewDefinitions.lean:89)
+```lean
+def correlation {n d : ℕ} (μ : Measure (E n)) (Φ : ℝ → E n → E n)
+    (a b : E n → E d) (k t : ℝ) := k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)
+```
+
+### MolecularDynamics.Chapter05Review.energySurface (MolecularDynamics/Chapter05/ReviewDefinitions.lean:58)
+```lean
+def energySurface {n : ℕ} (H : E n → ℝ) (c : ℝ) := {z | H z=c}
+```
+
+### MolecularDynamics.Chapter05Review.grad (MolecularDynamics/Chapter05/ReviewDefinitions.lean:59)
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+
+### MolecularDynamics.Chapter05Review.hasTimeAverage (MolecularDynamics/Chapter05/ReviewDefinitions.lean:77)
+```lean
+def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
+  Tendsto (timeAverage z g) atTop (𝓝 a)
+```
+
+### MolecularDynamics.Chapter05Review.hausdorffArea (MolecularDynamics/Chapter05/ReviewDefinitions.lean:60)
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+
+### MolecularDynamics.Chapter05Review.microAverage (MolecularDynamics/Chapter05/ReviewDefinitions.lean:70)
+```lean
+def microAverage {n : ℕ} (H : E n → ℝ) (c : ℝ) (g : E n → ℝ) := average (microMeasure H c) g
+```
+
+### MolecularDynamics.Chapter05Review.microErgodic (MolecularDynamics/Chapter05/ReviewDefinitions.lean:79)
+```lean
+def microErgodic {n : ℕ} (H : E n → ℝ) (c : ℝ) (Φ : ℝ → E n → E n) : Prop :=
+  ∀ g : E n → ℝ, Integrable g (microMeasure H c) →
+    ∀ᵐ z ∂microMeasure H c, hasTimeAverage (fun t => Φ t z) g (microAverage H c g)
+```
+
+### MolecularDynamics.Chapter05Review.microMeasure (MolecularDynamics/Chapter05/ReviewDefinitions.lean:68)
+```lean
+def microMeasure {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  ((microRaw H c) univ)⁻¹ • microRaw H c
+```
+
+### MolecularDynamics.Chapter05Review.microRaw (MolecularDynamics/Chapter05/ReviewDefinitions.lean:65)
+```lean
+def microRaw {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  (surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖grad H z‖⁻¹))
+```
+
+### MolecularDynamics.Chapter05Review.surfaceMeasure (MolecularDynamics/Chapter05/ReviewDefinitions.lean:63)
+```lean
+def surfaceMeasure {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  (hausdorffArea (n-1)).restrict (energySurface H c)
+```
+
+### MolecularDynamics.Chapter05Review.timeAverage (MolecularDynamics/Chapter05/ReviewDefinitions.lean:76)
+```lean
+def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter05Review.average (MolecularDynamics/Chapter05/ReviewDefinitions.lean:33)
+```lean
+def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
+```
+
+### MD.Ch05.correlation (Blueprint/Ch05.lean:1242)
+```lean
+def correlation {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (k t : ℝ) := k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)
+```
+
+### MD.Ch05.energySurface (Blueprint/Ch05.lean:743)
+```lean
+def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
+```
+
+### MolecularDynamics.Chapter02Review.grad (MolecularDynamics/Chapter02/ReviewDefinitions.lean:133)
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+
+### MolecularDynamics.Chapter04Review.grad (MolecularDynamics/Chapter04/ReviewDefinitions.lean:20)
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+
+### MolecularDynamics.Chapter05Review.grad (MolecularDynamics/Chapter05/ReviewDefinitions.lean:59)
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+
+### MD.Ch05.hasTimeAverage (Blueprint/Ch05.lean:945)
+```lean
+def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
+  Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 a)
+```
+
+### MolecularDynamics.Chapter05Review.hausdorffArea (MolecularDynamics/Chapter05/ReviewDefinitions.lean:60)
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+
+### MD.Ch05.microAverage (Blueprint/Ch05.lean:933)
+```lean
+def microAverage {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) := MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.microMeasure H c) g
+```
+
+### MD.Ch05.microErgodic (Blueprint/Ch05.lean:1056)
+```lean
+def microErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  ∀ g : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
+    ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)
+```
+
+### MD.Ch05.microMeasure (Blueprint/Ch05.lean:890)
+```lean
+def microMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  ((MolecularDynamics.Chapter05Review.microRaw H c) univ)⁻¹ • MolecularDynamics.Chapter05Review.microRaw H c
+```
+
+### MD.Ch05.microRaw (Blueprint/Ch05.lean:751)
+```lean
+def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
+```
+
+### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:747)
+```lean
+def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)
+```
+
+### MolecularDynamics.textbookConstraintGradient (MolecularDynamics/Chapter04/ConstrainedProjection.lean:20)
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```
+
+### MD.Ch05.timeAverage (Blueprint/Ch05.lean:942)
+```lean
+def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
+```

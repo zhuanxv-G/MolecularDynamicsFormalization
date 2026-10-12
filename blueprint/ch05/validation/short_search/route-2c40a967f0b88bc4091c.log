@@ -1,0 +1,81 @@
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:56:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:56:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:99:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:327:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:367:67: warning: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:367:89: warning: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:724:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:724:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:766:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:781:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (a : E n), φ (Φ t a) * β a - (φ ∘ Φ t) a ∂μ
+in the target expression
+  ∫ (z : E n), φ (Φ t z) * β z - φ (Φ t z) ∂μ = ∫ (z : E n), φ (Φ t z) * β z ∂μ - Chapter05Review.average μ φ
+
+n : ℕ
+μ : Measure (E n)
+Φ : ℝ → E n → E n
+β φ : E n → ℝ
+hμ : IsProbabilityMeasure μ
+hm : weakMixing μ Φ
+hβ : Integrable β μ
+hβbound : Bornology.IsBounded (range β)
+hβpos : ∀ (z : E n), 0 ≤ β z
+hβmass : ∫ (z : E n), β z ∂μ = 1
+hφ : Continuous φ
+hb : Bornology.IsBounded (range φ)
+hΦ : ∀ (t : ℝ), MeasurePreserving (Φ t) μ μ
+this : IsProbabilityMeasure μ := hμ
+C : ℝ
+hC : C > 0
+hB : ∀ x ∈ range φ, ‖x‖ ≤ C
+hi : Integrable φ μ
+he : ∀ (t : ℝ), ∫ (z : E n), φ (Φ t z) ∂μ = Chapter05Review.average μ φ
+hp : ∀ (t : ℝ), Integrable (fun z => φ (Φ t z) * β z) μ
+t : ℝ
+⊢ ∫ (z : E n), φ (Φ t z) * β z - φ (Φ t z) ∂μ = ∫ (z : E n), φ (Φ t z) * β z ∂μ - Chapter05Review.average μ φ
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:783:2: error: Type mismatch: After simplification, term
+  Tendsto.sub (hm β φ hβ hβpos hβmass hφ hb) tendsto_const_nhds
+ has type
+  Tendsto (fun x => ∫ (z : E n), φ (Φ x z) * β z ∂μ - ?m.393) atTop (𝓝 (Chapter05Review.average μ φ - ?m.393))
+but is expected to have type
+  Tendsto (fun t => ∫ (z : E n), φ (Φ t z) * β z ∂μ - Chapter05Review.average μ φ) atTop (𝓝 0)
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:794:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch05\validation\short_search\route-2c40a967f0b88bc4091c.lean:836:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
