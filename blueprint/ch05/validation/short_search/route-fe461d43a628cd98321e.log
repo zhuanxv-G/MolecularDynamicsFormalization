@@ -1,0 +1,23 @@
+blueprint\ch05\validation\short_search\route-fe461d43a628cd98321e.lean:50:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-fe461d43a628cd98321e.lean:50:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-fe461d43a628cd98321e.lean:93:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-fe461d43a628cd98321e.lean:235:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fderiv ℝ (ρ • f) z
+in the target expression
+  -(LinearMap.trace ℝ (E n)) ↑(fderiv ℝ (fun x => ρ x • f x) z) =
+    -ρ z * (LinearMap.trace ℝ (E n)) ↑(fderiv ℝ f z) - (fderiv ℝ ρ z) (f z)
+
+n : ℕ
+f : E n → E n
+ρ : E n → ℝ
+z : E n
+hf : DifferentiableAt ℝ f z
+hρ : DifferentiableAt ℝ ρ z
+hd : HasFDerivAt (ρ • f) (ρ z • fderiv ℝ f z + (fderiv ℝ ρ z).smulRight (f z)) z
+⊢ -(LinearMap.trace ℝ (E n)) ↑(fderiv ℝ (fun x => ρ x • f x) z) =
+    -ρ z * (LinearMap.trace ℝ (E n)) ↑(fderiv ℝ f z) - (fderiv ℝ ρ z) (f z)

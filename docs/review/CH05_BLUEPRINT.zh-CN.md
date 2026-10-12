@@ -35,6 +35,25 @@
 | MD-5.2.1-GaussianL2 | 183/204 | PASS | 待网站审计 | self-contained |
 | MD-5.2.1-FiniteJumpL2 | 183/204 | PASS | 待网站审计 | self-contained |
 | MD-5.2.1-NormalizedAverageFormula | 184/205 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-MassFraction | 184/205 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-MassDerivative | 184/205 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-OutwardNormal | 184/205 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-GeneralFluxBalance | 184/205 | PASS | 待网站审计 | incomplete |
+| MD-5.2.2-Divergence | 185/206 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-Liouvillian | 185/206 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-LiouvilleEquation | 185/206 | PASS | 待网站审计 | incomplete |
+| MD-5.2.2-LiouvilleProduct | 185/206 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-LieCoordinates | 185/206 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-DivergenceCoordinates | 185/206 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-LiouvilleProductCoordinates | 185/206 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-RectangularDomain | 184/205 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-FaceFlux | 184/205 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-BoxFluxBalance | 184/205 | PASS | 待网站审计 | incomplete |
+| MD-5.2.2-BoundaryTerm | 185/206 | PASS | 待网站审计 | self-contained |
+| MD-5.2.2-TruncatedIntegrationByParts | 185/206 | PASS | 待网站审计 | incomplete |
+| MD-5.2.2-RapidAdjoint | 185–186/206–207 | PASS | 待网站审计 | incomplete |
+| MD-5.2.2-CompactAdjoint | 185–186/206–207 | PASS | 待网站审计 | incomplete |
+| MD-5.2.2-MeasurePropagator | 186/207 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -74,7 +93,7 @@ def lie {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynami
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:20](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:20>)（`MD.Ch05.lie`）。
+位置：[Blueprint/Ch05.lean:23](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:23>)（`MD.Ch05.lie`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -123,7 +142,7 @@ theorem trajectoryChain (f : E → E) (φ : E → ℝ)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch05.lean:24](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:24>)（`MD.Ch05.trajectoryChain`）。
+位置：[Blueprint/Ch05.lean:27](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:27>)（`MD.Ch05.trajectoryChain`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -170,7 +189,7 @@ def flow {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynam
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:32](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:32>)（`MD.Ch05.flow`）。
+位置：[Blueprint/Ch05.lean:35](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:35>)（`MD.Ch05.flow`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -214,7 +233,7 @@ def pullback {X : Type*} (Φ : ℝ → X → X) (g : X → ℝ) (t : ℝ) (z : X
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:37](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:37>)（`MD.Ch05.pullback`）。
+位置：[Blueprint/Ch05.lean:40](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:40>)（`MD.Ch05.pullback`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -265,7 +284,7 @@ theorem flowFieldTransport :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:41](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:41>)（`MD.Ch05.flowFieldTransport`）。
+位置：[Blueprint/Ch05.lean:44](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:44>)（`MD.Ch05.flowFieldTransport`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -317,7 +336,7 @@ theorem pullbackPDE :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:49](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:49>)（`MD.Ch05.pullbackPDE`）。
+位置：[Blueprint/Ch05.lean:52](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:52>)（`MD.Ch05.pullbackPDE`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -364,7 +383,7 @@ theorem steadyFirstIntegral :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:57](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:57>)（`MD.Ch05.steadyFirstIntegral`）。
+位置：[Blueprint/Ch05.lean:60](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:60>)（`MD.Ch05.steadyFirstIntegral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -410,7 +429,7 @@ theorem coordinatePullback {n : ℕ} (Φ : ℝ → MolecularDynamics.Chapter05Re
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch05.lean:80](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:80>)（`MD.Ch05.coordinatePullback`）。
+位置：[Blueprint/Ch05.lean:83](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:83>)（`MD.Ch05.coordinatePullback`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -454,7 +473,7 @@ def solutionOperator {X : Type*} (Φ : ℝ → X → X) (t : ℝ) (g : X → ℝ
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:85](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:85>)（`MD.Ch05.solutionOperator`）。
+位置：[Blueprint/Ch05.lean:88](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:88>)（`MD.Ch05.solutionOperator`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -497,7 +516,7 @@ theorem coordinateLie : ∀ n (f : MolecularDynamics.Chapter05Review.E n → Mol
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:88](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:88>)（`MD.Ch05.coordinateLie`）。
+位置：[Blueprint/Ch05.lean:91](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:91>)（`MD.Ch05.coordinateLie`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -548,7 +567,7 @@ theorem liePullbackCommutes : ∀ n (f : MolecularDynamics.Chapter05Review.E n �
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:98](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:98>)（`MD.Ch05.liePullbackCommutes`）。
+位置：[Blueprint/Ch05.lean:101](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:101>)（`MD.Ch05.liePullbackCommutes`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -595,7 +614,7 @@ def densityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:105](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:105>)（`MD.Ch05.densityOn`）。
+位置：[Blueprint/Ch05.lean:108](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:108>)（`MD.Ch05.densityOn`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -638,7 +657,7 @@ def probabilityDensityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:110](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:110>)（`MD.Ch05.probabilityDensityOn`）。
+位置：[Blueprint/Ch05.lean:113](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:113>)（`MD.Ch05.probabilityDensityOn`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -682,7 +701,7 @@ theorem densityOnNormalization : ∀ n (D : Set (MolecularDynamics.Chapter05Revi
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:114](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:114>)（`MD.Ch05.densityOnNormalization`）。
+位置：[Blueprint/Ch05.lean:117](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:117>)（`MD.Ch05.densityOnNormalization`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -727,7 +746,7 @@ def densityProbability {n : ℕ} (ρ : MolecularDynamics.Chapter05Review.E n →
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:124](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:124>)（`MD.Ch05.densityProbability`）。
+位置：[Blueprint/Ch05.lean:127](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:127>)（`MD.Ch05.densityProbability`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -771,7 +790,7 @@ def densityMeasureOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n))
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:129](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:129>)（`MD.Ch05.densityMeasureOn`）。
+位置：[Blueprint/Ch05.lean:132](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:132>)（`MD.Ch05.densityMeasureOn`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -816,7 +835,7 @@ theorem lebesgueClosure : ∀ n (s : Set (MolecularDynamics.Chapter05Review.E n)
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:133](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:133>)（`MD.Ch05.lebesgueClosure`）。
+位置：[Blueprint/Ch05.lean:136](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:136>)（`MD.Ch05.lebesgueClosure`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -860,7 +879,7 @@ def borelSigma (n : ℕ) : MeasurableSpace (MolecularDynamics.Chapter05Review.E 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:143](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:143>)（`MD.Ch05.borelSigma`）。
+位置：[Blueprint/Ch05.lean:146](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:146>)（`MD.Ch05.borelSigma`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -905,7 +924,7 @@ theorem densityProbabilityBounds : ∀ n (D A : Set (MolecularDynamics.Chapter05
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:147](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:147>)（`MD.Ch05.densityProbabilityBounds`）。
+位置：[Blueprint/Ch05.lean:150](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:150>)（`MD.Ch05.densityProbabilityBounds`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -950,7 +969,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:164](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:164>)（`MD.Ch05.domainL2`）。
+位置：[Blueprint/Ch05.lean:167](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:167>)（`MD.Ch05.domainL2`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -992,7 +1011,7 @@ def domainL2Norm {n : ℕ} {D : Set (MolecularDynamics.Chapter05Review.E n)} (g 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:167](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:167>)（`MD.Ch05.domainL2Norm`）。
+位置：[Blueprint/Ch05.lean:170](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:170>)（`MD.Ch05.domainL2Norm`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1035,7 +1054,7 @@ def domainL2Inner {n : ℕ} {D : Set (MolecularDynamics.Chapter05Review.E n)} (f
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:170](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:170>)（`MD.Ch05.domainL2Inner`）。
+位置：[Blueprint/Ch05.lean:173](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:173>)（`MD.Ch05.domainL2Inner`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1078,7 +1097,7 @@ theorem domainL2NormSquare : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:174](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:174>)（`MD.Ch05.domainL2NormSquare`）。
+位置：[Blueprint/Ch05.lean:177](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:177>)（`MD.Ch05.domainL2NormSquare`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1124,7 +1143,7 @@ theorem domainL2Complete : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:182](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:182>)（`MD.Ch05.domainL2Complete`）。
+位置：[Blueprint/Ch05.lean:185](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:185>)（`MD.Ch05.domainL2Complete`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1170,7 +1189,7 @@ theorem domainL2SymmetricBilinear : ∀ n (D : Set (MolecularDynamics.Chapter05R
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:188](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:188>)（`MD.Ch05.domainL2SymmetricBilinear`）。
+位置：[Blueprint/Ch05.lean:191](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:191>)（`MD.Ch05.domainL2SymmetricBilinear`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1215,7 +1234,7 @@ theorem compactL2 : ∀ n (g : MolecularDynamics.Chapter05Review.E n → ℝ),
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:199](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:199>)（`MD.Ch05.compactL2`）。
+位置：[Blueprint/Ch05.lean:202](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:202>)（`MD.Ch05.compactL2`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1262,7 +1281,7 @@ def densityAverageOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n))
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:205](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:205>)（`MD.Ch05.densityAverageOn`）。
+位置：[Blueprint/Ch05.lean:208](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:208>)（`MD.Ch05.densityAverageOn`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1304,7 +1323,7 @@ def closedSupport {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → ℝ) 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:209](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:209>)（`MD.Ch05.closedSupport`）。
+位置：[Blueprint/Ch05.lean:212](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:212>)（`MD.Ch05.closedSupport`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1347,7 +1366,7 @@ theorem gaussianL2 : ∀ n (a : Fin n → ℝ), (∀ i,0 < a i) →
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:212](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:212>)（`MD.Ch05.gaussianL2`）。
+位置：[Blueprint/Ch05.lean:215](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:215>)（`MD.Ch05.gaussianL2`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1395,7 +1414,7 @@ theorem finiteJumpL2 : ∀ n (g : MolecularDynamics.Chapter05Review.E n → ℝ)
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:236](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:236>)（`MD.Ch05.finiteJumpL2`）。
+位置：[Blueprint/Ch05.lean:239](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:239>)（`MD.Ch05.finiteJumpL2`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1440,7 +1459,7 @@ theorem normalizedAverageFormula : ∀ n (D : Set (MolecularDynamics.Chapter05Re
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:276](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:276>)（`MD.Ch05.normalizedAverageFormula`）。
+位置：[Blueprint/Ch05.lean:279](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:279>)（`MD.Ch05.normalizedAverageFormula`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1449,3 +1468,916 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/NormalizedAverageFormula.json；blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-NormalizedAverageFormula.lean；blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-NormalizedAverageFormula.log。
 
 签名SHA256：`6095e512284727b5375d85a473e327d3d42144ac57adc2e9e1cdf03be846fcdc`；原文SHA256：`f68dc526bb4055973dd1b6db66ba854e81d142da8c57c876178ec65f9f257a53`。
+
+## 1. MD-5.2.2-MassFraction · definition · 印刷p.184 / PDFp.205
+
+### 2. 原文陈述
+
+> Let $\rho(z;t)$ be the probability density associated to a collection of phase points moving under a vector field $f$ on the phase space $\mathbb R^m$. Let $A$ be a suitable region of volume $V$ within the phase space (say a rectangular $m$-dimensional box). The fraction $\vartheta$ of phase points present in $A$ at time $t$ is the integral of $\rho$ over $A$:
+> \[\vartheta(t)=\int_A\rho(z;t)\,d\omega.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def massFraction {n : ℕ} (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) (t : ℝ) := ∫ z in A,ρ t z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.massFraction；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:285](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:285>)（`MD.Ch05.massFraction`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`8a45edcc76b079b6fbce81f30afc89ceb4ffc340f492ad695bddfa870f2966e5`；原文SHA256：`989aa341e160b96a66470c25d56f38f0bb527f674cbfbea6234246899d5d00f3`。
+
+## 1. MD-5.2.2-MassDerivative · unnumbered_claim · 印刷p.184 / PDFp.205
+
+### 2. 原文陈述
+
+> which may be viewed as a smooth function of time. On the one hand
+> \[\frac{d\vartheta}{dt}=\int_A\frac{\partial\rho(z;t)}{\partial t}\,d\omega.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem massDerivative :
+  ∀ n (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) t,
+  MeasurableSet A → (∀ s,IntegrableOn (ρ s) A) →
+  (∃ δ > 0, ∃ b : MolecularDynamics.Chapter05Review.E n → ℝ, IntegrableOn b A ∧
+    (∀ s ∈ Ioo (t-δ) (t+δ), ∀ z ∈ A, HasDerivAt (fun u => ρ u z) (deriv (fun u => ρ u z) s) s ∧
+      |deriv (fun u => ρ u z) s| ≤ b z)) →
+  HasDerivAt (MolecularDynamics.Chapter05Review.massFraction ρ A) (∫ z in A,deriv (fun u => ρ u z) t) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.massDerivative；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确参数微分与积分交换所需的可积支配界、邻域逐点可微及可积性；不假设已交换的导数等式。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:289](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:289>)（`MD.Ch05.massDerivative`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/MassDerivative.json；blueprint/ch05/validation/short_search/route-4d4d0f7c793a8b77e365.lean；blueprint/ch05/validation/short_search/route-4d4d0f7c793a8b77e365.log；blueprint/ch05/validation/short_search/route-a34cdecca1ffaaa9443b.lean；blueprint/ch05/validation/short_search/route-a34cdecca1ffaaa9443b.log。
+
+签名SHA256：`425b05eb60566208850913e895ba84dcc003ccc2de80d5212049a32f0bc9bef5`；原文SHA256：`cdf75e5530b35a3013e206aa78a590fffb79c4bf79ea2298000e30d4e991cd69`。
+
+## 1. MD-5.2.2-OutwardNormal · definition · 印刷p.184 / PDFp.205
+
+### 2. 原文陈述
+
+> where $n(z)$ is the unit outward normal to the surface $\partial A$ at the point $z$ and $d\sigma$ is the surface element.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def outwardNormalFor {n : ℕ} (A : Set (MolecularDynamics.Chapter05Review.E n)) (ν : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  ∀ z ∈ frontier A,∃ O : Set (MolecularDynamics.Chapter05Review.E n),∃ r : MolecularDynamics.Chapter05Review.E n → ℝ,
+    IsOpen O ∧ z ∈ O ∧ ContDiffOn ℝ 2 r O ∧
+    (∀ x ∈ O,x ∈ A ↔ r x < 0) ∧ MolecularDynamics.Chapter05Review.grad r z ≠ 0 ∧
+    ν z=‖MolecularDynamics.Chapter05Review.grad r z‖⁻¹ • MolecularDynamics.Chapter05Review.grad r z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.outwardNormalFor；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]通过局部真实光滑定义函数r的负侧表示域，并由实际梯度定义正向单位法线。这里采用C²光滑边界资格；矩形的角点另条以分面公式保存，不假设边界通量恒等式。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:317](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:317>)（`MD.Ch05.outwardNormalFor`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`b01ce69082796bc06dadcc2494ed7ebf972213e1db1656a1ea4c2f00946c19ca`；原文SHA256：`9a449de9452b6a25758833ba84aad9b9ad16a4bfb4ebcd8b5d91c0dfa3c6ebe1`。
+
+## 1. MD-5.2.2-GeneralFluxBalance · unnumbered_claim · 印刷p.184 / PDFp.205
+
+### 2. 原文陈述
+
+> this same rate of change may be written as the negative of the particle flux over the boundary of $A$:
+> \[\frac{d\vartheta}{dt}=-\int_{\partial A}f\cdot n\,\rho(z;t)\,d\sigma.\]
+> Using the divergence theorem, we may rewrite the latter quantity as a volume integral:
+> \[\frac{d\vartheta}{dt}=-\int_A\nabla\cdot(f(z)\rho(z;t))\,d\omega.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem generalFluxBalance : ∀ n (D A : Set (MolecularDynamics.Chapter05Review.E n)) (ν f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+  (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),
+  0 < n → IsOpen D → IsOpen A → closure A ⊆ D → Bornology.IsBounded A → outwardNormalFor A ν →
+  ContDiffOn ℝ 1 f D → MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) → (∀ t,Φ t '' D=D) →
+  ContDiffOn ℝ 1 (Function.uncurry ρ) (Set.univ ×ˢ D) → (∀ t,probabilityDensityOn D (ρ t)) →
+  (∀ t,densityMeasureOn D (ρ t)=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D (ρ 0))) →
+  ∀ t,HasDerivAt (MolecularDynamics.Chapter05Review.massFraction ρ A)
+    (-(∫ z in frontier A,(inner ℝ (f z) (ν z))*ρ t z ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1)))) t ∧
+    (∫ z in A,MolecularDynamics.Chapter05Review.divergence (fun x => ρ t x • f x) z)=
+      ∫ z in frontier A,(inner ℝ (f z) (ν z))*ρ t z ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.generalFluxBalance；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]保留一般开放流不变相空间D，A闭包在D内，实际受限密度Measure.map条件及光滑有界域/真实法线资格；不要求ρ在D外光滑或归一化。两个原通量与散度结论都保存。矩形分面版本另列，未用单一区域计算替代此条。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:325](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:325>)（`MD.Ch05.generalFluxBalance`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺真实Hausdorff曲面通量的散度定理与一般光滑输运密度桥接；不建设大型几何/PDE理论。
+
+签名SHA256：`975aca10fa51cc414009bf57ec6168d6bdfb1d912f3f6dc9958ba774de3aad82`；原文SHA256：`4fd7f0a4ed64dc3b36933a555cd7518ce65e363b9a0e07921f6b0a0276c1e6a7`。
+
+## 1. MD-5.2.2-Divergence · definition · 印刷p.185 / PDFp.206
+
+### 2. 原文陈述
+
+> $M_fw=-\nabla\cdot(wf)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def divergence {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) : ℝ :=
+  LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.divergence；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际Fréchet导数的线性迹，等价坐标偏导和需要标准有限维接口；不以任意矩阵命名Jacobian。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:339](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:339>)（`MD.Ch05.divergence`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`ae0663325774e959009a1539ffd2ca1d15d645ff9af486a72942ee6115dd91a2`；原文SHA256：`027442824bfcccc2e893bcf2dab4faa7fd2df686bc00fb341f86e621ed292c15`。
+
+## 1. MD-5.2.2-Liouvillian · definition · 印刷p.185 / PDFp.206
+
+### 2. 原文陈述
+
+> The operator $M_f$, defined for a scalar valued function $w$ by $M_fw=-\nabla\cdot(wf)$, is called the Liouvillian operator.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def liouvillian {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) :=
+  -MolecularDynamics.Chapter05Review.divergence (fun x => u x • f x) z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.liouvillian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:343](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:343>)（`MD.Ch05.liouvillian`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c00935b07e671ad9103bce966765d39374e8f4cbcc05a50f0b1ca0c40a9db1f8`；原文SHA256：`c98601fce00c62d5588f775b2f74fb6b8c128a9690863356204dfd9a6acf23d7`。
+
+## 1. MD-5.2.2-LiouvilleEquation · unnumbered_claim · 印刷p.185 / PDFp.206
+
+### 2. 原文陈述
+
+> Therefore, since this should hold for an arbitrary domain $A$, we must have
+> \[\frac{\partial\rho}{\partial t}=-\nabla\cdot(\rho f).\]
+> This is called the Liouville equation or continuity equation. It tells us how the distribution of phase points varies in time and space.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem liouvilleEquation : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),
+  IsOpen D → ContDiffOn ℝ 1 f D → MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) →
+  (∀ t,Φ t '' D=D) → ContDiffOn ℝ 1 (Function.uncurry ρ) (Set.univ ×ˢ D) →
+  (∀ t,probabilityDensityOn D (ρ t)) →
+  (∀ t,densityMeasureOn D (ρ t)=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D (ρ 0))) →
+  ∀ t z,z ∈ D → HasDerivAt (fun s => ρ s z) (MolecularDynamics.Chapter05Review.liouvillian f (ρ t) z) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.liouvilleEquation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]一般开放流不变D内的真实光滑密度及实际输运条件；不假设连续性方程，不要求域外ρ光滑，不构造一般PDE解存在或唯一性。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:348](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:348>)（`MD.Ch05.liouvilleEquation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺一般密度输运到逐点连续性方程的曲面/测度变换桥接；不建设大型输运理论。
+
+签名SHA256：`bca5226cc84a1c572dd8322ff89cfcf5812b5316da99f8dd6fccf45c51bffb0f`；原文SHA256：`209c9addd8f2a292b52ea0ba26bb71981c1ea49ffe12438226ea3d33e1dc4dab`。
+
+## 1. MD-5.2.2-LiouvilleProduct · unnumbered_claim · 印刷p.185 / PDFp.206
+
+### 2. 原文陈述
+
+> An alternative form for the continuity equation is:
+> \[\frac{\partial\rho}{\partial t}=-\sum_i\left(\rho\frac{\partial f_i}{\partial z_i}+f_i\frac{\partial\rho}{\partial z_i}\right).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem liouvilleProduct :
+  ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) z,
+  DifferentiableAt ℝ f z → DifferentiableAt ℝ ρ z →
+  MolecularDynamics.Chapter05Review.liouvillian f ρ z = -ρ z*MolecularDynamics.Chapter05Review.divergence f z-MolecularDynamics.Chapter05Review.lie f ρ z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.liouvilleProduct；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确ρ和f在z的真实可微性；原全部坐标乘积展开由线性迹与Df/ρ链式规则表达。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:358](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:358>)（`MD.Ch05.liouvilleProduct`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/LiouvilleProduct.json；blueprint/ch05/validation/short_search/route-fe461d43a628cd98321e.lean；blueprint/ch05/validation/short_search/route-fe461d43a628cd98321e.log；blueprint/ch05/validation/short_search/route-5b1c580892ef49b62d6c.lean；blueprint/ch05/validation/short_search/route-5b1c580892ef49b62d6c.log；blueprint/ch05/validation/short_search/route-c7ba962b98f330fb04e1.lean；blueprint/ch05/validation/short_search/route-c7ba962b98f330fb04e1.log。
+
+签名SHA256：`362263bbc0d0f0229f89e30d2fb880b6699e33a18f3fe07c1009615eb14e7228`；原文SHA256：`0c63e4ec0295b5c618cfaa91644ee15a9ec9e04e0c141b05532141bab88d9146`。
+
+## 1. MD-5.2.2-LieCoordinates · unnumbered_claim · 印刷p.185 / PDFp.206
+
+### 2. 原文陈述
+
+> $\mathcal L_fv=\sum_i f_i\frac{\partial v}{\partial z_i}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem lieCoordinates : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (g : MolecularDynamics.Chapter05Review.E n → ℝ) z,
+  MolecularDynamics.Chapter05Review.lie f g z=∑ i,f z i*(fderiv ℝ g z) (EuclideanSpace.basisFun (Fin n) ℝ i)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.lieCoordinates；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际Euclidean规范基、Fréchet导数线性和坐标投影，明确原文全部有限求和；恒等式不要求另造形式梯度。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:379](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:379>)（`MD.Ch05.lieCoordinates`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/LieCoordinates.json；blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.lean；blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.log；blueprint/ch05/validation/short_search/route-1525bae73a739536b80b-LieCoordinates.lean；blueprint/ch05/validation/short_search/route-1525bae73a739536b80b-LieCoordinates.log。
+
+签名SHA256：`59b264a8466625ec0de3a2198d45611a792b094590c2908c9dc093b75c7aa700`；原文SHA256：`79eb6a06c35dfa440741e433389632706e0e041361ea680bc1c6becd44a7b41a`。
+
+## 1. MD-5.2.2-DivergenceCoordinates · unnumbered_claim · 印刷p.185 / PDFp.206
+
+### 2. 原文陈述
+
+> $\frac{\partial\rho}{\partial t}=-\sum_i\left(\rho\frac{\partial f_i}{\partial z_i}+f_i\frac{\partial\rho}{\partial z_i}\right)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem divergenceCoordinates : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) z,
+  DifferentiableAt ℝ f z → MolecularDynamics.Chapter05Review.divergence f z=
+    ∑ i,(fderiv ℝ (fun x => f x i) z) (EuclideanSpace.basisFun (Fin n) ℝ i)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.divergenceCoordinates；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际可微向量场的导数迹等于所有坐标对角偏导之和；和LiouvilleProduct共同保留原完整展开，不将任意矩阵命名为Jacobian。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:388](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:388>)（`MD.Ch05.divergenceCoordinates`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/DivergenceCoordinates.json；blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.lean；blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.log；blueprint/ch05/validation/short_search/route-1525bae73a739536b80b.lean；blueprint/ch05/validation/short_search/route-1525bae73a739536b80b.log；blueprint/ch05/validation/short_search/route-d7aa9b44d094a4ba1bd2.lean；blueprint/ch05/validation/short_search/route-d7aa9b44d094a4ba1bd2.log。
+
+签名SHA256：`35c8bd94afab2dced4815efa39a3f58d884c5983ea4013adc95696268a3dcae6`；原文SHA256：`053c265cf2bc3a7449a681e801582cbd11594fc9ca1d8a7a16fcac4717ae5384`。
+
+## 1. MD-5.2.2-LiouvilleProductCoordinates · unnumbered_claim · 印刷p.185 / PDFp.206
+
+### 2. 原文陈述
+
+> An alternative form for the continuity equation is:
+> \[\frac{\partial\rho}{\partial t}=-\sum_i\left(\rho\frac{\partial f_i}{\partial z_i}+f_i\frac{\partial\rho}{\partial z_i}\right).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem liouvilleProductCoordinates : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) z,
+  DifferentiableAt ℝ f z → DifferentiableAt ℝ ρ z →
+  MolecularDynamics.Chapter05Review.liouvillian f ρ z=-(∑ i : Fin n,(ρ z*(fderiv ℝ (fun x => f x i) z) (EuclideanSpace.basisFun (Fin n) ℝ i)+
+    f z i*(fderiv ℝ ρ z) (EuclideanSpace.basisFun (Fin n) ℝ i)))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.liouvilleProductCoordinates；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际点可微性；保存原整个有限求和右侧，连续性PDE左侧的时间导数由LiouvilleEquation完整条目保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:404](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:404>)（`MD.Ch05.liouvilleProductCoordinates`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/LiouvilleProductCoordinates.json；blueprint/ch05/validation/short_search/route-8360a3607bb0d6c24e2d.lean；blueprint/ch05/validation/short_search/route-8360a3607bb0d6c24e2d.log；blueprint/ch05/validation/short_search/route-fa1435a7be88dbcb386c.lean；blueprint/ch05/validation/short_search/route-fa1435a7be88dbcb386c.log。
+
+签名SHA256：`c3eeeada7b7eeb8574ef9e8c9c85195eb90425b72d6c1c9873360a5a675e9491`；原文SHA256：`8777b3d0fb54ca81562c1e53b6f3ba4eab3b6ef5ec303b50917f4c4de07a6c15`。
+
+## 1. MD-5.2.2-RectangularDomain · definition · 印刷p.184 / PDFp.205
+
+### 2. 原文陈述
+
+> Let $A$ be a suitable region of volume $V$ within the phase space (say a rectangular $m$-dimensional box).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rectangularDomain {n : ℕ} (a b : MolecularDynamics.Chapter05Review.E n) := MolecularDynamics.Chapter05Review.rectangle a b
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.rectangularDomain；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确书中矩形例子；不把一般区域的边界通量声明缩成仅矩形。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:415](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:415>)（`MD.Ch05.rectangularDomain`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`634ba16ff072de49eee4464fbd0d1e971b1100f7c7d9795ea7d5b018a952404d`；原文SHA256：`37166e41e0d71ca790796817d8e381629b726151254941635723158d2d744d32`。
+
+## 1. MD-5.2.2-FaceFlux · definition · 印刷p.184 / PDFp.205
+
+### 2. 原文陈述
+
+> $\frac{d\vartheta}{dt}=-\int_{\partial A}f\cdot n\,\rho(z;t)\,d\sigma$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def faceFlux {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) (a b : MolecularDynamics.Chapter05Review.E n) (i : Fin n) (side : ℝ) :=
+  ∫ z in boxFace a b i side,ρ z*f z i ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.faceFlux；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]矩形单个面上ρfi的真实Hausdorff面积积分；正负法向由上下两个面的组合体现。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:419](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:419>)（`MD.Ch05.faceFlux`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`4ee3e7409c3916541a2d33fc26dedbd9a69a7dc825fe2466f8c6e9099eb303bc`；原文SHA256：`b038d4597cf9984a2874c9751beb2e9c8d5052c5f9fe5c470f0ba4b1f3afee67`。
+
+## 1. MD-5.2.2-BoxFluxBalance · unnumbered_claim · 印刷p.184 / PDFp.205
+
+### 2. 原文陈述
+
+> Using the divergence theorem, we may rewrite the latter quantity as a volume integral:
+> \[\frac{d\vartheta}{dt}=-\int_A\nabla\cdot(f(z)\rho(z;t))\,d\omega.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem fluxBalance :
+  ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (a b : MolecularDynamics.Chapter05Review.E n),
+  0 < n → (∀ i,a i < b i) → ContDiff ℝ 1 f → MolecularDynamics.Chapter05Review.flow f Φ →
+  ContDiff ℝ 2 (Function.uncurry Φ) → ContDiff ℝ 1 (Function.uncurry ρ) →
+  (∀ t,MolecularDynamics.Chapter05Review.probabilityDensity (ρ t)) →
+  (∀ t,MolecularDynamics.Chapter05Review.densityMeasure (ρ t)=MolecularDynamics.Chapter05Review.measurePropagator Φ t (MolecularDynamics.Chapter05Review.densityMeasure (ρ 0))) →
+  ∀ t, HasDerivAt (MolecularDynamics.Chapter05Review.massFraction ρ (rectangle a b))
+    (∑ i,(faceFlux f (ρ t) a b i (a i)-faceFlux f (ρ t) a b i (b i))) t ∧
+    (∫ z in rectangle a b,MolecularDynamics.Chapter05Review.divergence (fun x => ρ t x • f x) z)=
+      ∑ i,(faceFlux f (ρ t) a b i (b i)-faceFlux f (ρ t) a b i (a i))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.fluxBalance；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原书矩形例子的全部面公式，和一般光滑域通量条目并存；实际被流输运的光滑密度。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:424](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:424>)（`MD.Ch05.fluxBalance`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺矩形Hausdorff分面散度定理与密度输运桥接；不建设大型几何理论。
+
+签名SHA256：`b56f9c950f221d7f4fecef57b14e40b5e66849f02d832676058f84928298a38a`；原文SHA256：`6fbc48945ef867ab832456e9ae65b25ac2552eea5e540b91bc51868d9392d6f7`。
+
+## 1. MD-5.2.2-BoundaryTerm · definition · 印刷p.185 / PDFp.206
+
+### 2. 原文陈述
+
+> where the term $B=\sum_i\int_{\partial A_\ell}uf_iv\nu_i\,d\sigma$, is a surface integral over the boundary of $A_\ell$, where $\nu_i$ is the $i$th component of the unit outward normal to the surface $\partial A_\ell$ bounding the region $A_\ell$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def boxBoundaryTerm {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.E n → ℝ) (ell : ℝ) : ℝ :=
+  let a : MolecularDynamics.Chapter05Review.E n := WithLp.toLp 2 (fun _ => -ell)
+  let b : MolecularDynamics.Chapter05Review.E n := WithLp.toLp 2 (fun _ => ell)
+  ∑ i,(MolecularDynamics.Chapter05Review.faceFlux f (fun z => u z*v z) a b i ell-
+    MolecularDynamics.Chapter05Review.faceFlux f (fun z => u z*v z) a b i (-ell))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.boxBoundaryTerm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:437](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:437>)（`MD.Ch05.boxBoundaryTerm`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`9c7169b65c415ac7642dfa99ac08359cafae99230ffb0469ea48a146eedfa8fc`；原文SHA256：`2365d71914f299e004f32b1dfe0f2aca3415a808188dce2865b81dc17c2b89de`。
+
+## 1. MD-5.2.2-TruncatedIntegrationByParts · unnumbered_claim · 印刷p.185 / PDFp.206
+
+### 2. 原文陈述
+
+> We truncate the domain to a large box $A_\ell$ with edge of length $2\ell$ centered at the origin, approximating the inner product by:
+> \[\langle u,\mathcal L_fv\rangle\approx\int_{A_\ell}u\mathcal L_fv\,d\omega=\int_{A_\ell}u\sum_i f_i\frac{\partial v}{\partial z_i}\,d\omega.\]
+> Splitting this sum up, we treat each term by integration by parts
+> \[\int_{A_\ell}u\sum_i f_i\frac{\partial v}{\partial z_i}\,d\omega=\sum_i\int_{A_\ell}uf_i\frac{\partial v}{\partial z_i}\,d\omega\tag{5.4}\]
+> \[=B-\sum_i\int_{A_\ell}v\frac{\partial}{\partial z_i}(uf_i)\,d\omega.\tag{5.5}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem truncatedIntegrationByParts : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.E n → ℝ) ell,
+  0 < n → 0 < ell → ContDiff ℝ 1 f → ContDiff ℝ 1 u → ContDiff ℝ 1 v →
+  let A := MolecularDynamics.Chapter05Review.rectangle (WithLp.toLp 2 (fun _ => -ell)) (WithLp.toLp 2 (fun _ => ell))
+  (∫ z in A,u z*MolecularDynamics.Chapter05Review.lie f v z)=boxBoundaryTerm f u v ell+
+    (∫ z in A,MolecularDynamics.Chapter05Review.liouvillian f u z*v z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.truncatedIntegrationByParts；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]正边长、C¹数据及真实矩形面；等号(5.4)的有限求和分配已经内含于实际Lie导数，非正式∞近似未当精确等号。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:445](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:445>)（`MD.Ch05.truncatedIntegrationByParts`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺矩形散度/分面分部积分桥接；不建设新曲面积分理论。
+
+签名SHA256：`01f021ac537e07bfdd6f409fd15602f685f6166842abc7f0d454f980cdba6f35`；原文SHA256：`3a3e246b98cc948c9a562a9c28060388234bb352c2399c7b27376969d564e8c9`。
+
+## 1. MD-5.2.2-RapidAdjoint · unnumbered_claim · 印刷p.185–186 / PDFp.206–207
+
+### 2. 原文陈述
+
+> Let $u,v$ be two scalar valued functions in $\mathbb R^m$ which tend to zero sufficiently rapidly at infinity. By our assumptions that $u$ and $v$ are rapidly decaying we know that $B\to0$, as $\ell\to\infty$. Taking the limit, we are thus left with the equation
+> \[\langle u,\mathcal L_fv\rangle=-\sum_i\int_{\mathbb R^m}v\frac{\partial}{\partial z_i}(uf_i)\,d\omega=\langle M_fu,v\rangle.\]
+> We refer to $M_f$ as the adjoint operator of $\mathcal L_f$ and we write $M_f=\mathcal L_f^*$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem rapidAdjoint : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.schwartzSpace n),
+  0 < n → ContDiff ℝ 1 f →
+  Integrable (fun z => u z*MolecularDynamics.Chapter05Review.lie f v z) volume →
+  Integrable (fun z => MolecularDynamics.Chapter05Review.liouvillian f u z*v z) volume →
+  Tendsto (boxBoundaryTerm f u v) atTop (𝓝 0) →
+  (∫ z,u z*MolecularDynamics.Chapter05Review.lie f v z)=(∫ z,MolecularDynamics.Chapter05Review.liouvillian f u z*v z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.rapidAdjoint；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]快速衰减函数用真实SchwartzMap资格；明确混合乘积可积及原证明所用实际B→0条件（任意增长的f下不能仅凭u/v衰减推出）；不是把最终伴随等式作前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:454](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:454>)（`MD.Ch05.rapidAdjoint`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺矩形分部积分、扩域积分极限与真实边界项消失桥接；不建设大型曲面/输运理论。
+
+签名SHA256：`27adf5205608cd6cd7f095bb1696c0110778a0f8feb892c6a5fbfcac3a4671d0`；原文SHA256：`c9ae3b8725e402fdb40b19e82b5308991989d543b32da613fcc5587c774f9b11`。
+
+## 1. MD-5.2.2-CompactAdjoint · unnumbered_claim · 印刷p.185–186 / PDFp.206–207
+
+### 2. 原文陈述
+
+> $\langle u,\mathcal L_fv\rangle=\langle M_fu,v\rangle$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem liouvillianAdjoint :
+  ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.E n → ℝ),
+  ContDiff ℝ 1 f → ContDiff ℝ 1 u → ContDiff ℝ 1 v → HasCompactSupport u → HasCompactSupport v →
+  (∫ z,u z*MolecularDynamics.Chapter05Review.lie f v z)=(∫ z,MolecularDynamics.Chapter05Review.liouvillian f u z*v z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.liouvillianAdjoint；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]紧支持C¹版本，作为快速衰减完整条目的特殊情形另列；是微分表达式的积分配对，不是闭Hilbert算子伴随的域识别。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch05.lean:464](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:464>)（`MD.Ch05.liouvillianAdjoint`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CompactAdjoint.timebox.json。
+
+签名SHA256：`97bdc8809fe003323c74da00a6c23c3e35e42b444a3b56fa7620d1ce80fbe10d`；原文SHA256：`7043871f60508b27e8ea7a2ec8d79f8bf7464c3a88a59b9e73bb5612e299fdd6`。
+
+## 1. MD-5.2.2-MeasurePropagator · definition · 印刷p.186 / PDFp.207
+
+### 2. 原文陈述
+
+> The density $\rho$ evolves as the solution of the partial differential equation $\partial\rho/\partial t=\mathcal L_f^*\rho$, where we interpret $\rho$ as a function of both $z$ and $t$ and view $\mathcal L_f^*$ as only operating on the spatial components. This means, formally, $\rho(z;t)=e^{t\mathcal L_f^*}\rho(z;0)$. We can think of $\exp(t\mathcal L_f^*)$ as defining the propagator of measure.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
+  Measure.map (Φ t) μ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.measurePropagator；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:471](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:471>)（`MD.Ch05.measurePropagator`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f`；原文SHA256：`ce30bba850cc2220493083d1cf6c6f1038bedf39d29fce5277f01b90c38e5a81`。

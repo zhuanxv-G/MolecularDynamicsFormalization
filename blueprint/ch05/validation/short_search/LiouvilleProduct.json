@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-fe461d43a628cd98321e.lean",
+    "log": "blueprint/ch05/validation/short_search/route-fe461d43a628cd98321e.log",
+    "source_sha256": "b212b259cb595cdd3b5022df76344fdb056f9f67108e7f828c85e50bba9fd5aa",
+    "log_sha256": "96f5da0c078ba8ca03e781b4457686103ff8dc4def667cc210f65b7a480e10e6"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-5b1c580892ef49b62d6c.lean",
+    "log": "blueprint/ch05/validation/short_search/route-5b1c580892ef49b62d6c.log",
+    "source_sha256": "516ec5c94483f58303f6dd627c497a0698bbe86c6562a110559ed1d89ff7cba2",
+    "log_sha256": "29cda6f3e0135b62d13ae6da7f6e3ec02c0505c448f750b5ab26d3f8898f4abf"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro n f ρ z hf hρ\n  have hd := hρ.hasFDerivAt.smul hf.hasFDerivAt\n  change HasFDerivAt (fun x => ρ x • f x)\n    (ρ z • fderiv ℝ f z+(fderiv ℝ ρ z).smulRight (f z)) z at hd\n  unfold MolecularDynamics.Chapter05Review.liouvillian MolecularDynamics.Chapter05Review.divergence MolecularDynamics.Chapter05Review.lie\n  rw [hd.fderiv]\n  change -(LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)\n    (ρ z • (fderiv ℝ f z).toLinearMap+(fderiv ℝ ρ z).toLinearMap.smulRight (f z))) =\n    -ρ z*LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap-\n      (fderiv ℝ ρ z) (f z)\n  simp only [map_add,map_smul,LinearMap.trace_smulRight,smul_eq_mul]\n  change -(ρ z*LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap+(fderiv ℝ ρ z) (f z)) =\n    -ρ z*LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap-(fderiv ℝ ρ z) (f z)\n  ring",
+    "source": "blueprint/ch05/validation/short_search/route-c7ba962b98f330fb04e1.lean",
+    "log": "blueprint/ch05/validation/short_search/route-c7ba962b98f330fb04e1.log",
+    "source_sha256": "02455a4c2d8ab44711bdaf7fa95567fe0c9d2f59f7505f2f488d704525ddf2d0",
+    "log_sha256": "07b35f3969f454a60472cd3962475299ccc4bb047694e20636bb16b36693a638"
+  }
+]

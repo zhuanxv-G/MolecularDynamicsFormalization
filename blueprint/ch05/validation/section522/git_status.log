@@ -1,0 +1,139 @@
+ M Blueprint/Ch05.lean
+ M blueprint/ch03/validation/section37-commit.log
+ M blueprint/ch04/validation/section442-commit-retry.log
+ M blueprint/ch05/CheckAxioms.lean
+ M blueprint/ch05/PROGRESS.md
+ M blueprint/ch05/ch05_source.json
+ M blueprint/ch05/local_audit.json
+ M blueprint/ch05/mathcopilot_tasks/INDEX.md
+ M blueprint/ch05/mathcopilot_tasks/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/a/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/c/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/d/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/e/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/e/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/f/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/f/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/g/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/g/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/h/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH01/h/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH02/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH02/a/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH02/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH02/b/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH02/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH02/c/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/a/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/b/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/c/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/d/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/e/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/e/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/f/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/g/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/g/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/h/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH03/h/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/a/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/b/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/c/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/d/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/e/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/e/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/f/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/f/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/g/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/h/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH04/h/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH05/a/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH05/a/PASTE.txt
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH05/b/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH05/c/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH05/d/MANIFEST.json
+ M blueprint/ch05/mathcopilot_tasks/compact/BATCH05/d/PASTE.txt
+ M blueprint/ch05/old_mapping.json
+ M blueprint/ch05/section_timeboxes.json
+ M blueprint/ch05/validation/section521-commit.log
+ M docs/handoff/CURRENT_STATE.zh-CN.md
+ M docs/handoff/LOCAL_PIPELINE.md
+ M docs/review/CH05_BLUEPRINT.zh-CN.md
+ M scripts/ch05_data.py
+ M scripts/ch05_short_candidates.py
+ M scripts/local_blueprint.py
+ M scripts/local_short_search.py
+?? blueprint/ch05/mathcopilot_tasks/BATCH06.md
+?? blueprint/ch05/mathcopilot_tasks/BATCH07.md
+?? blueprint/ch05/mathcopilot_tasks/BATCH08.md
+?? blueprint/ch05/mathcopilot_tasks/compact/BATCH06/
+?? blueprint/ch05/mathcopilot_tasks/compact/BATCH07/
+?? blueprint/ch05/mathcopilot_tasks/compact/BATCH08/
+?? blueprint/ch05/validation/batch10-COMPILE.json
+?? blueprint/ch05/validation/batch11-COMPILE.json
+?? blueprint/ch05/validation/batch12-COMPILE.json
+?? blueprint/ch05/validation/batch13-COMPILE.json
+?? blueprint/ch05/validation/batch13-fixed-COMPILE.json
+?? blueprint/ch05/validation/batch14-COMPILE.json
+?? blueprint/ch05/validation/section522/
+?? blueprint/ch05/validation/short_search/CompactAdjoint.timebox.json
+?? blueprint/ch05/validation/short_search/DivergenceCoordinates-next-proof.txt
+?? blueprint/ch05/validation/short_search/DivergenceCoordinates.json
+?? blueprint/ch05/validation/short_search/LieCoordinates-next-proof.txt
+?? blueprint/ch05/validation/short_search/LieCoordinates.json
+?? blueprint/ch05/validation/short_search/LiouvilleProduct-next-proof.txt
+?? blueprint/ch05/validation/short_search/LiouvilleProduct.json
+?? blueprint/ch05/validation/short_search/LiouvilleProductCoordinates-next-proof.txt
+?? blueprint/ch05/validation/short_search/LiouvilleProductCoordinates.json
+?? blueprint/ch05/validation/short_search/MassDerivative-next-proof.txt
+?? blueprint/ch05/validation/short_search/MassDerivative.json
+?? blueprint/ch05/validation/short_search/route-1525bae73a739536b80b-LieCoordinates.compile.json
+?? blueprint/ch05/validation/short_search/route-1525bae73a739536b80b-LieCoordinates.lean
+?? blueprint/ch05/validation/short_search/route-1525bae73a739536b80b.compile.json
+?? blueprint/ch05/validation/short_search/route-1525bae73a739536b80b.lean
+?? blueprint/ch05/validation/short_search/route-4d4d0f7c793a8b77e365.compile.json
+?? blueprint/ch05/validation/short_search/route-4d4d0f7c793a8b77e365.lean
+?? blueprint/ch05/validation/short_search/route-5b1c580892ef49b62d6c.compile.json
+?? blueprint/ch05/validation/short_search/route-5b1c580892ef49b62d6c.lean
+?? blueprint/ch05/validation/short_search/route-8360a3607bb0d6c24e2d.compile.json
+?? blueprint/ch05/validation/short_search/route-8360a3607bb0d6c24e2d.lean
+?? blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.compile.json
+?? blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.lean
+?? blueprint/ch05/validation/short_search/route-a34cdecca1ffaaa9443b.compile.json
+?? blueprint/ch05/validation/short_search/route-a34cdecca1ffaaa9443b.lean
+?? blueprint/ch05/validation/short_search/route-c7ba962b98f330fb04e1.compile.json
+?? blueprint/ch05/validation/short_search/route-c7ba962b98f330fb04e1.lean
+?? blueprint/ch05/validation/short_search/route-d7aa9b44d094a4ba1bd2.compile.json
+?? blueprint/ch05/validation/short_search/route-d7aa9b44d094a4ba1bd2.lean
+?? blueprint/ch05/validation/short_search/route-fa1435a7be88dbcb386c.compile.json
+?? blueprint/ch05/validation/short_search/route-fa1435a7be88dbcb386c.lean
+?? blueprint/ch05/validation/short_search/route-fe461d43a628cd98321e.compile.json
+?? blueprint/ch05/validation/short_search/route-fe461d43a628cd98321e.lean
+?? docs/review/check-full06/
+?? output/
+?? scripts/__pycache__/
+?? scripts/ch05_section522.py
+?? scripts/ch05_section522b.py
+?? scripts/ch05_section522coords.py
+?? scripts/ch05_section523.py
+?? scripts/ch05_section531.py
+?? scripts/ch05_section531b.py
+?? scripts/ch05_section532.py
+?? scripts/ch05_section532b.py
+?? scripts/ch05_section532c.py
+?? scripts/ch05_section533.py
+?? scripts/ch05_section54.py
+?? scripts/ch05_section541.py
+?? scripts/export_ch01_review_pdf.py
+?? tmp/

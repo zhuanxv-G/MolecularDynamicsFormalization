@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-4d4d0f7c793a8b77e365.lean",
+    "log": "blueprint/ch05/validation/short_search/route-4d4d0f7c793a8b77e365.log",
+    "source_sha256": "69f5f08a375ccfe3f08f37c4fa13cb30ecfd0b14b124e72aad8af1bc89558e6d",
+    "log_sha256": "643fd7589093b9626916fb900e0d7ffcfb50cc6fc52953373ae2c6f56258709b"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n ρ A t hA hint hloc\n  obtain ⟨δ,hδ,b,hb,hlocal⟩ := hloc\n  have ht : t ∈ Ioo (t-δ) (t+δ) := ⟨by linarith,by linarith⟩\n  have hm : AEStronglyMeasurable (fun z => deriv (fun u => ρ u z) t) (volume.restrict A) := by\n    apply aestronglyMeasurable_of_tendsto_ae (𝓝[≠] (0 : ℝ))\n      (f := fun h z => h⁻¹*(ρ (t+h) z-ρ t z))\n    · intro h\n      exact ((hint (t+h)).aestronglyMeasurable.sub (hint t).aestronglyMeasurable).const_mul _\n    · filter_upwards [ae_restrict_mem hA] with z hz\n      simpa only [smul_eq_mul] using (hlocal t ht z hz).1.tendsto_slope_zero\n  have he := hasDerivAt_integral_of_dominated_loc_of_deriv_le\n    (μ := volume.restrict A) (F := ρ) (F' := fun s z => deriv (fun u => ρ u z) s)\n    (bound := b) (Ioo_mem_nhds (by linarith) (by linarith))\n    (Filter.Eventually.of_forall (fun s => (hint s).aestronglyMeasurable)) (hint t) hm\n    ((ae_restrict_mem hA).mono (fun z hz s hs => by\n      simpa only [Real.norm_eq_abs] using (hlocal s hs z hz).2)) hb\n    ((ae_restrict_mem hA).mono (fun z hz s hs => (hlocal s hs z hz).1))\n  simpa only [MolecularDynamics.Chapter05Review.massFraction] using! he.2",
+    "source": "blueprint/ch05/validation/short_search/route-a34cdecca1ffaaa9443b.lean",
+    "log": "blueprint/ch05/validation/short_search/route-a34cdecca1ffaaa9443b.log",
+    "source_sha256": "3ba67fb847278f07ae47f54545bed94c48a1b4e80bf33eaa5cb5973aebdf4921",
+    "log_sha256": "8ca94dceac6b07500afc279fa66d8fc794b423784792c08fa5948a02d0818714"
+  }
+]

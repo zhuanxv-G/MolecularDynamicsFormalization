@@ -58,6 +58,42 @@ proofs['LiePullbackCommutes']='''intro n f Φ g hflow hreg hg t z
   rw [flowFieldTransport n f Φ hflow hreg t z]'''
 proofs['DiracEvaluates']='''intro n φ
   simp [MolecularDynamics.Chapter05Review.diracMeasure,MolecularDynamics.Chapter05Review.diracAction]'''
+proofs['LieCoordinates']='''intro n f g z
+  unfold MolecularDynamics.Chapter05Review.lie
+  have h := congrArg (fderiv ℝ g z) ((EuclideanSpace.basisFun (Fin n) ℝ).toBasis.sum_repr (f z)).symm
+  simpa only [map_sum,map_smul,smul_eq_mul] using h'''
+proofs['LiouvilleProductCoordinates']='''intro n f ρ z hf hρ
+  rw [liouvilleProduct n f ρ z hf hρ,divergenceCoordinates n f z hf,lieCoordinates n f ρ z]
+  rw [Finset.sum_add_distrib,← Finset.mul_sum]
+  ring'''
+proofs['DivergenceCoordinates']='''intro n f z hf
+  unfold MolecularDynamics.Chapter05Review.divergence
+  rw [LinearMap.trace_eq_matrix_trace ℝ (EuclideanSpace.basisFun (Fin n) ℝ).toBasis]
+  change (∑ i,((fderiv ℝ f z) (EuclideanSpace.basisFun (Fin n) ℝ i)) i)=_
+  apply Finset.sum_congr rfl
+  intro i hi
+  have hc := (PiLp.proj 2 (fun _ : Fin n => ℝ) i).hasFDerivAt.comp z hf.hasFDerivAt
+  change HasFDerivAt (fun x => f x i) _ z at hc
+  rw [hc.fderiv]
+  rfl'''
+proofs['MassDerivative']='''intro n ρ A t hA hint hloc
+  obtain ⟨δ,hδ,b,hb,hlocal⟩ := hloc
+  have ht : t ∈ Ioo (t-δ) (t+δ) := ⟨by linarith,by linarith⟩
+  have hm : AEStronglyMeasurable (fun z => deriv (fun u => ρ u z) t) (volume.restrict A) := by
+    apply aestronglyMeasurable_of_tendsto_ae (𝓝[≠] (0 : ℝ))
+      (f := fun h z => h⁻¹*(ρ (t+h) z-ρ t z))
+    · intro h
+      exact ((hint (t+h)).aestronglyMeasurable.sub (hint t).aestronglyMeasurable).const_mul _
+    · filter_upwards [ae_restrict_mem hA] with z hz
+      simpa only [smul_eq_mul] using (hlocal t ht z hz).1.tendsto_slope_zero
+  have he := hasDerivAt_integral_of_dominated_loc_of_deriv_le
+    (μ := volume.restrict A) (F := ρ) (F' := fun s z => deriv (fun u => ρ u z) s)
+    (bound := b) (Ioo_mem_nhds (by linarith) (by linarith))
+    (Filter.Eventually.of_forall (fun s => (hint s).aestronglyMeasurable)) (hint t) hm
+    ((ae_restrict_mem hA).mono (fun z hz s hs => by
+      simpa only [Real.norm_eq_abs] using (hlocal s hs z hz).2)) hb
+    ((ae_restrict_mem hA).mono (fun z hz s hs => (hlocal s hs z hz).1))
+  simpa only [MolecularDynamics.Chapter05Review.massFraction] using he.2'''
 proofs['GaussianL2']='''intro n a ha
   have hc : Continuous (fun z : MolecularDynamics.Chapter05Review.E n => Real.exp (-(∑ i,a i*(z i)^2))) := by fun_prop
   rw [memLp_two_iff_integrable_sq hc.aestronglyMeasurable]
@@ -136,6 +172,47 @@ proofs['RegularDistributionLinearity']='''intro n f hf hb
   simp only [MolecularDynamics.Chapter05Review.regularDistribution,SchwartzMap.add_apply,SchwartzMap.smul_apply,smul_eq_mul]
   simp_rw [mul_add,← mul_assoc,mul_comm (f _) a,mul_comm (f _) b]
   rw [integral_add ((hi φ).const_mul a) ((hi ψ).const_mul b),integral_const_mul,integral_const_mul]'''
+proofs['CompactAdjoint']='''intro n f u v hf hu hv huS hvS
+  let e (i : Fin n) := EuclideanSpace.basisFun (Fin n) ℝ i
+  let a (i : Fin n) (z : MolecularDynamics.Chapter05Review.E n) := u z*f z i
+  have ha (i : Fin n) : ContDiff ℝ 1 (a i) := by dsimp [a]; fun_prop
+  have hs (i : Fin n) : HasCompactSupport (a i) := huS.mul_right
+  have hc (i : Fin n) : Continuous (fun z => fderiv ℝ (a i) z (e i)) :=
+    ((ha i).continuous_fderiv (by norm_num)).clm_apply continuous_const
+  have hvd (i : Fin n) : Continuous (fun z => fderiv ℝ v z (e i)) :=
+    (hv.continuous_fderiv (by norm_num)).clm_apply continuous_const
+  have hleft (i : Fin n) : Integrable (fun z => a i z*fderiv ℝ v z (e i)) volume :=
+    ((ha i).continuous.mul (hvd i)).integrable_of_hasCompactSupport ((hs i).mul_right)
+  have hright (i : Fin n) : Integrable (fun z => fderiv ℝ (a i) z (e i)*v z) volume :=
+    ((hc i).mul hv.continuous).integrable_of_hasCompactSupport
+      (((hs i).fderiv_apply (𝕜:=ℝ) (e i)).mul_right)
+  have hip (i : Fin n) : (∫ z,a i z*fderiv ℝ v z (e i)) =
+      -(∫ z,fderiv ℝ (a i) z (e i)*v z) := by
+    apply integral_mul_fderiv_eq_neg_fderiv_mul_of_integrable
+    · exact hright i
+    · exact hleft i
+    · exact ((ha i).continuous.mul hv.continuous).integrable_of_hasCompactSupport ((hs i).mul_right)
+    · intro z hz; exact ((ha i).differentiable (by norm_num)) z
+    · intro z hz; exact (hv.differentiable (by norm_num)) z
+  have hl (z) : u z*MolecularDynamics.Chapter05Review.lie f v z =
+      ∑ i : Fin n,a i z*fderiv ℝ v z (e i) := by
+    rw [lieCoordinates,Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro i hi
+    dsimp [a,e]; ring
+  have hr (z) : MolecularDynamics.Chapter05Review.liouvillian f u z*v z =
+      -(∑ i : Fin n,fderiv ℝ (a i) z (e i)*v z) := by
+    unfold MolecularDynamics.Chapter05Review.liouvillian
+    rw [divergenceCoordinates n (fun x => u x • f x) z
+      (((hu.differentiable (by norm_num)) z).smul ((hf.differentiable (by norm_num)) z))]
+    simp only [PiLp.smul_apply,smul_eq_mul]
+    dsimp [a,e]
+    rw [neg_mul,Finset.sum_mul]
+  simp_rw [hl,hr]
+  rw [integral_finsetSum Finset.univ (fun i hi => hleft i),integral_neg,
+    integral_finsetSum Finset.univ (fun i hi => hright i)]
+  simp_rw [hip]
+  rw [Finset.sum_neg_distrib]'''
 import json,re
 from pathlib import Path
 extra=Path(__file__).with_name('ch05_elementary_candidates.json')

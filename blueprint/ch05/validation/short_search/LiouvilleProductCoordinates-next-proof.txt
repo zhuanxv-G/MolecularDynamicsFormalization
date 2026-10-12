@@ -1,0 +1,4 @@
+intro n f ρ z hf hρ
+  rw [liouvilleProduct n f ρ z hf hρ,divergenceCoordinates n f z hf,lieCoordinates n f ρ z]
+  rw [Finset.sum_add_distrib,← Finset.mul_sum]
+  ring

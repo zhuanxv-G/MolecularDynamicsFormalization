@@ -1,0 +1,18 @@
+blueprint\ch05\validation\short_search\route-4d4d0f7c793a8b77e365.lean:52:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-4d4d0f7c793a8b77e365.lean:52:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-4d4d0f7c793a8b77e365.lean:95:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-4d4d0f7c793a8b77e365.lean:273:2: error: Type mismatch: After simplification, term
+  he.right
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    (fun n_1 => ∫ (a : E n) in A, ρ n_1 a) (∫ (a : E n) in A, deriv (fun u => ρ u a) t) t
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.instAddCommGroup Semiring.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (Chapter05Review.massFraction ρ A)
+    (∫ (z : E n) in A, deriv (fun u => ρ u z) t) t

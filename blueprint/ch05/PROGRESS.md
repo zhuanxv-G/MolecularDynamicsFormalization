@@ -2,7 +2,7 @@
 
 范围：印刷p.179–209/PDF200–230，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前31条；旧清单映射20/86；本地PASS 31；网站返回0。
+当前50条；旧清单映射28/86；本地PASS 50；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -37,6 +37,25 @@
 | MD-5.2.1-GaussianL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-5.2.1-FiniteJumpL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-5.2.1-NormalizedAverageFormula | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.2-MassFraction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.2-MassDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.2-OutwardNormal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.2-GeneralFluxBalance | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺真实Hausdorff曲面通量的散度定理与一般光滑输运密度桥接；不建设大型几何/PDE理论。 |
+| MD-5.2.2-Divergence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.2-Liouvillian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.2-LiouvilleEquation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺一般密度输运到逐点连续性方程的曲面/测度变换桥接；不建设大型输运理论。 |
+| MD-5.2.2-LiouvilleProduct | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.2-LieCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.2-DivergenceCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.2-LiouvilleProductCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.2-RectangularDomain | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.2-FaceFlux | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.2-BoxFluxBalance | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺矩形Hausdorff分面散度定理与密度输运桥接；不建设大型几何理论。 |
+| MD-5.2.2-BoundaryTerm | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.2-TruncatedIntegrationByParts | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺矩形散度/分面分部积分桥接；不建设新曲面积分理论。 |
+| MD-5.2.2-RapidAdjoint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺矩形分部积分、扩域积分极限与真实边界项消失桥接；不建设大型曲面/输运理论。 |
+| MD-5.2.2-CompactAdjoint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CompactAdjoint.timebox.json。 |
+| MD-5.2.2-MeasurePropagator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 
 ## 旧86条完整映射
 
@@ -62,14 +81,14 @@
 | CH05-018 | MD-5.2.1-L2SymmetricBilinear |
 | CH05-019 | MD-5.2.1-CompactL2 |
 | CH05-020 | MD-5.2.1-NormalizedAverageFormula |
-| CH05-021 | PENDING：所属节尚未处理 |
-| CH05-022 | PENDING：所属节尚未处理 |
-| CH05-023 | PENDING：所属节尚未处理 |
-| CH05-024 | PENDING：所属节尚未处理 |
-| CH05-025 | PENDING：所属节尚未处理 |
-| CH05-026 | PENDING：所属节尚未处理 |
-| CH05-027 | PENDING：所属节尚未处理 |
-| CH05-028 | PENDING：所属节尚未处理 |
+| CH05-021 | MD-5.2.2-MassFraction |
+| CH05-022 | MD-5.2.2-MassDerivative |
+| CH05-023 | MD-5.2.2-BoxFluxBalance |
+| CH05-024 | MD-5.2.2-Liouvillian |
+| CH05-025 | MD-5.2.2-LiouvilleEquation |
+| CH05-026 | MD-5.2.2-LiouvilleProductCoordinates |
+| CH05-027 | MD-5.2.2-CompactAdjoint |
+| CH05-028 | MD-5.2.2-MeasurePropagator |
 | CH05-029 | PENDING：所属节尚未处理 |
 | CH05-030 | PENDING：所属节尚未处理 |
 | CH05-031 | PENDING：所属节尚未处理 |
@@ -134,6 +153,12 @@
 - MD-5.1-FlowFieldTransport：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 三条短证明路线失败，停止该条；保存证据见validation/short_search/FlowFieldTransport.json。
 - MD-5.1-PullbackPDE：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证，不建设一般输运PDE适定性理论。
 - MD-5.1-LiePullbackCommutes：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证。
+- MD-5.2.2-GeneralFluxBalance：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实Hausdorff曲面通量的散度定理与一般光滑输运密度桥接；不建设大型几何/PDE理论。
+- MD-5.2.2-LiouvilleEquation：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺一般密度输运到逐点连续性方程的曲面/测度变换桥接；不建设大型输运理论。
+- MD-5.2.2-BoxFluxBalance：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺矩形Hausdorff分面散度定理与密度输运桥接；不建设大型几何理论。
+- MD-5.2.2-TruncatedIntegrationByParts：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺矩形散度/分面分部积分桥接；不建设新曲面积分理论。
+- MD-5.2.2-RapidAdjoint：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺矩形分部积分、扩域积分极限与真实边界项消失桥接；不建设大型曲面/输运理论。
+- MD-5.2.2-CompactAdjoint：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CompactAdjoint.timebox.json。
 
 ## 定性段落排除
 

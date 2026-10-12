@@ -61,7 +61,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 def pullback {X : Type*} (Φ : ℝ → X → X) (g : X → ℝ) (t : ℝ) (z : X) := g (Φ t z)
 ```
 
-### MD.Ch05.pullback (Blueprint/Ch05.lean:37)
+### MD.Ch05.pullback (Blueprint/Ch05.lean:40)
 ```lean
 def pullback {X : Type*} (Φ : ℝ → X → X) (g : X → ℝ) (t : ℝ) (z : X) := g (Φ t z)
 ```

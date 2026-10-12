@@ -1,0 +1,23 @@
+blueprint\ch05\validation\short_search\route-99ae7f89c91fe1362566.lean:52:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-99ae7f89c91fe1362566.lean:52:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-99ae7f89c91fe1362566.lean:95:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-99ae7f89c91fe1362566.lean:280:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  @Eq ℝ ((fderiv ℝ g z) (f z))
+    (∑ x,
+      ((EuclideanSpace.basisFun (Fin n) ℝ).toBasis.repr (f z)) x *
+        (fderiv ℝ g z) ((EuclideanSpace.basisFun (Fin n) ℝ).toBasis x))
+but is expected to have type
+  @Eq ℝ ((fderiv ℝ g z) (f z)) (∑ x, (f z).ofLp x * (fderiv ℝ g z) ((EuclideanSpace.basisFun (Fin n) ℝ) x))
+blueprint\ch05\validation\short_search\route-99ae7f89c91fe1362566.lean:288:2: error: 'change' tactic failed, pattern
+  ∑ i, ((fderiv ℝ f z) ((EuclideanSpace.basisFun (Fin n) ℝ) i)).ofLp i = ?m.86
+is not definitionally equal to target
+  ((LinearMap.toMatrix (EuclideanSpace.basisFun (Fin n) ℝ).toBasis (EuclideanSpace.basisFun (Fin n) ℝ).toBasis)
+        ↑(fderiv ℝ f z)).trace =
+    ∑ i, (fderiv ℝ (fun x => (f x).ofLp i) z) ((EuclideanSpace.basisFun (Fin n) ℝ) i)

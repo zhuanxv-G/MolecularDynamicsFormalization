@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.lean",
+    "log": "blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.log",
+    "source_sha256": "36adc8336b4ce23f2a4da83700aba176feb3067cb70d4c8b3fa2cdfebb433cdc",
+    "log_sha256": "99c1812eb32572dc5fb70038ff26eda2ab2bc08aee922b6c1cb765add8f902b7"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-1525bae73a739536b80b.lean",
+    "log": "blueprint/ch05/validation/short_search/route-1525bae73a739536b80b.log",
+    "source_sha256": "055bd6b3556b157343d229798135d4facaac83a7227b86d60f0c577d01dbe9bd",
+    "log_sha256": "a0ba7fe50bda797f16188dbba7dedd7450bc01e67212778d55ec94d4eb8791a5"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro n f z hf\n  unfold MolecularDynamics.Chapter05Review.divergence\n  rw [LinearMap.trace_eq_matrix_trace ℝ (EuclideanSpace.basisFun (Fin n) ℝ).toBasis]\n  simp only [Matrix.trace,Matrix.diag,LinearMap.toMatrix_apply,OrthonormalBasis.coe_toBasis_repr_apply,EuclideanSpace.basisFun_repr,OrthonormalBasis.coe_toBasis]\n  apply Finset.sum_congr rfl\n  intro i hi\n  have hc := (PiLp.proj 2 (fun _ : Fin n => ℝ) i).hasFDerivAt.comp z hf.hasFDerivAt\n  change HasFDerivAt (fun x => f x i) _ z at hc\n  rw [hc.fderiv]\n  rfl",
+    "source": "blueprint/ch05/validation/short_search/route-d7aa9b44d094a4ba1bd2.lean",
+    "log": "blueprint/ch05/validation/short_search/route-d7aa9b44d094a4ba1bd2.log",
+    "source_sha256": "7c4d2422b9ccf6d7b02d36230084a32c8e4530e8d707ce50112f0de9dad64b94",
+    "log_sha256": "fb4e398e4e478f832000808a5b12678777e4b00f1d7617181d338ef60d8f2f05"
+  }
+]

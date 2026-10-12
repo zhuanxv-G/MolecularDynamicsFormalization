@@ -1,0 +1,18 @@
+intro n ρ A t hA hint hloc
+  obtain ⟨δ,hδ,b,hb,hlocal⟩ := hloc
+  have ht : t ∈ Ioo (t-δ) (t+δ) := ⟨by linarith,by linarith⟩
+  have hm : AEStronglyMeasurable (fun z => deriv (fun u => ρ u z) t) (volume.restrict A) := by
+    apply aestronglyMeasurable_of_tendsto_ae (𝓝[≠] (0 : ℝ))
+      (f := fun h z => h⁻¹*(ρ (t+h) z-ρ t z))
+    · intro h
+      exact ((hint (t+h)).aestronglyMeasurable.sub (hint t).aestronglyMeasurable).const_mul _
+    · filter_upwards [ae_restrict_mem hA] with z hz
+      simpa only [smul_eq_mul] using (hlocal t ht z hz).1.tendsto_slope_zero
+  have he := hasDerivAt_integral_of_dominated_loc_of_deriv_le
+    (μ := volume.restrict A) (F := ρ) (F' := fun s z => deriv (fun u => ρ u z) s)
+    (bound := b) (Ioo_mem_nhds (by linarith) (by linarith))
+    (Filter.Eventually.of_forall (fun s => (hint s).aestronglyMeasurable)) (hint t) hm
+    ((ae_restrict_mem hA).mono (fun z hz s hs => by
+      simpa only [Real.norm_eq_abs] using (hlocal s hs z hz).2)) hb
+    ((ae_restrict_mem hA).mono (fun z hz s hs => (hlocal s hs z hz).1))
+  simpa only [MolecularDynamics.Chapter05Review.massFraction] using! he.2

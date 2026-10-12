@@ -1,0 +1,14 @@
+intro n f ρ z hf hρ
+  have hd := hρ.hasFDerivAt.smul hf.hasFDerivAt
+  change HasFDerivAt (fun x => ρ x • f x)
+    (ρ z • fderiv ℝ f z+(fderiv ℝ ρ z).smulRight (f z)) z at hd
+  unfold MolecularDynamics.Chapter05Review.liouvillian MolecularDynamics.Chapter05Review.divergence MolecularDynamics.Chapter05Review.lie
+  rw [hd.fderiv]
+  change -(LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)
+    (ρ z • (fderiv ℝ f z).toLinearMap+(fderiv ℝ ρ z).toLinearMap.smulRight (f z))) =
+    -ρ z*LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap-
+      (fderiv ℝ ρ z) (f z)
+  simp only [map_add,map_smul,LinearMap.trace_smulRight,smul_eq_mul]
+  change -(ρ z*LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap+(fderiv ℝ ρ z) (f z)) =
+    -ρ z*LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap-(fderiv ℝ ρ z) (f z)
+  ring

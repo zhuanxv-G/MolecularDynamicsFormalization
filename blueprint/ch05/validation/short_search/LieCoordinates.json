@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.lean",
+    "log": "blueprint/ch05/validation/short_search/route-99ae7f89c91fe1362566.log",
+    "source_sha256": "36adc8336b4ce23f2a4da83700aba176feb3067cb70d4c8b3fa2cdfebb433cdc",
+    "log_sha256": "99c1812eb32572dc5fb70038ff26eda2ab2bc08aee922b6c1cb765add8f902b7"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n f g z\n  unfold MolecularDynamics.Chapter05Review.lie\n  have h := congrArg (fderiv ℝ g z) ((EuclideanSpace.basisFun (Fin n) ℝ).toBasis.sum_repr (f z)).symm\n  simpa only [map_sum,map_smul,smul_eq_mul,OrthonormalBasis.coe_toBasis_repr_apply,EuclideanSpace.basisFun_repr,OrthonormalBasis.coe_toBasis] using h",
+    "source": "blueprint/ch05/validation/short_search/route-1525bae73a739536b80b-LieCoordinates.lean",
+    "log": "blueprint/ch05/validation/short_search/route-1525bae73a739536b80b-LieCoordinates.log",
+    "source_sha256": "640a45429d4f27ce536e20205e64d127fa5290a814c9636d41c5fee2fc58f95c",
+    "log_sha256": "4b6a777e4b8099a751ccc4beefabad7b89cd362e6be160becc477b5da5465ca5"
+  }
+]

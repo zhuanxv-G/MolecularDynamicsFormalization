@@ -1,0 +1,10 @@
+intro n f z hf
+  unfold MolecularDynamics.Chapter05Review.divergence
+  rw [LinearMap.trace_eq_matrix_trace ℝ (EuclideanSpace.basisFun (Fin n) ℝ).toBasis]
+  simp only [Matrix.trace,Matrix.diag,LinearMap.toMatrix_apply,OrthonormalBasis.coe_toBasis_repr_apply,EuclideanSpace.basisFun_repr,OrthonormalBasis.coe_toBasis]
+  apply Finset.sum_congr rfl
+  intro i hi
+  have hc := (PiLp.proj 2 (fun _ : Fin n => ℝ) i).hasFDerivAt.comp z hf.hasFDerivAt
+  change HasFDerivAt (fun x => f x i) _ z at hc
+  rw [hc.fderiv]
+  rfl

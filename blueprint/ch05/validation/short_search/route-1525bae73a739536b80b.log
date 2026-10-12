@@ -1,0 +1,57 @@
+blueprint\ch05\validation\short_search\route-1525bae73a739536b80b.lean:52:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-1525bae73a739536b80b.lean:52:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-1525bae73a739536b80b.lean:95:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-1525bae73a739536b80b.lean:294:2: error: Tactic `rfl` failed: The left-hand side
+  ((LinearMap.toMatrix (EuclideanSpace.basisFun (Fin n) ℝ).toBasis (EuclideanSpace.basisFun (Fin n) ℝ).toBasis)
+        ↑(fderiv ℝ f z)).diag
+    i
+is not definitionally equal to the right-hand side
+  (PiLp.proj 2 (fun x => ℝ) i ∘SL fderiv ℝ f z) ((EuclideanSpace.basisFun (Fin n) ℝ) i)
+
+n : ℕ
+f : E n → E n
+z : E n
+hf : DifferentiableAt ℝ f z
+i : Fin n
+hi : i ∈ Finset.univ
+hc : HasFDerivAt (fun x => (f x).ofLp i) (PiLp.proj 2 (fun x => ℝ) i ∘SL fderiv ℝ f z) z
+⊢ ((LinearMap.toMatrix (EuclideanSpace.basisFun (Fin n) ℝ).toBasis (EuclideanSpace.basisFun (Fin n) ℝ).toBasis)
+          ↑(fderiv ℝ f z)).diag
+      i =
+    (PiLp.proj 2 (fun x => ℝ) i ∘SL fderiv ℝ f z) ((EuclideanSpace.basisFun (Fin n) ℝ) i)
+blueprint\ch05\validation\short_search\route-1525bae73a739536b80b.lean:288:26: warning: This simp argument is unused:
+  LinearMap.toMatrix_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.trace, OrthonormalBasis.coe_toBasis_repr_apply, EuclideanSpace.basisFun_repr,
+    OrthonormalBasis.coe_toBasis]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch05\validation\short_search\route-1525bae73a739536b80b.lean:288:51: warning: This simp argument is unused:
+  OrthonormalBasis.coe_toBasis_repr_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.trace, LinearMap.toMatrix_apply, EuclideanSpace.basisFun_repr, OrthonormalBasis.coe_toBasis]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch05\validation\short_search\route-1525bae73a739536b80b.lean:288:91: warning: This simp argument is unused:
+  EuclideanSpace.basisFun_repr
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.trace, LinearMap.toMatrix_apply, OrthonormalBasis.coe_toBasis_repr_apply,
+    OrthonormalBasis.coe_toBasis]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch05\validation\short_search\route-1525bae73a739536b80b.lean:288:120: warning: This simp argument is unused:
+  OrthonormalBasis.coe_toBasis
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.trace, LinearMap.toMatrix_apply, OrthonormalBasis.coe_toBasis_repr_apply,
+    EuclideanSpace.basisFun_repr]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

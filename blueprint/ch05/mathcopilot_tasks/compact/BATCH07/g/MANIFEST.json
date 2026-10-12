@@ -1,0 +1,91 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07g",
+  "source_ids": [
+    "MD-5.2.2-BoundaryTerm"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 206,
+      "printed_page": 185
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "92a0732cefa952cb2b7bca0cb681e45699d51cad5e928a4d7e3f6823ab0f6323",
+  "lean_sha256": "8f861d7fcb78e863940c4d0a8a578fb8fd754661b1811ecb8e398234fed4f404",
+  "signature_sha256": "9c7169b65c415ac7642dfa99ac08359cafae99230ffb0469ea48a146eedfa8fc",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/Statements.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "faceFlux",
+      "code_sha256": "3282ec93b37dc02076637eea222c9229fe0dac8c5f71112bce4130b0884949f2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "hausdorffArea",
+      "code_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "boxBoundaryTerm",
+      "code_sha256": "9c7169b65c415ac7642dfa99ac08359cafae99230ffb0469ea48a146eedfa8fc"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/Statements.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "boxFace",
+      "code_sha256": "a7ccfc09d94cc466595d455e459cddbcc5c6c68af6f6aaec888193afd2f768b4"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "faceFlux",
+      "code_sha256": "4ee3e7409c3916541a2d33fc26dedbd9a69a7dc825fe2466f8c6e9099eb303bc"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "hausdorffArea",
+      "code_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/Statements.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "rectangle",
+      "code_sha256": "8c59b744aa1b68636918fe3c0c0d94b28a7372978da22e1596edf7d137a99e5a"
+    }
+  ],
+  "paste_plus_pdf_bytes": 90515,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5890,
+      "sha256": "4621f3399aafea63e928f80260a510457a94bc58f7dcc327698e269eabdc493b"
+    },
+    "BATCH07g_PAGES.pdf": {
+      "bytes": 84625,
+      "sha256": "39f5d3712f24f85f071e239489d9af3b0206dd8aa5823af17d9254b91042945e"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 93853
+}

@@ -1,0 +1,17 @@
+Blueprint/Ch05.lean:44:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:52:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:85:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:85:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:101:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:145:0: warning: Definition `MD.Ch05.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+Blueprint/Ch05.lean:325:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:348:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:424:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:445:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:454:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:464:8: warning: declaration uses `sorry`
