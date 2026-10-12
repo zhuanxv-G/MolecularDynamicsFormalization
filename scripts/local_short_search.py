@@ -43,6 +43,8 @@ variable {{E : Type*}} [NormedAddCommGroup E] [NormedSpace ℝ E]
 '''
 # Only already-checked proofs and actual definitions provide dependencies.
 background='\n\n'.join(r['code'] for r in data.RECORDS if r['source_id'].split('-')[-1] not in pending and not re.search(r'\bsorry\b',r['code']))
+if ch==5:
+    header=header.replace('import Mathlib.Tactic','import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform\nimport Mathlib.Tactic')
 def compile_group(group,label):
     text=header+background+'\n\n';ranges={}
     for key,(r,proof,_) in group.items():

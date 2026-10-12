@@ -19,6 +19,9 @@ def add(*args,**kwargs):
     return _c.add(*args,**kwargs)
 import ch05_section51
 import ch05_section51b
+import ch05_section521
+import ch05_section521b
+import ch05_section521extra
 from blueprint_source import apply_saved_routes
 from ch05_short_candidates import proofs as short_candidates
 apply_saved_routes(5,RECORDS,[key for key in short_candidates if any(r['source_id'].endswith('-'+key) for r in RECORDS)])

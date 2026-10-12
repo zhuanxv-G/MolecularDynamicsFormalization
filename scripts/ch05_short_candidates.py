@@ -58,13 +58,66 @@ proofs['LiePullbackCommutes']='''intro n f Φ g hflow hreg hg t z
   rw [flowFieldTransport n f Φ hflow hreg t z]'''
 proofs['DiracEvaluates']='''intro n φ
   simp [MolecularDynamics.Chapter05Review.diracMeasure,MolecularDynamics.Chapter05Review.diracAction]'''
+proofs['GaussianL2']='''intro n a ha
+  have hc : Continuous (fun z : MolecularDynamics.Chapter05Review.E n => Real.exp (-(∑ i,a i*(z i)^2))) := by fun_prop
+  rw [memLp_two_iff_integrable_sq hc.aestronglyMeasurable]
+  have hi := integrable_cexp_neg_sum_mul_add (ι := Fin n) (b := fun i => ((2*a i : ℝ) : ℂ))
+    (by intro i; simpa using (mul_pos (by norm_num : (0 : ℝ)<2) (ha i))) (fun _ => (0 : ℂ))
+  have hr : Integrable (fun v : Fin n → ℝ => Real.exp (-(∑ i,(2*a i)*(v i)^2))) volume := by
+    simpa only [zero_mul,Finset.sum_const_zero,add_zero,← Complex.ofReal_pow,← Complex.ofReal_mul,
+      ← Complex.ofReal_sum,← Complex.ofReal_neg,Complex.exp_ofReal,Complex.ofReal_re] using hi.re
+  have he : Integrable (fun z : MolecularDynamics.Chapter05Review.E n => Real.exp (-(∑ i,(2*a i)*(z i)^2))) volume := by
+    rw [← (PiLp.volume_preserving_toLp (Fin n)).integrable_comp_emb (MeasurableEquiv.toLp 2 _).measurableEmbedding]
+    exact hr
+  convert he using 1
+  funext z
+  rw [← Real.exp_nat_mul]
+  congr 1
+  simp only [mul_assoc,← Finset.mul_sum]
+  ring'''
+proofs['FiniteJumpL2']='''intro n g S hS hs hc hb
+  have hm : Measurable g := hc.measurable_of_countable_compl (by simpa only [compl_compl] using hS.countable)
+  have hl : ∀ z,∃ C > 0,∀ᶠ x in 𝓝 z,|g x| ≤ C := by
+    intro z
+    by_cases hz : z ∈ S
+    · obtain ⟨C,hC,U,hU,hbU⟩ := hb z hz
+      exact ⟨C,hC,Filter.mem_of_superset hU hbU⟩
+    · have hcont := hc.continuousAt (hS.isClosed.isOpen_compl.mem_nhds hz)
+      refine ⟨|g z|+1,by positivity,?_⟩
+      exact (hcont.abs.eventually_lt_const (lt_add_one _)).mono (fun _ h => h.le)
+  have hbound : ∃ C > 0,∀ x ∈ tsupport g,|g x| ≤ C := by
+    apply hs.induction_on (p := fun A => ∃ C > 0,∀ x ∈ A,|g x| ≤ C)
+    · exact ⟨1,by norm_num,by simp⟩
+    · intro A B hAB hB
+      obtain ⟨C,hC,hCB⟩ := hB
+      exact ⟨C,hC,fun x hx => hCB x (hAB hx)⟩
+    · intro A B hA hB
+      obtain ⟨C,hC,hCA⟩ := hA
+      obtain ⟨D,hD,hDB⟩ := hB
+      refine ⟨max C D,lt_of_lt_of_le hC (le_max_left _ _),?_⟩
+      intro x hx
+      rcases hx with hx|hx
+      · exact (hCA x hx).trans (le_max_left _ _)
+      · exact (hDB x hx).trans (le_max_right _ _)
+    · intro z hz
+      obtain ⟨C,hC,hCL⟩ := hl z
+      exact ⟨{x | |g x| ≤ C},mem_nhdsWithin_of_mem_nhds hCL,C,hC,fun _ hx => hx⟩
+  obtain ⟨C,hC,hBC⟩ := hbound
+  apply hs.memLp_of_bound hm.aestronglyMeasurable C
+  filter_upwards [] with x
+  by_cases hx : x ∈ tsupport g
+  · simpa only [Real.norm_eq_abs] using hBC x hx
+  · rw [image_eq_zero_of_notMem_tsupport hx,norm_zero]
+    exact hC.le'''
 proofs['LiouvilleProduct']='''intro n f ρ z hf hρ
   have hd := hρ.hasFDerivAt.smul hf.hasFDerivAt
   unfold MolecularDynamics.Chapter05Review.liouvillian MolecularDynamics.Chapter05Review.divergence MolecularDynamics.Chapter05Review.lie
   rw [hd.fderiv]
-  simp only [ContinuousLinearMap.toLinearMap_add,ContinuousLinearMap.toLinearMap_smul,
-    LinearMap.trace_add,LinearMap.trace_smul,ContinuousLinearMap.toLinearMap_smulRight,
-    LinearMap.trace_smulRight]
+  change -(LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)
+    (ρ z • (fderiv ℝ f z).toLinearMap+(fderiv ℝ ρ z).toLinearMap.smulRight (f z))) =
+    -ρ z*LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap-
+      (fderiv ℝ ρ z) (f z)
+  simp only [map_add,map_smul,LinearMap.trace_smulRight,smul_eq_mul]
   ring'''
 proofs['HamiltonianSkewExpression']='''intro n f u hf hu hdiv z
   rw [liouvilleProduct n f u z (hf z) (hu z),hdiv z]

@@ -48,12 +48,12 @@ def solutionOperator {X : Type*} (Φ : ℝ → X → X) (t : ℝ) (g : X → ℝ
 def pullback {X : Type*} (Φ : ℝ → X → X) (g : X → ℝ) (t : ℝ) (z : X) := g (Φ t z)
 ```
 
-### MD.Ch05.pullback (Blueprint/Ch05.lean:36)
+### MD.Ch05.pullback (Blueprint/Ch05.lean:37)
 ```lean
 def pullback {X : Type*} (Φ : ℝ → X → X) (g : X → ℝ) (t : ℝ) (z : X) := g (Φ t z)
 ```
 
-### MD.Ch05.solutionOperator (Blueprint/Ch05.lean:84)
+### MD.Ch05.solutionOperator (Blueprint/Ch05.lean:85)
 ```lean
 def solutionOperator {X : Type*} (Φ : ℝ → X → X) (t : ℝ) (g : X → ℝ) := MolecularDynamics.Chapter05Review.pullback Φ g t
 ```

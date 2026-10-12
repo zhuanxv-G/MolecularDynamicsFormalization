@@ -15,6 +15,26 @@
 | MD-5.1-SolutionOperator | 181/202 | PASS | 待网站审计 | self-contained |
 | MD-5.1-CoordinateLie | 181/202 | PASS | 待网站审计 | self-contained |
 | MD-5.1-LiePullbackCommutes | 181/202 | PASS | 待网站审计 | incomplete |
+| MD-5.2.1-DensityOn | 182/203 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-ProbabilityDensityOn | 182/203 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-DensityOnNormalization | 182/203 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-DensityProbability | 182/203 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-DensityMeasureOn | 182/203 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-LebesgueClosure | 182/203 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-BorelSigma | 182/203 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-DensityProbabilityBounds | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-DomainL2 | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-L2Norm | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-L2Inner | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-L2NormSquare | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-L2Complete | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-L2SymmetricBilinear | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-CompactL2 | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-DensityAverageOn | 184/205 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-ClosedSupport | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-GaussianL2 | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-FiniteJumpL2 | 183/204 | PASS | 待网站审计 | self-contained |
+| MD-5.2.1-NormalizedAverageFormula | 184/205 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -54,7 +74,7 @@ def lie {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynami
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:19](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:19>)（`MD.Ch05.lie`）。
+位置：[Blueprint/Ch05.lean:20](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:20>)（`MD.Ch05.lie`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -103,7 +123,7 @@ theorem trajectoryChain (f : E → E) (φ : E → ℝ)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch05.lean:23](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:23>)（`MD.Ch05.trajectoryChain`）。
+位置：[Blueprint/Ch05.lean:24](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:24>)（`MD.Ch05.trajectoryChain`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -150,7 +170,7 @@ def flow {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynam
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:31](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:31>)（`MD.Ch05.flow`）。
+位置：[Blueprint/Ch05.lean:32](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:32>)（`MD.Ch05.flow`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -194,7 +214,7 @@ def pullback {X : Type*} (Φ : ℝ → X → X) (g : X → ℝ) (t : ℝ) (z : X
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:36](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:36>)（`MD.Ch05.pullback`）。
+位置：[Blueprint/Ch05.lean:37](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:37>)（`MD.Ch05.pullback`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -245,7 +265,7 @@ theorem flowFieldTransport :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:40](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:40>)（`MD.Ch05.flowFieldTransport`）。
+位置：[Blueprint/Ch05.lean:41](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:41>)（`MD.Ch05.flowFieldTransport`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -297,7 +317,7 @@ theorem pullbackPDE :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:48](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:48>)（`MD.Ch05.pullbackPDE`）。
+位置：[Blueprint/Ch05.lean:49](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:49>)（`MD.Ch05.pullbackPDE`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -344,7 +364,7 @@ theorem steadyFirstIntegral :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:56](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:56>)（`MD.Ch05.steadyFirstIntegral`）。
+位置：[Blueprint/Ch05.lean:57](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:57>)（`MD.Ch05.steadyFirstIntegral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -390,7 +410,7 @@ theorem coordinatePullback {n : ℕ} (Φ : ℝ → MolecularDynamics.Chapter05Re
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch05.lean:79](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:79>)（`MD.Ch05.coordinatePullback`）。
+位置：[Blueprint/Ch05.lean:80](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:80>)（`MD.Ch05.coordinatePullback`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -434,7 +454,7 @@ def solutionOperator {X : Type*} (Φ : ℝ → X → X) (t : ℝ) (g : X → ℝ
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:84](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:84>)（`MD.Ch05.solutionOperator`）。
+位置：[Blueprint/Ch05.lean:85](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:85>)（`MD.Ch05.solutionOperator`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -477,7 +497,7 @@ theorem coordinateLie : ∀ n (f : MolecularDynamics.Chapter05Review.E n → Mol
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:87](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:87>)（`MD.Ch05.coordinateLie`）。
+位置：[Blueprint/Ch05.lean:88](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:88>)（`MD.Ch05.coordinateLie`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -528,7 +548,7 @@ theorem liePullbackCommutes : ∀ n (f : MolecularDynamics.Chapter05Review.E n �
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:97](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:97>)（`MD.Ch05.liePullbackCommutes`）。
+位置：[Blueprint/Ch05.lean:98](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:98>)（`MD.Ch05.liePullbackCommutes`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -537,3 +557,895 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 缺失/继续路线：所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证。
 
 签名SHA256：`a82277477e3a09fadc4e119f854e7b7e3e1e17761d293d3832840fa96a5dae51`；原文SHA256：`a1f21729195e8b4ea56a9e0bb3387d3092c4bb7f510dfb761e027535400add78`。
+
+## 1. MD-5.2.1-DensityOn · definition · 印刷p.182 / PDFp.203
+
+### 2. 原文陈述
+
+> Let $D\subset\mathbb R^m$ be a suitable set comprising the collection of admissible phase space points $z$. A density on $D$ is a function $\rho:D\to\mathbb R$ such that (i) $\rho(z)\geq0,z\in D$, and (ii) $\int_D\rho\,d\omega<\infty$, where $d\omega=dz_1dz_2\cdots dz_m$ (i.e. $\int_D\rho\,d\omega$ is the integral of the measurable function $\rho$ in the Lebesgue sense).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def densityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Prop :=
+  NullMeasurableSet D volume ∧ AEMeasurable ρ (volume.restrict D) ∧
+    (∀ z ∈ D,0 ≤ ρ z) ∧ IntegrableOn ρ D
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.densityOn；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]域外值不影响受限积分；NullMeasurableSet表达Lebesgue完备化可测域，AEMeasurable表达受限Lebesgue可测函数；非负且可积对应有限非负积分。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:105](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:105>)（`MD.Ch05.densityOn`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`98b8e21182a24882ee9eeff0d0cc09baa4f2803ca20f42f2e4a7a32f2aeabd80`；原文SHA256：`4734355ec17700d6600c85bc496f39eb05c195bb19f4d0ab37efec0387ec9a21`。
+
+## 1. MD-5.2.1-ProbabilityDensityOn · definition · 印刷p.182 / PDFp.203
+
+### 2. 原文陈述
+
+> A probability density function (or p.d.f.) on $D$ is a density which is normalized so that $\int_D\rho\,d\omega=1$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def probabilityDensityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Prop :=
+  densityOn D ρ ∧ (∫ z in D,ρ z)=1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.probabilityDensityOn；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:110](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:110>)（`MD.Ch05.probabilityDensityOn`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`805015f8d69ea57c33a45b089fff62b97c4dd2105fa515fdc524ba00b61da552`；原文SHA256：`031e048b8d2afacd3029a99961a7b4fd529cb74c74b76d7452b74aa4cb33d64a`。
+
+## 1. MD-5.2.1-DensityOnNormalization · unnumbered_claim · 印刷p.182 / PDFp.203
+
+### 2. 原文陈述
+
+> Any density (with positive total integral) can be normalized by dividing by $\int_D\rho\,d\omega$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem densityOnNormalization : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ),
+  densityOn D ρ → 0 < (∫ z in D,ρ z) →
+    probabilityDensityOn D (fun z => ρ z/(∫ x in D,ρ x))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.densityOnNormalization；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:114](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:114>)（`MD.Ch05.densityOnNormalization`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/DensityOnNormalization.json；blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.lean；blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.log。
+
+签名SHA256：`ba1e9f0186f42af9a0ae509476532b3238b52f987b8d4ad417d6fa6d78ecc912`；原文SHA256：`45f6efed66034de3f41c6974dfe3e1496572321ed1e465dba051250d7a3f0eb6`。
+
+## 1. MD-5.2.1-DensityProbability · definition · 印刷p.182 / PDFp.203
+
+### 2. 原文陈述
+
+> For any measurable subset $A$ of $D$, and probability density $\rho$, we define $\operatorname{Pr}(A)\stackrel{\rm def}{=}\int_A\rho\,d\omega$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def densityProbability {n : ℕ} (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) : ℝ :=
+  ∫ z in A,ρ z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.densityProbability；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:124](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:124>)（`MD.Ch05.densityProbability`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`60da129be5a4e193c0beafee3d1583498a0d1a3e72f21a52b26d666f4d3e38a3`；原文SHA256：`ffbcb17d95fdd005853e83767e1cdb84d681cc0ba111d471081af4112c9a4408`。
+
+## 1. MD-5.2.1-DensityMeasureOn · definition · 印刷p.182 / PDFp.203
+
+### 2. 原文陈述
+
+> For any measurable subset $A$ of $D$, and probability density $\rho$, we define $\operatorname{Pr}(A)\stackrel{\rm def}{=}\int_A\rho\,d\omega$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def densityMeasureOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (volume.restrict D).withDensity (fun z => ENNReal.ofReal (ρ z))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.densityMeasureOn；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际受限Lebesgue测度的withDensity实现；概率归一化需要上条完整条件，不限制一般概率测度都必须有密度。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:129](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:129>)（`MD.Ch05.densityMeasureOn`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`5314dd5226170b725353d384e15bc27680da60e39b5dc61a57c7c3a9c4dcf3f7`；原文SHA256：`b4c17486456eeaf7e573899ff37b32c343ff6a658aa580e583408c8141ba1616`。
+
+## 1. MD-5.2.1-LebesgueClosure · unnumbered_claim · 印刷p.182 / PDFp.203
+
+### 2. 原文陈述
+
+> The technical requirement is that $D$ be Lebesgue-measurable. Open and closed sets in $\mathbb R^m$ are Lebesgue-measurable, for example a rectangular box. Sets which are constructed by taking countable unions or intersections of measurable sets are measurable.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem lebesgueClosure : ∀ n (s : Set (MolecularDynamics.Chapter05Review.E n)) (A : ℕ → Set (MolecularDynamics.Chapter05Review.E n)),
+  (IsOpen s → NullMeasurableSet s volume) ∧ (IsClosed s → NullMeasurableSet s volume) ∧
+  ((∀ k,NullMeasurableSet (A k) volume) →
+    NullMeasurableSet (⋃ k,A k) volume ∧ NullMeasurableSet (⋂ k,A k) volume)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.lebesgueClosure；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:133](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:133>)（`MD.Ch05.lebesgueClosure`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/LebesgueClosure.json；blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.lean；blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.log。
+
+签名SHA256：`b72c4766c1b4d691e23f867352b5c6a862f390947843af5adabf9909fbe78273`；原文SHA256：`ec657829a9b635047743588658375a3d83f6d142e9bcd5f0a56a9bf5660f29c7`。
+
+## 1. MD-5.2.1-BorelSigma · definition · 印刷p.182 / PDFp.203
+
+### 2. 原文陈述
+
+> A suitable family of sets on which Lebesgue measure can be defined is the so-called Borel $\sigma$-algebra obtained by countable unions, intersections, or relative complements of open balls in $\mathbb R^m$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def borelSigma (n : ℕ) : MeasurableSpace (MolecularDynamics.Chapter05Review.E n) := borel (MolecularDynamics.Chapter05Review.E n)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.borelSigma；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:143](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:143>)（`MD.Ch05.borelSigma`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`bd0833b2d4b403751e99e1cedfc1f585d3a9eff4d3afaca5029ddad5570e0108`；原文SHA256：`7c5cd8da6f455fb755491b3856eaee7a0800590ff403b58d445d756419a0ee9c`。
+
+## 1. MD-5.2.1-DensityProbabilityBounds · unnumbered_claim · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> It is automatic that $0\leq\operatorname{Pr}(A)\leq1$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem densityProbabilityBounds : ∀ n (D A : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ),
+  probabilityDensityOn D ρ → A ⊆ D → NullMeasurableSet A volume →
+    0 ≤ densityProbability ρ A ∧ densityProbability ρ A ≤ 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.densityProbabilityBounds；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | 原上下文的A⊆D和Lebesgue可测A明确写入，不把“µ已是概率测度”代替密度归一化所需证明。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:147](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:147>)（`MD.Ch05.densityProbabilityBounds`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/DensityProbabilityBounds.json；blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.lean；blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.log。
+
+签名SHA256：`8381f809ad5005032ca8e82f9179c9ec55c8f22033477112f0a8a8054b658a7e`；原文SHA256：`81f3342d0dbe2beeeead0a387da678174ec5a614d26f1cb2e5200279e0aecffa`。
+
+## 1. MD-5.2.1-DomainL2 · definition · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> The set of functions from $D\subset\mathbb R^m$ to $\mathbb R$ which satisfy $\int_D\rho^2(z)\,d\omega<\infty$ is referred to as the space $L^2(D)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+@[reducible] def domainL2 (n : ℕ) (D : Set (MolecularDynamics.Chapter05Review.E n)) := Lp ℝ 2 (volume.restrict D)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.domainL2；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]Mathlib Lp使用Lebesgue可测函数的AE等价类；书中未写商空间，若不取AE类，所谓范数可能为0而原始函数非零。保留一般D；透明别名复用实际Lp的实例。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:164](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:164>)（`MD.Ch05.domainL2`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0d715d1b5e97defffa21b24bd2903ff6b078caec04c7e482bf65004e6cca124c`；原文SHA256：`10ae9561349dad4a979e41e473822e2447330a46a4a8af03d530bcd8700187aa`。
+
+## 1. MD-5.2.1-L2Norm · definition · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> we define the $L^2(D)$ norm by $\|\rho\|_{L^2(D)}\stackrel{\rm def}{=}[\int_D\rho^2(z)\,d\omega]^{1/2}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def domainL2Norm {n : ℕ} {D : Set (MolecularDynamics.Chapter05Review.E n)} (g : domainL2 n D) := ‖g‖
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.domainL2Norm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:167](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:167>)（`MD.Ch05.domainL2Norm`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2ea5a2d7007015fe3646c8d6804cb808a031d0e7e1f1f3ae3981c123e6116776`；原文SHA256：`bbae12d61f657592c62ec0c22cf791f83e549a8fb09951edc723ea7127070509`。
+
+## 1. MD-5.2.1-L2Inner · definition · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> for any $\phi,\psi\in L^2(D)$, the inner product is defined by $\langle\phi,\psi\rangle_{L^2(D)}\stackrel{\rm def}{=}\int_D\phi(z)\psi(z)\,d\omega$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def domainL2Inner {n : ℕ} {D : Set (MolecularDynamics.Chapter05Review.E n)} (f g : domainL2 n D) : ℝ :=
+  ∫ z in D,f z*g z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.domainL2Inner；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:170](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:170>)（`MD.Ch05.domainL2Inner`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`748ad005dc148616529498a7b693195eab16c5ec52ee2e0d8eb3e6c5c2aa0307`；原文SHA256：`168cc07fd487538bd499d16ae3870a735486217752d189160d0ce9ff4699768c`。
+
+## 1. MD-5.2.1-L2NormSquare · unnumbered_claim · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> Thus $\|\rho\|_{L^2(D)}^2=\langle\rho,\rho\rangle_{L^2(D)}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem domainL2NormSquare : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (g : domainL2 n D),
+  domainL2Norm g^2=domainL2Inner g g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.domainL2NormSquare；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:174](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:174>)（`MD.Ch05.domainL2NormSquare`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/L2NormSquare.json；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.lean；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log。
+
+签名SHA256：`fb866d12914ca47dfefd21332593236ec8d330aefda7321c7f68a63067804c8d`；原文SHA256：`48a1c19f1edee248201e6daebb42ca2aaa47bdb830ae026114d2fe5cd5e99522`。
+
+## 1. MD-5.2.1-L2Complete · unnumbered_claim · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> This is a real Hilbert space or complete inner product space.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem domainL2Complete : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (u : ℕ → domainL2 n D),
+  CauchySeq u → ∃ v : domainL2 n D,Tendsto u atTop (𝓝 v)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.domainL2Complete；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完备结论在AE商L²上；原生函数集合的正定性缺AE资格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:182](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:182>)（`MD.Ch05.domainL2Complete`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/L2Complete.json；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.lean；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log。
+
+签名SHA256：`bad5b576ee5f24f9e5489c13b9602cb5bd38e1b0ac6f7ab01d18aeedbc759a2f`；原文SHA256：`8ad31a215f4fdb2da5f8d916671698f2e7bacdb539af1ee2669b239a95a95a4b`。
+
+## 1. MD-5.2.1-L2SymmetricBilinear · unnumbered_claim · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> The inner product is a symmetric, bilinear operation: if $\alpha,\beta$ are real scalars and $f,g,h\in L^2(D)$, then $\langle\alpha f+\beta g,h\rangle=\alpha\langle f,h\rangle+\beta\langle g,h\rangle$, and $\langle f,g\rangle=\langle g,f\rangle$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem domainL2SymmetricBilinear : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (f g h : domainL2 n D) (a b : ℝ),
+  domainL2Inner (a • f+b • g) h=a*domainL2Inner f h+b*domainL2Inner g h ∧
+    domainL2Inner f g=domainL2Inner g f
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.domainL2SymmetricBilinear；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:188](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:188>)（`MD.Ch05.domainL2SymmetricBilinear`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/L2SymmetricBilinear.json；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.lean；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log。
+
+签名SHA256：`79dfc97b2f400c9c79f93b19534d64875caed6e74b0a9f74c9d4066c5d1577b0`；原文SHA256：`beb2af9b07e6aa63bcd0d8c5038dbeaf1d989165d4dd617ac97ca5e0e28b19f1`。
+
+## 1. MD-5.2.1-CompactL2 · unnumbered_claim · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> The space $L^2(\mathbb R^m)$ includes for example the continuous functions with compact (closed, bounded) support, where the support of a function $f$ is the closure of the set of arguments for which the function is nonzero and is denoted $\operatorname{supp}f$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem compactL2 : ∀ n (g : MolecularDynamics.Chapter05Review.E n → ℝ),
+  Continuous g → HasCompactSupport g → MemLp g 2 volume
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.compactL2；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:199](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:199>)（`MD.Ch05.compactL2`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/CompactL2.json；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.lean；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log。
+
+签名SHA256：`f3fa335eb925af2162f5f8502036698ce664eea35edd39a534497a58479a64ed`；原文SHA256：`484aa24d1376f361807e82c71117a8549ef1755c3cafcea55edb1a23cccabc84`。
+
+## 1. MD-5.2.1-DensityAverageOn · definition · 印刷p.184 / PDFp.205
+
+### 2. 原文陈述
+
+> Given a density $\rho$, we may identify a collection of functions $g$ for which the integral with respect to $\rho$ is bounded, i.e. for which we can define the inner product $\langle g,\rho\rangle=\int_Dg(z)\rho(z)\,d\omega$, and thus we can define
+> \[\operatorname{Av}_\rho(g)\stackrel{\rm def}{=}\frac{1}{\int_D\rho(z)\,d\omega}\langle g,\rho\rangle=\int_Dg\widehat\rho\,d\omega.\]
+> We term this the spatial average of the function $g$ with respect to the probability measure associated to $\rho$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def densityAverageOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ g : MolecularDynamics.Chapter05Review.E n → ℝ) : ℝ :=
+  (∫ z in D,g z*ρ z)/(∫ z in D,ρ z)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.densityAverageOn；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:205](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:205>)（`MD.Ch05.densityAverageOn`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`d1318fce9f64601f8a64d2558db41fef14c5bb0efc16f33206264b8c0067bafb`；原文SHA256：`a494cffbd0ddd571ab41b072abf1b7f06fdd6c1b96f536c1004ec4e820121a4e`。
+
+## 1. MD-5.2.1-ClosedSupport · definition · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> the support of a function $f$ is the closure of the set of arguments for which the function is nonzero and is denoted $\operatorname{supp}f$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def closedSupport {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → ℝ) : Set (MolecularDynamics.Chapter05Review.E n) := tsupport f
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.closedSupport；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch05.lean:209](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:209>)（`MD.Ch05.closedSupport`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`7627bf18c22980c6c06f514f5574bab21f9ec50e8bd2ec3f9eb333b2b3bd103e`；原文SHA256：`9b1e6818eff8dc848e086c96cc11ccffa90e134d2cf02d26b597cf6855f5a192`。
+
+## 1. MD-5.2.1-GaussianL2 · unnumbered_claim · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> $L^2(\mathbb R^m)$ also includes many other types of functions important in molecular modelling, for example the multivariate Gaussian $\exp(-\sum_{i=1}^m\alpha_i x_i^2)$, where $\alpha_i>0,i=1,2,\ldots,m$ are coefficients; such a function goes rapidly to zero as any $x_i\to\infty$, so the improper integral converges.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gaussianL2 : ∀ n (a : Fin n → ℝ), (∀ i,0 < a i) →
+  MemLp (fun z : MolecularDynamics.Chapter05Review.E n => Real.exp (-(∑ i,a i*(z i)^2))) 2 volume
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.gaussianL2；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:212](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:212>)（`MD.Ch05.gaussianL2`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/GaussianL2.json；blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e.lean；blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e.log；blueprint/ch05/validation/short_search/route-33ad787e469546a83948.lean；blueprint/ch05/validation/short_search/route-33ad787e469546a83948.log；blueprint/ch05/validation/short_search/route-0ee23dfd17269a60820f.lean；blueprint/ch05/validation/short_search/route-0ee23dfd17269a60820f.log。
+
+签名SHA256：`4418de09c191bdd9a21eb59cc3ac45df9495a63ed26393a7a8dc392a59414e31`；原文SHA256：`f3e0632b0f69b9d96b1f9e040f1c2c64632abc6622e3b1c7f09839b25cd61b0e`。
+
+## 1. MD-5.2.1-FiniteJumpL2 · unnumbered_claim · 印刷p.183 / PDFp.204
+
+### 2. 原文陈述
+
+> $L^2(\mathbb R^m)$ also includes the compactly supported functions with finite “jump discontinuities” at a finite number of locations.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem finiteJumpL2 : ∀ n (g : MolecularDynamics.Chapter05Review.E n → ℝ) (S : Set (MolecularDynamics.Chapter05Review.E n)),
+  S.Finite → HasCompactSupport g → ContinuousOn g Sᶜ →
+  (∀ z ∈ S,∃ C > 0,∃ U ∈ 𝓝 z,∀ x ∈ U,|g x| ≤ C) →
+    MemLp g 2 volume
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.finiteJumpL2；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]有限跳跃采用有限异常集外连续且异常点附近有限界的严格资格；仅sup点值不控制跳跃邻域，不假设全局MemLp结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:236](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:236>)（`MD.Ch05.finiteJumpL2`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/FiniteJumpL2.json；blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-FiniteJumpL2.lean；blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-FiniteJumpL2.log。
+
+签名SHA256：`dd551bf5445c7ba67fd7d7b9f48489baf3a69a101eec3e563a594cfc36f7068a`；原文SHA256：`9d774fd8e36eec8398b657103febdc70a0e9306858f1ba50adb21420f20bfe0b`。
+
+## 1. MD-5.2.1-NormalizedAverageFormula · unnumbered_claim · 印刷p.184 / PDFp.205
+
+### 2. 原文陈述
+
+> $\operatorname{Av}_\rho(g)\stackrel{\rm def}{=}\frac{1}{\int_D\rho(z)\,d\omega}\langle g,\rho\rangle=\int_Dg\widehat\rho\,d\omega$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem normalizedAverageFormula : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ g : MolecularDynamics.Chapter05Review.E n → ℝ),
+  densityAverageOn D ρ g=(∫ z in D,g z*(ρ z/(∫ x in D,ρ x)))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch05.normalizedAverageFormula；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch05.lean:276](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:276>)（`MD.Ch05.normalizedAverageFormula`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/NormalizedAverageFormula.json；blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-NormalizedAverageFormula.lean；blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-NormalizedAverageFormula.log。
+
+签名SHA256：`6095e512284727b5375d85a473e327d3d42144ac57adc2e9e1cdf03be846fcdc`；原文SHA256：`f68dc526bb4055973dd1b6db66ba854e81d142da8c57c876178ec65f9f257a53`。

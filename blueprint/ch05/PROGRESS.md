@@ -2,7 +2,7 @@
 
 范围：印刷p.179–209/PDF200–230，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前11条；旧清单映射8/86；本地PASS 11；网站返回0。
+当前31条；旧清单映射20/86；本地PASS 31；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -17,6 +17,26 @@
 | MD-5.1-SolutionOperator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-5.1-CoordinateLie | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-5.1-LiePullbackCommutes | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证。 |
+| MD-5.2.1-DensityOn | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.1-ProbabilityDensityOn | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.1-DensityOnNormalization | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.1-DensityProbability | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.1-DensityMeasureOn | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.1-LebesgueClosure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.1-BorelSigma | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.1-DensityProbabilityBounds | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.1-DomainL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.1-L2Norm | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.1-L2Inner | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.1-L2NormSquare | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.1-L2Complete | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.1-L2SymmetricBilinear | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.1-CompactL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.1-DensityAverageOn | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.1-ClosedSupport | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.2.1-GaussianL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.1-FiniteJumpL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.2.1-NormalizedAverageFormula | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 
 ## 旧86条完整映射
 
@@ -30,18 +50,18 @@
 | CH05-006 | MD-5.1-SteadyFirstIntegral |
 | CH05-007 | MD-5.1-SolutionOperator |
 | CH05-008 | MD-5.1-CoordinateLie |
-| CH05-009 | PENDING：所属节尚未处理 |
-| CH05-010 | PENDING：所属节尚未处理 |
-| CH05-011 | PENDING：所属节尚未处理 |
-| CH05-012 | PENDING：所属节尚未处理 |
-| CH05-013 | PENDING：所属节尚未处理 |
-| CH05-014 | PENDING：所属节尚未处理 |
-| CH05-015 | PENDING：所属节尚未处理 |
-| CH05-016 | PENDING：所属节尚未处理 |
-| CH05-017 | PENDING：所属节尚未处理 |
-| CH05-018 | PENDING：所属节尚未处理 |
-| CH05-019 | PENDING：所属节尚未处理 |
-| CH05-020 | PENDING：所属节尚未处理 |
+| CH05-009 | MD-5.2.1-ProbabilityDensityOn |
+| CH05-010 | MD-5.2.1-DensityOnNormalization |
+| CH05-011 | MD-5.2.1-DensityMeasureOn |
+| CH05-012 | MD-5.2.1-BorelSigma |
+| CH05-013 | MD-5.2.1-DensityProbabilityBounds |
+| CH05-014 | MD-5.2.1-L2Norm |
+| CH05-015 | MD-5.2.1-L2Inner |
+| CH05-016 | MD-5.2.1-L2NormSquare |
+| CH05-017 | MD-5.2.1-L2Complete |
+| CH05-018 | MD-5.2.1-L2SymmetricBilinear |
+| CH05-019 | MD-5.2.1-CompactL2 |
+| CH05-020 | MD-5.2.1-NormalizedAverageFormula |
 | CH05-021 | PENDING：所属节尚未处理 |
 | CH05-022 | PENDING：所属节尚未处理 |
 | CH05-023 | PENDING：所属节尚未处理 |

@@ -1,7 +1,7 @@
 # 接续提示词
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：当前节已提交后先登记第1章BATCH02–23新返回件，再继续第5章§5.2.1密度及真实L²短证明。
+下一步：继续第5章§5.2.2真实边界通量、Liouville乘积及完整积分伴随陈述；复用本节全部基础证明。
 
 先git status，读取AGENTS、CURRENT_STATE顶部、WORK_LOG最新、LOCAL_PIPELINE及当前章PROGRESS。从最近落盘批次接续，核验已有结果后复用，不重做已通过的JSON、Blueprint、证明或构建；未提交半成品核对后继续。
 ## 当前最高优先级范围（2026-10-10用户新指令）

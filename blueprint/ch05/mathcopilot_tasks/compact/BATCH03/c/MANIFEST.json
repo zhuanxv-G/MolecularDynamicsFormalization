@@ -1,0 +1,61 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03c",
+  "source_ids": [
+    "MD-5.2.1-DensityOnNormalization"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 203,
+      "printed_page": 182
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "9814005cc02294a1db540de6c017a47c690689109b55f406d0701ee80dd84529",
+  "lean_sha256": "36a855112b04a20c01e5dac6c38cb0d8e50883de9839f849b88e3f46af438729",
+  "signature_sha256": "ba1e9f0186f42af9a0ae509476532b3238b52f987b8d4ad417d6fa6d78ecc912",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "densityOn",
+      "code_sha256": "98b8e21182a24882ee9eeff0d0cc09baa4f2803ca20f42f2e4a7a32f2aeabd80"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "probabilityDensityOn",
+      "code_sha256": "805015f8d69ea57c33a45b089fff62b97c4dd2105fa515fdc524ba00b61da552"
+    }
+  ],
+  "paste_plus_pdf_bytes": 96549,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3770,
+      "sha256": "1f3d863e6eb87e1dd7e9f6c1f1b72d273068944ac8e0136cf5c8715b9cc5075c"
+    },
+    "BATCH03c_PAGES.pdf": {
+      "bytes": 92779,
+      "sha256": "19df7f2ffd77642eadc3816cb74827d6b4350e738b33f403dede773dd66914eb"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 98629
+}

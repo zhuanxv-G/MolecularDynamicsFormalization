@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n g S hS hs hc hb\n  have hm : Measurable g := hc.measurable_of_countable_compl (by simpa only [compl_compl] using hS.countable)\n  have hl : ∀ z,∃ C > 0,∀ᶠ x in 𝓝 z,|g x| ≤ C := by\n    intro z\n    by_cases hz : z ∈ S\n    · obtain ⟨C,hC,U,hU,hbU⟩ := hb z hz\n      exact ⟨C,hC,Filter.mem_of_superset hU hbU⟩\n    · have hcont := hc.continuousAt (hS.isClosed.isOpen_compl.mem_nhds hz)\n      refine ⟨|g z|+1,by positivity,?_⟩\n      exact (hcont.abs.eventually_lt_const (lt_add_one _)).mono (fun _ h => h.le)\n  have hbound : ∃ C > 0,∀ x ∈ tsupport g,|g x| ≤ C := by\n    apply hs.induction_on (p := fun A => ∃ C > 0,∀ x ∈ A,|g x| ≤ C)\n    · exact ⟨1,by norm_num,by simp⟩\n    · intro A B hAB hB\n      obtain ⟨C,hC,hCB⟩ := hB\n      exact ⟨C,hC,fun x hx => hCB x (hAB hx)⟩\n    · intro A B hA hB\n      obtain ⟨C,hC,hCA⟩ := hA\n      obtain ⟨D,hD,hDB⟩ := hB\n      refine ⟨max C D,lt_of_lt_of_le hC (le_max_left _ _),?_⟩\n      intro x hx\n      rcases hx with hx|hx\n      · exact (hCA x hx).trans (le_max_left _ _)\n      · exact (hDB x hx).trans (le_max_right _ _)\n    · intro z hz\n      obtain ⟨C,hC,hCL⟩ := hl z\n      exact ⟨{x | |g x| ≤ C},mem_nhdsWithin_of_mem_nhds hCL,C,hC,fun _ hx => hx⟩\n  obtain ⟨C,hC,hBC⟩ := hbound\n  apply hs.memLp_of_bound hm.aestronglyMeasurable C\n  filter_upwards [] with x\n  by_cases hx : x ∈ tsupport g\n  · simpa only [Real.norm_eq_abs] using hBC x hx\n  · rw [image_eq_zero_of_notMem_tsupport hx,norm_zero]\n    exact hC.le",
+    "source": "blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-FiniteJumpL2.lean",
+    "log": "blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-FiniteJumpL2.log",
+    "source_sha256": "e3d5d96e81feedc7f6f9d8c25dc4800f467afd34002bf613fecb61c9cfe86f45",
+    "log_sha256": "63c9e899260f32766ab4f2ca9bffd3f7317d6f47f6a62fff8e804a6303403c12"
+  }
+]

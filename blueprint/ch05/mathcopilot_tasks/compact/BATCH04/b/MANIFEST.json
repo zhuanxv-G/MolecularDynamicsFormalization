@@ -1,0 +1,61 @@
+{
+  "batch": "BATCH04",
+  "subtask": "BATCH04b",
+  "source_ids": [
+    "MD-5.2.1-L2Norm"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 204,
+      "printed_page": 183
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "9814005cc02294a1db540de6c017a47c690689109b55f406d0701ee80dd84529",
+  "lean_sha256": "36a855112b04a20c01e5dac6c38cb0d8e50883de9839f849b88e3f46af438729",
+  "signature_sha256": "2ea5a2d7007015fe3646c8d6804cb808a031d0e7e1f1f3ae3981c123e6116776",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "domainL2",
+      "code_sha256": "0d715d1b5e97defffa21b24bd2903ff6b078caec04c7e482bf65004e6cca124c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "domainL2Norm",
+      "code_sha256": "2ea5a2d7007015fe3646c8d6804cb808a031d0e7e1f1f3ae3981c123e6116776"
+    }
+  ],
+  "paste_plus_pdf_bytes": 94043,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3385,
+      "sha256": "8f16c74d501cdcee5f3757862f6cec3efdac0ff4bcdd612fbb4b44cac4e89e88"
+    },
+    "BATCH04b_PAGES.pdf": {
+      "bytes": 90658,
+      "sha256": "becc6ca55516da901ae700f770bd9c706b0a4f052650efb64b43846535dd95f4"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 96098
+}

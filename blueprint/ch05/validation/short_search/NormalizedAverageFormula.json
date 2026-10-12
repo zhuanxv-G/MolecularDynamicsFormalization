@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n D ρ g\n  simp only [densityAverageOn,← mul_div_assoc,integral_div]",
+    "source": "blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-NormalizedAverageFormula.lean",
+    "log": "blueprint/ch05/validation/short_search/route-fc6c1508639bdba0254e-NormalizedAverageFormula.log",
+    "source_sha256": "49ed39dc1d661d55d70e510bfaf95f58efed847aaf1fd4fd340099df745d8265",
+    "log_sha256": "dc756006391c97a50420c27d130f5bb4ad56b6a31b6d71b6cb0a18d3479971f9"
+  }
+]

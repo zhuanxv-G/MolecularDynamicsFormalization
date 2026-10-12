@@ -1,0 +1,33 @@
+warning: in the working copy of 'scripts/register_ch01_batch_returns.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch01/mathcopilot_results/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/handoff/WORK_LOG.zh-CN.md', LF will be replaced by CRLF the next time Git touches it
+[chapter05-blueprint dabf81b0] ch01 returns: register 136 unbound reports and preserve correction proposals
+ 33 files changed, 15914 insertions(+), 689 deletions(-)
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH02_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH03_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH04_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH05_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH06_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH07_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH08_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH09_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH10_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH11_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH12_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH13_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH14_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH15_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH16_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH17_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH18_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH19_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH20_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH21_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH22_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/BATCH23_result.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/integration20261012/PROPOSALS.json
+ create mode 100644 blueprint/ch01/mathcopilot_results/integration20261012/RECEIPT.json
+ create mode 100644 scripts/register_ch01_batch_returns.py
+To https://github.com/zhuanxv-G/MolecularDynamicsFormalization.git
+   8788ba7e..dabf81b0  chapter05-blueprint -> chapter05-blueprint
+Registered and pushed 136 returns; 30 source proposals remain unapplied; frozen source/Lean verified.

@@ -1,0 +1,15 @@
+blueprint\ch05\validation\short_search\route-fc6c1508639bdba0254e.lean:50:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-fc6c1508639bdba0254e.lean:50:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-fc6c1508639bdba0254e.lean:93:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-fc6c1508639bdba0254e.lean:153:13: error(lean.unknownIdentifier): Unknown identifier `integrable_cexp_neg_sum_mul_add`
+blueprint\ch05\validation\short_search\route-fc6c1508639bdba0254e.lean:149:101: error: unsolved goals
+n : ℕ
+a : Fin n → ℝ
+ha : ∀ (i : Fin n), 0 < a i
+hc : Continuous fun z => Real.exp (-∑ i, a i * z.ofLp i ^ 2)
+⊢ Integrable (fun x => Real.exp (-∑ i, a i * x.ofLp i ^ 2) ^ 2) volume

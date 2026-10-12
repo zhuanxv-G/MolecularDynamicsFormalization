@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n D ρ hd hp\n  refine ⟨⟨hd.1,hd.2.1.div_const _,?_,hd.2.2.2.div_const _⟩,?_⟩\n  · intro z hz\n    exact div_nonneg (hd.2.2.1 z hz) hp.le\n  · rw [integral_div,div_self hp.ne']",
+    "source": "blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.lean",
+    "log": "blueprint/ch05/validation/short_search/route-9fac6262bb578b4ca64f.log",
+    "source_sha256": "3116283cfe1f9cd72d0c588addfb5a22572579cc00f24da141543db6b5421b98",
+    "log_sha256": "0bb4de313b9ba1b32d5bcb7a75b26665824771a80ca57a78441d09ee41455d06"
+  }
+]
