@@ -1,0 +1,43 @@
+Chapter 5
+Phase Space Distributions and Microcanonical
+Averages
+
+
+
+
+
+In the previous chapters, we considered the approximation of Hamiltonian trajecto-
+ries. In this chapter we study the paths emanating from the collection of all initial
+conditions within a given set. This is the starting point for statistical mechanics
+which allows the calculation of averages.
+  Making sense of molecular dynamics requires that we understand and quantify
+the uncertainty due to its chaotic nature. Ultimately we will see that it is useful to
+think of the visited positions and velocities of the atoms as being spread out over the
+phase space with a certain density. Trajectories of a molecular system then trace out
+random paths which effectively sample the underlying distribution. In this picture,
+individual movements of the atoms have no relevance, but what is interesting and
+relevant is their average motions, or the likelihood of ﬁnding an atom at a given
+location relative to its neighbors. The use of averages and a statistical mechanical
+interpretation is therefore intimately connected with the nonlinear and chaotic nature
+of molecular dynamics.
+   Consider a set of points in phase space, viewing each point as an initial condition
+for a trajectory of a dynamical system. The set is mapped forward in time by
+solving some differential equations. At any given instant in time we may examine
+the snapshot of all the trajectories. The points of the initial set (or any later image of
+it) do not have to be (and indeed are unlikely to be) uniformly distributed throughout
+the phase space. For example the collection may favour certain energies (or they may
+all have the same energy), or, due to some arbitrariness in their selection, they may
+be concentrated in one small, localized region of the phase space. As the trajectories
+are evolved, the way the points are dispersed would also be expected to vary in time.
+One may observe that the paths spread out and eventually cover an extended region,
+or they may remain clumped together for all time.
+  To discuss the changes in the relative concentrations of phase points in one
+or another region, we introduce the concept of a probability measure for the
+distribution of phase space points. Normally this is represented by a density, a non-
+negative function of the phase space variables that can be used to characterize sets
+
+
+
+© Springer International Publishing Switzerland 2015                                179
+B. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied
+Mathematics 39, DOI 10.1007/978-3-319-16375-8_5

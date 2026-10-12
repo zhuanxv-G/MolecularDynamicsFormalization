@@ -1,0 +1,55 @@
+184                           5  Phase Space Distributions and Microcanonical Averages
+
+
+  Given a density    , we may identify a collection of functions g for which the
+integral with respect to   is bounded, i.e. for which we can deﬁne the inner product        R
+hg;  i D D g.z/ .z/d!, and thus we can deﬁne
+                                        Z
+                                       def    1
+               Av .g/ D R          hg;  i D   g O d!:
+                   D  .z/d!
+                              D
+
+We term this the spatial average of the function g with respect to the probability
+measure associated to   .
+
+
+
+5.2.2  Liouville Equation
+
+
+We now use the concept of a smooth probability density to discuss the change in
+concentration of points present in a given small volume in phase space.
+   Let   .z; t/ be the probability density associated to a collection of phase points
+moving under a vector ﬁeld f on the phase space Rm. Let A be a suitable region
+of volume V within the phase space (say a rectangular m-dimensional box). The
+fraction  of phase points present in A at time t is the integral of  over A:
+                              Z
+                                      .t/ D      .z; t/d!;
+
+                        A
+
+which may be viewed as a smooth function of time. On the one hand
+
+                             Z
+                         d       @ .z; t/
+                 D         d!;
+                                dt           @t
+                       A
+
+while, on the other hand, this same rate of change may be written as the negative of
+the particle ﬂux over the boundary of A:
+                             Z
+                       d
+                D       f n  .z; t/d  ;
+                             dt
+                              @A
+
+where n.z/ is the unit outward normal to the surface @A at the point z and d   is the
+surface element. Using the divergence theorem, we may rewrite the latter quantity
+as a volume integral:
+                           Z
+                     d
+               D   r  .f.z/  .z; t//d!:
+                           dt
+                      A

@@ -1,0 +1,13 @@
+intro n f Φ hflow hreg t z
+  have hs : ContDiff ℝ 2 (Φ t) := by
+    simpa only [Function.comp_def,Function.uncurry_apply_pair] using
+      hreg.comp (contDiff_const.prodMk contDiff_id : ContDiff ℝ 2 (fun x : MolecularDynamics.Chapter05Review.E n => (t,x)))
+  have hd := (hs.differentiable (by norm_num) (Φ 0 z)).hasFDerivAt.comp_hasDerivAt 0 (hflow.2.2 0 z)
+  simp only [hflow.1,Function.comp_def] at hd
+  have heq : (fun s : ℝ => Φ t (Φ s z))=(fun s => Φ (s+t) z) := by
+    funext s
+    rw [← hflow.2.1 t s z,add_comm t s]
+  rw [heq] at hd
+  have ht : HasDerivAt (fun s : ℝ => Φ (s+t) z) (f (Φ t z)) 0 := by
+    simpa using (hflow.2.2 (0+t) z).comp 0 ((hasDerivAt_id 0).add_const t)
+  exact hd.unique ht

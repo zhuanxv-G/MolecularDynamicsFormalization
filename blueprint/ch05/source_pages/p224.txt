@@ -1,0 +1,61 @@
+5.5  Dynamical Averages                                                       203
+
+
+
+
+    2                             2                             2                             2
+
+
+    1                             1                             1                             1
+
+
+y  0                            y   0                            y   0                            y  0
+
+
+    -1                                    -1                                    -1                                    -1
+
+
+    -2                                    -2                                    -2                                    -2
+      -2     -1    0     1     2         -2     -1    0     1     2         -2     -1    0     1     2         -2     -1    0     1     2
+                  x                                x                                x                                x
+
+Fig. 5.7 The early evolution of the discrete set of initial conditions in their projection onto
+positions, for t D 0; 0:2; : : : ; 1:8, is shown in the left-most panel. The subsequent panels show
+the positions of trajectories at t D 8; 16; 24
+
+
+the nonuniform covering of the area traced out by the pendulum, thus we would not
+necessarily obtain similar averages until a very long time had passed. Behavior like
+this is observed in typical molecular models.
+
+
+
+5.5  Dynamical Averages
+
+
+Although the computation of stationary averages is one of the most common uses
+of molecular dynamics, there is also a need for methods that allow exploration of
+dynamical processes. We have already seen that the chaotic nature of molecular
+dynamics means that trajectories are highly sensitive to initial conditions; in the
+terminology of numerical analysis, such a calculation is ill-conditioned. On the
+other hand it is well known that many molecular systems evolve along sequential
+pathways that can be viewed as the bundles of trajectories emanating from a
+collection of initial conditions. An example of a dynamical calculation is a transition
+time, another is the rate of phase space exploration (as measured by the average
+distance travelled in a given time). These are quite different; the ﬁrst relies on a
+spatial localization of the initial and ﬁnal states; the second is more likely a global
+average across many states.
+   In order to deﬁne dynamical averages and to describe methods to calculate such
+quantities, we introduce a straightforward approach based on replacing dynamical
+averages with stationary averages of an observable that incorporates the action of
+the ﬂow map. Let a and b be mappings from the phase space to the same Euclidean
+space, and deﬁne the temporal correlation of a and b (on the surface of energy E) by
+
+
+
+                                   def
+                 Cab. / D kAvHDE .a.Ft.z//  b.z//
+                          Z
+            D kZE 1   a.Ft.z//  b.z/ıŒH  E d!;
+
+                              ˙E

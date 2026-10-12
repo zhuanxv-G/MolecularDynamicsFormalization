@@ -1,0 +1,51 @@
+206                           5  Phase Space Distributions and Microcanonical Averages
+
+5.6  Numerical Methods and Invariant Distributions
+
+
+In the previous section, we introduced the temporal average of a function along
+a solution of a differential equation (as a means of computing the microcanonical
+ensemble average). Since we cannot compute an exact trajectory, we would hope
+that such an average could be computed in an analogous way using a numerical
+method. If zn represents the approximation to z.tn/, then we might attempt to
+estimate Ng  by
+
+             Xn
+                                              Ng     lim n  1     g.zk/:
+                      n!1
+                                         kD0
+
+However, as is well known, numerical methods may introduce growing errors so
+an inﬁnite average might not make sense, even if the time average does! Still we
+might hope that trajectory averages could be approximated by discrete averages
+of moderately long length. In the several examples in this chapter, we have used
+numerical methods to simulate Hamiltonian dynamics in order to gain intuition
+about their ergodic properties, but we have not discussed the effect of the choice
+of the discretization method itself on this issue.
+  We have seen that the Liouville equation deﬁnes the propagation of the distri-
+bution associated to system of differential equations. In a similar way, a numerical
+method znC1 D Fh.zn/ induces an effective distributional propagator. One way
+to understand this propagator  is to  interpret the numerical method as being
+approximately equivalent to the solution of a perturbed differential equation
+
+                        dz
+              D f.z/ C hrf .r/.z/       Qf h.z/:
+                           dt
+
+The perturbation term may be viewed as the ﬁnite truncation of the perturbative
+expansion obtained from the backward error analysis using the methods of the
+previous chapter. (r is the order of the numerical method.) Let us assume that the
+perturbed equation is a realistic model for the numerical solutions, then deﬁne the
+evolving density by
+
+                      @             def
+               D L                  D Lf C hrLf .r/  :                                                                                           Qf                            @t
+
+Under suitable boundedness assumptions on the remainder, we could expect that the
+distributional error remains bounded by a quantity of order hr. Unfortunately, it is
+not always true that  remains bounded.
+  As a simple illustration, consider the harmonic oscillator with Hamiltonian
+H.q; p/ D p2=2 C q2=2 and the invariant distributions obtained using several
+numerical methods. Applying Forward Euler to the harmonic oscillator, we have
+
+                   qnC1 D qn C hpn;   pnC1 D pn   hqn;

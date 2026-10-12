@@ -1,0 +1,51 @@
+5.4  Temporal Averages and Numerical Computations                                197
+
+
+  More generally,  if a given system has a ﬁrst integral (conserved quantity)
+I D I.z/, different from the energy, which is preserved along trajectories, then the
+average of this conserved quantity (and any other quantity that depends upon it) will
+be dependent on the choice of initial condition.
+
+
+
+5.4.1  The Concept of Ergodicity
+
+
+While being mindful of the examples given above, there are many systems which,
+at least for a useful range of energy, appear to have the property that averages
+are independent of initial condition. Systems for which the trajectory averages are
+the same as phase space averages on the energy surface are said to be ergodic.6
+The concept of ergodicity can be introduced in the setting of general dynamical
+systems, but it is very challenging to analyze this property for realistic systems. An
+analogous concept for stochastic differential equations will be introduced in the next
+chapter; in this setting of randomized models ergodicity is much more amenable
+to mathematical study. Nonetheless, we motivate the concept in this section using
+deterministic systems and numerical examples.
+  The formal deﬁnition of ergodicity takes one of several forms. For our current
+purposes, we opt for a deﬁnition that is close to our intended goal (the computation
+of averages).
+
+Deﬁnition 5.1 A Hamiltonian system is said to be ergodic on an energy surface ˙E
+(microcanonically ergodic) if, for almost all trajectories   emanating from initial
+conditions on ˙E, and for any observable g, the following holds
+
+                                                     Ng D AvHDE.g/;
+
+where Ng   is deﬁned in (5.9). By “almost all” we mean that there could be a low-
+dimensional subset for which the trajectory averages fail to equal the space averages.
+The term “almost all” thus allows for the existence of some ﬁxed points and periodic
+orbits, which are almost certain to be present in a deterministic system.
+   Alternatively, we may say that a dynamical system as ergodic if the probability
+measure of any invariant set A of the ﬂow is either 0 or 1. An invariant set A of the
+ﬂow is one such that
+
+                          Ft.A/ D A;
+
+for all t ¤ 0. To see that this is the same concept of ergodicity as deﬁned above, let
+  be the “indicator function” of the complement of A whose values is zero if z 2 A
+
+
+
+6The term “ergodic” was coined by Boltzmann in 1887. He joined the Greek term ergon (“action,”
+“work”) with hodos (“path”) to refer to an energy-path. An ergodic path one that traverses the
+entire energy surface eventually touching all points thereof.

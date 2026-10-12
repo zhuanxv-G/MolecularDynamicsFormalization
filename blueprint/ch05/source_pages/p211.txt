@@ -1,0 +1,49 @@
+190                           5  Phase Space Distributions and Microcanonical Averages
+
+probability distribution. Let  be a C1 function of the phase variables with compact
+support and deﬁne the time t average by
+                              R
+                                         .q; p/ .q; p; t/d!
+                                N .t/ D D R                                                                                   :                      (5.6)
+                      D  .q; p; t/d!
+                         R               R
+As the ﬂow is Hamiltonian, D  .q; p; t/d!   D  .q; p; 0/d!. Thus the condition
+for N to converge is just that
+
+                    Z
+                                 .q; p/@  .q; p; t/d! ! 0:
+                                       @t
+               D
+
+Since
+
+                             @
+                   D Lf   ;                                      @t
+
+this suggests that the condition for the invariant probability density function 1
+should be
+                        Z
+                     Lf 1d! D 0;
+
+                  D
+
+for all suitable functions  2 C10 .Rm/. We say that 1 satisﬁes
+
+                     L 1 D 0;
+
+in the weak or variational sense. When such a density exists, we refer to the
+associated probability distribution as an invariant distribution. Such invariant
+distributions are essential tools in molecular modelling. In the case of a Hamiltonian
+system, we know that Lf D  Lf, and, moreover,
+
+                         LfH D 0;
+
+so that H is a ﬁrst integral. Any probability distribution whose density is a smooth
+function of H will also be an invariant distribution.
+   In particular, consider the density
+
+                             ".q; p/ D Z" 1 e  .H.q;p/  E/2=2";
+
+where " is an arbitrary small positive constant and E is an accessible energy level.
+We assume that H tends to inﬁnity sufﬁciently rapidly as kzk ! 1 so that the
+exponential decays sufﬁciently rapidly (and thus the total integral exists) and take

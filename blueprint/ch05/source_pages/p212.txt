@@ -1,0 +1,50 @@
+5.3  The Microcanonical Probability Measure                                      191
+
+
+Z" to be a normalization factor that insures that we have, for each ", a well deﬁned
+probability density function.
+  As we decrease ", the density remains invariant under Liouville’s equation. The
+prefactor means that we can think of a sequence of smooth densities taken with
+successively smaller values of " as approaching the limiting distribution deﬁned in
+terms of the delta function by
+
+                            0.q; p/ D ZHDEıŒH.q;1        p/  E ;                      (5.7)
+
+where ZHDE is the appropriate limiting value of the normalization constant. To make
+this statement precise, the deﬁnition of the limit must be taken here in the weak
+sense, that is, we need to study the limit
+                             Z
+                           lim Z" 1     .q; p/ "d!;                         (5.8)
+                        "!0
+                      D
+
+taken in relation to a test function  2 T . The proof that (5.8) can be taken and that
+           Z                          Z
+     lim Z" 1     .q; p/ "d! D  0.q; p/ D ZHDE1       .q; p/ıŒH.q; p/  E d!
+     "!0
+        D                    D
+
+may be found in the PhD thesis of Hartmann [171, Appendix D].
+  From a mathematical perspective, we may prefer to have a concept of the
+microcanonical probability measure that does not involve delta functions. It is
+possible to understand computations of averages with respect to a Dirac-type
+generalized function like   0 as integrals on a set in a space of dimension one
+less than that of the ambient phase space (which is typically an even dimensional
+Euclidean space). We assume the level sets ˙E D  f.q; p/jH.q; p/ D Eg to be
+bounded and deﬁne the invariant measure of a set M  ˙E by
+                              Z
+                                    1
+                      .M/ D  krHkd  ;
+                   M
+
+where d   is the “area element” of the energy surface. (The term “area” in this
+context might be replaced by “hyperarea” or “volume” since we are in many
+dimensions.) If we can represent the m   1-dimensional set M as the image of an
+open set U 2 Rm  1 under a smooth mapping g W Rm  1 ! ˙E, then we have
+                     Z             p
+            Vol.M/ D      detŒ.g0. //Tg0.  / d 1d 2 : : : d m  1:
+
+                  U
+
+Thus the invariant measure of interest to us is a rescaling of the indicated metric by
+the factor 1=krHk.

@@ -1,0 +1,40 @@
+blueprint\ch05\validation\short_search\route-f1a939afe7f0f9c8af2f.lean:27:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-f1a939afe7f0f9c8af2f.lean:27:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-f1a939afe7f0f9c8af2f.lean:39:13: error: Application type mismatch: The argument
+  DifferentiableAt.hasFDerivAt
+    (ContDiff.differentiable hs
+      (Mathlib.Meta.NormNum.isNat_eq_false (Mathlib.Meta.NormNum.isNat_ofNat ℕ∞ω (Eq.refl 2))
+        (Mathlib.Meta.NormNum.isNat_ofNat ℕ∞ω Nat.cast_zero) (Eq.refl false))
+      z)
+has type
+  HasFDerivAt (Φ t) (fderiv ℝ (Φ t) z) z
+but is expected to have type
+  HasFDerivAt ?m.157 ?m.158 (Φ 0 z)
+in the application
+  HasFDerivAt.comp_hasDerivAt 0
+    (DifferentiableAt.hasFDerivAt
+      (ContDiff.differentiable hs
+        (Mathlib.Meta.NormNum.isNat_eq_false (Mathlib.Meta.NormNum.isNat_ofNat ℕ∞ω (Eq.refl 2))
+          (Mathlib.Meta.NormNum.isNat_ofNat ℕ∞ω Nat.cast_zero) (Eq.refl false))
+        z))
+blueprint\ch05\validation\short_search\route-f1a939afe7f0f9c8af2f.lean:66:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fun s => g (Φ s z)
+in the target expression
+  HasDerivAt (g ∘ fun s => Φ s z) ((fderiv ℝ g (Φ 0 z)) (f (Φ 0 z))) 0
+
+case mpr
+n : ℕ
+f : E n → E n
+Φ : ℝ → E n → E n
+g : E n → ℝ
+hflow : Chapter05Review.flow f Φ
+hg : Differentiable ℝ g
+hh : ∀ (t : ℝ) (z : E n), g (Φ t z) = g z
+z : E n
+hd : HasDerivAt (g ∘ fun s => Φ s z) ((fderiv ℝ g (Φ 0 z)) (f (Φ 0 z))) 0
+heq : (fun s => g (Φ s z)) = fun x => g z
+⊢ Chapter05Review.lie f g z = 0

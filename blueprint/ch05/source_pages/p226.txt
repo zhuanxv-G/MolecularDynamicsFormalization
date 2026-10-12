@@ -1,0 +1,51 @@
+5.5  Dynamical Averages                                                       205
+
+
+  An important aspect of a mixing system is the decay of autocorrelation [338].
+Note that
+             Z              Z
+                       .z/  .z; t/d! D     .z/etL   .z; 0/d!
+
+               ˙E                ˙E
+                            Z
+                 D     etL  .z/   .z; 0/d!
+
+                                 ˙E
+                            Z
+                 D     .Ft.z//  .z; 0/d!
+
+                                 ˙E
+                            Z
+                                                           .z; 0/
+                 D     .Ft.z//        E.z/d!:           (5.10)
+                                                   E.z/
+                                 ˙E
+
+
+                       def  .z;0/
+We assume   .z/ D                              is bounded on ˙E, and moreover                            E.z/
+                            Z
+                                                .z; 0/
+                 AvHDE.  / D          E.z/d! D 1
+                                          E.z/
+                                 ˙E
+
+(i.e., the initial density is a probability density on the energy surface), and that the
+system is mixing. Then the integral (5.10) is well deﬁned and we may view it as a
+two-point correlation function of  and    . By the mixing property it must converge  R
+to         .z/ Ed!, thus the average value of   is ultimately independent of the initial   ˙E
+conditions. We have
+                     Z
+                     lim     .Ft.z//.  .z/   1/ Ed! D 0
+               t!1
+                        ˙E
+
+We say that the system loses memory of its initial state. More generally, in a mixing
+system, if a and b are two arbitrary functions of the phase variables, then
+
+                     lim Cab.t/ D AvHDE.a/ AvHDE.b/:
+               t!1
+
+So if either property has mean zero, then the absolute value of the autocorrelation
+function decays with time to zero. In practice, it may take the system a very long
+time to decorrelate from its initial state [135].

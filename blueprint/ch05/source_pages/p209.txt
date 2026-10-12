@@ -1,0 +1,50 @@
+188                           5  Phase Space Distributions and Microcanonical Averages
+
+
+  A simple example which we would wish to include in our framework is the point
+distribution which concentrates all measure at a single point. This type of object
+cannot be directly represented by a smooth function (or even by one in L2), but it
+is nonetheless possible to extend our framework in a way that makes sense in such
+cases.
+
+
+
+5.3.1  Generalized Functions
+
+
+In order to address the need to describe the evolution of a broader class of
+distributions, we introduce the concept of “generalized function” as a mathematical
+framework incorporating, for example, Dirac delta functions.4 Formally, we deﬁne
+a generalized function as a real-valued linear operation (a linear functional) deﬁned
+on a suitable space of functions. The functions on which the generalized function
+acts are called test functions. Some choices for the space of test functions T m
+deﬁned on Rm include:
+•  the C1 functions with compact support in Rm, denoted C10 .Rm/,
+•  the space S.Rm/ of C1 functions on Rm whose derivatives decay rapidly at
+   inﬁnity (the so-called Schwarz space)5
+
+    If f is a bounded, smooth function on Rm, we may deﬁne a generalized function
+Tf by reference to its action on a test function  2 T via integration:
+                             Z
+                                Tf .  / D    f.z/  .z/d!:
+
+                                  Rm
+
+This is very like the L2 inner product, but the functions involved do not both need to
+lie in L2. Nevertheless, we write
+
+                                    Tf .  / D hf;  i;
+
+
+
+
+4The alternate term for “generalized function” is “distribution” which is suggestive of “probability
+distribution,” but “distribution” is a more general concept.
+5The formal deﬁnition of S is
+
+                       S.Rm/ defD ff 2 C1.Rm/jkfk˛;ˇ < 1g;
+
+where ˛ and ˇ are arbitrary multi-indices, i.e. vectors of non-negative integers, and
+
+                                         def                      @ˇ1Cˇ2C:::Cˇmf
+                      kfk˛;ˇ D supz2Rm   1 z˛22     z˛mm                             :                                                                                                  ˇˇˇˇˇz˛1           @zˇ11 @zˇ22    @zˇmm         ˇˇˇˇˇ

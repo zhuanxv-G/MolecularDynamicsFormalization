@@ -1,0 +1,48 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01d",
+  "source_ids": [
+    "MD-5.1-ObservablePullback"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 201,
+      "printed_page": 180
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 202,
+      "printed_page": 181
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "b8d115f66ee62ac7ba894da738ee8156b840a496d46a49fd945c251274709f46",
+  "lean_sha256": "4cb07fc6e2fc1d5a44edfc27b5ac64fbb0101cb7a33d3ee51d7df6ac5aadc612",
+  "signature_sha256": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "pullback",
+      "code_sha256": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810"
+    }
+  ],
+  "paste_plus_pdf_bytes": 117058,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3077,
+      "sha256": "a11e4deeb2dcbbf4c1aab44d592f535f42292008709075ede5d9f6f6cba6a99c"
+    },
+    "BATCH01d_PAGES.pdf": {
+      "bytes": 113981,
+      "sha256": "eca1dea392c35a9b63afdc048e00369b3bde78ce99de3660b7d987b0f2f71515"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 118526
+}

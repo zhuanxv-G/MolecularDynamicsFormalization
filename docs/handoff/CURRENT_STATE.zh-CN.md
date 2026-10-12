@@ -1,11 +1,12 @@
 # 当前可操作状态
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：第4章全部本地流程完成；从本章最后已推送commit建立chapter05-blueprint，按第5章2小时节时间盒接续。
+下一步：当前节已提交后先登记第1章BATCH02–23新返回件，再继续第5章§5.2.1密度及真实L²短证明。
 
 顺序：第2章完成且复用 → 第3章 → 第4章 → 第5章 → 第6章；不进入第7章。
-跨章唯一总进度：docs/handoff/LOCAL_PIPELINE.md；当前章逐条进度：blueprint/ch04/PROGRESS.md。
+跨章唯一总进度：docs/handoff/LOCAL_PIPELINE.md；当前章逐条进度：blueprint/ch05/PROGRESS.md。
 约束：正式库0 sorry且源码/签名不改；第1章交付冻结；其他任务文件保留不动。
+§5.1检查点：11条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。
 §4.4.2检查点：179条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。
 第4章全部本地流程完成：179条、旧映射全覆盖、七段文档、compact预算/哈希/裁页、全部节完整检查已验；网站和导师审校待完成。
 §4.4.1检查点：160条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。

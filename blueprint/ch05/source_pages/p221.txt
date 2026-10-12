@@ -1,0 +1,50 @@
+200                           5  Phase Space Distributions and Microcanonical Averages
+
+
+Rigorous proof that a given Hamiltonian dynamical system is ergodic (or mixing) is
+extremely difﬁcult for even simple cases, and is likely to be dependent on the choice
+of the potentials, themselves.
+   In practical simulation, as we cannot consider an inﬁnite t with ﬁnite compu-
+tational resources, experimenters often must choose between estimating h  ; 1i
+using a single long trajectory, or multiple shorter trajectories. Both techniques have
+their merits, although the correct procedure will be largely system-dependent. For
+example, let us consider a system with a large number of deep wells (consider an
+eggbox-like landscape), where our initial condition resides at a peak in-between
+wells. We may ﬁnd that when using one single trajectory we only sample the space
+inside a small number of basins, as the trajectory takes a long time to escape any
+one well during the simulation. Using multiple trajectories will increase our chance
+of a thorough sampling of the space, as we are likely to visit more wells in general
+from our initial condition.
+  On the other hand, if our initial condition is inside the basin itself, our chances
+of escaping the well over the course of our simulation is maximized in general by
+using one long trajectory (simply observe that one trajectory of 100 steps travels
+further than 100 trajectories of only one step).7
+    It is important to note that a system may be chaotic without being ergodic on
+a particular level set of energy. For additional discussion of chaotic Hamiltonian
+systems and their trajectories, see [64, 174, 386].
+
+Example 5.5 (Double Pendulum) To explore some of the issues related to ergodic-
+ity, let us return to the double pendulum considered in Chap. 3. For given positive
+values of the coefﬁcients, the region swept out in the plane by trajectories can be
+seen to be a union of intersections of pairs of disks centered at the origin and
+.0;  2/, with radii r1, r2 respectively, which themselves represent a point on an
+ellipse in the ﬁrst quadrant. Determining the boundary of this region analytically is
+difﬁcult but it is easy to ﬁnd it numerically. For the special case k1 D k2 D 2,
+`1 D  `2 D  1, and E D 4 that the projected region covered by positions at
+this energy is the interior of the level set U D E shown as a dark oval curve
+in the three panels of Fig. 5.4. If the system were ergodic, we would expect that
+initial conditions with energy E D 4 would result in trajectories which traverse the
+outlined region. Instead, we ﬁnd that the trajectories are generally conﬁned to only
+an isolated subset of the accessible set. The trajectories starting from different initial
+conditions would therefore automatically result in different averages of functions
+that depend on position. The energy surface is three-dimensional (represented as
+the zero-set of a single constraint in four-dimensional space), but apparently it
+bifurcates into a collection of isolated components (bounded by two-dimensional
+closed surfaces). These are none other than the tori predicted by the KAM theory
+[386]. An illustration of the presence of these tori is obtained by plotting the
+
+
+
+7Generally, optimizing the molecular dynamics computational cost between “one long” or “many
+short” is a nontrivial problem which depends on, for example, the availability of parallel computing
+power, for some discussion see [7, 140, 233].

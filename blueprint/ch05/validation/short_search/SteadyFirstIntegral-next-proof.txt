@@ -1,0 +1,18 @@
+intro n f Φ g hflow hg
+  constructor
+  · intro hz t z
+    have ht : ∀ s : ℝ,HasDerivAt (fun u => g (Φ u z)) 0 s := by
+      intro s
+      have hc := (hg (Φ s z)).hasFDerivAt.comp_hasDerivAt s (hflow.2.2 s z)
+      change HasDerivAt (fun u => g (Φ u z)) (MolecularDynamics.Chapter05Review.lie f g (Φ s z)) s at hc
+      rw [hz] at hc
+      exact hc
+    have hh := is_const_of_deriv_eq_zero (fun s => (ht s).differentiableAt) (fun s => (ht s).deriv)
+    simpa only [hflow.1] using hh t 0
+  · intro hh z
+    have hd := (hg (Φ 0 z)).hasFDerivAt.comp_hasDerivAt 0 (hflow.2.2 0 z)
+    have heq : (fun s => g (Φ s z))=(fun _ : ℝ => g z) := funext (fun s => hh s z)
+    simp only [Function.comp_def] at hd
+    rw [heq] at hd
+    simpa only [MolecularDynamics.Chapter05Review.lie,hflow.1] using
+      hd.unique (hasDerivAt_const 0 (g z))

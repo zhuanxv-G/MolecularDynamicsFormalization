@@ -1,0 +1,48 @@
+5.3  The Microcanonical Probability Measure                                      189
+
+
+as a helpful shorthand. For the Dirac delta ı, its action on a function  2 T  is
+ıŒ D  .0/. We write this also as
+                          Z
+                           hı;  i D    ı.z/ .z/d! D  .0/:
+
+
+This concept of the delta function (that appears in the integral) may be motivated
+by introducing a sequence of continuous functions d" having the properties (i)R
+  d"d! D 1, (ii) supp.d"/ ! 0, as " ! 0. Then the action of the delta function
+can be seen as the limit of the actions of the functions d". Alternatively, one may use
+a sequence of smooth functions fd"g, such as, in one dimension,
+
+                              1            z2
+                            d" D p    exp             :
+                              2"        2"
+
+  An example where the smooth probability density in Euclidean space is not
+quite the right one is in the setting of conservative (Hamiltonian) systems such as
+our N-body molecular system, since the evolution is restricted by invariants. The
+most obvious of these is the energy which we know to be a constant of motion.
+Therefore we need to work not on open subsets of the phase space Rm of our
+differential equations, but on lower dimensional submanifolds embedded within the
+phase space, e.g. the energy surface. It will be necessary to assume a density that
+is deﬁned over the submanifold of constant energy. If other invariants are present,
+such as ﬁxed total momentum, the discussion would need to be modiﬁed to reﬂect
+this fact.
+
+
+
+5.3.2  Steady States
+
+
+We are inclined to view the steady states (equilibrium solutions) of the Liouville
+equation as solutions of
+
+                     Lf D 0:
+
+However, this requires a little care. In general, we would like to be able to apply Lf
+to nonsmooth distributions such as Dirac delta functions for which the application
+of the Liouville operator does not make obvious sense (as we have not mentioned
+how to differentiate delta functions). Instead we will deﬁne the stationary solution
+in terms of integrals against test functions.
+  The idea of deﬁning a distribution in terms of an integral against another function
+is very appropriate in the setting of molecular dynamics. We are, after all, interested
+in the convergence of averages of smooth functions with respect to the evolving

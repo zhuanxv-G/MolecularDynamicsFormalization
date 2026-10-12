@@ -1,0 +1,61 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01e",
+  "source_ids": [
+    "MD-5.1-FlowFieldTransport"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 202,
+      "printed_page": 181
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "b8d115f66ee62ac7ba894da738ee8156b840a496d46a49fd945c251274709f46",
+  "lean_sha256": "4cb07fc6e2fc1d5a44edfc27b5ac64fbb0101cb7a33d3ee51d7df6ac5aadc612",
+  "signature_sha256": "e5231ca58f9dc6b3ba1d99969c090d9e5a139230cad45f4e3e93e80a96a7121a",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "flow",
+      "code_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "flow",
+      "code_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c"
+    }
+  ],
+  "paste_plus_pdf_bytes": 91258,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4213,
+      "sha256": "a91a7a58c2ea3495124db7c39fa24ccb2f5a00f71570f0787e3ceefd75fcfa3a"
+    },
+    "BATCH01e_PAGES.pdf": {
+      "bytes": 87045,
+      "sha256": "fb3957e64b659c1f8ed4c99aa3152fd0afe34b7d167a801e106d36314e74c0a8"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 93368
+}

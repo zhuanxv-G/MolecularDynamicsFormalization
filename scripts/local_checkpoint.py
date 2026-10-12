@@ -13,6 +13,12 @@ for r in [full,local]:
     for x in r['inputs']:assert p.sha(ROOT/x['relative_path'])==x['sha256'],x['relative_path']
     for x in r['checks']:assert x['exit_code']==0 and p.sha(rp/x['raw_log'])==x['raw_log_sha256']
 p.checked(rp/'chapter_axioms.log');p.generate();render(ch,p)
+if ch==5:
+    timer=p.BASE/'section_timeboxes.json'
+    boxes=json.loads(timer.read_text(encoding='utf-8')) if timer.exists() else {}
+    if section in boxes:
+        boxes[section].update(status='complete',checked_at=datetime.now().isoformat())
+        p.dump(timer,boxes)
 landing(ch,p,section,'①–⑤§'+section+'已检验')
 finish='--finish' in sys.argv
 if finish:
@@ -49,6 +55,8 @@ if (ROOT/'scripts/local_short_search.py').exists():
     paths.append('scripts/local_short_search.py')
 if (ROOT/f'scripts/ch{ch:02}_short_candidates.py').exists():
     paths.append(f'scripts/ch{ch:02}_short_candidates.py')
+if ch==5:
+    paths += ['scripts/ch05_elementary_candidates.json','scripts/ch05_prepare_short_routes.py']
 if ch==4 and (ROOT/'scripts/partition_ch04_sections.py').exists():
     paths.append('scripts/partition_ch04_sections.py')
 if ch==4 and (ROOT/'scripts/ch04_reconcile_short_batch.py').exists():

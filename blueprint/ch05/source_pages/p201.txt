@@ -1,0 +1,47 @@
+180                           5  Phase Space Distributions and Microcanonical Averages
+
+
+in terms of the relative concentration of phase points. The density may be viewed as
+depending both on time and space. When discussing the changes in the density over
+time, we are taking a macroscopic perspective. The density itself can be viewed as
+another type of state, a macroscopic state or macrostate. In the case of Hamiltonian
+dynamics, the evolution of the density is governed by Liouville’s equation. We
+discuss this equation below. The behavior of the evolving point set is slightly
+complicated by the fact that each trajectory is conﬁned to a particular level set of
+energy. The corresponding points of two trajectories evolving on different level sets
+would be expected to differ for all time in a way that reﬂects the geometry of the
+energy function. To simplify the discussion we initially consider the dependencies
+within a particular energy level set only, however, at the end of the chapter we
+discuss the situation which commonly arises when using a symplectic integrator:
+the energy surface sampled by the discretization method is different from the desired
+energy surface.
+  Our treatment of statistical mechanics is abbreviated and specialized as our focus
+is ultimately on certain types of systems frequently arising in molecular dynamics
+and their numerical treatment. We refer the interested reader to more detailed
+treatments including [57, 70, 168, 197, 264, 297, 372].
+
+
+
+5.1  The Solution Operator
+
+
+In Chap. 3, we introduced the Lie derivative of a function g of the phase variables
+with respect to a dynamical system Pz D f.z/:
+
+                           Lfg D f  rg:
+
+This is obtained by differentiating a composite function g.z.t// with respect to t,
+along a solution trajectory. That is, describing a trajectory in terms of the ﬂow map
+by z.t/ D Ft.  /; t 2 R, we have
+
+                      d
+                       dtg.Ft.  // D .Lfg/.Ft.  //:
+
+
+                                                                                               def
+   Replacing  by z (it is an arbitrary point), deﬁne a function Qg.z; t/ D g.Ft.z//.
+The partial derivative of Qg.z; t/ with respect to t is
+
+      @Qg                 d
+          .t; z/ D rg.Ft.z//     D rg.Ft.z//  f.Ft.z// D .Lfg/.Ft.z//:     @t                   dtFt.z/
+                                                                                 (5.1)

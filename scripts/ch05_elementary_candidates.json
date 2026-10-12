@@ -1,0 +1,11 @@
+{
+  "CoordinateLie": "intro n f z i\n  change (fderiv ℝ (fun x : MolecularDynamics.Chapter05Review.E n => x i) z) (f z)=f z i\n  change (fderiv ℝ (PiLp.proj 2 (fun _ : Fin n => ℝ) i : MolecularDynamics.Chapter05Review.E n →L[ℝ] ℝ) z) (f z)=f z i\n  rw [ContinuousLinearMap.fderiv]\n  rfl",
+  "DensityOnNormalization": "intro n D ρ hd hp\n  refine ⟨⟨hd.1,hd.2.1.div_const _,?_,hd.2.2.2.div_const _⟩,?_⟩\n  · intro z hz\n    exact div_nonneg (hd.2.2.1 z hz) hp.le\n  · rw [integral_div,div_self hp.ne']",
+  "LebesgueClosure": "intro n s A\n  refine ⟨fun h => h.measurableSet.nullMeasurableSet,fun h => h.measurableSet.nullMeasurableSet,?_⟩\n  intro h\n  exact ⟨NullMeasurableSet.iUnion h,NullMeasurableSet.iInter h⟩",
+  "DensityProbabilityBounds": "intro n D A ρ hp hAD hA\n  have hnD : 0 ≤ᵐ[volume.restrict D] ρ := by\n    filter_upwards [ae_restrict_mem₀ hp.1.1] with z hz\n    exact hp.1.2.2.1 z hz\n  have hnA : 0 ≤ᵐ[volume.restrict A] ρ := by\n    filter_upwards [ae_restrict_mem₀ hA] with z hz\n    exact hp.1.2.2.1 z (hAD hz)\n  refine ⟨setIntegral_nonneg_of_ae_restrict hnA,?_⟩\n  change (∫ z in A,ρ z) ≤ 1\n  rw [← hp.2]\n  exact setIntegral_mono_set hp.1.2.2.2 hnD (Filter.Eventually.of_forall hAD)",
+  "L2NormSquare": "intro n D g\n  change ‖g‖^2=∫ z in D,g z*g z\n  simpa only [MeasureTheory.L2.inner_def,Real.inner_apply] using (real_inner_self_eq_norm_sq g).symm",
+  "L2Complete": "intro n D u hu\n  exact cauchySeq_tendsto_of_complete hu",
+  "L2SymmetricBilinear": "intro n D f g h a b\n  have hi : ∀ u v : domainL2 n D,domainL2Inner u v=inner ℝ u v := by\n    intro u v\n    simp only [domainL2Inner,MeasureTheory.L2.inner_def,Real.inner_apply]\n  simp only [hi,inner_add_left,inner_smul_left,real_inner_comm]\n  simp",
+  "CompactL2": "intro n g hg hs\n  exact hg.memLp_of_hasCompactSupport hs",
+  "NormalizedAverageFormula": "intro n D ρ g\n  simp only [densityAverageOn,← mul_div_assoc,integral_div]"
+}

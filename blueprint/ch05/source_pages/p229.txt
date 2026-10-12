@@ -1,0 +1,54 @@
+208                           5  Phase Space Distributions and Microcanonical Averages
+
+
+
+
+          1                                1
+
+
+
+   y 0               y  0
+
+
+
+            -1                                        -1
+
+
+                  0.6   0.8   1    1.2                 0.6   0.8   1    1.2
+                              x                                        x
+
+Fig. 5.8 Long  trajectories of the  isosceles 3-body problem computed using two  different
+timesteps, h D 0:07 (left) and h D 0:01 (right). The discrete values have been used to draw
+small dots which appear to ﬁll in a region bounded by a level curve of the potential energy, with
+some error at the boundary that decreases with stepsize h
+
+
+have plotted two long numerical solutions (100;000 timesteps) in their xy projection
+for two different stepsizes h D 0:07 and h D 0:01, started from a point with energy
+E D   0:5 which is (a) admissible and (b) connected and (c) bounded. The dark
+curve represents the level curve of the potential energy for U D   0:5 while the
+numerical steps are shown in gray. As we can see in this ﬁgure, the points appear
+to shade the region completely, however spilling over a bit from the interior of the
+curve. This overspill is due to the numerical error, as it is decreased by a decrease
+in the stepsize.
+
+  As we have seen in the Chap. 3, when a symplectic method is applied to a
+molecular dynamics problem it induces a perturbed Hamiltonian (energy) function.
+For the Verlet scheme the modiﬁed Hamiltonian is
+
+                  h2
+        QHh D H C   2pTM 1U00.q/M 1p  rU.q/M 1rU.q/ C O.h4/:
+               24
+
+Actually, as explained previously, we must interpret this carefully: a ﬁnite truncation
+of this expansion may characterize the discrete trajectories observed in practice, but
+the series expansion itself does not typically converge. Assuming such a perturbative
+expansion is valid, the issue of ergodicity of the numerical method can be related to
+the corresponding issue for the dynamical system characterized by QHh.
+  A result in [338] provides a formula to calculate the perturbation of the
+microcanonical average induced by the Hamiltonian perturbation. This result has
+been recast in the more convenient form in [14]:
+Theorem 5.1 Let H.q; p/ and QH.q; p/ D H.q; p/ C " .q; p/ be two Hamiltonian
+functions. Suppose the energy surface ˙E D f.q; p/jH.q; p/ D Eg to be compact
+and deﬁne the perturbed energy surface by Q˙E D  f.q; p/j QH.q; p/ D Eg, also
+assumed compact.

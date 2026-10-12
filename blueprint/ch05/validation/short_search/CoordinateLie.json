@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n f z i\n  change (fderiv ℝ (fun x : MolecularDynamics.Chapter05Review.E n => x i) z) (f z)=f z i\n  change (fderiv ℝ (PiLp.proj 2 (fun _ : Fin n => ℝ) i : MolecularDynamics.Chapter05Review.E n →L[ℝ] ℝ) z) (f z)=f z i\n  rw [ContinuousLinearMap.fderiv]\n  rfl",
+    "source": "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f-CoordinateLie.lean",
+    "log": "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f-CoordinateLie.log",
+    "source_sha256": "6c788fdb1bc92334ab3c9cad6da66d8c7472bb8e79e37a7b6edf5bf1d1cdc88f",
+    "log_sha256": "c929e6533a1b329e3b19ce30dd32928deb129f3d261058a6dc7ffbfe30f591fd"
+  }
+]

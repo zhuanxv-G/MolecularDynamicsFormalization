@@ -1,0 +1,51 @@
+182                           5  Phase Space Distributions and Microcanonical Averages
+
+5.2  Evolution of Probability Measure
+
+
+The solution operator describes how a function of the phase variables is mapped
+forward in time under the ﬂow of the differential equation. An alternative (“dual”)
+perspective is in terms of the evolution of the measure (or density) of points in
+phase space. We begin by summarizing a few basic principles needed to provide a
+foundation for working with probability measures.
+
+
+
+5.2.1  Measure, Probability and Function Spaces
+
+
+A probability distribution is assumed to be characterized by a measure on the
+state space of the problem which is the integral of a probability density function
+deﬁned on the phase space of the problem that assigns nonnegative real numbers
+to each state. We outline the technical setting here. To gain a fuller understanding
+of the mathematical issues involved in this chapter, it may be helpful to refer to an
+introductory text on analysis such as [26, 317].
+  Assume, as usual, a system of N atoms with phase space having dimension m
+(typically m D 2Nc D 2Nd D 6N). Let D  Rm be a suitable set comprising the
+collection of admissible phase space points z.1 A density on D is a function    W D !                                    R
+R such        that (i)  .z/    0, z 2 D, and (ii) D d! < 1, where d! D dz1dz2 : : : dzm    R
+(i.e. D d! is the integral of the measurable function   in the Lebesgue sense). A
+probability density function (or p.d.f.) on D is a density which is normalized so that
+                           Z
+                           d! D 1:
+
+                    D
+                                                                 R
+Any density (with positive total integral) can be normalized by dividing by D  d!.
+   For any measurable subset A of D, and probability density   , we deﬁne
+                                Z
+                                                     def
+                           Pr.A/ D    d!:
+
+                          A
+
+
+
+
+
+1The technical requirement is that D be Lebesgue-measurable. There are some pathological sets for
+which this condition fails, but we will always assume the sets we are interested in are measurable.
+Open and closed sets in Rm are Lebesgue-measurable, for example a rectangular box. Sets which
+are constructed by taking countable unions or intersections of measurable sets are measurable. A
+suitable family of sets on which Lebesgue measure can be deﬁned is the so-called Borel  -algebra
+obtained by countable unions, intersections, or relative complements of open balls in Rm.

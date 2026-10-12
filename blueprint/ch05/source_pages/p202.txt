@@ -1,0 +1,46 @@
+5.1  The Solution Operator                                                     181
+
+On the other hand, viewing Lf as an operator on the phase variables only, we have
+
+                     .Lf Qg/.z/ D f.z/ rz Œg.Ft.z//
+               D f.z/ Ft0 .z/Trg.Ft.z//
+               D Ft0 .z/f.z/  rg.Ft.z//
+
+               D f.Ft.z// rg.Ft.z//
+
+               D .Lfg/.Ft.z//:
+
+This is the same as the right hand side of (5.1). This means that  Qg satisﬁes the
+equation
+
+                                            @Qg
+                   D Lf Qg:                                (5.2)
+                                      @t
+
+This is a time-dependent,linear (hyperbolic)partial differential equation. The steady
+state solutions of this equation (deﬁned by @Qg=@t D 0) are of the form Qg.z; t/ D
+'.z/ where ' satisﬁes Lf'.z/    0. These are just the ﬁrst integrals of the ordinary
+differential equation system Pz D f.z/.
+    It is intuitively appealing to deﬁne the solution of (5.2) by
+
+                           Qg.z; t/ D Gt Qg.z; 0/;   where  Gt D etLf :
+
+Let us refer to Gt as the solution operator associated to the differential equation
+Pz D f.z/. Calculating the exponential operator etLf can be thought of as tantamount
+to solving a linear partial differential equation for given (Cauchy) initial data.
+  The projection onto the ith coordinate, denoted @i, is itself a scalar valued
+function of z (@i.z/ D zi). Calculating directly we have Lfzi D fi. The interpretation
+of the solution of the initial value problem in terms of the solution operator Gt is
+given by
+
+                                    etLf @i  .z.0// D zi.t/:
+
+The notion of the solution operator and the concept of ﬂow map are essentially
+equivalent descriptions of the dynamics of the system.
+   In physics treatments, the Liouvillian is often denoted iL. This may seem natural
+since (a)  it allows a formal correspondence with the Schrödinger equation and
+between the propagators of quantum mechanics and classical mechanics, and (b)
+for Hamiltonian dynamics, as we shall see, the Liouvillian is skew-adjoint (in a
+certain sense skew symmetric) and the inclusion of i explicitly calls attention to this
+fact. However, we feel it is more natural to omit the i in a treatment that includes
+study of both stochastic and deterministic models.

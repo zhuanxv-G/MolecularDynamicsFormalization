@@ -1,0 +1,51 @@
+196                           5  Phase Space Distributions and Microcanonical Averages
+
+
+  A natural question that arises in the context of chaotic systems is whether such
+a trajectory average in fact makes sense. Considering any conservative system,
+we know that the energy itself is a conserved quantity along trajectories, and its
+average is therefore a function of the initial condition. On the other hand, imagine
+trajectories emanating from different points on a single energy level set ˙E, can we
+necessarily conclude that all such trajectories will yield the same average value for
+any observable? This question is obviously important as the initial conditions of a
+molecular system are typically generated through approximations and estimations—
+it would be disturbing if the choice of these (at uniform energy) were to greatly
+impact the computation of an average.
+  One situation in which we would expect different initial conditions to yield dif-
+ferent trajectory averages is if the energy surface has several connected components.
+
+Example 5.3 Consider the double well potential
+
+                                 .q/ D .1   q2/2:
+
+The energy H.q; p/ D p2=2 C  .q/ will tend to C1 as q ! 1 or p ! 1, but
+is obviously bounded below (by zero). The graph of the energy, along with some
+level curves, is shown in Fig. 5.2. From the graph it is clear that the energy surface
+H.q; p/ D E has more than one component if 0 < E < 1. If an initial condition is
+taken from one of the two basins, say with energy E0, then the trajectory through
+that point will remain forever in the one basin, thus the averages of many quantities,
+if computed using the trajectory values, would not be a good approximation of the
+overall average at constant energy E0.
+
+
+
+
+
+                4
+
+
+                3
+
+      H
+                                 Energy 21
+
+
+                0
+                2
+                    1
+                        0                                 1
+                    p     -1                    0
+                                        -2         -1                                           q
+
+Fig. 5.2 Energy function for the double well. The energy surface corresponding to a value of
+energy E 2 .0; 1/ is not connected

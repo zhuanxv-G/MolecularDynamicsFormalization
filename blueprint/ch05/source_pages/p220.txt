@@ -1,0 +1,43 @@
+5.4  Temporal Averages and Numerical Computations                                199
+
+
+
+
+
+Fig. 5.3 Two examples in which we suppose the accessible domain at given energy is the annulus.
+On the left, periodic transport of a collection of points with positive area is evidence of non-ergodic
+motion (the union of the four disks shown would constitute an invariant region of positive measure).
+In the ﬁgure at right a quasi-periodic space-ﬁlling trajectory is shown. The oscillatory motion,
+although quite regular in appearance, gradually ﬁlls in the whole domain
+
+
+where ˝1; ˝2 are two nonzero parameters. Because the two systems involving q1; p1
+and q2; p2 are not coupled in the equations of motion, this system has two invariants
+H1 D p21=2 C ˝21q21=2 and H2 D p22=2 C ˝22q22=2. For any E1; E2 > 0, the set of
+points satisfying H1 D E1, H2 D E2 is a two-dimensional torus. If the frequencies
+˝1 and ˝2 are not rationally related (i.e. ˝1=˝2 is an irrational number), then for
+any E1; E2 the torus will eventually be ﬁlled in by any trajectory. On the other hand,
+the energy surface H D E is the union of all such 2-tori with E1 C E2 D E. There is
+no mechanism for the system to move from one torus to the other, so the system is
+not ergodic.
+
+   In typical molecular dynamics applications with multiple bodies and complicated
+force laws, the motion is assumed to be chaotic. Ergodic coverage of ˝E would then
+have to arise from the global properties of a chaotic system (sensitivity to initial
+conditions and transitivity). Liouville’s equation,
+
+                             @
+                   D Lf   ;                                      @t
+
+describes how a distribution of initial conditions is carried forward under the time
+evolution of a dynamical system. That is, starting from the initial distribution of
+phase space points described by  .z; 0/, we arrive at a new distribution  .z; t/. We
+will see in an example to be presented below that various sets of initial conditions
+with uniform energy E may appear to spread out to cover (become dense in) a
+particular region, the accessible energy surface at energy level E.
+  An even stronger property than the ergodic property is the concept of a mixing
+system. For a mixing system, the ﬁnite time density  .z; t/ converges, in the weak
+sense, to the invariant distribution  1.z/, as t ! 1. That is, we have, for all test
+functions   in some chosen space
+
+                     t!1hlim    ;  . ; t/i D h  ; 1i:

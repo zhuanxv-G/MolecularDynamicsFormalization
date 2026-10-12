@@ -1,0 +1,53 @@
+5.2  Evolution of Probability Measure                                            185
+
+
+Therefore, since this should hold for an arbitrary domain A, we must have
+
+                           @
+                  D r  . f/:
+                                   @t
+
+This is called the Liouville equation or continuity equation. It tells us how the
+distribution of phase points varies in time and space.
+  An alternative form for the continuity equation is:
+
+                      @  X    @fi    @
+               D       C fi        :
+                             @t               @zi      @zi                                                                             i
+
+  The operator Mf, deﬁned for a scalar valued function w by Mfw D r  .wf/,
+is called the Liouvillian operator.
+   There is a close relationship between Mf and the Lie derivative discussed earlier.
+Let u; v be two scalar valued functions in Rm which tend to zero sufﬁciently rapidly
+at inﬁnity. We truncate the domain to a large box A` with edge of length 2` centered
+at the origin, approximating the inner product by:
+
+                        Z          Z
+              X  @v
+                    hu; Lfvi     uLfvd! D   u       fi   d!:
+                                                               @zi                                                                                                            i
+                           A`           A`
+
+Splitting this sum up, we treat each term by integration by parts
+
+               Z                 Z
+       X  @v  X     @v
+                  u       fi  d! D         ufi  d!                        (5.4)
+                                 @zi                   @zi                                                     i                              i
+                 A`                   A`
+                                    Z
+            X     @
+                 D B        v   .ufi/d!;               (5.5)
+                                                          @zi                                                                                             i
+                                          A`
+        P R
+where the term B D        i  @A` ufiv id   , is a surface integral over the boundary of
+A`, where    i is the i’th component of the unit outward normal to the surface @A`
+bounding the region A`. By our assumptions that u and v are rapidly decaying we
+know that B ! 0, as ` ! 1. Taking the limit, we are thus left with the equation
+
+                           Z
+         X     @
+                   hu; Lfvi D        v   .ufi/d! D hMfu; vi:
+                                             @zi
+                                                                     i Rm

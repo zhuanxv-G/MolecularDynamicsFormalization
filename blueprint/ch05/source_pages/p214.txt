@@ -1,0 +1,56 @@
+5.3  The Microcanonical Probability Measure                                      193
+
+
+The limit of this as  E ! 0 deﬁnes a quantity
+                              Z
+                                    1
+                      .M/ D  krHkd  :
+                   M
+
+As both volume and energy are invariant under the Hamiltonian ﬂow,  .M/ must
+be invariant under the ﬂow, thus
+
+                         .Ft.M// D  .M/:
+
+  The invariant measure of the whole level set ˙E is deﬁned as the microcanonical
+partition function
+
+                            ZE D  .˙E/:
+
+Example 5.1 Consider the harmonic oscillator H.q; p/ D p2=2 C ˝2q2=2. The
+energy surface H D E > 0 is an ellipse. The partition function is obtained
+by integratingp         in the standard way. Parameterizing the surface by q, we have
+p D  2E  ˝2q2, then
+
+                     p q
+                           Z 2E   1 C p2q
+                    .˙E/ D 4  q       dq
+                                         0     H2p C H2q
+                     p  q
+                            Z2E=˝         ˝4q2                                    1 C                                                   2E ˝2q2
+               D 4   p          dq
+                                          p2 C ˝4q2
+                                           0
+                     p
+                            Z2E=˝
+                                       1
+               D 4   p         dq
+                                2E  ˝2q2
+                                           0
+
+               D 2 =˝:
+
+Example 5.2 Consider a system of N non-interacting particles of mass m moving
+in periodic boundary conditions within a box of volume V. The Hamiltonian is
+
+                               1 XN
+                  H D        kpik2
+                         2m
+                                           iD1
+
+so
+                                Z
+                         m
+                           ZE D VN     d
+                                               r
+                                    S

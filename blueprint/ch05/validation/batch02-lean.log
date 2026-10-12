@@ -1,0 +1,11 @@
+Blueprint/Ch05.lean:40:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:48:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:56:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:64:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:64:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:70:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:76:8: warning: declaration uses `sorry`

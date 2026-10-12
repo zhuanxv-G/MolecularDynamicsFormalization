@@ -1,0 +1,46 @@
+186                           5  Phase Space Distributions and Microcanonical Averages
+
+We refer to Mf as the adjoint operator3 of Lf and we write Mf D Lf , where
+
+                                hu; Lfvi D hLf u; vi
+
+and
+
+                   Lf u D r  .uf/:
+
+
+  The density  evolves as the solution of the partial differential equation
+
+
+                             @
+                   D Lf   ;                                      @t
+
+where we interpret  as a function of both z and t and view Lf as only operating on
+the spatial components. This means, formally,  .z; t/ D etL                                                                                                                                f  .z; 0/. We can think of
+exp.tLf / as deﬁning the propagator of measure.
+
+
+
+5.2.3  The Liouville Equation for Hamiltonian Systems
+
+
+Until now we have considered a general system Pz D f.z/. What happens when f is
+derived from a Hamiltonian?
+  From the above we know that for a smooth scalar function u D u.z/,
+
+             Lf u D r  .uf/ D   f ru  ur  f:
+
+The term r  f vanishes for f D JrH. Thus we have
+
+                 Lf u D   f ru D  Lfu:
+
+If this holds for all smooth u, we write
+
+                     Lf D  Lf:
+
+
+
+
+
+3The adjoint operator (acting on functions) is not to be confused with the adjoint of a map (which
+acts on points in phase space) encountered in Chap. 2.

@@ -1,0 +1,52 @@
+5.3  The Microcanonical Probability Measure                                      187
+
+In this case we say that the operator Lf is skew-adjoint. The equations
+
+                             @g
+                   D Lfg;
+                                      @t
+
+ for the solution operator, and
+
+                         @
+                 D Lf D  Lf  ;                                 @t
+
+for the propagation of measure, are obviously closely related. Simply changing the
+direction of time in one (t !   t) results in the other. In common parlance, etL                                                                                                                                                                              f is
+referred to as the forward propagator and etLf the backward propagator.
+  An important consequence of the skew symmetry of Lf for a divergence-free
+system is that the propagator etL f  preserves the integral over the whole phase
+space, i.e.
+                   Z            Z
+                            etL                                                                   f  .z/d! D   e  tLf  .z/d!
+
+              D         D
+                                Z
+                   D   .F t.z//d!
+
+                        D
+                                Z
+                   D    .z/d!;
+
+                        D
+
+since we can view F  t.z/ as a change of variables by a volume-preserving map.
+  The Liouvillian of a Hamiltonian system with Nc degrees of freedom and a
+                    PNc
+Hamiltonian of the form H D   iD1 p2i =.2mi/ C U.q1; : : : ; qNc/ can be written
+
+         XNc                                             1   @ XNc    @
+              LH D    m i  pi           Fi     ;
+                                           @qi          @pi                                 iD1              iD1
+
+where Fi D  @U=@qi.
+
+
+
+5.3  The Microcanonical Probability Measure
+
+
+In this section, we continue the discussion of the Hamiltonian case by introducing
+the microcanonical probability measure, the natural measure associated to a surface
+of ﬁxed energy. The framework we have discussed so far is useful when the density
+is known to be a C1 function of phase space, but this is not always the case.

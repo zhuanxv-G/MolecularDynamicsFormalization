@@ -319,3 +319,7 @@ JSON/Blueprint/本地预审/compact包与7段文档已生成；完整check和逐
 ## 2026-10-12 第4章：§4.4.2检查点
 179条JSON/Blueprint/本地预审/compact/7段文档；完整check与逐条公理通过，冻结文件不变。
 下一步：第4章全部本地流程完成；从本章最后已推送commit建立chapter05-blueprint，按第5章2小时节时间盒接续。；网站待审，原模型及heartbeat调度保留。
+
+## 2026-10-12 第5章：§5.1检查点
+11条JSON/Blueprint/本地预审/compact/7段文档；完整check与逐条公理通过，冻结文件不变。
+下一步：当前节已提交后先登记第1章BATCH02–23新返回件，再继续第5章§5.2.1密度及真实L²短证明。；网站待审，原模型及heartbeat调度保留。

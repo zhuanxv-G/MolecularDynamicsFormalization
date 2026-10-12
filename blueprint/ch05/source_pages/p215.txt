@@ -1,0 +1,50 @@
+194                           5  Phase Space Distributions and Microcanonical Averages
+
+                                  p
+where S is the 3N  1 dimensional sphere in 3N dimensions of radius r D  2mE,
+and d   is the surface area element on this sphere. VN is the contribution due to
+integration over positions. Thus we have
+
+
+                                                                                1/=2              m       pm      3N=2 .2mE/.3N          ZE D VN p    A.S/ D VN p  3N                             ;
+                2mE          2E         .3N=2 C 1/
+                                      .2  mE/3N=2
+                 D VN                   ;
+                           E .3N=2/
+
+where    is the gamma function, and we have used the standard formula for the
+surface area of the 3N  1 dimensional sphere.
+
+    It should be clear that, despite these simple examples, the invariant measure of a
+subset of phase space is rarely obtainable in an analytic form.
+  Note that in typical treatments of systems involving identical particles, the
+partition function  is normally multiplied by a factor „ 3N=NŠ that measures
+the number of distinct quantum states available. The NŠ quantiﬁes the number
+of possible arrangements of N identical objects, since, in quantum mechanics,
+identical particles are formally indistinguishable. It would become complicated to
+incorporate such factors for a system with many different species of atoms. When
+computing probabilities, we would need to incorporate a corresponding counting
+factor which would, in typical cases, cancel with the prefactor. Our interest in this
+book is in classical systems of particles, and the number of particles is ﬁxed in
+discussion of any particular system, so we may simply ignore this factor in our
+discussion.
+
+
+
+5.3.3  The Microcanonical Probability Measure and Averages
+
+
+Let
+
+                                               1  1
+                         d  E D ZE krHkd  :
+
+We refer to  this as the microcanonical probability density and write, for an
+“appropriate” set A,
+                                    Z
+                       Pr.A/ D  E.A/ D   d  E:
+
+                             A
+
+The only requirement for this to make sense is that the set A be a measurable subset
+of the H D E energy surface, i.e. that it be possible to compute its surface area.

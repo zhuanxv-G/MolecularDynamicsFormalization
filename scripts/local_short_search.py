@@ -1,5 +1,6 @@
 """At most eight compiler-backed local PASS attempts; three routes per item."""
 import importlib,json,hashlib,re,sys,subprocess
+from datetime import datetime
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 ch=int(sys.argv[1]);keys=sys.argv[2:]
@@ -15,6 +16,14 @@ for key in keys:
     state=folder/f'{key}.json';routes=json.loads(state.read_text(encoding='utf-8')) if state.exists() else []
     if any(x['exit_code']==0 for x in routes) or len(routes)>=3:
         print(key,'saved routes reused');continue
+    timer=data.BASE/'section_timeboxes.json'
+    if ch==5 and timer.exists():
+        box=json.loads(timer.read_text(encoding='utf-8')).get(r['section'])
+        if box:
+            due=datetime.fromisoformat(box['deadline'])
+            if datetime.now(due.tzinfo)>=due:
+                (folder/f'{key}.timebox.json').write_text(json.dumps(dict(section=r['section'],deadline=box['deadline'],status='expired',action='No further proof attempt; keep sorry and continue.'),indent=2)+'\n',encoding='utf-8')
+                print(key,'section timebox expired; keep sorry and continue');continue
     proof=candidates[key]
     if routes:
         fix=folder/f'{key}-next-proof.txt';assert fix.exists(),'Read diagnostic and write revised route first.'

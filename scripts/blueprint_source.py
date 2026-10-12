@@ -44,6 +44,10 @@ class ChapterData:
 
 def apply_saved_routes(ch,records,keys):
     for key in keys:
+        expired=ROOT/f'blueprint/ch{ch:02}/validation/short_search/{key}.timebox.json'
+        if expired.exists():
+            target=next(x for x in records if x['source_id'].endswith('-'+key))
+            target['missing']='本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/'+key+'.timebox.json。'
         path=ROOT/f'blueprint/ch{ch:02}/validation/short_search/{key}.json'
         if not path.exists():continue
         routes=json.loads(path.read_text(encoding='utf-8'))

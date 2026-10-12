@@ -1,0 +1,49 @@
+5.6  Numerical Methods and Invariant Distributions                                 209
+
+
+  Suppose that w is an arbitrary smooth vector ﬁeld such that w rH ¤ 0 on ˙E.
+Then the perturbation of the microcanonical average of a smooth function g is given
+by
+
+  AvHDE.g/  AvQHDE.g/ D Av QHDE.r  gu/  AvQHDE.g/AvQHDE.r  u/ C O."2/;
+
+where
+
+                        u D "       w:
+                        w rH
+
+  The point of this result is that it allows all computations to be done in the terms
+of QHh which is the system we can study using the numerical trajectories (assuming,
+of course, ergodicity). In other words we can correct an average computed using a
+symplectic numerical method for the effect of its truncation error. A natural choice
+of the function w that appears in the theorem is w D rH. In [14] this result is applied
+to the Verlet method, providing an accurate calculation of the averaging error along
+a numerical trajectory.
+  The interpretation of a dynamical average (e.g. an autocorrelation function)
+as a stationary average means that we can apply the perturbation result to such
+computations as well. For more discussion of numerical averages and computation
+of correlation functions, see [338].
+
+
+
+Exercises
+
+
+1. For the harmonic oscillator, calculate, for any function g D g.q; p/, the action of
+   the Liouvillian Lfg. Also calculate exp.tLf/g.
+2. Recall from Chap. 3 that a splitting method deﬁnes a mapping via a composition
+   of the ﬂow maps associated to additive decomposition of a vector ﬁeld, i.e. for
+    f D f 1 C f 2, then
+
+                      exp.hLf/   exp.hLf1/ exp.hLf2/:
+
+   Let  be a phase space density. How is the density evolved under such a splitting
+  method?
+3. Let H D pTM 1p=2 C U.q/ be a Hamiltonian for N particles, where U is a sum
+   of distance potentials only.
+                                 PN
+    a. Show by direct calculation that LJrHPx D 0 where Px D   iD1 pi;x is the ﬁrst
+     component of the total momentum.
+   b. Show that LJrHH D 0.
+    c. Calculate LJrHU.
+   d. Calculate L2JrHU.

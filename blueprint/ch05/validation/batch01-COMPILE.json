@@ -1,0 +1,21 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "Blueprint/Ch05.lean"
+  ],
+  "exit_code": 0,
+  "input_sha256": "2bb47c4744cbb55ef6705afd9045872a066cf9996e8f9930ae296b9c4e0232c1",
+  "log_sha256": "7c4c54cea65c6e511db336055634bdc05e56ef553f233773f98edff8fa9307ba",
+  "decl_blocks": {
+    "MD-5.1-LieDerivative": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c",
+    "MD-5.1-TrajectoryChain": "a249a8010b1653c3329626328fa8700af5fe5809368e4e2123ad088c0ac75851",
+    "MD-5.1-ActualFlow": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c",
+    "MD-5.1-ObservablePullback": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810",
+    "MD-5.1-FlowFieldTransport": "bad55183a9895a6b65ad5af4896756510e5678c24e148496498d05b398cad4de",
+    "MD-5.1-PullbackPDE": "890bcfa62cc6dd96a0766e5ae812acf112d28c4439f0efc2eef73c707edca735",
+    "MD-5.1-SteadyFirstIntegral": "01d40037764cc6629a7b37e1472e25fb2f3c66a298baee775fd2e5b624963036",
+    "MD-5.1-CoordinatePullback": "b81f265b305c3da218fc3fe204225671317ff8aec3a2a6b22e23fb9998b56c2b"
+  }
+}

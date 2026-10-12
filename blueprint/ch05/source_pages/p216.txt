@@ -1,0 +1,50 @@
+5.4  Temporal Averages and Numerical Computations                                195
+
+
+  We have the standard properties of a probability function:
+
+•  0   Pr.A/   1 for all measurable sets A.
+•  Pr.˙E/ D 1.
+  We also note that lower order objects such as a point or a curve in R2, or a surface
+in R3, have zero measure with respect to Lebesgue measure for the ambient space.
+Similarly, for a Hamiltonian system with Nd degrees of freedom, the energy surface
+is of dimension 2Nd  1 and the probability measure of sets of lower dimension than
+this will vanish.
+  As we mentioned in motivating the microcanonical distribution, we could
+alternatively view microcanonical averages as integrals with respect to the singular
+measure on the ambient space D deﬁned by
+
+                      Ed!0  D ZE 1 ıŒH  E d!;
+
+where ı represents the Dirac delta function. The notation d! represents the volume
+element in the Euclidean space deﬁned by all coordinates and momenta. This is the
+more common deﬁnition of the microcanonical distribution encountered in physics
+treatments.
+   Regardless of which formulation is adopted, we may use the probability measure
+to compute expectations (averages) of (suitable) functions deﬁned on the phase
+space. We write such an expectation as
+                          Z          Z
+                 AvHDE.g/ D   g.z/d  E D   g.z/ Ed!:0
+
+                               ˙E       D
+
+Incidentally, any such function is referred to as an observable function (or, simply,
+an observable) of the system in this context.
+  As shorthand, where the underlying space and probability density are assumed,
+one may write such an average more simply as
+
+                          AvHDE.g/ D hgi:
+
+
+
+5.4  Temporal Averages and Numerical Computations
+
+Given an autonomous system of differential equations  Pz D  f.z/ in Rm, and a
+trajectory  D fz.t/jt 2 Œ0; 1 g, let g D g.z/ be any smooth scalar valued function
+of z (an observable) and deﬁne (assuming it exists) the inﬁnite time average of g
+along   by
+
+                                 Z
+                                            Ng D lim    1    g.z.t//dt:                        (5.9)
+                  !1
+                                                  0

@@ -1,0 +1,59 @@
+5.4  Temporal Averages and Numerical Computations                                201
+
+
+
+
+   1                             1                             1
+
+   0                             0                             0
+
+y  -1                            y  -1                            y  -1
+
+    -2                                   -2                                   -2
+
+    -3                                   -3                                   -3
+
+       -2   -1  0   1   2                 -2   -1  0   1   2                 -2   -1  0   1   2
+                 x                               x                               x
+
+Fig. 5.4 Graphs of trajectories obtained by choosing three different initial conditions on the
+energy surface H D  4. The initial conditions are as follows: (left) q0 D  .1:75; 0/I p0 D
+.0; 1:1748/, (center) q0 D .0;  2:9/I p0 D .0:8718; 0/, (right) q0 D .0;  2:7/; p0 D .0; 1:4283/.
+The numerical method (the Verlet method) used 100 million steps with stepsize    t D 0:0001
+
+
+
+
+
+                             px
+
+
+
+
+
+                                                                y
+                                            x
+
+Fig. 5.5  Projecting the data from two of the initial conditions on the H D 4 energy surface onto
+the x; y; px subspace reveals the accessible set to be fragmented by 2-tori; the system clearly fails
+to be ergodic on the energy surface
+
+
+projection of one of the orbits in the x; y; px coordinates and is shown in Fig. 5.5.
+
+
+Example 5.6 (Anisotropic  Oscillator) The  anisotropic  oscillator was  used  in
+Chap. 1 to illustrate the concept of a chaotic dynamical system. Fix, arbitrarily,
+a small set of initial conditions for the anisotropic pendulum at energy E0, with
+positions in a small interval on the positive x axis, 1:05    x    1:15 and y D 0.
+For each point .x; 0/ taken from this set select the initial velocities as  Px D  0,
+Py D Œ2.E0   U.x; 0// 1=2. The set y D 0, Py D 0 is invariant under the differential
+equations of the perturbed central force problem, since the force acts in the radial
+direction; our choice of initial conditions ensures that trajectories explore the larger
+H D E0 energy surface.
+  The set of initial conditions forms a line segment in the four-dimensional phase
+space. These points are then integrated forward in time by solving the differential
+equations (using a numerical method), and the resulting image sets are shown in
+Fig. 5.6. The ﬁrst panel of Fig. 5.6 shows, in one set of axes, the image of the initial
+set at times t D 4; 8; 12; 16. Successive ﬁgures show the images of the initial set
+after times t D 20; 28; 36. The line segment becomes curved, and spreads out,

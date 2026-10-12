@@ -1,0 +1,14 @@
+blueprint\ch05\validation\short_search\route-6b1502d076f0e3c4ba8d.lean:27:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-6b1502d076f0e3c4ba8d.lean:27:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-6b1502d076f0e3c4ba8d.lean:54:16: error: Application type mismatch: The argument
+  hflow.right.right t z
+has type
+  HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+but is expected to have type
+  HasDerivAt ?m.234 ?m.236 (id 0 + t)
+in the application
+  HasDerivAt.comp 0 (hflow.right.right t z)

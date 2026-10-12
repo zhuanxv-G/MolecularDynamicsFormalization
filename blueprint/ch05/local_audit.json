@@ -1,0 +1,398 @@
+{
+  "template": "C",
+  "method": "local_read_only_semantic_review",
+  "website_audit": "待网站审计",
+  "items": {
+    "MD-5.1-LieDerivative": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.lie",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c",
+      "block_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.lie；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    },
+    "MD-5.1-TrajectoryChain": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch05.trajectoryChain",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "7983df7758a34f4cacdee3b7d8bd2f2641a912fd51f928af4244152992edef77",
+      "block_sha256": "a249a8010b1653c3329626328fa8700af5fe5809368e4e2123ad088c0ac75851",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.hasDerivAt_textbookLieDerivative"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.trajectoryChain；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    },
+    "MD-5.1-ActualFlow": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.flow",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c",
+      "block_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.flow；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    },
+    "MD-5.1-ObservablePullback": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.pullback",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810",
+      "block_sha256": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.pullback；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    },
+    "MD-5.1-FlowFieldTransport": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.flowFieldTransport",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "e5231ca58f9dc6b3ba1d99969c090d9e5a139230cad45f4e3e93e80a96a7121a",
+      "block_sha256": "bad55183a9895a6b65ad5af4896756510e5678c24e148496498d05b398cad4de",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "三条短证明路线失败，停止该条；保存证据见validation/short_search/FlowFieldTransport.json。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.flowFieldTransport；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch05/validation/short_search/FlowFieldTransport.json",
+        "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f.lean",
+        "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f.log",
+        "blueprint/ch05/validation/short_search/route-6b1502d076f0e3c4ba8d.lean",
+        "blueprint/ch05/validation/short_search/route-6b1502d076f0e3c4ba8d.log",
+        "blueprint/ch05/validation/short_search/route-a62427897b1bc14d6e97.lean",
+        "blueprint/ch05/validation/short_search/route-a62427897b1bc14d6e97.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    },
+    "MD-5.1-PullbackPDE": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.pullbackPDE",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "a06133924403bf8f2e3c857ae796abba38b3b37931cf8bdd6fe048de55bd6c79",
+      "block_sha256": "890bcfa62cc6dd96a0766e5ae812acf112d28c4439f0efc2eef73c707edca735",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证，不建设一般输运PDE适定性理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.pullbackPDE；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    },
+    "MD-5.1-SteadyFirstIntegral": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.steadyFirstIntegral",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "616399a2c23ed0c9ba9fdc2af71dd5628f25b354e45b89c03d96d4155ec12e4d",
+      "block_sha256": "65c093534440946fc0113ff808e7f42836a07ba80a9bccda5595763771ef2134",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.steadyFirstIntegral；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 2,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch05/validation/short_search/SteadyFirstIntegral.json",
+        "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f.lean",
+        "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f.log",
+        "blueprint/ch05/validation/short_search/route-6b1502d076f0e3c4ba8d-SteadyFirstIntegral.lean",
+        "blueprint/ch05/validation/short_search/route-6b1502d076f0e3c4ba8d-SteadyFirstIntegral.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    },
+    "MD-5.1-CoordinatePullback": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch05.coordinatePullback",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "83b95e784eac58dd520ee4703487e0efd1cae65f7f0a62b0b8dbf9493ea0f6fb",
+      "block_sha256": "b81f265b305c3da218fc3fe204225671317ff8aec3a2a6b22e23fb9998b56c2b",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.Chapter05Review.coordinatePullback_proved"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.coordinatePullback；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    },
+    "MD-5.1-SolutionOperator": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.solutionOperator",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "e2c6c1d6e6a46a560b295325352e0e12c173517d094d400cb0118249ea6afbde",
+      "block_sha256": "e2c6c1d6e6a46a560b295325352e0e12c173517d094d400cb0118249ea6afbde",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.solutionOperator；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    },
+    "MD-5.1-CoordinateLie": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch05.coordinateLie",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "4481af43480dbc711d3c0f69c9183e7a09aa636aa74a59105b9f8c34bac5009a",
+      "block_sha256": "4399035562d9d7a1ed54dbe9db1ad343fe281ab69655ce54ced4a65d2f6425d6",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.coordinateLie；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch05/validation/short_search/CoordinateLie.json",
+        "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f-CoordinateLie.lean",
+        "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f-CoordinateLie.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    },
+    "MD-5.1-LiePullbackCommutes": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch05.liePullbackCommutes",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "a82277477e3a09fadc4e119f854e7b7e3e1e17761d293d3832840fa96a5dae51",
+      "block_sha256": "c5d94a9f9304f2c8ef9daf72fe42aa6b89d34d4b8ee10dc637facddcc4654b27",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch05.liePullbackCommutes；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch05/validation/batch03-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch05\\validation\\section51\\chapter_axioms.log"
+    }
+  }
+}

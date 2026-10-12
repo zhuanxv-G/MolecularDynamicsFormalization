@@ -1,0 +1,50 @@
+192                           5  Phase Space Distributions and Microcanonical Averages
+
+
+Fig. 5.1 A thickened shell
+between energy levels E and
+E C  E
+                              n
+
+                                   E
+                                              H=E+
+
+                                             H=E
+
+
+
+
+   Let us attempt to motivate the deﬁnition of the invariant measure. Consider a
+subset M of the level set ˙E. We suppose krHk to be bounded away from zero on
+˙E. At each point of M we let n D rH=krHk be the unit normal to the energy
+surface and deﬁne a local coordinate  measuring distance along the direction of
+the unit normal, so that for a small offset  E of the energy, z C n is the point of
+intersection with the level set ˙EC  E. We thus obtain a thickened shell of points
+around the patch M with energy between E and E C  E (Fig. 5.1).
+  The volume of this thickened shell is clearly
+                               Z
+                    V D    d  ;
+
+                    M
+
+but since
+
+            E D H.z C n /  H.z/ D rH n C O.  E2/;
+
+and n D rH=krHk, we have
+
+                         E
+               D    C O.  E2/;
+                      krHk
+
+and
+                         Z
+                          E
+               V D  krHkd C O.  E2/:
+                M
+
+Taking the ratio of V to  E we ﬁnd
+                         Z
+               V        1
+               D  krHkd C O.  E/:                  E
+                M

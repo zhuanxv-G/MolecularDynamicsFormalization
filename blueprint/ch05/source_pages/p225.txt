@@ -1,0 +1,50 @@
+204                           5  Phase Space Distributions and Microcanonical Averages
+
+
+where k  is a normalization constant that  is often incorporated to ensure that
+Cab.0/ D 1.
+  Using the notation developed earlier for the propagator, this has the alternative
+formulation
+
+                       Cab.t/ D kAvHDE  b.z/  .etLa/.z/  :
+
+    If the system is ergodic, we could write this as a temporal average with respect
+to any trajectory initiated on the H D E energy surface:
+
+                             Z
+                             1
+                    Ca;b.t/ D k lim      a.z.s C t//  b.z.s//ds:
+                !1
+                                            0
+
+The velocity autocorrelation function is often written in the shorthand notation
+
+                                                  def hv.t/  v.0/i
+                               Cv;v.t/ D                                     hv.0/  v.0/i;
+
+where the averaging may be assumed to be against the microcanonical measure, if
+otherwise unspeciﬁed.
+  Now let A and B be subsets of conﬁguration space (i.e. subsets in the position
+space) of nonzero measure, and deﬁne
+
+
+                                                    def
+                     TAB. / D C1B;1A.  /;
+
+where  S is the characteristic or indicator function of the set S deﬁned by
+
+                                           1; z 2 S
+                             1S.z/ D                 :
+                                           0; z 2 NS
+
+We may understand TAB as quantifying the number of trajectories which, started
+from set A at time t D 0, transition to set B at time   . Dividing TAB by the measure
+of the set A, we obtain the probability for a trajectory to make this transition in the
+given time, which we may write as
+
+                                   h1B.z. //1A.z.0//i
+                    Pr .A ! B/ D                              ;
+                                         h1A.z.0//i
+
+where the averaging is assumed to be with respect to the microcanonical distribution
+at given energy E.

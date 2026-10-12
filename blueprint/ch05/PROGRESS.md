@@ -1,0 +1,120 @@
+# 第5章本地五步流程进度
+
+范围：印刷p.179–209/PDF200–230，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
+下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
+当前11条；旧清单映射8/86；本地PASS 11；网站返回0。
+
+| source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
+|---|---|---|---|---|---|
+| MD-5.1-LieDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.1-TrajectoryChain | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-5.1-ActualFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.1-ObservablePullback | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.1-FlowFieldTransport | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/FlowFieldTransport.json。 |
+| MD-5.1-PullbackPDE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证，不建设一般输运PDE适定性理论。 |
+| MD-5.1-SteadyFirstIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.1-CoordinatePullback | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-5.1-SolutionOperator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.1-CoordinateLie | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.1-LiePullbackCommutes | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证。 |
+
+## 旧86条完整映射
+
+| 旧id | 新source_id或当前缺项 |
+|---|---|
+| CH05-001 | MD-5.1-LieDerivative |
+| CH05-002 | MD-5.1-TrajectoryChain |
+| CH05-003 | MD-5.1-ObservablePullback |
+| CH05-004 | MD-5.1-FlowFieldTransport |
+| CH05-005 | MD-5.1-PullbackPDE |
+| CH05-006 | MD-5.1-SteadyFirstIntegral |
+| CH05-007 | MD-5.1-SolutionOperator |
+| CH05-008 | MD-5.1-CoordinateLie |
+| CH05-009 | PENDING：所属节尚未处理 |
+| CH05-010 | PENDING：所属节尚未处理 |
+| CH05-011 | PENDING：所属节尚未处理 |
+| CH05-012 | PENDING：所属节尚未处理 |
+| CH05-013 | PENDING：所属节尚未处理 |
+| CH05-014 | PENDING：所属节尚未处理 |
+| CH05-015 | PENDING：所属节尚未处理 |
+| CH05-016 | PENDING：所属节尚未处理 |
+| CH05-017 | PENDING：所属节尚未处理 |
+| CH05-018 | PENDING：所属节尚未处理 |
+| CH05-019 | PENDING：所属节尚未处理 |
+| CH05-020 | PENDING：所属节尚未处理 |
+| CH05-021 | PENDING：所属节尚未处理 |
+| CH05-022 | PENDING：所属节尚未处理 |
+| CH05-023 | PENDING：所属节尚未处理 |
+| CH05-024 | PENDING：所属节尚未处理 |
+| CH05-025 | PENDING：所属节尚未处理 |
+| CH05-026 | PENDING：所属节尚未处理 |
+| CH05-027 | PENDING：所属节尚未处理 |
+| CH05-028 | PENDING：所属节尚未处理 |
+| CH05-029 | PENDING：所属节尚未处理 |
+| CH05-030 | PENDING：所属节尚未处理 |
+| CH05-031 | PENDING：所属节尚未处理 |
+| CH05-032 | PENDING：所属节尚未处理 |
+| CH05-033 | PENDING：所属节尚未处理 |
+| CH05-034 | PENDING：所属节尚未处理 |
+| CH05-035 | PENDING：所属节尚未处理 |
+| CH05-036 | PENDING：所属节尚未处理 |
+| CH05-037 | PENDING：所属节尚未处理 |
+| CH05-038 | PENDING：所属节尚未处理 |
+| CH05-039 | PENDING：所属节尚未处理 |
+| CH05-040 | PENDING：所属节尚未处理 |
+| CH05-041 | PENDING：所属节尚未处理 |
+| CH05-042 | PENDING：所属节尚未处理 |
+| CH05-043 | PENDING：所属节尚未处理 |
+| CH05-044 | PENDING：所属节尚未处理 |
+| CH05-045 | PENDING：所属节尚未处理 |
+| CH05-046 | PENDING：所属节尚未处理 |
+| CH05-047 | PENDING：所属节尚未处理 |
+| CH05-048 | PENDING：所属节尚未处理 |
+| CH05-049 | PENDING：所属节尚未处理 |
+| CH05-050 | PENDING：所属节尚未处理 |
+| CH05-051 | PENDING：所属节尚未处理 |
+| CH05-052 | PENDING：所属节尚未处理 |
+| CH05-053 | PENDING：所属节尚未处理 |
+| CH05-054 | PENDING：所属节尚未处理 |
+| CH05-055 | PENDING：所属节尚未处理 |
+| CH05-056 | PENDING：所属节尚未处理 |
+| CH05-057 | PENDING：所属节尚未处理 |
+| CH05-058 | PENDING：所属节尚未处理 |
+| CH05-059 | PENDING：所属节尚未处理 |
+| CH05-060 | PENDING：所属节尚未处理 |
+| CH05-061 | PENDING：所属节尚未处理 |
+| CH05-062 | PENDING：所属节尚未处理 |
+| CH05-063 | PENDING：所属节尚未处理 |
+| CH05-064 | PENDING：所属节尚未处理 |
+| CH05-065 | PENDING：所属节尚未处理 |
+| CH05-066 | PENDING：所属节尚未处理 |
+| CH05-067 | PENDING：所属节尚未处理 |
+| CH05-068 | PENDING：所属节尚未处理 |
+| CH05-069 | PENDING：所属节尚未处理 |
+| CH05-070 | PENDING：所属节尚未处理 |
+| CH05-071 | PENDING：所属节尚未处理 |
+| CH05-072 | PENDING：所属节尚未处理 |
+| CH05-073 | PENDING：所属节尚未处理 |
+| CH05-074 | PENDING：所属节尚未处理 |
+| CH05-075 | PENDING：所属节尚未处理 |
+| CH05-076 | PENDING：所属节尚未处理 |
+| CH05-077 | PENDING：所属节尚未处理 |
+| CH05-078 | PENDING：所属节尚未处理 |
+| CH05-079 | PENDING：所属节尚未处理 |
+| CH05-080 | PENDING：所属节尚未处理 |
+| CH05-081 | PENDING：所属节尚未处理 |
+| CH05-082 | PENDING：所属节尚未处理 |
+| CH05-083 | PENDING：所属节尚未处理 |
+| CH05-084 | PENDING：所属节尚未处理 |
+| CH05-085 | PENDING：所属节尚未处理 |
+| CH05-086 | PENDING：所属节尚未处理 |
+
+## NEEDS_HUMAN / [ERRATUM?] / 缺理论
+
+- MD-5.1-FlowFieldTransport：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 三条短证明路线失败，停止该条；保存证据见validation/short_search/FlowFieldTransport.json。
+- MD-5.1-PullbackPDE：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证，不建设一般输运PDE适定性理论。
+- MD-5.1-LiePullbackCommutes：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证。
+
+## 定性段落排除
+
+- p.179–181/PDF200–202：引言的宏观/微观建模动机、参考教材推荐，以及iL与量子记号的物理解释为定性背景；Lie导数、流、PDE、第一积分和坐标投影的数学内容保留。

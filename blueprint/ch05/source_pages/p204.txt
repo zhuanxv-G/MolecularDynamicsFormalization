@@ -1,0 +1,54 @@
+5.2  Evolution of Probability Measure                                            183
+
+
+ It is automatic that 0   Pr.A/   1. Certain properties need to be assumed regarding
+  and the way that this is formalized in mathematics is by description of the vector
+space of functions to which  belongs.
+  A useful class of functions from a domain D  Rm to R are those that satisfy the
+following boundedness condition:
+                         Z
+                                 2.z/d! < 1:                             (5.3)
+
+                   D
+
+The set of functions from D   Rm to R which satisfy (5.3) is referred to as the
+space L2.D/ and we deﬁne the L2.D/ norm by
+
+                     2      31=2                               Z
+                                               def
+                 D 4    2.z/d! 5     :                     k  kL2.D/
+
+                       D
+
+
+   This is a real Hilbert space or complete inner product space in which, for any
+  ;  2 L2.D/, the inner product is deﬁned by
+                               Z
+                                                   def
+                           h  ;  iL2.D/ D      .z/  .z/d!:
+
+                       D
+
+Thus k  k2       D h  ;  iL2.D/.          L2.D/
+  The inner product is a symmetric, bilinear operation: if ˛; ˇ are real scalars and
+f; g; h 2 L2.D/, then
+
+                       h˛f C ˇg; hi D ˛hf; hi C ˇhg; hi;
+
+and
+
+                                      hf; gi D hg; fi:
+
+
+  The space L2.Rm/ includes for example the continuous functions with compact
+(closed, bounded) support, where the support of a function f is the closure of the set
+of arguments for which the function is nonzero and is denoted suppf.2
+
+
+
+
+2L2.Rm/ also includes many other types of functions important in molecular modelling, for exam-                   Pm
+ple the multivariate Gaussian exp.     iD1 ˛ix2i /, where ˛i > 0, i D 1; 2; : : : ; m are coefﬁcients;
+such a function goes rapidly to zero as any xi ! 1, so the improper integral converges. L2.Rm/
+also includes the compactly supported functions with ﬁnite “jump discontinuities” at a ﬁnite
+number of locations.

@@ -1,0 +1,49 @@
+5.6  Numerical Methods and Invariant Distributions                                 207
+
+
+or
+
+                          qnC1      1 h    qn
+                  D
+                          pnC1       h 1    pn
+
+and we see that the eigenvalues of the propagation matrix are outside the unit disk.
+Thus both solution components tend to inﬁnity unless .q0; p0/ D .0; 0/. This means
+that with the single exception  .q; p; 0/ D ıŒq ıŒp  there is no limiting (invariant)
+distribution for Forward Euler. To put  it another way, the only solution, in the
+weak sense, of L  D 0 is the point distribution ıŒq ıŒp , and this solution is not                                                  Qf
+“asymptotically stable.”
+  As an alternative, consider the Backward Euler method: qnC1 D qn C hpnC1,
+pnC1 D pn   hqnC1. Then it is easily shown that both eigenvalues of the matrix
+lie in the interior of the unit disk, and hence all solutions of the recurrence relation
+tend to the origin with increasing n (the origin is an attractive equilibrium point).
+In this case, all densities evolve toward the Dirac distribution centered at the origin:
+ıŒq ıŒp . The only (distributional) solution of LQf D 0 is again ıŒq ıŒp , which in
+this case is attractive.
+  Now consider the application of the Symplectic Euler method, qnC1 D qn C
+hpnC1, pnC1 D  pn    hqn. As we know, the solution through any given initial
+point remains conﬁned to an ellipse for all n deﬁned by QHh.q; p/ D QHh.q0; p0/,
+where QHh is the perturbed Hamiltonian deﬁned by the backward error analysis. This
+implies that a density which is a function of QHh will remain invariant under the
+associated Liouville equation. There are many solutions of L D 0, none of which                                                                                                                                                                             Qf
+is attractive.
+  The harmonic oscillator is of course an integrable system. When the underlying
+system is a chaotic Hamiltonian system, the trajectories from any collection of initial
+conditions become disordered (even while preserving the energetic constraints
+deﬁned by their initial states). The hope (in some cases, naive) is that typical
+trajectories computed using a symplectic method applied to such a chaotic system
+provide space ﬁlling curves on the QHh D E perturbed energy surface.
+
+Example 5.7 (Ergodicity in the Trimer)  At positive energies, the trimer is unstable
+and the atoms separate, into a bound pair and a single atom. At very low (but
+admissible) energies, the timer has an insurmountable energy barrier between the
+two basins. At moderate energies, the trimer will visit both basins, however, the
+mean passage time between basins may be greatly extended depending on the
+energy level.
+   Consider the level set of potential corresponding to U D   0:5. Note that the
+kinetic energy is everywhere positive, so that a trajectory with total energy E D
+  0:5 will have to be bounded within the U D   0:5 level set. Would the dynamics
+(started from an initial condition with total energy E D   0:5) completely ﬁll in
+this level set over time? Because this system is chaotic, we cannot write down a
+formula for the exact solution, or ﬁnd exact trajectories of the system, but we can
+use numerical methods to attempt to shed some light on the question. In Fig. 5.8 we

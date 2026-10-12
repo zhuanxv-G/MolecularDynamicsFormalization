@@ -1,0 +1,48 @@
+198                           5  Phase Space Distributions and Microcanonical Averages
+
+
+and one if z 2 ˙E n A (the symbol n means the removal of the second set from the
+ﬁrst). Then for any trajectory starting in A, we have that the average of   along
+vanishes, i.e.
+
+                               Z
+                               N D lim    1     .z.t//dt D 0;
+                !1
+                                               0
+
+since A is an invariant set.
+  On the other hand, the average of   on ˙E is just the probability measure of
+˙E n A. If we assume the system is ergodic, we must have Pr.˙E n A/ D 0, thus
+Pr.A/ D 1. Since, according to the deﬁnition, equality of time and space averages
+is allowed to fail only on a set of probability measure zero, we have that either
+Pr.A/ D 0 or Pr.A/ D 1.
+    If a system is not ergodic, then there will be an invariant set A whose probability
+measure is strictly between zero and one. The trajectories emanating from this set
+are unable to explore the entire energy surface and the corresponding trajectory
+averages will, at least for some observables, be different than the spatial average
+of that observable. A system which is not microcanonically ergodic has an energy
+surface that can be partitioned into subdomains of nonzero measure in which
+trajectories are forever trapped.
+   Often, the strict deﬁnition of ergodicity must be relaxed to accommodate the
+realistic modelling setting; for example only some portion of the energy surface
+may be accessible by trajectories in the time-interval available, due to the cost of
+computing steps with a numerical method. For a more detailed discussion of these
+and other ergodicity issues in the context of deterministic molecular dynamics, see
+the articles of Tupper [379, 381].
+  Given a system with energy of the form H.q; p/ D pTM 1p=2 C U.q/, what can
+be said about the ergodicity of the system on the energy surface H D E? Coverage of
+the set may follow in certain cases from periodic or quasiperiodic motion in which
+the trajectories wrap around the surface ﬁlling in space.
+  As a very simple example, the harmonic oscillator is always ergodic on its
+energy surfaces (i.e. energy curves, in this case). Some examples of two-dimensional
+systems are shown in Fig. 5.3.
+   Ergodicity is a concept that often becomes more relevant in systems with many
+degrees of freedom. For example if one thinks of having not just one but many
+double well oscillators connected together in some way so that they can exchange
+energy, then it is likely that the energy can accumulate, given enough time, in one
+of the oscillators, enabling it to overcome the barrier.
+
+Example 5.4 (2D Harmonic System) Consider a two-dimensional harmonic sys-
+tem, i.e. the system with Hamiltonian
+
+            H D p21=2 C p22=2 C ˝21q21=2 C ˝22q22=2;

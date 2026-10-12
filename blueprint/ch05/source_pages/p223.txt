@@ -1,0 +1,59 @@
+202                           5  Phase Space Distributions and Microcanonical Averages
+
+
+
+
+    2                             2                             2                             2
+
+
+    1                             1                             1                             1
+
+ y  0                            y  0                            y  0                            y  0
+
+
+    -1                                   -1                                    -1                                   -1
+
+
+    -2                                   -2                                    -2                                   -2
+      -2     -1    0     1     2        -2     -1    0     1     2        -2     -1    0     1     2        -2     -1    0     1     2
+
+                 x                               x                               x                               x
+
+Fig. 5.6  Evolution of the line segment of initial conditions, for t D 4; 8; 20; 28; 36; the ﬁrst four
+images are recorded in the leftmost panel and successive images are ordered left to right
+
+
+becoming extended, and folding back on itself in an increasingly complex manner.
+Eventually the points ﬁll in a region in the plane which is to all appearances identical
+to that obtained as the limit of a single long trajectory shown in the right panel of
+Fig. 1.24. (In these ﬁgures we chose " D 0:5 and E0 D 0:21048, which matches the
+energy observed in our earlier simulations.)
+  The segment of initial conditions, a one-dimensional object, when transformed
+by the smooth map deﬁned by solving initial value problems, should result, again, in
+a one-dimensional object, i.e. a curve. Yet it appears also to provide a dense covering
+of a two-dimensional region in the position projection. Given the presence of the
+momenta, the energy surface H D E0 is generically three-dimensional, since it is
+the level set of a function deﬁned on R4. A more detailed numerical investigation
+would reveal that the trajectories of the differential equations themselves appear to
+generate, in the limit, three-dimensional space-ﬁlling curves.
+  Now consider an alternative initial set. Begin, as before, with a line segment on
+the x-axis, but now choose the initial momenta from the uniform distribution on the
+circle p2x C p2y D 2.E0   U.x; 0//. In this way we again get initial conditions on the
+H D E0 energy surface, but this time the points are not close to one another in phase
+space, since the momenta of successive points may differ greatly. Integrate the set
+forward in time by solving the differential equations, and examine the image sets at
+successive instants in time. The leftmost panel in Fig. 5.7 shows the evolution of the
+initial interval at times t D 0; 0:2; 0:4; : : : ; 1:8. In the projection onto positions, the
+set now spreads out in a series of uneven concentric bands. The structure of these
+bands becomes increasingly complex and ﬁlamented and eventually spreads around
+the accessible region at the given energy. Snapshots at t D 8; 16; 24 are shown in
+Fig. 5.7.
+  A small set of initial conditions is eventually mapped forward by solving the
+differential equation into what appears to be a dense covering of the same region
+seen already in the right panel of Fig. 1.24 (which arose from the very long term
+evolution of a single initial condition).
+
+  As we see in the above example, the early evolution of the set is strongly
+dependent on the initialization, but in the long term, a similar region is ultimately
+covered (at least to visual inspection). However, also note that the approach to
+equilibrium is very different for the two choices of initialization, as we can see from

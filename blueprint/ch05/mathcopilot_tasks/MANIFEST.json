@@ -1,0 +1,95 @@
+[
+  {
+    "batch": "BATCH01",
+    "source_ids": [
+      "MD-5.1-LieDerivative",
+      "MD-5.1-TrajectoryChain",
+      "MD-5.1-ActualFlow",
+      "MD-5.1-ObservablePullback",
+      "MD-5.1-FlowFieldTransport",
+      "MD-5.1-PullbackPDE",
+      "MD-5.1-SteadyFirstIntegral",
+      "MD-5.1-CoordinatePullback"
+    ],
+    "full_batch_sha256": "03b33b282337d27bced885364d323fabeba4db9b6c96161c5ab0923f6aa46dbf",
+    "subtasks": [
+      {
+        "subtask": "BATCH01a",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH01/a",
+        "bytes": 98954,
+        "manifest_sha256": "5b058dd892840a881f104d547a7bc9b9c1ca862ae8343e0b5c40e86d68293bfe"
+      },
+      {
+        "subtask": "BATCH01b",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH01/b",
+        "bytes": 99130,
+        "manifest_sha256": "553737c945be088179de348360136fe117b85a7f17ec1f827c9209a09f27980c"
+      },
+      {
+        "subtask": "BATCH01c",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH01/c",
+        "bytes": 99144,
+        "manifest_sha256": "85f3eb1f4e6bd77911c9ad68544b0b9e97424da01b27b7e09a7f0d11b74bde52"
+      },
+      {
+        "subtask": "BATCH01d",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH01/d",
+        "bytes": 118526,
+        "manifest_sha256": "699befa5a33bf6f235cb35c6414cc9e715d507e4b8a5c1195a57076b434a4fe9"
+      },
+      {
+        "subtask": "BATCH01e",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH01/e",
+        "bytes": 93368,
+        "manifest_sha256": "578439306d3de57f657d21a1e318abbed429753a0e9b64f53df1cca5b54a1781"
+      },
+      {
+        "subtask": "BATCH01f",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH01/f",
+        "bytes": 95195,
+        "manifest_sha256": "6452d86ee57400fd93195cc1c5acefd30b6068ff2f47c7aeac7a6b10d605877d"
+      },
+      {
+        "subtask": "BATCH01g",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH01/g",
+        "bytes": 94296,
+        "manifest_sha256": "d1ae3da3bbdbe758682465abe493d4ebd95ae281e7ed27581ed752056a4f1b5c"
+      },
+      {
+        "subtask": "BATCH01h",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH01/h",
+        "bytes": 92898,
+        "manifest_sha256": "77852b0a563cc2ac2ed36213cda1b713b052544679c99203136f1b6dc15dafd5"
+      }
+    ]
+  },
+  {
+    "batch": "BATCH02",
+    "source_ids": [
+      "MD-5.1-SolutionOperator",
+      "MD-5.1-CoordinateLie",
+      "MD-5.1-LiePullbackCommutes"
+    ],
+    "full_batch_sha256": "2040cfcc6777fa3006944ce67adef22a128650760898871a63a8453858ca89ed",
+    "subtasks": [
+      {
+        "subtask": "BATCH02a",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH02/a",
+        "bytes": 92177,
+        "manifest_sha256": "88656107999d0f68655861fe88b08e99de6822d13bca4ec35925a6f46c439cad"
+      },
+      {
+        "subtask": "BATCH02b",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH02/b",
+        "bytes": 92874,
+        "manifest_sha256": "b8e306582c978223a23cbf4f41602c06f22cc8a93069b5489d0c93000339b737"
+      },
+      {
+        "subtask": "BATCH02c",
+        "path": "blueprint/ch05/mathcopilot_tasks/compact/BATCH02/c",
+        "bytes": 95204,
+        "manifest_sha256": "15a26c2c0e129249f4bc5cf52796e66324d6f91827b12a061bc27243a6ffa04a"
+      }
+    ]
+  }
+]

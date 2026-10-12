@@ -96,6 +96,14 @@ def render(ch,p):
     out=ROOT/f'docs/review/CH{ch:02}_BLUEPRINT.zh-CN.md'
     out.write_text(m.render(p.BASE/f'ch{ch:02}_source.json',ROOT/f'Blueprint/Ch{ch:02}.lean',p.BASE/'local_audit.json'),encoding='utf-8')
 def landing(ch,p,batch,step):
+    if ch==5 and p.RECORDS:
+        from datetime import datetime,timedelta
+        timer=p.BASE/'section_timeboxes.json'
+        boxes=json.loads(timer.read_text(encoding='utf-8')) if timer.exists() else {}
+        section=p.RECORDS[-1]['section']
+        if section not in boxes:
+            now=datetime.now();boxes[section]=dict(started_at=now.isoformat(),deadline=(now+timedelta(hours=2)).isoformat(),status='active',rule='单节2小时；缺大型理论或单条3次失败后sorry并继续。')
+            p.dump(timer,boxes)
     table=ROOT/'docs/handoff/LOCAL_PIPELINE.md';s=table.read_text(encoding='utf-8')
     row=f'| {ch} | {RANGES[ch][0]}–{RANGES[ch][1]} / {RANGES[ch][2]}–{RANGES[ch][3]} | chapter{ch:02}-blueprint | {step}；批{batch}落盘（{len(p.RECORDS)}条） | '
     old=next(x for x in s.splitlines() if x.startswith(f'| {ch} |'))
