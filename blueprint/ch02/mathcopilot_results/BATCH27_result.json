@@ -1,0 +1,200 @@
+[
+  {
+    "source_id": "MD-2.5.1-RK",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已逐字查看教材PDF第111页（印刷第89页）渲染图，并交叉检查文本提取；页码偏移+22正确。 核对Z=z+h∑b_i F_i及F_i=f(z+h∑a_ij F_j)，阶段索引和求和上界均一致。 原页没有本条独立证明，proof_latex=null与所选范围相符；context_notation中的解释不是原文逐字引文。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_rungeKuttaRelation",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "局部定义的阶段关系和输出公式逐项对应原文；Fin s与索引1,…,s只是重编号，没有隐式系统全局可解的断言。尚缺Q n的实际定义，无法核实对象是否真为有限维实状态空间；因此不能最终PASS。此条是定义，无sorry。 BATCH27.md只嵌入本批签名，没有所称的正式库定义摘录；Ch02.lean实际import的Chapter02/ReviewProofs等模块在现有工程及share/Lean中未提供。不能用名称或context_notation代替真实定义。",
+      "counterexample": null,
+      "suggested_fix": "提供Q及实际导入模块的定义摘录，核实状态空间后完成对象语义审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.1-RK4",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.5.1-RK4",
+        "kind": "definition",
+        "label": null,
+        "section": "2.5.1",
+        "printed_page": "89",
+        "pdf_page": "111",
+        "statement_latex": "An example of a popular 4th order explicit method is the choice of matrix $A$ with coefficients $a_{ij}\\equiv 0$ except $a_{21}=1/2$, $a_{32}=1/2$ and $a_{43}=1$, and $b_1=1/6$, $b_2=1/3$, $b_3=1/3$, $b_4=1/6$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "展开实际四阶段给出同一A/b权重；4阶陈述单列。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.bp_rk4",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "TRANSCRIPTION_SYMBOL",
+            "detail": "PDF第111页原文是a_{ij}≡0；JSON写为a_{ij}=0，数学意义相同但不是逐字转录。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF 111; BATCH27_review.json"
+      },
+      "issues": [
+        "PDF第111页原文是a_{ij}≡0；JSON写为a_{ij}=0，数学意义相同但不是逐字转录。"
+      ],
+      "evidence": "已逐字查看教材PDF第111页（印刷第89页）渲染图，并交叉检查文本提取；页码偏移+22正确。 核对a21=1/2、a32=1/2、a43=1及权重1/6、1/3、1/3、1/6。 原页没有本条独立证明，proof_latex=null与所选范围相符；context_notation中的解释不是原文逐字引文。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_rk4",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "四个实际阶段及输出权重代数上对应原系数；此定义未独立宣称四阶，四阶已另列条目。缺Q n实际定义，不能最终PASS。此条是定义，无sorry。 BATCH27.md只嵌入本批签名，没有所称的正式库定义摘录；Ch02.lean实际import的Chapter02/ReviewProofs等模块在现有工程及share/Lean中未提供。不能用名称或context_notation代替真实定义。",
+      "counterexample": null,
+      "suggested_fix": "提供Q n实际定义；核实有限维实状态空间后可完成本条审核。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.1-RK4Order",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已逐字查看教材PDF第111页（印刷第89页）渲染图，并交叉检查文本提取；页码偏移+22正确。 “An example of a popular 4th order explicit method”确为原文片段，所指系数紧接该片段；全局阶解释属于上下文，原句未明列。 原页没有本条独立证明，proof_latex=null与所选范围相符；context_notation中的解释不是原文逐字引文。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.rk4Order",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "缺Q、rk4、compactTrajectory、globalOrder真实定义，尤其不能确认导入的rk4等于本批bp_rk4，或紧窗资格确含实际ODE、正时间窗及四阶全局误差。所述C6比通常所需强，是可用的充分正则性而非必要条件，但其实际内容未核实。 BATCH27.md只嵌入本批签名，没有所称的正式库定义摘录；Ch02.lean实际import的Chapter02/ReviewProofs等模块在现有工程及share/Lean中未提供。不能用名称或context_notation代替真实定义。 本定理在Ch02.lean中以sorry结束；此事实与签名语义判定分开，未运行Lean或声称证明通过。",
+      "counterexample": null,
+      "suggested_fix": "提供上述定义和完整依赖版本；逐项核实实际RK4映射、轨迹资格和四阶误差量词。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.1-ExplicitRK",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_OMISSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.5.1-ExplicitRK",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.5.1",
+        "printed_page": "89",
+        "pdf_page": "111",
+        "statement_latex": "This method is not symplectic, and it is in fact impossible to find symplectic explicit methods within the Runge-Kutta family.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch02.explicitRK",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]一致性∑bᵢ=1排除全零权重恒等映射；“不辛”解释为存在光滑Hamilton模型与实际阶段/步映射不辛，不宣称每个具体H均不辛。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "TRANSCRIPTION_OMISSION",
+            "detail": "PDF第111页原文为“and it is in fact impossible”；JSON漏掉“it is”。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF 111; BATCH27_review.json"
+      },
+      "issues": [
+        "PDF第111页原文为“and it is in fact impossible”；JSON漏掉“it is”。"
+      ],
+      "evidence": "已逐字查看教材PDF第111页（印刷第89页）渲染图，并交叉检查文本提取；页码偏移+22正确。 原文确实称本方法不辛，且不存在辛显式RK；原句未明列一致性资格，不将解释性资格添加进原文。 原页没有本条独立证明，proof_latex=null与所选范围相符；context_notation中的解释不是原文逐字引文。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.explicitRK",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "严格下三角矩阵对应显式阶段；∑b=1合理排除零方法，但比仅排除全零权重更强，应标为一致方法范围。存在一个Hamilton反例的量词符合“方法不普遍保持辛性”，不等于所有H均不辛。缺SymplecticCoordinates、textbookHamiltonianVectorField、IsTextbookSymplecticMap真实定义，不能核实对象、符号及辛性判据。 BATCH27.md只嵌入本批签名，没有所称的正式库定义摘录；Ch02.lean实际import的Chapter02/ReviewProofs等模块在现有工程及share/Lean中未提供。不能用名称或context_notation代替真实定义。 本定理在Ch02.lean中以sorry结束；此事实与签名语义判定分开，未运行Lean或声称证明通过。",
+      "counterexample": null,
+      "suggested_fix": "补齐三个正式定义；明确一致RK范围，并以RK4系数实例化一般结论核对原文第一子句。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.1-RKSymplectic",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已逐字查看教材PDF第111–112页（印刷第89–90页）渲染图，并交叉检查文本提取；页码偏移+22正确。 第111页句子跨至112页“satisfied [325] is”；公式b_i a_ij+b_j a_ji=b_i b_j及两个索引范围一致。原文未写不可约资格；保留原书疑误标记，不静默修正。 原页没有本条独立证明，proof_latex=null与所选范围相符；context_notation中的解释不是原文逐字引文。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.rkSymplectic",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "正则性资格H C2及阶段/G C1适于通常辛性推导。但不加不可约资格的普适iff有实质反例风险，[NECESSITY_QUALIFICATION]不是已解决问题。缺正式辛性及Hamilton向量场定义，依本批材料不足规则不能最终确认PASS或把基于通常定义的反例冒充已展开实际库的FAIL。 BATCH27.md只嵌入本批签名，没有所称的正式库定义摘录；Ch02.lean实际import的Chapter02/ReviewProofs等模块在现有工程及share/Lean中未提供。不能用名称或context_notation代替真实定义。 本定理在Ch02.lean中以sorry结束；此事实与签名语义判定分开，未运行Lean或声称证明通过。",
+      "counterexample": "通常辛性定义下取s=2，A=0，b=(1,-1)。两个阶段都等于X_H(z)，输出G(z)=z，故所有模型的实际G均为辛恒等映射；系数条件在i=j=1处为0=1，失败。即使要求一致性，也可用重复中点阶段A的四项全为1/4，b=(1,0)：阶段必相同，输出为中点法；(1,1)系数条件1/2=1失败。这表明单加∑b=1不足以修复必要性。",
+      "suggested_fix": "先提供正式定义以确认反例在真实库语义中成立；将充分性与必要性分开，必要性加明确不可约资格或针对等价约简后的表述，并保留原书资格疑误。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.1-GaussFamily",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已逐字查看教材PDF第112页（印刷第90页）渲染图，并交叉检查文本提取；页码偏移+22正确。 Example 2.7中Gauss点、正交多项式零点、对称性及偶数阶两句一致。 原页没有本条独立证明，proof_latex=null与所选范围相符；context_notation中的解释不是原文逐字引文。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.gaussFamily",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "缺Q、legendreValue、lagrangeBasis、rungeKuttaRelation、methodLocalOrder真实定义，不能确认Legendre次数、积分系数或阶语义。全体h,z唯一阶段及全局真实流远强于通常局部资格，会排除许多标准GLRK应用：s=1,c=1/2,f(x)=x在h=2,z≠0时中点关系无解。该EXTRA不能仅称常规光滑资格。结论∃正偶r且methodLocalOrder可能仅给至少二阶，是否表达“实际阶为偶数”取决于缺失定义。 BATCH27.md只嵌入本批签名，没有所称的正式库定义摘录；Ch02.lean实际import的Chapter02/ReviewProofs等模块在现有工程及share/Lean中未提供。不能用名称或context_notation代替真实定义。 本定理在Ch02.lean中以sorry结束；此事实与签名语义判定分开，未运行Lean或声称证明通过。",
+      "counterexample": "全域可解资格过强的实例：一维f(x)=x、s=1、c=1/2。h=2时F=z+F，z≠0无阶段解；该例说明适用范围收窄，不是对条件定理的逻辑反例。",
+      "suggested_fix": "提供真实定义；把所有实h的唯一可解及全局流改为有明确定义域的小步长局部资格，反向步也在域内。若methodLocalOrder只是下界，要另说明确切阶的偶性或明确本条仅证明偶阶下界。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.1-Midpoint",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已逐字查看教材PDF第112页（印刷第90页）渲染图，并交叉检查文本提取；页码偏移+22正确。 核对Z=z+hF1及F1=f(z+(h/2)F1)；本条公式末尾逗号与后续which has order 2相接。 原页没有本条独立证明，proof_latex=null与所选范围相符；context_notation中的解释不是原文逐字引文。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_midpointRelation",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "消去F1后w=z+h f((z+w)/2)与原关系等价，包括h=0：这时w=z，可取F1=f(z)，无需除以h。缺Q n实际定义，不能最终PASS。此条是定义，无sorry。 BATCH27.md只嵌入本批签名，没有所称的正式库定义摘录；Ch02.lean实际import的Chapter02/ReviewProofs等模块在现有工程及share/Lean中未提供。不能用名称或context_notation代替真实定义。",
+      "counterexample": null,
+      "suggested_fix": "提供Q n实际定义，核实对象；保留关系表达，不添加任意隐式问题有解的断言。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.1-MidpointProperties",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已逐字查看教材PDF第112页（印刷第90页）渲染图，并交叉检查文本提取；页码偏移+22正确。 “which has order 2.”一致；二阶针对一般ODE，辛性来自前段Hamilton/RK语境，非此片段独立明说。 原页没有本条独立证明，proof_latex=null与所选范围相符；context_notation中的解释不是原文逐字引文。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.midpointProperties",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "缺SymplecticCoordinates、textbookHamiltonianVectorField、IsTextbookSymplecticMap和methodLocalOrder实际定义。H C4强于部分结论最低正则性；全体h,z的C1求解映射与全时间真实流是强全局资格，不能视为任意光滑Hamilton量自动满足。签名限于Hamilton系统，原文“order 2”针对一般向量场；辛性属于上下文额外结论，需与一般中点二阶结论区分。 BATCH27.md只嵌入本批签名，没有所称的正式库定义摘录；Ch02.lean实际import的Chapter02/ReviewProofs等模块在现有工程及share/Lean中未提供。不能用名称或context_notation代替真实定义。 本定理在Ch02.lean中以sorry结束；此事实与签名语义判定分开，未运行Lean或声称证明通过。",
+      "counterexample": null,
+      "suggested_fix": "补齐正式定义；核实局部误差阶的量词与常数依赖。一般ODE的二阶单列，Hamilton情形的辛性另列；对求解映射和流使用局部定义域资格或明确保留的全局限制。"
+    }
+  }
+]

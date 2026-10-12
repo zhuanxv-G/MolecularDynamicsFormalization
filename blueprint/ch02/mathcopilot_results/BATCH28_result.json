@@ -1,0 +1,36 @@
+[
+  {
+    "source_id": "MD-2.5.1-GaussTwo",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "教材 PDF 第112页（印刷第90页），Example 2.7、§2.5.2之前：The 4th order method (s = 2) has coefficients；紧接公式 b₁=b₂=1/2，A=[[1/4,1/4−√3/6],[1/4+√3/6,1/4]]。已读取该页文本并核对渲染图像。 本条保存完整系数，statement_latex 的原句和四个矩阵元素、权重均一致；原页未附该方法的独立证明，proof_latex=null 恰当。context_notation 关于阶理论的说明属于编者范围说明，不作为原书已证明四阶的证据。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.gaussTwoData",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取 /workspace/Ch02.lean:1281–1282 的真实声明：gaussTwoData 的第一分量为导入的 gaussTwoCoefficients，第二分量为常数权重 1/2。权重与原页一致；但无法展开 gaussTwoCoefficients 来核实四个矩阵元素及行列索引约定。BATCH28.md 没有其正式库定义摘录，当前工程也未找到该定义或所导入的 Chapter02/ReviewProofs.lean；share/Documents、share/Lean 为空。因此不能凭名称判 PASS。四阶性质在本批独立 GaussTwoOrder 条目中审计，不要求该数据定义自身证明阶数。本声明为 def，没有独立 sorry；导入依赖的证明情况未确认。",
+      "counterexample": null,
+      "suggested_fix": "补充与 MANIFEST 版本一致的 gaussTwoCoefficients 正式定义（含索引展开），再逐项核对原矩阵；保持本批附件只读。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.1-GaussTwoOrder",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "教材 PDF 第112页（印刷第90页），Example 2.7、§2.5.2之前：The 4th order method (s = 2) has coefficients；紧接公式 b₁=b₂=1/2，A=[[1/4,1/4−√3/6],[1/4+√3/6,1/4]]。已读取该页文本并核对渲染图像。 本条摘录该原句，完整系数由同批 GaussTwo 条目保存；这是明确的分条范围。原页未附独立证明，proof_latex=null 恰当。context_notation 的“全局4阶”作为编者对 order 的解释，不能代替对 Lean globalOrder 定义的核验。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.gaussTwoOrder",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取 /workspace/Ch02.lean:1286–1292：量词为 ∀ n f G γ τ；前提为 compactTrajectory f γ τ、G 的联合 C⁶ 正则性，以及对所有 h,z 存在满足 rungeKuttaRelation 的两个阶段；结论为 globalOrder G γ τ 4。ContDiff 前提并未直接假设四阶误差，属于可见的求解映射正则资格，但 C⁶ 通常强于四阶所需；对所有实数步长和所有初值要求阶段可解也强于局部小步长资格，是否合理需结合实际定义核验。原页仅称该两阶段 Gauss 方法为四阶；globalOrder 是否完整表达固定时间窗全局误差、compactTrajectory 是否包含真实 ODE 轨迹和时间窗条件、rungeKuttaRelation 是否使用原文阶段/更新关系，以及 gaussTwoCoefficients 是否确为原矩阵，均因正式定义缺失而无法确认。BATCH28.md 未包含这些导入定义摘录，当前工程未找到相关定义；share/Documents、share/Lean 为空。无 [ERRATUM?] 标记，原页也没有发现需勘误的系数差异。结尾有 sorry，说明证明尚未完成；此事实与签名忠实性判断分开，不据此判 FAIL。",
+      "counterexample": null,
+      "suggested_fix": "补充与 MANIFEST 版本一致的 Q、gaussTwoCoefficients、compactTrajectory、rungeKuttaRelation、globalOrder 的完整正式定义和依赖出处；核验真实轨迹、时间窗及全局误差量词，并说明全域 C⁶/全步长阶段可解资格的必要性。若只需局部求解资格，应在后续修订中限制到轨迹邻域和充分小步长；本批不改 Lean。"
+    }
+  }
+]

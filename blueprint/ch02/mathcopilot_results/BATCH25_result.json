@@ -1,0 +1,243 @@
+[
+  {
+    "source_id": "MD-2.4.4-ImplicitLocal",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_TRANSCRIPTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.4-ImplicitLocal",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.4.4",
+        "printed_page": "86",
+        "pdf_page": "108",
+        "statement_latex": "An implicit method will typically result in a system of nonlinear equations of the form\n\\[g(\\boldsymbol z_{n+1})=\\boldsymbol\\tau_n,\\tag{2.25}\\]\nwhich will need to be solved at each timestep. The right hand side $\\boldsymbol\\tau_n$ is a vector that depends on the previous time-step $\\boldsymbol z_n$, perhaps in a complicated way. We may assume the number of equations represented by (2.25) is equal to the dimension of the space where $\\boldsymbol z$ is defined, so we have a square nonlinear system. Typically $g$ will depend on the stepsize and coefficients of the method and will have the property that for $h$ sufficiently small, the solution is uniquely defined and is continuously defined in terms of $\\boldsymbol\\tau_n$, that is the mapping $g$ has a bounded and smooth inverse.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch02.implicitLocal",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]g依赖真实步长h；联合C∞，零步实际导数为连续线性同构。",
+          "[EXTRA]结论为充分小步长的局部逆；缩小有界邻域，不宣称全域有界逆。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "SOURCE_TRANSCRIPTION",
+            "detail": "按PDF108恢复 side，删除原文没有的 phase；不改原书数学主张。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "漏抄 side，且擅加 phase；页码108/印刷86正确，证明为空符合原页，context_notation为空无误。"
+      ],
+      "evidence": [
+        "PDF108/印刷86，(2.25)及其后整段；原文为 right hand side、dimension of the space、bounded and smooth inverse。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.implicitLocal",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取 /workspace/Ch02.lean 的真实声明；请求所称 Blueprint/Ch02.lean 未提供。BATCH25.md 没有内嵌 Q 或 newtonStep 的正式定义，当前非缓存项目及 share/Lean 中未找到 Chapter02/ReviewProofs.lean；也没有可绑定该摘录的 MANIFEST。不能把其他批次或历史缓存当作本批正式依赖。 签名以联合 C∞ 和零步可逆导数为前提，先选δ再对每个h选U,V,inv,K，给出局部两侧逆及像的范数有界。这些是合理的逆函数定理充分条件，但不是教材明示前提；“局部”是额外限定而非假设，不能自动等同原文未限定范围的唯一解。签名未显式要求 g h(U)⊆V，故不完整表达 U→V 的光滑双射。该定理有 sorry，证明状态与语义疑点分开。",
+      "counterexample": null,
+      "suggested_fix": "提供 Q 的正式定义及版本证据；明确原句按局部解读是否获准，并补 g h(U)⊆V 或使用局部微分同胚接口；若要求全域唯一，另加全域条件。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.4-BackwardEulerSolve",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_TRANSCRIPTION",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.4-BackwardEulerSolve",
+        "kind": "definition",
+        "label": "Example 2.6",
+        "section": "2.4.4",
+        "printed_page": "86",
+        "pdf_page": "108",
+        "statement_latex": "The Backward Euler method,\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+hf(\\boldsymbol z_{n+1}),\\]\nis an example of an implicit method. The calculation of a timestep involves solving a system of equations of the form\n\\[g(\\boldsymbol w)\\equiv\\boldsymbol w-\\boldsymbol z_n-hf(\\boldsymbol w)=\\boldsymbol0.\\]\nThe map $\\mathcal G_t$ is defined implicitly by the equation\n\\[\\mathcal G_h(\\boldsymbol z)=\\boldsymbol z+hf(\\mathcal G_h(\\boldsymbol z)).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "零点即隐式步关系；没有断言每个f/h存在唯一零点。"
+        ],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "status": "NEEDS_HUMAN",
+            "detail": "PDF108正文写G_t，下一展示式写G_h；原书下标不一致，不能静默统一。"
+          }
+        ],
+        "lean_decl": "MD.Ch02.backwardEulerResidual",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "SOURCE_TRANSCRIPTION",
+            "detail": "原页残差使用定义等号≡；正文为G_t而展示式为G_h，保留原书不一致。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原页正文G_t被静默统一为G_h；定义符号≡被改为=。恢复原样并记录疑误。页码正确，无独立证明；context_notation正确提醒不承诺任意f,h的唯一零点。"
+      ],
+      "evidence": [
+        "PDF108/印刷86，Example 2.6：残差g(w)≡w−z_n−hf(w)=0；正文The map G_t，展示式G_h(z)=z+hf(G_h(z))。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.backwardEulerResidual",
+      "verdict": "FAIL",
+      "explanation": "已展开真实 def：在实赋范向量空间E上定义 w−z−h•f(w)，残差表达式忠实且没有额外存在唯一性假设。然而本条statement_scope包含全部三式，当前声明没有把残差等于0作为隐式步关系，也没有表示G_h的隐式定义方程。只定义E值残差不能覆盖这些结论子句。此def无sorry；FAIL针对整条覆盖范围。",
+      "counterexample": "缺失条款：z_{n+1}=z_n+hf(z_{n+1})及G_h(z)=z+hf(G_h(z))未被声明；例如在E=ℝ上取f=0、h=1，残差def仍成立，但任取G(z)=z+1并不满足原文映射方程。",
+      "suggested_fix": "保留残差def，并补充 residual=0 ↔ w=z+h•f(w) 的关系，及给定映射G时 ∀z, G z=z+h•f(G z) 的定义/等价关系；无需宣称任意f,h存在唯一G。单独记录G_t/G_h疑误。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.4-Newton",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_TRANSCRIPTION",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.4-Newton",
+        "kind": "definition",
+        "label": null,
+        "section": "2.4.4",
+        "printed_page": "86–87",
+        "pdf_page": "108–109",
+        "statement_latex": "Solving the system may then proceed, from an initial guess $\\boldsymbol z_{n+1}^{(0)}$ by use of Newton’s method:\n\\[\\boldsymbol z_{n+1}^{(k+1)}=\\boldsymbol z_{n+1}^{(k)}-[J^{(k)}]^{-1}(g(\\boldsymbol z_n^{(k)})-\\boldsymbol\\tau_n),\\]\nwhere $J^{(k)}$ is the Jacobian matrix of the mapping $g$ evaluated at $\\boldsymbol z_n^{(k)}$, or else an approximation of this Jacobian (assumed to be nonsingular due to the invertibility of the mapping). The iteration may be recast in the form\n\\[\\boldsymbol b_k=-(g(\\boldsymbol z_n^{(k)})-\\boldsymbol\\tau_n),\\quad J^{(k)}\\Delta\\boldsymbol z_k=\\boldsymbol b_k,\\quad\\boldsymbol z_{n+1}^{(k+1)}=\\boldsymbol z_{n+1}^{(k)}+\\Delta\\boldsymbol z_k.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "status": "NEEDS_HUMAN",
+            "detail": "原文混用zₙ⁽ᵏ⁾与zₙ₊₁⁽ᵏ⁾；保留两个不同输入，不静默改成相同迭代点。映射可逆也不保证任意近似Jacobian非奇异。"
+          }
+        ],
+        "lean_decl": "MD.Ch02.newtonPrinted",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "SOURCE_TRANSCRIPTION",
+            "detail": "按PDF108恢复 may then proceed,；保留原文下标疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "首句漏 then 及 proceed 后逗号；原书两个不同迭代下标确认存在，不合并。原书关于可逆性保证非奇异性的括注存在疑误，现有issues记录合理。页码和三个重写式正确；无独立证明。"
+      ],
+      "evidence": [
+        "PDF108末段：may then proceed, from an initial guess；更新式和Jacobian取值均使用z_n^(k)，被更新量为z_{n+1}^(k)。PDF109首行：b_k、J^(k)Δz_k=b_k及加法更新。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.newtonPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取 /workspace/Ch02.lean 的真实声明；请求所称 Blueprint/Ch02.lean 未提供。BATCH25.md 没有内嵌 Q 或 newtonStep 的正式定义，当前非缓存项目及 share/Lean 中未找到 Chapter02/ReviewProofs.lean；也没有可绑定该摘录的 MANIFEST。不能把其他批次或历史缓存当作本批正式依赖。 从可见def展开可确认 xNext−J.symm(g xPrev−τ) 保留两个不同输入；J是连续线性同构，显式保证可逆。在线性空间解释下，令Δ=−J.symm(g xPrev−τ)即可导出重写的线性系统。它没有把J与实际Jacobian联系起来；原文允许近似Jacobian但没有给出近似精度标准。ERRATUM?成立：混用下标；映射集合意义可逆不足以推出导数非奇异，更不能推出任意近似Jacobian可逆。该def无sorry；缺Q定义使最终对象审计不能PASS。",
+      "counterexample": "g(t)=t³是可逆映射但g′(0)=0；g(t)=t的真实Jacobian为1，任取近似矩阵0也可奇异。这否定括注的一般推理，不否定以J为同构的def。",
+      "suggested_fix": "提供Q的正式定义；保留printed与标准同点Newton的区别，明确J为可逆的实际或选定近似Jacobian；补线性系统重写的关系。不要静默修原书。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.4-NewtonQuadratic",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_TRANSCRIPTION",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.4-NewtonQuadratic",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.4.4",
+        "printed_page": "87",
+        "pdf_page": "109",
+        "statement_latex": "Newton’s method (without approximation of the Jacobian matrix) has a remarkable quadratic convergence property, meaning that, when the initial guess is close the solution, the errors $e_k,e_{k+1}$ at the $k$th and $k+1$st iterations satisfy the relation\n\\[e_{k+1}\\le Ke_k^2.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "标准Newton的同一个迭代点，前项字面索引疑点另列；e=‖y−x*‖。"
+        ],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "status": "NEEDS_HUMAN",
+            "detail": "PDF109原句close the solution疑漏to；逐字审校保留原文。"
+          }
+        ],
+        "lean_decl": "MD.Ch02.newtonQuadratic",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]C²、简单零点及可逆实际导数；充分近初值；局部一步二次界涵盖迭代误差关系。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "SOURCE_TRANSCRIPTION",
+            "detail": "原书为 close the solution，缺to；恢复原文并另记语法疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "JSON补入原书没有的to，属于静默修正；恢复close the solution。页码109/印刷87、二次误差不等式正确，无独立证明。context_notation的同点标准Newton及范数误差是解释性补充。"
+      ],
+      "evidence": [
+        "PDF109/印刷87：when the initial guess is close the solution；e_{k+1}≤K e_k²。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.newtonQuadratic",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取 /workspace/Ch02.lean 的真实声明；请求所称 Blueprint/Ch02.lean 未提供。BATCH25.md 没有内嵌 Q 或 newtonStep 的正式定义，当前非缓存项目及 share/Lean 中未找到 Chapter02/ReviewProofs.lean；也没有可绑定该摘录的 MANIFEST。不能把其他批次或历史缓存当作本批正式依赖。 从可见签名看，先固定g和简单零点x，给出统一C,δ，再对邻近y给出实际可逆导数B和一步二次误差界。C²及可逆导数是合理但不可删除的充分条件；g x=0对应把g−τ归一化为零残差。若newtonStep确实为同点Newton公式，则唯一性导数和缩小δ使Cδ<1可推出迭代不变性及二次收敛；当前没有该定义，不能确认一步界的真实语义。定理含sorry，不以此判签名FAIL。",
+      "counterexample": null,
+      "suggested_fix": "提供Q及newtonStep正式展开；确认newtonStep g τ y B=y−B.symm(g y−τ)，说明残差归一化及缩小δ后的迭代闭合；原书语法疑误单独保留。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.4-FrozenNewton",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF109/印刷87：J(z)=D+E(z)、small in norm、constant sparse matrix、in many cases；下方e_{k+1}≤ρe_k及0<ρ<1。选录两个片段顺序一致；无独立证明，页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.frozenNewton",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取 /workspace/Ch02.lean 的真实声明；请求所称 Blueprint/Ch02.lean 未提供。BATCH25.md 没有内嵌 Q 或 newtonStep 的正式定义，当前非缓存项目及 share/Lean 中未找到 Chapter02/ReviewProofs.lean；也没有可绑定该摘录的 MANIFEST。不能把其他批次或历史缓存当作本批正式依赖。 可见签名要求固定同构A、零点x、C¹、正半径及0<ρ<1，并在整个球上界定‖I−A⁻¹g′‖≤ρ，随后对每个球内y给出一步收缩误差界。该small资格合理且必要考虑A⁻¹的尺度；D稀疏只是计算效率背景，省略不影响收敛。若newtonStep是标准公式，球凸性和均值界可导出误差界，ρ<1使球不变并迭代几何收敛。缺少真实newtonStep与Q定义，不能认定已核对。定理有sorry，单独记为证明未完成。",
+      "counterexample": null,
+      "suggested_fix": "补Q、newtonStep的正式定义和版本证据；确认A代表固定D、g代表g−τ。保留“in many cases”的限定，不把原文改写成任意近似Jacobian收敛。"
+    }
+  }
+]

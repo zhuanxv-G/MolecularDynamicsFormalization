@@ -1,0 +1,91 @@
+[
+  {
+    "source_id": "MD-2.1-Convergence",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第77页（印刷第55页），§2.1 第二段：从 The convergence of a numerical method refers to the ability 到 by using small enough timesteps，逐句核对与 statement_latex 一致；本句无独立展示公式。",
+        "教材 PDF 第78页（印刷第56页）：We assume that τ, the length of the time interval, is fixed；同段 νh=τ、t_n=nh，Theorem 2.1 的展示式为 bar e := max_{0≤n≤ν} e_n ≤ C(τ)h。context_notation 对固定时间窗、h=τ/ν 和最大节点误差所在页的引用正确。",
+        "本条为定义性文字，原页没有独立证明；proof_latex=null、proof_discussion_latex=null 与 proof_note 相符。页码满足55+22=77。",
+        "已直接查看原 PDF 渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-077.png 和 page-078.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.convergence",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已逐字比对 BATCH02 的 convergence 声明与 /workspace/Ch02.lean 中的真实声明，二者一致。可见签名对每个固定 G、γ、τ 定义 ν→∞ 时 oneStepMaxError G (τ/ν) γ ν 趋于0；若该库函数确为从 γ(0) 出发、固定步长 G 的 ν 次迭代在全部节点0≤k≤ν上的范数误差最大值，则固定正时间窗的 Tendsto 正是任意精度的最终误差界，且 ν=0 这一有限项不影响 atTop 极限。但 Q 的对象含义、数值初值、准确节点时间、最大值范围和误差范数均未能展开确认。材料限制：/workspace/BATCH02.md 实际仅有四个待审声明的 Lean 块，没有 oneStepMaxError、oneStepIterate、eulerIterate、eulerMaxError 或 Q 的正式库定义摘录，也没有可定位本批依赖版本的 MANIFEST。/workspace/Ch02.lean 的导入包含 MolecularDynamics.Chapter02.ReviewProofs 和 MolecularDynamics.Chapter02.EulerConvergence 等；本地项目、Lean 目录及已存缓存未找到相应第 2 章模块。share/Documents 和 share/Lean 均为空。不能以函数名称、旧版本 Position 定义或预期实现代替实际定义核对。 [EXTRA] 固定时间窗与 h=τ/ν 有 PDF78 的上下文支持；τ>0 保证步长趋于0的正向时间解释，但该定义没有 τ>0 限制，必须说明所用时间域。注释“τ>0在具体定理中明示”与本批 theorem_2_1 的实际 hτ : 0≤τ 不一致，不能登记为已核对成立。未见本条 [ERRATUM?] 标注，原页也未发现需静默修正的疑误。证明状态单独记录：convergence 是定义，没有直接 sorry；这不构成语义 PASS 或依赖工程已验证的证据。",
+      "counterexample": null,
+      "suggested_fix": "提供与本批 Ch02.lean 对应且带 MANIFEST 哈希的 Q、oneStepIterate、oneStepMaxError 正式定义和相关实例；核对 oneStepMaxError G h γ ν = max_{0≤k≤ν} ‖(G h)^[k](γ 0)−γ(kh)‖。明确 convergence 只在 τ>0 的固定正时间窗使用，或说明 τ=0 的退化扩展；将“τ>0在具体定理中明示”改为与实际 0≤τ 相符的说明。材料齐全后再判定，不修改本次附件。"
+    }
+  },
+  {
+    "source_id": "MD-2.1-Order",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第77页（印刷第55页），§2.1 第二段：The order of accuracy is the exponent in the power law；第三阶例子明确写 global error (on a fixed finite time interval) can be bounded by Kh^3。",
+        "同段紧接条件为 h is a sufficiently small timestep，K depends on the length of the time interval and the features of the problem，且 is independent of h；statement_latex 保留这些文字及 Kh^3，无遗漏假设。",
+        "context_notation 明确将 r=3 标为原文例子、一般自然数阶标为形式化扩展；h=τ/ν 由 PDF78（印刷56页）的 νh=τ 支持，未伪称为 PDF77 的原句。",
+        "本条没有独立证明，proof_latex=null、proof_discussion_latex=null 与原文相符；55+22=77。已查看渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-077.png 及 page-078.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.order",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已比对实际 order 声明与 BATCH02 摘录，二者一致。签名的量词顺序为先选 K>0，再选自然数 ν₀>0，最后对所有 ν≥ν₀ 给出误差≤K(τ/ν)^r，因此 K 和阈值可以依赖固定 G、γ、τ、r，但不能随 ν 或 h 改变；这一量词顺序与原文一致。 [EXTRA] r:ℕ 是对第三阶例子的明确扩展，包含 r=0 的 O(1) 情形，不能由此推断收敛；原文采用上界解释第三阶，故无需补充误差下界或“恰好三阶”的条件。ν₀>0 合理地排除零除；在正时间窗内可增大上界常数而取 K 严格正，没有实质损失。固定 h=τ/ν 与 PDF78 上下文一致。然而，Q 和 oneStepMaxError 的实际定义缺失，无法确认其对象和误差是否为原文全部节点的全局误差，而不是末节点误差、其他范数或其他初值。材料限制：/workspace/BATCH02.md 实际仅有四个待审声明的 Lean 块，没有 oneStepMaxError、oneStepIterate、eulerIterate、eulerMaxError 或 Q 的正式库定义摘录，也没有可定位本批依赖版本的 MANIFEST。/workspace/Ch02.lean 的导入包含 MolecularDynamics.Chapter02.ReviewProofs 和 MolecularDynamics.Chapter02.EulerConvergence 等；本地项目、Lean 目录及已存缓存未找到相应第 2 章模块。share/Documents 和 share/Lean 均为空。不能以函数名称、旧版本 Position 定义或预期实现代替实际定义核对。此外 τ:ℝ 无正性限制；需明确这是 τ>0 上的原文定义接口及其退化扩展，而不能声称已覆盖原文小正步长语义的全部域。未见本条 [ERRATUM?]，原页无已确认疑误。证明状态与语义分开：order 是定义，没有直接 sorry；由于依赖定义未核对，结论为 NEEDS_HUMAN。",
+      "counterexample": null,
+      "suggested_fix": "补充与 MANIFEST 哈希对应的 Q、oneStepIterate 和 oneStepMaxError 正式定义，确认全部节点误差和从 γ(0) 初始化；明确 τ>0 的使用域。保留 ∃K>0, ∃ν₀>0, ∀ν≥ν₀ 的量词顺序，并说明自然数阶包含 r=0 而正阶才表达误差随细化消失。不要凭 helper 名称确认 PASS。"
+    }
+  },
+  {
+    "source_id": "MD-2.1-Error",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第78页（印刷第56页），Theorem 2.1 上方段落：approximate solution vectors 为 z_0,z_1,…,z_ν，νh=τ；τ 为固定时间区间长度，ν 为总步数，增大 ν 时同比减小步长。这些原句在 statement_latex 中完整保留。",
+        "同段逐点定义为 e_n=‖z_n−z(t_n)‖，where t_n=nh；it clearly depends on h。范数、减法、时间下标均与 JSON 一致。",
+        "同页紧接 Theorem 2.1 的展示式为 bar e := max_{0≤n≤ν} e_n ≤ C(τ)h；context_notation 将最大误差归于该定理并注明包含 n=0，正确地区分了逐点误差和最大误差。",
+        "本条为定义，原页无独立证明，proof_latex=null、proof_discussion_latex=null 正确；56+22=78。已查看渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-078.png 和 theorem-upper-crop.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.maximumError",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对实际 maximumError 声明与 BATCH02 摘录，二者一致。它在实范数向量空间上返回 oneStepMaxError G h γ ν。该泛化允许教材有限维实向量实例，作为最大误差接口本身不要求额外的光滑性或 ODE 假设，未发现凭可见类型即可确认的无理 [EXTRA]。原文 statement_latex 的核心是逐点 e_n=‖z_n−z(nh)‖，最大量 bar e 在 context_notation 中补充；当前接口名称是 maximumError，只有在库定义实际由这些逐点误差取 max_{0≤n≤ν} 构成时，才能确认其覆盖本条登记范围。需要展开确认初值是否为 γ(0)、G 是否按固定 h 迭代、时间是否为 k*h、范围是否包含0与ν，以及取值是否为同一范数。仅凭本别名无法确认逐点定义，也无法确定最大量接口是否留下未登记的 e_n 子条款。材料限制：/workspace/BATCH02.md 实际仅有四个待审声明的 Lean 块，没有 oneStepMaxError、oneStepIterate、eulerIterate、eulerMaxError 或 Q 的正式库定义摘录，也没有可定位本批依赖版本的 MANIFEST。/workspace/Ch02.lean 的导入包含 MolecularDynamics.Chapter02.ReviewProofs 和 MolecularDynamics.Chapter02.EulerConvergence 等；本地项目、Lean 目录及已存缓存未找到相应第 2 章模块。share/Documents 和 share/Lean 均为空。不能以函数名称、旧版本 Position 定义或预期实现代替实际定义核对。未见本条 [ERRATUM?]，原页公式无已确认疑误。证明状态单独记录：maximumError 是定义，未含直接 sorry；本次不据此认定语义 PASS，也未作依赖编译或公理审计。",
+      "counterexample": null,
+      "suggested_fix": "提供 oneStepMaxError 及其迭代、逐点误差定义的版本固定摘录，确认展开式为 max_{0≤k≤ν} ‖(G h)^[k](γ 0)−γ(kh)‖，包含两个端点。若库中尚无逐点误差接口，建议补充 e_n 对应的 stepError 定义并说明 maximumError 的对应范围；本次仅提出建议，不修改代码或附件。"
+    }
+  },
+  {
+    "source_id": "MD-2.1-Thm2.1",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第78页（印刷第56页），Theorem 2.1：D 为 R^m 中 bounded, open region，f:D→R^m continuously differentiable；ζ 为 interior point，初值问题(2.1)有 unique solution 且在 t∈[0,τ] 留在D。这些原文对象和前提均在 statement_latex 中保留。",
+        "同一定理后半：存在 C(τ)>0，对 sufficiently large ν∈N，数值点 z_n 在 n=0,1,…,ν 时仍在D，hν=τ，并且 bar e := max_{0≤n≤ν}e_n ≤ C(τ)h。JSON 同时保留留域及最大误差两个结论，严格正常数、指标范围和公式均正确。",
+        "context_notation 所引初值由 PDF76（印刷54页）的 z(0)=ζ、z_0=ζ 支持；同页 Euler 递推为 z_{n+1}=z_n+h f(z_n)。PDF75（印刷53页）给出(2.1)的 ż=f(z)；PDF78 上段给 e_n、t_n=nh、νh=τ。因此 ζ=γ(0) 及相关上下文引用一致。",
+        "Theorem 2.1 后是 bar e=O(h) 和一阶精度的解释，随后进入§2.1.1；未给独立完整证明。proof_latex=null、proof_discussion_latex=null 和 proof_note 正确。56+22=78。",
+        "已直接查看渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-078.png、theorem-upper-crop.png、theorem-crop.png，以及 context-075.png、context-076.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.theorem_2_1",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对实际 theorem_2_1 声明与 BATCH02 摘录，二者一致。可见签名保留 D 有界、开放、f 在 D 上 C¹、给定 γ 在[0,τ]留域且满足 γ′=f(γ)、同初值且在D中的解唯一等假设。取 ζ=γ(0)，由 hτ:0≤τ 和 hγD 可知 ζ∈D，再由 D 开得到初值在内部，不需单独 ζ 参数。HasDerivWithinAt 在闭时间区间描述解的单侧端点行为，区间外的 γ 未被额外约束；唯一性量词要求同初值的每条在该区间留于D且满足ODE的 η 与 γ 在整个区间一致。结论量词为 ∃C>0, ∃ν₀>0, ∀ν≥ν₀，之后合取所有 n≤ν 的数值留域与最大误差≤C(τ/ν)，因此常数与阈值在选 ν 前固定，且两个结论分支均已显式保留。 [EXTRA] τ≥0 将时间长度的非负性显式化，并允许 τ=0 退化情况；f 以环境全函数给出、仅在D上要求C¹，通常可作为 f:D→R^m 的表示方式：域外取值任意，若数值点确实留域则不影响教材结论。ν₀>0 合理排除分母为0。唯一性假设被 wrapper 的证明体忽略并不意味着签名省略该假设，不能据此判 FAIL。不过 Position m 的本批实际空间实例、eulerIterate 是否从 γ(0) 按 z↦z+h f(z) 递推、eulerMaxError 是否取 max_{0≤n≤ν}‖z_n−γ(nh)‖，均缺少对应版本的定义展开，无法确认结论的对象及全部子句实际含义。材料限制：/workspace/BATCH02.md 实际仅有四个待审声明的 Lean 块，没有 oneStepMaxError、oneStepIterate、eulerIterate、eulerMaxError 或 Q 的正式库定义摘录，也没有可定位本批依赖版本的 MANIFEST。/workspace/Ch02.lean 的导入包含 MolecularDynamics.Chapter02.ReviewProofs 和 MolecularDynamics.Chapter02.EulerConvergence 等；本地项目、Lean 目录及已存缓存未找到相应第 2 章模块。share/Documents 和 share/Lean 均为空。不能以函数名称、旧版本 Position 定义或预期实现代替实际定义核对。未见本条 [ERRATUM?]，教材定理中未确认疑误。证明状态独立记录：实际 wrapper 的证明体为 exact MolecularDynamics.theorem_2_1_euler D hDb hD f hf γ hτ hγD hγ，没有直接 sorry 或 admit；被调用定理的文件未提供，故其传递 sorry、公理依赖及编译状态均未验证。本次 NEEDS_HUMAN 源于定义材料不足，不是因 wrapper 使用了 sorry。",
+      "counterexample": null,
+      "suggested_fix": "补充与本批 MANIFEST 哈希一致的 Position、eulerIterate、eulerMaxError、oneStepMaxError 定义及相关实例，并提供 MolecularDynamics.theorem_2_1_euler 的完整声明供单独核对证明状态。必须确认 Euler 初值、递推、节点时间、包括 n=0 和 n=ν 的最大误差，以及数值留域与误差界同用 h=τ/ν。材料齐全后再作 PASS/FAIL 判定；本次不补证明或修改声明。"
+    }
+  }
+]

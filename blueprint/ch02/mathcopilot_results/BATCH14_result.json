@@ -1,0 +1,139 @@
+[
+  {
+    "source_id": "MD-2.3.2-LinearDivergence",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF96/印刷74 §2.3.2 末段线性系统 ż=Sz，S∈ℝ^{m×m}；PDF97/印刷75 首行续 f(z)=Sz 和 be zero。跨页及页码差22正确。context_notation 中 Liouville 与行列式说明为编辑说明，与此结论相容。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.linearDivergence",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "BATCH14.md 未提供其所称的正式库定义内嵌摘录，可读工程亦未找到导入的 Chapter02.ReviewProofs 等相应文件及本批依赖 MANIFEST。Q、divergence、linearEuler、asymmetricEulerRelation、textbookCoordinateJacobian 的真实定义未核对，按材料不足规则记 NEEDS_HUMAN，不凭名称记 PASS。 可见签名保留散度等于迹和全时、全部可测集合的体积保存等价条件；量词顺序合理。[EXTRA] 全时 C² 解族、初值恒等和真实线性 ODE 用于识别真实流，在线性实系统中合理且可自动满足；只量化可测集合合理。证明体含 sorry，证明完成状态与语义分别判断。",
+      "counterexample": null,
+      "suggested_fix": "补齐本批正式库定义、体积实例及匹配的 MANIFEST 后再判定。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.2-LinearEuler",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF97/印刷75 第一展示式 z_{n+1}=z_n+hSz_n=(I+hS)z_n，逐项一致；有限实矩阵与单位阵上下文正确。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_linearEuler",
+      "verdict": "PASS",
+      "explanation": "已直接展开 Ch02.lean:629：bp_linearEuler=1+h • S，其中矩阵1为单位矩阵、标量作用为逐项实数乘法，乘向量给 z+hSz。更新矩阵忠实于原公式；n、S、h 未加限制，无额外假设，不含 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-2.3.2-EulerVolumePrinted",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "原文照录正确；其 det=1 必要条件在通常无向体积解释下存在符号疑误，原条目已有 ERRATUM?，保持原文。"
+      ],
+      "evidence": [
+        "PDF97/印刷75 第一展示式后确实写 det(I+hS)=1，未写绝对值或方向限制；照录正确，保留已有 ERRATUM?，不静默修正原书。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.eulerVolumePrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "BATCH14.md 未提供其所称的正式库定义内嵌摘录，可读工程亦未找到导入的 Chapter02.ReviewProofs 等相应文件及本批依赖 MANIFEST。Q、divergence、linearEuler、asymmetricEulerRelation、textbookCoordinateJacobian 的真实定义未核对，按材料不足规则记 NEEDS_HUMAN，不凭名称记 PASS。 签名照录原书 det=1，但通常 Lebesgue 体积需要 |det|=1。[ERRATUM?] 在通常定义下成立。正式定义缺失，不能把条件性反例当成已核对的 Lean 反例。证明体含 sorry。",
+      "counterexample": "条件性反例（采用标准 Q 和 linearEuler 定义）：n=1、S=[-2]、h=1，I+hS=[-1]，反射 x↦-x 保存全部可测集合的 Lebesgue 体积而 det=-1。补 h>0 不能排除此例。即使要求 trace=0，S=diag(-2,2)、h=1/√2 也给 det=-1。",
+      "suggested_fix": "补齐定义；另立数学修正版：体积保存 ↔ |det(I+hS)|=1，或增加 det>0 的方向条件再用 det=1。保留原文 ERRATUM?；h>0 本身不足。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.2-EulerVolumeCounterexample",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF97/印刷75 紧随行列式条件的两句，essentially unrelated、phase space volume 及 see Exercise 6 均一致。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.eulerVolumeCounterexample",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "BATCH14.md 未提供其所称的正式库定义内嵌摘录，可读工程亦未找到导入的 Chapter02.ReviewProofs 等相应文件及本批依赖 MANIFEST。Q、divergence、linearEuler、asymmetricEulerRelation、textbookCoordinateJacobian 的真实定义未核对，按材料不足规则记 NEEDS_HUMAN，不凭名称记 PASS。 签名给二维迹零矩阵的存在性且所有非零步长 det≠1，可支持原书一般不保体积的例子，但没有完整刻画两种条件的关系。det≠1 尚允许 det=-1，单凭此不能推出不保体积。建议强化绝对行列式结论。证明体 exact 复用声明，依赖声明及其证明不可读，不据此推断无 sorry。",
+      "counterexample": "缺失条款：det≠1 没有排除 det=-1。可用 S=[[0,-1],[1,0]]，trace=0、det(I+hS)=1+h²>1（h≠0），强化为真正不保体积的见证。",
+      "suggested_fix": "补齐定义和复用声明；强化为所有 h≠0 时 |det(I+hS)|≠1 或 >1。若欲形式化两个条件无蕴含关系，再给 Euler 保体积但 trace≠0 的另一实例；标明其与原书行列式符号疑误的关系。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.2-AsymmetricEuler",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF97/印刷75 planar system 与散度条件后的两条更新式均在 (u_{n+1},v_n) 取值，context_notation 与上下文一致。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_asymmetricEulerRelation",
+      "verdict": "PASS",
+      "explanation": "已直接展开 Ch02.lean:645：U=u+h*f U v 且 V=v+h*g U v。新旧坐标、两条等式和 (U,v) 取值均正确；f,g 为二元实函数。仅定义隐式关系，不宣称全局求解器、存在性或唯一性；无额外假设，不含 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-2.3.2-AsymmetricJacobian",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF97/印刷75 Solving for the various entries 后矩阵四项及 determinant 后比值逐项一致；其前有隐式微分计算，不是独立证明块，当前 statement_scope 未含该计算，proof_latex=null 不表示原书没有推导。空 context_notation 未记录偏导取值点，该点由更新式确定，审计中已说明。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.asymmetricDet",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "BATCH14.md 未提供其所称的正式库定义内嵌摘录，可读工程亦未找到导入的 Chapter02.ReviewProofs 等相应文件及本批依赖 MANIFEST。Q、divergence、linearEuler、asymmetricEulerRelation、textbookCoordinateJacobian 的真实定义未核对，按材料不足规则记 NEEDS_HUMAN，不凭名称记 PASS。 可见签名保留完整四项 Jacobian 与行列式比值；所有偏导在 (Ψ(z)_0,z_1) 取值。[EXTRA] f,g 与实际解映射 C¹、分母非零使隐式微分成立，合理；全局正则性强于原书局部计算，可局部化。没有散度零假设合理：此计算本身不需要它。未核对真实 Jacobian 的行列约定与关系定义。证明体含 sorry。",
+      "counterexample": null,
+      "suggested_fix": "补齐真实关系和 Jacobian 定义及 Q；可把全局 C¹/解关系局部化为指定开邻域，以匹配局部推导。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.2-AsymmetricArea",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF97/印刷75 末段 f_u+g_v=0 与分子分母相同，PDF98/印刷76 首句续 det G′_h=1 及 asymmetric variant is area preserving；跨页摘录完整。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.asymmetricArea",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "BATCH14.md 未提供其所称的正式库定义内嵌摘录，可读工程亦未找到导入的 Chapter02.ReviewProofs 等相应文件及本批依赖 MANIFEST。Q、divergence、linearEuler、asymmetricEulerRelation、textbookCoordinateJacobian 的真实定义未核对，按材料不足规则记 NEEDS_HUMAN，不凭名称记 PASS。 可见签名保留逐点 det=1 和全部可测集合面积保存；全局散度零包括隐式取值点。[EXTRA] C¹、真实解关系及处处分母非零合理。单射足够保证全局面积换元，但在该全局二维关系中可能可推出而非独立必要：固定输出 U 时，第二更新对 v 的导数 1+h*g_v=1-h*f_u 连续且处处非零，故严格单调，恢复 v 后第一更新恢复 u。需真实定义支持此分析；不能把该额外充分条件宣称为必然必要。证明体含 sorry。",
+      "counterexample": null,
+      "suggested_fix": "补齐正式定义；单射可保留为明确充分条件，或证明其由全局隐式关系、散度零与处处分母非零推出；局部版本应指定单射开域。"
+    }
+  }
+]

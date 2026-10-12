@@ -5,7 +5,7 @@
 | 2 | 53–94 / 75–116 | chapter02-blueprint | ⑤终验完成 | 8ca2ccf | 完成 |
 | 3 | 97–136 / 119–158 | chapter03-blueprint | ⑤全部本地流程验收完成 | 433a13ca6407 | 完成 |
 | 4 | 139–174 / 161–196 | chapter04-blueprint | ⑤全部本地流程验收完成 | ca2715c9646e | 完成 |
-| 5 | 179–209 / 200–230 | chapter05-blueprint | ①–⑤§5.3.3已检验；批5.3.3落盘（101条） | acc4fc5f11c8 | 未完成 |
+| 5 | 179–209 / 200–230 | chapter05-blueprint | ①–⑤§5.3.3已检验；批5.3.3落盘（101条） | 7e18679f0990 | 未完成 |
 | 6 | 211–258 / 232–279 | chapter06-blueprint（待建） | ①待开始 | 未开始 | 未完成 |
 
 页界已渲染核对：第3章p.136/PDF158的Exercises之前保留；第4章正文至p.174/PDF196，Exercises为PDF197–199；第5章p.209/PDF230的Exercises之前保留；第6章正文至p.258/PDF279，Exercises为PDF280–281；第7章PDF282起不进入。

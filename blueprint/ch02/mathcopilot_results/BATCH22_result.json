@@ -1,0 +1,110 @@
+[
+  {
+    "source_id": "MD-2.4.1-SymmetricComposition",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "STATEMENT_TEXT_MISMATCH",
+        "ADJOINT_NOTATION_MISMATCH",
+        "FORMULA_ASSIGNMENT_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-SymmetricComposition",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.4.1",
+        "printed_page": "85",
+        "pdf_page": "107",
+        "statement_latex": "When we construct a composition of a method with its adjoint method, we see readily that it is symmetric, i.e. self-adjoint, since\n\\[\\mathcal K_h^{\\dagger}:=[\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2}]^{\\dagger}=\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2}=\\mathcal K_h.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch02.symmetricComposition",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint"
+        ],
+        "extra_assumptions": [
+          "实际可逆步Equiv.Perm；完整伴随半步组合。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "change": "按当前教材 PDF 第107页渲染原文修正 statement_latex；保留原书公式和引用编号。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "所引英文不是当前教材该页原句；应改为以 When we construct 开头的完整原句。",
+        "原页伴随记号为 dagger（†），不是星号；展示公式首个等号为 :=，须保留原书写法，不把它静默改成普通等号。"
+      ],
+      "evidence": [
+        "教材 PDF 第107页（印刷85页），§2.4.1：When we construct a composition of a method with its adjoint method。",
+        "同页展示公式逐项为 K_h† := [G_{h/2}† ∘ G_{h/2}]† = G_{h/2}† ∘ G_{h/2} = K_h；已读取文字并检查渲染图像。",
+        "页码107=85+22正确。无另列独立证明；公式论证已包含于 statement_latex，proof_latex=null 可保留。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.symmetricComposition",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "材料不足，不能核准语义。/workspace/Ch02.lean:1031 的真实签名与批次摘录一致，对任意类型 E 和全实参数可逆映射族 G 断言组合族等于其伴随族；量词无明显遗漏，但必须展开 textbookAdjointMethod 和 textbookSymmetricComposition 才能核实负步长、取逆及半步组合的先后次序。BATCH22.md 实际未内嵌这些正式定义，也未提供 MANIFEST 哈希；现有工程及 share/Lean 未找到相应定义。Equiv.Perm 的全局可逆性比局部可逆方法强，可作为保证伴随有定义的条件，但无法据此核准全部原文范围。此条无 [ERRATUM?] 标注。源码通过 apply 引用库定理，未出现本条 sorry；库证明和定义缺失，不能据引用名字判 PASS。",
+      "counterexample": null,
+      "suggested_fix": "补充与本批工程版本匹配的正式定义摘录及 MANIFEST：textbookAdjointMethod、textbookSymmetricComposition，并核对半步组合次序及伴随取逆。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.1-SymmetricEven",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "STATEMENT_TEXT_MISMATCH",
+        "REFERENCE_NUMBERS_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-SymmetricEven",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.4.1",
+        "printed_page": "85",
+        "pdf_page": "107",
+        "statement_latex": "Self-adjoint, or symmetric schemes have unique features; in particular they have even order [164, 227].",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch02.symmetricEven",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]r>0为有限确切局部阶：r阶界成立而r+1阶不成立；两族C∞且原流为群，自伴随并实际可逆。原书省略“确切”阶资格，精确流没有有限阶。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "change": "按当前教材 PDF 第107页渲染原文修正 statement_latex；保留原书公式和引用编号。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "所引英文不是当前教材该页原句；原页以 Self-adjoint, or symmetric schemes 开头。",
+        "原页引用编号为 [164, 227]，不是 [14, 29]。"
+      ],
+      "evidence": [
+        "教材 PDF 第107页（印刷85页），§2.4.1：Self-adjoint, or symmetric schemes have unique features; in particular they have even order [164, 227].",
+        "已读取文字并检查渲染图像；页码107=85+22正确；原页未给出该结论的独立证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.symmetricEven",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "材料不足，不能核准语义。/workspace/Ch02.lean:1039 的真实签名与批次摘录一致，量词顺序为 n、G、F、r，正 r，自伴随 G/F、F 的加法群作用律、两族联合 C∞、r 阶成立且 r+1 阶不成立，结论 Even r。缺少 Q、textbookAdjointMethod、methodLocalOrder 的正式定义及本批声称的 MANIFEST，无法确认空间、误差幂次、局部范围、点态/一致估计及确切阶语义。若 order 表示至少某阶，则确切阶资格确有必要：二阶对称法也满足一阶误差界；精确流通常满足所有有限阶。C∞、全局 Equiv.Perm 和全实参数流是强于原文的一组充分条件候选，不能在没有定义的情况下断言其必要性或其与原文范围完全一致。F 的群作用律和可逆性通常已蕴涵 F 自伴随，故该自伴随假设可能冗余，须以实际伴随定义确认。原书未注明有限确切阶，应保留原句并在额外假设中说明资格，而不直接认定原书有错；此条无 [ERRATUM?] 标注。源码本条为 sorry，这与签名语义是否忠实分开记录，不单凭 sorry 判 FAIL。",
+      "counterexample": null,
+      "suggested_fix": "补充与本批工程版本匹配的正式定义摘录及 MANIFEST：Q、textbookAdjointMethod、methodLocalOrder，明确局部阶的量词、误差幂次和确切阶；随后复核额外光滑性、全局可逆性及流假设。"
+    }
+  }
+]

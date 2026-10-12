@@ -1,0 +1,158 @@
+[
+  {
+    "source_id": "MD-2.3.1-FlowDet",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "MISSING_CONTEXT_NOTATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.3.1-FlowDet",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.3.1",
+        "printed_page": "73",
+        "pdf_page": "95",
+        "statement_latex": "In particular, if $\\operatorname{div}f\\equiv0$, we see that $D\\equiv D(0)=1$ and it follows that the volume is constant. Liouville’s theorem may be summarized compactly as:\n\\[\\nabla\\cdot f=0\\Rightarrow\\det\\mathcal F_t'=1.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "F_t为ODE ż=f(z)从t=0出发的流映射，F_0=id；F_t′表示关于初始状态的Jacobian。",
+          "D为该Jacobian行列式；初始Jacobian为单位矩阵，故D(0)=1。",
+          "div f=∇·f为向量场散度；S(t)=F_t(S)，Vol(S(t))为像集体积，页上换元公式积分|D|。"
+        ],
+        "issues": [
+          "原句及展示公式与PDF一致；context_notation为空，未解释D、流映射及其Jacobian。保留原书W(t)=F_t′(z(t))的写法，不将其静默改成固定初值处的变分矩阵。"
+        ],
+        "lean_decl": "MD.Ch02.flowDet",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookDivergenceFreeFlowJacobian_det_eq_one_of_jointC2"
+        ],
+        "extra_assumptions": [
+          "[EXTRA]Φ联合C²、f C¹、Φ0=id，τ>0及实际ODE；D0=1由Jacobian初值而非结论假设。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "原句及展示公式与PDF一致；context_notation为空，未解释D、流映射及其Jacobian。保留原书W(t)=F_t′(z(t))的写法，不将其静默改成固定初值处的变分矩阵。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原句及展示公式与PDF一致；context_notation为空，未解释D、流映射及其Jacobian。保留原书W(t)=F_t′(z(t))的写法，不将其静默改成固定初值处的变分矩阵。"
+      ],
+      "evidence": [
+        "已读取并渲染核对PDF第95页（印刷第73页）：页上定义D=det(∂F_t/∂z)，给出Ḋ=div(f(z(t)))D及指数积分式，随后为本条原句和∇·f=0⇒det F_t′=1。proof_latex=null与未提供独立证明相容；该页确有前置推导。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.flowDet",
+      "verdict": "FAIL",
+      "explanation": "实际Ch02.lean的flowDet与批次摘录一致。hinit是流的初值，hODE是实际ODE；f C¹和Φ联合C²是合理的充分正则性条件，但C²强于结论的一般需要。EXTRA所写τ>0没有出现在签名中；τ<0时Icc 0 τ为空，结论真空，且不能覆盖负时间流。更直接的缺失是：statement_scope包含“volume is constant”，结论却仅有Jacobian行列式为1，没有任何集合体积保持子句。因缺失结论判FAIL，不依赖证明是否完整。另：BATCH13.md并无textbookCoordinateJacobian及所引用正式库定理的定义摘录，当前可见工程也未找到相应源文件，故不能声称已完整核对该自定义Jacobian的实际展开。没有本条ERRATUM?标记；前置W的评价点疑问不在此处静默修订。",
+      "counterexample": "缺失条款：对允许的集合S，volume ((fun z => Φ (t,z))  S)=volume S；τ<0时不对任何负时间提出结论。",
+      "suggested_fix": "提供与MANIFEST对应的textbookCoordinateJacobian和依赖定理定义；在适当可测性及流可逆性条件下补入体积保持结论，并明确时间域。若仅审核行列式公式，应先明确缩小自然语言statement_scope；将EXTRA中的τ>0改为真实签名说明或加入该前提。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.1-LJOscillator",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "PAGE_RANGE_TOO_BROAD"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.3.1-LJOscillator",
+        "kind": "definition",
+        "label": "Example 2.3 (model)",
+        "section": "2.3.1",
+        "printed_page": "73",
+        "pdf_page": "95",
+        "statement_latex": "A 1-d oscillator with Lennard-Jones potential is described by the equations\n\\[\\dot q=p,\\qquad\\dot p=-\\varphi_{LJ}'(q).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "φ=第1章Lennard–Jones势，q>0物理位置域；仅定义实际ODE关系。"
+        ],
+        "issues": [
+          "本条限定的模型原句和两条ODE全部位于印刷第73页/PDF第95页，未跨到第74页；第74页为图及后续轨迹讨论。"
+        ],
+        "lean_decl": "MD.Ch02.ljOscillatorEquation",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "本条限定的模型原句和两条ODE全部位于印刷第73页/PDF第95页，未跨到第74页；第74页为图及后续轨迹讨论。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "本条限定的模型原句和两条ODE全部位于印刷第73页/PDF第95页，未跨到第74页；第74页为图及后续轨迹讨论。"
+      ],
+      "evidence": [
+        "已渲染核对PDF第95页（印刷第73页）底部Example 2.3：模型原句及q̇=p、ṗ=−φ_LJ′(q)均在该页。PDF第96页（印刷第74页）没有本条模型公式。第一章PDF第43页（印刷第21页）Example 1.5给出φ_LJ(r)=4ε[(σ/r)^12−(σ/r)^6]且r为粒子间距离。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.ljOscillatorEquation",
+      "verdict": "FAIL",
+      "explanation": "已核对实际def：γ的第一、第二分量分别作q、p，HasDerivAt γ (p,−deriv φ q) t的分量语义正确，时间量词为∀t∈I。然而该定义接受任意φ，也无q>0域限制，更无φ为Lennard–Jones势的约束；作为通用振子ODE关系合理，但单独不刻画原文指定的Lennard–Jones模型。Lean的deriv对不可微函数也有默认值，因此任意φ参数不能替代原文可微势的域。此处没有sorry；无EXTRA或ERRATUM?标记。",
+      "counterexample": "取φ(q)=0、I=Set.univ、γ(t)=(1,0)，所给def成立；对σ=ε=1的LJ势，φ_LJ′(1)=−24，原文要求ṗ=24，而该γ的ṗ=0，故不是该LJ模型轨迹。",
+      "suggested_fix": "将此def明确命名为通用oscillatorEquation；另定义LJ模型，固定φ(q)=4ε[(σ/q)^12−(σ/q)^6]，约束σ、ε>0及∀t∈I,q(t)>0。或以等价包装声明将现有def实例化为上述势和物理域。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.1-LJBoundedPeriodic",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "MISSING_CONTEXT_NOTATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.3.1-LJBoundedPeriodic",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.3.1",
+        "printed_page": "74",
+        "pdf_page": "96",
+        "statement_latex": "As a consequence of energy conservation, any bounded individual trajectory of this system will be a periodic orbit.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "this system指Example 2.3中的一维Lennard–Jones振子：q̇=p，ṗ=−φ_LJ′(q)，物理位置q>0。",
+          "bounded individual trajectory指相空间(q,p)中的单条完整轨迹有界；periodic orbit在此按存在正周期解释，平衡轨迹也满足此解释。"
+        ],
+        "issues": [
+          "原句与PDF逐字一致，页码正确，未给独立证明；context_notation为空，未绑定“this system”为上一页的LJ振子。"
+        ],
+        "lean_decl": "MD.Ch02.ljBoundedPeriodic",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "LJ参数正，实际全时轨迹且位置q>0；平衡解也允许任意正周期。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "原句与PDF逐字一致，页码正确，未给独立证明；context_notation为空，未绑定“this system”为上一页的LJ振子。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原句与PDF逐字一致，页码正确，未给独立证明；context_notation为空，未绑定“this system”为上一页的LJ振子。"
+      ],
+      "evidence": [
+        "已渲染核对PDF第96页（印刷第74页）图2.6下首句，确为本条原句；“this system”承接PDF第95页Example 2.3的q̇=p、ṗ=−φ_LJ′(q)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.ljBoundedPeriodic",
+      "verdict": "PASS",
+      "explanation": "实际签名绑定了正参数的LJ势并使用已展开核对的ljOscillatorEquation；γ:ℝ→ℝ×ℝ、Set.univ量化实际全时解，q(t)>0排除奇点并采用物理位置域；Bornology.IsBounded(Set.range γ)是整个相空间轨迹有界。结论∃T>0,∀t,γ(t+T)=γ(t)准确表达存在公共正周期，量词顺序正确，也覆盖平衡解。这些额外条件合理：正参数及正位置刻画该模型，全时域使全轨迹有界和周期性有明确含义；正位置上的LJ能量势阱只有一个极小点，无有限位置的非平衡分离轨道，未发现ERRATUM。签名语义PASS与证明完成度分开：实际该定理仍以sorry结束，不能据此称已获Lean验证的周期性证明。此签名的势为显式实函数，不依赖缺失的textbookCoordinateJacobian定义。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

@@ -1,0 +1,180 @@
+[
+  {
+    "source_id": "MD-2.2.1-Lagrangian",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第82页（印刷第60页），§2.2.1：Recall from Chap. 1 之后的定义为 L(q,v)=vᵀMv/2−U(q)，紧接文字明确 U 为 smooth (C²)。已逐项核对转录、正负号、分母、变量和页码。",
+        "context_notation 中对角质量矩阵的来源已核对教材 PDF 第41页（印刷第18页），§1.2：M is a diagonal mass matrix，并列出三维情形 diag(m₁,m₁,m₁,…,m_N,m_N,m_N)。这是对本条回指第1章的上下文核对，未审查本批以外的 source_id。",
+        "该定义无独立证明；proof_latex=null 与原页一致。bp_mechanicalL 是 context_notation 的形式化说明，不是教材中的记号。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png；context-mass-041.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_mechanicalL",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 Ch02.lean:100 的真实函数体：(∑ i, m i * v i ^ 2)/2−U q。若 Q n 确为有限维实配置坐标空间，且 m 给出原书固定对角质量矩阵的对角元，这与 vᵀMv/2−U(q) 一致，质量不依赖 q 或时间。定义没有正质量或 U∈C² 的资格；作为代数表达式的总定义可适用于更大输入类，原书的物理模型和后续求导仍须在正质量、C² 势的语境使用。本条未列额外假设，不应把缺少正质量或 C² 当成定义已经保证这些资格。对象 Q 的实际定义未核对，故不能批准整体语义。此项是函数定义，无 sorry 证明义务。 依赖证据不足：提供的是 /workspace/Ch02.lean（并无本批要求的 Blueprint/Ch02.lean 及其版本清单）。BATCH05.md 的八段 Lean 摘录均与该文件相符，但没有 Q 的定义，也没有导入库中 action、variation 的定义摘录；bp_action、bp_variation 是不同名称的本地定义，文件中没有将它们与 action、variation 识别为同一定义的依据。本地未找到 MolecularDynamics.Chapter02.ReviewProofs 等本次导入模块，也未取得绑定本批依赖的 MANIFEST 哈希。已查看的 share/Documents、share/Lean 均为空；一次私有库检索未返回这些依赖。因此不凭名称假设对象或函数语义，不以其他批次或未绑定版本的材料替代正式定义。",
+      "counterexample": null,
+      "suggested_fix": "提供本批绑定的 MANIFEST 和 Q 的正式定义摘录，明确 n 表示配置坐标数、m 表示固定对角元。若本条要同时形式化模型资格，另以结构或谓词登记正质量及 U∈C²；代数公式本身无需改动。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.1-Admissible",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "REGULARITY_AMBIGUITY"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "转录与页码均正确，C^∞ 是渲染原页上的无穷阶符号，并非 C¹。原页先称全部 twice continuously differentiable 曲线，后称组件为 C^∞ 并将 G 定义为 smooth 曲线。两种资格并不相同，故保留原条目的 REGULARITY_AMBIGUITY，不静默统一为 C²、C¹ 或 C∞。需要对原书意图作编辑裁定。"
+      ],
+      "evidence": [
+        "教材 PDF 第82页（印刷第60页），§2.2.1 同一段：all twice continuously differentiable curves；where the components of q(t) are C^∞ functions；the class of smooth parameterized curves。三处均已对渲染页核对。",
+        "参数区间为 [α,β]，端点为 q(α)=Q、q(β)=Q′；JSON 中 Q′ 与 G(Q,Q′,α,β) 无误。proof_latex=null，无独立证明。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.admissibleSmooth",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已展开 Ch02.lean:106：admissibleSmooth a b x y q 等于 ContDiff ℝ ∞ q ∧ q a=x ∧ q b=y。两个端点条件完整，但正则性只选择原页后一种 C∞，没有解决同段 C²/C∞ 歧义。[EXTRA] 是对全实线函数 q 要求 C∞，而原书参数曲线仅在 [α,β] 上讨论；此全局要求并非必要的局部资格。若改以存在光滑延拓及按区间限制识别曲线的接口，可作为一种表示约定，但需要明确端点光滑含义、延拓存在性和曲线等价关系；对于同一个任意全局代表函数，两种资格确实不同。a<b 未编码，须在使用该类时明确非退化区间约定。Q 及原页正则性意图仍未审定，不能记 PASS。此项是谓词定义，无 sorry。 依赖证据不足：提供的是 /workspace/Ch02.lean（并无本批要求的 Blueprint/Ch02.lean 及其版本清单）。BATCH05.md 的八段 Lean 摘录均与该文件相符，但没有 Q 的定义，也没有导入库中 action、variation 的定义摘录；bp_action、bp_variation 是不同名称的本地定义，文件中没有将它们与 action、variation 识别为同一定义的依据。本地未找到 MolecularDynamics.Chapter02.ReviewProofs 等本次导入模块，也未取得绑定本批依赖的 MANIFEST 哈希。已查看的 share/Documents、share/Lean 均为空；一次私有库检索未返回这些依赖。因此不凭名称假设对象或函数语义，不以其他批次或未绑定版本的材料替代正式定义。",
+      "counterexample": "用于区分原文资格的标量例：在 [0,1] 上 q(t)=|t−1/2|³ 是 C²、两端均为 1/8，却不是 C³，故属于原页首句的 C² 类而不属于后一 C∞ 类。用于区分局部资格与全局代表的例：全局 q(t)=|t−2| 在 [0,1] 上等于 2−t、光滑且端点为 2、1，却在 t=2 不可微。这说明同一全局 q 的资格被 [EXTRA] 加强；并不否认该区间曲线另有光滑延拓。此处是标量数学示例，不冒充已在未给出的 Q 定义上构造了 Lean 反例。",
+      "suggested_fix": "先裁定保留原页 C² 还是 C∞。若保留 C∞，用只针对时间窗的光滑资格，或显式采用存在光滑延拓并按限制识别曲线的表示；交代 a<b。补充 Q 和绑定版本材料后再审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.1-Action",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第82页（印刷第60页），§2.2.1 段末：classical action (or, simply, action)；for any Γ∈G；A_L(Γ)=∫_α^β L(q(t),q̇(t)) dt。JSON 的上下限、速度参数及下标 L 均一致。",
+        "context_notation 对 q 为 Γ 的参数曲线及光滑资格的说明来自同页 G 的定义。α<β 是有向时间窗的使用约定，原页未单列此不等式。无独立证明，proof_latex=null。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_action",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 Ch02.lean:110 的函数体，确为 ∫ t in a..b, L (q t) (deriv q t)，使用实际时间导数而非任意速度变量。时间端点、位置和速度两个参数次序与原式一致。函数定义对任意 L、q 和端点给出总值，未把 Γ∈G、q 的光滑性或被积函数可积性作为输入资格；这种扩展只在合格曲线上限制使用时可以代表原书定义，不能把不可微或不可积的总函数值当成原书作用量。本条无 [EXTRA]，也没有宣称所有输入自动合格。Q 的实际对象和绑定依赖缺失，不能核准对象语义；此外后续定理使用的是 action，不能用 bp_action 的可见函数体代替 action 的展开。此项是定义，无 sorry。 依赖证据不足：提供的是 /workspace/Ch02.lean（并无本批要求的 Blueprint/Ch02.lean 及其版本清单）。BATCH05.md 的八段 Lean 摘录均与该文件相符，但没有 Q 的定义，也没有导入库中 action、variation 的定义摘录；bp_action、bp_variation 是不同名称的本地定义，文件中没有将它们与 action、variation 识别为同一定义的依据。本地未找到 MolecularDynamics.Chapter02.ReviewProofs 等本次导入模块，也未取得绑定本批依赖的 MANIFEST 哈希。已查看的 share/Documents、share/Lean 均为空；一次私有库检索未返回这些依赖。因此不凭名称假设对象或函数语义，不以其他批次或未绑定版本的材料替代正式定义。",
+      "counterexample": null,
+      "suggested_fix": "补充 Q、action 的正式定义及版本对应关系；若 action 与 bp_action 定义相同，给出可核对的别名或定义等式。明确作用量接口只在原书合格曲线及可积性条件下使用；需要严格类型化时添加合格曲线包装。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.1-Variation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第83页（印刷第61页），公式(2.3)：q^ε(t)=q(t)+εη(t)，t∈[α,β]。公式后明确 η(α)=η(β)=0，并称 η 是 C^∞ parameterized curve linking 0 to 0。JSON 转录及页码正确。",
+        "context_notation 正确把 η 的光滑性和零端点列为使用资格，并未声称仅由 q+εη 的函数体就能自动推出这些资格。该段无独立证明，proof_latex=null。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_variation",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 Ch02.lean:114：bp_variation q η ε t=q t+ε • η t。实标量乘法、加法及 ε、t 的作用次序符合(2.3)。这是点态函数构造，缺少 η 的光滑/端点前提本身并非反例，因为函数体并不声称这些前提成立；原文合格变分仍必须在 η∈C∞、η a=η b=0 且 q 合格的语境使用，端点保持由这些资格得到。本条无额外假设。未取得 Q 的实际定义及其线性配置空间解释；后续使用的导入名称 variation 也未展开，不能因为名称相似就认定与 bp_variation 相同。因此材料不足，不能记 PASS。此项是定义，无 sorry。 依赖证据不足：提供的是 /workspace/Ch02.lean（并无本批要求的 Blueprint/Ch02.lean 及其版本清单）。BATCH05.md 的八段 Lean 摘录均与该文件相符，但没有 Q 的定义，也没有导入库中 action、variation 的定义摘录；bp_action、bp_variation 是不同名称的本地定义，文件中没有将它们与 action、variation 识别为同一定义的依据。本地未找到 MolecularDynamics.Chapter02.ReviewProofs 等本次导入模块，也未取得绑定本批依赖的 MANIFEST 哈希。已查看的 share/Documents、share/Lean 均为空；一次私有库检索未返回这些依赖。因此不凭名称假设对象或函数语义，不以其他批次或未绑定版本的材料替代正式定义。",
+      "counterexample": null,
+      "suggested_fix": "补充 Q 与 variation 的正式定义和绑定版本材料，核对 variation 是否确实为同一 q+εη 构造；在使用处明确合格 η、q 的资格及区间限制。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.1-FirstVariation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第83页（印刷第61页），Using a Taylor series expansion 之后的两行：A_L(Γ^ε)−A_L(Γ)=∫[L(q+εη,q̇+εη̇)−L(q,q̇)]dt；再展开为 ∫[ε((∂L/∂q)η+(∂L/∂q̇)η̇)+O(ε²)]dt。位置项、速度项、符号与余项阶数均正确。",
+        "L∈C² 的源语境在 PDF 第82页（印刷第60页），q、η 的 smooth/C∞ 资格见 PDF 第82–83页。本条陈述本身就是计算推导，原书未另列独立证明，proof_latex=null 合理。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png；page-083.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.firstVariation",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已逐个核对 Ch02.lean:118 的量词及三个合取结论：先对 n,L,q,η,a,b 量化；a<b 及 L（对位置速度联合变量）、q、η 为 C² 在结论之前；精确差分等式对所有 ε 成立；HasDerivAt 在 ε=0 的导数为两项积分；最后断言减去 ε 倍该积分后的作用量余项在 ε→0 为 O(ε²)。fderiv 的第一个函数只变化位置，第二个函数只变化速度，各自作用于 η 和 η̇，次序正确。[EXTRA] 中 C² 的 L 与原文机械 L、U∈C² 相容，q、η∈C² 比原文选定的 C∞ 更弱而仍足以进行此计算；固定端点不用于这一展开，省略它们是可成立的扩展。全域 C² 和 a<b 比局部计算所需更强，合理但不都是必要条件。原页 O(ε²) 在积分号内，签名明示的是积分后的 O(ε²)；若 statement_scope 要求连被积函数的点态或一致余项也逐项登记，还须补一个紧时间窗的一致估计。关键 action、variation、Q 的真实定义未给出，现阶段不能判断这些结论是否确实涉及原书作用量及变分。定理证明体为 sorry；这与签名语义审计是两个独立问题，不能以 sorry 作为语义 FAIL 的理由。 依赖证据不足：提供的是 /workspace/Ch02.lean（并无本批要求的 Blueprint/Ch02.lean 及其版本清单）。BATCH05.md 的八段 Lean 摘录均与该文件相符，但没有 Q 的定义，也没有导入库中 action、variation 的定义摘录；bp_action、bp_variation 是不同名称的本地定义，文件中没有将它们与 action、variation 识别为同一定义的依据。本地未找到 MolecularDynamics.Chapter02.ReviewProofs 等本次导入模块，也未取得绑定本批依赖的 MANIFEST 哈希。已查看的 share/Documents、share/Lean 均为空；一次私有库检索未返回这些依赖。因此不凭名称假设对象或函数语义，不以其他批次或未绑定版本的材料替代正式定义。",
+      "counterexample": null,
+      "suggested_fix": "提供 Q、action、variation 的正式展开及本批 MANIFEST；逐项核对导入 action 与 bp_action、variation 与 bp_variation 的对应。交代原页积分内 O(ε²) 的含义；若完整登记该子句，另补在 t∈[a,b]、小 ε 上的统一余项界。全域正则性可保留为明确 [EXTRA] 或改成紧时间窗所需的局部资格。本次不补证明。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.1-TaylorPrinted",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "原文转录和页码均正确，原页二阶及以后确实没有 1/j!。这不是缩放张量的约定：同一脚注明确 f^(2) 为原始 Hessian、f^(3) 为原始三阶偏导张量。[ERRATUM?] 所述数学疑误成立。不得把标准泰勒公式的系数静默写回原文条目；是否正式采纳勘误需人工编辑裁定。",
+        "对 f(x)=x²、z₀=0、k=2，原式给 x²=2x²+O(|x|³)，所需余项 −x² 不是 O(|x|³)。因此不存在把此字面原式当作正确一般定理的批准依据；保留原条目的原式及 ERRATUM? 标记。"
+      ],
+      "evidence": [
+        "教材 PDF 第83页（印刷第61页）脚注3：梯度项之后直接是 +f^(2)⟨z−z₀,z−z₀⟩+f^(3)⟨z−z₀,z−z₀,z−z₀⟩，高阶项也未见阶乘系数。最后余项为 O(‖z−z₀‖^(k+1))。",
+        "同页脚注下文称 f^(2) 是 m×m Hessian，ij 元为 ∂²f/∂z_i∂z_j；并写 f^(2)⟨u,v⟩=uᵀf^(2)v。f^(3) 的 ijk 元为 ∂³f/∂z_i∂z_j∂z_k，明确写三重求和。这验证 context_notation 中关于未缩放张量的说明。",
+        "proof_latex=null；脚注只陈述泰勒式并解释张量，没有独立证明。渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.taylorPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 Ch02.lean:135：量化 n,k,f,z₀，在 1≤k、f∈C^(k+1) 条件下，使用 range k 中 j+1=1,…,k 阶导数，并把残差声明为 O(‖u‖^(k+1))。可见签名没有 1/(j+1)!；在标准 iteratedFDeriv 表示未缩放迭代 Fréchet 导数、Q n 表示有限维实配置空间的解释下，它忠实保留原书错误，不能仅因原式为假就把“忠实性”判成 FAIL。[ERRATUM?] 的标量反例确证原式错误，意味着这份预期解释下的 theorem 不能得到真实证明。1≤k 是为原式已有梯度项明确其适用阶数，属合理澄清；u=z−z₀ 与 𝓝 0 的余项表达对应原文局部展开。Q 的定义及本批绑定的正式依赖仍缺失，不能将上述有条件比较升级为 PASS，也不能将未绑定版本的库当作正式证据。证明体为 sorry，未完成证明与原书公式错误、语义忠实性须分别登记。 依赖证据不足：提供的是 /workspace/Ch02.lean（并无本批要求的 Blueprint/Ch02.lean 及其版本清单）。BATCH05.md 的八段 Lean 摘录均与该文件相符，但没有 Q 的定义，也没有导入库中 action、variation 的定义摘录；bp_action、bp_variation 是不同名称的本地定义，文件中没有将它们与 action、variation 识别为同一定义的依据。本地未找到 MolecularDynamics.Chapter02.ReviewProofs 等本次导入模块，也未取得绑定本批依赖的 MANIFEST 哈希。已查看的 share/Documents、share/Lean 均为空；一次私有库检索未返回这些依赖。因此不凭名称假设对象或函数语义，不以其他批次或未绑定版本的材料替代正式定义。",
+      "counterexample": "原书字面公式的反例：m=1，k=2，f(x)=x²，z₀=0。梯度项为0，Hessian 项为2u²，故残差为−u²；对非零 u，其绝对值与 |u|³ 之比为 1/|u|，在 u→0 时无界。这是原书及预期标准导数解释下签名的数学反例，不是对“忠实转录”本身的反例；Q 未给出，未声称完成了对应 Lean 反例。",
+      "suggested_fix": "保持 taylorPrinted 作为原书字面错误的记录，不静默更换其语义。若经编辑裁定要新增正确定理，另起明确的 corrected 名称，在第 r 阶原始 iteratedFDeriv 项乘 1/r!（r=j+1），并同时保留原式出处和勘误说明；补充 Q 与绑定版本的正式定义后再审计。本次不修改工程或证明。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.1-StationaryAction",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第83页（印刷第61页）末段：natural motion 是 stationary point，O(ε) 项对任意 smooth η 且 η(α)=η(β)=0 应消失。该段以 i.e., 结束并跨页。",
+        "教材 PDF 第84页（印刷第62页）页首给出 I=∫[(∂L/∂q)η+(∂L/∂q̇)η̇]dt=0。JSON 将文字与下一页公式合并，并准确登记 61–62 / 83–84 页码范围。proof_latex=null，无独立证明。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png；page-084.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.stationarySmoothAction",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已展开 Ch02.lean:145：对所有全实线 C∞ η，在 η a=η b=0 后要求 ε↦action L a b (variation q η ε) 在 ε=0 有导数0。∀η 的位置、零端点和导数为0均明确，不是仅对一个变分成立，也不是默认总导数值为0而不要求可微。[EXTRA] 用真实 ε 导数定义驻值是合理做法；它与原页 I=0 的积分条件须在 a<b、L∈C²、q 合格等语境借第一变分公式建立对应。该定义自身没有这些 L、q 资格，也没有写出 I 的积分或“自然运动⇒驻值”的动力学断言；若整段都属于本条声明范围，不能用一个驻值谓词代替该断言。全实线 C∞ η 还沿用前述局部资格/延拓问题。由于 action、variation、Q 的正式展开缺失，第一变分桥接也只是 sorry 签名，不能仅靠附注宣称等价，故结论为材料不足。此项是谓词定义，无 sorry；桥接定理的证明状态另论。 依赖证据不足：提供的是 /workspace/Ch02.lean（并无本批要求的 Blueprint/Ch02.lean 及其版本清单）。BATCH05.md 的八段 Lean 摘录均与该文件相符，但没有 Q 的定义，也没有导入库中 action、variation 的定义摘录；bp_action、bp_variation 是不同名称的本地定义，文件中没有将它们与 action、variation 识别为同一定义的依据。本地未找到 MolecularDynamics.Chapter02.ReviewProofs 等本次导入模块，也未取得绑定本批依赖的 MANIFEST 哈希。已查看的 share/Documents、share/Lean 均为空；一次私有库检索未返回这些依赖。因此不凭名称假设对象或函数语义，不以其他批次或未绑定版本的材料替代正式定义。",
+      "counterexample": null,
+      "suggested_fix": "提供 Q、action、variation 和绑定 MANIFEST；明确本条究竟登记驻值定义还是整个 Hamilton 原理。针对驻值定义，在合格 L、q、时间窗下明确其与原页对全部合格 η 的积分 I=0 对应；若覆盖自然运动陈述，需另登记自然运动关系及其推出驻值的命题。合理处理仅在区间上的变分资格。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.1-Parts",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第84页（印刷第62页）页首第二段：integration by parts；in light of the boundary conditions；I=∫[(∂L/∂q)−d/dt(∂L/∂q̇)]η dt=0。JSON 保留位置项、负号、对速度偏导的时间导数和末尾等于0。",
+        "同页前一公式是 I=∫[(∂L/∂q)η+(∂L/∂q̇)η̇]dt=0；context_notation 正确指出 I 来源于前段驻值条件，不能只记录其中一个分部积分项。η 的 C∞ 和零端点来自 PDF 第83页。",
+        "本条用分部积分给计算说明，没有另设独立证明，proof_latex=null 合理。渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png；page-084.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.firstVariationParts",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已逐项核对 Ch02.lean:151 的真实签名：先量化 n,L,q,η,a,b，随后要求 a<b、联合 L 为 C²、q 为 C²、η 为 C∞、两个零端点及 stationarySmoothAction。结论两个合取分别是未分部积分的完整第一变分积分等于分部积分后的完整积分，以及后一积分为0；没有漏掉 I 的位置项或最终零值。速度偏导由 fderiv ℝ (L (q s)) (deriv q s) 表示，时间导数作用于整个 s↦该偏导的连续线性泛函，最后对 η t 求值，符号和对象层次符合原页。[EXTRA] 的 L、q∈C² 足以支持经典分部积分，η∈C∞ 和零端点来自原文；驻值是得到最后=0所需的上文前提，但仅积分相等本身不需要驻值。a<b 及全域正则性是合理的时间窗/表示加强，局部资格本已足够。stationarySmoothAction 的本地函数体虽可读取，其中导入的 action、variation 和 Q 无法展开，因此不能确认驻值假设确是原书 I=0，也不能确认所有对象。证明体为 sorry；签名比对所见的两个结论完整，sorry 本身不构成语义 FAIL。 依赖证据不足：提供的是 /workspace/Ch02.lean（并无本批要求的 Blueprint/Ch02.lean 及其版本清单）。BATCH05.md 的八段 Lean 摘录均与该文件相符，但没有 Q 的定义，也没有导入库中 action、variation 的定义摘录；bp_action、bp_variation 是不同名称的本地定义，文件中没有将它们与 action、variation 识别为同一定义的依据。本地未找到 MolecularDynamics.Chapter02.ReviewProofs 等本次导入模块，也未取得绑定本批依赖的 MANIFEST 哈希。已查看的 share/Documents、share/Lean 均为空；一次私有库检索未返回这些依赖。因此不凭名称假设对象或函数语义，不以其他批次或未绑定版本的材料替代正式定义。",
+      "counterexample": null,
+      "suggested_fix": "补充 Q、action、variation 的正式摘录和绑定版本清单，并核对驻值谓词在本条正则性条件下确实对应完整 I=0。保持两个合取结论与全体前提；若精简接口，可把无需驻值的分部积分等式与依赖驻值的零值结论分别登记。本次不补证明。"
+    }
+  }
+]

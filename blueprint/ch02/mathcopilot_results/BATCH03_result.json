@@ -1,0 +1,105 @@
+[
+  {
+    "source_id": "MD-2.1.2-SecondDerivative",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_ASSUMPTION_NOT_EXPLICIT"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.1.2-SecondDerivative",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.1.2",
+        "printed_page": "59",
+        "pdf_page": "81",
+        "statement_latex": "and the second derivative is obtained by differentiating the differential equation itself:\n\\[\\ddot{\\boldsymbol z}(t)=\\frac{\\mathrm d}{\\mathrm dt}\\dot{\\boldsymbol z}(t)=\\frac{\\mathrm d}{\\mathrm dt}f(\\boldsymbol z(t))=f'(\\boldsymbol z(t))\\dot{\\boldsymbol z}(t)=f'(\\boldsymbol z(t))f(\\boldsymbol z(t)),\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "PDF 第81页（印刷第59页）先写 $\\dot{\\boldsymbol z}_n=f(\\boldsymbol z_n)$，随后用链式法则得到 $\\ddot{\\boldsymbol z}(t)=f^{\\prime}(\\boldsymbol z(t))\\dot{\\boldsymbol z}(t)=f^{\\prime}(\\boldsymbol z(t))f(\\boldsymbol z(t))$。同页明确说明：$\\boldsymbol z\\in\\mathbb R^m$，$f:\\mathbb R^m\\to\\mathbb R^m$，$f^{\\prime}(\\boldsymbol z)$ 是 $m\\times m$ Jacobian，$(f^{\\prime}(\\boldsymbol z))_{ij}=\\partial f_i/\\partial z_j$，亦记为 $\\partial f/\\partial\\boldsymbol z$。本段未显式写出 $f\\in C^1$；全域 $C^1$ 是本条 Lean 陈述采用的充分正则性假设，不能作为原页明示假设记录。"
+        ],
+        "issues": [
+          "[CONTEXT_ASSUMPTION_NOT_EXPLICIT] 原 context_notation 未区分原页实际记号说明与形式化所加的全域 C¹ 假设；已明确两者来源。陈述公式、proof_latex 和页码未改，未对原书作数学修正。"
+        ],
+        "lean_decl": "MD.Ch02.odeSecondDerivative",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "Lean 明示 ContDiff ℝ 1 f，即向量场在整个 Q n 上 C¹；PDF 第81页本段只使用导数和 Jacobian，未逐字声明该全域正则性。",
+          "解 γ 取全实线 C²；在 f 为 C¹ 且 γ 满足实际 ODE 的条件下，此条件不必另行假设，可由链式法则推出，因此是合理但冗余的 [EXTRA]。",
+          "Lean 量化全实线上的解和所有实数时刻；原页公式也可在实际解的存在时间区间逐点解释。全实线资格强于局部区间版本。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH03 A 原文审校：根据 PDF 第81页渲染和文字提取修订 context_notation，并补记实际 Lean 签名中的全域正则性和时间域资格；保留原 statement_latex、proof_latex、页码及所有其余条目字段。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png; input_sha256.json"
+      },
+      "issues": [
+        "statement_latex 的引文、链式法则展示式、末尾逗号与原页相符；printed_page=59、pdf_page=81 和 section=2.1.2 正确。原页没有另外的独立证明，proof_latex=null 正确，计算已收入 statement_latex。",
+        "context_notation 原写“f∈C¹”，但 PDF 第81页本段没有明示全域 C¹ 条件。它是可用于证明该公式的充分条件，也是 Lean 签名的实际前提，应明确标为形式化所加资格。修正仅澄清上下文和额外假设的来源，不改原书公式。"
+      ],
+      "evidence": [
+        "PDF 第81页／印刷第59页，Example 2.1 中短语“and the second derivative is obtained by differentiating the differential equation itself:”与 JSON 引文一致；随后展示五项相等的链式法则计算，末项为 f′(z(t))f(z(t))，末尾为逗号。",
+        "同页紧邻前句“In this formula”给出 ż_n=f(z_n)；同页 Jacobian 说明明确给出 z∈ℝᵐ、f:ℝᵐ→ℝᵐ、(f′(z))_ij=∂f_i/∂z_j 及替代记号 ∂f/∂z，没有显式 C¹ 声明。",
+        "已实际查看 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png，并对照 page-081.txt；PDF 页眉的印刷页码是59，满足59+22=81。",
+        "/workspace/Ch02.lean 第69—76行与 BATCH03 的 odeSecondDerivative 签名摘录一致；第70行显式给出 ContDiff ℝ 1 f 和 ContDiff ℝ 2 γ。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.odeSecondDerivative",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 PDF 第81页的真实公式、BATCH03 签名以及 /workspace/Ch02.lean 第69—76行。可见签名的量词为先给定 n、f、γ，再要求 f 为全域 C¹、γ 为全实线 C²、每个实数 t 均满足 γ′(t)=f(γ(t))，最后对每个 t 给出 deriv γ 的导数等于实际 fderiv ℝ f (γ t) 作用于 f(γ t)。这些可见子句对应原式末项，前面的等号由 ODE 和导数的含义连接，并未将待证二阶导数作前提。[EXTRA] γ 为 C² 是合理但不必要的加强：对 C¹ 向量场的实际可微 ODE 解，链式法则已经给出该二阶导数；源文件的文本证明也未使用 hγ。全域 C¹ 和全实线解同样强于只在解存在的区间和轨迹附近要求可微的版本，应明确其适用范围。但是，本批没有 Q n 的真实定义及其范数／标量结构摘录，不能仅凭名字认定它就是原页的 ℝᵐ。BATCH03 未内嵌所称正式依赖摘录或 MANIFEST；指定的 Blueprint/Ch02.lean 未找到，目前只有根目录 Ch02.lean，且它导入的正式项目模块未提供。因此实际对象和依赖版本尚未核实，不能记 PASS；未据此判定公式错误。本条源文件正文没有 sorry 或 admit；该事实来自只读文本检查，不等于在完整工程中重新编译成功，也不能代替签名语义判断。本条未标 [ERRATUM?]，PDF 的这条链式法则公式未发现原书疑误。",
+      "counterexample": null,
+      "suggested_fix": "补齐与 MANIFEST 哈希一致的正式库定义摘录，至少包括 Q 及所用实范数／标量结构，并提供指定 Blueprint 文件或说明根目录 Ch02.lean 与其的版本关系。核实对象后再给最终语义判定；可删除冗余 ContDiff ℝ 2 γ 前提，或保留并标明冗余性。若要覆盖原公式的局部解语境，将 ODE 与结论限制在实际解的时间区间，向量场正则性限制在轨迹所在开放域。"
+    }
+  },
+  {
+    "source_id": "MD-2.1.2-Taylor2",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF 第81页／印刷第59页，Example 2.1 中“so one may write the 2nd order Taylor series method as”之后的递推式为 z_{n+1}=z_n+hf(z_n)+(h²/2)f′(z_n)f(z_n)，系数1/2、h²、导数作用顺序和句点均与 JSON 一致。",
+        "紧接“This method generates the flow map approximation”后的公式为 G_h(z)=z+hf(z)+(h²/2)f′(z)f(z)，与 statement_latex 的第二个展示式一致。",
+        "context_notation 的 Jacobian 英文段落、m×m 维数、ij 分量及替代记号与同页正文一致；换行和数学排版转换未改变文字或公式。",
+        "原页此处是方法与映射的定义，没有独立证明段，proof_latex=null 正确。section=2.1.2、Example 2.1 的标签及59+22=81均相符。",
+        "已实际查看 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png，并对照 page-081.txt；/workspace/Ch02.lean 第79—80行的定义体与 BATCH03 的 Lean 摘录一致。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.taylorSecond",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 PDF 第81页及 /workspace/Ch02.lean 第79—80行。实际定义体为 z+h•f z+(h²/2)•(fderiv ℝ f z)(f z)，使用标量乘法和实际 Fréchet 导数作用，项数、符号、1/2 系数、求导点及导数作用对象均与原页映射公式一致；代入 z=z_k 就得到同页的递推式。可见参数是 n、f、h、z；该定义没有明示 f 的可微前提。解释成原页 Jacobian 方法时，适用的向量场仍须在相应点可微，不能把 Lean 导数算子的全函数写法当成原书额外断言了不可微情形。本条没有 [EXTRA] 或 [ERRATUM?] 标签，原页这两个公式未发现疑误。然而 Q n 的实际定义、范数和实标量结构没有提供；BATCH03 中也没有所称正式库定义摘录或可绑定依赖版本的 MANIFEST。指定 Blueprint/Ch02.lean 未找到，根目录 Ch02.lean 的正式导入模块不在现有材料中，故不能完整确认对象和版本。按不得仅看名字、未核对不得记 PASS 的要求，本条判 NEEDS_HUMAN；这是材料不足，不是已经找到映射公式的反例。taylorSecond 是有完整定义体的 def，正文不含 sorry 或 admit；没有对不完整依赖工程作编译成功的声称。",
+      "counterexample": null,
+      "suggested_fix": "提供同一 MANIFEST 版本的 Q 定义及相关范数／实标量结构，并确认 Blueprint 文件与所审根目录副本一致。同时明确方法在可微向量场上解释，以保证 fderiv 对应原页 Jacobian；若接口本身须表达这一资格，可在适用性陈述中显式加上 Differentiable ℝ f 或所需局部可微条件。"
+    }
+  },
+  {
+    "source_id": "MD-2.1.2-Taylor2Order",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF 第81页／印刷第59页，Example 2.1 的第一次二阶截断展示式后原句是“which is referred to as the 2nd order Taylor series method.”，与 statement_latex 逐字一致，包括 2nd 和末尾句点。",
+        "同页前段将高阶方法关联到固定有限时间区间的 global error estimate，展示 ē≈C(τ)hʳ，r>1；同页后续两式明确此处的二阶 Taylor 方法。context_notation 指向这些真实上下文，未把局部一步误差误记成全局误差。",
+        "为核对全局阶的含义，还实际查看 PDF 第77页／印刷第55页的 order of accuracy 段：固定有限时间区间的误差由 K hʳ 控制，充分小步长下 K 独立于 h；这说明二阶是全局 O(h²) 资格，而非要求每个特殊向量场都恰好只有二阶。",
+        "原页没有该阶断言的独立证明，proof_latex=null 与 proof_note 相符；section=2.1.2、Example 2.1 标签、印刷页59及PDF页81相符。",
+        "页图证据为 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png 和 page-077.png；提取文字另存同目录 page-081.txt、page-077.txt。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.taylor2Order",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 PDF 第81页的二阶称谓、同页高阶全局误差说明、PDF 第77页的固定时间窗阶定义，以及 /workspace/Ch02.lean 第84—87行。可见签名只给出外层 ∀ n f γ τ，然后从 compactTrajectory f γ τ 推出 globalOrder (taylor2 f) γ τ 2。必须展开前提和结论才能判断：γ 是否是给定 f 的真实 ODE 解、时间窗是否有效、数值初值是否等于 γ(0)、误差是否覆盖全窗各网格点、是否先存在独立于步长的 C 和细网格阈值再量化所有细网格，以及结论究竟是全局 O(h²) 还是其他性质。本批未提供 compactTrajectory、globalOrder、taylor2、Q 或这些定义所用误差与迭代函数的实际定义；BATCH03 只有签名与注释，没有所称正式库摘录或 MANIFEST。根目录 Ch02.lean 导入的 Chapter02 正式模块也未找到，指定 Blueprint/Ch02.lean 不在现有文件中。特别是本批映射条目名为 MD.Ch02.taylorSecond，而本定理实际使用 taylor2；不能仅凭类似名称认为二者相等或求导方式相同。[EXTRA] 注释声称 compactTrajectory 要求 f 全域 C⁶ 与紧时间窗上的连续实际轨迹：C⁶ 显然强于通常二阶误差所需的正则性，可作为合理但不必要的加强；但这些条件是否真的包含在定义中、是否还有其他假设、是否把待证误差作为前提，目前都不能核实。本条未标 [ERRATUM?]；PDF 的二阶方法称谓本身没有发现疑误。源文件第87行是 sorry，说明这个定理的证明尚未完成；NEEDS_HUMAN 的签名语义判定来自定义材料缺失，独立于该 sorry，不以 sorry 本身判 FAIL。",
+      "counterexample": null,
+      "suggested_fix": "补齐与 MANIFEST 哈希一致的 compactTrajectory、globalOrder、taylor2、Q 以及它们引用的解、迭代和最大误差定义，并确认 Blueprint 文件版本。明确核实 taylor2 f 的定义体确为本批 taylorSecond f，或给出已存在的等价关系。需要核对的目标语义是：对每个符合真实解与正则性资格的固定有限时间窗，存在 C>0 和 ν₀>0，使所有 ν≥ν₀ 在 h=τ/ν 时的全窗数值误差不超过 C h²；C 可以依赖问题和时间窗，但不能依赖 ν。在材料补齐后才判断具体签名是否需要修订；本次保持只读，不补证明。"
+    }
+  }
+]

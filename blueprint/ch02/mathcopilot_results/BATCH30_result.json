@@ -1,0 +1,115 @@
+[
+  {
+    "source_id": "MD-2.5.3-Newmark",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接渲染并逐字核对教材 PDF 第114页（印刷第92页）§2.5.3 开头及两条 Newmark 公式；σ、η、符号、系数、页码均吻合。Q 式仅动量项含 M⁻¹，两项 ∇U 确实没有 M⁻¹；不是 JSON 漏抄。",
+        "该页无本条独立证明，proof_latex=null、proof_discussion_latex=null 与原页一致。context_notation 中 γ/β 对应 σ/η、F=-∇U 的翻译约定吻合摘录公式。",
+        "原书随后称其为 Newmark 原论文公式的 exact transcription，仅以 M⁻¹p 替换速度；在本教材动量约定下存在质量一致性疑点。保留原文及 ERRATUM? 标记，不静默补质量因子。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_newmarkRelation",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 Ch02.lean:1331–1333 的真实 bp_newmarkRelation：两个等式以 ∧ 联结，z.1/w.1 与 z.2/w.2 分别用于位置和动量，γ/β 参数及两个力项的符号、系数在 F=-∇U 约定下与 PDF 字面式一致，没有偷偷在力项加入 invMass。此条没有 [EXTRA]，它是关系定义而非解存在定理，也没有 sorry。但 Q、Z、invMass 的正式定义未提供，特别是 invMass 是否确为 M⁻¹ 作用无法确认，故不能记 PASS。本批 BATCH30.md 没有内嵌所依赖的正式库定义，当前附件 Ch02.lean 仅给 import；工作区搜索未找到这些定义，share/Documents 与 share/Lean 为空，亦未取得本批 MANIFEST 对应工程。不能依据定义名称推断其语义。 [ERRATUM?] 的缺质量因子观察由原页支持；认定作者意图需进一步材料。",
+      "counterexample": null,
+      "suggested_fix": "提供本批版本的 Q、Z、invMass 正式定义及 MANIFEST；确认采用教材质量矩阵对应的坐标表示。维持字面 bp_newmarkRelation，若另给质量修正版应明确标注并分开命名。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.3-NewmarkReduction",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF 第114页（印刷第92页）原句逐字为 For η=0 we then arrive at the Verlet method.；JSON 引文、页码及无独立证明记录正确。",
+        "then 的前文明确选择 σ=1/2；context_notation 正确保留该条件。该页 Q 式的两个力项确实缺 M⁻¹，故不得把 η=0 直接按质量修正版理解。",
+        "ERRATUM? 所述质量问题可由字面式与标准动量 Verlet 比较发现，但“仅 M=I”应理解为对所有力、初值的普遍方法等价条件；特殊力或单个初值也可能在 M≠I 时巧合相等。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.newmarkReduction",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch02.lean:1337–1339 的全称量词依次覆盖 n、m、F、h、z、w；σ=1/2、η=0 固定，结论是关系与 w=verlet m F h z 的双向等价。没有质量正性等 [EXTRA]，存在 sorry，与签名忠实性分开处理。关键是前提调用导入的 newmarkRelation，而不是本批明确给出的 bp_newmarkRelation；没有其定义或等价定理，无法判定是否偷偷用了质量修正版，也无法展开 verlet。本批 BATCH30.md 没有内嵌所依赖的正式库定义，当前附件 Ch02.lean 仅给 import；工作区搜索未找到这些定义，share/Documents 与 share/Lean 为空，亦未取得本批 MANIFEST 对应工程。不能依据定义名称推断其语义。 因而原文疑误及符号混用均需核实，不能直接记 PASS 或凭名称断言该导入关系为假。",
+      "counterexample": "条件性反例（针对 PDF 字面式，未宣称已核实导入的 newmarkRelation）：n=1、m=2、F(q)=1（U(q)=-q）、h=1、z=(0,0)、σ=1/2、η=0。字面 Newmark 得 w=(1/2,1)；标准质量动量 Verlet 得 (1/4,1)。该质量严格正，差异不是零质量造成。若导入关系是质量修正版，此反例不适用于其签名，但该签名将未保留原文疑误。",
+      "suggested_fix": "提供 newmarkRelation、verlet、invMass 的实际定义，并明确说明 newmarkRelation 与 bp_newmarkRelation 的关系。若要忠实记录原书错误，使用字面关系并保留错误标记；若证明有效的修订定理，可明确增加 m≡1 条件，或另立在 Q 式两项力前补 M⁻¹ 的质量修正版，不冒充一般质量的原句。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.3-NewmarkDamping",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF 第114页（印刷第92页）从 In practice the choice σ=1/2 到 desirable in the setting of molecular dynamics. 的整句与 JSON 逐字一致，包括括号中 simple model problem 和分号；原页无该句独立证明。",
+        "context_notation 为空不产生矛盾；extra_assumptions 已明确说明用单位质量线性振子及 det=1 解释模型中的无面积收缩，未声称任意势能能量守恒。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.newmarkDamping",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 Ch02.lean:1343–1349：∀G,Ω,β,h 后依次给出 C¹、每个初值的实际隐式更新等式、1+h²βΩ²≠0，再对所有 z 要求 Jacobian 行列式为1。这确为 σ=1/2 的单位质量 F(q)=-Ω²q 振子。令 a=h²Ω²、D=1+βa，位置为 Q=((1-(1/2-β)a)q+hp)/D，P=p-hΩ²(q+Q)/2；由两条更新式可算放大矩阵 det=1。[EXTRA] 的模型选择合理，非奇异条件保证全局显式解，C¹ 允许使用真实导数（本线性情形可推出）；但 det=1 只表达面积不收缩，不能单独保证每个步长下谱稳定或无能量衰减，该条已披露这种范围解释。实际 textbookCoordinateJacobian 的定义缺失，不能确认 Lean 结论确指上述导数矩阵。本批 BATCH30.md 没有内嵌所依赖的正式库定义，当前附件 Ch02.lean 仅给 import；工作区搜索未找到这些定义，share/Documents 与 share/Lean 为空，亦未取得本批 MANIFEST 对应工程。不能依据定义名称推断其语义。 存在 sorry 不影响这里的独立签名判断，亦不把上面的手算当作 Lean 证明。",
+      "counterexample": null,
+      "suggested_fix": "提供 Q、textbookCoordinateJacobian 的本批正式定义。保留已披露的模型范围及非奇异条件；若要将“无阻尼”定义为所有特征值模长为1，还需明确稳定性条件及相应结论，不能单凭 det=1 宣称该更强性质。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.3-NewmarkNotSymplectic",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_TEXT_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.5.3-NewmarkNotSymplectic",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.5.3",
+        "printed_page": "92",
+        "pdf_page": "114",
+        "statement_latex": "The implicit Newmark methods are not symplectic, but a related family of symplectic methods can be constructed by replacing interpolated forces by forces evaluated at interpolated positions [395].",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch02.newmarkNotSymplectic",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]存在一个非线性势能、β≠0与非零步长的实际可微求解反例；不是排除每个线性特殊情形。单位质量与字面式一致。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "SOURCE_TEXT_MISMATCH",
+            "detail": "依据 PDF 第114页（印刷第92页）将 using linear interpolated forces evaluated at interpolated positions 改为 replacing interpolated forces by forces evaluated at interpolated positions；只修正转录，不改动原书数学主张。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原 JSON 把 replacing interpolated forces by forces evaluated at interpolated positions 错抄成 using linear interpolated forces evaluated at interpolated positions，多出 linear，遗漏 replacing ... by ... 的替换关系，改变了构造辛方法的含义。"
+      ],
+      "evidence": [
+        "已直接查看 PDF 第114页（印刷第92页）§2.5.3 最后一句：原文用 replacing interpolated forces by forces evaluated at interpolated positions [395]，不存在 linear 一词。",
+        "其余引文、页码正确；原页无独立证明，proof_latex=null、proof_discussion_latex=null 正确；context_notation 为空。完整 corrected_json 保留其他原字段与原书主张。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.newmarkNotSymplectic",
+      "verdict": "FAIL",
+      "explanation": "Ch02.lean:1353–1358 仅断言存在一个 C³ 势能、β≠0、h≠0 及 C¹ 的实际 Newmark 求解映射 G，并且 G 非辛；该签名存在 sorry，证明完成度单列。单位质量使质量修正与字面式有希望一致，但仍须展开 newmarkMassCorrected、textbookPotentialForce、unpack、IsTextbookSymplecticMap 才能核实第一子句。本批 BATCH30.md 没有内嵌所依赖的正式库定义，当前附件 Ch02.lean 仅给 import；工作区搜索未找到这些定义，share/Documents 与 share/Lean 为空，亦未取得本批 MANIFEST 对应工程。不能依据定义名称推断其语义。 然而无需猜测这些定义也能判定全部结论覆盖失败：原句第二子句明确说可以通过“用插值位置处的力替换插值力”构造一族相关辛方法，签名中既无相关方法的定义、构造或参数族，也无其辛性结论。[EXTRA] 的非线性反例、单位质量、非零参数可以合理解释“并非一般辛方法”，避免把原句误读为每个特殊势能均非辛；但只存在一个反例不是对所有隐式参数的普遍结论，也不能用该范围解释删除原句的构造子句。",
+      "counterexample": "缺失条款：构造 related family of symplectic methods，并规定其力取值为 forces evaluated at interpolated positions（替换 interpolated forces），证明该族的辛性。现有存在非辛 G 的命题即使被证明，也不会给出任何该族成员或辛性。",
+      "suggested_fix": "把签名拆为“非一般辛”的实际反例命题及“相关辛方法族构造”的命题，给出后一族的插值位置、力评估及参数公式并证明其辛性；保持本条 source_id 覆盖原文两部分。提供上述导入定义及与单位质量字面关系的等价性证据。若无法从现有材料确定 [395] 的构造公式，对构造部分明确记材料不足，不能默默缩减原句范围。"
+    }
+  }
+]

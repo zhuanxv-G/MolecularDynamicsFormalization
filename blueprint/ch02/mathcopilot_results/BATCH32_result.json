@@ -1,0 +1,45 @@
+[
+  {
+    "source_id": "MD-2.5.5-Beeman",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已读取原 PDF 第116页并查看页面渲染，页眉印刷页94，符合 PDF页=印刷页+22。",
+        "Example 2.8 标题、引导句及(2.31)逐项一致：q更新系数 h²/6，当前/前步加速度系数4、−1。",
+        "(2.32)逐项一致：p更新为 hM/6 乘以加速度组合，系数2、5、−1；记号点q=M⁻¹p、双点q=M⁻¹F(q)一致。",
+        "原页说明初始化需相隔h的两个位置及力；给定 q_n、q_{n−1}、p_n 后先算 q_{n+1}，再算新力与 p_{n+1}，只需一次新力评估。context_notation 与此相符；无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.beeman",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "BATCH32.md 未内嵌 Q、Z、mass、invMass、positiveMass、mechanicalField、solution 的正式定义，也未提供 MANIFEST 哈希；/workspace/Ch02.lean import 的 MolecularDynamics.Chapter02.ReviewProofs 等依赖在可用工作区未找到。不能依据名称推断其语义。 已核对 Ch02.lean 的 beeman 函数体与批内摘录一致：a、aPrev 分别来自当前与前步位置，q 使用系数4、−1，p 使用系数2、5、−1，并在更新后的 q 处求 F。从函数体的运算结构看与(2.31)–(2.32)对应，但不能在未展开 mass/invMass 与 Q/Z 的情况下确认实际对象及矩阵作用。m 的类型 Fin n→ℝ 把质量表示为对角形式；定义未要求正质量或非零质量，若 invMass 使用实数逆元则零质量会被总化，原文 M⁻¹ 的有效域须明确。每步一个新力评估是缓存旧力后的算法性质，此纯函数体显式重算旧力，不提供评估次数或缓存契约；该性质在本条只属上下文，未被声明为 Lean 结论。此项为 def，无 sorry 证明义务。",
+      "counterexample": null,
+      "suggested_fix": "补充正式库中 Q、Z、mass、invMass 的真实定义和版本标识，再核对逐坐标乘除、位置/动量分量与质量有效域；必要时在原书机械质量域下显式要求 positiveMass，或明确此 def 是公式在有效域外的总化延拓。"
+    }
+  },
+  {
+    "source_id": "MD-2.5.5-BeemanOrder",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已读取原 PDF 第116页并查看页面渲染，页眉印刷页94，符合 PDF页=印刷页+22。",
+        "Example 2.8 末句逐字为：The order of accuracy of the scheme above can be shown to be three. 与 statement_latex 一致。",
+        "该例无独立证明；proof_latex、proof_discussion_latex 为 null 合适。issues 中 ERRATUM? 是审阅批注，原文 three 已保留，未作静默修正。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.beemanOrder",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "BATCH32.md 未内嵌 Q、Z、mass、invMass、positiveMass、mechanicalField、solution 的正式定义，也未提供 MANIFEST 哈希；/workspace/Ch02.lean import 的 MolecularDynamics.Chapter02.ReviewProofs 等依赖在可用工作区未找到。不能依据名称推断其语义。 已核对 Ch02.lean 中 beemanOrder 的完整签名：C 与 ν₀ 在 ν 和数值轨迹 z 之前选择；对所有 ν≥ν₀、满足两个精确起始状态及 k≥1 多步递推的 z，要求所有 k≤ν 的全状态误差为 O(h³)。确实包含位置、动量和中间网格点，没有仅比较终点或仅位置。正固定对角质量符合本章机械模型的通常范围；F C⁴ 是较强的正则性条件；τ>0 是固定时间窗条件；解在闭时间窗连续提供紧像，若 solution 已蕴含闭区间连续则该条件冗余。两个精确启动状态强于通常三阶启动，限制了原书未限定的初始化情形。上述 EXTRA 的实际合理性仍须展开缺失定义才能最终裁定。ERRATUM? 的局部误差论证需要谨慎：单步 O(h³) 缺陷自身并不与全局 O(h³) 界逻辑冲突；需证明累积后出现非零 O(h²) 全局误差，或查明原书使用的阶定义，才能裁定。签名以 by sorry 结束，这与语义判定分开，不能视为已证明。",
+      "counterexample": null,
+      "suggested_fix": "补充与工程版本一致的正式依赖定义及 MANIFEST，明确原文 order 指全相空间全局阶还是其他阶；在实际定义核实后，用单位质量 F(q)=−q、γ(t)=(cos t,−sin t)、两个精确启动状态分析固定时间窗的累积误差。若全局三阶被反例否定，保留原文 three 和 ERRATUM?，另列经授权的修订陈述，不能静默改阶。"
+    }
+  }
+]

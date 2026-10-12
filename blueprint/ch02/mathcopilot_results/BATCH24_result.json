@@ -1,0 +1,61 @@
+[
+  {
+    "source_id": "MD-2.4.3-HarmonicSplit",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "STATEMENT_NOT_VERBATIM",
+        "NOTATION_MISMATCH",
+        "PAGE_RANGE_INCORRECT"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.3-HarmonicSplit",
+        "kind": "definition",
+        "label": null,
+        "section": "2.4.3",
+        "printed_page": "85",
+        "pdf_page": "107",
+        "statement_latex": "Some systems can be decomposed into a harmonic (quadratic) part $H_0(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^T M^{-1}\\boldsymbol p/2+\\boldsymbol q^T A\\boldsymbol q/2$ and an anharmonic part $H_1(\\boldsymbol q,\\boldsymbol p)=\\hat U(\\boldsymbol q)$. Then a splitting method can be formulated based on exact solution of the linear system together with “kicks” representing impulses defined by the anharmonic part. For a simple system consisting of a harmonic oscillator $H_0(q,p)=p^2/2+\\Omega^2q^2/2$, such a method can be written\n\\[\\begin{bmatrix}Q\\\\\\hat p\\end{bmatrix}=\\begin{bmatrix}\\cos h\\Omega&\\frac{1}{\\Omega}\\sin h\\Omega\\\\-\\Omega\\sin h\\Omega&\\cos h\\Omega\\end{bmatrix}\\begin{bmatrix}q\\\\p\\end{bmatrix},\\qquad P=\\hat p-h\\hat U'(Q).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原文一般情形中 q、p 为向量，M 为质量矩阵，A 为二次势矩阵；标量简例中的 q、p、Q、p̂、P 为实数，Ω 为振子频率，h 为步长，原文扰动势记为 Û。Lean 的 U 对应原文 Û；Lean 定义仅覆盖原文明确给出的标量简例，一般矩阵分裂保留为背景。"
+        ],
+        "issues": [
+          "原条目改写并遗漏线性系统精确解与 anharmonic kicks 的说明，不是逐字转录。",
+          "原文扰动势使用 hat U，而非 tilde U。",
+          "本条全部位于印刷页85/PDF页107；页86/PDF页108已开始2.4.4。"
+        ],
+        "lean_decl": "MD.Ch02.bp_harmonicAnharmonic",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]Ω≠0时闭式除法有效；Ω=0须取极限漂移，原文未写退化情形。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH24：对照PDF页107–108渲染图恢复原段落、hat U记号并收窄页码；未改动原书公式，Ω=0问题仅作为语义审计意见。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次直接核对PDF页107及108的渲染图。"
+      },
+      "issues": [
+        "原条目改写并遗漏线性系统精确解与 anharmonic kicks 的说明，不是逐字转录。",
+        "原文扰动势使用 hat U，而非 tilde U。",
+        "本条全部位于印刷页85/PDF页107；页86/PDF页108已开始2.4.4。"
+      ],
+      "evidence": [
+        "PDF第107页（印刷85页），§2.4.3从Some systems can be decomposed开始，明确写出harmonic (quadratic) part、exact solution of the linear system和anharmonic kicks；原JSON改写并省略这些文字。",
+        "PDF第107页：H₁(q,p)=Û(q)，P=p̂−hÛ′(Q)；矩阵上右元为(1/Ω)sin hΩ，其余三元及先线性流后kick顺序与原JSON公式一致。",
+        "PDF第108页（印刷86页）起始即§2.4.4 Explicit and Implicit Methods；本条无续文。§2.4.3未给独立证明，proof_latex及proof_discussion_latex为null合理。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_harmonicAnharmonic",
+      "verdict": "FAIL",
+      "explanation": "已核对/workspace/Ch02.lean第1067–1071行的实际定义与BATCH24摘录，未仅凭名称判断。z.1、z.2分别为q、p，局部q变量为更新后的Q，第二分量正确展开p̂−h deriv U Q；对象是原文标量简例，先谐振子流后扰动kick，且不宣称覆盖一般矩阵情形。Ω≠0且U在Q可微时展开式忠实。签名却允许任意Ω和任意U，没有Ω≠0的参数或受限域；[EXTRA]非零频率对于该除法闭式必要且合理，但仅出现在注释中，未落实。Lean实数除零取0，故Ω=0的函数不是原文所述精确线性流加kick的自然退化扩展。deriv对不可微函数也有全定义值，物理导数解释需限定U在Q可微（或明确该定义只表示全定义代数扩展）。本条无[ERRATUM?]标记；原书未说明Ω=0，不能据此静默补原文或认定原书笔误。该声明是def且没有sorry，语义失败与证明占位无关。",
+      "counterexample": "取Ω=0、U≡0、h=1、z=(0,1)。Lean中sin(0)/0=0，故输出(0,1)。H₀=p²/2的精确时间1流为(q+p,p)=(1,1)，而零扰动kick不改变它。",
+      "suggested_fix": "将当前除法公式的使用域明确限制为Ω≠0，例如增加非零证明参数，并在与原文流的对应声明中要求U在Q可微；若希望覆盖Ω=0，则显式分支令Q=q+h*p，P=p−h*deriv U Q，或使用在Ω=0取h的连续延拓系数。原文转录保持原样，补充分支注明为形式化扩展。"
+    }
+  }
+]

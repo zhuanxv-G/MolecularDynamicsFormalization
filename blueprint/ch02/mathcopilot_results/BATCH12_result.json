@@ -1,0 +1,261 @@
+[
+  {
+    "source_id": "MD-2.3.1-Divergence",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [
+        "context_notation 中的 f C¹ 是解释性正则性资格，不是 PDF 第94页明示假设；散度定义的 trace 解释与原式一致，但正式 Jacobian 定义未提供。"
+      ],
+      "evidence": [
+        "已查看教材 PDF 第94页的渲染图（印刷第72页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_divergence",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 /workspace/Ch02.lean 的真实签名和证明体，但 BATCH12.md 未包含其声称的正式库定义摘录；本地工程亦未找到相应导入模块及 MANIFEST。因此不能仅凭名称认定对象与原文一致，未完成定义展开核对，不能记 PASS。 当前声明是返回实数的 def，仅表示散度记号；并不陈述 ∇·f=0。若本条范围包括原句的零散度条件，应在元数据明确其作为定义展示而非零散度断言。",
+      "counterexample": null,
+      "suggested_fix": "补充与当前工程 MANIFEST 对应的导入定义摘录或源文件，再展开实际定义复审。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.1-Liouville",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "ASSUMPTION_METADATA_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.3.1-Liouville",
+        "kind": "unnumbered_claim",
+        "label": "Liouville’s theorem",
+        "section": "2.3.1",
+        "printed_page": "72",
+        "pdf_page": "94",
+        "statement_latex": "Consider a set of points $S(t)$ in phase space with evolution associated to a differential equation $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$ described by the flow map $\\mathcal F_t(S(0))=S(t)$. Liouville’s theorem [16] states that the volume of such a set is invariant with respect to $t$ if the divergence of $f$ vanishes,",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch02.liouville",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookDivergenceFreeFlow_volume_image_of_jointC2"
+        ],
+        "extra_assumptions": [
+          "[EXTRA]实际解族Φ联合C²（原文未重复此较强正则性）；f C¹、Φ0=id、t∈[0,τ]（签名无独立τ>0假设；ht蕴含τ≥0）及实际时间ODE；只对可测S表达Lebesgue体积。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "reason": "extra_assumptions 声称 τ>0，但真实 Lean 签名仅有 ht : t∈Icc 0 τ。τ=0 允许；τ<0 无可用 t。修正元数据，不修改教材或 Lean。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "extra_assumptions 声称 τ>0，但真实 Lean 签名仅有 ht : t∈Icc 0 τ。τ=0 允许；τ<0 无可用 t。修正元数据，不修改教材或 Lean。"
+      ],
+      "evidence": [
+        "已查看教材 PDF 第94页的渲染图（印刷第72页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.liouville",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 /workspace/Ch02.lean 的真实签名和证明体，但 BATCH12.md 未包含其声称的正式库定义摘录；本地工程亦未找到相应导入模块及 MANIFEST。因此不能仅凭名称认定对象与原文一致，未完成定义展开核对，不能记 PASS。 显式量词为全空间散度为零、实际ODE、初值恒等、任意闭窗内t、任意可测s，结论为像集Lebesgue体积相等。f C¹、可测性和初值合理；Φ联合C²比通常所需强，可作为明确登记的充分资格但不是必要条件。未假设τ>0。",
+      "counterexample": null,
+      "suggested_fix": "补充与当前工程 MANIFEST 对应的导入定义摘录或源文件，再展开实际定义复审。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.1-HamiltonDivergence",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看教材 PDF 第94页的渲染图（印刷第72页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.hamiltonDivergence",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 /workspace/Ch02.lean 的真实签名和证明体，但 BATCH12.md 未包含其声称的正式库定义摘录；本地工程亦未找到相应导入模块及 MANIFEST。因此不能仅凭名称认定对象与原文一致，未完成定义展开核对，不能记 PASS。 点态ContDiffAt ℝ 2 H z 足以保证该点混合偏导交换，合理；签名只给迹为零而未展示两组混合偏导的计算链。必须核对坐标空间、向量场符号及Jacobian定义。",
+      "counterexample": null,
+      "suggested_fix": "补充与当前工程 MANIFEST 对应的导入定义摘录或源文件，再展开实际定义复审。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.1-HamiltonVolume",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "ASSUMPTION_METADATA_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.3.1-HamiltonVolume",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.3.1",
+        "printed_page": "72",
+        "pdf_page": "94",
+        "statement_latex": "Thus Hamiltonian systems always have volume preserving flows.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "流为实际Hamilton向量场的解族；完整体积结论覆盖闭时间窗每个t及每个可测S。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.hamiltonVolume",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2"
+        ],
+        "extra_assumptions": [
+          "[EXTRA]Φ联合C²；H C²、Φ0=id，t∈[0,τ]（签名无独立τ>0假设；ht蕴含τ≥0）；可测集S。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "reason": "extra_assumptions 声称 τ>0，但真实 Lean 签名仅有 ht : t∈Icc 0 τ。τ=0 允许；τ<0 无可用 t。修正元数据，不修改教材或 Lean。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "extra_assumptions 声称 τ>0，但真实 Lean 签名仅有 ht : t∈Icc 0 τ。τ=0 允许；τ<0 无可用 t。修正元数据，不修改教材或 Lean。"
+      ],
+      "evidence": [
+        "已查看教材 PDF 第94页的渲染图（印刷第72页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.hamiltonVolume",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 /workspace/Ch02.lean 的真实签名和证明体，但 BATCH12.md 未包含其声称的正式库定义摘录；本地工程亦未找到相应导入模块及 MANIFEST。因此不能仅凭名称认定对象与原文一致，未完成定义展开核对，不能记 PASS。 签名覆盖任意闭窗内t和可测s，具实际ODE及初值恒等；H C²合理，Φ联合C²为较强充分资格而非必要条件，τ>0并非真实假设。相空间及Hamilton向量场定义未提供。",
+      "counterexample": null,
+      "suggested_fix": "补充与当前工程 MANIFEST 对应的导入定义摘录或源文件，再展开实际定义复审。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.1-VolumeChange",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看教材 PDF 第95页的渲染图（印刷第73页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.volumeChange",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 /workspace/Ch02.lean 的真实签名和证明体，但 BATCH12.md 未包含其声称的正式库定义摘录；本地工程亦未找到相应导入模块及 MANIFEST。因此不能仅凭名称认定对象与原文一致，未完成定义展开核对，不能记 PASS。 显式使用Lebesgue volume及绝对行列式的非负积分，可覆盖无限体积；C¹、单射、可测S是合理换元资格，全局单射强于仅在S上单射。证明体通过 fderiv 和线性映射 det_toMatrix 对接，但仍缺 Q 及正式Jacobian展开。",
+      "counterexample": null,
+      "suggested_fix": "补充与当前工程 MANIFEST 对应的导入定义摘录或源文件，再展开实际定义复审。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.1-VariationalPrinted",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "保留原条 ERRATUM?：若 z(t)=Φ(t,ζ)，通常变分矩阵应为 D_yΦ(t,ζ)。移动取值点公式有链式项及 f′ 的取值点变化；原书疑误不能当作转录错误修正。"
+      ],
+      "evidence": [
+        "已查看教材 PDF 第95页的渲染图（印刷第73页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。",
+        "PDF第95页确实印为 W(t)=𝓕′ₜ(z(t))，随后为 W′=f′(z(t))W 及 W′W⁻¹=f′(z(t))；未将取值点静默改为初值。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.variationalPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 /workspace/Ch02.lean 的真实签名和证明体，但 BATCH12.md 未包含其声称的正式库定义摘录；本地工程亦未找到相应导入模块及 MANIFEST。因此不能仅凭名称认定对象与原文一致，未完成定义展开核对，不能记 PASS。 两个结论忠实保留原书移动取值点，未偷偷改正。若flowC1是通常光滑实际流资格，ERRATUM?成立，此公式一般错误；但flowC1真实定义缺失，无法验证候选反例满足该前提，故不作无条件FAIL。证明体为sorry，这与签名审计及原书疑误分开。",
+      "counterexample": "条件性候选：一维完整光滑流 x′=2+sin x，初值ζ=π/2。令W(t)=∂yΦ(t,Φ(t,ζ))。在t=0附近，Φ(t,ζ)=ζ+3t+O(t²)，W(t)=1−(9/2)t²+O(t³)，故W′(t)=−9t+O(t²)，而f′(Φ(t,ζ))W(t)=−3t+O(t²)，小正t两者不等。此候选须在补齐flowC1定义后核验前提，不能当作已验证的Lean反例。",
+      "suggested_fix": "先提供flowC1及Jacobian定义。原书公式保留ERRATUM记录；若修复数学声明，应另行明确更正为W(t)=D_yΦ(t,ζ)，补足确保变分矩阵可微及可逆的正规流资格，再登记两个结论。不得静默替换原文。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.1-DeterminantODE",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_SIGNATURE_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.3.1-DeterminantODE",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.3.1",
+        "printed_page": "73",
+        "pdf_page": "95",
+        "statement_latex": "Now let $D=\\det(W)$. One can show (see Exercise 5) that\n\\[\\frac{\\dot D}{D}=\\operatorname{tr}(\\dot W W^{-1}).\\]\nThis implies that\n\\[\\dot D=\\operatorname{div}(f(\\boldsymbol z(t)))D,\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "A(t)=f′(z(t))，tr A=div f(z(t))；W满足上一变分ODE。原文除D的等式需D≠0；实际Lean签名同时登记最终D′子句及D′/D=tr((AW)W⁻¹)子句，使用HasDerivAt W (A t*W t) t识别W′。A在签名中是一般矩阵系数，取A(t)=f′(z(t))得到原文实例。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.determinantODE",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookMatrixDet_hasDerivAt_of_linearODE"
+        ],
+        "extra_assumptions": [
+          "实际W′=AW且detW≠0，符合原文W⁻¹及D除法的资格；A=f′(z(t))。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "reason": "context_notation 错称签名只登记未除零的最终D′子句；实际签名有合取的两个结论，第二个正是除D等式。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "context_notation 错称签名只登记未除零的最终D′子句；实际签名有合取的两个结论，第二个正是除D等式。"
+      ],
+      "evidence": [
+        "已查看教材 PDF 第95页的渲染图（印刷第73页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.determinantODE",
+      "verdict": "PASS",
+      "explanation": "签名直接量化实方阵A、W和时刻t，以HasDerivAt W (A t*W t) t编码W′=AW。两个结论分别为D′=tr(A)D及D′/D=tr((AW)W⁻¹)，故没有缺失原文的除D子句。detW≠0是除法和逆矩阵所需合理资格，但仅第一子句不需要它。取A(t)=f′(z(t))，其迹按教材定义为div f(z(t))，得到原文最终式；一般A是代数推广，无需把原书疑误W的移动点作为本引理的前提。真实证明体无sorry；本审计未运行Lean编译，PASS仅指签名语义。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-2.3.1-DeterminantExponential",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看教材 PDF 第95页的渲染图（印刷第73页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.determinantExponential",
+      "verdict": "PASS",
+      "explanation": "实方阵路径A、W满足全实线W′=AW且A连续，推出任意t的detW(t)=detW(0)exp(∫₀ᵗtr A)。取A(s)=f′(z(s))即得到原式，初始行列式因子完整保留，不暗中假设为1。连续性为合理充分资格；全实线ODE比单个积分区间所需强，应视为已登记的全局版本，局部流只能在其存在区间应用。无需detW≠0，公式同样覆盖奇异初值。它不验证前条移动点W确实满足ODE。证明体有sorry，但签名语义独立通过；未声称证明已完成或Lean已编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

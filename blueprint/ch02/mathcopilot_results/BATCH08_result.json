@@ -1,0 +1,102 @@
+[
+  {
+    "source_id": "MD-2.2.2-EliminateVelocity",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第87页／印刷第65页，上方段落从“The derivation of the Störmer form”至“then eliminate velocities”；引用(2.5)–(2.7)一致，原页无独立完整证明。",
+        "已对照PDF渲染页核对所引英文、公式、页码、proof_latex=null和context_notation；LaTeX排版及换行不构成内容差异。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.velocityVerletStormer",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "签名量化任意 n、m、F、h 和三个相空间状态，以两次连续 velocityVerlet 更新推出三个位置的 stormerRelation，结构对应原文消去速度。关键 velocityVerlet 与 stormerRelation 是导入库名称，不能以本文件另定义的 bp_velocityVerlet、bp_stormerRelation 代替其真实展开。但 BATCH08.md 未内嵌 Q、Z、invMass 的正式库定义，当前 /workspace/Ch02.lean 只导入 MolecularDynamics.Chapter02.ReviewProofs 等模块，当前可见工程未提供对应模块及与本批绑定的 MANIFEST 版本证据。不能核实对象空间、质量逆算子的真实含义及其定义域（尤其零质量和对角质量模型）。无本条 [EXTRA] 或 [ERRATUM?] 标记；不据名称推定忠实。此为签名语义材料不足，与是否 sorry、是否编译成功分开判断；本次未进行证明或编译验证。",
+      "counterexample": null,
+      "suggested_fix": "补充与本批MANIFEST绑定的正式库摘录：Q、Z、invMass 的完整定义及其依赖；消去速度条另须 velocityVerlet、stormerRelation 的完整定义。确认逆质量算子和教材 M⁻¹ 一致，并明确教材质量可逆/正质量域与Lean全实数质量参数的关系后重新审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.2-MomentumVerlet",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第87页／印刷第65页，“The most straightforward rewriting”段及公式(2.8)：Q=q+hM⁻¹p+(h²/2)M⁻¹F(q)，P=p+(h/2)[F(q)+F(Q)]；下方“Alternatively”展示半踢、漂移、半踢。",
+        "已对照PDF渲染页核对所引英文、公式、页码、proof_latex=null和context_notation；LaTeX排版及换行不构成内容差异。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_verlet",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "本地 bp_verlet 的第一分量包含 q+h·invMass(m,p)+(h²/2)·invMass(m,F(q))，第二分量包含 p+(h/2)·(F(q)+F(Q))，形式对应(2.8)，第二分量应解释为动量。但 BATCH08.md 未内嵌 Q、Z、invMass 的正式库定义，当前 /workspace/Ch02.lean 只导入 MolecularDynamics.Chapter02.ReviewProofs 等模块，当前可见工程未提供对应模块及与本批绑定的 MANIFEST 版本证据。不能核实对象空间、质量逆算子的真实含义及其定义域（尤其零质量和对角质量模型）。无本条 [EXTRA] 或 [ERRATUM?] 标记；不据名称推定忠实。此为签名语义材料不足，与是否 sorry、是否编译成功分开判断；本次未进行证明或编译验证。",
+      "counterexample": null,
+      "suggested_fix": "补充与本批MANIFEST绑定的正式库摘录：Q、Z、invMass 的完整定义及其依赖；消去速度条另须 velocityVerlet、stormerRelation 的完整定义。确认逆质量算子和教材 M⁻¹ 一致，并明确教材质量可逆/正质量域与Lean全实数质量参数的关系后重新审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.2-Leapfrog",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第87页／印刷第65页，“Returning to (2.5)–(2.7)”段及“one has”下两式，半步指标、h及M⁻¹均一致；页首定义F_n=F(q_n)=−∇U(q_n)。",
+        "已对照PDF渲染页核对所引英文、公式、页码、proof_latex=null和context_notation；LaTeX排版及换行不构成内容差异。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_leapfrog",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "本地 bp_leapfrog 先更新 vnew=z.2+h·invMass(m,F(z.1))，再返回 (z.1+h·vnew,vnew)，形式对应交错速度和位置的两条更新；输入第二分量应为 v_(n−1/2)，输出为 v_(n+1/2)。但 BATCH08.md 未内嵌 Q、Z、invMass 的正式库定义，当前 /workspace/Ch02.lean 只导入 MolecularDynamics.Chapter02.ReviewProofs 等模块，当前可见工程未提供对应模块及与本批绑定的 MANIFEST 版本证据。不能核实对象空间、质量逆算子的真实含义及其定义域（尤其零质量和对角质量模型）。无本条 [EXTRA] 或 [ERRATUM?] 标记；不据名称推定忠实。此为签名语义材料不足，与是否 sorry、是否编译成功分开判断；本次未进行证明或编译验证。",
+      "counterexample": null,
+      "suggested_fix": "补充与本批MANIFEST绑定的正式库摘录：Q、Z、invMass 的完整定义及其依赖；消去速度条另须 velocityVerlet、stormerRelation 的完整定义。确认逆质量算子和教材 M⁻¹ 一致，并明确教材质量可逆/正质量域与Lean全实数质量参数的关系后重新审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.2-LeapfrogInit",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第87页／印刷第65页，“It is necessary to define an initialization procedure”及v_(−1/2)=v₀−(h/2)M⁻¹F(q₀)；紧前句明确q(0)=q₀、v(0)=v₀。",
+        "已对照PDF渲染页核对所引英文、公式、页码、proof_latex=null和context_notation；LaTeX排版及换行不构成内容差异。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_leapfrogInitialize",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "本地 bp_leapfrogInitialize 返回 z.2−(h/2)·invMass(m,F(z.1))，形式对应由实际初值(q₀,v₀)计算 v_(−1/2)，仅返回速度与本条范围相符。但 BATCH08.md 未内嵌 Q、Z、invMass 的正式库定义，当前 /workspace/Ch02.lean 只导入 MolecularDynamics.Chapter02.ReviewProofs 等模块，当前可见工程未提供对应模块及与本批绑定的 MANIFEST 版本证据。不能核实对象空间、质量逆算子的真实含义及其定义域（尤其零质量和对角质量模型）。无本条 [EXTRA] 或 [ERRATUM?] 标记；不据名称推定忠实。此为签名语义材料不足，与是否 sorry、是否编译成功分开判断；本次未进行证明或编译验证。",
+      "counterexample": null,
+      "suggested_fix": "补充与本批MANIFEST绑定的正式库摘录：Q、Z、invMass 的完整定义及其依赖；消去速度条另须 velocityVerlet、stormerRelation 的完整定义。确认逆质量算子和教材 M⁻¹ 一致，并明确教材质量可逆/正质量域与Lean全实数质量参数的关系后重新审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.2-LeapfrogReconstruct",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第87页／印刷第65页，“And it is also necessary to use, at any subsequent step”及v_n=v_(n−1/2)+(h/2)M⁻¹F_n；尾句涉及energy及velocity-dependent observable。",
+        "已对照PDF渲染页核对所引英文、公式、页码、proof_latex=null和context_notation；LaTeX排版及换行不构成内容差异。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_leapfrogReconstruct",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "本地 bp_leapfrogReconstruct 返回 z.2+(h/2)·invMass(m,F(z.1))，形式对应由(q_n,v_(n−1/2))重建 v_n；原文有关能量或观测量的用途是说明文字。但 BATCH08.md 未内嵌 Q、Z、invMass 的正式库定义，当前 /workspace/Ch02.lean 只导入 MolecularDynamics.Chapter02.ReviewProofs 等模块，当前可见工程未提供对应模块及与本批绑定的 MANIFEST 版本证据。不能核实对象空间、质量逆算子的真实含义及其定义域（尤其零质量和对角质量模型）。无本条 [EXTRA] 或 [ERRATUM?] 标记；不据名称推定忠实。此为签名语义材料不足，与是否 sorry、是否编译成功分开判断；本次未进行证明或编译验证。",
+      "counterexample": null,
+      "suggested_fix": "补充与本批MANIFEST绑定的正式库摘录：Q、Z、invMass 的完整定义及其依赖；消去速度条另须 velocityVerlet、stormerRelation 的完整定义。确认逆质量算子和教材 M⁻¹ 一致，并明确教材质量可逆/正质量域与Lean全实数质量参数的关系后重新审计。"
+    }
+  }
+]

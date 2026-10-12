@@ -1,0 +1,279 @@
+[
+  {
+    "source_id": "MD-2.2.3-ErrorDifference",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF88／印刷66，式(2.9)及其前一句逐字相符；本页明确数值递推 z_{n+1}=G_h(z_n)、精确关系 z(t_{n+1})=F_h(z(t_n))、t_n=nh。无独立完整证明，proof_latex=null正确。context_notation与这些关系一致。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.errorDifference",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "材料限制：已核对 /workspace/Ch02.lean 的实际签名，但本批 BATCH09.md 没有其说明所称的正式库定义内嵌摘录，也没有绑定完整依赖版本的 MANIFEST 哈希；提供的工程未含这些 Chapter02 导入模块，share/Lean 为空。不能用符号名、其他版本或本地 bp_scalarVerlet 代替正式定义。 签名中的精确后继节点等式及差式位置与(2.9)一致；仍须展开 Q n 和 oneStepIterate，确认对象、迭代起点及后继方向。若实际迭代为(G h)^[k](γ 0)，取共同初值是合理特例；不要求光滑性和正步长是代数恒等式的合理推广。此处正文使用复用证明，无本地sorry，但这不能代替语义核对。",
+      "counterexample": null,
+      "suggested_fix": "提供同一版本 Q、oneStepIterate 的完整定义及 MANIFEST；核对 oneStepIterate G h ζ 0=ζ 和后继递推，再决定PASS。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.3-Consistency",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_NOTATION_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.2.3-Consistency",
+        "kind": "definition",
+        "label": null,
+        "section": "2.2.3",
+        "printed_page": "66–67",
+        "pdf_page": "88–89",
+        "statement_latex": "The first assumption is that $\\mathcal G_h$ is an $O(h^{p+1})$ approximation of $\\mathcal F_h$ in the sense that there is a constant $K\\ge0$ and a constant $\\Delta>0$ such that, for $t\\in[0,\\tau]$, we have\n\\[\\|\\mathcal F_h(\\boldsymbol z(t))-\\mathcal G_h(\\boldsymbol z(t))\\|\\le\\bar K h^{p+1},\\qquad h<\\Delta.\\tag{2.10}\\]\nThe assumption (2.10) that the local error is of order $p+1$, $p>0$, is termed the consistency of the numerical method. We say the method is consistent of order $p$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "正文存在常数K≥0、Δ>0，式(2.10)使用\\bar K；疑似记号不一致，原文未在本处明确K=\\bar K，不静默修正。",
+          "δ对应原文Δ；h>0来自PDF88本节起点；一致性阶要求p>0（PDF89）。"
+        ],
+        "issues": [
+          "[SOURCE_NOTATION_MISMATCH] PDF88正文常数写K，式(2.10)写\\bar K；原书未在这两处明确声明二者相同。原context_notation将其同一化过于确定，应记录原书疑误，不改动原句或式(2.10)。"
+        ],
+        "lean_decl": "MD.Ch02.consistency",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "action": "BATCH09只读审校输出修订副本；原附件未修改",
+            "details": [
+              "[SOURCE_NOTATION_MISMATCH] PDF88正文常数写K，式(2.10)写\\bar K；原书未在这两处明确声明二者相同。原context_notation将其同一化过于确定，应记录原书疑误，不改动原句或式(2.10)。"
+            ]
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF 88–90逐页图像核对，见本次evidence"
+      },
+      "issues": [
+        "[SOURCE_NOTATION_MISMATCH] PDF88正文常数写K，式(2.10)写\\bar K；原书未在这两处明确声明二者相同。原context_notation将其同一化过于确定，应记录原书疑误，不改动原句或式(2.10)。"
+      ],
+      "evidence": [
+        "PDF88／印刷66，式(2.10)：范数≤\\bar K h^{p+1}，h<Δ；上方正文为K≥0、Δ>0、t∈[0,τ]。",
+        "PDF89／印刷67，一致性定义明确写“p > 0”；statement_latex的两段原句及页码88–89相符，无独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.consistency",
+      "verdict": "FAIL",
+      "explanation": "实际 consistency 的阶参数是p:ℕ，定义体没有0<p，故把零阶也称为一致性；这遗漏原文PDF89明确的正阶条件。K、δ先存在且独立于t,h，随后全称t∈[0,τ]和0<h<δ，这部分量词顺序及严格步长范围正确；自然数阶是额外范围限制，原文未明确只限自然数，应注明或采用正实数阶。Q的正式定义仍未提供，但正阶遗漏可直接由本地定义判定，不以sorry为依据；这是def而非待证定理。",
+      "counterexample": "在预期的一维实向量实例中，τ=1、γ(t)=0、F_h(x)=x、G_h(x)=x+h。p=0时取K=1、δ=1，局部误差恰为h，满足当前定义；数值终点在h=1/ν时为1，不能随网格加密收敛，原文的p>0条件排除此例。即使F=G，当前定义也会接受原文未允许的p=0。",
+      "suggested_fix": "若保留p:ℕ，在定义体加入0<p的合取条件或将p参数改为正自然数，并明示自然数阶的范围；若忠实覆盖原文一般正阶，改用p:ℝ、0<p及实幂。提供Q正式定义以完成对象核对。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.3-Stability",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF88／印刷66，式(2.11)逐项相符：u,w∈D，h≤Δ，系数1+hL；h>0来自本节起点。",
+        "PDF88–89／印刷66–67明确D含精确解与所有相关数值节点，并称留域为simplifying assumption；PDF89稳定性定义原句相符。无独立完整证明。context中改选正L是可放大常数的解释，并非原文新增文字。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.stability",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "材料限制：已核对 /workspace/Ch02.lean 的实际签名，但本批 BATCH09.md 没有其说明所称的正式库定义内嵌摘录，也没有绑定完整依赖版本的 MANIFEST 哈希；提供的工程未含这些 Chapter02 导入模块，share/Lean 为空。不能用符号名、其他版本或本地 bp_scalarVerlet 代替正式定义。 可见定义确实先存在统一L≥0、δ>0，再对0<h≤δ及D内任意u,w全称量化，严格/非严格端点与式(2.11)一致。原文未显式写L≥0，不过已有Lipschitz因子时可以放大到非负L，不改变存在性的稳定条件；为了后续除L可以再取正L。D的留域条件用于后续定理，未置于稳定性谓词内合理。无法展开Q n及实际范数，故尚不能批准对象与范数语义；此项是def，无sorry问题。",
+      "counterexample": null,
+      "suggested_fix": "提供同一版本Q及其范数实例摘录；确认其为本节适用的实有限维状态空间，并保留对L≥0可放大选择的说明。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.3-ErrorRecursion",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF89／印刷67，误差定义ε_n=‖z_n−z(t_n)‖及递推ε_{n+1}≤(1+Lh)ε_n+\\bar K h^{p+1}逐项相符。前文给加减G_h(z(t_n))的差式，并明确使用三角不等式、(2.10)、(2.11)；这是推导讨论，未给独立完整证明。",
+        "context_notation的留域假设见PDF88末段至PDF89首段，页码正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.errorRecursion",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "材料限制：已核对 /workspace/Ch02.lean 的实际签名，但本批 BATCH09.md 没有其说明所称的正式库定义内嵌摘录，也没有绑定完整依赖版本的 MANIFEST 哈希；提供的工程未含这些 Chapter02 导入模块，share/Lean 为空。不能用符号名、其他版本或本地 bp_scalarVerlet 代替正式定义。 可见结论范数、系数及误差项与原式一致；hnum、hexact是原文明确假设；以γ后继节点代替F_h(γ节点)是在精确流关系下等价的轨道表述。局部假设直接给每个离散步的稳定/一致性界，足以推导代数递推，因而不再单独要求h、p、L的符号或Δ是合理推广。E只带NormedAddCommGroup、NormedSpace ℝ，实际没有有限维假设，[EXTRA]所说“含有限维实例”是覆盖范围而非新增限制。仍须展开oneStepIterate确认数值节点递推。正文调用复用证明，无本地sorry，不代表依赖已经验证。",
+      "counterexample": null,
+      "suggested_fix": "补同版本oneStepIterate的定义及后继等式摘录，确认共同初值γ 0及n+1的索引方向；无需为本次审计补证明。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.3-ErrorBound",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_ENDPOINT_GAP",
+        "SOURCE_DIVISION_BY_L"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.2.3-ErrorBound",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.2.3",
+        "printed_page": "67",
+        "pdf_page": "89",
+        "statement_latex": "From this, the bound\n\\[\\epsilon_n\\le\\frac{\\bar K}{L}e^{Lnh}h^p,\\qquad n=0,1,\\ldots,\\nu,\\tag{2.12}\\]\nfollows by a straightforward calculation, for $h\\le\\Delta$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "式(2.12)中Kbar是局部误差界常数；正文K与式(2.10)的Kbar存在原书记号不一致。",
+          "原文前提(2.10)只保证h<Δ，而此处结句写h≤Δ；端点需额外论证或假设，不静默修正。",
+          "原式分母L需要L>0；已有非负稳定常数可放大为正数。固定L=0时应另用ε_n≤n Kbar h^{p+1}。"
+        ],
+        "issues": [
+          "[SOURCE_ENDPOINT_GAP] PDF88式(2.10)只假定h<Δ，PDF89式(2.12)后却写h≤Δ；在h=Δ处缺少已给局部误差界，不应静默改成严格不等式。",
+          "[SOURCE_DIVISION_BY_L] 式(2.12)含\\bar K/L，而此前未明确L>0；可改选正稳定常数，但字面上的L=0情形须另给线性累计界。"
+        ],
+        "lean_decl": "MD.Ch02.errorBound",
+        "reusable_proofs": [
+          "MolecularDynamics.oneStep_error_bound"
+        ],
+        "extra_assumptions": [
+          "h>0、L>0及K≥0显式化；L=0时可增大为正L，除零界不能字面使用；假设精确与数值留域来自原文。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "action": "BATCH09只读审校输出修订副本；原附件未修改",
+            "details": [
+              "[SOURCE_ENDPOINT_GAP] PDF88式(2.10)只假定h<Δ，PDF89式(2.12)后却写h≤Δ；在h=Δ处缺少已给局部误差界，不应静默改成严格不等式。",
+              "[SOURCE_DIVISION_BY_L] 式(2.12)含\\bar K/L，而此前未明确L>0；可改选正稳定常数，但字面上的L=0情形须另给线性累计界。"
+            ]
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF 88–90逐页图像核对，见本次evidence"
+      },
+      "issues": [
+        "[SOURCE_ENDPOINT_GAP] PDF88式(2.10)只假定h<Δ，PDF89式(2.12)后却写h≤Δ；在h=Δ处缺少已给局部误差界，不应静默改成严格不等式。",
+        "[SOURCE_DIVISION_BY_L] 式(2.12)含\\bar K/L，而此前未明确L>0；可改选正稳定常数，但字面上的L=0情形须另给线性累计界。"
+      ],
+      "evidence": [
+        "PDF89／印刷67，式(2.12)及其后的“for h ≤ Δ”与statement_latex相符。原书仅说straightforward calculation，没有独立完整证明。",
+        "PDF88／印刷66，式(2.10)为h<Δ，式(2.11)为h≤Δ，且未显式要求L>0。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.errorBound",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "材料限制：已核对 /workspace/Ch02.lean 的实际签名，但本批 BATCH09.md 没有其说明所称的正式库定义内嵌摘录，也没有绑定完整依赖版本的 MANIFEST 哈希；提供的工程未含这些 Chapter02 导入模块，share/Lean 为空。不能用符号名、其他版本或本地 bp_scalarVerlet 代替正式定义。 可见签名涵盖全部n≤ν和原指数上界，K对应式中\\bar K。h>0、K≥0均有原文依据；L>0是让除法界有意义的必要合理显式化，非原文已写出的条件。L=0可在稳定性界中改选正L；若固定L=0则应使用ε_n≤nK h^{p+1}。hstable、hconsistent针对固定h直接假定所需界，因此没有凭空推出Δ端点：对实际满足界的端点也有效。它不能据(2.10)单独声称所有h≤Δ成立；该原书端点疑误成立。p取实数而未要求正值不损害该固定步长上界，但正阶收敛须另要求p>0。仍未展开oneStepIterate，不能完整批准数值误差对象。正文调用复用证明，无本地sorry。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本oneStepIterate定义以完成对象核对；在与原书统一常数的对接说明中只由(2.10)推出0<h<Δ的界，若要含h=Δ则补端点一致性或连续性延拓。保持L>0并另说明L=0线性界；不要修改原书引句。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.3-ConsistencyConvergence",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF89／印刷67，原句“This result shows that a method which is consistent of order p and stable is convergent of order p.”逐字相符；同页明确p>0。",
+        "所依赖的留域简化假设见PDF88–89；无独立完整证明，proof_latex=null、页码及空context_notation没有转录错误。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.consistencyConvergence",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "材料限制：已核对 /workspace/Ch02.lean 的实际签名，但本批 BATCH09.md 没有其说明所称的正式库定义内嵌摘录，也没有绑定完整依赖版本的 MANIFEST 哈希；提供的工程未含这些 Chapter02 导入模块，share/Lean 为空。不能用符号名、其他版本或本地 bp_scalarVerlet 代替正式定义。 可见签名给出两项结论：最大误差趋零，以及最终≤常数·(τ/ν)^p；后一项才表达p阶，未遗漏阶数结论。τ、δ、p>0合理，K≥0有原文依据；L>0可由放大稳定常数取得。D内精确及全部细网格数值节点来自原文简化前提。一致性限t+h≤τ，保证仅在所需轨道时间窗中比较，足以证明全网格误差；使用h<δ的局部条件不会依赖有疑误的h=δ端点。共同初值γ 0及ν正的细网格符合背景；实范数空间是合理推广。必须展开oneStepMaxError确认其确实取0≤n≤ν的误差最大值，并展开oneStepIterate确认迭代。正文有显式证明，无本地sorry，但未进行编译或依赖证明认证。",
+      "counterexample": null,
+      "suggested_fix": "提供同版本oneStepIterate、oneStepMaxError的完整摘录及MANIFEST；确认最大值包含全部0≤n≤ν、初值为γ 0、网格h=τ/ν，再判定两项结论是否PASS。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.3-ScalarVerlet",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF89／印刷67，Example 2.2开头的q,p∈ℝ、M=1、原句及式(2.13)、(2.14)全部相符。label中的(map)是摘录范围标记；原书例题标题为“The Verlet Method is 2nd Order”，未将标记当作原文引句。",
+        "context_notation中单位质量与大写更新坐标正确；未给这两条映射式的独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_scalarVerlet",
+      "verdict": "PASS",
+      "explanation": "已展开Ch02.lean:356的本地bp_scalarVerlet，无依赖未知映射：输入z:ℝ×ℝ，z.1=q、z.2=p；let q=z.1+h*z.2+h^2/2*F z.1正是更新Q，输出第二分量z.2+h/2*(F z.1+F q)正是式(2.14)更新P。对象、坐标顺序及单位质量完全对应。F任意、h任意使代数公式适用范围扩展，但未改变本例正步长上的映射；无需新增光滑性假设。该项是完整def，无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-2.2.3-VerletExpansion",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "PAGE_RANGE_OVERBROAD"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.2.3-VerletExpansion",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.2.3",
+        "printed_page": "68",
+        "pdf_page": "90",
+        "statement_latex": "Combining terms of like powers of $h$, we have\n\\[P=p+hF+\\frac{h^2}{2}pF'+\\frac{h^3}{4}[F'F+p^2F'']+O(h^4).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$F,F',F''$均在q取值；p.67/PDF89展开F(q+hp+h²F/2)，标量M=1。"
+        ],
+        "issues": [
+          "[PAGE_RANGE_OVERBROAD] 引用的“Combining terms of like powers of h”及该展示式均只在印刷68／PDF90；印刷67／PDF89是其Taylor展开背景，应放在context证据而不计为statement页码。"
+        ],
+        "lean_decl": "MD.Ch02.verletExpansion",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "F C³，使O(h⁴)余项有实际意义。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "action": "BATCH09只读审校输出修订副本；原附件未修改",
+            "details": [
+              "[PAGE_RANGE_OVERBROAD] 引用的“Combining terms of like powers of h”及该展示式均只在印刷68／PDF90；印刷67／PDF89是其Taylor展开背景，应放在context证据而不计为statement页码。"
+            ]
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF 88–90逐页图像核对，见本次evidence"
+      },
+      "issues": [
+        "[PAGE_RANGE_OVERBROAD] 引用的“Combining terms of like powers of h”及该展示式均只在印刷68／PDF90；印刷67／PDF89是其Taylor展开背景，应放在context证据而不计为statement页码。"
+      ],
+      "evidence": [
+        "PDF90／印刷68，页首原句和P=p+hF+(h²/2)pF′+(h³/4)[F′F+p²F″]+O(h⁴)逐项相符；所有F、F′、F″按q取值。",
+        "PDF89／印刷67下半页给出F(q+hp+h²F(q)/2)的展开，并说忽略项为四次及更高次；作为背景与context_notation相符。没有独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.verletExpansion",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "材料限制：已核对 /workspace/Ch02.lean 的实际签名，但本批 BATCH09.md 没有其说明所称的正式库定义内嵌摘录，也没有绑定完整依赖版本的 MANIFEST 哈希；提供的工程未含这些 Chapter02 导入模块，share/Lean 为空。不能用符号名、其他版本或本地 bp_scalarVerlet 代替正式定义。 Ch02.lean:362的实际声明调用导入scalarVerlet，并不是本批本地定义bp_scalarVerlet。多项式的所有系数、导数位置和项顺序对应原文；在𝓝0上IsBigO(余差,h^4)正是四阶余项，双侧极限是正步长Taylor展开的合理延伸。[EXTRA] F全局C³是足够且合理的正则性条件，局部q邻域C³其实已足够：F的二阶Taylor余差为O(增量³)，增量=O(h)，再乘h得O(h⁴)。但是未取得实际scalarVerlet定义，无法确认所展开的P是原书的同一映射。此声明体有sorry，这是独立的证明缺口，不能单凭sorry判签名FAIL，也不能据正确系数给整体PASS。",
+      "counterexample": null,
+      "suggested_fix": "补充绑定同一版本的正式scalarVerlet完整定义，并核对其第一分量Q和第二分量P是否与(2.13)、(2.14)逐项一致；可以另外声明其与bp_scalarVerlet一致作为可检查连接，但本次只读审计不写该证明。之后分别记录签名语义结果与sorry证明缺口。"
+    }
+  }
+]

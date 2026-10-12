@@ -1,0 +1,205 @@
+[
+  {
+    "source_id": "MD-2.2.1-EulerLagrange",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION_MISSING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.2.1-EulerLagrange",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.2.1",
+        "printed_page": "62",
+        "pdf_page": "84",
+        "statement_latex": "Since the variation $\\boldsymbol\\eta$ is meant to be arbitrary, it requires\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\frac{\\partial L}{\\partial\\dot{\\boldsymbol q}}(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t))=\\frac{\\partial L}{\\partial\\boldsymbol q}(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t)),\\]\nwhich is precisely the Lagrangian formulation of the equations of motion.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "PDF82／印刷60，§2.2.1：$L(\\boldsymbol q,\\boldsymbol v)=\\boldsymbol v^T M\\boldsymbol v/2-U(\\boldsymbol q)$；$M$ 为质量矩阵，$U$ 在此取 $C^2$。原条选定的运动方程使用这个拉格朗日函数及其位置、速度偏导数。",
+          "PDF82／印刷60：$\\boldsymbol q(t)$ 是构型空间曲线的参数化，$t\\in[\\alpha,\\beta]$，$\\boldsymbol q(\\alpha)=\\boldsymbol Q$、$\\boldsymbol q(\\beta)=\\boldsymbol Q^{\\prime}$；$\\dot{\\boldsymbol q}$ 是时间导数。该页先说 twice continuously differentiable，随后又说各分量 $C^\\infty$ 及 smooth，保留这两处原文，不将其静默统一。",
+          "PDF83／印刷61，式(2.3)：$\\boldsymbol q^\\epsilon(t)=\\boldsymbol q(t)+\\epsilon\\boldsymbol\\eta(t)$；$\\boldsymbol\\eta$ 为 $C^\\infty$ 曲线，$\\boldsymbol\\eta(\\alpha)=\\boldsymbol\\eta(\\beta)=0$。arbitrary 指满足这些资格的任意变分方向。",
+          "PDF82–84／印刷60–62：$\\mathcal A_L(\\Gamma)=\\int_\\alpha^\\beta L(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t))\\,dt$。本句承接 Hamilton 原理要求一阶变分为零，以及 PDF84 上方分部积分后的 $\\int_\\alpha^\\beta [\\partial L/\\partial\\boldsymbol q-(d/dt)(\\partial L/\\partial\\dot{\\boldsymbol q})]\\boldsymbol\\eta(t)\\,dt=0$。"
+        ],
+        "issues": [
+          {
+            "code": "CONTEXT_NOTATION_MISSING",
+            "detail": "statement_latex 的原句、偏导对象及时间导数公式逐字/逐符号匹配 PDF84，printed_page=62、pdf_page=84 正确。proof_latex=null 与选定范围内没有独立完整证明相符；前面的分部积分推导仍在原页存在。context_notation=[] 遗漏 arbitrary variation 的光滑与零端点资格、固定端点曲线和一阶变分为零这一前提，补入来源明确的上下文。"
+          }
+        ],
+        "lean_decl": "MD.Ch02.hamiltonPrinciple",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "α<β，L和q C²；变分按原文C∞且零端点。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "CONTEXT_NOTATION_MISSING",
+            "detail": "只补原页上下文及实际核对来源；statement_latex、proof_latex、proof_note、proof_discussion_latex、页码、原书疑误和 Lean 接口原样保留。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF84 / printed62; /workspace/.mathcopilot/reviews/ch02/BATCH06_evidence/pdf84.png; context PDF82–83 rendered in the same directory"
+      },
+      "issues": [
+        {
+          "code": "CONTEXT_NOTATION_MISSING",
+          "detail": "statement_latex 的原句、偏导对象及时间导数公式逐字/逐符号匹配 PDF84，printed_page=62、pdf_page=84 正确。proof_latex=null 与选定范围内没有独立完整证明相符；前面的分部积分推导仍在原页存在。context_notation=[] 遗漏 arbitrary variation 的光滑与零端点资格、固定端点曲线和一阶变分为零这一前提，补入来源明确的上下文。"
+        }
+      ],
+      "evidence": [
+        "原教材 PDF84／印刷62，页顶印刷页码62；中上部 Since the variation ... is meant to be arbitrary, it requires 及其展示式 d/dt(partial L/partial qdot)=partial L/partial q，与 JSON 一致。",
+        "原教材 PDF84／印刷62，该展示式上方给出零端点分部积分后的一阶变分积分等于0；下方 which is precisely the Lagrangian formulation of the equations of motion 与 JSON 一致。",
+        "原教材 PDF82／印刷60 的 L、固定端点 G 和 action 定义，PDF83／印刷61 式(2.3)及 C^infinity、零端点说明，支持补入的 context_notation。",
+        "已目视核对渲染：/workspace/.mathcopilot/reviews/ch02/BATCH06_evidence/pdf84.png；上下文渲染为同目录 pdf82.png、pdf83.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.hamiltonPrinciple",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已读取 /workspace/Ch02.lean:145–147 的 stationarySmoothAction 实际本地定义，以及 :165–171 的完整签名；签名与 BATCH06 摘录一致。stationarySmoothAction 确实量化所有 C^infinity、零端点方向，并要求 epsilon=0 处作用量变分导数为0。右端逐时刻要求速度偏导这一协向量的时间导数等于位置偏导，且只在 Ioo a b 上要求；量词次序 n,L,q,a,b 后再给正则性和等价关系，没有把变分方向限定成单一方向。[EXTRA] a<b 合理；L、q 的 C^2 是经典分部积分和时间导数所需的充分正则性，并非最弱条件；全实线 C^2 强于只在有限时间区间的资格，q=C^2 与原页后文 C^infinity 的登记也需区分。逆向等价在原页脚注的首句有语境支持。本条没有 ERRATUM?。但是用户指定的 Blueprint/Ch02.lean 路径不存在，实际提供的是根目录 Ch02.lean；BATCH06 全文没有所称的导入正式定义摘录，Q、action、variation 的真实定义及 MANIFEST 均未找到。尤其不能仅凭名称或本地 bp_action/bp_variation 就认定未带 bp 前缀的导入项与其相同。因此尚无法完成对象类型、实际积分和实际变分的展开核对，不能判 PASS。:171 的 by sorry 另记为证明未完成；NEEDS_HUMAN 来自语义材料缺失，不来自 sorry。",
+      "counterexample": null,
+      "suggested_fix": "提供与 MANIFEST 对应的 Blueprint/Ch02.lean 及其导入 Q、action、variation 的准确定义摘录/源码，确认根目录文件是该版本的审阅副本；然后展开这些定义核对。将全域正则性相对于有限时间窗的加强和原文 C^2/C^infinity 两处表述明确登记，必要时将假设改为区间正则性。当前不修改工程、不补证明。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.1-VariationalDerivativePrinted",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION_MISSING",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.2.1-VariationalDerivativePrinted",
+        "kind": "definition",
+        "label": null,
+        "section": "2.2.1",
+        "printed_page": "62",
+        "pdf_page": "84",
+        "statement_latex": "Define the variational derivative of a functional $\\mathcal F$, $\\delta\\mathcal F/\\delta\\boldsymbol q$ so that\n\\[\\mathcal F(\\boldsymbol q+\\epsilon\\boldsymbol\\eta)=\\epsilon\\frac{\\delta\\mathcal F}{\\delta\\boldsymbol q}\\boldsymbol\\eta+O(\\epsilon^2),\\]\nfor all suitable (say, $C^\\infty$) functions $\\boldsymbol\\eta$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "PDF84／印刷62：$\\mathcal F$ 是以曲线 $\\boldsymbol q$ 为自变量的泛函；$\\delta\\mathcal F/\\delta\\boldsymbol q$ 在展示式中作用于变分方向 $\\boldsymbol\\eta$。紧接的正文将经典作用量 $\\mathcal A_L(\\Gamma)$ 视作 $\\mathcal F$。",
+          "PDF84／印刷62：$\\epsilon$ 为变分参数，$O(\\epsilon^2)$ 为 $\\epsilon\\to0$ 时的二阶余项；此式要求对所有 suitable (say, $C^\\infty$) functions $\\boldsymbol\\eta$ 成立。PDF83 的作用量变分还要求零端点，但本条泛函定义的这句话未单独列出端点条件。",
+          "PDF84／印刷62 原式确为 $\\mathcal F(\\boldsymbol q+\\epsilon\\boldsymbol\\eta)=\\epsilon(\\delta\\mathcal F/\\delta\\boldsymbol q)\\boldsymbol\\eta+O(\\epsilon^2)$，没有减去或加回 $\\mathcal F(\\boldsymbol q)$。保留印刷公式及既有 ERRATUM?，不将其替换为通常导数定义。"
+        ],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "status": "NEEDS_HUMAN",
+            "detail": "左式漏F(q)，原页实际如此。字面定义对于非零常值F无解，不能静默替成HasFDerivAt。"
+          },
+          {
+            "code": "CONTEXT_NOTATION_MISSING",
+            "detail": "statement_latex 的句子与展示式匹配 PDF84，页码正确，proof_latex=null 正确。原页确实缺少基值项，不能作为转录错误补回。context_notation=[] 遗漏泛函/曲线/变分参数及 suitable directions 的解释，补入原页上下文；保留已有 ERRATUM? 的人工处置状态。"
+          }
+        ],
+        "lean_decl": "MD.Ch02.printedVariationalDerivative",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "CONTEXT_NOTATION_MISSING",
+            "detail": "只补原页上下文及实际核对来源；statement_latex、proof_latex、proof_note、proof_discussion_latex、页码、原书疑误和 Lean 接口原样保留。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF84 / printed62; /workspace/.mathcopilot/reviews/ch02/BATCH06_evidence/pdf84.png; context PDF82–83 rendered in the same directory"
+      },
+      "issues": [
+        {
+          "code": "CONTEXT_NOTATION_MISSING",
+          "detail": "statement_latex 的句子与展示式匹配 PDF84，页码正确，proof_latex=null 正确。原页确实缺少基值项，不能作为转录错误补回。context_notation=[] 遗漏泛函/曲线/变分参数及 suitable directions 的解释，补入原页上下文；保留已有 ERRATUM? 的人工处置状态。"
+        },
+        {
+          "code": "ERRATUM?",
+          "detail": "已核实漏基值项是原书印刷公式本身。原条已有 ERRATUM? 及 NEEDS_HUMAN 保留，需人工决定是否另立勘误版本；本次不改原式。"
+        }
+      ],
+      "evidence": [
+        "原教材 PDF84／印刷62，中部 Define the variational derivative ... so that 后的展示式左端仅为 F(q+epsilon eta)，右端为 epsilon (delta F/delta q) eta+O(epsilon^2)，原页没有 F(q) 基值项。",
+        "原教材 PDF84／印刷62，展示式下方 for all suitable (say, C^infinity) functions eta 与 JSON 一致；同段接着 Viewing the action ... as the functional F，明确上下文。",
+        "已目视核对渲染：/workspace/.mathcopilot/reviews/ch02/BATCH06_evidence/pdf84.png。ERRATUM? 是对印刷公式数学含义的诊断，不是对原页的转录改写。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.printedVariationalDerivative",
+      "verdict": "PASS",
+      "explanation": "已读取 /workspace/Ch02.lean:175–178 的完整实际定义；它与 BATCH06 摘录一致且不依赖未提供的 Chapter02Review 项。这里 E 是泛函和适宜变分方向的抽象实赋范向量空间，q,eta 属于 E，A 是候选线性导数；这与 PDF83 的 normed function space 语境及导数作用于方向的读法相容。对每个 eta 单独要求 epsilon->0 时 F(q+epsilon eta)-epsilon*A(eta)=O(epsilon^2)，大O常数/邻域可以依赖 eta；原文亦是 for all suitable directions，没有要求方向上一致的 Frechet 余项。E 的适宜方向由选取的定义域承载；原页这里并未为一般泛函另列零端点条件，故不能擅自添加。A 的连续线性类型属于导数接口的正则性选择，适合本节光滑作用量语境，但它不是由这个漏项印刷等式单独推出的，应在接口说明中登记。最关键的 ERRATUM? 成立：原页确实没有 F(q) 基值项，且此定义保留了这个缺陷；取 eta=0 就要求常值 F(q)=O(epsilon^2)，迫使 F(q)=0，因此非零常值泛函没有候选 A。没有静默改成 F(q+epsilon eta)-F(q)，也没有换成 HasFDerivAt。PASS 表示此抽象候选线性导数关系忠实登记了所选印刷公式，不表示原书公式是通常变分导数的正确通用定义。本条为 def，定义体没有 sorry；不作编译/证明完成声明。",
+      "counterexample": null,
+      "suggested_fix": "保持 printedVariationalDerivative 原式和 ERRATUM?；在 extra_assumptions/接口说明中明确 E 承载适宜方向、A 被要求连续线性。若需要通常的变分导数，另设明确标为勘误后的定义，余项使用 F(q+epsilon*eta)-F(q)-epsilon*A(eta)，不要覆盖本条印刷定义。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.1-StationaryNotMin",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION_MISSING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.2.1-StationaryNotMin",
+        "kind": "unnumbered_claim",
+        "label": "Footnote 4",
+        "section": "2.2.1",
+        "printed_page": "62",
+        "pdf_page": "84",
+        "statement_latex": "Any curve which satisfies this equation will represent a “stationary point” (actually, “stationary curve” would be more accurate) of the classical action. Such curves could include smooth local action minimizers, local action maximizers, or “saddle points” of the actional functional in a generalized sense. Deciding whether a given stationary curve is an actual minimizer of the action would require analysis of the second variation (the coefficient of $\\epsilon^2$ in the expansion above), which introduces additional complexity.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "PDF84／印刷62，脚注4中的 this equation 承接正文紧邻展示式 $\\delta\\mathcal F/\\delta\\boldsymbol q=0$；正文称其为 stationarity condition (the Euler-Lagrange equations)，并在此取 $\\mathcal F=\\mathcal A_L(\\Gamma)$。这里记录原文指代，不消除同页泛函导数印刷定义的 ERRATUM?。",
+          "PDF82–83／印刷60–61：经典作用量的比较对象是固定端点类 $G(\\boldsymbol Q,\\boldsymbol Q^{\\prime};\\alpha,\\beta)$ 中的曲线，变分方向满足 $\\boldsymbol\\eta(\\alpha)=\\boldsymbol\\eta(\\beta)=0$ 并按后文取 $C^\\infty$。",
+          "PDF84／印刷62，脚注4：second variation 在这段文字中指上方展开的 $\\epsilon^2$ 系数；原文未在该脚注给出第二变分公式、正负定判据或严格的局部极值拓扑。PDF83 将 $C^\\infty$ 称作 normed function space，但没有指定范数，不能由此补认局部极小专指一致范数。"
+        ],
+        "issues": [
+          {
+            "code": "CONTEXT_NOTATION_MISSING",
+            "detail": "选定的三句与 PDF84 脚注4相符，包括 actional functional 的原书措辞、三个可能类型及 second variation 为 epsilon^2 系数的说明；页码及 proof_latex=null 正确。statement_scope 明确为所引句，因而不把脚注未选入的开头提醒和末尾文献指引强行补进 statement_latex。context_notation=[] 遗漏 this equation 的指代、固定端点比较类和第二变分所指，予以补齐；原书未指定局部极值拓扑，记录此限制。"
+          }
+        ],
+        "lean_decl": "MD.Ch02.stationaryNotMinimum",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "用存在驻值但非局部极小的实际L与曲线反例表达could，不声称所有驻值不是极小。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "CONTEXT_NOTATION_MISSING",
+            "detail": "只补原页上下文及实际核对来源；statement_latex、proof_latex、proof_note、proof_discussion_latex、页码、原书疑误和 Lean 接口原样保留。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF84 / printed62; /workspace/.mathcopilot/reviews/ch02/BATCH06_evidence/pdf84.png; context PDF82–83 rendered in the same directory"
+      },
+      "issues": [
+        {
+          "code": "CONTEXT_NOTATION_MISSING",
+          "detail": "选定的三句与 PDF84 脚注4相符，包括 actional functional 的原书措辞、三个可能类型及 second variation 为 epsilon^2 系数的说明；页码及 proof_latex=null 正确。statement_scope 明确为所引句，因而不把脚注未选入的开头提醒和末尾文献指引强行补进 statement_latex。context_notation=[] 遗漏 this equation 的指代、固定端点比较类和第二变分所指，予以补齐；原书未指定局部极值拓扑，记录此限制。"
+        }
+      ],
+      "evidence": [
+        "原教材 PDF84／印刷62，脚注4从 Any curve which satisfies this equation 开始的选定三句，依次提及 stationary point/curve、smooth local action minimizers/local action maximizers/saddle points 和 second variation (the coefficient of epsilon^2 ...)，均与 JSON 一致。",
+        "原教材 PDF84／印刷62，正文脚注标记4上方展示 delta F/delta q=0，且正文称其为 stationarity condition (the Euler-Lagrange equations)，支持 this equation 的指代。",
+        "原教材 PDF83／印刷61 的 normed function space 描述没有指定范数；PDF84 脚注没有给出局部极值的拓扑或第二变分判据。",
+        "已目视核对渲染：/workspace/.mathcopilot/reviews/ch02/BATCH06_evidence/pdf84.png；上下文为同目录 pdf82.png、pdf83.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.stationaryNotMinimum",
+      "verdict": "FAIL",
+      "explanation": "已读取 /workspace/Ch02.lean:182–187，实际签名与 BATCH06 一致。它只断言存在一个一维 L,q，满足 C^2、stationaryAction，且对每个 delta>0 都存在端点为0、位置上一致小于 delta 的 C^2 扰动使 action 严格下降；delta 在 L,q 之后量化，扰动可以随 delta 改变。[EXTRA] 用存在例说明驻值不保证极小是合理的可选子命题，固定维数1和时间窗[0,1]对举例也合理，没有误写为所有驻值都非极小。但是 statement_scope 保留了所引三句全部内容，签名没有覆盖其中满足所指方程的任意曲线均为驻值的结论，没有表达局部极小/局部极大/广义鞍点的可能类型，也完全没有表达要判断是否为极小需要分析第二变分的后一句。存在一个下降扰动例不能代替这些条款；这项直接可见的范围缺失已足以判 FAIL，无需假定导入定义的含义。另有需要人工核对的问题：使用 stationaryAction 而不是已展开的 stationarySmoothAction；Q、stationaryAction、action 的真实导入定义在现有材料中缺失，BATCH06 没有所称内嵌摘录，不能根据名字判它们相等。本地 bp_action 也不能代替导入 action。签名对任意 C^2 的 L 作存在量化，没有要求例子属于原语境的正质量机械 L；q 和扰动也只要求 C^2。位置一致小扰动明确选择了一致范数的邻域，而原书没有指定局部极值的函数空间拓扑，不可把它直接读作任意常用光滑拓扑下都非极小。本条没有 ERRATUM?；源 :187 的 by sorry 另表示证明未完成，FAIL 是对已展示签名遗漏原文子句的判断，不是把 sorry 或缺失导入定义当作反例。",
+      "counterexample": null,
+      "suggested_fix": "先补齐 Q、stationaryAction、action 及版本 MANIFEST，并核对 stationaryAction 与原书光滑零端点一阶驻值的关系。若保留当前完整 statement_scope，应将任意 Euler-Lagrange 解的驻值结论、局部极值/鞍点的适用解释以及第二变分部分拆成明确的数学声明，同时明确曲线类和拓扑；第二变分说明不能擅自改成未经正则性和非退化条件支持的充要判据。若只想证明驻值不必为极小这一存在子命题，应先显式缩小 JSON 的选定 scope，而不能称现在的签名覆盖整段。该子命题应限定为原文机械拉格朗日函数，并选光滑的曲线和扰动；例如可考虑正质量 L(x,v)=(v^2-omega^2*x^2)/2、omega>pi、q=0，eta=c*sin(pi*t)，其作用量差为 c^2*(pi^2-omega^2)/4<0。此例仅给修复方向，不补写 Lean 或原文证明。"
+    }
+  }
+]

@@ -1,0 +1,160 @@
+[
+  {
+    "source_id": "MD-2.3.4-Hessian",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+        "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+        "原页：S(t)=Hzz(z(t,ζ)) is a symmetric matrix；context_notation 的沿轨迹取值说明正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_hessian",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch02.lean:779–783 的 bp_hessian 明确用二阶 Fréchet 导数在两个 Pi.single 基向量上求值，与普通有限维 Hessian 的构造相符；参数 z 可以在调用时取轨迹点，定义本身不声称对称性。它未定义时间函数 S(t)，需明确 S(t)=bp_hessian H (Φ(t,ζ)) 的上下文连接。无 sorry。BATCH17.md 实际未内嵌 SymplecticCoordinates、SymplecticCoordinateMatrix、textbookJ、textbookHamiltonianHessian、textbookJacobian、textbookHamiltonianVectorField、IsTextbookSymplecticMap 的正式定义；Ch02.lean 的 Chapter02 imports 在当前工程中缺失，亦无可绑定本批的 MANIFEST 哈希。不能凭名称或旧工程替代实际定义核验。",
+      "counterexample": null,
+      "suggested_fix": "提供本批版本的坐标空间正式定义与 MANIFEST，并明确 S(t) 与 bp_hessian 沿轨迹求值的连接。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.4-HessianSymmetry",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+        "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+        "原页明确称 S(t) is a symmetric matrix；C²为形式化补充背景，非原页明示条件。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.hessianSymmetry",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch02.lean:786–790 加入点处 ContDiffAt ℝ 2 H z；C² 是混合导数交换的合理充分条件，比最弱条件强，但不是无关限制。结论只有 Hessian 对称；本条与前一定义共同承载原句。证明调用库定理，本地无 sorry；无法检查所调用 Hessian 的坐标和次序。BATCH17.md 实际未内嵌 SymplecticCoordinates、SymplecticCoordinateMatrix、textbookJ、textbookHamiltonianHessian、textbookJacobian、textbookHamiltonianVectorField、IsTextbookSymplecticMap 的正式定义；Ch02.lean 的 Chapter02 imports 在当前工程中缺失，亦无可绑定本批的 MANIFEST 哈希。不能凭名称或旧工程替代实际定义核验。",
+      "counterexample": null,
+      "suggested_fix": "提供 textbookHamiltonianHessian 的完整定义与坐标约定，核对其与 bp_hessian 是否相同。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.4-HamiltonVariationalPrinted",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+        "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+        "原页同时印有 Ẇ=JS(t)W 和 W(t)=𝓕′t(z(t,ζ))；移动点疑误标注有原页依据；对“与p.73一样”的跨页比较未作本批独立核验。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.hamiltonVariationalPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch02.lean:793–803 忠实保留移动求值点 Φ(s,ζ)，并同时随时间改变该点；它并非通常在固定初值 ζ 求导的变分矩阵。原文的 ERRATUM? 有实质数学依据。C² H、C¹ Φ、初值恒等与 ODE 是合理背景，但 C¹ Φ 并不直接保证该移动 Jacobian 的时间可微。区间只覆盖正向时间窗，τ≤0 时内区间为空。此声明显式含 sorry；sorry 与签名真实性分开判断。由于核心定义缺失，不能把下述标准坐标反例认定为已验证适用于实际 Lean 定义。BATCH17.md 实际未内嵌 SymplecticCoordinates、SymplecticCoordinateMatrix、textbookJ、textbookHamiltonianHessian、textbookJacobian、textbookHamiltonianVectorField、IsTextbookSymplecticMap 的正式定义；Ch02.lean 的 Chapter02 imports 在当前工程中缺失，亦无可绑定本批的 MANIFEST 哈希。不能凭名称或旧工程替代实际定义核验。",
+      "counterexample": "在标准 J=[[0,1],[-1,0]]、坐标(q,p) 下，取全局光滑 Hamiltonian H(q,p)=p(2+sin q)。令 Q_t(x) 解 q′=2+sin q，Φ_t(q,p)=(Q_t(q),p(2+sin q)/(2+sin Q_t(q)))，这是全局光滑真实流。取 ζ=(0,0)。移动 Jacobian 的 (q,q) 项 a(t)=(2+sin Q_{2t}(0))/(2+sin Q_t(0))，故 a′/a=2cos Q_{2t}(0)−cos Q_t(0)，而宣称的 JS(t)W 给出 a′/a=cos Q_t(0)。对充分小 t>0，0<Q_t(0)<Q_{2t}(0)<π，两者不等。若实际库采用反号 J，取 −H 即得同一向量场。此反例仅针对标准定义，实际库定义缺失尚待绑定核实。",
+      "suggested_fix": "保留原文疑误记录；如批准勘误，另行将 W(s) 定义为 textbookJacobian (fun y => Φ(s,y)) ζ，并采用足以证明变分方程的流正则性。若坚持移动点，则须加入空间 Hessian 与轨迹速度产生的链式法则项，并相应改变 RHS；先补齐正式定义。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.4-MatrixCancellation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+        "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+        "原页逐行给出 WᵀJẆ=−WᵀSW、ẆᵀJW=WᵀSW，随后给出实际时间导数为零；proof_latex 忠实。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.matrixCancellation",
+      "verdict": "FAIL",
+      "explanation": "Ch02.lean:806–811 只陈述代入 W′=JSW 后两项之和为零；原 statement_latex 还包含实际时间导数 d(WᵀJW)/dt。Lean 的 S、W 是单个矩阵，完全没有时间函数或求导，因此没有覆盖原 statement_scope 所保留的全部结论。proof_latex 的两个分别等式也未分别列出。上下文声称导数由 FormConstant 承担，但 formConstant 的签名只有常值等式，未陈述该导数。S 对称为合理背景条件，任意 W 是合理代数推广。本地无 sorry；此覆盖缺失不依赖所缺库定义，足以判 FAIL。BATCH17.md 实际未内嵌 SymplecticCoordinates、SymplecticCoordinateMatrix、textbookJ、textbookHamiltonianHessian、textbookJacobian、textbookHamiltonianVectorField、IsTextbookSymplecticMap 的正式定义；Ch02.lean 的 Chapter02 imports 在当前工程中缺失，亦无可绑定本批的 MANIFEST 哈希。不能凭名称或旧工程替代实际定义核验。",
+      "counterexample": null,
+      "suggested_fix": "若本项只保留代数消去，须明确获准缩小 statement_scope 并移出实际导数结论；否则添加时间矩阵 W、真实导数假设及 HasDerivWithinAt (fun t => (W t)ᵀ*J*W t) 0 的结论。若两个中间等式也属于独立审计范围，应一并给出。补齐库定义后复审其代数部分。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.4-FormConstant",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+        "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+        "原页原句：This means that WᵀJW is a constant matrix."
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.formConstant",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch02.lean:814–821 的结论逐点等于 t=0 时的矩阵，符合连通时间区间上的常值结论。hS 与真实 HasDerivWithinAt 矩阵 ODE 是原推导所需的合理背景；端点使用区间内导数合理。τ=0 时结论平凡，τ<0 时区间为空；无需额外 τ>0。它不声称 W 是原页那个移动 Jacobian，也不证明原移动 Jacobian 满足该 ODE。本地无 sorry，但不能核验 J 和矩阵空间的实际语义。BATCH17.md 实际未内嵌 SymplecticCoordinates、SymplecticCoordinateMatrix、textbookJ、textbookHamiltonianHessian、textbookJacobian、textbookHamiltonianVectorField、IsTextbookSymplecticMap 的正式定义；Ch02.lean 的 Chapter02 imports 在当前工程中缺失，亦无可绑定本批的 MANIFEST 哈希。不能凭名称或旧工程替代实际定义核验。",
+      "counterexample": null,
+      "suggested_fix": "补齐正式矩阵空间与 J 定义；保留独立矩阵 ODE 常值命题，不把它误当作移动流 Jacobian 已满足变分方程的证明。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.4-HamiltonSymplectic",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "EXTRA_ASSUMPTION_METADATA_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.3.4-HamiltonSymplectic",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.3.4",
+        "printed_page": "79",
+        "pdf_page": "101",
+        "statement_latex": "hence\n\\[W^TJW\\equiv W(0)^TJW(0)=J.\\]\nThis proves that the flow map of a Hamiltonian system is a symplectic map.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原文W移动取值点疑点另项记录；本最终结论以实际固定时刻流映射的Jacobian表达，不假设其变分方程。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.hamiltonSymplectic",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2"
+        ],
+        "extra_assumptions": [
+          "[EXTRA]实际解族联合C²；H C²、Φ0=id及真实Hamilton ODE；时间范围为Icc 0 τ，Lean签名未假设τ>0。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH17审校：删除extra_assumptions中签名不存在的τ>0；保留原文陈述。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "extra_assumptions 写有 τ>0，但实际 Lean 声明无此假设；只修正审阅元数据，不改原书。"
+      ],
+      "evidence": [
+        "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+        "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+        "原页展示 WᵀJW≡W(0)ᵀJW(0)=J，并得出 flow map is a symplectic map；context_notation 明确区分原移动点疑误与最终流结论。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.hamiltonSymplectic",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch02.lean:824–835 使用实际固定时刻映射 z↦Φ(t,z)，H C²、Φ 联合 C²、初值恒等及真实 ODE 是合理充分条件；联合 C² 强于通常最弱流正则性，属于可接受但非必要的额外限制。签名没有 τ>0；τ=0 结论为初始映射，τ<0 为空区间。原文还展示 WᵀJW≡W(0)ᵀJW(0)=J，只有展开 IsTextbookSymplecticMap 并连接 W 与流 Jacobian 后才能判断全部子句覆盖。本地无 sorry，但库证明及辛映射定义无法核验。BATCH17.md 实际未内嵌 SymplecticCoordinates、SymplecticCoordinateMatrix、textbookJ、textbookHamiltonianHessian、textbookJacobian、textbookHamiltonianVectorField、IsTextbookSymplecticMap 的正式定义；Ch02.lean 的 Chapter02 imports 在当前工程中缺失，亦无可绑定本批的 MANIFEST 哈希。不能凭名称或旧工程替代实际定义核验。",
+      "counterexample": null,
+      "suggested_fix": "提供 IsTextbookSymplecticMap 等正式定义及匹配版本，核验其确实包含每一点 Jacobianᵀ J Jacobian=J；补充 W 与固定初值 Jacobian 的连接。删除额外假设说明中签名不存在的 τ>0。"
+    }
+  }
+]

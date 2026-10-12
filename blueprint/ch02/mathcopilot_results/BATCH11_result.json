@@ -1,0 +1,247 @@
+[
+  {
+    "source_id": "MD-2.2.4-FirstIntegral",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_IDENTITY_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.2.4-FirstIntegral",
+        "kind": "definition",
+        "label": null,
+        "section": "2.2.4",
+        "printed_page": "70",
+        "pdf_page": "92",
+        "statement_latex": "Recall that the condition for a given function $I:\\mathbb R^m\\to\\mathbb R$ to be a first integral is that\n\\[\\nabla I(\\boldsymbol z)\\cdot f(\\boldsymbol z)=\\sum_{j=1}^m\\frac{\\partial I}{\\partial z_j}(\\boldsymbol z)f_j(\\boldsymbol z)\\equiv 0.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "条件在整个开放域D处处成立；I实际可微，f为给定向量场。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.bp_firstIntegral",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH11",
+            "changes": [
+              "展示式末尾原书为恒等号 ≡0，JSON 转写为 =0；逐字审校应保留原符号。context_notation 所述处处成立和隐含可微性合理；该可微性并未进入 Lean 定义。"
+            ]
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "展示式末尾原书为恒等号 ≡0，JSON 转写为 =0；逐字审校应保留原符号。context_notation 所述处处成立和隐含可微性合理；该可微性并未进入 Lean 定义。"
+      ],
+      "evidence": [
+        "已读取并渲染核对教材 PDF 第92页（印刷第70页，偏移+22）。本条原文未给独立证明，proof_latex=null、proof_note及proof_discussion_latex=null与所引段落相符。",
+        "PDF p.92 §2.2.4 首个展示式：∇I(z)·f(z)=Σ(∂I/∂z_j)(z)f_j(z)≡0；下一段限定 everywhere 或 some open set。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_firstIntegral",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际 /workspace/Ch02.lean:423–424 与摘录一致，但 Q 的正式定义未提供，BATCH11.md 没有承诺的导入定义摘录，现有工程也无 Chapter02/ReviewProofs.lean，不能完成对象展开。另有明确的接口缺口：bp_firstIntegral 只要求 fderiv 值为零，不要求 I 在 D 可微，也不要求 D 开放；Mathlib 的总函数 fderiv 在不可微点取零，故一般不能单独作为原文第一积分定义。没有 sorry 与这一语义缺口无关。",
+      "counterexample": "在预期的一维实空间取 D=ℝ、I(x)=|x|、f(x)=1（x=0），其余 x 取 f(x)=0。x≠0 时导数乘 f 为零；x=0 时 fderiv 的默认零值也使定义成立，但 I 在0不可微，原书梯度条件没有定义。此例需以缺失的 Q 定义确认具体 Lean 对象。",
+      "suggested_fix": "提供 Q 的真实定义及依赖版本；定义加入 DifferentiableOn ℝ I D，并以 IsOpen D 为参数/前提，或在定义接口明确限制可微函数和开放域。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.4-IntegralPreserved",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_IDENTITY_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.2.4-IntegralPreserved",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.2.4",
+        "printed_page": "70",
+        "pdf_page": "92",
+        "statement_latex": "It is important in this definition that this is an equivalence that holds everywhere (or at least in some open set in $\\mathbb R^m$), so the statement is not just that $I(\\boldsymbol z(t))=I(\\boldsymbol z(0))$ for some particular trajectory, but, moreover, $I$ is conserved for all nearby initial conditions. The flow map preserves the first integral, thus $I(\\mathcal F_t(\\boldsymbol z))\\equiv I(\\boldsymbol z)$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch02.firstIntegralPreserved",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "开放D、可微I、实际解留域及闭时间窗a≤b；包含端点。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH11",
+            "changes": [
+              "原句末尾原书为 I(𝓕_t(z))≡I(z)，JSON 写成 =；保留原文恒等符号。其余所引文字及页码一致。"
+            ]
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原句末尾原书为 I(𝓕_t(z))≡I(z)，JSON 写成 =；保留原文恒等符号。其余所引文字及页码一致。"
+      ],
+      "evidence": [
+        "已读取并渲染核对教材 PDF 第92页（印刷第70页，偏移+22）。本条原文未给独立证明，proof_latex=null、proof_note及proof_discussion_latex=null与所引段落相符。",
+        "PDF p.92：equivalence … everywhere；all nearby initial conditions；I(𝓕_t(z))≡I(z)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.firstIntegralPreserved",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际 Ch02.lean:428 起签名与摘录一致，量化任意轨迹和初时 a，故若 solution 确为真实 ODE 解，则可表达所有留域轨迹的保守性；开放域、可微性、留域及闭窗是合理的显式化条件。a=b 时结论平凡。可是签名用的是导入的 firstIntegral（不是本文件 bp_firstIntegral），Q、firstIntegral、solution 的正式定义都未提供；不能凭名字或证明中的使用方式判 PASS。实际正文未含直接 sorry，但不据此判断签名忠实或依赖已验证。",
+      "counterexample": null,
+      "suggested_fix": "补充精确版本的 Q、firstIntegral、solution 定义，确认 firstIntegral 为全域导数消失，solution 为闭窗内真实 ODE 导数关系；再审定。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.4-EnergyPreserved",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已读取并渲染核对教材 PDF 第92页（印刷第70页，偏移+22）。本条原文未给独立证明，proof_latex=null、proof_note及proof_discussion_latex=null与所引段落相符。",
+        "PDF p.92 末尾：For example, in a Hamiltonian system … H∘𝓕_t=H。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.energyPreserved",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际 Ch02.lean:448 起与摘录一致。若向量场确为标准 Hamilton 场，则任意 γ 的点态 ODE 条件及轨道点可微性给出能量守恒，闭窗和可微性是合理显式化；τ<0 时 Icc 0 τ 为空、结论真但无内容，τ=0 平凡，未要求 τ≥0 不造成假命题。缺失 SymplecticCoordinates、textbookHamiltonianVectorField 的正式展开和被复用的能量定理，BATCH11.md 也无其内嵌摘录，不能仅依据 Hamiltonian 名称判 PASS。正文调用库定理而无直接 sorry，不代表依赖已检查。",
+      "counterexample": null,
+      "suggested_fix": "提供 SymplecticCoordinates、textbookHamiltonianVectorField 与 textbookHamiltonian_energy_const_on_Icc 的精确定义/签名及版本；确认位置、动量排列和 Hamilton 场符号。"
+    }
+  },
+  {
+    "source_id": "MD-2.2.4-AngularMomentum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已读取并渲染核对教材 PDF 第93页（印刷第71页，偏移+22）。本条原文未给独立证明，proof_latex=null、proof_note及proof_discussion_latex=null与所引段落相符。",
+        "PDF p.93 首段：planar 2-body system in central forces；xp_y−yp_x=l；l∘𝓕_t=l。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.centralAngularMomentum",
+      "verdict": "PASS",
+      "explanation": "已核对 Ch02.lean:458 起实际声明。ℝ×ℝ×ℝ×ℝ 按右结合排列为 (x,y,p_x,p_y)，投影和导数元组一致。假设给出 x′=p_x、y′=p_y、p_x′=ρ(x²+y²)x、p_y′=ρ(x²+y²)y；结论完整保存 xp_y−yp_x，任意轨迹、任意初时及窗内全部时间均量化。展开导数得 p_x p_y+xρy−p_y p_x−yρx=0。径向系数和单位约化质量是原文中心力相对坐标模型的合理显式化；正约化质量可通过时间/动量尺度对应，a<b 为闭窗求导论证条件，退化窗可另加平凡情形。未宣称存在解，无须额外对ρ加正则性来确保已经给定的可微轨迹守恒。实际正文有 sorry；这是证明未完成，不影响本次签名语义 PASS。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-2.2.4-IntegralMeanValue",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已读取并渲染核对教材 PDF 第93页（印刷第71页，偏移+22）。本条原文未给独立证明，proof_latex=null、proof_note及proof_discussion_latex=null与所引段落相符。",
+        "PDF p.93：continuous partial derivatives；I(a)=I(b)+∇I(z_*)·(a−b)，z_* 位于连接 a、b 的直线上。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.integralMeanValue",
+      "verdict": "PASS",
+      "explanation": "已核对 Ch02.lean:470 起实际签名。对象明确为 EuclideanSpace ℝ (Fin n)，ContDiffOn ℝ 1 在开放域上等价于 C¹ 条件，fderiv 作用于 a−b 是梯度点积。对每个 I,D,a,b 先给正则性和线段留域，再存在同一 c 位于闭线段并给出精确差值恒等式；与原文各子句一致，闭线段结论还明确了原文 connecting 的含义。D=univ 覆盖原文全空间版本；局部开放域含线段是合法且必要的适用范围说明，a=b 亦允许。正文未含直接 sorry，本审计不运行 Lean、不认证依赖证明。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-2.2.4-IntegralLipschitz",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_SIGNATURE_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.2.4-IntegralLipschitz",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.2.4",
+        "printed_page": "71",
+        "pdf_page": "93",
+        "statement_latex": "Hence\n\\[|I(\\boldsymbol a)-I(\\boldsymbol b)|\\le\\|\\nabla I(\\boldsymbol z_*)\\|\\|\\boldsymbol a-\\boldsymbol b\\|.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "z_* 为前项均值公式中连接 a、b 的线段上的同一点；当前 integralPointwiseBound 签名登记该点态不等式并携带均值恒等式。下一句才引入开放域上的统一梯度上界 B。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.integralPointwiseBound",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "实际EuclideanSpace ℝ (Fin n)，开放域含线段及C¹；实Fréchet算子范数等于Euclidean梯度范数。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH11",
+            "changes": [
+              "context_notation 声称“该签名登记统一B版本”与实际 integralPointwiseBound 签名矛盾：签名不存在 B，而是存在同一 c 的点态梯度界，且同时携带均值恒等式。所引原文不等式、页码无误。"
+            ]
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "context_notation 声称“该签名登记统一B版本”与实际 integralPointwiseBound 签名矛盾：签名不存在 B，而是存在同一 c 的点态梯度界，且同时携带均值恒等式。所引原文不等式、页码无误。"
+      ],
+      "evidence": [
+        "已读取并渲染核对教材 PDF 第93页（印刷第71页，偏移+22）。本条原文未给独立证明，proof_latex=null、proof_note及proof_discussion_latex=null与所引段落相符。",
+        "PDF p.93 “Hence” 后展示式为 |I(a)−I(b)|≤‖∇I(z_*)‖‖a−b‖；B 仅在随后 This means … 段出现。Ch02.lean:486–489 明确 ∃c，且无 B 参数。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.integralPointwiseBound",
+      "verdict": "PASS",
+      "explanation": "已核对 Ch02.lean:486 起实际声明。对象是显式 EuclideanSpace，实标量连续线性泛函 fderiv 的算子范数等于欧氏梯度范数。存在同一 c∈segment 的均值恒等式与点态不等式以合取绑定，因此没有用不同见证替代原文 z_*，也没有偷换统一 B 界。开放域含线段与 C¹ 是原文全空间 C¹ 版本的合理局部推广，D=univ 即恢复原文。正文无直接 sorry；签名 PASS 与证明认证分开。JSON 的旧上下文备注需修正。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-2.2.4-IntegralErrorPrinted",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "忠实保留原书(2.16)的 2L，不静默改成 L。已有 ERRATUM? 标注合理：固定同一 Kbar 时，(2.12)和均值界仅推出 Kbar B/L 系数；不能把常数重命名当成已有推导。APPROVED 仅指来源转写准确，不表示原书数学论断正确。"
+      ],
+      "evidence": [
+        "已读取并渲染核对教材 PDF 第93页（印刷第71页，偏移+22）。本条原文未给独立证明，proof_latex=null、proof_note及proof_discussion_latex=null与所引段落相符。",
+        "PDF p.93，式(2.16)清楚印为 Kbar B/(2L)·e^{nLh}h^p 且 h<hbar；PDF p.89（印刷p.67）式(2.12)为 ε_n≤Kbar/L·e^{Lnh}h^p，无1/2。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.integralErrorPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "Ch02.lean:499 起实际声明与摘录一致且正文有 sorry。缺失 Q 的正式定义，不能完成其维数、范数及导数对象展开，故按材料不足规则最终为 NEEDS_HUMAN，绝非 PASS。在预期的非零有限维实坐标空间上，该签名的额外1/2可被下述例子直接否定，应在补齐定义后判 FAIL；不以 sorry 作此判断。B,K≥0、L>0、h≥0、开放域含线段及C¹合理，却均不提供1/2改善。签名把真实/数值轨迹推广到满足先前误差界的任意点，且没有 h<hbar 或 p>0 条件；这些窗口条件可显式补齐，但单靠补齐它们仍不能修复系数。[ERRATUM?] 应保留：此处证明了给定先前误差界不足以推出印刷公式，并不在没有进一步分析实际数值方法时把原书所有可能解释均判为错误。",
+      "counterexample": "在预期 Q 1≃ℝ 的标准范数模型，令 D=ℝ，I(x)=x，B=K=L=1，p=1，k=0，h=1/2，a=1/2，b=0。I 为C¹，导数范数为1，所有正性、线段和先前误差界成立（|a−b|=h），但所求结论为1/2≤1/4，错误。若要遵守原文严格“less than B”，可改 B=3/2，结论变1/2≤3/8，仍错误。可选 hbar=1，使 h<hbar。这是参数化点界的反例，未声称是满足全部离散方法假设的实际数值轨迹反例；Q 的缺失定义需要补齐后才能落实为精确 Lean 反例。",
+      "suggested_fix": "先补充 Q 的真实定义。在明确标记修正版本中将 K*B/(2*L) 改为 K*B/L，保留原书印刷式和 ERRATUM? 记录；或增加可独立证明的更强轨迹误差界 ‖a−b‖≤(K/(2L))*exp(L*k*h)*h^p。不得直接把待证积分误差作前提，也不得默默把 K 重命名为两倍。若本条必须忠实原书且无新证据，则保留为疑误待人工决定。"
+    }
+  }
+]

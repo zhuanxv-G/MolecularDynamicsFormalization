@@ -1,0 +1,100 @@
+[
+  {
+    "source_id": "MD-2.4.2-CompositionSymplectic",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "STATEMENT_NOT_VERBATIM",
+        "NOTATION_TRANSCRIPTION_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.2-CompositionSymplectic",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.4.2",
+        "printed_page": "85",
+        "pdf_page": "107",
+        "statement_latex": "More generally, if we have any two symplectic numerical methods, say $\\mathcal G_h^1$ and $\\mathcal G_h^2$, then the composition\n\\[\\mathcal G_h:=\\mathcal G_{h/2}^1\\circ\\mathcal G_{h/2}^2\\]\nis another symplectic numerical method.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch02.compositionSymplectic",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookComposeMaps_isSymplectic"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH23审校：依据PDF第107页（印刷第85页）恢复逐字英文陈述；第一条恢复上标方法编号及 :=。未修订原书数学内容。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF第107页（印刷第85页），BATCH23_page107.png"
+      },
+      "issues": [
+        "statement_latex并非逐字转录，而是同义改写。",
+        "原文采用方法编号上标 G_h^1、G_h^2，并以 := 定义复合映射；原JSON改为下标编号并用 =。"
+      ],
+      "evidence": [
+        "已直接读取并渲染教材PDF第107页，页眉印刷85；§2.4.2。原文从“More generally”至“is another symplectic numerical method”；展示公式为 G_h := G^1_{h/2} ∘ G^2_{h/2}。 两条均无独立证明或证明讨论；页码及section正确。context_notation=[]可接受：第一条记号已在陈述定义，第二条自身未引入记号。未发现需静默修订的原书疑误。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.compositionSymplectic",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "BATCH23.md只含定理签名，没有所称的正式库定义内嵌摘录；/workspace/Ch02.lean第1050–1065行的真实签名与批次一致，但其导入的正式定义在当前可读Lean文件中未找到，亦无可核验的本批MANIFEST。不能仅由名字断言定义语义，故未判PASS。 可见签名量化任意Nc、两族G₁/G₂、任意实数h，要求两族每个步长均满足IsTextbookSymplecticMap，结论针对textbookComposeMaps。必须核实其展开确为G₁(h/2)∘G₂(h/2)，以及SymplecticCoordinates与辛性谓词的对象、正则性和是否要求可逆性。无[EXTRA]或[ERRATUM?]标注。该声明以复用定理完成，无直接sorry；这不替代定义核对，也不保证依赖无sorry。",
+      "counterexample": null,
+      "suggested_fix": "补充与MANIFEST一致的SymplecticCoordinates、IsTextbookSymplecticMap、textbookComposeMaps及复用定理定义；核对半步、复合次序和辛性条件后再定审计结论。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.2-CompositionOrder",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "STATEMENT_NOT_VERBATIM",
+        "SOURCE_CLAUSE_OMITTED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.2-CompositionOrder",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.4.2",
+        "printed_page": "85",
+        "pdf_page": "107",
+        "statement_latex": "The order of this method is typically the minimum of the orders of the two methods involved, but it can be higher, as the example of the Verlet method (constructed by composing symplectic Euler and its adjoint) shows.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch02.compositionOrder",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]两个方法逼近同一实际流；第一个方法1+L|h|稳定；陈述保留至少min阶，允许更高，不把“typically”冒充确切阶相等。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH23审校：依据PDF第107页（印刷第85页）恢复逐字英文陈述；第一条恢复上标方法编号及 :=。未修订原书数学内容。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF第107页（印刷第85页），BATCH23_page107.png"
+      },
+      "issues": [
+        "statement_latex并非逐字转录，而是同义改写。",
+        "原JSON省略了Verlet例子中“constructed by composing symplectic Euler and its adjoint”的限定说明。"
+      ],
+      "evidence": [
+        "已直接读取并渲染教材PDF第107页，页眉印刷85；§2.4.2。原文从“The order of this method”至“adjoint) shows.”；Verlet例子明确由symplectic Euler与其adjoint复合。 两条均无独立证明或证明讨论；页码及section正确。context_notation=[]可接受：第一条记号已在陈述定义，第二条自身未引入记号。未发现需静默修订的原书疑误。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.compositionOrder",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "BATCH23.md只含定理签名，没有所称的正式库定义内嵌摘录；/workspace/Ch02.lean第1050–1065行的真实签名与批次一致，但其导入的正式定义在当前可读Lean文件中未找到，亦无可核验的本批MANIFEST。不能仅由名字断言定义语义，故未判PASS。 可见签名量词依次为n、置换族F、方法族G₁/G₂、r/s，再假设F满足加法群复合、两方法各自的methodLocalOrder及G₁稳定界；结论只断言min r s阶。须展开Q、methodLocalOrder、textbookComposeMaps核实局部/全局阶、误差界的量词与一致性。签名未假设两方法辛性：若结果作为一般误差定理，这是合理推广，但应明示范围。[EXTRA]同一流与稳定性可支持误差传播；稳定条件实际是对每个δ>0都存在统一于u/v且适用于全部|h|<δ的L，比只需某个小δ的局部稳定性更强，原书并未陈述，必要性未证。至少min阶允许更高，但并未证明原文“typically”的泛型意义，也未表达Verlet的更高阶实例，属于范围缩减疑点，应补充或明确部分形式化。无[ERRATUM?]标注。该声明含sorry，证明未完成；此事实与签名忠实性分开。",
+      "counterexample": null,
+      "suggested_fix": "补齐Q、methodLocalOrder和textbookComposeMaps正式定义与版本证据；说明所形式化的是至少min阶的定量子命题，补充Verlet确切更高阶实例或明确原句其他部分未形式化。若误差估计仅需小步长，将稳定条件考虑改为∃δ>0, ∃L≥0, …，并依据真实误差定义论证条件充分性。"
+    }
+  }
+]

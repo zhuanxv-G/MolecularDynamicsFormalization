@@ -1,0 +1,375 @@
+[
+  {
+    "source_id": "MD-2.4.1-Splitting",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NONVERBATIM_TRANSCRIPTION",
+        "SOURCE_NOTATION_CHANGED",
+        "NON_SOURCE_INSERTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-Splitting",
+        "kind": "definition",
+        "label": null,
+        "section": "2.4.1",
+        "printed_page": "83",
+        "pdf_page": "105",
+        "statement_latex": "Let $H(\\boldsymbol q,\\boldsymbol p)=H_1(\\boldsymbol q,\\boldsymbol p)+H_2(\\boldsymbol q,\\boldsymbol p)$ have flow map $\\mathcal F_h$, and indicate by $\\mathcal F_h^1,\\mathcal F_h^2$ the flow maps for the systems with Hamiltonians $H_1,H_2$, respectively. The proposal is that the map\n\\[\\mathcal G_h=\\mathcal F_h^1\\circ\\mathcal F_h^2\\]\nis an approximation of $\\mathcal F_h$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "只定义给定实际子流的组合；近似精度由后项给出，不把任意映射称为实际流。"
+        ],
+        "issues": [
+          "原句被改写，添加原页没有的 closed form 条件；子流记号原书为上标1、2。context_notation的实际子流解释合理，但闭式可得性不是本段假设。"
+        ],
+        "lean_decl": "MD.Ch02.bp_splittingMap",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+      },
+      "issues": [
+        "原句被改写，添加原页没有的 closed form 条件；子流记号原书为上标1、2。context_notation的实际子流解释合理，但闭式可得性不是本段假设。"
+      ],
+      "evidence": [
+        "已核对渲染PDF页105（印刷页83）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_splittingMap",
+      "verdict": "PASS",
+      "explanation": "bp_splittingMap定义可直接完整展开为F₁ h ∘ F₂ h：先子流2再子流1，与PDF105页G_h=F_h^1∘F_h^2一致。这里仅审计组合记号定义；泛化为任意E和映射是可复用代数接口，不宣称任意映射为Hamilton流，也不声称误差阶或闭式流存在。实际子流资格由使用上下文给定。无[ERRATUM?]，无额外定理假设；定义无证明义务。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-2.4.1-FieldAdd",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已核对渲染PDF页105（印刷页83）；页码按+22匹配。恒等式是(2.24)中hJ∇H与h(J∇H₁+J∇H₂)替换关系的提取，原页未另列独立等式；依赖本段H=H₁+H₂。无独立证明，proof_latex=null正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.fieldAdd",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "签名在同一点z对H₁、H₂分别要求可微，并比较和Hamiltonian与两个向量场的和；这些[EXTRA]可微条件合理且能避免不可微点fderiv的总化问题。须展开SymplecticCoordinates及textbookHamiltonianVectorField，核对实际J和梯度。 BATCH21.md没有提供所称的导入正式库定义摘录；/workspace/Ch02.lean确实导入Chapter02.ReviewProofs等模块，但当前可定位材料缺少这些模块及对应本批MANIFEST哈希，不能用旧项目缓存代替。签名没有sorry字样，但仅转交库定理；不据此判断语义或证明可信度。",
+      "counterexample": null,
+      "suggested_fix": "补交与本批MANIFEST哈希一致的正式导入模块定义摘录，再展开核对；不要以定理名称或无sorry替代签名语义审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.1-SplittingLocal",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NONVERBATIM_TRANSCRIPTION",
+        "SOURCE_NOTATION_CHANGED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-SplittingLocal",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.4.1",
+        "printed_page": "83",
+        "pdf_page": "105",
+        "statement_latex": "For this to be a first order method, we need at least $\\|\\mathcal G_h(\\boldsymbol u)-\\mathcal F_h(\\boldsymbol u)\\|\\le C(\\boldsymbol u)h^2$.",
+        "proof_latex": "Expand $\\mathcal F_h(\\boldsymbol u)$ in a Taylor series:\n\\[\\mathcal F_h(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H+\\mathcal O(h^2)=\\boldsymbol u+h(J\nabla H_1+J\nabla H_2)+\\mathcal O(h^2).\\tag{2.24}\\]\nOn the other hand,\n\\[\\mathcal F_h^1(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_1(\\boldsymbol u)+\\mathcal O(h^2),\\qquad\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u)+\\mathcal O(h^2).\\]\nComposing the maps we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u)+hJ\nabla H_1(\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\]\nAssuming $H_1$ is $C^2$, we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+h(J\nabla H_2(\\boldsymbol u)+J\nabla H_1(\\boldsymbol u))+\\mathcal O(h^2),\\]\nwhich agrees with the expansion (2.24) of the flow map through the terms of first order. Thus the splitting method does indeed provide a second order local approximation of the flow map.",
+        "proof_note": "原书计算按原页转录。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          "证明英文非逐字转录；遗漏与(2.24)一阶项一致的句子；(2.24)原页省略梯度求值点；子流使用上标1、2。原书 second order local approximation 指局部误差O(h²)，不作二阶全局精度的静默修正。"
+        ],
+        "lean_decl": "MD.Ch02.splittingLocal",
+        "reusable_proofs": [
+          "MolecularDynamics.exists_hamiltonian_splitting_localError_bound"
+        ],
+        "extra_assumptions": [
+          "实际H及两个子Hamilton局部ODE、初值及留开放域；H₁,H₂ C²，组合在紧时间矩形连续；没有假设待证局部误差。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+      },
+      "issues": [
+        "证明英文非逐字转录；遗漏与(2.24)一阶项一致的句子；(2.24)原页省略梯度求值点；子流使用上标1、2。原书 second order local approximation 指局部误差O(h²)，不作二阶全局精度的静默修正。"
+      ],
+      "evidence": [
+        "已核对渲染PDF页105（印刷页83）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.splittingLocal",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "量词为固定u、固定τ≥0、先给实际三组轨道及ODE/初值/留域条件，再存在统一C>0；结论覆盖[0,τ]并在τ>0时给右侧O(h²)。C²及紧矩形连续是合理充分条件，强于原页明示H₁ C²，未假设待证误差；τ=0只给零步恒等，不提供非平凡邻域。须核实实际Hamilton向量场与坐标范数；不能未经展开判PASS。 BATCH21.md没有提供所称的导入正式库定义摘录；/workspace/Ch02.lean确实导入Chapter02.ReviewProofs等模块，但当前可定位材料缺少这些模块及对应本批MANIFEST哈希，不能用旧项目缓存代替。签名没有sorry字样，但仅转交库定理；不据此判断语义或证明可信度。",
+      "counterexample": null,
+      "suggested_fix": "补交与本批MANIFEST哈希一致的正式导入模块定义摘录，再展开核对；不要以定理名称或无sorry替代签名语义审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.1-KineticFlow",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NONVERBATIM_TRANSCRIPTION",
+        "PAGE_RANGE_OVERBROAD"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-KineticFlow",
+        "kind": "definition",
+        "label": "Example 2.4",
+        "section": "2.4.1",
+        "printed_page": "83",
+        "pdf_page": "105",
+        "statement_latex": "Let\n\\[H_1(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^TM^{-1}\\boldsymbol p/2,\\qquad H_2(\\boldsymbol q,\\boldsymbol p)=U(\\boldsymbol q),\\]\nthen a splitting method for $H=H_1+H_2$ may be obtained by determining the flow maps for each of the two parts. For $H_1$ we have the differential equations\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol0.\\]\nThe second equation tells us that $\\boldsymbol p$ is constant, so it is fixed at its initial value, whereas the first equation says that $\\boldsymbol q$ evolves on a linear path, hence its flow map is\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p,\\qquad\\boldsymbol P=\\boldsymbol p.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "固定对角质量，mᵢ≠0资格由机械模型；闭式映射逐坐标表达。"
+        ],
+        "issues": [
+          "原句改写并遗漏解释常动量、线性位置路径的文字；所引内容全部在印刷83/PDF105页，页码范围过宽。context_notation中非零质量为模型资格，当前Lean签名未体现，且本页未逐项声明。"
+        ],
+        "lean_decl": "MD.Ch02.bp_kineticFlow",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+      },
+      "issues": [
+        "原句改写并遗漏解释常动量、线性位置路径的文字；所引内容全部在印刷83/PDF105页，页码范围过宽。context_notation中非零质量为模型资格，当前Lean签名未体现，且本页未逐项声明。"
+      ],
+      "evidence": [
+        "已核对渲染PDF页105（印刷页83）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_kineticFlow",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "显式分量公式与对角M的Q=q+hM⁻¹p、P=p一致，但须确认SymplecticCoordinates的inl/inr确为位置/动量。签名允许mᵢ=0，Lean逆元总化并不能解释书中M⁻¹；若只定义代数扩展可接受，若称实际动能流必须限定非零（物理模型通常正）质量，并验证坐标定义。 BATCH21.md没有提供所称的导入正式库定义摘录；/workspace/Ch02.lean确实导入Chapter02.ReviewProofs等模块，但当前可定位材料缺少这些模块及对应本批MANIFEST哈希，不能用旧项目缓存代替。签名没有sorry字样，但仅转交库定理；不据此判断语义或证明可信度。",
+      "counterexample": null,
+      "suggested_fix": "补交与本批MANIFEST哈希一致的正式导入模块定义摘录，再展开核对；不要以定理名称或无sorry替代签名语义审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.1-PotentialFlow",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NONVERBATIM_TRANSCRIPTION",
+        "NON_SOURCE_INSERTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-PotentialFlow",
+        "kind": "definition",
+        "label": null,
+        "section": "2.4.1",
+        "printed_page": "84",
+        "pdf_page": "106",
+        "statement_latex": "Similarly, the flow map of the system with Hamiltonian $H_2=U$ is\n\\[\\boldsymbol Q=\\boldsymbol q,\\qquad\\boldsymbol P=\\boldsymbol p-h\nabla U(\\boldsymbol q).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "F=-∇U；实际闭式映射。"
+        ],
+        "issues": [
+          "原页只写 Similarly, the flow map ...，没有所录微分方程或 On the other hand ... which implies 文字。F=-∇U作为解释合理，但实际流需可微资格。"
+        ],
+        "lean_decl": "MD.Ch02.bp_potentialFlow",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+      },
+      "issues": [
+        "原页只写 Similarly, the flow map ...，没有所录微分方程或 On the other hand ... which implies 文字。F=-∇U作为解释合理，但实际流需可微资格。"
+      ],
+      "evidence": [
+        "已核对渲染PDF页106（印刷页84）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_potentialFlow",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "必须展开Q、SymplecticCoordinates、textbookMomentumKick及textbookPotentialForce，核对q不变、p加hF(q)、F=-∇U。签名对任意U定义映射，实际Hamilton流解释还需U可微；裸总化定义不能证明这一解释。 BATCH21.md没有提供所称的导入正式库定义摘录；/workspace/Ch02.lean确实导入Chapter02.ReviewProofs等模块，但当前可定位材料缺少这些模块及对应本批MANIFEST哈希，不能用旧项目缓存代替。签名没有sorry字样，但仅转交库定理；不据此判断语义或证明可信度。",
+      "counterexample": null,
+      "suggested_fix": "补交与本批MANIFEST哈希一致的正式导入模块定义摘录，再展开核对；不要以定理名称或无sorry替代签名语义审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.1-SplitEuler",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NONVERBATIM_TRANSCRIPTION",
+        "NON_SOURCE_INSERTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-SplitEuler",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.4.1",
+        "printed_page": "84",
+        "pdf_page": "106",
+        "statement_latex": "The composition of these maps simplifies to\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol P,\\qquad\\boldsymbol P=\\boldsymbol p-h\nabla U(\\boldsymbol q),\\]\nwhich is precisely the Symplectic Euler method. Similarly, composing the same two maps in the opposite order gives the adjoint Symplectic Euler method.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          "原句被转述；原页没有(2.22)、(2.23)引用。"
+        ],
+        "lean_decl": "MD.Ch02.splitEuler",
+        "reusable_proofs": [
+          "MolecularDynamics.Chapter02Review.kineticPotentialComposition_proved"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+      },
+      "issues": [
+        "原句被转述；原页没有(2.22)、(2.23)引用。"
+      ],
+      "evidence": [
+        "已核对渲染PDF页106（印刷页84）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.splitEuler",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "签名同时给正序和逆序两个等式，结论子句数量与原文一致；但splittingMap不是本批定义bp_splittingMap，且漂移、kick、力、Euler及伴随定义均未提供，不能依名字判断顺序或伴随是否真实。非零质量及势能正则性作为代数恒等式未必必要，实际流解释则须明确。 BATCH21.md没有提供所称的导入正式库定义摘录；/workspace/Ch02.lean确实导入Chapter02.ReviewProofs等模块，但当前可定位材料缺少这些模块及对应本批MANIFEST哈希，不能用旧项目缓存代替。签名没有sorry字样，但仅转交库定理；不据此判断语义或证明可信度。",
+      "counterexample": null,
+      "suggested_fix": "补交与本批MANIFEST哈希一致的正式导入模块定义摘录，再展开核对；不要以定理名称或无sorry替代签名语义审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.1-VerletComposition",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NONVERBATIM_TRANSCRIPTION",
+        "SOURCE_NOTATION_CHANGED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-VerletComposition",
+        "kind": "unnumbered_claim",
+        "label": "Example 2.5 (Verlet is Symplectic)",
+        "section": "2.4.1",
+        "printed_page": "84–85",
+        "pdf_page": "106–107",
+        "statement_latex": "For the Symplectic Euler method $\\mathcal G_h$ and its adjoint method $\\mathcal G_h^\\dagger$, consider the composition\n\\[\\mathcal K_h:=\\mathcal G_{h/2}^\\dagger\\circ\\mathcal G_{h/2}.\\]",
+        "proof_latex": "Let\n\\[\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix}=\\mathcal G_{h/2}\\begin{bmatrix}\\boldsymbol q\\\\\\boldsymbol p\\end{bmatrix},\\]\ni.e.,\n\\[\\bar{\\boldsymbol q}=\\boldsymbol q+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\bar{\\boldsymbol p}=\\boldsymbol p-(h/2)\nabla U(\\boldsymbol q).\\]\nand set\n\\[\\begin{bmatrix}\\boldsymbol Q\\\\\\boldsymbol P\\end{bmatrix}=\\mathcal G_{h/2}^\\dagger\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix},\\]\ni.e.,\n\\[\\boldsymbol Q=\\bar{\\boldsymbol q}+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-(h/2)\nabla U(\\boldsymbol Q).\\]\nThe composition simplifies to\n\\[\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\nabla U(\\boldsymbol q),\\qquad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\nabla U(\\boldsymbol Q).\\]\nThis is just the leapfrog/Verlet method in its Hamiltonian form.",
+        "proof_note": "原书计算按原页转录。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          "原句、证明被转述，漏两条向量映射公式；原书伴随记号为dagger而非星号；例题完整标题为Example 2.5 (Verlet is Symplectic)。"
+        ],
+        "lean_decl": "MD.Ch02.verletComposition",
+        "reusable_proofs": [
+          "MolecularDynamics.Chapter02Review.verletComposition_proved"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+      },
+      "issues": [
+        "原句、证明被转述，漏两条向量映射公式；原书伴随记号为dagger而非星号；例题完整标题为Example 2.5 (Verlet is Symplectic)。"
+      ],
+      "evidence": [
+        "已核对渲染PDF页106–107（印刷页84–85）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.verletComposition",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "签名同时声称coordinateVerlet等于pack/unpack后的verlet及Euler半步再伴随半步的组合；h/2及作用顺序表面吻合。须展开全部坐标/包装/Verlet/Euler/伴随定义，检查中间动量及最终Q处的力，不能仅看命名。 BATCH21.md没有提供所称的导入正式库定义摘录；/workspace/Ch02.lean确实导入Chapter02.ReviewProofs等模块，但当前可定位材料缺少这些模块及对应本批MANIFEST哈希，不能用旧项目缓存代替。签名没有sorry字样，但仅转交库定理；不据此判断语义或证明可信度。",
+      "counterexample": null,
+      "suggested_fix": "补交与本批MANIFEST哈希一致的正式导入模块定义摘录，再展开核对；不要以定理名称或无sorry替代签名语义审计。"
+    }
+  },
+  {
+    "source_id": "MD-2.4.1-VerletSymplectic",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NONVERBATIM_TRANSCRIPTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-VerletSymplectic",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.4.1",
+        "printed_page": "85",
+        "pdf_page": "107",
+        "statement_latex": "Since we have obtained the method as the composition of two symplectic maps, and the symplectic maps form a group, we know that this method will also be symplectic.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          "原句被转述，漏 symplectic maps form a group 这一论证依据。"
+        ],
+        "lean_decl": "MD.Ch02.verletSymplectic",
+        "reusable_proofs": [
+          "MolecularDynamics.Chapter02Review.verletSymplectic_proved"
+        ],
+        "extra_assumptions": [
+          "U C²；真实完整步映射。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+      },
+      "issues": [
+        "原句被转述，漏 symplectic maps form a group 这一论证依据。"
+      ],
+      "evidence": [
+        "已核对渲染PDF页107（印刷页85）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.verletSymplectic",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "U全局C²是保证梯度C¹及Hessian对称的合理充分[EXTRA]；声明针对完整coordinateVerlet步。但缺少IsTextbookSymplecticMap定义，无法核实是否要求实际导数保持J、C¹、可逆性，亦无法核实coordinateVerlet是否真实三段映射。 BATCH21.md没有提供所称的导入正式库定义摘录；/workspace/Ch02.lean确实导入Chapter02.ReviewProofs等模块，但当前可定位材料缺少这些模块及对应本批MANIFEST哈希，不能用旧项目缓存代替。签名没有sorry字样，但仅转交库定理；不据此判断语义或证明可信度。",
+      "counterexample": null,
+      "suggested_fix": "补交与本批MANIFEST哈希一致的正式导入模块定义摘录，再展开核对；不要以定理名称或无sorry替代签名语义审计。"
+    }
+  }
+]

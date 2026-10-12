@@ -1,0 +1,146 @@
+[
+  {
+    "source_id": "MD-2.3.6-SymplecticIntegrator",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第102页，印刷第80页，§2.3.6 首句与 statement_latex 一致：a symplectic integrator 是 flow map 的 approximation，并保持 symplectic 2-form；页码满足 80+22=102。",
+        "同页定义步记号 Z=G_h(z)，并将 Z,z 分解为 (Q,P),(q,p)，支持 context_notation 中的单步映射解释。“精度资格在前节另行定义”仅作先前数值积分背景，不能替代本句明确的 approximation 要求。",
+        "该定义原句没有附独立证明；proof_latex=null 合理。PDF 第102页已直接读取并渲染检查，图像为 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH19/page-102.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_symplecticIntegrator",
+      "verdict": "FAIL",
+      "explanation": "原文的定义同时要求“是流映射的近似”与“保持辛2-form”。实际读取 /workspace/Ch02.lean:865–866：bp_symplecticIntegrator 只对任意实数 h 要求 IsTextbookSymplecticMap (G h)，没有流映射参数、近似/一致性谓词，亦没有类型约束保证 G 是具有近似资格的积分方法；context_notation 中的背景说明不是 Lean 假设。这是可从本条签名直接判定的缺失条件，独立于其保辛谓词的库定义核对。若本声明仅意在定义既有积分方法的“保辛性质”，必须明确这一范围并另行承载近似资格，不能将当前任意函数族的谓词视为原文完整定义。量词 ∀h 是对整个 ℝ 的要求；对仅在某个可用步长域有定义的方法，还需明确域，或注明只覆盖全局定义的族。本条没有 [EXTRA] 或 [ERRATUM?] 标记，也没有声明体 sorry；证明状态不影响以上语义缺失。已完整读取 /workspace/BATCH19.md，并对照 /workspace/Ch02.lean；五个批内 Lean 签名均与该文件一致。附件所称 Blueprint/Ch02.lean 未在当前目录中提供，实际可读副本为 /workspace/Ch02.lean。BATCH19.md 实际只包含这五条声明，没有被引用的正式库定义展开摘录，也没有本批完整依赖工程的 MANIFEST。当前 /workspace/Lean、/workspace/MolecularDynamicsFormalization 及共享 share/Documents、share/Lean 中未提供这些 Chapter02 定义。因此不得将名称、复用定理名或未经检查的辅助定理当作实际定义已经核对的证据。",
+      "counterexample": "按原文标准辛形式取 N_c=1、H(q,p)=p²/2，其真实流为 Φ_h(q,p)=(q+h p,p)。令每个 h 都有 G_h(q,p)=(q+1,p)。该光滑平移的 Jacobian 为单位矩阵，故保持 dq∧dp；但在 (q,p)=(0,0) 有 G_h(0,0)=(1,0)、Φ_h(0,0)=(0,0)，步长趋于0时误差仍为1，且 G_0≠id。它满足“每步保辛”而没有原文的流近似资格。该反例针对原文保辛概念；当前缺失的导入定义尚不能据此声称已核查其 Lean 实例。",
+      "suggested_fix": "在当前方法接口中明确加入 G 相对实际流 Φ 的近似/一致性资格，再与每个可用 h 的保辛条件合取；精度要求按原书此前定义表达，不任意指定更高阶。若另有已定义的数值积分方法类型，应让 G 属于该类型或将资格列为前提；若仅保留保辛性质谓词，应修改条目范围和命名以表明它不是完整的积分器定义。同时补齐与本批版本一致的导入定义、可用步长域说明及 MANIFEST，再核对该反例与实际保辛谓词。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.6-SymplecticEuler",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "SOURCE_ERRATUM_SUSPECTED_UNCHANGED"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "原书 PDF 第102页式(2.19)后的计算顺序说明写的是先 compute P，再代入第一式 “to get q”。按式(2.18)，求得的应是大写 Q，这是原书正文的疑似笔误。当前 statement_latex 未引用这句话，所录两式保持原样；context_notation 的“先P后Q”是按原公式总结计算过程，而非原句逐字引文，故不改现有条目，不静默改写原书。"
+      ],
+      "evidence": [
+        "教材 PDF 第102页，印刷第80页，句子 The following scheme is a slight modification of the Euler method. 与所录句子一致。式(2.18)为 Q=q+hM^{-1}P，式(2.19)为 P=p+hF(q)，公式次序、正号、更新后的 P 和初始 q 均一致；80+22=102。",
+        "同页给出 H=pᵀM^{-1}p/2+U(q)，说明 M 为 diagonal mass matrix，并写 ṗ=−∇_q U(q)≡F(q)。这支持固定对角质量、势力及先P后Q的上下文；此处 explicit 是实际计算顺序，不是隐式方程解存在性定理。",
+        "该条是更新格式定义，所引位置未给独立证明，proof_latex=null 合理。正文“to get q”的疑误已记录且未改写教材引文。PDF 第102页已渲染检查。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_symplecticEuler",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 /workspace/Ch02.lean:869–872 的声明体：它确实写成 textbookPositionDrift m h ∘ textbookMomentumKick (textbookPotentialForce U) h。函数复合的语法顺序是先 kick 后 drift，与原文计算顺序相符；但不能从这三个名称推断具体坐标公式。须展开实际 definitions，核实 Sum.inl/inr 是否分别为 q/p、kick 是否保留 q 并在旧 q 处计算 F(q)、drift 是否使用更新后的 P，以及 textbookPotentialForce 是否确为 −∇U。类型将 m,U,h 全部取为任意对象；原书 M^{-1} 的物理域要求质量矩阵可逆，且 ∇U 有通常的可微含义，故还需检查零质量和不可微 U 的总化行为并说明是否只是有效物理参数之外的扩展。本批无 [EXTRA]、[ERRATUM?] 标记；定义体无 sorry，仍不能据此判语义 PASS。已完整读取 /workspace/BATCH19.md，并对照 /workspace/Ch02.lean；五个批内 Lean 签名均与该文件一致。附件所称 Blueprint/Ch02.lean 未在当前目录中提供，实际可读副本为 /workspace/Ch02.lean。BATCH19.md 实际只包含这五条声明，没有被引用的正式库定义展开摘录，也没有本批完整依赖工程的 MANIFEST。当前 /workspace/Lean、/workspace/MolecularDynamicsFormalization 及共享 share/Documents、share/Lean 中未提供这些 Chapter02 定义。因此不得将名称、复用定理名或未经检查的辅助定理当作实际定义已经核对的证据。",
+      "counterexample": null,
+      "suggested_fix": "提供这三个导入定义及 SymplecticCoordinates、梯度和坐标投影的精确展开，逐项验证 (Q,P)=(q+hM^{-1}(p+hF(q)),p+hF(q))。明确原文适用的非零质量及势函数可微条件，若定义在更大参数域总化则注明限制到教材有效参数后的等价性；仅在发现实际公式偏差后提出相应代码修复。原书说明中的小写 q 疑误另行登记，不改写原公式。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.6-KickDifferential",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第103页，印刷第81页，首段在把 Q_i、P_i 视为 q,p 的函数后写 then；式(2.20)为 dQ_i=dq_i+hm_i^{-1}dP_i，式(2.21)为 dP_i=dp_i−h∑_{j=1}^{N_c}(∂²U/∂q_j∂q_i)dq_j。求和范围、二阶偏导顺序、负号和公式标签均与 statement_latex 一致；81+22=103。",
+        "上下文接续 PDF 第102页式(2.18)–(2.19)：Q、P 是完整一步后的位置、动量。这支持将 dQ、dP 理解为更新映射的实际微分；原页没有另写微分计算的独立证明，proof_latex=null 合理。",
+        "原文用到 Hessian，ContDiff ℝ 2 U 是 extra_assumptions 中明确列出的正则性补充，不应宣称为原文逐字明示的假设。PDF 第103页已渲染检查。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.kickDifferential",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已核对 /workspace/Ch02.lean:876–882 的实际签名，量词为任意 n,m,U,h,z，在 ContDiff ℝ 2 U 下再对任意切向量 ξ 和分量 i 给出两条等式的合取；两条原结论子句均在语法中出现，使用的是整个 textbookSymplecticEuler 的 fderiv，而不是某个任意给定矩阵。[EXTRA] U C² 对保证势力 C¹、Hessian 存在且与实际梯度导数相符是合理的充分假设；它强于单点二阶可微的最低需要，但适合全局方法陈述。固定 h 和质量参数随 z 不变，与教材模型一致。然而正式库的 grad、Q、SymplecticCoordinates、textbookSymplecticEuler 均未给出，尚不能核实其导数是欧氏梯度导数，也不能核实 ((fderiv ℝ (grad U) q) δq) i 真对应式(2.21)的 ∑_j ∂²U/(∂q_j∂q_i) δq_j，或该实际步映射与本批 bp_symplecticEuler 是同一函数。须另确认坐标顺序及质量逆元有效域。本条无 [ERRATUM?]；声明体 /workspace/Ch02.lean:882 有 sorry，只说明证明未完成，不是判签名 FAIL 的理由。已完整读取 /workspace/BATCH19.md，并对照 /workspace/Ch02.lean；五个批内 Lean 签名均与该文件一致。附件所称 Blueprint/Ch02.lean 未在当前目录中提供，实际可读副本为 /workspace/Ch02.lean。BATCH19.md 实际只包含这五条声明，没有被引用的正式库定义展开摘录，也没有本批完整依赖工程的 MANIFEST。当前 /workspace/Lean、/workspace/MolecularDynamicsFormalization 及共享 share/Documents、share/Lean 中未提供这些 Chapter02 定义。因此不得将名称、复用定理名或未经检查的辅助定理当作实际定义已经核对的证据。",
+      "counterexample": null,
+      "suggested_fix": "补齐 grad 的定义及其与欧氏梯度/二阶偏导的对应关系、完整 textbookSymplecticEuler 与坐标类型定义、质量参数域说明和版本 MANIFEST；核对其确为式(2.18)–(2.19)，并核对 fderiv(grad U) 的逐分量展开。保留合理的 C² 正则性说明；此次只读审计不补写 sorry 证明。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.6-WedgeSelf",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第103页，印刷第81页，在 dQ_i∧dP_i=dq_i∧dP_i+hm_i^{-1}dP_i∧dP_i 后原文写 but du∧du≡0 for any u, hence。statement_latex 正确截取至该逗号；equiv 符号与原文一致，81+22=103。",
+        "原页将同一1-form的自楔为零作为基本性质使用，没有为该独立子命题附证明；proof_latex=null、context_notation=[] 可接受。PDF 第103页已渲染检查。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.wedgeSelf",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名 /workspace/Ch02.lean:885–887 对任意 n、实线性1-form α 及两切向量 u,v 声明 textbookWedgeOneForms α α u v=0。若该运算是原文的标准1-form楔积，推广到所有 α 是合理的：在任一点取 α=du 即涵盖教材结论，且 u,v 在 Lean 中是切向量，并非原书标量函数 u。当前文件确有辅助声明 textbookWedgeOneForms_apply（701–706行），其陈述写 α u*β v−α v*β u，证明正文用 change 指向 α u*β v−β u*α v；这给出了清晰的待核对展开线索。不过被导入的 textbookWedgeOneForms 实际定义仍不在本批，无法核实该 change 的可约化目标及此辅助代码与缺失的正式库版本是否一致，故严格按未核对不得 PASS 记 NEEDS_HUMAN。没有额外假设或 [ERRATUM?]；本条正文 exact wedgeSelf_proved 没有直接 sorry，但该复用证明的声明和依赖未提供，证明状态与签名语义分开记录。已完整读取 /workspace/BATCH19.md，并对照 /workspace/Ch02.lean；五个批内 Lean 签名均与该文件一致。附件所称 Blueprint/Ch02.lean 未在当前目录中提供，实际可读副本为 /workspace/Ch02.lean。BATCH19.md 实际只包含这五条声明，没有被引用的正式库定义展开摘录，也没有本批完整依赖工程的 MANIFEST。当前 /workspace/Lean、/workspace/MolecularDynamicsFormalization 及共享 share/Documents、share/Lean 中未提供这些 Chapter02 定义。因此不得将名称、复用定理名或未经检查的辅助定理当作实际定义已经核对的证据。",
+      "counterexample": null,
+      "suggested_fix": "补齐实际 textbookWedgeOneForms 定义及对应版本信息，确认对 α,β,u,v 的值为 α(u)β(v)−α(v)β(u)，再据 α=β 判断语义忠实性。辅助 apply 声明可作为定位线索，但不能代替缺失的导入定义核对；不需改写或补写本条证明。"
+    }
+  },
+  {
+    "source_id": "MD-2.3.6-SymplecticEulerPreserves",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "PROOF_DISCUSSION_OMITTED",
+        "CONTEXT_NOTATION_INCOMPLETE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.3.6-SymplecticEulerPreserves",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.3.6",
+        "printed_page": "81",
+        "pdf_page": "103",
+        "statement_latex": "This implies that\n\\[\\sum_{i=1}^{N_c}dQ_i\\wedge dP_i=\\sum_{i=1}^{N_c}dq_i\\wedge dp_i,\\]\nwhich means that the method is symplectic.",
+        "proof_latex": null,
+        "proof_note": "原书给出保辛结论的计算性论证；其中 Hessian 双重求和为零明示留作 simple exercise，未逐项展开该消去计算。原论证完整转录在 proof_discussion_latex 中，不补写原书省略的演算。",
+        "proof_discussion_latex": "Computing the 2-form,\n\\[dQ_i\\wedge dP_i=dq_i\\wedge dP_i+hm_i^{-1}dP_i\\wedge dP_i;\\]\nbut $du\\wedge du\\equiv0$ for any $u$, hence\n\\[dQ_i\\wedge dP_i=dq_i\\wedge dP_i;\\]\nand (2.21) implies\n\\[dQ_i\\wedge dP_i=dq_i\\wedge dp_i-h\\sum_{j=1}^{N_c}dq_i\\wedge\\frac{\\partial^2U}{\\partial q_j\\partial q_i}dq_j.\\]\nIt is then a simple exercise to show that\n\\[\\sum_{i=1}^{N_c}\\sum_{j=1}^{N_c}dq_i\\wedge\\frac{\\partial^2U}{\\partial q_j\\partial q_i}dq_j=0,\\]\nusing the skew-symmetry of the wedge product and the fact that the Hessian matrix is symmetric.",
+        "context_notation": [
+          "Q_i、P_i 为式(2.18)–(2.19)完整一步映射输出的分量，q_i、p_i 为输入分量；dQ_i、dP_i 是该映射对初始 q,p 的微分，N_c 为坐标数。",
+          "接续 PDF 第102页的机械 Hamiltonian 模型 H=pᵀM^{-1}p/2+U(q)，M 为固定对角质量矩阵，F(q)=−∇_qU(q)，本条使用 Hessian 对称性与楔积反对称性。",
+          "全局 C² 正则性是 Lean 为实际梯度和 Hessian 添加的充分条件，原文此段未逐字列出 C² 假设；标准矩阵逆 M^{-1} 的教材参数域为可逆质量矩阵。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.symplecticEulerPreserves",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookSymplecticEuler_isSymplectic"
+        ],
+        "extra_assumptions": [
+          "U C²，固定对角质量；真实完整步映射。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH19 A审校：补录 PDF 第103页实际提供的保辛论证到 proof_discussion_latex，修正遗漏该讨论的 proof_note，并补齐坐标、机械模型和 Hessian 上下文；保留原陈述、页码及 proof_latex=null，不补原书留作练习的演算。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; /workspace/.mathcopilot/reviews/ch02/evidence/BATCH19/page-102.png; /workspace/.mathcopilot/reviews/ch02/evidence/BATCH19/page-103.png"
+      },
+      "issues": [
+        "statement_latex 中的最终2-form等式及 concluding phrase 均与原书一致，页码正确。问题在于 proof_discussion_latex=null 且 context_notation=[] 遗漏了原书明确提供的计算性论证及其模型背景；仅写“原书未给独立完整证明”不能充分记录已有论证。",
+        "原文把 Hessian 双重求和的消去明示留作 simple exercise，因此保留 proof_latex=null，将书中已写出的讨论逐字转录至 proof_discussion_latex，并在 proof_note 区分已给出的论证与未展开的练习；不自行补原书演算或静默改变原结论。"
+      ],
+      "evidence": [
+        "教材 PDF 第103页，印刷第81页，末段 This implies that 后显示 ∑_{i=1}^{N_c}dQ_i∧dP_i=∑_{i=1}^{N_c}dq_i∧dp_i，随后 which means that the method is symplectic. 与 statement_latex 一致；81+22=103。",
+        "同页结论前从 Computing the 2-form 开始，逐步使用式(2.20)、自楔为零及式(2.21)，然后显示 Hessian 的双重求和为零，并说明使用 wedge product 的 skew-symmetry 和 Hessian matrix 的 symmetry。此整段是被遗漏的 proof_discussion_latex 原文依据。",
+        "同页明确写 It is then a simple exercise to show that，故 corrected_json 保留未展开演算的事实；模型上下文来自 PDF 第102页 H=pᵀM^{-1}p/2+U(q)、diagonal mass matrix、F=−∇_qU。PDF 第102、103页均已直接读取并渲染检查。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.symplecticEulerPreserves",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "实际签名 /workspace/Ch02.lean:891–894 对任意 N_c,m,U,h，在 hU:ContDiff ℝ 2 U 下声明 IsTextbookSymplecticMap (textbookSymplecticEuler m U h)。若完整步映射及该保辛谓词展开为本书标准坐标公式和拉回等式，则这一结论确应包含原文所有分量求和的2-form恒等式，而非仅行列式为1。[EXTRA] U C² 对保证完整步映射 C¹ 及 Hessian 对称性是合理的充分正则性补充；固定对角质量来自原文模型，m 被固定为与 z 无关的参数，未把质量依赖于位置。任意实数 h 对标准全局 kick/drift 公式可接受，并非仅在某个小步长处保辛。仍须查看实际 IsTextbookSymplecticMap 是否含 C¹ 与正确辛形式，textbookSymplecticEuler 是否等于本批所定义的先kick后drift方法，以及 grad 与质量逆元的实际定义；零质量虽可能产生仍保辛的形式扩展，却不是原文可逆质量矩阵的物理实例。当前 Ch02 的 symplecticIffForm 辅助声明（752–757行）说明了预期的 fderiv 拉回式，但其调用的正式库定义和版本缺失，不能据此判定已核对。无 [ERRATUM?] 标记；正文 apply textbookSymplecticEuler_isSymplectic 无直接 sorry，复用定理及其证明未提供，故不宣称证明闭合。已完整读取 /workspace/BATCH19.md，并对照 /workspace/Ch02.lean；五个批内 Lean 签名均与该文件一致。附件所称 Blueprint/Ch02.lean 未在当前目录中提供，实际可读副本为 /workspace/Ch02.lean。BATCH19.md 实际只包含这五条声明，没有被引用的正式库定义展开摘录，也没有本批完整依赖工程的 MANIFEST。当前 /workspace/Lean、/workspace/MolecularDynamicsFormalization 及共享 share/Documents、share/Lean 中未提供这些 Chapter02 定义。因此不得将名称、复用定理名或未经检查的辅助定理当作实际定义已经核对的证据。",
+      "counterexample": null,
+      "suggested_fix": "补齐实际完整步映射、标准辛形式、保辛谓词、梯度及相关坐标定义和版本 MANIFEST；确认保辛谓词给出的确为 ∑dQ_i∧dP_i=∑dq_i∧dp_i，并确认所用映射与本批 bp_symplecticEuler 定义一致。在教材有效质量域明确 M 可逆，C² 可作为明示的合理补充；保持本次只读范围，不补写或改动 Lean 证明。"
+    }
+  }
+]
