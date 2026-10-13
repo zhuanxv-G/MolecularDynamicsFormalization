@@ -32,3 +32,7 @@
 | BATCH26 | MD-3.7.3-PairForceDecoupling, MD-3.7.3-DecoupledOrder, MD-3.7.3-ModifiedCollisionProjection | [BATCH26a](compact/BATCH26/a/PASTE.txt) (85366), [BATCH26b](compact/BATCH26/b/PASTE.txt) (94814), [BATCH26c](compact/BATCH26/c/PASTE.txt) (87349) |
 
 返回件原样放blueprint/ch03/mathcopilot_results/，按source_id整合，repair_log只追加；修订签名后重新审计。第1章冻结不受本生成器影响。
+
+## EAUDIT01：章首/§3.1修复
+
+[4份compact及实际输出文件要求](EAUDIT01/INDEX.md)。历史BATCH01/02字节保持，仅绑定原输入，不能表示新签名已网站PASS。

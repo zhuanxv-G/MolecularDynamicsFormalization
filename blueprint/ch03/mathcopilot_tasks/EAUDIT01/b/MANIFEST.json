@@ -1,0 +1,33 @@
+{
+  "eaudit": "EAUDIT01",
+  "source_id": "MD-3.1-EnergyFailure",
+  "input_sha256": {
+    "BATCH_EAUDIT01.md": "38081d0e96b320ba30efab2064a7d09661bcc41ee187da17c99a581b20c79848",
+    "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+    "blueprint/ch03/ch03_source.json": "1ba0463ea10b8998259b4af7f0df6a1a44ffbafd401fd2976f2b07a147bb4385",
+    "EAUDIT01b_materials": "6cb3ae05526505ac1fdb8a78d81ff68e8dd555783286d17cebd783a797f3d188",
+    "EAUDIT01b_PAGES.pdf": "db896b95dcbc31d331d1f8f57927b0f4f3314fe27a3b96d18bd7acc3a94b2154"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    120
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "ba08fd496594dbbf655372cb43928b1459afdb49e4028649d2548e92313a89da",
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "oscillatorAdjointEuler",
+      "file_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+      "excerpt_sha256": "0c1bb261811e2f1dde9f82a5327bfb54d18c34d773330c0b0c991d8e2e97d994"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "oscillatorEnergy",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "6a0eb2a8586ed214ee210ffa38535b56dd636aef3dca840118e9cab4fe8e4e10"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT01_review.json",
+  "total_task_bytes": 72703
+}

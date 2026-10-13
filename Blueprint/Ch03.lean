@@ -17,13 +17,11 @@ variable {R : Type*} [Ring R] [Algebra ℝ R]
 
 /-- source_id: MD-3-ModifiedConstruction · unnumbered_claim · §3 · 印刷p.97 / PDFp.119
 [EXTRA] 近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。
-[EXTRA] 按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。 -/
+[EXTRA] 按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。
+[EXTRA] EAUDIT01补原首句Hamiltonian流辛性为独立完整结论，与原近恒等辛映射修正Hamiltonian有限匹配合取；两个真实项目命题全部量词展开供审校，未把流辛性作构造前提。 -/
 theorem modifiedConstruction :
-  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
-    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
-    smoothSymplecticData H D B G Φ r →
-    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
-      ∀ k ≥ r, finiteMatching H Hj r k D B G := by
+  MolecularDynamics.Chapter02Review.hamiltonianSymplectic_statement ∧
+  MolecularDynamics.Chapter03Review.modifiedConstruction_statement := by
   sorry
 
 /-- source_id: MD-3.1-AdjointEulerOscillator · definition · §3.1 · 印刷p.98 / PDFp.120 -/
@@ -34,12 +32,39 @@ def oscillatorAdjointEuler (Ω h : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
 /-- source_id: MD-3.1-ShadowHamiltonian · (3.1) · §3.1 · 印刷p.98 / PDFp.120 -/
 def oscillatorShadow (Ω h : ℝ) (z : ℝ × ℝ) : ℝ := (z.2^2+h*Ω^2*z.2*z.1+Ω^2*z.1^2)/2
 
-/-- source_id: MD-3.1-EnergyFailure · unnumbered_claim · §3.1 · 印刷p.98 / PDFp.120 -/
-theorem oscillatorEnergyFailure :
-    ∃ Ω h : ℝ, 0 < Ω ∧ h ≠ 0 ∧ ∃ z : ℝ × ℝ,
-      oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z) ≠ oscillatorEnergy Ω z := by
-  refine ⟨1, 1, by norm_num, by norm_num, (1,0), ?_⟩
-  exact MolecularDynamics.Chapter03Review.oscillatorEnergyFailure_proved
+/-- source_id: MD-3.1-EnergyFailure · unnumbered_claim · §3.1 · 印刷p.98 / PDFp.120
+[EXTRA] EAUDIT01对每个Ω>0和h≠0保存完整ΔH恒等、能量不变的两条例外直线和一般不守恒见证；精确代数为原typical的形式化展开，不回填成教材原句。 -/
+theorem oscillatorEnergyFailure : ∀ Ω h : ℝ, 0 < Ω → h ≠ 0 →
+  (∀ z : ℝ × ℝ, oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z)-oscillatorEnergy Ω z =
+    (h^2*Ω^2/2)*(Ω^2*(z.1+h*z.2)^2-z.2^2)) ∧
+  (∀ z : ℝ × ℝ, oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z)=oscillatorEnergy Ω z ↔
+    Ω*(z.1+h*z.2)=z.2 ∨ Ω*(z.1+h*z.2)=-z.2) ∧
+  (∃ z : ℝ × ℝ, oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z) ≠ oscillatorEnergy Ω z) := by
+  intro Ω h hΩ hh
+  have hh2 : 0 < h^2 := sq_pos_of_ne_zero hh
+  have hΩ2 : 0 < Ω^2 := sq_pos_of_ne_zero hΩ.ne'
+  have hc : h^2*Ω^2/2 ≠ 0 := (div_pos (mul_pos hh2 hΩ2) (by norm_num : (0 : ℝ)<2)).ne'
+  have hdelta : ∀ z : ℝ × ℝ,
+      oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z)-oscillatorEnergy Ω z =
+        (h^2*Ω^2/2)*(Ω^2*(z.1+h*z.2)^2-z.2^2) := by
+    intro z
+    simp only [oscillatorEnergy,oscillatorAdjointEuler]
+    ring
+  refine ⟨hdelta,?_,?_⟩
+  · intro z
+    rw [← sub_eq_zero,hdelta z,mul_eq_zero]
+    simp only [hc,false_or]
+    have he : Ω^2*(z.1+h*z.2)^2=(Ω*(z.1+h*z.2))^2 := by ring
+    rw [he,sub_eq_zero]
+    exact sq_eq_sq_iff_eq_or_eq_neg
+  · refine ⟨(1,0),?_⟩
+    intro heq
+    have hd := hdelta (1,0)
+    rw [heq,sub_self] at hd
+    norm_num at hd
+    rcases hd with hzero | hzero
+    · exact hh hzero
+    · exact hΩ.ne' hzero
 
 /-- source_id: MD-3.1-ShadowInvariant · unnumbered_claim · §3.1 · 印刷p.99 / PDFp.121 -/
 theorem oscillatorShadowInvariant :
@@ -88,15 +113,19 @@ theorem eulerOscillatorGrowth :
   simpa only [hiter] using
     (tendsto_pow_atTop_atTop_of_one_lt hfactor).atTop_mul_const hz
 
-/-- source_id: MD-3.1-FormalHamiltonian · definition · §3.1 · 印刷p.100 / PDFp.122 -/
+/-- source_id: MD-3.1-FormalHamiltonian · definition · §3.1 · 印刷p.100 / PDFp.122
+[EXTRA] EAUDIT01显式1≤r，排除r=0遗漏Hr0的错义；仍是真实逐系数形式级数，不声称无限收敛或实际流嵌入。 -/
 def formalHamiltonian {n : ℕ} (H : SymplecticCoordinates n → ℝ)
-    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r : ℕ) (z : SymplecticCoordinates n) : PowerSeries ℝ :=
+    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r : ℕ) (_hr : 1 ≤ r)
+    (z : SymplecticCoordinates n) : PowerSeries ℝ :=
   PowerSeries.mk (fun j => if j=0 then H z else if r ≤ j then Hj j z else 0)
 
-/-- source_id: MD-3.1-FormalHamiltonianField · definition · §3.1 · 印刷p.100 / PDFp.122 -/
+/-- source_id: MD-3.1-FormalHamiltonianField · definition · §3.1 · 印刷p.100 / PDFp.122
+[EXTRA] EAUDIT01显式1≤r及H和全部Hj全域C∞，保证真实Fréchet梯度；原平滑逐阶形式展开资格，不预置匹配结论。 -/
 def formalHamiltonianField {n : ℕ} (H : SymplecticCoordinates n → ℝ)
-    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r : ℕ) (z : SymplecticCoordinates n)
-    (i : Fin n ⊕ Fin n) : PowerSeries ℝ :=
+    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r : ℕ) (_hr : 1 ≤ r)
+    (_hH : ContDiff ℝ ∞ H) (_hHj : ∀ j, ContDiff ℝ ∞ (Hj j))
+    (z : SymplecticCoordinates n) (i : Fin n ⊕ Fin n) : PowerSeries ℝ :=
   PowerSeries.mk (fun j => if j=0 then textbookHamiltonianVectorField H z i else
     if r ≤ j then textbookHamiltonianVectorField (Hj j) z i else 0)
 

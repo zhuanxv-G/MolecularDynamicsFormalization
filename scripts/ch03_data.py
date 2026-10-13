@@ -125,3 +125,14 @@ import ch03_section36d
 import ch03_section37
 import ch03_section37b
 import ch03_section37c
+
+# EAUDIT website signature overrides: preserve the current audited objects on regeneration.
+import json as _website_json
+_website_overrides=BASE/'website_signature_overrides.json'
+if _website_overrides.exists():
+    for _sid,_values in _website_json.loads(_website_overrides.read_text(encoding='utf-8')).items():
+        _record=next(r for r in RECORDS if r['source_id']==_sid)
+        _record.update(_values)
+        _record['priors']=_values['reusable_proofs']
+        if _sid=='MD-3.1-EnergyFailure':
+            _record['local_explanation']='每个正Ω/非零步长的完整能量差、两条例外直线及一般不守恒见证；原单一参数见证不再冒充完整原断言。'

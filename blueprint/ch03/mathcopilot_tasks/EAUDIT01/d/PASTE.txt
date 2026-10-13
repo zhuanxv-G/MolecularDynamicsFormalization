@@ -1,0 +1,93 @@
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.1-FormalHamiltonianField；原PDF页映射=[122]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT01_review.json，对象含batch=EAUDIT01、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。最后仅报告实际文件路径。
+input_sha256：
+{
+  "BATCH_EAUDIT01.md": "38081d0e96b320ba30efab2064a7d09661bcc41ee187da17c99a581b20c79848",
+  "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+  "blueprint/ch03/ch03_source.json": "1ba0463ea10b8998259b4af7f0df6a1a44ffbafd401fd2976f2b07a147bb4385",
+  "EAUDIT01d_materials": "89326c2be9c39e6a14317c4fd3e78625d995ccfc352d8a9c1ed9ef94b12b0d34",
+  "EAUDIT01d_PAGES.pdf": "be68e544a452ef316b6805021500ec0de917a22f13d2dbf7d50634579bfd7b06"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.1-FormalHamiltonianField",
+  "kind": "definition",
+  "label": null,
+  "section": "3.1",
+  "printed_page": "100",
+  "pdf_page": "122",
+  "statement_latex": "To determine the terms $H^{(r)},H^{(r+1)},\\ldots$, we write the differential equations on $\\widetilde H_h$:\n\\[\\dot{\\boldsymbol z}=J\\nabla H+h^rJ\\nabla H^{(r)}+h^{r+1}J\\nabla H^{(r+1)}+\\cdots\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": "The solution of this system can be expanded in powers of $h$ and equated term-by-term with the expansion of $\\mathcal G_h$ in powers of $h$. In this way, successive terms may be computed. Although mechanical, this procedure is tedious.",
+  "context_notation": [
+    "$r\\ge1$；形式Hamiltonian见同页上段；每个系数取真实$J\\nabla H^{(j)}$，不把无穷级数当收敛ODE。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.formalHamiltonianField",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] EAUDIT01显式1≤r及H和全部Hj全域C∞，保证真实Fréchet梯度；原平滑逐阶形式展开资格，不预置匹配结论。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT01_LOCAL_PAGE_RECHECK",
+      "timestamp": "2026-10-13T20:57:11.855696",
+      "before_sha256": "499fdc69f73f2adcbb1551a9b6790607f6bc23e0023102940c11e0dc45a5693e",
+      "after_sha256": "11c21a46ebecac5db66cef3ba4755b7cce8daf2c183dcd6a627542af0a315c0b",
+      "changed_fields": [
+        "statement_latex",
+        "proof_discussion_latex"
+      ],
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH02_result.json",
+      "raw_sha256": "fa7d079b49802d64f1efbc27c6b0a90cbbf1090b9fc48cc0576829b45ebf4aa1",
+      "reason": "原页119/120/122视觉核对后合并A的标点/记号修订；按绑定FAIL补齐四条全部结论/阶数/真实导数资格，不采用未批准数学勘误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean
+```lean
+def formalHamiltonianField {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r : ℕ) (_hr : 1 ≤ r)
+    (_hH : ContDiff ℝ ∞ H) (_hHj : ∀ j, ContDiff ℝ ∞ (Hj j))
+    (z : SymplecticCoordinates n) (i : Fin n ⊕ Fin n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun j => if j=0 then textbookHamiltonianVectorField H z i else
+    if r ≤ j then textbookHamiltonianVectorField (Hj j) z i else 0)
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MD.Ch03.formalHamiltonianField
+```lean
+def formalHamiltonianField {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r : ℕ) (_hr : 1 ≤ r)
+    (_hH : ContDiff ℝ ∞ H) (_hHj : ∀ j, ContDiff ℝ ∞ (Hj j))
+    (z : SymplecticCoordinates n) (i : Fin n ⊕ Fin n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun j => if j=0 then textbookHamiltonianVectorField H z i else
+    if r ≤ j then textbookHamiltonianVectorField (Hj j) z i else 0)
+```
+### 实际依赖 MolecularDynamics.textbookHamiltonianVectorField
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+### 实际依赖 MolecularDynamics.textbookJ
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```

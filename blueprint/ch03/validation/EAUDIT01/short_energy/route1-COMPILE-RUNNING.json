@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint\\ch03\\validation\\EAUDIT01\\short_energy\\route1.lean"
+  ],
+  "input_sha256": "f15dbc586330e1e082c47000712b337a2db0d9bdfc19240c71d67f80c74ac150",
+  "parent_pid": 18528,
+  "parent_create_time": 1791896649.6912155,
+  "compiler_pid": 19876,
+  "compiler_create_time": 1791896650.515216,
+  "started_at": "2026-10-13T21:04:10.521941",
+  "status": "completed",
+  "exit_code": 1,
+  "completed_at": "2026-10-13T21:04:49.579830"
+}

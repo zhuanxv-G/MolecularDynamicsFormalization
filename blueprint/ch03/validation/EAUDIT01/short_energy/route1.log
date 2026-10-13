@@ -1,0 +1,17 @@
+blueprint\ch03\validation\EAUDIT01\short_energy\route1.lean:35:4: error: linarith failed to find a contradiction
+case refine_2
+Ω h : ℝ
+hΩ : 0 < Ω
+hh : h ≠ 0
+hh2 : 0 < h ^ 2
+hΩ2 : 0 < Ω ^ 2
+hc : h ^ 2 * Ω ^ 2 / 2 ≠ 0
+hdelta :
+  ∀ (z : ℝ × ℝ),
+    oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z) - oscillatorEnergy Ω z =
+      h ^ 2 * Ω ^ 2 / 2 * (Ω ^ 2 * (z.1 + h * z.2) ^ 2 - z.2 ^ 2)
+heq : oscillatorEnergy Ω (oscillatorAdjointEuler Ω h (1, 0)) = oscillatorEnergy Ω (1, 0)
+hd : h = 0 ∨ Ω = 0
+hp : 0 < h ^ 2 * Ω ^ 2 / 2 * Ω ^ 2
+⊢ False
+failed

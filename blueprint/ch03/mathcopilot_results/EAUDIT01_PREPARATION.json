@@ -1,0 +1,29 @@
+{
+  "source_ids": [
+    "MD-3-ModifiedConstruction",
+    "MD-3.1-EnergyFailure",
+    "MD-3.1-FormalHamiltonian",
+    "MD-3.1-FormalHamiltonianField"
+  ],
+  "old_signature_sha256": {
+    "MD-3-ModifiedConstruction": "26d8194741dfb244f0cc42e7f7fd0239a7edce61b68aacca039f8fc252aad899",
+    "MD-3.1-EnergyFailure": "c3931e29537f656ca3f1c15cf891c755cde21369f6e51af8cd95436b752f6b8c",
+    "MD-3.1-FormalHamiltonian": "c7308ae7abc466efbd717aa8231d7529856efd97bd2a7311606add213a96d61c",
+    "MD-3.1-FormalHamiltonianField": "586d130fe17d7289bbc60ed3aca1a5727c9861b434b69cac9051b12b96bb0ce4"
+  },
+  "lean_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+  "source_sha256": "1ba0463ea10b8998259b4af7f0df6a1a44ffbafd401fd2976f2b07a147bb4385",
+  "raw_returns": {
+    "blueprint/ch03/mathcopilot_results/BATCH01_result.json": "120deaa07feab89b86e0bb7ae296ba4fadc1614604f7bb1e18866e1acb26bb97",
+    "blueprint/ch03/mathcopilot_results/BATCH02_result.json": "fa7d079b49802d64f1efbc27c6b0a90cbbf1090b9fc48cc0576829b45ebf4aa1"
+  },
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT01/INDEX.md",
+  "compact_bytes": [
+    83122,
+    72703,
+    108111,
+    110131
+  ],
+  "website_reaudit": "not submitted",
+  "energy_proof_receipt": "blueprint/ch03/validation/EAUDIT01/short_energy/ROUTES.json"
+}

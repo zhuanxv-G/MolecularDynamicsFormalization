@@ -1,0 +1,71 @@
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.1-FormalHamiltonian；原PDF页映射=[122]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT01_review.json，对象含batch=EAUDIT01、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。最后仅报告实际文件路径。
+input_sha256：
+{
+  "BATCH_EAUDIT01.md": "38081d0e96b320ba30efab2064a7d09661bcc41ee187da17c99a581b20c79848",
+  "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+  "blueprint/ch03/ch03_source.json": "1ba0463ea10b8998259b4af7f0df6a1a44ffbafd401fd2976f2b07a147bb4385",
+  "EAUDIT01c_materials": "63ffdc96f3debe4c7e7a94b65f4c5d7ce88a994291f921f7dda957ae21315fcc",
+  "EAUDIT01c_PAGES.pdf": "be68e544a452ef316b6805021500ec0de917a22f13d2dbf7d50634579bfd7b06"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.1-FormalHamiltonian",
+  "kind": "definition",
+  "label": null,
+  "section": "3.1",
+  "printed_page": "100",
+  "pdf_page": "122",
+  "statement_latex": "Now consider the more general Hamiltonian setting. Let $\\mathcal G_h$ be a $r$th order symplectic integrator, $r\\ge1$. Suppose that it is the flow map of a certain Hamiltonian system, with Hamiltonian $\\widetilde H_h$. If the method order is $r$, we may expect this Hamiltonian to be a $\\mathcal O(h^r)$ approximation of $H$, thus we posit an expansion of the form\n\\[\\widetilde H_h=H+h^rH^{(r)}+h^{r+1}H^{(r+1)}+\\cdots\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$r\\ge1$；$H^{(j)}$为待确定光滑系数函数；h为形式变量而不是级数收敛参数。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.formalHamiltonian",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] EAUDIT01显式1≤r，排除r=0遗漏Hr0的错义；仍是真实逐系数形式级数，不声称无限收敛或实际流嵌入。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT01_LOCAL_PAGE_RECHECK",
+      "timestamp": "2026-10-13T20:57:11.855696",
+      "before_sha256": "ca771d4563a622a4c41f1add5b9cc9d9029446d7e8bec19a53618f87e570a69b",
+      "after_sha256": "64e44a52a3f4c2dadfda13578b39209fb04146a64084673d21e2ad6c1ea470d0",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH02_result.json",
+      "raw_sha256": "fa7d079b49802d64f1efbc27c6b0a90cbbf1090b9fc48cc0576829b45ebf4aa1",
+      "reason": "原页119/120/122视觉核对后合并A的标点/记号修订；按绑定FAIL补齐四条全部结论/阶数/真实导数资格，不采用未批准数学勘误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean
+```lean
+def formalHamiltonian {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r : ℕ) (_hr : 1 ≤ r)
+    (z : SymplecticCoordinates n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun j => if j=0 then H z else if r ≤ j then Hj j z else 0)
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MD.Ch03.formalHamiltonian
+```lean
+def formalHamiltonian {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r : ℕ) (_hr : 1 ≤ r)
+    (z : SymplecticCoordinates n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun j => if j=0 then H z else if r ≤ j then Hj j z else 0)
+```

@@ -1,0 +1,55 @@
+[
+  {
+    "eaudit": "EAUDIT01",
+    "section": "3–3.1",
+    "source_ids": [
+      "MD-3-ModifiedConstruction",
+      "MD-3.1-EnergyFailure",
+      "MD-3.1-FormalHamiltonian",
+      "MD-3.1-FormalHamiltonianField"
+    ],
+    "signature_changes": [
+      {
+        "source_id": "MD-3-ModifiedConstruction",
+        "old_signature_sha256": "26d8194741dfb244f0cc42e7f7fd0239a7edce61b68aacca039f8fc252aad899",
+        "new_signature_sha256": "df62a7db88f7a5df306012818c0bb3d62fee3e91a80cef2f15e4c748907e8474"
+      },
+      {
+        "source_id": "MD-3.1-EnergyFailure",
+        "old_signature_sha256": "c3931e29537f656ca3f1c15cf891c755cde21369f6e51af8cd95436b752f6b8c",
+        "new_signature_sha256": "86eeaee58e3ddefbb53e32b3017c5394835df3cb0a95095921ee889a8fdb5954"
+      },
+      {
+        "source_id": "MD-3.1-FormalHamiltonian",
+        "old_signature_sha256": "c7308ae7abc466efbd717aa8231d7529856efd97bd2a7311606add213a96d61c",
+        "new_signature_sha256": "968ef43849d596e70b5a3ba0cc8293716d4f8e9bd7b4aef18bf9d2244ab64ab1"
+      },
+      {
+        "source_id": "MD-3.1-FormalHamiltonianField",
+        "old_signature_sha256": "586d130fe17d7289bbc60ed3aca1a5727c9861b434b69cac9051b12b96bb0ce4",
+        "new_signature_sha256": "a9a01854d07687eb6b32450d52ff370c71b3d4c6e4fe29632ca8323adbe56323"
+      }
+    ],
+    "lean_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+    "source_sha256": "1ba0463ea10b8998259b4af7f0df6a1a44ffbafd401fd2976f2b07a147bb4385",
+    "full_check_sha256": "77478ece12dd30d9622b88990394212f4bf3ecf738f35939f474961f2c27b5da",
+    "local_check_sha256": "60a01d92825fbaff03929633c923ae6a240bd958dfa4ae5bed3d705219e4bb36",
+    "axiom_count": 149,
+    "source_pages_verified": [
+      119,
+      120,
+      122
+    ],
+    "compact_bytes": [
+      83122,
+      72703,
+      108111,
+      110131
+    ],
+    "energy_proof": "complete new general algebra proof; route2 PASS",
+    "modified_construction": "incomplete; full two-part statement retained",
+    "website_reaudit": "pending",
+    "historical_batch_files": "unchanged",
+    "formal_library": "unchanged"
+  }
+]

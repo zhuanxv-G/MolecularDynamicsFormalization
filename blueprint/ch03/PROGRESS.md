@@ -4,18 +4,18 @@
 第3章本地部分完成；第3章等待用户提交MathCopilot批次；继续下一章本地流程。网站不可用，未冻结。
 当前149条；旧清单映射143/143；本地PASS 117；网站返回0。
 
-网站整合汇总：网站PASS 91 / 修复中 53 / 待导师 5 / 待复审 0。
+网站整合汇总：网站PASS 91 / 修复中 49 / 待导师 5 / 待复审 4。
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
-| MD-3-ModifiedConstruction | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺形式jet的Hamiltonian构造、逐阶匹配及实际截断ODE的统一余项；属于大型向后误差分析理论，保留sorry。 |
+| MD-3-ModifiedConstruction | DRAFT/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | placeholder / incomplete |
 | MD-3.1-AdjointEulerOscillator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.1-ShadowHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.1-EnergyFailure | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.1-EnergyFailure | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | local_proof / self-contained |
 | MD-3.1-ShadowInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.1-ShadowEllipses | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | placeholder / incomplete；需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。 |
 | MD-3.1-EulerGrowth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
-| MD-3.1-FormalHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.1-FormalHamiltonianField | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.1-FormalHamiltonian | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
+| MD-3.1-FormalHamiltonianField | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
 | MD-3.2-LieDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.2-ObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.2-ObservableSecondDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
@@ -377,3 +377,7 @@
 - p.127–132/PDF149–154：设计原则选择、维数泛型、文献及KAM类比为定性评述；原文共轭effective-order附加数学断言已单列疑点，不排除。
 - p.133/PDF155：这是事件驱动精确计算的算法可用性说明；没有给计算模型、同时碰撞裁决或任意初始条件资格。保留原句供网站审校，不将算法可用性伪装成已证明的全局流存在唯一定理；实际自由Hamiltonian、事件复合和轨道规则在JSON/Blueprint保留。
 - p.132–136/PDF154–158：检测/求根/并行成本、长期数值观察及统计性能、文献推荐为定性或实现背景；正文数学定义、误差与接触疑点均保留；p136的Exercises起及后页习题全部排除。
+
+## 2026-10-13 EAUDIT01检查点
+
+四条FAIL完整签名修复；能量一般结论已证，构造大定理仍incomplete；原页119/120/122、单文件、完整check/149条公理及4份compact通过；网站复审未提交。旧DELIVERY_VALIDATION只对应原433a13ca版本，新修复验收见本次ACCEPTANCE.json。

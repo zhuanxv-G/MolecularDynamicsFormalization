@@ -1,0 +1,40 @@
+{
+  "MD-3-ModifiedConstruction": {
+    "code": "theorem modifiedConstruction :\n  MolecularDynamics.Chapter02Review.hamiltonianSymplectic_statement ∧\n  MolecularDynamics.Chapter03Review.modifiedConstruction_statement := by\n  sorry",
+    "extra_assumptions": [
+      "近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。",
+      "按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。",
+      "[EXTRA] EAUDIT01补原首句Hamiltonian流辛性为独立完整结论，与原近恒等辛映射修正Hamiltonian有限匹配合取；两个真实项目命题全部量词展开供审校，未把流辛性作构造前提。"
+    ],
+    "statement_latex": "We can express the fundamental consequence as follows: not only are Hamiltonian flow maps symplectic, but also near-identity symplectic maps are (in an approximate sense) Hamiltonian flow maps [31]. The fact leads to the existence of a modified (perturbed) Hamiltonian from which the discrete trajectory may be derived (as snapshots of continuous trajectories). In some cases we may derive this perturbed Hamiltonian as an expansion in powers of the stepsize.",
+    "proof_discussion_latex": null,
+    "reusable_proofs": []
+  },
+  "MD-3.1-EnergyFailure": {
+    "code": "theorem oscillatorEnergyFailure : ∀ Ω h : ℝ, 0 < Ω → h ≠ 0 →\n  (∀ z : ℝ × ℝ, oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z)-oscillatorEnergy Ω z =\n    (h^2*Ω^2/2)*(Ω^2*(z.1+h*z.2)^2-z.2^2)) ∧\n  (∀ z : ℝ × ℝ, oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z)=oscillatorEnergy Ω z ↔\n    Ω*(z.1+h*z.2)=z.2 ∨ Ω*(z.1+h*z.2)=-z.2) ∧\n  (∃ z : ℝ × ℝ, oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z) ≠ oscillatorEnergy Ω z) := by\n  intro Ω h hΩ hh\n  have hh2 : 0 < h^2 := sq_pos_of_ne_zero hh\n  have hΩ2 : 0 < Ω^2 := sq_pos_of_ne_zero hΩ.ne'\n  have hc : h^2*Ω^2/2 ≠ 0 := (div_pos (mul_pos hh2 hΩ2) (by norm_num : (0 : ℝ)<2)).ne'\n  have hdelta : ∀ z : ℝ × ℝ,\n      oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z)-oscillatorEnergy Ω z =\n        (h^2*Ω^2/2)*(Ω^2*(z.1+h*z.2)^2-z.2^2) := by\n    intro z\n    simp only [oscillatorEnergy,oscillatorAdjointEuler]\n    ring\n  refine ⟨hdelta,?_,?_⟩\n  · intro z\n    rw [← sub_eq_zero,hdelta z,mul_eq_zero]\n    simp only [hc,false_or]\n    have he : Ω^2*(z.1+h*z.2)^2=(Ω*(z.1+h*z.2))^2 := by ring\n    rw [he,sub_eq_zero]\n    exact sq_eq_sq_iff_eq_or_eq_neg\n  · refine ⟨(1,0),?_⟩\n    intro heq\n    have hd := hdelta (1,0)\n    rw [heq,sub_self] at hd\n    norm_num at hd\n    rcases hd with hzero | hzero\n    · exact hh hzero\n    · exact hΩ.ne' hzero",
+    "extra_assumptions": [
+      "[EXTRA] EAUDIT01对每个Ω>0和h≠0保存完整ΔH恒等、能量不变的两条例外直线和一般不守恒见证；精确代数为原typical的形式化展开，不回填成教材原句。"
+    ],
+    "statement_latex": "If $H(q,p)=E$ then, for typical steps, we cannot expect $H(Q,P)=E$. (Just insert the formulas for $Q$ and $P$ into the Hamiltonian and check that the value is not the same as $H(q,p)$.)",
+    "proof_discussion_latex": null,
+    "reusable_proofs": []
+  },
+  "MD-3.1-FormalHamiltonian": {
+    "code": "def formalHamiltonian {n : ℕ} (H : SymplecticCoordinates n → ℝ)\n    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r : ℕ) (_hr : 1 ≤ r)\n    (z : SymplecticCoordinates n) : PowerSeries ℝ :=\n  PowerSeries.mk (fun j => if j=0 then H z else if r ≤ j then Hj j z else 0)",
+    "extra_assumptions": [
+      "[EXTRA] EAUDIT01显式1≤r，排除r=0遗漏Hr0的错义；仍是真实逐系数形式级数，不声称无限收敛或实际流嵌入。"
+    ],
+    "statement_latex": "Now consider the more general Hamiltonian setting. Let $\\mathcal G_h$ be a $r$th order symplectic integrator, $r\\ge1$. Suppose that it is the flow map of a certain Hamiltonian system, with Hamiltonian $\\widetilde H_h$. If the method order is $r$, we may expect this Hamiltonian to be a $\\mathcal O(h^r)$ approximation of $H$, thus we posit an expansion of the form\n\\[\\widetilde H_h=H+h^rH^{(r)}+h^{r+1}H^{(r+1)}+\\cdots\\]",
+    "proof_discussion_latex": null,
+    "reusable_proofs": []
+  },
+  "MD-3.1-FormalHamiltonianField": {
+    "code": "def formalHamiltonianField {n : ℕ} (H : SymplecticCoordinates n → ℝ)\n    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r : ℕ) (_hr : 1 ≤ r)\n    (_hH : ContDiff ℝ ∞ H) (_hHj : ∀ j, ContDiff ℝ ∞ (Hj j))\n    (z : SymplecticCoordinates n) (i : Fin n ⊕ Fin n) : PowerSeries ℝ :=\n  PowerSeries.mk (fun j => if j=0 then textbookHamiltonianVectorField H z i else\n    if r ≤ j then textbookHamiltonianVectorField (Hj j) z i else 0)",
+    "extra_assumptions": [
+      "[EXTRA] EAUDIT01显式1≤r及H和全部Hj全域C∞，保证真实Fréchet梯度；原平滑逐阶形式展开资格，不预置匹配结论。"
+    ],
+    "statement_latex": "To determine the terms $H^{(r)},H^{(r+1)},\\ldots$, we write the differential equations on $\\widetilde H_h$:\n\\[\\dot{\\boldsymbol z}=J\\nabla H+h^rJ\\nabla H^{(r)}+h^{r+1}J\\nabla H^{(r+1)}+\\cdots\\]",
+    "proof_discussion_latex": "The solution of this system can be expanded in powers of $h$ and equated term-by-term with the expansion of $\\mathcal G_h$ in powers of $h$. In this way, successive terms may be computed. Although mechanical, this procedure is tedious.",
+    "reusable_proofs": []
+  }
+}

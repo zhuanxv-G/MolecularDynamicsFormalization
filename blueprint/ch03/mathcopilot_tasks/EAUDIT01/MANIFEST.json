@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT01",
+  "input_sha256": {
+    "BATCH_EAUDIT01.md": "38081d0e96b320ba30efab2064a7d09661bcc41ee187da17c99a581b20c79848",
+    "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+    "blueprint/ch03/ch03_source.json": "1ba0463ea10b8998259b4af7f0df6a1a44ffbafd401fd2976f2b07a147bb4385"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT01a",
+      "source_id": "MD-3-ModifiedConstruction",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT01/a",
+      "total_bytes": 83122,
+      "manifest_sha256": "cd674aae27d741ffdb2961cb7f0139972c1ac93bfe1a1e61a2db1273e96657ed"
+    },
+    {
+      "subtask": "EAUDIT01b",
+      "source_id": "MD-3.1-EnergyFailure",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT01/b",
+      "total_bytes": 72703,
+      "manifest_sha256": "d3a936110f7be011bd6863182a3f9da156e3b3c9666216dc87f3744167905eae"
+    },
+    {
+      "subtask": "EAUDIT01c",
+      "source_id": "MD-3.1-FormalHamiltonian",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT01/c",
+      "total_bytes": 108111,
+      "manifest_sha256": "a370fd8c401db6684265644c0b0aeb1292ba20db8605dd9d2a2951d662ff7f7e"
+    },
+    {
+      "subtask": "EAUDIT01d",
+      "source_id": "MD-3.1-FormalHamiltonianField",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT01/d",
+      "total_bytes": 110131,
+      "manifest_sha256": "259e113da786684369a17a80d682c173de0ea1c39083d547e156ec641e9a1c88"
+    }
+  ]
+}
