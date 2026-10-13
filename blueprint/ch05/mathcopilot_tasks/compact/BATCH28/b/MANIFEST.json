@@ -1,0 +1,139 @@
+{
+  "batch": "BATCH28",
+  "subtask": "BATCH28b",
+  "source_ids": [
+    "MD-5.6-SymplecticWeakStationary"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 228,
+      "printed_page": 207
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "630dc4a39591620ff94069ede7c76f5983629b20b7afc471c74361b6e7ed0dd3",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "densityMeasure",
+      "code_sha256": "0c1862948c96055705abf13fab30d11ff0404c481476b29077db20458fa6cb70"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "flow",
+      "code_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "lie",
+      "code_sha256": "6535744b913bb6f850c290344fb7d4a36f3647f43500d689c3a8228a92a2f8a8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "probabilityDensity",
+      "code_sha256": "ec7111064a60d4e0ffb4738f7e5dfc539785ac2942850786ec72672a204a5e2f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "shadowOscillator",
+      "code_sha256": "06c44db9aad589053b4cac21a3d3b781f2f4058357a4705d3baae85edeb0d79d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "testSpace",
+      "code_sha256": "5ff1bf70f32fea902738b142df9b2bbe57648e8f1bf4f68411d99a435c8211b7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "density",
+      "code_sha256": "cb24f1ce958a8a1e95b72fdcf4783440869a7e892f6e1482e9123c8154016f86"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "densityMeasure",
+      "code_sha256": "0c1862948c96055705abf13fab30d11ff0404c481476b29077db20458fa6cb70"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "flow",
+      "code_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "lie",
+      "code_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "probabilityDensity",
+      "code_sha256": "ec7111064a60d4e0ffb4738f7e5dfc539785ac2942850786ec72672a204a5e2f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "shadowOscillator",
+      "code_sha256": "06c44db9aad589053b4cac21a3d3b781f2f4058357a4705d3baae85edeb0d79d"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "testSpace",
+      "code_sha256": "d18b0e81156df07d12955bf5ee7295546fc07bc65a193169967124397be23ee9"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "weakAttractor",
+      "code_sha256": "040ea486b068cfae0a47aa94bad3a7d54312d34bd0dfa380ef1f599a5dde608c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "weakStationary",
+      "code_sha256": "81d72805d2fbcb104fb42285a8fb9fd6a37fb877364fa7030a1ed62314a9e2a1"
+    }
+  ],
+  "paste_plus_pdf_bytes": 93704,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8757,
+      "sha256": "40be5409fd4bd56713d25d38f4bc82d5b42b8efac733b1f86a2617d5e96ea2bc"
+    },
+    "BATCH28b_PAGES.pdf": {
+      "bytes": 84947,
+      "sha256": "33cbffbd41a0efb5a67a0bf8e7bc8174c57a3a8c04407f4d7bcbb03a2ca5c4b4"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 98983
+}

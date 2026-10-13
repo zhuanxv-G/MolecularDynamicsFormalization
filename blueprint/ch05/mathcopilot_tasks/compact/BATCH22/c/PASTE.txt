@@ -143,13 +143,13 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
 ```
 
-### MD.Ch05.correlation (Blueprint/Ch05.lean:1242)
+### MD.Ch05.correlation (Blueprint/Ch05.lean:1243)
 ```lean
 def correlation {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
     (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (k t : ℝ) := k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)
 ```
 
-### MD.Ch05.energySurface (Blueprint/Ch05.lean:743)
+### MD.Ch05.energySurface (Blueprint/Ch05.lean:744)
 ```lean
 def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
 ```
@@ -169,7 +169,7 @@ def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradie
 def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
 ```
 
-### MD.Ch05.hasTimeAverage (Blueprint/Ch05.lean:945)
+### MD.Ch05.hasTimeAverage (Blueprint/Ch05.lean:946)
 ```lean
 def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
   Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 a)
@@ -182,31 +182,31 @@ def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
     Measure.hausdorffMeasure (d : ℝ)
 ```
 
-### MD.Ch05.microAverage (Blueprint/Ch05.lean:933)
+### MD.Ch05.microAverage (Blueprint/Ch05.lean:934)
 ```lean
 def microAverage {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) := MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.microMeasure H c) g
 ```
 
-### MD.Ch05.microErgodic (Blueprint/Ch05.lean:1056)
+### MD.Ch05.microErgodic (Blueprint/Ch05.lean:1057)
 ```lean
 def microErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
   ∀ g : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
     ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)
 ```
 
-### MD.Ch05.microMeasure (Blueprint/Ch05.lean:890)
+### MD.Ch05.microMeasure (Blueprint/Ch05.lean:891)
 ```lean
 def microMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   ((MolecularDynamics.Chapter05Review.microRaw H c) univ)⁻¹ • MolecularDynamics.Chapter05Review.microRaw H c
 ```
 
-### MD.Ch05.microRaw (Blueprint/Ch05.lean:751)
+### MD.Ch05.microRaw (Blueprint/Ch05.lean:752)
 ```lean
 def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
 ```
 
-### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:747)
+### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:748)
 ```lean
 def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)
@@ -219,7 +219,7 @@ noncomputable def textbookConstraintGradient {Nc : ℕ}
   fun i => (fderiv ℝ γ q) (Pi.single i 1)
 ```
 
-### MD.Ch05.timeAverage (Blueprint/Ch05.lean:942)
+### MD.Ch05.timeAverage (Blueprint/Ch05.lean:943)
 ```lean
 def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
 ```

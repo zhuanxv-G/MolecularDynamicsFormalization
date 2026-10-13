@@ -53,7 +53,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.energySurface (Blueprint/Ch05.lean:743)
+### MD.Ch05.energySurface (Blueprint/Ch05.lean:744)
 ```lean
 def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
 ```

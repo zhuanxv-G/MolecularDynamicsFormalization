@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.lean",
+    "log": "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.log",
+    "source_sha256": "dd97a8969eb39a5a8ed3a247c332bcc2028a9f2437c69084e4cdbabaec937f6c",
+    "log_sha256": "4494a1aaab56effa4da63e92160b7b17e87c53e35e08ead5a538c8209199511a"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro h hh\n  have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]\n  have hc : Continuous (MolecularDynamics.Chapter05Review.backwardEuler h) := by\n    unfold MolecularDynamics.Chapter05Review.backwardEuler\n    fun_prop\n  have hz (z : MolecularDynamics.Chapter05Review.E 2) :\n      Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0) := by\n    apply tendsto_zero_iff_norm_tendsto_zero.mpr\n    have he (k : ℕ) : ‖(MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z‖^2=\n        (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2) := by\n      rw [EuclideanSpace.norm_sq_eq]\n      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using backwardEnergyDecay h z k\n    have hs : Tendsto (fun k : ℕ => (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2)) atTop (𝓝 0) := by\n      simpa only [zero_mul] using (tendsto_pow_atTop_nhds_zero_of_lt_one\n        (inv_nonneg.mpr (by positivity : 0 ≤ 1+h^2)) ((inv_lt_one₀ (by positivity)).mpr hp)).mul_const ((z 0)^2+(z 1)^2)\n    convert (Real.continuous_sqrt.tendsto 0).comp hs using 1\n    · funext k\n      simp only [Function.comp_apply]\n      rw [←he,Real.sqrt_sq (norm_nonneg _)]\n    · simp\n  refine ⟨hz,?_⟩\n  intro μ hμ φ hφ hb\n  letI := hμ\n  obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le\n  have hd := tendsto_integral_filter_of_dominated_convergence\n    (μ:=μ) (fun _ : MolecularDynamics.Chapter05Review.E 2 => C)\n    (F:=fun k z => φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z))\n    (f:=fun _ => φ 0)\n    (Eventually.of_forall (fun k => (hφ.comp (hc.iterate k)).measurable.aestronglyMeasurable))\n    (Eventually.of_forall (fun k => ae_of_all μ (fun z => hB (φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z)) (mem_range_self _))))\n    (integrable_const C) (ae_of_all μ (fun z => (hφ.tendsto 0).comp (hz z)))\n  simpa using hd",
+    "source": "blueprint/ch05/validation/short_search/route-f38e99753e68db768821-BackwardEulerLimit.lean",
+    "log": "blueprint/ch05/validation/short_search/route-f38e99753e68db768821-BackwardEulerLimit.log",
+    "source_sha256": "f8ebd85347955cfcddc3fc98e37b4b6b1a618707039c551147b5d9e951a2d930",
+    "log_sha256": "317d899c407b5651f7589255ea3a65e4e6c72a3d6eb2d3cfd97fce8bee085346"
+  }
+]

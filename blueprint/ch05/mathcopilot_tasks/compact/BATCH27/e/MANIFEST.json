@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH27",
+  "subtask": "BATCH27e",
+  "source_ids": [
+    "MD-5.6-EulerLogField"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 228,
+      "printed_page": 207
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "7e4ae379eb96a77abaa7fd3418edf4fbbed45e80339fc8ebbe3971b4a26f6258",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "eulerLogField",
+      "code_sha256": "7e4ae379eb96a77abaa7fd3418edf4fbbed45e80339fc8ebbe3971b4a26f6258"
+    }
+  ],
+  "paste_plus_pdf_bytes": 88635,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3688,
+      "sha256": "d4d5160633ca839a6689bbad11d67b94c5fd8e3a06d435475a06c15f958fc812"
+    },
+    "BATCH27e_PAGES.pdf": {
+      "bytes": 84947,
+      "sha256": "33cbffbd41a0efb5a67a0bf8e7bc8174c57a3a8c04407f4d7bcbb03a2ca5c4b4"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 90496
+}

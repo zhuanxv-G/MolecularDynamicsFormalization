@@ -1,0 +1,103 @@
+{
+  "batch": "BATCH25",
+  "subtask": "BATCH25h",
+  "source_ids": [
+    "MD-5.6-SymplecticEulerDensity"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 228,
+      "printed_page": 207
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "6935d002971887df8189535a9ca3861e7e7a7f2cb0c7a16cf37bedea654050ce",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "densityMeasure",
+      "code_sha256": "0c1862948c96055705abf13fab30d11ff0404c481476b29077db20458fa6cb70"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "probabilityDensity",
+      "code_sha256": "ec7111064a60d4e0ffb4738f7e5dfc539785ac2942850786ec72672a204a5e2f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "shadowOscillator",
+      "code_sha256": "06c44db9aad589053b4cac21a3d3b781f2f4058357a4705d3baae85edeb0d79d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "symplecticEuler",
+      "code_sha256": "f2f0472c525a7a7b15497ce85efc86ab1ea3c746f39695bdd05824dc87978295"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "density",
+      "code_sha256": "cb24f1ce958a8a1e95b72fdcf4783440869a7e892f6e1482e9123c8154016f86"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "densityMeasure",
+      "code_sha256": "0c1862948c96055705abf13fab30d11ff0404c481476b29077db20458fa6cb70"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "probabilityDensity",
+      "code_sha256": "ec7111064a60d4e0ffb4738f7e5dfc539785ac2942850786ec72672a204a5e2f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "shadowOscillator",
+      "code_sha256": "06c44db9aad589053b4cac21a3d3b781f2f4058357a4705d3baae85edeb0d79d"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "symplecticEuler",
+      "code_sha256": "292e8cb4cb8d115243709a3ce9a9d3d78732dc3b4a2d78616cb0d19e5a78b618"
+    }
+  ],
+  "paste_plus_pdf_bytes": 90713,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5766,
+      "sha256": "b791dccac2e7ce4ff6f2809444d20954e2e624539f6f6e6872fd65a3f3093ce7"
+    },
+    "BATCH25h_PAGES.pdf": {
+      "bytes": 84947,
+      "sha256": "33cbffbd41a0efb5a67a0bf8e7bc8174c57a3a8c04407f4d7bcbb03a2ca5c4b4"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 94695
+}

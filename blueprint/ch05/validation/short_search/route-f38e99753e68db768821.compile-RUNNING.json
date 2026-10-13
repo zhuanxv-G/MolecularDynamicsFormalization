@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint\\ch05\\validation\\short_search\\route-f38e99753e68db768821.lean"
+  ],
+  "input_sha256": "c8e39d5df550a88b6cb71a734bae0572df801740f93f96dbdc0110a35f95c9a0",
+  "parent_pid": 22088,
+  "parent_create_time": 1791818089.8746176,
+  "compiler_pid": 13456,
+  "compiler_create_time": 1791818090.0879333,
+  "started_at": "2026-10-12T23:14:50.092548",
+  "status": "completed",
+  "exit_code": 1,
+  "completed_at": "2026-10-12T23:15:36.790896"
+}

@@ -1,0 +1,60 @@
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:56:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:56:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:99:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:327:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:367:67: warning: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:367:89: warning: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:724:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:724:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:766:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:796:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:838:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:878:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:878:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:909:70: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean:909:70: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`

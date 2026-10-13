@@ -1,0 +1,71 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH25d_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 228 | 207 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-5.6-BackwardEulerLimit",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.6",
+  "printed_page": "207",
+  "pdf_page": "228",
+  "statement_latex": "all solutions of the recurrence relation tend to the origin with increasing $n$ (the origin is an attractive equilibrium point). In this case, all densities evolve toward the Dirac distribution centered at the origin: $\\delta[q]\\delta[p]$. The only (distributional) solution of $\\mathcal L_{\\widetilde f}^*\\rho=0$ is again $\\delta[q]\\delta[p]$, which in this case is attractive.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.backwardEulerLimit",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]h≠0及实际任意初始概率测度；全轨道收缩与对每个有界连续测试函数的弱趋Dirac两个结论，非普通密度逐点收敛。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem backwardEulerLimit :
+  ∀ h : ℝ,h ≠ 0 →
+  (∀ z : MolecularDynamics.Chapter05Review.E 2,Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0)) ∧
+  ∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ → ∀ φ : MolecularDynamics.Chapter05Review.E 2 → ℝ,
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun k : ℕ => ∫ z,φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) ∂μ) atTop (𝓝 (φ 0))
+```
+
+原上下文：namespace MD.Ch05；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter05Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.backwardEuler (MolecularDynamics/Chapter05/ReviewDefinitions.lean:102)
+```lean
+def backwardEuler (h : ℝ) (z : E 2) : E 2 :=
+  WithLp.toLp 2 ![(z 0+h*z 1)/(1+h^2),(z 1-h*z 0)/(1+h^2)]
+```
+
+### MD.Ch05.backwardEuler (Blueprint/Ch05.lean:1521)
+```lean
+def backwardEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
+  WithLp.toLp 2 ![(z 0+h*z 1)/(1+h^2),(z 1-h*z 0)/(1+h^2)]
+```

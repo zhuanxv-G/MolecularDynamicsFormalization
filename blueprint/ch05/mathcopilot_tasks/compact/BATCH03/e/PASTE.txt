@@ -54,7 +54,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.densityMeasureOn (Blueprint/Ch05.lean:135)
+### MD.Ch05.densityMeasureOn (Blueprint/Ch05.lean:136)
 ```lean
 def densityMeasureOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (volume.restrict D).withDensity (fun z => ENNReal.ofReal (ρ z))

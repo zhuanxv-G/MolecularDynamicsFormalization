@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro h hh z hz\n  have hs : 0 < (z 0)^2+(z 1)^2 := by\n    have hn : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hz) _\n    rw [EuclideanSpace.norm_sq_eq] at hn\n    simpa [Fin.sum_univ_two,Real.norm_eq_abs] using hn\n  have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]\n  have he (k : ℕ) : ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖^2=\n      (1+h^2)^k*((z 0)^2+(z 1)^2) := by\n    rw [EuclideanSpace.norm_sq_eq]\n    simpa [Fin.sum_univ_two,Real.norm_eq_abs] using forwardEnergyGrowth h z k\n  have ht := (tendsto_pow_atTop_atTop_of_one_lt hp).atTop_mul_const hs\n  apply tendsto_atTop.2\n  intro b\n  filter_upwards [ht.eventually (eventually_ge_atTop ((max b 0)^2+1))] with k hk\n  rw [←he] at hk\n  nlinarith [norm_nonneg ((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z),le_max_left b 0,le_max_right b 0]",
+    "source": "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-ForwardNormDivergence.lean",
+    "log": "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-ForwardNormDivergence.log",
+    "source_sha256": "bf853652205028a7a0e196eb6637d233ef4033a2eff5b5551c65355860809123",
+    "log_sha256": "3f4b82910679e093e92a92ce9b5e5f631b5d76dc9ea35787e4e81c1b772a0a2d"
+  }
+]

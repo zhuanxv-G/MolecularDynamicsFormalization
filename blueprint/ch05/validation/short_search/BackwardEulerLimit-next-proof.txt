@@ -1,0 +1,32 @@
+intro h hh
+  have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+  have hc : Continuous (MolecularDynamics.Chapter05Review.backwardEuler h) := by
+    unfold MolecularDynamics.Chapter05Review.backwardEuler
+    fun_prop
+  have hz (z : MolecularDynamics.Chapter05Review.E 2) :
+      Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0) := by
+    apply tendsto_zero_iff_norm_tendsto_zero.mpr
+    have he (k : ℕ) : ‖(MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z‖^2=
+        (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2) := by
+      rw [EuclideanSpace.norm_sq_eq]
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using backwardEnergyDecay h z k
+    have hs : Tendsto (fun k : ℕ => (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2)) atTop (𝓝 0) := by
+      simpa only [zero_mul] using (tendsto_pow_atTop_nhds_zero_of_lt_one
+        (inv_nonneg.mpr (by positivity : 0 ≤ 1+h^2)) ((inv_lt_one₀ (by positivity)).mpr hp)).mul_const ((z 0)^2+(z 1)^2)
+    convert (Real.continuous_sqrt.tendsto 0).comp hs using 1
+    · funext k
+      simp only [Function.comp_apply]
+      rw [←he,Real.sqrt_sq (norm_nonneg _)]
+    · simp
+  refine ⟨hz,?_⟩
+  intro μ hμ φ hφ hb
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le
+  have hd := tendsto_integral_filter_of_dominated_convergence
+    (μ:=μ) (fun _ : MolecularDynamics.Chapter05Review.E 2 => C)
+    (F:=fun k z => φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z))
+    (f:=fun _ => φ 0)
+    (Eventually.of_forall (fun k => (hφ.comp (hc.iterate k)).measurable.aestronglyMeasurable))
+    (Eventually.of_forall (fun k => ae_of_all μ (fun z => hB (φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z)) (mem_range_self _))))
+    (integrable_const C) (ae_of_all μ (fun z => (hφ.tendsto 0).comp (hz z)))
+  simpa using hd

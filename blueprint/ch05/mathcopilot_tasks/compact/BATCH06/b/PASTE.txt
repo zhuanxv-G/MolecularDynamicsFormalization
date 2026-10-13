@@ -227,7 +227,7 @@ private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 ```
 
-### MD.Ch05.massFraction (Blueprint/Ch05.lean:288)
+### MD.Ch05.massFraction (Blueprint/Ch05.lean:289)
 ```lean
 def massFraction {n : ℕ} (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) (t : ℝ) := ∫ z in A,ρ t z
 ```

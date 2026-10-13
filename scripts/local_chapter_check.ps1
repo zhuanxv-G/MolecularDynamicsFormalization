@@ -57,7 +57,7 @@ try {
     $inputs = @($paths | ForEach-Object { [ordered]@{relative_path=$_;sha256=(Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash.ToLowerInvariant()} })
     $blueprintText = Get-Content -LiteralPath "Blueprint/Ch$chapterTag.lean" -Raw
     $codeOnly = [regex]::Replace($blueprintText,'(?s)/-.*?-/','')
-    if ($codeOnly -match '\b(admit|axiom|unsafe|True)\b') { throw 'Prohibited Blueprint shortcut.' }
+    if ($codeOnly -cmatch '\b(admit|axiom|unsafe|True)\b') { throw 'Prohibited Blueprint shortcut.' }
     $checks = @()
     foreach ($check in @(@{name='chapter_fresh';path="Blueprint/Ch$chapterTag.lean"},@{name='chapter_axioms';path="blueprint/ch$chapterTag/CheckAxioms.lean"})) {
         $output = @(& lake env lean $check.path 2>&1 | ForEach-Object { "$_" })

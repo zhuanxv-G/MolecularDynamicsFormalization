@@ -53,7 +53,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.lie (Blueprint/Ch05.lean:26)
+### MD.Ch05.lie (Blueprint/Ch05.lean:27)
 ```lean
 def lie {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (g : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) := (fderiv ℝ g z) (f z)
 ```

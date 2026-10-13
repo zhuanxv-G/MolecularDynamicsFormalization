@@ -282,19 +282,19 @@ def density {n : ℕ} (ρ : E n → ℝ) : Prop :=
 def densityMeasure {n : ℕ} (ρ : E n → ℝ) : Measure (E n) := volume.withDensity (fun z => ENNReal.ofReal (ρ z))
 ```
 
-### MD.Ch05.divergence (Blueprint/Ch05.lean:342)
+### MD.Ch05.divergence (Blueprint/Ch05.lean:343)
 ```lean
 def divergence {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) : ℝ :=
   LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap
 ```
 
-### MD.Ch05.faceFlux (Blueprint/Ch05.lean:422)
+### MD.Ch05.faceFlux (Blueprint/Ch05.lean:423)
 ```lean
 def faceFlux {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) (a b : MolecularDynamics.Chapter05Review.E n) (i : Fin n) (side : ℝ) :=
   ∫ z in boxFace a b i side,ρ z*f z i ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1))
 ```
 
-### MD.Ch05.flow (Blueprint/Ch05.lean:38)
+### MD.Ch05.flow (Blueprint/Ch05.lean:39)
 ```lean
 def flow {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
   (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
@@ -308,12 +308,12 @@ def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
     Measure.hausdorffMeasure (d : ℝ)
 ```
 
-### MD.Ch05.massFraction (Blueprint/Ch05.lean:288)
+### MD.Ch05.massFraction (Blueprint/Ch05.lean:289)
 ```lean
 def massFraction {n : ℕ} (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) (t : ℝ) := ∫ z in A,ρ t z
 ```
 
-### MD.Ch05.measurePropagator (Blueprint/Ch05.lean:474)
+### MD.Ch05.measurePropagator (Blueprint/Ch05.lean:475)
 ```lean
 def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
   Measure.map (Φ t) μ

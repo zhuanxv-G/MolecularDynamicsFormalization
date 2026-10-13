@@ -63,7 +63,7 @@ def rectangle {n : ℕ} (a b : E n) := {z : E n | ∀ i,a i ≤ z i ∧ z i ≤ 
 def rectangle {n : ℕ} (a b : E n) := {z : E n | ∀ i,a i ≤ z i ∧ z i ≤ b i}
 ```
 
-### MD.Ch05.rectangularDomain (Blueprint/Ch05.lean:418)
+### MD.Ch05.rectangularDomain (Blueprint/Ch05.lean:419)
 ```lean
 def rectangularDomain {n : ℕ} (a b : MolecularDynamics.Chapter05Review.E n) := MolecularDynamics.Chapter05Review.rectangle a b
 ```

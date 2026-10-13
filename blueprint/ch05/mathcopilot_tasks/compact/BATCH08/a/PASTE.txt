@@ -94,7 +94,7 @@ def liouvillian {n : ℕ} (f : E n → E n) (u : E n → ℝ) (z : E n) :=
 abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
 ```
 
-### MD.Ch05.boxBoundaryTerm (Blueprint/Ch05.lean:440)
+### MD.Ch05.boxBoundaryTerm (Blueprint/Ch05.lean:441)
 ```lean
 def boxBoundaryTerm {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.E n → ℝ) (ell : ℝ) : ℝ :=
   let a : MolecularDynamics.Chapter05Review.E n := WithLp.toLp 2 (fun _ => -ell)
@@ -108,13 +108,13 @@ def boxBoundaryTerm {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → Mol
 def boxFace {n : ℕ} (a b : E n) (i : Fin n) (side : ℝ) := {z : E n | z ∈ rectangle a b ∧ z i=side}
 ```
 
-### MD.Ch05.divergence (Blueprint/Ch05.lean:342)
+### MD.Ch05.divergence (Blueprint/Ch05.lean:343)
 ```lean
 def divergence {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) : ℝ :=
   LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap
 ```
 
-### MD.Ch05.faceFlux (Blueprint/Ch05.lean:422)
+### MD.Ch05.faceFlux (Blueprint/Ch05.lean:423)
 ```lean
 def faceFlux {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) (a b : MolecularDynamics.Chapter05Review.E n) (i : Fin n) (side : ℝ) :=
   ∫ z in boxFace a b i side,ρ z*f z i ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1))
@@ -127,12 +127,12 @@ def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
     Measure.hausdorffMeasure (d : ℝ)
 ```
 
-### MD.Ch05.lie (Blueprint/Ch05.lean:26)
+### MD.Ch05.lie (Blueprint/Ch05.lean:27)
 ```lean
 def lie {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (g : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) := (fderiv ℝ g z) (f z)
 ```
 
-### MD.Ch05.liouvillian (Blueprint/Ch05.lean:346)
+### MD.Ch05.liouvillian (Blueprint/Ch05.lean:347)
 ```lean
 def liouvillian {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) :=
   -MolecularDynamics.Chapter05Review.divergence (fun x => u x • f x) z

@@ -55,7 +55,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.twoOscillatorEnergy (Blueprint/Ch05.lean:1113)
+### MD.Ch05.twoOscillatorEnergy (Blueprint/Ch05.lean:1114)
 ```lean
 def twoOscillatorEnergy (Ω : Fin 2 → ℝ) (i : Fin 2) (z : MolecularDynamics.Chapter05Review.E 4) :=
   (z (Fin.natAdd 2 i))^2/2+(Ω i)^2*(z (Fin.castAdd 2 i))^2/2

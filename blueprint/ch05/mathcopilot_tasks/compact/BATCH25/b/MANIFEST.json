@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH25",
+  "subtask": "BATCH25b",
+  "source_ids": [
+    "MD-5.6-BackwardEuler"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 228,
+      "printed_page": 207
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "91836ae64e2fa2acc19bd45cc9f99ab140184e145610861c21808343b3cf9910",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "backwardEuler",
+      "code_sha256": "91836ae64e2fa2acc19bd45cc9f99ab140184e145610861c21808343b3cf9910"
+    }
+  ],
+  "paste_plus_pdf_bytes": 88526,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3579,
+      "sha256": "b248f69967d8efa6988282792377584d7cbd4071dde78a7827cda931f56ca682"
+    },
+    "BATCH25b_PAGES.pdf": {
+      "bytes": 84947,
+      "sha256": "33cbffbd41a0efb5a67a0bf8e7bc8174c57a3a8c04407f4d7bcbb03a2ca5c4b4"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 90387
+}

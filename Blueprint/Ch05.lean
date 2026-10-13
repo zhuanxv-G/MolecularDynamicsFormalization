@@ -5,6 +5,7 @@ import MolecularDynamics.Chapter02.ActualFlowVariations
 import MolecularDynamics.Chapter02.LiouvilleVolume
 import MolecularDynamics.Chapter02.HamiltonianVolume
 import MolecularDynamics.Chapter01.Lagrangian
+import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.Analysis.Calculus.Deriv.Slope
@@ -1414,5 +1415,449 @@ theorem centeredCorrelation : ∀ n (μ : Measure (MolecularDynamics.Chapter05Re
     rcases hzero with h | h <;> rw [h] <;> ring
   rw [hl] at ht
   simpa only [abs_zero] using ht.abs
+
+/-- source_id: MD-5.6-DiscreteAveragePrinted · definition · §5.6 · 印刷p.206 / PDFp.227 -/
+def discreteAveragePrinted {X : Type*} (G : X → X) (g : X → ℝ) (z : X) (N : ℕ) :=
+  (N : ℝ)⁻¹*∑ k ∈ Finset.range (N+1),g (G^[k] z)
+
+/-- source_id: MD-5.6-DiscreteAverage · definition · §5.6 · 印刷p.206 / PDFp.227
+[EXTRA] [EXTRA]标准n项平均修正版，另列不覆盖原n+1项；n=0总化除法不赋予统计平均意义。 -/
+def discreteAverage {X : Type*} (G : X → X) (g : X → ℝ) (z : X) (N : ℕ) :=
+  (N : ℝ)⁻¹*∑ k ∈ Finset.range N,g (G^[k] z)
+
+/-- source_id: MD-5.6-DiscretePropagator · definition · §5.6 · 印刷p.206 / PDFp.227 -/
+def discretePropagator {X : Type*} [MeasurableSpace X] (G : X → X) (μ : Measure X) := Measure.map G μ
+
+/-- source_id: MD-5.6-ModifiedField · definition · §5.6 · 印刷p.206 / PDFp.227 -/
+def modifiedField {n : ℕ} (f fr : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (h : ℝ) (r : ℕ) := fun z => f z+h^r • fr z
+
+/-- source_id: MD-5.6-ModifiedLiouvillian · unnumbered_claim · §5.6 · 印刷p.206 / PDFp.227
+[EXTRA] [EXTRA]实际Fréchet导数和trace，可微f/fr/u资格；只证微分表达式对场线性，不声称余项密度误差已受控。 -/
+theorem modifiedLiouvillian :
+  ∀ n (f fr : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ) h r,
+  Differentiable ℝ f → Differentiable ℝ fr → Differentiable ℝ u → ∀ z,
+  MolecularDynamics.Chapter05Review.liouvillian (MolecularDynamics.Chapter05Review.modifiedField f fr h r) u z=MolecularDynamics.Chapter05Review.liouvillian f u z+h^r*MolecularDynamics.Chapter05Review.liouvillian fr u z := by
+  intro n f fr u h r hf hfr hu z
+  have hx : DifferentiableAt ℝ (MolecularDynamics.Chapter05Review.modifiedField f fr h r) z :=
+    (hf z).add ((hfr z).const_smul (h^r))
+  rw [liouvilleProduct n _ u z hx (hu z),liouvilleProduct n f u z (hf z) (hu z),
+    liouvilleProduct n fr u z (hfr z) (hu z)]
+  have hd : MolecularDynamics.Chapter05Review.divergence (MolecularDynamics.Chapter05Review.modifiedField f fr h r) z=
+      MolecularDynamics.Chapter05Review.divergence f z+(h^r)*MolecularDynamics.Chapter05Review.divergence fr z := by
+    unfold MolecularDynamics.Chapter05Review.divergence MolecularDynamics.Chapter05Review.modifiedField
+    change LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)
+      (fderiv ℝ (f+(h^r) • fr) z).toLinearMap=_
+    rw [((hf z).hasFDerivAt.add ((hfr z).hasFDerivAt.const_smul (h^r))).fderiv]
+    change LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)
+      ((fderiv ℝ f z).toLinearMap+(h^r) • (fderiv ℝ fr z).toLinearMap)=_
+    simp only [map_add,map_smul,smul_eq_mul]
+  have hl : MolecularDynamics.Chapter05Review.lie (MolecularDynamics.Chapter05Review.modifiedField f fr h r) u z=
+      MolecularDynamics.Chapter05Review.lie f u z+(h^r)*MolecularDynamics.Chapter05Review.lie fr u z := by
+    simp [MolecularDynamics.Chapter05Review.lie,MolecularDynamics.Chapter05Review.modifiedField,
+      map_add,map_smul,smul_eq_mul]
+  rw [hd,hl]
+  ring
+
+/-- source_id: MD-5.6-ForwardEuler · definition · §5.6 · 印刷p.206–207 / PDFp.227–228 -/
+def forwardEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![z 0+h*z 1,z 1-h*z 0]
+
+/-- source_id: MD-5.6-ForwardComponentsPrinted · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]h非零、非原点初值；“趋无穷”按绝对值解释仍有反例。 -/
+theorem forwardComponentsPrinted : ∀ h : ℝ,h ≠ 0 → ∀ z : MolecularDynamics.Chapter05Review.E 2,z ≠ 0 →
+  Tendsto (fun k : ℕ => |(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z 0|) atTop atTop ∧
+  Tendsto (fun k : ℕ => |(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z 1|) atTop atTop := by
+  sorry
+
+/-- source_id: MD-5.6-ForwardEnergyGrowth · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]实际有限步能量增长恒等式，作为原谱外扩的直接代数后果另列；本式允许h=0，渐近发散需h≠0和非原点。 -/
+theorem forwardEnergyGrowth : ∀ (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) (k : ℕ),
+  (((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z) 0)^2+(((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z) 1)^2=
+    (1+h^2)^k*((z 0)^2+(z 1)^2) := by
+  intro h z k
+  have hs (x : MolecularDynamics.Chapter05Review.E 2) :
+      (MolecularDynamics.Chapter05Review.forwardEuler h x 0)^2+
+        (MolecularDynamics.Chapter05Review.forwardEuler h x 1)^2=(1+h^2)*((x 0)^2+(x 1)^2) := by
+    simp [MolecularDynamics.Chapter05Review.forwardEuler]
+    ring
+  induction k with
+  | zero => simp
+  | succ k ih =>
+    rw [Function.iterate_succ_apply',hs,ih,pow_succ]
+    ring
+
+/-- source_id: MD-5.6-EulerInvariant · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]真实Forward Euler映射的不变概率测度，h≠0；一般modified微分方程的弱稳态并非自动等同离散不变测度，原记号作为解释而非未经证明的算子识别。 -/
+theorem eulerInvariant :
+  ∀ h : ℝ, h ≠ 0 → ∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),
+  IsProbabilityMeasure μ → MeasurePreserving (MolecularDynamics.Chapter05Review.forwardEuler h) μ μ → μ=MolecularDynamics.Chapter05Review.diracMeasure 2 := by
+  intro h hh μ hμ hΦ
+  letI := hμ
+  have heq : ∀ᵐ z ∂μ,z=(0 : MolecularDynamics.Chapter05Review.E 2) := by
+    filter_upwards [hΦ.conservative.ae_frequently_mem_of_mem_nhds] with z hz
+    by_contra hn
+    have hs : 0 < (z 0)^2+(z 1)^2 := by
+      have hs' : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hn) _
+      rw [EuclideanSpace.norm_sq_eq] at hs'
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using hs'
+    have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+    have ht := (tendsto_pow_atTop_atTop_of_one_lt hp).atTop_mul_const hs
+    have hret := hz (Metric.ball 0 (‖z‖+1))
+      (Metric.isOpen_ball.mem_nhds (by simp [Metric.mem_ball,dist_zero_right]))
+    obtain ⟨k,hk,hlarge⟩ := (hret.and_eventually
+      (ht.eventually (eventually_ge_atTop ((‖z‖+1)^2+1)))).exists
+    have hen : ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖^2=
+        (1+h^2)^k*((z 0)^2+(z 1)^2) := by
+      rw [EuclideanSpace.norm_sq_eq]
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using forwardEnergyGrowth h z k
+    rw [←hen] at hlarge
+    rw [Metric.mem_ball,dist_zero_right] at hk
+    nlinarith [norm_nonneg ((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z),norm_nonneg z]
+  have hm : Measure.map (fun z : MolecularDynamics.Chapter05Review.E 2 => z) μ =
+      Measure.map (fun _ : MolecularDynamics.Chapter05Review.E 2 => (0 : MolecularDynamics.Chapter05Review.E 2)) μ := Measure.map_congr heq
+  simpa [MolecularDynamics.Chapter05Review.diracMeasure,Measure.map_id,Measure.map_const] using hm
+
+/-- source_id: MD-5.6-BackwardEuler · definition · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]解出的实际二维线性更新，分母1+h²恒正；收缩需h≠0，h=0恒等映射不收缩。 -/
+def backwardEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
+  WithLp.toLp 2 ![(z 0+h*z 1)/(1+h^2),(z 1-h*z 0)/(1+h^2)]
+
+/-- source_id: MD-5.6-BackwardEnergyDecay · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]真实有限步平方范数代数恒等式另列；全轨道趋原点及测度弱极限另保留。 -/
+theorem backwardEnergyDecay : ∀ (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) (k : ℕ),
+  (((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) 0)^2+(((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) 1)^2=
+    (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2) := by
+  intro h z k
+  have hs (x : MolecularDynamics.Chapter05Review.E 2) :
+      (MolecularDynamics.Chapter05Review.backwardEuler h x 0)^2+
+        (MolecularDynamics.Chapter05Review.backwardEuler h x 1)^2=(1+h^2)⁻¹*((x 0)^2+(x 1)^2) := by
+    have hd : 1+h^2 ≠ 0 := ne_of_gt (by positivity)
+    simp [MolecularDynamics.Chapter05Review.backwardEuler]
+    field_simp
+    ring
+  induction k with
+  | zero => simp
+  | succ k ih =>
+    rw [Function.iterate_succ_apply',hs,ih,pow_succ]
+    ring
+
+/-- source_id: MD-5.6-BackwardEulerLimit · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]h≠0及实际任意初始概率测度；全轨道收缩与对每个有界连续测试函数的弱趋Dirac两个结论，非普通密度逐点收敛。 -/
+theorem backwardEulerLimit :
+  ∀ h : ℝ,h ≠ 0 →
+  (∀ z : MolecularDynamics.Chapter05Review.E 2,Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0)) ∧
+  ∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ → ∀ φ : MolecularDynamics.Chapter05Review.E 2 → ℝ,
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun k : ℕ => ∫ z,φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) ∂μ) atTop (𝓝 (φ 0)) := by
+  intro h hh
+  have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+  have hc : Continuous (MolecularDynamics.Chapter05Review.backwardEuler h) := by
+    unfold MolecularDynamics.Chapter05Review.backwardEuler
+    fun_prop
+  have hz (z : MolecularDynamics.Chapter05Review.E 2) :
+      Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0) := by
+    apply tendsto_zero_iff_norm_tendsto_zero.mpr
+    have he (k : ℕ) : ‖(MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z‖^2=
+        (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2) := by
+      rw [EuclideanSpace.norm_sq_eq]
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using backwardEnergyDecay h z k
+    have hs : Tendsto (fun k : ℕ => (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2)) atTop (𝓝 0) := by
+      simpa only [zero_mul] using (tendsto_pow_atTop_nhds_zero_of_lt_one
+        (inv_nonneg.mpr (by positivity : 0 ≤ 1+h^2)) ((inv_lt_one₀ (by positivity)).mpr hp)).mul_const ((z 0)^2+(z 1)^2)
+    convert (Real.continuous_sqrt.tendsto 0).comp hs using 1
+    · funext k
+      simp only [Function.comp_apply]
+      rw [←he,Real.sqrt_sq (norm_nonneg _)]
+    · simp
+  refine ⟨hz,?_⟩
+  intro μ hμ φ hφ hb
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le
+  have hd := tendsto_integral_filter_of_dominated_convergence
+    (μ:=μ) (fun _ : MolecularDynamics.Chapter05Review.E 2 => C)
+    (F:=fun k z => φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z))
+    (f:=fun _ => φ 0)
+    (Eventually.of_forall (fun k => (hφ.comp (hc.iterate k)).measurable.aestronglyMeasurable))
+    (Eventually.of_forall (fun k => ae_of_all μ (fun z => hB (φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z)) (mem_range_self _))))
+    (integrable_const C) (ae_of_all μ (fun z => (hφ.tendsto 0).comp (hz z)))
+  simpa using hd
+
+/-- source_id: MD-5.6-SymplecticEuler · definition · §5.6 · 印刷p.207 / PDFp.228 -/
+def symplecticEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![z 0+h*(z 1-h*z 0),z 1-h*z 0]
+
+/-- source_id: MD-5.6-SymplecticEulerShadow · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]完整实际二次修正能量的一步保持恒等式；正定椭圆资格及所有n保持另条，不以一步式称全部椭圆结论已证。 -/
+theorem symplecticEulerShadow : symplecticEulerShadow_statement := by
+  apply MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved <;> assumption
+
+/-- source_id: MD-5.6-SymplecticEulerEllipse · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]稳定条件|h|<2；原不加资格的椭圆说法在|h|≥2失败。本条保留正定/紧性和所有迭代保持；0能量是退化点。 -/
+theorem symplecticEulerEllipse : ∀ h : ℝ,|h| < 2 →
+  (∀ z : MolecularDynamics.Chapter05Review.E 2,z ≠ 0 → 0 < MolecularDynamics.Chapter05Review.shadowOscillator h z) ∧
+  (∀ c : ℝ,IsCompact {z : MolecularDynamics.Chapter05Review.E 2 | MolecularDynamics.Chapter05Review.shadowOscillator h z ≤ c}) ∧
+  (∀ z : MolecularDynamics.Chapter05Review.E 2,∀ k : ℕ,MolecularDynamics.Chapter05Review.shadowOscillator h ((MolecularDynamics.Chapter05Review.symplecticEuler h)^[k] z)=
+    MolecularDynamics.Chapter05Review.shadowOscillator h z) := by
+  intro h hh
+  let d := 2-|h|
+  have hd : 0 < d := by dsimp [d];linarith
+  have lower (z : MolecularDynamics.Chapter05Review.E 2) :
+      d*((z 0)^2+(z 1)^2) ≤ 4*MolecularDynamics.Chapter05Review.shadowOscillator h z := by
+    unfold MolecularDynamics.Chapter05Review.shadowOscillator
+    dsimp [d]
+    by_cases hp : 0 ≤ h
+    · rw [abs_of_nonneg hp]
+      nlinarith [mul_nonneg hp (sq_nonneg (z 0-z 1))]
+    · rw [abs_of_neg (lt_of_not_ge hp)]
+      nlinarith [mul_nonneg (neg_nonneg.mpr (le_of_lt (lt_of_not_ge hp))) (sq_nonneg (z 0+z 1))]
+  have normeq (z : MolecularDynamics.Chapter05Review.E 2) : ‖z‖^2=(z 0)^2+(z 1)^2 := by
+    rw [EuclideanSpace.norm_sq_eq]
+    simp [Fin.sum_univ_two,Real.norm_eq_abs]
+  refine ⟨?_,?_,?_⟩
+  · intro z hz
+    have hnorm : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hz) _
+    have hl := lower z
+    rw [←normeq] at hl
+    nlinarith [mul_pos hd hnorm]
+  · intro c
+    have hc : Continuous (MolecularDynamics.Chapter05Review.shadowOscillator h) := by
+      unfold MolecularDynamics.Chapter05Review.shadowOscillator;fun_prop
+    have hclosed : IsClosed {z : MolecularDynamics.Chapter05Review.E 2 | MolecularDynamics.Chapter05Review.shadowOscillator h z ≤ c} :=
+      isClosed_le hc continuous_const
+    apply (isCompact_closedBall (0 : MolecularDynamics.Chapter05Review.E 2) (4*|c|/d+1)).of_isClosed_subset hclosed
+    intro z hz
+    have hl := lower z
+    rw [←normeq] at hl
+    change MolecularDynamics.Chapter05Review.shadowOscillator h z ≤ c at hz
+    have hle : ‖z‖^2 ≤ 4*|c|/d := (le_div_iff₀ hd).mpr (by nlinarith [le_abs_self c])
+    have hB : 0 ≤ 4*|c|/d := by positivity
+    rw [Metric.mem_closedBall,dist_zero_right]
+    nlinarith [norm_nonneg z]
+  · intro z k
+    induction k with
+    | zero => simp
+    | succ k ih =>
+      rw [Function.iterate_succ_apply',MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved,ih]
+
+/-- source_id: MD-5.6-SymplecticEulerDensity · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]真实离散映射MeasurePreserving、不变二次能量、实际概率密度r∘Htilde；完整弱Liouville稳态及非吸引另条，所有r都可归一不能自动推出。 -/
+theorem symplecticEulerDensity :
+  ∀ h : ℝ, |h| < 2 → ∀ r : ℝ → ℝ,
+  MolecularDynamics.Chapter05Review.probabilityDensity (r ∘ MolecularDynamics.Chapter05Review.shadowOscillator h) →
+    MeasurePreserving (MolecularDynamics.Chapter05Review.symplecticEuler h) (MolecularDynamics.Chapter05Review.densityMeasure (r ∘ MolecularDynamics.Chapter05Review.shadowOscillator h))
+      (MolecularDynamics.Chapter05Review.densityMeasure (r ∘ MolecularDynamics.Chapter05Review.shadowOscillator h)) := by
+  sorry
+
+/-- source_id: MD-5.6-VerletShadow2 · definition · §5.6 · 印刷p.208 / PDFp.229 -/
+def verletShadow2 {n : ℕ} (m : Fin n → ℝ) (U : MolecularDynamics.Chapter05Review.E n → ℝ) (h : ℝ) (z : MolecularDynamics.Chapter05Review.Phase n) :=
+  let v : MolecularDynamics.Chapter05Review.E n := WithLp.toLp 2 fun i => z.2 i/m i
+  (∑ i,z.2 i^2/m i)/2+U z.1+h^2/24*
+    (2*(fderiv ℝ (fderiv ℝ U) z.1) v v-∑ i,(MolecularDynamics.Chapter05Review.grad U z.1 i)^2/m i)
+
+/-- source_id: MD-5.6-Theorem51 · Theorem 5.1 · §5.6 · 印刷p.208–209 / PDFp.229–230
+[EXTRA] [EXTRA]实际C∞和regularEnergy含梯度非零及raw总质量有限正；补统一紧能量带与其上分母不为零，量化完整O(ε²)平均差。不只陈述分母下界，不将校正关系作前提。 -/
+theorem theorem51 :
+  ∀ n (H η g : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c,
+    0 < n → ContDiff ℝ ⊤ H → ContDiff ℝ ⊤ η → ContDiff ℝ ⊤ g → ContDiff ℝ ⊤ w →
+    MolecularDynamics.Chapter05Review.regularEnergy H c → (∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0) →
+    (∃ δ > 0, ∃ K : Set (MolecularDynamics.Chapter05Review.E n), IsCompact K ∧
+      ∀ ε ∈ Ioo (-δ) δ, MolecularDynamics.Chapter05Review.regularEnergy (fun z => H z+ε*η z) c ∧
+        MolecularDynamics.Chapter05Review.energySurface (fun z => H z+ε*η z) c ⊆ K ∧
+        (∀ z ∈ K,inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0)) →
+    ∃ C > 0, ∃ δ > 0, ∀ ε ∈ Ioo (-δ) δ,
+      |MolecularDynamics.Chapter05Review.microAverage H c g-MolecularDynamics.Chapter05Review.microAverage (fun z => H z+ε*η z) c g-
+        MolecularDynamics.Chapter05Review.perturbationCorrection H η g w c ε| ≤ C*ε^2 := by
+  sorry
+
+/-- source_id: MD-5.6-PerturbationDisplacement · definition · §5.6 · 印刷p.209 / PDFp.230 -/
+def perturbationDisplacement {n : ℕ} (H η : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) :=
+  (ε*η z/inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z)) • w z
+
+/-- source_id: MD-5.6-PerturbationCorrection · definition · §5.6 · 印刷p.209 / PDFp.230 -/
+def perturbationCorrection {n : ℕ} (H η g : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (c ε : ℝ) :=
+  let Hε := fun z => H z+ε*η z
+  let u := MolecularDynamics.Chapter05Review.perturbationDisplacement H η w ε
+  MolecularDynamics.Chapter05Review.microAverage Hε c (MolecularDynamics.Chapter05Review.divergence (fun z => g z • u z))-
+    MolecularDynamics.Chapter05Review.microAverage Hε c g*MolecularDynamics.Chapter05Review.microAverage Hε c (MolecularDynamics.Chapter05Review.divergence u)
+
+/-- source_id: MD-5.6-DenominatorBound · unnumbered_claim · §5.6 · 印刷p.209 / PDFp.230
+[EXTRA] [EXTRA]单独保留紧集上实际连续绝对分母的正下界，是完整定理的基础后果，不替代完整校正关系。 -/
+theorem denominatorBound {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c
+    (hK : IsCompact (MolecularDynamics.Chapter05Review.energySurface H c))
+    (hc : ContinuousOn (fun z => |inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z)|) (MolecularDynamics.Chapter05Review.energySurface H c))
+    (hn : ∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0) :
+    ∃ a > 0,∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,a ≤ |inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z)| := by
+  apply MolecularDynamics.Chapter05Review.denominatorBound_proved <;> assumption
+
+/-- source_id: MD-5.6-SmoothDenominatorBound · unnumbered_claim · §5.6 · 印刷p.209 / PDFp.230
+[EXTRA] [EXTRA]由C² H、连续w自动得到实际连续分母和紧性下界；正式已证特殊后果，不当完整微正则扰动定理。 -/
+theorem smoothDenominatorBound {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c
+    (hK : IsCompact (MolecularDynamics.Chapter05Review.energySurface H c)) (hH : ContDiff ℝ 2 H) (hw : Continuous w)
+    (hn : ∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0) :
+    ∃ a > 0,∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,a ≤ |inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z)| := by
+  apply MolecularDynamics.Chapter05Review.smoothDenominatorBound_proved <;> assumption
+
+/-- source_id: MD-5.6-ZeroPerturbation · unnumbered_claim · §5.6 · 印刷p.209 / PDFp.230
+[EXTRA] [EXTRA]η恒0时实际校正函数为0的直接后果；不将零扰动特例冒充任意η的平均误差定理。 -/
+theorem zeroPerturbation {n : ℕ} (H g : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c ε :
+    MolecularDynamics.Chapter05Review.perturbationCorrection H (fun _ => 0) g w c ε=0 := by
+  apply MolecularDynamics.Chapter05Review.zeroPerturbation_proved <;> assumption
+
+/-- source_id: MD-5.6-GradientTransverse · unnumbered_claim · §5.6 · 印刷p.209 / PDFp.230
+[EXTRA] [EXTRA]正则能量面grad H非零，实际平方范数保证横截；不是任意能量处的无条件结论。 -/
+theorem gradientTransverse :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
+  (∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,MolecularDynamics.Chapter05Review.grad H z ≠ 0) →
+    ∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,inner ℝ (MolecularDynamics.Chapter05Review.grad H z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0 := by
+  intro n H c hn z hz
+  exact inner_self_ne_zero.mpr (hn z hz)
+
+/-- source_id: MD-5.6-DynamicalCorrection · unnumbered_claim · §5.6 · 印刷p.209 / PDFp.230
+[EXTRA] [EXTRA]固定lag的真实光滑pullback观测量及统一紧正则能量带；H参数改变时flow本身改变所导致的额外误差未自动忽略。本条完整平均校正关系不以结论为前提。 -/
+theorem dynamicalCorrection :
+  ∀ n d (H η : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c t,
+    0 < n → ContDiff ℝ ⊤ H → ContDiff ℝ ⊤ η → ContDiff ℝ ⊤ w →
+    ContDiff ℝ ⊤ a → ContDiff ℝ ⊤ b → ContDiff ℝ ⊤ (Φ t) → MolecularDynamics.Chapter05Review.regularEnergy H c →
+    (∃ δ > 0, ∃ K : Set (MolecularDynamics.Chapter05Review.E n), IsCompact K ∧ MolecularDynamics.Chapter05Review.energySurface H c ⊆ K ∧
+      (∀ z ∈ K,inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0) ∧
+      ∀ ε ∈ Ioo (-δ) δ,MolecularDynamics.Chapter05Review.regularEnergy (fun z => H z+ε*η z) c ∧
+        MolecularDynamics.Chapter05Review.energySurface (fun z => H z+ε*η z) c ⊆ K) →
+    let g := fun z => inner ℝ (a (Φ t z)) (b z)
+    ∃ C > 0, ∃ δ > 0, ∀ ε ∈ Ioo (-δ) δ,
+      |MolecularDynamics.Chapter05Review.microAverage H c g-MolecularDynamics.Chapter05Review.microAverage (fun z => H z+ε*η z) c g-
+        MolecularDynamics.Chapter05Review.perturbationCorrection H η g w c ε| ≤ C*ε^2 := by
+  sorry
+
+/-- source_id: MD-5.6-ForwardNormDivergence · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]独立修正为实际范数发散，不覆盖原两分量字面版；h≠0及非原点。 -/
+theorem forwardNormDivergence : ∀ h : ℝ,h ≠ 0 → ∀ z : MolecularDynamics.Chapter05Review.E 2,z ≠ 0 →
+  Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖) atTop atTop := by
+  intro h hh z hz
+  have hs : 0 < (z 0)^2+(z 1)^2 := by
+    have hn : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hz) _
+    rw [EuclideanSpace.norm_sq_eq] at hn
+    simpa [Fin.sum_univ_two,Real.norm_eq_abs] using hn
+  have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+  have he (k : ℕ) : ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖^2=
+      (1+h^2)^k*((z 0)^2+(z 1)^2) := by
+    rw [EuclideanSpace.norm_sq_eq]
+    simpa [Fin.sum_univ_two,Real.norm_eq_abs] using forwardEnergyGrowth h z k
+  have ht := (tendsto_pow_atTop_atTop_of_one_lt hp).atTop_mul_const hs
+  apply tendsto_atTop.2
+  intro b
+  filter_upwards [ht.eventually (eventually_ge_atTop ((max b 0)^2+1))] with k hk
+  rw [←he] at hk
+  nlinarith [norm_nonneg ((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z),le_max_left b 0,le_max_right b 0]
+
+/-- source_id: MD-5.6-WeakStationary · definition · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]复用§5.3.2已经定义的真实弱Liouville稳态：所有C∞紧支测试函数的Lie导数可积且配对为零，允许Dirac等奇异概率；与离散Measure.map不变分别陈述，不从名称推出等价。 -/
+def weakStationaryModel {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (μ : Measure (MolecularDynamics.Chapter05Review.E n)) : Prop :=
+  MolecularDynamics.Chapter05Review.weakStationary f μ
+
+/-- source_id: MD-5.6-WeakAttractor · definition · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]“attractive”取概率弱拓扑中某邻域内所有初值概率的有界连续测试函数收敛；邻域以有限测试族和正ε明确，不把个别轨道收敛当全密度吸引。此为三个后续结论共用的技术定义；不添加已收敛或已不变的前提。 -/
+def weakAttractor {n : ℕ} (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (μ : Measure (MolecularDynamics.Chapter05Review.E n)) : Prop :=
+  ∃ m : ℕ,∃ ψ : Fin m → MolecularDynamics.Chapter05Review.E n → ℝ,∃ ε > 0,
+    (∀ i,Continuous (ψ i) ∧ Bornology.IsBounded (range (ψ i))) ∧
+    ∀ ν : Measure (MolecularDynamics.Chapter05Review.E n),IsProbabilityMeasure ν →
+      (∀ i,|(∫ z,ψ i z ∂ν)-(∫ z,ψ i z ∂μ)| < ε) →
+      ∀ φ : MolecularDynamics.Chapter05Review.E n → ℝ,Continuous φ → Bornology.IsBounded (range φ) →
+        Tendsto (fun t => ∫ z,φ (Φ t z) ∂ν) atTop (𝓝 (∫ z,φ z ∂μ))
+
+/-- source_id: MD-5.6-EulerLogField · definition · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]单位振子Euler的实际实线性logarithmic modified场；取h>0时正/负径向率分别对应前/后Euler，旋转率arctan(h)/h。真实模型的一步对应及ODE资格另条，定义本身不证明无限BEA展开收敛。 -/
+def eulerLogField (backward : Bool) (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
+  let a := (if backward then -1 else 1)*Real.log (1+h^2)/(2*h)
+  let b := Real.arctan h/h
+  WithLp.toLp 2 ![a*z 0+b*z 1,a*z 1-b*z 0]
+
+/-- source_id: MD-5.6-EulerLogFlow · definition · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]为两种实际线性modified场写出完整连续时间指数旋转流；不是把任意算法的有限截断当精确解。只有本单位线性振子的对应作为独立待证明义务。 -/
+def eulerLogFlow (backward : Bool) (h t : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
+  let a := (if backward then -1 else 1)*Real.log (1+h^2)/(2*h)
+  let b := Real.arctan h/h
+  Real.exp (a*t) • WithLp.toLp 2 ![z 0*Real.cos (b*t)+z 1*Real.sin (b*t),
+    z 1*Real.cos (b*t)-z 0*Real.sin (b*t)]
+
+/-- source_id: MD-5.6-EulerLogCorrespondence · unnumbered_claim · §5.6 · 印刷p.206–207 / PDFp.227–228
+[EXTRA] [EXTRA]只对书中实际单位线性振子给出选定logarithmic场与两Euler更新的真实对应及全部t的ODE；不把更新等式或ODE作假设。 -/
+theorem eulerLogCorrespondence : ∀ h : ℝ,0 < h →
+  (∀ z,eulerLogFlow false h h z=MolecularDynamics.Chapter05Review.forwardEuler h z ∧
+    eulerLogFlow true h h z=MolecularDynamics.Chapter05Review.backwardEuler h z) ∧
+  (∀ backward z t,HasDerivAt (fun s => eulerLogFlow backward h s z)
+    (eulerLogField backward h (eulerLogFlow backward h t z)) t) := by
+  intro h hh
+  have hn : h ≠ 0 := ne_of_gt hh
+  have hp : 0 < 1+h^2 := by positivity
+  have hs : Real.sqrt (1+h^2) ≠ 0 := ne_of_gt (Real.sqrt_pos.2 hp)
+  have he : Real.exp (Real.log (1+h^2)/2)=Real.sqrt (1+h^2) := by
+    have he2 : (Real.exp (Real.log (1+h^2)/2))^2=1+h^2 := by
+      rw [pow_two,←Real.exp_add]
+      convert Real.exp_log hp using 1 <;> congr 1 <;> ring
+    nlinarith [Real.exp_pos (Real.log (1+h^2)/2),Real.sqrt_nonneg (1+h^2),Real.sq_sqrt hp.le]
+  have hbh : Real.arctan h/h*h=Real.arctan h := by field_simp [hn]
+  have haf : (Real.log (1+h^2)/(2*h))*h=Real.log (1+h^2)/2 := by field_simp [hn] <;> ring
+  have hab : (-(Real.log (1+h^2))/(2*h))*h= -(Real.log (1+h^2)/2) := by field_simp [hn] <;> ring
+  constructor
+  · intro z
+    constructor <;> ext i <;> fin_cases i <;>
+      simp [eulerLogFlow,MolecularDynamics.Chapter05Review.forwardEuler,
+        MolecularDynamics.Chapter05Review.backwardEuler,hbh,haf,hab,Real.exp_neg,
+        he,Real.cos_arctan,Real.sin_arctan]
+    all_goals field_simp [hs] <;> simp only [Real.sq_sqrt hp.le] <;> ring
+  · intro backward z t
+    let a := (if backward then (-1 : ℝ) else 1)*Real.log (1+h^2)/(2*h)
+    let b := Real.arctan h/h
+    have ha := ((hasDerivAt_id t).const_mul a).exp
+    have hc := ((hasDerivAt_id t).const_mul b).cos
+    have hs := ((hasDerivAt_id t).const_mul b).sin
+    have hq := ha.mul ((hc.const_mul (z 0)).add (hs.const_mul (z 1)))
+    have hp := ha.mul ((hc.const_mul (z 1)).sub (hs.const_mul (z 0)))
+    have hv : HasDerivAt (fun s : ℝ => ![Real.exp (a*s)*(z 0*Real.cos (b*s)+z 1*Real.sin (b*s)),
+        Real.exp (a*s)*(z 1*Real.cos (b*s)-z 0*Real.sin (b*s))])
+        ![a*(Real.exp (a*t)*(z 0*Real.cos (b*t)+z 1*Real.sin (b*t)))+
+            b*(Real.exp (a*t)*(z 1*Real.cos (b*t)-z 0*Real.sin (b*t))),
+          a*(Real.exp (a*t)*(z 1*Real.cos (b*t)-z 0*Real.sin (b*t)))-
+            b*(Real.exp (a*t)*(z 0*Real.cos (b*t)+z 1*Real.sin (b*t)))] t := by
+      apply hasDerivAt_pi.mpr
+      intro i
+      fin_cases i
+      · convert hq using 1 <;> (try funext s) <;> simp [mul_comm] <;> ring
+      · convert hp using 1 <;> (try funext s) <;> simp [mul_comm] <;> ring
+    convert (PiLp.hasFDerivAt_toLp (𝕜:=ℝ) 2 _).comp_hasDerivAt t hv using 1
+    · funext s
+      ext i
+      fin_cases i <;> simp [eulerLogFlow,a,b]
+    · ext i
+      fin_cases i <;> simp [eulerLogField,eulerLogFlow,a,b] <;> ring
+
+/-- source_id: MD-5.6-ForwardWeakStationary · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]实际概率弱稳态和弱拓扑非吸引两个结论；选择上一条给出的真实modified场/流及正h。离散不变概率唯一性不替代本弱PDE与非吸引结论。 -/
+theorem forwardWeakStationary : ∀ h : ℝ,0 < h →
+  weakStationary (eulerLogField false h) (MolecularDynamics.Chapter05Review.diracMeasure 2) ∧
+  (∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ →
+    weakStationary (eulerLogField false h) μ → μ=MolecularDynamics.Chapter05Review.diracMeasure 2) ∧
+  ¬weakAttractor (eulerLogFlow false h) (MolecularDynamics.Chapter05Review.diracMeasure 2) := by
+  sorry
+
+/-- source_id: MD-5.6-BackwardWeakStationary · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]选定实际logarithmic modified场、正h与概率分布；完整弱PDE唯一性及弱概率吸引保留，实际离散全轨道与所有概率弱极限另条。 -/
+theorem backwardWeakStationary : ∀ h : ℝ,0 < h →
+  weakStationary (eulerLogField true h) (MolecularDynamics.Chapter05Review.diracMeasure 2) ∧
+  (∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ →
+    weakStationary (eulerLogField true h) μ → μ=MolecularDynamics.Chapter05Review.diracMeasure 2) ∧
+  weakAttractor (eulerLogFlow true h) (MolecularDynamics.Chapter05Review.diracMeasure 2) := by
+  sorry
+
+/-- source_id: MD-5.6-SymplecticWeakStationary · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
+[EXTRA] [EXTRA]稳定区|h|<2下的真实二次modified Hamiltonian、Hamilton场及其实际全时间flow；保留能量函数密度弱稳态、至少两个不同概率稳态、全部概率稳态非吸引三项，不以单步能量保持替代。能量的正比例因子仅重参数化时间，不改变稳态/吸引命题。 -/
+theorem symplecticWeakStationary : ∀ h : ℝ,|h| < 2 →
+  let f := fun z : MolecularDynamics.Chapter05Review.E 2 => WithLp.toLp 2
+    ![(gradient (MolecularDynamics.Chapter05Review.shadowOscillator h) z) 1,-(gradient (MolecularDynamics.Chapter05Review.shadowOscillator h) z) 0]
+  ∀ Φ : ℝ → MolecularDynamics.Chapter05Review.E 2 → MolecularDynamics.Chapter05Review.E 2,MolecularDynamics.Chapter05Review.flow f Φ →
+    (∀ r : ℝ → ℝ,MolecularDynamics.Chapter05Review.probabilityDensity (fun z => r (MolecularDynamics.Chapter05Review.shadowOscillator h z)) →
+      weakStationary f (MolecularDynamics.Chapter05Review.densityMeasure (fun z => r (MolecularDynamics.Chapter05Review.shadowOscillator h z)))) ∧
+    (∃ μ ν : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ ∧ IsProbabilityMeasure ν ∧
+      μ ≠ ν ∧ weakStationary f μ ∧ weakStationary f ν) ∧
+    (∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ → weakStationary f μ → ¬weakAttractor Φ μ) := by
+  sorry
 
 end MD.Ch05

@@ -44,7 +44,7 @@ variable {{E : Type*}} [NormedAddCommGroup E] [NormedSpace ℝ E]
 # Only already-checked proofs and actual definitions provide dependencies.
 background='\n\n'.join(r['code'] for r in data.RECORDS if r['source_id'].split('-')[-1] not in pending and not re.search(r'\bsorry\b',r['code']))
 if ch==5:
-    header=header.replace('import Mathlib.Tactic','import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform\nimport Mathlib.Analysis.Calculus.ParametricIntegral\nimport Mathlib.Analysis.Calculus.Deriv.Slope\nimport Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Analysis.SpecialFunctions.Gamma.Basic\nimport MolecularDynamics.Chapter01.ReviewDefinitions\nimport Mathlib.Tactic')
+    header=header.replace('import Mathlib.Tactic','import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar\nimport Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform\nimport Mathlib.Analysis.Calculus.ParametricIntegral\nimport Mathlib.Analysis.Calculus.Deriv.Slope\nimport Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Analysis.SpecialFunctions.Gamma.Basic\nimport MolecularDynamics.Chapter01.ReviewDefinitions\nimport Mathlib.Tactic')
 if not (ROOT/f'MolecularDynamics/Chapter{ch:02}/ReviewProofs.lean').exists():
     header=header.replace(f'import MolecularDynamics.Chapter{ch:02}.ReviewProofs',f'import MolecularDynamics.Chapter{ch:02}.Statements')
 if ch==6:

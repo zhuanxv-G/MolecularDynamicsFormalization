@@ -59,7 +59,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.pendulumPotential (Blueprint/Ch05.lean:1188)
+### MD.Ch05.pendulumPotential (Blueprint/Ch05.lean:1189)
 ```lean
 def pendulumPotential (k₁ k₂ l₁ l₂ : ℝ) (q : MolecularDynamics.Chapter05Review.E 2) :=
   k₁/2*(Real.sqrt ((q 0)^2+(q 1)^2)-l₁)^2+

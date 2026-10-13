@@ -1,0 +1,98 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH27g_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 227 | 206 |
+| 2 | 228 | 207 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-5.6-EulerLogCorrespondence",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.6",
+  "printed_page": "206–207",
+  "pdf_page": "227–228",
+  "statement_latex": "Let us assume that the perturbed equation is a realistic model for the numerical solutions. Applying Forward Euler to the harmonic oscillator, we have $q_{n+1}=q_n+hp_n$, $p_{n+1}=p_n-hq_n$. As an alternative, consider the Backward Euler method: $q_{n+1}=q_n+hp_{n+1}$, $p_{n+1}=p_n-hq_{n+1}$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.eulerLogCorrespondence",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]只对书中实际单位线性振子给出选定logarithmic场与两Euler更新的真实对应及全部t的ODE；不把更新等式或ODE作假设。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem eulerLogCorrespondence : ∀ h : ℝ,0 < h →
+  (∀ z,eulerLogFlow false h h z=MolecularDynamics.Chapter05Review.forwardEuler h z ∧
+    eulerLogFlow true h h z=MolecularDynamics.Chapter05Review.backwardEuler h z) ∧
+  (∀ backward z t,HasDerivAt (fun s => eulerLogFlow backward h s z)
+    (eulerLogField backward h (eulerLogFlow backward h t z)) t)
+```
+
+原上下文：namespace MD.Ch05；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter05Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.backwardEuler (MolecularDynamics/Chapter05/ReviewDefinitions.lean:102)
+```lean
+def backwardEuler (h : ℝ) (z : E 2) : E 2 :=
+  WithLp.toLp 2 ![(z 0+h*z 1)/(1+h^2),(z 1-h*z 0)/(1+h^2)]
+```
+
+### MolecularDynamics.Chapter05Review.forwardEuler (MolecularDynamics/Chapter05/ReviewDefinitions.lean:104)
+```lean
+def forwardEuler (h : ℝ) (z : E 2) : E 2 := WithLp.toLp 2 ![z 0+h*z 1,z 1-h*z 0]
+```
+
+### MD.Ch05.backwardEuler (Blueprint/Ch05.lean:1521)
+```lean
+def backwardEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
+  WithLp.toLp 2 ![(z 0+h*z 1)/(1+h^2),(z 1-h*z 0)/(1+h^2)]
+```
+
+### MD.Ch05.eulerLogField (Blueprint/Ch05.lean:1767)
+```lean
+def eulerLogField (backward : Bool) (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
+  let a := (if backward then -1 else 1)*Real.log (1+h^2)/(2*h)
+  let b := Real.arctan h/h
+  WithLp.toLp 2 ![a*z 0+b*z 1,a*z 1-b*z 0]
+```
+
+### MD.Ch05.eulerLogFlow (Blueprint/Ch05.lean:1774)
+```lean
+def eulerLogFlow (backward : Bool) (h t : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
+  let a := (if backward then -1 else 1)*Real.log (1+h^2)/(2*h)
+  let b := Real.arctan h/h
+  Real.exp (a*t) • WithLp.toLp 2 ![z 0*Real.cos (b*t)+z 1*Real.sin (b*t),
+    z 1*Real.cos (b*t)-z 0*Real.sin (b*t)]
+```
+
+### MD.Ch05.forwardEuler (Blueprint/Ch05.lean:1462)
+```lean
+def forwardEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![z 0+h*z 1,z 1-h*z 0]
+```

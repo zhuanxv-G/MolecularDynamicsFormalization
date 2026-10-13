@@ -51,7 +51,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.harmonicEnergy (Blueprint/Ch05.lean:856)
+### MD.Ch05.harmonicEnergy (Blueprint/Ch05.lean:857)
 ```lean
 def harmonicEnergy (Ω : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) := (z 1)^2/2+Ω^2*(z 0)^2/2
 ```

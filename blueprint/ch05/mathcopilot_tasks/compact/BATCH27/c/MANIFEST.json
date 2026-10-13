@@ -1,0 +1,91 @@
+{
+  "batch": "BATCH27",
+  "subtask": "BATCH27c",
+  "source_ids": [
+    "MD-5.6-WeakStationary"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 228,
+      "printed_page": 207
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "1c050fada6949efc8af477f9d6222c4263885698433695bf174d178ef0cfeb8c",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "lie",
+      "code_sha256": "6535744b913bb6f850c290344fb7d4a36f3647f43500d689c3a8228a92a2f8a8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "testSpace",
+      "code_sha256": "5ff1bf70f32fea902738b142df9b2bbe57648e8f1bf4f68411d99a435c8211b7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "weakStationary",
+      "code_sha256": "fbc4dade3b4ed3c544cc1f9420acde79937e40197ea75573630708127bd09733"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "lie",
+      "code_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "testSpace",
+      "code_sha256": "d18b0e81156df07d12955bf5ee7295546fc07bc65a193169967124397be23ee9"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "weakStationary",
+      "code_sha256": "81d72805d2fbcb104fb42285a8fb9fd6a37fb877364fa7030a1ed62314a9e2a1"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "weakStationaryModel",
+      "code_sha256": "1c050fada6949efc8af477f9d6222c4263885698433695bf174d178ef0cfeb8c"
+    }
+  ],
+  "paste_plus_pdf_bytes": 90210,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5263,
+      "sha256": "22ca77246ea2325670700d91b7326d85b68027cd35259ca1dc6994c7e6f66695"
+    },
+    "BATCH27c_PAGES.pdf": {
+      "bytes": 84947,
+      "sha256": "33cbffbd41a0efb5a67a0bf8e7bc8174c57a3a8c04407f4d7bcbb03a2ca5c4b4"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 93453
+}

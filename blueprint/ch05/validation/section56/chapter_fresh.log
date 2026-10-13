@@ -1,0 +1,161 @@
+Blueprint/Ch05.lean:48:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:56:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:89:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:89:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:105:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:149:0: warning: Definition `MD.Ch05.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+Blueprint/Ch05.lean:329:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:352:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:428:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:449:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:458:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:468:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:484:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch05.lean:498:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:514:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:557:67: warning: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+Blueprint/Ch05.lean:557:89: warning: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+Blueprint/Ch05.lean:707:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:726:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:757:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:766:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:777:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:792:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:800:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:810:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:821:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:831:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:841:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:861:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:869:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:884:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:926:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:938:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1078:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1085:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1095:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1109:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1127:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1146:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1166:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1174:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1181:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1195:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1210:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1218:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1236:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1249:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:1249:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:1253:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1312:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Blueprint/Ch05.lean:1335:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1353:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Blueprint/Ch05.lean:1395:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch05.lean:1466:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1494:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Blueprint/Ch05.lean:1573:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Blueprint/Ch05.lean:1590:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:1590:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:1642:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1657:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1702:70: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:1702:70: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:1715:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1797:85: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:1798:92: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:1805:69: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:1830:64: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch05.lean:1797:85: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:1798:92: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:1805:69: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:1830:64: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch05.lean:1794:38: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch05.lean:1794:50: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch05.lean:1823:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch05.lean:1824:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch05.lean:1834:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1843:8: warning: declaration uses `sorry`
+Blueprint/Ch05.lean:1852:8: warning: declaration uses `sorry`

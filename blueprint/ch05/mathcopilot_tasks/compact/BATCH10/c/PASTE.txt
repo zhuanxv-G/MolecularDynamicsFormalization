@@ -43,7 +43,7 @@ def generalizedFunction (T : Type*) [AddCommGroup T] [Module ℝ T] := T →ₗ[
 原上下文：namespace MD.Ch05；open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter05Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
 标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
 
-### MD.Ch05.generalizedFunction (Blueprint/Ch05.lean:529)
+### MD.Ch05.generalizedFunction (Blueprint/Ch05.lean:530)
 ```lean
 def generalizedFunction (T : Type*) [AddCommGroup T] [Module ℝ T] := T →ₗ[ℝ] ℝ
 ```

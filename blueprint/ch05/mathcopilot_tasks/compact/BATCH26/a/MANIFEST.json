@@ -1,0 +1,127 @@
+{
+  "batch": "BATCH26",
+  "subtask": "BATCH26a",
+  "source_ids": [
+    "MD-5.6-VerletShadow2"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 229,
+      "printed_page": 208
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "9e39090233e88717a3498aec120d09a29f7682dd2c123d8560e4b29c3e8c7071",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "Phase",
+      "code_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "grad",
+      "code_sha256": "2b02b79e903c41eb476fa11e97dc6ad10bd20c99b33fe437c813ade44b68008e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "Phase",
+      "code_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "Phase",
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "grad",
+      "code_sha256": "522e86de81741a525bcd8720e95f1f0a3f1ba51791c5d13cea4bed7e30a1620e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "grad",
+      "code_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "grad",
+      "code_sha256": "2b02b79e903c41eb476fa11e97dc6ad10bd20c99b33fe437c813ade44b68008e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConstraintGradient",
+      "code_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "verletShadow2",
+      "code_sha256": "9e39090233e88717a3498aec120d09a29f7682dd2c123d8560e4b29c3e8c7071"
+    }
+  ],
+  "paste_plus_pdf_bytes": 141534,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6252,
+      "sha256": "b86f130ee74042ab94ff332266b92f142c10686e621e270e6af8c904d0be671e"
+    },
+    "BATCH26a_PAGES.pdf": {
+      "bytes": 135282,
+      "sha256": "475f15732ad811cd15fb5647c06f1e8fdd1b0706e1dd7462ec178bbb1be704ff"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 146435
+}

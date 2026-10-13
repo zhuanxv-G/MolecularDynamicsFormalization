@@ -499,7 +499,7 @@ def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Pr
   ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
 ```
 
-### MD.Ch05.transitionProbability (Blueprint/Ch05.lean:1290)
+### MD.Ch05.transitionProbability (Blueprint/Ch05.lean:1291)
 ```lean
 def transitionProbability {n : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
     (A B : Set (MolecularDynamics.Chapter05Review.E n)) (t : ℝ) :=

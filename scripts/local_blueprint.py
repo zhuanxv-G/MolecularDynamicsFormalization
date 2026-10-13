@@ -27,7 +27,7 @@ def pipeline(ch):
         text=text.replace('Matrix.Norms.L2Operator','Matrix.Norms.Elementwise')
         text=text.replace('import Mathlib.Tactic', 'import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv\nimport Mathlib.Analysis.Matrix.Spectrum\nimport Mathlib.Analysis.Calculus.Deriv.Slope\nimport Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv\nimport Mathlib.LinearAlgebra.FiniteDimensional.Lemmas\nimport Mathlib.Tactic',1)
     if ch==5:
-        text=text.replace('import Mathlib.Tactic','import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform\nimport Mathlib.Analysis.Calculus.ParametricIntegral\nimport Mathlib.Analysis.Calculus.Deriv.Slope\nimport Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Analysis.SpecialFunctions.Gamma.Basic\nimport MolecularDynamics.Chapter01.ReviewDefinitions\nimport Mathlib.Tactic',1)
+        text=text.replace('import Mathlib.Tactic','import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar\nimport Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform\nimport Mathlib.Analysis.Calculus.ParametricIntegral\nimport Mathlib.Analysis.Calculus.Deriv.Slope\nimport Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Analysis.SpecialFunctions.Gamma.Basic\nimport MolecularDynamics.Chapter01.ReviewDefinitions\nimport Mathlib.Tactic',1)
     text=text.replace('open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review',
         f'open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review')
     if ch==6:

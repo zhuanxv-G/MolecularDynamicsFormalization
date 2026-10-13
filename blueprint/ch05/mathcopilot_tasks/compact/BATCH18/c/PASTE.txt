@@ -207,7 +207,7 @@ private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 ```
 
-### MD.Ch05.flowInvariant (Blueprint/Ch05.lean:1062)
+### MD.Ch05.flowInvariant (Blueprint/Ch05.lean:1063)
 ```lean
 def flowInvariant {X : Type*} (Φ : ℝ → X → X) (A : Set X) : Prop := ∀ t, Φ t '' A=A
 ```

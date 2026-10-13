@@ -1,0 +1,121 @@
+No obsolete active compact packages.
+{
+  "result": "PASS",
+  "chapter": 5,
+  "source_entries": 183,
+  "old_rows_mapped": 86,
+  "full_batches": 28,
+  "compact_subtasks": 183,
+  "max_total_task_bytes": 234140,
+  "protected_unchanged": 633,
+  "statuses": {
+    "self-contained": 120,
+    "checked+documented priors": 12,
+    "incomplete": 51
+  },
+  "local_verdicts": {
+    "PASS": 172,
+    "NEEDS_HUMAN": 11
+  },
+  "direct_sorry": 49,
+  "transitive_only_sorry": 0,
+  "original_pages_rendered_and_visually_checked": 31,
+  "section_check_report_hashes": {
+    "section51": {
+      "shared": "91e9b494bf053b8d70bd74a6a11e343925a0bd31a4b063f068bc7e5edb17e79f",
+      "chapter": "6028a4b7127aa12a14042945271f875db7a19037a0a3b7f5f5408ace9e228eff"
+    },
+    "section521": {
+      "shared": "21edc19bc3262eea8945cb8745cd0ea3188f6ccca9c98c369d13feae646d887a",
+      "chapter": "fc233b0de40fd2a28ab7b2c591a6ec0106a7557117744ed1f95a072e70e3a81d"
+    },
+    "section522": {
+      "shared": "e1438c1feabeaa0e12f2199c073cd4dbf2ff3d91f4012c0ddccd6b6985dcc426",
+      "chapter": "48c281be1f0959982777a048d46bad9833ea1b17b1121133153a2bd266174923"
+    },
+    "section523": {
+      "shared": "ab57d0e17524ddeecfa82ef68a153f5dd7dc3aca1ce0b335836f30c109484aaf",
+      "chapter": "9259701d100d814179f62cfbbd40d9264523b913e2c598db7c1343a8fbdf2eb7"
+    },
+    "section531": {
+      "shared": "42ba2acf3074aea9a74e23923de06ba1efe743e4c5223ed9f367f6092c9db8e8",
+      "chapter": "aa47c4d071482f3bda86b2e41ee9fec18ffc6af7f3a0c3d105e3e35f8496d9a7"
+    },
+    "section532": {
+      "shared": "25fea6bf80cc3cd430e1ffb6be02d76e4cabaa8e2e03b5eaa45a928db40181e7",
+      "chapter": "b1eaed811c10b114397eaf8a0236f78e459d22be3b774a1a8155b0e34df37901"
+    },
+    "section533": {
+      "shared": "d3dddaee666d357fee91bfa7be353e4ecd0d3b772bfb77d84be306d388cba31d",
+      "chapter": "2765d3bcf1f19472e0d030ea1c0908bd333999826b71a9581e60821f9e640d64"
+    },
+    "section54": {
+      "shared": "20317bb68a0e836b0cff0035805b240c153b21d0575a4c3f3e679c1e01ac9b43",
+      "chapter": "a6e170aef806d5875f9c8b0d3dc7695cc826130b25847d6ce4a2253d0525be7d"
+    },
+    "section541": {
+      "shared": "2737d797a43ede60d3104b1508ba707844c51dea58ae14000f70e77761eb5422",
+      "chapter": "4156e80ae812034270639b4bd38214446a3c465cc58df192db4a0e910119f540"
+    },
+    "section55": {
+      "shared": "8e7204429f812133edd17dad8b9b970384ac764b161b0b239643baf9bccc6ac8",
+      "chapter": "54aa59b3fbc6f1ded3a1a0384dab32974dfd527058a520b27da6703bd1784e5d"
+    },
+    "section56": {
+      "shared": "6df60c80c53dccacab5c0be0c853311e8ec5871d335cab3fee40c186b92dfb61",
+      "chapter": "db51046c9a434823915d82082c9707b0d8f145da273fe727323ead6fe8961d33"
+    }
+  },
+  "website_audit": "待网站审计",
+  "mentor_issues": "已记录，尚未确认"
+}
+warning: in the working copy of 'docs/handoff/WORK_LOG.zh-CN.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/ORIGINAL_PAGE_NOTES.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch01-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch02-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch03-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch04-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch05-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch06-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch07-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch08-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch09-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch10-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch11-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch12-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch13-fixed-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch13-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch14-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch15-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch16-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch17-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch18-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch19-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch20-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch21-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch22-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch23-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch24-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch25-ennreal-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch25-fixed-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch25-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch26-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch27-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch28-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch29-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch30-fixed-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch30-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch31-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch32-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch33-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch34-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch35-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch36-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch38-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch39-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch40-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch41-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch42-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch43-fixed-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch43-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch05/validation/batch47-lean.log', LF will be replaced by CRLF the next time Git touches it

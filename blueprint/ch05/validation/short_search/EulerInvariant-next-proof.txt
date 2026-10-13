@@ -1,0 +1,25 @@
+intro h hh μ hμ hΦ
+  letI := hμ
+  have heq : ∀ᵐ z ∂μ,z=(0 : MolecularDynamics.Chapter05Review.E 2) := by
+    filter_upwards [hΦ.conservative.ae_frequently_mem_of_mem_nhds] with z hz
+    by_contra hn
+    have hs : 0 < (z 0)^2+(z 1)^2 := by
+      have hs' : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hn) _
+      rw [EuclideanSpace.norm_sq_eq] at hs'
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using hs'
+    have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+    have ht := (tendsto_pow_atTop_atTop_of_one_lt hp).atTop_mul_const hs
+    have hret := hz (Metric.ball 0 (‖z‖+1))
+      (Metric.isOpen_ball.mem_nhds (by simp [Metric.mem_ball,dist_zero_right]))
+    obtain ⟨k,hk,hlarge⟩ := (hret.and_eventually
+      (ht.eventually (eventually_ge_atTop ((‖z‖+1)^2+1)))).exists
+    have hen : ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖^2=
+        (1+h^2)^k*((z 0)^2+(z 1)^2) := by
+      rw [EuclideanSpace.norm_sq_eq]
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using forwardEnergyGrowth h z k
+    rw [←hen] at hlarge
+    rw [Metric.mem_ball,dist_zero_right] at hk
+    nlinarith [norm_nonneg ((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z),norm_nonneg z]
+  have hm : Measure.map (fun z : MolecularDynamics.Chapter05Review.E 2 => z) μ =
+      Measure.map (fun _ : MolecularDynamics.Chapter05Review.E 2 => (0 : MolecularDynamics.Chapter05Review.E 2)) μ := Measure.map_congr heq
+  simpa [MolecularDynamics.Chapter05Review.diracMeasure,Measure.map_id,Measure.map_const] using hm

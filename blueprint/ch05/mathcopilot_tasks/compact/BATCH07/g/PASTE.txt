@@ -70,7 +70,7 @@ def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
     Measure.hausdorffMeasure (d : ℝ)
 ```
 
-### MD.Ch05.boxBoundaryTerm (Blueprint/Ch05.lean:440)
+### MD.Ch05.boxBoundaryTerm (Blueprint/Ch05.lean:441)
 ```lean
 def boxBoundaryTerm {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.E n → ℝ) (ell : ℝ) : ℝ :=
   let a : MolecularDynamics.Chapter05Review.E n := WithLp.toLp 2 (fun _ => -ell)
@@ -84,7 +84,7 @@ def boxBoundaryTerm {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → Mol
 def boxFace {n : ℕ} (a b : E n) (i : Fin n) (side : ℝ) := {z : E n | z ∈ rectangle a b ∧ z i=side}
 ```
 
-### MD.Ch05.faceFlux (Blueprint/Ch05.lean:422)
+### MD.Ch05.faceFlux (Blueprint/Ch05.lean:423)
 ```lean
 def faceFlux {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) (a b : MolecularDynamics.Chapter05Review.E n) (i : Fin n) (side : ℝ) :=
   ∫ z in boxFace a b i side,ρ z*f z i ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1))

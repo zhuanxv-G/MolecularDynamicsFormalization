@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH25",
+  "subtask": "BATCH25a",
+  "source_ids": [
+    "MD-5.6-EulerInvariant"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 228,
+      "printed_page": 207
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "15ca0c0e3adad3b577d75921a3824232e58be4926d6d96ccc722aaa542079a9f",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "diracMeasure",
+      "code_sha256": "ca96b8fee35ed6961b57860ddb3f8fdd9b5b63ce5ad509cb42e478f84bfa58c9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "forwardEuler",
+      "code_sha256": "ab163ad38485388a261682f609a205f639ab61b81dc26b178c68d93547739d6b"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "diracMeasure",
+      "code_sha256": "f916ccdc411fb3486ad2c4256195bc43de03294ebe5cf76065b5e51f6182c27e"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "forwardEuler",
+      "code_sha256": "64f55bd6fdf57ab45ed088554e3b95cf056126711a64ce08e55e68a7201ffbbd"
+    }
+  ],
+  "paste_plus_pdf_bytes": 89269,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4322,
+      "sha256": "cdcdd52dd2446fa7b16d2b0cad9703864023140d2823c674b7a6f9bd34ba0556"
+    },
+    "BATCH25a_PAGES.pdf": {
+      "bytes": 84947,
+      "sha256": "33cbffbd41a0efb5a67a0bf8e7bc8174c57a3a8c04407f4d7bcbb03a2ca5c4b4"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 91856
+}

@@ -58,7 +58,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
 ```
 
-### MD.Ch05.regularDistribution (Blueprint/Ch05.lean:536)
+### MD.Ch05.regularDistribution (Blueprint/Ch05.lean:537)
 ```lean
 def regularDistribution {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := ∫ z, f z*φ z
 ```

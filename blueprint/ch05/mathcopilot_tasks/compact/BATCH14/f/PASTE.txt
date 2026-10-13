@@ -92,7 +92,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch05.energySurface (Blueprint/Ch05.lean:743)
+### MD.Ch05.energySurface (Blueprint/Ch05.lean:744)
 ```lean
 def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
 ```
@@ -119,18 +119,18 @@ def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
     Measure.hausdorffMeasure (d : ℝ)
 ```
 
-### MD.Ch05.microPartition (Blueprint/Ch05.lean:848)
+### MD.Ch05.microPartition (Blueprint/Ch05.lean:849)
 ```lean
 def microPartition {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := ((MolecularDynamics.Chapter05Review.microRaw H c) univ).toReal
 ```
 
-### MD.Ch05.microRaw (Blueprint/Ch05.lean:751)
+### MD.Ch05.microRaw (Blueprint/Ch05.lean:752)
 ```lean
 def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
 ```
 
-### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:747)
+### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:748)
 ```lean
 def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)

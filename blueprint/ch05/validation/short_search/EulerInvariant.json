@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.lean",
+    "log": "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.log",
+    "source_sha256": "dd97a8969eb39a5a8ed3a247c332bcc2028a9f2437c69084e4cdbabaec937f6c",
+    "log_sha256": "4494a1aaab56effa4da63e92160b7b17e87c53e35e08ead5a538c8209199511a"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-f38e99753e68db768821.lean",
+    "log": "blueprint/ch05/validation/short_search/route-f38e99753e68db768821.log",
+    "source_sha256": "c8e39d5df550a88b6cb71a734bae0572df801740f93f96dbdc0110a35f95c9a0",
+    "log_sha256": "295d212cdd271b6b1ce558f24588120352969a450404e727f23fdca52834b18e"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro h hh μ hμ hΦ\n  letI := hμ\n  have heq : ∀ᵐ z ∂μ,z=(0 : MolecularDynamics.Chapter05Review.E 2) := by\n    filter_upwards [hΦ.conservative.ae_frequently_mem_of_mem_nhds] with z hz\n    by_contra hn\n    have hs : 0 < (z 0)^2+(z 1)^2 := by\n      have hs' : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hn) _\n      rw [EuclideanSpace.norm_sq_eq] at hs'\n      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using hs'\n    have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]\n    have ht := (tendsto_pow_atTop_atTop_of_one_lt hp).atTop_mul_const hs\n    have hret := hz (Metric.ball 0 (‖z‖+1))\n      (Metric.isOpen_ball.mem_nhds (by simp [Metric.mem_ball,dist_zero_right]))\n    obtain ⟨k,hk,hlarge⟩ := (hret.and_eventually\n      (ht.eventually (eventually_ge_atTop ((‖z‖+1)^2+1)))).exists\n    have hen : ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖^2=\n        (1+h^2)^k*((z 0)^2+(z 1)^2) := by\n      rw [EuclideanSpace.norm_sq_eq]\n      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using forwardEnergyGrowth h z k\n    rw [←hen] at hlarge\n    rw [Metric.mem_ball,dist_zero_right] at hk\n    nlinarith [norm_nonneg ((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z),norm_nonneg z]\n  have hm : Measure.map (fun z : MolecularDynamics.Chapter05Review.E 2 => z) μ =\n      Measure.map (fun _ : MolecularDynamics.Chapter05Review.E 2 => (0 : MolecularDynamics.Chapter05Review.E 2)) μ := Measure.map_congr heq\n  simpa [MolecularDynamics.Chapter05Review.diracMeasure,Measure.map_id,Measure.map_const] using hm",
+    "source": "blueprint/ch05/validation/short_search/route-9e433ea80e78ceed9cf1.lean",
+    "log": "blueprint/ch05/validation/short_search/route-9e433ea80e78ceed9cf1.log",
+    "source_sha256": "5ae001046660f2570ad36713aa65826f98ebed2289b9a602218ea0a14e4d3dd6",
+    "log_sha256": "26251e0b88d13c8283fa8060427b0af6e8262acac611e51cc1563bd159f32e59"
+  }
+]

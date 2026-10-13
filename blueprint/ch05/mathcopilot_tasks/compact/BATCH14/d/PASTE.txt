@@ -112,12 +112,12 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch05.energySurface (Blueprint/Ch05.lean:743)
+### MD.Ch05.energySurface (Blueprint/Ch05.lean:744)
 ```lean
 def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
 ```
 
-### MD.Ch05.flow (Blueprint/Ch05.lean:38)
+### MD.Ch05.flow (Blueprint/Ch05.lean:39)
 ```lean
 def flow {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
   (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
@@ -146,7 +146,7 @@ def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
     Measure.hausdorffMeasure (d : ℝ)
 ```
 
-### MD.Ch05.microRaw (Blueprint/Ch05.lean:751)
+### MD.Ch05.microRaw (Blueprint/Ch05.lean:752)
 ```lean
 def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
@@ -160,7 +160,7 @@ def regularEnergy {n : ℕ} (H : E n → ℝ) (c : ℝ) : Prop :=
   0 < (microRaw H c) univ ∧ (microRaw H c) univ < ∞
 ```
 
-### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:747)
+### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:748)
 ```lean
 def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)

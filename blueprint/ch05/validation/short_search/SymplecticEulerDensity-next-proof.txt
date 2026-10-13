@@ -1,0 +1,30 @@
+intro h hh r hr
+  let M : Matrix (Fin 2) (Fin 2) ℝ := !![1-h^2,h;-h,1]
+  have heq : (M.toEuclideanLin : MolecularDynamics.Chapter05Review.E 2 → MolecularDynamics.Chapter05Review.E 2)=
+      MolecularDynamics.Chapter05Review.symplecticEuler h := by
+    funext z
+    ext i
+    fin_cases i <;>
+      simp [M,Matrix.toEuclideanLin,Matrix.toLpLin_apply,Matrix.mulVec,Matrix.vecHead,Matrix.vecTail,Fin.sum_univ_two,
+        MolecularDynamics.Chapter05Review.symplecticEuler] <;> ring
+  have hd : LinearMap.det M.toEuclideanLin=1 := by
+    rw [←LinearMap.det_toMatrix (EuclideanSpace.basisFun (Fin 2) ℝ).toBasis,
+      Matrix.toEuclideanLin_eq_toLin_orthonormal,LinearMap.toMatrix_toLin]
+    simp [M,Matrix.det_fin_two]
+    ring
+  have hmap := Measure.map_linearMap_addHaar_eq_smul_addHaar
+    (f:=M.toEuclideanLin) (volume : Measure (MolecularDynamics.Chapter05Review.E 2))
+    (show LinearMap.det M.toEuclideanLin ≠ 0 from by rw [hd];norm_num)
+  rw [heq] at hmap
+  have hc : Continuous (MolecularDynamics.Chapter05Review.symplecticEuler h) := by
+    unfold MolecularDynamics.Chapter05Review.symplecticEuler;fun_prop
+  have hf : MeasurePreserving (MolecularDynamics.Chapter05Review.symplecticEuler h)
+      (volume : Measure (MolecularDynamics.Chapter05Review.E 2)) volume :=
+    ⟨hc.measurable,by simpa only [hd,inv_one,abs_one,ENNReal.ofReal_one,one_smul] using hmap⟩
+  refine ⟨hf.measurable,?_⟩
+  ext A hA
+  rw [Measure.map_apply hf.measurable hA]
+  unfold MolecularDynamics.Chapter05Review.densityMeasure
+  rw [withDensity_apply _ (hA.preimage hf.measurable),withDensity_apply _ hA]
+  simpa only [Function.comp_apply,MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved] using
+    hf.setLIntegral_comp_preimage hA hr.1.1.ennreal_ofReal

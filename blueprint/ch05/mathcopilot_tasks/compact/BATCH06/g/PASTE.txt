@@ -83,45 +83,45 @@ def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t 
   Measure.map (Φ t) μ
 ```
 
-### MD.Ch05.densityMeasureOn (Blueprint/Ch05.lean:135)
+### MD.Ch05.densityMeasureOn (Blueprint/Ch05.lean:136)
 ```lean
 def densityMeasureOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (volume.restrict D).withDensity (fun z => ENNReal.ofReal (ρ z))
 ```
 
-### MD.Ch05.densityOn (Blueprint/Ch05.lean:111)
+### MD.Ch05.densityOn (Blueprint/Ch05.lean:112)
 ```lean
 def densityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Prop :=
   NullMeasurableSet D volume ∧ AEMeasurable ρ (volume.restrict D) ∧
     (∀ z ∈ D,0 ≤ ρ z) ∧ IntegrableOn ρ D
 ```
 
-### MD.Ch05.divergence (Blueprint/Ch05.lean:342)
+### MD.Ch05.divergence (Blueprint/Ch05.lean:343)
 ```lean
 def divergence {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) : ℝ :=
   LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap
 ```
 
-### MD.Ch05.flow (Blueprint/Ch05.lean:38)
+### MD.Ch05.flow (Blueprint/Ch05.lean:39)
 ```lean
 def flow {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
   (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
   ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
 ```
 
-### MD.Ch05.liouvillian (Blueprint/Ch05.lean:346)
+### MD.Ch05.liouvillian (Blueprint/Ch05.lean:347)
 ```lean
 def liouvillian {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) :=
   -MolecularDynamics.Chapter05Review.divergence (fun x => u x • f x) z
 ```
 
-### MD.Ch05.measurePropagator (Blueprint/Ch05.lean:474)
+### MD.Ch05.measurePropagator (Blueprint/Ch05.lean:475)
 ```lean
 def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
   Measure.map (Φ t) μ
 ```
 
-### MD.Ch05.probabilityDensityOn (Blueprint/Ch05.lean:116)
+### MD.Ch05.probabilityDensityOn (Blueprint/Ch05.lean:117)
 ```lean
 def probabilityDensityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Prop :=
   densityOn D ρ ∧ (∫ z in D,ρ z)=1

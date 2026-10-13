@@ -1,0 +1,61 @@
+{
+  "batch": "BATCH24",
+  "subtask": "BATCH24h",
+  "source_ids": [
+    "MD-5.6-ForwardEnergyGrowth"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 228,
+      "printed_page": 207
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "85639857a59ec8ebe2053c8aff1bb721c48d1de5c66575927793e163f540675a",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "forwardEuler",
+      "code_sha256": "ab163ad38485388a261682f609a205f639ab61b81dc26b178c68d93547739d6b"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "forwardEuler",
+      "code_sha256": "64f55bd6fdf57ab45ed088554e3b95cf056126711a64ce08e55e68a7201ffbbd"
+    }
+  ],
+  "paste_plus_pdf_bytes": 88588,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3641,
+      "sha256": "be592be9c9ab0d941090504dfa46141aefd6e2ee3ebe549afeda2fa84a71b71c"
+    },
+    "BATCH24h_PAGES.pdf": {
+      "bytes": 84947,
+      "sha256": "33cbffbd41a0efb5a67a0bf8e7bc8174c57a3a8c04407f4d7bcbb03a2ca5c4b4"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 90715
+}

@@ -1,0 +1,85 @@
+{
+  "batch": "BATCH24",
+  "subtask": "BATCH24e",
+  "source_ids": [
+    "MD-5.6-ModifiedLiouvillian"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 227,
+      "printed_page": 206
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "c351294eccb67b789401a193740a3be16ff2274cf0aeefd240e6d91861f7aa55",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "divergence",
+      "code_sha256": "dadd38091a1232e6bbd2460766d10afb82a44329b5f562152debdcd372b86255"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "liouvillian",
+      "code_sha256": "db65bb7d048a7bb3083fcb5511c923eeec5534e5b66d837e1840d49f73dbfa32"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "modifiedField",
+      "code_sha256": "9a9f20ccdf610b0080b91655c726c50dc6b03a3d90358bba3f22a9d55e1fc297"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "divergence",
+      "code_sha256": "ae0663325774e959009a1539ffd2ca1d15d645ff9af486a72942ee6115dd91a2"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "liouvillian",
+      "code_sha256": "c00935b07e671ad9103bce966765d39374e8f4cbcc05a50f0b1ca0c40a9db1f8"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "modifiedField",
+      "code_sha256": "67c4c75cefc5818edc68e74db29a0fc04367c12bf7107db29af8eac99553f5a4"
+    }
+  ],
+  "paste_plus_pdf_bytes": 95714,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5261,
+      "sha256": "5baf6dc34f728a57ca6e462ca8254bc4f47984efd223a9b0261b0e8d939154a6"
+    },
+    "BATCH24e_PAGES.pdf": {
+      "bytes": 90453,
+      "sha256": "df9205d535178fa149a2e6d4d7899367a2d621365c7e02a08d6d1685bc16337a"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 98767
+}

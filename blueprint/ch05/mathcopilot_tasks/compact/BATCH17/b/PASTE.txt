@@ -49,13 +49,13 @@ def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop 
 def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
 ```
 
-### MD.Ch05.hasTimeAverage (Blueprint/Ch05.lean:945)
+### MD.Ch05.hasTimeAverage (Blueprint/Ch05.lean:946)
 ```lean
 def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
   Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 a)
 ```
 
-### MD.Ch05.timeAverage (Blueprint/Ch05.lean:942)
+### MD.Ch05.timeAverage (Blueprint/Ch05.lean:943)
 ```lean
 def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
 ```

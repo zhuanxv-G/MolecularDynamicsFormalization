@@ -54,7 +54,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.densityAverageOn (Blueprint/Ch05.lean:211)
+### MD.Ch05.densityAverageOn (Blueprint/Ch05.lean:212)
 ```lean
 def densityAverageOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ g : MolecularDynamics.Chapter05Review.E n → ℝ) : ℝ :=
   (∫ z in D,g z*ρ z)/(∫ z in D,ρ z)

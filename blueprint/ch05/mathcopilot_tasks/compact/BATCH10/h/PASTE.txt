@@ -53,7 +53,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.diracMeasure (Blueprint/Ch05.lean:565)
+### MD.Ch05.diracMeasure (Blueprint/Ch05.lean:566)
 ```lean
 def diracMeasure (n : ℕ) : Measure (MolecularDynamics.Chapter05Review.E n) := Measure.dirac 0
 ```

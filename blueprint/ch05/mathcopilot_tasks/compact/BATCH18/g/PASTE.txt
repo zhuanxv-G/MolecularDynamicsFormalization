@@ -254,18 +254,18 @@ private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
 ```
 
-### MD.Ch05.flowInvariant (Blueprint/Ch05.lean:1062)
+### MD.Ch05.flowInvariant (Blueprint/Ch05.lean:1063)
 ```lean
 def flowInvariant {X : Type*} (Φ : ℝ → X → X) (A : Set X) : Prop := ∀ t, Φ t '' A=A
 ```
 
-### MD.Ch05.hasTimeAverage (Blueprint/Ch05.lean:945)
+### MD.Ch05.hasTimeAverage (Blueprint/Ch05.lean:946)
 ```lean
 def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
   Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 a)
 ```
 
-### MD.Ch05.setErgodic (Blueprint/Ch05.lean:1066)
+### MD.Ch05.setErgodic (Blueprint/Ch05.lean:1067)
 ```lean
 def setErgodic {X : Type*} [MeasurableSpace X] (μ : Measure X) (Φ : ℝ → X → X) : Prop :=
   ∀ A : Set X, MeasurableSet A → MolecularDynamics.Chapter05Review.flowInvariant Φ A → μ A=0 ∨ μ A=1
@@ -552,7 +552,7 @@ def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Pr
   ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
 ```
 
-### MD.Ch05.timeAverage (Blueprint/Ch05.lean:942)
+### MD.Ch05.timeAverage (Blueprint/Ch05.lean:943)
 ```lean
 def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
 ```

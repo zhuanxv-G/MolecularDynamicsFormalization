@@ -70,25 +70,24 @@
     "CH05-068": "MD-5.5-VelocityCorrelation",
     "CH05-069": "MD-5.5-TransitionProbability",
     "CH05-070": "MD-5.5-MeasureDuality",
-    "CH05-071": "MD-5.5-CenteredCorrelation"
+    "CH05-071": "MD-5.5-CenteredCorrelation",
+    "CH05-072": "MD-5.6-DiscreteAverage",
+    "CH05-073": "MD-5.6-DiscretePropagator",
+    "CH05-074": "MD-5.6-ModifiedField",
+    "CH05-075": "MD-5.6-ModifiedLiouvillian",
+    "CH05-076": "MD-5.6-ForwardNormDivergence",
+    "CH05-077": "MD-5.6-BackwardEulerLimit",
+    "CH05-078": "MD-5.6-SymplecticEulerEllipse",
+    "CH05-079": "MD-5.6-SymplecticEulerDensity",
+    "CH05-080": "MD-5.6-VerletShadow2",
+    "CH05-081": "MD-5.6-Theorem51",
+    "CH05-082": "MD-5.6-PerturbationCorrection",
+    "CH05-083": "MD-5.6-SmoothDenominatorBound",
+    "CH05-084": "MD-5.6-ZeroPerturbation",
+    "CH05-085": "MD-5.6-GradientTransverse",
+    "CH05-086": "MD-5.6-DynamicalCorrection"
   },
-  "pending": [
-    "CH05-072",
-    "CH05-073",
-    "CH05-074",
-    "CH05-075",
-    "CH05-076",
-    "CH05-077",
-    "CH05-078",
-    "CH05-079",
-    "CH05-080",
-    "CH05-081",
-    "CH05-082",
-    "CH05-083",
-    "CH05-084",
-    "CH05-085",
-    "CH05-086"
-  ],
+  "pending": [],
   "excluded": {},
   "all_source_ids_by_old_id": {
     "CH05-001": [
@@ -339,6 +338,56 @@
       "MD-5.5-MixingCorrelationPrinted",
       "MD-5.5-MixingCorrelation",
       "MD-5.5-CenteredCorrelation"
+    ],
+    "CH05-072": [
+      "MD-5.6-DiscreteAveragePrinted",
+      "MD-5.6-DiscreteAverage"
+    ],
+    "CH05-073": [
+      "MD-5.6-DiscretePropagator"
+    ],
+    "CH05-074": [
+      "MD-5.6-ModifiedField"
+    ],
+    "CH05-075": [
+      "MD-5.6-ModifiedLiouvillian"
+    ],
+    "CH05-076": [
+      "MD-5.6-EulerInvariant",
+      "MD-5.6-ForwardNormDivergence"
+    ],
+    "CH05-077": [
+      "MD-5.6-BackwardEulerLimit"
+    ],
+    "CH05-078": [
+      "MD-5.6-SymplecticEulerShadow",
+      "MD-5.6-SymplecticEulerEllipse"
+    ],
+    "CH05-079": [
+      "MD-5.6-SymplecticEulerDensity"
+    ],
+    "CH05-080": [
+      "MD-5.6-VerletShadow2"
+    ],
+    "CH05-081": [
+      "MD-5.6-Theorem51"
+    ],
+    "CH05-082": [
+      "MD-5.6-PerturbationDisplacement",
+      "MD-5.6-PerturbationCorrection"
+    ],
+    "CH05-083": [
+      "MD-5.6-DenominatorBound",
+      "MD-5.6-SmoothDenominatorBound"
+    ],
+    "CH05-084": [
+      "MD-5.6-ZeroPerturbation"
+    ],
+    "CH05-085": [
+      "MD-5.6-GradientTransverse"
+    ],
+    "CH05-086": [
+      "MD-5.6-DynamicalCorrection"
     ]
   }
 }

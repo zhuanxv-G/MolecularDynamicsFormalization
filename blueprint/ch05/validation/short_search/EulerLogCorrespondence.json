@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc.lean",
+    "log": "blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc.log",
+    "source_sha256": "3405ad50b12368193f7119d1c878af20eadad1076ba12fb581f24a643dac470b",
+    "log_sha256": "d70423fbf419721f12f0f4f9e6914ddebb7514b86161b867990c4b9eb5247404"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.lean",
+    "log": "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.log",
+    "source_sha256": "dd97a8969eb39a5a8ed3a247c332bcc2028a9f2437c69084e4cdbabaec937f6c",
+    "log_sha256": "4494a1aaab56effa4da63e92160b7b17e87c53e35e08ead5a538c8209199511a"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro h hh\n  have hn : h ≠ 0 := ne_of_gt hh\n  have hp : 0 < 1+h^2 := by positivity\n  have hs : Real.sqrt (1+h^2) ≠ 0 := ne_of_gt (Real.sqrt_pos.2 hp)\n  have he : Real.exp (Real.log (1+h^2)/2)=Real.sqrt (1+h^2) := by\n    have he2 : (Real.exp (Real.log (1+h^2)/2))^2=1+h^2 := by\n      rw [pow_two,←Real.exp_add]\n      convert Real.exp_log hp using 1 <;> congr 1 <;> ring\n    nlinarith [Real.exp_pos (Real.log (1+h^2)/2),Real.sqrt_nonneg (1+h^2),Real.sq_sqrt hp.le]\n  have hbh : Real.arctan h/h*h=Real.arctan h := by field_simp [hn]\n  have haf : (Real.log (1+h^2)/(2*h))*h=Real.log (1+h^2)/2 := by field_simp [hn] <;> ring\n  have hab : (-(Real.log (1+h^2))/(2*h))*h= -(Real.log (1+h^2)/2) := by field_simp [hn] <;> ring\n  constructor\n  · intro z\n    constructor <;> ext i <;> fin_cases i <;>\n      simp [eulerLogFlow,MolecularDynamics.Chapter05Review.forwardEuler,\n        MolecularDynamics.Chapter05Review.backwardEuler,hbh,haf,hab,Real.exp_neg,\n        he,Real.cos_arctan,Real.sin_arctan]\n    all_goals field_simp [hs] <;> simp only [Real.sq_sqrt hp.le] <;> ring\n  · intro backward z t\n    let a := (if backward then (-1 : ℝ) else 1)*Real.log (1+h^2)/(2*h)\n    let b := Real.arctan h/h\n    have ha := ((hasDerivAt_id t).const_mul a).exp\n    have hc := ((hasDerivAt_id t).const_mul b).cos\n    have hs := ((hasDerivAt_id t).const_mul b).sin\n    have hq := ha.mul ((hc.const_mul (z 0)).add (hs.const_mul (z 1)))\n    have hp := ha.mul ((hc.const_mul (z 1)).sub (hs.const_mul (z 0)))\n    have hv : HasDerivAt (fun s : ℝ => ![Real.exp (a*s)*(z 0*Real.cos (b*s)+z 1*Real.sin (b*s)),\n        Real.exp (a*s)*(z 1*Real.cos (b*s)-z 0*Real.sin (b*s))])\n        ![a*(Real.exp (a*t)*(z 0*Real.cos (b*t)+z 1*Real.sin (b*t)))+\n            b*(Real.exp (a*t)*(z 1*Real.cos (b*t)-z 0*Real.sin (b*t))),\n          a*(Real.exp (a*t)*(z 1*Real.cos (b*t)-z 0*Real.sin (b*t)))-\n            b*(Real.exp (a*t)*(z 0*Real.cos (b*t)+z 1*Real.sin (b*t)))] t := by\n      apply hasDerivAt_pi.mpr\n      intro i\n      fin_cases i\n      · convert hq using 1 <;> (try funext s) <;> simp [mul_comm] <;> ring\n      · convert hp using 1 <;> (try funext s) <;> simp [mul_comm] <;> ring\n    convert (PiLp.hasFDerivAt_toLp (𝕜:=ℝ) 2 _).comp_hasDerivAt t hv using 1\n    · funext s\n      ext i\n      fin_cases i <;> simp [eulerLogFlow,a,b]\n    · ext i\n      fin_cases i <;> simp [eulerLogField,eulerLogFlow,a,b] <;> ring",
+    "source": "blueprint/ch05/validation/short_search/route-f38e99753e68db768821-EulerLogCorrespondence.lean",
+    "log": "blueprint/ch05/validation/short_search/route-f38e99753e68db768821-EulerLogCorrespondence.log",
+    "source_sha256": "05216659284e1e198edb01ccf2d41dde2fbd38c53429b74314797c3f38765837",
+    "log_sha256": "95bd34493459e616cc34bba37c657d467d3265c6902b01c69c77496f20f290aa"
+  }
+]

@@ -1,0 +1,44 @@
+intro h hh
+  have hn : h ≠ 0 := ne_of_gt hh
+  have hp : 0 < 1+h^2 := by positivity
+  have hs : Real.sqrt (1+h^2) ≠ 0 := ne_of_gt (Real.sqrt_pos.2 hp)
+  have he : Real.exp (Real.log (1+h^2)/2)=Real.sqrt (1+h^2) := by
+    have he2 : (Real.exp (Real.log (1+h^2)/2))^2=1+h^2 := by
+      rw [pow_two,←Real.exp_add]
+      convert Real.exp_log hp using 1 <;> congr 1 <;> ring
+    nlinarith [Real.exp_pos (Real.log (1+h^2)/2),Real.sqrt_nonneg (1+h^2),Real.sq_sqrt hp.le]
+  have hbh : Real.arctan h/h*h=Real.arctan h := by field_simp [hn]
+  have haf : (Real.log (1+h^2)/(2*h))*h=Real.log (1+h^2)/2 := by field_simp [hn] <;> ring
+  have hab : (-(Real.log (1+h^2))/(2*h))*h= -(Real.log (1+h^2)/2) := by field_simp [hn] <;> ring
+  constructor
+  · intro z
+    constructor <;> ext i <;> fin_cases i <;>
+      simp [eulerLogFlow,MolecularDynamics.Chapter05Review.forwardEuler,
+        MolecularDynamics.Chapter05Review.backwardEuler,hbh,haf,hab,Real.exp_neg,
+        he,Real.cos_arctan,Real.sin_arctan]
+    all_goals field_simp [hs] <;> simp only [Real.sq_sqrt hp.le] <;> ring
+  · intro backward z t
+    let a := (if backward then (-1 : ℝ) else 1)*Real.log (1+h^2)/(2*h)
+    let b := Real.arctan h/h
+    have ha := ((hasDerivAt_id t).const_mul a).exp
+    have hc := ((hasDerivAt_id t).const_mul b).cos
+    have hs := ((hasDerivAt_id t).const_mul b).sin
+    have hq := ha.mul ((hc.const_mul (z 0)).add (hs.const_mul (z 1)))
+    have hp := ha.mul ((hc.const_mul (z 1)).sub (hs.const_mul (z 0)))
+    have hv : HasDerivAt (fun s : ℝ => ![Real.exp (a*s)*(z 0*Real.cos (b*s)+z 1*Real.sin (b*s)),
+        Real.exp (a*s)*(z 1*Real.cos (b*s)-z 0*Real.sin (b*s))])
+        ![a*(Real.exp (a*t)*(z 0*Real.cos (b*t)+z 1*Real.sin (b*t)))+
+            b*(Real.exp (a*t)*(z 1*Real.cos (b*t)-z 0*Real.sin (b*t))),
+          a*(Real.exp (a*t)*(z 1*Real.cos (b*t)-z 0*Real.sin (b*t)))-
+            b*(Real.exp (a*t)*(z 0*Real.cos (b*t)+z 1*Real.sin (b*t)))] t := by
+      apply hasDerivAt_pi.mpr
+      intro i
+      fin_cases i
+      · convert hq using 1 <;> (try funext s) <;> simp [mul_comm] <;> ring
+      · convert hp using 1 <;> (try funext s) <;> simp [mul_comm] <;> ring
+    convert (PiLp.hasFDerivAt_toLp (𝕜:=ℝ) 2 _).comp_hasDerivAt t hv using 1
+    · funext s
+      ext i
+      fin_cases i <;> simp [eulerLogFlow,a,b]
+    · ext i
+      fin_cases i <;> simp [eulerLogField,eulerLogFlow,a,b] <;> ring

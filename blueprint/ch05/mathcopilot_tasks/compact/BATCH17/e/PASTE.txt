@@ -53,7 +53,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.doubleWellEnergy (Blueprint/Ch05.lean:967)
+### MD.Ch05.doubleWellEnergy (Blueprint/Ch05.lean:968)
 ```lean
 def doubleWellEnergy (z : MolecularDynamics.Chapter05Review.E 2) : ℝ := (z 1)^2/2+(1-(z 0)^2)^2
 ```

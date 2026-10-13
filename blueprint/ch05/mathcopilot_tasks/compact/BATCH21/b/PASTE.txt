@@ -225,20 +225,20 @@ def anisotropicParameters (κ₀ l₀ ε c₃ : ℝ) : ℝ × ℝ :=
   (κ₀*(1-ε*c₃/2),l₀*(1+ε*c₃/2))
 ```
 
-### MD.Ch05.anisotropicPotential (Blueprint/Ch05.lean:1160)
+### MD.Ch05.anisotropicPotential (Blueprint/Ch05.lean:1161)
 ```lean
 def anisotropicPotential (κ l ε : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) :=
   MolecularDynamics.Chapter01Review.anisotropicEnergy κ l ε (z 0) (z 1) 0 0
 ```
 
-### MD.Ch05.circleInitialLaw (Blueprint/Ch05.lean:1229)
+### MD.Ch05.circleInitialLaw (Blueprint/Ch05.lean:1230)
 ```lean
 def circleInitialLaw (κ l ε c x : ℝ) : Measure (MolecularDynamics.Chapter05Review.Phase 2) :=
   Measure.map (circleInitialPoints κ l ε c x)
     ((ENNReal.ofReal (2*Real.pi))⁻¹ • (volume.restrict (Ioc (0 : ℝ) (2*Real.pi))))
 ```
 
-### MD.Ch05.circleInitialPoints (Blueprint/Ch05.lean:1223)
+### MD.Ch05.circleInitialPoints (Blueprint/Ch05.lean:1224)
 ```lean
 def circleInitialPoints (κ l ε c x θ : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=
   let R := Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))

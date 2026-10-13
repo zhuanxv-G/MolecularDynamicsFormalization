@@ -1,0 +1,43 @@
+{
+  "batch": "BATCH24",
+  "subtask": "BATCH24b",
+  "source_ids": [
+    "MD-5.6-DiscreteAverage"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 227,
+      "printed_page": 206
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "fdcc5948ae3fed936f5021f20827975fff94ad20075d138dbcde0e3ea54d40a2",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "discreteAverage",
+      "code_sha256": "fdcc5948ae3fed936f5021f20827975fff94ad20075d138dbcde0e3ea54d40a2"
+    }
+  ],
+  "paste_plus_pdf_bytes": 93362,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2909,
+      "sha256": "f3305c5865f960be8e3e187a416b0a411224fe07882c87aaffe90fcaf0978ae8"
+    },
+    "BATCH24b_PAGES.pdf": {
+      "bytes": 90453,
+      "sha256": "df9205d535178fa149a2e6d4d7899367a2d621365c7e02a08d6d1685bc16337a"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 94727
+}

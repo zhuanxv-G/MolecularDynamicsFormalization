@@ -1,0 +1,159 @@
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:57:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:57:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:100:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:328:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:368:67: warning: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:368:89: warning: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:725:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:725:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:767:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:797:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:839:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:936:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:936:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1013:70: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1013:70: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1096:2: error: Type mismatch: After simplification, term
+  MeasurePreserving.setLIntegral_comp_preimage hf hA (Measurable.ennreal_ofReal hr.left.left)
+ has type
+  ∫⁻ (a : E 2) in Chapter05Review.symplecticEuler h ⁻¹' A,
+      ENNReal.ofReal (r (shadowOscillator h (Chapter05Review.symplecticEuler h a))) =
+    ∫⁻ (b : E 2) in A, ENNReal.ofReal (r (shadowOscillator h b))
+but is expected to have type
+  ∫⁻ (a : E 2) in Chapter05Review.symplecticEuler h ⁻¹' A, ENNReal.ofReal (r (shadowOscillator h a)) =
+    ∫⁻ (a : E 2) in A, ENNReal.ofReal (r (shadowOscillator h a)) ∂volume
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1075:57: warning: This simp argument is unused:
+  Matrix.mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [M, Matrix.toEuclideanLin, Matrix.toLpLin_apply, Matrix.vecHead, Matrix.vecTail, Fin.sum_univ_two,
+    MolecularDynamics.Chapter05Review.symplecticEuler]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1075:101: warning: This simp argument is unused:
+  Fin.sum_univ_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [M, Matrix.toEuclideanLin, Matrix.toLpLin_apply, Matrix.mulVec, Matrix.vecHead, Matrix.vecTail,
+    MolecularDynamics.Chapter05Review.symplecticEuler]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1114:85: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1115:92: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1122:69: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1147:64: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1114:85: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1115:92: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1122:69: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1147:64: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1111:38: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1111:50: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1140:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1141:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1177:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1192:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1213:13: error: don't know how to synthesize implicit argument `mβ`
+  @Measure.map_congr (E 2) (E 2) (WithLp.measurableSpace 2 ((i : Fin 2) → (fun x => ℝ) i)) ?m.434 μ (fun x => x)
+    (fun x => 0) heq
+context:
+h : ℝ
+hh : h ≠ 0
+μ : Measure (E 2)
+hμ : IsProbabilityMeasure μ
+hΦ : MeasurePreserving (Chapter05Review.forwardEuler h) μ μ
+this : IsProbabilityMeasure μ := hμ
+heq : ∀ᵐ (z : E 2) ∂μ, z = 0
+⊢ MeasurableSpace (E 2)
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1213:7: error: failed to infer `have` declaration type
+blueprint\ch05\validation\short_search\route-f38e99753e68db768821.lean:1190:156: error: unsolved goals
+h : ℝ
+hh : h ≠ 0
+μ : Measure (E 2)
+hμ : IsProbabilityMeasure μ
+hΦ : MeasurePreserving (Chapter05Review.forwardEuler h) μ μ
+this : IsProbabilityMeasure μ := hμ
+heq : ∀ᵐ (z : E 2) ∂μ, z = 0
+⊢ μ = Chapter05Review.diracMeasure 2

@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro h z k\n  have hs (x : MolecularDynamics.Chapter05Review.E 2) :\n      (MolecularDynamics.Chapter05Review.forwardEuler h x 0)^2+\n        (MolecularDynamics.Chapter05Review.forwardEuler h x 1)^2=(1+h^2)*((x 0)^2+(x 1)^2) := by\n    simp [MolecularDynamics.Chapter05Review.forwardEuler]\n    ring\n  induction k with\n  | zero => simp\n  | succ k ih =>\n    rw [Function.iterate_succ_apply',hs,ih,pow_succ]\n    ring",
+    "source": "blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean",
+    "log": "blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.log",
+    "source_sha256": "914db1d691559456a4c17e25847499cbec72171caef927d3e8f66475865cb5f9",
+    "log_sha256": "c895b15ef609ccd59338de868bd30c437cd1111c27bfe3721d0ff2d2f3b7d044"
+  }
+]

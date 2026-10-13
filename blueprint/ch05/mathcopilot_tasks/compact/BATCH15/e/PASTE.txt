@@ -95,7 +95,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch05.energySurface (Blueprint/Ch05.lean:743)
+### MD.Ch05.energySurface (Blueprint/Ch05.lean:744)
 ```lean
 def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
 ```
@@ -122,25 +122,25 @@ def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
     Measure.hausdorffMeasure (d : ℝ)
 ```
 
-### MD.Ch05.idealGasEnergy (Blueprint/Ch05.lean:873)
+### MD.Ch05.idealGasEnergy (Blueprint/Ch05.lean:874)
 ```lean
 def idealGasEnergy (N : ℕ) (m : ℝ) (z : MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
   (∑ i : Fin (3*N),(z (Fin.natAdd (3*N) i))^2)/(2*m)
 ```
 
-### MD.Ch05.idealGasPositionDomain (Blueprint/Ch05.lean:878)
+### MD.Ch05.idealGasPositionDomain (Blueprint/Ch05.lean:879)
 ```lean
 def idealGasPositionDomain (N : ℕ) (L : ℝ) : Set (MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
   {z | ∀ i : Fin (3*N),z (Fin.castAdd (3*N) i) ∈ Icc (0 : ℝ) L}
 ```
 
-### MD.Ch05.microRaw (Blueprint/Ch05.lean:751)
+### MD.Ch05.microRaw (Blueprint/Ch05.lean:752)
 ```lean
 def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
 ```
 
-### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:747)
+### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:748)
 ```lean
 def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)

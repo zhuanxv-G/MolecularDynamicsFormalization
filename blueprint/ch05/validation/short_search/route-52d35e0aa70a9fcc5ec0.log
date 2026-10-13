@@ -1,0 +1,218 @@
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:57:72: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:57:72: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:100:0: warning: Definition `MD.Ch05Short.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:328:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:368:67: warning: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:368:89: warning: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:725:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:725:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:767:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:797:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:839:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:911:75: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:911:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:942:70: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:942:70: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1063:15: error(lean.unknownIdentifier): Unknown identifier `map_linearMap_addHaar_eq_smul_addHaar`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1048:119: error: unsolved goals
+h : ℝ
+hh : |h| < 2
+r : ℝ → ℝ
+hr : probabilityDensity (r ∘ shadowOscillator h)
+M : Matrix (Fin 2) (Fin 2) ℝ := !![1 - h ^ 2, h; -h, 1]
+heq : ⇑(toEuclideanLin M) = Chapter05Review.symplecticEuler h
+hd : LinearMap.det (toEuclideanLin M) = 1
+⊢ MeasurePreserving (Chapter05Review.symplecticEuler h) (densityMeasure (r ∘ shadowOscillator h))
+    (densityMeasure (r ∘ shadowOscillator h))
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1056:57: warning: This simp argument is unused:
+  Matrix.mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [M, Matrix.toEuclideanLin, Matrix.toLpLin_apply, Matrix.vecHead, Matrix.vecTail, Fin.sum_univ_two,
+    MolecularDynamics.Chapter05Review.symplecticEuler]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1056:101: warning: This simp argument is unused:
+  Fin.sum_univ_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [M, Matrix.toEuclideanLin, Matrix.toLpLin_apply, Matrix.mulVec, Matrix.vecHead, Matrix.vecTail,
+    MolecularDynamics.Chapter05Review.symplecticEuler]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1121:6: error: unsolved goals
+case e'_8
+h : ℝ
+hh : 0 < h
+hn : h ≠ 0
+hp✝ : 0 < 1 + h ^ 2
+hs✝ : √(1 + h ^ 2) ≠ 0
+he : Real.exp (Real.log (1 + h ^ 2) / 2) = √(1 + h ^ 2)
+hbh : Real.arctan h / h * h = Real.arctan h
+haf : Real.log (1 + h ^ 2) / (2 * h) * h = Real.log (1 + h ^ 2) / 2
+hab : -Real.log (1 + h ^ 2) / (2 * h) * h = -(Real.log (1 + h ^ 2) / 2)
+backward : Bool
+z : E 2
+t : ℝ
+a : ℝ := (if backward = true then -1 else 1) * Real.log (1 + h ^ 2) / (2 * h)
+b : ℝ := Real.arctan h / h
+ha : HasDerivAt (fun x => Real.exp (a * id x)) (Real.exp (a * id t) * (a * 1)) t
+hc : HasDerivAt (fun x => Real.cos (b * id x)) (-Real.sin (b * id t) * (b * 1)) t
+hs : HasDerivAt (fun x => Real.sin (b * id x)) (Real.cos (b * id t) * (b * 1)) t
+hq :
+  HasDerivAt
+    ((fun x => Real.exp (a * id x)) *
+      ((fun y => z.ofLp 0 * Real.cos (b * id y)) + fun y => z.ofLp 1 * Real.sin (b * id y)))
+    (Real.exp (a * id t) * (a * 1) *
+        ((fun y => z.ofLp 0 * Real.cos (b * id y)) + fun y => z.ofLp 1 * Real.sin (b * id y)) t +
+      Real.exp (a * id t) * (z.ofLp 0 * (-Real.sin (b * id t) * (b * 1)) + z.ofLp 1 * (Real.cos (b * id t) * (b * 1))))
+    t
+hp :
+  HasDerivAt
+    ((fun x => Real.exp (a * id x)) *
+      ((fun y => z.ofLp 1 * Real.cos (b * id y)) - fun y => z.ofLp 0 * Real.sin (b * id y)))
+    (Real.exp (a * id t) * (a * 1) *
+        ((fun y => z.ofLp 1 * Real.cos (b * id y)) - fun y => z.ofLp 0 * Real.sin (b * id y)) t +
+      Real.exp (a * id t) * (z.ofLp 1 * (-Real.sin (b * id t) * (b * 1)) - z.ofLp 0 * (Real.cos (b * id t) * (b * 1))))
+    t
+⊢ (fun x => Real.exp (a * x) * z.ofLp 0 * Real.cos (x * b) + Real.exp (a * x) * z.ofLp 1 * Real.sin (x * b)) =
+    ((fun x => Real.exp (a * x)) * fun y => z.ofLp 0 * Real.cos (b * y)) +
+      (fun x => Real.exp (a * x)) * fun y => z.ofLp 1 * Real.sin (b * y)
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1122:6: error: unsolved goals
+case e'_8
+h : ℝ
+hh : 0 < h
+hn : h ≠ 0
+hp✝ : 0 < 1 + h ^ 2
+hs✝ : √(1 + h ^ 2) ≠ 0
+he : Real.exp (Real.log (1 + h ^ 2) / 2) = √(1 + h ^ 2)
+hbh : Real.arctan h / h * h = Real.arctan h
+haf : Real.log (1 + h ^ 2) / (2 * h) * h = Real.log (1 + h ^ 2) / 2
+hab : -Real.log (1 + h ^ 2) / (2 * h) * h = -(Real.log (1 + h ^ 2) / 2)
+backward : Bool
+z : E 2
+t : ℝ
+a : ℝ := (if backward = true then -1 else 1) * Real.log (1 + h ^ 2) / (2 * h)
+b : ℝ := Real.arctan h / h
+ha : HasDerivAt (fun x => Real.exp (a * id x)) (Real.exp (a * id t) * (a * 1)) t
+hc : HasDerivAt (fun x => Real.cos (b * id x)) (-Real.sin (b * id t) * (b * 1)) t
+hs : HasDerivAt (fun x => Real.sin (b * id x)) (Real.cos (b * id t) * (b * 1)) t
+hq :
+  HasDerivAt
+    ((fun x => Real.exp (a * id x)) *
+      ((fun y => z.ofLp 0 * Real.cos (b * id y)) + fun y => z.ofLp 1 * Real.sin (b * id y)))
+    (Real.exp (a * id t) * (a * 1) *
+        ((fun y => z.ofLp 0 * Real.cos (b * id y)) + fun y => z.ofLp 1 * Real.sin (b * id y)) t +
+      Real.exp (a * id t) * (z.ofLp 0 * (-Real.sin (b * id t) * (b * 1)) + z.ofLp 1 * (Real.cos (b * id t) * (b * 1))))
+    t
+hp :
+  HasDerivAt
+    ((fun x => Real.exp (a * id x)) *
+      ((fun y => z.ofLp 1 * Real.cos (b * id y)) - fun y => z.ofLp 0 * Real.sin (b * id y)))
+    (Real.exp (a * id t) * (a * 1) *
+        ((fun y => z.ofLp 1 * Real.cos (b * id y)) - fun y => z.ofLp 0 * Real.sin (b * id y)) t +
+      Real.exp (a * id t) * (z.ofLp 1 * (-Real.sin (b * id t) * (b * 1)) - z.ofLp 0 * (Real.cos (b * id t) * (b * 1))))
+    t
+⊢ (fun x => Real.exp (a * x) * z.ofLp 1 * Real.cos (x * b) - Real.exp (a * x) * z.ofLp 0 * Real.sin (x * b)) =
+    ((fun x => Real.exp (a * x)) * fun y => z.ofLp 1 * Real.cos (b * y)) -
+      (fun x => Real.exp (a * x)) * fun y => z.ofLp 0 * Real.sin (b * y)
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1172:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (1 + h ^ 2)⁻¹ ^ ?k * (z.ofLp 0 ^ 2 + z.ofLp 1 ^ 2)
+in the target expression
+  ‖(Chapter05Review.backwardEuler h)^[k] z‖ =
+    ((fun x => √x) ∘ fun k => (1 + h ^ 2)⁻¹ ^ k * (z.ofLp 0 ^ 2 + z.ofLp 1 ^ 2)) k
+
+case e'_3
+h : ℝ
+hh : h ≠ 0
+hp : 1 < 1 + h ^ 2
+hc : Continuous (Chapter05Review.backwardEuler h)
+z : E 2
+he : ∀ (k : ℕ), ‖(Chapter05Review.backwardEuler h)^[k] z‖ ^ 2 = (1 + h ^ 2)⁻¹ ^ k * (z.ofLp 0 ^ 2 + z.ofLp 1 ^ 2)
+hs : Tendsto (fun k => (1 + h ^ 2)⁻¹ ^ k * (z.ofLp 0 ^ 2 + z.ofLp 1 ^ 2)) atTop (𝓝 0)
+k : ℕ
+⊢ ‖(Chapter05Review.backwardEuler h)^[k] z‖ =
+    ((fun x => √x) ∘ fun k => (1 + h ^ 2)⁻¹ ^ k * (z.ofLp 0 ^ 2 + z.ofLp 1 ^ 2)) k
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1176:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1191:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1202:7: error(lean.unknownIdentifier): Unknown identifier `isOpen_ball.mem_nhds`
+blueprint\ch05\validation\short_search\route-52d35e0aa70a9fcc5ec0.lean:1189:156: error: unsolved goals
+h : ℝ
+hh : h ≠ 0
+μ : Measure (E 2)
+hμ : IsProbabilityMeasure μ
+hΦ : MeasurePreserving (Chapter05Review.forwardEuler h) μ μ
+this : IsProbabilityMeasure μ := hμ
+heq : ∀ᵐ (z : E 2) ∂μ, z = 0
+⊢ μ = Chapter05Review.diracMeasure 2

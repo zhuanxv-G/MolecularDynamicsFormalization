@@ -55,7 +55,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 ```
 
-### MD.Ch05.idealGasEnergy (Blueprint/Ch05.lean:873)
+### MD.Ch05.idealGasEnergy (Blueprint/Ch05.lean:874)
 ```lean
 def idealGasEnergy (N : ℕ) (m : ℝ) (z : MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
   (∑ i : Fin (3*N),(z (Fin.natAdd (3*N) i))^2)/(2*m)

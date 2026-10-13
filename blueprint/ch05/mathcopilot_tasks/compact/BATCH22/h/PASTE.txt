@@ -77,13 +77,13 @@ def pullback {X : Type*} (Φ : ℝ → X → X) (g : X → ℝ) (t : ℝ) (z : X
 def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
 ```
 
-### MD.Ch05.measurePropagator (Blueprint/Ch05.lean:474)
+### MD.Ch05.measurePropagator (Blueprint/Ch05.lean:475)
 ```lean
 def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
   Measure.map (Φ t) μ
 ```
 
-### MD.Ch05.pullback (Blueprint/Ch05.lean:43)
+### MD.Ch05.pullback (Blueprint/Ch05.lean:44)
 ```lean
 def pullback {X : Type*} (Φ : ℝ → X → X) (g : X → ℝ) (t : ℝ) (z : X) := g (Φ t z)
 ```

@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc.lean",
+    "log": "blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc.log",
+    "source_sha256": "3405ad50b12368193f7119d1c878af20eadad1076ba12fb581f24a643dac470b",
+    "log_sha256": "d70423fbf419721f12f0f4f9e6914ddebb7514b86161b867990c4b9eb5247404"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro h hh\n  let d := 2-|h|\n  have hd : 0 < d := by dsimp [d];linarith\n  have lower (z : MolecularDynamics.Chapter05Review.E 2) :\n      d*((z 0)^2+(z 1)^2) ≤ 4*MolecularDynamics.Chapter05Review.shadowOscillator h z := by\n    unfold MolecularDynamics.Chapter05Review.shadowOscillator\n    dsimp [d]\n    by_cases hp : 0 ≤ h\n    · rw [abs_of_nonneg hp]\n      nlinarith [mul_nonneg hp (sq_nonneg (z 0-z 1))]\n    · rw [abs_of_neg (lt_of_not_ge hp)]\n      nlinarith [mul_nonneg (neg_nonneg.mpr (le_of_lt (lt_of_not_ge hp))) (sq_nonneg (z 0+z 1))]\n  have normeq (z : MolecularDynamics.Chapter05Review.E 2) : ‖z‖^2=(z 0)^2+(z 1)^2 := by\n    rw [EuclideanSpace.norm_sq_eq]\n    simp [Fin.sum_univ_two,Real.norm_eq_abs]\n  refine ⟨?_,?_,?_⟩\n  · intro z hz\n    have hnorm : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hz) _\n    have hl := lower z\n    rw [←normeq] at hl\n    nlinarith [mul_pos hd hnorm]\n  · intro c\n    have hc : Continuous (MolecularDynamics.Chapter05Review.shadowOscillator h) := by\n      unfold MolecularDynamics.Chapter05Review.shadowOscillator;fun_prop\n    have hclosed : IsClosed {z : MolecularDynamics.Chapter05Review.E 2 | MolecularDynamics.Chapter05Review.shadowOscillator h z ≤ c} :=\n      isClosed_le hc continuous_const\n    apply (isCompact_closedBall (0 : MolecularDynamics.Chapter05Review.E 2) (4*|c|/d+1)).of_isClosed_subset hclosed\n    intro z hz\n    have hl := lower z\n    rw [←normeq] at hl\n    change MolecularDynamics.Chapter05Review.shadowOscillator h z ≤ c at hz\n    have hle : ‖z‖^2 ≤ 4*|c|/d := (le_div_iff₀ hd).mpr (by nlinarith [le_abs_self c])\n    have hB : 0 ≤ 4*|c|/d := by positivity\n    rw [Metric.mem_closedBall,dist_zero_right]\n    nlinarith [norm_nonneg z]\n  · intro z k\n    induction k with\n    | zero => simp\n    | succ k ih =>\n      rw [Function.iterate_succ_apply',MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved,ih]",
+    "source": "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-SymplecticEulerEllipse.lean",
+    "log": "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-SymplecticEulerEllipse.log",
+    "source_sha256": "3d90d05e65e82262b53a7820cf06a7c673bc3b24666d02a75c1b3728732f6b08",
+    "log_sha256": "06b2207acaffdec5a5077634db9b05ce89798b43c74ac3e8a94e06ec199925d2"
+  }
+]

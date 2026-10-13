@@ -108,7 +108,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
 ```
 
-### MD.Ch05.energySurface (Blueprint/Ch05.lean:743)
+### MD.Ch05.energySurface (Blueprint/Ch05.lean:744)
 ```lean
 def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
 ```
@@ -135,24 +135,24 @@ def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
     Measure.hausdorffMeasure (d : ℝ)
 ```
 
-### MD.Ch05.microAverage (Blueprint/Ch05.lean:933)
+### MD.Ch05.microAverage (Blueprint/Ch05.lean:934)
 ```lean
 def microAverage {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) := MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.microMeasure H c) g
 ```
 
-### MD.Ch05.microMeasure (Blueprint/Ch05.lean:890)
+### MD.Ch05.microMeasure (Blueprint/Ch05.lean:891)
 ```lean
 def microMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   ((MolecularDynamics.Chapter05Review.microRaw H c) univ)⁻¹ • MolecularDynamics.Chapter05Review.microRaw H c
 ```
 
-### MD.Ch05.microRaw (Blueprint/Ch05.lean:751)
+### MD.Ch05.microRaw (Blueprint/Ch05.lean:752)
 ```lean
 def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
 ```
 
-### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:747)
+### MD.Ch05.surfaceMeasure (Blueprint/Ch05.lean:748)
 ```lean
 def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
   (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)

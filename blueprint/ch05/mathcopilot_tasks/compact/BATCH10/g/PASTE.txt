@@ -53,7 +53,7 @@ abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
 ```
 
-### MD.Ch05.diracAction (Blueprint/Ch05.lean:562)
+### MD.Ch05.diracAction (Blueprint/Ch05.lean:563)
 ```lean
 def diracAction {n : ℕ} (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := φ 0
 ```

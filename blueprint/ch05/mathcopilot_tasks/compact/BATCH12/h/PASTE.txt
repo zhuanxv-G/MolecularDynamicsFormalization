@@ -64,17 +64,17 @@ def shellPartition {n : ℕ} (H : E n → ℝ) (c ε : ℝ) := ∫ z,shellWeight
 def shellWeight {n : ℕ} (H : E n → ℝ) (c ε : ℝ) (z : E n) := Real.exp (-(H z-c)^2/(2*ε))
 ```
 
-### MD.Ch05.shellDensity (Blueprint/Ch05.lean:740)
+### MD.Ch05.shellDensity (Blueprint/Ch05.lean:741)
 ```lean
 def shellDensity {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := MolecularDynamics.Chapter05Review.shellWeight H c ε z/MolecularDynamics.Chapter05Review.shellPartition H c ε
 ```
 
-### MD.Ch05.shellPartition (Blueprint/Ch05.lean:737)
+### MD.Ch05.shellPartition (Blueprint/Ch05.lean:738)
 ```lean
 def shellPartition {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) := ∫ z,MolecularDynamics.Chapter05Review.shellWeight H c ε z
 ```
 
-### MD.Ch05.shellWeight (Blueprint/Ch05.lean:734)
+### MD.Ch05.shellWeight (Blueprint/Ch05.lean:735)
 ```lean
 def shellWeight {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := Real.exp (-(H z-c)^2/(2*ε))
 ```

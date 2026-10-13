@@ -1,0 +1,40 @@
+intro h hh
+  let d := 2-|h|
+  have hd : 0 < d := by dsimp [d];linarith
+  have lower (z : MolecularDynamics.Chapter05Review.E 2) :
+      d*((z 0)^2+(z 1)^2) ≤ 4*MolecularDynamics.Chapter05Review.shadowOscillator h z := by
+    unfold MolecularDynamics.Chapter05Review.shadowOscillator
+    dsimp [d]
+    by_cases hp : 0 ≤ h
+    · rw [abs_of_nonneg hp]
+      nlinarith [mul_nonneg hp (sq_nonneg (z 0-z 1))]
+    · rw [abs_of_neg (lt_of_not_ge hp)]
+      nlinarith [mul_nonneg (neg_nonneg.mpr (le_of_lt (lt_of_not_ge hp))) (sq_nonneg (z 0+z 1))]
+  have normeq (z : MolecularDynamics.Chapter05Review.E 2) : ‖z‖^2=(z 0)^2+(z 1)^2 := by
+    rw [EuclideanSpace.norm_sq_eq]
+    simp [Fin.sum_univ_two,Real.norm_eq_abs]
+  refine ⟨?_,?_,?_⟩
+  · intro z hz
+    have hnorm : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hz) _
+    have hl := lower z
+    rw [←normeq] at hl
+    nlinarith [mul_pos hd hnorm]
+  · intro c
+    have hc : Continuous (MolecularDynamics.Chapter05Review.shadowOscillator h) := by
+      unfold MolecularDynamics.Chapter05Review.shadowOscillator;fun_prop
+    have hclosed : IsClosed {z : MolecularDynamics.Chapter05Review.E 2 | MolecularDynamics.Chapter05Review.shadowOscillator h z ≤ c} :=
+      isClosed_le hc continuous_const
+    apply (isCompact_closedBall (0 : MolecularDynamics.Chapter05Review.E 2) (4*|c|/d+1)).of_isClosed_subset hclosed
+    intro z hz
+    have hl := lower z
+    rw [←normeq] at hl
+    change MolecularDynamics.Chapter05Review.shadowOscillator h z ≤ c at hz
+    have hle : ‖z‖^2 ≤ 4*|c|/d := (le_div_iff₀ hd).mpr (by nlinarith [le_abs_self c])
+    have hB : 0 ≤ 4*|c|/d := by positivity
+    rw [Metric.mem_closedBall,dist_zero_right]
+    nlinarith [norm_nonneg z]
+  · intro z k
+    induction k with
+    | zero => simp
+    | succ k ih =>
+      rw [Function.iterate_succ_apply',MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved,ih]

@@ -73,18 +73,18 @@ def liouvillian {n : ℕ} (f : E n → E n) (u : E n → ℝ) (z : E n) :=
   -divergence (fun x => u x • f x) z
 ```
 
-### MD.Ch05.divergence (Blueprint/Ch05.lean:342)
+### MD.Ch05.divergence (Blueprint/Ch05.lean:343)
 ```lean
 def divergence {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) : ℝ :=
   LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap
 ```
 
-### MD.Ch05.lie (Blueprint/Ch05.lean:26)
+### MD.Ch05.lie (Blueprint/Ch05.lean:27)
 ```lean
 def lie {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (g : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) := (fderiv ℝ g z) (f z)
 ```
 
-### MD.Ch05.liouvillian (Blueprint/Ch05.lean:346)
+### MD.Ch05.liouvillian (Blueprint/Ch05.lean:347)
 ```lean
 def liouvillian {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) :=
   -MolecularDynamics.Chapter05Review.divergence (fun x => u x • f x) z

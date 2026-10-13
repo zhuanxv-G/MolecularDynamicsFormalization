@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH25",
+  "subtask": "BATCH25g",
+  "source_ids": [
+    "MD-5.6-SymplecticEulerEllipse"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 228,
+      "printed_page": 207
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "a9569fcc597eae52afe5de21176497f9fa1c5188f17d306a80b25a459d3e5b11",
+  "lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "signature_sha256": "f45b2ffc07e7e1f7005e8f0e7f036dca9d74f32c7024d133d03ce6bcaa2adce8",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "shadowOscillator",
+      "code_sha256": "06c44db9aad589053b4cac21a3d3b781f2f4058357a4705d3baae85edeb0d79d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "symplecticEuler",
+      "code_sha256": "f2f0472c525a7a7b15497ce85efc86ab1ea3c746f39695bdd05824dc87978295"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "shadowOscillator",
+      "code_sha256": "06c44db9aad589053b4cac21a3d3b781f2f4058357a4705d3baae85edeb0d79d"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "namespace": "MD.Ch05",
+      "name": "symplecticEuler",
+      "code_sha256": "292e8cb4cb8d115243709a3ce9a9d3d78732dc3b4a2d78616cb0d19e5a78b618"
+    }
+  ],
+  "paste_plus_pdf_bytes": 89469,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4522,
+      "sha256": "d9be928b04eb78dbbf9e1061cbc8dcb7d4e23e4018dffe729aadd6b8d219ab31"
+    },
+    "BATCH25g_PAGES.pdf": {
+      "bytes": 84947,
+      "sha256": "33cbffbd41a0efb5a67a0bf8e7bc8174c57a3a8c04407f4d7bcbb03a2ca5c4b4"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 92135
+}

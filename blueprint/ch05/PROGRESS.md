@@ -1,8 +1,8 @@
 # 第5章本地五步流程进度
 
 范围：印刷p.179–209/PDF200–230，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
-下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前149条；旧清单映射71/86；本地PASS 139；网站返回0。
+第5章本地部分完成；第5章等待用户提交MathCopilot批次；继续下一章本地流程。网站不可用，未冻结。
+当前183条；旧清单映射86/86；本地PASS 172；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -155,6 +155,40 @@
 | MD-5.5-MixingCorrelationPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原遗漏k待裁定，不证明；正确极限另条。 |
 | MD-5.5-MixingCorrelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-5.5-CenteredCorrelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.6-DiscreteAveragePrinted | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-DiscreteAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-DiscretePropagator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-ModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-ModifiedLiouvillian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.6-ForwardEuler | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-ForwardComponentsPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原两分量说法需裁定，不证明；范数增长修正版另条。 |
+| MD-5.6-ForwardEnergyGrowth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.6-EulerInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.6-BackwardEuler | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-BackwardEnergyDecay | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.6-BackwardEulerLimit | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.6-SymplecticEuler | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-SymplecticEulerShadow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-5.6-SymplecticEulerEllipse | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-5.6-SymplecticEulerDensity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticEulerDensity.json。 |
+| MD-5.6-VerletShadow2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-Theorem51 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际曲面扰动/coarea、微正则加权测度渐近与平均商展开；用户禁止建设大型微正则理论，保留完整sorry。 |
+| MD-5.6-PerturbationDisplacement | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-PerturbationCorrection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-DenominatorBound | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-5.6-SmoothDenominatorBound | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-5.6-ZeroPerturbation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-5.6-GradientTransverse | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.6-DynamicalCorrection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；依赖未建立的完整曲面扰动/coarea平均误差定理；不建设大型理论。 |
+| MD-5.6-ForwardNormDivergence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.6-WeakStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-WeakAttractor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-EulerLogField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-EulerLogFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-5.6-EulerLogCorrespondence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-5.6-ForwardWeakStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺弱stationarity到连续流不变的输运/测试函数桥接及概率弱邻域的非吸引论证；不建设大型PDE理论。 |
+| MD-5.6-BackwardWeakStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺弱stationarity到连续流不变的真实输运桥接和概率弱拓扑吸引论证；不建设大型PDE理论。 |
+| MD-5.6-SymplecticWeakStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺真实弱Liouville测试函数变换、归一能量密度构造及全部稳态的弱邻域非吸引论证；保留完整三项，不建设大型算子/输运理论。 |
 
 ## 旧86条完整映射
 
@@ -231,21 +265,21 @@
 | CH05-069 | MD-5.5-TransitionProbability |
 | CH05-070 | MD-5.5-MeasureDuality |
 | CH05-071 | MD-5.5-CenteredCorrelation |
-| CH05-072 | PENDING：所属节尚未处理 |
-| CH05-073 | PENDING：所属节尚未处理 |
-| CH05-074 | PENDING：所属节尚未处理 |
-| CH05-075 | PENDING：所属节尚未处理 |
-| CH05-076 | PENDING：所属节尚未处理 |
-| CH05-077 | PENDING：所属节尚未处理 |
-| CH05-078 | PENDING：所属节尚未处理 |
-| CH05-079 | PENDING：所属节尚未处理 |
-| CH05-080 | PENDING：所属节尚未处理 |
-| CH05-081 | PENDING：所属节尚未处理 |
-| CH05-082 | PENDING：所属节尚未处理 |
-| CH05-083 | PENDING：所属节尚未处理 |
-| CH05-084 | PENDING：所属节尚未处理 |
-| CH05-085 | PENDING：所属节尚未处理 |
-| CH05-086 | PENDING：所属节尚未处理 |
+| CH05-072 | MD-5.6-DiscreteAverage |
+| CH05-073 | MD-5.6-DiscretePropagator |
+| CH05-074 | MD-5.6-ModifiedField |
+| CH05-075 | MD-5.6-ModifiedLiouvillian |
+| CH05-076 | MD-5.6-ForwardNormDivergence |
+| CH05-077 | MD-5.6-BackwardEulerLimit |
+| CH05-078 | MD-5.6-SymplecticEulerEllipse |
+| CH05-079 | MD-5.6-SymplecticEulerDensity |
+| CH05-080 | MD-5.6-VerletShadow2 |
+| CH05-081 | MD-5.6-Theorem51 |
+| CH05-082 | MD-5.6-PerturbationCorrection |
+| CH05-083 | MD-5.6-SmoothDenominatorBound |
+| CH05-084 | MD-5.6-ZeroPerturbation |
+| CH05-085 | MD-5.6-GradientTransverse |
+| CH05-086 | MD-5.6-DynamicalCorrection |
 
 ## NEEDS_HUMAN / [ERRATUM?] / 缺理论
 
@@ -293,8 +327,16 @@
 - MD-5.4.1-CircleInitialEnergy：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CircleInitialEnergy.timebox.json。
 - MD-5.5-CorrelationTimePrinted：[ERRATUM?]“any trajectory”强于此前AE遍历平均；本字面版保留能量面上全部初值量词，正确AE修正版另条；不能凭概率遍历宣称每条轨道。 原any与AE的量词冲突待裁定，不证明。
 - MD-5.5-MixingCorrelationPrinted：[ERRATUM?]相关函数已含任意归一化k，印刷极限遗漏k；保留字面目标，不静默设k=1。原任意函数需可积/有界资格，否则甚至积分未定义。 原遗漏k待裁定，不证明；正确极限另条。
+- MD-5.6-ForwardComponentsPrinted：[ERRATUM?]外扩旋转只能推出范数增长，两个单独分量会振荡；例如h=1的八步角周期中可反复出现分量0，不能静默以范数替代原两分量结论。 原两分量说法需裁定，不证明；范数增长修正版另条。
+- MD-5.6-SymplecticEulerDensity：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticEulerDensity.json。
+- MD-5.6-Theorem51：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际曲面扰动/coarea、微正则加权测度渐近与平均商展开；用户禁止建设大型微正则理论，保留完整sorry。
+- MD-5.6-DynamicalCorrection：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 依赖未建立的完整曲面扰动/coarea平均误差定理；不建设大型理论。
+- MD-5.6-ForwardWeakStationary：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺弱stationarity到连续流不变的输运/测试函数桥接及概率弱邻域的非吸引论证；不建设大型PDE理论。
+- MD-5.6-BackwardWeakStationary：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺弱stationarity到连续流不变的真实输运桥接和概率弱拓扑吸引论证；不建设大型PDE理论。
+- MD-5.6-SymplecticWeakStationary：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实弱Liouville测试函数变换、归一能量密度构造及全部稳态的弱邻域非吸引论证；保留完整三项，不建设大型算子/输运理论。
 
 ## 定性段落排除
 
 - p.179–181/PDF200–202：引言的宏观/微观建模动机、参考教材推荐，以及iL与量子记号的物理解释为定性背景；Lie导数、流、PDE、第一积分和坐标投影的数学内容保留。
 - p.200–203/PDF221–224：Examples 5.5–5.6的轨迹图、100 million steps、可达域数值边界/视觉混合均为有限模拟观察；保留其动力学背景及KAM引用，不升级为精确遍历/混合定理。
+- p.207–208/PDF228–229：Example5.7关于trimer轨道、100000步、两个步长的填色与边界overspill是数值观察；不提升为已证明混沌/遍历或精确modified方程。

@@ -197,7 +197,7 @@ def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradie
 def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
 ```
 
-### MD.Ch05.normalField (Blueprint/Ch05.lean:787)
+### MD.Ch05.normalField (Blueprint/Ch05.lean:788)
 ```lean
 def normalField {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) := ‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹ • MolecularDynamics.Chapter05Review.grad H z
 ```

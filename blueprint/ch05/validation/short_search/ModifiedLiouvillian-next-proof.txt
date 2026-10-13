@@ -1,0 +1,20 @@
+intro n f fr u h r hf hfr hu z
+  have hx : DifferentiableAt ℝ (MolecularDynamics.Chapter05Review.modifiedField f fr h r) z :=
+    (hf z).add ((hfr z).const_smul (h^r))
+  rw [liouvilleProduct n _ u z hx (hu z),liouvilleProduct n f u z (hf z) (hu z),
+    liouvilleProduct n fr u z (hfr z) (hu z)]
+  have hd : MolecularDynamics.Chapter05Review.divergence (MolecularDynamics.Chapter05Review.modifiedField f fr h r) z=
+      MolecularDynamics.Chapter05Review.divergence f z+(h^r)*MolecularDynamics.Chapter05Review.divergence fr z := by
+    unfold MolecularDynamics.Chapter05Review.divergence MolecularDynamics.Chapter05Review.modifiedField
+    change LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)
+      (fderiv ℝ (f+(h^r) • fr) z).toLinearMap=_
+    rw [((hf z).hasFDerivAt.add ((hfr z).hasFDerivAt.const_smul (h^r))).fderiv]
+    change LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)
+      ((fderiv ℝ f z).toLinearMap+(h^r) • (fderiv ℝ fr z).toLinearMap)=_
+    simp only [map_add,map_smul,smul_eq_mul]
+  have hl : MolecularDynamics.Chapter05Review.lie (MolecularDynamics.Chapter05Review.modifiedField f fr h r) u z=
+      MolecularDynamics.Chapter05Review.lie f u z+(h^r)*MolecularDynamics.Chapter05Review.lie fr u z := by
+    simp [MolecularDynamics.Chapter05Review.lie,MolecularDynamics.Chapter05Review.modifiedField,
+      map_add,map_smul,smul_eq_mul]
+  rw [hd,hl]
+  ring
