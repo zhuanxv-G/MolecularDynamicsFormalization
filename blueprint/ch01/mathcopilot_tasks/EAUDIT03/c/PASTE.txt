@@ -1,0 +1,71 @@
+先A逐字审校，再C只读完整语义审计；检查真实对象/域/量词/全部结论及EXTRA，勿修改工程或补证明。
+必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT03_review.json，对象含batch=EAUDIT03、input_sha256、items；回显下列哈希。已有文件共享输入相同则按source_id追加合并，版本冲突则报告。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。
+原PDF页映射=[32]；原书数学判断保留疑误。最后仅报告实际文件路径。
+input_sha256：
+{
+  "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+  "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+  "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+  "EAUDIT03c_materials": "fd8eb8f88fca3426a91af455a8213dfe40d098483c6b49f7891508bcfcb8cc9b",
+  "EAUDIT03c_PAGES.pdf": "f241851b617f12fe99382a115987a3e6022d875b434c0fc319227147497d2d08"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.1.1-LengthBond",
+  "kind": "definition",
+  "label": null,
+  "section": "1.1.1",
+  "printed_page": "9",
+  "pdf_page": "32",
+  "statement_latex": "Because they often do not need to be allowed to break during simulation and are very strong compared to other potential terms, chemical bonds such as the covalent $\\mathrm H_2^+$ bond described above are sometimes treated as springs with given rest-length:\n\\[\\varphi_{ij}^{\\mathrm{len}}(r_{ij})=\\frac{k_{ij}^{\\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\\qquad r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|.\\]",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "$r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|$；Lean pairDistance；$k>0$，$r_0$静长。"
+  ],
+  "review_status": "CORRECTED",
+  "issues": [],
+  "lean_decl": "MD.Ch01.lengthBond",
+  "extra_assumptions": [
+    "[EXTRA] EAUDIT03保留原径向剖面为lengthBondRadial；主定义以真实三维粒子位置为参数，rᵢⱼ=‖qᵢ−qⱼ‖代入原弹簧能。"
+  ],
+  "repair_log": [
+    {
+      "stage": "EAUDIT03_LOCAL_PAGE_RECHECK",
+      "timestamp": "2026-10-13T19:56:14.250068",
+      "before_sha256": "b1b953df47ebd7a1a71f2ef52caeb2c7a3823a5f2a5b8c3525ca131cd7ee153d",
+      "after_sha256": "c9ab6013c5df63a1d7377e4afe01d2ea4a6bd5e719a37c88f4b0e2f705d43b6d",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "raw_return": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+      "raw_sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+      "reason": "原PDF31–34逐页视觉核对；长度键删除原多出的the；两条签名补全部曲率/粒子距离；两条补真实依赖；LJ经验语义待导师。"
+    }
+  ],
+  "old_ids": [
+    "CH01-017",
+    "CH01-018"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 当前完整Lean
+```lean
+def lengthBond (k r₀ : ℝ) (qᵢ qⱼ : V3) := k / 2 * (‖qᵢ-qⱼ‖-r₀)^2
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MD.Ch01.lengthBond
+```lean
+def lengthBond (k r₀ : ℝ) (qᵢ qⱼ : V3) := k / 2 * (‖qᵢ-qⱼ‖-r₀)^2
+```

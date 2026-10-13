@@ -1,0 +1,67 @@
+先A逐字审校，再C只读完整语义审计；检查真实对象/域/量词/全部结论及EXTRA，勿修改工程或补证明。
+必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT03_review.json，对象含batch=EAUDIT03、input_sha256、items；回显下列哈希。已有文件共享输入相同则按source_id追加合并，版本冲突则报告。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。
+原PDF页映射=[31]；原书数学判断保留疑误。最后仅报告实际文件路径。
+input_sha256：
+{
+  "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+  "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+  "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+  "EAUDIT03b_materials": "d8267c72a4d0476583ada7fac0f36561041d14bc7477f72ca4e9f2fc029d877d",
+  "EAUDIT03b_PAGES.pdf": "b2738dbcef27e46cc1d969f980e6a2bb57a80ca855e138de2c3d654d8355e868"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.1.1-MorseMinimum",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.1.1",
+  "printed_page": "8",
+  "pdf_page": "31",
+  "statement_latex": "(See Fig. 1.5.) $r_e$ is the location of the minimum, $D$ gives the well depth, and $a$ is a shape parameter that can be used to control the curvature at the minimum.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "a controls curvature为定性形状参数说明，合并为Morse定义背景；原页无二阶导数公式，不凭计算添加原文公式。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.morse_minimum",
+  "extra_assumptions": [
+    "D,a,rₑ正；well depth解释为无穷远极限减最小值。",
+    "[EXTRA] EAUDIT03补原曲率子句的实际展开φ″(rₑ)=2Da²，并表达固定D>0时正a增大曲率严格增大；公式为形式化展开，不回填成教材原句。"
+  ],
+  "repair_log": [
+    {
+      "stage": "EAUDIT03_LOCAL_PAGE_RECHECK",
+      "timestamp": "2026-10-13T19:56:14.250068",
+      "before_sha256": "76f09cbc4cd011f5336d8919582679d28fca6a28ed647828dcb4e266b38a6428",
+      "after_sha256": "76f09cbc4cd011f5336d8919582679d28fca6a28ed647828dcb4e266b38a6428",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+      "raw_sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+      "reason": "原PDF31–34逐页视觉核对；长度键删除原多出的the；两条签名补全部曲率/粒子距离；两条补真实依赖；LJ经验语义待导师。"
+    }
+  ],
+  "old_ids": [
+    "CH01-016"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 当前完整Lean
+```lean
+theorem morse_minimum :
+  ∀ D a rₑ : ℝ, 0 < D → 0 < a → 0 < rₑ →
+    (∀ r > 0, 0 ≤ morsePotential D a rₑ r) ∧
+    morsePotential D a rₑ rₑ = 0 ∧ Tendsto (morsePotential D a rₑ) atTop (𝓝 D) ∧
+    deriv (deriv (morsePotential D a rₑ)) rₑ = 2*D*a^2 ∧
+    (∀ a₁ a₂ : ℝ, 0 < a₁ → a₁ < a₂ →
+      deriv (deriv (morsePotential D a₁ rₑ)) rₑ < deriv (deriv (morsePotential D a₂ rₑ)) rₑ)
+```
+### 实际依赖 MD.Ch01.morsePotential
+```lean
+def morsePotential (D a rₑ r : ℝ) := D * (1 - Real.exp (-a * (r-rₑ)))^2
+```

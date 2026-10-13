@@ -1,0 +1,27 @@
+{
+  "eaudit": "EAUDIT03",
+  "source_id": "MD-1.1.1-MorseMinimum",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+    "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+    "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+    "EAUDIT03b_materials": "d8267c72a4d0476583ada7fac0f36561041d14bc7477f72ca4e9f2fc029d877d",
+    "EAUDIT03b_PAGES.pdf": "b2738dbcef27e46cc1d969f980e6a2bb57a80ca855e138de2c3d654d8355e868"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    31
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "1234ce9f17a4b8e9da9baeb44fe53e217ae405237cb23ea5cbf3dc9f10772309",
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "morsePotential",
+      "file_sha256": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+      "excerpt_sha256": "69f3f1b2e57792d4b8e571938af9ac343007494a69e059c2f3cc842bbb78d7ee"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT03_review.json",
+  "total_task_bytes": 85600
+}

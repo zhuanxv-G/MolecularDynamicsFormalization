@@ -49,7 +49,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d42ffb3b09f6a38dba4cd6ed88a79c7b5c434d0d091cbac0599d1b1e186a14d0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -107,7 +107,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "f612fc316f7d92b90d51925a4517af0a0ae4a8f1ac8553260f8feffee11b1aff",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -162,7 +162,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "7c8d21c4f7ce5a11c3a06a846aff4dc1c68af07b31de30905e9bb69d08daa2a9",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -204,7 +204,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
+      "website_audit": "待复审 / EAUDIT03",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -215,7 +215,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "14a629971804bc42ff3c6e5d969ff08795c915c3ce9f86db6b1754bc3a299965",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -263,7 +263,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "69f3f1b2e57792d4b8e571938af9ac343007494a69e059c2f3cc842bbb78d7ee",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -282,7 +282,7 @@
     "MD-1.1.1-MorseMinimum": {
       "lean_decl": "MD.Ch01.morse_minimum",
       "verdict": "PASS",
-      "explanation": "最小值和井深的全部数学结论已保留；a的定性参数解释合并在context_notation，对照表单独列明，不伪造曲率原文公式。",
+      "explanation": "EAUDIT03本地预审：完整最小值、阱深及实际二阶曲率2Da²和固定D的正a严格单调性。",
       "counterexample": null,
       "suggested_fix": "三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。",
       "correspondence": [
@@ -305,13 +305,18 @@
           "source": "原文未显式量化的技术资格",
           "lean": "D,a,rₑ正；well depth解释为无穷远极限减最小值。",
           "note": "[EXTRA]"
+        },
+        {
+          "source": "网站FAIL指出全部曲率/实际粒子距离缺项",
+          "lean": "MD.Ch01.morse_minimum",
+          "note": "完整签名补齐；新增计算明确EXTRA，不回填成原书句子；网站复审尚未验证"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 3,
       "proof_status": "placeholder",
-      "website_audit": "FAIL（绑定版本 09ff185182a8）",
-      "missing": "三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。",
+      "website_audit": "待复审 / EAUDIT03",
+      "missing": "原完整Morse最小值/阱深/实际二阶导数与曲率单调性尚有sorry；不恢复第1章长证明。",
       "checked": true,
       "direct_placeholder": true,
       "proof_stop_reason": "three_failed_attempts",
@@ -324,8 +329,8 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "signature_sha256": "a2294a6a45e9a7419e8bc86a142c5794a2076af2071ef4e6e45902d1520bfdf2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "7dadf76aa36348bfb5d4753ff19593fc2fdfb909c0186ebad7c9e6c1e78b1c10",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -344,7 +349,7 @@
     "MD-1.1.1-LengthBond": {
       "lean_decl": "MD.Ch01.lengthBond",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "EAUDIT03本地预审：真实V3三维EuclideanSpace，主定义实际代入两粒子距离；径向剖面辅助定义保留。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -357,12 +362,17 @@
           "source": "\\[\\varphi_{ij}^{\\mathrm{len}}(r_{ij})=\\frac{k_{ij}^{\\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\\qquad r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|.\\]",
           "lean": "MD.Ch01.lengthBond，完整展开陈述见上一行及第4段",
           "note": "一致"
+        },
+        {
+          "source": "网站FAIL指出全部曲率/实际粒子距离缺项",
+          "lean": "MD.Ch01.lengthBond",
+          "note": "完整签名补齐；新增计算明确EXTRA，不回填成原书句子；网站复审尚未验证"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "FAIL（绑定版本 09ff185182a8）",
+      "website_audit": "待复审 / EAUDIT03",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -372,8 +382,8 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "6dc1cbf5f5331ae35834577db64838fabe6be0c8deaf6bb503c58008f65890c6",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "d5a5e9fa38e5484f1a21f332abe704cd409e6de2b19e5890e7ea080e9ce76f53",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -423,7 +433,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "919b6add4a110f807000c50b2d29b67741b31fdee6b861ddc391f93f7faf2f43",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -471,7 +481,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "fe661b6bad850b9c0dd6b801add0345ee27c838ce6578d471ba4e72edf28cf71",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -519,7 +529,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "c59ecc0fa91ade5d874e80ef3f97928193bd26f8212127cea8b0cc3d03d4a91b",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -561,7 +571,7 @@
       "documented_priors": [],
       "proof_attempts": 3,
       "proof_status": "local_proof",
-      "website_audit": "FAIL（绑定版本 09ff185182a8）",
+      "website_audit": "待导师 / EAUDIT03（原返回FAIL保留）",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -574,7 +584,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "a54df37fd50ba09697d5aeb8f871996449b24346498eae4238ec618f30fb6144",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -611,7 +621,7 @@
       "documented_priors": [],
       "proof_attempts": 0,
       "proof_status": "definition",
-      "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
+      "website_audit": "待复审 / EAUDIT03",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
@@ -622,7 +632,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "52b91099ddd48b107a2b6e520de963b729bc69c43867ef7de9a64c6c104bb125",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -670,7 +680,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "c99bf55a6e57b945f6a8e304f44b235c6cf0a763db160d917d8a8cab01f7f35c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -713,7 +723,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "126ddf4c90c49f42cef51a781adcf940e4c1d22e13be9be5cc2146c0d61e5236",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -769,7 +779,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "2e3930687eb550ee87abfa8443816b2c0cfa18f7b4f0abe91f247ed90ec298a1",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -817,7 +827,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d27b7eed4005272ea7ad565b091134ab4cdae5f057ade28898476085cde62457",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -868,7 +878,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "e205c138e66f0f194f170f5ac749439eb113cf4628d6f9fb812cbb86faf67cd0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -928,7 +938,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "d932c5f5ca37d31eaf3ae07646dc058b169b5e8645c47a77920d2e7317847dcf",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -988,7 +998,7 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log"
     },
     "MD-1.2-EnergyConservation": {
       "lean_decl": "MD.Ch01.energy_conservation",
@@ -1037,7 +1047,7 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log"
     },
     "MD-1.3-NewtonEulerLagrange": {
       "lean_decl": "MD.Ch01.newton_iff_euler_lagrange",
@@ -1092,7 +1102,7 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log"
     },
     "MD-1.4-LegendreHamiltonian": {
       "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
@@ -1130,7 +1140,7 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "source_questions": [
         "若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。"
       ]
@@ -1182,7 +1192,7 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log"
     },
     "MD-1.2-NewtonCompact": {
       "lean_decl": "MD.Ch01.compactNewton",
@@ -1221,7 +1231,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "8a151b6d08e1dcf54a81eb6e37cc4f5d4a0c70974fe14ed3a0068ed089894eb2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -1269,7 +1279,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "cc1528b64168788fe6cc74e5a01fd1a0eb941ca19a083e56410a22665a16e8aa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -1317,7 +1327,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "36fd5fab4eec12dceb32579dd6e71c53ab91205e336ff309bcfde361b2d71fe5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -1365,7 +1375,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "2a72404f4a7daaaaec384f15625586a8dd1eaf4db3a8703f5078972fc6be343a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -1415,7 +1425,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "5f3cc22f225bd72c6107d3754e0fa2bd3b934d4d1ef1ca63cd4ad699e0f6c0e4",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -1477,7 +1487,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "fd873a2e83db51de11e8d05b470b5e74d2474acf19129a966bf20f5fa471444e",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -1532,7 +1542,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "5c422857804bd00c609a866f1999af61bce74ca798fd824794b6a186a234485a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -1580,7 +1590,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d577b1c49cbefd9974c120579caf6a2bf559987950854218d5e328d9cb5d2f23",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -1647,7 +1657,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "50a0eee424c06aa3aaf074f2eb2eb0d1d46bfa909e895c3a599979254970f59c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -1695,7 +1705,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "641c1d0411aadc0b3626ddbcb66f694076074b08516266c596507e95712b2427",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -1752,7 +1762,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "2ba089514613094c530f1baf44a9df9f2b048212d0ae1f0c1a6ec71ecd33934b",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -1810,7 +1820,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d073c5f6bc3743abc42e40d868513e00f94eeb4283caacadd8fdabe5a7e4de74",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -1875,7 +1885,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d844f266c9dadfd3edc5fb0953420de365fb2b7bacc83eb96bb08b4ad7573d05",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -1923,7 +1933,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -1979,7 +1989,7 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2029,7 +2039,7 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2085,7 +2095,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "80ba9bfdafb6ce32e8e31a4455aee8eac961de0c2ee3d59347cfe5b97d07b0f4",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2133,7 +2143,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "3358b59456367c6d5b6e6fb83ec1d77f3189382a11f99b725d6a94f23b135003",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -2195,7 +2205,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "a450ef3c6930ce3f7c3a4574cad99ae52b07658e332a2b72f5ef49665351a703",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2245,7 +2255,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "d4374a73f13763ab7bc20eb390d3b4b5f69969cd233377d5b7d4fdfe3a54984a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2296,7 +2306,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "c22f176d7814c340bf356c062250e3dbbb041be67e53f86c64e1091363abe1e2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2346,7 +2356,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "49acf65ae08367a0cbf6ddbe868826b11d6f6dcf201d5c94fc3e9647a7b14733",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2389,7 +2399,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "12b75b736185d7b5a1308a7bf3e350fcbf4db3df70f54c76d883f8853a5792a1",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2444,7 +2454,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "48f0743912bc342304d45a32c4dbed24983db86fc10dae1d9706709a7ab3bae4",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2494,7 +2504,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "ab85043a046750bbd284aa1a6e93956dc6551b6e73c38e954689420e224ca8fa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2544,7 +2554,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "7ea8154dad2e317dbddab71b20dca89cd20f62c9fcaf8b71cdd7d6158f84cb15",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -2592,7 +2602,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d204a699974456eb9ec95b244fee306ff7f9b405c186adcca42ad8d1e49adee9",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2640,7 +2650,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "edddadfd1b5441375cba553b5e182764b0096cb2cccc4a7641119b17cd1ec5fa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2702,7 +2712,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "4262397bd20d756f26764f5318bd4df4ba0297b1cfe3a689c4048b24e13e43b5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2750,7 +2760,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "776b426f44b6b4ad600a18fcb478090b26fd7b90e0d4f7baa3e28d944814e25c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -2807,7 +2817,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "ff84311253515b59f80c74ba0da7985d0d325a4d36809c93b7f5f6d68f286578",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2864,7 +2874,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "80ffe19bcdde4581a1c74c0508767eef524420ae1ac489745b42fb893b31e5b9",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2916,7 +2926,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "c9a3b1f43c8f58ecc707375bb9b1e81aa72e5d4c07632ddb9683a8206c968d57",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2966,7 +2976,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "fb900b26924a18d46060d5875605027bc4a3322b0dc9f23a75c30ec87e57fb4c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3011,7 +3021,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "10db090c14a36cee754816add2c96465c4fb221685c489d463298e1bdbff5929",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3063,7 +3073,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "d87fec693d9510335030c79e0c82208a53049a95c987ecb781c5f5310bbc4b9c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3122,7 +3132,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "0edd0b6555c6f14aa6b2d10577b1ac64d85a30d161d09d650f2a6bf7f7cbeac5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3174,7 +3184,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "7584b8d18fcd6dbfd6ba769c57e289669bb218ca0f3b71e8a1089392041a83f2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3235,7 +3245,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "63b284f743535a2234c249a20fdbd7f70717696366f587013b79502b212fbe0f",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3280,7 +3290,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "00c678b364325008ccae73fb2a1c722cd649c6a1129e6166ae3b413936465eff",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3323,7 +3333,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "a4f616ae5b6d421f4321b2ee6d4aa3ba1ac4ea50b4926a11bb4bbc77b5405701",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3386,7 +3396,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "3723211145a5dbab95d41c2d9ac02d2da1a214bf26040615e96c441de16f67ab",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3431,7 +3441,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "066fd4d97d6e409f1154855420d95458472725b59242d9711f87e0d68e972964",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3481,7 +3491,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "d43c3215bd604a58ab74a73418f766ebf14eca2c8ce9ccc5215e781907157abc",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -3524,7 +3534,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "5d713cf1e588029238a91fe47d67943454908227b194de4e9c468a66a6517201",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3574,7 +3584,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "35cdcc81e66b0ceed46f77d1b18b19defc050655639648123c59a7cb9544afee",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3624,7 +3634,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "dcc18b9ce744fc7847c4eddc34d66a2114e29da6a819b472fca69aa1f7d2d99c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3674,7 +3684,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "c59b3f04e695215296d3562c18d3cff1f9f0a155be77069341b5b1e9255b7d0c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3724,7 +3734,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "2f1f7de480ab7a320345d2398387ca945af24d9587452346b2335b20d67f69b5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3772,7 +3782,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "5b2fe00e0e32e32594cd86bc65e0bb4fe295aefe49ec5d43c35a6652207b7f52",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3829,7 +3839,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "b736f12cb9a0c91f105f04a31bb1fad390242ec28c4d296e0749dd6e2047af80",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3877,7 +3887,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "a13c58d8970ebd9cacf1340729b6262f1cb76a8a1a646f64f157c96dac118be0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3927,7 +3937,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "488418347167cc5e893bf82d39a86bf3210b6a11326cae715b33deab431f270c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3977,7 +3987,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "6ca2dcc15d95aaf419a6352ad4677078adc1c2565c9dcef76f08c01db6e33561",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4027,7 +4037,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "b67a95e3dd2bd903eb6e8dfce22b7f39b01784aa4c22faa59be6e7912214ac92",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4070,7 +4080,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "b0f61f4316e8686907db43bccab9f55c4b6db91541663ddc402a185e02c74b39",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4122,7 +4132,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "a25ea00a01329ea3cff5f79fb6440cf8fc0602776f273a638116d4d562ef7842",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -4174,7 +4184,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "27a825a57883a095395c7b934ed6f4141224599f072b92897a92ed4619ab4749",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4228,7 +4238,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "292f63a4a0d94ea8b112efca38fc15956e0509df47d115823a074a83e0ae1da0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4273,7 +4283,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "141a89e2511dc27eace19b732a1d39e8ea93bbd19ec1282c63915e2f75a01fef",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4320,7 +4330,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "8210a7182751f099cf927b6e6000849d35cfe5692d0ed248167b56d276fcf730",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4372,7 +4382,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "9e395ce3adf80218f8f296b3c61191d5be6a93d353cd69a4a5d87b9c3a5a8ba1",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4417,7 +4427,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "2b31f8c5bbdaf84838f4b989287b6bf3a2bd10ebab44f610d279990588e5e960",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4477,7 +4487,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "7cf7fcae847fc852f5d8a3ca5873ef9e6b6bbd4ccb9d7bf312aaf7dce7d48336",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4530,7 +4540,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "bdda3cb8c61ab23e0a00944c089fe5be2be10adcb3a3a25ff7e0bf3172dc725a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4580,7 +4590,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "06ab4a57f9709625a41dab12ca4132adf2070af3b10c4d1616f369179fe4cebe",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4635,7 +4645,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "9133a27389b16c1e021593df7203554ce713574c87b018f57275959139c69585",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4683,7 +4693,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "a7cbfba9e102dfb0c19186aedd6ea2f4a56d98b0af23d5ff94cf978c1462f626",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4731,7 +4741,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "8e7dabd7162e165c02e06ca37d62f6389e0994d7fc2e39cc13f5320b42ed0d62",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -4783,7 +4793,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "8889033bfeeb03c2a087cd0924e4ce598e79cbb1fba715090ed84a22c1182857",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4843,7 +4853,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "9595dc9ac6090cbcd9df50e0c03b268fbe43d76f5684d786f0d93eef593200be",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4891,7 +4901,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4934,7 +4944,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "proof_failures": 1,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "external_review": {
@@ -4984,7 +4994,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -5032,7 +5042,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -5082,7 +5092,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -5125,7 +5135,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -5184,7 +5194,7 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "proof_stop_reason": "three_failed_attempts",
       "proof_failures": 3,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
@@ -5230,7 +5240,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -5274,7 +5284,7 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "source_questions": [
         "对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。"
       ],
@@ -5325,7 +5335,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5371,7 +5381,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -5414,7 +5424,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5459,7 +5469,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "proof_failures": 2,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "external_review": {
@@ -5507,7 +5517,7 @@
         "Quot.sound"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5555,7 +5565,7 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5603,7 +5613,7 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5658,7 +5668,7 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "source_questions": [
         "不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。"
       ],
@@ -5726,7 +5736,7 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "proof_failures": 2,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "external_review": {
@@ -5772,7 +5782,7 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "source_questions": [
         "局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。"
       ],
@@ -5834,7 +5844,7 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "proof_stop_reason": "missing_large_theory",
       "external_review": {
         "reported_verdict": "PASS",
@@ -5886,7 +5896,7 @@
         "Quot.sound"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "proof_stop_reason": "three_failed_attempts",
       "proof_failures": 3,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
@@ -5939,7 +5949,7 @@
         "Quot.sound"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5987,7 +5997,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "a1424278c96f14209f949c9bf5283c0ce106c0cd09fe1c9ab59f1c9e9b89d439",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6035,7 +6045,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "8ecfcc8e514861a9e595ae42f204cd13b14a1e7df4b05df03b2998cf715897fa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6090,7 +6100,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "e5f770dd43cbf8f1709b38d8969502f418537db8e874202ba2538e28428da17d",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6145,7 +6155,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "7eb95c56098bf26ccf9d8c283c92358e91005f987895f2c2f4e2563aaa82a0e8",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6210,7 +6220,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "30852325e4b4740d5979546aae4fd76e2f91c34a107f70325e9b13c2c4301e45",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -6260,7 +6270,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "912a483400c1d20ff375306a83ed30c736f6ab128e28c6d83b1bea011f25f3fc",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6307,7 +6317,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "4978f2b0879e4ff879a8feae7732fa39580efd2c1844ff9980b7fe17908e5ac8",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -6358,7 +6368,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "014f8a0c9bd208733d5e2eb8b1108250f274b4d8729f5a29be923ebae5646fa2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6413,7 +6423,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "417859f5938271eae37f67a791d4938799f2be3a2bef0047963ae7e7238abae3",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6463,7 +6473,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "ae398a605be574261cb71d961c6dd1721d44bd6ffd76f1acf301d858cf842948",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6530,7 +6540,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "fb69960d5eb865aec275bc6f869a1a1c0721bc91fba26125fa34e680ef6249da",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6575,7 +6585,7 @@
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "6d6a854ca3b5cf682a82aa55fb199c08d8a2e13aa6953266b5235af1f7ae31e0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6618,7 +6628,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "944dc17d687e3b2f437d424f20cac055feadf45c35170ac00b283c91a2c1d8d8",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -6668,7 +6678,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "b74f65429906510e4dd2e07a48842d3e0df115c79f15c13a45c2fbc75595a88c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6717,7 +6727,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "ea9645ff0cda2db0c6439cbbe76937f88ad178b6da4600adca70cd6692ce3719",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6770,7 +6780,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "34e9d710995eac86f326c4d564caa834eb61ae3f1b8aded8bf789c8e3db8a820",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6822,7 +6832,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "531503278d13a5715e5ae9d10a833daa55906758606f68df0eb6c9685e39d332",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6875,7 +6885,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "438069aac96d69c718610e36a9e82f0b54dc5a64c7fa3bca6a68e8e6384cfee5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6931,7 +6941,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "35ee9ba26a07fe69ec85e6030a2eceb5f66be3543165f3ab65d57e3be9bb1152",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -6986,7 +6996,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "95313b0a359c9f17a6463aa3ab039a28f0e1c299aba348caf32d9102c0e18020",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -7045,7 +7055,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "d1f80a5cd42bd35d4c33c163c9ec111b7a1309fc538e23d7ff33c942f0edf950",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -7095,7 +7105,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "461b57878face0a9b20cd3d8760a51f56fd8ef6a228c62f09bddfdae02f5f5ea",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -7145,7 +7155,7 @@
       ],
       "final_status": "incomplete",
       "signature_sha256": "84b2bbd8bf39ec1a24583dae4f84a7e04498c505f4b01d1546f402b738186e59",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -7203,7 +7213,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "86eed3b7aaf421fd3a4bf022cb5f0ae6b6ab3ebe0b7d63b2585ffdd45e150c2e",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -7258,7 +7268,7 @@
       ],
       "final_status": "self-contained",
       "signature_sha256": "46bb7832d6e5c152a0f779d8d437c44499c4ac9306c1275066ff764e0cd0a725",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT02-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",

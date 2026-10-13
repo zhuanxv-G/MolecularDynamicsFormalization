@@ -377,16 +377,28 @@
     "issues": [],
     "lean_decl": "MD.Ch01.multibodyPotential",
     "extra_assumptions": [
-      "按无序不同粒子组计数i<j<k<l；原文仅列成分未指定求和计数约定。"
+      "按无序不同粒子组计数i<j<k<l；原文仅列成分未指定求和计数约定。",
+      "[EXTRA] EAUDIT03补真实V3=Position 3=EuclideanSpace ℝ(Fin 3)及求和依赖，仅补材料，不改多体定义。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-13T19:56:14.250068",
+        "before_sha256": "a8936eba6c279b25597c34ec454fe8cd4802cf9a2e2895d10442f6fe12813c23",
+        "after_sha256": "a8936eba6c279b25597c34ec454fe8cd4802cf9a2e2895d10442f6fe12813c23",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+        "raw_sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+        "reason": "原PDF31–34逐页视觉核对；长度键删除原多出的the；两条签名补全部曲率/粒子距离；两条补真实依赖；LJ经验语义待导师。"
+      }
+    ],
     "old_ids": [
       "CH01-011",
       "CH01-012",
       "CH01-013",
       "CH01-014"
     ],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-1.1.1-Morse",
@@ -428,13 +440,25 @@
     "issues": [],
     "lean_decl": "MD.Ch01.morse_minimum",
     "extra_assumptions": [
-      "D,a,rₑ正；well depth解释为无穷远极限减最小值。"
+      "D,a,rₑ正；well depth解释为无穷远极限减最小值。",
+      "[EXTRA] EAUDIT03补原曲率子句的实际展开φ″(rₑ)=2Da²，并表达固定D>0时正a增大曲率严格增大；公式为形式化展开，不回填成教材原句。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-13T19:56:14.250068",
+        "before_sha256": "76f09cbc4cd011f5336d8919582679d28fca6a28ed647828dcb4e266b38a6428",
+        "after_sha256": "76f09cbc4cd011f5336d8919582679d28fca6a28ed647828dcb4e266b38a6428",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+        "raw_sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+        "reason": "原PDF31–34逐页视觉核对；长度键删除原多出的the；两条签名补全部曲率/粒子距离；两条补真实依赖；LJ经验语义待导师。"
+      }
+    ],
     "old_ids": [
       "CH01-016"
     ],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-1.1.1-LengthBond",
@@ -443,22 +467,37 @@
     "section": "1.1.1",
     "printed_page": "9",
     "pdf_page": "32",
-    "statement_latex": "Because they often do not need to be allowed to break during simulation and are very strong compared to the other potential terms, chemical bonds such as the covalent $\\mathrm H_2^+$ bond described above are sometimes treated as springs with given rest-length:\n\\[\\varphi_{ij}^{\\mathrm{len}}(r_{ij})=\\frac{k_{ij}^{\\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\\qquad r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|.\\]",
+    "statement_latex": "Because they often do not need to be allowed to break during simulation and are very strong compared to other potential terms, chemical bonds such as the covalent $\\mathrm H_2^+$ bond described above are sometimes treated as springs with given rest-length:\n\\[\\varphi_{ij}^{\\mathrm{len}}(r_{ij})=\\frac{k_{ij}^{\\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\\qquad r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|.\\]",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
       "$r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|$；Lean pairDistance；$k>0$，$r_0$静长。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.lengthBond",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] EAUDIT03保留原径向剖面为lengthBondRadial；主定义以真实三维粒子位置为参数，rᵢⱼ=‖qᵢ−qⱼ‖代入原弹簧能。"
+    ],
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-13T19:56:14.250068",
+        "before_sha256": "b1b953df47ebd7a1a71f2ef52caeb2c7a3823a5f2a5b8c3525ca131cd7ee153d",
+        "after_sha256": "c9ab6013c5df63a1d7377e4afe01d2ea4a6bd5e719a37c88f4b0e2f705d43b6d",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+        "raw_sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+        "reason": "原PDF31–34逐页视觉核对；长度键删除原多出的the；两条签名补全部曲率/粒子距离；两条补真实依赖；LJ经验语义待导师。"
+      }
+    ],
     "old_ids": [
       "CH01-017",
       "CH01-018"
     ],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-1.1.1-Dispersion",
@@ -540,17 +579,29 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
-      "数学结论是原文r→0极限；长模拟保持分离为定性经验，不升级为有限能量全局无碰撞定理。"
+      "数学结论是原文r→0极限；长模拟保持分离为定性经验，不升级为有限能量全局无碰撞定理。",
+      "EAUDIT03：精确LJ单侧极限保留；“long simulations/well separated/rarely”尚无算法、时间段和概率频率语义，经验叙述覆盖未完成，供导师裁定，不能推为无条件全局无碰撞。"
     ],
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.lj_repulsion",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-13T19:56:14.250068",
+        "before_sha256": "c79e4ecbce227b1e1ba1a2c3589836600e896eb554894c67e72cb8b5dc910470",
+        "after_sha256": "367f88bf65ff447209275135aa835e37361c118390f50ad776491168223c5082",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
+        "raw_sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+        "reason": "原PDF31–34逐页视觉核对；长度键删除原多出的the；两条签名补全部曲率/粒子距离；两条补真实依赖；LJ经验语义待导师。"
+      }
+    ],
     "old_ids": [
       "CH01-022"
     ],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-1.1.1-HeterogeneousLJ",
@@ -566,12 +617,25 @@
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.heterogeneousLJ",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] EAUDIT03补真实V3和pairDistance=‖qᵢ−qⱼ‖；总函数公式对应域为pairDistance>0，零距离的总化取值不解释为物理势。"
+    ],
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-13T19:56:14.250068",
+        "before_sha256": "e24cbaf865c2e7d34c0ff16ef534a6d872225dc62539851a1ae3efb243732098",
+        "after_sha256": "e24cbaf865c2e7d34c0ff16ef534a6d872225dc62539851a1ae3efb243732098",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch01/mathcopilot_results/BATCH04_result.json",
+        "raw_sha256": "5941619e97b3355cd8f77b1243fca72cc469320afd27458cc8129f92346bdf1e",
+        "reason": "原PDF31–34逐页视觉核对；长度键删除原多出的the；两条签名补全部曲率/粒子距离；两条补真实依赖；LJ经验语义待导师。"
+      }
+    ],
     "old_ids": [
       "CH01-023"
     ],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-1.1.2-Coulomb",

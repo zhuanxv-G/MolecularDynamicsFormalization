@@ -1,0 +1,78 @@
+先A逐字审校，再C只读完整语义审计；检查真实对象/域/量词/全部结论及EXTRA，勿修改工程或补证明。
+必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT03_review.json，对象含batch=EAUDIT03、input_sha256、items；回显下列哈希。已有文件共享输入相同则按source_id追加合并，版本冲突则报告。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。
+原PDF页映射=[34]；原书数学判断保留疑误。最后仅报告实际文件路径。
+input_sha256：
+{
+  "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+  "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+  "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+  "EAUDIT03d_materials": "32d088386129cbe7694e6329d68117390aca48beb6fee44ca0a760ab1513a07f",
+  "EAUDIT03d_PAGES.pdf": "690e407c1bd2342d7389783a68cbfa80d4be512f59d65fba945b0702245d908a"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.1.1-HeterogeneousLJ",
+  "kind": "definition",
+  "label": null,
+  "section": "1.1.1",
+  "printed_page": "11",
+  "pdf_page": "34",
+  "statement_latex": "When there are many atoms of different types, the parameters of the potential will depend on this, so we obtain contributions to the total potential energy of the form\n\\[\\varphi_{ij}^{\\mathrm{LJ}}(r_{ij})=4\\epsilon_{ij}\\left[\\left(\\frac{\\sigma_{ij}}{r_{ij}}\\right)^{12}-\\left(\\frac{\\sigma_{ij}}{r_{ij}}\\right)^6\\right],\\]\nwhere $r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|$.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.heterogeneousLJ",
+  "extra_assumptions": [
+    "[EXTRA] EAUDIT03补真实V3和pairDistance=‖qᵢ−qⱼ‖；总函数公式对应域为pairDistance>0，零距离的总化取值不解释为物理势。"
+  ],
+  "repair_log": [
+    {
+      "stage": "EAUDIT03_LOCAL_PAGE_RECHECK",
+      "timestamp": "2026-10-13T19:56:14.250068",
+      "before_sha256": "e24cbaf865c2e7d34c0ff16ef534a6d872225dc62539851a1ae3efb243732098",
+      "after_sha256": "e24cbaf865c2e7d34c0ff16ef534a6d872225dc62539851a1ae3efb243732098",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch01/mathcopilot_results/BATCH04_result.json",
+      "raw_sha256": "5941619e97b3355cd8f77b1243fca72cc469320afd27458cc8129f92346bdf1e",
+      "reason": "原PDF31–34逐页视觉核对；长度键删除原多出的the；两条签名补全部曲率/粒子距离；两条补真实依赖；LJ经验语义待导师。"
+    }
+  ],
+  "old_ids": [
+    "CH01-023"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 当前完整Lean
+```lean
+def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
+    (q : Fin N → V3) (i j : Fin N) :=
+  lennardJonesPotential (ε i j) (σ i j) (pairDistance (q i) (q j))
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MD.Ch01.heterogeneousLJ
+```lean
+def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
+    (q : Fin N → V3) (i j : Fin N) :=
+  lennardJonesPotential (ε i j) (σ i j) (pairDistance (q i) (q j))
+```
+### 实际依赖 MD.Ch01.lennardJonesPotential
+```lean
+def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.pairDistance
+```lean
+def pairDistance (qᵢ qⱼ : V3) := ‖qᵢ-qⱼ‖
+```

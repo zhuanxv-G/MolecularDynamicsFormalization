@@ -56,6 +56,8 @@ def display(w):
         return '待网站审计（' + '; '.join(b['reasons']) + '）'
     if w.get('repair', {}).get('status') == 'awaiting_reaudit':
         return '待复审 / ' + w['repair']['eaudit']
+    if w.get('repair', {}).get('status') == 'awaiting_mentor':
+        return '待导师 / ' + w['repair']['eaudit'] + '（原返回' + w['returned_audit']['verdict'] + '保留）'
     v = w['audit']['verdict']
     return ('网站PASS' if v == 'PASS' else v) + '（绑定版本 ' + b['version'] + '）'
 
@@ -176,6 +178,8 @@ def integrate(ch):
     for w in output.values():
         if not w['binding']['bound'] or w.get('repair', {}).get('status') == 'awaiting_reaudit':
             counts['awaiting_reaudit'] += 1
+        elif w.get('repair', {}).get('status') == 'awaiting_mentor':
+            counts['awaiting_mentor'] += 1
         elif w['audit']['verdict'] == 'PASS':
             counts['website_pass'] += 1
         elif w['audit']['verdict'] == 'FAIL':
@@ -184,7 +188,9 @@ def integrate(ch):
             counts['awaiting_mentor'] += 1
         else:
             counts['awaiting_reaudit'] += 1
-        if w['audit']['verdict'] == 'NEEDS_HUMAN':
+        if w.get('repair', {}).get('status') == 'awaiting_mentor':
+            human.append('- ' + w['source_id'] + '：' + w['repair']['mentor_question'])
+        elif w['audit']['verdict'] == 'NEEDS_HUMAN':
             fix = w['audit'].get('suggested_fix') or ''
             text = QUESTIONS.get(w['source_id'], fix.replace('\n', ' '))
             if w.get('repair', {}).get('status') == 'awaiting_reaudit':

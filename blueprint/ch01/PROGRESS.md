@@ -4,7 +4,7 @@
 下一步：按CURRENT_STATE顶部接续；全章已覆盖，终检和推送完成后等待用户提交INDEX.md中的网站批次。
 当前141条；本地PASS 124；网站返回141（136已绑定，旧试点5条待EAUDIT01）；任务包23批，每批≤8条、每文件<40KB。
 
-网站整合汇总：网站PASS 44 / 修复中 24 / 待导师 8 / 待复审 65。
+网站整合汇总：网站PASS 44 / 修复中 21 / 待导师 9 / 待复审 67。
 ## 逐条进度
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明 |
@@ -17,15 +17,15 @@
 | MD-1.1-Schrodinger | CORRECTED/原页已核 | 陈述已写；已编译/公理已核 | PASS | 待复审 / EAUDIT02 | definition |
 | MD-1.1-NewtonModel | CORRECTED/原页已核 | 陈述已写；已编译/公理已核 | PASS | 待复审 / EAUDIT02 | definition |
 | MD-1.1-HardSphere | APPROVED/原页已核 | 陈述已写；已编译/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT02 | definition |
-| MD-1.1.1-Multibody | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.1.1-Multibody | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待复审 / EAUDIT03 | definition |
 | MD-1.1.1-Morse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
-| MD-1.1.1-MorseMinimum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | sorry / 三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。（失败3次，时间盒已止） |
-| MD-1.1.1-LengthBond | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.1.1-MorseMinimum | DRAFT/原页已核 | 陈述已修；已编译/公理已核 | PASS | 待复审 / EAUDIT03 | sorry / 三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。（失败3次，时间盒已止） |
+| MD-1.1.1-LengthBond | CORRECTED/原页已核 | 陈述已修；已编译/公理已核 | PASS | 待复审 / EAUDIT03 | definition |
 | MD-1.1.1-Dispersion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
 | MD-1.1.1-Buckingham | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
 | MD-1.1.1-LennardJones | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
-| MD-1.1.1-LJRepulsion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | local_proof |
-| MD-1.1.1-HeterogeneousLJ | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.1.1-LJRepulsion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待导师 / EAUDIT03（原返回FAIL保留） | local_proof |
+| MD-1.1.1-HeterogeneousLJ | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待复审 / EAUDIT03 | definition |
 | MD-1.1.2-Coulomb | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
 | MD-1.1.2-Cutoff | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
 | MD-1.1.2-Yukawa | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
@@ -436,3 +436,9 @@ BATCH02–23共136条，原返回PASS 44 / NEEDS_HUMAN 66 / FAIL 26。缺输入�
 ## 2026-10-13 EAUDIT02检查点
 
 §1.1两个FAIL修签名及Schrodinger补材料完成；原页、本地预审、最终单文件、完整check和141条公理通过；三份compact最大113282字节，网站复审待提交。其余CORRECTED未重新核页，不自动合并；导师未裁定。
+
+EAUDIT03当前落盘：Morse曲率/长度键粒子距离已补，单文件编译通过；4份compact预算与裁页逐像素通过；完整check运行中，网站复审未提交，LJ经验语义待导师。
+
+## 2026-10-13 EAUDIT03检查点
+
+§1.1.1两条FAIL补齐完整签名、两条缺材料补实际定义；原页31–34、单文件、全工程、141条公理及4份compact通过。Morse仍incomplete；LJ经验数学选择待导师；网站复审未提交。

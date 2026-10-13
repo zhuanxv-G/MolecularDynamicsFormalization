@@ -1,0 +1,51 @@
+{
+  "eaudit": "EAUDIT03",
+  "source_id": "MD-1.1.1-HeterogeneousLJ",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+    "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+    "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+    "EAUDIT03d_materials": "32d088386129cbe7694e6329d68117390aca48beb6fee44ca0a760ab1513a07f",
+    "EAUDIT03d_PAGES.pdf": "690e407c1bd2342d7389783a68cbfa80d4be512f59d65fba945b0702245d908a"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    34
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "54ee165b73abc6f77bbccbab56ecacec168bafde0261d945eb7a725ec3ce043f",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "V3",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "630b28f8663e80b13763ae51544e5ef63ff46b6c99936a04ab13fd586892a08c"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "heterogeneousLJ",
+      "file_sha256": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+      "excerpt_sha256": "52b91099ddd48b107a2b6e520de963b729bc69c43867ef7de9a64c6c104bb125"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "lennardJonesPotential",
+      "file_sha256": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+      "excerpt_sha256": "c59ecc0fa91ade5d874e80ef3f97928193bd26f8212127cea8b0cc3d03d4a91b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "pairDistance",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "0f8d667de4b6d0e3b2bef25b84edfb3328b495785048bd9007031434c477d2d7"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT03_review.json",
+  "total_task_bytes": 138868
+}

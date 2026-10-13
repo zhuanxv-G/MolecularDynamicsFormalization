@@ -5,8 +5,8 @@
 ## (i) 材料缺失：补材料后复审
 
 - MD-1.1-Schrodinger：补齐与附件Ch01.lean同一版本的ReviewDefinitions.lean、相关导入及MANIFEST.json，展开上述五个辅助定义。确认secondPartial的方向、阶数和坐标顺序，并明确这是经典C2解谓词；若U_P仅在非碰撞域定义，应显式给出该域和时间域，调整量词范围后重新审计。 已补材料/修复并生成EAUDIT02，等待网站复审。
-- MD-1.1.1-Multibody：提供与附件 Ch01.lean 同版本的 ReviewDefinitions.lean、ReviewProofs.lean 及对应输入清单，核实 V3 的展开确为三维实欧氏空间；保持已注明的无序不同粒子组计数约定。
-- MD-1.1.1-HeterogeneousLJ：补充本批对应版本的真实依赖定义及输入清单，以核实 V3 的空间和范数、pairDistance 的具体表达式。若确为欧氏距离，应明确原文对应域为 pairDistance (q i) (q j)>0；Lean 实数除法在零处分母被全定义化，公式会返回0，不能将该值解释为教材在碰撞处的势能。可保留总函数实现，但应显式记录非碰撞有效域。
+- MD-1.1.1-Multibody：提供与附件 Ch01.lean 同版本的 ReviewDefinitions.lean、ReviewProofs.lean 及对应输入清单，核实 V3 的展开确为三维实欧氏空间；保持已注明的无序不同粒子组计数约定。 已补材料/修复并生成EAUDIT03，等待网站复审。
+- MD-1.1.1-HeterogeneousLJ：补充本批对应版本的真实依赖定义及输入清单，以核实 V3 的空间和范数、pairDistance 的具体表达式。若确为欧氏距离，应明确原文对应域为 pairDistance (q i) (q j)>0；Lean 实数除法在零处分母被全定义化，公式会返回0，不能将该值解释为教材在碰撞处的势能。可保留总函数实现，但应显式记录非碰撞有效域。 已补材料/修复并生成EAUDIT03，等待网站复审。
 - MD-1.1.2-AngleBond：补充同一输入快照中的V3及相关实例定义，核实三维欧氏内积和距离；明确qᵢ≠qⱼ、qⱼ≠qₖ的模型有效域。保留原书的向量方向，不擅加本段未明示的k>0条件。
 - MD-1.1.2-GayBerne：补充同一输入快照的上述辅助定义及V3的实例后重新展开审计；明确‖u₁‖=‖u₂‖=1、q₁≠q₂、根号及各分母的有效域。逐式核实εGB=ε1ε2、ε2=W(χ′)，不得直接采用含ε2²的其他版本。
 - MD-1.2-NewtonCompact：补齐与Ch01.lean同版本的Notation.lean、NBody.lean、LocalTrajectories.lean及MANIFEST.json。将势能在q(t)处可微或HasGradientAt作为模型适用资格，避免把总化梯度的默认零值解释为经典力；保留两个真实时间导数见证。
@@ -70,6 +70,7 @@
 
 ## (ii) 原文数学判断：供导师裁定
 
+- MD-1.1.1-LJRepulsion：经验句保留定性覆盖未完成，还是由导师指定算法、时间段及rarely概率语义后另立命题？选项：定性登记 / 指定数学模型。
 - MD-1.4-ConvexLegendre：Legendre变换采用扩展实数，还是在实值版本显式增加有限性条件？选项：EReal推广 / 实值加有界性。
 - MD-1.5.2-TorusDense：原句的稠密性限定为全整数无共振，还是改述为相应子环面上的稠密性？选项：全维加无共振 / 子环面版本。
 - MD-1.5.2-LocalActionAngleReduction：是否采用紧、连通、非空正则共同水平集上的作用角结论？选项：批准明确资格 / 保留字面疑误待定。

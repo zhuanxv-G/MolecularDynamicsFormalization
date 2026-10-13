@@ -1,0 +1,34 @@
+{
+  "source_ids": [
+    "MD-1.1.1-Multibody",
+    "MD-1.1.1-MorseMinimum",
+    "MD-1.1.1-LengthBond",
+    "MD-1.1.1-HeterogeneousLJ"
+  ],
+  "mentor_ids": [
+    "MD-1.1.1-LJRepulsion"
+  ],
+  "lean_sha256": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+  "source_sha256": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+  "old_signature_sha256": {
+    "MD-1.1.1-Multibody": "14a629971804bc42ff3c6e5d969ff08795c915c3ce9f86db6b1754bc3a299965",
+    "MD-1.1.1-MorseMinimum": "a2294a6a45e9a7419e8bc86a142c5794a2076af2071ef4e6e45902d1520bfdf2",
+    "MD-1.1.1-LengthBond": "6dc1cbf5f5331ae35834577db64838fabe6be0c8deaf6bb503c58008f65890c6",
+    "MD-1.1.1-HeterogeneousLJ": "52b91099ddd48b107a2b6e520de963b729bc69c43867ef7de9a64c6c104bb125"
+  },
+  "changed_source_fields": {
+    "MD-1.1.1-Multibody": [],
+    "MD-1.1.1-MorseMinimum": [],
+    "MD-1.1.1-LengthBond": [
+      "statement_latex"
+    ],
+    "MD-1.1.1-HeterogeneousLJ": [],
+    "MD-1.1.1-LJRepulsion": []
+  },
+  "raw_returns": {
+    "blueprint/ch01/mathcopilot_results/BATCH03_result.json": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
+    "blueprint/ch01/mathcopilot_results/BATCH04_result.json": "5941619e97b3355cd8f77b1243fca72cc469320afd27458cc8129f92346bdf1e"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT03/INDEX.md",
+  "website_reaudit": "not submitted"
+}

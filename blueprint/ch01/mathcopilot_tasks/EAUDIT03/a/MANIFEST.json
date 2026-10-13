@@ -1,0 +1,39 @@
+{
+  "eaudit": "EAUDIT03",
+  "source_id": "MD-1.1.1-Multibody",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+    "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+    "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+    "EAUDIT03a_materials": "301d2d551a6c4423ceab390698aed046f9ed93d471b43b549cc68dedaea72dec",
+    "EAUDIT03a_PAGES.pdf": "b2738dbcef27e46cc1d969f980e6a2bb57a80ca855e138de2c3d654d8355e868"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    31
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7107160a883fcab3d16c78833d5ed213e795fd1698291aae2d365a55b539d167",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "V3",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "630b28f8663e80b13763ae51544e5ef63ff46b6c99936a04ab13fd586892a08c"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "multibodyPotential",
+      "file_sha256": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+      "excerpt_sha256": "14a629971804bc42ff3c6e5d969ff08795c915c3ce9f86db6b1754bc3a299965"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT03_review.json",
+  "total_task_bytes": 87080
+}

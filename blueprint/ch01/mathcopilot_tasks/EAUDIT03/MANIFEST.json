@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT03",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+    "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+    "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT03a",
+      "source_id": "MD-1.1.1-Multibody",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT03/a",
+      "total_bytes": 87080,
+      "manifest_sha256": "9fa8ed2d3eb4a25055e4c39d24caef0f51fdacea2eddff5138022ca4cc092389"
+    },
+    {
+      "subtask": "EAUDIT03b",
+      "source_id": "MD-1.1.1-MorseMinimum",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT03/b",
+      "total_bytes": 85600,
+      "manifest_sha256": "388468d4d6433e14d010bd2353be6a68646ea116e83a7eef719990ae7ec30cf6"
+    },
+    {
+      "subtask": "EAUDIT03c",
+      "source_id": "MD-1.1.1-LengthBond",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT03/c",
+      "total_bytes": 149024,
+      "manifest_sha256": "4926e9689d1342f4cf26df19aa187988d6ce3bc894425fdb2ab4e8fd4781d553"
+    },
+    {
+      "subtask": "EAUDIT03d",
+      "source_id": "MD-1.1.1-HeterogeneousLJ",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT03/d",
+      "total_bytes": 138868,
+      "manifest_sha256": "9970d0370fbfcea44637995abe9c5f0d1c58edb02d86393a6439566f84c8c097"
+    }
+  ]
+}

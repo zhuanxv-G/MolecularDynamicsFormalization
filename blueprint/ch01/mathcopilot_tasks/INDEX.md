@@ -108,3 +108,7 @@ BATCH01旧compact是历史输入；优先提交[EAUDIT01/INDEX.md](EAUDIT01/INDE
 ## EAUDIT02：§1.1首批网站修复
 
 [三份compact及输出文件要求](EAUDIT02/INDEX.md)。本次修复优先提交此版本；BATCH02保留作历史绑定输入，不代表新签名已经网站PASS。
+
+## EAUDIT03：§1.1.1修复
+
+[4份compact与实际输出文件要求](EAUDIT03/INDEX.md)。历史BATCH03/04仍保持字节，不代表新签名网站PASS。

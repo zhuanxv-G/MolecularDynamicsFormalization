@@ -95,6 +95,9 @@ def binaryElasticSphereCollision (R₁ R₂ m₁ m₂ : ℝ)
   m₁ * ‖v₁‖^2 / 2 + m₂ * ‖v₂‖^2 / 2 =
     m₁ * ‖w₁‖^2 / 2 + m₂ * ‖w₂‖^2 / 2
 
+-- EAUDIT03: original radial profile retained as an auxiliary.
+def lengthBondRadial (k r₀ r : ℝ) := k / 2 * (r-r₀)^2
+
 /-- source_id: MD-1.5.3-Thm1.1 · Theorem 1.1 · printed p.32 / PDF p.55
 Original: A strong local minimum of a smooth potential yields a stable equilibrium.
 [EXTRA] hm: positive fixed diagonal masses, inherited from p.25 positive definiteness.
@@ -328,14 +331,17 @@ def morsePotential (D a rₑ r : ℝ) := D * (1 - Real.exp (-a * (r-rₑ)))^2
 theorem morse_minimum :
   ∀ D a rₑ : ℝ, 0 < D → 0 < a → 0 < rₑ →
     (∀ r > 0, 0 ≤ morsePotential D a rₑ r) ∧
-    morsePotential D a rₑ rₑ = 0 ∧ Tendsto (morsePotential D a rₑ) atTop (𝓝 D) := by
+    morsePotential D a rₑ rₑ = 0 ∧ Tendsto (morsePotential D a rₑ) atTop (𝓝 D) ∧
+    deriv (deriv (morsePotential D a rₑ)) rₑ = 2*D*a^2 ∧
+    (∀ a₁ a₂ : ℝ, 0 < a₁ → a₁ < a₂ →
+      deriv (deriv (morsePotential D a₁ rₑ)) rₑ < deriv (deriv (morsePotential D a₂ rₑ)) rₑ) := by
   sorry
 
 /-- source_id: MD-1.1.1-LengthBond · definition · printed p.9 / PDF p.32
 
 
 -/
-def lengthBond (k r₀ r : ℝ) := k / 2 * (r-r₀)^2
+def lengthBond (k r₀ : ℝ) (qᵢ qⱼ : V3) := k / 2 * (‖qᵢ-qⱼ‖-r₀)^2
 
 /-- source_id: MD-1.1.1-Dispersion · definition · printed p.10 / PDF p.33
 

@@ -39,5 +39,51 @@
     "website_reaudit": "pending",
     "lean_sha256": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
     "source_sha256": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e"
+  },
+  {
+    "eaudit": "EAUDIT03",
+    "section": "1.1.1",
+    "source_ids": [
+      "MD-1.1.1-Multibody",
+      "MD-1.1.1-MorseMinimum",
+      "MD-1.1.1-LengthBond",
+      "MD-1.1.1-HeterogeneousLJ"
+    ],
+    "mentor_ids": [
+      "MD-1.1.1-LJRepulsion"
+    ],
+    "signature_changes": [
+      {
+        "source_id": "MD-1.1.1-MorseMinimum",
+        "old_signature_sha256": "a2294a6a45e9a7419e8bc86a142c5794a2076af2071ef4e6e45902d1520bfdf2",
+        "new_signature_sha256": "7dadf76aa36348bfb5d4753ff19593fc2fdfb909c0186ebad7c9e6c1e78b1c10"
+      },
+      {
+        "source_id": "MD-1.1.1-LengthBond",
+        "old_signature_sha256": "6dc1cbf5f5331ae35834577db64838fabe6be0c8deaf6bb503c58008f65890c6",
+        "new_signature_sha256": "d5a5e9fa38e5484f1a21f332abe704cd409e6de2b19e5890e7ea080e9ce76f53"
+      }
+    ],
+    "full_check_sha256": "a1e084f57bb5cd85daebe61924d6dd5bfc8a41e3b43c62897e55e62e6b7dc736",
+    "axiom_count": 141,
+    "compact_bytes": [
+      87080,
+      85600,
+      149024,
+      138868
+    ],
+    "source_pages_verified": [
+      31,
+      32,
+      33,
+      34
+    ],
+    "website_reaudit": "pending",
+    "lean_sha256": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+    "source_sha256": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+    "historical_batch_files": "unchanged",
+    "formal_library": "unchanged",
+    "curvature_proof": "incomplete; full statement retained",
+    "lj_empirical_choice": "awaiting mentor"
   }
 ]
