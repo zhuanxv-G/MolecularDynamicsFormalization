@@ -1,0 +1,181 @@
+先A原文逐字审校，再C只读核对当前完整签名及项目实际定义；全部对象/域/量词/前提/结论和[EXTRA]逐项判断，不以sorry判签名FAIL，不修改工程或补证明。原书疑误保留并NEEDS_HUMAN。
+本条MD-1.1-NewtonModel；附件页1/2/3分别是原PDF28/29/30（印刷5/6/7）。
+必须创建目录并把结果实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT02_review.json 文件；文件仅含JSON对象：batch=EAUDIT02、input_sha256、items。已有文件时先核对共享键BATCH_EAUDIT02.md、Blueprint/Ch01.lean、blueprint/ch01/ch01_source.json完全相同；相同则按source_id合并本条并合并input_sha256的子任务独立键，保留其他条；共享键不同则报告版本冲突。input_sha256逐项回显下列哈希。items每条字段source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。最后仅回报实际文件路径。
+
+input_sha256：
+{
+  "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+  "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+  "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e",
+  "EAUDIT02b_materials": "7a437c9a52c92fcd3a9b782daee8863008b93f7b23eb9a80b42e8d10aa199e51",
+  "EAUDIT02b_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.1-NewtonModel",
+  "kind": "definition",
+  "label": null,
+  "section": "1.1",
+  "printed_page": "6",
+  "pdf_page": "29",
+  "statement_latex": "where the forces are determined from the potential energy function $U$. Denoting the coordinates of the $i$th nucleus of an N-atom system by $q_{i,x},q_{i,y},q_{i,z}$, and the atomic mass by $m_i$, the equations of motion for the $i$th nucleus can be written out as\n\\[m_i\\frac{\\mathrm d^2q_{i,x}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,x}},\\qquad m_i\\frac{\\mathrm d^2q_{i,y}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,y}},\\qquad m_i\\frac{\\mathrm d^2q_{i,z}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,z}}.\\tag{1.2}\\]\nIt is important to recognize that (1.2) does not, itself, give a complete description of the motion; it must be supplemented by initial conditions (positions and velocities given at some specified instant) for all atoms.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "$U=U_{BO}$仅依赖核位置；$n=3N$，每粒子质量重复三次。"
+  ],
+  "review_status": "CORRECTED",
+  "issues": [
+    {
+      "code": "SOURCE_WORD_OMISSION",
+      "detail": "statement_latex中的the equations of motion for the nucleus遗漏原页第二次出现的ith，应为the equations of motion for the $i$th nucleus。",
+      "status": "local_verified",
+      "receipt": "BATCH02_result.json"
+    }
+  ],
+  "lean_decl": "MD.Ch01.newtonInitialValueModel",
+  "extra_assumptions": [
+    "n为展平坐标数；三维实例n=3N，质量限制通过coordinateMassesOfParticles给出。",
+    "[EXTRA] EAUDIT02：精确N*3维与逐粒子重复质量；正质量；含初始时刻的开放连通时间域；势能沿轨迹可微，资格保证实际梯度而非总化默认值。一般n维定义仅为辅助。"
+  ],
+  "repair_log": [
+    {
+      "stage": "EAUDIT02_LOCAL_PAGE_RECHECK",
+      "timestamp": "2026-10-13T13:51:34.596250",
+      "before_sha256": "b6f92f95a5c4d8bad137ef9b1bf7c10f8c2829d4aa33e8a31b14f812217fe82c",
+      "after_sha256": "23ae20c5cd1a427adc82851528cdab272598465bc1006b75b885c5fb215142c5",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "raw_return": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+      "raw_sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+      "reason": "PDF28–30视觉核对；Newton补回原页第i个核的遗漏词；Schrodinger提案当前字段已一致，保留已有文本；原书数学不改。Newton/HardSphere签名按网站FAIL加强模型资格及补全动力学；其余条目不改。"
+    }
+  ],
+  "old_ids": [
+    "CH01-007",
+    "CH01-008",
+    "CH01-009"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; 2026-10-13 PDF29; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+
+## 当前完整Lean签名/定义
+```lean
+def newtonInitialValueModel {N : ℕ} (m : ParticleMasses N)
+    (U : PotentialEnergy (N * 3)) (Q : Set (Position (N * 3)))
+    (I : Set ℝ) (q : ℝ → Position (N * 3)) (t₀ : ℝ)
+    (q₀ v₀ : Position (N * 3)) : Prop :=
+  classicalNewtonInitialValueModel (coordinateMassesOfParticles (d := 3) m)
+    U Q I q t₀ q₀ v₀
+```
+
+上下文：Lean4.34.0/Mathlibv4.34.0；namespace MD.Ch01；noncomputable section；
+open Set Filter MolecularDynamics MolecularDynamics.Chapter01Review；open scoped Topology BigOperators ContDiff InnerProductSpace。
+标准Mathlib符号按固定版本展开；项目实际定义如下。多重同名候选均列出，不猜测解析。
+
+## 已绑定旧返回及本次修复
+```json
+{
+  "lean_decl": "MD.Ch01.newtonInitialValueModel",
+  "verdict": "FAIL",
+  "explanation": "已展开Ch01.lean第54–59行的IsNewtonTrajectoryOn：它要求每个t∈I时q(t)∈Q，q和deriv q分别有真实HasDerivAt见证，并满足质量算子作用于二阶导数等于−gradient U；第241–244行再加入q(t₀)=q₀和真实初始速度条件，因此时间导数及两类初值没有被总化deriv等式替代。但定义没有要求t₀∈I，甚至允许I为空，故初值可以完全脱离牛顿方程适用的时间域；这缺失了同一运动在指定初始时刻满足模型的条件。此外，已读PotentialEnergy n只是Position n→ℝ，谓词未要求U沿轨迹可微，不能保证总化gradient代表原文真实偏导。任意n和坐标质量可作为推广，但注释中的n=3N及粒子质量重复并未成为本声明的约束或物理实例化条件。massOperator及coordinateMassesOfParticles只在旧缓存找到，未与本批版本绑定；时间域缺口直接来自已提供定义，足以判FAIL，不依赖这些辅助算子的实现。判定与证明完成度无关。",
+  "counterexample": "取n=3，m_i=1，U=0，Q=ℝ³，I=∅，t₀=0，q(t)=t²e₁，q₀=v₀=0。IsNewtonTrajectoryOn中的全部时间量词为空，且q(0)=0、q′(0)=0，因此该Lean谓词成立；但q″(0)=2e₁，与零势能下原文要求的零加速度不符。漏洞也存在于非空时间域：取I=(1,2)，令q(t)=t²e₁当t<1/2，否则q(t)=0，则I内满足自由运动，而指定初始时刻0仍不满足牛顿方程。",
+  "suggested_fix": "要求初始时刻属于解的时间域，宜令I为包含t₀的非空开放区间，或显式加入t₀∈interior I；这样初始位置属于Q也可由轨迹条件得到。加入U在相关位置的DifferentiableAt或真实梯度见证，保证力是原文偏导。保留通用坐标版本时，另给n=3N、正粒子质量及coordinateMassesOfParticles的物理实例化声明，并补齐本批依赖和MANIFEST.json核实质量算子。"
+}
+```
+
+### MolecularDynamics/Chapter01/ParticleCoordinates.lean:20 namespace MolecularDynamics
+```lean
+abbrev ParticleMasses (N : ℕ) := Fin N → ℝ
+```
+
+### MolecularDynamics/Notation.lean:13 namespace MolecularDynamics
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics/Notation.lean:21 namespace MolecularDynamics
+```lean
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+```
+
+### Blueprint/Ch01.lean:75 namespace MD.Ch01
+```lean
+def classicalNewtonInitialValueModel {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (Q : Set (Position n)) (I : Set ℝ)
+    (q : ℝ → Position n) (t₀ : ℝ) (q₀ v₀ : Position n) : Prop :=
+  (∀ i, 0 < m i) ∧ IsOpen I ∧ IsPreconnected I ∧ t₀ ∈ I ∧
+  (∀ t ∈ I, DifferentiableAt ℝ U (q t)) ∧
+  IsNewtonTrajectoryOn m U Q I q ∧ q t₀ = q₀ ∧ HasDerivAt q v₀ t₀
+```
+
+### MolecularDynamics/Chapter01/NBody.lean:19 namespace MolecularDynamics
+```lean
+abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ
+```
+
+### Blueprint/Ch01.lean:54 namespace MD.Ch01
+```lean
+def IsNewtonTrajectoryOn {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (Q : Set (Position n)) (I : Set ℝ) (q : ℝ → Position n) : Prop :=
+  (∀ t ∈ I, q t ∈ Q) ∧ ∀ t ∈ I,
+    HasDerivAt q (deriv q t) t ∧
+    HasDerivAt (deriv q) (deriv (deriv q) t) t ∧
+    massOperator m (deriv (deriv q) t) = -gradient U (q t)
+```
+
+### MolecularDynamics/Chapter01/ParticleCoordinates.lean:28 namespace MolecularDynamics
+```lean
+def coordinateMassesOfParticles {N d : ℕ} (m : ParticleMasses N) :
+    CoordinateMasses (N * d) :=
+  fun k => m ((particleCoordinateEquiv N d).symm k).1
+```
+
+### MolecularDynamics/Chapter01/LocalTrajectories.lean:18 namespace MolecularDynamics
+```lean
+noncomputable def massOperator {n : ℕ} (μ : CoordinateMasses n) :
+    Velocity n →L[ℝ] Momentum n :=
+  (Matrix.toEuclideanLin (diagonalMassMatrix μ)).toContinuousLinearMap
+```
+
+### MolecularDynamics/Notation.lean:15 namespace MolecularDynamics
+```lean
+abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics/Notation.lean:14 namespace MolecularDynamics
+```lean
+abbrev Velocity (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics/Chapter01/NBody.lean:22 namespace MolecularDynamics
+```lean
+def diagonalMassMatrix {n : ℕ} (masses : CoordinateMasses n) : MassMatrix n :=
+  Matrix.diagonal masses
+```
+
+### MolecularDynamics/Notation.lean:18 namespace MolecularDynamics
+```lean
+abbrev MassMatrix (n : ℕ) := Matrix (Fin n) (Fin n) ℝ
+```
+
+### Blueprint/Ch01.lean:270 namespace MD.Ch01
+```lean
+def newtonInitialValueModel {N : ℕ} (m : ParticleMasses N)
+    (U : PotentialEnergy (N * 3)) (Q : Set (Position (N * 3)))
+    (I : Set ℝ) (q : ℝ → Position (N * 3)) (t₀ : ℝ)
+    (q₀ v₀ : Position (N * 3)) : Prop :=
+  classicalNewtonInitialValueModel (coordinateMassesOfParticles (d := 3) m)
+    U Q I q t₀ q₀ v₀
+```
+
+### MolecularDynamics/Chapter01/ParticleCoordinates.lean:25 namespace MolecularDynamics
+```lean
+def particleCoordinateEquiv (N d : ℕ) : Fin N × Fin d ≃ Fin (N * d) :=
+  finProdFinEquiv
+```
+

@@ -244,13 +244,31 @@
     "context_notation": [
       "$\\Phi:\\mathbb R\\times\\mathbb R^{39}\\to\\mathbb C$；$i^2=-1$；$\\hbar$为Planck常数；$\\mu_j$为第$j$粒子质量；$U_P$为原始原子势能。13粒子来自10电子+3核水分子示例。"
     ],
-    "review_status": "DRAFT",
-    "issues": [],
+    "review_status": "CORRECTED",
+    "issues": [
+      {
+        "code": "CONTEXT_LATEX_OVERESCAPED",
+        "detail": "BATCH02.md与ch01_source.json中的本条完全一致，但context_notation的数学命令被重复转义；这是上下文表示问题，不是原书公式错误。",
+        "status": "local_verified",
+        "receipt": "BATCH02_result.json"
+      }
+    ],
     "lean_decl": "MD.Ch01.schrodingerEquation",
     "extra_assumptions": [
       "正质量及正Planck参数；按经典解解释，Φ在时间/位置联合C2，保证总导数算子表示实际偏导数；不声明解存在。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "EAUDIT02_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-13T13:51:34.594771",
+        "before_sha256": "4f1477c2e45fb4684278e4cd3632ba088f0f85bc88a68ec0eadb598073bcf5c5",
+        "after_sha256": "4f1477c2e45fb4684278e4cd3632ba088f0f85bc88a68ec0eadb598073bcf5c5",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+        "raw_sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+        "reason": "PDF28–30视觉核对；Newton补回原页第i个核的遗漏词；Schrodinger提案当前字段已一致，保留已有文本；原书数学不改。Newton/HardSphere签名按网站FAIL加强模型资格及补全动力学；其余条目不改。"
+      }
+    ],
     "old_ids": [
       "CH01-001",
       "CH01-002",
@@ -259,7 +277,7 @@
       "CH01-005",
       "CH01-006"
     ],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "source_page_verification": "VERIFIED_RENDERED; 2026-10-13 PDF28; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-1.1-NewtonModel",
@@ -268,25 +286,46 @@
     "section": "1.1",
     "printed_page": "6",
     "pdf_page": "29",
-    "statement_latex": "where the forces are determined from the potential energy function $U$. Denoting the coordinates of the $i$th nucleus of an N-atom system by $q_{i,x},q_{i,y},q_{i,z}$, and the atomic mass by $m_i$, the equations of motion for the nucleus can be written out as\n\\[m_i\\frac{\\mathrm d^2q_{i,x}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,x}},\\qquad m_i\\frac{\\mathrm d^2q_{i,y}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,y}},\\qquad m_i\\frac{\\mathrm d^2q_{i,z}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,z}}.\\tag{1.2}\\]\nIt is important to recognize that (1.2) does not, itself, give a complete description of the motion; it must be supplemented by initial conditions (positions and velocities given at some specified instant) for all atoms.",
+    "statement_latex": "where the forces are determined from the potential energy function $U$. Denoting the coordinates of the $i$th nucleus of an N-atom system by $q_{i,x},q_{i,y},q_{i,z}$, and the atomic mass by $m_i$, the equations of motion for the $i$th nucleus can be written out as\n\\[m_i\\frac{\\mathrm d^2q_{i,x}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,x}},\\qquad m_i\\frac{\\mathrm d^2q_{i,y}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,y}},\\qquad m_i\\frac{\\mathrm d^2q_{i,z}}{\\mathrm dt^2}=-\\frac{\\partial U}{\\partial q_{i,z}}.\\tag{1.2}\\]\nIt is important to recognize that (1.2) does not, itself, give a complete description of the motion; it must be supplemented by initial conditions (positions and velocities given at some specified instant) for all atoms.",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
       "$U=U_{BO}$仅依赖核位置；$n=3N$，每粒子质量重复三次。"
     ],
-    "review_status": "DRAFT",
-    "issues": [],
+    "review_status": "CORRECTED",
+    "issues": [
+      {
+        "code": "SOURCE_WORD_OMISSION",
+        "detail": "statement_latex中的the equations of motion for the nucleus遗漏原页第二次出现的ith，应为the equations of motion for the $i$th nucleus。",
+        "status": "local_verified",
+        "receipt": "BATCH02_result.json"
+      }
+    ],
     "lean_decl": "MD.Ch01.newtonInitialValueModel",
     "extra_assumptions": [
-      "n为展平坐标数；三维实例n=3N，质量限制通过coordinateMassesOfParticles给出。"
+      "n为展平坐标数；三维实例n=3N，质量限制通过coordinateMassesOfParticles给出。",
+      "[EXTRA] EAUDIT02：精确N*3维与逐粒子重复质量；正质量；含初始时刻的开放连通时间域；势能沿轨迹可微，资格保证实际梯度而非总化默认值。一般n维定义仅为辅助。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "EAUDIT02_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-13T13:51:34.596250",
+        "before_sha256": "b6f92f95a5c4d8bad137ef9b1bf7c10f8c2829d4aa33e8a31b14f812217fe82c",
+        "after_sha256": "23ae20c5cd1a427adc82851528cdab272598465bc1006b75b885c5fb215142c5",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+        "raw_sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+        "reason": "PDF28–30视觉核对；Newton补回原页第i个核的遗漏词；Schrodinger提案当前字段已一致，保留已有文本；原书数学不改。Newton/HardSphere签名按网站FAIL加强模型资格及补全动力学；其余条目不改。"
+      }
+    ],
     "old_ids": [
       "CH01-007",
       "CH01-008",
       "CH01-009"
     ],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "source_page_verification": "VERIFIED_RENDERED; 2026-10-13 PDF29; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-1.1-HardSphere",
@@ -299,17 +338,29 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "APPROVED",
     "issues": [],
     "lean_decl": "MD.Ch01.hardSphereModel",
     "extra_assumptions": [
-      "只编码不可穿透与完全弹性守恒关系；原文未指定碰撞散射规则，此定义不唯一决定碰撞后速度。"
+      "[历史签名，EAUDIT02已替换] 只编码不可穿透与完全弹性守恒关系；原文未指定碰撞散射规则，此定义不唯一决定碰撞后速度。",
+      "[EXTRA] EAUDIT02：以标准无摩擦孤立二体弹性碰撞展开standard rules；同时多接触需另有规则。碰撞时刻在整个开放时间域局部孤立，排除稠密事件集使动力学真空化；全粒子对全时间不可穿透；位置连续，碰撞外真实自由运动；实际速度左右极限接入法向冲量、法向速度反转、碰后分离及全部动量/动能守恒。旧只含瞬时必要守恒关系的说明为历史版本。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "EAUDIT02_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-13T13:51:34.596250",
+        "before_sha256": "15730fb9a4bf36a0a92a8cac7cafe9f5aef2ef273a48307e2738b8dae3fcd89a",
+        "after_sha256": "15730fb9a4bf36a0a92a8cac7cafe9f5aef2ef273a48307e2738b8dae3fcd89a",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+        "raw_sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+        "reason": "PDF28–30视觉核对；Newton补回原页第i个核的遗漏词；Schrodinger提案当前字段已一致，保留已有文本；原书数学不改。Newton/HardSphere签名按网站FAIL加强模型资格及补全动力学；其余条目不改。"
+      }
+    ],
     "old_ids": [
       "CH01-010"
     ],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "source_page_verification": "VERIFIED_RENDERED; 2026-10-13 PDF30; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-1.1.1-Multibody",

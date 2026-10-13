@@ -123,7 +123,11 @@ def integrate(ch):
     hashes = {p.relative_to(ROOT).as_posix(): sha(p) for p in paths}
     if previous:
         assert hashes == previous['raw_files'], 'New or changed return requires a new receipt directory'
+        if ch == 2:
+            assert {p.name: sha(folder / p.name) for p in paths} == previous['first_json_review_files'], 'First-round A returns changed'
     bindings = previous['bindings'] if previous else {}
+    a_receipt = folder / 'binding20261013/A_BINDING.json'
+    a_bindings = read(a_receipt) if a_receipt.exists() else {}
     output = {}
     for path in paths:
         rel = path.relative_to(ROOT).as_posix()
@@ -133,6 +137,8 @@ def integrate(ch):
         assert {i['source_id'] for i in items} == set(next(m['source_ids'] for m in manifest if m['batch'] == batch))
         bound = bindings.setdefault(rel, binding(ch, path, data, manifest)) if not previous else bindings[rel]
         first = {i['source_id']: i for i in read(folder / path.name)} if ch == 2 else {}
+        if ch == 2 and path.name not in a_bindings:
+            a_bindings[path.name] = binding(ch, folder / path.name, read(folder / path.name), manifest)
         for item in items:
             sid = item['source_id']
             assert sid in src and sid not in output
@@ -145,6 +151,7 @@ def integrate(ch):
                      json_review_round='first', json_review_raw_path=(folder / path.name).relative_to(ROOT).as_posix() if ch == 2 else rel)
             if ch == 2:
                 w['first_round_reference_audit'] = first[sid]['audit']
+                w['json_review_binding'] = a_bindings[path.name]
             if sid in old and old[sid].get('repair'):
                 w['repair'] = old[sid]['repair']
             fix = w['audit'].get('suggested_fix') or ''
@@ -180,10 +187,21 @@ def integrate(ch):
         if w['audit']['verdict'] == 'NEEDS_HUMAN':
             fix = w['audit'].get('suggested_fix') or ''
             text = QUESTIONS.get(w['source_id'], fix.replace('\n', ' '))
+            if w.get('repair', {}).get('status') == 'awaiting_reaudit':
+                text += ' 已补材料/修复并生成' + w['repair']['eaudit'] + '，等待网站复审。'
             entry = '- ' + w['source_id'] + '：' + text
             (human if w['needs_category'] == '原文数学判断' else material).append(entry)
     needs += material + ['', '## (ii) 原文数学判断：供导师裁定', ''] + human
     dump(oldpath, list(output.values()))
+    local_path=base/'local_audit.json'
+    local=read(local_path)
+    for sid,w in output.items():
+        a=local['items'][sid]
+        a['website_audit']=w['effective_status']
+        if 'external_review' in a:
+            a['external_review'].update(binding='BOUND' if w['binding']['bound'] else 'UNVERIFIED',
+                bound_version=w['binding']['version'],reported_verdict=w['returned_audit']['verdict'])
+    dump(local_path,local)
     (base / 'NEEDS_HUMAN.md').write_text('\n'.join(needs) + '\n', encoding='utf-8')
     summary = {k: counts[k] for k in ('website_pass', 'repairing', 'awaiting_mentor', 'awaiting_reaudit')}
     summary.update(chapter=ch, total=len(output), bound=sum(w['binding']['bound'] for w in output.values()),
@@ -194,6 +212,8 @@ def integrate(ch):
         dump(receiptpath, dict(registered_at=datetime.now().isoformat(), raw_files=hashes, bindings=bindings,
                               source_sha256=sha(base / f'ch{ch:02}_source.json'), lean_sha256=sha(ROOT / f'Blueprint/Ch{ch:02}.lean'),
                               first_json_review_files={p.name: sha(folder / p.name) for p in paths} if ch == 2 else {}))
+    if ch == 2 and not a_receipt.exists():
+        dump(a_receipt, a_bindings)
     progress = base / 'PROGRESS.md'
     lines = progress.read_text(encoding='utf-8-sig').splitlines()
     for i, line in enumerate(lines):
@@ -201,6 +221,7 @@ def integrate(ch):
             cells = line.split('|')
             w = output.get(cells[1].strip())
             if w and len(cells) == 8:
+                cells[2] = ' ' + src[w['source_id']].get('review_status','DRAFT') + '/原页已核 '
                 cells[5] = ' ' + w['effective_status'] + ' '
                 lines[i] = '|'.join(cells)
     marker = '网站整合汇总：'
@@ -208,6 +229,16 @@ def integrate(ch):
     lines = [x for x in lines if not x.startswith(marker)]
     lines.insert(6, message)
     progress.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    pending_reviews=[]
+    for w in output.values():
+        proposal=w['json_review'].get('corrected_json') or {}
+        if w['json_review']['status']=='CORRECTED':
+            applied=w.get('repair',{}).get('json_review_locally_verified',False)
+            pending_reviews.append(dict(source_id=w['source_id'],raw_path=w.get('json_review_raw_path'),
+                status='locally page-verified and merged' if applied else 'awaiting local PDF page verification',
+                proposed_changed_fields=[k for k in ('statement_latex','proof_latex','proof_note','proof_discussion_latex','context_notation','statement_scope')
+                    if k in proposal and proposal[k]!=src[w['source_id']].get(k)]))
+    dump(base/'SOURCE_REVIEW_QUEUE.json',pending_reviews)
     print(f'Ch{ch:02}: {message} bound {summary["bound"]}/{len(output)}')
     return summary
 

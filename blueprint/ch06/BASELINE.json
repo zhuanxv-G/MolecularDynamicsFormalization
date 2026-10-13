@@ -2,7 +2,7 @@
   "base_head": "c5887923f159b7d09b9a33d2fdbbf1a097037dbf",
   "branch": "chapter06-blueprint",
   "protected": {
-    "Blueprint/Ch01.lean": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af",
+    "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
     "MolecularDynamics/BasicDefinitions.lean": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
     "MolecularDynamics/Chapter01/ActionAngleChart.lean": "77af2e1b58a314cf61ef0cf0ef8ed9148fd2c2d5dea5807876f5d47cf5d7ad37",
     "MolecularDynamics/Chapter01/BasisMatrix.lean": "3bdf3d414cb4196cfe87b644786e2b1f29166952ea61ab8bd28f7ebd44a1c4df",
@@ -304,13 +304,13 @@
     "blueprint/ch01/CheckAxioms.lean": "ca0fb98e4f4953f324022cf2a97f1ca59d14f4016c78453bca78770968358373",
     "blueprint/ch01/LOCAL_PDF_CHECK.json": "4bd55bc8e711499854ecff1ef6d7eb5308d0be59bbcb98571be24e2e047a10c9",
     "blueprint/ch01/PILOT.md": "cfad1dbcb8b3ee257f9b0a2dc38e4fef8b6857d9e09299560ace5fe45b17de8d",
-    "blueprint/ch01/PROGRESS.md": "6ff1c72bd869733cf4dd8e8aeb6133457c407dbbb97eb10a99684459b435e247",
+    "blueprint/ch01/PROGRESS.md": "6d6bdb1230d6ac775d2e0880887facc89880b0b377c55cbdda1fa130ae0eea86",
     "blueprint/ch01/archive/PILOT.md": "6f36aa4f588b28f2ad2096929fe05acb4cbf6c9714420be98535a2f2028bdde0",
     "blueprint/ch01/audit.json": "4aceec269dc1f69d2c5dc7c3d97ad7b1edb32ebd04c1a524486c03e767c03479",
-    "blueprint/ch01/ch01_source.json": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+    "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e",
     "blueprint/ch01/dependency_inventory.json": "71bd83c7b187971be1e47cf3e3aff91251d750a396bcc9bf0725378f4df49378",
     "blueprint/ch01/excluded_passages.json": "2cdc5ea8354a37fcd9b9723dda7e8db7a5ae2cf02ccde894776d1f5ac5ab987b",
-    "blueprint/ch01/local_audit.json": "29ba95274804209d6a3892a0ab4c9c8dd07a6c2c97d61615991f343d00305f65",
+    "blueprint/ch01/local_audit.json": "939aa2fa1c4d41522a6b8c76a1445c5e90379d2bc6bd706fc82f6b9dddffb072",
     "blueprint/ch01/mathcopilot_results/README.md": "668ad1e98986665e77469829cf872187aad52cba9f9c0450f98027de60794736",
     "blueprint/ch01/mathcopilot_tasks/BATCH01.md": "87ee2c9b34ea5c1ae422ce3e5721328153865fe65efb57e887d2ab043783d0ae",
     "blueprint/ch01/mathcopilot_tasks/BATCH02.md": "5b474e9c2fb15b22bf274ffc284345df8ee299732d8a129cc03acd6cece317fb",
@@ -335,7 +335,7 @@
     "blueprint/ch01/mathcopilot_tasks/BATCH21.md": "eb91d50458b257a2c1dcae4b4c060f5ae64757d926b2b70f2673593a7da3a0a1",
     "blueprint/ch01/mathcopilot_tasks/BATCH22.md": "7975104f37f2f9c5a44a0cf9573c371c2cfb48f55f834f104b2e7775bc7a8c2d",
     "blueprint/ch01/mathcopilot_tasks/BATCH23.md": "c833aaf1f26ca7010882606e6cdcee66d2ad286b0c5706f505d6987b2cadc45a",
-    "blueprint/ch01/mathcopilot_tasks/INDEX.md": "9f07a7b7be1c000c74fd4f9d0e78463e7f5138908af9dd8795e40a91403eeba1",
+    "blueprint/ch01/mathcopilot_tasks/INDEX.md": "b236bf457333f6093621d32f11dc17c45f343dde12d15439d61ff109528e40bc",
     "blueprint/ch01/mathcopilot_tasks/MANIFEST.json": "2e7e7aa84bc0ae4537928ed38883328fce92cb1ceea0e66ab867fe2cf918e326",
     "blueprint/ch01/mathcopilot_tasks/archive/PILOT_ALL.md": "92f7d65efe733d1814a273d6e7a538d9ae18b24c4463e69354671455ca7dbb23",
     "blueprint/ch01/mathcopilot_tasks/archive/README.md": "051661edb9a7c0541fe6558b7167e043dc5ca6be04e4cd04a5e3f85d3b7c3d0f",
@@ -541,7 +541,7 @@
     "blueprint/ch01/validation/proof-attempts/proof-trimer-1.log": "0e6617a12f04f16a9d2827b6fd1b2c020fd2342543b353c41619650b263bd09e",
     "blueprint/ch01/validation/proof-attempts/proof-trimer-2.log": "419c638aa92d7213205c62e1550685ddbce59d6ff44db83f0f41387835887690",
     "blueprint/ch01/validation/proof-attempts/proof-trimer-3.log": "0df47d1e8ae8e4b734713fff016dbaed76d5b5c77288918a536905b8264b12f9",
-    "docs/review/CH01_BLUEPRINT.zh-CN.md": "4a9e57f5dacb382ca89a467db1182db5aee2e393242fd924ba44ad7d7cde4bb0",
+    "docs/review/CH01_BLUEPRINT.zh-CN.md": "84bcfc0699b971345aaf1166aeaf08589a31eb86e27c2d4a326f33a43bbb11c2",
     "docs/review/CH01_CLAIMS.csv": "e9421b24b4f09ff2ac09cc4377632bb2d721b86263719b2076976f813b450003",
     "docs/review/CH01_COVERAGE_EXTRA.json": "73ce17da7feed915574af5ebc4010afbb6dc4c874f47df0775d2b3ff1bc943cb",
     "docs/review/CH01_PILOT.zh-CN.md": "7c4c4f07e9cc045662c1fe43426c87019d8286132ddbead33d03555c02b8c082",
@@ -549,7 +549,7 @@
     "docs/review/CH01_REVIEW_SHORT.zh-CN.md": "290c77daa019d855f5768d095140024bd2f29e750de60a5dbd9f35286fb82107",
     "docs/review/CH01_SCOPE.zh-CN.md": "e116673bdda896f063d7d3e22c3771d8e99d00ccc885d61f2b417ae868603b5b",
     "docs/review/CH01_VALIDATION.json": "8555d56f3f18e85a77b3b7c6344f74f0c7a0aaa28e124cd0330c24f86e5cd10d",
-    "blueprint/ch01/website_audit.json": "eacf7bb6e12eec02047a9bb63f52088db7c0f60a2345980e564da5de5c434ede",
+    "blueprint/ch01/website_audit.json": "3c38427683677a6ffa62a0e395978467778af6a64a18d650ebbd428ac4d583f2",
     "blueprint/ch01/processed_returns.json": "480f1863e8fad630cf6d20643dff96cddb79cddcb0682e67c638fa20ece2b489",
     "blueprint/ch01/mathcopilot_results/integration20261011/RECEIPT.json": "ed2149320089b73ac0c9c7331779c51e9987e17e06a9a1b4e952ee83a18ecf72",
     "blueprint/ch01/mathcopilot_tasks/EAUDIT01/BATCH_EAUDIT01.md": "41a28335d289e3f497fd8a6ea6c5c644c04599cd553eeb9d7fb0cdaac2a9d639",
@@ -684,7 +684,7 @@
     "blueprint/ch03/mathcopilot_results/BATCH02_result.json": "fa7d079b49802d64f1efbc27c6b0a90cbbf1090b9fc48cc0576829b45ebf4aa1",
     "blueprint/ch02/mathcopilot_results/reaudit/BATCH08_result.json": "98178eef0629349679faebc3566f87731e153fb1d597766f49186904786bb762",
     "blueprint/ch02/mathcopilot_results/reaudit/BATCH16_result.json": "ae3f708f5ec49ae579a71e5cbf660528773b7d934d1dbab7c625eda41a098582",
-    "blueprint/ch01/WEBSITE_SUMMARY.json": "f46f6419943fabc3f0b97ff540262d27a8811fd57b69d4a2bb1101bd077519ef",
+    "blueprint/ch01/WEBSITE_SUMMARY.json": "22e1b3c32b3e2ef624311b5fdf9b6b2cc9e2669ea3b1cbec37c1cdacfe42888b",
     "blueprint/ch02/NEEDS_HUMAN.md": "3aa5ef62407b961cec746127d9cfa92eca16edbf63f85295abe7d51285e6f82e",
     "blueprint/ch02/mathcopilot_results/reaudit/BATCH17_result.json": "b7ce387e6fa74deaf2aeed7238560e97abe4fd130d81bb2eeafe4b5df7bec8b4",
     "blueprint/ch03/PROGRESS.md": "1a17ee61c0c549b46767ff2789354a7b710a3f5dc899a4343ae850c47d061c9e",
@@ -701,9 +701,9 @@
     "blueprint/ch02/mathcopilot_results/reaudit/BATCH14_result.json": "668e9a7d8a8589ba2f1a8502f29df5424a32ce95e5c0f69f2a7057ad01cde38e",
     "blueprint/ch03/mathcopilot_results/BATCH08_result.json": "2c2ba10b2add711db71451a9899cda80c62acb0538cbb07e71e83e0933ea16df",
     "blueprint/ch03/mathcopilot_results/BATCH01_result.json": "120deaa07feab89b86e0bb7ae296ba4fadc1614604f7bb1e18866e1acb26bb97",
-    "blueprint/ch02/website_audit.json": "353adebb9657fe582cd4de345c1b7ce346e86d398f425b6a341c3e1f93288443",
+    "blueprint/ch02/website_audit.json": "0b5dbd053154f2d5532ae41f25208657559f59b3111602ae1b7b2bb550760b0d",
     "blueprint/ch02/mathcopilot_results/reaudit/BATCH26_result.json": "320673ed9a9015297e7236b7e5473fe2f51037fb4dc27695fa532c5aa479eb85",
-    "blueprint/ch01/NEEDS_HUMAN.md": "62e279db1182f4acda5a871bffbf5752d1fd80ec50bd2645cdabee458a62dcb3",
+    "blueprint/ch01/NEEDS_HUMAN.md": "afe2aa0cc9889427d544b6a0568db6bbea3d0f83bf45db2426b94325ee4bfbfc",
     "blueprint/ch02/mathcopilot_results/reaudit/BATCH23_result.json": "1faa2438906c622a6c7f4d1d6d2c1283c0eada625b539157c272d693a8e5b0d4",
     "blueprint/ch03/mathcopilot_results/BATCH22_result.json": "c3085298056440180b3d2398d6dfb1229d01c49b3c1729dcc6b2fea948050c64",
     "blueprint/ch03/website_audit.json": "354c2b653e0cb7871a1c6ca8273e6b3bf95df7b15937c6d1604f358523bf0478",
@@ -711,7 +711,52 @@
     "blueprint/ch03/mathcopilot_results/BATCH20_result.json": "aaf1affb66e118022ce2276daf90b94cfaebf6a125321225e506c2bf153124f4",
     "blueprint/ch02/mathcopilot_results/reaudit/BATCH24_result.json": "4eaba63c0c08dddf92b1a3a10d5252d9ef9235437ecbca045e60b33c7e797394",
     "blueprint/ch03/mathcopilot_results/BATCH03_result.json": "330d5454eb9aa468617bba731b42c46b75d12fcc6d31ed8f692f1bad348cd106",
-    "docs/review/CH02_BLUEPRINT.zh-CN.md": "2c57e089da1dd54ab46b2e7138b9478b88e79dbf33f55976158434a9f0069587"
+    "docs/review/CH02_BLUEPRINT.zh-CN.md": "2c57e089da1dd54ab46b2e7138b9478b88e79dbf33f55976158434a9f0069587",
+    "blueprint/ch01/validation/EAUDIT02-full/blueprint_fresh_Ch01.log": "d0bc433cc6940deeb01980c20033052f14fb7f1e26980fed3f953e9aadf1013f",
+    "blueprint/ch01/validation/EAUDIT02-full/lean_version.log": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25",
+    "blueprint/ch01/validation/EAUDIT02/COMPILE-RUNNING.json": "9217c6f2db02a682551130507b93ce13c9dacebaec86f0dbeff89b9660db285c",
+    "blueprint/ch01/validation/EAUDIT02-full/scratch.log": "313d7d8a4c867ae94ec6c76233c3d92188bac4d996222614efc0510a71376c4f",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/c/EAUDIT02c_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582",
+    "blueprint/ch01/validation/EAUDIT02/FINAL_COMPILE-RUNNING.json": "431202077b969d341a10dc66ffcd616ea6da82f36fd12743b2c679437354a066",
+    "blueprint/ch01/validation/EAUDIT02/COMPILE.json": "8a8df15e9c165963a1215975dc401a59fdc1951a2831027511a2d165abadca9a",
+    "blueprint/ch01/validation/EAUDIT02-full/chapter02_axiom_dependencies.log": "1c7a0b5b2789e32a66292a62c03d67bb2a2cd066f92e0f4fe3dc9d3f69ee2057",
+    "blueprint/ch01/mathcopilot_results/EAUDIT02_PREPARATION.json": "e9637681f5db8ec04633ebe5ee13d8350625f78cc48dce06576ba2f999dd94cd",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/b/PASTE.txt": "700c91ddfd9b0637a0099ecc39de2bb5ef7d9fd2d5aac3c9072ac6ae1cf607ae",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/b/EAUDIT02b_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582",
+    "blueprint/ch01/validation/EAUDIT02-full/git_status.log": "460e3c4ece4238880fc9bdeb390b7fec28dec90a52e027495ad7e12586ad7224",
+    "blueprint/ch01/validation/EAUDIT02/single-lean.log": "7793291831a2381b0e0df32756e812fb373add52ed3fddefd4baa60963ee2922",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/a/MANIFEST.json": "cadf11c19c708912dd93729d3bc2cfcd82e27a353fa0f1e3c2a1168bf60d4225",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/b/MANIFEST.json": "7105a986d1fb1a19fd0308f1daccfe1f90a34d31910383706097a4a2127f58f5",
+    "blueprint/ch01/validation/EAUDIT02/FINAL_COMPILE.json": "dddd312bc5484f50f70feffb127fb426a6abcc2e03d0da4ee4d92ea5d428cc75",
+    "blueprint/ch02/mathcopilot_results/binding20261013/A_BINDING.json": "13d12b80c91f30c7ca98cc5620e7afb7f2e126d535a2457efce485e3ad9361cc",
+    "blueprint/ch01/EAUDIT.md": "2d47e3d678cc1fee6319a64c7d7e768a9ac442d5afcbb2e5ab4bd8da55bb28f0",
+    "blueprint/ch01/validation/EAUDIT02-full/CHECK_REPORT.json": "9c7324f6e707a2c7b80a1ac0f82e986de7a51347d1e53c089cc39993f21cd65a",
+    "blueprint/ch01/validation/EAUDIT02-full/git_head.log": "35c4a115c72c8fd47b390b31e0217560ab28682530f26a7ff316c9f8a7838679",
+    "blueprint/ch01/validation/EAUDIT02-full/mathlib_revision.log": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3",
+    "blueprint/ch01/validation/EAUDIT02/ACCEPTANCE.json": "47c00c7eed7c08af10bfce73d91e33148e145e921f882813f4b9dc7dba67bcb3",
+    "blueprint/ch01/validation/EAUDIT02/source_pages/pdf030.png": "83acbe0ed1298f5a675b4b0e0c406533889fa3bb955a27ed953643cff3d88599",
+    "blueprint/ch01/validation/EAUDIT02-full/git_branch.log": "2bbd5079125161a27702bc1d6113f7e776accda188ceabc5298acaad2e5ef263",
+    "blueprint/ch01/validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json": "92eb6cc41ca19ccae0a9a7df8bdb42d55be6e98cbebbf293a154cff224f40b20",
+    "blueprint/ch01/validation/EAUDIT02-full/blueprint_axiom_dependencies.log": "d28d7f3730c91c05cae081c1dd589d7a69b8a4faaae0eec656441c13a5d7a2cf",
+    "blueprint/ch01/validation/EAUDIT02-full/lake_version.log": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc",
+    "blueprint/ch01/validation/EAUDIT02-full/mathlib_status.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "blueprint/ch01/validation/EAUDIT02/source_pages/pdf028.png": "7daf406229a18c0c1fc69417fcb94fe016850648471d9822659e770df7138e60",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/c/MANIFEST.json": "e6b81f97be7b013cdace5483acf89979d9cec8c4c272a971f941deb7326a4820",
+    "blueprint/ch01/SOURCE_REVIEW_QUEUE.json": "5fd8724defe8381a57f54376a3f4f568581d4e72758a6c157d2d51f99f421d48",
+    "blueprint/ch01/validation/EAUDIT02/final-single-lean.log": "edb75c0a337509b368c2202ae457bdb2aceeb6dfe0a7caf0a7b856ab58ee7fbc",
+    "blueprint/ch03/SOURCE_REVIEW_QUEUE.json": "009354932c5f13c8985df41de71a27ae19565c0ec3a4a9fb4446554ff11e7e4b",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/c/PASTE.txt": "475a7ab83b01b2d6e0cdacfe0dac84d933c6cca76fc9d90e4329af99ef3ef40b",
+    "blueprint/ch01/EAUDIT_REGISTRY.json": "0b0211b99eb1fe7d4ef569011b553cad90dfc7411755d419fab2851634cd4ce8",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/a/PASTE.txt": "261f362e65805f325e0c2efee005223f14b7c6c1109959bcec8d0d124ea74361",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/MANIFEST.json": "ef3354e951eb212a3cbcf6903a53e1a800c3576ec1553e411de68f4909222e84",
+    "blueprint/ch01/validation/EAUDIT02/source_pages/pdf029.png": "03c09caa90f9453f90fb74e8c9c5290fb2ee0a515ad7947f28b2ef52f93b5c4f",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/INDEX.md": "547f41a3685644ed7da1a660dda5cafc0e0d29eda997300d3aa0884ce518d0b6",
+    "blueprint/ch01/mathcopilot_tasks/EAUDIT02/a/EAUDIT02a_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582",
+    "blueprint/ch01/validation/EAUDIT02-full/blueprint_fresh_Ch02.log": "b14d7eec5b3b524f33f41b4700e105fb03c13a1048d9b675f72a766f9db82bc0",
+    "blueprint/ch01/validation/EAUDIT02-full/lake_build.log": "518ccc1342270c2340aa5aded02620acf844c5f2c6af71a1be7f3e5ede2a16f5",
+    "blueprint/ch01/validation/EAUDIT02-full/axiom_dependencies.log": "4752968d596e6e834b2fbc84d3455c8797eabeaec240b74c6a3624ff0969d5e0",
+    "blueprint/ch02/SOURCE_REVIEW_QUEUE.json": "4124a1c11b94336b90ce8b45bb61dbefe223968a3a451433ecaa4ca85b834607"
   },
   "unrelated": {
     "output/pdf/CH01_REVIEW_SHORT.PDF_CHECK.json": "aed60322f1feb1e1867ac5f0cbb33da80156f0f32656dd2068857a2515e558f4",
@@ -1003,6 +1048,64 @@
           "reason": "Python import regenerated runtime cache; source unchanged; never staged"
         }
       ],
+      "formal_library_hashes": "unchanged"
+    },
+    {
+      "authorization": "用户2026-10-13网站版本绑定/修复新指令",
+      "receipt": "blueprint/ch01/validation/EAUDIT02/ACCEPTANCE.json",
+      "changed_files": [
+        {
+          "path": "Blueprint/Ch01.lean",
+          "before_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af",
+          "after_sha256": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c"
+        },
+        {
+          "path": "blueprint/ch01/PROGRESS.md",
+          "before_sha256": "6ff1c72bd869733cf4dd8e8aeb6133457c407dbbb97eb10a99684459b435e247",
+          "after_sha256": "6d6bdb1230d6ac775d2e0880887facc89880b0b377c55cbdda1fa130ae0eea86"
+        },
+        {
+          "path": "blueprint/ch01/ch01_source.json",
+          "before_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "after_sha256": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e"
+        },
+        {
+          "path": "blueprint/ch01/local_audit.json",
+          "before_sha256": "29ba95274804209d6a3892a0ab4c9c8dd07a6c2c97d61615991f343d00305f65",
+          "after_sha256": "939aa2fa1c4d41522a6b8c76a1445c5e90379d2bc6bd706fc82f6b9dddffb072"
+        },
+        {
+          "path": "blueprint/ch01/mathcopilot_tasks/INDEX.md",
+          "before_sha256": "9f07a7b7be1c000c74fd4f9d0e78463e7f5138908af9dd8795e40a91403eeba1",
+          "after_sha256": "b236bf457333f6093621d32f11dc17c45f343dde12d15439d61ff109528e40bc"
+        },
+        {
+          "path": "docs/review/CH01_BLUEPRINT.zh-CN.md",
+          "before_sha256": "4a9e57f5dacb382ca89a467db1182db5aee2e393242fd924ba44ad7d7cde4bb0",
+          "after_sha256": "84bcfc0699b971345aaf1166aeaf08589a31eb86e27c2d4a326f33a43bbb11c2"
+        },
+        {
+          "path": "blueprint/ch01/website_audit.json",
+          "before_sha256": "eacf7bb6e12eec02047a9bb63f52088db7c0f60a2345980e564da5de5c434ede",
+          "after_sha256": "3c38427683677a6ffa62a0e395978467778af6a64a18d650ebbd428ac4d583f2"
+        },
+        {
+          "path": "blueprint/ch01/WEBSITE_SUMMARY.json",
+          "before_sha256": "f46f6419943fabc3f0b97ff540262d27a8811fd57b69d4a2bb1101bd077519ef",
+          "after_sha256": "22e1b3c32b3e2ef624311b5fdf9b6b2cc9e2669ea3b1cbec37c1cdacfe42888b"
+        },
+        {
+          "path": "blueprint/ch02/website_audit.json",
+          "before_sha256": "353adebb9657fe582cd4de345c1b7ce346e86d398f425b6a341c3e1f93288443",
+          "after_sha256": "0b5dbd053154f2d5532ae41f25208657559f59b3111602ae1b7b2bb550760b0d"
+        },
+        {
+          "path": "blueprint/ch01/NEEDS_HUMAN.md",
+          "before_sha256": "62e279db1182f4acda5a871bffbf5752d1fd80ec50bd2645cdabee458a62dcb3",
+          "after_sha256": "afe2aa0cc9889427d544b6a0568db6bbea3d0f83bf45db2426b94325ee4bfbfc"
+        }
+      ],
+      "runtime_cache_refresh": [],
       "formal_library_hashes": "unchanged"
     }
   ]

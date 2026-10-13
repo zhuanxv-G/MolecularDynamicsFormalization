@@ -1,0 +1,34 @@
+{
+  "eaudit": "EAUDIT02",
+  "input_sha256": {
+    "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+    "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+    "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT02a",
+      "source_id": "MD-1.1-Schrodinger",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT02/a",
+      "total_bytes": 109519,
+      "manifest_sha256": "cadf11c19c708912dd93729d3bc2cfcd82e27a353fa0f1e3c2a1168bf60d4225",
+      "semantic_review": "pending"
+    },
+    {
+      "subtask": "EAUDIT02b",
+      "source_id": "MD-1.1-NewtonModel",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT02/b",
+      "total_bytes": 113282,
+      "manifest_sha256": "7105a986d1fb1a19fd0308f1daccfe1f90a34d31910383706097a4a2127f58f5",
+      "semantic_review": "pending"
+    },
+    {
+      "subtask": "EAUDIT02c",
+      "source_id": "MD-1.1-HardSphere",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT02/c",
+      "total_bytes": 108562,
+      "manifest_sha256": "e6b81f97be7b013cdace5483acf89979d9cec8c4c272a971f941deb7326a4820",
+      "semantic_review": "pending"
+    }
+  ]
+}

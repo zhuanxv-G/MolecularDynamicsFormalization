@@ -1,0 +1,43 @@
+[
+  {
+    "eaudit": "EAUDIT02",
+    "section": "1.1",
+    "source_ids": [
+      "MD-1.1-Schrodinger",
+      "MD-1.1-NewtonModel",
+      "MD-1.1-HardSphere"
+    ],
+    "signature_changes": [
+      {
+        "source_id": "MD-1.1-NewtonModel",
+        "old_signature_sha256": "d9dbd769b70a2b8e1c1c617900ecef552e578fb31728e25f8e77274c18ffb5bc",
+        "new_signature_sha256": "f612fc316f7d92b90d51925a4517af0a0ae4a8f1ac8553260f8feffee11b1aff"
+      },
+      {
+        "source_id": "MD-1.1-HardSphere",
+        "old_signature_sha256": "1f6689f4c2c087032feceecd82cc53be990cb04e410dd7fd3b3de224db92185f",
+        "new_signature_sha256": "7c8d21c4f7ce5a11c3a06a846aff4dc1c68af07b31de30905e9bb69d08daa2a9"
+      }
+    ],
+    "single_compile": "blueprint/ch01/validation/EAUDIT02/FINAL_COMPILE.json",
+    "full_check": "blueprint/ch01/validation/EAUDIT02-full/CHECK_REPORT.json",
+    "full_check_sha256": "9c7324f6e707a2c7b80a1ac0f82e986de7a51347d1e53c089cc39993f21cd65a",
+    "axiom_count": 141,
+    "sorry_policy": "existing placeholders unchanged; sorryAx means incomplete",
+    "raw_returns_intact": true,
+    "historical_batch_hashes_intact": true,
+    "compact_bytes": [
+      109519,
+      113282,
+      108562
+    ],
+    "source_pages_verified": [
+      28,
+      29,
+      30
+    ],
+    "website_reaudit": "pending",
+    "lean_sha256": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+    "source_sha256": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e"
+  }
+]

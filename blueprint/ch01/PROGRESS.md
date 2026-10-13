@@ -2,9 +2,9 @@
 
 范围：印刷p.1–45正文，Exercises排除；正式库基线63fa09227e1d898e0cacae3c33241d3d6ecba816，heartbeat ACTIVE/15分钟原样。
 下一步：按CURRENT_STATE顶部接续；全章已覆盖，终检和推送完成后等待用户提交INDEX.md中的网站批次。
-当前141条；本地PASS 124；网站返回141（版本绑定待验）；任务包23批，每批≤8条、每文件<40KB。
+当前141条；本地PASS 124；网站返回141（136已绑定，旧试点5条待EAUDIT01）；任务包23批，每批≤8条、每文件<40KB。
 
-网站整合汇总：网站PASS 44 / 修复中 26 / 待导师 8 / 待复审 63。
+网站整合汇总：网站PASS 44 / 修复中 24 / 待导师 8 / 待复审 65。
 ## 逐条进度
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明 |
@@ -14,9 +14,9 @@
 | MD-1.3-NewtonEulerLagrange | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | existing_bridge |
 | MD-1.4-LegendreHamiltonian | CORRECTED/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | sorry / 一般配置相关对称正定矩阵Legendre上确界理论未补证明；保持sorry。 |
 | MD-1.5.1-FlowInverse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | existing_bridge |
-| MD-1.1-Schrodinger | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
-| MD-1.1-NewtonModel | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
-| MD-1.1-HardSphere | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.1-Schrodinger | CORRECTED/原页已核 | 陈述已写；已编译/公理已核 | PASS | 待复审 / EAUDIT02 | definition |
+| MD-1.1-NewtonModel | CORRECTED/原页已核 | 陈述已写；已编译/公理已核 | PASS | 待复审 / EAUDIT02 | definition |
+| MD-1.1-HardSphere | APPROVED/原页已核 | 陈述已写；已编译/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT02 | definition |
 | MD-1.1.1-Multibody | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
 | MD-1.1.1-Morse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
 | MD-1.1.1-MorseMinimum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | sorry / 三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。（失败3次，时间盒已止） |
@@ -432,3 +432,7 @@
 
 BATCH02–23共136条，原返回PASS 44 / NEEDS_HUMAN 66 / FAIL 26。缺输入哈希/任务标识，全部待版本绑定复核；不提升网站PASS、不冻结。
 原文JSON与Lean逐字节不变；修订提案未自动应用，见mathcopilot_results/integration20261012/PROPOSALS.json。本地编译与公理证据复用，不恢复第1章长证明。
+
+## 2026-10-13 EAUDIT02检查点
+
+§1.1两个FAIL修签名及Schrodinger补材料完成；原页、本地预审、最终单文件、完整check和141条公理通过；三份compact最大113282字节，网站复审待提交。其余CORRECTED未重新核页，不自动合并；导师未裁定。

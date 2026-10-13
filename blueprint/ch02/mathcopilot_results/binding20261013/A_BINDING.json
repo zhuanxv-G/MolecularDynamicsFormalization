@@ -1,0 +1,610 @@
+{
+  "BATCH01_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH02_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH03_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "1ca97005ec475ec4032cf5a83b43dd1c234d084435e0c6e2e6c69aa3b55b11eb",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH04_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "307ecb3b59aa31155a8450bb77368caa7272ceb35ce8439657d7f9993c19804e",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH05_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH06_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "b0a2d59a06bf9f2dae918302a017d2ebd1afac192770578452f7c6374badf589",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH07_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "67ff42d0a3678740b1de1e7c349f059b3525f963ca09db7af14a3cedeb9b23ae",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH08_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "1b95f53d5fdf6ea40404ec76d52ceb7c9df16234455272086bf70b55e0912266",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH09_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "f955234e349aea7df7228984d5ddaa27e4eb3ee5dad16c4f0dde283cdd4b9acd",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH10_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "4a2212d22d4dba363f5ff58d7f2448bc6be83a9ef3960660191d803ff62b7a9d",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH11_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "19e0e925370ad080ce0bbb9ff53c160db64fc5bd35bc8381666af4e3e14dd6a4",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH12_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "d6a2e0d5ba6ea06a1caf4427058f2ed6040ecd35cfe254480ef1f0bc66a91d69",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH13_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "1b716af952b8152d1eb240f558f99ab25782ef5ac9ebf4a7703952664c0d35fe",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH14_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "9ba35e85c8fb0ce7d3169901bf1e36a0eb921ecfe803e61ce6dc88df6154470d",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH15_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "04333ffa149c1810f09a9c0b330a4f93e1d20e47c3c726d02420eadceab4e673",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH16_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "93734f33d8f605a2947654a2091ddf9ab21c6504c71607ec363593a6145fc774",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH17_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "eec8314277e1a43eed208d38a5b63b4ee998399b3803cfb62e6833071143eaa3",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH18_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "8d09e14c1b8f932a690f6d55318be9938b58901878fc3a5913f5be933589cbe4",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH19_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "0cda67a9890da565be82d225fb2b42a4b46e02ca12739a083f94ca5e652f07f4",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH20_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "ff726b507c981a405e20510fc8d9aa1d48251ec866abf5163966d636b4c14e2e",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH21_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "fd27ae0bf0d2adf935ba9c3e03d83de4272ba09a77a9ef88efeaa5844ad857b3",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH22_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "d10a3d57aaef30aa03ac61eaadb2221fb1851a35dc99e03473c0c2712ef9e594",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH23_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "54829251d5b911385e04178a61e9b37b7106e1a754a066e04f8f482c9d5f2182",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH24_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "186b911135b467f29c9948499c26cd4e6b72f9f8f18a79c7e58db9f933a0a054",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH25_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "dc2749bf1c4e7390eca0d7ceb97b6bf42c6f1ce3d8f922b80fdf1448ed10e0a3",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH26_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "e39af82a9c571f5d728ec7c18046f5fdf0a9abd7f21d787625b3bf0f54e11f2f",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH27_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "ee3570d571848f3b33ee7d01ddc52fd404b86e5230b598739ff5f5689ef3fb4e",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH28_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "32d62f4d7de5e5fa9f93c3cf37db78cd0dd6680e180aeb2f3e25a34b9ad423b8",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH29_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "51607f7e8122c3f9f2a104bd0a97eaf6270295cbb643ca2651e17f7f092ec25f",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH30_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "bf7644ce91d3834e021dae489b126f561e2d2e6f0aee9dc731933aac9c7f7fd2",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH31_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "d57ceb94f4cabdbc2f6349c36de97a27e5e09c045288bf1fbbad31afb044b8ab",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  },
+  "BATCH32_result.json": {
+    "bound": true,
+    "rule": "b",
+    "version": "8ca2ccf231b3",
+    "generation_commit": "8ca2ccf231b31f92d9cbe9a11857647def22017a",
+    "registration_commit": "360168042806edb748578b0c55110901ff5f5b56",
+    "input_sha256": {
+      "BATCH.md": "2b21ff6045ff239692b070fed63dc16d3804bb0742ced2ca489475055cf1e05d",
+      "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb"
+    },
+    "checks": {
+      "full_batch_sha256": true,
+      "lean_unchanged": true,
+      "generation_blob_matches": true,
+      "manifest_hash_field": "full_batch_sha256"
+    },
+    "lean_modification_commits": [],
+    "reasons": []
+  }
+}

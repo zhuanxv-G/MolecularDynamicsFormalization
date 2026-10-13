@@ -97,8 +97,20 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+    "repair": {
+      "eaudit": "EAUDIT02",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+        "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+        "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e"
+      },
+      "json_review_locally_verified": true
+    },
     "needs_category": "材料缺失",
-    "effective_status": "NEEDS_HUMAN（绑定版本 09ff185182a8）"
+    "effective_status": "待复审 / EAUDIT02"
   },
   {
     "source_id": "MD-1.1-NewtonModel",
@@ -195,8 +207,20 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+    "repair": {
+      "eaudit": "EAUDIT02",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+        "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+        "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e"
+      },
+      "json_review_locally_verified": true
+    },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 09ff185182a8）"
+    "effective_status": "待复审 / EAUDIT02"
   },
   {
     "source_id": "MD-1.1-HardSphere",
@@ -249,8 +273,20 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+    "repair": {
+      "eaudit": "EAUDIT02",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+        "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+        "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e"
+      },
+      "json_review_locally_verified": true
+    },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 09ff185182a8）"
+    "effective_status": "待复审 / EAUDIT02"
   },
   {
     "source_id": "MD-1.1.1-Multibody",

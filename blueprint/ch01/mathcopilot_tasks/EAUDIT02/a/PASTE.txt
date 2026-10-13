@@ -1,0 +1,147 @@
+先A原文逐字审校，再C只读核对当前完整签名及项目实际定义；全部对象/域/量词/前提/结论和[EXTRA]逐项判断，不以sorry判签名FAIL，不修改工程或补证明。原书疑误保留并NEEDS_HUMAN。
+本条MD-1.1-Schrodinger；附件页1/2/3分别是原PDF28/29/30（印刷5/6/7）。
+必须创建目录并把结果实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT02_review.json 文件；文件仅含JSON对象：batch=EAUDIT02、input_sha256、items。已有文件时先核对共享键BATCH_EAUDIT02.md、Blueprint/Ch01.lean、blueprint/ch01/ch01_source.json完全相同；相同则按source_id合并本条并合并input_sha256的子任务独立键，保留其他条；共享键不同则报告版本冲突。input_sha256逐项回显下列哈希。items每条字段source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。最后仅回报实际文件路径。
+
+input_sha256：
+{
+  "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+  "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+  "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e",
+  "EAUDIT02a_materials": "a39bf5f066f094fefe937e09d5989155f3d18da16d8fc76c5f885d9d03473373",
+  "EAUDIT02a_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.1-Schrodinger",
+  "kind": "definition",
+  "label": null,
+  "section": "1.1",
+  "printed_page": "5",
+  "pdf_page": "28",
+  "statement_latex": "The Schrödinger equation itself is a partial differential equation of the following form:\n\\[i\\hbar\\frac{\\partial\\Phi}{\\partial t}=-\\hbar^2\\sum_{j=1}^{13}\\frac{1}{2\\mu_j}\\left(\\frac{\\partial^2\\Phi}{\\partial q_{j,x}^2}+\\frac{\\partial^2\\Phi}{\\partial q_{j,y}^2}+\\frac{\\partial^2\\Phi}{\\partial q_{j,z}^2}\\right)+U_P(q_{1,x},q_{1,y},\\ldots,q_{13,z})\\Phi.\\tag{1.1}\\]",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "$\\Phi:\\mathbb R\\times\\mathbb R^{39}\\to\\mathbb C$；$i^2=-1$；$\\hbar$为Planck常数；$\\mu_j$为第$j$粒子质量；$U_P$为原始原子势能。13粒子来自10电子+3核水分子示例。"
+  ],
+  "review_status": "CORRECTED",
+  "issues": [
+    {
+      "code": "CONTEXT_LATEX_OVERESCAPED",
+      "detail": "BATCH02.md与ch01_source.json中的本条完全一致，但context_notation的数学命令被重复转义；这是上下文表示问题，不是原书公式错误。",
+      "status": "local_verified",
+      "receipt": "BATCH02_result.json"
+    }
+  ],
+  "lean_decl": "MD.Ch01.schrodingerEquation",
+  "extra_assumptions": [
+    "正质量及正Planck参数；按经典解解释，Φ在时间/位置联合C2，保证总导数算子表示实际偏导数；不声明解存在。"
+  ],
+  "repair_log": [
+    {
+      "stage": "EAUDIT02_LOCAL_PAGE_RECHECK",
+      "timestamp": "2026-10-13T13:51:34.594771",
+      "before_sha256": "4f1477c2e45fb4684278e4cd3632ba088f0f85bc88a68ec0eadb598073bcf5c5",
+      "after_sha256": "4f1477c2e45fb4684278e4cd3632ba088f0f85bc88a68ec0eadb598073bcf5c5",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+      "raw_sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+      "reason": "PDF28–30视觉核对；Newton补回原页第i个核的遗漏词；Schrodinger提案当前字段已一致，保留已有文本；原书数学不改。Newton/HardSphere签名按网站FAIL加强模型资格及补全动力学；其余条目不改。"
+    }
+  ],
+  "old_ids": [
+    "CH01-001",
+    "CH01-002",
+    "CH01-003",
+    "CH01-004",
+    "CH01-005",
+    "CH01-006"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; 2026-10-13 PDF28; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+
+## 当前完整Lean签名/定义
+```lean
+def schrodingerEquation (h : planckConstant) (μ : quantumMass)
+    (U : primitivePotential) (Φ : waveFunction) : Prop :=
+  ContDiff ℝ 2 (Function.uncurry Φ) ∧
+  ∀ t q, Complex.I * (h.val : ℂ) * deriv (fun s => Φ s q) t =
+    -(h.val : ℂ)^2 * ∑ i : Fin 39,
+      secondPartial (Φ t) q i / (2 * (μ ⟨i.val / 3, by omega⟩).val : ℂ) +
+      (U q : ℂ) * Φ t q
+```
+
+上下文：Lean4.34.0/Mathlibv4.34.0；namespace MD.Ch01；noncomputable section；
+open Set Filter MolecularDynamics MolecularDynamics.Chapter01Review；open scoped Topology BigOperators ContDiff InnerProductSpace。
+标准Mathlib符号按固定版本展开；项目实际定义如下。多重同名候选均列出，不猜测解析。
+
+## 已绑定旧返回及本次修复
+```json
+{
+  "lean_decl": "MD.Ch01.schrodingerEquation",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "已读取附件Ch01.lean第229–235行的实际定义。显式表达式包含联合C2条件、所有t和q上的方程、时间导数、负号、ℏ²、39项空间求和及实势能乘Φ。若空间坐标按每粒子三个方向排列，零基索引i.val/3可对应原书μ_j。然而planckConstant、quantumMass、primitivePotential、waveFunction和secondPartial的真实定义未提供；当前工作区及共享目录中未找到ReviewDefinitions.lean，亦无本批MANIFEST.json。不能凭名称确认质量与参数确实为正、位置域确实为ℝ³⁹、波函数确实复值、secondPartial确实是指定方向的二阶偏导。正物理参数及明确限定经典C2解的解释可以合理，但联合全域C2强于原文最低偏导要求，且仍须核实势能定义域是否排除奇点。本条是定义，语义保留判定与sorry或证明完成度无关。",
+  "counterexample": null,
+  "suggested_fix": "补齐与附件Ch01.lean同一版本的ReviewDefinitions.lean、相关导入及MANIFEST.json，展开上述五个辅助定义。确认secondPartial的方向、阶数和坐标顺序，并明确这是经典C2解谓词；若U_P仅在非碰撞域定义，应显式给出该域和时间域，调整量词范围后重新审计。"
+}
+```
+
+### MolecularDynamics/Chapter01/ReviewDefinitions.lean:18 namespace MolecularDynamics.Chapter01Review
+```lean
+abbrev planckConstant := {h : ℝ // 0 < h}
+```
+
+### MolecularDynamics/Chapter01/ReviewDefinitions.lean:20 namespace MolecularDynamics.Chapter01Review
+```lean
+abbrev primitivePotential := Q13 → ℝ
+```
+
+### MolecularDynamics/Chapter01/ReviewDefinitions.lean:15 namespace MolecularDynamics.Chapter01Review
+```lean
+abbrev Q13 := Position 39
+```
+
+### MolecularDynamics/Notation.lean:13 namespace MolecularDynamics
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics/Chapter01/ReviewDefinitions.lean:19 namespace MolecularDynamics.Chapter01Review
+```lean
+abbrev quantumMass := Fin 13 → {m : ℝ // 0 < m}
+```
+
+### Blueprint/Ch01.lean:257 namespace MD.Ch01
+```lean
+def schrodingerEquation (h : planckConstant) (μ : quantumMass)
+    (U : primitivePotential) (Φ : waveFunction) : Prop :=
+  ContDiff ℝ 2 (Function.uncurry Φ) ∧
+  ∀ t q, Complex.I * (h.val : ℂ) * deriv (fun s => Φ s q) t =
+    -(h.val : ℂ)^2 * ∑ i : Fin 39,
+      secondPartial (Φ t) q i / (2 * (μ ⟨i.val / 3, by omega⟩).val : ℂ) +
+      (U q : ℂ) * Φ t q
+
+/-- source_id: MD-1.1-NewtonModel · definition · printed p.6 / PDF p.29
+[EXTRA] EAUDIT02: positive particle masses repeated over exactly three coordinates;
+```
+
+### MolecularDynamics/Chapter01/ReviewDefinitions.lean:23 namespace MolecularDynamics.Chapter01Review
+```lean
+def secondPartial {n : ℕ} (f : Position n → ℂ) (q : Position n) (i : Fin n) : ℂ :=
+  deriv (deriv (fun s : ℝ => f (q + s • coordinateDirection i))) 0
+```
+
+### MolecularDynamics/Chapter01/ReviewDefinitions.lean:21 namespace MolecularDynamics.Chapter01Review
+```lean
+def coordinateDirection {n : ℕ} (i : Fin n) : Position n :=
+  WithLp.toLp 2 (fun j => if j = i then 1 else 0)
+```
+
+### MolecularDynamics/Chapter01/ReviewDefinitions.lean:16 namespace MolecularDynamics.Chapter01Review
+```lean
+abbrev waveFunction := ℝ → Q13 → ℂ
+```
+

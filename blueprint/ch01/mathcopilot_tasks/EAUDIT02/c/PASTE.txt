@@ -1,0 +1,137 @@
+先A原文逐字审校，再C只读核对当前完整签名及项目实际定义；全部对象/域/量词/前提/结论和[EXTRA]逐项判断，不以sorry判签名FAIL，不修改工程或补证明。原书疑误保留并NEEDS_HUMAN。
+本条MD-1.1-HardSphere；附件页1/2/3分别是原PDF28/29/30（印刷5/6/7）。
+必须创建目录并把结果实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT02_review.json 文件；文件仅含JSON对象：batch=EAUDIT02、input_sha256、items。已有文件时先核对共享键BATCH_EAUDIT02.md、Blueprint/Ch01.lean、blueprint/ch01/ch01_source.json完全相同；相同则按source_id合并本条并合并input_sha256的子任务独立键，保留其他条；共享键不同则报告版本冲突。input_sha256逐项回显下列哈希。items每条字段source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。最后仅回报实际文件路径。
+
+input_sha256：
+{
+  "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+  "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+  "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e",
+  "EAUDIT02c_materials": "87ca1940b6a88cd2cd346703a6d46ddfe1fc9007ce194f62f3f9d522b972b415",
+  "EAUDIT02c_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.1-HardSphere",
+  "kind": "definition",
+  "label": null,
+  "section": "1.1",
+  "printed_page": "7",
+  "pdf_page": "30",
+  "statement_latex": "The simplest model for a molecular interaction potential is the hard-sphere model. We assume that each atom is an impenetrable sphere which interacts with other atoms via perfectly elastic collision with the atoms transferring, according to standard rules, momentum and energy to one another during the collisions.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [],
+  "review_status": "APPROVED",
+  "issues": [],
+  "lean_decl": "MD.Ch01.hardSphereModel",
+  "extra_assumptions": [
+    "[历史签名，EAUDIT02已替换] 只编码不可穿透与完全弹性守恒关系；原文未指定碰撞散射规则，此定义不唯一决定碰撞后速度。",
+    "[EXTRA] EAUDIT02：以标准无摩擦孤立二体弹性碰撞展开standard rules；同时多接触需另有规则。碰撞时刻在整个开放时间域局部孤立，排除稠密事件集使动力学真空化；全粒子对全时间不可穿透；位置连续，碰撞外真实自由运动；实际速度左右极限接入法向冲量、法向速度反转、碰后分离及全部动量/动能守恒。旧只含瞬时必要守恒关系的说明为历史版本。"
+  ],
+  "repair_log": [
+    {
+      "stage": "EAUDIT02_LOCAL_PAGE_RECHECK",
+      "timestamp": "2026-10-13T13:51:34.596250",
+      "before_sha256": "15730fb9a4bf36a0a92a8cac7cafe9f5aef2ef273a48307e2738b8dae3fcd89a",
+      "after_sha256": "15730fb9a4bf36a0a92a8cac7cafe9f5aef2ef273a48307e2738b8dae3fcd89a",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
+      "raw_sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
+      "reason": "PDF28–30视觉核对；Newton补回原页第i个核的遗漏词；Schrodinger提案当前字段已一致，保留已有文本；原书数学不改。Newton/HardSphere签名按网站FAIL加强模型资格及补全动力学；其余条目不改。"
+    }
+  ],
+  "old_ids": [
+    "CH01-010"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; 2026-10-13 PDF30; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+
+## 当前完整Lean签名/定义
+```lean
+def hardSphereModel {N : ℕ} (R m : Fin N → ℝ) (I C : Set ℝ)
+    (q v before after : ℝ → Fin N → V3) (pair : ℝ → Fin N × Fin N) : Prop :=
+  (∀ i, 0 < R i ∧ 0 < m i) ∧ IsOpen I ∧ IsPreconnected I ∧ C ⊆ I ∧
+  (∀ t ∈ I, ∃ δ > 0, ∀ s ∈ I, |s - t| < δ → s ∈ C → s = t) ∧
+  (∀ t ∈ I, ∀ i j, i ≠ j → R i + R j ≤ dist (q t i) (q t j)) ∧
+  (∀ i, ContinuousOn (fun t => q t i) I) ∧
+  (∀ t ∈ I \ C, ∀ i,
+    HasDerivAt (fun s => q s i) (v t i) t ∧
+    HasDerivAt (fun s => v s i) (0 : V3) t) ∧
+  (∀ t ∈ C,
+    let i := (pair t).1
+    let j := (pair t).2
+    i ≠ j ∧
+    binaryElasticSphereCollision (R i) (R j) (m i) (m j)
+      (q t i) (q t j) (before t i) (before t j) (after t i) (after t j) ∧
+    (∀ k, Tendsto (fun s => v s k) (𝓝[I ∩ Iio t] t) (𝓝 (before t k)) ∧
+      Tendsto (fun s => v s k) (𝓝[I ∩ Ioi t] t) (𝓝 (after t k))) ∧
+    (∀ k, k ≠ i → k ≠ j → after t k = before t k))
+```
+
+上下文：Lean4.34.0/Mathlibv4.34.0；namespace MD.Ch01；noncomputable section；
+open Set Filter MolecularDynamics MolecularDynamics.Chapter01Review；open scoped Topology BigOperators ContDiff InnerProductSpace。
+标准Mathlib符号按固定版本展开；项目实际定义如下。多重同名候选均列出，不猜测解析。
+
+## 已绑定旧返回及本次修复
+```json
+{
+  "lean_decl": "MD.Ch01.hardSphereModel",
+  "verdict": "FAIL",
+  "explanation": "已读取Ch01.lean第250–254行的完整定义：正半径、正质量和单次位置距离下界均显式存在；接触时要求两粒子的总动量及总动能守恒，两个守恒量的系数和形式正确。但这只是双粒子瞬时必要条件，没有轨迹、全部时间上的不可穿透、碰撞后的分离条件或标准碰撞更新关系。当w₁=v₁、w₂=v₂时，守恒等式自动成立，即使粒子正迎面接近并将立即相互穿透。原文没有展开标准规则的公式，不意味着任意守恒速度都可作为硬球碰撞结果。[EXTRA]中只编码必要条件的说明属于删减模型内容，不能使整个hardSphereModel与原文等价。V3的真实定义当前未提供，无法认证其确实为欧氏ℝ³；即便按原文所需对象解释，仍有明确反例，故缺失条款足以判FAIL。判定与证明完成度无关。",
+  "counterexample": "按原文欧氏ℝ³取R₁=R₂=m₁=m₂=1，q₁=(0,0,0)，q₂=(2,0,0)，v₁=w₁=(1,0,0)，v₂=w₂=(−1,0,0)。两球恰好接触，总动量碰撞前后均为0，总动能均为1，所以定义中的全部显式条件成立。但按所给碰撞后速度运动，小正时间t时球心距离为2−2t<2，立即穿透。等质量迎面完全弹性硬球碰撞应使两球反向离开。",
+  "suggested_fix": "补齐本批V3定义及版本绑定。将瞬时守恒关系明确作为必要条件组件；完整硬球模型应包含所有不同粒子对在全部时间上的距离下界、碰撞外运动和碰撞更新。对标准无摩擦二体碰撞，可显式规定接触、入射条件、沿球心连线的冲量及法向相对速度反转，并保证碰撞后分离；正半径和正质量作为物理资格合理。"
+}
+```
+
+### MolecularDynamics/Chapter01/ReviewDefinitions.lean:14 namespace MolecularDynamics.Chapter01Review
+```lean
+abbrev V3 := Position 3
+```
+
+### MolecularDynamics/Notation.lean:13 namespace MolecularDynamics
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### Blueprint/Ch01.lean:85 namespace MD.Ch01
+```lean
+def binaryElasticSphereCollision (R₁ R₂ m₁ m₂ : ℝ)
+    (q₁ q₂ v₁ v₂ w₁ w₂ : V3) : Prop :=
+  dist q₁ q₂ = R₁ + R₂ ∧
+  let normal := (‖q₂ - q₁‖⁻¹) • (q₂ - q₁)
+  0 ≤ inner ℝ (v₁ - v₂) normal ∧
+  w₁ = v₁ - (2 * m₂ / (m₁ + m₂) * inner ℝ (v₁ - v₂) normal) • normal ∧
+  w₂ = v₂ + (2 * m₁ / (m₁ + m₂) * inner ℝ (v₁ - v₂) normal) • normal ∧
+  inner ℝ (w₁ - w₂) normal = -inner ℝ (v₁ - v₂) normal ∧
+  inner ℝ (w₂ - w₁) normal ≥ 0 ∧
+  m₁ • v₁ + m₂ • v₂ = m₁ • w₁ + m₂ • w₂ ∧
+  m₁ * ‖v₁‖^2 / 2 + m₂ * ‖v₂‖^2 / 2 =
+    m₁ * ‖w₁‖^2 / 2 + m₂ * ‖w₂‖^2 / 2
+```
+
+### Blueprint/Ch01.lean:286 namespace MD.Ch01
+```lean
+def hardSphereModel {N : ℕ} (R m : Fin N → ℝ) (I C : Set ℝ)
+    (q v before after : ℝ → Fin N → V3) (pair : ℝ → Fin N × Fin N) : Prop :=
+  (∀ i, 0 < R i ∧ 0 < m i) ∧ IsOpen I ∧ IsPreconnected I ∧ C ⊆ I ∧
+  (∀ t ∈ I, ∃ δ > 0, ∀ s ∈ I, |s - t| < δ → s ∈ C → s = t) ∧
+  (∀ t ∈ I, ∀ i j, i ≠ j → R i + R j ≤ dist (q t i) (q t j)) ∧
+  (∀ i, ContinuousOn (fun t => q t i) I) ∧
+  (∀ t ∈ I \ C, ∀ i,
+    HasDerivAt (fun s => q s i) (v t i) t ∧
+    HasDerivAt (fun s => v s i) (0 : V3) t) ∧
+  (∀ t ∈ C,
+    let i := (pair t).1
+    let j := (pair t).2
+    i ≠ j ∧
+    binaryElasticSphereCollision (R i) (R j) (m i) (m j)
+      (q t i) (q t j) (before t i) (before t j) (after t i) (after t j) ∧
+    (∀ k, Tendsto (fun s => v s k) (𝓝[I ∩ Iio t] t) (𝓝 (before t k)) ∧
+      Tendsto (fun s => v s k) (𝓝[I ∩ Ioi t] t) (𝓝 (after t k))) ∧
+    (∀ k, k ≠ i → k ≠ j → after t k = before t k))
+```
+

@@ -104,3 +104,7 @@ MolecularDynamics/Notation.lean
 ## EAUDIT01：返回件整合
 
 BATCH01旧compact是历史输入；优先提交[EAUDIT01/INDEX.md](EAUDIT01/INDEX.md)。四条原NEEDS、一条旧FAIL已保存；新签名待网站重审，无网站PASS或冻结。
+
+## EAUDIT02：§1.1首批网站修复
+
+[三份compact及输出文件要求](EAUDIT02/INDEX.md)。本次修复优先提交此版本；BATCH02保留作历史绑定输入，不代表新签名已经网站PASS。

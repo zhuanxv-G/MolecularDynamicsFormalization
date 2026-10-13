@@ -1,0 +1,56 @@
+{
+  "eaudit": "EAUDIT02",
+  "subtask": "EAUDIT02c",
+  "source_id": "MD-1.1-HardSphere",
+  "input_sha256": {
+    "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+    "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+    "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e",
+    "EAUDIT02c_materials": "87ca1940b6a88cd2cd346703a6d46ddfe1fc9007ce194f62f3f9d522b972b415",
+    "EAUDIT02c_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    28,
+    29,
+    30
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "475a7ab83b01b2d6e0cdacfe0dac84d933c6cca76fc9d90e4329af99ef3ef40b",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "line": 14,
+      "name": "V3",
+      "namespace": "MolecularDynamics.Chapter01Review",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "630b28f8663e80b13763ae51544e5ef63ff46b6c99936a04ab13fd586892a08c"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 13,
+      "name": "Position",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "line": 85,
+      "name": "binaryElasticSphereCollision",
+      "namespace": "MD.Ch01",
+      "file_sha256": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+      "excerpt_sha256": "8faca26ac567a29d92bd32fdbd0a5d209f794d897eb2fc56ab7a91061370adb6"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "line": 286,
+      "name": "hardSphereModel",
+      "namespace": "MD.Ch01",
+      "file_sha256": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+      "excerpt_sha256": "7c8d21c4f7ce5a11c3a06a846aff4dc1c68af07b31de30905e9bb69d08daa2a9"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT02_review.json",
+  "total_task_bytes": 108562
+}

@@ -70,6 +70,31 @@ noncomputable def variableMassHamiltonian {n : ℕ}
     (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)
     (q : Position n) (p : Momentum n) : ℝ := inner ℝ p (matrixAction (M q)⁻¹ p) / 2 + U q
 
+/-- EAUDIT02: a classical initial-value model on an open time interval containing
+the initial time. Differentiability qualifies the actual potential gradient. -/
+def classicalNewtonInitialValueModel {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (Q : Set (Position n)) (I : Set ℝ)
+    (q : ℝ → Position n) (t₀ : ℝ) (q₀ v₀ : Position n) : Prop :=
+  (∀ i, 0 < m i) ∧ IsOpen I ∧ IsPreconnected I ∧ t₀ ∈ I ∧
+  (∀ t ∈ I, DifferentiableAt ℝ U (q t)) ∧
+  IsNewtonTrajectoryOn m U Q I q ∧ q t₀ = q₀ ∧ HasDerivAt q v₀ t₀
+
+/-- Standard frictionless binary impact; n points from centre 1 to centre 2.
+The incoming normal relative speed is nonnegative, including grazing contact.
+Momentum and kinetic energy conservation remain explicit parts of the model. -/
+def binaryElasticSphereCollision (R₁ R₂ m₁ m₂ : ℝ)
+    (q₁ q₂ v₁ v₂ w₁ w₂ : V3) : Prop :=
+  dist q₁ q₂ = R₁ + R₂ ∧
+  let normal := (‖q₂ - q₁‖⁻¹) • (q₂ - q₁)
+  0 ≤ inner ℝ (v₁ - v₂) normal ∧
+  w₁ = v₁ - (2 * m₂ / (m₁ + m₂) * inner ℝ (v₁ - v₂) normal) • normal ∧
+  w₂ = v₂ + (2 * m₁ / (m₁ + m₂) * inner ℝ (v₁ - v₂) normal) • normal ∧
+  inner ℝ (w₁ - w₂) normal = -inner ℝ (v₁ - v₂) normal ∧
+  inner ℝ (w₂ - w₁) normal ≥ 0 ∧
+  m₁ • v₁ + m₂ • v₂ = m₁ • w₁ + m₂ • w₂ ∧
+  m₁ * ‖v₁‖^2 / 2 + m₂ * ‖v₂‖^2 / 2 =
+    m₁ * ‖w₁‖^2 / 2 + m₂ * ‖w₂‖^2 / 2
+
 /-- source_id: MD-1.5.3-Thm1.1 · Theorem 1.1 · printed p.32 / PDF p.55
 Original: A strong local minimum of a smooth potential yields a stable equilibrium.
 [EXTRA] hm: positive fixed diagonal masses, inherited from p.25 positive definiteness.
@@ -238,23 +263,44 @@ def schrodingerEquation (h : planckConstant) (μ : quantumMass)
       (U q : ℂ) * Φ t q
 
 /-- source_id: MD-1.1-NewtonModel · definition · printed p.6 / PDF p.29
-[EXTRA] n为展平坐标数；三维实例n=3N，质量限制通过coordinateMassesOfParticles给出。
-
+[EXTRA] EAUDIT02: positive particle masses repeated over exactly three coordinates;
+open connected time domain containing t₀; potential differentiable along the path.
+The generic coordinate model is an auxiliary definition; this source uses 3N.
 -/
-def newtonInitialValueModel {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
-    (Q : Set (Position n)) (I : Set ℝ) (q : ℝ → Position n) (t₀ : ℝ)
-    (q₀ v₀ : Position n) : Prop :=
-  IsNewtonTrajectoryOn m U Q I q ∧ q t₀ = q₀ ∧ HasDerivAt q v₀ t₀
+def newtonInitialValueModel {N : ℕ} (m : ParticleMasses N)
+    (U : PotentialEnergy (N * 3)) (Q : Set (Position (N * 3)))
+    (I : Set ℝ) (q : ℝ → Position (N * 3)) (t₀ : ℝ)
+    (q₀ v₀ : Position (N * 3)) : Prop :=
+  classicalNewtonInitialValueModel (coordinateMassesOfParticles (d := 3) m)
+    U Q I q t₀ q₀ v₀
 
 /-- source_id: MD-1.1-HardSphere · definition · printed p.7 / PDF p.30
-[EXTRA] 只编码不可穿透与完全弹性守恒关系；原文未指定碰撞散射规则，此定义不唯一决定碰撞后速度。
-
+[EXTRA] EAUDIT02: the standard frictionless isolated binary-impact model;
+simultaneous multi-contact impacts need a separate rule, not asserted here.
+Collision times are locally isolated throughout I; a dense C cannot vacuously
+remove the collision-free equations of motion.
+Every particle pair is impenetrable for all times; free motion holds off C.
+Actual velocity limits connect impact data to the trajectory, rather than
+leaving post-collision velocities as unrelated conservation-law witnesses.
 -/
-def hardSphereModel (R₁ R₂ m₁ m₂ : ℝ) (q₁ q₂ v₁ v₂ w₁ w₂ : V3) : Prop :=
-  0 < R₁ ∧ 0 < R₂ ∧ 0 < m₁ ∧ 0 < m₂ ∧ R₁ + R₂ ≤ dist q₁ q₂ ∧
-  (dist q₁ q₂ = R₁ + R₂ →
-    m₁ • v₁ + m₂ • v₂ = m₁ • w₁ + m₂ • w₂ ∧
-    m₁ * ‖v₁‖^2 / 2 + m₂ * ‖v₂‖^2 / 2 = m₁ * ‖w₁‖^2 / 2 + m₂ * ‖w₂‖^2 / 2)
+def hardSphereModel {N : ℕ} (R m : Fin N → ℝ) (I C : Set ℝ)
+    (q v before after : ℝ → Fin N → V3) (pair : ℝ → Fin N × Fin N) : Prop :=
+  (∀ i, 0 < R i ∧ 0 < m i) ∧ IsOpen I ∧ IsPreconnected I ∧ C ⊆ I ∧
+  (∀ t ∈ I, ∃ δ > 0, ∀ s ∈ I, |s - t| < δ → s ∈ C → s = t) ∧
+  (∀ t ∈ I, ∀ i j, i ≠ j → R i + R j ≤ dist (q t i) (q t j)) ∧
+  (∀ i, ContinuousOn (fun t => q t i) I) ∧
+  (∀ t ∈ I \ C, ∀ i,
+    HasDerivAt (fun s => q s i) (v t i) t ∧
+    HasDerivAt (fun s => v s i) (0 : V3) t) ∧
+  (∀ t ∈ C,
+    let i := (pair t).1
+    let j := (pair t).2
+    i ≠ j ∧
+    binaryElasticSphereCollision (R i) (R j) (m i) (m j)
+      (q t i) (q t j) (before t i) (before t j) (after t i) (after t j) ∧
+    (∀ k, Tendsto (fun s => v s k) (𝓝[I ∩ Iio t] t) (𝓝 (before t k)) ∧
+      Tendsto (fun s => v s k) (𝓝[I ∩ Ioi t] t) (𝓝 (after t k))) ∧
+    (∀ k, k ≠ i → k ≠ j → after t k = before t k))
 
 /-- source_id: MD-1.1.1-Multibody · definition · printed p.8 / PDF p.31
 [EXTRA] 按无序不同粒子组计数i<j<k<l；原文仅列成分未指定求和计数约定。

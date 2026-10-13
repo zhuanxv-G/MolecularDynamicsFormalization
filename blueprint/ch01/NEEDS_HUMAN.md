@@ -4,7 +4,7 @@
 
 ## (i) 材料缺失：补材料后复审
 
-- MD-1.1-Schrodinger：补齐与附件Ch01.lean同一版本的ReviewDefinitions.lean、相关导入及MANIFEST.json，展开上述五个辅助定义。确认secondPartial的方向、阶数和坐标顺序，并明确这是经典C2解谓词；若U_P仅在非碰撞域定义，应显式给出该域和时间域，调整量词范围后重新审计。
+- MD-1.1-Schrodinger：补齐与附件Ch01.lean同一版本的ReviewDefinitions.lean、相关导入及MANIFEST.json，展开上述五个辅助定义。确认secondPartial的方向、阶数和坐标顺序，并明确这是经典C2解谓词；若U_P仅在非碰撞域定义，应显式给出该域和时间域，调整量词范围后重新审计。 已补材料/修复并生成EAUDIT02，等待网站复审。
 - MD-1.1.1-Multibody：提供与附件 Ch01.lean 同版本的 ReviewDefinitions.lean、ReviewProofs.lean 及对应输入清单，核实 V3 的展开确为三维实欧氏空间；保持已注明的无序不同粒子组计数约定。
 - MD-1.1.1-HeterogeneousLJ：补充本批对应版本的真实依赖定义及输入清单，以核实 V3 的空间和范数、pairDistance 的具体表达式。若确为欧氏距离，应明确原文对应域为 pairDistance (q i) (q j)>0；Lean 实数除法在零处分母被全定义化，公式会返回0，不能将该值解释为教材在碰撞处的势能。可保留总函数实现，但应显式记录非碰撞有效域。
 - MD-1.1.2-AngleBond：补充同一输入快照中的V3及相关实例定义，核实三维欧氏内积和距离；明确qᵢ≠qⱼ、qⱼ≠qₖ的模型有效域。保留原书的向量方向，不擅加本段未明示的k>0条件。

@@ -1,0 +1,136 @@
+{
+  "eaudit": "EAUDIT02",
+  "subtask": "EAUDIT02b",
+  "source_id": "MD-1.1-NewtonModel",
+  "input_sha256": {
+    "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+    "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+    "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e",
+    "EAUDIT02b_materials": "7a437c9a52c92fcd3a9b782daee8863008b93f7b23eb9a80b42e8d10aa199e51",
+    "EAUDIT02b_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    28,
+    29,
+    30
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "700c91ddfd9b0637a0099ecc39de2bb5ef7d9fd2d5aac3c9072ac6ae1cf607ae",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "line": 20,
+      "name": "ParticleMasses",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "excerpt_sha256": "e0f501ef27e8709f8969f57ce54a1f9c402f76c5e5d1a4b4934d0ae037b9a4bc"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 13,
+      "name": "Position",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 21,
+      "name": "PotentialEnergy",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "043ad8ba46ea4ec31839daabf34e8017edbc3d00188fad3366e80af19ddc6116"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "line": 75,
+      "name": "classicalNewtonInitialValueModel",
+      "namespace": "MD.Ch01",
+      "file_sha256": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+      "excerpt_sha256": "cb6db5922abf153dd00cf97e134b69283d760d2ef2aab0b1f7690bde6cbbeda8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "line": 19,
+      "name": "CoordinateMasses",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "50939e8d47d2aea37f48a71423ee3ae48b297b19ba4394b17b02a93c1f4510a4"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "line": 54,
+      "name": "IsNewtonTrajectoryOn",
+      "namespace": "MD.Ch01",
+      "file_sha256": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+      "excerpt_sha256": "e1d11e0d40e26e7100cfcd1a1de37b7839cfb48e6eed41cf0e6b8c3361269245"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "line": 28,
+      "name": "coordinateMassesOfParticles",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "excerpt_sha256": "04204c153a3e31ed168e734c7e7733754888e6814c02f8b242180c63e54893c8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "line": 18,
+      "name": "massOperator",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+      "excerpt_sha256": "544a0df334ecbed51b5345a2603421d4e22e4da5a7da49a17376aebbd54fa187"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 15,
+      "name": "Momentum",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 14,
+      "name": "Velocity",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "22e67e3397d83abd0c1c1aeaa28366555c9f365d02734f9df1fd443624636cf1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "line": 22,
+      "name": "diagonalMassMatrix",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "56c215aa345f33da76588c37690a0b34fd6c467f706ccbb6c832962abd41e7db"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 18,
+      "name": "MassMatrix",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "98dc2589cf902b088edd39fbacfd5ceaeb43e0ec8cd3609f562eac8091e9df77"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "line": 270,
+      "name": "newtonInitialValueModel",
+      "namespace": "MD.Ch01",
+      "file_sha256": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+      "excerpt_sha256": "f612fc316f7d92b90d51925a4517af0a0ae4a8f1ac8553260f8feffee11b1aff"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ParticleCoordinates.lean",
+      "line": 25,
+      "name": "particleCoordinateEquiv",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "c390c5d56eb3e55f6d0dc463c52321d777997fb6ba568e52e15e30eb9efafc48",
+      "excerpt_sha256": "6b0939a277a0865581bb65c185549efdafd62cd413573e1178437e60c7ddc754"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT02_review.json",
+  "total_task_bytes": 113282
+}

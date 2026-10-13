@@ -1,0 +1,96 @@
+{
+  "eaudit": "EAUDIT02",
+  "subtask": "EAUDIT02a",
+  "source_id": "MD-1.1-Schrodinger",
+  "input_sha256": {
+    "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+    "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+    "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e",
+    "EAUDIT02a_materials": "a39bf5f066f094fefe937e09d5989155f3d18da16d8fc76c5f885d9d03473373",
+    "EAUDIT02a_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    28,
+    29,
+    30
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "261f362e65805f325e0c2efee005223f14b7c6c1109959bcec8d0d124ea74361",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "line": 18,
+      "name": "planckConstant",
+      "namespace": "MolecularDynamics.Chapter01Review",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "afd0274164a21f4d054df4801aedc510ef6d2fa4e918b38f8d13da6063aa22ea"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "line": 20,
+      "name": "primitivePotential",
+      "namespace": "MolecularDynamics.Chapter01Review",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "60b63914c30f81413a284a703ba50e5dae15f156d5393432529cfe7ebfcec8e4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "line": 15,
+      "name": "Q13",
+      "namespace": "MolecularDynamics.Chapter01Review",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "026910f56229a382715dc22618a54af2c93308758f3890e7a95dd6596e6f5da2"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 13,
+      "name": "Position",
+      "namespace": "MolecularDynamics",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "line": 19,
+      "name": "quantumMass",
+      "namespace": "MolecularDynamics.Chapter01Review",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "da87bceea39b06320091c040d8f0a2bf90f840b52b7506c43a1730fc1e955e9d"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "line": 257,
+      "name": "schrodingerEquation",
+      "namespace": "MD.Ch01",
+      "file_sha256": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+      "excerpt_sha256": "9be122ccd321a16ae83bce704abee8929d05972d949698f12044d840afa4d67d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "line": 23,
+      "name": "secondPartial",
+      "namespace": "MolecularDynamics.Chapter01Review",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "b5abc39a6e400e93c21a0bd5d809f6624a3ced287eeabdcbd7a2289403d07cd6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "line": 21,
+      "name": "coordinateDirection",
+      "namespace": "MolecularDynamics.Chapter01Review",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "8182e15172331967b50c8dc6a10daccdef9caf7f91b74beb0448af6f62ff3452"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "line": 16,
+      "name": "waveFunction",
+      "namespace": "MolecularDynamics.Chapter01Review",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "9f454369744986924a26c7ceb37086e0e99f6560bbd3f659a77569b19a2a9140"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT02_review.json",
+  "total_task_bytes": 109519
+}
