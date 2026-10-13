@@ -1,0 +1,61 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08b",
+  "source_ids": [
+    "MD-6.1.5-ConfigurationalTemperature"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 243,
+      "printed_page": 222
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "0687f2dc56791df4762800b84fd63f15d2e6bac0fa5fb0e5be3243469e4c8ac4",
+  "lean_sha256": "c765413d298076f35f7ce892b88416585ab831393cef9f6a719dc98e8a77f709",
+  "signature_sha256": "c3c4bda49bcf81114265c1bfe9d43151dd45ce15f219703bd67f5bc4ead0850c",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationPartial",
+      "code_sha256": "fbca5c0abb1ddc15e963008415ea72d955f5e4a49bbc36888fbf88ab7a80409d"
+    }
+  ],
+  "paste_plus_pdf_bytes": 103478,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4291,
+      "sha256": "4130ac4bf270283edb85d0425bd716fff2463bd3a774f28a2272f7eb7e69c2e4"
+    },
+    "BATCH08b_PAGES.pdf": {
+      "bytes": 99187,
+      "sha256": "af5e7a26852f0a5a62902e4282fd309912ce5dae58c3c491bfdadf18ab66ccf6"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 105662
+}

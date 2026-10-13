@@ -1,0 +1,37 @@
+Blueprint/Ch06.lean:38:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Blueprint/Ch06.lean:39:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Blueprint/Ch06.lean:74:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:84:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:93:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:100:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:108:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:115:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:140:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:151:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:171:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:180:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:193:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:210:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:218:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:274:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:278:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:288:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:344:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:381:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:406:8: warning: declaration uses `sorry`

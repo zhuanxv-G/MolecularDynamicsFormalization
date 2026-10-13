@@ -1,0 +1,4 @@
+intro SA SB energy e hSA hSB hmax
+  have hd := hSA.hasDerivAt.add (hSB.hasDerivAt.comp_const_sub energy e)
+  have hz := hmax.hasDerivAt_eq_zero hd
+  linarith

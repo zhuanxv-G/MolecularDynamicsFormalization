@@ -1,0 +1,50 @@
+218                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+The normalization condition determines the parameter   , whereas ˇ and hence the
+temperature arises from the choice of average energy, i.e. from solving the equation
+
+                           R
+                            H.z/e ˇH.z/d!
+                             R       D NE
+                                e ˇH.z/d!
+
+Alternatively, we may take the position that the temperature is speciﬁed and the
+mean energy is a direct consequence of this choice.
+   This deﬁnes the phase space density of the canonical ensemble which we refer
+to as the Gibbs-Boltzmann density:
+
+                               ˇ D Zcane1   ˇH.q;p/:                            (6.3)
+
+where the parameter ˇ D 1=.kBT/. The quantity Zcan is a normalizing constant
+so that this is a probability density. The canonical ensemble is referred to as the
+NVT ensemble, due to the a constancy of the number of particles, volume, and
+temperature.
+  Now let us see the consequences of assuming that the states of a given system
+are canonically distributed. In order for the density in (6.3) to be normalizable, it is
+necessary that the quantity Zcan deﬁned by
+                             Z
+                                Zcan D   e ˇH.q;p/d!
+
+
+be ﬁnite,  i.e., that the integral converge. Here the form of the system and the
+assumptions regarding boundaries come into play. If we have a standard molecular
+Hamiltonian H.q; p/ D pTM 1p=2 C U.q/ with Nc D Nd degrees of freedom, then
+the integral separates
+              Z             Z                Z
+           Zcan D   e ˇH.q;p/d! D    e ˇpTM 1p=2d!p     e ˇU.q/d!q;
+
+          D                  RNc              Q
+
+where Q is the accessible position domain, d!p D dp1dp2 : : : dpNc and d!q D
+dq1dq2 : : : dqNc. If U is smooth and the domain Q is ﬁnite, then clearly both integrals
+are well deﬁned, so the normalization is sensible. When U has singularities, it is
+important that at these points U ! C1 instead of  1. Moreover, if no boundary
+conditions are employed to restrict the particles, we would need to introduce an
+additional restriction on the potential U in order to ensure that the conﬁgurational
+integral converges.
+   Typically one assumes that (i) U is smooth except on a low-dimensional set of
+singular points, (ii) U is bounded below (which is normally the case if a potential
+such as Lennard-Jones, steeply repulsive at short range, is incorporated between all
+pairs of atoms), and (iii) U grows sufﬁciently rapidly as q ! 1, in the case of an
+inﬁnite domain.

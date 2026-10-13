@@ -1,0 +1,47 @@
+242                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+With two rounds of integration by parts on the term involving b.x/, we ﬁnd, using
+the fact that the boundary terms vanish,
+
+            ZC1                  ZC1
+                  b2.x/  00.x/ .x; t/dx D      .x/.b2.x/  /xx.x; t/dx:
+
+        1             1
+
+Finally, putting these results together, we have
+
+          ZC1
+                  @    @             1 @2
+                  .x/   C           .x; t//        .b2.x/ / dx D 0:                        @t    @x.a.x/        2 @x2
+       1
+
+If this is to hold for all test functions   , we must have
+
+                   @      @         1 @2
+             D             / C      .b2.x/  /:                         @t      @x.a.x/     2 @x2
+
+This partial differential equation is often called the Fokker-Planck equation. The
+great beneﬁt of the Fokker-Planck equation is that  it enables the macroscopic
+perspective on the solutions of an SDE.
+  The Fokker-Planck equation may be written in the compact form
+
+                             @
+                   D L   ;
+                                      @t
+
+where the operator appearing on the right hand side is the adjoint L of the generator
+of the stochastic process, satisfying the relation
+
+                       hL  ;  i D h  ; L   i:
+
+In the case at hand the adjoint is
+
+                                     1
+              L D  .a.x/  /x C 2.b2.x/  /xx;
+
+which we shall refer to as the Kolmogorov operator.
+   In case b     0, the SDE becomes an ordinary differential equation. Then the
+generator L becomes simply the Lie derivative, and its adjoint is just the Liouvillian.
+Thus the framework developed here for SDEs is a proper generalization of what we
+have earlier seen in the deterministic case.

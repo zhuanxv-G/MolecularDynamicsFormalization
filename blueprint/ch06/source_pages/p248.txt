@@ -1,0 +1,41 @@
+6.2  Stochastic Differential Equations for Molecular Models                           227
+
+The convergence here, signiﬁed by the symbol limc is in the sense of distributions
+(see Appendix B).
+  As W.t/ is the limit of a sum of independent, identically distributed random
+variables,  it makes sense to use the Central Limit Theorem to determine  its
+distribution. Recall (see Appendix B) that the Central Limit Theorem tells us that
+the sum of a set of independent, identically distributed random variables has an
+approximately normal distribution with mean and variance determined from the
+underlying parameters of the distribution. Let ıt be a small ﬁnite value and n D t=ıt,
+then, using the Central Limit Theorem, and the fact that EJk D 0, we have, for a
+large number n of random steps, the approximate relation
+
+        Xn  1 p
+                                       ıtJk   N.0; nıt/:
+                           kD0
+
+As we take n to inﬁnity, ıt to zero, in such a way that nıt     t, we obtain the random
+variable W.t/ such that
+
+                           W.t/   N.0; t/:
+
+Moreover, we may easily demonstrate that
+
+                      E.W.t/   W.s//2 D jt    sj:                        (6.7)
+
+   For the Wiener process, we know that W.t/  W.s/ is normally distributed with
+mean zero and variance jt    sj; this does not depend on whether there is additional
+information available regarding its value prior to min.t; s/, that is to say, the Wiener
+process is a Markov process. More generally, when we say that a stochastic process
+is Markovian, we mean that the probability of a future event conditioned on the
+current state of the process and the past history of the process is the same as the
+probability conditioned on the current state of the process. Let A.x/, B.x/ and
+C.x/ be three events dependent on state variable x, and let tC > t0 > t  be three
+times, then, for a Markov process X.t/ we have (using the notation for conditional
+probability):
+
+         PrŒA.X.tC//jB.X.t0// ; C.X.t  // D PrŒA.X.tC//jB.X.t0// :
+
+The Markov property greatly simpliﬁes the task of ﬁnding the joint probability
+distribution of the values of the stochastic process at two times.

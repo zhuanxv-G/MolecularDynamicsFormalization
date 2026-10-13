@@ -1,0 +1,48 @@
+254                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+giving
+
+          LLD     2  l C 2 lHl 1U.q/ C   l.l C Nc   1/Hl  1;
+
+                                      l C  c C  d;
+
+                 ˛ C ı;
+
+satisfying Assumption 2.
+  The purpose of using the l exponent in the Lyapunov function is to ensure that
+we can apply the theorem to a wide enough class of observables, as (6.48) is only
+valid for functions f with magnitude less than or equal to the Lyapunov function.
+As we have     Ulmin and growing like kpk2l, we can choose l to be sufﬁciently
+large to bound a wide class of observables. However, for sufﬁciently fast-growing
+functions (such as exponentals) a different Lyapunov function would be required (if
+their averages do, in fact, converge).
+  We note that the condition of Assumption 1(ii) can be shown by demonstrating
+that Hörmander’s condition holds over the entire space D. This is a condition on the
+commutators or Lie brackets of vector ﬁelds.
+  The Lie bracket of a pair of vector ﬁelds u.z/, v.z/ is another vector ﬁeld
+
+                                  Œu; v D v0u   u0v;
+
+where u0 is the Jacobian matrix of the vector ﬁeld u. In coordinates, if we let w D
+Œu; v , then the coordinates of w are
+
+          Xm                                        @vi      @ui
+                           wi D          uj        vj:
+                                            @zj      @zj                                    jD1
+
+The Lie bracket is a bilinear and skew-symmetric operation:
+
+•  Œ˛u C ˇv; w D ˛Œu; w C ˇŒv; w ,
+•  Œu; v D   Œv; u and Œu; u D 0.
+
+Deﬁnition 6.1 (Hörmander’s Condition) Let U  Rm be open. The SDE (6.43)
+with C1 vector ﬁelds b0; b1; b2; : : : ; br  W U ! Rm are said to satisfy Hörmander’s
+condition at z 2 U if the vector space spanned by the collection of iterated Lie
+brackets
+
+            b0; b1 : : : ; br; Œb0; b1 ; Œb0; b2 ; : : : ; Œbr  1; br ; Œb0; Œb0; b1   : : :
+
+(evaluated at z) is Rm.
+
+Computing the iterated Lie brackets becomes, in many cases, an arduous task.

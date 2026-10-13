@@ -31,8 +31,12 @@ def pipeline(ch):
     text=text.replace('open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review',
         f'open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review')
     if ch==6:
+        text=text.replace('import Mathlib.Tactic',
+            'import Mathlib.Analysis.Calculus.Deriv.MeanValue\nimport Mathlib.Analysis.Calculus.Deriv.Shift\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Tactic',1)
         text=text.replace(f'open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review',
-            f'open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review\nopen scoped ENNReal NNReal InnerProductSpace')
+            f'open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review')
+        text=text.replace('open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator\n',
+            'open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal\n',1)
     text=text.replace('variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]',
         'variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]\nvariable {R : Type*} [Ring R] [Algebra ℝ R]',1)
     text=text.replace('[NormedSpace ℝ E]。', '[NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。')

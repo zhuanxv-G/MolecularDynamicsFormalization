@@ -1,0 +1,52 @@
+234                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+This is most often referred to as the  It¯o formula. In recognition of the earlier
+contributions of Doeblin, many authors now add the second name, and we will
+follow this convention, referring to (6.17) as the It¯o-Doeblin formula.6
+  We also mention that the It¯o-Doeblin formula can be easily generalized to
+functions of the form  .x; t/:
+
+  d .X; t/ D  t.X; t/ C  x.X; t/.a.X; t/dt C b.X; t/dW/ C 12  xx.X; t/b.X; t/2dt:
+                                                                            (6.18)
+
+
+
+6.3.2  Distributional Solution of the Ornstein-Uhlenbeck SDE
+
+
+For now we will examine the special case of a scalar equation
+
+                    dX D   Xdt C dW;                        (6.19)
+
+where > 0 and   are constants. We term Eq. (6.19) the Ornstein-Uhlenbeck SDE.
+  We saw before that we could think of the simple SDE initial value problem (6.8)
+as having a solution deﬁned by a certain random process. In the same way we would
+like to obtain, for the Ornstein-Uhlenbeck SDE (6.19), an explicit stochastic process
+which is in some sense equivalent to solving the SDE. Multiply both sides of (6.19)
+by the integrating factor exp.  t/, and observe that
+
+                  d .exp. t/X/ D exp. t/.dX C  Xdt/;
+
+thus (6.19) becomes
+
+                    d .exp. t/X/ D  exp. t/dW.t/:
+
+We then integrate both sides to obtain
+
+                                 Z t
+                  exp. t/X.t/ D X.0/ C     exp. s/dW.s/:
+
+                                                  0
+
+Multiplying by e     t gives
+
+                                   Z t
+                  X.t/ D e  tX.0/ C  e     t   exp. s/dW.s/:
+
+                                                     0
+
+
+6A convenient method for remembering it is to expand d .X/ defD  .X C dX/    .X/ in powers of
+dX up to the second order, then substitute for dX from the SDE (6.14) and ﬁnally set all higher
+powers and products of dt and dW to zero with the one exception dW2 D dt.

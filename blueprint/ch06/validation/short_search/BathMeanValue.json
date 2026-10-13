@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro S energy s hS hs\n  have hlt : energy-s < energy := by linarith\n  obtain ⟨ξ, hξ, hd⟩ := exists_deriv_eq_slope S hlt hS.continuous.continuousOn\n    (hS.differentiable (by norm_num)).differentiableOn\n  refine ⟨ξ, hξ, ?_⟩\n  have hn : energy-(energy-s) ≠ 0 := by linarith\n  have he := (eq_div_iff hn).mp hd\n  nlinarith",
+    "source": "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.lean",
+    "log": "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.log",
+    "source_sha256": "ce4f526e55c57c95f6c46de1215d670632aa9eb18cf35dced142390932f91244",
+    "log_sha256": "51dea8821f9b5ba93157f2ce28244206acbf6a1b6b76132e80c2e24c04247d9f"
+  }
+]

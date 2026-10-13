@@ -1,0 +1,49 @@
+256                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+  Using the results of [257, Lemma 3.4], we can deduce that for any ı > 0, there
+exists a sufﬁciently small " > 0 such that if a realization of the Wiener process W
+remains close to our solution R
+
+                          sup kW.s/   R.s/k    ";                      (6.50)
+                                 0  s   t
+
+then X.t/ 2 Bı.y/. That is, if the realized Wiener process stays within a tube of
+radius " centered on our derived solution R (for some sufﬁciently small "), then our
+solution at time t is at most ı from the point y.
+  The event (6.50) is shown in [349] to have positive probability for any " > 0, and
+hence the required property is shown for any open set.
+
+As Lemma 6.1 holds for all open subsets C, Assumption 1(i) holds as a corollary.
+Thus we have demonstrated that all of the necessary assumptions hold for The-
+orem 6.2. Hence Langevin dynamics is geometrically ergodic with respect to the
+canonical distribution
+
+                            ˇ.q; p/ D exp. ˇH.q; p//;
+
+where it is easily checked that
+
+                     LLD ˇ D 0:
+
+Hence averages along solutions to (6.47) will converge to the spatial average with
+respect to  ˇ. Thus, Langevin dynamics is a useful tool for sampling the canonical
+distribution, as we may sample  ˇ by computing solutions to the SDE. This remains
+non-trivial, as the problem usually exists in a very high dimensional space (we may
+consider millions of particles) with complicated non-linear potential energy function
+U.q/. Many algorithms have been proposed for computing solutions to Langevin
+dynamics [46, 55, 62, 265, 311]. We shall compare the sampling accuracy of some of
+these schemes, and address strategies for the development of discretization methods
+for Langevin dynamics in the following chapter.
+  We may also investigate the properties of the operator LLD, just as we did
+for Brownian dynamics. However for Langevin dynamics, the lack of coupling
+between the noise process and all phase variables makes it relatively difﬁcult to
+prove ergodicity. We denote by H1.  / the space of functions f.q; p/ deﬁned on
+D D TNc   RNc with bounded norm
+
+                kfk2H1.  / defD kfk2L2.  /                  C krqfk2L2.  / C krpfk2L2.  /;
+
+where
+                               Z
+                           kfk2L2.  / D     f 2  .d!/;
+
+                       D

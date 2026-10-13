@@ -1,0 +1,50 @@
+6.1  Ensembles for Molecular Simulation                                          217
+
+density is as a stationary point of the Gibbs-Boltzmann entropy4
+                               Z
+                      S D  kB     ln d!;
+
+
+subject to the constraints
+                Z              Z
+                      .z/d! D 1;      H.z/ .z/d! D NE;
+
+
+where the ﬁrst constraint amounts to a normalization to make  a probability density,
+whereas the second ﬁxes the average energy of the system to a predeﬁned value. It
+does not matter what this value is at this point.
+   This can be seen as a variational principle. Using the method of Lagrange
+multipliers, we seek stationary solutions of
+
+                      Z                Z
+        V D S=kB         .z/d!  1   ˇ    H.z/ .z/d!    NE
+
+
+with respect to the choice of density   and coefﬁcients   and ˇ. The resulting
+equations for the maximizing density are obtained by variational differentiation (see
+Sect. 2.2.1):
+
+                                ıV
+                      D 0
+                                        ı
+                           Z
+                                   .z/d! D 1
+
+                        Z
+                             H.z/ .z/d! D NE:
+
+
+The ﬁrst equation reduces to
+
+                           .1 C ln  /    ˇH D 0
+
+yielding
+
+                 D e  1  e ˇH:
+
+
+
+
+
+4This form of the entropy is more general than the “Boltzmann” form (6.1); it was introduced in
+Gibbs’ treatise [147].

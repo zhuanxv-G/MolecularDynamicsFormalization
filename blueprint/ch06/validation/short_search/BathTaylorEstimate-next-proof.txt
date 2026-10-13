@@ -1,0 +1,30 @@
+intro S energy hS
+  have hlo := taylor_isLittleO_univ (x₀ := energy) hS
+  have ht : Tendsto (fun s : ℝ ↦ energy-s) (𝓝 0) (𝓝 energy) := by
+    have hc : Continuous (fun s : ℝ ↦ energy-s) := by fun_prop
+    simpa using hc.tendsto (0 : ℝ)
+  have he := ht.eventually (hlo.bound (by norm_num : (0 : ℝ) < 1))
+  obtain ⟨δ, hδ, hball⟩ := Metric.mem_nhds_iff.mp he
+  refine ⟨|iteratedDeriv 2 S energy|/2+1, δ, by positivity, hδ, ?_⟩
+  intro s hs
+  have hr := hball (show s ∈ Metric.ball (0 : ℝ) δ by
+    simpa [Metric.mem_ball, Real.dist_eq] using hs)
+  have hbase : energy-s-energy = -s := by ring
+  simp only [Real.norm_eq_abs, hbase, neg_sq, abs_sq, one_mul] at hr
+  have hp : taylorWithinEval S 2 univ energy (energy-s) =
+      S energy - deriv S energy*s + iteratedDeriv 2 S energy/2*s^2 := by
+    norm_num [taylorWithinEval_succ, iteratedDerivWithin_univ, iteratedDeriv_one,
+      smul_eq_mul]
+    ring
+  have hsum : S (energy-s)-S energy+deriv S energy*s =
+      (S (energy-s)-taylorWithinEval S 2 univ energy (energy-s)) +
+        iteratedDeriv 2 S energy/2*s^2 := by rw [hp]; ring
+  rw [hsum]
+  calc
+    _ ≤ |S (energy-s)-taylorWithinEval S 2 univ energy (energy-s)| +
+        |iteratedDeriv 2 S energy/2*s^2| := abs_add_le _ _
+    _ ≤ s^2 + |iteratedDeriv 2 S energy/2*s^2| := by linarith [hr]
+    _ = (|iteratedDeriv 2 S energy|/2+1)*s^2 := by
+      rw [abs_mul, abs_div, abs_of_nonneg (sq_nonneg s)]
+      norm_num
+      ring

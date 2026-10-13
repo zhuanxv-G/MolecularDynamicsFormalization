@@ -1,0 +1,43 @@
+Chapter 6
+The Canonical Distribution and Stochastic
+Differential Equations
+
+
+
+
+
+Until now, we have considered molecular models for isolated collections of atoms.
+We have seen how to derive equations of motion, and studied the properties of the
+relevant dynamical systems. We have also observed that the chaotic nature of a
+typical system imparts a random aspect which suggests that the dynamics deﬁnes,
+at least in some approximate sense, a limiting probability distribution.
+   This random aspect is an essential component of a molecular model which
+parallels the interaction between a real system studied in a laboratory setting and
+the environment. Unless extraordinary measures are taken to produce a perfect
+isolate, any experimental study will depend on the vessel, substrate or surrounding
+atmosphere. Any of these will consist of atoms and they will respond directly
+to changes in the system of interest. Thus when a reaction contained in a ﬂask
+generates heat, the glass itself becomes hot to the touch, signalling the transfer of
+energy to the walls of the vessel; in a similar way a change in the environment in
+which it is conducted will affect the results of an experiment. One could take the
+extreme view that there is only one vast system and any restriction would then be
+artiﬁcial, but even if this philosophical perspective is valid, it does not mean that an
+experiment which is limited in extent (or a simulation of a ﬁnite molecular model)
+cannot have predictive power.
+  The ﬁrst assumption in constructing the models considered throughout this book
+is that we may work with a ﬁxed number of atoms; this allows us to model the
+motions as paths in a ﬁnite-dimensional Euclidean space. In addition we usually
+incorporate a mechanism to conﬁne the system to a ﬁnite volume, with the ratio of
+the number of particles N to the volume V deﬁning the average particle density. In
+this chapter we describe techniques used in molecular modelling to produce ﬁnite
+models which can be related, in terms of the invariant distribution, to the behavior
+of an “extended” or “bulk” system, that may be regarded as much larger than that
+which we actually model in detail. The extended system might even be regarded
+as inﬁnite, the ratio in spatial scales (or number of atoms) between the large and
+small systems being so great. Thus we have two systems, one small and one large,
+
+
+
+© Springer International Publishing Switzerland 2015                                211
+B. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied
+Mathematics 39, DOI 10.1007/978-3-319-16375-8_6

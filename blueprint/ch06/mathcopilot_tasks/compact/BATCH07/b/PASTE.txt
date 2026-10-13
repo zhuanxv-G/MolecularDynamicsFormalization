@@ -1,0 +1,89 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH07b_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 241 | 220 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-6.1.4-CanonicalAveragePrinted",
+  "kind": "definition",
+  "label": "(6.4)",
+  "section": "6.1.4",
+  "printed_page": "220",
+  "pdf_page": "241",
+  "statement_latex": "Under assumptions on the potential energy as discussed above, and with $\\phi$ continuous and allowed to grow at most polynomially fast at infinity, we may proceed to define averages with respect to the canonical density $\\rho_\\beta$, namely\n\\[\\operatorname{Av}_\\beta(\\phi)=Z_{\\rm can}^{-1}\\int_D\\phi(q,p)\\rho_\\beta(q,p)d\\omega.\\tag{6.4}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "[ERRATUM?]式(6.3)的ρβ已含Zcan⁻¹，式(6.4)再乘一次导致Avβ(1)=Zcan⁻¹，而后文p.221使用标准归一化平均。"
+    }
+  ],
+  "lean_decl": "MD.Ch06.canonicalAveragePrinted",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+def canonicalAveragePrinted {Nc : ℕ} (H : SymplecticCoordinates Nc → ℝ) (β : ℝ)
+    (f : SymplecticCoordinates Nc → ℝ) : ℝ :=
+  (textbookCanonicalPartition H β)⁻¹ *
+    ∫ z, f z * MolecularDynamics.Chapter06Review.canonicalDensity volume H β z
+```
+
+原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter06Review.canonicalDensity (MolecularDynamics/Chapter06/ReviewDefinitions.lean:29)
+```lean
+def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
+    (H : D → ℝ) (β : ℝ) (x : D) : ℝ := Real.exp (-β * H x) / (∫ z, Real.exp (-β * H z) ∂ν)
+```
+
+### MolecularDynamics.SymplecticCoordinates (MolecularDynamics/Chapter02/SymplecticForm.lean:25)
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+
+### MD.Ch06.canonicalAveragePrinted (Blueprint/Ch06.lean:288)
+```lean
+def canonicalAveragePrinted {Nc : ℕ} (H : SymplecticCoordinates Nc → ℝ) (β : ℝ)
+    (f : SymplecticCoordinates Nc → ℝ) : ℝ :=
+  (textbookCanonicalPartition H β)⁻¹ *
+    ∫ z, f z * MolecularDynamics.Chapter06Review.canonicalDensity volume H β z
+```
+
+### MD.Ch06.canonicalDensity (Blueprint/Ch06.lean:193)
+```lean
+def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
+    (H : D → ℝ) (β : ℝ) (x : D) : ℝ := Real.exp (-β * H x) / (∫ z, Real.exp (-β * H z) ∂ν)
+```
+
+### MolecularDynamics.textbookCanonicalPartition (MolecularDynamics/Chapter06/CanonicalTemperature.lean:15)
+```lean
+noncomputable def textbookCanonicalPartition {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) : ℝ :=
+  ∫ z, textbookHamiltonianGibbsWeight H β z
+```
+
+### MolecularDynamics.textbookHamiltonianGibbsWeight (MolecularDynamics/Chapter08/ThermostatDensity.lean:199)
+```lean
+noncomputable def textbookHamiltonianGibbsWeight {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) : SymplecticCoordinates Nc → ℝ :=
+  fun z ↦ Real.exp (-β * H z)
+```

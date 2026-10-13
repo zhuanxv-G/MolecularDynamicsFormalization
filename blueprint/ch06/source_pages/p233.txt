@@ -1,0 +1,53 @@
+212                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+which interact in a complicated way deﬁned by the microscopic interactions. In
+order to separate the two, we make the assumption that, in relation to the invariant
+measure, the detailed motions of the bulk system do not need to be known. A
+useful approximation may be obtained by modelling the exchange of only one or
+several quantities, for example the net energy and perhaps the momentum ﬂux. The
+framework for discussing relationships among the properties of a system in contact
+with a reservoir is referred to as thermodynamics.
+  From the point of view of deﬁning molecular models, we would like to be able
+to specify the macroscopic properties, in particular the temperature and pressure
+which are easily measured in the laboratory setting. The energy (and, in the case of
+pressure control, also the volume) may then ﬂuctuate over time.1
+  With various assumptions on the thermodynamic parameters, we obtain different
+molecular ensembles to which we associate a stationary probability distribution.
+An obvious practical challenge  is then to calculate averages with respect to
+this probability distribution. Although this can sometimes be achieved (in an
+approximate sense) using deterministic molecular dynamics, it is normally better
+to employ stochastic differential equations. Using stochastic paths it is possible
+to obtain more reliable results with less effort—the computational difﬁculty of
+implementing methods is reduced, and the molecular models become easier to
+parameterize. The use of random paths is entirely natural in molecular simulation,
+since ﬁnite Hamiltonian models suppress microscopic interactions between the
+resolved system and the reservoir, as well as some internal modes of transfer of
+energy due to simpliﬁcations used to make simulation more practical; we may
+suppose that stochastic forces are simply restoring some of these lost interactions
+(Fig. 6.1).
+
+
+
+Fig. 6.1 Concept of a
+thermodynamic reservoir. The
+thermodynamic state of the
+large system (resolved system                            energy reservoir
+plus reservoir) is deﬁned by
+various macroscopic
+                                                                   resolved
+parameters that are assumed
+                                                             system
+to be constant. This results in
+an equilibrium probability                                           density  eq
+distribution for the small
+system, i.e. a thermodynamic
+state                                                                 energy exchange
+
+
+
+
+
+1The number of particles N considered in our model could also be allowed to vary but in practice it
+is usually simpler, from a simulation perspective, to ﬁx N, which implies a restriction on the types
+of ensembles that we work with.

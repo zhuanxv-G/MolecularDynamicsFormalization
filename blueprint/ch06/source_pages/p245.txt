@@ -1,0 +1,54 @@
+224                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+or
+
+                              rU.q/
+                           G.z/ D                 :
+                                    0
+
+
+                q
+However G.z/ D       is problematic for periodic boundary conditions.
+                0
+
+
+6.2  Stochastic Differential Equations for Molecular Models
+
+
+We now have established a framework for the thermodynamic properties of a model
+system. What would be desirable is that we could approximate the force terms
+arising in the bulk, without the need to simulate them directly. It should be apparent
+that constant-energy dynamics (designed to sample the microcanonical ensemble
+with constant energy E) will not sample the canonical distribution in the absence of
+the heat bath: such Newtonian trajectories cannot access regions of the phase space
+where H.z/ ¤ H.z0/, where z0 is the initial condition.
+  On the other hand, changing our perspective to think of trajectories as general
+tools for sampling a deﬁned distribution, we may consider an alternative dynamics
+designed speciﬁcally to sample the canonical distribution. We refer to a dynamical
+system that samples  ˇ as a “thermostat,” or “thermostatted molecular dynamics”
+since the canonical ensemble is characterized by a ﬁxed temperature. In principle,
+even grossly non-physical dynamics would be permissable, if the goal is only to
+compute stationary (equilibrium) averages. (In Chap. 8, we take up the issue of
+comparison of dynamics computed using different thermostat methods.) We might
+also think of a thermostat as a “governor” in the tradition of the governors used in
+steam engines to regulate the engine temperature. (It is interesting to note that J.W.
+Gibbs, one of the fathers of modern statistical mechanics, had himself designed a
+governor for steam engines.) Because it is very difﬁcult (in some sense, probably
+impossible) to build ergodic thermostats using deterministic dynamical systems,
+which are, until now, the only tool available to us, we need to develop the theory
+of stochastic differential equations and, in particular, the application of that theory
+in the setting of molecular dynamics. This is a fairly tall order and to achieve it in a
+compact presentation, we assume that the reader is familiar with basic concepts from
+probability theory (see Appendix B for a quick summary of the main principles).
+
+
+6.2.1  Random Walks and Wiener Processes
+
+
+In 1827 Robert Brown noticed that small particles in a ﬂuid were in constant
+motion, following irregular paths.5 The essential properties of Brownian motion
+
+
+5Brown was not in fact the only–or even the ﬁrst–to observe this: Jan Ingenhousz had observed a
+similar property of coal dust particles on the surface of alcohol already in 1785.

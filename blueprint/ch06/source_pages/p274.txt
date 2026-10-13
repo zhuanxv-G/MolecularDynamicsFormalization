@@ -1,0 +1,45 @@
+6.4  Ergodicity of Stochastic Differential Equations                                  253
+
+with X D .q; p/T and demonstrating that the required assumptions hold for (6.47).
+It is reasonable to consider periodic boundary conditions for the position variable,
+so Q D TNc where TNc is an Nc-dimensional torus. The use of periodic boundary
+conditions considerably simpliﬁes the proofs, while also being more relevant to
+the practical realities of molecular dynamics simulation. The whole phase space
+is D D TNc   RNc.
+  We also consider the potential energy to be smooth (C1) with U.q/ ! 1 as
+jqj ! 1. As we have a smooth potential on a bounded (position) domain, we have
+
+                1 < Umin   U.q/   Umax < 1;  8q 2 Q;
+
+for some constants Umin and Umax.
+   For the Lyapunov condition (Assumption 2), we choose the Lyapunov function
+
+                                    1                               l
+                       .q; p/ D Hl.q; p/ D  2kpk2 C U.q/    ;
+
+for a ﬁxed positive integer l. As the potential energy is bounded below by 1, it is
+clear that   .q; p/ ! 1 as j.q; p/j ! 1. Computing the generator of Langevin
+dynamics as
+
+           LLDf D p rqf  rU.q/ rpf    p rpf C  kBT  p  ;
+
+we can see that
+
+                   p rq   rU.q/ rp D LH D 0;
+
+where LH is the Lie derivative of our original Hamiltonian system (which preserves
+all functions of the Hamiltonian). Hence
+
+                  LLD D   p rp C  kBT  p   :
+
+Using kpk2 < 2H, we compute derivatives to ﬁnd
+
+         p rp D lHl 1kpk2 D 2l    2lHl 1U.q/;
+
+                  p D l.l   1/Hl 2kpk2 C NclHl  1    l.l C Nc   1/Hl  1:
+
+As Hl grows faster than Hl  1, for any ﬁxed l we are able to ﬁnd positive constants c
+and d such that
+
+                         1      l                                                            l
+       l.l C Nc   1/Hl     2Hl C c;   2lHl 1U.q/ < 2lHl 1Umax   2Hl C d:

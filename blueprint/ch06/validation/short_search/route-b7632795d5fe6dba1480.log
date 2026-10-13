@@ -1,0 +1,46 @@
+blueprint\ch06\validation\short_search\route-b7632795d5fe6dba1480.lean:27:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch06\validation\short_search\route-b7632795d5fe6dba1480.lean:28:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch06\validation\short_search\route-b7632795d5fe6dba1480.lean:143:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-b7632795d5fe6dba1480.lean:248:4: error: Type mismatch: After simplification, term
+  HasDerivAt.deriv hd
+ has type
+  @Eq ℝ (deriv (S - fun y => kB * β * y) x) 0
+but is expected to have type
+  @Eq ℝ (deriv (fun x => S x - kB * β * x) x) 0
+blueprint\ch06\validation\short_search\route-b7632795d5fe6dba1480.lean:286:50: error: Type mismatch
+  add_le_add_right ?m.536 ?m.537
+has type
+  ?m.537 + ?m.531 ≤ ?m.537 + ?m.532
+but is expected to have type
+  |S (energy - s) - taylorWithinEval S 2 univ energy (energy - s)| + |iteratedDeriv 2 S energy / 2 * s ^ 2| ≤
+    s ^ 2 + |iteratedDeriv 2 S energy / 2 * s ^ 2|
+blueprint\ch06\validation\short_search\route-b7632795d5fe6dba1480.lean:273:31: warning: This simp argument is unused:
+  hbase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Real.norm_eq_abs, neg_sq, abs_sq, one_mul] at hr
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch06\validation\short_search\route-b7632795d5fe6dba1480.lean:273:38: warning: This simp argument is unused:
+  neg_sq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Real.norm_eq_abs, hbase, abs_sq, one_mul] at hr
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

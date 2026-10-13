@@ -1,0 +1,50 @@
+6.2  Stochastic Differential Equations for Molecular Models                           229
+
+Breaking this into two parts, we see that the ﬁrst sum telescopes to give W. /2 (as
+W.0/ D 0). On the other hand, from (6.7), we have
+
+        X1 h               lim !1E    .W..k C 1/ıt/   W.kıt//2i D   ;
+
+                         kD0
+
+but an even stronger statement is possible. Since we are summing a large collection
+of random variables  Wk whose means are ıt, the Central Limit Theorem tells us
+that, if we assume it to be well deﬁned, the variance of the sum of squares from
+must tend to zero as a function of   . Thus we may understand the convergence in a
+somewhat stronger sense than convergence in expectation. We make this precise in
+the following proposition
+
+Proposition 6.2 Let  ıt D  then
+
+        X1 h                   l:i:m: !1     .W..k C 1/ıt/   W.kıt//2i D   ;
+
+                          kD0
+
+where, for a sequence of random variables, A and a random variable B, we have
+
+                    l:i:m: !1A D B , lim !1E.A   B/2 D 0:
+
+(This is referred to as convergence in the mean square sense.)
+
+Proof With   ;  ﬁxed, we have ıt D  =  .
+   Let W ;k D W..k C 1/ıt/  W.kıt/ D W..k C 1/ =  /  W.k =  / and observe
+that
+
+      X1    X1 h          i
+                  W2 ;k  D     W2 ;k          :
+                     kD0              kD0
+
+Then
+
+                             !2      X1      X1 h         i!2                      def
+                 I D E     W2 ;k    D E      W2 ;k              :
+                     kD0                    kD0
+
+
+                              def
+Terms of the form Z ;k D  W2 ;k    are independent and have mean zero. Therefore
+
+                  !2
+     X1    X1   X    X1
+       E    Z ;k  D E    Z2;k  2E   Z ;kZ  ;l D E    Z2;k;
+               kD0            kD0           k¤l            kD0

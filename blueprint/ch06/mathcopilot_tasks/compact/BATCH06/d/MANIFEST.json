@@ -1,0 +1,71 @@
+{
+  "batch": "BATCH06",
+  "subtask": "BATCH06d",
+  "source_ids": [
+    "MD-6.1.4-CanonicalAverageOne"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 239,
+      "printed_page": 218
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 240,
+      "printed_page": 219
+    },
+    {
+      "attachment_page": 3,
+      "original_pdf_page": 241,
+      "printed_page": 220
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "4df99ffd6b87948726b190e5f3c3fccd128c2122aa6f0e524a6509801f5ccbbf",
+  "lean_sha256": "d9befeac500cb854225d435900506eba3b8773683e581063066a98296c3697ef",
+  "signature_sha256": "b95a5af0d0b690bc22a78b249493134b6dee707d4a3e5a68527b96a3fdc8e5e3",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/CanonicalTemperature.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCanonicalAverage",
+      "code_sha256": "a169a3ecf40f1ef6616e30cabb64ccd86ab88477a59d49d7e2a7ef1b1ee8be38"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/CanonicalTemperature.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCanonicalPartition",
+      "code_sha256": "51b60e64fc0de8ded42f1df8c8e5ec1c04c566871105b866f456e66ff0c2a950"
+    },
+    {
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookHamiltonianGibbsWeight",
+      "code_sha256": "ffbff77216b796f7f99e4d776610af3dd4481f431d5d94de2d8317bb36da23e8"
+    }
+  ],
+  "paste_plus_pdf_bytes": 249166,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4140,
+      "sha256": "1cd902b15c16ce4bd732932ff9d103ddda2d29f8d55d98cd0836fea201662c5c"
+    },
+    "BATCH06d_PAGES.pdf": {
+      "bytes": 245026,
+      "sha256": "48b37ec52edbf9487c7aec8009c0048ce8d950e1beeeb2381ffe28c49c6a40b3"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 251577
+}

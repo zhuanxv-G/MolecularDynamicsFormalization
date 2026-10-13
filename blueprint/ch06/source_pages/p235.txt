@@ -1,0 +1,51 @@
+214                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+simulation. Periodic boundary conditions can be used to ensure constant volume.
+The density function may then be represented by a Dirac delta function as follows:
+                                      Z
+                  mc D Z 1ıŒH  E ;    Z D   ıŒH  E d!:
+
+                            D
+
+The partition function Z, which normalizes the density, is effectively a function
+of N, V and E;  it represents the number of microstates available under given
+conditions. As this ensemble is associated to constant particle number N, volume
+V and energy E,  it  is often referred to as the NVE-ensemble, and when we
+speak of NVE simulation, we mean simulation that  is meant to preserve the
+microcanonical distribution; this, most often, would be based on approximating
+Hamiltonian dynamics, e.g. using the Verlet method or another of the methods
+introduced in Chaps. 2 and 3, and assuming the ergodic property. For a discussion
+of alternative stochastic microcanonical methods see [126].
+
+
+
+6.1.2  The Canonical Ensemble and the Boltzmann-Gibbs
+       Distribution
+
+
+Next, we consider the formulation of an ensemble model that will better capture the
+realistic environment of a molecular system. Let the system of interest embedded in
+a much larger system, which acts as a “heat bath.” The two systems are assumed to
+be weakly coupled, so energy is continuously exchanged between them. This energy
+is assumed to be in the form of heat, with equilibrium naturally associated to the
+systems having matching temperature. The sole mechanism of interaction between
+the two systems is in the form of energy exchange, they do not exchange particles
+(or momentum).
+  The cornerstone of statistical mechanical theory is the concept of entropy,
+which may be taken as the number of states available to a discrete system (e.g.
+a quantum mechanical system), or, in the case of a classical system, the volume
+of the accessible phase space. In terms of a microcanonical system, the entropy is
+enshrined in the famous formula that appears on Boltzmann’s tombstone:2
+
+                            S   kB ln Z;                                (6.1)
+
+where kB is Boltzmann’s constant kB     1:38   10  23 J/K. The second law of
+thermodynamics states that the entropy in a closed system naturally tends to increase
+to a maximum (a critical point).
+
+
+
+
+2Despite Boltzmann being the ﬁrst to formulate the concept, it was Planck who ﬁrst wrote this
+equation.

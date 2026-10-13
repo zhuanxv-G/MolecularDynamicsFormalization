@@ -1,0 +1,21 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "Blueprint/Ch06.lean"
+  ],
+  "exit_code": 0,
+  "input_sha256": "e5cca90b53817d9f48f74481d6497e22019e1f099bce7b8b34b0bb1545ef011f",
+  "log_sha256": "cdb9b1dca4954bb16082f4224609b72b9599e3aec53eb711f1f019e7af94c70c",
+  "decl_blocks": {
+    "MD-6.1.1-Microcanonical": "5cdf3eddb52be9764a5d8dafaa6f17d68830c0e4a82414dc21bd0af934d73d84",
+    "MD-6.1.2-Entropy": "55acd3f7331b28a70fefcf9b06e22dbe6c51c26f9efaeb3f094b0343053516f7",
+    "MD-6.1.2-IndependentPartition": "13dbe77ed7396bb8e9c3e7b130a00be5b81be907d207eef79fff0ee52e5c61e4",
+    "MD-6.1.2-EntropyAdditivity": "9e99bb4b4744ab6a3c01b96df7a3ec499c8a3be15df6bc87fdfde89fcca6e068",
+    "MD-6.1.2-EntropyEquilibrium": "6cd8453cb8698c3a06447f7b181b8485167228599e9e0c1398a282776b335c78",
+    "MD-6.1.2-Temperature": "a1a128e8825ee065b962fd60de0859770659381a01e57af147da17fd7164b08b",
+    "MD-6.1.2-InverseThermal": "c8ec5833dcf28e251472d0b18f3ab3f9cb6ca1d5dfec7c5ebd19472385a89d7e",
+    "MD-6.1.2-BathTaylor": "0cc3840c638b604ac7378beaf8376538caae824f6fc899ae2294da52eb124bcf"
+  }
+}

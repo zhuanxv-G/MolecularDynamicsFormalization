@@ -1,0 +1,46 @@
+6.4  Ergodicity of Stochastic Differential Equations                                  247
+
+6.4.2  Ergodic Stochastic Differential Equations
+
+Now consider an SDE system deﬁned on the space D D Tk1   Rk2 for non-negative
+integers k1 and k2:
+
+             Xr
+                  dX D b0.X/dt C    bidWi;                     (6.43)
+                                              iD1
+
+where b0 is C1 and the Wi are independent standard Wiener processes. In this
+book, we will only consider the analysis for the case of additive noise (i.e. the bi
+vectors multiplying a Wiener process are constant). The more complicated case of
+multiplicative noise (where all of the bi can vary) will not be needed here, as additive
+noise is sufﬁcient to sample the canonical distribution.
+  Working in ﬂat L2 space, we have that the inﬁnitesmal generator for (6.43) acting
+on a smooth test function  .X/ is
+
+                                   1
+               L D b0 r C 2Tr BT  00B  ;
+
+where the columns of B are b1; b2; : : : ; br. Taking the adjoint, the forward Kol-
+mogorov or Fokker-Planck operator is L  , acting on a density  .X/ as
+
+                                    1
+              L D r  .b0  / C 2Tr BT  00B  :
+
+In the case of Langevin dynamics, the matrix B is diagonal, simplifying the form of
+the operators by reducing the term involving second derivatives to a Laplacian.
+  We have seen that invariant distributions correspond in general to solutions of
+
+                     L   eq    0:
+
+Solutions to this equation are of central importance to the probabilistic behavior of
+solutions to (6.43). Such solutions give distributions of points in phase space which
+will remain constant as solutions evolve in time. We may ask a number of questions
+related to these distributions:
+
+•  Is the solution  eq unique, up to a constant scaling? (We can see that if  eq is a
+   solution, then so is k     eq for constant k.)
+•  If we start with an initial distribution  0 which is different than   eq, what sort
+   of behavior do averages with respect to the evolving distribution  .X; t/ exhibit?
+   If they converge to a stationary average, at what rate? Does it matter if we start
+  from a distribution “near to” (in a suitable sense) or “far away” from an invariant
+   distribution?

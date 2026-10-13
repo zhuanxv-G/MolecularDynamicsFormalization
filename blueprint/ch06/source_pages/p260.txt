@@ -1,0 +1,45 @@
+6.3  Stochastic Differential Equations                                             239
+
+
+consider only the case of Wiener increments and delta-correlated (memory-less)
+processes.
+   Langevin’s idea of including external random impacts in the equations of motion
+for a free particle can be extended to a system of particles. The equations of motion
+are, in vectorial form:
+
+               dq D M 1pdt;                                           (6.32)
+                    p
+               dp D  rU.q/dt    pdt C  2 kBTM1=2dW:            (6.33)
+
+The physical interpretation is that we have a system of particles immersed in a ﬂuid
+bath consisting of many particles which are much lighter (or give rise to weaker
+interactions) than those described by the potential U.
+  The coefﬁcient    , referred to alternatively as the friction coefﬁcient or the
+collision rate, is a frequency and therefore has units of 1=time.
+    It is possible to further extend this model in a number of ways. In particular, a
+different friction coefﬁcient   can be used for each particle and these coefﬁcients
+can even depend on spatial location, thus we might work with the following system:
+
+         dq D M 1pdt;                                                  (6.34)
+                     p
+         dp D  rU.q/dt     .q/  .q/Tpdt C  2kBTM1=2  .q/d OW;     (6.35)
+
+where we use the matrix   .q/ 2 RNc  S and a vector of S independent Wiener
+processes OW.
+   In the case of Langevin dynamics with different, variable friction coefﬁcients for
+each particle, we have S D Nc and
+
+   D diag. 1.q/;  1.q/;  1.q/;  2.q/;  2.q/;  2.q/; : : : ;  N.q/;  N.q/;  N.q//:
+
+Another application is dissipative particle dynamics [181], where typically S D
+Nc.Nc   1/=2 and a random increment is applied for each pair interaction.
+  The Langevin dynamics equations have the Markov property in the sense that the
+state of the system at any future time has a dependency on the current state of the
+system, but not on the prior history.
+   Langevin dynamics can be regarded as a physical model where the parameter-
+functions encoded in   .q/ describe the instantaneous physical friction forces
+between the modelled particles and a simpliﬁed, anisotropic bath of particles.
+However, it should be noted that in many types of modelling, the physical nature of
+the interaction with the solvent bath is neglected and  or   .q/ are simply viewed as
+artiﬁcial parameters which allow recovery of averages with respect to the canonical
+distribution.

@@ -1,0 +1,49 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07a",
+  "source_ids": [
+    "MD-6.1.4-PolynomialObservable"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 241,
+      "printed_page": 220
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "0687f2dc56791df4762800b84fd63f15d2e6bac0fa5fb0e5be3243469e4c8ac4",
+  "lean_sha256": "c765413d298076f35f7ce892b88416585ab831393cef9f6a719dc98e8a77f709",
+  "signature_sha256": "75ce451f779beb0d2eecc079fcadce00ea9090b4b22ed54e169d01e2f9d63335",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "polynomialObservable",
+      "code_sha256": "75ce451f779beb0d2eecc079fcadce00ea9090b4b22ed54e169d01e2f9d63335"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPeriodicPhase",
+      "code_sha256": "102d1bb0e87353db402a2cc858c5fb35b9a9c5730062ef3342e6b0f813ccfb58"
+    }
+  ],
+  "paste_plus_pdf_bytes": 90787,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3451,
+      "sha256": "b0dedc841ccf2f8524eb9e87bcee991195bdd36207a7ada25538529aec589217"
+    },
+    "BATCH07a_PAGES.pdf": {
+      "bytes": 87336,
+      "sha256": "6a6b4014c48f977d47afa698ef45f4f2e4f8712da06f24aee99ec7ff1c583c67"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 92435
+}

@@ -1,0 +1,91 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09d",
+  "source_ids": [
+    "MD-6.1.5-KineticWeightFactorization"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 242,
+      "printed_page": 221
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "0687f2dc56791df4762800b84fd63f15d2e6bac0fa5fb0e5be3243469e4c8ac4",
+  "lean_sha256": "c765413d298076f35f7ce892b88416585ab831393cef9f6a719dc98e8a77f709",
+  "signature_sha256": "1b1ef702bd72ab1499b98574727ebd7e5162f47eaa21981116c3ef9f8876110f",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "Phase",
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "massHamiltonian",
+      "code_sha256": "981396c5be1fdadd6769dc86ee0eb839179f10d41eda55cf29268bc3b52ee971"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "Phase",
+      "code_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "Phase",
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "massHamiltonian",
+      "code_sha256": "1e61717a0b74e0e8ed51cc375e6a9744cd172c7cd2229e5e6dfdde4bff45f92a"
+    }
+  ],
+  "paste_plus_pdf_bytes": 79823,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4752,
+      "sha256": "ba9d3115c2b3fdbcbc85b922d375234902956e3e9f7505edac0b4645fe08b534"
+    },
+    "BATCH09d_PAGES.pdf": {
+      "bytes": 75071,
+      "sha256": "50b24288ad6dc732574a895361be77e0c6a3a88ce443558be0e410f128182628"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 83227
+}

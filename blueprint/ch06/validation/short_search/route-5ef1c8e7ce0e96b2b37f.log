@@ -1,0 +1,10 @@
+blueprint\ch06\validation\short_search\route-5ef1c8e7ce0e96b2b37f.lean:73:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-5ef1c8e7ce0e96b2b37f.lean:142:2: error: `simp` made no progress
+blueprint\ch06\validation\short_search\route-5ef1c8e7ce0e96b2b37f.lean:157:4: error: Type mismatch
+  HasDerivAt.sub (hasDerivAt_const e energy) (hasDerivAt_id e)
+has type
+  HasDerivAt ((fun x => energy) - id) (0 - 1) e
+but is expected to have type
+  HasDerivAt (fun x => energy - x) (-1) e

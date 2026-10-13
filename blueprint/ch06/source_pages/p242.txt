@@ -1,0 +1,47 @@
+6.1  Ensembles for Molecular Simulation                                          221
+
+
+We will denote the average with respect to the canonical probability density by Avˇ.
+Using (6.4), we can compute the average of the function p2 as
+
+                         Z1 Z1
+                  Avˇ.p2/ D        p2 ˇdqdp
+
+                 1 1
+                             R 1
+                  1 p2 exp. ˇm 1p2=2/dp
+              D  R 1                                  ;
+                   1 exp. ˇm 1p2=2/dp
+
+where we have used the fact that the exponential of H separates into a product of p
+and q dependent factors. We then integrate by parts to obtain
+
+                            Avˇ.p2/ D mˇ  1;
+
+which means that
+
+                                          p2
+                     T D Avˇ              :
+                               mkB
+
+Thus the temperature can be related to the canonical average of the kinetic energy.
+    If we consider a Nd D Nc degree of freedom system with kinetic energy K DPNc
+   iD1 p2i =.2mi/ and potential energy U.q1; q2; : : : ; qNc/, then we may decompose
+the unnormalized canonical distribution as
+
+         exp .  ˇŒK.p/ C U.q/ / D exp . ˇK.p// exp . ˇU.q//
+
+                 YNc           p2i                 D exp . ˇU.q//   exp   ˇ          :
+                                                       2mi                                                      iD1
+
+Then we again ﬁnd, by the integration argument given above, that
+
+                      Avˇ.m i 1 k B 1 p2i / D T:
+
+Thus the average kinetic energy of any individual particle is directly related to the
+temperature, and thus also
+
+                         Avˇ.2K/ D NckBT:
+
+Very often, this is taken to be the deﬁnition of temperature in practical settings.
+However, since the temperature relation is derived by integration with respect to

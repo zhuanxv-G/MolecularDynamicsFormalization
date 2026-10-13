@@ -1,0 +1,44 @@
+240                    6  The Canonical Distribution and Stochastic Differential Equations
+
+6.3.4  Overdamped Limit of Langevin Dynamics
+
+
+An interesting special case of Langevin dynamics is obtained by considering the
+large   limit, often referred to as the “overdamped” limit. In cases where the friction
+constant is scaled by the inverse mass (so   is replaced by M  1 in (6.32)–(6.33))
+such as in [233], this is instead known as the zero-mass limit. In this model the
+inertial dynamics is assumed to be dominated by collisional effects. Let v D M 1p
+and assume that the acceleration is negligible, so that Langevin dynamics reduces to
+                       p
+         dq D vdt;   0 D  rU.q/dt   Mvdt C  2 kBTM1=2dW:
+
+The second equation can be solved for v and we obtain the following SDE for q:
+
+                 p
+         dq D   1M 1rU.q/dt C  2kB  1TM 1=2dW:              (6.36)
+
+This is also sometimes referred to as Brownian dynamics or Smoluchowski dynam-
+ics. The transition from Langevin to Brownian dynamics is typically referred to as
+the “Kramers to Smoluchowski limit.”
+
+
+
+6.3.5  Properties of SDEs
+
+
+In this section we introduce a few tools for studying the evolution of solutions
+for SDEs. Let X be a stochastic process satisfying the SDE (6.14), with suitable
+coefﬁcients a; b independent of t; and let  . / be any twice differentiable function.
+Then, taking the expectation of the It¯o-Doeblin formula (6.17) we ﬁnd
+
+            Efd .X/g D Ef 0.X/a.X/gdt C 12Ef  00.X/b.X/2gdt
+            D Ef.L  /.X/gdt;                                (6.37)
+
+where L is a linear operator, called the generator of the stochastic process, deﬁned
+by
+
+                               d     1      d2
+             L  .x/ D  a.x/  C 2b2.x/        .x/:               (6.38)                                dx          dx2
+
+The generator plays a role for SDEs which is similar to that of the Lie derivative in
+the context of deterministic systems.

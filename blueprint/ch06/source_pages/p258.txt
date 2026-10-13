@@ -1,0 +1,53 @@
+6.3  Stochastic Differential Equations                                             237
+
+where ˝i D k  1=2    i 1=2 is the frequency of the ith oscillator. Integrating by parts,
+we have
+
+  Z t                                        Z t
+    ˝i sin.˝i.t   s//Q.s/ds D Œcos.˝i.t   s//Q.s/ t0      cos.˝i.t   s//P.s/ds
+
+   0                                                             0
+
+                                           Z t
+              D Q.t/   cos.˝it/Q.0/     cos.˝i.t   s//P.s/ds:
+
+                                                                 0
+
+which leads to
+
+         qi.t/   Q.t/ D cos.˝it/qi.0/ C ˝ i 1 sin.˝it/pi=    i   cos.˝it/Q.0/
+                   Z t
+                          cos.˝i.t   s//P.s/ds:
+
+                             0
+
+   Introducing this formula in (6.23), we obtain a reduced system
+
+                       PQ D P;                                                (6.27)
+
+            Xk
+                            PP D  U0.Q/   k  1   .Q   qi/;                       (6.28)
+                                          iD1
+
+                                 Z t
+           D  U0.Q/ C f.t/          .t   s/P.s/ds;              (6.29)
+
+                                                  0
+
+  where we deﬁne
+
+     Xk
+    f.t/ D  k  1     cos.˝it/qi.0/ C ˝ i 1 sin.˝it/pi.0/=    i   cos.˝it/Q.0/  ;
+                  iD1
+
+           Xk
+                                   .t/ D k  1    cos.˝i.t//:
+                                         iD1
+
+For large k and for many choices of the frequencies ˝i and the initial conditions
+fqi.0/; pi.0/g, function f.t/ will take on the character of a Wiener process; in fact
+the convergence can be shown in the weak sense. We may even take the initial
+conditions to be randomly distributed [13, 205]. The function   .t/ will typically
+exhibit an initial decay followed by rapid bounded ﬂuctuation (see Fig. 6.4), with
+decay to zero in the limit of large k. Let f˝.k/i   ji D  1; 2; : : : ; kg represent the
+frequencies used for a given k. We may make various proposals for the ˝.k/i   ,

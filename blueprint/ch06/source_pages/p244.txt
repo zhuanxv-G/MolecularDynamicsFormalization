@@ -1,0 +1,50 @@
+6.1  Ensembles for Molecular Simulation                                          223
+
+
+   Observe that, deﬁning
+
+                                   0
+                    G D
+                                   p
+
+yields the kinetic temperature observable kBT D Avˇ.pTM 1p/=Nc, whereas
+
+                             rU.q/
+                   G D
+                                   0
+
+gives the conﬁgurational temperature observable (6.5).
+  An even simpler conﬁguration-dependent choice is derived from
+
+                                  q
+                    G D        ;
+                                  0
+
+corresponding to
+
+                               Avˇ.q rU/
+                        kBT D                     :
+                                      Nc
+
+  An important point is that the formula of Rugh may not be robust from a
+computational perspective in cases where the denominator may be close to zero.
+The simple choice of the kinetic temperature is often desirable since it works for
+both the inﬁnite domain and for periodic boundary conditions and is such that the
+denominator is a nonzero constant.
+   Rugh’s principle gives generalized temperature indicators on an inﬁnite domain,
+but as we have already pointed out, typical molecular dynamics models are conﬁned
+by periodic boundary conditions to a torus in conﬁguration space (or a toric-cylinder
+in phase space). Similar results may be obtained in this case. The key point in the
+proof above is the vanishing contribution from the boundary as R ! 1; in the
+case of periodic boundary conditions, the boundary terms from opposite sides of
+the domain can be seen to cancel out, leaving the desired relation. In general one
+should ensure that the formula for temperature is invariant under translations of the
+periodic domain along coordinate directions in the conﬁgurational domain. If G and
+H are both periodic in q and G is smooth, then everything works since the outward
+pointing normal will be in opposite directions on each side of the simulation cell,
+and the boundary term will cancel.
+  Thus for periodic boundary conditions we may choose
+
+                                    0
+                              G.z/ D        ;
+                                    p

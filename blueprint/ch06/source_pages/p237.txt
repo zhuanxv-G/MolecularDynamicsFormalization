@@ -1,0 +1,53 @@
+216                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+giving, when the system is in thermal equilibrium,
+
+                d              d              1
+                        ln ZA.EA/ D      ln ZB.EB/ D    DW ˇ:             (6.2)
+             dEA           dEB           kBT
+
+We shall refer to the quantity ˇ as the system’s inverse or reciprocal temperature.
+  The volume of states of the active system with energy ˛ is ZA.˛/. On the other
+hand the probability for the active system to have energy   ˛ is the same as the
+probability of the bath having energy  E   ˛, this must be
+
+                                    Z˛
+                P.˛/ D PrfEB  E  ˛g /   ZB.E   s/ds:
+
+                                                       0
+
+Since ZB.E   s/ D exp.SB.E   s/=kB/, and s    E, we (naively3) apply the mean
+value theorem to SB to obtain
+
+                      SB.E   s/ D SB.E/   S0B. /s;
+
+and from S0B. / D 1=T, we obtain
+
+                       ZB.E   s/ / exp.  ˇs/;
+
+where ˇ D .kBT/  1. Thus we have
+
+                             Z˛
+                        P.˛/ /   exp.  ˇs/ds:
+
+                                            0
+
+This is the probability of ﬁnding any given active system of our ensemble having
+energy    ˛. The volume (or number, in the case of discrete systems) of states
+available at energy ˛ is ZA.˛/. Thus the energy density of the canonical ensemble
+at energy level ˛ is proportional to ZA.˛/exp.  ˇ˛/.
+
+
+
+6.1.3  The Gibbs-Boltzmann Probability Density
+
+
+Observe that the previous discussion does not quite tell us the form of the phase
+space density associated to the canonical ensemble. An elegant way to derive this
+
+
+3This is one of several imprecisions in this discussion whose correction would entail signiﬁcant
+additional labor; since our ultimate aim is to use the framework and not to provide its rigorous
+derivation, we prefer to retain the intuitive continuity of presentation, in keeping with popular
+treatments.

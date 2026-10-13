@@ -1,0 +1,51 @@
+6.3  Stochastic Differential Equations                                             235
+
+                                                                                             def R t
+Using Proposition 6.3, we know that for a Wiener process W.t/, Y.t/ D  0 exp.  s/
+dW.s/ is a Gaussian random variable with mean zero and variance
+
+                            Z t                            t                                                   e2    1
+                      VarfY.t/g D    e2 sds D             :
+                                          2
+                                           0
+
+The solution with equivalent distribution is therefore
+
+                 p
+                X.t/ D e  tX.0/ C    .2  / 1.1   e  2 t/ OY.t/:
+
+where OY.t/ should be interpreted as random process which at every time t evaluates
+to a normal random variable ( OY.t/   N.0; 1/). This is what we mean by the exact
+distributional solution of the Ornstein-Uhlenbeck SDE with prescribed initial value
+X.0/.
+   Let  D p2 kBTm; then for large t the exponentials of the form e     t tend to
+zero, and we have
+                 p
+                            X.t/    kBTm OY.t/;
+
+in which case X.t/ is drawn from the probability density
+
+                             1            1  u2
+                 1.u/ D p2 mkBT exp   kBT 2m    :
+
+    If we think of X.t/ as not the position, but actually the momentum, then the
+Ornstein-Uhlenbeck equation samples, in the long term, the Gibbs-Boltzmann
+distribution associated to a single particle in a thermal bath at temperature T. In
+recognition of this, from this point forward, we will replace X with p as the variable
+in the Ornstein-Uhlenbeck equation.7 For a system with Nc conﬁgurational variables
+we may write
+                  p
+                         dpi D    pidt C  2 kBTmidWi;                   (6.20)
+
+where W1.t/; W2.t/; : : : ; WNc.t/ represent Nc independent Wiener processes, or, in
+vectorial notation, denoting W D ŒW1; W2; : : : ; WNc T, we have
+                 p
+                   dp D    pdt C  2 kBTM1=2dW:                  (6.21)
+
+
+
+
+7In so doing, we must in many cases give up the traditional notational convention of indicating
+solutions of SDEs by capital letters and the corresponding variables in the density function by the
+lower case equivalent. This however allows us to maintain better notational coherence with the
+earlier treatment of deterministic systems.

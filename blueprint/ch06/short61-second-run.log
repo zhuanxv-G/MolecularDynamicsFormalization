@@ -1,0 +1,32 @@
+IndependentPartition failed route 2
+EntropyEquilibrium failed route 2
+blueprint\ch06\validation\short_search\route-b820cf89930d1bbb5b33.lean:80:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-b820cf89930d1bbb5b33.lean:148:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch06\validation\short_search\route-b820cf89930d1bbb5b33.lean:149:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch06\validation\short_search\route-b820cf89930d1bbb5b33.lean:151:8: error(lean.unknownIdentifier): Unknown constant `MeasureTheory.Measure.prod_univ`
+blueprint\ch06\validation\short_search\route-b820cf89930d1bbb5b33.lean:159:4: error: Type mismatch: After simplification, term
+  HasDerivAt.sub (hasDerivAt_const e energy) (hasDerivAt_id e)
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    ((fun x => energy) - id) (-1) e
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.instAddCommGroup Semiring.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun x => energy - x) (-1) e
+

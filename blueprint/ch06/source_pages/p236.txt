@@ -1,0 +1,48 @@
+6.1  Ensembles for Molecular Simulation                                          215
+
+
+  We refer to the system of interest as the active system, or part A. The heat bath, or
+the bulk, is labelled B. Let us denote the total energy of the combined system AB by
+E. If the active system has energy EA then the energy of the heat bath is EB D E  EA.
+We suppose that the number of states accessible to a given system A or B depends
+on its energy, writing this as Zi.Ei/ where i D A or B. (For an idealized classical
+system, we may take Z˛ to be the volume of the relevant energy surface.) As the
+size (number of particles) of the system is increased, the energy, being an extensive
+quantity, is expected to increase in proportion. We denote by Z.EA; EB/ the total
+number of states the system can occupy with systems A and B having energies EA
+and EB, respectively. We make use of our assumption that the two systems do not
+exchange particles so that the total number of states the combined system can be
+found in depends solely on the energies of the two independent systems, i.e.,
+
+                     Z.EA; EB/ D ZA.EA/  ZB.EB/:
+
+Taking logarithms and replacing the value for EB by E  EA, we have
+
+                  ln Z.EA; E  EA/ D ln ZA.EA/ C ln ZB.E   EA/:
+
+The crucial assumption is that each of the states in Z.E/ is equally probable, and
+hence we can ﬁnd the most likely energy distribution between the systems by
+maximizing the value of Z.EA; EB/, or equivalently maximizing ln Z.EA; E   EA/.
+This value of EA occurs where
+
+                        d
+                                  ln Z.EA; E  EA/ D 0;
+                     dEA
+
+or equivalently where
+
+                           d        d
+                             SA D     SB;
+                        dEA     dEB
+
+where we have used Boltzmann’s relation to express this in terms of the entropy.
+  We have assumed that our systems are in thermal equilibrium, but if we had not,
+and instead invested the heat bath with the total system energy, we would expect that
+the energy would transfer back into system A until the point where the stationarity
+relation is satisﬁed. This assumption is the same as saying that the system obeys
+the second law of thermodynamics; furthermore this equilibrium occurs when the
+entropy of the system is at its maximum.
+  The temperature of a system T, is deﬁned as
+
+                             1    @S
+                             WD                        T    @E;

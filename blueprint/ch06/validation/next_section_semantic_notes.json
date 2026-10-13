@@ -1,0 +1,133 @@
+{
+  "status": "notes_only_not_audit_verdicts",
+  "checked_original_pdf_pages": [
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279
+  ],
+  "notes": [
+    {
+      "pdf": 255,
+      "printed": 234,
+      "topic": "Ito time formula",
+      "detail": "式6.18的首项印为φ_t(X,t)，未带dt；保存完整字面式，校正版明确φ_t dt，不默改。"
+    },
+    {
+      "pdf": 256,
+      "printed": 235,
+      "topic": "OU law",
+      "detail": "原OU分布表达式的(1−exp(−2γt))系数需和实际variance逐符号核对；不得把单时边际等价当作联合过程等价。"
+    },
+    {
+      "pdf": 258,
+      "printed": 237,
+      "topic": "bath force sign",
+      "detail": "6.29的+f(t)与页下f(t)=−k⁻¹Σ初值项符号不一致；现有ReviewDefinitions已分别保留Printed和corrected。"
+    },
+    {
+      "pdf": 260,
+      "printed": 239,
+      "topic": "variable friction and mass",
+      "detail": "原噪声M½Γ及阻尼ΓΓᵀp在非对易质量下不自动保持Gibbs；定义保留完整一般Γ，原泛化不变性另留字面义务，不以单位质量桥接代替。"
+    },
+    {
+      "pdf": 263,
+      "printed": 242,
+      "topic": "diffusion integration by parts sign",
+      "detail": "两个分部积分后原等式印为负号，随后FP方程却用正号；需保留字面负号NEEDS和标准正号两个记录。"
+    },
+    {
+      "pdf": 267,
+      "printed": 246,
+      "topic": "finite Markov example",
+      "detail": "图6.6矩阵的非不可约数学结论需单列，不能整图作为定性背景排除。"
+    },
+    {
+      "pdf": 249,
+      "printed": 228,
+      "topic": "L2 stochastic integral definition",
+      "detail": "审查isItoIntegral的Bochner默认零风险：左端有限和及差平方若未可积，均方积分可能默认零。Blueprint严格模型需显式逐K MemLp左和2或实际Lp范数收敛；全部一般/乘法SDE保留真实对象，不以弱积分定义伪造PASS。"
+    },
+    {
+      "pdf": 254,
+      "printed": 233,
+      "topic": "general vector SDE",
+      "detail": "原6.15/6.16含状态和时间依赖B；Review additiveSDE只是常数B特例。完整vector Ito模型另写，特例单独[EXTRA]桥接。"
+    },
+    {
+      "pdf": 272,
+      "printed": 251,
+      "topic": "Theorem6.1 average meaning",
+      "detail": "原第三项barφ(t)指向5.6时间平均，却给指数率；随机轨道时间平均通常不具该确定指数率。保留字面义务并单列真实分布/transition expectation版本，完整一般质量Thm6.1仍sorry，无封存恢复。"
+    },
+    {
+      "pdf": 273,
+      "printed": 252,
+      "topic": "Assumption1 t0 density",
+      "detail": "原ρ̂联合连续C×C×[0,∞)，而t=0核为Dirac通常无连续密度；Printed与t>0校正版分别保存。"
+    },
+    {
+      "pdf": 274,
+      "printed": 253,
+      "topic": "Lyapunov laplacian",
+      "detail": "原ΔpHˡ≤l(l+Nc−1)H^(l−1)的系数疑点已有正式反例，按old104独立保留字面/校正版。"
+    },
+    {
+      "pdf": 278,
+      "printed": 257,
+      "topic": "Proposition6.4 adjoint and mean",
+      "detail": "原L_LD†φ=g与∫g dμβ=0混用forward平密度和weighted adjoint；须区分printed、relative-density/weighted修正版，完整Prop6.4不恢复封存长证明。"
+    },
+    {
+      "pdf": 279,
+      "printed": 258,
+      "topic": "Eigenmode complex density",
+      "detail": "保留Re(λ)<0及可能复数λ，不将复谱全结论换成实λ特例；实际ρ0需非负归一化资格，或以复数线性演化及实部说明。"
+    }
+  ]
+}

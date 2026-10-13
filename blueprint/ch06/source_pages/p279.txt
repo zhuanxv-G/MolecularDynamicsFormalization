@@ -1,0 +1,47 @@
+258                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+More precisely this relation should be interpreted in the variational sense, so that we
+have, for any suitable test function   , e.g.  2 C1,
+
+                Z              Z
+                            .q; p; t/d! D     etL LD  0.q; p/d!:
+
+            D          D
+
+This is of course an inner product, and due to the properties of the inner product, we
+may interpret the right hand side as
+
+                     Z
+                                etLLD  .q; p/   0.q; p/d!;
+
+               D
+
+which says that the average of a function   with respect to the distribution at time
+t is equivalent to the average of the forward propagation of   with respect to the
+initial distribution.
+  How rapidly an average converges will depend on the spectral properties of the
+operator as well as the choice of the initial distribution. For example, if we assume
+that   1;  .1/ is some eigenvalue, eigenfunction pair with Re.  1/ < 0 and take the
+initial distribution to be
+
+                                       0 D  eq C ˛  .1/;
+
+
+for ˛ 2 R, then we have
+
+
+                                                               LD  .1/                      .q; p; t/ D etL LD  0 D etL                                                 LD  eq C ˛etL
+                   D  eq C ˛et  1  .1/:
+
+
+Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any
+  in C1 we have
+
+              Z                          Z
+                         .q; p; t/d! D Avˇ.  / C ˛et  1      .1/d!:
+
+          D                   D
+
+The latter integral is bounded since both  and   .1/ are in L2, and since Re.  1/ < 0,
+we see that this converges exponentially to the desired average.

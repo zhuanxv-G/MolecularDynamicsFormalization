@@ -1,0 +1,48 @@
+6.4  Ergodicity of Stochastic Differential Equations                                  255
+
+
+   In the case of Langevin dynamics, we identify the vectors bi in (6.43) with the
+terms in (6.47). One puts Langevin dynamics into the correct form by using
+
+                    p                  0
+          b0 D                           ;     bi D            ;   i D 1; 2; : : : ; Nc;
+               rU.q/    p                    ei
+where ei is the ith Euclidean basis vector in RNc and D p2 kBT is constant. Now
+it is a straightforward matter of computing the commutators. For i D 1; 2; : : : ; Nc,
+we have, using the fact that bi is a constant vector ﬁeld and so its Jacobian matrix
+vanishes,
+
+                            0      I                    ei
+                   Œb0; bi D                       bi D                   ;
+                                U00.q/    I                    ei
+
+where U00.q/ is the Hessian matrix of U. As these Nc vectors, taken together
+with the original bi, clearly provide a linearly independent set of 2Nc vectors, we
+have veriﬁed Hörmander’s condition. Thus Assumption 1(ii) holds in the case of
+Langevin dynamics.
+    It remains to show that Assumption 1(i) is satisﬁed. We will in fact show a
+stronger result, given in the following lemma:
+
+Lemma 6.1 For all t > 0 and all open C   D, we have that
+
+                 Pr .X.t/ 2 C j X.0/ D X0/ > 0;  8X0 2 D;
+
+where X.t/ D .q.t/; p.t//T is a solution to Langevin dynamics (6.47).
+
+Proof  It is sufﬁcient to show that the open ball of radius ı centered on a point y 2 D,
+denoted Bı.y/   D, has positive probability at any t > 0. To show this, the goal
+is to demonstrate that we have a positive probability of the realization of the noise
+process taking our initial condition inside the ball.
+   Consider the ODE
+
+                      d2q            dq    dR
+               C rU.q/ C   D        ;                    (6.49)
+                            dt2                dt       dt
+
+for some positive constants  and    . This is precisely Langevin dynamics  (6.47),
+substituting a process R.t/ in place of the Wiener process. Choose q to be a C1 path
+such that for a given t > 0
+
+                      .q.0/; Pq.0//T D X0;   .q.t/; Pq.t//T D y:
+
+Taking R.0/ D 0, we can obtain a C1 function dR=dt by substitution.

@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02a",
+  "source_ids": [
+    "MD-6.1.2-Entropy"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 235,
+      "printed_page": 214
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "0687f2dc56791df4762800b84fd63f15d2e6bac0fa5fb0e5be3243469e4c8ac4",
+  "lean_sha256": "c765413d298076f35f7ce892b88416585ab831393cef9f6a719dc98e8a77f709",
+  "signature_sha256": "55acd3f7331b28a70fefcf9b06e22dbe6c51c26f9efaeb3f094b0343053516f7",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Z",
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "entropy",
+      "code_sha256": "55acd3f7331b28a70fefcf9b06e22dbe6c51c26f9efaeb3f094b0343053516f7"
+    }
+  ],
+  "paste_plus_pdf_bytes": 85019,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3673,
+      "sha256": "f51f9fcf586e89588050c17412ae686db705ecbed76f72e97892c2dc5a032cfc"
+    },
+    "BATCH02a_PAGES.pdf": {
+      "bytes": 81346,
+      "sha256": "ab4009c74e2818ed3f377e814cdf6baf3cc3d8cc9ae7cb656d9af28471293507"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 87620
+}

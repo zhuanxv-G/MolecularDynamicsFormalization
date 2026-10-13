@@ -1,0 +1,50 @@
+6.4  Ergodicity of Stochastic Differential Equations                                  251
+
+
+Suppose that U is smooth with periodic boundary conditions Q D TNc (TNc an
+Nc-dimensional torus). Then, with respect to the space C20.  ˇ/ with inner product
+hf; giˇ as deﬁned above, we have:
+
+1. L is self-adjoint, negative deﬁnite, with spectrum consisting of discrete eigenval-
+   ues on the half line . 1; 0 .
+2. L has a spectral gap, meaning that, with exception of the zero eigenvalue, the
+   remainder of the spectrum satisﬁes  .L/    . 1;  ˛ for some ˛ > 0.
+3. averages with respect to the evolving, time-dependent distribution converge
+   exponentially rapidly to averages with respect to the invariant distribution, and,
+   for any smooth, compactly supported test function    , we have
+
+                                      j N .t/  Avˇ.  /j  Kk kˇe  ˛t;
+
+   for some positive K and ˛, where recall  N .t/ denotes the time average of
+  deﬁned in (5.6).
+
+Thus Brownian Dynamics is ergodic for the conﬁgurational Gibbs-Boltzmann
+distribution.
+
+
+
+6.4.4  Ergodicity of Langevin Dynamics
+
+
+The key feature of Brownian dynamics that makes it possible to verify the ergodic
+property is the fact that each variable of the system is directly in contact with an
+independent stochastic Wiener process. This ensures that at each point of phase
+space, all possible directions are sampled and the paths will have freedom to move
+in any direction. In Langevin dynamics, taking M D I for simplicity,
+
+                 dq D pdt;
+                     p                          (6.47)
+                 dp D  rU.q/dt    pdt C  2 kBTdW;
+
+as well as in a number of other important SDEs arising in molecular dynamics,
+the picture is less transparent. Stochastic noise is only introduced in some parts
+of the system, but it is not immediately clear that the stochastic character will be
+transferred through the internal dynamics of the system into all possible directions.
+   In these more complicated examples, we are able to demonstrate ergodicity
+without ﬁnding an explicit solution (as in the Ornstein-Uhlenbeck example) or study
+of the dynamics’ generator (as in Brownian dynamics), given some assumptions
+on the behavior of solutions. We state (without proof) a powerful theorem on the
+ergodicity of degenerate stochastic diffusions, whose proof is essentially contained
+in [257, Theorem 2.5] (see also [44, 160, 161, 253, 266]). We denote by Bı.x/ the
+open ball in D centered on the point x of radius ı, while B.D/ is the Borel  -algebra
+on D (see Sect. 5.2.1).

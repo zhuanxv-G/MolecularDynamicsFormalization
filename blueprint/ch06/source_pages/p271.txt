@@ -1,0 +1,49 @@
+250                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+Integrating by parts in the second term we have
+         Z                 Z
+     ˇ  1     f  g N ˇd!q D  ˇ  1   rgTr.f N ˇ/d!q
+
+        Q               Q
+                          Z
+            D  ˇ  1   rgTŒrf Nˇ  ˇrUf Nˇ d!q
+
+                         Q
+                          Z              Z
+            D  ˇ  1  rgTrf N ˇd!q C  f.rgTrU/ N ˇd!q:
+
+                         Q             Q
+
+Combining this with the ﬁrst part of the inner product, we see that
+                                Z
+                          hf; Lgiˇ D  ˇ  1  rgTrf N ˇd!q:
+
+                              Q
+
+In this form we see that f and g appear symmetrically, so we may write
+
+                                  hf; Lgiˇ D hLf; giˇ;
+
+hence, with respect to the weighted inner product, L D  L. (Note that the
+adjoint indicated here is quite different than the L2 adjoint mentioned previously
+in connection with the Fokker-Planck operator.)
+   In addition to being self-adjoint, this operator (on the function space C20. N ˇ/)
+has other important properties. In particular, it has a compact resolvent [360]; this
+can be shown to imply that the spectrum consists only of a countable collection
+of eigenvalues, i.e. that the operator has a discrete spectrum. Moreover, from the
+calculation above,
+                                Z
+                            hf; Lfi D  ˇ  1   krfk2 N ˇd!q;
+
+                             Q
+
+so that hf; Lfi   0 so the operator is negative deﬁnite and can only have non-positive
+eigenvalues. Many additional results are available for this case. A good summary of
+the state of the art is available in the forthcoming work of G. Pavliotis [298]. In
+particular, it is possible to show the properties of L contained in Theorem 6.1.
+
+Theorem 6.1 Deﬁne the generator of Brownian dynamics by
+
+
+                                     def                         1                    Lf D  M 1rUTrf C ˇ    Mf:

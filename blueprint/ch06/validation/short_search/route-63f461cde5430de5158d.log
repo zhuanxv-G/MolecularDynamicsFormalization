@@ -1,0 +1,66 @@
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:27:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:28:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:117:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:244:42: error(lean.unknownIdentifier): Unknown constant `differentiable_const.mul`
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:248:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  deriv (S - ?m.137) x
+in the target expression
+  deriv (fun x => S x - kB * β * x) x = 0
+
+S : ℝ → ℝ
+energy kB β : ℝ
+hS : Differentiable ℝ S
+hkB : 0 < kB
+hder : ∀ (e : ℝ), deriv S e = kB * β
+s : ℝ
+f : ℝ → ℝ := fun x => S x - kB * β * x
+hf : Differentiable ℝ f
+x : ℝ
+⊢ deriv (fun x => S x - kB * β * x) x = 0
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:248:29: error: `fun_prop` was unable to prove `DifferentiableAt ℝ ?m.137 x`
+
+Issues:
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:265:4: error: Type mismatch: After simplification, term
+  Continuous.tendsto (Continuous.sub continuous_const continuous_id) 0
+ has type
+  @Tendsto ℝ ℝ ((fun x => energy) - id) (𝓝 0) (𝓝 energy)
+but is expected to have type
+  @Tendsto ℝ ℝ (fun s => energy - s) (𝓝 0) (𝓝 energy)
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:285:44: error(lean.unknownIdentifier): Unknown identifier `abs_add`
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:286:50: error: Type mismatch
+  add_le_add_right ?m.517 ?m.518
+has type
+  ?m.518 + ?m.512 ≤ ?m.518 + ?m.513
+but is expected to have type
+  |S (energy - s) - taylorWithinEval S 2 univ energy (energy - s)| + |iteratedDeriv 2 S energy / 2 * s ^ 2| ≤
+    s ^ 2 + |iteratedDeriv 2 S energy / 2 * s ^ 2|
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:273:31: warning: This simp argument is unused:
+  hbase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Real.norm_eq_abs, neg_sq, abs_sq, one_mul] at hr
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch06\validation\short_search\route-63f461cde5430de5158d.lean:273:38: warning: This simp argument is unused:
+  neg_sq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Real.norm_eq_abs, hbase, abs_sq, one_mul] at hr
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

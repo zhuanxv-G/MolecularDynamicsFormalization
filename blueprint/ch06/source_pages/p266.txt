@@ -1,0 +1,47 @@
+6.4  Ergodicity of Stochastic Differential Equations                                  245
+
+6.4.1  Irreducibility of Finite Markov Chains
+
+
+The concept of ergodicity, and the method of analyzing it, can be understood using
+an analogy to a simpler ﬁnite model, a discrete Markov Chain.
+  A discrete Markov Chain is a stochastic process in which, at each step, a
+transition is made from the current state  i to another  j selected from a given
+probability distribution. In the case of a ﬁnite collection of states ˙ D f1; 2; : : : ; kg,
+we assume that the transition probabilities    ij 2 Œ0; 1 are given and denote the state
+at time n by Sn. Thus we have
+
+                         Pr.SnC1 D jjSn D i/ D    ij;
+
+where we denote by ˘ D .  ij/ 2 Rk  k the matrix of transition probabilities, i.e. it
+is a matrix whose entries are all nonnegative and less than or equal to 1. The sum of
+the elements in row i gives the probability of being in some state at time n C 1 given
+that we were in state i at time n, thus it is one. The matrix ˘ is sometimes referred
+to as a right stochastic matrix.
+  A distribution on the state space is typically associated to a row vector  D
+.  1;   2; : : : ;  k/ with nonzero elements and which is normalized such that
+
+          Xk
+                                                                                     i D 1:
+                                     iD1
+
+This might be viewed as deﬁning the relative proportion, in a large collection
+of walkers (independent realizations of a stochastic evolution), that are found in
+each state. As the walkers make moves based on the transition probabilities, the
+distribution will vary. We may denote by   n D .  n;1;   n;2; : : : ;   n;k/ the distribution
+observed at step n of the iteration. The probability of being in state i at the n C 1st
+iteration, is the sum over j of the probabilities of being in state j multiplied by the
+probability of transitioning from state j to state i, thus
+
+                                nC1 D  n˘ :
+
+This iteration can be viewed as analogous to dynamics. We may think of the
+evolution of the Markov chain as being realized through multiplication by the
+Markov matrix ˘ . Let     ij.l/ represent the transition probability of being in state i
+at iteration l given that we were in state j at time 0, i.e.     ij.l/ is the .i; j/ entry of the
+matrix ˘ l.
+  Two important properties of Markov chains are aperiodicity and communication.
+For each state of the chain, we deﬁne the number d.i/ to be the greatest common
+divisor of all integers l such that     ii.l/ > 0 (if the probability of return to state i is
+zero, then we set d.i/ D 0). If d.i/ D 1, for all i then we say that the chain is
+aperiodic. States i and j are said to communicate if     ij                                                                                     .l1/ > 0 and     ji.l2/ > 0 for

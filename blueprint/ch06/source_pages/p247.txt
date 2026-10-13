@@ -1,0 +1,49 @@
+226                    6  The Canonical Distribution and Stochastic Differential Equations
+
+Expanding the squared sum we see that there are (i) n squares J2k plus (ii) products
+of the form JkJl, k ¤ l. Clearly the former are always one and the latter have zero
+expectation, thus
+
+                        EX2n D nıx2:
+
+The variance therefore grows linearly with the number of steps taken.
+  Now let us take a slightly different perspective. We start with a time interval Œ0;
+and subdivide this into   steps of size ıt D  =  . Let tn D nıt, n D 0; 1; : : : ;  and
+deﬁne
+                p
+               Y.tkC1/ D Y.tk/ C   ıtJk;    k D 0; 1; : : : ;     1;
+
+where Y.0/ D 0. Effectively we are making the size of the jump ıx taken at each               p
+step of the random walk equal to   ıt.                               p
+  We will use the shorthand Yk D Y.tk/ and  Yk D YkC1  Yk D   ıtJk.
+  The increments are clearly independent. Let us observe the following facts, for
+0   k     l
+
+            (i) E.Yl  Yk/ D 0,
+             (ii) Var.Yl  Yk/ D tl    tk.
+
+   For points between tk and tkC1 we deﬁne the value of Y.t/ by linear interpolation:
+
+                                                    .t   tk/
+                          Y.t/ D Yk C        Yk
+                                                ıt
+
+   Then, for 0     t   s       , we have
+
+                          E.Y.s/   Y.t// D 0:
+
+This  is easy  to demonstrate. However, the  intuitive corresponding statement
+Var.Y.s/   Y.t// D .s    t/ does not quite hold due to the reliance on interpolation.
+Nevertheless, such a relation holds in an approximate sense and in the limit of small
+step.
+  The relation ıt D ıx2 deﬁnes a scaling of time in relation to distance. When we
+take limits as these two quantities go to zero in such a way that ıt D ıx2 we refer to
+it as a diffusion limit. It is this type of random diffusion model that has the greatest
+relevance for experiments like those of Brown and Perrin.
+   In the diffusion limit the motion of the random walk can be viewed as an
+everywhere continuous (but almost nowhere smooth) path which is called a Wiener
+process (after Norbert Wiener).
+
+                    p   bt=ıtcX
+                      W.t/ D limıt!0c       ıt      Jk:
+                                             kD0

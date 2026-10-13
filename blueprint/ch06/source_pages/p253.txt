@@ -1,0 +1,47 @@
+232                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+  We introduce a pair of smooth functions a.x; t/ and b.x; t/, where a represents
+a drift tendency and b the average magnitude of the random jump. In the interval
+Œnıt; .n C 1/ıt , a step ıXn D XnC1  Xn of the random walk will be given by
+
+                   ıXn D a.Xn; tn/ h C b.Xn; tn/Jn ıx;                    (6.9)
+
+where the random increment Jn was introduced in Sect. 6.2.1. Choose a positive t
+and sum (6.9) from n D 0 to     1, where D bt=ıtc, obtaining
+
+      X1  X1    X1
+    X   X0 D    ıXn D    a .Xn; tn/ ıt C   b.Xn; tn/Jnıx:          (6.10)
+                  nD0       nD0             nD0
+
+Take the diffusion limit ıt ! 0, ıx2=ıt ! 1 with  ıt D t ﬁxed, then we obtain,
+under the It¯o convention,
+
+                    Z t            Z t
+         X.t/  X.0/ D   a.X.s/; s/ds C   b.X.s/; s/ dW.s/;             (6.11)
+
+                              0                    0
+
+where X is obtained by a limiting process similar to that discussed above, and
+
+           Z t                            1           X                                          def
+                 a.X.s/; s/ds D  lim    a .X.nıt/; nıt/ ıt;                (6.12)
+                                 ıt!0
+                 0                     nD0
+
+          Z t                                     1             X        p                                          def
+             b.X.s//dW.s/ D l:i:m:ıt!0    b .X.nıt/; nıt/ Jk   ıt:       (6.13)
+               0                            nD0
+                       R t
+  As X.t/   X.0/ D    0 dX.s/, we may view (6.11) as a relation between
+differentials:
+
+                 dX.s/ D a.X.s/; s/ds C b.X.s/; s/ dW.s/;
+
+or, more simply
+
+                 dX D a.X; t/dt C b.X; t/ dW:                    (6.14)
+
+which is the general form of a scalar stochastic differential equation.
+  We mention in passing the extension to systems of SDEs. Let a.z; t/ and b.i/.z; t/,
+i D 1; 2; : : : ; r be a set of r C 1 vector ﬁelds in Rm, and let W1; W2; : : : ; Wr be a

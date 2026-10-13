@@ -1,0 +1,1700 @@
+{
+  "template": "C",
+  "method": "local_read_only_semantic_review",
+  "website_audit": "待网站审计",
+  "items": {
+    "MD-6.1.1-Microcanonical": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.microcanonical",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "5cdf3eddb52be9764a5d8dafaa6f17d68830c0e4a82414dc21bd0af934d73d84",
+      "block_sha256": "5cdf3eddb52be9764a5d8dafaa6f17d68830c0e4a82414dc21bd0af934d73d84",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.microcanonical；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-Entropy": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.entropy",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "55acd3f7331b28a70fefcf9b06e22dbe6c51c26f9efaeb3f094b0343053516f7",
+      "block_sha256": "55acd3f7331b28a70fefcf9b06e22dbe6c51c26f9efaeb3f094b0343053516f7",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.entropy；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-IndependentPartition": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.independentPartition",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "7264bc0555206c98d6b80e350d4d1e91042f22c014177ff03bca2ec61f744575",
+      "block_sha256": "ccd2167e126b078e2297b677f092d3c12d5f2931b949189af480c5b1ce050859",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.independentPartition；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/IndependentPartition.json",
+        "blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.lean",
+        "blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.log",
+        "blueprint/ch06/validation/short_search/route-b820cf89930d1bbb5b33.lean",
+        "blueprint/ch06/validation/short_search/route-b820cf89930d1bbb5b33.log",
+        "blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.lean",
+        "blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-EntropyAdditivity": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.entropyAdditivity",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "2835600fc59f2b99240be5bc630a99fd162527ed0f6bf2a1c62a9fbf08eda407",
+      "block_sha256": "8e2b0e870d9e36219f1aac5491c44fde67a870b24974cb104e282c19a311199b",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.entropyAdditivity；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/EntropyAdditivity.json",
+        "blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f-EntropyAdditivity.lean",
+        "blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f-EntropyAdditivity.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-EntropyEquilibrium": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.entropyEquilibrium",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "c04774a21064666309b55e90af4ada1be8f4d708f3926d5711510a03c17e6c8c",
+      "block_sha256": "4cc98d38e792f4416c2ab0bdd02c0148484c93fd72ccb808b2a7d2c01abdd7b8",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.entropyEquilibrium；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/EntropyEquilibrium.json",
+        "blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.lean",
+        "blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.log",
+        "blueprint/ch06/validation/short_search/route-b820cf89930d1bbb5b33.lean",
+        "blueprint/ch06/validation/short_search/route-b820cf89930d1bbb5b33.log",
+        "blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.lean",
+        "blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-Temperature": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.temperature",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "a1a128e8825ee065b962fd60de0859770659381a01e57af147da17fd7164b08b",
+      "block_sha256": "a1a128e8825ee065b962fd60de0859770659381a01e57af147da17fd7164b08b",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.temperature；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-InverseThermal": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.inverseThermal",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "c8ec5833dcf28e251472d0b18f3ab3f9cb6ca1d5dfec7c5ebd19472385a89d7e",
+      "block_sha256": "c8ec5833dcf28e251472d0b18f3ab3f9cb6ca1d5dfec7c5ebd19472385a89d7e",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.inverseThermal；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-BathTaylor": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.bathBoltzmannPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "保留均值定理与精确Boltzmann因子的完整印刷论证；固定能量导数不推出所有中间点导数恒定，不能把精确关系计为本地PASS。严格均值定理/局部Taylor余项另列[EXTRA]。",
+      "signature_sha256": "2dae18dcb1f95add45a1d7248a4268b99c94882c87fadd73aa6b96454fa72f2b",
+      "block_sha256": "0cc3840c638b604ac7378beaf8376538caae824f6fc899ae2294da52eb124bcf",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "热浴近似缺量化误差/热力学极限；本条不证明，不恢复封存长证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.bathBoltzmannPrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-LogTemperature": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.logTemperature",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "c72cad4e7ccd81899d4312fabfbb3b39e65ed74298124a597851cf4b4f5565f2",
+      "block_sha256": "68bd251fe4045f4b5a4a7855a3e4b7539956abe19d0e7c557d30741d129a0f08",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.logTemperature；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/LogTemperature.json",
+        "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.lean",
+        "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-BathMeanValue": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.bathMeanValue",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "8990018ea84d4ce8db69b7e92eab79de7e6d9735d095cbd0a9447ed943b74357",
+      "block_sha256": "c341f1d03401bb94203518f2b40f9ab873af401a77eae9ac5628ece07c5faecb",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.bathMeanValue；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/BathMeanValue.json",
+        "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.lean",
+        "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-BathTaylorEstimate": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.bathTaylorEstimate",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "95ca9b4ae67a9781a010e5cfe96925b07ef187e6e00e1578bf653400e31e032f",
+      "block_sha256": "8a8b1f555ec7d85f034fa98690b98fd0ba2dc23fdc248e1a537319883a78903a",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "三条短证明路线失败，停止该条；保存证据见validation/short_search/BathTaylorEstimate.json。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.bathTaylorEstimate；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/BathTaylorEstimate.json",
+        "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.lean",
+        "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.log",
+        "blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.lean",
+        "blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.log",
+        "blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7.lean",
+        "blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-BoltzmannConstantSlope": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.boltzmannConstantSlope",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "23d290b2362897009e32ea83753f194a34349c6ce8fd9216e375c16141fe3ec6",
+      "block_sha256": "e4df4fa57d1a16f2402f2ac8639e95b5f058bc19a872d9aa8da55e6b8e00c648",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.boltzmannConstantSlope；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 3,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/BoltzmannConstantSlope.json",
+        "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.lean",
+        "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.log",
+        "blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.lean",
+        "blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.log",
+        "blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7-BoltzmannConstantSlope.lean",
+        "blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7-BoltzmannConstantSlope.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-CanonicalCDFPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.canonicalCDFPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "保留与真实分别计数的能量CDF相比较的字面关系；不从启发式省略权重伪造精确概率定律。",
+      "signature_sha256": "be747a66a8ae1c01182c407cff55c3df239ee1d1d76d33a91682c7bf70ee9f32",
+      "block_sha256": "a913ff0852b6b501bc7bbaeda895828461b550cd5ca642e2b48284ce81f18cc3",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "原书启发式概率论证的ZA权重及热浴误差需人工裁定；不证明字面关系。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.canonicalCDFPrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.2-CanonicalEnergyDensity": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.canonicalEnergyDensity",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "360f4a9efd105af8159a488feaf4234bff865795633956d7b765e9bbe40e6a66",
+      "block_sha256": "360f4a9efd105af8159a488feaf4234bff865795633956d7b765e9bbe40e6a66",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.canonicalEnergyDensity；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-EntropyFunctional": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.entropyFunctional",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "802d85abc1a09dafd9837a107a2bdd6b48db56fde07c21a0b83b776b902e1f23",
+      "block_sha256": "802d85abc1a09dafd9837a107a2bdd6b48db56fde07c21a0b83b776b902e1f23",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.entropyFunctional；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-ConstrainedEntropyModel": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.constrainedEntropyModel",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "f6ca62553b2fce1166c89fd6f96c9721fcd8db54c65e47ca725f12fcfe2263a5",
+      "block_sha256": "f6ca62553b2fce1166c89fd6f96c9721fcd8db54c65e47ca725f12fcfe2263a5",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.constrainedEntropyModel；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-EntropyFirstVariation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.entropyFirstVariation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "10d8e6c714ff94885da236f4beaa98730204fb8354b3421765cc44ac881e4a0a",
+      "block_sha256": "372ebb0e28f0d3a3e998b8c019fdaaa28faea89eac51efdbbcf4f15ec826b467",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺熵泛函沿紧支变分的微分积分交换；无现成桥接保留sorry，不展开大型变分理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.entropyFirstVariation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-EntropyVariation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.entropyVariation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "9d369866f9b60109bf80602f9a08491358a0075662facfea584c0de78da69e79",
+      "block_sha256": "c1afd6711ea39a01ae7ae2aa9f5c4a2723a0566b29ca6526e2e2364a6e00d91f",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺上一条泛函导数以及变分基本引理的真实包装；不以待证EL作假设。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.entropyVariation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-CanonicalDensity": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.canonicalDensity",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "054a4e2ad5701d6d566b717151bba2dd35b462eea96418c7701dce45a59fa833",
+      "block_sha256": "054a4e2ad5701d6d566b717151bba2dd35b462eea96418c7701dce45a59fa833",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.canonicalDensity；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-MassHamiltonian": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.massHamiltonian",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "1e61717a0b74e0e8ed51cc375e6a9744cd172c7cd2229e5e6dfdde4bff45f92a",
+      "block_sha256": "1e61717a0b74e0e8ed51cc375e6a9744cd172c7cd2229e5e6dfdde4bff45f92a",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.massHamiltonian；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-PartitionMass": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.partitionMass",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "57fe63e922cabb4f6ff6a8e99674053a8a19ed02531d5af16e9759752d9eac9c",
+      "block_sha256": "ca1d15257158a7f6136c96061f79b205cd5dbaef373a790abacc0f8ec946d156",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "现有正式公式只覆盖单位质量/周期模型；一般质量Gaussian乘积积分无现成完整桥接，保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.partitionMass；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-PartitionDomain": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.partitionDomain",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "a2728db22fe443714963b4dfa76fad8aeae3c30d091066ecfda29b23f5461871",
+      "block_sha256": "d372b2b1b30fa91234f534915f44d4d91ed7b3722c22ae6bcdd54d67afa801ab",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "待一般质量Gaussian有限积及实际Fubini分离；无现成完整桥接保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.partitionDomain；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-FiniteDomainPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.finiteDomainPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "字面资格保留，不从内部光滑偷推有界，也不假设目标可积性。真实周期特例另列。",
+      "signature_sha256": "b4ee3764110e8390807f3ca374901b49d564092e17170c32ec1a0aa705031b27",
+      "block_sha256": "e1246c95e7a41b10cbe1999d6d27823750612c2e47c6953a089c2ed9f397a0e5",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "有限域的边界/下界条件需补齐；不证明当前字面断言。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.finiteDomainPrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-PeriodicPartitionBridge": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch06.periodicPartitionBridge",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "7966567d69c27dd0f64086ee16b7686a3c3a5460d4af5c881007f2401c2e25b6",
+      "block_sha256": "b41c390d7a62519a290a112a2a99828bed54ac68c2fbabc983b03f10d56761fc",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookLangevinCanonicalPartition_formula"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.periodicPartitionBridge；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-ConfiningPartition": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.confiningPartition",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "961c72b3aaadae1287dce589a70f87c1a22523f51c388a41c0eea522b9189e85",
+      "block_sha256": "60573ddcdf023b572361a07abe25e1d30f537ee6ba42fb895889ffc524b72d44",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺任意实p>0的径向尾部可积估计包装；不是周期紧域桥接能涵盖的一般结论，保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.confiningPartition；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-LennardJonesNonintegrable": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.lennardJonesNonintegrable",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "9c52a9ed6e9637bdfe37268b383e68a1d4f76f4e360aad2e97894ab3fa26111a",
+      "block_sha256": "2fd761e56db2caa4f35748b9dc3196e26c5522c5496aad214e9f63e1df02be71",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "需q→∞时权重→1以及无穷半轴不可积的实际尾部比较；无现成完整桥接，保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.lennardJonesNonintegrable；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-LennardJonesConfinement": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.lennardJonesConfinement",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "9774ea793b3749dec95c8ea600cc2810514a20ab7ea8403cafb52dfc12b01fb1",
+      "block_sha256": "36e61eaabaf3b470ceef9d98449a4d75c15d0727bb6c98cab6987fcb3fb83111",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.lennardJonesConfinement；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/LennardJonesConfinement.json",
+        "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean",
+        "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-PeriodicWeightIntegrable": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch06.periodicWeightIntegrable",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "6d2866ce40de4e297aa55fee3f27ac96cdc463dbe110d91793dbfa0beaedc1bc",
+      "block_sha256": "5d12910a1c2815487f5fe04a4f59f1dfc36662646c9728efdd9a3508f82d35f0",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookLangevinPeriodicGibbsWeight_integrable"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.periodicWeightIntegrable；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-PeriodicPartitionPositive": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch06.periodicPartitionPositive",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "cbc8c08f2f80f274ab0f0290961139aa371cbcf13790409cc12c01f49ea30030",
+      "block_sha256": "7aaf9c0552137641f959306b34edd889983f87077c0f28a47dc819e2ddf87862",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookLangevinCanonicalPartition_pos"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.periodicPartitionPositive；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.4-PolynomialObservable": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.polynomialObservable",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "75ce451f779beb0d2eecc079fcadce00ea9090b4b22ed54e169d01e2f9d63335",
+      "block_sha256": "75ce451f779beb0d2eecc079fcadce00ea9090b4b22ed54e169d01e2f9d63335",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.polynomialObservable；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.4-CanonicalAveragePrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.canonicalAveragePrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "完整字面定义保留；重复归一化疑点尚未裁定，不把该定义计为标准概率平均。标准版独立记录。",
+      "signature_sha256": "7ee5d2038154421c958f085f0817b9c6f83e5bf7dc8aa94edfe3c02cadcdf30b",
+      "block_sha256": "7ee5d2038154421c958f085f0817b9c6f83e5bf7dc8aa94edfe3c02cadcdf30b",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": "式(6.4)重复Z⁻¹待人工审校；字面定义不作新证明。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.canonicalAveragePrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.4-CanonicalAverage": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.canonicalAverage",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "657e6d5b34f67a801d9b47af48f04758bc91128466d4c738928ae450732551bb",
+      "block_sha256": "657e6d5b34f67a801d9b47af48f04758bc91128466d4c738928ae450732551bb",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.canonicalAverage；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.4-CanonicalAverageOne": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch06.canonicalAverageOne",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "b95a5af0d0b690bc22a78b249493134b6dee707d4a3e5a68527b96a3fdc8e5e3",
+      "block_sha256": "103a1e956bc88f6d4dcf39353618a7e1c8904112849152d8dc821824e14d4e51",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookCanonicalAverage_one"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.canonicalAverageOne；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-Equipartition": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.equipartition",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "d89f812b12f2bb741bb4ad9cb472a01db16c91b5fd02508471ca35aa82e6523f",
+      "block_sha256": "d637c91c35d7d7f46d93555ed8cbaa1b1a2f217586706e279f2d7fd7bde742cf",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "现成单位质量Gaussian测度未打包任意质量的真实Phase积分归一化二阶矩；缺完整桥接，保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.equipartition；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-ConfigurationalTemperature": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.configTemperature",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "c3c4bda49bcf81114265c1bfe9d43151dd45ce15f219703bd67f5bc4ead0850c",
+      "block_sha256": "930c7fe6c66ac2402dfdbd9448ab393d97a153a827756e7e70547fc47bddb807",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺一般配置空间加权IBP及具体G=∇U的完整包装；Prop6.1一般向量场桥接不直接等于本条，保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.configTemperature；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-Proposition61": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch06.proposition61",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "42762bd2c4900c0b15bf0723f82b4de67eb251c928d8538a41cb075e86523f4b",
+      "block_sha256": "c6be4deec12ad4e12b82b829e5eb1aabd03a3700232978242f059e71b27858be",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.proposition_6_1"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.proposition61；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-WeightedFluxZero": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch06.weightedFluxZero",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "e8f228e645b3b16f289c12054265c84b029786889f2491d152a3a39ddf6c66f1",
+      "block_sha256": "dcad8c75b0dce6d983afaa2fbe56f40a8cbff7dd7cf55f403b53cf5e255f47b2",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookCanonicalWeightedFlux_integral_divergence_eq_zero"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.weightedFluxZero；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-CanonicalDivergenceIdentity": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch06.canonicalDivergenceIdentity",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "cf3d7f398458b5e8ecf833bd70097a2abc7f90054aed38f278bd1a60ec5e5a93",
+      "block_sha256": "923c5f9cf21f374834e06ad465f1e6f81555925018133dba0611d0825dda7910",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookCanonicalAverage_divergence_eq_beta_lieDerivative"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.canonicalDivergenceIdentity；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-TemperatureChoiceDerivatives": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.temperatureChoiceDerivatives",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "c1d8543f1521e7672ad332400f2f413cffe9e6861f38e00883d87e465f1a3f08",
+      "block_sha256": "15bf74d3e13abc1673c489f0dcba8c6d3640375a0ff9b6ff8ae01de80d5b6b31",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "待实际Fréchet有限和导数、正对角质量及坐标基计算；缺现成完整桥接保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.temperatureChoiceDerivatives；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-PeriodicBoundaryCancellation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch06.periodicBoundaryCancellation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "03757f6b97cfb2b781f09d4d00c90607b23951655b893608e091fffdfbd798b8",
+      "block_sha256": "97ee5f1eb0c7a58c4ab161fe366ccc8f031e5edb610d94981198f46cb2f779d0",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookConfigurationCube_integral_divergence_eq_zero"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.periodicBoundaryCancellation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-MeanEnergyConstraint": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.meanEnergyConstraint",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "4cc1ad4de93d3949cd469428a07408956f483686505c8923b47610b7c557a80d",
+      "block_sha256": "4cc1ad4de93d3949cd469428a07408956f483686505c8923b47610b7c557a80d",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.meanEnergyConstraint；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-DensityNormalization": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.densityNormalization",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "0707e60f3cf9bf6a26de841dbe2b54a92f625111205fe0d5e24052209b71c957",
+      "block_sha256": "bebd824abb170a560c1702cb848f495b0bc8a862419477b40d4076e7d0e6abca",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.densityNormalization；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/DensityNormalization.json",
+        "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean",
+        "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-PartitionInversePrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.partitionInversePrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "不默改原式、不从可积性偷推partition=1；保留不成立的字面反转等式。",
+      "signature_sha256": "bda9160dabf4bba4606f65c93b2adb4ffd505b8341752cb22666284812ca2a3f",
+      "block_sha256": "888aee41a58c8a1672c54967b7321c20f82c369d302b1951a8c6b74f78c89efc",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "p.220的Zcan上标−1疑似笔误，待人工审校；不证明字面关系。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.partitionInversePrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-WeightedFluxIdentity": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "checked+documented priors",
+      "lean_decl": "MD.Ch06.weightedFluxIdentity",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "f365f3df540f2a1148eb0a686f4031bf0a773046c01e61bcf8c9c3377e3492ad",
+      "block_sha256": "60feef0e8bc9d4447262ecae53dc78978cd213cd522cfe1c946253bf82d508c2",
+      "direct_placeholder": false,
+      "proof_status": "existing_bridge",
+      "documented_priors": [
+        "MolecularDynamics.textbookCanonicalWeightedFlux_divergence"
+      ],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.weightedFluxIdentity；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-VirialTemperature": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.virialTemperature",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "107f83bf4b5d29b1bf586f86f597e621f03ab0332a080d509b51747f028b4258",
+      "block_sha256": "5b8583e66a49c0377994946c39262345983f7fca7cbe89897359c0875c074be7",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺一般质量相空间归一化到配置IBP的完整桥接；不将方向导数计算当作本条已证，保留sorry。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.virialTemperature；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-VirialFieldNotPeriodic": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.virialFieldNotPeriodic",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "3c1241c6cf93ccb809c297f65617676bee8d2e4e700cf5dabc18010a2219aea5",
+      "block_sha256": "f7cff359d7d62c16ee2c4a0d20cf59b0912117375e1a5e93998362a21dbcf78d",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.virialFieldNotPeriodic；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/VirialFieldNotPeriodic.json",
+        "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean",
+        "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.3-DensityPositive": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.densityPositive",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "fc58df3b2a447db95c241967d7c620638ac6fc5b118f576b575733c52ad1c22c",
+      "block_sha256": "7b46a31a0feae65b090acf2905dccbfc883c52c81e3adf79c44e847c41c0828c",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.densityPositive；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/DensityPositive.json",
+        "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean",
+        "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    },
+    "MD-6.1.5-KineticWeightFactorization": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.kineticWeightFactorization",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "1b1ef702bd72ab1499b98574727ebd7e5162f47eaa21981116c3ef9f8876110f",
+      "block_sha256": "ecaeb5661e749b2916da12ac3013a0041e42f9087fd6f1b41e6095bbd7915e25",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.kineticWeightFactorization；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch09-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/KineticWeightFactorization.json",
+        "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean",
+        "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section61\\chapter_axioms.log"
+    }
+  }
+}

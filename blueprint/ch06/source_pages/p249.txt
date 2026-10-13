@@ -1,0 +1,47 @@
+228                    6  The Canonical Distribution and Stochastic Differential Equations
+
+6.2.2  Stochastic Integration
+
+
+In order to develop good sampling paths for the Gibbs-Boltzmann distribution,
+we need to introduce a method of adding random perturbations into a differential
+equation. Let us ﬁrst consider the deﬁnition of the integral with respect to Wiener
+measure.
+   Recall that the Riemann integral of a continuous function g on Œ0;    is the limit of
+Riemann sums constructed as follows: partition the interval Œ0;   into K subintervals
+each of width ıt D  =  , choose an arbitrary tk from the kth subinterval, 1   k        ,
+and evaluate the integral as a limit of the sum of products:
+
+                     Z                     1             X
+                               g.t/dt D lim      g.tk/ıt:
+                    !1
+                               0               kD0
+
+We know that this limit does not depend on where the tk are chosen within the
+subintervals. For example we can take the left or right endpoint of each subinterval
+or the midpoint.
+  By analogy, we would like to write the stochastic integral of a function g, where
+g may, itself, be deﬁned in terms of a stochastic process, as the limit of a sum:
+
+     X1
+                    g.tk/ŒW..k C 1/ıt/  W.kıt/ ;  ! 1;
+                 kD0
+
+where the increments W..k C 1/ıt/  W.kıt/ identiﬁed here are the increments of
+a Wiener process whose properties are given above. (In particular they are normally
+distributed with mean zero and variance ıt.) First, we should be careful regarding
+the sense in which we expect convergence, since sequences of random variables
+may converge in various ways.
+   Next, unlike in the case of the Riemann sums, it turns out that the result depends
+on where we place the points tk. Using the properties of the Wiener process we may
+easily show that the choice tk D kıt (left endpoint) and the choice tk D .k C 1=2/ıt
+yield different formulas for the integral. The ﬁrst choice is commonly referred to as
+It¯o integration, and the second as Stratonovich integration. As an example, consider
+the case where g.t/ D W.t/. We suppose this to be approximated by a sum
+
+ Z                      1     X
+    W.t/dW.t/      W.kıt/ŒW..k C 1/ıt/  W.kıt/ ;
+  0              kD0
+               1 X1 h        D       W..k C 1/ıt/2   W.kıt/2   .W..k C 1/ıt/   W.kıt//2i :
+               2
+                  kD0

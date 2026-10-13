@@ -1,0 +1,49 @@
+246                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+                                                                 1          0.3
+                                                            0.1      S2
+                                                                       0.5       S4      0.2
+                                                           S1     0.3
+                                                                           0.3
+                                                                      1
+                                                    0.2
+                                                                      S3     0.4        S5                                                           0.7
+
+Fig. 6.6 A Markov matrix (left) and its graph representation (right). In this example, the Markov
+Chain is not irreducible
+
+
+some integers l1 and l2. This means that it is possible to reach j from i with positive
+probability and vice-versa.
+  A ﬁnite state space model is irreducible if every state is reachable from every
+other state in a ﬁnite “time”, where time in this context refers to the number of
+iterations of the chain. Equivalently, we say the model is irreducible if all states
+communicate.
+  A very useful representation of the Markov Chain transition matrix ˘ is by use
+of a weighted directed graph in which each node represents a state of the Markov
+Chain and the weights represent transition probabilities. Then one may understand
+irreducibility as expressing the connectedness8 of this graph (see Fig. 6.6).
+  An invariant distribution is a left eigenvector of ˘ , having only non-negative
+elements, and corresponding to the eigenvalue 1. That is, an invariant distribution
+    satisﬁes
+
+                   D  ˘ :
+
+The fundamental result for Markov chains is the following: If a given Markov
+chain is both irreducible and aperiodic, then it can be shown that there is a unique
+invariant distribution    such that
+
+                               lim    n D      :                     n!1
+
+for arbitrary initial distribution   0. The convergenceof an irreducible ﬁnite Markov
+chain to its stationary distribution can be understood through the properties of its
+eigenvalues by applying of the Perron-Frobenius theorem (see [269]).
+
+
+
+
+
+8We say that a graph is connected if every node is linked to every other node by a sequence of
+contiguous edges. For a directed graph, we must have, for any pair of vertices A and B, paths
+which take us from A to B and vice-versa.

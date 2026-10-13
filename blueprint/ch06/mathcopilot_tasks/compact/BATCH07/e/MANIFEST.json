@@ -1,0 +1,79 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07e",
+  "source_ids": [
+    "MD-6.1.5-CanonicalDivergenceIdentity"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 243,
+      "printed_page": 222
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "4df99ffd6b87948726b190e5f3c3fccd128c2122aa6f0e524a6509801f5ccbbf",
+  "lean_sha256": "d9befeac500cb854225d435900506eba3b8773683e581063066a98296c3697ef",
+  "signature_sha256": "cf3d7f398458b5e8ecf833bd70097a2abc7f90054aed38f278bd1a60ec5e5a93",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "namespace": "MolecularDynamics",
+      "name": "SymplecticCoordinates",
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/CanonicalTemperature.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCanonicalAverage",
+      "code_sha256": "a169a3ecf40f1ef6616e30cabb64ccd86ab88477a59d49d7e2a7ef1b1ee8be38"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/CanonicalTemperature.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookCanonicalPartition",
+      "code_sha256": "51b60e64fc0de8ded42f1df8c8e5ec1c04c566871105b866f456e66ff0c2a950"
+    },
+    {
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookDivergence",
+      "code_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    },
+    {
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookHamiltonianGibbsWeight",
+      "code_sha256": "ffbff77216b796f7f99e4d776610af3dd4481f431d5d94de2d8317bb36da23e8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/LiePoisson.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLieDerivative",
+      "code_sha256": "568897e0d038d7a64bb00948ec5045c2014446c16bba7bc93488b691f9d2e415"
+    }
+  ],
+  "paste_plus_pdf_bytes": 104482,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5295,
+      "sha256": "669862b4cc1bc4c870ee50656c093de1a2db1c947d3ee8c6bef53c059f995268"
+    },
+    "BATCH07e_PAGES.pdf": {
+      "bytes": 99187,
+      "sha256": "af5e7a26852f0a5a62902e4282fd309912ce5dae58c3c491bfdadf18ab66ccf6"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 107440
+}

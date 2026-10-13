@@ -1,0 +1,50 @@
+6.4  Ergodicity of Stochastic Differential Equations                                  257
+
+and, for a vector function w W D ! RNc, we have
+
+            XNc
+                       kwk2L2.  / D    kwik2L2.  /:
+                                          iD1
+
+  With this in mind, we state a useful property that we will need in the next chapter
+in order to clarify results on the error in invariant measures.
+
+Proposition 6.4 Let U be C1 on the position domain Q D TNc and suppose g 2
+H1.  / satisﬁes
+                          Z
+                              gd  ˇ D 0;
+
+                    D
+
+where  ˇ is the canonical measure, then the Poisson equation
+
+                     LLD' D g
+
+has a solution ' 2 H1.  / which is unique up to addition of a constant multiple of
+the Gibbs density.
+
+  The condition is a consequence of the Fredholm Alternative which says that,
+for a linear operator A with compact resolvent, we have one of the following two
+conditions:
+
+• A' D g has a solution.
+•  There is a function y with A y D 0 and hy; gi ¤ 0.
+
+In our case, A D LLD. The only solutions of LLDy D 0 (conserved quantities of
+Langevin dynamics) are the constants. So the condition of the proposition eliminates
+the second alternative, leaving only the ﬁrst.
+    If we have two solutions '1, '2 of LLD' D g, then their difference w must be a
+solution of LLDw D 0 and the only such solution is a constant multiple of the Gibbs
+density  ˇ.
+  More properties of the operator LLD are collected in [223].
+
+
+
+6.4.5  Convergence of Averages
+
+
+Given a collection of phase space points distributed according to the density
+ 0.q; p/, we know that its evolution (under Langevin dynamics) after a time t will
+be described by
+
+                               .q; p; t/ D etL LD  0.q; p/:

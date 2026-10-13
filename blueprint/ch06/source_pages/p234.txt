@@ -1,0 +1,50 @@
+6.1  Ensembles for Molecular Simulation                                          213
+
+
+   There are two distinct perspectives that may be chosen in discussing the statistical
+properties of a molecular system. On the one hand we may consider the evolution
+of a particular set of state variables over time. On the other hand we may consider
+a snapshot in time of a whole collection of evolving systems started from various
+initial states. Our emphasis in this chapter (and in much of the book) will be on the
+“ensemble” perspective and the fundamental tool for approximating the distribution
+is a system of stochastic differential equations (SDEs); in practice we compute
+this ensemble using one or several stochastic paths. In discussing the collection of
+paths deﬁned by SDEs, we can separate the short term changes in the distribution
+initialized in some starting state from the long term (equilibrium) properties. We
+typically speak of the transient and steady-state regimes. The transient regime is
+deﬁned with reference to both an initial distribution of states and a timescale. For a
+well behaved stochastic system, the steady-state regime is independent both of time
+and initial conditions and is characterized by the molecular ensemble. It should be
+emphasized that steady here does not refer to the motion of the atoms themselves;
+they will be constantly moving. It is the density which describes the phase space
+distribution of the particles of our system which converges in the long term. Thus
+the SDEs are constructed so as to provide, in the weak sense, an approximation of a
+realistic system, at least in the long term.
+
+
+
+6.1  Ensembles for Molecular Simulation
+
+
+We next discuss the formulation of  statistical mechanics from the ensemble
+perspective, following references [147, 264, 364]. It is crucial to decide on the target
+ensemble before any experimentation (or simulation) begins. The dynamics we will
+compute is essentially just a tool to sample a particular density, and so choosing
+the correct sampling measure is tantamount to deciding on the problem we wish
+to solve. The ensemble is characterized by the constraints placed on the system
+and the interaction between systems of the ensemble. In this section we describe
+two of the most common statistical mechanical ensembles: the constant-energy or
+microcanonical ensemble and the constant-temperature or canonical ensemble. The
+key assumption made in statistical mechanics is that each system satisfying the given
+constraints is equally probable.
+
+
+
+6.1.1  The Microcanonical Ensemble
+
+
+The microcanonical ensemble, which we have already gently introduced in a
+simpliﬁed setting in the previous chapter, is deﬁned by constant number of particles
+N, volume V and total energy E. We assume that all systems of the ensemble evolve
+independently and are isolated from each other. If a Hamiltonian description is
+used, the ﬁrst and third invariances are automatically maintained in a molecular

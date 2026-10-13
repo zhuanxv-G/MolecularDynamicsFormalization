@@ -1,0 +1,51 @@
+6.3  Stochastic Differential Equations                                             231
+
+
+Plainly this is different than the It¯o version of the integral, but in the cases we
+consider it is possible to reformulate Stratonovich integrals as It¯o integrals. In the
+remainder of this book we will adopt the It¯o form of stochastic integration.
+                                               def R t
+  Deﬁned by It¯o integration, Y.t/ D  0 g.s/dW.s/ can be thought of as a random
+process. In the case that g indicated here is a deterministic function, Y.t/ is Gaussian
+in the sense that  it is normally distributed for all time, as summarized in the
+following proposition.
+
+Proposition 6.3 Let g be a smooth deterministic function and W.t/ a Wiener                                     R t
+process. The stochastic integral Y.t/ D   0 g.s/dW.s/ is, for all times t     0, a
+normally distributed random variable such that
+
+                E .Y.t// D 0;
+
+                                    Z t
+               E Y2.t/ D   2.t/ D    g.s/2ds:
+
+                                                      0
+
+Proof See Exercise 2.
+   Finally, we observe that by calculating  2.tn/ and generating random increments
+Rn     N.0;  .tn// we have a discrete representation of the continuous time
+stochastic process Y.t/, effectively an exact stroboscopic representation. Also it is
+natural to view the stochastic integral as the solution of the stochastic differential
+equation (SDE) with zero initial condition:
+
+                      dY.t/ D g.t/dW.t/;   Y.0/ D 0:                    (6.8)
+
+This notion of stochastic integration carries over to stochastic integration with
+respect to more general categories of stochastic processes. Importantly, with
+appropriate regularity we have the familiar relation from calculus:
+
+                      Z t
+                           dY.s/ D Y.t/   Y.0/:
+
+                                 0
+
+
+6.3  Stochastic Differential Equations
+
+
+In this section we brieﬂy derive a more general stochastic differential equation as
+the limit of a biased random walk. The treatment here is intuitive, based on the
+concepts of limiting processes and stochastic integration introduced above. For a
+rigorous treatment of the material presented here, it is recommended to consult a
+reference such as the excellent book of Nelson [279] (which also contains a very
+lively historical discussion).

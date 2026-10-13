@@ -1,0 +1,44 @@
+6.3  Stochastic Differential Equations                                             233
+
+
+collection of r independent Wiener processes, then we may write a system of SDEs
+in Rm in the form
+
+            Xr
+                dZ D a.Z; t/dt C     b.i/.Z; t/ dWi:                 (6.15)
+                                           iD1
+
+alternatively, if B is the matrix with columns b.1/; b.2/; : : : ; b.r/, and W represents
+the r-component vector of Wiener processes, then
+
+                  dZ D a.Z; t/dt C B.Z; t/ dW:                    (6.16)
+
+
+
+6.3.1  The It¯o Formula
+
+
+We shall derive, heuristically, a core piece of mathematical apparatus which permits
+much of the analysis of SDEs. Let   . / be any continuously twice differentiable
+function and let Xn 2 R represent the state of a biased random walk as considered
+in Sect. 6.3, i.e., with state XnC1 D Xn C a.Xn; nıt/ıt C b.Xn; nıt/Jnıx. Let  n D
+  .Xn/, then Taylor’s theorem gives
+
+
+                 def
+        ı D  nC1     n
+                        1
+      D  0.Xn/ıXn C    00.Xn/ıX2n C o.ıX2n/                        2
+      D   0.Xn/.a.Xn; nıt/ıt C b.Xn; nıt/Jnıx/
+           C1  00.Xn/.a.Xn; nıt/ıt C b.Xn; nıt/Jnıx/2 C o.ıX2n/:                  2
+
+Now we expand the 2nd order term and, working in the diffusion limit, recognize
+that ıx2    ıt, thus we have
+
+                 ı D  0.Xn/.a.Xn; nıt/ıt C b.Xn; nıt/Jnıx/
+               C1  00.Xn/b.Xn; nıt/2ıt C O.ıt3=2/:
+                        2
+
+Passing to the limit, this leads to the SDE:
+
+     d .X/ D  0.X/.a.X; t/dt C b.X; t/dW/ C 12  00.X/b.X; t/2dt:         (6.17)

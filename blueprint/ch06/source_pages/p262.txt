@@ -1,0 +1,48 @@
+6.3  Stochastic Differential Equations                                             241
+
+6.3.6  The Fokker-Planck Equation
+
+
+Consider now a collection of stochastic processes X.t/ that are the solutions of the
+SDE dX D a.X/dtCb.X/dW. If the initial conditions are drawn from a distribution
+with given density  .x; 0/ we would like to derive an equation for the corresponding
+density at time t,  .x; t/. We assume that   is C1 for all t and that the density tends
+to zero exponentially fast as x ! ˙1, whereas a and b are C1 functions which
+grow at most polynomially fast in these limits, that is, there are constants  a;  b such
+that
+
+              a.x/ D O .jxj a/ ;    b.x/ D O .jxj b/ ;    x ! ˙1:
+
+This condition of polynomial growth of the coefﬁcients is a common assumption in
+the analysis of SDEs. For future reference we deﬁne the space of functions which
+are C1 smooth and satisfy the polynomial growth restriction by C1P  :
+
+        C1P D f 2 C1j9 2 N W  .x/ D O.jxj /; x ! ˙1g :
+
+For any  2 C1P  , the expectation with respect to  .x; t/ is well deﬁned and we have
+
+                                  ZC1
+             E  .X.t// D h  ;  i D      .x/ .x; t/dx:
+
+                       1
+
+Taking the differential, we obtain an equation for Ed  which must be equal
+to (6.37):
+
+  ZC1           ZC1               ZC1
+       .x/@ dx D   .L  /.x/ .x; t/dx D    .a.x/   0 C 1        00.x// .x; t/dx:            @t                                        2b2.x/
+  1        1           1
+
+Using the assumptions given above regarding the exponential rate of decay of the
+density, it is possible to recast the right hand side as an integral of a product with    .
+First, we ﬁnd
+
+    ZC1                                   ZC1
+        a.x/  0.x/ .x; t/dx D  Œ  .x/a.x/ .x; t/ j11        .x/.a.x/ .x; t//xdx
+
+   1                        1
+
+                         ZC1
+             D        .x/.a.x/ .x; t//xdx:
+
+                 1

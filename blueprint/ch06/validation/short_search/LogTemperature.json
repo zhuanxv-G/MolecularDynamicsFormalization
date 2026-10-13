@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro kB Z energy hZ hpos\n  have hd := hZ.hasDerivAt.log hpos.ne'\n  constructor\n  · exact hd.deriv\n  · unfold MolecularDynamics.Chapter06Review.inverseTemperature\n      MolecularDynamics.Chapter06Review.entropy\n    rw [deriv_const_mul kB hd.differentiableAt, hd.deriv]\n    ring",
+    "source": "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.lean",
+    "log": "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.log",
+    "source_sha256": "6178ee873b6117ea1235cbbf20ff3615c6638906ad03bb18393c0ede34a3fe1e",
+    "log_sha256": "6045c10c868212ada70dc16247f2c1ee0f7aa8647a371f06c6aa8f6809b22813"
+  }
+]

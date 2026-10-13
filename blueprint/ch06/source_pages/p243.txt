@@ -1,0 +1,51 @@
+222                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+the canonical measure, we can ﬁnd many functions that have the same average. For
+example, Rugh [319] suggested the formula
+
+                       Avˇ.krUk2/
+                      D kBT:                           (6.5)
+                          Avˇ. U/
+
+We can see this as a consequence of the following proposition (see [193, 211]).
+
+Proposition 6.1 Let H be a Hamiltonian deﬁned on the phase space R2Nc and
+suppose G   W  R2Nc !  R2Nc  is a smooth (C1) vector ﬁeld with the following
+properties:
+
+•  0 < jAvˇ.G rH/j < 1,
+•  0 < Avˇ.r G/ < 1,
+•  jGe ˇHj < 1
+
+Then
+
+                            Avˇ.G rH/
+                       kBT D                      :
+                             Avˇ.r G/
+
+Proof The proof relies on a 2Nc-dimensional version of integration by parts. Let
+BR be the 2Nc-dimensional ball centered at the origin, of radius R, and let  R be
+its boundary, the 2Nc   1-dimensional sphere. Then, for any smooth scalar ﬁeld g
+deﬁned on BR, we have
+              Z           Z            Z
+            G rgd! D   .Gg/  Ond      .r G/gd!;             (6.6)
+
+              BR                  R            BR
+
+where d! D dq1 : : : dpNc is the standard measure of Lebesgue integration in R2Nc
+and d    is the surface area element of the hypersphere, and On represents the unit
+outward normal to the sphere. Replace g by  ˇ D exp. ˇH/, then it follows that
+
+                   Z
+                    .G ˇ/  Ond    max RjG ˇj R;                                                                                                                                                                               ˇˇˇˇˇˇ                                                                                                                   ˇˇˇˇˇˇ
+                              R
+
+where  R is the surface area of the hypersphere. Divide (6.6) by the volume  R of
+BR. Then, for large R, since the ratio of surface area to volume is proportional to
+R  1, we have
+                   R                 R
+                   BR               G r ˇd!     BR.r G/ ˇd!                                                                                         :
+                            R                   R
+
+Since r ˇ D ˇrH ˇ, we obtain, in the limit R ! 1, the desired result.

@@ -1,0 +1,29 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "Blueprint/Ch06.lean"
+  ],
+  "exit_code": 0,
+  "input_sha256": "04614cb9f58049f6cf4c75aecaae77d13b1d8e0fa387fed69d71d1f03194a0d9",
+  "log_sha256": "38cd23a4db47978645595c90a4bb5a891b77596567ab9e5dff656c9485248e16",
+  "decl_blocks": {
+    "MD-6.1.1-Microcanonical": "5cdf3eddb52be9764a5d8dafaa6f17d68830c0e4a82414dc21bd0af934d73d84",
+    "MD-6.1.2-Entropy": "55acd3f7331b28a70fefcf9b06e22dbe6c51c26f9efaeb3f094b0343053516f7",
+    "MD-6.1.2-IndependentPartition": "13dbe77ed7396bb8e9c3e7b130a00be5b81be907d207eef79fff0ee52e5c61e4",
+    "MD-6.1.2-EntropyAdditivity": "9e99bb4b4744ab6a3c01b96df7a3ec499c8a3be15df6bc87fdfde89fcca6e068",
+    "MD-6.1.2-EntropyEquilibrium": "6cd8453cb8698c3a06447f7b181b8485167228599e9e0c1398a282776b335c78",
+    "MD-6.1.2-Temperature": "a1a128e8825ee065b962fd60de0859770659381a01e57af147da17fd7164b08b",
+    "MD-6.1.2-InverseThermal": "c8ec5833dcf28e251472d0b18f3ab3f9cb6ca1d5dfec7c5ebd19472385a89d7e",
+    "MD-6.1.2-BathTaylor": "0cc3840c638b604ac7378beaf8376538caae824f6fc899ae2294da52eb124bcf",
+    "MD-6.1.2-LogTemperature": "647cf05bf39080656b07c624b57452b1c95971547d4aa1fb51cdcb7370f5fa8d",
+    "MD-6.1.2-BathMeanValue": "dec3932aef6b6701631f54514d1e3af1c9922863988b5412cd6f4085e1fc8334",
+    "MD-6.1.2-BathTaylorEstimate": "8a8b1f555ec7d85f034fa98690b98fd0ba2dc23fdc248e1a537319883a78903a",
+    "MD-6.1.2-BoltzmannConstantSlope": "0077f5b9179b930ae076485075484b96be0f8766a1f5321ec940f80405d02167",
+    "MD-6.1.2-CanonicalCDFPrinted": "a913ff0852b6b501bc7bbaeda895828461b550cd5ca642e2b48284ce81f18cc3",
+    "MD-6.1.2-CanonicalEnergyDensity": "360f4a9efd105af8159a488feaf4234bff865795633956d7b765e9bbe40e6a66",
+    "MD-6.1.3-EntropyFunctional": "802d85abc1a09dafd9837a107a2bdd6b48db56fde07c21a0b83b776b902e1f23",
+    "MD-6.1.3-ConstrainedEntropyModel": "f6ca62553b2fce1166c89fd6f96c9721fcd8db54c65e47ca725f12fcfe2263a5"
+  }
+}

@@ -1,0 +1,51 @@
+220                    6  The Canonical Distribution and Stochastic Differential Equations
+
+˙E or, more generally, a distribution. For a canonical system there is no longer
+a constraint of the form H D E and thus we must allow the phase space to
+include essentially all points for which the position coordinates lie in the deﬁned
+conﬁgurational domain (a 3-torus, if periodic boundary conditions are used). In
+general the momenta are unbounded. It thus becomes necessary to restrict the set
+of functions on which the functional h ;  i acts. In the case of periodic boundary
+conditions we will assume that, for any observable of interest,
+
+                                 j  .q; p/j D O.kpk˛/;     p ! 1;
+
+for some positive constant ˛.
+    If the position domain Q is unbounded (for example choosing Q D  RNc)
+then some other restriction is needed on the potential energy function U (and on
+the observables) in order that averages are well deﬁned. Typical assumptions for
+potentials on the unbounded domain are that (i) U is bounded below, and (ii) U
+grows sufﬁciently rapidly as q ! 1. This ensures that
+                     Z
+                           exp. ˇU.q//d!q < 1:
+
+                    Q
+
+  Under assumptions on the potential energy as discussed above, and with
+continuous and allowed to grow at most polynomially fast at inﬁnity, we may
+proceed to deﬁne averages with respect to the canonical density  ˇ, namely
+
+                             Z
+                  Avˇ.  / D Zcan1     .q; p/ ˇ.q; p/d!:                   (6.4)
+
+                      D
+
+
+
+6.1.5  Calculation of Temperature
+
+
+                                                                      p2
+Consider the one degree-of-freedom model H.q; p/ D 2m CU.q/ on the unbounded
+domain, with U bounded below and growing sufﬁciently rapidly as jqj ! 1. The
+associated canonical density is
+
+                                    1           p2
+                       ˇ D Zcan exp   ˇ   C U.q/     ;                             2m
+
+where
+
+                    Z1 Z1
+                        1                     p2
+             Zcan D       exp   ˇ   C U.q/   dpdq:                             2m
+             1 1

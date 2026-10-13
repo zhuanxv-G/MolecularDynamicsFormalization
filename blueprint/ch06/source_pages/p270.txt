@@ -1,0 +1,53 @@
+6.4  Ergodicity of Stochastic Differential Equations                                  249
+
+6.4.3  Ergodicity of Brownian Dynamics
+
+
+Imagine a distribution 0.X/ which we may take to be an initial macroscopic state of
+a stochastic differential equation system. This might be a smooth probability density
+such as a Gaussian, the indicator function D for a small disk D in the phase space,
+or, in the extreme case a Dirac delta distribution (indicating that all initial conditions
+are clustered at a single point in phase space). The density evolves according to the
+partial differential equation
+
+                   @
+             D L  .X; t/;    .X; 0/ D  0.X/;
+                        @t
+
+so the solution can be written
+
+                                   .z; t/ D exp.tL / 0.X/:
+
+Under what conditions (and in what sense) can we say that the distribution obtained
+in this way converges to a known invariant distribution?
+   For example, let us return to Brownian dynamics (or overdamped Langevin
+dynamics) and set M D I and D 1 in (6.36), giving an equation of motion
+
+                    p
+                    dq D  rU.q/dt C  2kBTdW:                   (6.46)
+
+Writing ˇ  1 D kBT as usual, the generator of the stochastic process may be
+written as
+
+                       Lf D  rUT rf C ˇ  1   f:
+
+We demonstrate a very useful property of this operator.
+   Let  N ˇ D exp. ˇU/, and deﬁne the space of functions C20. N ˇ/ consisting of
+functions in C20 on the conﬁguration space Q   RNc together with the inner product
+                  Z                 Z
+                            def
+               hf; giˇ D    f.q/g.q/ N ˇ.d!q/ D   f.q/g.q/ N ˇ.q/d!q;
+
+                 Q                Q
+
+where d!q D dq1dq2 : : : dqNc. Then L is self-adjoint with respect to this inner
+product.
+  The proof is straightforward:
+                   Z
+              hf; Lgiˇ D     f  rUTrg C ˇ  1  g  Nˇd!q
+
+                  Q
+                   Z                      Z
+           D     f  rUTrg  N ˇd!q C ˇ  1     f  g N ˇd!q:
+
+                  Q                     Q

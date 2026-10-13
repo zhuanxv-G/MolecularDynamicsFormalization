@@ -48,6 +48,8 @@ if ch==5:
 if not (ROOT/f'MolecularDynamics/Chapter{ch:02}/ReviewProofs.lean').exists():
     header=header.replace(f'import MolecularDynamics.Chapter{ch:02}.ReviewProofs',f'import MolecularDynamics.Chapter{ch:02}.Statements')
 if ch==6:
+    header=header.replace('import Mathlib.Tactic',
+        'import Mathlib.Analysis.Calculus.Deriv.MeanValue\nimport Mathlib.Analysis.Calculus.Deriv.Shift\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Tactic')
     header=header.replace('open Set Filter Matrix MeasureTheory MolecularDynamics',
         'open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics')
     header=header.replace('open scoped BigOperators Topology ContDiff InnerProductSpace ENNReal',

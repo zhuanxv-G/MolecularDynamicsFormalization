@@ -1,0 +1,18 @@
+intro S energy kB β hS hkB hder s
+  have hm : ∀ a b : ℝ, a < b → S b-S a = kB*β*(b-a) := by
+    intro a b hab
+    obtain ⟨ξ, hξ, hd⟩ := exists_deriv_eq_slope S hab hS.continuous.continuousOn hS.differentiableOn
+    have hn : b-a ≠ 0 := by linarith
+    rw [hder ξ] at hd
+    exact ((eq_div_iff hn).mp hd).symm
+  have he : S (energy-s)-S energy = -kB*β*s := by
+    rcases lt_trichotomy s 0 with hs | rfl | hs
+    · have hh := hm energy (energy-s) (by linarith)
+      nlinarith
+    · simp
+    · have hh := hm (energy-s) energy (by linarith)
+      nlinarith
+  have hd : (S (energy-s)-S energy)/kB = -β*s := by
+    apply (div_eq_iff hkB.ne').mpr
+    nlinarith [he]
+  rw [← Real.exp_sub, ← sub_div, hd]

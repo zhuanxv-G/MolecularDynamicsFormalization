@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH04",
+  "subtask": "BATCH04b",
+  "source_ids": [
+    "MD-6.1.3-ConstrainedEntropyModel"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 238,
+      "printed_page": 217
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "0687f2dc56791df4762800b84fd63f15d2e6bac0fa5fb0e5be3243469e4c8ac4",
+  "lean_sha256": "c765413d298076f35f7ce892b88416585ab831393cef9f6a719dc98e8a77f709",
+  "signature_sha256": "f6ca62553b2fce1166c89fd6f96c9721fcd8db54c65e47ca725f12fcfe2263a5",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "entropyFunctional",
+      "code_sha256": "802d85abc1a09dafd9837a107a2bdd6b48db56fde07c21a0b83b776b902e1f23"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "constrainedEntropyModel",
+      "code_sha256": "f6ca62553b2fce1166c89fd6f96c9721fcd8db54c65e47ca725f12fcfe2263a5"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "entropyFunctional",
+      "code_sha256": "802d85abc1a09dafd9837a107a2bdd6b48db56fde07c21a0b83b776b902e1f23"
+    }
+  ],
+  "paste_plus_pdf_bytes": 79817,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4446,
+      "sha256": "2875c22491b76ea3d64ce9ff44334e4f1395b08b250a59079cdc1ae78ae657c5"
+    },
+    "BATCH04b_PAGES.pdf": {
+      "bytes": 75371,
+      "sha256": "bacc3ba46dc87666ad3fef989404b73f10360fa6d41095506e23714e99061cf8"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 81675
+}

@@ -1,0 +1,7 @@
+intro n m HA HB EA EB hA hB
+  letI : IsFiniteMeasure (MolecularDynamics.Chapter05Review.microRaw HA EA) := ⟨hA.2.2.2.2⟩
+  letI : IsFiniteMeasure (MolecularDynamics.Chapter05Review.microRaw HB EB) := ⟨hB.2.2.2.2⟩
+  dsimp
+  simpa only [univ_prod_univ] using (Measure.prod_prod
+    (μ := MolecularDynamics.Chapter05Review.microRaw HA EA)
+    (ν := MolecularDynamics.Chapter05Review.microRaw HB EB) univ univ)

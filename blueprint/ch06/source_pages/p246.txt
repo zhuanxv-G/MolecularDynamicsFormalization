@@ -1,0 +1,52 @@
+6.2  Stochastic Differential Equations for Molecular Models                           225
+
+
+Fig. 6.3  Perrin’s plot of the
+motion of small particles
+formed from resin of the tree
+garcinia xanthochymus
+buffeted by interactions with
+a bath of water molecules.
+Perrin’s careful observations
+were consistent with those of
+earlier observers, beginning
+with Brown’s study of pollen
+grains in 1827
+
+
+
+
+
+were worked out in the late 1800s by Thorvald Thiele and Louis Bachelier, although
+the complete picture was only obtained in the early 1900s in celebrated works by
+Albert Einstein and Marian Smoluchowski. Brownian motion describes the process
+by which particles placed in a ﬂuid bath move about subject to collisions with the
+molecules of the ﬂuid. These collisions, which for all practical purposes may be
+viewed as random, introduce a jerky character to motion such as that shown in
+Fig. 6.3.
+  To model the randomized motion of the Brownian particle, the concept of a
+random walk is typically used. A random walk is an example of a stochastic process,
+a collection of random variables parameterized by either a discrete or continuous
+index parameter [269, 314]. A random walk is a discrete stochastic process in which
+the state Xn at a given instant (deﬁned by the index n) is related to the state Xn  1, at
+step n  1 by an offset that may be viewed as a random variable. That is, we have
+
+                         XnC1 D Xn C ıxJn:
+
+We initiate the random walk with X0 D 0. The quantity Jn is a random variable
+drawn from a certain probability distribution. In the classic model of a random walk
+the jump takes values ˙1 with equal probability. The increments of the random walk
+are the differences  Xn D Xn  Xn  1 D ıxJn  1, thus .Xn/ is a random process with
+independent increments.
+  The solution Xn of the random walk may be written
+
+            Xn  1
+                         Xn D ıx     Jk;
+                                       kD0
+
+hence the variance is
+
+                                      !2
+             Xn  1
+                    EX2n D ıx2E       Jk     :
+                                         kD0

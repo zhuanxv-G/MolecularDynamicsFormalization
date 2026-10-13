@@ -1,0 +1,52 @@
+230                    6  The Canonical Distribution and Stochastic Differential Equations
+
+where the last equation follows from independence of the increments (EZkZl D 0 if
+k ¤ l).
+   Also observe that  Wk  is a normally distributed random variable with the
+following properties
+
+     E Wk D 0;  E W2k D ıt D  =  ;  E W4k D 3ıt2 D 3. =  /2:
+
+  Thus we have
+
+      X1
+                  I D E    . W2 ;k      /2
+                    kD0
+
+      X1                                 2
+        D   E   W4 ;k  2  W2 ;k C   2
+                  kD0
+
+      X1          2           2      2          2         2
+        D     3       2   C   D 2  D 2    :
+                                                       2          2
+                  kD0
+
+Thus I ! 0 as ! 0, which is the desired result.
+  The calculation implies that
+
+                   Z
+                                  1
+                      W.t/dW.t/ D  W. /2         :
+                                  2
+                             0
+
+                                                        R
+   In contrast, the Stratonovich (midpoint) integral (denoted by  0 ıdW.t/) can be
+calculated as
+
+   Z                                    1          X
+     W.t/ ı dW.t/ D l:i:m: !1    W.kıt C ıt=2/ŒW..k C 1/ıt/  W.kıt/ :
+     0                           kD0
+
+Writing
+
+                       .k C 1/ıt C kıt    1              p
+ W.kıt C ıt=2/ D W         D  .W..k C 1/ıt/ C W.kıt// C O.   ıt/;
+                        2         2
+
+allows us to evaluate the integral as
+
+  Z                                       1                   1   X                          1
+     W.t/ ı dW.t/ D 2l:i:m:                !1    W..k C 1/ıt/2   W.kıt/2 D 2W.  /2:
+    0                             kD0

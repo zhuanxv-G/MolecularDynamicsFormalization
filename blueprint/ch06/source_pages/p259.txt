@@ -1,0 +1,64 @@
+238                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+
+
+                              0.8
+
+
+
+                              0.4
+                        (t)
+
+                              0.0
+
+
+
+                               -0.4
+                            0        1        2        3        4
+                                                      t
+
+Fig. 6.4 The memory kernel    is shown for three different sets of frequencies ˝i. Blue: k D 400,
+˝i D 0:01i; red: k D 1;000, ˝i   UŒ0; 1 ; green: k D 1;000, ˝i D 10O˝i, where O˝i   UŒ0; 1
+
+
+
+         1                                                   11                                                   1
+
+
+         0.5                                                           0.50.5                                                           0.5
+
+  (t)                                                     (t)                                                    (t)
+
+         0                                                   00                                                   0
+
+
+
+       −0.5                                                      −0.5−0.5                                                      −0.5
+          0         1         2         3         4            00         11         22         33         44            0         1         2         3         4
+                                 t                                                         t                                                         t
+                                    p
+Fig. 6.5 The memory kernels are                            shown for various choices of ˝.k/i   . Left: ˝.k/i D i=   k, k D             p
+52; 102; : : : ; 352; center: ˝i D   k O˝i, O˝i    UŒ0; 1 , k D 10; 20; : : : ; 100; right: ˝i D k O˝i,
+O˝i    UŒ0; 1 , k D 10; 20; : : : ; 100. In each case the red curve indicates the largest value of k
+considered, whereas green indicates the smallest value
+
+
+for example choosing them to be equally spaced on Œ0; k , uniformly (randomly)                                   p
+distributed on a ﬁxed interval, or uniformly distributed in an interval of length   k.
+Different choices of sequences ˝.k/i   will lead to different appearances of the kernel
+   , as shown in Fig. 6.5.
+    If sufﬁcient high frequency components are present, then the mass of the memory
+kernel is typically found to be localized around 0; in such a situation of rapid decay
+it is found that one may replace the function   by a Dirac delta function scaled by
+a positive coefﬁcient   ; we say that the system is Markovian or memory-less in this
+situation and we replace the delay-differential equation (6.29) by the SDEs
+
+                dQ D Pdt;                                         (6.30)
+                  dP D  U0.Q/dt C dW    Pdt;                  (6.31)
+
+where we have viewed the function f.t/ as being approximated by a Wiener
+increment. This system is referred to as Langevin dynamics. The details of the
+rigorous derivation of (6.30)–(6.31) are beyond the scope of this book; consult
+the following [13, 113, 138, 150, 185, 198, 205, 350, 402]. We will consider
+computations of generalized Langevin dynamics in Chap. 8. For the moment we

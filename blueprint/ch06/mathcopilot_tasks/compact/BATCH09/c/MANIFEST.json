@@ -1,0 +1,36 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09c",
+  "source_ids": [
+    "MD-6.1.5-VirialFieldNotPeriodic"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 245,
+      "printed_page": 224
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "0687f2dc56791df4762800b84fd63f15d2e6bac0fa5fb0e5be3243469e4c8ac4",
+  "lean_sha256": "c765413d298076f35f7ce892b88416585ab831393cef9f6a719dc98e8a77f709",
+  "signature_sha256": "3c1241c6cf93ccb809c297f65617676bee8d2e4e700cf5dabc18010a2219aea5",
+  "definition_excerpts": [],
+  "paste_plus_pdf_bytes": 91411,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2765,
+      "sha256": "8132d733eae765deb186dc0f8905da0617be4b8e774403fc5345ff3a238e64d2"
+    },
+    "BATCH09c_PAGES.pdf": {
+      "bytes": 88646,
+      "sha256": "8440926fbf7d240a08962216ae13706e5af9d5a5c04fb8f8d7adfe71be515980"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 92575
+}

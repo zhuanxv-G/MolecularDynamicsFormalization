@@ -1,7 +1,7 @@
 # 接续提示词
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：第5章全部本地流程完成；按LOCAL_PIPELINE自动进入第6章，桥接正式已有定理或本地短证明，封存断点/长证明不恢复。
+下一步：继续第6章§6.2；首批草稿scripts/ch06_section621.py核对后激活，先本地短证明和正式Wiener桥接；新第2章reaudit返回件在本节提交后登记。
 
 先git status，读取AGENTS、CURRENT_STATE顶部、WORK_LOG最新、LOCAL_PIPELINE及当前章PROGRESS。从最近落盘批次接续，核验已有结果后复用，不重做已通过的JSON、Blueprint、证明或构建；未提交半成品核对后继续。
 ## 当前最高优先级范围（2026-10-10用户新指令）

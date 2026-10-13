@@ -1,0 +1,49 @@
+248                    6  The Canonical Distribution and Stochastic Differential Equations
+
+
+The property of ergodicity combined with associated mixing properties similar to
+those mentioned in Chap. 5, provide a framework to give precise answers to some
+of these questions
+   In the previous section we introduced the Fokker-Planck equation as a means
+of analyzing the evolution of the phase space density. If the system is ergodic and
+mixing, we expect that the phase space distribution is, ultimately, consistent with
+the Gibbs-Boltzmann ensemble in the sense that, for a C10  test function  (smooth
+and compactly supported),
+                Z                  Z
+               lim      .q; p/ .q; p; t/d! D     .q; p/ ˇ.q; p/d!;
+          t!1
+            D             D
+
+regardless of the initial distribution.
+   There is a key difference between the concept of microcanonical ergodicity
+and canonical ergodicity. For deterministic dynamics, the distribution solves the
+Liouville equation
+
+                   @
+             D r  .f  /;  r D .rq; rp/:
+                         @t
+
+In the case of an SDE, the distribution may spread out over time. Even a single phase
+space point, which corresponds to a delta-function initial distribution, will instantly
+diffuse as the solution of the Fokker-Planck equation and, eventually, would cover
+the entire phase space. The incorporation of randomness has clearly changed the
+picture of the evolving phase space distribution in a fundamental way.
+  We have already seen a canonically ergodic SDE in a simpliﬁed setting in the
+example of the Ornstein-Uhlenbeck equation for a single degree of freedom (6.20),
+given an initial point distribution. The solution p.t/ to the Ornstein-Uhlenbeck
+equation, for any ﬁnite time t, is always normally distributed
+
+                                        .p     .t//2
+                            .p; t/ D exp                          ;                   (6.44)
+                                    2  .t/2
+
+where
+
+                      .t/ D p0e    t;        2.t/ D kBTm 1   e  2  t  :           (6.45)
+
+It is easy to see that the distribution converges to a unique invariant distribution (in
+this case a Gaussian with mean zero and variance kBTm as t ! 1). Ergodicity is
+easily veriﬁed in the case of the Ornstein-Uhlenbeck equation, since we can ﬁnd its
+exact distributional solution. However, we can still demonstrate ergodicity for more
+complex SDEs where it is extremely challenging (or impossible) to ﬁnd a solution
+or even to give qualitative statements about the solution.

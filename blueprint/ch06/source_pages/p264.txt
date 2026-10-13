@@ -1,0 +1,42 @@
+6.3  Stochastic Differential Equations                                             243
+
+6.3.7  Fokker-Planck Equation for Systems of SDEs
+
+
+We describe the generalization of the It¯o-Doeblin formula and the Fokker-Planck
+equation to a system of SDEs. If   is a scalar valued function of Rm, and Z.t/ is the
+solution of the SDE system
+
+
+                     dZ D a.Z/dt C B dW;                        (6.39)
+
+where a is a function in Rm and B is a constant matrix, then we have
+
+                                        1
+            d  .Z.t// D r    Œadt C BdW C 2dWTBT  00BdW;         (6.40)
+
+where    00 is the Hessian matrix of   , i.e. the matrix of second partial derivatives of
+with respect to pairs of the variables. In some applications B D B.Z/, in which case
+the SDE (6.39) is said to involve multiplicative noise (as oppose to the additive case
+we consider when B is constant). For a discussion of the differences and applications
+of these types of noise, see [289, 324].
+   All components on the right hand side of (6.40) are evaluated at Z.t/. Then using
+the shorthand rules dWidWj D dtıij (where ıij is one if i D j, zero otherwise), we
+have
+
+                                        1
+             d  .Z.t// D r    Œadt C BdW C 2Tr BT  00B  dt;          (6.41)
+
+where Tr. / refers to the matrix trace, the sum of the diagonal elements of the given
+matrix.
+   In the multivariate case, the density is a function of the vector describing a state
+of the system z and t, and is governed by the partial differential equation
+
+                  @                   1
+            D r  .a.z/ .z// C 2Tr BT  00B  :                       @t
+
+The second order “diffusion” term in this expression may be expanded as
+
+           Xm Xm          @2
+                    Tr BT  00B D       BBT             :
+                                                                                                            ij @zi@zj                                       iD1 jD1

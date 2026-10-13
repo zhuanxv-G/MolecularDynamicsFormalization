@@ -1,0 +1,48 @@
+236                    6  The Canonical Distribution and Stochastic Differential Equations
+
+6.3.3  Models for Heat Baths and Langevin’s Model
+       for Brownian Motion
+
+
+If the Ornstein-Uhlenbeck SDE models the momentum of particles undergoing
+collisions, it can be complemented by a corresponding differential equation for the
+position of the form
+
+                           dq D m 1pdt;
+
+to provide a full description of the motion. This is the key idea in Langevin’s model
+for Brownian motion [213].
+   Let us derive the Langevin dynamics model for the special case of a heavy
+particle (mass one) interacting with a large collection of light particles. We assume
+as in [138] that we are given a system of k coupled oscillators (a “heat bath”) in
+contact with a distinguished particle. The Hamiltonian is
+
+                   P2 Xk   p2i           1 Xk          H D  C    C U.Q/ C        .qi   Q/2
+                   2       2    i           2k                              iD1                     iD1
+
+where Q and P represent the position and momentum of the distinguished particle
+and fqi; pig are the positions and momenta of the particles of the bath,     i giving the
+mass of the ith light particle.
+  The equations of motion for the combined system are
+
+                            PQ D P;                                            (6.22)
+
+             Xk
+                                 PP D  U0.Q/   k  1   .Q   qi/;                   (6.23)
+                                              iD1
+
+where, for i D 1; 2; : : : ; k,
+
+                                                         Pqi D pi=   i;                                (6.24)
+
+                                                         Ppi D .Q   qi/=k:                           (6.25)
+
+   Because the system (6.24)–(6.25) is linear, we may solve  it analytically for
+fqi; pig; this yields:
+
+
+                                             Z t
+ qi.t/ D cos.˝it/qi.0/ C ˝ i  1 sin.˝it/pi.0/=    i C k  1    i 1  ˝ i  1 sin.˝i.t   s//Q.s/ds;
+
+                                                                    0
+                                                                            (6.26)

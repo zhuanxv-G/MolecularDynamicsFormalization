@@ -1,0 +1,29 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.lean",
+    "log": "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.log",
+    "source_sha256": "a460129026cd3c137a7340d8ccd57ca16a7547b9025281db8d1676efb3507a06",
+    "log_sha256": "69438f8ed68b2fa0339a4de1da46a0cec507502ed29d695615c0ff31e5864306"
+  },
+  {
+    "route": 2,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.lean",
+    "log": "blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.log",
+    "source_sha256": "3195b650db91a1e6c37ac88cd87de8d720bd11e5b7137cc08f379369302a4027",
+    "log_sha256": "f7cc8f966b197568f30d56bb2d3cdbefcb263a1e17c5a049ee65e3ab0cf37d57"
+  },
+  {
+    "route": 3,
+    "exit_code": 0,
+    "proof": "intro S energy kB β hS hkB hder s\n  have hm : ∀ a b : ℝ, a < b → S b-S a = kB*β*(b-a) := by\n    intro a b hab\n    obtain ⟨ξ, hξ, hd⟩ := exists_deriv_eq_slope S hab hS.continuous.continuousOn hS.differentiableOn\n    have hn : b-a ≠ 0 := by linarith\n    rw [hder ξ] at hd\n    exact ((eq_div_iff hn).mp hd).symm\n  have he : S (energy-s)-S energy = -kB*β*s := by\n    rcases lt_trichotomy s 0 with hs | rfl | hs\n    · have hh := hm energy (energy-s) (by linarith)\n      nlinarith\n    · simp\n    · have hh := hm (energy-s) energy (by linarith)\n      nlinarith\n  have hd : (S (energy-s)-S energy)/kB = -β*s := by\n    apply (div_eq_iff hkB.ne').mpr\n    nlinarith [he]\n  rw [← Real.exp_sub, ← sub_div, hd]",
+    "source": "blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7-BoltzmannConstantSlope.lean",
+    "log": "blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7-BoltzmannConstantSlope.log",
+    "source_sha256": "17e63545ebb1f50774ba26e9fe06bd64e9d248ce7ff228952961a34e1114f8a0",
+    "log_sha256": "63a33d68b33a0daca8b3dd1bb3c46d3e9da0e50837d24177c1507e8e36ed95d9"
+  }
+]

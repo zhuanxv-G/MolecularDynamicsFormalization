@@ -1,0 +1,57 @@
+6.1  Ensembles for Molecular Simulation                                          219
+
+    20                                                                                                                                    Energy  95
+
+                                                           94    15                                                                                                              Total    0       20       40       60       80      100
+                                                                      Time
+
+
+
+y
+
+    10
+                                                                                                                                                                                    Density
+     5
+
+
+
+
+     0
+       0          5         10         15         20             8        9       10       11       12
+                                 x                                                       x
+
+Fig. 6.2 We simulate 100 particles in the plane (left) using a periodic box of length L D 20, with
+the Lennard-Jones potential governing all pairwise interactions. One of these particles, marked
+in red, also feels a double-well potential in both coordinates. The total system energy (plotted in
+the top right) is conserved (with some variance due to numerical error). The distribution for the
+x-coordinate of the red particle (plotted in the bottom right), averaged over a single long trajectory
+(solid red) shows good agreement with the expected canonically distributed result (dashed black)
+
+
+   For example a collection of atoms on the inﬁnite domain interacting in Lennard-
+Jones potentials does not satisfy the third condition, and it does not have a well
+deﬁned canonical partition function. We can understand this by considering what
+happens over time in such a system. For simplicity, just take the case of a one
+degree-of-freedom system with H D p2=2 C q  12  q  6, q > 0. If the temperature
+is low, the particle will remain for a long time in the vicinity of the well bottom.
+At any given time there is a positive probability of ﬁnding the particle essentially
+any distance from the origin, although the probability of being found very near the
+origin is extremely small due to the repulsive steep wall. Due to the presence of
+the thermal bath, eventually the particle will receive enough energy to overcome
+the attractive force and will be ejected and tend to inﬁnity. The restriction to a
+bounded domain thus eliminates this problem which otherwise would complicate
+the technical treatment.
+   In order to use a one degree-of-freedom model on an inﬁnite domain in the
+canonical setting, we would need to incorporate a restraining potential, slightly
+modifying for example the Lennard-Jones potential to U.q/ D q  12   q  6 C "q2
+(Fig. 6.2).
+
+
+
+6.1.4  The Canonical Density and Thermodynamic Averages
+
+
+The distributional approach described above and in the previous chapter and used
+to deﬁne microcanonical averages on a bounded energy surface must be modiﬁed
+to make it applicable to the canonical ensemble. Recall that in the microcanonical
+setting we assumed  was a smooth density deﬁned on the bounded energy surface
