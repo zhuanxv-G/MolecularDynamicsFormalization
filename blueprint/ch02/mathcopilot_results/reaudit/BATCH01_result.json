@@ -1,0 +1,244 @@
+{
+  "batch": "BATCH01",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2-HamiltonianODE",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "VECTOR_MATRIX_TYPOGRAPHY",
+          "FORMULA_PUNCTUATION_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2-HamiltonianODE",
+          "kind": "definition",
+          "label": null,
+          "section": "2",
+          "printed_page": "53",
+          "pdf_page": "75",
+          "statement_latex": "The challenge before us is to compute solutions of\n\\[\\dot{\\boldsymbol q}=\\boldsymbol M^{-1}\\boldsymbol p,\\qquad \\dot{\\boldsymbol p}=\\boldsymbol F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q),\\]\nor, more compactly, with $\\boldsymbol z$ representing the collection of all positions and momenta,\n\\[\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z),\\qquad \\boldsymbol f(\\boldsymbol z)=\\boldsymbol J\\nabla H,\\tag{2.1}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；$H$见同页MD-2-Hamiltonian条目；此处$n$为配置坐标数，对应第1章§1.2的$N_c$。",
+            "where $\\boldsymbol J=\\begin{bmatrix}\\boldsymbol 0&\\boldsymbol I\\\\-\\boldsymbol I&\\boldsymbol 0\\end{bmatrix}$,",
+            "$\\boldsymbol I$为$n\\times n$单位阵，$\\boldsymbol 0$为同尺寸零块；教材坐标顺序为$(\\boldsymbol q,\\boldsymbol p)$。",
+            "$\\boldsymbol M$为固定对角质量矩阵；$\\boldsymbol F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q)$为力，$\\boldsymbol f$为完整相空间向量场。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.hamiltonianODE",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "原文ODE按时间域I逐点解释；只定义关系，不宣称解存在。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "对照PDF75/印刷53恢复M、F、f、J、I及J矩阵零块的粗体；原书以粗体标向量/矩阵。",
+            "将式(2.1)末尾J∇H后的句号改回原页逗号，保留随后where的连续句法。",
+            "上下文区分力F与完整向量场f；n对应第1章的Nc，仅作记号说明；未修改原书公式。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次核对原教材PDF第75页；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-075.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/input_sha256.txt"
+        },
+        "issues": [
+          "statement_latex把原页粗体M、F、f、J写成非粗体；context_notation中的J、I及零块也未保持原页排印。",
+          "式(2.1)末尾原页是J∇H后的逗号，JSON写成句号。",
+          "printed_page=53、pdf_page=75及式号(2.1)正确。proof_latex=null与该页没有独立证明相符；context中的(q,p)顺序和J的块符号正确。"
+        ],
+        "evidence": [
+          "教材PDF75/印刷53，下部两组展示公式：q̇=M^{-1}p，ṗ=F(q)=−∇U(q)，以及(2.1) ż=f(z), f(z)=J∇H,；放大渲染确认式末逗号。",
+          "教材PDF75/印刷53紧接where的矩阵为J=[[0,I],[-I,0]]，没有相反符号；原页向量/矩阵使用粗体。",
+          "PDF75字体提取记录：M、F、f、J、I的text节点为Times-BoldItalic；与渲染图一致。证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page75-formula.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml。",
+          "第1章PDF41/印刷18 §1.2将M称为diagonal mass matrix，Nc称为total number of position coordinates；仅用于核对本条上下文，未审校其他source_id。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.hamiltonianODE",
+        "verdict": "FAIL",
+        "explanation": "重新读取Ch02.lean第18–20行及Ch02_deps.txt正式定义：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ（第33行），左标签为q、右标签为p；textbookJ=Matrix.fromBlocks 0 1 (-1) 0（第39–40行）；textbookHamiltonianVectorField H z=J *ᵥ (fun i => (fderiv ℝ H z)(Pi.single i 1))（第1921–1925行）。故在H可微处逐分量确为(∂H/∂p,−∂H/∂q)，梯度由标准坐标偏导组成，不是该Pi空间范数诱导的其他梯度；J符号与原书一致。量词为给定n,H,γ,I后∀t∈I要求γ在环境ℝ上有指定导数；没有解存在/唯一性结论，[EXTRA]的逐点关系解释合理。不过H完全任意，没有要求沿γ可微；fderiv在不可微点总化为零，因此可能把原书∇H根本不存在的点当作合法Hamiltonian轨道，缺少梯度存在的前提。完整原句还含固定机械模型的q̇=M⁻¹p、ṗ=−∇U；本接口未提供m,U或H与机械Hamiltonian的关联，不能单凭任意H覆盖该机械子句。采用环境HasDerivAt在开时间域上合适，若I用于闭区间端点则额外约束域外延拓，应明确约定或改用域内导数。本条没有[ERRATUM?]，无证据要求改原书；FAIL为签名与对象范围问题。此def本身无sorry；不据此评价其他依赖证明完成性，未修改或编译工程。",
+        "counterexample": "n=1，H(z)=|z(Sum.inl 0)|，γ(t)=0，I=ℝ。H在零点不可微，所以Lean的fderiv ℝ H 0=0，textbookHamiltonianVectorField H 0=0，常值γ满足当前hamiltonianODE。原文的∇H(0)不存在，不能把该点解释为所展示的经典Hamiltonian方程。另取H≡0及常值轨道p=1、q=0，此接口允许它，但对m=1、U=0的机械模型要求q̇=p=1。后一例说明任意H与原文指定机械H的关联不可省略，并非否定一般Hamiltonian方程。",
+        "suggested_fix": "在关系中要求∀t∈I, DifferentiableAt ℝ H (γ t)，或用明确的HasFDerivAt/梯度见证表达经典向量场。保留一般Hamiltonian关系作为辅助接口，并另提供机械专用接口：显式m,U、非零或正质量、U沿配置轨道可微，以及H(z)=∑i z(inr i)^2/(2*m i)+U(q)的坐标转换关系，覆盖两条分量式。明确I为开时间域，或端点按HasDerivWithinAt解释。"
+      }
+    },
+    {
+      "source_id": "MD-2-Hamiltonian",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MATRIX_TYPOGRAPHY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2-Hamiltonian",
+          "kind": "definition",
+          "label": null,
+          "section": "2",
+          "printed_page": "53",
+          "pdf_page": "75",
+          "statement_latex": "and $H=\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$ is the Hamiltonian.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\boldsymbol M$为第1章§1.2中固定的对角质量矩阵；$\\boldsymbol q,\\boldsymbol p\\in\\mathbb R^n$，此处$n$对应原书配置坐标数$N_c$。",
+            "第1章PDF41/印刷18明确写M is a diagonal mass matrix，并在三维N粒子情形写$\\boldsymbol M=\\operatorname{diag}(m_1,m_1,m_1,\\ldots,m_N,m_N,m_N)$；本条原式使用$\\boldsymbol M^{-1}$。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.mechanicalHamiltonian",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "对照PDF75/印刷53恢复Hamiltonian公式中质量矩阵M的粗体。",
+            "对照第1章PDF41/印刷18补记对角质量矩阵与配置维数的出处；保留p^T M^{-1} p/2+U(q)原式。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次核对原教材PDF第75页；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-075.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/input_sha256.txt"
+        },
+        "issues": [
+          "statement_latex中的M应保持原页粗体质量矩阵排印；p、q的粗体及转置T、逆幂−1、除以2和势能加号均正确。",
+          "printed_page=53、pdf_page=75正确；proof_latex=null正确。原context所称固定对角质量模型可由第1章§1.2核实，无需把原页扩成一般非对角模型。"
+        ],
+        "evidence": [
+          "教材PDF75/印刷53底部原句：and H=p^T M^{-1}p/2+U(q) is the Hamiltonian.；M在渲染与PDF字体节点中均为粗体。",
+          "教材PDF41/印刷18 §1.2原句M is a diagonal mass matrix，三维N粒子的对角元依次为m1,m1,m1,m2,m2,m2,...；支持context_notation的对角质量说明。",
+          "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page75-formula.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-041.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.mechanicalHamiltonian",
+        "verdict": "FAIL",
+        "explanation": "重新展开Ch02.lean第24–25行及Ch02_deps.txt：CoordinateMasses n=Fin n→ℝ（第3513行），没有正性或非零约束；Position和Momentum为EuclideanSpace ℝ (Fin n)，PhaseSpace=Position×Momentum，PotentialEnergy=Position→ℝ（第844–855行）。massHamiltonian=(massSeparableEnergy m U).hamiltonian；massSeparableEnergy=⟨momentumKineticEnergy m,U⟩；momentumKineticEnergy m p=∑i (p i)^2/(2*m i)（第3954–3961行）；SeparableEnergy.hamiltonian state=kinetic state.2+potential state.1（第3485–3486行）。因此(q,p)顺序、1/2、势能加号和固定对角质量在非零质量时准确，函数无额外量化结论。可是签名允许零质量，而原书M⁻¹需要可逆质量矩阵；库第3674–3684行也明确指出奇异矩阵逆约定不能无前提支持逐坐标倒数。缺失可逆性不仅是形式总化，在部分零质量情形还与Lean矩阵逆表达不同。[EXTRA]限制固定对角模型有第1章依据且合理，但不能补足未编码的非零质量前提。本条无[ERRATUM?]，无已确认原书错误；FAIL针对签名适用范围。此def本身没有sorry，与语义判定分开，未认证依赖证明或编译状态。",
+        "counterexample": "取n=2、m=(0,1)、p=(0,1)、q=0、U≡0。展开mechanicalHamiltonian得到0²/(2*0)+1²/(2*1)=1/2（Lean零除总化）。M=diag(0,1)奇异，经典M⁻¹不存在；若按Lean Matrix的奇异逆总化为零矩阵，则pᵀM⁻¹p/2+U(q)=0，仍不等于该接口的1/2。",
+        "suggested_fix": "将质量参数改为带∀i,0<m i证据的数据，或在教材专用接口显式要求∀i,m i≠0（若要求物理质量则用正性）。在该受限范围记录M=diagonalMassMatrix m并给出H(q,p)=pᵀM⁻¹p/2+U(q)对应关系。原始无约束massHamiltonian可保留为总化辅助函数，但应说明其零质量延拓不属于原文机械模型。"
+      }
+    },
+    {
+      "source_id": "MD-2-Euler",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "VECTOR_TYPOGRAPHY",
+          "FOOTNOTE_MARKER_OMITTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2-Euler",
+          "kind": "definition",
+          "label": null,
+          "section": "2",
+          "printed_page": "54",
+          "pdf_page": "76",
+          "statement_latex": "The simplest scheme is certainly Euler’s method which advances the solution from timestep to timestep by the formula\\textsuperscript{1}\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+h\\boldsymbol f(\\boldsymbol z_n).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$h$为步长；下标$n$为时间步而非向量分量。",
+            "原页formula后接脚注1；该脚注说明粗体向量下标表示时间步，若同时标时间步和分量，可写$z_{n,i}$表示时间步$n$的第$i$分量。",
+            "$\\boldsymbol f$为ODE向量场，原页与$\\boldsymbol z$一样使用粗体；本式是显式Euler的一步更新。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.euler",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "对照PDF76/印刷54恢复Euler公式中向量场f的粗体。",
+            "恢复formula后的原页脚注1标记，并在context_notation中记录其索引约定；未将脚注伪作独立证明。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次核对原教材PDF第76页；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-076.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/input_sha256.txt"
+        },
+        "issues": [
+          "原页Euler公式中的f为粗体向量场，JSON未保持；原句formula后的脚注1标记也未录入。",
+          "原句确实使用timestep to timestep，公式是显式z_{n+1}=z_n+h f(z_n)，不是隐式Euler。页码54/76正确；proof_latex=null正确。",
+          "context_notation的h和时间步下标n说明与脚注1一致；本次补记脚注出处和同时标步数/分量时的约定。"
+        ],
+        "evidence": [
+          "教材PDF76/印刷54上部：The simplest scheme is certainly Euler’s method which advances the solution from timestep to timestep by the formula，formula后原页有上标1；下方展示z_{n+1}=z_n+h f(z_n).",
+          "教材PDF76/印刷54脚注1说明粗体向量下标为timestep index，双重索引写z_{n,i}表示ith component at timestep n。",
+          "PDF76字体提取：Euler公式f与z的节点均为Times-BoldItalic。渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-076.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml。",
+          "脚注双下标的分隔符经高分辨率放大确认为逗号z_{n,i}；证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page76-footnote.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.euler",
+        "verdict": "PASS",
+        "explanation": "本轮重新核对Ch02.lean第28–29行：euler f h z=z+h • f z。对象为任意实赋范向量空间E，其中特别包含教材相空间；z对应z_n，输出对应z_{n+1}，向量场在旧点z求值、正号和实步长均正确。这里仅用给定f、加法和实标量作用，无需展开Hamiltonian库；未要求f可微、解存在、误差阶或收敛性，原文此公式也没有这些要求。没有量词顺序或结论子句遗漏。赋范结构对纯代数更新并非必要，但覆盖教材对象，属于合理通用接口。本条无[EXTRA]及[ERRATUM?]。本身为无sorry的def；PASS是签名和展开公式的语义判定，不是导入工程编译或证明完成性认证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2-OneStep",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOLUTION_ARGUMENT_SEPARATOR_MISMATCH",
+          "SENTENCE_PUNCTUATION_MISMATCH",
+          "VECTOR_TYPOGRAPHY",
+          "FLOW_SYMBOL_TYPOGRAPHY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2-OneStep",
+          "kind": "definition",
+          "label": null,
+          "section": "2",
+          "printed_page": "54",
+          "pdf_page": "76",
+          "statement_latex": "Suppose that the system under study has a well defined flow map $\\mathscr F_t$ defined on the phase space (which is assumed to exclude any singular points of the potential energy function). The solution of the initial value problem, $\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z)$, $\\boldsymbol z(0)=\\boldsymbol\\zeta$, may be written $\\boldsymbol z(t,\\boldsymbol\\zeta)$ (with $\\boldsymbol z(0,\\boldsymbol\\zeta)=\\boldsymbol\\zeta$), and the flow-map $\\mathscr F_t$ satisfies $\\mathscr F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t,\\boldsymbol\\zeta)$. A one-step method, starting from a given point, approximates a point on the solution trajectory at a given time $h$ units later. Such a method defines a map $\\mathscr G_h$ of the phase space as illustrated in Fig. 2.1.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathscr F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t,\\boldsymbol\\zeta)$为给定实际ODE的流；初值为$\\boldsymbol z(0,\\boldsymbol\\zeta)=\\boldsymbol\\zeta$。",
+            "$\\mathscr G_h$为相空间上的单步近似映射，其目标是$h$时间单位后的实际流$\\mathscr F_h$；图2.1标$\\boldsymbol z_1=\\mathscr G_h(\\boldsymbol\\zeta)$并与$\\boldsymbol z(h,\\boldsymbol\\zeta)=\\mathscr F_h(\\boldsymbol\\zeta)$比较。",
+            "该相空间被假定排除势能函数的所有奇异点；本段未规定定量误差、收敛性或误差阶，近似质量由后面的误差定义衡量。",
+            "原页使用RSFS花体流映射符号，故记作$\\mathscr F_t,\\mathscr G_h$；原页解记号中时间与初值以逗号分隔。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.numericalTrajectory",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "对照PDF76/印刷54将z(t;ζ)、z(0;ζ)及流等式右侧的分号全部改回原页逗号。",
+            "将流等式后紧接A one-step method的冒号改回原页句号。",
+            "恢复向量场f的粗体，并以mathscr记录原页RSFS花体F、G；同时统一context_notation。",
+            "补明实际流、初值、无奇异点的相空间与单步近似对象；未给原文追加误差阶或收敛性要求。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次核对原教材PDF第76页；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-076.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/input_sha256.txt"
+        },
+        "issues": [
+          "原页3处解记号使用时间与初值间的逗号：z(t,ζ)、z(0,ζ)、流等式右侧z(t,ζ)；JSON改成了分号。",
+          "原页F_t(ζ)=z(t,ζ)后是句号再接A one-step method；JSON写为冒号。",
+          "原页ODE的向量场f使用粗体，JSON未保持；流映射F、G在原页使用RSFS花体，JSON以mathcal转写，本次统一为mathscr以贴合原页。",
+          "原句关于势能奇异点、初值、实际流等式、h时间单位后的单步近似和Fig.2.1的内容均已核对；页码54/76及proof_latex=null正确。"
+        ],
+        "evidence": [
+          "教材PDF76/印刷54中部：相空间which is assumed to exclude any singular points of the potential energy function；随后初值问题及z(t,ζ) (with z(0,ζ)=ζ)。",
+          "教材PDF76/印刷54中部flow-map等式后为句号，紧接A one-step method...at a given time h units later；末句Such a method defines a map G_h of the phase space。放大渲染：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page76-oneStepText.png。",
+          "教材PDF76/印刷54图2.1比较z_1=G_h(ζ)与z(h,ζ)=F_h(ζ)，确认近似映射和实际流的对象区别。",
+          "PDF76字体信息显示F、G使用jmrsfs10，向量场f使用Times-BoldItalic；符号排印根据XML与图像共同核对，而非依据乱码化的纯文本。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.numericalTrajectory",
+        "verdict": "FAIL",
+        "explanation": "本轮重新核对Ch02.lean第32–33行，并在Ch02_deps.txt中检索本条相关接口：numericalTrajectory G h ζ n=(G h)^[n] ζ，其使用标准Function.iterate，零次为ζ，一次为G h ζ，递推下一点为G h作用于当前点。形式参数仅E,G,h,ζ,n，G为任意ℝ→E→E。本条不使用自定义Hamiltonian依赖；正式依赖的补充没有改变其签名。固定原文范围却包括排除势能奇异点的相空间、给定ODE、良定义实际流F_t、初值γ_ζ(0)=ζ、F_t(ζ)=γ_ζ(t)，以及G_h的目标为h时间单位后的流点。该定义没有f、F、解族、合法域或它们的关系，只给出n次迭代，遗漏上述子句。把E选成合法相空间只能处理对象域，仍不能记录目标ODE流。原文未规定定量近似界，故不因缺少误差阶或收敛性判FAIL。[EXTRA]与[ERRATUM?]均无标记，没有原书勘误依据。此def无sorry，但签名遗漏仍为FAIL；未修改或补证明。",
+        "counterexample": "取E=ℝ、f≡0，实际解z(t,ζ)=ζ，流F_t=id，并取无奇异点的常值势能U≡0。任意给定G(h,x)=x+1都被numericalTrajectory无条件接受，ζ=0时输出n，单步G(h,0)=1与实际流F_h(0)=0之间恒差1且定义中完全没有记录该比较。同一函数也可不作任何改变地被用于其他不相关ODE。此例展示任意迭代可被接纳而没有目标流的关联；并非把该段未给出的定量误差阶当作原文假设。",
+        "suggested_fix": "保留numericalTrajectory作为迭代辅助定义；为MD-2-OneStep另给包含实际相空间和给定流的接口，明确相空间排除势能奇异点，并记录每个初值ζ的曲线γ_ζ满足γ_ζ(0)=ζ、γ̇_ζ=f(γ_ζ)以及F_t(ζ)=γ_ζ(t)。在该接口中定义G_h为相空间上的一步映射，目标比较对象为F_h(ζ)，并把n次迭代轨道另行关联。近似质量可用后续条目的局部误差/收敛定义表述，但不要宣称本段已给出定量误差阶。若仅保留当前定义，应缩小其映射的原文范围为迭代轨道，不能继续声称覆盖此source_id的整个段落。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "batch": "BATCH02",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.1-Convergence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第77页（印刷第55页），§2.1 第二段：从 The convergence of a numerical method refers to the ability 到 by using small enough timesteps，逐句核对与 statement_latex 一致；本句无独立展示公式。",
+          "教材 PDF 第78页（印刷第56页）：We assume that τ, the length of the time interval, is fixed；同段 νh=τ、t_n=nh，Theorem 2.1 的展示式为 bar e := max_{0≤n≤ν} e_n ≤ C(τ)h。context_notation 对固定时间窗、h=τ/ν 和最大节点误差所在页的引用正确。",
+          "本条为定义性文字，原页没有独立证明；proof_latex=null、proof_discussion_latex=null 与 proof_note 相符。页码满足55+22=77。",
+          "已直接查看原 PDF 渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-077.png 和 page-078.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.convergence",
+        "verdict": "PASS",
+        "explanation": "已将 BATCH02.md 的 Lean 块与实际 /workspace/Ch02.lean 对应声明核对，一致。本次哈希键 Blueprint/Ch02.lean 绑定实际读取的 /workspace/Ch02.lean（附件为扁平存放），未以不存在的路径或依赖段内标注哈希代替整附件字节哈希。Ch02_deps.txt 的 ReviewDefinitions.lean:2816 将 Q n 展开为 Fin n → ℝ，即有限维实坐标向量，标准函数空间范数为最大坐标范数；原条目未指定必须使用欧氏范数，且有限维范数等价，收敛与阶上界不受此选择影响。OneStepConvergence.lean:1443–1444 的 oneStepIterate G h z₀ k = (G h)^[k] z₀；1460–1463 的 oneStepMaxError = (Finset.range (ν+1)).sup′ nonempty (fun k => ‖(G h)^[k](γ 0) − γ((k:ℝ)*h)‖)。sup′ 在非空有限实数集合上为真正最大值，range(ν+1) 正好为0,…,ν，包含初末节点，不是只有末节点，也没有替换初值。 因而在固定 τ>0、h=τ/ν 的原文网格语境下，Tendsto atTop (𝓝 0) 展开为对每个 ε>0，存在自然数阈值 N，使所有 ν≥N 的全部节点误差最大值小于 ε；阈值可依赖 G、γ、τ、ε。这忠实表达任意精度和足够小步长。ν=0 的零除按 Lean 全函数约定处理，但有限前缀不影响极限。[EXTRA] 固定时间窗和网格受 PDF78/印刷56页上下文支持；无需给定义本身额外加 ODE 或正则性假设，因为这里只定义相对于给定准确曲线的误差性质。τ 未限制的接口是扩展；τ=0 或负时间的值不应冒充原文正时间窗的断言。注释“τ>0在具体定理中明示”不精确：本批 theorem_2_1 为0≤τ，且库明确单独处理τ=0；这是说明文字需修订，不是收敛谓词在原文使用域内的错误。无本条[ERRATUM?]。证明状态单列：这是定义，无直接sorry；本次不作编译或传递公理检查。",
+        "counterexample": null,
+        "suggested_fix": "仅建议澄清说明文字：定义用于固定τ>0的时间窗；本批Euler定理实际采用τ≥0并显式涵盖τ=0，应将“τ>0在具体定理中明示”改为与此相符的表述。不需要为此改变本条收敛谓词。"
+      }
+    },
+    {
+      "source_id": "MD-2.1-Order",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第77页（印刷第55页），§2.1 第二段：The order of accuracy is the exponent in the power law；第三阶例子明确写 global error (on a fixed finite time interval) can be bounded by Kh^3。",
+          "同段紧接条件为 h is a sufficiently small timestep，K depends on the length of the time interval and the features of the problem，且 is independent of h；statement_latex 保留这些文字及 Kh^3，无遗漏假设。",
+          "context_notation 明确将 r=3 标为原文例子、一般自然数阶标为形式化扩展；h=τ/ν 由 PDF78（印刷56页）的 νh=τ 支持，未伪称为 PDF77 的原句。",
+          "本条没有独立证明，proof_latex=null、proof_discussion_latex=null 与原文相符；55+22=77。已查看渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-077.png 及 page-078.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.order",
+        "verdict": "PASS",
+        "explanation": "已将 BATCH02.md 的 Lean 块与实际 /workspace/Ch02.lean 对应声明核对，一致。本次哈希键 Blueprint/Ch02.lean 绑定实际读取的 /workspace/Ch02.lean（附件为扁平存放），未以不存在的路径或依赖段内标注哈希代替整附件字节哈希。Ch02_deps.txt 的 ReviewDefinitions.lean:2816 将 Q n 展开为 Fin n → ℝ，即有限维实坐标向量，标准函数空间范数为最大坐标范数；原条目未指定必须使用欧氏范数，且有限维范数等价，收敛与阶上界不受此选择影响。OneStepConvergence.lean:1443–1444 的 oneStepIterate G h z₀ k = (G h)^[k] z₀；1460–1463 的 oneStepMaxError = (Finset.range (ν+1)).sup′ nonempty (fun k => ‖(G h)^[k](γ 0) − γ((k:ℝ)*h)‖)。sup′ 在非空有限实数集合上为真正最大值，range(ν+1) 正好为0,…,ν，包含初末节点，不是只有末节点，也没有替换初值。 量词为固定 G、γ、τ、r 后 ∃K>0，∃ν₀>0，∀ν≥ν₀，最大误差≤K(τ/ν)^r。K和阈值可依赖问题及时间长度，但不能依赖后选的ν；同时控制全部节点，完整保留固定时间区间的全局误差上界。原文用上界定义第三阶，未要求非零误差下界或“最佳阶”，故本签名无需添加这类条款。[EXTRA] r:ℕ 是已登记的一般化，取r=3直接回到原句；r=0只表O(1)，不能据此声称收敛。ν₀>0排除分母零；在原文τ>0域内将K增大到严格正不损失任何上界。h=τ/ν 来自原文固定网格，足够大ν等价该网格上足够小正步长；本条不宣称非网格步长或统一所有曲线的额外结论。τ:ℝ 的域外扩展不改变正时间窗含义，但应在使用说明中明确τ>0。无[ERRATUM?]。证明状态单列：定义，无直接sorry，不据此推断整个工程无sorry或已编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.1-Error",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第78页（印刷第56页），Theorem 2.1 上方段落：approximate solution vectors 为 z_0,z_1,…,z_ν，νh=τ；τ 为固定时间区间长度，ν 为总步数，增大 ν 时同比减小步长。这些原句在 statement_latex 中完整保留。",
+          "同段逐点定义为 e_n=‖z_n−z(t_n)‖，where t_n=nh；it clearly depends on h。范数、减法、时间下标均与 JSON 一致。",
+          "同页紧接 Theorem 2.1 的展示式为 bar e := max_{0≤n≤ν} e_n ≤ C(τ)h；context_notation 将最大误差归于该定理并注明包含 n=0，正确地区分了逐点误差和最大误差。",
+          "本条为定义，原页无独立证明，proof_latex=null、proof_discussion_latex=null 正确；56+22=78。已查看渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-078.png 和 theorem-upper-crop.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.maximumError",
+        "verdict": "PASS",
+        "explanation": "已将 BATCH02.md 的 Lean 块与实际 /workspace/Ch02.lean 对应声明核对，一致。本次哈希键 Blueprint/Ch02.lean 绑定实际读取的 /workspace/Ch02.lean（附件为扁平存放），未以不存在的路径或依赖段内标注哈希代替整附件字节哈希。已展开 OneStepConvergence.lean:1443–1444、1460–1463：maximumError G γ h ν = max_{0≤k≤ν} ‖(G h)^[k](γ 0)−γ((k:ℝ)*h)‖。ReviewDefinitions.lean:2819–2821 同时给出 meshTime h k = k*h、nodeError G γ h k = ‖oneStepIterate G h (γ 0) k−γ(meshTime h k)‖，所以原文逐点 e_k 与 t_k=kh 条款确实有正式展开，最大值接口没有换用其他误差定义。原文的z_k是单步递推轨迹，准确初始化z₀=γ(0)来自章内上下文；νh=τ、固定τ是使用参数的网格关系，不是独立误差函数必须额外证明的条件。最大量来自本条context_notation明确登记的紧接定理，包含两个端点。[EXTRA] 实范数空间泛化可实例化为教材有限维向量空间，不新增光滑、ODE或留域条件；这里原文也未指定某一特定范数。无需新增定义：正式库已有nodeError。无[ERRATUM?]。证明状态单列：maximumError、oneStepIterate、oneStepMaxError、nodeError为定义，无直接sorry；未执行编译或传递公理审计。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.1-Thm2.1",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第78页（印刷第56页），Theorem 2.1：D 为 R^m 中 bounded, open region，f:D→R^m continuously differentiable；ζ 为 interior point，初值问题(2.1)有 unique solution 且在 t∈[0,τ] 留在D。这些原文对象和前提均在 statement_latex 中保留。",
+          "同一定理后半：存在 C(τ)>0，对 sufficiently large ν∈N，数值点 z_n 在 n=0,1,…,ν 时仍在D，hν=τ，并且 bar e := max_{0≤n≤ν}e_n ≤ C(τ)h。JSON 同时保留留域及最大误差两个结论，严格正常数、指标范围和公式均正确。",
+          "context_notation 所引初值由 PDF76（印刷54页）的 z(0)=ζ、z_0=ζ 支持；同页 Euler 递推为 z_{n+1}=z_n+h f(z_n)。PDF75（印刷53页）给出(2.1)的 ż=f(z)；PDF78 上段给 e_n、t_n=nh、νh=τ。因此 ζ=γ(0) 及相关上下文引用一致。",
+          "Theorem 2.1 后是 bar e=O(h) 和一阶精度的解释，随后进入§2.1.1；未给独立完整证明。proof_latex=null、proof_discussion_latex=null 和 proof_note 正确。56+22=78。",
+          "已直接查看渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-078.png、theorem-upper-crop.png、theorem-crop.png，以及 context-075.png、context-076.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.theorem_2_1",
+        "verdict": "PASS",
+        "explanation": "已将 BATCH02.md 的 Lean 块与实际 /workspace/Ch02.lean 对应声明核对，一致。本次哈希键 Blueprint/Ch02.lean 绑定实际读取的 /workspace/Ch02.lean（附件为扁平存放），未以不存在的路径或依赖段内标注哈希代替整附件字节哈希。Notation.lean:844 的 Position m = EuclideanSpace ℝ (Fin m)，为欧氏m维实空间。EulerConvergence.lean:897–902 展开 eulerStep f h x=x+h•f x、eulerIterate f h x₀ k=(eulerStep f h)^[k]x₀；918–921 展开 eulerMaxError=max_{0≤k≤ν} ‖eulerIterate f h (γ 0) k−γ((k:ℝ)*h)‖，range和sup′含义同前。签名保留 D 有界开放、f在D上C¹、γ在闭区间留于D且满足ODE。由0≤τ及MapsTo得到γ(0)∈D，由开放得到ζ=γ(0)是内点；无需独立ζ参数。唯一性量词遍历所有同初值、在本时间窗留域并满足相同ODE的η，结论是在整个[0,τ]与γ一致。HasDerivWithinAt描述区间内导数，正时间窗端点为单侧导数，与仅要求本时间窗的解一致；不会额外约束曲线在时间窗外的行为。结论为∃C>0，∃ν₀>0，∀ν≥ν₀，合取∀k≤ν数值点∈D与最大误差≤Cτ/ν，两个结论完整且C、阈值均在ν之前选择。[EXTRA] 时间长度τ≥0合理显式化，τ=0时Euler步为恒等、所有节点误差为0并留于D，属于成立的退化扩展；环境全函数f只在D要求C¹，域外值不影响已证明留域的迭代；ν₀>0排除零除。开放region的连通性不是误差估计所需条件，任意开放D的扩展仍涵盖原命题。wrapper保留_hunique而证明体不使用它，只说明库有更强结果，不构成签名遗漏。无本条[ERRATUM?]。证明状态单列：实际wrapper为exact MolecularDynamics.theorem_2_1_euler；依赖文件1191–1216完整提供该定理并分别处理τ=0、τ>0，整段EulerConvergence源码没有直接sorry/admit。此文本检查不等于重新编译或审计所有Mathlib传递公理；本次PASS仅为签名语义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

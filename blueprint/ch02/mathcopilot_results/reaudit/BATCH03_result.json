@@ -1,0 +1,115 @@
+{
+  "batch": "BATCH03",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "1ca97005ec475ec4032cf5a83b43dd1c234d084435e0c6e2e6c69aa3b55b11eb",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.1.2-SecondDerivative",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_ASSUMPTION_NOT_EXPLICIT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.1.2-SecondDerivative",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.1.2",
+          "printed_page": "59",
+          "pdf_page": "81",
+          "statement_latex": "and the second derivative is obtained by differentiating the differential equation itself:\n\\[\\ddot{\\boldsymbol z}(t)=\\frac{\\mathrm d}{\\mathrm dt}\\dot{\\boldsymbol z}(t)=\\frac{\\mathrm d}{\\mathrm dt}f(\\boldsymbol z(t))=f'(\\boldsymbol z(t))\\dot{\\boldsymbol z}(t)=f'(\\boldsymbol z(t))f(\\boldsymbol z(t)),\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 第81页（印刷第59页）先写 $\\dot{\\boldsymbol z}_n=f(\\boldsymbol z_n)$，随后用链式法则得到 $\\ddot{\\boldsymbol z}(t)=f^{\\prime}(\\boldsymbol z(t))\\dot{\\boldsymbol z}(t)=f^{\\prime}(\\boldsymbol z(t))f(\\boldsymbol z(t))$。同页明确说明：$\\boldsymbol z\\in\\mathbb R^m$，$f:\\mathbb R^m\\to\\mathbb R^m$，$f^{\\prime}(\\boldsymbol z)$ 是 $m\\times m$ Jacobian，$(f^{\\prime}(\\boldsymbol z))_{ij}=\\partial f_i/\\partial z_j$，亦记为 $\\partial f/\\partial\\boldsymbol z$。本段未显式写出 $f\\in C^1$；全域 $C^1$ 是本条 Lean 陈述采用的充分正则性假设，不能作为原页明示假设记录。"
+          ],
+          "issues": [
+            "[CONTEXT_ASSUMPTION_NOT_EXPLICIT] 原 context_notation 未区分原页实际记号说明与形式化所加的全域 C¹ 假设；已明确两者来源。陈述公式、proof_latex 和页码未改，未对原书作数学修正。"
+          ],
+          "lean_decl": "MD.Ch02.odeSecondDerivative",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "Lean 明示 ContDiff ℝ 1 f，即向量场在整个 Q n 上 C¹；PDF 第81页本段只使用导数和 Jacobian，未逐字声明该全域正则性。",
+            "解 γ 取全实线 C²；在 f 为 C¹ 且 γ 满足实际 ODE 的条件下，此条件不必另行假设，可由链式法则推出，因此是合理但冗余的 [EXTRA]。",
+            "Lean 量化全实线上的解和所有实数时刻；原页公式也可在实际解的存在时间区间逐点解释。全实线资格强于局部区间版本。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH03 A 原文审校：根据 PDF 第81页渲染和文字提取修订 context_notation，并补记实际 Lean 签名中的全域正则性和时间域资格；保留原 statement_latex、proof_latex、页码及所有其余条目字段。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png; input_sha256.json"
+        },
+        "issues": [
+          "statement_latex 的引文、链式法则展示式、末尾逗号与原页相符；printed_page=59、pdf_page=81 和 section=2.1.2 正确。原页没有另外的独立证明，proof_latex=null 正确，计算已收入 statement_latex。",
+          "context_notation 原写“f∈C¹”，但 PDF 第81页本段没有明示全域 C¹ 条件。它是可用于证明该公式的充分条件，也是 Lean 签名的实际前提，应明确标为形式化所加资格。修正仅澄清上下文和额外假设的来源，不改原书公式。"
+        ],
+        "evidence": [
+          "PDF 第81页／印刷第59页，Example 2.1 中短语“and the second derivative is obtained by differentiating the differential equation itself:”与 JSON 引文一致；随后展示五项相等的链式法则计算，末项为 f′(z(t))f(z(t))，末尾为逗号。",
+          "同页紧邻前句“In this formula”给出 ż_n=f(z_n)；同页 Jacobian 说明明确给出 z∈ℝᵐ、f:ℝᵐ→ℝᵐ、(f′(z))_ij=∂f_i/∂z_j 及替代记号 ∂f/∂z，没有显式 C¹ 声明。",
+          "已实际查看 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png，并对照 page-081.txt；PDF 页眉的印刷页码是59，满足59+22=81。",
+          "/workspace/Ch02.lean 第69—76行与 BATCH03 的 odeSecondDerivative 签名摘录一致；第70行显式给出 ContDiff ℝ 1 f 和 ContDiff ℝ 2 γ。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.odeSecondDerivative",
+        "verdict": "PASS",
+        "explanation": "PASS。实际读取的 Blueprint/Ch02.lean 附件副本是 /workspace/Ch02.lean；input_sha256 绑定该副本实际字节。Ch02_deps.txt 第2816行展开 MolecularDynamics.Chapter02Review.Q n = Fin n → ℝ，即 n 个实坐标，采用函数空间逐点加法与实标量乘法及有限维范数；它与原文 ℝᵐ 的对象一致（标准有限维范数等价不影响此导数恒等式）。实际签名依次量化 n、f、γ，假设全域 ContDiff ℝ 1 f、全实线 ContDiff ℝ 2 γ 及 ∀t HasDerivAt γ (f (γ t)) t，然后对每个实数时刻断言 deriv γ 的导数为 fderiv ℝ f (γ t) 作用于 f (γ t)。HasDerivAt 的导数唯一性给出 deriv γ = f ∘ γ，链式法则给出原展示式全部等号，并非仅形式相似的自定义导数。fderiv 是实际 Fréchet 导数，在已假设可微的点对应 Jacobian。[EXTRA] γ 全域 C² 合理但冗余：C¹ 向量场和实际可微 ODE 解已足以导出结论，源证明也未使用 hγ；全域 C¹ 与全实线解是强于存在区间版本的明确资格，结论在该资格下忠实表达原公式，不宣称覆盖每个局部解。本条未有 [ERRATUM?]，未发现原公式疑误。正文为链式法则证明且无 sorry/admit；本次没有编译工程，此文本证明状态独立于签名语义判定。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.1.2-Taylor2",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 第81页／印刷第59页，Example 2.1 中“so one may write the 2nd order Taylor series method as”之后的递推式为 z_{n+1}=z_n+hf(z_n)+(h²/2)f′(z_n)f(z_n)，系数1/2、h²、导数作用顺序和句点均与 JSON 一致。",
+          "紧接“This method generates the flow map approximation”后的公式为 G_h(z)=z+hf(z)+(h²/2)f′(z)f(z)，与 statement_latex 的第二个展示式一致。",
+          "context_notation 的 Jacobian 英文段落、m×m 维数、ij 分量及替代记号与同页正文一致；换行和数学排版转换未改变文字或公式。",
+          "原页此处是方法与映射的定义，没有独立证明段，proof_latex=null 正确。section=2.1.2、Example 2.1 的标签及59+22=81均相符。",
+          "已实际查看 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png，并对照 page-081.txt；/workspace/Ch02.lean 第79—80行的定义体与 BATCH03 的 Lean 摘录一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.taylorSecond",
+        "verdict": "PASS",
+        "explanation": "PASS。Ch02_deps.txt 第2816行展开 Q n = Fin n → ℝ，故 z 与 f z 是实际有限维实向量；加法和 • 分别是向量加法与实数标量乘法。Ch02.lean 第79—80行完整定义为 z + h • f z + (h²/2) • (fderiv ℝ f z) (f z)，因此对象、任意步长 h、系数、求导点、作用顺序以及三项之和均与原页 G_h 一致；以 z_n 为输入并将输出定义为 z_{n+1} 即给出同页递推公式。依赖合集第2827—2828行的 taylor2 具有完全相同定义体，后续阶定理确实使用同一个映射。fderiv 是实际 Fréchet 导数；原文的 Jacobian 解释限定于可微向量场，Lean def 的全函数化在不可微点也赋值，不构成原文对不可微情形的额外数学断言。作为映射公式定义，无须把可微性作为 def 的参数；需要使用 Jacobian 语义的性质应另有可微性资格，本批阶定理已有更强 C⁶ 假设。本条无 [EXTRA]、无 [ERRATUM?]，未发现疑误。定义有完整体且不含 sorry/admit，未声称重新编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.1.2-Taylor2Order",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 第81页／印刷第59页，Example 2.1 的第一次二阶截断展示式后原句是“which is referred to as the 2nd order Taylor series method.”，与 statement_latex 逐字一致，包括 2nd 和末尾句点。",
+          "同页前段将高阶方法关联到固定有限时间区间的 global error estimate，展示 ē≈C(τ)hʳ，r>1；同页后续两式明确此处的二阶 Taylor 方法。context_notation 指向这些真实上下文，未把局部一步误差误记成全局误差。",
+          "为核对全局阶的含义，还实际查看 PDF 第77页／印刷第55页的 order of accuracy 段：固定有限时间区间的误差由 K hʳ 控制，充分小步长下 K 独立于 h；这说明二阶是全局 O(h²) 资格，而非要求每个特殊向量场都恰好只有二阶。",
+          "原页没有该阶断言的独立证明，proof_latex=null 与 proof_note 相符；section=2.1.2、Example 2.1 标签、印刷页59及PDF页81相符。",
+          "页图证据为 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png 和 page-077.png；提取文字另存同目录 page-081.txt、page-077.txt。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.taylor2Order",
+        "verdict": "PASS",
+        "explanation": "PASS。展开依赖合集第2941—2945行：compactTrajectory f γ τ 正好是 0<τ、ContDiff ℝ 6 f、solution f γ 0 τ、ContinuousOn γ (Icc 0 τ) 的合取；solution 是对每个 t∈[0,τ] 要求 HasDerivWithinAt γ (f (γ t)) [0,τ] t。故 γ 是实际 ODE 轨迹，闭窗端点也包括在内；并无全域轨迹 C⁶、全局 Lipschitz、预设误差界或数值留域前提。连续轨迹在有限维空间的紧时间窗有紧像，不需要额外假设名称所暗示的另一种紧性。第2827—2828行 taylor2 是 z+h f(z)+(h²/2)Df(z)f(z)，与 taylorSecond 定义体相同。第2824—2826行 globalOrder 展开为先存在 C>0，再存在自然数 ν₀>0，使所有 ν≥ν₀ 满足 oneStepMaxError G (τ/ν) γ ν≤C(τ/ν)^2；C 与阈值可以依赖已量化的 n、f、γ、τ，但不依赖随后量化的 ν。第1443—1444行 oneStepIterate 是 (G h)^[k] z₀；第1460—1463行 oneStepMaxError 是 k=0,…,ν 上 ‖(G h)^[k](γ 0)−γ(kh)‖ 的有限最大值，数值初值等于精确初值，覆盖全窗，且正阈值避免零网格。因此结论确实是固定有限时间窗上的全局 O(h²)，没有偷换为一步局部误差、误差极限或精确阶下界。Q n=Fin n→ℝ 的标准函数范数与有限维其他标准范数等价，允许改变 C 而不改变二阶。[EXTRA] 全域 C⁶ 远强于二阶所需但合理；τ>0 和真实解资格使有限窗阶断言有明确适用范围，ContinuousOn 与有限窗内实际解相容，未将待证稳定性作假设。无需预先假设数值迭代留域：在光滑向量场轨迹的紧邻域内建立局部误差和稳定性，再对充分细网格证明留在邻域，是该结论的证明义务。本条无 [ERRATUM?]，原文二阶称谓未发现疑误。Ch02.lean 第87行仍为 sorry；证明未完成与上述签名语义 PASS 分开，本次仅只读审计且不写证明、不编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

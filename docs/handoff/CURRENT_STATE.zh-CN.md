@@ -1,11 +1,12 @@
 # 当前可操作状态
 
 当前任务：第2–6章本地流程连续推进（见 docs/handoff/LOCAL_PIPELINE.md）；第1章暂停等待网站审校。
-下一步：继续第6章§6.2；首批草稿scripts/ch06_section621.py核对后激活，先本地短证明和正式Wiener桥接；新第2章reaudit返回件在本节提交后登记。
+下一步：继续第6章§6.2；激活scripts/ch06_section621.py首8条，复用§6.1完整check/公理结果。
 
 顺序：第2章完成且复用 → 第3章 → 第4章 → 第5章 → 第6章；不进入第7章。
 跨章唯一总进度：docs/handoff/LOCAL_PIPELINE.md；当前章逐条进度：blueprint/ch06/PROGRESS.md。
 约束：正式库0 sorry且源码/签名不改；第1章交付冻结；其他任务文件保留不动。
+第2章reaudit BATCH01–05共20条已登记；BATCH及Lean SHA匹配，依赖附件未找到；修订未应用，网站仍待审。
 §6.1检查点：48条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。
 §5.6检查点：183条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。
 第5章全部本地流程完成：183条、旧映射全覆盖、七段文档、compact预算/哈希/裁页、全部节完整检查已验；网站和导师审校待完成。

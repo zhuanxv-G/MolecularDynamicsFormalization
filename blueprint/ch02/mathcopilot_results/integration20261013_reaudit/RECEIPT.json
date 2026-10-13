@@ -1,0 +1,154 @@
+{
+  "received_at": "2026-10-13T12:56:02.408951",
+  "raw_files": {
+    "blueprint/ch02/mathcopilot_results/reaudit/BATCH01_result.json": "39993f047ad1de8245cbbf2145551b9d2521b03330cebe29aae5dbcb2dfa4017",
+    "blueprint/ch02/mathcopilot_results/reaudit/BATCH02_result.json": "74c1d68e57123f8d157d970a07c8852c57667f2f17ba94d8d7c37d6ee8ccd889",
+    "blueprint/ch02/mathcopilot_results/reaudit/BATCH03_result.json": "b7aa73bf572e9d5d21c419527983bb7fd350ce7dbb3b356822caf822831cd5c4",
+    "blueprint/ch02/mathcopilot_results/reaudit/BATCH04_result.json": "b0ddc62cf9adc3108d1adbdb139b9f97e8eb4a0680c99a0380c6fd8a56561a5b",
+    "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json": "2f0bf8292d65aa32bb73a68a8e426a19530d6a6e71915b574f32867ef585b5b4"
+  },
+  "source_ids": [
+    "MD-2-HamiltonianODE",
+    "MD-2-Hamiltonian",
+    "MD-2-Euler",
+    "MD-2-OneStep",
+    "MD-2.1-Convergence",
+    "MD-2.1-Order",
+    "MD-2.1-Error",
+    "MD-2.1-Thm2.1",
+    "MD-2.1.2-SecondDerivative",
+    "MD-2.1.2-Taylor2",
+    "MD-2.1.2-Taylor2Order",
+    "MD-2.2-VerletOrder",
+    "MD-2.2.1-Lagrangian",
+    "MD-2.2.1-Admissible",
+    "MD-2.2.1-Action",
+    "MD-2.2.1-Variation",
+    "MD-2.2.1-FirstVariation",
+    "MD-2.2.1-TaylorPrinted",
+    "MD-2.2.1-StationaryAction",
+    "MD-2.2.1-Parts"
+  ],
+  "counts": {
+    "FAIL": 6,
+    "PASS": 13,
+    "NEEDS_HUMAN": 1
+  },
+  "bindings": [
+    {
+      "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH01_result.json",
+      "inputs": {
+        "BATCH.md": {
+          "expected": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+          "actual": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+          "matches": true
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+          "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+          "matches": true
+        },
+        "Ch02_deps.txt": {
+          "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+          "actual": null,
+          "matches": false
+        }
+      },
+      "status": "PARTIAL: batch and Lean hashes verified; dependency export unavailable"
+    },
+    {
+      "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH02_result.json",
+      "inputs": {
+        "BATCH.md": {
+          "expected": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+          "actual": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+          "matches": true
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+          "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+          "matches": true
+        },
+        "Ch02_deps.txt": {
+          "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+          "actual": null,
+          "matches": false
+        }
+      },
+      "status": "PARTIAL: batch and Lean hashes verified; dependency export unavailable"
+    },
+    {
+      "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH03_result.json",
+      "inputs": {
+        "BATCH.md": {
+          "expected": "1ca97005ec475ec4032cf5a83b43dd1c234d084435e0c6e2e6c69aa3b55b11eb",
+          "actual": "1ca97005ec475ec4032cf5a83b43dd1c234d084435e0c6e2e6c69aa3b55b11eb",
+          "matches": true
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+          "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+          "matches": true
+        },
+        "Ch02_deps.txt": {
+          "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+          "actual": null,
+          "matches": false
+        }
+      },
+      "status": "PARTIAL: batch and Lean hashes verified; dependency export unavailable"
+    },
+    {
+      "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH04_result.json",
+      "inputs": {
+        "BATCH.md": {
+          "expected": "307ecb3b59aa31155a8450bb77368caa7272ceb35ce8439657d7f9993c19804e",
+          "actual": "307ecb3b59aa31155a8450bb77368caa7272ceb35ce8439657d7f9993c19804e",
+          "matches": true
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+          "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+          "matches": true
+        },
+        "Ch02_deps.txt": {
+          "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+          "actual": null,
+          "matches": false
+        }
+      },
+      "status": "PARTIAL: batch and Lean hashes verified; dependency export unavailable"
+    },
+    {
+      "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json",
+      "inputs": {
+        "BATCH.md": {
+          "expected": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+          "actual": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+          "matches": true
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+          "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+          "matches": true
+        },
+        "Ch02_deps.txt": {
+          "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+          "actual": null,
+          "matches": false
+        }
+      },
+      "status": "PARTIAL: batch and Lean hashes verified; dependency export unavailable"
+    }
+  ],
+  "effective_website_status": "待网站审计",
+  "proposals_unapplied": 6,
+  "unchanged_local_inputs": {
+    "blueprint/ch02/ch02_source.json": "3b0ee40fcac82936d75f36d9738eb457f1508ae0d49e162b67a354ad392bdb4b",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "blueprint/ch02/local_audit.json": "9c47772fe76455992810967cae84a53412707283752fb9d8daa1dd13e639df05",
+    "blueprint/ch02/DELIVERY_VALIDATION.json": "caf961e77bac3f8cad5e145bdd472ed9bf72410801dad965b3549e46547956c3"
+  },
+  "prior_section_commit": "43a0d563ab46498bf6090453f66c2edb57ca58b8",
+  "dependency_search": "No Ch02_deps.txt found by rg in workspace including ignored paths or Downloads/md_sync; supplied digest alone is not an export."
+}

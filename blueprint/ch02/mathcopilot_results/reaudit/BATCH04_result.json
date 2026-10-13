@@ -1,0 +1,77 @@
+{
+  "batch": "BATCH04",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "307ecb3b59aa31155a8450bb77368caa7272ceb35ce8439657d7f9993c19804e",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.2-VerletOrder",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MATH_TYPOGRAPHY_MISMATCH",
+          "CONTEXT_NOTATION_MISSING",
+          "PROOF_NOTE_SCOPE_OVERBROAD"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2-VerletOrder",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2",
+          "printed_page": "60",
+          "pdf_page": "82",
+          "statement_latex": "The Verlet method (also known as leapfrog or Störmer-Verlet) is a second order method that is popular for molecular simulation. It is specialized to problems that can be expressed in the form $\\dot{\\boldsymbol q}=\\boldsymbol v$, $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$, with even dimensional phase space $\\mathbb R^{2\\mathrm{N}_c}$, which includes constant energy molecular dynamics.",
+          "proof_latex": null,
+          "proof_note": "本条所引 PDF 第82页（印刷第60页）仅陈述 Verlet 的二阶性质，未在该页附独立证明；本批不对后续节是否给出完整证明作结论。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\boldsymbol q$ 与 $\\boldsymbol v$：本句机械系统的位置与速度向量；原式为 $\\dot{\\boldsymbol q}=\\boldsymbol v$。依据：PDF 第82页（印刷第60页）§2.2 首段。",
+            "$\\boldsymbol M$：质量矩阵；本页稍后的文字明确为“the mass matrix”。本条首段未额外声明正性或对角性，不能把 Lean 的这些附加限制写成原句假设。依据：PDF 第82页（印刷第60页）。",
+            "$\\boldsymbol F(\\boldsymbol q)$：本句右端仅依赖位置的力向量，满足 $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$；该句未给出势函数表达式。依据：PDF 第82页（印刷第60页）§2.2 首段。",
+            "$\\mathbb R^{2\\mathrm{N}_c}$：原句给出的偶数维相空间，$\\mathrm{N}_c$ 表示对应配置变量的分量数；本页未单独展开其与粒子数的关系，不补入 $\\mathrm{N}_c=3N$ 等约定。依据：PDF 第82页（印刷第60页）§2.2 首段。"
+          ],
+          "issues": [
+            "数学排版转录不一致：PDF 第82页首段的 M、F 均为粗斜体，原 JSON 只对 q、v 使用粗体；修订为 \\boldsymbol M、\\boldsymbol F。相空间维数中的 N 在页图及字体记录中为正体，修订为 \\mathrm{N}_c。英文措辞、两个微分方程及维数 2N_c 均保留原文，不涉及原书勘误。",
+            "context_notation 原为空；补入该页有据可查的 q、v、M、F 和相空间维数说明，明确区分原文与 Lean 的附加条件，不引入梯度力、正对角质量或粒子数关系等未在本句说明的假设。",
+            "原 proof_note 的“原书未给独立完整证明”超出本批已核对页面的证据范围；改为仅报告本页未附独立证明。proof_latex 和 proof_discussion_latex 均维持 null。"
+          ],
+          "lean_decl": "MD.Ch02.verletOrder",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "固定正对角质量、力全域C⁴、τ>0及实际解在闭时间窗连续；原文未逐一给出的阶定理正则性显式列出。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH04 原文审校：根据 PDF 第82页（印刷第60页）页图及字体信息修订数学排版，补充记号上下文，将 proof_note 限定为本批已核对页；不修改原书疑误或 Lean 文件。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 第82页 = 印刷第60页 + 22；页图：/workspace/.mathcopilot/reviews/ch02/BATCH04_evidence/pdf82.png；已对照 pdftotext 文本及 pdftohtml 字体记录。"
+        },
+        "issues": [
+          "数学排版转录不一致：PDF 第82页首段的 M、F 均为粗斜体，原 JSON 只对 q、v 使用粗体；修订为 \\boldsymbol M、\\boldsymbol F。相空间维数中的 N 在页图及字体记录中为正体，修订为 \\mathrm{N}_c。英文措辞、两个微分方程及维数 2N_c 均保留原文，不涉及原书勘误。",
+          "context_notation 原为空；补入该页有据可查的 q、v、M、F 和相空间维数说明，明确区分原文与 Lean 的附加条件，不引入梯度力、正对角质量或粒子数关系等未在本句说明的假设。",
+          "原 proof_note 的“原书未给独立完整证明”超出本批已核对页面的证据范围；改为仅报告本页未附独立证明。proof_latex 和 proof_discussion_latex 均维持 null。"
+        ],
+        "evidence": [
+          "已实际渲染并目视核对教材 PDF 第82页，页眉印刷页码为60，章节标题为“2.2 The Verlet Method”；页码换算 60+22=82 正确。",
+          "PDF 第82页 §2.2 首段前两句与本条英文陈述逐句一致：包含 Verlet 的两个别名、second order、机械 ODE、偶数维相空间以及 constant energy molecular dynamics；未把其后的其他 Hamiltonian 系统推广或几何性质段落并入本条。",
+          "PDF 第82页首段原式为 $\\dot{\\boldsymbol q}=\\boldsymbol v$, $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$，相空间为 $\\mathbb R^{2\\mathrm{N}_c}$。页图与 pdftohtml 字体记录均确认 M、F 使用 Times-BoldItalic，指数 N 使用 Times-Roman。",
+          "PDF 第82页同页正文明确称 M 为“the mass matrix”；首段未单独声明正对角质量、力全域 C⁴ 或势函数表达式，故这些不补入原文陈述。",
+          "PDF 第82页本条只是未编号性质陈述，没有附属于该句的独立证明；proof_latex=null、proof_discussion_latex=null 合适。这里的结论仅限已核对页面。",
+          "Lean 证据：/workspace/Ch02.lean 第89–97行及 BATCH04.md 的同名声明已核对一致；关键库定义未随本批提供，语义不足情况在 audit 中独立登记。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletOrder",
+        "verdict": "FAIL",
+        "explanation": "已重新展开本条全部自定义依赖，而非依名称判断。版本绑定的 Blueprint/Ch02.lean 是实际提供的 /workspace/Ch02.lean（第89–97行），没有假定存在另一份 Blueprint 文件。Ch02_deps.txt 第2816–2817行：Q n = Fin n → ℝ，Z n = Q n × Q n，故维数为2n。第2842–2843行附近 invMass m w 的逐坐标值是 (m i)⁻¹ * w i；第2948行 positiveMass m = ∀ i, 0 < m i，确实要求固定正对角质量。关键对象差异：第2946–2947行 mechanicalField m F (q,w) = (M⁻¹w,F(q))，实际解满足 q̇=M⁻¹w、ẇ=F(q)，第二分量是动量p，而非原文 PDF82/印刷60 的速度v；原文是 q̇=v、Mv̇=F(q)。第2859–2861行 verlet 使用 qnew=q+h M⁻¹p+(h²/2)M⁻¹F(q)，pnew=p+(h/2)(F(q)+F(qnew))，是正确的动量坐标 Verlet，但缺少 p=Mv 的显式坐标桥接。本 FAIL 是原文对象与实际接口不一致，并不声称该动量坐标阶定理在数学上为假；固定可逆质量下两者线性共轭，可修复。第2941–2943行 solution 是对闭区间 Icc a b 每个 t 要求 HasDerivWithinAt γ (f(γ t)) (Icc a b) t，含两端单侧导数，实际 ODE 并非仅用总导数函数赋值。第1443–1444行 oneStepIterate=(G h)^[k] z₀；第1460–1462行 oneStepMaxError 是 Finset.range (ν+1) 上 ‖(G h)^[k](γ 0)−γ(kh)‖ 的有限最大值，确实从实际初值出发测量所有0≤k≤ν的完整相空间全局误差，包含终点，不是单步缺陷。Q 使用有限函数空间范数，Z 使用积范数，有限维范数等价不改变二阶上界。量词：n,m,F,γ,τ先全称量化；五项假设后存在 C>0及ν₀>0，再对所有ν≥ν₀给出h=τ/ν的Ch²上界；常数可依赖固定数据，不可依赖ν。这忠实表达至少二阶的固定时间窗全局精度；原句不要求每一特殊系统精确阶恰为2。[EXTRA] 固定正对角质量是合理分子模型限制，但一般可逆常质量已足够，正性和对角性不是阶性质的必要条件；全域C⁴力是合理充分条件，强于轨迹邻域所需，非必要；τ>0是正步长时间窗约定；solution合理限定到已有实际解，不宣称任意初值全局存在；ContinuousOn γ (Icc 0 τ)由每点 HasDerivWithinAt 的连续性已蕴含，冗余但合理。原文的常能量分子动力学是适用对象，不是数值严格能量守恒结论；流行程度及别名不是独立可形式化误差子句。本条无[ERRATUM?]，没有发现原文数学错误；对象差异来自形式化而非原书。证明状态单独记录：Ch02.lean 第97行 sorry，未证明，与上述签名 FAIL 独立。本次未改附件、未补证明、未编译。",
+        "counterexample": "对象识别反例（不是动量阶定理反例）：n=1，m₀=2，F≡0，τ=1，取原文速度轨迹 γv(t)=(t,1)。它满足 q̇=v=1、2v̇=0，但 mechanicalField m F (t,1)=(1/2,0)，所以该原文轨迹不满足当前 solution 假设。若按速度解释当前 verlet，则它把(q,v)=(0,1)更新为(h/2,1)，而原文自由运动应为(h,1)，固定终时刻1的位置误差为1/2，不随h消失。当前声明实际应输入动量轨迹γp(t)=(t,2)，此时方法正确；因此问题是缺少坐标转换，而不是现有签名的数值反例。",
+        "suggested_fix": "首选使本条直接保持原文速度对象：本条的场改为(q,v)↦(v,invMass m (F q))，误差中的方法改用库已定义的 velocityVerlet（Ch02_deps.txt 第2855–2858行：vhalf=v+(h/2)M⁻¹F(q)，qnew=q+h vhalf，vnew=vhalf+(h/2)M⁻¹F(qnew)）。不要直接全局修改 mechanicalField/ verlet，以免影响本批外的动量声明。或者保留当前动量定理并显式新增本条坐标解释/桥接：T_m(q,v)=(q,Mv)，γp=T_m∘γv，证明原文速度ODE与当前solution对应、T_m∘velocityVerlet=verlet∘T_m，并用固定线性同构的范数界传递二阶误差。标明正对角质量与C⁴为充分但非必要限制；闭区间连续性可保留并注明冗余。本次只提出修复建议，不修改工程。"
+      }
+    }
+  ]
+}

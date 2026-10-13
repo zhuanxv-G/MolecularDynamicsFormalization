@@ -1,0 +1,1259 @@
+[
+  {
+    "source_id": "MD-2-HamiltonianODE",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH01_result.json",
+    "raw_sha256": "39993f047ad1de8245cbbf2145551b9d2521b03330cebe29aae5dbcb2dfa4017",
+    "reported_verdict": "FAIL",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.hamiltonianODE",
+      "verdict": "FAIL",
+      "explanation": "重新读取Ch02.lean第18–20行及Ch02_deps.txt正式定义：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ（第33行），左标签为q、右标签为p；textbookJ=Matrix.fromBlocks 0 1 (-1) 0（第39–40行）；textbookHamiltonianVectorField H z=J *ᵥ (fun i => (fderiv ℝ H z)(Pi.single i 1))（第1921–1925行）。故在H可微处逐分量确为(∂H/∂p,−∂H/∂q)，梯度由标准坐标偏导组成，不是该Pi空间范数诱导的其他梯度；J符号与原书一致。量词为给定n,H,γ,I后∀t∈I要求γ在环境ℝ上有指定导数；没有解存在/唯一性结论，[EXTRA]的逐点关系解释合理。不过H完全任意，没有要求沿γ可微；fderiv在不可微点总化为零，因此可能把原书∇H根本不存在的点当作合法Hamiltonian轨道，缺少梯度存在的前提。完整原句还含固定机械模型的q̇=M⁻¹p、ṗ=−∇U；本接口未提供m,U或H与机械Hamiltonian的关联，不能单凭任意H覆盖该机械子句。采用环境HasDerivAt在开时间域上合适，若I用于闭区间端点则额外约束域外延拓，应明确约定或改用域内导数。本条没有[ERRATUM?]，无证据要求改原书；FAIL为签名与对象范围问题。此def本身无sorry；不据此评价其他依赖证明完成性，未修改或编译工程。",
+      "counterexample": "n=1，H(z)=|z(Sum.inl 0)|，γ(t)=0，I=ℝ。H在零点不可微，所以Lean的fderiv ℝ H 0=0，textbookHamiltonianVectorField H 0=0，常值γ满足当前hamiltonianODE。原文的∇H(0)不存在，不能把该点解释为所展示的经典Hamiltonian方程。另取H≡0及常值轨道p=1、q=0，此接口允许它，但对m=1、U=0的机械模型要求q̇=p=1。后一例说明任意H与原文指定机械H的关联不可省略，并非否定一般Hamiltonian方程。",
+      "suggested_fix": "在关系中要求∀t∈I, DifferentiableAt ℝ H (γ t)，或用明确的HasFDerivAt/梯度见证表达经典向量场。保留一般Hamiltonian关系作为辅助接口，并另提供机械专用接口：显式m,U、非零或正质量、U沿配置轨道可微，以及H(z)=∑i z(inr i)^2/(2*m i)+U(q)的坐标转换关系，覆盖两条分量式。明确I为开时间域，或端点按HasDerivWithinAt解释。"
+    },
+    "returned_json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "VECTOR_MATRIX_TYPOGRAPHY",
+        "FORMULA_PUNCTUATION_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2-HamiltonianODE",
+        "kind": "definition",
+        "label": null,
+        "section": "2",
+        "printed_page": "53",
+        "pdf_page": "75",
+        "statement_latex": "The challenge before us is to compute solutions of\n\\[\\dot{\\boldsymbol q}=\\boldsymbol M^{-1}\\boldsymbol p,\\qquad \\dot{\\boldsymbol p}=\\boldsymbol F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q),\\]\nor, more compactly, with $\\boldsymbol z$ representing the collection of all positions and momenta,\n\\[\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z),\\qquad \\boldsymbol f(\\boldsymbol z)=\\boldsymbol J\\nabla H,\\tag{2.1}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；$H$见同页MD-2-Hamiltonian条目；此处$n$为配置坐标数，对应第1章§1.2的$N_c$。",
+          "where $\\boldsymbol J=\\begin{bmatrix}\\boldsymbol 0&\\boldsymbol I\\\\-\\boldsymbol I&\\boldsymbol 0\\end{bmatrix}$,",
+          "$\\boldsymbol I$为$n\\times n$单位阵，$\\boldsymbol 0$为同尺寸零块；教材坐标顺序为$(\\boldsymbol q,\\boldsymbol p)$。",
+          "$\\boldsymbol M$为固定对角质量矩阵；$\\boldsymbol F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q)$为力，$\\boldsymbol f$为完整相空间向量场。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.hamiltonianODE",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "原文ODE按时间域I逐点解释；只定义关系，不宣称解存在。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "对照PDF75/印刷53恢复M、F、f、J、I及J矩阵零块的粗体；原书以粗体标向量/矩阵。",
+          "将式(2.1)末尾J∇H后的句号改回原页逗号，保留随后where的连续句法。",
+          "上下文区分力F与完整向量场f；n对应第1章的Nc，仅作记号说明；未修改原书公式。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次核对原教材PDF第75页；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-075.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/input_sha256.txt"
+      },
+      "issues": [
+        "statement_latex把原页粗体M、F、f、J写成非粗体；context_notation中的J、I及零块也未保持原页排印。",
+        "式(2.1)末尾原页是J∇H后的逗号，JSON写成句号。",
+        "printed_page=53、pdf_page=75及式号(2.1)正确。proof_latex=null与该页没有独立证明相符；context中的(q,p)顺序和J的块符号正确。"
+      ],
+      "evidence": [
+        "教材PDF75/印刷53，下部两组展示公式：q̇=M^{-1}p，ṗ=F(q)=−∇U(q)，以及(2.1) ż=f(z), f(z)=J∇H,；放大渲染确认式末逗号。",
+        "教材PDF75/印刷53紧接where的矩阵为J=[[0,I],[-I,0]]，没有相反符号；原页向量/矩阵使用粗体。",
+        "PDF75字体提取记录：M、F、f、J、I的text节点为Times-BoldItalic；与渲染图一致。证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page75-formula.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml。",
+        "第1章PDF41/印刷18 §1.2将M称为diagonal mass matrix，Nc称为total number of position coordinates；仅用于核对本条上下文，未审校其他source_id。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+        "actual": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "The challenge before us is to compute solutions of\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad \\dot{\\boldsymbol p}=F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q),\\]\nor, more compactly, with $\\boldsymbol z$ representing the collection of all positions and momenta,\n\\[\\dot{\\boldsymbol z}=f(\\boldsymbol z),\\qquad f(\\boldsymbol z)=J\\nabla H.\\tag{2.1}\\]",
+        "proposed": "The challenge before us is to compute solutions of\n\\[\\dot{\\boldsymbol q}=\\boldsymbol M^{-1}\\boldsymbol p,\\qquad \\dot{\\boldsymbol p}=\\boldsymbol F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q),\\]\nor, more compactly, with $\\boldsymbol z$ representing the collection of all positions and momenta,\n\\[\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z),\\qquad \\boldsymbol f(\\boldsymbol z)=\\boldsymbol J\\nabla H,\\tag{2.1}\\]"
+      },
+      "context_notation": {
+        "current": [
+          "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；J在本条上下文、H见同页mechanicalHamiltonian条目；n为配置坐标数。",
+          "where $J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$,",
+          "$I$为$n\\times n$单位阵；教材符号顺序$(q,p)$。"
+        ],
+        "proposed": [
+          "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；$H$见同页MD-2-Hamiltonian条目；此处$n$为配置坐标数，对应第1章§1.2的$N_c$。",
+          "where $\\boldsymbol J=\\begin{bmatrix}\\boldsymbol 0&\\boldsymbol I\\\\-\\boldsymbol I&\\boldsymbol 0\\end{bmatrix}$,",
+          "$\\boldsymbol I$为$n\\times n$单位阵，$\\boldsymbol 0$为同尺寸零块；教材坐标顺序为$(\\boldsymbol q,\\boldsymbol p)$。",
+          "$\\boldsymbol M$为固定对角质量矩阵；$\\boldsymbol F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q)$为力，$\\boldsymbol f$为完整相空间向量场。"
+        ]
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2-Hamiltonian",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH01_result.json",
+    "raw_sha256": "39993f047ad1de8245cbbf2145551b9d2521b03330cebe29aae5dbcb2dfa4017",
+    "reported_verdict": "FAIL",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.mechanicalHamiltonian",
+      "verdict": "FAIL",
+      "explanation": "重新展开Ch02.lean第24–25行及Ch02_deps.txt：CoordinateMasses n=Fin n→ℝ（第3513行），没有正性或非零约束；Position和Momentum为EuclideanSpace ℝ (Fin n)，PhaseSpace=Position×Momentum，PotentialEnergy=Position→ℝ（第844–855行）。massHamiltonian=(massSeparableEnergy m U).hamiltonian；massSeparableEnergy=⟨momentumKineticEnergy m,U⟩；momentumKineticEnergy m p=∑i (p i)^2/(2*m i)（第3954–3961行）；SeparableEnergy.hamiltonian state=kinetic state.2+potential state.1（第3485–3486行）。因此(q,p)顺序、1/2、势能加号和固定对角质量在非零质量时准确，函数无额外量化结论。可是签名允许零质量，而原书M⁻¹需要可逆质量矩阵；库第3674–3684行也明确指出奇异矩阵逆约定不能无前提支持逐坐标倒数。缺失可逆性不仅是形式总化，在部分零质量情形还与Lean矩阵逆表达不同。[EXTRA]限制固定对角模型有第1章依据且合理，但不能补足未编码的非零质量前提。本条无[ERRATUM?]，无已确认原书错误；FAIL针对签名适用范围。此def本身没有sorry，与语义判定分开，未认证依赖证明或编译状态。",
+      "counterexample": "取n=2、m=(0,1)、p=(0,1)、q=0、U≡0。展开mechanicalHamiltonian得到0²/(2*0)+1²/(2*1)=1/2（Lean零除总化）。M=diag(0,1)奇异，经典M⁻¹不存在；若按Lean Matrix的奇异逆总化为零矩阵，则pᵀM⁻¹p/2+U(q)=0，仍不等于该接口的1/2。",
+      "suggested_fix": "将质量参数改为带∀i,0<m i证据的数据，或在教材专用接口显式要求∀i,m i≠0（若要求物理质量则用正性）。在该受限范围记录M=diagonalMassMatrix m并给出H(q,p)=pᵀM⁻¹p/2+U(q)对应关系。原始无约束massHamiltonian可保留为总化辅助函数，但应说明其零质量延拓不属于原文机械模型。"
+    },
+    "returned_json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "MATRIX_TYPOGRAPHY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2-Hamiltonian",
+        "kind": "definition",
+        "label": null,
+        "section": "2",
+        "printed_page": "53",
+        "pdf_page": "75",
+        "statement_latex": "and $H=\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$ is the Hamiltonian.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$\\boldsymbol M$为第1章§1.2中固定的对角质量矩阵；$\\boldsymbol q,\\boldsymbol p\\in\\mathbb R^n$，此处$n$对应原书配置坐标数$N_c$。",
+          "第1章PDF41/印刷18明确写M is a diagonal mass matrix，并在三维N粒子情形写$\\boldsymbol M=\\operatorname{diag}(m_1,m_1,m_1,\\ldots,m_N,m_N,m_N)$；本条原式使用$\\boldsymbol M^{-1}$。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.mechanicalHamiltonian",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "对照PDF75/印刷53恢复Hamiltonian公式中质量矩阵M的粗体。",
+          "对照第1章PDF41/印刷18补记对角质量矩阵与配置维数的出处；保留p^T M^{-1} p/2+U(q)原式。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次核对原教材PDF第75页；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-075.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/input_sha256.txt"
+      },
+      "issues": [
+        "statement_latex中的M应保持原页粗体质量矩阵排印；p、q的粗体及转置T、逆幂−1、除以2和势能加号均正确。",
+        "printed_page=53、pdf_page=75正确；proof_latex=null正确。原context所称固定对角质量模型可由第1章§1.2核实，无需把原页扩成一般非对角模型。"
+      ],
+      "evidence": [
+        "教材PDF75/印刷53底部原句：and H=p^T M^{-1}p/2+U(q) is the Hamiltonian.；M在渲染与PDF字体节点中均为粗体。",
+        "教材PDF41/印刷18 §1.2原句M is a diagonal mass matrix，三维N粒子的对角元依次为m1,m1,m1,m2,m2,m2,...；支持context_notation的对角质量说明。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page75-formula.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-041.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+        "actual": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "and $H=\\boldsymbol p^TM^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$ is the Hamiltonian.",
+        "proposed": "and $H=\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$ is the Hamiltonian."
+      },
+      "context_notation": {
+        "current": [
+          "$M$为第1章固定对角质量矩阵；$\\boldsymbol q,\\boldsymbol p\\in\\mathbb R^n$。"
+        ],
+        "proposed": [
+          "$\\boldsymbol M$为第1章§1.2中固定的对角质量矩阵；$\\boldsymbol q,\\boldsymbol p\\in\\mathbb R^n$，此处$n$对应原书配置坐标数$N_c$。",
+          "第1章PDF41/印刷18明确写M is a diagonal mass matrix，并在三维N粒子情形写$\\boldsymbol M=\\operatorname{diag}(m_1,m_1,m_1,\\ldots,m_N,m_N,m_N)$；本条原式使用$\\boldsymbol M^{-1}$。"
+        ]
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2-Euler",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH01_result.json",
+    "raw_sha256": "39993f047ad1de8245cbbf2145551b9d2521b03330cebe29aae5dbcb2dfa4017",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.euler",
+      "verdict": "PASS",
+      "explanation": "本轮重新核对Ch02.lean第28–29行：euler f h z=z+h • f z。对象为任意实赋范向量空间E，其中特别包含教材相空间；z对应z_n，输出对应z_{n+1}，向量场在旧点z求值、正号和实步长均正确。这里仅用给定f、加法和实标量作用，无需展开Hamiltonian库；未要求f可微、解存在、误差阶或收敛性，原文此公式也没有这些要求。没有量词顺序或结论子句遗漏。赋范结构对纯代数更新并非必要，但覆盖教材对象，属于合理通用接口。本条无[EXTRA]及[ERRATUM?]。本身为无sorry的def；PASS是签名和展开公式的语义判定，不是导入工程编译或证明完成性认证。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "VECTOR_TYPOGRAPHY",
+        "FOOTNOTE_MARKER_OMITTED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2-Euler",
+        "kind": "definition",
+        "label": null,
+        "section": "2",
+        "printed_page": "54",
+        "pdf_page": "76",
+        "statement_latex": "The simplest scheme is certainly Euler’s method which advances the solution from timestep to timestep by the formula\\textsuperscript{1}\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+h\\boldsymbol f(\\boldsymbol z_n).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$h$为步长；下标$n$为时间步而非向量分量。",
+          "原页formula后接脚注1；该脚注说明粗体向量下标表示时间步，若同时标时间步和分量，可写$z_{n,i}$表示时间步$n$的第$i$分量。",
+          "$\\boldsymbol f$为ODE向量场，原页与$\\boldsymbol z$一样使用粗体；本式是显式Euler的一步更新。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.euler",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "对照PDF76/印刷54恢复Euler公式中向量场f的粗体。",
+          "恢复formula后的原页脚注1标记，并在context_notation中记录其索引约定；未将脚注伪作独立证明。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次核对原教材PDF第76页；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-076.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/input_sha256.txt"
+      },
+      "issues": [
+        "原页Euler公式中的f为粗体向量场，JSON未保持；原句formula后的脚注1标记也未录入。",
+        "原句确实使用timestep to timestep，公式是显式z_{n+1}=z_n+h f(z_n)，不是隐式Euler。页码54/76正确；proof_latex=null正确。",
+        "context_notation的h和时间步下标n说明与脚注1一致；本次补记脚注出处和同时标步数/分量时的约定。"
+      ],
+      "evidence": [
+        "教材PDF76/印刷54上部：The simplest scheme is certainly Euler’s method which advances the solution from timestep to timestep by the formula，formula后原页有上标1；下方展示z_{n+1}=z_n+h f(z_n).",
+        "教材PDF76/印刷54脚注1说明粗体向量下标为timestep index，双重索引写z_{n,i}表示ith component at timestep n。",
+        "PDF76字体提取：Euler公式f与z的节点均为Times-BoldItalic。渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-076.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml。",
+        "脚注双下标的分隔符经高分辨率放大确认为逗号z_{n,i}；证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page76-footnote.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+        "actual": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "The simplest scheme is certainly Euler’s method which advances the solution from timestep to timestep by the formula\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+hf(\\boldsymbol z_n).\\]",
+        "proposed": "The simplest scheme is certainly Euler’s method which advances the solution from timestep to timestep by the formula\\textsuperscript{1}\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+h\\boldsymbol f(\\boldsymbol z_n).\\]"
+      },
+      "context_notation": {
+        "current": [
+          "$h$为步长；下标$n$为时间步而非向量分量。"
+        ],
+        "proposed": [
+          "$h$为步长；下标$n$为时间步而非向量分量。",
+          "原页formula后接脚注1；该脚注说明粗体向量下标表示时间步，若同时标时间步和分量，可写$z_{n,i}$表示时间步$n$的第$i$分量。",
+          "$\\boldsymbol f$为ODE向量场，原页与$\\boldsymbol z$一样使用粗体；本式是显式Euler的一步更新。"
+        ]
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2-OneStep",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH01_result.json",
+    "raw_sha256": "39993f047ad1de8245cbbf2145551b9d2521b03330cebe29aae5dbcb2dfa4017",
+    "reported_verdict": "FAIL",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.numericalTrajectory",
+      "verdict": "FAIL",
+      "explanation": "本轮重新核对Ch02.lean第32–33行，并在Ch02_deps.txt中检索本条相关接口：numericalTrajectory G h ζ n=(G h)^[n] ζ，其使用标准Function.iterate，零次为ζ，一次为G h ζ，递推下一点为G h作用于当前点。形式参数仅E,G,h,ζ,n，G为任意ℝ→E→E。本条不使用自定义Hamiltonian依赖；正式依赖的补充没有改变其签名。固定原文范围却包括排除势能奇异点的相空间、给定ODE、良定义实际流F_t、初值γ_ζ(0)=ζ、F_t(ζ)=γ_ζ(t)，以及G_h的目标为h时间单位后的流点。该定义没有f、F、解族、合法域或它们的关系，只给出n次迭代，遗漏上述子句。把E选成合法相空间只能处理对象域，仍不能记录目标ODE流。原文未规定定量近似界，故不因缺少误差阶或收敛性判FAIL。[EXTRA]与[ERRATUM?]均无标记，没有原书勘误依据。此def无sorry，但签名遗漏仍为FAIL；未修改或补证明。",
+      "counterexample": "取E=ℝ、f≡0，实际解z(t,ζ)=ζ，流F_t=id，并取无奇异点的常值势能U≡0。任意给定G(h,x)=x+1都被numericalTrajectory无条件接受，ζ=0时输出n，单步G(h,0)=1与实际流F_h(0)=0之间恒差1且定义中完全没有记录该比较。同一函数也可不作任何改变地被用于其他不相关ODE。此例展示任意迭代可被接纳而没有目标流的关联；并非把该段未给出的定量误差阶当作原文假设。",
+      "suggested_fix": "保留numericalTrajectory作为迭代辅助定义；为MD-2-OneStep另给包含实际相空间和给定流的接口，明确相空间排除势能奇异点，并记录每个初值ζ的曲线γ_ζ满足γ_ζ(0)=ζ、γ̇_ζ=f(γ_ζ)以及F_t(ζ)=γ_ζ(t)。在该接口中定义G_h为相空间上的一步映射，目标比较对象为F_h(ζ)，并把n次迭代轨道另行关联。近似质量可用后续条目的局部误差/收敛定义表述，但不要宣称本段已给出定量误差阶。若仅保留当前定义，应缩小其映射的原文范围为迭代轨道，不能继续声称覆盖此source_id的整个段落。"
+    },
+    "returned_json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOLUTION_ARGUMENT_SEPARATOR_MISMATCH",
+        "SENTENCE_PUNCTUATION_MISMATCH",
+        "VECTOR_TYPOGRAPHY",
+        "FLOW_SYMBOL_TYPOGRAPHY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2-OneStep",
+        "kind": "definition",
+        "label": null,
+        "section": "2",
+        "printed_page": "54",
+        "pdf_page": "76",
+        "statement_latex": "Suppose that the system under study has a well defined flow map $\\mathscr F_t$ defined on the phase space (which is assumed to exclude any singular points of the potential energy function). The solution of the initial value problem, $\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z)$, $\\boldsymbol z(0)=\\boldsymbol\\zeta$, may be written $\\boldsymbol z(t,\\boldsymbol\\zeta)$ (with $\\boldsymbol z(0,\\boldsymbol\\zeta)=\\boldsymbol\\zeta$), and the flow-map $\\mathscr F_t$ satisfies $\\mathscr F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t,\\boldsymbol\\zeta)$. A one-step method, starting from a given point, approximates a point on the solution trajectory at a given time $h$ units later. Such a method defines a map $\\mathscr G_h$ of the phase space as illustrated in Fig. 2.1.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$\\mathscr F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t,\\boldsymbol\\zeta)$为给定实际ODE的流；初值为$\\boldsymbol z(0,\\boldsymbol\\zeta)=\\boldsymbol\\zeta$。",
+          "$\\mathscr G_h$为相空间上的单步近似映射，其目标是$h$时间单位后的实际流$\\mathscr F_h$；图2.1标$\\boldsymbol z_1=\\mathscr G_h(\\boldsymbol\\zeta)$并与$\\boldsymbol z(h,\\boldsymbol\\zeta)=\\mathscr F_h(\\boldsymbol\\zeta)$比较。",
+          "该相空间被假定排除势能函数的所有奇异点；本段未规定定量误差、收敛性或误差阶，近似质量由后面的误差定义衡量。",
+          "原页使用RSFS花体流映射符号，故记作$\\mathscr F_t,\\mathscr G_h$；原页解记号中时间与初值以逗号分隔。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch02.numericalTrajectory",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "对照PDF76/印刷54将z(t;ζ)、z(0;ζ)及流等式右侧的分号全部改回原页逗号。",
+          "将流等式后紧接A one-step method的冒号改回原页句号。",
+          "恢复向量场f的粗体，并以mathscr记录原页RSFS花体F、G；同时统一context_notation。",
+          "补明实际流、初值、无奇异点的相空间与单步近似对象；未给原文追加误差阶或收敛性要求。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次核对原教材PDF第76页；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page-076.png；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/pages75-76.xml；/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/input_sha256.txt"
+      },
+      "issues": [
+        "原页3处解记号使用时间与初值间的逗号：z(t,ζ)、z(0,ζ)、流等式右侧z(t,ζ)；JSON改成了分号。",
+        "原页F_t(ζ)=z(t,ζ)后是句号再接A one-step method；JSON写为冒号。",
+        "原页ODE的向量场f使用粗体，JSON未保持；流映射F、G在原页使用RSFS花体，JSON以mathcal转写，本次统一为mathscr以贴合原页。",
+        "原句关于势能奇异点、初值、实际流等式、h时间单位后的单步近似和Fig.2.1的内容均已核对；页码54/76及proof_latex=null正确。"
+      ],
+      "evidence": [
+        "教材PDF76/印刷54中部：相空间which is assumed to exclude any singular points of the potential energy function；随后初值问题及z(t,ζ) (with z(0,ζ)=ζ)。",
+        "教材PDF76/印刷54中部flow-map等式后为句号，紧接A one-step method...at a given time h units later；末句Such a method defines a map G_h of the phase space。放大渲染：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH01/page76-oneStepText.png。",
+        "教材PDF76/印刷54图2.1比较z_1=G_h(ζ)与z(h,ζ)=F_h(ζ)，确认近似映射和实际流的对象区别。",
+        "PDF76字体信息显示F、G使用jmrsfs10，向量场f使用Times-BoldItalic；符号排印根据XML与图像共同核对，而非依据乱码化的纯文本。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+        "actual": "6b49092c1683ec281b106c8b7b69853d2ce0304a1aaf107334678bc1361927ff",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "Suppose that the system under study has a well defined flow map $\\mathcal F_t$ defined on the phase space (which is assumed to exclude any singular points of the potential energy function). The solution of the initial value problem, $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, $\\boldsymbol z(0)=\\boldsymbol\\zeta$, may be written $\\boldsymbol z(t;\\boldsymbol\\zeta)$ (with $\\boldsymbol z(0;\\boldsymbol\\zeta)=\\boldsymbol\\zeta$), and the flow-map $\\mathcal F_t$ satisfies $\\mathcal F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t;\\boldsymbol\\zeta)$: A one-step method, starting from a given point, approximates a point on the solution trajectory at a given time $h$ units later. Such a method defines a map $\\mathcal G_h$ of the phase space as illustrated in Fig. 2.1.",
+        "proposed": "Suppose that the system under study has a well defined flow map $\\mathscr F_t$ defined on the phase space (which is assumed to exclude any singular points of the potential energy function). The solution of the initial value problem, $\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z)$, $\\boldsymbol z(0)=\\boldsymbol\\zeta$, may be written $\\boldsymbol z(t,\\boldsymbol\\zeta)$ (with $\\boldsymbol z(0,\\boldsymbol\\zeta)=\\boldsymbol\\zeta$), and the flow-map $\\mathscr F_t$ satisfies $\\mathscr F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t,\\boldsymbol\\zeta)$. A one-step method, starting from a given point, approximates a point on the solution trajectory at a given time $h$ units later. Such a method defines a map $\\mathscr G_h$ of the phase space as illustrated in Fig. 2.1."
+      },
+      "context_notation": {
+        "current": [
+          "$\\mathcal F_t(\\zeta)$为给定实际ODE解；$\\mathcal G_h$为单步近似映射；近似质量由后面的误差定义衡量。"
+        ],
+        "proposed": [
+          "$\\mathscr F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t,\\boldsymbol\\zeta)$为给定实际ODE的流；初值为$\\boldsymbol z(0,\\boldsymbol\\zeta)=\\boldsymbol\\zeta$。",
+          "$\\mathscr G_h$为相空间上的单步近似映射，其目标是$h$时间单位后的实际流$\\mathscr F_h$；图2.1标$\\boldsymbol z_1=\\mathscr G_h(\\boldsymbol\\zeta)$并与$\\boldsymbol z(h,\\boldsymbol\\zeta)=\\mathscr F_h(\\boldsymbol\\zeta)$比较。",
+          "该相空间被假定排除势能函数的所有奇异点；本段未规定定量误差、收敛性或误差阶，近似质量由后面的误差定义衡量。",
+          "原页使用RSFS花体流映射符号，故记作$\\mathscr F_t,\\mathscr G_h$；原页解记号中时间与初值以逗号分隔。"
+        ]
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.1-Convergence",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH02_result.json",
+    "raw_sha256": "74c1d68e57123f8d157d970a07c8852c57667f2f17ba94d8d7c37d6ee8ccd889",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.convergence",
+      "verdict": "PASS",
+      "explanation": "已将 BATCH02.md 的 Lean 块与实际 /workspace/Ch02.lean 对应声明核对，一致。本次哈希键 Blueprint/Ch02.lean 绑定实际读取的 /workspace/Ch02.lean（附件为扁平存放），未以不存在的路径或依赖段内标注哈希代替整附件字节哈希。Ch02_deps.txt 的 ReviewDefinitions.lean:2816 将 Q n 展开为 Fin n → ℝ，即有限维实坐标向量，标准函数空间范数为最大坐标范数；原条目未指定必须使用欧氏范数，且有限维范数等价，收敛与阶上界不受此选择影响。OneStepConvergence.lean:1443–1444 的 oneStepIterate G h z₀ k = (G h)^[k] z₀；1460–1463 的 oneStepMaxError = (Finset.range (ν+1)).sup′ nonempty (fun k => ‖(G h)^[k](γ 0) − γ((k:ℝ)*h)‖)。sup′ 在非空有限实数集合上为真正最大值，range(ν+1) 正好为0,…,ν，包含初末节点，不是只有末节点，也没有替换初值。 因而在固定 τ>0、h=τ/ν 的原文网格语境下，Tendsto atTop (𝓝 0) 展开为对每个 ε>0，存在自然数阈值 N，使所有 ν≥N 的全部节点误差最大值小于 ε；阈值可依赖 G、γ、τ、ε。这忠实表达任意精度和足够小步长。ν=0 的零除按 Lean 全函数约定处理，但有限前缀不影响极限。[EXTRA] 固定时间窗和网格受 PDF78/印刷56页上下文支持；无需给定义本身额外加 ODE 或正则性假设，因为这里只定义相对于给定准确曲线的误差性质。τ 未限制的接口是扩展；τ=0 或负时间的值不应冒充原文正时间窗的断言。注释“τ>0在具体定理中明示”不精确：本批 theorem_2_1 为0≤τ，且库明确单独处理τ=0；这是说明文字需修订，不是收敛谓词在原文使用域内的错误。无本条[ERRATUM?]。证明状态单列：这是定义，无直接sorry；本次不作编译或传递公理检查。",
+      "counterexample": null,
+      "suggested_fix": "仅建议澄清说明文字：定义用于固定τ>0的时间窗；本批Euler定理实际采用τ≥0并显式涵盖τ=0，应将“τ>0在具体定理中明示”改为与此相符的表述。不需要为此改变本条收敛谓词。"
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第77页（印刷第55页），§2.1 第二段：从 The convergence of a numerical method refers to the ability 到 by using small enough timesteps，逐句核对与 statement_latex 一致；本句无独立展示公式。",
+        "教材 PDF 第78页（印刷第56页）：We assume that τ, the length of the time interval, is fixed；同段 νh=τ、t_n=nh，Theorem 2.1 的展示式为 bar e := max_{0≤n≤ν} e_n ≤ C(τ)h。context_notation 对固定时间窗、h=τ/ν 和最大节点误差所在页的引用正确。",
+        "本条为定义性文字，原页没有独立证明；proof_latex=null、proof_discussion_latex=null 与 proof_note 相符。页码满足55+22=77。",
+        "已直接查看原 PDF 渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-077.png 和 page-078.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+        "actual": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.1-Order",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH02_result.json",
+    "raw_sha256": "74c1d68e57123f8d157d970a07c8852c57667f2f17ba94d8d7c37d6ee8ccd889",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.order",
+      "verdict": "PASS",
+      "explanation": "已将 BATCH02.md 的 Lean 块与实际 /workspace/Ch02.lean 对应声明核对，一致。本次哈希键 Blueprint/Ch02.lean 绑定实际读取的 /workspace/Ch02.lean（附件为扁平存放），未以不存在的路径或依赖段内标注哈希代替整附件字节哈希。Ch02_deps.txt 的 ReviewDefinitions.lean:2816 将 Q n 展开为 Fin n → ℝ，即有限维实坐标向量，标准函数空间范数为最大坐标范数；原条目未指定必须使用欧氏范数，且有限维范数等价，收敛与阶上界不受此选择影响。OneStepConvergence.lean:1443–1444 的 oneStepIterate G h z₀ k = (G h)^[k] z₀；1460–1463 的 oneStepMaxError = (Finset.range (ν+1)).sup′ nonempty (fun k => ‖(G h)^[k](γ 0) − γ((k:ℝ)*h)‖)。sup′ 在非空有限实数集合上为真正最大值，range(ν+1) 正好为0,…,ν，包含初末节点，不是只有末节点，也没有替换初值。 量词为固定 G、γ、τ、r 后 ∃K>0，∃ν₀>0，∀ν≥ν₀，最大误差≤K(τ/ν)^r。K和阈值可依赖问题及时间长度，但不能依赖后选的ν；同时控制全部节点，完整保留固定时间区间的全局误差上界。原文用上界定义第三阶，未要求非零误差下界或“最佳阶”，故本签名无需添加这类条款。[EXTRA] r:ℕ 是已登记的一般化，取r=3直接回到原句；r=0只表O(1)，不能据此声称收敛。ν₀>0排除分母零；在原文τ>0域内将K增大到严格正不损失任何上界。h=τ/ν 来自原文固定网格，足够大ν等价该网格上足够小正步长；本条不宣称非网格步长或统一所有曲线的额外结论。τ:ℝ 的域外扩展不改变正时间窗含义，但应在使用说明中明确τ>0。无[ERRATUM?]。证明状态单列：定义，无直接sorry，不据此推断整个工程无sorry或已编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第77页（印刷第55页），§2.1 第二段：The order of accuracy is the exponent in the power law；第三阶例子明确写 global error (on a fixed finite time interval) can be bounded by Kh^3。",
+        "同段紧接条件为 h is a sufficiently small timestep，K depends on the length of the time interval and the features of the problem，且 is independent of h；statement_latex 保留这些文字及 Kh^3，无遗漏假设。",
+        "context_notation 明确将 r=3 标为原文例子、一般自然数阶标为形式化扩展；h=τ/ν 由 PDF78（印刷56页）的 νh=τ 支持，未伪称为 PDF77 的原句。",
+        "本条没有独立证明，proof_latex=null、proof_discussion_latex=null 与原文相符；55+22=77。已查看渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-077.png 及 page-078.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+        "actual": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.1-Error",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH02_result.json",
+    "raw_sha256": "74c1d68e57123f8d157d970a07c8852c57667f2f17ba94d8d7c37d6ee8ccd889",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.maximumError",
+      "verdict": "PASS",
+      "explanation": "已将 BATCH02.md 的 Lean 块与实际 /workspace/Ch02.lean 对应声明核对，一致。本次哈希键 Blueprint/Ch02.lean 绑定实际读取的 /workspace/Ch02.lean（附件为扁平存放），未以不存在的路径或依赖段内标注哈希代替整附件字节哈希。已展开 OneStepConvergence.lean:1443–1444、1460–1463：maximumError G γ h ν = max_{0≤k≤ν} ‖(G h)^[k](γ 0)−γ((k:ℝ)*h)‖。ReviewDefinitions.lean:2819–2821 同时给出 meshTime h k = k*h、nodeError G γ h k = ‖oneStepIterate G h (γ 0) k−γ(meshTime h k)‖，所以原文逐点 e_k 与 t_k=kh 条款确实有正式展开，最大值接口没有换用其他误差定义。原文的z_k是单步递推轨迹，准确初始化z₀=γ(0)来自章内上下文；νh=τ、固定τ是使用参数的网格关系，不是独立误差函数必须额外证明的条件。最大量来自本条context_notation明确登记的紧接定理，包含两个端点。[EXTRA] 实范数空间泛化可实例化为教材有限维向量空间，不新增光滑、ODE或留域条件；这里原文也未指定某一特定范数。无需新增定义：正式库已有nodeError。无[ERRATUM?]。证明状态单列：maximumError、oneStepIterate、oneStepMaxError、nodeError为定义，无直接sorry；未执行编译或传递公理审计。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第78页（印刷第56页），Theorem 2.1 上方段落：approximate solution vectors 为 z_0,z_1,…,z_ν，νh=τ；τ 为固定时间区间长度，ν 为总步数，增大 ν 时同比减小步长。这些原句在 statement_latex 中完整保留。",
+        "同段逐点定义为 e_n=‖z_n−z(t_n)‖，where t_n=nh；it clearly depends on h。范数、减法、时间下标均与 JSON 一致。",
+        "同页紧接 Theorem 2.1 的展示式为 bar e := max_{0≤n≤ν} e_n ≤ C(τ)h；context_notation 将最大误差归于该定理并注明包含 n=0，正确地区分了逐点误差和最大误差。",
+        "本条为定义，原页无独立证明，proof_latex=null、proof_discussion_latex=null 正确；56+22=78。已查看渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-078.png 和 theorem-upper-crop.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+        "actual": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.1-Thm2.1",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH02_result.json",
+    "raw_sha256": "74c1d68e57123f8d157d970a07c8852c57667f2f17ba94d8d7c37d6ee8ccd889",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.theorem_2_1",
+      "verdict": "PASS",
+      "explanation": "已将 BATCH02.md 的 Lean 块与实际 /workspace/Ch02.lean 对应声明核对，一致。本次哈希键 Blueprint/Ch02.lean 绑定实际读取的 /workspace/Ch02.lean（附件为扁平存放），未以不存在的路径或依赖段内标注哈希代替整附件字节哈希。Notation.lean:844 的 Position m = EuclideanSpace ℝ (Fin m)，为欧氏m维实空间。EulerConvergence.lean:897–902 展开 eulerStep f h x=x+h•f x、eulerIterate f h x₀ k=(eulerStep f h)^[k]x₀；918–921 展开 eulerMaxError=max_{0≤k≤ν} ‖eulerIterate f h (γ 0) k−γ((k:ℝ)*h)‖，range和sup′含义同前。签名保留 D 有界开放、f在D上C¹、γ在闭区间留于D且满足ODE。由0≤τ及MapsTo得到γ(0)∈D，由开放得到ζ=γ(0)是内点；无需独立ζ参数。唯一性量词遍历所有同初值、在本时间窗留域并满足相同ODE的η，结论是在整个[0,τ]与γ一致。HasDerivWithinAt描述区间内导数，正时间窗端点为单侧导数，与仅要求本时间窗的解一致；不会额外约束曲线在时间窗外的行为。结论为∃C>0，∃ν₀>0，∀ν≥ν₀，合取∀k≤ν数值点∈D与最大误差≤Cτ/ν，两个结论完整且C、阈值均在ν之前选择。[EXTRA] 时间长度τ≥0合理显式化，τ=0时Euler步为恒等、所有节点误差为0并留于D，属于成立的退化扩展；环境全函数f只在D要求C¹，域外值不影响已证明留域的迭代；ν₀>0排除零除。开放region的连通性不是误差估计所需条件，任意开放D的扩展仍涵盖原命题。wrapper保留_hunique而证明体不使用它，只说明库有更强结果，不构成签名遗漏。无本条[ERRATUM?]。证明状态单列：实际wrapper为exact MolecularDynamics.theorem_2_1_euler；依赖文件1191–1216完整提供该定理并分别处理τ=0、τ>0，整段EulerConvergence源码没有直接sorry/admit。此文本检查不等于重新编译或审计所有Mathlib传递公理；本次PASS仅为签名语义。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第78页（印刷第56页），Theorem 2.1：D 为 R^m 中 bounded, open region，f:D→R^m continuously differentiable；ζ 为 interior point，初值问题(2.1)有 unique solution 且在 t∈[0,τ] 留在D。这些原文对象和前提均在 statement_latex 中保留。",
+        "同一定理后半：存在 C(τ)>0，对 sufficiently large ν∈N，数值点 z_n 在 n=0,1,…,ν 时仍在D，hν=τ，并且 bar e := max_{0≤n≤ν}e_n ≤ C(τ)h。JSON 同时保留留域及最大误差两个结论，严格正常数、指标范围和公式均正确。",
+        "context_notation 所引初值由 PDF76（印刷54页）的 z(0)=ζ、z_0=ζ 支持；同页 Euler 递推为 z_{n+1}=z_n+h f(z_n)。PDF75（印刷53页）给出(2.1)的 ż=f(z)；PDF78 上段给 e_n、t_n=nh、νh=τ。因此 ζ=γ(0) 及相关上下文引用一致。",
+        "Theorem 2.1 后是 bar e=O(h) 和一阶精度的解释，随后进入§2.1.1；未给独立完整证明。proof_latex=null、proof_discussion_latex=null 和 proof_note 正确。56+22=78。",
+        "已直接查看渲染图 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH02/page-078.png、theorem-upper-crop.png、theorem-crop.png，以及 context-075.png、context-076.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+        "actual": "61b43f6f7dc79fe10e6e29c1f3dc30edb95806fd4beab0632dba5dc4ceb8a008",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.1.2-SecondDerivative",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH03_result.json",
+    "raw_sha256": "b7aa73bf572e9d5d21c419527983bb7fd350ce7dbb3b356822caf822831cd5c4",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.odeSecondDerivative",
+      "verdict": "PASS",
+      "explanation": "PASS。实际读取的 Blueprint/Ch02.lean 附件副本是 /workspace/Ch02.lean；input_sha256 绑定该副本实际字节。Ch02_deps.txt 第2816行展开 MolecularDynamics.Chapter02Review.Q n = Fin n → ℝ，即 n 个实坐标，采用函数空间逐点加法与实标量乘法及有限维范数；它与原文 ℝᵐ 的对象一致（标准有限维范数等价不影响此导数恒等式）。实际签名依次量化 n、f、γ，假设全域 ContDiff ℝ 1 f、全实线 ContDiff ℝ 2 γ 及 ∀t HasDerivAt γ (f (γ t)) t，然后对每个实数时刻断言 deriv γ 的导数为 fderiv ℝ f (γ t) 作用于 f (γ t)。HasDerivAt 的导数唯一性给出 deriv γ = f ∘ γ，链式法则给出原展示式全部等号，并非仅形式相似的自定义导数。fderiv 是实际 Fréchet 导数，在已假设可微的点对应 Jacobian。[EXTRA] γ 全域 C² 合理但冗余：C¹ 向量场和实际可微 ODE 解已足以导出结论，源证明也未使用 hγ；全域 C¹ 与全实线解是强于存在区间版本的明确资格，结论在该资格下忠实表达原公式，不宣称覆盖每个局部解。本条未有 [ERRATUM?]，未发现原公式疑误。正文为链式法则证明且无 sorry/admit；本次没有编译工程，此文本证明状态独立于签名语义判定。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_ASSUMPTION_NOT_EXPLICIT"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.1.2-SecondDerivative",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.1.2",
+        "printed_page": "59",
+        "pdf_page": "81",
+        "statement_latex": "and the second derivative is obtained by differentiating the differential equation itself:\n\\[\\ddot{\\boldsymbol z}(t)=\\frac{\\mathrm d}{\\mathrm dt}\\dot{\\boldsymbol z}(t)=\\frac{\\mathrm d}{\\mathrm dt}f(\\boldsymbol z(t))=f'(\\boldsymbol z(t))\\dot{\\boldsymbol z}(t)=f'(\\boldsymbol z(t))f(\\boldsymbol z(t)),\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "PDF 第81页（印刷第59页）先写 $\\dot{\\boldsymbol z}_n=f(\\boldsymbol z_n)$，随后用链式法则得到 $\\ddot{\\boldsymbol z}(t)=f^{\\prime}(\\boldsymbol z(t))\\dot{\\boldsymbol z}(t)=f^{\\prime}(\\boldsymbol z(t))f(\\boldsymbol z(t))$。同页明确说明：$\\boldsymbol z\\in\\mathbb R^m$，$f:\\mathbb R^m\\to\\mathbb R^m$，$f^{\\prime}(\\boldsymbol z)$ 是 $m\\times m$ Jacobian，$(f^{\\prime}(\\boldsymbol z))_{ij}=\\partial f_i/\\partial z_j$，亦记为 $\\partial f/\\partial\\boldsymbol z$。本段未显式写出 $f\\in C^1$；全域 $C^1$ 是本条 Lean 陈述采用的充分正则性假设，不能作为原页明示假设记录。"
+        ],
+        "issues": [
+          "[CONTEXT_ASSUMPTION_NOT_EXPLICIT] 原 context_notation 未区分原页实际记号说明与形式化所加的全域 C¹ 假设；已明确两者来源。陈述公式、proof_latex 和页码未改，未对原书作数学修正。"
+        ],
+        "lean_decl": "MD.Ch02.odeSecondDerivative",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "Lean 明示 ContDiff ℝ 1 f，即向量场在整个 Q n 上 C¹；PDF 第81页本段只使用导数和 Jacobian，未逐字声明该全域正则性。",
+          "解 γ 取全实线 C²；在 f 为 C¹ 且 γ 满足实际 ODE 的条件下，此条件不必另行假设，可由链式法则推出，因此是合理但冗余的 [EXTRA]。",
+          "Lean 量化全实线上的解和所有实数时刻；原页公式也可在实际解的存在时间区间逐点解释。全实线资格强于局部区间版本。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH03 A 原文审校：根据 PDF 第81页渲染和文字提取修订 context_notation，并补记实际 Lean 签名中的全域正则性和时间域资格；保留原 statement_latex、proof_latex、页码及所有其余条目字段。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png; input_sha256.json"
+      },
+      "issues": [
+        "statement_latex 的引文、链式法则展示式、末尾逗号与原页相符；printed_page=59、pdf_page=81 和 section=2.1.2 正确。原页没有另外的独立证明，proof_latex=null 正确，计算已收入 statement_latex。",
+        "context_notation 原写“f∈C¹”，但 PDF 第81页本段没有明示全域 C¹ 条件。它是可用于证明该公式的充分条件，也是 Lean 签名的实际前提，应明确标为形式化所加资格。修正仅澄清上下文和额外假设的来源，不改原书公式。"
+      ],
+      "evidence": [
+        "PDF 第81页／印刷第59页，Example 2.1 中短语“and the second derivative is obtained by differentiating the differential equation itself:”与 JSON 引文一致；随后展示五项相等的链式法则计算，末项为 f′(z(t))f(z(t))，末尾为逗号。",
+        "同页紧邻前句“In this formula”给出 ż_n=f(z_n)；同页 Jacobian 说明明确给出 z∈ℝᵐ、f:ℝᵐ→ℝᵐ、(f′(z))_ij=∂f_i/∂z_j 及替代记号 ∂f/∂z，没有显式 C¹ 声明。",
+        "已实际查看 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png，并对照 page-081.txt；PDF 页眉的印刷页码是59，满足59+22=81。",
+        "/workspace/Ch02.lean 第69—76行与 BATCH03 的 odeSecondDerivative 签名摘录一致；第70行显式给出 ContDiff ℝ 1 f 和 ContDiff ℝ 2 γ。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "1ca97005ec475ec4032cf5a83b43dd1c234d084435e0c6e2e6c69aa3b55b11eb",
+        "actual": "1ca97005ec475ec4032cf5a83b43dd1c234d084435e0c6e2e6c69aa3b55b11eb",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {
+      "context_notation": {
+        "current": [
+          "$f\\in C^1$，$\\dot z=f(z)$；$f'$为实际Fréchet导数/Jacobian。"
+        ],
+        "proposed": [
+          "PDF 第81页（印刷第59页）先写 $\\dot{\\boldsymbol z}_n=f(\\boldsymbol z_n)$，随后用链式法则得到 $\\ddot{\\boldsymbol z}(t)=f^{\\prime}(\\boldsymbol z(t))\\dot{\\boldsymbol z}(t)=f^{\\prime}(\\boldsymbol z(t))f(\\boldsymbol z(t))$。同页明确说明：$\\boldsymbol z\\in\\mathbb R^m$，$f:\\mathbb R^m\\to\\mathbb R^m$，$f^{\\prime}(\\boldsymbol z)$ 是 $m\\times m$ Jacobian，$(f^{\\prime}(\\boldsymbol z))_{ij}=\\partial f_i/\\partial z_j$，亦记为 $\\partial f/\\partial\\boldsymbol z$。本段未显式写出 $f\\in C^1$；全域 $C^1$ 是本条 Lean 陈述采用的充分正则性假设，不能作为原页明示假设记录。"
+        ]
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.1.2-Taylor2",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH03_result.json",
+    "raw_sha256": "b7aa73bf572e9d5d21c419527983bb7fd350ce7dbb3b356822caf822831cd5c4",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.taylorSecond",
+      "verdict": "PASS",
+      "explanation": "PASS。Ch02_deps.txt 第2816行展开 Q n = Fin n → ℝ，故 z 与 f z 是实际有限维实向量；加法和 • 分别是向量加法与实数标量乘法。Ch02.lean 第79—80行完整定义为 z + h • f z + (h²/2) • (fderiv ℝ f z) (f z)，因此对象、任意步长 h、系数、求导点、作用顺序以及三项之和均与原页 G_h 一致；以 z_n 为输入并将输出定义为 z_{n+1} 即给出同页递推公式。依赖合集第2827—2828行的 taylor2 具有完全相同定义体，后续阶定理确实使用同一个映射。fderiv 是实际 Fréchet 导数；原文的 Jacobian 解释限定于可微向量场，Lean def 的全函数化在不可微点也赋值，不构成原文对不可微情形的额外数学断言。作为映射公式定义，无须把可微性作为 def 的参数；需要使用 Jacobian 语义的性质应另有可微性资格，本批阶定理已有更强 C⁶ 假设。本条无 [EXTRA]、无 [ERRATUM?]，未发现疑误。定义有完整体且不含 sorry/admit，未声称重新编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF 第81页／印刷第59页，Example 2.1 中“so one may write the 2nd order Taylor series method as”之后的递推式为 z_{n+1}=z_n+hf(z_n)+(h²/2)f′(z_n)f(z_n)，系数1/2、h²、导数作用顺序和句点均与 JSON 一致。",
+        "紧接“This method generates the flow map approximation”后的公式为 G_h(z)=z+hf(z)+(h²/2)f′(z)f(z)，与 statement_latex 的第二个展示式一致。",
+        "context_notation 的 Jacobian 英文段落、m×m 维数、ij 分量及替代记号与同页正文一致；换行和数学排版转换未改变文字或公式。",
+        "原页此处是方法与映射的定义，没有独立证明段，proof_latex=null 正确。section=2.1.2、Example 2.1 的标签及59+22=81均相符。",
+        "已实际查看 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png，并对照 page-081.txt；/workspace/Ch02.lean 第79—80行的定义体与 BATCH03 的 Lean 摘录一致。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "1ca97005ec475ec4032cf5a83b43dd1c234d084435e0c6e2e6c69aa3b55b11eb",
+        "actual": "1ca97005ec475ec4032cf5a83b43dd1c234d084435e0c6e2e6c69aa3b55b11eb",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.1.2-Taylor2Order",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH03_result.json",
+    "raw_sha256": "b7aa73bf572e9d5d21c419527983bb7fd350ce7dbb3b356822caf822831cd5c4",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.taylor2Order",
+      "verdict": "PASS",
+      "explanation": "PASS。展开依赖合集第2941—2945行：compactTrajectory f γ τ 正好是 0<τ、ContDiff ℝ 6 f、solution f γ 0 τ、ContinuousOn γ (Icc 0 τ) 的合取；solution 是对每个 t∈[0,τ] 要求 HasDerivWithinAt γ (f (γ t)) [0,τ] t。故 γ 是实际 ODE 轨迹，闭窗端点也包括在内；并无全域轨迹 C⁶、全局 Lipschitz、预设误差界或数值留域前提。连续轨迹在有限维空间的紧时间窗有紧像，不需要额外假设名称所暗示的另一种紧性。第2827—2828行 taylor2 是 z+h f(z)+(h²/2)Df(z)f(z)，与 taylorSecond 定义体相同。第2824—2826行 globalOrder 展开为先存在 C>0，再存在自然数 ν₀>0，使所有 ν≥ν₀ 满足 oneStepMaxError G (τ/ν) γ ν≤C(τ/ν)^2；C 与阈值可以依赖已量化的 n、f、γ、τ，但不依赖随后量化的 ν。第1443—1444行 oneStepIterate 是 (G h)^[k] z₀；第1460—1463行 oneStepMaxError 是 k=0,…,ν 上 ‖(G h)^[k](γ 0)−γ(kh)‖ 的有限最大值，数值初值等于精确初值，覆盖全窗，且正阈值避免零网格。因此结论确实是固定有限时间窗上的全局 O(h²)，没有偷换为一步局部误差、误差极限或精确阶下界。Q n=Fin n→ℝ 的标准函数范数与有限维其他标准范数等价，允许改变 C 而不改变二阶。[EXTRA] 全域 C⁶ 远强于二阶所需但合理；τ>0 和真实解资格使有限窗阶断言有明确适用范围，ContinuousOn 与有限窗内实际解相容，未将待证稳定性作假设。无需预先假设数值迭代留域：在光滑向量场轨迹的紧邻域内建立局部误差和稳定性，再对充分细网格证明留在邻域，是该结论的证明义务。本条无 [ERRATUM?]，原文二阶称谓未发现疑误。Ch02.lean 第87行仍为 sorry；证明未完成与上述签名语义 PASS 分开，本次仅只读审计且不写证明、不编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF 第81页／印刷第59页，Example 2.1 的第一次二阶截断展示式后原句是“which is referred to as the 2nd order Taylor series method.”，与 statement_latex 逐字一致，包括 2nd 和末尾句点。",
+        "同页前段将高阶方法关联到固定有限时间区间的 global error estimate，展示 ē≈C(τ)hʳ，r>1；同页后续两式明确此处的二阶 Taylor 方法。context_notation 指向这些真实上下文，未把局部一步误差误记成全局误差。",
+        "为核对全局阶的含义，还实际查看 PDF 第77页／印刷第55页的 order of accuracy 段：固定有限时间区间的误差由 K hʳ 控制，充分小步长下 K 独立于 h；这说明二阶是全局 O(h²) 资格，而非要求每个特殊向量场都恰好只有二阶。",
+        "原页没有该阶断言的独立证明，proof_latex=null 与 proof_note 相符；section=2.1.2、Example 2.1 标签、印刷页59及PDF页81相符。",
+        "页图证据为 /workspace/.mathcopilot/reviews/ch02/evidence/BATCH03/page-081.png 和 page-077.png；提取文字另存同目录 page-081.txt、page-077.txt。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "1ca97005ec475ec4032cf5a83b43dd1c234d084435e0c6e2e6c69aa3b55b11eb",
+        "actual": "1ca97005ec475ec4032cf5a83b43dd1c234d084435e0c6e2e6c69aa3b55b11eb",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.2-VerletOrder",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH04_result.json",
+    "raw_sha256": "b0ddc62cf9adc3108d1adbdb139b9f97e8eb4a0680c99a0380c6fd8a56561a5b",
+    "reported_verdict": "FAIL",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.verletOrder",
+      "verdict": "FAIL",
+      "explanation": "已重新展开本条全部自定义依赖，而非依名称判断。版本绑定的 Blueprint/Ch02.lean 是实际提供的 /workspace/Ch02.lean（第89–97行），没有假定存在另一份 Blueprint 文件。Ch02_deps.txt 第2816–2817行：Q n = Fin n → ℝ，Z n = Q n × Q n，故维数为2n。第2842–2843行附近 invMass m w 的逐坐标值是 (m i)⁻¹ * w i；第2948行 positiveMass m = ∀ i, 0 < m i，确实要求固定正对角质量。关键对象差异：第2946–2947行 mechanicalField m F (q,w) = (M⁻¹w,F(q))，实际解满足 q̇=M⁻¹w、ẇ=F(q)，第二分量是动量p，而非原文 PDF82/印刷60 的速度v；原文是 q̇=v、Mv̇=F(q)。第2859–2861行 verlet 使用 qnew=q+h M⁻¹p+(h²/2)M⁻¹F(q)，pnew=p+(h/2)(F(q)+F(qnew))，是正确的动量坐标 Verlet，但缺少 p=Mv 的显式坐标桥接。本 FAIL 是原文对象与实际接口不一致，并不声称该动量坐标阶定理在数学上为假；固定可逆质量下两者线性共轭，可修复。第2941–2943行 solution 是对闭区间 Icc a b 每个 t 要求 HasDerivWithinAt γ (f(γ t)) (Icc a b) t，含两端单侧导数，实际 ODE 并非仅用总导数函数赋值。第1443–1444行 oneStepIterate=(G h)^[k] z₀；第1460–1462行 oneStepMaxError 是 Finset.range (ν+1) 上 ‖(G h)^[k](γ 0)−γ(kh)‖ 的有限最大值，确实从实际初值出发测量所有0≤k≤ν的完整相空间全局误差，包含终点，不是单步缺陷。Q 使用有限函数空间范数，Z 使用积范数，有限维范数等价不改变二阶上界。量词：n,m,F,γ,τ先全称量化；五项假设后存在 C>0及ν₀>0，再对所有ν≥ν₀给出h=τ/ν的Ch²上界；常数可依赖固定数据，不可依赖ν。这忠实表达至少二阶的固定时间窗全局精度；原句不要求每一特殊系统精确阶恰为2。[EXTRA] 固定正对角质量是合理分子模型限制，但一般可逆常质量已足够，正性和对角性不是阶性质的必要条件；全域C⁴力是合理充分条件，强于轨迹邻域所需，非必要；τ>0是正步长时间窗约定；solution合理限定到已有实际解，不宣称任意初值全局存在；ContinuousOn γ (Icc 0 τ)由每点 HasDerivWithinAt 的连续性已蕴含，冗余但合理。原文的常能量分子动力学是适用对象，不是数值严格能量守恒结论；流行程度及别名不是独立可形式化误差子句。本条无[ERRATUM?]，没有发现原文数学错误；对象差异来自形式化而非原书。证明状态单独记录：Ch02.lean 第97行 sorry，未证明，与上述签名 FAIL 独立。本次未改附件、未补证明、未编译。",
+      "counterexample": "对象识别反例（不是动量阶定理反例）：n=1，m₀=2，F≡0，τ=1，取原文速度轨迹 γv(t)=(t,1)。它满足 q̇=v=1、2v̇=0，但 mechanicalField m F (t,1)=(1/2,0)，所以该原文轨迹不满足当前 solution 假设。若按速度解释当前 verlet，则它把(q,v)=(0,1)更新为(h/2,1)，而原文自由运动应为(h,1)，固定终时刻1的位置误差为1/2，不随h消失。当前声明实际应输入动量轨迹γp(t)=(t,2)，此时方法正确；因此问题是缺少坐标转换，而不是现有签名的数值反例。",
+      "suggested_fix": "首选使本条直接保持原文速度对象：本条的场改为(q,v)↦(v,invMass m (F q))，误差中的方法改用库已定义的 velocityVerlet（Ch02_deps.txt 第2855–2858行：vhalf=v+(h/2)M⁻¹F(q)，qnew=q+h vhalf，vnew=vhalf+(h/2)M⁻¹F(qnew)）。不要直接全局修改 mechanicalField/ verlet，以免影响本批外的动量声明。或者保留当前动量定理并显式新增本条坐标解释/桥接：T_m(q,v)=(q,Mv)，γp=T_m∘γv，证明原文速度ODE与当前solution对应、T_m∘velocityVerlet=verlet∘T_m，并用固定线性同构的范数界传递二阶误差。标明正对角质量与C⁴为充分但非必要限制；闭区间连续性可保留并注明冗余。本次只提出修复建议，不修改工程。"
+    },
+    "returned_json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "MATH_TYPOGRAPHY_MISMATCH",
+        "CONTEXT_NOTATION_MISSING",
+        "PROOF_NOTE_SCOPE_OVERBROAD"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.2-VerletOrder",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "2.2",
+        "printed_page": "60",
+        "pdf_page": "82",
+        "statement_latex": "The Verlet method (also known as leapfrog or Störmer-Verlet) is a second order method that is popular for molecular simulation. It is specialized to problems that can be expressed in the form $\\dot{\\boldsymbol q}=\\boldsymbol v$, $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$, with even dimensional phase space $\\mathbb R^{2\\mathrm{N}_c}$, which includes constant energy molecular dynamics.",
+        "proof_latex": null,
+        "proof_note": "本条所引 PDF 第82页（印刷第60页）仅陈述 Verlet 的二阶性质，未在该页附独立证明；本批不对后续节是否给出完整证明作结论。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$\\boldsymbol q$ 与 $\\boldsymbol v$：本句机械系统的位置与速度向量；原式为 $\\dot{\\boldsymbol q}=\\boldsymbol v$。依据：PDF 第82页（印刷第60页）§2.2 首段。",
+          "$\\boldsymbol M$：质量矩阵；本页稍后的文字明确为“the mass matrix”。本条首段未额外声明正性或对角性，不能把 Lean 的这些附加限制写成原句假设。依据：PDF 第82页（印刷第60页）。",
+          "$\\boldsymbol F(\\boldsymbol q)$：本句右端仅依赖位置的力向量，满足 $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$；该句未给出势函数表达式。依据：PDF 第82页（印刷第60页）§2.2 首段。",
+          "$\\mathbb R^{2\\mathrm{N}_c}$：原句给出的偶数维相空间，$\\mathrm{N}_c$ 表示对应配置变量的分量数；本页未单独展开其与粒子数的关系，不补入 $\\mathrm{N}_c=3N$ 等约定。依据：PDF 第82页（印刷第60页）§2.2 首段。"
+        ],
+        "issues": [
+          "数学排版转录不一致：PDF 第82页首段的 M、F 均为粗斜体，原 JSON 只对 q、v 使用粗体；修订为 \\boldsymbol M、\\boldsymbol F。相空间维数中的 N 在页图及字体记录中为正体，修订为 \\mathrm{N}_c。英文措辞、两个微分方程及维数 2N_c 均保留原文，不涉及原书勘误。",
+          "context_notation 原为空；补入该页有据可查的 q、v、M、F 和相空间维数说明，明确区分原文与 Lean 的附加条件，不引入梯度力、正对角质量或粒子数关系等未在本句说明的假设。",
+          "原 proof_note 的“原书未给独立完整证明”超出本批已核对页面的证据范围；改为仅报告本页未附独立证明。proof_latex 和 proof_discussion_latex 均维持 null。"
+        ],
+        "lean_decl": "MD.Ch02.verletOrder",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "固定正对角质量、力全域C⁴、τ>0及实际解在闭时间窗连续；原文未逐一给出的阶定理正则性显式列出。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH04 原文审校：根据 PDF 第82页（印刷第60页）页图及字体信息修订数学排版，补充记号上下文，将 proof_note 限定为本批已核对页；不修改原书疑误或 Lean 文件。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF 第82页 = 印刷第60页 + 22；页图：/workspace/.mathcopilot/reviews/ch02/BATCH04_evidence/pdf82.png；已对照 pdftotext 文本及 pdftohtml 字体记录。"
+      },
+      "issues": [
+        "数学排版转录不一致：PDF 第82页首段的 M、F 均为粗斜体，原 JSON 只对 q、v 使用粗体；修订为 \\boldsymbol M、\\boldsymbol F。相空间维数中的 N 在页图及字体记录中为正体，修订为 \\mathrm{N}_c。英文措辞、两个微分方程及维数 2N_c 均保留原文，不涉及原书勘误。",
+        "context_notation 原为空；补入该页有据可查的 q、v、M、F 和相空间维数说明，明确区分原文与 Lean 的附加条件，不引入梯度力、正对角质量或粒子数关系等未在本句说明的假设。",
+        "原 proof_note 的“原书未给独立完整证明”超出本批已核对页面的证据范围；改为仅报告本页未附独立证明。proof_latex 和 proof_discussion_latex 均维持 null。"
+      ],
+      "evidence": [
+        "已实际渲染并目视核对教材 PDF 第82页，页眉印刷页码为60，章节标题为“2.2 The Verlet Method”；页码换算 60+22=82 正确。",
+        "PDF 第82页 §2.2 首段前两句与本条英文陈述逐句一致：包含 Verlet 的两个别名、second order、机械 ODE、偶数维相空间以及 constant energy molecular dynamics；未把其后的其他 Hamiltonian 系统推广或几何性质段落并入本条。",
+        "PDF 第82页首段原式为 $\\dot{\\boldsymbol q}=\\boldsymbol v$, $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$，相空间为 $\\mathbb R^{2\\mathrm{N}_c}$。页图与 pdftohtml 字体记录均确认 M、F 使用 Times-BoldItalic，指数 N 使用 Times-Roman。",
+        "PDF 第82页同页正文明确称 M 为“the mass matrix”；首段未单独声明正对角质量、力全域 C⁴ 或势函数表达式，故这些不补入原文陈述。",
+        "PDF 第82页本条只是未编号性质陈述，没有附属于该句的独立证明；proof_latex=null、proof_discussion_latex=null 合适。这里的结论仅限已核对页面。",
+        "Lean 证据：/workspace/Ch02.lean 第89–97行及 BATCH04.md 的同名声明已核对一致；关键库定义未随本批提供，语义不足情况在 audit 中独立登记。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "307ecb3b59aa31155a8450bb77368caa7272ceb35ce8439657d7f9993c19804e",
+        "actual": "307ecb3b59aa31155a8450bb77368caa7272ceb35ce8439657d7f9993c19804e",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {
+      "statement_latex": {
+        "current": "The Verlet method (also known as leapfrog or Störmer-Verlet) is a second order method that is popular for molecular simulation. It is specialized to problems that can be expressed in the form $\\dot{\\boldsymbol q}=\\boldsymbol v$, $M\\dot{\\boldsymbol v}=F(\\boldsymbol q)$, with even dimensional phase space $\\mathbb R^{2N_c}$, which includes constant energy molecular dynamics.",
+        "proposed": "The Verlet method (also known as leapfrog or Störmer-Verlet) is a second order method that is popular for molecular simulation. It is specialized to problems that can be expressed in the form $\\dot{\\boldsymbol q}=\\boldsymbol v$, $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$, with even dimensional phase space $\\mathbb R^{2\\mathrm{N}_c}$, which includes constant energy molecular dynamics."
+      },
+      "proof_note": {
+        "current": "原书未给独立完整证明。",
+        "proposed": "本条所引 PDF 第82页（印刷第60页）仅陈述 Verlet 的二阶性质，未在该页附独立证明；本批不对后续节是否给出完整证明作结论。"
+      },
+      "context_notation": {
+        "current": [],
+        "proposed": [
+          "$\\boldsymbol q$ 与 $\\boldsymbol v$：本句机械系统的位置与速度向量；原式为 $\\dot{\\boldsymbol q}=\\boldsymbol v$。依据：PDF 第82页（印刷第60页）§2.2 首段。",
+          "$\\boldsymbol M$：质量矩阵；本页稍后的文字明确为“the mass matrix”。本条首段未额外声明正性或对角性，不能把 Lean 的这些附加限制写成原句假设。依据：PDF 第82页（印刷第60页）。",
+          "$\\boldsymbol F(\\boldsymbol q)$：本句右端仅依赖位置的力向量，满足 $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$；该句未给出势函数表达式。依据：PDF 第82页（印刷第60页）§2.2 首段。",
+          "$\\mathbb R^{2\\mathrm{N}_c}$：原句给出的偶数维相空间，$\\mathrm{N}_c$ 表示对应配置变量的分量数；本页未单独展开其与粒子数的关系，不补入 $\\mathrm{N}_c=3N$ 等约定。依据：PDF 第82页（印刷第60页）§2.2 首段。"
+        ]
+      }
+    },
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.2.1-Lagrangian",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json",
+    "raw_sha256": "2f0bf8292d65aa32bb73a68a8e426a19530d6a6e71915b574f32867ef585b5b4",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.bp_mechanicalL",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch02.lean:100 的 bp_mechanicalL：(∑ i, m i*v i^2)/2−U q。固定参数 m:Fin n→ℝ 对应第1章固定对角 M，求和恰为 vᵀMv，减势能的符号和分母2完整；q、v 同属 Q n，U:Q n→ℝ，没有量词次序问题。此处是代数函数的总定义，在正质量及 U∈C² 的原文模型资格下限制使用即给出原式；总定义允许更多输入并不断言这些输入具有物理/光滑资格。没有 [EXTRA] 或 [ERRATUM?]。此项是定义，无 sorry 证明义务。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第82页（印刷第60页），§2.2.1：Recall from Chap. 1 之后的定义为 L(q,v)=vᵀMv/2−U(q)，紧接文字明确 U 为 smooth (C²)。已逐项核对转录、正负号、分母、变量和页码。",
+        "context_notation 中对角质量矩阵的来源已核对教材 PDF 第41页（印刷第18页），§1.2：M is a diagonal mass matrix，并列出三维情形 diag(m₁,m₁,m₁,…,m_N,m_N,m_N)。这是对本条回指第1章的上下文核对，未审查本批以外的 source_id。",
+        "该定义无独立证明；proof_latex=null 与原页一致。bp_mechanicalL 是 context_notation 的形式化说明，不是教材中的记号。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png；context-mass-041.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "actual": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.2.1-Admissible",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json",
+    "raw_sha256": "2f0bf8292d65aa32bb73a68a8e426a19530d6a6e71915b574f32867ef585b5b4",
+    "reported_verdict": "NEEDS_HUMAN",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.admissibleSmooth",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已展开 Ch02.lean:106：admissibleSmooth a b x y q 为 ContDiff ℝ ∞ q ∧ q a=x ∧ q b=y，两端点完整。正式 Q 已找到，缺失定义不再是障碍。仍需裁定原文 PDF82 同段的“all twice continuously differentiable”与后续“C∞ functions / smooth”的冲突：本定义选择后一资格，不能同时代表首句全部 C² 曲线。[EXTRA] 对全实线代表函数要求 C∞，并非区间计算所必要；若以区间限制识别曲线、选择光滑延拓为表示约定，可以合理使用，但对任意给定全局 q 与局部光滑资格并不等价，现签名也未编码曲线商或存在延拓。a<b 是时间窗语境，谓词自身未保证它。NEEDS_HUMAN 的唯一原因是原文曲线类的正则性及域含义需数学/编辑裁定，非依赖缺失。此项是定义，无 sorry。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+      "counterexample": "n=1，q(t)0=|t−1/2|³ 在 [0,1] 为 C²，端点均为1/8，却不是 C³，因而能区分原页前后两种资格；另 q(t)0=|t−2| 在 [0,1] 等于2−t，局部光滑且端点2、1，却在全线不光滑，因而不能满足当前 ContDiff ℝ ∞ q。这不排除该区间限制另有光滑延拓。",
+      "suggested_fix": "裁定 G 取 C² 还是 C∞，并明确光滑在闭区间的含义。若选 C∞，使用区间光滑谓词，或显式按限制识别曲线并用存在光滑延拓表达资格；不要把任意代表的全线光滑当作局部资格。明确 a<b 的使用约定。"
+    },
+    "returned_json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "REGULARITY_AMBIGUITY"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "转录与页码均正确，C^∞ 是渲染原页上的无穷阶符号，并非 C¹。原页先称全部 twice continuously differentiable 曲线，后称组件为 C^∞ 并将 G 定义为 smooth 曲线。两种资格并不相同，故保留原条目的 REGULARITY_AMBIGUITY，不静默统一为 C²、C¹ 或 C∞。需要对原书意图作编辑裁定。"
+      ],
+      "evidence": [
+        "教材 PDF 第82页（印刷第60页），§2.2.1 同一段：all twice continuously differentiable curves；where the components of q(t) are C^∞ functions；the class of smooth parameterized curves。三处均已对渲染页核对。",
+        "参数区间为 [α,β]，端点为 q(α)=Q、q(β)=Q′；JSON 中 Q′ 与 G(Q,Q′,α,β) 无误。proof_latex=null，无独立证明。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "actual": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.2.1-Action",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json",
+    "raw_sha256": "2f0bf8292d65aa32bb73a68a8e426a19530d6a6e71915b574f32867ef585b5b4",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.bp_action",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch02.lean:110 的 bp_action 和依赖 action，二者均为 ∫ t in a..b, L (q t) (deriv q t)。区间积分上下限为 a,b；第一个 L 参数为位置，第二个为实际时间导数，完整对应 PDF82 的作用量公式。定义在所有 L,q 上总化；原文 Γ∈G 是使用资格，不是函数体自动保证的性质，在原文光滑 L 与合格曲线上积分具经典含义。无 [EXTRA] 或 [ERRATUM?]。定义无 sorry。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第82页（印刷第60页），§2.2.1 段末：classical action (or, simply, action)；for any Γ∈G；A_L(Γ)=∫_α^β L(q(t),q̇(t)) dt。JSON 的上下限、速度参数及下标 L 均一致。",
+        "context_notation 对 q 为 Γ 的参数曲线及光滑资格的说明来自同页 G 的定义。α<β 是有向时间窗的使用约定，原页未单列此不等式。无独立证明，proof_latex=null。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "actual": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.2.1-Variation",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json",
+    "raw_sha256": "2f0bf8292d65aa32bb73a68a8e426a19530d6a6e71915b574f32867ef585b5b4",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.bp_variation",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch02.lean:114 的 bp_variation 及正式 variation，均为 q t+ε • η t，实参数 ε 在给定时间 t 对 η 作标量乘法。完全对应 PDF83 (2.3)。按条目 context_notation，函数构造本身不声称 q、η 自动合格；原文使用时 q 合格，η∈C∞ 且 η a=η b=0，因此变分曲线保持两端点并在区间光滑。该构造无需把这些资格作为计算参数。无 [EXTRA] 或 [ERRATUM?]。定义无 sorry。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第83页（印刷第61页），公式(2.3)：q^ε(t)=q(t)+εη(t)，t∈[α,β]。公式后明确 η(α)=η(β)=0，并称 η 是 C^∞ parameterized curve linking 0 to 0。JSON 转录及页码正确。",
+        "context_notation 正确把 η 的光滑性和零端点列为使用资格，并未声称仅由 q+εη 的函数体就能自动推出这些资格。该段无独立证明，proof_latex=null。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "actual": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.2.1-FirstVariation",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json",
+    "raw_sha256": "2f0bf8292d65aa32bb73a68a8e426a19530d6a6e71915b574f32867ef585b5b4",
+    "reported_verdict": "FAIL",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.firstVariation",
+      "verdict": "FAIL",
+      "explanation": "已展开 Ch02.lean:118 和正式 action、variation。量词 n,L,q,η,a,b 在前，随后 a<b、联合 L∈C²、q,η∈C²；三个结论依次是对所有 ε 的精确积分差分等式、ε=0 的实际导数等于完整第一变分积分、积分后残差为 O(ε²)。两个 fderiv 分别仅变位置/速度并作用于 η/η̇，没有遗漏一阶项。[EXTRA] a<b 和 C² 足以支持计算；全域 C² 强于局部所需，q,η∈C² 则弱于原文 C∞，但这一计算仍适用，合理且无需零端点。FAIL 是声明范围的缺失条款：PDF83 第二行明确将 O(ε²) 放在积分内，当前签名仅给积分后作用量的 O(ε²)，未声明被积函数泰勒余项的点态估计，更未声明紧时间窗统一估计。积分后的估计不能单独表达积分内余项。该缺失在现有 C² 条件下可以补出，不是该三个现有结论为假的反例。无 [ERRATUM?]。证明体为 sorry，独立于此范围缺失。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+      "counterexample": "缺失条款：令 R(ε,t)=L(q(t)+εη(t),q̇(t)+εη̇(t))−L(q(t),q̇(t))−ε[(D_q L)η(t)+(D_v L)η̇(t)]，没有 ∀t∈[a,b], R(·,t)=O(ε²) 或统一 |R(ε,t)|≤C|ε|² 的结论。一般积分消去不能替代此性质：R(ε,t)=ε(t−(a+b)/2) 在 [a,b] 的积分恒0，却在非中点不是 O(ε²)。此一般示例说明信息差异，并非声称它由本条 C² 泰勒差分产生。",
+      "suggested_fix": "保留现有三个结论，补充存在 C>0、δ>0，使 |ε|<δ 且 t∈Icc a b 时上述真实 R 满足 |R(ε,t)|≤C|ε|²；或者明确逐点余项并提供足以积分的统一控制。若只登记积分后的推论，应明确缩小 statement_scope，不能默认为已登记原式所有子句。"
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第83页（印刷第61页），Using a Taylor series expansion 之后的两行：A_L(Γ^ε)−A_L(Γ)=∫[L(q+εη,q̇+εη̇)−L(q,q̇)]dt；再展开为 ∫[ε((∂L/∂q)η+(∂L/∂q̇)η̇)+O(ε²)]dt。位置项、速度项、符号与余项阶数均正确。",
+        "L∈C² 的源语境在 PDF 第82页（印刷第60页），q、η 的 smooth/C∞ 资格见 PDF 第82–83页。本条陈述本身就是计算推导，原书未另列独立证明，proof_latex=null 合理。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png；page-083.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "actual": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.2.1-TaylorPrinted",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json",
+    "raw_sha256": "2f0bf8292d65aa32bb73a68a8e426a19530d6a6e71915b574f32867ef585b5b4",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.taylorPrinted",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch02.lean:135：n,k,f,z₀ 在前，1≤k 和 f∈C^(k+1) 为前提，range k 的 j+1 恰枚举1,…,k，iteratedFDeriv 是未作阶乘归一化的迭代 Fréchet 导数，作用于各槽都为 u 的向量组。第一阶为梯度的线性作用，第二阶为原始 Hessian 的双线性作用；u=z−z₀，𝓝0 和 ‖u‖^(k+1) 给出原式局部余项。在 Fin n→ℝ 的默认范数与欧氏范数间有限维范数等价，Big-O 阶不变。签名确实没有1/(j+1)!，忠实保留 PDF83 脚注的字面错误，因此忠实性 PASS 不表示数学定理成立。[ERRATUM?] 成立；1≤k 合理明确已有梯度项的阶数范围。证明体为 sorry，且该一般命题有反例，不能取得无额外公理的正确证明。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+      "counterexample": "n=1，k=2，f(x)=(x 0)²，z₀=0，u 0=r。f 为 C∞，一阶导数为0，二阶导数作用给2r²，残差为−r²；其与 ‖u‖³ 的比为1/|r|，r→0 无界。此为原文/忠实签名的真假反例，不是忠实性反例。",
+      "suggested_fix": "保持字面条目及已确认的勘误说明。若新增正确定理，另用 corrected 名称并对 j+1 阶导数项乘1/(j+1)!；不得静默改写原书公式，也不得把本次 PASS 解释为证明完成。"
+    },
+    "returned_json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "原文转录和页码均正确，原页二阶及以后确实没有 1/j!。这不是缩放张量的约定：同一脚注明确 f^(2) 为原始 Hessian、f^(3) 为原始三阶偏导张量。[ERRATUM?] 所述数学疑误成立。不得把标准泰勒公式的系数静默写回原文条目；是否正式采纳勘误需人工编辑裁定。",
+        "对 f(x)=x²、z₀=0、k=2，原式给 x²=2x²+O(|x|³)，所需余项 −x² 不是 O(|x|³)。因此不存在把此字面原式当作正确一般定理的批准依据；保留原条目的原式及 ERRATUM? 标记。"
+      ],
+      "evidence": [
+        "教材 PDF 第83页（印刷第61页）脚注3：梯度项之后直接是 +f^(2)⟨z−z₀,z−z₀⟩+f^(3)⟨z−z₀,z−z₀,z−z₀⟩，高阶项也未见阶乘系数。最后余项为 O(‖z−z₀‖^(k+1))。",
+        "同页脚注下文称 f^(2) 是 m×m Hessian，ij 元为 ∂²f/∂z_i∂z_j；并写 f^(2)⟨u,v⟩=uᵀf^(2)v。f^(3) 的 ijk 元为 ∂³f/∂z_i∂z_j∂z_k，明确写三重求和。这验证 context_notation 中关于未缩放张量的说明。",
+        "proof_latex=null；脚注只陈述泰勒式并解释张量，没有独立证明。渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "actual": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.2.1-StationaryAction",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json",
+    "raw_sha256": "2f0bf8292d65aa32bb73a68a8e426a19530d6a6e71915b574f32867ef585b5b4",
+    "reported_verdict": "FAIL",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.stationarySmoothAction",
+      "verdict": "FAIL",
+      "explanation": "已展开 Ch02.lean:145 及正式 action/variation：∀η，全线 C∞、两个零端点之后，要求 ε↦∫ L(q+εη,deriv(q+εη)) 在 ε=0 有真实导数0。量词是全部合格变分，而非存在一个变分；HasDerivAt 同时要求导数存在。[EXTRA] 用真实一阶导数定义驻值是合理的，正则 L,q 下 FirstVariation 的导数结论能表达原页 I=0，故这一定义不是把不可微函数的总 deriv 值0当驻值。不过按本条 statement_scope（全部所引原句及公式），签名没有自然运动关系或“自然运动⇒驻值”的 Hamilton 原理命题，亦没有独立登记对全部 η 的积分 I=0/驻值等价子句；一个谓词定义不能单独承担整个断言。FAIL 是覆盖缺失，不是此驻值谓词本身为假。全线 C∞ 变分是表示加强，区间资格已足够；应明确区间/延拓约定。无 [ERRATUM?]。定义无 sorry；所援引 FirstVariation 是 sorry 定理，桥接证明状态另论。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+      "counterexample": "缺失条款：原文“natural motion … is a stationary point”在当前声明中没有自然运动的输入关系或推出 stationarySmoothAction 的命题；也没有 ∀η 的显式第一变分积分等于0的等价结论。仅展开该定义不会产生上述动力学断言。",
+      "suggested_fix": "保留该驻值定义，补充合格 L,q、a<b 下与 ∀光滑零端点η，完整 I=0 的等价命题；将自然运动明确定义为相应 Lagrangian 的运动方程后，登记它推出驻值的 Hamilton 原理。若本条只负责驻值概念，明确缩小 statement_scope 并给全部原文断言另外的对应声明；不能凭本批以外条目已存在而默认本条全部覆盖。"
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第83页（印刷第61页）末段：natural motion 是 stationary point，O(ε) 项对任意 smooth η 且 η(α)=η(β)=0 应消失。该段以 i.e., 结束并跨页。",
+        "教材 PDF 第84页（印刷第62页）页首给出 I=∫[(∂L/∂q)η+(∂L/∂q̇)η̇]dt=0。JSON 将文字与下一页公式合并，并准确登记 61–62 / 83–84 页码范围。proof_latex=null，无独立证明。",
+        "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png；page-084.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "actual": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  },
+  {
+    "source_id": "MD-2.2.1-Parts",
+    "raw_path": "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json",
+    "raw_sha256": "2f0bf8292d65aa32bb73a68a8e426a19530d6a6e71915b574f32867ef585b5b4",
+    "reported_verdict": "PASS",
+    "returned_audit": {
+      "lean_decl": "MD.Ch02.firstVariationParts",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch02.lean:151 的 stationarySmoothAction 和正式 action、variation。先量化 n,L,q,η,a,b，再要求 a<b、联合 L∈C²、q∈C²、η∈C∞、两个零端点及对全部合格变分的真实驻值。两个合取结论完整：原始两项第一变分积分等于分部积分后的积分，且后者为0。fderiv ℝ (L(q s)) (deriv q s) 是随 s 变化的速度偏导连续线性泛函；deriv 对整个泛函曲线求时间导数，再作用于 η t，与 D_q L−d/dt D_v L 的符号、对象和作用次序相符。无边界项遗漏，因 η a=η b=0。[EXTRA] C² 与端点资格足以保证经典分部积分，驻值是最终零值的上文假设；仅积分相等不需要驻值，但合并零值结论后此前提合理。全域光滑及 a<b 是明确加强，局部资格足够；不把待证积分为0直接作前提。无 [ERRATUM?]。证明体为 sorry，本次 PASS 仅审计签名语义，未验证证明。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+      "counterexample": null,
+      "suggested_fix": null
+    },
+    "returned_json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第84页（印刷第62页）页首第二段：integration by parts；in light of the boundary conditions；I=∫[(∂L/∂q)−d/dt(∂L/∂q̇)]η dt=0。JSON 保留位置项、负号、对速度偏导的时间导数和末尾等于0。",
+        "同页前一公式是 I=∫[(∂L/∂q)η+(∂L/∂q̇)η̇]dt=0；context_notation 正确指出 I 来源于前段驻值条件，不能只记录其中一个分部积分项。η 的 C∞ 和零端点来自 PDF 第83页。",
+        "本条用分部积分给计算说明，没有另设独立证明，proof_latex=null 合理。渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png；page-084.png。"
+      ]
+    },
+    "lean_decl_matches": true,
+    "input_binding": {
+      "BATCH.md": {
+        "expected": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "actual": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+        "matches": true
+      },
+      "Blueprint/Ch02.lean": {
+        "expected": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "actual": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+        "matches": true
+      },
+      "Ch02_deps.txt": {
+        "expected": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113",
+        "actual": null,
+        "matches": false
+      }
+    },
+    "effective_website_status": "待网站审计",
+    "proposed_source_changes": {},
+    "proposal_applied": false,
+    "signature_changed": false
+  }
+]

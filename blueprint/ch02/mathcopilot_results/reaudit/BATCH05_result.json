@@ -1,0 +1,190 @@
+{
+  "batch": "BATCH05",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "7060f197273ffec68a2139682715573d597e16baa4f03b4ef53328518a7d0033",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.2.1-Lagrangian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第82页（印刷第60页），§2.2.1：Recall from Chap. 1 之后的定义为 L(q,v)=vᵀMv/2−U(q)，紧接文字明确 U 为 smooth (C²)。已逐项核对转录、正负号、分母、变量和页码。",
+          "context_notation 中对角质量矩阵的来源已核对教材 PDF 第41页（印刷第18页），§1.2：M is a diagonal mass matrix，并列出三维情形 diag(m₁,m₁,m₁,…,m_N,m_N,m_N)。这是对本条回指第1章的上下文核对，未审查本批以外的 source_id。",
+          "该定义无独立证明；proof_latex=null 与原页一致。bp_mechanicalL 是 context_notation 的形式化说明，不是教材中的记号。",
+          "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png；context-mass-041.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_mechanicalL",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02.lean:100 的 bp_mechanicalL：(∑ i, m i*v i^2)/2−U q。固定参数 m:Fin n→ℝ 对应第1章固定对角 M，求和恰为 vᵀMv，减势能的符号和分母2完整；q、v 同属 Q n，U:Q n→ℝ，没有量词次序问题。此处是代数函数的总定义，在正质量及 U∈C² 的原文模型资格下限制使用即给出原式；总定义允许更多输入并不断言这些输入具有物理/光滑资格。没有 [EXTRA] 或 [ERRATUM?]。此项是定义，无 sorry 证明义务。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.1-Admissible",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "REGULARITY_AMBIGUITY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "转录与页码均正确，C^∞ 是渲染原页上的无穷阶符号，并非 C¹。原页先称全部 twice continuously differentiable 曲线，后称组件为 C^∞ 并将 G 定义为 smooth 曲线。两种资格并不相同，故保留原条目的 REGULARITY_AMBIGUITY，不静默统一为 C²、C¹ 或 C∞。需要对原书意图作编辑裁定。"
+        ],
+        "evidence": [
+          "教材 PDF 第82页（印刷第60页），§2.2.1 同一段：all twice continuously differentiable curves；where the components of q(t) are C^∞ functions；the class of smooth parameterized curves。三处均已对渲染页核对。",
+          "参数区间为 [α,β]，端点为 q(α)=Q、q(β)=Q′；JSON 中 Q′ 与 G(Q,Q′,α,β) 无误。proof_latex=null，无独立证明。",
+          "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.admissibleSmooth",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "已展开 Ch02.lean:106：admissibleSmooth a b x y q 为 ContDiff ℝ ∞ q ∧ q a=x ∧ q b=y，两端点完整。正式 Q 已找到，缺失定义不再是障碍。仍需裁定原文 PDF82 同段的“all twice continuously differentiable”与后续“C∞ functions / smooth”的冲突：本定义选择后一资格，不能同时代表首句全部 C² 曲线。[EXTRA] 对全实线代表函数要求 C∞，并非区间计算所必要；若以区间限制识别曲线、选择光滑延拓为表示约定，可以合理使用，但对任意给定全局 q 与局部光滑资格并不等价，现签名也未编码曲线商或存在延拓。a<b 是时间窗语境，谓词自身未保证它。NEEDS_HUMAN 的唯一原因是原文曲线类的正则性及域含义需数学/编辑裁定，非依赖缺失。此项是定义，无 sorry。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+        "counterexample": "n=1，q(t)0=|t−1/2|³ 在 [0,1] 为 C²，端点均为1/8，却不是 C³，因而能区分原页前后两种资格；另 q(t)0=|t−2| 在 [0,1] 等于2−t，局部光滑且端点2、1，却在全线不光滑，因而不能满足当前 ContDiff ℝ ∞ q。这不排除该区间限制另有光滑延拓。",
+        "suggested_fix": "裁定 G 取 C² 还是 C∞，并明确光滑在闭区间的含义。若选 C∞，使用区间光滑谓词，或显式按限制识别曲线并用存在光滑延拓表达资格；不要把任意代表的全线光滑当作局部资格。明确 a<b 的使用约定。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.1-Action",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第82页（印刷第60页），§2.2.1 段末：classical action (or, simply, action)；for any Γ∈G；A_L(Γ)=∫_α^β L(q(t),q̇(t)) dt。JSON 的上下限、速度参数及下标 L 均一致。",
+          "context_notation 对 q 为 Γ 的参数曲线及光滑资格的说明来自同页 G 的定义。α<β 是有向时间窗的使用约定，原页未单列此不等式。无独立证明，proof_latex=null。",
+          "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_action",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02.lean:110 的 bp_action 和依赖 action，二者均为 ∫ t in a..b, L (q t) (deriv q t)。区间积分上下限为 a,b；第一个 L 参数为位置，第二个为实际时间导数，完整对应 PDF82 的作用量公式。定义在所有 L,q 上总化；原文 Γ∈G 是使用资格，不是函数体自动保证的性质，在原文光滑 L 与合格曲线上积分具经典含义。无 [EXTRA] 或 [ERRATUM?]。定义无 sorry。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.1-Variation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第83页（印刷第61页），公式(2.3)：q^ε(t)=q(t)+εη(t)，t∈[α,β]。公式后明确 η(α)=η(β)=0，并称 η 是 C^∞ parameterized curve linking 0 to 0。JSON 转录及页码正确。",
+          "context_notation 正确把 η 的光滑性和零端点列为使用资格，并未声称仅由 q+εη 的函数体就能自动推出这些资格。该段无独立证明，proof_latex=null。",
+          "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_variation",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02.lean:114 的 bp_variation 及正式 variation，均为 q t+ε • η t，实参数 ε 在给定时间 t 对 η 作标量乘法。完全对应 PDF83 (2.3)。按条目 context_notation，函数构造本身不声称 q、η 自动合格；原文使用时 q 合格，η∈C∞ 且 η a=η b=0，因此变分曲线保持两端点并在区间光滑。该构造无需把这些资格作为计算参数。无 [EXTRA] 或 [ERRATUM?]。定义无 sorry。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.1-FirstVariation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第83页（印刷第61页），Using a Taylor series expansion 之后的两行：A_L(Γ^ε)−A_L(Γ)=∫[L(q+εη,q̇+εη̇)−L(q,q̇)]dt；再展开为 ∫[ε((∂L/∂q)η+(∂L/∂q̇)η̇)+O(ε²)]dt。位置项、速度项、符号与余项阶数均正确。",
+          "L∈C² 的源语境在 PDF 第82页（印刷第60页），q、η 的 smooth/C∞ 资格见 PDF 第82–83页。本条陈述本身就是计算推导，原书未另列独立证明，proof_latex=null 合理。",
+          "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-082.png；page-083.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.firstVariation",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch02.lean:118 和正式 action、variation。量词 n,L,q,η,a,b 在前，随后 a<b、联合 L∈C²、q,η∈C²；三个结论依次是对所有 ε 的精确积分差分等式、ε=0 的实际导数等于完整第一变分积分、积分后残差为 O(ε²)。两个 fderiv 分别仅变位置/速度并作用于 η/η̇，没有遗漏一阶项。[EXTRA] a<b 和 C² 足以支持计算；全域 C² 强于局部所需，q,η∈C² 则弱于原文 C∞，但这一计算仍适用，合理且无需零端点。FAIL 是声明范围的缺失条款：PDF83 第二行明确将 O(ε²) 放在积分内，当前签名仅给积分后作用量的 O(ε²)，未声明被积函数泰勒余项的点态估计，更未声明紧时间窗统一估计。积分后的估计不能单独表达积分内余项。该缺失在现有 C² 条件下可以补出，不是该三个现有结论为假的反例。无 [ERRATUM?]。证明体为 sorry，独立于此范围缺失。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+        "counterexample": "缺失条款：令 R(ε,t)=L(q(t)+εη(t),q̇(t)+εη̇(t))−L(q(t),q̇(t))−ε[(D_q L)η(t)+(D_v L)η̇(t)]，没有 ∀t∈[a,b], R(·,t)=O(ε²) 或统一 |R(ε,t)|≤C|ε|² 的结论。一般积分消去不能替代此性质：R(ε,t)=ε(t−(a+b)/2) 在 [a,b] 的积分恒0，却在非中点不是 O(ε²)。此一般示例说明信息差异，并非声称它由本条 C² 泰勒差分产生。",
+        "suggested_fix": "保留现有三个结论，补充存在 C>0、δ>0，使 |ε|<δ 且 t∈Icc a b 时上述真实 R 满足 |R(ε,t)|≤C|ε|²；或者明确逐点余项并提供足以积分的统一控制。若只登记积分后的推论，应明确缩小 statement_scope，不能默认为已登记原式所有子句。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.1-TaylorPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原文转录和页码均正确，原页二阶及以后确实没有 1/j!。这不是缩放张量的约定：同一脚注明确 f^(2) 为原始 Hessian、f^(3) 为原始三阶偏导张量。[ERRATUM?] 所述数学疑误成立。不得把标准泰勒公式的系数静默写回原文条目；是否正式采纳勘误需人工编辑裁定。",
+          "对 f(x)=x²、z₀=0、k=2，原式给 x²=2x²+O(|x|³)，所需余项 −x² 不是 O(|x|³)。因此不存在把此字面原式当作正确一般定理的批准依据；保留原条目的原式及 ERRATUM? 标记。"
+        ],
+        "evidence": [
+          "教材 PDF 第83页（印刷第61页）脚注3：梯度项之后直接是 +f^(2)⟨z−z₀,z−z₀⟩+f^(3)⟨z−z₀,z−z₀,z−z₀⟩，高阶项也未见阶乘系数。最后余项为 O(‖z−z₀‖^(k+1))。",
+          "同页脚注下文称 f^(2) 是 m×m Hessian，ij 元为 ∂²f/∂z_i∂z_j；并写 f^(2)⟨u,v⟩=uᵀf^(2)v。f^(3) 的 ijk 元为 ∂³f/∂z_i∂z_j∂z_k，明确写三重求和。这验证 context_notation 中关于未缩放张量的说明。",
+          "proof_latex=null；脚注只陈述泰勒式并解释张量，没有独立证明。渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.taylorPrinted",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02.lean:135：n,k,f,z₀ 在前，1≤k 和 f∈C^(k+1) 为前提，range k 的 j+1 恰枚举1,…,k，iteratedFDeriv 是未作阶乘归一化的迭代 Fréchet 导数，作用于各槽都为 u 的向量组。第一阶为梯度的线性作用，第二阶为原始 Hessian 的双线性作用；u=z−z₀，𝓝0 和 ‖u‖^(k+1) 给出原式局部余项。在 Fin n→ℝ 的默认范数与欧氏范数间有限维范数等价，Big-O 阶不变。签名确实没有1/(j+1)!，忠实保留 PDF83 脚注的字面错误，因此忠实性 PASS 不表示数学定理成立。[ERRATUM?] 成立；1≤k 合理明确已有梯度项的阶数范围。证明体为 sorry，且该一般命题有反例，不能取得无额外公理的正确证明。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+        "counterexample": "n=1，k=2，f(x)=(x 0)²，z₀=0，u 0=r。f 为 C∞，一阶导数为0，二阶导数作用给2r²，残差为−r²；其与 ‖u‖³ 的比为1/|r|，r→0 无界。此为原文/忠实签名的真假反例，不是忠实性反例。",
+        "suggested_fix": "保持字面条目及已确认的勘误说明。若新增正确定理，另用 corrected 名称并对 j+1 阶导数项乘1/(j+1)!；不得静默改写原书公式，也不得把本次 PASS 解释为证明完成。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.1-StationaryAction",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第83页（印刷第61页）末段：natural motion 是 stationary point，O(ε) 项对任意 smooth η 且 η(α)=η(β)=0 应消失。该段以 i.e., 结束并跨页。",
+          "教材 PDF 第84页（印刷第62页）页首给出 I=∫[(∂L/∂q)η+(∂L/∂q̇)η̇]dt=0。JSON 将文字与下一页公式合并，并准确登记 61–62 / 83–84 页码范围。proof_latex=null，无独立证明。",
+          "渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png；page-084.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.stationarySmoothAction",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch02.lean:145 及正式 action/variation：∀η，全线 C∞、两个零端点之后，要求 ε↦∫ L(q+εη,deriv(q+εη)) 在 ε=0 有真实导数0。量词是全部合格变分，而非存在一个变分；HasDerivAt 同时要求导数存在。[EXTRA] 用真实一阶导数定义驻值是合理的，正则 L,q 下 FirstVariation 的导数结论能表达原页 I=0，故这一定义不是把不可微函数的总 deriv 值0当驻值。不过按本条 statement_scope（全部所引原句及公式），签名没有自然运动关系或“自然运动⇒驻值”的 Hamilton 原理命题，亦没有独立登记对全部 η 的积分 I=0/驻值等价子句；一个谓词定义不能单独承担整个断言。FAIL 是覆盖缺失，不是此驻值谓词本身为假。全线 C∞ 变分是表示加强，区间资格已足够；应明确区间/延拓约定。无 [ERRATUM?]。定义无 sorry；所援引 FirstVariation 是 sorry 定理，桥接证明状态另论。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+        "counterexample": "缺失条款：原文“natural motion … is a stationary point”在当前声明中没有自然运动的输入关系或推出 stationarySmoothAction 的命题；也没有 ∀η 的显式第一变分积分等于0的等价结论。仅展开该定义不会产生上述动力学断言。",
+        "suggested_fix": "保留该驻值定义，补充合格 L,q、a<b 下与 ∀光滑零端点η，完整 I=0 的等价命题；将自然运动明确定义为相应 Lagrangian 的运动方程后，登记它推出驻值的 Hamilton 原理。若本条只负责驻值概念，明确缩小 statement_scope 并给全部原文断言另外的对应声明；不能凭本批以外条目已存在而默认本条全部覆盖。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.1-Parts",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第84页（印刷第62页）页首第二段：integration by parts；in light of the boundary conditions；I=∫[(∂L/∂q)−d/dt(∂L/∂q̇)]η dt=0。JSON 保留位置项、负号、对速度偏导的时间导数和末尾等于0。",
+          "同页前一公式是 I=∫[(∂L/∂q)η+(∂L/∂q̇)η̇]dt=0；context_notation 正确指出 I 来源于前段驻值条件，不能只记录其中一个分部积分项。η 的 C∞ 和零端点来自 PDF 第83页。",
+          "本条用分部积分给计算说明，没有另设独立证明，proof_latex=null 合理。渲染证据：/workspace/.mathcopilot/reviews/ch02/evidence/BATCH05/page-083.png；page-084.png。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.firstVariationParts",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02.lean:151 的 stationarySmoothAction 和正式 action、variation。先量化 n,L,q,η,a,b，再要求 a<b、联合 L∈C²、q∈C²、η∈C∞、两个零端点及对全部合格变分的真实驻值。两个合取结论完整：原始两项第一变分积分等于分部积分后的积分，且后者为0。fderiv ℝ (L(q s)) (deriv q s) 是随 s 变化的速度偏导连续线性泛函；deriv 对整个泛函曲线求时间导数，再作用于 η t，与 D_q L−d/dt D_v L 的符号、对象和作用次序相符。无边界项遗漏，因 η a=η b=0。[EXTRA] C² 与端点资格足以保证经典分部积分，驻值是最终零值的上文假设；仅积分相等不需要驻值，但合并零值结论后此前提合理。全域光滑及 a<b 是明确加强，局部资格足够；不把待证积分为0直接作前提。无 [ERRATUM?]。证明体为 sorry，本次 PASS 仅审计签名语义，未验证证明。 依赖展开证据：Ch02_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp_action/bp_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

@@ -631,10 +631,17 @@
     "blueprint/ch02/mathcopilot_results/BATCH30_result.json": "df7eb69dc5a1f3f058605b3fafcb53c64304c2f74829b6daa6ef76523c420969",
     "blueprint/ch02/mathcopilot_results/BATCH31_result.json": "2d871ebbe13a072ea43181e1c4f26e680b7ceaee4bfae03d06214ad2180375c7",
     "blueprint/ch02/mathcopilot_results/BATCH32_result.json": "26ce8af1e63062409728f861705af33ed17faf8b455db22871b7748cb43c51d5",
-    "blueprint/ch02/mathcopilot_results/INDEX.md": "9012977be06fcd8a2766989435589af83aa7c57afffc52cad94887362fcc6c84",
+    "blueprint/ch02/mathcopilot_results/INDEX.md": "b394133b17c183a92b2b79a0f92cf901c4fff926654c1230a7464c93198ca543",
     "blueprint/ch02/mathcopilot_results/README.md": "aad152e30b43cb8d3d64ef82b69f0d17fd9b8dc1b676f5811d2567f36f1896c6",
     "blueprint/ch02/mathcopilot_results/integration20261012/PROPOSALS.json": "4830e12226305e18f0b8427c50a2ef6cd0285dcdd094bbcd87eb915b971de5a3",
-    "blueprint/ch02/mathcopilot_results/integration20261012/RECEIPT.json": "a30416d769ed3f4c68cb17fb2797353c5b119c230fc7295bd78bbad784745d8b"
+    "blueprint/ch02/mathcopilot_results/integration20261012/RECEIPT.json": "a30416d769ed3f4c68cb17fb2797353c5b119c230fc7295bd78bbad784745d8b",
+    "blueprint/ch02/mathcopilot_results/reaudit/BATCH01_result.json": "39993f047ad1de8245cbbf2145551b9d2521b03330cebe29aae5dbcb2dfa4017",
+    "blueprint/ch02/mathcopilot_results/reaudit/BATCH02_result.json": "74c1d68e57123f8d157d970a07c8852c57667f2f17ba94d8d7c37d6ee8ccd889",
+    "blueprint/ch02/mathcopilot_results/reaudit/BATCH03_result.json": "b7aa73bf572e9d5d21c419527983bb7fd350ce7dbb3b356822caf822831cd5c4",
+    "blueprint/ch02/mathcopilot_results/reaudit/BATCH04_result.json": "b0ddc62cf9adc3108d1adbdb139b9f97e8eb4a0680c99a0380c6fd8a56561a5b",
+    "blueprint/ch02/mathcopilot_results/reaudit/BATCH05_result.json": "2f0bf8292d65aa32bb73a68a8e426a19530d6a6e71915b574f32867ef585b5b4",
+    "blueprint/ch02/mathcopilot_results/integration20261013_reaudit/PROPOSALS.json": "f811da55097a50fb7c5047770a02c13a0a9eafd6a0f52f85c5a1fa5ff6f63fed",
+    "blueprint/ch02/mathcopilot_results/integration20261013_reaudit/RECEIPT.json": "b6442c22225ee3e8336dd9bfae964337b9bdcf4c024772633cc129388c8fef7e"
   },
   "unrelated": {
     "output/pdf/CH01_REVIEW_SHORT.PDF_CHECK.json": "aed60322f1feb1e1867ac5f0cbb33da80156f0f32656dd2068857a2515e558f4",
@@ -876,5 +883,14 @@
   },
   "source_pdf": {
     "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036"
-  }
+  },
+  "licensed_return_registrations": [
+    {
+      "chapter": 2,
+      "receipt": "blueprint/ch02/mathcopilot_results/integration20261013_reaudit/RECEIPT.json",
+      "source_and_lean_byte_identity": "PASS",
+      "existing_delivery_reused": true,
+      "site_binding": "PARTIAL: dependencies unavailable"
+    }
+  ]
 }
