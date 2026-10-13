@@ -1,0 +1,530 @@
+{
+  "registered_at": "2026-10-13T13:34:35.711920",
+  "raw_files": {
+    "blueprint/ch03/mathcopilot_results/BATCH01_result.json": "120deaa07feab89b86e0bb7ae296ba4fadc1614604f7bb1e18866e1acb26bb97",
+    "blueprint/ch03/mathcopilot_results/BATCH02_result.json": "fa7d079b49802d64f1efbc27c6b0a90cbbf1090b9fc48cc0576829b45ebf4aa1",
+    "blueprint/ch03/mathcopilot_results/BATCH03_result.json": "330d5454eb9aa468617bba731b42c46b75d12fcc6d31ed8f692f1bad348cd106",
+    "blueprint/ch03/mathcopilot_results/BATCH04_result.json": "36659a6e61aec87e7399f494561f03e4b1459895582bd820688d32bc77733e15",
+    "blueprint/ch03/mathcopilot_results/BATCH05_result.json": "c3bb8f401221113b15ccfe818d4283a60dada49126f20347bf48c34db84cf4f1",
+    "blueprint/ch03/mathcopilot_results/BATCH06_result.json": "819fca5659e8a8884364fbdf85035c50f23bb2363ecba5079d7be2b036ec9c3f",
+    "blueprint/ch03/mathcopilot_results/BATCH07_result.json": "c71e2a90d4ac40d4c742b49cdd8d0402dbe783a0c0c77b3ca2ef7e96cb38fc51",
+    "blueprint/ch03/mathcopilot_results/BATCH08_result.json": "2c2ba10b2add711db71451a9899cda80c62acb0538cbb07e71e83e0933ea16df",
+    "blueprint/ch03/mathcopilot_results/BATCH09_result.json": "fec5929454decf5f171475e8e79293efaadf5a5aafec06b5fe1cbb312b72df06",
+    "blueprint/ch03/mathcopilot_results/BATCH10_result.json": "ab2cdabbe8d60c92cb2394467ef339c82f13e4fe4935f1428f5c8f75fd35448a",
+    "blueprint/ch03/mathcopilot_results/BATCH11_result.json": "32b03eabd7b6d8a06f630af74b2eb42c11a41c268b376d58779494aed2de21d4",
+    "blueprint/ch03/mathcopilot_results/BATCH12_result.json": "f69880c065d1ef695e8dbc2d63837403d9842f1eb2e1cf6a1543c3d27a939ef2",
+    "blueprint/ch03/mathcopilot_results/BATCH13_result.json": "d4ea6d2844ab12abc59a13cccbc84ae98aba44155750780ded5f5fdb5015426b",
+    "blueprint/ch03/mathcopilot_results/BATCH14_result.json": "e7167cc9399371fc743d6df22a5576495d69cbc8ab1f5c45dcccd6fb7c74a44f",
+    "blueprint/ch03/mathcopilot_results/BATCH15_result.json": "19a0fded84890fc7c3989acc48fe4b1a5e72c6eca37d1dced9275667223e51c2",
+    "blueprint/ch03/mathcopilot_results/BATCH16_result.json": "6864e729414df4fc98476d6e3a820789a17e88413b10977be72ed1886cbe8b29",
+    "blueprint/ch03/mathcopilot_results/BATCH17_result.json": "017395c0056939906b1fe438dd6f2e1a4c7e9e439182e6241536a7c41487fcaa",
+    "blueprint/ch03/mathcopilot_results/BATCH18_result.json": "4b57cdd8327dc0eee8f39b33c1451d99237d5220fb13fb49163f34455feb99eb",
+    "blueprint/ch03/mathcopilot_results/BATCH19_result.json": "50385e2eab2203cc2454bfb11c43a63625cf3851e6fd14be8c860163df40730d",
+    "blueprint/ch03/mathcopilot_results/BATCH20_result.json": "aaf1affb66e118022ce2276daf90b94cfaebf6a125321225e506c2bf153124f4",
+    "blueprint/ch03/mathcopilot_results/BATCH21_result.json": "ade77c12fcc5b34de3f55d3bc85dde5a441ccbbdeaf4bf6c423624dba4409352",
+    "blueprint/ch03/mathcopilot_results/BATCH22_result.json": "c3085298056440180b3d2398d6dfb1229d01c49b3c1729dcc6b2fea948050c64",
+    "blueprint/ch03/mathcopilot_results/BATCH23_result.json": "a3f8279b9c1296b1f269e651840d9b6b83f601c9e3a340bad940dd23275e234b",
+    "blueprint/ch03/mathcopilot_results/BATCH24_result.json": "534a3a9b6e5613cd21a283197d53b6ab5fd185cda448ba65fba5aab560853973",
+    "blueprint/ch03/mathcopilot_results/BATCH25_result.json": "de7ad17fac8256494c84c75d1cb803f8e2e3c85d34e9833f6996b63dfc3d0ef5",
+    "blueprint/ch03/mathcopilot_results/BATCH26_result.json": "f89a5aadd73742d74c535b5f38b537a9eb5d2e1e8ddde8f4b22b2103d6b96877"
+  },
+  "bindings": {
+    "blueprint/ch03/mathcopilot_results/BATCH01_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "0cd967168966448c698c16d8533e958ab5d8fdc96dbc5a9970b56cb0ee9c31b6",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH02_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "b14f3cfa9713a20f8fe59ba39ed7248b8aff38729980eb894fda4ef8f13c98f7",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH03_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "0a988c832d6cd27a9dfe33b16a307518dbaa39dbc3e3e3ac189e92ea3ccd8b30",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH04_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "3e93c988c1f85b1eee28504fafd6cf42165e6647e3f21556b4979a4ea549471e",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH05_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "355ca4b394192ab431587882edbdbcd4bb9191d7c4cc966eb143f82e83805c73",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH06_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "05583c2e8b55377411716f27f55137461ae6463306e7f8b614831db9a49257fa",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH07_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "d7018ab4e7db9f89761fdbffee352244a6790d87297961e88deb7372099d7fd3",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH08_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "f57a20c9633e8a2e170a5e70de263f3773f7eeccd38cb74a01f5872fcd4d372c",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH09_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "5016a2d3f7d2c245cc25def1c317aefb0222acb242a8b368a75cd518697e0ced",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH10_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "651bc7289a4b1ac3629d41abbacafa07ae409ba33fe38f7bc825da650e5df9a3",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH11_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "19272226a624e636db46b73224279655fda025341725f16b4ae3906473c24ceb",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH12_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "4ccba8148adff0e71acb04628862be8859190bea115a8623c124181de9b74e4a",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH13_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "a953686a04a8f803beeb2dbb40f7bb99770b3e26bf8e5bac6b8db922923d1463",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH14_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "1a3c623775413dc38549a5d9467954473521064eea35d42dfbeb48e935d725e5",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH15_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "5f8b5cb73de18befadf90f96dd197d9009424c4156d973214a7eca5ff34f2a92",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH16_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "2fb1995dadeb4650a9e797254f6824501c891d58a83026b6a2c57ac7274bc719",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH17_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "63a7544c8f23261fbb1ecb36e10567bc75fff642bbf379e11fe18cf83695817b",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH18_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "497d702d2574d48c51cc54ff27e5a178ba467ecc0244f88f2dc993d621a190cd",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH19_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "0e3f051a2d5b08fd4939239f1211fe62c17fcf8fb21ab6e590ed2dbbdfee0c13",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH20_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "75aa626296db01adca29eb3516b37a52e37b0be459dea9f7ba976504bb12c969",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH21_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "29635669953fcaffc6f425d9c3e140753dfdc4f3b0bbdb1f00d1ea8d54a7a77e",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH22_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "0c2b964860fa2e27aa503920cbc18d23307c9e507edd375102e8ac65cf0d8aca",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH23_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "3342f62f50ce1fd3f30f32fe51cebede186fe9870231a3695acac1781f811baf",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH24_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "c0afd4010ebf9675bed31b5b1b9ab3829df0c77fa6f9d733d6b93db99bfde3d9",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH25_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "f669f90d68574d705dbc8992414e808a1f149801d0b44603f206b9090a20551b",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch03/mathcopilot_results/BATCH26_result.json": {
+      "bound": true,
+      "rule": "b",
+      "version": "433a13ca6407",
+      "generation_commit": "433a13ca6407f96249c17fc56d66a62284040623",
+      "registration_commit": "1911ff24c998221552e40e766497f3bca5a636fc",
+      "input_sha256": {
+        "BATCH.md": "00a120f893664fb25c2882a11a6cbb10fde9d46832e1982ca2c147456aed102a",
+        "Blueprint/Ch03.lean": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795"
+      },
+      "checks": {
+        "full_batch_sha256": true,
+        "lean_unchanged": true,
+        "generation_blob_matches": true,
+        "manifest_hash_field": "full_batch_sha256"
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    }
+  },
+  "source_sha256": "0cdb87a4ff4b797d2b6e3dc10ec5e10db169d58fd10e8332e45bb5617be950a2",
+  "lean_sha256": "12771d796784c8d5732dbf116ffa0c82327a0afbfaeba0ed7c1b858443e7a795",
+  "first_json_review_files": {}
+}

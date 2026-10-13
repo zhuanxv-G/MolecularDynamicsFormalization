@@ -1,0 +1,252 @@
+{
+  "batch": "BATCH18",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "8d09e14c1b8f932a690f6d55318be9938b58901878fc3a5913f5be933589cbe4",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.5-ChainRule",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.5-ChainRule",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.5",
+          "printed_page": "79",
+          "pdf_page": "101",
+          "statement_latex": "Let $\\Phi_1$ and $\\Phi_2$ be any pair of symplectic maps. Then\n\\[(\\Phi_1\\circ\\Phi_2)'=\\Phi_1'\\Phi_2',\\]\nby the chain rule,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\Phi_1,\\Phi_2$ 是辛映射；撇号表示映射的 Jacobian。原书省略导数取值点；外导数取值于 $\\Phi_2(z)$ 是链式法则的解释，并非原文新增公式。",
+            "辛映射在 PDF 第100页（印刷78页）定义为保持辛2形式的映射，坐标条件为 $\\Phi^{\\prime T}J\\Phi^\\prime=J$（2.17）。"
+          ],
+          "issues": [
+            {
+              "code": "OMITTED_EVALUATION_POINT",
+              "status": "NEEDS_HUMAN",
+              "detail": "原文Φ₁′Φ₂′未写外导数的Φ₂(z)取值点；Lean用正确链式法则，需审校确认简写约定。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.chainRule",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookJacobian_comp"
+          ],
+          "extra_assumptions": [
+            "两个实际映射在相应点可微；外导数在Φ₂(z)取值，原文简写省略底点。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "原页审校：补充上下文记号",
+              "pdf_page": "101",
+              "printed_page": "79"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex 与渲染原页所引句及公式一致；printed_page=79、pdf_page=101、section=2.3.5 均正确。context_notation 原为空，缺少解释撇号、辛条件及相关矩阵记号，已按原页和前页补充；不改变原书数学主张。",
+          "OMITTED_EVALUATION_POINT 为真实原文简写；未把取值点静默补进 statement_latex。"
+        ],
+        "evidence": [
+          "教材 PDF 第101页（印刷79页），§2.3.5：Let $\\Phi_1$ and $\\Phi_2$ be any pair of symplectic maps. Then\n\\[(\\Phi_1\\circ\\Phi_2)'=\\Phi_1'\\Phi_2',\\]\nby the chain rule,",
+          "PDF 第100页（印刷78页），（2.17）及其后定义：辛映射保持辛2形式，Jacobian 满足 Φ′ᵀJΦ′=J。",
+          "已渲染核对 PDF 第101页；原页确有链式法则后五项矩阵等式，并在段末写 symplectic maps form a group under composition。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.chainRule",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt：SymplecticForm.lean 第33–41行将 SymplecticCoordinates n 定义为 (Fin n ⊕ Fin n) → ℝ（q 后 p），矩阵为该指标上的实方阵，textbookJ=[[0,I],[-I,0]]；第138–139行 IsTextbookSymplectic A 是 AᵀJA=J。SymplecticMaps.lean 第238–241行 textbookJacobian 是实际 Fréchet 导数 fderiv 的坐标矩阵，第272–274行 IsTextbookSymplecticMap Φ 是 ContDiff ℝ 1 Φ ∧ ∀ z, DΦ(z)ᵀJDΦ(z)=J，不含全球双射。 实际 Ch02.lean 第837–841行对任意 n、Φ、Ψ、全局可微假设及任意 z，断言 D(Φ∘Ψ)(z)=DΦ(Ψ(z))DΨ(z)。对象、复合顺序、矩阵方向与原文链式法则一致；外导数底点 Ψ(z) 是省略取值点的标准展开。未要求辛性是有效加强，包含原文任意两辛映射的全部实例，因为 C¹ 蕴含全局可微；没有添加会排除原文对象的假设。[EXTRA] 可微性合理，但注释“相应点可微”不精确：签名实际要求全局可微，点态最小假设并未使用。结论只有原文链式公式，无遗漏。正文调用 deps 第261–270行的实际链式法则，无直接 sorry；本判定为签名语义审计，未运行 Lean 验证依赖。",
+        "counterexample": null,
+        "suggested_fix": "仅注释精度建议：将“相应点可微”写成“两映射全局可微（辛映射的 C¹ 假设已蕴含）”；若单独追求最小链式法则版本，可另用 DifferentiableAt ℝ Φ (Ψ z) 与 DifferentiableAt ℝ Ψ z。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.5-SymplecticComposition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "OMITTED_PROOF_DISCUSSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.5-SymplecticComposition",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.5",
+          "printed_page": "79",
+          "pdf_page": "101",
+          "statement_latex": "Thus the composition of any pair of symplectic maps is a symplectic map.",
+          "proof_latex": null,
+          "proof_note": "原书在结论前给出链式法则和保持辛矩阵的连续等式推导，无独立编号证明；推导记录于 proof_discussion_latex。",
+          "proof_discussion_latex": "By the chain rule, hence\n\\[[(\\Phi_1\\circ\\Phi_2)^\\prime]^T J(\\Phi_1\\circ\\Phi_2)^\\prime=[\\Phi_1^\\prime\\Phi_2^\\prime]^T J\\Phi_1^\\prime\\Phi_2^\\prime=\\Phi_2^{\\prime T}\\Phi_1^{\\prime T}J\\Phi_1^\\prime\\Phi_2^\\prime=\\Phi_2^{\\prime T}J\\Phi_2^\\prime=J.\\]",
+          "context_notation": [
+            "$\\Phi_1,\\Phi_2$ 为前段任意辛映射；撇号表示 Jacobian，$T$ 表示转置，$J$ 为辛2形式的矩阵，满足（2.17）。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.symplecticComposition",
+          "reusable_proofs": [
+            "MolecularDynamics.IsTextbookSymplecticMap.comp"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "原页审校：补充上下文记号及原页显式推导",
+              "pdf_page": "101",
+              "printed_page": "79"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex 与渲染原页所引句及公式一致；printed_page=79、pdf_page=101、section=2.3.5 均正确。context_notation 原为空，缺少解释撇号、辛条件及相关矩阵记号，已按原页和前页补充；不改变原书数学主张。",
+          "原页在 Thus 之前已有显式矩阵推导，原 proof_discussion_latex=null 漏记；补入原式并保留其省略取值点的写法。proof_latex=null 可作为没有独立证明块的记录。"
+        ],
+        "evidence": [
+          "教材 PDF 第101页（印刷79页），§2.3.5：Thus the composition of any pair of symplectic maps is a symplectic map.",
+          "PDF 第100页（印刷78页），（2.17）及其后定义：辛映射保持辛2形式，Jacobian 满足 Φ′ᵀJΦ′=J。",
+          "已渲染核对 PDF 第101页；原页确有链式法则后五项矩阵等式，并在段末写 symplectic maps form a group under composition。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symplecticComposition",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt：SymplecticForm.lean 第33–41行将 SymplecticCoordinates n 定义为 (Fin n ⊕ Fin n) → ℝ（q 后 p），矩阵为该指标上的实方阵，textbookJ=[[0,I],[-I,0]]；第138–139行 IsTextbookSymplectic A 是 AᵀJA=J。SymplecticMaps.lean 第238–241行 textbookJacobian 是实际 Fréchet 导数 fderiv 的坐标矩阵，第272–274行 IsTextbookSymplecticMap Φ 是 ContDiff ℝ 1 Φ ∧ ∀ z, DΦ(z)ᵀJDΦ(z)=J，不含全球双射。 Ch02.lean 第844–848行对任意 n 及同一空间上的任意 Φ、Ψ，分别假设 C¹ 和逐点辛条件，结论展开为 Φ∘Ψ 为 C¹ 且在每个 z 满足 D(Φ∘Ψ)(z)ᵀJD(Φ∘Ψ)(z)=J。无全球双射或其他隐含额外条件，量词与原文“any pair”一致，全部结论已表达。deps 第303–310行明确在 Ψ(z) 使用 Φ 的辛条件并在 z 使用 Ψ 的辛条件，顺序正确。无 [EXTRA]/[ERRATUM?] 需要修复。正文调用 comp，无直接 sorry；未执行编译，签名判断独立于证明完成性。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.5-SymplecticInverse",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.5-SymplecticInverse",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.5",
+          "printed_page": "79",
+          "pdf_page": "101",
+          "statement_latex": "and the inverse of a symplectic map is symplectic since $\\Phi'^TJ\\Phi'=J$ implies $J=\\Phi'^{-T}J\\Phi'^{-1}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\Phi$ 为辛映射；$\\Phi^\\prime$ 为 Jacobian，$T$ 表示转置，$J$ 为辛2形式的矩阵，$\\Phi^{\\prime -T}$ 表示 Jacobian 的逆转置。矩阵的逆与映射的全局逆须区分。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.symplecticInverse",
+          "reusable_proofs": [
+            "MolecularDynamics.IsTextbookSymplecticEquiv.symm"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]e为确实全局双射且e和e⁻¹可微的辛微分同胚；原文前句从det非零推出全球逆无效，另项字面保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "原页审校：补充上下文记号",
+              "pdf_page": "101",
+              "printed_page": "79"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex 与渲染原页所引句及公式一致；printed_page=79、pdf_page=101、section=2.3.5 均正确。context_notation 原为空，缺少解释撇号、辛条件及相关矩阵记号，已按原页和前页补充；不改变原书数学主张。",
+          "逆的矩阵计算已在 statement_latex 的 since/implies 中保留，proof_latex=null 不导致遗漏。原书全局可逆性疑误保留，未改为正确的全局辛微分同胚命题。"
+        ],
+        "evidence": [
+          "教材 PDF 第101页（印刷79页），§2.3.5：and the inverse of a symplectic map is symplectic since $\\Phi'^TJ\\Phi'=J$ implies $J=\\Phi'^{-T}J\\Phi'^{-1}$.",
+          "PDF 第100页（印刷78页），（2.17）及其后定义：辛映射保持辛2形式，Jacobian 满足 Φ′ᵀJΦ′=J。",
+          "已渲染核对 PDF 第101页；原页确有链式法则后五项矩阵等式，并在段末写 symplectic maps form a group under composition。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symplecticInverse",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt：SymplecticForm.lean 第33–41行将 SymplecticCoordinates n 定义为 (Fin n ⊕ Fin n) → ℝ（q 后 p），矩阵为该指标上的实方阵，textbookJ=[[0,I],[-I,0]]；第138–139行 IsTextbookSymplectic A 是 AᵀJA=J。SymplecticMaps.lean 第238–241行 textbookJacobian 是实际 Fréchet 导数 fderiv 的坐标矩阵，第272–274行 IsTextbookSymplecticMap Φ 是 ContDiff ℝ 1 Φ ∧ ∀ z, DΦ(z)ᵀJDΦ(z)=J，不含全球双射。 Ch02.lean 第852–855行对任意 n 与 e : Equiv.Perm 给定全局双射。deps 第333–335行 IsTextbookSymplecticEquiv e 展开为 e 为 C¹ 辛映射且 e.symm 为 C¹；结论展开为 e.symm 为 C¹ 辛映射且其逆 e 为 C¹。新增的后一结论已由假设蕴含，是合理加强。第319–331行逆导数公式在 e.symm(z) 取正向导数的矩阵逆，第353–362行逐点用 A⁻¹ 的辛性，忠实表达“给定逆的辛映射，其逆仍辛”。[EXTRA] 全球双射是谈全球逆必要的条件化修复，不能由辛条件推得；逆 C¹ 在有限维 C¹ 且逐点导数可逆、并已知全球双射时由局部逆函数定理自动成立，数学上冗余而实现上合理。故在已明确标注 [EXTRA]、并另条保留原文无条件可逆疑误的范围内 PASS；此条并非原文所有辛映射必可逆的逐字版本。原句 since 后的矩阵等式是论证依据，逆辛结论由实际定义表达，无结论子句遗漏。正文调用 symm，无直接 sorry，未作编译认证。",
+        "counterexample": null,
+        "suggested_fix": "建议将 [EXTRA] 注释精确写为“给定全球双射的 C¹ 辛映射，并显式携带 C¹ 逆；此为条件化版本”。不要将该 PASS 理解为原文全球可逆断言已被证明。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.5-GlobalGroupPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.5-GlobalGroupPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.5",
+          "printed_page": "79",
+          "pdf_page": "101",
+          "statement_latex": "The determinant of a symplectic map is $\\pm1$, hence these maps are always invertible, and the inverse of a symplectic map is symplectic since $\\Phi'^TJ\\Phi'=J$ implies $J=\\Phi'^{-T}J\\Phi'^{-1}$. Thus the symplectic maps form a group under composition.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "“determinant of a symplectic map” 在前页指 $\\det(\\Phi^\\prime)$；$J$、撇号、$T$、$-T$ 同前文（2.17）。本条逐字保留从 Jacobian 行列式非零推到映射全局可逆的原书疑误。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "Jacobian可逆仅推出局部可逆，不能推出任意辛映射全球双射；正确群是给定全球辛微分同胚。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.globalGroupPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "原页审校：补充上下文记号",
+              "pdf_page": "101",
+              "printed_page": "79"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex 与渲染原页所引句及公式一致；printed_page=79、pdf_page=101、section=2.3.5 均正确。context_notation 原为空，缺少解释撇号、辛条件及相关矩阵记号，已按原页和前页补充；不改变原书数学主张。",
+          "逆的矩阵计算已在 statement_latex 的 since/implies 中保留，proof_latex=null 不导致遗漏。原书全局可逆性疑误保留，未改为正确的全局辛微分同胚命题。"
+        ],
+        "evidence": [
+          "教材 PDF 第101页（印刷79页），§2.3.5：The determinant of a symplectic map is $\\pm1$, hence these maps are always invertible, and the inverse of a symplectic map is symplectic since $\\Phi'^TJ\\Phi'=J$ implies $J=\\Phi'^{-T}J\\Phi'^{-1}$. Thus the symplectic maps form a group under composition.",
+          "PDF 第100页（印刷78页），（2.17）及其后定义：辛映射保持辛2形式，Jacobian 满足 Φ′ᵀJΦ′=J。",
+          "已渲染核对 PDF 第101页；原页确有链式法则后五项矩阵等式，并在段末写 symplectic maps form a group under composition。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.globalGroupPrinted",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch02_deps.txt：SymplecticForm.lean 第33–41行将 SymplecticCoordinates n 定义为 (Fin n ⊕ Fin n) → ℝ（q 后 p），矩阵为该指标上的实方阵，textbookJ=[[0,I],[-I,0]]；第138–139行 IsTextbookSymplectic A 是 AᵀJA=J。SymplecticMaps.lean 第238–241行 textbookJacobian 是实际 Fréchet 导数 fderiv 的坐标矩阵，第272–274行 IsTextbookSymplecticMap Φ 是 ContDiff ℝ 1 Φ ∧ ∀ z, DΦ(z)ᵀJDΦ(z)=J，不含全球双射。 Ch02.lean 第859–862行量词为所有 n、所有 C¹ 辛自映射，推出全球双射及选择逆 Function.invFun Φ 为 C¹ 辛映射。在双射假设成立时 invFun 是真实唯一逆，但辛假设本身不保证双射。[ERRATUM?] 成立，正式谓词确实允许下面 n=1 的光滑反例。这一假命题保留了原书全球可逆性疑误，命题为假本身不等于错误转录；独立的签名忠实性问题是本条 statement_scope 包含原句全部展示主张，而签名没有明示“Jacobian 行列式 ±1”子句，也未给实际群对象/群结构。行列式由 deps 第312–316行可推出更强的逐点 det=1，闭合、单位与逆可另由本批前项及库群构造组合，但这些未成为本声明的完整结论。故按全部结论子句审计 FAIL。deps 第366–382行已经提供由真正全球辛微分同胚构成的 Subgroup 及其复合运算，可用于另列修正版。正文直接 sorry：这单独表示证明未完成，不作为 FAIL 的理由，也不尝试补证。",
+        "counterexample": "取 n=1，将 z(Sum.inl 0)=q、z(Sum.inr 0)=p。设 a(q)=q+sqrt(1+q²)，b(q)=a′(q)=1+q/sqrt(1+q²)>0，定义 Φ(q,p)=(a(q),p/b(q))。这是 R² 上 C∞ 自映射，其实际导数矩阵为 [[b,0],[-p b′/b²,1/b]]，其中 b′=(1+q²)^(-3/2)，故 det DΦ=1，且对正式 J=[[0,1],[-1,0]] 有 DΦᵀ J DΦ=J，满足展开后的 IsTextbookSymplecticMap。a 是 R 到 (0,∞) 的双射，因此 Φ 的像为 (0,∞)×R，漏掉 (0,0)，不是满射，Function.Bijective Φ 为假。该反例直接匹配正式坐标空间与 C¹ 条件，不依赖缺失定义。",
+        "suggested_fix": "原书字面条目应继续标记确凿疑误，不补证明。若仍要求覆盖原文完整范围，应分别明确逐点 det(DΦ)=1（蕴含 ±1）子句、字面全球可逆子句与群主张，并标注后两者在无全球双射条件时不成立；或明确缩小本条 statement_scope 为“原书全球可逆且逆辛的疑误”。另列正确命题：固定 n 上给定全球 C¹ 辛微分同胚组成 textbookSymplecticDiffeomorphismGroup n（deps 第366–382行），群乘法为函数复合。不得静默把该修正版冒充原文。"
+      }
+    }
+  ]
+}

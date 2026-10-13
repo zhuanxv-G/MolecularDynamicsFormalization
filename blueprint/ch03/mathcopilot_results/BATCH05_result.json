@@ -1,0 +1,242 @@
+[
+  {
+    "source_id": "MD-3.3-HamiltonianLieAdditivity",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_PUNCTUATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3-HamiltonianLieAdditivity",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.3",
+        "printed_page": "103",
+        "pdf_page": "125",
+        "statement_latex": "As the relation\n\\[\\mathcal L_H\\phi=\\{\\phi,H\\}\\]\nis linear in $H$, we may write, for Hamiltonians $H_1,H_2$,\n\\[\\mathcal L_{H_1+H_2}=\\mathcal L_{H_1}+\\mathcal L_{H_2}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "对任意观测量F的算子相等；$\\mathcal L_H$记号见p.102/PDF124。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.hamiltonianLieAdditivity",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookHamiltonianLieDerivative_add"
+        ],
+        "extra_assumptions": [
+          "H₁,H₂在z可微；原文smooth资格显式化。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_PUNCTUATION",
+          "detail": "PDF125/印刷103首个展示式 L_H φ={φ,H} 末尾没有逗号；JSON在右花括号后添加了逗号。为满足逐字核对，删去该录入逗号，数学内容不变。"
+        }
+      ],
+      "evidence": [
+        "已查看PDF125/印刷103的页面图像：开头为“As the relation”，首式 L_H φ={φ,H} 后直接接“is linear in H, we may write, for Hamiltonians H_1,H_2,”；末式 L_(H_1+H_2)=L_H_1+L_H_2 以句点结束。",
+        "PDF124/印刷102给出 J=[0,I;-I,0]，Poisson括号定义于smooth scalar-valued functions，并说明 Hamiltonian 流中用 L_H 代替 L_(J∇H)。context_notation 所指页码及任意观测量的解释正确。",
+        "printed_page=103、pdf_page=125、section=3.3正确，满足PDF页=印刷页+22。proof_latex=null、proof_discussion_latex=null与此处没有单独证明块相容；线性理由已经保留在statement_latex。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.hamiltonianLieAdditivity",
+      "verdict": "PASS",
+      "explanation": "实际审阅Ch03.lean:236–242及Ch03_deps.txt按FILE分段的源码。SymplecticForm.lean中SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ，Sum.inl为q、Sum.inr为p，textbookJ=Matrix.fromBlocks 0 1 (-1) 0。SplittingError.lean中textbookHamiltonianVectorField H z=J*ᵥ(i↦(fderiv ℝ H z)(Pi.single i 1))，确为J∇H。LiePoisson.lean及MD.Ch03中的同名textbookLieDerivative均展开为(fderiv ℝ F z)(f z)，Poisson括号为DF(z)[J∇H(z)]，没有符号或对象替换。声明对任意Nc、F、H₁、H₂及z，在H₁、H₂于z可微时断言L_(H₁+H₂)F(z)=L_H₁F(z)+L_H₂F(z)；逐点且对任意F、z量化，完整表达原文算子相等。[EXTRA] 两个DifferentiableAt是原文smooth情形的合理充分资格，用于导数的加法规则；不能无条件删去，否则Lean在不可微点把fderiv置零，例如F=q、H₁=|q|+p、H₂=-|q|、z=(0,0)，导数默认值下左边为1而右边为0。F可微无需再加入以证明此线性等式，因DF(z)作为连续线性映射对方向始终线性；对原文smooth观测量当然成立。无[ERRATUM?]。证明状态另记：该声明调用textbookHamiltonianLieDerivative_add，本条证明体及所调用库引理未出现sorry；此次未编译，PASS仅来自定义展开后的签名审计。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3-FormalSplitting",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF125/印刷103页面图像：“The flow map of the system with Hamiltonian H=H_1+H_2 is”后为 F_t=e^{t(L_H_1+L_H_2)}；“On the other hand, the splitting method based on a composition of flows on H_1 and H_2 is”后为 G_h=e^{hL_H_1}e^{hL_H_2}。JSON两句、两式及句点均与原页一致。",
+        "PDF123/印刷101的上下文明确说“we ignore the convergence issue here and treat the operator exponential as a formal series expansion”，并以坐标观测量说明流映射的指数记号。context_notation的形式指数及状态映射与观测量pullback组合次序的区分合理。",
+        "printed_page=103、pdf_page=125、section=3.3正确。原页没有另列证明，proof_latex=null及proof_discussion_latex=null可保留。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.formalSplitting",
+      "verdict": "FAIL",
+      "explanation": "Ch03.lean:245–246定义MD.Ch03.formalSplitting；依赖ReviewDefinitions.lean中同名定义也为同一乘积。FormalOperatorSeries.lean的textbookFormalOperatorExponential A=PowerSeries.mk(n↦(1/(n! : ℝ))•A^n)，故实际返回exp(XA)exp(XB)的形式Cauchy乘积，顺序A后B没有被交换。类型参数为任意实结合环代数R，未要求AB=BA；这是原文形式算子计算的合理推广，形式变量X承担h，无需添加级数收敛或范数假设。但本条statement_latex的范围同时包含精确流F_t与分裂流G_h两式，现有定义只覆盖第二式；未表示exp(X(A+B))这一精确形式流，也未在本条声明中表达H=H₁+H₂以及Lie算子与Hamiltonian流/观测量的对应。context_notation写“实际Hamiltonian匹配条目另待审”不能消除已纳入本条范围的第一式。因此FAIL是对象及结论覆盖缺失，现有乘积定义自身没有数学错误。无[EXTRA]、[ERRATUM?]。证明状态另记：本条是定义，无sorry；这不弥补上述范围缺失。",
+      "counterexample": null,
+      "suggested_fix": "至少同时定义精确形式流textbookFormalOperatorExponential (A+B)与分裂形式流formalSplitting A B，并在本source_id对应声明中保留两式。明确X分别代表时间t/步长h，A=L_H₁、B=L_H₂，使用Lie加法连接H=H₁+H₂；如断言实际流关系，补充在光滑观测量上的pullback或坐标作用以及适当局部流假设，按PDF123的形式级数约定处理，勿凭形式级数定义宣称实际收敛。此次仅建议，不修改源码。"
+    }
+  },
+  {
+    "source_id": "MD-3.3-ExactExponentialCubic",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_PUNCTUATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3-ExactExponentialCubic",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.3",
+        "printed_page": "103",
+        "pdf_page": "125",
+        "statement_latex": "Expanding these out using the exponential series we have\n\\[\\begin{aligned}e^{h(A+B)}&=\\mathrm{Id}+h(A+B)+\\frac{h^2}{2}(A+B)^2+\\frac{h^3}{6}(A+B)^3+O(h^4)\\\\\n&=\\mathrm{Id}+h(A+B)+\\frac{h^2}{2}(AB+BA+A^2+B^2)\\\\\n&\\quad+\\frac{h^3}{6}(A^3+A^2B+AB^2+ABA+B^2A+BA^2+BAB+B^3)+O(h^4),\\end{aligned}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$R$为任意实结合环代数；不添加AB=BA；$O(h^4)$按形式系数次数≥4解释，不宣称实际范数余项。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.exactExponentialCubic",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookFormalOperatorExponential_coeff"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_PUNCTUATION",
+          "detail": "PDF125/印刷103页末精确指数展开式最后的O(h^4)后印刷的是逗号，承接下一页“whereas,”；JSON写成句点。将该句点改为逗号，所有系数和非交换乘积次序保持原样。"
+        }
+      ],
+      "evidence": [
+        "已查看PDF125/印刷103页面图像：“Expanding these out using the exponential series we have”后，先列Id+h(A+B)+h²(A+B)²/2+h³(A+B)³/6+O(h⁴)，再列二次项AB+BA+A²+B²。",
+        "同页三次项逐项为A³+A²B+AB²+ABA+B²A+BA²+BAB+B³，最终O(h⁴)后为逗号。JSON除该标点外与原式一致。",
+        "printed_page=103、pdf_page=125、section=3.3正确。展开计算已经保存在statement_latex，原书无另列证明块，两个独立证明字段为null可保留。context_notation的非交换及形式O(h⁴)解释与PDF123/印刷101的形式级数约定一致。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.exactExponentialCubic",
+      "verdict": "PASS",
+      "explanation": "Ch03.lean:249–256的环境为{R : Type*}[Ring R][Algebra ℝ R]。已展开FormalOperatorSeries.lean中的textbookFormalOperatorExponential A=PowerSeries.mk(n↦(1/(n! : ℝ))•A^n)。PowerSeries的变量承担h，1_R承担Id。对任意A、B，第一合取∀j<4给出常数、一次、二次、三次系数全部四项，后两合取分别展开(A+B)²和(A+B)³；八个三次非交换字的系数、次序和原页一致。因此两行展示等式及形式O(h⁴)的低次系数含义全部得到表达，而不是仅有三次系数。实标量来自Algebra ℝ R，保留任意非交换结合环，未暗加AB=BA。按PDF123明确的形式级数约定，不需要实际解析指数或范数余项假设。无[EXTRA]、[ERRATUM?]。证明状态另记：第一合取调用实际系数引理，其余用noncomm_ring；本条和这些调用的库引理未见sorry。未运行Lean编译，签名审计与证明状态分开记录。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3-ProductExponentialCubic",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF126/印刷104页面图像：开头为“whereas,”；第一个因子为Id+hA+h²A²/2+h³A³/6+O(h⁴)，第二个为相同B展开，乘法顺序A因子在左、B因子在右。",
+        "同页乘积二次项为h²(2AB+A²+B²)/2，三次项为h³(A³+B³+3AB²+3A²B)/6，最终O(h⁴)后为句点；JSON的字、系数、顺序及标点均吻合。",
+        "printed_page=104、pdf_page=126、section=3.3正确。没有另列证明块；展开乘法已含于statement_latex，proof_latex=null及proof_discussion_latex=null可保留。context_notation中的Cauchy乘积与保持AB顺序正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.productExponentialCubic",
+      "verdict": "PASS",
+      "explanation": "审阅Ch03.lean:259–269。MD.Ch03.formalSplitting A B展开为textbookFormalOperatorExponential A * textbookFormalOperatorExponential B；FormalOperatorSeries.lean把后者指数定义为PowerSeries.mk(n↦(1/(n! : ℝ))•A^n)，两个因子的低次展开由定义确定，乘法是真实的形式Cauchy乘积。R为任意实结合环代数，不预设交换；1_R对应Id，形式变量对应h。四个合取覆盖系数0、1、2、3：1，A+B，A²/2+AB+B²/2，A³/6+A²B/2+AB²/2+B³/6。它们分别等于原页(2AB+A²+B²)/2及(A³+B³+3AB²+3A²B)/6，只有加法项的排列变化，没有把AB改成BA或改变因子顺序。所有低于4次的项都已包括，形式O(h⁴)解释充分，不涉及收敛。无[EXTRA]、[ERRATUM?]。证明状态另记：调用FormalOperatorSeries.lean四个Product_coeff引理，本条与相应引理未见sorry；此次未编译，不以证明状态代替签名审计。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3-DifferenceCommutator",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF126/印刷104页面图像：“So the difference is”后的多行展示式先给二次、三次差项，最后一行等于h²[A,B]/2+O(h³)，末尾逗号；本条截取这一最后等式，三次展开由本批DifferenceCubic另行覆盖。",
+        "同页紧接“where [A,B]=AB−BA is the commutator of A and B.”及“For a splitting method, we have, replacing A by L_H_1 and B by L_H_2,”，随后Hamiltonian版本为e^{hL_H_1}e^{hL_H_2}−e^{hL_H}=h²[L_H_1,L_H_2]/2+O(h³)。JSON与这些短语、式子及标点一致。",
+        "printed_page=104、pdf_page=126、section=3.3正确；H=H₁+H₂及Lie加法的context_notation引用PDF125/印刷103正确。原书无另列证明块，proof字段为null可保留；所截取差式已有前面的展开作为计算背景。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.differenceCommutator",
+      "verdict": "FAIL",
+      "explanation": "Ch03.lean:272–276的差级数是S=E(A)E(B)−E(A+B)，已从FormalOperatorSeries.lean展开E(C)=PowerSeries.mk(j↦(1/(j! : ℝ))•C^j)，乘法次序、相减方向和右侧(A*B−B*A)/2均与原文一致；R为任意实结合环代数，不加交换假设。但原文S=(h²/2)[A,B]+O(h³)包含零次及一次差系数为0，现有签名只声明coeff₂ S=(AB−BA)/2，没有把coeff₀ S=0和coeff₁ S=0写入所对应的结论。这些低次消去确实可由已展开定义及系数引理另行推出，故此处不是反例或错误系数，而是在本批要求逐条覆盖完整差式全部子句的标准下结论不完整。另外，原文还列出H=H₁+H₂的Hamiltonian算子实例；抽象代数恒等式足以支持形式替换，但本签名未给出实例及H到A+B的识别，context_notation说明不能充当已声明的实例。无[EXTRA]、[ERRATUM?]。证明状态另记：本条调用Difference_coeff_two，本条及所调用库引理未见sorry；证明该系数正确不能补全声明范围。此次未编译。",
+      "counterexample": null,
+      "suggested_fix": "把结论扩成coeff₀ S=0 ∧ coeff₁ S=0 ∧ coeff₂ S=(1/2:ℝ)•(A*B−B*A)，或等价地用低于3次系数一致表述S−X²((AB−BA)/2)属于(X³)。为所引第二式明确给出A=L_H₁、B=L_H₂且L_H=L_H₁+L_H₂的形式算子实例，保留非交换次序与形式余项解释，不新增解析收敛结论。"
+    }
+  },
+  {
+    "source_id": "MD-3.3-DifferenceCubic",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF126/印刷104页面图像：差式的二次项为h²(AB−BA)/2，三次项为h³(2AB²+2A²B−BA²−BAB−B²A−ABA)/6，余项为O(h⁴)。JSON完整保留该差式，全部非交换字和正负号吻合。",
+        "该式在原页是“So the difference is”后的多行等式前两行；它与下一行h²[A,B]/2+O(h³)属于同一计算。按statement_scope，本条只引用前两行，内容与原文相符。",
+        "printed_page=104、pdf_page=126、section=3.3正确；原书没有另列证明块，proof字段为null可保留。context_notation明确“不省略整个差式的另一子句”，属于正确的范围提醒。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.differenceCubic",
+      "verdict": "FAIL",
+      "explanation": "审阅Ch03.lean:279–284并展开FormalOperatorSeries.lean中的实际E(C)=PowerSeries.mk(j↦(1/(j! : ℝ))•C^j)。声明的S=E(A)E(B)−E(A+B)与原式差级数一致；coeff₃ S=(1/6)•(2•(AB²)+2•(A²B)−BA²−BAB−B²A−ABA)，全部非交换字、系数及负号正确，实标量作用也未要求A、B交换。然而statement_latex引用完整S=h²(AB−BA)/2+h³C/6+O(h⁴)，本声明只表达三次系数，未表达二次系数(AB−BA)/2及零、一次系数消去。即使本批differenceCommutator另行证明二次系数，亦没有被合并到本声明的结论，且其本身未包含零、一次系数。context_notation还明确要求不省略另一子句，因此判结论覆盖FAIL。固定的差级数实际满足这些公式；不虚构它的反例，这里报告的是缺失条款。无[EXTRA]、[ERRATUM?]。证明状态另记：本条及所调用Difference_coeff_three库引理未见sorry；该事实不能替代完整差式的签名。未编译。",
+      "counterexample": null,
+      "suggested_fix": "以同一个S=E(A)E(B)−E(A+B)为对象，把coeff₀ S=0、coeff₁ S=0、coeff₂ S=(1/2:ℝ)•(A*B−B*A)、现有coeff₃公式合取为本source_id的结论，或等价表述S减去原文二次、三次多项式后的所有j<4系数为0。复用二、三次系数引理并不会改变声明范围；需要在本条完整声明中显式保留两项。"
+    }
+  },
+  {
+    "source_id": "MD-3.3-HamiltonianCommutator",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看PDF126/印刷104页面图像：“Observe that, for any real-valued functions f and H of phase space,”后为L_H f=∇fᵀJ∇H={f,H}；随后“Hence”给L_H₁L_H₂f={{f,H₂},H₁}，并利用skew-symmetry展开对易子。JSON的文字及等式与原页吻合，展示改成行内不改变所录内容。",
+        "PDF126页末Jacobi式逐项为{{f,H₂},H₁}+{{H₂,H₁},f}+{{H₁,f},H₂}=0；PDF127/印刷105页首“Therefore”后为[L_H₁,L_H₂]f=−{{H₂,H₁},f}={f,{H₂,H₁}}。JSON完整保留跨页推导，尤其Hamiltonian内括号H₂,H₁的次序正确。",
+        "printed_page=104–105、pdf_page=126–127、section=3.3正确。此处有完整正文计算，已经逐句保存在statement_latex；proof_latex及proof_discussion_latex为null表示没有另存证明字段，不能解释为原书没有这段推导。“未给独立完整证明”的proof_note仅按无独立证明块理解。",
+        "context_notation中的[A,B]=AB−BA与L_H f={f,H}分别见PDF126及PDF124，正确的{H₂,H₁}顺序见PDF127页首；smooth资格的背景见PDF124/印刷102。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.hamiltonianCommutator",
+      "verdict": "PASS",
+      "explanation": "审阅Ch03.lean:288–298。依赖SymplecticForm.lean中相空间是q、p标记的有限维实坐标，textbookJ=[0,I;-I,0]；SplittingError.lean的Hamiltonian场是J乘实际Fréchet导数的坐标梯度。LiePoisson.lean及本文件的textbookLieDerivative f F z均为DF(z)[f(z)]，textbookPoissonBracket G H z=DG(z)[J∇H(z)]，即{G,H}，不是顺序倒置的定义。故本声明左边确为L_H₁L_H₂F−L_H₂L_H₁F，右边确为{F,{H₂,H₁}}。它对任意Nc、F、H₁、H₂、z及局部C²假设量化，完整对应原文跨页推导的最终结论；第一识别、反对称及Jacobi等中间行是该结论的推导步骤，不是被改成假设。所用实际定义给出L_HF={F,H}，依赖中skew与Jacobi也按此J约定展开，未省略独立的结论。[EXTRA] 三个ContDiffAt ℝ 2是自然且充分的局部正则资格，使嵌套导数及Hessian对称可用；原文smooth情形满足这些资格，不引入解析性、全局流或结论本身。C²是充分条件，不主张它对每组特例都是最弱条件。本条无[ERRATUM?]，它对应PDF127第一式的正确顺序；紧接的印刷反序公式另属本批下一条。证明状态另记：本条调用textbookHamiltonianLieDerivative_commutator，其依赖证明使用实际二阶导数和Hessian对称，本条及相应引理未见sorry；此次未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3-HamiltonianCommutatorPrinted",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "ERRATUM_CONFIRMED"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "ERRATUM_CONFIRMED",
+          "detail": "这是原书符号错误，不是JSON录入错误。PDF127/印刷105第二式确实印为[L_H₁,L_H₂]f=L_{ {H₁,H₂} }f，而同页第一式给出{f,{H₂,H₁}}；在L_Hf={f,H}及[A,B]=AB−BA约定下，两式相差负号。保留原statement_latex和已有ERRATUM?记录，不静默改书。显式多项式反例见audit.counterexample。"
+        }
+      ],
+      "evidence": [
+        "已查看PDF127/印刷105页面图像：“This means that it is possible to relate the commutator of Lie derivatives of Hamiltonian vector fields to the Lie derivative of the Poisson bracket of the corresponding Hamiltonians, i.e.,”后展示式下标明确为{H₁,H₂}，不是{H₂,H₁}。JSON的完整句子、公式及句点均忠实。",
+        "同页上一个“Therefore”展示式的最终内括号明确为{H₂,H₁}；PDF124/印刷102规定L_Hf={f,H}，PDF126/印刷104规定[A,B]=AB−BA，证实context_notation及已有ERRATUM?问题的依据。",
+        "printed_page=105、pdf_page=127、section=3.3正确。原书此处没有另列证明，proof_latex=null及proof_discussion_latex=null可保留；APPROVED仅指原文转录获认可，不表示该印刷公式正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.leadingShadowPrinted",
+      "verdict": "PASS",
+      "explanation": "签名忠实性PASS，原命题的数学真伪另外判为错误，二者不混同。审阅Ch03.lean:303–308，并展开Ch03_deps.txt中ReviewDefinitions.lean的hamiltonianLie H φ=textbookLieDerivative (textbookHamiltonianVectorField H) φ；LiePoisson.lean中textbookLieDerivative f φ z=Dφ(z)[f(z)]、textbookPoissonBracket A B z=DA(z)[J∇B(z)]；SplittingError.lean实际场为J梯度，SymplecticForm.lean实际J=[0,I;-I,0]，相空间为(Fin n ⊕ Fin n)→ℝ。因而∀n,A,B,F，C² A→C² B→C² F→∀z的结论实际就是[L_A,L_B]F(z)=L_{ {A,B} }F(z)，与本条印刷式逐项一致，未暗改为正确的{B,A}。[EXTRA] 全局ContDiff ℝ 2是对原文smooth资格的合理充分表达，保证任意z的二阶计算；它比逐点资格强，但符合全空间∀z的陈述，且不能挽救下述光滑多项式反例。[ERRATUM?]确实成立：按这些实际定义正确公式是[L_A,L_B]F=L_{ {B,A} }F=−L_{ {A,B} }F。因此PASS仅表示签名忠实于所冻结的印刷来源，绝不表示该错误印刷断言可以证明。证明状态另记：本条证明体显式为sorry；没有把sorry当作签名不忠实的理由，也没有把它当作原书错误的验证。实际反例独立确立原式为假。此次未编译或补证明。",
+      "counterexample": "取n=1，q=z(Sum.inl 0)、p=z(Sum.inr 0)，A(q,p)=q²/2，B(q,p)=p²/2，F(q,p)=q；三者均为全局C∞多项式，满足所有C²假设。按实际J及括号定义，L_A=−q∂_p，L_B=p∂_q，L_A(L_B F)−L_B(L_A F)=−q，而{A,B}=qp、L_{ {A,B} }F=q。取z=(q,p)=(1,0)，印刷式及对应Lean陈述左边为−1、右边为1，不相等。正确{B,A}=−qp则右边为−q。",
+      "suggested_fix": "保留该source_id的原文转录及错误标记。若另建数学修正声明，将右端改为hamiltonianLie (textbookPoissonBracket B A) F z，或在现有右端前添加负号；通过显式erratum版本及来源说明与印刷原式区分。当前错误公式不能仅通过消除sorry得到有效证明。"
+    }
+  }
+]

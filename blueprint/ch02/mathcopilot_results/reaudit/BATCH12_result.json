@@ -1,0 +1,271 @@
+{
+  "batch": "BATCH12",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "d6a2e0d5ba6ea06a1caf4427058f2ed6040ecd35cfe254480ef1f0bc66a91d69",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.1-Divergence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [
+          "context_notation 中的 f C¹ 是解释性正则性资格，不是 PDF 第94页明示假设；散度定义的 trace 解释与原式一致，但正式 Jacobian 定义未提供。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第94页的渲染图（印刷第72页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_divergence",
+        "verdict": "FAIL",
+        "explanation": "展开 Ch02_deps.txt 中 ReviewDefinitions.lean：Q n=Fin n→ℝ；LiouvilleVolume.lean 中 textbookCoordinateJacobian f z=LinearMap.toMatrix' (fderiv ℝ f z).toLinearMap，(i,j)项为 Df(z)(e_j)_i；故 trace 正是可微 f 的 ∑ᵢ∂fᵢ/∂zᵢ。定义正确表达散度记号，但本条 statement_scope 明确覆盖所引原句及公式，其中还含 ∇·f=0。bp_divergence 仅返回实数，无可微资格或零散度条件，未表达该条件；仅按缩小后的“定义散度”范围可通过。C¹ 是解释该表达式为经典偏导的合理资格，不在此签名中；不可微处 fderiv 的总定义值不能充当经典散度。此 def 无 sorry；判定针对完整登记范围的缺失条款。",
+        "counterexample": "n=1，f(z)=z，则 bp_divergence f z=1；定义允许该 f，没有任何条款要求零散度。原句是在 Liouville 定理中提出条件，并非声称所有 f 都散度为零，不能把缺失条件修成无条件零散度定理。",
+        "suggested_fix": "保留散度 def，另登记 divergenceFree f := ∀ z, bp_divergence f z=0，将原句的零条件对应到该谓词或 Liouville 的 hdiv；或明确缩小本条范围为散度定义，并将零条件归入 Liouville。解释经典散度时补充可微资格。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-Liouville",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ASSUMPTION_METADATA_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.1-Liouville",
+          "kind": "unnumbered_claim",
+          "label": "Liouville’s theorem",
+          "section": "2.3.1",
+          "printed_page": "72",
+          "pdf_page": "94",
+          "statement_latex": "Consider a set of points $S(t)$ in phase space with evolution associated to a differential equation $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$ described by the flow map $\\mathcal F_t(S(0))=S(t)$. Liouville’s theorem [16] states that the volume of such a set is invariant with respect to $t$ if the divergence of $f$ vanishes,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.liouville",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookDivergenceFreeFlow_volume_image_of_jointC2"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]实际解族Φ联合C²（原文未重复此较强正则性）；f C¹、Φ0=id、t∈[0,τ]（签名无独立τ>0假设；ht蕴含τ≥0）及实际时间ODE；只对可测S表达Lebesgue体积。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "reason": "extra_assumptions 声称 τ>0，但真实 Lean 签名仅有 ht : t∈Icc 0 τ。τ=0 允许；τ<0 无可用 t。修正元数据，不修改教材或 Lean。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "extra_assumptions 声称 τ>0，但真实 Lean 签名仅有 ht : t∈Icc 0 τ。τ=0 允许；τ<0 无可用 t。修正元数据，不修改教材或 Lean。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第94页的渲染图（印刷第72页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.liouville",
+        "verdict": "PASS",
+        "explanation": "已展开 textbookCoordinateJacobian 为实际 Fréchet 导数的标准坐标矩阵，其迹为经典散度（hf 保证 C¹）。量词依次给 f、全空间零散度、指定联合 C² 解族 Φ、时间窗 τ、窗内任意 t、任意可测 s；hODE 在窗内每个时刻、每个初值要求实际时间导数为 f(Φ(t,z))，hinit 要求 Φ(0,·)=id。结论是像集 Lebesgue volume 等于原集 volume，包含无限体积。可测性、实际 ODE、初值恒等及 C¹ 是合理资格；联合 C² 为已明示的较强充分条件，并非必要，签名未假设 τ>0，ht 仅蕴含 τ≥0，τ=0 合理。当前只覆盖非负闭窗，全局全空间解族比局部存在域强，是登记的受限充分版本。依赖 theorem textbookDivergenceFreeFlow_volume_image_of_jointC2 的实际签名与此一致；本声明证明体调用该定理、无直接 sorry，语义 PASS 不等于本次编译或全依赖无 sorry 认证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-HamiltonDivergence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第94页的渲染图（印刷第72页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.hamiltonDivergence",
+        "verdict": "PASS",
+        "explanation": "SymplecticForm.lean 展开 SymplecticCoordinates Nc=(Fin Nc⊕Fin Nc)→ℝ，前一组为 q，后一组为 p；textbookJ=fromBlocks 0 1 (-1) 0。SplittingError.lean 的 textbookHamiltonianVectorField H z=J·(i↦DH(z)e_i)，因此分量恰为 (∂pH,−∂qH)。SymplecticMaps.lean 的 textbookJacobian 是实际 fderiv 的标准坐标矩阵。逐项取迹即 ∑ᵢ∂qᵢ∂pᵢH−∑ᵢ∂pᵢ∂qᵢH；点态 ContDiffAt ℝ 2 H z 保证混合偏导交换，故零迹覆盖原句最终断言，展示的计算链是该展开与混合偏导对称的推导。H、z 任意；C² 是合理充分资格而非最弱必要条件。HamiltonianVariational.lean 的 textbookHamiltonianHessian 使用真实二阶 fderiv，HamiltonianVolume.lean 的零散度定理据此证明该结论。本声明调用库定理、无直接 sorry；未运行编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-HamiltonVolume",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ASSUMPTION_METADATA_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.1-HamiltonVolume",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.1",
+          "printed_page": "72",
+          "pdf_page": "94",
+          "statement_latex": "Thus Hamiltonian systems always have volume preserving flows.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "流为实际Hamilton向量场的解族；完整体积结论覆盖闭时间窗每个t及每个可测S。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.hamiltonVolume",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]Φ联合C²；H C²、Φ0=id，t∈[0,τ]（签名无独立τ>0假设；ht蕴含τ≥0）；可测集S。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "reason": "extra_assumptions 声称 τ>0，但真实 Lean 签名仅有 ht : t∈Icc 0 τ。τ=0 允许；τ<0 无可用 t。修正元数据，不修改教材或 Lean。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "extra_assumptions 声称 τ>0，但真实 Lean 签名仅有 ht : t∈Icc 0 τ。τ=0 允许；τ<0 无可用 t。修正元数据，不修改教材或 Lean。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第94页的渲染图（印刷第72页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.hamiltonVolume",
+        "verdict": "PASS",
+        "explanation": "展开相空间为带 q/p 标签的 ℝ^(2Nc)，J 的块为 [0,I;−I,0]，实际 Hamilton 向量场为 (∂pH,−∂qH)，Jacobian 为真实 fderiv 坐标矩阵。H C² 保证该场 C¹、混合偏导相等及零散度；hODE 明确每个初值沿该场演化，Φ0=id。对每个 t∈[0,τ]、每个可测 s，结论是该 Hamilton 流像集的真实 Lebesgue 体积不变。联合 C² 是明确登记的较强充分资格、并非 H C² 自动保证或体积守恒所必需；全空间给定解族限制了可应用范围，不主张所有 Hamilton 系统全局存在。可测性合理；无 τ>0 假设，τ=0 允许。实际库 Hamilton 体积结论和声明一致；本声明调用库定理、无直接 sorry，语义判定不认证编译或全依赖证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-VolumeChange",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第95页的渲染图（印刷第73页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.volumeChange",
+        "verdict": "PASS",
+        "explanation": "展开 Q n=Fin n→ℝ，textbookCoordinateJacobian Φ z=toMatrix' (fderiv ℝ Φ z).toLinearMap，所以 det 是实际空间导数的行列式。量词为任意 n、映射 Φ、集合 S，在 Φ C¹、全局单射、S 可测的资格下，像集 Lebesgue 体积等于 S 上 |det DΦ| 的非负 lintegral；ENNReal.ofReal 将非负实绝对值转为扩展非负实数，故覆盖无限体积。固定时刻流映射可代入；全局单射强于仅在 S 上单射，但合理地避免多重覆盖，C¹ 和可测性是明确充分资格。证明体通过 det_toMatrix' 对接实际换元公式，无直接 sorry；本次未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-VariationalPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "保留原条 ERRATUM?：若 z(t)=Φ(t,ζ)，通常变分矩阵应为 D_yΦ(t,ζ)。移动取值点公式有链式项及 f′ 的取值点变化；原书疑误不能当作转录错误修正。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第95页的渲染图（印刷第73页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。",
+          "PDF第95页确实印为 W(t)=𝓕′ₜ(z(t))，随后为 W′=f′(z(t))W 及 W′W⁻¹=f′(z(t))；未将取值点静默改为初值。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.variationalPrinted",
+        "verdict": "FAIL",
+        "explanation": "已实际展开 Statements.lean 的 flowC1：f C¹、Φ 联合 C¹、∀z Φ(0,z)=z、∀t∈[0,τ]∀z 时间导数为 f(Φ(t,z))；没有把待证变分公式作为前提。Q 与 Jacobian 为真实有限实坐标空间与真实空间导数。签名忠实保留原书移动取值点 W(t)=D_yΦ(t,Φ(t,ζ))，同时要求 W′=Df(Φ(t,ζ))W 及 W′W⁻¹=Df(Φ(t,ζ))。这两条一般均错误；移动点的链式项和 Df 的取值点均不能省略。以下全实线 C∞ 完整流满足所有前提且 W 可逆，排除了正则性不足或域问题，确证 ERRATUM? 成立。正确变分矩阵应取固定初值 D_yΦ(t,ζ)。原签名只有联合 C¹，也未显式登记空间导数关于时间可微的更强充分资格；修正时可用联合 C²。当前证明体是 sorry，但 FAIL 来源于反例而非 sorry。",
+        "counterexample": "取 n=1，以 Q 1≅ℝ 识别。令 g(u)=u+u³，k=g⁻¹。g′=1+3u²>0，且 g 为满射，故 k 全局 C∞。设 f(x)=1+3k(x)²，Φ(t,x)=g(k(x)+t)，τ=1，ζ=0。Φ 联合 C∞、Φ(0,x)=x，∂tΦ=g′(k(x)+t)=f(Φ(t,x))，对全实线成立，因此满足 flowC1。Φ(t,0)=g(t)，W(t)=∂xΦ(t,g(t))=g′(2t)/g′(t)=(1+12t²)/(1+3t²)。W′(t)=18t/(1+3t²)²，Df(Φ(t,0))=6t/(1+3t²)。在 t=1/2∈(0,1)，W=16/7、W′=144/49，而 Df·W=192/49；W′/W=9/7，而 Df=12/7。两个合取子句均不成立，W 此时非零。",
+        "suggested_fix": "保留原书文字及 ERRATUM 记录；另立明确更正版，将所有空间 Jacobian 的移动取值点 Φ(s,ζ)、Φ(t,ζ) 改为固定 ζ，但右侧 Df 仍在 Φ(t,ζ) 取值。登记足够资格（例如联合 C² 实际解族与 f C¹），并说明由正则流的可逆变分矩阵得到第二子句，或显式加入该点 detW≠0；不得尝试证明当前错误签名。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-DeterminantODE",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_SIGNATURE_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.1-DeterminantODE",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.1",
+          "printed_page": "73",
+          "pdf_page": "95",
+          "statement_latex": "Now let $D=\\det(W)$. One can show (see Exercise 5) that\n\\[\\frac{\\dot D}{D}=\\operatorname{tr}(\\dot W W^{-1}).\\]\nThis implies that\n\\[\\dot D=\\operatorname{div}(f(\\boldsymbol z(t)))D,\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "A(t)=f′(z(t))，tr A=div f(z(t))；W满足上一变分ODE。原文除D的等式需D≠0；实际Lean签名同时登记最终D′子句及D′/D=tr((AW)W⁻¹)子句，使用HasDerivAt W (A t*W t) t识别W′。A在签名中是一般矩阵系数，取A(t)=f′(z(t))得到原文实例。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.determinantODE",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookMatrixDet_hasDerivAt_of_linearODE"
+          ],
+          "extra_assumptions": [
+            "实际W′=AW且detW≠0，符合原文W⁻¹及D除法的资格；A=f′(z(t))。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "reason": "context_notation 错称签名只登记未除零的最终D′子句；实际签名有合取的两个结论，第二个正是除D等式。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation 错称签名只登记未除零的最终D′子句；实际签名有合取的两个结论，第二个正是除D等式。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第95页的渲染图（印刷第73页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.determinantODE",
+        "verdict": "PASS",
+        "explanation": "实际对象是 Fin n 索引的实方阵路径 A、W，任意时刻 t。HasDerivAt W (A(t)W(t)) t 是实际矩阵 ODE，故 deriv W t=AW；detW≠0 使矩阵 nonsingular inverse 和除 D 合理。两个合取子句完整给出 D′=tr(A)D 以及 D′/D=tr((AW)W⁻¹)，与原文两式对应；取 A(s)=textbookCoordinateJacobian f (z(s))，展开标准坐标 fderiv 后 tr A=div f(z(s))。一般矩阵系数是有效代数推广，不额外假设可疑移动点 W 满足 ODE。非零资格为第二子句所需，第一子句可去掉；依赖 LiouvilleVolume.lean 的 textbookMatrixDet_hasDerivAt_of_linearODE 用真实矩阵 det 求导。当前证明体无直接 sorry，未运行编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-DeterminantExponential",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第95页的渲染图（印刷第73页）；逐项核对 statement_latex、proof_latex、页码及上下文。该页没有独立完整证明；所收解释和推导已在 statement_latex 中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.determinantExponential",
+        "verdict": "PASS",
+        "explanation": "A、W 是实际实方阵路径，D(t)=det W(t)；Continuous A 与逐点全实线 HasDerivAt W (A(s)W(s)) s 给出 D′=tr(A)D。结论保留任意 t、D(0) 因子及方向积分 ∫₀ᵗtr A，没有暗设 D(0)=1、t≥0 或 detW≠0，奇异初值亦适用。以已展开的真实 textbookCoordinateJacobian f (z(s)) 代入 A，即 tr A=div f(z(s))，得到原式；此实例须自身满足资格，不由前条错误移动点公式自动获得。A 连续是合理充分条件，全实线 ODE 比单个积分区间资格强，是明确登记的全局版本；局部流须另限其存在区间。当前证明体为 sorry，与签名语义 PASS 分开，未声称证明完成或编译通过。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

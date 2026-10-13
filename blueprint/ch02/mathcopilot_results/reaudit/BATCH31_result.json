@@ -1,0 +1,167 @@
+{
+  "batch": "BATCH31",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "d57ceb94f4cabdbc2f6349c36de97a27e5e09c045288bf1fbbad31afb044b8ab",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.5.4-MultiTaylor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.5.4-MultiTaylor",
+          "kind": "definition",
+          "label": null,
+          "section": "2.5.4",
+          "printed_page": "92",
+          "pdf_page": "114",
+          "statement_latex": "we may approximate a single step by\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+h\\dot{\\boldsymbol z}_n+\\frac{h^2}{2}\\ddot{\\boldsymbol z}_n+\\cdots+\\frac{h^k}{k!}\\boldsymbol z_n^{(k)},\\]\nwhere it is possible to make use of higher order derivatives of the solution in formulating the method. Then using the differential equation, the time derivatives may be replaced by elementary differentials of the vector field.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原文 z_n 为当前步的状态，h 为步长，k 为截断阶数；点号及 z_n^{(j)} 表示解在当前时刻的时间导数。将公式写成导数数据求和时，须解释 d(0)=z_n、d(j)=z^{(j)}(t_n)，j=1,…,k。原文说明可由微分方程把时间导数替换为向量场的 elementary differentials；此处没有给出误差阶定理。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.bp_multiTaylor",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "CONTEXT_NOTATION_INCOMPLETE",
+              "detail": "补全原文 z_n、h、k 及导数数据 d 的对应关系；未改动原文公式。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex 与 PDF 第114页所选原句和公式一致，printed_page=92、pdf_page=114 正确；proof_latex=null 正确，该段未给独立证明。原 context_notation 仅说明 d_j 的意图，未交代 d(0)=z_n 与当前时刻，现补全记号。"
+        ],
+        "evidence": [
+          "PDF 第114页（印刷92页），§2.5.4：z_{n+1}=z_n+h dot(z_n)+(h²/2) ddot(z_n)+…+(h^k/k!) z_n^{(k)}。",
+          "同页公式后两句说明采用解的高阶导数，并用微分方程将时间导数替换为向量场的 elementary differentials。已读取文本并核对渲染页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_multiTaylor",
+        "verdict": "PASS",
+        "explanation": "展开依据：Ch02_deps.txt:2816–2817，Q n=Fin n→ℝ，Z n=Q n×Q n；2930–2931 的 multiTaylor 与 Ch02.lean:1361–1362 的 bp_multiTaylor 同为 Σ_{j=0}^k (h^j/j!)•d j。有限维实向量空间可表示原文一般状态 z（机械相空间可将两组坐标平铺为 Q (2n)，此处 n 是任意向量维数，不要求它同时是机械自由度数）。range(k+1) 包含端点 k；j=0 项正是 d 0，包括 k=0 情形。按上一轮原样保留的记号对应 d 0=z_n、d j=z^{(j)}(t_n)，全部展示项与系数一致。d,h,k 是定义参数，不是断言任意 d 都是解的真实导数；原文高阶导数可由向量场 elementary differentials 计算，是该构造的数据取得说明，没有额外精度结论。此条只定义截断多项式，没有声称证明这种替换或误差阶，故不因缺导数绑定定理判失败。无 EXTRA/ERRATUM。定义无 sorry；这里 PASS 仅针对构造语义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.5.4-TIPotential",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_UNSUPPORTED",
+          "SOURCE_SIGN_CONFLICT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.5.4-TIPotential",
+          "kind": "definition",
+          "label": null,
+          "section": "2.5.4",
+          "printed_page": "92–93",
+          "pdf_page": "114–115",
+          "statement_latex": "the Takahashi-Imada method [355] (also known as Rowlands’ method [316]) has the same form as the Verlet method\n\\[\\hat{\\boldsymbol P}=\\boldsymbol p-(h/2)\\nabla\\tilde U(\\boldsymbol q),\\quad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\hat{\\boldsymbol P},\\quad\\boldsymbol P=\\hat{\\boldsymbol P}-(h/2)\\nabla\\tilde U(\\boldsymbol Q),\\]\nwhere the corresponding potential energy function is\n\\[\\tilde U(\\boldsymbol q)=U(\\boldsymbol q)-\\frac{h^2}{24}\\nabla U(\\boldsymbol q)^TM^{-1}\\nabla U(\\boldsymbol q).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原文所在机械系统的 Hamiltonian 为 H(q,p)=p^T M^{-1}p/2+U(q)（PDF114，印刷92页）；q、Q 为位置，p、P 为动量，hat(P) 为半步动量，h 为步长，M 为质量矩阵，tilde(U) 为所展示的改势。",
+            "PDF115（印刷93页）的改势字面为 U−(h²/24)∇U^T M^{-1}∇U；紧接其后的力式写为 −[I+(h²/12)U''M^{-1}]∇U，两式存在符号冲突，保留原文，不在本条静默改号。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.tiMethod",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "CONTEXT_NOTATION_UNSUPPORTED",
+              "detail": "将无法由原文或已提供依赖核实的实现说明替换为原页记号，并显式标出原书符号冲突；原文陈述及公式保持原样。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex 中所选文字、三步 Verlet 公式和负号改势公式均与原页一致；跨页范围92–93/114–115正确，未给独立证明。原 context_notation 为实现评价，未定义教材记号，且“实际改势已递归引用”无法由缺失的正式库定义核实；现改为来源可核实的上下文。",
+          "原书改势与下一条力式存在符号冲突，本条不改动原书负号。"
+        ],
+        "evidence": [
+          "PDF 第114页（印刷92页）§2.5.4 后半段先给 H(q,p)=p^T M^{-1}p/2+U(q)，继而提及 Takahashi-Imada [355]、Rowlands [316] 并展示三步 Verlet 公式。",
+          "PDF 第115页（印刷93页）首式为 tilde(U)(q)=U(q)−(h²/24)∇U(q)^T M^{-1}∇U(q)，下一式方括号内为加号。已逐式核对渲染页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.tiMethod",
+        "verdict": "PASS",
+        "explanation": "展开依据：Ch02_deps.txt:2816–2817、2840、2859–2861、2932–2934。对象 Z n 是位置/动量对；invMass m v 的第 i 分量为 (m i)⁻¹ v i，即固定对角 M⁻¹。grad U q 的第 i 分量是 fderiv ℝ U q 在坐标基 Pi.single i 1 上的值，确为坐标梯度。takahashiPotential=U(q)−h²/24 Σ_i (grad U(q)_i)²/m_i，完整保留原书改势负号及二次型。verlet 展开为 Q=q+h M⁻¹p+(h²/2)M⁻¹F(q)，P=p+(h/2)(F(q)+F(Q))；令 p̂=p+(h/2)F(q) 就逐式等于原书两个半步 kick 和中间 drift。tiMethod 传入 F=−grad tildeU，且改势和步映射使用同一 h，未丢结论子句。质量接口属于本章沿用的固定对角机械模型；并不表示任意非对角质量矩阵。该 def 对任意实 m,U 总化（零质量逆元和不可微点的 fderiv 也有 Lean 默认值），仅在正质量、势能足够可微的教材背景解释为物理方法；它没有对异常输入声称可逆质量或准确性，故定义无需独立 EXTRA 前提。原书下一力式的符号矛盾不使这个如实保留负号的构造失败。无 sorry；不据此认证方法有效四阶。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.5.4-TIForce",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "SOURCE_SIGN_CONFLICT"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "所引原句、公式（包括方括号内加号）和 Hessian 说明均忠实于 PDF 第115页；页码正确，原段未给独立证明，空 context_notation 无额外失实内容。APPROVED 仅表示原文转录通过，不表示该力恒等式正确。",
+          "原条目的 ERRATUM? 疑点成立：对上一式负号改势求负梯度，Hessian 修正项应为正号。原文已如实保留，未静默修正。"
+        ],
+        "evidence": [
+          "PDF 第115页（印刷93页）首式：tilde(U)=U−(h²/24)∇U^T M^{-1}∇U。",
+          "同页下一式：tilde(F)=−∇tilde(U)=−[I+(h²/12)U''M^{-1}]∇U；下一句将 U'' 指明为 Hessian matrix。已核对渲染页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.tiForce",
+        "verdict": "FAIL",
+        "explanation": "展开依据：Ch02_deps.txt:2816、2840、2932–2934、2948，Ch02.lean:1371–1376。量词覆盖所有 n,m,U,h,q；positiveMass 是逐坐标 m_i>0，ContDiff ℝ 2 U 保证真实二阶导数及 Hessian 对称性；fderiv ℝ (grad U) q 对 invMass m (grad U q) 的作用是 Hess(U)M⁻¹∇U。实际改势含负号，其负梯度必须为 −∇U+(h²/12)Hess(U)M⁻¹∇U，签名却取减号。它逐字保留了原书力式，却与其所调用的实际改势矛盾并成为假定理，因此不能作为可证明的忠实数学陈述通过。ERRATUM? 成立。EXTRA 中 C² 是充分且合理的统一光滑性条件（强于某一点有二阶导数）；正质量保证教材机械质量可逆，但纯代数恒等式只需各质量非零，故是物理上合理而非最弱必要条件。签名体有 sorry，证明状态独立于已经确定的语义失败。",
+        "counterexample": "用已经展开的真实定义取 n=1，m(0)=1，U(q)=(q 0)²/2，h=1，q 0=1。grad U(q)=q，fderiv(grad U) 是恒等映射，invMass 为恒等，tildeU(q)=11(q 0)²/24。因此等式左侧的第0分量=−11/12，右侧=−1−1/12=−13/12；正质量与 C² 全部满足。此为依赖定义下的数学反例，未编写或检查 Lean 反例证明。",
+        "suggested_fix": "保留原书字面转录和 ERRATUM 说明；另将可证明的 tiForce 右端改成 −grad U q + (h²/12) • (fderiv ℝ (grad U) q) (invMass m (grad U q))。若决定采用教材力式的减号修正，则必须另建加号改势版本，并同步修改方法及阶数陈述，不能只改本条注释。"
+      }
+    },
+    {
+      "source_id": "MD-2.5.4-TIOrder",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "DEPENDENT_ERRATUM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "statement_latex 两句完整对应 PDF 第115页 effective order four 段落，χ_h、Sect. 2.4.5、坐标变换后消去局部误差项均未漏；页码正确，未给独立完整证明，空 context_notation 无额外失实内容。",
+          "原条目的 DEPENDENT_ERRATUM 标记合理：该方法的定义在同页给出相互冲突的改势与力式，有效四阶不能仅凭本段断言据此得到确认。APPROVED 表示该段原文转录通过。"
+        ],
+        "evidence": [
+          "PDF 第115页（印刷93页）中部：以存在 χ_h 的变量变换解释 effective order four，并引用 Sect. 2.4.5。",
+          "同段最后一句称改势特意消去坐标变换后 local error expansion 的项；同页顶部改势负号与力式加号冲突。已核对渲染页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.tiOrder",
+        "verdict": "FAIL",
+        "explanation": "全部使用定义已找到：Q/Z、grad、invMass、verlet、takahashiPotential、solution、mechanicalField、positiveMass 见 Ch02_deps.txt:2816–2817、2840、2859–2861、2932–2934、2941–2948；oneStepIterate/oneStepMaxError 见1444–1463；textbookConjugateMap/textbookProcessedMethod 见 ProcessedMethods 段（用原始行编号1649、1690定位，段中有额外 CR）。solution 是闭区间每点 HasDerivWithinAt γ (f(γ t))，mechanicalField=(M⁻¹p,−∇U(q))，所以是原机械轨迹。HasDerivWithinAt 已蕴含区间内连续，显式 ContinuousOn γ 冗余但合理。处理映射确为 χ_h⁻¹∘B_h∘χ_h，迭代从 γ(0) 开始，等价于先 χ_h 预处理、迭代真实 B_h、再逆变换；误差是网格 0,…,ν 上完整位置/动量乘积范数最大值，不是单步误差。量词 χ 在 γ,τ 之前，C,ν₀ 在其之后，保证统一处理器而允许误差常数依赖轨迹与时间窗，ν₀>0 排除零分母，均合理。正固定对角质量与 U C∞ 是足够光滑的背景条件，C∞ 并非四阶所需最弱条件。失败依据是结论范围与处理器条件：原文还明确说坐标变换后局部误差展开项被消去，签名只有全局四阶界，没有局部五阶缺陷或消项断言；它对任意光滑势能要求整个 Z n 上的 Homeomorph，强于通常在轨迹邻域的变量变换，却完全不要求 χ_h 光滑、随 h 正则或趋于恒等，无法承载所引用的局部误差展开。这个无正则性的全局共轭存在性不能直接等同于原文有效阶陈述。DEPENDENT_ERRATUM 所指来源符号冲突确实存在，但不能只据冲突断言负号版本无有效四阶；下方谐振子计算说明这一限制。这里不声称签名允许的任意不规则 Homeomorph 都不存在；本条 FAIL 已由上述具体缺失条款和不合理强化成立，无须借缺依赖写 NEEDS_HUMAN。定理体为 sorry，未验证其证明。",
+        "counterexample": "局部有效阶的符号障碍：n=1，m=1，U(q)=q²/2。实际负号改势使弹簧系数 a=1−h²/12。Verlet 矩阵为 [[1−h²a/2,h], [−ha(1−h²a/4),1−h²a/2]]，行列式1，特征角满足 cos θ=1−h²/2+h⁴/24。因此 θ=h+h⁵/720+O(h⁷)，负号在此谐振子上反而消去 h³ 相位缺陷：谐振子不能用作负号版本二阶的反例。真正已确定的缺失条款是：签名没有处理器光滑性/近恒等条件及变换后局部误差项消去结论，且全局 Homeomorph 强化未获原段支持。不把原书力式与改势的冲突自动当作本定理必假的反例。",
+        "suggested_fix": "首先明确本条选择负号改势（与 TIPotential 一致）还是加号改势（与原书力式一致），保留来源冲突说明。将有效阶精确定义为在每条紧轨迹邻域存在随步长足够光滑、近恒等且局部可逆的处理器；补上经过共轭后相对原机械精确流的局部 O(h⁵) 缺陷或明确的低阶消项结论，并给出稳定性以导出当前全网格 O(h⁴) 界。若确需整个相空间 Homeomorph，必须另列并论证全局延拓条件，不能将其当作原文已经给出的假设。"
+      }
+    }
+  ]
+}

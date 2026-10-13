@@ -1,0 +1,155 @@
+[
+  {
+    "source_id": "MD-3.3.4-TakahashiPotential",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_PUNCTUATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3.4-TakahashiPotential",
+        "kind": "definition",
+        "label": null,
+        "section": "3.3.4",
+        "printed_page": "112",
+        "pdf_page": "134",
+        "statement_latex": "Recall the Takahashi-Imada method introduced in the last chapter,\n\\[\\widehat P:=p-(h/2)\\nabla\\widetilde U(q),\\qquad Q:=q+hM^{-1}\\widehat P,\\qquad P:=\\widehat P-(h/2)\\nabla\\widetilde U(Q),\\]\nwith modified potential energy function\n\\[\\widetilde U(q)=U(q)-\\frac{h^2}{24}\\nabla U(q)^TM^{-1}\\nabla U(q).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "实际takahashiPotential体为U−h²/24 ∑ᵢ(grad U)ᵢ²/mᵢ，实际kick-drift-kick梯度取整个修正势。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.takahashiImada",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "M为固定对角质量矩阵，原第1章机械模型。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "TRANSCRIPTION_PUNCTUATION",
+            "detail": "按PDF134将last chapter后的句号恢复为逗号。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "PDF134首句以逗号结束，JSON写为句号；按逐字核对要求修正，数学公式不变。"
+      ],
+      "evidence": [
+        "PDF134/印刷112，§3.3.4首句末尾是逗号“last chapter,”，不是句号；三步依次为P̂:=p−(h/2)∇Ũ(q)、Q:=q+hM⁻¹P̂、P:=P̂−(h/2)∇Ũ(Q)；Ũ公式减号及1/24与JSON一致。无独立证明，proof_latex=null正确。依赖：Chapter02/ReviewDefinitions.lean，Chapter02/SymplecticEuler.lean。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.takahashiImada",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt：Q n=Fin n→ℝ，SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ，左右分量分别为q,p；grad U q i=(fderiv ℝ U q)(Pi.single i 1)；takahashiPotential=U(q)−h²/24∑ᵢ(grad U(q)ᵢ)²/mᵢ；textbookPotentialForce 对整个传入势取负偏导。coordinateVerlet 是 kick(h/2)∘drift(h)∘kick(h/2)，kick 保持q并令pᵢ加时间乘Fᵢ，drift 保持p并令qᵢ加h(mᵢ)⁻¹pᵢ。因此严格产生PDF134的三步与修正势，梯度不是只取原势U。固定对角质量符合教材机械模型；定义本身没有positiveMass或可微性前提，使用Lean的全定义逆元/导数作代数延拓，物理解释应限制在非零质量、可微势。这里未额外声称任意不光滑势的数值性质。此条是定义，无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.4-PotentialDoubleBracket",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF134/印刷112，“One might recognize … in fact”后公式∇U(q)ᵀM⁻¹∇U(q)={U,{U,T}}，文字、括号顺序、页码正确；无独立证明。context中T为纯动能且U只依赖q与展开相符。依赖：Chapter03/LiePoisson.lean，Chapter02/SymplecticForm.lean，Chapter02/ReviewDefinitions.lean，Chapter03/ReviewDefinitions.lean。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.potentialDoubleBracket",
+      "verdict": "PASS",
+      "explanation": "已展开 grad、invMass m v i=(mᵢ)⁻¹vᵢ、quadraticKinetic m p=∑ᵢpᵢ²/mᵢ/2、pack=Sum.elim q p、unpack=(z∘inl,z∘inr)。textbookPoissonBracket F G=DF·textbookHamiltonianVectorField G，后者为J乘坐标偏导，textbookJ=[0 I;−I 0]；故括号为∑ᵢ(F_qᵢG_pᵢ−G_qᵢF_pᵢ)。内层{U,T}=∑ᵢU_qᵢpᵢ/mᵢ，外层{U,{U,T}}=∑ᵢU_qᵢ²/mᵢ，正好等于左式。∀n,m,U，正质量与C²后∀z的量词和对象正确；C²充分保证真实嵌套微分，正质量可放宽至非零但与模型一致，合理。[ERRATUM?]无。声明体含sorry，因此PASS仅指签名语义，不指证明完成。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.4-TakahashiShadow",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF134/印刷112，“This is certainly not a coincidence”段四行展示式：首行T+Ũ，第二行−h²{U,{U,T}}/24，第三行H+h²({T,{T,Ũ}}−{Ũ,{Ũ,T}})/12，末行H+h²(pᵀM⁻¹U''M⁻¹p−∇UᵀM⁻¹∇U)/12；每行均有O(h⁴)。JSON逐行一致，proof_note正确说明推导存在statement中；context承认只存截断。依赖：Chapter03/ReviewDefinitions.lean。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.takahashiShadow2",
+      "verdict": "FAIL",
+      "explanation": "已展开 mechanicalEnergy=T+U、invMass、grad、hessianAction U q v=D(grad U)(q)v。shadowTerms 令v=M⁻¹p，其第一分量为∑ᵢvᵢ(U''v)ᵢ，第二分量为∑ᵢU_qᵢ(M⁻¹grad U)ᵢ；因此该定义准确保存H+h²/12(pᵀM⁻¹U''M⁻¹p−grad UᵀM⁻¹grad U)的有限函数。但本条statement_scope包括PDF134整段四行等式与O(h⁴)，该定义既无实际或形式影子哈密顿量对象，也无等式、余项界、替换U为修正势的匹配关系及其光滑性资格。context_notation已经坦言只存有限函数，这使缺失可见，但不能把所声明整段范围视作完整形式化。不是公式系数错误；是缺少原文结论。无sorry，也不能因此视为展开关系已证。",
+      "counterexample": "缺失条款：既没有H̃_h与有限函数的O(h⁴)关系，也没有原文前面三行Poisson展开等式；单纯定义有限函数无法蕴含这些关系。",
+      "suggested_fix": "保留takahashiShadow2作为有限系数定义，但将其条目范围明确缩为最后式的h²截断；另为原文整段建立形式匹配声明或带明确光滑性、紧集、余项对象的O(h⁴)定理，包含替换修正势及Poisson到梯度的联系。不要用定义代替原文展开结论。"
+    }
+  },
+  {
+    "source_id": "MD-3.3.4-TakahashiProcessor",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF134/印刷112末行是“Introducing coordinate transformations”；PDF135/印刷113开头式(3.9)的q̃减号、p̃加号、1/12、U''(q)M⁻¹p次序均与JSON一致。该跨页上下文已在context_notation说明，页码以公式所在页为准正确。无独立证明。依赖：Chapter02/ReviewDefinitions.lean及Chapter03/ReviewDefinitions.lean。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.takahashiProcessor",
+      "verdict": "PASS",
+      "explanation": "已展开 Z n=(Fin n→ℝ)×(Fin n→ℝ)、grad 的坐标偏导、invMass m v i=(mᵢ)⁻¹vᵢ及hessianAction U q v=D(grad U)(q)v；向量加减和实数标量乘逐分量作用。输出第一分量是q−h²/12 M⁻¹grad U(q)，第二分量是p+h²/12 U''(q)M⁻¹p，与PDF135式(3.9)一致，尤其矩阵作用次序正确。此定义不声称全局可逆或辛性；没有额外假设、没有sorry。一般不光滑U的全定义导数延拓不影响其在教材光滑语境下的定义语义。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.4-ProcessorEnergyPrinted",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "ERRATUM_CONFIRMED"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "原书首行遗漏U；抄录正确，不修正statement_latex。常数势反例确认原有ERRATUM?，详见audit。"
+      ],
+      "evidence": [
+        "PDF135/印刷113，式(3.9)下“and inserting these into H yields, after expanding in a Taylor series:”后的首行确为H(q̃,p̃)=T+h²(...)/12+O(h⁴)，次行为H̃_h(q,p)+O(h⁴)；JSON没有把T静默改为H。原文抄录、页码、null证明均正确。context及ERRATUM?准确指出与PDF134末行H=T+U的冲突。依赖：Chapter03/ReviewDefinitions.lean；Ch03.lean:591–602。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.processorEnergyPrinted",
+      "verdict": "FAIL",
+      "explanation": "已展开 mechanicalEnergy=T+U、quadraticKinetic=T、takahashiProcessor 为式(3.9)，shadowTerms 前两项分别是pᵀM⁻¹U''M⁻¹p与grad UᵀM⁻¹grad U，takahashiShadow2=H+h²/12(A−B)。签名把原文两行都转成同一C,δ下对紧集B一致的绝对余项界，∀n,m,U,B后存在C,δ再∀h,z的量词适合这种局部O解释；C⁴、正对角质量、紧集是合理且充分但非最弱的附加条件。然而第一界忠实照抄了原书错误的T，导致结论在h=0即要求|U(q)|≤0，而其假设没有U|_B=0。第二界没有这个遗漏且在所加条件下合理。[ERRATUM?]已被明确反例确认成立；不能因逐字忠实就把矛盾签名记为PASS。声明含sorry，此失败独立于证明状态。",
+      "counterexample": "n=1，m₀=1，U(q)≡1，B={(q=0,p=0)}。正质量、C⁴、紧性均满足。grad U=0、U''=0，处理器恒等，shadowTerms=(0,0,0)，T=0，H=1，takahashiShadow2=1。任意δ>0都有h=0∈(−δ,δ)，第一界要求1≤C·0⁴=0，第二界为0≤0。即使删除h=0，第一界1≤Ch⁴在h→0时仍不成立。",
+      "suggested_fix": "原文JSON继续保留T并记录确认的原书疑误。保留Printed声明作为错误原式的档案并明确不可证明；另立Corrected声明，把第一界quadraticKinetic m z.2改为mechanicalEnergy m U z，保留第二界和统一余项资格。不得静默改原书。"
+    }
+  },
+  {
+    "source_id": "MD-3.3.4-TakahashiEffectiveOrder",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [
+        "原条目issues中的NEEDS_HUMAN是待审语义意见，不是原文；依赖齐全，本次audit已给出具体FAIL理由，无须把原文审校记为NEEDS_HUMAN。"
+      ],
+      "evidence": [
+        "PDF135/印刷113，两句从“Since H̃_h is assumed to be constant along the numerical solution”至“i.e. for arbitrary quantities, not just the energy [166].”均完整抄录；无独立完整证明，页码和proof_latex=null正确。context关于真实轨迹误差符合oneStepMaxError，关于全局χ的原有疑问可由展开定义直接定位。依赖：Chapter02/ProcessedMethods.lean、OneStepConvergence.lean、ReviewDefinitions.lean；Ch03.lean:605–617。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.takahashiEffectiveOrder",
+      "verdict": "FAIL",
+      "explanation": "所有相关定义均已找到并展开：solution 要求γ在[0,τ]每点满足实际HasDerivWithinAt；mechanicalField(m,F)(q,p)=(M⁻¹p,F(q))；verlet 的q新值为q+hM⁻¹p+h²/2 M⁻¹F(q)，p新值为p+h/2(F(q)+F(q新))，此处F=−grad(takahashiPotential m U h)。textbookProcessedMethod χ B h=(χ h)⁻¹∘B_h∘χ h，oneStepIterate=(G_h)^[k]，oneStepMaxError=max_{0≤k≤ν}‖G_h^[k](γ(0))−γ(kh)‖。所以它确实控制有限时间的全部网格轨迹误差，不只是能量或一步误差。量词∃χ在∀γ,τ之前要求同一族全空间homeomorphism服务所有轨迹，并且χ完全没有近恒等、h光滑性、式(3.9)的二阶系数或局部作用域要求。PDF134–135所说的是给定坐标变换带来的有效阶；该签名无法识别那个处理器，并额外要求全空间双向连续的精确逆。全局homeomorphism是存在结论的强化，并非一个已给出的额外前提，不能仅标[EXTRA]就证明合理。正质量、全域C∞、连续有限时间解是合理的充分正则化；全域正则性比局部需要强。给定这些确切缺失，判FAIL，无须以定义缺失或导师判断为由判NEEDS_HUMAN。χ⁻¹∘G∘χ本身不是方向错误：若P是原文从原坐标到带波浪号坐标的后处理，则应取χ=P⁻¹，得到P∘G∘P⁻¹。原文关于能量的解释显式以影子能量沿数值解恒定为假定，该签名也未单列这项条件式能量结论。声明含sorry；未声称已否证存在任意全局χ的四阶定理。",
+      "counterexample": "缺失条款：存在任意χ的声明不要求原文指定处理器或其二阶展开，且把局部坐标展开提升为全空间homeomorphism。具体说明此提升不能直接由式(3.9)给出：n=1,m=1,U(q)=q⁴，则P_h第一分量q−h²q³/3；任意h≠0，(q,p)=(0,0)、(√3/|h|,0)、(−√3/|h|,0)均映到(0,0)，所以式(3.9)自身不是全局homeomorphism。该例只否定将显式P_h直接认作全局可逆映射，不是否定存在另一族全局χ的命题。",
+      "suggested_fix": "明确原文后处理P_h及P_h=id+h²a+O(h⁴)，其中a(q,p)=(−M⁻¹grad U/12,UM⁻¹p/12)；使用轨迹紧邻域内的局部可逆处理器，写P_h∘G_h∘P_h⁻¹的真实网格误差界，确保初值、各次迭代和逆映射作用域一致。若继续采用χ⁻¹∘G∘χ，应规定χ=P_h⁻¹及相应负二阶系数。若坚持全局homeomorphism版本，另给全局延拓和近恒等一致性依据；将以影子能量恒定为条件的能量叙述与一般轨迹阶结论分开。"
+    }
+  }
+]

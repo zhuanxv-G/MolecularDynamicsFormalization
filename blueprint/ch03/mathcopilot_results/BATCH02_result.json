@@ -1,0 +1,356 @@
+[
+  {
+    "source_id": "MD-3.1-AdjointEulerOscillator",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看教材 PDF120 页面图像；页眉印刷页98，98+22=120，§3.1。",
+        "原句从“Let us begin with an illustrative example.”起，H(q,p)=p²/2+Ω²q²/2，展示更新为 Q=q+hp、P=p−hΩ²Q，末尾确有逗号。statement_latex 的文字、公式及标点一致。",
+        "context_notation 中 q,p 是输入，Q,P 是输出，h 是步长，Ω 是频率，H 是同页原始能量。原页无该定义的独立证明，proof_latex=null、proof_note 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.oscillatorAdjointEuler",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03.lean:30–32 的实际定义：z=(q,p)，局部变量 q 保存更新后 Q=q+hp，返回 (Q,p−hΩ²Q)，第二分量使用新位置而非旧位置，忠实于 adjoint symplectic Euler。Ch03_deps.txt 的 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3530–3532 的正式库同名定义亦为相同映射，没有隐藏条件或符号差异。对象、参数与两条更新均一致。本条无 [EXTRA]、[ERRATUM?]；完整 def 无 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.1-ShadowHamiltonian",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接查看 PDF120／印刷98 页底式(3.1)：H̃(q,p)=(p²+hΩ²pq+Ω²q²)/2，分式后、编号前确有逗号；JSON 已正确保留。",
+        "引句“However, if we modify the Hamiltonian from … to”与原页一致；式中交叉项为正号、分母为2、编号为(3.1)。",
+        "context_notation 的 Q=q+hp、P=p−hΩ²Q 与同页展示式一致；没有独立定义证明，proof_latex=null 正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.oscillatorShadow",
+      "verdict": "PASS",
+      "explanation": "Ch03.lean:35 将 z.1=q、z.2=p 代入后，实际定义是 (p²+hΩ²pq+Ω²q²)/2，交叉项为正号，分母覆盖整个分子，与原页式(3.1)一致。已展开 Ch03_deps.txt 的 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3534，正式库同名定义相同；没有把影子能量替换成原始 oscillatorEnergy。这里定义的是依赖 h 的实值二次型，不宣称所有步长下均正定。本条无 [EXTRA]、[ERRATUM?]；完整 def 无 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.1-EnergyFailure",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_PUNCTUATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.1-EnergyFailure",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.1",
+        "printed_page": "98",
+        "pdf_page": "120",
+        "statement_latex": "If $H(q,p)=E$ then, for typical steps, we cannot expect $H(Q,P)=E$. (Just insert the formulas for $Q$ and $P$ into the Hamiltonian and check that the value is not the same as $H(q,p)$.)",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "同页$H(q,p)=(p^2+\\Omega^2q^2)/2$，$Q=q+hp$、$P=p-h\\Omega^2Q$。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.oscillatorEnergyFailure",
+        "reusable_proofs": [
+          "MolecularDynamics.Chapter03Review.oscillatorEnergyFailure_proved"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH02：按 PDF120 删除 H(q,p)=E 后多录的逗号；保留“for typical steps”及原书括号说明。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; /workspace/.mathcopilot/reviews/ch03/evidence/BATCH02/page-120.png"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_PUNCTUATION",
+          "detail": "PDF120 原句为“If H(q,p)=E then, for typical steps, …”；原 JSON 在条件与 then 之间多录逗号，现删除。"
+        }
+      ],
+      "evidence": [
+        "PDF120／印刷98，更新式正下方原句“If H(q,p)=E then, for typical steps, we cannot expect H(Q,P)=E.”；括号内从“Just insert the formulas”至“H(q,p).”均已逐句核对。",
+        "context_notation 的 H=(p²+Ω²q²)/2 及更新与同页定义一致。原书给出代入检查的提示，未展示独立完整计算，proof_latex=null 与 proof_note 可保留。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.oscillatorEnergyFailure",
+      "verdict": "FAIL",
+      "explanation": "已展开 Ch03_deps.txt 的 ReviewDefinitions.lean:3530–3535：oscillatorEnergy Ω(q,p)=(p²+Ω²q²)/2，adjoint 更新为 (q+hp,p−hΩ²(q+hp))；Ch03.lean 的本地映射相同，故对象正确。量词范围有缺项：Ch03.lean:38–43 只要求存在某个 Ω>0、某个 h≠0、某个 z 使能量不同，实际证据固定 Ω=h=1、z=(1,0)。原句讨论给定振子的“typical steps”，一个特定频率、大步长和状态的存在性例子没有覆盖一般非零步长，尤其没有表达任意固定正频率、任意小非零步长的非守恒行为。现命题是真的，但弱于所选原句。正式库 ReviewProofs.lean:4678–4679 使用的 oscillatorEnergyFailure_statement，展开 Statements.lean:4157–4158 后仍只是该固定例子，不会补足一般性。本条无 [EXTRA]、[ERRATUM?]；当前证明及复用证明无 sorry，与语义缺项分别判断。",
+      "counterexample": "缺失条款是对给定 Ω>0、非零 h 的一般性。现签名只证明 Ω=h=1、z=(1,0) 时 H(Q,P)=1、H(q,p)=1/2。实际定义给出 ΔH=(h²Ω²/2)[Ω²(q+hp)²−p²]；对每个 Ω>0、h≠0，取 z=(1,0) 都有 ΔH=h²Ω⁴/2>0，现签名却不包含这些量词。这是缺失条款的证据，不是声称存在性命题为假。",
+      "suggested_fix": "至少改为 ∀ Ω h : ℝ, 0<Ω → h≠0 → ∃ z : ℝ×ℝ, oscillatorEnergy Ω (oscillatorAdjointEuler Ω h z) ≠ oscillatorEnergy Ω z。若严格表达“typical”的泛型含义，应同时给出上述 ΔH 恒等式，说明能量不变状态恰在 Ω(q+hp)=p 或 Ω(q+hp)=−p 两条直线上，其余状态改变能量。不可改成所有状态均改变能量，因为原点及这些直线是例外。"
+    }
+  },
+  {
+    "source_id": "MD-3.1-ShadowInvariant",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_PUNCTUATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.1-ShadowInvariant",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.1",
+        "printed_page": "99",
+        "pdf_page": "121",
+        "statement_latex": "This means that $\\widetilde H$ is a conserved quantity of the numerical method.",
+        "proof_latex": "\\[\\begin{aligned}\\widetilde H(Q,P)&=\\frac{P^2}{2}+\\frac{h\\Omega^2PQ}{2}+\\frac{\\Omega^2Q^2}{2}\\\\\n&=\\frac12p^2-\\frac{h\\Omega^2}{2}pQ+\\frac{\\Omega^2Q^2}{2}\\\\&=\\widetilde H(q,p)\\end{aligned}\\]",
+        "proof_note": "原书计算按原页转录。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$\\widetilde H$及adjoint symplectic Euler见p.98/PDF120。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.oscillatorShadowInvariant",
+        "reusable_proofs": [
+          "MolecularDynamics.Chapter03Review.oscillatorShadowInvariant_proved"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH02：按 PDF121 删除展示计算最后一行多录的句点；第二行恢复原页 (hΩ²/2)pQ 的因子排版，数学等式不变。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; /workspace/.mathcopilot/reviews/ch03/evidence/BATCH02/page-121.png"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_PUNCTUATION",
+          "detail": "PDF121 三行计算的最后 H̃(q,p) 后没有句点，原 proof_latex 多录句点，现删除。第二行的分式因子排版同时按原页恢复；−hΩ²pQ/2 与 −(hΩ²/2)pQ 数学等价，不判为计算错误。"
+        }
+      ],
+      "evidence": [
+        "已查看 PDF121／印刷99 页首计算：H̃(Q,P)=P²/2+hΩ²PQ/2+Ω²Q²/2；=p²/2−(hΩ²/2)pQ+Ω²Q²/2；=H̃(q,p)，最后没有句点。",
+        "下方“This means that H̃ is a conserved quantity of the numerical method.”与 statement_latex 一致；context_notation 所引 PDF120 的影子能量与更新正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.oscillatorShadowInvariant",
+      "verdict": "PASS",
+      "explanation": "已展开本地 oscillatorShadow、oscillatorAdjointEuler 及 Ch03_deps.txt 的 ReviewDefinitions.lean:3530–3534：比较的是同一 (p²+hΩ²pq+Ω²q²)/2 二次型更新前后的值。Ch03.lean:45–47 对所有实 Ω,h 和状态 z 断言相等，正是“conserved quantity”的一步形式，迭代即逐步守恒。恒等式对退化频率和大步长也成立，不需要椭圆正定条件，不能混淆守恒与曲线是否为椭圆。Statements.lean:4159–4160 为同一全称式，ReviewProofs.lean:4681–4684 展开定义后用 ring，没有额外前提。本条无 [EXTRA]、[ERRATUM?]；本条及复用证明无 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.1-ShadowEllipses",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_PUNCTUATION",
+        "CONTEXT_NOTATION_REVIEW_MIXED",
+        "SOURCE_ROTATION_AMBIGUITY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.1-ShadowEllipses",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.1",
+        "printed_page": "99",
+        "pdf_page": "121",
+        "statement_latex": "Recall that the graph of\n\\[\\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1\\]\nis an ellipse with major and minor axes aligned to the coordinate axes. If $\\epsilon$ is a small value, then\n\\[\\frac{x^2}{a^2}+\\frac{y^2}{b^2}+\\epsilon xy=1\\]\nwill be a slightly rotated ellipse (with slightly different major and minor axes). Thus we can think of the energy surface of the numerical method as being a small perturbation of the ellipse which represents the ‘energy surface’ (energy curve, in this case) of the harmonic oscillator itself.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$a,b\\in\\mathbb R\\setminus\\{0\\}$；原曲线为 $x^2/a^2+y^2/b^2=1$，扰动项为 $\\epsilon xy$，$\\epsilon$ 为小实参数。",
+          "$\\widetilde H$ 与 adjoint symplectic Euler 见p.98/PDF120；非退化振子能量曲线对应 $\\Omega>0$、能量水平 $E>0$。"
+        ],
+        "issues": [
+          {
+            "code": "SOURCE_ROTATION_AMBIGUITY",
+            "detail": "原书“slightly rotated”未定义角度意义，也未排除 a²=b² 的圆形退化；若要求相对于固定坐标轴的角度趋于0，退化情形不能这样解释。保留原文不改，需人工确认意图。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.shadowEllipses",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "显式Ω>0、|hΩ|<2，排除退化与不稳定步长；线性等价给出振子二次型标准形。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH02：按 PDF121 删除 then 后多录的逗号，保留“slightly rotated”等原书措辞。",
+          "BATCH02：context_notation 改为原页记号及非退化能量曲线上下文；移出与当前一般二次型签名不符的“尚需统一”式审计提示。",
+          "BATCH02：记录圆形退化时“小旋转”的原文语义疑点，未静默修订原书。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; /workspace/.mathcopilot/reviews/ch03/evidence/BATCH02/page-121.png"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_PUNCTUATION",
+          "detail": "PDF121 的“If ε is a small value, then”之后没有逗号；原 JSON 的 then, 多录逗号，现删除。"
+        },
+        {
+          "code": "CONTEXT_NOTATION_REVIEW_MIXED",
+          "detail": "context_notation 混入“泛型二次曲线尚需与Lean振子特例统一”的意见；当前 Lean 签名第一合取项已包含一般 a,b,ε 的旋转二次型，不应把旧意见当记号或据此认定材料不足。"
+        },
+        {
+          "code": "SOURCE_ROTATION_AMBIGUITY",
+          "detail": "原书“slightly rotated”未定义角度意义，也未排除 a²=b² 的圆形退化；若要求相对于固定坐标轴的角度趋于0，退化情形不能这样解释。保留原文不改，需人工确认意图。"
+        }
+      ],
+      "evidence": [
+        "已查看 PDF121／印刷99，两条原式为 x²/a²+y²/b²=1 与 x²/a²+y²/b²+εxy=1。",
+        "原页“If ε is a small value, then”后直接接展示式，下文确为“a slightly rotated ellipse (with slightly different major and minor axes)”，最后一句将数值能量曲线描述为原振子曲线的小扰动。",
+        "页码、全部原文、两条公式已核对；无独立证明，proof_latex=null 正确。原页没有 a²≠b² 条件、旋转角极限或 |hΩ|<2 的明确阈值，不能冒称这些是逐字原文。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.shadowEllipses",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "所有相关自定义对象均已在依赖中找到并展开，没有缺失定义。Ch03.lean:52–64 的第一项是 ∀a,b≠0 后 ∃δ>0、∃θ,A,B（均为 ε 的函数），A→|a|、B→|b|，对每个 |ε|<δ 有正半轴和对全部 x,y 成立的实际正交旋转恒等式，确实覆盖一般椭圆及半轴长度的小扰动，不是仅振子特例。第二项展开 oscillatorShadow 得矩阵 [[Ω²,hΩ²/2],[hΩ²/2,1]]；[EXTRA] Ω>0 是正频率约定（数学上 Ω≠0 已足够），|hΩ|<2 正是正定性的必要充分步长条件，合理且未假设结论。L 是真实实线性等价，表达正定二次型标准化。对 E>0，令 x=q、y=p、a=√(2E)/Ω、b=√(2E)、ε=hΩ²/(2E)，一般合取项即给出影子能量水平集和 h→0 的形状扰动，此联系能从现有定义推得，不能据“未统一”报材料不足。真正需要人工裁定的是原书“slightly rotated”含义：签名只断言旋转存在，未要求 θ(ε)→0；当 a²=b² 时原曲线是圆，原始主轴无唯一方向，而微小交叉项选择的轴相对于固定坐标轴可以是45°。需确认作者仅指曲线形状接近，还是在非圆条件下还要求小角度变化。原书未明确，这个原文问题是本条 NEEDS_HUMAN 的唯一原因。本条没有 [ERRATUM?] 标注，疑点已另行记录；有 sorry，只表示证明未完成，与上述签名审计分开判断。",
+      "counterexample": "退化例：a=b=1、0<ε<2 时，x²+y²+εxy=(1+ε/2)((x+y)/√2)²+(1−ε/2)((−x+y)/√2)²。可取 θ=π/4、A=(1+ε/2)^(-1/2)、B=(1−ε/2)^(-1/2)；ε→0 时 A,B→1，但相对于固定坐标轴 θ 不趋于0。此例区分形状小扰动与小旋转角，并非否定原书椭圆结论。",
+      "suggested_fix": "若原书只指形状小扰动，现签名的两合取项可以保留，并补写 E>0 的变量对应说明。若要求小旋转角，则在 a²≠b² 分支加入 Tendsto θ (𝓝 0) (𝓝 0) 或等价的主轴方向收敛，单独处理圆形退化。应先确认这项原文语义，不可静默在原文补非圆条件或删改“slightly”。"
+    }
+  },
+  {
+    "source_id": "MD-3.1-EulerGrowth",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已查看 PDF122／印刷100 页首完整三句，末句“If we used Euler’s method to solve the harmonic oscillator we would find that energy grows without bound.”与 JSON 一致。",
+        "context_notation 所引 PDF120 的振子与原始能量正确；(q+hp,p−hΩ²q) 是对 q̇=p、ṗ=−Ω²q 的显式 Euler 更新。原页无独立证明，proof_latex=null 合适。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.eulerOscillatorGrowth",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 的 ReviewDefinitions.lean:3533、3535：EΩ=(p²+Ω²q²)/2，显式 Euler 的第二分量使用旧位置 q。定义给出 EΩ(new)=(1+h²Ω²)EΩ(old)，ν 次迭代即 (1+h²Ω²)^ν EΩ(z)。Ch03.lean:68–88 的全称参数、Function.iterate 和 Tendsto … atTop atTop 精确表达固定步长下能量随步数趋于正无穷，覆盖“grows without bound”。[EXTRA] Ω≠0、h≠0、初始能量>0 必要且合理：Ω=0 时 p 不变而原能量恒定，h=0 时映射恒等，初能为0时平衡点能量始终为0。允许负频率参数或负步长也成立，因为放大因子只依赖平方；通常源语境取正频率和正步长。没有 [ERRATUM?]；现证明无 sorry。本次只读检查，没有编译或补证明。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.1-FormalHamiltonian",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_SYMBOL_STYLE",
+        "TRANSCRIPTION_PUNCTUATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.1-FormalHamiltonian",
+        "kind": "definition",
+        "label": null,
+        "section": "3.1",
+        "printed_page": "100",
+        "pdf_page": "122",
+        "statement_latex": "Now consider the more general Hamiltonian setting. Let $\\mathcal G_h$ be a $r$th order symplectic integrator, $r\\ge1$. Suppose that it is the flow map of a certain Hamiltonian system, with Hamiltonian $\\widetilde H_h$. If the method order is $r$, we may expect this Hamiltonian to be a $\\mathcal O(h^r)$ approximation of $H$, thus we posit an expansion of the form\n\\[\\widetilde H_h=H+h^rH^{(r)}+h^{r+1}H^{(r+1)}+\\cdots\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$r\\ge1$；$H^{(j)}$为待确定光滑系数函数；h为形式变量而不是级数收敛参数。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.formalHamiltonian",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH02：按 PDF122 恢复花体大 O，并删除形式展开省略号后多录的句点；保留原书语法、r≥1、条件性设定和全部系数。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; /workspace/.mathcopilot/reviews/ch03/evidence/BATCH02/page-122.png"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_SYMBOL_STYLE",
+          "detail": "PDF122 的阶数记号使用花体 O，原 JSON 为普通 O；逐字记号审校恢复为花体，数学意义未变。原书的“a rth”“a O”式语法保留，不作润色。"
+        },
+        {
+          "code": "TRANSCRIPTION_PUNCTUATION",
+          "detail": "PDF122 的展示展开式以省略号结束，原 JSON 在 cdots 后另添句点；删除该额外句点。"
+        }
+      ],
+      "evidence": [
+        "已查看 PDF122／印刷100 中部“Now consider the more general Hamiltonian setting.”段；原页使用花体 G_h、明确 r≥1、影子 H̃_h 与花体 O(h^r)。",
+        "展示式 H̃_h=H+h^rH^(r)+h^(r+1)H^(r+1)+⋯ 的系数和起始次数正确，末尾没有省略号之外的句点。",
+        "proof_latex=null 正确，context_notation 明示 r≥1、待定光滑系数及形式参数。原段是条件性设定与展开 Ansatz，不是已经证明无限级数收敛或精确流嵌入的定理。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.formalHamiltonian",
+      "verdict": "FAIL",
+      "explanation": "已展开 Ch03_deps.txt 的 SymplecticForm.lean:33，SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ，含 q,p 各 n 个坐标；ReviewDefinitions.lean:3536–3538 与 Ch03.lean:92–94 的 formalHamiltonian 定义相同。PowerSeries.mk 是指定次数系数的形式级数构造，而非收敛求和；c0=H(z)，1≤j<r 时 cj=0，j≥r 且 j>0 时 cj=Hj(j,z)。在原文明示 r≥1 的范围内，展开完全正确，也不应在本定义中添加尚未证明的流匹配条件。签名范围却未编码 r≥1：r:ℕ 允许0，且 r=0 时强制丢弃 Hj 0 的常数贡献。JSON context_notation 的 r≥1 不是 Lean 签名约束。按本次要求审计全部假设，这个无约束签名未保留原定义域。FAIL 专指该域约束漏建模，不声称 r≥1 内的公式错误。纯系数构造无需为有意义的形式级数额外要求收敛。本条无 [EXTRA]、[ERRATUM?]；完整 def 无 sorry。",
+      "counterexample": "现签名允许的域外例：n=1、r=0、H≡0、Hj 0≡1、Hj j≡0（j>0）。实际形式级数常数系数为0；若延用展示式 H+h^rH^(r)+⋯，常数系数应为1。原书明确排除 r=0，故此例显示漏编码原前提导致的域外差异，不是教材在适用域内的反例。",
+      "suggested_fix": "把 r 改为 {r : ℕ // 1≤r}，或在定义签名加入 (hr : 1≤r)。也可保留总函数作为底层构造，将 source_id 指向有 hr 参数的包装定义。无需加入无限级数收敛、精确流嵌入或已匹配方法等原段未证明的条件。"
+    }
+  },
+  {
+    "source_id": "MD-3.1-FormalHamiltonianField",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_NOTATION",
+        "TRANSCRIPTION_PUNCTUATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.1-FormalHamiltonianField",
+        "kind": "definition",
+        "label": null,
+        "section": "3.1",
+        "printed_page": "100",
+        "pdf_page": "122",
+        "statement_latex": "To determine the terms $H^{(r)},H^{(r+1)},\\ldots$, we write the differential equations on $\\widetilde H_h$:\n\\[\\dot{\\boldsymbol z}=J\\nabla H+h^rJ\\nabla H^{(r)}+h^{r+1}J\\nabla H^{(r+1)}+\\cdots\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": "The solution of this system can be expanded in powers of $h$ and equated term-by-term with the expansion of $\\mathcal G_h$ in powers of $h$. In this way, successive terms may be computed. Although mechanical, this procedure is tedious.",
+        "context_notation": [
+          "$r\\ge1$；形式Hamiltonian见同页上段；每个系数取真实$J\\nabla H^{(j)}$，不把无穷级数当收敛ODE。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.formalHamiltonianField",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH02：按 PDF122 删除向量场展示展开省略号后多录的句点，并将讨论中的 h、花体 G_h 恢复为数学记号；英文及方法计算程序的性质不变。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; /workspace/.mathcopilot/reviews/ch03/evidence/BATCH02/page-122.png"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_NOTATION",
+          "detail": "PDF122 讨论中的方法映射是花体 G_h，原 proof_discussion_latex 写为裸文本 G_h，丢失花体和数学下标排版；恢复为数学记号，同时把 h 放回数学环境，各句英文保留。"
+        },
+        {
+          "code": "TRANSCRIPTION_PUNCTUATION",
+          "detail": "PDF122 向量场展示展开以省略号结束，JSON 在 cdots 后另添句点；删除额外句点。"
+        }
+      ],
+      "evidence": [
+        "已查看 PDF122／印刷100：“To determine the terms H^(r),H^(r+1),…, we write the differential equations on H̃_h:”及 ż=J∇H+h^rJ∇H^(r)+h^(r+1)J∇H^(r+1)+⋯，正号、J、梯度和次数均正确；末尾没有额外句点。",
+        "讨论从“The solution of this system can be expanded”到“Although mechanical, this procedure is tedious.”逐句一致，映射记号原为花体 G_h；同页上一段明确 r≥1。",
+        "没有独立证明，proof_latex=null 正确；context_notation 将 h 视为形式参数、系数解释为 Hamiltonian 向量场，与所列展开一致，求导资格仍须在 Lean 审计中单独检查。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.formalHamiltonianField",
+      "verdict": "FAIL",
+      "explanation": "已沿实际依赖展开：Ch03_deps.txt 的 SymplecticForm.lean:33 给出 (q,p) 排列的 2n 坐标，:39–40 的 textbookJ=[[0,I],[−I,0]]；SplittingError.lean:1921–1924 定义 textbookHamiltonianVectorField H z = textbookJ n *ᵥ (fun i => (fderiv ℝ H z)(Pi.single i 1))，因此在可微资格下位置分量是 ∂H/∂p，动量分量是 −∂H/∂q，符号不是相反约定的 Matrix.J。ReviewDefinitions.lean:3542–3546 与 Ch03.lean:97–102 的定义相同，逐坐标形式级数常数项是 J∇H，正次数 j≥r 是 J∇H^(j)，其余为0。这在光滑、r≥1 的原语境内忠实。签名却既未限制 r≥1，也未限制 H、Hj 可微；标准 fderiv 是不可微点取0的总函数，因此对现签名全部允许的输入，返回对象未必是原文有意义的真实 J∇H。context_notation 不能代替 Lean 参数资格。FAIL 指原阶数域和求导资格未编码，而非正确资格下系数算错。不要求本定义同时证明后文逐项匹配程序。没有 [EXTRA]、[ERRATUM?] 可补足这些资格；完整 def 无 sorry。",
+      "counterexample": "现签名允许的域外例：(1) n=1、r=0、H≡0、Hj 0(q,p)=p、其余 Hj≡0 时，实际常数向量场系数为0；若延用 J∇H+h^0J∇H^(0)，应含 (1,0)，而原文排除 r=0。(2) n=1、r=1、H(q,p)=|q|、Hj≡0、z=0 时 H 不可微，原文的 ∇H 无定义；fderiv 返回0，Lean 给出全零向量场级数，不能据此声称这是原文在该点的真实梯度。",
+      "suggested_fix": "在与 source_id 对应的定义或包装中显式加入 1≤r 以及 H、相关 Hj 的可微资格；按后续逐阶展开的光滑语境，可用 ContDiff ℝ ⊤ H、∀j, ContDiff ℝ ⊤ (Hj j)，或指定开域及求值点的对应局部资格。底层总函数可保留，但审计对象应指向受约束的解释。继续以逐坐标形式级数表达，无需加无限级数收敛或把匹配结论作为假设。"
+    }
+  }
+]

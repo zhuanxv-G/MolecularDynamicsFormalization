@@ -1,0 +1,23 @@
+[
+  {
+    "source_id": "MD-3.6.2-PartitionedAffine",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已渲染核对 PDF 第152页（印刷第130页），§3.6.2 最后一段。statement_latex 与原句逐字一致（仅合并 affine invari- / ant 的排版断行）；Runge-Kutta、Partitioned Runge-Kutta、symmetric 及 time-reversal symmetry 均一致。",
+        "该段无独立证明或展示公式，proof_latex=null、proof_discussion_latex=null 和 proof_note 符合原页。context_notation 为明确标识的形式化范围说明，并非原文引句；分块版本与字面全称另行保留的说明与 Ch03.lean 相符。",
+        "第152页 Definition 3.1 将变换定义为任意非奇异矩阵 A，未限制为保持分区；原文潜在全称疑误保留在 statement_latex 中，未静默修正。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.partitionedAffine",
+      "verdict": "FAIL",
+      "explanation": "定义展开依据 Ch03_deps.txt：MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n := Fin n → ℝ，Z n := Q n × Q n；MolecularDynamics/Chapter03/Statements.lean 中 partitionedRKRelation 是 F_i=f(q+hΣ Aq_ij(F_j).1,p+hΣ Ap_ij(F_j).2) 与 w=(q+hΣ bq_i(F_i).1,p+hΣ bp_i(F_i).2) 的合取。目标将 f 的两分量及阶段展开为 fq、fp、Fq、Fp，所有 n,s,Lq,Lp,fq,fp,Aq,Ap,bq,bp,h,z,w,Fq,Fp 先全称量化，随后假设两组阶段方程及更新方程，结论为对应变换后的两组阶段方程和更新方程；此分块等变子命题正确，未假设待证结论。连续线性等价在有限维实空间与可逆线性坐标变换相符，无不合理正则性限制。[EXTRA] 保持分区是一般不同 PRK 表格所必需的合理修复条件，但不是原文 Definition 3.1 的任意非奇异 A，因此该签名仅忠实于已声明的修复子命题，不忠实于 statement_latex 的全部范围。依赖中的 transportedField A f z := A(f(A.symm z))，affineInvariant G := ∀ A f h z, G(transportedField A f) h (A z)=A(G f h z)；reversibleMethod R G := ∀ h z, R(G h(R(G h z)))=z；symmetricMethod G := ∀ h, G(-h)=(G h).symm。目标没有对称性/可逆向量场条件，也没有时间反演结论，更没有 RK 部分。该条虽声明为严格条件化分块版本，但按本批要求核对全部原句仍缺少这些结论，故 FAIL，而非定义缺失导致 NEEDS_HUMAN。[ERRATUM?] 任意混合分区变换下 PRK 全称不成立，见反例；目标本身没有 ERRATUM 标记。Ch03.lean 中该定理有显式证明且本体无 sorry，但此事实不弥补签名范围缺失；本次未执行编译或声称传递依赖无 sorry。",
+      "counterexample": "原文任意 A 全称的反例：n=s=1，Aq=0、Ap=1、bq=bp=1，h=1，fq(q,p)=p、fp(q,p)=q。该 PRK 更新为 G(q,p)=(q+p+q,p+q)。取 z=(1,0)，阶段 Fp=1、Fq=1，G(z)=(2,1)。令混合分区可逆线性变换 L(q,p)=(p,q)。变换场 L f L⁻¹ 仍为 f(q,p)=(p,q)。从 Lz=(0,1) 应用同一表格，阶段 Fp=0、Fq=1，得到 G(Lz)=(1,1)，而 L G(z)=(1,2)，不相等。这不反驳目标的分块子命题，而反驳其与原文字面全称的等同。",
+      "suggested_fix": "保留原文引句及原书疑误记录；明确将当前 lean_decl 的语义范围标为“PRK 保持分区的线性坐标变换下的阶段/更新等变性”，不能标为整句已经形式化。若要求覆盖整句，应分别列出 RK 等变性、此 PRK 修复子命题及时间反演推论；后一推论须限定反演 R 保持分区、满足 R²=id 及 f(Rz)=-R f(z)，并假设方法对称，且将阶段关系提升为所选单值方法时说明阶段解存在/唯一或选择与变换相容，以及 G_{-f}(h)=G_f(-h) 的符号相容性。任意混合变换全称不能在一般不同表格下补证；可额外限定 Aq=Ap、bq=bp 使其退化为同表格 RK，再表达完整线性等变性。"
+    }
+  }
+]

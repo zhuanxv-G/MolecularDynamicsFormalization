@@ -1,0 +1,170 @@
+{
+  "batch": "BATCH17",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "eec8314277e1a43eed208d38a5b63b4ee998399b3803cfb62e6833071143eaa3",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.4-Hessian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+          "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+          "原页：S(t)=Hzz(z(t,ζ)) is a symmetric matrix；context_notation 的沿轨迹取值说明正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_hessian",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 SymplecticForm.lean: SymplecticCoordinates=(Fin Nc ⊕ Fin Nc)→ℝ（先q后p），SymplecticCoordinateMatrix为该索引的实方阵，textbookJ=fromBlocks 0 1 (-1) 0；因此Jᵀ=-J、J²=-I。Ch02.lean:779–783 的 bp_hessian 与 HamiltonianVariational.lean 中 textbookHamiltonianHessian 逐字相同：第(i,j)项为 D(DH)(z)[e_i][e_j]，e_i=Pi.single i 1。这是实际二阶Fréchet导数的坐标矩阵；取z=Φ(t,ζ)即得到原文S(t)，点参数化未丢失轨迹取值语义。对称性另由本批HessianSymmetry承担。本定义无额外假设、无sorry；不在本条强求时间函数封装。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.4-HessianSymmetry",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+          "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+          "原页明确称 S(t) is a symmetric matrix；C²为形式化补充背景，非原页明示条件。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.hessianSymmetry",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 SymplecticForm.lean: SymplecticCoordinates=(Fin Nc ⊕ Fin Nc)→ℝ（先q后p），SymplecticCoordinateMatrix为该索引的实方阵，textbookJ=fromBlocks 0 1 (-1) 0；因此Jᵀ=-J、J²=-I。HamiltonianVariational.lean 展开的 textbookHamiltonianHessian 与 bp_hessian 定义相同；Matrix.IsSymm断言转置等于自身，恰为全部混合二阶导数互换。Ch02.lean:786–790 对所有H和z，在ContDiffAt ℝ 2 H z下断言该对称性，因而也适用于任意轨迹点。点处C²是合理的充分正则性补充，非最弱必要条件；“混合偏导相等”不是另加假设，而是推出的结论。库证明使用二阶导数对称性，本地及该依赖证明无sorry；本次仅审签名，未运行Lean编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.4-HamiltonVariationalPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+          "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+          "原页同时印有 Ẇ=JS(t)W 和 W(t)=𝓕′t(z(t,ζ))；移动点疑误标注有原页依据；对“与p.73一样”的跨页比较未作本批独立核验。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.hamiltonVariationalPrinted",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch02_deps.txt 中 SymplecticForm.lean: SymplecticCoordinates=(Fin Nc ⊕ Fin Nc)→ℝ（先q后p），SymplecticCoordinateMatrix为该索引的实方阵，textbookJ=fromBlocks 0 1 (-1) 0；因此Jᵀ=-J、J²=-I。SymplecticMaps.lean 的 textbookJacobian Φ z=LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap，第(i,j)项为DΦ(z)[e_j]_i；SplittingError.lean 的 textbookHamiltonianVectorField H z=J乘以各基方向的DH，故确为(q̇,ṗ)=(H_p,-H_q)。HamiltonianVariational.lean 的 Hessian为实际二阶导数。Ch02.lean:793–803 对所有n,H,Φ,τ,ζ，在H C²、Φ联合C¹、Φ₀=id、闭区间所有初值满足真实ODE下，宣称移动点W(s)=DΦ_s(Φ_s(ζ))满足Ẇ=J Hzz(Φ_t(ζ))W。它忠实保留印刷疑误，却不是正确变分方程；[ERRATUM?]由下列全局光滑反例确定成立。即使加强Φ为C∞也不能补救。通常固定初值W=DΦ_t(ζ)才满足该式；移动点同时产生空间链式项，且固定底点的变分系数在Φ_t(Φ_t(ζ))取值。C¹本身也不足以直接保证所需二阶混合导数。τ≤0时开区间为空，不影响τ>0的反例。签名FAIL与证明体显式sorry分别记录；该sorry不作为判FAIL的理由。",
+        "counterexample": "取Nc=1，f(q)=2+sin q，H(q,p)=p f(q)。令Q_t(q)为q̇=f(q)的全局流（f光滑有界且1≤f≤3），定义Φ_t(q,p)=(Q_t(q), p f(q)/f(Q_t(q)))。它是全局C∞真实Hamilton流、Φ₀=id，满足全部前提。ζ=(0,0)，W(t)=DΦ_t(Φ_t(ζ))的(q,q)项a(t)=f(Q_{2t}(0))/f(Q_t(0))，且W的(p,q)项为0。直接求导a′/a=2cos(Q_{2t}(0))−cos(Q_t(0))；宣称右侧JHzz(Φ_t(ζ))W的(q,q)项除以a却为cos(Q_t(0))。取τ=1/4、t=1/8，则0<Q_t(0)<Q_{2t}(0)≤3/4<π，余弦严格递减，二者不等。这一反例直接适用于附件已核实的J符号、坐标及导数定义。",
+        "suggested_fix": "保留印刷式作为疑误记录，不把错误字面式作为待证真命题。正确版本将两处Jacobian取值点改为固定ζ，并采用联合C²流这一充分假设；附件ActualFlowVariations.lean的textbookHamiltonianFlowJacobian_hasDerivAt正好给出该正确形式。若保留移动点，须用链式法则改写全部右侧，不能仅提高正则性。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.4-MatrixCancellation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+          "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+          "原页逐行给出 WᵀJẆ=−WᵀSW、ẆᵀJW=WᵀSW，随后给出实际时间导数为零；proof_latex 忠实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.matrixCancellation",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch02_deps.txt 中 SymplecticForm.lean: SymplecticCoordinates=(Fin Nc ⊕ Fin Nc)→ℝ（先q后p），SymplecticCoordinateMatrix为该索引的实方阵，textbookJ=fromBlocks 0 1 (-1) 0；因此Jᵀ=-J、J²=-I。Ch02.lean:806–811 的S,W量化为任意单个实方阵，hS为Sᵀ=S；展开后式子是(JSW)ᵀJW+WᵀJ(JSW)=0，代数部分正确。对称性是原推导必要背景，推广任意W合理。依赖HamiltonianVariational.lean证明确实分别计算两项为+WᵀSW与−WᵀSW，再相消。但原statement_latex明确还含d(WᵀJW)/dt等于乘积法则两项并等于0；本声明没有时间函数或真实导数结论，因此未覆盖规定statement_scope全部子句。FormConstant签名只给常值等式，不能替代本条缺失的导数签名；依赖中虽已有hasDerivWithinAt_hamiltonian_variational_form，也未被本条结论包含。证明里的两个中间代数等式属proof_latex，不要求各自独立成为定理结论；本项FAIL仅基于缺失的原陈述导数子句。本地和所调用消去证明无sorry，与覆盖审计分开。",
+        "counterexample": "缺失条款：实际时间函数Q(t)=W(t)ᵀJW(t)的乘积法则及零导数断言。本签名仅量化两个静态矩阵，无法表达该条款；不是代数等式本身存在反例。",
+        "suggested_fix": "在本条补充时间矩阵曲线、S(t)对称及真实W′=JSW假设，并陈述HasDerivWithinAt (fun u => (W u)ᵀ*J*W u) 0 s t；可使用附件已有MolecularDynamics.hasDerivWithinAt_hamiltonian_variational_form。若要求展示全部乘积法则等式，同时明确导数矩阵等于(W′)ᵀJW+WᵀJW′。或经明确范围修订把本source_id限定为纯代数消去，并另项承载原文导数结论。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.4-FormConstant",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+          "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+          "原页原句：This means that WᵀJW is a constant matrix."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.formConstant",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 SymplecticForm.lean: SymplecticCoordinates=(Fin Nc ⊕ Fin Nc)→ℝ（先q后p），SymplecticCoordinateMatrix为该索引的实方阵，textbookJ=fromBlocks 0 1 (-1) 0；因此Jᵀ=-J、J²=-I。Ch02.lean:814–821 对所有时间矩阵S,W及τ，在Icc 0 τ各点S对称且W具有实际区间内导数JSW下，推出每一t的W(t)ᵀJW(t)等于初始值；恰为连通时间窗常矩阵的全部结论。S逐点对称、真实矩阵ODE和连通区间是原推导合理背景；不要求S可微或连续，这是合理且更一般的陈述。端点采用HasDerivWithinAt适当；τ=0平凡，τ<0结论为空，无须τ>0。依赖HamiltonianVariational.lean实际利用乘积法则得到零导数，再用均值定理推常值；无sorry。本条独立量化W，不声称错误移动点Jacobian已满足ODE，因此前项FAIL不否定此条件命题。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.4-HamiltonSymplectic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_ASSUMPTION_METADATA_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.4-HamiltonSymplectic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.4",
+          "printed_page": "79",
+          "pdf_page": "101",
+          "statement_latex": "hence\n\\[W^TJW\\equiv W(0)^TJW(0)=J.\\]\nThis proves that the flow map of a Hamiltonian system is a symplectic map.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原文W移动取值点疑点另项记录；本最终结论以实际固定时刻流映射的Jacobian表达，不假设其变分方程。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.hamiltonSymplectic",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]实际解族联合C²；H C²、Φ0=id及真实Hamilton ODE；时间范围为Icc 0 τ，Lean签名未假设τ>0。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH17审校：删除extra_assumptions中签名不存在的τ>0；保留原文陈述。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "extra_assumptions 写有 τ>0，但实际 Lean 声明无此假设；只修正审阅元数据，不改原书。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第101页渲染图，页眉印刷第79页，节标题2.3.4；79+22=101。",
+          "所引 statement_latex、proof_latex（如有）及空证明字段均按原页核对；数学符号、转置、负号与公式次序一致。",
+          "原页展示 WᵀJW≡W(0)ᵀJW(0)=J，并得出 flow map is a symplectic map；context_notation 明确区分原移动点疑误与最终流结论。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.hamiltonSymplectic",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 SymplecticForm.lean: SymplecticCoordinates=(Fin Nc ⊕ Fin Nc)→ℝ（先q后p），SymplecticCoordinateMatrix为该索引的实方阵，textbookJ=fromBlocks 0 1 (-1) 0；因此Jᵀ=-J、J²=-I。SymplecticMaps.lean 展开IsTextbookSymplecticMap F为ContDiff ℝ 1 F ∧ ∀z, IsTextbookSymplectic(textbookJacobian F z)；IsTextbookSymplectic A展开为AᵀJA=J。因此Ch02.lean:824–835结论对所有t∈Icc 0 τ、所有初值ζ给出实际固定时刻映射F_t=Φ(t,·)的Jacobian满足W(t)ᵀJW(t)=J。hinit使F₀=id，实际Jacobian_id给W(0)=I，故也包含W(t)ᵀJW(t)=W(0)ᵀJW(0)=J的全部等式链。它亦对移动取值点给辛矩阵，因为空间量词覆盖全部z，但不依赖错误移动点变分式。H C²、真实ODE和初值恒等合理；联合C²Φ是方便交换混合导数的充分[EXTRA]，强于通常最弱C¹流条件，非必要限制但已明确且数学上合理。全空间解族假设限制于给定存在区间，未声称所有H的全局流存在。签名没有τ>0，原注释对此误记；沿用上一轮json_review的元数据修正。τ=0初始映射，τ<0空结论。ActualFlowVariations.lean从真实ODE与联合C²推固定初值Jacobian变分式，再用HamiltonianVariational.lean推出辛性；相关本地及依赖证明无sorry。本次不做编译或补证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

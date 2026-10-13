@@ -1,0 +1,25 @@
+[
+  {
+    "source_id": "MD-3-ModifiedConstruction",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已直接读取教材 PDF 第119页，并核对该页渲染图；页脚印刷页为97，满足119=97+22，章标题为Chapter 3。",
+        "PDF第119页正文最后一段：statement_latex 从引出基本推论的句子起，至按步长幂展开的末句止，四个句子的词语、括号、连字符、引文[31]和句末标点均与原页一致；仅排版换行已合并。",
+        "PDF第119页同一段：context_notation 完整保留步长可任意小、相容性和趋于恒等映射的上下文。JSON解码后的趋零记号含一个反斜杠，LaTeX转义正确；提取文本中箭头的字体编码显示异常，已以渲染图确认原符号为右箭头。",
+        "PDF第119页没有该主张的独立证明或展示公式；proof_latex和proof_discussion_latex为null，proof_note关于未给独立完整证明的说明正确。没有修正原书数学措辞或将近似主张改写成精确嵌入。",
+        "输入文件：/workspace/BATCH01.md；/workspace/Ch03.lean；/workspace/Ch03_deps.txt。核对的教材为/workspace/Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.modifiedConstruction",
+      "verdict": "FAIL",
+      "explanation": "审计依据为Ch03.lean第18–29行和Ch03_deps.txt中对应-- FILE分段的实际定义；本条涉及的项目定义均已找到，没有因定义缺失而保留人工判断。\n对象及辛性：SymplecticForm.lean中的SymplecticCoordinates n实际是(Fin n ⊕ Fin n) → ℝ，分别标记q、p；textbookJ是块矩阵[0,I;-I,0]，IsTextbookSymplectic A实际为Aᵀ*J*A=J。SymplecticMaps.lean中的textbookJacobian是实际Fréchet导数的坐标矩阵；SplittingError.lean中的textbookHamiltonianVectorField H是J乘由实际fderiv计算的梯度，即标准的(∂p H,-∂q H)，不是任意占位向量场。\n前提：Statements.lean中的smoothSymplecticData要求r>0、D开放且凸、B紧且凸、B⊆D、H在D上C∞、G₀在D上为恒等；存在η>0使(h,z)↦G_h(z)在(-η,η)×D上C∞，且每个该区间内的h和每个z∈D处的实际Jacobian满足辛矩阵条件。actualFlowNearCompact要求Φ₀z=z，并对所有z∈B和|t|<η给出Φ_tz∈D及实际ODE导数；它只要求初值在B，不是对整个D要求统一流存在。localOrder另要求存在统一C>0、δ>0，使所有|h|<δ和z∈B的‖G_hz-Φ_hz‖≤C|h|^(r+1)；阶条件也只在B上。前提中没有finiteMatching，也没有假定修正Hamiltonian或其匹配结论。\n结论及量词：对任意n,r,H,D,B,G,Φ，满足上述前提后，先存在一套与截断阶k无关的Hj，再要求每个Hj在D上C∞，最后对每个k≥r成立finiteMatching。展开后，每个k分别存在δ>0、A>0和Γ，使对全部0<h<δ、z∈B，Γ从z出发，满足修正Hamiltonian的真实ODE、整段[0,h]轨迹留在D，并有‖G_hz-Γ(h,z,h)‖≤A*h^(k+1)。ReviewDefinitions.lean中的truncatedFlow确为Γ(0)=z与solution的合取；Chapter02/ReviewDefinitions.lean中的solution要求每个t∈[0,h]具有ODE规定的区间内导数；ModifiedHamiltonianBounds.lean中的textbookTruncatedHamiltonian逐项是H+Σ_{j=r}^k h^j Hj。由此核实：系数序列在∀k之前，匹配常数及轨迹在∀k之后且在∀h、∀z之前，没有将形式幂级数当成收敛函数。\n[EXTRA]逐项判断：第一项是已披露的光滑、相容、有阶数的局部数值积分器版本。C∞适合任意有限阶展开，凸开放域用于排除全局Hamiltonian表示的拓扑障碍，紧集用于统一控制；B的凸性不是单步匹配的本质必要条件，但作为显式局部限定是合理的，不能称为原页明写的最弱假设。r≥1和给定H的实际流及局部阶把对象限制为所述Hamiltonian系统的数值方法，并非所有孤立近恒等辛映射。第二项把原文近似意义解释为任意有限截断匹配，保留了一套共同系数且没有无限收敛或精确长期嵌入主张，属于合理且已说明的严格化。本条没有[ERRATUM?]标注，也不以这种近似解释静默改动原书。\nFAIL的具体缺失条款：PDF第119页的statement_latex第一句明确同时陈述Hamiltonian流映射具有辛性、以及近恒等辛映射近似为Hamiltonian流映射。当前Lean声明只有后一方向的修正Hamiltonian存在与有限匹配结论，没有从Hamiltonian ODE推导流映射辛性的前一结论子句。smoothSymplecticData里的辛性是对数值映射G的前提，不能代替对Hamiltonian流的独立结论。即使相关命题在依赖文件中另有定义，也没有进入本条声明的结论；按本批全部结论子句的审计要求，应判FAIL。\nsorry单独记录：Ch03.lean中的本声明证明体为sorry。这说明证明尚未完成，但不是本次签名语义判FAIL的理由；FAIL依据是上述明确遗漏，也不据此声称有限匹配存在性定理已经获得Lean证明。",
+      "counterexample": null,
+      "suggested_fix": "保留现有修正Hamiltonian存在性陈述及其两项已披露EXTRA，把Hamiltonian流的辛性作为独立结论合取加入同一source_id的审查对象。依赖源码中已有MolecularDynamics.Chapter02Review.hamiltonianSymplectic_statement：对任意n,H,Φ,τ，在H为C²、Φ为C¹、Φ₀=id和真实Hamiltonian ODE条件下，结论是每个t∈[0,τ]的流映射为IsTextbookSymplecticMap。可将目标签名组织为该命题与MolecularDynamics.Chapter03Review.modifiedConstruction_statement的合取，或加入等价的开放域局部流版本；不要把流的辛性加为前提来冒充遗漏的结论。这只是签名修复建议，本次未修改工程或补写证明。"
+    }
+  }
+]

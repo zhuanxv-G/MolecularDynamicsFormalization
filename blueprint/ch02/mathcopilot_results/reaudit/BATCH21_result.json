@@ -1,0 +1,385 @@
+{
+  "batch": "BATCH21",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "fd27ae0bf0d2adf935ba9c3e03d83de4272ba09a77a9ef88efeaa5844ad857b3",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.1-Splitting",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONVERBATIM_TRANSCRIPTION",
+          "SOURCE_NOTATION_CHANGED",
+          "NON_SOURCE_INSERTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-Splitting",
+          "kind": "definition",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "83",
+          "pdf_page": "105",
+          "statement_latex": "Let $H(\\boldsymbol q,\\boldsymbol p)=H_1(\\boldsymbol q,\\boldsymbol p)+H_2(\\boldsymbol q,\\boldsymbol p)$ have flow map $\\mathcal F_h$, and indicate by $\\mathcal F_h^1,\\mathcal F_h^2$ the flow maps for the systems with Hamiltonians $H_1,H_2$, respectively. The proposal is that the map\n\\[\\mathcal G_h=\\mathcal F_h^1\\circ\\mathcal F_h^2\\]\nis an approximation of $\\mathcal F_h$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "只定义给定实际子流的组合；近似精度由后项给出，不把任意映射称为实际流。"
+          ],
+          "issues": [
+            "原句被改写，添加原页没有的 closed form 条件；子流记号原书为上标1、2。context_notation的实际子流解释合理，但闭式可得性不是本段假设。"
+          ],
+          "lean_decl": "MD.Ch02.bp_splittingMap",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+        },
+        "issues": [
+          "原句被改写，添加原页没有的 closed form 条件；子流记号原书为上标1、2。context_notation的实际子流解释合理，但闭式可得性不是本段假设。"
+        ],
+        "evidence": [
+          "已核对渲染PDF页105（印刷页83）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_splittingMap",
+        "verdict": "PASS",
+        "explanation": "Ch02.lean:930完整定义为F₁ h ∘ F₂ h，先作用子流2再子流1，恰为原文组合。任意类型E和映射的接口仅定义组合，不声称任意映射是实际Hamilton流或具有近似阶；实际子流资格属于本条明确的使用上下文。不需要闭式可得性假设。无[EXTRA]或[ERRATUM?]；定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-FieldAdd",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已核对渲染PDF页105（印刷页83）；页码按+22匹配。恒等式是(2.24)中hJ∇H与h(J∇H₁+J∇H₂)替换关系的提取，原页未另列独立等式；依赖本段H=H₁+H₂。无独立证明，proof_latex=null正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.fieldAdd",
+        "verdict": "PASS",
+        "explanation": "展开deps:33、38–39、1921附近：坐标为(Fin Nc ⊕ Fin Nc)→ℝ，inl为q、inr为p；J为块矩阵[0,I;−I,0]；向量场为J乘以各基向量Pi.single i 1上的实际Fréchet导数。因此正是J∇H，而非任意名为梯度的参数。两项在同一点z可微保证fderiv(H₁+H₂)=fderiv H₁+fderiv H₂，结论逐坐标为所需加法。H由H₁+H₂直接构造，无遗漏H分解条件。[EXTRA]可微是原文梯度存在的合理资格，避免不可微处fderiv总化；无[ERRATUM?]。正文调用库定理，无直接sorry，未作编译或全依赖无sorry认证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-SplittingLocal",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONVERBATIM_TRANSCRIPTION",
+          "SOURCE_NOTATION_CHANGED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-SplittingLocal",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "83",
+          "pdf_page": "105",
+          "statement_latex": "For this to be a first order method, we need at least $\\|\\mathcal G_h(\\boldsymbol u)-\\mathcal F_h(\\boldsymbol u)\\|\\le C(\\boldsymbol u)h^2$.",
+          "proof_latex": "Expand $\\mathcal F_h(\\boldsymbol u)$ in a Taylor series:\n\\[\\mathcal F_h(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H+\\mathcal O(h^2)=\\boldsymbol u+h(J\nabla H_1+J\nabla H_2)+\\mathcal O(h^2).\\tag{2.24}\\]\nOn the other hand,\n\\[\\mathcal F_h^1(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_1(\\boldsymbol u)+\\mathcal O(h^2),\\qquad\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u)+\\mathcal O(h^2).\\]\nComposing the maps we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u)+hJ\nabla H_1(\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\]\nAssuming $H_1$ is $C^2$, we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+h(J\nabla H_2(\\boldsymbol u)+J\nabla H_1(\\boldsymbol u))+\\mathcal O(h^2),\\]\nwhich agrees with the expansion (2.24) of the flow map through the terms of first order. Thus the splitting method does indeed provide a second order local approximation of the flow map.",
+          "proof_note": "原书计算按原页转录。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "证明英文非逐字转录；遗漏与(2.24)一阶项一致的句子；(2.24)原页省略梯度求值点；子流使用上标1、2。原书 second order local approximation 指局部误差O(h²)，不作二阶全局精度的静默修正。"
+          ],
+          "lean_decl": "MD.Ch02.splittingLocal",
+          "reusable_proofs": [
+            "MolecularDynamics.exists_hamiltonian_splitting_localError_bound"
+          ],
+          "extra_assumptions": [
+            "实际H及两个子Hamilton局部ODE、初值及留开放域；H₁,H₂ C²，组合在紧时间矩形连续；没有假设待证局部误差。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+        },
+        "issues": [
+          "证明英文非逐字转录；遗漏与(2.24)一阶项一致的句子；(2.24)原页省略梯度求值点；子流使用上标1、2。原书 second order local approximation 指局部误差O(h²)，不作二阶全局精度的静默修正。"
+        ],
+        "evidence": [
+          "已核对渲染PDF页105（印刷页83）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.splittingLocal",
+        "verdict": "PASS",
+        "explanation": "展开相同实际坐标、J和Fréchet导数后，三组HasDerivWithinAt确实分别给H₁+H₂、H₂、H₁的Hamilton ODE；没有把误差界当作前提。固定u、τ及轨道后存在C>0，再对全部h∈[0,τ]给‖F₁ h(F₂ h u)−F h u‖≤C h²，C允许依赖u和给定数据，不依赖h。初值涵盖全部内层出发点F₂ s u；开放域及留域保证导数正则性可用。H₁,H₂局部C²、紧时间矩形组合连续是合理充分[EXTRA]，比原页显式H₁ C²强，但没有循环假设。有限维函数空间的默认范数为最大范数，与欧氏范数等价，只改变存在常数。τ>0的右侧BigO子句正是正步局部O(h²)；τ=0只给零步等式，不宣称非平凡邻域。second order local approximation在此指局部h²而非全局二阶。无本条[ERRATUM?]。正文复用库定理，无直接sorry；证明完成状态另于签名判断。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-KineticFlow",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONVERBATIM_TRANSCRIPTION",
+          "PAGE_RANGE_OVERBROAD"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-KineticFlow",
+          "kind": "definition",
+          "label": "Example 2.4",
+          "section": "2.4.1",
+          "printed_page": "83",
+          "pdf_page": "105",
+          "statement_latex": "Let\n\\[H_1(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^TM^{-1}\\boldsymbol p/2,\\qquad H_2(\\boldsymbol q,\\boldsymbol p)=U(\\boldsymbol q),\\]\nthen a splitting method for $H=H_1+H_2$ may be obtained by determining the flow maps for each of the two parts. For $H_1$ we have the differential equations\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol0.\\]\nThe second equation tells us that $\\boldsymbol p$ is constant, so it is fixed at its initial value, whereas the first equation says that $\\boldsymbol q$ evolves on a linear path, hence its flow map is\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p,\\qquad\\boldsymbol P=\\boldsymbol p.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "固定对角质量，mᵢ≠0资格由机械模型；闭式映射逐坐标表达。"
+          ],
+          "issues": [
+            "原句改写并遗漏解释常动量、线性位置路径的文字；所引内容全部在印刷83/PDF105页，页码范围过宽。context_notation中非零质量为模型资格，当前Lean签名未体现，且本页未逐项声明。"
+          ],
+          "lean_decl": "MD.Ch02.bp_kineticFlow",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+        },
+        "issues": [
+          "原句改写并遗漏解释常动量、线性位置路径的文字；所引内容全部在印刷83/PDF105页，页码范围过宽。context_notation中非零质量为模型资格，当前Lean签名未体现，且本页未逐项声明。"
+        ],
+        "evidence": [
+          "已核对渲染PDF页105（印刷页83）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_kineticFlow",
+        "verdict": "PASS",
+        "explanation": "展开deps:33坐标及Ch02.lean:969–973本体：Qᵢ=qᵢ+h(mᵢ)⁻¹pᵢ，Pᵢ=pᵢ，等于deps:626的实际漂移定义。固定对角非零质量的上下文中，这正是pᵀM⁻¹p/2的闭式流，时间导数分别为M⁻¹p与0，初值h=0为z。定义允许零质量属于实数逆元总化的代数扩展，并没有断言零质量矩阵具有通常逆矩阵；实际机械解释限于context_notation指定的非零质量。无需为了定义闭式表达式加入命题前提；无[EXTRA]或[ERRATUM?]。定义无sorry，邻接的私有kick导数辅助定理不属于本条声明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-PotentialFlow",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONVERBATIM_TRANSCRIPTION",
+          "NON_SOURCE_INSERTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-PotentialFlow",
+          "kind": "definition",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "84",
+          "pdf_page": "106",
+          "statement_latex": "Similarly, the flow map of the system with Hamiltonian $H_2=U$ is\n\\[\\boldsymbol Q=\\boldsymbol q,\\qquad\\boldsymbol P=\\boldsymbol p-h\nabla U(\\boldsymbol q).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "F=-∇U；实际闭式映射。"
+          ],
+          "issues": [
+            "原页只写 Similarly, the flow map ...，没有所录微分方程或 On the other hand ... which implies 文字。F=-∇U作为解释合理，但实际流需可微资格。"
+          ],
+          "lean_decl": "MD.Ch02.bp_potentialFlow",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+        },
+        "issues": [
+          "原页只写 Similarly, the flow map ...，没有所录微分方程或 On the other hand ... which implies 文字。F=-∇U作为解释合理，但实际流需可微资格。"
+        ],
+        "evidence": [
+          "已核对渲染PDF页106（印刷页84）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_potentialFlow",
+        "verdict": "PASS",
+        "explanation": "展开deps:2816的Q=Fin Nc→ℝ、583–585的力Fᵢ(q)=−(fderiv ℝ U q)(eᵢ)、568–570的位置投影qᵢ=z(inl i)、619–623的kick，得到Qᵢ=qᵢ，Pᵢ=pᵢ−h∂ᵢU(q)，符号及旧位置求值正确。此条定义闭式映射，不是对任意不可微U宣称经典Hamilton ODE存在；在原文梯度存在的资格下，q固定使p沿恒定−∇U(q)线性演化，确为实际子流。fderiv在不可微点的总化是表达式扩展，不增加原文物理断言。无[EXTRA]或[ERRATUM?]；定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-SplitEuler",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONVERBATIM_TRANSCRIPTION",
+          "NON_SOURCE_INSERTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-SplitEuler",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "84",
+          "pdf_page": "106",
+          "statement_latex": "The composition of these maps simplifies to\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol P,\\qquad\\boldsymbol P=\\boldsymbol p-h\nabla U(\\boldsymbol q),\\]\nwhich is precisely the Symplectic Euler method. Similarly, composing the same two maps in the opposite order gives the adjoint Symplectic Euler method.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原句被转述；原页没有(2.22)、(2.23)引用。"
+          ],
+          "lean_decl": "MD.Ch02.splitEuler",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter02Review.kineticPotentialComposition_proved"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+        },
+        "issues": [
+          "原句被转述；原页没有(2.22)、(2.23)引用。"
+        ],
+        "evidence": [
+          "已核对渲染PDF页106（印刷页84）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.splitEuler",
+        "verdict": "PASS",
+        "explanation": "展开deps:2940的splittingMap，确与bp_splittingMap一样为F₁ h ∘ F₂ h。deps:619、626、733给先kick后drift，故P=p+hF(q)=p−h∇U(q)，Q=q+hM⁻¹P。另一结论先drift后kick给Q=q+hM⁻¹p、P=p−h∇U(Q)。deps:1240的伴随为(G(−h))⁻¹；788–811的Equiv本体分别以负步kick/drift为逆，Euler为drift乘kick，1293定义真实伴随，因此其值确为正步kick∘drift。两个结论及任意n,m,U,h量词完整，等式属于代数映射恒等式，不需非零质量或势能正则性；机械流解释仍在通常资格下。无[EXTRA]或[ERRATUM?]。正文无直接sorry；不以库证明名称代替上述展开核验。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-VerletComposition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONVERBATIM_TRANSCRIPTION",
+          "SOURCE_NOTATION_CHANGED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-VerletComposition",
+          "kind": "unnumbered_claim",
+          "label": "Example 2.5 (Verlet is Symplectic)",
+          "section": "2.4.1",
+          "printed_page": "84–85",
+          "pdf_page": "106–107",
+          "statement_latex": "For the Symplectic Euler method $\\mathcal G_h$ and its adjoint method $\\mathcal G_h^\\dagger$, consider the composition\n\\[\\mathcal K_h:=\\mathcal G_{h/2}^\\dagger\\circ\\mathcal G_{h/2}.\\]",
+          "proof_latex": "Let\n\\[\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix}=\\mathcal G_{h/2}\\begin{bmatrix}\\boldsymbol q\\\\\\boldsymbol p\\end{bmatrix},\\]\ni.e.,\n\\[\\bar{\\boldsymbol q}=\\boldsymbol q+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\bar{\\boldsymbol p}=\\boldsymbol p-(h/2)\nabla U(\\boldsymbol q).\\]\nand set\n\\[\\begin{bmatrix}\\boldsymbol Q\\\\\\boldsymbol P\\end{bmatrix}=\\mathcal G_{h/2}^\\dagger\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix},\\]\ni.e.,\n\\[\\boldsymbol Q=\\bar{\\boldsymbol q}+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-(h/2)\nabla U(\\boldsymbol Q).\\]\nThe composition simplifies to\n\\[\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\nabla U(\\boldsymbol q),\\qquad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\nabla U(\\boldsymbol Q).\\]\nThis is just the leapfrog/Verlet method in its Hamiltonian form.",
+          "proof_note": "原书计算按原页转录。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原句、证明被转述，漏两条向量映射公式；原书伴随记号为dagger而非星号；例题完整标题为Example 2.5 (Verlet is Symplectic)。"
+          ],
+          "lean_decl": "MD.Ch02.verletComposition",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter02Review.verletComposition_proved"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+        },
+        "issues": [
+          "原句、证明被转述，漏两条向量映射公式；原书伴随记号为dagger而非星号；例题完整标题为Example 2.5 (Verlet is Symplectic)。"
+        ],
+        "evidence": [
+          "已核对渲染PDF页106–107（印刷页84–85）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletComposition",
+        "verdict": "PASS",
+        "explanation": "展开deps:2937–2939的coordinateVerlet为kick(h/2)∘drift(h)∘kick(h/2)，给p̄=p+(h/2)F(q)、Q=q+hM⁻¹p̄、P=p̄+(h/2)F(Q)。F=−∇U，因而完全对应原文三条式及最终Q处的力。deps:2935–2936的pack/unpack保留q,p顺序；2840的invMass逐坐标乘(mᵢ)⁻¹；2859–2861的verlet给Q=q+hM⁻¹p+(h²/2)M⁻¹F(q)、P=p+(h/2)(F(q)+F(Q))，与三段式代数等价。Euler为drift∘kick，真实伴随为kick∘drift，半步连续两次drift合并为全步，故第二等式的作用顺序及h/2正确。全称n,m,U,h,z覆盖全部输入，无缺失结论；任意参数总化是合理代数扩展，不宣称无资格的实际机械流。无[EXTRA]或[ERRATUM?]；正文无直接sorry，未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-VerletSymplectic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONVERBATIM_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-VerletSymplectic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "85",
+          "pdf_page": "107",
+          "statement_latex": "Since we have obtained the method as the composition of two symplectic maps, and the symplectic maps form a group, we know that this method will also be symplectic.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原句被转述，漏 symplectic maps form a group 这一论证依据。"
+          ],
+          "lean_decl": "MD.Ch02.verletSymplectic",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter02Review.verletSymplectic_proved"
+          ],
+          "extra_assumptions": [
+            "U C²；真实完整步映射。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "按PDF105–107渲染页核对，恢复原页措辞、记号及本条实际页码；未修改原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF105–107，本次直接核对"
+        },
+        "issues": [
+          "原句被转述，漏 symplectic maps form a group 这一论证依据。"
+        ],
+        "evidence": [
+          "已核对渲染PDF页107（印刷页85）；页码按+22匹配。对应§2.4.1原句/展示公式；statement、proof、context_notation已分别核对，详细差异见issues。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletSymplectic",
+        "verdict": "PASS",
+        "explanation": "展开deps:272–274的IsTextbookSymplecticMap，要求完整映射C¹且每一点实际Jacobian满足AᵀJA=J；Jacobian由235–241的真实fderiv坐标矩阵定义，J=[0,I;−I,0]，不是把待证辛性编码为假设。coordinateVerlet为实际kick半步、drift全步、kick半步；U C²使F=−∇U为C¹且力Jacobian对称，kick与对角drift均保持该J，链式法则使完整组合保持J。量词为任意n,m,U,h，在U C²后给全部z处条件。[EXTRA]全局C²为全空间C¹辛映射的合理充分资格；局部版本可弱化但不是当前缺失条款。谓词未要求全局双射，但本实际映射三段各由负步给全局逆，故不遗漏原文组合辛映射的可逆性含义。零质量的代数漂移仍是辛剪切；通常物理解释使用非零质量。无[ERRATUM?]。正文无直接sorry；此处只判签名语义，不作依赖证明可信度认证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

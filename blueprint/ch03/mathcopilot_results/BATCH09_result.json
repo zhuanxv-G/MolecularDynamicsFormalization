@@ -1,0 +1,71 @@
+[
+  {
+    "source_id": "MD-3.3.2-StrangInverse",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第130页（印刷第108页），(3.5) 下方原句 Setting s = −t, the left hand side of (3.4) collapses to the identity. 与 statement_latex 一致。",
+        "已同时检查原页图像和文本：(3.4) 左侧为 S(s)S(t)，S(u)=exp(uX/2)exp(uY)exp(uX/2)。页码108+22=130正确；该句没有独立证明，proof_latex=null合理。context_notation所述反步恒等式不需要不同步长对数交换，符合乘积的直接消去。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.strangInverse",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 的 MolecularDynamics/Chapter03/FormalOperatorSeries.lean 中 textbookFormalOperatorExponential：第n项为 (1/n!) • A^n；Chapter03/ReviewDefinitions.lean 中 formalStrang 为 E(A/2)E(B)E(A/2)。Ch03.lean:436 的同名局部定义与依赖定义完全相同，strangInverse实际使用此局部定义。PowerSeries R 表示中心形式变量的幂级数，Ring R允许非交换系数，Algebra ℝ R提供中心实数系数。于是 S(A,B)S(−A,−B)=E(A/2)E(B)E(A/2)E(−A/2)E(−B)E(−A/2)=1，逐对消去即可；虽然原页代入所得顺序是 S(−t)S(t)，对全称量化的A,B取负即可得到该顺序。全称R,A,B是原形式算子恒等式的合理代数推广，形式变量代替t，不缺步长量词，也不需要额外交换假设。本条无[EXTRA]或[ERRATUM?]标记；相邻条目的交换疑误不参与本条推理。签名语义PASS；Ch03.lean:450的证明为sorry，属于证明未完成，不改变签名审计结论。本次未编译或补证明。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.2-StrangCubic",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NOTATION_TRANSCRIPTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3.2-StrangCubic",
+        "kind": "unnumbered_claim",
+        "label": "(3.6)–(3.7)",
+        "section": "3.3.2",
+        "printed_page": "108",
+        "pdf_page": "130",
+        "statement_latex": "\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(t(X+Y)+t^3\\widetilde Z_{[3]}+\\cdots),\\tag{3.6}\\]\nwhere\n\\[\\widetilde Z_{[3]}=\\frac1{12}[Y,[Y,X]]-\\frac1{24}[X,[X,Y]].\\tag{3.7}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$X,Y$为非交换形式生成元；[A,B]=AB−BA；签名直接为真实formalLog三次系数。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.strangCubic",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH09原页审校：PDF130的(3.6)、(3.7)均为\\widetilde Z_{[3]}，将两处\\widehat Z_{[3]}改回原书记号；不修改原书数学内容。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "PDF130的(3.6)、(3.7)均使用波浪号 Z̃_[3]；statement_latex两处使用帽号 Ẑ_[3]，不符合逐字核对要求。已在完整corrected_json中改为\\widetilde Z_{[3]}。",
+        "context_notation关于非交换形式生成元和[A,B]=AB−BA是形式算子解释；“签名直接为真实formalLog三次系数”准确描述现有Lean，但不表示其已覆盖statement_latex的全部展开结论，见audit。"
+      ],
+      "evidence": [
+        "已检查教材 PDF130（印刷108）渲染图像：(3.6)右侧为 exp(t(X+Y)+t³Z̃_[3]+⋯)，(3.7)为 Z̃_[3]=(1/12)[Y,[Y,X]]−(1/24)[X,[X,Y]]；两个Z上方均为波浪号。",
+        "PDF130中(3.6)前文字说明对称复合在指数中只保留奇次项；公式系数1/12、−1/24，交换子顺序、公式编号、where及页码均与JSON一致。原页未给三次系数的独立计算证明，proof_latex=null合理。未替原书的不同步长交换论断作静默修正。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.strangCubic",
+      "verdict": "FAIL",
+      "explanation": "已展开依赖：textbookFormalOperatorExponential A 的第n系数为 (1/n!) • A^n；formalStrang=E(A/2)E(B)E(A/2)（Ch03.lean局部同名定义一致）；formalLog P 的第n系数为 Σ_{j=1}^n ((−1)^(j+1)/j) • coeff n ((P−1)^j)；commutator A B=A*B−B*A。Strang乘积常数项为1，因此这里的有限系数和确实计算log(1+(P−1))，不是把所需答案定义进去。真实三次系数与(3.7)的符号和交换子顺序一致；全称非交换实代数也是合理推广，无额外假设。然而本条statement_latex同时收录(3.6)及(3.7)，并由原页上下文指定指数只含奇次项，签名只断言coeff 3的等式：没有coeff 1=A+B、所有偶次系数为0，也没有完整形式指数展开关系。因此按全部结论子句审计FAIL，失败是覆盖范围缺失而非三次系数公式错误。本条无[EXTRA]或[ERRATUM?]标记。该声明正文包含norm_num/simp/module而无sorry；未进行Lean编译，不能据此声称证明已经验证；证明情况与上述签名缺项独立。",
+      "counterexample": "缺失条款：(3.6)的一次项t(X+Y)、指数仅含奇次项的全阶约束，以及与原Strang乘积的完整形式展开关系均未出现在本声明中。仅指定一个幂级数的三次系数不能确定这些结论，例如向其对数加入非零二次项不会改变三次系数；这说明结论的逻辑覆盖不足，并非给实际formalStrang制造反例。",
+      "suggested_fix": "保持本条原文范围，扩充声明为对真实formalLog(formalStrang A B)同时断言coeff 1=A+B、∀j:ℕ, coeff(2*j)=0、coeff 3等于现有交换子表达式；并明确在常数项1的形式幂级数中使用exp/log互逆关系，将这些系数约束解释为(3.6)的完整奇次展开。如需直接采用原式，定义适用于零常数项形式幂级数的形式指数，并陈述Strang乘积等于该指数、尾项从五次开始且仅有奇次项。不得把不同步长对数交换用作该修复的假设。"
+    }
+  }
+]

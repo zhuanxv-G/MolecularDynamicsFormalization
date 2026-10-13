@@ -1,0 +1,230 @@
+[
+  {
+    "source_id": "MD-3.4-AnalyticDefect",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NOTATION_TRANSCRIPTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-AnalyticDefect",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "116",
+        "pdf_page": "138",
+        "statement_latex": "It is possible to prove (see discussions in [164, 227] for more detail), that for many standard classes of numerical methods, there are real, positive constants $C,D$ such that\n\\[\\|\\mathcal G_h(\\zeta)-\\mathcal F_h^{(k)}(\\zeta)\\|\\le Ch[D(k+1)h]^{k+1},\\]\ngiving a precise bound on the magnitude of the difference between the time $h$ evolution under the truncated perturbed Hamiltonian and the numerical method.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$\\mathcal F_h^{(k)}$ is the actual truncated Hamiltonian flow, not a formal series."
+        ],
+        "issues": [
+          {
+            "code": "NEEDS_HUMAN",
+            "detail": "many standard classes的精确方法类及解析邻域条件原文未给。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.analyticBEA",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "原文many standard classes未明说正则性；显式H和联合步映射解析、原有smoothSymplecticData及紧域；全阶系数构造与指数截断仍为结论。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [
+          "按PDF138展示式将占位点恢复为原书ζ；不改原书数学主张。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "展示式原书自变量为ζ，非占位点；页码正确，未附独立证明。"
+      ],
+      "evidence": "PDF138/印刷116：||G_h(ζ)−F_h^(k)(ζ)||≤Ch[D(k+1)h]^(k+1)。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.analyticBEA",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "已展开Ch03_deps.txt：SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；smoothSymplecticData要求r>0、开放凸D、紧凸B⊆D、H光滑、G(0)=id、联合光滑、Jacobian满足AᵀJA=J、B上真实H流以及局部O(|h|^(r+1))阶。Jacobian是实际fderiv矩阵。truncatedFlow要求Γ(0)=z及[0,h]上的实际ODE；Hamiltonian为H+Σ_{j=r}^k h^j Hj。解析假设、统一C/A/δ先于k、真实流估计均明确，且加入A(k+1)h≤1并另给指数截断。未找到缺失定义；原文many standard classes未界定适用类，需数学判断这些解析及域条件是否足以支持此全域解析系数结论；不能仅据名字或sorry判PASS。analyticBEA含sorry，与此语义判定分开。",
+      "counterexample": null,
+      "suggested_fix": "明确原文适用方法类和解析邻域条件，再确认有限k范围及额外指数结论；不将构造或缺陷估计作为前提。"
+    }
+  },
+  {
+    "source_id": "MD-3.4-OptimalTruncation",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NOTATION_TRANSCRIPTION",
+        "FORMULA_TRANSCRIPTION",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-OptimalTruncation",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "116",
+        "pdf_page": "138",
+        "statement_latex": "If $h$ is small, then for $k$ sufficiently small the quantity in brackets is less than one and the difference from the truncated approximation decreases in magnitude with increasing $k$. As soon as $k$ satisfies\n\\[k+1>\\frac1{Dh}\\]\nthe power grows monotonically without bound. We can minimize the difference between $\\mathcal G_h$ and $\\mathcal F_h^{(k)}$ by choosing\n\\[k=\\frac1{Dh\\mathrm e}-1,\\]\nin which case,\n\\[\\|\\mathcal G_h(\\zeta)-\\mathcal F_h^{(k)}(\\zeta)\\|<\\widetilde C h\\mathrm e^{-1/(\\gamma h)},\\qquad\\gamma=\\frac1{D\\mathrm e}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "Lean k表示原文k+1的整数近似floor(1/(D e h))；本条只给括号幂的整数界，完整实际流指数缺陷在AnalyticDefect。"
+        ],
+        "issues": [
+          {
+            "code": "NEEDS_HUMAN",
+            "detail": "连续最优k未必整数；Lean整数界不冒充原文全部连续最小化结论。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "原书指数为−1/(γh)，同时γ=1/(De)；连续最小化给−1/(Deh)=−γ/h，二者不一致，保留原书。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.optimalTruncation",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "D>0；足够小正h；取整后允许独立正C吸收误差。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [
+          "恢复PDF138的ζ、C上波浪号和指数−1/(γh)，记录原书疑误。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原书是C̃及−1/(γh)，不是C及−γ/h。连续k可能非整数；括号<1也不足以保证随k始终递减，且最小化上界不等于最小化实际误差。"
+      ],
+      "evidence": "PDF138/印刷116：k=1/(hDe)−1；随后指数−1/(γh)，γ=1/(De)。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.optimalTruncation",
+      "verdict": "FAIL",
+      "explanation": "Lean只断言m=floor(1/(Ae h))>0及(A m h)^m≤C exp(−1/(Ae h))，m对应原文k+1；没有任何数值映射/实际截断流对象，未表达原文增长、最小化实际差或展示的原书指数。D>0及正小h合理，独立C可吸收取整误差；但context_notation承认缩窄不能代替完整statement_scope。此定理含sorry，语义缺项独立于证明完成度。[ERRATUM?]成立：连续变量x的log((Dh x)^x)=x log(Dh x)，最小点x=1/(Deh)，最小值exp(−1/(Deh))。",
+      "counterexample": "缺失实际流差结论及增长/最小化条款。取A=0.1、h_N=1/(0.1 e N)，Lean幂=(1/e)^N；原书指数界则exp(−0.1 e/h_N)=exp(−0.01 e²N)，与Lean率不同；A较大时原书率还会比真实连续最小值快，无法用固定C̃吸收。",
+      "suggested_fix": "将整数标量引理明确列为辅助条目；另建实际缺陷推论，保留原书疑误并显式说明采用经确认的−γ/h版本；区分上界最小化和真实差最小化。"
+    }
+  },
+  {
+    "source_id": "MD-3.4-ExponentialFlat",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "PDF138/印刷116：This bound tends to zero extremely rapidly (more rapidly than any power of h) as h→0. 页码及原句一致，无独立证明。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.exponentialFlat",
+      "verdict": "PASS",
+      "explanation": "γ>0和h→0⁺符合正步长上下文。∀γ>0 ∀k∈ℕ exp(−γ/h)/h^k→0保证C h exp(−γ/h)对任意固定幂平坦；对任意实幂也可由较大自然数幂推出。原书即使用倒数γ，仍属于某个正指数常数。context_notation是数学解释，不是逐字原文。Ch03.lean此条有证明；本次未编译，PASS仅评签名。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.4-ScalarVerletShadow4",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NOTATION_TRANSCRIPTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-ScalarVerletShadow4",
+        "kind": "definition",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "117",
+        "pdf_page": "139",
+        "statement_latex": "The modified energy for the Verlet method for a single degree of freedom system with energy $H=p^2/2+U(q)$ is\n\\[\\widetilde H_h=H+\\frac{h^2}{24}(2p^2U''-(U')^2)\n+h^4\\left(\\frac1{720}p^4U''''-\\frac1{120}p^2U'U'''-\\frac1{240}(U')^2U''-\\frac1{60}p^2((U'')^2+U'U''')\\right)+O(h^6).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原文脚注1；有限式只定义h⁴截断，O(h⁶)系数匹配和实际流余项不从定义证明，关联VerletModifiedMatching。"
+        ],
+        "issues": [
+          {
+            "code": "NEEDS_HUMAN",
+            "detail": "O(h⁶)的实际修正匹配另为未完成理论；有限函数与余项分开。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.scalarVerletShadow4",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [
+          "脚注二阶项恢复原书p^T U″ p，单自由度化简值不变。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "PDF脚注二阶项为2p^T U″p；JSON写作2p²U″在单自由度等值但不是逐字转录。"
+      ],
+      "evidence": "PDF139/印刷117脚注1：h²/24(2p^T U″p−(U′)²)，四阶四项及+O(h⁶)已逐项核对。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.scalarVerletShadow4",
+      "verdict": "FAIL",
+      "explanation": "scalarVerletShadow4以z=(q,p)定义H及h²/h⁴多项式；deriv(deriv U)和iteratedDeriv逐项对应二/三/四阶导数，系数720、120、240、60及符号匹配。此定义没有正则性条件，也不表达它是Verlet实际修正能量或O(h⁶)余项。无sorry的定义不能证明原文全部公式的匹配性质；context_notation引用其他条目但本批签名未包含该结论。",
+      "counterexample": "缺失O(h⁶)余项及与Verlet方法的修正Hamiltonian匹配断言；任意U（包括非光滑U）都能代入Lean总定义，不能据此获得原书导数展开。",
+      "suggested_fix": "保留有限截断定义作为辅助定义；另以足够光滑U、明确Verlet约定和真实/形式匹配定义陈述相应余项结论。"
+    }
+  },
+  {
+    "source_id": "MD-3.4-CommutingEnergy",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "PDF139/印刷117：Suppose that, somehow, H were exactly conserved along the numerical solution, so Ḣ=0⇒{H,H̃_h}=0. 页码与原句/公式一致。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.commutingEnergy",
+      "verdict": "FAIL",
+      "explanation": "actualFlow要求η>0、每个D中初值Φ(0,z)=z、每个|t|<η轨道留D且导数等于K的真实Hamiltonian场。textbookPoissonBracket H K=DH(X_K)，X_K=J∇K；H在开放D为C¹足以从连续轨道守恒得到结论。但Lean前提是全部连续时刻守恒，替换了原文数值解离散守恒，属于关键强化而非技术性[EXTRA]。context_notation已指出此差异，却未修复原陈述覆盖。定理含sorry不影响这一签名判断。",
+      "counterexample": "固定步长h₀>0，K=(π/h₀)(q²+p²)，其时间h₀映射为恒等，故H(q,p)=q沿所有离散快照守恒；然而{H,K}=2πp/h₀不恒为0。",
+      "suggested_fix": "把当前命题明确标为连续流条件引理；原数值解结论须另给足以从整族步映射推至生成场/形式系数的条件与论证。"
+    }
+  },
+  {
+    "source_id": "MD-3.4-CommutingEnergySymmetry",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "PDF140/印刷118：Since {g₁,g₂}=−{g₂,g₁}；{H̃_h,H}=0；H̃_h is ... a first integral ...。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.commutingEnergySymmetry",
+      "verdict": "PASS",
+      "explanation": "K=H̃_h，前提在D逐点{H,K}=0；实际括号为DH(J∇K)，反对称得到{K,H}=0。actualFlow给η>0、初值及区间内X_H轨道；K在开放D为C¹使沿轨道导数DK(X_H)为0，从而所有z∈D、|t|<η有K(Φ(t,z))=K(z)。两项结论完整覆盖原文。开放域/C¹/真实流是合理技术资格，无需假设修正级数收敛。此条有证明，本次未编译；PASS只评签名。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.4-EnergySymplecticNoGo",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "PDF140/印刷118：except in very special cases ... exact solution (up to a time rescaling)；essentially mutually exclusive from a practical point of view；Ge and Marsden [400]。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.energySymplecticNoGo",
+      "verdict": "FAIL",
+      "explanation": "noExtraIntegrals实际展开为：所有D上光滑且{K,H}=0的全局函数K都等于某个g(H)，不要求g光滑。[EXTRA]是明显强资格，原书未给，不能独自推出当前全局统一δ结论；还缺轨道时间范围与非紧D上的统一控制。actualFlow仅在|t|<η约束Φ，结论τ h (H z)却不受此范围约束，也没有G(h,D)⊆D条件。全局辛定义为C¹及每点AᵀJA=J，不含全局双射。原书practical措辞不足以证明此精确版本；已有明确反例，故不以NEEDS_HUMAN替代FAIL。定理含sorry。",
+      "counterexample": "n=1，D=ℝ²，H=(q²+p²)/2，η=1。记R_t为X_H的真实旋转流，定义Φ(t,z)=R_t z当|t|<1，其他时间Φ(t,z)=z。这满足actualFlow。H的所有光滑第一积分在每个圆上恒定，故满足noExtraIntegrals。令G(h,z)=R_{h H(z)}z，这是Hamiltonian H²/2的全局光滑流，辛、保H且G(0)=id。任意δ>0取0<h<δ及H(z)=π/h，则G(h,z)=−z。所有|t|<1的R_t z以及范围外的Φ(t,z)=z均不等于−z；不存在任何τ。",
+      "suggested_fix": "要求Φ是全时间真实H流，或将结论局部化到受控紧域并要求τ落在已知流时间窗；还应控制G轨道留域及生成场存在全局Hamiltonian的拓扑条件。以正式精确命题区分原书实践性评论。"
+    }
+  }
+]

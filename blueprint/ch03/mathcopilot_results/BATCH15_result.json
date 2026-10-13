@@ -1,0 +1,309 @@
+[
+  {
+    "source_id": "MD-3.5-EqualComponentIntegral",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF144／印刷122，§3.5：两分量方程均为 f(u,v)，I(u,v)=u−v；其下两条 Euler 更新使用同一个 hf(u_n,v_n)。陈述、页码及上下文一致，本段无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.equalComponentFirstIntegral",
+      "verdict": "PASS",
+      "explanation": "展开 Ch03.lean:900 的存在量词：同一个 I 对所有 f 都满足 I(u,v)=u−v，随后对所有全实时间可微解 u,v 断言 I(u(t),v(t))=I(u(0),v(0))；HasDerivAt 的两个导数值完全相同，故差的导数为零。对象和量词正确。[EXTRA] 导数资格是解轨道资格；全实时间版本是已明确标注的范围选择，不包含任意 f 的全局解存在性，也不提供一般局部区间版本。Euler 更新是本条原文中的引出下一条的定义性上下文，由 EqualEulerIntegral 单独承载。此处有显式证明而非 sorry；本判定是签名语义判定，未运行 Lean 编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.5-EqualEulerIntegral",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF145／印刷123，首个展示等式逐项为 I(u_{n+1},v_{n+1})=u_{n+1}−v_{n+1}=u_n−v_n=I(u_n,v_n)，随后说明 Euler conserves this first integral；更新式在PDF144。无独立完整证明，展示等式已包含代数理由。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.equalEulerIntegral",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter03/ReviewDefinitions.lean 的 equalComponentIntegral(z)=z.1−z.2。签名对任意实数 h、任意点 z、任意标量场 f 断言共同加上 hf(z) 后差不变，正是 PDF145 的一步等式；无需正步长或正则性。实数精确算术符合原文对舍入误差的说明。Ch03.lean 使用 equalEulerIntegral_proved，依赖中该证明为展开差并 ring，无 sorry；未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.5-LinearEulerIntegral",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "VECTOR_TYPOGRAPHY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.5-LinearEulerIntegral",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.5",
+        "printed_page": "123",
+        "pdf_page": "145",
+        "statement_latex": "Generalizing this slightly, we could imagine a system of ODEs of the form\n\\[\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z),\\]\nsuch that, for some vector $\\boldsymbol b$,\n\\[\\boldsymbol b\\cdot \\boldsymbol f(\\boldsymbol z)\\equiv0,\\]\nthen $I(\\boldsymbol z)=\\boldsymbol b\\cdot\\boldsymbol z$ is a first integral. It is straightforward to see that Euler's method conserves such a linear first integral exactly, as is true of many other popular numerical methods.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "精确实数一步Euler保持线性函数；连续ODE first integral由链式法则；不解释为机器浮点完全无误差。"
+        ],
+        "issues": [
+          "PDF145 中向量场 f 使用粗体，JSON 将其写成标量字体；应恢复向量记号，不改数学内容。"
+        ],
+        "lean_decl": "MD.Ch03.linearEulerIntegral",
+        "reusable_proofs": [
+          "MolecularDynamics.Chapter03Review.linearEulerIntegral_proved"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "PDF145 中向量场 f 使用粗体，JSON 将其写成标量字体；应恢复向量记号，不改数学内容。"
+        ],
+        "source_page_verification": "本次审阅：逐页核对教材 PDF 文本及渲染图像。"
+      },
+      "issues": [
+        "PDF145 中向量场 f 使用粗体，JSON 将其写成标量字体；应恢复向量记号，不改数学内容。"
+      ],
+      "evidence": [
+        "PDF145／印刷123，向量方程 ż=𝐟(𝐳)，𝐛·𝐟(𝐳)≡0，随后明确写 then I(𝐳)=𝐛·𝐳 is a first integral；又述 Euler 及许多其他方法精确保持。页码与其余文本一致，无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.linearEulerIntegral",
+      "verdict": "FAIL",
+      "explanation": "展开 Chapter02/ReviewDefinitions.lean：Q n=Fin n→ℝ，故 b:Q n→L[ℝ]ℝ 是有限维实向量空间上的连续线性泛函，与某个向量的点积等价；前提 ∀z,b(f z)=0 与原文相同。当前结论仅为 Euler 一步 b(z+h•f z)=b z。原文被本条 statement_latex 和 context_notation 明确保留的连续 ODE 第一积分结论没有进入签名：没有解轨道、导数资格或沿轨道常值的结论。这是缺失结论，不是该一步等式为假。其他方法的具体 RK 实例由下一条承担。现有证明引用 linearEulerIntegral_proved，依赖中无 sorry；已有证明不能补足签名缺项。",
+      "counterexample": "缺失条款：对任意区间上的真实解 x，若 x′(t)=f(x(t))，应有 b(x(t))=b(x(t₀))。现有签名只断言单个 Euler 更新，未陈述此连续轨道结论；无需伪造一步等式的反例。",
+      "suggested_fix": "将结论扩充为连续第一积分与 Euler 保持的合取，或增加与本 source_id 明确关联的连续第一积分定理：对区间内满足 HasDerivAt x (f(x t)) t 的解，断言 b(x t)=b(x t₀)。保留原始 statement_latex，不以删去原文连续结论规避缺项。"
+    }
+  },
+  {
+    "source_id": "MD-3.5-LinearRKIntegral",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF145／印刷123，原句仅说 many other popular numerical methods，并未点名 Runge–Kutta。JSON 原句准确，context_notation 与 extra_assumptions 已明确把 RK 标作额外实例；无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.linearRKIntegral",
+      "verdict": "PASS",
+      "explanation": "展开 Q n=Fin n→ℝ，并实际展开 rungeKuttaRelation：对每个 i，F_i=f(z+h∑_j A_ij F_j)，且 w=z+h∑_i b_i F_i。因此每个 ℓ(F_i)=0，线性性给 ℓ(w)=ℓ(z)。A、权重、h、阶段数及满足关系的阶段全称量化，包含显式与隐式有限阶段 RK，不偷加阶段解的存在或唯一性。[EXTRA] 选取 RK 作为原文“many other”的实例合理，阶段条件是方法定义，不是把待证结论当假设；无需阶条件或 ∑b_i=1。依赖 linearRKIntegral_proved 展开阶段关系后使用线性性，无 sorry；未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.5-VerletOscillatorEnergy",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_STABILITY_QUALIFICATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.5-VerletOscillatorEnergy",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.5",
+        "printed_page": "123",
+        "pdf_page": "145",
+        "statement_latex": "In the case of Euler's method applied to the harmonic oscillator, the error in energy grows with time and without bound. In the case of Störmer-Verlet, the energy fluctuates but remains bounded for all time and at its worst is of size proportional to $h^2$, a numerical observation that is supported by the existence of the modified Hamiltonian.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "Euler无界另为EulerGrowth；本条保留Verlet谐振子全时间能量界。",
+          "原文此句未写步长稳定性条件；Verlet 的全时间 O(h²) 能量误差界只在稳定步长范围解释。Lean 的 Ω>0、固定0<ρ<2、|hΩ|≤ρ 是对原文省略限定的显式补充，不是原文逐字假设。零初值并无能量波动，故“fluctuates”按典型行为理解；这里只形式化误差上界。"
+        ],
+        "issues": [
+          "原文 PDF145 的“remains bounded for all time”未在此句注明稳定步长范围；对任意步长不成立。必须显式记录这一原文限定缺失，保留原句，不静默把稳定性条件插入引文。"
+        ],
+        "lean_decl": "MD.Ch03.verletOscillatorEnergy",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "Ω>0，固定ρ∈(0,2)，|hΩ|≤ρ；排除不稳定及阈值步长。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "原文 PDF145 的“remains bounded for all time”未在此句注明稳定步长范围；对任意步长不成立。必须显式记录这一原文限定缺失，保留原句，不静默把稳定性条件插入引文。"
+        ],
+        "source_page_verification": "本次审阅：逐页核对教材 PDF 文本及渲染图像。"
+      },
+      "issues": [
+        "原文 PDF145 的“remains bounded for all time”未在此句注明稳定步长范围；对任意步长不成立。必须显式记录这一原文限定缺失，保留原句，不静默把稳定性条件插入引文。"
+      ],
+      "evidence": [
+        "PDF145／印刷123，原文完整出现 Euler 能量误差无界及 Störmer–Verlet 能量 fluctuates、bounded for all time、proportional to h²、modified Hamiltonian；未在该段给出 |hΩ|<2。引文与页码正确，无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.verletOscillatorEnergy",
+      "verdict": "PASS",
+      "explanation": "展开 Q 1=Fin 1→ℝ、Z 1=Q 1×Q 1；quadraticKinetic(m,p)=∑p_i²/m_i÷2，mechanicalEnergy=quadraticKinetic+U(q)，所以这里 H=(p²+Ω²q²)/2。invMass(m,v)_i=m_i⁻¹v_i，verlet 给 q_new=q+hp−h²Ω²q/2、p_new=p−hΩ²(q+q_new)/2；oneStepIterate(G,h,z,ν)=(G h)^[ν](z)，不是任意伪造序列。∃C 在 ∀h、∀ν 之前，确实是稳定带内对步长和所有离散时刻一致的 O(h²) 误差界。[EXTRA] Ω>0 与固定0<ρ<2、|hΩ|≤ρ 合理且必要于这种一致估计：在阈值 Ω=1,h=2,(q,p)=(0,1)，q_ν=2ν(−1)^(ν−1)，p_ν=(−1)^ν，H_ν=2ν²+1/2，无界。因此这是一项明确限定原文的稳定区间版本，不是无条件验证原书句子；本次 json_review 已记录原文限定遗漏。Euler 子句按本条 context_notation 明确另行承载，本签名不验证它；“fluctuates”是典型现象而非对零解也要求非恒定。Ch03.lean 的完整定理体用修正二次型不变量给界，未见 sorry；未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.5-MomentumProjection",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "VECTOR_TYPOGRAPHY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.5-MomentumProjection",
+        "kind": "definition",
+        "label": null,
+        "section": "3.5",
+        "printed_page": "123",
+        "pdf_page": "145",
+        "statement_latex": "We start by taking a timestep with any arbitrary (nonconserving) numerical method, say to an intermediate phase point $\\overline{\\boldsymbol Q},\\overline{\\boldsymbol P}$, then we “fix it up” by scaling the momentum by an adjustment factor, defining\n\\[\\boldsymbol Q=\\overline{\\boldsymbol Q},\\qquad\\boldsymbol P=\\gamma\\overline{\\boldsymbol P},\\]\nselecting $\\gamma$ so that the energy in the result is a prescribed value $E$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "γ选择由后面的constraint及factor定义，投影本身不证明可求解性。"
+        ],
+        "issues": [
+          "PDF145 的 Q、P 及带横线的 Q、P 均为粗体向量；JSON 未保留该向量字体。"
+        ],
+        "lean_decl": "MD.Ch03.momentumProjection",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "PDF145 的 Q、P 及带横线的 Q、P 均为粗体向量；JSON 未保留该向量字体。"
+        ],
+        "source_page_verification": "本次审阅：逐页核对教材 PDF 文本及渲染图像。"
+      },
+      "issues": [
+        "PDF145 的 Q、P 及带横线的 Q、P 均为粗体向量；JSON 未保留该向量字体。"
+      ],
+      "evidence": [
+        "PDF145／印刷123，下半页原文 intermediate phase point Q̄,P̄ 及 Q=Q̄,P=γP̄，向量全部粗体；selecting γ so that energy ... E 与 JSON 一致。无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.momentumProjection",
+      "verdict": "PASS",
+      "explanation": "展开 Q n=Fin n→ℝ、Z n=Q n×Q n。MD.Ch03.momentumProjection γ z 的第一分量是 z.1，第二分量逐坐标为 γ*z.2 i，精确对应 Q=Q̄、P=γP̄。此处是缩放映射定义，γ 的选择条件按 context_notation 明确由相邻 constraint/factor 项承担；它本身不声称任意 γ 都守恒，也不声称 γ 总存在，因而缺少 E 参数不是遗漏映射定义的内容。定义体直接给出，无 sorry；未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.5-ProjectionConstraint",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "VECTOR_TYPOGRAPHY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.5-ProjectionConstraint",
+        "kind": "definition",
+        "label": "(3.12)",
+        "section": "3.5",
+        "printed_page": "123",
+        "pdf_page": "145",
+        "statement_latex": "This method is easy to implement: the equation that must be solved is\n\\[\\frac{\\gamma^2\\overline{\\boldsymbol P}^{T}\\boldsymbol M^{-1}\\overline{\\boldsymbol P}}{2}+U(\\overline{\\boldsymbol Q})=E.\\tag{3.12}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "K=P̄ᵀM⁻¹P̄/2，U=U(Q̄)；γ约束。"
+        ],
+        "issues": [
+          "PDF145 式(3.12)的 P、Q 和质量矩阵 M 使用粗体；JSON 未保留字体。"
+        ],
+        "lean_decl": "MD.Ch03.projectionConstraint",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "PDF145 式(3.12)的 P、Q 和质量矩阵 M 使用粗体；JSON 未保留字体。"
+        ],
+        "source_page_verification": "本次审阅：逐页核对教材 PDF 文本及渲染图像。"
+      },
+      "issues": [
+        "PDF145 式(3.12)的 P、Q 和质量矩阵 M 使用粗体；JSON 未保留字体。"
+      ],
+      "evidence": [
+        "PDF145／印刷123，式(3.12)为 γ² P̄ᵀM⁻¹P̄/2+U(Q̄)=E。系数、指数、转置、逆矩阵和标签准确；字体需恢复，无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.projectionConstraint",
+      "verdict": "PASS",
+      "explanation": "实际展开 MD.Ch03.projectionConstraint E K U γ 为 γ²*K+U=E。结合本条明确的上下文替换 K=P̄ᵀM⁻¹P̄/2、U=U(Q̄)，恰是(3.12)。这里 U 参数是已求值的实数势能，不是势函数；K 也只是已求值的动能。这是标量约束的定义，没有求解性、质量正性或矩阵性质的断言，因此无需额外前提。定义体无 sorry；未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.5-ProjectionFactor",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "VECTOR_TYPOGRAPHY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.5-ProjectionFactor",
+        "kind": "definition",
+        "label": "(3.13)",
+        "section": "3.5",
+        "printed_page": "124",
+        "pdf_page": "146",
+        "statement_latex": "and, since $\\overline{\\boldsymbol Q}$ is known, this gives\n\\[\\gamma=\\left(\\frac{E-\\overline U}{\\overline K}\\right)^{1/2},\\tag{3.13}\\]\nwhere $\\overline U=U(\\overline{\\boldsymbol Q})$ and $\\overline K=\\overline{\\boldsymbol P}^{T}\\boldsymbol M^{-1}\\overline{\\boldsymbol P}/2$ are the potential and kinetic energies after a step of the original non-conserving scheme.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "实平方根取非负分支；原文要求K>0、E−U≥0，定义的真实约束解另列ProjectionEnergy。"
+        ],
+        "issues": [
+          "PDF146 式(3.13)后的 Q、P 与 M 是粗体向量/矩阵；JSON 未保留该字体。"
+        ],
+        "lean_decl": "MD.Ch03.projectionFactor",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "PDF146 式(3.13)后的 Q、P 与 M 是粗体向量/矩阵；JSON 未保留该字体。"
+        ],
+        "source_page_verification": "本次审阅：逐页核对教材 PDF 文本及渲染图像。"
+      },
+      "issues": [
+        "PDF146 式(3.13)后的 Q、P 与 M 是粗体向量/矩阵；JSON 未保留该字体。"
+      ],
+      "evidence": [
+        "PDF146／印刷124，式(3.13)正是 γ=((E−Ū)/K̄)^(1/2)，随后给 Ū=U(Q̄)、K̄=P̄ᵀM⁻¹P̄/2；下一段明确 γ 在 p̄=0 时未定义并要求 E−Ū≥0。标签、公式和上下文资格正确，字体需恢复；无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.projectionFactor",
+      "verdict": "PASS",
+      "explanation": "MD.Ch03.projectionFactor E K U 实际定义为 Real.sqrt((E−U)/K)，对应(3.13)的非负平方根分支；E、K、U 均为实数能量标量。Lean 实数除法与平方根是全定义运算，K=0 时该表达式仍返回0，负被开方数也返回0，不能解释为原书在这些情形有物理投影因子。本条 context_notation 已限定 K>0、E−U≥0，并明确真正约束解另列 ProjectionEnergy；本次 PASS 限于合法能量域上的公式定义，不承认无条件求解性或原书部分函数与 Lean 全函数在非法域上相同。没有以自由度数目推导域条件。[EXTRA]/[ERRATUM?] 本条无相应标注。定义体无 sorry；未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

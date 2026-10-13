@@ -1,0 +1,278 @@
+{
+  "batch": "BATCH20",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "ff726b507c981a405e20510fc8d9aa1d48251ec866abf5163966d636b4c14e2e",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.7-Adjoint",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.7-Adjoint",
+          "kind": "definition",
+          "label": null,
+          "section": "2.3.7",
+          "printed_page": "81",
+          "pdf_page": "103",
+          "statement_latex": "Given any numerical integrator $\\mathcal G_h$, consider the map\n\\[\\mathcal G_h^\\dagger=\\mathcal G_{-h}^{-1}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.bp_adjoint",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]方法G每个可用h为实际Equiv.Perm；只在负步可逆时定义伴随，不能宣称任意步映射天然可逆。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原页伴随上标为 dagger（†），不是星号（*）；修正为\\dagger，保留原书陈述及其可逆性隐含前提，不改写为无条件存在性结论。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页伴随上标为 dagger（†），不是星号（*）；修正为\\dagger，保留原书陈述及其可逆性隐含前提，不改写为无条件存在性结论。"
+        ],
+        "evidence": [
+          "已阅读教材PDF第103页（印刷第81页）的渲染图，并以pdftotext交叉核对；页码满足PDF页=印刷页+22。",
+          "PDF第103页§2.3.7：Given any numerical integrator及展示式 $\\mathcal G_h^\\dagger=\\mathcal G_{-h}^{-1}$；无独立证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_adjoint",
+        "verdict": "PASS",
+        "explanation": "Ch02.lean:898–899直接定义为(G(-h)).symm；Ch02_deps.txt:1240–1241的textbookAdjointMethod也逐字为同一负步逆。对象为任意E、实步h和实际双射族G，输出仍为E上的双射；没有添加数值精度或存在性结论。[EXTRA]负步可逆是定义逆所必需，全实步双射族是已明示的较强全局接口，并非声称所有积分器都可逆。无[ERRATUM?]；定义没有sorry，签名判断不以证明完成度为依据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.7-FlowSelfAdjoint",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.7-FlowSelfAdjoint",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.7",
+          "printed_page": "82",
+          "pdf_page": "104",
+          "statement_latex": "For the flow map $\\mathcal F_h$, we know that the inverse map is precisely $\\mathcal F_{-h}$, so $\\mathcal F_h^\\dagger=\\mathcal F_h$, i.e. the flow map is in the normal sense “self-adjoint,” i.e. symmetric.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.flowSelfAdjoint",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookFlowMethod_isSelfAdjoint"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]给定全球Flow群；原文局部流若无全球存在，须在正负步都可用域解释，未宣称所有ODE有全球流。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原页伴随上标为 dagger（†），不是星号（*）；修正为\\dagger，保留原书陈述及其可逆性隐含前提，不改写为无条件存在性结论。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页伴随上标为 dagger（†），不是星号（*）；修正为\\dagger，保留原书陈述及其可逆性隐含前提，不改写为无条件存在性结论。"
+        ],
+        "evidence": [
+          "已阅读教材PDF第104页（印刷第82页）的渲染图，并以pdftotext交叉核对；页码满足PDF页=印刷页+22。",
+          "PDF第104页首段：inverse map is precisely及 $\\mathcal F_h^\\dagger=\\mathcal F_h$，随后self-adjoint与symmetric；原JSON文字一致，仅上标不符。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.flowSelfAdjoint",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "已展开Ch02.lean:903–906及Ch02_deps.txt:1240–1241、1261–1272：伴随是负步逆，textbookFlowMethod F h=(F.toHomeomorph h).toEquiv，结论为整个实步方法族相等，覆盖所有h和初态z。全球Flow及拓扑结构[EXTRA]是明确的全局版本，不宣称任意ODE全球存在。但合集没有Mathlib的Flow结构定义及Flow.toHomeomorph定义体，无法按本次要求进一步核验F.toHomeomorph的正向确为F h、逆向确为F(-h)及群律；库内证明中的change不是这些定义的源码展开。缺定义的具体名称为Flow、Flow.toHomeomorph。无[ERRATUM?]；包装定理及所列复用定理无显式sorry，未编译或作传递公理检查，此事实不代替签名审计。",
+        "counterexample": null,
+        "suggested_fix": "补充绑定版本Mathlib的Flow结构及Flow.toHomeomorph实际定义（含正向、逆向和群作用律）；据此核验负时间逆后重审，无需先修改定理或补证明。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.7-BackwardEuler",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_ANTECEDENT_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.7-BackwardEuler",
+          "kind": "definition",
+          "label": null,
+          "section": "2.3.7",
+          "printed_page": "82",
+          "pdf_page": "104",
+          "statement_latex": "The adjoint method is defined by\n\\[\\boldsymbol Z=\\boldsymbol z+hf(\\boldsymbol Z),\\]\nand where the first was explicit, the second is implicit (it is the so-called backward Euler method).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF第104页本句前的 first 指显式Euler：$\\boldsymbol Z=\\boldsymbol z+hf(\\boldsymbol z)$；second 指本条的隐式关系。",
+            "审阅注：这里只给隐式关系，不宣称对所有f、h和起点均存在唯一解；此注不是原书引文。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.bp_backwardEulerRelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原context_notation只给审阅判断，没有解释原句first/second的前文指代；补充该页显式Euler公式并标明审阅注身份。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation只给审阅判断，没有解释原句first/second的前文指代；补充该页显式Euler公式并标明审阅注身份。"
+        ],
+        "evidence": [
+          "已阅读教材PDF第104页（印刷第82页）的渲染图，并以pdftotext交叉核对；页码满足PDF页=印刷页+22。",
+          "PDF第104页：Euler公式 $\\boldsymbol Z=\\boldsymbol z+hf(\\boldsymbol z)$；其伴随 $\\boldsymbol Z=\\boldsymbol z+hf(\\boldsymbol Z)$；随后explicit、implicit及backward Euler的说明。所选陈述文字、正号、f的参数一致，无独立完整证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_backwardEulerRelation",
+        "verdict": "PASS",
+        "explanation": "Ch02_deps.txt:2816明确Q n=Fin n→ℝ；加法与ℝ标量乘法为逐坐标运算。Ch02.lean:908定义对任意n、f、h、z、w的关系w=z+h•f w，等价于每个坐标wᵢ=zᵢ+h f(w)ᵢ，终点求值及正号均一致。此项只定义隐式关系，没有宣称任意步下存在唯一解；explicit/implicit是原文说明，不是额外数学结论。无[EXTRA]、[ERRATUM?]；定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.7-EulerAdjoint",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已阅读教材PDF第104页（印刷第82页）的渲染图，并以pdftotext交叉核对；页码满足PDF页=印刷页+22。",
+          "PDF第104页：Euler公式 $\\boldsymbol Z=\\boldsymbol z+hf(\\boldsymbol z)$；其伴随 $\\boldsymbol Z=\\boldsymbol z+hf(\\boldsymbol Z)$；随后explicit、implicit及backward Euler的说明。所选陈述文字、正号、f的参数一致，无独立完整证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.eulerAdjoint",
+        "verdict": "PASS",
+        "explanation": "Ch02.lean:14、912–916给出实赋范向量空间E及任意f、双射族G、h；先要求∀Z,G(-h)Z=eulerStep f (-h)Z，再对任意z,Z给出双向等价。Ch02_deps.txt:897–898展开eulerStep为x+h•f x，1240–1245展开负步逆，所以左式等价于Z-h•f Z=z，移项恰为Z=z+h•f Z。没有颠倒初态/终态或量词，也未要求正步Euler等于G(h)。[EXTRA]只需负步Euler可逆；全步双射族为已明示的接口加强。可逆性不能省，例如E=ℝ,f(x)=x,h=1时负步Euler恒零。无[ERRATUM?]；包装证明及1284–1288复用证明无显式sorry，语义判断独立于证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.7-AdjointSymplecticEuler",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_SOURCE_AND_AUDIT_CONFLATED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.7-AdjointSymplecticEuler",
+          "kind": "definition",
+          "label": null,
+          "section": "2.3.7",
+          "printed_page": "82",
+          "pdf_page": "104",
+          "statement_latex": "Its adjoint method has a similar structure:\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p,\\tag{2.22}\\]\n\\[\\boldsymbol P=\\boldsymbol p+hF(\\boldsymbol Q).\\tag{2.23}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "其（Its）指PDF第102页（印刷第80页）的辛Euler：(2.18) $\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol P$，(2.19) $\\boldsymbol P=\\boldsymbol p+hF(\\boldsymbol q)$。",
+            "同页机械Hamiltonian为 $H=\\boldsymbol p^TM^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$，M为对角质量矩阵，$F(\\boldsymbol q)=-\\nabla_{\\boldsymbol q}U(\\boldsymbol q)$；小写q,p为初始位置、动量，大写Q,P为步后位置、动量。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.bp_adjointSymplecticEuler",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原context_notation声称Lean定义体与两个坐标式一致，但批次未给正式库定义，不能把未经核验的审计结论当作原文上下文。替换为PDF第102、104页可核对的记号及指代。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation声称Lean定义体与两个坐标式一致，但批次未给正式库定义，不能把未经核验的审计结论当作原文上下文。替换为PDF第102、104页可核对的记号及指代。"
+        ],
+        "evidence": [
+          "已阅读教材PDF第104页（印刷第82页）的渲染图，并以pdftotext交叉核对；页码满足PDF页=印刷页+22。",
+          "PDF第104页(2.22) $\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p$；(2.23) $\\boldsymbol P=\\boldsymbol p+hF(\\boldsymbol Q)$；公式、编号与所引文字一致。上下文另见PDF第102页(2.18)–(2.19)。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_adjointSymplecticEuler",
+        "verdict": "FAIL",
+        "explanation": "已完整展开Ch02.lean:918–922和Ch02_deps.txt:33、569–571、583–585、619–629、789–815、1240–1241：相空间为(Fin Nc⊕Fin Nc)→ℝ，inl为位置、inr为动量；负步逆确为先drift(h)后kick(h)。其位置为Qᵢ=qᵢ+h(mᵢ)⁻¹pᵢ，动量为Pᵢ=pᵢ+h[-(fderiv ℝ U Q)(eᵢ)]，两条坐标式与(2.22)–(2.23)的顺序和符号一致，且确实使用新位置Q。然而输入对m和U均无限制，也无[EXTRA]说明总定义扩展：mᵢ=0时Lean的标量逆仍有值，却不存在原文M⁻¹；U不可微时fderiv的总定义也不能代表原文梯度。因此其对象域没有忠实保留可逆质量矩阵和梯度有定义的背景条件。负质量非零并不妨碍代数逆，物理质量通常需正。无[ERRATUM?]，并非原公式错误。定义与所展开逆映射代码无显式sorry，失败来自语义域而非证明缺口。",
+        "counterexample": "取Nc=1,m₀=0,U≡0,h=1,q₀=0,p₀=1。Lean的0⁻¹=0，drift及kick给出Q₀=0,P₀=1；原文M=[0]没有逆，(2.22)无定义。另取Nc=1,m₀=1,U(q)=|q₀|,h=1,q₀=-1,p₀=1，则Q₀=0处原文梯度不存在，Lean仍给出总定义的步映射。",
+        "suggested_fix": "在接口中显式加入∀i,m i≠0（机械模型可用∀i,0<m i）及Differentiable ℝ U，或限定到梯度存在的有效域并要求新位置仍在域内；无需为纯坐标定义额外要求C²。若保留总定义辅助接口，必须明确标注其为[EXTRA]总定义扩展，并另给有上述有效域条件的原文接口和两条坐标公式。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.7-AdjointInvolution",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.7-AdjointInvolution",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.7",
+          "printed_page": "82",
+          "pdf_page": "104",
+          "statement_latex": "the adjoint of the adjoint is the original method:\n\\[\\mathcal G_h^{\\dagger\\dagger}=[\\mathcal G_{-h}^\\dagger]^{-1}=[\\mathcal G_h^{-1}]^{-1}=\\mathcal G_h.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.adjointInvolution",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookAdjointMethod_involutive"
+          ],
+          "extra_assumptions": [
+            "实际可逆步方法族Equiv.Perm；负步及双逆确实存在。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原页伴随上标为 dagger（†），不是星号（*）；修正为\\dagger，保留原书陈述及其可逆性隐含前提，不改写为无条件存在性结论。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页伴随上标为 dagger（†），不是星号（*）；修正为\\dagger，保留原书陈述及其可逆性隐含前提，不改写为无条件存在性结论。"
+        ],
+        "evidence": [
+          "已阅读教材PDF第104页（印刷第82页）的渲染图，并以pdftotext交叉核对；页码满足PDF页=印刷页+22。",
+          "PDF第104页展示了 $\\mathcal G_h^{\\dagger\\dagger}=[\\mathcal G_{-h}^{\\dagger}]^{-1}=[\\mathcal G_h^{-1}]^{-1}=\\mathcal G_h$；这是原文所选陈述中的代数解释，保留在statement_latex；proof_latex=null不表示原页没有该推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.adjointInvolution",
+        "verdict": "PASS",
+        "explanation": "Ch02.lean:925–927量化任意E与实步实际双射族G，结论是整个方法族的对合恒等。Ch02_deps.txt:1240–1241真实展开伴随A(G)(h)=(G(-h)).symm；再次作用得到A(A(G))(h)=((G(-(-h))).symm).symm=G(h)，对应原文全部双逆代数链。族相等覆盖逐h与逐初态相等，无遗漏结论。[EXTRA]可逆性必要且合理，全步族保证正负步均有定义；无[ERRATUM?]。包装证明及1249–1252复用证明无显式sorry，未作编译/传递公理检查；签名忠实与证明状态分开。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

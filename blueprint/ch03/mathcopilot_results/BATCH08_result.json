@@ -1,0 +1,304 @@
+[
+  {
+    "source_id": "MD-3.3.2-VerletMaps",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF129/印刷107，(3.3)：两列依次为Position Verlet、Velocity Verlet；六个赋值的符号、半步及梯度求值点均一致。proof_latex=null；本页未给本定义独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.verletMaps",
+      "verdict": "PASS",
+      "explanation": "依赖展开：Q n=Fin n→ℝ，SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；pack=Sum.elim q p，unpack=(z∘inl,z∘inr)。textbookPotentialForce U q i=−fderiv ℝ U q (Pi.single i 1)；kick保持q并令p_i↦p_i+hF(q)_i；drift保持p并令q_i↦q_i+h(m_i)⁻¹p_i。coordinateVerlet=kick(h/2)∘drift(h)∘kick(h/2)，positionVerlet=drift(h/2)∘kick(h)∘drift(h/2)，函数组合从右至左作用。 展开所得六个赋值及返回位置/速度Verlet的顺序均与(3.3)一致。[EXTRA] 对角固定质量与教材机械模型相符；Lean还允许零质量（实数逆零定义为零）及非光滑U，这是总函数延拓，并非对退化对象声称物理逆矩阵存在。定义没有sorry；数学适用域应理解为教材非退化质量、可微势能。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.2-VerletHamiltonianParts",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF129/印刷107，“velocity Verlet … splitting into three parts”；H(q,p)=H₁+H₂+H₃，H₂=½pᵀM⁻¹p，H₁=H₃=½U(q)。页码与转录公式一致；无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.verletHamiltonianParts",
+      "verdict": "FAIL",
+      "explanation": "依赖展开：Q n=Fin n→ℝ，SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；pack=Sum.elim q p，unpack=(z∘inl,z∘inr)。实际定义仅返回Fin 3列表[U(z)/2,T(z),U(z)/2]，T和U都是任意相空间函数；没有将T绑定为quadraticKinetic m p=(Σ_i p_i²/m_i)/2，也没有要求U仅依赖q，且签名未给H及H=ΣH_i。列表次序正确，但对象及原文完整分解被泛化/遗漏；没有sorry，也没有标注这项泛化为[EXTRA]。",
+      "counterexample": "取n=1、T(q,p)=q、U(q,p)=p。Lean定义合法，却给H₂=q、H₁=H₃=p/2，不是原文的机械动能和仅位置势能。",
+      "suggested_fix": "参数改为m和U:Q n→ℝ；H₂ z:=quadraticKinetic m (unpack z).2，H₁=H₃:=U((unpack z).1)/2；显式给出机械Hamiltonian及分解等式，或将通用列表单独标为辅助定义。"
+    }
+  },
+  {
+    "source_id": "MD-3.3.2-VerletStructure",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF129/印刷107，“kick … linear drift … final kick”；“symmetry”；“drift-kick-drift … position Verlet”。所引段落、顺序、上下文及页码一致。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.verletStructure",
+      "verdict": "PASS",
+      "explanation": "依赖展开：Q n=Fin n→ℝ，SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；pack=Sum.elim q p，unpack=(z∘inl,z∘inr)。textbookPotentialForce U q i=−fderiv ℝ U q (Pi.single i 1)；kick保持q并令p_i↦p_i+hF(q)_i；drift保持p并令q_i↦q_i+h(m_i)⁻¹p_i。coordinateVerlet=kick(h/2)∘drift(h)∘kick(h/2)，positionVerlet=drift(h/2)∘kick(h)∘drift(h/2)，函数组合从右至左作用。 IsTextbookSymplecticMap Φ=ContDiff ℝ 1 Φ ∧ ∀z,(DΦ(z))ᵀJ DΦ(z)=J，其中textbookJacobian=实际fderiv的坐标矩阵。量词为∀n,m,U，在U全域C²后，同时给所有h的两种辛性及所有h,z的反步恒等式；kick/drift结构已由实际定义体现。[EXTRA] C²足以使梯度kick为C¹且Hessian对称，是合理的光滑性显式化；m正性不为剪切映射辛性和反步所必需。当前证明调用verletVariants_proved，其源码由真实kick/drift辛性与两条反步消去证明组成；本条不是sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_CASE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+        "kind": "definition",
+        "label": null,
+        "section": "3.3.2",
+        "printed_page": "107",
+        "pdf_page": "129",
+        "statement_latex": "In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH lemma gives\n\\[\\begin{aligned}\\widetilde H_h={}&T+U+\\frac{h^2}{12}\\left(\\{T,\\{T,U\\}\\}-\\frac12\\{U,\\{U,T\\}\\}\\right)\\\\\n&+\\frac{h^4}{120}\\left(-\\frac16\\{T,\\{T,\\{T,\\{T,U\\}\\}\\}\\}+\\frac13\\{U,\\{T,\\{T,\\{T,U\\}\\}\\}\\}-\\frac14\\{U,\\{U,\\{T,\\{T,U\\}\\}\\}\\}+\\{T,\\{T,\\{U,\\{U,T\\}\\}\\}\\}\\right)+O(h^6).\\end{aligned}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "只定义到h⁴的印刷有限函数；h²/h⁴系数实际匹配另条；一般T,U暂未假定机械T。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.verletModifiedH",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原页为“BCH lemma”，JSON为“BCH Lemma”；按逐字要求恢复小写。所有Poisson括号嵌套、系数和O(h⁶)与渲染页一致。"
+      ],
+      "evidence": [
+        "PDF129/印刷107，“the BCH lemma gives”；其后完整h²、h⁴展开及+O(h⁶)。无独立证明；context的有限截断描述与原文完整展开的范围须区分。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.verletModifiedH",
+      "verdict": "FAIL",
+      "explanation": "textbookJ=[0,I;−I,0]；textbookHamiltonianVectorField H=J乘以由fderiv H在坐标基上的值组成的向量；textbookPoissonBracket F G=DF(X_G)=Σ_i(F_qi G_pi−G_qi F_pi)。 Lean逐项准确实现印刷h²和h⁴多项式，包括−1/6、1/3、−1/4和末项+1；但只是任意T,U:相空间→ℝ的有限函数，未要求T=T(p)、U=U(q)，也未表述BCH给出的修改Hamiltonian与此多项式相差O(h⁶)。context_notation所声明“只定义有限函数”如作为辅助定义是合理的，但相对statement_scope所包含的原句及完整展示式仍属缩小范围。定义没有sorry；不能据此认定BCH及余项陈述已经形式化。",
+      "counterexample": "缺失条款：分离变量T(p)+U(q)、修改Hamiltonian/形式log的识别，以及O(h⁶)余项。仅有多项式定义无法蕴含这些条款。",
+      "suggested_fix": "保留本定义作为截断辅助函数；另给形式级数或适当光滑/局部流版本，规定T、U的变量依赖，并陈述修改Hamiltonian到h⁴的系数及h⁶余项。不得把原书展开静默改为别的公式。"
+    }
+  },
+  {
+    "source_id": "MD-3.3.2-VerletModifiedMatching",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_CASE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3.2-VerletModifiedMatching",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.3.2",
+        "printed_page": "107",
+        "pdf_page": "129",
+        "statement_latex": "In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH lemma gives",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "完整印刷h²,h⁴展开见同页VerletModifiedHamiltonian；本条不静默换成另一种Verlet或改h²系数。"
+        ],
+        "issues": [
+          {
+            "code": "NEEDS_HUMAN",
+            "detail": "与速度/位置Verlet的组合次序共同核对h²,h⁴系数；原文Hamiltonian O(h⁶)与实际匹配阶也需裁定。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.verletModifiedMatching",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "正对角质量、U全域C∞、紧初值B；完整印刷h⁴截断实际O(h⁶)端点匹配为额外严格化。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原页“BCH lemma”被转为“BCH Lemma”；恢复原文大小写。原有NEEDS_HUMAN提示是待审标记，不构成本次自动判NEEDS_HUMAN的理由。"
+      ],
+      "evidence": [
+        "PDF129/印刷107，“In general … H(q,p)=T(p)+U(q), the BCH lemma gives”；完整展开在同页上一条，含O(h⁶)。当前条是该引导句的准确分条引用，除lemma大小写外无转录问题。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.verletModifiedMatching",
+      "verdict": "FAIL",
+      "explanation": "textbookJ=[0,I;−I,0]；textbookHamiltonianVectorField H=J乘以由fderiv H在坐标基上的值组成的向量；textbookPoissonBracket F G=DF(X_G)=Σ_i(F_qi G_pi−G_qi F_pi)。textbookPotentialForce U q i=−fderiv ℝ U q (Pi.single i 1)；kick保持q并令p_i↦p_i+hF(q)_i；drift保持p并令q_i↦q_i+h(m_i)⁻¹p_i。coordinateVerlet=kick(h/2)∘drift(h)∘kick(h/2)，positionVerlet=drift(h/2)∘kick(h)∘drift(h/2)，函数组合从右至左作用。 positiveMass m=∀i,0<m_i；quadraticKinetic=(Σp_i²/m_i)/2。matchesHamiltonian K G B 5展开为∃C>0,δ>0,Γ，∀0<h<δ,∀z∈B，Γ(h,z,0)=z，solution X_(K h) Γ 0 h，端点误差≤C h⁶；solution指闭区间内实际HasDerivWithinAt。这些[EXTRA]对机械特例的局部均匀匹配合理，C∞比有限阶必要正则性更强但可用，紧性用于统一常数。然而原句适用于一般可分离T(p)+U(q)，本签名仅覆盖固定正对角二次T，且不包含原文完整Hamiltonian O(h⁶)的系数/余项意义；端点O(h⁶)并非Hamiltonian余项O(h⁶)本身。故就全部原文范围判FAIL，不是断言机械特例必假。h²项对应velocity Verlet，未发生位置/速度交换。当前证明是sorry，签名审计与证明状态分开。",
+      "counterexample": "遗漏一般非二次T，例如T(p)=p⁴/4、U(q)=q²/2；该原文对象无法实例化为任何固定quadraticKinetic m。另缺原文Hamiltonian余项陈述；没有据本次只读审计声称印刷h⁴全部系数对一般T已获验证。",
+      "suggested_fix": "将机械匹配保留为明确的特例；新增一般分离T,U及其子流的BCH系数陈述。若用端点误差表达h⁴截断，需给相应正则性下O(h⁷)（遗漏Hamiltonian h⁶项通常累积一步为h⁷），并与Hamiltonian O(h⁶)分开。原书h⁴系数若要另作数学勘误，应显式标注，不能改动忠实转录。"
+    }
+  },
+  {
+    "source_id": "MD-3.3.2-ModifiedEven",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3.2-ModifiedEven",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.3.2",
+        "printed_page": "107–108",
+        "pdf_page": "129–130",
+        "statement_latex": "The extra power of $h$ in the leading perturbation reflects the fact that this method is 2nd order accurate, rather than first order, as Symplectic Euler. Note that only even order terms $(h^2,h^4,\\ldots)$ appear in the perturbative expansion; this is a consequence of the symmetry of the method.\nSetting $s=-t$, the left hand side of (3.4) collapses to the identity. Hence the surviving even-powered terms in the expansion on the right hand side of (3.5) must be zero. If the even order terms vanish, then the effect of composing linear operators symmetrically is to keep only odd order terms in the exponent, giving the symmetric BCH formula\n\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(t(X+Y)+t^3\\widetilde Z_{[3]}+\\cdots).\\tag{3.6}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "formalLog奇次⇔除以形式变量h后的modifiedHamiltonian为偶次；原文证明中使用不同步长log交换的额外断言另列ERRATUM，结论不靠该假设。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.modifiedEven",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "PDF130的Z_[3]上标为波浪号tilde，JSON误转为widehat；恢复widetilde。原文反步论证转录保持不变，不静默修正其交换性前提。"
+      ],
+      "evidence": [
+        "PDF129/印刷107末段：“2nd order accurate”；“only even order terms”；PDF130/印刷108，“Setting s=−t”段与(3.6)：exp(t(X+Y)+t³ widetilde Z_[3]+⋯)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.modifiedEven",
+      "verdict": "FAIL",
+      "explanation": "textbookFormalOperatorExponential A 的第k系数为A^k/k!；formalStrang A B=exp(xA/2)exp(xB)exp(xA/2)；formalLog P 的第n系数为Σ_{j=1}^n (−1)^(j+1)/j·coeff_n((P−1)^j)，在P(0)=1时就是真实形式log；commutator A B=AB−BA。 ∀实代数（允许非交换）A,B和j，coeff_(2j)(log Strang)=0，确实忠实表达形式log奇性，除以形式变量后的生成元/修改Hamiltonian只含偶次；j=0项为空和=0。该奇性可由S(−x)=S(x)⁻¹独立得到，无需不同步长log交换；原文那一推理有缺陷但结论正确。[EXTRA] 无额外交换假设，合理。不过所引原文还包含“2nd order accurate”及(3.6)线性项X+Y，本签名仅给偶系数为零，未给线性系数A+B或方法二阶一致性/精确阶；以全部结论子句审计判FAIL。当前是sorry，不能将正确签名子句当已证明。",
+      "counterexample": "遗漏条款：coeff₁(log S)=A+B及二阶一致性。单独奇性不足以表达该条第一句和(3.6)的全部信息。",
+      "suggested_fix": "同时陈述coeff₁(log S)=A+B和coeff₂=0/形式局部误差O(x³)，并明确Hamiltonian偶性与log奇性的对应。自然语言“2nd order”通常指至少二阶；不要声称所有退化A,B都恰为二阶。保留原书错误推理说明，改用反步恒等式作为另列修复建议。"
+    }
+  },
+  {
+    "source_id": "MD-3.3.2-Strang",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_OUTER_FACTOR",
+        "TRANSCRIPTION_SYMBOL",
+        "FALSE_ERRATUM_FLAG"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3.2-Strang",
+        "kind": "definition",
+        "label": null,
+        "section": "3.3.2",
+        "printed_page": "108",
+        "pdf_page": "130",
+        "statement_latex": "For Hamiltonians $X$ and $Y$, consider symmetrizing a composition of exponentials (a Strang splitting), such that\n\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(tZ_t)=\\exp(t\\widetilde Z_{[1]}+t^2\\widetilde Z_{[2]}+t^3\\widetilde Z_{[3]}+t^4\\widetilde Z_{[4]}+\\cdots).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "本定义为左端真实形式乘积；PDF130右端为exp(t widetilde Z_[1]+t² widetilde Z_[2]+t³ widetilde Z_[3]+⋯)，没有共同外层t。各Z_[j]按指数总幂编号，与(3.5)一致；不假设不同步长log交换。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.formalStrang",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "JSON将exp(t Z₁+t² Z₂+⋯)错误写成exp(t(Z₁+t² Z₂+⋯))，改变了总幂。",
+        "Z_[j]误写为widehat，原页为widetilde。",
+        "删除由错误转录导致的原书索引ERRATUM?，并完整修正context_notation；未修改原書。"
+      ],
+      "evidence": [
+        "PDF130/印刷108顶端Strang展示式第二行明确为exp(t widetilde Z_[1]+t² widetilde Z_[2]+t³ widetilde Z_[3]+t⁴ widetilde Z_[4]+⋯)，与下方(3.5)一致。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.formalStrang",
+      "verdict": "PASS",
+      "explanation": "textbookFormalOperatorExponential A 的第k系数为A^k/k!；formalStrang A B=exp(xA/2)exp(xB)exp(xA/2)；formalLog P 的第n系数为Σ_{j=1}^n (−1)^(j+1)/j·coeff_n((P−1)^j)，在P(0)=1时就是真实形式log；commutator A B=AB−BA。 任意实代数A,B的有序形式乘积与原文Strang左端完全一致，无额外交换假设；常数项为1，故右端exp(log S)及指数按总幂编号的展开有标准形式意义。这里只定义S，不声称收敛的算子指数。原有[ERRATUM?]索引判断不成立：渲染原页没有共同外层t，t²Z₂与t³Z₃正是指数的总幂；这项疑误源于JSON转录，不是原书排印。定义无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.2-DifferentLogsCommute",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_SYMBOL",
+        "TRANSCRIPTION_WORD_ORDER",
+        "SOURCE_ERRATUM"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3.2-DifferentLogsCommute",
+        "kind": "unnumbered_claim",
+        "label": "(3.4)–(3.5)",
+        "section": "3.3.2",
+        "printed_page": "108",
+        "pdf_page": "130",
+        "statement_latex": "Multiplying by the same expansion using a different time step $s$, we have\n\\[\\exp(\\tfrac s2X)\\exp(sY)\\exp(\\tfrac s2X)\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(sZ_s)\\exp(tZ_t).\\tag{3.4}\\]\nBut we know that $Z_t$ commutes with $Z_s$, giving\n\\[\\begin{aligned}\\exp(sZ_s)\\exp(tZ_t)&=\\exp(sZ_s+tZ_t)\\\\\n&=\\exp((s+t)\\widetilde Z_{[1]}+(s^2+t^2)\\widetilde Z_{[2]}+(s^3+t^3)\\widetilde Z_{[3]}+(s^4+t^4)\\widetilde Z_{[4]}+\\cdots).\\end{aligned}\\tag{3.5}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "formalLog(Strang(sA,sB))=sZ_s；对非零s,t其交换等价；零步长形式log为0。"
+        ],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "p.108/PDF130 “Z_s commutes with Z_t” 对一般非交换X,Y可疑；应由反步关系单独推导奇性。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.differentLogsCommute",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原页Z_[j]为widetilde，JSON为widehat。",
+        "原句为“Z_t commutes with Z_s”，JSON交换了名字顺序；数学等价但逐字审校恢复原序。",
+        "原书交换性断言确为数学疑误，忠实保留原句和(3.5)，只在审计给出反例。"
+      ],
+      "evidence": [
+        "PDF130/印刷108，(3.4)顺序是s步后接t步的算子乘积；“But we know that Z_t commutes with Z_s, giving”；(3.5)含(s²+t²) widetilde Z_[2]等项。页码正确；零步长formalLog=0的context正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.differentLogsCommute",
+      "verdict": "FAIL",
+      "explanation": "textbookFormalOperatorExponential A 的第k系数为A^k/k!；formalStrang A B=exp(xA/2)exp(xB)exp(xA/2)；formalLog P 的第n系数为Σ_{j=1}^n (−1)^(j+1)/j·coeff_n((P−1)^j)，在P(0)=1时就是真实形式log；commutator A B=AB−BA。 Lean量词∀R,A,B,s,t，结论是两条共享形式变量x的log的交换子为零；非零s,t时log S(sx)=sx Z_(sx)，交换性与生成元版本对应，零缩放时log=0。确实保留了原文的普遍交换断言，但该断言一般是假，[ERRATUM?]成立；不能靠sorry使其成为正确结论。所给反例使(3.5)对一般s,t也失效；s=−t的反步消去及最终奇性仍可独立成立。当前证明为sorry。",
+      "counterexample": "在R=M₂(ℝ)中取A=[[0,1],[0,0]]、B=[[0,0],[1,0]]、s=1、t=2。设L=A+B、C=B/6−A/12；log S(sx)=sxL+s³x³C+O(x⁵)，[L,C]=diag(1,−1)/4。因此[x⁴][log S(sx),log S(tx)]=st(t²−s²)[L,C]=diag(3/2,−3/2)≠0。该实矩阵代数满足Lean的Ring及Algebra ℝ假设。",
+      "suggested_fix": "将此条标作原书错误断言，禁止无条件定理进入已验证结论。若保留正确条件版本，可显式要求A、B交换（充分但限制范围），或直接要求两log交换；证明奇性应使用Strang反步恒等式及形式log唯一性，不依赖一般不同步长交换。"
+    }
+  }
+]

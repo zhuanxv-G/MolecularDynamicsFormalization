@@ -1,0 +1,112 @@
+{
+  "batch": "BATCH08",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "1b95f53d5fdf6ea40404ec76d52ceb7c9df16234455272086bf70b55e0912266",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.2.2-EliminateVelocity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第87页／印刷第65页，上方段落从“The derivation of the Störmer form”至“then eliminate velocities”；引用(2.5)–(2.7)一致，原页无独立完整证明。",
+          "已对照PDF渲染页核对所引英文、公式、页码、proof_latex=null和context_notation；LaTeX排版及换行不构成内容差异。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.velocityVerletStormer",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 MolecularDynamics/Chapter02/ReviewDefinitions.lean:2816–2817、2840：Q n=Fin n→ℝ，Z n=Q n×Q n，invMass m x i=(m i)⁻¹*x i；加减、实数标量作用均逐坐标，因此对应有限维坐标空间及固定对角质量矩阵 diag(m)。教材的非零（物理上正）质量域上，这正是 M⁻¹。Lean 在零质量处取 0⁻¹=0，是公式的全域延拓，不宣称零质量矩阵可逆；在原文定义域上没有改变公式。任意实数 h、任意 F 的代数公式无需光滑性、保守力或 h≠0；这些物理/分析条件不用于本条等式。五条均无 [EXTRA] 或 [ERRATUM?] 标记。实际蓝图附件为 /workspace/Ch02.lean，按要求以 Blueprint/Ch02.lean 为版本绑定键。已展开正式库 velocityVerlet（2855–2858）及 stormerRelation（2853–2854），未以蓝图 bp_ 同名近似定义代替。前者依次令 v½=v+(h/2)M⁻¹F(q)、q′=q+h v½、v′=v½+(h/2)M⁻¹F(q′)；后者恰为 q₂−2q₁+q₀=h²M⁻¹F(q₁)。蓝图238–242行先全称量化 n,m,F,h,a,b,c，再假定同一参数下 b=VV(a)、c=VV(b)，推出三个位置满足该关系，覆盖两次连续更新与消去速度的全部结论。逐坐标代入得 q₂−2q₁+q₀=h(v₁−v½₀)+(h²/2)M⁻¹F(q₁)=h²M⁻¹F(q₁)，不需质量非零。Statements.lean:3017–3021 的签名一致。证明状态单列：蓝图 exact 指向 ReviewProofs.lean:3375–3383 的 subst/ext/simp/ring 证明，该证明文本没有 sorry；本审计未运行编译或依赖公理检查。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-MomentumVerlet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第87页／印刷第65页，“The most straightforward rewriting”段及公式(2.8)：Q=q+hM⁻¹p+(h²/2)M⁻¹F(q)，P=p+(h/2)[F(q)+F(Q)]；下方“Alternatively”展示半踢、漂移、半踢。",
+          "已对照PDF渲染页核对所引英文、公式、页码、proof_latex=null和context_notation；LaTeX排版及换行不构成内容差异。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_verlet",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 MolecularDynamics/Chapter02/ReviewDefinitions.lean:2816–2817、2840：Q n=Fin n→ℝ，Z n=Q n×Q n，invMass m x i=(m i)⁻¹*x i；加减、实数标量作用均逐坐标，因此对应有限维坐标空间及固定对角质量矩阵 diag(m)。教材的非零（物理上正）质量域上，这正是 M⁻¹。Lean 在零质量处取 0⁻¹=0，是公式的全域延拓，不宣称零质量矩阵可逆；在原文定义域上没有改变公式。任意实数 h、任意 F 的代数公式无需光滑性、保守力或 h≠0；这些物理/分析条件不用于本条等式。五条均无 [EXTRA] 或 [ERRATUM?] 标记。实际蓝图附件为 /workspace/Ch02.lean，按要求以 Blueprint/Ch02.lean 为版本绑定键。已展开蓝图245–247行：输入 z=(q,p)，qnew=q+h M⁻¹p+(h²/2)M⁻¹F(q)，输出 (qnew,p+(h/2)(F(q)+F(qnew)))。两分量逐项对应(2.8)，第二分量为动量，未误用速度更新中的 M⁻¹。正式库 verlet（2859–2861）展开也完全相同。半踢 p½=p+(h/2)F(q)、漂移 Q=q+h M⁻¹p½、半踢 P=p½+(h/2)F(Q)展开即此式。原文 p=Mv 是坐标解释；此定义输入已经为动量，不另断言奇异质量下速度与动量互相可逆。返回任意相空间点的一步映射，定义无额外量词或遗漏的输出分量。证明状态单列：这是无 sorry 的显式定义，不以该事实替代签名判断。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-Leapfrog",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第87页／印刷第65页，“Returning to (2.5)–(2.7)”段及“one has”下两式，半步指标、h及M⁻¹均一致；页首定义F_n=F(q_n)=−∇U(q_n)。",
+          "已对照PDF渲染页核对所引英文、公式、页码、proof_latex=null和context_notation；LaTeX排版及换行不构成内容差异。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_leapfrog",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 MolecularDynamics/Chapter02/ReviewDefinitions.lean:2816–2817、2840：Q n=Fin n→ℝ，Z n=Q n×Q n，invMass m x i=(m i)⁻¹*x i；加减、实数标量作用均逐坐标，因此对应有限维坐标空间及固定对角质量矩阵 diag(m)。教材的非零（物理上正）质量域上，这正是 M⁻¹。Lean 在零质量处取 0⁻¹=0，是公式的全域延拓，不宣称零质量矩阵可逆；在原文定义域上没有改变公式。任意实数 h、任意 F 的代数公式无需光滑性、保守力或 h≠0；这些物理/分析条件不用于本条等式。五条均无 [EXTRA] 或 [ERRATUM?] 标记。实际蓝图附件为 /workspace/Ch02.lean，按要求以 Blueprint/Ch02.lean 为版本绑定键。已展开蓝图250–252行与正式库 leapfrog（2863–2865）：输入 z=(q_n,v_(n−1/2))，vnew=v_(n−1/2)+h M⁻¹F(q_n)，输出 (q_n+h vnew,vnew)=(q_(n+1),v_(n+1/2))，原文两条更新式及其先后顺序均保留。n 的类型参数是维数，时间下标通过一次更新的输入输出解释，不混淆二者。原文引出的 v_n=v_(n−1/2)+(h/2)M⁻¹F_n 是推导所用重建关系，本批 Reconstruct 定义单独覆盖；本条一步映射无需额外记录整数时标。证明状态单列：显式定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-LeapfrogInit",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第87页／印刷第65页，“It is necessary to define an initialization procedure”及v_(−1/2)=v₀−(h/2)M⁻¹F(q₀)；紧前句明确q(0)=q₀、v(0)=v₀。",
+          "已对照PDF渲染页核对所引英文、公式、页码、proof_latex=null和context_notation；LaTeX排版及换行不构成内容差异。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_leapfrogInitialize",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 MolecularDynamics/Chapter02/ReviewDefinitions.lean:2816–2817、2840：Q n=Fin n→ℝ，Z n=Q n×Q n，invMass m x i=(m i)⁻¹*x i；加减、实数标量作用均逐坐标，因此对应有限维坐标空间及固定对角质量矩阵 diag(m)。教材的非零（物理上正）质量域上，这正是 M⁻¹。Lean 在零质量处取 0⁻¹=0，是公式的全域延拓，不宣称零质量矩阵可逆；在原文定义域上没有改变公式。任意实数 h、任意 F 的代数公式无需光滑性、保守力或 h≠0；这些物理/分析条件不用于本条等式。五条均无 [EXTRA] 或 [ERRATUM?] 标记。实际蓝图附件为 /workspace/Ch02.lean，按要求以 Blueprint/Ch02.lean 为版本绑定键。已展开蓝图255–256行与正式库 leapfrogInitialize（2866–2867）：输入实际初值 z=(q₀,v₀)，仅返回速度 v₀−(h/2)M⁻¹F(q₀)，精确对应 v_(−1/2) 初始化；负号、半步系数、力的取值点及返回类型 Q n 均一致。原文不要求同时输出位置，故不返回配对状态没有遗漏结论。证明状态单列：显式定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-LeapfrogReconstruct",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第87页／印刷第65页，“And it is also necessary to use, at any subsequent step”及v_n=v_(n−1/2)+(h/2)M⁻¹F_n；尾句涉及energy及velocity-dependent observable。",
+          "已对照PDF渲染页核对所引英文、公式、页码、proof_latex=null和context_notation；LaTeX排版及换行不构成内容差异。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_leapfrogReconstruct",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 MolecularDynamics/Chapter02/ReviewDefinitions.lean:2816–2817、2840：Q n=Fin n→ℝ，Z n=Q n×Q n，invMass m x i=(m i)⁻¹*x i；加减、实数标量作用均逐坐标，因此对应有限维坐标空间及固定对角质量矩阵 diag(m)。教材的非零（物理上正）质量域上，这正是 M⁻¹。Lean 在零质量处取 0⁻¹=0，是公式的全域延拓，不宣称零质量矩阵可逆；在原文定义域上没有改变公式。任意实数 h、任意 F 的代数公式无需光滑性、保守力或 h≠0；这些物理/分析条件不用于本条等式。五条均无 [EXTRA] 或 [ERRATUM?] 标记。实际蓝图附件为 /workspace/Ch02.lean，按要求以 Blueprint/Ch02.lean 为版本绑定键。已展开蓝图259–260行与正式库 leapfrogReconstruct（2868–2869）：输入 (q_n,v_(n−1/2))，返回 v_(n−1/2)+(h/2)M⁻¹F(q_n)，正号、半步系数、F_n=F(q_n)及返回整步速度完全一致。任意输入状态的定义可在任意后续步骤应用，无需将时间指标作为额外参数。能量和依赖速度的观测量是重建速度的用途，原文未给这些量的额外等式，本定义没有遗漏需形式化的结论。证明状态单列：显式定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

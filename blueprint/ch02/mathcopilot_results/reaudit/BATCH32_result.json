@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH32",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "2b21ff6045ff239692b070fed63dc16d3804bb0742ced2ca489475055cf1e05d",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.5.5-Beeman",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已读取原 PDF 第116页并查看页面渲染，页眉印刷页94，符合 PDF页=印刷页+22。",
+          "Example 2.8 标题、引导句及(2.31)逐项一致：q更新系数 h²/6，当前/前步加速度系数4、−1。",
+          "(2.32)逐项一致：p更新为 hM/6 乘以加速度组合，系数2、5、−1；记号点q=M⁻¹p、双点q=M⁻¹F(q)一致。",
+          "原页说明初始化需相隔h的两个位置及力；给定 q_n、q_{n−1}、p_n 后先算 q_{n+1}，再算新力与 p_{n+1}，只需一次新力评估。context_notation 与此相符；无独立证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.beeman",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 MolecularDynamics/Chapter02/ReviewDefinitions.lean 的正式定义（合集行2816–2817、2840–2841）：Q n = Fin n → ℝ，Z n = Q n × Q n；invMass m v i = (m i)⁻¹*v i，mass m v i = m i*v i。故 z.1 是位置，z.2 在本函数中是动量，a_i = F(q_n)_i/m_i，aPrev_i = F(q_{n−1})_i/m_i。Ch02.lean 行1392–1398 给出 qnext_i = q_i+h*p_i/m_i+(h²/6)*(4*a_i−aPrev_i)，pnext_i = p_i+(h/6)*m_i*(2*F(qnext)_i/m_i+5*a_i−aPrev_i)，逐项忠实于原页116（印刷94）公式(2.31)、(2.32)，包含在更新位置处重新求力。固定对角质量是本章机械模型的表达范围，无额外定理假设或 ERRATUM?。定义对任意实数 m 总化：零质量时实数逆元为0，而原书 M⁻¹ 仅在可逆质量域有意义；这里是有效质量域上公式的总函数延拓，不是声称零质量模型满足原物理语义，因此不判为缺失定理前提。使用时需正质量（至少每个 m_i 非零）。缓存旧力后每步一个新力评估是上下文性质，纯函数未编码缓存或求值计数，本条 statement_scope 不要求该复杂度结论。此项为 def，无 sorry 证明义务；其他定理的 sorry 不改变这个函数体的公式语义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.5.5-BeemanOrder",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已读取原 PDF 第116页并查看页面渲染，页眉印刷页94，符合 PDF页=印刷页+22。",
+          "Example 2.8 末句逐字为：The order of accuracy of the scheme above can be shown to be three. 与 statement_latex 一致。",
+          "该例无独立证明；proof_latex、proof_discussion_latex 为 null 合适。issues 中 ERRATUM? 是审阅批注，原文 three 已保留，未作静默修正。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.beemanOrder",
+        "verdict": "FAIL",
+        "explanation": "已展开正式依赖：Q、Z、mass、invMass 如上一项；positiveMass m = ∀ i, 0<m i；mechanicalField m F (q,p) = (invMass m p,F q)；solution f γ 0 τ = ∀ t∈Icc 0 τ, HasDerivWithinAt γ (f(γ t)) (Icc 0 τ) t（合集行2941–2948）。因此 γ 确实是位置/动量的机械ODE解。Ch02.lean 行1402–1410 的量词依次为 n,m,F,γ,τ、全部假设、统一 C>0 和 ν₀>1、所有 ν≥ν₀、所有满足 z0=γ0、z1=γh 和 k≥1 多步递推的 z、所有 k≤ν；Z 的积范数控制两坐标，而不是只控制位置或终点。没有遗漏展示的误差子句，也没有把数值序列替换成独立单步映射。[EXTRA] 正固定对角质量合理；F 全空间 C⁴ 是足够但较强的平滑性限制，不是阶性质必需的最弱假设；τ>0 与 ν₀>1 保证有效网格和两点启动；闭区间连续由 solution 的逐点相对可导性已蕴含，冗余但合理，并给出紧轨迹；精确两点启动强于通常 O(h³) 启动，合理作为理想启动测试，但只是原句的受限版本。即使在这些强假设下全状态 O(h³) 结论仍为假，见解析反例。因此该签名虽保留原文 three 的全局阶解释，不能作为正确、无疑误的原文正式对应判 PASS。[ERRATUM?] 在这里明确的固定时间窗全局阶解释下成立；原书可能使用其他阶概念的问题不妨碍否定这个具体签名。原批所述单步动量 −h³/12 首项仅是局部缺陷，单凭它不能推出全局失败；下面直接证明非零全局 O(h²) 位置误差。该声明末尾 by sorry，未完成证明；FAIL 根据签名的数学反例作出，与 sorry 分开。",
+        "counterexample": "取 n=1、m₀=1、F(q)=−q、γ(t)=(cos t,−sin t)、τ=π/2。F 为 C∞，质量正，γ 满足全部ODE和连续性假设。对每个 ν≥2 令 h=τ/ν，z0=γ0，z1=γh，并按实际 beeman 递推构造所有后续状态。记 q_k,p_k 为数值坐标：q_{k+1}=(1−2h²/3)q_k+h p_k+(h²/6)q_{k−1}，p_{k+1}=p_k−(h/6)(2q_{k+1}+5q_k−q_{k−1})。在状态 (q_k,p_k,q_{k−1}) 上的转移矩阵为 [[1−2h²/3,h,h²/6],[−7h/6+2h³/9,1−h²/3,h/6−h³/18],[1,0,0]]，特征多项式 λ[λ²−(2−h²)λ+1]。直接消元可得 q_{k+1}−(2−h²)q_k+q_{k−1}=0（k≥2）。初值 q1=cos h，q2=(1−2h²/3)cos h−h sin h+h²/6。令 θ=2 arcsin(h/2)，A=(2−h²)q1−q2=(1−h²/3)cos h+h sin h−h²/6，B=(cos h−A cos θ)/sin θ，则所有 k≥1 有 q_k=A cos(kθ)+B sin(kθ)。泰勒展开给出 A=1+h⁴/24+O(h⁶)、B=O(h⁵)、θ=h+h³/24+O(h⁵)。所以 νθ=τ+τ h²/24+O(h⁴)，qν−cos τ=−(τ sin τ/24)h²+O(h⁴)=−π h²/48+O(h⁴)。于是 |qν−cos τ|/h³→∞。积范数至少为该位置绝对误差，任何与 ν 无关的 C 都不能满足结论。这是满足所有假设的解析反例，不依赖数值实验或未证明的 Lean 引理。",
+        "suggested_fix": "保留原文 three 及其 json_review，不静默改书。将当前 beemanOrder 标记为在全相空间全局阶解释下有反例的待纠错陈述，不应尝试证明该假命题。若另立修订命题，可将误差上界中的指数3改为2，并明确标注这是对全局相空间阶的修正；二阶正向收敛仍需独立证明，反例本身只否定三阶。若坚持保留 three，必须先明确并另外定义原书所指的阶概念，再建立对应命题，不能沿用当前全网格、全状态 O(h³) 签名。无需修改 Beeman 更新公式。"
+      }
+    }
+  ]
+}

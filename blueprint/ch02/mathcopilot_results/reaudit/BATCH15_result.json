@@ -1,0 +1,180 @@
+{
+  "batch": "BATCH15",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "04333ffa149c1810f09a9c0b330a4f93e1d20e47c3c726d02420eadceab4e673",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.3-SymplecticMap",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [
+          "context_notation 的 Differentiable 是对 Jacobian 使用的数学资格说明，原页未显式写此 Lean 条件；它不支持擅自提升为 C¹。"
+        ],
+        "evidence": "已阅读教材原 PDF 第98页渲染（印刷第76页），逐项核对所选原句、展示式、页码及上下文。原句 preserves the symplectic differential 2-form；展示式 Φ′ᵀJΦ′=J。PDF98紧接着直接给出 J=[[0,I],[-I,0]]；PDF75文本也给出同一 J。 所选段落无独立证明，proof_latex=null 与原页一致。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_IsSymplecticMap",
+        "verdict": "FAIL",
+        "explanation": "依赖 SymplecticForm.lean:33–40 展开坐标为 (Fin Nc ⊕ Fin Nc)→ℝ，按 q,p 分块，J=fromBlocks 0 1 (-1) 0；:138–139 的 IsTextbookSymplectic A 正是 AᵀJA=J。SymplecticMaps.lean:238–242 的 textbookJacobian 是 LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap，确为实际导数坐标矩阵。故 ∀z 的对象、次序、符号和保存形式条件正确。但蓝图额外要求 ContDiff ℝ 1 Φ，即 C¹；原文及本条 context 仅要求可微，该加强未标 [EXTRA] 且不是逐点辛条件所必需，无 [ERRATUM?]。 本次依据实际蓝图 /workspace/Ch02.lean:680–723 及依赖源码展开审计；哈希键 Blueprint/Ch02.lean 对应该附件的逻辑名称。仅审计签名语义，不作 Lean 编译或证明完成认证；本批定义和 formSumWedges 本地证明均无 sorry，所调用辛形式求和定理的所附证明也无 sorry。",
+        "counterexample": "Nc=1，f(0)=0，f(q)=q²sin(1/q) (q≠0)，Φ(q,p)=(q,p+f(q))。f 处处可微，f′(0)=0，f′(q)=2q sin(1/q)−cos(1/q) 不连续。DΦ=[[1,0],[f′(q),1]] 处处满足 DΦᵀJDΦ=J，但 Φ 非 C¹。",
+        "suggested_fix": "将 ContDiff ℝ 1 Φ 改为 Differentiable ℝ Φ；若保留 C¹，请明确登记为收窄的定义并标注非必要的额外资格。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-OneForm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "已阅读教材原 PDF 第98页渲染（印刷第76页），逐项核对所选原句、展示式、页码及上下文。原句 family of linear mappings；关联公式 α(x)(ξ)=a(x)ᵀξ。 所选段落无独立证明，proof_latex=null 与原页一致。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.oneFormFamily",
+        "verdict": "FAIL",
+        "explanation": "ReviewDefinitions.lean:2816 的 Q n=Fin n→ℝ，:2882 的 oneForm n=Q n→(Q n→L[ℝ]ℝ)。蓝图 oneFormFamily 给出全部逐点线性泛函族；有限维下连续性自动成立，不添加光滑性或底点连续性，维数 n 即原文 m。该对象定义忠实。但 statement_scope 明确涵盖关联构造 α(x)(ξ)=a(x)ᵀξ，当前声明没有参数 a、该构造或评价公式。有限维坐标对偶可保证存在这种表示，却不等于此声明已登记所引构造。无 [EXTRA]/[ERRATUM?]。 本次依据实际蓝图 /workspace/Ch02.lean:680–723 及依赖源码展开审计；哈希键 Blueprint/Ch02.lean 对应该附件的逻辑名称。仅审计签名语义，不作 Lean 编译或证明完成认证；本批定义和 formSumWedges 本地证明均无 sorry，所调用辛形式求和定理的所附证明也无 sorry。",
+        "counterexample": "缺失条款：给定任意 a:Q n→Q n，对应 α_a 及 ∀x ξ，α_a x ξ=∑i,a x i*ξ i。当前仅给类型，未给这项定义。",
+        "suggested_fix": "保留 oneFormFamily，并补充从 a 构造逐点连续线性泛函的定义和上述评价式；或者明确缩小本条 scope 并另行登记关联构造。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-Differential",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "已阅读教材原 PDF 第98页渲染（印刷第76页），逐项核对所选原句、展示式、页码及上下文。原句 one for each point in phase space；公式 dg(q,p)(ξ)=∇g(q,p)ᵀξ。 所选段落无独立证明，proof_latex=null 与原页一致。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_differential",
+        "verdict": "PASS",
+        "explanation": "已展开 Q n=Fin n→ℝ（依赖:2816）和 oneForm n=Q n→Q n→L[ℝ]ℝ（:2882）。bp_differential g=fderiv ℝ g，是每个底点的真实 Fréchet 导数，方向 ξ 进入线性泛函，在可微点评价为 ∑i,∂ᵢg(z)ξᵢ，正对应 ∇g(z)ᵀξ。默认坐标范数不改变有限维导数或此坐标等式；n 是总坐标数，可取 2Nc。fderiv 在不可微点取默认零是总化扩展，不能解释为不可微函数存在原文微分；原文 ∇g 隐含可微资格，在该资格下未改变定义。没有额外正则性限制或 [EXTRA]/[ERRATUM?]。 本次依据实际蓝图 /workspace/Ch02.lean:680–723 及依赖源码展开审计；哈希键 Blueprint/Ch02.lean 对应该附件的逻辑名称。仅审计签名语义，不作 Lean 编译或证明完成认证；本批定义和 formSumWedges 本地证明均无 sorry，所调用辛形式求和定理的所附证明也无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-CoordinateDifferentials",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "已阅读教材原 PDF 第98页渲染（印刷第76页），逐项核对所选原句、展示式、页码及上下文。原句 dq_i(ξ)=ξ_i；PDF99第一式的 i+Nc 索引支持 context 中 dp 的解释。 所选段落无独立证明，proof_latex=null 与原页一致。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.coordinateDifferentials",
+        "verdict": "PASS",
+        "explanation": "依赖:33 的坐标空间分拆 q,p；:55–65 展开 textbookDq i u=u(Sum.inl i)、textbookDp i u=u(Sum.inr i)，map_add/map_smul 为逐坐标线性。蓝图配对这两个族，Fin n 对应教材 1,…,Nc，inr 对应 i+Nc，正负号、维数均正确。底点省略合理：坐标函数导数是与底点无关的固定评价泛函。dp 项来自本条 context 的 PDF99，合理且无额外假设；无 [ERRATUM?]。 本次依据实际蓝图 /workspace/Ch02.lean:680–723 及依赖源码展开审计；哈希键 Blueprint/Ch02.lean 对应该附件的逻辑名称。仅审计签名语义，不作 Lean 编译或证明完成认证；本批定义和 formSumWedges 本地证明均无 sorry，所调用辛形式求和定理的所附证明也无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-Wedge",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "已阅读教材原 PDF 第98页渲染（印刷第76页），逐项核对所选原句、展示式、页码及上下文。原页公式 α∧β(ξ,η)=α(ξ)β(η)−α(η)β(ξ)。 所选段落无独立证明，proof_latex=null 与原页一致。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_wedge",
+        "verdict": "PASS",
+        "explanation": "依赖:33 明确空间是 ℝ^(2Nc)，:73–77 的 textbookWedgeOneForms 与 bp_wedge 函数体相同。双线性乘法复合与减法展开得到 α(u)β(v)−β(u)α(v)，实数交换律化为 α(u)β(v)−α(v)β(u)，完整对应原式。参数 α,β 为固定底点的线性泛函，与 context 相符；结果双线性且交替，没有暗加光滑条件。邻接 apply 定理虽使用库名称，实际定义相同，不再有对象不明问题。无 [EXTRA]/[ERRATUM?]。 本次依据实际蓝图 /workspace/Ch02.lean:680–723 及依赖源码展开审计；哈希键 Blueprint/Ch02.lean 对应该附件的逻辑名称。仅审计签名语义，不作 Lean 编译或证明完成认证；本批定义和 formSumWedges 本地证明均无 sorry，所调用辛形式求和定理的所附证明也无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-SymplecticForm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "已阅读教材原 PDF 第99页渲染（印刷第77页），逐项核对所选原句、展示式、页码及上下文。原页完整链为 ψ_S=Σdq_i∧dp_i(ξ,η)=ξᵀ(ΣJ^(i))η=ξᵀJη；J^(i) 两个非零元素分别为 1、−1。 所选段落无独立证明，proof_latex=null 与原页一致。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_symplecticForm",
+        "verdict": "PASS",
+        "explanation": "依赖:33–40 展开坐标及 J=[[0,I],[-I,0]]；bp_symplecticForm 与依赖:85–87 的 textbookSymplecticForm 同为 J.toBilin'，评价是 ∑a∑b u(a)J(a,b)v(b)=∑i[u(inl i)v(inr i)−u(inr i)v(inl i)]。依赖:55–77 的 dq,dp 与楔积展开给出同一和，:90–107 明确登记坐标式和求和等式。故作为辛形式的定义，确实指定原文完整公式中的同一对象，没有符号、因子或维数错位；J^(i) 就是各 i 的两非零元素矩阵，其和为此 J。无 [EXTRA]/[ERRATUM?]。 本次依据实际蓝图 /workspace/Ch02.lean:680–723 及依赖源码展开审计；哈希键 Blueprint/Ch02.lean 对应该附件的逻辑名称。仅审计签名语义，不作 Lean 编译或证明完成认证；本批定义和 formSumWedges 本地证明均无 sorry，所调用辛形式求和定理的所附证明也无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-FormSumWedges",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "OMITTED_SOURCE_FORMULA_TERM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.3-FormSumWedges",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.3",
+          "printed_page": "77",
+          "pdf_page": "99",
+          "statement_latex": "The wedge product of the coordinate differentials $dq_i,dp_i$ may be written\n\\[dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\xi_i\\eta_{i+N_c}-\\xi_{i+N_c}\\eta_i=\\boldsymbol\\xi^TJ^{(i)}\\boldsymbol\\eta.\\]\nSumming these terms results in the symplectic 2-form, denoted $\\psi_S$:\n\\[\\psi_S=\\sum_{i=1}^{N_c}dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\boldsymbol\\xi^T\\left(\\sum_{i=1}^{N_c}J^{(i)}\\right)\\boldsymbol\\eta=\\boldsymbol\\xi^TJ\\boldsymbol\\eta.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "J^(i)单项坐标矩阵公式来自dq/dp真实定义，和式为完整最终结论。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.formSumWedges",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookSymplecticForm_eq_sum_wedges"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "PDF99第二个展示式含中间项 ξᵀ(Σ_i J^(i))η，JSON未注明省略却删除了该项；已恢复完整等式。未改动原书公式或其疑误。"
+        ],
+        "evidence": "已阅读教材原 PDF 第99页渲染（印刷第77页），逐项核对所选原句、展示式、页码及上下文。PDF99前两个展示式分别给逐项坐标公式和含 ΣJ^(i) 的完整汇总链。 所选段落无独立证明，proof_latex=null 与原页一致。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.formSumWedges",
+        "verdict": "FAIL",
+        "explanation": "依赖:85–107 展开并核对 textbookSymplecticForm、textbookDq、textbookDp、textbookWedgeOneForms，蓝图结论确为正确的总形式等式，且可逐点评价为原文最终 ξᵀJη。然而本条全部范围还包括 ∀i ξ η 的单项坐标等式及 ξᵀJ^(i)η、ξᵀ(∑i J^(i))η 的明确矩阵表示。实际定义使单项坐标式可直接推出，消除了此前依赖不明，但签名仍只登记总和等式；没有 J^(i) 对象或单项矩阵结论。本 FAIL 是完整结论覆盖缺失，不声称实际求和等式错误。无 [EXTRA]/[ERRATUM?]。 本次依据实际蓝图 /workspace/Ch02.lean:680–723 及依赖源码展开审计；哈希键 Blueprint/Ch02.lean 对应该附件的逻辑名称。仅审计签名语义，不作 Lean 编译或证明完成认证；本批定义和 formSumWedges 本地证明均无 sorry，所调用辛形式求和定理的所附证明也无 sorry。",
+        "counterexample": "缺失条款：∀i u v，dq_i∧dp_i(u,v)=u(inl i)v(inr i)−u(inr i)v(inl i)=uᵀJ^(i)v，以及 ∑i J^(i)=J 的中间矩阵表示。实际定义支持前一坐标式，但现有 theorem 签名未登记这些子句。",
+        "suggested_fix": "定义单项矩阵 J^(i)（inl i,inr i 为1，inr i,inl i 为−1，其余为0），补充单项评价/矩阵等式与 ∑i J^(i)=J 的结论，连同现有总和等式覆盖全部范围；或明确缩小 statement_scope 并另行登记余下子句。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-GeneralTwoForm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [
+          "原书确写双和 Σ_{i,j}；保留原有 ERRATUM?，不静默加 1/2 或改为 i<j。本条称 coefficient matrix，并不单独证明存在勘误。"
+        ],
+        "evidence": "已阅读教材原 PDF 第99页渲染（印刷第77页），逐项核对所选原句、展示式、页码及上下文。PDF99原页确为 Σ_{i,j} a_ij(z) dz_i∧dz_j，下一句为 matrix of coefficients A(z)=(a_ij(z))。 所选段落无独立证明，proof_latex=null 与原页一致。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.coefficientTwoForm",
+        "verdict": "PASS",
+        "explanation": "Q n 已展开为 Fin n→ℝ（依赖:2816）。蓝图 coefficientTwoForm 对任意底点依赖系数 A，评价精确为 ∑i∑j A(z)ij[u_i v_j−v_i u_j]，逐项就是 a_ij(z)dz_i∧dz_j；底点、两个方向和双和顺序无遗漏。无需假设 A 反对称；该表达自动双线性反对称，不把 A 直接当双线性矩阵。[ERRATUM?] 的代数部分成立：实际矩阵为 A−Aᵀ，A 反对称时为2A。但本条原文只称 A 为双和的系数矩阵，这本身无错；关于后文直接使用 A 的疑点不能在本批 scope 内确认，故不认定本条有已证实勘误，也不改双和。无 [EXTRA]。 本次依据实际蓝图 /workspace/Ch02.lean:680–723 及依赖源码展开审计；哈希键 Blueprint/Ch02.lean 对应该附件的逻辑名称。仅审计签名语义，不作 Lean 编译或证明完成认证；本批定义和 formSumWedges 本地证明均无 sorry，所调用辛形式求和定理的所附证明也无 sorry。",
+        "counterexample": "约定检验而非忠实性反例：n=2，A=[[0,1],[-1,0]]，u=e₁，v=e₂，原文双和及 Lean 均为2，uᵀAv 为1。",
+        "suggested_fix": "保留当前定义和原文双和；说明双和系数矩阵 A 与实际双线性矩阵 A−Aᵀ 的区别。不要仅凭本条把 ERRATUM? 升级为已确认原书错误。"
+      }
+    }
+  ]
+}

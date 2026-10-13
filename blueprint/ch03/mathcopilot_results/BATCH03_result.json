@@ -1,0 +1,314 @@
+[
+  {
+    "source_id": "MD-3.2-LieDerivative",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF p.122／印刷 p.100，§3.2 首段先规定 φ 为任意 smooth、scalar-valued 的相变量函数，相空间为 R^m；页末原句 The right hand side suggests a shorthand notation 及 L_f φ = f·∇φ 与条目一致。",
+        "statement_latex、页码和 context_notation 已对照 pdf-122.png；原页没有为这个定义单列证明，proof_latex=null 正确。Fréchet 导数的说明是对应有限维坐标表达的数学注释。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.textbookLieDerivative",
+      "verdict": "PASS",
+      "explanation": "PASS。已展开 Ch03.lean 中 MD.Ch03.textbookLieDerivative，以及 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 MolecularDynamics.textbookLieDerivative；二者均为 (fderiv ℝ φ z) (f z)，即 Dφ(z)[f(z)]。E 的实际约束为实赋范向量空间，φ:E→ℝ、f:E→E，z 为评价点；取 E=R^m 且 φ 光滑时恰为 ∇φ(z)·f(z)，方向、标量值和作用次序均正确。推广至一般 E 和将 fderiv 全函数化不改变原文光滑情形；不据此宣称不可微点存在经典导数。没有额外假设或 [ERRATUM?]。证明状态独立记录：这是直接给出函数体的 def，不是含 sorry 的待证定理；未运行 Lean 编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-ObservableDerivative",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_NOTATION",
+        "TRANSCRIPTION_PUNCTUATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.2-ObservableDerivative",
+        "kind": "unnumbered_claim",
+        "label": "(3.2)",
+        "section": "3.2",
+        "printed_page": "100–101",
+        "pdf_page": "122–123",
+        "statement_latex": "At any point $\\boldsymbol z=\\boldsymbol\\zeta$ in phase space assume that there is a unique solution $\\boldsymbol z(t,\\boldsymbol\\zeta)$ such that $\\dot{\\boldsymbol z}(t)=f(\\boldsymbol z(t))$, $\\boldsymbol z(0)=\\boldsymbol\\zeta$ that is globally defined for all $t$. Now differentiate $\\hat\\phi(t)=\\phi(\\boldsymbol z(t))$ with respect to time, using the chain rule, to see how $\\phi(\\boldsymbol z(t))$ is changing as $t$ is varied:\n\\[\\left.\\frac{\\mathrm d}{\\mathrm dt}\\hat\\phi\\right|_{t=0}=\\left[\\sum_{i=1}^m\\frac{\\partial\\phi}{\\partial z_i}\\dot z_i\\right]_{\\boldsymbol z=\\boldsymbol\\zeta}=\\nabla\\phi(\\boldsymbol\\zeta)\\cdot f(\\boldsymbol\\zeta).\\]\nand note that the origin of time is irrelevant, then the equation for the evolution of $\\phi$ could be written\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\hat\\phi=(\\mathcal L_f\\phi)(\\boldsymbol z).\\tag{3.2}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$\\gamma$为原文给定实际解，$\\gamma(0)=\\boldsymbol\\zeta$；原文区分相空间函数$\\phi(\\boldsymbol z)$与沿解的时间函数$\\hat\\phi(t)=\\phi(\\gamma(t))$。$\\mathcal L_f$见p.100/PDF122；$\\phi$的smooth资格来自§3.2首句。"
+        ],
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_NOTATION",
+            "detail": "PDF p.122 的 Now differentiate 后是帽号时间函数 hat φ(t)，该页 t=0 的时间导数及 PDF p.123 式(3.2)左端也有帽号；原 JSON 三处均写成无帽号 φ。完整修正条目恢复三处帽号，并在 context_notation 中区分空间函数与时间复合函数。"
+          },
+          {
+            "code": "TRANSCRIPTION_PUNCTUATION",
+            "detail": "PDF p.122 的解记号印为 z(t,ζ)，原 JSON 写 z(t;ζ)；按原页恢复逗号。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.observableDerivative",
+        "reusable_proofs": [
+          "MolecularDynamics.hasDerivAt_textbookLieDerivative"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "TRANSCRIPTION_NOTATION",
+            "detail": "PDF p.122 的 Now differentiate 后是帽号时间函数 hat φ(t)，该页 t=0 的时间导数及 PDF p.123 式(3.2)左端也有帽号；原 JSON 三处均写成无帽号 φ。完整修正条目恢复三处帽号，并在 context_notation 中区分空间函数与时间复合函数。"
+          },
+          {
+            "code": "TRANSCRIPTION_PUNCTUATION",
+            "detail": "PDF p.122 的解记号印为 z(t,ζ)，原 JSON 写 z(t;ζ)；按原页恢复逗号。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次逐页核对 PDF p.122–123; 渲染证据目录 .mathcopilot/reviews/ch03/evidence/BATCH03/"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_NOTATION",
+          "detail": "PDF p.122 的 Now differentiate 后是帽号时间函数 hat φ(t)，该页 t=0 的时间导数及 PDF p.123 式(3.2)左端也有帽号；原 JSON 三处均写成无帽号 φ。完整修正条目恢复三处帽号，并在 context_notation 中区分空间函数与时间复合函数。"
+        },
+        {
+          "code": "TRANSCRIPTION_PUNCTUATION",
+          "detail": "PDF p.122 的解记号印为 z(t,ζ)，原 JSON 写 z(t;ζ)；按原页恢复逗号。"
+        }
+      ],
+      "evidence": [
+        "PDF p.122／印刷 p.100，§3.2 首段：光滑标量 φ；给定每个初值 ζ 的唯一全时间解；Now differentiate hat φ(t)=φ(z(t))；随后 t=0 的链式法则展示式。",
+        "PDF p.123／印刷 p.101，页首式(3.2)：d hat φ/dt=(L_f φ)(z)。这是帽号转录差异，原书公式本身无需勘误。",
+        "页码范围100–101／122–123正确；statement_latex中的链式法则推导属于原文陈述内的推导，原书未另给独立证明，proof_latex=null可保留。已核对pdf-122.png、pdf-123.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.observableDerivative",
+      "verdict": "PASS",
+      "explanation": "PASS。展开 MD.Ch03.textbookLieDerivative 后结论是 HasDerivAt (φ∘γ) (Dφ(γ(t))[f(γ(t))]) t，与帽号时间函数的导数及(3.2)一致。Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 hasDerivAt_textbookLieDerivative 的完整签名和函数体为 hφ.hasFDerivAt.comp_hasDerivAt t hγ；因此 hγ 确实要求 γ 在 t 的真实导数等于 f(γ(t))，没有把目标结论作为流定义或假设。量词先取 f、φ、γ、t，再给点可微和点ODE导数条件；原文全局光滑 φ、全局实际解蕴含这些条件。唯一性、全时间存在和指定初值对于此链式法则不是必要条件；将原文给定解代入并取 t=0、ζ=γ(0)即可得到原文首式，任意 t 给出(3.2)，没有遗漏导数结论。一般赋范空间版本是有效推广。无 [ERRATUM?]。证明状态独立记录：本声明调用已展开的链式法则，声明及该依赖证明无 sorry；这里只进行源码语义审计，未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-ObservableSecondDerivative",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF p.123／印刷 p.101，式(3.2)下方 Similarly 后的展示式：d²φ(z(t))/dt²=(L_f²φ)(z(t))。原页这里使用无帽号的复合表达 φ(z(t))，JSON 一致。",
+        "context_notation中的 L_f² 表示算子复合，符合展示式；ODE解语境承接PDF p.122。页码正确，无单列证明，proof_latex=null正确；已核对pdf-123.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.observableSecondDerivative",
+      "verdict": "PASS",
+      "explanation": "PASS。已展开 MD.Ch03.textbookLieDerivative 和 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 contDiff_textbookLieDerivative、hasDerivAt_textbookLieDerivative_second。右端实为 D(Dφ[ f ])(γ(t))[f(γ(t))]，即 L_f(L_f φ)，不是函数值的平方；左端是 u↦deriv(v↦φ(γ(v)))(u) 的真实一阶导数，正好为二阶时间导数。hf:ContDiff ℝ 1 f、hφ:ContDiff ℝ 2 φ 保证第一次 Lie 导数为 C¹；∀t 的真实ODE条件使内层 deriv 在邻近时间与 L_f φ∘γ 相等。量词允许任意满足条件的 γ 和任意 t，不预设所求二阶等式。[EXTRA]是合理的经典求二阶导数资格：C¹/C² 足够，全域要求和全时间解条件比仅沿曲线的局部条件强，因此不是最小假设，但不引入无关限制；它们不能被理解为原书证明了任意不光滑 f 的同一公式。没有本条 [ERRATUM?]。证明状态独立记录：当前声明调用该二阶导数依赖定理；已读到的依赖函数体用链式法则和可微性推导，无 sorry；未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-OperatorExponential",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF p.123／印刷 p.101，下半页 By analogy with the derivation of the matrix exponential 开头段及展示式 e^(tL_f)=Id+tL_f+(t²/2)L_f²+…，与JSON相符。",
+        "同页末段明确 we ignore the convergence issue here and treat the operator exponential as a formal series expansion，支持context_notation的形式解释；页码和proof_latex=null正确。已核对pdf-123.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.formalOperatorExponential",
+      "verdict": "PASS",
+      "explanation": "PASS。Ch03.lean 实际给出 R 的约束 [Ring R] [Algebra ℝ R]，并将 formalOperatorExponential A 定义为 PowerSeries.mk(n↦(1/(n!:ℝ))•A^n)。Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/FormalOperatorSeries.lean 中 textbookFormalOperatorExponential 为同一完整定义，coeff 定理明确第 n 项为该系数。常数、一次、二次系数依次为1、A、(1/2)•A²；形式不定元对应原文时间 t，1 对应算子 Id。结合的实代数可以非交换，未额外假设算子可交换；实数上的除法仅在系数1/n!中进行。给定任意 A 是抽象形式指数的推广，代入 A=L_f 时恢复原文表达；这里并未构造或断言作用于实际函数空间的有界指数算子。没有求和收敛、解析性或把形式变量取实数值的额外前提，符合原文保留意见，无 [ERRATUM?]。证明状态独立记录：本条为显式 def，不含 sorry；未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-FormalObservable",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF p.123／印刷 p.101，中部 The Taylor series expansion 开头的三行展示式，分别为时间Taylor项、Lie算子项、(e^(tL_f)φ)(z(0))；JSON三行的系数、评价初值和算子次数相符。",
+        "同页下部 However 段、e^(tL_f)φ 的展示式以及形式级数保留意见，与proof_discussion_latex所引范围相符；本条context_notation明确按形式系数定义，没有把smooth等同于analytic。页码正确，proof_latex=null正确；已核对pdf-123.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.formalObservable",
+      "verdict": "PASS",
+      "explanation": "PASS，适用范围为本条明示的形式系数定义。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、-- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 textbookLieDerivative，以及 -- FILE: MolecularDynamics/Chapter03/ReviewDefinitions.lean 中 formalObservable；Ch03.lean 的本地定义与后者相同。第 j 个系数为 ((L_f)^[j] φ)(z)/j!，^[j] 是对函数φ反复施加算子：j=0为φ(z)，j=1为L_fφ(z)，j=2为L_f(L_fφ)(z)/2，符合原文。z 在公式应用时取γ(0)，并非在γ(t)处评价各Taylor系数。对象为任意有限维实相空间和实值观测量，定义扩展到非光滑输入只是fderiv的全函数化，不声称这些输入具有经典Taylor展开。无 γ 参数、无ODE前提是因为本条定义的是展示式右侧形式级数；它本身不是沿实际解的全阶时间导数定理，也不证明左侧实际函数等于收敛级数。原文三行中沿解的解释应在光滑ODE语境下作形式Taylor解释，本条context已限定这一范围；其有限实际余项属于另一审计条目。无 [EXTRA] 或 [ERRATUM?]。证明状态独立记录：本条为显式 def，无 sorry；未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-FiniteLieTaylor",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF p.123／印刷 p.101，The Taylor series expansion 段展示式的第二行正是 φ(z(0))+t(L_fφ)(z(0))+(t²/2)(L_f²φ)(z(0))+…；本条引用同一等式的一部分，未更改原文系数。",
+        "同页原文没有常数C、δ、有限截断阶k或余项不等式；context_notation与extra_assumptions已经明示这是额外有限解释。该事实不会使准确的原文转录成为转录错误。页码和proof_latex=null正确；已核对pdf-123.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.lieTaylor",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "相关自定义定义均已找到，不存在缺失定义。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ，以及 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 L_fφ(z)=Dφ(z)[f(z)]；-- FILE: MolecularDynamics/Chapter03/Statements.lean 的 lieTaylor_statement 与 Ch03.lean 此签名相同。量词是先任取 n、k、f、φ、γ，给出全域C∞和∀t真实ODE条件，再存在依赖这些数据及k的C>0、δ>0，对所有|t|<δ给出从j=0到k、在γ(0)评价的余项界；不是一个C、δ对所有k统一成立，也没有把余项界当前提。此实际有限Taylor结论数学上合理，不需要analytic或无限级数收敛；全域光滑、全时间解比局部所需资格强。原文需要数学判断的问题明确为：PDF p.123 的实际函数等号随后被声明按formal series解释，是否允许以新增的每一有限阶实际O(|t|^(k+1))估计，作为该形式等号的完整替代陈述。原页没有这种定量不等式，而 [EXTRA] 中的余项界其实是新增结论、不是额外假设；仅“此估计为真”不足以自动认可 source-to-signature 的替代范围。本批已有的严格化待裁定问题因此保留为 NEEDS_HUMAN。若接受全阶Taylor jet／渐近展开解释，可接受该签名作为严格版本；若要求只对应原句的形式系数，应单列形式系数与沿解时间导数的等式，将此余项定理列作辅助结果。不能据光滑性把原式静默改成实际收敛的无限和；本条没有 [ERRATUM?] 标记，本审查也不修改原书。证明状态独立记录：Ch03.lean 的 lieTaylor 函数体为 sorry；这是未完成证明，既不是此语义待裁定的理由，也不提供数学验证。",
+      "counterexample": "以下仅反驳把原文读成实际函数等于其无限Taylor和，不是lieTaylor余项界的反例：n=1，f(x)=1，γ(t)=t，φ(0)=0、φ(x)=exp(-1/x²)（x≠0）。f、φ光滑且γ是全局实际解；所有(L_f^jφ)(0)均为0，但φ(γ(t))在t≠0时正值。形式Taylor级数为0，不能靠该级数恢复实际观测量；各有限阶O(|t|^(k+1))估计仍成立。",
+      "suggested_fix": "明确裁定原文等号采用Taylor jet／全阶渐近意义还是仅采用形式系数定义。采用前者时保留此签名，并将“余项不等式”从额外假设说明移到新增严格化结论说明；采用后者时将该声明与原文源条目分开，另列第j阶时间导数等于(L_f^jφ)(γ(0))及其形式级数系数的陈述，把现有有限余项界保留为辅助定理。两种方案都不增加无限和等于实际函数的主张。"
+    }
+  },
+  {
+    "source_id": "MD-3.2-FlowCoordinates",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_TEXT",
+        "CONTEXT_NOTATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.2-FlowCoordinates",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.2",
+        "printed_page": "101",
+        "pdf_page": "123",
+        "statement_latex": "This gives a concise formula for the evolution of any function of the phase variables, including, in particular, any solution component $z_i$. Thus the flow map of the system can be represented by $\\exp(t\\mathcal L_f)$. When one writes $\\mathcal F_t=\\exp(t\\mathcal L_f)$, what is actually meant is that the individual components satisfy\n\\[z_i(t,\\boldsymbol\\zeta)=[\\mathcal F_t(\\boldsymbol\\zeta)]_i=\\left.(\\exp(t\\mathcal L_f)z_i)\\right|_{\\boldsymbol z=\\boldsymbol\\zeta}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原文同页将$\\exp(t\\mathcal L_f)$按形式级数解释；$z_i$是相空间坐标函数$\\boldsymbol z\\mapsto z_i$，作用后在初值$\\boldsymbol\\zeta$处评价。原文以实际解分量与$[\\mathcal F_t(\\boldsymbol\\zeta)]_i$连接该记号，未写有限Taylor余项不等式；有限余项是本项目额外严格化，不能归作原文已经给出的有限展开结论。"
+        ],
+        "issues": [
+          {
+            "code": "NEEDS_HUMAN",
+            "detail": "形式exp作用于坐标的等式无实际收敛主张；严格化为有限Taylor余项是否超出原文需裁定。"
+          },
+          {
+            "code": "TRANSCRIPTION_TEXT",
+            "detail": "PDF p.123 原句为 Thus the flow map of the system，原 JSON 将of转录为for；恢复原词。"
+          },
+          {
+            "code": "CONTEXT_NOTATION",
+            "detail": "原context_notation把“每个实际流分量的有限Taylor展开”与原文形式exp解释连写，未区分原文记号和项目新增余项结论。修正为坐标函数作用后在初值ζ处评价，并明确有限余项不等式未见于原页。保留原条目的严格化待人工裁定问题。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.flowCoordinates",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "有限截断阶k+1真实余项是额外严格化，原文没有此显式不等式；f全域C∞。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "TRANSCRIPTION_TEXT",
+            "detail": "PDF p.123 原句为 Thus the flow map of the system，原 JSON 将of转录为for；恢复原词。"
+          },
+          {
+            "code": "CONTEXT_NOTATION",
+            "detail": "原context_notation把“每个实际流分量的有限Taylor展开”与原文形式exp解释连写，未区分原文记号和项目新增余项结论。修正为坐标函数作用后在初值ζ处评价，并明确有限余项不等式未见于原页。保留原条目的严格化待人工裁定问题。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次逐页核对 PDF p.123; 渲染证据目录 .mathcopilot/reviews/ch03/evidence/BATCH03/"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_TEXT",
+          "detail": "PDF p.123 原句为 Thus the flow map of the system，原 JSON 将of转录为for；恢复原词。"
+        },
+        {
+          "code": "CONTEXT_NOTATION",
+          "detail": "原context_notation把“每个实际流分量的有限Taylor展开”与原文形式exp解释连写，未区分原文记号和项目新增余项结论。修正为坐标函数作用后在初值ζ处评价，并明确有限余项不等式未见于原页。保留原条目的严格化待人工裁定问题。"
+        }
+      ],
+      "evidence": [
+        "PDF p.123／印刷 p.101，中部 This gives a concise formula 段，原词为 the flow map of the system；随后展示式 z_i(t,ζ)=[F_t(ζ)]_i=(exp(tL_f)z_i)|_(z=ζ)。",
+        "同页后续保留意见将operator exponential作为formal series expansion；原页没有k、C、δ或有限余项界。proof_latex=null和页码正确；已核对pdf-123.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.flowCoordinates",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "相关自定义定义均已找到。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、-- FILE: MolecularDynamics/Chapter03/ReviewDefinitions.lean 中 formalObservable 的系数 ((L_f)^[j]φ)(ζ)/j!，以及 -- FILE: MolecularDynamics/Chapter03/Statements.lean 中 actualFlow：0<η，且对每个ζ∈D有Φ(0,ζ)=ζ，对每个|t|<η有Φ(t,ζ)∈D并具有真实导数 f(Φ(t,ζ))。所以初值和真实ODE资格没有遗漏，也没有用形式流或目标余项代替实际流。坐标观测量φ(z)=z_i的选取正确，常数项是ζ_i；系数乘t^j、截至j=k，其评价点和阶数与形式exp作用于坐标一致。量词为任取n、k、f、D、Φ、η，在光滑f和actualFlow之后任取ζ∈D和i，再存在可依赖ζ、i、k的C>0、δ>0且δ≤η，界对所有|t|<δ成立；没有对所有初值、坐标、阶数的共同余项常数。该局部实际估计数学上合理，但全域C∞、共同η和D内不离域是显式选用的局部流框架，不是原文给出的全部全局流数据。[EXTRA]中的有限余项是新增结论；没有本条 [ERRATUM?]。需要数学判断的具体原文问题是：页上 z_i(t,ζ)=[F_t(ζ)]_i=(exp(tL_f)z_i)|_(z=ζ) 的实际流与形式算子的连接，在原书不讨论收敛的条件下应怎样精确解释；是否接受每个初值处、任意有限阶的局部渐近估计作为此源等式的完整对应。此签名未直接声明实际流等于某个已定义的算子作用，也没有另声明时间Taylor系数与Lie系数相等；采用Taylor jet解释可认可现有估计，要求原式逐子句对应则应另列形式jet身份，并将余项界作为辅助结果。不能以额外估计本身为真就代替对原文含义的裁定，故 NEEDS_HUMAN，而不是因缺少定义或sorry。证明状态独立记录：Ch03.lean 的 flowCoordinates 为 sorry，尚未证明；本次只读审计未编译。",
+      "counterexample": "以下只反驳实际流分量等于其形式级数取实数值的解释，不是现有局部余项界的反例：在R²上令g(0)=0、g(x)=exp(-1/x²)（x≠0），G(x)=∫₀ˣg(s)ds，f(x,y)=(1,g(x))，D=R²，Φ(t,(x,y))=(x+t,y+G(x+t)-G(x))，η=1。f光滑，此Φ满足已展开的actualFlow，ζ=(0,0)的第二坐标为G(t)>0（t>0），但所有第二坐标的Lie-Taylor系数在ζ处均为0。因此形式坐标级数为0，无法恢复实际流分量；按各有限阶作局部余项解释没有这个矛盾。",
+      "suggested_fix": "先明确原页实际流与形式exp的连接采用何种含义。采用Taylor jet／全阶渐近解释时明确现有签名是局部、逐初值逐坐标的严格化，并将新增余项结论单独标注；要求直接覆盖原等式时，另定义实际流作用于观测量的拉回或时间Taylor jet，逐系数声明其作用于坐标的jet等于formalObservable f (fun z=>z i) ζ，保留原式Φ(t,ζ)_i的实际流解释，再将现有有限余项界列为辅助定理。不要把形式PowerSeries无条件评价成实际流。"
+    }
+  },
+  {
+    "source_id": "MD-3.2-PoissonBracket",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_NOTATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.2-PoissonBracket",
+        "kind": "definition",
+        "label": null,
+        "section": "3.2",
+        "printed_page": "102",
+        "pdf_page": "124",
+        "statement_latex": "Another common notation for performing computations involving Hamiltonian systems is the Poisson bracket which is defined for two smooth scalar-valued functions $g_1$ and $g_2$ of the phase variables $(\\boldsymbol q,\\boldsymbol p)$ of a Hamiltonian system in $\\mathbb R^m$ by\n\\[\\{g_1,g_2\\}=\\sum_{i=1}^{N_c}\\left(\\frac{\\partial g_1}{\\partial q_i}\\frac{\\partial g_2}{\\partial p_i}-\\frac{\\partial g_2}{\\partial q_i}\\frac{\\partial g_1}{\\partial p_i}\\right)=\\nabla g_1^T J\\nabla g_2,\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$；原文$I$为$N_c\\times N_c$单位阵，$N_c$为配置坐标数；本文Lean的n/Nc对应$N_c$，环境相空间维数为$2N_c$，$\\mathrm{Sum.inl}$标记位置坐标、$\\mathrm{Sum.inr}$标记动量坐标。$g_1,g_2$为原文规定的smooth scalar-valued函数。"
+        ],
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_NOTATION",
+            "detail": "PDF p.124 Poisson括号展示式的求和上限是N_c，不是N；同段I的阶数明确为N_c×N_c。完整修正statement_latex中的上限及context_notation中的单位阵阶数，并说明与Lean的Nc相对应。此为转录错误，不是原书疑误。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.textbookPoissonBracket",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "code": "TRANSCRIPTION_NOTATION",
+            "detail": "PDF p.124 Poisson括号展示式的求和上限是N_c，不是N；同段I的阶数明确为N_c×N_c。完整修正statement_latex中的上限及context_notation中的单位阵阶数，并说明与Lean的Nc相对应。此为转录错误，不是原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; 本次逐页核对 PDF p.124; 渲染证据目录 .mathcopilot/reviews/ch03/evidence/BATCH03/"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_NOTATION",
+          "detail": "PDF p.124 Poisson括号展示式的求和上限是N_c，不是N；同段I的阶数明确为N_c×N_c。完整修正statement_latex中的上限及context_notation中的单位阵阶数，并说明与Lean的Nc相对应。此为转录错误，不是原书疑误。"
+        }
+      ],
+      "evidence": [
+        "PDF p.124／印刷 p.102，首段 Poisson bracket 定义：求和从i=1至N_c，项为∂g₁/∂qᵢ·∂g₂/∂pᵢ−∂g₂/∂qᵢ·∂g₁/∂pᵢ，等于∇g₁ᵀJ∇g₂。",
+        "同页J的展示式为[0 I;−I 0]，紧随其后原句说明I是N_c×N_c identity matrix。所述对象为smooth scalar-valued functions of the phase variables(q,p)；无独立证明，proof_latex=null和页码正确。已核对pdf-124.png。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.textbookPoissonBracket",
+      "verdict": "PASS",
+      "explanation": "PASS。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/SymplecticForm.lean 中 SymplecticCoordinates Nc=(Fin Nc⊕Fin Nc)→ℝ 和 textbookJ Nc=Matrix.fromBlocks 0 1 (-1) 0；-- FILE: MolecularDynamics/Chapter02/SplittingError.lean 中 textbookHamiltonianVectorField G z=textbookJ Nc *ᵥ (i↦(fderiv ℝ G z)(Pi.single i 1))；-- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 textbookPoissonBracket F G z=(fderiv ℝ F z)(textbookHamiltonianVectorField G z)。Ch03.lean 的本地括号定义与该依赖相同。inl是q坐标、inr是p坐标；G的向量场位置块为∂G/∂p，动量块为−∂G/∂q。将DF作用其上，得到∑ᵢ(∂F/∂qᵢ·∂G/∂pᵢ−∂G/∂qᵢ·∂F/∂pᵢ)，与原文N_c个配置坐标的括号完全相符，矩阵符号没有误用mathlib相反的J。依赖中 textbookPoissonBracket_coordinates 的完整坐标展开也确认此符号与对象。参数F、G、z任意，作为定义在原文光滑函数类上正确；fderiv全函数化在不可微输入上的扩展不等于断言经典偏导存在。无额外假设或 [ERRATUM?]。证明状态独立记录：本条为显式 def，核心依赖也是实际定义而非sorry性质；未编译。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

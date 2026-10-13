@@ -31,7 +31,7 @@ def sync():
         website={x['source_id']:x for x in wd} if isinstance(wd,list) else wd
     def web(sid):
         w=website.get(sid)
-        return '待网站审计' if w is None else w.get('audit',w).get('verdict','NEEDS_HUMAN')
+        return '待网站审计' if w is None else w.get('effective_status',w.get('audit',w).get('verdict','NEEDS_HUMAN'))
     for s in sources:
         s.setdefault('review_status','DRAFT')
         sid=s['source_id'];d=ds[sid]

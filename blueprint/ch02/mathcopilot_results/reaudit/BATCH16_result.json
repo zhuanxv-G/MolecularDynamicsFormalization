@@ -1,0 +1,191 @@
+{
+  "batch": "BATCH16",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "93734f33d8f605a2947654a2091ddf9ab21c6504c71607ec363593a6145fc774",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.3-PullbackOne",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF p.99（印刷 p.77）下半页：“It is written Φ*ψ, so”及 (Φ*ψ_z)(ξ)=ψ_{Φ(z)}(Φ′(z)ξ)。statement_latex 及空 proof_latex 与原页一致；context_notation 的底点正确，fderiv 属 Lean 对应说明。",
+          "已对照原PDF渲染页及文本提取；PDF页=印刷页+22。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_pullbackOne",
+        "verdict": "PASS",
+        "explanation": "依赖:2816 的 Q n=Fin n→ℝ；:2882 的 oneForm n=Q n→(Q n→L[ℝ]ℝ)，即底点参数化的实线性泛函（有限维下连续性不额外收窄线性对象）。展开 .comp 得 ∀z ξ，bp_pullbackOne Φ α z ξ=α(Φ z)((fderiv ℝ Φ z)ξ)，底点、方向与原式完全一致。依赖:2886–2887 的 pullbackOne 同体。没有把 α 错取在 z，也无额外假设。Φ 不带可微条件是用总化 fderiv 扩展定义的域：在教材实际导数存在的全部点，公式正是原定义；不可微点的默认值不能解释为教材的真实导数，但不使可微范围上的定义失真。无 [EXTRA]/[ERRATUM?]。 实际读取蓝图附件 /workspace/Ch02.lean:726–779；输出哈希键 Blueprint/Ch02.lean 是该附件的逻辑名称，并非声称存在同名物理路径。以下依赖行号均指 Ch02_deps.txt 的合并文本。只读展开签名语义；本批七个声明的函数体/证明没有本地 sorry，相关已读依赖证明也未见 sorry；没有编译或作完整传递依赖公理认证，语义判定不以证明是否完成为依据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-PullbackTwo",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF p.99（印刷 p.77）下半页：“The pull-back of a differential 2-form ψ₁∧ψ₂ is consequently defined as”及 Φ*(ψ₁∧ψ₂)=(Φ*ψ₁)∧(Φ*ψ₂)。陈述、页码、无独立证明及两个方向的上下文说明一致。",
+          "已对照原PDF渲染页及文本提取；PDF页=印刷页+22。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_pullbackTwo",
+        "verdict": "PASS",
+        "explanation": "依赖:2816、:2882–2889 展开 Q、oneForm、twoForm、pullbackOne、pullbackTwo。twoForm 是逐点连续双线性映射 A 加 ∀z u v，A z u v=−A z v u 的子类型；实数域上这也保证 A z u u=0，确为交替2-形式。蓝图与库 pullbackTwo 同体，两个方向均用同一底点的 DΦ(z)，A 在 Φ(z) 取值。依赖:73–82 的楔积展开是 α(u)β(v)−α(v)β(u)；对 α,β 的逐点族作同样展开，左侧拉回为 α(Φz)(DΦz u)β(Φz)(DΦz v)−α(Φz)(DΦz v)β(Φz)(DΦz u)，右侧两条拉回1-形式的楔积完全相同。因此本定义在可分解形式上实现原文乘法性，并合理推广到所有2-形式；不需要凭缺少单独定理把定义判缺失。没有额外光滑性要求；fderiv 的总化扩展在可微范围上正确。无 [EXTRA]/[ERRATUM?]。 实际读取蓝图附件 /workspace/Ch02.lean:726–779；输出哈希键 Blueprint/Ch02.lean 是该附件的逻辑名称，并非声称存在同名物理路径。以下依赖行号均指 Ch02_deps.txt 的合并文本。只读展开签名语义；本批七个声明的函数体/证明没有本地 sorry，相关已读依赖证明也未见 sorry；没有编译或作完整传递依赖公理认证，语义判定不以证明是否完成为依据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-PullbackMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF p.99（印刷 p.77）页末给出 Φ*ψ_z=Σ_{ij}b_{ij}(z)dz_i∧dz_j；PDF p.100（印刷 p.78）页首接 B(z)=Φ′ᵀ(z)A(Φ(z))Φ′(z)。跨页范围及 A 的底点均正确；未静默修正原书全指标系数约定。",
+          "已对照原PDF渲染页及文本提取；PDF页=印刷页+22。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.pullbackMatrix",
+        "verdict": "PASS",
+        "explanation": "依赖:2816 的 Q 和 :2365–2376 的 textbookCoordinateJacobian 展开为标准基下 LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap，且 mulVec u=DΦ(z)u。蓝图全称量化 n,Φ,A,z,u,v，完整表达 (DΦu)ᵀA(Φz)(DΦv)=uᵀ[DΦᵀA(Φz)DΦ]v；所有方向上的双线性评价唯一确定矩阵 B，故 B(z)=DΦ(z)ᵀA(Φz)DΦ(z)，底点无误。对原文全指标楔积系数，coefficientTwoForm 展开为 uᵀ(A−Aᵀ)v；将本等式在 (u,v) 和 (v,u) 上相减，恰得拉回系数形式等于 B 的全指标楔积形式，故归一差异不损害本夹乘公式。A 无须反对称，可推广为任意矩阵；不添加假设，无 [EXTRA]/[ERRATUM?]。 实际读取蓝图附件 /workspace/Ch02.lean:726–779；输出哈希键 Blueprint/Ch02.lean 是该附件的逻辑名称，并非声称存在同名物理路径。以下依赖行号均指 Ch02_deps.txt 的合并文本。只读展开签名语义；本批七个声明的函数体/证明没有本地 sorry，相关已读依赖证明也未见 sorry；没有编译或作完整传递依赖公理认证，语义判定不以证明是否完成为依据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-PreservesForm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [
+          "原书底点省略已如实录入；现有 ERRATUM? 保留为待解释的记号歧义，不认定原书已错。"
+        ],
+        "evidence": [
+          "PDF p.100（印刷 p.78）上部：“We say that a 2-form ψ is conserved under mapping Φ if”及 Φ*ψ=ψ，随后确为 Φ′ᵀAΦ′=A，未显示任何底点。JSON 如实保留原书；ERRATUM? 为可解释的省略记号疑点，不能升级为确定勘误。",
+          "已对照原PDF渲染页及文本提取；PDF页=印刷页+22。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_preservesTwoForm",
+        "verdict": "PASS",
+        "explanation": "依赖:2884–2891 展开 twoForm 及实际调用的 pullbackTwo：A 是逐点交替双线性形式，拉回值为 A(Φz)(DΦz u)(DΦz v)，与 bp_pullbackTwo 同体。蓝图 ∀z u v 的等式是 Φ*ψ=ψ 的完整逐点评价，量词顺序与对象正确。若 M(z) 是 A.val 的实际双线性矩阵，则它等价于 DΦ(z)ᵀM(Φz)DΦ(z)=M(z)。[ERRATUM?] 指出的底点补全正确，但原文前一式已明确 A(Φz)，因而当前省略底点可按上下文理解，不能确认是错误。若把原文 A 当任意全指标楔积系数，则严格只保存反对称部分；选实际交替双线性矩阵才得到字面矩阵等式。这是表示约定说明，不影响本条形式守恒定义。没有额外假设。 实际读取蓝图附件 /workspace/Ch02.lean:726–779；输出哈希键 Blueprint/Ch02.lean 是该附件的逻辑名称，并非声称存在同名物理路径。以下依赖行号均指 Ch02_deps.txt 的合并文本。只读展开签名语义；本批七个声明的函数体/证明没有本地 sorry，相关已读依赖证明也未见 sorry；没有编译或作完整传递依赖公理认证，语义判定不以证明是否完成为依据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-SymplecticIffForm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF p.100（印刷 p.78）上半页 A=J、式(2.17) Φ′ᵀJΦ′=J，以及“A map that conserves the symplectic 2-form ... is termed a symplectic map.” 均与 JSON 一致。",
+          "已对照原PDF渲染页及文本提取；PDF页=印刷页+22。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symplecticIffForm",
+        "verdict": "FAIL",
+        "explanation": "依赖:33–40 展开坐标为 (Fin Nc⊕Fin Nc)→ℝ，按 q,p 排列，J=[[0,I],[−I,0]]；:85–97 的 textbookSymplecticForm=J.toBilin'，值为 Σi(u_qi v_pi−u_pi v_qi)。:138–139 的 IsTextbookSymplectic 是 AᵀJA=J；:238–242 的 textbookJacobian 是实际 fderiv 标准基矩阵；:272–275 的 IsTextbookSymplecticMap 额外包含 ContDiff ℝ 1 Φ。:278–294 的等价证明确实把同一实际矩阵条件展开为 ∀z u v 的形式守恒，符号和量词正确。然而本条原文仅以保存形式/满足(2.17)定义辛映射，extra_assumptions 为空，C¹ 比逐点可微且辛严格更强，既非必要，也未登记为 [EXTRA] 收窄。故失败源于定义范围收窄，并非等价定理在库内部有误。无 [ERRATUM?]。 实际读取蓝图附件 /workspace/Ch02.lean:726–779；输出哈希键 Blueprint/Ch02.lean 是该附件的逻辑名称，并非声称存在同名物理路径。以下依赖行号均指 Ch02_deps.txt 的合并文本。只读展开签名语义；本批七个声明的函数体/证明没有本地 sorry，相关已读依赖证明也未见 sorry；没有编译或作完整传递依赖公理认证，语义判定不以证明是否完成为依据。",
+        "counterexample": "Nc=1：f(0)=0，f(q)=q²sin(1/q)（q≠0），Φ(q,p)=(q,p+f(q))。f 处处可微，f′(0)=0，f′(q)=2q sin(1/q)−cos(1/q) 在0不连续。DΦ=[[1,0],[f′(q),1]] 处处满足 DΦᵀJDΦ=J，故保持辛形式，但 Φ 非 C¹，被库定义及蓝图右侧排除。",
+        "suggested_fix": "用 Differentiable ℝ Φ 配合逐点辛矩阵条件定义本条教材意义的辛映射，并相应修改等价式；若采用 C¹ 约定，应明确标为非必要的 [EXTRA] 并将 statement_scope 收窄，不能称为无条件的原文定义等价。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-SymplecticDet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF p.100（印刷 p.78）中部从“Taking the determinant of both sides of (2.17)”至“so |det(Φ′)|=1”逐式一致。推导已作为 statement_scope 的引文放入 statement_latex，不存在另一个被漏录的独立证明块；证明字段保持 null。",
+          "已对照原PDF渲染页及文本提取；PDF页=印刷页+22。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symplecticDet",
+        "verdict": "PASS",
+        "explanation": "依赖:33–40、:138–139 展开 SymplecticCoordinateMatrix n 为实2n×2n矩阵、J=[[0,I],[−I,0]]、hA 为 AᵀJA=J；:49–52 的 J²=−I 给出逆矩阵 −J，取消 det J 合法，包括 n=0 的空矩阵情形。蓝图同时包含 det(A)²=1 与 |det(A)|=1，两项原文结论均保留。把导数矩阵推广为任意辛矩阵不收窄教材结论，无 [EXTRA]。依赖:183–197 的 det_square/abs_det 使用更强的辛矩阵 det=1 结果，证明途径强于教材不改变本条签名语义。无 [ERRATUM?]。 实际读取蓝图附件 /workspace/Ch02.lean:726–779；输出哈希键 Blueprint/Ch02.lean 是该附件的逻辑名称，并非声称存在同名物理路径。以下依赖行号均指 Ch02_deps.txt 的合并文本。只读展开签名语义；本批七个声明的函数体/证明没有本地 sorry，相关已读依赖证明也未见 sorry；没有编译或作完整传递依赖公理认证，语义判定不以证明是否完成为依据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-HamiltonDet",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_ASSUMPTION_METADATA_MISMATCH",
+          "CONCLUSION_COVERAGE_METADATA_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.3-HamiltonDet",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.3",
+          "printed_page": "78",
+          "pdf_page": "100",
+          "statement_latex": "If the system is Hamiltonian, the map is symplectic for all $t$, and the determinant will be a continuous function of $t$, so the cases of interest have $\\det(\\mathcal F_t')=+1$. The flow map of a Hamiltonian system is volume preserving.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "同时保留真实流Jacobian det=1及所有可测集合体积保存，不遗漏原文最后一句。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.hamiltonDet",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookHamiltonianFlowJacobian_det_eq_one_of_jointC2"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] H C²、联合C²实际解族、Φ0=id；结论限于 t∈Icc 0 τ。签名没有 τ>0 假设。本条同时包含实际流Jacobian det=1及所有可测集合的像体积保存。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "BATCH16_METADATA_CORRECTION",
+              "detail": "按真实签名删除未采用的 τ>0 假设，并明确本条已包含体积结论；不修改教材引文。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "extra_assumptions 声称 τ>0，但真实签名没有该假设。",
+          "extra_assumptions 声称体积结论由另项覆盖，但真实签名本条已包含完整可测集合体积保存。原文陈述和页码无须更改。"
+        ],
+        "evidence": [
+          "PDF p.100（印刷 p.78）末段从“If the system is Hamiltonian”至“The flow map of a Hamiltonian system is volume preserving.” 与 statement_latex 一致；前一段明确流在 t→0 时归于恒等。Ch02.lean:765 起的本条签名没有 0<τ 假设，且第二个合取子句已经是任意可测集合的像体积保存。",
+          "已对照原PDF渲染页及文本提取；PDF页=印刷页+22。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.hamiltonDet",
+        "verdict": "FAIL",
+        "explanation": "依赖:33–40 展开坐标与 J；:1921 起的 textbookHamiltonianVectorField H z=J*ᵥ(各坐标 fderiv H z)，即 (∂H/∂p,−∂H/∂q)，确为 Hamilton 正则方程。:238–242 的 textbookJacobian 是真实流映射导数；:2176–2186 与 :2315–2337 的依赖结论分别给 det=1 和所有可测集合的 Lebesgue volume 像保存，体积证明实际用 ODE 唯一性推得单射和换元，没有把体积保存循环写成假设。蓝图 hODE 的顺序为 ∀t∈[0,τ] ∀z，hinit=Φ₀=id；结论两个合取分别为 ∀t∈[0,τ] ∀z det=1 和 ∀t∈[0,τ] ∀可测S 像体积相等，均正确。H C²、联合 C² 解族是充分但非最弱的 [EXTRA]，全空间解族和限定存在时间段是合理的域资格；τ>0 并未假设，τ<0 是空区间，τ=0 有初值。原 [EXTRA] 中 τ>0 及“体积另项覆盖”两处不实，沿用的 json_review 已如实修正。完整所引原文还断言流映射在每个 t 为辛映射；本条签名没有该结论子句，尽管依赖教材流辛性定理已经在相同假设下给出它。这是全部结论覆盖缺失，非现有 det/volume 子句的数学反例。时间正向区间是显式限定，不声称覆盖整个双向最大存在域。无 [ERRATUM?]。 实际读取蓝图附件 /workspace/Ch02.lean:726–779；输出哈希键 Blueprint/Ch02.lean 是该附件的逻辑名称，并非声称存在同名物理路径。以下依赖行号均指 Ch02_deps.txt 的合并文本。只读展开签名语义；本批七个声明的函数体/证明没有本地 sorry，相关已读依赖证明也未见 sorry；没有编译或作完整传递依赖公理认证，语义判定不以证明是否完成为依据。",
+        "counterexample": "缺失条款：∀t∈Icc 0 τ，IsTextbookSymplecticMap (fun z => Φ(t,z))，或等价的 ∀t z u v 辛形式保存。det=1 与整集体积保存自身不等价于辛性：在(q₁,q₂,p₁,p₂)坐标，线性矩阵 diag(2,1/2,1,1) 保持体积但不保持 J；此例仅说明现有两项结论不能替代缺失条款，并非满足本条 hODE 的流反例。",
+        "suggested_fix": "在现有 det=1 与可测集合体积结论前加上 ∀t∈Icc 0 τ 的流辛性合取，可直接使用依赖 textbookHamiltonianFlow_isSymplectic_of_jointC2；同步纠正 [EXTRA] 注释，删除并未采用的 τ>0，并写明本条已包含体积结论。若只登记 det/volume，请显式缩小 statement_scope，把原文流辛性另立条目。"
+      }
+    }
+  ]
+}

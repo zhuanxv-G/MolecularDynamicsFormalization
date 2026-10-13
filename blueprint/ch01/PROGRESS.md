@@ -4,151 +4,152 @@
 下一步：按CURRENT_STATE顶部接续；全章已覆盖，终检和推送完成后等待用户提交INDEX.md中的网站批次。
 当前141条；本地PASS 124；网站返回141（版本绑定待验）；任务包23批，每批≤8条、每文件<40KB。
 
+网站整合汇总：网站PASS 44 / 修复中 26 / 待导师 8 / 待复审 63。
 ## 逐条进度
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明 |
 |---|---|---|---|---|---|
-| MD-1.5.3-Thm1.1 | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN / BATCH01 | existing_bridge |
-| MD-1.2-EnergyConservation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN / BATCH01 | existing_bridge |
-| MD-1.3-NewtonEulerLagrange | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN / BATCH01 | existing_bridge |
-| MD-1.4-LegendreHamiltonian | CORRECTED/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN / BATCH01 | sorry / 一般配置相关对称正定矩阵Legendre上确界理论未补证明；保持sorry。 |
-| MD-1.5.1-FlowInverse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN / BATCH01 | existing_bridge |
-| MD-1.1-Schrodinger | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1-NewtonModel | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1-HardSphere | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.1-Multibody | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.1-Morse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.1-MorseMinimum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。（失败3次，时间盒已止） |
-| MD-1.1.1-LengthBond | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.1-Dispersion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.1-Buckingham | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.1-LennardJones | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.1-LJRepulsion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.1.1-HeterogeneousLJ | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.2-Coulomb | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.2-Cutoff | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.2-Yukawa | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.2-AngleBond | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.2-Dihedral | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.1.2-GayBerne | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.2-NewtonCompact | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.2-DegreesFreedom | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.2-ConstraintDimension | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.2-TotalEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.2-PairCancellation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.2-MomentumConservation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.2-HarmonicSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.2-ScalarMechanical | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.2-ScalarQuadrature | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 缺大型理论：带(x,ξ,η)参数的C∞隐函数定理及积分逆C∞依赖、真实解局部唯一性组合；现有固定初值C1图表不足以推出全部签名。 |
-| MD-1.2-UniformLJSystem | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.2-RadialLJForceLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 待证明 |
-| MD-1.2-LJCoordinateScaling | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.2-LJTimeScaling | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.3-Lagrangian | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.3-GeneralizedCoordinates | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.3-GeneralizedMassRegular | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.4-ConvexLegendre | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.4-HamiltonEquations | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.4-HamiltonFixedMass | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.4-HamiltonLagrangeEquivalence | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 缺大型理论：配置相关矩阵逆的C2微分、一般二次型的配置/速度梯度和Euler–Lagrange全等价；固定质量偏梯度已证明但范围不足。 |
-| MD-1.4-PhaseSpace | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5-LocalExistUnique | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5-EnergySurface | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5-EnergyBounds | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 缺一般SPD矩阵二次型在紧单位球上的严格正下界与coercivity桥接；旧正式对角质量证明不能直接支持一般质量矩阵。 |
-| MD-1.5-UniformLevelsCompact | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 依赖尚缺的一般SPD动量统一界及连续能量层闭、有界、紧组合；不假设结论或改成对角特例。 |
-| MD-1.5-CompactContinuation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 缺双向紧集留域延拓与反向系统拼接；旧正式库只供未来延拓，未尝试用其冒充全时间结论。 |
-| MD-1.5-Nonconfining | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.5.1-FlowMap | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.1-FlowEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.5.1-HarmonicPhaseFlow | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.1-SpectralSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.1-BasisCoefficients | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.1-MatrixExponentialSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.1-MatrixExpSeries | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-FirstIntegral | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.2-FirstIntegralCriterion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-PlanarGraphReduction | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-PlanarQuadrature | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-ScalarFirstIntegral | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.1-RealSpectralSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-KeplerEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.2-KeplerConservedEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 整句两守恒量已分别桥接；可积性完整极坐标提升和全存在区间quadrature重建尚缺大型理论，未删掉therefore integrable结论。 |
-| MD-1.5.2-KeplerAngularMomentum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-KeplerMomentum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.5.2-PolarCoordinates | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.2-KeplerPolarLagrangian | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-KeplerPolarODE | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-PolarAngularIdentity | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-KeplerRadialReduction | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-KeplerRadialEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.2-KeplerFullSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 缺全局Kepler极坐标提升、碰撞边界控制及跨转向点的quadrature图拼接；已有固定初值局部重建不足。 |
-| MD-1.5.2-ActionAngleCoordinates | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.2-ActionEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-ActionODE | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-ActionSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-HarmonicTorus | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.2-TorusPeriod | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.2-TorusDense | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 一般d维Kronecker稠密轨道理论；正式库仅二维无理比。 |
-| MD-1.5.2-LocalActionAngleReduction | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 一般Liouville–Arnold/Carathéodory–Jacobi–Lie理论；全局环面子句需另行裁定补齐。 |
-| MD-1.5.3-Equilibrium | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.3-ConstantEquilibrium | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.3-EquilibriumLinearization | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.5.3-Hyperbolic | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.3-HartmanGrobmanLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 一般Hartman–Grobman理论；光滑共轭字面断言需导师勘误。 |
-| MD-1.5.3-LyapunovStability | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.3-HyperbolicStabilityTransfer | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 缺一般Hartman–Grobman局部拓扑共轭和稳定/不稳定转移；不调用仍含sorry的smooth字面条目。 |
-| MD-1.5.3-HamiltonEquilibrium | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.5.3-StrongLocalMinimum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.3-LinearizedHamiltonian | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.5.3-PositiveHessianQuadratic | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.5.3-PositiveHessianMinimum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 缺实对称Hessian谱正定转换和C2二阶Taylor严格局部极小判别；已证明的纯二次型极小不等于非线性势结论。 |
-| MD-1.6-UniformPairLattice | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-UnorderedPairCount | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.6-NearestNeighbor | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-WalledChain | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-PeriodicChain | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-PeriodicBoundary | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-PeriodicTranslationMomentum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 三次失败已止：Pi空间拓扑与实际HasDerivAt链式法则实例不能统一；平移不变已有正式证明，完整方向导数及动量桥接未通过。（失败3次，时间盒已止） |
-| MD-1.6-RegularLattice | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-RegularLatticeMinimizerLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 原文需限定势和配置域；不可证明字面假命题。 |
-| MD-1.6-PeriodicImages | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-MinimumImage | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-RhombicLattice | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-HexagonalLattice | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.6-UnitCell | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-FCCStacking | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6-HCPStacking | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.6.1-MinimumGradientZero | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.6.1-ForceLinearization | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.6.1-MinimumHessianLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 字面假命题，不证明；正定需非退化额外假设，不能静默补。 |
-| MD-1.6.1-ImaginarySpectrum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 缺一般SPD M,K的Hamilton块谱相似变换及共轭特征对、非零频率理论；实部零、平方正和±配对须同时证明。 |
-| MD-1.6.1-ComplexNormalMode | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 三次失败已止：Pi复空间的连续线性作用与实时间导数/复标量作用接口不统一；数学共轭模式论证与现有实模式证明不能冒充此签名。（失败3次，时间盒已止） |
-| MD-1.6.1-RealNormalMode | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.7-PlanarTrimerModel | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.7-CentralPairPotential | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.7-CentralPairGradient | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.7-CentralMomentum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.7-CentralAngularMomentum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.7-CenterOfMassMotion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.7-ConstantRotationLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 字面推论假，需导师裁定为定性旋转描述或修正为角动量守恒。 |
-| MD-1.7-IsoscelesCoordinates | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.7-IsoscelesEnergyReduction | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
-| MD-1.7-IsoscelesAccessibleRegion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.7-EquilateralTrimerMinimum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 三次失败已止：LJ单距离唯一极小值、rpow根及三边势和计算已在尝试中补出；最后有限指标反向距离等式归一化未闭合，完整定理保持占位。（失败3次，时间盒已止） |
-| MD-1.7-TrimerEnergyLowerBound | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | existing_bridge |
-| MD-1.7-CollinearTrimer | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.7-TrimerSaddle | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 缺共线LJ驻点全局唯一根及二维严格鞍点的两方向二阶导数符号/局部比较；不只证明一维极小就宣称鞍点。 |
-| MD-1.7-TrimerEscapeLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 全局三体散射/逃逸理论；字面every body与至少一对分离的差距不能冒充完整证明。 |
-| MD-1.7.1-ChaosConditions | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.7.1-TransitivityErgodicityLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 字面等价不成立；不通过新增结论前提修补。 |
-| MD-1.7.1-AnisotropicOscillator | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.7.2-FlowJacobianLiteral | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.7.2-VariationalEquationLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 需导师确认取值点勘误；修正后一般非线性参数导数交换亦需理论，常系数已有证明不足。 |
-| MD-1.7.2-NearbyTrajectoryLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 等待导师判断W取值点勘误，修正版由可微定义直接推出。 |
-| MD-1.7.2-SingularValues | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.7.2-SingularEllipsoid | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | sorry / 缺一般实矩阵SVD、正交坐标变换与逆矩阵球面像的完整几何证明；奇异值定义本身不是椭球结论证明。 |
-| MD-1.7.2-LyapunovExponents | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | definition |
-| MD-1.7.2-PositiveLyapunovGrowth | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（返回版本绑定未核验） | local_proof |
+| MD-1.5.3-Thm1.1 | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | existing_bridge |
+| MD-1.2-EnergyConservation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | existing_bridge |
+| MD-1.3-NewtonEulerLagrange | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | existing_bridge |
+| MD-1.4-LegendreHamiltonian | CORRECTED/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | sorry / 一般配置相关对称正定矩阵Legendre上确界理论未补证明；保持sorry。 |
+| MD-1.5.1-FlowInverse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | existing_bridge |
+| MD-1.1-Schrodinger | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.1-NewtonModel | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.1-HardSphere | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.1.1-Multibody | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.1.1-Morse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.1.1-MorseMinimum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | sorry / 三次失败已止：无穷远指数极限的Tendsto目标与局部Morse定义归一化；非负/极小部分已有尝试，完整井深极限尚未通过。（失败3次，时间盒已止） |
+| MD-1.1.1-LengthBond | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.1.1-Dispersion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.1.1-Buckingham | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.1.1-LennardJones | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.1.1-LJRepulsion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | local_proof |
+| MD-1.1.1-HeterogeneousLJ | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.1.2-Coulomb | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.1.2-Cutoff | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.1.2-Yukawa | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.1.2-AngleBond | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.1.2-Dihedral | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.1.2-GayBerne | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.2-NewtonCompact | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.2-DegreesFreedom | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.2-ConstraintDimension | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | local_proof |
+| MD-1.2-TotalEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.2-PairCancellation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | local_proof |
+| MD-1.2-MomentumConservation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | local_proof |
+| MD-1.2-HarmonicSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.2-ScalarMechanical | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.2-ScalarQuadrature | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | sorry / 缺大型理论：带(x,ξ,η)参数的C∞隐函数定理及积分逆C∞依赖、真实解局部唯一性组合；现有固定初值C1图表不足以推出全部签名。 |
+| MD-1.2-UniformLJSystem | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.2-RadialLJForceLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | FAIL（绑定版本 09ff185182a8） | sorry / 待证明 |
+| MD-1.2-LJCoordinateScaling | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | local_proof |
+| MD-1.2-LJTimeScaling | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | local_proof |
+| MD-1.3-Lagrangian | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.3-GeneralizedCoordinates | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.3-GeneralizedMassRegular | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.4-ConvexLegendre | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.4-HamiltonEquations | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.4-HamiltonFixedMass | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | local_proof |
+| MD-1.4-HamiltonLagrangeEquivalence | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 缺大型理论：配置相关矩阵逆的C2微分、一般二次型的配置/速度梯度和Euler–Lagrange全等价；固定质量偏梯度已证明但范围不足。 |
+| MD-1.4-PhaseSpace | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5-LocalExistUnique | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5-EnergySurface | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5-EnergyBounds | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | sorry / 缺一般SPD矩阵二次型在紧单位球上的严格正下界与coercivity桥接；旧正式对角质量证明不能直接支持一般质量矩阵。 |
+| MD-1.5-UniformLevelsCompact | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | sorry / 依赖尚缺的一般SPD动量统一界及连续能量层闭、有界、紧组合；不假设结论或改成对角特例。 |
+| MD-1.5-CompactContinuation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | sorry / 缺双向紧集留域延拓与反向系统拼接；旧正式库只供未来延拓，未尝试用其冒充全时间结论。 |
+| MD-1.5-Nonconfining | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | local_proof |
+| MD-1.5.1-FlowMap | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5.1-FlowEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | local_proof |
+| MD-1.5.1-HarmonicPhaseFlow | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.5.1-SpectralSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.1-BasisCoefficients | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.1-MatrixExponentialSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.1-MatrixExpSeries | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-FirstIntegral | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.5.2-FirstIntegralCriterion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-PlanarGraphReduction | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-PlanarQuadrature | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-ScalarFirstIntegral | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.1-RealSpectralSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-KeplerEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5.2-KeplerConservedEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 整句两守恒量已分别桥接；可积性完整极坐标提升和全存在区间quadrature重建尚缺大型理论，未删掉therefore integrable结论。 |
+| MD-1.5.2-KeplerAngularMomentum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-KeplerMomentum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | local_proof |
+| MD-1.5.2-PolarCoordinates | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5.2-KeplerPolarLagrangian | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-KeplerPolarODE | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-PolarAngularIdentity | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-KeplerRadialReduction | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-KeplerRadialEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5.2-KeplerFullSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 缺全局Kepler极坐标提升、碰撞边界控制及跨转向点的quadrature图拼接；已有固定初值局部重建不足。 |
+| MD-1.5.2-ActionAngleCoordinates | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5.2-ActionEnergy | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-ActionODE | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-ActionSolution | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-HarmonicTorus | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.5.2-TorusPeriod | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.2-TorusDense | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 一般d维Kronecker稠密轨道理论；正式库仅二维无理比。 |
+| MD-1.5.2-LocalActionAngleReduction | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 一般Liouville–Arnold/Carathéodory–Jacobi–Lie理论；全局环面子句需另行裁定补齐。 |
+| MD-1.5.3-Equilibrium | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5.3-ConstantEquilibrium | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.3-EquilibriumLinearization | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.5.3-Hyperbolic | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5.3-HartmanGrobmanLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 一般Hartman–Grobman理论；光滑共轭字面断言需导师勘误。 |
+| MD-1.5.3-LyapunovStability | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5.3-HyperbolicStabilityTransfer | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 缺一般Hartman–Grobman局部拓扑共轭和稳定/不稳定转移；不调用仍含sorry的smooth字面条目。 |
+| MD-1.5.3-HamiltonEquilibrium | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | local_proof |
+| MD-1.5.3-StrongLocalMinimum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.5.3-LinearizedHamiltonian | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.5.3-PositiveHessianQuadratic | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | local_proof |
+| MD-1.5.3-PositiveHessianMinimum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 缺实对称Hessian谱正定转换和C2二阶Taylor严格局部极小判别；已证明的纯二次型极小不等于非线性势结论。 |
+| MD-1.6-UniformPairLattice | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.6-UnorderedPairCount | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | local_proof |
+| MD-1.6-NearestNeighbor | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.6-WalledChain | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.6-PeriodicChain | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.6-PeriodicBoundary | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.6-PeriodicTranslationMomentum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | sorry / 三次失败已止：Pi空间拓扑与实际HasDerivAt链式法则实例不能统一；平移不变已有正式证明，完整方向导数及动量桥接未通过。（失败3次，时间盒已止） |
+| MD-1.6-RegularLattice | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.6-RegularLatticeMinimizerLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 原文需限定势和配置域；不可证明字面假命题。 |
+| MD-1.6-PeriodicImages | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.6-MinimumImage | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | definition |
+| MD-1.6-RhombicLattice | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.6-HexagonalLattice | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | local_proof |
+| MD-1.6-UnitCell | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.6-FCCStacking | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.6-HCPStacking | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.6.1-MinimumGradientZero | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.6.1-ForceLinearization | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | local_proof |
+| MD-1.6.1-MinimumHessianLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | FAIL（绑定版本 09ff185182a8） | sorry / 字面假命题，不证明；正定需非退化额外假设，不能静默补。 |
+| MD-1.6.1-ImaginarySpectrum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | sorry / 缺一般SPD M,K的Hamilton块谱相似变换及共轭特征对、非零频率理论；实部零、平方正和±配对须同时证明。 |
+| MD-1.6.1-ComplexNormalMode | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | sorry / 三次失败已止：Pi复空间的连续线性作用与实时间导数/复标量作用接口不统一；数学共轭模式论证与现有实模式证明不能冒充此签名。（失败3次，时间盒已止） |
+| MD-1.6.1-RealNormalMode | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.7-PlanarTrimerModel | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.7-CentralPairPotential | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.7-CentralPairGradient | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | local_proof |
+| MD-1.7-CentralMomentum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.7-CentralAngularMomentum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | FAIL（绑定版本 09ff185182a8） | local_proof |
+| MD-1.7-CenterOfMassMotion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | local_proof |
+| MD-1.7-ConstantRotationLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | FAIL（绑定版本 09ff185182a8） | sorry / 字面推论假，需导师裁定为定性旋转描述或修正为角动量守恒。 |
+| MD-1.7-IsoscelesCoordinates | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.7-IsoscelesEnergyReduction | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | local_proof |
+| MD-1.7-IsoscelesAccessibleRegion | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.7-EquilateralTrimerMinimum | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 三次失败已止：LJ单距离唯一极小值、rpow根及三边势和计算已在尝试中补出；最后有限指标反向距离等式归一化未闭合，完整定理保持占位。（失败3次，时间盒已止） |
+| MD-1.7-TrimerEnergyLowerBound | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.7-CollinearTrimer | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.7-TrimerSaddle | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 缺共线LJ驻点全局唯一根及二维严格鞍点的两方向二阶导数符号/局部比较；不只证明一维极小就宣称鞍点。 |
+| MD-1.7-TrimerEscapeLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 全局三体散射/逃逸理论；字面every body与至少一对分离的差距不能冒充完整证明。 |
+| MD-1.7.1-ChaosConditions | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.7.1-TransitivityErgodicityLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 字面等价不成立；不通过新增结论前提修补。 |
+| MD-1.7.1-AnisotropicOscillator | DRAFT/原页已核 | 陈述已写；已编译 | PASS | NEEDS_HUMAN（绑定版本 09ff185182a8） | definition |
+| MD-1.7.2-FlowJacobianLiteral | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.7.2-VariationalEquationLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 需导师确认取值点勘误；修正后一般非线性参数导数交换亦需理论，常系数已有证明不足。 |
+| MD-1.7.2-NearbyTrajectoryLiteral | DRAFT/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 09ff185182a8） | sorry / 等待导师判断W取值点勘误，修正版由可微定义直接推出。 |
+| MD-1.7.2-SingularValues | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.7.2-SingularEllipsoid | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | sorry / 缺一般实矩阵SVD、正交坐标变换与逆矩阵球面像的完整几何证明；奇异值定义本身不是椭球结论证明。 |
+| MD-1.7.2-LyapunovExponents | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | definition |
+| MD-1.7.2-PositiveLyapunovGrowth | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | local_proof |
 
 ## 旧清单完整映射
 

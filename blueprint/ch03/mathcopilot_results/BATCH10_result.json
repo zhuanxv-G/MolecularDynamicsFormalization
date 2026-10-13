@@ -1,0 +1,162 @@
+[
+  {
+    "source_id": "MD-3.3.3-YoshidaComposition",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF131/印刷109，§3.3.3中“We now consider iterating this scheme three times”段及其后exp(τ₀h L̂_{τ₀h})exp(τ₁h L̂_{τ₁h})exp(τ₀h L̂_{τ₀h})=exp(hZ_h)。陈述、下标、三步次序、步长和条件及context_notation核对一致。",
+        "已直接查看教材 PDF 渲染页并对照提取文本；页码按印刷页+22核对。proof_latex=null符合这些条目没有独立完整证明的记录；原书本节有BCH推导，不能把null理解为没有论证。未改动附件或Lean工程，未编译Lean；以下判断针对展开后的签名语义，不能视为证明通过。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.yoshidaCompose",
+      "verdict": "PASS",
+      "explanation": "Ch03.lean:467的定义展开为G(a h)(G(b h)(G(a h)z))，实际执行次序a,b,a，与PDF131的三步回文复合一致。E、G、a、b、h全部为任意参数，负步长未被排除。2a+b=1不是该通用组合子的定义域限制，而由本批Cancellation/Unique规定；任意参数的组合子本身不宣称它们满足系数条件，也不宣称任意G都有指数生成元Z_h。原文exp(hZ_h)是本节形式算子表示，当前定义只实现该表示中的三次复合，按definition及context_notation审计通过。无[EXTRA]或[ERRATUM?]；此处为定义，非sorry命题。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.3-YoshidaCoefficients",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF131/印刷109，“We have free reign over constants”至“unique real solution”及τ₀=1/(2−κ)、τ₁=−κ/(2−κ)、κ^(2s+1)=2。原页确实写reign，未静默改为rein；该句后公式以逗号连接下一句。s≥1在本节上方已明示；正实根说明与奇次实根一致。",
+        "已直接查看教材 PDF 渲染页并对照提取文本；页码按印刷页+22核对。proof_latex=null符合这些条目没有独立完整证明的记录；原书本节有BCH推导，不能把null理解为没有论证。未改动附件或Lean工程，未编译Lean；以下判断针对展开后的签名语义，不能视为证明通过。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.yoshidaCoefficients",
+      "verdict": "PASS",
+      "explanation": "Ch03_deps.txt:3593实际定义yoshidaRoot s=Real.rpow 2 (1/((2*s+1:ℕ):ℝ))，并非未解释常数；3594及Ch03.lean:470展开为(1/(2−κ),−κ/(2−κ))。s≥1时1<κ<2、κ^(2s+1)=2，故分母非零且与PDF131公式一致。定义本身接受s=0，此时κ=2且Lean的除法给(0,0)，不属于教材s≥1的使用范围；本批Cancellation和Unique均显式限制s≥1，故该全域延拓未冒充s=0系数结论。原句包含存在唯一性，但按context_notation的明确分条安排，它由Unique完整表达；单独定义不证明唯一性。无[ERRATUM?]，无sorry证明义务。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.3-YoshidaCancellation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF131/印刷109，同段两个条件2τ₀+τ₁=1和2τ₀^(2s+1)+τ₁^(2s+1)=0；原文写annihilate the perturbation operator at order h^(2s)。context_notation关于s≥1和负系数与原公式一致。",
+        "已直接查看教材 PDF 渲染页并对照提取文本；页码按印刷页+22核对。proof_latex=null符合这些条目没有独立完整证明的记录；原书本节有BCH推导，不能把null理解为没有论证。未改动附件或Lean工程，未编译Lean；以下判断针对展开后的签名语义，不能视为证明通过。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.yoshidaCancellation",
+      "verdict": "PASS",
+      "explanation": "展开yoshidaRoot及yoshidaCoefficients后，对每个自然数s≥1，令a=1/(2−2^(1/(2s+1)))、b=−2^(1/(2s+1))/(2−2^(1/(2s+1)))，结论同时给2a+b=1、2a^(2s+1)+b^(2s+1)=0和b<0。前两项正是PDF131消项的代数系数条件；第三项是公式的真实推论，未裁掉负步长。[EXTRA] s≥1是原页已写的条件且排除零分母，不是额外限制；b<0合理。此签名表达系数消项条件，实际复合方法升阶由另条RaiseOrder承担，不能由本条宣称实际升阶已成立。Ch03.lean:477–498有证明体而非sorry，但本审计未做编译验证。无[ERRATUM?]。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.3-YoshidaUnique",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF131/印刷109，“Solving simultaneously, there exists a unique real solution”及其后三个等式。JSON把句末逗号排为句号以独立摘录，未改变文字或数学含义；同页两方程和s≥1提供完整上下文。",
+        "已直接查看教材 PDF 渲染页并对照提取文本；页码按印刷页+22核对。proof_latex=null符合这些条目没有独立完整证明的记录；原书本节有BCH推导，不能把null理解为没有论证。未改动附件或Lean工程，未编译Lean；以下判断针对展开后的签名语义，不能视为证明通过。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.yoshidaUnique",
+      "verdict": "PASS",
+      "explanation": "实际κ定义为Real.rpow的正实根，系数定义如上。量词为∀s≥1 ∀a b∈ℝ；双向等价左侧含两个原方程，右侧强制(a,b)等于唯一指定实数对。因该实数对存在，取定义给定的a,b用反向蕴涵即得到存在性，正向蕴涵给唯一性，未仅陈述至多一个解。所有实数对均被覆盖，没有非负系数限制。奇次幂的单射性与κ^(2s+1)=2保证此语义正确；s≥1来自原页上下文。Ch03.lean:504–537为证明体，无sorry；未据此宣称编译通过。无额外条件或[ERRATUM?]。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.3-YoshidaRaiseOrder",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF131/印刷109，系数公式后“giving us a scheme of order 2s+2”及“We can then proceed recursively”两句；上方特征算子只含h^(2s)、h^(2s+2)、h^(2s+4)并使用symmetric BCH formula。原文陈述核对一致，context_notation说明对称二阶及以上基础方法。",
+        "已直接查看教材 PDF 渲染页并对照提取文本；页码按印刷页+22核对。proof_latex=null符合这些条目没有独立完整证明的记录；原书本节有BCH推导，不能把null理解为没有论证。未改动附件或Lean工程，未编译Lean；以下判断针对展开后的签名语义，不能视为证明通过。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.yoshidaRaiseOrder",
+      "verdict": "FAIL",
+      "explanation": "实际展开：Q n=Fin n→ℝ；actualFlow f D Φ η要求η>0、每个z∈D有Φ 0 z=z，并在|t|<η内留在D且满足真实ODE导数；localOrder G Φ B r只要求存在C,δ>0使每个z∈B和|h|<δ满足‖G h z−Φ h z‖≤C|h|^(r+1)。因此本签名只有B上的阶条件，未假设B邻域中的一致性；B可以是单点。即使全域C∞、双向真实流、全域反步对称都成立，也不够将其提升到复合后的2s+2阶。原文PDF131从方法的特征算子展开作BCH消项，意味着方法在状态邻域中的阶，而不是只在某个单点碰巧有阶。现有[EXTRA]平滑、紧集、开放域和双向流是可用的充分正则性框架，其中全域要求及整个D流不变偏强，但核心邻域阶条件仍缺失。另未显式写递归闭合结论，修复后应说明可再次应用的局部条件；本签名只能先保证单步升阶。Ch03.lean:547含sorry，语义FAIL由反例而非sorry决定。本条无[ERRATUM?]标记，也不应把此形式化缺口当作原书错误。",
+      "counterexample": "取n=1并将Q 1等同ℝ，s=1，D=ℝ，B={0}，η=1，f(x)=1，Φ(h,x)=x+h。设ψ(x)=x+(1/2)sin x；ψ′(x)=1+(1/2)cos x≥1/2，所以ψ是全域C∞微分同胚。定义G(h,x)=ψ^{-1}(ψ(x)+(3/2)h)。G全域C∞，G(−h,G(h,x))=x，且G(t,G(u,x))=G(t+u,x)。在0处ψ(x)=(3/2)x−x³/12+O(x⁵)，从而G(h,0)=h+h³/18+O(h⁵)，所以localOrder G Φ {0} 2成立。Yoshida系数满足2a+b=1，故三次复合恰为G(h,x)，在0处误差仍为h³/18+O(h⁵)，不可能被C|h|⁵控制，localOrder复合 Φ {0} 4不成立。所有其他假设均满足。",
+      "suggested_fix": "将localOrder G Φ B (2*s)增强为B的开放邻域V⊆D上的一致阶条件，或要求对D内每个紧集K都有localOrder G Φ K (2*s)，以保证在包含中间点的较大紧邻域上可作BCH/Taylor消项；保留对称性和实际双向流条件。结论仍在B上给2s+2阶。若要完整表达原句递归性，再记录该复合方法在适当邻域上仍光滑、对称且满足相应阶条件，从而可迭代。不要仅补G 0 z=z：本反例已满足它。"
+    }
+  },
+  {
+    "source_id": "MD-3.3.3-Yoshida4",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF131末尾/印刷109的Example 3.1开头，接PDF132/印刷110顶部s=1及立方根系数、三次velocity Verlet说明、标题和式(3.8)九行。逐行核对Pα,Qα,Pα,Pβ,Qβ,Pβ,P,Q,P，半步因子、力的求值点和M^{-1}均一致；JSON为排版合并而非改变赋值次序。",
+        "已直接查看教材 PDF 渲染页并对照提取文本；页码按印刷页+22核对。proof_latex=null符合这些条目没有独立完整证明的记录；原书本节有BCH推导，不能把null理解为没有论证。未改动附件或Lean工程，未编译Lean；以下判断针对展开后的签名语义，不能视为证明通过。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.yoshida4",
+      "verdict": "FAIL",
+      "explanation": "Ch03_deps.txt:33给(q,p)坐标为(Fin n⊕Fin n)→ℝ；Q n=Fin n→ℝ。textbookPotentialForce U q i=−(fderiv ℝ U q)(Pi.single i 1)；textbookMomentumKick F t更新p_i为p_i+tF(q)_i并保持q；textbookPositionDrift m t更新q_i为q_i+t(m_i)⁻¹p_i并保持p；coordinateVerlet=kick(h/2)∘drift(h)∘kick(h/2)。再展开yoshidaCompose及s=1系数，正是PDF132式(3.8)按顺序执行的九个赋值，符号、力的取点、最后半kick和中间负步长一致。然而参数m任意，未要求非零或正质量；Lean对0的逆定义为0，故允许原式M^{-1}不存在的输入。U也任意，非可微处fderiv总化为0，并不表示通常意义的∇U。固定对角质量[EXTRA]符合教材质量矩阵背景，但该注释不是签名中的非零条件。fourth-order名称不是本定义给出的阶定理；不能借定义补上RaiseOrder缺口。无sorry证明体或[ERRATUM?]。",
+      "counterexample": "n=1，m(0)=0，U(q)=0。在Lean中(m(0))⁻¹=0，三次Verlet均成为恒等映射，yoshida4有合法值；教材式(3.8)此时要求不存在的M^{-1}，故原对象与Lean对象域不一致。此外若U(q)=|q|，q=0的经典梯度不存在，Lean的fderiv在该点仍给总化值。",
+      "suggested_fix": "为教材算法的忠实接口显式加正质量∀i,0<m i（至少∀i,m i≠0），并在声称与式(3.8)梯度相同的定义域加Differentiable ℝ U或足够的ContDiff假设。可以保留当前总化组合子为辅助定义，但须以有这些前提的受限接口/等式承载教材条目；不要把未限定的任意参数接口直接等同教材算法。"
+    }
+  },
+  {
+    "source_id": "MD-3.3.3-Yoshida4Structure",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF132/印刷110的算法标题“Yoshida fourth-order scheme (velocity Verlet)”以及式(3.8)；PDF131/印刷109节标题Higher Order Symplectic Methods及symmetric BCH背景。原句本身只是标题，context_notation明确本条抽取辛性与反步对称；标题逐字一致（冒号为版式标点），不把“fourth-order”误作本条已证明阶。",
+        "已直接查看教材 PDF 渲染页并对照提取文本；页码按印刷页+22核对。proof_latex=null符合这些条目没有独立完整证明的记录；原书本节有BCH推导，不能把null理解为没有论证。未改动附件或Lean工程，未编译Lean；以下判断针对展开后的签名语义，不能视为证明通过。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.yoshida4Structure",
+      "verdict": "PASS",
+      "explanation": "已展开yoshida4、三步回文组合、势能力及kick/drift，均为真实坐标映射。IsTextbookSymplecticMap F=ContDiff ℝ 1 F ∧ ∀z,IsTextbookSymplectic(textbookJacobian F z)；textbookJacobian是实际fderiv的坐标矩阵，IsTextbookSymplectic A要求AᵀJA=J，J=fromBlocks 0 1 (−1) 0。结论对任意实h给上述真实辛性，对任意h,z给G(−h)(G(h)z)=z，不是仅名字相同或形式算子条件。[EXTRA] U全域C²足以使势能力C¹且导数矩阵对称，保证kick辛；固定对角逆质量系数保证drift辛，回文组合保证反步对称；全域C²较强但合理的充分条件。任意m（含0）对这个总化shear的结构结论仍真，所以本条不因Yoshida4教材接口的质量域问题而成为假命题；教材应用应沿用非零/正质量范围。按context_notation，本条只审计辛性和对称性，不把标题fourth-order当作另一个已表达的阶结论。Ch03.lean:559引用依赖ReviewProofs:4748–4756的结构证明，无sorry；未运行编译。无[ERRATUM?]。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.3-GeneralSplitting",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF133/印刷111，“We can view the Suzuki-Yoshida methods as one type of general composition scheme [260, 277, 326]:”及F_h的交替T/U指数复合展示公式。α₁,β₁到α_k,β_k的下标、h因子和复合符号逐项一致；foldr次序说明与原式一致。",
+        "已直接查看教材 PDF 渲染页并对照提取文本；页码按印刷页+22核对。proof_latex=null符合这些条目没有独立完整证明的记录；原书本节有BCH推导，不能把null理解为没有论证。未改动附件或Lean工程，未编译Lean；以下判断针对展开后的签名语义，不能视为证明通过。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.generalSplitting",
+      "verdict": "PASS",
+      "explanation": "Ch03_deps.txt:3597–3598和Ch03.lean对应定义的foldr展开为T(α₁h)∘U(β₁h)∘…∘T(α_kh)∘U(β_kh)∘id，空列表给id。Function.comp在状态上的作用从最右端开始，正好保留PDF133展示的复合次序；没有错误地用foldl颠倒因子。E任意、T和U为给定映射族，有限有序实系数列表可含负值；原文形式指数记号在此以给定部分流实例化，定义没有断言任意T/U是实际流，也未擅自加入阶、对称、辛性或系数和条件。参考文献编号不属于数学假设。无[EXTRA]、[ERRATUM?]或sorry命题。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

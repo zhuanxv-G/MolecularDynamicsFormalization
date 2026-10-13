@@ -1,0 +1,338 @@
+[
+  {
+    "source_id": "MD-3.4-TruncatedConservation",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_NOTATION_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-TruncatedConservation",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "115",
+        "pdf_page": "137",
+        "statement_latex": "Since $\\mathcal F_h^{(k)}$ preserves its Hamiltonian (3.11), we have\n\\[\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n))=\\widetilde H_k(\\boldsymbol z_n).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "K=H̃_k代入签名的H；本条对任意真实Hamiltonian曲线成立，不预设守恒结论。",
+          "原书(3.11)用bar H_k表示有限截断；PDF137局部与tilde H_k混用，疑为排版/记号疑误，需明确按同一截断函数解释，保留原印记号。"
+        ],
+        "issues": [
+          "PDF137/印刷115的截断Hamiltonian主要记作bar H_k，原书守恒式右端及望远镜第二行的减项又印为tilde H_k。附件统一tilde，未逐字保留原书混用；已还原，不将疑误静默修成一致记号。"
+        ],
+        "lean_decl": "MD.Ch03.truncatedConservation",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookHamiltonian_energy_const_on_Icc"
+        ],
+        "extra_assumptions": [
+          "沿γ对K的可微性与真实ODE在闭区间明示，包含端点；构造γ属于另项。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH13审校：还原原印记号/明示疑点及辅助范围，未修改原书数学结论。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "PDF137/印刷115的截断Hamiltonian主要记作bar H_k，原书守恒式右端及望远镜第二行的减项又印为tilde H_k。附件统一tilde，未逐字保留原书混用；已还原，不将疑误静默修成一致记号。"
+      ],
+      "evidence": [
+        "已逐字对照渲染PDF第137页（印刷第115页），页码满足+22；陈述引导语及公式已核对。proof_latex=null：原页为Theorem 3.1证明中的连续推导/后续讨论，没有本条独立证明。",
+        "Since ... preserves its Hamiltonian (3.11)：左bar、右tilde。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.truncatedConservation",
+      "verdict": "PASS",
+      "explanation": "定义已展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookHamiltonianVectorField K z=J·((fderiv ℝ K z)(Pi.single i 1))_i；oneStepIterate G h z₀ i=(G h)^[i] z₀；textbookTruncatedHamiltonian H Hj r k h z=H z+Σ_{j∈Icc r k}h^j Hj j z。PASS（按原书记号疑误下的同一截断Hamiltonian解释）。将H实例化为bar H_k、γ0为z_n、τ为h、γh为F_h^(k)(z_n)，结论给出所需守恒，且更一般地覆盖整段曲线。可微性和真实ODE假设合理，不预设守恒；τ<0时结论空真、τ=0时为恒等式。本条不负责流的构造。原页左右bar/tilde混用应显式声明同一函数解释；无额外数学ERRATUM断言。Ch03.lean:690-696无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.4-EnergyTelescoping",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_NOTATION_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-EnergyTelescoping",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "115",
+        "pdf_page": "137",
+        "statement_latex": "Now\n\\[\\begin{aligned}\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\boldsymbol z_{n+1})-\\bar H_k(\\boldsymbol z_n)\\\\\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\boldsymbol z_{n+1})-\\widetilde H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n))\\\\\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n)+\\boldsymbol\\eta_n)-\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n)).\\end{aligned}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "第一行是任意K的真实迭代有限和恒等式；第二、三行由同页独立TruncatedConservation与FiniteMatchingConstruction代入，并非本条额外假设能量守恒。",
+          "原书(3.11)用bar H_k表示有限截断；PDF137局部与tilde H_k混用，疑为排版/记号疑误，需明确按同一截断函数解释，保留原印记号。"
+        ],
+        "issues": [
+          "PDF137/印刷115的截断Hamiltonian主要记作bar H_k，原书守恒式右端及望远镜第二行的减项又印为tilde H_k。附件统一tilde，未逐字保留原书混用；已还原，不将疑误静默修成一致记号。"
+        ],
+        "lean_decl": "MD.Ch03.energyTelescoping",
+        "reusable_proofs": [
+          "MolecularDynamics.oneStep_energy_telescoping"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH13审校：还原原印记号/明示疑点及辅助范围，未修改原书数学结论。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "PDF137/印刷115的截断Hamiltonian主要记作bar H_k，原书守恒式右端及望远镜第二行的减项又印为tilde H_k。附件统一tilde，未逐字保留原书混用；已还原，不将疑误静默修成一致记号。"
+      ],
+      "evidence": [
+        "已逐字对照渲染PDF第137页（印刷第115页），页码满足+22；陈述引导语及公式已核对。proof_latex=null：原页为Theorem 3.1证明中的连续推导/后续讨论，没有本条独立证明。",
+        "Now三行：第一行bar；第二行减项tilde；第三行bar。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.energyTelescoping",
+      "verdict": "FAIL",
+      "explanation": "定义已展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookHamiltonianVectorField K z=J·((fderiv ℝ K z)(Pi.single i 1))_i；oneStepIterate G h z₀ i=(G h)^[i] z₀；textbookTruncatedHamiltonian H Hj r k h z=H z+Σ_{j∈Icc r k}h^j Hj j z。FAIL：只形式化三行等式中的第一行（方向反转不影响语义）。未出现截断流F、η、守恒等式或一步缺陷关系，因而不能表达第二、第三行；context_notation提到其他条目并不使这些子句成为本签名结论。对任意E,K,G的第一行本身正确且无EXTRA。Ch03.lean:699-704无sorry。",
+      "counterexample": "缺失条款：第二行守恒替换及第三行端点缺陷替换。",
+      "suggested_fix": "保留第一行辅助定理，另增完整三行恒等式定理：显式引入截断流F、η_n、K(F z_n)=K z_n及z_(n+1)=F z_n+η_n，或从已构造真实流及已定义缺陷推导，再在结论中列出三个表达式相等。"
+    }
+  },
+  {
+    "source_id": "MD-3.4-UniformTruncatedLipschitz",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_NOTATION_MISMATCH",
+        "SOURCE_CONSTANT_AMBIGUITY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-UniformTruncatedLipschitz",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "115",
+        "pdf_page": "137",
+        "statement_latex": "Hence\n\\[|\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)|\\le L\\sum_{n=0}^{\\nu-1}\\|\\boldsymbol\\eta_n\\|\\le L\\nu h^{k+1}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "此行所用实际H̃_k的统一L；原文先对H取L然后沿用到H̃_k，需要补本条严格辅助；整段漂移界见PhysicalEnergyDrift。",
+          "原书(3.11)用bar H_k表示有限截断；PDF137局部与tilde H_k混用，疑为排版/记号疑误，需明确按同一截断函数解释，保留原印记号。",
+          "原书未说明将缺陷常数C吸收到L，严格界应为LAνh^(k+1)，重选L须明确；不静默修改原文。"
+        ],
+        "issues": [
+          "PDF137/印刷115的截断Hamiltonian主要记作bar H_k，原书守恒式右端及望远镜第二行的减项又印为tilde H_k。附件统一tilde，未逐字保留原书混用；已还原，不将疑误静默修成一致记号。",
+          "PDF137先有‖η_n‖≤C h^(k+1)，Hence末项却写Lνh^(k+1)，未说明吸收C；PDF136的L原先针对H而非截断Hamiltonian。记录原书疑点，保留原展示公式。"
+        ],
+        "lean_decl": "MD.Ch03.uniformTruncatedLipschitz",
+        "reusable_proofs": [
+          "MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz"
+        ],
+        "extra_assumptions": [
+          "开放D、紧凸B⊆D及H和有限H_j在D C¹；0≤h≤1；L由有限系数导数界推出。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH13审校：还原原印记号/明示疑点及辅助范围，未修改原书数学结论。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "PDF137/印刷115的截断Hamiltonian主要记作bar H_k，原书守恒式右端及望远镜第二行的减项又印为tilde H_k。附件统一tilde，未逐字保留原书混用；已还原，不将疑误静默修成一致记号。",
+        "PDF137先有‖η_n‖≤C h^(k+1)，Hence末项却写Lνh^(k+1)，未说明吸收C；PDF136的L原先针对H而非截断Hamiltonian。记录原书疑点，保留原展示公式。"
+      ],
+      "evidence": [
+        "已逐字对照渲染PDF第137页（印刷第115页），页码满足+22；陈述引导语及公式已核对。proof_latex=null：原页为Theorem 3.1证明中的连续推导/后续讨论，没有本条独立证明。",
+        "Hence两级上界；上方where ‖η_n‖≤C h^(k+1)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.uniformTruncatedLipschitz",
+      "verdict": "FAIL",
+      "explanation": "定义已展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookHamiltonianVectorField K z=J·((fderiv ℝ K z)(Pi.single i 1))_i；oneStepIterate G h z₀ i=(G h)^[i] z₀；textbookTruncatedHamiltonian H Hj r k h z=H z+Σ_{j∈Icc r k}h^j Hj j z。FAIL：签名仅证明实际有限截断Hamiltonian在B上对h一致Lipschitz，是有用且正确的辅助命题；没有z_ν、η_n、求和或νh^(k+1)，缺少所引展示公式的两个不等式。开放D、紧凸B和有限C¹系数为导数有界提供合理EXTRA，L在h之前量化，允许依赖r,k。原书先以H定义L，随后用于bar H_k，且前页缺陷常数C在此行被省略；允许重新选取常数可修复，但不能静默把原L视作同一个常数。Ch03.lean:707-716无sorry。",
+      "counterexample": "缺失条款：截断能量累计变化≤LΣ‖η_n‖以及Σ‖η_n‖≤νh^(k+1)（原C需交代）。",
+      "suggested_fix": "保留统一Lipschitz辅助；另以真实截断流、数值轨道和η_n及一步界‖η_n‖≤A h^(k+1)证明完整链≤LΣ‖η_n‖≤LAνh^(k+1)，并注明原书L/C的重新命名。"
+    }
+  },
+  {
+    "source_id": "MD-3.4-TruncationRemainder",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_NOTATION_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-TruncationRemainder",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "115",
+        "pdf_page": "137",
+        "statement_latex": "Next observe that\n\\[H=\\bar H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\\cdots-h^kH_{(k)}=\\bar H_k+O(h^r).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "固定r,k；实际有限式(3.11)，非无穷级数；绝对值即ℝ范数。",
+          "原书(3.11)用bar H_k表示有限截断；PDF137局部与tilde H_k混用，疑为排版/记号疑误，需明确按同一截断函数解释，保留原印记号。"
+        ],
+        "issues": [
+          "PDF137/印刷115的截断Hamiltonian主要记作bar H_k，原书守恒式右端及望远镜第二行的减项又印为tilde H_k。附件统一tilde，未逐字保留原书混用；已还原，不将疑误静默修成一致记号。"
+        ],
+        "lean_decl": "MD.Ch03.truncationRemainder",
+        "reusable_proofs": [
+          "MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder"
+        ],
+        "extra_assumptions": [
+          "各有限系数在紧B连续；0≤h≤1；统一正C由紧性推出，未供应所需余项界。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH13审校：还原原印记号/明示疑点及辅助范围，未修改原书数学结论。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "PDF137/印刷115的截断Hamiltonian主要记作bar H_k，原书守恒式右端及望远镜第二行的减项又印为tilde H_k。附件统一tilde，未逐字保留原书混用；已还原，不将疑误静默修成一致记号。"
+      ],
+      "evidence": [
+        "已逐字对照渲染PDF第137页（印刷第115页），页码满足+22；陈述引导语及公式已核对。proof_latex=null：原页为Theorem 3.1证明中的连续推导/后续讨论，没有本条独立证明。",
+        "Next observe that：H=bar H_k−h^rH_(r)−…−h^kH_(k)=bar H_k+O(h^r)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.truncationRemainder",
+      "verdict": "PASS",
+      "explanation": "定义已展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookHamiltonianVectorField K z=J·((fderiv ℝ K z)(Pi.single i 1))_i；oneStepIterate G h z₀ i=(G h)^[i] z₀；textbookTruncatedHamiltonian H Hj r k h z=H z+Σ_{j∈Icc r k}h^j Hj j z。PASS：展开有限和定义即得H=bar H_k−Σh^jHj；签名的统一范数界是原O(h^r)的明确版本，绝对值与ℝ范数相同。C在h,z之前量化，固定r,k、紧B及有限系数连续合理；无须H连续，因为差值消去H。r>k时有限和为空，仍成立。展示的代数等式可直接由定义恢复；未要求无穷级数收敛。Ch03.lean:719-725无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.4-PhysicalEnergyDrift",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已逐字对照渲染PDF第137页（印刷第115页），页码满足+22；陈述引导语及公式已核对。proof_latex=null：原页为Theorem 3.1证明中的连续推导/后续讨论，没有本条独立证明。",
+        "Therefore：|H(z_ν)−H(z₀)|≤Lνh^(k+1)+O(h^r)，原句及逗号一致。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.physicalEnergyDrift",
+      "verdict": "FAIL",
+      "explanation": "定义已展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookHamiltonianVectorField K z=J·((fderiv ℝ K z)(Pi.single i 1))_i；oneStepIterate G h z₀ i=(G h)^[i] z₀；textbookTruncatedHamiltonian H Hj r k h z=H z+Σ_{j∈Icc r k}h^j Hj j z。FAIL：结论为2Ch^r+LΣ实际端点缺陷，只覆盖将截断漂移转移到物理能量的中间界，未给出所引Lνh^(k+1)+O(h^r)。G任意，缺少实际端点缺陷O(h^(k+1))假设或构造结论，context_notation说交由下一条不等于当前签名涵盖全部结论。ODE、初值、留B及C¹/紧凸假设合理，守恒由ODE推出而非假设；常数C,L在h,z₀,n之前量化正确。Ch03.lean:728-748无sorry。",
+      "counterexample": "缺失条款：缺陷和的νh^(k+1)上界；无局部匹配前提不能推出它。",
+      "suggested_fix": "补实际局部匹配界或调用已完成finiteMatching构造，推出Σ缺陷≤Aνh^(k+1)，输出完整2Ch^r+LAνh^(k+1)界；现有缺陷和定理可保留为辅助。"
+    }
+  },
+  {
+    "source_id": "MD-3.4-PolynomialEnergyRate",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已逐字对照渲染PDF第138页（印刷第116页），页码满足+22；陈述引导语及公式已核对。proof_latex=null：原页为Theorem 3.1证明中的连续推导/后续讨论，没有本条独立证明。",
+        "so that, as long as ν≤C₂h^(−k+r−1)：|H(z_ν)−H(z₀)|≤O(h^r)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.polynomialEnergyRate",
+      "verdict": "PASS",
+      "explanation": "定义已展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookHamiltonianVectorField K z=J·((fderiv ℝ K z)(Pi.single i 1))_i；oneStepIterate G h z₀ i=(G h)^[i] z₀；textbookTruncatedHamiltonian H Hj r k h z=H z+Σ_{j∈Icc r k}h^j Hj j z。PASS（附件明确限定的条件推论）。hdefect是G h z与真实截断ODE端点γ h z h之间的统一O(h^(k+1))界，未假设能量结论；它对应原页By construction，作为条件推论的EXTRA合理，但不能替代未完成的匹配构造。0<h≤1与r≤k使n h h^(k−r)≤T等价于n≤T h^(−k+r−1)；取T=C₂。∃M先于h,z₀,n给出统一O(h^r)，包括n=0。轨道留B、开放邻域和C¹正则为原紧域/光滑条件的明示；M可依赖k,A,T。Ch03.lean:752-773无sorry，整体Theorem 3.1未因此完成。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.4-StepCountPower",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_SCOPE_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-StepCountPower",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "116",
+        "pdf_page": "138",
+        "statement_latex": "so that, as long as $\\nu\\le C_2h^{-k+r-1}$, we have\n\\[|H(\\boldsymbol z_\\nu)-H(\\boldsymbol z_0)|\\le O(h^r).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "旧CH03-081是该证明用到的代数换写νh^(k+1)=(νhh^(k−r))h^r；原文没有单独展示等式，作为证明辅助单列。"
+        ],
+        "issues": [
+          "statement_scope写完整能量原句，但context_notation承认仅为原书未单独展示的代数辅助；原页并无独立StepCountPower陈述。"
+        ],
+        "lean_decl": "MD.Ch03.stepCountPower",
+        "reusable_proofs": [
+          "MolecularDynamics.energy_step_count_power_factor"
+        ],
+        "extra_assumptions": [
+          "自然数r≤k使k−r没有截断损失；不将此代数辅助冒充完整能量定理。"
+        ],
+        "statement_scope": "PDF138所引完整能量原句的证明辅助；Lean只对应隐含的步数幂次代数换写，不是原书独立展示公式，也不覆盖完整能量原句。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH13审校：还原原印记号/明示疑点及辅助范围，未修改原书数学结论。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "statement_scope写完整能量原句，但context_notation承认仅为原书未单独展示的代数辅助；原页并无独立StepCountPower陈述。"
+      ],
+      "evidence": [
+        "已逐字对照渲染PDF第138页（印刷第116页），页码满足+22；陈述引导语及公式已核对。proof_latex=null：原页为Theorem 3.1证明中的连续推导/后续讨论，没有本条独立证明。",
+        "同PolynomialEnergyRate原句，页上无单独步数幂次等式。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.stepCountPower",
+      "verdict": "FAIL",
+      "explanation": "定义已展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookHamiltonianVectorField K z=J·((fderiv ℝ K z)(Pi.single i 1))_i；oneStepIterate G h z₀ i=(G h)^[i] z₀；textbookTruncatedHamiltonian H Hj r k h z=H z+Σ_{j∈Icc r k}h^j Hj j z。FAIL：签名只是n h^(k+1)=(n h h^(k−r))h^r的代数恒等式；没有H、轨道、C₂、长时间条件或O(h^r)能量结论。r≤k为自然数减法不截断所必需且合理，但不能使此辅助等式等价于附件statement_scope明确引用的完整原句。原书没有独立展示该等式。Ch03.lean:776-778无sorry。",
+      "counterexample": "缺失条款：长时间步数限制下的物理能量O(h^r)结论。",
+      "suggested_fix": "将此条明确重分类为非原文的代数辅助并缩小statement_scope；若保留当前完整原句范围，则应引用或另声明polynomialEnergyRate型能量结论，不得以代数恒等式代替。"
+    }
+  },
+  {
+    "source_id": "MD-3.4-ArbitraryFiniteTruncation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "已逐字对照渲染PDF第138页（印刷第116页），页码满足+22；陈述引导语及公式已核对。proof_latex=null：原页为Theorem 3.1证明中的连续推导/后续讨论，没有本条独立证明。",
+        "If the differential equations are infinitely differentiable ... constants ... depend on the truncation index in a complicated way：全文一致。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.arbitraryFiniteTruncation",
+      "verdict": "PASS",
+      "explanation": "定义已展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookHamiltonianVectorField K z=J·((fderiv ℝ K z)(Pi.single i 1))_i；oneStepIterate G h z₀ i=(G h)^[i] z₀；textbookTruncatedHamiltonian H Hj r k h z=H z+Σ_{j∈Icc r k}h^j Hj j z。PASS（签名语义，非已证明）。smoothSymplecticData展开为r>0、开放凸D、紧凸B⊆D、H在D上C∞、G₀=id、G在小步长×D上联合C∞、各步长Jacobian辛、真实原Hamiltonian流和B上局部r阶。textbookJacobian为fderiv的坐标矩阵，IsTextbookSymplectic A为AᵀJA=J；actualFlowNearCompact要求统一η>0、Φ0z=z、曲线留D及真实HasDerivAt；localOrder为∃C>0,δ>0,∀|h|<δ,∀z∈B,‖Ghz−Φhz‖≤C|h|^(r+1)。结论∃同一C∞系数族Hj,∀k≥r,finiteMatching：每个k分别∃δ>0,A>0,Γ，∀0<h<δ,z∈B，Γ0=z、闭区间真实截断ODE、留D及端点误差≤Ah^(k+1)。truncatedFlow展开为初值及solution，solution为闭区间HasDerivWithinAt。常数允许依赖k而非全k统一，符合原句；未把匹配作为前提，未声称解析或指数估计。EXTRA明确化同章光滑近恒等辛方法背景，合理。Ch03.lean:782-788含sorry，签名PASS不代表构造已证。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

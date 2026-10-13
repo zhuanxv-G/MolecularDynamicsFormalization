@@ -1,0 +1,248 @@
+{
+  "batch": "BATCH10",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "4a2212d22d4dba363f5ff58d7f2448bc6be83a9ef3960660191d803ff62b7a9d",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.2.3-ExactExpansion",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-ExactExpansion",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "68",
+          "pdf_page": "90",
+          "statement_latex": "Since $\\dot q=p$, we have $\\ddot q=\\dot p=F(q)$, and the third derivative is $q^{(3)}=F'(q)p$. On the other hand $\\dot p=F(q)$ implies that $\\ddot p=F'(q)\\dot q=pF'$, and thus\n\\[p^{(3)}=p^2F''+F'F.\\]\nThe Taylor expansion of the solution is (taking $q(t)=q$, $p(t)=p$):\n\\[q(t+h)=q+hp+\\frac{h^2}{2}F+\\frac{h^3}{6}F'p+O(h^4),\\]\n\\[p(t+h)=p+hF+\\frac{h^2}{2}pF'+\\frac{h^3}{6}[p^2F''+F'F]+O(h^4).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Example 2.2 的背景为单自由度 $q,p\\in\\mathbb R$、$M=1$，印刷p.67/PDF89。",
+            "$F,F\\prime,F\\prime\\prime$ 在展开式中分别表示 $F(q),F\\prime(q),F\\prime\\prime(q)$；$q=q(t),p=p(t)$ 为展开起点；印刷p.68/PDF90。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.exactExpansion",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "F C³及实际标量Hamilton轨迹；以t=0归一时间原点，不改变自治系统陈述。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "BATCH10_REVIEW",
+              "reason": "补全原页上下文记号；保留原印陈述、页码和证明字段，不修改附件。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次直接核对原教材PDF89–91，非依赖既有source_page_checks.json"
+        },
+        "issues": [
+          "context_notation 为空，缺少解释本条陈述所需的原书记号；已在完整 corrected_json 中补齐。陈述、页码及 proof_latex=null 均与原页核对相符；本条没有独立完整证明。"
+        ],
+        "evidence": [
+          "直接阅读教材渲染页 PDF90/印刷68，逐项核对陈述中的文字、系数、符号和无独立证明事实。",
+          "直接阅读 PDF89/印刷67 的 Example 2.2、式(2.13)–(2.14)及一致性/稳定性说明，补充上下文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.exactExpansion",
+        "verdict": "PASS",
+        "explanation": "已重审实际 Ch02.lean:372–380（本地附件名 Ch02.lean，对应要求中的 Blueprint/Ch02.lean）。对象是标量 M=1 的 Hamilton 轨迹；∀F、∀γ 后依次假设 F 为 C³、∀t 的向量导数为 (p,F(q))，其分量即 q̇=p、ṗ=F(q)。位置和动量两个结论的全部三阶系数分别为 F′p/6 和 (p²F″+F′F)/6，残差在双侧 h→0 为 O(h⁴)，与本批原文一致。deriv F 和 deriv (deriv F) 在 C³ 假设下是真实一、二阶导数；原文导数链是这些展开的推导，并非遗漏的独立结论。[EXTRA] C³ 是获得四阶有界 Taylor 余项的合理充分条件（并非最弱）；运动方程逐点成立使 γ 在局部达到 C⁴。自治性允许将任意展开时刻平移到 0。∀t∈ℝ 的轨迹假设强于局部展开所需，可弱化到 0 的邻域，但与本条范围相容。无 ERRATUM?。本条不调用未展开的项目自定义对象。声明体为 sorry；PASS 仅评判陈述语义，不表示已证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-DefectPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-DefectPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "68",
+          "pdf_page": "90",
+          "statement_latex": "We now examine the series expansions for the exact and Verlet solutions and find that these differ in the third (and higher) order terms.\n\\[Q-q(t+h)=\\frac{h^3}{6}F'p+O(h^4),\\]\nand\n\\[P-p(t+h)=\\frac{h^3}{12}[p^2F''+F'F]+O(h^4).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Example 2.2 的背景为单自由度 $q,p\\in\\mathbb R$、$M=1$，印刷p.67/PDF89。",
+            "$F,F\\prime,F\\prime\\prime$ 在展开式中分别表示 $F(q),F\\prime(q),F\\prime\\prime(q)$；$q=q(t),p=p(t)$ 为展开起点；印刷p.68/PDF90。",
+            "数值输出为 $(Q,P)$：$Q=q+hp+h^2F(q)/2$，$P=p+h(F(q)+F(Q))/2$，式(2.13)–(2.14)，印刷p.67/PDF89。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "CONFIRMED",
+              "detail": "PDF90位置缺陷原印为正h³F′p/6；依式(2.13)及同页精确展开应为负号。保留原印正号，修正只用于另立勘误声明。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.defectPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "实际轨迹、F C³；t=0归一。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "BATCH10_REVIEW",
+              "reason": "补全原页上下文记号；保留原印陈述、页码和证明字段，不修改附件。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次直接核对原教材PDF89–91，非依赖既有source_page_checks.json"
+        },
+        "issues": [
+          "context_notation 为空，缺少解释本条陈述所需的原书记号；已在完整 corrected_json 中补齐。陈述、页码及 proof_latex=null 均与原页核对相符；本条没有独立完整证明。",
+          "原页位置缺陷确印正号，与本页精确展开及式(2.13)矛盾。仅记录原书勘误，不改原印 statement_latex。"
+        ],
+        "evidence": [
+          "直接阅读教材渲染页 PDF90/印刷68，逐项核对陈述中的文字、系数、符号和无独立证明事实。",
+          "直接阅读 PDF89/印刷67 的 Example 2.2、式(2.13)–(2.14)及一致性/稳定性说明，补充上下文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.defectPrinted",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch02_deps.txt:3026–3028，MolecularDynamics/Chapter02/Statements.lean 的正式 scalarVerlet：Q=q+hp+h²F(q)/2，P=p+h(F(q)+F(Q))/2，确与教材算法对应。Ch02.lean:386–392 的对象、量词、C³ 及实际标量轨迹假设与原印一致；两个残差也字面保留原印正号。然而正式定义给 Q−q(h)=−h³F′p/6+O(h⁴)，故位置残差中再减 h³F′p/6 不成立。动量三阶缺陷 (p²F″+F′F)/12 正确。原印的字面忠实与命题的数学错误须区分：本条 FAIL 是确认原书错误已被写成假定理；[ERRATUM?] 成立，不是翻译错号。依赖内另有 verletDefectExpansion_statement（3043–3048）明确采用修正符号，但本次判断来自展开计算，而非仅凭该名字。[EXTRA] C³、实际轨迹及自治时间平移合理，全轴条件强于必要。本声明体为 sorry；该事实独立于数学反例。",
+        "counterexample": "取 F(x)=x，γ(t)=(sinh t,cosh t)。F 为 C∞ 且 γ′(t)=(cosh t,sinh t)=((γ t).2,F((γ t).1))，全部假设成立。γ(0)=(0,1)，正式 scalarVerlet 给 (Q,P)=(h,1+h²/2)。位置残差为 h−sinh h−h³/6=−h³/3+O(h⁵)，除以 h⁴ 的绝对值无界，非 O(h⁴)。动量残差 1+h²/2−cosh h 为 O(h⁴)，不影响第一合取项的失败。",
+        "suggested_fix": "另立标明勘误的修正版定理，将位置 BigO 残差末项 −h³/6*deriv F (γ 0).1*(γ 0).2 改为 +h³/6*deriv F (γ 0).1*(γ 0).2；动量项保持不变。保留原印 statement_latex 与 ERRATUM? 记录，把错误原印作为被否定的历史陈述，不继续把它当作待证明真命题。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-VerletConsistency",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "NEGLECTED_REMAINDER"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-VerletConsistency",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "68",
+          "pdf_page": "90",
+          "statement_latex": "These relations can be summarized as telling us that\n\\[\\|\\mathcal G_h(\\boldsymbol z)-\\mathcal F_h(\\boldsymbol z)\\|=\\kappa(\\boldsymbol z)h^3+O(h^4),\\]\nwhere $\\kappa(\\boldsymbol z)=\\kappa(q,p)$ is a function of the position and momentum. We may then define\n\\[\\bar K=\\max_{t\\in[0,\\tau]}\\kappa(\\boldsymbol z(t))\\]\nbounding the local error by (with neglect of the fourth order terms) $\\bar K h^3$. Thus the Verlet method is consistent of order two.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Example 2.2 的背景为单自由度 $q,p\\in\\mathbb R$、$M=1$，印刷p.67/PDF89。",
+            "$F,F\\prime,F\\prime\\prime$ 在展开式中分别表示 $F(q),F\\prime(q),F\\prime\\prime(q)$；$q=q(t),p=p(t)$ 为展开起点；印刷p.68/PDF90。",
+            "数值输出为 $(Q,P)$：$Q=q+hp+h^2F(q)/2$，$P=p+h(F(q)+F(Q))/2$，式(2.13)–(2.14)，印刷p.67/PDF89。",
+            "$\\boldsymbol z=(q,p)$；$\\mathcal G_h$ 是 Verlet 单步映射，$\\mathcal F_h$ 是精确解单步映射；误差范数及一致性阶数的说明见印刷p.67/PDF89；$\\tau$ 为考察的时间区间终点，$\\bar K$ 是该轨迹上 $\\kappa$ 的最大值，印刷p.68/PDF90。"
+          ],
+          "issues": [
+            {
+              "code": "NEGLECTED_REMAINDER",
+              "status": "CONFIRMED",
+              "detail": "PDF90的maxκ界明确忽略四阶项；完整误差严格界须另选吸收余项的C，不能直接声称C=maxκ。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.verletConsistency",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "实际标量M=1流、F C³、正时间窗和连续紧轨迹；O余项在h→0+解释；严格界C允许吸收余项，不宣称C=maxκ。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "BATCH10_REVIEW",
+              "reason": "补全原页上下文记号；保留原印陈述、页码和证明字段，不修改附件。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次直接核对原教材PDF89–91，非依赖既有source_page_checks.json"
+        },
+        "issues": [
+          "context_notation 为空，缺少解释本条陈述所需的原书记号；已在完整 corrected_json 中补齐。陈述、页码及 proof_latex=null 均与原页核对相符；本条没有独立完整证明。",
+          "原文明确写 with neglect of the fourth order terms，不能把 maxκ h³ 自动当作完整误差严格界；原印保留。"
+        ],
+        "evidence": [
+          "直接阅读教材渲染页 PDF90/印刷68，逐项核对陈述中的文字、系数、符号和无独立证明事实。",
+          "直接阅读 PDF89/印刷67 的 Example 2.2、式(2.13)–(2.14)及一致性/稳定性说明，补充上下文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletConsistency",
+        "verdict": "PASS",
+        "explanation": "已重审 Ch02.lean:398–410，并展开 Ch02_deps.txt:3026–3028 的 scalarVerlet 为 (q+hp+h²F(q)/2,p+h(F(q)+F(q+hp+h²F(q)/2))/2)。Φ 假设为对每个初态 z 满足 Φ(0,z)=z 的实际局部标量流，其时间导数是 (p,F(q))；γ 在 [0,τ] 连续并沿此流推进。所有输入先全称量化，再存在 κ、K、C、δ₀；C、δ₀ 位于 ∀t、∀h 之前，确给轨迹上统一界，未混成逐点常数。展开的三阶误差向量 a(q,p)=(-F′(q)p/6,(p²F″(q)+F′(q)F(q))/12)，可取 κ(z)=‖a(z)‖。ℝ×ℝ 的 Lean 标准乘积范数是两分量绝对值的最大值；本批原文未指定其他范数，该选择与误差范数陈述相容。κ 连续、非负，逆三角不等式给 h→0+ 的范数残差 O(h⁴)。全 range γ 上的逐点展开及连续性比时间窗要求强，但 κ 可在全空间连续定义且 Φ 的轨迹假设对每个初态成立，因此该额外结论有依据。连续 γ 在紧区间的像为紧集，K 既为上界又有取到等号的时刻，忠实表达 max κ；C 与 K 分开，允许吸收余项并得到严格二阶一致性。[EXTRA] 正 τ、δ、C³ 与实际流是合理充分条件；单侧 h→0+ 符合正步长语境。未直接假设 Φ 关于初值连续，但 C³ 场的局部唯一性及局部解连续依赖提供紧初值集上的统一短时间估计，可选 δ₀<δ，故不是缺失的独立假设。NEGLECTED_REMAINDER 的解释成立：原印忽略 O(h⁴) 后用 K h³ 的说法不作为严格界；本条显式用独立 C 严格化，不声称 C=K。无尚缺项目定义。声明体为 sorry，签名 PASS 不代表证明已完成。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-VerletStability",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-VerletStability",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "68–69",
+          "pdf_page": "90–91",
+          "statement_latex": "To complete the convergence proof for Verlet’s method, we would still need to verify the second assumption. This requires the assumption that the force field $F$ satisfy a Lipschitz condition:\n\\[\\|F(\\boldsymbol u)-F(\\boldsymbol w)\\|\\le\\hat L\\|\\boldsymbol u-\\boldsymbol w\\|\\tag{2.15}\\]\nfor all $\\boldsymbol u,\\boldsymbol w$. Generally speaking this could be taken to hold in a neighborhood of the solution where all approximate solutions for $h<\\bar h$ are assumed to lie. With a bit of effort, it is then possible to demonstrate the stability condition for the numerical method (see Exercise 4).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\boldsymbol u,\\boldsymbol w$ 为力的输入位置；$\\hat L$ 为 Lipschitz 常数，式(2.15)，印刷p.68/PDF90。",
+            "稳定性指每一步两条附近轨迹间距离至多增大因子 $1+hL$，印刷p.67/PDF89；$\\bar h$ 是所有近似解仍在所述邻域内的步长阈值，印刷p.69/PDF91。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.verletStability",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "全空间Lipschitz力（覆盖原文for all u,w版本）、固定正质量，步长窗口δ>0；稳定常数可依赖δ、质量、L。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "BATCH10_REVIEW",
+              "reason": "补全原页上下文记号；保留原印陈述、页码和证明字段，不修改附件。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次直接核对原教材PDF89–91，非依赖既有source_page_checks.json"
+        },
+        "issues": [
+          "context_notation 为空，缺少解释本条陈述所需的原书记号；已在完整 corrected_json 中补齐。陈述、页码及 proof_latex=null 均与原页核对相符；本条没有独立完整证明。"
+        ],
+        "evidence": [
+          "直接阅读渲染页 PDF90/印刷68 的式(2.15)及之前段落。",
+          "直接阅读 PDF91/印刷69 的 for all u,w、neighborhood、h<bar h 及 see Exercise 4 续文。",
+          "PDF89/印刷67解释稳定性因子 1+hL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletStability",
+        "verdict": "PASS",
+        "explanation": "已重审 Ch02.lean:415–420，并展开 Ch02_deps.txt 的 ReviewDefinitions.lean：Q n=Fin n→ℝ（2816），Z n=Q n×Q n（2817），invMass m v 的第 i 分量为 (m i)⁻¹ v i（2840），positiveMass m=∀i,0<m i（2948）；正式 verlet（2859–2861）为 Qnew=q+h M⁻¹p+h²M⁻¹F(q)/2，Pnew=p+h(F(q)+F(Qnew))/2。对象确为固定正对角质量、位置与动量的 Verlet 映射，不是速度版本 velocityVerlet。∀n,m,F,L,δ 后假设正质量、L≥0、δ>0、全空间力 Lipschitz，再 ∃C≥0 后 ∀h∈[0,δ]、∀z,w，结论为原文第二稳定性条件 (1+hC)‖z−w‖。有限维各分量逆质量有共同有限界 μ；在标准乘积最大范数中，位置差 ≤(1+μh+μLh²/2)‖z−w‖，动量差 ≤(1+Lh+Lμh²/2+L²μh³/4)‖z−w‖。将 h²≤δh、h³≤δ²h 吸收到一个依赖 m,L,δ 的 C 即得声明；n=0 时空间为零空间，C=0 也成立。[EXTRA] 正质量合理但非最弱条件；步长窗口用于把高次项吸入 C；全空间 Lipschitz 忠实覆盖原文 for all u,w 的版本，未声称覆盖只在邻域满足条件的推广。无需额外光滑性、保守力或势函数假设。h=0 时映射为恒等，端点没有异常。无 ERRATUM?，无缺失定义。声明体为 sorry，PASS 只针对签名语义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

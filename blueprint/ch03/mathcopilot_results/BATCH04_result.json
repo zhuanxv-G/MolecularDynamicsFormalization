@@ -1,0 +1,359 @@
+[
+  {
+    "source_id": "MD-3.2-PoissonCoordinates",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_INDEX"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.2-PoissonCoordinates",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.2",
+        "printed_page": "102",
+        "pdf_page": "124",
+        "statement_latex": "\\[\\{g_1,g_2\\}=\\sum_{i=1}^{N_c}\\left(\\frac{\\partial g_1}{\\partial q_i}\\frac{\\partial g_2}{\\partial p_i}-\\frac{\\partial g_2}{\\partial q_i}\\frac{\\partial g_1}{\\partial p_i}\\right)=\\nabla g_1^T J\\nabla g_2.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$N_c$为构型坐标数；$g_1,g_2$为同页smooth scalar-valued函数；$J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$，$I$为$N_c\\times N_c$单位矩阵；坐标偏导在Lean中解释为Fréchet导数作用于对应单位基向量。"
+        ],
+        "issues": [
+          "原书求和上限为 N_c，statement_latex 写成 N；这是转录错误，非原书疑误。"
+        ],
+        "lean_decl": "MD.Ch03.poissonCoordinates",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookPoissonBracket_coordinates"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "原书求和上限为 N_c，statement_latex 写成 N；这是转录错误，非原书疑误。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF124（印刷102），本次直接核对原PDF渲染与文本。"
+      },
+      "issues": [
+        "原书求和上限为 N_c，statement_latex 写成 N；这是转录错误，非原书疑误。"
+      ],
+      "evidence": [
+        "教材PDF第124页（印刷第102页），§3.2；页码满足102+22=124；已直接核对页面渲染、陈述、proof_latex=null及context_notation。",
+        "首个展示式：求和上限N_c，末项∇g₁ᵀJ∇g₂；紧接给出J的分块矩阵。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.poissonCoordinates",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。有限坐标求和逐项为 F_q G_p−G_q F_p；由定义同时给出原文的梯度矩阵表达式，无遗漏第二个等号。Fin Nc 与原文1至Nc仅索引平移。任意函数的总化 fderiv 扩展在光滑函数上完全一致；无需额外假设。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-PoissonBilinearity",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "OMITTED_PROOF_DISCUSSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.2-PoissonBilinearity",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.2",
+        "printed_page": "102",
+        "pdf_page": "124",
+        "statement_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):\nBilinearity $\\{g_1,\\alpha g_2+\\beta g_3\\}=\\alpha\\{g_1,g_2\\}+\\beta\\{g_1,g_3\\}$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
+        "context_notation": [
+          "$\\alpha,\\beta\\in\\mathbb R$；Poisson定义见同页；第一变量线性由下一条反对称性推出。"
+        ],
+        "issues": [
+          "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+        ],
+        "lean_decl": "MD.Ch03.poissonBilinearity",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookPoissonBracket_linear_right",
+          "MolecularDynamics.textbookPoissonBracket_linear_left"
+        ],
+        "extra_assumptions": [
+          "原文smooth函数按点可微资格显式化；保留旧清单双变量线性的完整两条结论。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF124（印刷102），本次直接核对原PDF渲染与文本。"
+      },
+      "issues": [
+        "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+      ],
+      "evidence": [
+        "教材PDF第124页（印刷第102页），§3.2；页码满足102+22=124；已直接核对页面渲染、陈述、proof_latex=null及context_notation。",
+        "Bilinearity行：{g₁,αg₂+βg₃}=α{g₁,g₂}+β{g₁,g₃}；性质引导句含easily verified from the definition。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.poissonBilinearity",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。原文右变量线性完整保留，第二合取给出由反对称性推出的左变量线性，是合理的派生加强。F、G、H在z可微是原文smooth的较弱局部资格；对于完整两变量线性，求导线性组合需要这些资格，未假定结论。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-PoissonSkew",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "OMITTED_PROOF_DISCUSSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.2-PoissonSkew",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.2",
+        "printed_page": "102",
+        "pdf_page": "124",
+        "statement_latex": "Skew symmetry $\\{g_1,g_2\\}=-\\{g_2,g_1\\}$",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
+        "context_notation": [
+          "$J$为同页规范辛矩阵；不要求J另有任意自定义参数。"
+        ],
+        "issues": [
+          "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+        ],
+        "lean_decl": "MD.Ch03.poissonSkew",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookPoissonBracket_skew"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF124（印刷102），本次直接核对原PDF渲染与文本。"
+      },
+      "issues": [
+        "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+      ],
+      "evidence": [
+        "教材PDF第124页（印刷第102页），§3.2；页码满足102+22=124；已直接核对页面渲染、陈述、proof_latex=null及context_notation。",
+        "Skew symmetry行：{g₁,g₂}=−{g₂,g₁}；性质引导句含easily verified from the definition。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.poissonSkew",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。固定规范J为反对称矩阵，DF[J∇G]=−DG[J∇F]；F、G、z任意，符号及交换顺序一致。无可微前提的总化延拓不影响原文光滑情形。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-PoissonSelf",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "OMITTED_PROOF_DISCUSSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.2-PoissonSelf",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.2",
+        "printed_page": "102",
+        "pdf_page": "124",
+        "statement_latex": "and this implies $\\{g_1,g_1\\}=0$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
+        "context_notation": [
+          "由同页Skew symmetry；实数域特征不为2。"
+        ],
+        "issues": [
+          "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+        ],
+        "lean_decl": "MD.Ch03.poissonSelf",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookPoissonBracket_self"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF124（印刷102），本次直接核对原PDF渲染与文本。"
+      },
+      "issues": [
+        "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+      ],
+      "evidence": [
+        "教材PDF第124页（印刷第102页），§3.2；页码满足102+22=124；已直接核对页面渲染、陈述、proof_latex=null及context_notation。",
+        "同一Skew symmetry行末：and this implies {g₁,g₁}=0；无独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.poissonSelf",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。实数上由反对称性得到{F,F}=0，与原文全部结论一致；没有额外假设。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-PoissonJacobi",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "OMITTED_PROOF_DISCUSSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.2-PoissonJacobi",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.2",
+        "printed_page": "102",
+        "pdf_page": "124",
+        "statement_latex": "Jacobi identity $\\{g_1,\\{g_2,g_3\\}\\}+\\{g_3,\\{g_1,g_2\\}\\}+\\{g_2,\\{g_3,g_1\\}\\}=0$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
+        "context_notation": [
+          "同页三个smooth scalar-valued函数；非任意未微分函数。"
+        ],
+        "issues": [
+          "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+        ],
+        "lean_decl": "MD.Ch03.poissonJacobi",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookPoissonBracket_jacobi"
+        ],
+        "extra_assumptions": [
+          "显式各函数在z为C²；真实二阶导数对称性支持Jacobi。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF124（印刷102），本次直接核对原PDF渲染与文本。"
+      },
+      "issues": [
+        "原页对这些性质共享给出“which are easily verified from the definition”的简短论证说明；未给独立完整证明，但proof_discussion_latex不应遗漏此说明。"
+      ],
+      "evidence": [
+        "教材PDF第124页（印刷第102页），§3.2；页码满足102+22=124；已直接核对页面渲染、陈述、proof_latex=null及context_notation。",
+        "Jacobi identity行完整三个循环项，顺序1、3、2；性质引导句含easily verified from the definition。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.poissonJacobi",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。三个嵌套括号按原文 F,{G,H}；H,{F,G}；G,{H,F} 的顺序相加等于零。ContDiffAt ℝ 2 表示点z处局部C²，足以保证实际括号可微和二阶导数对称，是原文smooth的合理弱化，非任意未微分函数。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-HamiltonianObservableDerivative",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材PDF第124页（印刷第102页），§3.2；页码满足102+22=124；已直接核对页面渲染、陈述、proof_latex=null及context_notation。",
+        "More generally段展示Ḟ=d/dt F(q(t),p(t))={F,H}，上文明确smooth, scalar-valued。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.hamiltonianObservableDerivative",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。hγ是γ在t的真实导数等于J∇H(γ(t))，忠实表达Hamiltonian轨道的点态ODE；hF是smooth所需的局部可微资格。HasDerivAt结论同时给出复合函数可微及其导数为{F,H}(γ(t))。不需要额外假设H全局光滑来证明此点态链式法则；对原文光滑H当然适用。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-HamiltonianLie",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_RELATION_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.2-HamiltonianLie",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.2",
+        "printed_page": "102",
+        "pdf_page": "124",
+        "statement_latex": "As a consequence, we have the following relation between the Lie derivative and the Poisson bracket:\n\\[\\mathcal L_{J\\nabla H}F\\equiv \\{F,H\\}.\\]\nFor a Hamiltonian flow, we typically simplify notation by writing $\\mathcal L_H$ in place of $\\mathcal L_{J\\nabla H}$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$\\mathcal L_H=\\mathcal L_{J\\nabla H}$仅记号，旧CH03-025合并于此；实际hamiltonianLie定义亦为此。"
+        ],
+        "issues": [
+          "原书展示公式用\\equiv，JSON写成=；数学含义相容，但逐字转录应保留原符号。"
+        ],
+        "lean_decl": "MD.Ch03.hamiltonianLie_eq_poisson",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "原书展示公式用\\equiv，JSON写成=；数学含义相容，但逐字转录应保留原符号。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; PDF124（印刷102），本次直接核对原PDF渲染与文本。"
+      },
+      "issues": [
+        "原书展示公式用\\equiv，JSON写成=；数学含义相容，但逐字转录应保留原符号。"
+      ],
+      "evidence": [
+        "教材PDF第124页（印刷第102页），§3.2；页码满足102+22=124；已直接核对页面渲染、陈述、proof_latex=null及context_notation。",
+        "As a consequence段展示L_{J∇H}F≡{F,H}；最后一句写L_H in place of L_{J∇H}。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.hamiltonianLie_eq_poisson",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。展开两边均为 z↦DF(z)[J∇H(z)]，函数等式覆盖所有相空间点。依赖 Chapter03/ReviewDefinitions.lean 的 hamiltonianLie H F=textbookLieDerivative (textbookHamiltonianVectorField H) F，也实现原文L_H的记号简写。无额外假设。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.2-HamiltonianCoordinateDerivative",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材PDF第124页（印刷第102页），§3.2；页码满足102+22=124；已直接核对页面渲染、陈述、proof_latex=null及context_notation。",
+        "In terms of the Poisson bracket段：coordinate q_i, say；展示q̇_i={q_i,H}。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.hamiltonianCoordinateDerivative",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。观测量固定为z↦z(Sum.inl i)，而非任意F；HasDerivAt轨道坐标函数给出q̇_i={q_i,H}。hγ明示原文隐含Hamiltonian方程；坐标函数自动可微，无遗漏假设或结论。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

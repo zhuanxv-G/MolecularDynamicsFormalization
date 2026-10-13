@@ -163,6 +163,11 @@ def packages(sources,ds):
     (BASE/'mathcopilot_results/README.md').write_text('网站不可用，尚无返回件。用户按INDEX提交后将原始JSON或Markdown放此处；原始件保留，非PASS或签名修复需EAUDIT。\n',encoding='utf-8')
 
 def progress(sources,audit,mapping,old):
+    webpath=BASE/'website_audit.json'
+    website={w['source_id']:w for w in json.loads(webpath.read_text(encoding='utf-8-sig'))} if webpath.exists() else {}
+    def web(sid):
+        w=website.get(sid)
+        return '待网站审计' if w is None else w.get('effective_status','待网站审计')
     complete=len(mapping)==160 and all(a['checked'] for a in audit.values())
     lines=['# 第2章本地五步流程进度','','范围：印刷p.53–94/PDF75–116，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。',
         '第2章本地部分完成；第1、2章均等待用户提交MathCopilot批次。网站不可用，未冻结。' if complete else '下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。',
@@ -171,7 +176,7 @@ def progress(sources,audit,mapping,old):
     for s in sources:
         a=audit[s['source_id']];proof=a['proof_status']+' / '+a.get('final_status','incomplete')
         if a.get('missing'):proof+='；'+a['missing']
-        lines.append('| '+' | '.join([s['source_id'],'DRAFT/原页已核','已编译' if a['checked'] else '待编译',a['verdict'],'待网站审计',proof.replace('|','/')])+' |')
+        lines.append('| '+' | '.join([s['source_id'],s.get('review_status','DRAFT')+'/原页已核','已编译' if a['checked'] else '待编译',a['verdict'],web(s['source_id']),proof.replace('|','/')])+' |')
     lines+=['','## 旧160条完整映射','','| 旧id | 新source_id或当前缺项 |','|---|---|']
     for r in old:lines.append('| '+r['id']+' | '+mapping.get(r['id'],'PENDING：所属节尚未处理')+' |')
     lines+=['','## NEEDS_HUMAN / [ERRATUM?] / 缺理论','']

@@ -1,0 +1,23 @@
+[
+  {
+    "source_id": "MD-3.6.3-ReversibleVolumeFailure",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材PDF第154页（印刷第132页），§3.6.3末段、§3.7标题之前：从“Of particular importance for molecular dynamics”至“give rise to a drift in energy [166].”逐字与statement_latex一致（仅合并排版换行）。",
+        "该段未给独立证明，也未附属于本句的展示公式；proof_latex=null、proof_discussion_latex=null及proof_note与原页一致。页码满足154=132+22。",
+        "context_notation为编者的形式化范围说明，并非原书新增记号：它保留了原句的need not和may的可能性含义；其“已在前章及§3.4保留”不使本条Lean签名自动包含这些结论。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.reversibleVolumeFailure",
+      "verdict": "FAIL",
+      "explanation": "已展开Ch03_deps.txt中的实际定义：MolecularDynamics.Chapter02Review.Q n := Fin n → ℝ（第2816行）；linearInvolution R := R.comp R = ContinuousLinearMap.id ℝ (Q n)（第3616行）；MolecularDynamics.textbookCoordinateJacobian G z := LinearMap.toMatrix' (fderiv ℝ G z).toLinearMap（第2365–2366行），其第(i,j)项为((fderiv ℝ G z) (Pi.single j 1)) i（第2368–2369行）。因此这里是实n维空间的真实导数矩阵，而非替代变量。G : Q n ≃ Q n给出双射及逆，双方ContDiff ℝ 1给出C¹微分同胚；R是连续线性对合，∀z, R(G(R(G z)))=z等价于R∘G∘R=G⁻¹，忠实表达相对于R的可逆性。存在z使绝对雅可比行列式不为1，结合C¹微分同胚的换元性质，确实表达不保持Lebesgue体积。量词∃n∃R∃G再∃z正确表达need not，而非错误地要求所有可逆映射都非保体积。C¹、双射和线性对合是为给出真实光滑反例采用的合理对象限制；本条无[EXTRA]或[ERRATUM?]标注，也无原书错误需静默修正。然而statement_scope明确包含所引整句，Lean签名只覆盖其中“a time-reversible map need not do so”这一子句，缺少其余三项结论。context_notation称其他结论已在别处保留，不能代替本条对具体声明或引用的覆盖。故完整范围的语义审计FAIL；若范围显式限定为可逆非保体积存在性，则此签名本身可通过该子句的语义审计。Ch03.lean第1276–1280行的证明为sorry；这是未完成证明，独立于上述签名覆盖不足的判断。",
+      "counterexample": "缺失条款：①辛映射保持体积；②辛积分器因扰动Hamiltonian而近似保持能量（需保留适用条件及定量意义）；③时间可逆积分器可能产生能量漂移。当前签名没有Hamiltonian、积分器族、步长、轨道或能量函数，因而无法表达②③，也没有辛映射的保体积结论。这里不是声称已形式化的存在性子句为假，而是整句覆盖不足。",
+      "suggested_fix": "保留当前真实C¹可逆非保体积存在性签名，同时为所引整句补充并明确关联其余三项结论的具体Lean声明：辛映射的体积保持、具备明确BEA条件的近似能量守恒，以及可逆积分器存在能量漂移的实例或精确命题。不要将may改为所有可逆积分器必然漂移。另一可行修复是明确将本条statement_scope及对应原文摘录限定为可逆映射未必保体积，并把其余子句建立为有明确声明映射的独立条目；不能只用context_notation声称已覆盖。"
+    }
+  }
+]

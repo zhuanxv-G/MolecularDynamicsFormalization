@@ -4,168 +4,169 @@
 第2章本地部分完成；第1、2章均等待用户提交MathCopilot批次。网站不可用，未冻结。
 当前160条；旧清单映射160/160；本地PASS 140；网站返回0。
 
+网站整合汇总：网站PASS 108 / 修复中 49 / 待导师 2 / 待复审 1。
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
-| MD-2-HamiltonianODE | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2-Hamiltonian | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2-Euler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2-OneStep | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.1-Convergence | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.1-Order | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.1-Error | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.1-Thm2.1 | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.1.2-SecondDerivative | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-2.1.2-Taylor2 | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.1.2-Taylor2Order | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；缺一般Taylor方法局部截断误差、数值留域与全局阶桥接；当前库仅一般one-step条件误差定理。 |
-| MD-2.2-VerletOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；缺完整Verlet局部截断误差、稳定性及数值留域推导。 |
-| MD-2.2.1-Lagrangian | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.1-Admissible | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-2.2.1-Action | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.1-Variation | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.1-FirstVariation | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；积分下求导及一致二阶Taylor余项。 |
-| MD-2.2.1-TaylorPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书疑误裁定；正确Taylor余项理论另缺。 |
-| MD-2.2.1-StationaryAction | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.1-Parts | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际作用量求导、连续线性泛函值积分分部与变分正则性理论。 |
-| MD-2.2.1-EulerLagrange | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；基本变分引理、积分分部及实际作用量的一阶求导。 |
-| MD-2.2.1-VariationalDerivativePrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-2.2.1-StationaryNotMin | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；尚缺具体负动能作用量曲线反例及积分平方严格正证明。 |
-| MD-2.2.2-DiscretePath | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.2-DiscreteVelocity | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.2-DiscreteAction | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-2.2.2-DiscreteStationaryPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-2.2.2-DiscreteDerivative | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；有限节点替换对实际离散作用量的Fréchet求导。 |
-| MD-2.2.2-DiscreteVerlet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际离散作用量导数及驻值与Störmer式等价。 |
-| MD-2.2.2-Stormer | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.2-VelocityVerlet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.2-EliminateVelocity | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.2.2-MomentumVerlet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.2-Leapfrog | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.2-LeapfrogInit | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.2-LeapfrogReconstruct | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.3-ErrorDifference | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.2.3-Consistency | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.3-Stability | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.3-ErrorRecursion | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.2.3-ErrorBound | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.2.3-ConsistencyConvergence | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.2.3-ScalarVerlet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.3-VerletExpansion | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际标量复合力的三阶Taylor余项及代数归一。 |
-| MD-2.2.3-ExactExpansion | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；ODE导数升阶与四阶Taylor余项界。 |
-| MD-2.2.3-DefectPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书位置差疑误裁定及实际余项理论。 |
-| MD-2.2.3-VerletConsistency | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际三阶缺陷、κ连续性及统一余项常数。 |
-| MD-2.2.3-VerletStability | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际Verlet映射的1+hC Lipschitz界，可用半踢漂移组合逐坐标界证明。 |
-| MD-2.2.4-FirstIntegral | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.2.4-IntegralPreserved | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-2.2.4-EnergyPreserved | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.2.4-AngularMomentum | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；短证明3次失败：within导数的tuple投影/Filter接口转换未完成；乘积求导抵消路线及日志已保留。 |
-| MD-2.2.4-IntegralMeanValue | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-2.2.4-IntegralLipschitz | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-2.2.4-IntegralErrorPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书1/2因子裁定；均值与轨迹误差组合。 |
-| MD-2.3.1-Divergence | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.1-Liouville | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.1-HamiltonDivergence | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.1-HamiltonVolume | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.1-VolumeChange | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-2.3.1-VariationalPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书取值点裁定；正确固定初值版本库已有jointC²证明。 |
-| MD-2.3.1-DeterminantODE | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.1-DeterminantExponential | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；真实矩阵行列式导数与标量积分因子常值证明。 |
-| MD-2.3.1-FlowDet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.1-LJOscillator | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.1-LJBoundedPeriodic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；LJ能级闭曲线/非平衡周期轨道理论；能量守恒本身不足以自动得周期。 |
-| MD-2.3.2-LinearDivergence | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；线性流行列式指数公式及体积换元的必要/充分方向。 |
-| MD-2.3.2-LinearEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.2-EulerVolumePrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete |
-| MD-2.3.2-EulerVolumeCounterexample | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.2-AsymmetricEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.2-AsymmetricJacobian | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；隐式实际关系的求导、分母非零解导数及2×2矩阵整理。 |
-| MD-2.3.2-AsymmetricArea | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际隐式求导；若全局area保持还须单射局部域与换元。 |
-| MD-2.3.3-SymplecticMap | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.3-OneForm | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.3-Differential | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.3-CoordinateDifferentials | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.3-Wedge | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.3-SymplecticForm | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.3-FormSumWedges | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.3-GeneralTwoForm | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-2.3.3-PullbackOne | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.3-PullbackTwo | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.3-PullbackMatrix | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-2.3.3-PreservesForm | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-2.3.3-SymplecticIffForm | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.3-SymplecticDet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.3-HamiltonDet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.4-Hessian | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.4-HessianSymmetry | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.4-HamiltonVariationalPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书W取值点裁定；固定初值真实流版本已有证明。 |
-| MD-2.3.4-MatrixCancellation | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.4-FormConstant | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.4-HamiltonSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.5-ChainRule | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.5-SymplecticComposition | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.5-SymplecticInverse | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.5-GlobalGroupPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书全球逆断言裁定；正确微分同胚群接口已有。 |
-| MD-2.3.6-SymplecticIntegrator | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.6-SymplecticEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.6-KickDifferential | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；完整步映射Fréchet导数与kick/drift组合的坐标整理。 |
-| MD-2.3.6-WedgeSelf | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.6-SymplecticEulerPreserves | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.7-Adjoint | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.7-FlowSelfAdjoint | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.7-BackwardEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.7-EulerAdjoint | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.3.7-AdjointSymplecticEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.3.7-AdjointInvolution | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.1-Splitting | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.4.1-FieldAdd | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.1-SplittingLocal | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.1-KineticFlow | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.4.1-PotentialFlow | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.4.1-SplitEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.1-VerletComposition | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.1-VerletSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.1-SymmetricComposition | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.1-SymmetricEven | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。 |
-| MD-2.4.2-CompositionSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.2-CompositionOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。 |
-| MD-2.4.3-HarmonicSplit | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.4.4-ImplicitLocal | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；参数化光滑逆函数定理、连续可逆导数邻域及局部有界光滑逆理论。 |
-| MD-2.4.4-BackwardEulerSolve | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.4.4-Newton | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-2.4.4-NewtonQuadratic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。 |
-| MD-2.4.4-FrozenNewton | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；沿凸球积分/均值范数界、保持邻域与迭代几何界。 |
-| MD-2.4.5-Conjugacy | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.4.5-ConjugateIterates | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.5-ConjugateLimits | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.5-EulerConjugacy | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-2.4.5-Processing | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.4.5-ProcessingIterates | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.5-ProcessingOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-2.4.5-EulerEffectiveOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际半kick Homeomorph处理器构造及完整Verlet全局二阶，局部共轭代数条目不能单独证明有效二阶。 |
-| MD-2.5.1-RK | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.5.1-RK4 | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.5.1-RK4Order | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；一般RK树阶条件/实际四阶Taylor展开及局部误差、稳定性、数值留域的全局阶桥接。 |
-| MD-2.5.1-ExplicitRK | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；已有证明仅系数条件不可能；普适必要性及实际RK反例构造尚缺，不能把系数lemma当完整结论。 |
-| MD-2.5.1-RKSymplectic | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；实际RK楔积充分性与不可约必要性理论。 |
-| MD-2.5.1-GaussFamily | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；大型Gauss配点构造、正交多项式根/对称性及偶数阶逆步理论；当前库无完整理论。 |
-| MD-2.5.1-Midpoint | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.5.1-MidpointProperties | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；实际中点隐式楔积、局部三阶余项及唯一可微求解接口。 |
-| MD-2.5.1-GaussTwo | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.5.1-GaussTwoOrder | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；大型Gauss2阶段局部五阶余项、光滑求解/稳定性及全局阶理论。 |
-| MD-2.5.2-PartitionedVerlet | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.5.2-PartitionedReduction | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；机械H两个实际偏导的坐标计算，随后三步关系消元。 |
-| MD-2.5.2-GeneralEuler | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.5.2-GeneralSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；隐式实际Jacobian/楔积抵消；混合Hessian和一般求解接口。 |
-| MD-2.5.2-GeneralVerletSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；一般隐式辛Euler的实际证明、伴随求解及半步组合等价；需要完整隐式映射理论。 |
-| MD-2.5.3-Newmark | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-2.5.3-NewmarkReduction | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书质量因子；旧已证版本是质量修正式，不能直接桥接。 |
-| MD-2.5.3-NewmarkDamping | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；线性振子实际隐式放大矩阵与行列式计算。 |
-| MD-2.5.3-NewmarkNotSymplectic | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | placeholder / incomplete；具体非线性势能全局C¹隐式求解反例与实际Jacobian非辛；相关interpolated family无公式登记定性排除。 |
-| MD-2.5.4-MultiTaylor | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.5.4-TIPotential | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.5.4-TIForce | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原书改势/力符号裁定。 |
-| MD-2.5.4-TIOrder | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；大型修正方程/处理器构造及四阶局部消项与全局阶理论。 |
-| MD-2.5.5-Beeman | DRAFT/原页已核 | 已编译 | PASS | 待网站审计 | definition / self-contained |
-| MD-2.5.5-BeemanOrder | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；先裁定Beeman阶约定/原书疑误；大型多步全局误差理论亦缺。Taylor与数值诊断不是Lean反例证明。 |
+| MD-2-HamiltonianODE | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2-Hamiltonian | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2-Euler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2-OneStep | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.1-Convergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.1-Order | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.1-Error | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.1-Thm2.1 | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.1.2-SecondDerivative | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
+| MD-2.1.2-Taylor2 | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.1.2-Taylor2Order | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；缺一般Taylor方法局部截断误差、数值留域与全局阶桥接；当前库仅一般one-step条件误差定理。 |
+| MD-2.2-VerletOrder | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；缺完整Verlet局部截断误差、稳定性及数值留域推导。 |
+| MD-2.2.1-Lagrangian | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.1-Admissible | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
+| MD-2.2.1-Action | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.1-Variation | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.1-FirstVariation | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；积分下求导及一致二阶Taylor余项。 |
+| MD-2.2.1-TaylorPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书疑误裁定；正确Taylor余项理论另缺。 |
+| MD-2.2.1-StationaryAction | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.1-Parts | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际作用量求导、连续线性泛函值积分分部与变分正则性理论。 |
+| MD-2.2.1-EulerLagrange | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；基本变分引理、积分分部及实际作用量的一阶求导。 |
+| MD-2.2.1-VariationalDerivativePrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
+| MD-2.2.1-StationaryNotMin | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；尚缺具体负动能作用量曲线反例及积分平方严格正证明。 |
+| MD-2.2.2-DiscretePath | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.2-DiscreteVelocity | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.2-DiscreteAction | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
+| MD-2.2.2-DiscreteStationaryPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
+| MD-2.2.2-DiscreteDerivative | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；有限节点替换对实际离散作用量的Fréchet求导。 |
+| MD-2.2.2-DiscreteVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际离散作用量导数及驻值与Störmer式等价。 |
+| MD-2.2.2-Stormer | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.2-VelocityVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.2-EliminateVelocity | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.2.2-MomentumVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.2-Leapfrog | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.2-LeapfrogInit | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.2-LeapfrogReconstruct | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.3-ErrorDifference | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.2.3-Consistency | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.3-Stability | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.3-ErrorRecursion | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.2.3-ErrorBound | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.2.3-ConsistencyConvergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.2.3-ScalarVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.3-VerletExpansion | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际标量复合力的三阶Taylor余项及代数归一。 |
+| MD-2.2.3-ExactExpansion | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；ODE导数升阶与四阶Taylor余项界。 |
+| MD-2.2.3-DefectPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书位置差疑误裁定及实际余项理论。 |
+| MD-2.2.3-VerletConsistency | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际三阶缺陷、κ连续性及统一余项常数。 |
+| MD-2.2.3-VerletStability | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际Verlet映射的1+hC Lipschitz界，可用半踢漂移组合逐坐标界证明。 |
+| MD-2.2.4-FirstIntegral | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.4-IntegralPreserved | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
+| MD-2.2.4-EnergyPreserved | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.2.4-AngularMomentum | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；短证明3次失败：within导数的tuple投影/Filter接口转换未完成；乘积求导抵消路线及日志已保留。 |
+| MD-2.2.4-IntegralMeanValue | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
+| MD-2.2.4-IntegralLipschitz | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
+| MD-2.2.4-IntegralErrorPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书1/2因子裁定；均值与轨迹误差组合。 |
+| MD-2.3.1-Divergence | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.1-Liouville | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.1-HamiltonDivergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.1-HamiltonVolume | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.1-VolumeChange | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
+| MD-2.3.1-VariationalPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书取值点裁定；正确固定初值版本库已有jointC²证明。 |
+| MD-2.3.1-DeterminantODE | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.1-DeterminantExponential | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；真实矩阵行列式导数与标量积分因子常值证明。 |
+| MD-2.3.1-FlowDet | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.1-LJOscillator | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.1-LJBoundedPeriodic | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；LJ能级闭曲线/非平衡周期轨道理论；能量守恒本身不足以自动得周期。 |
+| MD-2.3.2-LinearDivergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；线性流行列式指数公式及体积换元的必要/充分方向。 |
+| MD-2.3.2-LinearEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.2-EulerVolumePrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete |
+| MD-2.3.2-EulerVolumeCounterexample | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.2-AsymmetricEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.2-AsymmetricJacobian | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；隐式实际关系的求导、分母非零解导数及2×2矩阵整理。 |
+| MD-2.3.2-AsymmetricArea | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际隐式求导；若全局area保持还须单射局部域与换元。 |
+| MD-2.3.3-SymplecticMap | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.3-OneForm | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.3-Differential | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.3-CoordinateDifferentials | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.3-Wedge | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.3-SymplecticForm | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.3-FormSumWedges | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.3-GeneralTwoForm | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
+| MD-2.3.3-PullbackOne | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.3-PullbackTwo | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.3-PullbackMatrix | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
+| MD-2.3.3-PreservesForm | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
+| MD-2.3.3-SymplecticIffForm | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.3-SymplecticDet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.3-HamiltonDet | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.4-Hessian | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.4-HessianSymmetry | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.4-HamiltonVariationalPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书W取值点裁定；固定初值真实流版本已有证明。 |
+| MD-2.3.4-MatrixCancellation | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.4-FormConstant | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.4-HamiltonSymplectic | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.5-ChainRule | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.5-SymplecticComposition | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.5-SymplecticInverse | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.5-GlobalGroupPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书全球逆断言裁定；正确微分同胚群接口已有。 |
+| MD-2.3.6-SymplecticIntegrator | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.6-SymplecticEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.6-KickDifferential | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；完整步映射Fréchet导数与kick/drift组合的坐标整理。 |
+| MD-2.3.6-WedgeSelf | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.6-SymplecticEulerPreserves | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.7-Adjoint | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.7-FlowSelfAdjoint | DRAFT/原页已核 | 已编译 | PASS | NEEDS_HUMAN（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.7-BackwardEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.7-EulerAdjoint | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.7-AdjointSymplecticEuler | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.7-AdjointInvolution | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.1-Splitting | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.4.1-FieldAdd | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.1-SplittingLocal | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.1-KineticFlow | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.4.1-PotentialFlow | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.4.1-SplitEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.1-VerletComposition | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.1-VerletSymplectic | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.1-SymmetricComposition | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.1-SymmetricEven | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。 |
+| MD-2.4.2-CompositionSymplectic | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.2-CompositionOrder | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。 |
+| MD-2.4.3-HarmonicSplit | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.4.4-ImplicitLocal | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；参数化光滑逆函数定理、连续可逆导数邻域及局部有界光滑逆理论。 |
+| MD-2.4.4-BackwardEulerSolve | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.4.4-Newton | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
+| MD-2.4.4-NewtonQuadratic | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。 |
+| MD-2.4.4-FrozenNewton | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；沿凸球积分/均值范数界、保持邻域与迭代几何界。 |
+| MD-2.4.5-Conjugacy | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.4.5-ConjugateIterates | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.5-ConjugateLimits | DRAFT/原页已核 | 已编译 | PASS | NEEDS_HUMAN（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.5-EulerConjugacy | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
+| MD-2.4.5-Processing | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.4.5-ProcessingIterates | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.5-ProcessingOrder | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.5-EulerEffectiveOrder | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际半kick Homeomorph处理器构造及完整Verlet全局二阶，局部共轭代数条目不能单独证明有效二阶。 |
+| MD-2.5.1-RK | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.5.1-RK4 | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.5.1-RK4Order | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；一般RK树阶条件/实际四阶Taylor展开及局部误差、稳定性、数值留域的全局阶桥接。 |
+| MD-2.5.1-ExplicitRK | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；已有证明仅系数条件不可能；普适必要性及实际RK反例构造尚缺，不能把系数lemma当完整结论。 |
+| MD-2.5.1-RKSymplectic | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际RK楔积充分性与不可约必要性理论。 |
+| MD-2.5.1-GaussFamily | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；大型Gauss配点构造、正交多项式根/对称性及偶数阶逆步理论；当前库无完整理论。 |
+| MD-2.5.1-Midpoint | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.5.1-MidpointProperties | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际中点隐式楔积、局部三阶余项及唯一可微求解接口。 |
+| MD-2.5.1-GaussTwo | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.5.1-GaussTwoOrder | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；大型Gauss2阶段局部五阶余项、光滑求解/稳定性及全局阶理论。 |
+| MD-2.5.2-PartitionedVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.5.2-PartitionedReduction | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；机械H两个实际偏导的坐标计算，随后三步关系消元。 |
+| MD-2.5.2-GeneralEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.5.2-GeneralSymplectic | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；隐式实际Jacobian/楔积抵消；混合Hessian和一般求解接口。 |
+| MD-2.5.2-GeneralVerletSymplectic | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；一般隐式辛Euler的实际证明、伴随求解及半步组合等价；需要完整隐式映射理论。 |
+| MD-2.5.3-Newmark | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
+| MD-2.5.3-NewmarkReduction | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书质量因子；旧已证版本是质量修正式，不能直接桥接。 |
+| MD-2.5.3-NewmarkDamping | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；线性振子实际隐式放大矩阵与行列式计算。 |
+| MD-2.5.3-NewmarkNotSymplectic | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；具体非线性势能全局C¹隐式求解反例与实际Jacobian非辛；相关interpolated family无公式登记定性排除。 |
+| MD-2.5.4-MultiTaylor | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.5.4-TIPotential | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.5.4-TIForce | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书改势/力符号裁定。 |
+| MD-2.5.4-TIOrder | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；大型修正方程/处理器构造及四阶局部消项与全局阶理论。 |
+| MD-2.5.5-Beeman | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.5.5-BeemanOrder | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；先裁定Beeman阶约定/原书疑误；大型多步全局误差理论亦缺。Taylor与数值诊断不是Lean反例证明。 |
 
 ## 旧160条完整映射
 

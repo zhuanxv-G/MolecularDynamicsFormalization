@@ -21,7 +21,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺形式jet的Hamiltonian构造、逐阶匹配及实际截断ODE的统一余项；属于大型向后误差分析理论，保留sorry。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -54,7 +54,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -87,7 +87,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -122,7 +122,7 @@
         "MolecularDynamics.Chapter03Review.oscillatorEnergyFailure_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -157,7 +157,7 @@
         "MolecularDynamics.Chapter03Review.oscillatorShadowInvariant_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -191,7 +191,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -224,7 +224,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -260,7 +260,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -293,7 +293,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -326,7 +326,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -361,7 +361,7 @@
         "MolecularDynamics.hasDerivAt_textbookLieDerivative"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -396,7 +396,7 @@
         "MolecularDynamics.hasDerivAt_textbookLieDerivative_second"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -429,7 +429,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -462,7 +462,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -496,7 +496,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "任意阶Lie迭代正则性与实际Taylor一致余项桥接尚缺；非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -530,7 +530,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺实际流与高阶Lie Taylor系数的完整有限余项桥接；本地非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -563,7 +563,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -599,7 +599,7 @@
         "MolecularDynamics.textbookPoissonBracket_coordinates"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -635,7 +635,7 @@
         "MolecularDynamics.textbookPoissonBracket_linear_left"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -670,7 +670,7 @@
         "MolecularDynamics.textbookPoissonBracket_skew"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -705,7 +705,7 @@
         "MolecularDynamics.textbookPoissonBracket_self"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -740,7 +740,7 @@
         "MolecularDynamics.textbookPoissonBracket_jacobi"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -775,7 +775,7 @@
         "MolecularDynamics.hasDerivAt_textbookLieDerivative"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -810,7 +810,7 @@
         "MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -845,7 +845,7 @@
         "MolecularDynamics.hasDerivAt_textbookLieDerivative"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -880,7 +880,7 @@
         "MolecularDynamics.textbookHamiltonianLieDerivative_add"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -913,7 +913,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -948,7 +948,7 @@
         "MolecularDynamics.textbookFormalOperatorExponential_coeff"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -986,7 +986,7 @@
         "MolecularDynamics.textbookFormalOperatorProduct_coeff_three"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1021,7 +1021,7 @@
         "MolecularDynamics.textbookFormalOperatorDifference_coeff_two"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1056,7 +1056,7 @@
         "MolecularDynamics.textbookFormalOperatorDifference_coeff_three"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1091,7 +1091,7 @@
         "MolecularDynamics.textbookHamiltonianLieDerivative_commutator"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1125,7 +1125,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "印刷符号疑误待网站/导师裁定；本地FAIL不进入证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1161,7 +1161,7 @@
         "MolecularDynamics.textbookFormalModifiedExponential_matches_product"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1195,7 +1195,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺实际Hamiltonian截断匹配和统一ODE余项；符号/组合约定待审，本地非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1229,7 +1229,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺非交换formalLog的四阶有限系数计算桥接；完整BCH理论不建设，保留sorry。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1262,7 +1262,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1296,7 +1296,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺高阶Hamiltonian/ODE端点余项；非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1330,7 +1330,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺实际Hamiltonian向量场交换子到局部流交换及和场流的桥接；不搭完整交换流理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1363,7 +1363,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1397,7 +1397,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺完整BCH机械系数与实际截断ODE匹配；本地非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1430,7 +1430,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1463,7 +1463,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1498,7 +1498,7 @@
         "MolecularDynamics.Chapter03Review.verletVariants_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1531,7 +1531,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1565,7 +1565,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺完整BCH嵌套Poisson系数推导及实际流余项；非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1599,7 +1599,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺形式反步恒等式→formalLog奇性的完整桥接；不建设大型非交换formalLog理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1632,7 +1632,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1666,7 +1666,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "印刷不同步长交换断言待独立反例/导师裁定；非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1700,7 +1700,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺任意实非交换代数中形式指数负参数的完整逆元系数桥接；保留sorry，不搭大型形式指数理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1733,7 +1733,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1775,7 +1775,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1808,7 +1808,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1841,7 +1841,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1877,7 +1877,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1915,7 +1915,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺完整非交换BCH/奇性到实际局部余项改阶桥接；属大型理论，不建设。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1948,7 +1948,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -1983,7 +1983,7 @@
         "MolecularDynamics.Chapter03Review.yoshida4Structure_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2016,7 +2016,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2049,7 +2049,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2083,7 +2083,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "需实际机械Hamiltonian的坐标Poisson双括号/梯度接口桥接；当前不存在现成桥接，有限微分路线待处理。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2125,7 +2125,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2158,7 +2158,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2192,7 +2192,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "印刷漏项待裁定；非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2226,7 +2226,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2259,7 +2259,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2293,7 +2293,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺真实步长Taylor展开、系数极限及修正场ODE余项桥接；属于完整修正方程理论，保留sorry。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2326,7 +2326,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2361,7 +2361,7 @@
         "MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2395,7 +2395,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺Hamiltonian形式jet构造、全阶匹配与实际局部ODE统一余项；不建设大型BEA理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2430,7 +2430,7 @@
         "MolecularDynamics.exists_compact_C1_lipschitz_constant"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2463,7 +2463,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2497,7 +2497,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺形式jet的Hamiltonian构造与实际有限截断匹配/余项；大型BEA理论缺项。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2532,7 +2532,7 @@
         "MolecularDynamics.textbookHamiltonian_energy_const_on_Icc"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2567,7 +2567,7 @@
         "MolecularDynamics.oneStep_energy_telescoping"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2602,7 +2602,7 @@
         "MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2637,7 +2637,7 @@
         "MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2672,7 +2672,7 @@
         "MolecularDynamics.textbook_energy_drift_le_actual_defects"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2708,7 +2708,7 @@
         "需另证FiniteMatchingConstruction；本条仅条件化先验推论"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2743,7 +2743,7 @@
         "MolecularDynamics.energy_step_count_power_factor"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2777,7 +2777,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺全阶Hamiltonian构造与实际截断匹配；C∞的任意固定阶不推出统一解析界。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2811,7 +2811,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺解析Hamiltonian jet、Cauchy阶乘界和实际流统一余项；不建设大型BEA理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2845,7 +2845,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺整数最优截断与一致指数常数界；原文取整问题待审。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2878,7 +2878,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2916,7 +2916,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2950,7 +2950,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "非PASS不进入证明；连续流版本可以另桥接Lie–Poisson导数。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -2983,7 +2983,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3022,7 +3022,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺Ge–Marsden精确理论及局部全局资格；不建设大型理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3055,7 +3055,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3097,7 +3097,7 @@
         "MolecularDynamics.Chapter03Review.equalEulerIntegral_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3132,7 +3132,7 @@
         "MolecularDynamics.Chapter03Review.linearEulerIntegral_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3167,7 +3167,7 @@
         "MolecularDynamics.Chapter03Review.linearRKIntegral_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3200,7 +3200,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3240,7 +3240,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3273,7 +3273,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3306,7 +3306,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3341,7 +3341,7 @@
         "MolecularDynamics.Chapter03Review.projectionEnergy_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3376,7 +3376,7 @@
         "MolecularDynamics.Chapter03Review.kineticZero_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3409,7 +3409,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3443,7 +3443,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺实际流体积保持到开放盆不可能吸引零体积轨道的动力系统测度论桥接；不建设大型吸引子理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3476,7 +3476,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3515,7 +3515,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "完整C¹流可微性、变分及测度保持桥接仍缺；已存在jointC²特例不能替代本签名。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3549,7 +3549,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "待构造四维线性det=1非辛映射并桥接真实Jacobian；缺完整有限矩阵到坐标映射桥接。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3582,7 +3582,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3615,7 +3615,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3648,7 +3648,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3682,7 +3682,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "本地FAIL不进入证明；正确机械反转已有正式库证明，原展示式待裁定。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3716,7 +3716,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "字面FAIL不进入证明，等待网站与导师裁定。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3750,7 +3750,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "三条短证明路线失败，停止该条；保存证据见validation/short_search/ReversedTrajectory.json。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3793,7 +3793,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺C¹场ODE唯一性到全时间反向轨道一致的完整桥接；不建设新ODE唯一性理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3827,7 +3827,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "依赖尚未桥接的完整FlowReversal及实际流唯一性。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3860,7 +3860,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3893,7 +3893,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3926,7 +3926,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3960,7 +3960,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "本地非PASS不进入证明；条件化有限代数推论可另审。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -3995,7 +3995,7 @@
         "MolecularDynamics.Chapter03Review.rkAffine_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4029,7 +4029,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "字面非PASS不证明；正确分块运输另列。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4062,7 +4062,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4101,7 +4101,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticNotReversible.json。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4143,7 +4143,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4177,7 +4177,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4211,7 +4211,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺Hamiltonian矩阵复谱及转置相似性桥接；字面证明需审，不证明非PASS。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4245,7 +4245,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺辛矩阵非退化、逆转置相似及复谱桥接；不建设新的完整谱理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4279,7 +4279,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺有限矩阵可逆相似和共轭复特征向量运输桥接；不建设完整谱理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4314,7 +4314,7 @@
         "MolecularDynamics.textbook_conjugate_iterates"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4349,7 +4349,7 @@
         "MolecularDynamics.Chapter03Review.mechanicalReversal_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4383,7 +4383,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "原文阶数/稳定性性能的精确意义及处理器正则性待审；本地非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4417,7 +4417,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺非线性可逆光滑equivalence和Jacobian绝对det≠1的反例桥接；线性可逆矩阵不足以给本例。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4450,7 +4450,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4483,7 +4483,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4516,7 +4516,7 @@
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4554,7 +4554,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4588,7 +4588,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺有限事件gluedCollision索引稳定与各段ODE光滑性/一侧极限的完整桥接；不建设完整混合动力系统理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4621,7 +4621,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4654,7 +4654,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4688,7 +4688,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺碰撞事件稳定性与非光滑全局误差理论；不建设大型理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4721,7 +4721,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4755,7 +4755,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺实际碰撞步族的Taylor展开及一致O(h²)余项；本地非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4790,7 +4790,7 @@
         "MolecularDynamics.Chapter03Review.collisionDefectZero_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4824,7 +4824,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "字面FAIL不证明，等待网站/导师裁定。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4857,7 +4857,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4890,7 +4890,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4925,7 +4925,7 @@
         "MolecularDynamics.Chapter03Review.collisionQuartic_proved"
       ],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4958,7 +4958,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -4992,7 +4992,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺自适应碰撞事件定位稳定性与非光滑全局误差理论；不建设大型理论。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -5025,7 +5025,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "NEEDS_HUMAN（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -5059,7 +5059,7 @@
       "proof_status": "placeholder",
       "documented_priors": [],
       "missing": "缺混合冲量与碰撞稳定性全局误差理论；本地非PASS不证明。",
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -5092,7 +5092,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "网站PASS（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",
@@ -5125,7 +5125,7 @@
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
-      "website_audit": "待网站审计",
+      "website_audit": "FAIL（绑定版本 433a13ca6407）",
       "correspondence": [
         {
           "source": "原文完整数学对象和展示式",

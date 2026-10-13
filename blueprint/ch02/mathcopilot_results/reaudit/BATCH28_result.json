@@ -1,0 +1,46 @@
+{
+  "batch": "BATCH28",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "32d62f4d7de5e5fa9f93c3cf37db78cd0dd6680e180aeb2f3e25a34b9ad423b8",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.5.1-GaussTwo",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "教材 PDF 第112页（印刷第90页），Example 2.7、§2.5.2之前：The 4th order method (s = 2) has coefficients；紧接公式 b₁=b₂=1/2，A=[[1/4,1/4−√3/6],[1/4+√3/6,1/4]]。已读取该页文本并核对渲染图像。 本条保存完整系数，statement_latex 的原句和四个矩阵元素、权重均一致；原页未附该方法的独立证明，proof_latex=null 恰当。context_notation 关于阶理论的说明属于编者范围说明，不作为原书已证明四阶的证据。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.gaussTwoData",
+        "verdict": "PASS",
+        "explanation": "实际读取的 Blueprint/Ch02.lean 附件位于 /workspace/Ch02.lean，声明在1281–1282行。展开 Ch02_deps.txt:2911–2912 的 gaussTwoCoefficients：Fin 2 按0、1索引，A₀₀=A₁₁=1/4，A₀₁=1/4−Real.sqrt 3/6，A₁₀=1/4+Real.sqrt 3/6；第二分量为两个实数权重均等于1/2。矩阵行是阶段索引i，列是求和阶段索引j，与 rungeKuttaRelation:2900–2903一致。完整A和b忠实于印刷p.90/PDFp.112展示公式；四阶结论由本批独立GaussTwoOrder条目承担。无额外假设、无ERRATUM标记或系数勘误。此def自身没有sorry；数据正确与四阶证明是否完成分开判断。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.5.1-GaussTwoOrder",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "教材 PDF 第112页（印刷第90页），Example 2.7、§2.5.2之前：The 4th order method (s = 2) has coefficients；紧接公式 b₁=b₂=1/2，A=[[1/4,1/4−√3/6],[1/4+√3/6,1/4]]。已读取该页文本并核对渲染图像。 本条摘录该原句，完整系数由同批 GaussTwo 条目保存；这是明确的分条范围。原页未附独立证明，proof_latex=null 恰当。context_notation 的“全局4阶”作为编者对 order 的解释，不能代替对 Lean globalOrder 定义的核验。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.gaussTwoOrder",
+        "verdict": "FAIL",
+        "explanation": "签名审计：Ch02.lean:1286–1292按顺序全称量化n、f、G、γ、τ。展开deps:2816，Q n=Fin n→ℝ；deps:2911–2912给出正确Gauss矩阵。deps:2941–2945中solution要求在[0,τ]逐点满足HasDerivWithinAt γ (f(γ t))；compactTrajectory要求τ>0、f全域C⁶、该ODE关系及γ在[0,τ]连续，并不直接要求γ全域C⁶。连续轨迹在紧时间窗的像紧。deps:2900–2903的阶段变量是斜率Fᵢ，关系为Fᵢ=f(z+hΣⱼaᵢⱼFⱼ)，更新w=z+hΣᵢbᵢFᵢ。deps:2824–2826及1443、1460–1463展开结论：存在C>0和正整数ν₀，对所有ν≥ν₀，h=τ/ν、从γ(0)出发的G h迭代在k=0,…,ν的最大范数误差≤Ch⁴。这忠实表达固定正时间窗的至少四阶全局收敛，未将四阶误差用作前提。但[EXTRA]全域联合C⁶步族和∀h∈ℝ ∀z存在阶段解并非仅局部实际求解资格：它排除下面的光滑线性ODE，尽管该Gauss方法在充分小步长下定义并四阶收敛。因此作为原句的完整适用范围，该签名有不合理的全域加强，判FAIL；不声称该条件命题本身为假。C⁶正则性是可明示的保守充分条件而非最小必要条件；尤其全步长可解条件无需用于h→0结论。原文及本条无[ERRATUM?]，没有系数勘误依据。声明结尾为sorry，证明尚未完成，此事实独立于上述签名FAIL。",
+        "counterexample": "适用范围反例（不是满足全部Lean前提却否定结论的反例）：n=2，M=[[3,−√3],[√3,3]]，f(z)=Mz，τ=1，γ(t)=exp(tM)(1,0)。f与γ均光滑并满足compactTrajectory。两阶段Gauss在小步长有唯一解析求解映射。然而h=1、z=(1,0)时阶段状态Y满足(I₄−A⊗M)Y=(z,z)；精确符号计算系数矩阵秩2，增广矩阵秩3，故无解。等价消元必要条件为D(M)w=N(M)z，其中D=I−M/2+M²/12=0，N=I+M/2+M²/12=M；Mz=(3,√3)≠0。因此没有任何全域G能满足本签名的∀h z阶段可解前提，而原文的局部四阶断言适用于该ODE。",
+        "suggested_fix": "后续修订将全步长、全初值资格改为轨迹紧像的开邻域U和某δ>0上（|h|<δ、z∈U）实际求解的局部分支；要求G(0,z)=z、足够的局部联合正则性，并在这些h,z上满足原阶段关系。用局部唯一性/隐函数定理取得正确分支，并证明充分细网格的迭代留在U，保留当前最大网格误差O(h⁴)结论。准确标明全域C⁶是额外充分条件，避免把全步长可解性称作必要资格。本次只读，不修改声明或补证明。"
+      }
+    }
+  ]
+}

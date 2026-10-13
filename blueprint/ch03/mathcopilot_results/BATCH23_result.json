@@ -1,0 +1,157 @@
+[
+  {
+    "source_id": "MD-3.7-HardCoreDomain",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_OVERSTATES_SOURCE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.7-HardCoreDomain",
+        "kind": "definition",
+        "label": null,
+        "section": "3.7",
+        "printed_page": "132",
+        "pdf_page": "154",
+        "statement_latex": "We assume, as usual a Hamiltonian $H=p^TM^{-1}p/2+U(q)$ but we add the inequality constraint $\\|q_i-q_j\\|\\ge\\sigma_i+\\sigma_j$ where $\\sigma_i$, $i=1,\\ldots,N$ is a core radius. The condition $\\|q_i-q_j\\|=\\sigma_i+\\sigma_j$, some $i,j$ defines the constraint surface.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原书未显式写出 i≠j；不同粒子之间的硬核约束按物理语境理解为 i≠j，此为解释性补充，不能称原文明确。接触等号允许，不当重叠。σ作为半径通常非负，但原句未显式给出非负假设。"
+        ],
+        "issues": [
+          "context_notation 中“i≠j明确”误称原书显式条件；原页没有该条件。"
+        ],
+        "lean_decl": "MD.Ch03.hardCoreDomain",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "原文审校：将 i≠j 标为物理语境推断，保留原书公式，不静默插入原文。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "context_notation 中“i≠j明确”误称原书显式条件；原页没有该条件。"
+      ],
+      "evidence": [
+        "PDF154/印刷132：不等式为 ‖q_i−q_j‖≥σ_i+σ_j，后句为“some i,j”；两句均未显式写 i≠j。Hamiltonian、接触等号及页码核对一致；无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.hardCoreDomain",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt：Notation.lean 的 Position d=EuclideanSpace ℝ (Fin d)，Chapter03/ReviewDefinitions.lean 的 hardCoreDomain={q | ∀ i j, i≠j → σ i+σ j≤‖q i−q j‖}。对象为 N 个 d 维欧氏位置，量词涵盖所有不同粒子对，等号允许接触。排除自身是合理物理解读，否则正半径自身约束不可能成立；σ 的非负性是物理参数资格而非此集合公式成立的必要条件。该定义刻画域，不声称定义 Hamiltonian 或独立刻画其边界；原书周围的 H 与接触面说明作为背景保留。无 [ERRATUM?]；定义无 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.7-ElasticReflection",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF154/印刷132：Newtonian paths、elastic collision、p:=p+αu_⊥ 及能量守恒参数说明均一致；无独立证明。PDF156/印刷134：质量为1的障碍特例给出 α=−2(u_⊥·P̄)/(u_⊥·u_⊥)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.elasticReflection",
+      "verdict": "PASS",
+      "explanation": "展开 Position n 为欧氏空间；elasticCoefficient=-2(Σ_i u_i p_i/m_i)/(Σ_i u_i²/m_i)，elasticReflection=p+elasticCoefficient •u。这是固定位置时沿法向的质量度量弹性反射；坐标可表示完整配置动量。能量方程展开为 α(2T+αS)=0，定义选取反射分支 −2T/S，而非恒等分支。[EXTRA] 是合理的弹性碰撞分支选择；正质量和非零法向在后条守恒定理中给出。定义本身可对任意 u、m 总定义，不应据此宣称非法参数也代表物理碰撞；其类型未证明 u 是某接触面的法向，该对应是调用语境。原文运动与碰撞叙述是此局部更新定义的背景，未将该定义误作完整动力学定理。无 [ERRATUM?]；定义无 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.7-ElasticEnergy",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF154/印刷132：“α is a parameter chosen to maintain the conservation of energy.”逐字一致；无独立证明，页码一致。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.elasticEnergy",
+      "verdict": "PASS",
+      "explanation": "展开 positiveMass=∀ i,0<m_i，kinetic=(Σ_i p_i²/m_i)/2，elasticReflection 与 elasticCoefficient 如前条，Position n 为欧氏坐标。量词 n,m,u,p 后跟正质量与 u≠0；它们使 S=Σ u_i²/m_i>0，是一般质量反射公式的合理非退化资格。结论第一项是 K 守恒；碰撞位置固定使 U 不变，因而对应原文总能量守恒。第二项 T_after=−T_before 是同一反射公式的有效加强，不是额外假设；可直接由 T+(-2T/S)S=−T 得出。此加强不缩减对象或原结论。无 [ERRATUM?]。Ch03.lean 此项含具体证明而非 sorry；本次仅审签名语义，未编译验证证明。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.7-CollisionComposition",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NOTATION_TRANSCRIPTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.7-CollisionComposition",
+        "kind": "definition",
+        "label": null,
+        "section": "3.7",
+        "printed_page": "132–133",
+        "pdf_page": "154–155",
+        "statement_latex": "Let $\\mathcal R_c$ denote the action of the collision operator on the vector of positions and momenta. Then we can write the evolution formally as\n\\[\\mathcal F_\\tau^{\\mathrm{h.s.}}(q,p)=\\mathcal G_{\\Delta\\tau_r}\\circ\\mathcal R_c\\circ\\mathcal G_{\\Delta\\tau_{r-1}}\\cdots\\circ\\mathcal R_c\\circ\\mathcal G_{\\Delta\\tau_0}\\]\nwhere $\\Delta\\tau_1,\\Delta\\tau_2,\\ldots,\\Delta\\tau_{r-1}$ are the times between collisions, $\\Delta\\tau_0$ is the time until the first collision, and $\\Delta\\tau_r$ is the time between the last collision and $\\tau$. Here $\\mathcal G_t$ is the flow map of the smooth system (Hamiltonian $H$).",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "有限事件序列，实际右到左流/反射复合；不宣称任意多重或无限碰撞解存在唯一。"
+        ],
+        "issues": [
+          "原页碰撞算子记号为花体 ℛ_c，JSON 将其转录为普通 R_c。"
+        ],
+        "lean_decl": "MD.Ch03.collisionComposition",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "将 statement_latex 中碰撞算子统一恢复为原书花体 \\mathcal R_c；其他原文内容保留。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原页碰撞算子记号为花体 ℛ_c，JSON 将其转录为普通 R_c。"
+      ],
+      "evidence": [
+        "PDF154/印刷132：Let ℛ_c denote…及复合公式两处均为花体 ℛ_c。PDF155/印刷133：Δτ_0、Δτ_r 与中间间隔的说明、G_t 的定义核对一致；无独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.collisionComposition",
+      "verdict": "PASS",
+      "explanation": "展开 collisionComposition：空表为 id；单元素 [t] 为 G t；t::u::ts 为 G t∘Rc∘collisionComposition(u::ts)。因此列表 [Δτ_r,…,Δτ_0] 精确展开为原书从右到左作用的复合。列表须按从最后间隔到最初间隔的顺序传入；若按时间顺序传入须先 reverse。E、G、Rc 为任意类型及函数，是复合公式的合理抽象，不声称这些任意函数均实现物理流；有限列表对应有限事件表达，无存在唯一性或无限碰撞承诺。空表的 id 是额外总定义约定，不改变原式非空表情形。无 [EXTRA]/[ERRATUM?]；定义无 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.7-CollisionRegularity",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF155/印刷133：完整原句“The trajectory is thus piecewise smooth with continuous configurational path and momenta exhibiting finite jump discontinuities.”一致；页码及无独立证明记录一致。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.collisionRegularity",
+      "verdict": "FAIL",
+      "explanation": "已展开全部所用定义：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 坐标为 m_i⁻¹p_i；mechanicalField=(invMass m p,F q)；solution f γ a b 为闭区间每点 HasDerivWithinAt γ (f(γ t)) (Icc a b) t。concatenatedCollisionSegments 要求 ν+1 个严格递增区间上的实际 ODE 解，内部节点 g(q_left)=0、q_right=q_left、p_right=p_left−2(Σ grad(g)_i p_i/m_i)/(Σ grad(g)_i²/m_i) •grad(g)；grad g q 的坐标是 fderiv ℝ g q 在 Pi.single i 1 上的值。gluedCollision 选 times j≤t 的 j∈range(ν+1) 的最大值作为段索引。正质量及 F 无限可微、有限隔离事件、位置匹配均合理且未假设最终连续性结论。但 g 没有可微性、非零法向、入射资格、区间非穿透条件；fderiv 对不可微函数为零的总定义不能代替真实法向。现条件可把完全连续的零运动标为碰撞，故 [EXTRA] 宣称“真实法向动量跳跃”不成立。结论显式给出位置连续、动量内部光滑与有限单侧极限，但未要求两侧动量不同，未显式给出整个轨迹/位置分段光滑。ODE 可推出后者，不能据此说该子句已经写入签名。若将“jump discontinuities”仅理解为允许可去的有限跳跃，则单侧极限部分合理，但当前注释仍超出实际条件。此 FAIL 是原文资格及结论子句不完整，并非声称现有 Lean 命题为假。无 [ERRATUM?]；该定理证明为 sorry，独立于签名判定。",
+      "counterexample": "取 n=1，m₀=1，F≡0，g≡0，times j=j，ν=1，segments j t=(0,0)。各段满足实际 ODE，g(left.q)=0、位置匹配，grad g=0，Lean 中 0/0=0 故反射等式也满足。gluedCollision 恒为(0,0)，在指定碰撞时刻1动量两侧均为0，没有非零法向或真实跳跃。这反驳条件足以表达“真实法向动量跳跃”，不反驳较弱的连续/单侧极限命题。",
+      "suggested_fix": "将结论内部光滑项改为完整 gluedCollision（或同时给 q、p）的 ContDiffAt。若节点均为真实碰撞，在拼接条件中加入接触附近 g 可微（例如 ContDiff ℝ 1 g）、非零 grad g、严格入射 Σ_i grad(g)_i p_i/m_i<0，及各段 0≤g(q(t))；据此证明各碰撞处有限两侧动量极限不同。若希望允许掠碰/零跳跃，明确声明只是有限潜在跳跃并修正 [EXTRA] 注释，另设真实碰撞版。"
+    }
+  }
+]

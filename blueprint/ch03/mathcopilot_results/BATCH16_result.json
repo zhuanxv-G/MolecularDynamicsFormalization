@@ -1,0 +1,138 @@
+[
+  {
+    "source_id": "MD-3.5-ProjectionEnergy",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第146页／印刷124页：(3.13)为 γ=((E−Ū)/K̄)^{1/2}，其下定义 Ū=U(Q̄)、K̄=P̄ᵀM⁻¹P̄/2。",
+        "同页第一正文段 “We also must assume” 起至 “are satisfied.” 止；E−Ū≥0、K̄+Ū=Ē≈E、E−Ū≈K̄≥0及全部所引文字一致。PDF第145页／印刷123页(3.12)对应 γ²K̄+Ū=E。",
+        "本段未给独立证明；context_notation 正确区分资格与经验动机。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.projectionEnergy",
+      "verdict": "PASS",
+      "explanation": "展开 Ch03.lean:1005–1008 及 Ch03_deps.txt:3613–3614：projectionConstraint E K U γ 为 γ²K+U=E，projectionFactor 为 sqrt((E−U)/K)。全称 E,K,U 后依次要求 K>0、U≤E，再断言该正平方根满足能量约束，量词和公式正确。K、U对应一步未校正的带横线动能、势能，不是时间平均。K>0排除原文紧邻的零动能障碍，U≤E正是本段条件；都是合理且必要的投影适用资格，未从自由度数量推导。原文的 likely、may suppose 和约等式仅是经验动机，不能作为严格蕴涵；原文保留，不将其静默改写为定理。签名 PASS 限于 context_notation 明示的投影能量数学核心，并不证明大系统必然满足资格。该声明调用 ReviewProofs 的 projectionEnergy_proved；依赖4701–4709所示证明用非负性、sqrt平方和代数，无本条 sorry。未编译工程。无 [ERRATUM?] 标注。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.5-KineticZero",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第146页／印刷124页第一正文段，从 “If, in the harmonic oscillator” 到 “extremely unlikely.”；p̄_{n+1}、γ、K̄及文字均一致。",
+        "同页(3.13)分母为K̄；原文关于零动能的说明不是独立完整证明，概率措辞为定性评述。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.kineticZero",
+      "verdict": "PASS",
+      "explanation": "展开依赖 Notation.lean:844：Position n=EuclideanSpace ℝ (Fin n)，零向量即每个动量分量为零；ReviewDefinitions 中 positiveMass m=∀i,0<m i（2948），kinetic m p=(∑i,p i²/m i)/2（3633）。全称有限维数、质量、动量，在所有质量严格正的前提下给出 K=0 当且仅当全部分量为零，忠实且比原文 only zero if 的方向补充了立即成立的逆向。正质量是物理模型的合理资格；若质量为零，Lean 全除法会使非零动量项也为零，故不能删去该条件。维数不需很大，n=0 的空和与唯一零向量也一致。context_notation 已明确本条只形式化此零动能判据：extremely unlikely 没有概率空间、分布或概率界，不作定量断言；γ在物理公式中分母为零不可用也没有被 Lean 全除法冒充为合法。若要求覆盖所引段落每句，须另设部分定义域资格，但在附件明示数学范围内签名 PASS。调用 kineticZero_proved；依赖4785–4800为非负有限和逐项归零证明，无本条 sorry，未编译。无 [ERRATUM?]。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.5-EnergyProjectionRelation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第146页／印刷124页第二正文段，从 “There are many alternative projection methods” 起到 “maintain the constraint).” 止，展示式 H(Q,P)=E，参数／Lagrange multiplier文字均一致。",
+        "未给独立证明；能量关系不保证求解器存在或唯一，context_notation无误。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.energyProjectionRelation",
+      "verdict": "PASS",
+      "explanation": "展开 Chapter02Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n（依赖2816–2817），两个分量分别作为位置Q、动量P。Ch03.lean:1023 的 energyProjectionRelation H E z 直接为 H z=E，故对任意 H、E 和候选相点表达原页 H(Q,P)=E，未改变对象、引入额外假设或宣称可解/唯一。原文参数或拉格朗日乘子是生成候选Q的方法说明，不是本能量水平关系必须量化的额外数学条件；本定义可对 z=(Q(λ),P(λ)) 逐个代入，但本身没有形式化求解算法。context_notation 的存在性、唯一性、几何性质不由定义保证说明准确。定义无 sorry；无需证明。无 [EXTRA] 或 [ERRATUM?]。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.5-NoHamiltonianAttractor",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_ERROR"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.5-NoHamiltonianAttractor",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.5",
+        "printed_page": "126",
+        "pdf_page": "148",
+        "statement_latex": "In the first phase, the discrete trajectory appears to be filling in the correct region and without any evidence of nonphysical behavior. The performance is very similar to a Verlet method without projection during this period. In the second phase the system begins to move toward a limit cycle, i.e. an attractive periodic orbit. The presence of such limit cycles is impossible in a Hamiltonian system, thus it is evident that a nonphysical artefact has been introduced by the projection method.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          "statement_latex 将原书 a nonphysical artefact 转录为 an nonphysical artefact；需恢复 a，非原书勘误。"
+        ],
+        "lean_decl": "MD.Ch03.noHamiltonianAttractor",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "明确C²Hamiltonian的全时间真实流、紧零体积周期轨道、开放正有限体积吸引盆；不只给任意一条轨道。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "field": "statement_latex",
+            "before": "an nonphysical artefact",
+            "after": "a nonphysical artefact",
+            "reason": "对照PDF第148页／印刷126页恢复原文。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "statement_latex 将原书 a nonphysical artefact 转录为 an nonphysical artefact；需恢复 a，非原书勘误。"
+      ],
+      "evidence": [
+        "PDF第148页／印刷126页 Fig.3.13 讨论段：“In the first phase” 至 “projection method.”，原文为 “a nonphysical artefact”，附件转录为 “an nonphysical artefact”。",
+        "“attractive periodic orbit” 和 “impossible in a Hamiltonian system” 原文确有；并非原书拼写疑误。该页无独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.noHamiltonianAttractor",
+      "verdict": "PASS",
+      "explanation": "展开依赖 SymplecticForm.lean:33,39–40：SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ，前后两块为位置和动量；textbookJ=fromBlocks 0 1 (−1) 0。SplittingError.lean:1921–1925 的 textbookHamiltonianVectorField H z=textbookJ *ᵥ (i↦fderiv ℝ H z (Pi.single i 1))，确为(∂H/∂p,−∂H/∂q)，不是名称相似的任意向量场。量词依次为 n,H,全时间流Φ,目标orbit,盆B；C²、单位初值、流群律和每点每时刻真实哈密顿导数保证真实完整光滑哈密顿流。结论否认盆内所有点到目标集距离随 t→+∞ 趋零。紧、非空、零体积目标与开放正有限体积盆使“吸引”有明确相空间含义，体积保持排除这一结论；只观察一条渐近轨道不足以表示吸引周期轨道。签名没有周期性或不变性条件，因此实际是更强的“无紧零体积吸引集”陈述，涵盖原文周期轨道，无须为此增加周期性假设。有限体积盆可由任何非空开放吸引盆截取有界开放子集，合理；C²和完整流是明示的适用范围，不是原书原句逐字所列条件。该定理不形式化 Fig.3.13 的三阶段数值观察，仅形式化其哈密顿系统无吸引极限环的数学判断。未见错误或 [ERRATUM?]。签名 PASS 与证明完成度分开：Ch03.lean:1035–1036 的证明为 sorry，不能称已获 Lean 验证的证明。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.5-LinearContinuousIntegral",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF第145页／印刷123页 “Generalizing this slightly” 段；展示式 ż=f(z)、b·f(z)≡0，随后 I(z)=b·z is a first integral。",
+        "本条在 first integral. 处截止，后续 Euler/其他数值格式保持性质属邻接内容；页码与context_notation一致，无独立完整证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.linearContinuousIntegral",
+      "verdict": "PASS",
+      "explanation": "展开依赖2816的 Q n=Fin n→ℝ，b为实有限向量，∑i b i*f z i 正是 b·f(z)。量词先全称 n,b,f,轨道γ，再假设∀z 的恒零点积和∀t 的真实轨道导数γ′(t)=f(γ(t))，最终对每个实t断言 b·γ(t)=b·γ(0)。这给出连续轨道上的完整 first integral，而不是仅 Euler 一步或某个离散格式。无需f额外光滑性：已有每时刻可微解和零点积，复合线性函数导数恒零即可。全时间轨道条件明确且合理，未断言所有f均有全局解；原文任何连通局部解区间上的版本是相应局部推广，本签名取已声明的全时间范围。所有数学结论子句在此范围内保留；相邻 Euler/RK 保持性质不属本条。Ch03.lean:1043–1049 所示证明以有限和求导及零导数推出常数，无本条 sorry；本次只读审计未编译工程。无 [ERRATUM?]。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

@@ -1,0 +1,314 @@
+{
+  "batch": "BATCH26",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "e39af82a9c571f5d728ec7c18046f5fdf0a9abd7f21d787625b3bf0f54e11f2f",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.5-Conjugacy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第110页的渲染图（印刷第88页，§2.4.5）；页码对应关系110=88+22正确。",
+          "首段定义式 A=χ⁻¹∘B∘χ 与页脚注7的连续双射及连续逆定义均一致；proof_latex=null符合无独立证明的原页。context_notation对Homeomorph的描述与原定义一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_conjugateMap",
+        "verdict": "PASS",
+        "explanation": "Ch02.lean:1114 的正文为 χ.symm ∘ B ∘ χ。E 是实赋范空间，其拓扑已由实例给定；χ:E≃ₜE 包含双逆律及正逆连续性。构造函数明确给出原文共轭关系的右端，关系本身可由 ∃χ, A=bp_conjugateMap χ B 表示；作为此定义的构造型编码可以接受。依赖 ProcessedMethods.lean 的 textbookConjugateMap（合集:1652）正文完全相同，不凭名称推断。无额外动力学假设，无[ERRATUM?]；定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-ConjugateIterates",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "FORMULA_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.5-ConjugateIterates",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.5",
+          "printed_page": "88",
+          "pdf_page": "110",
+          "statement_latex": "Conjugate maps have the property that their iterates are also conjugate, since\n\\[A^n=(\\chi^{-1}\\circ B\\circ\\chi)^n=(\\chi^{-1}\\circ B\\circ\\chi)\\circ(\\chi^{-1}\\circ B\\circ\\chi)\\circ\\cdots\\circ(\\chi^{-1}\\circ B\\circ\\chi)=\\chi^{-1}\\circ B^n\\circ\\chi.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.conjugateIterates",
+          "reusable_proofs": [
+            "MolecularDynamics.textbook_conjugate_iterates"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "展示公式最后一项遗漏χ⁻¹与Bⁿ之间的复合符号∘；原页明确有∘。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第110页的渲染图（印刷第88页，§2.4.5）；页码对应关系110=88+22正确。",
+          "原页三行迭代展开的末行是 =χ⁻¹∘Bⁿ∘χ。展示式本身说明消去相邻χ∘χ⁻¹；无独立proof_latex。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.conjugateIterates",
+        "verdict": "PASS",
+        "explanation": "ProcessedMethods.lean 的 textbookConjugateMap（合集:1652）展开为 χ⁻¹∘B∘χ，非另一个抽象谓词。签名先给χ、A、B及hA，再对任意n:ℕ断言 A^[n]=χ⁻¹∘B^[n]∘χ；函数等式涵盖所有初值。n=0 是合法的加强，正整数情形完整保留；不需A或B连续。库证明使用双逆律逐次消去中间χ，匹配原文展示式。无[EXTRA]/[ERRATUM?]；本地与引用定理均无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-ConjugateLimits",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第110页的渲染图（印刷第88页，§2.4.5）；页码对应关系110=88+22正确。",
+          "原页明确写“for all initial points z₀”，极限z*统一给定；该全称条件不是对单一初值的收敛。JSON句子及箭头、极限正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.conjugateLimits",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "展开 textbookConjugateMap 后，签名的具体收敛命题忠实：先固定共同极限zStar，再假设∀z，B^[k] z→zStar，最后∀z，A^[k] z→χ⁻¹zStar。B轨道应从χ z出发；全称hB使这一换初值合法。ProcessedMethods.lean 的 textbook_conjugate_iterates_tendsto_iff（合集:1672附近）确实给对应初值和对应极限的双向收敛，并利用χ及χ⁻¹的连续性。所有实际用到的项目定义已找到，缺的不是库定义。需要数学判断的原文问题是 statement_scope 中“equivalent stability properties under iteration”是否只指随后给出的全局共同极限例子，还是还要求一般Lyapunov稳定性、吸引性等性质的双向等价；签名仅明确形式化随后例子的单向结论，没有这些一般稳定性谓词。若来源范围只限该例子可判PASS；若包含一般稳定性断言则缺条款。无[ERRATUM?]；本地与所引收敛定理均无sorry。",
+        "counterexample": null,
+        "suggested_fix": "明确原文“equivalent stability properties”的数学范围；若包含一般稳定性，给出所需稳定性定义并添加对应点处的双向等价；若只形式化全局共同极限例子，明确缩小statement_scope。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-EulerConjugacy",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_NOT_SOURCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.5-EulerConjugacy",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.5",
+          "printed_page": "88",
+          "pdf_page": "110",
+          "statement_latex": "As an illustration, the Symplectic Euler method turns out to be conjugate to the Verlet method (see Exercise 12).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Symplectic Euler与Verlet指本章机械Hamilton系统的相应一步映射；原页将共轭的证明指向Exercise 12，未在此给出具体χ_h。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.eulerConjugacy",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation的半步kick和另列有效二阶缺项属于形式化说明，不是本条原页的上下文记号。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第110页的渲染图（印刷第88页，§2.4.5）；页码对应关系110=88+22正确。",
+          "原页“As an illustration”句逐字一致，并指向Exercise 12；此页没有半步kick的共轭展示式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.eulerConjugacy",
+        "verdict": "FAIL",
+        "explanation": "已展开 SymplecticEuler.lean 的 F_i(q)=−(fderiv ℝ U q)(e_i)、K_a(q,p)=(q,p+aF(q))、D_h(q,p)=(q+h m⁻¹p,p)，Euler=D_h∘K_h；ReviewDefinitions.lean 的 Verlet=K_{h/2}∘D_h∘K_{h/2}。故签名 K_{h/2}∘Euler∘K_{−h/2}=Verlet 的方向和系数正确，kick逆律在库中也有证明。问题是原文共轭要求Homeomorph，而签名对任意U断言纯函数等式；库 textbookMomentumKickEquiv（合集:788）只构造Equiv.Perm，不包含连续性。不能由函数等式和双射推出拓扑共轭。零质量的总化逆也被允许，虽代数式仍成立，但不代表原机械质量条件。无[ERRATUM?]；此等式的本地证明无sorry，签名缺口不由证明补足。",
+        "counterexample": "取n=1,m=1,h=2，U(x)=x² sin(1/x)（x≠0），U(0)=0。U处处可微，但U′(0)=0且U′(x)=2x sin(1/x)−cos(1/x)在0不连续。故F=−U′不连续，K_{h/2}(x,0)=(x,F(x))不连续，不能作为Homeomorph。这反驳把签名中的该kick当作原文要求的共轭见证；不反驳代数恒等式本身。",
+        "suggested_fix": "保留代数恒等式为辅助引理；为完整共轭声明增加Continuous(textbookPotentialForce U)或合理充分条件ContDiff ℝ 2 U，并显式构造χ_h=K_{−h/2}的Homeomorph、χ_h⁻¹=K_{h/2}，断言Verlet=χ_h⁻¹∘Euler∘χ_h。机械语义下同时记录正质量。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-Processing",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TEXT_MISMATCH",
+          "CONTEXT_NOTATION_NOT_SOURCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.5-Processing",
+          "kind": "definition",
+          "label": null,
+          "section": "2.4.5",
+          "printed_page": "88",
+          "pdf_page": "110",
+          "statement_latex": "Let us suppose that we have such a conjugacy between two numerical methods $\\mathcal G_h$ and $\\tilde{\\mathcal G}_h$, that is\n\\[\\mathcal G_h=\\chi_h^{-1}\\circ\\tilde{\\mathcal G}_h\\circ\\chi_h,\\]\ndefined in such a way that $\\mathcal G_h$ has order $r$ and $\\tilde{\\mathcal G}_h$ has order $s$ where $s<r$. Then, given an initial condition $\\boldsymbol z_0$, we first modify (“pre-process”) this to $\\tilde{\\boldsymbol z}_0=\\chi_h(\\boldsymbol z_0)$, then take multiple steps with the method $\\tilde{\\mathcal G}_h$, and finally transform (“post-process”) the end result by $\\chi_h^{-1}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "𝒢_h=χ_h⁻¹∘𝒢̃_h∘χ_h；𝒢_h具有r阶，𝒢̃_h具有s阶且s<r；预处理初值为z̃₀=χ_h(z₀)，最后以后处理χ_h⁻¹变换最终结果。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.bp_processedIterate",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原文是“has order s where s < r”，并仅说后处理“the end result”；JSON改成逐个所得点，与逐字审校要求不符。",
+          "原context_notation以“外部资格”替代原文明确给出的r、s与s<r条件，应保留来源条件。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第110页的渲染图（印刷第88页，§2.4.5）；页码对应关系110=88+22正确。",
+          "原页最后一段共轭展示式、r与s where s<r、pre-process初值以及post-process the end result。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_processedIterate",
+        "verdict": "FAIL",
+        "explanation": "oneStepIterate（OneStepConvergence.lean，合集:1443）正文为(B h)^[n] z₀；故bp_processedIterate实际是χ_h⁻¹((B_h)^[n](χ_h z₀))，正确保留一次预处理、n步迭代、一次后处理，包括n=0。χ_h为实际Homeomorph，满足原共轭变换要求。但本条statement_scope覆盖高阶G_h、低阶B_h及G_h=χ_h⁻¹∘B_h∘χ_h、G阶r、B阶s和s<r，签名完全没有G/r/s及资格条件。任意χ/B均可输入的辅助算法定义没有表达这整段定义的全部条件，context_notation不能替代Lean假设。无[ERRATUM?]；定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": "保留辅助算法定义，添加完整处理方法关系或结构，记录G的真实共轭、G阶r、B阶s及s<r；或明确将来源范围限为预处理/迭代/后处理算法表达式。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-ProcessingIterates",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TEXT_MISMATCH",
+          "CONTEXT_SCOPE_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.5-ProcessingIterates",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.5",
+          "printed_page": "88",
+          "pdf_page": "110",
+          "statement_latex": "The resulting approximation will be of order $r$ even though all timestepping was performed using a lower order method.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "此句承接上段假设：高阶方法𝒢_h阶r，低阶方法𝒢̃_h阶s<r，两者经χ_h共轭；前后处理后的近似具有r阶。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.processingIterates",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原文是“even though all timestepping was performed”，不是JSON中的“the timestepping is performed”。",
+          "“最大误差及阶结论下一项”是任务拆分说明，不能替代本条所引原文的阶结论。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第110页的渲染图（印刷第88页，§2.4.5）；页码对应关系110=88+22正确。",
+          "原页末段“The resulting approximation will be of order r even though all timestepping was performed using a lower order method.”"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.processingIterates",
+        "verdict": "FAIL",
+        "explanation": "textbookProcessedMethod展开为χ_h⁻¹∘B_h∘χ_h；textbookProcessedIterate展开为χ_h⁻¹((B_h)^[n](χ_h z₀))；oneStepIterate G h z₀ n=(G_h)^[n]z₀。hG确实是对每个h的真实共轭，所以结论是正确的精确迭代恒等式。可是本条所引原句的核心结论为r阶，签名没有r、阶假设或误差/阶结论，也没有低阶s<r资格。这是辅助引理而不是所引完整阶断言；相邻processingOrder不会成为本声明的结论。无[EXTRA]/[ERRATUM?]；本地及引用证明无sorry。",
+        "counterexample": null,
+        "suggested_fix": "将该条映射为辅助迭代恒等式并缩小来源范围，或在签名中加入G阶r、B阶s及s<r，结论明确给出processed算法的r阶误差界。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-ProcessingOrder",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TEXT_MISMATCH",
+          "CONTEXT_NOTATION_NOT_SOURCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.5-ProcessingOrder",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.5",
+          "printed_page": "88",
+          "pdf_page": "110",
+          "statement_latex": "The resulting approximation will be of order $r$ even though all timestepping was performed using a lower order method.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "承接𝒢_h阶r、𝒢̃_h阶s且s<r及𝒢_h=χ_h⁻¹∘𝒢̃_h∘χ_h；r阶是已给的高阶方法的精度，后处理恢复该精度。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.processingOrder",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy"
+          ],
+          "extra_assumptions": [
+            "r自然数有限时间窗误差界；χh为实际Homeomorph。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原文为“all timestepping was performed”，应逐字保留。",
+          "最大误差的精确转移与避免循环假设属于形式化分析；原页上下文还明确含低阶方法s<r。"
+        ],
+        "evidence": [
+          "已查看教材 PDF 第110页的渲染图（印刷第88页，§2.4.5）；页码对应关系110=88+22正确。",
+          "原页末段阶结论承接前面的高阶r及低阶s<r资格条件；此页未另给误差公式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.processingOrder",
+        "verdict": "FAIL",
+        "explanation": "已展开两个最大误差：oneStepMaxError=max_{0≤k≤ν}‖(G_h)^[k](γ(0))−γ(kh)‖；textbookProcessedMaxError=max_{0≤k≤ν}‖χ_h⁻¹((B_h)^[k](χ_h γ(0)))−γ(kh)‖，均由range(ν+1)的非空有限最大值实现。初值、端点及物理时间均正确，hG使两误差逐项相同；先假设G的r阶界再转移，不是循环假设processed误差。自然数r和有限窗网格是合理精度编码，Homeomorph来自原共轭要求，并非多余额外条件。签名的误差转移作为更一般引理成立，但完整来源还含B阶s<r的低阶资格，签名没有s或该条件，不能完整表示“using a lower order method”；此外τ任意，τ=0时误差界恒为零而不能见证正时间窗上的精度。因此严格按本条完整来源范围判FAIL，非误差定义错误。无[ERRATUM?]；本地及引用等式转移证明无sorry。",
+        "counterexample": "取τ=0，χ_h=id，B_h=G_h=id；任意γ及任意r，所有网格点均为0，两个最大误差恒为0，horder和结论自动成立。签名因而不要求正时间窗，也不要求存在低阶s<r的方法；这是完整数值阶资格缺失的见证，并非转移恒等式的反例。",
+        "suggested_fix": "保留一般误差转移引理；完整来源对应声明增加τ>0及B具有阶s、s<r的资格，明确阶是至少r的有限时间窗O(h^r)界。若仅审计一般误差转移，则明确缩小来源范围，不声称签名表达低阶资格。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-EulerEffectiveOrder",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已查看教材 PDF 第110页的渲染图（印刷第88页，§2.4.5）；页码对应关系110=88+22正确。",
+          "原页中段effective order的定义句与“would be two”逐字吻合；此页没有另给证明，proof_latex=null正确。[EXTRA]被明示为形式化增补而非原文引句。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.eulerEffectiveOrder",
+        "verdict": "PASS",
+        "explanation": "已展开全部项目定义：Q n=Fin n→ℝ；SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ，以inl为q、inr为p；positiveMass m=∀i,0<m_i；J=[[0,I],[−I,0]]；Hamilton场=J∇H。因此H=Σp_i²/(2m_i)+U(q)产生q′_i=p_i/m_i、p′_i=−∂_i U，与Euler及Verlet的质量和力符号一致。Euler=D_h K_h，Verlet=K_{h/2} D_h K_{h/2}。processed一步法是χ_h⁻¹ Euler_h χ_h，可取χ_h=K_{−h/2}；C⁴势能确保力连续，正逆kick均连续，故存在的χ确可为Homeomorph。量词先固定n/m/U/真实轨迹γ及正时间τ，满足全部轨迹假设后再存在处理器与误差常数。processed最大误差覆盖从γ(0)出发的全部0≤k≤ν、物理时间kτ/ν；结论为至少二阶的整个网格误差界，不循环假设二阶收敛。[EXTRA]正固定质量排除机械奇异质量，C⁴为足够而非最弱光滑性，τ>0和真实轨迹给有限正时间窗；ContinuousOn提供紧轨迹像（在此导数条件下可冗余）；均合理。原文“order attainable via processing”在此表示可达到二阶，不声称任何特殊系统的最高可能阶恰为二，无需阶上界。无[ERRATUM?]。签名语义PASS独立于证明完成度：Ch02.lean:1206附近的该证明有sorry，本次未证明、编译或消除这一义务；依赖正文检索未发现sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

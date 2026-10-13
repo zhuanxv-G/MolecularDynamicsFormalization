@@ -1,0 +1,208 @@
+[
+  {
+    "source_id": "MD-3.6.3-SymplecticNotReversible",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已对照教材 PDF 第153页（印刷131页）渲染图；页码偏移22正确。原句 “symplectic but not time-reversible (e.g. Symplectic Euler)” 与 JSON 一致；原页没有独立证明，proof_latex=null 合理。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.symplecticNotReversible",
+      "verdict": "PASS",
+      "explanation": "展开 Ch03_deps.txt：Q n=Fin n→ℝ，Z n=Q n×Q n，pack=Sum.elim q p；canonicalReversal(q,p)=(q,−p)。textbookPotentialForce 为负偏导，textbookSymplecticEuler 为先 momentumKick 后 positionDrift。因此本例 S_h(q,p)=((1−h²)q+hp,p−hq)，签名恰为存在 h,z 使 R S_h R S_h z≠z。取 h=1,z=(1,0)，结果为(1,1)，不同于z。辛性未在本签名重述，但 context 已明确这是拆分后的非可逆反例；正式依赖 textbookSymplecticEuler_isSymplectic 对 C² 势能给出辛性，本例满足资格，故组合内容覆盖原句的该分支。无额外假设。Ch03.lean 本定理含 sorry，签名 PASS 不表示证明已完成。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.3-TrapezoidalRelation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已对照教材 PDF 第153页（印刷131页）渲染图；页码偏移22正确。原页 “time-reversible and not symplectic (e.g. Trapezoidal Rule)” 与 statement_latex 一致；context 正确区分补定义与原文。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.trapezoidalRelation",
+      "verdict": "PASS",
+      "explanation": "展开本地及依赖 trapezoidalRelation，均是 w=z+(h/2)•(f z+f w)，Q n 为实有限维向量空间；对象、系数、隐式终点项均是梯形法。原页只有名称，没有定义公式；[EXTRA]明确标明补标准定义，必要且合理，不冒充原页原文。本项是定义，不含待证 sorry；原句的性质由相邻条目处理。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.3-TrapezoidalProperties",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已对照教材 PDF 第153页（印刷131页）渲染图；页码偏移22正确。所引完整句逐字一致；原页未给梯形法更新式或独立证明，context 已披露扩展。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.trapezoidalProperties",
+      "verdict": "PASS",
+      "explanation": "展开 linearInvolution 为 R.comp R=id；f(Rx)=−R(fx) 是反转向量场的正确条件；trapezoidalRelation 展开后，从 z→w 得 Rw→Rz 的同一步长关系，量词顺序和端点方向正确。此结论是关系的可逆性；未声称任意隐式根选择都给可逆单值映射。存在分支中的 SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；textbookHamiltonianVectorField H=J∇H，其中 textbookJ=[0 I;−I 0]。G h 是对所有 z 满足实际梯形更新式的 C¹ 映射；H 光滑。IsTextbookSymplecticMap 展开为 C¹ 且每点实际 fderiv 的矩阵 D 满足 DᵀJD=J，因已假设 C¹，否定辛性不能靠不可微蒙混。[EXTRA]是合理的见证资格，不把隐式解存在当前提。G 在其他步长无条件，但单个非辛步足够否定方法普遍辛性。Ch03.lean 含 sorry，仅审计签名。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.3-HamiltonianSpectrum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已对照教材 PDF 第153页（印刷131页）渲染图；页码偏移22正确。原页两式 −AJu=λu、−JAv=λv 及 “If the imaginary part is nonzero ... quadruplets” 均原样抄录；ERRATUM? 已注明，没有静默修正。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.hamiltonianSpectrum",
+      "verdict": "PASS",
+      "explanation": "展开 complexEigenvalue 为存在非零复向量 v，实矩阵复化后的 mulVec v=ζ•v；不是抽象谱标签。A 是任意实对称 2n×2n 矩阵，J=[0 I;−I 0]，所以对象为真实 JA。负号和共轭闭包准确；将同一全称结论用于 star ζ 可得 −star ζ，故没有漏掉第四种值；不要求四值互异，纯虚特征值允许重复。[ERRATUM?]成立：原书从 JA 的特征向量 u 直接转为转置的同一 u 无效。例如 A=diag(1,2)，JA=[[0,2],[−1,0]]，ζ=i√2，u=(−i√2,1)；JA u=ζu，但 −AJu=(−1,−2i√2)≠ζu=(2,i√2)。应重新选转置特征向量。签名保留正确谱结论，不复制错误中间式；原书错误式仍原样保存在 statement_latex。Ch03.lean 含 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.3-SymplecticSpectrum",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_SCOPE_OVERCLAIM"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6.3-SymplecticSpectrum",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.6.3",
+        "printed_page": "131",
+        "pdf_page": "153",
+        "statement_latex": "The flow map is\n\\[\\mathcal F_t(z)=\\mathrm e^{tJA}z\\]\nand the exponential matrix will inherit a related structure within the spectrum: $\\lambda$ an eigenvalue of $\\exp(tJA)$ implies that $\\overline\\lambda$, $1/\\lambda$ and $1/\\overline\\lambda$ are all eigenvalues of $\\exp(tJA)$. This eigenvalue structure is generic for linear symplectic maps in general.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原文一般线性辛矩阵的谱结论由本签名表达；指数流公式 F_t(z)=exp(tJA)z 及其谱实例未在本签名中表达，需另给线性流公式与 exp(tJA) 辛性的桥接结果。ζ≠0明确，不假设逆谱。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.symplecticSpectrum",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [
+          "BATCH21审校：修正上下文中将指数流实例视为已覆盖的表述；原书 statement_latex 不变。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "context_notation 未准确说明本签名缺指数流公式和指数流谱实例。"
+      ],
+      "evidence": "已对照教材 PDF 第153页（印刷131页）渲染图；页码偏移22正确。原页展示 F_t(z)=e^{tJA}z，随后明确对 exp(tJA) 陈述共轭/倒数谱；原文及 proof_latex 抄录正确，修正仅针对 context 的覆盖性表述。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.symplecticSpectrum",
+      "verdict": "FAIL",
+      "explanation": "展开 textbookJ=[0 I;−I 0]；complexEigenvalue 是实际非零复特征向量。AᵀJA=J 正确刻画实线性辛矩阵，蕴含 A 可逆，因此 ζ≠0 合理。逆值及共轭值准确，对 star ζ 再应用逆值结论可得 (star ζ)⁻¹，第四值无需另列。但 statement_scope 包括所引原句与展示公式，签名只表达最后的一般辛矩阵谱结论：没有对称 Hamiltonian 矩阵、时间 t、指数矩阵或 F_t(z)=exp(tJA)z，不能据本签名单独认定指数流公式与谱实例已覆盖。context 中的桥接断言不是 Lean 结论。Ch03.lean 含 sorry，与缺条款问题分开。",
+      "counterexample": null,
+      "suggested_fix": "保留一般辛矩阵谱定理，并在本 source_id 的审计覆盖中加入对称 K 的线性 Hamiltonian 流公式 F_t(z)=exp(tJK)z、exp(tJK)ᵀJexp(tJK)=J 及相应谱实例；或明确缩窄 statement_scope 并把指数流条款单列。"
+    }
+  },
+  {
+    "source_id": "MD-3.6.3-ReversibleSpectrum",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": "已对照教材 PDF 第153页（印刷131页）渲染图；页码偏移22正确。原页 T⁻¹=RTR、u=Rv、T⁻¹v=RTRv=RTu=λRu=λv 及末尾共轭谱文字逐字相符。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.reversibleSpectrum",
+      "verdict": "PASS",
+      "explanation": "complexEigenvalue 展开为实矩阵复化后的非零特征向量方程。IsUnit A.det 明确真实矩阵可逆；R*R=1 明确反转 involution；A⁻¹=R*A*R 是原式。两项 [EXTRA]是原文使用逆矩阵和 R²v=v 所隐含的必要资格，合理。ζ≠0 为结论而非假设；倒数和共轭结论准确，逆共轭由重复应用全称定理得到。维数 n 无须偶数。Ch03.lean 含 sorry，签名判断不依赖完成证明。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.3-ConjugateIterates",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "EXTRA_ASSUMPTION_MISDESCRIBED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6.3-ConjugateIterates",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.6.3",
+        "printed_page": "131–132",
+        "pdf_page": "153–154",
+        "statement_latex": "Recall that a pair of maps $\\Phi$ and $\\Psi$ are said to be conjugate if there is a homomorphism $\\chi$ such that\n\\[\\Phi=\\chi^{-1}\\Psi\\chi.\\]\nIn such a case the iterates of the two maps will also be conjugate",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "数值effective order的附加断言另列ConjugateOrderPrinted，不靠有限共轭恒等式声称已证。",
+          "实际签名将空间限制为实赋范空间并将χ限制为homeomorphism；原文迭代代数恒等式只需可逆映射。"
+        ],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.conjugateIterates",
+        "reusable_proofs": [
+          "MolecularDynamics.textbook_conjugate_iterates"
+        ],
+        "extra_assumptions": [
+          "χ实际为homeomorphism（Lean E ≃ₜ E），不仅是equivalence；使逆映射有定义只需bijection，连续性及逆连续性对本条有限迭代恒等式不必要。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [
+          "BATCH21审校：如实标明签名的homeomorphism资格及其对有限迭代的不必要性；不改原文homomorphism。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "extra_assumptions 把实际 Homeomorph 资格描述为 equivalence，未披露本条不必要的双向连续性限制。"
+      ],
+      "evidence": "已对照 PDF153页末 “homomorphism χ” 与 PDF154页首 Φ=χ⁻¹Ψχ 及 “the iterates ... will also be conjugate”；页码153–154正确。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.conjugateIterates",
+      "verdict": "FAIL",
+      "explanation": "展开 textbookConjugateMap χ B=χ.symm∘B∘χ，A^[n] 为自然数次函数迭代，方向与原文 Φ=χ⁻¹Ψχ 一致。签名实际 χ:E≃ₜE 为 homeomorphism，且 E 具实赋范空间结构；本条有限迭代公式只需要 χ 是可逆映射，无需这些拓扑/线性假设。原书 homomorphism 未说明可逆确属用词疑误，可以补可逆资格；用 homeomorphism 取代可逆资格却额外缩小了适用对象，与条目 extra_assumptions 所称 equivalence 不一致，故按全部假设的忠实性 FAIL。[ERRATUM?]中关于渐近运输需连续性的说明与另条相关，不能使有限迭代的连续性成为必要。本定理调用依赖中的 textbook_conjugate_iterates，其证明为逆映射消去与迭代归纳；本声明自身无 sorry。",
+      "counterexample": null,
+      "suggested_fix": "把纯迭代恒等式推广为任意类型 E 与 χ:E≃E，并用 χ.symm∘B∘χ 定义代数共轭；拓扑轨道结论另用 Homeomorph。原书 homomorphism 用词保留并继续标注疑误。"
+    }
+  },
+  {
+    "source_id": "MD-3.6.3-ConjugateOrderPrinted",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "SOURCE_MEANING_UNRESOLVED"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "原书 effective order 含义和定量正则性不明确；不得将原文静默改成任意 homeomorphism 保持局部误差阶的定理。"
+      ],
+      "evidence": "已对照 PDF154页（印刷132页）首段，statement_latex 与 “and, if they are numerical methods ... (e.g. the same effective order).” 一致。proof_latex=null 与原页无独立证明一致；需判断的是原书 effective order 的含义，不是缺失依赖定义。"
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.conjugateOrderPrinted",
+      "verdict": "FAIL",
+      "explanation": "展开 Chapter03Review.localOrder：存在 C>0,δ>0，使全部 |h|<δ 和 z∈B 满足 ‖G h z−Φ h z‖≤C|h|^(r+1)。这不是 effective order 的定义，而是相对任意参考映射的局部误差上界；Φ 没有任何实际流资格。Homeomorph 与 IsCompact B、r>0 都不足以保持同一误差幂阶。已有标记指出数学风险，但 Lean 签名仍断言错误的全称命题，不能因 sorry 或 NEEDS_HUMAN 标记而通过。原文问题是 “similar stability properties and performance (e.g. the same effective order)” 中 effective order 的精确定义、允许的处理器以及正则性未给出；这部分须数学判断，A记 NEEDS_HUMAN，C的明确假命题记FAIL。还未形式化原句的稳定性/性能条款。",
+      "counterexample": "取 n=1,r=1，识别 Q 1≅ℝ；B={0}（紧），Φ(h,x)=x（恒等参考流），G(h,x)=x+h²。χ(x)=sgn(x)√|x|，χ⁻¹(y)=y|y|，是全局 homeomorphism。原误差恒为 h²，取 C=1,δ=1 满足 localOrder。χ(B)={0}，在0处共轭误差为 |χ(h²)−χ(0)|=|h|，不可能在任何零邻域被 C′|h|² 一致控制。即使 Φ 已是真实恒等流，反例仍成立。",
+      "suggested_fix": "先澄清 effective order 的原书含义；若确要误差阶运输，要求 χ 在包含 G(h,B) 与 Φ(h,B) 的共同邻域上一致 Lipschitz，双向同阶通常需双向 Lipschitz，并补参考流与方法的资格。稳定性、性能及 effective order 条款分别给明确定义，避免仅用 localOrder 代替全部原句。"
+    }
+  }
+]

@@ -1,0 +1,253 @@
+{
+  "batch": "BATCH25",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "dc2749bf1c4e7390eca0d7ceb97b6bf42c6f1ce3d8f922b80fdf1448ed10e0a3",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.4-ImplicitLocal",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.4-ImplicitLocal",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.4",
+          "printed_page": "86",
+          "pdf_page": "108",
+          "statement_latex": "An implicit method will typically result in a system of nonlinear equations of the form\n\\[g(\\boldsymbol z_{n+1})=\\boldsymbol\\tau_n,\\tag{2.25}\\]\nwhich will need to be solved at each timestep. The right hand side $\\boldsymbol\\tau_n$ is a vector that depends on the previous time-step $\\boldsymbol z_n$, perhaps in a complicated way. We may assume the number of equations represented by (2.25) is equal to the dimension of the space where $\\boldsymbol z$ is defined, so we have a square nonlinear system. Typically $g$ will depend on the stepsize and coefficients of the method and will have the property that for $h$ sufficiently small, the solution is uniquely defined and is continuously defined in terms of $\\boldsymbol\\tau_n$, that is the mapping $g$ has a bounded and smooth inverse.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.implicitLocal",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]g依赖真实步长h；联合C∞，零步实际导数为连续线性同构。",
+            "[EXTRA]结论为充分小步长的局部逆；缩小有界邻域，不宣称全域有界逆。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "SOURCE_TRANSCRIPTION",
+              "detail": "按PDF108恢复 side，删除原文没有的 phase；不改原书数学主张。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "漏抄 side，且擅加 phase；页码108/印刷86正确，证明为空符合原页，context_notation为空无误。"
+        ],
+        "evidence": [
+          "PDF108/印刷86，(2.25)及其后整段；原文为 right hand side、dimension of the space、bounded and smooth inverse。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.implicitLocal",
+        "verdict": "FAIL",
+        "explanation": "实际声明为 Ch02.lean:1076–1086，未引用依赖中的 implicitLocal_statement（后者仅为固定g的C¹局部逆命题，不能替代本声明）。ReviewDefinitions.lean 展开 Q n = Fin n → ℝ，故对象为同维有限维实向量空间；uncurry g(h,y)=g h y。先固定n,g,x及零步可逆实际导数A，联合C∞后先选δ，再对每个|h|<δ选U,V,inv及K；inv只在V上要求C∞与值的范数有界，K可依赖h。前提是合理的参数逆函数定理充分条件；局部化及有界值是明确的[EXTRA]，不能升级为全域唯一性。结论包含右逆和U上的左逆，却缺少g h(U)⊆V，故并未完整表示U到V的光滑逆映射。两侧等式可保证每个τ∈V在U中有唯一解，但不能补足缺失的像包含条款。该处sorry仅说明证明未完成，不是此FAIL的依据。",
+        "counterexample": "缺失像包含：取n=1、g(h,t)=t、x=0、A=id，U=(-2,2)、V=(-1,1)、inv=id、K=1，所有现有结论均成立，但g h(U)不包含于V。另g(h,t)=t³−t在x=0的导数为−1且联合光滑，符合前提，τ=0却有−1,0,1三个全域解；因此局部结论不能被描述为原句的全域唯一解。",
+        "suggested_fix": "在结论中补∀y∈U, g h y∈V（或MapsTo (g h) U V），连同现有双侧逆表达局部微分同胚。明确审计范围是所标注的局部充分条件版本；若要覆盖全域唯一解，必须另加全域单射/适当性等充分条件，不可从零步一点导数推出。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.4-BackwardEulerSolve",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.4-BackwardEulerSolve",
+          "kind": "definition",
+          "label": "Example 2.6",
+          "section": "2.4.4",
+          "printed_page": "86",
+          "pdf_page": "108",
+          "statement_latex": "The Backward Euler method,\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+hf(\\boldsymbol z_{n+1}),\\]\nis an example of an implicit method. The calculation of a timestep involves solving a system of equations of the form\n\\[g(\\boldsymbol w)\\equiv\\boldsymbol w-\\boldsymbol z_n-hf(\\boldsymbol w)=\\boldsymbol0.\\]\nThe map $\\mathcal G_t$ is defined implicitly by the equation\n\\[\\mathcal G_h(\\boldsymbol z)=\\boldsymbol z+hf(\\mathcal G_h(\\boldsymbol z)).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "零点即隐式步关系；没有断言每个f/h存在唯一零点。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "PDF108正文写G_t，下一展示式写G_h；原书下标不一致，不能静默统一。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.backwardEulerResidual",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "SOURCE_TRANSCRIPTION",
+              "detail": "原页残差使用定义等号≡；正文为G_t而展示式为G_h，保留原书不一致。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页正文G_t被静默统一为G_h；定义符号≡被改为=。恢复原样并记录疑误。页码正确，无独立证明；context_notation正确提醒不承诺任意f,h的唯一零点。"
+        ],
+        "evidence": [
+          "PDF108/印刷86，Example 2.6：残差g(w)≡w−z_n−hf(w)=0；正文The map G_t，展示式G_h(z)=z+hf(G_h(z))。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.backwardEulerResidual",
+        "verdict": "FAIL",
+        "explanation": "Ch02.lean:1088 的def直接展开为w−z−h•f w，E的隐式参数为实赋范向量空间；加减和标量乘法忠实表示残差，未假设存在唯一零点。依赖ReviewDefinitions.lean:2893另定义backwardEulerRelation为w=z+h•f w，但本条声明未调用或陈述该关系，也未表达G_h的隐式方程。statement_scope覆盖全部展示式，因此仅返回E值残差遗漏零点与步关系的等价以及映射方程。G_t/G_h原文下标不一致已由沿用的A结果记录；残差本身不涉及该下标，无需据此再判NEEDS_HUMAN。def无sorry。",
+        "counterexample": "缺失条款：residual=0 ↔ w=z+h•f w，以及给定G的∀z,G z=z+h•f(G z)。例如E=ℝ,f=0,h=1时残差定义对所有z,w均有效，却并不约束任取G(z)=z+1；该G违反原文映射方程。",
+        "suggested_fix": "保留残差定义，补零点等价关系，并定义给定G满足∀z,G z=z+h•f(G z)的隐式步映射关系；无需增加任意f,h存在唯一G的断言。保留G_t/G_h原文疑误记录。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.4-Newton",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.4-Newton",
+          "kind": "definition",
+          "label": null,
+          "section": "2.4.4",
+          "printed_page": "86–87",
+          "pdf_page": "108–109",
+          "statement_latex": "Solving the system may then proceed, from an initial guess $\\boldsymbol z_{n+1}^{(0)}$ by use of Newton’s method:\n\\[\\boldsymbol z_{n+1}^{(k+1)}=\\boldsymbol z_{n+1}^{(k)}-[J^{(k)}]^{-1}(g(\\boldsymbol z_n^{(k)})-\\boldsymbol\\tau_n),\\]\nwhere $J^{(k)}$ is the Jacobian matrix of the mapping $g$ evaluated at $\\boldsymbol z_n^{(k)}$, or else an approximation of this Jacobian (assumed to be nonsingular due to the invertibility of the mapping). The iteration may be recast in the form\n\\[\\boldsymbol b_k=-(g(\\boldsymbol z_n^{(k)})-\\boldsymbol\\tau_n),\\quad J^{(k)}\\Delta\\boldsymbol z_k=\\boldsymbol b_k,\\quad\\boldsymbol z_{n+1}^{(k+1)}=\\boldsymbol z_{n+1}^{(k)}+\\Delta\\boldsymbol z_k.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "原文混用zₙ⁽ᵏ⁾与zₙ₊₁⁽ᵏ⁾；保留两个不同输入，不静默改成相同迭代点。映射可逆也不保证任意近似Jacobian非奇异。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.newtonPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "SOURCE_TRANSCRIPTION",
+              "detail": "按PDF108恢复 may then proceed,；保留原文下标疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "首句漏 then 及 proceed 后逗号；原书两个不同迭代下标确认存在，不合并。原书关于可逆性保证非奇异性的括注存在疑误，现有issues记录合理。页码和三个重写式正确；无独立证明。"
+        ],
+        "evidence": [
+          "PDF108末段：may then proceed, from an initial guess；更新式和Jacobian取值均使用z_n^(k)，被更新量为z_{n+1}^(k)。PDF109首行：b_k、J^(k)Δz_k=b_k及加法更新。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.newtonPrinted",
+        "verdict": "PASS",
+        "explanation": "Ch02.lean:1092–1093直接展开newtonPrinted=xNext−J.symm(g xPrev−τ)；依赖ReviewDefinitions.lean:2816展开Q n=Fin n→ℝ。J为连续线性同构，J.symm为真实逆，恰表达原文明确假定的非奇异矩阵；没有假称由g集合意义可逆推出非奇异。两个输入保留印刷的z_{n+1}^{(k)}与z_n^{(k)}，未静默改为同点Newton。令b=−(g xPrev−τ)、Δ=J.symm b，由逆的线性性及J( J.symm b)=b，全部重写式JΔ=b和更新xNext+Δ均由定义代数推出。原文允许近似Jacobian而未量化近似精度，故本定义将所选可逆J作为参数，不断言其一定等于实际导数或保证收敛，是合理的更新公式接口。[ERRATUM?]下标混用确实存在；可逆映射不保证导数或任意近似矩阵非奇异的疑误成立。def无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.4-NewtonQuadratic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.4-NewtonQuadratic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.4",
+          "printed_page": "87",
+          "pdf_page": "109",
+          "statement_latex": "Newton’s method (without approximation of the Jacobian matrix) has a remarkable quadratic convergence property, meaning that, when the initial guess is close the solution, the errors $e_k,e_{k+1}$ at the $k$th and $k+1$st iterations satisfy the relation\n\\[e_{k+1}\\le Ke_k^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "标准Newton的同一个迭代点，前项字面索引疑点另列；e=‖y−x*‖。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "PDF109原句close the solution疑漏to；逐字审校保留原文。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.newtonQuadratic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]C²、简单零点及可逆实际导数；充分近初值；局部一步二次界涵盖迭代误差关系。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "SOURCE_TRANSCRIPTION",
+              "detail": "原书为 close the solution，缺to；恢复原文并另记语法疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "JSON补入原书没有的to，属于静默修正；恢复close the solution。页码109/印刷87、二次误差不等式正确，无独立证明。context_notation的同点标准Newton及范数误差是解释性补充。"
+        ],
+        "evidence": [
+          "PDF109/印刷87：when the initial guess is close the solution；e_{k+1}≤K e_k²。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.newtonQuadratic",
+        "verdict": "PASS",
+        "explanation": "Ch02.lean:1097–1102；依赖ReviewDefinitions.lean:2816与2898–2899给出Q n=Fin n→ℝ及newtonStep g τ y B=y−B.symm(g y−τ)。因此结论确为在同一迭代点使用实际Jacobian逆的二次误差界，而非newtonPrinted的双输入公式。量词先固定g、零点x与可逆导数A，后给统一C>0和δ>0，再对每个近点y给可逆实际导数B；HasFDerivAt唯一性使B不是任意为满足误差界而选的线性算子。C²与简单零点为合理充分条件（C²可弱化为局部导数Lipschitz，并非逻辑上的最弱假设）；g x=0是将g−τ作为残差的归一化。缩小半径r<min(δ,1/C)，一步界使迭代保持在球内并有e_{k+1}≤Ce_k²，从而涵盖原句充分近初值的二次收敛。语法close the solution疑漏to不改变此数学语义；不需人工数学判断。实际定理含sorry，签名PASS不表示已完成证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.4-FrozenNewton",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF109/印刷87：J(z)=D+E(z)、small in norm、constant sparse matrix、in many cases；下方e_{k+1}≤ρe_k及0<ρ<1。选录两个片段顺序一致；无独立证明，页码正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.frozenNewton",
+        "verdict": "PASS",
+        "explanation": "Ch02.lean:1106–1111；依赖展开Q n=Fin n→ℝ及newtonStep g 0 y A=y−A.symm(g y)。A为固定D的可逆线性算子，x为残差零点；先固定δ,ρ，再要求δ>0、0<ρ<1、g为C¹以及整个球内‖I−A⁻¹g′(y)‖≤ρ，最后对每个球内y断言一步误差收缩。fderiv为实际导数，C¹保证其不是不可微时的默认值；comp表示先作用g′再作用A⁻¹。若g′=D+E，界等于‖−D⁻¹E‖≤ρ，明确了small必须相对于D的逆尺度，属于合理[EXTRA]，不是仅把所求误差界重写为前提。凸球上的导数界给出一步界，ρ<1保证球不变，归纳得e_k≤ρ^k e_0，涵盖几何收敛。常数矩阵稀疏和维数大是计算成本背景，不是收敛所必需；任意近似Jacobian均收敛并未被断言。依赖frozenNewton_statement使用0≤ρ，实际声明使用原文0<ρ，按实际声明审计。定理含sorry，签名PASS与证明完成无关。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "batch": "BATCH07",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "67ff42d0a3678740b1de1e7c349f059b3525f963ca09db7af14a3cedeb9b23ae",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.2.2-DiscretePath",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已读取教材PDF第85页（印刷第63页）并视觉核对PDF85、86；statement_latex中的主公式、页码及原文措辞已核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.finiteDiscretePath",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt:2816 的 Q n = Fin n → ℝ；Ch02.lean:187 的 Fin (ν+1) → Q n 正好是 ν+1 个 n 维实配置点，索引为0至ν。ν>0、h>0、νh=τ是网格使用语境，不是该元组对象定义的额外结论；允许ν=0的总接口扩展不改变正整数网格上的含义。本条无[EXTRA]/[ERRATUM?]，无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-DiscreteVelocity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已读取教材PDF第85页（印刷第63页）并视觉核对PDF85、86；statement_latex中的主公式、页码及原文措辞已核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_discreteVelocity",
+        "verdict": "PASS",
+        "explanation": "展开 Q n = Fin n → ℝ（deps:2816），标量乘法与减法逐坐标作用，故 bp_discreteVelocity q h k 的第i坐标是(q(k+1)i-q(k)i)/h；与PDF85定义逐项一致。q:ℕ→Q n是有限网格的总函数延拓，仅需0≤k<ν、h>0时解释原文；没有断言h=0时的结果是物理速度。未增加假设或遗漏该定义的结论；无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-DiscreteAction",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "SOURCE_ERRATUM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "PDF85正文确实印为带点v的转置乘Mv/2+U，随后展示离散作用量却为-U；PDF82为vᵀMv/2-U。JSON忠实转录，保留ERRATUM?，不据数学常识改原书。"
+        ],
+        "evidence": [
+          "已读取教材PDF第85页（印刷第63页）并视觉核对PDF85、86；statement_latex中的主公式、页码及原文措辞已核对。",
+          "PDF85：L(q,v)=带点vᵀMv/2+U(q)，随后作用量展示式为动能减U；PDF82 §2.2.1为动能减U。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_discreteAction",
+        "verdict": "FAIL",
+        "explanation": "展开 deps:2816、2844–2847：Q为实坐标空间，discreteVelocity的第i坐标为相邻差除h，Finset.range ν为0至ν−1，h*L与原文L*h相等，因此一般L的求和定义正确。但本条statement_scope包含机械作用量展示式，而bp_discreteAction只有一般L求和，未陈述机械式。deps:2842–2843 的 mechanicalL = (∑i m_i v_i²)/2−U(q) 确实支持展示式的−U模型，却没有作为本条的等式结论。原文Riemann近似亦仅被定义右端和式，未表达近似/极限；原文未给误差界，不能擅加具体阶数。保留的[ERRATUM?]成立于已沿用A证据：正文带点v及+U与展示式和前节−U不一致；选择一般L不能补全本条机械子句。该定义无sorry，FAIL来自结论覆盖不足。",
+        "counterexample": null,
+        "suggested_fix": "在本条增加h>0、固定对角质量语境下的等式：bp_discreteAction (mechanicalL m U) q h ν = ∑ k∈Finset.range ν, ((∑i m i*(q(k+1)i-q k i)^2)/(2*h^2)-U(q k))*h。明确机械式采用原文展示式的−U修正版本，保留原文疑误；将没有量化的Riemann近似说明明确标为解释性语境，或另列准确的收敛命题及其假设。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "SOURCE_ERRATUM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "PDF85–86原文确为n=1,…,ν且仅说起点固定；PDF86随后仅对1,…,ν−1求导并说端点固定。JSON如实保留，疑误须与数学修正区分。"
+        ],
+        "evidence": [
+          "已读取教材PDF第85–86页（印刷第63–64页）并视觉核对PDF85、86；statement_latex中的主公式、页码及原文措辞已核对。",
+          "PDF85末式n=1,…,ν；PDF86首句starting point q0 as fixed；同页endpoints ... fixed points。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.printedDiscreteStationary",
+        "verdict": "FAIL",
+        "explanation": "展开 deps:2816、2844–2852：replaceNode = Function.update q k x，只改第k个节点；discreteAction只依赖0至ν，起点因k>0不被改变。printedDiscreteStationary的量词∀k,0<k→k≤ν正确保留原书字面1,…,ν，且每个fderiv=0表达全部坐标的零线性泛函。右端点是否固定的[ERRATUM?]是前后叙述的真实不一致，不能静默改≤ν为<ν。然而任意L的签名没有节点作用量可微条件；Lean的fderiv在不可微时取0，故该谓词比真正梯度存在且为零的驻值定义宽。FAIL与sorry无关，本定义没有sorry。",
+        "counterexample": "取配置维数1、ν=1、h=1、所有q_j=0，L(a,v)=|v(0)|。唯一被检验节点k=1的节点作用量是x↦|x(0)|，在x=0不可微，左右方向导数不同；Lean的fderiv默认为零，所以printedDiscreteStationary成立，而原文梯度为零没有定义。",
+        "suggested_fix": "保留0<k≤ν的字面范围，将每个节点条件改为HasFDerivAt (fun x => discreteAction L (replaceNode q k x) h ν) 0 (q k)，或在fderiv=0旁同时要求DifferentiableAt ℝ该节点作用量(q k)。另列固定双端点的内部驻值版本，并保留原书端点疑误。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-DiscreteDerivative",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "OMITTED_DERIVATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.2-DiscreteDerivative",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.2",
+          "printed_page": "64",
+          "pdf_page": "86",
+          "statement_latex": "To calculate the derivative of $\\hat{\\mathcal A}$ with respect to $\\boldsymbol q_n$, $n=1,2,\\ldots,\\nu-1$, note that only a few terms of the discrete action involve this configurational point, thus\n\\[\\frac{\\partial\\hat{\\mathcal A}}{\\partial\\boldsymbol q_n}=\\frac{\\partial}{\\partial\\boldsymbol q_n}\\left[\\frac{1}{2h}\\left((\\boldsymbol q_n-\\boldsymbol q_{n-1})^TM(\\boldsymbol q_n-\\boldsymbol q_{n-1})+(\\boldsymbol q_{n+1}-\\boldsymbol q_n)^TM(\\boldsymbol q_{n+1}-\\boldsymbol q_n)\\right)-U(\\boldsymbol q_n)h\\right]=\\frac1h[M(\\boldsymbol q_n-\\boldsymbol q_{n-1})-M(\\boldsymbol q_{n+1}-\\boldsymbol q_n)]-\\nabla U(\\boldsymbol q_n)h,\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.discreteActionDerivative",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "固定正对角质量、实际U可微、h≠0；仅内部节点0<k<ν；沿p.60及p.63展示的-U作用量。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "OMITTED_DERIVATION",
+              "detail": "漏录PDF86导数展示式的第一条等式，即对两个相邻动能项减U(q_n)h取偏导的中间计算；其余末式、索引与页码正确。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "漏录PDF86导数展示式的第一条等式，即对两个相邻动能项减U(q_n)h取偏导的中间计算；其余末式、索引与页码正确。"
+        ],
+        "evidence": [
+          "已读取教材PDF第86页（印刷第64页）并视觉核对PDF85、86；statement_latex中的主公式、页码及原文措辞已核对。",
+          "PDF86上部导数公式为两步等号：先对[两个二次型/(2h)−U(q_n)h]求偏导，再得到已录最终表达式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.discreteActionDerivative",
+        "verdict": "PASS",
+        "explanation": "展开 deps:2816、2842–2849、2932、2948：Q为n维实坐标空间；mechanicalL为∑i m_i v_i²/2−U；replaceNode只改k；grad U q i=(fderiv ℝ U q)(Pi.single i 1)；positiveMass要求∀i,m_i>0。0<k<ν确保k−1和k两项均在求和范围内，且自然数k−1没有截断差异。节点导数在任意v上的值是∑i[m_i(2q_k−q_{k−1}−q_{k+1})_i/h−h∂_iU(q_k)]v_i；因∀v量词覆盖所有方向，这与原文完整梯度式等价。沿用A补录的中间求导式可由仅这两项依赖节点、其余项为常数得到，没有新独立结论。固定正对角质量来自机械语境；正性对求导不是最弱必要条件但合理，U全局可微强于节点处可微但合理，h≠0保障除法，允许负h为代数推广。−U采用已标明展示式，不混用疑误正文。签名PASS；Ch02.lean该定理正文含sorry，未验证证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-DiscreteVerlet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已读取教材PDF第86页（印刷第64页）并视觉核对PDF85、86；statement_latex中的主公式、页码及原文措辞已核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.discreteStationaryVerlet",
+        "verdict": "PASS",
+        "explanation": "展开 deps:2842–2854、2932、2948：discreteStationary逐节点要求0<k<ν的节点作用量fderiv为零；mechanicalL为动能−U；grad为坐标导数；stormerRelation逐坐标为q_{k+1}−2q_k+q_{k−1}=h²(−∂_iU(q_k))/m_i。positiveMass逐坐标m_i>0使逆质量可逆，故右侧恰等价于原文M(q_{k+1}−2q_k+q_{k−1})=−h²∇U(q_k)。U可微和h≠0使节点作用量实际可微，排除fderiv默认零的伪驻值。量词先固定n,m,U,q,h,ν，再要求质量/可微/非零步长，之后等价对所有内部节点成立；无额外终点方程。双向等价强于文字中的推出，但反向由同一可微梯度式成立；[EXTRA]正质量、可微、非零步长必要或合理。签名PASS；定理正文含sorry，证明未验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-Stormer",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_INACCURATE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.2-Stormer",
+          "kind": "definition",
+          "label": null,
+          "section": "2.2.2",
+          "printed_page": "64",
+          "pdf_page": "86",
+          "statement_latex": "The method (2.4) is commonly referred to as Störmer’s rule.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "式(2.4)在F(q_n)=−∇U(q_n)下写为$M(q_{n+1}-2q_n+q_{n-1})=h^2F(q_n)$；p.93/PDF115重述逆质量形式；从速度Verlet消去速度的说明及计算见p.65/PDF87。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.bp_stormerRelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "CONTEXT_INACCURATE",
+              "detail": "PDF115/印刷93只重述位置递推，未在该页给出消元计算；消元说明及两步速度公式在PDF87/印刷65。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "PDF115/印刷93只重述位置递推，未在该页给出消元计算；消元说明及两步速度公式在PDF87/印刷65。"
+        ],
+        "evidence": [
+          "已读取教材PDF第86页（印刷第64页）并视觉核对PDF85、86；statement_latex中的主公式、页码及原文措辞已核对。",
+          "PDF86：The method (2.4) ... Störmer’s rule；PDF115：We have mentioned previously ... positions only，随后逆质量递推；PDF87：write down two consecutive steps ... eliminate velocities。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_stormerRelation",
+        "verdict": "FAIL",
+        "explanation": "展开 deps:2816、2840：Q为实坐标空间，invMass m v i=(m i)⁻¹*v i。bp_stormerRelation与deps:2853–2854的库定义完全相同，但其签名允许任意实质量，并未要求positiveMass或逐坐标非零。因此只有质量非零时才能与所引用(2.4)的乘质量形式等价；本谓词在零质量下缩小了原方程解集。不同于仅定义带逆矩阵的显式算法，这里声称编码原文(2.4)关系，需要限制质量可逆的使用域。无[EXTRA]明示该限制；无sorry。",
+        "counterexample": "维数1，m_0=0，F恒为0，h=1，a=b=0，c_0=1。原文m_0(c_0−2b_0+a_0)=h²F(b)_0为0=0，成立；Lean逆质量关系为1=1²*(0⁻¹*0)=0，不成立。",
+        "suggested_fix": "将关系定义为mass m (c−(2:ℝ)•b+a)=h²•F b以直接对应原文；或保留逆质量算法关系，明确其语义限定positiveMass m（至少∀i,m i≠0），并另列在该前提下与(2.4)等价的命题。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-VelocityVerlet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已读取教材PDF第86页（印刷第64页）并视觉核对PDF85、86；statement_latex中的主公式、页码及原文措辞已核对。",
+          "PDF86式(2.5)–(2.7)完整三步；PDF87首句Fn=F(qn)=−∇U(qn)，后文另引入动量p=Mv。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_velocityVerlet",
+        "verdict": "PASS",
+        "explanation": "展开 deps:2816–2817、2840：Z n=(Fin n→ℝ)×(Fin n→ℝ)，没有将第二分量强制定义为动量的包装或类型约束，故此接口可按本条上下文解释为(q,v)。invMass逐坐标除质量，在原文可逆正对角质量语境下等于M⁻¹。bp_velocityVerlet先令vhalf=z.2+(h/2)M⁻¹F(z.1)，再qnew=z.1+h*vhalf，最后返回(qnew,vhalf+(h/2)M⁻¹F(qnew))，完整覆盖(2.5)–(2.7)，末力使用新位置且第二输出为速度。任意F的参数化包含原文F=−∇U的机械特例，不要求输出为动量。该显式算法在非正/零质量或h=0上是总函数代数扩展；PASS仅对原文正质量、h>0使用域，零质量不解释为真实矩阵逆。建议后续文档明示positiveMass使用前提，但它不是本条三步显式公式的遗漏结论。无[EXTRA]/[ERRATUM?]；无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

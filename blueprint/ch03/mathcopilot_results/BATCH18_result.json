@@ -1,0 +1,217 @@
+[
+  {
+    "source_id": "MD-3.6.1-LinearInvolution",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF150/印刷128 §3.6.1：By an involution ... linear mapping；R²=I；R is its own inverse。statement逐字内容与页码相符，无独立证明。context关于非正交性正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.linearInvolution",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 Ch03.lean:1073 的 R 是实连续线性自映射，R.comp R=id 即 ∀z,R(Rz)=z。有限维线性自动连续，未添加实质限制。无需 Rᵀ=R；例如 [[1,1],[0,-1]] 是非对称involution。定义无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedFieldPrinted",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF150/印刷128：展示式确实为 f̃(z)=−Rᵀf(Rz)，随后是 When a vector field is its own reversal ...。无独立证明；保留原式正确。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.reversedField",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 依赖 Chapter03/ReviewDefinitions.lean:3617 与本地1077均展开为 −(R.transpose.mulVec(f(R.mulVec z)))，即原书字面−Rᵀf(Rz)。定义容许一般矩阵是定义域扩展，应用到R²=I时完全相符；“自身反转”解释为∀z,f z=reversedField R f z，不是该函数定义本身的额外结论。[ERRATUM?]成立：轨道链式法则给−Rf(Rz)，一般involution不等于其转置；不应静默替换字面定义。定义无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.1-MomentumReversal",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF150/印刷128：Let H(q,p)=pᵀM⁻¹p/2+U(q) ... Nc configuration variables；R的块矩阵为diag(I,−I)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.momentumReversal",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 momentumReversal z=(z.1,−z.2)，正是块矩阵diag(I,−I)的作用。依赖中的 SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ，pack z=Sum.elim z.1 z.2，canonicalReversal保持inl坐标并取反inr坐标，所以context等价坐标说法成立。H仅说明使用环境，定义R无需m、U参数或假设。定义无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.1-MechanicalReversal",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_SIGN",
+        "FALSE_ERRATUM"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6.1-MechanicalReversal",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.6.1",
+        "printed_page": "128",
+        "pdf_page": "150",
+        "statement_latex": "The vector fields involved are\n\\[f=\\begin{bmatrix}M^{-1}p\\\\-\\nabla U(q)\\end{bmatrix},\\qquad\\widetilde f=-Rf(Rz)=-\\begin{bmatrix}-M^{-1}p\\\\\\nabla U(q)\\end{bmatrix},\\]\nwhich are clearly equal. Therefore the molecular dynamics Hamiltonian system is time-reversible.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "PDF150右侧列向量外有整体负号，故−[−M⁻¹p;∇U(q)]=[M⁻¹p;−∇U(q)]=f；原书此处无所称符号错误。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.mechanicalReversalPrinted",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH18",
+            "detail": "PDF150的右侧列向量前还有一个整体负号：f̃=−Rf(Rz)=−[−M⁻¹p;∇U(q)]。JSON漏了该负号，并据此误报原书符号错误。"
+          },
+          {
+            "review": "BATCH18",
+            "detail": "context_notation及issues中的ERRATUM?建立在漏抄整体负号上，须删除该疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_SIGN",
+          "detail": "PDF150的右侧列向量前还有一个整体负号：f̃=−Rf(Rz)=−[−M⁻¹p;∇U(q)]。JSON漏了该负号，并据此误报原书符号错误。"
+        },
+        {
+          "code": "FALSE_ERRATUM",
+          "detail": "context_notation及issues中的ERRATUM?建立在漏抄整体负号上，须删除该疑误。"
+        }
+      ],
+      "evidence": [
+        "PDF150/印刷128渲染图下方：f=[M⁻¹p;−∇U(q)]，f̃=−Rf(Rz)=−[−M⁻¹p;∇U(q)]；which are clearly equal。无独立proof块。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.mechanicalReversalPrinted",
+      "verdict": "FAIL",
+      "explanation": "已展开 Ch03_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 invMass m v i=(m i)⁻¹*v i；grad U q i=(fderiv ℝ U q)(Pi.single i 1)；mechanicalField m F z=(invMass m z.2,F z.1)；momentumReversal=(q,−p)。展开得−R f(Rz)=(invMass m p,−grad U q)。Lean前两合取漏掉原页整体负号，断言这个向量等于其负向量；第三合取正确。m参数表达对角质量矩阵；无需正质量即可检验此符号错误。[ERRATUM?]不成立。Ch03.lean:1085–1093的证明为sorry；FAIL来自签名而非sorry。",
+      "counterexample": "n=1，m(0)=1，U(q)=0，z=(0,1)。−R f(Rz)=(1,0)，Lean第一合取右端=(−1,0)，第二合取也要求(−1,0)=(1,0)，均假。",
+      "suggested_fix": "前两合取的打印列向量应写成 −(-invMass m z.2, grad U z.1)，或化简为(invMass m z.2,−grad U z.1)；删除该条错误ERRATUM注释，保留第三合取。"
+    }
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "PAGE_RANGE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.6.1",
+        "printed_page": "129",
+        "pdf_page": "151",
+        "statement_latex": "For the system $\\mathrm dz/\\mathrm dt=f(\\boldsymbol z)$, a coordinate transformation $\\boldsymbol z\\mapsto\\widetilde{\\boldsymbol z}=R\\boldsymbol z$ results in\n\\[\\frac{\\mathrm d\\widetilde{\\boldsymbol z}}{\\mathrm dt}=R\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=Rf(R^{-1}\\widetilde{\\boldsymbol z})=Rf(R\\widetilde{\\boldsymbol z}),\\]\nsince $R^{-1}=R$. A change of time $t\\mapsto\\tau=-t$ results in\n\\[\\frac{\\mathrm d\\boldsymbol z}{\\mathrm d\\tau}=\\frac{\\mathrm dt}{\\mathrm d\\tau}\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=-f(\\boldsymbol z).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "将p128字面−Rᵀ定义代入反向轨道得到的待审断言；不是p129实际R链式法则的正确版本。"
+        ],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "p128的Rᵀ字面反转与p129的R链式法则不能一般同时成立；具体二维反例见本地审计。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.reversedTrajectoryPrinted",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH18",
+            "detail": "所引两段链式法则全部位于PDF151/印刷129，不跨PDF150。context引用PDF150是背景，不能作为statement页码。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "PAGE_RANGE",
+          "detail": "所引两段链式法则全部位于PDF151/印刷129，不跨PDF150。context引用PDF150是背景，不能作为statement页码。"
+        }
+      ],
+      "evidence": [
+        "PDF151/印刷129页首：For the system dz/dt=f(z) ...；d z̃/dt=R dz/dt=Rf(R⁻¹z̃)=Rf(Rz̃)；A change of time ... dz/dτ=−f(z)。两式均在该页。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.reversedTrajectoryPrinted",
+      "verdict": "FAIL",
+      "explanation": "已展开 Ch03_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 reversedField展开为−Rᵀ f(Rz)。矩阵乘法R*R=1明确involution；∀t HasDerivAt γ (f(γ t)) t是全实时间真实ODE导数假设。组合轨道η(t)=Rγ(−t)的导数实际为−R f(γ(−t))；Lean要求−Rᵀ f(γ(−t))，并非所引原页正确链式法则，且无对称假设。[ERRATUM?]关于PDF150转置定义与PDF151链式法则一般不兼容成立。Ch03.lean:1096的证明为sorry，与签名错误分开。",
+      "counterexample": "n=2，R=[[1,1],[0,−1]]，R²=I。f≡(1,0)，γ(t)=(t,0)，满足全部ODE假设。η(t)=(−t,0)实际导数=(−1,0)，声明的reversedField R f (η(t))=(−1,−1)。",
+      "suggested_fix": "忠实PDF151时把导数结论改为−R.mulVec(f(γ(−t)))，并另列坐标变换导数Rf(Rz̃)及时间变换导数−f(z)；若要沿用reversedField的字面转置定义，必须显式加Rᵀ=R并标记此额外限制。"
+    }
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedTrajectory",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF151/印刷129 §3.6.1末句：In other words, for a reversible vector field ... equivalent to the change of time t↦−t。context及extra_assumptions明确说明采用修正R版本。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.reversedTrajectory",
+      "verdict": "FAIL",
+      "explanation": "已展开 Ch03_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 linearInvolution展开为R∘R=id。签名中∀z,f(Rz)=−R(f z)及∀t真实ODE导数蕴含所给反向轨道导数，数学上正确。真实导数和全实时间域是显式ODE及域限制，合理但只覆盖全局轨道。关键[EXTRA]将原书“reversible”（PDF150定义f(z)=−Rᵀf(Rz)）改为R版本：一般情况下并非原定义的等价展开，也非可忽略的正则性假设，而是实质修订。故严格原文字面忠实度FAIL；作为明确更正后的命题成立，不能据此称原定义无条件忠实。此区别已在context明示，A不需修改。Ch03.lean:1105的证明为sorry，未判其已证明。",
+      "counterexample": "R=[[1,1],[0,−1]]，f≡v=(0,1)，γ(t)=t v。R²=I且−Rᵀv=v，所以场按PDF150字面定义可逆；但−Rv=(−1,1)≠v，反向轨道导数(−1,1)不等于f(Rγ(−t))=(0,1)。原定义不能导出本条轨道结论。",
+      "suggested_fix": "保持原定义时显式限制Rᵀ=R（对involution等价于正交），再将修正条件解释为等价条件；或者把此条明确登记为勘误后版本，同时保存原文字面命题及其反例，避免把替换定义称为普通额外假设。"
+    }
+  },
+  {
+    "source_id": "MD-3.6.1-MechanicalReversalCorrect",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF150/印刷128：Therefore the molecular dynamics Hamiltonian system is time-reversible。其前的正确整体负号计算提供代数说明，无独立proof块。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.mechanicalReversalCorrect",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 invMass是逐坐标乘以(m i)⁻¹；mechanicalField=(invMass m p,F q)；R(q,p)=(q,−p)。因此 f(Rz)=(−invMass m p,F q)=−R f(z)，∀n,m,F,z恰为位置依赖力的机械反转恒等式。F=−grad U给原书特例，机械R又满足Rᵀ=R，所以也符合原书字面可逆定义。任意F及含零/负m是成立的代数泛化，非额外限制；物理质量正性和U可微性对该恒等式不必要。[EXTRA]实为说明而非新增前提，其中“原书错误展示等式”说法不成立，须按MechanicalReversal审校纠正。本地1260用Chapter03Review.mechanicalReversal_proved；依赖4709证明展开Prod.ext与simp，定义mechanicalReversal_statement在4343完整匹配，本条无sorry；未运行编译，不把文本检查冒充编译验证。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

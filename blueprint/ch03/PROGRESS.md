@@ -4,157 +4,158 @@
 第3章本地部分完成；第3章等待用户提交MathCopilot批次；继续下一章本地流程。网站不可用，未冻结。
 当前149条；旧清单映射143/143；本地PASS 117；网站返回0。
 
+网站整合汇总：网站PASS 91 / 修复中 53 / 待导师 5 / 待复审 0。
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
-| MD-3-ModifiedConstruction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺形式jet的Hamiltonian构造、逐阶匹配及实际截断ODE的统一余项；属于大型向后误差分析理论，保留sorry。 |
-| MD-3.1-AdjointEulerOscillator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.1-ShadowHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.1-EnergyFailure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.1-ShadowInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.1-ShadowEllipses | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。 |
-| MD-3.1-EulerGrowth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.1-FormalHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.1-FormalHamiltonianField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.2-LieDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.2-ObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.2-ObservableSecondDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.2-OperatorExponential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.2-FormalObservable | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.2-FiniteLieTaylor | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；任意阶Lie迭代正则性与实际Taylor一致余项桥接尚缺；非PASS不证明。 |
-| MD-3.2-FlowCoordinates | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺实际流与高阶Lie Taylor系数的完整有限余项桥接；本地非PASS不证明。 |
-| MD-3.2-PoissonBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.2-PoissonCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.2-PoissonBilinearity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.2-PoissonSkew | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.2-PoissonSelf | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.2-PoissonJacobi | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.2-HamiltonianObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.2-HamiltonianLie | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.2-HamiltonianCoordinateDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.3-HamiltonianLieAdditivity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.3-FormalSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3-ExactExponentialCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.3-ProductExponentialCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.3-DifferenceCommutator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.3-DifferenceCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.3-HamiltonianCommutator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.3-HamiltonianCommutatorPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；印刷符号疑误待网站/导师裁定；本地FAIL不进入证明。 |
-| MD-3.3-LeadingModifiedExponential | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete |
-| MD-3.3-LeadingShadowHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺实际Hamiltonian截断匹配和统一ODE余项；符号/组合约定待审，本地非PASS不证明。 |
-| MD-3.3-BCH4 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺非交换formalLog的四阶有限系数计算桥接；完整BCH理论不建设，保留sorry。 |
-| MD-3.3-BCHHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3-BCHHamiltonianMatching | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺高阶Hamiltonian/ODE端点余项；非PASS不证明。 |
-| MD-3.3-CommutingFlows | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际Hamiltonian向量场交换子到局部流交换及和场流的桥接；不搭完整交换流理论。 |
-| MD-3.3.1-SymplecticEulerShadow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.1-SymplecticEulerShadowMatching | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺完整BCH机械系数与实际截断ODE匹配；本地非PASS不证明。 |
-| MD-3.3.2-VerletMaps | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.2-VerletHamiltonianParts | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.2-VerletStructure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.3.2-VerletModifiedHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.2-VerletModifiedMatching | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺完整BCH嵌套Poisson系数推导及实际流余项；非PASS不证明。 |
-| MD-3.3.2-ModifiedEven | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺形式反步恒等式→formalLog奇性的完整桥接；不建设大型非交换formalLog理论。 |
-| MD-3.3.2-Strang | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.2-DifferentLogsCommute | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；印刷不同步长交换断言待独立反例/导师裁定；非PASS不证明。 |
-| MD-3.3.2-StrangInverse | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺任意实非交换代数中形式指数负参数的完整逆元系数桥接；保留sorry，不搭大型形式指数理论。 |
-| MD-3.3.2-StrangCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.3.3-YoshidaComposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.3-YoshidaCoefficients | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.3-YoshidaCancellation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.3.3-YoshidaUnique | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.3.3-YoshidaRaiseOrder | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺完整非交换BCH/奇性到实际局部余项改阶桥接；属大型理论，不建设。 |
-| MD-3.3.3-Yoshida4 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.3-Yoshida4Structure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.3.3-GeneralSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.4-TakahashiPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.4-PotentialDoubleBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；需实际机械Hamiltonian的坐标Poisson双括号/梯度接口桥接；当前不存在现成桥接，有限微分路线待处理。 |
-| MD-3.3.4-TakahashiShadow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.4-TakahashiProcessor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.3.4-ProcessorEnergyPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；印刷漏项待裁定；非PASS不证明。 |
-| MD-3.3.4-TakahashiEffectiveOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。 |
-| MD-3.4-ModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.4-LeadingModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺真实步长Taylor展开、系数极限及修正场ODE余项桥接；属于完整修正方程理论，保留sorry。 |
-| MD-3.4-TruncatedHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.4-TruncationSmooth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.4-Thm3.1 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺Hamiltonian形式jet构造、全阶匹配与实际局部ODE统一余项；不建设大型BEA理论。 |
-| MD-3.4-CompactLipschitz | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.4-TruncatedFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.4-FiniteMatchingConstruction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺形式jet的Hamiltonian构造与实际有限截断匹配/余项；大型BEA理论缺项。 |
-| MD-3.4-TruncatedConservation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.4-EnergyTelescoping | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.4-UniformTruncatedLipschitz | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.4-TruncationRemainder | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.4-PhysicalEnergyDrift | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.4-PolynomialEnergyRate | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.4-StepCountPower | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.4-ArbitraryFiniteTruncation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺全阶Hamiltonian构造与实际截断匹配；C∞的任意固定阶不推出统一解析界。 |
-| MD-3.4-AnalyticDefect | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺解析Hamiltonian jet、Cauchy阶乘界和实际流统一余项；不建设大型BEA理论。 |
-| MD-3.4-OptimalTruncation | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺整数最优截断与一致指数常数界；原文取整问题待审。 |
-| MD-3.4-ExponentialFlat | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.4-ScalarVerletShadow4 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-3.4-CommutingEnergy | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；非PASS不进入证明；连续流版本可以另桥接Lie–Poisson导数。 |
-| MD-3.4-CommutingEnergySymmetry | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.4-EnergySymplecticNoGo | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺Ge–Marsden精确理论及局部全局资格；不建设大型理论。 |
-| MD-3.5-EqualComponentIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.5-EqualEulerIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.5-LinearEulerIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.5-LinearRKIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.5-VerletOscillatorEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.5-MomentumProjection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.5-ProjectionConstraint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.5-ProjectionFactor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.5-ProjectionEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.5-KineticZero | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.5-EnergyProjectionRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.5-NoHamiltonianAttractor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际流体积保持到开放盆不可能吸引零体积轨道的动力系统测度论桥接；不建设大型吸引子理论。 |
-| MD-3.5-LinearContinuousIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.6-HamiltonianFlowStructures | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；完整C¹流可微性、变分及测度保持桥接仍缺；已存在jointC²特例不能替代本签名。 |
-| MD-3.6-VolumeNotSymplectic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待构造四维线性det=1非辛映射并桥接真实Jacobian；缺完整有限矩阵到坐标映射桥接。 |
-| MD-3.6.1-LinearInvolution | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.6.1-ReversedFieldPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-3.6.1-MomentumReversal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.6.1-MechanicalReversal | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；本地FAIL不进入证明；正确机械反转已有正式库证明，原展示式待裁定。 |
-| MD-3.6.1-ReversedTrajectoryPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；字面FAIL不进入证明，等待网站与导师裁定。 |
-| MD-3.6.1-ReversedTrajectory | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/ReversedTrajectory.json。 |
-| MD-3.6.2-FlowReversal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺C¹场ODE唯一性到全时间反向轨道一致的完整桥接；不建设新ODE唯一性理论。 |
-| MD-3.6.2-FlowReversalIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；依赖尚未桥接的完整FlowReversal及实际流唯一性。 |
-| MD-3.6.2-ReversibleMethod | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.6.2-SymmetricMethod | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.6.2-AffineInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.6.2-SymmetricAffineReversible | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；本地非PASS不进入证明；条件化有限代数推论可另审。 |
-| MD-3.6.2-RKAffine | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.6.2-PartitionedAffinePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；字面非PASS不证明；正确分块运输另列。 |
-| MD-3.6.2-PartitionedAffine | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.6.3-SymplecticNotReversible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticNotReversible.json。 |
-| MD-3.6.3-TrapezoidalRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.6.3-TrapezoidalProperties | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。 |
-| MD-3.6.3-HamiltonianSpectrum | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺Hamiltonian矩阵复谱及转置相似性桥接；字面证明需审，不证明非PASS。 |
-| MD-3.6.3-SymplecticSpectrum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺辛矩阵非退化、逆转置相似及复谱桥接；不建设新的完整谱理论。 |
-| MD-3.6.3-ReversibleSpectrum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺有限矩阵可逆相似和共轭复特征向量运输桥接；不建设完整谱理论。 |
-| MD-3.6.3-ConjugateIterates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.6.1-MechanicalReversalCorrect | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.6.3-ConjugateOrderPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原文阶数/稳定性性能的精确意义及处理器正则性待审；本地非PASS不证明。 |
-| MD-3.6.3-ReversibleVolumeFailure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺非线性可逆光滑equivalence和Jacobian绝对det≠1的反例桥接；线性可逆矩阵不足以给本例。 |
-| MD-3.7-HardCoreDomain | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.7-ElasticReflection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.7-ElasticEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-3.7-CollisionComposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.7-CollisionRegularity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺有限事件gluedCollision索引稳定与各段ODE光滑性/一侧极限的完整桥接；不建设完整混合动力系统理论。 |
-| MD-3.7.1-HardCorePotential | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-3.7.1-PrimitiveSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.7.1-PrimitiveOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺碰撞事件稳定性与非光滑全局误差理论；不建设大型理论。 |
-| MD-3.7.1-ObstacleReflection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.7.1-PrimitiveDefect | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺实际碰撞步族的Taylor展开及一致O(h²)余项；本地非PASS不证明。 |
-| MD-3.7.1-CollisionDefectZero | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.7.1-EndImpactThirdOrderPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 待网站审计 | placeholder / incomplete；字面FAIL不证明，等待网站/导师裁定。 |
-| MD-3.7.2-CollisionQuadraticPath | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.7.2-CollisionTimeRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.7.2-CollisionQuartic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-3.7.2-CollisionalVerletRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.7.2-CollisionalVerletOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺自适应碰撞事件定位稳定性与非光滑全局误差理论；不建设大型理论。 |
-| MD-3.7.3-PairForceDecoupling | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
-| MD-3.7.3-DecoupledOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺混合冲量与碰撞稳定性全局误差理论；本地非PASS不证明。 |
-| MD-3.7.3-ModifiedCollisionProjection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
-| MD-3.7.1-FreeHardSphereHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-3-ModifiedConstruction | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺形式jet的Hamiltonian构造、逐阶匹配及实际截断ODE的统一余项；属于大型向后误差分析理论，保留sorry。 |
+| MD-3.1-AdjointEulerOscillator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.1-ShadowHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.1-EnergyFailure | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.1-ShadowInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.1-ShadowEllipses | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | placeholder / incomplete；需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。 |
+| MD-3.1-EulerGrowth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.1-FormalHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.1-FormalHamiltonianField | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.2-LieDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.2-ObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-ObservableSecondDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-OperatorExponential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.2-FormalObservable | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.2-FiniteLieTaylor | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | placeholder / incomplete；任意阶Lie迭代正则性与实际Taylor一致余项桥接尚缺；非PASS不证明。 |
+| MD-3.2-FlowCoordinates | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | placeholder / incomplete；缺实际流与高阶Lie Taylor系数的完整有限余项桥接；本地非PASS不证明。 |
+| MD-3.2-PoissonBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.2-PoissonCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonBilinearity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonSkew | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonSelf | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonJacobi | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-HamiltonianObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-HamiltonianLie | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-HamiltonianCoordinateDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3-HamiltonianLieAdditivity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3-FormalSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3-ExactExponentialCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3-ProductExponentialCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3-DifferenceCommutator | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3-DifferenceCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3-HamiltonianCommutator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3-HamiltonianCommutatorPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；印刷符号疑误待网站/导师裁定；本地FAIL不进入证明。 |
+| MD-3.3-LeadingModifiedExponential | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete |
+| MD-3.3-LeadingShadowHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺实际Hamiltonian截断匹配和统一ODE余项；符号/组合约定待审，本地非PASS不证明。 |
+| MD-3.3-BCH4 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺非交换formalLog的四阶有限系数计算桥接；完整BCH理论不建设，保留sorry。 |
+| MD-3.3-BCHHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3-BCHHamiltonianMatching | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺高阶Hamiltonian/ODE端点余项；非PASS不证明。 |
+| MD-3.3-CommutingFlows | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺实际Hamiltonian向量场交换子到局部流交换及和场流的桥接；不搭完整交换流理论。 |
+| MD-3.3.1-SymplecticEulerShadow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.1-SymplecticEulerShadowMatching | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺完整BCH机械系数与实际截断ODE匹配；本地非PASS不证明。 |
+| MD-3.3.2-VerletMaps | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.2-VerletHamiltonianParts | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.2-VerletStructure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3.2-VerletModifiedHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.2-VerletModifiedMatching | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺完整BCH嵌套Poisson系数推导及实际流余项；非PASS不证明。 |
+| MD-3.3.2-ModifiedEven | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺形式反步恒等式→formalLog奇性的完整桥接；不建设大型非交换formalLog理论。 |
+| MD-3.3.2-Strang | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.2-DifferentLogsCommute | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；印刷不同步长交换断言待独立反例/导师裁定；非PASS不证明。 |
+| MD-3.3.2-StrangInverse | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺任意实非交换代数中形式指数负参数的完整逆元系数桥接；保留sorry，不搭大型形式指数理论。 |
+| MD-3.3.2-StrangCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.3.3-YoshidaComposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.3-YoshidaCoefficients | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.3-YoshidaCancellation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.3.3-YoshidaUnique | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.3.3-YoshidaRaiseOrder | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺完整非交换BCH/奇性到实际局部余项改阶桥接；属大型理论，不建设。 |
+| MD-3.3.3-Yoshida4 | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.3-Yoshida4Structure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3.3-GeneralSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.4-TakahashiPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.4-PotentialDoubleBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；需实际机械Hamiltonian的坐标Poisson双括号/梯度接口桥接；当前不存在现成桥接，有限微分路线待处理。 |
+| MD-3.3.4-TakahashiShadow | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.4-TakahashiProcessor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.4-ProcessorEnergyPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；印刷漏项待裁定；非PASS不证明。 |
+| MD-3.3.4-TakahashiEffectiveOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。 |
+| MD-3.4-ModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.4-LeadingModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺真实步长Taylor展开、系数极限及修正场ODE余项桥接；属于完整修正方程理论，保留sorry。 |
+| MD-3.4-TruncatedHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.4-TruncationSmooth | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-Thm3.1 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺Hamiltonian形式jet构造、全阶匹配与实际局部ODE统一余项；不建设大型BEA理论。 |
+| MD-3.4-CompactLipschitz | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-TruncatedFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.4-FiniteMatchingConstruction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺形式jet的Hamiltonian构造与实际有限截断匹配/余项；大型BEA理论缺项。 |
+| MD-3.4-TruncatedConservation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-EnergyTelescoping | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-UniformTruncatedLipschitz | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-TruncationRemainder | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-PhysicalEnergyDrift | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-PolynomialEnergyRate | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-StepCountPower | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-ArbitraryFiniteTruncation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺全阶Hamiltonian构造与实际截断匹配；C∞的任意固定阶不推出统一解析界。 |
+| MD-3.4-AnalyticDefect | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | placeholder / incomplete；缺解析Hamiltonian jet、Cauchy阶乘界和实际流统一余项；不建设大型BEA理论。 |
+| MD-3.4-OptimalTruncation | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺整数最优截断与一致指数常数界；原文取整问题待审。 |
+| MD-3.4-ExponentialFlat | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.4-ScalarVerletShadow4 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | definition / incomplete |
+| MD-3.4-CommutingEnergy | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；非PASS不进入证明；连续流版本可以另桥接Lie–Poisson导数。 |
+| MD-3.4-CommutingEnergySymmetry | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.4-EnergySymplecticNoGo | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺Ge–Marsden精确理论及局部全局资格；不建设大型理论。 |
+| MD-3.5-EqualComponentIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.5-EqualEulerIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.5-LinearEulerIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.5-LinearRKIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.5-VerletOscillatorEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.5-MomentumProjection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.5-ProjectionConstraint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.5-ProjectionFactor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.5-ProjectionEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.5-KineticZero | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.5-EnergyProjectionRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.5-NoHamiltonianAttractor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺实际流体积保持到开放盆不可能吸引零体积轨道的动力系统测度论桥接；不建设大型吸引子理论。 |
+| MD-3.5-LinearContinuousIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.6-HamiltonianFlowStructures | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；完整C¹流可微性、变分及测度保持桥接仍缺；已存在jointC²特例不能替代本签名。 |
+| MD-3.6-VolumeNotSymplectic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；待构造四维线性det=1非辛映射并桥接真实Jacobian；缺完整有限矩阵到坐标映射桥接。 |
+| MD-3.6.1-LinearInvolution | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.6.1-ReversedFieldPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | definition / incomplete |
+| MD-3.6.1-MomentumReversal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.6.1-MechanicalReversal | DRAFT/原页已核 | 已编译/公理已核 | FAIL | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；本地FAIL不进入证明；正确机械反转已有正式库证明，原展示式待裁定。 |
+| MD-3.6.1-ReversedTrajectoryPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；字面FAIL不进入证明，等待网站与导师裁定。 |
+| MD-3.6.1-ReversedTrajectory | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/ReversedTrajectory.json。 |
+| MD-3.6.2-FlowReversal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺C¹场ODE唯一性到全时间反向轨道一致的完整桥接；不建设新ODE唯一性理论。 |
+| MD-3.6.2-FlowReversalIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；依赖尚未桥接的完整FlowReversal及实际流唯一性。 |
+| MD-3.6.2-ReversibleMethod | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.6.2-SymmetricMethod | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.6.2-AffineInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.6.2-SymmetricAffineReversible | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；本地非PASS不进入证明；条件化有限代数推论可另审。 |
+| MD-3.6.2-RKAffine | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.6.2-PartitionedAffinePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；字面非PASS不证明；正确分块运输另列。 |
+| MD-3.6.2-PartitionedAffine | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.6.3-SymplecticNotReversible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticNotReversible.json。 |
+| MD-3.6.3-TrapezoidalRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.6.3-TrapezoidalProperties | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。 |
+| MD-3.6.3-HamiltonianSpectrum | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺Hamiltonian矩阵复谱及转置相似性桥接；字面证明需审，不证明非PASS。 |
+| MD-3.6.3-SymplecticSpectrum | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺辛矩阵非退化、逆转置相似及复谱桥接；不建设新的完整谱理论。 |
+| MD-3.6.3-ReversibleSpectrum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺有限矩阵可逆相似和共轭复特征向量运输桥接；不建设完整谱理论。 |
+| MD-3.6.3-ConjugateIterates | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.6.1-MechanicalReversalCorrect | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.6.3-ConjugateOrderPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；原文阶数/稳定性性能的精确意义及处理器正则性待审；本地非PASS不证明。 |
+| MD-3.6.3-ReversibleVolumeFailure | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺非线性可逆光滑equivalence和Jacobian绝对det≠1的反例桥接；线性可逆矩阵不足以给本例。 |
+| MD-3.7-HardCoreDomain | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7-ElasticReflection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7-ElasticEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.7-CollisionComposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7-CollisionRegularity | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺有限事件gluedCollision索引稳定与各段ODE光滑性/一侧极限的完整桥接；不建设完整混合动力系统理论。 |
+| MD-3.7.1-HardCorePotential | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | definition / incomplete |
+| MD-3.7.1-PrimitiveSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7.1-PrimitiveOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺碰撞事件稳定性与非光滑全局误差理论；不建设大型理论。 |
+| MD-3.7.1-ObstacleReflection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7.1-PrimitiveDefect | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺实际碰撞步族的Taylor展开及一致O(h²)余项；本地非PASS不证明。 |
+| MD-3.7.1-CollisionDefectZero | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.7.1-EndImpactThirdOrderPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；字面FAIL不证明，等待网站/导师裁定。 |
+| MD-3.7.2-CollisionQuadraticPath | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7.2-CollisionTimeRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7.2-CollisionQuartic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.7.2-CollisionalVerletRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7.2-CollisionalVerletOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺自适应碰撞事件定位稳定性与非光滑全局误差理论；不建设大型理论。 |
+| MD-3.7.3-PairForceDecoupling | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | definition / incomplete |
+| MD-3.7.3-DecoupledOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺混合冲量与碰撞稳定性全局误差理论；本地非PASS不证明。 |
+| MD-3.7.3-ModifiedCollisionProjection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7.1-FreeHardSphereHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
 
 ## 旧143条完整映射
 

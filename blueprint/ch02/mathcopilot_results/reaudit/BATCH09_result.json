@@ -1,0 +1,289 @@
+{
+  "batch": "BATCH09",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "f955234e349aea7df7228984d5ddaa27e4eb3ee5dad16c4f0dde283cdd4b9acd",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.2.3-ErrorDifference",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF88／印刷66，式(2.9)及其前一句逐字相符；本页明确数值递推 z_{n+1}=G_h(z_n)、精确关系 z(t_{n+1})=F_h(z(t_n))、t_n=nh。无独立完整证明，proof_latex=null正确。context_notation与这些关系一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.errorDifference",
+        "verdict": "PASS",
+        "explanation": "对象展开：Ch02_deps.txt:2816（MolecularDynamics/Chapter02/ReviewDefinitions.lean）Q n := Fin n → ℝ，是n维实坐标空间；加减逐坐标，默认Pi范数为最大坐标绝对值。原文此处使用范数而未在本条指定欧氏范数，此选择不改变所述范数不等式的结构；不能将该实例误称为欧氏范数。n可取完整状态的坐标数，Q这个名字不把变量限制为位置。 迭代展开：Ch02_deps.txt:1443–1452（MolecularDynamics/Chapter02/OneStepConvergence.lean）oneStepIterate G h z₀ n := (G h)^[n] z₀；0次为z₀，后继为G h作用于前一节点。代入z₀=γ 0，正是共同初值的数值解。 Ch02.lean:263–270全称n,G,F,γ,h,k，先假设γ((k+1)h)=F_h(γ(kh))，再得到数值后继减精确后继等于G_h(数值当前节点)减F_h(精确当前节点)，正是PDF88式(2.9)，未缺结论项。相同初值来自数值解的背景；任意h及无光滑性是代数恒等式的合理推广，无新增必要假设或[ERRATUM?]。依赖Statements.lean的errorDifference_statement（deps:3020–3025）同签名，ReviewProofs.lean的errorDifference_proved（deps:3366–3368）用后继递推及精确节点等式改写。证明状态单独记录：本地声明及本项直接调用的依赖证明体未见sorry；本次未编译工程，不据此认证整个依赖工程无证明缺口。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-Consistency",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NOTATION_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-Consistency",
+          "kind": "definition",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "66–67",
+          "pdf_page": "88–89",
+          "statement_latex": "The first assumption is that $\\mathcal G_h$ is an $O(h^{p+1})$ approximation of $\\mathcal F_h$ in the sense that there is a constant $K\\ge0$ and a constant $\\Delta>0$ such that, for $t\\in[0,\\tau]$, we have\n\\[\\|\\mathcal F_h(\\boldsymbol z(t))-\\mathcal G_h(\\boldsymbol z(t))\\|\\le\\bar K h^{p+1},\\qquad h<\\Delta.\\tag{2.10}\\]\nThe assumption (2.10) that the local error is of order $p+1$, $p>0$, is termed the consistency of the numerical method. We say the method is consistent of order $p$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "正文存在常数K≥0、Δ>0，式(2.10)使用\\bar K；疑似记号不一致，原文未在本处明确K=\\bar K，不静默修正。",
+            "δ对应原文Δ；h>0来自PDF88本节起点；一致性阶要求p>0（PDF89）。"
+          ],
+          "issues": [
+            "[SOURCE_NOTATION_MISMATCH] PDF88正文常数写K，式(2.10)写\\bar K；原书未在这两处明确声明二者相同。原context_notation将其同一化过于确定，应记录原书疑误，不改动原句或式(2.10)。"
+          ],
+          "lean_decl": "MD.Ch02.consistency",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "BATCH09只读审校输出修订副本；原附件未修改",
+              "details": [
+                "[SOURCE_NOTATION_MISMATCH] PDF88正文常数写K，式(2.10)写\\bar K；原书未在这两处明确声明二者相同。原context_notation将其同一化过于确定，应记录原书疑误，不改动原句或式(2.10)。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 88–90逐页图像核对，见本次evidence"
+        },
+        "issues": [
+          "[SOURCE_NOTATION_MISMATCH] PDF88正文常数写K，式(2.10)写\\bar K；原书未在这两处明确声明二者相同。原context_notation将其同一化过于确定，应记录原书疑误，不改动原句或式(2.10)。"
+        ],
+        "evidence": [
+          "PDF88／印刷66，式(2.10)：范数≤\\bar K h^{p+1}，h<Δ；上方正文为K≥0、Δ>0、t∈[0,τ]。",
+          "PDF89／印刷67，一致性定义明确写“p > 0”；statement_latex的两段原句及页码88–89相符，无独立完整证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.consistency",
+        "verdict": "FAIL",
+        "explanation": "对象展开：Ch02_deps.txt:2816（MolecularDynamics/Chapter02/ReviewDefinitions.lean）Q n := Fin n → ℝ，是n维实坐标空间；加减逐坐标，默认Pi范数为最大坐标绝对值。原文此处使用范数而未在本条指定欧氏范数，此选择不改变所述范数不等式的结构；不能将该实例误称为欧氏范数。n可取完整状态的坐标数，Q这个名字不把变量限制为位置。 Ch02.lean:273–275展开本地定义为∃K≥0，∃δ>0，∀t∈[0,τ]，∀h∈(0,δ)，局部误差≤K h^(p+1)。K和δ统一独立于t,h、时间窗、严格步长端点、F_h与G_h的比较均对应PDF88式(2.10)。但p:ℕ且定义体没有0<p，接受原文PDF89明文排除的p=0；自然数阶也把未限定整数的正阶范围收窄，需明示。原文正文K与公式Kbar的记号疑误不影响使用一个统一误差常数的数学解读，但不据此改动原文审校字段。无[EXTRA]标记能补上缺失正阶条件；无[ERRATUM?]标记。证明状态：这是完整def，无sorry；判FAIL依据签名语义。",
+        "counterexample": "取n=1，τ=1，γ(t)(i)=0，F h x=x，G h x=x+(fun i => h)。Q 1的Pi范数给出局部误差h。p=0、K=1、δ=1满足当前consistency定义；h=1/ν时迭代ν步得到各坐标1，终点误差恒为1，原文p>0排除此零阶情形。即使F=G，当前谓词也会在p=0成立。",
+        "suggested_fix": "在定义体加入0<p，或用正自然数参数并注明只形式化整数阶。若覆盖原文一般正阶，改p为ℝ，加入0<p，使用Real.rpow；保持统一K、δ和0<h<δ的量词及端点。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-Stability",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF88／印刷66，式(2.11)逐项相符：u,w∈D，h≤Δ，系数1+hL；h>0来自本节起点。",
+          "PDF88–89／印刷66–67明确D含精确解与所有相关数值节点，并称留域为simplifying assumption；PDF89稳定性定义原句相符。无独立完整证明。context中改选正L是可放大常数的解释，并非原文新增文字。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.stability",
+        "verdict": "PASS",
+        "explanation": "对象展开：Ch02_deps.txt:2816（MolecularDynamics/Chapter02/ReviewDefinitions.lean）Q n := Fin n → ℝ，是n维实坐标空间；加减逐坐标，默认Pi范数为最大坐标绝对值。原文此处使用范数而未在本条指定欧氏范数，此选择不改变所述范数不等式的结构；不能将该实例误称为欧氏范数。n可取完整状态的坐标数，Q这个名字不把变量限制为位置。 Ch02.lean:278–280定义先存在L≥0、δ>0，再对0<h≤δ以及任意u,w∈D全称量化；展开后即PDF88式(2.11)。量词顺序、两个状态及全部结论一致。L非负是合理的常数选择：若某个实L满足界，放大到max L 0对h>0保持界，故存在性不变；后续需要除L时还能选严格正L。D内精确和数值留域是后续应用假设，无需置入此稳定性谓词；不需光滑性。[EXTRA]/[ERRATUM?]均无本地标记，原文h>0由背景提供。证明状态：完整def，无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-ErrorRecursion",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF89／印刷67，误差定义ε_n=‖z_n−z(t_n)‖及递推ε_{n+1}≤(1+Lh)ε_n+\\bar K h^{p+1}逐项相符。前文给加减G_h(z(t_n))的差式，并明确使用三角不等式、(2.10)、(2.11)；这是推导讨论，未给独立完整证明。",
+          "context_notation的留域假设见PDF88末段至PDF89首段，页码正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.errorRecursion",
+        "verdict": "PASS",
+        "explanation": "迭代展开：Ch02_deps.txt:1443–1452（MolecularDynamics/Chapter02/OneStepConvergence.lean）oneStepIterate G h z₀ n := (G h)^[n] z₀；0次为z₀，后继为G h作用于前一节点。代入z₀=γ 0，正是共同初值的数值解。 Ch02.lean:284–299在实范数空间E中固定h,L,K,p,ν，hnum和hexact保证0≤n≤ν两类节点均在D；hstable为D上单步界，hconsistent为所有n<ν的轨道局部误差界，然后对任意n<ν输出完整ε_(n+1)≤(1+hL)ε_n+K h^(p+1)。将F_h(γ(nh))用精确后继γ((n+1)h)替换、并利用范数对相反差的对称性，忠实对应PDF89递推。[EXTRA]一般实范数空间是合理推广，有限维实例被覆盖而非附加有限维假设；p为实数、在固定步长局部界已直接假定时无需另加p>0、h<Δ等条件，推导只用三角不等式。留域不是额外未经说明的限制。deps:1479–1505的直接依赖证明展开了上述加减G_h(精确节点)及三角不等式。无[ERRATUM?]标记。证明状态单独记录：本地声明及本项直接调用的依赖证明体未见sorry；本次未编译工程，不据此认证整个依赖工程无证明缺口。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-ErrorBound",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_ENDPOINT_GAP",
+          "SOURCE_DIVISION_BY_L"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-ErrorBound",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "67",
+          "pdf_page": "89",
+          "statement_latex": "From this, the bound\n\\[\\epsilon_n\\le\\frac{\\bar K}{L}e^{Lnh}h^p,\\qquad n=0,1,\\ldots,\\nu,\\tag{2.12}\\]\nfollows by a straightforward calculation, for $h\\le\\Delta$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "式(2.12)中Kbar是局部误差界常数；正文K与式(2.10)的Kbar存在原书记号不一致。",
+            "原文前提(2.10)只保证h<Δ，而此处结句写h≤Δ；端点需额外论证或假设，不静默修正。",
+            "原式分母L需要L>0；已有非负稳定常数可放大为正数。固定L=0时应另用ε_n≤n Kbar h^{p+1}。"
+          ],
+          "issues": [
+            "[SOURCE_ENDPOINT_GAP] PDF88式(2.10)只假定h<Δ，PDF89式(2.12)后却写h≤Δ；在h=Δ处缺少已给局部误差界，不应静默改成严格不等式。",
+            "[SOURCE_DIVISION_BY_L] 式(2.12)含\\bar K/L，而此前未明确L>0；可改选正稳定常数，但字面上的L=0情形须另给线性累计界。"
+          ],
+          "lean_decl": "MD.Ch02.errorBound",
+          "reusable_proofs": [
+            "MolecularDynamics.oneStep_error_bound"
+          ],
+          "extra_assumptions": [
+            "h>0、L>0及K≥0显式化；L=0时可增大为正L，除零界不能字面使用；假设精确与数值留域来自原文。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "BATCH09只读审校输出修订副本；原附件未修改",
+              "details": [
+                "[SOURCE_ENDPOINT_GAP] PDF88式(2.10)只假定h<Δ，PDF89式(2.12)后却写h≤Δ；在h=Δ处缺少已给局部误差界，不应静默改成严格不等式。",
+                "[SOURCE_DIVISION_BY_L] 式(2.12)含\\bar K/L，而此前未明确L>0；可改选正稳定常数，但字面上的L=0情形须另给线性累计界。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 88–90逐页图像核对，见本次evidence"
+        },
+        "issues": [
+          "[SOURCE_ENDPOINT_GAP] PDF88式(2.10)只假定h<Δ，PDF89式(2.12)后却写h≤Δ；在h=Δ处缺少已给局部误差界，不应静默改成严格不等式。",
+          "[SOURCE_DIVISION_BY_L] 式(2.12)含\\bar K/L，而此前未明确L>0；可改选正稳定常数，但字面上的L=0情形须另给线性累计界。"
+        ],
+        "evidence": [
+          "PDF89／印刷67，式(2.12)及其后的“for h ≤ Δ”与statement_latex相符。原书仅说straightforward calculation，没有独立完整证明。",
+          "PDF88／印刷66，式(2.10)为h<Δ，式(2.11)为h≤Δ，且未显式要求L>0。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.errorBound",
+        "verdict": "PASS",
+        "explanation": "迭代展开：Ch02_deps.txt:1443–1452（MolecularDynamics/Chapter02/OneStepConvergence.lean）oneStepIterate G h z₀ n := (G h)^[n] z₀；0次为z₀，后继为G h作用于前一节点。代入z₀=γ 0，正是共同初值的数值解。 Ch02.lean:303–316固定步长并先给h>0、L>0、K≥0及两类节点留域、稳定性和所有n<ν的一致性界，再全称输出0≤n≤ν的ε_n≤(K/L)exp(Lnh)h^p，含初始及最终节点，常数和指数位置与PDF89式(2.12)一致。[EXTRA]h>0、K≥0来自背景；L>0是分母有意义的必要合理显式化，已有稳定常数可增大至正值，固定L=0应另用ε_n≤nK h^(p+1)。实数p不限制为正不妨碍固定步长上界，不能据此称零阶方法收敛。签名直接假设此h的局部界，不依赖Δ端点，故数学陈述成立；原文(2.10)只给h<Δ而(2.12)后写h≤Δ的端点疑误成立，Lean并未从严格端点前提无条件推出端点界。该判断保留在解释中，本地无字面[ERRATUM?]标记。deps:1507–1555的界证明从初值误差0解递推并用(1+hL)^n≤exp(Lnh)，对应这组假设。证明状态单独记录：本地声明及本项直接调用的依赖证明体未见sorry；本次未编译工程，不据此认证整个依赖工程无证明缺口。",
+        "counterexample": null,
+        "suggested_fix": "签名无需修复；对接原文统一Δ时只从(2.10)推出0<h<Δ的界。若要求h=Δ，则补该端点局部误差界，或适当连续性延拓假设；固定L=0另列线性累计界，不静默改原文。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-ConsistencyConvergence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF89／印刷67，原句“This result shows that a method which is consistent of order p and stable is convergent of order p.”逐字相符；同页明确p>0。",
+          "所依赖的留域简化假设见PDF88–89；无独立完整证明，proof_latex=null、页码及空context_notation没有转录错误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.consistencyConvergence",
+        "verdict": "PASS",
+        "explanation": "迭代展开：Ch02_deps.txt:1443–1452（MolecularDynamics/Chapter02/OneStepConvergence.lean）oneStepIterate G h z₀ n := (G h)^[n] z₀；0次为z₀，后继为G h作用于前一节点。代入z₀=γ 0，正是共同初值的数值解。 最大误差展开：deps:1460–1462的oneStepMaxError := (Finset.range (ν+1)).sup' 非空证明 (fun n => ‖oneStepIterate G h (γ 0) n−γ(nh)‖)，取的恰是0≤n≤ν全部节点的有限最大值，含两端。Ch02.lean:320–339先固定统一τ,δ,L,K,p并要求τ,δ,L,p>0、K≥0；精确轨道在[0,τ]留域，所有正ν且τ/ν≤δ的网格数值节点留域，稳定界统一覆盖0<h≤δ，局部界统一覆盖0<h<δ和t,t+h∈[0,τ]。结论第一项是最大误差沿ν→∞趋零，第二项是最终≤((K/L)exp(Lτ))(τ/ν)^p，既含收敛又含p阶，无遗漏子句。最终正ν自动避免τ/0，有限前缀不影响atTop。局部一致性仅用到t+h≤τ处是足够且合理的轨道表述，在精确流关系下与原文局部缺陷相同。[EXTRA]τ,δ,p正、K非负有背景依据；L正可放大取得；两类留域是原文明示的简化假设。一般E覆盖有限维空间，未额外假定ODE存在或唯一性，因为此处γ已给定且其精确后继局部缺陷直接作为假设。收敛不依赖h=δ端点，未受原书端点疑误影响；无本地[ERRATUM?]标记。deps:1587–1620直接依赖证明采用同一最大误差定义及同一量词和前提。证明状态单独记录：本地声明及本项直接调用的依赖证明体未见sorry；本次未编译工程，不据此认证整个依赖工程无证明缺口。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-ScalarVerlet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF89／印刷67，Example 2.2开头的q,p∈ℝ、M=1、原句及式(2.13)、(2.14)全部相符。label中的(map)是摘录范围标记；原书例题标题为“The Verlet Method is 2nd Order”，未将标记当作原文引句。",
+          "context_notation中单位质量与大写更新坐标正确；未给这两条映射式的独立完整证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_scalarVerlet",
+        "verdict": "PASS",
+        "explanation": "重新展开Ch02.lean:356–358本地bp_scalarVerlet：z:ℝ×ℝ，z.1是初始q、z.2是初始p；局部绑定q_new=z.1+h*z.2+(h²/2)F(z.1)，输出(q_new,z.2+(h/2)(F(z.1)+F(q_new)))。完全对应PDF89式(2.13)的Q及式(2.14)的P，坐标顺序、标量对象和单位质量无遗漏；原文F为力，不是此处前面精确流符号F_h。deps:3026–3028正式scalarVerlet与此本地定义体一致，已另行读取核对。任意F,h的代数公式覆盖本例，无须额外光滑性；无[EXTRA]/[ERRATUM?]标记。证明状态：完整def，无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-VerletExpansion",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_RANGE_OVERBROAD"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-VerletExpansion",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "68",
+          "pdf_page": "90",
+          "statement_latex": "Combining terms of like powers of $h$, we have\n\\[P=p+hF+\\frac{h^2}{2}pF'+\\frac{h^3}{4}[F'F+p^2F'']+O(h^4).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$F,F',F''$均在q取值；p.67/PDF89展开F(q+hp+h²F/2)，标量M=1。"
+          ],
+          "issues": [
+            "[PAGE_RANGE_OVERBROAD] 引用的“Combining terms of like powers of h”及该展示式均只在印刷68／PDF90；印刷67／PDF89是其Taylor展开背景，应放在context证据而不计为statement页码。"
+          ],
+          "lean_decl": "MD.Ch02.verletExpansion",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "F C³，使O(h⁴)余项有实际意义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "BATCH09只读审校输出修订副本；原附件未修改",
+              "details": [
+                "[PAGE_RANGE_OVERBROAD] 引用的“Combining terms of like powers of h”及该展示式均只在印刷68／PDF90；印刷67／PDF89是其Taylor展开背景，应放在context证据而不计为statement页码。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 88–90逐页图像核对，见本次evidence"
+        },
+        "issues": [
+          "[PAGE_RANGE_OVERBROAD] 引用的“Combining terms of like powers of h”及该展示式均只在印刷68／PDF90；印刷67／PDF89是其Taylor展开背景，应放在context证据而不计为statement页码。"
+        ],
+        "evidence": [
+          "PDF90／印刷68，页首原句和P=p+hF+(h²/2)pF′+(h³/4)[F′F+p²F″]+O(h⁴)逐项相符；所有F、F′、F″按q取值。",
+          "PDF89／印刷67下半页给出F(q+hp+h²F(q)/2)的展开，并说忽略项为四次及更高次；作为背景与context_notation相符。没有独立完整证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletExpansion",
+        "verdict": "PASS",
+        "explanation": "依赖展开：Ch02_deps.txt:3026–3028（MolecularDynamics/Chapter02/Statements.lean）正式scalarVerlet F h (q,p)先置Q=q+hp+(h²/2)F(q)，再输出P=p+(h/2)(F(q)+F(Q))；实际调用对象已确认，未仅用同名本地bp_scalarVerlet替代。Ch02.lean:362–369全称F,q,p并假设ContDiff ℝ 3 F，结论在h→0上，P减去p+hF(q)+(h²/2)pF′(q)+(h³/4)(F′(q)F(q)+p²F″(q))是O(h⁴)。deriv F q与deriv (deriv F) q分别为q处一、二阶导数；IsBigO在𝓝0表示某邻域有统一常数C控制余差绝对值≤C|h⁴|，故系数、全部项及余阶与PDF90原式相同。q,p固定，O常数可依赖F,q,p，与原文点处展开相符。[EXTRA]全局C³是充分且合理的正则性显式化，但局部q邻域C³已经足够；二阶Taylor余差O((Q−q)³)，Q−q=O(h)，乘h得O(h⁴)。双侧h→0是光滑展开的合理推广；无[ERRATUM?]标记。证明状态独立：Ch02.lean:370有sorry，故这是签名语义PASS，绝不表示已证明或Lean验证通过；deps:3029–3036的verletExpansion_statement也仅是命题定义，不是证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

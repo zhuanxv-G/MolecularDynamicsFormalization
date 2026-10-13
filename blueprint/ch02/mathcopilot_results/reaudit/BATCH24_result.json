@@ -1,0 +1,71 @@
+{
+  "batch": "BATCH24",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "186b911135b467f29c9948499c26cd4e6b72f9f8f18a79c7e58db9f933a0a054",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.3-HarmonicSplit",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STATEMENT_NOT_VERBATIM",
+          "NOTATION_MISMATCH",
+          "PAGE_RANGE_INCORRECT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.3-HarmonicSplit",
+          "kind": "definition",
+          "label": null,
+          "section": "2.4.3",
+          "printed_page": "85",
+          "pdf_page": "107",
+          "statement_latex": "Some systems can be decomposed into a harmonic (quadratic) part $H_0(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^T M^{-1}\\boldsymbol p/2+\\boldsymbol q^T A\\boldsymbol q/2$ and an anharmonic part $H_1(\\boldsymbol q,\\boldsymbol p)=\\hat U(\\boldsymbol q)$. Then a splitting method can be formulated based on exact solution of the linear system together with “kicks” representing impulses defined by the anharmonic part. For a simple system consisting of a harmonic oscillator $H_0(q,p)=p^2/2+\\Omega^2q^2/2$, such a method can be written\n\\[\\begin{bmatrix}Q\\\\\\hat p\\end{bmatrix}=\\begin{bmatrix}\\cos h\\Omega&\\frac{1}{\\Omega}\\sin h\\Omega\\\\-\\Omega\\sin h\\Omega&\\cos h\\Omega\\end{bmatrix}\\begin{bmatrix}q\\\\p\\end{bmatrix},\\qquad P=\\hat p-h\\hat U'(Q).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原文一般情形中 q、p 为向量，M 为质量矩阵，A 为二次势矩阵；标量简例中的 q、p、Q、p̂、P 为实数，Ω 为振子频率，h 为步长，原文扰动势记为 Û。Lean 的 U 对应原文 Û；Lean 定义仅覆盖原文明确给出的标量简例，一般矩阵分裂保留为背景。"
+          ],
+          "issues": [
+            "原条目改写并遗漏线性系统精确解与 anharmonic kicks 的说明，不是逐字转录。",
+            "原文扰动势使用 hat U，而非 tilde U。",
+            "本条全部位于印刷页85/PDF页107；页86/PDF页108已开始2.4.4。"
+          ],
+          "lean_decl": "MD.Ch02.bp_harmonicAnharmonic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]Ω≠0时闭式除法有效；Ω=0须取极限漂移，原文未写退化情形。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH24：对照PDF页107–108渲染图恢复原段落、hat U记号并收窄页码；未改动原书公式，Ω=0问题仅作为语义审计意见。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次直接核对PDF页107及108的渲染图。"
+        },
+        "issues": [
+          "原条目改写并遗漏线性系统精确解与 anharmonic kicks 的说明，不是逐字转录。",
+          "原文扰动势使用 hat U，而非 tilde U。",
+          "本条全部位于印刷页85/PDF页107；页86/PDF页108已开始2.4.4。"
+        ],
+        "evidence": [
+          "PDF第107页（印刷85页），§2.4.3从Some systems can be decomposed开始，明确写出harmonic (quadratic) part、exact solution of the linear system和anharmonic kicks；原JSON改写并省略这些文字。",
+          "PDF第107页：H₁(q,p)=Û(q)，P=p̂−hÛ′(Q)；矩阵上右元为(1/Ω)sin hΩ，其余三元及先线性流后kick顺序与原JSON公式一致。",
+          "PDF第108页（印刷86页）起始即§2.4.4 Explicit and Implicit Methods；本条无续文。§2.4.3未给独立证明，proof_latex及proof_discussion_latex为null合理。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_harmonicAnharmonic",
+        "verdict": "FAIL",
+        "explanation": "已重新读取实际蓝图附件 /workspace/Ch02.lean:1067–1071，以及 Ch02_deps.txt:2895–2897 的正式 harmonicAnharmonic 定义，后者位于 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 段（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7）。两者函数体同式，并非仅依据名称；蓝图本身直接给出计算，没有通过依赖包装加入隐含前提。输入 Ω,h 为实数，U 为实函数，z=(q₀,p₀) 为标量位置动量；let q 展开为 Q=cos(hΩ)q₀+(sin(hΩ)/Ω)p₀；第二分量展开为 P=−Ω sin(hΩ)q₀+cos(hΩ)p₀−h deriv U Q。因此全部四个矩阵系数、先谐振子精确流后扰动势 kick 的顺序、负号、步长及在新位置 Q 求导均正确；U 对应原书 Û。按条目 context_notation，本条限定为原文明示的标量简例，一般 M,A 矩阵分裂仅为背景，不以此认定遗漏一般矩阵算法。定义按 Ω,U,h,z 参数顺序给出函数，不含存在量词或定理结论，也没有质量、光滑性、非零频率的隐藏约束。[EXTRA] Ω≠0 对当前未作连续延拓的除法系数必要且合理，但只是注释，签名与函数体均未落实；实数除零总化为0导致 Ω=0 时 Q=q₀，不能表达 H₀=p²/2 的精确漂移。该问题有直接反例，依赖中的同式定义并未消除它。原文 Û′ 的经典解释还需要 U 在 Q 可微；当前接受任意 U，deriv 的总定义本身不提供可微性资格，应在使用域或对应流命题中明确。无须将全域 C∞ 当作必要条件。本条无 [ERRATUM?] 标记；原书未写 Ω=0，不能据此认定原书笔误或静默补其公式。此声明是无 sorry 的 def；依赖对应定义亦无 sorry，签名语义失败与证明占位分开判断。输入哈希键 Blueprint/Ch02.lean 是请求指定的逻辑名称，实际读取路径为 /workspace/Ch02.lean。",
+        "counterexample": "取 Ω=0、U(x)=0、h=1、z=(0,1)。cos 0=1、sin 0=0，Lean 实数0/0=0，故定义输出(0,1)。原文说明该线性步为精确解；退化谐振子 H₀=p²/2 满足 q̇=p、ṗ=0，时间1精确流为(1,1)，零势 kick 不改变它。该反例的 U 是光滑函数，故失败不依赖不可微势。",
+        "suggested_fix": "若仅登记原文除法闭式，给输入 Ω 增加 Ω≠0 的资格（证明参数或非零子类型），并在与经典流的对应声明或定义使用域中明确 U 在更新位置 Q 可微；注释不能替代签名限制。若要覆盖 Ω=0，增加显式分支 Q=q₀+h p₀、P=p₀−h deriv U Q，或将 sin(hΩ)/Ω 在 Ω=0 连续延拓为 h，注明这是形式化扩展。保持 A 原文审校及原书公式不变。"
+      }
+    }
+  ]
+}

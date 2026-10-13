@@ -1,0 +1,147 @@
+[
+  {
+    "source_id": "MD-3.7.2-CollisionQuadraticPath",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材印刷第135页／PDF第157页（135+22=157）；已同时核对页面渲染与文本提取，渲染证据：/workspace/.mathcopilot/reviews/ch03/evidence/BATCH25/pdf157.png。",
+        "式(3.18)逐项为 Q(t)=q+tM^{-1}p−(t²/2)M^{-1}∇U(q)；JSON的符号、负号、系数、编号及前后两句均一致。",
+        "本条没有独立证明，proof_latex、proof_discussion_latex 为 null 与原页一致。context_notation 中 F=−grad U 对应原式；有限二次多项式是公式本身的解释。质量及势的语境见§3.7印刷第132页／PDF第154页的 H=pᵀM^{-1}p/2+U(q)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.collisionQuadraticPath",
+      "verdict": "PASS",
+      "explanation": "已展开 Ch03_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean：Q n=Fin n→ℝ，Z n=Q n×Q n，invMass m v i=(m i)^{-1}v i；verlet 的位置分量为 z.1+h•invMass m z.2+(h²/2)•invMass m(F z.1)，动量分量为 z.2+(h/2)•(F z.1+F qnew)。grad U q i=(fderiv ℝ U q)(Pi.single i 1)。本地 Ch03.lean:1419–1420 的 collisionQuadraticPath 与依赖 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3649–3650 相同。令 z=(q,p)、F=−grad U、M 为坐标质量对角矩阵，即逐坐标得到式(3.18)，且确实是 Verlet 的位置分量；各粒子的坐标块由整个位形向量取出。一般 F 和全体实数 t 是公式的参数化延拓，不另声称任意 F 都来自势或任意零质量具有物理意义。原定义本身没有量词结论或[EXTRA]/[ERRATUM?]。这是定义，无 sorry 证明义务；本判定为签名／定义语义审计。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionTimeRelation",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION_INACCURATE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.7.2-CollisionTimeRelation",
+        "kind": "definition",
+        "label": "(3.19)",
+        "section": "3.7.2",
+        "printed_page": "135",
+        "pdf_page": "157",
+        "statement_latex": "It is then possible to calculate the collision times by solving equations\n\\[\\|Q_i(t)-Q_j(t)\\|=\\sigma_i+\\sigma_j,\\qquad i\\ne j.\\tag{3.19}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "对预先选定的不同粒子索引 i≠j，a(t)=Q_i(t)、b(t)=Q_j(t)、radius=σ_i+σ_j，其中 σ_i、σ_j 为球的核半径，‖·‖为物理空间欧氏范数。",
+          "式(3.19)给出接触候选方程；collisionTimeRelation 取其中 t>0 的候选时刻，不编码最小性、根的存在性或横截性。下一碰撞需要从各不同粒子对的候选根中选择最早的合格正根；原页没有单独陈述横截假设。",
+          "本批 collisionalVerletRelation 仅给定 tc 后的更新分支；collisionalVerletOrder 另以 g 规定首个正接触根，但没有对该数值根规定横截性。"
+        ],
+        "issues": [
+          {
+            "code": "CONTEXT_NOTATION_INACCURATE",
+            "detail": "context_notation 将“下一次最小根与横截资格由方法声明单列”写成已有保证。原页式(3.19)只给接触方程；本批算法关系不编码最小根，二阶签名虽另给 g 的最小正根条件，也不要求数值根横截。应将原文的下一碰撞要求与现有辅助谓词实际表达的内容分开。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.collisionTimeRelation",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "BATCH25 A审校：只修正 context_notation 对最小根及横截资格的过度表述；原文陈述、证明字段和页码保持原样。"
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; printed135/PDF157; /workspace/.mathcopilot/reviews/ch03/evidence/BATCH25/pdf157.png"
+      },
+      "issues": [
+        {
+          "code": "CONTEXT_NOTATION_INACCURATE",
+          "detail": "context_notation 将“下一次最小根与横截资格由方法声明单列”写成已有保证。原页式(3.19)只给接触方程；本批算法关系不编码最小根，二阶签名虽另给 g 的最小正根条件，也不要求数值根横截。应将原文的下一碰撞要求与现有辅助谓词实际表达的内容分开。"
+        }
+      ],
+      "evidence": [
+        "教材印刷第135页／PDF第157页（135+22=157）；已同时核对页面渲染与文本提取，渲染证据：/workspace/.mathcopilot/reviews/ch03/evidence/BATCH25/pdf157.png。",
+        "式(3.19)确为 ‖Q_i(t)−Q_j(t)‖=σ_i+σ_j，i≠j；“It is then possible to calculate the collision times by solving equations”逐字相符。原页没有独立证明，两个证明正文／讨论字段为 null 正确。",
+        "同页后续段落使用“the first point of subsequent collision”，算法首行使用“the time of next collision”；式(3.19)自身没有最小根或横截条款。实际定义证据：Ch03_deps.txt:3651–3655、4508–4530；据此修正 context_notation，而没有改写原书。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.collisionTimeRelation",
+      "verdict": "PASS",
+      "explanation": "已展开 MolecularDynamics/Notation.lean:844 的 Position d=EuclideanSpace ℝ (Fin d)，故这里 ‖a t−b t‖ 是 d 维欧氏距离，不是 Q 上的坐标最大范数。本地 Ch03.lean:1423 及 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3651 的定义均为 0<t ∧ ‖a t−b t‖=radius。以 a=Q_i、b=Q_j、radius=σ_i+σ_j 实例化，表达预先选定的一对 i≠j 的正时间接触候选，保持了(3.19)距离及半径和两个关键量。i≠j 是粒子索引条件，不应误译为 a≠b 的函数条件；此定义是单对方程的辅助关系，原句没有在本条要求它选择所有粒子对中的最小根。增加 t>0 对“subsequent collision”的未来候选解释合理，t=0 的当前接触不作为下一次步长。不把它误称为下一碰撞求解器，不由它推断根存在或横截。没有[ERRATUM?]；定义没有 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionQuartic",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材印刷第135页／PDF第157页（135+22=157）；已同时核对页面渲染与文本提取，渲染证据：/workspace/.mathcopilot/reviews/ch03/evidence/BATCH25/pdf157.png。",
+        "页底以“If the Verlet method is used”开头的完整句子与 statement_latex 一致，包含将(3.18)代入(3.19)、quartic polynomial 和 each particle pair。原页没有给四次系数展开的独立证明，因此 proof_latex=null 正确。",
+        "context_notation 的 a、b、c 是两条二次位置路径之差的常数、一次、二次系数；c 按逐粒子坐标块理解为 ((M^{-1}F)_i−(M^{-1}F)_j)/2，F=−∇U。系数展开及半径非负是形式化说明，并非冒充原页的原文证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.collisionQuartic",
+      "verdict": "PASS",
+      "explanation": "已展开 Position d=EuclideanSpace ℝ (Fin d)（MolecularDynamics/Notation.lean:844），inner ℝ 是其标准欧氏内积；collisionQuadraticPath 的二次项系数是 invMass m(F q)/2，invMass 的各坐标值为 F(q)_k/m_k。两粒子路径差因此写成 a+t•b+t²•c。Ch03.lean:1427–1432 和依赖 MolecularDynamics/Chapter03/Statements.lean:4496–4501 的命题完全一致，量词顺序为任意 d,a,b,c,R,t 后加 0≤R；结论是接触范数等式与完整四次系数表达式等于零的双向等价。依赖 MolecularDynamics/Chapter03/ReviewProofs.lean:4768 起实际展开 ‖a+tb+t²c‖²，系数依次为 ⟨c,c⟩、2⟨b,c⟩、⟨b,b⟩+2⟨a,c⟩、2⟨a,b⟩、⟨a,a⟩−R²，完全吻合。该命题不声称有根，也不替代各粒子对的枚举。[EXTRA] R≥0 必要且合理：物理半径和非负；若 R<0，平方方程可能有根而原范数等式不成立。[EXTRA]最高项可退化的说明合理：c=0 时是至多二次，不应给原文的泛称 quartic 强行增加 ⟨c,c⟩≠0。无[ERRATUM?]。本地包装引用 collisionQuartic_proved，已读该证明正文，相关证明体没有 sorry；没有运行编译，也不以证明存在代替语义核对。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionalVerletRelation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材印刷第135页／PDF第157页（135+22=157）；已同时核对页面渲染与文本提取，渲染证据：/workspace/.mathcopilot/reviews/ch03/evidence/BATCH25/pdf157.png。",
+        "CVA 单步框中的标题、输入输出说明、求 τ_c 的首行、严格条件 τ_c<h_max、两个 h 赋值及两个更新式逐项相符。R_c 与 G 的字体变化仅为排版等价，算子顺序保持“先 Verlet，再碰撞”。",
+        "原页 else 分支确实包括 τ_c=h_max，且没有施加 R_c；context_notation 对这一边界的记录忠实，没有静默改为 ≤。proof_latex=null 正确。原有 issues 中对后续二阶结论的提示是编辑注记，并非原页附有证明或边界勘误。",
+        "R_c 的物理语境见印刷第132页／PDF第154页：在接触点按弹性碰撞交换动量、保持能量；原页第157页要求 τ_c 来自(3.18)及(3.19)的下一碰撞。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.collisionalVerletRelation",
+      "verdict": "FAIL",
+      "explanation": "已展开 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v i=v i/m i，以及 verlet：qnew=q+hM^{-1}p+(h²/2)M^{-1}F(q)，pnew=p+(h/2)(F(q)+F(qnew))（MolecularDynamics/Chapter02/ReviewDefinitions.lean:2816–2817、2840、2859–2861）。本地 Ch03.lean:1437–1441 和依赖 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3652–3655 一致：tc>0、hmax>0、h=min tc hmax，并按严格 tc<hmax 决定是否对 Verlet 结果应用给定 Rc。这忠实于框内更新分支，tc=hmax 不反射也忠实于原书，应保留并单独标明边界问题。[EXTRA]正时间及正最大步长合理。FAIL 的原因是本条引用范围包含算法首行 Calculate 下一碰撞：谓词没有任何 Q_i/Q_j、半径、接触、最小正根、选中碰撞对或 Rc 为实际弹性反射的条件，任意正数 tc 与任意 Rc 都可满足；extra_assumptions 中“tc必须是下一接触时刻”仅为文字，没有在定义中表达。若仅把它定位为给定合格 tc、Rc 后的分支图，可以使用此辅助关系；当前不能据此覆盖完整算法定义。全实数 tc 也没有表达没有未来接触时应直接走 hmax 的情形。此定义无 sorry，失败与证明空缺无关。",
+      "counterexample": "取两粒子的一维坐标 n=2，m=(1,1)，F=0，初始 q=(3,0)、p=(−1,0)，半径和 R=1。Verlet 路径的距离为 |3−t|，首次正接触时刻为 t=2。却给 tc=1、hmax=3/2、h=1；Verlet 得 qnew=(2,0)、pnew=(−1,0)。令 Rc 为等质量一维弹性碰撞的动量交换算子，保持位置，则 w=((2,0),(0,−1)) 满足现有 collisionalVerletRelation，但在两粒子距离2时就反射，尚未达到半径和1。另取 Rc=id 也被谓词允许，在真正发生碰撞时会漏掉弹性动量更新。这说明缺失的是输入的碰撞资格，不是原伪代码分支的代数转写。",
+      "suggested_fix": "保留现有定义作为“给定碰撞数据的更新分支”辅助关系；为完整 CVA 新增碰撞数据资格谓词，绑定正质量、F=−grad U、不同粒子对、半径、两条 collisionQuadraticPath 在 tc 接触，以及所有粒子对在 0<t<tc 尚未接触，并把 Rc 绑定到选中接触面的弹性反射。没有正根时应使用 Option／扩展实数或明确的“本窗口无接触”分支。严格 < 与 = 的原书行为应继续如实记录；任何改成 ≤ 或增加零时刻反射的修复都应另列算法修订，不能静默改原文。"
+    }
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionalVerletOrder",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材印刷第135页／PDF第157页（135+22=157）；已同时核对页面渲染与文本提取，渲染证据：/workspace/.mathcopilot/reviews/ch03/evidence/BATCH25/pdf157.png。",
+        "式(3.19)下的三句从“A step can then be taken”至“chosen to match collision times”逐字相符，包含第一个后续碰撞点、二次位置更新、Verlet 与 R_c 的组合、二阶准确性及可变步长。",
+        "原页只有这段解释，没有独立完整证明或显式误差范数；proof_latex、proof_discussion_latex 为 null 和 proof_note 均正确。context_notation 为空，没有添加原文未写的符号定义。",
+        "issues／extra_assumptions 中关于时间对齐、严格边界和正则性的文字是形式化编辑注记，不是原页原文；其数学有效性及与签名的一致性在 audit 中单独判定。准确转录本身不等于已证明二阶结论。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.collisionalVerletOrder",
+      "verdict": "FAIL",
+      "explanation": "已读本地 Ch03.lean:1445–1468 及依赖 MolecularDynamics/Chapter03/Statements.lean:4508–4530，并展开所有专用定义。Q n=Fin n→ℝ，Z n=Q n×Q n；positiveMass m 为 ∀i,0<m i；grad U q i=(fderiv ℝ U q)(Pi.single i 1)；invMass m v i=v i/m i；collisionQuadraticPath 与 verlet 如式(3.18)及完整速度 Verlet 更新。oneStepIterate G h z j=(G h)^[j]z（MolecularDynamics/Chapter02/OneStepConvergence.lean:1443–1444），所以这里迭代的 h 参数是固定外层 hmax，实际累计时间另由 times 的 min(tc,hmax) 递推。admissibleCollisionState（Statements.lean:4464–4465）为 g(q)>0 或 g(q)=0 且 ∑ grad g(q)_i p_i/m_i>0。finiteCollisionTrajectory（4431–4440）只要求 q 在闭区间连续、g(q)≥0、在开区间非事件处满足 Newton ODE，并在有限 events 的每个内部事件有接触、左右动量极限、负入射法向速度及弹性左右极限关系；它不规定 p 在端点的值／连续性，不规定事件处 p(t) 取哪侧，也没有“所有接触恰为 events”的双向资格。签名再要求每个 admissible 状态都有有限最小正二次路径根 tc，明确给出 Rc 的质量加权反射公式，并要求所有 h>0、所有状态满足分支关系。结论是存在统一 C,δ，在合格自适应网格上允许 θ:ℝ≃oℝ 的 O(hmax²) 时间对齐后，全相空间节点误差 O(hmax²)，且 θ 固定0和τ。定义全部已找到，不需要 NEEDS_HUMAN。\n[EXTRA]正质量、光滑势／接触函数和有限非切向实际事件，是可用于限定二阶论断的合理资格，但数值根没有横截条件；所谓“有限横截隔离事件”只保证列出的实际 events，而不排除漏列接触。排除 tc=hmax 如实避开原书未反射边界，得到的是额外限定版本；时间对齐在结论中而非前提中，不能冒充原书明示的同时间二阶误差定义。要求对所有 admissible 状态必有有限未来根不必要且过强，排除了自由静止或永不相撞的合法状态，宜按有限窗口／可选接触表示。\n更直接地，现有签名为假：finiteCollisionTrajectory 没有约束终点动量，却在结论中强制比较该终点动量，下面反例满足全部现有前提。原书的概括性论断不能由这一失真的轨迹对象承载。[ERRATUM?]本条无该标签；保留原书严格分支，不因本次签名反例给原书添加未经依据的勘误。该 theorem 的证明体为 sorry，这是独立的证明完成度问题，FAIL 来自定义／结论反例而非 sorry。",
+      "counterexample": "令 n=1、m=1，按 Q 1≃ℝ 识别坐标，取光滑 U(x)=−x、F=−grad U=1、g(x)=1−x²、τ=1、events=∅。令 q(t)=t²/2，p(t)=t（t≠1），但 p(1)=100。在 0<t<1 上 q′=p=t、p′=1，闭区间 q 连续且 g(q)≥3/4>0，所以 finiteCollisionTrajectory 成立；它没有检查 p(1)。对每个 admissible z=(x,v)，定义 tc(z) 为 x+vt+t²/2 首次到达 ±1 的正时刻。因 x 位于(−1,1)，或在端点且 v 严格指向内部，并且该抛物线最终趋向+∞，此根存在且此前 g>0；对非 admissible 状态置 tc=1，保证全状态 tc>0。令 Rc 恰等于签名的反射公式，G 恰按 collisionalVerletRelation 的严格分支定义，则所有 h>0、所有 z 的算法前提成立。对任意充分大的整数 N≥3，取 hmax=1/N：直至 times_N=1，每个节点数值状态都精确为 ((j/N)²/2,j/N)，其下一根 tc_j=√2−j/N≥√2−1>hmax，故所有 times_j<1 的资格与 tc_j≠hmax 都成立。结论规定 θ(1)=1，所以 j=N 的相空间误差必为 |1−100|=99。任意固定 C,δ 都可取 N 足够大使 1/N<δ 且 C/N²<99，违反所需误差界。此反例针对 Lean 签名的端点漏洞，不声称这条具有任意终点赋值的 p 是原书所意指的物理轨迹。",
+      "suggested_fix": "先修正轨迹资格：指定右连续的碰撞后动量约定，要求非事件处及0、τ处的相应单侧连续性，约束初始动量与起始 ODE 段匹配，并要求每次真实接触都由有限事件表正确分类，终点无未处理碰撞或明确采用相同侧值。其次以选定不同粒子对的实际硬球间隙或有明确物理解释的接触函数表达碰撞，要求非退化接触法向和精确／数值的横截及稳定性；将全状态必有有限 tc 改为有根时的首根资格与无根时的正常 Verlet 分支。保留严格等号边界的限制，并在定理名称／说明中标明这是受限版本。明确原文“二阶”采用时间对齐误差、位置误差还是同时间相空间误差，按选择的定义重述所有结论；不能用含任意 θ 的较弱误差概念悄悄替代同时间概念。这些均为修复建议，本次未修改 Lean 或补证明。"
+    }
+  }
+]

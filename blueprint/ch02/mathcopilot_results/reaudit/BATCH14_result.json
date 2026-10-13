@@ -1,0 +1,149 @@
+{
+  "batch": "BATCH14",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "9ba35e85c8fb0ce7d3169901bf1e36a0eb921ecfe803e61ce6dc88df6154470d",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.2-LinearDivergence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF96/印刷74 §2.3.2 末段线性系统 ż=Sz，S∈ℝ^{m×m}；PDF97/印刷75 首行续 f(z)=Sz 和 be zero。跨页及页码差22正确。context_notation 中 Liouville 与行列式说明为编辑说明，与此结论相容。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.linearDivergence",
+        "verdict": "PASS",
+        "explanation": "实际读取 Ch02.lean:618–626；依赖 ReviewDefinitions.lean（合集2816、2877行）展开 Q n=Fin n→ℝ，divergence f z=(textbookCoordinateJacobian f z).trace；LiouvilleVolume.lean（2365–2370行）展开 Jacobian=LinearMap.toMatrix' (fderiv ℝ f z).toLinearMap，条目(i,j)是 Df(z)(e_j) 的第i输出分量。因此线性向量场的 Jacobian 正是S，散度等于迹。volume 在有限实函数空间采用标准乘积 Lebesgue 体积；不是有向体积，合集2488–2492行换元明确使用绝对行列式。量词先任意n、S和实际解族Φ，再C²、初值恒等和逐时逐点ODE；结论同时保留散度公式及全时全部可测集合体积保存↔trace=0。线性解族由ODE唯一性为exp(tS)z，其行列式exp(t trace S)，所以两个方向均正确。n=0也无例外。[EXTRA]全时C²对线性系统自动可满足；初值和ODE必要地标识所说的流，可测集合限制合理。Ch02.lean证明体含sorry；此PASS仅指签名语义，不指证明完成。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.2-LinearEuler",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF97/印刷75 第一展示式 z_{n+1}=z_n+hSz_n=(I+hS)z_n，逐项一致；有限实矩阵与单位阵上下文正确。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_linearEuler",
+        "verdict": "PASS",
+        "explanation": "实际读取 Ch02.lean:629–630 的 bp_linearEuler=1+h • S；并展开依赖 ReviewDefinitions.lean:2878–2879 的正式 linearEuler，二者完全相同。矩阵1为单位矩阵，标量作用逐项相乘，故其乘向量的第i分量是z_i+h∑_j S_ij z_j，恰为原文z_{n+1}=z_n+hSz_n=(I+hS)z_n。隐式n及任意实矩阵S、实步长h无附加限制。这里定义更新矩阵而非另添迭代存在性断言，忠实于展示式；无EXTRA、ERRATUM或sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.2-EulerVolumePrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原文照录正确；其 det=1 必要条件在通常无向体积解释下存在符号疑误，原条目已有 ERRATUM?，保持原文。"
+        ],
+        "evidence": [
+          "PDF97/印刷75 第一展示式后确实写 det(I+hS)=1，未写绝对值或方向限制；照录正确，保留已有 ERRATUM?，不静默修正原书。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.eulerVolumePrinted",
+        "verdict": "FAIL",
+        "explanation": "实际读取 Ch02.lean:634–638；展开依赖Q n=Fin n→ℝ及linearEuler S h=1+h • S（合集2816、2878–2879行）。volume是标准无向Lebesgue体积，合集LiouvilleVolume换元使用|det|；依赖Statements.lean:3129–3132的linearEulerVolume_statement本身也明确写|det|=1，但当前Blueprint定理并未引用这个修正版，而是↔det=1。任意n、S、h且全部可测T的量词忠实照录原文，却产生数学错误：det=1是充分条件而非必要条件。[ERRATUM?]在当前明确的无向体积解释下成立，无须再NEEDS_HUMAN。没有方向或小步长假设；仅h>0不能修复。证明体含sorry，不能使错误签名有效。",
+        "counterexample": "n=1，S=[-2]，h=1，则linearEuler S h=[-1]。映射x↦-x保存每个可测集合的Lebesgue体积，故左边为真；行列式=-1，右边为假。即使另加trace S=0：S=diag(-2,2)、h=1/√2时det(I+hS)=1-4h²=-1，同样反例。",
+        "suggested_fix": "保留原文和ERRATUM标记；数学修正版改为体积保存↔|(linearEuler S h).det|=1。若必须保留det=1，则明确增加det(I+hS)>0，或给出确保其正值的小步长范围；h>0本身不够。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.2-EulerVolumeCounterexample",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF97/印刷75 紧随行列式条件的两句，essentially unrelated、phase space volume 及 see Exercise 6 均一致。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.eulerVolumeCounterexample",
+        "verdict": "FAIL",
+        "explanation": "实际读取 Ch02.lean:641–643；展开Q、linearEuler及依赖Statements.lean:3133–3134的eulerVolumeCounterexample_statement：存在二维S，trace=0且每个非零h满足det(I+hS)≠1。ReviewProofs.lean:3414–3425实际复用证明取S=[[0,1],[-1,0]]，并计算det=1+h²，此具体见证确实不保体积；可读复用证明无sorry。然而审计对象是签名：签名未保留无向体积所需的|det|≠1，也未表达两个条件的双向无蕴含关系。不能把证明体的特定见证性质自动加进存在量词的结论。故当前结论不足以承担原文的体积不保存断言，属缺失条款，不是所写代数命题为假。无EXTRA或ERRATUM；符号缺口与上一条有关。",
+        "counterexample": "取S=diag(1,-1)，trace=0，对所有h≠0都有det(I+hS)=1-h²≠1，完全满足签名中见证条件；但h=√2时det=-1，仍保存无向体积。因此该签名中的任意合格见证并不能推出每个非零步长都不保体积。缺失|det|≠1条款。",
+        "suggested_fix": "强化见证结论为∀h≠0，|(linearEuler S h).det|≠1（或det>1），现有旋转矩阵见证适用；必要时直接附上存在可测T使体积不相等。若要覆盖原文essentially unrelated的双向含义，再明确增加另一方向的实例，例如固定h=1、S=diag(1,-1/2)使Euler行列式1而trace=1/2≠0；明确区分固定步长与所有小步长的含义。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.2-AsymmetricEuler",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF97/印刷75 planar system 与散度条件后的两条更新式均在 (u_{n+1},v_n) 取值，context_notation 与上下文一致。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_asymmetricEulerRelation",
+        "verdict": "PASS",
+        "explanation": "实际读取 Ch02.lean:645–646，bp_asymmetricEulerRelation f g h u v U V展开为U=u+h*f U v ∧ V=v+h*g U v；依赖ReviewDefinitions.lean:2880–2881正式asymmetricEulerRelation为同一表达式。f,g均为ℝ→ℝ→ℝ，所有变量为实数，新第一坐标U、旧第二坐标v的取值位置与原文两条更新式完全一致，且两条等式完整保留。只定义隐式关系，未宣称全局存在唯一求解器；无额外假设，不含sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.2-AsymmetricJacobian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF97/印刷75 Solving for the various entries 后矩阵四项及 determinant 后比值逐项一致；其前有隐式微分计算，不是独立证明块，当前 statement_scope 未含该计算，proof_latex=null 不表示原书没有推导。空 context_notation 未记录偏导取值点，该点由更新式确定，审计中已说明。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.asymmetricDet",
+        "verdict": "PASS",
+        "explanation": "实际读取 Ch02.lean:650–669；展开Q 2=Fin 2→ℝ、asymmetricEulerRelation两条实际等式（合集2816、2880–2881行），以及textbookCoordinateJacobian=LinearMap.toMatrix' (fderiv ℝ Ψ z).toLinearMap（2365–2370行），确认行i是输出坐标、列j是输入坐标，未转置。令U=Ψ z 0、v=z 1、a=∂u f(U,v)、b=∂v f(U,v)、c=∂u g(U,v)、d=∂v g(U,v)、D=1-ha。签名四项依次为1/D、hb/D、hc/D、1+hd+h²cb/D，并同时给出det=(1+hd)/D，逐项与原文相符。deriv(fun u=>f u v) U与deriv(f U) v分别准确表示上述偏导；g同理。先任意f,g,Ψ,h，再C¹及处处真实解关系，再任意z及该点D≠0，量词正确，无需散度零假设。[EXTRA]正则性和D≠0保障隐式微分，合理；全局C¹与关系较局部推导强，可局部化但无对象或公式改变。证明体含sorry；语义PASS不代表已证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.2-AsymmetricArea",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF97/印刷75 末段 f_u+g_v=0 与分子分母相同，PDF98/印刷76 首句续 det G′_h=1 及 asymmetric variant is area preserving；跨页摘录完整。 已以 PDF 渲染图与提取文字交叉核对。没有该条独立证明块，proof_latex=null 与所选范围相容。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.asymmetricArea",
+        "verdict": "PASS",
+        "explanation": "实际读取 Ch02.lean:674–685；展开Q、真实asymmetricEulerRelation和标准坐标Jacobian（合集2816、2880–2881、2365–2370行），volume为有限实乘积空间的无向Lebesgue体积。先任意f,g,Ψ,h，再三项C¹、处处更新关系、∀u v的真实偏导和为零、解取值点的处处分母非零及Ψ单射；结论同时保留∀z det=1与全部可测T的像面积相等。偏导均在(U,v)取值；散度零给1+h g_v=1-h f_u，因此点态det=1；C¹、单射及绝对行列式换元给全局集合面积保存。[EXTRA]C¹、实际解映射和分母非零是合理的可微分支条件，全球版本强于原书局部计算但解释清楚。单射是保证全局换元的合理明确充分条件；不是声称这些其余假设必然不能推出它，不能泛称其独立必要性。仅det=1的一般映射不足以推出全局像面积相等，因此此额外条件与所选全球结论相称。无ERRATUM。证明体含sorry；语义与证明完成分开。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

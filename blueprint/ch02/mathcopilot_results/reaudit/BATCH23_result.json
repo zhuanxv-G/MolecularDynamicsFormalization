@@ -1,0 +1,110 @@
+{
+  "batch": "BATCH23",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "54829251d5b911385e04178a61e9b37b7106e1a754a066e04f8f482c9d5f2182",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.2-CompositionSymplectic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STATEMENT_NOT_VERBATIM",
+          "NOTATION_TRANSCRIPTION_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.2-CompositionSymplectic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.2",
+          "printed_page": "85",
+          "pdf_page": "107",
+          "statement_latex": "More generally, if we have any two symplectic numerical methods, say $\\mathcal G_h^1$ and $\\mathcal G_h^2$, then the composition\n\\[\\mathcal G_h:=\\mathcal G_{h/2}^1\\circ\\mathcal G_{h/2}^2\\]\nis another symplectic numerical method.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.compositionSymplectic",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookComposeMaps_isSymplectic"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH23审校：依据PDF第107页（印刷第85页）恢复逐字英文陈述；第一条恢复上标方法编号及 :=。未修订原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF第107页（印刷第85页），BATCH23_page107.png"
+        },
+        "issues": [
+          "statement_latex并非逐字转录，而是同义改写。",
+          "原文采用方法编号上标 G_h^1、G_h^2，并以 := 定义复合映射；原JSON改为下标编号并用 =。"
+        ],
+        "evidence": [
+          "已直接读取并渲染教材PDF第107页，页眉印刷85；§2.4.2。原文从“More generally”至“is another symplectic numerical method”；展示公式为 G_h := G^1_{h/2} ∘ G^2_{h/2}。 两条均无独立证明或证明讨论；页码及section正确。context_notation=[]可接受：第一条记号已在陈述定义，第二条自身未引入记号。未发现需静默修订的原书疑误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.compositionSymplectic",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch02_deps.txt 中 MolecularDynamics 的正式定义：SymplecticCoordinates Nc = (Fin Nc ⊕ Fin Nc) → ℝ，前半为q、后半为p；textbookJ = [[0,I],[-I,0]]；textbookJacobian Φ z = LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap；IsTextbookSymplectic A 指 Aᵀ J A = J；IsTextbookSymplecticMap Φ 指 ContDiff ℝ 1 Φ 且每点实际Jacobian满足该等式，等价于导数保持Σ dqᵢ∧dpᵢ。textbookComposeMaps G₁ G₂ h 展开为 G₁(h/2) ∘ G₂(h/2)，即先G₂后G₁，半步与原文完全一致。量词依次为任意Nc、两方法族、两族对每个实步长均辛、任意实h，结论是复合在每点辛。未附加全局可逆性；这里辛性为C¹映射的Jacobian条件，足以支持原句复合辛性。无需两方法不同，上一轮恢复的原句为any two。无[EXTRA]或[ERRATUM?]。Ch02.lean 1050–1055的实际声明与本批一致，直接复用 textbookComposeMaps_isSymplectic；依赖该定理展开为 (hG₁(h/2)).comp (hG₂(h/2))。本条无直接sorry，语义PASS不等于已编译验证整个依赖工程。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.2-CompositionOrder",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STATEMENT_NOT_VERBATIM",
+          "SOURCE_CLAUSE_OMITTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.2-CompositionOrder",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.2",
+          "printed_page": "85",
+          "pdf_page": "107",
+          "statement_latex": "The order of this method is typically the minimum of the orders of the two methods involved, but it can be higher, as the example of the Verlet method (constructed by composing symplectic Euler and its adjoint) shows.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.compositionOrder",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]两个方法逼近同一实际流；第一个方法1+L|h|稳定；陈述保留至少min阶，允许更高，不把“typically”冒充确切阶相等。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH23审校：依据PDF第107页（印刷第85页）恢复逐字英文陈述；第一条恢复上标方法编号及 :=。未修订原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF第107页（印刷第85页），BATCH23_page107.png"
+        },
+        "issues": [
+          "statement_latex并非逐字转录，而是同义改写。",
+          "原JSON省略了Verlet例子中“constructed by composing symplectic Euler and its adjoint”的限定说明。"
+        ],
+        "evidence": [
+          "已直接读取并渲染教材PDF第107页，页眉印刷85；§2.4.2。原文从“The order of this method”至“adjoint) shows.”；Verlet例子明确由symplectic Euler与其adjoint复合。 两条均无独立证明或证明讨论；页码及section正确。context_notation=[]可接受：第一条记号已在陈述定义，第二条自身未引入记号。未发现需静默修订的原书疑误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.compositionOrder",
+        "verdict": "FAIL",
+        "explanation": "已展开全部本条自定义对象：Chapter02Review.Q n = Fin n → ℝ，r、s为自然数；F是每个实时间的双射族，假设∀h k z, F h(F k z)=F(h+k)z，因此F 0=id。G₁、G₂是任意方法族，不要求辛；这是阶数估计的合理推广。methodLocalOrder G F r 实为 ∀z, ∃C>0, ∃δ>0, ∀h, |h|<δ → ‖G h z−F h z‖≤C|h|^(r+1)，是每个固定初值的局部截断误差下界，C与δ可依赖z，既非确切阶也非全局误差阶。textbookComposeMaps 展开为G₁(h/2)∘G₂(h/2)。实际量词顺序为n,F,G₁,G₂,r,s，然后流律、两条逐点局部阶假设、G₁稳定假设，结论只有同一逐点局部意义的min r s阶下界。[EXTRA]同一实际流合理，误差传播稳定条件合理作为充分条件，但实际稳定性为∀δ>0 ∃L≥0 ∀|h|<δ ∀u v，与原文未言明的全域空间稳定性及每个有限步长区间要求相比明显更强；证明局部阶通常只需某个小δ，不能称该全部额外强度必要。逐点误差常数不能直接用于随h移动的初值F(h/2)z，若采用通常的误差分解证明，还需补足邻域一致性或另给严格论证；本审计不据此断言定理数学上为假。确定的FAIL理由是全部结论未覆盖：至少min阶仅允许、没有断言或展示严格更高阶的实例；原文明确的Verlet由辛Euler及其伴随复合并达到更高阶未表达，typically也未形式化为任何泛型结论。原文statement_scope覆盖整句，不能以[EXTRA]注释把整句缩成下界定理而仍判完全忠实。无[ERRATUM?]，未发现需要据此修改原书的错误。Ch02.lean 1059–1065与本批签名一致，含直接sorry；证明缺口与上述签名语义FAIL分开。",
+        "counterexample": "缺失结论条款而非已建立的定理反例：原文“but it can be higher, as the example of the Verlet method (constructed by composing symplectic Euler and its adjoint) shows”没有对应Lean结论。min阶下界即使成立，也不能推出存在一对方法使复合确切阶严格高于两者最小确切阶。",
+        "suggested_fix": "将现有声明明确拆为至少min局部阶的辅助定理，并补充同一实际流上的辛Euler、其伴随及半步复合等于Verlet的实例，以及两起始方法确切一阶、Verlet至少二阶（需声称确切二阶时再证非三阶）。对typically明确其非严格数学断言的处理范围，不宣称下界完整形式化整句。如意在全局精度阶，另定义并证明有限时间全局误差界；若保留局部阶，注明含义，采用邻域一致的局部截断误差及仅小步长的稳定条件，或提供现有逐点量词下充分性的严格论证。"
+      }
+    }
+  ]
+}

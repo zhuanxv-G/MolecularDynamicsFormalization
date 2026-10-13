@@ -1,0 +1,116 @@
+[
+  {
+    "source_id": "MD-3.6-HamiltonianFlowStructures",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_SIGNATURE_MISMATCH",
+        "EXTRA_ASSUMPTIONS_DESCRIPTION_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6-HamiltonianFlowStructures",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.6",
+        "printed_page": "127–128",
+        "pdf_page": "149–150",
+        "statement_latex": "The flow of a Hamiltonian system of the form $H=p^TM^{-1}p/2+U(q)$ will preserve all of the following:\n1. The symplectic two-form $\\mathrm dq\\wedge\\mathrm dp$.\n2. The Hamiltonian (i.e., the energy) $H$.\n3. The volume in phase space (as the vector field is divergence free).",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原书H=p^T M^{-1}p/2+U(q)，q和p分别为配置与动量，M为质量矩阵，U为势能；PDF150页完整列表共四项。本条按批次约定只摘录第1–3项，第4项为time-reversal symmetry。",
+          "当前Lean签名采用任意H在开放域D上的C²正则性及localFlowC1条件；它陈述变分方程、辛性、Jacobian行列式为1及可测集合体积守恒，尚未陈述能量守恒。"
+        ],
+        "issues": [
+          "statement_latex逐字对应PDF149页引句及150页列表第1–3项，公式、页码正确；原列表还有第4项，本条按既定范围摘录前三项，不将第4项静默删除为原书错误。proof_latex=null符合这两页没有独立证明的事实。",
+          "context_notation声称签名保留前三性质，但实际签名没有能量守恒；extra_assumptions声称反步资格显式，但localFlowC1只有[0,τ]正时间轨道条件，无显式反步或群律。这些是材料描述错误，并非教材疑误。"
+        ],
+        "lean_decl": "MD.Ch03.hamiltonianFlowStructures",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "H在开放域D上C²；localFlowC1要求D、Ω开放，Ω⊆D，Hamiltonian向量场在D上C¹，Φ在[0,τ]×Ω上C¹，初值为恒等，轨道留在D并满足区间内ODE；τ>0。该定义没有显式反步条件。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "action": "只纠正上下文及资格描述；保留已核实原文陈述、页码和proof_latex=null，未修改Lean或教材。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "statement_latex逐字对应PDF149页引句及150页列表第1–3项，公式、页码正确；原列表还有第4项，本条按既定范围摘录前三项，不将第4项静默删除为原书错误。proof_latex=null符合这两页没有独立证明的事实。",
+        "context_notation声称签名保留前三性质，但实际签名没有能量守恒；extra_assumptions声称反步资格显式，但localFlowC1只有[0,τ]正时间轨道条件，无显式反步或群律。这些是材料描述错误，并非教材疑误。"
+      ],
+      "evidence": [
+        "PDF149页/印刷127页§3.6末段：H=p^T M^{-1}p/2+U(q)，will preserve all of the following。",
+        "PDF150页/印刷128页顶部：1. The symplectic two-form dq∧dp；2. The Hamiltonian (i.e., the energy) H；3. The volume in phase space (as the vector field is divergence free)；4. The time-reversal symmetry。已目视核对两页渲染图及文本提取。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.hamiltonianFlowStructures",
+      "verdict": "FAIL",
+      "explanation": "已展开Ch03_deps.txt中的SymplecticCoordinates（第33行，2n个实坐标）、textbookJ（第39行，块矩阵[[0,I],[-I,0]]）、textbookJacobian（第238行，真实Fréchet导数矩阵）、textbookHamiltonianHessian（第440行，真实二阶导数）、textbookHamiltonianVectorField（第1921行，J乘H的坐标梯度）、IsTextbookSymplectic（第138行，AᵀJA=J）和localFlowC1（第4031行）。量词为所有n,H,D,Ω,Φ,τ，三个前提之后给出四个合取结论；第二项实现原列表第1项，第四项实现第3项，但完全缺少原列表第2项H(Φ(t,z))=H(z)。第一项变分方程和第三项det=1为合理附加结论，不能替代能量结论。任意C² Hamiltonian是前三性质的合理推广；开放域、真实C¹局部流及τ>0是合理分析资格，未使用更强jointC²流假设。H的C²是假设的显式充分正则性，不应称为原书逐字假设；反步资格未显式出现，可由ODE唯一性另行推导所需单射性。没有本条[ERRATUM?]标注，原页也无需要修改的疑误。Ch03.lean第1053行定理以sorry结束：这仅说明证明未完成，FAIL依据是签名缺项。",
+      "counterexample": "缺失条款：∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, H (Φ (t,z)) = H z。该条款在这些真实Hamiltonian流假设下成立，因此无需也不能以满足全部假设但能量变化的流作反例；问题是目标未包含教材明确列出的结论。",
+      "suggested_fix": "在既有合取中增加∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, H (Φ (t,z)) = H z；保留现有C¹流条件和C² Hamiltonian资格，并纠正[EXTRA]关于显式反步的描述。第4项时间反演仍按批次既定拆分范围另行处理。"
+    }
+  },
+  {
+    "source_id": "MD-3.6-VolumeNotSymplectic",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_UNSUPPORTED_ATTRIBUTION",
+        "CONTEXT_REGULARITY_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6-VolumeNotSymplectic",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.6",
+        "printed_page": "128",
+        "pdf_page": "150",
+        "statement_latex": "The phase volume conservation can be seen as a consequence of the symplectic property, but it is a weaker condition. It is possible to construct methods that preserve volume but which are not symplectic, and we can build methods that exactly conserve the energy (as we shall show below).",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原文将相空间体积守恒称为辛性的后果及更弱条件，并断言存在保体积但不辛的方法、存在精确守恒能量的方法；能量方法在此处写作as we shall show below。",
+          "当前Lean选用SymplecticCoordinates 2，即四维实相空间，G为C¹映射；它只显式要求各点Jacobian行列式为1及G不辛，未显式陈述全局集合体积守恒，也未覆盖该段其他结论。"
+        ],
+        "issues": [
+          "statement_latex逐字对应PDF150页§3.6第二段前三句，页码正确；proof_latex=null正确。",
+          "context_notation中的四维映射和Jacobian det=1是形式化实现选择，不是该段原文记号；ContDiff ℝ 1只保证C¹，不宜称作数学意义上的C∞光滑。原文能量构造的定位是as we shall show below，不能以能量投影见§3.5替换这一原文定位。"
+        ],
+        "lean_decl": "MD.Ch03.volumeNotSymplectic",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "action": "只纠正上下文及资格描述；保留已核实原文陈述、页码和proof_latex=null，未修改Lean或教材。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "statement_latex逐字对应PDF150页§3.6第二段前三句，页码正确；proof_latex=null正确。",
+        "context_notation中的四维映射和Jacobian det=1是形式化实现选择，不是该段原文记号；ContDiff ℝ 1只保证C¹，不宜称作数学意义上的C∞光滑。原文能量构造的定位是as we shall show below，不能以能量投影见§3.5替换这一原文定位。"
+      ],
+      "evidence": [
+        "PDF150页/印刷128页§3.6第二段：The phase volume conservation can be seen as a consequence of the symplectic property, but it is a weaker condition。",
+        "同段：methods that preserve volume but which are not symplectic；methods that exactly conserve the energy (as we shall show below)。这两句及第一句均已逐字和渲染图核对；该段未列四维Jacobian公式或独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.volumeNotSymplectic",
+      "verdict": "FAIL",
+      "explanation": "已展开SymplecticCoordinates 2=(Fin 2 ⊕ Fin 2)→ℝ、textbookJacobian=LinearMap.toMatrix′(fderiv ℝ G z).toLinearMap，以及IsTextbookSymplecticMap G=ContDiff ℝ 1 G ∧ ∀z, (DG(z))ᵀJ DG(z)=J（依赖第33、238、272、138、39行）。因此在外部C¹条件下，末项确实表示至少一处不辛；四维作为严格弱性实例合理，没有额外假设或[ERRATUM?]。但该存在式只断言局部Jacobian det=1，没有全局单射性或集合体积等式，无法直接代表原文保体积方法。原文同一statement_latex还包括辛性蕴含体积守恒以及能量精确守恒方法的存在性，签名均未包含；context_notation的跨节引用不能替代本声明缺失的结论。可以用全局线性保体积非辛映射实现中间存在性，但当前签名没有这样的见证约束。Ch03.lean第1067行以sorry结束，签名审计FAIL独立于证明未完成。",
+      "counterexample": "det=1不蕴含全局集合体积守恒：在(q₁,q₂,p₁,p₂)=(x,y,u,v)坐标定义G=(eˣ cos y,eˣ sin y,e⁻²ˣu,v)，它是C∞且det DG=1，但G(x,y+2π,u,v)=G(x,y,u,v)。取B=(0,1)⁴和S=B∪(B+(0,2π,0,0))，两部分互不相交且像相同；G在B单射且det=1，故volume(G(S))=volume(B)<volume(S)。在原点DG=I，但在(x,y,u,v)=(0,π/2,0,0)处配置块为90度旋转、动量块为I，故(DG)ᵀJ DG≠J，亦满足该签名非辛条件。另缺失辛性蕴含体积守恒与精确守恒能量方法存在性两个原文子句。",
+      "suggested_fix": "对保体积非辛存在式增加Function.Injective G或更直接增加∀ S, MeasurableSet S → volume (G '' S)=volume S，并保留C¹及非辛条件；可选线性见证diag(2,1,1,1/2)，det=1且配置/动量配对缩放乘积为2与1/2，因而不辛。若维持本条当前引用范围，还需以明确的全局单射/局部可逆资格陈述辛映射保体积，并加入非平凡能量守恒方法的构造性结论；若仅审阅中间存在性，应明确缩窄statement_latex的引文范围，不能继续宣称覆盖整段。"
+    }
+  }
+]

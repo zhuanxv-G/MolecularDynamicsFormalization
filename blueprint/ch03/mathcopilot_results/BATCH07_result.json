@@ -1,0 +1,46 @@
+[
+  {
+    "source_id": "MD-3.3.1-SymplecticEulerShadow",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第128页（印刷第106页），§3.3.1 Symplectic Euler；页码关系106+22=128，已核对PDF文字和渲染图。",
+        "段落原句：Splitting our Hamiltonian using H₁=T(p)=pᵀM⁻¹p/2 and H₂=U(q) gives the symplectic Euler method. The BCH expansion gives the perturbed Hamiltonian；第一条保存完整两句，第二条保存末句并通过context_notation引用同页公式。",
+        "同页展示式依次为 H−(h/2)pᵀM⁻¹∇U(q)+(h²/12)(pᵀM⁻¹U″(q)M⁻¹p+∇U(q)ᵀM⁻¹∇U(q))−(h³/12)∇U(q)ᵀM⁻¹U″(q)M⁻¹p+O(h⁴)。系数、负号、转置、矩阵顺序和余项均与保存条目一致。",
+        "该段无单独完整证明，proof_latex和proof_discussion_latex为null符合原页；同页上方给出BCH形式展开，并明言尚未处理级数收敛。context_notation中的有限截断/坐标约定属于编者说明，不是教材引文。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.symplecticEulerShadow3",
+      "verdict": "PASS",
+      "explanation": "PASS（有限截断定义的语义，不是无限级数收敛或匹配定理的证明）。依赖Ch03_deps.txt中逐项展开：Q n=Fin n→ℝ，Z n=Q n×Q n，z.1=q、z.2=p；invMass m v i=(m i)⁻¹v_i；quadraticKinetic=(Σ p_i²/m_i)/2，mechanicalEnergy=T+U；grad U q i=fderiv U q(e_i)，hessianAction U q v=fderiv (grad U) q(v)。shadowTerms三个分量分别是vᵀU″v、gᵀM⁻¹g、(M⁻¹g)ᵀU″v，其中v=M⁻¹p、g=∇U。故symplecticEulerShadow3准确保存PDF第128页的h⁰至h³全部系数；O(h⁴)未作为函数项，已由context_notation说明是有限截断，并交由另一条匹配陈述处理。[EXTRA]固定对角质量与机械模型一致，是明确限制；不宣称推广到任意非对角M。定义本身未要求positiveMass或可微性，Lean的逆元及fderiv为全域算子：零质量/不可微势处为形式扩展，不赋予这些输入教材力学含义；在正质量且势足够光滑的原文语境内完全一致。无[ERRATUM?]标记，无需修正原书公式。此条是定义，不含sorry；不据此声称后续匹配已有证明。依赖定位：Ch03_deps.txt:2816–2817、2840、2932、3569–3579。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.3.1-SymplecticEulerShadowMatching",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "教材 PDF 第128页（印刷第106页），§3.3.1 Symplectic Euler；页码关系106+22=128，已核对PDF文字和渲染图。",
+        "段落原句：Splitting our Hamiltonian using H₁=T(p)=pᵀM⁻¹p/2 and H₂=U(q) gives the symplectic Euler method. The BCH expansion gives the perturbed Hamiltonian；第一条保存完整两句，第二条保存末句并通过context_notation引用同页公式。",
+        "同页展示式依次为 H−(h/2)pᵀM⁻¹∇U(q)+(h²/12)(pᵀM⁻¹U″(q)M⁻¹p+∇U(q)ᵀM⁻¹∇U(q))−(h³/12)∇U(q)ᵀM⁻¹U″(q)M⁻¹p+O(h⁴)。系数、负号、转置、矩阵顺序和余项均与保存条目一致。",
+        "该段无单独完整证明，proof_latex和proof_discussion_latex为null符合原页；同页上方给出BCH形式展开，并明言尚未处理级数收敛。context_notation中的有限截断/坐标约定属于编者说明，不是教材引文。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.symplecticEulerShadowMatching",
+      "verdict": "PASS",
+      "explanation": "PASS（在明示[EXTRA]条件下对原文形式展开的有限阶局部解释）；签名通过语义审计，但Ch03.lean:378–384的证明仍为sorry，未验证Lean证明。依赖实际展开：SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ，unpack z=(z∘inl,z∘inr)，位置在inl、动量在inr；textbookPotentialForce=−grad U，textbookMomentumKick给p⁺=p−h∇U(q)，textbookPositionDrift给q⁺=q+hM⁻¹p⁺，textbookSymplecticEuler=drift∘kick。textbookJ=[[0,I],[-I,0]]，textbookHamiltonianVectorField(K)=J∇K，因此ODE为(q̇,ṗ)=(∂pK,−∂qK)，没有坐标或符号翻转。shadow3的系数按第一条展开与教材逐项相同。matchesHamiltonian K G B 4的完整量词为存在统一C>0、δ>0和曲线族Γ，使任意0<h<δ、任意z∈B均有Γ(h,z,0)=z，且solution要求在[0,h]每点具有相对导数X_{K_h}(Γ)，并有‖G_h(z)−Γ(h,z,h)‖≤Ch⁵。曲线是固定h的自治Hamiltonian K_h的实际局部解，并非令Hamiltonian沿时间变化。正质量保证M可逆；U全域C∞比有限阶局部光滑更强但足够且合理，并非最低必要条件；紧集B使局部存在时间和误差常数统一，B无需不变或凸；这些是明确的严格化条件。教材O(h⁴)是Hamiltonian系数的余项，有限BCH展开使向量场余项也为O(h⁴)，积分长度h后端点余项为O(h⁵)，不要求无限BCH级数收敛。坐标顺序可由一维谐振子核对：U=q²/2,m=1时数值矩阵为[[1−h²,h],[-h,1]]，其log除以h对应K_h=(1+h²/6)(p²+q²)/2−(h/2+h³/12)pq+O(h⁴)，与shadow3一致。原JSON中的NEEDS_HUMAN属于待审记录；所列疑问本次已由实际定义和有限阶解释解决，不构成缺失材料。无[ERRATUM?]标记，未发现原书疑误。依赖定位：Ch03_deps.txt:33、39、568–585、619–631、733–747、1921–1924、2936、2943–2944、2948、3569–3579、4198–4202、4217–4221。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

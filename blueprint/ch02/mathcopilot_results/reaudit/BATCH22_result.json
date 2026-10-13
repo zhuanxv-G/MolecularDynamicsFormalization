@@ -1,0 +1,120 @@
+{
+  "batch": "BATCH22",
+  "chapter": "ch02",
+  "round": "reaudit-with-deps",
+  "input_sha256": {
+    "BATCH.md": "d10a3d57aaef30aa03ac61eaadb2221fb1851a35dc99e03473c0c2712ef9e594",
+    "Blueprint/Ch02.lean": "f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb",
+    "Ch02_deps.txt": "67bf13ee2babba8f7fd671aef5bc4390cfa63f9319fca6860fb22ae7c5ee1113"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.1-SymmetricComposition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STATEMENT_TEXT_MISMATCH",
+          "ADJOINT_NOTATION_MISMATCH",
+          "FORMULA_ASSIGNMENT_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-SymmetricComposition",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "85",
+          "pdf_page": "107",
+          "statement_latex": "When we construct a composition of a method with its adjoint method, we see readily that it is symmetric, i.e. self-adjoint, since\n\\[\\mathcal K_h^{\\dagger}:=[\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2}]^{\\dagger}=\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2}=\\mathcal K_h.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.symmetricComposition",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint"
+          ],
+          "extra_assumptions": [
+            "实际可逆步Equiv.Perm；完整伴随半步组合。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "change": "按当前教材 PDF 第107页渲染原文修正 statement_latex；保留原书公式和引用编号。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "所引英文不是当前教材该页原句；应改为以 When we construct 开头的完整原句。",
+          "原页伴随记号为 dagger（†），不是星号；展示公式首个等号为 :=，须保留原书写法，不把它静默改成普通等号。"
+        ],
+        "evidence": [
+          "教材 PDF 第107页（印刷85页），§2.4.1：When we construct a composition of a method with its adjoint method。",
+          "同页展示公式逐项为 K_h† := [G_{h/2}† ∘ G_{h/2}]† = G_{h/2}† ∘ G_{h/2} = K_h；已读取文字并检查渲染图像。",
+          "页码107=85+22正确。无另列独立证明；公式论证已包含于 statement_latex，proof_latex=null 可保留。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symmetricComposition",
+        "verdict": "PASS",
+        "explanation": "PASS。已按实际源码展开：Ch02_deps.txt 中 AdjointMethods.lean 的 textbookAdjointMethod G h=(G(-h)).symm；CompositionMethods.lean 的 textbookComposeMethods G₁ G₂ h=G₁(h/2)*G₂(h/2)，其 toMap 定理以 rfl 明确乘法对应 G₁(h/2)∘G₂(h/2)；textbookSymmetricComposition G=textbookComposeMethods (textbookAdjointMethod G) G。因此 K_h=(G_{-h/2})⁻¹∘G_{h/2}，先执行 G 的正半步，再执行其伴随半步，和原文顺序一致。K_h†=(K_{-h})⁻¹=(G_{-h/2})⁻¹∘G_{h/2}=K_h；库中的伴随反序和二次伴随恒等式也实际给出此展开。签名对任意类型 E、任意全实参数可逆族 G 作族相等断言，故覆盖所有 h、所有状态，无缺失结论。原文中 K 的定义由正式定义承载，不必另列等式假设。[EXTRA] 实际可逆性是普通逆映射伴随所需条件，Equiv.Perm 的全局性和全实参数比局部版本强，是合理且明示的形式化范围限制；完整半步组合是原文对象本身。无需光滑性或辛性假设。无 [ERRATUM?]，没有提出原书勘误。证明状态单列：Ch02.lean:1031 引用的库定理在依赖正文中有 unfold/rw 证明，该条及所用伴随/组合恒等式无 sorry；这不是编译验证报告。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-SymmetricEven",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STATEMENT_TEXT_MISMATCH",
+          "REFERENCE_NUMBERS_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-SymmetricEven",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "85",
+          "pdf_page": "107",
+          "statement_latex": "Self-adjoint, or symmetric schemes have unique features; in particular they have even order [164, 227].",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.symmetricEven",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]r>0为有限确切局部阶：r阶界成立而r+1阶不成立；两族C∞且原流为群，自伴随并实际可逆。原书省略“确切”阶资格，精确流没有有限阶。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "change": "按当前教材 PDF 第107页渲染原文修正 statement_latex；保留原书公式和引用编号。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "所引英文不是当前教材该页原句；原页以 Self-adjoint, or symmetric schemes 开头。",
+          "原页引用编号为 [164, 227]，不是 [14, 29]。"
+        ],
+        "evidence": [
+          "教材 PDF 第107页（印刷85页），§2.4.1：Self-adjoint, or symmetric schemes have unique features; in particular they have even order [164, 227].",
+          "已读取文字并检查渲染图像；页码107=85+22正确；原页未给出该结论的独立证明，proof_latex=null正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symmetricEven",
+        "verdict": "PASS",
+        "explanation": "PASS。实际展开 Q n=Fin n→ℝ，故对象为任意有限维实状态空间上的可逆步族，n、G、F、自然数 r 的全称量词及假设顺序与批次一致。伴随定义为 G†_h=(G_{-h})⁻¹，G†=G 正是时间反演对称。methodLocalOrder G F r 展开为 ∀z, ∃C>0, ∃δ>0, ∀h∈ℝ, |h|<δ → ‖G_h(z)-F_h(z)‖≤C|h|^(r+1)：双侧步长、逐状态允许不同常数和邻域，指数 r+1 是局部误差对应的方法阶 r，没有把局部误差指数错当方法阶。r 阶成立且 r+1 阶不成立给出有限确切阶；后者是整个逐点命题的否定，即至少有状态无法达到下一阶，并非要求每个状态都恰好同阶。两族联合 C∞ 使该表述等价于首个不恒为零的时间 Taylor 误差项具有次数 r+1；不需解析性，平坦误差满足所有有限阶并被确切阶前提排除。F 的群作用律结合可逆性推出 F₀=id、F_{-h}=F_h⁻¹，因此 F†=F 是冗余但合理的假设；r>0 的误差界在 h=0 还保证 G₀=F₀=id。对称逆关系强迫首个误差项次数为奇数，故结论 Even r 对应原文有限确切方法阶为偶数，全部结论已保留。[EXTRA] 确切阶资格必要：二阶对称法也有一阶上界，精确流则具有任意有限阶；仅以至少 r 阶为前提不能推出 Even r。联合 C∞ 是比有限 Taylor 正则性更强的充分条件，全实参数和全局 Equiv.Perm 是比局部流/局部可逆版本更强的明示范围限制，并非声称所有对称方法必须满足这些强条件。其限制合理，未加入偶数性或等价于结论的前提。无 [ERRATUM?]；原文的 order 按通常确切阶解释，无须认定原书错误。证明状态单列：Ch02.lean:1039 的证明为 sorry，偶数阶尚未形式证明；本次 PASS 仅审核签名语义，不把 sorry 当作语义失败或已获验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

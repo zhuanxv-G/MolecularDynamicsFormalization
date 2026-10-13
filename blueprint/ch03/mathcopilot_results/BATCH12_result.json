@@ -1,0 +1,329 @@
+[
+  {
+    "source_id": "MD-3.4-ModifiedField",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF135 / 印刷113：dz/dt=tilde f_h=f+h^r f_r+h^(r+1)f_(r+1)+⋯；where r is the classical order。",
+        "已读取并目视核对PDF135–138渲染页；本条页码满足PDF页=印刷页+22。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.formalField",
+      "verdict": "PASS",
+      "explanation": "展开 Q n=Fin n→ℝ；formalField 的0次系数为f，1≤j<r为0，j≥r为fj j，逐坐标组成形式向量场。context限定r≥1时准确；不宣称匹配存在性或级数收敛。无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.4-LeadingModifiedField",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF135 / 印刷113：G_h−F_h=h^(r+1)Γ_(r+1)+O(h^(r+2))；f_r=Γ_(r+1)。",
+        "已读取并目视核对PDF135–138渲染页；本条页码满足PDF页=印刷页+22。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.leadingModifiedField",
+      "verdict": "PASS",
+      "explanation": "actualFlow规定η>0、每个D内初值Φ 0 z=z、双向区间内留D并满足真正HasDerivAt ODE；localOrder是B上统一C|h|^(r+1)界。结论给出光滑fr、穿孔双向极限等于fr及f+h^r fr的真正解与统一O(h^(r+2))匹配，因局部误差展开的Γ_(r+1)正是此唯一极限，落实fr=Γ_(r+1)，没有把匹配作假设。[EXTRA]全域C∞、开放D/紧B与统一双向流强于逐点原句，但足以合理支撑统一局部估计；不是最低必要条件。签名PASS；证明仍为sorry，不代表已验证定理。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.4-TruncatedHamiltonian",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NOTATION_TRANSCRIPTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-TruncatedHamiltonian",
+        "kind": "definition",
+        "label": "(3.11)",
+        "section": "3.4",
+        "printed_page": "114",
+        "pdf_page": "136",
+        "statement_latex": "Define\n\\[\\bar H_k\\stackrel{\\mathrm{def}}=H+h^rH_r+h^{r+1}H_{r+1}+\\cdots+h^kH_k.\\tag{3.11}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原文(3.10)为形式H̃_h=H+h^rH_r+h^{r+1}H_{r+1}+⋯；(3.11)是实际有限函数，不需无限级数收敛；r≤k。"
+        ],
+        "issues": [
+          {
+            "code": "NOTATION_TRANSCRIPTION",
+            "detail": "原PDF有限截断使用\\bar H_k而非\\widetilde H_k；(3.10)无限形式Hamiltonian才使用tilde H_h。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.truncatedHamiltonian",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "detail": "按教材渲染页修正有限截断记号；保留并标注原书自身疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原PDF有限截断使用\\bar H_k而非\\widetilde H_k；(3.10)无限形式Hamiltonian才使用tilde H_h。"
+      ],
+      "evidence": [
+        "PDF136 / 印刷114：(3.10)为tilde H_h；(3.11)明确为bar H_k=H+h^r H_r+⋯+h^k H_k。",
+        "已读取并目视核对PDF135–138渲染页；本条页码满足PDF页=印刷页+22。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.truncatedHamiltonian",
+      "verdict": "PASS",
+      "explanation": "Finset.Icc r k为包含两端的自然数有限区间；展开恰为H(z)+Σ_(j=r)^k h^j Hj(j,z)。在context的r≤k范围忠实于(3.11)，不要求无限级数收敛。泛化到任意赋范实向量空间E合理。无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.4-TruncationSmooth",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NOTATION_TRANSCRIPTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-TruncationSmooth",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "114",
+        "pdf_page": "136",
+        "statement_latex": "Suppose the Hamiltonian $H$ and modified Hamiltonian $\\bar H_k$ are smooth functions globally defined on a convex, compact subset $\\mathcal B$ of $\\mathbb R^{2N_c}$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "旧CH03-070是(3.11)有限函数光滑性的证明辅助；实际 finite sum 不假设和已光滑。"
+        ],
+        "issues": [
+          {
+            "code": "NOTATION_TRANSCRIPTION",
+            "detail": "原PDF有限截断使用\\bar H_k而非\\widetilde H_k；(3.10)无限形式Hamiltonian才使用tilde H_h。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.truncationSmooth",
+        "reusable_proofs": [
+          "MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian"
+        ],
+        "extra_assumptions": [
+          "各系数在开放环境D为C¹；这里只证明所需C¹子结论，原文smooth假设本身不作为新断言。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "detail": "按教材渲染页修正有限截断记号；保留并标注原书自身疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原PDF有限截断使用\\bar H_k而非\\widetilde H_k；(3.10)无限形式Hamiltonian才使用tilde H_h。"
+      ],
+      "evidence": [
+        "PDF136 / 印刷114：Theorem 3.1首句：H and modified Hamiltonian bar H_k，smooth functions，convex, compact subset。",
+        "已读取并目视核对PDF135–138渲染页；本条页码满足PDF页=印刷页+22。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.truncationSmooth",
+      "verdict": "FAIL",
+      "explanation": "textbookTruncatedHamiltonian确实是H+Σ_(j=r)^k h^j Hj。签名只从H及系数的ContDiffOn ℝ 1推导有限和C¹；没有原文smooth即C∞，没有紧凸B与R^(2Nc)对象条件。它是正确的有限和辅助引理，不是所引原文假设的忠实对应。[EXTRA]所述开放D甚至没有在签名中要求；C¹不足以替代smooth。该辅助证明调用库定理，无sorry，与语义FAIL分开。",
+      "counterexample": "取E=ℝ²、D=ℝ²、H(q,p)=|q|^(3/2)、全部Hj=0；H与截断和均C¹而非C²，故当前结论不能表达原文smooth。",
+      "suggested_fix": "将本声明标为有限和C¹辅助引理并更换对应原句；若保留本source_id，另列原文紧凸B上H与截断H的C∞假设，或用ContDiffOn ℝ ⊤的系数假设推出C∞截断和。"
+    }
+  },
+  {
+    "source_id": "MD-3.4-Thm3.1",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NOTATION_TRANSCRIPTION",
+        "SOURCE_NOTATION_INCONSISTENCY",
+        "SOURCE_CONSTANT_ABUSE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-Thm3.1",
+        "kind": "theorem",
+        "label": "Theorem 3.1",
+        "section": "3.4",
+        "printed_page": "114–116",
+        "pdf_page": "136–138",
+        "statement_latex": "Theorem 3.1. Suppose the Hamiltonian $H$ and modified Hamiltonian $\\bar H_k$ are smooth functions globally defined on a convex, compact subset $\\mathcal B$ of $\\mathbb R^{2N_c}$ and suppose that the exact solution and numerical approximations (for $h$ sufficiently small) are confined to $\\mathcal B$. Then, we have asymptotically for $h\\to0$ that\n\\[H(\\boldsymbol z_n)=H(\\boldsymbol z_0)+O(h^r),\\]\nfor $n=0,1,\\ldots,\\nu$ where $\\tau=\\nu h=O(h^{-k+r})$.",
+        "proof_latex": "Proof First observe that due to smoothness and the assumptions on $\\mathcal B$, we have a global Lipschitz constant\n\\[|H(\\boldsymbol u)-H(\\boldsymbol v)|\\le L\\|\\boldsymbol u-\\boldsymbol v\\|\\]\nfor all $\\boldsymbol u,\\boldsymbol v\\in\\mathcal B$.\nDenote by $\\mathcal F_h^{(k)}$ the flow map of the truncated Hamiltonian expansion $\\bar H_k$,\n\\[\\mathcal F_h^{(k)}\\stackrel{\\mathrm{def}}=\\exp(h\\mathcal L_{\\bar H_k}).\\]\nBy construction, we have\n\\[\\boldsymbol z_{n+1}=\\mathcal F_h^{(k)}(\\boldsymbol z_n)+\\boldsymbol\\eta_n\\]\nwhere $\\|\\boldsymbol\\eta_n\\|\\le Ch^{k+1}$.\nSince $\\mathcal F_h^{(k)}$ preserves its Hamiltonian (3.11), we have\n\\[\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n))=\\widetilde H_k(\\boldsymbol z_n).\\]\nNow\n\\[\\begin{aligned}\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\boldsymbol z_{n+1})-\\bar H_k(\\boldsymbol z_n)\\\\\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\boldsymbol z_{n+1})-\\widetilde H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n))\\\\\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n)+\\boldsymbol\\eta_n)-\\widetilde H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n)).\\end{aligned}\\]\nHence\n\\[|\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)|\\le L\\sum_{n=0}^{\\nu-1}\\|\\boldsymbol\\eta_n\\|\\le L\\nu h^{k+1}.\\]\nWe have $\\nu=\\tau/h$, thus\n\\[|\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)|\\le L\\tau h^k.\\]\nNext observe that\n\\[H=\\bar H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\\cdots-h^kH_{(k)}=\\bar H_k+O(h^r).\\]\nTherefore\n\\[|H(\\boldsymbol z_\\nu)-H(\\boldsymbol z_0)|\\le L\\nu h^{k+1}+O(h^r),\\]\nso that, as long as $\\nu\\le C_2h^{-k+r-1}$, we have\n\\[|H(\\boldsymbol z_\\nu)-H(\\boldsymbol z_0)|\\le O(h^r).\\quad\\square\\]",
+        "proof_note": "完整原书证明按PDF136–138跨页拼接；保留bar/tilde混用、L沿用及缺陷常数C省略，不静默修订原书。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "(3.11)来自前面的modified Hamiltonian构造；逐阶匹配不能作为“已经构造成功”的无证假设。"
+        ],
+        "issues": [
+          {
+            "code": "NEEDS_HUMAN",
+            "detail": "给定H̃_k与存在一组构造系数的量词对应、截断轨道留B及所有n≤ν的长时间范围需审；任意n和T的量化包含原文每个n≤ν。"
+          },
+          {
+            "code": "NEEDS_HUMAN",
+            "detail": "证明先对H取L，后对H̃_k沿用L，并在Lνh^(k+1)中省略缺陷常数C；本地辅助桥接显式给实际截断族统一L和C，但原文不改。"
+          },
+          {
+            "code": "NOTATION_TRANSCRIPTION",
+            "detail": "原PDF有限截断使用\\bar H_k而非\\widetilde H_k；(3.10)无限形式Hamiltonian才使用tilde H_h。"
+          },
+          {
+            "code": "SOURCE_NOTATION_INCONSISTENCY",
+            "detail": "PDF137保守性公式右端及望远镜第二、三行减项原印为tilde H_k，其余为bar H_k；修订转录保留此原书不一致，并不统一替原书纠错。"
+          },
+          {
+            "code": "SOURCE_CONSTANT_ABUSE",
+            "detail": "PDF136的L针对H；PDF137将同一L用于bar H_k，且缺陷界C在后续Lνh^(k+1)中消失。这是原书常数简写/论证交代缺口，保留原式；统一截断L和吸收C需另行说明。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.theorem31",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "smoothSymplecticData显式添加原方法r阶/近恒等辛/joint C∞、开放凸环境D、紧凸B⊆D、真实原流；r>0。",
+          "本签名保留完整构造H_j与finiteMatching为结论，k≥r固定；数值迭代和截断ODE留B，常数可依赖k,T而非所有k统一。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "detail": "按教材渲染页修正有限截断记号；保留并标注原书自身疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原PDF有限截断使用\\bar H_k而非\\widetilde H_k；(3.10)无限形式Hamiltonian才使用tilde H_h。",
+        "PDF137保守性公式右端及望远镜第二、三行减项原印为tilde H_k，其余为bar H_k；修订转录保留此原书不一致，并不统一替原书纠错。",
+        "PDF136的L针对H；PDF137将同一L用于bar H_k，且缺陷界C在后续Lνh^(k+1)中消失。这是原书常数简写/论证交代缺口，保留原式；统一截断L和吸收C需另行说明。"
+      ],
+      "evidence": [
+        "PDF136–138 / 印刷114–116：定理首句bar H_k，τ=νh=O(h^(-k+r))；PDF137保守性等式右端及两减项tilde H_k；同页Lνh^(k+1)省C；PDF138 ν≤C₂h^(-k+r-1)。",
+        "已读取并目视核对PDF135–138渲染页；本条页码满足PDF页=印刷页+22。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.theorem31",
+      "verdict": "FAIL",
+      "explanation": "展开smoothSymplecticData：r>0、开放凸D、紧凸B⊆D、H在D为C∞、G0=id、G在时间×D为C∞、每一步Jacobian满足AᵀJA=J、B上原Hamiltonian真实局部流与统一局部r阶。展开finiteMatching：同一组全阶Hj，在每个k≥r具有真实截断解、轨道留D和统一A h^(k+1)缺陷。oneStepIterate=(G h)^[ν] z₀；时间条件ν h h^(k-r)≤T准确表达τ=O(h^(-k+r))，任意ν涵盖每个n≤ν。主要缺失：原文给定截断Hamiltonian的条件结论，被改成存在一组Hj；能量结论额外要求从每个z∈B出发的整个截断步轨道都留B，而非只要求相关精确轨道及数值轨道受限。这是不必要且可使结论空泛的全B正向不变性。合理的辛/阶数/正则性构造上下文不能消除此量词差异。原书沿用H的L到截断族并省略C，应显式解释统一截断L和吸收C，不能按同一常数逐字认定正确。正文混用bar H_k与tilde H_k已在原文审校中保留并标注，不静默纠错。签名FAIL；该定理仍为sorry。",
+      "counterexample": "缺失适用情况：H=(q²+p²)/2、G为精确旋转流、z₀=0；B=[-2,2]×[-1,1]。原精确及数值轨道始终0并留B；自然截断取Hj=0，但边界点(2,1)的Hamiltonian向量场(q′,p′)=(p,-q)立即向q>2运动，故对所有z∈B的截断留B前提不成立。此例展示额外前提排除原书允许的轨道；不是能量估计本身的反例。",
+      "suggested_fix": "分离构造定理与能量定理：对给定Hj及相应有限匹配、统一截断L和O(h^r)差界证明能量结论；将留B仅要求在实际迭代点的截断一步，或允许这些短轨道留固定紧凸邻域并在该邻域取统一L。保留正确时间量词及M,δ对k,T的依赖。"
+    }
+  },
+  {
+    "source_id": "MD-3.4-CompactLipschitz",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF136 / 印刷114：Proof First observe… |H(u)−H(v)|≤L‖u−v‖，for all u,v∈B。",
+        "已读取并目视核对PDF135–138渲染页；本条页码满足PDF页=印刷页+22。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.compactLipschitz",
+      "verdict": "PASS",
+      "explanation": "D开放、B紧凸且包含于D、H在D为C¹；结论给真实存在的正L及B内任意u,v的统一差界。实数范数为绝对值，交换u,v不影响。原文smooth在紧集邻域的标准含义蕴含此C¹条件；[EXTRA]开放邻域是合理正则性解释，C¹已足够，L>0不限制Lipschitz结论。E的泛化合理；库证明无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.4-TruncatedFlow",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "NOTATION_TRANSCRIPTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-TruncatedFlow",
+        "kind": "definition",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "115",
+        "pdf_page": "137",
+        "statement_latex": "Denote by $\\mathcal F_h^{(k)}$ the flow map of the truncated Hamiltonian expansion $\\bar H_k$,\n\\[\\mathcal F_h^{(k)}\\stackrel{\\mathrm{def}}=\\exp(h\\mathcal L_{\\bar H_k}).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "实际γ(0)=z、γ满足J∇H̄_k的ODE，F_h^(k)(z)=γ(h)；本关系不把exp记号当解存在证明。"
+        ],
+        "issues": [
+          {
+            "code": "NOTATION_TRANSCRIPTION",
+            "detail": "原PDF有限截断使用\\bar H_k而非\\widetilde H_k；(3.10)无限形式Hamiltonian才使用tilde H_h。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.truncatedFlow",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "detail": "按教材渲染页修正有限截断记号；保留并标注原书自身疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原PDF有限截断使用\\bar H_k而非\\widetilde H_k；(3.10)无限形式Hamiltonian才使用tilde H_h。"
+      ],
+      "evidence": [
+        "PDF137 / 印刷115：Denote by F_h^(k)…bar H_k；F_h^(k)=exp(h L_(bar H_k))。",
+        "已读取并目视核对PDF135–138渲染页；本条页码满足PDF页=印刷页+22。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.truncatedFlow",
+      "verdict": "PASS",
+      "explanation": "SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ按(q,p)排列；textbookJ=[[0,I],[-I,0]]；textbookHamiltonianVectorField=J乘逐坐标fderiv梯度。textbookTruncatedHamiltonian为(3.11)有限和；solution在Icc 0 h每点含端点要求HasDerivWithinAt γ (J∇bar H_k(γ t))；再加γ0=z。对原书正步长h，γ(h)是所指实际时间h流值，与exp(h L)操作性含义一致；这里只定义解关系，未冒充存在唯一性证明。h<0时Icc为空，因此此关系不表达负时间流，不能超出本批正步长语境使用。无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.4-FiniteMatchingConstruction",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF137 / 印刷115：By construction z_(n+1)=F_h^(k)(z_n)+η_n；‖η_n‖≤Ch^(k+1)；上下文在PDF135说明Hamiltonian system及symplectic numerical method。",
+        "已读取并目视核对PDF135–138渲染页；本条页码满足PDF页=印刷页+22。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.finiteMatchingConstruction",
+      "verdict": "PASS",
+      "explanation": "实际展开smoothSymplecticData、textbookJacobian=fderiv的坐标矩阵、IsTextbookSymplectic=AᵀJA=J，确为光滑近恒等辛方法及原Hamiltonian真实流/局部r阶；凸开放D使局部Hamiltonian构造具合理背景。finiteMatching结论是∃δ>0,A>0,Γ，对全部小正h及B内z：γ0=z、截断Hamiltonian真正ODE、整步轨道留D、‖G h z−γ(h)‖≤A h^(k+1)，即原文η缺陷界。先∃同一组Hj再∀k≥r，未把构造成功假设化。[EXTRA]C∞及紧凸B用于任意阶和统一界，合理加强，非每个固定k的最低条件。原句数学存在性尚未形式证明：该声明为sorry；这与签名语义PASS分开。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  }
+]

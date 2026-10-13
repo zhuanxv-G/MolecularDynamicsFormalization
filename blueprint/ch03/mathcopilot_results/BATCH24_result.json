@@ -1,0 +1,278 @@
+[
+  {
+    "source_id": "MD-3.7.1-HardCorePotential",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "ERRATUM?"
+      ],
+      "corrected_json": null,
+      "issues": [
+        "原句、展示公式、≤、页码均与原页一致；原书疑误已被条目保留，不改写为<。"
+      ],
+      "evidence": [
+        "PDF155/印刷133：H_h.s.=pᵀM⁻¹p/2+U(q)+U_h.s.；括号确实印成 ‖q_i−q_j‖≤σ_i+σ_j。",
+        "PDF154/印刷132：非重叠约束为≥，等号定义接触面。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.hardCorePotential",
+      "verdict": "FAIL",
+      "explanation": "已展开Ch03_deps.txt:3631–3632的hardCoreDomain：∀i≠j，σ_i+σ_j≤‖q_i−q_j‖。Ch03.lean:1355–1356将属于该闭域的构型势能定义为0，域外为∞，所以实际使用严格重叠<，与本条原句≤在接触面不一致。[ERRATUM?]成立：PDF132页的允许接触和PDF133页的无限势约定存在边界冲突；标注疑误并不能消除签名与原句的差异。本定义还仅表示U_h.s.，不包含所引H_h.s.完整Hamiltonian。没有sorry；FAIL是语义判断。",
+      "counterexample": "N=2,d=1,σ₀=σ₁=1/2,q₀=0,q₁=1。Lean的hardCorePotential=0；PDF133页字面≤要求∞。",
+      "suggested_fix": "将原书字面版本单独定义为：存在i≠j且距离≤半径和时取∞；接触允许的物理版本另命名并显式标明勘误选择。若保留展示公式的完整作用域，再给出K+U+U_h.s.，不能把两种边界约定视为相同定义。"
+    }
+  },
+  {
+    "source_id": "MD-3.7.1-PrimitiveSplitting",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF155/印刷133：H=H_free+U；三个步骤依次为p−(h/2)∇U(q)、G_free_h、P−(h/2)∇U(Q)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.primitiveSplitting",
+      "verdict": "PASS",
+      "explanation": "已展开Ch03_deps.txt:33的SymplecticCoordinates=(Fin n⊕Fin n)→ℝ、568–571的位置投影、583–585的textbookPotentialForce(U)(q)_i=−fderiv(U,q)(e_i)、619–624的textbookMomentumKick：位置保持、动量加hF(q)。函数复合从右向左，恰为初始半kick、给定Gfree h、末尾半kick。U的光滑性和Gfree是真实自由硬球流属于原文语境，本条定义只描述给定流的数学组合，并不声称任意Gfree具有物理意义或证明流存在；现有context明确此范围。无额外定理结论或sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.7.1-PrimitiveOrder",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [
+        "原文关于长期能量无界是原书的陈述，APPROVED仅表示转录准确，不代表其普遍数学有效性。"
+      ],
+      "evidence": [
+        "PDF155/印刷133：finite number of collisions on a fixed interval、O(h)、energy error grows without bound。",
+        "PDF156/印刷134末段：each collision的O(h)以及total error O(h), i.e. first order。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.primitiveOrder",
+      "verdict": "FAIL",
+      "explanation": "已展开Q、Z(2816–2817)、grad(2932)、positiveMass(2948)、invMass(2840)、finiteCollisionTrajectory(4431–4441)、collisionalGlobalOrder(4460–4464)、admissibleCollisionState及freeCollisionFlow(4465–4472)。目标是经θ:ℝ≃oℝ进行O(h)时间移动后的全相空间网格误差，而原文以能量缺陷为论据，且明确包含长期能量误差无界；该结论子句完全未表示。更严重，finiteCollisionTrajectory只要求q在闭区间连续，p的ODE仅在内部非事件点成立，事件时只约束左右极限，不约束p(t)的取值；端点动量也无连续性要求。故它不能保证真实初始状态和右侧轨道一致，签名甚至在无碰撞时为假。有限横截性确有内积<0，单个光滑g则是比多硬球约束窄的模型；C∞可作为充分正则性，但非书中明确必需条件。freeCollisionFlow对每个τ只允许内部事件且要求全局有限碰撞，强于所称固定区间假设。sorry独立存在，不改变这些语义缺陷。",
+      "counterexample": "n=1,m=1,U=0,g=1,τ=1,events=∅。令q(t)=0，p(0)=1，其余t的p(t)=0。finiteCollisionTrajectory全部成立。取真实自由流Gfree(t,(x,v))=(x+t v,v)，满足freeCollisionFlow。kick恒等，从(q(0),p(0))=(0,1)迭代ν步得到(1,1)，而θ(1)=1强迫比较(q(1),p(1))=(0,0)，误差≥1，不能≤C/ν。另U=0的真实硬球轨道能量严格守恒，说明原书长期无界不能理解为所有系统的全称命题。",
+      "suggested_fix": "先修正轨道定义：初端右连续、末端左连续，碰撞时约定并绑定实际p(t)为碰后值；限制允许初态、接触几何和同时/掠碰。明确时间对齐误差是新增的收敛目标并单独证明能量O(h)；长期无界需按适当实例/条件另述，不能遗漏也不能无条件全称化。"
+    }
+  },
+  {
+    "source_id": "MD-3.7.1-ObstacleReflection",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION_INCOMPLETE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.7.1-ObstacleReflection",
+        "kind": "definition",
+        "label": null,
+        "section": "3.7.1",
+        "printed_page": "134",
+        "pdf_page": "156",
+        "statement_latex": "The coefficient $\\alpha$ is chosen so that the kinetic energy is conserved through collision, thus\n\\[\\alpha=-2\\frac{u_\\perp\\cdot\\overline P}{u_\\perp\\cdot u_\\perp}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原文模型：原点固定球与质量1的运动球，两球半径均0.5；接触时‖q_c‖=1，u_⊥=q_c≠0。",
+          "P̄=p−(h/2)∇U(q)，q_c=q+τ_cP̄；α=−2⟨u_⊥,P̄⟩/⟨u_⊥,u_⊥⟩，P̂=P̄+αu_⊥。Lean的第二参数p对应P̄，返回值是P̂而非α。",
+          "该定义实现反射动量；能量守恒性质关联ElasticEnergy。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.obstacleReflection",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "field": "context_notation",
+            "detail": "补全PDF原页的模型、变量及作用域；陈述和原书疑误保持原样。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "现有context遗漏两球半径均为0.5、‖q_c‖=1及p参数对应原文碰撞前P̄而非整步初始p。α与反射是不同类型的量，须说明本lean_decl表示应用α后的动量。"
+      ],
+      "evidence": [
+        "PDF155/印刷133末段：fixed body at the origin、mass=1、both bodies having radius 0.5。",
+        "PDF156/印刷134：P̄=p−(h/2)∇U(q)，u_⊥=q_c，P̂=P̄+αu_⊥，α=−2(u_⊥·P̄)/(u_⊥·u_⊥)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.obstacleReflection",
+      "verdict": "PASS",
+      "explanation": "Position在Ch03_deps.txt:844展开为EuclideanSpace ℝ (Fin d)。obstacleReflection(u,p)=p−[2⟨u,p⟩/⟨u,u⟩]u，输入p对应原文P̄，输出对应P̂；正好将展示α代入P̂=P̄+αu。u=q_c且‖q_c‖=1使分母非零，单位质量对应普通Euclidean内积。定义允许u=0是数学上的总函数延拓，本条只在非零碰撞法向语境解释；不声称由这一个定义证明能量结论。原context已声明这是实际反射函数，因此不将输出向量与α标量混淆。无sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.7.1-PrimitiveDefect",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION_INCOMPLETE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.7.1-PrimitiveDefect",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.7.1",
+        "printed_page": "134",
+        "pdf_page": "156",
+        "statement_latex": "We next calculate the change in energy in a single step by inserting $Q$ and $P$ into the Hamiltonian and expanding around the point of collision $q_c$, obtaining\n\\[\\Delta H\\stackrel{\\mathrm{def}}=H(Q,P)-H(q,p)=-(h-2\\tau_c)\\frac{q_c^T\\overline P}{q_c^Tq_c}q_c^T\\nabla U(q_c)+O(h^2).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "沿用原点固定球、运动球质量1、两球半径均0.5的模型；接触点‖q_c‖=1，讨论步内单碰撞0<τ_c<h。",
+          "H(q,p)=‖p‖²/2+U(q)；P̄=p−(h/2)∇U(q)，q_c=q+τ_cP̄，P̂=P̄+αq_c，Q=q_c+(h−τ_c)P̂，P=P̂−(h/2)∇U(Q)。",
+          "公式的P̄是第一次半kick后的动量。Lean形参pbar却是整步初始动量；二者差是否可吸收到O(h²)须检查局部性，不能靠符号名称断定。"
+        ],
+        "issues": [
+          {
+            "code": "NEEDS_HUMAN",
+            "detail": "书中P̄与签名初始pbar的差异及通过O(h²)吸收的正则性需要独立审校。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.primitiveDefect",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "C³势、固定非零qc、真实初末碰撞步族和0<tc(h)<h；O(h²)以小正h的一致界表示。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "field": "context_notation",
+            "detail": "补全PDF原页的模型、变量及作用域；陈述和原书疑误保持原样。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "statement_latex的符号、负号、O(h²)和页码准确；空context遗漏单位质量、单位接触距离以及P̄和初始p的区分。保留原有待审问题，不把Lean的pbar冒充原书P̄。"
+      ],
+      "evidence": [
+        "PDF156/印刷134：P̄=p−(h/2)∇U(q)，q_c=q+τ_cP̄，P̂=P̄+αq_c，Q=q_c+(h−τ_c)P̂，P=P̂−(h/2)∇U(Q)。",
+        "同页ΔH=−(h−2τ_c)(q_cᵀP̄/q_cᵀq_c)q_cᵀ∇U(q_c)+O(h²)。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.primitiveDefect",
+      "verdict": "FAIL",
+      "explanation": "已展开Position、obstacleReflection及primitiveDefect_statement(4481–4495)，并逐项核对Ch03.lean:1382–1398。C³势、非零q_c及小正h的一致余项是合理的充分正则性设置。原文P̄对应Lean pminus，而Lean pbar对应原文初始p；仅在初始q(h)处梯度局部有界时，pminus−pbar=O(h)，其乘以(h−2tc)的差才为O(h²)。实际前提用隐式等式q=qc−tc[pbar−(h/2)∇U(q)]，没有q(h)→qc、局部有界或合法首次碰撞条件，故允许远处分支；C³不能在无限远保证梯度有界，也不能吸收该差异。把这些步族称为“真实碰撞步族”并不由实际前提支持。以下反例满足所有显示前提并使余项发散；因此不是仅待人工判定。gradient为Euclidean梯度，在一维本例可直接按导数计算；结论失效不依赖任何未知项目定义。该声明含sorry，签名FAIL独立于此。",
+      "counterexample": "d=1,U(x)=−x³/3,qc=1,pbar=0,tc(h)=h/3。对每个h>0取x(h)=−3(1+sqrt(1+2h²/3))/h²，满足x=1−h²x²/6。initial(h)=(x,0)，pminus=h x²/2；反射后为−h x²/2。final(h)=(2x−1,(h/2)[(2x−1)²−x²])。全部等式和0<tc<h成立，U为C∞且qc≠0。所述线性项因pbar=0而为0。h→0+时x∼−6/h²，最终动量∼54/h³，能量差∼1962/h⁶，绝非O(h²)。",
+      "suggested_fix": "限定局部物理分支，例如initial(h).1→qc或对小h给出‖initial(h).1−qc‖≤K h，补充‖qc‖=1、合法非重叠及首次单碰撞语境；仅对小正h量化步族。使用原书pminus=P̄的系数，或在局部有界梯度条件下明确证明以初始p替代产生O(h²)。"
+    }
+  },
+  {
+    "source_id": "MD-3.7.1-CollisionDefectZero",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF156/印刷134例外列表后三项：τ_c=h/2、沿q_c的方向导数为零、接触时动量与q_c正交。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.collisionDefectZero",
+      "verdict": "PASS",
+      "explanation": "Ch03_deps.txt:4496–4497及Ch03.lean:1399–1402的结论为(h−2tc)(a/b)c=0。取a=⟨qc,P̄⟩，b=⟨qc,qc⟩，c=⟨qc,∇U(qc)⟩：h=2tc对应中点，c=0对应方向导数零，a=0对应动量正交。析取顺序不影响语义；全称实数代数式是三种消项的通用引理，b=0下Lean的除法也有定义，但原书物理实例b=1。原context明确只审线性系数、保留O(h²)，因此没有从消项擅自推出三阶。Ch03.lean引用collisionDefectZero_proved；这与本次签名语义PASS分开。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.7.1-EndImpactThirdOrderPrinted",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION_INCOMPLETE",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.7.1-EndImpactThirdOrderPrinted",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.7.1",
+        "printed_page": "134",
+        "pdf_page": "156",
+        "statement_latex": "In cases (i) and (ii) it is clear that the error accumulating in a single step will be third order in the stepsize, since the Verlet method has local error of order three (since it is a second order method).\n• there is no collision\n• the collision occurs at the end of a timestep",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原点固定球与质量1的运动球，两球半径均0.5，‖q_c‖=1。情况(i)无碰撞；情况(ii)碰撞只在步末τ_c=h。",
+          "P̄=p−(h/2)∇U(q)，P̂为反射后的动量，最后仍执行P=P̂−(h/2)∇U(Q)。Lean的pbar对应初始p，不是原书P̄。",
+          "保留原书(ii)和primitive末端反射、最后half-kick的真实步族；无碰撞Verlet局部三阶在第2章已另述。末端三阶与同页线性缺陷的冲突保留为ERRATUM?。"
+        ],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "原文end-step豁免与同页−(h−2tc)线性项冲突；具体单位障碍反例见审计。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.endImpactThirdOrderPrinted",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "field": "context_notation",
+            "detail": "补全PDF原页的模型、变量及作用域；陈述和原书疑误保持原样。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "所引三阶原句和两个例外转录准确（例外列表是同页另处选录）；原书端点豁免疑误须保留。context未明确单位质量、单位接触距离和P̄/P̂/初始p的区别，现补全。"
+      ],
+      "evidence": [
+        "PDF156/印刷134首段：In cases (i) and (ii)…third order…Verlet…local error of order three。",
+        "同页列表前两项：there is no collision；the collision occurs at the end of a timestep；同页ΔH线性项为−(h−2τ_c)…。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.endImpactThirdOrderPrinted",
+      "verdict": "FAIL",
+      "explanation": "已展开Position和obstacleReflection，核对Ch03.lean:1404–1420：确实保留tc=h、反射及末尾half-kick，并用∃C,δ正量化O(h³)能量差。但原条范围还包括无碰撞分支，签名完全未表示该子句。末端反射分支本身为假，即使补上原文‖qc‖=1、局部物理入射，也不成立；以下单位球反例直接验证[ERRATUM?]，并非仅由套用步内公式到端点推测。C³是合理充分正则性，qc≠0合理；对所有h>0约束步族比局部误差需要更强。原文“error”的状态/能量解读应明确，但在当前选定能量解读下已有确定反例，因此FAIL。含sorry不作为语义FAIL理由。",
+      "counterexample": "d=1,U(x)=x,qc=1,pbar=−1,tc(h)=h，initial(h)=(1+h+h²/2,−1)。F=−1，pminus=−1−h/2，反射后=1+h/2，final(h)=(1,1)。这是从单位障碍外侧到末端首次接触的真实入射步，所有h>0的前提成立，U为C∞。ΔH=(1/2+1)−(1/2+1+h+h²/2)=−h−h²/2；|ΔH|/h³→∞。故无法选择固定C,δ得到O(h³)。",
+      "suggested_fix": "将原书末端三阶断言作为有反例的勘误记录，而非可证明的通用定理。无碰撞Verlet局部三阶单独陈述；若欲恢复末端碰撞三阶，须改变碰撞时刻/末kick调度或增加势在碰撞法向不变等充分结构，并独立推导，不能静默修改原书。"
+    }
+  },
+  {
+    "source_id": "MD-3.7.1-FreeHardSphereHamiltonian",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF155/印刷133：H_free=pᵀM⁻¹p/2+U_h.s.；purely ballistic (straight line) motion punctuated by momentum jumps。",
+        "PDF154/印刷132允许接触；PDF155/印刷133 U_h.s.括号却印≤。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.freeHardSphereHamiltonian",
+      "verdict": "FAIL",
+      "explanation": "已展开依赖hardCoreDomain(3631–3632)和Position(844)。WithTop ℝ允许有限实数动能或∞，在正对角质量下Σ‖p_i‖²/(2m_i)正确表示pᵀM⁻¹p/2；但条件是距离≥半径和即取有限值，因此接触面与本页U_h.s.的≤无限势字面约定不一致，复现HardCorePotential的边界差异。[EXTRA]正质量是物理必要条件，不过本定义参数没有附带positiveMass证明，必须限定解释域；注释并非Lean假设。条目范围还包括直线运动和动量跳跃，本定义只给能量函数，无ODE/反射关系，context指向别处条目不能让该定义本身表达该结论。仅定义，无sorry。",
+      "counterexample": "N=2,d=1,m₀=m₁=1,σ₀=σ₁=1/2,q₀=0,q₁=1,p₀=p₁=0。Lean值为有限0，本页字面H_free为∞。",
+      "suggested_fix": "显式分开教材字面边界版本与接触允许的物理版本，并注明所选勘误；以positiveMass限定物理语境。对本条包含的动力学句另给出并关联非接触时q′=M⁻¹p、p′=0及接触反射关系，或公开收窄statement_scope为仅Hamiltonian公式。"
+    }
+  }
+]

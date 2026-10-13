@@ -65,7 +65,7 @@ def render(source_path: Path, lean_path: Path, audit_path: Path, website_path: P
         website={x['source_id']:x for x in data} if isinstance(data,list) else data
     def web(sid):
         a=website.get(sid)
-        return '待网站审计' if a is None else a.get('audit',a).get('verdict','NEEDS_HUMAN')
+        return '待网站审计' if a is None else a.get('effective_status',a.get('audit',a).get('verdict','NEEDS_HUMAN'))
     if {s['source_id'] for s in sources} != set(ds) or set(ds)!=set(audit):
         raise ValueError('Source/Blueprint/local audit ID mismatch')
     lines=['# 第1章 Lean Blueprint 本地审阅材料','',

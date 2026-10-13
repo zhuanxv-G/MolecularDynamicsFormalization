@@ -1,0 +1,372 @@
+[
+  {
+    "source_id": "MD-3.6.2-FlowReversal",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_PUNCTUATION",
+        "CONTEXT_NOTATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6.2-FlowReversal",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.6.2",
+        "printed_page": "129",
+        "pdf_page": "151",
+        "statement_latex": "From this we see that if we start from a point $z_0$ and integrate forward in time (i.e apply $\\mathcal F_t$) then apply the involution $R$, we get the exact same result as if we start from $\\widetilde z(0)=Rz_0$ and integrate backward in time (i.e apply $\\mathcal F_{-t}$). In sum, since $z_0$ is an arbitrary point,\n\\[\\mathcal F_{-t}(Rz)=R\\mathcal F_t(z).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$z\\in\\mathbb R^n$；$R$ 同时表示线性 involution 矩阵及映射 $z\\mapsto Rz$，$R^2=I$。",
+          "本页推导针对时间可逆向量场，使用 $f(Rz)=-Rf(z)$；$\\mathcal F_t(z_0)$ 为该 ODE 从 $z_0$ 出发的真实流。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.flowReversal",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "正确R反转、C¹场和全实时间真实流；不把所需反转等式藏进流假设。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH19 A/C",
+            "detail": "原页两处均印作“i.e apply”；第二处 JSON 多了句点。补记本页实际使用的流、线性 involution 和时间可逆场，不把工程条件当原文记号。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原页两处均印作“i.e apply”；第二处 JSON 多了句点。补记本页实际使用的流、线性 involution 和时间可逆场，不把工程条件当原文记号。"
+      ],
+      "evidence": [
+        "PDF 151 / 印刷129，§3.6.2 最后两段；“integrate backward in time (i.e apply …)”及 F_{−t}(Rz)=RF_t(z)。",
+        "同页前置推导 d(RF_t(z₀))/dt=−f(RF_t(z₀))。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.flowReversal",
+      "verdict": "PASS",
+      "explanation": "依赖展开：Ch03_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean 定义 Q n = Fin n → ℝ、Z n = Q n × Q n；Chapter03/ReviewDefinitions.lean 定义 linearInvolution R 为 R.comp R = ContinuousLinearMap.id ℝ (Q n)，即 ∀z, R(Rz)=z。 n、R、f、Φ 均先全称量化，再给 involution、C¹、场反转、初值和每个实时间的真实 ODE 导数，最后 ∀t z 给原式。C¹ 保证局部解唯一；RΦ(t,z) 与 Φ(−t,Rz) 满足同一反向 ODE 和初值，故相等。[EXTRA] 光滑性与全时间存在是合理的明确适用范围，未把结论作为前提；原文若仅有局部流应限于共同存在时间。采用本页正确反转等式，未使用前一节可疑的转置定义。声明体为 sorry；这里只判签名，不声称证明已完成。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversalIdentity",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6.2-FlowReversalIdentity",
+        "kind": "unnumbered_claim",
+        "label": "(3.14)",
+        "section": "3.6.2",
+        "printed_page": "129",
+        "pdf_page": "151",
+        "statement_latex": "For the flow map, $\\mathcal F_{-t}=\\mathcal F_t^{-1}$ so we can recast the identity as\n\\[R\\circ\\mathcal F_t\\circ R\\circ\\mathcal F_t=\\mathrm{Id},\\tag{3.14}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$z\\in\\mathbb R^n$；$R$ 同时表示线性 involution 矩阵及映射 $z\\mapsto Rz$，$R^2=I$。",
+          "本页推导针对时间可逆向量场，使用 $f(Rz)=-Rf(z)$；$\\mathcal F_t(z_0)$ 为该 ODE 从 $z_0$ 出发的真实流。",
+          "$\\mathcal F_{-t}=\\mathcal F_t^{-1}$；$\\mathrm{Id}$ 为相空间上的恒等映射。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.flowReversalIdentity",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "正确R反转、C¹场、实际全时间流、群性质；不供应结论。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH19 A/C",
+            "detail": "陈述、公式(3.14)、页码及无独立证明的记录与原页一致；空 context_notation 未记录本段继承的时间可逆真实流及 R 的含义，现补全。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "陈述、公式(3.14)、页码及无独立证明的记录与原页一致；空 context_notation 未记录本段继承的时间可逆真实流及 R 的含义，现补全。"
+      ],
+      "evidence": [
+        "PDF151 / 印刷129，底部“F_{−t}=F_t^{−1}”及 R∘F_t∘R∘F_t=Id,(3.14)；PDF152 首段说明 R 同时指矩阵与映射。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.flowReversalIdentity",
+      "verdict": "PASS",
+      "explanation": "依赖展开：Ch03_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean 定义 Q n = Fin n → ℝ、Z n = Q n × Q n；Chapter03/ReviewDefinitions.lean 定义 linearInvolution R 为 R.comp R = ContinuousLinearMap.id ℝ (Q n)，即 ∀z, R(Rz)=z。 展开结论为 ∀t z, R(Φ t(R(Φ t z)))=z，恰是(3.14)的点态函数等式。初值与群律给 Φ(−t) 双侧逆；反转性加唯一性给 RΦ(t)R=Φ(−t)，因而结论成立。[EXTRA] C¹、全实时间流为明确且合理的适用条件，群律是流性质（在本设置下亦可由唯一性导出），不是偷偷供应反转结论。声明体 sorry 与语义 PASS 分开。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.2-ReversibleMethod",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF152 / 印刷130，原句“It does not automatically follow …”及 R∘G_h∘R∘G_h=Id.(3.15)；没有独立证明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.reversibleMethod",
+      "verdict": "PASS",
+      "explanation": "Ch03.lean 和依赖 Chapter03/ReviewDefinitions.lean 中 reversibleMethod 均逐字展开为 ∀h z, R(G h(R(G h z)))=z，即(3.15)在每一步长、每个状态的点态等式。E 的类型泛化不改变定义含义；R 作为外部给定 involution 的语境参数，定义本身无须再断言 R²=id。该 def 表达“time-reversible”的定义性关系；原句对 symmetric 不自动推出 reversible 的否定说明不是本 def 的定理结论。无 [EXTRA]、无 [ERRATUM?]，定义体无 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.2-SymmetricMethod",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6.2-SymmetricMethod",
+        "kind": "definition",
+        "label": null,
+        "section": "3.6.2",
+        "printed_page": "130",
+        "pdf_page": "152",
+        "statement_latex": "Recall from the previous chapter that a numerical method $\\mathcal G_h$ was said to be symmetric if it satisfied\n\\[\\mathcal G_{-h}=\\mathcal G_h^{-1}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$\\mathcal G_h$ 为一步数值映射；$\\mathcal G_h^{-1}$ 是其实际逆映射，$h$ 为步长。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.symmetricMethod",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH19 A/C",
+            "detail": "statement_latex、页码、证明记录一致；原 context_notation 的“equivalence给实际逆映射”是 Lean 实现评论，改为教材的数学记号。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "statement_latex、页码、证明记录一致；原 context_notation 的“equivalence给实际逆映射”是 Lean 实现评论，改为教材的数学记号。"
+      ],
+      "evidence": [
+        "PDF152 / 印刷130，首段“Recall from the previous chapter … symmetric if it satisfied”及 G_{−h}=G_h^{−1}。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.symmetricMethod",
+      "verdict": "PASS",
+      "explanation": "依赖及 Ch03.lean 的 symmetricMethod 展开为 ∀h, G(−h)=(G h).symm。Equiv.Perm E 为 E 的双射，symm 为实际双侧逆，函数等式等价于原页逆映射等式；∀h 包含正、负步长和零。把 G 的可逆性放在参数类型中是原定义所需，并非额外数值假设。无 [EXTRA] 或 [ERRATUM?]，定义无 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.2-AffineInvariant",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6.2-AffineInvariant",
+        "kind": "definition",
+        "label": "Definition 3.1",
+        "section": "3.6.2",
+        "printed_page": "130",
+        "pdf_page": "152",
+        "statement_latex": "Definition 3.1 (Affine Invariance) Let\n\\[\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=f(\\boldsymbol z)\\tag{3.16}\\]\nbe a given ordinary differential equation. The transformation $\\widetilde{\\boldsymbol z}=A\\boldsymbol z$, where $A$ is a non-singular square matrix, results in the modified differential equation\n\\[\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=Af(A^{-1}\\widetilde{\\boldsymbol z}).\\tag{3.17}\\]\nLet $z_0,z_1,\\ldots$ be a sequence of points obtained by application of the numerical method $\\mathcal G_h$ to (3.16). If the same method, when applied to (3.17) produces the set of points $Az_0,Az_1,\\ldots$, then we say that the numerical method is invariant with respect to the transformation $\\widetilde{\\boldsymbol z}=Az$. An affine invariant method is one which is invariant under any such transformation.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$A$ 为非奇异方阵；$\\widetilde{\\boldsymbol z}=A\\boldsymbol z$，变换后的向量场为 $Af(A^{-1}\\widetilde{\\boldsymbol z})$。",
+          "$z_0,z_1,\\ldots$ 为同一步长方法产生的序列，变换方程从 $Az_0$ 出发产生 $Az_0,Az_1,\\ldots$；本书这一定义仅量化线性变换，未包含平移。",
+          "(3.17)左端原印为 $\\mathrm d\\boldsymbol z/\\mathrm dt$，没有波浪号；保留原印，并单独标记疑误。"
+        ],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "(3.17)左端印刷z而不是z̃；保留原文，语义按前后说明的变换坐标。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.affineInvariant",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH19 A/C",
+            "detail": "陈述和(3.16)–(3.17)均对上原页；原书(3.17)左端确实没有波浪号，不修正原书。context_notation 原含“连续线性等价”“transportedField”等实现评论，替换为原文记号及范围。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "陈述和(3.16)–(3.17)均对上原页；原书(3.17)左端确实没有波浪号，不修正原书。context_notation 原含“连续线性等价”“transportedField”等实现评论，替换为原文记号及范围。"
+      ],
+      "evidence": [
+        "PDF152 / 印刷130，Definition3.1；(3.17)左端 dz/dt，右端 Af(A^{−1}z̃)；末句“invariant under any such transformation”。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.affineInvariant",
+      "verdict": "PASS",
+      "explanation": "依赖展开：Ch03_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean 定义 Q n = Fin n → ℝ、Z n = Q n × Q n；Chapter03/ReviewDefinitions.lean 定义 linearInvolution R 为 R.comp R = ContinuousLinearMap.id ℝ (Q n)，即 ∀z, R(Rz)=z。 依赖 transportedField A f z = A(f(A.symm z))，不是形式占位符。affineInvariant 展开为 ∀A f h z, G(AfA⁻¹) h(Az)=A(G f h z)。有限维实空间的连续线性等价准确表示任意非奇异方阵；从任意起点一步等变与所有步序列的等变相等价，未漏量词。此处按本书仅线性变换的定义，无需擅自加入平移。[ERRATUM?] 成立：(3.17)若按左端字面 dz/dt 解释将不符链式法则；签名依照明确写出的变换坐标 z̃ 和右端，且已经显式披露这一解释。定义无 sorry。",
+      "counterexample": null,
+      "suggested_fix": null
+    }
+  },
+  {
+    "source_id": "MD-3.6.2-SymmetricAffineReversible",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "ERRATUM?",
+        "SOURCE_LEAN_SCOPE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6.2-SymmetricAffineReversible",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.6.2",
+        "printed_page": "130",
+        "pdf_page": "152",
+        "statement_latex": "If a differential equation is time-reversible with respect to the involution $R$, and we apply a method which is affine invariant and symmetric, then the method will be time-reversible (3.15).",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "按任意抽象一步方法解释时，原文未列 G_{−f}(h)=G_f(−h)，仅线性等变及对称不足；已给显式反例。Lean 加此条件后是正确的修复版，不能视为原句无条件的等价形式化。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.symmetricAffineReversible",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]G_{−f}(h)=G_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH19 A/C",
+            "detail": "原句、页码、无独立证明记录一致；原 issues 把可由显式反例确定的问题留作 NEEDS_HUMAN，现改为明确的条件缺失记录，不改原书陈述。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原句、页码、无独立证明记录一致；原 issues 把可由显式反例确定的问题留作 NEEDS_HUMAN，现改为明确的条件缺失记录，不改原书陈述。"
+      ],
+      "evidence": [
+        "PDF152 / 印刷130，Definition3.1 后“If a differential equation is time-reversible … affine invariant and symmetric … time-reversible (3.15).”；没有列向量场符号/步长符号相容条件。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.symmetricAffineReversible",
+      "verdict": "FAIL",
+      "explanation": "依赖展开：Ch03_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean 定义 Q n = Fin n → ℝ、Z n = Q n × Q n；Chapter03/ReviewDefinitions.lean 定义 linearInvolution R 为 R.comp R = ContinuousLinearMap.id ℝ (Q n)，即 ∀z, R(Rz)=z。 依赖 affineInvariant 是对全部线性 A、向量场 g、h、z 的真运输等式；reversibleMethod 是 ∀h z, R(G_f(h)(R(G_f(h)z)))=z。场反转加 involution 使 transportedField R f=−f；等变给 G_{−f}(h)R=RG_f(h)。新增 [EXTRA] 再把 G_{−f}(h) 改成 G_f(−h)，由对称即可推出结论。该新增条件合理且非循环，但不是原文条件的逻辑后果，因此 Lean 是条件修复版，作为精确原句形式化 FAIL。对称前提虽只写左逆，对所有正负 h 全称会自动给右逆，未缺双侧逆。声明体 sorry，不影响上述语义判定。",
+      "counterexample": "取 n=1，R=id，f=0，定义对所有向量场 g 的 G_g(h)z=exp(h³)z。任意非奇异线性 A 都与标量倍乘交换，故 affineInvariant G；G_f(−h)G_f(h)=id（甚至每个 g 均 symmetric）。零场满足 f(Rz)=−Rf(z)。但 R G_f(h) R G_f(h)z=exp(2h³)z，取 h=1、z=1 即不等于 z。该方法 G_g(0)=id；对零场的局部误差为 O(h³)。它不满足新增的 G_{−g}(h)=G_g(−h)。这反驳未经额外条件的原文抽象蕴含式，不反驳加强后的 Lean 定理。",
+      "suggested_fix": "保留原句转录与疑误记录；将 Lean 标为显式修复定理，另明确方法类须满足时间尺度/符号相容。对固定 f,R 只需局部条件 ∀h z, G(−f) h z=G f(−h)z，无须对全部 g 加此假设；或在数值方法类定义中独立规定此性质，再从该类推出结论。"
+    }
+  },
+  {
+    "source_id": "MD-3.6.2-RKAffine",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "CONTEXT_NOTATION",
+        "SOURCE_LEAN_SCOPE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.6.2-RKAffine",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.6.2",
+        "printed_page": "130",
+        "pdf_page": "152",
+        "statement_latex": "All Runge-Kutta methods and Partitioned Runge-Kutta methods are affine invariant, thus, if they are also symmetric, then they preserve time-reversal symmetry.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "Runge–Kutta 与 Partitioned Runge–Kutta 均为原句量化的方法类别；“if they are also symmetric”所指的是上述 $\\mathcal G_{-h}=\\mathcal G_h^{-1}$，时间反转指(3.15)。"
+        ],
+        "issues": [
+          {
+            "code": "SOURCE_LEAN_SCOPE",
+            "detail": "本条 statement_scope 包含完整原句；rkAffine 仅为 RK 阶段关系在线性变换下的运输，遗漏 PRK 及对称时保持时间反转的结论，不能用其他 source_id 替代本条审计。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.rkAffine",
+        "reusable_proofs": [
+          "MolecularDynamics.Chapter03Review.rkAffine_proved"
+        ],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "BATCH19 A/C",
+            "detail": "原句与原页一致；原 context_notation 声称靠相邻条目覆盖原句，与本条声明的完整 statement_scope 不符，改为原文记号并记录签名范围缺失。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        "原句与原页一致；原 context_notation 声称靠相邻条目覆盖原句，与本条声明的完整 statement_scope 不符，改为原文记号并记录签名范围缺失。"
+      ],
+      "evidence": [
+        "PDF152 / 印刷130，§3.6.2 最后一句“All Runge-Kutta methods and Partitioned Runge-Kutta methods … thus, if they are also symmetric … time-reversal symmetry.”。",
+        "Ch03_deps.txt Chapter02/ReviewDefinitions.lean：rungeKuttaRelation；Chapter03/ReviewDefinitions.lean：transportedField；Chapter03/ReviewProofs.lean：rkAffine_proved。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.rkAffine",
+      "verdict": "FAIL",
+      "explanation": "依赖展开：Ch03_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean 定义 Q n = Fin n → ℝ、Z n = Q n × Q n；Chapter03/ReviewDefinitions.lean 定义 linearInvolution R 为 R.comp R = ContinuousLinearMap.id ℝ (Q n)，即 ∀z, R(Rz)=z。 rungeKuttaRelation 展开为 (∀i, F_i=f(z+h∑_j A_ij F_j)) ∧ w=z+h∑_i b_i F_i。transportedField L f(x)=L(f(L⁻¹x))。Lean 对 n,s,L,f,A,b,h,z,w,F 全称，准确证明把已有阶段和输出一起由 L 运输后仍满足同一表格关系；L⁻¹ 给逆向运输，因此 RK 关系等变部分无误。然而关系未保证隐式阶段解的存在、唯一或选解等变，不能直接推出任意选解的一步映射 affineInvariant。更直接的遗漏是整个签名未提 PRK、symmetric 或 reversibleMethod，故不覆盖完整原句。无 [EXTRA]；PRK 全线性等变的 [ERRATUM?] 在同句另有实反例。该声明调用 rkAffine_proved；依赖所附证明对阶段等式及输出分别使用线性映射保加法、数乘、求和，体内无 sorry；已给证明并不修补缺失结论。",
+      "counterexample": "缺失条款：Partitioned Runge–Kutta 类别，以及 symmetric ⇒ preserves time-reversal symmetry；隐式阶段关系到实际映射的选解条件也未表达。",
+      "suggested_fix": "若保留原完整 statement_scope，需显式给出全部子句并单独处理 PRK 疑误；若允许拆分，须正式把本条原文范围缩为 RK 关系等变子句，不能只在 context_notation 宣称相邻条目代替。实际映射版本需加入阶段存在唯一或等变选解，并独立验证符号相容及对称后给(3.15)。"
+    }
+  },
+  {
+    "source_id": "MD-3.6.2-PartitionedAffinePrinted",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": null,
+      "issues": [],
+      "evidence": [
+        "PDF152 / 印刷130，最后一句“All … Partitioned Runge-Kutta methods are affine invariant …”；JSON 忠实保留该原句及 PRK 任意混合变换疑误，未静默改书。",
+        "Ch03_deps.txt Chapter03/Statements.lean 的 partitionedRKRelation 与 partitionedAffinePrinted_statement；Ch03.lean 的 partitionedAffinePrinted。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.partitionedAffinePrinted",
+      "verdict": "FAIL",
+      "explanation": "依赖展开：Ch03_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean 定义 Q n = Fin n → ℝ、Z n = Q n × Q n；Chapter03/ReviewDefinitions.lean 定义 linearInvolution R 为 R.comp R = ContinuousLinearMap.id ℝ (Q n)，即 ∀z, R(Rz)=z。 partitionedRKRelation 展开为 (∀i, F_i=f(z_q+h∑_j Aq_ij(F_j)_q, z_p+h∑_j Ap_ij(F_j)_p)) ∧ w=(z_q+h∑_i bq_i(F_i)_q,z_p+h∑_i bp_i(F_i)_p)。签名全称允许独立 Aq,Ap,bq,bp 和任意混合 q,p 的连续线性等价 L，并用真运输场 x↦L(f(L⁻¹x))。因为分区不同表格的求和不与任意混合 L 交换，原文的全线性 PRK 主张和这个签名都被反例否定，[ERRATUM?] 成立，不需人工判断或缺失定义。签名也未覆盖原句对称时保持时间反转的后半句。声明体为 sorry，此处 FAIL 来自实际反例及遗漏，非来自 sorry。",
+      "counterexample": "取 n=s=1，Q1 识别为 ℝ，Z1=ℝ²。h=1，Aq=[0]，Ap=[1]，bq=bp=[1]，f(q,p)=(p,q)，z=(1,0)，唯一阶段 F₀=(1,1)，w=(2,1)。原关系阶段输入为 (1,1)，f(1,1)=(1,1)，输出 (1+1,0+1)=(2,1)，故两个合取项均成立。取 L(q,p)=(p,q)，连续线性等价且 L⁻¹=L；运输场 LfL⁻¹=f。Lz=(0,1)、LF₀=(1,1)、Lw=(1,2)。运输后用同一 Aq,Ap 的阶段输入为 (0,2)，f(0,2)=(2,0)≠(1,1)，且预期输出为 (1,2)。故阶段合取项明确失败。两套权重均为1，反例并非不一致权重造成。",
+      "suggested_fix": "将正确等变结论限制为保持分区的 L(q,p)=(Lq q,Lp p)，并显式标明是原句修复版；或若要允许所有混合线性 L，要求 Aq=Ap 且 bq=bp，使之退化为相空间上的普通 RK。时间反转推论还须限定 R 保持分区，或给表格与 R 的具体相容条件，并加入相应对称及符号相容论证。"
+    }
+  }
+]
