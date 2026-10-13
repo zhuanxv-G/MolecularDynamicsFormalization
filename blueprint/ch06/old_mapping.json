@@ -44,14 +44,14 @@
     "CH06-042": "MD-6.2.2-SelfItoSumsL2",
     "CH06-043": "MD-6.2.2-MidpointSumsL2",
     "CH06-044": "MD-6.2.2-DeterministicStrobeCorrected",
-    "CH06-045": "MD-6.2.2-StochasticDifferentialIntegral"
+    "CH06-045": "MD-6.2.2-StochasticDifferentialIntegral",
+    "CH06-046": "MD-6.3-BiasedWalkDiffusion",
+    "CH06-047": "MD-6.3-BiasedWalkDiffusion",
+    "CH06-048": "MD-6.3-VectorSDE",
+    "CH06-049": "MD-6.3.1-DiffusiveTaylorPrinted",
+    "CH06-050": "MD-6.3.1-TimeItoFormula"
   },
   "pending": [
-    "CH06-046",
-    "CH06-047",
-    "CH06-048",
-    "CH06-049",
-    "CH06-050",
     "CH06-051",
     "CH06-052",
     "CH06-053",
@@ -316,6 +316,25 @@
       "MD-6.2.2-DeterministicStrobePrinted",
       "MD-6.2.2-DeterministicStrobeCorrected",
       "MD-6.2.2-StochasticDifferentialIntegral"
+    ],
+    "CH06-046": [
+      "MD-6.3-BiasedWalk",
+      "MD-6.3-BiasedWalkSum",
+      "MD-6.3-BiasedWalkDiffusion"
+    ],
+    "CH06-047": [
+      "MD-6.3-ScalarSDE",
+      "MD-6.3-BiasedWalkDiffusion"
+    ],
+    "CH06-048": [
+      "MD-6.3-VectorSDE"
+    ],
+    "CH06-049": [
+      "MD-6.3.1-ScalarItoFormula",
+      "MD-6.3.1-DiffusiveTaylorPrinted"
+    ],
+    "CH06-050": [
+      "MD-6.3.1-TimeItoFormula"
     ]
   }
 }

@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro Ω a b J dt x0 K sample\n  induction K with\n  | zero => simp [MolecularDynamics.Chapter06Review.biasedWalk]\n  | succ K ih =>\n    simp only [MolecularDynamics.Chapter06Review.biasedWalk, Finset.sum_range_succ]\n    linarith [ih]",
+    "source": "blueprint/ch06/validation/short_search/route-06636de27bc57a2be2e5.lean",
+    "log": "blueprint/ch06/validation/short_search/route-06636de27bc57a2be2e5.log",
+    "source_sha256": "81bd5239153b6a07514437684262c0252eede50fd14ac9659f201bb93efb8a79",
+    "log_sha256": "60b03eb06521b3dd224b35d969401339341e92dbbfe2b8fbf5883788894ab2f6"
+  }
+]

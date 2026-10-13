@@ -2,7 +2,7 @@
 
 范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前96条；旧清单映射45/126；本地PASS 88；网站返回0。
+当前104条；旧清单映射50/126；本地PASS 94；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -102,6 +102,14 @@
 | MD-6.2.2-DeterministicStrobePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；待网站审计原σ参数意图；完整独立增量更正陈述另列。 |
 | MD-6.2.2-DeterministicStrobeCorrected | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；现成Prop6.3只打包单时构造；缺同一积分过程全部区间联合Gaussian/独立增量桥接，保留完整sorry。 |
 | MD-6.2.2-StochasticDifferentialIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.3-BiasedWalk | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.3-BiasedWalkSum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.3-ScalarSDE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.3-VectorSDE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.3.1-ScalarItoFormula | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺一般随机Ito链式法则；不建大型理论，保留完整sorry。 |
+| MD-6.3.1-DiffusiveTaylorPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；不证明C²的错误阶数；完整Ito公式另条保存，不恢复封存长证明。 |
+| MD-6.3.1-TimeItoFormula | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺一般时空Ito链式法则；完整更正积分式保留sorry。 |
+| MD-6.3-BiasedWalkDiffusion | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺状态依赖Euler随机游走扩散极限及强解存在桥接；不建设大型随机理论。 |
 
 ## 旧126条完整映射
 
@@ -152,11 +160,11 @@
 | CH06-043 | MD-6.2.2-MidpointSumsL2 |
 | CH06-044 | MD-6.2.2-DeterministicStrobeCorrected |
 | CH06-045 | MD-6.2.2-StochasticDifferentialIntegral |
-| CH06-046 | PENDING：所属节尚未处理 |
-| CH06-047 | PENDING：所属节尚未处理 |
-| CH06-048 | PENDING：所属节尚未处理 |
-| CH06-049 | PENDING：所属节尚未处理 |
-| CH06-050 | PENDING：所属节尚未处理 |
+| CH06-046 | MD-6.3-BiasedWalkDiffusion |
+| CH06-047 | MD-6.3-BiasedWalkDiffusion |
+| CH06-048 | MD-6.3-VectorSDE |
+| CH06-049 | MD-6.3.1-DiffusiveTaylorPrinted |
+| CH06-050 | MD-6.3.1-TimeItoFormula |
 | CH06-051 | PENDING：所属节尚未处理 |
 | CH06-052 | PENDING：所属节尚未处理 |
 | CH06-053 | PENDING：所属节尚未处理 |
@@ -264,6 +272,10 @@
 - MD-6.2.2-Proposition62：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 印刷证明的独立交叉项展开带负号；平方展开应正号，见单独疑误条。
 - MD-6.2.2-DeterministicStrobePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待网站审计原σ参数意图；完整独立增量更正陈述另列。生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。
 - MD-6.2.2-DeterministicStrobeCorrected：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 现成Prop6.3只打包单时构造；缺同一积分过程全部区间联合Gaussian/独立增量桥接，保留完整sorry。
+- MD-6.3.1-ScalarItoFormula：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺一般随机Ito链式法则；不建大型理论，保留完整sorry。
+- MD-6.3.1-DiffusiveTaylorPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 不证明C²的错误阶数；完整Ito公式另条保存，不恢复封存长证明。C² Taylor余项仅o(h²)，不能自动提升为O(h³)；在h≈√δt时原O(δt³⁄²)需要更高阶正则性。
+- MD-6.3.1-TimeItoFormula：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺一般时空Ito链式法则；完整更正积分式保留sorry。印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。
+- MD-6.3-BiasedWalkDiffusion：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺状态依赖Euler随机游走扩散极限及强解存在桥接；不建设大型随机理论。
 
 ## 定性段落排除
 

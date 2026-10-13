@@ -1,5 +1,11 @@
 """New bounded local routes only; no sealed Chapter 6 checkpoint is restored."""
 proofs={
+'BiasedWalkSum':'''intro Ω a b J dt x0 K sample
+  induction K with
+  | zero => simp [MolecularDynamics.Chapter06Review.biasedWalk]
+  | succ K ih =>
+    simp only [MolecularDynamics.Chapter06Review.biasedWalk, Finset.sum_range_succ]
+    linarith [ih]''',
 'CanonicalSamplingObstruction':'''intro n H energy z μ inst hH hz hpositive
   let S : Set (MolecularDynamics.Chapter06Review.V n) := {x | H x ≠ energy}
   have hS : MeasurableSet S := (isClosed_singleton.preimage hH).isOpen_compl.measurableSet

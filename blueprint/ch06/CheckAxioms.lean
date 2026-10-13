@@ -96,3 +96,11 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.deterministicStrobePrinted
 #print axioms MD.Ch06.deterministicStrobeCorrected
 #print axioms MD.Ch06.stochasticDifferentialIntegral
+#print axioms MD.Ch06.biasedWalk
+#print axioms MD.Ch06.biasedWalkSum
+#print axioms MD.Ch06.strictScalarSDE
+#print axioms MD.Ch06.strictVectorSDE
+#print axioms MD.Ch06.scalarItoFormula
+#print axioms MD.Ch06.diffusiveTaylorPrinted
+#print axioms MD.Ch06.timeItoFormula
+#print axioms MD.Ch06.biasedWalkDiffusion

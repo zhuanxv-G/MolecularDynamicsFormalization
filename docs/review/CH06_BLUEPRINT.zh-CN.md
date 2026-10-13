@@ -100,6 +100,14 @@
 | MD-6.2.2-DeterministicStrobePrinted | 231/252 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-6.2.2-DeterministicStrobeCorrected | 231/252 | PASS | 待网站审计 | incomplete |
 | MD-6.2.2-StochasticDifferentialIntegral | 231/252 | PASS | 待网站审计 | self-contained |
+| MD-6.3-BiasedWalk | 232/253 | PASS | 待网站审计 | self-contained |
+| MD-6.3-BiasedWalkSum | 232/253 | PASS | 待网站审计 | self-contained |
+| MD-6.3-ScalarSDE | 232/253 | PASS | 待网站审计 | self-contained |
+| MD-6.3-VectorSDE | 232–233/253–254 | PASS | 待网站审计 | self-contained |
+| MD-6.3.1-ScalarItoFormula | 233/254 | PASS | 待网站审计 | incomplete |
+| MD-6.3.1-DiffusiveTaylorPrinted | 233/254 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.3.1-TimeItoFormula | 234/255 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.3-BiasedWalkDiffusion | 232/253 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -121,6 +129,10 @@
   印刷证明的独立交叉项展开带负号；平方展开应正号，见单独疑误条。
 - MD-6.2.2-DeterministicStrobePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。
+- MD-6.3.1-DiffusiveTaylorPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  C² Taylor余项仅o(h²)，不能自动提升为O(h³)；在h≈√δt时原O(δt³⁄²)需要更高阶正则性。
+- MD-6.3.1-TimeItoFormula：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。
 
 ## 1. MD-6.1.1-Microcanonical · definition · 印刷p.214 / PDFp.235
 
@@ -4868,3 +4880,434 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`8d0325d8edacc12533aa332a7c738f9b91c432ae31c5c1fd2552cb602e66a3be`；原文SHA256：`be94848ad6b3951b7e3b6784de6d0bb99cdca6f078d723e7f3113482581bc906`。
+
+## 1. MD-6.3-BiasedWalk · (6.9) · 印刷p.232 / PDFp.253
+
+### 2. 原文陈述
+
+> We introduce a pair of smooth functions $a(x,t)$ and $b(x,t)$, where $a$ represents a drift tendency and $b$ the average magnitude of the random jump. In the interval $[n\delta t,(n+1)\delta t]$, a step $\delta X_n=X_{n+1}-X_n$ of the random walk will be given by
+> \[\delta X_n=a(X_n,t_n)h+b(X_n,t_n)J_n\delta x.\tag{6.9}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def biasedWalk {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ → Ω → ℝ)
+    (dt x0 : ℝ) : ℕ → Ω → ℝ
+  | 0 => fun _ ↦ x0
+  | n+1 => fun sample ↦ let x := MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 n sample
+    x + a x (n * dt) * dt + b x (n * dt) * Real.sqrt dt * J n sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.biasedWalk；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]按正文h=δt及δx=√δt解释真实递归与x0初值；印刷h/δt记号不一致已保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:894](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:894>)（`MD.Ch06.biasedWalk`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`a3966af43eee1d6e4923efad821eca31e4712eb1beb27bf0a0c53b9a66a436df`；原文SHA256：`55522676acd82d7c2b7afe3e70bba94e8f90d86266c99277da41a2527b0c1465`。
+
+## 1. MD-6.3-BiasedWalkSum · (6.10) · 印刷p.232 / PDFp.253
+
+### 2. 原文陈述
+
+> Choose a positive $t$ and sum (6.9) from $n=0$ to $\nu-1$, where $\nu=\lfloor t/\delta t\rfloor$, obtaining
+> \[X_\nu-X_0=\sum_{n=0}^{\nu-1}\delta X_n=\sum_{n=0}^{\nu-1}a(X_n,t_n)\delta t+\sum_{n=0}^{\nu-1}b(X_n,t_n)J_n\delta x.\tag{6.10}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem biasedWalkSum : ∀ {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ → Ω → ℝ)
+    (dt x0 : ℝ) (K : ℕ) (sample : Ω),
+  MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 K sample-x0 =
+    (∑ k ∈ Finset.range K, a (MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 k sample) (k*dt)*dt) +
+    ∑ k ∈ Finset.range K, b (MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 k sample) (k*dt)*Real.sqrt dt*J k sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.biasedWalkSum；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:901](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:901>)（`MD.Ch06.biasedWalkSum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/BiasedWalkSum.json；blueprint/ch06/validation/short_search/route-06636de27bc57a2be2e5.lean；blueprint/ch06/validation/short_search/route-06636de27bc57a2be2e5.log。
+
+签名SHA256：`9ff8a121fe68254162492ebe83606a0a1682ff22922641e7c2078005da842acb`；原文SHA256：`9f9bb9736af2e55de617f2e637e2135f29272419e9f615d5c84097f9b70d0dbb`。
+
+## 1. MD-6.3-ScalarSDE · (6.11)–(6.14) · 印刷p.232 / PDFp.253
+
+### 2. 原文陈述
+
+> Take the diffusion limit $\delta t\to0$, $\delta x^2/\delta t\to1$ with $\nu\delta t=t$ fixed, then we obtain, under the Itô convention,
+> \[X(t)-X(0)=\int_0^t a(X(s),s)ds+\int_0^t b(X(s),s)dW(s).\tag{6.11}\]
+> \[dX=a(X,t)dt+b(X,t)dW.\tag{6.14}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def strictScalarSDE {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) : Prop :=
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ T : ℝ, 0 ≤ T → (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s) volume 0 T) ∧
+    strictItoIntegral P W (fun s sample ↦ b (X s sample) s) T
+      (fun sample ↦ X T sample-x0-∫ s in 0..T, a (X s sample) s)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.strictScalarSDE；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实连续路径、实际可积漂移及全部有限和L²的Ito极限；是方程意义，不计随机游走扩散极限已证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:915](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:915>)（`MD.Ch06.strictScalarSDE`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`3181a68f401d8c4cedb55a706f14c191a69578941248ff1b9d0d835a6d78dc2b`；原文SHA256：`b211b0124be867bb16ed7c990114f6223916d6d5815cf010691cee8f69aad68d`。
+
+## 1. MD-6.3-VectorSDE · (6.15)–(6.16) · 印刷p.232–233 / PDFp.253–254
+
+### 2. 原文陈述
+
+> Let $a(z,t)$ and $b^{(i)}(z,t)$, $i=1,2,\ldots,r$ be a set of $r+1$ vector fields in $\mathbb R^m$, and let $W_1,W_2,\ldots,W_r$ be a collection of $r$ independent Wiener processes, then we may write a system of SDEs in $\mathbb R^m$ in the form
+> \[dZ=a(Z,t)dt+\sum_{i=1}^r b^{(i)}(Z,t)dW_i.\tag{6.15}\]
+> alternatively, if $B$ is the matrix with columns $b^{(1)},b^{(2)},\ldots,b^{(r)}$, and $W$ represents the $r$-component vector of Wiener processes, then
+> \[dZ=a(Z,t)dt+B(Z,t)dW.\tag{6.16}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → ℝ → (Fin n → ℝ))
+    (B : (Fin n → ℝ) → ℝ → Matrix (Fin n) (Fin r) ℝ) (x0 : Fin n → ℝ) : Prop :=
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ i : Fin n, ∀ T : ℝ, 0 ≤ T →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s i) volume 0 T) ∧
+    ∃ integrals : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ B (X s sample) s i j) T (integrals j)) ∧
+      (∀ᵐ sample ∂P, X T sample i-x0 i-(∫ s in 0..T, a (X s sample) s i)=∑ j, integrals j sample)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.strictVectorSDE；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整状态及时间依赖矩阵B(Z,t)，每坐标真实严格Ito积分与漂移；没有缩成常矩阵加性特例。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:924](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:924>)（`MD.Ch06.strictVectorSDE`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`de954d94c206beaf61e7cae5c6464d63a920b3847d1b979c3b508aeffdd47016`；原文SHA256：`5d4b8ad35c60bb7beb675baaf1ebf643c097b8fedfc108865043b3a4c9053a57`。
+
+## 1. MD-6.3.1-ScalarItoFormula · (6.17) · 印刷p.233 / PDFp.254
+
+### 2. 原文陈述
+
+> Let $\phi(x)$ be any continuously twice differentiable function and let $X_n\in\mathbb R$ represent the state of a biased random walk as considered in Sect. 6.3, i.e., with state $X_{n+1}=X_n+a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x$.
+> \[d\phi(X)=\phi'(X)(a(X,t)dt+b(X,t)dW)+\tfrac12\phi''(X)b(X,t)^2dt.\tag{6.17}\]
+
+### 3. 原文证明
+
+> Let $\phi_n=\phi(X_n)$, then Taylor's theorem gives
+> \[\delta\phi\stackrel{\rm def}=\phi_{n+1}-\phi_n=\phi'(X_n)\delta X_n+\tfrac12\phi''(X_n)\delta X_n^2+o(\delta X_n^2)
+> =\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)
+> +\tfrac12\phi''(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)^2+o(\delta X_n^2).\]
+> Now we expand the 2nd order term and, working in the diffusion limit, recognize that $\delta x^2\approx\delta t$, thus we have
+> \[\delta\phi=\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)+\tfrac12\phi''(X_n)b(X_n,n\delta t)^2\delta t+O(\delta t^{3/2}).\]
+> Passing to the limit, this leads to the SDE.
+
+原启发证明完整保留；C²仅给o(δt)，O(δt³⁄²)需要更高阶资格，另条疑误。
+
+### 4. Lean陈述
+
+```lean
+theorem scalarItoFormula :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 →
+  ContDiff ℝ 2 φ → ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ a w.1 w.2) →
+  ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ b w.1 w.2) →
+  MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample) t) →
+  ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample) t) T
+    (fun sample ↦ φ (X T sample)-φ x0 - ∫ s in 0..T,
+      deriv φ (X s sample)*a (X s sample) s + deriv (deriv φ) (X s sample)*b (X s sample) s^2/2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.scalarItoFormula；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原C²φ、真实PreBrownian和严格积分方程；完整漂移、噪声、二阶Ito校正；适应/可积技术资格保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:938](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:938>)（`MD.Ch06.scalarItoFormula`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺一般随机Ito链式法则；不建大型理论，保留完整sorry。
+
+签名SHA256：`27346742cd8b8cb811d042be47dc3f5ebbf62be1c866c85676deb3ee8549a7ee`；原文SHA256：`b86165988d822d9bea7fbd52e8e3f2c0fa72a9fde375192cd97df21650798ce3`。
+
+## 1. MD-6.3.1-DiffusiveTaylorPrinted · unnumbered_claim · 印刷p.233 / PDFp.254
+
+### 2. 原文陈述
+
+> Now we expand the 2nd order term and, working in the diffusion limit, recognize that $\delta x^2\approx\delta t$, thus we have
+> \[\delta\phi=\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)+\tfrac12\phi''(X_n)b(X_n,n\delta t)^2\delta t+O(\delta t^{3/2}).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem diffusiveTaylorPrinted : ∀ (φ : ℝ → ℝ) (x a b : ℝ), ContDiff ℝ 2 φ →
+  Asymptotics.IsBigO (𝓝[>] (0 : ℝ))
+    (fun dt ↦ φ (x+a*dt+b*Real.sqrt dt)-φ x-deriv φ x*(a*dt+b*Real.sqrt dt)-
+      deriv (deriv φ) x*b^2*dt/2) (fun dt ↦ Real.rpow dt (3/2 : ℝ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.diffusiveTaylorPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | C² Taylor余项仅o(h²)，不能自动提升为O(h³)；在h≈√δt时原O(δt³⁄²)需要更高阶正则性。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:952](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:952>)（`MD.Ch06.diffusiveTaylorPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：不证明C²的错误阶数；完整Ito公式另条保存，不恢复封存长证明。
+
+签名SHA256：`741a16b67a07677e0eb7500dcf17214c9ede167735bb324bbd5602625acb0266`；原文SHA256：`d344e7225d1497dc859da9ce43bc2d8787a0559c4bb76ebe507cfadd9b29c637`。
+
+## 1. MD-6.3.1-TimeItoFormula · (6.18) · 印刷p.234 / PDFp.255
+
+### 2. 原文陈述
+
+> We also mention that the Itô-Doeblin formula can be easily generalized to functions of the form $\phi(x,t)$:
+> \[d\phi(X,t)=\phi_t(X,t)+\phi_x(X,t)(a(X,t)dt+b(X,t)dW)+\tfrac12\phi_{xx}(X,t)b(X,t)^2dt.\tag{6.18}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem timeItoFormula :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ×ℝ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 → ContDiff ℝ 2 φ →
+  MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) →
+  ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W
+    (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) T
+    (fun sample ↦ φ (X T sample,T)-φ (x0,0) - ∫ s in 0..T,
+      fderiv ℝ φ (X s sample,s) (0,1) + fderiv ℝ φ (X s sample,s) (1,0)*a (X s sample) s +
+        fderiv ℝ (fun z ↦ fderiv ℝ φ z (1,0)) (X s sample,s) (1,0)*b (X s sample) s^2/2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.timeItoFormula；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]Lean保留完整积分陈述，以φ_t dt的正确时间积分表达；原无dt的字面式仍在逐字JSON，不宣称字面式已证。 | [EXTRA] |
+| 原页核对/疑点 | 印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:961](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:961>)（`MD.Ch06.timeItoFormula`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺一般时空Ito链式法则；完整更正积分式保留sorry。
+
+签名SHA256：`73394758c5f293412223d43553bed7d3f0416222ca3103169ba0444c20a722ac`；原文SHA256：`e3a7075ceba4d6e36036df69be32fb78247f0d3a38d14932c430b909b5ce4ca3`。
+
+## 1. MD-6.3-BiasedWalkDiffusion · unnumbered_claim · 印刷p.232 / PDFp.253
+
+### 2. 原文陈述
+
+> Take the diffusion limit $\delta t\to0$, $\delta x^2/\delta t\to1$ with $\nu\delta t=t$ fixed, then we obtain, under the Itô convention,
+> \[X(t)-X(0)=\int_0^t a(X(s),s)ds+\int_0^t b(X(s),s)dW(s).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem biasedWalkDiffusion : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (J : ℕ → Ω → ℝ) (W : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 T : ℝ),
+  MolecularDynamics.Chapter06Review.rademacherJumps P J →
+  IsPreBrownianReal (fun t sample ↦ W t sample) P →
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ W t sample) (Ici 0)) →
+  (∃ L : ℝ≥0, LipschitzWith L (Function.uncurry a) ∧ LipschitzWith L (Function.uncurry b)) → 0 < T →
+  ∃ X : ℝ → Ω → ℝ, strictScalarSDE P W X a b x0 ∧
+    ∃ paths : Ω → C(Icc 0 T, ℝ),
+      (∀ᵐ sample ∂P, ∀ t : Icc 0 T, paths sample t=X t sample) ∧
+      ∃ walks : ℕ → Ω → C(Icc 0 T, ℝ),
+        (∀ K : ℕ, 0 < K → ∀ sample (t : Icc 0 T),
+          walks K sample t = let dt := T/K; let k := Nat.floor ((t : ℝ)/dt);
+            MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 k sample +
+            ((t : ℝ)-k*dt)/dt*(MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 (k+1) sample-
+              MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 k sample)) ∧
+        (∀ F : C(Icc 0 T, ℝ) → ℝ, Continuous F → Bornology.IsBounded (Set.range F) →
+          Tendsto (fun K ↦ ∫ sample, F (walks K sample) ∂P) atTop (𝓝 (∫ sample, F (paths sample) ∂P)))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.biasedWalkDiffusion；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确全局Lipschitz技术资格及AE连续W版本；完整SDE解存在与真实偏置有限游走线性插值的路径空间弱极限，没有只以定义取代扩散极限。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:975](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:975>)（`MD.Ch06.biasedWalkDiffusion`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺状态依赖Euler随机游走扩散极限及强解存在桥接；不建设大型随机理论。
+
+签名SHA256：`3bfe4e5032778085ca480b4bf93c38d9ded36c5640775f92355f245e2fa7b320`；原文SHA256：`859f0253af6d2b51f00e5adce7e63d30f49ed455090a3e147485f8f02909b623`。

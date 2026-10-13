@@ -1,0 +1,36 @@
+{
+  "batch": "BATCH18",
+  "subtask": "BATCH18b",
+  "source_ids": [
+    "MD-6.3.1-DiffusiveTaylorPrinted"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 254,
+      "printed_page": 233
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "f109013093d040c999de2337836dd5c9717bfac52c8f31c5a5ee6f87c9236530",
+  "lean_sha256": "a3487a5c040167e5ae61a479520e27cafbbce17e2ed63e4ae555f46569fd2993",
+  "signature_sha256": "741a16b67a07677e0eb7500dcf17214c9ede167735bb324bbd5602625acb0266",
+  "definition_excerpts": [],
+  "paste_plus_pdf_bytes": 94286,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3183,
+      "sha256": "4a574032ea3dfd71beace9d9206a9d6132cfda43e5bb9cde9bca752d98b3ac65"
+    },
+    "BATCH18b_PAGES.pdf": {
+      "bytes": 91103,
+      "sha256": "cfd90ab25e20c99e6ec983947bb8b9ef3fdd34b18bd07e66985178c5706a0592"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 95450
+}

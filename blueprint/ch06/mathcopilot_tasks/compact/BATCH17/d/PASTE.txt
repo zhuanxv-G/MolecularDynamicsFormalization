@@ -1,0 +1,93 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH17d_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 253 | 232 |
+| 2 | 254 | 233 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-6.3-VectorSDE",
+  "kind": "definition",
+  "label": "(6.15)–(6.16)",
+  "section": "6.3",
+  "printed_page": "232–233",
+  "pdf_page": "253–254",
+  "statement_latex": "Let $a(z,t)$ and $b^{(i)}(z,t)$, $i=1,2,\\ldots,r$ be a set of $r+1$ vector fields in $\\mathbb R^m$, and let $W_1,W_2,\\ldots,W_r$ be a collection of $r$ independent Wiener processes, then we may write a system of SDEs in $\\mathbb R^m$ in the form\n\\[dZ=a(Z,t)dt+\\sum_{i=1}^r b^{(i)}(Z,t)dW_i.\\tag{6.15}\\]\nalternatively, if $B$ is the matrix with columns $b^{(1)},b^{(2)},\\ldots,b^{(r)}$, and $W$ represents the $r$-component vector of Wiener processes, then\n\\[dZ=a(Z,t)dt+B(Z,t)dW.\\tag{6.16}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch06.strictVectorSDE",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]完整状态及时间依赖矩阵B(Z,t)，每坐标真实严格Ito积分与漂移；没有缩成常矩阵加性特例。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → ℝ → (Fin n → ℝ))
+    (B : (Fin n → ℝ) → ℝ → Matrix (Fin n) (Fin r) ℝ) (x0 : Fin n → ℝ) : Prop :=
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ i : Fin n, ∀ T : ℝ, 0 ≤ T →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s i) volume 0 T) ∧
+    ∃ integrals : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ B (X s sample) s i j) T (integrals j)) ∧
+      (∀ᵐ sample ∂P, X T sample i-x0 i-(∫ s in 0..T, a (X s sample) s i)=∑ j, integrals j sample)
+```
+
+原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter06Review.itoLeftSum (MolecularDynamics/Chapter06/ReviewDefinitions.lean:54)
+```lean
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+```
+
+### MD.Ch06.itoLeftSum (Blueprint/Ch06.lean:722)
+```lean
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+```
+
+### MD.Ch06.strictItoIntegral (Blueprint/Ch06.lean:728)
+```lean
+def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T K) 2 P) ∧
+  MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample,
+    (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample-Y sample)^2 ∂P) atTop (𝓝 0)
+```
+
+### MD.Ch06.strictVectorSDE (Blueprint/Ch06.lean:924)
+```lean
+def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → ℝ → (Fin n → ℝ))
+    (B : (Fin n → ℝ) → ℝ → Matrix (Fin n) (Fin r) ℝ) (x0 : Fin n → ℝ) : Prop :=
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ i : Fin n, ∀ T : ℝ, 0 ≤ T →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s i) volume 0 T) ∧
+    ∃ integrals : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ B (X s sample) s i j) T (integrals j)) ∧
+      (∀ᵐ sample ∂P, X T sample i-x0 i-(∫ s in 0..T, a (X s sample) s i)=∑ j, integrals j sample)
+```

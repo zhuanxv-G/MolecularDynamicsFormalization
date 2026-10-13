@@ -889,4 +889,106 @@ def stochasticDifferentialIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measur
     (Y integralOfDifferential : ℝ → Ω → ℝ) : Prop :=
   ∀ T : ℝ, 0 ≤ T → integralOfDifferential T =ᵐ[P] (fun sample ↦ Y T sample-Y 0 sample)
 
+/-- source_id: MD-6.3-BiasedWalk · (6.9) · §6.3 · 印刷p.232 / PDFp.253
+[EXTRA] [EXTRA]按正文h=δt及δx=√δt解释真实递归与x0初值；印刷h/δt记号不一致已保留。 -/
+def biasedWalk {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ → Ω → ℝ)
+    (dt x0 : ℝ) : ℕ → Ω → ℝ
+  | 0 => fun _ ↦ x0
+  | n+1 => fun sample ↦ let x := MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 n sample
+    x + a x (n * dt) * dt + b x (n * dt) * Real.sqrt dt * J n sample
+
+/-- source_id: MD-6.3-BiasedWalkSum · (6.10) · §6.3 · 印刷p.232 / PDFp.253 -/
+theorem biasedWalkSum : ∀ {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ → Ω → ℝ)
+    (dt x0 : ℝ) (K : ℕ) (sample : Ω),
+  MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 K sample-x0 =
+    (∑ k ∈ Finset.range K, a (MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 k sample) (k*dt)*dt) +
+    ∑ k ∈ Finset.range K, b (MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 k sample) (k*dt)*Real.sqrt dt*J k sample := by
+  intro Ω a b J dt x0 K sample
+  induction K with
+  | zero => simp [MolecularDynamics.Chapter06Review.biasedWalk]
+  | succ K ih =>
+    simp only [MolecularDynamics.Chapter06Review.biasedWalk, Finset.sum_range_succ]
+    linarith [ih]
+
+/-- source_id: MD-6.3-ScalarSDE · (6.11)–(6.14) · §6.3 · 印刷p.232 / PDFp.253
+[EXTRA] [EXTRA]真实连续路径、实际可积漂移及全部有限和L²的Ito极限；是方程意义，不计随机游走扩散极限已证。 -/
+def strictScalarSDE {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) : Prop :=
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ T : ℝ, 0 ≤ T → (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s) volume 0 T) ∧
+    strictItoIntegral P W (fun s sample ↦ b (X s sample) s) T
+      (fun sample ↦ X T sample-x0-∫ s in 0..T, a (X s sample) s)
+
+/-- source_id: MD-6.3-VectorSDE · (6.15)–(6.16) · §6.3 · 印刷p.232–233 / PDFp.253–254
+[EXTRA] [EXTRA]完整状态及时间依赖矩阵B(Z,t)，每坐标真实严格Ito积分与漂移；没有缩成常矩阵加性特例。 -/
+def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → ℝ → (Fin n → ℝ))
+    (B : (Fin n → ℝ) → ℝ → Matrix (Fin n) (Fin r) ℝ) (x0 : Fin n → ℝ) : Prop :=
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ i : Fin n, ∀ T : ℝ, 0 ≤ T →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s i) volume 0 T) ∧
+    ∃ integrals : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ B (X s sample) s i j) T (integrals j)) ∧
+      (∀ᵐ sample ∂P, X T sample i-x0 i-(∫ s in 0..T, a (X s sample) s i)=∑ j, integrals j sample)
+
+/-- source_id: MD-6.3.1-ScalarItoFormula · (6.17) · §6.3.1 · 印刷p.233 / PDFp.254
+[EXTRA] [EXTRA]原C²φ、真实PreBrownian和严格积分方程；完整漂移、噪声、二阶Ito校正；适应/可积技术资格保留。 -/
+theorem scalarItoFormula :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 →
+  ContDiff ℝ 2 φ → ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ a w.1 w.2) →
+  ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ b w.1 w.2) →
+  MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample) t) →
+  ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample) t) T
+    (fun sample ↦ φ (X T sample)-φ x0 - ∫ s in 0..T,
+      deriv φ (X s sample)*a (X s sample) s + deriv (deriv φ) (X s sample)*b (X s sample) s^2/2) := by
+  sorry
+
+/-- source_id: MD-6.3.1-DiffusiveTaylorPrinted · unnumbered_claim · §6.3.1 · 印刷p.233 / PDFp.254
+[ERRATUM?] C² Taylor余项仅o(h²)，不能自动提升为O(h³)；在h≈√δt时原O(δt³⁄²)需要更高阶正则性。 -/
+theorem diffusiveTaylorPrinted : ∀ (φ : ℝ → ℝ) (x a b : ℝ), ContDiff ℝ 2 φ →
+  Asymptotics.IsBigO (𝓝[>] (0 : ℝ))
+    (fun dt ↦ φ (x+a*dt+b*Real.sqrt dt)-φ x-deriv φ x*(a*dt+b*Real.sqrt dt)-
+      deriv (deriv φ) x*b^2*dt/2) (fun dt ↦ Real.rpow dt (3/2 : ℝ)) := by
+  sorry
+
+/-- source_id: MD-6.3.1-TimeItoFormula · (6.18) · §6.3.1 · 印刷p.234 / PDFp.255
+[EXTRA] [EXTRA]Lean保留完整积分陈述，以φ_t dt的正确时间积分表达；原无dt的字面式仍在逐字JSON，不宣称字面式已证。
+[ERRATUM?] 印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。 -/
+theorem timeItoFormula :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ×ℝ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 → ContDiff ℝ 2 φ →
+  MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) →
+  ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W
+    (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) T
+    (fun sample ↦ φ (X T sample,T)-φ (x0,0) - ∫ s in 0..T,
+      fderiv ℝ φ (X s sample,s) (0,1) + fderiv ℝ φ (X s sample,s) (1,0)*a (X s sample) s +
+        fderiv ℝ (fun z ↦ fderiv ℝ φ z (1,0)) (X s sample,s) (1,0)*b (X s sample) s^2/2) := by
+  sorry
+
+/-- source_id: MD-6.3-BiasedWalkDiffusion · unnumbered_claim · §6.3 · 印刷p.232 / PDFp.253
+[EXTRA] [EXTRA]明确全局Lipschitz技术资格及AE连续W版本；完整SDE解存在与真实偏置有限游走线性插值的路径空间弱极限，没有只以定义取代扩散极限。 -/
+theorem biasedWalkDiffusion : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (J : ℕ → Ω → ℝ) (W : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 T : ℝ),
+  MolecularDynamics.Chapter06Review.rademacherJumps P J →
+  IsPreBrownianReal (fun t sample ↦ W t sample) P →
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ W t sample) (Ici 0)) →
+  (∃ L : ℝ≥0, LipschitzWith L (Function.uncurry a) ∧ LipschitzWith L (Function.uncurry b)) → 0 < T →
+  ∃ X : ℝ → Ω → ℝ, strictScalarSDE P W X a b x0 ∧
+    ∃ paths : Ω → C(Icc 0 T, ℝ),
+      (∀ᵐ sample ∂P, ∀ t : Icc 0 T, paths sample t=X t sample) ∧
+      ∃ walks : ℕ → Ω → C(Icc 0 T, ℝ),
+        (∀ K : ℕ, 0 < K → ∀ sample (t : Icc 0 T),
+          walks K sample t = let dt := T/K; let k := Nat.floor ((t : ℝ)/dt);
+            MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 k sample +
+            ((t : ℝ)-k*dt)/dt*(MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 (k+1) sample-
+              MolecularDynamics.Chapter06Review.biasedWalk a b J dt x0 k sample)) ∧
+        (∀ F : C(Icc 0 T, ℝ) → ℝ, Continuous F → Bornology.IsBounded (Set.range F) →
+          Tendsto (fun K ↦ ∫ sample, F (walks K sample) ∂P) atTop (𝓝 (∫ sample, F (paths sample) ∂P))) := by
+  sorry
+
 end MD.Ch06

@@ -1,0 +1,102 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH18a_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 254 | 233 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-6.3.1-ScalarItoFormula",
+  "kind": "unnumbered_claim",
+  "label": "(6.17)",
+  "section": "6.3.1",
+  "printed_page": "233",
+  "pdf_page": "254",
+  "statement_latex": "Let $\\phi(x)$ be any continuously twice differentiable function and let $X_n\\in\\mathbb R$ represent the state of a biased random walk as considered in Sect. 6.3, i.e., with state $X_{n+1}=X_n+a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x$.\n\\[d\\phi(X)=\\phi'(X)(a(X,t)dt+b(X,t)dW)+\\tfrac12\\phi''(X)b(X,t)^2dt.\\tag{6.17}\\]",
+  "proof_latex": "Let $\\phi_n=\\phi(X_n)$, then Taylor's theorem gives\n\\[\\delta\\phi\\stackrel{\\rm def}=\\phi_{n+1}-\\phi_n=\\phi'(X_n)\\delta X_n+\\tfrac12\\phi''(X_n)\\delta X_n^2+o(\\delta X_n^2)\n=\\phi'(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)\n+\\tfrac12\\phi''(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)^2+o(\\delta X_n^2).\\]\nNow we expand the 2nd order term and, working in the diffusion limit, recognize that $\\delta x^2\\approx\\delta t$, thus we have\n\\[\\delta\\phi=\\phi'(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)+\\tfrac12\\phi''(X_n)b(X_n,n\\delta t)^2\\delta t+O(\\delta t^{3/2}).\\]\nPassing to the limit, this leads to the SDE.",
+  "proof_note": "原启发证明完整保留；C²仅给o(δt)，O(δt³⁄²)需要更高阶资格，另条疑误。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch06.scalarItoFormula",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]原C²φ、真实PreBrownian和严格积分方程；完整漂移、噪声、二阶Ito校正；适应/可积技术资格保留。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem scalarItoFormula :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 →
+  ContDiff ℝ 2 φ → ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ a w.1 w.2) →
+  ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ b w.1 w.2) →
+  MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample) t) →
+  ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample) t) T
+    (fun sample ↦ φ (X T sample)-φ x0 - ∫ s in 0..T,
+      deriv φ (X s sample)*a (X s sample) s + deriv (deriv φ) (X s sample)*b (X s sample) s^2/2)
+```
+
+原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter06Review.adaptedSquareIntegrand (MolecularDynamics/Chapter06/ReviewDefinitions.lean:73)
+```lean
+def adaptedSquareIntegrand {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) : Prop :=
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance]
+    (g t)) ∧ ∀ T : ℝ, 0 ≤ T → Integrable (fun s ↦ ∫ sample, (g s sample)^2 ∂P) (volume.restrict (Icc 0 T))
+```
+
+### MolecularDynamics.Chapter06Review.itoLeftSum (MolecularDynamics/Chapter06/ReviewDefinitions.lean:54)
+```lean
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+```
+
+### MolecularDynamics.Chapter06Review.adaptedSquareIntegrand (MolecularDynamics/Chapter06/ReviewDefinitions.lean:73)
+```lean
+def adaptedSquareIntegrand {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) : Prop :=
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance]
+    (g t)) ∧ ∀ T : ℝ, 0 ≤ T → Integrable (fun s ↦ ∫ sample, (g s sample)^2 ∂P) (volume.restrict (Icc 0 T))
+```
+
+### MD.Ch06.itoLeftSum (Blueprint/Ch06.lean:722)
+```lean
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+```
+
+### MD.Ch06.strictItoIntegral (Blueprint/Ch06.lean:728)
+```lean
+def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T K) 2 P) ∧
+  MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample,
+    (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample-Y sample)^2 ∂P) atTop (𝓝 0)
+```
+
+### MD.Ch06.strictScalarSDE (Blueprint/Ch06.lean:915)
+```lean
+def strictScalarSDE {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) : Prop :=
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ T : ℝ, 0 ≤ T → (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s) volume 0 T) ∧
+    strictItoIntegral P W (fun s sample ↦ b (X s sample) s) T
+      (fun sample ↦ X T sample-x0-∫ s in 0..T, a (X s sample) s)
+```
