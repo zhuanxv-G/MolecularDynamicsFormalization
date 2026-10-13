@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa.lean",
+    "log": "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa.log",
+    "source_sha256": "ce0e11db8f33bb9cae02cbcb1234cfca83e5d093d6809ecf1d62b91b0ac8090b",
+    "log_sha256": "86b258816f7bda95abb11462b61e2acb2504185565aa7a00e422529660833b91"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n H energy z μ hH hz hpositive\n  constructor\n  · intro t ht\n    exact ht (hz t)\n  · exact hpositive.ne'\n",
+    "source": "blueprint/ch06/validation/short_search/route-e376a5d7554bdd36faa1.lean",
+    "log": "blueprint/ch06/validation/short_search/route-e376a5d7554bdd36faa1.log",
+    "source_sha256": "a0a3a4785e3f761fa88638eaa6f52850e25392a18b79a732b07b8a58c879beb3",
+    "log_sha256": "52f33bc7728bee57148a8f07e96f71cff83ed136d05391ab421812549b3372e7"
+  }
+]

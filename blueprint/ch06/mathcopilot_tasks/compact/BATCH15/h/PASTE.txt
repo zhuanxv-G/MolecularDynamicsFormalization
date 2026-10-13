@@ -1,0 +1,85 @@
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH15h_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 252 | 231 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-6.2.2-Proposition63",
+  "kind": "proposition",
+  "label": "Proposition 6.3",
+  "section": "6.2.2",
+  "printed_page": "231",
+  "pdf_page": "252",
+  "statement_latex": "Proposition 6.3 Let $g$ be a smooth deterministic function and $W(t)$ a Wiener process. The stochastic integral $Y(t)=\\int_0^t g(s)dW(s)$ is, for all times $t\\geq0$, a normally distributed random variable such that\n\\[\\mathbb E(Y(t))=0;\\quad\\mathbb E(Y^2(t))=\\sigma^2(t)=\\int_0^t g(s)^2ds.\\]",
+  "proof_latex": "See Exercise 2.",
+  "proof_note": "原书仅指向习题；按本任务不转录习题。现成正式构造证明桥接。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch06.proposition63",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookWienerDeterministicIto_proposition63"
+  ],
+  "extra_assumptions": [
+    "[EXTRA]实际PreBrownian与C¹ g已足；完整构造L²见证、均方极限、Gaussian law、零均值及二阶矩，不仅保存矩。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem proposition63 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) {g : ℝ → ℝ} (hg : ContDiff ℝ 1 g) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerDeterministicSum W g T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧
+      HasLaw Y (gaussianReal 0 (textbookWienerDeterministicVariance g T)) P ∧
+      (∫ sample, Y sample ∂P) = 0 ∧ (∫ sample, Y sample ^ 2 ∂P) = ∫ x in (0 : ℝ)..T, g x ^ 2
+```
+
+原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.textbookWienerDeterministicSum (MolecularDynamics/Chapter06/WienerRefinement.lean:80)
+```lean
+noncomputable def textbookWienerDeterministicSum (W : ℝ≥0 → Ω → ℝ) (g : ℝ → ℝ)
+    (T : ℝ≥0) (K : ℕ) : Ω → ℝ :=
+  textbookWienerWeightedSum W T K (fun k ↦ g (textbookWienerTime T K k.val))
+```
+
+### MolecularDynamics.textbookWienerDeterministicVariance (MolecularDynamics/Chapter06/WienerDeterministicLaw.lean:80)
+```lean
+noncomputable def textbookWienerDeterministicVariance (g : ℝ → ℝ) (T : ℝ≥0) : ℝ≥0 :=
+  (∫ x in (0 : ℝ)..T, g x ^ 2).toNNReal
+```
+
+### MolecularDynamics.textbookWienerIncrement (MolecularDynamics/Chapter06/WienerQuadraticVariation.lean:109)
+```lean
+noncomputable def textbookWienerIncrement (W : ℝ≥0 → Ω → ℝ) (T : ℝ≥0) (K : ℕ)
+    (k : Fin K) : Ω → ℝ :=
+  fun ω ↦ W (textbookWienerTime T K (k.val + 1)) ω - W (textbookWienerTime T K k.val) ω
+```
+
+### MolecularDynamics.textbookWienerTime (MolecularDynamics/Chapter06/WienerQuadraticVariation.lean:105)
+```lean
+noncomputable def textbookWienerTime (T : ℝ≥0) (K k : ℕ) : ℝ≥0 :=
+  (k : ℝ≥0) * (T / (K : ℝ≥0))
+```
+
+### MolecularDynamics.textbookWienerWeightedSum (MolecularDynamics/Chapter06/WienerIntegration.lean:15)
+```lean
+noncomputable def textbookWienerWeightedSum (W : ℝ≥0 → Ω → ℝ) (T : ℝ≥0) (K : ℕ)
+    (a : Fin K → ℝ) : Ω → ℝ :=
+  fun ω ↦ ∑ k, a k * textbookWienerIncrement W T K k ω
+```

@@ -2,7 +2,7 @@
 
 范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前48条；旧清单映射23/126；本地PASS 43；网站返回0。
+当前96条；旧清单映射45/126；本地PASS 88；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -54,6 +54,54 @@
 | MD-6.1.5-VirialFieldNotPeriodic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-6.1.3-DensityPositive | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-6.1.5-KineticWeightFactorization | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.2-EnergySupportObstruction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.2-CanonicalSamplingObstruction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.2.1-RademacherJumps | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.1-RandomWalk | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.1-WalkRecurrence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.2.1-WalkInitial | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.2.1-WalkVariance | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待Mathlib有限独立和二阶矩及Rademacher单位二阶矩短桥；缺项具体保留，不把标量CLT当作该证明。 |
+| MD-6.2.1-DiffusiveWalk | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.1-InterpolatedWalk | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.1-WalkIncrement | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.1-WalkGridMoments | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；依赖有限独立中心和二阶矩短桥；不以连续插值的近似方差代替。 |
+| MD-6.2.1-InterpolatedWalkMean | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待实际有限和零均值及线性插值积分短桥。 |
+| MD-6.2.1-WalkDiffusion | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺Donsker函数空间不变性原理及tightness；不建立大型概率路径理论，保留完整sorry。 |
+| MD-6.2.1-WienerVector | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.1-WienerIncrement | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.2.1-WienerContinuousVersion | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待现成Kolmogorov连续修改桥接；若无完整桥接，不重建概率路径理论；给定连续模型的路径值封装另列[EXTRA]。 |
+| MD-6.2.1-WienerNondifferentiable | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺Brownian路径振荡与处处不可微理论；不建大型路径理论，保留完整sorry。 |
+| MD-6.2.1-WienerFutureCompletedHistory | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.1-GridWienerIncrementLaw | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.1-GridIncrementIndependent | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.1-WienerContinuousPathEval | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.1-WienerContinuousPathMeasurable | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.1-CoarseMarkovPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；不证明粗条件概率字面式；完整当前状态条件期望资格另条定义，现成未来独立桥保留。 |
+| MD-6.2.1-StateMarkovMeaning | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.2-RiemannTags | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待现成带任意标记的Riemann求积完整桥接；不建立积分构造理论。 |
+| MD-6.2.2-ItoLeftSum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.2-StrictItoIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.2-WeakItoAlias | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；保留原正式库定义签名冻结；本地严格L²定义另列，严格模型用于后续新陈述。 |
+| MD-6.2.2-StratonovichSum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.2-SelfItoFiniteIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-Proposition62 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-MeanSquareConvergence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.2-WienerMidpointSum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.2-GaussianIncrementMean | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-GaussianIncrementSecond | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-GaussianIncrementFourth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-QuadraticMeanSquareError | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-SelfItoIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-SelfStratonovichIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-Proposition63 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-QuadraticSumExpectation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-SelfItoLimitL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-SelfItoSumsL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-MidpointSumsL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.2.2-DeterministicIntegralProcess | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.2.2-DeterministicStrobePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；待网站审计原σ参数意图；完整独立增量更正陈述另列。 |
+| MD-6.2.2-DeterministicStrobeCorrected | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；现成Prop6.3只打包单时构造；缺同一积分过程全部区间联合Gaussian/独立增量桥接，保留完整sorry。 |
+| MD-6.2.2-StochasticDifferentialIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 
 ## 旧126条完整映射
 
@@ -82,28 +130,28 @@
 | CH06-021 | MD-6.1.5-WeightedFluxIdentity |
 | CH06-022 | MD-6.1.5-VirialFieldNotPeriodic |
 | CH06-023 | MD-6.1.5-PeriodicBoundaryCancellation |
-| CH06-024 | PENDING：所属节尚未处理 |
-| CH06-025 | PENDING：所属节尚未处理 |
-| CH06-026 | PENDING：所属节尚未处理 |
-| CH06-027 | PENDING：所属节尚未处理 |
-| CH06-028 | PENDING：所属节尚未处理 |
-| CH06-029 | PENDING：所属节尚未处理 |
-| CH06-030 | PENDING：所属节尚未处理 |
-| CH06-031 | PENDING：所属节尚未处理 |
-| CH06-032 | PENDING：所属节尚未处理 |
-| CH06-033 | PENDING：所属节尚未处理 |
-| CH06-034 | PENDING：所属节尚未处理 |
-| CH06-035 | PENDING：所属节尚未处理 |
-| CH06-036 | PENDING：所属节尚未处理 |
-| CH06-037 | PENDING：所属节尚未处理 |
-| CH06-038 | PENDING：所属节尚未处理 |
-| CH06-039 | PENDING：所属节尚未处理 |
-| CH06-040 | PENDING：所属节尚未处理 |
-| CH06-041 | PENDING：所属节尚未处理 |
-| CH06-042 | PENDING：所属节尚未处理 |
-| CH06-043 | PENDING：所属节尚未处理 |
-| CH06-044 | PENDING：所属节尚未处理 |
-| CH06-045 | PENDING：所属节尚未处理 |
+| CH06-024 | MD-6.2-CanonicalSamplingObstruction |
+| CH06-025 | MD-6.2.1-WalkIncrement |
+| CH06-026 | MD-6.2.1-WalkRecurrence |
+| CH06-027 | MD-6.2.1-WalkVariance |
+| CH06-028 | MD-6.2.1-WalkIncrement |
+| CH06-029 | MD-6.2.1-WalkGridMoments |
+| CH06-030 | MD-6.2.1-WalkDiffusion |
+| CH06-031 | MD-6.2.1-WienerVector |
+| CH06-032 | MD-6.2.1-GridIncrementIndependent |
+| CH06-033 | MD-6.2.1-WienerContinuousPathMeasurable |
+| CH06-034 | MD-6.2.1-WienerNondifferentiable |
+| CH06-035 | MD-6.2.1-StateMarkovMeaning |
+| CH06-036 | MD-6.2.2-WeakItoAlias |
+| CH06-037 | MD-6.2.2-WienerMidpointSum |
+| CH06-038 | MD-6.2.2-SelfItoFiniteIdentity |
+| CH06-039 | MD-6.2.2-QuadraticSumExpectation |
+| CH06-040 | MD-6.2.2-GaussianIncrementFourth |
+| CH06-041 | MD-6.2.2-QuadraticMeanSquareError |
+| CH06-042 | MD-6.2.2-SelfItoSumsL2 |
+| CH06-043 | MD-6.2.2-MidpointSumsL2 |
+| CH06-044 | MD-6.2.2-DeterministicStrobeCorrected |
+| CH06-045 | MD-6.2.2-StochasticDifferentialIntegral |
 | CH06-046 | PENDING：所属节尚未处理 |
 | CH06-047 | PENDING：所属节尚未处理 |
 | CH06-048 | PENDING：所属节尚未处理 |
@@ -204,9 +252,22 @@
 - MD-6.1.5-TemperatureChoiceDerivatives：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待实际Fréchet有限和导数、正对角质量及坐标基计算；缺现成完整桥接保留sorry。
 - MD-6.1.5-PartitionInversePrinted：不默改原式、不从可积性偷推partition=1；保留不成立的字面反转等式。 p.220的Zcan上标−1疑似笔误，待人工审校；不证明字面关系。[ERRATUM?]此页印刷Zcan⁻¹=积分，与p.218的Zcan=积分相反；字面保留，标准DensityNormalization仍按真实积分归一化。
 - MD-6.1.5-VirialTemperature：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺一般质量相空间归一化到配置IBP的完整桥接；不将方向导数计算当作本条已证，保留sorry。
+- MD-6.2.1-WalkVariance：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待Mathlib有限独立和二阶矩及Rademacher单位二阶矩短桥；缺项具体保留，不把标量CLT当作该证明。
+- MD-6.2.1-WalkGridMoments：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 依赖有限独立中心和二阶矩短桥；不以连续插值的近似方差代替。
+- MD-6.2.1-InterpolatedWalkMean：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待实际有限和零均值及线性插值积分短桥。
+- MD-6.2.1-WalkDiffusion：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺Donsker函数空间不变性原理及tightness；不建立大型概率路径理论，保留完整sorry。
+- MD-6.2.1-WienerContinuousVersion：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待现成Kolmogorov连续修改桥接；若无完整桥接，不重建概率路径理论；给定连续模型的路径值封装另列[EXTRA]。
+- MD-6.2.1-WienerNondifferentiable：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺Brownian路径振荡与处处不可微理论；不建大型路径理论，保留完整sorry。
+- MD-6.2.1-CoarseMarkovPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 不证明粗条件概率字面式；完整当前状态条件期望资格另条定义，现成未来独立桥保留。印刷用任意粗事件B(X(t0))替代完整当前状态的条件σ代数；一般不成立，例如B=univ时过去事件仍可影响未来。
+- MD-6.2.2-RiemannTags：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待现成带任意标记的Riemann求积完整桥接；不建立积分构造理论。
+- MD-6.2.2-WeakItoAlias：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 保留原正式库定义签名冻结；本地严格L²定义另列，严格模型用于后续新陈述。既有Review定义仅要求Y∈L²及误差Bochner积分收敛，未要求各有限和L²，非可积默认积分0会掩盖错误；不得用于新PASS SDE证明。
+- MD-6.2.2-Proposition62：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 印刷证明的独立交叉项展开带负号；平方展开应正号，见单独疑误条。
+- MD-6.2.2-DeterministicStrobePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待网站审计原σ参数意图；完整独立增量更正陈述另列。生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。
+- MD-6.2.2-DeterministicStrobeCorrected：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 现成Prop6.3只打包单时构造；缺同一积分过程全部区间联合Gaussian/独立增量桥接，保留完整sorry。
 
 ## 定性段落排除
 
 - p.211–214/PDF232–235：引言关于热浴、环境、瞬态/稳态和模拟的物理动机、图6.1与历史说明为定性内容；N/V粒子密度、NVE/NVT及固定N,V,E为context notation，数学微正则密度公式已保留。
 - p.219/PDF240：图6.2的100个粒子、L=20周期模拟、红色双阱粒子轨道及虚实密度曲线是数值/定性说明；完整Lennard-Jones势、尾部发散与εq²束缚公式另列，不省略数学内容。
 - p.223–224/PDF244–245：分母接近零导致数值不稳、优先使用动能温度是定性计算建议；三个实际温度公式、周期边界消去及q场非周期性均已单列。
+- p.224–225/PDF245–246：thermostat术语、governor历史、Brown/Perrin历史和图6.3为定性背景；守恒导致采样障碍及随机游走全部数学公式另列。

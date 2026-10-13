@@ -1,5 +1,43 @@
 """New bounded local routes only; no sealed Chapter 6 checkpoint is restored."""
 proofs={
+'CanonicalSamplingObstruction':'''intro n H energy z μ inst hH hz hpositive
+  let S : Set (MolecularDynamics.Chapter06Review.V n) := {x | H x ≠ energy}
+  have hS : MeasurableSet S := (isClosed_singleton.preimage hH).isOpen_compl.measurableSet
+  let g : MolecularDynamics.Chapter06Review.V n → ℝ := S.indicator (fun _ ↦ 1)
+  have hgi : Integrable g μ := (integrable_const (1 : ℝ)).indicator hS
+  have hIntegral : (∫ x, g x ∂μ)=μ.real S := integral_indicator_one hS
+  have hzero : ∀ t : ℝ, g (z t)=0 := by
+    intro t
+    apply Set.indicator_of_not_mem
+    exact fun h ↦ h (hz t)
+  refine ⟨g,hgi,?_,?_⟩
+  · rw [hIntegral]
+    exact ENNReal.toReal_pos hpositive.ne' (measure_ne_top μ S)
+  · have hfun : MolecularDynamics.Chapter05Review.timeAverage z g=(fun _ : ℝ ↦ 0) := by
+      funext T
+      simp [MolecularDynamics.Chapter05Review.timeAverage,hzero]
+    rw [hfun]
+    exact tendsto_const_nhds''',
+'EnergySupportObstruction':'''intro n H energy z μ hH hz hpositive
+  constructor
+  · intro t ht
+    exact ht (hz t)
+  · exact hpositive''',
+'WalkRecurrence':'''intro Ω J dx n sample
+  simp only [MolecularDynamics.Chapter06Review.randomWalk, Finset.sum_range_succ]
+  ring''',
+'WalkInitial':'''intro Ω J dx sample
+  simp [MolecularDynamics.Chapter06Review.randomWalk]''',
+'WienerIncrement':'''intro Ω inst P W hW s t
+  have hl : HasLaw (fun sample ↦ W t sample-W s sample)
+      (gaussianReal 0 (|((t : ℝ)-s)|).toNNReal) P := by
+    convert hW.hasLaw_sub t s using 1
+    apply congrArg (gaussianReal 0)
+    apply NNReal.coe_injective
+    simp [Real.nndist_eq, Real.nnabs]
+  refine ⟨hl, ?_⟩
+  simpa only [Real.coe_toNNReal _ (abs_nonneg _)] using
+    MolecularDynamics.textbookCenteredGaussian_secondMoment hl''',
 'IndependentPartition':'''intro n m HA HB EA EB hA hB
   dsimp
   simp''',

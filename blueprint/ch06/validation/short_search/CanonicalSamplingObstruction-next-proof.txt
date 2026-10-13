@@ -1,0 +1,17 @@
+intro n H energy z μ inst hH hz hpositive
+  let S : Set (MolecularDynamics.Chapter06Review.V n) := {x | H x ≠ energy}
+  have hS : MeasurableSet S := (isClosed_singleton.preimage hH).isOpen_compl.measurableSet
+  let g : MolecularDynamics.Chapter06Review.V n → ℝ := S.indicator (fun _ ↦ 1)
+  have hgi : Integrable g μ := (integrable_const (1 : ℝ)).indicator hS
+  have hIntegral : (∫ x, g x ∂μ)=μ.real S := integral_indicator_one hS
+  have hzero : ∀ t : ℝ, g (z t)=0 := by
+    intro t
+    simp only [g, Set.indicator, S, Set.mem_setOf_eq, hz t, ne_eq, not_true_eq_false, ↓reduceIte]
+  refine ⟨g,hgi,?_,?_⟩
+  · rw [hIntegral]
+    exact ENNReal.toReal_pos hpositive.ne' (measure_ne_top μ S)
+  · have hfun : MolecularDynamics.Chapter05Review.timeAverage z g=(fun _ : ℝ ↦ 0) := by
+      funext T
+      simp [MolecularDynamics.Chapter05Review.timeAverage,hzero]
+    rw [hfun]
+    exact tendsto_const_nhds

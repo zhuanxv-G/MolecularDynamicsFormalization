@@ -22,31 +22,31 @@
     "CH06-020": "MD-6.1.5-Proposition61",
     "CH06-021": "MD-6.1.5-WeightedFluxIdentity",
     "CH06-022": "MD-6.1.5-VirialFieldNotPeriodic",
-    "CH06-023": "MD-6.1.5-PeriodicBoundaryCancellation"
+    "CH06-023": "MD-6.1.5-PeriodicBoundaryCancellation",
+    "CH06-024": "MD-6.2-CanonicalSamplingObstruction",
+    "CH06-025": "MD-6.2.1-WalkIncrement",
+    "CH06-026": "MD-6.2.1-WalkRecurrence",
+    "CH06-027": "MD-6.2.1-WalkVariance",
+    "CH06-028": "MD-6.2.1-WalkIncrement",
+    "CH06-029": "MD-6.2.1-WalkGridMoments",
+    "CH06-030": "MD-6.2.1-WalkDiffusion",
+    "CH06-031": "MD-6.2.1-WienerVector",
+    "CH06-032": "MD-6.2.1-GridIncrementIndependent",
+    "CH06-033": "MD-6.2.1-WienerContinuousPathMeasurable",
+    "CH06-034": "MD-6.2.1-WienerNondifferentiable",
+    "CH06-035": "MD-6.2.1-StateMarkovMeaning",
+    "CH06-036": "MD-6.2.2-WeakItoAlias",
+    "CH06-037": "MD-6.2.2-WienerMidpointSum",
+    "CH06-038": "MD-6.2.2-SelfItoFiniteIdentity",
+    "CH06-039": "MD-6.2.2-QuadraticSumExpectation",
+    "CH06-040": "MD-6.2.2-GaussianIncrementFourth",
+    "CH06-041": "MD-6.2.2-QuadraticMeanSquareError",
+    "CH06-042": "MD-6.2.2-SelfItoSumsL2",
+    "CH06-043": "MD-6.2.2-MidpointSumsL2",
+    "CH06-044": "MD-6.2.2-DeterministicStrobeCorrected",
+    "CH06-045": "MD-6.2.2-StochasticDifferentialIntegral"
   },
   "pending": [
-    "CH06-024",
-    "CH06-025",
-    "CH06-026",
-    "CH06-027",
-    "CH06-028",
-    "CH06-029",
-    "CH06-030",
-    "CH06-031",
-    "CH06-032",
-    "CH06-033",
-    "CH06-034",
-    "CH06-035",
-    "CH06-036",
-    "CH06-037",
-    "CH06-038",
-    "CH06-039",
-    "CH06-040",
-    "CH06-041",
-    "CH06-042",
-    "CH06-043",
-    "CH06-044",
-    "CH06-045",
     "CH06-046",
     "CH06-047",
     "CH06-048",
@@ -222,6 +222,100 @@
     ],
     "CH06-023": [
       "MD-6.1.5-PeriodicBoundaryCancellation"
+    ],
+    "CH06-024": [
+      "MD-6.2-EnergySupportObstruction",
+      "MD-6.2-CanonicalSamplingObstruction"
+    ],
+    "CH06-025": [
+      "MD-6.2.1-RademacherJumps",
+      "MD-6.2.1-RandomWalk",
+      "MD-6.2.1-WalkInitial",
+      "MD-6.2.1-WalkIncrement"
+    ],
+    "CH06-026": [
+      "MD-6.2.1-WalkRecurrence"
+    ],
+    "CH06-027": [
+      "MD-6.2.1-WalkVariance"
+    ],
+    "CH06-028": [
+      "MD-6.2.1-DiffusiveWalk",
+      "MD-6.2.1-InterpolatedWalk",
+      "MD-6.2.1-WalkIncrement"
+    ],
+    "CH06-029": [
+      "MD-6.2.1-WalkGridMoments"
+    ],
+    "CH06-030": [
+      "MD-6.2.1-WalkDiffusion"
+    ],
+    "CH06-031": [
+      "MD-6.2.1-WienerVector"
+    ],
+    "CH06-032": [
+      "MD-6.2.1-WienerIncrement",
+      "MD-6.2.1-GridWienerIncrementLaw",
+      "MD-6.2.1-GridIncrementIndependent"
+    ],
+    "CH06-033": [
+      "MD-6.2.1-WienerContinuousVersion",
+      "MD-6.2.1-WienerContinuousPathEval",
+      "MD-6.2.1-WienerContinuousPathMeasurable"
+    ],
+    "CH06-034": [
+      "MD-6.2.1-WienerNondifferentiable"
+    ],
+    "CH06-035": [
+      "MD-6.2.1-WienerFutureCompletedHistory",
+      "MD-6.2.1-GridIncrementIndependent",
+      "MD-6.2.1-CoarseMarkovPrinted",
+      "MD-6.2.1-StateMarkovMeaning"
+    ],
+    "CH06-036": [
+      "MD-6.2.2-ItoLeftSum",
+      "MD-6.2.2-StrictItoIntegral",
+      "MD-6.2.2-WeakItoAlias"
+    ],
+    "CH06-037": [
+      "MD-6.2.2-StratonovichSum",
+      "MD-6.2.2-WienerMidpointSum"
+    ],
+    "CH06-038": [
+      "MD-6.2.2-SelfItoFiniteIdentity"
+    ],
+    "CH06-039": [
+      "MD-6.2.2-Proposition62",
+      "MD-6.2.2-MeanSquareConvergence",
+      "MD-6.2.2-QuadraticSumExpectation"
+    ],
+    "CH06-040": [
+      "MD-6.2.2-GaussianIncrementMean",
+      "MD-6.2.2-GaussianIncrementSecond",
+      "MD-6.2.2-GaussianIncrementFourth"
+    ],
+    "CH06-041": [
+      "MD-6.2.2-QuadraticMeanSquareError"
+    ],
+    "CH06-042": [
+      "MD-6.2.2-SelfItoIntegral",
+      "MD-6.2.2-SelfItoLimitL2",
+      "MD-6.2.2-SelfItoSumsL2"
+    ],
+    "CH06-043": [
+      "MD-6.2.2-SelfStratonovichIntegral",
+      "MD-6.2.2-MidpointSumsL2"
+    ],
+    "CH06-044": [
+      "MD-6.2.2-Proposition63",
+      "MD-6.2.2-DeterministicStrobePrinted",
+      "MD-6.2.2-DeterministicStrobeCorrected"
+    ],
+    "CH06-045": [
+      "MD-6.2.2-DeterministicIntegralProcess",
+      "MD-6.2.2-DeterministicStrobePrinted",
+      "MD-6.2.2-DeterministicStrobeCorrected",
+      "MD-6.2.2-StochasticDifferentialIntegral"
     ]
   }
 }

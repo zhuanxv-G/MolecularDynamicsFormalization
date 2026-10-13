@@ -1,0 +1,43 @@
+{
+  "batch": "BATCH13",
+  "subtask": "BATCH13f",
+  "source_ids": [
+    "MD-6.2.1-StateMarkovMeaning"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 248,
+      "printed_page": 227
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "405cb815b447fb9e95ce39a5a2952fabe84a64773bbe26d1079463955019839b",
+  "lean_sha256": "a66dea17ee1d2f54921837157ebcbdbc12b96984603f3c7e24e809b8bb8d5b1b",
+  "signature_sha256": "fb76687701f1ced759d8553520c0520e68bcd05545b728d3af91d61df37f9b1d",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "stateMarkovMeaning",
+      "code_sha256": "fb76687701f1ced759d8553520c0520e68bcd05545b728d3af91d61df37f9b1d"
+    }
+  ],
+  "paste_plus_pdf_bytes": 82023,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3889,
+      "sha256": "2524a7f98c0b6042ecec8866a87b1b5cf796da8e66fa349b839b19fde0bf63ca"
+    },
+    "BATCH13f_PAGES.pdf": {
+      "bytes": 78134,
+      "sha256": "b999283c3a3011a3e65e617cbd0c6a4f689eba983b2e56b33e976c38a66d523d"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 83396
+}

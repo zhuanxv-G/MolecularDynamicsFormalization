@@ -58,7 +58,7 @@ def inverseTemperature (S : ℝ → ℝ) (E : ℝ) : ℝ := deriv S E
 def inverseTemperature (S : ℝ → ℝ) (E : ℝ) : ℝ := deriv S E
 ```
 
-### MD.Ch06.temperature (Blueprint/Ch06.lean:66)
+### MD.Ch06.temperature (Blueprint/Ch06.lean:68)
 ```lean
 def temperature (S : ℝ → ℝ) (E : ℝ) : ℝ := (MolecularDynamics.Chapter06Review.inverseTemperature S E)⁻¹
 ```

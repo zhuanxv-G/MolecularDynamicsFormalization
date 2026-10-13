@@ -95,13 +95,13 @@ abbrev V := Fin 3 → ℝ
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.canonicalDensity (Blueprint/Ch06.lean:193)
+### MD.Ch06.canonicalDensity (Blueprint/Ch06.lean:195)
 ```lean
 def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (H : D → ℝ) (β : ℝ) (x : D) : ℝ := Real.exp (-β * H x) / (∫ z, Real.exp (-β * H z) ∂ν)
 ```
 
-### MD.Ch06.massHamiltonian (Blueprint/Ch06.lean:197)
+### MD.Ch06.massHamiltonian (Blueprint/Ch06.lean:199)
 ```lean
 def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : MolecularDynamics.Chapter06Review.V n → ℝ) (x : MolecularDynamics.Chapter06Review.Phase n) : ℝ :=
   (∑ i, (x.2 i) ^ 2 / (2 * m i)) + U x.1

@@ -53,7 +53,7 @@ def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (kB : ℝ) (ρ : D → ℝ) : ℝ := -kB * ∫ x, ρ x * Real.log (ρ x) ∂ν
 ```
 
-### MD.Ch06.constrainedEntropyModel (Blueprint/Ch06.lean:162)
+### MD.Ch06.constrainedEntropyModel (Blueprint/Ch06.lean:164)
 ```lean
 def constrainedEntropyModel {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (H ρ : D → ℝ) (kB lambdaParam β meanEnergy : ℝ) : ℝ × Prop :=
@@ -62,7 +62,7 @@ def constrainedEntropyModel {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (∫ x, ρ x ∂ν) = 1 ∧ (∫ x, H x * ρ x ∂ν) = meanEnergy)
 ```
 
-### MD.Ch06.entropyFunctional (Blueprint/Ch06.lean:158)
+### MD.Ch06.entropyFunctional (Blueprint/Ch06.lean:160)
 ```lean
 def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (kB : ℝ) (ρ : D → ℝ) : ℝ := -kB * ∫ x, ρ x * Real.log (ρ x) ∂ν

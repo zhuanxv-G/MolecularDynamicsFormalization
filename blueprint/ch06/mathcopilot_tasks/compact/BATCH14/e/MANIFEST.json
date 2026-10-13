@@ -1,0 +1,43 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14e",
+  "source_ids": [
+    "MD-6.2.2-StratonovichSum"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 249,
+      "printed_page": 228
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "405cb815b447fb9e95ce39a5a2952fabe84a64773bbe26d1079463955019839b",
+  "lean_sha256": "a66dea17ee1d2f54921837157ebcbdbc12b96984603f3c7e24e809b8bb8d5b1b",
+  "signature_sha256": "60fffe9986f5eb68074ccc704e12d3089eb8b476347448911e074b9171822b2b",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "stratonovichSum",
+      "code_sha256": "60fffe9986f5eb68074ccc704e12d3089eb8b476347448911e074b9171822b2b"
+    }
+  ],
+  "paste_plus_pdf_bytes": 79926,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3369,
+      "sha256": "e65c45498bfc74681429642832343354b92e14cd75b9fa21fdf7fbe89c3db67a"
+    },
+    "BATCH14e_PAGES.pdf": {
+      "bytes": 76557,
+      "sha256": "46fe0c1f4f3ba2b76ebe9fbea4cdd02da75e696114911d5241c5895a2494f36c"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 81293
+}

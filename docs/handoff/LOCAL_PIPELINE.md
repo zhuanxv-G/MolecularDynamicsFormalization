@@ -6,7 +6,7 @@
 | 3 | 97–136 / 119–158 | chapter03-blueprint | ⑤全部本地流程验收完成 | 433a13ca6407 | 完成 |
 | 4 | 139–174 / 161–196 | chapter04-blueprint | ⑤全部本地流程验收完成 | ca2715c9646e | 完成 |
 | 5 | 179–209 / 200–230 | chapter05-blueprint | ⑤全部本地流程验收完成 | c5887923f159 | 完成 |
-| 6 | 211–258 / 232–279 | chapter06-blueprint | ①–③§6.2共48条；全部旧24–45映射，严格积分/完整增量过程与疑误落盘；批18落盘（96条） | 1911ff24c998 | 未完成 |
+| 6 | 211–258 / 232–279 | chapter06-blueprint | ①–⑤§6.2已检验；批6.2落盘（96条） | 1911ff24c998 | 未完成 |
 
 页界已渲染核对：第3章p.136/PDF158的Exercises之前保留；第4章正文至p.174/PDF196，Exercises为PDF197–199；第5章p.209/PDF230的Exercises之前保留；第6章正文至p.258/PDF279，Exercises为PDF280–281；第7章PDF282起不进入。
 第5、6章PDF偏移为+21，与第3、4章的+22不同，不套用旧偏移。范围证据见blueprint/local_pipeline/boundaries.png。

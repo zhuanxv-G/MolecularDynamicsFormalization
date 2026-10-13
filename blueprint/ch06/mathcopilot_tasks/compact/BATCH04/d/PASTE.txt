@@ -186,7 +186,7 @@ private abbrev e : Gibbs U β :=
   textbookPeriodicSmoothEmbedding U hU hPU β (textbookPeriodicSmoothConstant Nc 1)
 ```
 
-### MD.Ch06.entropyFunctional (Blueprint/Ch06.lean:158)
+### MD.Ch06.entropyFunctional (Blueprint/Ch06.lean:160)
 ```lean
 def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (kB : ℝ) (ρ : D → ℝ) : ℝ := -kB * ∫ x, ρ x * Real.log (ρ x) ∂ν

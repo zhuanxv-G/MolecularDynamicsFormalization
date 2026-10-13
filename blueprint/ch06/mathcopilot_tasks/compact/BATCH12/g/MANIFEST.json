@@ -1,0 +1,41 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12g",
+  "source_ids": [
+    "MD-6.2.1-WienerNondifferentiable"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 247,
+      "printed_page": 226
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 248,
+      "printed_page": 227
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "405cb815b447fb9e95ce39a5a2952fabe84a64773bbe26d1079463955019839b",
+  "lean_sha256": "a66dea17ee1d2f54921837157ebcbdbc12b96984603f3c7e24e809b8bb8d5b1b",
+  "signature_sha256": "0b0e679b7b8b704af6c678d30c824f0b2b2efd86e2c16c4226dd1a6f9bc40fbc",
+  "definition_excerpts": [],
+  "paste_plus_pdf_bytes": 87981,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3075,
+      "sha256": "95c77188596444a7d02e2363fd63c5d276a6b9c86c4052d37a67edcec7d8e773"
+    },
+    "BATCH12g_PAGES.pdf": {
+      "bytes": 84906,
+      "sha256": "9470546d602f54a6525ee1febe3ba4b393b7603feb69cb111ecbfdbad0403acf"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 89250
+}

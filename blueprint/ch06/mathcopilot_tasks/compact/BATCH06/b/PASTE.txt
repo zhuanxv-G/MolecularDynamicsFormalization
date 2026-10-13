@@ -52,7 +52,7 @@ def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (H : D → ℝ) (β : ℝ) (x : D) : ℝ := Real.exp (-β * H x) / (∫ z, Real.exp (-β * H z) ∂ν)
 ```
 
-### MD.Ch06.canonicalDensity (Blueprint/Ch06.lean:193)
+### MD.Ch06.canonicalDensity (Blueprint/Ch06.lean:195)
 ```lean
 def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (H : D → ℝ) (β : ℝ) (x : D) : ℝ := Real.exp (-β * H x) / (∫ z, Real.exp (-β * H z) ∂ν)

@@ -88,7 +88,7 @@ abbrev V := Fin 3 → ℝ
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.massHamiltonian (Blueprint/Ch06.lean:197)
+### MD.Ch06.massHamiltonian (Blueprint/Ch06.lean:199)
 ```lean
 def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : MolecularDynamics.Chapter06Review.V n → ℝ) (x : MolecularDynamics.Chapter06Review.Phase n) : ℝ :=
   (∑ i, (x.2 i) ^ 2 / (2 * m i)) + U x.1

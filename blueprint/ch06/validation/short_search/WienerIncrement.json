@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro Ω inst P W hW s t\n  have hl : HasLaw (fun sample ↦ W t sample-W s sample)\n      (gaussianReal 0 (|((t : ℝ)-s)|).toNNReal) P := by\n    convert hW.hasLaw_sub t s using 1\n    apply congrArg (gaussianReal 0)\n    apply NNReal.coe_injective\n    simp [Real.nndist_eq, Real.nnabs]\n  refine ⟨hl, ?_⟩\n  simpa only [Real.coe_toNNReal _ (abs_nonneg _)] using\n    MolecularDynamics.textbookCenteredGaussian_secondMoment hl",
+    "source": "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WienerIncrement.lean",
+    "log": "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WienerIncrement.log",
+    "source_sha256": "567c163565391ee4bf52a24b16f9ea49f0df7f9e1ac36be2e601ee61830a227a",
+    "log_sha256": "51969b3f89151d0f92c6f37a7cef270e13dd1022fce7000abe931a13d590c226"
+  }
+]

@@ -1,0 +1,5 @@
+intro n H energy z μ hH hz hpositive
+  constructor
+  · intro t ht
+    exact ht (hz t)
+  · exact hpositive.ne'

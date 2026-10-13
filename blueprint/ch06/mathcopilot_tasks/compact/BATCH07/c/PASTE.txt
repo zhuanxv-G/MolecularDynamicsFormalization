@@ -53,7 +53,7 @@ noncomputable def canonicalAverage {Nc : ℕ}
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch06.canonicalAverage (Blueprint/Ch06.lean:295)
+### MD.Ch06.canonicalAverage (Blueprint/Ch06.lean:297)
 ```lean
 noncomputable def canonicalAverage {Nc : ℕ}
     (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) (f : SymplecticCoordinates Nc → ℝ) : ℝ :=

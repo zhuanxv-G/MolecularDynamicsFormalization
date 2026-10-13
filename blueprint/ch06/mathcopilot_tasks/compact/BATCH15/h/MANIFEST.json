@@ -1,0 +1,67 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15h",
+  "source_ids": [
+    "MD-6.2.2-Proposition63"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 252,
+      "printed_page": 231
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "405cb815b447fb9e95ce39a5a2952fabe84a64773bbe26d1079463955019839b",
+  "lean_sha256": "a66dea17ee1d2f54921837157ebcbdbc12b96984603f3c7e24e809b8bb8d5b1b",
+  "signature_sha256": "d824ddf5f217f440f427078ca1d04bff3b2e67d826907063029b6491a47d294a",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/WienerRefinement.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookWienerDeterministicSum",
+      "code_sha256": "f2272533ebbeae048687074cf89e939ba062f090004668a61ceb6a1144313102"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerDeterministicLaw.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookWienerDeterministicVariance",
+      "code_sha256": "80ee13c75c3ed8e0a9b80429853f5b34dbfeed2a742c76cd091a182c1d61394f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookWienerIncrement",
+      "code_sha256": "2bb6bdd9356679811483e775c38e463ed64f8e5a40d85c6888c50785074145e7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookWienerTime",
+      "code_sha256": "48d2835171e11313e4685ae314d45b6832bfe80118a2ea749cd46bcd88d4633a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerIntegration.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookWienerWeightedSum",
+      "code_sha256": "208b1635eb0e9e07f3038fa8ae879efc175e19b866c566842fcba0bf411782ec"
+    }
+  ],
+  "paste_plus_pdf_bytes": 83188,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5103,
+      "sha256": "b515c67cebf93a516bb774f9d6312594ae731b5dcc0390c907f18f15b54a3a9a"
+    },
+    "BATCH15h_PAGES.pdf": {
+      "bytes": 78085,
+      "sha256": "6f6a357923477e514795546ce778a6a81e3a770c786d9cb9e2d4f4c8411f18a9"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 85660
+}

@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16c",
+  "source_ids": [
+    "MD-6.2.2-SelfItoSumsL2"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 251,
+      "printed_page": 230
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "405cb815b447fb9e95ce39a5a2952fabe84a64773bbe26d1079463955019839b",
+  "lean_sha256": "a66dea17ee1d2f54921837157ebcbdbc12b96984603f3c7e24e809b8bb8d5b1b",
+  "signature_sha256": "8d4ea139891e3d3bf610c8d21e0a86983eea07103c6b56da505bc81a5e23076c",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookWienerIncrement",
+      "code_sha256": "2bb6bdd9356679811483e775c38e463ed64f8e5a40d85c6888c50785074145e7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerIntegration.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookWienerSelfItoSum",
+      "code_sha256": "e832be8786279ec56998ee2c4fa4108a99bd78ba5d2f0f1881f3a76c410ea307"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookWienerTime",
+      "code_sha256": "48d2835171e11313e4685ae314d45b6832bfe80118a2ea749cd46bcd88d4633a"
+    }
+  ],
+  "paste_plus_pdf_bytes": 74748,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3891,
+      "sha256": "44cda353f4cbb1a44d4dca72802de6cf28b839cc37eb2df706881c69995bacb6"
+    },
+    "BATCH16c_PAGES.pdf": {
+      "bytes": 70857,
+      "sha256": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 76684
+}

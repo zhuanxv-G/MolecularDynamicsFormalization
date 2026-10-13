@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15a",
+  "source_ids": [
+    "MD-6.2.2-WienerMidpointSum"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 249,
+      "printed_page": 228
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "405cb815b447fb9e95ce39a5a2952fabe84a64773bbe26d1079463955019839b",
+  "lean_sha256": "a66dea17ee1d2f54921837157ebcbdbc12b96984603f3c7e24e809b8bb8d5b1b",
+  "signature_sha256": "09e60f5dfd8faf15e64b16aba1a020e3e59e6f5017b7002f1a80105de1375996",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookWienerIncrement",
+      "code_sha256": "2bb6bdd9356679811483e775c38e463ed64f8e5a40d85c6888c50785074145e7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookWienerTime",
+      "code_sha256": "48d2835171e11313e4685ae314d45b6832bfe80118a2ea749cd46bcd88d4633a"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "wienerMidpointSum",
+      "code_sha256": "09e60f5dfd8faf15e64b16aba1a020e3e59e6f5017b7002f1a80105de1375996"
+    }
+  ],
+  "paste_plus_pdf_bytes": 80515,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3958,
+      "sha256": "0281a9aadc281595eb9e4750ab2676b4faf18e024bc5162f4adb0d039bc17d79"
+    },
+    "BATCH15a_PAGES.pdf": {
+      "bytes": 76557,
+      "sha256": "46fe0c1f4f3ba2b76ebe9fbea4cdd02da75e696114911d5241c5895a2494f36c"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 82407
+}

@@ -1,0 +1,95 @@
+Generated 88 entries; 44 /126 old rows mapped; protected 640
+Blueprint/Ch06.lean:38:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Blueprint/Ch06.lean:39:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Blueprint/Ch06.lean:74:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:114:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:146:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:171:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:182:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:202:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:211:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:224:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:241:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:249:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:305:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:309:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:319:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:375:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:412:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:437:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:485:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:494:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:517:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:523:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:529:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:551:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:560:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:570:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:592:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:601:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:609:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:624:90: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch06.lean:624:90: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch06.lean:631:57: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:638:62: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:646:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:653:74: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:657:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:678:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:724:72: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:734:69: warning: Variable name `P` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _P
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch06.lean:750:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:757:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:774:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:781:38: error: Function expected at
+  textbookWienerMidpointSum
+but this term has type
+  ?m.5
+
+Note: Expected a function because this term is being applied to the argument
+  W
+
+Hint: The identifier `textbookWienerMidpointSum` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Blueprint/Ch06.lean:783:8: error(lean.unknownIdentifier): Unknown identifier `MolecularDynamics.textbookWienerSelfStratonovichIntegral_exists`
+

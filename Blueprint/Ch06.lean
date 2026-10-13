@@ -5,6 +5,8 @@ import MolecularDynamics.Chapter02.ActualFlowVariations
 import MolecularDynamics.Chapter02.LiouvilleVolume
 import MolecularDynamics.Chapter02.HamiltonianVolume
 import MolecularDynamics.Chapter01.Lagrangian
+import MolecularDynamics.Chapter06.WienerStratonovich
+import MolecularDynamics.Chapter06.WienerDeterministicLaw
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Shift
 import Mathlib.Analysis.Calculus.Taylor
@@ -479,5 +481,412 @@ theorem kineticWeightFactorization : ∀ {n : ℕ}
   intro i hi
   congr 1
   ring
+
+/-- source_id: MD-6.2-EnergySupportObstruction · extra_claim · §6.2 · 印刷p.224 / PDFp.245
+[EXTRA] [EXTRA]实际能量守恒轨道、连续H及另一能量区域有正μ测度；本条是支持障碍，完整积分/时间平均障碍在下一条保留。 -/
+theorem energySupportObstruction :
+  ∀ {n : ℕ} (H : MolecularDynamics.Chapter06Review.V n → ℝ) (E : ℝ)
+    (z : ℝ → MolecularDynamics.Chapter06Review.V n) (μ : Measure (MolecularDynamics.Chapter06Review.V n)), Continuous H →
+  (∀ t, H (z t) = E) → 0 < μ {x | H x ≠ E} →
+  (∀ t, z t ∉ {x | H x ≠ E}) ∧ μ {x | H x ≠ E} ≠ 0 := by
+  intro n H energy z μ hH hz hpositive
+  constructor
+  · intro t ht
+    exact ht (hz t)
+  · exact hpositive.ne'
+
+
+/-- source_id: MD-6.2-CanonicalSamplingObstruction · unnumbered_claim · §6.2 · 印刷p.224 / PDFp.245
+[EXTRA] [EXTRA]目标为真实概率测度、其他能量区域正测度；结论构造实际可积检验函数，其沿轨道时间平均为零而目标平均严格正；不以采样失败为前提。 -/
+theorem canonicalSamplingObstruction : ∀ {n : ℕ}
+    (H : MolecularDynamics.Chapter06Review.V n → ℝ) (energy : ℝ)
+    (z : ℝ → MolecularDynamics.Chapter06Review.V n)
+    (μ : Measure (MolecularDynamics.Chapter06Review.V n)) [IsProbabilityMeasure μ],
+  Continuous H → (∀ t, H (z t) = energy) → 0 < μ {x | H x ≠ energy} →
+  ∃ g : MolecularDynamics.Chapter06Review.V n → ℝ, Integrable g μ ∧
+    0 < (∫ x, g x ∂μ) ∧
+    Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 0) := by
+  intro n H energy z μ inst hH hz hpositive
+  let S : Set (MolecularDynamics.Chapter06Review.V n) := {x | H x ≠ energy}
+  have hS : MeasurableSet S := (isClosed_singleton.preimage hH).isOpen_compl.measurableSet
+  let g : MolecularDynamics.Chapter06Review.V n → ℝ := S.indicator (fun _ ↦ 1)
+  have hgi : Integrable g μ := (integrable_const (1 : ℝ)).indicator hS
+  have hIntegral : (∫ x, g x ∂μ)=μ.real S := integral_indicator_one hS
+  have hzero : ∀ t : ℝ, g (z t)=0 := by
+    intro t
+    simp only [g, Set.indicator, S, Set.mem_setOf_eq, hz t, ne_eq, not_true_eq_false, ↓reduceIte]
+  refine ⟨g,hgi,?_,?_⟩
+  · rw [hIntegral]
+    exact ENNReal.toReal_pos hpositive.ne' (measure_ne_top μ S)
+  · have hfun : MolecularDynamics.Chapter05Review.timeAverage z g=(fun _ : ℝ ↦ 0) := by
+      funext T
+      simp [MolecularDynamics.Chapter05Review.timeAverage,hzero]
+    rw [hfun]
+    exact tendsto_const_nhds
+
+
+/-- source_id: MD-6.2.1-RademacherJumps · definition · §6.2.1 · 印刷p.225 / PDFp.246
+[EXTRA] [EXTRA]真实概率空间、独立可测L²跳跃、AE取±1且期望零；这些条件保留公平Rademacher意义，不把二阶有限和结论作假设。 -/
+def rademacherJumps {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (J : ℕ → Ω → ℝ) : Prop :=
+  IsProbabilityMeasure P ∧ iIndepFun J P ∧ ∀ k,
+    Measurable (J k) ∧ MemLp (J k) 2 P ∧
+    (∀ᵐ sample ∂P, J k sample = 1 ∨ J k sample = -1) ∧ (∫ sample, J k sample ∂P) = 0
+
+/-- source_id: MD-6.2.1-RandomWalk · definition · §6.2.1 · 印刷p.225 / PDFp.246 -/
+def randomWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω) : ℝ :=
+  dx * ∑ k ∈ Finset.range n, J k sample
+
+/-- source_id: MD-6.2.1-WalkRecurrence · unnumbered_claim · §6.2.1 · 印刷p.225 / PDFp.246 -/
+theorem walkRecurrence :
+  ∀ {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω),
+  MolecularDynamics.Chapter06Review.randomWalk J dx (n+1) sample = MolecularDynamics.Chapter06Review.randomWalk J dx n sample + dx*J n sample := by
+  intro Ω J dx n sample
+  simp only [MolecularDynamics.Chapter06Review.randomWalk, Finset.sum_range_succ]
+  ring
+
+/-- source_id: MD-6.2.1-WalkInitial · unnumbered_claim · §6.2.1 · 印刷p.225 / PDFp.246 -/
+theorem walkInitial : ∀ {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (sample : Ω),
+  MolecularDynamics.Chapter06Review.randomWalk J dx 0 sample = 0 := by
+  intro Ω J dx sample
+  simp [MolecularDynamics.Chapter06Review.randomWalk]
+
+/-- source_id: MD-6.2.1-WalkVariance · unnumbered_claim · §6.2.1 · 印刷p.225–226 / PDFp.246–247
+[EXTRA] [EXTRA]完整真实概率、L²、独立且公平±1跳跃；同时保存零均值与原完整二阶矩，不将和的二阶矩或交叉项零作前提。 -/
+theorem walkVariance :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ), MolecularDynamics.Chapter06Review.rademacherJumps P J →
+  (∫ sample, MolecularDynamics.Chapter06Review.randomWalk J dx n sample ∂P) = 0 ∧ (∫ sample, MolecularDynamics.Chapter06Review.randomWalk J dx n sample ^ 2 ∂P) = n*dx^2 := by
+  sorry
+
+/-- source_id: MD-6.2.1-DiffusiveWalk · definition · §6.2.1 · 印刷p.226 / PDFp.247 -/
+def diffusiveWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt : ℝ) : ℕ → Ω → ℝ :=
+  MolecularDynamics.Chapter06Review.randomWalk J (Real.sqrt dt)
+
+/-- source_id: MD-6.2.1-InterpolatedWalk · definition · §6.2.1 · 印刷p.226 / PDFp.247 -/
+def interpolatedWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt t : ℝ) (sample : Ω) : ℝ :=
+  let n := Nat.floor (t / dt)
+  MolecularDynamics.Chapter06Review.diffusiveWalk J dt n sample + (t - n * dt) / dt *
+    (MolecularDynamics.Chapter06Review.diffusiveWalk J dt (n+1) sample - MolecularDynamics.Chapter06Review.diffusiveWalk J dt n sample)
+
+/-- source_id: MD-6.2.1-WalkIncrement · definition · §6.2.1 · 印刷p.225–226 / PDFp.246–247 -/
+def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω) : ℝ :=
+  MolecularDynamics.Chapter06Review.randomWalk J dx (n+1) sample - MolecularDynamics.Chapter06Review.randomWalk J dx n sample
+
+/-- source_id: MD-6.2.1-WalkGridMoments · unnumbered_claim · §6.2.1 · 印刷p.226 / PDFp.247
+[EXTRA] [EXTRA]实际独立公平L²跳跃、正δt和k≤l；保存零均值与完整增量二阶矩，不假设这些结论。 -/
+theorem walkGridMoments :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (J : ℕ → Ω → ℝ) (dt : ℝ) (k l : ℕ), MolecularDynamics.Chapter06Review.rademacherJumps P J → 0 < dt → k ≤ l →
+  (∫ sample, MolecularDynamics.Chapter06Review.diffusiveWalk J dt l sample-MolecularDynamics.Chapter06Review.diffusiveWalk J dt k sample ∂P) = 0 ∧
+  (∫ sample, (MolecularDynamics.Chapter06Review.diffusiveWalk J dt l sample-MolecularDynamics.Chapter06Review.diffusiveWalk J dt k sample)^2 ∂P) = ((l : ℝ)-k)*dt := by
+  sorry
+
+/-- source_id: MD-6.2.1-InterpolatedWalkMean · unnumbered_claim · §6.2.1 · 印刷p.226 / PDFp.247
+[EXTRA] [EXTRA]真实线性插值均值；任意有限正时间可置于τ窗口，不声称精确插值方差等于s−t。 -/
+theorem interpolatedWalkMean : ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (J : ℕ → Ω → ℝ) (dt t s : ℝ),
+  MolecularDynamics.Chapter06Review.rademacherJumps P J → 0 < dt → 0 ≤ t → t ≤ s →
+  (∫ sample, MolecularDynamics.Chapter06Review.interpolatedWalk J dt s sample -
+    MolecularDynamics.Chapter06Review.interpolatedWalk J dt t sample ∂P) = 0 := by
+  sorry
+
+/-- source_id: MD-6.2.1-WalkDiffusion · unnumbered_claim · §6.2.1 · 印刷p.226–227 / PDFp.247–248
+[EXTRA] [EXTRA]完整连续路径空间C([0,T],ℝ)弱法则、各时Gaussian边际、独立增量和全部有界连续路径检验函数；使用实际线性插值的n项和，不将单时CLT计为路径Donsker已证。
+[EXTRA] [EXTRA]印刷含端点的多一项有限和与标准n项版本之差在扩散极限消失须另核；连续版本和不可微性质另条保留。 -/
+theorem walkDiffusion :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (J : ℕ → Ω → ℝ) (T : ℝ), MolecularDynamics.Chapter06Review.rademacherJumps P J → 0 < T →
+  ∃ μ : Measure (C(Icc (0 : ℝ) T, ℝ)), IsProbabilityMeasure μ ∧
+    (∀ t : Icc (0 : ℝ) T, μ.map (fun w ↦ w t) = gaussianReal 0 t.1.toNNReal) ∧
+    (∀ s t : Icc (0 : ℝ) T, s ≤ t →
+      HasLaw (fun w : C(Icc (0 : ℝ) T, ℝ) ↦ w t-w s) (gaussianReal 0 (t.1-s.1).toNNReal) μ) ∧
+    (∀ k : ℕ, ∀ ts : Fin (k+1) → Icc (0 : ℝ) T, Monotone ts →
+      iIndepFun (fun i : Fin k ↦ fun w : C(Icc (0 : ℝ) T, ℝ) ↦ w (ts i.succ)-w (ts i.castSucc)) μ) ∧
+    ∀ F : C(Icc (0 : ℝ) T, ℝ) → ℝ, Continuous F → Bornology.IsBounded (Set.range F) →
+      ∃ Y : ℕ → Ω → C(Icc (0 : ℝ) T, ℝ),
+        (∀ K : ℕ, 0 < K → ∀ sample t, Y K sample t = MolecularDynamics.Chapter06Review.interpolatedWalk J (T/K) t sample) ∧
+        Tendsto (fun K ↦ ∫ sample, F (Y K sample) ∂P) atTop (𝓝 (∫ w, F w ∂μ)) := by
+  sorry
+
+/-- source_id: MD-6.2.1-WienerVector · definition · §6.2.1 · 印刷p.227 / PDFp.248 -/
+def wienerVector {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin n → ℝ)) (P : Measure Ω) : Prop :=
+  MolecularDynamics.textbookIsWienerVector B P
+
+/-- source_id: MD-6.2.1-WienerIncrement · (6.7) · §6.2.1 · 印刷p.227 / PDFp.248
+[EXTRA] [EXTRA]实际IsPreBrownianReal模型、任意非负s,t、完整Gaussian法则与二阶矩；不局限等距网格。 -/
+theorem wienerIncrement :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W : ℝ≥0 → Ω → ℝ), IsPreBrownianReal W P → ∀ s t : ℝ≥0,
+      HasLaw (fun sample ↦ W t sample-W s sample) (gaussianReal 0 (|((t : ℝ)-s)|).toNNReal) P ∧
+      (∫ sample, (W t sample-W s sample)^2 ∂P)=|((t : ℝ)-s)| := by
+  intro Ω inst P W hW s t
+  have hl : HasLaw (fun sample ↦ W t sample-W s sample)
+      (gaussianReal 0 (|((t : ℝ)-s)|).toNNReal) P := by
+    convert hW.hasLaw_sub t s using 1
+    apply congrArg (gaussianReal 0)
+    apply NNReal.coe_injective
+    simp [Real.nndist_eq, Real.nnabs]
+  refine ⟨hl, ?_⟩
+  simpa only [Real.coe_toNNReal _ (abs_nonneg _)] using
+    MolecularDynamics.textbookCenteredGaussian_secondMoment hl
+
+/-- source_id: MD-6.2.1-WienerContinuousVersion · unnumbered_claim · §6.2.1 · 印刷p.226–227 / PDFp.247–248
+[EXTRA] [EXTRA]从实际PreBrownian Gaussian法则构造AE连续修改，保持每个时刻AE一致；不将连续性本身作存在连续版本定理的前提。 -/
+theorem wienerContinuousVersion :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W : ℝ≥0 → Ω → ℝ), IsPreBrownianReal W P →
+  ∃ V : ℝ≥0 → Ω → ℝ, (∀ t, W t =ᵐ[P] V t) ∧ ∀ᵐ sample ∂P, Continuous (fun t ↦ V t sample) := by
+  sorry
+
+/-- source_id: MD-6.2.1-WienerNondifferentiable · unnumbered_claim · §6.2.1 · 印刷p.226–227 / PDFp.247–248
+[EXTRA] [EXTRA]实际PreBrownian法则与连续路径版本，结论AE每个正时刻不可微；不将不可微性作前提。 -/
+theorem wienerNondifferentiable :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W : ℝ≥0 → Ω → ℝ), IsPreBrownianReal W P →
+  (∀ᵐ sample ∂P, Continuous (fun t : ℝ≥0 ↦ W t sample)) →
+  ∀ᵐ sample ∂P, ∀ t : ℝ, 0 < t → ¬ DifferentiableAt ℝ (fun s ↦ W s.toNNReal sample) t := by
+  sorry
+
+/-- source_id: MD-6.2.1-WienerFutureCompletedHistory · unnumbered_claim · §6.2.1 · 印刷p.227 / PDFp.248
+[EXTRA] [EXTRA]真实多维Wiener、真实未来连续路径与整个零集完成的过去filtration独立；独立对象全部保留。粗事件条件概率式另条疑误，不将本条视为该式证明。 -/
+theorem wienerFutureCompletedHistory
+    {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P) (S : ℝ≥0) (T : ℝ) :
+    Indep ((inferInstance : MeasurableSpace C(Icc (0 : ℝ) T, Fin Nc → ℝ)).comap
+        (textbookWienerVectorContinuousPath (textbookWienerVectorFuture B S) T))
+      (textbookWienerVectorCompletedFiltration B P hB S) P.completion := by
+  apply MolecularDynamics.textbookWienerVectorFuture_independent_completed_filtration <;> assumption
+
+/-- source_id: MD-6.2.1-GridWienerIncrementLaw · extra_claim · §6.2.1 · 印刷p.227 / PDFp.248
+[EXTRA] [EXTRA]等距T/K网格完整Gaussian法则；任意时刻原结论另条WienerIncrement保留。 -/
+theorem gridWienerIncrementLaw {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) (K : ℕ) (k : Fin K) :
+    HasLaw (textbookWienerIncrement W T K k) (gaussianReal 0 (T / (K : ℝ≥0))) P := by
+  apply MolecularDynamics.textbookWienerIncrement_hasLaw <;> assumption
+
+/-- source_id: MD-6.2.1-GridIncrementIndependent · extra_claim · §6.2.1 · 印刷p.227 / PDFp.248
+[EXTRA] [EXTRA]实际等距有限增量族iIndepFun；整条未来路径独立在上一条保留。 -/
+theorem gridIncrementIndependent {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) (K : ℕ) :
+    iIndepFun (textbookWienerIncrement W T K) P := by
+  apply MolecularDynamics.textbookWienerIncrement_independent <;> assumption
+
+/-- source_id: MD-6.2.1-WienerContinuousPathEval · extra_claim · §6.2.1 · 印刷p.226–227 / PDFp.247–248
+[EXTRA] [EXTRA]给定连续样本的真实C([0,T],ℝⁿ)值与所有时刻原路径一致；不证明从PreBrownian构造连续修改。 -/
+theorem wienerContinuousPathEval {Nc : ℕ} {Ω : Type*}
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (T : ℝ) (sample : Ω)
+    (hc : Continuous (fun t ↦ B t sample)) (t : Icc 0 T) :
+    textbookWienerVectorContinuousPath B T sample t = B ⟨t.1, t.2.1⟩ sample := by
+  apply MolecularDynamics.textbookWienerVectorContinuousPath_eval <;> assumption
+
+/-- source_id: MD-6.2.1-WienerContinuousPathMeasurable · extra_claim · §6.2.1 · 印刷p.226–227 / PDFp.247–248
+[EXTRA] [EXTRA]给定真实连续Wiener模型导出整个连续路径空间AE可测性；不是将路径可测结论作假设。 -/
+theorem wienerContinuousPathMeasurable {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P) (T : ℝ) :
+    AEMeasurable (textbookWienerVectorContinuousPath B T) P := by
+  apply MolecularDynamics.textbookWienerVectorContinuousPath_aemeasurable <;> assumption
+
+/-- source_id: MD-6.2.1-CoarseMarkovPrinted · unnumbered_claim · §6.2.1 · 印刷p.227 / PDFp.248
+[ERRATUM?] 印刷用任意粗事件B(X(t0))替代完整当前状态的条件σ代数；一般不成立，例如B=univ时过去事件仍可影响未来。 -/
+theorem coarseMarkovPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W : ℝ≥0 → Ω → ℝ), IsPreBrownianReal W P →
+  ∀ (a b c : Set ℝ) (past present future : ℝ≥0),
+    MeasurableSet a → MeasurableSet b → MeasurableSet c → past < present → present < future →
+    0 < P ((W present ⁻¹' b) ∩ (W past ⁻¹' c)) →
+    P ((W future ⁻¹' a) ∩ ((W present ⁻¹' b) ∩ (W past ⁻¹' c))) /
+      P ((W present ⁻¹' b) ∩ (W past ⁻¹' c)) =
+    P ((W future ⁻¹' a) ∩ (W present ⁻¹' b)) / P (W present ⁻¹' b) := by
+  sorry
+
+/-- source_id: MD-6.2.1-StateMarkovMeaning · definition · §6.2.1 · 印刷p.227 / PDFp.248
+[EXTRA] [EXTRA]明确以真实当前状态σ(Xs)及过去history作条件期望；仅定义完整Markov意义，不计任意过程满足它已证。 -/
+def stateMarkovMeaning {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (X : ℝ≥0 → Ω → ℝ) (history : ℝ≥0 → MeasurableSpace Ω) : Prop :=
+  ∀ s t : ℝ≥0, s ≤ t → ∀ a : Set ℝ, MeasurableSet a →
+    MeasureTheory.condExp (history s) P (fun sample ↦ a.indicator (fun _ ↦ (1 : ℝ)) (X t sample)) =ᵐ[P]
+    MeasureTheory.condExp (MeasurableSpace.comap (X s) inferInstance) P
+      (fun sample ↦ a.indicator (fun _ ↦ (1 : ℝ)) (X t sample))
+
+/-- source_id: MD-6.2.2-RiemannTags · unnumbered_claim · §6.2.2 · 印刷p.228 / PDFp.249
+[EXTRA] [EXTRA]非负窗口和所有合法任意tags；完整标签无关性，没有缩减为仅左端点特例。 -/
+theorem riemannTags : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → ℕ → ℝ),
+  0 ≤ T → ContinuousOn g (Icc 0 T) →
+  (∀ K k : ℕ, 0 < K → k < K → tags K k ∈ Icc ((k : ℝ)*T/K) (((k : ℝ)+1)*T/K)) →
+  Tendsto (fun K : ℕ ↦ ∑ k ∈ Finset.range K, g (tags K k)*(T/K)) atTop
+    (𝓝 (∫ t in (0 : ℝ)..T, g t)) := by
+  sorry
+
+/-- source_id: MD-6.2.2-ItoLeftSum · definition · §6.2.2 · 印刷p.228 / PDFp.249 -/
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+
+/-- source_id: MD-6.2.2-StrictItoIntegral · definition · §6.2.2 · 印刷p.228–229 / PDFp.249–250
+[EXTRA] [EXTRA]显式所有有限和与极限的L²资格，防止Bochner非可积默认值0伪造均方收敛；真实取样和极限，不假设任何求值结论。 -/
+def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T K) 2 P) ∧
+  MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample,
+    (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample-Y sample)^2 ∂P) atTop (𝓝 0)
+
+/-- source_id: MD-6.2.2-WeakItoAlias · definition · §6.2.2 · 印刷p.228–229 / PDFp.249–250
+[ERRATUM?] 既有Review定义仅要求Y∈L²及误差Bochner积分收敛，未要求各有限和L²，非可积默认积分0会掩盖错误；不得用于新PASS SDE证明。 -/
+def weakItoAlias {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample, (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample - Y sample)^2 ∂P) atTop (𝓝 0)
+
+/-- source_id: MD-6.2.2-StratonovichSum · definition · §6.2.2 · 印刷p.228 / PDFp.249 -/
+def stratonovichSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g (((k : ℝ)+1/2)*T/K) sample *
+    (W (((k : ℝ)+1)*T/K) sample-W ((k : ℝ)*T/K) sample)
+
+/-- source_id: MD-6.2.2-SelfItoFiniteIdentity · unnumbered_claim · §6.2.2 · 印刷p.228–229 / PDFp.249–250
+[EXTRA] [EXTRA]真实PreBrownian、K>0和AE W0=0；保存完整有限和望远镜恒等。 -/
+theorem selfItoFiniteIdentity {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) {K : ℕ} (hK : 0 < K) :
+    ∀ᵐ sample ∂P, 2 * textbookWienerSelfItoSum W T K sample =
+      W T sample ^ 2 - textbookWienerQuadraticSum W T K sample := by
+  apply MolecularDynamics.textbookWienerSelfItoSum_identity <;> assumption
+
+/-- source_id: MD-6.2.2-Proposition62 · Proposition 6.2 · §6.2.2 · 印刷p.229–230 / PDFp.250–251
+[EXTRA] [EXTRA]实际PreBrownian law、τ≥0、全部均方极限；印刷最后K→0是笔误，更正K→∞。
+[ERRATUM?] 印刷证明的独立交叉项展开带负号；平方展开应正号，见单独疑误条。 -/
+theorem proposition62 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    Tendsto (fun K : ℕ ↦ ∫ sample,
+      (textbookWienerQuadraticSum W T K sample - (T : ℝ)) ^ 2 ∂P) atTop (𝓝 0) := by
+  apply MolecularDynamics.textbookWienerQuadraticSum_meanSquare_tendsto <;> assumption
+
+/-- source_id: MD-6.2.2-MeanSquareConvergence · definition · §6.2.2 · 印刷p.229 / PDFp.250
+[EXTRA] [EXTRA]显式L²随机变量资格防止非可积Bochner默认值；不假设收敛结论。 -/
+def meanSquareConvergence {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (A : ℕ → Ω → ℝ) (B : Ω → ℝ) : Prop :=
+  (∀ K, MemLp (A K) 2 P) ∧ MemLp B 2 P ∧
+  Tendsto (fun K ↦ ∫ sample, (A K sample-B sample)^2 ∂P) atTop (𝓝 0)
+
+/-- source_id: MD-6.2.2-WienerMidpointSum · definition · §6.2.2 · 印刷p.228 / PDFp.249 -/
+noncomputable def wienerMidpointSum {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} (W : ℝ≥0 → Ω → ℝ) (T : ℝ≥0) (K : ℕ) : Ω → ℝ :=
+  fun sample ↦ ∑ k : Fin K, W (textbookWienerTime T (2 * K) (2 * k.val + 1)) sample *
+    textbookWienerIncrement W T K k sample
+
+/-- source_id: MD-6.2.2-GaussianIncrementMean · unnumbered_claim · §6.2.2 · 印刷p.230 / PDFp.251
+[EXTRA] [EXTRA]任意真实中心Gaussian完整法则推出零均值；增量law桥接先前已保存。 -/
+theorem gaussianIncrementMean {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
+    {X : Ω → ℝ} {v : ℝ≥0} (hX : HasLaw X (gaussianReal 0 v) P) :
+    (∫ sample, X sample ∂P) = 0 := by
+  rw [hX.integral_eq, integral_id_gaussianReal]
+
+/-- source_id: MD-6.2.2-GaussianIncrementSecond · unnumbered_claim · §6.2.2 · 印刷p.230 / PDFp.251
+[EXTRA] [EXTRA]真实中心Gaussian法则导出完整矩；不将矩结论前置。 -/
+theorem gaussianIncrementSecond {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {X : Ω → ℝ} {v : ℝ≥0}
+    (hX : HasLaw X (gaussianReal 0 v) P) :
+    (∫ sample, X sample ^ 2 ∂P) = (v : ℝ) := by
+  apply MolecularDynamics.textbookCenteredGaussian_secondMoment <;> assumption
+
+/-- source_id: MD-6.2.2-GaussianIncrementFourth · unnumbered_claim · §6.2.2 · 印刷p.230 / PDFp.251
+[EXTRA] [EXTRA]真实中心Gaussian法则导出完整矩；不将矩结论前置。 -/
+theorem gaussianIncrementFourth {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {X : Ω → ℝ} {v : ℝ≥0}
+    (hX : HasLaw X (gaussianReal 0 v) P) :
+    (∫ sample, X sample ^ 4 ∂P) = 3 * (v : ℝ) ^ 2 := by
+  apply MolecularDynamics.textbookCenteredGaussian_fourthMoment <;> assumption
+
+/-- source_id: MD-6.2.2-QuadraticMeanSquareError · unnumbered_claim · §6.2.2 · 印刷p.230 / PDFp.251
+[EXTRA] [EXTRA]实际PreBrownian且K>0；精确误差，不是仅Tendsto0。 -/
+theorem quadraticMeanSquareError {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) {K : ℕ} (hK : 0 < K) :
+    (∫ sample, (textbookWienerQuadraticSum W T K sample - (T : ℝ)) ^ 2 ∂P) =
+      2 * (T : ℝ) ^ 2 / (K : ℝ) := by
+  apply MolecularDynamics.textbookWienerQuadraticSum_meanSquareError <;> assumption
+
+/-- source_id: MD-6.2.2-SelfItoIntegral · unnumbered_claim · §6.2.2 · 印刷p.230 / PDFp.251
+[EXTRA] [EXTRA]真实L²见证、全均方收敛及AE求值三项保留；有限和L²另条补足。 -/
+theorem selfItoIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerSelfItoSum W T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧ ∀ᵐ sample ∂P, Y sample = (W T sample ^ 2 - (T : ℝ)) / 2 := by
+  apply MolecularDynamics.textbookWienerSelfItoIntegral_exists <;> assumption
+
+/-- source_id: MD-6.2.2-SelfStratonovichIntegral · unnumbered_claim · §6.2.2 · 印刷p.230 / PDFp.251
+[EXTRA] [EXTRA]真实时间中点和、L²见证、整体均方极限、AE求值；原O(√δt)单步启发不足，正式整体均方误差证明不直接丢弃逐步残项。 -/
+theorem selfStratonovichIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerMidpointSum W T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧ ∀ᵐ sample ∂P, Y sample = W T sample ^ 2 / 2 := by
+  apply MolecularDynamics.textbookWienerSelfStratonovichIntegral_exists <;> assumption
+
+/-- source_id: MD-6.2.2-Proposition63 · Proposition 6.3 · §6.2.2 · 印刷p.231 / PDFp.252
+[EXTRA] [EXTRA]实际PreBrownian与C¹ g已足；完整构造L²见证、均方极限、Gaussian law、零均值及二阶矩，不仅保存矩。 -/
+theorem proposition63 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) {g : ℝ → ℝ} (hg : ContDiff ℝ 1 g) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerDeterministicSum W g T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧
+      HasLaw Y (gaussianReal 0 (textbookWienerDeterministicVariance g T)) P ∧
+      (∫ sample, Y sample ∂P) = 0 ∧ (∫ sample, Y sample ^ 2 ∂P) = ∫ x in (0 : ℝ)..T, g x ^ 2 := by
+  apply MolecularDynamics.textbookWienerDeterministicIto_proposition63 <;> assumption
+
+/-- source_id: MD-6.2.2-QuadraticSumExpectation · unnumbered_claim · §6.2.2 · 印刷p.229 / PDFp.250
+[EXTRA] [EXTRA]实际上每个K>0有限和期望已经恰等于τ；均方极限在Prop6.2保留。 -/
+theorem quadraticSumExpectation {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) {K : ℕ} (hK : 0 < K) :
+    (∫ sample, textbookWienerQuadraticSum W T K sample ∂P) = (T : ℝ) := by
+  apply MolecularDynamics.textbookWienerQuadraticSum_integral <;> assumption
+
+/-- source_id: MD-6.2.2-SelfItoLimitL2 · extra_claim · §6.2.2 · 印刷p.230 / PDFp.251
+[EXTRA] [EXTRA]实际有限和/候选极限的L²资格，由Gaussian law证明，不作为求值假设；补足严格均方意义。 -/
+theorem selfItoLimitL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    MemLp (fun sample ↦ (W T sample ^ 2 - (T : ℝ)) / 2) 2 P := by
+  apply MolecularDynamics.textbookWienerSelfItoLimit_memLp <;> assumption
+
+/-- source_id: MD-6.2.2-SelfItoSumsL2 · extra_claim · §6.2.2 · 印刷p.230 / PDFp.251
+[EXTRA] [EXTRA]实际有限和/候选极限的L²资格，由Gaussian law证明，不作为求值假设；补足严格均方意义。 -/
+theorem selfItoSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) {K : ℕ} (hK : 0 < K) :
+    MemLp (textbookWienerSelfItoSum W T K) 2 P := by
+  apply MolecularDynamics.textbookWienerSelfItoSum_memLp <;> assumption
+
+/-- source_id: MD-6.2.2-MidpointSumsL2 · extra_claim · §6.2.2 · 印刷p.230 / PDFp.251
+[EXTRA] [EXTRA]实际有限和/候选极限的L²资格，由Gaussian law证明，不作为求值假设；补足严格均方意义。 -/
+theorem midpointSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) {K : ℕ} (hK : 0 < K) :
+    MemLp (textbookWienerMidpointSum W T K) 2 P := by
+  apply MolecularDynamics.textbookWienerMidpointSum_memLp <;> assumption
+
+/-- source_id: MD-6.2.2-DeterministicIntegralProcess · (6.8) · §6.2.2 · 印刷p.231 / PDFp.252
+[EXTRA] [EXTRA]全部非负时间真实严格L²积分关系；Y0=0从零时间L²极限导出，不能把单时Gaussian独立采样当同一过程。 -/
+def deterministicIntegralProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W Y : ℝ → Ω → ℝ) (g : ℝ → ℝ) : Prop :=
+  ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W (fun s _ ↦ g s) T (Y T)
+
+/-- source_id: MD-6.2.2-DeterministicStrobePrinted · unnumbered_claim · §6.2.2 · 印刷p.231 / PDFp.252
+[ERRATUM?] 生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。 -/
+theorem deterministicStrobePrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W Y : ℝ → Ω → ℝ) (g : ℝ → ℝ) (times : ℕ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → ContDiff ℝ 1 g →
+  deterministicIntegralProcess P W Y g → Monotone times → (∀ k, 0 ≤ times k) →
+  ∀ k, HasLaw (fun sample ↦ Y (times (k+1)) sample-Y (times k) sample)
+    (gaussianReal 0 (Real.sqrt (∫ s in (0 : ℝ)..times (k+1), g s^2)).toNNReal) P := by
+  sorry
+
+/-- source_id: MD-6.2.2-DeterministicStrobeCorrected · unnumbered_claim · §6.2.2 · 印刷p.231 / PDFp.252
+[EXTRA] [EXTRA]相邻时间积分g²为完整增量方差，并保存整个增量族独立性；不是仅单时law；强L²模型。 -/
+theorem deterministicStrobeCorrected : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W Y : ℝ → Ω → ℝ) (g : ℝ → ℝ) (times : ℕ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → ContDiff ℝ 1 g →
+  deterministicIntegralProcess P W Y g → Monotone times → (∀ k, 0 ≤ times k) →
+  (∀ k, HasLaw (fun sample ↦ Y (times (k+1)) sample-Y (times k) sample)
+    (gaussianReal 0 (∫ s in times k..times (k+1), g s^2).toNNReal) P) ∧
+  iIndepFun (fun k sample ↦ Y (times (k+1)) sample-Y (times k) sample) P := by
+  sorry
+
+/-- source_id: MD-6.2.2-StochasticDifferentialIntegral · definition · §6.2.2 · 印刷p.231 / PDFp.252 -/
+def stochasticDifferentialIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (Y integralOfDifferential : ℝ → Ω → ℝ) : Prop :=
+  ∀ T : ℝ, 0 ≤ T → integralOfDifferential T =ᵐ[P] (fun sample ↦ Y T sample-Y 0 sample)
 
 end MD.Ch06

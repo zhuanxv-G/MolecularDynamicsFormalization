@@ -52,6 +52,54 @@
 | MD-6.1.5-VirialFieldNotPeriodic | 224/245 | PASS | 待网站审计 | self-contained |
 | MD-6.1.3-DensityPositive | 218/239 | PASS | 待网站审计 | self-contained |
 | MD-6.1.5-KineticWeightFactorization | 221/242 | PASS | 待网站审计 | self-contained |
+| MD-6.2-EnergySupportObstruction | 224/245 | PASS | 待网站审计 | self-contained |
+| MD-6.2-CanonicalSamplingObstruction | 224/245 | PASS | 待网站审计 | self-contained |
+| MD-6.2.1-RademacherJumps | 225/246 | PASS | 待网站审计 | self-contained |
+| MD-6.2.1-RandomWalk | 225/246 | PASS | 待网站审计 | self-contained |
+| MD-6.2.1-WalkRecurrence | 225/246 | PASS | 待网站审计 | self-contained |
+| MD-6.2.1-WalkInitial | 225/246 | PASS | 待网站审计 | self-contained |
+| MD-6.2.1-WalkVariance | 225–226/246–247 | PASS | 待网站审计 | incomplete |
+| MD-6.2.1-DiffusiveWalk | 226/247 | PASS | 待网站审计 | self-contained |
+| MD-6.2.1-InterpolatedWalk | 226/247 | PASS | 待网站审计 | self-contained |
+| MD-6.2.1-WalkIncrement | 225–226/246–247 | PASS | 待网站审计 | self-contained |
+| MD-6.2.1-WalkGridMoments | 226/247 | PASS | 待网站审计 | incomplete |
+| MD-6.2.1-InterpolatedWalkMean | 226/247 | PASS | 待网站审计 | incomplete |
+| MD-6.2.1-WalkDiffusion | 226–227/247–248 | PASS | 待网站审计 | incomplete |
+| MD-6.2.1-WienerVector | 227/248 | PASS | 待网站审计 | self-contained |
+| MD-6.2.1-WienerIncrement | 227/248 | PASS | 待网站审计 | self-contained |
+| MD-6.2.1-WienerContinuousVersion | 226–227/247–248 | PASS | 待网站审计 | incomplete |
+| MD-6.2.1-WienerNondifferentiable | 226–227/247–248 | PASS | 待网站审计 | incomplete |
+| MD-6.2.1-WienerFutureCompletedHistory | 227/248 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.1-GridWienerIncrementLaw | 227/248 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.1-GridIncrementIndependent | 227/248 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.1-WienerContinuousPathEval | 226–227/247–248 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.1-WienerContinuousPathMeasurable | 226–227/247–248 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.1-CoarseMarkovPrinted | 227/248 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.2.1-StateMarkovMeaning | 227/248 | PASS | 待网站审计 | self-contained |
+| MD-6.2.2-RiemannTags | 228/249 | PASS | 待网站审计 | incomplete |
+| MD-6.2.2-ItoLeftSum | 228/249 | PASS | 待网站审计 | self-contained |
+| MD-6.2.2-StrictItoIntegral | 228–229/249–250 | PASS | 待网站审计 | self-contained |
+| MD-6.2.2-WeakItoAlias | 228–229/249–250 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.2.2-StratonovichSum | 228/249 | PASS | 待网站审计 | self-contained |
+| MD-6.2.2-SelfItoFiniteIdentity | 228–229/249–250 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-Proposition62 | 229–230/250–251 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-MeanSquareConvergence | 229/250 | PASS | 待网站审计 | self-contained |
+| MD-6.2.2-WienerMidpointSum | 228/249 | PASS | 待网站审计 | self-contained |
+| MD-6.2.2-GaussianIncrementMean | 230/251 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-GaussianIncrementSecond | 230/251 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-GaussianIncrementFourth | 230/251 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-QuadraticMeanSquareError | 230/251 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-SelfItoIntegral | 230/251 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-SelfStratonovichIntegral | 230/251 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-Proposition63 | 231/252 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-QuadraticSumExpectation | 229/250 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-SelfItoLimitL2 | 230/251 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-SelfItoSumsL2 | 230/251 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-MidpointSumsL2 | 230/251 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.2.2-DeterministicIntegralProcess | 231/252 | PASS | 待网站审计 | self-contained |
+| MD-6.2.2-DeterministicStrobePrinted | 231/252 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.2.2-DeterministicStrobeCorrected | 231/252 | PASS | 待网站审计 | incomplete |
+| MD-6.2.2-StochasticDifferentialIntegral | 231/252 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -65,6 +113,14 @@
   [ERRATUM?]式(6.3)的ρβ已含Zcan⁻¹，式(6.4)再乘一次导致Avβ(1)=Zcan⁻¹，而后文p.221使用标准归一化平均。
 - MD-6.1.5-PartitionInversePrinted：不默改原式、不从可积性偷推partition=1；保留不成立的字面反转等式。
   [ERRATUM?]此页印刷Zcan⁻¹=积分，与p.218的Zcan=积分相反；字面保留，标准DensityNormalization仍按真实积分归一化。
+- MD-6.2.1-CoarseMarkovPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  印刷用任意粗事件B(X(t0))替代完整当前状态的条件σ代数；一般不成立，例如B=univ时过去事件仍可影响未来。
+- MD-6.2.2-WeakItoAlias：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  既有Review定义仅要求Y∈L²及误差Bochner积分收敛，未要求各有限和L²，非可积默认积分0会掩盖错误；不得用于新PASS SDE证明。
+- MD-6.2.2-Proposition62：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  印刷证明的独立交叉项展开带负号；平方展开应正号，见单独疑误条。
+- MD-6.2.2-DeterministicStrobePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。
 
 ## 1. MD-6.1.1-Microcanonical · definition · 印刷p.214 / PDFp.235
 
@@ -102,7 +158,7 @@ def microcanonical {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:22](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:22>)（`MD.Ch06.microcanonical`）。
+位置：[Blueprint/Ch06.lean:24](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:24>)（`MD.Ch06.microcanonical`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -145,7 +201,7 @@ def entropy (kB : ℝ) (Z : ℝ → ℝ) (E : ℝ) : ℝ := kB * Real.log (Z E)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:26](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:26>)（`MD.Ch06.entropy`）。
+位置：[Blueprint/Ch06.lean:28](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:28>)（`MD.Ch06.entropy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -195,7 +251,7 @@ theorem independentPartition :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:30](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:30>)（`MD.Ch06.independentPartition`）。
+位置：[Blueprint/Ch06.lean:32](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:32>)（`MD.Ch06.independentPartition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -243,7 +299,7 @@ theorem entropyAdditivity :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:47](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:47>)（`MD.Ch06.entropyAdditivity`）。
+位置：[Blueprint/Ch06.lean:49](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:49>)（`MD.Ch06.entropyAdditivity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -295,7 +351,7 @@ theorem entropyEquilibrium :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:56](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:56>)（`MD.Ch06.entropyEquilibrium`）。
+位置：[Blueprint/Ch06.lean:58](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:58>)（`MD.Ch06.entropyEquilibrium`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -340,7 +396,7 @@ def temperature (S : ℝ → ℝ) (E : ℝ) : ℝ := (MolecularDynamics.Chapter0
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:66](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:66>)（`MD.Ch06.temperature`）。
+位置：[Blueprint/Ch06.lean:68](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:68>)（`MD.Ch06.temperature`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -384,7 +440,7 @@ def inverseThermal (kB T : ℝ) : ℝ := (kB * T)⁻¹
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:69](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:69>)（`MD.Ch06.inverseThermal`）。
+位置：[Blueprint/Ch06.lean:71](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:71>)（`MD.Ch06.inverseThermal`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -436,7 +492,7 @@ theorem bathBoltzmannPrinted : ∀ (S : ℝ → ℝ) (energy kB β : ℝ),
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:74](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:74>)（`MD.Ch06.bathBoltzmannPrinted`）。
+位置：[Blueprint/Ch06.lean:76](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:76>)（`MD.Ch06.bathBoltzmannPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -486,7 +542,7 @@ theorem logTemperature : ∀ (kB : ℝ) (Z : ℝ → ℝ) (energy : ℝ),
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:84](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:84>)（`MD.Ch06.logTemperature`）。
+位置：[Blueprint/Ch06.lean:86](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:86>)（`MD.Ch06.logTemperature`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -534,7 +590,7 @@ theorem bathMeanValue : ∀ (S : ℝ → ℝ) (energy s : ℝ),
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:100](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:100>)（`MD.Ch06.bathMeanValue`）。
+位置：[Blueprint/Ch06.lean:102](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:102>)（`MD.Ch06.bathMeanValue`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -582,7 +638,7 @@ theorem bathTaylorEstimate :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:114](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:114>)（`MD.Ch06.bathTaylorEstimate`）。
+位置：[Blueprint/Ch06.lean:116](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:116>)（`MD.Ch06.bathTaylorEstimate`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -632,7 +688,7 @@ theorem boltzmannConstantSlope : ∀ (S : ℝ → ℝ) (energy kB β : ℝ),
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:122](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:122>)（`MD.Ch06.boltzmannConstantSlope`）。
+位置：[Blueprint/Ch06.lean:124](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:124>)（`MD.Ch06.boltzmannConstantSlope`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -683,7 +739,7 @@ theorem canonicalCDFPrinted : ∀ (ZA ZB : ℝ → ℝ) (energy α : ℝ),
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:146](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:146>)（`MD.Ch06.canonicalCDFPrinted`）。
+位置：[Blueprint/Ch06.lean:148](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:148>)（`MD.Ch06.canonicalCDFPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -728,7 +784,7 @@ def canonicalEnergyDensity (Z : ℝ → ℝ) (β E : ℝ) : ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:154](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:154>)（`MD.Ch06.canonicalEnergyDensity`）。
+位置：[Blueprint/Ch06.lean:156](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:156>)（`MD.Ch06.canonicalEnergyDensity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -773,7 +829,7 @@ def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:158](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:158>)（`MD.Ch06.entropyFunctional`）。
+位置：[Blueprint/Ch06.lean:160](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:160>)（`MD.Ch06.entropyFunctional`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -822,7 +878,7 @@ def constrainedEntropyModel {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:162](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:162>)（`MD.Ch06.constrainedEntropyModel`）。
+位置：[Blueprint/Ch06.lean:164](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:164>)（`MD.Ch06.constrainedEntropyModel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -874,7 +930,7 @@ theorem entropyFirstVariation :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:171](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:171>)（`MD.Ch06.entropyFirstVariation`）。
+位置：[Blueprint/Ch06.lean:173](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:173>)（`MD.Ch06.entropyFirstVariation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -930,7 +986,7 @@ theorem entropyVariation :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:182](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:182>)（`MD.Ch06.entropyVariation`）。
+位置：[Blueprint/Ch06.lean:184](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:184>)（`MD.Ch06.entropyVariation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -978,7 +1034,7 @@ def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:193](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:193>)（`MD.Ch06.canonicalDensity`）。
+位置：[Blueprint/Ch06.lean:195](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:195>)（`MD.Ch06.canonicalDensity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1021,7 +1077,7 @@ def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : M
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:197](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:197>)（`MD.Ch06.massHamiltonian`）。
+位置：[Blueprint/Ch06.lean:199](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:199>)（`MD.Ch06.massHamiltonian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1070,7 +1126,7 @@ theorem partitionMass :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:202](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:202>)（`MD.Ch06.partitionMass`）。
+位置：[Blueprint/Ch06.lean:204](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:204>)（`MD.Ch06.partitionMass`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1123,7 +1179,7 @@ theorem partitionDomain : ∀ {n : ℕ}
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:211](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:211>)（`MD.Ch06.partitionDomain`）。
+位置：[Blueprint/Ch06.lean:213](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:213>)（`MD.Ch06.partitionDomain`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1171,7 +1227,7 @@ theorem finiteDomainPrinted : ∀ {n : ℕ} (Q : Set (MolecularDynamics.Chapter0
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:224](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:224>)（`MD.Ch06.finiteDomainPrinted`）。
+位置：[Blueprint/Ch06.lean:226](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:226>)（`MD.Ch06.finiteDomainPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1221,7 +1277,7 @@ theorem periodicPartitionBridge {N : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch06.lean:232](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:232>)（`MD.Ch06.periodicPartitionBridge`）。
+位置：[Blueprint/Ch06.lean:234](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:234>)（`MD.Ch06.periodicPartitionBridge`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1271,7 +1327,7 @@ theorem confiningPartition :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:241](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:241>)（`MD.Ch06.confiningPartition`）。
+位置：[Blueprint/Ch06.lean:243](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:243>)（`MD.Ch06.confiningPartition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1318,7 +1374,7 @@ theorem lennardJonesNonintegrable : ∀ β : ℝ, 0 < β →
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:249](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:249>)（`MD.Ch06.lennardJonesNonintegrable`）。
+位置：[Blueprint/Ch06.lean:251](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:251>)（`MD.Ch06.lennardJonesNonintegrable`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1364,7 +1420,7 @@ theorem lennardJonesConfinement : ∀ ε : ℝ, 0 < ε → ∃ C : ℝ,
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:255](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:255>)（`MD.Ch06.lennardJonesConfinement`）。
+位置：[Blueprint/Ch06.lean:257](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:257>)（`MD.Ch06.lennardJonesConfinement`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1413,7 +1469,7 @@ theorem periodicWeightIntegrable {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch06.lean:267](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:267>)（`MD.Ch06.periodicWeightIntegrable`）。
+位置：[Blueprint/Ch06.lean:269](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:269>)（`MD.Ch06.periodicWeightIntegrable`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1460,7 +1516,7 @@ theorem periodicPartitionPositive {N : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch06.lean:276](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:276>)（`MD.Ch06.periodicPartitionPositive`）。
+位置：[Blueprint/Ch06.lean:278](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:278>)（`MD.Ch06.periodicPartitionPositive`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1508,7 +1564,7 @@ def polynomialObservable {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:283](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:283>)（`MD.Ch06.polynomialObservable`）。
+位置：[Blueprint/Ch06.lean:285](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:285>)（`MD.Ch06.polynomialObservable`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1555,7 +1611,7 @@ def canonicalAveragePrinted {Nc : ℕ} (H : SymplecticCoordinates Nc → ℝ) (�
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:288](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:288>)（`MD.Ch06.canonicalAveragePrinted`）。
+位置：[Blueprint/Ch06.lean:290](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:290>)（`MD.Ch06.canonicalAveragePrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1603,7 +1659,7 @@ noncomputable def canonicalAverage {Nc : ℕ}
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:295](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:295>)（`MD.Ch06.canonicalAverage`）。
+位置：[Blueprint/Ch06.lean:297](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:297>)（`MD.Ch06.canonicalAverage`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1649,7 +1705,7 @@ theorem canonicalAverageOne {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch06.lean:301](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:301>)（`MD.Ch06.canonicalAverageOne`）。
+位置：[Blueprint/Ch06.lean:303](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:303>)（`MD.Ch06.canonicalAverageOne`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1706,7 +1762,7 @@ theorem equipartition :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:309](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:309>)（`MD.Ch06.equipartition`）。
+位置：[Blueprint/Ch06.lean:311](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:311>)（`MD.Ch06.equipartition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1760,7 +1816,7 @@ theorem configTemperature :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:319](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:319>)（`MD.Ch06.configTemperature`）。
+位置：[Blueprint/Ch06.lean:321](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:321>)（`MD.Ch06.configTemperature`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1831,7 +1887,7 @@ theorem proposition61 {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch06.lean:332](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:332>)（`MD.Ch06.proposition61`）。
+位置：[Blueprint/Ch06.lean:334](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:334>)（`MD.Ch06.proposition61`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1885,7 +1941,7 @@ theorem weightedFluxZero {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch06.lean:348](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:348>)（`MD.Ch06.weightedFluxZero`）。
+位置：[Blueprint/Ch06.lean:350](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:350>)（`MD.Ch06.weightedFluxZero`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1939,7 +1995,7 @@ theorem canonicalDivergenceIdentity {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch06.lean:361](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:361>)（`MD.Ch06.canonicalDivergenceIdentity`）。
+位置：[Blueprint/Ch06.lean:363](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:363>)（`MD.Ch06.canonicalDivergenceIdentity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1992,7 +2048,7 @@ theorem temperatureChoiceDerivatives :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:375](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:375>)（`MD.Ch06.temperatureChoiceDerivatives`）。
+位置：[Blueprint/Ch06.lean:377](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:377>)（`MD.Ch06.temperatureChoiceDerivatives`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2042,7 +2098,7 @@ theorem periodicBoundaryCancellation {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch06.lean:386](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:386>)（`MD.Ch06.periodicBoundaryCancellation`）。
+位置：[Blueprint/Ch06.lean:388](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:388>)（`MD.Ch06.periodicBoundaryCancellation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2090,7 +2146,7 @@ def meanEnergyConstraint {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch06.lean:395](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:395>)（`MD.Ch06.meanEnergyConstraint`）。
+位置：[Blueprint/Ch06.lean:397](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:397>)（`MD.Ch06.meanEnergyConstraint`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2136,7 +2192,7 @@ theorem densityNormalization : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:401](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:401>)（`MD.Ch06.densityNormalization`）。
+位置：[Blueprint/Ch06.lean:403](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:403>)（`MD.Ch06.densityNormalization`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2193,7 +2249,7 @@ theorem partitionInversePrinted : ∀ {n : ℕ}
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:412](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:412>)（`MD.Ch06.partitionInversePrinted`）。
+位置：[Blueprint/Ch06.lean:414](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:414>)（`MD.Ch06.partitionInversePrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2244,7 +2300,7 @@ theorem weightedFluxIdentity {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch06.lean:426](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:426>)（`MD.Ch06.weightedFluxIdentity`）。
+位置：[Blueprint/Ch06.lean:428](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:428>)（`MD.Ch06.weightedFluxIdentity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2300,7 +2356,7 @@ theorem virialTemperature : ∀ {n : ℕ} (hn : 0 < n)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch06.lean:437](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:437>)（`MD.Ch06.virialTemperature`）。
+位置：[Blueprint/Ch06.lean:439](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:439>)（`MD.Ch06.virialTemperature`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2346,7 +2402,7 @@ theorem virialFieldNotPeriodic : ∀ {n : ℕ} (i : Fin n) (q : Fin n → ℝ),
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:452](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:452>)（`MD.Ch06.virialFieldNotPeriodic`）。
+位置：[Blueprint/Ch06.lean:454](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:454>)（`MD.Ch06.virialFieldNotPeriodic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2394,7 +2450,7 @@ theorem densityPositive : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:460](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:460>)（`MD.Ch06.densityPositive`）。
+位置：[Blueprint/Ch06.lean:462](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:462>)（`MD.Ch06.densityPositive`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2445,7 +2501,7 @@ theorem kineticWeightFactorization : ∀ {n : ℕ}
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch06.lean:469](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:469>)（`MD.Ch06.kineticWeightFactorization`）。
+位置：[Blueprint/Ch06.lean:471](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:471>)（`MD.Ch06.kineticWeightFactorization`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2454,3 +2510,2361 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/KineticWeightFactorization.json；blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean；blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log。
 
 签名SHA256：`1b1ef702bd72ab1499b98574727ebd7e5162f47eaa21981116c3ef9f8876110f`；原文SHA256：`75451576622e14d14932ccc906ef74b12849c1e1c3156000cb94c13f8094dabe`。
+
+## 1. MD-6.2-EnergySupportObstruction · extra_claim · 印刷p.224 / PDFp.245
+
+### 2. 原文陈述
+
+> It should be apparent that constant-energy dynamics (designed to sample the microcanonical ensemble with constant energy $E$) will not sample the canonical distribution in the absence of the heat bath: such Newtonian trajectories cannot access regions of the phase space where $H(z)\neq H(z_0)$, where $z_0$ is the initial condition.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem energySupportObstruction :
+  ∀ {n : ℕ} (H : MolecularDynamics.Chapter06Review.V n → ℝ) (E : ℝ)
+    (z : ℝ → MolecularDynamics.Chapter06Review.V n) (μ : Measure (MolecularDynamics.Chapter06Review.V n)), Continuous H →
+  (∀ t, H (z t) = E) → 0 < μ {x | H x ≠ E} →
+  (∀ t, z t ∉ {x | H x ≠ E}) ∧ μ {x | H x ≠ E} ≠ 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.energySupportObstruction；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际能量守恒轨道、连续H及另一能量区域有正μ测度；本条是支持障碍，完整积分/时间平均障碍在下一条保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:487](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:487>)（`MD.Ch06.energySupportObstruction`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/EnergySupportObstruction.json；blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa.lean；blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa.log；blueprint/ch06/validation/short_search/route-e376a5d7554bdd36faa1.lean；blueprint/ch06/validation/short_search/route-e376a5d7554bdd36faa1.log。
+
+签名SHA256：`451fe22908ce429b60736aef984e796e46de56ac378375b351ccdf5483e54c4f`；原文SHA256：`e2deb933d54e9c3138b054c6eba867be15d8902a341122526ac86e09bff98328`。
+
+## 1. MD-6.2-CanonicalSamplingObstruction · unnumbered_claim · 印刷p.224 / PDFp.245
+
+### 2. 原文陈述
+
+> such Newtonian trajectories cannot access regions of the phase space where $H(z)\neq H(z_0)$, where $z_0$ is the initial condition.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem canonicalSamplingObstruction : ∀ {n : ℕ}
+    (H : MolecularDynamics.Chapter06Review.V n → ℝ) (energy : ℝ)
+    (z : ℝ → MolecularDynamics.Chapter06Review.V n)
+    (μ : Measure (MolecularDynamics.Chapter06Review.V n)) [IsProbabilityMeasure μ],
+  Continuous H → (∀ t, H (z t) = energy) → 0 < μ {x | H x ≠ energy} →
+  ∃ g : MolecularDynamics.Chapter06Review.V n → ℝ, Integrable g μ ∧
+    0 < (∫ x, g x ∂μ) ∧
+    Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.canonicalSamplingObstruction；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]目标为真实概率测度、其他能量区域正测度；结论构造实际可积检验函数，其沿轨道时间平均为零而目标平均严格正；不以采样失败为前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:501](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:501>)（`MD.Ch06.canonicalSamplingObstruction`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/CanonicalSamplingObstruction.json；blueprint/ch06/validation/short_search/route-f5828f06cbca3e82f48d.lean；blueprint/ch06/validation/short_search/route-f5828f06cbca3e82f48d.log；blueprint/ch06/validation/short_search/route-a87b3720393dd5836898.lean；blueprint/ch06/validation/short_search/route-a87b3720393dd5836898.log。
+
+签名SHA256：`be8aba9e18bc18291c409232c2d4c36b3f296b54351677cff28b5f4c94c64d5a`；原文SHA256：`077cdf15186c732dbb899ace7657f13611542ee40542657c3ee2ed58adef5db8`。
+
+## 1. MD-6.2.1-RademacherJumps · definition · 印刷p.225 / PDFp.246
+
+### 2. 原文陈述
+
+> In the classic model of a random walk the jump takes values $\pm1$ with equal probability.
+> The increments of the random walk are the differences $\Delta X_n=X_n-X_{n-1}=\delta xJ_{n-1}$, thus $(X_n)$ is a random process with independent increments.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def rademacherJumps {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (J : ℕ → Ω → ℝ) : Prop :=
+  IsProbabilityMeasure P ∧ iIndepFun J P ∧ ∀ k,
+    Measurable (J k) ∧ MemLp (J k) 2 P ∧
+    (∀ᵐ sample ∂P, J k sample = 1 ∨ J k sample = -1) ∧ (∫ sample, J k sample ∂P) = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.rademacherJumps；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实概率空间、独立可测L²跳跃、AE取±1且期望零；这些条件保留公平Rademacher意义，不把二阶有限和结论作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:530](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:530>)（`MD.Ch06.rademacherJumps`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`72ff393fc703946819bd5e2c908eafd45b92e6d06dc01a48eb271e43370d8f77`；原文SHA256：`c5f863a76c7e2e1c06615fe738e71a7ee6aace96e09906d33e658da54b2009eb`。
+
+## 1. MD-6.2.1-RandomWalk · definition · 印刷p.225 / PDFp.246
+
+### 2. 原文陈述
+
+> That is, we have
+> \[X_{n+1}=X_n+\delta x J_n.\]
+> We initiate the random walk with $X_0=0$.
+> The solution $X_n$ of the random walk may be written
+> \[X_n=\delta x\sum_{k=0}^{n-1}J_k.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def randomWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω) : ℝ :=
+  dx * ∑ k ∈ Finset.range n, J k sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.randomWalk；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:537](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:537>)（`MD.Ch06.randomWalk`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`f79bc15bc3a337d9920f9c0f405d0533f8b6c02885f7a4cac73bc8b615fd90dc`；原文SHA256：`fc650514c777055051f1a6d51ad6e86736ff3fd11a70cd558a554a8f4e8f76f7`。
+
+## 1. MD-6.2.1-WalkRecurrence · unnumbered_claim · 印刷p.225 / PDFp.246
+
+### 2. 原文陈述
+
+> A random walk is a discrete stochastic process in which the state $X_n$ at a given instant (defined by the index $n$) is related to the state $X_{n-1}$, at step $n-1$ by an offset that may be viewed as a random variable. That is, we have
+> \[X_{n+1}=X_n+\delta x J_n.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem walkRecurrence :
+  ∀ {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω),
+  MolecularDynamics.Chapter06Review.randomWalk J dx (n+1) sample = MolecularDynamics.Chapter06Review.randomWalk J dx n sample + dx*J n sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.walkRecurrence；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:541](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:541>)（`MD.Ch06.walkRecurrence`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/WalkRecurrence.json；blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WalkRecurrence.lean；blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WalkRecurrence.log。
+
+签名SHA256：`a99de4afc08ebd117e5e547c44624580fcf9cc8c57120873a211c251597f150f`；原文SHA256：`e0230a37d5f048ea582a64d454aeb6e0b84e9181786dd31721bf44b95dffa3a5`。
+
+## 1. MD-6.2.1-WalkInitial · unnumbered_claim · 印刷p.225 / PDFp.246
+
+### 2. 原文陈述
+
+> We initiate the random walk with $X_0=0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem walkInitial : ∀ {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (sample : Ω),
+  MolecularDynamics.Chapter06Review.randomWalk J dx 0 sample = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.walkInitial；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:549](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:549>)（`MD.Ch06.walkInitial`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/WalkInitial.json；blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WalkInitial.lean；blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WalkInitial.log。
+
+签名SHA256：`6e04d575f51eaf8a4892ea44995107561e97a0c6c11b373f03d7575cf99e2746`；原文SHA256：`a98da6c320761c74c7d97de8b3ed2fb63e61955691d86676ff5f50efc2634d80`。
+
+## 1. MD-6.2.1-WalkVariance · unnumbered_claim · 印刷p.225–226 / PDFp.246–247
+
+### 2. 原文陈述
+
+> hence the variance is
+> \[\mathbb E X_n^2=\delta x^2\mathbb E\left(\sum_{k=0}^{n-1}J_k\right)^2.\]
+> Expanding the squared sum we see that there are (i) $n$ squares $J_k^2$ plus (ii) products of the form $J_kJ_l$, $k\neq l$. Clearly the former are always one and the latter have zero expectation, thus
+> \[\mathbb E X_n^2=n\delta x^2.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem walkVariance :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ), MolecularDynamics.Chapter06Review.rademacherJumps P J →
+  (∫ sample, MolecularDynamics.Chapter06Review.randomWalk J dx n sample ∂P) = 0 ∧ (∫ sample, MolecularDynamics.Chapter06Review.randomWalk J dx n sample ^ 2 ∂P) = n*dx^2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.walkVariance；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整真实概率、L²、独立且公平±1跳跃；同时保存零均值与原完整二阶矩，不将和的二阶矩或交叉项零作前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:556](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:556>)（`MD.Ch06.walkVariance`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待Mathlib有限独立和二阶矩及Rademacher单位二阶矩短桥；缺项具体保留，不把标量CLT当作该证明。
+
+签名SHA256：`bc80671099dd0c60099b62b82e9cfc6eaea99c11405b3fd2bfbf4e53e80eb654`；原文SHA256：`fd631657a37bb5cb432831208f7d1b9131022de81969679f4884471944cabb00`。
+
+## 1. MD-6.2.1-DiffusiveWalk · definition · 印刷p.226 / PDFp.247
+
+### 2. 原文陈述
+
+> Let $t_n=n\delta t$, $n=0,1,\ldots,\nu$ and define
+> \[Y(t_{k+1})=Y(t_k)+\sqrt{\delta t}J_k,\qquad k=0,1,\ldots,\nu-1,\]
+> where $Y(0)=0$. Effectively we are making the size of the jump $\delta x$ taken at each step of the random walk equal to $\sqrt{\delta t}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def diffusiveWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt : ℝ) : ℕ → Ω → ℝ :=
+  MolecularDynamics.Chapter06Review.randomWalk J (Real.sqrt dt)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.diffusiveWalk；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:563](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:563>)（`MD.Ch06.diffusiveWalk`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`af59228d4a019ab67b66fd29db4e555e6febe1d7b5c4e87c7ac2c6a6992164c1`；原文SHA256：`40334728ad56814a87764c08549dfed8b91db2e32cc03998d8ba76ee7f973782`。
+
+## 1. MD-6.2.1-InterpolatedWalk · definition · 印刷p.226 / PDFp.247
+
+### 2. 原文陈述
+
+> For points between $t_k$ and $t_{k+1}$ we define the value of $Y(t)$ by linear interpolation:
+> \[Y(t)=Y_k+\Delta Y_k\frac{t-t_k}{\delta t}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def interpolatedWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt t : ℝ) (sample : Ω) : ℝ :=
+  let n := Nat.floor (t / dt)
+  MolecularDynamics.Chapter06Review.diffusiveWalk J dt n sample + (t - n * dt) / dt *
+    (MolecularDynamics.Chapter06Review.diffusiveWalk J dt (n+1) sample - MolecularDynamics.Chapter06Review.diffusiveWalk J dt n sample)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.interpolatedWalk；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:567](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:567>)（`MD.Ch06.interpolatedWalk`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c10a31404838d0637e58ea6b800adb06c839332a88fa3fd43935f91293859029`；原文SHA256：`79872f9c129fb8fe7a75f5b0641f4eb7fd87fd3736f068f9d99f272450bba223`。
+
+## 1. MD-6.2.1-WalkIncrement · definition · 印刷p.225–226 / PDFp.246–247
+
+### 2. 原文陈述
+
+> The increments of the random walk are the differences $\Delta X_n=X_n-X_{n-1}=\delta xJ_{n-1}$, thus $(X_n)$ is a random process with independent increments.
+> We will use the shorthand $Y_k=Y(t_k)$ and $\Delta Y_k=Y_{k+1}-Y_k=\sqrt{\delta t}J_k$. The increments are clearly independent.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω) : ℝ :=
+  MolecularDynamics.Chapter06Review.randomWalk J dx (n+1) sample - MolecularDynamics.Chapter06Review.randomWalk J dx n sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.walkIncrement；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:573](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:573>)（`MD.Ch06.walkIncrement`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`3301e6e2cd5f828b0e9cc65e25296a7d55b16529c6ab8f7574378e77e568c31a`；原文SHA256：`65e242b683f4d81cdae7f3177cfed21483e666d7529de8cc9cc9cdc819ea66d6`。
+
+## 1. MD-6.2.1-WalkGridMoments · unnumbered_claim · 印刷p.226 / PDFp.247
+
+### 2. 原文陈述
+
+> Let us observe the following facts, for $0\leq k\leq l\leq\nu$
+> \[(i)\quad\mathbb E(Y_l-Y_k)=0,\qquad(ii)\quad\operatorname{Var}(Y_l-Y_k)=t_l-t_k.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem walkGridMoments :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (J : ℕ → Ω → ℝ) (dt : ℝ) (k l : ℕ), MolecularDynamics.Chapter06Review.rademacherJumps P J → 0 < dt → k ≤ l →
+  (∫ sample, MolecularDynamics.Chapter06Review.diffusiveWalk J dt l sample-MolecularDynamics.Chapter06Review.diffusiveWalk J dt k sample ∂P) = 0 ∧
+  (∫ sample, (MolecularDynamics.Chapter06Review.diffusiveWalk J dt l sample-MolecularDynamics.Chapter06Review.diffusiveWalk J dt k sample)^2 ∂P) = ((l : ℝ)-k)*dt
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.walkGridMoments；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际独立公平L²跳跃、正δt和k≤l；保存零均值与完整增量二阶矩，不假设这些结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:578](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:578>)（`MD.Ch06.walkGridMoments`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：依赖有限独立中心和二阶矩短桥；不以连续插值的近似方差代替。
+
+签名SHA256：`5fc1f02a569b59371a8fa5499e4c8a02d9d2d1edd53a9376c68f496ea6f4447d`；原文SHA256：`584a1a13cfa1bee47d1e264e114835192fb1bd860e76929b1432cff204efcf00`。
+
+## 1. MD-6.2.1-InterpolatedWalkMean · unnumbered_claim · 印刷p.226 / PDFp.247
+
+### 2. 原文陈述
+
+> Then, for $0\leq t\leq s\leq\tau$, we have
+> \[\mathbb E(Y(s)-Y(t))=0.\]
+> This is easy to demonstrate. However, the intuitive corresponding statement $\operatorname{Var}(Y(s)-Y(t))=(s-t)$ does not quite hold due to the reliance on interpolation.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem interpolatedWalkMean : ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (J : ℕ → Ω → ℝ) (dt t s : ℝ),
+  MolecularDynamics.Chapter06Review.rademacherJumps P J → 0 < dt → 0 ≤ t → t ≤ s →
+  (∫ sample, MolecularDynamics.Chapter06Review.interpolatedWalk J dt s sample -
+    MolecularDynamics.Chapter06Review.interpolatedWalk J dt t sample ∂P) = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.interpolatedWalkMean；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实线性插值均值；任意有限正时间可置于τ窗口，不声称精确插值方差等于s−t。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:587](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:587>)（`MD.Ch06.interpolatedWalkMean`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待实际有限和零均值及线性插值积分短桥。
+
+签名SHA256：`91b999b517899243fda10287dc3c5a31b08e614c3fa6cd7331b4477fa86d240b`；原文SHA256：`e541400cdac2cc25f8a584ea4302a48b1a139090d60de7e6744afad3941be06c`。
+
+## 1. MD-6.2.1-WalkDiffusion · unnumbered_claim · 印刷p.226–227 / PDFp.247–248
+
+### 2. 原文陈述
+
+> In the diffusion limit the motion of the random walk can be viewed as an everywhere continuous (but almost nowhere smooth) path which is called a Wiener process (after Norbert Wiener).
+> \[W(t)=\lim_{\delta t\to0}^{c}\sqrt{\delta t}\sum_{k=0}^{\lfloor t/\delta t\rfloor}J_k.\]
+> The convergence here, signified by the symbol $\lim^c$ is in the sense of distributions.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem walkDiffusion :
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (J : ℕ → Ω → ℝ) (T : ℝ), MolecularDynamics.Chapter06Review.rademacherJumps P J → 0 < T →
+  ∃ μ : Measure (C(Icc (0 : ℝ) T, ℝ)), IsProbabilityMeasure μ ∧
+    (∀ t : Icc (0 : ℝ) T, μ.map (fun w ↦ w t) = gaussianReal 0 t.1.toNNReal) ∧
+    (∀ s t : Icc (0 : ℝ) T, s ≤ t →
+      HasLaw (fun w : C(Icc (0 : ℝ) T, ℝ) ↦ w t-w s) (gaussianReal 0 (t.1-s.1).toNNReal) μ) ∧
+    (∀ k : ℕ, ∀ ts : Fin (k+1) → Icc (0 : ℝ) T, Monotone ts →
+      iIndepFun (fun i : Fin k ↦ fun w : C(Icc (0 : ℝ) T, ℝ) ↦ w (ts i.succ)-w (ts i.castSucc)) μ) ∧
+    ∀ F : C(Icc (0 : ℝ) T, ℝ) → ℝ, Continuous F → Bornology.IsBounded (Set.range F) →
+      ∃ Y : ℕ → Ω → C(Icc (0 : ℝ) T, ℝ),
+        (∀ K : ℕ, 0 < K → ∀ sample t, Y K sample t = MolecularDynamics.Chapter06Review.interpolatedWalk J (T/K) t sample) ∧
+        Tendsto (fun K ↦ ∫ sample, F (Y K sample) ∂P) atTop (𝓝 (∫ w, F w ∂μ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.walkDiffusion；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整连续路径空间C([0,T],ℝ)弱法则、各时Gaussian边际、独立增量和全部有界连续路径检验函数；使用实际线性插值的n项和，不将单时CLT计为路径Donsker已证。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA]印刷含端点的多一项有限和与标准n项版本之差在扩散极限消失须另核；连续版本和不可微性质另条保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:597](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:597>)（`MD.Ch06.walkDiffusion`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺Donsker函数空间不变性原理及tightness；不建立大型概率路径理论，保留完整sorry。
+
+签名SHA256：`c059d733372a2c7562a13daba0322f0f0b8f9b7a11de3b7347afe746d398aa59`；原文SHA256：`fba1ad2f8bacb7f3f7c6efe8d143094a2d7f5ad487a168f9634d27b39807679c`。
+
+## 1. MD-6.2.1-WienerVector · definition · 印刷p.227 / PDFp.248
+
+### 2. 原文陈述
+
+> As we take $n$ to infinity, $\delta t$ to zero, in such a way that $n\delta t\to t$, we obtain the random variable $W(t)$ such that
+> \[W(t)\sim N(0,t).\]
+> For the Wiener process, we know that $W(t)-W(s)$ is normally distributed with mean zero and variance $|t-s|$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def wienerVector {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin n → ℝ)) (P : Measure Ω) : Prop :=
+  MolecularDynamics.textbookIsWienerVector B P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.wienerVector；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:613](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:613>)（`MD.Ch06.wienerVector`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2a6c2a30912a075761d7a639e47cd0c462921cb22dc7e3614aaf0a5e7760f17c`；原文SHA256：`59cfb33d50f385d22af02512c28c759613195db1ce1ee909e3d91e5b4a0350d6`。
+
+## 1. MD-6.2.1-WienerIncrement · (6.7) · 印刷p.227 / PDFp.248
+
+### 2. 原文陈述
+
+> Moreover, we may easily demonstrate that
+> \[\mathbb E(W(t)-W(s))^2=|t-s|.\tag{6.7}\]
+> For the Wiener process, we know that $W(t)-W(s)$ is normally distributed with mean zero and variance $|t-s|$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem wienerIncrement :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W : ℝ≥0 → Ω → ℝ), IsPreBrownianReal W P → ∀ s t : ℝ≥0,
+      HasLaw (fun sample ↦ W t sample-W s sample) (gaussianReal 0 (|((t : ℝ)-s)|).toNNReal) P ∧
+      (∫ sample, (W t sample-W s sample)^2 ∂P)=|((t : ℝ)-s)|
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.wienerIncrement；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际IsPreBrownianReal模型、任意非负s,t、完整Gaussian法则与二阶矩；不局限等距网格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:619](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:619>)（`MD.Ch06.wienerIncrement`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/WienerIncrement.json；blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WienerIncrement.lean；blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WienerIncrement.log。
+
+签名SHA256：`da3cd4a431c3969f12e6d6590e0a2fec0f5e0789d1d82e057b56d86f02e64120`；原文SHA256：`be905b3450bdc96fa01c5a30894186a837be58d0d013c650ada53bd762100eeb`。
+
+## 1. MD-6.2.1-WienerContinuousVersion · unnumbered_claim · 印刷p.226–227 / PDFp.247–248
+
+### 2. 原文陈述
+
+> In the diffusion limit the motion of the random walk can be viewed as an everywhere continuous (but almost nowhere smooth) path which is called a Wiener process.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem wienerContinuousVersion :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W : ℝ≥0 → Ω → ℝ), IsPreBrownianReal W P →
+  ∃ V : ℝ≥0 → Ω → ℝ, (∀ t, W t =ᵐ[P] V t) ∧ ∀ᵐ sample ∂P, Continuous (fun t ↦ V t sample)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.wienerContinuousVersion；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]从实际PreBrownian Gaussian法则构造AE连续修改，保持每个时刻AE一致；不将连续性本身作存在连续版本定理的前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:637](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:637>)（`MD.Ch06.wienerContinuousVersion`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待现成Kolmogorov连续修改桥接；若无完整桥接，不重建概率路径理论；给定连续模型的路径值封装另列[EXTRA]。
+
+签名SHA256：`8520e1b9487c469e84cc68731252c7bda99ef6a34bdf758c8b07f4edc28894de`；原文SHA256：`ed22288f32703e6fca8c04fe96cb96775ccefeb6a5f4dbb4d1cd25c5deb2e7f0`。
+
+## 1. MD-6.2.1-WienerNondifferentiable · unnumbered_claim · 印刷p.226–227 / PDFp.247–248
+
+### 2. 原文陈述
+
+> In the diffusion limit the motion of the random walk can be viewed as an everywhere continuous (but almost nowhere smooth) path which is called a Wiener process.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem wienerNondifferentiable :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W : ℝ≥0 → Ω → ℝ), IsPreBrownianReal W P →
+  (∀ᵐ sample ∂P, Continuous (fun t : ℝ≥0 ↦ W t sample)) →
+  ∀ᵐ sample ∂P, ∀ t : ℝ, 0 < t → ¬ DifferentiableAt ℝ (fun s ↦ W s.toNNReal sample) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.wienerNondifferentiable；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际PreBrownian法则与连续路径版本，结论AE每个正时刻不可微；不将不可微性作前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:645](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:645>)（`MD.Ch06.wienerNondifferentiable`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺Brownian路径振荡与处处不可微理论；不建大型路径理论，保留完整sorry。
+
+签名SHA256：`0b0e679b7b8b704af6c678d30c824f0b2b2efd86e2c16c4226dd1a6f9bc40fbc`；原文SHA256：`4fb3656fa6cba5051c27044018b78f213ca24a001092ffafeff37b02f62e3e22`。
+
+## 1. MD-6.2.1-WienerFutureCompletedHistory · unnumbered_claim · 印刷p.227 / PDFp.248
+
+### 2. 原文陈述
+
+> For the Wiener process, we know that $W(t)-W(s)$ is normally distributed with mean zero and variance $|t-s|$; this does not depend on whether there is additional information available regarding its value prior to $\min(t,s)$, that is to say, the Wiener process is a Markov process.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem wienerFutureCompletedHistory
+    {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P) (S : ℝ≥0) (T : ℝ) :
+    Indep ((inferInstance : MeasurableSpace C(Icc (0 : ℝ) T, Fin Nc → ℝ)).comap
+        (textbookWienerVectorContinuousPath (textbookWienerVectorFuture B S) T))
+      (textbookWienerVectorCompletedFiltration B P hB S) P.completion
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.wienerFutureCompletedHistory；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实多维Wiener、真实未来连续路径与整个零集完成的过去filtration独立；独立对象全部保留。粗事件条件概率式另条疑误，不将本条视为该式证明。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:654](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:654>)（`MD.Ch06.wienerFutureCompletedHistory`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerVectorFuture_independent_completed_filtration。
+
+签名SHA256：`ceb8c5c96f497e85de9aead5b460a8219a2cecb2bbcfac64ea961ba7ae2a97c9`；原文SHA256：`5a21bf2030c88a3a01acd0e4f9c101fb39896fae9938a0ff50c01df6442c7109`。
+
+## 1. MD-6.2.1-GridWienerIncrementLaw · extra_claim · 印刷p.227 / PDFp.248
+
+### 2. 原文陈述
+
+> For the Wiener process, we know that $W(t)-W(s)$ is normally distributed with mean zero and variance $|t-s|$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gridWienerIncrementLaw {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) (K : ℕ) (k : Fin K) :
+    HasLaw (textbookWienerIncrement W T K k) (gaussianReal 0 (T / (K : ℝ≥0))) P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.gridWienerIncrementLaw；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]等距T/K网格完整Gaussian法则；任意时刻原结论另条WienerIncrement保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:664](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:664>)（`MD.Ch06.gridWienerIncrementLaw`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerIncrement_hasLaw。
+
+签名SHA256：`704e624d56b15220d49a67b7c7e624b7f22bdb836c007383c05db0e648113bee`；原文SHA256：`897460896843f9289e0afb4fdfec5ed9516375cad9b3850b879294943004b2e2`。
+
+## 1. MD-6.2.1-GridIncrementIndependent · extra_claim · 印刷p.227 / PDFp.248
+
+### 2. 原文陈述
+
+> this does not depend on whether there is additional information available regarding its value prior to $\min(t,s)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gridIncrementIndependent {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) (K : ℕ) :
+    iIndepFun (textbookWienerIncrement W T K) P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.gridIncrementIndependent；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际等距有限增量族iIndepFun；整条未来路径独立在上一条保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:671](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:671>)（`MD.Ch06.gridIncrementIndependent`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerIncrement_independent。
+
+签名SHA256：`e4610014b2477147b5b0a4ec34b814bfef4469f30ab36955d62a18da2d483ba2`；原文SHA256：`7278921102bbc0bfae0c9c9535ea6394154f0803a63bcf4b8e9dc1b176af7abe`。
+
+## 1. MD-6.2.1-WienerContinuousPathEval · extra_claim · 印刷p.226–227 / PDFp.247–248
+
+### 2. 原文陈述
+
+> an everywhere continuous (but almost nowhere smooth) path which is called a Wiener process
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem wienerContinuousPathEval {Nc : ℕ} {Ω : Type*}
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (T : ℝ) (sample : Ω)
+    (hc : Continuous (fun t ↦ B t sample)) (t : Icc 0 T) :
+    textbookWienerVectorContinuousPath B T sample t = B ⟨t.1, t.2.1⟩ sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.wienerContinuousPathEval；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]给定连续样本的真实C([0,T],ℝⁿ)值与所有时刻原路径一致；不证明从PreBrownian构造连续修改。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:678](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:678>)（`MD.Ch06.wienerContinuousPathEval`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerVectorContinuousPath_eval。
+
+签名SHA256：`9f44f97d77f417ace9090bcbd034396c7d7dec324803e27e9a11c6029518307c`；原文SHA256：`4bf6adfd93a0f98e89f9cbf600a31ff3a14ac6c0ae7f9c154cfd828f0e497ce6`。
+
+## 1. MD-6.2.1-WienerContinuousPathMeasurable · extra_claim · 印刷p.226–227 / PDFp.247–248
+
+### 2. 原文陈述
+
+> an everywhere continuous (but almost nowhere smooth) path which is called a Wiener process
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem wienerContinuousPathMeasurable {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P) (T : ℝ) :
+    AEMeasurable (textbookWienerVectorContinuousPath B T) P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.wienerContinuousPathMeasurable；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]给定真实连续Wiener模型导出整个连续路径空间AE可测性；不是将路径可测结论作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:686](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:686>)（`MD.Ch06.wienerContinuousPathMeasurable`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerVectorContinuousPath_aemeasurable。
+
+签名SHA256：`de17537b303a919093a383b45be7c5fc6d5b1e01f45f4750f5e55cbb34517d39`；原文SHA256：`624218ba7b96d4e98e2588965d04e5ac7bcb55ec1675885ef0cfc962999e7c47`。
+
+## 1. MD-6.2.1-CoarseMarkovPrinted · unnumbered_claim · 印刷p.227 / PDFp.248
+
+### 2. 原文陈述
+
+> Let $A(x)$, $B(x)$ and $C(x)$ be three events dependent on state variable $x$, and let $t_+>t_0>t_-$ be three times, then, for a Markov process $X(t)$ we have (using the notation for conditional probability):
+> \[\Pr[A(X(t_+))\mid B(X(t_0)),C(X(t_-))]=\Pr[A(X(t_+))\mid B(X(t_0))].\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem coarseMarkovPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W : ℝ≥0 → Ω → ℝ), IsPreBrownianReal W P →
+  ∀ (a b c : Set ℝ) (past present future : ℝ≥0),
+    MeasurableSet a → MeasurableSet b → MeasurableSet c → past < present → present < future →
+    0 < P ((W present ⁻¹' b) ∩ (W past ⁻¹' c)) →
+    P ((W future ⁻¹' a) ∩ ((W present ⁻¹' b) ∩ (W past ⁻¹' c))) /
+      P ((W present ⁻¹' b) ∩ (W past ⁻¹' c)) =
+    P ((W future ⁻¹' a) ∩ (W present ⁻¹' b)) / P (W present ⁻¹' b)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.coarseMarkovPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 印刷用任意粗事件B(X(t0))替代完整当前状态的条件σ代数；一般不成立，例如B=univ时过去事件仍可影响未来。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:693](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:693>)（`MD.Ch06.coarseMarkovPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：不证明粗条件概率字面式；完整当前状态条件期望资格另条定义，现成未来独立桥保留。
+
+签名SHA256：`393ae864013b585dc000b1bee6da95a7786cd1db5ce11c6043c8709be39c70f1`；原文SHA256：`da1ca23a006e371ed938d286b5b4e53878eb2e601e65413f955d081de8d90c7e`。
+
+## 1. MD-6.2.1-StateMarkovMeaning · definition · 印刷p.227 / PDFp.248
+
+### 2. 原文陈述
+
+> More generally, when we say that a stochastic process is Markovian, we mean that the probability of a future event conditioned on the current state of the process and the past history of the process is the same as the probability conditioned on the current state of the process.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def stateMarkovMeaning {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (X : ℝ≥0 → Ω → ℝ) (history : ℝ≥0 → MeasurableSpace Ω) : Prop :=
+  ∀ s t : ℝ≥0, s ≤ t → ∀ a : Set ℝ, MeasurableSet a →
+    MeasureTheory.condExp (history s) P (fun sample ↦ a.indicator (fun _ ↦ (1 : ℝ)) (X t sample)) =ᵐ[P]
+    MeasureTheory.condExp (MeasurableSpace.comap (X s) inferInstance) P
+      (fun sample ↦ a.indicator (fun _ ↦ (1 : ℝ)) (X t sample))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.stateMarkovMeaning；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确以真实当前状态σ(Xs)及过去history作条件期望；仅定义完整Markov意义，不计任意过程满足它已证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:705](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:705>)（`MD.Ch06.stateMarkovMeaning`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`fb76687701f1ced759d8553520c0520e68bcd05545b728d3af91d61df37f9b1d`；原文SHA256：`c2d9234e8d32df9b45f9c6170369108987aea29e5eb1098dcb63a96f5f0fe61d`。
+
+## 1. MD-6.2.2-RiemannTags · unnumbered_claim · 印刷p.228 / PDFp.249
+
+### 2. 原文陈述
+
+> Recall that the Riemann integral of a continuous function $g$ on $[0,\tau]$ is the limit of Riemann sums constructed as follows: partition the interval $[0,\tau]$ into $K$ subintervals each of width $\delta t=\tau/K$, choose an arbitrary $t_k$ from the $k$th subinterval, $1\leq k\leq K$, and evaluate the integral as a limit of the sum of products:
+> \[\int_0^\tau g(t)dt=\lim_{K\to\infty}\sum_{k=0}^{K-1}g(t_k)\delta t.\]
+> We know that this limit does not depend on where the $t_k$ are chosen within the subintervals. For example we can take the left or right endpoint of each subinterval or the midpoint.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem riemannTags : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → ℕ → ℝ),
+  0 ≤ T → ContinuousOn g (Icc 0 T) →
+  (∀ K k : ℕ, 0 < K → k < K → tags K k ∈ Icc ((k : ℝ)*T/K) (((k : ℝ)+1)*T/K)) →
+  Tendsto (fun K : ℕ ↦ ∑ k ∈ Finset.range K, g (tags K k)*(T/K)) atTop
+    (𝓝 (∫ t in (0 : ℝ)..T, g t))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.riemannTags；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]非负窗口和所有合法任意tags；完整标签无关性，没有缩减为仅左端点特例。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:714](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:714>)（`MD.Ch06.riemannTags`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待现成带任意标记的Riemann求积完整桥接；不建立积分构造理论。
+
+签名SHA256：`00df021768c544846eb6396345bc9d95b97bc18ac8ebcac8f8bf64d571ec7747`；原文SHA256：`306e6b4c0e3be3a8907a33eeebfaf27d8d945e17796816bfa083016722cb759c`。
+
+## 1. MD-6.2.2-ItoLeftSum · definition · 印刷p.228 / PDFp.249
+
+### 2. 原文陈述
+
+> By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:
+> \[\sum_{k=0}^{K-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad K\to\infty.\]
+> The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.itoLeftSum；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:722](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:722>)（`MD.Ch06.itoLeftSum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`e1cd64bf3b4edeae8a7d1bf292e844323267f948a2846db1110c7f024f55e746`；原文SHA256：`83f05912e8ddaf453937f6678f2683d31c4c00eb677746b335664cb481eae4ab`。
+
+## 1. MD-6.2.2-StrictItoIntegral · definition · 印刷p.228–229 / PDFp.249–250
+
+### 2. 原文陈述
+
+> By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:
+> \[\sum_{k=0}^{K-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad K\to\infty.\]
+> The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
+> where, for a sequence of random variables, $A_K$ and a random variable $B$, we have
+> \[\operatorname{l.i.m.}_{K\to\infty}A_K=B\iff\lim_{K\to\infty}\mathbb E(A_K-B)^2=0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T K) 2 P) ∧
+  MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample,
+    (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample-Y sample)^2 ∂P) atTop (𝓝 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.strictItoIntegral；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]显式所有有限和与极限的L²资格，防止Bochner非可积默认值0伪造均方收敛；真实取样和极限，不假设任何求值结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:728](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:728>)（`MD.Ch06.strictItoIntegral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`69555ce0eea7f7da7dd5b52a53fe2003a79a1ac3a807d9eee6a859b7a7ecfc54`；原文SHA256：`c04fcf9d3591ed34dfa2933ab674f1c7998e14098a9322ba6647842d004467b4`。
+
+## 1. MD-6.2.2-WeakItoAlias · definition · 印刷p.228–229 / PDFp.249–250
+
+### 2. 原文陈述
+
+> By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:
+> \[\sum_{k=0}^{K-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad K\to\infty.\]
+> The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def weakItoAlias {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample, (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample - Y sample)^2 ∂P) atTop (𝓝 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.weakItoAlias；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 既有Review定义仅要求Y∈L²及误差Bochner积分收敛，未要求各有限和L²，非可积默认积分0会掩盖错误；不得用于新PASS SDE证明。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:736](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:736>)（`MD.Ch06.weakItoAlias`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：保留原正式库定义签名冻结；本地严格L²定义另列，严格模型用于后续新陈述。
+
+签名SHA256：`36f5c5f56aaa24d798725c70d3c9fc8ea4deffd49c8648d0e2cbb1c00280d306`；原文SHA256：`ed261975cfc22d13a03212907446eb3e85dfa0a42629c3bda9a0285e7f4df3b0`。
+
+## 1. MD-6.2.2-StratonovichSum · definition · 印刷p.228 / PDFp.249
+
+### 2. 原文陈述
+
+> By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:
+> \[\sum_{k=0}^{K-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad K\to\infty.\]
+> The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def stratonovichSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g (((k : ℝ)+1/2)*T/K) sample *
+    (W (((k : ℝ)+1)*T/K) sample-W ((k : ℝ)*T/K) sample)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.stratonovichSum；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:741](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:741>)（`MD.Ch06.stratonovichSum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`60fffe9986f5eb68074ccc704e12d3089eb8b476347448911e074b9171822b2b`；原文SHA256：`bb5ea836f3cfce303570de3166f86286c6405d7f368630efe8e7fe87d46bda29`。
+
+## 1. MD-6.2.2-SelfItoFiniteIdentity · unnumbered_claim · 印刷p.228–229 / PDFp.249–250
+
+### 2. 原文陈述
+
+> As an example, consider the case where $g(t)=W(t)$. We suppose this to be approximated by a sum
+> \[\int_0^\tau W(t)dW(t)\approx\sum_{k=0}^{K-1}W(k\delta t)[W((k+1)\delta t)-W(k\delta t)],\]
+> \[=\frac12\sum_{k=0}^{K-1}[W((k+1)\delta t)^2-W(k\delta t)^2-(W((k+1)\delta t)-W(k\delta t))^2].\]
+> Breaking this into two parts, we see that the first sum telescopes to give $W(\tau)^2$ (as $W(0)=0$).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem selfItoFiniteIdentity {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) {K : ℕ} (hK : 0 < K) :
+    ∀ᵐ sample ∂P, 2 * textbookWienerSelfItoSum W T K sample =
+      W T sample ^ 2 - textbookWienerQuadraticSum W T K sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.selfItoFiniteIdentity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实PreBrownian、K>0和AE W0=0；保存完整有限和望远镜恒等。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:747](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:747>)（`MD.Ch06.selfItoFiniteIdentity`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerSelfItoSum_identity。
+
+签名SHA256：`ba115f3b15926ea421e47c13525c0eed17cda820df8004ccd72d4abd1d0b669a`；原文SHA256：`7f124830511e7032f874d549a232664a9098e672beec0c6d9072b198fa5c2c67`。
+
+## 1. MD-6.2.2-Proposition62 · Proposition 6.2 · 印刷p.229–230 / PDFp.250–251
+
+### 2. 原文陈述
+
+> Proposition 6.2 Let $\delta t=\tau/K$ then
+> \[\operatorname{l.i.m.}_{K\to\infty}\sum_{k=0}^{K-1}[(W((k+1)\delta t)-W(k\delta t))^2]=\tau,\]
+> where, for a sequence of random variables, $A_K$ and a random variable $B$, we have
+> \[\operatorname{l.i.m.}_{K\to\infty}A_K=B\iff\lim_{K\to\infty}\mathbb E(A_K-B)^2=0.\]
+> (This is referred to as convergence in the mean square sense.)
+
+### 3. 原文证明
+
+<details>
+<summary>展开逐字原文证明</summary>
+
+> With $\tau,K$ fixed, we have $\delta t=\tau/K$.
+> Let $W_{K,k}=W((k+1)\delta t)-W(k\delta t)=W((k+1)\tau/K)-W(k\tau/K)$ and observe that
+> \[\sum_{k=0}^{K-1}W_{K,k}^2-\tau=\sum_{k=0}^{K-1}[W_{K,k}^2-\delta t].\]
+> Then
+> \[I\stackrel{\rm def}=\mathbb E(\sum_{k=0}^{K-1}W_{K,k}^2-\tau)^2=\mathbb E(\sum_{k=0}^{K-1}[W_{K,k}^2-\delta t])^2.\]
+> Terms of the form $Z_{K,k}\stackrel{\rm def}=W_{K,k}^2-\delta t$ are independent and have mean zero. Therefore
+> \[\mathbb E(\sum_{k=0}^{K-1}Z_{K,k})^2=\mathbb E\sum_{k=0}^{K-1}Z_{K,k}^2-2\mathbb E\sum_{k\ne l}Z_{K,k}Z_{K,l}=\mathbb E\sum_{k=0}^{K-1}Z_{K,k}^2,\]
+> where the last equation follows from independence of the increments ($\mathbb E Z_kZ_l=0$ if $k\ne l$).
+> Also observe that $\Delta W_k$ is a normally distributed random variable with the following properties
+> \[\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/K;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/K)^2.\]
+> Thus we have
+> \[I=\sum_{k=0}^{K-1}\mathbb E(\Delta W_{K,k}^2-\delta t)^2
+> =\sum_{k=0}^{K-1}\mathbb E[\Delta W_{K,k}^4-2\delta t\Delta W_{K,k}^2+\delta t^2]
+> =\sum_{k=0}^{K-1}[3\delta t^2-2\delta t^2+\delta t^2]=2K\delta t^2=2\tau^2/K.\]
+> Thus $I\to0$ as $K\to0$, which is the desired result.
+
+</details>
+
+逐字保存含印刷负号与K→0；正式桥接使用正确独立平方和及K→∞。
+
+### 4. Lean陈述
+
+```lean
+theorem proposition62 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    Tendsto (fun K : ℕ ↦ ∫ sample,
+      (textbookWienerQuadraticSum W T K sample - (T : ℝ)) ^ 2 ∂P) atTop (𝓝 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.proposition62；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际PreBrownian law、τ≥0、全部均方极限；印刷最后K→0是笔误，更正K→∞。 | [EXTRA] |
+| 原页核对/疑点 | 印刷证明的独立交叉项展开带负号；平方展开应正号，见单独疑误条。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:756](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:756>)（`MD.Ch06.proposition62`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerQuadraticSum_meanSquare_tendsto。
+
+签名SHA256：`a80757d4dd49c9ae8189927ca6cc847cc14350a8a1fd01742f460299011f7f87`；原文SHA256：`31156696f75191bc7b02e3144943df034f087a3e61bd286b86c4a75bc73ccdd2`。
+
+## 1. MD-6.2.2-MeanSquareConvergence · definition · 印刷p.229 / PDFp.250
+
+### 2. 原文陈述
+
+> where, for a sequence of random variables, $A_K$ and a random variable $B$, we have
+> \[\operatorname{l.i.m.}_{K\to\infty}A_K=B\iff\lim_{K\to\infty}\mathbb E(A_K-B)^2=0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def meanSquareConvergence {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (A : ℕ → Ω → ℝ) (B : Ω → ℝ) : Prop :=
+  (∀ K, MemLp (A K) 2 P) ∧ MemLp B 2 P ∧
+  Tendsto (fun K ↦ ∫ sample, (A K sample-B sample)^2 ∂P) atTop (𝓝 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.meanSquareConvergence；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]显式L²随机变量资格防止非可积Bochner默认值；不假设收敛结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:764](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:764>)（`MD.Ch06.meanSquareConvergence`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`a7b92ba5e5d977841590d1a9ad038f515c103e2ea23f60115da83371eb96124d`；原文SHA256：`98bb5c822f525f6fe995bed9099f41698f2609ae17ce5de0dae52ab4702bda99`。
+
+## 1. MD-6.2.2-WienerMidpointSum · definition · 印刷p.228 / PDFp.249
+
+### 2. 原文陈述
+
+> The choice $t_k=k\delta t$ (left endpoint) and the choice $t_k=(k+1/2)\delta t$ yield different formulas for the integral. The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def wienerMidpointSum {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} (W : ℝ≥0 → Ω → ℝ) (T : ℝ≥0) (K : ℕ) : Ω → ℝ :=
+  fun sample ↦ ∑ k : Fin K, W (textbookWienerTime T (2 * K) (2 * k.val + 1)) sample *
+    textbookWienerIncrement W T K k sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.wienerMidpointSum；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:770](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:770>)（`MD.Ch06.wienerMidpointSum`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`09e60f5dfd8faf15e64b16aba1a020e3e59e6f5017b7002f1a80105de1375996`；原文SHA256：`fc362c69d907d665499a5566b738a85689bc5bd90d92247b5d6d3919f664924b`。
+
+## 1. MD-6.2.2-GaussianIncrementMean · unnumbered_claim · 印刷p.230 / PDFp.251
+
+### 2. 原文陈述
+
+> Also observe that $\Delta W_k$ is a normally distributed random variable with the following properties
+> \[\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/K;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/K)^2.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gaussianIncrementMean {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
+    {X : Ω → ℝ} {v : ℝ≥0} (hX : HasLaw X (gaussianReal 0 v) P) :
+    (∫ sample, X sample ∂P) = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.gaussianIncrementMean；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]任意真实中心Gaussian完整法则推出零均值；增量law桥接先前已保存。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:776](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:776>)（`MD.Ch06.gaussianIncrementMean`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：ProbabilityTheory.HasLaw.integral_eq; ProbabilityTheory.integral_id_gaussianReal。
+
+签名SHA256：`a5ade2aa496c04c988a7380ab6474a166dd869b8b838d861a7d4bb7020692169`；原文SHA256：`f506cd30703198aa951b5a25799b826954ebccf59eb1150ba1978b456dc5914f`。
+
+## 1. MD-6.2.2-GaussianIncrementSecond · unnumbered_claim · 印刷p.230 / PDFp.251
+
+### 2. 原文陈述
+
+> Also observe that $\Delta W_k$ is a normally distributed random variable with the following properties
+> \[\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/K;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/K)^2.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gaussianIncrementSecond {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {X : Ω → ℝ} {v : ℝ≥0}
+    (hX : HasLaw X (gaussianReal 0 v) P) :
+    (∫ sample, X sample ^ 2 ∂P) = (v : ℝ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.gaussianIncrementSecond；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实中心Gaussian法则导出完整矩；不将矩结论前置。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:783](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:783>)（`MD.Ch06.gaussianIncrementSecond`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookCenteredGaussian_secondMoment。
+
+签名SHA256：`421c046ff00fcc8bfb15455a5c16c50b65b0a5b0c52c01c41e0bafed899453be`；原文SHA256：`818e38074841ab5c2a96c0df9d9595013b59c7c8cac5991898ebdc566818340b`。
+
+## 1. MD-6.2.2-GaussianIncrementFourth · unnumbered_claim · 印刷p.230 / PDFp.251
+
+### 2. 原文陈述
+
+> Also observe that $\Delta W_k$ is a normally distributed random variable with the following properties
+> \[\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/K;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/K)^2.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem gaussianIncrementFourth {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {X : Ω → ℝ} {v : ℝ≥0}
+    (hX : HasLaw X (gaussianReal 0 v) P) :
+    (∫ sample, X sample ^ 4 ∂P) = 3 * (v : ℝ) ^ 2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.gaussianIncrementFourth；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实中心Gaussian法则导出完整矩；不将矩结论前置。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:790](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:790>)（`MD.Ch06.gaussianIncrementFourth`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookCenteredGaussian_fourthMoment。
+
+签名SHA256：`119d6fa7c9e5294e868401c00a1a166adc2c1921d55c0579894b71467d10775a`；原文SHA256：`d7a629a3daa59ff2f6d440a8c62e09fb4fa1ce28bf4dba74b083b98e86035d0e`。
+
+## 1. MD-6.2.2-QuadraticMeanSquareError · unnumbered_claim · 印刷p.230 / PDFp.251
+
+### 2. 原文陈述
+
+> Thus we have
+> \[I=\sum_{k=0}^{K-1}\mathbb E(\Delta W_{K,k}^2-\delta t)^2
+> =\sum_{k=0}^{K-1}\mathbb E[\Delta W_{K,k}^4-2\delta t\Delta W_{K,k}^2+\delta t^2]
+> =\sum_{k=0}^{K-1}[3\delta t^2-2\delta t^2+\delta t^2]=2K\delta t^2=2\tau^2/K.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem quadraticMeanSquareError {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) {K : ℕ} (hK : 0 < K) :
+    (∫ sample, (textbookWienerQuadraticSum W T K sample - (T : ℝ)) ^ 2 ∂P) =
+      2 * (T : ℝ) ^ 2 / (K : ℝ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.quadraticMeanSquareError；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际PreBrownian且K>0；精确误差，不是仅Tendsto0。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:797](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:797>)（`MD.Ch06.quadraticMeanSquareError`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerQuadraticSum_meanSquareError。
+
+签名SHA256：`084feedf246a52c94ccc46a2bfefd0c520341340317c05a3663cdb63e99c2188`；原文SHA256：`cd6e56e9187c0f55164cc4b27625d2a0abdd79fa70b1ec32de2d368328a2377f`。
+
+## 1. MD-6.2.2-SelfItoIntegral · unnumbered_claim · 印刷p.230 / PDFp.251
+
+### 2. 原文陈述
+
+> The calculation implies that
+> \[\int_0^\tau W(t)dW(t)=\frac12(W(\tau)^2-\tau).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem selfItoIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerSelfItoSum W T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧ ∀ᵐ sample ∂P, Y sample = (W T sample ^ 2 - (T : ℝ)) / 2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.selfItoIntegral；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实L²见证、全均方收敛及AE求值三项保留；有限和L²另条补足。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:805](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:805>)（`MD.Ch06.selfItoIntegral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerSelfItoIntegral_exists。
+
+签名SHA256：`eab6b325a331e654a9e825a527a428ad3d253e5ca14d865ceccea21fda5f3e4f`；原文SHA256：`d2da9017559298a106051f688588e200e2dff6db3f7994eba57d7dc19451a8ab`。
+
+## 1. MD-6.2.2-SelfStratonovichIntegral · unnumbered_claim · 印刷p.230 / PDFp.251
+
+### 2. 原文陈述
+
+> In contrast, the Stratonovich (midpoint) integral can be calculated as
+> \[\int_0^\tau W(t)\circ dW(t)=\operatorname{l.i.m.}_{K\to\infty}\sum_{k=0}^{K-1}W(k\delta t+\delta t/2)[W((k+1)\delta t)-W(k\delta t)].\]
+> Writing
+> \[W(k\delta t+\delta t/2)=W(\frac{(k+1)\delta t+k\delta t}{2})=\frac12(W((k+1)\delta t)+W(k\delta t))+O(\sqrt{\delta t}),\]
+> allows us to evaluate the integral as
+> \[\int_0^\tau W(t)\circ dW(t)=\frac12\operatorname{l.i.m.}_{K\to\infty}\sum_{k=0}^{K-1}[W((k+1)\delta t)^2-W(k\delta t)^2]=\frac12W(\tau)^2.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem selfStratonovichIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerMidpointSum W T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧ ∀ᵐ sample ∂P, Y sample = W T sample ^ 2 / 2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.selfStratonovichIntegral；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实时间中点和、L²见证、整体均方极限、AE求值；原O(√δt)单步启发不足，正式整体均方误差证明不直接丢弃逐步残项。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:814](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:814>)（`MD.Ch06.selfStratonovichIntegral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerSelfStratonovichIntegral_exists。
+
+签名SHA256：`4eedf708bff0ca744c94e799c0f786583b02ce39171e0211be34c26cadbe5a64`；原文SHA256：`69a9355ba5e57a78839754c94a8421ebf2caa00167473dfe3cab03933d0afdb1`。
+
+## 1. MD-6.2.2-Proposition63 · Proposition 6.3 · 印刷p.231 / PDFp.252
+
+### 2. 原文陈述
+
+> Proposition 6.3 Let $g$ be a smooth deterministic function and $W(t)$ a Wiener process. The stochastic integral $Y(t)=\int_0^t g(s)dW(s)$ is, for all times $t\geq0$, a normally distributed random variable such that
+> \[\mathbb E(Y(t))=0;\quad\mathbb E(Y^2(t))=\sigma^2(t)=\int_0^t g(s)^2ds.\]
+
+### 3. 原文证明
+
+> See Exercise 2.
+
+原书仅指向习题；按本任务不转录习题。现成正式构造证明桥接。
+
+### 4. Lean陈述
+
+```lean
+theorem proposition63 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) {g : ℝ → ℝ} (hg : ContDiff ℝ 1 g) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerDeterministicSum W g T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧
+      HasLaw Y (gaussianReal 0 (textbookWienerDeterministicVariance g T)) P ∧
+      (∫ sample, Y sample ∂P) = 0 ∧ (∫ sample, Y sample ^ 2 ∂P) = ∫ x in (0 : ℝ)..T, g x ^ 2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.proposition63；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际PreBrownian与C¹ g已足；完整构造L²见证、均方极限、Gaussian law、零均值及二阶矩，不仅保存矩。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:823](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:823>)（`MD.Ch06.proposition63`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerDeterministicIto_proposition63。
+
+签名SHA256：`d824ddf5f217f440f427078ca1d04bff3b2e67d826907063029b6491a47d294a`；原文SHA256：`4876a4854c999c2dab1a98cb0c69c4102848ccebc78778d3979f2601f3a44427`。
+
+## 1. MD-6.2.2-QuadraticSumExpectation · unnumbered_claim · 印刷p.229 / PDFp.250
+
+### 2. 原文陈述
+
+> On the other hand, from (6.7), we have
+> \[\lim_{K\to\infty}\mathbb E\sum_{k=0}^{K-1}[(W((k+1)\delta t)-W(k\delta t))^2]=\tau.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem quadraticSumExpectation {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) {K : ℕ} (hK : 0 < K) :
+    (∫ sample, textbookWienerQuadraticSum W T K sample ∂P) = (T : ℝ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.quadraticSumExpectation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际上每个K>0有限和期望已经恰等于τ；均方极限在Prop6.2保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:834](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:834>)（`MD.Ch06.quadraticSumExpectation`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerQuadraticSum_integral。
+
+签名SHA256：`7fe01ed03d28363f128d709e3f7f5ea0fae6b008d0e55044f5ec335845b2e6fa`；原文SHA256：`a7e0ab3d308939eaa8abc6bd79c626dbe755c3b3b9642e728ec26055740a74d1`。
+
+## 1. MD-6.2.2-SelfItoLimitL2 · extra_claim · 印刷p.230 / PDFp.251
+
+### 2. 原文陈述
+
+> First, we should be careful regarding the sense in which we expect convergence, since sequences of random variables may converge in various ways.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem selfItoLimitL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    MemLp (fun sample ↦ (W T sample ^ 2 - (T : ℝ)) / 2) 2 P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.selfItoLimitL2；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际有限和/候选极限的L²资格，由Gaussian law证明，不作为求值假设；补足严格均方意义。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:841](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:841>)（`MD.Ch06.selfItoLimitL2`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerSelfItoLimit_memLp。
+
+签名SHA256：`bd692aacd034c462f231059cf347001a42aaffa03c55dcf03297f6b23d99bb4e`；原文SHA256：`5272cf62884b34a398453c48f2e7c6a1908cc8a2367c94e38233e6a91dcc6277`。
+
+## 1. MD-6.2.2-SelfItoSumsL2 · extra_claim · 印刷p.230 / PDFp.251
+
+### 2. 原文陈述
+
+> First, we should be careful regarding the sense in which we expect convergence, since sequences of random variables may converge in various ways.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem selfItoSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) {K : ℕ} (hK : 0 < K) :
+    MemLp (textbookWienerSelfItoSum W T K) 2 P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.selfItoSumsL2；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际有限和/候选极限的L²资格，由Gaussian law证明，不作为求值假设；补足严格均方意义。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:848](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:848>)（`MD.Ch06.selfItoSumsL2`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerSelfItoSum_memLp。
+
+签名SHA256：`8d4ea139891e3d3bf610c8d21e0a86983eea07103c6b56da505bc81a5e23076c`；原文SHA256：`9004dd94f108589489046f296861838eaa20805813e1288b7819fd0f4cd0ce30`。
+
+## 1. MD-6.2.2-MidpointSumsL2 · extra_claim · 印刷p.230 / PDFp.251
+
+### 2. 原文陈述
+
+> First, we should be careful regarding the sense in which we expect convergence, since sequences of random variables may converge in various ways.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem midpointSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) {K : ℕ} (hK : 0 < K) :
+    MemLp (textbookWienerMidpointSum W T K) 2 P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.midpointSumsL2；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际有限和/候选极限的L²资格，由Gaussian law证明，不作为求值假设；补足严格均方意义。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:855](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:855>)（`MD.Ch06.midpointSumsL2`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerMidpointSum_memLp。
+
+签名SHA256：`00736636a5f41e5334924ee177304a92dd6e21c8bc0b5a5208a39d5f075742c3`；原文SHA256：`4199e95eec5f1058bd3a1c7ea8d9242cde2a02eaec47baf9a57270612bc8d0cc`。
+
+## 1. MD-6.2.2-DeterministicIntegralProcess · (6.8) · 印刷p.231 / PDFp.252
+
+### 2. 原文陈述
+
+> Also it is natural to view the stochastic integral as the solution of the stochastic differential equation (SDE) with zero initial condition:
+> \[dY(t)=g(t)dW(t);\quad Y(0)=0.\tag{6.8}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def deterministicIntegralProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W Y : ℝ → Ω → ℝ) (g : ℝ → ℝ) : Prop :=
+  ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W (fun s _ ↦ g s) T (Y T)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.deterministicIntegralProcess；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]全部非负时间真实严格L²积分关系；Y0=0从零时间L²极限导出，不能把单时Gaussian独立采样当同一过程。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:862](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:862>)（`MD.Ch06.deterministicIntegralProcess`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`bbea8888e0f9cfcb64a18941903c5a4786a02eb6a78bec940313f61a5e76099d`；原文SHA256：`0e8aa5d3e63c208e8484a5e2a6044adeabad66c4ca1e3b5c2b2446a7ab3977cb`。
+
+## 1. MD-6.2.2-DeterministicStrobePrinted · unnumbered_claim · 印刷p.231 / PDFp.252
+
+### 2. 原文陈述
+
+> Finally, we observe that by calculating $\sigma^2(t_n)$ and generating random increments $R_n\sim N(0,\sigma(t_n))$ we have a discrete representation of the continuous time stochastic process $Y(t_n)$, effectively an exact stroboscopic representation.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem deterministicStrobePrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W Y : ℝ → Ω → ℝ) (g : ℝ → ℝ) (times : ℕ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → ContDiff ℝ 1 g →
+  deterministicIntegralProcess P W Y g → Monotone times → (∀ k, 0 ≤ times k) →
+  ∀ k, HasLaw (fun sample ↦ Y (times (k+1)) sample-Y (times k) sample)
+    (gaussianReal 0 (Real.sqrt (∫ s in (0 : ℝ)..times (k+1), g s^2)).toNNReal) P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.deterministicStrobePrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:868](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:868>)（`MD.Ch06.deterministicStrobePrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待网站审计原σ参数意图；完整独立增量更正陈述另列。
+
+签名SHA256：`30b55b07da29df5e2b4be5174a6be6c8427a6d155142c70ac1a7d7bf1f9b739e`；原文SHA256：`651e49729e76dd44c79dab5f399395dfeba86f6c451e4d584e7a18c4e4801b9b`。
+
+## 1. MD-6.2.2-DeterministicStrobeCorrected · unnumbered_claim · 印刷p.231 / PDFp.252
+
+### 2. 原文陈述
+
+> Finally, we observe that by calculating $\sigma^2(t_n)$ and generating random increments $R_n\sim N(0,\sigma(t_n))$ we have a discrete representation of the continuous time stochastic process $Y(t_n)$, effectively an exact stroboscopic representation.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem deterministicStrobeCorrected : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W Y : ℝ → Ω → ℝ) (g : ℝ → ℝ) (times : ℕ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → ContDiff ℝ 1 g →
+  deterministicIntegralProcess P W Y g → Monotone times → (∀ k, 0 ≤ times k) →
+  (∀ k, HasLaw (fun sample ↦ Y (times (k+1)) sample-Y (times k) sample)
+    (gaussianReal 0 (∫ s in times k..times (k+1), g s^2).toNNReal) P) ∧
+  iIndepFun (fun k sample ↦ Y (times (k+1)) sample-Y (times k) sample) P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.deterministicStrobeCorrected；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]相邻时间积分g²为完整增量方差，并保存整个增量族独立性；不是仅单时law；强L²模型。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:878](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:878>)（`MD.Ch06.deterministicStrobeCorrected`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：现成Prop6.3只打包单时构造；缺同一积分过程全部区间联合Gaussian/独立增量桥接，保留完整sorry。
+
+签名SHA256：`0746969369a19112f4a714507c196528d060cfb1ffa5e066c7778a08eaa489e5`；原文SHA256：`73a743a45787b06421a2ff3b021607afb576489a208338cfad9a4fc0b885b664`。
+
+## 1. MD-6.2.2-StochasticDifferentialIntegral · definition · 印刷p.231 / PDFp.252
+
+### 2. 原文陈述
+
+> Importantly, with appropriate regularity we have the familiar relation from calculus:
+> \[\int_0^t dY(s)=Y(t)-Y(0).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def stochasticDifferentialIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (Y integralOfDifferential : ℝ → Ω → ℝ) : Prop :=
+  ∀ T : ℝ, 0 ≤ T → integralOfDifferential T =ᵐ[P] (fun sample ↦ Y T sample-Y 0 sample)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.stochasticDifferentialIntegral；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:888](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:888>)（`MD.Ch06.stochasticDifferentialIntegral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`8d0325d8edacc12533aa332a7c738f9b91c432ae31c5c1fd2552cb602e66a3be`；原文SHA256：`be94848ad6b3951b7e3b6784de6d0bb99cdca6f078d723e7f3113482581bc906`。

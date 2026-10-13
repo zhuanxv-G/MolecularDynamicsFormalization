@@ -130,7 +130,7 @@ def microRaw {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
   (surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖grad H z‖⁻¹))
 ```
 
-### MD.Ch06.microcanonical (Blueprint/Ch06.lean:22)
+### MD.Ch06.microcanonical (Blueprint/Ch06.lean:24)
 ```lean
 def microcanonical {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (energy : ℝ) :=
   MolecularDynamics.Chapter05Review.microMeasure H energy

@@ -44,7 +44,7 @@ def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
 原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
 标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
 
-### MD.Ch06.entropyFunctional (Blueprint/Ch06.lean:158)
+### MD.Ch06.entropyFunctional (Blueprint/Ch06.lean:160)
 ```lean
 def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (kB : ℝ) (ρ : D → ℝ) : ℝ := -kB * ∫ x, ρ x * Real.log (ρ x) ∂ν

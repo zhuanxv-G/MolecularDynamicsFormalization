@@ -60,7 +60,7 @@ def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch06.canonicalAveragePrinted (Blueprint/Ch06.lean:288)
+### MD.Ch06.canonicalAveragePrinted (Blueprint/Ch06.lean:290)
 ```lean
 def canonicalAveragePrinted {Nc : ℕ} (H : SymplecticCoordinates Nc → ℝ) (β : ℝ)
     (f : SymplecticCoordinates Nc → ℝ) : ℝ :=
@@ -68,7 +68,7 @@ def canonicalAveragePrinted {Nc : ℕ} (H : SymplecticCoordinates Nc → ℝ) (�
     ∫ z, f z * MolecularDynamics.Chapter06Review.canonicalDensity volume H β z
 ```
 
-### MD.Ch06.canonicalDensity (Blueprint/Ch06.lean:193)
+### MD.Ch06.canonicalDensity (Blueprint/Ch06.lean:195)
 ```lean
 def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (H : D → ℝ) (β : ℝ) (x : D) : ℝ := Real.exp (-β * H x) / (∫ z, Real.exp (-β * H z) ∂ν)

@@ -7,3 +7,451 @@ warning: in the working copy of 'blueprint/ch06/validation/batch05-lean.log', LF
 warning: in the working copy of 'blueprint/ch06/validation/batch06-lean.log', LF will be replaced by CRLF the next time Git touches it
 warning: in the working copy of 'blueprint/ch06/validation/batch08-lean.log', LF will be replaced by CRLF the next time Git touches it
 warning: in the working copy of 'blueprint/ch06/validation/batch09-lean.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f-EntropyAdditivity.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7-BoltzmannConstantSlope.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-b820cf89930d1bbb5b33.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/blueprint_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_blueprint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_stage.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_chapter_check.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_checkpoint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_data.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/render_local_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/validate_local_delivery.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_archive_obsolete.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_chapter_start.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_short_search.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_compile.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_short_candidates.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section611.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section612b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section613.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section614.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section615.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section615b.py', LF will be replaced by CRLF the next time Git touches it
+[chapter06-blueprint 43a0d563] ch06 sec6.1: faithful local blueprint and checked checkpoint
+ 415 files changed, 79008 insertions(+), 9 deletions(-)
+ create mode 100644 Blueprint/Ch06.lean
+ create mode 100644 blueprint/ch06/BASELINE.json
+ create mode 100644 blueprint/ch06/CheckAxioms.lean
+ create mode 100644 blueprint/ch06/PROGRESS.md
+ create mode 100644 blueprint/ch06/batch01-run.log
+ create mode 100644 blueprint/ch06/batch02-run.log
+ create mode 100644 blueprint/ch06/batch03-run.log
+ create mode 100644 blueprint/ch06/batch04-run.log
+ create mode 100644 blueprint/ch06/batch05-run.log
+ create mode 100644 blueprint/ch06/batch06-run.log
+ create mode 100644 blueprint/ch06/batch07-run.log
+ create mode 100644 blueprint/ch06/batch08-run.log
+ create mode 100644 blueprint/ch06/batch09-run.log
+ create mode 100644 blueprint/ch06/ch06_source.json
+ create mode 100644 blueprint/ch06/excluded_qualitative.json
+ create mode 100644 blueprint/ch06/local_audit.json
+ create mode 100644 blueprint/ch06/mathcopilot_results/README.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/BATCH01.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/BATCH02.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/BATCH03.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/BATCH04.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/BATCH05.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/BATCH06.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/BATCH07.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/BATCH08.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/BATCH09.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/INDEX.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH01/a/BATCH01a_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH01/a/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH01/a/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/a/BATCH02a_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/a/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/a/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/b/BATCH02b_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/b/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/b/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/c/BATCH02c_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/c/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/c/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/d/BATCH02d_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/d/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/d/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/e/BATCH02e_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/e/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/e/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/f/BATCH02f_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/f/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/f/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/g/BATCH02g_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/g/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/g/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/h/BATCH02h_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/h/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH02/h/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/a/BATCH03a_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/a/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/a/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/b/BATCH03b_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/b/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/b/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/c/BATCH03c_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/c/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/c/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/d/BATCH03d_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/d/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/d/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/e/BATCH03e_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/e/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH03/e/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/a/BATCH04a_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/a/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/a/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/b/BATCH04b_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/b/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/b/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/c/BATCH04c_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/c/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/c/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/d/BATCH04d_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/d/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/d/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/e/BATCH04e_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/e/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/e/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/f/BATCH04f_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/f/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/f/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/g/BATCH04g_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/g/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/g/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/h/BATCH04h_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/h/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH04/h/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/a/BATCH05a_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/a/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/a/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/b/BATCH05b_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/b/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/b/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/c/BATCH05c_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/c/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/c/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/d/BATCH05d_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/d/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/d/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/e/BATCH05e_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/e/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/e/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/f/BATCH05f_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/f/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/f/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/g/BATCH05g_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/g/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/g/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/h/BATCH05h_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/h/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH05/h/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/a/BATCH06a_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/a/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/a/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/b/BATCH06b_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/b/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/b/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/c/BATCH06c_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/c/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/c/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/d/BATCH06d_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/d/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH06/d/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/a/BATCH07a_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/a/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/a/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/b/BATCH07b_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/b/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/b/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/c/BATCH07c_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/c/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/c/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/d/BATCH07d_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/d/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/d/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/e/BATCH07e_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/e/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/e/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/f/BATCH07f_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/f/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/f/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/g/BATCH07g_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/g/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH07/g/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/a/BATCH08a_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/a/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/a/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/b/BATCH08b_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/b/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/b/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/c/BATCH08c_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/c/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/c/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/d/BATCH08d_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/d/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/d/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/e/BATCH08e_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/e/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/e/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/f/BATCH08f_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/f/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/f/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/g/BATCH08g_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/g/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/g/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/h/BATCH08h_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/h/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH08/h/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/a/BATCH09a_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/a/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/a/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/b/BATCH09b_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/b/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/b/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/c/BATCH09c_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/c/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/c/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/d/BATCH09d_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/d/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH09/d/PASTE.txt
+ create mode 100644 blueprint/ch06/old_mapping.json
+ create mode 100644 blueprint/ch06/short61-calculus-run.log
+ create mode 100644 blueprint/ch06/short61-calculus-second-run.log
+ create mode 100644 blueprint/ch06/short61-calculus-third-run.log
+ create mode 100644 blueprint/ch06/short61-elementary-run.log
+ create mode 100644 blueprint/ch06/short61-first-run.log
+ create mode 100644 blueprint/ch06/short61-second-run.log
+ create mode 100644 blueprint/ch06/short61-third-run.log
+ create mode 100644 blueprint/ch06/source_page_checks.json
+ create mode 100644 blueprint/ch06/source_pages/p232.png
+ create mode 100644 blueprint/ch06/source_pages/p232.txt
+ create mode 100644 blueprint/ch06/source_pages/p233.png
+ create mode 100644 blueprint/ch06/source_pages/p233.txt
+ create mode 100644 blueprint/ch06/source_pages/p234.png
+ create mode 100644 blueprint/ch06/source_pages/p234.txt
+ create mode 100644 blueprint/ch06/source_pages/p235.png
+ create mode 100644 blueprint/ch06/source_pages/p235.txt
+ create mode 100644 blueprint/ch06/source_pages/p236.png
+ create mode 100644 blueprint/ch06/source_pages/p236.txt
+ create mode 100644 blueprint/ch06/source_pages/p237.png
+ create mode 100644 blueprint/ch06/source_pages/p237.txt
+ create mode 100644 blueprint/ch06/source_pages/p238.png
+ create mode 100644 blueprint/ch06/source_pages/p238.txt
+ create mode 100644 blueprint/ch06/source_pages/p239.png
+ create mode 100644 blueprint/ch06/source_pages/p239.txt
+ create mode 100644 blueprint/ch06/source_pages/p240.png
+ create mode 100644 blueprint/ch06/source_pages/p240.txt
+ create mode 100644 blueprint/ch06/source_pages/p241.png
+ create mode 100644 blueprint/ch06/source_pages/p241.txt
+ create mode 100644 blueprint/ch06/source_pages/p242.png
+ create mode 100644 blueprint/ch06/source_pages/p242.txt
+ create mode 100644 blueprint/ch06/source_pages/p243.png
+ create mode 100644 blueprint/ch06/source_pages/p243.txt
+ create mode 100644 blueprint/ch06/source_pages/p244.png
+ create mode 100644 blueprint/ch06/source_pages/p244.txt
+ create mode 100644 blueprint/ch06/source_pages/p245.png
+ create mode 100644 blueprint/ch06/source_pages/p245.txt
+ create mode 100644 blueprint/ch06/source_pages/p246.png
+ create mode 100644 blueprint/ch06/source_pages/p246.txt
+ create mode 100644 blueprint/ch06/source_pages/p247.png
+ create mode 100644 blueprint/ch06/source_pages/p247.txt
+ create mode 100644 blueprint/ch06/source_pages/p248.png
+ create mode 100644 blueprint/ch06/source_pages/p248.txt
+ create mode 100644 blueprint/ch06/source_pages/p249.png
+ create mode 100644 blueprint/ch06/source_pages/p249.txt
+ create mode 100644 blueprint/ch06/source_pages/p250.png
+ create mode 100644 blueprint/ch06/source_pages/p250.txt
+ create mode 100644 blueprint/ch06/source_pages/p251.png
+ create mode 100644 blueprint/ch06/source_pages/p251.txt
+ create mode 100644 blueprint/ch06/source_pages/p252.png
+ create mode 100644 blueprint/ch06/source_pages/p252.txt
+ create mode 100644 blueprint/ch06/source_pages/p253.png
+ create mode 100644 blueprint/ch06/source_pages/p253.txt
+ create mode 100644 blueprint/ch06/source_pages/p254.png
+ create mode 100644 blueprint/ch06/source_pages/p254.txt
+ create mode 100644 blueprint/ch06/source_pages/p255.png
+ create mode 100644 blueprint/ch06/source_pages/p255.txt
+ create mode 100644 blueprint/ch06/source_pages/p256.png
+ create mode 100644 blueprint/ch06/source_pages/p256.txt
+ create mode 100644 blueprint/ch06/source_pages/p257.png
+ create mode 100644 blueprint/ch06/source_pages/p257.txt
+ create mode 100644 blueprint/ch06/source_pages/p258.png
+ create mode 100644 blueprint/ch06/source_pages/p258.txt
+ create mode 100644 blueprint/ch06/source_pages/p259.png
+ create mode 100644 blueprint/ch06/source_pages/p259.txt
+ create mode 100644 blueprint/ch06/source_pages/p260.png
+ create mode 100644 blueprint/ch06/source_pages/p260.txt
+ create mode 100644 blueprint/ch06/source_pages/p261.png
+ create mode 100644 blueprint/ch06/source_pages/p261.txt
+ create mode 100644 blueprint/ch06/source_pages/p262.png
+ create mode 100644 blueprint/ch06/source_pages/p262.txt
+ create mode 100644 blueprint/ch06/source_pages/p263.png
+ create mode 100644 blueprint/ch06/source_pages/p263.txt
+ create mode 100644 blueprint/ch06/source_pages/p264.png
+ create mode 100644 blueprint/ch06/source_pages/p264.txt
+ create mode 100644 blueprint/ch06/source_pages/p265.png
+ create mode 100644 blueprint/ch06/source_pages/p265.txt
+ create mode 100644 blueprint/ch06/source_pages/p266.png
+ create mode 100644 blueprint/ch06/source_pages/p266.txt
+ create mode 100644 blueprint/ch06/source_pages/p267.png
+ create mode 100644 blueprint/ch06/source_pages/p267.txt
+ create mode 100644 blueprint/ch06/source_pages/p268.png
+ create mode 100644 blueprint/ch06/source_pages/p268.txt
+ create mode 100644 blueprint/ch06/source_pages/p269.png
+ create mode 100644 blueprint/ch06/source_pages/p269.txt
+ create mode 100644 blueprint/ch06/source_pages/p270.png
+ create mode 100644 blueprint/ch06/source_pages/p270.txt
+ create mode 100644 blueprint/ch06/source_pages/p271.png
+ create mode 100644 blueprint/ch06/source_pages/p271.txt
+ create mode 100644 blueprint/ch06/source_pages/p272.png
+ create mode 100644 blueprint/ch06/source_pages/p272.txt
+ create mode 100644 blueprint/ch06/source_pages/p273.png
+ create mode 100644 blueprint/ch06/source_pages/p273.txt
+ create mode 100644 blueprint/ch06/source_pages/p274.png
+ create mode 100644 blueprint/ch06/source_pages/p274.txt
+ create mode 100644 blueprint/ch06/source_pages/p275.png
+ create mode 100644 blueprint/ch06/source_pages/p275.txt
+ create mode 100644 blueprint/ch06/source_pages/p276.png
+ create mode 100644 blueprint/ch06/source_pages/p276.txt
+ create mode 100644 blueprint/ch06/source_pages/p277.png
+ create mode 100644 blueprint/ch06/source_pages/p277.txt
+ create mode 100644 blueprint/ch06/source_pages/p278.png
+ create mode 100644 blueprint/ch06/source_pages/p278.txt
+ create mode 100644 blueprint/ch06/source_pages/p279.png
+ create mode 100644 blueprint/ch06/source_pages/p279.txt
+ create mode 100644 blueprint/ch06/validation/batch01-COMPILE-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch01-COMPILE.json
+ create mode 100644 blueprint/ch06/validation/batch01-lean.log
+ create mode 100644 blueprint/ch06/validation/batch02-COMPILE-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch02-COMPILE.json
+ create mode 100644 blueprint/ch06/validation/batch02-lean.log
+ create mode 100644 blueprint/ch06/validation/batch03-COMPILE-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch03-COMPILE.json
+ create mode 100644 blueprint/ch06/validation/batch03-lean.log
+ create mode 100644 blueprint/ch06/validation/batch04-COMPILE-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch04-COMPILE.json
+ create mode 100644 blueprint/ch06/validation/batch04-lean.log
+ create mode 100644 blueprint/ch06/validation/batch05-COMPILE-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch05-COMPILE.json
+ create mode 100644 blueprint/ch06/validation/batch05-lean.log
+ create mode 100644 blueprint/ch06/validation/batch06-COMPILE-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch06-COMPILE.json
+ create mode 100644 blueprint/ch06/validation/batch06-lean.log
+ create mode 100644 blueprint/ch06/validation/batch08-COMPILE-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch08-COMPILE.json
+ create mode 100644 blueprint/ch06/validation/batch08-lean.log
+ create mode 100644 blueprint/ch06/validation/batch09-COMPILE-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch09-COMPILE.json
+ create mode 100644 blueprint/ch06/validation/batch09-lean.log
+ create mode 100644 blueprint/ch06/validation/next_section_semantic_notes.json
+ create mode 100644 blueprint/ch06/validation/section61-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/section61-commit.log
+ create mode 100644 blueprint/ch06/validation/section61-full-run.log
+ create mode 100644 blueprint/ch06/validation/section61/CHECK_REPORT.json
+ create mode 100644 blueprint/ch06/validation/section61/LOCAL_CHECK_REPORT.json
+ create mode 100644 blueprint/ch06/validation/section61/axiom_dependencies.log
+ create mode 100644 blueprint/ch06/validation/section61/blueprint_axiom_dependencies.log
+ create mode 100644 blueprint/ch06/validation/section61/blueprint_fresh_Ch01.log
+ create mode 100644 blueprint/ch06/validation/section61/blueprint_fresh_Ch02.log
+ create mode 100644 blueprint/ch06/validation/section61/chapter02_axiom_dependencies.log
+ create mode 100644 blueprint/ch06/validation/section61/chapter_axioms.log
+ create mode 100644 blueprint/ch06/validation/section61/chapter_fresh.log
+ create mode 100644 blueprint/ch06/validation/section61/git_branch.log
+ create mode 100644 blueprint/ch06/validation/section61/git_head.log
+ create mode 100644 blueprint/ch06/validation/section61/git_status.log
+ create mode 100644 blueprint/ch06/validation/section61/lake_build.log
+ create mode 100644 blueprint/ch06/validation/section61/lake_version.log
+ create mode 100644 blueprint/ch06/validation/section61/lean_version.log
+ create mode 100644 blueprint/ch06/validation/section61/mathlib_revision.log
+ create mode 100644 blueprint/ch06/validation/section61/mathlib_status.log
+ create mode 100644 blueprint/ch06/validation/section61/scratch.log
+ create mode 100644 blueprint/ch06/validation/short_search/BathMeanValue.json
+ create mode 100644 blueprint/ch06/validation/short_search/BathTaylorEstimate-next-proof.txt
+ create mode 100644 blueprint/ch06/validation/short_search/BathTaylorEstimate.json
+ create mode 100644 blueprint/ch06/validation/short_search/BoltzmannConstantSlope-next-proof.txt
+ create mode 100644 blueprint/ch06/validation/short_search/BoltzmannConstantSlope.json
+ create mode 100644 blueprint/ch06/validation/short_search/DensityNormalization.json
+ create mode 100644 blueprint/ch06/validation/short_search/DensityPositive.json
+ create mode 100644 blueprint/ch06/validation/short_search/EntropyAdditivity.json
+ create mode 100644 blueprint/ch06/validation/short_search/EntropyEquilibrium-next-proof.txt
+ create mode 100644 blueprint/ch06/validation/short_search/EntropyEquilibrium.json
+ create mode 100644 blueprint/ch06/validation/short_search/IndependentPartition-next-proof.txt
+ create mode 100644 blueprint/ch06/validation/short_search/IndependentPartition.json
+ create mode 100644 blueprint/ch06/validation/short_search/KineticWeightFactorization.json
+ create mode 100644 blueprint/ch06/validation/short_search/LennardJonesConfinement.json
+ create mode 100644 blueprint/ch06/validation/short_search/LogTemperature.json
+ create mode 100644 blueprint/ch06/validation/short_search/VirialFieldNotPeriodic.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f-EntropyAdditivity.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f-EntropyAdditivity.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f-EntropyAdditivity.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f-EntropyAdditivity.log
+ create mode 100644 blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.log
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.log
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.log
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.log
+ create mode 100644 blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.log
+ create mode 100644 blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7-BoltzmannConstantSlope.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7-BoltzmannConstantSlope.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7-BoltzmannConstantSlope.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7-BoltzmannConstantSlope.log
+ create mode 100644 blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7.log
+ create mode 100644 blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-b7632795d5fe6dba1480.log
+ create mode 100644 blueprint/ch06/validation/short_search/route-b820cf89930d1bbb5b33.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-b820cf89930d1bbb5b33.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-b820cf89930d1bbb5b33.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-b820cf89930d1bbb5b33.log
+ create mode 100644 blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log
+ create mode 100644 docs/review/CH06_BLUEPRINT.zh-CN.md
+ create mode 100644 scripts/ch06_data.py
+ create mode 100644 scripts/ch06_section611.py
+ create mode 100644 scripts/ch06_section612b.py
+ create mode 100644 scripts/ch06_section613.py
+ create mode 100644 scripts/ch06_section614.py
+ create mode 100644 scripts/ch06_section615.py
+ create mode 100644 scripts/ch06_section615b.py
+ create mode 100644 scripts/ch06_short_candidates.py
+remote: 
+remote: Create a pull request for 'chapter06-blueprint' on GitHub by visiting:        
+remote:      https://github.com/zhuanxv-G/MolecularDynamicsFormalization/pull/new/chapter06-blueprint        
+remote: 
+To https://github.com/zhuanxv-G/MolecularDynamicsFormalization.git
+ * [new branch]        chapter06-blueprint -> chapter06-blueprint
+branch 'chapter06-blueprint' set up to track 'origin/chapter06-blueprint'.
+Generated 48 entries; 23 /126 old rows mapped; protected 633
+Committed and pushed 43a0d563ab46498bf6090453f66c2edb57ca58b8 ; live cross-chapter pointer updated.

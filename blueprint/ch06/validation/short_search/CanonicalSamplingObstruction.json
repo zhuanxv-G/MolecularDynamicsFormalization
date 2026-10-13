@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch06/validation/short_search/route-f5828f06cbca3e82f48d.lean",
+    "log": "blueprint/ch06/validation/short_search/route-f5828f06cbca3e82f48d.log",
+    "source_sha256": "73f47d450abcc9499a54a9d8a7d77efc39f1d41e0d418231536142dcd81a5cd4",
+    "log_sha256": "77d12fb64fee2dd56b0dbde0f0389bd80be5698605a3b7dfedabfcf9cf33779c"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n H energy z μ inst hH hz hpositive\n  let S : Set (MolecularDynamics.Chapter06Review.V n) := {x | H x ≠ energy}\n  have hS : MeasurableSet S := (isClosed_singleton.preimage hH).isOpen_compl.measurableSet\n  let g : MolecularDynamics.Chapter06Review.V n → ℝ := S.indicator (fun _ ↦ 1)\n  have hgi : Integrable g μ := (integrable_const (1 : ℝ)).indicator hS\n  have hIntegral : (∫ x, g x ∂μ)=μ.real S := integral_indicator_one hS\n  have hzero : ∀ t : ℝ, g (z t)=0 := by\n    intro t\n    simp only [g, Set.indicator, S, Set.mem_setOf_eq, hz t, ne_eq, not_true_eq_false, ↓reduceIte]\n  refine ⟨g,hgi,?_,?_⟩\n  · rw [hIntegral]\n    exact ENNReal.toReal_pos hpositive.ne' (measure_ne_top μ S)\n  · have hfun : MolecularDynamics.Chapter05Review.timeAverage z g=(fun _ : ℝ ↦ 0) := by\n      funext T\n      simp [MolecularDynamics.Chapter05Review.timeAverage,hzero]\n    rw [hfun]\n    exact tendsto_const_nhds\n",
+    "source": "blueprint/ch06/validation/short_search/route-a87b3720393dd5836898.lean",
+    "log": "blueprint/ch06/validation/short_search/route-a87b3720393dd5836898.log",
+    "source_sha256": "17815bfffa185fab95d9c955aae2d77d34b8ef597d280da059923a31c5cb41b0",
+    "log_sha256": "59f7a236e5debe7d7ed47fed1aab68ea23167cb37d3d981ef0e69b9a258fc8a5"
+  }
+]

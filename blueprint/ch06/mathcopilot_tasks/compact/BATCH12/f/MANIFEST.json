@@ -1,0 +1,54 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12f",
+  "source_ids": [
+    "MD-6.2.1-WienerContinuousVersion"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 247,
+      "printed_page": 226
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 248,
+      "printed_page": 227
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "405cb815b447fb9e95ce39a5a2952fabe84a64773bbe26d1079463955019839b",
+  "lean_sha256": "a66dea17ee1d2f54921837157ebcbdbc12b96984603f3c7e24e809b8bb8d5b1b",
+  "signature_sha256": "8520e1b9487c469e84cc68731252c7bda99ef6a34bdf758c8b07f4edc28894de",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    }
+  ],
+  "paste_plus_pdf_bytes": 88247,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3341,
+      "sha256": "4c252e87d76a7408c11b5cef65d7c76b3b989eb9761d3cf852e43e09e841f6a5"
+    },
+    "BATCH12f_PAGES.pdf": {
+      "bytes": 84906,
+      "sha256": "9470546d602f54a6525ee1febe3ba4b393b7603feb69cb111ecbfdbad0403acf"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 90019
+}

@@ -32,7 +32,7 @@ def pipeline(ch):
         f'open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review')
     if ch==6:
         text=text.replace('import Mathlib.Tactic',
-            'import Mathlib.Analysis.Calculus.Deriv.MeanValue\nimport Mathlib.Analysis.Calculus.Deriv.Shift\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Tactic',1)
+            'import MolecularDynamics.Chapter06.WienerStratonovich\nimport MolecularDynamics.Chapter06.WienerDeterministicLaw\nimport Mathlib.Analysis.Calculus.Deriv.MeanValue\nimport Mathlib.Analysis.Calculus.Deriv.Shift\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Tactic',1)
         text=text.replace(f'open Set Filter Matrix MeasureTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review',
             f'open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter{ch:02}Review')
         text=text.replace('open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator\n',
