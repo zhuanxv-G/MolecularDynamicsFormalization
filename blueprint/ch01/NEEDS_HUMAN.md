@@ -62,11 +62,6 @@
 - MD-1.7-TrimerSaddle：补齐同版本 isoscelesPotential 的实际定义及本批 MANIFEST.json，确认它是 2φ̂_LJ(√(x²+y²))+φ̂_LJ(2x)，并核实 y=0、x>0 时与 collinearTrimer 一致。若要显式固定物理邻域，可将 δ<x 写入陈述；这不是当前已确定的必要修复。
 - MD-1.7.1-ChaosConditions：补齐与本批Ch01.lean同一版本的辅助定义，尤其是MolecularDynamics/Chapter01/ReviewDefinitions.lean及流相关依赖。随后展开两项谓词，核实全部量词，并明确真实流和D不变性由何处提供；保留原文非形式化说明，说明ε/δ版本与原文解释的关系。
 - MD-1.7.1-AnisotropicOscillator：补齐与本批一致的anisotropicAngular和anisotropicParameters源码，展开核对全部公式及参数对顺序。在r>0的物理域说明c₃与cos(3θ)的对应关系，并将原点延拓限定为域外约定；不要把实验参数或轨迹现象加入本定义的全称结论。
-- MD-1.5.3-Thm1.1：补齐与Ch01.lean同一版本的EuclideanStability.lean、FutureFlow.lean、PhaseMetric.lean、PotentialBarriers.lean、Equilibrium.lean及其相关导入和本批MANIFEST.json，再逐项展开稳定性谓词核查；目前没有足够证据要求修改定理签名。
-- MD-1.2-EnergyConservation：补齐本批版本的LocalTrajectories.lean、NBody.lean、ParticleCoordinates.lean、Hamiltonian.lean、EnergyConservation.lean及MANIFEST.json，确认massOperator为固定对角质量作用并绑定输入版本；已见量词和守恒结论无需修订。
-- MD-1.3-NewtonEulerLagrange：补齐本批Lagrangian.lean及其导入、LocalTrajectories.lean、NBody.lean和MANIFEST.json；展开右侧为实际L(q,v)的偏导与时间导数条件，并检查全部坐标及两个方向。如包含牛顿结论作前提，应移除该循环条件。
-- MD-1.4-LegendreHamiltonian：在独立修订的形式化签名中显式加入M(q)对称正定，或编码M(q)=JᵀM_cartJ、M_cart正定及J满列秩的机械构造；标明这是展开继承背景后的前提强化，保留原书字面陈述及ISSUE。仅加可逆或二次函数凸性不足以支持非对称矩阵的速度梯度公式。保留任意配置相关矩阵和全部六项结论，不能退回固定正对角模型冒充覆盖。
-- MD-1.5.1-FlowInverse：补齐本批GlobalFlow.lean、相关LocalTrajectories.lean及唯一性依赖和MANIFEST.json；核实IsGlobalMechanicalFlowOn只包含真实全时间解、初值和S不变，不包含反演、双射或群律。若隐藏了这些结论，应删除循环前提，再从唯一性推出结论。
 
 ## (ii) 原文数学判断：供导师裁定
 

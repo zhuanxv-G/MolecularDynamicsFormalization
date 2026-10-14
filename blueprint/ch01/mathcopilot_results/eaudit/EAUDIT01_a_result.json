@@ -1,0 +1,33 @@
+{
+  "batch": "EAUDIT01",
+  "subtask": "a",
+  "source_json_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+  "lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af",
+  "items": [
+    {
+      "source_id": "MD-1.5.3-Thm1.1",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "版本依据为本对话PASTE中的本条JSON、实际签名和全部定义摘录；不使用工作区旧Ch01.lean、BATCH文件或旧源码的比较结果。顶层两个哈希直接回显用户补充的MANIFEST值，未自行计算或检索替代值。",
+          "已直接读取、渲染并查看EAUDIT01a_PAGES.pdf全部两页：第1页为印刷p.31，第2页为印刷p.32，对应完整原书PDF54、55。Theorem 1.1的statement_latex与第2页逐字一致，数学排版和换行转换不改变措辞。",
+          "proof_discussion_latex与第2页从证明讨论起句至[216]引用结束的原文一致。没有把后续C²线性化讨论纳入，也没有把证明思路冒充完整证明；proof_latex=null及proof_note准确。",
+          "强局部极小定义与原页的正半径、穿孔邻域及U(q)>U(q*)一致；稳定性定义与全部邻近初值、t≥0和严格上确界不等式一致。context_notation补出正ε、δ，符合容差的数学含义。",
+          "定理及所摘证明讨论均在印刷p.32/PDF55；印刷p.31/PDF54给出平衡点及局部C¹背景，PAGE_SPAN_CORRECTION准确。",
+          "固定对角质量模型及固定正定背景与所给context_notation一致；此前直接查看过完整原书PDF41/印刷p.18和PDF48/印刷p.25的这些背景。",
+          "依据补充说明，以本次直接原页核对为准；不再因未提供source_page_checks.json或历史repair_log原始版本而保留NEEDS_HUMAN。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.theorem_1_1",
+        "verdict": "PASS",
+        "explanation": "语义审核通过。当前版本仅以PASTE中的实际签名及定义摘录为准，旧工程文件和旧返回件不作为判定依据；上一轮关于MANIFEST、版本绑定及本地原页核对记录的阻碍已由补充说明解除。\n对象：Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)，PhaseSpace为位置与动量的乘积；n为总配置坐标数，三维N粒子情形取n=3N。Force和PotentialEnergy的输入输出正确。\n机械方程：CoordinateMasses为固定坐标质量，diagonalMassMatrix为对角矩阵，velocityOperator作用为M⁻¹p，mechanicalVectorField=(M⁻¹p,F(q))。代入F=-gradient U后对应q̇=M⁻¹p、ṗ=-∇U；hm保证正质量及可逆性。\n[EXTRA]及质量范围：hm继承正定机械质量背景；固定对角表示符合§1.2明确的模型。对更一般的固定对称正定质量矩阵，可以正交坐标变换对角化，并同时变换位置、动量和势能，保持欧氏距离、光滑性及严格极小性质；因此上一轮提出的固定非对角矩阵顾虑不构成本条的语义阻碍。这里使用固定质量背景。\n定义域及光滑性：hQ和hstrict中的q₀∈Q补出开放定义域及中心点资格；hU要求Q内逐点C∞，对应原文局部光滑性。没有把稳定性、未来解存在或能量守恒藏入假设。\n严格局部极小：IsStrictPotentialMinOn为q₀∈Q且存在R>0，使Q内所有非中心且距离小于R的点满足U(q₀)<U(q)。q≠q₀等价于正距离；由Q开放及q₀∈Q缩小半径后得到完整环境邻域，忠实对应原文穿孔欧氏邻域的严格极小。没有额外要求Hessian正定或二次增长。\n平衡点结论：IsMechanicalEquilibrium要求机械向量场为零；开放域内的可微局部极小给出∇U(q₀)=0，线性速度算子将零动量映为零。因此新增平衡点合取项是原文假设的数学后果，符合稳定平衡点的上下文。\n稳定性量词：∀ε>0，∃δ>0，∀邻近初值z₀，次序正确；δ不依赖随后选择的初值、时间或轨迹。初值量词覆盖整个相空间，并未限于能量面或某条选定解。\n未来存在及全部解：每个邻近初值须存在a<0及Ioi a上的机械解，且γ(0)=z₀；该域包含0和全部非负时间。IsMechanicalSolutionOn要求位置在Q及真实积分曲线条件。存在项防止无解时的空真；全称部分约束所有满足条件的未来解。原文单值流与这些轨迹的对应由光滑机械向量场的局部唯一性保证；在当前开放域和光滑性条件下，要求短暂负时间延拓也不造成实质额外限制。\n距离、时间及上确界：phaseEuclideanDistance=√(dist(q,q*)²+dist(p,p*)²)，为拼接相空间的欧氏距离。Ici 0覆盖全部t≥0且非空；BddAbove显式排除无界集合的实数sSup总函数漏洞；保留sSup<ε，未弱化为≤ε或仅逐时刻<ε。\n全部61块摘录已读取，其中17块进入本条显式语义展开；其余44块为Chapter05Review.E、两处Chapter02/04Review.Q、16处模块私有Gibbs、两处模块私有R、shifted_graph_equiv及22处textbook*定义，均未进入本条展开链。各章Q不替代签名中的集合Q；私有Gibbs/R按各自模块区分，包括ComplexSpectrum中的复数Lp，不跨模块混同。\n原文只给证明思路，单凭轨迹不逃向无穷不足以构成完整稳定性证明；JSON已经准确标注这一限度，因此不影响原文摘录和形式陈述的忠实性判定。\n本PASS表示原文与当前形式陈述及定义的语义对应通过；本次未进行工程编译或证明依赖核验，不据旧工程推断当前证明是否含sorry或额外公理。未修改Lean工程或补证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

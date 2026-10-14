@@ -1,0 +1,30 @@
+{
+  "batch": "EAUDIT01",
+  "subtask": "b",
+  "source_json_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+  "lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af",
+  "items": [
+    {
+      "source_id": "MD-1.2-EnergyConservation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "版本依据仅为本对话PASTE中的本条JSON、实际签名及全部定义摘录；不采用工作区旧工程、旧JSON或旧返回件作为当前版本证据。顶层哈希直接回显用户补充的本批MANIFEST值。",
+          "已直接查看原页附件EAUDIT01b_PAGES.pdf的印刷p.19原页图像：首句与statement_latex逐字一致；proof_latex的三个求和项、点积、括号、导数及最终零值与紧接的展示计算一致，能量函数E为数学斜体。",
+          "已直接查看印刷p.18原页图像：式(1.3)为固定对角质量牛顿方程，式(1.4)为位置—速度总能量；三维坐标数为3N，每个粒子质量重复三次，与context_notation一致。",
+          "本条范围为p.19首句及其导数计算，未并入后续总动量守恒；extra_assumptions已明确标出质量正性、势能可微性和开连通时间区间。原页核对依据为实际查看的图像，无需另取source_page_checks.json。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.energy_conservation",
+        "verdict": "PASS",
+        "explanation": "本判定为PASTE所给当前实际陈述与定义的语义审校。CoordinateMasses为Fin n到ℝ的固定质量函数；MassMatrix为相应实方阵；Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)；PotentialEnergy为位置到ℝ的无显式时间依赖势能。diagonalMassMatrix为Matrix.diagonal，massOperator为该对角矩阵诱导的连续线性算子，故其第i坐标作用为m i乘该坐标。nBodyKineticEnergy为Σ_i m_i v_i²/2，nBodyTotalEnergy为该动能加U(q)，确实对应式(1.4)的位置—速度能量。Chapter02Review.Q和Chapter04Review.Q是各自命名空间内的坐标函数别名；本声明的Q是显式绑定的Set (Position n)，没有对象混淆。IsNewtonTrajectoryOn要求q在时间域内取值于Q，并逐时刻给出q与deriv q的真实HasDerivAt见证，以及massOperator m作用于二阶导数等于−gradient U(q t)；不存在仅用总化deriv等式替代可微性的漏洞。量词覆盖任意有限维n、固定m、势能U、位置域Q、实数a和b及满足这些前提的轨迹q。第一结论是区间每个t处位置—速度总能量具有零导数，第二结论是同一Ioo a b内任意s、t的能量相等；原文的零导数与守恒结论均完整保留。逐项[EXTRA]：hm为物理正质量条件，也支持所述逆质量重写；直接能量导数消去本身不需要正性，但这一前提没有排除原书的正质量模型。hU在Q每点的DifferentiableAt保证实际梯度与链式法则在所有轨迹点有意义，无需另加Q开或梯度连续。Ioo a b为开连通时间域，允许应用逐点导数和零导数推出常值；结论只涉及同一解区间，不涉及端点或跨解区间。空区间及n=0的退化情形不破坏非退化情形的守恒陈述。任意固定正对角坐标质量是已披露且有效的推广；三维粒子取n=3N并在每个粒子的三个坐标重复其质量，即恢复原书动能与牛顿方程，直线运动取n=N。据所给定义，动能导数与势能链式法则项按牛顿方程逐坐标相消，故推广无语义缺口。本条没有尚缺的自定义对象定义或待裁定的原文疑误，判PASS。此判定不声称已编译当前工程或核验所列复用证明的证明体；本任务未要求补证明或改工程。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

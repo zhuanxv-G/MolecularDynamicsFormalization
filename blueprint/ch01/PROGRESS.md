@@ -4,16 +4,16 @@
 下一步：按CURRENT_STATE顶部接续；全章已覆盖，终检和推送完成后等待用户提交INDEX.md中的网站批次。
 当前141条；本地PASS 124；网站返回141（136已绑定，旧试点5条待EAUDIT01）；任务包23批，每批≤8条、每文件<40KB。
 
-网站整合汇总：网站PASS 44 / 修复中 21 / 待导师 9 / 待复审 67。
+网站整合汇总：网站PASS 49 / 修复中 21 / 待导师 9 / 待复审 62。
 ## 逐条进度
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明 |
 |---|---|---|---|---|---|
-| MD-1.5.3-Thm1.1 | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | existing_bridge |
-| MD-1.2-EnergyConservation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | existing_bridge |
-| MD-1.3-NewtonEulerLagrange | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | existing_bridge |
-| MD-1.4-LegendreHamiltonian | CORRECTED/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | sorry / 一般配置相关对称正定矩阵Legendre上确界理论未补证明；保持sorry。 |
-| MD-1.5.1-FlowInverse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | existing_bridge |
+| MD-1.5.3-Thm1.1 | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.2-EnergyConservation | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.3-NewtonEulerLagrange | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | existing_bridge |
+| MD-1.4-LegendreHamiltonian | CORRECTED/原页已核 | 陈述已写；已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 09ff185182a8） | sorry / 一般配置相关对称正定矩阵Legendre上确界理论未补证明；保持sorry。 |
+| MD-1.5.1-FlowInverse | DRAFT/原页已核 | 陈述已写；已编译 | PASS | 网站PASS（绑定版本 09ff185182a8） | existing_bridge |
 | MD-1.1-Schrodinger | CORRECTED/原页已核 | 陈述已写；已编译/公理已核 | PASS | 待复审 / EAUDIT02 | definition |
 | MD-1.1-NewtonModel | CORRECTED/原页已核 | 陈述已写；已编译/公理已核 | PASS | 待复审 / EAUDIT02 | definition |
 | MD-1.1-HardSphere | APPROVED/原页已核 | 陈述已写；已编译/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT02 | definition |

@@ -1,0 +1,139 @@
+{
+  "batch": "EAUDIT01",
+  "subtask": "d",
+  "source_json_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+  "lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af",
+  "items": [
+    {
+      "source_id": "MD-1.4-LegendreHamiltonian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "POSSIBLE_ERRATUM",
+          "REUSE_SCOPE_GAP",
+          "INCOMPLETE_PROOF_AS_PROOF",
+          "CONTEXT_DEPENDENT_INVERTIBILITY",
+          "GENERALIZED_COORDINATE_DIMENSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.4-LegendreHamiltonian",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.4",
+          "printed_page": "24",
+          "pdf_page": "47",
+          "statement_latex": "If $\\boldsymbol{M}(\\boldsymbol{q})$ is invertible, the supremum is achieved precisely when\n\\[\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p},\\]\nwhich gives the standard definition of the momentum vector $\\boldsymbol{p}$ in terms of velocities,\n\\[\\boldsymbol{p}=\\frac{\\partial L}{\\partial\\dot{\\boldsymbol{q}}}=\\boldsymbol{M}(\\boldsymbol{q})\\dot{\\boldsymbol{q}},\\]\nand, with $\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p}$, the Legendre transformation results in a new function\n\\[H(\\boldsymbol{q},\\boldsymbol{p})\\stackrel{\\mathrm{def}}{=}\\boldsymbol{p}^TM(\\boldsymbol{q})^{-1}\\boldsymbol{p}/2+U(\\boldsymbol{q}).\\]\nThis is precisely the energy function, written in terms of positions and momenta.",
+          "proof_latex": null,
+          "proof_note": "原文仅展示将U(q)从上确界中移出的代数恒等式，未独立证明上界、达到条件及唯一性；该段原文完整保存于proof_discussion_latex。",
+          "context_notation": [
+            "同页Legendre定义：凸函数$g(\\boldsymbol{\\xi}):\\mathbb{R}^m\\to\\mathbb{R}$，$\\widetilde g(\\boldsymbol{\\eta})=\\sup_{\\boldsymbol{\\xi}}(\\boldsymbol{\\eta}^T\\boldsymbol{\\xi}-g(\\boldsymbol{\\xi}))$；印刷p.24/PDF47。",
+            "配置相关质量矩阵来自$\\Phi^{\\prime}(\\boldsymbol{Q})^T\\boldsymbol{M}\\Phi^{\\prime}(\\boldsymbol{Q})$；§1.3印刷p.23/PDF46要求变换Jacobian满秩且所得质量矩阵可逆。在固定正质量的机械背景中，这给出对称正定矩阵；对称性和正定性不是单独由可逆推出。",
+            "$\\boldsymbol{q},\\boldsymbol{v},\\boldsymbol{p}$属于广义配置坐标空间；无约束例为$\\mathbb{R}^{N_c}$，约束参数化可为$\\mathbb{R}^{N_d}$，见印刷p.23/PDF46。$H$是位置和动量中的能量，见印刷p.24/PDF47。"
+          ],
+          "issues": [
+            {
+              "code": "POSSIBLE_ERRATUM",
+              "status": "resolved_in_context",
+              "detail": "原句字面只要求可逆，但其对象是此前机械坐标变换得到的质量矩阵。正物理质量及满列秩Jacobian给出对称正定背景。保留原句，不能把任意可逆矩阵反例判作该机械背景下的原书错误；当前PASTE签名已用hPositive显式展开此背景。"
+            },
+            {
+              "code": "REUSE_SCOPE_GAP",
+              "status": "nonblocking",
+              "detail": "PASTE保留任意配置相关M(q)及全部六项结论，没有退回固定正对角模型。列出的reusable_proofs是复用线索，不是当前签名的额外假设或已经覆盖全范围的证明声明；本次为陈述和定义语义审校，不验收其复用证明。"
+            },
+            {
+              "code": "INCOMPLETE_PROOF_AS_PROOF",
+              "status": "verified_resolved",
+              "detail": "原页只展示将U(q)移出sup的准备性代数恒等式。当前proof_latex=null且原段完整存入proof_discussion_latex，分类正确。"
+            },
+            {
+              "code": "CONTEXT_DEPENDENT_INVERTIBILITY",
+              "status": "verified_resolved",
+              "detail": "hPositive明确标为[EXTRA]，保留源文可逆措辞；其解释为机械质量背景的显式化合理。Mathlib v4.34.0的Matrix.PosDef同时要求Hermitian和非零向量二次型严格为正，实数情形包含对称性，不需另补对称假设。"
+            },
+            {
+              "code": "GENERALIZED_COORDINATE_DIMENSION",
+              "status": "verified_resolved",
+              "detail": "原页允许R^{N_d}到R^{N_c}的约束参数化；当前context_notation及任意n的欧氏空间覆盖广义配置维数，未将其一律限制为N_c。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+          "reusable_proofs": [
+            "MolecularDynamics.massHamiltonian_eq_legendre_sup",
+            "MolecularDynamics.legendre_objective_eq_massHamiltonian_iff"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] hPositive : (M q).PosDef；展开p23正物理质量及满秩Jacobian继承的对称正定背景，任意可逆矩阵反例不属于此子类。字面可逆原句保留，配置相关M及全部六项结论不变。"
+          ],
+          "statement_scope": "从“If M(q) is invertible”到“written in terms of positions and momenta.”；前一计算为proof_discussion_latex，前置抽象定义为context_notation；Hamilton方程属于下一条。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "LOCAL_DRAFT",
+              "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+              "before_sha256": "134f84e19b17bad810cdb8cdd0308bbcefb36fe2b17b2402605eae163c911a15",
+              "after_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00"
+            },
+            {
+              "stage": "RETURN_EXCEPTION_EAUDIT01",
+              "timestamp": "2026-10-11T12:47:10.360448",
+              "before_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00",
+              "after_sha256": "74fc6dc31aa1662b1e9633e94242e829c00e40357f07e1aa3941c699f6c895e8",
+              "reason": "原页PDF46–47已重新视觉核对；不完整sup计算移入proof_discussion，修正广义坐标维数，显式展开继承的正定背景。原语句不改，旧签名和全部返回件保留。"
+            },
+            {
+              "stage": "EAUDIT01_d_REASSESSMENT",
+              "reason": "依用户补充说明，以PASTE实际签名及全部定义摘录为当前版本；回显用户指定MANIFEST哈希。原页摘录、对象、量词、前提和六项结论核对通过；仅更新审校输出，未改工程或补证明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; directly inspected EAUDIT01d_PAGES.pdf printed pp.23–24 (PDF46–47); /workspace/.mathcopilot/reviews/ch01_eaudit/d_pages/page-1.png; /workspace/.mathcopilot/reviews/ch01_eaudit/d_pages/page-2.png",
+          "proof_discussion_latex": "In the case of the Lagrangian $L(\\boldsymbol{q},\\boldsymbol{v})=\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find\n\\[\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-(\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})))=\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2)+U(\\boldsymbol{q}).\\]"
+        },
+        "issues": [
+          {
+            "code": "POSSIBLE_ERRATUM",
+            "status": "resolved_in_context",
+            "detail": "原句字面只要求可逆，但其对象是此前机械坐标变换得到的质量矩阵。正物理质量及满列秩Jacobian给出对称正定背景。保留原句，不能把任意可逆矩阵反例判作该机械背景下的原书错误；当前PASTE签名已用hPositive显式展开此背景。"
+          },
+          {
+            "code": "REUSE_SCOPE_GAP",
+            "status": "nonblocking",
+            "detail": "PASTE保留任意配置相关M(q)及全部六项结论，没有退回固定正对角模型。列出的reusable_proofs是复用线索，不是当前签名的额外假设或已经覆盖全范围的证明声明；本次为陈述和定义语义审校，不验收其复用证明。"
+          },
+          {
+            "code": "INCOMPLETE_PROOF_AS_PROOF",
+            "status": "verified_resolved",
+            "detail": "原页只展示将U(q)移出sup的准备性代数恒等式。当前proof_latex=null且原段完整存入proof_discussion_latex，分类正确。"
+          },
+          {
+            "code": "CONTEXT_DEPENDENT_INVERTIBILITY",
+            "status": "verified_resolved",
+            "detail": "hPositive明确标为[EXTRA]，保留源文可逆措辞；其解释为机械质量背景的显式化合理。Mathlib v4.34.0的Matrix.PosDef同时要求Hermitian和非零向量二次型严格为正，实数情形包含对称性，不需另补对称假设。"
+          },
+          {
+            "code": "GENERALIZED_COORDINATE_DIMENSION",
+            "status": "verified_resolved",
+            "detail": "原页允许R^{N_d}到R^{N_c}的约束参数化；当前context_notation及任意n的欧氏空间覆盖广义配置维数，未将其一律限制为N_c。"
+          }
+        ],
+        "evidence": [
+          "版本依据：用户明确指定本对话PASTE的“实际签名”及全部定义摘录为当前工程版本。当前声明含hM及hPositive；上一轮依据旧工作区文件的FAIL不适用于本条，予以撤回。未用旧Ch01.lean或旧批次材料作本次判定依据。",
+          "MANIFEST：直接回显用户提供的source_json_sha256和lean_sha256，不自行计算，不将repair_log历史哈希替代这两个值。缺失source_page_checks.json不构成缺项；原页依据本对话中已直接视觉核对的附件。",
+          "已逐句核对原页印刷p.24/PDF47：statement_latex起止措辞、唯一达到速度、动量偏导、H公式及能量对应句忠实；proof_discussion_latex与同页准备性sup恒等式一致，proof_latex=null正确。",
+          "已直接查看印刷p.23/PDF46：广义质量为Jacobian转置、原质量矩阵与Jacobian的乘积，变换须满秩且结果可逆；原文允许R^{N_d}到R^{N_c}的参数化。对称正定结论是在PASTE所说明的正物理质量背景下的数学判断，未声称由可逆性单独推出。",
+          "完整审读PASTE的Position、Velocity、Momentum、PotentialEnergy、matrixAction、variableMassLagrangian及variableMassHamiltonian：它们分别给出同一n维实欧氏空间、位置实函数、通常矩阵作用、速度二次型减势能、逆质量动量二次型加势能。未把Hamiltonian本身定义成sup，也未在定义中预置最大化结论。",
+          "标准库语义核对：Mathlib v4.34.0官方Matrix.PosDef定义包含M.IsHermitian及所有非零有限支撑向量的严格正二次型；在Fin n、ℝ上即对称正定。官方源码：https://raw.githubusercontent.com/leanprover-community/mathlib4/v4.34.0/Mathlib/LinearAlgebra/Matrix/PosDef.lean（定义及isHermitian见142–148行）。",
+          "全部其他PASTE定义摘录已审读，包括Chapter06的Gibbs/GibbsComplex、A/J/cb、生成元、闭算子、谱及特征基、周期光滑空间与嵌入、环面代表元、权、配分函数及测度，以及其他命名空间Q。它们不进入本条声明或L、H、matrixAction的定义依赖，不产生隐藏前提或对象替换。",
+          "审校范围是源文JSON与PASTE形式化陈述的语义忠实性；PASTE没有当前证明正文，本次未编译或验收Lean证明完成情况。陈述语义审校无需补证明，且未发现缺失的相关项目定义或未决数学含义。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+        "verdict": "PASS",
+        "explanation": "PASS针对用户指定的当前PASTE版本，属于陈述与定义语义审校。令A=M(q)，matrixAction就是Av，L(q,v)=⟨v,Av⟩/2−U(q)，H(q,p)=⟨p,A⁻¹p⟩/2+U(q)。Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)，所以对象、实内积与有限维矩阵作用正确。量词保留任意n、配置相关M、U、q、p；第三与第四项对全部速度量化。n是广义坐标维数，可取N_c或约束参数化的N_d，n=0退化情形也不破坏陈述。前提逐项核对：hM为源文可逆条件；hPositive是已明确标注[EXTRA]的实对称正定条件，展开正物理质量及满列秩Jacobian的继承背景。Matrix.PosDef包含Hermitian条件，在ℝ上已提供对称性，因此没有漏掉速度梯度所需的对称条件。只在固定q处要求正定足够；本条不取位置导数，不需M或U的位置光滑性。有限维正定已蕴含可逆，显式保留hM虽冗余但忠实且无害。六项结论逐项核对：(1)目标在唯一候选速度w=A⁻¹p处取到有限上界H，所以BddAbove正确；(2)速度范围非空且上界被取到，实sSup等于H，未借助无界集合的实sSup约定；(3)H与目标的差为⟨v−w,A(v−w)⟩/2，正定性使该差为零当且仅当v=w，保留精确达到条件及唯一性；(4)固定q的对称二次型对速度的真实梯度为Av，HasGradientAt对象和值及求导点正确；(5)可逆性保证Aw=p，对应逆速度处的动量回代，与第四项合起来覆盖p=∂L/∂q̇=M(q)q̇；(6)内积在ℝ上的对称性与Aw=p使H等于逆速度处的动能加势能，对应位置和动量中的能量。当前签名未退回固定对角质量，也未删掉sup、达到条件、梯度或能量对应。源文仍保持字面可逆陈述，背景前提强化有显式记录；原页准备性计算没有被误充作完整证明。旧返回件中只假设任意矩阵可逆的反例不满足当前hPositive，不再构成当前声明的失败依据。未作Lean编译或当前证明正文验收。",
+        "counterexample": "未发现满足当前PASTE全部前提的反例。旧负矩阵[−1]违反正定性；旧非对称矩阵[[1,1],[0,1]]违反Matrix.PosDef的Hermitian条件，均不属于当前签名覆盖的对象。它们仅说明删去hPositive后的任意可逆矩阵版本不足。",
+        "suggested_fix": "当前陈述和定义无需修正。保留hPositive的[EXTRA]及继承背景说明、源文字面陈述、proof_latex=null、完整proof_discussion_latex、任意广义维数和全部六项结论；复用线索不应表述为已完成的一般矩阵证明。"
+      }
+    }
+  ]
+}

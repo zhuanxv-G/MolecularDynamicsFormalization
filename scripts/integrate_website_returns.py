@@ -162,13 +162,29 @@ def integrate(ch):
             output[sid] = w
     # The five original pilot returns predate EAUDIT01 and cannot be rebound to it.
     if ch == 1:
+        eaudit_receipt = folder / 'eaudit/REGISTRATION_20261014.json'
+        eaudit_rows = {}
+        if eaudit_receipt.exists():
+            registered = read(eaudit_receipt)
+            for rel, digest in registered['raw_files'].items():
+                assert sha(ROOT / rel) == digest, rel
+            eaudit_rows = {r['source_id']: r for r in registered['items']}
         for item in read(folder / 'review.json'):
             sid = item['source_id']
             w = copy.deepcopy(old[sid])
-            w['binding'] = dict(bound=False, rule=None, version=None,
-                                reasons=['旧试点对应修复前输入，EAUDIT01尚无返回'])
+            if sid in eaudit_rows:
+                fresh = eaudit_rows[sid]
+                w.update(json_review=copy.deepcopy(fresh['json_review']),
+                         audit=copy.deepcopy(fresh['audit']), returned_audit=copy.deepcopy(fresh['audit']),
+                         binding=copy.deepcopy(fresh['binding']), raw_path=fresh['raw_path'],
+                         raw_sha256=fresh['raw_sha256'], audit_round='EAUDIT01', json_review_round='EAUDIT01')
+                if fresh['binding']['bound'] and w.get('repair', {}).get('eaudit') == 'EAUDIT01':
+                    w['repair']['status'] = 'returned'
+            else:
+                w['binding'] = dict(bound=False, rule=None, version=None,
+                                    reasons=['旧试点对应修复前输入，EAUDIT01尚无有效返回登记'])
             w['effective_status'] = display(w)
-            w['needs_category'] = '材料缺失'
+            w['needs_category'] = '原文数学判断' if sid in QUESTIONS else '材料缺失'
             output[sid] = w
     assert set(output) == set(src), 'Incomplete chapter returns'
     counts = Counter()

@@ -1,0 +1,29 @@
+{
+  "batch": "EAUDIT01",
+  "subtask": "c",
+  "source_json_sha256": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+  "lean_sha256": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af",
+  "items": [
+    {
+      "source_id": "MD-1.3-NewtonEulerLagrange",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "以对话PASTE中的本条JSON为审校对象，不采用工作区旧工程文件。上一轮直接渲染并查看原书PDF46/印刷p.23：首句、展示方程d/dt(∂L/∂q̇)=∂L/∂q及完整括号说明与statement_latex一致，数学符号及粗体坐标一致。",
+          "原页括号说明明确Nc=3N个方程，每个原子坐标一个；本条范围不包含后续坐标变换。该页未给出独立证明，proof_latex=null合理。",
+          "上一轮读取原书PDF45/印刷p.22及PDF47/印刷p.24文本，确认固定质量L=q̇ᵀMq̇/2−U(q)的背景及辅助动量关系。source_page_checks.json不作为本次判定的必要材料。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.newton_iff_euler_lagrange",
+        "verdict": "PASS",
+        "explanation": "按补充说明，仅以PASTE实际签名和全部定义摘录认定当前版本；两个顶层哈希直接回显用户提供的MANIFEST值。对象逐项核对：CoordinateMasses n是固定Fin n→ℝ质量；MassMatrix是Fin n索引实矩阵；Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)；PotentialEnergy为位置上的实函数；diagonalMassMatrix=Matrix.diagonal m；massOperator由该矩阵的欧氏线性作用形成连续线性映射；nBodyKineticEnergy=Σ_i m_i v_i²/2；massLagrangian为该动能减U(q)，与原文固定对角质量的L一致。两个Chapter02Review.Q、Chapter04Review.Q属于各自命名空间，本条Q为显式Set (Position n)参数，无对象混淆。量词覆盖任意n、固定m、U、位置域Q、时间域I和曲线q；取n=3N并将每个原子质量重复三次恢复原文，允许更一般坐标质量和维数是包含原文的有效推广。两侧都要求∀t∈I, q(t)∈Q及真实HasDerivAt q (deriv q t) t；牛顿侧另有真实二阶导数见证和M q̈=-gradient U。Euler–Lagrange侧要求真实HasDerivAt作用于s↦gradient(v↦L(q(s),v))(deriv q s)，导数值为gradient(x↦L(x,deriv q t))(q t)，正是原式的速度偏导时间导数与位置偏导，没有把牛顿方程或二阶可微结论预置为前提。动能二次型处处可微，故速度梯度为M v；hU保证位置梯度为−gradient U。欧氏向量导数等式覆盖每个Fin n坐标，不遗漏括号中的全部坐标方程。双向语义成立：牛顿条件经固定线性M作用得到Euler–Lagrange条件；反向由M(deriv q)的真实可微性及正质量保证的可逆性恢复deriv q的真实可微性与牛顿方程。逐项[EXTRA]：hm是符合物理模型的充分条件，数学上非零质量即可保证此反向恢复；hI限制为开放时间域，符合局部双侧时间导数的常用解域，属于显式较强条件而非本等价的数学必需条件；hU是在整个Q上的实际可微性，合理补出位置偏导的正则性，不附加连续梯度或Q开放。n=0或I为空仅给合法退化实例，非空物理实例的结论仍完整。未发现疑误、循环定义、遗漏结论或缺失的本条自定义对象。此次PASS是针对所给当前陈述及完整定义的语义审校，不表示已核验未提供的证明正文、依赖链或Lean编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

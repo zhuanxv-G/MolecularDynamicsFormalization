@@ -4,11 +4,11 @@
 
 | source_id | 页码 印刷/PDF | 本地预审 | 网站审计 | 状态 |
 |---|---|---|---|---|
-| MD-1.5.3-Thm1.1 | 32/55 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | checked+documented priors |
-| MD-1.2-EnergyConservation | 19/42 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | checked+documented priors |
-| MD-1.3-NewtonEulerLagrange | 23/46 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | checked+documented priors |
-| MD-1.4-LegendreHamiltonian | 24/47 | NEEDS_HUMAN | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | incomplete |
-| MD-1.5.1-FlowInverse | 26/49 | PASS | 待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回） | checked+documented priors |
+| MD-1.5.3-Thm1.1 | 32/55 | PASS | 网站PASS（绑定版本 09ff185182a8） | checked+documented priors |
+| MD-1.2-EnergyConservation | 19/42 | PASS | 网站PASS（绑定版本 09ff185182a8） | checked+documented priors |
+| MD-1.3-NewtonEulerLagrange | 23/46 | PASS | 网站PASS（绑定版本 09ff185182a8） | checked+documented priors |
+| MD-1.4-LegendreHamiltonian | 24/47 | NEEDS_HUMAN | 网站PASS（绑定版本 09ff185182a8） | incomplete |
+| MD-1.5.1-FlowInverse | 26/49 | PASS | 网站PASS（绑定版本 09ff185182a8） | checked+documented priors |
 | MD-1.1-Schrodinger | 5/28 | PASS | 待复审 / EAUDIT02 | self-contained |
 | MD-1.1-NewtonModel | 6/29 | PASS | 待复审 / EAUDIT02 | self-contained |
 | MD-1.1-HardSphere | 7/30 | PASS | 待复审 / EAUDIT02 | self-contained |
@@ -235,11 +235,21 @@ theorem theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 本地预审：**PASS**。按原页核对所有量词、实际导数及完整结论；显式技术前提与范围见[EXTRA]和对应表；既有桥接适用于该签名。
 
-网站审计：**待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回）**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 09ff185182a8）**。原文JSON：DRAFT；未冻结。
 
-Ch01.lean:82–90确实使用正对角质量m、开放Q、Q内光滑U及严格极小前提，结论包含(q₀,0)为平衡点和未来稳定性。hm、hQ及q₀∈Q作为机械背景和定义域资格合理；开放Q中的严格极小可以对应原文局部定义，附加平衡点结论也符合上下文。但本批所需EuclideanStability.lean、FutureFlow.lean、PhaseMetric.lean等当前未提供，无法展开IsFutureMechanicalStableEuclidean，核实正ε/δ、全部邻近初值、未来解存在、全部未来时间、真实欧氏距离及有界且严格受限的上确界。旧缓存中IsStrictPotentialMinOn展开为q₀∈Q且存在R>0使Q内非中心点在距离R内满足U(q₀)<U(q)，IsMechanicalEquilibrium展开为机械向量场为零；该缓存未由本批MANIFEST绑定，不能替代本批定义。证明状态：该声明正文有复用证明且没有直接sorry；依赖链及编译未核验。语义判定因关键定义缺失保留。
-
-网站建议：补齐与Ch01.lean同一版本的EuclideanStability.lean、FutureFlow.lean、PhaseMetric.lean、PotentialBarriers.lean、Equilibrium.lean及其相关导入和本批MANIFEST.json，再逐项展开稳定性谓词核查；目前没有足够证据要求修改定理签名。
+语义审核通过。当前版本仅以PASTE中的实际签名及定义摘录为准，旧工程文件和旧返回件不作为判定依据；上一轮关于MANIFEST、版本绑定及本地原页核对记录的阻碍已由补充说明解除。
+对象：Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)，PhaseSpace为位置与动量的乘积；n为总配置坐标数，三维N粒子情形取n=3N。Force和PotentialEnergy的输入输出正确。
+机械方程：CoordinateMasses为固定坐标质量，diagonalMassMatrix为对角矩阵，velocityOperator作用为M⁻¹p，mechanicalVectorField=(M⁻¹p,F(q))。代入F=-gradient U后对应q̇=M⁻¹p、ṗ=-∇U；hm保证正质量及可逆性。
+[EXTRA]及质量范围：hm继承正定机械质量背景；固定对角表示符合§1.2明确的模型。对更一般的固定对称正定质量矩阵，可以正交坐标变换对角化，并同时变换位置、动量和势能，保持欧氏距离、光滑性及严格极小性质；因此上一轮提出的固定非对角矩阵顾虑不构成本条的语义阻碍。这里使用固定质量背景。
+定义域及光滑性：hQ和hstrict中的q₀∈Q补出开放定义域及中心点资格；hU要求Q内逐点C∞，对应原文局部光滑性。没有把稳定性、未来解存在或能量守恒藏入假设。
+严格局部极小：IsStrictPotentialMinOn为q₀∈Q且存在R>0，使Q内所有非中心且距离小于R的点满足U(q₀)<U(q)。q≠q₀等价于正距离；由Q开放及q₀∈Q缩小半径后得到完整环境邻域，忠实对应原文穿孔欧氏邻域的严格极小。没有额外要求Hessian正定或二次增长。
+平衡点结论：IsMechanicalEquilibrium要求机械向量场为零；开放域内的可微局部极小给出∇U(q₀)=0，线性速度算子将零动量映为零。因此新增平衡点合取项是原文假设的数学后果，符合稳定平衡点的上下文。
+稳定性量词：∀ε>0，∃δ>0，∀邻近初值z₀，次序正确；δ不依赖随后选择的初值、时间或轨迹。初值量词覆盖整个相空间，并未限于能量面或某条选定解。
+未来存在及全部解：每个邻近初值须存在a<0及Ioi a上的机械解，且γ(0)=z₀；该域包含0和全部非负时间。IsMechanicalSolutionOn要求位置在Q及真实积分曲线条件。存在项防止无解时的空真；全称部分约束所有满足条件的未来解。原文单值流与这些轨迹的对应由光滑机械向量场的局部唯一性保证；在当前开放域和光滑性条件下，要求短暂负时间延拓也不造成实质额外限制。
+距离、时间及上确界：phaseEuclideanDistance=√(dist(q,q*)²+dist(p,p*)²)，为拼接相空间的欧氏距离。Ici 0覆盖全部t≥0且非空；BddAbove显式排除无界集合的实数sSup总函数漏洞；保留sSup<ε，未弱化为≤ε或仅逐时刻<ε。
+全部61块摘录已读取，其中17块进入本条显式语义展开；其余44块为Chapter05Review.E、两处Chapter02/04Review.Q、16处模块私有Gibbs、两处模块私有R、shifted_graph_equiv及22处textbook*定义，均未进入本条展开链。各章Q不替代签名中的集合Q；私有Gibbs/R按各自模块区分，包括ComplexSpectrum中的复数Lp，不跨模块混同。
+原文只给证明思路，单凭轨迹不逃向无穷不足以构成完整稳定性证明；JSON已经准确标注这一限度，因此不影响原文摘录和形式陈述的忠实性判定。
+本PASS表示原文与当前形式陈述及定义的语义对应通过；本次未进行工程编译或证明依赖核验，不据旧工程推断当前证明是否含sorry或额外公理。未修改Lean工程或补证明。
 
 ### 7. 状态与证明位置
 
@@ -294,11 +304,9 @@ theorem energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 
 本地预审：**PASS**。按原页核对所有量词、实际导数及完整结论；显式技术前提与范围见[EXTRA]和对应表；既有桥接适用于该签名。
 
-网站审计：**待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回）**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 09ff185182a8）**。原文JSON：DRAFT；未冻结。
 
-Ch01.lean:54–59中的IsNewtonTrajectoryOn已实际展开：q在时间域内取值于Q，q及deriv q都有HasDerivAt见证，且massOperator m作用于二阶导数等于−gradient U；没有仅靠总化deriv等式冒充可微性。已读取现有NBody.lean：nBodyTotalEnergy=Σ_i m_i(v_i)²/2+U(q)，因此结论确实是位置—速度能量，含每个t上的零导数及同一Ioo a b内任意s,t的能量相等。取n=3N、m_(j,α)=m_j即恢复原书粒子公式；任意固定正对角质量是合理推广，不削弱守恒结论。hm对应物理正质量，hU保证真实梯度及链式法则，开连通时间区间对应单段解；允许空区间不妨碍非空区间结论。证据缺口：massOperator及相关桥接定义只在旧缓存LocalTrajectories.lean中找到，未取得与本批Ch01.lean匹配的依赖文件和MANIFEST；不能确认本批实际导入的算子就是所见固定对角质量算子。证明状态：声明正文无直接sorry；没有完成本批依赖链或编译核验。因此暂不签发PASS。
-
-网站建议：补齐本批版本的LocalTrajectories.lean、NBody.lean、ParticleCoordinates.lean、Hamiltonian.lean、EnergyConservation.lean及MANIFEST.json，确认massOperator为固定对角质量作用并绑定输入版本；已见量词和守恒结论无需修订。
+本判定为PASTE所给当前实际陈述与定义的语义审校。CoordinateMasses为Fin n到ℝ的固定质量函数；MassMatrix为相应实方阵；Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)；PotentialEnergy为位置到ℝ的无显式时间依赖势能。diagonalMassMatrix为Matrix.diagonal，massOperator为该对角矩阵诱导的连续线性算子，故其第i坐标作用为m i乘该坐标。nBodyKineticEnergy为Σ_i m_i v_i²/2，nBodyTotalEnergy为该动能加U(q)，确实对应式(1.4)的位置—速度能量。Chapter02Review.Q和Chapter04Review.Q是各自命名空间内的坐标函数别名；本声明的Q是显式绑定的Set (Position n)，没有对象混淆。IsNewtonTrajectoryOn要求q在时间域内取值于Q，并逐时刻给出q与deriv q的真实HasDerivAt见证，以及massOperator m作用于二阶导数等于−gradient U(q t)；不存在仅用总化deriv等式替代可微性的漏洞。量词覆盖任意有限维n、固定m、势能U、位置域Q、实数a和b及满足这些前提的轨迹q。第一结论是区间每个t处位置—速度总能量具有零导数，第二结论是同一Ioo a b内任意s、t的能量相等；原文的零导数与守恒结论均完整保留。逐项[EXTRA]：hm为物理正质量条件，也支持所述逆质量重写；直接能量导数消去本身不需要正性，但这一前提没有排除原书的正质量模型。hU在Q每点的DifferentiableAt保证实际梯度与链式法则在所有轨迹点有意义，无需另加Q开或梯度连续。Ioo a b为开连通时间域，允许应用逐点导数和零导数推出常值；结论只涉及同一解区间，不涉及端点或跨解区间。空区间及n=0的退化情形不破坏非退化情形的守恒陈述。任意固定正对角坐标质量是已披露且有效的推广；三维粒子取n=3N并在每个粒子的三个坐标重复其质量，即恢复原书动能与牛顿方程，直线运动取n=N。据所给定义，动能导数与势能链式法则项按牛顿方程逐坐标相消，故推广无语义缺口。本条没有尚缺的自定义对象定义或待裁定的原文疑误，判PASS。此判定不声称已编译当前工程或核验所列复用证明的证明体；本任务未要求补证明或改工程。
 
 ### 7. 状态与证明位置
 
@@ -352,11 +360,9 @@ theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
 
 本地预审：**PASS**。按原页核对所有量词、实际导数及完整结论；显式技术前提与范围见[EXTRA]和对应表；既有桥接适用于该签名。
 
-网站审计：**待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回）**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 09ff185182a8）**。原文JSON：DRAFT；未冻结。
 
-Ch01.lean:136–163的签名包含真正的双向↔，不是旧单向结论。其牛顿侧在54–59行明确包含Q内轨迹、真实一阶和二阶时间导数及质量算子方程；hm、hI、hU分别对应固定正质量、双侧时间导数所在的开放时间域、实际位置梯度，均为合理显式前提。原文这里使用p.22的固定质量L，并非随后配置相关质量模型，因此固定对角模型的对象选择合适，n=3N且按粒子重复质量可涵盖所有坐标方程。然而Lagrangian.lean当前缺失，未找到IsEulerLagrangeTrajectoryOn的真实定义；无法核实它是否使用实际L的速度/位置偏导，是否覆盖全部坐标和Q内轨迹，以及是否把牛顿条件或所需结论预置在谓词中。massOperator本批定义及输入MANIFEST也未提供。证明状态：该声明正文无直接sorry；双向证明调用的依赖尚未核验。右侧关键谓词缺失使语义审计不能判PASS。
-
-网站建议：补齐本批Lagrangian.lean及其导入、LocalTrajectories.lean、NBody.lean和MANIFEST.json；展开右侧为实际L(q,v)的偏导与时间导数条件，并检查全部坐标及两个方向。如包含牛顿结论作前提，应移除该循环条件。
+按补充说明，仅以PASTE实际签名和全部定义摘录认定当前版本；两个顶层哈希直接回显用户提供的MANIFEST值。对象逐项核对：CoordinateMasses n是固定Fin n→ℝ质量；MassMatrix是Fin n索引实矩阵；Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)；PotentialEnergy为位置上的实函数；diagonalMassMatrix=Matrix.diagonal m；massOperator由该矩阵的欧氏线性作用形成连续线性映射；nBodyKineticEnergy=Σ_i m_i v_i²/2；massLagrangian为该动能减U(q)，与原文固定对角质量的L一致。两个Chapter02Review.Q、Chapter04Review.Q属于各自命名空间，本条Q为显式Set (Position n)参数，无对象混淆。量词覆盖任意n、固定m、U、位置域Q、时间域I和曲线q；取n=3N并将每个原子质量重复三次恢复原文，允许更一般坐标质量和维数是包含原文的有效推广。两侧都要求∀t∈I, q(t)∈Q及真实HasDerivAt q (deriv q t) t；牛顿侧另有真实二阶导数见证和M q̈=-gradient U。Euler–Lagrange侧要求真实HasDerivAt作用于s↦gradient(v↦L(q(s),v))(deriv q s)，导数值为gradient(x↦L(x,deriv q t))(q t)，正是原式的速度偏导时间导数与位置偏导，没有把牛顿方程或二阶可微结论预置为前提。动能二次型处处可微，故速度梯度为M v；hU保证位置梯度为−gradient U。欧氏向量导数等式覆盖每个Fin n坐标，不遗漏括号中的全部坐标方程。双向语义成立：牛顿条件经固定线性M作用得到Euler–Lagrange条件；反向由M(deriv q)的真实可微性及正质量保证的可逆性恢复deriv q的真实可微性与牛顿方程。逐项[EXTRA]：hm是符合物理模型的充分条件，数学上非零质量即可保证此反向恢复；hI限制为开放时间域，符合局部双侧时间导数的常用解域，属于显式较强条件而非本等价的数学必需条件；hU是在整个Q上的实际可微性，合理补出位置偏导的正则性，不附加连续梯度或Q开放。n=0或I为空仅给合法退化实例，非空物理实例的结论仍完整。未发现疑误、循环定义、遗漏结论或缺失的本条自定义对象。此次PASS是针对所给当前陈述及完整定义的语义审校，不表示已核验未提供的证明正文、依赖链或Lean编译。
 
 ### 7. 状态与证明位置
 
@@ -432,13 +438,13 @@ theorem hamiltonian_legendre_transform {n : ℕ}
 
 本地预审：**NEEDS_HUMAN**。旧仅可逆签名确有负质量及非对称反例；新hPositive展开继承背景并保留配置相关矩阵和全部六项结论；待EAUDIT01独立语义审校。
 
-网站审计：**待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回）**。原文JSON：CORRECTED；未冻结。
+网站审计：**网站PASS（绑定版本 09ff185182a8）**。原文JSON：CORRECTED；未冻结。
 
-旧任意可逆签名FAIL已保存；当前签名补hPositive并登记EAUDIT01，待独立重审。
+PASS针对用户指定的当前PASTE版本，属于陈述与定义语义审校。令A=M(q)，matrixAction就是Av，L(q,v)=⟨v,Av⟩/2−U(q)，H(q,p)=⟨p,A⁻¹p⟩/2+U(q)。Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)，所以对象、实内积与有限维矩阵作用正确。量词保留任意n、配置相关M、U、q、p；第三与第四项对全部速度量化。n是广义坐标维数，可取N_c或约束参数化的N_d，n=0退化情形也不破坏陈述。前提逐项核对：hM为源文可逆条件；hPositive是已明确标注[EXTRA]的实对称正定条件，展开正物理质量及满列秩Jacobian的继承背景。Matrix.PosDef包含Hermitian条件，在ℝ上已提供对称性，因此没有漏掉速度梯度所需的对称条件。只在固定q处要求正定足够；本条不取位置导数，不需M或U的位置光滑性。有限维正定已蕴含可逆，显式保留hM虽冗余但忠实且无害。六项结论逐项核对：(1)目标在唯一候选速度w=A⁻¹p处取到有限上界H，所以BddAbove正确；(2)速度范围非空且上界被取到，实sSup等于H，未借助无界集合的实sSup约定；(3)H与目标的差为⟨v−w,A(v−w)⟩/2，正定性使该差为零当且仅当v=w，保留精确达到条件及唯一性；(4)固定q的对称二次型对速度的真实梯度为Av，HasGradientAt对象和值及求导点正确；(5)可逆性保证Aw=p，对应逆速度处的动量回代，与第四项合起来覆盖p=∂L/∂q̇=M(q)q̇；(6)内积在ℝ上的对称性与Aw=p使H等于逆速度处的动能加势能，对应位置和动量中的能量。当前签名未退回固定对角质量，也未删掉sup、达到条件、梯度或能量对应。源文仍保持字面可逆陈述，背景前提强化有显式记录；原页准备性计算没有被误充作完整证明。旧返回件中只假设任意矩阵可逆的反例不满足当前hPositive，不再构成当前声明的失败依据。未作Lean编译或当前证明正文验收。
 
-网站反例：反例一：n=1，M(x)=[−1]对所有x恒定，U(x)=0，q=0，p=0。M(q)可逆且其逆仍为[−1]，但L(q,v)=−v²/2，目标pᵀv−L=v²/2无上界，故第一合取项失败。反例二：n=2，M(x)=[[1,1],[0,1]]恒定，U=0，p=(1,0)。L(v)=(v₁²+v₁v₂+v₂²)/2为严格凸函数，在v=(1,0)处真实梯度为(1,1/2)，而M v=(1,0)，故HasGradientAt结论失败；真实最大化速度为(4/3,−2/3)，最大值2/3，声称的M⁻¹p=(1,0)和H=1/2也不正确。这些反例针对Lean的任意可逆矩阵签名，均不属于原书对称正定机械质量子类。
+网站反例：未发现满足当前PASTE全部前提的反例。旧负矩阵[−1]违反正定性；旧非对称矩阵[[1,1],[0,1]]违反Matrix.PosDef的Hermitian条件，均不属于当前签名覆盖的对象。它们仅说明删去hPositive后的任意可逆矩阵版本不足。
 
-网站建议：在独立修订的形式化签名中显式加入M(q)对称正定，或编码M(q)=JᵀM_cartJ、M_cart正定及J满列秩的机械构造；标明这是展开继承背景后的前提强化，保留原书字面陈述及ISSUE。仅加可逆或二次函数凸性不足以支持非对称矩阵的速度梯度公式。保留任意配置相关矩阵和全部六项结论，不能退回固定正对角模型冒充覆盖。
+网站建议：当前陈述和定义无需修正。保留hPositive的[EXTRA]及继承背景说明、源文字面陈述、proof_latex=null、完整proof_discussion_latex、任意广义维数和全部六项结论；复用线索不应表述为已完成的一般矩阵证明。
 
 反例：旧签名反例n=1,M=−1,U=p=0及非对称2×2矩阵；当前hPositive排除此类，不作为新签名反例。
 
@@ -501,11 +507,9 @@ theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 本地预审：**PASS**。按原页核对所有量词、实际导数及完整结论；显式技术前提与范围见[EXTRA]和对应表；既有桥接适用于该签名。
 
-网站审计：**待网站审计（旧试点对应修复前输入，EAUDIT01尚无返回）**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 09ff185182a8）**。原文JSON：DRAFT；未冻结。
 
-Ch01.lean:202–221的结论量化全部实时间及S中全部状态，显式包含恒等元、左右反演、BijOn(ψ t) S S、交换律及时间加法律，已见结论覆盖原段。_hm为固定正质量机械背景，hreg可用于唯一性，hψ意在提供全实时间ODE轨迹和状态域不变；这些是合理显式化，但必须检查实际定义。GlobalFlow.lean当前缺失，未找到IsGlobalMechanicalFlowOn，无法确认hψ真正给出每个初值的全实时间解、ψ0=z和S不变，还是把逆映射、双射或群律直接纳入前提，也无法核实其ODE及定义域限制。原文双向可解在此被作为已给流的前提，本声明本身没有证明全局流存在，符合条目的已声明范围。恒等元由流的初值条件给出本身合理；其余群律必须由ODE唯一性推出。证明状态：正文有复用证明且没有直接sorry；依赖链和编译未核验。因核心流谓词和本批MANIFEST未提供，语义判定保留。
-
-网站建议：补齐本批GlobalFlow.lean、相关LocalTrajectories.lean及唯一性依赖和MANIFEST.json；核实IsGlobalMechanicalFlowOn只包含真实全时间解、初值和S不变，不包含反演、双射或群律。若隐藏了这些结论，应删除循环前提，再从唯一性推出结论。
+本判定为当前PASTE声明及全部所给定义的语义审校。对象：Position、Momentum、Velocity均为EuclideanSpace ℝ (Fin n)，PhaseSpace为位置与动量的积；n表示坐标数，三维N粒子取n=3N，符合正文m维配置的机械系统。CoordinateMasses为逐坐标实质量，diagonalMassMatrix为其对角矩阵；_hm保证固定正质量及该矩阵正定可逆。velocityOperator为逆质量矩阵诱导的连续线性映射，mechanicalVectorField为(M⁻¹p,F(q))；PotentialEnergy为位置到实数的函数，声明指定F=-gradient U，符合机械力的表示。Force是位置到位置的映射，MassMatrix和Velocity等类型相互一致。Chapter02Review.Q与Chapter04Review.Q是其他命名空间的坐标类型缩写，与本声明的局部集合参数Q无关。量词与域：n、m、U、Q、S及ψ均按签名量化；时间为全部实数，状态结论限于S。IsMechanicalSolutionOn要求轨迹位置在Q且满足IsIntegralCurveOn的ODE条件；IsGlobalMechanicalFlowOn以univ为时间域，对每个S中初值给出该机械解、ψ 0 z=z，并对全部实时间要求MapsTo (ψ t) S S。因此复合映射的中间状态仍在S，限制ψ t到S得到自映射，未对S外作结论。前提审查：hψ将正文双向可解及已定义流显式化，没有预设反演、双射或群律；本条不承担从势能下界和紧性条件建立全局流存在的任务。hreg是在Q每点的环境C¹力条件，为自治机械向量场的局部唯一性提供足够正则性，是正文唯一性前提的合理明确化；ContDiffAt不是仅沿Q的正则性，不另需Q开集。_hm限定正固定质量背景，流恒等式本身可在更一般的自治系统中成立，不构成不当循环前提。结论审查：第一项为零时间恒等，第二项同时给左右逆，第三项BijOn (ψ t) S S为单射、满射及自映射，末项给交换律和时间加法律，对全部s、t及S中全部z成立。函数复合天然结合；在S上的这些恒等式、封闭性和逆元已完整表达原段的Abelian群结论，无须另添Lean的Group实例。双向解配合唯一性允许比较时间平移轨迹，故群律并未藏入流谓词。所给自定义定义足以判定本条语义忠实，未发现需修复的[EXTRA]或对象、量词、前提、结论偏差。此PASS不宣称已编译工程或核验复用证明的完整依赖链；本次按要求只读审校陈述与定义，没有修改工程或补证明。
 
 ### 7. 状态与证明位置
 

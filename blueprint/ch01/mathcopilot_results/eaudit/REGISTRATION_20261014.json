@@ -1,0 +1,1201 @@
+{
+  "batch": "EAUDIT01",
+  "registered_at": "2026-10-14T11:11:59.123774",
+  "raw_files": {
+    "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT01_a_result.json": "16396cb2809b8e5c56ce345681abe376384638122e40e8936f87e078176ab4f1",
+    "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT01_b_result.json": "44b01fec95955772a4e6f4b2244d9b74486772126ea94224a46a2a0e6c9c4d12",
+    "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT01_c_result.json": "7d418cb9db9a18b2a1a40c81e5d55f3969ce4ce0fa7470f4aa7de751e7897134",
+    "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT01_d_result.json": "10bcdf2d31bd8ac3f541df776a6d7547718b6908f6f9d9f5c094392d3230a7d3",
+    "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT01_e_result.json": "81adea4604ed5ec582f2738fdc0810aeac1cd1e9e10d068f725914441e408844"
+  },
+  "generation_commit": "09ff185182a88e48a9777d8c5324016ef1b9d6ae",
+  "items": [
+    {
+      "source_id": "MD-1.5.3-Thm1.1",
+      "raw_path": "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT01_a_result.json",
+      "raw_sha256": "16396cb2809b8e5c56ce345681abe376384638122e40e8936f87e078176ab4f1",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "版本依据为本对话PASTE中的本条JSON、实际签名和全部定义摘录；不使用工作区旧Ch01.lean、BATCH文件或旧源码的比较结果。顶层两个哈希直接回显用户补充的MANIFEST值，未自行计算或检索替代值。",
+          "已直接读取、渲染并查看EAUDIT01a_PAGES.pdf全部两页：第1页为印刷p.31，第2页为印刷p.32，对应完整原书PDF54、55。Theorem 1.1的statement_latex与第2页逐字一致，数学排版和换行转换不改变措辞。",
+          "proof_discussion_latex与第2页从证明讨论起句至[216]引用结束的原文一致。没有把后续C²线性化讨论纳入，也没有把证明思路冒充完整证明；proof_latex=null及proof_note准确。",
+          "强局部极小定义与原页的正半径、穿孔邻域及U(q)>U(q*)一致；稳定性定义与全部邻近初值、t≥0和严格上确界不等式一致。context_notation补出正ε、δ，符合容差的数学含义。",
+          "定理及所摘证明讨论均在印刷p.32/PDF55；印刷p.31/PDF54给出平衡点及局部C¹背景，PAGE_SPAN_CORRECTION准确。",
+          "固定对角质量模型及固定正定背景与所给context_notation一致；此前直接查看过完整原书PDF41/印刷p.18和PDF48/印刷p.25的这些背景。",
+          "依据补充说明，以本次直接原页核对为准；不再因未提供source_page_checks.json或历史repair_log原始版本而保留NEEDS_HUMAN。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.theorem_1_1",
+        "verdict": "PASS",
+        "explanation": "语义审核通过。当前版本仅以PASTE中的实际签名及定义摘录为准，旧工程文件和旧返回件不作为判定依据；上一轮关于MANIFEST、版本绑定及本地原页核对记录的阻碍已由补充说明解除。\n对象：Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)，PhaseSpace为位置与动量的乘积；n为总配置坐标数，三维N粒子情形取n=3N。Force和PotentialEnergy的输入输出正确。\n机械方程：CoordinateMasses为固定坐标质量，diagonalMassMatrix为对角矩阵，velocityOperator作用为M⁻¹p，mechanicalVectorField=(M⁻¹p,F(q))。代入F=-gradient U后对应q̇=M⁻¹p、ṗ=-∇U；hm保证正质量及可逆性。\n[EXTRA]及质量范围：hm继承正定机械质量背景；固定对角表示符合§1.2明确的模型。对更一般的固定对称正定质量矩阵，可以正交坐标变换对角化，并同时变换位置、动量和势能，保持欧氏距离、光滑性及严格极小性质；因此上一轮提出的固定非对角矩阵顾虑不构成本条的语义阻碍。这里使用固定质量背景。\n定义域及光滑性：hQ和hstrict中的q₀∈Q补出开放定义域及中心点资格；hU要求Q内逐点C∞，对应原文局部光滑性。没有把稳定性、未来解存在或能量守恒藏入假设。\n严格局部极小：IsStrictPotentialMinOn为q₀∈Q且存在R>0，使Q内所有非中心且距离小于R的点满足U(q₀)<U(q)。q≠q₀等价于正距离；由Q开放及q₀∈Q缩小半径后得到完整环境邻域，忠实对应原文穿孔欧氏邻域的严格极小。没有额外要求Hessian正定或二次增长。\n平衡点结论：IsMechanicalEquilibrium要求机械向量场为零；开放域内的可微局部极小给出∇U(q₀)=0，线性速度算子将零动量映为零。因此新增平衡点合取项是原文假设的数学后果，符合稳定平衡点的上下文。\n稳定性量词：∀ε>0，∃δ>0，∀邻近初值z₀，次序正确；δ不依赖随后选择的初值、时间或轨迹。初值量词覆盖整个相空间，并未限于能量面或某条选定解。\n未来存在及全部解：每个邻近初值须存在a<0及Ioi a上的机械解，且γ(0)=z₀；该域包含0和全部非负时间。IsMechanicalSolutionOn要求位置在Q及真实积分曲线条件。存在项防止无解时的空真；全称部分约束所有满足条件的未来解。原文单值流与这些轨迹的对应由光滑机械向量场的局部唯一性保证；在当前开放域和光滑性条件下，要求短暂负时间延拓也不造成实质额外限制。\n距离、时间及上确界：phaseEuclideanDistance=√(dist(q,q*)²+dist(p,p*)²)，为拼接相空间的欧氏距离。Ici 0覆盖全部t≥0且非空；BddAbove显式排除无界集合的实数sSup总函数漏洞；保留sSup<ε，未弱化为≤ε或仅逐时刻<ε。\n全部61块摘录已读取，其中17块进入本条显式语义展开；其余44块为Chapter05Review.E、两处Chapter02/04Review.Q、16处模块私有Gibbs、两处模块私有R、shifted_graph_equiv及22处textbook*定义，均未进入本条展开链。各章Q不替代签名中的集合Q；私有Gibbs/R按各自模块区分，包括ComplexSpectrum中的复数Lp，不跨模块混同。\n原文只给证明思路，单凭轨迹不逃向无穷不足以构成完整稳定性证明；JSON已经准确标注这一限度，因此不影响原文摘录和形式陈述的忠实性判定。\n本PASS表示原文与当前形式陈述及定义的语义对应通过；本次未进行工程编译或证明依赖核验，不据旧工程推断当前证明是否含sorry或额外公理。未修改Lean工程或补证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "binding": {
+        "bound": true,
+        "rule": "EAUDIT01 original source_json_sha256/lean_sha256 protocol",
+        "version": "09ff185182a8",
+        "generation_commit": "09ff185182a88e48a9777d8c5324016ef1b9d6ae",
+        "input_sha256": {
+          "blueprint/ch01/ch01_source.json": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "Blueprint/Ch01.lean": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "checks": {
+          "source_json_returned": true,
+          "lean_returned": true,
+          "historical_source_blob": true,
+          "historical_lean_blob": true,
+          "current_signature": true,
+          "source_entry_unchanged": true,
+          "formal_dependencies_unchanged": true,
+          "definition_excerpts": true
+        },
+        "definition_excerpt_checks": [
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "CoordinateMasses",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+            "name": "E",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Force",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianComplexKernel.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenDiscreteness.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenEnumeration.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenGraph.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenNormalization.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenOrdering.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSpectralAverage.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSpectralDecay.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSpectralEvolution.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSpectralGenerator.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/EuclideanStability.lean",
+            "name": "IsFutureMechanicalStableEuclidean",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/Equilibrium.lean",
+            "name": "IsMechanicalEquilibrium",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+            "name": "IsMechanicalSolutionOn",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/PotentialBarriers.lean",
+            "name": "IsStrictPotentialMinOn",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "MassMatrix",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Momentum",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "PhaseSpace",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Position",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "PotentialEnergy",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+            "name": "Q",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+            "name": "Q",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianComplexKernel.lean",
+            "name": "R",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean",
+            "name": "R",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/PotentialBarriers.lean",
+            "name": "StrictPotentialMinRadius",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Velocity",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "diagonalMassMatrix",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+            "name": "mechanicalVectorField",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/PhaseMetric.lean",
+            "name": "phaseEuclideanDistance",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+            "name": "shifted_graph_equiv",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+            "name": "textbookBrownianGenerator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGraphCompact.lean",
+            "name": "textbookBrownianGibbsClosedGraphProjection",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+            "name": "textbookBrownianGibbsClosedGraphShift",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianClosedOperator.lean",
+            "name": "textbookBrownianGibbsClosedOperator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookBrownianGibbsDomainOperator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianClosedOperator.lean",
+            "name": "textbookBrownianGibbsPartialOperator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+            "name": "textbookBrownianGibbsResolvent",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookBrownianGibbsSmoothDomain",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookBrownianSmoothGenerator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+            "name": "textbookConfigurationCube",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianHilbertCore.lean",
+            "name": "textbookConfigurationGibbsL2Observable",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+            "name": "textbookConfigurationGibbsWeight",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+            "name": "textbookConfigurationPartial",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+            "name": "textbookConfigurationPartition",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+            "name": "textbookConfigurationTorusGibbsMeasure",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+            "name": "textbookConfigurationTorusGibbsWeight",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+            "name": "textbookConfigurationTorusObservable",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+            "name": "textbookConfigurationTorusRepresentative",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookPeriodicSmoothEmbedding",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookPeriodicSmoothEmbeddingEquiv",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookPeriodicSmoothSpace",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+            "name": "textbookUnitPeriodicPotential",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+            "name": "velocityOperator",
+            "matches": true
+          }
+        ],
+        "reasons": [],
+        "scope": "原EAUDIT01要求的两项SHA均回显并核对真实git历史blob，任务子MANIFEST和所有定义摘录核验；当前该条源码/签名相同。缺哈希不提升。"
+      },
+      "manifest": "blueprint/ch01/mathcopilot_tasks/EAUDIT01/a/MANIFEST.json",
+      "manifest_sha256": "a184ee9854af66ff83c86a14ce6af02688e938ae891adcc7b8b5e09e4c062dc5",
+      "source_corrections_applied": false
+    },
+    {
+      "source_id": "MD-1.2-EnergyConservation",
+      "raw_path": "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT01_b_result.json",
+      "raw_sha256": "44b01fec95955772a4e6f4b2244d9b74486772126ea94224a46a2a0e6c9c4d12",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "版本依据仅为本对话PASTE中的本条JSON、实际签名及全部定义摘录；不采用工作区旧工程、旧JSON或旧返回件作为当前版本证据。顶层哈希直接回显用户补充的本批MANIFEST值。",
+          "已直接查看原页附件EAUDIT01b_PAGES.pdf的印刷p.19原页图像：首句与statement_latex逐字一致；proof_latex的三个求和项、点积、括号、导数及最终零值与紧接的展示计算一致，能量函数E为数学斜体。",
+          "已直接查看印刷p.18原页图像：式(1.3)为固定对角质量牛顿方程，式(1.4)为位置—速度总能量；三维坐标数为3N，每个粒子质量重复三次，与context_notation一致。",
+          "本条范围为p.19首句及其导数计算，未并入后续总动量守恒；extra_assumptions已明确标出质量正性、势能可微性和开连通时间区间。原页核对依据为实际查看的图像，无需另取source_page_checks.json。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.energy_conservation",
+        "verdict": "PASS",
+        "explanation": "本判定为PASTE所给当前实际陈述与定义的语义审校。CoordinateMasses为Fin n到ℝ的固定质量函数；MassMatrix为相应实方阵；Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)；PotentialEnergy为位置到ℝ的无显式时间依赖势能。diagonalMassMatrix为Matrix.diagonal，massOperator为该对角矩阵诱导的连续线性算子，故其第i坐标作用为m i乘该坐标。nBodyKineticEnergy为Σ_i m_i v_i²/2，nBodyTotalEnergy为该动能加U(q)，确实对应式(1.4)的位置—速度能量。Chapter02Review.Q和Chapter04Review.Q是各自命名空间内的坐标函数别名；本声明的Q是显式绑定的Set (Position n)，没有对象混淆。IsNewtonTrajectoryOn要求q在时间域内取值于Q，并逐时刻给出q与deriv q的真实HasDerivAt见证，以及massOperator m作用于二阶导数等于−gradient U(q t)；不存在仅用总化deriv等式替代可微性的漏洞。量词覆盖任意有限维n、固定m、势能U、位置域Q、实数a和b及满足这些前提的轨迹q。第一结论是区间每个t处位置—速度总能量具有零导数，第二结论是同一Ioo a b内任意s、t的能量相等；原文的零导数与守恒结论均完整保留。逐项[EXTRA]：hm为物理正质量条件，也支持所述逆质量重写；直接能量导数消去本身不需要正性，但这一前提没有排除原书的正质量模型。hU在Q每点的DifferentiableAt保证实际梯度与链式法则在所有轨迹点有意义，无需另加Q开或梯度连续。Ioo a b为开连通时间域，允许应用逐点导数和零导数推出常值；结论只涉及同一解区间，不涉及端点或跨解区间。空区间及n=0的退化情形不破坏非退化情形的守恒陈述。任意固定正对角坐标质量是已披露且有效的推广；三维粒子取n=3N并在每个粒子的三个坐标重复其质量，即恢复原书动能与牛顿方程，直线运动取n=N。据所给定义，动能导数与势能链式法则项按牛顿方程逐坐标相消，故推广无语义缺口。本条没有尚缺的自定义对象定义或待裁定的原文疑误，判PASS。此判定不声称已编译当前工程或核验所列复用证明的证明体；本任务未要求补证明或改工程。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "binding": {
+        "bound": true,
+        "rule": "EAUDIT01 original source_json_sha256/lean_sha256 protocol",
+        "version": "09ff185182a8",
+        "generation_commit": "09ff185182a88e48a9777d8c5324016ef1b9d6ae",
+        "input_sha256": {
+          "blueprint/ch01/ch01_source.json": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "Blueprint/Ch01.lean": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "checks": {
+          "source_json_returned": true,
+          "lean_returned": true,
+          "historical_source_blob": true,
+          "historical_lean_blob": true,
+          "current_signature": true,
+          "source_entry_unchanged": true,
+          "formal_dependencies_unchanged": true,
+          "definition_excerpts": true
+        },
+        "definition_excerpt_checks": [
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "CoordinateMasses",
+            "matches": true
+          },
+          {
+            "path": "Blueprint/Ch01.lean",
+            "name": "IsNewtonTrajectoryOn",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "MassMatrix",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Momentum",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Position",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "PotentialEnergy",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+            "name": "Q",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+            "name": "Q",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Velocity",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "diagonalMassMatrix",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+            "name": "massOperator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "nBodyKineticEnergy",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "nBodyTotalEnergy",
+            "matches": true
+          }
+        ],
+        "reasons": [],
+        "scope": "原EAUDIT01要求的两项SHA均回显并核对真实git历史blob，任务子MANIFEST和所有定义摘录核验；当前该条源码/签名相同。缺哈希不提升。"
+      },
+      "manifest": "blueprint/ch01/mathcopilot_tasks/EAUDIT01/b/MANIFEST.json",
+      "manifest_sha256": "969ecbd5ce7118a25de46a536d7b5532c84a3f01b7c28ee8dd6d72bb20a4e4c2",
+      "source_corrections_applied": false
+    },
+    {
+      "source_id": "MD-1.3-NewtonEulerLagrange",
+      "raw_path": "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT01_c_result.json",
+      "raw_sha256": "7d418cb9db9a18b2a1a40c81e5d55f3969ce4ce0fa7470f4aa7de751e7897134",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "以对话PASTE中的本条JSON为审校对象，不采用工作区旧工程文件。上一轮直接渲染并查看原书PDF46/印刷p.23：首句、展示方程d/dt(∂L/∂q̇)=∂L/∂q及完整括号说明与statement_latex一致，数学符号及粗体坐标一致。",
+          "原页括号说明明确Nc=3N个方程，每个原子坐标一个；本条范围不包含后续坐标变换。该页未给出独立证明，proof_latex=null合理。",
+          "上一轮读取原书PDF45/印刷p.22及PDF47/印刷p.24文本，确认固定质量L=q̇ᵀMq̇/2−U(q)的背景及辅助动量关系。source_page_checks.json不作为本次判定的必要材料。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.newton_iff_euler_lagrange",
+        "verdict": "PASS",
+        "explanation": "按补充说明，仅以PASTE实际签名和全部定义摘录认定当前版本；两个顶层哈希直接回显用户提供的MANIFEST值。对象逐项核对：CoordinateMasses n是固定Fin n→ℝ质量；MassMatrix是Fin n索引实矩阵；Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)；PotentialEnergy为位置上的实函数；diagonalMassMatrix=Matrix.diagonal m；massOperator由该矩阵的欧氏线性作用形成连续线性映射；nBodyKineticEnergy=Σ_i m_i v_i²/2；massLagrangian为该动能减U(q)，与原文固定对角质量的L一致。两个Chapter02Review.Q、Chapter04Review.Q属于各自命名空间，本条Q为显式Set (Position n)参数，无对象混淆。量词覆盖任意n、固定m、U、位置域Q、时间域I和曲线q；取n=3N并将每个原子质量重复三次恢复原文，允许更一般坐标质量和维数是包含原文的有效推广。两侧都要求∀t∈I, q(t)∈Q及真实HasDerivAt q (deriv q t) t；牛顿侧另有真实二阶导数见证和M q̈=-gradient U。Euler–Lagrange侧要求真实HasDerivAt作用于s↦gradient(v↦L(q(s),v))(deriv q s)，导数值为gradient(x↦L(x,deriv q t))(q t)，正是原式的速度偏导时间导数与位置偏导，没有把牛顿方程或二阶可微结论预置为前提。动能二次型处处可微，故速度梯度为M v；hU保证位置梯度为−gradient U。欧氏向量导数等式覆盖每个Fin n坐标，不遗漏括号中的全部坐标方程。双向语义成立：牛顿条件经固定线性M作用得到Euler–Lagrange条件；反向由M(deriv q)的真实可微性及正质量保证的可逆性恢复deriv q的真实可微性与牛顿方程。逐项[EXTRA]：hm是符合物理模型的充分条件，数学上非零质量即可保证此反向恢复；hI限制为开放时间域，符合局部双侧时间导数的常用解域，属于显式较强条件而非本等价的数学必需条件；hU是在整个Q上的实际可微性，合理补出位置偏导的正则性，不附加连续梯度或Q开放。n=0或I为空仅给合法退化实例，非空物理实例的结论仍完整。未发现疑误、循环定义、遗漏结论或缺失的本条自定义对象。此次PASS是针对所给当前陈述及完整定义的语义审校，不表示已核验未提供的证明正文、依赖链或Lean编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "binding": {
+        "bound": true,
+        "rule": "EAUDIT01 original source_json_sha256/lean_sha256 protocol",
+        "version": "09ff185182a8",
+        "generation_commit": "09ff185182a88e48a9777d8c5324016ef1b9d6ae",
+        "input_sha256": {
+          "blueprint/ch01/ch01_source.json": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "Blueprint/Ch01.lean": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "checks": {
+          "source_json_returned": true,
+          "lean_returned": true,
+          "historical_source_blob": true,
+          "historical_lean_blob": true,
+          "current_signature": true,
+          "source_entry_unchanged": true,
+          "formal_dependencies_unchanged": true,
+          "definition_excerpts": true
+        },
+        "definition_excerpt_checks": [
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "CoordinateMasses",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/Lagrangian.lean",
+            "name": "IsEulerLagrangeTrajectoryOn",
+            "matches": true
+          },
+          {
+            "path": "Blueprint/Ch01.lean",
+            "name": "IsNewtonTrajectoryOn",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "MassMatrix",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Momentum",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Position",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "PotentialEnergy",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+            "name": "Q",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+            "name": "Q",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Velocity",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "diagonalMassMatrix",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/Lagrangian.lean",
+            "name": "massLagrangian",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+            "name": "massOperator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "nBodyKineticEnergy",
+            "matches": true
+          }
+        ],
+        "reasons": [],
+        "scope": "原EAUDIT01要求的两项SHA均回显并核对真实git历史blob，任务子MANIFEST和所有定义摘录核验；当前该条源码/签名相同。缺哈希不提升。"
+      },
+      "manifest": "blueprint/ch01/mathcopilot_tasks/EAUDIT01/c/MANIFEST.json",
+      "manifest_sha256": "b0d54c59e3bf860d8b5320dc5a8ce103dfa5296485da707360c5018ed3f91834",
+      "source_corrections_applied": false
+    },
+    {
+      "source_id": "MD-1.4-LegendreHamiltonian",
+      "raw_path": "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT01_d_result.json",
+      "raw_sha256": "10bcdf2d31bd8ac3f541df776a6d7547718b6908f6f9d9f5c094392d3230a7d3",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "POSSIBLE_ERRATUM",
+          "REUSE_SCOPE_GAP",
+          "INCOMPLETE_PROOF_AS_PROOF",
+          "CONTEXT_DEPENDENT_INVERTIBILITY",
+          "GENERALIZED_COORDINATE_DIMENSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.4-LegendreHamiltonian",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.4",
+          "printed_page": "24",
+          "pdf_page": "47",
+          "statement_latex": "If $\\boldsymbol{M}(\\boldsymbol{q})$ is invertible, the supremum is achieved precisely when\n\\[\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p},\\]\nwhich gives the standard definition of the momentum vector $\\boldsymbol{p}$ in terms of velocities,\n\\[\\boldsymbol{p}=\\frac{\\partial L}{\\partial\\dot{\\boldsymbol{q}}}=\\boldsymbol{M}(\\boldsymbol{q})\\dot{\\boldsymbol{q}},\\]\nand, with $\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p}$, the Legendre transformation results in a new function\n\\[H(\\boldsymbol{q},\\boldsymbol{p})\\stackrel{\\mathrm{def}}{=}\\boldsymbol{p}^TM(\\boldsymbol{q})^{-1}\\boldsymbol{p}/2+U(\\boldsymbol{q}).\\]\nThis is precisely the energy function, written in terms of positions and momenta.",
+          "proof_latex": null,
+          "proof_note": "原文仅展示将U(q)从上确界中移出的代数恒等式，未独立证明上界、达到条件及唯一性；该段原文完整保存于proof_discussion_latex。",
+          "context_notation": [
+            "同页Legendre定义：凸函数$g(\\boldsymbol{\\xi}):\\mathbb{R}^m\\to\\mathbb{R}$，$\\widetilde g(\\boldsymbol{\\eta})=\\sup_{\\boldsymbol{\\xi}}(\\boldsymbol{\\eta}^T\\boldsymbol{\\xi}-g(\\boldsymbol{\\xi}))$；印刷p.24/PDF47。",
+            "配置相关质量矩阵来自$\\Phi^{\\prime}(\\boldsymbol{Q})^T\\boldsymbol{M}\\Phi^{\\prime}(\\boldsymbol{Q})$；§1.3印刷p.23/PDF46要求变换Jacobian满秩且所得质量矩阵可逆。在固定正质量的机械背景中，这给出对称正定矩阵；对称性和正定性不是单独由可逆推出。",
+            "$\\boldsymbol{q},\\boldsymbol{v},\\boldsymbol{p}$属于广义配置坐标空间；无约束例为$\\mathbb{R}^{N_c}$，约束参数化可为$\\mathbb{R}^{N_d}$，见印刷p.23/PDF46。$H$是位置和动量中的能量，见印刷p.24/PDF47。"
+          ],
+          "issues": [
+            {
+              "code": "POSSIBLE_ERRATUM",
+              "status": "resolved_in_context",
+              "detail": "原句字面只要求可逆，但其对象是此前机械坐标变换得到的质量矩阵。正物理质量及满列秩Jacobian给出对称正定背景。保留原句，不能把任意可逆矩阵反例判作该机械背景下的原书错误；当前PASTE签名已用hPositive显式展开此背景。"
+            },
+            {
+              "code": "REUSE_SCOPE_GAP",
+              "status": "nonblocking",
+              "detail": "PASTE保留任意配置相关M(q)及全部六项结论，没有退回固定正对角模型。列出的reusable_proofs是复用线索，不是当前签名的额外假设或已经覆盖全范围的证明声明；本次为陈述和定义语义审校，不验收其复用证明。"
+            },
+            {
+              "code": "INCOMPLETE_PROOF_AS_PROOF",
+              "status": "verified_resolved",
+              "detail": "原页只展示将U(q)移出sup的准备性代数恒等式。当前proof_latex=null且原段完整存入proof_discussion_latex，分类正确。"
+            },
+            {
+              "code": "CONTEXT_DEPENDENT_INVERTIBILITY",
+              "status": "verified_resolved",
+              "detail": "hPositive明确标为[EXTRA]，保留源文可逆措辞；其解释为机械质量背景的显式化合理。Mathlib v4.34.0的Matrix.PosDef同时要求Hermitian和非零向量二次型严格为正，实数情形包含对称性，不需另补对称假设。"
+            },
+            {
+              "code": "GENERALIZED_COORDINATE_DIMENSION",
+              "status": "verified_resolved",
+              "detail": "原页允许R^{N_d}到R^{N_c}的约束参数化；当前context_notation及任意n的欧氏空间覆盖广义配置维数，未将其一律限制为N_c。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+          "reusable_proofs": [
+            "MolecularDynamics.massHamiltonian_eq_legendre_sup",
+            "MolecularDynamics.legendre_objective_eq_massHamiltonian_iff"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] hPositive : (M q).PosDef；展开p23正物理质量及满秩Jacobian继承的对称正定背景，任意可逆矩阵反例不属于此子类。字面可逆原句保留，配置相关M及全部六项结论不变。"
+          ],
+          "statement_scope": "从“If M(q) is invertible”到“written in terms of positions and momenta.”；前一计算为proof_discussion_latex，前置抽象定义为context_notation；Hamilton方程属于下一条。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "LOCAL_DRAFT",
+              "reason": "对照原页及PDF字体记录统一数学斜体E和粗体质量矩阵M；没有改写原文措辞。",
+              "before_sha256": "134f84e19b17bad810cdb8cdd0308bbcefb36fe2b17b2402605eae163c911a15",
+              "after_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00"
+            },
+            {
+              "stage": "RETURN_EXCEPTION_EAUDIT01",
+              "timestamp": "2026-10-11T12:47:10.360448",
+              "before_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00",
+              "after_sha256": "74fc6dc31aa1662b1e9633e94242e829c00e40357f07e1aa3941c699f6c895e8",
+              "reason": "原页PDF46–47已重新视觉核对；不完整sup计算移入proof_discussion，修正广义坐标维数，显式展开继承的正定背景。原语句不改，旧签名和全部返回件保留。"
+            },
+            {
+              "stage": "EAUDIT01_d_REASSESSMENT",
+              "reason": "依用户补充说明，以PASTE实际签名及全部定义摘录为当前版本；回显用户指定MANIFEST哈希。原页摘录、对象、量词、前提和六项结论核对通过；仅更新审校输出，未改工程或补证明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; directly inspected EAUDIT01d_PAGES.pdf printed pp.23–24 (PDF46–47); /workspace/.mathcopilot/reviews/ch01_eaudit/d_pages/page-1.png; /workspace/.mathcopilot/reviews/ch01_eaudit/d_pages/page-2.png",
+          "proof_discussion_latex": "In the case of the Lagrangian $L(\\boldsymbol{q},\\boldsymbol{v})=\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find\n\\[\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-(\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})))=\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2)+U(\\boldsymbol{q}).\\]"
+        },
+        "issues": [
+          {
+            "code": "POSSIBLE_ERRATUM",
+            "status": "resolved_in_context",
+            "detail": "原句字面只要求可逆，但其对象是此前机械坐标变换得到的质量矩阵。正物理质量及满列秩Jacobian给出对称正定背景。保留原句，不能把任意可逆矩阵反例判作该机械背景下的原书错误；当前PASTE签名已用hPositive显式展开此背景。"
+          },
+          {
+            "code": "REUSE_SCOPE_GAP",
+            "status": "nonblocking",
+            "detail": "PASTE保留任意配置相关M(q)及全部六项结论，没有退回固定正对角模型。列出的reusable_proofs是复用线索，不是当前签名的额外假设或已经覆盖全范围的证明声明；本次为陈述和定义语义审校，不验收其复用证明。"
+          },
+          {
+            "code": "INCOMPLETE_PROOF_AS_PROOF",
+            "status": "verified_resolved",
+            "detail": "原页只展示将U(q)移出sup的准备性代数恒等式。当前proof_latex=null且原段完整存入proof_discussion_latex，分类正确。"
+          },
+          {
+            "code": "CONTEXT_DEPENDENT_INVERTIBILITY",
+            "status": "verified_resolved",
+            "detail": "hPositive明确标为[EXTRA]，保留源文可逆措辞；其解释为机械质量背景的显式化合理。Mathlib v4.34.0的Matrix.PosDef同时要求Hermitian和非零向量二次型严格为正，实数情形包含对称性，不需另补对称假设。"
+          },
+          {
+            "code": "GENERALIZED_COORDINATE_DIMENSION",
+            "status": "verified_resolved",
+            "detail": "原页允许R^{N_d}到R^{N_c}的约束参数化；当前context_notation及任意n的欧氏空间覆盖广义配置维数，未将其一律限制为N_c。"
+          }
+        ],
+        "evidence": [
+          "版本依据：用户明确指定本对话PASTE的“实际签名”及全部定义摘录为当前工程版本。当前声明含hM及hPositive；上一轮依据旧工作区文件的FAIL不适用于本条，予以撤回。未用旧Ch01.lean或旧批次材料作本次判定依据。",
+          "MANIFEST：直接回显用户提供的source_json_sha256和lean_sha256，不自行计算，不将repair_log历史哈希替代这两个值。缺失source_page_checks.json不构成缺项；原页依据本对话中已直接视觉核对的附件。",
+          "已逐句核对原页印刷p.24/PDF47：statement_latex起止措辞、唯一达到速度、动量偏导、H公式及能量对应句忠实；proof_discussion_latex与同页准备性sup恒等式一致，proof_latex=null正确。",
+          "已直接查看印刷p.23/PDF46：广义质量为Jacobian转置、原质量矩阵与Jacobian的乘积，变换须满秩且结果可逆；原文允许R^{N_d}到R^{N_c}的参数化。对称正定结论是在PASTE所说明的正物理质量背景下的数学判断，未声称由可逆性单独推出。",
+          "完整审读PASTE的Position、Velocity、Momentum、PotentialEnergy、matrixAction、variableMassLagrangian及variableMassHamiltonian：它们分别给出同一n维实欧氏空间、位置实函数、通常矩阵作用、速度二次型减势能、逆质量动量二次型加势能。未把Hamiltonian本身定义成sup，也未在定义中预置最大化结论。",
+          "标准库语义核对：Mathlib v4.34.0官方Matrix.PosDef定义包含M.IsHermitian及所有非零有限支撑向量的严格正二次型；在Fin n、ℝ上即对称正定。官方源码：https://raw.githubusercontent.com/leanprover-community/mathlib4/v4.34.0/Mathlib/LinearAlgebra/Matrix/PosDef.lean（定义及isHermitian见142–148行）。",
+          "全部其他PASTE定义摘录已审读，包括Chapter06的Gibbs/GibbsComplex、A/J/cb、生成元、闭算子、谱及特征基、周期光滑空间与嵌入、环面代表元、权、配分函数及测度，以及其他命名空间Q。它们不进入本条声明或L、H、matrixAction的定义依赖，不产生隐藏前提或对象替换。",
+          "审校范围是源文JSON与PASTE形式化陈述的语义忠实性；PASTE没有当前证明正文，本次未编译或验收Lean证明完成情况。陈述语义审校无需补证明，且未发现缺失的相关项目定义或未决数学含义。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+        "verdict": "PASS",
+        "explanation": "PASS针对用户指定的当前PASTE版本，属于陈述与定义语义审校。令A=M(q)，matrixAction就是Av，L(q,v)=⟨v,Av⟩/2−U(q)，H(q,p)=⟨p,A⁻¹p⟩/2+U(q)。Position、Velocity、Momentum均为EuclideanSpace ℝ (Fin n)，所以对象、实内积与有限维矩阵作用正确。量词保留任意n、配置相关M、U、q、p；第三与第四项对全部速度量化。n是广义坐标维数，可取N_c或约束参数化的N_d，n=0退化情形也不破坏陈述。前提逐项核对：hM为源文可逆条件；hPositive是已明确标注[EXTRA]的实对称正定条件，展开正物理质量及满列秩Jacobian的继承背景。Matrix.PosDef包含Hermitian条件，在ℝ上已提供对称性，因此没有漏掉速度梯度所需的对称条件。只在固定q处要求正定足够；本条不取位置导数，不需M或U的位置光滑性。有限维正定已蕴含可逆，显式保留hM虽冗余但忠实且无害。六项结论逐项核对：(1)目标在唯一候选速度w=A⁻¹p处取到有限上界H，所以BddAbove正确；(2)速度范围非空且上界被取到，实sSup等于H，未借助无界集合的实sSup约定；(3)H与目标的差为⟨v−w,A(v−w)⟩/2，正定性使该差为零当且仅当v=w，保留精确达到条件及唯一性；(4)固定q的对称二次型对速度的真实梯度为Av，HasGradientAt对象和值及求导点正确；(5)可逆性保证Aw=p，对应逆速度处的动量回代，与第四项合起来覆盖p=∂L/∂q̇=M(q)q̇；(6)内积在ℝ上的对称性与Aw=p使H等于逆速度处的动能加势能，对应位置和动量中的能量。当前签名未退回固定对角质量，也未删掉sup、达到条件、梯度或能量对应。源文仍保持字面可逆陈述，背景前提强化有显式记录；原页准备性计算没有被误充作完整证明。旧返回件中只假设任意矩阵可逆的反例不满足当前hPositive，不再构成当前声明的失败依据。未作Lean编译或当前证明正文验收。",
+        "counterexample": "未发现满足当前PASTE全部前提的反例。旧负矩阵[−1]违反正定性；旧非对称矩阵[[1,1],[0,1]]违反Matrix.PosDef的Hermitian条件，均不属于当前签名覆盖的对象。它们仅说明删去hPositive后的任意可逆矩阵版本不足。",
+        "suggested_fix": "当前陈述和定义无需修正。保留hPositive的[EXTRA]及继承背景说明、源文字面陈述、proof_latex=null、完整proof_discussion_latex、任意广义维数和全部六项结论；复用线索不应表述为已完成的一般矩阵证明。"
+      },
+      "binding": {
+        "bound": true,
+        "rule": "EAUDIT01 original source_json_sha256/lean_sha256 protocol",
+        "version": "09ff185182a8",
+        "generation_commit": "09ff185182a88e48a9777d8c5324016ef1b9d6ae",
+        "input_sha256": {
+          "blueprint/ch01/ch01_source.json": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "Blueprint/Ch01.lean": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "checks": {
+          "source_json_returned": true,
+          "lean_returned": true,
+          "historical_source_blob": true,
+          "historical_lean_blob": true,
+          "current_signature": true,
+          "source_entry_unchanged": true,
+          "formal_dependencies_unchanged": true,
+          "definition_excerpts": true
+        },
+        "definition_excerpt_checks": [
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianComplexKernel.lean",
+            "name": "A",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianComplexKernel.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenDiscreteness.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenEnumeration.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenGraph.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenNormalization.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenOrdering.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSpectralAverage.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSpectralDecay.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSpectralEvolution.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSpectralGenerator.lean",
+            "name": "Gibbs",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianComplexKernel.lean",
+            "name": "GibbsComplex",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianEigenNormalization.lean",
+            "name": "GibbsComplex",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+            "name": "GibbsComplex",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+            "name": "GibbsComplex",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean",
+            "name": "GibbsComplex",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianComplexKernel.lean",
+            "name": "J",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Momentum",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Position",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "PotentialEnergy",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+            "name": "Q",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+            "name": "Q",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Velocity",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+            "name": "cb",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean",
+            "name": "cb",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean",
+            "name": "cb",
+            "matches": true
+          },
+          {
+            "path": "Blueprint/Ch01.lean",
+            "name": "matrixAction",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+            "name": "textbookBrownianGenerator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+            "name": "textbookBrownianGibbsClosedEigenspace",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianClosedOperator.lean",
+            "name": "textbookBrownianGibbsClosedOperator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+            "name": "textbookBrownianGibbsComplexEigenbasis",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+            "name": "textbookBrownianGibbsComplexGraph",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+            "name": "textbookBrownianGibbsComplexOperator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookBrownianGibbsDomainOperator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+            "name": "textbookBrownianGibbsEigenIndex",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+            "name": "textbookBrownianGibbsEigenbasis",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+            "name": "textbookBrownianGibbsL2Complexify",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianClosedOperator.lean",
+            "name": "textbookBrownianGibbsPartialOperator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookBrownianGibbsSmoothDomain",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookBrownianSmoothGenerator",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+            "name": "textbookConfigurationCube",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianHilbertCore.lean",
+            "name": "textbookConfigurationGibbsL2Observable",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+            "name": "textbookConfigurationGibbsWeight",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+            "name": "textbookConfigurationPartial",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+            "name": "textbookConfigurationPartition",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+            "name": "textbookConfigurationTorusGibbsMeasure",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+            "name": "textbookConfigurationTorusGibbsWeight",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+            "name": "textbookConfigurationTorusObservable",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+            "name": "textbookConfigurationTorusRepresentative",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookPeriodicSmoothEmbedding",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookPeriodicSmoothEmbeddingEquiv",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+            "name": "textbookPeriodicSmoothSpace",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+            "name": "textbookUnitPeriodicPotential",
+            "matches": true
+          },
+          {
+            "path": "Blueprint/Ch01.lean",
+            "name": "variableMassHamiltonian",
+            "matches": true
+          },
+          {
+            "path": "Blueprint/Ch01.lean",
+            "name": "variableMassLagrangian",
+            "matches": true
+          }
+        ],
+        "reasons": [],
+        "scope": "原EAUDIT01要求的两项SHA均回显并核对真实git历史blob，任务子MANIFEST和所有定义摘录核验；当前该条源码/签名相同。缺哈希不提升。"
+      },
+      "manifest": "blueprint/ch01/mathcopilot_tasks/EAUDIT01/d/MANIFEST.json",
+      "manifest_sha256": "fd26f967fcc3ebcc92f284a37ca380bdf9979a942e66592b3070941068a5e643",
+      "source_corrections_applied": false
+    },
+    {
+      "source_id": "MD-1.5.1-FlowInverse",
+      "raw_path": "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT01_e_result.json",
+      "raw_sha256": "81adea4604ed5ec582f2738fdc0810aeac1cd1e9e10d068f725914441e408844",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "版本依据仅为本对话PASTE中的本条JSON、实际签名及定义摘录；忽略工作区旧Ch01.lean和其他旧批次材料。顶层两个哈希按用户提供的本批MANIFEST值直接回显。",
+          "本次审校沿用上一轮直接查看的EAUDIT01e_PAGES.pdf第二页原页图像（印刷p.26）：英文文字与statement_latex逐字相符，公式依次为负时间反演、恒等映射及时间加法与交换律；排版和LaTeX记号转换不改变含义。",
+          "原段在§1.5.1明确继承前小节存在唯一性条件，定义F_t(ξ)=z(t)，并说明双向时间可解。上一轮已直接阅读印刷p.25–26有关固定正定质量、势能下界及能量约束下位置紧性的上下文。",
+          "原文以Observe that直接断言，无独立证明，proof_latex=null正确；随后Hamiltonian守恒不属于本条，statement_scope与原段边界相符。",
+          "按所提供当前定义，IsGlobalMechanicalFlowOn的直接内容只有全实时间机械轨迹、初值恒等和S不变，context_notation关于未预设反演、群律或双射的说明正确。source_page_checks.json不作为本次核对的必需材料。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.flow_inverse",
+        "verdict": "PASS",
+        "explanation": "本判定为当前PASTE声明及全部所给定义的语义审校。对象：Position、Momentum、Velocity均为EuclideanSpace ℝ (Fin n)，PhaseSpace为位置与动量的积；n表示坐标数，三维N粒子取n=3N，符合正文m维配置的机械系统。CoordinateMasses为逐坐标实质量，diagonalMassMatrix为其对角矩阵；_hm保证固定正质量及该矩阵正定可逆。velocityOperator为逆质量矩阵诱导的连续线性映射，mechanicalVectorField为(M⁻¹p,F(q))；PotentialEnergy为位置到实数的函数，声明指定F=-gradient U，符合机械力的表示。Force是位置到位置的映射，MassMatrix和Velocity等类型相互一致。Chapter02Review.Q与Chapter04Review.Q是其他命名空间的坐标类型缩写，与本声明的局部集合参数Q无关。量词与域：n、m、U、Q、S及ψ均按签名量化；时间为全部实数，状态结论限于S。IsMechanicalSolutionOn要求轨迹位置在Q且满足IsIntegralCurveOn的ODE条件；IsGlobalMechanicalFlowOn以univ为时间域，对每个S中初值给出该机械解、ψ 0 z=z，并对全部实时间要求MapsTo (ψ t) S S。因此复合映射的中间状态仍在S，限制ψ t到S得到自映射，未对S外作结论。前提审查：hψ将正文双向可解及已定义流显式化，没有预设反演、双射或群律；本条不承担从势能下界和紧性条件建立全局流存在的任务。hreg是在Q每点的环境C¹力条件，为自治机械向量场的局部唯一性提供足够正则性，是正文唯一性前提的合理明确化；ContDiffAt不是仅沿Q的正则性，不另需Q开集。_hm限定正固定质量背景，流恒等式本身可在更一般的自治系统中成立，不构成不当循环前提。结论审查：第一项为零时间恒等，第二项同时给左右逆，第三项BijOn (ψ t) S S为单射、满射及自映射，末项给交换律和时间加法律，对全部s、t及S中全部z成立。函数复合天然结合；在S上的这些恒等式、封闭性和逆元已完整表达原段的Abelian群结论，无须另添Lean的Group实例。双向解配合唯一性允许比较时间平移轨迹，故群律并未藏入流谓词。所给自定义定义足以判定本条语义忠实，未发现需修复的[EXTRA]或对象、量词、前提、结论偏差。此PASS不宣称已编译工程或核验复用证明的完整依赖链；本次按要求只读审校陈述与定义，没有修改工程或补证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "binding": {
+        "bound": true,
+        "rule": "EAUDIT01 original source_json_sha256/lean_sha256 protocol",
+        "version": "09ff185182a8",
+        "generation_commit": "09ff185182a88e48a9777d8c5324016ef1b9d6ae",
+        "input_sha256": {
+          "blueprint/ch01/ch01_source.json": "3aca85ee1f9e672b28fcd5606b444e57460f557defc982a82474ed744d765b7c",
+          "Blueprint/Ch01.lean": "44433303277a540e913dfae7a0c33881625ced0c1ad14d30a4a7d4ac5c5161af"
+        },
+        "checks": {
+          "source_json_returned": true,
+          "lean_returned": true,
+          "historical_source_blob": true,
+          "historical_lean_blob": true,
+          "current_signature": true,
+          "source_entry_unchanged": true,
+          "formal_dependencies_unchanged": true,
+          "definition_excerpts": true
+        },
+        "definition_excerpt_checks": [
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "CoordinateMasses",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Force",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/GlobalFlow.lean",
+            "name": "IsGlobalMechanicalFlowOn",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+            "name": "IsMechanicalSolutionOn",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "MassMatrix",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Momentum",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "PhaseSpace",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Position",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "PotentialEnergy",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+            "name": "Q",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+            "name": "Q",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Notation.lean",
+            "name": "Velocity",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/NBody.lean",
+            "name": "diagonalMassMatrix",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+            "name": "mechanicalVectorField",
+            "matches": true
+          },
+          {
+            "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+            "name": "velocityOperator",
+            "matches": true
+          }
+        ],
+        "reasons": [],
+        "scope": "原EAUDIT01要求的两项SHA均回显并核对真实git历史blob，任务子MANIFEST和所有定义摘录核验；当前该条源码/签名相同。缺哈希不提升。"
+      },
+      "manifest": "blueprint/ch01/mathcopilot_tasks/EAUDIT01/e/MANIFEST.json",
+      "manifest_sha256": "eb2b40918786ebb9defbe5c61d3998bd7d84207fbab1f64e8ee7c556f89d62e5",
+      "source_corrections_applied": false
+    }
+  ]
+}
