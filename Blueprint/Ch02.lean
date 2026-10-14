@@ -14,23 +14,49 @@ variable {n Nc : ℕ}
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 /-- source_id: MD-2-HamiltonianODE · definition · §2 · 印刷p.53 / PDFp.75
-[EXTRA] 原文ODE按时间域I逐点解释；只定义关系，不宣称解存在。 -/
-def hamiltonianODE {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+[EXTRA] 原文ODE按时间域I逐点解释；只定义关系，不宣称解存在。 
+[EXTRA] EAUDIT01显式固定正对角质量、U/H沿轨道可微、H与真实机械式的全坐标关系；完整q̇=M⁻¹p、ṗ=−∇U及ż=J∇H均保留。I为开时间域，采用环境HasDerivAt；只定义经典轨道关系，不宣称存在或唯一。 
+[EXTRA] EAUDIT01显式∀i,0<mᵢ排除奇异M及零除延拓；保持真实PhaseSpace的(q,p)机械Hamiltonian，固定对角质量来自第1章。 -/
+def hamiltonianODE {n : ℕ} (m : Fin n → ℝ) (_hm : ∀ i, 0 < m i)
+    (U : (Fin n → ℝ) → ℝ) (H : SymplecticCoordinates n → ℝ)
     (γ : ℝ → SymplecticCoordinates n) (I : Set ℝ) : Prop :=
-  ∀ t ∈ I, HasDerivAt γ (textbookHamiltonianVectorField H (γ t)) t
+  IsOpen I ∧
+  (∀ z, H z = (∑ i, z (Sum.inr i)^2/(2*m i)) + U (fun i ↦ z (Sum.inl i))) ∧
+  (∀ t ∈ I, DifferentiableAt ℝ H (γ t) ∧
+    DifferentiableAt ℝ U (fun i ↦ γ t (Sum.inl i))) ∧
+  ∀ t ∈ I, HasDerivAt γ (textbookHamiltonianVectorField H (γ t)) t ∧
+    (∀ i, HasDerivAt (fun s ↦ γ s (Sum.inl i)) ((m i)⁻¹*γ t (Sum.inr i)) t) ∧
+    ∀ i, HasDerivAt (fun s ↦ γ s (Sum.inr i))
+      (-fderiv ℝ U (fun j ↦ γ t (Sum.inl j)) (Pi.single i 1)) t
 
 /-- source_id: MD-2-Hamiltonian · definition · §2 · 印刷p.53 / PDFp.75
 [EXTRA] 固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。 -/
-def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n) :
-    PhaseSpace n → ℝ := massHamiltonian m U
+def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n)
+    (_hm : ∀ i, 0 < m i) (U : PotentialEnergy n) : PhaseSpace n → ℝ :=
+  massHamiltonian m U
 
 /-- source_id: MD-2-Euler · definition · §2 · 印刷p.54 / PDFp.76 -/
 def euler {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (f : E → E) (h : ℝ) (z : E) : E := z + h • f z
 
-/-- source_id: MD-2-OneStep · definition · §2 · 印刷p.54 / PDFp.76 -/
-def numericalTrajectory {E : Type*} (G : ℝ → E → E) (h : ℝ) (ζ : E) (n : ℕ) : E :=
-  (G h)^[n] ζ
+/-- source_id: MD-2-OneStep · definition · §2 · 印刷p.54 / PDFp.76 
+[EXTRA] EAUDIT01在开放正规相空间D排除势能不可微/奇异点；F的已给全时解族与初值/完整机械ODE相联，G作用于同一D，Z关联全部实际n次迭代。oneStepTargetDifference明确目标F_h与G_h的差；原段未规定定量近似质量，未加入虚构误差阶或收敛结论。全时流是此接口的给定模型资格，不是解存在定理。 -/
+def numericalTrajectory {n : ℕ} (m : Fin n → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin n → ℝ) → ℝ) (H : SymplecticCoordinates n → ℝ)
+    (D : Set (SymplecticCoordinates n)) (G F : ℝ → D → D)
+    (γ : ℝ → D → SymplecticCoordinates n) (Z : D → ℝ → ℕ → D) : Prop :=
+  IsOpen D ∧ (∀ z ∈ D, DifferentiableAt ℝ U (fun i ↦ z (Sum.inl i))) ∧
+  ∀ ζ : D, γ 0 ζ=ζ.1 ∧
+    hamiltonianODE m hm U H (fun t ↦ γ t ζ) Set.univ ∧
+    (∀ t, (F t ζ).1=γ t ζ) ∧
+    ∀ h ν, Z ζ h ν=(G h)^[ν] ζ
+
+def numericalIterate {E : Type*} (G : ℝ → E → E) (h : ℝ) (ζ : E) (ν : ℕ) : E :=
+  (G h)^[ν] ζ
+
+def oneStepTargetDifference {n : ℕ} {D : Set (SymplecticCoordinates n)}
+    (G F : ℝ → D → D) (h : ℝ) (ζ : D) : ℝ :=
+  ‖(G h ζ).1-(F h ζ).1‖
 
 /-- source_id: MD-2.1-Convergence · definition · §2.1 · 印刷p.55 / PDFp.77
 [EXTRA] 按固定时间窗网格h=τ/ν表达任意精度；τ>0在具体定理中明示。 -/

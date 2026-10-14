@@ -4,10 +4,10 @@
 
 | source_id | 页码 印刷/PDF | 本地预审 | 网站审计 | 状态 |
 |---|---|---|---|---|
-| MD-2-HamiltonianODE | 53/75 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
-| MD-2-Hamiltonian | 53/75 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
+| MD-2-HamiltonianODE | 53/75 | PASS | 待复审 / EAUDIT01 | self-contained |
+| MD-2-Hamiltonian | 53/75 | PASS | 待复审 / EAUDIT01 | self-contained |
 | MD-2-Euler | 54/76 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
-| MD-2-OneStep | 54/76 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
+| MD-2-OneStep | 54/76 | PASS | 待复审 / EAUDIT01 | self-contained |
 | MD-2.1-Convergence | 55/77 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.1-Order | 55/77 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.1-Error | 56/78 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
@@ -217,9 +217,9 @@
 ### 2. 原文陈述
 
 > The challenge before us is to compute solutions of
-> \[\dot{\boldsymbol q}=M^{-1}\boldsymbol p,\qquad \dot{\boldsymbol p}=F(\boldsymbol q)=-\nabla U(\boldsymbol q),\]
+> \[\dot{\boldsymbol q}=\boldsymbol M^{-1}\boldsymbol p,\qquad \dot{\boldsymbol p}=\boldsymbol F(\boldsymbol q)=-\nabla U(\boldsymbol q),\]
 > or, more compactly, with $\boldsymbol z$ representing the collection of all positions and momenta,
-> \[\dot{\boldsymbol z}=f(\boldsymbol z),\qquad f(\boldsymbol z)=J\nabla H.\tag{2.1}\]
+> \[\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z),\qquad \boldsymbol f(\boldsymbol z)=\boldsymbol J\nabla H,\tag{2.1}\]
 
 ### 3. 原文证明
 
@@ -230,9 +230,17 @@
 ### 4. Lean陈述
 
 ```lean
-def hamiltonianODE {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+def hamiltonianODE {n : ℕ} (m : Fin n → ℝ) (_hm : ∀ i, 0 < m i)
+    (U : (Fin n → ℝ) → ℝ) (H : SymplecticCoordinates n → ℝ)
     (γ : ℝ → SymplecticCoordinates n) (I : Set ℝ) : Prop :=
-  ∀ t ∈ I, HasDerivAt γ (textbookHamiltonianVectorField H (γ t)) t
+  IsOpen I ∧
+  (∀ z, H z = (∑ i, z (Sum.inr i)^2/(2*m i)) + U (fun i ↦ z (Sum.inl i))) ∧
+  (∀ t ∈ I, DifferentiableAt ℝ H (γ t) ∧
+    DifferentiableAt ℝ U (fun i ↦ γ t (Sum.inl i))) ∧
+  ∀ t ∈ I, HasDerivAt γ (textbookHamiltonianVectorField H (γ t)) t ∧
+    (∀ i, HasDerivAt (fun s ↦ γ s (Sum.inl i)) ((m i)⁻¹*γ t (Sum.inr i)) t) ∧
+    ∀ i, HasDerivAt (fun s ↦ γ s (Sum.inr i))
+      (-fderiv ℝ U (fun j ↦ γ t (Sum.inl j)) (Pi.single i 1)) t
 ```
 
 ### 5. 对照表
@@ -240,13 +248,15 @@ def hamiltonianODE {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch02.hamiltonianODE；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原全部机械ODE/可逆质量/给定流和单步域 | MD.Ch02.hamiltonianODE | EAUDIT01完整签名修复；定义和实际对象资格已核，网站C复审未返回。 |
 | 原文省略/技术资格 | 原文ODE按时间域I逐点解释；只定义关系，不宣称解存在。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] EAUDIT01显式固定正对角质量、U/H沿轨道可微、H与真实机械式的全坐标关系；完整q̇=M⁻¹p、ṗ=−∇U及ż=J∇H均保留。I为开时间域，采用环境HasDerivAt；只定义经典轨道关系，不宣称存在或唯一。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+本地预审：**PASS**。[EXTRA] EAUDIT01显式固定正对角质量、U/H沿轨道可微、H与真实机械式的全坐标关系；完整q̇=M⁻¹p、ṗ=−∇U及ż=J∇H均保留。I为开时间域，采用环境HasDerivAt；只定义经典轨道关系，不宣称存在或唯一。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
 
 重新读取Ch02.lean第18–20行及Ch02_deps.txt正式定义：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ（第33行），左标签为q、右标签为p；textbookJ=Matrix.fromBlocks 0 1 (-1) 0（第39–40行）；textbookHamiltonianVectorField H z=J *ᵥ (fun i => (fderiv ℝ H z)(Pi.single i 1))（第1921–1925行）。故在H可微处逐分量确为(∂H/∂p,−∂H/∂q)，梯度由标准坐标偏导组成，不是该Pi空间范数诱导的其他梯度；J符号与原书一致。量词为给定n,H,γ,I后∀t∈I要求γ在环境ℝ上有指定导数；没有解存在/唯一性结论，[EXTRA]的逐点关系解释合理。不过H完全任意，没有要求沿γ可微；fderiv在不可微点总化为零，因此可能把原书∇H根本不存在的点当作合法Hamiltonian轨道，缺少梯度存在的前提。完整原句还含固定机械模型的q̇=M⁻¹p、ṗ=−∇U；本接口未提供m,U或H与机械Hamiltonian的关联，不能单凭任意H覆盖该机械子句。采用环境HasDerivAt在开时间域上合适，若I用于闭区间端点则额外约束域外延拓，应明确约定或改用域内导数。本条没有[ERRATUM?]，无证据要求改原书；FAIL为签名与对象范围问题。此def本身无sorry；不据此评价其他依赖证明完成性，未修改或编译工程。
 
@@ -258,19 +268,19 @@ def hamiltonianODE {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:18](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:18>)（`MD.Ch02.hamiltonianODE`）。
+位置：[Blueprint/Ch02.lean:20](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:20>)（`MD.Ch02.hamiltonianODE`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`64f9c96d0a4ae55f8528b9a0b3968ff0bb32f8d587793814546bf59b4528ae21`；原文SHA256：`060f78c88768eb4820733e1110c1a0336ed0253ec66e10a891402f7f3bb15254`。
+签名SHA256：`8093d79778be6ddc7fa93e8ac3da3c7318320a26f94508dd6ab666be57f07d13`；原文SHA256：`0d532722f974677fabd598c616c71ad5d2c872073ced238fb73f320da32b67bf`。
 
 ## 1. MD-2-Hamiltonian · definition · 印刷p.53 / PDFp.75
 
 ### 2. 原文陈述
 
-> and $H=\boldsymbol p^TM^{-1}\boldsymbol p/2+U(\boldsymbol q)$ is the Hamiltonian.
+> and $H=\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p/2+U(\boldsymbol q)$ is the Hamiltonian.
 
 ### 3. 原文证明
 
@@ -281,8 +291,9 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n) :
-    PhaseSpace n → ℝ := massHamiltonian m U
+def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n)
+    (_hm : ∀ i, 0 < m i) (U : PotentialEnergy n) : PhaseSpace n → ℝ :=
+  massHamiltonian m U
 ```
 
 ### 5. 对照表
@@ -290,13 +301,15 @@ def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnerg
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch02.mechanicalHamiltonian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原全部机械ODE/可逆质量/给定流和单步域 | MD.Ch02.mechanicalHamiltonian | EAUDIT01完整签名修复；定义和实际对象资格已核，网站C复审未返回。 |
 | 原文省略/技术资格 | 固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] EAUDIT01显式∀i,0<mᵢ排除奇异M及零除延拓；保持真实PhaseSpace的(q,p)机械Hamiltonian，固定对角质量来自第1章。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
+本地预审：**PASS**。[EXTRA] EAUDIT01显式∀i,0<mᵢ排除奇异M及零除延拓；保持真实PhaseSpace的(q,p)机械Hamiltonian，固定对角质量来自第1章。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
 
 重新展开Ch02.lean第24–25行及Ch02_deps.txt：CoordinateMasses n=Fin n→ℝ（第3513行），没有正性或非零约束；Position和Momentum为EuclideanSpace ℝ (Fin n)，PhaseSpace=Position×Momentum，PotentialEnergy=Position→ℝ（第844–855行）。massHamiltonian=(massSeparableEnergy m U).hamiltonian；massSeparableEnergy=⟨momentumKineticEnergy m,U⟩；momentumKineticEnergy m p=∑i (p i)^2/(2*m i)（第3954–3961行）；SeparableEnergy.hamiltonian state=kinetic state.2+potential state.1（第3485–3486行）。因此(q,p)顺序、1/2、势能加号和固定对角质量在非零质量时准确，函数无额外量化结论。可是签名允许零质量，而原书M⁻¹需要可逆质量矩阵；库第3674–3684行也明确指出奇异矩阵逆约定不能无前提支持逐坐标倒数。缺失可逆性不仅是形式总化，在部分零质量情形还与Lean矩阵逆表达不同。[EXTRA]限制固定对角模型有第1章依据且合理，但不能补足未编码的非零质量前提。本条无[ERRATUM?]，无已确认原书错误；FAIL针对签名适用范围。此def本身没有sorry，与语义判定分开，未认证依赖证明或编译状态。
 
@@ -308,13 +321,13 @@ def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnerg
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:24](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:24>)（`MD.Ch02.mechanicalHamiltonian`）。
+位置：[Blueprint/Ch02.lean:34](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:34>)（`MD.Ch02.mechanicalHamiltonian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`8b8585b4f7838dd429ec99818a63e6aa3c0a4a75852725679fec79facca9f335`；原文SHA256：`9582ae8e070d8e8590851645f60a3c7ee8ca7618c0ec81610c8862d58d94746c`。
+签名SHA256：`82fcad0fe51c739521d17d9feac49e2bc865ca359863c93aba28e5ee9618ad9e`；原文SHA256：`bb20a32ed3bdf6d77ea089d706eb8a7be476eb4c5aa46b151eb8d2f68fbb4168`。
 
 ## 1. MD-2-Euler · definition · 印刷p.54 / PDFp.76
 
@@ -354,7 +367,7 @@ def euler {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:28](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:28>)（`MD.Ch02.euler`）。
+位置：[Blueprint/Ch02.lean:39](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:39>)（`MD.Ch02.euler`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -366,7 +379,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> Suppose that the system under study has a well defined flow map $\mathcal F_t$ defined on the phase space (which is assumed to exclude any singular points of the potential energy function). The solution of the initial value problem, $\dot{\boldsymbol z}=f(\boldsymbol z)$, $\boldsymbol z(0)=\boldsymbol\zeta$, may be written $\boldsymbol z(t;\boldsymbol\zeta)$ (with $\boldsymbol z(0;\boldsymbol\zeta)=\boldsymbol\zeta$), and the flow-map $\mathcal F_t$ satisfies $\mathcal F_t(\boldsymbol\zeta)=\boldsymbol z(t;\boldsymbol\zeta)$: A one-step method, starting from a given point, approximates a point on the solution trajectory at a given time $h$ units later. Such a method defines a map $\mathcal G_h$ of the phase space as illustrated in Fig. 2.1.
+> Suppose that the system under study has a well defined flow map $\mathscr F_t$ defined on the phase space (which is assumed to exclude any singular points of the potential energy function). The solution of the initial value problem, $\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z)$, $\boldsymbol z(0)=\boldsymbol\zeta$, may be written $\boldsymbol z(t,\boldsymbol\zeta)$ (with $\boldsymbol z(0,\boldsymbol\zeta)=\boldsymbol\zeta$), and the flow-map $\mathscr F_t$ satisfies $\mathscr F_t(\boldsymbol\zeta)=\boldsymbol z(t,\boldsymbol\zeta)$. A one-step method, starting from a given point, approximates a point on the solution trajectory at a given time $h$ units later. Such a method defines a map $\mathscr G_h$ of the phase space as illustrated in Fig. 2.1.
 
 ### 3. 原文证明
 
@@ -377,8 +390,22 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-def numericalTrajectory {E : Type*} (G : ℝ → E → E) (h : ℝ) (ζ : E) (n : ℕ) : E :=
-  (G h)^[n] ζ
+def numericalTrajectory {n : ℕ} (m : Fin n → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin n → ℝ) → ℝ) (H : SymplecticCoordinates n → ℝ)
+    (D : Set (SymplecticCoordinates n)) (G F : ℝ → D → D)
+    (γ : ℝ → D → SymplecticCoordinates n) (Z : D → ℝ → ℕ → D) : Prop :=
+  IsOpen D ∧ (∀ z ∈ D, DifferentiableAt ℝ U (fun i ↦ z (Sum.inl i))) ∧
+  ∀ ζ : D, γ 0 ζ=ζ.1 ∧
+    hamiltonianODE m hm U H (fun t ↦ γ t ζ) Set.univ ∧
+    (∀ t, (F t ζ).1=γ t ζ) ∧
+    ∀ h ν, Z ζ h ν=(G h)^[ν] ζ
+
+def numericalIterate {E : Type*} (G : ℝ → E → E) (h : ℝ) (ζ : E) (ν : ℕ) : E :=
+  (G h)^[ν] ζ
+
+def oneStepTargetDifference {n : ℕ} {D : Set (SymplecticCoordinates n)}
+    (G F : ℝ → D → D) (h : ℝ) (ζ : D) : ℝ :=
+  ‖(G h ζ).1-(F h ζ).1‖
 ```
 
 ### 5. 对照表
@@ -386,12 +413,14 @@ def numericalTrajectory {E : Type*} (G : ℝ → E → E) (h : ℝ) (ζ : E) (n 
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch02.numericalTrajectory；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原全部机械ODE/可逆质量/给定流和单步域 | MD.Ch02.numericalTrajectory | EAUDIT01完整签名修复；定义和实际对象资格已核，网站C复审未返回。 |
+| 原文省略/技术资格 | [EXTRA] EAUDIT01在开放正规相空间D排除势能不可微/奇异点；F的已给全时解族与初值/完整机械ODE相联，G作用于同一D，Z关联全部实际n次迭代。oneStepTargetDifference明确目标F_h与G_h的差；原段未规定定量近似质量，未加入虚构误差阶或收敛结论。全时流是此接口的给定模型资格，不是解存在定理。 | [EXTRA] |
 
 ### 6. 审计结论
 
-本地预审：**PASS**。定义只记录给定单步映射的有限迭代，不将任意映射称为收敛近似或宣称全球流存在。
+本地预审：**PASS**。[EXTRA] EAUDIT01在开放正规相空间D排除势能不可微/奇异点；F的已给全时解族与初值/完整机械ODE相联，G作用于同一D，Z关联全部实际n次迭代。oneStepTargetDifference明确目标F_h与G_h的差；原段未规定定量近似质量，未加入虚构误差阶或收敛结论。全时流是此接口的给定模型资格，不是解存在定理。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
 
 本轮重新核对Ch02.lean第32–33行，并在Ch02_deps.txt中检索本条相关接口：numericalTrajectory G h ζ n=(G h)^[n] ζ，其使用标准Function.iterate，零次为ζ，一次为G h ζ，递推下一点为G h作用于当前点。形式参数仅E,G,h,ζ,n，G为任意ℝ→E→E。本条不使用自定义Hamiltonian依赖；正式依赖的补充没有改变其签名。固定原文范围却包括排除势能奇异点的相空间、给定ODE、良定义实际流F_t、初值γ_ζ(0)=ζ、F_t(ζ)=γ_ζ(t)，以及G_h的目标为h时间单位后的流点。该定义没有f、F、解族、合法域或它们的关系，只给出n次迭代，遗漏上述子句。把E选成合法相空间只能处理对象域，仍不能记录目标ODE流。原文未规定定量近似界，故不因缺少误差阶或收敛性判FAIL。[EXTRA]与[ERRATUM?]均无标记，没有原书勘误依据。此def无sorry，但签名遗漏仍为FAIL；未修改或补证明。
 
@@ -403,13 +432,13 @@ def numericalTrajectory {E : Type*} (G : ℝ → E → E) (h : ℝ) (ζ : E) (n 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:32](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:32>)（`MD.Ch02.numericalTrajectory`）。
+位置：[Blueprint/Ch02.lean:44](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:44>)（`MD.Ch02.numericalTrajectory`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`f79d2e780fa2934c8ed0abd0f39a54ed010cb0660fc97384d1268e8419201ec8`；原文SHA256：`50854266d91d56e9de89433ff4f0dbdea0937e0f64fc529cb88ba06fbc24429e`。
+签名SHA256：`a1826dfbd70b32c0ccd6c531c284176e8cb335675c9ea14c8672ec0d8997058b`；原文SHA256：`3792fc44ab44d066d0a9b90144eb9e31d3edb9e97e91023d382e298f921bb50f`。
 
 ## 1. MD-2.1-Convergence · definition · 印刷p.55 / PDFp.77
 
@@ -451,7 +480,7 @@ def convergence {n : ℕ} (G : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : ℝ
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:37](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:37>)（`MD.Ch02.convergence`）。
+位置：[Blueprint/Ch02.lean:63](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:63>)（`MD.Ch02.convergence`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -498,7 +527,7 @@ def order {n : ℕ} (G : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : ℝ) (r :
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:42](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:42>)（`MD.Ch02.order`）。
+位置：[Blueprint/Ch02.lean:68](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:68>)（`MD.Ch02.order`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -544,7 +573,7 @@ def maximumError {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:47](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:47>)（`MD.Ch02.maximumError`）。
+位置：[Blueprint/Ch02.lean:73](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:73>)（`MD.Ch02.maximumError`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -602,7 +631,7 @@ theorem theorem_2_1 {m : ℕ} (D : Set (Position m))
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:53](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:53>)（`MD.Ch02.theorem_2_1`）。
+位置：[Blueprint/Ch02.lean:79](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:79>)（`MD.Ch02.theorem_2_1`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -653,7 +682,7 @@ PASS。实际读取的 Blueprint/Ch02.lean 附件副本是 /workspace/Ch02.lean�
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch02.lean:69](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:69>)（`MD.Ch02.odeSecondDerivative`）。
+位置：[Blueprint/Ch02.lean:95](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:95>)（`MD.Ch02.odeSecondDerivative`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -701,7 +730,7 @@ PASS。Ch02_deps.txt 第2816行展开 Q n = Fin n → ℝ，故 z 与 f z 是实
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:79](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:79>)（`MD.Ch02.taylorSecond`）。
+位置：[Blueprint/Ch02.lean:105](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:105>)（`MD.Ch02.taylorSecond`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -748,7 +777,7 @@ PASS。展开依赖合集第2941—2945行：compactTrajectory f γ τ 正好是
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:84](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:84>)（`MD.Ch02.taylor2Order`）。
+位置：[Blueprint/Ch02.lean:110](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:110>)（`MD.Ch02.taylor2Order`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -806,7 +835,7 @@ theorem verletOrder :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:91](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:91>)（`MD.Ch02.verletOrder`）。
+位置：[Blueprint/Ch02.lean:117](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:117>)（`MD.Ch02.verletOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -857,7 +886,7 @@ def bp_mechanicalL {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (q v : Q n) :
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:100](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:100>)（`MD.Ch02.bp_mechanicalL`）。
+位置：[Blueprint/Ch02.lean:126](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:126>)（`MD.Ch02.bp_mechanicalL`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -908,7 +937,7 @@ def admissibleSmooth {n : ℕ} (a b : ℝ) (x y : Q n) (q : ℝ → Q n) : Prop 
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:106](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:106>)（`MD.Ch02.admissibleSmooth`）。
+位置：[Blueprint/Ch02.lean:132](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:132>)（`MD.Ch02.admissibleSmooth`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -956,7 +985,7 @@ def bp_action {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:110](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:110>)（`MD.Ch02.bp_action`）。
+位置：[Blueprint/Ch02.lean:136](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:136>)（`MD.Ch02.bp_action`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1002,7 +1031,7 @@ def bp_variation {n : ℕ} (q η : ℝ → Q n) (ε : ℝ) (t : ℝ) : Q n := q 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:114](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:114>)（`MD.Ch02.bp_variation`）。
+位置：[Blueprint/Ch02.lean:140](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:140>)（`MD.Ch02.bp_variation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1065,7 +1094,7 @@ theorem firstVariation :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:118](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:118>)（`MD.Ch02.firstVariation`）。
+位置：[Blueprint/Ch02.lean:144](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:144>)（`MD.Ch02.firstVariation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1124,7 +1153,7 @@ theorem taylorPrinted : ∀ n (k : ℕ) (f : Q n → ℝ) z₀,
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:135](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:135>)（`MD.Ch02.taylorPrinted`）。
+位置：[Blueprint/Ch02.lean:161](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:161>)（`MD.Ch02.taylorPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1180,7 +1209,7 @@ def stationarySmoothAction {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:145](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:145>)（`MD.Ch02.stationarySmoothAction`）。
+位置：[Blueprint/Ch02.lean:171](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:171>)（`MD.Ch02.stationarySmoothAction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1235,7 +1264,7 @@ theorem firstVariationParts : ∀ n (L : Q n → Q n → ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:151](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:151>)（`MD.Ch02.firstVariationParts`）。
+位置：[Blueprint/Ch02.lean:177](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:177>)（`MD.Ch02.firstVariationParts`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1293,7 +1322,7 @@ theorem hamiltonPrinciple :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:165](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:165>)（`MD.Ch02.hamiltonPrinciple`）。
+位置：[Blueprint/Ch02.lean:191](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:191>)（`MD.Ch02.hamiltonPrinciple`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1349,7 +1378,7 @@ def printedVariationalDerivative {E : Type*} [NormedAddCommGroup E] [NormedSpace
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:175](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:175>)（`MD.Ch02.printedVariationalDerivative`）。
+位置：[Blueprint/Ch02.lean:201](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:201>)（`MD.Ch02.printedVariationalDerivative`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1404,7 +1433,7 @@ theorem stationaryNotMinimum :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:182](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:182>)（`MD.Ch02.stationaryNotMinimum`）。
+位置：[Blueprint/Ch02.lean:208](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:208>)（`MD.Ch02.stationaryNotMinimum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1453,7 +1482,7 @@ def finiteDiscretePath (n ν : ℕ) := Fin (ν+1) → Q n
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:190](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:190>)（`MD.Ch02.finiteDiscretePath`）。
+位置：[Blueprint/Ch02.lean:216](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:216>)（`MD.Ch02.finiteDiscretePath`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1499,7 +1528,7 @@ def bp_discreteVelocity {n : ℕ} (q : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:193](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:193>)（`MD.Ch02.bp_discreteVelocity`）。
+位置：[Blueprint/Ch02.lean:219](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:219>)（`MD.Ch02.bp_discreteVelocity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1550,7 +1579,7 @@ def bp_discreteAction {n : ℕ} (L : Q n → Q n → ℝ) (q : ℕ → Q n) (h :
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:198](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:198>)（`MD.Ch02.bp_discreteAction`）。
+位置：[Blueprint/Ch02.lean:224](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:224>)（`MD.Ch02.bp_discreteAction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1608,7 +1637,7 @@ def printedDiscreteStationary {n : ℕ} (L : Q n → Q n → ℝ)
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:203](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:203>)（`MD.Ch02.printedDiscreteStationary`）。
+位置：[Blueprint/Ch02.lean:229](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:229>)（`MD.Ch02.printedDiscreteStationary`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1661,7 +1690,7 @@ theorem discreteActionDerivative :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:210](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:210>)（`MD.Ch02.discreteActionDerivative`）。
+位置：[Blueprint/Ch02.lean:236](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:236>)（`MD.Ch02.discreteActionDerivative`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1717,7 +1746,7 @@ theorem discreteStationaryVerlet :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:220](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:220>)（`MD.Ch02.discreteStationaryVerlet`）。
+位置：[Blueprint/Ch02.lean:246](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:246>)（`MD.Ch02.discreteStationaryVerlet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1772,7 +1801,7 @@ def bp_stormerRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:228](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:228>)（`MD.Ch02.bp_stormerRelation`）。
+位置：[Blueprint/Ch02.lean:254](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:254>)（`MD.Ch02.bp_stormerRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1822,7 +1851,7 @@ def bp_velocityVerlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:232](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:232>)（`MD.Ch02.bp_velocityVerlet`）。
+位置：[Blueprint/Ch02.lean:258](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:258>)（`MD.Ch02.bp_velocityVerlet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1869,7 +1898,7 @@ theorem velocityVerletStormer :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:238](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:238>)（`MD.Ch02.velocityVerletStormer`）。
+位置：[Blueprint/Ch02.lean:264](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:264>)（`MD.Ch02.velocityVerletStormer`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1918,7 +1947,7 @@ def bp_verlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:245](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:245>)（`MD.Ch02.bp_verlet`）。
+位置：[Blueprint/Ch02.lean:271](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:271>)（`MD.Ch02.bp_verlet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1967,7 +1996,7 @@ def bp_leapfrog {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:250](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:250>)（`MD.Ch02.bp_leapfrog`）。
+位置：[Blueprint/Ch02.lean:276](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:276>)（`MD.Ch02.bp_leapfrog`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2013,7 +2042,7 @@ def bp_leapfrogInitialize {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : �
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:255](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:255>)（`MD.Ch02.bp_leapfrogInitialize`）。
+位置：[Blueprint/Ch02.lean:281](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:281>)（`MD.Ch02.bp_leapfrogInitialize`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2060,7 +2089,7 @@ def bp_leapfrogReconstruct {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:259](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:259>)（`MD.Ch02.bp_leapfrogReconstruct`）。
+位置：[Blueprint/Ch02.lean:285](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:285>)（`MD.Ch02.bp_leapfrogReconstruct`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2109,7 +2138,7 @@ theorem errorDifference :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:263](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:263>)（`MD.Ch02.errorDifference`）。
+位置：[Blueprint/Ch02.lean:289](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:289>)（`MD.Ch02.errorDifference`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2163,7 +2192,7 @@ def consistency {n : ℕ} (G F : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : �
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:271](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:271>)（`MD.Ch02.consistency`）。
+位置：[Blueprint/Ch02.lean:297](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:297>)（`MD.Ch02.consistency`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2211,7 +2240,7 @@ def stability {n : ℕ} (G : ℝ → Q n → Q n) (D : Set (Q n)) : Prop :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:276](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:276>)（`MD.Ch02.stability`）。
+位置：[Blueprint/Ch02.lean:302](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:302>)（`MD.Ch02.stability`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2267,7 +2296,7 @@ theorem errorRecursion (G : ℝ → E → E) (γ : ℝ → E) (D : Set E)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:282](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:282>)（`MD.Ch02.errorRecursion`）。
+位置：[Blueprint/Ch02.lean:308](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:308>)（`MD.Ch02.errorRecursion`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2326,7 +2355,7 @@ theorem errorBound (G : ℝ → E → E) (γ : ℝ → E) (D : Set E)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:297](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:297>)（`MD.Ch02.errorBound`）。
+位置：[Blueprint/Ch02.lean:323](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:323>)（`MD.Ch02.errorBound`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2386,7 +2415,7 @@ theorem consistencyConvergence
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:310](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:310>)（`MD.Ch02.consistencyConvergence`）。
+位置：[Blueprint/Ch02.lean:336](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:336>)（`MD.Ch02.consistencyConvergence`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2436,7 +2465,7 @@ def bp_scalarVerlet (F : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:356](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:356>)（`MD.Ch02.bp_scalarVerlet`）。
+位置：[Blueprint/Ch02.lean:382](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:382>)（`MD.Ch02.bp_scalarVerlet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2487,7 +2516,7 @@ theorem verletExpansion :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:362](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:362>)（`MD.Ch02.verletExpansion`）。
+位置：[Blueprint/Ch02.lean:388](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:388>)（`MD.Ch02.verletExpansion`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2547,7 +2576,7 @@ theorem exactExpansion :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:372](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:372>)（`MD.Ch02.exactExpansion`）。
+位置：[Blueprint/Ch02.lean:398](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:398>)（`MD.Ch02.exactExpansion`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2610,7 +2639,7 @@ theorem defectPrinted : ∀ (F : ℝ → ℝ) (γ : ℝ → ℝ × ℝ), ContDif
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:385](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:385>)（`MD.Ch02.defectPrinted`）。
+位置：[Blueprint/Ch02.lean:411](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:411>)（`MD.Ch02.defectPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2676,7 +2705,7 @@ theorem verletConsistency : ∀ (F : ℝ → ℝ) (Φ : ℝ → (ℝ × ℝ) →
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:397](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:397>)（`MD.Ch02.verletConsistency`）。
+位置：[Blueprint/Ch02.lean:423](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:423>)（`MD.Ch02.verletConsistency`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2732,7 +2761,7 @@ theorem verletStability :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:414](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:414>)（`MD.Ch02.verletStability`）。
+位置：[Blueprint/Ch02.lean:440](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:440>)（`MD.Ch02.verletStability`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2788,7 +2817,7 @@ Ch02_deps.txt:2816 展开 Q n=Fin n→ℝ（有限坐标空间，标准 Pi 范�
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:423](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:423>)（`MD.Ch02.bp_firstIntegral`）。
+位置：[Blueprint/Ch02.lean:449](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:449>)（`MD.Ch02.bp_firstIntegral`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2836,7 +2865,7 @@ theorem firstIntegralPreserved :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch02.lean:428](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:428>)（`MD.Ch02.firstIntegralPreserved`）。
+位置：[Blueprint/Ch02.lean:454](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:454>)（`MD.Ch02.firstIntegralPreserved`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2889,7 +2918,7 @@ theorem energyPreserved (H : SymplecticCoordinates Nc → ℝ)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:448](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:448>)（`MD.Ch02.energyPreserved`）。
+位置：[Blueprint/Ch02.lean:474](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:474>)（`MD.Ch02.energyPreserved`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2943,7 +2972,7 @@ theorem centralAngularMomentum :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:458](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:458>)（`MD.Ch02.centralAngularMomentum`）。
+位置：[Blueprint/Ch02.lean:484](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:484>)（`MD.Ch02.centralAngularMomentum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3001,7 +3030,7 @@ theorem integralMeanValue :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch02.lean:470](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:470>)（`MD.Ch02.integralMeanValue`）。
+位置：[Blueprint/Ch02.lean:496](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:496>)（`MD.Ch02.integralMeanValue`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3050,7 +3079,7 @@ theorem integralPointwiseBound : ∀ n (I : EuclideanSpace ℝ (Fin n) → ℝ) 
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch02.lean:486](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:486>)（`MD.Ch02.integralPointwiseBound`）。
+位置：[Blueprint/Ch02.lean:512](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:512>)（`MD.Ch02.integralPointwiseBound`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3107,7 +3136,7 @@ theorem integralErrorPrinted :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:499](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:499>)（`MD.Ch02.integralErrorPrinted`）。
+位置：[Blueprint/Ch02.lean:525](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:525>)（`MD.Ch02.integralErrorPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3160,7 +3189,7 @@ def bp_divergence {n : ℕ} (f : Q n → Q n) (z : Q n) : ℝ := (textbookCoordi
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:508](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:508>)（`MD.Ch02.bp_divergence`）。
+位置：[Blueprint/Ch02.lean:534](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:534>)（`MD.Ch02.bp_divergence`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3212,7 +3241,7 @@ theorem liouville
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:512](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:512>)（`MD.Ch02.liouville`）。
+位置：[Blueprint/Ch02.lean:538](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:538>)（`MD.Ch02.liouville`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3264,7 +3293,7 @@ SymplecticForm.lean 展开 SymplecticCoordinates Nc=(Fin Nc⊕Fin Nc)→ℝ，�
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:524](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:524>)（`MD.Ch02.hamiltonDivergence`）。
+位置：[Blueprint/Ch02.lean:550](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:550>)（`MD.Ch02.hamiltonDivergence`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3319,7 +3348,7 @@ theorem hamiltonVolume {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:532](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:532>)（`MD.Ch02.hamiltonVolume`）。
+位置：[Blueprint/Ch02.lean:558](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:558>)（`MD.Ch02.hamiltonVolume`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3370,7 +3399,7 @@ theorem volumeChange :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch02.lean:545](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:545>)（`MD.Ch02.volumeChange`）。
+位置：[Blueprint/Ch02.lean:571](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:571>)（`MD.Ch02.volumeChange`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3431,7 +3460,7 @@ theorem variationalPrinted : ∀ n (f : Q n → Q n) (Φ : ℝ × Q n → Q n) �
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:563](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:563>)（`MD.Ch02.variationalPrinted`）。
+位置：[Blueprint/Ch02.lean:589](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:589>)（`MD.Ch02.variationalPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3487,7 +3516,7 @@ theorem determinantODE : ∀ n (A W : ℝ → Matrix (Fin n) (Fin n) ℝ) t,
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:575](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:575>)（`MD.Ch02.determinantODE`）。
+位置：[Blueprint/Ch02.lean:601](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:601>)（`MD.Ch02.determinantODE`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3540,7 +3569,7 @@ A、W 是实际实方阵路径，D(t)=det W(t)；Continuous A 与逐点全实线
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:588](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:588>)（`MD.Ch02.determinantExponential`）。
+位置：[Blueprint/Ch02.lean:614](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:614>)（`MD.Ch02.determinantExponential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3600,7 +3629,7 @@ theorem flowDet
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:596](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:596>)（`MD.Ch02.flowDet`）。
+位置：[Blueprint/Ch02.lean:622](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:622>)（`MD.Ch02.flowDet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3652,7 +3681,7 @@ def ljOscillatorEquation (φ : ℝ → ℝ) (γ : ℝ → ℝ × ℝ) (I : Set �
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:606](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:606>)（`MD.Ch02.ljOscillatorEquation`）。
+位置：[Blueprint/Ch02.lean:632](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:632>)（`MD.Ch02.ljOscillatorEquation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3701,7 +3730,7 @@ theorem ljBoundedPeriodic : ∀ (σ ε : ℝ) (γ : ℝ → ℝ × ℝ),
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:611](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:611>)（`MD.Ch02.ljBoundedPeriodic`）。
+位置：[Blueprint/Ch02.lean:637](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:637>)（`MD.Ch02.ljBoundedPeriodic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3757,7 +3786,7 @@ theorem linearDivergence : ∀ n (S : Matrix (Fin n) (Fin n) ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:620](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:620>)（`MD.Ch02.linearDivergence`）。
+位置：[Blueprint/Ch02.lean:646](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:646>)（`MD.Ch02.linearDivergence`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3807,7 +3836,7 @@ def bp_linearEuler {n : ℕ} (S : Matrix (Fin n) (Fin n) ℝ) (h : ℝ) : Matrix
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:629](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:629>)（`MD.Ch02.bp_linearEuler`）。
+位置：[Blueprint/Ch02.lean:655](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:655>)（`MD.Ch02.bp_linearEuler`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3858,7 +3887,7 @@ theorem eulerVolumePrinted : ∀ n (S : Matrix (Fin n) (Fin n) ℝ) h,
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:634](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:634>)（`MD.Ch02.eulerVolumePrinted`）。
+位置：[Blueprint/Ch02.lean:660](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:660>)（`MD.Ch02.eulerVolumePrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3909,7 +3938,7 @@ theorem eulerVolumeCounterexample :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:640](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:640>)（`MD.Ch02.eulerVolumeCounterexample`）。
+位置：[Blueprint/Ch02.lean:666](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:666>)（`MD.Ch02.eulerVolumeCounterexample`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3957,7 +3986,7 @@ def bp_asymmetricEulerRelation (f g : ℝ → ℝ → ℝ) (h u v U V : ℝ) : P
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:645](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:645>)（`MD.Ch02.bp_asymmetricEulerRelation`）。
+位置：[Blueprint/Ch02.lean:671](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:671>)（`MD.Ch02.bp_asymmetricEulerRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4017,7 +4046,7 @@ theorem asymmetricDet :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:650](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:650>)（`MD.Ch02.asymmetricDet`）。
+位置：[Blueprint/Ch02.lean:676](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:676>)（`MD.Ch02.asymmetricDet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4077,7 +4106,7 @@ theorem asymmetricArea :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:668](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:668>)（`MD.Ch02.asymmetricArea`）。
+位置：[Blueprint/Ch02.lean:694](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:694>)（`MD.Ch02.asymmetricArea`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4134,7 +4163,7 @@ def bp_IsSymplecticMap {Nc : ℕ}
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:680](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:680>)（`MD.Ch02.bp_IsSymplecticMap`）。
+位置：[Blueprint/Ch02.lean:706](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:706>)（`MD.Ch02.bp_IsSymplecticMap`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4182,7 +4211,7 @@ ReviewDefinitions.lean:2816 的 Q n=Fin n→ℝ，:2882 的 oneForm n=Q n→(Q n
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:685](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:685>)（`MD.Ch02.oneFormFamily`）。
+位置：[Blueprint/Ch02.lean:711](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:711>)（`MD.Ch02.oneFormFamily`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4227,7 +4256,7 @@ def bp_differential {n : ℕ} (g : Q n → ℝ) : oneForm n := fderiv ℝ g
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:688](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:688>)（`MD.Ch02.bp_differential`）。
+位置：[Blueprint/Ch02.lean:714](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:714>)（`MD.Ch02.bp_differential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4273,7 +4302,7 @@ def coordinateDifferentials (n : ℕ) :
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:691](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:691>)（`MD.Ch02.coordinateDifferentials`）。
+位置：[Blueprint/Ch02.lean:717](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:717>)（`MD.Ch02.coordinateDifferentials`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4327,7 +4356,7 @@ def bp_wedge {Nc : ℕ} (α β : SymplecticCoordinates Nc →ₗ[ℝ] ℝ) :
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:696](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:696>)（`MD.Ch02.bp_wedge`）。
+位置：[Blueprint/Ch02.lean:722](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:722>)（`MD.Ch02.bp_wedge`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4374,7 +4403,7 @@ noncomputable def bp_symplecticForm (Nc : ℕ) :
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:708](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:708>)（`MD.Ch02.bp_symplecticForm`）。
+位置：[Blueprint/Ch02.lean:734](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:734>)（`MD.Ch02.bp_symplecticForm`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4427,7 +4456,7 @@ theorem formSumWedges (Nc : ℕ) :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:713](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:713>)（`MD.Ch02.formSumWedges`）。
+位置：[Blueprint/Ch02.lean:739](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:739>)（`MD.Ch02.formSumWedges`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4482,7 +4511,7 @@ Q n 已展开为 Fin n→ℝ（依赖:2816）。蓝图 coefficientTwoForm 对任
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:720](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:720>)（`MD.Ch02.coefficientTwoForm`）。
+位置：[Blueprint/Ch02.lean:746](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:746>)（`MD.Ch02.coefficientTwoForm`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4530,7 +4559,7 @@ def bp_pullbackOne {n : ℕ} (Φ : Q n → Q n) (α : oneForm n) : oneForm n :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:725](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:725>)（`MD.Ch02.bp_pullbackOne`）。
+位置：[Blueprint/Ch02.lean:751](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:751>)（`MD.Ch02.bp_pullbackOne`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4576,7 +4605,7 @@ def bp_pullbackTwo {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) (z u v : Q n) : 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:729](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:729>)（`MD.Ch02.bp_pullbackTwo`）。
+位置：[Blueprint/Ch02.lean:755](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:755>)（`MD.Ch02.bp_pullbackTwo`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4627,7 +4656,7 @@ theorem pullbackMatrix :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch02.lean:733](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:733>)（`MD.Ch02.pullbackMatrix`）。
+位置：[Blueprint/Ch02.lean:759](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:759>)（`MD.Ch02.pullbackMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4678,7 +4707,7 @@ def bp_preservesTwoForm {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) : Prop :=
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:747](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:747>)（`MD.Ch02.bp_preservesTwoForm`）。
+位置：[Blueprint/Ch02.lean:773](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:773>)（`MD.Ch02.bp_preservesTwoForm`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4734,7 +4763,7 @@ theorem symplecticIffForm {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:751](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:751>)（`MD.Ch02.symplecticIffForm`）。
+位置：[Blueprint/Ch02.lean:777](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:777>)（`MD.Ch02.symplecticIffForm`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4785,7 +4814,7 @@ theorem symplecticDet {n : ℕ} (A : SymplecticCoordinateMatrix n) (hA : IsTextb
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:759](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:759>)（`MD.Ch02.symplecticDet`）。
+位置：[Blueprint/Ch02.lean:785](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:785>)（`MD.Ch02.symplecticDet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4844,7 +4873,7 @@ theorem hamiltonDet {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:765](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:765>)（`MD.Ch02.hamiltonDet`）。
+位置：[Blueprint/Ch02.lean:791](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:791>)（`MD.Ch02.hamiltonDet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4893,7 +4922,7 @@ noncomputable def bp_hessian {Nc : ℕ}
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:779](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:779>)（`MD.Ch02.bp_hessian`）。
+位置：[Blueprint/Ch02.lean:805](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:805>)（`MD.Ch02.bp_hessian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4940,7 +4969,7 @@ theorem hessianSymmetry {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:786](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:786>)（`MD.Ch02.hessianSymmetry`）。
+位置：[Blueprint/Ch02.lean:812](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:812>)（`MD.Ch02.hessianSymmetry`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5001,7 +5030,7 @@ theorem hamiltonVariationalPrinted : ∀ n (H : SymplecticCoordinates n → ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:793](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:793>)（`MD.Ch02.hamiltonVariationalPrinted`）。
+位置：[Blueprint/Ch02.lean:819](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:819>)（`MD.Ch02.hamiltonVariationalPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5063,7 +5092,7 @@ theorem matrixCancellation {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:806](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:806>)（`MD.Ch02.matrixCancellation`）。
+位置：[Blueprint/Ch02.lean:832](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:832>)（`MD.Ch02.matrixCancellation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5115,7 +5144,7 @@ theorem formConstant {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:814](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:814>)（`MD.Ch02.formConstant`）。
+位置：[Blueprint/Ch02.lean:840](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:840>)（`MD.Ch02.formConstant`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5171,7 +5200,7 @@ theorem hamiltonSymplectic {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:824](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:824>)（`MD.Ch02.hamiltonSymplectic`）。
+位置：[Blueprint/Ch02.lean:850](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:850>)（`MD.Ch02.hamiltonSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5226,7 +5255,7 @@ theorem chainRule {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:837](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:837>)（`MD.Ch02.chainRule`）。
+位置：[Blueprint/Ch02.lean:863](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:863>)（`MD.Ch02.chainRule`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5275,7 +5304,7 @@ theorem symplecticComposition {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:844](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:844>)（`MD.Ch02.symplecticComposition`）。
+位置：[Blueprint/Ch02.lean:870](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:870>)（`MD.Ch02.symplecticComposition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5326,7 +5355,7 @@ theorem symplecticInverse {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:852](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:852>)（`MD.Ch02.symplecticInverse`）。
+位置：[Blueprint/Ch02.lean:878](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:878>)（`MD.Ch02.symplecticInverse`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5379,7 +5408,7 @@ theorem globalGroupPrinted : ∀ n (Φ : SymplecticCoordinates n → SymplecticC
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:859](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:859>)（`MD.Ch02.globalGroupPrinted`）。
+位置：[Blueprint/Ch02.lean:885](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:885>)（`MD.Ch02.globalGroupPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5432,7 +5461,7 @@ def bp_symplecticIntegrator {n : ℕ} (G : ℝ → SymplecticCoordinates n → S
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:865](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:865>)（`MD.Ch02.bp_symplecticIntegrator`）。
+位置：[Blueprint/Ch02.lean:891](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:891>)（`MD.Ch02.bp_symplecticIntegrator`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5481,7 +5510,7 @@ noncomputable def bp_symplecticEuler {Nc : ℕ}
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:869](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:869>)（`MD.Ch02.bp_symplecticEuler`）。
+位置：[Blueprint/Ch02.lean:895](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:895>)（`MD.Ch02.bp_symplecticEuler`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5533,7 +5562,7 @@ Ch02.lean:876–882 的量词顺序为任意 n,m,U,h,z，在 U C² 后任意切�
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:876](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:876>)（`MD.Ch02.kickDifferential`）。
+位置：[Blueprint/Ch02.lean:902](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:902>)（`MD.Ch02.kickDifferential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5584,7 +5613,7 @@ deps:73–76 实际定义为 mul 双线性形式经 α,β 复合减去经 β,α 
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:885](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:885>)（`MD.Ch02.wedgeSelf`）。
+位置：[Blueprint/Ch02.lean:911](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:911>)（`MD.Ch02.wedgeSelf`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5635,7 +5664,7 @@ theorem symplecticEulerPreserves {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:891](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:891>)（`MD.Ch02.symplecticEulerPreserves`）。
+位置：[Blueprint/Ch02.lean:917](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:917>)（`MD.Ch02.symplecticEulerPreserves`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5684,7 +5713,7 @@ Ch02.lean:898–899直接定义为(G(-h)).symm；Ch02_deps.txt:1240–1241的tex
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:898](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:898>)（`MD.Ch02.bp_adjoint`）。
+位置：[Blueprint/Ch02.lean:924](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:924>)（`MD.Ch02.bp_adjoint`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5732,7 +5761,7 @@ theorem flowSelfAdjoint {E : Type*} [TopologicalSpace E]
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:903](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:903>)（`MD.Ch02.flowSelfAdjoint`）。
+位置：[Blueprint/Ch02.lean:929](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:929>)（`MD.Ch02.flowSelfAdjoint`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5780,7 +5809,7 @@ Ch02_deps.txt:2816明确Q n=Fin n→ℝ；加法与ℝ标量乘法为逐坐标�
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:908](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:908>)（`MD.Ch02.bp_backwardEulerRelation`）。
+位置：[Blueprint/Ch02.lean:934](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:934>)（`MD.Ch02.bp_backwardEulerRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5830,7 +5859,7 @@ Ch02.lean:14、912–916给出实赋范向量空间E及任意f、双射族G、h�
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:912](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:912>)（`MD.Ch02.eulerAdjoint`）。
+位置：[Blueprint/Ch02.lean:938](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:938>)（`MD.Ch02.eulerAdjoint`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5885,7 +5914,7 @@ noncomputable def bp_adjointSymplecticEuler {Nc : ℕ}
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:918](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:918>)（`MD.Ch02.bp_adjointSymplecticEuler`）。
+位置：[Blueprint/Ch02.lean:944](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:944>)（`MD.Ch02.bp_adjointSymplecticEuler`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5932,7 +5961,7 @@ Ch02.lean:925–927量化任意E与实步实际双射族G，结论是整个方�
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:925](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:925>)（`MD.Ch02.adjointInvolution`）。
+位置：[Blueprint/Ch02.lean:951](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:951>)（`MD.Ch02.adjointInvolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5978,7 +6007,7 @@ Ch02.lean:930完整定义为F₁ h ∘ F₂ h，先作用子流2再子流1，恰
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:930](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:930>)（`MD.Ch02.bp_splittingMap`）。
+位置：[Blueprint/Ch02.lean:956](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:956>)（`MD.Ch02.bp_splittingMap`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6027,7 +6056,7 @@ theorem fieldAdd {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:934](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:934>)（`MD.Ch02.fieldAdd`）。
+位置：[Blueprint/Ch02.lean:960](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:960>)（`MD.Ch02.fieldAdd`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6103,7 +6132,7 @@ theorem splittingLocal {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:943](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:943>)（`MD.Ch02.splittingLocal`）。
+位置：[Blueprint/Ch02.lean:969](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:969>)（`MD.Ch02.splittingLocal`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6180,7 +6209,7 @@ private theorem momentumKick_hasFDerivAt {Nc : ℕ}
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:969](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:969>)（`MD.Ch02.bp_kineticFlow`）。
+位置：[Blueprint/Ch02.lean:995](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:995>)（`MD.Ch02.bp_kineticFlow`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6229,7 +6258,7 @@ def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1000](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1000>)（`MD.Ch02.bp_potentialFlow`）。
+位置：[Blueprint/Ch02.lean:1026](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1026>)（`MD.Ch02.bp_potentialFlow`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6280,7 +6309,7 @@ theorem splitEuler :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1005](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1005>)（`MD.Ch02.splitEuler`）。
+位置：[Blueprint/Ch02.lean:1031](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1031>)（`MD.Ch02.splitEuler`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6336,7 +6365,7 @@ theorem verletComposition :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1014](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1014>)（`MD.Ch02.verletComposition`）。
+位置：[Blueprint/Ch02.lean:1040](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1040>)（`MD.Ch02.verletComposition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6385,7 +6414,7 @@ theorem verletSymplectic :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1024](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1024>)（`MD.Ch02.verletSymplectic`）。
+位置：[Blueprint/Ch02.lean:1050](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1050>)（`MD.Ch02.verletSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6437,7 +6466,7 @@ PASS。已按实际源码展开：Ch02_deps.txt 中 AdjointMethods.lean 的 text
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1031](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1031>)（`MD.Ch02.symmetricComposition`）。
+位置：[Blueprint/Ch02.lean:1057](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1057>)（`MD.Ch02.symmetricComposition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6491,7 +6520,7 @@ PASS。实际展开 Q n=Fin n→ℝ，故对象为任意有限维实状态空间
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1039](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1039>)（`MD.Ch02.symmetricEven`）。
+位置：[Blueprint/Ch02.lean:1065](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1065>)（`MD.Ch02.symmetricEven`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6545,7 +6574,7 @@ theorem compositionSymplectic {Nc : ℕ}
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1050](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1050>)（`MD.Ch02.compositionSymplectic`）。
+位置：[Blueprint/Ch02.lean:1076](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1076>)（`MD.Ch02.compositionSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6601,7 +6630,7 @@ theorem compositionOrder :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1059](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1059>)（`MD.Ch02.compositionOrder`）。
+位置：[Blueprint/Ch02.lean:1085](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1085>)（`MD.Ch02.compositionOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6659,7 +6688,7 @@ def bp_harmonicAnharmonic (Ω : ℝ) (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1069](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1069>)（`MD.Ch02.bp_harmonicAnharmonic`）。
+位置：[Blueprint/Ch02.lean:1095](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1095>)（`MD.Ch02.bp_harmonicAnharmonic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6719,7 +6748,7 @@ theorem implicitLocal : ∀ n (g : ℝ → Q n → Q n) x
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1076](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1076>)（`MD.Ch02.implicitLocal`）。
+位置：[Blueprint/Ch02.lean:1102](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1102>)（`MD.Ch02.implicitLocal`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6776,7 +6805,7 @@ Ch02.lean:1088 的def直接展开为w−z−h•f w，E的隐式参数为实赋�
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1088](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1088>)（`MD.Ch02.backwardEulerResidual`）。
+位置：[Blueprint/Ch02.lean:1114](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1114>)（`MD.Ch02.backwardEulerResidual`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6825,7 +6854,7 @@ Ch02.lean:1092–1093直接展开newtonPrinted=xNext−J.symm(g xPrev−τ)；�
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1092](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1092>)（`MD.Ch02.newtonPrinted`）。
+位置：[Blueprint/Ch02.lean:1118](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1118>)（`MD.Ch02.newtonPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6877,7 +6906,7 @@ Ch02.lean:1097–1102；依赖ReviewDefinitions.lean:2816与2898–2899给出Q n
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1097](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1097>)（`MD.Ch02.newtonQuadratic`）。
+位置：[Blueprint/Ch02.lean:1123](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1123>)（`MD.Ch02.newtonQuadratic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6935,7 +6964,7 @@ Ch02.lean:1106–1111；依赖展开Q n=Fin n→ℝ及newtonStep g 0 y A=y−A.s
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1106](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1106>)（`MD.Ch02.frozenNewton`）。
+位置：[Blueprint/Ch02.lean:1132](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1132>)（`MD.Ch02.frozenNewton`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6987,7 +7016,7 @@ Ch02.lean:1114 的正文为 χ.symm ∘ B ∘ χ。E 是实赋范空间，其拓
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1114](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1114>)（`MD.Ch02.bp_conjugateMap`）。
+位置：[Blueprint/Ch02.lean:1140](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1140>)（`MD.Ch02.bp_conjugateMap`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7034,7 +7063,7 @@ ProcessedMethods.lean 的 textbookConjugateMap（合集:1652）展开为 χ⁻¹
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1117](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1117>)（`MD.Ch02.conjugateIterates`）。
+位置：[Blueprint/Ch02.lean:1143](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1143>)（`MD.Ch02.conjugateIterates`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7084,7 +7113,7 @@ theorem conjugateLimits (χ : E ≃ₜ E) (A B : E → E) (hA : A=textbookConjug
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1123](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1123>)（`MD.Ch02.conjugateLimits`）。
+位置：[Blueprint/Ch02.lean:1149](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1149>)（`MD.Ch02.conjugateLimits`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7137,7 +7166,7 @@ theorem eulerConjugacy :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch02.lean:1131](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1131>)（`MD.Ch02.eulerConjugacy`）。
+位置：[Blueprint/Ch02.lean:1157](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1157>)（`MD.Ch02.eulerConjugacy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7189,7 +7218,7 @@ oneStepIterate（OneStepConvergence.lean，合集:1443）正文为(B h)^[n] z₀
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1166](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1166>)（`MD.Ch02.bp_processedIterate`）。
+位置：[Blueprint/Ch02.lean:1192](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1192>)（`MD.Ch02.bp_processedIterate`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7238,7 +7267,7 @@ textbookProcessedMethod展开为χ_h⁻¹∘B_h∘χ_h；textbookProcessedIterat
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1171](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1171>)（`MD.Ch02.processingIterates`）。
+位置：[Blueprint/Ch02.lean:1197](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1197>)（`MD.Ch02.processingIterates`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7295,7 +7324,7 @@ theorem processingOrder (χ : ℝ → E ≃ₜ E) (B G : ℝ → E → E)
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch02.lean:1179](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1179>)（`MD.Ch02.processingOrder`）。
+位置：[Blueprint/Ch02.lean:1205](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1205>)（`MD.Ch02.processingOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7352,7 +7381,7 @@ theorem eulerEffectiveOrder : ∀ n (m : Fin n → ℝ) (U : Q n → ℝ)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1192](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1192>)（`MD.Ch02.eulerEffectiveOrder`）。
+位置：[Blueprint/Ch02.lean:1218](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1218>)（`MD.Ch02.eulerEffectiveOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7405,7 +7434,7 @@ Q n在deps:2816明确为Fin n→ℝ，有限维实向量空间。Ch02:1206–120
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1206](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1206>)（`MD.Ch02.bp_rungeKuttaRelation`）。
+位置：[Blueprint/Ch02.lean:1232](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1232>)（`MD.Ch02.bp_rungeKuttaRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7454,7 +7483,7 @@ def bp_rk4 {n : ℕ} (f : Q n → Q n) (h : ℝ) (z : Q n) : Q n :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1211](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1211>)（`MD.Ch02.bp_rk4`）。
+位置：[Blueprint/Ch02.lean:1237](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1237>)（`MD.Ch02.bp_rk4`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7500,7 +7529,7 @@ theorem rk4Order :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1220](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1220>)（`MD.Ch02.rk4Order`）。
+位置：[Blueprint/Ch02.lean:1246](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1246>)（`MD.Ch02.rk4Order`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7556,7 +7585,7 @@ theorem explicitRK :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1226](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1226>)（`MD.Ch02.explicitRK`）。
+位置：[Blueprint/Ch02.lean:1252](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1252>)（`MD.Ch02.explicitRK`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7620,7 +7649,7 @@ theorem rkSymplectic : ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1239](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1239>)（`MD.Ch02.rkSymplectic`）。
+位置：[Blueprint/Ch02.lean:1265](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1265>)（`MD.Ch02.rkSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7683,7 +7712,7 @@ theorem gaussFamily :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1253](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1253>)（`MD.Ch02.gaussFamily`）。
+位置：[Blueprint/Ch02.lean:1279](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1279>)（`MD.Ch02.gaussFamily`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7733,7 +7762,7 @@ Q=Fin n→ℝ（deps:2816），Ch02:1267–1268与正式midpointRelation（2910�
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1267](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1267>)（`MD.Ch02.bp_midpointRelation`）。
+位置：[Blueprint/Ch02.lean:1293](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1293>)（`MD.Ch02.bp_midpointRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7787,7 +7816,7 @@ theorem midpointProperties :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1272](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1272>)（`MD.Ch02.midpointProperties`）。
+位置：[Blueprint/Ch02.lean:1298](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1298>)（`MD.Ch02.midpointProperties`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7837,7 +7866,7 @@ def gaussTwoData : Matrix (Fin 2) (Fin 2) ℝ × (Fin 2 → ℝ) :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1281](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1281>)（`MD.Ch02.gaussTwoData`）。
+位置：[Blueprint/Ch02.lean:1307](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1307>)（`MD.Ch02.gaussTwoData`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7891,7 +7920,7 @@ theorem gaussTwoOrder : ∀ n (f : Q n → Q n) (G : ℝ → Q n → Q n)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1286](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1286>)（`MD.Ch02.gaussTwoOrder`）。
+位置：[Blueprint/Ch02.lean:1312](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1312>)（`MD.Ch02.gaussTwoOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7945,7 +7974,7 @@ def bp_partitionedVerletRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w : Z 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1295](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1295>)（`MD.Ch02.bp_partitionedVerletRelation`）。
+位置：[Blueprint/Ch02.lean:1321](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1321>)（`MD.Ch02.bp_partitionedVerletRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7994,7 +8023,7 @@ theorem partitionedReduction :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1302](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1302>)（`MD.Ch02.partitionedReduction`）。
+位置：[Blueprint/Ch02.lean:1328](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1328>)（`MD.Ch02.partitionedReduction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8047,7 +8076,7 @@ def bp_generalSymplecticEulerRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1310](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1310>)（`MD.Ch02.bp_generalSymplecticEulerRelation`）。
+位置：[Blueprint/Ch02.lean:1336](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1336>)（`MD.Ch02.bp_generalSymplecticEulerRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8107,7 +8136,7 @@ theorem generalSymplectic :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1315](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1315>)（`MD.Ch02.generalSymplectic`）。
+位置：[Blueprint/Ch02.lean:1341](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1341>)（`MD.Ch02.generalSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8163,7 +8192,7 @@ theorem generalVerletSymplectic :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1323](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1323>)（`MD.Ch02.generalVerletSymplectic`）。
+位置：[Blueprint/Ch02.lean:1349](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1349>)（`MD.Ch02.generalVerletSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8216,7 +8245,7 @@ Ch02.lean:1331–1333；已展开 Ch02_deps.txt:2816–2817 的 Q n=Fin n→ℝ�
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1331](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1331>)（`MD.Ch02.bp_newmarkRelation`）。
+位置：[Blueprint/Ch02.lean:1357](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1357>)（`MD.Ch02.bp_newmarkRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8268,7 +8297,7 @@ Ch02.lean:1337–1339全称量化n、m、F、h、z、w，固定σ=1/2、η=0，�
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1337](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1337>)（`MD.Ch02.newmarkReduction`）。
+位置：[Blueprint/Ch02.lean:1363](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1363>)（`MD.Ch02.newmarkReduction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8322,7 +8351,7 @@ Ch02.lean:1343–1349；Q 2=Fin 2→ℝ，坐标0为q、1为p。量词依次为�
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1343](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1343>)（`MD.Ch02.newmarkDamping`）。
+位置：[Blueprint/Ch02.lean:1369](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1369>)（`MD.Ch02.newmarkDamping`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8381,7 +8410,7 @@ Ch02.lean:1353–1358；以原样沿用json_review中的校正文句为审计对
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1353](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1353>)（`MD.Ch02.newmarkNotSymplectic`）。
+位置：[Blueprint/Ch02.lean:1379](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1379>)（`MD.Ch02.newmarkNotSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8432,7 +8461,7 @@ def bp_multiTaylor {n : ℕ} (d : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1361](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1361>)（`MD.Ch02.bp_multiTaylor`）。
+位置：[Blueprint/Ch02.lean:1387](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1387>)（`MD.Ch02.bp_multiTaylor`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8480,7 +8509,7 @@ def tiMethod {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) : Z n →
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1365](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1365>)（`MD.Ch02.tiMethod`）。
+位置：[Blueprint/Ch02.lean:1391](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1391>)（`MD.Ch02.tiMethod`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8536,7 +8565,7 @@ theorem tiForce :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1371](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1371>)（`MD.Ch02.tiForce`）。
+位置：[Blueprint/Ch02.lean:1397](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1397>)（`MD.Ch02.tiForce`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8597,7 +8626,7 @@ theorem tiOrder :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1381](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1381>)（`MD.Ch02.tiOrder`）。
+位置：[Blueprint/Ch02.lean:1407](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1407>)（`MD.Ch02.tiOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8653,7 +8682,7 @@ def beeman {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (qPrev : Q 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1392](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1392>)（`MD.Ch02.beeman`）。
+位置：[Blueprint/Ch02.lean:1418](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1418>)（`MD.Ch02.beeman`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8710,7 +8739,7 @@ theorem beemanOrder : ∀ n (m : Fin n → ℝ) (F : Q n → Q n)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1402](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1402>)（`MD.Ch02.beemanOrder`）。
+位置：[Blueprint/Ch02.lean:1428](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1428>)（`MD.Ch02.beemanOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 

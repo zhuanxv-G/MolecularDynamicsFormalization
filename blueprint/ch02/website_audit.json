@@ -116,8 +116,20 @@
       "lean_modification_commits": [],
       "reasons": []
     },
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "0611abb505508c2c09192828b1b540d5b2b77da95e6e958704383e0d3e287091",
+        "Blueprint/Ch02.lean": "24f728085e058546c4a32b4229d5c7ec328a746f5f53b59aaf7ca1b8d2062e89",
+        "blueprint/ch02/ch02_source.json": "1669ab8d23d93508b02ae4352a94315080a169c35df038891bbed6adcaf1cbf0"
+      }
+    },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT01"
   },
   {
     "source_id": "MD-2-Hamiltonian",
@@ -230,8 +242,20 @@
       "lean_modification_commits": [],
       "reasons": []
     },
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "0611abb505508c2c09192828b1b540d5b2b77da95e6e958704383e0d3e287091",
+        "Blueprint/Ch02.lean": "24f728085e058546c4a32b4229d5c7ec328a746f5f53b59aaf7ca1b8d2062e89",
+        "blueprint/ch02/ch02_source.json": "1669ab8d23d93508b02ae4352a94315080a169c35df038891bbed6adcaf1cbf0"
+      }
+    },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT01"
   },
   {
     "source_id": "MD-2-Euler",
@@ -468,8 +492,20 @@
       "lean_modification_commits": [],
       "reasons": []
     },
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "0611abb505508c2c09192828b1b540d5b2b77da95e6e958704383e0d3e287091",
+        "Blueprint/Ch02.lean": "24f728085e058546c4a32b4229d5c7ec328a746f5f53b59aaf7ca1b8d2062e89",
+        "blueprint/ch02/ch02_source.json": "1669ab8d23d93508b02ae4352a94315080a169c35df038891bbed6adcaf1cbf0"
+      }
+    },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT01"
   },
   {
     "source_id": "MD-2.1-Convergence",

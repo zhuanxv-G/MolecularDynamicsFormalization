@@ -1,0 +1,22 @@
+{
+  "MD-2-HamiltonianODE": {
+    "code": "def hamiltonianODE {n : ℕ} (m : Fin n → ℝ) (_hm : ∀ i, 0 < m i)\n    (U : (Fin n → ℝ) → ℝ) (H : SymplecticCoordinates n → ℝ)\n    (γ : ℝ → SymplecticCoordinates n) (I : Set ℝ) : Prop :=\n  IsOpen I ∧\n  (∀ z, H z = (∑ i, z (Sum.inr i)^2/(2*m i)) + U (fun i ↦ z (Sum.inl i))) ∧\n  (∀ t ∈ I, DifferentiableAt ℝ H (γ t) ∧\n    DifferentiableAt ℝ U (fun i ↦ γ t (Sum.inl i))) ∧\n  ∀ t ∈ I, HasDerivAt γ (textbookHamiltonianVectorField H (γ t)) t ∧\n    (∀ i, HasDerivAt (fun s ↦ γ s (Sum.inl i)) ((m i)⁻¹*γ t (Sum.inr i)) t) ∧\n    ∀ i, HasDerivAt (fun s ↦ γ s (Sum.inr i))\n      (-fderiv ℝ U (fun j ↦ γ t (Sum.inl j)) (Pi.single i 1)) t",
+    "extra_assumptions": [
+      "原文ODE按时间域I逐点解释；只定义关系，不宣称解存在。",
+      "[EXTRA] EAUDIT01显式固定正对角质量、U/H沿轨道可微、H与真实机械式的全坐标关系；完整q̇=M⁻¹p、ṗ=−∇U及ż=J∇H均保留。I为开时间域，采用环境HasDerivAt；只定义经典轨道关系，不宣称存在或唯一。"
+    ]
+  },
+  "MD-2-Hamiltonian": {
+    "code": "def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n)\n    (_hm : ∀ i, 0 < m i) (U : PotentialEnergy n) : PhaseSpace n → ℝ :=\n  massHamiltonian m U",
+    "extra_assumptions": [
+      "固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。",
+      "[EXTRA] EAUDIT01显式∀i,0<mᵢ排除奇异M及零除延拓；保持真实PhaseSpace的(q,p)机械Hamiltonian，固定对角质量来自第1章。"
+    ]
+  },
+  "MD-2-OneStep": {
+    "code": "def numericalTrajectory {n : ℕ} (m : Fin n → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin n → ℝ) → ℝ) (H : SymplecticCoordinates n → ℝ)\n    (D : Set (SymplecticCoordinates n)) (G F : ℝ → D → D)\n    (γ : ℝ → D → SymplecticCoordinates n) (Z : D → ℝ → ℕ → D) : Prop :=\n  IsOpen D ∧ (∀ z ∈ D, DifferentiableAt ℝ U (fun i ↦ z (Sum.inl i))) ∧\n  ∀ ζ : D, γ 0 ζ=ζ.1 ∧\n    hamiltonianODE m hm U H (fun t ↦ γ t ζ) Set.univ ∧\n    (∀ t, (F t ζ).1=γ t ζ) ∧\n    ∀ h ν, Z ζ h ν=(G h)^[ν] ζ\n\ndef numericalIterate {E : Type*} (G : ℝ → E → E) (h : ℝ) (ζ : E) (ν : ℕ) : E :=\n  (G h)^[ν] ζ\n\ndef oneStepTargetDifference {n : ℕ} {D : Set (SymplecticCoordinates n)}\n    (G F : ℝ → D → D) (h : ℝ) (ζ : D) : ℝ :=\n  ‖(G h ζ).1-(F h ζ).1‖",
+    "extra_assumptions": [
+      "[EXTRA] EAUDIT01在开放正规相空间D排除势能不可微/奇异点；F的已给全时解族与初值/完整机械ODE相联，G作用于同一D，Z关联全部实际n次迭代。oneStepTargetDifference明确目标F_h与G_h的差；原段未规定定量近似质量，未加入虚构误差阶或收敛结论。全时流是此接口的给定模型资格，不是解存在定理。"
+    ]
+  }
+}

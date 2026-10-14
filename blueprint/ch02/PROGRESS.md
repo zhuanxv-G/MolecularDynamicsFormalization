@@ -4,13 +4,13 @@
 第2章本地部分完成；第1、2章均等待用户提交MathCopilot批次。网站不可用，未冻结。
 当前160条；旧清单映射160/160；本地PASS 140；网站返回0。
 
-网站整合汇总：网站PASS 108 / 修复中 49 / 待导师 2 / 待复审 1。
+网站整合汇总：网站PASS 108 / 修复中 46 / 待导师 2 / 待复审 4。
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
-| MD-2-HamiltonianODE | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2-Hamiltonian | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2-HamiltonianODE | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
+| MD-2-Hamiltonian | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
 | MD-2-Euler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2-OneStep | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2-OneStep | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
 | MD-2.1-Convergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.1-Order | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.1-Error | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
@@ -405,3 +405,7 @@
 - p.85–89/PDF107–111：任意高阶展望、第3章指引、隐式计算成本/稀疏实现及图2.7流程动机为excluded_qualitative；实际公式、误差与共轭结论已单列。
 - p.89–94/PDF111–116：隐式RK效率、PRK一般族文献、Hessian稀疏成本、multistep物理优劣为excluded_qualitative；全部展示算法及阶陈述单列。
 - p.94–96/PDF116–118：Exercises标题起所有习题排除；Beeman例及三阶正文在标题前保留。
+
+
+EAUDIT01：章首3条reaudit FAIL完整修复；原页75–76、单文件、完整check/160条公理、3份compact通过；仅定义，未新增定量误差或实际解存在证明，网站复审待提交。
+历史DELIVERY_VALIDATION仅对应8ca2ccf原版本；当前修复验收见validation/EAUDIT01/ACCEPTANCE.json。

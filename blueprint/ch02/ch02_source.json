@@ -6,25 +6,41 @@
     "section": "2",
     "printed_page": "53",
     "pdf_page": "75",
-    "statement_latex": "The challenge before us is to compute solutions of\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad \\dot{\\boldsymbol p}=F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q),\\]\nor, more compactly, with $\\boldsymbol z$ representing the collection of all positions and momenta,\n\\[\\dot{\\boldsymbol z}=f(\\boldsymbol z),\\qquad f(\\boldsymbol z)=J\\nabla H.\\tag{2.1}\\]",
+    "statement_latex": "The challenge before us is to compute solutions of\n\\[\\dot{\\boldsymbol q}=\\boldsymbol M^{-1}\\boldsymbol p,\\qquad \\dot{\\boldsymbol p}=\\boldsymbol F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q),\\]\nor, more compactly, with $\\boldsymbol z$ representing the collection of all positions and momenta,\n\\[\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z),\\qquad \\boldsymbol f(\\boldsymbol z)=\\boldsymbol J\\nabla H,\\tag{2.1}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；J在本条上下文、H见同页mechanicalHamiltonian条目；n为配置坐标数。",
-      "where $J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$,",
-      "$I$为$n\\times n$单位阵；教材符号顺序$(q,p)$。"
+      "$\\boldsymbol z=(\\boldsymbol q,\\boldsymbol p)$；$H$见同页MD-2-Hamiltonian条目；此处$n$为配置坐标数，对应第1章§1.2的$N_c$。",
+      "where $\\boldsymbol J=\\begin{bmatrix}\\boldsymbol 0&\\boldsymbol I\\\\-\\boldsymbol I&\\boldsymbol 0\\end{bmatrix}$,",
+      "$\\boldsymbol I$为$n\\times n$单位阵，$\\boldsymbol 0$为同尺寸零块；教材坐标顺序为$(\\boldsymbol q,\\boldsymbol p)$。",
+      "$\\boldsymbol M$为固定对角质量矩阵；$\\boldsymbol F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q)$为力，$\\boldsymbol f$为完整相空间向量场。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch02.hamiltonianODE",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "原文ODE按时间域I逐点解释；只定义关系，不宣称解存在。"
+      "原文ODE按时间域I逐点解释；只定义关系，不宣称解存在。",
+      "[EXTRA] EAUDIT01显式固定正对角质量、U/H沿轨道可微、H与真实机械式的全坐标关系；完整q̇=M⁻¹p、ṗ=−∇U及ż=J∇H均保留。I为开时间域，采用环境HasDerivAt；只定义经典轨道关系，不宣称存在或唯一。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT01_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-14T11:18:25.413538",
+        "before_sha256": "060f78c88768eb4820733e1110c1a0336ed0253ec66e10a891402f7f3bb15254",
+        "after_sha256": "0d532722f974677fabd598c616c71ad5d2c872073ced238fb73f320da32b67bf",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH01_result.json",
+        "raw_sha256": "f90487ad39a9d4bdb1451ba630cc3fe6108d2c96fcdb5b248c53271bad69c447",
+        "reason": "重新视觉核对PDF75–76后合并第一轮A排印修订；C以已绑定reaudit为准，补齐经典梯度、可逆质量及完整流/单步域关联；不采用未批准数学更正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2-Hamiltonian",
@@ -33,23 +49,39 @@
     "section": "2",
     "printed_page": "53",
     "pdf_page": "75",
-    "statement_latex": "and $H=\\boldsymbol p^TM^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$ is the Hamiltonian.",
+    "statement_latex": "and $H=\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$ is the Hamiltonian.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "$M$为第1章固定对角质量矩阵；$\\boldsymbol q,\\boldsymbol p\\in\\mathbb R^n$。"
+      "$\\boldsymbol M$为第1章§1.2中固定的对角质量矩阵；$\\boldsymbol q,\\boldsymbol p\\in\\mathbb R^n$，此处$n$对应原书配置坐标数$N_c$。",
+      "第1章PDF41/印刷18明确写M is a diagonal mass matrix，并在三维N粒子情形写$\\boldsymbol M=\\operatorname{diag}(m_1,m_1,m_1,\\ldots,m_N,m_N,m_N)$；本条原式使用$\\boldsymbol M^{-1}$。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch02.mechanicalHamiltonian",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。"
+      "固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。",
+      "[EXTRA] EAUDIT01显式∀i,0<mᵢ排除奇异M及零除延拓；保持真实PhaseSpace的(q,p)机械Hamiltonian，固定对角质量来自第1章。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT01_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-14T11:18:25.414579",
+        "before_sha256": "9582ae8e070d8e8590851645f60a3c7ee8ca7618c0ec81610c8862d58d94746c",
+        "after_sha256": "bb20a32ed3bdf6d77ea089d706eb8a7be476eb4c5aa46b151eb8d2f68fbb4168",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH01_result.json",
+        "raw_sha256": "f90487ad39a9d4bdb1451ba630cc3fe6108d2c96fcdb5b248c53271bad69c447",
+        "reason": "重新视觉核对PDF75–76后合并第一轮A排印修订；C以已绑定reaudit为准，补齐经典梯度、可逆质量及完整流/单步域关联；不采用未批准数学更正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2-Euler",
@@ -81,21 +113,40 @@
     "section": "2",
     "printed_page": "54",
     "pdf_page": "76",
-    "statement_latex": "Suppose that the system under study has a well defined flow map $\\mathcal F_t$ defined on the phase space (which is assumed to exclude any singular points of the potential energy function). The solution of the initial value problem, $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, $\\boldsymbol z(0)=\\boldsymbol\\zeta$, may be written $\\boldsymbol z(t;\\boldsymbol\\zeta)$ (with $\\boldsymbol z(0;\\boldsymbol\\zeta)=\\boldsymbol\\zeta$), and the flow-map $\\mathcal F_t$ satisfies $\\mathcal F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t;\\boldsymbol\\zeta)$: A one-step method, starting from a given point, approximates a point on the solution trajectory at a given time $h$ units later. Such a method defines a map $\\mathcal G_h$ of the phase space as illustrated in Fig. 2.1.",
+    "statement_latex": "Suppose that the system under study has a well defined flow map $\\mathscr F_t$ defined on the phase space (which is assumed to exclude any singular points of the potential energy function). The solution of the initial value problem, $\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z)$, $\\boldsymbol z(0)=\\boldsymbol\\zeta$, may be written $\\boldsymbol z(t,\\boldsymbol\\zeta)$ (with $\\boldsymbol z(0,\\boldsymbol\\zeta)=\\boldsymbol\\zeta$), and the flow-map $\\mathscr F_t$ satisfies $\\mathscr F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t,\\boldsymbol\\zeta)$. A one-step method, starting from a given point, approximates a point on the solution trajectory at a given time $h$ units later. Such a method defines a map $\\mathscr G_h$ of the phase space as illustrated in Fig. 2.1.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "$\\mathcal F_t(\\zeta)$为给定实际ODE解；$\\mathcal G_h$为单步近似映射；近似质量由后面的误差定义衡量。"
+      "$\\mathscr F_t(\\boldsymbol\\zeta)=\\boldsymbol z(t,\\boldsymbol\\zeta)$为给定实际ODE的流；初值为$\\boldsymbol z(0,\\boldsymbol\\zeta)=\\boldsymbol\\zeta$。",
+      "$\\mathscr G_h$为相空间上的单步近似映射，其目标是$h$时间单位后的实际流$\\mathscr F_h$；图2.1标$\\boldsymbol z_1=\\mathscr G_h(\\boldsymbol\\zeta)$并与$\\boldsymbol z(h,\\boldsymbol\\zeta)=\\mathscr F_h(\\boldsymbol\\zeta)$比较。",
+      "该相空间被假定排除势能函数的所有奇异点；本段未规定定量误差、收敛性或误差阶，近似质量由后面的误差定义衡量。",
+      "原页使用RSFS花体流映射符号，故记作$\\mathscr F_t,\\mathscr G_h$；原页解记号中时间与初值以逗号分隔。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch02.numericalTrajectory",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] EAUDIT01在开放正规相空间D排除势能不可微/奇异点；F的已给全时解族与初值/完整机械ODE相联，G作用于同一D，Z关联全部实际n次迭代。oneStepTargetDifference明确目标F_h与G_h的差；原段未规定定量近似质量，未加入虚构误差阶或收敛结论。全时流是此接口的给定模型资格，不是解存在定理。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT01_LOCAL_PAGE_RECHECK",
+        "timestamp": "2026-10-14T11:18:25.414579",
+        "before_sha256": "50854266d91d56e9de89433ff4f0dbdea0937e0f64fc529cb88ba06fbc24429e",
+        "after_sha256": "3792fc44ab44d066d0a9b90144eb9e31d3edb9e97e91023d382e298f921bb50f",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH01_result.json",
+        "raw_sha256": "f90487ad39a9d4bdb1451ba630cc3fe6108d2c96fcdb5b248c53271bad69c447",
+        "reason": "重新视觉核对PDF75–76后合并第一轮A排印修订；C以已绑定reaudit为准，补齐经典梯度、可逆质量及完整流/单步域关联；不采用未批准数学更正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.1-Convergence",

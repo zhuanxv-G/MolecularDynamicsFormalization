@@ -23,7 +23,7 @@ def render_document(ch):
  source=source.replace('ch02',f'ch{ch:02}').replace('Ch02',f'Ch{ch:02}').replace('第2章',f'第{ch}章').replace('Chapter 2',f'Chapter {ch}')
  source=source.replace(f'from ch{ch:02}_pipeline import declarations as whole_declarations',
    f'from eaudit_review_tasks import declarations as _current_declarations\n    whole_declarations=lambda: _current_declarations({ch})')
- ranges={3:'97–136',4:'139–174',5:'179–209',6:'211–258'}
+ ranges={2:'53–94',3:'97–136',4:'139–174',5:'179–209',6:'211–258'}
  source=source.replace('53–94',ranges[ch])
  module=types.ModuleType('eaudit_current_renderer');module.__file__=str(ROOT/'scripts/eaudit_review_tasks.py')
  exec(compile(source,module.__file__,'exec'),module.__dict__)

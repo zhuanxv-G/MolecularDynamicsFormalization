@@ -38,3 +38,7 @@
 | BATCH32 | MD-2.5.5-Beeman, MD-2.5.5-BeemanOrder | [BATCH32a](compact/BATCH32/a/PASTE.txt) (94763), [BATCH32b](compact/BATCH32/b/PASTE.txt) (95788) |
 
 返回件原样放blueprint/ch02/mathcopilot_results/，按source_id整合，repair_log只追加；修订签名后重新审计。第1章冻结不受本生成器影响。
+
+## EAUDIT01：章首3条修复
+
+[3份compact及实际输出要求](EAUDIT01/INDEX.md)。旧BATCH保留绑定原快照，当前修复待网站复审。

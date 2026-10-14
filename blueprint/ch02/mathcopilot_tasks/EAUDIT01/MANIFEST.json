@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT01",
+  "input_sha256": {
+    "BATCH_EAUDIT01.md": "0611abb505508c2c09192828b1b540d5b2b77da95e6e958704383e0d3e287091",
+    "Blueprint/Ch02.lean": "24f728085e058546c4a32b4229d5c7ec328a746f5f53b59aaf7ca1b8d2062e89",
+    "blueprint/ch02/ch02_source.json": "1669ab8d23d93508b02ae4352a94315080a169c35df038891bbed6adcaf1cbf0"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT01a",
+      "source_id": "MD-2-HamiltonianODE",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT01/a",
+      "total_bytes": 99944,
+      "manifest_sha256": "7caf8386d85c3cc092ab2495e646041b3827a2575d863da5ef7988f2660678ae"
+    },
+    {
+      "subtask": "EAUDIT01b",
+      "source_id": "MD-2-Hamiltonian",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT01/b",
+      "total_bytes": 100957,
+      "manifest_sha256": "91738f5bca3034a551dce4b4d82f550c3f517d653725df8fbd30cf8a3926be1c"
+    },
+    {
+      "subtask": "EAUDIT01c",
+      "source_id": "MD-2-OneStep",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT01/c",
+      "total_bytes": 134200,
+      "manifest_sha256": "7ad702acf764893ff87df072d56452612c1f15fe61c220c86271954b9dc33498"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "eaudit": "EAUDIT01",
+    "section": "2",
+    "source_ids": [
+      "MD-2-HamiltonianODE",
+      "MD-2-Hamiltonian",
+      "MD-2-OneStep"
+    ],
+    "signature_changes": [
+      {
+        "source_id": "MD-2-HamiltonianODE",
+        "old_signature_sha256": "64f9c96d0a4ae55f8528b9a0b3968ff0bb32f8d587793814546bf59b4528ae21",
+        "new_signature_sha256": "8093d79778be6ddc7fa93e8ac3da3c7318320a26f94508dd6ab666be57f07d13"
+      },
+      {
+        "source_id": "MD-2-Hamiltonian",
+        "old_signature_sha256": "8b8585b4f7838dd429ec99818a63e6aa3c0a4a75852725679fec79facca9f335",
+        "new_signature_sha256": "82fcad0fe51c739521d17d9feac49e2bc865ca359863c93aba28e5ee9618ad9e"
+      },
+      {
+        "source_id": "MD-2-OneStep",
+        "old_signature_sha256": "f79d2e780fa2934c8ed0abd0f39a54ed010cb0660fc97384d1268e8419201ec8",
+        "new_signature_sha256": "a1826dfbd70b32c0ccd6c531c284176e8cb335675c9ea14c8672ec0d8997058b"
+      }
+    ],
+    "lean_sha256": "24f728085e058546c4a32b4229d5c7ec328a746f5f53b59aaf7ca1b8d2062e89",
+    "source_sha256": "1669ab8d23d93508b02ae4352a94315080a169c35df038891bbed6adcaf1cbf0",
+    "full_check_sha256": "be782f908d708d59248ada9c86cbcee91b401eb1bb82c77acba526d4e54ae9bf",
+    "single_file_compile_sha256": "7a1377bf06849f33936b55d15da4d2d165176be5abbe18aac8b38678a0f7784a",
+    "axiom_count": 160,
+    "source_pages_verified": [
+      75,
+      76
+    ],
+    "compact_bytes": [
+      99944,
+      100957,
+      134200
+    ],
+    "website_reaudit": "pending",
+    "historical_batches": "unchanged",
+    "formal_library": "unchanged",
+    "scope": "经典可微机械ODE全部分量及J形式、显式正质量、正规相空间实际流及完整单步/迭代关联；无额外精度定理或存在性宣称"
+  }
+]
