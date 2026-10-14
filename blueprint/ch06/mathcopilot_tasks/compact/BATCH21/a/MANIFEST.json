@@ -1,0 +1,104 @@
+{
+  "batch": "BATCH21",
+  "subtask": "BATCH21a",
+  "source_ids": [
+    "MD-6.3.3-BathReduction"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 258,
+      "printed_page": 237
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "d31cb383ee6ab34c8d538add9e14281e951e25f15de153961259d81610c255cf",
+  "lean_sha256": "dafdd4d7db76c1396ccce95d1ba9b0760484fa4f87ecf4b2a0625d2b43284cb0",
+  "signature_sha256": "69547bb3c474a1b5c02c3fa9ffad785de7812d736127828c7fe6bce8042eb647",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "bathForce",
+      "code_sha256": "87b2d1d0e08f4a3c6a5126e57a4814770cc62636745320f745d0b5e40bd2ece3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "bathFrequency",
+      "code_sha256": "e4644c522532c98aac00cd78a02fc4d70da0a444c50b96dd41744d020bc32500"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "memoryKernel",
+      "code_sha256": "0204b6b985c3cc2c7b3dc5fd9929cc9f504009b74a63c65686e1566c9aca20f2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "bathForce",
+      "code_sha256": "780766e859402d141d92d20fb5d6c21b2518071d80dfd5e96b0707871713e9f8"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "bathFrequency",
+      "code_sha256": "f0ea80751f0a429588bb931b70788d0b9c9d35b58bfc63ec00c1105cc98b7da8"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "memoryKernel",
+      "code_sha256": "eb3e3ac5bc830686b94cf8770e8c1e99fef2f43e11f2c9dc41f06468cfbfab52"
+    }
+  ],
+  "paste_plus_pdf_bytes": 73027,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6005,
+      "sha256": "86d3ccf975ce25429c42659941080ebb9a5fc94cb2d0384f5a95e8066ab412a8"
+    },
+    "BATCH21a_PAGES.pdf": {
+      "bytes": 67022,
+      "sha256": "cffa47df8c830650b8cabc55a4b91d449b33cb5fb6f02314a479a30baf389a1d"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 76870
+}
