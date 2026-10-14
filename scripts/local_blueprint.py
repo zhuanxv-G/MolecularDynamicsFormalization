@@ -12,6 +12,7 @@ def pipeline(ch):
     template=(ROOT/'scripts/ch02_pipeline.py').read_text(encoding='utf-8')
     text=template.replace('ch02',f'ch{ch:02}').replace('Ch02',f'Ch{ch:02}').replace('CH02',f'CH{ch:02}')
     text=text.replace('Chapter 2',f'Chapter {ch}').replace('第2章',f'第{ch}章')
+    text=text.replace('第1章冻结暂停', '第1章按授权网站修复例外处理，正式库冻结')
     text=text.replace('160',str(len(__import__(f'ch{ch:02}_data').OLD_ROWS)))
     lo,hi,p0,p1=RANGES[ch];off=p0-lo
     text=text.replace('75<=p<=116',f'{p0}<=p<={p1}').replace('p-22',f'p-{off}')

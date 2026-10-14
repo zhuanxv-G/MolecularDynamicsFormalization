@@ -108,6 +108,14 @@
 | MD-6.3.1-DiffusiveTaylorPrinted | 233/254 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-6.3.1-TimeItoFormula | 234/255 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-6.3-BiasedWalkDiffusion | 232/253 | PASS | 待网站审计 | incomplete |
+| MD-6.3.2-OUProcess | 234/255 | PASS | 待网站审计 | self-contained |
+| MD-6.3.2-OUIntegratingFactor | 234/255 | PASS | 待网站审计 | incomplete |
+| MD-6.3.2-OUVarianceIntegral | 235/256 | PASS | 待网站审计 | self-contained |
+| MD-6.3.2-OULawPrinted | 235/256 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.3.2-OULawCorrect | 235/256 | PASS | 待网站审计 | incomplete |
+| MD-6.3.2-OUGibbsLimit | 235/256 | PASS | 待网站审计 | incomplete |
+| MD-6.3.2-MomentumOU | 235/256 | PASS | 待网站审计 | self-contained |
+| MD-6.3.2-GibbsGaussianDensity | 235/256 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -133,6 +141,8 @@
   C² Taylor余项仅o(h²)，不能自动提升为O(h³)；在h≈√δt时原O(δt³⁄²)需要更高阶正则性。
 - MD-6.3.1-TimeItoFormula：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。
+- MD-6.3.2-OULawPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  原页根号只覆盖(2γ)⁻¹，(1−e⁻²γt)漏在根号内；方差因此被错误平方。单时分布等价不确定整个过程耦合。
 
 ## 1. MD-6.1.1-Microcanonical · definition · 印刷p.214 / PDFp.235
 
@@ -5311,3 +5321,402 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 缺失/继续路线：缺状态依赖Euler随机游走扩散极限及强解存在桥接；不建设大型随机理论。
 
 签名SHA256：`3bfe4e5032778085ca480b4bf93c38d9ded36c5640775f92355f245e2fa7b320`；原文SHA256：`859f0253af6d2b51f00e5adce7e63d30f49ed455090a3e147485f8f02909b623`。
+
+## 1. MD-6.3.2-OUProcess · (6.19) · 印刷p.234 / PDFp.255
+
+### 2. 原文陈述
+
+> For now we will examine the special case of a scalar equation
+> \[dX=-\gamma Xdt+\sigma dW;\tag{6.19}\]
+> where $\gamma>0$ and $\sigma$ are constants. We term Eq. (6.19) the Ornstein-Uhlenbeck SDE.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def strictOUProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (γ σ x0 : ℝ) : Prop :=
+  0 < γ ∧ strictScalarSDE P W X (fun x _ ↦ -γ*x) (fun _ _ ↦ σ) x0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.strictOUProcess；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原显式γ>0保留在真实严格L²积分方程的资格中，不将分布式解作方程前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:996](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:996>)（`MD.Ch06.strictOUProcess`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`1351fa71e19b18f03e9a17f373c6c5c3ce210bdff07b8aa677f3a008bab9d815`；原文SHA256：`27ee49d2eecb58504fc933a07520baebdfe8ff62de7db8bc8168c3dcad1e3fa8`。
+
+## 1. MD-6.3.2-OUIntegratingFactor · unnumbered_claim · 印刷p.234 / PDFp.255
+
+### 2. 原文陈述
+
+> Multiply both sides of (6.19) by the integrating factor $\exp(\gamma t)$, and observe that
+> \[d(\exp(\gamma t)X)=\exp(\gamma t)(dX+\gamma Xdt);\]
+> thus (6.19) becomes
+> \[d(\exp(\gamma t)X)=\sigma\exp(\gamma t)dW(t).\]
+> We then integrate both sides to obtain
+> \[\exp(\gamma t)X(t)=X(0)+\sigma\int_0^t\exp(\gamma s)dW(s).\]
+> Multiplying by $e^{-\gamma t}$ gives
+> \[X(t)=e^{-\gamma t}X(0)+\sigma e^{-\gamma t}\int_0^t\exp(\gamma s)dW(s).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem ouIntegratingFactor :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W X : ℝ → Ω → ℝ) (γ σ x0 T : ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictOUProcess P W X γ σ x0 → 0 < γ → 0 ≤ T →
+  ∃ Y : Ω → ℝ, strictItoIntegral P W (fun s _ ↦ Real.exp (γ*s)) T Y ∧
+    ∀ᵐ sample ∂P, X T sample = Real.exp (-γ*T)*x0 + σ*Real.exp (-γ*T)*Y sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.ouIntegratingFactor；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际PreBrownian、严格OU与严格确定性Ito积分见证、γ>0和t≥0；完整求值，不以解公式作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1002](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1002>)（`MD.Ch06.ouIntegratingFactor`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺严格OU方程与现成确定积分构造的完整变常数/唯一性桥接；不恢复长证明。
+
+签名SHA256：`008829ea5f879f45dd6d06bdc534077927f59de87cc79f7fc1fffbb6428eb885`；原文SHA256：`29dad34b472b749621dc214fe0c974503dec3fe7fea31cdda97aaf2511034e48`。
+
+## 1. MD-6.3.2-OUVarianceIntegral · unnumbered_claim · 印刷p.235 / PDFp.256
+
+### 2. 原文陈述
+
+> Using Proposition 6.3, we know that for a Wiener process $W(t)$, $Y(t)\stackrel{\rm def}=\int_0^t\exp(\gamma s)dW(s)$ is a Gaussian random variable with mean zero and variance
+> \[\operatorname{Var}\{Y(t)\}=\int_0^t e^{2\gamma s}ds=\frac{e^{2\gamma t}-1}{2\gamma}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem ouVarianceIntegral : ∀ (γ T : ℝ), 0 < γ → 0 ≤ T →
+  (∫ s in (0 : ℝ)..T, Real.exp (2*γ*s))=(Real.exp (2*γ*T)-1)/(2*γ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.ouVarianceIntegral；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]γ>0使分母非零；随机变量完整Gaussian law在Prop6.3和OULawCorrect保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:1012](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1012>)（`MD.Ch06.ouVarianceIntegral`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/OUVarianceIntegral.json；blueprint/ch06/validation/short_search/route-543a7dc5f8033bdf79a6.lean；blueprint/ch06/validation/short_search/route-543a7dc5f8033bdf79a6.log。
+
+签名SHA256：`38f369d03b287f3f2a2b7c72a7dc7c3c26f9411a7961788e157063933b80f9f7`；原文SHA256：`3aa900b89675023e20fcf9372585caf9855a9139aa2f36651c00a6496fe512be`。
+
+## 1. MD-6.3.2-OULawPrinted · unnumbered_claim · 印刷p.235 / PDFp.256
+
+### 2. 原文陈述
+
+> The solution with equivalent distribution is therefore
+> \[X(t)=e^{-\gamma t}X(0)+\sigma\sqrt{(2\gamma)^{-1}}(1-e^{-2\gamma t})\widehat Y(t).\]
+> where $\widehat Y(t)$ should be interpreted as random process which at every time $t$ evaluates to a normal random variable ($\widehat Y(t)\sim N(0,1)$). This is what we mean by the exact distributional solution of the Ornstein-Uhlenbeck SDE with prescribed initial value $X(0)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem ouLawPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (γ σ x0 T : ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictOUProcess P W X γ σ x0 →
+  0 < γ → 0 ≤ T → HasLaw (X T)
+    (gaussianReal (Real.exp (-γ*T)*x0)
+      ((σ*Real.sqrt ((2*γ)⁻¹)*(1-Real.exp (-2*γ*T)))^2).toNNReal) P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.ouLawPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 原页根号只覆盖(2γ)⁻¹，(1−e⁻²γt)漏在根号内；方差因此被错误平方。单时分布等价不确定整个过程耦合。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1030](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1030>)（`MD.Ch06.ouLawPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：不证明印刷漏根号分布；完整更正单时law另列，不将独立边际当同一OU过程。
+
+签名SHA256：`43a177ab42dcc1a9357f1334fd0a0f170196d0739e263b0fb4cf5543054637a8`；原文SHA256：`0c9b35830c90c8f663ec4f3c5dff88fe1a8456bf9b6e548a6cfaaf364b278c0d`。
+
+## 1. MD-6.3.2-OULawCorrect · unnumbered_claim · 印刷p.235 / PDFp.256
+
+### 2. 原文陈述
+
+> The solution with equivalent distribution is therefore
+> \[X(t)=e^{-\gamma t}X(0)+\sigma\sqrt{(2\gamma)^{-1}}(1-e^{-2\gamma t})\widehat Y(t).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem ouLawCorrect :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W X : ℝ → Ω → ℝ) (γ σ x0 T : ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictOUProcess P W X γ σ x0 → 0 < γ → 0 ≤ T →
+  HasLaw (X T) (gaussianReal (MolecularDynamics.Chapter06Review.ouMean γ x0 T) (MolecularDynamics.Chapter06Review.ouVariance γ σ T).toNNReal) P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.ouLawCorrect；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]修正标准差σ√((1−e⁻²γt)/(2γ))，完整真实单时Gaussian法则；均值e⁻γtx0、方差σ²(1−e⁻²γt)/(2γ)，不预置law结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1040](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1040>)（`MD.Ch06.ouLawCorrect`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺严格OU变常数与积分法则的完整桥接；Prop6.3现成单独结果不等于本条。
+
+签名SHA256：`9ec86279b99b659cac9b786db673d2e7f24214a0649cfc381bf5bcb1da00fc03`；原文SHA256：`573b3d47af80b1ae3e15556b51ec478ba2746b3337f653ed355eaa387aaf5cb9`。
+
+## 1. MD-6.3.2-OUGibbsLimit · unnumbered_claim · 印刷p.235 / PDFp.256
+
+### 2. 原文陈述
+
+> Let $\sigma=\sqrt{2\gamma k_BT m}$; then for large $t$ the exponentials of the form $e^{-\gamma t}$ tend to zero, and we have
+> \[X(t)\approx\sqrt{k_BT m}\widehat Y(t);\]
+>  in which case $X(t)$ is drawn from the probability density
+> \[\rho_\infty(u)=\frac1{\sqrt{2\pi m k_BT}}\exp\left(-\frac1{k_BT}\frac{u^2}{2m}\right).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem ouGibbsLimit :
+  ∀ (γ θ m x0 : ℝ), 0 < γ → 0 < θ → 0 < m →
+  ∀ f : ℝ → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun t : ℝ ↦ ∫ x, f x ∂gaussianReal (MolecularDynamics.Chapter06Review.ouMean γ x0 t)
+      (MolecularDynamics.Chapter06Review.ouVariance γ (Real.sqrt (2*γ*θ*m)) t).toNNReal) atTop
+      (𝓝 (∫ x, f x ∂gaussianReal 0 (θ*m).toNNReal))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.ouGibbsLimit；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]θ=kBT>0,m>0,γ>0；完整弱收敛，全部有界连续检验函数；不只证明均值/方差参数极限。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1049](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1049>)（`MD.Ch06.ouGibbsLimit`）。
+
+Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：待Gaussian law参数连续性与指数极限完整短桥；现成一般Gaussian连续性可复用，保留未核桥接。
+
+签名SHA256：`9e3244246dfd8b745a195d15650fe7dac4725fb9d763facf408dd4e6c2b0e5ac`；原文SHA256：`11a33d5cb4b7535b428a3f69e4244c80bba256631a9025d6c85b95d6b768aa25`。
+
+## 1. MD-6.3.2-MomentumOU · (6.20)–(6.21) · 印刷p.235 / PDFp.256
+
+### 2. 原文陈述
+
+> For a system with $N_c$ configurational variables we may write
+> \[dp_i=-\gamma p_i dt+\sqrt{2\gamma k_BT m_i}\,dW_i;\tag{6.20}\]
+> where $W_1(t),W_2(t),\ldots,W_{N_c}(t)$ represent $N_c$ independent Wiener processes, or, in vectorial notation, denoting $W=[W_1,W_2,\ldots,W_{N_c}]^T$, we have
+> \[dp=-\gamma pdt+\sqrt{2\gamma k_BT}M^{1/2}dW.\tag{6.21}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def momentumOU {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
+    (W p : ℝ → Ω → MolecularDynamics.Chapter06Review.V n) (m : MolecularDynamics.Chapter06Review.V n) (γ θ : ℝ) (p0 : MolecularDynamics.Chapter06Review.V n) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧
+  ∀ i, strictOUProcess P (fun t sample ↦ W t sample i) (fun t sample ↦ p t sample i) γ (Real.sqrt (2*γ*θ*m i)) (p0 i)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.momentumOU；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]全部正对角质量mi、γ>0、θ=kBT>0和真实各坐标严格积分关系；独立多维W资格另给，不把单位质量桥接当一般质量已证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1059](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1059>)（`MD.Ch06.momentumOU`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`5b8050532652d8acab084d2409af56b2caf3582ffd75111fcdc9ba4e4983af69`；原文SHA256：`cac0bb4389dfee07e2322739b436ce2e7fb03070a0711dc2ce91e260bba460ca`。
+
+## 1. MD-6.3.2-GibbsGaussianDensity · definition · 印刷p.235 / PDFp.256
+
+### 2. 原文陈述
+
+> in which case $X(t)$ is drawn from the probability density
+> \[\rho_\infty(u)=\frac1{\sqrt{2\pi m k_BT}}\exp\left(-\frac1{k_BT}\frac{u^2}{2m}\right).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def gibbsGaussianDensity (θ m u : ℝ) : ℝ :=
+  Real.exp (-(u^2/(2*m))/θ)/Real.sqrt (2*Real.pi*m*θ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.gibbsGaussianDensity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1065](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1065>)（`MD.Ch06.gibbsGaussianDensity`）。
+
+Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`214e9de407f3f6fb5b49f6738f987c32bab1061a2382f83b4b25a413cda8d44e`；原文SHA256：`3af657e88129e47e38ca64d69d227eaffde49ab0fe50de4d70f15a828973cab9`。

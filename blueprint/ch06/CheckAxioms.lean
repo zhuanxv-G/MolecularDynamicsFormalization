@@ -104,3 +104,11 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.diffusiveTaylorPrinted
 #print axioms MD.Ch06.timeItoFormula
 #print axioms MD.Ch06.biasedWalkDiffusion
+#print axioms MD.Ch06.strictOUProcess
+#print axioms MD.Ch06.ouIntegratingFactor
+#print axioms MD.Ch06.ouVarianceIntegral
+#print axioms MD.Ch06.ouLawPrinted
+#print axioms MD.Ch06.ouLawCorrect
+#print axioms MD.Ch06.ouGibbsLimit
+#print axioms MD.Ch06.momentumOU
+#print axioms MD.Ch06.gibbsGaussianDensity

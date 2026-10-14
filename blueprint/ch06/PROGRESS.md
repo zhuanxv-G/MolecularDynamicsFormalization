@@ -1,8 +1,8 @@
 # 第6章本地五步流程进度
 
-范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1章冻结暂停，heartbeat ACTIVE/15分钟原样。
+范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1章按授权网站修复例外处理，正式库冻结，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前104条；旧清单映射50/126；本地PASS 94；网站返回0。
+当前112条；旧清单映射55/126；本地PASS 101；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -110,6 +110,14 @@
 | MD-6.3.1-DiffusiveTaylorPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；不证明C²的错误阶数；完整Ito公式另条保存，不恢复封存长证明。 |
 | MD-6.3.1-TimeItoFormula | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；缺一般时空Ito链式法则；完整更正积分式保留sorry。 |
 | MD-6.3-BiasedWalkDiffusion | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺状态依赖Euler随机游走扩散极限及强解存在桥接；不建设大型随机理论。 |
+| MD-6.3.2-OUProcess | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.3.2-OUIntegratingFactor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺严格OU方程与现成确定积分构造的完整变常数/唯一性桥接；不恢复长证明。 |
+| MD-6.3.2-OUVarianceIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.3.2-OULawPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；不证明印刷漏根号分布；完整更正单时law另列，不将独立边际当同一OU过程。 |
+| MD-6.3.2-OULawCorrect | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺严格OU变常数与积分法则的完整桥接；Prop6.3现成单独结果不等于本条。 |
+| MD-6.3.2-OUGibbsLimit | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待Gaussian law参数连续性与指数极限完整短桥；现成一般Gaussian连续性可复用，保留未核桥接。 |
+| MD-6.3.2-MomentumOU | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.3.2-GibbsGaussianDensity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 
 ## 旧126条完整映射
 
@@ -165,11 +173,11 @@
 | CH06-048 | MD-6.3-VectorSDE |
 | CH06-049 | MD-6.3.1-DiffusiveTaylorPrinted |
 | CH06-050 | MD-6.3.1-TimeItoFormula |
-| CH06-051 | PENDING：所属节尚未处理 |
-| CH06-052 | PENDING：所属节尚未处理 |
-| CH06-053 | PENDING：所属节尚未处理 |
-| CH06-054 | PENDING：所属节尚未处理 |
-| CH06-055 | PENDING：所属节尚未处理 |
+| CH06-051 | MD-6.3.2-OUProcess |
+| CH06-052 | MD-6.3.2-OUIntegratingFactor |
+| CH06-053 | MD-6.3.2-OULawCorrect |
+| CH06-054 | MD-6.3.2-GibbsGaussianDensity |
+| CH06-055 | MD-6.3.2-MomentumOU |
 | CH06-056 | PENDING：所属节尚未处理 |
 | CH06-057 | PENDING：所属节尚未处理 |
 | CH06-058 | PENDING：所属节尚未处理 |
@@ -276,6 +284,10 @@
 - MD-6.3.1-DiffusiveTaylorPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 不证明C²的错误阶数；完整Ito公式另条保存，不恢复封存长证明。C² Taylor余项仅o(h²)，不能自动提升为O(h³)；在h≈√δt时原O(δt³⁄²)需要更高阶正则性。
 - MD-6.3.1-TimeItoFormula：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺一般时空Ito链式法则；完整更正积分式保留sorry。印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。
 - MD-6.3-BiasedWalkDiffusion：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺状态依赖Euler随机游走扩散极限及强解存在桥接；不建设大型随机理论。
+- MD-6.3.2-OUIntegratingFactor：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺严格OU方程与现成确定积分构造的完整变常数/唯一性桥接；不恢复长证明。
+- MD-6.3.2-OULawPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 不证明印刷漏根号分布；完整更正单时law另列，不将独立边际当同一OU过程。原页根号只覆盖(2γ)⁻¹，(1−e⁻²γt)漏在根号内；方差因此被错误平方。单时分布等价不确定整个过程耦合。
+- MD-6.3.2-OULawCorrect：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺严格OU变常数与积分法则的完整桥接；Prop6.3现成单独结果不等于本条。
+- MD-6.3.2-OUGibbsLimit：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待Gaussian law参数连续性与指数极限完整短桥；现成一般Gaussian连续性可复用，保留未核桥接。
 
 ## 定性段落排除
 

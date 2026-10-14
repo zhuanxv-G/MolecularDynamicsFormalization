@@ -1,0 +1,36 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19c",
+  "source_ids": [
+    "MD-6.3.2-OUVarianceIntegral"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 256,
+      "printed_page": 235
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "542d9e869f6002d3c8853bf1b90f45b084eb182d904556903ea5e35c4241e38c",
+  "lean_sha256": "cd77682014829b19149d0e59abf98e157837e11442ca405329b95b3ecb49db92",
+  "signature_sha256": "38f369d03b287f3f2a2b7c72a7dc7c3c26f9411a7961788e157063933b80f9f7",
+  "definition_excerpts": [],
+  "paste_plus_pdf_bytes": 89516,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2942,
+      "sha256": "ddec56dec8b5ff83d5b7684c721227e5f728e6f7b38ab51cba6229a7cd2183ac"
+    },
+    "BATCH19c_PAGES.pdf": {
+      "bytes": 86574,
+      "sha256": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 90676
+}

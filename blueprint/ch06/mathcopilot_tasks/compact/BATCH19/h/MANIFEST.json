@@ -1,0 +1,43 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19h",
+  "source_ids": [
+    "MD-6.3.2-GibbsGaussianDensity"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 256,
+      "printed_page": 235
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "542d9e869f6002d3c8853bf1b90f45b084eb182d904556903ea5e35c4241e38c",
+  "lean_sha256": "cd77682014829b19149d0e59abf98e157837e11442ca405329b95b3ecb49db92",
+  "signature_sha256": "214e9de407f3f6fb5b49f6738f987c32bab1061a2382f83b4b25a413cda8d44e",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "gibbsGaussianDensity",
+      "code_sha256": "214e9de407f3f6fb5b49f6738f987c32bab1061a2382f83b4b25a413cda8d44e"
+    }
+  ],
+  "paste_plus_pdf_bytes": 89535,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2961,
+      "sha256": "f0d44960ea8456063218a3c8ed908e3e92f5f8e716544dfb4c3aa836b48c481f"
+    },
+    "BATCH19h_PAGES.pdf": {
+      "bytes": 86574,
+      "sha256": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 90912
+}

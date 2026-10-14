@@ -991,4 +991,78 @@ theorem biasedWalkDiffusion : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure
           Tendsto (fun K ↦ ∫ sample, F (walks K sample) ∂P) atTop (𝓝 (∫ sample, F (paths sample) ∂P))) := by
   sorry
 
+/-- source_id: MD-6.3.2-OUProcess · (6.19) · §6.3.2 · 印刷p.234 / PDFp.255
+[EXTRA] [EXTRA]原显式γ>0保留在真实严格L²积分方程的资格中，不将分布式解作方程前提。 -/
+def strictOUProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (γ σ x0 : ℝ) : Prop :=
+  0 < γ ∧ strictScalarSDE P W X (fun x _ ↦ -γ*x) (fun _ _ ↦ σ) x0
+
+/-- source_id: MD-6.3.2-OUIntegratingFactor · unnumbered_claim · §6.3.2 · 印刷p.234 / PDFp.255
+[EXTRA] [EXTRA]实际PreBrownian、严格OU与严格确定性Ito积分见证、γ>0和t≥0；完整求值，不以解公式作假设。 -/
+theorem ouIntegratingFactor :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W X : ℝ → Ω → ℝ) (γ σ x0 T : ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictOUProcess P W X γ σ x0 → 0 < γ → 0 ≤ T →
+  ∃ Y : Ω → ℝ, strictItoIntegral P W (fun s _ ↦ Real.exp (γ*s)) T Y ∧
+    ∀ᵐ sample ∂P, X T sample = Real.exp (-γ*T)*x0 + σ*Real.exp (-γ*T)*Y sample := by
+  sorry
+
+/-- source_id: MD-6.3.2-OUVarianceIntegral · unnumbered_claim · §6.3.2 · 印刷p.235 / PDFp.256
+[EXTRA] [EXTRA]γ>0使分母非零；随机变量完整Gaussian law在Prop6.3和OULawCorrect保留。 -/
+theorem ouVarianceIntegral : ∀ (γ T : ℝ), 0 < γ → 0 ≤ T →
+  (∫ s in (0 : ℝ)..T, Real.exp (2*γ*s))=(Real.exp (2*γ*T)-1)/(2*γ) := by
+  intro γ T hγ hT
+  have hc : 2*γ ≠ 0 := mul_ne_zero (by norm_num) hγ.ne'
+  have hd : ∀ x : ℝ, HasDerivAt (fun s : ℝ ↦ Real.exp (2*γ*s)/(2*γ))
+      (Real.exp (2*γ*x)) x := by
+    intro x
+    simpa [hc] using
+      ((Real.hasDerivAt_exp (2*γ*x)).comp x
+        ((hasDerivAt_id x).const_mul (2*γ))).div_const (2*γ)
+  have hi : IntervalIntegrable (fun s : ℝ ↦ Real.exp (2*γ*s)) volume 0 T :=
+    Continuous.intervalIntegrable (by fun_prop) _ _
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt (fun x _ ↦ hd x) hi]
+  simp only [mul_zero, Real.exp_zero]
+  ring
+
+/-- source_id: MD-6.3.2-OULawPrinted · unnumbered_claim · §6.3.2 · 印刷p.235 / PDFp.256
+[ERRATUM?] 原页根号只覆盖(2γ)⁻¹，(1−e⁻²γt)漏在根号内；方差因此被错误平方。单时分布等价不确定整个过程耦合。 -/
+theorem ouLawPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (γ σ x0 T : ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictOUProcess P W X γ σ x0 →
+  0 < γ → 0 ≤ T → HasLaw (X T)
+    (gaussianReal (Real.exp (-γ*T)*x0)
+      ((σ*Real.sqrt ((2*γ)⁻¹)*(1-Real.exp (-2*γ*T)))^2).toNNReal) P := by
+  sorry
+
+/-- source_id: MD-6.3.2-OULawCorrect · unnumbered_claim · §6.3.2 · 印刷p.235 / PDFp.256
+[EXTRA] [EXTRA]修正标准差σ√((1−e⁻²γt)/(2γ))，完整真实单时Gaussian法则；均值e⁻γtx0、方差σ²(1−e⁻²γt)/(2γ)，不预置law结论。 -/
+theorem ouLawCorrect :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W X : ℝ → Ω → ℝ) (γ σ x0 T : ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictOUProcess P W X γ σ x0 → 0 < γ → 0 ≤ T →
+  HasLaw (X T) (gaussianReal (MolecularDynamics.Chapter06Review.ouMean γ x0 T) (MolecularDynamics.Chapter06Review.ouVariance γ σ T).toNNReal) P := by
+  sorry
+
+/-- source_id: MD-6.3.2-OUGibbsLimit · unnumbered_claim · §6.3.2 · 印刷p.235 / PDFp.256
+[EXTRA] [EXTRA]θ=kBT>0,m>0,γ>0；完整弱收敛，全部有界连续检验函数；不只证明均值/方差参数极限。 -/
+theorem ouGibbsLimit :
+  ∀ (γ θ m x0 : ℝ), 0 < γ → 0 < θ → 0 < m →
+  ∀ f : ℝ → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun t : ℝ ↦ ∫ x, f x ∂gaussianReal (MolecularDynamics.Chapter06Review.ouMean γ x0 t)
+      (MolecularDynamics.Chapter06Review.ouVariance γ (Real.sqrt (2*γ*θ*m)) t).toNNReal) atTop
+      (𝓝 (∫ x, f x ∂gaussianReal 0 (θ*m).toNNReal)) := by
+  sorry
+
+/-- source_id: MD-6.3.2-MomentumOU · (6.20)–(6.21) · §6.3.2 · 印刷p.235 / PDFp.256
+[EXTRA] [EXTRA]全部正对角质量mi、γ>0、θ=kBT>0和真实各坐标严格积分关系；独立多维W资格另给，不把单位质量桥接当一般质量已证。 -/
+def momentumOU {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
+    (W p : ℝ → Ω → MolecularDynamics.Chapter06Review.V n) (m : MolecularDynamics.Chapter06Review.V n) (γ θ : ℝ) (p0 : MolecularDynamics.Chapter06Review.V n) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧
+  ∀ i, strictOUProcess P (fun t sample ↦ W t sample i) (fun t sample ↦ p t sample i) γ (Real.sqrt (2*γ*θ*m i)) (p0 i)
+
+/-- source_id: MD-6.3.2-GibbsGaussianDensity · definition · §6.3.2 · 印刷p.235 / PDFp.256 -/
+def gibbsGaussianDensity (θ m u : ℝ) : ℝ :=
+  Real.exp (-(u^2/(2*m))/θ)/Real.sqrt (2*Real.pi*m*θ)
+
 end MD.Ch06

@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro γ T hγ hT\n  have hc : 2*γ ≠ 0 := mul_ne_zero (by norm_num) hγ.ne'\n  have hd : ∀ x : ℝ, HasDerivAt (fun s : ℝ ↦ Real.exp (2*γ*s)/(2*γ))\n      (Real.exp (2*γ*x)) x := by\n    intro x\n    simpa [hc] using\n      ((Real.hasDerivAt_exp (2*γ*x)).comp x\n        ((hasDerivAt_id x).const_mul (2*γ))).div_const (2*γ)\n  have hi : IntervalIntegrable (fun s : ℝ ↦ Real.exp (2*γ*s)) volume 0 T :=\n    Continuous.intervalIntegrable (by fun_prop) _ _\n  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt (fun x _ ↦ hd x) hi]\n  simp only [mul_zero, Real.exp_zero]\n  ring",
+    "source": "blueprint/ch06/validation/short_search/route-543a7dc5f8033bdf79a6.lean",
+    "log": "blueprint/ch06/validation/short_search/route-543a7dc5f8033bdf79a6.log",
+    "source_sha256": "5bbef906757667c6c1a27939066f74f53fcfaee85c6fab5d051bb2339be8d369",
+    "log_sha256": "d4c7c61b77f6decd8316b418a89deb90c6f380594d91400ff21afc7685c7e710"
+  }
+]

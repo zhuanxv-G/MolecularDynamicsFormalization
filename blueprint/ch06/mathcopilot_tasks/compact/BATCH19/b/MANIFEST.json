@@ -1,0 +1,67 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19b",
+  "source_ids": [
+    "MD-6.3.2-OUIntegratingFactor"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 255,
+      "printed_page": 234
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "542d9e869f6002d3c8853bf1b90f45b084eb182d904556903ea5e35c4241e38c",
+  "lean_sha256": "cd77682014829b19149d0e59abf98e157837e11442ca405329b95b3ecb49db92",
+  "signature_sha256": "008829ea5f879f45dd6d06bdc534077927f59de87cc79f7fc1fffbb6428eb885",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "itoLeftSum",
+      "code_sha256": "e1cd64bf3b4edeae8a7d1bf292e844323267f948a2846db1110c7f024f55e746"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "itoLeftSum",
+      "code_sha256": "e1cd64bf3b4edeae8a7d1bf292e844323267f948a2846db1110c7f024f55e746"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "strictItoIntegral",
+      "code_sha256": "69555ce0eea7f7da7dd5b52a53fe2003a79a1ac3a807d9eee6a859b7a7ecfc54"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "strictOUProcess",
+      "code_sha256": "1351fa71e19b18f03e9a17f373c6c5c3ce210bdff07b8aa677f3a008bab9d815"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "strictScalarSDE",
+      "code_sha256": "3181a68f401d8c4cedb55a706f14c191a69578941248ff1b9d0d835a6d78dc2b"
+    }
+  ],
+  "paste_plus_pdf_bytes": 83543,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5397,
+      "sha256": "6838f5646fa85e3e0c8eed2b65ac322a08910ebd76c24812d877c476a61bd126"
+    },
+    "BATCH19b_PAGES.pdf": {
+      "bytes": 78146,
+      "sha256": "8739b522449334878461d199d41aeeb858c8086e869d288869270a2a067d9b07"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 85791
+}

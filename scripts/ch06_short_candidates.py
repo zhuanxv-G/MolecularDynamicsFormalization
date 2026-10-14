@@ -140,4 +140,17 @@ proofs={
       rw [abs_mul, abs_div, abs_of_nonneg (sq_nonneg s)]
       norm_num
       ring''',
+'OUVarianceIntegral':'''intro γ T hγ hT
+  have hc : 2*γ ≠ 0 := mul_ne_zero (by norm_num) hγ.ne'
+  have hd : ∀ x : ℝ, HasDerivAt (fun s : ℝ ↦ Real.exp (2*γ*s)/(2*γ))
+      (Real.exp (2*γ*x)) x := by
+    intro x
+    simpa [hc] using
+      ((Real.hasDerivAt_exp (2*γ*x)).comp x
+        ((hasDerivAt_id x).const_mul (2*γ))).div_const (2*γ)
+  have hi : IntervalIntegrable (fun s : ℝ ↦ Real.exp (2*γ*s)) volume 0 T :=
+    Continuous.intervalIntegrable (by fun_prop) _ _
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt (fun x _ ↦ hd x) hi]
+  simp only [mul_zero, Real.exp_zero]
+  ring''',
 }

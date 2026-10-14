@@ -49,14 +49,14 @@
     "CH06-047": "MD-6.3-BiasedWalkDiffusion",
     "CH06-048": "MD-6.3-VectorSDE",
     "CH06-049": "MD-6.3.1-DiffusiveTaylorPrinted",
-    "CH06-050": "MD-6.3.1-TimeItoFormula"
+    "CH06-050": "MD-6.3.1-TimeItoFormula",
+    "CH06-051": "MD-6.3.2-OUProcess",
+    "CH06-052": "MD-6.3.2-OUIntegratingFactor",
+    "CH06-053": "MD-6.3.2-OULawCorrect",
+    "CH06-054": "MD-6.3.2-GibbsGaussianDensity",
+    "CH06-055": "MD-6.3.2-MomentumOU"
   },
   "pending": [
-    "CH06-051",
-    "CH06-052",
-    "CH06-053",
-    "CH06-054",
-    "CH06-055",
     "CH06-056",
     "CH06-057",
     "CH06-058",
@@ -335,6 +335,24 @@
     ],
     "CH06-050": [
       "MD-6.3.1-TimeItoFormula"
+    ],
+    "CH06-051": [
+      "MD-6.3.2-OUProcess"
+    ],
+    "CH06-052": [
+      "MD-6.3.2-OUIntegratingFactor"
+    ],
+    "CH06-053": [
+      "MD-6.3.2-OUVarianceIntegral",
+      "MD-6.3.2-OULawPrinted",
+      "MD-6.3.2-OULawCorrect"
+    ],
+    "CH06-054": [
+      "MD-6.3.2-OUGibbsLimit",
+      "MD-6.3.2-GibbsGaussianDensity"
+    ],
+    "CH06-055": [
+      "MD-6.3.2-MomentumOU"
     ]
   }
 }
