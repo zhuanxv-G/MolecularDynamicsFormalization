@@ -12,6 +12,15 @@ def refresh(receipt, paths):
     p=ROOT/'blueprint/ch06/BASELINE.json'
     b=json.loads(p.read_text(encoding='utf-8-sig'))
     allowed=set(paths)
+    # Driver output can continue after refresh/commit; compiler evidence is
+    # instead hashed by CHECK_REPORT/FINAL_COMPILE and remains protected.
+    runner_logs={rel for rel in allowed if rel.startswith('blueprint/') and Path(rel).name in ('finalize-run.log','run.log')}
+    volatile=[]
+    for rel in runner_logs:
+        expected=b['protected'].pop(rel,None)
+        if expected:
+            volatile.append(dict(path=rel,previous_sha256=expected,current_sha256=sha(ROOT/rel),reason='acceptance/commit driver output; not a mathematical input or compiler evidence'))
+    allowed-=runner_logs
     changes=[]
     for rel,expected in b['protected'].items():
         current=sha(ROOT/rel)
@@ -31,6 +40,6 @@ def refresh(receipt, paths):
         if (ROOT/rel).is_file():b['protected'][rel]=sha(ROOT/rel)
     b.setdefault('licensed_website_repair_exceptions',[]).append(dict(
         authorization='用户2026-10-13网站版本绑定/修复新指令',receipt=receipt,
-        changed_files=changes,runtime_cache_refresh=runtime,formal_library_hashes='unchanged'))
+        changed_files=changes,runtime_cache_refresh=runtime,volatile_runner_logs=volatile,formal_library_hashes='unchanged'))
     dump(p,b)
     print('Active baseline: licensed review changes',len(changes),'runtime cache records',len(runtime))

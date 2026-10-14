@@ -909,11 +909,11 @@
     "blueprint/ch02/mathcopilot_tasks/INDEX.md": "286b92a5b6dc05a136cad81340e33d218361a1ac89209c8d47254c714fa5b81d",
     "blueprint/ch02/validation/EAUDIT01/full-run.log": "6c0c642f732db0aba0ff347f6e8c6794cf339c8475ca70814916ce6fdbc59c3f",
     "blueprint/ch02/validation/EAUDIT01-full/blueprint_axiom_dependencies.log": "d28d7f3730c91c05cae081c1dd589d7a69b8a4faaae0eec656441c13a5d7a2cf",
-    "blueprint/ch02/validation/EAUDIT01/finalize-run.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "blueprint/ch02/validation/EAUDIT01/FULL_CHECK_PROCESS.json": "d947cf19567aedd7098eb7da84c0dbf01c88a8b46e61dcc8738015d7a366c57b",
     "blueprint/ch02/validation/EAUDIT01-full/blueprint_fresh_Ch02.log": "888b07b9ddd144b0dfa7a75eea075ced04e19f481587976baf508574f943c564",
     "blueprint/ch02/validation/EAUDIT01/EDITS.json": "856b8b0e08faa7ef5f041bef7034fe4c46f289f481d1db6f9cde486ee0c73f8c",
-    "blueprint/ch02/EAUDIT_REGISTRY.json": "62110f3f54d6e21d2270f6b3b5067f4a893159523cf75ef82a50c2ce9a144c76"
+    "blueprint/ch02/EAUDIT_REGISTRY.json": "62110f3f54d6e21d2270f6b3b5067f4a893159523cf75ef82a50c2ce9a144c76",
+    "scripts/refresh_website_baseline.py": "fa012e419d26a88a436d4493bb4edae437f7d043612ee6fe07bdc4dcfa20bf97"
   },
   "unrelated": {
     "output/pdf/CH01_REVIEW_SHORT.PDF_CHECK.json": "aed60322f1feb1e1867ac5f0cbb33da80156f0f32656dd2068857a2515e558f4",
@@ -1455,6 +1455,21 @@
         }
       ],
       "runtime_cache_refresh": [],
+      "formal_library_hashes": "unchanged"
+    },
+    {
+      "authorization": "用户2026-10-13网站版本绑定/修复新指令",
+      "receipt": "blueprint/ch02/validation/EAUDIT01/ACCEPTANCE.json",
+      "changed_files": [],
+      "runtime_cache_refresh": [],
+      "volatile_runner_logs": [
+        {
+          "path": "blueprint/ch02/validation/EAUDIT01/finalize-run.log",
+          "previous_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "current_sha256": "bf93eb9569a311d4bbe3cc1a4e0954e39d5cd83bcc98ea77d141cc1d97e10e05",
+          "reason": "acceptance/commit driver output; not a mathematical input or compiler evidence"
+        }
+      ],
       "formal_library_hashes": "unchanged"
     }
   ]
