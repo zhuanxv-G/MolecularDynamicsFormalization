@@ -54,6 +54,28 @@ def pipeline(ch):
             assert total_bytes<256000,(task,total_bytes)
             subtasks.append""")
     text=text.replace('bytes=size,manifest_sha256=', 'bytes=total_bytes,manifest_sha256=')
+    # A few plot pages have large vector streams. Keep the complete original
+    # page at the highest fitting raster resolution, losslessly, and compare
+    # every rendered pixel at that recorded resolution before accepting it.
+    text=text.replace("size=(folder/'PASTE.txt').stat().st_size+pdfout.stat().st_size", """render_dpi=previous.get('validation',{}).get('pdf_rendered_pixel_equality_dpi',72) if cached else 72
+            if (folder/'PASTE.txt').stat().st_size+pdfout.stat().st_size+8192>=256000:
+                if 'exported' in locals() and not exported.is_closed:exported.close()
+                for render_dpi in (144,108,72):
+                    flattened=fitz.open()
+                    reference=[]
+                    for p in pages:
+                        op=original[p-1];pix=op.get_pixmap(dpi=render_dpi)
+                        reference.append(pix.samples)
+                        fp=flattened.new_page(width=op.rect.width,height=op.rect.height)
+                        fp.insert_image(fitz.Rect(0,0,pix.width*72/render_dpi,pix.height*72/render_dpi),
+                            stream=pix.tobytes('png'),keep_proportion=False)
+                    flattened.save(pdfout,garbage=4,deflate=True,use_objstms=1)
+                    exported=fitz.open(pdfout)
+                    assert all(reference[k]==exported[k].get_pixmap(dpi=render_dpi).samples for k in range(len(pages))),(task,render_dpi)
+                    exported.close()
+                    if (folder/'PASTE.txt').stat().st_size+pdfout.stat().st_size+8192<256000:break
+            size=(folder/'PASTE.txt').stat().st_size+pdfout.stat().st_size""")
+    text=text.replace("pdf_rendered_pixel_equality='PASS',website_acceptance", "pdf_rendered_pixel_equality='PASS',pdf_rendered_pixel_equality_dpi=render_dpi,website_acceptance")
     text=text.replace('compact子任务（输入+PDF字节）', 'compact子任务（PASTE+PDF+MANIFEST字节）')
     # A qualified project identifier must select its real namespace, rather than
     # disappear because the excerpt index originally had only bare-name keys.

@@ -2674,5 +2674,498 @@
     "review_status": "DRAFT",
     "repair_log": [],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-BathHamiltonian",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "236",
+    "pdf_page": "257",
+    "statement_latex": "We assume as in [138] that we are given a system of $k$ coupled oscillators (a “heat bath”) in contact with a distinguished particle. The Hamiltonian is\n\\[H=\\frac{P^2}{2}+\\sum_{i=1}^k\\frac{p_i^2}{2\\mu_i}+U(Q)+\\frac1{2k}\\sum_{i=1}^k(q_i-Q)^2\\]\nwhere $Q$ and $P$ represent the position and momentum of the distinguished particle and $\\{q_i,p_i\\}$ are the positions and momenta of the particles of the bath, $\\mu_i$ giving the mass of the $i$th light particle.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "重粒子质量1；全部轻粒子质量μi>0，k>0；真实k项耦合Hamiltonian。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.bathHamiltonian",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]显式k>0及全部μi>0，避免零质量/零热浴大小的总化除法冒充物理模型。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-BathHamiltonEquations",
+    "kind": "unnumbered_claim",
+    "label": "(6.22)–(6.25)",
+    "section": "6.3.3",
+    "printed_page": "236",
+    "pdf_page": "257",
+    "statement_latex": "The equations of motion for the combined system are\n\\[\\dot Q=P;\\tag{6.22}\\quad\\dot P=-U'(Q)-k^{-1}\\sum_{i=1}^k(Q-q_i);\\tag{6.23}\\]\nwhere, for $i=1,2,\\ldots,k$,\n\\[\\dot q_i=p_i/\\mu_i;\\tag{6.24}\\quad\\dot p_i=(Q-q_i)/k.\\tag{6.25}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.bathHamiltonEquations",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]实际Hamiltonian全部偏导、正质量、k>0和U沿Q可微；全部四组等式，不只定义方程。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-BathFrequency",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237",
+    "pdf_page": "258",
+    "statement_latex": "where $\\Omega_i=k^{-1/2}\\mu_i^{-1/2}$ is the frequency of the $i$th oscillator.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "k>0,μi>0，(√(kμi))⁻¹等价于原正参数乘积。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.bathFrequency",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]k>0和全部μi>0已编码为真实参数资格。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-BathOscillatorSolution",
+    "kind": "unnumbered_claim",
+    "label": "(6.26)",
+    "section": "6.3.3",
+    "printed_page": "236–237",
+    "pdf_page": "257–258",
+    "statement_latex": "Because the system (6.24)–(6.25) is linear, we may solve it analytically for $\\{q_i,p_i\\}$; this yields:\n\\[q_i(t)=\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i+k^{-1}\\mu_i^{-1}\\int_0^t\\Omega_i^{-1}\\sin(\\Omega_i(t-s))Q(s)ds.\\tag{6.26}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.bathOscillatorSolution",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]实际二阶受迫振子ODE、C²q、连续Q及t≥0；显式全部k>0、正μ、原初始动量p0与真实初始化q′0=p0/μ，Ω实际计算为(kμ)⁻¹/²；保留原k⁻¹μ⁻¹卷积系数，不以解公式作前提。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-BathConvolutionIBP",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237",
+    "pdf_page": "258",
+    "statement_latex": "Integrating by parts, we have\n\\[\\int_0^t\\Omega_i\\sin(\\Omega_i(t-s))Q(s)ds=[\\cos(\\Omega_i(t-s))Q(s)]_0^t-\\int_0^t\\cos(\\Omega_i(t-s))P(s)ds\n=Q(t)-\\cos(\\Omega_i t)Q(0)-\\int_0^t\\cos(\\Omega_i(t-s))P(s)ds.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.bathConvolutionIBP",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实C¹ Q和Q′=P；完整实际卷积IBP，不以通量结论作假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-BathForce",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237",
+    "pdf_page": "258",
+    "statement_latex": "where we define\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.bathForce",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]按(6.23)推导得到正k⁻¹实际合力；原页负号与+f项冲突，字面版本另列；不宣称更正已由网站裁定。",
+      "[EXTRA]k>0和全部μi>0已编码，排除非物理逆质量/频率总化值。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-BathForcePrinted",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237",
+    "pdf_page": "258",
+    "statement_latex": "where we define\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "印刷f含负k⁻¹，而(6.29)写+f；从(6.23)代入振子解得到正k⁻¹合力。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.bathForcePrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]保持原物理k>0与全部μi>0资格；字面符号仍待裁定。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-MemoryKernel",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237",
+    "pdf_page": "258",
+    "statement_latex": "\\[\\eta(t)=k^{-1}\\sum_{i=1}^k\\cos(\\Omega_i(t)).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "真实有限k项记忆核；不将有限核当作Dirac δ。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.memoryKernel",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]实际k>0与全部μi>0参数资格。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-BathReduction",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237",
+    "pdf_page": "258",
+    "statement_latex": "Introducing this formula in (6.23), we obtain a reduced system\n\\[\\dot Q=P;\\tag{6.27}\\quad\\dot P=-U'(Q)-k^{-1}\\sum_{i=1}^k(Q-q_i);\\tag{6.28}\\]\n\\[=-U'(Q)+f(t)-\\int_0^t\\eta(t-s)P(s)ds.\\tag{6.29}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.bathReduction",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]保留全部原Hamilton ODE与初值、正质量、真实卷积，按导出正k⁻¹合力；不将约化等式作前提。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-BathReductionPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237",
+    "pdf_page": "258",
+    "statement_latex": "\\[\\dot P=-U'(Q)+f(t)-\\int_0^t\\eta(t-s)P(s)ds.\\tag{6.29}\\]\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原负f与+f约化式符号冲突；保留完整字面卷积方程。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.bathReductionPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "238",
+    "pdf_page": "259",
+    "statement_latex": "If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\\eta$ by a Dirac delta function scaled by a positive coefficient $\\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs\n\\[dQ=Pdt;\\tag{6.30}\\quad dP=-U'(Q)dt+\\sigma dW-\\gamma Pdt.\\tag{6.31}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原“sufficient high frequency/typically”没有给频率序列、归一化、热浴初值法则及白噪声弱收敛资格，不能声明任意热浴自动满足δ极限。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.memoryKernelDeltaMeaning",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]明确ηk→γδ0的实际分布意义，仅定义该近似资格；不计极限或Langevin推导已证。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-ScalarLangevin",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "238",
+    "pdf_page": "259",
+    "statement_latex": "\\[dQ=Pdt;\\tag{6.30}\\quad dP=-U'(Q)dt+\\sigma dW-\\gamma Pdt.\\tag{6.31}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.scalarLangevin",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实耦合随机Q(t,sample)及动量漂移、实际可积性、初值与严格Ito积分；无任意样本代替随机状态。",
+      "[EXTRA]明确真正Wiener driver及当前全域C∞势（Γ模型还要求Γ C∞）的充分技术范围，全部实际漂移可积；不是把不可微梯度或非可积Bochner默认值当经典过程，不声称此范围覆盖奇异势的正规域版本。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-MassLangevin",
+    "kind": "definition",
+    "label": "(6.32)–(6.33)",
+    "section": "6.3.3",
+    "printed_page": "239",
+    "pdf_page": "260",
+    "statement_latex": "The equations of motion are, in vectorial form:\n\\[dq=M^{-1}pdt;\\tag{6.32}\\quad dp=-\\nabla U(q)dt-\\gamma pdt+\\sqrt{2\\gamma k_BT}M^{1/2}dW.\\tag{6.33}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "任意正对角质量m、γ>0、θ=kBT>0均在模型内明确；常噪声的实际路径积分方程完整保留，额外漂移可积资格在具体定理明确；不把单位质量正式桥当一般质量模型已证。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.langevinMassSDE",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]明确真正Wiener driver及当前全域C∞势（Γ模型还要求Γ C∞）的充分技术范围，全部实际漂移可积；不是把不可微梯度或非可积Bochner默认值当经典过程，不声称此范围覆盖奇异势的正规域版本。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-VariableFriction",
+    "kind": "definition",
+    "label": "(6.34)–(6.35)",
+    "section": "6.3.3",
+    "printed_page": "239",
+    "pdf_page": "260",
+    "statement_latex": "In particular, a different friction coefficient can be used for each particle and these coefficients can even depend on spatial location, thus we might work with the following system:\n\\[dq=M^{-1}pdt;\\tag{6.34}\\quad dp=-\\nabla U(q)dt-\\Gamma(q)\\Gamma(q)^T pdt+\\sqrt{2k_BT}M^{1/2}\\Gamma(q)d\\widetilde W;\\tag{6.35}\\]\nwhere we use the matrix $\\Gamma(q)\\in\\mathbb R^{N_c\\times S}$ and a vector of $S$ independent Wiener processes $\\widetilde W$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.variableFriction",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]完整任意矩形Γ(q)、任意质量和真实全部噪声坐标严格Ito积分；未缩成对角或单位质量，不宣称自动Gibbs不变。",
+      "[EXTRA]明确真正Wiener driver及当前全域C∞势（Γ模型还要求Γ C∞）的充分技术范围，全部实际漂移可积；不是把不可微梯度或非可积Bochner默认值当经典过程，不声称此范围覆盖奇异势的正规域版本。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-ParticleDiagonalFriction",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "239",
+    "pdf_page": "260",
+    "statement_latex": "In the case of Langevin dynamics with different, variable friction coefficients for each particle, we have $S=N_c$ and\n\\[\\Gamma=\\operatorname{diag}(\\gamma_1(q),\\gamma_1(q),\\gamma_1(q),\\gamma_2(q),\\gamma_2(q),\\gamma_2(q),\\ldots,\\gamma_N(q),\\gamma_N(q),\\gamma_N(q)).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "每个粒子三个真实坐标重复系数；原Γ记号沿用，无静默平方根替换。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.particleDiagonalFriction",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.4-BrownianMassModel",
+    "kind": "definition",
+    "label": "(6.36)",
+    "section": "6.3.4",
+    "printed_page": "240",
+    "pdf_page": "261",
+    "statement_latex": "Let $v=M^{-1}p$ and assume that the acceleration is negligible, so that Langevin dynamics reduces to\n\\[dq=vdt;\\quad0=-\\nabla U(q)dt-\\gamma Mvdt+\\sqrt{2\\gamma k_BT}M^{1/2}dW.\\]\nThe second equation can be solved for $v$ and we obtain the following SDE for $q$:\n\\[dq=-\\gamma^{-1}M^{-1}\\nabla U(q)dt+\\sqrt{2k_B\\gamma^{-1}T}M^{-1/2}dW.\\tag{6.36}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "任意正质量、γ>0、θ=kBT>0均在模型内明确；全部真实常噪声路径积分模型；仅给方程意义，Kramers–Smoluchowski弱极限另条。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.brownianMassSDE",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]明确真正Wiener driver及当前全域C∞势（Γ模型还要求Γ C∞）的充分技术范围，全部实际漂移可积；不是把不可微梯度或非可积Bochner默认值当经典过程，不声称此范围覆盖奇异势的正规域版本。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-FrequencyMemoryKernel",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237",
+    "pdf_page": "258",
+    "statement_latex": "\\[\\eta(t)=k^{-1}\\sum_{i=1}^k\\cos(\\Omega_i(t)).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.frequencyMemoryKernel",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]以实际给定频率直接表达原核，方便记录图6.4/6.5全部数值族；k>0用于物理解释，有限函数定义不计δ极限已证。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-Figure64Frequencies",
+    "kind": "definition",
+    "label": "Fig. 6.4",
+    "section": "6.3.3",
+    "printed_page": "238",
+    "pdf_page": "259",
+    "statement_latex": "Fig. 6.4 The memory kernel $\\eta$ is shown for three different sets of frequencies $\\Omega_i$. Blue: $k=400$, $\\Omega_i=0.01i$; red: $k=1,000$, $\\Omega_i\\sim U[0,1]$; green: $k=1,000$, $\\Omega_i=10\\widehat\\Omega_i$, where $\\widehat\\Omega_i\\sim U[0,1]$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.figure64Frequencies",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]Fin下标val+1恢复原i=1,…,k；长度1区间限制Lebesgue测度是U[0,1]，记录原边际law，未擅加原未明说的独立性。green/10完整表示10×Uniform频率。图中核使用前条实际频率求和定义。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-Figure65Frequencies",
+    "kind": "definition",
+    "label": "Fig. 6.5",
+    "section": "6.3.3",
+    "printed_page": "238",
+    "pdf_page": "259",
+    "statement_latex": "Fig. 6.5 The memory kernels $\\eta$ are shown for various choices of $\\Omega_i^{(k)}$. Left: $\\Omega_i^{(k)}=i/\\sqrt k$, $k=5^2,10^2,\\ldots,35^2$; center: $\\Omega_i=\\sqrt k\\widehat\\Omega_i$, $\\widehat\\Omega_i\\sim U[0,1]$, $k=10,20,\\ldots,100$; right: $\\Omega_i=k\\widehat\\Omega_i$, $\\widehat\\Omega_i\\sim U[0,1]$, $k=10,20,\\ldots,100$. In each case the red curve indicates the largest value of $k$ considered, whereas green indicates the smallest value.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "各图红色为最大k、绿色为最小k；实际η由FrequencyMemoryKernel构造。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.figure65Frequencies",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]两个原数列分别7/10项、完整全部频率及随机边际；Fin下标+1；不把绘图外观当严格极限定理。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-BathForceWeakLimitMeaning",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237–238",
+    "pdf_page": "258–259",
+    "statement_latex": "For large $k$ and for many choices of the frequencies $\\Omega_i$ and the initial conditions $\\{q_i(0);p_i(0)\\}$, function $f(t)$ will take on the character of a Wiener process; in fact the convergence can be shown in the weak sense. We may even take the initial conditions to be randomly distributed [13,205].",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原many choices没有给热浴初值法则/频率条件/拓扑；此处f像Wiener process、下页f(t)作为Wiener increment还存在力与积分过程的类型疑问。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.bathForceWeakLimitMeaning",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]完整连续路径空间的弱法则，而非只收敛均值/某单时边际；实际有限热浴力路径与Wiener路径逐点关联，只定义原希望的资格，不宣称任意族满足。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]

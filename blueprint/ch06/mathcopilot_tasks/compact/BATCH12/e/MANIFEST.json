@@ -12,8 +12,8 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "542d9e869f6002d3c8853bf1b90f45b084eb182d904556903ea5e35c4241e38c",
-  "lean_sha256": "cd77682014829b19149d0e59abf98e157837e11442ca405329b95b3ecb49db92",
+  "source_json_sha256": "d31cb383ee6ab34c8d538add9e14281e951e25f15de153961259d81610c255cf",
+  "lean_sha256": "dafdd4d7db76c1396ccce95d1ba9b0760484fa4f87ecf4b2a0625d2b43284cb0",
   "signature_sha256": "da3cd4a431c3969f12e6d6590e0a2fec0f5e0789d1d82e057b56d86f02e64120",
   "definition_excerpts": [],
   "paste_plus_pdf_bytes": 81205,
@@ -30,7 +30,8 @@
   "validation": {
     "verbatim_source_signature_definitions": "PASS",
     "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 82362
+  "total_task_bytes": 82406
 }

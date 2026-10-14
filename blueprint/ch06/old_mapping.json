@@ -54,19 +54,19 @@
     "CH06-052": "MD-6.3.2-OUIntegratingFactor",
     "CH06-053": "MD-6.3.2-OULawCorrect",
     "CH06-054": "MD-6.3.2-GibbsGaussianDensity",
-    "CH06-055": "MD-6.3.2-MomentumOU"
+    "CH06-055": "MD-6.3.2-MomentumOU",
+    "CH06-056": "MD-6.3.3-BathHamiltonian",
+    "CH06-057": "MD-6.3.3-BathHamiltonEquations",
+    "CH06-058": "MD-6.3.3-BathOscillatorSolution",
+    "CH06-059": "MD-6.3.3-BathConvolutionIBP",
+    "CH06-061": "MD-6.3.3-Figure64Frequencies",
+    "CH06-060": "MD-6.3.3-BathReductionPrinted",
+    "CH06-062": "MD-6.3.3-BathForceWeakLimitMeaning",
+    "CH06-063": "MD-6.3.3-MassLangevin",
+    "CH06-064": "MD-6.3.3-ParticleDiagonalFriction",
+    "CH06-065": "MD-6.3.4-BrownianMassModel"
   },
   "pending": [
-    "CH06-056",
-    "CH06-057",
-    "CH06-058",
-    "CH06-059",
-    "CH06-060",
-    "CH06-061",
-    "CH06-062",
-    "CH06-063",
-    "CH06-064",
-    "CH06-065",
     "CH06-066",
     "CH06-067",
     "CH06-068",
@@ -353,6 +353,48 @@
     ],
     "CH06-055": [
       "MD-6.3.2-MomentumOU"
+    ],
+    "CH06-056": [
+      "MD-6.3.3-BathHamiltonian"
+    ],
+    "CH06-057": [
+      "MD-6.3.3-BathHamiltonEquations"
+    ],
+    "CH06-058": [
+      "MD-6.3.3-BathFrequency",
+      "MD-6.3.3-BathOscillatorSolution"
+    ],
+    "CH06-059": [
+      "MD-6.3.3-BathConvolutionIBP"
+    ],
+    "CH06-061": [
+      "MD-6.3.3-BathForce",
+      "MD-6.3.3-BathForcePrinted",
+      "MD-6.3.3-MemoryKernel",
+      "MD-6.3.3-BathReductionPrinted",
+      "MD-6.3.3-FrequencyMemoryKernel",
+      "MD-6.3.3-Figure64Frequencies"
+    ],
+    "CH06-060": [
+      "MD-6.3.3-BathReduction",
+      "MD-6.3.3-BathReductionPrinted"
+    ],
+    "CH06-062": [
+      "MD-6.3.3-MemoryKernelDeltaMeaning",
+      "MD-6.3.3-ScalarLangevin",
+      "MD-6.3.3-Figure64Frequencies",
+      "MD-6.3.3-Figure65Frequencies",
+      "MD-6.3.3-BathForceWeakLimitMeaning"
+    ],
+    "CH06-063": [
+      "MD-6.3.3-MassLangevin"
+    ],
+    "CH06-064": [
+      "MD-6.3.3-VariableFriction",
+      "MD-6.3.3-ParticleDiagonalFriction"
+    ],
+    "CH06-065": [
+      "MD-6.3.4-BrownianMassModel"
     ]
   }
 }

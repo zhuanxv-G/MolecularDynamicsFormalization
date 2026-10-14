@@ -1065,4 +1065,209 @@ def momentumOU {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 def gibbsGaussianDensity (θ m u : ℝ) : ℝ :=
   Real.exp (-(u^2/(2*m))/θ)/Real.sqrt (2*Real.pi*m*θ)
 
+/-- source_id: MD-6.3.3-BathHamiltonian · definition · §6.3.3 · 印刷p.236 / PDFp.257
+[EXTRA] [EXTRA]显式k>0及全部μi>0，避免零质量/零热浴大小的总化除法冒充物理模型。 -/
+def bathHamiltonian {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V k) (_hμ : ∀ i, 0 < μ i) (U : ℝ → ℝ) (Q P : ℝ) (q p : MolecularDynamics.Chapter06Review.V k) : ℝ :=
+  P^2/2 + (∑ i, (p i)^2/(2*μ i)) + U Q + (∑ i, (q i-Q)^2)/(2*k)
+
+/-- source_id: MD-6.3.3-BathHamiltonEquations · (6.22)–(6.25) · §6.3.3 · 印刷p.236 / PDFp.257
+[EXTRA] [EXTRA]实际Hamiltonian全部偏导、正质量、k>0和U沿Q可微；全部四组等式，不只定义方程。 -/
+theorem bathHamiltonEquations :
+  ∀ {k : ℕ} (μ : MolecularDynamics.Chapter06Review.V k) (U : ℝ → ℝ)
+    (Q P : ℝ) (q p : MolecularDynamics.Chapter06Review.V k), 0 < k → (∀ i, 0 < μ i) → DifferentiableAt ℝ U Q →
+  deriv (fun z ↦ MolecularDynamics.Chapter06Review.bathHamiltonian μ U Q z q p) P = P ∧
+  -deriv (fun z ↦ MolecularDynamics.Chapter06Review.bathHamiltonian μ U z P q p) Q = -deriv U Q-(∑ i : Fin k, (Q - q i))/(k : ℝ) ∧
+  (∀ i, fderiv ℝ (fun v ↦ MolecularDynamics.Chapter06Review.bathHamiltonian μ U Q P q v) p (Pi.single i 1) = p i/μ i) ∧
+  (∀ i, -fderiv ℝ (fun v ↦ MolecularDynamics.Chapter06Review.bathHamiltonian μ U Q P v p) q (Pi.single i 1) = (Q-q i)/(k : ℝ)) := by
+  sorry
+
+/-- source_id: MD-6.3.3-BathFrequency · definition · §6.3.3 · 印刷p.237 / PDFp.258
+[EXTRA] [EXTRA]k>0和全部μi>0已编码为真实参数资格。 -/
+def bathFrequency {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V k) (_hμ : ∀ i, 0 < μ i) (i : Fin k) : ℝ := (Real.sqrt ((k : ℝ)*μ i))⁻¹
+
+/-- source_id: MD-6.3.3-BathOscillatorSolution · (6.26) · §6.3.3 · 印刷p.236–237 / PDFp.257–258
+[EXTRA] [EXTRA]实际二阶受迫振子ODE、C²q、连续Q及t≥0；显式全部k>0、正μ、原初始动量p0与真实初始化q′0=p0/μ，Ω实际计算为(kμ)⁻¹/²；保留原k⁻¹μ⁻¹卷积系数，不以解公式作前提。 -/
+theorem bathOscillatorSolution : ∀ (Q q : ℝ → ℝ) (k : ℕ) (μ p0 t : ℝ),
+  0 < k → 0 < μ → ContDiff ℝ 2 q → Continuous Q → 0 ≤ t →
+  (deriv q 0=p0/μ) →
+  (∀ s ∈ Icc 0 t, deriv (deriv q) s=(Q s-q s)/((k : ℝ)*μ)) →
+  let Ω : ℝ := (Real.sqrt ((k : ℝ)*μ))⁻¹
+  q t=Real.cos (Ω*t)*q 0+Ω⁻¹*Real.sin (Ω*t)*p0/μ+
+    (k : ℝ)⁻¹*μ⁻¹*(∫ s in 0..t, Ω⁻¹*Real.sin (Ω*(t-s))*Q s) := by
+  sorry
+
+/-- source_id: MD-6.3.3-BathConvolutionIBP · unnumbered_claim · §6.3.3 · 印刷p.237 / PDFp.258
+[EXTRA] [EXTRA]真实C¹ Q和Q′=P；完整实际卷积IBP，不以通量结论作假设。 -/
+theorem bathConvolutionIBP :
+  ∀ (Q P : ℝ → ℝ) (Ω t : ℝ),
+  ContDiff ℝ 1 Q → (∀ s, deriv Q s=P s) → 0 ≤ t →
+  (∫ s in 0..t, Ω*Real.sin (Ω*(t-s))*Q s) = Q t-Real.cos (Ω*t)*Q 0 -
+    ∫ s in 0..t, Real.cos (Ω*(t-s))*P s := by
+  sorry
+
+/-- source_id: MD-6.3.3-BathForce · definition · §6.3.3 · 印刷p.237 / PDFp.258
+[EXTRA] [EXTRA]按(6.23)推导得到正k⁻¹实际合力；原页负号与+f项冲突，字面版本另列；不宣称更正已由网站裁定。
+[EXTRA] [EXTRA]k>0和全部μi>0已编码，排除非物理逆质量/频率总化值。 -/
+def bathForce {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V k) (_hμ : ∀ i, 0 < μ i) (q0 p0 : MolecularDynamics.Chapter06Review.V k) (Q0 t : ℝ) : ℝ :=
+  (k : ℝ)⁻¹ * ∑ i, (Real.cos (MolecularDynamics.Chapter06Review.bathFrequency μ i*t)*(q0 i-Q0) +
+    (MolecularDynamics.Chapter06Review.bathFrequency μ i)⁻¹ * Real.sin (MolecularDynamics.Chapter06Review.bathFrequency μ i*t)*p0 i/μ i)
+
+/-- source_id: MD-6.3.3-BathForcePrinted · definition · §6.3.3 · 印刷p.237 / PDFp.258
+[EXTRA] [EXTRA]保持原物理k>0与全部μi>0资格；字面符号仍待裁定。
+[ERRATUM?] 印刷f含负k⁻¹，而(6.29)写+f；从(6.23)代入振子解得到正k⁻¹合力。 -/
+def bathForcePrinted {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V k) (_hμ : ∀ i, 0 < μ i) (q0 p0 : MolecularDynamics.Chapter06Review.V k) (Q0 t : ℝ) : ℝ := -MolecularDynamics.Chapter06Review.bathForce μ q0 p0 Q0 t
+
+/-- source_id: MD-6.3.3-MemoryKernel · definition · §6.3.3 · 印刷p.237 / PDFp.258
+[EXTRA] [EXTRA]实际k>0与全部μi>0参数资格。 -/
+def memoryKernel {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V k) (_hμ : ∀ i, 0 < μ i) (t : ℝ) : ℝ :=
+  (k : ℝ)⁻¹ * ∑ i, Real.cos (MolecularDynamics.Chapter06Review.bathFrequency μ i*t)
+
+/-- source_id: MD-6.3.3-BathReduction · unnumbered_claim · §6.3.3 · 印刷p.237 / PDFp.258
+[EXTRA] [EXTRA]保留全部原Hamilton ODE与初值、正质量、真实卷积，按导出正k⁻¹合力；不将约化等式作前提。 -/
+theorem bathReduction :
+  ∀ {k : ℕ} (μ : MolecularDynamics.Chapter06Review.V k) (U Q P : ℝ → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter06Review.V k) (t : ℝ), 0 < k → (∀ i, 0 < μ i) → 0 ≤ t →
+  ContDiff ℝ 2 Q → ContDiff ℝ 2 q →
+  (∀ s, deriv Q s=P s) → (∀ s, deriv P s = -deriv U (Q s)-(∑ i : Fin k, (Q s - q s i))/(k : ℝ)) →
+  (∀ i s, deriv (fun u ↦ q u i) s=p s i/μ i) →
+  (∀ i s, deriv (deriv (fun u ↦ q u i)) s=(Q s-q s i)/((k : ℝ)*μ i)) →
+  deriv P t = -deriv U (Q t)+MolecularDynamics.Chapter06Review.bathForce μ (q 0) (p 0) (Q 0) t -
+    ∫ s in 0..t, MolecularDynamics.Chapter06Review.memoryKernel μ (t-s)*P s := by
+  sorry
+
+/-- source_id: MD-6.3.3-BathReductionPrinted · unnumbered_claim · §6.3.3 · 印刷p.237 / PDFp.258
+[ERRATUM?] 原负f与+f约化式符号冲突；保留完整字面卷积方程。 -/
+theorem bathReductionPrinted :
+  ∀ {k : ℕ} (μ : MolecularDynamics.Chapter06Review.V k) (U Q P : ℝ → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter06Review.V k) (t : ℝ), 0 < k → (∀ i, 0 < μ i) → 0 ≤ t →
+  ContDiff ℝ 2 Q → ContDiff ℝ 2 q →
+  (∀ s, deriv Q s=P s) → (∀ s, deriv P s = -deriv U (Q s)-(∑ i : Fin k, (Q s - q s i))/(k : ℝ)) →
+  (∀ i s, deriv (fun u ↦ q u i) s=p s i/μ i) →
+  (∀ i s, deriv (deriv (fun u ↦ q u i)) s=(Q s-q s i)/((k : ℝ)*μ i)) →
+  deriv P t = -deriv U (Q t)+MolecularDynamics.Chapter06Review.bathForcePrinted μ (q 0) (p 0) (Q 0) t -
+    ∫ s in 0..t, MolecularDynamics.Chapter06Review.memoryKernel μ (t-s)*P s := by
+  sorry
+
+/-- source_id: MD-6.3.3-MemoryKernelDeltaMeaning · definition · §6.3.3 · 印刷p.238 / PDFp.259
+[EXTRA] [EXTRA]明确ηk→γδ0的实际分布意义，仅定义该近似资格；不计极限或Langevin推导已证。
+[ERRATUM?] 原“sufficient high frequency/typically”没有给频率序列、归一化、热浴初值法则及白噪声弱收敛资格，不能声明任意热浴自动满足δ极限。 -/
+def memoryKernelDeltaMeaning (masses : (k : ℕ) → (Fin k → ℝ)) (γ : ℝ) : Prop :=
+  0 < γ ∧ ∀ f : ℝ → ℝ, ContDiff ℝ ∞ f → HasCompactSupport f →
+    Tendsto (fun k ↦ ∫ t, MolecularDynamics.Chapter06Review.memoryKernel (masses k) t*f t)
+      atTop (𝓝 (γ*f 0))
+
+/-- source_id: MD-6.3.3-ScalarLangevin · definition · §6.3.3 · 印刷p.238 / PDFp.259
+[EXTRA] [EXTRA]真实耦合随机Q(t,sample)及动量漂移、实际可积性、初值与严格Ito积分；无任意样本代替随机状态。
+[EXTRA] [EXTRA]明确真正Wiener driver及当前全域C∞势（Γ模型还要求Γ C∞）的充分技术范围，全部实际漂移可积；不是把不可微梯度或非可积Bochner默认值当经典过程，不声称此范围覆盖奇异势的正规域版本。 -/
+def scalarLangevin {Ω : Type*} [MeasurableSpace Ω] (law : Measure Ω)
+    (W Q momentum : ℝ → Ω → ℝ) (U : ℝ → ℝ) (γ σ q0 p0 : ℝ) : Prop :=
+  0 < γ ∧ ContDiff ℝ ∞ U ∧
+  textbookIsWienerVector (fun t sample (_i : Fin 1) ↦ W t sample) law ∧
+  (∀ᵐ sample ∂law, ContinuousOn (fun t ↦ Q t sample) (Ici 0) ∧
+    ContinuousOn (fun t ↦ momentum t sample) (Ici 0) ∧ momentum 0 sample=p0 ∧ ∀ T : ℝ, 0 ≤ T →
+    IntervalIntegrable (fun s ↦ momentum s sample) volume 0 T ∧
+    IntervalIntegrable (fun s ↦ -deriv U (Q s sample)-γ*momentum s sample) volume 0 T ∧
+    Q T sample=q0+∫ s in 0..T, momentum s sample) ∧
+  ∀ T : ℝ, 0 ≤ T → strictItoIntegral law W (fun _ _ ↦ σ) T
+    (fun sample ↦ momentum T sample-p0-∫ s in 0..T, -deriv U (Q s sample)-γ*momentum s sample)
+
+/-- source_id: MD-6.3.3-MassLangevin · (6.32)–(6.33) · §6.3.3 · 印刷p.239 / PDFp.260
+[EXTRA] [EXTRA]明确真正Wiener driver及当前全域C∞势（Γ模型还要求Γ C∞）的充分技术范围，全部实际漂移可积；不是把不可微梯度或非可积Bochner默认值当经典过程，不声称此范围覆盖奇异势的正规域版本。 -/
+def langevinMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → MolecularDynamics.Chapter06Review.V n) (X : ℝ → Ω → MolecularDynamics.Chapter06Review.Phase n) (m : MolecularDynamics.Chapter06Review.V n)
+    (U : MolecularDynamics.Chapter06Review.V n → ℝ) (γ θ : ℝ) (x0 : MolecularDynamics.Chapter06Review.Phase n) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧ ContDiff ℝ ∞ U ∧
+  textbookIsWienerVector (fun t sample ↦ W t sample) P ∧ (∀ᵐ sample ∂P, ∀ T : ℝ, 0 ≤ T →
+    IntervalIntegrable (fun s ↦ fun i ↦ (m i)⁻¹*(X s sample).2 i) volume 0 T ∧
+    IntervalIntegrable (fun s ↦ fun i ↦ -textbookConfigurationPartial U i (X s sample).1-
+      γ*(X s sample).2 i) volume 0 T) ∧
+  ∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ ∀ t ∈ Ici 0,
+    (X t sample).1 = x0.1 + (∫ s in 0..t, fun i ↦ (m i)⁻¹ * (X s sample).2 i) ∧
+    (X t sample).2 = x0.2 + (∫ s in 0..t, fun i ↦
+      -textbookConfigurationPartial U i (X s sample).1 - γ*(X s sample).2 i) +
+      fun i ↦ Real.sqrt (2*γ*θ*m i)*(W t sample i-W 0 sample i)
+
+/-- source_id: MD-6.3.3-VariableFriction · (6.34)–(6.35) · §6.3.3 · 印刷p.239 / PDFp.260
+[EXTRA] [EXTRA]完整任意矩形Γ(q)、任意质量和真实全部噪声坐标严格Ito积分；未缩成对角或单位质量，不宣称自动Gibbs不变。
+[EXTRA] [EXTRA]明确真正Wiener driver及当前全域C∞势（Γ模型还要求Γ C∞）的充分技术范围，全部实际漂移可积；不是把不可微梯度或非可积Bochner默认值当经典过程，不声称此范围覆盖奇异势的正规域版本。 -/
+def variableFriction {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → ((Fin n → ℝ) × (Fin n → ℝ)))
+    (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
+    (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ)
+    (x0 : (Fin n → ℝ) × (Fin n → ℝ)) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < θ ∧ ContDiff ℝ ∞ U ∧ ContDiff ℝ ∞ Γ ∧
+  textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0 ∧
+    ∀ T : ℝ, 0 ≤ T → IntervalIntegrable (fun s ↦ fun i ↦ (m i)⁻¹*(X s sample).2 i) volume 0 T ∧
+      (X T sample).1=x0.1+∫ s in 0..T, fun i ↦ (m i)⁻¹*(X s sample).2 i) ∧
+  ∀ i : Fin n, ∀ T : ℝ, 0 ≤ T →
+    ∃ integrals : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ Real.sqrt (2*θ*m i)*Γ (X s sample).1 i j) T (integrals j)) ∧
+      (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ -textbookConfigurationPartial U i (X s sample).1-
+          ((Γ (X s sample).1*(Γ (X s sample).1).transpose).mulVec (X s sample).2) i) volume 0 T ∧
+        (X T sample).2 i-x0.2 i-(∫ s in 0..T, -textbookConfigurationPartial U i (X s sample).1-
+          ((Γ (X s sample).1*(Γ (X s sample).1).transpose).mulVec (X s sample).2) i)=∑ j, integrals j sample)
+
+/-- source_id: MD-6.3.3-ParticleDiagonalFriction · definition · §6.3.3 · 印刷p.239 / PDFp.260 -/
+def particleDiagonalFriction {N : ℕ} (γ : Fin N → (Fin (N*3) → ℝ) → ℝ)
+    (q : Fin (N*3) → ℝ) : Matrix (Fin (N*3)) (Fin (N*3)) ℝ :=
+  Matrix.diagonal (fun i ↦ γ ⟨i.val/3, by omega⟩ q)
+
+/-- source_id: MD-6.3.4-BrownianMassModel · (6.36) · §6.3.4 · 印刷p.240 / PDFp.261
+[EXTRA] [EXTRA]明确真正Wiener driver及当前全域C∞势（Γ模型还要求Γ C∞）的充分技术范围，全部实际漂移可积；不是把不可微梯度或非可积Bochner默认值当经典过程，不声称此范围覆盖奇异势的正规域版本。 -/
+def brownianMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
+    (W q : ℝ → Ω → MolecularDynamics.Chapter06Review.V n) (m : MolecularDynamics.Chapter06Review.V n) (U : MolecularDynamics.Chapter06Review.V n → ℝ) (γ θ : ℝ) (q0 : MolecularDynamics.Chapter06Review.V n) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧ ContDiff ℝ ∞ U ∧
+  textbookIsWienerVector (fun t sample ↦ W t sample) P ∧ (∀ᵐ sample ∂P, ∀ T : ℝ, 0 ≤ T →
+    IntervalIntegrable (fun s ↦ fun i ↦ -(γ*m i)⁻¹*textbookConfigurationPartial U i (q s sample))
+      volume 0 T) ∧
+  ∀ᵐ sample ∂P, ContinuousOn (fun t ↦ q t sample) (Ici 0) ∧ ∀ t ∈ Ici 0,
+    q t sample = q0 + (∫ s in 0..t, fun i ↦ -(γ*m i)⁻¹*textbookConfigurationPartial U i (q s sample)) +
+      fun i ↦ Real.sqrt (2*θ/(γ*m i))*(W t sample i-W 0 sample i)
+
+/-- source_id: MD-6.3.3-FrequencyMemoryKernel · definition · §6.3.3 · 印刷p.237 / PDFp.258
+[EXTRA] [EXTRA]以实际给定频率直接表达原核，方便记录图6.4/6.5全部数值族；k>0用于物理解释，有限函数定义不计δ极限已证。 -/
+def frequencyMemoryKernel {k : ℕ} (Ω : Fin k → ℝ) (t : ℝ) : ℝ :=
+  (k : ℝ)⁻¹*∑ i, Real.cos (Ω i*t)
+
+/-- source_id: MD-6.3.3-Figure64Frequencies · Fig. 6.4 · §6.3.3 · 印刷p.238 / PDFp.259
+[EXTRA] [EXTRA]Fin下标val+1恢复原i=1,…,k；长度1区间限制Lebesgue测度是U[0,1]，记录原边际law，未擅加原未明说的独立性。green/10完整表示10×Uniform频率。图中核使用前条实际频率求和定义。 -/
+def figure64Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
+    (blue : Fin 400 → ℝ) (red green : Fin 1000 → A → ℝ) : Prop :=
+  (∀ i, blue i=(1/100 : ℝ)*(i.val+1)) ∧
+  (∀ i, HasLaw (red i) (volume.restrict (Icc (0 : ℝ) 1)) P) ∧
+  ∀ i, HasLaw (fun sample ↦ green i sample/10) (volume.restrict (Icc (0 : ℝ) 1)) P
+
+/-- source_id: MD-6.3.3-Figure65Frequencies · Fig. 6.5 · §6.3.3 · 印刷p.238 / PDFp.259
+[EXTRA] [EXTRA]两个原数列分别7/10项、完整全部频率及随机边际；Fin下标+1；不把绘图外观当严格极限定理。 -/
+def figure65Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
+    (left : (k : ℕ) → Fin k → ℝ) (center right : (k : ℕ) → Fin k → A → ℝ) : Prop :=
+  (∀ j ∈ Finset.range 7, ∀ i : Fin ((5*(j+1))^2),
+    left ((5*(j+1))^2) i=(i.val+1 : ℝ)/Real.sqrt ((5*(j+1))^2 : ℕ)) ∧
+  (∀ j ∈ Finset.range 10, ∀ i : Fin (10*(j+1)),
+    HasLaw (fun sample ↦ center (10*(j+1)) i sample/Real.sqrt (10*(j+1) : ℕ))
+      (volume.restrict (Icc (0 : ℝ) 1)) P) ∧
+  ∀ j ∈ Finset.range 10, ∀ i : Fin (10*(j+1)),
+    HasLaw (fun sample ↦ right (10*(j+1)) i sample/(10*(j+1) : ℕ))
+      (volume.restrict (Icc (0 : ℝ) 1)) P
+
+/-- source_id: MD-6.3.3-BathForceWeakLimitMeaning · definition · §6.3.3 · 印刷p.237–238 / PDFp.258–259
+[EXTRA] [EXTRA]完整连续路径空间的弱法则，而非只收敛均值/某单时边际；实际有限热浴力路径与Wiener路径逐点关联，只定义原希望的资格，不宣称任意族满足。
+[ERRATUM?] 原many choices没有给热浴初值法则/频率条件/拓扑；此处f像Wiener process、下页f(t)作为Wiener increment还存在力与积分过程的类型疑问。 -/
+def bathForceWeakLimitMeaning {A : Type*} [MeasurableSpace A] (P : Measure A)
+    (masses : (k : ℕ) → Fin k → ℝ) (q0 p0 : (k : ℕ) → A → (Fin k → ℝ))
+    (Q0 : ℝ) (W : ℝ → A → ℝ)
+    (forcePaths : (k : ℕ) → (T : ℝ) → A → C(Icc (0 : ℝ) T, ℝ))
+    (wienerPaths : (T : ℝ) → A → C(Icc (0 : ℝ) T, ℝ)) : Prop :=
+  IsPreBrownianReal (fun t sample ↦ W t sample) P ∧
+  (∀ k, 0 < k → ∀ i, 0 < masses k i) ∧
+  (∀ k T sample s, forcePaths k T sample s =
+    MolecularDynamics.Chapter06Review.bathForcePrinted (masses k) (q0 k sample) (p0 k sample) Q0 s) ∧
+  (∀ T sample s, wienerPaths T sample s=W s sample) ∧
+  ∀ T : ℝ, 0 < T → ∀ f : C(Icc (0 : ℝ) T, ℝ) → ℝ,
+    Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun k ↦ ∫ sample, f (forcePaths k T sample) ∂P) atTop
+      (𝓝 (∫ sample, f (wienerPaths T sample) ∂P))
+
 end MD.Ch06

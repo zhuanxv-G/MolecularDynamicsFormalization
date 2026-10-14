@@ -153,4 +153,21 @@ proofs={
   rw [intervalIntegral.integral_eq_sub_of_hasDerivAt (fun x _ ↦ hd x) hi]
   simp only [mul_zero, Real.exp_zero]
   ring''',
+'BathConvolutionIBP':'''intro Q P Ω t hQ hP ht
+  have hPc : Continuous P := hQ.continuous_deriv_one.congr hP
+  have hd : ∀ s : ℝ, HasDerivAt (fun u : ℝ ↦ Real.cos (Ω*(t-u))*Q u)
+      (Ω*Real.sin (Ω*(t-s))*Q s+Real.cos (Ω*(t-s))*P s) s := by
+    intro s
+    have hc : HasDerivAt (fun u : ℝ ↦ Real.cos (Ω*(t-u)))
+        (Ω*Real.sin (Ω*(t-s))) s := by
+      convert (((hasDerivAt_const s t).sub (hasDerivAt_id s)).const_mul Ω).cos using 1 <;> ring
+    simpa only [hP] using hc.mul (hQ.differentiable_one s).hasDerivAt
+  have hi : IntervalIntegrable (fun s : ℝ ↦ Ω*Real.sin (Ω*(t-s))*Q s) volume 0 t :=
+    Continuous.intervalIntegrable (by fun_prop) _ _
+  have hj : IntervalIntegrable (fun s : ℝ ↦ Real.cos (Ω*(t-s))*P s) volume 0 t :=
+    Continuous.intervalIntegrable (by fun_prop) _ _
+  have he := intervalIntegral.integral_eq_sub_of_hasDerivAt (fun s _ ↦ hd s) (hi.add hj)
+  rw [intervalIntegral.integral_add hi hj] at he
+  simp only [sub_self, mul_zero, Real.cos_zero, one_mul, sub_zero] at he
+  linarith''',
 }

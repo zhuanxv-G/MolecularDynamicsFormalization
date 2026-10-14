@@ -1,0 +1,50 @@
+{
+  "batch": "BATCH20",
+  "subtask": "BATCH20e",
+  "source_ids": [
+    "MD-6.3.3-BathConvolutionIBP"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 258,
+      "printed_page": 237
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "d31cb383ee6ab34c8d538add9e14281e951e25f15de153961259d81610c255cf",
+  "lean_sha256": "dafdd4d7db76c1396ccce95d1ba9b0760484fa4f87ecf4b2a0625d2b43284cb0",
+  "signature_sha256": "e0239e99050bf7601641744f013570e01c60678354952b4023b2706f5a7cb5bc",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "paste_plus_pdf_bytes": 70301,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3279,
+      "sha256": "9a207427b31523030ceb3e8c6d03d2b4d2708067dc1b31848c4474afe29fec43"
+    },
+    "BATCH20e_PAGES.pdf": {
+      "bytes": 67022,
+      "sha256": "cffa47df8c830650b8cabc55a4b91d449b33cb5fb6f02314a479a30baf389a1d"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 72008
+}

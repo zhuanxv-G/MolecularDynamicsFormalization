@@ -2,7 +2,7 @@
 
 范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1章按授权网站修复例外处理，正式库冻结，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前112条；旧清单映射55/126；本地PASS 101；网站返回0。
+当前132条；旧清单映射65/126；本地PASS 117；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -118,6 +118,26 @@
 | MD-6.3.2-OUGibbsLimit | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；待Gaussian law参数连续性与指数极限完整短桥；现成一般Gaussian连续性可复用，保留未核桥接。 |
 | MD-6.3.2-MomentumOU | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-6.3.2-GibbsGaussianDensity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.3.3-BathHamiltonian | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-BathHamiltonEquations | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | placeholder / incomplete；待真实Fréchet有限和导数桥接；不恢复封存长证明。 |
+| MD-6.3.3-BathFrequency | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-BathOscillatorSolution | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | placeholder / incomplete；缺现成受迫振子变常数解完整桥接；不恢复封存证明。 |
+| MD-6.3.3-BathConvolutionIBP | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/BathConvolutionIBP.json。 |
+| MD-6.3.3-BathForce | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-BathForcePrinted | DRAFT/原页已核 | 已编译/待公理 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；保留字面负号，导师/网站待裁定；完整两种约化陈述下一批保留。 |
+| MD-6.3.3-MemoryKernel | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-BathReduction | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | placeholder / incomplete；缺受迫振子解及卷积IBP的完整组合桥接；不恢复封存长证明。 |
+| MD-6.3.3-BathReductionPrinted | DRAFT/原页已核 | 已编译/待公理 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；不证明符号疑误；网站/导师待裁定。 |
+| MD-6.3.3-MemoryKernelDeltaMeaning | DRAFT/原页已核 | 已编译/待公理 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；缺具体热浴谱/初值法则、白噪声极限及严格Langevin导出理论；原书也明确略去，不建设。 |
+| MD-6.3.3-ScalarLangevin | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-MassLangevin | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-VariableFriction | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-ParticleDiagonalFriction | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.4-BrownianMassModel | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-FrequencyMemoryKernel | DRAFT/原页已核 | 待编译 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-Figure64Frequencies | DRAFT/原页已核 | 待编译 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-Figure65Frequencies | DRAFT/原页已核 | 待编译 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-BathForceWeakLimitMeaning | DRAFT/原页已核 | 待编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；缺精确热浴初始化/谱条件及white-force或integrated-force极限解释；保留疑误，不建大型弱收敛理论。 |
 
 ## 旧126条完整映射
 
@@ -178,16 +198,16 @@
 | CH06-053 | MD-6.3.2-OULawCorrect |
 | CH06-054 | MD-6.3.2-GibbsGaussianDensity |
 | CH06-055 | MD-6.3.2-MomentumOU |
-| CH06-056 | PENDING：所属节尚未处理 |
-| CH06-057 | PENDING：所属节尚未处理 |
-| CH06-058 | PENDING：所属节尚未处理 |
-| CH06-059 | PENDING：所属节尚未处理 |
-| CH06-060 | PENDING：所属节尚未处理 |
-| CH06-061 | PENDING：所属节尚未处理 |
-| CH06-062 | PENDING：所属节尚未处理 |
-| CH06-063 | PENDING：所属节尚未处理 |
-| CH06-064 | PENDING：所属节尚未处理 |
-| CH06-065 | PENDING：所属节尚未处理 |
+| CH06-056 | MD-6.3.3-BathHamiltonian |
+| CH06-057 | MD-6.3.3-BathHamiltonEquations |
+| CH06-058 | MD-6.3.3-BathOscillatorSolution |
+| CH06-059 | MD-6.3.3-BathConvolutionIBP |
+| CH06-060 | MD-6.3.3-BathReductionPrinted |
+| CH06-061 | MD-6.3.3-Figure64Frequencies |
+| CH06-062 | MD-6.3.3-BathForceWeakLimitMeaning |
+| CH06-063 | MD-6.3.3-MassLangevin |
+| CH06-064 | MD-6.3.3-ParticleDiagonalFriction |
+| CH06-065 | MD-6.3.4-BrownianMassModel |
 | CH06-066 | PENDING：所属节尚未处理 |
 | CH06-067 | PENDING：所属节尚未处理 |
 | CH06-068 | PENDING：所属节尚未处理 |
@@ -288,6 +308,14 @@
 - MD-6.3.2-OULawPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 不证明印刷漏根号分布；完整更正单时law另列，不将独立边际当同一OU过程。原页根号只覆盖(2γ)⁻¹，(1−e⁻²γt)漏在根号内；方差因此被错误平方。单时分布等价不确定整个过程耦合。
 - MD-6.3.2-OULawCorrect：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺严格OU变常数与积分法则的完整桥接；Prop6.3现成单独结果不等于本条。
 - MD-6.3.2-OUGibbsLimit：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待Gaussian law参数连续性与指数极限完整短桥；现成一般Gaussian连续性可复用，保留未核桥接。
+- MD-6.3.3-BathHamiltonEquations：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 待真实Fréchet有限和导数桥接；不恢复封存长证明。
+- MD-6.3.3-BathOscillatorSolution：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺现成受迫振子变常数解完整桥接；不恢复封存证明。
+- MD-6.3.3-BathConvolutionIBP：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 三条短证明路线失败，停止该条；保存证据见validation/short_search/BathConvolutionIBP.json。
+- MD-6.3.3-BathForcePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 保留字面负号，导师/网站待裁定；完整两种约化陈述下一批保留。印刷f含负k⁻¹，而(6.29)写+f；从(6.23)代入振子解得到正k⁻¹合力。
+- MD-6.3.3-BathReduction：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺受迫振子解及卷积IBP的完整组合桥接；不恢复封存长证明。
+- MD-6.3.3-BathReductionPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 不证明符号疑误；网站/导师待裁定。原负f与+f约化式符号冲突；保留完整字面卷积方程。
+- MD-6.3.3-MemoryKernelDeltaMeaning：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺具体热浴谱/初值法则、白噪声极限及严格Langevin导出理论；原书也明确略去，不建设。原“sufficient high frequency/typically”没有给频率序列、归一化、热浴初值法则及白噪声弱收敛资格，不能声明任意热浴自动满足δ极限。
+- MD-6.3.3-BathForceWeakLimitMeaning：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺精确热浴初始化/谱条件及white-force或integrated-force极限解释；保留疑误，不建大型弱收敛理论。原many choices没有给热浴初值法则/频率条件/拓扑；此处f像Wiener process、下页f(t)作为Wiener increment还存在力与积分过程的类型疑问。
 
 ## 定性段落排除
 

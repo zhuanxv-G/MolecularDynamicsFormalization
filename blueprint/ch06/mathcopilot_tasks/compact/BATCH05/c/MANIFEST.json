@@ -22,8 +22,8 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "542d9e869f6002d3c8853bf1b90f45b084eb182d904556903ea5e35c4241e38c",
-  "lean_sha256": "cd77682014829b19149d0e59abf98e157837e11442ca405329b95b3ecb49db92",
+  "source_json_sha256": "d31cb383ee6ab34c8d538add9e14281e951e25f15de153961259d81610c255cf",
+  "lean_sha256": "dafdd4d7db76c1396ccce95d1ba9b0760484fa4f87ecf4b2a0625d2b43284cb0",
   "signature_sha256": "961c72b3aaadae1287dce589a70f87c1a22523f51c388a41c0eea522b9189e85",
   "definition_excerpts": [
     {
@@ -45,21 +45,22 @@
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     }
   ],
-  "paste_plus_pdf_bytes": 248653,
+  "paste_plus_pdf_bytes": 180194,
   "files": {
     "PASTE.txt": {
       "bytes": 3627,
       "sha256": "343499ad916b201e3897a9fa7d1f9d5a1d9425e2a3fec3a1c3a80f39f066c557"
     },
     "BATCH05c_PAGES.pdf": {
-      "bytes": 245026,
-      "sha256": "48b37ec52edbf9487c7aec8009c0048ce8d950e1beeeb2381ffe28c49c6a40b3"
+      "bytes": 176567,
+      "sha256": "f4377f416c551a234068c95ca4bf19e116e0a3766b972c8426d096f825601cbe"
     }
   },
   "validation": {
     "verbatim_source_signature_definitions": "PASS",
     "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 250777
+  "total_task_bytes": 182362
 }
